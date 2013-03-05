@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
@@ -81,10 +81,10 @@ public class AddAccessoryModel_Action extends BaseAction {
       final List<SModelReference> models = ListSequence.fromList(new ArrayList<SModelReference>());
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          List<SModelDescriptor> descriptors = SModelRepository.getInstance().getModelDescriptors();
-          ListSequence.fromList(models).addSequence(ListSequence.fromList(descriptors).select(new ISelector<SModelDescriptor, SModelReference>() {
-            public SModelReference select(SModelDescriptor it) {
-              return it.getSModelReference();
+          List<SModel> descriptors = SModelRepository.getInstance().getModelDescriptors();
+          ListSequence.fromList(models).addSequence(ListSequence.fromList(descriptors).select(new ISelector<SModel, SModelReference>() {
+            public SModelReference select(SModel it) {
+              return it.getReference();
             }
           }));
         }
@@ -103,7 +103,7 @@ public class AddAccessoryModel_Action extends BaseAction {
           if (scope.getModelDescriptor(result) == null) {
             int res = JOptionPane.showConfirmDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "<html>Model <b>" + result.getLongName() + "</b> is added to accessories</html>\n\n" + "Do you want to automatically the module add to dependency?", "Add Dependency", JOptionPane.YES_NO_OPTION);
             if (res == JOptionPane.YES_OPTION) {
-              SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(result);
+              SModel md = SModelRepository.getInstance().getModelDescriptor(result);
               language.addDependency(md.getModule().getModuleReference(), false);
             }
           }

@@ -15,32 +15,34 @@
  */
 package jetbrains.mps.smodel.event;
 
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelFqName;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class SModelRenamedEvent extends SModelEvent {
-  private SModelFqName myOldName;
-  private SModelFqName myNewName;
+  private String myOldName;
+  private String myNewName;
 
-  public SModelRenamedEvent(SModel model, SModelFqName oldName, SModelFqName newName) {
+  public SModelRenamedEvent(SModel model, String oldName, String newName) {
     super(model);
     myOldName = oldName;
     myNewName = newName;
   }
 
   public SModelFqName getOldName() {
-    return myOldName;
+    return SModelFqName.fromString(myOldName);
   }
 
   public SModelFqName getNewName() {
-    return myNewName;
+    return SModelFqName.fromString(myNewName);
   }
 
+  @Override
   public void accept(SModelEventVisitor visitor) {
 
   }
 
+  @Override
   public SNode getAffectedRoot() {
     return null;
   }

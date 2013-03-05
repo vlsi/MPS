@@ -93,6 +93,7 @@ public class Require_Constraints extends BaseConstraintsDescriptor {
                  * @param prefix (if not null) filters out elements whose reference text doesn't start with prefix
                  * @return list of nodes in the scope
                  */
+                @Override
                 public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
                   return libraries;
                 }
@@ -107,6 +108,7 @@ public class Require_Constraints extends BaseConstraintsDescriptor {
                  * @return resolved element when reference text unambiguously identifies element, null otherwise
                  */
                 @Nullable
+                @Override
                 public SNode resolve(SNode contextNode, @NotNull final String refText) {
                   return Sequence.fromIterable(libraries).where(new IWhereFilter<SNode>() {
                     public boolean accept(SNode it) {
@@ -126,6 +128,7 @@ public class Require_Constraints extends BaseConstraintsDescriptor {
                  * @return reference text for the node element in the current scope
                  */
                 @Nullable
+                @Override
                 public String getReferenceText(SNode contextNode, @NotNull SNode node) {
                   if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.samples.Kaja.structure.Library")) {
                     return SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.samples.Kaja.structure.Library"), "name");

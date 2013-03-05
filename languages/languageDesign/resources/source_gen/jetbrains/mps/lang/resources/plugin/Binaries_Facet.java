@@ -23,9 +23,9 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.make.script.IFeedback;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.core.plugin.Make_Facet.Target_make.Parameters;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
@@ -101,12 +101,12 @@ public class Binaries_Facet extends IFacet.Stub {
                 final Iterable<Tuples._2<IFile, IFile>> filesToCopy = Sequence.fromIterable(input).translate(new ITranslator2<MResource, Tuples._2<IFile, IFile>>() {
                   public Iterable<Tuples._2<IFile, IFile>> translate(MResource res) {
                     final IModule module = res.module();
-                    Iterable<Tuples._2<IFile, IFile>> seq = Sequence.fromIterable(res.models()).translate(new ITranslator2<SModelDescriptor, Tuples._2<IFile, IFile>>() {
-                      public Iterable<Tuples._2<IFile, IFile>> translate(SModelDescriptor smd) {
+                    Iterable<Tuples._2<IFile, IFile>> seq = Sequence.fromIterable(res.models()).translate(new ITranslator2<SModel, Tuples._2<IFile, IFile>>() {
+                      public Iterable<Tuples._2<IFile, IFile>> translate(SModel smd) {
                         SModel model = smd.getSModel();
                         String output = module.getOutputFor(smd);
                         if (output == null) {
-                          monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("no output location for " + smd.getLongName())));
+                          monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("no output location for " + SNodeOperations.getModelLongName(smd))));
                           return null;
                         } else {
                           IFile outputRoot = pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Parameters.class).pathToFile().invoke(output);
@@ -158,6 +158,7 @@ public class Binaries_Facet extends IFacet.Stub {
                 ThreadUtils.runInUIThreadAndWait(new Runnable() {
                   public void run() {
                     ModelAccess.instance().requireWrite(new Runnable() {
+                      @Override
                       public void run() {
                         Sequence.fromIterable(filesToCopy).toListSequence().visitAll(new IVisitor<Tuples._2<IFile, IFile>>() {
                           public void visit(Tuples._2<IFile, IFile> ftc) {

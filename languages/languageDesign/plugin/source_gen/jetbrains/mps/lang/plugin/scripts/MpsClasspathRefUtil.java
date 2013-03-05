@@ -6,16 +6,16 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModelReference;
 import java.util.List;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelRepository;
 import java.util.Collection;
 import jetbrains.mps.project.structure.modules.Dependency;
@@ -38,10 +38,10 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
         if (newModule == null) {
           continue;
         }
-        List<SModelDescriptor> models = newModule.getOwnModelDescriptors();
-        SModelReference modelRef = check_xpwqv8_a0c0c0f0b(ListSequence.fromList(models).findFirst(new IWhereFilter<SModelDescriptor>() {
-          public boolean accept(SModelDescriptor it) {
-            return eq_xpwqv8_a0a0a0a0a0a0c0c0f0b(it.getLongName(), fqname);
+        List<SModel> models = newModule.getOwnModelDescriptors();
+        SModelReference modelRef = check_xpwqv8_a0c0c0f0b(ListSequence.fromList(models).findFirst(new IWhereFilter<SModel>() {
+          public boolean accept(SModel it) {
+            return eq_xpwqv8_a0a0a0a0a0a0c0c0f0b(jetbrains.mps.util.SNodeOperations.getModelLongName(it), fqname);
           }
         }));
         if (modelRef == null) {
@@ -56,8 +56,8 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
           ((jetbrains.mps.smodel.SReference) ref).setTargetSModelReference(oldModelRef);
           continue;
         }
-        model.addModelImport(modelRef, false);
-        model.deleteModelImport(oldModelRef);
+        ((SModelInternal) model).addModelImport(modelRef, false);
+        ((SModelInternal) model).deleteModelImport(oldModelRef);
         SModelRepository.getInstance().markChanged(model);
         // update module dependencies 
         if (module != null && module.getModuleDescriptor() != null) {
@@ -78,7 +78,7 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
     }
   }
 
-  private static IModule check_xpwqv8_a0d0b(SModelDescriptor checkedDotOperand) {
+  private static IModule check_xpwqv8_a0d0b(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
@@ -92,9 +92,9 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
     return null;
   }
 
-  private static SModelReference check_xpwqv8_a0c0c0f0b(SModelDescriptor checkedDotOperand) {
+  private static SModelReference check_xpwqv8_a0c0c0f0b(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getSModelReference();
+      return checkedDotOperand.getReference();
     }
     return null;
   }

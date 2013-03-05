@@ -26,10 +26,12 @@ public class FinallyInstruction extends Instruction {
   private List<RetInstruction> myReturns = new ArrayList<RetInstruction>();
   private List<TryFinallyInfo> myChildTryFinallies = new ArrayList<TryFinallyInfo>();
 
+  @Override
   public String commandPresentation() {
     return "finally";
   }
 
+  @Override
   public void buildCaches() {
     super.buildCaches();
     for (TryFinallyInfo info : getProgram().getBlockInfos()) {
@@ -56,6 +58,7 @@ public class FinallyInstruction extends Instruction {
     }
   }
 
+  @Override
   public List<ProgramState> pred(ProgramState s) {
     if (s.isReturnMode()) {
       List<ProgramState> result = new ArrayList<ProgramState>();

@@ -40,8 +40,8 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -100,11 +100,13 @@ public class UsagesTree extends MPSTree {
     }
 
     addTreeExpansionListener(new TreeExpansionListener() {
+      @Override
       public void treeExpanded(TreeExpansionEvent event) {
         BaseNodeData data = ((UsagesTreeNode) event.getPath().getLastPathComponent()).getUserObject().getData();
         data.setExpanded(true);
       }
 
+      @Override
       public void treeCollapsed(TreeExpansionEvent event) {
         BaseNodeData data = ((UsagesTreeNode) event.getPath().getLastPathComponent()).getUserObject().getData();
         data.setExpanded(false);
@@ -112,30 +114,35 @@ public class UsagesTree extends MPSTree {
     });
 
     getActionMap().put(COMMAND_OPEN_NODE_IN_PROJECT, new AbstractAction() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         openCurrentNodeLink(false, false);
       }
     });
 
     getActionMap().put(COMMAND_OPEN_NODE_IN_TREE, new AbstractAction() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         openCurrentNodeLink(true, !isUnstableWindow());
       }
     });
 
     getActionMap().put(COMMAND_EXCLUDE, new AbstractAction() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         setCurrentNodesExclusion(true);
       }
     });
 
     getActionMap().put(COMMAND_INCLUDE, new AbstractAction() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         setCurrentNodesExclusion(false);
       }
     });
 
     addTreeSelectionListener(new TreeSelectionListener() {
+      @Override
       public void valueChanged(TreeSelectionEvent e) {
         if (myAutoscroll) {
           openNewlySelectedNodeLink(e, false, false);
@@ -144,6 +151,7 @@ public class UsagesTree extends MPSTree {
     });
 
     addMouseListener(new MouseAdapter() {
+      @Override
       public void mouseClicked(MouseEvent e) {
         if (e.getClickCount() == 2 && e.getButton() == MouseEvent.BUTTON1) {
           openCurrentNodeLink(false, true);
@@ -166,6 +174,7 @@ public class UsagesTree extends MPSTree {
     rebuildLater();
   }
 
+  @Override
   public void rebuildNow() {
     if (!ThreadUtils.isEventDispatchThread()) {
       throw new IllegalStateException("Can't use this outside of EDT");
@@ -253,8 +262,10 @@ public class UsagesTree extends MPSTree {
     }
   }
 
+  @Override
   protected UsagesTreeNode rebuild() {
     return ModelAccess.instance().runReadAction(new Computable<UsagesTreeNode>() {
+      @Override
       public UsagesTreeNode compute() {
         UsagesTreeNode root = new UsagesTreeNode("");
         if (myShowSearchedNodes) {
@@ -317,6 +328,7 @@ public class UsagesTree extends MPSTree {
         return snode != null && !(snode.getModel() != null && snode.getModel().isRoot(snode));
       }
 
+      @Override
       public int compare(UsagesTreeNode o1, UsagesTreeNode o2) {
         if (isIgnored(o1) || isIgnored(o2)) return 0;
         String s1 = o1.getUserObject().getData().getPlainText();
@@ -424,6 +436,7 @@ public class UsagesTree extends MPSTree {
     }
   }
 
+  @Override
   public UsagesTreeNode getCurrentNode() {
     return (UsagesTreeNode) super.getCurrentNode();
   }
@@ -445,6 +458,7 @@ public class UsagesTree extends MPSTree {
     setCurrentNodesExclusion(false);
   }
 
+  @Override
   protected JPopupMenu createPopupMenu(MPSTreeNode node) {
     if (!myShowPopupMenu) return null;
 
@@ -455,6 +469,7 @@ public class UsagesTree extends MPSTree {
         KeymapManager.getInstance().getKeymap(KeymapManager.DEFAULT_IDEA_KEYMAP).addShortcut(getActionId(), shortcut);
       }
 
+      @Override
       public void doExecute(AnActionEvent e, Map<String, Object> _params) {
         setCurrentNodesExclusion(false);
         e.getInputEvent().consume();
@@ -467,12 +482,14 @@ public class UsagesTree extends MPSTree {
         KeymapManager.getInstance().getKeymap(KeymapManager.DEFAULT_IDEA_KEYMAP).addShortcut(getActionId(), shortcut);
       }
 
+      @Override
       public void doExecute(AnActionEvent e, Map<String, Object> _params) {
         setCurrentNodesExclusion(true);
         e.getInputEvent().consume();
       }
     };
     BaseAction includeSelectedOnlyAction = new BaseAction("Include selected only") {
+      @Override
       public void doExecute(AnActionEvent e, Map<String, Object> _params) {
         setCurrentNodesOnlyExclusion();
         e.getInputEvent().consume();
@@ -506,6 +523,7 @@ public class UsagesTree extends MPSTree {
 
   private void goByNodeLink(final UsagesTreeNode treeNode, final boolean inProjectIfPossible, final boolean focus) {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
+      @Override
       public void run() {
         if (treeNode.getUserObject() == null) {
           return;
@@ -674,7 +692,7 @@ public class UsagesTree extends MPSTree {
   public void navigateToNode(final SNode node, boolean focus) {
     ModelAccess.assertLegalWrite();
 
-    SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
+    SModel modelDescriptor = node.getModel().getModelDescriptor();
     if (modelDescriptor == null) return;
 
     IModule module = modelDescriptor.getModule();
@@ -743,6 +761,7 @@ public class UsagesTree extends MPSTree {
       return (DataNode) super.getUserObject();
     }
 
+    @Override
     public boolean isLeaf() {
       return getChildCount() == 0;
     }

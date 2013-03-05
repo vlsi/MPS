@@ -18,7 +18,7 @@ package jetbrains.mps.smodel.constraints;
 import jetbrains.mps.project.GlobalOperationContext;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -51,7 +51,7 @@ import org.jetbrains.annotations.Nullable;
     if (model == null) {
       return null;
     }
-    SModelDescriptor modelDescriptor = model.getModelDescriptor();
+    SModel modelDescriptor = model.getModelDescriptor();
     if (modelDescriptor == null) {
       return null;
     }

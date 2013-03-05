@@ -21,9 +21,9 @@ import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.misc.hash.HashSet;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class ChildrenCollectionFinder {
@@ -64,7 +64,7 @@ public class ChildrenCollectionFinder {
             if (isMultipleCollectionCell(curr)) {
               return curr;
             }
-            curr = (EditorCell) curr.getParent();
+            curr = curr.getParent();
           }
           if (curr != null && curr.getSNode() == anchorNode && isMultipleCollectionCell(curr)) {
             return curr;

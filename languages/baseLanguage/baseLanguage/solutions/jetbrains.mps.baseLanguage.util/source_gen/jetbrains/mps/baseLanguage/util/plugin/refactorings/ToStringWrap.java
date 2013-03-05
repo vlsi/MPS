@@ -16,6 +16,7 @@ public class ToStringWrap<C> {
     return this.myObj;
   }
 
+  @Override
   public String toString() {
     return this.myText;
   }

@@ -18,8 +18,8 @@ package jetbrains.mps.ide.findusages.model.holders;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.NameUtil;
@@ -37,30 +37,34 @@ public class ModelHolder implements IHolder<SModel> {
   }
 
   public ModelHolder(SModel model) {
-    myModelReference = model.getModelDescriptor().getSModelReference();
+    myModelReference = model.getModelDescriptor().getReference();
   }
 
-  private SModelDescriptor getModelDescriptor() {
+  private SModel getModelDescriptor() {
     return SModelRepository.getInstance().getModelDescriptor(myModelReference);
   }
 
+  @Override
   public SModel getObject() {
-    SModelDescriptor modelDescriptor = getModelDescriptor();
+    SModel modelDescriptor = getModelDescriptor();
     if (modelDescriptor == null) return null;
     return modelDescriptor.getSModel();
   }
 
+  @Override
   @NotNull
   public String getCaption() {
     return NameUtil.shortNameFromLongName(myModelReference.getLongName());
   }
 
+  @Override
   public void write(Element element, Project project) throws CantSaveSomethingException {
     Element modelXML = new Element(MODEL);
     modelXML.setAttribute(UID, myModelReference.toString());
     element.addContent(modelXML);
   }
 
+  @Override
   public void read(Element element, Project project) throws CantLoadSomethingException {
     Element modelXML = element.getChild(MODEL);
     myModelReference = SModelReference.fromString(modelXML.getAttributeValue(UID));

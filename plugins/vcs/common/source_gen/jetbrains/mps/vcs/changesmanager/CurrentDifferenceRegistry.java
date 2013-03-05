@@ -14,17 +14,17 @@ import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.smodel.SModelFileTracker;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.vcs.FileStatusListener;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 
 public class CurrentDifferenceRegistry extends AbstractProjectComponent {
   private final Map<SModelReference, CurrentDifference> myCurrentDifferences = MapSequence.fromMap(new HashMap<SModelReference, CurrentDifference>());
@@ -37,6 +37,7 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
     super(project);
   }
 
+  @Override
   public void projectOpened() {
     FileStatusManager.getInstance(myProject).addFileStatusListener(myFileStatusListener);
     SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
@@ -44,6 +45,7 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
     updateLoadedModels();
   }
 
+  @Override
   public void projectClosed() {
     FileStatusManager.getInstance(myProject).removeFileStatusListener(myFileStatusListener);
     SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
@@ -61,7 +63,7 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
     return myProject;
   }
 
-  private void updateModel(@NotNull DefaultSModelDescriptor modelDescriptor) {
+  private void updateModel(@NotNull BaseEditableSModelDescriptor modelDescriptor) {
     synchronized (myCurrentDifferences) {
       SModelReference modelRef = modelDescriptor.getSModelReference();
       if (MapSequence.fromMap(myCurrentDifferences).containsKey(modelRef)) {
@@ -81,7 +83,7 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
     if (iFile == null) {
       return;
     }
-    DefaultSModelDescriptor modelDescriptor = ((DefaultSModelDescriptor) SModelFileTracker.getInstance().findModel(iFile));
+    BaseEditableSModelDescriptor modelDescriptor = ((BaseEditableSModelDescriptor) SModelFileTracker.getInstance().findModel(iFile));
     if (modelDescriptor == null || !(modelDescriptor.isLoaded())) {
       return;
     }
@@ -89,9 +91,9 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
   }
 
   public void updateLoadedModels() {
-    for (SModelDescriptor md : ListSequence.fromList(SModelRepository.getInstance().getModelDescriptors())) {
-      if (md instanceof DefaultSModelDescriptor) {
-        updateModel((DefaultSModelDescriptor) md);
+    for (SModel md : ListSequence.fromList(SModelRepository.getInstance().getModelDescriptors())) {
+      if (md instanceof BaseEditableSModelDescriptor) {
+        updateModel((BaseEditableSModelDescriptor) md);
       }
     }
   }
@@ -106,7 +108,7 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
   }
 
   @NotNull
-  public CurrentDifference getCurrentDifference(@NotNull DefaultSModelDescriptor modelDescriptor) {
+  public CurrentDifference getCurrentDifference(@NotNull BaseEditableSModelDescriptor modelDescriptor) {
     synchronized (myCurrentDifferences) {
       SModelReference modelRef = modelDescriptor.getSModelReference();
       if (!(MapSequence.fromMap(myCurrentDifferences).containsKey(modelRef))) {
@@ -141,10 +143,12 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
     public MyFileStatusListener() {
     }
 
+    @Override
     public void fileStatusesChanged() {
       updateLoadedModels();
     }
 
+    @Override
     public void fileStatusChanged(@NotNull VirtualFile vf) {
       updateModel(vf);
     }
@@ -155,9 +159,9 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
     }
 
     @Override
-    public void beforeModelRemoved(SModelDescriptor descriptor) {
-      if (descriptor instanceof EditableSModelDescriptor) {
-        disposeModelChangesManager(descriptor.getSModelReference());
+    public void beforeModelRemoved(SModel descriptor) {
+      if (descriptor instanceof EditableSModel) {
+        disposeModelChangesManager(descriptor.getReference());
       }
     }
   }

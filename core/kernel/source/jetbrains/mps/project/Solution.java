@@ -20,6 +20,9 @@ import jetbrains.mps.MPSCore;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.project.facets.JavaModuleFacetImpl;
+import jetbrains.mps.project.facets.TestsFacet;
+import jetbrains.mps.project.facets.TestsFacetImpl;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -32,14 +35,10 @@ import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.module.SModuleFacet;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Igor Alshannikov
@@ -81,10 +80,12 @@ public class Solution extends ClassLoadingModule {
     setModuleReference(descriptor.getModuleReference());
   }
 
+  @Override
   public SolutionDescriptor getModuleDescriptor() {
     return mySolutionDescriptor;
   }
 
+  @Override
   public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
     setSolutionDescriptor((SolutionDescriptor) moduleDescriptor, reloadClasses);
   }
@@ -120,6 +121,7 @@ public class Solution extends ClassLoadingModule {
     myUpdateBootstrapSolutions = b;
   }
 
+  @Override
   public void save() {
     super.save();
     //do not save stub solutions (otherwise build model generation fails)
@@ -162,38 +164,10 @@ public class Solution extends ClassLoadingModule {
     return namespace;
   }
 
-
   @Override
-  protected JavaModuleFacet createJavaModuleFacet() {
-    return new JavaModuleFacetImpl(this) {
-      @Override
-      public Collection<String> getOwnClassPath() {
-        if (isPackaged()) {
-          return Collections.singletonList(FileSystem.getInstance().getBundleHome(getDescriptorFile()).getPath());
-        }
-
-        if (!isCompileInMPS()) {
-          IFile classes = ProjectPathUtil.getClassesFolder(getDescriptorFile());
-          if (classes != null && classes.exists()) {
-            return Collections.singletonList(classes.getPath());
-          }
-          return Collections.emptyList();
-        }
-
-        return super.getOwnClassPath();
-      }
-
-      @Override
-      public boolean isCompileInMPS() {
-        ModuleDescriptor descriptor = getModuleDescriptor();
-        return descriptor != null && descriptor.getCompileInMPS();
-      }
-    };
-  }
-
-  public boolean reloadClassesAfterGeneration() {
-    SolutionDescriptor descriptor = getModuleDescriptor();
-    return descriptor != null && descriptor.getKind() != SolutionKind.NONE;
+  protected void collectFacetTypes(Set<String> types) {
+    super.collectFacetTypes(types);
+    types.add(TestsFacet.FACET_TYPE);
   }
 
   @Override
@@ -203,10 +177,12 @@ public class Solution extends ClassLoadingModule {
     return (SolutionDescriptor) ModulesMiner.getInstance().loadModuleDescriptor(file);
   }
 
+  @Override
   public boolean canLoadFromSelf() {
     return getModuleDescriptor().getCompileInMPS();
   }
 
+  @Override
   public boolean canLoad() {
     return MPSCore.getInstance().isTestMode() || getModuleDescriptor().getKind() != SolutionKind.NONE;
   }

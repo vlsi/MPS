@@ -21,7 +21,7 @@ import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TextGenManager;
@@ -67,18 +67,19 @@ public class DiffGenerationHandler extends InMemoryJavaGenerationHandler {
     String outputDir = ((IModule) module).getOutputFor(inputModel);
     myLastOutputDir = new File(context.getModule().getGeneratorOutputPath());
     myOutputModelToPath.put(outputModel, outputDir);
-    myOutputModelRefToPath.put(outputModel.getSModelReference(), outputDir);
+    myOutputModelRefToPath.put(outputModel.getReference(), outputDir);
     List<String> roots = new ArrayList<String>();
-    myOutputModelRefToRoots.put(outputModel.getSModelReference(), roots);
+    myOutputModelRefToRoots.put(outputModel.getReference(), roots);
 
     Condition<SNode> cond = new Condition<SNode>() {
+      @Override
       public boolean met(SNode node) {
         return node.getName() != null;
       }
     };
-    Iterable<SNode> iterable = new ConditionalIterable<SNode>(outputModel.roots(), cond);
+    Iterable<SNode> iterable = new ConditionalIterable<SNode>(outputModel.getRootNodes(), cond);
     for (SNode outputRoot : iterable) {
-      roots.add(getKey(outputModel.getSModelReference(), outputRoot));
+      roots.add(getKey(outputModel.getReference(), outputRoot));
     }
     return super.collectSources(module, inputModel, context, outputModel);
   }
@@ -133,7 +134,7 @@ public class DiffGenerationHandler extends InMemoryJavaGenerationHandler {
     if (getSources().isEmpty()) {
       return null;
     }
-    return getSources().get(getKey(outputModel.getSModelReference(), outputRoot));
+    return getSources().get(getKey(outputModel.getReference(), outputRoot));
   }
 
 

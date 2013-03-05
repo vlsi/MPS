@@ -6,7 +6,7 @@ import com.intellij.openapi.project.Project;
 import junit.framework.Assert;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.generationTypes.DiffGenerationHandler;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;

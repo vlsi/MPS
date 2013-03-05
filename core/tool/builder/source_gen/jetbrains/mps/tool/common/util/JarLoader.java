@@ -27,6 +27,7 @@ import java.io.FilterInputStream;
   private final boolean myCanLockJar;
   private final TimedComputable<ZipFile> myZipFileRef = new TimedComputable<ZipFile>() {
     @NotNull
+    @Override
     protected ZipFile calc() {
       try {
         final ZipFile zipFile = doGetZipFile();
@@ -76,10 +77,12 @@ import java.io.FilterInputStream;
     return null;
   }
 
+  @Override
   /*package*/ void dispose() {
     myZipFileRef.dispose();
   }
 
+  @Override
   /*package*/ void buildCache(final ClasspathCache cache) throws IOException {
     ZipFile zipFile = null;
     try {
@@ -98,6 +101,7 @@ import java.io.FilterInputStream;
   }
 
   @Nullable
+  @Override
   /*package*/ Resource getResource(String name, boolean flag) {
     final long started = (myDebugTime ?
       System.nanoTime() :
@@ -132,6 +136,7 @@ import java.io.FilterInputStream;
   }
 
   @NonNls
+  @Override
   public String toString() {
     return "JarLoader [" + myURL + "]";
   }
@@ -145,19 +150,23 @@ import java.io.FilterInputStream;
       myUrl = url;
     }
 
+    @Override
     public String getName() {
       return myEntry.getName();
     }
 
+    @Override
     public URL getURL() {
       return myUrl;
     }
 
+    @Override
     public URL getCodeSourceURL() {
       return myURL;
     }
 
     @Nullable
+    @Override
     public InputStream getInputStream() throws IOException {
       final boolean[] wasReleased = {false};
       ZipFile file = null;
@@ -177,6 +186,7 @@ import java.io.FilterInputStream;
         return new FilterInputStream(inputStream) {
           private boolean myClosed = false;
 
+          @Override
           public void close() throws IOException {
             super.close();
             if (!(myClosed)) {
@@ -194,6 +204,7 @@ import java.io.FilterInputStream;
       }
     }
 
+    @Override
     public int getContentLength() {
       return (int) myEntry.getSize();
     }

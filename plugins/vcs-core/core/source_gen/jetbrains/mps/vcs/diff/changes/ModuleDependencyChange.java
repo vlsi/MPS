@@ -5,8 +5,9 @@ package jetbrains.mps.vcs.diff.changes;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vcs.diff.ChangeSet;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.smodel.SModelInternal;
 
 public class ModuleDependencyChange extends DependencyChange {
   private ModuleReference myModuleReference;
@@ -27,10 +28,12 @@ public class ModuleDependencyChange extends DependencyChange {
   }
 
   @NotNull
+  @Override
   protected ModelChange createOppositeChange() {
     return new ModuleDependencyChange(getChangeSet().getOppositeChangeSet(), myModuleReference, myType, !(isDelete()));
   }
 
+  @Override
   public void apply(@NotNull SModel model, @NotNull NodeCopier nodeCopier) {
     if (isDelete()) {
       myType.myDeleteTask.invoke(model, myModuleReference);
@@ -50,29 +53,29 @@ public class ModuleDependencyChange extends DependencyChange {
   public static   enum DependencyType {
     USED_LANG("Used Language", new _FunctionTypes._void_P2_E0<SModel, ModuleReference>() {
       public void invoke(SModel model, ModuleReference module) {
-        model.addLanguage(module);
+        ((SModelInternal) model).addLanguage(module);
       }
     }, new _FunctionTypes._void_P2_E0<SModel, ModuleReference>() {
       public void invoke(SModel model, ModuleReference module) {
-        model.deleteLanguage(module);
+        ((SModelInternal) model).deleteLanguage(module);
       }
     }),
     USED_DEVKIT("Used Devkit", new _FunctionTypes._void_P2_E0<SModel, ModuleReference>() {
       public void invoke(SModel model, ModuleReference module) {
-        model.addDevKit(module);
+        ((SModelInternal) model).addDevKit(module);
       }
     }, new _FunctionTypes._void_P2_E0<SModel, ModuleReference>() {
       public void invoke(SModel model, ModuleReference module) {
-        model.deleteDevKit(module);
+        ((SModelInternal) model).deleteDevKit(module);
       }
     }),
     LANG_ENGAGED_ON_GENERATION("Language Engaged on Generation", new _FunctionTypes._void_P2_E0<SModel, ModuleReference>() {
       public void invoke(SModel model, ModuleReference module) {
-        model.addEngagedOnGenerationLanguage(module);
+        ((SModelInternal) model).addEngagedOnGenerationLanguage(module);
       }
     }, new _FunctionTypes._void_P2_E0<SModel, ModuleReference>() {
       public void invoke(SModel model, ModuleReference module) {
-        model.removeEngagedOnGenerationLanguage(module);
+        ((SModelInternal) model).removeEngagedOnGenerationLanguage(module);
       }
     });
 

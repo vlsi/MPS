@@ -15,12 +15,13 @@
  */
 package jetbrains.mps.lang.editor.generator.internal;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
-import jetbrains.mps.logging.Logger;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -34,7 +35,7 @@ public abstract class AbstractCellMenuComponent {
 
   /**
    * @deprecated starting from MPS 3.0 was replaced with <code>myExtParts</code> all usages should
-   * be removed in the next release
+   *             be removed in the next release
    */
   @Deprecated
   private SubstituteInfoPart[] myParts;
@@ -42,7 +43,7 @@ public abstract class AbstractCellMenuComponent {
 
   /**
    * @deprecated starting from MPS 3.0 another constructor should be used:
-   * <code>AbstractCellMenuComponent(jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt parts)</code>
+   *             <code>AbstractCellMenuComponent(jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt parts)</code>
    */
   @Deprecated
   public AbstractCellMenuComponent(SubstituteInfoPart[] menuParts) {
@@ -53,8 +54,18 @@ public abstract class AbstractCellMenuComponent {
     myExtParts = menuParts;
   }
 
+  /**
+   * This method should be removed after MPS 3.0
+   *
+   * @deprecated starting from MPS 3.0 createSubstituteActions() should be used:
+   */
+  @Deprecated
   public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-    List<INodeSubstituteAction> actions = new LinkedList<INodeSubstituteAction>();
+    return (List) createSubstituteActions(cellContext, editorContext);
+  }
+
+  public List<SubstituteAction> createSubstituteActions(CellContext cellContext, EditorContext editorContext) {
+    List<SubstituteAction> actions = new LinkedList<SubstituteAction>();
     if (myExtParts != null) {
       for (SubstituteInfoPartExt menuPart : myExtParts) {
         try {

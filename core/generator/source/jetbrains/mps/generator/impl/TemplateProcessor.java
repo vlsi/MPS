@@ -22,7 +22,11 @@ import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
 import jetbrains.mps.generator.impl.interpreted.TemplateWeavingRuleInterpreted;
-import jetbrains.mps.generator.impl.reference.*;
+import jetbrains.mps.generator.impl.reference.PostponedReference;
+import jetbrains.mps.generator.impl.reference.ReferenceInfo_CopiedInputNode;
+import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro;
+import jetbrains.mps.generator.impl.reference.ReferenceInfo_MacroNode;
+import jetbrains.mps.generator.impl.reference.ReferenceInfo_TemplateNode;
 import jetbrains.mps.generator.impl.template.InputQueryUtil;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
@@ -31,13 +35,16 @@ import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -160,6 +167,22 @@ public class TemplateProcessor {
       if (AttributeOperations.getLinkAttribute(templateNode, "referenceMacro", reference.getRole()) != null) {
         continue;
       }
+
+      if (reference instanceof StaticReference) {
+        SModelReference targetModelReference = reference.getTargetSModelReference();
+        if (targetModelReference != null && !(templateModel.getReference().equals(targetModelReference))) {
+          // optimization for external static references (do not resolve them)
+          SReference newReference = new StaticReference(
+            reference.getRole(),
+            outputNode,
+            targetModelReference,
+            reference.getTargetNodeId(),
+            ((StaticReference) reference).getResolveInfo());
+          outputNode.setReference(reference.getRole(), newReference);
+          continue;
+        }
+      }
+
       SNode templateReferentNode = reference.getTargetNode();
       if (templateReferentNode == null) {
         myGenerator.getLogger().error(templateNode, "cannot resolve reference in template model; role: " + reference.getRole() + " in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(templateNode));
@@ -176,7 +199,7 @@ public class TemplateProcessor {
         );
         outputNode.setReference(postponedReference.getRole(), postponedReference);
       } else {
-        SNodeAccessUtil.setReferenceTarget(outputNode, reference.getRole(), templateReferentNode);
+        outputNode.setReferenceTarget(reference.getRole(), templateReferentNode);
       }
     }
 
@@ -274,7 +297,7 @@ public class TemplateProcessor {
                 myGenerator.getLogger().error(outputNode, "language of output node is '" + outputNodeLang.getModuleFqName() + "' - this language did not show up when computing generation steps!",
                   GeneratorUtil.describe(macro, "template"),
                   GeneratorUtil.describe(templateContext.getInput(), "input"),
-                  new ProblemDescription(null, "workaround: add the language '" + outputNodeLang.getModuleFqName() + "' to list of 'Languages Engaged On Generation' in model '" + myGenerator.getGeneratorSessionContext().getOriginalInputModel().getSModelFqName() + "'"));
+                  new ProblemDescription(null, "workaround: add the language '" + outputNodeLang.getModuleFqName() + "' to list of 'Languages Engaged On Generation' in model '" + myGenerator.getGeneratorSessionContext().getOriginalInputModel().getReference().getSModelFqName() + "'"));
               }
             }
           }
@@ -294,7 +317,7 @@ public class TemplateProcessor {
             myGenerator.getLogger().error(child, "language of output node is '" + childLang.getModuleFqName() + "' - this language did not show up when computing generation steps!",
               GeneratorUtil.describe(macro, "template"),
               GeneratorUtil.describe(templateContext.getInput(), "input"),
-              new ProblemDescription(null, "workaround: add the language '" + childLang.getModuleFqName() + "' to list of 'Languages Engaged On Generation' in model '" + myGenerator.getGeneratorSessionContext().getOriginalInputModel().getSModelFqName() + "'"));
+              new ProblemDescription(null, "workaround: add the language '" + childLang.getModuleFqName() + "' to list of 'Languages Engaged On Generation' in model '" + myGenerator.getGeneratorSessionContext().getOriginalInputModel().getReference().getSModelFqName() + "'"));
           }
         }
 
@@ -634,7 +657,7 @@ public class TemplateProcessor {
   private void validateReferences(SNode node, final SNode inputNode) {
     for (SReference ref : node.getReferences()) {
       // reference to input model - illegal
-      if (myGenerator.getInputModel().getSModelReference().equals(ref.getTargetSModelReference())) {
+      if (myGenerator.getInputModel().getReference().equals(ref.getTargetSModelReference())) {
         // replace
         ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
           ref.getRole(),
@@ -649,7 +672,7 @@ public class TemplateProcessor {
     }
 
     for (org.jetbrains.mps.openapi.model.SNode child : jetbrains.mps.util.SNodeOperations.getChildren(node)) {
-      validateReferences(((SNode) child), inputNode);
+      validateReferences(child, inputNode);
     }
   }
 

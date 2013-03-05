@@ -15,15 +15,17 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.project.IModule;
 import org.jetbrains.mps.openapi.model.SModel;
 
 public class RootTemplateAnnotator implements CoreComponent {
   public RootTemplateAnnotator(GlobalSModelEventsManager dep) {
   }
 
+  @Override
   public void init() {
     GlobalSModelEventsManager.getInstance().addGlobalModelListener(new SModelAdapter() {
+      @Override
       public void rootAdded(SModelRootEvent event) {
         SNode node = event.getRoot();
         if (SModelStereotype.isGeneratorModel(SNodeOperations.getModel(node))) {
@@ -37,17 +39,18 @@ public class RootTemplateAnnotator implements CoreComponent {
     });
   }
 
+  @Override
   public void dispose() {
   }
 
-  private static SModule check_epzavk_a0a0a0b0a0a0a0a0b(SModel checkedDotOperand) {
+  private static IModule check_epzavk_a0a0a0b0a0a0a0a0b(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModule check_epzavk_a0a0a0b0a0a0a0a0b_0(SModel checkedDotOperand) {
+  private static IModule check_epzavk_a0a0a0b0a0a0a0a0b_0(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

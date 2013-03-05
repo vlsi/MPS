@@ -24,11 +24,11 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
-import jetbrains.mps.smodel.SModel;
 import java.io.File;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.java.newparser.DirParser;
@@ -133,7 +133,7 @@ public class NewModelFromSource_Action extends BaseAction {
         }
       });
       dialog.value.show();
-      SModelDescriptor result = dialog.value.getResult();
+      SModel result = dialog.value.getResult();
       if (result != null) {
         TreeFileChooser treeFileChooser = new TreeFileChooser();
         treeFileChooser.setDirectoriesAreAlwaysVisible(true);
@@ -150,7 +150,7 @@ public class NewModelFromSource_Action extends BaseAction {
           }
           initial = sourceRoot;
           if (sourceRoot.exists()) {
-            File modelSource = new File(sourceRoot, NameUtil.pathFromNamespace(sModel.getLongName()));
+            File modelSource = new File(sourceRoot, NameUtil.pathFromNamespace(SNodeOperations.getModelLongName(sModel)));
             if (modelSource.exists()) {
               initial = modelSource;
             }
@@ -179,7 +179,7 @@ public class NewModelFromSource_Action extends BaseAction {
             JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), parseException.value.getMessage(), "Parse error", JOptionPane.ERROR_MESSAGE);
           }
         }
-        SModelDescriptor modelDescriptor = result;
+        SModel modelDescriptor = result;
         ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).selectModel(modelDescriptor, false);
       }
     } catch (Throwable t) {

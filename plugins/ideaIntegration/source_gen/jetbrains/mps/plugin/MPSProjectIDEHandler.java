@@ -17,7 +17,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
@@ -48,11 +49,13 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
     myProject = project;
   }
 
+  @Override
   public void projectOpened() {
     if (MPSCore.getInstance().isTestMode()) {
       return;
     }
     new Thread() {
+      @Override
       public void run() {
         try {
           IProjectHandler handler = MPSPlugin.getInstance().getProjectHandler(myProject);
@@ -67,6 +70,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
     }.start();
   }
 
+  @Override
   public void projectClosed() {
     if (MPSCore.getInstance().isTestMode()) {
       return;
@@ -93,13 +97,16 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
 
   @NonNls
   @NotNull
+  @Override
   public String getComponentName() {
     return "MPS Project IDE Handler";
   }
 
+  @Override
   public void initComponent() {
   }
 
+  @Override
   public void disposeComponent() {
   }
 
@@ -107,6 +114,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
     return WindowManager.getInstance().getFrame(myProject);
   }
 
+  @Override
   public void showNode(final String namespace, final String id) throws RemoteException {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
@@ -114,7 +122,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
           if (!(namespace.equals(descriptor.getModelName()))) {
             continue;
           }
-          SNode node = ((SModelDescriptor) descriptor).getSModel().getNodeById(id);
+          SNode node = ((SModelInternal) descriptor).getSModel().getNode(SNodeId.fromString(id));
           if (node != null) {
             ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
             NavigationSupport.getInstance().openNode(context, node, true, !(SNodeOperations.isRoot(node)));
@@ -125,14 +133,17 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
     });
   }
 
+  @Override
   public void showAspectMethodUsages(final String namespace, final String name) throws RemoteException {
     SearchQuery searchQuery = new SearchQuery(new AspectMethodsFinder.AspectMethodsHolder(namespace, name), GlobalScope.getInstance());
     IFinder[] finders = new IFinder[]{new AspectMethodsFinder()};
     myProject.getComponent(UsagesViewTool.class).findUsages(FindUtils.makeProvider(finders), searchQuery, false, true, false, "No usages for that method");
   }
 
+  @Override
   public void showConceptNode(final String fqName) throws RemoteException {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
+      @Override
       public void run() {
         SNode concept = SModelUtil.findConceptDeclaration(fqName, GlobalScope.getInstance());
         NavigationSupport.getInstance().openNode(new ProjectOperationContext(ProjectHelper.toMPSProject(myProject)), concept, true, false);
@@ -141,8 +152,10 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
     });
   }
 
+  @Override
   public void showClassUsages(final String fqName) throws RemoteException {
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         SNode cls = SModelUtil.findNodeByFQName(fqName, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"), GlobalScope.getInstance());
         if (cls == null) {
@@ -155,8 +168,10 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
     });
   }
 
+  @Override
   public void showMethodUsages(final String classFqName, final String methodName, final int parameterCount) throws RemoteException {
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         if (classFqName == null || methodName == null) {
           MPSProjectIDEHandler.LOG.error("Can't find a method " + classFqName + "." + methodName);
@@ -191,8 +206,10 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
 
   private void findUsages(@NotNull final SNode node, final IScope scope, final IResultProvider provider) {
     new Thread() {
+      @Override
       public void run() {
         SearchQuery query = ModelAccess.instance().runReadAction(new Computable<SearchQuery>() {
+          @Override
           public SearchQuery compute() {
             return new SearchQuery(node, scope);
           }

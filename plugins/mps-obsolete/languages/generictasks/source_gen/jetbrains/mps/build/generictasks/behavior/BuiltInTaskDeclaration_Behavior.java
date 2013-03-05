@@ -12,12 +12,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.buildlanguage.behavior.IDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelInternal;
 
 public class BuiltInTaskDeclaration_Behavior {
   public static void init(SNode thisNode) {
@@ -139,14 +139,14 @@ public class BuiltInTaskDeclaration_Behavior {
     return null;
   }
 
-  private static IModule check_y5o5bz_a0a0a0(SModelDescriptor checkedDotOperand) {
+  private static IModule check_y5o5bz_a0a0a0(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModelDescriptor check_y5o5bz_a0a0a0a(SModel checkedDotOperand) {
+  private static SModelInternal check_y5o5bz_a0a0a0a(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }

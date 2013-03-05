@@ -28,6 +28,7 @@ public abstract class AbstractMakeService implements IMakeService {
   public AbstractMakeService() {
   }
 
+  @Override
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller, @NotNull ProgressMonitor monitor) {
     // compatibility: calls method without monitor 
     return make(session, resources, script, controller);

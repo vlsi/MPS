@@ -9,10 +9,12 @@ import jetbrains.mps.nodeEditor.leftHighlighter.AbstractLeftColumn;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.persistence.DataSource;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.util.FileUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.project.Project;
@@ -32,6 +34,7 @@ import com.intellij.openapi.vcs.AbstractVcsHelper;
 import java.util.Arrays;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.progress.ProgressManager;
+import jetbrains.mps.smodel.SModelInternal;
 
 public class AnnotationHelper {
   private AnnotationHelper() {
@@ -57,11 +60,17 @@ public class AnnotationHelper {
     }
     final SNode root = editorComponent.getEditedNode();
     SModel model = check_19hp0u_a0d0c(root);
-    SModelDescriptor modelDescriptor = check_19hp0u_a0e0c(model);
-    if (!((modelDescriptor instanceof DefaultSModelDescriptor))) {
+    SModel modelDescriptor = check_19hp0u_a0e0c(model);
+
+    DataSource source = modelDescriptor.getSource();
+    if (!(source instanceof FileDataSource)) {
       return false;
     }
-    IFile modelFile = ((DefaultSModelDescriptor) modelDescriptor).getSource().getFile();
+    IFile modelFile = ((FileDataSource) source).getFile();
+    if (!(MPSExtentions.MODEL.equals(FileUtil.getExtension(modelFile.getName())))) {
+      return false;
+    }
+
     final VirtualFile file = VirtualFileUtils.getVirtualFile(modelFile);
     final Project project = ProjectHelper.toIdeaProject(editorComponent.getOperationContext().getProject());
     final AbstractVcs vcs = ProjectLevelVcsManager.getInstance(project).getVcsFor(file);
@@ -90,6 +99,7 @@ public class AnnotationHelper {
       private FileAnnotation myFileAnnotation;
       private VcsException myException;
 
+      @Override
       public void run(@NotNull ProgressIndicator indicator) {
         try {
           myFileAnnotation = annotationProvider.annotate(file);
@@ -131,14 +141,14 @@ public class AnnotationHelper {
     return annotate(editorComponent, true);
   }
 
-  private static SModel check_19hp0u_a0d0c(SNode checkedDotOperand) {
+  private static jetbrains.mps.smodel.SModel check_19hp0u_a0d0c(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModel();
     }
     return null;
   }
 
-  private static SModelDescriptor check_19hp0u_a0e0c(SModel checkedDotOperand) {
+  private static SModelInternal check_19hp0u_a0e0c(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.components.CoreComponent;
@@ -55,39 +55,44 @@ public class GlobalSModelEventsManager implements CoreComponent {
     }
   }
 
+  @Override
   public void init() {
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         mySModelRepository.addModelRepositoryListener(new SModelRepositoryAdapter() {
-          public void modelAdded(SModelDescriptor modelDescriptor) {
+          @Override
+          public void modelAdded(SModel modelDescriptor) {
             addListeners(modelDescriptor);
           }
 
-          public void modelRemoved(SModelDescriptor modelDescriptor) {
+          @Override
+          public void modelRemoved(SModel modelDescriptor) {
             removeListeners(modelDescriptor);
           }
         });
 
-        for (SModelDescriptor sm : mySModelRepository.getModelDescriptors()) {
+        for (SModel sm : mySModelRepository.getModelDescriptors()) {
           addListeners(sm);
         }
       }
     });
   }
 
+  @Override
   public void dispose() {
   }
 
-  private void addListeners(SModelDescriptor sm) {
+  private void addListeners(SModel sm) {
     for (SModelListener listener : myRelayListeners) {
-      sm.addModelListener(listener);
+      ((SModelInternal) sm).addModelListener(listener);
     }
     myEventsCollector.add(sm);
   }
 
-  private void removeListeners(SModelDescriptor sm) {
+  private void removeListeners(SModel sm) {
     for (SModelListener listener : myRelayListeners) {
-      sm.removeModelListener(listener);
+      ((SModelInternal) sm).removeModelListener(listener);
     }
     myEventsCollector.remove(sm);
   }
@@ -117,6 +122,7 @@ public class GlobalSModelEventsManager implements CoreComponent {
       getClass().getClassLoader(),
       new Class[]{SModelListener.class},
       new InvocationHandler() {
+        @Override
         public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
           if (method.getName().equals("equals") && args.length == 1) {
             return proxy == args[0];
@@ -146,6 +152,7 @@ public class GlobalSModelEventsManager implements CoreComponent {
   }
 
   private class MyEventsCollector extends EventsCollector {
+    @Override
     protected void eventsHappened(List<SModelEvent> events) {
       if (events.isEmpty()) return;
 

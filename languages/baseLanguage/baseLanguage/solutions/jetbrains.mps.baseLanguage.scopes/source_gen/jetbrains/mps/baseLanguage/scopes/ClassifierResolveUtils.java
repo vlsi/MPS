@@ -8,15 +8,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.GlobalScope;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
 import java.util.Collections;
@@ -32,6 +32,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.Tokens_Behavior;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.ListIterator;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -76,8 +77,8 @@ public class ClassifierResolveUtils {
 
     // try to resolve as fq name in current scope 
     Iterable<IModule> visibleModules = check_8z6r2b_a0a9a2(check_8z6r2b_a0a0j0c(check_8z6r2b_a0a0a9a2(SNodeOperations.getModel(contextNode)))).getVisibleModules();
-    result = resolveClassifierByFqNameWithNonStubPriority(Sequence.fromIterable(visibleModules).translate(new ITranslator2<IModule, SModelDescriptor>() {
-      public Iterable<SModelDescriptor> translate(IModule it) {
+    result = resolveClassifierByFqNameWithNonStubPriority(Sequence.fromIterable(visibleModules).translate(new ITranslator2<IModule, SModel>() {
+      public Iterable<SModel> translate(IModule it) {
         return it.getOwnModelDescriptors();
       }
     }), classifierName);
@@ -119,12 +120,12 @@ public class ClassifierResolveUtils {
     return resolveClassifierByFqNameWithNonStubPriority(getModelsWithNameInScope(scope, targetModelName), classifierFqName);
   }
 
-  private static Iterable<SModelDescriptor> getModelsWithNameInScope(@NotNull IScope scope, @NotNull String modelLongName) {
+  private static Iterable<SModel> getModelsWithNameInScope(@NotNull IScope scope, @NotNull String modelLongName) {
     // todo: go through all stereotypes and resolve by long name and stereotype 
-    List<SModelDescriptor> result = ListSequence.fromList(new ArrayList<SModelDescriptor>());
+    List<SModel> result = ListSequence.fromList(new ArrayList<SModel>());
     for (IModule module : Sequence.fromIterable(scope.getVisibleModules())) {
-      for (SModelDescriptor modelDescriptor : ListSequence.fromList(module.getOwnModelDescriptors())) {
-        if (eq_8z6r2b_a0a0a0c0f(modelDescriptor.getLongName(), modelLongName)) {
+      for (SModel modelDescriptor : ListSequence.fromList(module.getOwnModelDescriptors())) {
+        if (eq_8z6r2b_a0a0a0c0f(jetbrains.mps.util.SNodeOperations.getModelLongName(modelDescriptor), modelLongName)) {
           ListSequence.fromList(result).addElement(modelDescriptor);
         }
       }
@@ -132,19 +133,19 @@ public class ClassifierResolveUtils {
     return result;
   }
 
-  private static Iterable<SNode> resolveClassifierByFqNameWithNonStubPriority(Iterable<SModelDescriptor> models, String classifierFqName) {
-    models = Sequence.fromIterable(models).where(new IWhereFilter<SModelDescriptor>() {
-      public boolean accept(SModelDescriptor it) {
-        return !(it.isTransient());
+  private static Iterable<SNode> resolveClassifierByFqNameWithNonStubPriority(Iterable<SModel> models, String classifierFqName) {
+    models = Sequence.fromIterable(models).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel it) {
+        return !((it.getModule() instanceof TransientModelsModule));
       }
     });
 
     final String stubStereoType = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
 
     // resolve without stubs 
-    Iterable<SNode> result = resolveClassifierByFqName(Sequence.fromIterable(models).where(new IWhereFilter<SModelDescriptor>() {
-      public boolean accept(SModelDescriptor it) {
-        return neq_8z6r2b_a0a0a0a0a0a0f0g(it.getStereotype(), stubStereoType);
+    Iterable<SNode> result = resolveClassifierByFqName(Sequence.fromIterable(models).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel it) {
+        return neq_8z6r2b_a0a0a0a0a0a0f0g(SModelStereotype.getStereotype(it), stubStereoType);
       }
     }), classifierFqName);
     if (Sequence.fromIterable(result).isNotEmpty()) {
@@ -152,33 +153,33 @@ public class ClassifierResolveUtils {
     }
 
     // resolve with stubs 
-    return resolveClassifierByFqName(Sequence.fromIterable(models).where(new IWhereFilter<SModelDescriptor>() {
-      public boolean accept(SModelDescriptor it) {
-        return eq_8z6r2b_a0a0a0a0a0a9a6(it.getStereotype(), stubStereoType);
+    return resolveClassifierByFqName(Sequence.fromIterable(models).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel it) {
+        return eq_8z6r2b_a0a0a0a0a0a9a6(SModelStereotype.getStereotype(it), stubStereoType);
       }
     }), classifierFqName);
   }
 
-  private static Iterable<SNode> resolveClassifierByFqName(Iterable<SModelDescriptor> models, final String classifierFqName) {
-    return Sequence.fromIterable(models).translate(new ITranslator2<SModelDescriptor, SNode>() {
-      public Iterable<SNode> translate(SModelDescriptor it) {
+  private static Iterable<SNode> resolveClassifierByFqName(Iterable<SModel> models, final String classifierFqName) {
+    return Sequence.fromIterable(models).translate(new ITranslator2<SModel, SNode>() {
+      public Iterable<SNode> translate(SModel it) {
         return resolveClassifierByFqName(it, classifierFqName);
       }
     });
   }
 
-  private static Iterable<SNode> resolveClassifierByFqName(SModelDescriptor modelDescriptor, String classifierFqName) {
+  private static Iterable<SNode> resolveClassifierByFqName(SModel modelDescriptor, String classifierFqName) {
     assert !(classifierFqName.contains("$"));
 
-    if (!(classifierFqName.startsWith(modelDescriptor.getLongName()))) {
+    if (!(classifierFqName.startsWith(jetbrains.mps.util.SNodeOperations.getModelLongName(modelDescriptor)))) {
       return Collections.<SNode>emptyList();
     }
 
-    String classifierNestedName = classifierFqName.substring(modelDescriptor.getLongName().length() + 1);
+    String classifierNestedName = classifierFqName.substring(jetbrains.mps.util.SNodeOperations.getModelLongName(modelDescriptor).length() + 1);
     return resolveClassifierByNestedName(modelDescriptor, classifierNestedName);
   }
 
-  private static Iterable<SNode> resolveClassifierByNestedName(SModelDescriptor modelDescriptor, String classifierNestedName) {
+  private static Iterable<SNode> resolveClassifierByNestedName(SModel modelDescriptor, String classifierNestedName) {
     assert !(classifierNestedName.contains("$"));
 
     SModel model = modelDescriptor.getSModel();
@@ -209,7 +210,7 @@ public class ClassifierResolveUtils {
   }
 
   private static Iterable<SNode> getClassifiersInModel(SModel model) {
-    Iterable<SNode> classifiers = model.getFastNodeFinder().getNodes("jetbrains.mps.baseLanguage.structure.Classifier", true);
+    Iterable<SNode> classifiers = jetbrains.mps.util.SNodeOperations.getModelFastFinder(model).getNodes("jetbrains.mps.baseLanguage.structure.Classifier", true);
     return (Iterable<SNode>) Sequence.fromIterable(classifiers).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.AnonymousClass"));
@@ -230,7 +231,7 @@ public class ClassifierResolveUtils {
     //   if no, only then traverse all appropriate models 
 
     SModel oldModel = contextNode.getModel();
-    org.jetbrains.mps.openapi.model.SModel contextNodeModel = (oldModel == null ?
+    SModel contextNodeModel = (oldModel == null ?
       null :
       oldModel.getModelDescriptor()
     );
@@ -281,7 +282,7 @@ public class ClassifierResolveUtils {
       }
     }
 
-    Iterable<org.jetbrains.mps.openapi.model.SModel> models;
+    Iterable<SModel> models;
 
     SNode root = Sequence.fromIterable(getPathToRoot(contextNode)).last();
     SNode javaImports = AttributeOperations.getAttribute(root, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports")));
@@ -289,8 +290,8 @@ public class ClassifierResolveUtils {
     if (javaImports == null) {
       // This is probably too wide 
       // <node> 
-      Collection<SModelDescriptor> parentScopeModels = modelsPlusImported.getModels();
-      List<org.jetbrains.mps.openapi.model.SModel> ms = ListSequence.fromList(new ArrayList<org.jetbrains.mps.openapi.model.SModel>());
+      Collection<SModel> parentScopeModels = modelsPlusImported.getModels();
+      List<SModel> ms = ListSequence.fromList(new ArrayList<SModel>());
       ListSequence.fromList(ms).addSequence(CollectionSequence.fromCollection(parentScopeModels));
       models = ms;
 
@@ -316,7 +317,7 @@ public class ClassifierResolveUtils {
       }
 
       // putting on-demand imports into model list 
-      List<org.jetbrains.mps.openapi.model.SModel> javaImportedModels = ListSequence.fromList(new ArrayList<org.jetbrains.mps.openapi.model.SModel>());
+      List<SModel> javaImportedModels = ListSequence.fromList(new ArrayList<SModel>());
       ListSequence.fromList(javaImportedModels).addElement(SModelRepository.getInstance().getModelDescriptor(new SModelReference("java.lang", "java_stub")).getSModel().getModelDescriptor());
       for (SNode imp : ListSequence.fromList(SLinkOperations.getTargets(javaImports, "entries", true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
@@ -325,7 +326,7 @@ public class ClassifierResolveUtils {
       })) {
         String pkgName = Tokens_Behavior.call_stringRep_6148840541591415725(imp);
         // FIXME this ignores scope 
-        List<SModelDescriptor> ms = SModelRepository.getInstance().getModelDescriptorsByModelName(pkgName);
+        List<SModel> ms = SModelRepository.getInstance().getModelDescriptorsByModelName(pkgName);
         ListSequence.fromList(javaImportedModels).addSequence(ListSequence.fromList(ms));
       }
       // adding our MPS module scope after java imports as backup 
@@ -342,11 +343,11 @@ public class ClassifierResolveUtils {
     // finally, let's go through all appropriate models and see if there is such a root 
 
     // adding contextNodeModel in the beginning of sequence 
-    models = Sequence.fromIterable(Sequence.<org.jetbrains.mps.openapi.model.SModel>singleton(contextNodeModel)).concat(Sequence.fromIterable(models));
+    models = Sequence.fromIterable(Sequence.<SModel>singleton(contextNodeModel)).concat(Sequence.fromIterable(models));
 
-    for (org.jetbrains.mps.openapi.model.SModel model : Sequence.fromIterable(models)) {
+    for (SModel model : Sequence.fromIterable(models)) {
       // FIXME will be unnecessary when transient models live in a separate repository 
-      if (!(model.equals(contextNodeModel)) && model instanceof SModelDescriptor && ((SModelDescriptor) model).isTransient()) {
+      if (!(model.equals(contextNodeModel)) && model instanceof SModel && (((SModelInternal) model).getModule() instanceof TransientModelsModule)) {
         continue;
       }
 
@@ -383,8 +384,8 @@ public class ClassifierResolveUtils {
 
     // try to resolve as fq name in current scope 
     Iterable<IModule> visibleModules = check_8z6r2b_a0a65a21(check_8z6r2b_a0a0ec0m(check_8z6r2b_a0a0a65a21(SNodeOperations.getModel(contextNode)))).getVisibleModules();
-    result = resolveClassifierByFqNameWithNonStubPriority(Sequence.fromIterable(visibleModules).translate(new ITranslator2<IModule, SModelDescriptor>() {
-      public Iterable<SModelDescriptor> translate(IModule it) {
+    result = resolveClassifierByFqNameWithNonStubPriority(Sequence.fromIterable(visibleModules).translate(new ITranslator2<IModule, SModel>() {
+      public Iterable<SModel> translate(IModule it) {
         return it.getOwnModelDescriptors();
       }
     }), refText);
@@ -479,7 +480,7 @@ public class ClassifierResolveUtils {
     return curr;
   }
 
-  public static SNode resolveFqName(String refText, SearchScope moduleScope, org.jetbrains.mps.openapi.model.SModel contextNodeModel) {
+  public static SNode resolveFqName(String refText, SearchScope moduleScope, SModel contextNodeModel) {
     // FIXME constant 20 
     int[] dotPositions = new int[20];
     int lastDot = -1;
@@ -495,16 +496,16 @@ public class ClassifierResolveUtils {
     for (int p = k - 1; p >= 0; p--) {
 
       String pkgName = refText.substring(0, dotPositions[p]);
-      Iterable<org.jetbrains.mps.openapi.model.SModel> models = getModelsByName(moduleScope, pkgName);
+      Iterable<SModel> models = getModelsByName(moduleScope, pkgName);
 
       if (Sequence.fromIterable(models).isEmpty()) {
         continue;
       }
 
-      for (org.jetbrains.mps.openapi.model.SModel m : Sequence.fromIterable(models)) {
+      for (SModel m : Sequence.fromIterable(models)) {
 
         // FIXME will be unnecessary when transient models live in a separate repository 
-        if (!(m.equals(contextNodeModel)) && m instanceof SModelDescriptor && ((SModelDescriptor) m).isTransient()) {
+        if (!(m.equals(contextNodeModel)) && m instanceof SModel && (((SModelInternal) m).getModule() instanceof TransientModelsModule)) {
           continue;
         }
 
@@ -535,12 +536,12 @@ public class ClassifierResolveUtils {
     return null;
   }
 
-  public static Iterable<org.jetbrains.mps.openapi.model.SModel> getModelsByName(SearchScope moduleScope, String name) {
-    List<org.jetbrains.mps.openapi.model.SModel> models = ListSequence.fromList(new ArrayList<org.jetbrains.mps.openapi.model.SModel>());
+  public static Iterable<SModel> getModelsByName(SearchScope moduleScope, String name) {
+    List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
 
     // THINK maybe we should put those models together, not use if-else 
 
-    org.jetbrains.mps.openapi.model.SModel model = moduleScope.resolve(SModelReference.fromString(name));
+    SModel model = moduleScope.resolve(SModelReference.fromString(name));
     if (model != null) {
       ListSequence.fromList(models).addElement(model);
     } else {
@@ -631,14 +632,14 @@ public class ClassifierResolveUtils {
     return false;
   }
 
-  private static SModelDescriptor check_8z6r2b_a0a1a2(SModel checkedDotOperand) {
+  private static SModelInternal check_8z6r2b_a0a1a2(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }
 
-  private static SModelDescriptor check_8z6r2b_a0a5a2(SModel checkedDotOperand) {
+  private static SModelInternal check_8z6r2b_a0a5a2(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
@@ -652,21 +653,21 @@ public class ClassifierResolveUtils {
     return null;
   }
 
-  private static IModule check_8z6r2b_a0a0j0c(SModelDescriptor checkedDotOperand) {
+  private static IModule check_8z6r2b_a0a0j0c(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModelDescriptor check_8z6r2b_a0a0a9a2(SModel checkedDotOperand) {
+  private static SModelInternal check_8z6r2b_a0a0a9a2(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }
 
-  private static SModelDescriptor check_8z6r2b_a0a0a3(SModel checkedDotOperand) {
+  private static SModelInternal check_8z6r2b_a0a0a3(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
@@ -680,21 +681,21 @@ public class ClassifierResolveUtils {
     return null;
   }
 
-  private static IModule check_8z6r2b_a0a3a3(SModelDescriptor checkedDotOperand) {
+  private static IModule check_8z6r2b_a0a3a3(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModelDescriptor check_8z6r2b_a0a0d0d(SModel checkedDotOperand) {
+  private static SModelInternal check_8z6r2b_a0a0d0d(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }
 
-  private static SModelDescriptor check_8z6r2b_a0a25a21(SModel checkedDotOperand) {
+  private static SModelInternal check_8z6r2b_a0a25a21(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
@@ -708,14 +709,14 @@ public class ClassifierResolveUtils {
     return null;
   }
 
-  private static IModule check_8z6r2b_a0a0ec0m(SModelDescriptor checkedDotOperand) {
+  private static IModule check_8z6r2b_a0a0ec0m(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModelDescriptor check_8z6r2b_a0a0a65a21(SModel checkedDotOperand) {
+  private static SModelInternal check_8z6r2b_a0a0a65a21(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }

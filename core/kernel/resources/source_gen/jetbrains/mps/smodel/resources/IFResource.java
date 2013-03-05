@@ -5,12 +5,12 @@ package jetbrains.mps.smodel.resources;
 import jetbrains.mps.make.resources.IResource;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 
 @Deprecated
 public interface IFResource extends IResource {
   public String packageName();
   public Map<String, Object> contents();
   public IModule module();
-  public SModelDescriptor model();
+  public SModel model();
 }

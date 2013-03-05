@@ -5,400 +5,400 @@
     <nodeInfo nodeId="2434140849679604378" fileName="IconManager.java" startLine="57" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="IMAGE_LOADED" />
     <nodeInfo nodeId="2434140849679604388" fileName="IconManager.java" startLine="58" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourPathsToIcons" />
     <nodeInfo nodeId="189703917320704808" fileName="IconManager.java" startLine="59" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourAspectsToIcons" />
-    <nodeInfo nodeId="2434140849679605140" fileName="IconManager.java" startLine="64" startPosition="31" endLine="65" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2434140849679605143" fileName="IconManager.java" startLine="68" startPosition="32" endLine="69" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2434140849679604462" fileName="IconManager.java" startLine="76" startPosition="78" endLine="77" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2434140849679604473" fileName="IconManager.java" startLine="80" startPosition="60" endLine="81" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2434140849679605146" fileName="IconManager.java" startLine="86" startPosition="29" endLine="87" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2434140849679605154" fileName="IconManager.java" startLine="88" startPosition="46" endLine="89" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2434140849679605162" fileName="IconManager.java" startLine="90" startPosition="9" endLine="91" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5943936487467192248" fileName="IconManager.java" startLine="92" startPosition="32" endLine="93" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5943936487467192269" fileName="IconManager.java" startLine="94" startPosition="15" endLine="95" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5943936487467192285" fileName="IconManager.java" startLine="96" startPosition="46" endLine="97" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2434140849679605233" fileName="IconManager.java" startLine="101" startPosition="40" endLine="102" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2434140849679605224" fileName="IconManager.java" startLine="103" startPosition="18" endLine="104" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2434140849679605251" fileName="IconManager.java" startLine="108" startPosition="64" endLine="109" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2434140849679605248" fileName="IconManager.java" startLine="110" startPosition="18" endLine="111" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2434140849679605253" fileName="IconManager.java" startLine="113" startPosition="9" endLine="114" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2434140849679605264" fileName="IconManager.java" startLine="115" startPosition="50" endLine="116" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2434140849679605271" fileName="IconManager.java" startLine="118" startPosition="191" endLine="119" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2434140849679605278" fileName="IconManager.java" startLine="120" startPosition="9" endLine="121" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2434140849679605284" fileName="IconManager.java" startLine="121" startPosition="40" endLine="122" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2434140849679605294" fileName="IconManager.java" startLine="123" startPosition="35" endLine="124" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2434140849679605301" fileName="IconManager.java" startLine="125" startPosition="9" endLine="126" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2434140849679605312" fileName="IconManager.java" startLine="127" startPosition="32" endLine="128" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2434140849679605322" fileName="IconManager.java" startLine="128" startPosition="74" endLine="129" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2434140849679605340" fileName="IconManager.java" startLine="130" startPosition="54" endLine="131" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2434140849679605351" fileName="IconManager.java" startLine="132" startPosition="11" endLine="133" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2434140849679605353" fileName="IconManager.java" startLine="134" startPosition="9" endLine="135" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2434140849679604508" fileName="IconManager.java" startLine="141" startPosition="40" endLine="142" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2434140849679604521" fileName="IconManager.java" startLine="143" startPosition="25" endLine="144" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2434140849679604523" fileName="IconManager.java" startLine="145" startPosition="7" endLine="146" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2434140849679604529" fileName="IconManager.java" startLine="147" startPosition="5" endLine="148" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2434140849679604539" fileName="IconManager.java" startLine="151" startPosition="80" endLine="152" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2434140849679604550" fileName="IconManager.java" startLine="153" startPosition="27" endLine="154" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2434140849679604565" fileName="IconManager.java" startLine="155" startPosition="29" endLine="156" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2434140849679604576" fileName="IconManager.java" startLine="157" startPosition="27" endLine="158" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2434140849679604578" fileName="IconManager.java" startLine="161" startPosition="5" endLine="162" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2434140849679604586" fileName="IconManager.java" startLine="165" startPosition="68" endLine="166" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2434140849679604592" fileName="IconManager.java" startLine="166" startPosition="92" endLine="167" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2434140849679604596" fileName="IconManager.java" startLine="167" startPosition="20" endLine="168" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2434140849679604604" fileName="IconManager.java" startLine="169" startPosition="56" endLine="170" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2434140849679604608" fileName="IconManager.java" startLine="170" startPosition="148" endLine="171" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2434140849679604635" fileName="IconManager.java" startLine="174" startPosition="72" endLine="175" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2434140849679604632" fileName="IconManager.java" startLine="176" startPosition="14" endLine="177" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2434140849679604637" fileName="IconManager.java" startLine="179" startPosition="5" endLine="180" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2434140849679604645" fileName="IconManager.java" startLine="183" startPosition="60" endLine="184" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2434140849679604662" fileName="IconManager.java" startLine="185" startPosition="9" endLine="186" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2434140849679604722" fileName="IconManager.java" startLine="187" startPosition="29" endLine="188" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2434140849679604675" fileName="IconManager.java" startLine="189" startPosition="14" endLine="190" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2434140849679604687" fileName="IconManager.java" startLine="191" startPosition="28" endLine="192" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2434140849679604698" fileName="IconManager.java" startLine="193" startPosition="15" endLine="194" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2434140849679604693" fileName="IconManager.java" startLine="195" startPosition="45" endLine="196" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2434140849679604705" fileName="IconManager.java" startLine="197" startPosition="11" endLine="198" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2434140849679604719" fileName="IconManager.java" startLine="199" startPosition="29" endLine="200" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2434140849679604654" fileName="IconManager.java" startLine="204" startPosition="27" endLine="205" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2434140849679604729" fileName="IconManager.java" startLine="206" startPosition="5" endLine="207" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2194967571179864540" fileName="IconManager.java" startLine="210" startPosition="88" endLine="211" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2194967571179864576" fileName="IconManager.java" startLine="213" startPosition="68" endLine="214" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2194967571179864586" fileName="IconManager.java" startLine="215" startPosition="70" endLine="216" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2194967571179864564" fileName="IconManager.java" startLine="218" startPosition="5" endLine="219" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2574746063622061908" fileName="IconManager.java" startLine="223" startPosition="44" endLine="224" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2434140849679604742" fileName="IconManager.java" startLine="224" startPosition="66" endLine="225" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2434140849679604770" fileName="IconManager.java" startLine="226" startPosition="27" endLine="227" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2434140849679604767" fileName="IconManager.java" startLine="229" startPosition="63" endLine="230" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2434140849679604764" fileName="IconManager.java" startLine="232" startPosition="68" endLine="233" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2434140849679604761" fileName="IconManager.java" startLine="235" startPosition="58" endLine="236" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2434140849679604773" fileName="IconManager.java" startLine="238" startPosition="5" endLine="239" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2434140849679604786" fileName="IconManager.java" startLine="243" startPosition="38" endLine="244" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2434140849679604793" fileName="IconManager.java" startLine="246" startPosition="37" endLine="247" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2434140849679604800" fileName="IconManager.java" startLine="249" startPosition="37" endLine="250" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2434140849679604807" fileName="IconManager.java" startLine="252" startPosition="35" endLine="253" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2434140849679604809" fileName="IconManager.java" startLine="254" startPosition="5" endLine="255" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2434140849679604822" fileName="IconManager.java" startLine="259" startPosition="38" endLine="260" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2434140849679604829" fileName="IconManager.java" startLine="262" startPosition="35" endLine="263" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2434140849679604834" fileName="IconManager.java" startLine="264" startPosition="5" endLine="265" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2434140849679604842" fileName="IconManager.java" startLine="268" startPosition="45" endLine="269" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2434140849679604851" fileName="IconManager.java" startLine="270" startPosition="24" endLine="271" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2434140849679604864" fileName="IconManager.java" startLine="271" startPosition="51" endLine="272" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2434140849679604900" fileName="IconManager.java" startLine="273" startPosition="11" endLine="274" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2434140849679604906" fileName="IconManager.java" startLine="274" startPosition="36" endLine="275" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2434140849679604913" fileName="IconManager.java" startLine="276" startPosition="22" endLine="277" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2434140849679604942" fileName="IconManager.java" startLine="278" startPosition="44" endLine="279" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="2434140849679604937" fileName="IconManager.java" startLine="280" startPosition="18" endLine="281" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2434140849679604871" fileName="IconManager.java" startLine="284" startPosition="31" endLine="285" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2434140849679604895" fileName="IconManager.java" startLine="288" startPosition="27" endLine="289" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2434140849679604882" fileName="IconManager.java" startLine="291" startPosition="33" endLine="292" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2434140849679604943" fileName="IconManager.java" startLine="294" startPosition="7" endLine="295" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2434140849679604959" fileName="IconManager.java" startLine="296" startPosition="60" endLine="297" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2434140849679604963" fileName="IconManager.java" startLine="299" startPosition="5" endLine="300" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2434140849679604973" fileName="IconManager.java" startLine="303" startPosition="71" endLine="304" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2434140849679604985" fileName="IconManager.java" startLine="305" startPosition="23" endLine="306" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2434140849679604992" fileName="IconManager.java" startLine="306" startPosition="68" endLine="307" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2434140849679605004" fileName="IconManager.java" startLine="308" startPosition="34" endLine="309" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2434140849679605010" fileName="IconManager.java" startLine="311" startPosition="5" endLine="312" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="189703917320704961" fileName="IconManager.java" startLine="315" startPosition="62" endLine="316" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="189703917320704954" fileName="IconManager.java" startLine="317" startPosition="23" endLine="318" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="189703917320704971" fileName="IconManager.java" startLine="319" startPosition="5" endLine="320" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="189703917320704924" fileName="IconManager.java" startLine="323" startPosition="10" endLine="324" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="189703917320704833" fileName="IconManager.java" startLine="324" startPosition="80" endLine="325" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="189703917320704839" fileName="IconManager.java" startLine="325" startPosition="100" endLine="326" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="189703917320704845" fileName="IconManager.java" startLine="326" startPosition="102" endLine="327" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="189703917320704851" fileName="IconManager.java" startLine="327" startPosition="108" endLine="328" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="189703917320704857" fileName="IconManager.java" startLine="328" startPosition="104" endLine="329" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="189703917320704863" fileName="IconManager.java" startLine="329" startPosition="98" endLine="330" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="189703917320704869" fileName="IconManager.java" startLine="330" startPosition="108" endLine="331" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="189703917320704875" fileName="IconManager.java" startLine="331" startPosition="106" endLine="332" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="189703917320704881" fileName="IconManager.java" startLine="332" startPosition="98" endLine="333" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="189703917320704887" fileName="IconManager.java" startLine="333" startPosition="110" endLine="334" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="189703917320704893" fileName="IconManager.java" startLine="334" startPosition="92" endLine="335" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="189703917320704899" fileName="IconManager.java" startLine="335" startPosition="104" endLine="336" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="189703917320704905" fileName="IconManager.java" startLine="336" startPosition="96" endLine="337" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="189703917320704911" fileName="IconManager.java" startLine="337" startPosition="94" endLine="338" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="189703917320704917" fileName="IconManager.java" startLine="338" startPosition="102" endLine="339" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2434140849679604403" fileName="IconManager.java" startLine="61" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintIcon#(Ljava/awt/Component;Ljava/awt/Graphics;II)V" />
-    <nodeInfo nodeId="2434140849679604420" fileName="IconManager.java" startLine="73" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IconManager#()V" />
-    <nodeInfo nodeId="2434140849679605222" fileName="IconManager.java" startLine="103" startPosition="16" endLine="105" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2434140849679605246" fileName="IconManager.java" startLine="110" startPosition="16" endLine="112" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2434140849679604630" fileName="IconManager.java" startLine="176" startPosition="12" endLine="178" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2434140849679604935" fileName="IconManager.java" startLine="280" startPosition="16" endLine="282" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2434140849679604414" fileName="IconManager.java" startLine="64" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIconWidth#()I" />
-    <nodeInfo nodeId="2434140849679604417" fileName="IconManager.java" startLine="68" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIconHeight#()I" />
-    <nodeInfo nodeId="2434140849679604455" fileName="IconManager.java" startLine="76" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getIconWithoutAdditionalPart#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljavax/swing/Icon;" />
-    <nodeInfo nodeId="2434140849679604466" fileName="IconManager.java" startLine="80" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getIconFor#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljavax/swing/Icon;" />
-    <nodeInfo nodeId="2434140849679605150" fileName="IconManager.java" startLine="87" startPosition="29" endLine="90" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5943936487467192280" fileName="IconManager.java" startLine="95" startPosition="151" endLine="98" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2434140849679605259" fileName="IconManager.java" startLine="114" startPosition="104" endLine="117" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2434140849679605266" fileName="IconManager.java" startLine="117" startPosition="9" endLine="120" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2434140849679605290" fileName="IconManager.java" startLine="122" startPosition="36" endLine="125" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2434140849679605328" fileName="IconManager.java" startLine="129" startPosition="41" endLine="132" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="2434140849679604516" fileName="IconManager.java" startLine="142" startPosition="119" endLine="145" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2434140849679604571" fileName="IconManager.java" startLine="156" startPosition="45" endLine="159" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2434140849679604714" fileName="IconManager.java" startLine="198" startPosition="49" endLine="201" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2434140849679604757" fileName="IconManager.java" startLine="234" startPosition="12" endLine="237" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2434140849679604781" fileName="IconManager.java" startLine="242" startPosition="49" endLine="245" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2434140849679604788" fileName="IconManager.java" startLine="245" startPosition="5" endLine="248" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2434140849679604795" fileName="IconManager.java" startLine="248" startPosition="5" endLine="251" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2434140849679604802" fileName="IconManager.java" startLine="251" startPosition="5" endLine="254" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2434140849679604817" fileName="IconManager.java" startLine="258" startPosition="55" endLine="261" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2434140849679604824" fileName="IconManager.java" startLine="261" startPosition="5" endLine="264" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2434140849679604890" fileName="IconManager.java" startLine="287" startPosition="13" endLine="290" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2434140849679604949" fileName="IconManager.java" startLine="295" startPosition="34" endLine="298" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2434140849679604997" fileName="IconManager.java" startLine="307" startPosition="30" endLine="310" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="189703917320704793" fileName="IconManager.java" startLine="316" startPosition="67" endLine="319" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2434140849679604600" fileName="IconManager.java" startLine="168" startPosition="21" endLine="172" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2434140849679605218" fileName="IconManager.java" startLine="100" startPosition="11" endLine="105" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2434140849679605242" fileName="IconManager.java" startLine="107" startPosition="31" endLine="112" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2434140849679604622" fileName="IconManager.java" startLine="173" startPosition="23" endLine="178" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2434140849679604690" fileName="IconManager.java" startLine="192" startPosition="24" endLine="197" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="2194967571179864568" fileName="IconManager.java" startLine="212" startPosition="29" endLine="217" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2434140849679604926" fileName="IconManager.java" startLine="277" startPosition="71" endLine="282" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2434140849679604560" fileName="IconManager.java" startLine="154" startPosition="99" endLine="160" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2434140849679604754" fileName="IconManager.java" startLine="231" startPosition="12" endLine="237" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5943936487467192261" fileName="IconManager.java" startLine="93" startPosition="38" endLine="100" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="2434140849679605237" fileName="IconManager.java" startLine="106" startPosition="9" endLine="113" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2434140849679604503" fileName="IconManager.java" startLine="140" startPosition="67" endLine="147" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="2434140849679604617" fileName="IconManager.java" startLine="172" startPosition="5" endLine="179" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2194967571179864554" fileName="IconManager.java" startLine="211" startPosition="55" endLine="218" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2434140849679604879" fileName="IconManager.java" startLine="286" startPosition="17" endLine="293" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="2434140849679604980" fileName="IconManager.java" startLine="304" startPosition="46" endLine="311" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2434140849679605012" fileName="IconManager.java" startLine="315" startPosition="0" endLine="322" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getIconForAspect#(Ljetbrains/mps/smodel/LanguageAspect;)Ljavax/swing/Icon;" />
-    <nodeInfo nodeId="2434140849679605307" fileName="IconManager.java" startLine="126" startPosition="174" endLine="134" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2434140849679604910" fileName="IconManager.java" startLine="275" startPosition="24" endLine="283" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="2434140849679604545" fileName="IconManager.java" startLine="152" startPosition="76" endLine="161" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2434140849679604751" fileName="IconManager.java" startLine="228" startPosition="12" endLine="237" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2434140849679604811" fileName="IconManager.java" startLine="258" startPosition="0" endLine="267" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getIconFor#(Ljetbrains/mps/smodel/MPSModuleOwner;)Ljavax/swing/Icon;" />
-    <nodeInfo nodeId="2434140849679604497" fileName="IconManager.java" startLine="140" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getIconForConcept#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljavax/swing/Icon;" />
-    <nodeInfo nodeId="2194967571179864532" fileName="IconManager.java" startLine="210" startPosition="0" endLine="221" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getIconForModelReference#(Ljetbrains/mps/smodel/SModelReference;)Ljavax/swing/Icon;" />
-    <nodeInfo nodeId="2434140849679604965" fileName="IconManager.java" startLine="303" startPosition="0" endLine="314" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="loadIcon#(Ljava/lang/String;Z)Ljavax/swing/Icon;" />
-    <nodeInfo nodeId="2434140849679604397" fileName="IconManager.java" startLine="60" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EMPTY_ICON" />
-    <nodeInfo nodeId="2434140849679604682" fileName="IconManager.java" startLine="190" startPosition="51" endLine="202" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2434140849679604747" fileName="IconManager.java" startLine="225" startPosition="71" endLine="237" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2434140849679604531" fileName="IconManager.java" startLine="151" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getIconForConcept#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljavax/swing/Icon;" />
-    <nodeInfo nodeId="2434140849679604673" fileName="IconManager.java" startLine="189" startPosition="12" endLine="203" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2434140849679605156" fileName="IconManager.java" startLine="91" startPosition="118" endLine="106" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2434140849679604775" fileName="IconManager.java" startLine="242" startPosition="0" endLine="257" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getIconFor#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljavax/swing/Icon;" />
-    <nodeInfo nodeId="2434140849679604737" fileName="IconManager.java" startLine="222" startPosition="79" endLine="238" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2434140849679604580" fileName="IconManager.java" startLine="165" startPosition="0" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getIconForConceptFQName#(Ljava/lang/String;)Ljavax/swing/Icon;" />
-    <nodeInfo nodeId="2434140849679604669" fileName="IconManager.java" startLine="186" startPosition="100" endLine="203" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2434140849679604731" fileName="IconManager.java" startLine="222" startPosition="0" endLine="241" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getIconFor#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljavax/swing/Icon;" />
-    <nodeInfo nodeId="2434140849679604651" fileName="IconManager.java" startLine="184" startPosition="50" endLine="206" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="2434140849679604868" fileName="IconManager.java" startLine="272" startPosition="28" endLine="294" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="2434140849679604639" fileName="IconManager.java" startLine="183" startPosition="0" endLine="209" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getIconForNamespace#(Ljava/lang/String;)Ljavax/swing/Icon;" />
-    <nodeInfo nodeId="2434140849679604846" fileName="IconManager.java" startLine="269" startPosition="26" endLine="299" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2434140849679604836" fileName="IconManager.java" startLine="268" startPosition="0" endLine="302" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getIconFor#(Ljetbrains/mps/vfs/IFile;)Ljavax/swing/Icon;" />
-    <nodeInfo nodeId="2434140849679604494" fileName="IconManager.java" startLine="86" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljavax/swing/Icon;" />
-    <nodeInfo nodeId="2434140849679604486" fileName="IconManager.java" startLine="84" startPosition="93" endLine="137" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2434140849679604477" fileName="IconManager.java" startLine="84" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getIconFor#(Lorg/jetbrains/mps/openapi/model/SNode;Z)Ljavax/swing/Icon;" />
-    <scopeInfo nodeId="2434140849679605138" fileName="IconManager.java" startLine="61" startPosition="66" endLine="61" endPosition="66" />
-    <scopeInfo nodeId="2434140849679604423" fileName="IconManager.java" startLine="73" startPosition="24" endLine="73" endPosition="24" />
-    <scopeInfo nodeId="5943936487467192263" fileName="IconManager.java" startLine="99" startPosition="0" endLine="99" endPosition="38">
+    <nodeInfo nodeId="2434140849679605140" fileName="IconManager.java" startLine="66" startPosition="31" endLine="67" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2434140849679605143" fileName="IconManager.java" startLine="71" startPosition="32" endLine="72" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2434140849679604462" fileName="IconManager.java" startLine="79" startPosition="78" endLine="80" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2434140849679604473" fileName="IconManager.java" startLine="83" startPosition="60" endLine="84" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2434140849679605146" fileName="IconManager.java" startLine="90" startPosition="29" endLine="91" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2434140849679605154" fileName="IconManager.java" startLine="92" startPosition="46" endLine="93" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2434140849679605162" fileName="IconManager.java" startLine="94" startPosition="9" endLine="95" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5943936487467192248" fileName="IconManager.java" startLine="96" startPosition="32" endLine="97" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5943936487467192269" fileName="IconManager.java" startLine="98" startPosition="15" endLine="99" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5943936487467192285" fileName="IconManager.java" startLine="100" startPosition="46" endLine="101" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2434140849679605233" fileName="IconManager.java" startLine="105" startPosition="40" endLine="106" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2434140849679605224" fileName="IconManager.java" startLine="107" startPosition="18" endLine="108" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2434140849679605251" fileName="IconManager.java" startLine="112" startPosition="64" endLine="113" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2434140849679605248" fileName="IconManager.java" startLine="114" startPosition="18" endLine="115" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2434140849679605253" fileName="IconManager.java" startLine="117" startPosition="9" endLine="118" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2434140849679605264" fileName="IconManager.java" startLine="119" startPosition="89" endLine="120" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2434140849679605271" fileName="IconManager.java" startLine="122" startPosition="171" endLine="123" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2434140849679605278" fileName="IconManager.java" startLine="124" startPosition="9" endLine="125" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2434140849679605284" fileName="IconManager.java" startLine="125" startPosition="40" endLine="126" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2434140849679605294" fileName="IconManager.java" startLine="127" startPosition="35" endLine="128" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2434140849679605301" fileName="IconManager.java" startLine="129" startPosition="9" endLine="130" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2434140849679605312" fileName="IconManager.java" startLine="131" startPosition="32" endLine="132" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2434140849679605322" fileName="IconManager.java" startLine="132" startPosition="74" endLine="133" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2434140849679605340" fileName="IconManager.java" startLine="134" startPosition="54" endLine="135" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2434140849679605351" fileName="IconManager.java" startLine="136" startPosition="11" endLine="137" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2434140849679605353" fileName="IconManager.java" startLine="138" startPosition="9" endLine="139" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2434140849679604508" fileName="IconManager.java" startLine="145" startPosition="40" endLine="146" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2434140849679604521" fileName="IconManager.java" startLine="147" startPosition="25" endLine="148" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2434140849679604523" fileName="IconManager.java" startLine="149" startPosition="7" endLine="150" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2434140849679604529" fileName="IconManager.java" startLine="151" startPosition="5" endLine="152" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2434140849679604539" fileName="IconManager.java" startLine="155" startPosition="80" endLine="156" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2434140849679604550" fileName="IconManager.java" startLine="157" startPosition="27" endLine="158" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2434140849679604565" fileName="IconManager.java" startLine="159" startPosition="29" endLine="160" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2434140849679604576" fileName="IconManager.java" startLine="161" startPosition="27" endLine="162" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2434140849679604578" fileName="IconManager.java" startLine="165" startPosition="5" endLine="166" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2434140849679604586" fileName="IconManager.java" startLine="169" startPosition="68" endLine="170" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2434140849679604592" fileName="IconManager.java" startLine="170" startPosition="92" endLine="171" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2434140849679604596" fileName="IconManager.java" startLine="171" startPosition="20" endLine="172" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2434140849679604604" fileName="IconManager.java" startLine="173" startPosition="56" endLine="174" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2434140849679604608" fileName="IconManager.java" startLine="174" startPosition="148" endLine="175" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2434140849679604635" fileName="IconManager.java" startLine="178" startPosition="72" endLine="179" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2434140849679604632" fileName="IconManager.java" startLine="180" startPosition="14" endLine="181" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2434140849679604637" fileName="IconManager.java" startLine="183" startPosition="5" endLine="184" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2434140849679604645" fileName="IconManager.java" startLine="187" startPosition="60" endLine="188" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2434140849679604662" fileName="IconManager.java" startLine="189" startPosition="9" endLine="190" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2434140849679604722" fileName="IconManager.java" startLine="191" startPosition="29" endLine="192" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2434140849679604675" fileName="IconManager.java" startLine="193" startPosition="14" endLine="194" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2434140849679604687" fileName="IconManager.java" startLine="195" startPosition="28" endLine="196" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2434140849679604698" fileName="IconManager.java" startLine="197" startPosition="15" endLine="198" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2434140849679604693" fileName="IconManager.java" startLine="199" startPosition="45" endLine="200" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2434140849679604705" fileName="IconManager.java" startLine="201" startPosition="11" endLine="202" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2434140849679604719" fileName="IconManager.java" startLine="203" startPosition="29" endLine="204" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2434140849679604654" fileName="IconManager.java" startLine="208" startPosition="27" endLine="209" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2434140849679604729" fileName="IconManager.java" startLine="210" startPosition="5" endLine="211" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2194967571179864540" fileName="IconManager.java" startLine="214" startPosition="88" endLine="215" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2194967571179864576" fileName="IconManager.java" startLine="217" startPosition="68" endLine="218" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2194967571179864586" fileName="IconManager.java" startLine="219" startPosition="70" endLine="220" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2194967571179864564" fileName="IconManager.java" startLine="222" startPosition="5" endLine="223" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2574746063622061908" fileName="IconManager.java" startLine="227" startPosition="34" endLine="228" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2434140849679604742" fileName="IconManager.java" startLine="228" startPosition="54" endLine="229" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2434140849679604770" fileName="IconManager.java" startLine="230" startPosition="27" endLine="231" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2434140849679604767" fileName="IconManager.java" startLine="233" startPosition="63" endLine="234" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2434140849679604764" fileName="IconManager.java" startLine="236" startPosition="68" endLine="237" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2434140849679604761" fileName="IconManager.java" startLine="239" startPosition="58" endLine="240" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2434140849679604773" fileName="IconManager.java" startLine="242" startPosition="5" endLine="243" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2434140849679604786" fileName="IconManager.java" startLine="247" startPosition="38" endLine="248" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2434140849679604793" fileName="IconManager.java" startLine="250" startPosition="37" endLine="251" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2434140849679604800" fileName="IconManager.java" startLine="253" startPosition="37" endLine="254" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2434140849679604807" fileName="IconManager.java" startLine="256" startPosition="35" endLine="257" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2434140849679604809" fileName="IconManager.java" startLine="258" startPosition="5" endLine="259" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2434140849679604822" fileName="IconManager.java" startLine="263" startPosition="38" endLine="264" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2434140849679604829" fileName="IconManager.java" startLine="266" startPosition="35" endLine="267" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2434140849679604834" fileName="IconManager.java" startLine="268" startPosition="5" endLine="269" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2434140849679604842" fileName="IconManager.java" startLine="272" startPosition="45" endLine="273" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2434140849679604851" fileName="IconManager.java" startLine="274" startPosition="24" endLine="275" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2434140849679604864" fileName="IconManager.java" startLine="275" startPosition="51" endLine="276" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2434140849679604900" fileName="IconManager.java" startLine="277" startPosition="11" endLine="278" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2434140849679604906" fileName="IconManager.java" startLine="278" startPosition="36" endLine="279" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2434140849679604913" fileName="IconManager.java" startLine="280" startPosition="22" endLine="281" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2434140849679604942" fileName="IconManager.java" startLine="282" startPosition="44" endLine="283" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="2434140849679604937" fileName="IconManager.java" startLine="284" startPosition="18" endLine="285" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2434140849679604871" fileName="IconManager.java" startLine="288" startPosition="31" endLine="289" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2434140849679604895" fileName="IconManager.java" startLine="292" startPosition="27" endLine="293" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2434140849679604882" fileName="IconManager.java" startLine="295" startPosition="33" endLine="296" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2434140849679604943" fileName="IconManager.java" startLine="298" startPosition="7" endLine="299" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2434140849679604959" fileName="IconManager.java" startLine="300" startPosition="60" endLine="301" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2434140849679604963" fileName="IconManager.java" startLine="303" startPosition="5" endLine="304" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2434140849679604973" fileName="IconManager.java" startLine="307" startPosition="71" endLine="308" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2434140849679604985" fileName="IconManager.java" startLine="309" startPosition="23" endLine="310" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2434140849679604992" fileName="IconManager.java" startLine="310" startPosition="68" endLine="311" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2434140849679605004" fileName="IconManager.java" startLine="312" startPosition="34" endLine="313" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2434140849679605010" fileName="IconManager.java" startLine="315" startPosition="5" endLine="316" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="189703917320704961" fileName="IconManager.java" startLine="319" startPosition="62" endLine="320" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="189703917320704954" fileName="IconManager.java" startLine="321" startPosition="23" endLine="322" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="189703917320704971" fileName="IconManager.java" startLine="323" startPosition="5" endLine="324" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="189703917320704924" fileName="IconManager.java" startLine="327" startPosition="10" endLine="328" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="189703917320704833" fileName="IconManager.java" startLine="328" startPosition="80" endLine="329" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="189703917320704839" fileName="IconManager.java" startLine="329" startPosition="100" endLine="330" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="189703917320704845" fileName="IconManager.java" startLine="330" startPosition="102" endLine="331" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="189703917320704851" fileName="IconManager.java" startLine="331" startPosition="108" endLine="332" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="189703917320704857" fileName="IconManager.java" startLine="332" startPosition="104" endLine="333" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="189703917320704863" fileName="IconManager.java" startLine="333" startPosition="98" endLine="334" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="189703917320704869" fileName="IconManager.java" startLine="334" startPosition="108" endLine="335" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="189703917320704875" fileName="IconManager.java" startLine="335" startPosition="106" endLine="336" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="189703917320704881" fileName="IconManager.java" startLine="336" startPosition="98" endLine="337" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="189703917320704887" fileName="IconManager.java" startLine="337" startPosition="110" endLine="338" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="189703917320704893" fileName="IconManager.java" startLine="338" startPosition="92" endLine="339" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="189703917320704899" fileName="IconManager.java" startLine="339" startPosition="104" endLine="340" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="189703917320704905" fileName="IconManager.java" startLine="340" startPosition="96" endLine="341" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="189703917320704911" fileName="IconManager.java" startLine="341" startPosition="94" endLine="342" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="189703917320704917" fileName="IconManager.java" startLine="342" startPosition="102" endLine="343" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2434140849679604420" fileName="IconManager.java" startLine="76" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IconManager#()V" />
+    <nodeInfo nodeId="2434140849679605222" fileName="IconManager.java" startLine="107" startPosition="16" endLine="109" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2434140849679605246" fileName="IconManager.java" startLine="114" startPosition="16" endLine="116" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2434140849679604630" fileName="IconManager.java" startLine="180" startPosition="12" endLine="182" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2434140849679604935" fileName="IconManager.java" startLine="284" startPosition="16" endLine="286" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2434140849679604403" fileName="IconManager.java" startLine="61" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintIcon#(Ljava/awt/Component;Ljava/awt/Graphics;II)V" />
+    <nodeInfo nodeId="2434140849679604455" fileName="IconManager.java" startLine="79" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getIconWithoutAdditionalPart#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="2434140849679604466" fileName="IconManager.java" startLine="83" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getIconFor#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="2434140849679605150" fileName="IconManager.java" startLine="91" startPosition="29" endLine="94" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5943936487467192280" fileName="IconManager.java" startLine="99" startPosition="151" endLine="102" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2434140849679605259" fileName="IconManager.java" startLine="118" startPosition="104" endLine="121" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2434140849679605266" fileName="IconManager.java" startLine="121" startPosition="9" endLine="124" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2434140849679605290" fileName="IconManager.java" startLine="126" startPosition="36" endLine="129" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2434140849679605328" fileName="IconManager.java" startLine="133" startPosition="41" endLine="136" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="2434140849679604516" fileName="IconManager.java" startLine="146" startPosition="119" endLine="149" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2434140849679604571" fileName="IconManager.java" startLine="160" startPosition="45" endLine="163" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2434140849679604714" fileName="IconManager.java" startLine="202" startPosition="49" endLine="205" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2434140849679604757" fileName="IconManager.java" startLine="238" startPosition="12" endLine="241" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2434140849679604781" fileName="IconManager.java" startLine="246" startPosition="49" endLine="249" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2434140849679604788" fileName="IconManager.java" startLine="249" startPosition="5" endLine="252" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2434140849679604795" fileName="IconManager.java" startLine="252" startPosition="5" endLine="255" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2434140849679604802" fileName="IconManager.java" startLine="255" startPosition="5" endLine="258" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2434140849679604817" fileName="IconManager.java" startLine="262" startPosition="55" endLine="265" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2434140849679604824" fileName="IconManager.java" startLine="265" startPosition="5" endLine="268" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2434140849679604890" fileName="IconManager.java" startLine="291" startPosition="13" endLine="294" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2434140849679604949" fileName="IconManager.java" startLine="299" startPosition="34" endLine="302" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2434140849679604997" fileName="IconManager.java" startLine="311" startPosition="30" endLine="314" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="189703917320704793" fileName="IconManager.java" startLine="320" startPosition="67" endLine="323" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2434140849679604414" fileName="IconManager.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIconWidth#()I" />
+    <nodeInfo nodeId="2434140849679604417" fileName="IconManager.java" startLine="70" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIconHeight#()I" />
+    <nodeInfo nodeId="2434140849679604600" fileName="IconManager.java" startLine="172" startPosition="21" endLine="176" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2434140849679605218" fileName="IconManager.java" startLine="104" startPosition="11" endLine="109" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2434140849679605242" fileName="IconManager.java" startLine="111" startPosition="31" endLine="116" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2434140849679604622" fileName="IconManager.java" startLine="177" startPosition="23" endLine="182" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2434140849679604690" fileName="IconManager.java" startLine="196" startPosition="24" endLine="201" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="2194967571179864568" fileName="IconManager.java" startLine="216" startPosition="29" endLine="221" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2434140849679604926" fileName="IconManager.java" startLine="281" startPosition="71" endLine="286" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2434140849679604560" fileName="IconManager.java" startLine="158" startPosition="99" endLine="164" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2434140849679604754" fileName="IconManager.java" startLine="235" startPosition="12" endLine="241" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5943936487467192261" fileName="IconManager.java" startLine="97" startPosition="38" endLine="104" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="2434140849679605237" fileName="IconManager.java" startLine="110" startPosition="9" endLine="117" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2434140849679604503" fileName="IconManager.java" startLine="144" startPosition="67" endLine="151" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="2434140849679604617" fileName="IconManager.java" startLine="176" startPosition="5" endLine="183" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2194967571179864554" fileName="IconManager.java" startLine="215" startPosition="55" endLine="222" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2434140849679604879" fileName="IconManager.java" startLine="290" startPosition="17" endLine="297" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="2434140849679604980" fileName="IconManager.java" startLine="308" startPosition="46" endLine="315" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2434140849679605012" fileName="IconManager.java" startLine="319" startPosition="0" endLine="326" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getIconForAspect#(Ljetbrains/mps/smodel/LanguageAspect;)Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="2434140849679605307" fileName="IconManager.java" startLine="130" startPosition="174" endLine="138" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2434140849679604910" fileName="IconManager.java" startLine="279" startPosition="24" endLine="287" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="2434140849679604545" fileName="IconManager.java" startLine="156" startPosition="76" endLine="165" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2434140849679604751" fileName="IconManager.java" startLine="232" startPosition="12" endLine="241" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2434140849679604811" fileName="IconManager.java" startLine="262" startPosition="0" endLine="271" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getIconFor#(Ljetbrains/mps/smodel/MPSModuleOwner;)Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="2434140849679604497" fileName="IconManager.java" startLine="144" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getIconForConcept#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="2194967571179864532" fileName="IconManager.java" startLine="214" startPosition="0" endLine="225" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getIconForModelReference#(Ljetbrains/mps/smodel/SModelReference;)Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="2434140849679604965" fileName="IconManager.java" startLine="307" startPosition="0" endLine="318" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="loadIcon#(Ljava/lang/String;Z)Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="2434140849679604682" fileName="IconManager.java" startLine="194" startPosition="51" endLine="206" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2434140849679604747" fileName="IconManager.java" startLine="229" startPosition="71" endLine="241" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2434140849679604531" fileName="IconManager.java" startLine="155" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getIconForConcept#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="2434140849679604673" fileName="IconManager.java" startLine="193" startPosition="12" endLine="207" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2434140849679604397" fileName="IconManager.java" startLine="60" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EMPTY_ICON" />
+    <nodeInfo nodeId="2434140849679605156" fileName="IconManager.java" startLine="95" startPosition="118" endLine="110" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2434140849679604775" fileName="IconManager.java" startLine="246" startPosition="0" endLine="261" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getIconFor#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="2434140849679604737" fileName="IconManager.java" startLine="226" startPosition="47" endLine="242" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2434140849679604580" fileName="IconManager.java" startLine="169" startPosition="0" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getIconForConceptFQName#(Ljava/lang/String;)Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="2434140849679604669" fileName="IconManager.java" startLine="190" startPosition="100" endLine="207" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2434140849679604731" fileName="IconManager.java" startLine="226" startPosition="0" endLine="245" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getIconFor#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="2434140849679604651" fileName="IconManager.java" startLine="188" startPosition="50" endLine="210" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="2434140849679604868" fileName="IconManager.java" startLine="276" startPosition="28" endLine="298" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="2434140849679604639" fileName="IconManager.java" startLine="187" startPosition="0" endLine="213" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getIconForNamespace#(Ljava/lang/String;)Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="2434140849679604846" fileName="IconManager.java" startLine="273" startPosition="26" endLine="303" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2434140849679604836" fileName="IconManager.java" startLine="272" startPosition="0" endLine="306" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getIconFor#(Ljetbrains/mps/vfs/IFile;)Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="2434140849679604494" fileName="IconManager.java" startLine="89" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="2434140849679604486" fileName="IconManager.java" startLine="87" startPosition="93" endLine="141" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2434140849679604477" fileName="IconManager.java" startLine="87" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getIconFor#(Lorg/jetbrains/mps/openapi/model/SNode;Z)Ljavax/swing/Icon;" />
+    <scopeInfo nodeId="2434140849679605138" fileName="IconManager.java" startLine="62" startPosition="66" endLine="62" endPosition="66" />
+    <scopeInfo nodeId="2434140849679604423" fileName="IconManager.java" startLine="76" startPosition="24" endLine="76" endPosition="24" />
+    <scopeInfo nodeId="5943936487467192263" fileName="IconManager.java" startLine="103" startPosition="0" endLine="103" endPosition="38">
       <varInfo nodeId="5943936487467192264" varName="ignore" />
     </scopeInfo>
-    <scopeInfo nodeId="5943936487467192266" fileName="IconManager.java" startLine="99" startPosition="38" endLine="99" endPosition="38" />
-    <scopeInfo nodeId="2434140849679605139" fileName="IconManager.java" startLine="64" startPosition="31" endLine="65" endPosition="16" />
-    <scopeInfo nodeId="2434140849679605142" fileName="IconManager.java" startLine="68" startPosition="32" endLine="69" endPosition="16" />
-    <scopeInfo nodeId="2434140849679604461" fileName="IconManager.java" startLine="76" startPosition="78" endLine="77" endPosition="34" />
-    <scopeInfo nodeId="2434140849679604472" fileName="IconManager.java" startLine="80" startPosition="60" endLine="81" endPosition="35" />
-    <scopeInfo nodeId="2434140849679605153" fileName="IconManager.java" startLine="88" startPosition="46" endLine="89" endPosition="39" />
-    <scopeInfo nodeId="5943936487467192284" fileName="IconManager.java" startLine="96" startPosition="46" endLine="97" endPosition="92" />
-    <scopeInfo nodeId="2434140849679605232" fileName="IconManager.java" startLine="101" startPosition="40" endLine="102" endPosition="39" />
-    <scopeInfo nodeId="2434140849679605223" fileName="IconManager.java" startLine="103" startPosition="18" endLine="104" endPosition="62" />
-    <scopeInfo nodeId="2434140849679605250" fileName="IconManager.java" startLine="108" startPosition="64" endLine="109" endPosition="46" />
-    <scopeInfo nodeId="2434140849679605247" fileName="IconManager.java" startLine="110" startPosition="18" endLine="111" endPosition="46" />
-    <scopeInfo nodeId="2434140849679605263" fileName="IconManager.java" startLine="115" startPosition="50" endLine="116" endPosition="26" />
-    <scopeInfo nodeId="2434140849679605270" fileName="IconManager.java" startLine="118" startPosition="191" endLine="119" endPosition="66" />
-    <scopeInfo nodeId="2434140849679605293" fileName="IconManager.java" startLine="123" startPosition="35" endLine="124" endPosition="145" />
-    <scopeInfo nodeId="2434140849679605339" fileName="IconManager.java" startLine="130" startPosition="54" endLine="131" endPosition="57" />
-    <scopeInfo nodeId="2434140849679604520" fileName="IconManager.java" startLine="143" startPosition="25" endLine="144" endPosition="20" />
-    <scopeInfo nodeId="2434140849679604575" fileName="IconManager.java" startLine="157" startPosition="27" endLine="158" endPosition="22" />
-    <scopeInfo nodeId="2434140849679604634" fileName="IconManager.java" startLine="174" startPosition="72" endLine="175" endPosition="42" />
-    <scopeInfo nodeId="2434140849679604631" fileName="IconManager.java" startLine="176" startPosition="14" endLine="177" endPosition="42" />
-    <scopeInfo nodeId="2434140849679604721" fileName="IconManager.java" startLine="187" startPosition="29" endLine="188" endPosition="56" />
-    <scopeInfo nodeId="2434140849679604697" fileName="IconManager.java" startLine="193" startPosition="15" endLine="194" endPosition="56" />
-    <scopeInfo nodeId="2434140849679604691" fileName="IconManager.java" startLine="195" startPosition="0" endLine="196" endPosition="30">
+    <scopeInfo nodeId="5943936487467192266" fileName="IconManager.java" startLine="103" startPosition="38" endLine="103" endPosition="38" />
+    <scopeInfo nodeId="2434140849679605139" fileName="IconManager.java" startLine="66" startPosition="31" endLine="67" endPosition="16" />
+    <scopeInfo nodeId="2434140849679605142" fileName="IconManager.java" startLine="71" startPosition="32" endLine="72" endPosition="16" />
+    <scopeInfo nodeId="2434140849679604461" fileName="IconManager.java" startLine="79" startPosition="78" endLine="80" endPosition="34" />
+    <scopeInfo nodeId="2434140849679604472" fileName="IconManager.java" startLine="83" startPosition="60" endLine="84" endPosition="35" />
+    <scopeInfo nodeId="2434140849679605153" fileName="IconManager.java" startLine="92" startPosition="46" endLine="93" endPosition="39" />
+    <scopeInfo nodeId="5943936487467192284" fileName="IconManager.java" startLine="100" startPosition="46" endLine="101" endPosition="92" />
+    <scopeInfo nodeId="2434140849679605232" fileName="IconManager.java" startLine="105" startPosition="40" endLine="106" endPosition="39" />
+    <scopeInfo nodeId="2434140849679605223" fileName="IconManager.java" startLine="107" startPosition="18" endLine="108" endPosition="62" />
+    <scopeInfo nodeId="2434140849679605250" fileName="IconManager.java" startLine="112" startPosition="64" endLine="113" endPosition="46" />
+    <scopeInfo nodeId="2434140849679605247" fileName="IconManager.java" startLine="114" startPosition="18" endLine="115" endPosition="46" />
+    <scopeInfo nodeId="2434140849679605263" fileName="IconManager.java" startLine="119" startPosition="89" endLine="120" endPosition="26" />
+    <scopeInfo nodeId="2434140849679605270" fileName="IconManager.java" startLine="122" startPosition="171" endLine="123" endPosition="74" />
+    <scopeInfo nodeId="2434140849679605293" fileName="IconManager.java" startLine="127" startPosition="35" endLine="128" endPosition="145" />
+    <scopeInfo nodeId="2434140849679605339" fileName="IconManager.java" startLine="134" startPosition="54" endLine="135" endPosition="57" />
+    <scopeInfo nodeId="2434140849679604520" fileName="IconManager.java" startLine="147" startPosition="25" endLine="148" endPosition="20" />
+    <scopeInfo nodeId="2434140849679604575" fileName="IconManager.java" startLine="161" startPosition="27" endLine="162" endPosition="22" />
+    <scopeInfo nodeId="2434140849679604634" fileName="IconManager.java" startLine="178" startPosition="72" endLine="179" endPosition="42" />
+    <scopeInfo nodeId="2434140849679604631" fileName="IconManager.java" startLine="180" startPosition="14" endLine="181" endPosition="42" />
+    <scopeInfo nodeId="2434140849679604721" fileName="IconManager.java" startLine="191" startPosition="29" endLine="192" endPosition="56" />
+    <scopeInfo nodeId="2434140849679604697" fileName="IconManager.java" startLine="197" startPosition="15" endLine="198" endPosition="56" />
+    <scopeInfo nodeId="2434140849679604691" fileName="IconManager.java" startLine="199" startPosition="0" endLine="200" endPosition="30">
       <varInfo nodeId="2434140849679604695" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679604692" fileName="IconManager.java" startLine="195" startPosition="45" endLine="196" endPosition="30" />
-    <scopeInfo nodeId="2434140849679604718" fileName="IconManager.java" startLine="199" startPosition="29" endLine="200" endPosition="24" />
-    <scopeInfo nodeId="2434140849679604652" fileName="IconManager.java" startLine="204" startPosition="0" endLine="205" endPosition="19">
+    <scopeInfo nodeId="2434140849679604692" fileName="IconManager.java" startLine="199" startPosition="45" endLine="200" endPosition="30" />
+    <scopeInfo nodeId="2434140849679604718" fileName="IconManager.java" startLine="203" startPosition="29" endLine="204" endPosition="24" />
+    <scopeInfo nodeId="2434140849679604652" fileName="IconManager.java" startLine="208" startPosition="0" endLine="209" endPosition="19">
       <varInfo nodeId="2434140849679604659" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679604653" fileName="IconManager.java" startLine="204" startPosition="27" endLine="205" endPosition="19" />
-    <scopeInfo nodeId="2194967571179864569" fileName="IconManager.java" startLine="213" startPosition="68" endLine="214" endPosition="45" />
-    <scopeInfo nodeId="2194967571179864581" fileName="IconManager.java" startLine="215" startPosition="70" endLine="216" endPosition="40" />
-    <scopeInfo nodeId="2434140849679604769" fileName="IconManager.java" startLine="226" startPosition="27" endLine="227" endPosition="40" />
-    <scopeInfo nodeId="2434140849679604766" fileName="IconManager.java" startLine="229" startPosition="63" endLine="230" endPosition="45" />
-    <scopeInfo nodeId="2434140849679604763" fileName="IconManager.java" startLine="232" startPosition="68" endLine="233" endPosition="45" />
-    <scopeInfo nodeId="2434140849679604760" fileName="IconManager.java" startLine="235" startPosition="58" endLine="236" endPosition="40" />
-    <scopeInfo nodeId="2434140849679604785" fileName="IconManager.java" startLine="243" startPosition="38" endLine="244" endPosition="37" />
-    <scopeInfo nodeId="2434140849679604792" fileName="IconManager.java" startLine="246" startPosition="37" endLine="247" endPosition="44" />
-    <scopeInfo nodeId="2434140849679604799" fileName="IconManager.java" startLine="249" startPosition="37" endLine="250" endPosition="36" />
-    <scopeInfo nodeId="2434140849679604806" fileName="IconManager.java" startLine="252" startPosition="35" endLine="253" endPosition="34" />
-    <scopeInfo nodeId="2434140849679604821" fileName="IconManager.java" startLine="259" startPosition="38" endLine="260" endPosition="35" />
-    <scopeInfo nodeId="2434140849679604828" fileName="IconManager.java" startLine="262" startPosition="35" endLine="263" endPosition="41" />
-    <scopeInfo nodeId="2434140849679604941" fileName="IconManager.java" startLine="278" startPosition="44" endLine="279" endPosition="18" />
-    <scopeInfo nodeId="2434140849679604936" fileName="IconManager.java" startLine="280" startPosition="18" endLine="281" endPosition="30" />
-    <scopeInfo nodeId="2434140849679604869" fileName="IconManager.java" startLine="284" startPosition="0" endLine="285" endPosition="21">
+    <scopeInfo nodeId="2434140849679604653" fileName="IconManager.java" startLine="208" startPosition="27" endLine="209" endPosition="19" />
+    <scopeInfo nodeId="2194967571179864569" fileName="IconManager.java" startLine="217" startPosition="68" endLine="218" endPosition="45" />
+    <scopeInfo nodeId="2194967571179864581" fileName="IconManager.java" startLine="219" startPosition="70" endLine="220" endPosition="40" />
+    <scopeInfo nodeId="2434140849679604769" fileName="IconManager.java" startLine="230" startPosition="27" endLine="231" endPosition="40" />
+    <scopeInfo nodeId="2434140849679604766" fileName="IconManager.java" startLine="233" startPosition="63" endLine="234" endPosition="45" />
+    <scopeInfo nodeId="2434140849679604763" fileName="IconManager.java" startLine="236" startPosition="68" endLine="237" endPosition="45" />
+    <scopeInfo nodeId="2434140849679604760" fileName="IconManager.java" startLine="239" startPosition="58" endLine="240" endPosition="40" />
+    <scopeInfo nodeId="2434140849679604785" fileName="IconManager.java" startLine="247" startPosition="38" endLine="248" endPosition="37" />
+    <scopeInfo nodeId="2434140849679604792" fileName="IconManager.java" startLine="250" startPosition="37" endLine="251" endPosition="44" />
+    <scopeInfo nodeId="2434140849679604799" fileName="IconManager.java" startLine="253" startPosition="37" endLine="254" endPosition="36" />
+    <scopeInfo nodeId="2434140849679604806" fileName="IconManager.java" startLine="256" startPosition="35" endLine="257" endPosition="34" />
+    <scopeInfo nodeId="2434140849679604821" fileName="IconManager.java" startLine="263" startPosition="38" endLine="264" endPosition="35" />
+    <scopeInfo nodeId="2434140849679604828" fileName="IconManager.java" startLine="266" startPosition="35" endLine="267" endPosition="41" />
+    <scopeInfo nodeId="2434140849679604941" fileName="IconManager.java" startLine="282" startPosition="44" endLine="283" endPosition="18" />
+    <scopeInfo nodeId="2434140849679604936" fileName="IconManager.java" startLine="284" startPosition="18" endLine="285" endPosition="30" />
+    <scopeInfo nodeId="2434140849679604869" fileName="IconManager.java" startLine="288" startPosition="0" endLine="289" endPosition="21">
       <varInfo nodeId="2434140849679604876" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679604870" fileName="IconManager.java" startLine="284" startPosition="31" endLine="285" endPosition="21" />
-    <scopeInfo nodeId="2434140849679604894" fileName="IconManager.java" startLine="288" startPosition="27" endLine="289" endPosition="23" />
-    <scopeInfo nodeId="2434140849679604880" fileName="IconManager.java" startLine="291" startPosition="0" endLine="292" endPosition="23">
+    <scopeInfo nodeId="2434140849679604870" fileName="IconManager.java" startLine="288" startPosition="31" endLine="289" endPosition="21" />
+    <scopeInfo nodeId="2434140849679604894" fileName="IconManager.java" startLine="292" startPosition="27" endLine="293" endPosition="23" />
+    <scopeInfo nodeId="2434140849679604880" fileName="IconManager.java" startLine="295" startPosition="0" endLine="296" endPosition="23">
       <varInfo nodeId="2434140849679604887" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679604881" fileName="IconManager.java" startLine="291" startPosition="33" endLine="292" endPosition="23" />
-    <scopeInfo nodeId="2434140849679604958" fileName="IconManager.java" startLine="296" startPosition="60" endLine="297" endPosition="20" />
-    <scopeInfo nodeId="2434140849679605003" fileName="IconManager.java" startLine="308" startPosition="34" endLine="309" endPosition="44" />
-    <scopeInfo nodeId="189703917320704794" fileName="IconManager.java" startLine="317" startPosition="23" endLine="318" endPosition="33" />
-    <scopeInfo nodeId="2434140849679604403" fileName="IconManager.java" startLine="61" startPosition="0" endLine="63" endPosition="0">
+    <scopeInfo nodeId="2434140849679604881" fileName="IconManager.java" startLine="295" startPosition="33" endLine="296" endPosition="23" />
+    <scopeInfo nodeId="2434140849679604958" fileName="IconManager.java" startLine="300" startPosition="60" endLine="301" endPosition="20" />
+    <scopeInfo nodeId="2434140849679605003" fileName="IconManager.java" startLine="312" startPosition="34" endLine="313" endPosition="44" />
+    <scopeInfo nodeId="189703917320704794" fileName="IconManager.java" startLine="321" startPosition="23" endLine="322" endPosition="33" />
+    <scopeInfo nodeId="2434140849679604420" fileName="IconManager.java" startLine="76" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="2434140849679604603" fileName="IconManager.java" startLine="173" startPosition="56" endLine="175" endPosition="35" />
+    <scopeInfo nodeId="2434140849679604403" fileName="IconManager.java" startLine="61" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="2434140849679604406" varName="c" />
       <varInfo nodeId="2434140849679604408" varName="g" />
       <varInfo nodeId="2434140849679604410" varName="x" />
       <varInfo nodeId="2434140849679604412" varName="y" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679604420" fileName="IconManager.java" startLine="73" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="2434140849679604603" fileName="IconManager.java" startLine="169" startPosition="56" endLine="171" endPosition="35" />
-    <scopeInfo nodeId="2434140849679604414" fileName="IconManager.java" startLine="64" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="2434140849679604417" fileName="IconManager.java" startLine="68" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="2434140849679604455" fileName="IconManager.java" startLine="76" startPosition="0" endLine="79" endPosition="0">
+    <scopeInfo nodeId="2434140849679604455" fileName="IconManager.java" startLine="79" startPosition="0" endLine="82" endPosition="0">
       <varInfo nodeId="2434140849679604458" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679604466" fileName="IconManager.java" startLine="80" startPosition="0" endLine="83" endPosition="0">
+    <scopeInfo nodeId="2434140849679604466" fileName="IconManager.java" startLine="83" startPosition="0" endLine="86" endPosition="0">
       <varInfo nodeId="2434140849679604469" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679605328" fileName="IconManager.java" startLine="129" startPosition="41" endLine="132" endPosition="11">
+    <scopeInfo nodeId="2434140849679605328" fileName="IconManager.java" startLine="133" startPosition="41" endLine="136" endPosition="11">
       <varInfo nodeId="2434140849679605334" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679604889" fileName="IconManager.java" startLine="287" startPosition="13" endLine="290" endPosition="11" />
-    <scopeInfo nodeId="5943936487467192262" fileName="IconManager.java" startLine="94" startPosition="15" endLine="98" endPosition="13">
+    <scopeInfo nodeId="2434140849679604889" fileName="IconManager.java" startLine="291" startPosition="13" endLine="294" endPosition="11" />
+    <scopeInfo nodeId="2434140849679604414" fileName="IconManager.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="2434140849679604417" fileName="IconManager.java" startLine="70" startPosition="0" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="5943936487467192262" fileName="IconManager.java" startLine="98" startPosition="15" endLine="102" endPosition="13">
       <varInfo nodeId="5943936487467192270" varName="alternativeIconPath" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679604564" fileName="IconManager.java" startLine="155" startPosition="29" endLine="159" endPosition="9">
+    <scopeInfo nodeId="2434140849679604564" fileName="IconManager.java" startLine="159" startPosition="29" endLine="163" endPosition="9">
       <varInfo nodeId="2434140849679604566" varName="icon" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679605241" fileName="IconManager.java" startLine="107" startPosition="31" endLine="112" endPosition="11" />
-    <scopeInfo nodeId="2434140849679604507" fileName="IconManager.java" startLine="141" startPosition="40" endLine="146" endPosition="91">
+    <scopeInfo nodeId="2434140849679605241" fileName="IconManager.java" startLine="111" startPosition="31" endLine="116" endPosition="11" />
+    <scopeInfo nodeId="2434140849679604507" fileName="IconManager.java" startLine="145" startPosition="40" endLine="150" endPosition="91">
       <varInfo nodeId="2434140849679604509" varName="icon" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679604621" fileName="IconManager.java" startLine="173" startPosition="23" endLine="178" endPosition="7" />
-    <scopeInfo nodeId="2194967571179864555" fileName="IconManager.java" startLine="212" startPosition="29" endLine="217" endPosition="7" />
-    <scopeInfo nodeId="2434140849679604984" fileName="IconManager.java" startLine="305" startPosition="23" endLine="310" endPosition="7">
+    <scopeInfo nodeId="2434140849679604621" fileName="IconManager.java" startLine="177" startPosition="23" endLine="182" endPosition="7" />
+    <scopeInfo nodeId="2194967571179864555" fileName="IconManager.java" startLine="216" startPosition="29" endLine="221" endPosition="7" />
+    <scopeInfo nodeId="2434140849679604984" fileName="IconManager.java" startLine="309" startPosition="23" endLine="314" endPosition="7">
       <varInfo nodeId="2434140849679604986" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679605017" fileName="IconManager.java" startLine="315" startPosition="62" endLine="320" endPosition="16">
+    <scopeInfo nodeId="2434140849679605017" fileName="IconManager.java" startLine="319" startPosition="62" endLine="324" endPosition="16">
       <varInfo nodeId="189703917320704962" varName="icon" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679605311" fileName="IconManager.java" startLine="127" startPosition="32" endLine="133" endPosition="29">
+    <scopeInfo nodeId="2434140849679605311" fileName="IconManager.java" startLine="131" startPosition="32" endLine="137" endPosition="29">
       <varInfo nodeId="2434140849679605313" varName="layeredIcon" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679604912" fileName="IconManager.java" startLine="276" startPosition="22" endLine="282" endPosition="11">
+    <scopeInfo nodeId="2434140849679604912" fileName="IconManager.java" startLine="280" startPosition="22" endLine="286" endPosition="11">
       <varInfo nodeId="2434140849679604914" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679604549" fileName="IconManager.java" startLine="153" startPosition="27" endLine="160" endPosition="7">
+    <scopeInfo nodeId="2434140849679604549" fileName="IconManager.java" startLine="157" startPosition="27" endLine="164" endPosition="7">
       <varInfo nodeId="2434140849679604551" varName="iconPath" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679604816" fileName="IconManager.java" startLine="258" startPosition="55" endLine="265" endPosition="33" />
-    <scopeInfo nodeId="2434140849679604878" fileName="IconManager.java" startLine="286" startPosition="17" endLine="293" endPosition="9" />
-    <scopeInfo nodeId="2434140849679605012" fileName="IconManager.java" startLine="315" startPosition="0" endLine="322" endPosition="0">
+    <scopeInfo nodeId="2434140849679604816" fileName="IconManager.java" startLine="262" startPosition="55" endLine="269" endPosition="33" />
+    <scopeInfo nodeId="2434140849679604878" fileName="IconManager.java" startLine="290" startPosition="17" endLine="297" endPosition="9" />
+    <scopeInfo nodeId="2434140849679605012" fileName="IconManager.java" startLine="319" startPosition="0" endLine="326" endPosition="0">
       <varInfo nodeId="2434140849679605015" varName="aspect" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679604502" fileName="IconManager.java" startLine="140" startPosition="67" endLine="148" endPosition="16" />
-    <scopeInfo nodeId="2194967571179864535" fileName="IconManager.java" startLine="210" startPosition="88" endLine="219" endPosition="31">
+    <scopeInfo nodeId="2434140849679604502" fileName="IconManager.java" startLine="144" startPosition="67" endLine="152" endPosition="16" />
+    <scopeInfo nodeId="2194967571179864535" fileName="IconManager.java" startLine="214" startPosition="88" endLine="223" endPosition="31">
       <varInfo nodeId="2194967571179864541" varName="stereotype" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679604811" fileName="IconManager.java" startLine="258" startPosition="0" endLine="267" endPosition="0">
+    <scopeInfo nodeId="2434140849679604811" fileName="IconManager.java" startLine="262" startPosition="0" endLine="271" endPosition="0">
       <varInfo nodeId="2434140849679604814" varName="owner" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679604972" fileName="IconManager.java" startLine="303" startPosition="71" endLine="312" endPosition="16">
+    <scopeInfo nodeId="2434140849679604972" fileName="IconManager.java" startLine="307" startPosition="71" endLine="316" endPosition="16">
       <varInfo nodeId="2434140849679604974" varName="icon" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679604497" fileName="IconManager.java" startLine="140" startPosition="0" endLine="150" endPosition="0">
+    <scopeInfo nodeId="2434140849679604497" fileName="IconManager.java" startLine="144" startPosition="0" endLine="154" endPosition="0">
       <varInfo nodeId="2434140849679604500" varName="conceptDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679604686" fileName="IconManager.java" startLine="191" startPosition="28" endLine="201" endPosition="11">
+    <scopeInfo nodeId="2434140849679604686" fileName="IconManager.java" startLine="195" startPosition="28" endLine="205" endPosition="11">
       <varInfo nodeId="2434140849679604706" varName="icon" />
       <varInfo nodeId="2434140849679604688" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679604899" fileName="IconManager.java" startLine="273" startPosition="11" endLine="283" endPosition="9">
+    <scopeInfo nodeId="2434140849679604899" fileName="IconManager.java" startLine="277" startPosition="11" endLine="287" endPosition="9">
       <varInfo nodeId="2434140849679604907" varName="current" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679604538" fileName="IconManager.java" startLine="151" startPosition="80" endLine="162" endPosition="16">
+    <scopeInfo nodeId="2434140849679604538" fileName="IconManager.java" startLine="155" startPosition="80" endLine="166" endPosition="16">
       <varInfo nodeId="2434140849679604540" varName="language" />
     </scopeInfo>
-    <scopeInfo nodeId="2194967571179864532" fileName="IconManager.java" startLine="210" startPosition="0" endLine="221" endPosition="0">
+    <scopeInfo nodeId="2194967571179864532" fileName="IconManager.java" startLine="214" startPosition="0" endLine="225" endPosition="0">
       <varInfo nodeId="2194967571179864536" varName="modelReference" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679604965" fileName="IconManager.java" startLine="303" startPosition="0" endLine="314" endPosition="0">
+    <scopeInfo nodeId="2434140849679604965" fileName="IconManager.java" startLine="307" startPosition="0" endLine="318" endPosition="0">
       <varInfo nodeId="2434140849679604970" varName="cache" />
       <varInfo nodeId="2434140849679604968" varName="iconPath" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679605161" fileName="IconManager.java" startLine="92" startPosition="32" endLine="105" endPosition="11">
+    <scopeInfo nodeId="2434140849679605161" fileName="IconManager.java" startLine="96" startPosition="32" endLine="109" endPosition="11">
       <varInfo nodeId="5943936487467192249" varName="alternativeIcon" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679604531" fileName="IconManager.java" startLine="151" startPosition="0" endLine="164" endPosition="0">
+    <scopeInfo nodeId="2434140849679604531" fileName="IconManager.java" startLine="155" startPosition="0" endLine="168" endPosition="0">
       <varInfo nodeId="2434140849679604534" varName="conceptDeclaration" />
       <varInfo nodeId="2434140849679604536" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679604674" fileName="IconManager.java" startLine="189" startPosition="14" endLine="202" endPosition="9">
+    <scopeInfo nodeId="2434140849679604674" fileName="IconManager.java" startLine="193" startPosition="14" endLine="206" endPosition="9">
       <varInfo nodeId="2434140849679604676" varName="icons" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679604780" fileName="IconManager.java" startLine="242" startPosition="49" endLine="255" endPosition="33" />
-    <scopeInfo nodeId="2434140849679604741" fileName="IconManager.java" startLine="223" startPosition="44" endLine="237" endPosition="7">
+    <scopeInfo nodeId="2434140849679604780" fileName="IconManager.java" startLine="246" startPosition="49" endLine="259" endPosition="33" />
+    <scopeInfo nodeId="2434140849679604741" fileName="IconManager.java" startLine="227" startPosition="34" endLine="241" endPosition="7">
       <varInfo nodeId="2434140849679604743" varName="aspect" />
       <varInfo nodeId="2574746063622061909" varName="modelDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679604585" fileName="IconManager.java" startLine="165" startPosition="68" endLine="180" endPosition="16">
+    <scopeInfo nodeId="2434140849679604585" fileName="IconManager.java" startLine="169" startPosition="68" endLine="184" endPosition="16">
       <varInfo nodeId="2434140849679604587" varName="acd" />
       <varInfo nodeId="2434140849679604593" varName="cd" />
       <varInfo nodeId="2434140849679604597" varName="icon" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679604775" fileName="IconManager.java" startLine="242" startPosition="0" endLine="257" endPosition="0">
+    <scopeInfo nodeId="2434140849679604775" fileName="IconManager.java" startLine="246" startPosition="0" endLine="261" endPosition="0">
       <varInfo nodeId="2434140849679604778" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="189703917320704822" fileName="IconManager.java" startLine="323" startPosition="10" endLine="339" endPosition="106" />
-    <scopeInfo nodeId="2434140849679604580" fileName="IconManager.java" startLine="165" startPosition="0" endLine="182" endPosition="0">
+    <scopeInfo nodeId="189703917320704822" fileName="IconManager.java" startLine="327" startPosition="10" endLine="343" endPosition="106" />
+    <scopeInfo nodeId="2434140849679604580" fileName="IconManager.java" startLine="169" startPosition="0" endLine="186" endPosition="0">
       <varInfo nodeId="2434140849679604583" varName="conceptFQName" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679604736" fileName="IconManager.java" startLine="222" startPosition="79" endLine="239" endPosition="31" />
-    <scopeInfo nodeId="2434140849679604661" fileName="IconManager.java" startLine="185" startPosition="9" endLine="203" endPosition="7">
+    <scopeInfo nodeId="2434140849679604736" fileName="IconManager.java" startLine="226" startPosition="47" endLine="243" endPosition="31" />
+    <scopeInfo nodeId="2434140849679604661" fileName="IconManager.java" startLine="189" startPosition="9" endLine="207" endPosition="7">
       <varInfo nodeId="2434140849679604663" varName="language" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679604731" fileName="IconManager.java" startLine="222" startPosition="0" endLine="241" endPosition="0">
+    <scopeInfo nodeId="2434140849679604731" fileName="IconManager.java" startLine="226" startPosition="0" endLine="245" endPosition="0">
       <varInfo nodeId="2574746063622061896" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679604644" fileName="IconManager.java" startLine="183" startPosition="60" endLine="207" endPosition="22">
+    <scopeInfo nodeId="2434140849679604644" fileName="IconManager.java" startLine="187" startPosition="60" endLine="211" endPosition="22">
       <varInfo nodeId="2434140849679604646" varName="className" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679604639" fileName="IconManager.java" startLine="183" startPosition="0" endLine="209" endPosition="0">
+    <scopeInfo nodeId="2434140849679604639" fileName="IconManager.java" startLine="187" startPosition="0" endLine="213" endPosition="0">
       <varInfo nodeId="2434140849679604642" varName="namespace" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679604850" fileName="IconManager.java" startLine="270" startPosition="24" endLine="298" endPosition="7">
+    <scopeInfo nodeId="2434140849679604850" fileName="IconManager.java" startLine="274" startPosition="24" endLine="302" endPosition="7">
       <varInfo nodeId="2434140849679604852" varName="image" />
       <varInfo nodeId="2434140849679604865" varName="is" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679604841" fileName="IconManager.java" startLine="268" startPosition="45" endLine="300" endPosition="16">
+    <scopeInfo nodeId="2434140849679604841" fileName="IconManager.java" startLine="272" startPosition="45" endLine="304" endPosition="16">
       <varInfo nodeId="2434140849679604843" varName="icon" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679604836" fileName="IconManager.java" startLine="268" startPosition="0" endLine="302" endPosition="0">
+    <scopeInfo nodeId="2434140849679604836" fileName="IconManager.java" startLine="272" startPosition="0" endLine="306" endPosition="0">
       <varInfo nodeId="2434140849679604839" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679605145" fileName="IconManager.java" startLine="86" startPosition="29" endLine="135" endPosition="22">
+    <scopeInfo nodeId="2434140849679605145" fileName="IconManager.java" startLine="90" startPosition="29" endLine="139" endPosition="22">
       <varInfo nodeId="2434140849679605163" varName="concept" />
       <varInfo nodeId="2434140849679605147" varName="mainIcon" />
       <varInfo nodeId="2434140849679605302" varName="markIcons" />
       <varInfo nodeId="2434140849679605254" varName="model" />
       <varInfo nodeId="2434140849679605279" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679604494" fileName="IconManager.java" startLine="86" startPosition="0" endLine="137" endPosition="0" />
-    <scopeInfo nodeId="2434140849679604485" fileName="IconManager.java" startLine="84" startPosition="93" endLine="137" endPosition="7" />
-    <scopeInfo nodeId="2434140849679604477" fileName="IconManager.java" startLine="84" startPosition="0" endLine="139" endPosition="0">
+    <scopeInfo nodeId="2434140849679604494" fileName="IconManager.java" startLine="89" startPosition="0" endLine="141" endPosition="0" />
+    <scopeInfo nodeId="2434140849679604485" fileName="IconManager.java" startLine="87" startPosition="93" endLine="141" endPosition="7" />
+    <scopeInfo nodeId="2434140849679604477" fileName="IconManager.java" startLine="87" startPosition="0" endLine="143" endPosition="0">
       <varInfo nodeId="2434140849679604480" varName="node" />
       <varInfo nodeId="2434140849679604483" varName="withoutAdditional" />
     </scopeInfo>
-    <unitInfo nodeId="2434140849679604402" fileName="IconManager.java" startLine="60" startPosition="44" endLine="71" endPosition="3" unitName="jetbrains.mps.ide.icons.IconManager$1" />
-    <unitInfo nodeId="2434140849679604492" fileName="IconManager.java" startLine="85" startPosition="52" endLine="137" endPosition="5" unitName="jetbrains.mps.ide.icons.IconManager$2" />
-    <unitInfo nodeId="2434140849679604371" fileName="IconManager.java" startLine="55" startPosition="0" endLine="342" endPosition="0" unitName="jetbrains.mps.ide.icons.IconManager" />
+    <unitInfo nodeId="2434140849679604402" fileName="IconManager.java" startLine="60" startPosition="44" endLine="74" endPosition="3" unitName="jetbrains.mps.ide.icons.IconManager$1" />
+    <unitInfo nodeId="2434140849679604492" fileName="IconManager.java" startLine="88" startPosition="52" endLine="141" endPosition="5" unitName="jetbrains.mps.ide.icons.IconManager$2" />
+    <unitInfo nodeId="2434140849679604371" fileName="IconManager.java" startLine="55" startPosition="0" endLine="346" endPosition="0" unitName="jetbrains.mps.ide.icons.IconManager" />
   </root>
 </debugInfo>
 

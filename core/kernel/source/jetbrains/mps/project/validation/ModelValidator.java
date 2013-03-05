@@ -15,10 +15,11 @@
  */
 package jetbrains.mps.project.validation;
 
+import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.IterableUtil;
 
 import java.util.ArrayList;
@@ -29,26 +30,24 @@ public class ModelValidator {
   private SModel myModel;
 
   public ModelValidator(org.jetbrains.mps.openapi.model.SModel model) {
-    myModel = ((SModelDescriptor) model).getSModel();
+    myModel = model.getSModel();
   }
 
   public List<String> validate(IScope scope) {
     ModelAccess.assertLegalRead();
 
     List<String> errors = new ArrayList<String>();
-    if (myModel.isTransient()) {
+    if (myModel instanceof TransientSModel) {
       return errors;
     }
-    if (myModel.isDisposed()) {
+    if (jetbrains.mps.util.SNodeOperations.isModelDisposed(myModel)) {
       return errors;
     }
     if (myModel instanceof InvalidSModel) {
-      Collection<IMessage> problems = ((InvalidSModel) myModel).getProblems();
-      if (problems != null) {
-        for (IMessage m : problems) {
-          if (m.getKind() == MessageKind.ERROR) {
-            errors.add(m.getText());
-          }
+      Iterable<SModel.Problem> problems = myModel.getProblems();
+      for (SModel.Problem m : problems) {
+        if (m.isError()) {
+          errors.add(m.getText());
         }
       }
       if (errors.isEmpty()) {
@@ -64,15 +63,15 @@ public class ModelValidator {
     }
 
     List<ModuleReference> langsToCheck = new ArrayList<ModuleReference>();
-    langsToCheck.addAll(IterableUtil.asCollection(myModel.getModelDepsManager().getAllImportedLanguages()));
-    langsToCheck.addAll(myModel.engagedOnGenerationLanguages());
+    langsToCheck.addAll(IterableUtil.asCollection(((jetbrains.mps.smodel.SModel) myModel).getModelDepsManager().getAllImportedLanguages()));
+    langsToCheck.addAll(((jetbrains.mps.smodel.SModel) myModel).engagedOnGenerationLanguages());
     for (ModuleReference lang : langsToCheck) {
       if (scope.getLanguage(lang) == null) {
         errors.add("Can't find language: " + lang.getModuleFqName());
       }
     }
 
-    for (ModuleReference devKit : myModel.importedDevkits()) {
+    for (ModuleReference devKit : ((jetbrains.mps.smodel.SModel) myModel).importedDevkits()) {
       if (scope.getDevKit(devKit) == null) {
         errors.add("Can't find devkit: " + devKit.getModuleFqName());
       }

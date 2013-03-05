@@ -11,6 +11,7 @@ public class WriteBlock extends AbstractBlock {
     super(x, y, width, height, source, caption);
   }
 
+  @Override
   public void paintBlock(Graphics g) {
     g.setColor(new Color(245, 160, 210));
     g.fillRect(this.myX, this.myY, this.myWidth, this.myHeight);

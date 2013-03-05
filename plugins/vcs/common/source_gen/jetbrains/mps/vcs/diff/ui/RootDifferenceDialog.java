@@ -43,7 +43,7 @@ import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
 import com.intellij.openapi.util.Ref;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.Action;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
@@ -56,12 +56,11 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.SModelRepository;
 import com.intellij.openapi.wm.WindowManager;
 import java.awt.GraphicsDevice;
 import java.awt.HeadlessException;
-import jetbrains.mps.smodel.SModelDescriptor;
 
 public class RootDifferenceDialog extends DialogWrapper implements DataProvider {
   private ModelChangeSet myChangeSet;
@@ -109,10 +108,12 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
     myActionGroup.addSeparator();
     if (isEditable) {
       myActionGroup.add(new RevertRootsAction(rootName) {
+        @Override
         protected Iterable<ModelChange> getChanges() {
           return myChangeSet.getChangesForRoot(myRootId);
         }
 
+        @Override
         protected void after() {
           rehighlight();
         }
@@ -180,15 +181,18 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
     return myContainer;
   }
 
+  @Override
   public String getDimensionServiceKey() {
     return getClass().getName();
   }
 
   @Nullable
+  @Override
   public Object getData(@NonNls String dataId) {
     if (DiffModelTree.NODE_ID_DATAKEY.is(dataId)) {
       return new Ref<SNodeId>(myRootId);
@@ -197,12 +201,13 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
   }
 
   @NotNull
+  @Override
   protected Action[] createActions() {
     return new Action[0];
   }
 
   private DiffEditor addEditor(int index, SModel model) {
-    final DiffEditor result = new DiffEditor(DiffTemporaryModule.getOperationContext(myProject, model), model.getNodeById(myRootId), myTitles[index], index == 0);
+    final DiffEditor result = new DiffEditor(DiffTemporaryModule.getOperationContext(myProject, model), model.getNode(myRootId), myTitles[index], index == 0);
 
     GridBagConstraints gbc = new GridBagConstraints(index * 2, 0, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, (index == 0 ?
       5 :
@@ -257,7 +262,7 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
       myTopPanel
     )).add(separator, gbc);
     ListSequence.fromList(myEditorSeparators).addElement(separator);
-    if (!(myChangeSet.getNewModel().isNotEditable())) {
+    if (!(myChangeSet.getNewModel().isReadOnly())) {
       DiffButtonsPainter.addTo(this, myOldEditor, layout, inspector);
       DiffButtonsPainter.addTo(this, myNewEditor, layout, inspector);
     }
@@ -321,16 +326,16 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
       public RootDifferenceDialog invoke() {
         ModelChangeSet changeSet = ChangeSetBuilder.buildChangeSet(oldModel, newModel, true);
 
-        SNode node = newModel.getNodeById(rootId);
+        SNode node = newModel.getNode(rootId);
         if (node == null) {
-          node = oldModel.getNodeById(rootId);
+          node = oldModel.getNode(rootId);
         }
         String rootName = (node == null ?
           "root" :
           node.getPresentation()
         );
 
-        boolean isEditable = newModel.getModelDescriptor() instanceof EditableSModelDescriptor && check_vu2gar_a0a0g0a7a23(SModelRepository.getInstance().getModelDescriptor(newModel.getSModelReference())) == newModel;
+        boolean isEditable = newModel.getModelDescriptor() instanceof EditableSModel && check_vu2gar_a0a0g0a7a23(SModelRepository.getInstance().getModelDescriptor(newModel.getReference())) == newModel;
 
         return dialog.value = new RootDifferenceDialog(project, changeSet, rootId, rootName, contentTitles, WindowManager.getInstance().getFrame(project), isEditable, null, scrollTo);
       }
@@ -352,7 +357,7 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
     return null;
   }
 
-  private static SModel check_vu2gar_a0a0g0a7a23(SModelDescriptor checkedDotOperand) {
+  private static SModel check_vu2gar_a0a0g0a7a23(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSModel();
     }

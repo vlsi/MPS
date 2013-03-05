@@ -25,16 +25,16 @@ import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.persistence.indexing.FastGoToRegistry;
 import org.jetbrains.mps.openapi.persistence.indexing.NodeDescriptor;
 import org.jetbrains.mps.openapi.persistence.indexing.NodeNavigationContributor;
@@ -45,10 +45,12 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * A part of navigation providing system for .mps models working through .mps model index 
+ * A part of navigation providing system for .mps models working through .mps model index
+ *
  * @see RootNodeNameIndex
  */
 public class MPSModelNavigationContributor implements NodeNavigationContributor, ApplicationComponent {
+  @Override
   public Collection<NodeDescriptor> getNodeDescriptors(Collection<SModel> models, Project p) {
     RootNodeNameIndex index = new RootNodeNameIndex();
     final ID<Integer, List<SNodeDescriptor>> indexName = index.getName();
@@ -60,19 +62,16 @@ public class MPSModelNavigationContributor implements NodeNavigationContributor,
     for (SModel sm : models) {
       if (!SModelStereotype.isUserModel(sm)) continue;
 
-      if (!(sm instanceof DefaultSModelDescriptor)) {
-        if (sm.isLoaded()) {
-          findDirectly.add(sm);
-        }
-        continue;
-      }
-
-      DefaultSModelDescriptor esm = (DefaultSModelDescriptor) sm;
-      if (esm.getLoadingState() == ModelLoadingState.FULLY_LOADED) {
+      if (sm.isLoaded()) {
         findDirectly.add(sm);
         continue;
       }
 
+      if (!(sm instanceof DefaultSModelDescriptor)) {
+        continue;
+      }
+
+      DefaultSModelDescriptor esm = (DefaultSModelDescriptor) sm;
       IFile modelFile = esm.getSource().getFile();
       VirtualFile vf = VirtualFileUtils.getVirtualFile(modelFile);
       if (vf == null) continue; // e.g. model was deleted
@@ -103,7 +102,7 @@ public class MPSModelNavigationContributor implements NodeNavigationContributor,
       for (SNode root : index.getRootsToIterate(((DefaultSModelDescriptor) sm).getSModel())) {
         String nodeName = (root.getName() == null) ? "null" : root.getName();
         NodeDescriptor nodeDescriptor = SNodeDescriptor.fromModelReference(
-          nodeName, root.getConcept().getId(), root.getModel().getSModelReference(), root.getNodeId());
+          nodeName, root.getConcept().getId(), root.getModel().getReference(), root.getNodeId());
         keys.add(nodeDescriptor);
       }
     }

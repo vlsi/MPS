@@ -59,7 +59,6 @@ import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListAddAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListRemoveAction;
 import com.intellij.openapi.actionSystem.AnAction;
@@ -103,13 +102,14 @@ public class TestConfigurationDialog extends DialogWrapper {
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
-    getWindow().setMinimumSize(new Dimension(400, 300));
     return myMainComponent;
   }
 
   private void initUI() {
     myMainComponent = new JPanel();
+    myMainComponent.setPreferredSize(new Dimension(400, 300));
     GridBagLayout bagLayout = new GridBagLayout();
     myMainComponent.setLayout(bagLayout);
     GridBagConstraints cName = new GridBagConstraints(0, 0, 1, 1, 1, 0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(5, 5, 0, 5), 0, 0);
@@ -155,6 +155,7 @@ public class TestConfigurationDialog extends DialogWrapper {
 
   private JPanel createRadioPanel() {
     myRadioModule = new JRadioButton(new AbstractAction("Module configuration") {
+      @Override
       public void actionPerformed(ActionEvent e) {
         myModulePanel.setState(true);
         myModelsPanel.setState(false);
@@ -162,6 +163,7 @@ public class TestConfigurationDialog extends DialogWrapper {
       }
     });
     myRadioModels = new JRadioButton(new AbstractAction("Models configuration") {
+      @Override
       public void actionPerformed(ActionEvent e) {
         myModulePanel.setState(false);
         myModelsPanel.setState(true);
@@ -238,6 +240,7 @@ public class TestConfigurationDialog extends DialogWrapper {
       setLayout(new BorderLayout());
       myModuleUID = new JTextField();
       JButton button = new JButton(new AbstractAction("Select") {
+        @Override
         public void actionPerformed(ActionEvent e) {
           final Wrappers._T<Set<SModule>> modules = new Wrappers._T<Set<SModule>>();
           final Wrappers._T<List<SModule>> projectModules = new Wrappers._T<List<SModule>>();
@@ -279,6 +282,7 @@ public class TestConfigurationDialog extends DialogWrapper {
       myModuleUID.setText(mtc.getModuleRef().getModuleFqName());
     }
 
+    @Override
     public BaseTestConfiguration create() {
       ModuleTestConfiguration result = new ModuleTestConfiguration();
       result.setModuleRef(new ModuleReference(myModuleUID.getText()));
@@ -296,6 +300,7 @@ public class TestConfigurationDialog extends DialogWrapper {
       setLayout(new BorderLayout());
       myModelsList = new JBList();
       myModelsList.setCellRenderer(new DefaultListCellRenderer() {
+        @Override
         public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
           final org.jetbrains.mps.openapi.model.SModelReference model = (org.jetbrains.mps.openapi.model.SModelReference) value;
           final DefaultListCellRenderer ren = this;
@@ -308,10 +313,11 @@ public class TestConfigurationDialog extends DialogWrapper {
             return result;
           }
           ModelAccess.instance().runReadAction(new Runnable() {
+            @Override
             public void run() {
               boolean inProject = false;
               for (SModel projectModel : myProject.getProjectModels()) {
-                if (model.equals(projectModel.getModelReference())) {
+                if (model.equals(projectModel.getReference())) {
                   inProject = true;
                   break;
                 }
@@ -335,14 +341,14 @@ public class TestConfigurationDialog extends DialogWrapper {
         @Override
         protected int doAdd(AnActionEvent e) {
           Iterable<SModel> models = myProject.getComponent(MPSProject.class).getProjectModels();
-          List<SModelDescriptor> descrs = SModelRepository.getInstance().getModelDescriptors();
+          List<SModel> descrs = SModelRepository.getInstance().getModelDescriptors();
           SModelReference modelRef = CommonChoosers.showDialogModelChooser(ProjectHelper.toIdeaProject(myProject), Sequence.fromIterable(models).select(new ISelector<SModel, SModelReference>() {
             public SModelReference select(SModel it) {
-              return (SModelReference) it.getModelReference();
+              return (SModelReference) it.getReference();
             }
-          }).toListSequence(), ListSequence.fromList(descrs).select(new ISelector<SModelDescriptor, SModelReference>() {
-            public SModelReference select(SModelDescriptor it) {
-              return it.getSModelReference();
+          }).toListSequence(), ListSequence.fromList(descrs).select(new ISelector<SModel, SModelReference>() {
+            public SModelReference select(SModel it) {
+              return it.getReference();
             }
           }).toListSequence());
           if (modelRef == null) {
@@ -399,6 +405,7 @@ public class TestConfigurationDialog extends DialogWrapper {
       myModels.addAll(mtc.getModels());
     }
 
+    @Override
     public BaseTestConfiguration create() {
       return new ModelsTestConfiguration(myModels);
     }

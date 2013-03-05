@@ -16,6 +16,7 @@ public class CellAction_DeleteEasily extends CellAction_DeleteNode {
     super(semanticNode);
   }
 
+  @Override
   public boolean canExecute(EditorContext context) {
     return super.canExecute(context) && canBeDeletedEasily();
   }

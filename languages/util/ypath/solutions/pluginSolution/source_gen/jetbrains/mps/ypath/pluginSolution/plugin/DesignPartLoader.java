@@ -6,11 +6,10 @@ import jetbrains.mps.logging.Logger;
 import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.ypath.design.IFeatureDesign;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.runtime.IClassLoadingModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.reloading.ReloadAdapter;
 
 public class DesignPartLoader {
@@ -65,7 +64,7 @@ public class DesignPartLoader {
   }
 
   private SModule getModuleFor(SModel smodel) {
-    SModelDescriptor smd = smodel.getModelDescriptor();
+    SModel smd = smodel.getModelDescriptor();
     return (smd != null ?
       smd.getModule() :
       null
@@ -84,6 +83,7 @@ public class DesignPartLoader {
     private ReloadHandler() {
     }
 
+    @Override
     public void unload() {
       clearCache();
     }

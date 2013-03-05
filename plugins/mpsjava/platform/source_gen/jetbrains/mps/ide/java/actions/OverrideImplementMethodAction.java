@@ -15,6 +15,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class OverrideImplementMethodAction {
@@ -34,6 +35,7 @@ public class OverrideImplementMethodAction {
     final SNode contextClass = SNodeOperations.getAncestor(mySelectedNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
     final SNode contextMethod = SNodeOperations.getAncestor(mySelectedNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", true, false);
     final SNodeReference[] methods = ModelAccess.instance().runReadAction(new Computable<SNodeReference[]>() {
+      @Override
       public SNodeReference[] compute() {
         List<SNode> methodsToOverride = (myIsOverride ?
           BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), contextClass, "virtual_getMethodsToOverride_5418393554803767537", new Object[]{}) :
@@ -60,10 +62,11 @@ public class OverrideImplementMethodAction {
       final Iterable<SNodeReference> selectedElements = (Iterable<SNodeReference>) dialog.getSelectedElements();
 
       ModelAccess.instance().runCommandInEDT(new Runnable() {
+        @Override
         public void run() {
           List<SNode> selection = Sequence.fromIterable(selectedElements).select(new ISelector<SNodeReference, SNode>() {
             public SNode select(SNodeReference it) {
-              return SNodeOperations.cast(((SNodePointer) it).getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+              return SNodeOperations.cast(((SNodePointer) it).resolve(MPSModuleRepository.getInstance()), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
             }
           }).toListSequence();
 

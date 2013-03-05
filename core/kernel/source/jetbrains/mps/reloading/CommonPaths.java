@@ -58,6 +58,7 @@ public class CommonPaths {
   public static List<String> getMPSPaths(ClassType... types) {
     final CompositeClassPathItem result = new CompositeClassPathItem();
     ClasspathReader.addClasses(PathManager.getHomePath(), new Callback<String>() {
+      @Override
       public void call(String param) {
         addIfExists(result, File.separator + param);
       }
@@ -236,6 +237,7 @@ public class CommonPaths {
 
   public static void addClasses(final CompositeClassPathItem result, final String homePath) {
     ClasspathReader.addClasses(homePath, new Callback<String>() {
+      @Override
       public void call(String param) {
         File dir = new File(homePath, param);
         if (!dir.exists()) return;

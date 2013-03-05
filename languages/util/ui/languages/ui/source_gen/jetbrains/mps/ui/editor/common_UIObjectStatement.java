@@ -4,28 +4,28 @@ package jetbrains.mps.ui.editor;
 
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
-import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.openapi.editor.style.Style;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ui.modeling.behavior.UIObject_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 
 public class common_UIObjectStatement extends AbstractCellProvider {
   public common_UIObjectStatement(SNode node) {
@@ -41,9 +41,43 @@ public class common_UIObjectStatement extends AbstractCellProvider {
   }
 
   @Deprecated
-  public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  public jetbrains.mps.nodeEditor.cells.EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
     // This method was added in MPS 3.0 for the compatibility with prev. generated code 
-    return createEditorCell((EditorContext) editorContext);
+    return (jetbrains.mps.nodeEditor.cells.EditorCell) createEditorCell((EditorContext) editorContext);
+  }
+
+  private EditorCell createCollection_cz3bck_a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_cz3bck_a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createCollection_cz3bck_a0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_cz3bck_b0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_cz3bck_c0(editorContext, node));
+    if (renderingCondition_cz3bck_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_cz3bck_d0(editorContext, node));
+    }
+    return editorCell;
+  }
+
+  private EditorCell createCollection_cz3bck_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_cz3bck_a0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createRefNodeList_cz3bck_a0a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createRefNodeList_cz3bck_a0a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new common_UIObjectStatement.aspectListHandler_cz3bck_a0a(node, "aspect", editorContext);
+    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
+    editorCell.setCellId("refNodeList_aspect");
+    editorCell.setRole(handler.getElementRole());
+    return editorCell;
   }
 
   private static class aspectListHandler_cz3bck_a0a extends RefNodeListHandler {
@@ -103,6 +137,25 @@ public class common_UIObjectStatement extends AbstractCellProvider {
       editorCell.setDefaultText("<no aspect>");
       return editorCell;
     }
+  }
+
+  private EditorCell createCollection_cz3bck_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_cz3bck_b0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createRefNodeList_cz3bck_a1a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createRefNodeList_cz3bck_a1a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new common_UIObjectStatement.viewBindingListHandler_cz3bck_a1a(node, "viewBinding", editorContext);
+    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
+    editorCell.setCellId("refNodeList_viewBinding");
+    editorCell.setRole(handler.getElementRole());
+    return editorCell;
   }
 
   private static class viewBindingListHandler_cz3bck_a1a extends RefNodeListHandler {
@@ -167,6 +220,25 @@ public class common_UIObjectStatement extends AbstractCellProvider {
     }
   }
 
+  private EditorCell createCollection_cz3bck_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_cz3bck_c0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createRefNodeList_cz3bck_a2a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createRefNodeList_cz3bck_a2a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new common_UIObjectStatement.controllerBindingListHandler_cz3bck_a2a(node, "controllerBinding", editorContext);
+    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
+    editorCell.setCellId("refNodeList_controllerBinding");
+    editorCell.setRole(handler.getElementRole());
+    return editorCell;
+  }
+
   private static class controllerBindingListHandler_cz3bck_a2a extends RefNodeListHandler {
     public controllerBindingListHandler_cz3bck_a2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -217,6 +289,34 @@ public class common_UIObjectStatement extends AbstractCellProvider {
     }
   }
 
+  private EditorCell createCollection_cz3bck_d0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_cz3bck_d0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createRefNodeList_cz3bck_a3a(editorContext, node));
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_cz3bck_a3a(SNode node, EditorContext editorContext, IScope scope) {
+    return Sequence.fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(SLinkOperations.getTarget(node, "uiObject", false))).translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode uio) {
+        return SLinkOperations.getTargets(uio, "compartment", true);
+      }
+    }).isNotEmpty();
+  }
+
+  private EditorCell createRefNodeList_cz3bck_a3a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new common_UIObjectStatement.compartmentListHandler_cz3bck_a3a(node, "compartment", editorContext);
+    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
+    editorCell.setCellId("refNodeList_compartment");
+    editorCell.setRole(handler.getElementRole());
+    return editorCell;
+  }
+
   private static class compartmentListHandler_cz3bck_a3a extends RefNodeListHandler {
     public compartmentListHandler_cz3bck_a3a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -262,105 +362,5 @@ public class common_UIObjectStatement extends AbstractCellProvider {
       editorCell.setDefaultText("<no compartments>");
       return editorCell;
     }
-  }
-
-  private EditorCell createCollection_cz3bck_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_cz3bck_a");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createCollection_cz3bck_a0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_cz3bck_b0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_cz3bck_c0(editorContext, node));
-    if (renderingCondition_cz3bck_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_cz3bck_d0(editorContext, node));
-    }
-    return editorCell;
-  }
-
-  private EditorCell createCollection_cz3bck_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_cz3bck_a0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createRefNodeList_cz3bck_a0a(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_cz3bck_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_cz3bck_b0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createRefNodeList_cz3bck_a1a(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_cz3bck_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_cz3bck_c0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createRefNodeList_cz3bck_a2a(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_cz3bck_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_cz3bck_d0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createRefNodeList_cz3bck_a3a(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createRefNodeList_cz3bck_a0a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new common_UIObjectStatement.aspectListHandler_cz3bck_a0a(node, "aspect", editorContext);
-    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_aspect");
-    editorCell.setRole(handler.getElementRole());
-    return editorCell;
-  }
-
-  private EditorCell createRefNodeList_cz3bck_a1a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new common_UIObjectStatement.viewBindingListHandler_cz3bck_a1a(node, "viewBinding", editorContext);
-    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_viewBinding");
-    editorCell.setRole(handler.getElementRole());
-    return editorCell;
-  }
-
-  private EditorCell createRefNodeList_cz3bck_a2a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new common_UIObjectStatement.controllerBindingListHandler_cz3bck_a2a(node, "controllerBinding", editorContext);
-    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_controllerBinding");
-    editorCell.setRole(handler.getElementRole());
-    return editorCell;
-  }
-
-  private EditorCell createRefNodeList_cz3bck_a3a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new common_UIObjectStatement.compartmentListHandler_cz3bck_a3a(node, "compartment", editorContext);
-    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
-    editorCell.setCellId("refNodeList_compartment");
-    editorCell.setRole(handler.getElementRole());
-    return editorCell;
-  }
-
-  private static boolean renderingCondition_cz3bck_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return Sequence.fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(SLinkOperations.getTarget(node, "uiObject", false))).translate(new ITranslator2<SNode, SNode>() {
-      public Iterable<SNode> translate(SNode uio) {
-        return SLinkOperations.getTargets(uio, "compartment", true);
-      }
-    }).isNotEmpty();
   }
 }

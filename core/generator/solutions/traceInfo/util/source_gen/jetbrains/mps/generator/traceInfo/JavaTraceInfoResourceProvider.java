@@ -4,27 +4,26 @@ package jetbrains.mps.generator.traceInfo;
 
 import java.net.URL;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.SModuleOperations;
+import jetbrains.mps.project.facets.JavaModuleOperations;
+import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.reloading.CommonPaths;
 
 public class JavaTraceInfoResourceProvider implements TraceInfoCache.TraceInfoResourceProvider {
   public JavaTraceInfoResourceProvider() {
   }
 
-  public URL getResource(SModule m, String resourceName) {
-    IModule module = (IModule) m;
-    IClassPathItem classPathItem;
-    ModuleDescriptor descriptor = module.getModuleDescriptor();
-    if (module.isCompileInMPS() || descriptor != null && !(descriptor.getAdditionalJavaStubPaths().isEmpty())) {
-      classPathItem = module.getClassPathItem();
-    } else {
-      classPathItem = CommonPaths.getMPSClassPath();
+  @Override
+  public URL getResource(SModule module, String resourceName) {
+    ModuleDescriptor descriptor = ((AbstractModule) module).getModuleDescriptor();
+    if (SModuleOperations.isCompileInMps(module) || (descriptor != null && !(descriptor.getAdditionalJavaStubPaths().isEmpty()))) {
+      return JavaModuleOperations.createClassPathItem(module.getFacet(JavaModuleFacet.class).getClassPath(), JavaTraceInfoResourceProvider.class.getName()).getResource(resourceName);
     }
-    if (classPathItem == null) {
-      return null;
+    if (SModuleOperations.isCompileInIdea(module)) {
+      return CommonPaths.getMPSClassPath().getResource(resourceName);
     }
-    return classPathItem.getResource(resourceName);
+    return null;
   }
 }

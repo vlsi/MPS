@@ -13,8 +13,9 @@ import jetbrains.mps.lang.dataFlow.framework.Program;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.util.SNodeOperations;
 
 public class DataFlowManager implements CoreComponent {
   private static Logger LOG = Logger.getLogger(DataFlowManager.class);
@@ -23,6 +24,7 @@ public class DataFlowManager implements CoreComponent {
   private Map<String, DataFlowBuilder> myBuilders = new HashMap<String, DataFlowBuilder>();
   private boolean myLoaded = false;
   private ReloadAdapter myReloadHandler = new ReloadAdapter() {
+    @Override
     public void unload() {
       DataFlowManager.this.clear();
     }
@@ -32,6 +34,7 @@ public class DataFlowManager implements CoreComponent {
     this.myClassLoaderManager = classLoaderManager;
   }
 
+  @Override
   public void init() {
     if (INSTANCE != null) {
       throw new IllegalStateException("double initialization");
@@ -40,6 +43,7 @@ public class DataFlowManager implements CoreComponent {
     this.myClassLoaderManager.addReloadHandler(this.myReloadHandler);
   }
 
+  @Override
   public void dispose() {
     this.myClassLoaderManager.removeReloadHandler(this.myReloadHandler);
     INSTANCE = null;
@@ -74,9 +78,9 @@ public class DataFlowManager implements CoreComponent {
 
   private void load() {
     for (Language l : ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
-      SModelDescriptor dfaModel = LanguageAspect.DATA_FLOW.get(l);
-      if (dfaModel != null && !(dfaModel.getSModel().rootsCount() == 0)) {
-        String dfaBuildersClassName = dfaModel.getLongName() + ".DFABuilders";
+      SModel dfaModel = LanguageAspect.DATA_FLOW.get(l);
+      if (dfaModel != null && dfaModel.getSModel().getRootNodes().iterator().hasNext()) {
+        String dfaBuildersClassName = SNodeOperations.getModelLongName(dfaModel) + ".DFABuilders";
         Class<? extends DataFlowBuilders> buildersClass = l.getClass(dfaBuildersClassName);
         if (buildersClass != null) {
           try {

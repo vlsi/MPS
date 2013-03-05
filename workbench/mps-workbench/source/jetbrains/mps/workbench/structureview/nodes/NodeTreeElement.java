@@ -27,7 +27,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.Computable;
@@ -41,29 +41,36 @@ public abstract class NodeTreeElement implements StructureViewTreeElement {
     myNode = node;
   }
 
+  @Override
   public SNodeReference getValue() {
     return myNode;
   }
 
+  @Override
   public ItemPresentation getPresentation() {
     //todo use SNodeReference here, get rid of read action
     return ModelAccess.instance().runReadAction(new Computable<ItemPresentation>() {
+      @Override
       public ItemPresentation compute() {
         return new NodeTreeElementPresentation();
       }
     });
   }
 
+  @Override
   public boolean canNavigate() {
     return true;
   }
 
+  @Override
   public boolean canNavigateToSource() {
     return true;
   }
 
+  @Override
   public void navigate(boolean b) {
     DataManager.getInstance().getDataContextFromFocus().doWhenDone(new Handler<DataContext>() {
+      @Override
       public void run(final DataContext dataContext) {
         final Project p = MPSDataKeys.PROJECT.getData(dataContext);
         if (p == null) return;
@@ -89,6 +96,7 @@ public abstract class NodeTreeElement implements StructureViewTreeElement {
       super(NodeTreeElement.this.myNode.resolve(MPSModuleRepository.getInstance()));
     }
 
+    @Override
     public String doGetLocationString() {
       return null;
     }

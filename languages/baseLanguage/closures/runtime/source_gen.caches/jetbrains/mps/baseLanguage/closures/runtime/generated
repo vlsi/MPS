@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-civmjgp9lyvc1592lp0bed4tl3qfjvc">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3l4d6vah7bipcwb415vkx7fy07t8dxg" />
+<dependencies version="2" modelHash="-58ocwuod1hpr2tjsask05cw1cxy8jv8">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="621em7vpw5ex0v0ghcf6e9cwqktpv6v" />
   <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" hash="-bsx9nqeu3phtzjl7qheg3fy1r62vv3m" />
-  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-1y364c3x08ezyxfrbl16vh2nde1fe7q" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-5hwzidtifhzxzto4ufe7o07xsgqc589" />
   <common hash="ck279f12g1oqiexil3kmpylrkeivhou">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" />
@@ -20,15 +20,13 @@
   </source>
   <source id="3812443517665722615" name="Wrappers" hash="67i91hpdgmu6myz4wug8e1du26csf5i">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" />
     <file name="Wrappers.java" />
   </source>
   <source id="3812443517665722868" name="DelayedException" hash="79jsccsag4icr2o6sqeu8ad9t337nro">
     <file name="DelayedException.java" />
   </source>
-  <source id="3812443517665722916" name="YieldingIterator" hash="-1j99n4rehhv7idoxv8i9mvpmy6uzi1g">
+  <source id="3812443517665722916" name="YieldingIterator" hash="65mxv0zprvm1ucboxm79y155elk4qz4">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" />
     <file name="YieldingIterator.java" />
   </source>
   <source id="4914003190800642467" name="Result" hash="8on3kovikvemdenwghnrm6la6praa09">

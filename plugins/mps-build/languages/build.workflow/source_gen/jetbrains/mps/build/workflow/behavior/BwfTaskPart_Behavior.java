@@ -6,9 +6,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.scope.SimpleRoleScope;
+import jetbrains.mps.scope.CompositeScope;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BwfTaskPart_Behavior {
   public static void init(SNode thisNode) {
@@ -17,10 +18,19 @@ public class BwfTaskPart_Behavior {
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (kind == SConceptOperations.findConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfSubTask")) {
       SNode task = SLinkOperations.getTarget(thisNode, "task", false);
-      if (task != null && SNodeOperations.getParent(task) == SNodeOperations.getParent(thisNode)) {
-        return BehaviorReflection.invokeVirtual(Scope.class, task, "virtual_getScope_3734116213129936182", new Object[]{kind, null});
+      SimpleRoleScope currentSubtaskScope = SimpleRoleScope.forNamedElements(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.build.workflow.structure.BwfTaskPart", "subTasks"));
+      CompositeScope scope = new CompositeScope(currentSubtaskScope);
+      if (task != null) {
+        scope.addScope(BehaviorReflection.invokeVirtual(Scope.class, task, "virtual_getScope_3734116213129936182", new Object[]{kind, null}));
       }
-      return SimpleRoleScope.forNamedElements(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.build.workflow.structure.BwfTaskPart", "subTasks"));
+      if (task == null || SNodeOperations.getParent(task) != SNodeOperations.getParent(thisNode)) {
+        for (SNode n : SNodeOperations.getAllSiblings(thisNode, false)) {
+          if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.build.workflow.structure.BwfTaskPart") && SLinkOperations.getTarget(SNodeOperations.cast(n, "jetbrains.mps.build.workflow.structure.BwfTaskPart"), "task", false) == SLinkOperations.getTarget(thisNode, "task", false)) {
+            scope.addScope(SimpleRoleScope.forNamedElements(n, SLinkOperations.findLinkDeclaration("jetbrains.mps.build.workflow.structure.BwfTaskPart", "subTasks")));
+          }
+        }
+      }
+      return scope;
     }
     return null;
   }

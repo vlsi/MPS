@@ -8,7 +8,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.StaticReference;
@@ -30,7 +30,7 @@ public class SetReferenceChange extends NodeChange {
     myResolveInfo = resolveInfo;
 
     // check if only resolve info for static reference changed - then it cannot conflict with other changes 
-    SReference oldRef = check_mgdhcs_a0i0f(changeSet.getOldModel().getNodeById(getAffectedNodeId()), myRole, this);
+    SReference oldRef = check_mgdhcs_a0i0f(changeSet.getOldModel().getNode(getAffectedNodeId()), myRole, this);
     myResolveInfoOnly = eq_mgdhcs_a0a0a9a5(check_mgdhcs_a0a0a9a5(oldRef), targetModelReference) && eq_mgdhcs_a0a0a9a5_0(check_mgdhcs_a0a0a9a5_0(oldRef), targetNodeId) && targetNodeId != null;
   }
 
@@ -54,14 +54,15 @@ public class SetReferenceChange extends NodeChange {
     return myResolveInfo;
   }
 
+  @Override
   public void apply(@NotNull SModel model, @NotNull NodeCopier nodeCopier) {
-    SNode node = model.getNodeById(getAffectedNodeId());
+    SNode node = model.getNode(getAffectedNodeId());
     assert node != null;
     if (myTargetNodeId == null && myResolveInfo == null) {
       node.setReferenceTarget(myRole, null);
     } else {
       SModelReference targetModelReference = (myTargetModelReference == null ?
-        model.getSModelReference() :
+        model.getReference() :
         myTargetModelReference
       );
       SReference reference;
@@ -89,10 +90,11 @@ public class SetReferenceChange extends NodeChange {
     return String.format("Set reference in role %s for node %s to %s [resolveInfo=%s]", myRole, getAffectedNodeId(), targetString, myResolveInfo);
   }
 
+  @Override
   public String getDescription() {
     // TODO consider dynamic references 
-    SReference oldRef = getChangeSet().getOldModel().getNodeById(getAffectedNodeId()).getReference(myRole);
-    SReference newRef = getChangeSet().getNewModel().getNodeById(getAffectedNodeId()).getReference(myRole);
+    SReference oldRef = getChangeSet().getOldModel().getNode(getAffectedNodeId()).getReference(myRole);
+    SReference newRef = getChangeSet().getNewModel().getNode(getAffectedNodeId()).getReference(myRole);
     if (oldRef == null) {
       return String.format("Added %s reference", myRole);
     }
@@ -131,12 +133,13 @@ public class SetReferenceChange extends NodeChange {
   }
 
   @NotNull
+  @Override
   protected ModelChange createOppositeChange() {
-    SNode node = getChangeSet().getOldModel().getNodeById(getAffectedNodeId());
+    SNode node = getChangeSet().getOldModel().getNode(getAffectedNodeId());
     assert node != null;
     SReference ref = node.getReference(getRole());
     SModelReference targetModel = check_mgdhcs_a0d0o(ref);
-    if (eq_mgdhcs_a0e0o(getChangeSet().getOldModel().getSModelReference(), targetModel)) {
+    if (eq_mgdhcs_a0e0o(getChangeSet().getOldModel().getReference(), targetModel)) {
       // This is internal reference 
       targetModel = null;
     }
@@ -144,7 +147,7 @@ public class SetReferenceChange extends NodeChange {
     return new SetReferenceChange(getChangeSet().getOppositeChangeSet(), getAffectedNodeId(), getRole(), targetModel, check_mgdhcs_e0a6a41(ref), check_mgdhcs_f0a6a41(((jetbrains.mps.smodel.SReference) ref)));
   }
 
-  private static SReference check_mgdhcs_a0i0f(jetbrains.mps.smodel.SNode checkedDotOperand, String myRole, SetReferenceChange checkedDotThisExpression) {
+  private static SReference check_mgdhcs_a0i0f(SNode checkedDotOperand, String myRole, SetReferenceChange checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference(myRole);
     }

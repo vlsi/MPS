@@ -26,6 +26,7 @@ public class TemplateConfigurationTest extends JFrame {
   private JPanel createButtons(final PersonEditor_Configuration twoFieldsConfiguration, final SettingsEditorEx<PersonEditor_Configuration> editor) {
     JPanel buttonsPanel = new JPanel(new FlowLayout());
     buttonsPanel.add(new JButton(new AbstractAction("Ok") {
+      @Override
       public void actionPerformed(ActionEvent p0) {
         editor.apply(twoFieldsConfiguration);
         System.out.println("name = " + twoFieldsConfiguration.getName());
@@ -34,6 +35,7 @@ public class TemplateConfigurationTest extends JFrame {
       }
     }));
     buttonsPanel.add(new JButton(new AbstractAction("Apply") {
+      @Override
       public void actionPerformed(ActionEvent p0) {
         editor.apply(twoFieldsConfiguration);
         System.out.println("name = " + twoFieldsConfiguration.getName());
@@ -41,6 +43,7 @@ public class TemplateConfigurationTest extends JFrame {
       }
     }));
     buttonsPanel.add(new JButton(new AbstractAction("Reset") {
+      @Override
       public void actionPerformed(ActionEvent p0) {
         editor.resetFrom(twoFieldsConfiguration);
         System.out.println("name = " + twoFieldsConfiguration.getName());
@@ -48,6 +51,7 @@ public class TemplateConfigurationTest extends JFrame {
       }
     }));
     buttonsPanel.add(new JButton(new AbstractAction("Cancel") {
+      @Override
       public void actionPerformed(ActionEvent p0) {
         editor.resetFrom(twoFieldsConfiguration);
         System.out.println("name = " + twoFieldsConfiguration.getName());
@@ -60,6 +64,7 @@ public class TemplateConfigurationTest extends JFrame {
 
   public static void main(String[] args) {
     SwingUtilities.invokeLater(new Runnable() {
+      @Override
       public void run() {
         TemplateConfigurationTest main = new TemplateConfigurationTest();
         main.setVisible(true);

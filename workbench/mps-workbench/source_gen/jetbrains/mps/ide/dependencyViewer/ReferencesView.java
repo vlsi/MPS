@@ -31,6 +31,7 @@ public class ReferencesView extends UsagesView {
     usagesTree.setShowPopupMenu(false);
   }
 
+  @Override
   public void close() {
     myComponent.close();
   }
@@ -39,34 +40,42 @@ public class ReferencesView extends UsagesView {
     public MyNodeRepresentator() {
     }
 
+    @Override
     public List<CategoryKind> getCategoryKinds() {
       return Collections.emptyList();
     }
 
+    @Override
     public Icon getCategoryIcon(String string) {
       return null;
     }
 
+    @Override
     public String getCategoryText(TextOptions options, String string, boolean b) {
       return "References";
     }
 
+    @Override
     public Icon getResultsIcon() {
       return IdeIcons.DEFAULT_ICON;
     }
 
+    @Override
     public String getResultsText(TextOptions options) {
       return "Usages of the right tree scope selection in the left tree scope selection";
     }
 
     @NotNull
+    @Override
     public String getPresentation(SNode node) {
       return node.getPresentation();
     }
 
+    @Override
     public void read(Element element, jetbrains.mps.project.Project project) throws CantLoadSomethingException {
     }
 
+    @Override
     public void write(Element element, jetbrains.mps.project.Project project) throws CantSaveSomethingException {
     }
   }

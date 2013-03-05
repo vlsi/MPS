@@ -14,8 +14,9 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.logging.Logger;
@@ -66,13 +67,13 @@ public class UpdateRefactoringVersions_Action extends BaseAction {
         UpdateRefactoringVersions_Action.this.updateModelVersion((RefactorableSModelDescriptor) model, _params);
       }
       for (SModel model : Sequence.fromIterable(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getProjectModels())) {
-        if (!(model instanceof EditableSModelDescriptor)) {
+        if (!(model instanceof EditableSModel)) {
           continue;
         }
         if (SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(model))) {
           continue;
         }
-        UpdateRefactoringVersions_Action.this.updateImportVersions((EditableSModelDescriptor) model, _params);
+        UpdateRefactoringVersions_Action.this.updateImportVersions((EditableSModel) model, _params);
       }
       SModelRepository.getInstance().saveAll();
     } catch (Throwable t) {
@@ -82,7 +83,7 @@ public class UpdateRefactoringVersions_Action extends BaseAction {
 
   /*package*/ void updateModelVersion(RefactorableSModelDescriptor model, final Map<String, Object> _params) {
     int modelVersion = model.getVersion();
-    int historyVersion = model.getStructureModificationLog().getLatestVersion(model.getSModelReference());
+    int historyVersion = model.getStructureModificationLog().getLatestVersion(model.getReference());
     if (modelVersion < historyVersion) {
       LOG.info("updating version of " + model + " from " + modelVersion + " to .history version " + historyVersion);
       model.setVersion(historyVersion);
@@ -92,20 +93,20 @@ public class UpdateRefactoringVersions_Action extends BaseAction {
     }
   }
 
-  /*package*/ void updateImportVersions(EditableSModelDescriptor model, final Map<String, Object> _params) {
-    jetbrains.mps.smodel.SModel m = model.getSModel();
-    for (jetbrains.mps.smodel.SModel.ImportElement importElement : ListSequence.fromList(SModelOperations.getAllImportElements(model.getSModel()))) {
+  /*package*/ void updateImportVersions(EditableSModel model, final Map<String, Object> _params) {
+    SModel m = ((SModelInternal) model).getSModel();
+    for (jetbrains.mps.smodel.SModel.ImportElement importElement : ListSequence.fromList(SModelOperations.getAllImportElements(m))) {
       RefactorableSModelDescriptor usedModel = as_hexye9_a0a0a1a7(SModelRepository.getInstance().getModelDescriptor(importElement.getModelReference()), RefactorableSModelDescriptor.class);
       if (usedModel == null) {
         continue;
       }
       if (importElement.getUsedVersion() < usedModel.getVersion()) {
         LOG.info(model + ": updating used version of " + importElement.getModelReference() + " from " + importElement.getUsedVersion() + " to " + usedModel.getVersion());
-        m.updateImportedModelUsedVersion(importElement.getModelReference(), usedModel.getVersion());
+        ((SModelInternal) m).updateImportedModelUsedVersion(importElement.getModelReference(), usedModel.getVersion());
         model.setChanged(true);
       } else if (importElement.getUsedVersion() > usedModel.getVersion()) {
         LOG.error(model + ": used version of " + importElement.getModelReference() + " is greater than model version: " + importElement.getUsedVersion() + ">" + usedModel.getVersion());
-        m.updateImportedModelUsedVersion(importElement.getModelReference(), usedModel.getVersion());
+        ((SModelInternal) m).updateImportedModelUsedVersion(importElement.getModelReference(), usedModel.getVersion());
         model.setChanged(true);
       }
     }

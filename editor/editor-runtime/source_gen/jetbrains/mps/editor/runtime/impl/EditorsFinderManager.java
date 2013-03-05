@@ -37,11 +37,11 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
@@ -60,16 +60,19 @@ public class EditorsFinderManager implements ApplicationComponent {
     myClassLoaderManager = coreComponents.getClassLoaderManager();
   }
 
+  @Override
   public void initComponent() {
     myClassLoaderManager.addReloadHandler(myReloadListener);
   }
 
+  @Override
   public void disposeComponent() {
     myClassLoaderManager.removeReloadHandler(myReloadListener);
   }
 
   @NonNls
   @NotNull
+  @Override
   public String getComponentName() {
     return "Editors Finder Manager";
   }
@@ -117,6 +120,7 @@ public class EditorsFinderManager implements ApplicationComponent {
 
   private INodeEditor findEditor(final SNode nodeToEdit) {
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<INodeEditor>() {
+      @Override
       public INodeEditor compute() {
         SNode nodeConcept = SNodeOperations.getConceptDeclaration(nodeToEdit);
         if (nodeConcept == null) {
@@ -169,10 +173,10 @@ public class EditorsFinderManager implements ApplicationComponent {
     if (language == null) {
       return null;
     }
-    SModelDescriptor editorModelDescriptor = LanguageAspect.EDITOR.get(language);
+    SModel editorModelDescriptor = LanguageAspect.EDITOR.get(language);
     String editorUID = null;
     if (editorModelDescriptor != null) {
-      editorUID = editorModelDescriptor.getSModelReference().getSModelFqName().toString();
+      editorUID = editorModelDescriptor.getReference().getSModelFqName().toString();
     }
     try {
       String editorClassName = editorUID + "." + SPropertyOperations.getString(conceptDeclaration, "name") + "_Editor";
@@ -205,10 +209,12 @@ public class EditorsFinderManager implements ApplicationComponent {
     public DefaultInterfaceEditor() {
     }
 
+    @Override
     public EditorCell createEditorCell(EditorContext context, SNode node) {
       return new EditorCell_Error(context, node, "    ");
     }
 
+    @Override
     public EditorCell createInspectedCell(EditorContext context, SNode node) {
       return new EditorCell_Constant(context, node, jetbrains.mps.util.SNodeOperations.getDebugText(node));
     }

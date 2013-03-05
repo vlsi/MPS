@@ -16,52 +16,61 @@
 package jetbrains.mps.refactoring.framework;
 
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.Condition;
 
 import javax.swing.JComponent;
 
 @Deprecated
 //left for compatibility with old refactorings
-public class ChooseModelDescriptorComponent implements IChooseComponent<SModelDescriptor> {
+public class ChooseModelDescriptorComponent implements IChooseComponent<SModel> {
   private ChooseNodeOrModelComponent myChooseNodeOrModelComponent;
 
   public ChooseModelDescriptorComponent(IOperationContext operationContext) {
     myChooseNodeOrModelComponent = new ChooseNodeOrModelComponent(operationContext, null, true, false);
   }
 
-  public SModelDescriptor submit() throws InvalidInputValueException {
-    return (SModelDescriptor) myChooseNodeOrModelComponent.submit();
+  @Override
+  public SModel submit() throws InvalidInputValueException {
+    return (SModel) myChooseNodeOrModelComponent.submit();
   }
 
+  @Override
   public String getPropertyName() {
     return myChooseNodeOrModelComponent.getPropertyName();
   }
 
+  @Override
   public void setPropertyName(String propertyName) {
     myChooseNodeOrModelComponent.setPropertyName(propertyName);
   }
 
-  public void setInitialValue(SModelDescriptor initialValue) {
+  @Override
+  public void setInitialValue(SModel initialValue) {
     myChooseNodeOrModelComponent.setInitialValue(initialValue);
   }
 
-  public void setCondition(Condition<SModelDescriptor> condition) {
+  @Override
+  public void setCondition(Condition<SModel> condition) {
     myChooseNodeOrModelComponent.setCondition((Condition) condition);
   }
 
+  @Override
   public JComponent getComponentToFocus() {
     return myChooseNodeOrModelComponent.getComponentToFocus();
   }
 
+  @Override
   public JComponent getMainComponent() {
     return myChooseNodeOrModelComponent;
   }
 
+  @Override
   public void setCaption(String caption) {
     myChooseNodeOrModelComponent.setCaption(caption);
   }
 
+  @Override
   public void initComponent() {
     myChooseNodeOrModelComponent.initComponent();
   }

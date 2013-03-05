@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="IntentionsDescriptor.java" startLine="10" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.IntentionsDescriptor" />
+  <unitInfo fileName="IntentionsDescriptor.java" startLine="10" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.IntentionsDescriptor" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)/1193744597902">
     <nodeInfo nodeId="1193744597902" fileName="AddCastStatement_Intention.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="1193744597902" fileName="AddCastStatement_Intention.java" startLine="29" startPosition="30" endLine="30" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -3816,7 +3816,7 @@
     <nodeInfo nodeId="1227519137253" fileName="MakeClassAbstract_Intention.java" startLine="49" startPosition="53" endLine="50" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1227519137253" fileName="MakeClassAbstract_Intention.java" startLine="52" startPosition="127" endLine="53" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1227519137253" fileName="MakeClassAbstract_Intention.java" startLine="54" startPosition="5" endLine="55" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6088627910558222844" fileName="MakeClassAbstract_Intention.java" startLine="58" startPosition="91" endLine="59" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6088627910558222844" fileName="MakeClassAbstract_Intention.java" startLine="58" startPosition="91" endLine="59" endPosition="195" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="538631991771383371" fileName="MakeClassAbstract_Intention.java" startLine="62" startPosition="112" endLine="63" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1227519137253" fileName="MakeClassAbstract_Intention.java" startLine="66" startPosition="53" endLine="67" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1227519137253" fileName="MakeClassAbstract_Intention.java" startLine="70" startPosition="35" endLine="71" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -3855,7 +3855,7 @@
     <scopeInfo nodeId="1227519137253" fileName="MakeClassAbstract_Intention.java" startLine="44" startPosition="44" endLine="45" endPosition="16" />
     <scopeInfo nodeId="1227519137253" fileName="MakeClassAbstract_Intention.java" startLine="49" startPosition="53" endLine="50" endPosition="19" />
     <scopeInfo nodeId="1227519137253" fileName="MakeClassAbstract_Intention.java" startLine="52" startPosition="127" endLine="53" endPosition="19" />
-    <scopeInfo nodeId="6088627910558218896" fileName="MakeClassAbstract_Intention.java" startLine="58" startPosition="91" endLine="59" endPosition="104" />
+    <scopeInfo nodeId="6088627910558218896" fileName="MakeClassAbstract_Intention.java" startLine="58" startPosition="91" endLine="59" endPosition="195" />
     <scopeInfo nodeId="538631991771380641" fileName="MakeClassAbstract_Intention.java" startLine="62" startPosition="112" endLine="63" endPosition="113" />
     <scopeInfo nodeId="1227519137253" fileName="MakeClassAbstract_Intention.java" startLine="66" startPosition="53" endLine="67" endPosition="126" />
     <scopeInfo nodeId="1227519137253" fileName="MakeClassAbstract_Intention.java" startLine="70" startPosition="35" endLine="71" endPosition="17" />
@@ -4806,6 +4806,133 @@
     <unitInfo nodeId="1240251547040" fileName="MakeFieldVolatile_Intention.java" startLine="66" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeFieldVolatile_Intention$IntentionImplementation" />
     <unitInfo nodeId="1240251547040" fileName="MakeFieldVolatile_Intention.java" startLine="17" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.MakeFieldVolatile_Intention" />
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)/1645752949779063112">
+    <nodeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
+    <nodeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="35" startPosition="30" endLine="36" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="39" startPosition="35" endLine="40" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="43" startPosition="41" endLine="44" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="47" startPosition="37" endLine="48" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="51" startPosition="34" endLine="52" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="55" startPosition="44" endLine="56" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="60" startPosition="53" endLine="61" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="62" startPosition="5" endLine="63" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1645752949779211164" fileName="AddOverrideAnnotation_Intention.java" startLine="66" startPosition="91" endLine="67" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1645752949779260921" fileName="AddOverrideAnnotation_Intention.java" startLine="68" startPosition="31" endLine="69" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1645752949779333626" fileName="AddOverrideAnnotation_Intention.java" startLine="72" startPosition="39" endLine="73" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1645752949779292298" fileName="AddOverrideAnnotation_Intention.java" startLine="75" startPosition="9" endLine="76" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1645752949776650689" fileName="AddOverrideAnnotation_Intention.java" startLine="77" startPosition="5" endLine="78" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1645752949776688111" fileName="AddOverrideAnnotation_Intention.java" startLine="78" startPosition="112" endLine="79" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="82" startPosition="53" endLine="83" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="86" startPosition="35" endLine="87" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="91" startPosition="37" endLine="92" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="93" startPosition="5" endLine="94" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1645752949779123530" fileName="AddOverrideAnnotation_Intention.java" startLine="101" startPosition="87" endLine="102" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1645752949779470742" fileName="AddOverrideAnnotation_Intention.java" startLine="105" startPosition="78" endLine="106" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1645752949779468619" fileName="AddOverrideAnnotation_Intention.java" startLine="106" startPosition="134" endLine="107" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1645752949777087188" fileName="AddOverrideAnnotation_Intention.java" startLine="108" startPosition="77" endLine="109" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1645752949779495780" fileName="AddOverrideAnnotation_Intention.java" startLine="110" startPosition="7" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="114" startPosition="48" endLine="115" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1645752949777350409" fileName="AddOverrideAnnotation_Intention.java" startLine="119" startPosition="67" endLine="120" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1645752949777350409" fileName="AddOverrideAnnotation_Intention.java" startLine="120" startPosition="159" endLine="121" endPosition="219" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1645752949777350409" fileName="AddOverrideAnnotation_Intention.java" startLine="120" startPosition="159" endLine="121" endPosition="219" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1645752949777350409" fileName="AddOverrideAnnotation_Intention.java" startLine="121" startPosition="219" endLine="122" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="32" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddOverrideAnnotation_Intention#()V" />
+    <nodeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="98" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
+    <nodeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLanguageFqName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="51" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/intentions/IntentionType;" />
+    <nodeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
+    <nodeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="59" startPosition="84" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1645752949779254020" fileName="AddOverrideAnnotation_Intention.java" startLine="67" startPosition="130" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1645752949779333624" fileName="AddOverrideAnnotation_Intention.java" startLine="72" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="82" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+    <nodeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="86" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
+    <nodeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="90" startPosition="99" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="101" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1645752949777081744" fileName="AddOverrideAnnotation_Intention.java" startLine="107" startPosition="114" endLine="110" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="114" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+    <nodeInfo nodeId="1645752949777350409" fileName="AddOverrideAnnotation_Intention.java" startLine="119" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createAnnotationInstance_4i19oe_a0a0a2a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="59" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <nodeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="90" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
+    <nodeInfo nodeId="1645752949779282687" fileName="AddOverrideAnnotation_Intention.java" startLine="70" startPosition="5" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="105" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="66" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <scopeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="32" startPosition="44" endLine="32" endPosition="44" />
+    <scopeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="98" startPosition="38" endLine="98" endPosition="38" />
+    <scopeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="35" startPosition="30" endLine="36" endPosition="76" />
+    <scopeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="39" startPosition="35" endLine="40" endPosition="35" />
+    <scopeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="43" startPosition="41" endLine="44" endPosition="83" />
+    <scopeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="47" startPosition="37" endLine="48" endPosition="43" />
+    <scopeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="51" startPosition="34" endLine="52" endPosition="32" />
+    <scopeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="55" startPosition="44" endLine="56" endPosition="16" />
+    <scopeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="60" startPosition="53" endLine="61" endPosition="19" />
+    <scopeInfo nodeId="1645752949779254022" fileName="AddOverrideAnnotation_Intention.java" startLine="68" startPosition="31" endLine="69" endPosition="19" />
+    <scopeInfo nodeId="1645752949779333625" fileName="AddOverrideAnnotation_Intention.java" startLine="72" startPosition="39" endLine="73" endPosition="194" />
+    <scopeInfo nodeId="1645752949779282689" fileName="AddOverrideAnnotation_Intention.java" startLine="75" startPosition="9" endLine="76" endPosition="19" />
+    <scopeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="82" startPosition="53" endLine="83" endPosition="132" />
+    <scopeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="86" startPosition="35" endLine="87" endPosition="17" />
+    <scopeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="91" startPosition="37" endLine="92" endPosition="137" />
+    <scopeInfo nodeId="1645752949779063114" fileName="AddOverrideAnnotation_Intention.java" startLine="101" startPosition="87" endLine="102" endPosition="40" />
+    <scopeInfo nodeId="1645752949777081750" fileName="AddOverrideAnnotation_Intention.java" startLine="108" startPosition="77" endLine="109" endPosition="139" />
+    <scopeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="114" startPosition="48" endLine="115" endPosition="50" />
+    <scopeInfo nodeId="1645752949777350409" fileName="AddOverrideAnnotation_Intention.java" startLine="120" startPosition="159" endLine="121" endPosition="219" />
+    <scopeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="32" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="98" startPosition="0" endLine="100" endPosition="0" />
+    <scopeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="39" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="43" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="47" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="51" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="55" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="1645752949779333624" fileName="AddOverrideAnnotation_Intention.java" startLine="72" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="1645752949779333624" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="82" startPosition="0" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="86" startPosition="0" endLine="89" endPosition="0" />
+    <scopeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="101" startPosition="0" endLine="104" endPosition="0">
+      <varInfo nodeId="1645752949779063112" varName="editorContext" />
+      <varInfo nodeId="1645752949779063112" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1645752949777081744" fileName="AddOverrideAnnotation_Intention.java" startLine="107" startPosition="114" endLine="110" endPosition="7">
+      <varInfo nodeId="1645752949777081746" varName="meth" />
+    </scopeInfo>
+    <scopeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="114" startPosition="0" endLine="117" endPosition="0" />
+    <scopeInfo nodeId="1645752949777350409" fileName="AddOverrideAnnotation_Intention.java" startLine="119" startPosition="67" endLine="122" endPosition="14">
+      <varInfo nodeId="1645752949777350409" varName="n1" />
+    </scopeInfo>
+    <scopeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="59" startPosition="84" endLine="63" endPosition="16" />
+    <scopeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="90" startPosition="99" endLine="94" endPosition="30" />
+    <scopeInfo nodeId="1645752949777350409" fileName="AddOverrideAnnotation_Intention.java" startLine="119" startPosition="0" endLine="124" endPosition="0" />
+    <scopeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="59" startPosition="0" endLine="65" endPosition="0">
+      <varInfo nodeId="1645752949779063112" varName="editorContext" />
+      <varInfo nodeId="1645752949779063112" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="90" startPosition="0" endLine="96" endPosition="0">
+      <varInfo nodeId="1645752949779063112" varName="context" />
+      <varInfo nodeId="1645752949779063112" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1645752949779063116" fileName="AddOverrideAnnotation_Intention.java" startLine="105" startPosition="78" endLine="111" endPosition="0">
+      <varInfo nodeId="1645752949779470743" varName="classConcept" />
+      <varInfo nodeId="1645752949779468620" varName="finder" />
+    </scopeInfo>
+    <scopeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="105" startPosition="0" endLine="113" endPosition="0">
+      <varInfo nodeId="1645752949779063112" varName="editorContext" />
+      <varInfo nodeId="1645752949779063112" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1645752949779135891" fileName="AddOverrideAnnotation_Intention.java" startLine="66" startPosition="91" endLine="79" endPosition="75">
+      <varInfo nodeId="1645752949779211167" varName="classConcept" />
+      <varInfo nodeId="1645752949776650690" varName="finder" />
+    </scopeInfo>
+    <scopeInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="66" startPosition="0" endLine="81" endPosition="0">
+      <varInfo nodeId="1645752949779063112" varName="editorContext" />
+      <varInfo nodeId="1645752949779063112" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="1645752949779333624" fileName="AddOverrideAnnotation_Intention.java" startLine="71" startPosition="140" endLine="75" endPosition="5" unitName="jetbrains.mps.baseLanguage.intentions.AddOverrideAnnotation_Intention$1" />
+    <unitInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="97" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.AddOverrideAnnotation_Intention$IntentionImplementation" />
+    <unitInfo nodeId="1645752949779063112" fileName="AddOverrideAnnotation_Intention.java" startLine="29" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.AddOverrideAnnotation_Intention" />
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)/1705375422254837433">
     <nodeInfo nodeId="1705375422254837433" fileName="MakeClassFinal_Intention.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="1705375422254837433" fileName="MakeClassFinal_Intention.java" startLine="24" startPosition="30" endLine="25" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -4817,7 +4944,7 @@
     <nodeInfo nodeId="1705375422254837433" fileName="MakeClassFinal_Intention.java" startLine="49" startPosition="53" endLine="50" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1705375422254837433" fileName="MakeClassFinal_Intention.java" startLine="52" startPosition="127" endLine="53" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1705375422254837433" fileName="MakeClassFinal_Intention.java" startLine="54" startPosition="5" endLine="55" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6088627910558222886" fileName="MakeClassFinal_Intention.java" startLine="58" startPosition="91" endLine="59" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6088627910558222886" fileName="MakeClassFinal_Intention.java" startLine="58" startPosition="91" endLine="59" endPosition="195" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1705375422254837462" fileName="MakeClassFinal_Intention.java" startLine="62" startPosition="112" endLine="63" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1705375422254837433" fileName="MakeClassFinal_Intention.java" startLine="66" startPosition="53" endLine="67" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1705375422254837433" fileName="MakeClassFinal_Intention.java" startLine="70" startPosition="35" endLine="71" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -4856,7 +4983,7 @@
     <scopeInfo nodeId="1705375422254837433" fileName="MakeClassFinal_Intention.java" startLine="44" startPosition="44" endLine="45" endPosition="16" />
     <scopeInfo nodeId="1705375422254837433" fileName="MakeClassFinal_Intention.java" startLine="49" startPosition="53" endLine="50" endPosition="19" />
     <scopeInfo nodeId="1705375422254837433" fileName="MakeClassFinal_Intention.java" startLine="52" startPosition="127" endLine="53" endPosition="19" />
-    <scopeInfo nodeId="6088627910558222885" fileName="MakeClassFinal_Intention.java" startLine="58" startPosition="91" endLine="59" endPosition="104" />
+    <scopeInfo nodeId="6088627910558222885" fileName="MakeClassFinal_Intention.java" startLine="58" startPosition="91" endLine="59" endPosition="195" />
     <scopeInfo nodeId="1705375422254837461" fileName="MakeClassFinal_Intention.java" startLine="62" startPosition="112" endLine="63" endPosition="113" />
     <scopeInfo nodeId="1705375422254837433" fileName="MakeClassFinal_Intention.java" startLine="66" startPosition="53" endLine="67" endPosition="132" />
     <scopeInfo nodeId="1705375422254837433" fileName="MakeClassFinal_Intention.java" startLine="70" startPosition="35" endLine="71" endPosition="17" />

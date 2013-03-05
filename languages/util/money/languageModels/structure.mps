@@ -9,6 +9,7 @@
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1186667651178">
       <property name="name" nameId="tpck.1169194664001" value="MoneyLiteral" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
     <node type="tpce.ConstrainedDataTypeDeclaration" typeId="tpce.1082978499127" id="1186668138191">
@@ -19,6 +20,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="MoneyType" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="Money" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
     </node>
@@ -27,6 +29,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="money type constructor" />
       <property name="name" nameId="tpck.1169194664001" value="MoneyCreator" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="Money" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1145552809883" resolveInfo="AbstractCreator" />
     </node>
@@ -34,12 +37,14 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="MoneyMethodCall" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1187357875552">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="MoneyGetAmountMethodCall" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value=". amount" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1187357857395" resolveInfo="MoneyMethodCall" />
     </node>
@@ -47,6 +52,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="MoneyGetCurrencyMethodCall" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value=". currency" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1187357857395" resolveInfo="MoneyMethodCall" />
     </node>
@@ -54,6 +60,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="MoneyIsZeroMethodCall" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value=". isZero" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1187357857395" resolveInfo="MoneyMethodCall" />
     </node>

@@ -8,7 +8,7 @@ import jetbrains.mps.refactoring.framework.IRefactoringTarget;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -39,7 +39,7 @@ public class RenameConcept extends BaseLoggableRefactoring {
   }
 
   public void refactor(final RefactoringContext refactoringContext) {
-    String newConceptName = SNodeOperations.getModel(refactoringContext.getSelectedNode()).getSModelFqName() + "." + ((String) refactoringContext.getParameter("newName"));
+    String newConceptName = SNodeOperations.getModel(refactoringContext.getSelectedNode()).getReference().getSModelFqName() + "." + ((String) refactoringContext.getParameter("newName"));
     refactoringContext.changeFeatureName(refactoringContext.getSelectedNode(), newConceptName, ((String) refactoringContext.getParameter("newName")));
   }
 

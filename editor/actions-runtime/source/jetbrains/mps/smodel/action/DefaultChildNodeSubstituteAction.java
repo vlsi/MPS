@@ -19,7 +19,7 @@ import jetbrains.mps.actions.runtime.impl.ActionsUtil;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;

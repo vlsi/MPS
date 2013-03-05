@@ -27,7 +27,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -76,7 +76,7 @@ public abstract class NodeNavigatable implements Navigatable {
     SNode node = myNode.resolve(MPSModuleRepository.getInstance());
     if (node == null) return;
 
-    SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
+    SModel modelDescriptor = node.getModel().getModelDescriptor();
     if (modelDescriptor == null) return;
 
     IModule module = modelDescriptor.getModule();

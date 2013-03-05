@@ -41,6 +41,7 @@ public class GenerationTaskPool implements IGenerationTaskPool {
       namePrefix = "generation-thread-";
     }
 
+    @Override
     public Thread newThread(final Runnable original) {
       Thread t = new Thread(group, original, namePrefix + threadNumber.getAndIncrement());
       if (t.isDaemon())

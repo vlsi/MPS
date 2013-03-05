@@ -23,15 +23,15 @@ import jetbrains.mps.ypath.behavior.TreePath_Behavior;
 import jetbrains.mps.ypath.behavior.ITreePathExpression_Behavior;
 import jetbrains.mps.ypath.actions.TraversalAxisUtil;
 import jetbrains.mps.ypath.behavior.IParamFeature_Behavior;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class menu_SubstituteFeatureAndParameter extends AbstractCellMenuComponent {
   public menu_SubstituteFeatureAndParameter() {
-    super(new SubstituteInfoPartExt[]{new menu_SubstituteFeatureAndParameter.IterateOperation_generic_cellMenu_a0()});
+    super(new SubstituteInfoPartExt[]{new menu_SubstituteFeatureAndParameter.IterateOperation_generic_cellMenu_9ndnmf_a0()});
   }
 
-  public static class IterateOperation_generic_cellMenu_a0 extends AbstractCellMenuPart_Generic_Group {
-    public IterateOperation_generic_cellMenu_a0() {
+  public static class IterateOperation_generic_cellMenu_9ndnmf_a0 extends AbstractCellMenuPart_Generic_Group {
+    public IterateOperation_generic_cellMenu_9ndnmf_a0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {

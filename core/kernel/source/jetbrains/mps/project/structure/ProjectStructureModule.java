@@ -27,16 +27,24 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.stub.ProjectStructureBuilder;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
 import org.jetbrains.mps.openapi.module.SRepositoryListenerAdapter;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -154,6 +162,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     INSTANCE = this;
     MPSModuleRepository.getInstance().addModuleRepositoryListener(myListener);
     ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
       public void run() {
         MPSModuleRepository.getInstance().registerModule(ProjectStructureModule.this, myOwner);
       }
@@ -167,6 +176,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     INSTANCE = null;
     clearAll();
     ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
       public void run() {
         MPSModuleRepository.getInstance().unregisterModule(ProjectStructureModule.this, myOwner);
       }
@@ -176,6 +186,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
 
   public void clearAll() {
     ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
       public void run() {
         removeAll();
         invalidateCaches();
@@ -185,8 +196,8 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   }
 
   private void removeAll() {
-    List<SModelDescriptor> models = this.getOwnModelDescriptors();
-    for (SModelDescriptor model : models) {
+    List<SModel> models = this.getOwnModelDescriptors();
+    for (SModel model : models) {
       removeModel(model);
     }
   }
@@ -196,8 +207,8 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     return Collections.singleton(BootstrapLanguages.PROJECT);
   }
 
-  private void removeModel(SModelDescriptor md) {
-    if (myModels.remove(md.getSModelReference()) != null) {
+  private void removeModel(SModel md) {
+    if (myModels.remove(md.getReference()) != null) {
       SModelRepository.getInstance().unRegisterModelDescriptor(md, this);
       if (md instanceof ProjectStructureSModelDescriptor) {
         ((ProjectStructureSModelDescriptor) md).dropModel();
@@ -228,15 +239,23 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     return getModuleFqName();
   }
 
-  public List<SModelDescriptor> getOwnModelDescriptors() {
-    return new ArrayList<SModelDescriptor>(myModels.values());
+  @Override
+  public List<SModel> getOwnModelDescriptors() {
+    return new ArrayList<SModel>(myModels.values());
   }
 
+  @Override
   protected ModuleScope createScope() {
     return new ProjectStructureModuleScope();
   }
 
+  @Override
+  protected void collectFacetTypes(Set<String> types) {
+    // none
+  }
+
   public class ProjectStructureModuleScope extends ModuleScope {
+    @Override
     protected Set<IModule> getInitialModules() {
       Set<IModule> result = new HashSet<IModule>();
       result.add(ProjectStructureModule.this);
@@ -254,6 +273,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
       myProjectStructureModule = projectStructureModule;
     }
 
+    @Override
     protected ProjectStructureSModel createModel() {
       final ProjectStructureSModel model = new ProjectStructureSModel(getSModelReference());
       final ModuleDescriptor moduleDescriptor = ((IModule) myModule).getModuleDescriptor();
@@ -282,7 +302,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
                   select(new ISelector<org.jetbrains.mps.openapi.model.SModel, org.jetbrains.mps.openapi.model.SModelReference>() {
                     @Override
                     public org.jetbrains.mps.openapi.model.SModelReference select(org.jetbrains.mps.openapi.model.SModel o) {
-                      return o.getModelReference();
+                      return o.getReference();
                     }
                   });
               }
@@ -297,7 +317,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
       if (mySModel == null) return;
 
       final SModel oldModel = mySModel;
-      oldModel.setModelDescriptor(null);
+      ((jetbrains.mps.smodel.SModel) oldModel).setModelDescriptor(null);
       mySModel = null;
       if (ModelAccess.instance().canWrite()) {
         notifyModelReplaced(oldModel);
@@ -317,17 +337,22 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     }
 
     @Override
-    public SModelDescriptor resolveModel(SModelReference reference) {
+    public boolean isReadOnly() {
+      return true;
+    }
+
+    @Override
+    public SModel resolveModel(SModelReference reference) {
       return myProjectStructureModule.myModels.get(reference);
     }
   }
 
-
-  public static class ProjectStructureSModel extends SModel {
+  public static class ProjectStructureSModel extends jetbrains.mps.smodel.SModel {
     public ProjectStructureSModel(@NotNull SModelReference modelReference) {
       super(modelReference, new ForeignNodeIdMap());
     }
 
+    @Override
     public boolean canFireEvent() {
       return false;
     }

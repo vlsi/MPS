@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.ModelPropertiesConfigurable;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -75,10 +75,11 @@ public class ModelProperties_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      MPSPropertiesConfigurable configurable = new ModelPropertiesConfigurable(((SModelDescriptor) MapSequence.fromMap(_params).get("model")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+      MPSPropertiesConfigurable configurable = new ModelPropertiesConfigurable(((SModel) MapSequence.fromMap(_params).get("model")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
       final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(ProjectHelper.toIdeaProject(((IOperationContext) MapSequence.fromMap(_params).get("context")).getProject()), configurable, "#MPSPropertiesConfigurable");
       configurable.setParentForCallBack(configurableEditor);
       SwingUtilities.invokeLater(new Runnable() {
+        @Override
         public void run() {
           configurableEditor.show();
         }
@@ -86,7 +87,7 @@ public class ModelProperties_Action extends BaseAction {
 
 
       /*
-        StandardDialogs.createModelPropertiesDialog(((SModelDescriptor) MapSequence.fromMap(_params).get("model")), ((IOperationContext) MapSequence.fromMap(_params).get("context"))).show();
+        StandardDialogs.createModelPropertiesDialog(((SModel) MapSequence.fromMap(_params).get("model")), ((IOperationContext) MapSequence.fromMap(_params).get("context"))).show();
       */
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ModelProperties", t);

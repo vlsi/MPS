@@ -54,6 +54,7 @@ public class DebuggerToolContentBuilder implements Disposable {
     myEnvironment = env;
   }
 
+  @Override
   public void dispose() {
     for (Disposable disposable : myDisposeables) {
       disposable.dispose();
@@ -133,10 +134,12 @@ public class DebuggerToolContentBuilder implements Disposable {
       myAdditionalDisposable = additionalDisposable;
     }
 
+    @Override
     public boolean isContentReuseProhibited() {
       return myReuseProhibited;
     }
 
+    @Override
     public void dispose() {
       Disposer.dispose(myAdditionalDisposable);
       super.dispose();

@@ -21,7 +21,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -42,13 +41,19 @@ import org.jdom.Document;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.util.Consumer;
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import javax.xml.parsers.ParserConfigurationException;
-import java.io.*;
+import java.io.CharArrayReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.StringReader;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -240,7 +245,7 @@ public class ModelPersistence {
    *  returns upgraded model, or null if the model doesn't require update
    */
   public static DefaultSModel saveModel(@NotNull SModel model, @NotNull IFile file, int persistenceVersion) {
-    LOG.debug("Save model " + model.getSModelReference() + " to file " + file.getPath());
+    LOG.debug("Save model " + model.getReference() + " to file " + file.getPath());
 
     // (since 3.0) we do not support saving in old persistences (before 7)
     persistenceVersion = Math.min(7, persistenceVersion);
@@ -270,7 +275,7 @@ public class ModelPersistence {
     }
 
     if (oldVersion != persistenceVersion) {
-      LOG.info("persistence upgraded: " + oldVersion + "->" + persistenceVersion + " " + model.getSModelReference());
+      LOG.info("persistence upgraded: " + oldVersion + "->" + persistenceVersion + " " + model.getReference());
       return (DefaultSModel) model;
     }
     return null;
@@ -297,7 +302,7 @@ public class ModelPersistence {
       modelPersistence = getCurrentModelPersistence();
     }
 
-    sourceModel.calculateImplicitImports();
+    ((jetbrains.mps.smodel.SModel) sourceModel).calculateImplicitImports();
     return modelPersistence.getModelWriter().saveModel(sourceModel);
   }
 
@@ -397,11 +402,11 @@ public class ModelPersistence {
     }
   }
 
-  public static Map<IndexEntry, Integer> index(char[] data) throws ModelReadException {
+  public static void index(char[] data, Consumer<String> consumer) throws ModelReadException {
     SModelHeader header = loadDescriptor(new InputSource(new CharArrayReader(data)));
     IModelPersistence mp = getModelPersistence(header);
     assert mp != null : "Using unsupported persistence version: " + header.getPersistenceVersion();
-    return mp.index(data);
+    mp.index(data, consumer);
   }
 
   private static class MyDescriptorHandler extends DefaultHandler {
@@ -411,6 +416,7 @@ public class ModelPersistence {
       myResult = result;
     }
 
+    @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
       if (MODEL.equals(qName)) {
         for (int idx = 0; idx < attributes.getLength(); idx++) {
@@ -442,6 +448,7 @@ public class ModelPersistence {
       }
     }
 
+    @Override
     public void endElement(String uri, String localName, String qName) throws SAXException {
       throw new BreakParseSAXException();
     }

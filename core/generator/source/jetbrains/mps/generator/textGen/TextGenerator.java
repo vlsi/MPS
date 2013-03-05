@@ -28,9 +28,9 @@ import jetbrains.mps.make.java.RootDependencies;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.textGen.TextGen;
 import jetbrains.mps.textGen.TextGenerationResult;
 import jetbrains.mps.traceInfo.DebugInfo;
@@ -86,7 +86,7 @@ public class TextGenerator {
 
       String name = getFileName(outputRootNode);
       if (name == null) {
-        Message m = new Message(MessageKind.ERROR, "Can't create file with no name. Root node [" + outputRootNode.getNodeId() + "] in model " + outputRootNode.getModel().getSModelFqName());
+        Message m = new Message(MessageKind.ERROR, "Can't create file with no name. Root node [" + outputRootNode.getNodeId() + "] in model " + outputRootNode.getModel().getReference().getSModelFqName());
         m.setHintObject(new jetbrains.mps.smodel.SNodePointer(outputRootNode));
         errors.add(m);
         continue;
@@ -145,7 +145,7 @@ public class TextGenerator {
     ModelDependencies modelDep = null;
 
     // process unchanged files
-    SModelDescriptor originalInputModel = sourceStatus.getOriginalInputModel();
+    SModel originalInputModel = sourceStatus.getOriginalInputModel();
     for (GenerationRootDependencies rdep : unchangedDependencies) {
       for (String filename : rdep.getFiles()) {
         if (streamHandler.touch(filename, false)) {

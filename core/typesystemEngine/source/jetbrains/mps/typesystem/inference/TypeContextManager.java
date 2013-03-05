@@ -30,9 +30,10 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelInternal;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelAdapter;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
@@ -62,7 +63,7 @@ public class TypeContextManager implements CoreComponent {
   private static boolean myReported = false;
 
   private final Object myLock = new Object();
-  private Set<SModelDescriptor> myListeningForModels = new THashSet<SModelDescriptor>();
+  private Set<SModel> myListeningForModels = new THashSet<SModel>();
   private Map<SNodeReference, List<TypecheckingContextHolder>> myTypeCheckingContexts =
     new THashMap<SNodeReference, List<TypecheckingContextHolder>>(); //todo cleanup on reload (temp solution)
 
@@ -74,14 +75,14 @@ public class TypeContextManager implements CoreComponent {
     @Override
     public void beforeRootRemoved(SModelRootEvent event) {
       synchronized (myLock) {
-        removeContextForNode(new jetbrains.mps.smodel.SNodePointer(event.getModel().getSModelReference(), event.getRoot().getNodeId()));
+        removeContextForNode(new jetbrains.mps.smodel.SNodePointer(event.getModel().getReference(), event.getRoot().getNodeId()));
       }
     }
 
     public void beforeModelDisposed(SModel sm) {
       synchronized (myLock) {
         for (SNodeReference nodePointer : new ArrayList<SNodeReference>(myTypeCheckingContexts.keySet())) {
-          if (sm.getSModelReference().equals(nodePointer.getModelReference())) {
+          if (sm.getReference().equals(nodePointer.getModelReference())) {
             removeContextForNode(nodePointer);
           }
         }
@@ -90,20 +91,20 @@ public class TypeContextManager implements CoreComponent {
   };
 
   private SModelRepositoryAdapter mySModelRepositoryListener = new SModelRepositoryAdapter() {
-    public void modelDeleted(SModelDescriptor modelDescriptor) {
+    public void modelDeleted(SModel modelDescriptor) {
       myListeningForModels.remove(modelDescriptor);
     }
 
-    public void modelRemoved(SModelDescriptor modelDescriptor) {
+    public void modelRemoved(SModel modelDescriptor) {
       myListeningForModels.remove(modelDescriptor);
     }
 
-    public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
-      for (SModelDescriptor md : replacedModels) {
+    public void modelsReplaced(Set<SModel> replacedModels) {
+      for (SModel md : replacedModels) {
         if (! myListeningForModels.contains(md)) {
           continue;
         }
-        SModelReference modelRef = md.getSModelReference();
+        SModelReference modelRef = md.getReference();
         synchronized (myLock) {
           for (SNodeReference nodePointer : new ArrayList<SNodeReference>(myTypeCheckingContexts.keySet())) {
             if (nodePointer == null)continue;
@@ -153,8 +154,8 @@ public class TypeContextManager implements CoreComponent {
   }
 
   public void dispose() {
-    for (SModelDescriptor model : myListeningForModels) {
-      model.removeModelListener(myModelListener);
+    for (SModel model : myListeningForModels) {
+      ((SModelInternal) model).removeModelListener(myModelListener);
     }
     myListeningForModels.clear();
     for (SNodeReference nodePointer : new ArrayList<SNodeReference>(myTypeCheckingContexts.keySet())) {
@@ -408,9 +409,9 @@ public class TypeContextManager implements CoreComponent {
 
   private void addModelListener(SNode node) {
     SModel sModel = node.getModel();
-    SModelDescriptor descriptor = sModel.getModelDescriptor();
+    SModel descriptor = sModel.getModelDescriptor();
     if (descriptor != null && !myListeningForModels.contains(descriptor)) {
-      descriptor.addModelListener(myModelListener);
+      ((SModelInternal) descriptor).addModelListener(myModelListener);
       myListeningForModels.add(descriptor);
     }
   }

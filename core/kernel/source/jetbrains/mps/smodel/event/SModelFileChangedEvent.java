@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel.event;
 
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.vfs.IFile;
 
@@ -37,10 +37,12 @@ public class SModelFileChangedEvent extends SModelEvent {
     return myNewFile;
   }
 
+  @Override
   public void accept(SModelEventVisitor visitor) {
 
   }
 
+  @Override
   public SNode getAffectedRoot() {
     return null;
   }

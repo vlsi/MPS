@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
@@ -63,7 +63,7 @@ public abstract class BaseScope implements IScope {
     // todo: like module resolve!
     for (SModel model : getModels()) {
       if (reference.getModelId() != null) {
-        if (model.getModelReference().equals(reference)) {
+        if (model.getReference().equals(reference)) {
           return model;
         }
       } else {
@@ -91,13 +91,13 @@ public abstract class BaseScope implements IScope {
 
   @Deprecated
   @Override
-  public final SModelDescriptor getModelDescriptor(SModelReference modelReference) {
+  public final SModel getModelDescriptor(SModelReference modelReference) {
     return ScopeOperations.getModelDescriptor(this, modelReference);
   }
 
   @Deprecated
   @Override
-  public final Iterable<SModelDescriptor> getModelDescriptors() {
+  public final Iterable<SModel> getModelDescriptors() {
     return ScopeOperations.getModelDescriptors(this);
   }
 
@@ -121,7 +121,7 @@ public abstract class BaseScope implements IScope {
 
   @Deprecated
   @Override
-  public final SModelDescriptor getModelDescriptor(SModelFqName fqName) {
+  public final SModel getModelDescriptor(SModelFqName fqName) {
     return ScopeOperations.getModelDescriptor(this, fqName);
   }
 
@@ -133,7 +133,7 @@ public abstract class BaseScope implements IScope {
 
   @Deprecated
   @Override
-  public final Iterable<SModelDescriptor> getOwnModelDescriptors() {
+  public final Iterable<SModel> getOwnModelDescriptors() {
     throw new IllegalStateException();
   }
 }

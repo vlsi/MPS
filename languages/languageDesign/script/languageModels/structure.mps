@@ -10,8 +10,8 @@
   <import index="tp33" modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1177457067821">
-      <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/migrationScript.png" />
       <property name="name" nameId="tpck.1169194664001" value="MigrationScript" />
@@ -29,6 +29,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="MigrationScriptPart_Instance_Predicate" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="instance predicate" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
@@ -36,6 +37,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="MigrationScriptPart_node" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="node" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
     </node>
@@ -43,6 +45,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="MigrationScriptPart_Instance_Updater" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="instance predicate" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>

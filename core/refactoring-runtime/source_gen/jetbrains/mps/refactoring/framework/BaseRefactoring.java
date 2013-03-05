@@ -5,7 +5,7 @@ package jetbrains.mps.refactoring.framework;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.List;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import java.util.ArrayList;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 
@@ -23,21 +23,26 @@ public abstract class BaseRefactoring implements IRefactoring {
     return myTransientParameters;
   }
 
+  @Override
   public Class getOverridenRefactoringClass() {
     return null;
   }
 
+  @Override
   public boolean init(RefactoringContext refactoringContext) {
     return true;
   }
 
+  @Override
   public List<SModel> getModelsToGenerate(RefactoringContext refactoringContext) {
     return new ArrayList<SModel>();
   }
 
+  @Override
   public void doWhenDone(RefactoringContext refactoringContext) {
   }
 
+  @Override
   public SearchResults getAffectedNodes(RefactoringContext refactoringContext) {
     return new SearchResults();
   }

@@ -70,10 +70,12 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
     myInnerPanel.add(new JPanel(), constraints);
   }
 
+  @Override
   public DialogDimensions getDefaultDimensionSettings() {
     return new DialogDimensions(200, 200, 800, 600);
   }
 
+  @Override
   protected JComponent getMainComponent() {
     return myInnerPanel;
   }
@@ -82,32 +84,39 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
     return !myIsCancelled;
   }
 
+  @Override
   protected void prepareDialog() {
     super.prepareDialog();
     pack();
     if (myFirstComponent != null) {
       final FocusTraversalPolicy policy = this.getFocusTraversalPolicy();
       this.setFocusTraversalPolicy(new FocusTraversalPolicy() {
+        @Override
         public Component getComponentAfter(Container aContainer, Component aComponent) {
           return policy.getComponentAfter(aContainer, aComponent);
         }
 
+        @Override
         public Component getComponentBefore(Container aContainer, Component aComponent) {
           return policy.getComponentBefore(aContainer, aComponent);
         }
 
+        @Override
         public Component getFirstComponent(Container aContainer) {
           return myFirstComponent.getComponentToFocus();
         }
 
+        @Override
         public Component getLastComponent(Container aContainer) {
           return myLastComponent.getComponentToFocus();
         }
 
+        @Override
         public Component getDefaultComponent(Container aContainer) {
           return myFirstComponent.getComponentToFocus();
         }
 
+        @Override
         public Component getInitialComponent(Window window) {
           return myFirstComponent.getComponentToFocus();
         }
@@ -123,6 +132,7 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
       }
 
       boolean applicable = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+        @Override
         public Boolean compute() {
           return myRefactoring.isApplicable(myRefactoringContext);
         }

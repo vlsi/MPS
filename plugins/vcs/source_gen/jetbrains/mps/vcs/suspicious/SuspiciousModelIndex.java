@@ -7,7 +7,7 @@ import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.ide.platform.watching.FSChangesWatcher;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
 import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -48,8 +48,8 @@ public class SuspiciousModelIndex implements ApplicationComponent {
   }
 
   public void addModel(SModel model, boolean isInConflict) {
-    if (model instanceof DefaultSModelDescriptor) {
-      myTaskQueue.addTask(new ConflictableModelAdapter((DefaultSModelDescriptor) model, isInConflict));
+    if (model instanceof BaseEditableSModelDescriptor) {
+      myTaskQueue.addTask(new ConflictableModelAdapter((BaseEditableSModelDescriptor) model, isInConflict));
     }
   }
 
@@ -59,26 +59,31 @@ public class SuspiciousModelIndex implements ApplicationComponent {
 
   @NonNls
   @NotNull
+  @Override
   public String getComponentName() {
     return "Suspicious Model Index";
   }
 
+  @Override
   public void initComponent() {
     if (MPSCore.getInstance().isTestMode()) {
       return;
     }
     myTaskQueue = new SuspiciousModelIndex.MyTaskQueue(myProjectManager, myWatcher, myVirtualFileManager);
     SuspiciousModelHandler.setHandler(new SuspiciousModelHandler() {
+      @Override
       public void handleSuspiciousModel(SModel model, boolean inConflict) {
         addModel(model, inConflict);
       }
 
+      @Override
       public void handleSuspiciousModule(AbstractModule module, boolean inConflict) {
         addModule(module, inConflict);
       }
     });
   }
 
+  @Override
   public void disposeComponent() {
     if (MPSCore.getInstance().isTestMode()) {
       return;
@@ -184,6 +189,7 @@ public class SuspiciousModelIndex implements ApplicationComponent {
       return super.isProcessingAllowed() && !(ModelAccess.instance().canRead());
     }
 
+    @Override
     protected void processTask(final List<Conflictable> tasks) {
       mergeModelsLater(tasks);
     }

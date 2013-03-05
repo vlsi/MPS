@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.project.IModule;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -68,9 +68,11 @@ public class SNodeOperations {
     if (lookupHierarchy) {
       final SNode finalConceptDeclaration = conceptDeclaration;
       return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<List<SNode>>() {
+        @Override
         public List<SNode> compute() {
           return new ConceptAndSuperConceptsScope(finalConceptDeclaration).
             getNodes(new Condition<SNode>() {
+              @Override
               public boolean met(SNode n) {
                 if (SNodeUtil.isInstanceOfConceptLink(n)) {
                   SNode conceptLinkDeclaration = SNodeUtil.getConceptLink_Declaration(n);

@@ -130,6 +130,7 @@ import jetbrains.mps.ide.messages.Icons;
   }
 
   @Nullable
+  @Override
   public Object getData(@NonNls String dataId) {
     if (dataId.equals(EvaluationUi.EVALUATION_CONTAINER.getName())) {
       MPSTreeNode node = findSelectedNode();
@@ -177,6 +178,7 @@ import jetbrains.mps.ide.messages.Icons;
     public InitializedState() {
     }
 
+    @Override
     public void rebuild(MPSTreeNode rootTreeNode, IEvaluationContainer model) {
       rootTreeNode.add(new EvaluationTree.InitialTreeNode(model));
       // todo? 
@@ -187,6 +189,7 @@ import jetbrains.mps.ide.messages.Icons;
     public EvaluationInProgressState() {
     }
 
+    @Override
     public void rebuild(MPSTreeNode rootTreeNode, IEvaluationContainer model) {
       rootTreeNode.add(new EvaluationTree.EvaluatingTreeNode(model));
     }
@@ -208,6 +211,7 @@ import jetbrains.mps.ide.messages.Icons;
       myThreadReference = threadReference;
     }
 
+    @Override
     public void rebuild(MPSTreeNode rootTreeNode, IEvaluationContainer model) {
       final boolean canEvalaute = myDebugSession.getEvaluationProvider().canEvaluate();
       if (canEvalaute) {
@@ -237,6 +241,7 @@ import jetbrains.mps.ide.messages.Icons;
         myModel = model;
       }
 
+      @Override
       public IEvaluationContainer getModel() {
         return myModel;
       }
@@ -267,6 +272,7 @@ import jetbrains.mps.ide.messages.Icons;
       myError = error;
     }
 
+    @Override
     public void rebuild(MPSTreeNode rootTreeNode, IEvaluationContainer model) {
       if (myError != null) {
         rootTreeNode.add(new EvaluationTree.ErrorTreeNode(model, myError));
@@ -328,6 +334,7 @@ import jetbrains.mps.ide.messages.Icons;
       }
     }
 
+    @Override
     public IEvaluationContainer getModel() {
       return myModel;
     }
@@ -368,6 +375,7 @@ import jetbrains.mps.ide.messages.Icons;
       setIcon(Icons.INFORMATION_ICON);
     }
 
+    @Override
     public IEvaluationContainer getModel() {
       return myModel;
     }
@@ -379,6 +387,7 @@ import jetbrains.mps.ide.messages.Icons;
       setIcon(jetbrains.mps.debugger.java.api.ui.Icons.WATCH);
     }
 
+    @Override
     public boolean isLeaf() {
       return true;
     }

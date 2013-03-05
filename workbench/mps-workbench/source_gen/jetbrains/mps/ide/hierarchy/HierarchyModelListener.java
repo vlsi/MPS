@@ -51,18 +51,22 @@ public class HierarchyModelListener extends SModelAdapter {
     structureEvent(nodes);
   }
 
+  @Override
   public void rootAdded(SModelRootEvent event) {
     structureRootEvent(event);
   }
 
+  @Override
   public void rootRemoved(SModelRootEvent event) {
     structureRootEvent(event);
   }
 
+  @Override
   public void referenceRemoved(SModelReferenceEvent event) {
     structureReferenceEvent(event);
   }
 
+  @Override
   public void referenceAdded(SModelReferenceEvent event) {
     structureReferenceEvent(event);
   }

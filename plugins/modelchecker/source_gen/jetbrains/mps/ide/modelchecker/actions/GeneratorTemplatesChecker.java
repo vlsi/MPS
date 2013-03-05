@@ -4,7 +4,7 @@ package jetbrains.mps.ide.modelchecker.actions;
 
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -26,6 +26,7 @@ public class GeneratorTemplatesChecker extends SpecificChecker {
   public GeneratorTemplatesChecker() {
   }
 
+  @Override
   public List<SearchResult<ModelCheckerIssue>> checkModel(final SModel model, final ProgressMonitor progressMonitor, IOperationContext operationContext) {
     if (!(SModelStereotype.isGeneratorModel(model))) {
       return Collections.emptyList();

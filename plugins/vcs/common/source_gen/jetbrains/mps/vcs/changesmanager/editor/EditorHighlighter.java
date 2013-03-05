@@ -17,9 +17,8 @@ import jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.SNodeOperations;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -61,12 +60,12 @@ public class EditorHighlighter implements EditorMessageOwner {
                 return;
               }
               final SModel model = editedNode.getModel();
-              SModelDescriptor descriptor = (model != null ?
+              SModel descriptor = (model != null ?
                 model.getModelDescriptor() :
                 null
               );
-              if (descriptor instanceof DefaultSModelDescriptor) {
-                myCurrentDifference = CurrentDifferenceRegistry.getInstance(project).getCurrentDifference((DefaultSModelDescriptor) descriptor);
+              if (descriptor instanceof BaseEditableSModelDescriptor) {
+                myCurrentDifference = CurrentDifferenceRegistry.getInstance(project).getCurrentDifference((BaseEditableSModelDescriptor) descriptor);
                 myListener = new EditorHighlighter.MyCurrentDifferenceListener();
               }
               if (myListener != null) {
@@ -123,7 +122,7 @@ public class EditorHighlighter implements EditorMessageOwner {
             return;
           }
           model = editedNode.getModel();
-          if (model == null || model.isDisposed()) {
+          if (model == null || SNodeOperations.isModelDisposed(model)) {
             return;
           }
           messages.value = ChangeEditorMessageFactory.createMessages(model, change, EditorHighlighter.this, null, false);
@@ -220,12 +219,14 @@ public class EditorHighlighter implements EditorMessageOwner {
     public MyCurrentDifferenceListener() {
     }
 
+    @Override
     public void changeAdded(@NotNull ModelChange change) {
       List<ChangeEditorMessage> messages = createMessages(change);
       ListSequence.fromList(myRemovedMessages).removeSequence(ListSequence.fromList(messages));
       ListSequence.fromList(myAddedMessages).addSequence(ListSequence.fromList(messages));
     }
 
+    @Override
     public void changeRemoved(@NotNull ModelChange change) {
       List<ChangeEditorMessage> messages = removeMessages(change);
       ListSequence.fromList(myRemovedMessages).addSequence(ListSequence.fromList(messages));

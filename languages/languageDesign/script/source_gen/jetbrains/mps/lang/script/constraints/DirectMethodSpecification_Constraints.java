@@ -61,6 +61,7 @@ public class DirectMethodSpecification_Constraints extends BaseConstraintsDescri
                   }
                 })) {
                   @Nullable
+                  @Override
                   public String getReferenceText(@NotNull SNode target) {
                     return target.getName();
                   }

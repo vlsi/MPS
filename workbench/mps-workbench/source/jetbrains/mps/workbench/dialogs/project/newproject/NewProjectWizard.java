@@ -59,6 +59,7 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
     init();
   }
 
+  @Override
   protected JComponent createCenterPanel() {
     JComponent panel = super.createCenterPanel();
     assert panel != null;
@@ -70,6 +71,7 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
     NewProjectWizard.skipLanguageStep = skipLanguageStep;
   }
 
+  @Override
   protected void doNextAction() {
     final BaseStep currentStep = getCurrentStepObject();
     try {
@@ -88,11 +90,13 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
   }
 
 
+  @Override
   protected void updateStep() {
     getFinishButton().setEnabled(getCurrentStep() == mySteps.size() - 1);
     super.updateStep();
   }
 
+  @Override
   protected void doOKAction() {
     super.doOKAction();
     if (myCurrentProject != null) {
@@ -105,6 +109,7 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
 
     //invoke later is for plugins to be ready
     ApplicationManager.getApplication().invokeLater(new Runnable() {
+      @Override
       public void run() {
         try {
           ProjectFactory factory = new ProjectFactory(myCurrentProject, myOptions);
@@ -117,6 +122,7 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
     });
   }
 
+  @Override
   protected String getHelpID() {
     int idx = getCurrentStep();
     return idx >= 0 && idx < myHelpIDs.size() ? myHelpIDs.get(idx) : null;

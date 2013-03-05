@@ -13,15 +13,15 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class ConceptMethodDeclaration_Menu extends AbstractCellMenuComponent {
   public ConceptMethodDeclaration_Menu() {
-    super(new SubstituteInfoPartExt[]{new ConceptMethodDeclaration_Menu.ConceptMethodDeclaration_generic_cellMenu_a0()});
+    super(new SubstituteInfoPartExt[]{new ConceptMethodDeclaration_Menu.ConceptMethodDeclaration_generic_cellMenu_v7l746_a0()});
   }
 
-  public static class ConceptMethodDeclaration_generic_cellMenu_a0 extends AbstractCellMenuPart_Generic_Group {
-    public ConceptMethodDeclaration_generic_cellMenu_a0() {
+  public static class ConceptMethodDeclaration_generic_cellMenu_v7l746_a0 extends AbstractCellMenuPart_Generic_Group {
+    public ConceptMethodDeclaration_generic_cellMenu_v7l746_a0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {

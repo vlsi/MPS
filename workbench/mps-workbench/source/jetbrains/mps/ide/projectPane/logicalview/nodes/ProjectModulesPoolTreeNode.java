@@ -48,14 +48,17 @@ public class ProjectModulesPoolTreeNode extends TextTreeNode {
     return true;
   }
 
+  @Override
   public boolean isInitialized() {
     return myInitialized;
   }
 
+  @Override
   protected boolean propogateErrorUpwards() {
     return false;
   }
 
+  @Override
   protected void doInit() {
     populate();
     myInitialized = true;
@@ -97,6 +100,7 @@ public class ProjectModulesPoolTreeNode extends TextTreeNode {
   }
 
   private class ModulePoolNamespaceBuilder extends DefaultNamespaceTreeBuilder<ProjectModuleTreeNode> {
+    @Override
     protected String getNamespace(ProjectModuleTreeNode node) {
       if (node.getModule() instanceof Generator) {
         Generator generator = (Generator) node.getModule();

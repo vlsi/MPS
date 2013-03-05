@@ -10,6 +10,6 @@ public class DecimalMulExpression_Behavior {
   }
 
   public static int virtual_getPriority_1262430001741497858(SConcept thisConcept) {
-    return 3;
+    return 11;
   }
 }

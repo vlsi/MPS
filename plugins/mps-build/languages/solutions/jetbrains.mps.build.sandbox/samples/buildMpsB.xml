@@ -23,6 +23,10 @@
     </tar>
   </target>
   
+  <target name="buildDependents" />
+  
+  <target name="fetchDependencies" />
+  
   <target name="build" depends="assemble" />
   
   <target name="clean">

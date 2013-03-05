@@ -96,6 +96,7 @@ public class InlineMethodDialog extends RefactoringDialog {
 
   private JRadioButton createButton(ButtonGroup group, JPanel checkboxesPanel, final boolean forAll, String text) {
     JRadioButton button1 = new JRadioButton(new AbstractAction(text) {
+      @Override
       public void actionPerformed(ActionEvent e) {
         myForAll = forAll;
         myPreviewAction.setEnabled(forAll);
@@ -107,6 +108,7 @@ public class InlineMethodDialog extends RefactoringDialog {
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
     JPanel panel = new JPanel(new BorderLayout());
     panel.add(createCheckBoxes(), BorderLayout.CENTER);
@@ -128,6 +130,7 @@ public class InlineMethodDialog extends RefactoringDialog {
    * This method will be called on pressing "Refactor" button in dialog.
    * 
    */
+  @Override
   protected void doRefactoringAction() {
     SearchResults<SNode> usages = findUssages();
     if (canExecuteRefactoring(usages)) {
@@ -152,6 +155,7 @@ public class InlineMethodDialog extends RefactoringDialog {
     }
     final Wrappers._T<SearchResults<SNode>> usages = new Wrappers._T<SearchResults<SNode>>();
     ProgressManager.getInstance().run(new Task.Modal(ProjectHelper.toIdeaProject(myOperationContext.getProject()), "Searching for ussages", true) {
+      @Override
       public void run(@NotNull final ProgressIndicator indicator) {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
@@ -203,10 +207,12 @@ public class InlineMethodDialog extends RefactoringDialog {
       super("Preview");
     }
 
+    @Override
     protected void doAction(ActionEvent event) {
       final SearchResults<SNode> usages = findUssages();
       if (canExecuteRefactoring(usages)) {
         RefactoringViewAction refactoringViewAction = new RefactoringViewAction() {
+          @Override
           public void performAction(RefactoringViewItem item) {
             item.close();
             performRefactoring(usages);

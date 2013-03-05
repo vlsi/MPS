@@ -12,16 +12,16 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelDescriptor;
 
 public class StubRefUtil {
   private static boolean isReferenceToJavaStub(@NotNull SReference reference) {
@@ -105,7 +105,7 @@ public class StubRefUtil {
       }
     })) {
       SModelReference targetModelRef = ref.getTargetSModelReference();
-      model.addModelImport(targetModelRef, false);
+      ((SModelInternal) model).addModelImport(targetModelRef, false);
 
       IModule sourceModule = check_4tnolf_a0d0a0o(model.getModelDescriptor());
       IModule targetModule = check_4tnolf_a0e0a0o(SModelRepository.getInstance().getModelDescriptor(targetModelRef));
@@ -171,14 +171,14 @@ public class StubRefUtil {
     return null;
   }
 
-  private static IModule check_4tnolf_a0d0a0o(SModelDescriptor checkedDotOperand) {
+  private static IModule check_4tnolf_a0d0a0o(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static IModule check_4tnolf_a0e0a0o(SModelDescriptor checkedDotOperand) {
+  private static IModule check_4tnolf_a0e0a0o(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

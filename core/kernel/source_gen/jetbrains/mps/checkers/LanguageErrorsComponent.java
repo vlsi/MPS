@@ -8,8 +8,9 @@ import java.util.Set;
 import jetbrains.mps.errors.IErrorReporter;
 import java.util.HashMap;
 import java.util.HashSet;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -24,7 +25,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.AbstractNodesReadListener;
 import jetbrains.mps.smodel.NodeReadEventsCaster;
@@ -40,7 +40,7 @@ public class LanguageErrorsComponent {
   private Set<SNode> myInvalidation = new HashSet<SNode>();
   private LanguageErrorsComponent.MyModelListener myModelListener = new LanguageErrorsComponent.MyModelListener();
   private LanguageErrorsComponent.MyModelRepositoryListener myModelRepositoryListener = new LanguageErrorsComponent.MyModelRepositoryListener();
-  private Set<SModelDescriptor> myListenedModels = new HashSet<SModelDescriptor>();
+  private Set<SModel> myListenedModels = new HashSet<SModel>();
   private boolean myCheckedRoot = false;
   private SNode myCurrentNode = null;
   private SNode myRoot;
@@ -56,8 +56,8 @@ public class LanguageErrorsComponent {
   }
 
   private void removeModelListener() {
-    for (SModelDescriptor modelDescriptor : myListenedModels) {
-      modelDescriptor.removeModelListener(myModelListener);
+    for (SModel modelDescriptor : myListenedModels) {
+      ((SModelInternal) modelDescriptor).removeModelListener(myModelListener);
     }
     SetSequence.fromSet(myListenedModels).clear();
   }
@@ -122,12 +122,12 @@ public class LanguageErrorsComponent {
     SetSequence.fromSet(reporters).addElement(reporter);
   }
 
-  private void addModelListener(SModelDescriptor modelDescriptor) {
+  private void addModelListener(SModel modelDescriptor) {
     if (modelDescriptor == null) {
       return;
     }
     if (!(SetSequence.fromSet(myListenedModels).contains(modelDescriptor))) {
-      modelDescriptor.addModelListener(myModelListener);
+      ((SModelInternal) modelDescriptor).addModelListener(myModelListener);
       SetSequence.fromSet(myListenedModels).addElement(modelDescriptor);
     }
   }
@@ -243,7 +243,7 @@ public class LanguageErrorsComponent {
     }
   }
 
-  public void processModelRemoved(SModelDescriptor modelDescriptor) {
+  public void processModelRemoved(SModel modelDescriptor) {
     SetSequence.fromSet(myListenedModels).removeElement(modelDescriptor);
   }
 
@@ -263,19 +263,23 @@ public class LanguageErrorsComponent {
     final Object[] result = new Object[1];
     try {
       AbstractNodesReadListener listener = new AbstractNodesReadListener() {
+        @Override
         public void nodeUnclassifiedReadAccess(SNode node) {
           SetSequence.fromSet(accessedNodes).addElement(node);
         }
 
+        @Override
         public void nodePropertyReadAccess(SNode node, String name, String value) {
           SetSequence.fromSet(accessedNodes).addElement(node);
         }
 
+        @Override
         public void nodeReferentReadAccess(SNode node, String role, SNode referent) {
           SetSequence.fromSet(accessedNodes).addElement(node);
           SetSequence.fromSet(accessedNodes).addElement(referent);
         }
 
+        @Override
         public void nodeChildReadAccess(SNode node, String role, SNode child) {
           SetSequence.fromSet(accessedNodes).addElement(node);
           SetSequence.fromSet(accessedNodes).addElement(child);
@@ -296,26 +300,32 @@ public class LanguageErrorsComponent {
     public MyModelListener() {
     }
 
+    @Override
     public void beforeModelDisposed(SModel model) {
       processBeforeModelDisposed(model);
     }
 
+    @Override
     public void referenceRemoved(SModelReferenceEvent event) {
       processEvent(event);
     }
 
+    @Override
     public void referenceAdded(SModelReferenceEvent event) {
       processEvent(event);
     }
 
+    @Override
     public void childRemoved(SModelChildEvent event) {
       processEvent(event);
     }
 
+    @Override
     public void childAdded(SModelChildEvent event) {
       processEvent(event);
     }
 
+    @Override
     public void propertyChanged(SModelPropertyEvent event) {
       processEvent(event);
     }
@@ -325,11 +335,13 @@ public class LanguageErrorsComponent {
     public MyModelRepositoryListener() {
     }
 
-    public void modelRemoved(SModelDescriptor descriptor) {
+    @Override
+    public void modelRemoved(SModel descriptor) {
       processModelRemoved(descriptor);
     }
 
-    public void modelDeleted(SModelDescriptor descriptor) {
+    @Override
+    public void modelDeleted(SModel descriptor) {
       processModelRemoved(descriptor);
     }
   }
@@ -341,14 +353,14 @@ public class LanguageErrorsComponent {
     return null;
   }
 
-  private static IModule check_29uvfh_a0a7a12(SModelDescriptor checkedDotOperand) {
+  private static IModule check_29uvfh_a0a7a12(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModelDescriptor check_29uvfh_a0a0h0v(SModel checkedDotOperand) {
+  private static SModelInternal check_29uvfh_a0a0h0v(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }

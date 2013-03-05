@@ -14,6 +14,7 @@ public class InvokeMergeRootsAction extends BaseDiffModelTreeAction {
     myModelsDialog = modelsDialog;
   }
 
+  @Override
   protected void doExecute(AnActionEvent event, Map<String, Object> map) {
     myModelsDialog.invokeMergeRoots(getRootId(event));
   }

@@ -4,12 +4,11 @@ package jetbrains.mps.lang.structure.refactorings;
 
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.Map;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.Language;
@@ -29,7 +28,7 @@ public class ConceptMoveUtil {
     }).toListSequence();
   }
 
-  public static List<SNode> getConceptAspects(List<SNode> concepts, SModelDescriptor aspectModel) {
+  public static List<SNode> getConceptAspects(List<SNode> concepts, SModel aspectModel) {
     return getConceptsAspects(concepts, check_p1xi3x_b0a0c(aspectModel));
   }
 
@@ -45,7 +44,7 @@ public class ConceptMoveUtil {
     return aspectNodesMap;
   }
 
-  private static SModel check_p1xi3x_b0a0c(SModelDescriptor checkedDotOperand) {
+  private static SModel check_p1xi3x_b0a0c(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSModel();
     }

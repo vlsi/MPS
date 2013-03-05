@@ -15,13 +15,7 @@
  */
 package jetbrains.mps.project.dependency;
 
-import jetbrains.mps.util.misc.hash.HashMap;
-import jetbrains.mps.util.misc.hash.HashSet;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class DependenciesTracer<T> {
   private Map<T, Set<List<T>>>  myTraces = new HashMap<T, Set<List<T>>>();

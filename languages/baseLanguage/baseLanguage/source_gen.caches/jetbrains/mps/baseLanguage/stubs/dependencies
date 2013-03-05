@@ -12,7 +12,6 @@
     <classNode dependClassName="jetbrains.mps.reloading.ClassPathFactory" />
     <classNode dependClassName="jetbrains.mps.reloading.IClassPathItem" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageID" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.stubs.BaseStubModelDescriptor" />
@@ -22,6 +21,7 @@
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
     <classNode extendsClassName="jetbrains.mps.smodel.persistence.ModelRootManagerBase" />
   </dependency>

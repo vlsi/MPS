@@ -7,11 +7,10 @@ import jetbrains.mps.lang.core.refactorings.MoveNodes;
 import jetbrains.mps.refactoring.framework.IRefactoringTarget;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import java.util.Map;
@@ -23,6 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -62,7 +62,7 @@ public class MoveConcepts extends BaseLoggableRefactoring {
       public void run() {
         SModel model = SNodeOperations.getModel(ListSequence.fromList(refactoringContext.getSelectedNodes()).first());
         refactoringContext.setParameter("sourceModel", model.getModelDescriptor());
-        refactoringContext.setParameter("sourceLanguage", Language.getLanguageFor(((SModelDescriptor) refactoringContext.getParameter("sourceModel"))));
+        refactoringContext.setParameter("sourceLanguage", Language.getLanguageFor(((SModel) refactoringContext.getParameter("sourceModel"))));
       }
     });
     return true;
@@ -80,12 +80,12 @@ public class MoveConcepts extends BaseLoggableRefactoring {
         return SConceptOperations.getDirectSuperConcepts(it, false);
       }
     }).subtract(ListSequence.fromList(refactoringContext.getSelectedNodes()));
-    List<ModuleReference> targetExtends = Sequence.fromIterable(targExtends).select(new ISelector<SNode, SModelDescriptor>() {
-      public SModelDescriptor select(SNode it) {
+    List<ModuleReference> targetExtends = Sequence.fromIterable(targExtends).select(new ISelector<SNode, SModelInternal>() {
+      public SModelInternal select(SNode it) {
         return check_u6ijv2_a0a0a0a0a0a7a0(SNodeOperations.getModel(it));
       }
-    }).distinct().select(new ISelector<SModelDescriptor, ModuleReference>() {
-      public ModuleReference select(SModelDescriptor it) {
+    }).distinct().select(new ISelector<SModelInternal, ModuleReference>() {
+      public ModuleReference select(SModelInternal it) {
         return check_u6ijv2_a0a0a0a0a7a0(Language.getLanguageFor(it));
       }
     }).where(new IWhereFilter<ModuleReference>() {
@@ -93,7 +93,7 @@ public class MoveConcepts extends BaseLoggableRefactoring {
         return it != null;
       }
     }).toListSequence();
-    SModel srcModel = ((SModelDescriptor) refactoringContext.getParameter("sourceModel")).getSModel();
+    SModel srcModel = ((SModel) refactoringContext.getParameter("sourceModel")).getSModel();
     boolean isSourceExtends = ListSequence.fromList(SModelOperations.getRoots(srcModel, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")).subtract(ListSequence.fromList(refactoringContext.getSelectedNodes())).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SConceptOperations.getDirectSuperConcepts(it, false);
@@ -162,7 +162,7 @@ public class MoveConcepts extends BaseLoggableRefactoring {
     refactoringContext.updateByDefault(model);
   }
 
-  private static SModelDescriptor check_u6ijv2_a0a0a0a0a0a7a0(SModel checkedDotOperand) {
+  private static SModelInternal check_u6ijv2_a0a0a0a0a0a7a0(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }

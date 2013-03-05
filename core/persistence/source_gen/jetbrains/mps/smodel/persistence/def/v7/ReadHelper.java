@@ -6,12 +6,14 @@ import jetbrains.mps.smodel.SModelReference;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.logging.Logger;
 
 public class ReadHelper {
@@ -34,17 +36,16 @@ public class ReadHelper {
       return;
     }
     SModelReference modelRef = SModelReference.fromString(modelUID);
-    SModel.ImportElement elem = new SModel.ImportElement(modelRef, ++myMaxImportIndex, version);
-    model.setMaxImportIndex(myMaxImportIndex);
+    jetbrains.mps.smodel.SModel.ImportElement elem = new jetbrains.mps.smodel.SModel.ImportElement(modelRef, ++myMaxImportIndex, version);
     if (implicit) {
-      model.addAdditionalModelVersion(elem);
+      ((SModelInternal) model).addAdditionalModelVersion(elem);
     } else {
-      model.addModelImport(elem);
+      ((SModelInternal) model).addModelImport(elem);
     }
     addModelRef(index, modelRef);
   }
 
-  public SModelReference getSModelReference(@NotNull String ix) {
+  public org.jetbrains.mps.openapi.model.SModelReference getSModelReference(@NotNull String ix) {
     return ((ix == null || ix.length() == 0) ?
       myModelRef :
       MapSequence.fromMap(myModelByIx).get(ix)
@@ -54,21 +55,17 @@ public class ReadHelper {
   @NotNull
   public Pair<Boolean, SNodeReference> readLink_internal(String src) {
     // returns <true, xxx> - if src is Dynamic Reference 
-    // [modelID.]nodeID[:version] | [modelID.]^[:version] 
+    // [modelID.]nodeID | [modelID.]^ 
     Pair<Boolean, SNodeReference> result = new Pair<Boolean, SNodeReference>(false, null);
     if (src == null) {
       return result;
     }
-    int i0 = src.indexOf(WriteHelper.MODEL_SEPARATOR_CHAR);
-    int i1 = src.lastIndexOf(WriteHelper.VERSION_SEPARATOR_CHAR);
-    String text = WriteHelper.decode(src.substring(i0 + 1, (i1 < 0 ?
-      src.length() :
-      i1
-    )));
+    int dotIndex = src.indexOf(WriteHelper.MODEL_SEPARATOR_CHAR);
+    String text = WriteHelper.decode(src.substring(dotIndex + 1, src.length()));
     result.o1 = WriteHelper.DYNAMIC_REFERENCE_ID.equals(text);
-    SModelReference modelRef = getSModelReference((i0 < 0 ?
+    org.jetbrains.mps.openapi.model.SModelReference modelRef = getSModelReference((dotIndex < 0 ?
       "" :
-      src.substring(0, i0)
+      src.substring(0, dotIndex)
     ));
     SNodeId nodeId = (result.o1 ?
       null :
@@ -90,12 +87,12 @@ public class ReadHelper {
       LOG.error("Broken reference to type=" + s + " in model " + myModelRef);
       return s.substring(ix + 1);
     }
-    SModelReference modelRef = getSModelReference(s.substring(0, ix));
+    org.jetbrains.mps.openapi.model.SModelReference modelRef = getSModelReference(s.substring(0, ix));
     if (modelRef == null) {
       LOG.error("couldn't create node '" + s.substring(ix + 1) + "' : import for index [" + s.substring(0, ix) + "] not found");
       return s.substring(ix + 1);
     } else {
-      return modelRef.getSModelFqName().getLongName() + "." + s.substring(ix + 1);
+      return SModelStereotype.withoutStereotype(modelRef.getModelName()) + "." + s.substring(ix + 1);
     }
   }
 

@@ -4,8 +4,9 @@ package jetbrains.mps.baseLanguage.javastub;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -25,17 +26,17 @@ public class ASMModelLoader {
 
   public void updateModel() {
     try {
-      String pack = myModel.getLongName();
+      String pack = SNodeOperations.getModelLongName(myModel);
       ClassifierUpdater updater = new ClassifierUpdater(mySkipPrivate, new SReferenceCreator(myModule, myModel));
       ClassifierLoader loader = new ClassifierLoader(myCpItem, updater);
 
       for (String name : myCpItem.getRootClasses(pack)) {
-        if (myModel.getNodeById(ASMNodeId.createId(name)) != null) {
+        if (myModel.getNode(ASMNodeId.createId(name)) != null) {
           continue;
         }
         loader.getClassifier(pack, name, new _FunctionTypes._void_P1_E0<SNode>() {
           public void invoke(SNode n) {
-            myModel.addRoot(n);
+            myModel.addRootNode(n);
           }
         });
       }

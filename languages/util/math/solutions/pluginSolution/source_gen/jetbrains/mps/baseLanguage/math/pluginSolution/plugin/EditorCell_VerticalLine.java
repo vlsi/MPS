@@ -17,6 +17,7 @@ public class EditorCell_VerticalLine extends EditorCell_Basic {
     super(context, node);
   }
 
+  @Override
   public void paintContent(Graphics g, ParentSettings parentSettings) {
     if (this.isSelected()) {
       g.setColor(Color.BLACK);
@@ -30,10 +31,12 @@ public class EditorCell_VerticalLine extends EditorCell_Basic {
     }
   }
 
+  @Override
   public void switchCaretVisible() {
     this.isCaretShown = !(this.isCaretShown);
   }
 
+  @Override
   public void relayoutImpl() {
     this.myWidth = 1;
     this.myHeight = 1;

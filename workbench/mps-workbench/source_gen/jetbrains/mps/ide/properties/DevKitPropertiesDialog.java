@@ -22,11 +22,13 @@ public class DevKitPropertiesDialog extends BasePropertiesDialog {
     myProperties.loadFrom(myDevKit.getModuleDescriptor());
   }
 
+  @Override
   protected boolean doSaveChanges() {
     if (!(checkValidity())) {
       return false;
     }
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      @Override
       public void run() {
         myProperties.saveTo(myDevKit.getModuleDescriptor());
         myDevKit.setDevKitDescriptor(myDevKit.getModuleDescriptor(), true);

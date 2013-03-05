@@ -55,6 +55,7 @@ public class ProgressMonitorProgressStrategy extends AbstractProgressStrategy {
     );
   }
 
+  @Override
   protected void begunWork(AbstractProgressStrategy.Work wrk) {
     initializeIfNeeded();
     ProgressMonitor submon;
@@ -67,6 +68,7 @@ public class ProgressMonitorProgressStrategy extends AbstractProgressStrategy {
     DequeSequence.fromDeque(monitorWorkStack).pushElement(MultiTuple.<ProgressMonitor,AbstractProgressStrategy.Work>from(submon, wrk));
   }
 
+  @Override
   protected void advancedWork(AbstractProgressStrategy.Work wrk) {
     initializeIfNeeded();
     if (wrk == DequeSequence.fromDeque(monitorWorkStack).peekElement()._1()) {
@@ -76,6 +78,7 @@ public class ProgressMonitorProgressStrategy extends AbstractProgressStrategy {
     }
   }
 
+  @Override
   protected void finishedWork(AbstractProgressStrategy.Work wrk) {
     initializeIfNeeded();
     popMatchingMonitor(wrk).done();

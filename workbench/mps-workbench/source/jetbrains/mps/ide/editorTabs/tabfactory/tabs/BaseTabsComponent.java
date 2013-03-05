@@ -40,8 +40,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -97,11 +97,13 @@ public abstract class BaseTabsComponent implements TabsComponent {
     myCreateModeCallback = createModeCallback;
 
     AnAction addAction = new AddAspectAction(myBaseNode, myPossibleTabs, new NodeChangeCallback() {
+      @Override
       public void changeNode(SNode newNode) {
         updateTabs();
         onNodeChange(newNode);
       }
     }) {
+      @Override
       protected RelationDescriptor getCurrentAspect() {
         return getCurrentTabAspect();
       }
@@ -114,22 +116,27 @@ public abstract class BaseTabsComponent implements TabsComponent {
     addListeners();
   }
 
+  @Override
   public void dispose() {
     removeListeners();
   }
 
+  @Override
   public final JComponent getComponent() {
     return myComponent;
   }
 
+  @Override
   public List<SNodeReference> getAllEditedNodes() {
     return myEditedNodes;
   }
 
+  @Override
   public List<Document> getAllEditedDocuments() {
     return myEditedDocuments;
   }
 
+  @Override
   public void setLastNode(SNodeReference node) {
     myLastNode = node;
   }
@@ -212,12 +219,14 @@ public abstract class BaseTabsComponent implements TabsComponent {
   }
 
   private class MyTabRemovalListener extends ModelListener {
+    @Override
     protected void onImportantRootRemoved(SNodeReference node) {
       if (isDisposedNode()) return;
       if (myBaseNode.equals(node)) return;
       if (!isTabUpdateNeeded(node)) return;
 
       ModelAccess.instance().runReadInEDT(new Runnable() {
+        @Override
         public void run() {
           updateTabs();
         }
@@ -230,7 +239,7 @@ public abstract class BaseTabsComponent implements TabsComponent {
     if (node == null) return true;
     SModel model = node.getModel();
     if (model == null) return true;
-    SModelDescriptor md = model.getModelDescriptor();
+    SModel md = model.getModelDescriptor();
     if (md == null) return true;
     IModule module = md.getModule();
     if (module == null) return true;
@@ -278,10 +287,13 @@ public abstract class BaseTabsComponent implements TabsComponent {
       add(label, BorderLayout.CENTER);
 
       this.addMouseListener(new MouseAdapter() {
+        @Override
         public void mouseClicked(final MouseEvent e) {
           ActionGroup group = ModelAccess.instance().runReadAction(new Computable<ActionGroup>() {
+            @Override
             public ActionGroup compute() {
               return CreateGroupsBuilder.getCreateGroup(myBaseNode, new NodeChangeCallback() {
+                @Override
                 public void changeNode(SNode newNode) {
                   updateTabs();
                   onNodeChange(newNode);
@@ -299,6 +311,7 @@ public abstract class BaseTabsComponent implements TabsComponent {
   }
 
   private class MySModelCommandListener implements SModelCommandListener {
+    @Override
     public void eventsHappenedInCommand(List<SModelEvent> events) {
       for (SModelEvent e : events) {
         if (!(e instanceof SModelRootEvent)) continue;

@@ -4,10 +4,11 @@ package jetbrains.mps.debugger.java.runtime.evaluation.container;
 
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
 import jetbrains.mps.debugger.java.api.evaluation.EvaluationException;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.messages.IMessageHandler;
 import com.intellij.openapi.progress.util.ProgressWindow;
 import jetbrains.mps.generator.GenerationFacade;
@@ -23,7 +24,6 @@ import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import jetbrains.mps.generator.IncrementalGenerationStrategy;
 import java.util.Map;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.generator.GenerationCacheContainer;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
@@ -32,10 +32,10 @@ import jetbrains.mps.messages.MessageKind;
 
 public class GeneratorUtil {
   @Nullable
-  public static Class generateAndLoadEvaluatorClass(Project ideaProject, SModelDescriptor modelDescriptor, String className, IOperationContext context, boolean developerMode, InMemoryJavaGenerationHandler handler, ClassLoader parentloader) throws EvaluationException {
+  public static Class generateAndLoadEvaluatorClass(Project ideaProject, SModel modelDescriptor, String className, IOperationContext context, boolean developerMode, InMemoryJavaGenerationHandler handler, ClassLoader parentloader) throws EvaluationException {
     try {
 
-      final String fullClassName = modelDescriptor.getLongName() + "." + className;
+      final String fullClassName = SNodeOperations.getModelLongName(modelDescriptor) + "." + className;
       GeneratorUtil.MyCompilationResultAdapter compilationResult = new GeneratorUtil.MyCompilationResultAdapter();
       handler.setCompilationListener(compilationResult);
       IMessageHandler messageHandler = new GeneratorUtil.MyMessageHandler(ideaProject, developerMode);
@@ -114,18 +114,22 @@ public class GeneratorUtil {
     public MyIncrementalGenerationStrategy() {
     }
 
+    @Override
     public Map<String, String> getModelHashes(SModel p0, IOperationContext p1) {
       return Collections.emptyMap();
     }
 
+    @Override
     public GenerationCacheContainer getContainer() {
       return null;
     }
 
+    @Override
     public GenerationDependencies getDependencies(SModel p0) {
       return null;
     }
 
+    @Override
     public boolean isIncrementalEnabled() {
       return false;
     }
@@ -140,6 +144,7 @@ public class GeneratorUtil {
       myDeveloperMode = developerMode;
     }
 
+    @Override
     public void handle(IMessage message) {
       if (myDeveloperMode && message.getKind().equals(MessageKind.ERROR)) {
         System.err.println("[Generation error]" + message.getText());
@@ -147,6 +152,7 @@ public class GeneratorUtil {
       myInternalHandler.handle(message);
     }
 
+    @Override
     public void clear() {
       myInternalHandler.clear();
     }

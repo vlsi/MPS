@@ -6,7 +6,7 @@ import jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IWillBeClassifier_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.behavior.IWillBeClassifier_Behavior;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class OptionType_BehaviorDescriptor extends Type_BehaviorDescriptor implements IWillBeClassifier_BehaviorDescriptor {
   public OptionType_BehaviorDescriptor() {

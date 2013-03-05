@@ -4,10 +4,11 @@ package jetbrains.mps.ide.embeddableEditor;
 
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.ProjectModels;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.library.GeneralPurpose_DevKit;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelRepository;
@@ -49,7 +50,6 @@ import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.ide.generator.GeneratorUIFacade;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelReference;
@@ -58,7 +58,7 @@ public class EmbeddableEditor {
   private MPSFileNodeEditor myFileNodeEditor;
   private EmbeddableEditorPanel myPanel;
   private final IOperationContext myContext;
-  private final EditableSModelDescriptor myModel;
+  private final EditableSModel myModel;
   private final SModule myOwner;
   private SNode myNode;
   private final boolean myIsEditable;
@@ -71,14 +71,14 @@ public class EmbeddableEditor {
     myOwner = owner;
     myContext = context;
     myIsEditable = editable;
-    myModel = ((EditableSModelDescriptor) ProjectModels.createDescriptorFor(true));
-    myModel.getSModel().addDevKit(GeneralPurpose_DevKit.MODULE_REFERENCE);
-    myModel.getSModel().addLanguage(ModuleReference.fromString("d745e97c-8235-4470-b086-ba3da1f4c03c(jetbrains.mps.quickQueryLanguage)"));
-    SModelRepository.getInstance().registerModelDescriptor(myModel, myOwner);
+    myModel = ((EditableSModel) ProjectModels.createDescriptorFor(true));
+    ((SModelInternal) smodel()).addDevKit(GeneralPurpose_DevKit.MODULE_REFERENCE);
+    ((SModelInternal) smodel()).addLanguage(ModuleReference.fromString("d745e97c-8235-4470-b086-ba3da1f4c03c(jetbrains.mps.quickQueryLanguage)"));
+    SModelRepository.getInstance().registerModelDescriptor((SModelInternal) myModel, myOwner);
     setNode(node, true);
   }
 
-  public EmbeddableEditor(IOperationContext context, EditableSModelDescriptor modelDescriptor, SNode node, boolean editable) {
+  public EmbeddableEditor(IOperationContext context, EditableSModel modelDescriptor, SNode node, boolean editable) {
     myOwner = modelDescriptor.getModule();
     myContext = context;
     myIsEditable = editable;
@@ -89,7 +89,7 @@ public class EmbeddableEditor {
   private void setNode(@NotNull final SNode node, boolean addToModel) {
     myNode = node;
     if (addToModel) {
-      myModel.getSModel().addRoot(node);
+      smodel().addRootNode(node);
     }
     myFileNodeEditor = new MPSFileNodeEditor(myContext, MPSNodesVirtualFileSystem.getInstance().getFileFor(myNode));
     Editor editor = myFileNodeEditor.getNodeEditor();
@@ -141,8 +141,10 @@ public class EmbeddableEditor {
 
 
     ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+      @Override
       public void run() {
         IScriptController ctl = new IScriptController.Stub(new IConfigMonitor.Stub() {
+          @Override
           public <T extends IOption> T relayQuery(IQuery<T> query) {
             return query.defaultOption();
           }
@@ -201,19 +203,19 @@ public class EmbeddableEditor {
         return result;
       }
     };
-    boolean successful = GeneratorUIFacade.getInstance().generateModels(myContext, ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), myModel), handler, true, true);
+    boolean successful = GeneratorUIFacade.getInstance().generateModels(myContext, ListSequence.fromListAndArray(new ArrayList<SModel>(), myModel), handler, true, true);
     return new GenerationResult(myNode, myContext, myModel, handler, successful);
   }
 
-  public EditableSModelDescriptor getModel() {
+  public EditableSModel getModel() {
     return myModel;
   }
 
   public void addLanguageStructureModel(final Language language) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        SModelReference ref = (SModelReference) language.getStructureModelDescriptor().getModelReference();
-        myModel.getSModel().addModelImport(ref, false);
+        SModelReference ref = (SModelReference) language.getStructureModelDescriptor().getReference();
+        ((SModelInternal) smodel()).addModelImport(ref, false);
       }
     });
   }
@@ -221,7 +223,7 @@ public class EmbeddableEditor {
   public void addLanguage(final Language language) {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        myModel.getSModel().addLanguage(language.getModuleReference());
+        ((SModelInternal) smodel()).addLanguage(language.getModuleReference());
       }
     });
   }
@@ -229,9 +231,13 @@ public class EmbeddableEditor {
   public void addModel(final SModelReference model) {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        myModel.getSModel().addModelImport(model, false);
+        ((SModelInternal) smodel()).addModelImport(model, false);
       }
     });
+  }
+
+  private final SModel smodel() {
+    return ((SModelInternal) myModel).getSModel();
   }
 
   public void disposeEditor() {

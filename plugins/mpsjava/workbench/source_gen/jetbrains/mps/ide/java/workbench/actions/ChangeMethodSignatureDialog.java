@@ -21,7 +21,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelOperations;
@@ -92,6 +92,7 @@ public class ChangeMethodSignatureDialog extends RefactoringDialog {
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
     JPanel panel = new JPanel(new GridBagLayout());
     GridBagConstraints c = new GridBagConstraints();
@@ -105,9 +106,11 @@ public class ChangeMethodSignatureDialog extends RefactoringDialog {
     return panel;
   }
 
+  @Override
   protected void doRefactoringAction() {
     final Wrappers._T<List<SNode>> methodsToRefactor = new Wrappers._T<List<SNode>>(new ArrayList<SNode>());
     ProgressManager.getInstance().run(new Task.Modal(myProject, "Search for overriding methods", true) {
+      @Override
       public void run(@NotNull final ProgressIndicator indicator) {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {

@@ -39,10 +39,12 @@ public class ReferencesTreeNode extends MPSTreeNodeEx {
     return myNode;
   }
 
+  @Override
   public boolean isInitialized() {
     return myInitialized;
   }
 
+  @Override
   protected void doInit() {
     super.doInit();
 
@@ -53,6 +55,7 @@ public class ReferencesTreeNode extends MPSTreeNodeEx {
     myInitialized = true;
   }
 
+  @Override
   protected void doUpdate() {
     super.doUpdate();
     this.removeAllChildren();

@@ -17,7 +17,7 @@
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.project.ModuleUtil" />
     <classNode dependClassName="jetbrains.mps.project.Solution" />
-    <classNode dependClassName="jetbrains.mps.reloading.ClasspathStringCollector" />
+    <classNode dependClassName="jetbrains.mps.project.facets.JavaModuleFacet" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
   </dependency>
   <dependency className="jetbrains.mps.dependencies.util.ModuleGraph" file="ModuleGraph.java">

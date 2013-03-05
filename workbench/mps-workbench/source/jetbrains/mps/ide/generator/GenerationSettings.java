@@ -53,27 +53,33 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
   private MyState myState = new MyState();
   private GenerationSettingsPreferencesPage myPreferences;
 
+  @Override
   @NotNull
   public String getComponentName() {
     return "Generation Settings";
   }
 
+  @Override
   public void initComponent() {
 
   }
 
+  @Override
   public void disposeComponent() {
 
   }
 
+  @Override
   public MyState getState() {
     return myState;
   }
 
+  @Override
   public void loadState(MyState state) {
     myState = state;
   }
 
+  @Override
   @Nls
   public String getDisplayName() {
     return "Generator";
@@ -84,36 +90,44 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     return null;
   }
 
+  @Override
   @Nullable
   @NonNls
   public String getHelpTopic() {
     return "Generator";
   }
 
+  @Override
   public JComponent createComponent() {
     return getPreferences().getComponent();
   }
 
+  @Override
   public boolean isModified() {
     return getPreferences().isModified();
   }
 
+  @Override
   public void apply() throws ConfigurationException {
     getPreferences().commit();
   }
 
+  @Override
   public void reset() {
     getPreferences().update();
   }
 
+  @Override
   public void disposeUIResources() {
     myPreferences = null;
   }
 
+  @Override
   public String getId() {
     return "generator.manager";
   }
 
+  @Override
   public Runnable enableSearch(String option) {
     return null;
   }

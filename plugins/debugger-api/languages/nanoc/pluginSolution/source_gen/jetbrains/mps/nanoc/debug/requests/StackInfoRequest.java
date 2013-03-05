@@ -7,6 +7,7 @@ public abstract class StackInfoRequest extends GDBRequestor {
   public StackInfoRequest() {
   }
 
+  @Override
   public String createRequestString() {
     return "-stack-list-frames";
   }

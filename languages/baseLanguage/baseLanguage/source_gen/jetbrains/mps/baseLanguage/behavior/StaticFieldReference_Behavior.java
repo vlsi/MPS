@@ -11,7 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SConcept;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelInternal;
 
 public class StaticFieldReference_Behavior {
   public static void init(SNode thisNode) {
@@ -42,7 +42,7 @@ public class StaticFieldReference_Behavior {
 
   public static Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, IModule module) {
     SNode classifier = SLinkOperations.getTarget(thisNode, "classifier", false);
-    if ((classifier != null) && SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(classifier).getSModelReference().getStereotype())) {
+    if ((classifier != null) && SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(classifier).getReference().getStereotype())) {
       return Expression_Behavior.call_eval_1213877519769(thisNode, module);
     } else {
       return (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "initializer", true), "virtual_isCompileTimeConstant_1238860258777", new Object[]{}) ?
@@ -56,7 +56,7 @@ public class StaticFieldReference_Behavior {
     return true;
   }
 
-  private static IModule check_o8sx3d_a0d0a(SModelDescriptor checkedDotOperand) {
+  private static IModule check_o8sx3d_a0d0a(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

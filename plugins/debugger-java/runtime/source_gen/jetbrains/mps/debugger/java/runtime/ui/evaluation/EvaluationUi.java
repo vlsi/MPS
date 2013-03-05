@@ -7,8 +7,8 @@ import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.DataKey;
 import jetbrains.mps.debugger.java.runtime.evaluation.container.IEvaluationContainer;
 import jetbrains.mps.debugger.java.runtime.state.DebugSession;
-import jetbrains.mps.debug.api.SessionChangeAdapter;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.debug.api.SessionChangeAdapter;
 import java.awt.BorderLayout;
 import com.sun.jdi.ThreadReference;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -23,12 +23,16 @@ import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.debug.api.AbstractDebugSession;
+import jetbrains.mps.debugger.java.runtime.state.JavaUiStateImpl;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaThread;
+import jetbrains.mps.debugger.java.api.state.proxy.JavaLocation;
+import jetbrains.mps.debugger.java.api.state.proxy.JavaStackFrame;
 
 public abstract class EvaluationUi extends JPanel {
   private static final Logger LOG = Logger.getLogger(EvaluationUi.class);
   public static final DataKey<IEvaluationContainer> EVALUATION_CONTAINER = DataKey.create("Evaluation Container");
   public static final DataKey<DebugSession> DEBUG_SESSION = DataKey.create("Debug Session");
+  @NotNull
   protected final DebugSession myDebugSession;
   protected final EvaluationTree myTree;
   private EvaluationUi.IErrorTextListener myErrorListener;
@@ -96,6 +100,7 @@ public abstract class EvaluationUi extends JPanel {
 
   private void setSuccess(@NotNull final JavaValue evaluatedValue, final IEvaluationContainer model) {
     invokeLaterIfNeeded(new Runnable() {
+      @Override
       public void run() {
         myTree.setResultValue(evaluatedValue, model);
         myTree.rebuildEvaluationTreeNowIfNotDisposed();
@@ -105,6 +110,7 @@ public abstract class EvaluationUi extends JPanel {
 
   private void setEvaluating(final IEvaluationContainer model) {
     invokeLaterIfNeeded(new Runnable() {
+      @Override
       public void run() {
         myTree.setEvaluating(model);
         myTree.rebuildEvaluationTreeNowIfNotDisposed();
@@ -114,6 +120,7 @@ public abstract class EvaluationUi extends JPanel {
 
   private void setFailure(@Nullable final Throwable error, @Nullable final String message, final IEvaluationContainer model) {
     invokeLaterIfNeeded(new Runnable() {
+      @Override
       public void run() {
         if (error != null) {
           myTree.setError(error, model);
@@ -154,8 +161,13 @@ public abstract class EvaluationUi extends JPanel {
     @Override
     public void paused(AbstractDebugSession session) {
       if (myDebugSession == session) {
-        myTree.updateLocation(myDebugSession.getUiState().getStackFrame().getLocation().getUnitName(), myDebugSession.getUiState().getThread().getThread());
+        JavaUiStateImpl uiState = myDebugSession.getUiState();
+        String unitName = check_4q63yg_a0b0a0b02(check_4q63yg_a0a1a0a1u(uiState.getStackFrame()));
+        if ((unitName != null && unitName.length() > 0)) {
+          myTree.updateLocation(unitName, uiState.getThread().getThread());
+        }
         ApplicationManager.getApplication().invokeLater(new Runnable() {
+          @Override
           public void run() {
             setErrorText("");
             update();
@@ -171,6 +183,7 @@ public abstract class EvaluationUi extends JPanel {
     public void stateChanged(AbstractDebugSession session) {
       if (myDebugSession == session) {
         ApplicationManager.getApplication().invokeLater(new Runnable() {
+          @Override
           public void run() {
             update();
           }
@@ -182,6 +195,7 @@ public abstract class EvaluationUi extends JPanel {
     public void resumed(AbstractDebugSession session) {
       if (myDebugSession == session) {
         ApplicationManager.getApplication().invokeLater(new Runnable() {
+          @Override
           public void run() {
             myTree.rebuildEvaluationTreeNowIfNotDisposed();
           }
@@ -193,6 +207,20 @@ public abstract class EvaluationUi extends JPanel {
   private static ThreadReference check_4q63yg_a0c0b0m(JavaThread checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getThread();
+    }
+    return null;
+  }
+
+  private static String check_4q63yg_a0b0a0b02(JavaLocation checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getUnitName();
+    }
+    return null;
+  }
+
+  private static JavaLocation check_4q63yg_a0a1a0a1u(JavaStackFrame checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getLocation();
     }
     return null;
   }

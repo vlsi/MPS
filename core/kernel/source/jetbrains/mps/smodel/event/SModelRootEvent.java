@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel.event;
 
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
@@ -31,6 +31,7 @@ public class SModelRootEvent extends SModelEvent {
     myAdded = added;
   }
 
+  @Override
   public SNode getAffectedRoot() {
     return myRoot;
   }
@@ -47,6 +48,7 @@ public class SModelRootEvent extends SModelEvent {
     return !isAdded();
   }
 
+  @Override
   public void accept(SModelEventVisitor visitor) {
     visitor.visitRootEvent(this);
   }

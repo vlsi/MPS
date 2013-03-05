@@ -13,9 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.util.EqualUtil;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -26,13 +27,12 @@ public class SNodePointer implements SNodeReference {
   private SNodeId myNodeId;
 
   public SNodePointer(String modelUID, String nodeId) {
-    this(SModelReference.fromString(modelUID), jetbrains.mps.smodel.SNodeId.fromString(nodeId));
+    this(jetbrains.mps.smodel.SModelReference.fromString(modelUID), jetbrains.mps.smodel.SNodeId.fromString(nodeId));
   }
 
   public SNodePointer(SNode node) {
     if (node == null) return;
-    SModel model = node.getModel();
-    myModelReference = model.getSModelReference();
+    myModelReference = node.getContainingModel().getReference();
     myNodeId = node.getNodeId();
   }
 
@@ -42,13 +42,13 @@ public class SNodePointer implements SNodeReference {
   }
 
   @Override
-  public org.jetbrains.mps.openapi.model.SNode resolve(SRepository repo) {
+  public SNode resolve(SRepository repo) {
     if (myNodeId == null) return null;
 
     if (myModelReference != null) {
-      SModelDescriptor model = SModelRepository.getInstance().getModelDescriptor(myModelReference);
+      SModel model = SModelRepository.getInstance().getModelDescriptor(myModelReference);
       if (model != null) {
-        SNode node = model.getSModel().getNodeById(myNodeId);
+        SNode node = model.getSModel().getNode(myNodeId);
         if (node != null) {
           return node;
         }
@@ -62,8 +62,9 @@ public class SNodePointer implements SNodeReference {
     return null;
   }
 
-  public SModelReference getModelReference() {
-    return myModelReference;
+  @Override
+  public jetbrains.mps.smodel.SModelReference getModelReference() {
+    return (jetbrains.mps.smodel.SModelReference) myModelReference;
   }
 
   public String toString() {
@@ -125,7 +126,7 @@ public class SNodePointer implements SNodeReference {
    * Inline content in java code, use migration in MPS
    * @Deprecated in 3.0
    */
-  public SModelDescriptor getModel() {
+  public SModel getModel() {
     if (getModelReference() == null) return null;
     return SModelRepository.getInstance().getModelDescriptor(getModelReference());
   }

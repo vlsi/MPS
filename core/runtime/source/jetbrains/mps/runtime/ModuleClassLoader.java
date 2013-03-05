@@ -50,6 +50,7 @@ public class ModuleClassLoader extends ClassLoader {
     myModule = module;
   }
 
+  @Override
   protected synchronized Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
     if (!myModule.canLoad()) throw new ClassNotFoundException(name);
 
@@ -137,6 +138,7 @@ public class ModuleClassLoader extends ClassLoader {
     return processedParentClassLoaders.contains(getParent()) ? null : loadFromParent(name);
   }
 
+  @Override
   protected URL findResource(String name) {
     for (IClassLoadingModule m : myModule.getClassLoadingDependencies()) {
       URL res = m.findResource(name);
@@ -147,6 +149,7 @@ public class ModuleClassLoader extends ClassLoader {
     return null;
   }
 
+  @Override
   protected Enumeration<URL> findResources(String name) throws IOException {
     ArrayList<URL> result = new ArrayList<URL>();
     for (IClassLoadingModule m : myModule.getClassLoadingDependencies()) {
@@ -184,10 +187,12 @@ public class ModuleClassLoader extends ClassLoader {
       myIterator = iterable.iterator();
     }
 
+    @Override
     public boolean hasMoreElements() {
       return myIterator.hasNext();
     }
 
+    @Override
     public E nextElement() {
       return myIterator.next();
     }

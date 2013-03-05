@@ -3,6 +3,7 @@
   <dependency className="jetbrains.mps.workbench.goTo.index.JavaStubNavigationContributor" file="JavaStubNavigationContributor.java">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.HashSet" />
@@ -16,9 +17,10 @@
     <classNode dependClassName="jetbrains.mps.reloading.CompositeClassPathItem" />
     <classNode dependClassName="jetbrains.mps.reloading.IClassPathItem" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageID" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelInternal" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.stubs.javastub.classpath.StubHelper" />
+    <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.workbench.goTo.index.JavaStubNodeDescriptor" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

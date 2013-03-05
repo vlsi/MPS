@@ -20,6 +20,7 @@ public abstract class ListRemoveAction extends BaseValidatedAction {
     e.getPresentation().setEnabled(myList.getSelectedIndices().length != 0);
   }
 
+  @Override
   public final void doPerform(AnActionEvent e) {
     int index = myList.getSelectedIndex();
     for (int i : myList.getSelectedIndices()) {

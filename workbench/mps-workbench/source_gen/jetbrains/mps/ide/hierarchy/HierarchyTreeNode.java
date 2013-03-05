@@ -8,7 +8,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.annotation.DisposableCommand;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -29,6 +29,7 @@ public class HierarchyTreeNode extends MPSTreeNode {
     setNodeIdentifier(calculateNodeIdentifier());
   }
 
+  @Override
   protected void doUpdatePresentation() {
     @DisposableCommand SNode node = myNode;
     if (node == null) {
@@ -52,9 +53,10 @@ public class HierarchyTreeNode extends MPSTreeNode {
       return null;
     }
 
-    return model.getSModelFqName().toString();
+    return model.getReference().getSModelFqName().toString();
   }
 
+  @Override
   public int getToggleClickCount() {
     return -1;
   }
@@ -80,12 +82,14 @@ public class HierarchyTreeNode extends MPSTreeNode {
     );
   }
 
+  @Override
   public ActionGroup getActionGroup() {
     final AbstractHierarchyView hierarchyView = myHierarchyTree.getHierarchyView();
     if (hierarchyView == null) {
       return null;
     }
     BaseAction hierarchyAction = new BaseAction("Show Hierarchy For This Node") {
+      @Override
       protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
         final SNode node = myNode;
         hierarchyView.showItemInHierarchy(node, getOperationContext());
@@ -94,11 +98,13 @@ public class HierarchyTreeNode extends MPSTreeNode {
     return ActionUtils.groupFromActions(hierarchyAction);
   }
 
+  @Override
   public void doubleClick() {
     if (myHierarchyTree.doubleClick(HierarchyTreeNode.this)) {
       return;
     }
     ModelAccess.instance().runWriteInEDT(new Runnable() {
+      @Override
       public void run() {
         if (jetbrains.mps.util.SNodeOperations.isDisposed(myNode) || !(myNode.getModel() != null) || myNode.getModel().getModelDescriptor() == null) {
           return;

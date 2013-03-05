@@ -38,6 +38,7 @@ public class TemplateQueryContextWithRule extends TemplateQueryContext {
     myRulePointer = ruleNode;
   }
 
+  @Override
   public SNode getRuleNodeForLogging() {
     return myRule != null ? myRule :
       myRulePointer != null ? myRulePointer.resolve(MPSModuleRepository.getInstance()) : null;

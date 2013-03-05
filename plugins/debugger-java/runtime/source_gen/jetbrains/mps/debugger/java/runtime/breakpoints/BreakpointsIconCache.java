@@ -80,6 +80,7 @@ public class BreakpointsIconCache implements ProjectComponent {
   private final DebugSessionManagerComponent myDebugSessionManager;
   private final BreakpointsUiComponent myBreakpointsUiComponent;
   private final CleanupListener myCleanupListener = new CleanupListener() {
+    @Override
     public void performCleanup() {
       myUpdateFromCurrent.invoke();
     }
@@ -92,18 +93,22 @@ public class BreakpointsIconCache implements ProjectComponent {
     myBreakpointsUiComponent = breakpointsUiComponent;
   }
 
+  @Override
   public void projectOpened() {
   }
 
+  @Override
   public void projectClosed() {
   }
 
+  @Override
   public void initComponent() {
     myBreakpointManager.addChangeListener(myBreakpointsManagerListener);
     myDebugSessionManager.addDebugSessionListener(myDebugSessionAdapter);
     CleanupManager.getInstance().addCleanupListener(myCleanupListener);
   }
 
+  @Override
   public void disposeComponent() {
     CleanupManager.getInstance().removeCleanupListener(myCleanupListener);
     myDebugSessionManager.removeDebugSessionListener(myDebugSessionAdapter);
@@ -203,6 +208,7 @@ public class BreakpointsIconCache implements ProjectComponent {
 
   @NonNls
   @NotNull
+  @Override
   public String getComponentName() {
     return "Breakpoints Icon Cache";
   }

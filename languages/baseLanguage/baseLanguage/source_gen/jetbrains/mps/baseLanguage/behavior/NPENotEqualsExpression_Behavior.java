@@ -10,6 +10,6 @@ public class NPENotEqualsExpression_Behavior {
   }
 
   public static int virtual_getPriority_1262430001741497858(SConcept thisConcept) {
-    return 4;
+    return 7;
   }
 }

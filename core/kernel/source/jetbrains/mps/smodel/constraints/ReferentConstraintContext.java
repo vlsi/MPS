@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel.constraints;
 
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 
@@ -61,34 +61,42 @@ public class ReferentConstraintContext implements ReferenceConstraintsContext {
     myContainingLink = containingLink;
   }
 
+  @Override
   public boolean isExists() {
     return exists;
   }
 
+  @Override
   public SNode getContextNode() {
     return contextNode;
   }
 
+  @Override
   public String getContextRole() {
     return contextRole;
   }
 
+  @Override
   public int getPosition() {
     return position;
   }
 
+  @Override
   public SModel getModel() {
     return myModel;
   }
 
+  @Override
   public SNode getEnclosingNode() {
     return myEnclosingNode;
   }
 
+  @Override
   public SNode getReferenceNode() {
     return myReferenceNode;
   }
 
+  @Override
   public SNode getLinkTarget() {
     return myLinkTarget;
   }

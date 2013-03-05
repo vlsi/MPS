@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.closures.behavior;
 
 import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -42,6 +42,7 @@ public class RuntimeUtils {
           MapSequence.fromMap(RUNTIME_CLASSIFIERS).put(SPropertyOperations.getString(cls, "nestedName"), cls);
         }
         ClassLoaderManager.getInstance().addReloadHandler(new ReloadAdapter() {
+          @Override
           public void unload() {
             synchronized (RuntimeUtils.class) {
               RuntimeUtils.RUNTIME_CLASSIFIERS = null;
@@ -62,6 +63,7 @@ public class RuntimeUtils {
           MapSequence.fromMap(STATIC_RUNTIME_CLASSIFIERS).put(SPropertyOperations.getString(cls, "nestedName"), cls);
         }
         ClassLoaderManager.getInstance().addReloadHandler(new ReloadAdapter() {
+          @Override
           public void unload() {
             synchronized (RuntimeUtils.class) {
               STATIC_RUNTIME_CLASSIFIERS = null;

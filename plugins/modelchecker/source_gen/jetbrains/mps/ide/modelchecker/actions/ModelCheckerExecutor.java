@@ -57,8 +57,10 @@ public class ModelCheckerExecutor {
     final Object cmd = startCommand(task);
     Runnable process = createProcess(true, null);
     Runnable afterFinish = new Runnable() {
+      @Override
       public void run() {
         ModelAccess.instance().runCommandInEDT(new Runnable() {
+          @Override
           public void run() {
             finishCommand(cmd);
           }
@@ -70,6 +72,7 @@ public class ModelCheckerExecutor {
 
   private Runnable createProcess(final boolean spawnCommands, final ProgressMonitor monitor) {
     return new Runnable() {
+      @Override
       public void run() {
         IResultProvider resultProvider = FindUtils.makeProvider(new ModelCheckerIssueFinder() {
           @Override
@@ -96,6 +99,7 @@ public class ModelCheckerExecutor {
 
 
         ModelCheckerController controller = new ModelCheckerController() {
+          @Override
           public void runCommand(Runnable cmd) {
             if (spawnCommands) {
               ModelAccess.instance().runCommandInEDT(cmd, getMPSProject());
@@ -122,23 +126,28 @@ public class ModelCheckerExecutor {
   private TaskInfo createTaskInfo() {
     return new TaskInfo() {
       @NotNull
+      @Override
       public String getTitle() {
         return "Checking models";
       }
 
+      @Override
       public String getCancelText() {
         return null;
       }
 
+      @Override
       public String getCancelTooltipText() {
         return null;
       }
 
+      @Override
       public boolean isCancellable() {
         return false;
       }
 
       @NonNls
+      @Override
       public String getProcessId() {
         return "model checker";
       }
@@ -159,6 +168,7 @@ public class ModelCheckerExecutor {
 
   private void primExec(TaskInfo task, final Runnable proc, final Runnable afterFinish, Frame frame) {
     Runnable process = new Runnable() {
+      @Override
       public void run() {
         proc.run();
         if (afterFinish != null) {

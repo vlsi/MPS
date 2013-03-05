@@ -8,13 +8,14 @@ import javax.swing.JTextArea;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.Nullable;
-import java.awt.Dimension;
+import org.jetbrains.annotations.NonNls;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
 import jetbrains.mps.ide.datatransfer.TextPasteUtil;
 import javax.swing.JScrollPane;
 import com.intellij.ui.ScrollPaneFactory;
+import java.awt.Dimension;
 import com.intellij.unscramble.AnalyzeStacktraceUtil;
 
 public class AnalyzeStacktraceDialog extends DialogWrapper {
@@ -25,6 +26,8 @@ public class AnalyzeStacktraceDialog extends DialogWrapper {
   public AnalyzeStacktraceDialog(Project project, final IOperationContext context) {
     super(project);
     setTitle("Analyze Stacktrace");
+    setOKButtonText("&OK");
+    setCancelButtonText("Ca&ncel");
     this.myProject = project;
     this.myComponent = this.createPanel();
 
@@ -32,30 +35,42 @@ public class AnalyzeStacktraceDialog extends DialogWrapper {
   }
 
   @Nullable
-  protected JComponent createCenterPanel() {
-    getWindow().setMinimumSize(new Dimension(700, 600));
-    return this.myComponent;
+  @NonNls
+  @Override
+  protected String getDimensionServiceKey() {
+    return AnalyzeStacktraceDialog.class.getCanonicalName();
   }
 
+  @Nullable
   @Override
-  public void show() {
-    super.show();
+  public JComponent getPreferredFocusedComponent() {
+    return myText;
+  }
+
+  @Nullable
+  @Override
+  protected JComponent createCenterPanel() {
+    return this.myComponent;
   }
 
   public JComponent createPanel() {
     JPanel panel = new JPanel(new BorderLayout());
+
     panel.add(new JLabel("Put a stack trace here:"), BorderLayout.NORTH);
+
     this.myText = new JTextArea("");
     String str = TextPasteUtil.getStringFromClipboard();
     if (str != null) {
       this.myText.setText(str);
     }
-    panel.add(this.myText, BorderLayout.CENTER);
-    JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(panel);
-    scrollPane.getVerticalScrollBar().setBlockIncrement(40);
-    scrollPane.getVerticalScrollBar().setUnitIncrement(20);
-    scrollPane.getHorizontalScrollBar().setBlockIncrement(40);
-    return scrollPane;
+    this.myText.setCaretPosition(0);
+
+    JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(myText);
+    scrollPane.setAutoscrolls(true);
+    scrollPane.setPreferredSize(new Dimension(400, 400));
+
+    panel.add(scrollPane, BorderLayout.CENTER);
+    return panel;
   }
 
   @Override

@@ -13,42 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.JavaModuleFacet;
-import jetbrains.mps.project.JavaModuleFacetImpl;
-import jetbrains.mps.project.ModelsAutoImportsManager;
+import jetbrains.mps.project.*;
 import jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor;
-import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.dependency.modules.GeneratorDependenciesManager;
 import jetbrains.mps.project.dependency.modules.ModuleDependenciesManager;
-import jetbrains.mps.project.structure.modules.Dependency;
-import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
-import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
-import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef;
-import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefSet;
-import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_SimpleRef;
-import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
+import jetbrains.mps.project.structure.modules.*;
+import jetbrains.mps.project.structure.modules.mappingpriorities.*;
 import jetbrains.mps.runtime.IClassLoadingModule;
 import jetbrains.mps.runtime.ModuleClassLoader;
 import jetbrains.mps.vfs.IFile;
 
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Generator extends AbstractModule implements IClassLoadingModule {
   public static final Logger LOG = Logger.getLogger(Generator.class);
@@ -86,6 +65,7 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   public String getPluginPath() {
     return getSourceLanguage().getPluginPath();
   }
@@ -137,35 +117,14 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
     return descriptorChanged;
   }
 
+  @Override
   public boolean isPackaged() {
     return getSourceLanguage().isPackaged();
   }
 
-  @Override
-  protected JavaModuleFacet createJavaModuleFacet() {
-    return new JavaModuleFacetImpl(this) {
-      @Override
-      public Collection<String> getAdditionalClassPath() {
-        return Collections.emptyList();
-      }
-
-      @Override
-      public boolean isCompileInMPS() {
-        // generator is always compiled in MPS
-        return true;
-      }
-
-      @Override
-      public IFile getClassesGen() {
-        return mySourceLanguage.getClassesGen();
-      }
-    };
-  }
-
-
-  public List<SModelDescriptor> getOwnTemplateModels() {
-    List<SModelDescriptor> templateModels = new ArrayList<SModelDescriptor>();
-    for (SModelDescriptor modelDescriptor : getOwnModelDescriptors()) {
+  public List<SModel> getOwnTemplateModels() {
+    List<SModel> templateModels = new ArrayList<SModel>();
+    for (SModel modelDescriptor : getOwnModelDescriptors()) {
       if (SModelStereotype.isGeneratorModel(modelDescriptor)) {
         templateModels.add(modelDescriptor);
       }
@@ -173,6 +132,7 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
     return templateModels;
   }
 
+  @Override
   public GeneratorDescriptor getModuleDescriptor() {
     return myGeneratorDescriptor;
   }
@@ -182,6 +142,7 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
     //do nothing. reloaded by containing language
   }
 
+  @Override
   public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
     assert moduleDescriptor instanceof GeneratorDescriptor;
 
@@ -206,7 +167,7 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
   }
 
   public static String generateGeneratorUID(Language sourceLanguage) {
-    return sourceLanguage.getModuleName() + "#" + SModel.generateUniqueId();
+    return sourceLanguage.getModuleName() + "#" + jetbrains.mps.smodel.SModel.generateUniqueId();
   }
 
   public Language getSourceLanguage() {
@@ -217,11 +178,13 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
     return getAlias();
   }
 
+  @Override
   public void save() {
     super.save();
     mySourceLanguage.save();
   }
 
+  @Override
   public List<Dependency> getDependencies() {
     List<Dependency> result = super.getDependencies();
     for (ModuleReference ref : getSourceLanguage().getRuntimeModulesReferences()) {
@@ -230,6 +193,7 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
     return result;
   }
 
+  @Override
   public ModuleDependenciesManager getDependenciesManager() {
     return new GeneratorDependenciesManager(this);
   }
@@ -249,11 +213,12 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
     return result;
   }
 
+  @Override
   public IFile getBundleHome() {
     return null;
   }
 
-  public boolean deleteReferenceFromPriorities(SModelReference ref) {
+  public boolean deleteReferenceFromPriorities(org.jetbrains.mps.openapi.model.SModelReference ref) {
     boolean[] descriptorChanged = new boolean[]{false};
     Iterator<MappingPriorityRule> it = myGeneratorDescriptor.getPriorityRules().iterator();
     while (it.hasNext()) {
@@ -267,10 +232,10 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
     return descriptorChanged[0];
   }
 
-  public List<SModelDescriptor> getGeneratorModels() {
-    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
-    List<SModelDescriptor> ownModels = this.getOwnModelDescriptors();
-    for (SModelDescriptor ownModel : ownModels) {
+  public List<SModel> getGeneratorModels() {
+    List<SModel> result = new ArrayList<SModel>();
+    List<SModel> ownModels = this.getOwnModelDescriptors();
+    for (SModel ownModel : ownModels) {
       if (SModelStereotype.isGeneratorModel(ownModel)) {
         result.add((ownModel));
       } else if (SModelStereotype.isUserModel(ownModel)) {
@@ -282,6 +247,7 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
   }
 
   // classloading part
+  @Override
   public Class getClass(String fqName) {
     return mySourceLanguage.getClass(fqName);
   }
@@ -324,8 +290,8 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
   }
 
   @Override
-  public boolean reloadClassesAfterGeneration() {
-    return true;
+  public IFile getOutputPath() {
+    return mySourceLanguage.getOutputPath();
   }
 
   private static class GeneratorModelsAutoImports extends AutoImportsContributor<Generator> {

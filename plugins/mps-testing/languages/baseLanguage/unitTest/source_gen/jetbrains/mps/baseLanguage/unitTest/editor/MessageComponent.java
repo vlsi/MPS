@@ -4,18 +4,18 @@ package jetbrains.mps.baseLanguage.unitTest.editor;
 
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class MessageComponent extends AbstractCellProvider {
   public MessageComponent(SNode node) {
@@ -31,9 +31,9 @@ public class MessageComponent extends AbstractCellProvider {
   }
 
   @Deprecated
-  public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  public jetbrains.mps.nodeEditor.cells.EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
     // This method was added in MPS 3.0 for the compatibility with prev. generated code 
-    return createEditorCell((EditorContext) editorContext);
+    return (jetbrains.mps.nodeEditor.cells.EditorCell) createEditorCell((EditorContext) editorContext);
   }
 
   private EditorCell createCollection_8rtror_a(EditorContext editorContext, SNode node) {
@@ -55,6 +55,10 @@ public class MessageComponent extends AbstractCellProvider {
     return editorCell;
   }
 
+  private static boolean renderingCondition_8rtror_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "message", true) != null);
+  }
+
   private EditorCell createRefNode_8rtror_a0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("message");
@@ -70,9 +74,5 @@ public class MessageComponent extends AbstractCellProvider {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_8rtror_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "message", true) != null);
   }
 }

@@ -4,7 +4,7 @@ package jetbrains.mps.lang.constraints.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import java.util.Map;
@@ -36,7 +36,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
@@ -107,7 +106,7 @@ public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
-              if (!(LanguageAspect.CONSTRAINTS.is(_context.getModel()))) {
+              if (!(LanguageAspect.CONSTRAINTS.is(_context.getModel().getModelDescriptor()))) {
                 return new EmptyScope();
               }
 
@@ -159,17 +158,17 @@ public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
   }
 
   public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
-    return LanguageAspect.CONSTRAINTS.is(model) || SModelStereotype.isGeneratorModel(model);
+    return LanguageAspect.CONSTRAINTS.is(model.getModelDescriptor()) || SModelStereotype.isGeneratorModel(model);
   }
 
-  private static SModel check_guz8cy_a0c0a0(SModelDescriptor checkedDotOperand) {
+  private static SModel check_guz8cy_a0c0a0(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSModel();
     }
     return null;
   }
 
-  private static SModelDescriptor check_guz8cy_a0a2a0a(Language checkedDotOperand) {
+  private static SModel check_guz8cy_a0a2a0a(Language checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getStructureModelDescriptor();
     }

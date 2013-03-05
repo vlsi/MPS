@@ -15,7 +15,7 @@ import com.intellij.navigation.NavigationItem;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.util.Condition;
@@ -66,28 +66,32 @@ public class GoToModel_Action extends BaseAction {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.model");
       // PsiDocumentManager.getInstance(project).commitAllDocuments(); 
       BaseModelModel goToModelModel = new BaseModelModel(project) {
+        @Override
         public NavigationItem doGetNavigationItem(final SModelReference modelReference) {
           return new BaseModelItem(modelReference) {
+            @Override
             public void navigate(boolean requestFocus) {
               ProjectPane projectPane = ProjectPane.getInstance(project);
-              SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(modelReference);
+              SModel md = SModelRepository.getInstance().getModelDescriptor(modelReference);
               projectPane.selectModel(md, true);
             }
           };
         }
 
+        @Override
         public SModelReference[] find(IScope scope) {
-          Condition<SModelDescriptor> cond = new Condition<SModelDescriptor>() {
-            public boolean met(SModelDescriptor modelDescriptor) {
-              boolean rightStereotype = SModelStereotype.isUserModel(modelDescriptor) || SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype());
+          Condition<SModel> cond = new Condition<SModel>() {
+            @Override
+            public boolean met(SModel modelDescriptor) {
+              boolean rightStereotype = SModelStereotype.isUserModel(modelDescriptor) || SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(modelDescriptor));
               boolean hasModule = modelDescriptor.getModule() != null;
               return rightStereotype && hasModule;
             }
           };
-          ConditionalIterable<SModelDescriptor> iter = new ConditionalIterable<SModelDescriptor>(scope.getModelDescriptors(), cond);
+          ConditionalIterable<SModel> iter = new ConditionalIterable<SModel>(scope.getModelDescriptors(), cond);
           List<SModelReference> result = new ArrayList<SModelReference>();
-          for (SModelDescriptor md : iter) {
-            result.add(md.getSModelReference());
+          for (SModel md : iter) {
+            result.add(md.getReference());
           }
           return result.toArray(new SModelReference[result.size()]);
         }

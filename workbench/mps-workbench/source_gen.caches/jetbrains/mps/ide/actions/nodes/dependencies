@@ -4,6 +4,7 @@
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Frame" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collections" />
@@ -13,6 +14,7 @@
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="javax.swing.SwingConstants" />
     <classNode dependClassName="javax.swing.border.EmptyBorder" />
+    <classNode dependClassName="jetbrains.mps.extapi.model.EditableSModel" />
     <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -29,10 +31,10 @@
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelInternal" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="javax.swing.JPopupMenu" />
   </dependency>

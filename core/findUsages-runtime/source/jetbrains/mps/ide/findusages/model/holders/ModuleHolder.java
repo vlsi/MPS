@@ -36,21 +36,25 @@ public class ModuleHolder implements IHolder<IModule> {
     myModuleUID = module.getModuleFqName();
   }
 
+  @Override
   public IModule getObject() {
     return MPSModuleRepository.getInstance().getModuleByFqName(myModuleUID);
   }
 
+  @Override
   @NotNull
   public String getCaption() {
     return myModuleUID;
   }
 
+  @Override
   public void write(Element element, Project project) throws CantSaveSomethingException {
     if (getObject() == null) throw new CantSaveSomethingException("module is not found");
 
     element.setAttribute(UID, myModuleUID);
   }
 
+  @Override
   public void read(Element element, Project project) throws CantLoadSomethingException {
     myModuleUID = element.getAttributeValue(UID);
 

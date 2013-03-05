@@ -13,10 +13,10 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.findUsages.FindUsagesManager;
@@ -53,11 +53,7 @@ public class MultiConceptChooser extends AbstractMainNodeChooser {
     ListSequence.fromList(myTargetConcepts).addSequence(ListSequence.fromList(targets).select(new ISelector<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>, Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>() {
       public Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> select(Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> it) {
         return MultiTuple.<SNode,_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>from((it._0() == null ?
-          ModelAccess.instance().runReadAction(new Computable<SNode>() {
-            public SNode compute() {
-              return SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
-            }
-          }) :
+          SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept") :
           it._0()
         ), it._1());
       }
@@ -76,6 +72,7 @@ public class MultiConceptChooser extends AbstractMainNodeChooser {
     myScope = new ModulesWithLanguagesScope(GlobalScope.getInstance(), modules);
   }
 
+  @Override
   protected List<SNode> findToChooseFromOnInit(final FindUsagesManager manager, final ProgressMonitor monitor) {
     return (List<SNode>) (ListSequence.fromList(myTargetConcepts).translate(new ITranslator2<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>, SNode>() {
       public Iterable<SNode> translate(Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> it) {
@@ -96,12 +93,14 @@ public class MultiConceptChooser extends AbstractMainNodeChooser {
     }).toListSequence());
   }
 
+  @Override
   protected Iterable<SModel> getModels(String model) {
     return ScopeOperations.getModelsByName(myScope, model);
   }
 
-  protected Iterable<SNode> findNodes(jetbrains.mps.smodel.SModel model, final String fqName) {
-    return ListSequence.fromList(SModelOperations.getNodes(((jetbrains.mps.smodel.SModel) model), null)).where(new IWhereFilter<SNode>() {
+  @Override
+  protected Iterable<SNode> findNodes(SModel model, final String fqName) {
+    return ListSequence.fromList(SModelOperations.getNodes(((SModel) model), null)).where(new IWhereFilter<SNode>() {
       public boolean accept(final SNode node) {
         return ListSequence.fromList(myTargetConcepts).findFirst(new IWhereFilter<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>() {
           public boolean accept(Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> it) {

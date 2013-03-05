@@ -14,6 +14,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="ProjectPluginDisposeBlock" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Custom.ProjectPlugin" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="dispose" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
@@ -22,6 +23,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="ProjectPluginInitBlock" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Custom.ProjectPlugin" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="init" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
@@ -30,6 +32,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="ApplicationPluginType" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Custom.ApplicationPlugin" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="application plugin&lt;&gt;" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tp4f.1205752813637" resolveInfo="BaseClassifierType" />
@@ -58,6 +61,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="ApplicationPluginDisposeBlock" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Custom.ApplicationPlugin" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="dispose" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
@@ -66,6 +70,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="ApplicationPluginInitBlock" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Custom.ApplicationPlugin" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="init" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
@@ -74,6 +79,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="ProjectPluginType" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Custom.ProjectPlugin" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="project plugin&lt;&gt;" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tp4f.1205752813637" resolveInfo="BaseClassifierType" />
@@ -82,6 +88,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="GetToolInProjectOperation" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tool" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="tool&lt;&lt;{tool}&gt;&gt;" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tp4k.3339131993542057767" resolveInfo="BaseProjectOperation" />
@@ -90,6 +97,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="GetPreferencesComponentInProjectOperation" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Preference" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="preferenceComponent&lt;&lt;{componentDeclaration}&gt;&gt;" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tp4k.3339131993542057767" resolveInfo="BaseProjectOperation" />

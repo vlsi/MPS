@@ -13,28 +13,33 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
 import jetbrains.mps.project.IModule;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
 public class ModuleRepositoryAdapter implements ModuleRepositoryListener, SRepositoryListener {
+  @Override
   public void moduleAdded(IModule module) {
     repositoryChanged();
   }
 
+  @Override
   public void beforeModuleRemoved(IModule module) {
   }
 
+  @Override
   public void moduleRemoved(IModule module) {
     repositoryChanged();
   }
 
+  @Override
   public void moduleInitialized(IModule module) {
     repositoryChanged();
   }
 
+  @Override
   public void moduleChanged(IModule module) {
     repositoryChanged();
   }

@@ -4,20 +4,21 @@ package jetbrains.mps.platform.conf.editor;
 
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
+import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import javax.swing.JComponent;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import javax.swing.JTextArea;
@@ -39,9 +40,9 @@ public class BaseConcept_brokenRefs extends AbstractCellProvider {
   }
 
   @Deprecated
-  public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  public jetbrains.mps.nodeEditor.cells.EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
     // This method was added in MPS 3.0 for the compatibility with prev. generated code 
-    return createEditorCell((EditorContext) editorContext);
+    return (jetbrains.mps.nodeEditor.cells.EditorCell) createEditorCell((EditorContext) editorContext);
   }
 
   private EditorCell createCollection_bx3ota_a(EditorContext editorContext, SNode node) {
@@ -64,6 +65,14 @@ public class BaseConcept_brokenRefs extends AbstractCellProvider {
     return editorCell;
   }
 
+  private static boolean renderingCondition_bx3ota_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return Sequence.fromIterable(((Iterable<SReference>) SNodeOperations.getReferences(node))).any(new IWhereFilter<SReference>() {
+      public boolean accept(SReference ref) {
+        return ref.getTargetNode() == null;
+      }
+    });
+  }
+
   private EditorCell createCollection_bx3ota_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_bx3ota_a0a");
@@ -71,6 +80,16 @@ public class BaseConcept_brokenRefs extends AbstractCellProvider {
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_bx3ota_a0a0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createConstant_bx3ota_a0a0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Broken references:");
+    editorCell.setCellId("Constant_bx3ota_a0a0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.pink));
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
     return editorCell;
   }
 
@@ -84,28 +103,10 @@ public class BaseConcept_brokenRefs extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createConstant_bx3ota_a0a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Broken references:");
-    editorCell.setCellId("Constant_bx3ota_a0a0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.pink);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createJComponent_bx3ota_a1a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, BaseConcept_brokenRefs._QueryFunction_JComponent_bx3ota_a0b0a(node, editorContext), "_bx3ota_a1a0");
     editorCell.setCellId("JComponent_bx3ota_a1a0");
     return editorCell;
-  }
-
-  private static boolean renderingCondition_bx3ota_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return Sequence.fromIterable(((Iterable<SReference>) SNodeOperations.getReferences(node))).any(new IWhereFilter<SReference>() {
-      public boolean accept(SReference ref) {
-        return ref.getTargetNode() == null;
-      }
-    });
   }
 
   private static JComponent _QueryFunction_JComponent_bx3ota_a0b0a(final SNode node, final EditorContext editorContext) {

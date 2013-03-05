@@ -272,6 +272,7 @@ public class InlineMethodRefactoring {
     }
     LocalVariablesScope scope = new LocalVariablesScope(statement);
     List<SNode> nodes = scope.getNodes((new Condition<SNode>() {
+      @Override
       public boolean met(SNode obj) {
         return name.equals(SPropertyOperations.getString(SNodeOperations.cast(obj, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), "name"));
       }

@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.project;
 
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.IterableUtil;
@@ -40,6 +41,7 @@ public class StubModelsResolver {
 
   private StubModelsResolver() {
     GlobalSModelEventsManager.getInstance().addGlobalCommandListener(new SModelCommandListener() {
+      @Override
       public void eventsHappenedInCommand(List<SModelEvent> events) {
         //make it more optimal
         myStubModulesCache.clear();
@@ -57,7 +59,7 @@ public class StubModelsResolver {
     Set<SModelReference> result = new HashSet<SModelReference>();
     for (SModelReference ref : models) {
       SModel m = SModelRepository.getInstance().getModelDescriptor(ref).getSModel();
-      if (m.getNodeById(nodeId) != null) {
+      if (m.getNode(nodeId) != null) {
         result.add(ref);
       }
     }
@@ -69,20 +71,20 @@ public class StubModelsResolver {
     if (myStubModulesCache.containsKey(key)) return;
 
     IModule module = ModuleRepositoryFacade.getInstance().getModule(key.o1);
-    Set<SModelDescriptor> visibleModels = new HashSet<SModelDescriptor>(IterableUtil.asCollection(module.getScope().getModelDescriptors()));
+    Set<SModel> visibleModels = new HashSet<SModel>(IterableUtil.asCollection(module.getScope().getModelDescriptors()));
 
     fillCacheWithModels(key, visibleModels);
   }
 
-  private void fillCacheWithModels(Pair<SModuleReference, SModelFqName> key, Iterable<SModelDescriptor> models) {
+  private void fillCacheWithModels(Pair<SModuleReference, SModelFqName> key, Iterable<SModel> models) {
     if (!myStubModulesCache.containsKey(key)) {
       myStubModulesCache.put(key, new HashSet<SModelReference>());
     }
 
-    for (SModelDescriptor model : models) {
-      if (!model.getSModelReference().getSModelFqName().equals(key.o2)) continue;
+    for (SModel model : models) {
+      if (!model.getReference().getSModelFqName().equals(key.o2)) continue;
       Set<SModelReference> modelsFromCache = myStubModulesCache.get(key);
-      modelsFromCache.add(model.getSModelReference());
+      modelsFromCache.add(model.getReference());
     }
   }
 }

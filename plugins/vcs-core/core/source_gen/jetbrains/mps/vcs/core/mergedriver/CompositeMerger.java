@@ -21,6 +21,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
   }
 
   @Nullable
+  @Override
   public Tuples._2<Integer, byte[]> mergeContents(byte[] baseContent, byte[] localContent, byte[] latestContent) {
     Tuples._2<Integer, byte[]> primaryResult = myPrimaryMerger.mergeContents(baseContent, localContent, latestContent);
     if (primaryResult == null || (int) primaryResult._0() != MERGED) {

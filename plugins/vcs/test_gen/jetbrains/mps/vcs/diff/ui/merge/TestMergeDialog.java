@@ -17,7 +17,7 @@ import java.util.Scanner;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.TestMain;
 import com.intellij.openapi.util.IconLoader;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import java.io.File;
 import jetbrains.mps.vcs.util.MergeVersion;
@@ -120,6 +120,7 @@ public class TestMergeDialog {
           System.exit(0);
         }
         ModelAccess.instance().runWriteAction(new Runnable() {
+          @Override
           public void run() {
             IFile iFile = FileSystem.getInstance().getFileByPath(finalResultFile);
             if (!(iFile.exists())) {

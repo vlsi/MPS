@@ -20,7 +20,7 @@ import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.model.SModelId;
 
@@ -74,6 +74,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
   @Override
   public void init() {
     ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
       public void run() {
         refresh();
       }
@@ -132,6 +133,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
 
   public void clearAll() {
     ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
       public void run() {
         removeAll();
         myModels.clear();
@@ -140,14 +142,14 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
   }
 
   private void removeAll() {
-    List<SModelDescriptor> models = new ArrayList<SModelDescriptor>(myModels.values());
-    for (SModelDescriptor model : models) {
+    List<SModel> models = new ArrayList<SModel>(myModels.values());
+    for (SModel model : models) {
       removeModel(model);
     }
   }
 
-  private void removeModel(SModelDescriptor md) {
-    if (myModels.remove(md.getSModelReference()) != null) {
+  private void removeModel(SModel md) {
+    if (myModels.remove(md.getReference()) != null) {
       SModelRepository.getInstance().removeModelDescriptor(md);
     }
   }
@@ -185,8 +187,10 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
       myHash = null;
     }
 
-    protected SModel createModel() {
-      SModel model = new SModel(getSModelReference()) {
+    @Override
+    protected jetbrains.mps.smodel.SModel createModel() {
+      jetbrains.mps.smodel.SModel model = new jetbrains.mps.smodel.SModel(getSModelReference()) {
+        @Override
         public boolean canFireEvent() {
           return false;
         }

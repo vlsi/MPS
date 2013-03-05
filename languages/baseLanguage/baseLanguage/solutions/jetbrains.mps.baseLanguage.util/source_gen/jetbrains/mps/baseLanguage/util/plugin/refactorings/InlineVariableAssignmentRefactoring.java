@@ -41,6 +41,7 @@ public class InlineVariableAssignmentRefactoring extends InlineVariableRefactori
     }
   }
 
+  @Override
   public SNode doRefactoring() {
     SNode newSelection = null;
     for (SNode sourceNode : this.getNodesToRefactor()) {

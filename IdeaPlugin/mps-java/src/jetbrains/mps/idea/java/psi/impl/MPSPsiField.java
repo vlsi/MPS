@@ -16,6 +16,7 @@
 
 package jetbrains.mps.idea.java.psi.impl;
 
+import com.intellij.psi.PsiAnnotation;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiExpression;
@@ -45,10 +46,6 @@ import javax.swing.Icon;
 
 public class MPSPsiField extends MPSPsiNode implements PsiField {
 
-  class Z<T> {
-    T field;
-  }
-
   public MPSPsiField(SNodeId id, String concept, String containingRole) {
     super(id, concept, containingRole);
     addChild(null, new MPSPsiMethodModifierList());
@@ -63,10 +60,11 @@ public class MPSPsiField extends MPSPsiNode implements PsiField {
   @Override
   public PsiType getType() {
     MPSPsiNode typeNode = getChildOfType("type", MPSPsiNode.class);
-    if (typeNode instanceof ComputesPsiType) {
-      return ((ComputesPsiType) typeNode).getPsiType();
+    if (!(typeNode instanceof ComputesPsiType)) {
+      return new NonJavaMPSType(PsiAnnotation.EMPTY_ARRAY);
     }
-    return null;
+
+    return ((ComputesPsiType) typeNode).getPsiType();
   }
 
   @Nullable
@@ -128,8 +126,8 @@ public class MPSPsiField extends MPSPsiNode implements PsiField {
   @Override
   public PsiClass getContainingClass() {
     PsiElement node = getParent();
-    if (node instanceof MPSPsiClass) {
-      return (MPSPsiClass) node;
+    if (node instanceof MPSPsiClassifier) {
+      return (MPSPsiClassifier) node;
     } else {
       return null;
     }

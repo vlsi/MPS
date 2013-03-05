@@ -18,13 +18,15 @@ package jetbrains.mps.smodel.persistence.def.v4;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
-import jetbrains.mps.smodel.persistence.def.*;
+import jetbrains.mps.smodel.persistence.def.IHashProvider;
+import jetbrains.mps.smodel.persistence.def.IModelPersistence;
+import jetbrains.mps.smodel.persistence.def.IModelReader;
+import jetbrains.mps.smodel.persistence.def.IModelWriter;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.util.xml.XMLSAXHandler;
+import org.jetbrains.mps.openapi.util.Consumer;
 
-import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 
 public class ModelPersistence4 implements IModelPersistence {
 
@@ -44,8 +46,8 @@ public class ModelPersistence4 implements IModelPersistence {
   }
 
   @Override
-  public Map<ModelPersistence.IndexEntry, Integer> index(char[] data) {
-    return Collections.emptyMap();
+  public void index(char[] data, Consumer<String> consumer) {
+    // no-op
   }
 
   @Override

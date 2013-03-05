@@ -79,6 +79,7 @@ public class Interval<T extends Comparable> implements Iterable<T> {
     return true;
   }
 
+  @Override
   public Iterator<T> iterator() {
     if (myStart == null || myEnd == null) {
       throw new UnsupportedOperationException();
@@ -96,6 +97,7 @@ public class Interval<T extends Comparable> implements Iterable<T> {
 
   static {
     ourIteratorFactories.put(Character.class, new Interval.IteratorFactory<Character>() {
+      @Override
       public Iterator<Character> iterator(final Character start, final boolean startIncluded, final Character end, final boolean endIncluded) {
         return new Iterator<Character>() {
           {
@@ -108,6 +110,7 @@ public class Interval<T extends Comparable> implements Iterable<T> {
 
           private Character myCurrent;
 
+          @Override
           public boolean hasNext() {
             if (endIncluded) {
               return end.compareTo(myCurrent) >= 0;
@@ -116,10 +119,12 @@ public class Interval<T extends Comparable> implements Iterable<T> {
             }
           }
 
+          @Override
           public Character next() {
             return (char) myCurrent++;
           }
 
+          @Override
           public void remove() {
             throw new UnsupportedOperationException();
           }
@@ -127,6 +132,7 @@ public class Interval<T extends Comparable> implements Iterable<T> {
       }
     });
     ourIteratorFactories.put(Byte.class, new Interval.IteratorFactory<Byte>() {
+      @Override
       public Iterator<Byte> iterator(final Byte start, final boolean startIncluded, final Byte end, final boolean endIncluded) {
         return new Iterator<Byte>() {
           {
@@ -139,6 +145,7 @@ public class Interval<T extends Comparable> implements Iterable<T> {
 
           private Byte myCurrent;
 
+          @Override
           public boolean hasNext() {
             if (endIncluded) {
               return end.compareTo(myCurrent) >= 0;
@@ -147,10 +154,12 @@ public class Interval<T extends Comparable> implements Iterable<T> {
             }
           }
 
+          @Override
           public Byte next() {
             return (byte) myCurrent++;
           }
 
+          @Override
           public void remove() {
             throw new UnsupportedOperationException();
           }
@@ -158,6 +167,7 @@ public class Interval<T extends Comparable> implements Iterable<T> {
       }
     });
     ourIteratorFactories.put(Short.class, new Interval.IteratorFactory<Short>() {
+      @Override
       public Iterator<Short> iterator(final Short start, final boolean startIncluded, final Short end, final boolean endIncluded) {
         return new Iterator<Short>() {
           {
@@ -170,6 +180,7 @@ public class Interval<T extends Comparable> implements Iterable<T> {
 
           private Short myCurrent;
 
+          @Override
           public boolean hasNext() {
             if (endIncluded) {
               return end.compareTo(myCurrent) >= 0;
@@ -178,10 +189,12 @@ public class Interval<T extends Comparable> implements Iterable<T> {
             }
           }
 
+          @Override
           public Short next() {
             return myCurrent++;
           }
 
+          @Override
           public void remove() {
             throw new UnsupportedOperationException();
           }
@@ -189,6 +202,7 @@ public class Interval<T extends Comparable> implements Iterable<T> {
       }
     });
     ourIteratorFactories.put(Integer.class, new Interval.IteratorFactory<Integer>() {
+      @Override
       public Iterator<Integer> iterator(final Integer start, final boolean startIncluded, final Integer end, final boolean endIncluded) {
         return new Iterator<Integer>() {
           {
@@ -201,6 +215,7 @@ public class Interval<T extends Comparable> implements Iterable<T> {
 
           private Integer myCurrent;
 
+          @Override
           public boolean hasNext() {
             if (endIncluded) {
               return end.compareTo(myCurrent) >= 0;
@@ -209,10 +224,12 @@ public class Interval<T extends Comparable> implements Iterable<T> {
             }
           }
 
+          @Override
           public Integer next() {
             return myCurrent++;
           }
 
+          @Override
           public void remove() {
             throw new UnsupportedOperationException();
           }
@@ -220,6 +237,7 @@ public class Interval<T extends Comparable> implements Iterable<T> {
       }
     });
     ourIteratorFactories.put(Long.class, new Interval.IteratorFactory<Long>() {
+      @Override
       public Iterator<Long> iterator(final Long start, final boolean startIncluded, final Long end, final boolean endIncluded) {
         return new Iterator<Long>() {
           {
@@ -232,6 +250,7 @@ public class Interval<T extends Comparable> implements Iterable<T> {
 
           private Long myCurrent;
 
+          @Override
           public boolean hasNext() {
             if (endIncluded) {
               return end.compareTo(myCurrent) >= 0;
@@ -240,10 +259,12 @@ public class Interval<T extends Comparable> implements Iterable<T> {
             }
           }
 
+          @Override
           public Long next() {
             return myCurrent++;
           }
 
+          @Override
           public void remove() {
             throw new UnsupportedOperationException();
           }

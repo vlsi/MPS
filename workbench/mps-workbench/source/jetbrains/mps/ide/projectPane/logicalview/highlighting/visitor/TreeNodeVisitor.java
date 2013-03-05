@@ -39,8 +39,10 @@ public abstract class TreeNodeVisitor {
       return;
     }
     myExecutor.execute(new Runnable() {
+      @Override
       public void run() {
         boolean disposed = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+          @Override
           public Boolean compute() {
             return !TreeNodeUpdater.checkDisposed(node);
           }
@@ -53,6 +55,7 @@ public abstract class TreeNodeVisitor {
         }
 
         ModelAccess.instance().runReadAction(new Runnable() {
+          @Override
           public void run() {
             if (node instanceof SModelTreeNode) {
               visitModelNode(((SModelTreeNode) node));

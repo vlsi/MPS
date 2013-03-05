@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="postingrules.Account" file="Account.java">
     <classNode dependClassName="java.lang.IllegalArgumentException" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -54,6 +55,7 @@
     <classNode dependClassName="postingrules.ServiceAgreement" />
   </dependency>
   <dependency className="postingrules.AmountFormulaPR" file="AmountFormulaPR.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="mf.Money" />
     <classNode dependClassName="postingrules.AccountType" />
     <classNode dependClassName="postingrules.AccountingEvent" />
@@ -61,6 +63,7 @@
     <classNode extendsClassName="postingrules.PostingRule" />
   </dependency>
   <dependency className="postingrules.Customer" file="Customer.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuffer" />
     <classNode dependClassName="java.util.HashMap" />
@@ -76,6 +79,7 @@
     <classNode extendsClassName="postingrules.Subject" />
   </dependency>
   <dependency className="postingrules.Entry" file="Entry.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="mf.MfDate" />
@@ -107,6 +111,7 @@
   </dependency>
   <dependency className="postingrules.MultiplyByRatePR" file="MultiplyByRatePR.java">
     <classNode dependClassName="java.lang.Double" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="mf.Money" />
     <classNode dependClassName="postingrules.AccountType" />
     <classNode dependClassName="postingrules.AccountingEvent" />
@@ -115,6 +120,7 @@
   </dependency>
   <dependency className="postingrules.PoorCapPR" file="PoorCapPR.java">
     <classNode dependClassName="java.lang.Double" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="mf.Money" />
     <classNode dependClassName="mf.Quantity" />
     <classNode dependClassName="postingrules.AccountType" />
@@ -156,6 +162,7 @@
     <classNode extendsClassName="postingrules.MonetaryEvent" />
   </dependency>
   <dependency className="postingrules.Usage" file="Usage.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="mf.MfDate" />
     <classNode dependClassName="mf.Quantity" />

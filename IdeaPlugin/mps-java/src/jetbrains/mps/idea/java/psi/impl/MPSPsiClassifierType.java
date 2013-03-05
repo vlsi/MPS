@@ -56,8 +56,7 @@ public class MPSPsiClassifierType extends MPSPsiNode implements ComputesPsiType<
 
       private void resolveRef() {
         if (resolved == null) {
-          MPSPsiClassifier clas = getReferenceTarget("classifier", MPSPsiClassifier.class);
-          resolved = clas == null ? null : clas.getRealPsiNode();
+          resolved = getReferenceTarget("classifier", PsiClass.class);
         }
       }
 
@@ -168,7 +167,8 @@ public class MPSPsiClassifierType extends MPSPsiNode implements ComputesPsiType<
 
       @Override
       public String getPresentableText() {
-        return getClassName();
+        String className = getClassName();
+        return className != null ? className : "<unresolved ref>";
       }
 
       @Override

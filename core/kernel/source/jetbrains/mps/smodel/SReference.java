@@ -13,7 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
+
+import jetbrains.mps.generator.TransientSModel;
 
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.logging.Logger;
@@ -49,29 +51,36 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     mySourceNode = sourceNode;
   }
 
+  @Override
   public String getRole() {
     return myRole;
   }
 
+  @Override
   public SNode getSourceNode() {
     return mySourceNode;
   }
 
+  @Override
   public final SNode getTargetNode() {
     return getTargetNode_internal();
   }
 
+  @Override
   public SLink getLink() {
     return getSourceNode().getConcept().findLink(getRole());
   }
 
+  @Override
   public SNodeReference toNodePointer() {
     return new SNodePointer(getTargetSModelReference(), getTargetNodeId());
   }
 
+  @Override
   @Nullable
   public abstract SModelReference getTargetSModelReference();
 
+  @Override
   @Nullable
   public SNodeId getTargetNodeId() {
     SNode targetNode = getTargetNode();
@@ -130,7 +139,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   public static SReference create(String role, SNode sourceNode, SNode targetNode) {
     if (sourceNode.getModel() != null && targetNode.getModel() != null) {
       // 'mature' reference
-      return new StaticReference(role, sourceNode, targetNode.getModel().getSModelReference(), targetNode.getNodeId(), targetNode.getName());
+      return new StaticReference(role, sourceNode, targetNode.getModel().getReference(), targetNode.getNodeId(), targetNode.getName());
     }
     return new StaticReference(role, sourceNode, targetNode);
   }
@@ -171,7 +180,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     //skip errors in java stubs because they can have reference to classes that doesn't present
     //in class path
     SModel model = getSourceNode().getModel();
-    if (model != null && SModelStereotype.isStubModelStereotype(model.getStereotype())) return;
+    if (model != null && SModelStereotype.isStubModelStereotype(jetbrains.mps.util.SNodeOperations.getModelStereotype(model))) return;
 
     synchronized (ourErrorReportedRefs) {
       if (ourErrorReportedRefs.contains(this)) return;
@@ -197,7 +206,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     if (model == null) {
       return null;
     }
-    if (!model.isTransient()) {
+    if (!(model instanceof TransientSModel)) {
       return new jetbrains.mps.smodel.SNodePointer(node);
     }
 

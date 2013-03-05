@@ -25,10 +25,12 @@ public abstract class GeneratedTool extends BaseGeneratedTool {
     super(project, id, number, icon, anchor, canCloseContent);
   }
 
+  @Override
   public void init(Project project) {
 
   }
 
+  @Override
   public void dispose() {
 
   }

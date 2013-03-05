@@ -19,9 +19,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -34,7 +35,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.Generator;
 import java.util.ArrayList;
 import jetbrains.mps.ide.dialogs.project.creation.NewGeneratorDialog;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.ide.actions.MappingDialog;
@@ -99,7 +100,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
         }
       }
       if (isNeedRootTemplate) {
-        for (ModuleReference moduleRef : SNodeOperations.getModel(node).importedLanguages()) {
+        for (ModuleReference moduleRef : ((SModelInternal) SNodeOperations.getModel(node)).importedLanguages()) {
           Language language = ModuleRepositoryFacade.getInstance().getModule(moduleRef, Language.class);
           if (language == null) {
             continue;
@@ -153,7 +154,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
           }
           // this means there are generators, but no template models 
           Generator firstGen = ListSequence.fromList(genList).first();
-          EditableSModelDescriptor templateModelDescriptor = firstGen.createModel(language.value.getModuleFqName() + ".generator.template.main@" + SModelStereotype.GENERATOR, firstGen.getModelRoots().iterator().next(), null);
+          EditableSModel templateModelDescriptor = firstGen.createModel(language.value.getModuleName() + ".generator.template.main@" + SModelStereotype.GENERATOR, firstGen.getModelRoots().iterator().next(), null);
           templateModelDescriptor.save();
           language.value.save();
         }

@@ -8,7 +8,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -29,7 +29,7 @@ public class ShowHelpForAspect_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return HelpHelper.helpForAspectIsAvailable(((IModule) MapSequence.fromMap(_params).get("module")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model"))) && HelpHelper.getDefaultHelpFor(((IModule) MapSequence.fromMap(_params).get("module")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")), ((SNode) MapSequence.fromMap(_params).get("node"))) != HelpHelper.HelpType.ASPECT;
+    return HelpHelper.helpForAspectIsAvailable(((IModule) MapSequence.fromMap(_params).get("module")), ((SModel) MapSequence.fromMap(_params).get("model"))) && HelpHelper.getDefaultHelpFor(((IModule) MapSequence.fromMap(_params).get("module")), ((SModel) MapSequence.fromMap(_params).get("model")), ((SNode) MapSequence.fromMap(_params).get("node"))) != HelpHelper.HelpType.ASPECT;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -67,7 +67,7 @@ public class ShowHelpForAspect_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      HelpHelper.showHelpForAspect(((IModule) MapSequence.fromMap(_params).get("module")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")));
+      HelpHelper.showHelpForAspect(((IModule) MapSequence.fromMap(_params).get("module")), ((SModel) MapSequence.fromMap(_params).get("model")));
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowHelpForAspect", t);
     }

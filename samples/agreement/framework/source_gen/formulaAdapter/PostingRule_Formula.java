@@ -16,6 +16,7 @@ public class PostingRule_Formula extends PostingRule {
     myFunction = function;
   }
 
+  @Override
   protected Money calculateAmount(AccountingEvent evt) {
     return myFunction.compute(evt);
   }

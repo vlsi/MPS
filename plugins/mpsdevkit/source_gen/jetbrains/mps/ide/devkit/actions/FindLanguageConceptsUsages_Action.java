@@ -10,7 +10,8 @@ import java.util.Map;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
@@ -42,11 +43,11 @@ public class FindLanguageConceptsUsages_Action extends BaseAction {
       return false;
     }
     Language language = (Language) ((IModule) MapSequence.fromMap(_params).get("module"));
-    SModelDescriptor structureModelDescriptor = language.getStructureModelDescriptor();
+    SModel structureModelDescriptor = language.getStructureModelDescriptor();
     if (structureModelDescriptor == null) {
       return false;
     }
-    if (structureModelDescriptor.getSModel().rootsCount() == 0) {
+    if (IterableUtil.asCollection(structureModelDescriptor.getSModel().getRootNodes()).size() == 0) {
       return false;
     }
     return true;

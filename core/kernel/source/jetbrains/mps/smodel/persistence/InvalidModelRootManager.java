@@ -16,7 +16,7 @@
 package jetbrains.mps.smodel.persistence;
 
 import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
@@ -38,7 +38,7 @@ public class InvalidModelRootManager extends ModelRootManagerBase {
   }
 
   @Override
-  public Collection<SModelDescriptor> load(@NotNull SModelRoot root) {
+  public Collection<SModel> load(@NotNull SModelRoot root) {
     return Collections.emptySet();
   }
 

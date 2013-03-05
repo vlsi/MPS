@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.workbench.dialogs.project.utildialogs.clonemodel;
 
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.logging.Logger;
@@ -24,9 +25,8 @@ import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.structure.model.RootReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.dialogs.project.BaseStretchingBindedDialog;
 import org.jdesktop.beansbinding.*;
 import org.jdesktop.beansbinding.AutoBinding.UpdateStrategy;
@@ -42,10 +42,11 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
   private SModel myCloningModel;
   private JComboBox myModelStereotype;
 
-  public CloneModelDialog(final SModelDescriptor modelDescriptor, IOperationContext operationContext) {
-    super("Clone Model " + modelDescriptor.getLongName(), operationContext);
+  public CloneModelDialog(final SModel modelDescriptor, IOperationContext operationContext) {
+    super("Clone Model " + jetbrains.mps.util.SNodeOperations.getModelLongName(modelDescriptor), operationContext);
 
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         myCloningModel = modelDescriptor.getSModel();
       }
@@ -53,7 +54,7 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
 
     collectModelProps();
     initUI();
-    myModelStereotype.setSelectedItem(modelDescriptor.getStereotype());
+    myModelStereotype.setSelectedItem(SModelStereotype.getStereotype(modelDescriptor));
   }
 
   private void initUI() {
@@ -122,7 +123,7 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
     myModelProperties = new CloneModelProperties();
     myModelProperties.loadFrom(myCloningModel);
 
-    String newName = createNameForCopy(myCloningModel.getLongName(), myCloningModel.getStereotype());
+    String newName = createNameForCopy(jetbrains.mps.util.SNodeOperations.getModelLongName(myCloningModel), jetbrains.mps.util.SNodeOperations.getModelStereotype(myCloningModel));
     myModelProperties.setLongName(newName);
   }
 
@@ -131,7 +132,7 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
     int i;
     for (i = 1; ; i++) {
       SModelFqName name = new SModelFqName(result + i, stereotype);
-      SModelDescriptor model = ScopeOperations.getModelDescriptor(getOperationContext().getScope(), name);
+      SModel model = ScopeOperations.getModelDescriptor(getOperationContext().getScope(), name);
       if (model == null) break;
     }
     return result + i;
@@ -145,6 +146,7 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
     return null;
   }
 
+  @Override
   protected boolean doSaveChanges() {
     String errorString = getErrorString();
     if (errorString != null) {
@@ -170,30 +172,32 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
     }
 
     final ModelRoot modelRoot = ModuleUtil.findModelRoot(module, reference.getPath());
-    final SModelDescriptor modelDescriptor = ModelAccess.instance().runWriteActionInCommand(
-      new Computable<SModelDescriptor>() {
-        public SModelDescriptor compute() {
+    final SModel modelDescriptor = ModelAccess.instance().runWriteActionInCommand(
+      new Computable<SModel>() {
+        @Override
+        public SModel compute() {
           return module.createModel(modelName, modelRoot, new ModelAdjuster() {
-            public void adjust(SModelDescriptor model) {
+            @Override
+            public void adjust(SModel model) {
               for (SModelReference ref : myModelProperties.getImportedModels()) {
-                model.getSModel().addModelImport(ref, false);
+                ((jetbrains.mps.smodel.SModel) model.getSModel()).addModelImport(ref, false);
               }
 
               for (ModuleReference mr : myModelProperties.getImportedLanguages()) {
-                model.getSModel().addLanguage(mr);
+                ((jetbrains.mps.smodel.SModel) model.getSModel()).addLanguage(mr);
               }
 
               for (ModuleReference mr : myModelProperties.getImportedDevkits()) {
-                model.getSModel().addDevKit(mr);
+                ((jetbrains.mps.smodel.SModel) model.getSModel()).addDevKit(mr);
               }
 
               for (ModuleReference mr : myModelProperties.getLanguagesInGeneration()) {
-                model.getSModel().addEngagedOnGenerationLanguage(mr);
+                ((jetbrains.mps.smodel.SModel) model.getSModel()).addEngagedOnGenerationLanguage(mr);
               }
 
               SModel smodel = model.getSModel();
               CopyUtil.copyModelContent(myCloningModel, smodel);
-              ((EditableSModelDescriptor) smodel.getModelDescriptor()).save();
+              ((EditableSModel) smodel.getModelDescriptor()).save();
             }
           });
         }
@@ -207,6 +211,7 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
     final ProjectPane pane = ProjectPane.getInstance(ProjectHelper.toIdeaProject(project));
     assert pane != null;
     SwingUtilities.invokeLater(new Runnable() {
+      @Override
       public void run() {
         pane.rebuildTree();
         pane.selectModel(modelDescriptor, false);

@@ -16,10 +16,11 @@
 package jetbrains.mps.smodel.structure;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.util.NodesIterable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -89,7 +90,7 @@ public class DescriptorUtils {
   public static List<String> getLanguageConcepts(Language language) {
     List<String> result = new ArrayList<String>();
 
-    for (SNode node : LanguageAspect.STRUCTURE.get(language).getSModel().nodes()) {
+    for (SNode node : new NodesIterable(LanguageAspect.STRUCTURE.get(language).getSModel())) {
       if ("jetbrains.mps.lang.structure.structure.ConceptDeclaration".equals(node.getConcept().getId()) ||
         "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration".equals(node.getConcept().getId())) {
         result.add(NameUtil.nodeFQName(node));

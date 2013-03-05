@@ -5,17 +5,17 @@ package jetbrains.mps.ide.java.platform.index;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SNodeId;
 import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.model.SNodeId;
 
 public class GlobalSNodeId {
   private String myModelReference;
   private String myNodeId;
 
   public GlobalSNodeId(SNode node) {
-    this(SNodeOperations.getModel(node).getSModelReference().toString(), node.getNodeId().toString());
+    this(SNodeOperations.getModel(node).getReference().toString(), node.getNodeId().toString());
   }
 
   public GlobalSNodeId(String modelReference, String nodeId) {
@@ -27,10 +27,10 @@ public class GlobalSNodeId {
 
   public SNode getNode() {
     SModelReference sModelReference = SModelReference.fromString(getModelReference());
-    SModelDescriptor sModelDescriptor = SModelRepository.getInstance().getModelDescriptor(sModelReference);
+    SModel sModelDescriptor = SModelRepository.getInstance().getModelDescriptor(sModelReference);
     return (sModelDescriptor == null ?
       null :
-      sModelDescriptor.getSModel().getNodeById(getNodeId())
+      sModelDescriptor.getSModel().getNode(SNodeId.fromString(getNodeId()))
     );
   }
 
@@ -58,7 +58,7 @@ public class GlobalSNodeId {
 
   public static GlobalSNodeId createSNodeId(SReference reference) {
     SModelReference modelReference = null;
-    SNodeId nodeId = null;
+    org.jetbrains.mps.openapi.model.SNodeId nodeId = null;
     if (reference == null || (modelReference = reference.getTargetSModelReference()) == null || (nodeId = reference.getTargetNodeId()) == null) {
       return null;
     }

@@ -6,11 +6,12 @@ import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -41,7 +42,7 @@ public class FixReferencesToDeletedRunModels_MigrationScript extends BaseMigrati
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        ScriptsUtil.updateReferencesToModel(node, "jetbrains.mps.baseLanguage.util.plugin.run", SNodeOperations.getModel(SLinkOperations.getTarget(_quotation_createNode_26ji2y_a0a0c0a0a0(), "classifier", false)).getSModelReference());
+        ScriptsUtil.updateReferencesToModel(node, "jetbrains.mps.baseLanguage.util.plugin.run", SNodeOperations.getModel(SLinkOperations.getTarget(_quotation_createNode_26ji2y_a0a0c0a0a0(), "classifier", false)).getReference());
       }
 
       public boolean isShowAsIntention() {
@@ -64,19 +65,19 @@ public class FixReferencesToDeletedRunModels_MigrationScript extends BaseMigrati
       public boolean isApplicableInstanceNode(SNode node) {
         // only root nodes 
         final SModel model = SNodeOperations.getModel(node);
-        return model != null && model.isRoot(node) && Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SModel.ImportElement>() {
-          public Iterable<SModel.ImportElement> iterable() {
-            return model.importedModels();
+        return model != null && model.isRoot(node) && Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<jetbrains.mps.smodel.SModel.ImportElement>() {
+          public Iterable<jetbrains.mps.smodel.SModel.ImportElement> iterable() {
+            return ((SModelInternal) model).importedModels();
           }
-        })).where(new IWhereFilter<SModel.ImportElement>() {
-          public boolean accept(SModel.ImportElement it) {
+        })).where(new IWhereFilter<jetbrains.mps.smodel.SModel.ImportElement>() {
+          public boolean accept(jetbrains.mps.smodel.SModel.ImportElement it) {
             return it.getModelReference().getLongName().equals("jetbrains.mps.lang.plugin.run");
           }
         }).isNotEmpty();
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        ScriptsUtil.updateReferencesToModel(node, "jetbrains.mps.lang.plugin.run", SNodeOperations.getModel(SLinkOperations.getTarget(_quotation_createNode_26ji2y_a0a0c0a0a1(), "classifier", false)).getSModelReference());
+        ScriptsUtil.updateReferencesToModel(node, "jetbrains.mps.lang.plugin.run", SNodeOperations.getModel(SLinkOperations.getTarget(_quotation_createNode_26ji2y_a0a0c0a0a1(), "classifier", false)).getReference());
       }
 
       public boolean isShowAsIntention() {

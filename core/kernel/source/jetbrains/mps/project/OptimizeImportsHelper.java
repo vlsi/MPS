@@ -15,25 +15,12 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.project.structure.modules.Dependency;
-import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
-import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelStereotype;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.project.structure.modules.*;
+import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.model.util.NodesIterable;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -59,11 +46,11 @@ public class OptimizeImportsHelper {
     return optimizeLanguageImports_internal(language).myReport;
   }
 
-  public String optimizeModelsImports(List<SModelDescriptor> modelsToOptimize) {
+  public String optimizeModelsImports(List<SModel> modelsToOptimize) {
     return optimizeModelsImports_internal(modelsToOptimize).myReport;
   }
 
-  public String optimizeModelImports(SModelDescriptor modelDescriptor) {
+  public String optimizeModelImports(SModel modelDescriptor) {
     return optimizeModelImports_internal(modelDescriptor).myReport;
   }
 
@@ -83,7 +70,7 @@ public class OptimizeImportsHelper {
   }
 
   private Result optimizeSolutionImports_internal(Solution solution) {
-    List<SModelDescriptor> modelsToOptimize = solution.getOwnModelDescriptors();
+    List<SModel> modelsToOptimize = solution.getOwnModelDescriptors();
     Result result = optimizeModelsImports_internal(modelsToOptimize);
 
     SolutionDescriptor descriptor = solution.getModuleDescriptor();
@@ -94,7 +81,7 @@ public class OptimizeImportsHelper {
   }
 
   private Result optimizeLanguageImports_internal(Language language) {
-    List<SModelDescriptor> modelsToOptimize = new ArrayList<SModelDescriptor>();
+    List<SModel> modelsToOptimize = new ArrayList<SModel>();
     modelsToOptimize.addAll(language.getOwnModelDescriptors());
     for (Generator g : language.getGenerators()) {
       modelsToOptimize.addAll(g.getOwnModelDescriptors());
@@ -113,10 +100,10 @@ public class OptimizeImportsHelper {
     return result;
   }
 
-  private Result optimizeModelsImports_internal(List<SModelDescriptor> modelsToOptimize) {
+  private Result optimizeModelsImports_internal(List<SModel> modelsToOptimize) {
     Result result = new Result();
-    for (SModelDescriptor modelDescriptor : modelsToOptimize) {
-      if (SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype())) {
+    for (SModel modelDescriptor : modelsToOptimize) {
+      if (SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(modelDescriptor))) {
         result.add(collectModelDependencies(modelDescriptor));
       } else {
         result.add(optimizeModelImports_internal(modelDescriptor));
@@ -125,7 +112,7 @@ public class OptimizeImportsHelper {
     return result;
   }
 
-  private Result optimizeModelImports_internal(SModelDescriptor modelDescriptor) {
+  private Result optimizeModelImports_internal(SModel modelDescriptor) {
     Result result = collectModelDependencies(modelDescriptor);
 
     Set<SModelReference> unusedModels = new HashSet<SModelReference>();
@@ -136,13 +123,13 @@ public class OptimizeImportsHelper {
     }
 
     Set<ModuleReference> unusedLanguages = new HashSet<ModuleReference>();
-    for (ModuleReference languageRef : modelDescriptor.getSModel().importedLanguages()) {
+    for (ModuleReference languageRef : ((jetbrains.mps.smodel.SModel) modelDescriptor.getSModel()).importedLanguages()) {
       ModuleReference ref = getUnusedLanguageRef(result, languageRef);
       if (ref != null) unusedLanguages.add(ref);
     }
 
     Set<ModuleReference> unusedDevkits = new HashSet<ModuleReference>();
-    for (ModuleReference devkitRef : modelDescriptor.getSModel().importedDevkits()) {
+    for (ModuleReference devkitRef : ((jetbrains.mps.smodel.SModel) modelDescriptor.getSModel()).importedDevkits()) {
       DevKit dk = GlobalScope.getInstance().getDevKit(devkitRef);
       if (dk == null) return null;
       if (ModelsAutoImportsManager.getAutoImportedDevKits(modelDescriptor.getModule(), modelDescriptor).contains(dk)) {
@@ -156,25 +143,25 @@ public class OptimizeImportsHelper {
     return result;
   }
 
-  private Result collectModelDependencies(SModelDescriptor modelDescriptor) {
+  private Result collectModelDependencies(SModel modelDescriptor) {
     Result result = new Result();
 
-    for (ModuleReference ref : modelDescriptor.getSModel().engagedOnGenerationLanguages()) {
+    for (ModuleReference ref : ((jetbrains.mps.smodel.SModel) modelDescriptor.getSModel()).engagedOnGenerationLanguages()) {
       result.myUsedLanguages.add(ModuleRepositoryFacade.getInstance().getModule(ref, Language.class));
     }
-    for (SNode node : modelDescriptor.getSModel().nodes()) {
+    for (SNode node : new NodesIterable(modelDescriptor.getSModel())) {
       result.myUsedLanguages.add(jetbrains.mps.util.SNodeOperations.getLanguage(node));
       for (SReference ref : node.getReferences()) {
         SModelReference mr = ref.getTargetSModelReference();
-        if (!modelDescriptor.getSModelReference().equals(mr)) {
+        if (!modelDescriptor.getReference().equals(mr)) {
           result.myUsedModels.add(mr);
         }
       }
     }
     // add auto imports as dependencies
     result.myUsedLanguages.addAll(ModelsAutoImportsManager.getAutoImportedLanguages(modelDescriptor.getModule(), modelDescriptor));
-    for (SModel model : ModelsAutoImportsManager.getAutoImportedModels(modelDescriptor.getModule(), modelDescriptor)) {
-      result.myUsedModels.add(model.getModelReference());
+    for (org.jetbrains.mps.openapi.model.SModel model : ModelsAutoImportsManager.getAutoImportedModels(modelDescriptor.getModule(), modelDescriptor)) {
+      result.myUsedModels.add(model.getReference());
     }
 
     return result;
@@ -214,7 +201,7 @@ public class OptimizeImportsHelper {
     boolean used = false;
 
     for (SModelReference mr : result.myUsedModels) {
-      SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(mr);
+      SModel md = SModelRepository.getInstance().getModelDescriptor(mr);
       if (md == null) continue;
       if (md.getModule() == module) {
         used = true;
@@ -233,8 +220,8 @@ public class OptimizeImportsHelper {
     }
 
     for (Solution solution : dk.getAllExportedSolutions()) {
-      for (SModelDescriptor model : solution.getOwnModelDescriptors()) {
-        if (result.myUsedModels.contains(model.getSModelReference())) return null;
+      for (SModel model : solution.getOwnModelDescriptors()) {
+        if (result.myUsedModels.contains(model.getReference())) return null;
       }
     }
     return dk.getModuleReference();
@@ -245,28 +232,28 @@ public class OptimizeImportsHelper {
     if (language == null) return null;
     if (result.myUsedLanguages.contains(language)) return null;
 
-    for (SModelDescriptor md : language.getAccessoryModels()) {
-      if (result.myUsedModels.contains(md.getSModelReference())) return null;
+    for (SModel md : language.getAccessoryModels()) {
+      if (result.myUsedModels.contains(md.getReference())) return null;
     }
 
     return language.getModuleReference();
   }
 
-  private String removeFromImports(SModelDescriptor modelDescriptor, Set<SModelReference> unusedModels, Set<ModuleReference> unusedLanguages, Set<ModuleReference> unusedDevkits) {
-    StringBuilder report = new StringBuilder("Import for model " + modelDescriptor.getSModelReference() + " were optimized \n");
+  private String removeFromImports(SModel modelDescriptor, Set<SModelReference> unusedModels, Set<ModuleReference> unusedLanguages, Set<ModuleReference> unusedDevkits) {
+    StringBuilder report = new StringBuilder("Import for model " + modelDescriptor.getReference() + " were optimized \n");
 
     for (ModuleReference langRef : unusedLanguages) {
-      modelDescriptor.getSModel().deleteLanguage(langRef);
+      ((jetbrains.mps.smodel.SModel) modelDescriptor.getSModel()).deleteLanguage(langRef);
       report.append("Language ").append(langRef.getModuleFqName()).append(" was removed from imports\n");
     }
 
     for (ModuleReference dkRef : unusedDevkits) {
-      modelDescriptor.getSModel().deleteDevKit(dkRef);
+      ((jetbrains.mps.smodel.SModel) modelDescriptor.getSModel()).deleteDevKit(dkRef);
       report.append("Devkit ").append(dkRef.getModuleFqName()).append(" was removed from imports\n");
     }
 
     for (SModelReference model : unusedModels) {
-      modelDescriptor.getSModel().deleteModelImport((jetbrains.mps.smodel.SModelReference) model);
+      ((jetbrains.mps.smodel.SModel) modelDescriptor.getSModel()).deleteModelImport(model);
       report.append("Model ").append(model.getModelName()).append(" was removed from imports\n");
     }
 

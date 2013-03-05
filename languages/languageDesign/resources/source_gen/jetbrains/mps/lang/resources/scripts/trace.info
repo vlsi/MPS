@@ -59,14 +59,14 @@
     <nodeInfo nodeId="2990235398086692370" fileName="ExtractIconsUtil.java" startLine="46" startPosition="129" endLine="47" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2990235398086692430" fileName="ExtractIconsUtil.java" startLine="47" startPosition="186" endLine="48" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2990235398087945752" fileName="ExtractIconsUtil.java" startLine="49" startPosition="13" endLine="50" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2990235398086688371" fileName="ExtractIconsUtil.java" startLine="57" startPosition="61" endLine="58" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2990235398086689922" fileName="ExtractIconsUtil.java" startLine="58" startPosition="64" endLine="59" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2990235398086688371" fileName="ExtractIconsUtil.java" startLine="57" startPosition="61" endLine="58" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2990235398086689922" fileName="ExtractIconsUtil.java" startLine="58" startPosition="54" endLine="59" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2990235398086689998" fileName="ExtractIconsUtil.java" startLine="61" startPosition="40" endLine="62" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2990235398086690028" fileName="ExtractIconsUtil.java" startLine="65" startPosition="24" endLine="66" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2990235398086710534" fileName="ExtractIconsUtil.java" startLine="66" startPosition="122" endLine="67" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2990235398086690051" fileName="ExtractIconsUtil.java" startLine="68" startPosition="5" endLine="69" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2990235398086687556" fileName="ExtractIconsUtil.java" startLine="72" startPosition="73" endLine="73" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2990235398086688337" fileName="ExtractIconsUtil.java" startLine="73" startPosition="62" endLine="74" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2990235398086687556" fileName="ExtractIconsUtil.java" startLine="72" startPosition="63" endLine="73" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2990235398086688337" fileName="ExtractIconsUtil.java" startLine="73" startPosition="52" endLine="74" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2990235398086688346" fileName="ExtractIconsUtil.java" startLine="74" startPosition="67" endLine="75" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2990235398086692412" fileName="ExtractIconsUtil.java" startLine="78" startPosition="87" endLine="79" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2990235398086692412" fileName="ExtractIconsUtil.java" startLine="79" startPosition="30" endLine="80" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -90,8 +90,8 @@
     <nodeInfo nodeId="2990235398086692412" fileName="ExtractIconsUtil.java" startLine="81" startPosition="175" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2990235398087945709" fileName="ExtractIconsUtil.java" startLine="39" startPosition="70" endLine="44" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2990235398086692293" fileName="ExtractIconsUtil.java" startLine="44" startPosition="15" endLine="49" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2990235398086689988" fileName="ExtractIconsUtil.java" startLine="59" startPosition="44" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2990235398086687534" fileName="ExtractIconsUtil.java" startLine="72" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getPluginModel#(Ljetbrains/mps/smodel/Language;)Ljetbrains/mps/smodel/descriptor/EditableSModelDescriptor;" />
+    <nodeInfo nodeId="2990235398086689988" fileName="ExtractIconsUtil.java" startLine="59" startPosition="63" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2990235398086687534" fileName="ExtractIconsUtil.java" startLine="72" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getPluginModel#(Ljetbrains/mps/smodel/Language;)Ljetbrains/mps/extapi/model/EditableSModel;" />
     <nodeInfo nodeId="2990235398086692412" fileName="ExtractIconsUtil.java" startLine="80" startPosition="30" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2990235398086692412" fileName="ExtractIconsUtil.java" startLine="80" startPosition="30" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2990235398087945774" fileName="ExtractIconsUtil.java" startLine="89" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_st4ewd_a0a3a0a1a1a1#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -116,7 +116,7 @@
     <scopeInfo nodeId="2990235398086689996" fileName="ExtractIconsUtil.java" startLine="61" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="2990235398086689996" varName="irb" />
     </scopeInfo>
-    <scopeInfo nodeId="2990235398086687537" fileName="ExtractIconsUtil.java" startLine="72" startPosition="73" endLine="75" endPosition="44">
+    <scopeInfo nodeId="2990235398086687537" fileName="ExtractIconsUtil.java" startLine="72" startPosition="63" endLine="75" endPosition="44">
       <varInfo nodeId="2990235398086688338" varName="aspectForModel" />
       <varInfo nodeId="2990235398086687557" varName="plugin" />
     </scopeInfo>

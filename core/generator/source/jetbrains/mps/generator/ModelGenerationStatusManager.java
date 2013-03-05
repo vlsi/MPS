@@ -16,13 +16,13 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 
@@ -32,7 +32,6 @@ import java.util.List;
 import java.util.Set;
 
 public class ModelGenerationStatusManager implements CoreComponent {
-
   private static ModelGenerationStatusManager INSTANCE;
 
   public static ModelGenerationStatusManager getInstance() {
@@ -43,10 +42,10 @@ public class ModelGenerationStatusManager implements CoreComponent {
 
   private final SModelRepositoryAdapter mySmodelReloadListener = new SModelRepositoryAdapter() {
     @Override
-    public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
-      Set<SModelDescriptor> registeredModels = new HashSet<SModelDescriptor>();
-      for (SModelDescriptor modelDescriptor : replacedModels) {
-        if (modelDescriptor.isRegistered()) {
+    public void modelsReplaced(Set<SModel> replacedModels) {
+      Set<SModel> registeredModels = new HashSet<SModel>();
+      for (SModel modelDescriptor : replacedModels) {
+        if (jetbrains.mps.util.SNodeOperations.isRegistered(modelDescriptor)) {
           registeredModels.add(modelDescriptor);
         }
       }
@@ -58,6 +57,7 @@ public class ModelGenerationStatusManager implements CoreComponent {
 
   }
 
+  @Override
   public void init() {
     if (INSTANCE != null) {
       throw new IllegalStateException("double initialization");
@@ -67,6 +67,7 @@ public class ModelGenerationStatusManager implements CoreComponent {
     SModelRepository.getInstance().addModelRepositoryListener(mySmodelReloadListener);
   }
 
+  @Override
   public void dispose() {
     SModelRepository.getInstance().removeModelRepositoryListener(mySmodelReloadListener);
     INSTANCE = null;
@@ -82,7 +83,7 @@ public class ModelGenerationStatusManager implements CoreComponent {
     if (!(md instanceof GeneratableSModel)) return false;
     GeneratableSModel sm = (GeneratableSModel) md;
     if (!sm.isGeneratable()) return false;
-    if (sm instanceof EditableSModelDescriptor && ((EditableSModelDescriptor) sm).isChanged()) return true;
+    if (sm instanceof EditableSModel && ((EditableSModel) sm).isChanged()) return true;
 
     String currentHash = sm.getModelHash();
     if (currentHash == null) return true;

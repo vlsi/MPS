@@ -34,12 +34,14 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     }
   }
 
+  @Override
   protected void modifyPartToExtract() {
     SNode returnStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ReturnStatement", null);
     SLinkOperations.setTarget(returnStatement, "expression", this.createReference(this.myOutputVariable), true);
     ListSequence.fromList(this.myStatements).addElement(returnStatement);
   }
 
+  @Override
   public SNode getMethodType() {
     return SNodeOperations.copyNode(SLinkOperations.getTarget(this.myOutputVariable, "type", true));
   }

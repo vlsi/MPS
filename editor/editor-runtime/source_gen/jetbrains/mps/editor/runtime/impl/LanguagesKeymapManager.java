@@ -16,9 +16,8 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.ide.MPSCoreComponents;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -33,6 +32,7 @@ import jetbrains.mps.project.IModule;
 public class LanguagesKeymapManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(LanguagesKeymapManager.class);
   private ReloadAdapter myReloadHandler = new ReloadAdapter() {
+    @Override
     public void unload() {
       clearCaches();
     }
@@ -54,6 +54,7 @@ public class LanguagesKeymapManager implements ApplicationComponent {
     return MapSequence.fromMap(myLanguagesToKeyMaps).get(l);
   }
 
+  @Override
   public void initComponent() {
     myClassLoaderManager.addReloadHandler(myReloadHandler);
     myRepository.addModuleRepositoryListener(myListener);
@@ -61,10 +62,12 @@ public class LanguagesKeymapManager implements ApplicationComponent {
 
   @NonNls
   @NotNull
+  @Override
   public String getComponentName() {
     return "Language KeyMap Manager";
   }
 
+  @Override
   public void disposeComponent() {
     myRepository.removeModuleRepositoryListener(myListener);
     myClassLoaderManager.removeReloadHandler(myReloadHandler);
@@ -75,7 +78,7 @@ public class LanguagesKeymapManager implements ApplicationComponent {
   }
 
   private void registerLanguageKeyMaps(Language language) {
-    SModelDescriptor editorModelDescriptor = LanguageAspect.EDITOR.get(language);
+    SModel editorModelDescriptor = LanguageAspect.EDITOR.get(language);
     SModel editorModel = (editorModelDescriptor != null ?
       editorModelDescriptor.getSModel() :
       null
@@ -126,9 +129,11 @@ public class LanguagesKeymapManager implements ApplicationComponent {
     private MyModuleRepositoryListener() {
     }
 
+    @Override
     public void moduleInitialized(IModule module) {
     }
 
+    @Override
     public void beforeModuleRemoved(IModule module) {
       if (module instanceof Language) {
         unregisterLanguageKeyMaps((Language) module);

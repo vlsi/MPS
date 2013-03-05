@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -99,7 +100,7 @@ public class GenerateGetters_Action extends BaseAction {
       SNode lastAdded = null;
       Project project = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext().getProject();
       for (SNodeReference fieldPtr : selectedFields) {
-        final SNode field = SNodeOperations.cast(((SNodePointer) fieldPtr).getNode(), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+        final SNode field = SNodeOperations.cast(((SNodePointer) fieldPtr).resolve(MPSModuleRepository.getInstance()), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
         final String getterName = GenerateGettersAndSettersUtil.getFieldGetterName(field, project);
         // Method creation begins 
         SNode fieldReference = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);

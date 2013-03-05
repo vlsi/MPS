@@ -50,7 +50,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.traceInfo.DebugInfo" />
     <classNode dependClassName="jetbrains.mps.traceInfo.DebugInfoRoot" />
     <classNode dependClassName="jetbrains.mps.traceInfo.ScopePositionInfo" />
@@ -59,6 +58,7 @@
     <classNode dependClassName="jetbrains.mps.traceInfo.VarInfo" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.traceInfo.DebugInfoRoot" file="DebugInfoRoot.java">
@@ -69,8 +69,7 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="java.util.TreeSet" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.traceInfo.PositionInfo" />
     <classNode dependClassName="jetbrains.mps.traceInfo.ScopePositionInfo" />
@@ -87,6 +86,7 @@
   <dependency className="jetbrains.mps.traceInfo.PositionInfo" file="PositionInfo.java">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.util.InternUtil" />
     <classNode dependClassName="org.jdom.Attribute" />

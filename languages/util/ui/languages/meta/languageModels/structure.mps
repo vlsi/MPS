@@ -52,6 +52,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4643695836679547626">
       <property name="name" nameId="tpck.1169194664001" value="UIPropertySetter" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="code.uiObjects.properties" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
@@ -59,6 +60,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="ThisUIObjectParam" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="code.uiObjects" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="this" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
@@ -67,12 +69,14 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="PropertyValueParam" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="code.uiObjects.properties" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="value" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4643695836679547748">
       <property name="name" nameId="tpck.1169194664001" value="UIPropertyGetter" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="code.uiObjects.properties" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
@@ -86,6 +90,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="ThisEventParam" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="code.events" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="this" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
@@ -94,6 +99,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="EventHandlerParam" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="code.events" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="handler" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
@@ -102,12 +108,14 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="EventProducerParam" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="code.events" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="producer" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8115675450774806491">
       <property name="name" nameId="tpck.1169194664001" value="EventHandlerSetup" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="code.events" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
@@ -117,11 +125,13 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5263857617434466045">
       <property name="name" nameId="tpck.1169194664001" value="EventPropertyGetter" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="code.events.properties" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8938819815716165293">
       <property name="name" nameId="tpck.1169194664001" value="PropertyChangeHandlerSetup" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="code.uiObjects.properties" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
@@ -134,6 +144,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="PropertyChangeHandlerParam" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="code.uiObjects.properties" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="handler" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
@@ -154,17 +165,20 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="ItemUIObjectParam" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="code.uiObjects" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="item" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4391079257750550393">
       <property name="name" nameId="tpck.1169194664001" value="ContainerItemAdder" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="code.uiObjects" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7655275107718250838">
       <property name="name" nameId="tpck.1169194664001" value="UIObjectFactory" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="code.uiObjects" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
@@ -172,6 +186,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="ContextUIObjectParam" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="code.uiObjects" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="context" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
@@ -188,6 +203,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1412244996130857078">
       <property name="name" nameId="tpck.1169194664001" value="AuxObjectFactory" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="code.uiObjects" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
@@ -198,6 +214,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1412244996131807615">
       <property name="name" nameId="tpck.1169194664001" value="AuxObjectAccessOp" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="code.uiObjects" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
@@ -211,11 +228,13 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7798684637310718056">
       <property name="name" nameId="tpck.1169194664001" value="ContainerItemIterator" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="code.uiObjects" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2459884175398146657">
       <property name="name" nameId="tpck.1169194664001" value="ContainerItemRemover" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="code.uiObjects" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
@@ -223,17 +242,20 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="BeforeUIObjectParam" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="code.uiObjects" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="before" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2459884175399840230">
       <property name="name" nameId="tpck.1169194664001" value="ContainerItemInserter" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="code.uiObjects" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="413330188016988766">
       <property name="name" nameId="tpck.1169194664001" value="ContainerItemClearer" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="code.uiObjects" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
@@ -244,6 +266,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4033850706585269152">
       <property name="name" nameId="tpck.1169194664001" value="ForceLayoutCode" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="code.uiObjects" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
@@ -271,11 +294,13 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="LayoutConstraintType" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="layout_constraint" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2663453265345757053">
       <property name="name" nameId="tpck.1169194664001" value="LayoutConstraintExpression" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2663453265346256985">
@@ -287,12 +312,14 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2663453265347366854">
       <property name="name" nameId="tpck.1169194664001" value="ExpressionWithUnit" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2663453265347399550">
       <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="UnitType" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
     </node>
     <node type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="2663453265347399636">
@@ -304,6 +331,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="ApplyConstraintStatement" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="apply" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
     </node>
@@ -331,6 +359,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6261739386029733370">
       <property name="name" nameId="tpck.1169194664001" value="UIActionCode" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="code.uiObjects" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
@@ -363,6 +392,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5572604531249464315">
       <property name="name" nameId="tpck.1169194664001" value="AspectParameterRef" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
     <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="5572604531249464317">

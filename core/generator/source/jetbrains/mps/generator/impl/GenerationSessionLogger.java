@@ -17,14 +17,14 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.IGeneratorLogger;
+import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.messages.NodeWithContext;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -52,10 +52,12 @@ public class GenerationSessionLogger implements IGeneratorLogger {
     myKeepModelsWithWarnings = logger.myKeepModelsWithWarnings;
   }
 
+  @Override
   public boolean needsInfo() {
     return myHandleInfo;
   }
 
+  @Override
   public boolean needsWarnings() {
     return myHandleWarnings;
   }
@@ -64,6 +66,7 @@ public class GenerationSessionLogger implements IGeneratorLogger {
     myOperationContext = operationContext;
   }
 
+  @Override
   public void info(SNode node, String message) {
     if (!myHandleInfo) {
       return;
@@ -71,6 +74,7 @@ public class GenerationSessionLogger implements IGeneratorLogger {
     report(MessageKind.INFORMATION, message, node);
   }
 
+  @Override
   public void info(String message) {
     if (!myHandleInfo) {
       return;
@@ -78,6 +82,7 @@ public class GenerationSessionLogger implements IGeneratorLogger {
     report(MessageKind.INFORMATION, message, (SNode) null);
   }
 
+  @Override
   public void warning(String message) {
     if (!myHandleWarnings) {
       return;
@@ -86,6 +91,7 @@ public class GenerationSessionLogger implements IGeneratorLogger {
     report(MessageKind.WARNING, message, (SNode) null);
   }
 
+  @Override
   public void warning(SNode node, String message, ProblemDescription... descriptions) {
     if (!myHandleWarnings) {
       return;
@@ -105,11 +111,13 @@ public class GenerationSessionLogger implements IGeneratorLogger {
     report(MessageKind.ERROR, message, moduleReference);
   }
 
+  @Override
   public void error(String message) {
     myErrorsCount++;
     report(MessageKind.ERROR, message, (SNode) null);
   }
 
+  @Override
   public void handleException(Throwable t) {
     String text = t.getMessage();
     if(text == null) {
@@ -180,7 +188,7 @@ public class GenerationSessionLogger implements IGeneratorLogger {
           NodeWithContext context = new NodeWithContext(node, myOperationContext.getInvocationContext());
           message.setHintObject(context);
         }
-      } else if (node.getModel() != null && node.getModel() != null && !node.getModel().isTransient()) {
+      } else if (node.getModel() != null && node.getModel() != null && !(node.getModel() instanceof TransientSModel)) {
         message.setHintObject(new jetbrains.mps.smodel.SNodePointer(node));
       }
     }
@@ -192,7 +200,7 @@ public class GenerationSessionLogger implements IGeneratorLogger {
     if (model == null) {
       return false;
     }
-    if (model.isTransient()) {
+    if (model instanceof TransientSModel) {
       if (isWarning && !myKeepModelsWithWarnings) {
         return false;
       }

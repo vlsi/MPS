@@ -57,7 +57,6 @@ public class JavaSourceStubModelDescriptor extends BaseSpecialModelDescriptor im
 
   @Override
   protected SModel createModel() {
-
     myModel = new SModel(myModelRef);
 
     processStreams(myDataSource.getAvailableStreams());
@@ -141,7 +140,7 @@ public class JavaSourceStubModelDescriptor extends BaseSpecialModelDescriptor im
               }
             }).first();
             if (oldNode == null) {
-              SModelOperations.addRootNode(myModel, newNode);
+              SModelOperations.addRootNode(((org.jetbrains.mps.openapi.model.SModel) myModel), newNode);
               SetSequence.fromSet(oldNodes).removeElement(oldNode);
             } else {
               SNodeOperations.replaceWithAnother(oldNode, newNode);

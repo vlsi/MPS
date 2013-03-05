@@ -75,6 +75,7 @@ public class ConceptBehavior_Behavior {
 
   public static IExtractMethodRefactoringProcessor virtual_getExtractMethodRefactoringProcessor_1221393367929(SNode thisNode, List<SNode> nodesToExtract) {
     AbstractExtractMethodRefactoringProcessor result = new AbstractExtractMethodRefactoringProcessor(thisNode, nodesToExtract) {
+      @Override
       public SNode createMethodCall(SNode declaration, List<SNode> arguments) {
         if (SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")) {
           SNode call = SConceptOperations.createNewNode("jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall", null);
@@ -108,10 +109,12 @@ public class ConceptBehavior_Behavior {
 
   public static IStaticContainerProcessor virtual_getStaticContainerProcessor_1222174378300(SNode thisNode, SNode node) {
     return new AbstractStaticContainerProcessor(node) {
+      @Override
       public SNode createNewMethod() {
         return SConceptOperations.createNewNode("jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration", null);
       }
 
+      @Override
       public SNode createMethodCall(SNode method, List<SNode> arguments) {
         return _quotation_createNode_xahq23_a0a1a0a0a3(arguments, SLinkOperations.getTarget(SNodeOperations.cast(this.myStaticContainer, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "concept", false), method);
       }

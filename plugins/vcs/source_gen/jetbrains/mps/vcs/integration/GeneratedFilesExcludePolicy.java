@@ -10,9 +10,10 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.vcs.MPSVcsProjectConfiguration;
 import java.util.Collections;
 import java.util.HashSet;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.project.SModuleOperations;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 
@@ -28,10 +29,10 @@ public class GeneratedFilesExcludePolicy extends BaseDirectoryIndexExcludePolicy
       return Collections.EMPTY_SET;
     }
     Set<VirtualFile> roots = new HashSet<VirtualFile>();
-    for (SModelDescriptor modelDescriptor : SModelRepository.getInstance().getModelDescriptors()) {
-      IModule module = modelDescriptor.getModule();
+    for (SModel modelDescriptor : SModelRepository.getInstance().getModelDescriptors()) {
+      SModule module = modelDescriptor.getModule();
       if (module != null) {
-        String outputPath = module.getOutputFor(modelDescriptor);
+        String outputPath = SModuleOperations.getOutputPathFor(modelDescriptor).getPath();
         if (outputPath != null) {
           VirtualFile outputDir = LocalFileSystem.getInstance().findFileByPath(outputPath);
           VirtualFile cachesDir = LocalFileSystem.getInstance().findFileByPath(FileGenerationUtil.getCachesPath(outputPath));

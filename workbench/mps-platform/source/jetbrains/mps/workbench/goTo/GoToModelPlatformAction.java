@@ -27,7 +27,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiManager;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
@@ -42,6 +42,7 @@ import java.util.List;
 import java.util.Map;
 
 public class GoToModelPlatformAction extends BaseAction implements DumbAware {
+  @Override
   public void doExecute(AnActionEvent e, Map<String, Object> _params) {
     final Project project = e.getData(PlatformDataKeys.PROJECT);
     assert project != null;
@@ -50,12 +51,15 @@ public class GoToModelPlatformAction extends BaseAction implements DumbAware {
     //PsiDocumentManager.getInstance(project).commitAllDocuments();
 
     BaseModelModel goToModelModel = new BaseModelModel(project) {
+      @Override
       public NavigationItem doGetNavigationItem(final SModelReference modelReference) {
         return new BaseModelItem(modelReference) {
+          @Override
           public void navigate(boolean requestFocus) {
-            final SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(modelReference);
+            final SModel md = SModelRepository.getInstance().getModelDescriptor(modelReference);
 
             VirtualFile modelFile = ModelAccess.instance().runReadAction(new Computable<VirtualFile>() {
+              @Override
               public VirtualFile compute() {
                 return ModelUtil.getFileByModel(md.getSModel());
               }
@@ -67,19 +71,21 @@ public class GoToModelPlatformAction extends BaseAction implements DumbAware {
         };
       }
 
+      @Override
       public SModelReference[] find(IScope scope) {
-        Condition<SModelDescriptor> cond = new Condition<SModelDescriptor>() {
-          public boolean met(SModelDescriptor modelDescriptor) {
+        Condition<SModel> cond = new Condition<SModel>() {
+          @Override
+          public boolean met(SModel modelDescriptor) {
             boolean rightStereotype = SModelStereotype.isUserModel(modelDescriptor)
-              || SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype());
+              || SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(modelDescriptor));
             boolean hasModule = modelDescriptor.getModule() != null;
             return rightStereotype && hasModule;
           }
         };
-        ConditionalIterable<SModelDescriptor> iter = new ConditionalIterable<SModelDescriptor>(scope.getModelDescriptors(), cond);
+        ConditionalIterable<SModel> iter = new ConditionalIterable<SModel>(scope.getModelDescriptors(), cond);
         List<SModelReference> result = new ArrayList<SModelReference>();
-        for (SModelDescriptor md : iter) {
-          result.add(md.getSModelReference());
+        for (SModel md : iter) {
+          result.add(md.getReference());
         }
         return result.toArray(new SModelReference[result.size()]);
       }

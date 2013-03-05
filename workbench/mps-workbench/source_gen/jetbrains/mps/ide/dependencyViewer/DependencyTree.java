@@ -10,7 +10,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.IModule;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -33,13 +33,14 @@ public class DependencyTree extends MPSTree {
     addTreeSelectionListener(new DependencyTree.MyTreeSelectionListener());
   }
 
+  @Override
   protected MPSTreeNode rebuild() {
     TextMPSTreeNode root = new TextMPSTreeNode("root", null);
     for (SModule module : myScope.getModules()) {
       root.add(ProjectModuleTreeNode.createFor(myProject, module));
     }
     for (SModel model : myScope.getModels()) {
-      SModelTreeNode node = new SModelTreeNode((SModelDescriptor) model, null, new ModuleContext((IModule) model.getModule(), myProject));
+      SModelTreeNode node = new SModelTreeNode((SModelInternal) model, null, new ModuleContext((IModule) model.getModule(), myProject));
       root.add(node);
     }
     for (SNode node : myScope.getRoots()) {
@@ -66,6 +67,7 @@ public class DependencyTree extends MPSTree {
     public MyTreeSelectionListener() {
     }
 
+    @Override
     public void valueChanged(TreeSelectionEvent event) {
       final TreePath[] paths = getSelectionPaths();
       if (paths == null || paths.length == 0) {
@@ -89,7 +91,7 @@ public class DependencyTree extends MPSTree {
               for (SModule module : ((NamespaceTextNode) node).getModulesUnder()) {
                 scope.add(module);
               }
-              for (SModelDescriptor model : ((NamespaceTextNode) node).getModelsUnder()) {
+              for (SModel model : ((NamespaceTextNode) node).getModelsUnder()) {
                 scope.add(model);
               }
             }

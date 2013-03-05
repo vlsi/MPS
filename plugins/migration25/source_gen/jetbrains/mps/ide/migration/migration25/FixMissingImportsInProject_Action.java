@@ -26,10 +26,9 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
@@ -89,18 +88,18 @@ public class FixMissingImportsInProject_Action extends BaseAction {
         // Using SModelReferences because SModelDescriptors can be re-created during MissingDependenciesFixer execution. 
         List<SModelReference> modelReferences = ListSequence.fromList(new LinkedList<SModelReference>());
         for (SModel model : Sequence.fromIterable(module.getModels())) {
-          ListSequence.fromList(modelReferences).addElement(model.getModelReference());
+          ListSequence.fromList(modelReferences).addElement(model.getReference());
         }
 
         for (SModelReference modelReference : ListSequence.fromList(modelReferences)) {
-          SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
+          SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
           if (modelDescriptor == null) {
             continue;
           }
           if (!(SModelStereotype.isUserModel(modelDescriptor))) {
             continue;
           }
-          if (!(modelDescriptor instanceof EditableSModelDescriptor)) {
+          if (!(modelDescriptor instanceof EditableSModel)) {
             continue;
           }
 

@@ -95,7 +95,7 @@ public class Classifier_Constraints extends BaseConstraintsDescriptor {
       @Override
       public Object getValue(SNode node, IScope scope) {
         String propertyName = "shortDescription";
-        return NodePresentationUtil.getAliasOrConceptName(node) + " (" + SNodeOperations.getModel(node).getSModelFqName().getCompactPresentation() + ")";
+        return NodePresentationUtil.getAliasOrConceptName(node) + " (" + SNodeOperations.getModel(node).getReference().getSModelFqName().getCompactPresentation() + ")";
       }
     });
     return properties;

@@ -21,6 +21,7 @@ public class LanguageChecker implements INodeChecker {
     SetSequence.fromSet(myRules).addElement(new TargetConceptChecker());
   }
 
+  @Override
   public Set<IErrorReporter> getErrors(final SNode rootNode, final IOperationContext context) {
     return TypeContextManager.getInstance().runResolveAction(new Computable<Set<IErrorReporter>>() {
       public Set<IErrorReporter> compute() {
@@ -33,6 +34,7 @@ public class LanguageChecker implements INodeChecker {
     });
   }
 
+  @Override
   public String getCategory() {
     return "constraints and scopes";
   }

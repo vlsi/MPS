@@ -23,8 +23,8 @@ import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNode
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.Condition;
@@ -69,6 +69,7 @@ public class DataNode implements IExternalizeable {
 
   public List<DataNode> getDescendantsByDataClass(final Class dataClass) {
     return getDescendantsWithCondition(new Condition<BaseNodeData>() {
+      @Override
       public boolean met(BaseNodeData data) {
         return dataClass.isInstance(data);
       }
@@ -81,8 +82,8 @@ public class DataNode implements IExternalizeable {
 
   //-------DATA QUERY--------
 
-  public List<SModelDescriptor> getIncludedModels() {
-    List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
+  public List<SModel> getIncludedModels() {
+    List<SModel> models = new ArrayList<SModel>();
     if (myData instanceof ModelNodeData) {
       if (!myData.isInvalid() && !myData.isExcluded()) {
         models.add(((ModelNodeData) myData).getModelDescriptor());
@@ -94,14 +95,15 @@ public class DataNode implements IExternalizeable {
     return models;
   }
 
-  public List<SModelDescriptor> getAllModels() {
+  public List<SModel> getAllModels() {
     List<DataNode> modelNodes = getDescendantsWithCondition(new Condition<BaseNodeData>() {
+      @Override
       public boolean met(BaseNodeData nodeData) {
         return nodeData instanceof ModelNodeData;
       }
     });
 
-    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
+    List<SModel> result = new ArrayList<SModel>();
     for (DataNode node : modelNodes) {
       SModel model = ((ModelNodeData) node.getData()).getModel();
       if (model != null) result.add(model.getModelDescriptor());
@@ -124,6 +126,7 @@ public class DataNode implements IExternalizeable {
 
   public List<SNodeReference> getAllResultNodes() {
     List<DataNode> nodeNodes = getDescendantsWithCondition(new Condition<BaseNodeData>() {
+      @Override
       public boolean met(BaseNodeData nodeData) {
         return nodeData instanceof NodeNodeData && nodeData.isResultNode();
       }
@@ -148,6 +151,7 @@ public class DataNode implements IExternalizeable {
 
   //-------PERSISTENCE--------
 
+  @Override
   public void read(Element element, Project project) throws CantLoadSomethingException {
     Element dataXML = element.getChild(DATA);
     String dataClass = dataXML.getAttributeValue(DATA_CLASS);
@@ -177,6 +181,7 @@ public class DataNode implements IExternalizeable {
     }
   }
 
+  @Override
   public void write(Element element, Project project) throws CantSaveSomethingException {
     Element dataXML = new Element(DATA);
     dataXML.setAttribute(DATA_CLASS, myData.getClass().getName());

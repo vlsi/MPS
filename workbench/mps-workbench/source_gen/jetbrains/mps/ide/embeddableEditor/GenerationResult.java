@@ -6,19 +6,20 @@ import jetbrains.mps.compiler.IClassesData;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelInternal;
 
 public class GenerationResult implements IClassesData {
   private SNode myNode;
   private InMemoryJavaGenerationHandler myHandler;
   private IOperationContext myContext;
-  private SModelDescriptor myDescriptor;
+  private SModel myModel;
   private boolean mySuccesful = true;
 
-  /*package*/ GenerationResult(SNode node, IOperationContext context, SModelDescriptor modelDescriptor, InMemoryJavaGenerationHandler handler, boolean succesful) {
+  /*package*/ GenerationResult(SNode node, IOperationContext context, SModel model, InMemoryJavaGenerationHandler handler, boolean succesful) {
     myContext = context;
     myNode = node;
-    myDescriptor = modelDescriptor;
+    myModel = model;
     myHandler = handler;
     mySuccesful = succesful;
   }
@@ -36,14 +37,15 @@ public class GenerationResult implements IClassesData {
     return myContext;
   }
 
-  public SModelDescriptor getModelDescriptor() {
-    return myDescriptor;
+  public SModel getModelDescriptor() {
+    return (SModelInternal) myModel;
   }
 
   public boolean isSuccessful() {
     return mySuccesful;
   }
 
+  @Override
   public ClassLoader getClassLoader(ClassLoader parent) {
     return getLoader(parent);
   }

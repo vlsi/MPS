@@ -19,6 +19,7 @@ public abstract class JavaUiStateImpl extends JavaUiState {
 
   public abstract Context getContext();
 
+  @Override
   public abstract boolean isPausedOnBreakpoint();
 
   @NotNull

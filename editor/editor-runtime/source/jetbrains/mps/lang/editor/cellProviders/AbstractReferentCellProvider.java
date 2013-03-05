@@ -20,7 +20,6 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Insert;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
@@ -28,13 +27,18 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.IterableUtil;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.List;
 
@@ -92,10 +96,10 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
     EditorCell result = createCell_internal(myEditorContext);
     // do not override role/link-declaration if they are already set
     if (result.getRole() == null &&
-      result.getLinkDeclaration() == null) {
+        ((jetbrains.mps.nodeEditor.cells.EditorCell) result).getLinkDeclaration() == null) {
       result.setRole(myGenuineRole);
       if (myGenuineLinkDeclaration != null) {
-        result.setLinkDeclaration(myGenuineLinkDeclaration);
+        ((jetbrains.mps.nodeEditor.cells.EditorCell) result).setLinkDeclaration(myGenuineLinkDeclaration);
       } else {
         LOG.error("Can't find link declaration " + myGenuineRole);
       }
@@ -116,7 +120,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
       SReference reference = node.getReference(myGenuineRole);
       if (reference != null) {
         referentNode = reference.getTargetNode();
-        if (referentNode == null || context.getScope().getModelDescriptor(referentNode.getModel().getSModelReference()) == null) {
+        if (referentNode == null || context.getScope().getModelDescriptor(referentNode.getModel().getReference()) == null) {
           String rinfo = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
           myErrorText = rinfo != null ? rinfo : "?" + SModelUtil.getLinkDeclarationRole(myLinkDeclaration) + "?";
           return createErrorCell(myErrorText, node, context);
@@ -126,8 +130,8 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
 
     if (referentNode == null) {
       EditorCell_Label noRefCell = myIsCardinality1 ?
-        new EditorCell_Error(context, node, myNoTargetText) :
-        new EditorCell_Constant(context, node, "");
+          new EditorCell_Error(context, node, myNoTargetText) :
+          new EditorCell_Constant(context, node, "");
       noRefCell.setText("");
       noRefCell.setEditable(true);
       noRefCell.setDefaultText(myNoTargetText);
@@ -172,7 +176,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
       return new AggregationCellContext(parentNode, currentChild, myLinkDeclaration);
     }
     SNode referenceNode = getSNode();
-    SNode currentReferent = (SNode) referenceNode.getReferenceTarget(myGenuineRole);
+    SNode currentReferent = referenceNode.getReferenceTarget(myGenuineRole);
     return new ReferenceCellContext(referenceNode, currentReferent, myLinkDeclaration);
   }
 }

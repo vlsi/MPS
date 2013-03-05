@@ -4,7 +4,7 @@ package jetbrains.mps.ide.modelchecker.actions;
 
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -25,12 +25,14 @@ import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.SModelInternal;
 
 public class UnresolvedReferencesChecker extends SpecificChecker {
   public UnresolvedReferencesChecker() {
   }
 
+  @Override
   public List<SearchResult<ModelCheckerIssue>> checkModel(final SModel model, ProgressMonitor monitor, final IOperationContext operationContext) {
     List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
     if (model == null || model.getModelDescriptor() == null || model.getModelDescriptor().getModule() == null) {
@@ -60,12 +62,12 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
         if (uid == null) {
           continue;
         }
-        org.jetbrains.mps.openapi.model.SModel descriptor = SModelRepository.getInstance().getModelDescriptor(uid);
+        SModel descriptor = SModelRepository.getInstance().getModelDescriptor(uid);
         if (scope.getModelDescriptor(uid) == null && descriptor != null) {
           addIssue(results, node, "Target module " + descriptor.getModule() + " should be imported", ModelChecker.SEVERITY_ERROR, "target module not imported", new IModelCheckerFix() {
             public boolean doFix() {
               if (scope.getModelDescriptor(uid) == null && SModelRepository.getInstance().getModelDescriptor(uid) != null) {
-                org.jetbrains.mps.openapi.model.SModel sm = SModelRepository.getInstance().getModelDescriptor(uid);
+                SModel sm = SModelRepository.getInstance().getModelDescriptor(uid);
                 SModuleReference moduleReference = check_xiru3y_a0b0a0f0a0f0c0g0b(check_xiru3y_a0a1a0a5a0a5a2a6a1(sm));
                 if (moduleReference == null) {
                   return false;
@@ -87,21 +89,21 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
     return results;
   }
 
-  private static SModuleReference check_xiru3y_a0b0a0f0a0f0c0g0b(SModule checkedDotOperand) {
+  private static ModuleReference check_xiru3y_a0b0a0f0a0f0c0g0b(IModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModuleReference();
     }
     return null;
   }
 
-  private static SModule check_xiru3y_a0a1a0a5a0a5a2a6a1(org.jetbrains.mps.openapi.model.SModel checkedDotOperand) {
+  private static IModule check_xiru3y_a0a1a0a5a0a5a2a6a1(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static IModule check_xiru3y_a0d0a0f0a0f0c0g0b(SModelDescriptor checkedDotOperand) {
+  private static IModule check_xiru3y_a0d0a0f0a0f0c0g0b(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

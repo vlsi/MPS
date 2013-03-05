@@ -10,7 +10,8 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
@@ -20,6 +21,7 @@ import javax.swing.JComponent;
 public class ModelOrNodeChooser extends JBScrollPane implements ModelElementTargetChooser {
   private ProjectTree myTree;
   private ProjectTreeFindHelper myHelper = new ProjectTreeFindHelper() {
+    @Override
     protected ProjectTree getTree() {
       return ModelOrNodeChooser.this.myTree;
     }
@@ -37,8 +39,8 @@ public class ModelOrNodeChooser extends JBScrollPane implements ModelElementTarg
             MPSTreeNode treeNode = null;
             if (initialValue instanceof SNode) {
               treeNode = myHelper.findMostSuitableSNodeTreeNode(((SNode) initialValue));
-            } else if (initialValue instanceof SModelDescriptor) {
-              treeNode = myHelper.findMostSuitableModelTreeNode(((SModelDescriptor) initialValue));
+            } else if (initialValue instanceof SModel) {
+              treeNode = myHelper.findMostSuitableModelTreeNode(((SModelInternal) initialValue));
             }
             if (treeNode == null) {
               return;
@@ -50,6 +52,7 @@ public class ModelOrNodeChooser extends JBScrollPane implements ModelElementTarg
     });
   }
 
+  @Override
   public Object getSelectedObject() {
     final Object selection = myTree.getSelectionPath().getLastPathComponent();
     final Wrappers._T<Object> result = new Wrappers._T<Object>(null);
@@ -65,6 +68,7 @@ public class ModelOrNodeChooser extends JBScrollPane implements ModelElementTarg
     return result.value;
   }
 
+  @Override
   public JComponent getComponent() {
     return this;
   }

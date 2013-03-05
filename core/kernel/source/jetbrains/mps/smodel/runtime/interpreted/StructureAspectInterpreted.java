@@ -18,7 +18,7 @@ package jetbrains.mps.smodel.runtime.interpreted;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
@@ -84,6 +84,7 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
     });
 
     GlobalSModelEventsManager.getInstance().addGlobalCommandListener(new SModelCommandListener() {
+      @Override
       public void eventsHappenedInCommand(List<SModelEvent> events) {
         for (SModelEvent e : events) {
           if (!LanguageAspect.STRUCTURE.is(e.getModelDescriptor())) continue;
@@ -123,6 +124,7 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
       final List<String> directReferences = new ArrayList<String>();
 
       NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
+        @Override
         public void run() {
           SNode declaration = SModelUtil.findConceptDeclaration(fqName, GlobalScope.getInstance());
           if (declaration == null || !SNodeUtil.isInstanceOfAbstractConceptDeclaration(declaration)) {

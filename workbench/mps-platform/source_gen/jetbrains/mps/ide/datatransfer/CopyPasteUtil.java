@@ -10,7 +10,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.datatransfer.PasteNodeData;
 import java.util.List;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.IModule;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelId;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelOperations;
 import com.intellij.ide.CopyPasteManagerEx;
 import java.awt.datatransfer.StringSelection;
@@ -35,7 +36,6 @@ import java.io.IOException;
 import java.awt.datatransfer.DataFlavor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
@@ -151,7 +151,7 @@ public class CopyPasteUtil {
         newReference = jetbrains.mps.smodel.SReference.create(sourceReference.getRole(), newSourceNode, newTargetNode);
       } else {
         if (oldTargetNode != null) {
-          newReference = jetbrains.mps.smodel.SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode.getModel().getSModelReference(), oldTargetNode.getNodeId());
+          newReference = jetbrains.mps.smodel.SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode.getModel().getReference(), oldTargetNode.getNodeId());
         } else
         if (((jetbrains.mps.smodel.SReference) sourceReference).getResolveInfo() != null) {
           newReference = new StaticReference(sourceReference.getRole(), newSourceNode, null, null, ((jetbrains.mps.smodel.SReference) sourceReference).getResolveInfo());
@@ -182,7 +182,7 @@ public class CopyPasteUtil {
           );
           if (resolveInfo != null) {
             if (oldTargetNode != null && !(SNodeOperations.isDisposed(oldTargetNode)) && oldTargetNode.getModel() != null) {
-              newReference = new StaticReference(sourceReference.getRole(), newSourceNode, oldTargetNode.getModel().getSModelReference(), oldTargetNode.getNodeId(), resolveInfo);
+              newReference = new StaticReference(sourceReference.getRole(), newSourceNode, oldTargetNode.getModel().getReference(), oldTargetNode.getNodeId(), resolveInfo);
             } else {
               newReference = new StaticReference(sourceReference.getRole(), newSourceNode, null, null, resolveInfo);
             }
@@ -200,17 +200,17 @@ public class CopyPasteUtil {
   }
 
   private static SModel copyModelProperties(SModel model) {
-    SModelReference modelReference = model.getSModelReference();
+    SModelReference modelReference = model.getReference();
     SModelFqName fqName = new SModelFqName(modelReference.getLongName(), SModelStereotype.INTERNAL_COPY);
-    SModel newModel = new SModel(new SModelReference(fqName, SModelId.generate()));
-    for (ModuleReference language : model.importedLanguages()) {
-      newModel.addLanguage(language);
+    SModel newModel = new jetbrains.mps.smodel.SModel(new SModelReference(fqName, SModelId.generate()));
+    for (ModuleReference language : ((SModelInternal) model).importedLanguages()) {
+      ((SModelInternal) newModel).addLanguage(language);
     }
     for (SModelReference importedModel : SModelOperations.getImportedModelUIDs(model)) {
-      newModel.addModelImport(importedModel, false);
+      ((SModelInternal) newModel).addModelImport(importedModel, false);
     }
-    for (ModuleReference devKit : model.importedDevkits()) {
-      newModel.addDevKit(devKit);
+    for (ModuleReference devKit : ((SModelInternal) model).importedDevkits()) {
+      ((SModelInternal) newModel).addDevKit(devKit);
     }
     return newModel;
   }
@@ -321,13 +321,14 @@ public class CopyPasteUtil {
     final List<ModuleReference> additionalLanguages = new ArrayList<ModuleReference>();
     final List<SModelReference> additionalModels = new ArrayList<SModelReference>();
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         List<SModelReference> allImportedModels = new ArrayList<SModelReference>();
-        for (SModelDescriptor sm : SModelOperations.allImportedModels(targetModel, context.getScope())) {
-          allImportedModels.add(sm.getSModelReference());
+        for (SModel sm : SModelOperations.allImportedModels(targetModel, context.getScope())) {
+          allImportedModels.add(sm.getReference());
         }
         for (SModelReference modelReference : necessaryImports) {
-          if (modelReference != null && !((allImportedModels.contains(modelReference))) && !((targetModel.getSModelReference().equals(modelReference)))) {
+          if (modelReference != null && !((allImportedModels.contains(modelReference))) && !((targetModel.getReference().equals(modelReference)))) {
             additionalModels.add(modelReference);
           }
         }
@@ -368,10 +369,10 @@ public class CopyPasteUtil {
       public void run() {
         //  model properties 
         for (SModelReference imported : requiredImports) {
-          targetModel.addModelImport(imported, false);
+          ((SModelInternal) targetModel).addModelImport(imported, false);
         }
         for (ModuleReference language : requiredLanguages) {
-          targetModel.addLanguage(language);
+          ((SModelInternal) targetModel).addLanguage(language);
         }
         //  model's module properties 
         IModule targetModule = targetModel.getModelDescriptor().getModule();
@@ -384,7 +385,7 @@ public class CopyPasteUtil {
         }
 
         for (SModelReference model : requiredImports) {
-          SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(model);
+          SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(model);
           if (modelDescriptor == null) {
             continue;
           }

@@ -26,14 +26,17 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
     myModel = model;
   }
 
+  @Override
   public String getName() {
     return JavaStubNodeDescriptor.this.myCls;
   }
 
+  @Override
   public SNodeReference getNodeReference() {
     return new SNodePointer(JavaStubNodeDescriptor.this.myModel, new SNodeId.Foreign(SNodeId.Foreign.ID_PREFIX + NameUtil.shortNameFromLongName(JavaStubNodeDescriptor.this.myCls)));
   }
 
+  @Override
   public SConcept getConcept() {
     String name = "jetbrains.mps.baseLanguage.structure.ClassConcept";
     ClassifierKind kind = JavaStubNodeDescriptor.this.myItem.getClassifierKind(("".equals(JavaStubNodeDescriptor.this.myPName) ?

@@ -21,7 +21,7 @@ import java.util.LinkedHashMap;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.test.matcher.NodeDifference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IMapping;
@@ -151,9 +151,9 @@ public class FileSwapOwnerTests_Test extends BaseTransformationTest4 {
       this.addNodeById("1732396662099564446");
       Map<Object, Object> userObjects = MapSequence.fromMap(new LinkedHashMap<Object, Object>(16, (float) 0.75, false));
       MapSequence.fromMap(userObjects).put(new SNodePointer(SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")), new SNodePointer(SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")));
-      MapSequence.fromMap(userObjects).put(SNodeOperations.getModel(SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")).getSModelReference(), SModelRepository.getInstance().getModelDescriptor(new SModelReference("java.lang", "java_stub")).getSModel().getSModelReference());
+      MapSequence.fromMap(userObjects).put(SNodeOperations.getModel(SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")).getReference(), SModelRepository.getInstance().getModelDescriptor(new SModelReference("java.lang", "java_stub")).getSModel().getReference());
       MapSequence.fromMap(userObjects).put(SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement").getNodeId(), new SNodePointer(SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")));
-      MapSequence.fromMap(userObjects).put(SNodeOperations.getModel(SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")).getSModelId(), SNodeOperations.getModel(SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")).getSModelReference());
+      MapSequence.fromMap(userObjects).put(SNodeOperations.getModel(SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")).getModelId(), SNodeOperations.getModel(SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")).getReference());
       this.testUserObjectsSaving(userObjects);
     }
 

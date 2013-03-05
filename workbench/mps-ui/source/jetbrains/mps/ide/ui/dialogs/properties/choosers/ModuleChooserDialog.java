@@ -51,6 +51,7 @@ class ModuleChooserDialog extends BaseReferenceChooserDialog<SModuleReference> {
       @Override
       public NavigationItem doGetNavigationItem(final SModuleReference module) {
         return new BaseModuleItem(module) {
+          @Override
           public void navigate(boolean requestFocus) {
           }
         };

@@ -6,7 +6,7 @@ import jetbrains.mps.util.Computable;
 import java.util.List;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.FilteredGlobalScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -16,13 +16,15 @@ public class ModelChooser implements Computable<List<SModelReference>> {
   public ModelChooser() {
   }
 
+  @Override
   public List<SModelReference> compute() {
     List<SModelReference> models = ModelAccess.instance().runReadAction(new Computable<List<SModelReference>>() {
+      @Override
       public List<SModelReference> compute() {
-        Iterable<SModelDescriptor> descriptors = new FilteredGlobalScope().getModelDescriptors();
-        return Sequence.fromIterable(descriptors).select(new ISelector<SModelDescriptor, SModelReference>() {
-          public SModelReference select(SModelDescriptor it) {
-            return it.getSModelReference();
+        Iterable<SModel> descriptors = new FilteredGlobalScope().getModelDescriptors();
+        return Sequence.fromIterable(descriptors).select(new ISelector<SModel, SModelReference>() {
+          public SModelReference select(SModel it) {
+            return it.getReference();
           }
         }).toListSequence();
       }

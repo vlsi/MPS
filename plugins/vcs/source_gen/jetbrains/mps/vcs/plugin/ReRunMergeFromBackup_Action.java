@@ -9,13 +9,12 @@ import java.util.Map;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.extapi.model.EditableSModel;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import java.io.File;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
@@ -24,6 +23,7 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import org.xml.sax.InputSource;
 import java.io.StringReader;
 import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModel;
 import com.intellij.openapi.diff.MergeRequest;
 import com.intellij.openapi.diff.DiffRequestFactory;
 import com.intellij.openapi.diff.DiffManager;
@@ -53,9 +53,6 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
     if (manager.getAllVersionedRoots().length == 0) {
       return false;
     }
-    if (!(((SModelDescriptor) MapSequence.fromMap(_params).get("model")) instanceof EditableSModelDescriptor)) {
-      return false;
-    }
     VirtualFile file = VirtualFileUtils.getVirtualFile(ReRunMergeFromBackup_Action.this.getModelFile(_params));
     if (file == null) {
       return false;
@@ -83,6 +80,9 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
     }
+    if (!(MapSequence.fromMap(_params).get("model") instanceof EditableSModel) || ((EditableSModel) MapSequence.fromMap(_params).get("model")).isReadOnly()) {
+      return false;
+    }
     MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
@@ -100,11 +100,11 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
           String repository = modelsAsText[MergeVersion.REPOSITORY.ordinal()];
 
           String uid = ModelPersistence.loadDescriptor(new InputSource(new StringReader(mine))).getUID();
-          if (uid == null || !(SModelReference.fromString(uid).equals(((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModelReference()))) {
+          if (uid == null || !(SModelReference.fromString(uid).equals(((SModel) MapSequence.fromMap(_params).get("model")).getReference()))) {
             continue;
           }
 
-          mine = ReRunMergeFromBackup_Action.this.selectMineModel(ModelPersistence.modelToString(((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModel()), mine, _params);
+          mine = ReRunMergeFromBackup_Action.this.selectMineModel(ModelPersistence.modelToString(((SModel) MapSequence.fromMap(_params).get("model")).getSModel()), mine, _params);
           if (mine == null) {
             return;
           }
@@ -118,7 +118,7 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
           continue;
         }
       }
-      Messages.showInfoMessage("No suitable backup files for " + ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModelReference().getSModelFqName() + "was not found.", "No Backup Files Found");
+      Messages.showInfoMessage("No suitable backup files for " + ((SModel) MapSequence.fromMap(_params).get("model")).getReference().getSModelFqName() + "was not found.", "No Backup Files Found");
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ReRunMergeFromBackup", t);
     }
@@ -129,7 +129,7 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
   }
 
   private IFile getModelFile(final Map<String, Object> _params) {
-    return ((BaseEditableSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).getSource().getFile();
+    return ((BaseEditableSModelDescriptor) ((SModel) MapSequence.fromMap(_params).get("model"))).getSource().getFile();
   }
 
   private String selectMineModel(String currentModel, String backUpModel, final Map<String, Object> _params) {

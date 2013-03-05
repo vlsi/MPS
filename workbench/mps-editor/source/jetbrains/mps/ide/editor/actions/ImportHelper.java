@@ -25,7 +25,7 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
@@ -52,30 +52,34 @@ import java.util.List;
 import java.util.Set;
 
 public class ImportHelper {
-  public static void addModelImport(final Project project, final IModule module, final SModelDescriptor model,
+  public static void addModelImport(final Project project, final IModule module, final SModel model,
                     @Nullable BaseAction parentAction) {
     BaseModelModel goToModelModel = new BaseModelModel(project) {
+      @Override
       public NavigationItem doGetNavigationItem(final SModelReference modelReference) {
         return new AddModelItem(project, model, modelReference, module);
       }
 
+      @Override
       public SModelReference[] find(IScope scope) {
-        Condition<SModelDescriptor> cond = new Condition<SModelDescriptor>() {
-          public boolean met(SModelDescriptor modelDescriptor) {
+        Condition<SModel> cond = new Condition<SModel>() {
+          @Override
+          public boolean met(SModel modelDescriptor) {
             boolean rightStereotype = SModelStereotype.isUserModel(modelDescriptor)
-              || SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype());
+              || SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(modelDescriptor));
             boolean hasModule = modelDescriptor.getModule() != null;
             return rightStereotype && hasModule;
           }
         };
-        ConditionalIterable<SModelDescriptor> iter = new ConditionalIterable<SModelDescriptor>(scope.getModelDescriptors(), cond);
+        ConditionalIterable<SModel> iter = new ConditionalIterable<SModel>(scope.getModelDescriptors(), cond);
         List<SModelReference> filteredModelRefs = new ArrayList<SModelReference>();
-        for (SModelDescriptor md : iter) {
-          filteredModelRefs.add(md.getSModelReference());
+        for (SModel md : iter) {
+          filteredModelRefs.add(md.getReference());
         }
         return filteredModelRefs.toArray(new SModelReference[filteredModelRefs.size()]);
       }
 
+      @Override
       @Nullable
       public String getPromptText() {
         return "Import model:";
@@ -84,17 +88,19 @@ public class ImportHelper {
     ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToModelModel, parentAction);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
+      @Override
       public void onClose() {
         //if (GoToRootNodeAction.class.equals(myInAction)) myInAction = null;
       }
 
+      @Override
       public void elementChosen(final Object element) {
         ((NavigationItem) element).navigate(true);
       }
     }, ModalityState.current(), true);
   }
 
-  public static void addLanguageImport(final Project project, final IModule contextModule, final SModelDescriptor model,
+  public static void addLanguageImport(final Project project, final IModule contextModule, final SModel model,
                      @Nullable BaseAction parentAction) {
     BaseLanguageModel goToLanguageModel = new BaseLanguageModel(project) {
       @Override
@@ -120,10 +126,12 @@ public class ImportHelper {
     ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToLanguageModel, parentAction);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
+      @Override
       public void onClose() {
         //if (GoToRootNodeAction.class.equals(myInAction)) myInAction = null;
       }
 
+      @Override
       public void elementChosen(Object element) {
         ((NavigationItem) element).navigate(true);
       }
@@ -133,20 +141,22 @@ public class ImportHelper {
   private static class AddLanguageItem extends BaseModuleItem {
     private Project myProject;
     private IModule myContextModule;
-    private SModelDescriptor myModel;
+    private SModel myModel;
 
-    public AddLanguageItem(Project project, SModuleReference language, IModule contextModule, SModelDescriptor model) {
+    public AddLanguageItem(Project project, SModuleReference language, IModule contextModule, SModel model) {
       super(language);
       myProject = project;
       myContextModule = contextModule;
       myModel = model;
     }
 
+    @Override
     public void navigate(boolean requestFocus) {
       assert !ModelAccess.instance().canRead();
 
       final Set<ModuleReference> importCandidates = new HashSet<ModuleReference>();
       ModelAccess.instance().runWriteAction(new Runnable() {
+        @Override
         public void run() {
           Language lang = ModuleRepositoryFacade.getInstance().getModule(getModuleReference(), Language.class);
 
@@ -158,7 +168,7 @@ public class ImportHelper {
           langs.remove(ModuleRepositoryFacade.getInstance().getModule(BootstrapLanguages.CORE, Language.class));
 
           for (Language l : langs) {
-            Collection<ModuleReference> impLangs = myModel.getSModel().getModelDepsManager().getAllImportedLanguages();
+            Collection<ModuleReference> impLangs = ((jetbrains.mps.smodel.SModel) myModel.getSModel()).getModelDepsManager().getAllImportedLanguages();
             if (impLangs.contains(l.getModuleReference())) continue;
             importCandidates.add(l.getModuleReference());
           }
@@ -177,6 +187,7 @@ public class ImportHelper {
       toImport.add(getModuleReference());
 
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        @Override
         public void run() {
           boolean reload = false;
           for (SModuleReference ref : toImport) {
@@ -184,7 +195,7 @@ public class ImportHelper {
               myContextModule.addUsedLanguage((ModuleReference) ref);
               reload = true;
             }
-            myModel.getSModel().addLanguage((ModuleReference) ref);
+            ((jetbrains.mps.smodel.SModel) myModel.getSModel()).addLanguage((ModuleReference) ref);
           }
           if (reload) {
             ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
@@ -201,18 +212,21 @@ public class ImportHelper {
     return dialog.getSelectedModules();
   }
 
-  public static void addModelImportByRoot(final Project project, final IModule contextModule, final SModelDescriptor model,
+  public static void addModelImportByRoot(final Project project, final IModule contextModule, final SModel model,
                       String initialText, @Nullable BaseAction parentAction, final ModelImportByRootCallback callback) {
     BaseMPSChooseModel goToNodeModel = new RootChooseModel(project, new RootNodeNameIndex()) {
+      @Override
       public NavigationItem doGetNavigationItem(final NodeDescriptor object) {
         return new RootNodeElement(object) {
+          @Override
           public void navigate(boolean requestFocus) {
             ModelAccess.assertLegalRead();
-            new AddModelItem(project, model, ((SModelReference) object.getNodeReference().getModelReference()), contextModule).navigate(requestFocus);
+            new AddModelItem(project, model, object.getNodeReference().getModelReference(), contextModule).navigate(requestFocus);
           }
         };
       }
 
+      @Override
       @Nullable
       public String getPromptText() {
         return "Import model that contains root:";
@@ -221,12 +235,15 @@ public class ImportHelper {
     ChooseByNamePopup popup = MpsPopupFactory.createNodePopup(project, goToNodeModel, initialText, parentAction);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
+      @Override
       public void onClose() {
         //if (GoToRootNodeAction.class.equals(myInAction)) myInAction = null;
       }
 
+      @Override
       public void elementChosen(final Object element) {
         ModelAccess.instance().runWriteAction(new Runnable() {
+          @Override
           public void run() {
             NavigationItem navigationItem = (NavigationItem) element;
             navigationItem.navigate(true);
@@ -239,10 +256,10 @@ public class ImportHelper {
 
   private static class AddModelItem extends BaseModelItem {
     private Project myProject;
-    private SModelDescriptor myModel;
+    private SModel myModel;
     private IModule myModule;
 
-    public AddModelItem(Project project, SModelDescriptor model, SModelReference modelToAdd, IModule currentModule) {
+    public AddModelItem(Project project, SModel model, SModelReference modelToAdd, IModule currentModule) {
       super(modelToAdd);
       myProject = project;
       myModel = model;
@@ -253,10 +270,12 @@ public class ImportHelper {
       return WindowManager.getInstance().getFrame(myProject);
     }
 
+    @Override
     public void navigate(boolean requestFocus) {
       final ModuleReference moduleToImport = ModelAccess.instance().runReadAction(new Computable<ModuleReference>() {
+        @Override
         public ModuleReference compute() {
-          SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(getModelReference());
+          SModel md = SModelRepository.getInstance().getModelDescriptor(getModelReference());
           final ModuleReference moduleReference = md.getModule().getModuleReference();
           if (myModule.getScope().getModelDescriptor(getModelReference()) == null) {
             return moduleReference;
@@ -274,6 +293,7 @@ public class ImportHelper {
           "Module import", JOptionPane.YES_NO_OPTION);
         if (res == JOptionPane.YES_OPTION) {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+            @Override
             public void run() {
               myModule.addDependency(moduleToImport, false);
               ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
@@ -283,8 +303,9 @@ public class ImportHelper {
       }
 
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        @Override
         public void run() {
-          myModel.getSModel().addModelImport(getModelReference(), false);
+          ((jetbrains.mps.smodel.SModel) myModel.getSModel()).addModelImport(getModelReference(), false);
         }
       });
     }

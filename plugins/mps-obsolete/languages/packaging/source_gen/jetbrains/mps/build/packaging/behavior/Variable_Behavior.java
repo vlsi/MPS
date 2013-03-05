@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
@@ -23,9 +23,9 @@ public class Variable_Behavior {
   }
 
   public static List<SNode> getDefaultVariables_7323449223785133410() {
-    Iterable<SModelDescriptor> accessories = Variable_Behavior.getPackagingLanguage_5558646027962551669().getAccessoryModels();
-    Iterable<SNode> variables = Sequence.fromIterable(accessories).translate(new ITranslator2<SModelDescriptor, SNode>() {
-      public Iterable<SNode> translate(final SModelDescriptor smodel) {
+    Iterable<SModel> accessories = Variable_Behavior.getPackagingLanguage_5558646027962551669().getAccessoryModels();
+    Iterable<SNode> variables = Sequence.fromIterable(accessories).translate(new ITranslator2<SModel, SNode>() {
+      public Iterable<SNode> translate(final SModel smodel) {
         return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
             return new YieldingIterator<SNode>() {
@@ -40,7 +40,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 2:
-                      this._2_node_it = smodel.getSModel().roots().iterator();
+                      this._2_node_it = smodel.getSModel().getRootNodes().iterator();
                     case 3:
                       if (!(this._2_node_it.hasNext())) {
                         this.__CP__ = 1;

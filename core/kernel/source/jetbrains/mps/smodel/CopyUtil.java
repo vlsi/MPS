@@ -13,15 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;
-
-import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.*;
 
@@ -31,70 +31,51 @@ public final class CopyUtil {
   }
 
   public static void copyModelContent(SModel from, SModel to) {
-    for (SNode root : from.roots()) {
-      to.addRoot(copy(root));
+
+    for (SNode root : from.getRootNodes()) {
+      to.addRootNode(copy(root));
     }
   }
 
   public static void copyModelContentAndPreserveIds(SModel from, SModel to) {
-    for (SNode root : from.roots()) {
-      to.addRoot(copyAndPreserveId(root, true));
+
+    for (SNode root : from.getRootNodes()) {
+      to.addRootNode(copyAndPreserveId(root, true));
     }
   }
 
   public static void clearModelProperties(SModel model) {
-    for (ImportElement ie : new ArrayList<ImportElement>(model.getAdditionalModelVersions())) {
-      model.deleteModelImport(ie.getModelReference());
+    for (ImportElement ie : new ArrayList<ImportElement>(((jetbrains.mps.smodel.SModel) model).getAdditionalModelVersions())) {
+      ((jetbrains.mps.smodel.SModel) model).deleteModelImport(ie.getModelReference());
     }
-    for (ImportElement ie : new ArrayList<ImportElement>(model.importedModels())) {
-      model.deleteModelImport(ie.getModelReference());
+    for (ImportElement ie : new ArrayList<ImportElement>(((jetbrains.mps.smodel.SModel) model).importedModels())) {
+      ((jetbrains.mps.smodel.SModel) model).deleteModelImport(ie.getModelReference());
     }
-    for (ModuleReference mr : new ArrayList<ModuleReference>(model.importedDevkits())) {
-      model.deleteDevKit(mr);
+    for (ModuleReference mr : new ArrayList<ModuleReference>(((jetbrains.mps.smodel.SModel) model).importedDevkits())) {
+      ((jetbrains.mps.smodel.SModel) model).deleteDevKit(mr);
     }
-    for (ModuleReference mr : new ArrayList<ModuleReference>(model.importedLanguages())) {
-      model.deleteLanguage(mr);
+    for (ModuleReference mr : new ArrayList<ModuleReference>(((jetbrains.mps.smodel.SModel) model).importedLanguages())) {
+      ((jetbrains.mps.smodel.SModel) model).deleteLanguage(mr);
     }
-    for (ModuleReference mr : new ArrayList<ModuleReference>(model.engagedOnGenerationLanguages())) {
-      model.removeEngagedOnGenerationLanguage(mr);
+    for (ModuleReference mr : new ArrayList<ModuleReference>(((jetbrains.mps.smodel.SModel) model).engagedOnGenerationLanguages())) {
+      ((jetbrains.mps.smodel.SModel) model).removeEngagedOnGenerationLanguage(mr);
     }
-    model.calculateImplicitImports();
+    ((jetbrains.mps.smodel.SModel) model).calculateImplicitImports();
   }
 
   public static void copyModelProperties(SModel from, SModel to) {
-    for (ImportElement ie : from.getAdditionalModelVersions()) {
-      to.addAdditionalModelVersion(new ImportElement(ie.getModelReference(),
-        ie.getReferenceID(), ie.getUsedVersion()));
-    }
-    for (ImportElement ie : from.importedModels()) {
-      to.addModelImport(new ImportElement(ie.getModelReference(),
-        ie.getReferenceID(), ie.getUsedVersion()));
-    }
-    for (ModuleReference mr : from.importedDevkits()) {
-      to.addDevKit(mr);
-    }
-    for (ModuleReference mr : from.importedLanguages()) {
-      to.addLanguage(mr);
-    }
-    for (ModuleReference mr : from.engagedOnGenerationLanguages()) {
-      to.addEngagedOnGenerationLanguage(mr);
-    }
-    if (from instanceof DefaultSModel && to instanceof DefaultSModel) {
-      ((DefaultSModel) to).setPersistenceVersion(((DefaultSModel) from).getPersistenceVersion());
-    }
-    to.setVersion(from.getVersion());
+    ((jetbrains.mps.smodel.SModel) from).copyPropertiesTo(((jetbrains.mps.smodel.SModel) to));
   }
 
   public static SModel copyModel(SModel model) {
-    SModel copy = new SModel(model.getSModelReference());
+    SModel copy = ((jetbrains.mps.smodel.SModel) model).createEmptyCopy();
     copyModelContentAndPreserveIds(model, copy);
     copyModelProperties(model, copy);
-    copy.setMaxImportIndex(model.getMaxImportIndex());
     return copy;
   }
 
   public static void changeModelReference(SModel model, SModelReference modelReference) {
-    model.changeModelReference(modelReference);
+    ((jetbrains.mps.smodel.SModel) model).changeModelReference(modelReference);
   }
 
   public static List<SNode> copy(List<SNode> nodes) {

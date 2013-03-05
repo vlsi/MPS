@@ -26,6 +26,7 @@ public class AskDialog extends DialogWrapper {
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
     JPanel panel = new JPanel();
     panel.add(new JLabel("Replace this fragment?"));
@@ -56,6 +57,7 @@ public class AskDialog extends DialogWrapper {
       myValue = value;
     }
 
+    @Override
     protected void doAction(ActionEvent event) {
       myResult = myValue;
       close(DialogWrapper.OK_EXIT_CODE);

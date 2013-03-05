@@ -42,9 +42,7 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.refactoring.tests.IRefactoringTester;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.*;
 import junit.framework.TestCase;
 import junit.framework.TestFailure;
@@ -254,7 +252,7 @@ public class TestMain {
 
 */
 
-  public static SModelDescriptor getModel(Project project, String modelName) {
+  public static SModel getModel(Project project, String modelName) {
     return project.getScope().getModelDescriptor(SModelReference.fromString(modelName));
   }
 
@@ -300,7 +298,7 @@ public class TestMain {
     return testOnProjectCopy(sourceProjectDir, destinationProjectDir, REFACTORING_PROJECT,
       new ProjectRunnable() {
         public boolean execute(final Project project) {
-          final SModelDescriptor[] sandbox = new SModelDescriptor[]{null, null};
+          final SModel[] sandbox = new SModel[]{null, null};
           final Language[] testLanguage = new Language[]{null, null};
           ModelAccess.instance().runWriteAction(new Runnable() {
             public void run() {
@@ -545,7 +543,7 @@ public class TestMain {
         }
       };
       for (final SModel model : outputModels) {
-        Iterable<SNode> iterable = new ConditionalIterable<SNode>(model.roots(), cond);
+        Iterable<SNode> iterable = new ConditionalIterable<SNode>(model.getRootNodes(), cond);
         for (final SNode outputRoot : iterable) {
           if (baseClassLoader == null) {
             baseClassLoader = model.getClass().getClassLoader();
@@ -554,7 +552,7 @@ public class TestMain {
           try {
             String className = ModelAccess.instance().runReadAction(new Computable<String>() {
               public String compute() {
-                return model.getLongName() + "." + outputRoot.getName();
+                return jetbrains.mps.util.SNodeOperations.getModelLongName(model) + "." + outputRoot.getName();
               }
             });
             final Class testClass = Class.forName(className, true, classLoader);

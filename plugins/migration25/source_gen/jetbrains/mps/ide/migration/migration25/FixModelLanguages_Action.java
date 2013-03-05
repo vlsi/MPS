@@ -14,8 +14,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
+import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.Language;
@@ -64,19 +64,19 @@ public class FixModelLanguages_Action extends BaseAction {
           continue;
         }
         for (SModel md : Sequence.fromIterable(module.getModels())) {
-          if (!(md instanceof EditableSModelDescriptor)) {
+          if (!(md instanceof EditableSModel)) {
             continue;
           }
-          if (((EditableSModelDescriptor) md).isReadOnly()) {
+          if (((EditableSModel) md).isReadOnly()) {
             continue;
           }
 
-          jetbrains.mps.smodel.SModel m = ((SModelDescriptor) md).getSModel();
+          SModel m = ((SModelInternal) md).getSModel();
           for (SNode node : SModelOperations.getNodes(m, null)) {
             Language l = ((Language) node.getConcept().getLanguage().getModule());
             ModuleReference lr = l.getModuleReference();
-            if (!(m.importedLanguages().contains(lr))) {
-              m.addLanguage(lr);
+            if (!(((SModelInternal) m).importedLanguages().contains(lr))) {
+              ((SModelInternal) m).addLanguage(lr);
             }
           }
         }

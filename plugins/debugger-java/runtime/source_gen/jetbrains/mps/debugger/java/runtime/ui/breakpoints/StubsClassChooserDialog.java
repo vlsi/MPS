@@ -31,6 +31,7 @@ public abstract class StubsClassChooserDialog extends DialogWrapper {
         return StubsClassChooserDialog.this.isValid(node);
       }
 
+      @Override
       public boolean willOpenEditor() {
         return false;
       }
@@ -48,6 +49,7 @@ public abstract class StubsClassChooserDialog extends DialogWrapper {
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
     return myPanel.getPanel();
   }

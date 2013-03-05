@@ -19,6 +19,7 @@ public class DependencyChooser implements Computable<List<Dependency>> {
   public DependencyChooser() {
   }
 
+  @Override
   public List<Dependency> compute() {
     final Wrappers._T<Iterable<ModuleReference>> allModuleRefs = new Wrappers._T<Iterable<ModuleReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {

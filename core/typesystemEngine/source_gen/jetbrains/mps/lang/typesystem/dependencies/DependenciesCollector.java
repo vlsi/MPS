@@ -113,6 +113,7 @@ public class DependenciesCollector {
                                 usageStatement = SNodeOperations.getAncestor(usageStatement, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
                               }
                               List<SNode> list = CollectionUtil.filter(jetbrains.mps.util.SNodeOperations.getChildren(SNodeOperations.getParent(nodeStatement)), new Condition() {
+                                @Override
                                 public boolean met(Object p0) {
                                   return SNodeOperations.isInstanceOf(((SNode) p0), "jetbrains.mps.baseLanguage.structure.Statement");
                                 }

@@ -15,21 +15,23 @@
  */
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.Icon;
+import java.awt.Font;
 
 /**
  * Igor Alshannikov
  * Jan 30, 2006
  */
 public class NodeSubstituteActionWrapper implements INodeSubstituteAction {
-  private INodeSubstituteAction mySubstituteAction;
+  private SubstituteAction mySubstituteAction;
 
-  public NodeSubstituteActionWrapper(INodeSubstituteAction substituteAction) {
+  public NodeSubstituteActionWrapper(SubstituteAction substituteAction) {
     mySubstituteAction = substituteAction;
   }
 
@@ -46,11 +48,11 @@ public class NodeSubstituteActionWrapper implements INodeSubstituteAction {
   }
 
   public Icon getIconFor(String pattern) {
-    return mySubstituteAction.getIconFor(pattern);
+    return mySubstituteAction instanceof INodeSubstituteAction ? ((INodeSubstituteAction) mySubstituteAction).getIconFor(pattern) : null;
   }
 
   public int getFontStyleFor(String pattern) {
-    return mySubstituteAction.getFontStyleFor(pattern);
+    return mySubstituteAction instanceof INodeSubstituteAction ? ((INodeSubstituteAction) mySubstituteAction).getFontStyleFor(pattern) : Font.PLAIN;
   }
 
   public String getMatchingText(String pattern) {
@@ -79,9 +81,9 @@ public class NodeSubstituteActionWrapper implements INodeSubstituteAction {
 
   /**
    * @deprecated Since MPS 3.0 was replaced by:
-   * <code>substitute(@Nullable jetbrains.mps.openapi.editor.EditorContext context, String pattern)</code>
-   *
-   * Was left for compatibility with generated code. Later should be removed.
+   *             <code>substitute(@Nullable jetbrains.mps.openapi.editor.EditorContext context, String pattern)</code>
+   *             <p/>
+   *             Was left for compatibility with generated code. Later should be removed.
    */
   @Deprecated
   public SNode substitute(@Nullable jetbrains.mps.nodeEditor.EditorContext context, String pattern) {

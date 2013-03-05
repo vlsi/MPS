@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.editor;
 
+import com.intellij.openapi.editor.colors.ColorKey;
 import com.intellij.openapi.editor.colors.EditorColorsListener;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
 import com.intellij.openapi.editor.colors.EditorColorsScheme;
@@ -23,21 +24,31 @@ import com.intellij.openapi.editor.markup.EffectType;
 import com.intellij.openapi.editor.markup.TextAttributes;
 import jetbrains.mps.editor.runtime.style.*;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.openapi.editor.style.*;
 import jetbrains.mps.openapi.editor.style.Style;
-import jetbrains.mps.util.misc.hash.HashMap;
+import jetbrains.mps.util.Pair;
 
 import java.awt.Color;
+import java.util.HashMap;
 import java.util.Map;
 
 public class StyleRegistryIdeaImpl extends StyleRegistry implements EditorColorsListener {
   
   protected static EditorColorsScheme ourColorsScheme = EditorColorsManager.getInstance().getGlobalScheme();
-  protected final Map<String,String> IDEAStylesMapping = new HashMap<String, String>();
+  protected final static Map<String,String> IDEAStylesMapping = new HashMap<String, String>();
+  protected final static Map<Pair<Color, Color>,Color> colorsMapping = new HashMap<Pair<Color, Color>,Color>();
+
+  private final static int brightnessTH = 125;
+  private final static int colorTH = 500;
+  private final static int colorIterationSteps = 5;
+  private final static int colorIterationDelta = 50;
+
 
   public StyleRegistryIdeaImpl() {
     ourInstance = this;
     fillIdeaMappings();
+    fillColorMappings();
   }
 
   @Override
@@ -47,7 +58,7 @@ public class StyleRegistryIdeaImpl extends StyleRegistry implements EditorColors
 
   @Override
   public Color getEditorForeground() {
-    return null;
+    return ourColorsScheme.getDefaultForeground();
   }
 
   @Override
@@ -105,7 +116,76 @@ public class StyleRegistryIdeaImpl extends StyleRegistry implements EditorColors
   }
 
   @Override
+  public Color getColor(String key) {
+    if(IDEAStylesMapping.containsKey(key))
+      key = IDEAStylesMapping.get(key);
+
+    Color color = super.getColor(key);
+
+    if(color == null) {
+      color = ourColorsScheme.getColor(ColorKey.find(key));
+      if(color == null) {
+        color = ourColorsScheme.getAttributes(TextAttributesKey.find(key)).getForegroundColor();
+      }
+    }
+
+    return color;
+  }
+
+  @Override
   public void setColor(String key, Color color) {
+  }
+
+  @Override
+  public Color getSimpleColor(Color color) {
+    return getSimpleColor(color, getEditorBackground());
+  }
+
+  @Override
+  public Color getSimpleColor(Color color, final Color bg) {
+    if(!isDarkTheme() || color == null || bg == null)
+        return color;
+
+    final Color original = color;
+    Pair<Color, Color> colorPair = new Pair<Color, Color>(original, bg);
+    if(colorsMapping.containsKey(colorPair))
+      return colorsMapping.get(colorPair);
+
+    if( (Math.abs(color.getRGB()) - Math.abs(Color.BLACK.getRGB())/2) * (Math.abs(bg.getRGB()) - Math.abs(Color.BLACK.getRGB())/2) < 0 )
+      color = new Color(255 - color.getRed(), 255 - color.getGreen(), 255 - color.getBlue());
+
+    int counter = 0;
+    while (!isGoodContrastWithBG(color, bg) && counter < colorIterationSteps) {
+      int deltaR = Math.abs( bg.getRed() - color.getRed() );
+      int deltaG = Math.abs( bg.getGreen() - color.getGreen() );
+      int deltaB = Math.abs( bg.getBlue() - color.getBlue() );
+      int deltaMin = Math.min((Math.min(deltaR, deltaG)),deltaB);
+      if(deltaMin == deltaR) {
+        color = new Color( (color.getRed() + colorIterationDelta) % 256, color.getGreen(), color.getBlue() );
+      }
+      else if(deltaMin == deltaG) {
+        color = new Color( color.getRed(), (color.getGreen() + colorIterationDelta) % 256, color.getBlue() );
+      }
+      else if(deltaMin == deltaB) {
+        color = new Color( color.getRed(), color.getGreen(), (color.getBlue() + colorIterationDelta) % 256 );
+      }
+      counter++;
+    }
+
+    colorsMapping.put(colorPair, color);
+    return color;
+  }
+
+  private boolean isGoodContrastWithBG(Color color, final Color bg) {
+    int brightnessColor = ( 299 * color.getRed() + 587 * color.getGreen() + 114 * color.getBlue() )/1000;
+    int brightnessBG = ( 299 * bg.getRed() + 587 * bg.getGreen() + 114 * bg.getBlue() )/1000;
+
+    int brightnessDiff = brightnessBG - brightnessColor;
+    int colorDiff = Math.abs(color.getRed() - bg.getRed())
+      + Math.abs(color.getGreen() - bg.getGreen())
+      + Math.abs(color.getBlue() - bg.getBlue());
+
+    return Math.abs(brightnessDiff) >= brightnessTH || colorDiff >= colorTH;
   }
 
   @Override
@@ -125,7 +205,7 @@ public class StyleRegistryIdeaImpl extends StyleRegistry implements EditorColors
     Style style = super.getStyle(key);
 
     if(style == null) {
-      style = new StyleImpl();
+       style = new StyleImpl();
 
       TextAttributes textAttributes = ourColorsScheme.getAttributes(TextAttributesKey.find(key));
       style.set(StyleAttributes.TEXT_COLOR, textAttributes.getForegroundColor());
@@ -142,8 +222,15 @@ public class StyleRegistryIdeaImpl extends StyleRegistry implements EditorColors
     return style;
   }
 
+  @Override
+  public boolean isDarkTheme() {
+    return EditorColorsManager.getInstance().getGlobalScheme().getName().contains("Darcula");
+  }
+
   private void fillIdeaMappings() {
     try {
+      addIdeaMappingsExt("DEFAULT_NULL_TEXT_COLOR","NOT_USED_ELEMENT_ATTRIBUTES");
+
       addIdeaMappingsExt("FOLDED_TEXT","FOLDED_TEXT_ATTRIBUTES");
       addIdeaMappingsExt("URL","HYPERLINK_ATTRIBUTES");
 
@@ -155,6 +242,7 @@ public class StyleRegistryIdeaImpl extends StyleRegistry implements EditorColors
       addIdeaMappingsExt("STATIC_FIELD","STATIC_FIELD_ATTRIBUTES");
       addIdeaMappingsExt("STATIC_FINAL_FIELD","STATIC_FINAL_FIELD_ATTRIBUTES");
       addIdeaMappingsExt("STATIC_METHOD","STATIC_METHOD_ATTRIBUTES");
+      addIdeaMappingsExt("DEPRECATED","DEPRECATED_ATTRIBUTES");
 
       addIdeaMappingsExt("CLASS_NAME","CLASS_NAME_ATTRIBUTES");
 
@@ -181,6 +269,27 @@ public class StyleRegistryIdeaImpl extends StyleRegistry implements EditorColors
     catch (StyleRegistryMappingKeyException e){
 
     }
+  }
+
+  private void fillColorMappings() {
+    final Color bg = getEditorBackground();
+    colorsMapping.put(new Pair<Color, Color>(MPSColors.LIGHT_BLUE, bg), new Color(104, 151, 186));
+    colorsMapping.put(new Pair<Color, Color>(MPSColors.DARK_BLUE, bg), new Color(204, 120, 50));
+    colorsMapping.put(new Pair<Color, Color>(MPSColors.DARK_GREEN, bg), new Color(98, 151, 85));
+    colorsMapping.put(new Pair<Color, Color>(MPSColors.DARK_MAGENTA, bg), new Color(152, 118, 170));
+    colorsMapping.put(new Pair<Color, Color>(MPSColors.RED, bg), new Color(255, 107, 104));
+    colorsMapping.put(new Pair<Color, Color>(MPSColors.PINK, bg), new Color(90, 100, 126));
+    colorsMapping.put(new Pair<Color, Color>(MPSColors.ORANGE, bg), new Color(255, 198, 109));
+    colorsMapping.put(new Pair<Color, Color>(MPSColors.YELLOW, bg), new Color(0, 99, 0));
+    colorsMapping.put(new Pair<Color, Color>(MPSColors.GREEN, bg), new Color(0, 128, 0));
+    colorsMapping.put(new Pair<Color, Color>(MPSColors.MAGENTA, bg), new Color(174, 138, 190));
+    colorsMapping.put(new Pair<Color, Color>(MPSColors.CYAN, bg), new Color(32, 153, 157));
+    colorsMapping.put(new Pair<Color, Color>(MPSColors.BLUE, bg), new Color(40, 123, 222));
+    colorsMapping.put(new Pair<Color, Color>(MPSColors.LIGHT_GRAY, bg), new Color(96, 96, 96));
+    colorsMapping.put(new Pair<Color, Color>(MPSColors.GRAY, bg), MPSColors.GRAY);
+    colorsMapping.put(new Pair<Color, Color>(MPSColors.DARK_GRAY, bg), MPSColors.LIGHT_GRAY);
+    colorsMapping.put(new Pair<Color, Color>(MPSColors.WHITE, bg), getEditorBackground());
+    colorsMapping.put(new Pair<Color, Color>(MPSColors.BLACK, bg), getEditorForeground());
   }
 
   public void addIdeaMappingsExt(String mpsKey, String ideaKey) throws StyleRegistryMappingKeyException {

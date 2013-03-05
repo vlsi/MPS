@@ -19,10 +19,12 @@ public class MergeDriverPackerImpl extends MergeDriverPacker implements Applicat
   public MergeDriverPackerImpl() {
   }
 
+  @Override
   public String getMPSCorePath() {
     return PathManager.getLibPath();
   }
 
+  @Override
   protected Set<String> getClasspathInternal() {
     Set<String> classpathItems = SetSequence.fromSet(new LinkedHashSet<String>());
     SetSequence.fromSet(classpathItems).addSequence(Sequence.fromIterable(MergeDriverPacker.mpsAddJars).select(new ISelector<String, String>() {
@@ -55,20 +57,24 @@ public class MergeDriverPackerImpl extends MergeDriverPacker implements Applicat
 
   }
 
+  @Override
   public void initComponent() {
     MergeDriverPacker.setInstance(this);
   }
 
   @NonNls
   @NotNull
+  @Override
   public String getComponentName() {
     return "MPS-specific Merge Driver Packer implementation";
   }
 
+  @Override
   public void disposeComponent() {
     MergeDriverPacker.setInstance(null);
   }
 
+  @Override
   protected String getVCSCoreFileName() {
     return "vcs-core.jar";
   }

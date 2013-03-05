@@ -22,31 +22,35 @@ import com.intellij.psi.impl.cache.impl.id.IdTableBuilding;
 import com.intellij.util.indexing.FileContent;
 import com.intellij.util.text.CharArrayUtil;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
+import jetbrains.mps.persistence.binary.BinaryPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence.IndexEntry;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.util.Consumer;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 
 public class MPSModelsIndexer implements ApplicationComponent {
+  @Override
   public void initComponent() {
-    IdTableBuilding.registerIdIndexer(MPSFileTypeFactory.MODEL_FILE_TYPE, new MyFileTypeIdIndexer());
+    IdTableBuilding.registerIdIndexer(MPSFileTypeFactory.MODEL_FILE_TYPE, new DefaultModelIdIndexer());
+    IdTableBuilding.registerIdIndexer(MPSFileTypeFactory.MODEL_BINARY_FILE_TYPE, new BinaryModelIdIndexer());
   }
 
+  @Override
   public void disposeComponent() {
 
   }
 
+  @Override
   @NotNull
   public String getComponentName() {
     return MPSModelsIndexer.class.getSimpleName();
   }
 
-  private static class MyFileTypeIdIndexer extends FileTypeIdIndexer {
+  private static class DefaultModelIdIndexer extends FileTypeIdIndexer {
+    @Override
     @NotNull
     public Map<IdIndexEntry, Integer> map(FileContent inputData) {
       CharSequence data = inputData.getContentAsText();
@@ -55,16 +59,33 @@ public class MPSModelsIndexer implements ApplicationComponent {
         charsArray = CharArrayUtil.fromSequence(data);
       }
 
-      final Map<IndexEntry, Integer> res;
+      final Map<IdIndexEntry, Integer> result = new HashMap<IdIndexEntry, Integer>();
       try {
-        res = ModelPersistence.index(charsArray);
-      } catch (ModelReadException e) {
-        return Collections.emptyMap();
+        ModelPersistence.index(charsArray, new Consumer<String>() {
+          @Override
+          public void consume(String s) {
+            result.put(new IdIndexEntry(s, true), 0);
+          }
+        });
+      } catch (ModelReadException ignored) {
       }
+      return result;
+    }
+  }
 
-      HashMap<IdIndexEntry, Integer> result = new HashMap<IdIndexEntry, Integer>();
-      for (Entry<IndexEntry, Integer> ie : res.entrySet()) {
-        result.put(new IdIndexEntry(ie.getKey().data, ie.getKey().caseSensitive), ie.getValue());
+  private static class BinaryModelIdIndexer extends FileTypeIdIndexer {
+    @Override
+    @NotNull
+    public Map<IdIndexEntry, Integer> map(FileContent inputData) {
+      final Map<IdIndexEntry, Integer> result = new HashMap<IdIndexEntry, Integer>();
+      try {
+        BinaryPersistence.index(inputData.getContent(), new Consumer<String>() {
+          @Override
+          public void consume(String s) {
+            result.put(new IdIndexEntry(s, true), 0);
+          }
+        });
+      } catch (ModelReadException ignored) {
       }
       return result;
     }

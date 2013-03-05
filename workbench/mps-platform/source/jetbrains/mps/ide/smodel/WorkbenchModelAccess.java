@@ -30,11 +30,11 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.SwingUtilities;
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -96,25 +96,6 @@ public class WorkbenchModelAccess extends ModelAccess {
   }
 
   @Override
-  protected void doAssertLegalRead(SNode node) {
-    if (canRead()) return;
-
-    boolean old = setReadEnabledFlag(true);
-    boolean reg = false;
-    try {
-      SModel model = node.getModel();
-      if (model == null) return;
-      reg = model.isRegistered();
-    } finally {
-      setReadEnabledFlag(old);
-    }
-
-    if (reg && !myIndexingThreads.contains(Thread.currentThread())) {
-      throw new IllegalModelAccessError("You can read model only inside read actions");
-    }
-  }
-
-  @Override
   public void runReadAction(final Runnable r) {
     if (canRead()) {
       r.run();
@@ -124,6 +105,7 @@ public class WorkbenchModelAccess extends ModelAccess {
       throw new IllegalStateException("deadlock prevention: do not start read action in EDT, use tryRead");
     }
     ApplicationManager.getApplication().runReadAction(new Runnable() {
+      @Override
       public void run() {
         getReadLock().lock();
         try {
@@ -144,6 +126,7 @@ public class WorkbenchModelAccess extends ModelAccess {
       throw new IllegalStateException("deadlock prevention: do not start read action in EDT, use tryRead");
     }
     return ApplicationManager.getApplication().runReadAction(new com.intellij.openapi.util.Computable<T>() {
+      @Override
       public T compute() {
         getReadLock().lock();
         try {
@@ -166,6 +149,7 @@ public class WorkbenchModelAccess extends ModelAccess {
       throw new IllegalStateException("deadlock prevention: do not start write action in EDT, use tryWrite");
     }
     Runnable runnable = new Runnable() {
+      @Override
       public void run() {
         getWriteLock().lock();
         try {
@@ -193,6 +177,7 @@ public class WorkbenchModelAccess extends ModelAccess {
       throw new IllegalStateException("deadlock prevention: do not start write action in EDT, use tryWrite");
     }
     com.intellij.openapi.util.Computable<T> computable = new com.intellij.openapi.util.Computable<T>() {
+      @Override
       public T compute() {
         getWriteLock().lock();
         try {
@@ -210,6 +195,7 @@ public class WorkbenchModelAccess extends ModelAccess {
     }
   }
 
+  @Override
   public void writeFilesInEDT(@NotNull final Runnable action) {
     // EDT should have IDEA write lock
     runReadInWriteAction(new Computable<Object>() {
@@ -250,6 +236,7 @@ public class WorkbenchModelAccess extends ModelAccess {
         try {
           myDistributedLocksMode = true;
           ProgressManager.getInstance().runProcessWithProgressSynchronously(new Runnable() {
+            @Override
             public void run() {
               ProgressIndicator progressIndicator = ProgressManager.getInstance().getProgressIndicator();
               progressIndicator.pushState();
@@ -313,6 +300,7 @@ public class WorkbenchModelAccess extends ModelAccess {
     }
 
     return ApplicationManager.getApplication().runReadAction(new com.intellij.openapi.util.Computable<Boolean>() {
+      @Override
       public Boolean compute() {
         if (getReadLock().tryLock()) {
           try {
@@ -339,6 +327,7 @@ public class WorkbenchModelAccess extends ModelAccess {
     }
 
     return ApplicationManager.getApplication().runReadAction(new com.intellij.openapi.util.Computable<T>() {
+      @Override
       public T compute() {
         if (getReadLock().tryLock()) {
           try {
@@ -409,6 +398,7 @@ public class WorkbenchModelAccess extends ModelAccess {
     }
 
     com.intellij.openapi.util.Computable<Boolean> computable = new com.intellij.openapi.util.Computable<Boolean>() {
+      @Override
       public Boolean compute() {
         try {
           if (getWriteLock().tryLock(WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS)) {
@@ -448,6 +438,7 @@ public class WorkbenchModelAccess extends ModelAccess {
     }
 
     com.intellij.openapi.util.Computable<T> computable = new com.intellij.openapi.util.Computable<T>() {
+      @Override
       public T compute() {
         try {
           if (getWriteLock().tryLock(WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS)) {
@@ -616,6 +607,7 @@ public class WorkbenchModelAccess extends ModelAccess {
   public <T> T runWriteActionInCommand(final Computable<T> c, String name, Object groupId, final boolean requestUndoConfirmation, final Project project) {
     final Object[] result = new Object[1];
     CommandProcessor.getInstance().executeCommand(ProjectHelper.toIdeaProject(project), new Runnable() {
+      @Override
       public void run() {
         result[0] = new CommandComputable(c, project).compute();
       }
@@ -643,6 +635,7 @@ public class WorkbenchModelAccess extends ModelAccess {
   public void runWriteActionInCommandAsync(final Runnable r, final Project project) {
     // FIXME
     SwingUtilities.invokeLater(new Runnable() {
+      @Override
       public void run() {
         runWriteActionInCommand(r, project);
       }
@@ -661,6 +654,14 @@ public class WorkbenchModelAccess extends ModelAccess {
   @Override
   public boolean isInsideCommand() {
     return canWrite() && myCommandLevel > 0;
+  }
+
+  @Override
+  public void checkReadAccess() {
+    // TODO remove this method
+    if (!canRead() /* && !myIndexingThreads.contains(Thread.currentThread())*/) {
+      throw new IllegalModelAccessError("You can read model only inside read actions");
+    }
   }
 
   @Override
@@ -801,8 +802,10 @@ public class WorkbenchModelAccess extends ModelAccess {
       myProject = project;
     }
 
+    @Override
     public void run() {
       runWriteAction(new Runnable() {
+        @Override
         public void run() {
           incCommandLevel();
           try {
@@ -824,8 +827,10 @@ public class WorkbenchModelAccess extends ModelAccess {
       myProject = project;
     }
 
+    @Override
     public T compute() {
       return runWriteAction(new Computable<T>() {
+        @Override
         public T compute() {
           incCommandLevel();
           T result = null;
@@ -848,12 +853,14 @@ public class WorkbenchModelAccess extends ModelAccess {
       myRunnable = runnable;
     }
 
+    @Override
     public void run() {
       // workaround for IDEA's locks shortcoming: timeout on write action
       Thread.interrupted();
       final DelayedInterrupt delayedInterrupt = interruptLater(Thread.currentThread(), WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS);
       try {
         ApplicationManager.getApplication().runWriteAction(new Runnable() {
+          @Override
           public void run() {
             cancelInterrupt(delayedInterrupt);
             myRunnable.run();
@@ -886,6 +893,7 @@ public class WorkbenchModelAccess extends ModelAccess {
       final DelayedInterrupt delayedInterrupt = interruptLater(Thread.currentThread(), WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS);
       try {
         return ApplicationManager.getApplication().runWriteAction(new com.intellij.openapi.util.Computable<T>() {
+          @Override
           public T compute() {
             cancelInterrupt(delayedInterrupt);
             return myComputable.compute();
@@ -928,10 +936,12 @@ public class WorkbenchModelAccess extends ModelAccess {
       toInterrupt.interrupt();
     }
 
+    @Override
     public long getDelay(TimeUnit unit) {
       return unit.convert(alarmTimeMillis - System.currentTimeMillis(), TimeUnit.MILLISECONDS);
     }
 
+    @Override
     public int compareTo(Delayed that) {
       if (!(that instanceof DelayedInterrupt)) throw new ClassCastException();
       return (int) (this.alarmTimeMillis - ((DelayedInterrupt) that).alarmTimeMillis);

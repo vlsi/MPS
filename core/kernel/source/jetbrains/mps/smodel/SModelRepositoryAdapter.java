@@ -13,41 +13,47 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Set;
 
 public abstract class SModelRepositoryAdapter implements SModelRepositoryListener {
-  public void beforeModelDeleted(SModelDescriptor modelDescriptor) {
+  @Override
+  public void beforeModelDeleted(SModel modelDescriptor) {
 
   }
 
-  public void modelDeleted(SModelDescriptor modelDescriptor) {
-    modelRepositoryChanged();
-    modelRepositoryChanged(modelDescriptor);
-  }
-
-  public void modelRemoved(SModelDescriptor modelDescriptor) {
-    modelRepositoryChanged();
-    modelRepositoryChanged(modelDescriptor);
-  }
-
-  public void beforeModelRemoved(SModelDescriptor modelDescriptor) {
-
-  }
-
-  public void modelAdded(SModelDescriptor modelDescriptor) {
-    modelRepositoryChanged();
-    modelRepositoryChanged(modelDescriptor);
-  }
-
-  public void modelRenamed(SModelDescriptor modelDescriptor) {
+  @Override
+  public void modelDeleted(SModel modelDescriptor) {
     modelRepositoryChanged();
     modelRepositoryChanged(modelDescriptor);
   }
 
   @Override
-  public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
+  public void modelRemoved(SModel modelDescriptor) {
+    modelRepositoryChanged();
+    modelRepositoryChanged(modelDescriptor);
+  }
+
+  @Override
+  public void beforeModelRemoved(SModel modelDescriptor) {
+
+  }
+
+  @Override
+  public void modelAdded(SModel modelDescriptor) {
+    modelRepositoryChanged();
+    modelRepositoryChanged(modelDescriptor);
+  }
+
+  @Override
+  public void modelRenamed(SModel modelDescriptor) {
+    modelRepositoryChanged();
+    modelRepositoryChanged(modelDescriptor);
+  }
+
+  @Override
+  public void modelsReplaced(Set<SModel> replacedModels) {
     modelRepositoryChanged();
   }
 
@@ -55,7 +61,7 @@ public abstract class SModelRepositoryAdapter implements SModelRepositoryListene
 
   }
 
-  public void modelRepositoryChanged(SModelDescriptor modelDescriptor) {
+  public void modelRepositoryChanged(SModel modelDescriptor) {
 
   }
 }

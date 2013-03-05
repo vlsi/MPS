@@ -18,7 +18,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.vcs.util.ModelVersion;
 import jetbrains.mps.util.UnzipUtil;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vfs.IFile;
@@ -53,6 +53,7 @@ public class MergeBackupUtil {
       //  copy logfiles 
       File logsDir = new File(PathManager.getLogPath());
       File[] logfiles = logsDir.listFiles(new FilenameFilter() {
+        @Override
         public boolean accept(File dir, String name) {
           return name.matches("mpsvcs\\.log(\\.1)*") || name.matches("idea\\.log(\\.1)*");
         }

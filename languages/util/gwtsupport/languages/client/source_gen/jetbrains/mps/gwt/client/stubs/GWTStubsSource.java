@@ -5,13 +5,13 @@ package jetbrains.mps.gwt.client.stubs;
 import jetbrains.mps.extapi.persistence.FolderSetDataSource;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportProvider;
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.stubs.util.PathItem;
 import java.util.List;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -45,18 +45,18 @@ public class GWTStubsSource extends FolderSetDataSource implements FastFindSuppo
   }
 
   @Override
-  public SModel loadSModel(IModule module, SModelDescriptor descriptor) {
-    SModel model = new SModel(descriptor.getSModelReference(), new ForeignNodeIdMap());
+  public SModel loadSModel(IModule module, SModel descriptor) {
+    SModel model = new jetbrains.mps.smodel.SModel(descriptor.getReference(), new ForeignNodeIdMap());
     ModuleReference lang = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("954c4d77-e24b-4e49-a5a5-5476c966c092")).getModuleReference();
-    model.addLanguage(lang);
+    ((SModelInternal) model).addLanguage(lang);
 
-    String pkg = model.getSModelFqName().getLongName();
+    String pkg = model.getReference().getSModelFqName().getLongName();
     PathItem pi = GWTModulePathItem.getPathItem(path);
     List<Tuples._3<String, String, SNode>> modlst = ListSequence.fromList(new ArrayList<Tuples._3<String, String, SNode>>());
     SNode sample = SConceptOperations.createNewNode("jetbrains.mps.gwt.client.structure.GWTModule", null);
     for (String modres : ListSequence.fromList(pi.resources(pkg))) {
       SNodeId id = GWTModuleReader.createId(pi.baseName(modres));
-      SNode gwtModule = (SNode) model.getNodeById(id);
+      SNode gwtModule = (SNode) model.getNode(id);
       if ((gwtModule == null)) {
         gwtModule = SConceptOperations.createNewNode(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.gwt.client.structure.GWTModule")), sample);
         ((jetbrains.mps.smodel.SNode) gwtModule).setId(id);
@@ -105,15 +105,18 @@ public class GWTStubsSource extends FolderSetDataSource implements FastFindSuppo
     return model;
   }
 
+  @Override
   public long getTimestamp() {
     return 0;
   }
 
+  @Override
   public FastFindSupport getFastFindSupport() {
     return FastFindSupportRegistry.getInstance().getFastFindSupport(JavaStubModelDataSource.FAST_FIND_ID);
   }
 
-  public boolean hasModel(SModelDescriptor md) {
+  @Override
+  public boolean hasModel(SModel md) {
     return !(getPaths().isEmpty());
   }
 }

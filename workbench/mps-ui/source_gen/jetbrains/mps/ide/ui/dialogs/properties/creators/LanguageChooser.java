@@ -17,6 +17,7 @@ public class LanguageChooser implements Computable<List<ModuleReference>> {
   public LanguageChooser() {
   }
 
+  @Override
   public List<ModuleReference> compute() {
     final Wrappers._T<List<ModuleReference>> langRefs = new Wrappers._T<List<ModuleReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {

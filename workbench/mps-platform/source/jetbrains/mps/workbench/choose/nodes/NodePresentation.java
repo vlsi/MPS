@@ -47,14 +47,16 @@ public class NodePresentation extends BasePresentation {
 
     if (myModelName == null) {
       myModelName = ModelAccess.instance().runReadAction(new Computable<String>() {
+        @Override
         public String compute() {
-          return myNode.getModel().getModelDescriptor().getSModelReference().getSModelFqName().toString();
+          return myNode.getModel().getModelDescriptor().getReference().getSModelFqName().toString();
         }
       });
     }
     return myModelName;
   }
 
+  @Override
   @NotNull
   public String doGetPresentableText() {
     if (myNode == null) {
@@ -65,10 +67,12 @@ public class NodePresentation extends BasePresentation {
     return text != null ? text : "";
   }
 
+  @Override
   public String doGetLocationString() {
     return "(" + getModelName() + ")";
   }
 
+  @Override
   public Icon doGetIcon() {
     return myNode != null ? IconManager.getIconFor(myNode) : null;
   }

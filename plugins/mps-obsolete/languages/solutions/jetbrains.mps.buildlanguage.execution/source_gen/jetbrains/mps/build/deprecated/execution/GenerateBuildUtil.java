@@ -7,8 +7,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.io.File;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.annotations.NotNull;
@@ -52,7 +51,7 @@ public class GenerateBuildUtil {
     return fileName.value;
   }
 
-  public static SNode getLayout(final SModelDescriptor descriptor) {
+  public static SNode getLayout(final SModel descriptor) {
     final Wrappers._T<SNode> layout = new Wrappers._T<SNode>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -65,7 +64,7 @@ public class GenerateBuildUtil {
 
   public static boolean generate(@NotNull final SNode layout, @NotNull final Project project, final boolean showWindow) {
     final Wrappers._T<String> baseFolder = new Wrappers._T<String>();
-    final Wrappers._T<SModelDescriptor> descriptor = new Wrappers._T<SModelDescriptor>();
+    final Wrappers._T<SModel> descriptor = new Wrappers._T<SModel>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         baseFolder.value = BehaviorReflection.invokeNonVirtual(String.class, layout, "jetbrains.mps.build.packaging.structure.Layout", "call_getFolderToGenerate_1229522949966", new Object[]{});
@@ -77,9 +76,9 @@ public class GenerateBuildUtil {
     final _FunctionTypes._void_P0_E0 generate = new _FunctionTypes._void_P0_E0() {
       public void invoke() {
         if (false && showWindow) {
-          result.value = GeneratorUIFacade.getInstance().generateModels(new ProjectOperationContext(ProjectHelper.toMPSProject(project)), ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor.value), new BuildGenerationHandler(baseFolder.value), true, true);
+          result.value = GeneratorUIFacade.getInstance().generateModels(new ProjectOperationContext(ProjectHelper.toMPSProject(project)), ListSequence.fromListAndArray(new ArrayList<SModel>(), descriptor.value), new BuildGenerationHandler(baseFolder.value), true, true);
         } else {
-          result.value = GenerationFacade.generateModels(project.getComponent(MPSProject.class), ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor.value), new ProjectOperationContext(ProjectHelper.toMPSProject(project)), new BuildGenerationHandler(baseFolder.value), new EmptyProgressMonitor(), new DefaultMessageHandler(project), GenerationOptions.getDefaults().create(), project.getComponent(TransientModelsComponent.class));
+          result.value = GenerationFacade.generateModels(project.getComponent(MPSProject.class), ListSequence.fromListAndArray(new ArrayList<SModel>(), descriptor.value), new ProjectOperationContext(ProjectHelper.toMPSProject(project)), new BuildGenerationHandler(baseFolder.value), new EmptyProgressMonitor(), new DefaultMessageHandler(project), GenerationOptions.getDefaults().create(), project.getComponent(TransientModelsComponent.class));
         }
       }
     };
@@ -87,6 +86,7 @@ public class GenerateBuildUtil {
       generate.invoke();
     } else {
       ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+        @Override
         public void run() {
           generate.invoke();
         }

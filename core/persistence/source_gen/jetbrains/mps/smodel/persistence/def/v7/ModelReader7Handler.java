@@ -15,10 +15,12 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.refactoring.StructureModificationProcessor;
 import jetbrains.mps.util.xml.BreakParseSAXException;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeId;
+import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.LazySNode;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.StaticReference;
@@ -165,7 +167,7 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
       fieldmodel = new DefaultSModel(SModelReference.fromString(attrs.getValue("modelUID")));
       fieldmodel.setPersistenceVersion(7);
       fieldmodel.getSModelHeader().updateDefaults(fieldheader);
-      fieldhelper = new ReadHelper(fieldmodel.getSModelReference());
+      fieldhelper = new ReadHelper(fieldmodel.getReference());
       fieldlinkMap = new ModelLinkMap(fieldmodel);
       return new ModelLoadResult(fieldmodel, ModelLoadingState.NOT_LOADED);
     }
@@ -235,17 +237,17 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
       }
       if ("language".equals(tagName)) {
         ModuleReference child = (ModuleReference) value;
-        fieldmodel.addLanguage(child);
+        ((SModelInternal) fieldmodel).addLanguage(child);
         return;
       }
       if ("language-engaged-on-generation".equals(tagName)) {
         ModuleReference child = (ModuleReference) value;
-        fieldmodel.addEngagedOnGenerationLanguage(child);
+        ((SModelInternal) fieldmodel).addEngagedOnGenerationLanguage(child);
         return;
       }
       if ("devkit".equals(tagName)) {
         ModuleReference child = (ModuleReference) value;
-        fieldmodel.addDevKit(child);
+        ((SModelInternal) fieldmodel).addDevKit(child);
         return;
       }
       if ("import".equals(tagName)) {
@@ -390,7 +392,7 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
       if ("node".equals(tagName)) {
         SNode child = (SNode) value;
         if (child != null) {
-          fieldmodel.addRoot(child);
+          fieldmodel.addRootNode(child);
         }
         return;
       }
@@ -406,7 +408,7 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
 
     @Override
     protected SNode createObject(Attributes attrs) {
-      return fieldmodel.getNodeById(attrs.getValue("id"));
+      return fieldmodel.getNode(SNodeId.fromString(attrs.getValue("id")));
     }
 
     @Override
@@ -454,7 +456,11 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
 
     @Override
     protected SNode createObject(Attributes attrs) {
-      return new jetbrains.mps.smodel.SNode(fieldhelper.readType(attrs.getValue("type")));
+      boolean needLazy = fieldtoState != ModelLoadingState.FULLY_LOADED;
+      return (needLazy ?
+        new LazySNode(fieldhelper.readType(attrs.getValue("type"))) :
+        new jetbrains.mps.smodel.SNode(fieldhelper.readType(attrs.getValue("type")))
+      );
     }
 
     @Override
@@ -481,7 +487,7 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
         return;
       }
       if ("id".equals(name)) {
-        SNodeId id = jetbrains.mps.smodel.SNodeId.fromString(value);
+        org.jetbrains.mps.openapi.model.SNodeId id = SNodeId.fromString(value);
         if (id == null) {
           throw new SAXParseException("bad node ID", null);
         }

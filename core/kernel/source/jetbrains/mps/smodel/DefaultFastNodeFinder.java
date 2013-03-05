@@ -13,7 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
+
+import org.jetbrains.mps.openapi.model.SNode;
 
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
@@ -27,7 +29,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
   private final Object myLock = new Object();
 
   private SModel myModel;
-  private SModelDescriptor myModelDescriptor;
+  private SModel myModelDescriptor;
   private boolean myInitialized;
   private SModelAdapter myListener = new MySModelAdapter();
   private SModelRepositoryAdapter myRepositoryAdapter = new MySModelRepositoryAdapter();
@@ -38,7 +40,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
     myModel = model;
     myModelDescriptor = model.getModelDescriptor();
     SModelRepository.getInstance().addModelRepositoryListener(myRepositoryAdapter);
-    myModelDescriptor.addModelListener(myListener);
+    ((SModelInternal) myModelDescriptor).addModelListener(myListener);
   }
 
   @Override
@@ -47,12 +49,12 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
       myInitialized = false;
       myNodes.clear();
     }
-    myModelDescriptor.removeModelListener(myListener);
+    ((SModelInternal) myModelDescriptor).removeModelListener(myListener);
     SModelRepository.getInstance().removeModelRepositoryListener(myRepositoryAdapter);
   }
 
   private void initCache() {
-    for (SNode root : myModel.roots()) {
+    for (SNode root : myModel.getRootNodes()) {
       addToCache(root);
     }
     myInitialized = true;
@@ -61,11 +63,11 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
   @Override
   public List<SNode> getNodes(String conceptFqName, boolean includeInherited) {
     // notify 'model nodes read access'
-    myModel.rootsIterator();
+    myModel.getRootNodes().iterator();
 
     // pre-loading model to avoid deadlock (model loading process requires a lock)
     // model cannot be unloaded afterwards, because we have model read access
-    myModel.enforceFullLoad();
+    ((jetbrains.mps.smodel.SModel) myModel).enforceFullLoad();
 
     synchronized (myLock) {
       if (!myInitialized) {
@@ -87,6 +89,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
       }
 
       Collections.sort(result, new Comparator<SNode>() {
+        @Override
         public int compare(SNode o1, SNode o2) {
           return ((jetbrains.mps.smodel.SNodeId) o1.getNodeId()).compareTo(((jetbrains.mps.smodel.SNodeId) o2.getNodeId()));
         }
@@ -150,6 +153,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
       super(SModelListenerPriority.PLATFORM);
     }
 
+    @Override
     public void childAdded(SModelChildEvent event) {
       synchronized (myLock) {
         if (!myInitialized) return;
@@ -158,6 +162,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
       }
     }
 
+    @Override
     public void childRemoved(SModelChildEvent event) {
       synchronized (myLock) {
         if (!myInitialized) return;
@@ -166,6 +171,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
       }
     }
 
+    @Override
     public void rootAdded(SModelRootEvent event) {
       synchronized (myLock) {
         if (!myInitialized) return;
@@ -174,6 +180,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
       }
     }
 
+    @Override
     public void rootRemoved(SModelRootEvent event) {
       synchronized (myLock) {
         if (!myInitialized) return;
@@ -187,7 +194,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
   private class MySModelRepositoryAdapter extends SModelRepositoryAdapter {
 
     @Override
-    public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
+    public void modelsReplaced(Set<SModel> replacedModels) {
       if (replacedModels.contains(myModelDescriptor)) {
         synchronized (myLock) {
           myInitialized = false;

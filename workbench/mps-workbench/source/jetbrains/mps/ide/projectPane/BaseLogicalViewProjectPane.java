@@ -51,7 +51,8 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.ActionPlace;
@@ -78,6 +79,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   protected boolean myDisposed;
 
   private ReloadListener myReloadListener = new ReloadAdapter() {
+    @Override
     public void onAfterReload() {
       rebuild();
     }
@@ -101,8 +103,9 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
 
   public abstract void rebuild();
 
-  public abstract void selectNextModel(SModelDescriptor md);
+  public abstract void selectNextModel(SModel md);
 
+  @Override
   public Object getData(String dataId) {
     //MPSDK
     if (dataId.equals(MPSDataKeys.NODE.getName())) return getSelectedSNode();
@@ -152,10 +155,11 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   }
 
   //todo:the same thing for nodes & modules
-  protected void onBeforeModelWillBeDeleted(SModelDescriptor sm) {
+  protected void onBeforeModelWillBeDeleted(SModel sm) {
     // unselect model if it was selected ?
   }
 
+  @Override
   public void dispose() {
     if (isComponentCreated()) {
       removeListeners();
@@ -201,6 +205,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     };
   }
 
+  @Override
   public void addToolbarActions(final DefaultActionGroup group) {
     group.add(new PropertiesAndReferencesToggleAction());
     group.addAction(new SortByTypeToggleAction()).setAsSecondary(true);
@@ -244,21 +249,21 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     return result;
   }
 
-  public List<SModelDescriptor> getSelectedModels() {
-    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
+  public List<SModel> getSelectedModels() {
+    List<SModel> result = new ArrayList<SModel>();
     for (SModelTreeNode node : getSelectedTreeNodes(SModelTreeNode.class)) {
       result.add(node.getSModelDescriptor());
     }
     return result;
   }
 
-  public SModelDescriptor getSelectedModel() {
+  public SModel getSelectedModel() {
     SModelTreeNode selectedTreeNode = getSelectedTreeNode(SModelTreeNode.class);
     if (selectedTreeNode == null) return null;
     return selectedTreeNode.getSModelDescriptor();
   }
 
-  public SModelDescriptor getContextModel() {
+  public SModel getContextModel() {
     MPSTreeNode treeNode = (MPSTreeNode) getSelectedTreeNode(TreeNode.class);
     while (treeNode != null && !(treeNode instanceof SModelTreeNode)) {
       treeNode = (MPSTreeNode) treeNode.getParent();
@@ -382,9 +387,9 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     List<VirtualFile> selectedFilesList = new LinkedList<VirtualFile>();
 
     // add selected model files
-    List<SModelDescriptor> descriptors = getSelectedModels();
+    List<SModel> descriptors = getSelectedModels();
     if (descriptors != null) {
-      for (SModelDescriptor descriptor : descriptors) {
+      for (SModel descriptor : descriptors) {
         selectedFilesList.addAll(ModelUtil.getVFilesByModelDescriptor(descriptor));
       }
     }
@@ -428,17 +433,20 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   private class MyCopyProvider implements CopyProvider {
     private CopyNode_Action myAction = new CopyNode_Action();
 
+    @Override
     public void performCopy(DataContext dataContext) {
       AnActionEvent event = createEvent(dataContext);
       ActionUtils.updateAndPerformAction(myAction, event);
     }
 
+    @Override
     public boolean isCopyEnabled(DataContext dataContext) {
       AnActionEvent event = createEvent(dataContext);
       myAction.update(event);
       return event.getPresentation().isEnabled();
     }
 
+    @Override
     public boolean isCopyVisible(DataContext dataContext) {
       return true;
     }
@@ -447,15 +455,18 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   private class MyPasteProvider implements PasteProvider {
     private PasteNode_Action myAction = new PasteNode_Action();
 
+    @Override
     public void performPaste(DataContext dataContext) {
       AnActionEvent event = createEvent(dataContext);
       ActionUtils.updateAndPerformAction(myAction, event);
     }
 
+    @Override
     public boolean isPastePossible(DataContext dataContext) {
       return true;
     }
 
+    @Override
     public boolean isPasteEnabled(DataContext dataContext) {
       AnActionEvent event = createEvent(dataContext);
       myAction.update(event);
@@ -466,37 +477,44 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   private class MyCutProvider implements CutProvider {
     private CutNode_Action myAction = new CutNode_Action();
 
+    @Override
     public void performCut(DataContext dataContext) {
       AnActionEvent event = createEvent(dataContext);
       ActionUtils.updateAndPerformAction(myAction, event);
     }
 
+    @Override
     public boolean isCutEnabled(DataContext dataContext) {
       AnActionEvent event = createEvent(dataContext);
       myAction.update(event);
       return event.getPresentation().isEnabled();
     }
 
+    @Override
     public boolean isCutVisible(DataContext dataContext) {
       return true;
     }
   }
 
   private class MyModuleRepositoryListener extends ModuleRepositoryAdapter {
+    @Override
     public void moduleAdded(IModule module) {
       myNeedRebuild = true;
     }
 
+    @Override
     public void moduleRemoved(IModule module) {
       myNeedRebuild = true;
     }
   }
 
   private class MyModelAccessListener extends ModelAccessAdapter {
+    @Override
     public void commandStarted() {
       myNeedRebuild = false;
     }
 
+    @Override
     public void commandFinished() {
       if (!myNeedRebuild) return;
       JTree tree = getTree();
@@ -510,13 +528,15 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   //----listeners----
 
   private class MyModelRepositoryAdapter extends SModelRepositoryAdapter {
-    public void modelRepositoryChanged(SModelDescriptor modelDescriptor) {
-      if (!SModelStereotype.INTERNAL.equals(modelDescriptor.getStereotype())) {
+    @Override
+    public void modelRepositoryChanged(SModel modelDescriptor) {
+      if (!SModelStereotype.INTERNAL.equals(SModelStereotype.getStereotype(modelDescriptor))) {
         myNeedRebuild = true;
       }
     }
 
-    public void beforeModelDeleted(SModelDescriptor modelDescriptor) {
+    @Override
+    public void beforeModelDeleted(SModel modelDescriptor) {
       onBeforeModelWillBeDeleted(modelDescriptor);
     }
   }
@@ -524,10 +544,12 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   //----copy-paste----
 
   private class RefreshListener implements VirtualFileManagerListener {
+    @Override
     public void beforeRefreshStart(boolean asynchonous) {
 
     }
 
+    @Override
     public void afterRefreshFinish(boolean asynchonous) {
       if (myNeedRebuild) {
         JTree tree = getTree();
@@ -544,10 +566,12 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
       super("Show Properties and References", "Show properties and references", Icons.PROP_AND_REF);
     }
 
+    @Override
     public boolean isSelected(@Nullable AnActionEvent e) {
       return isShowPropertiesAndReferences();
     }
 
+    @Override
     public void setSelected(@Nullable AnActionEvent e, boolean state) {
       if (state != isShowPropertiesAndReferences()) {
         if (getProjectView() instanceof ProjectViewImpl) {
@@ -563,10 +587,12 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
       super("Sort Roots by Concept", "Sort root nodes by concept", null);
     }
 
+    @Override
     public boolean isSelected(@Nullable AnActionEvent e) {
       return isSortByType();
     }
 
+    @Override
     public void setSelected(@Nullable AnActionEvent e, boolean state) {
       if (state != isSortByType()) {
         getProjectView().setSortByType(getId(), state);

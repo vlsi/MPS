@@ -16,7 +16,7 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -46,18 +46,22 @@ public class MappingScriptContext extends TemplateQueryContext {
     return myModel;
   }
 
+  @Override
   public SNode getInputNode() {
     return null;
   }
 
+  @Override
   public SModel getInputModel() {
     return myModel;
   }
 
+  @Override
   public SModel getOutputModel() {
     return myModel;
   }
 
+  @Override
   public SNode getTemplateNodeForLogging() {
     return myScript != null ? myScript :
       myScriptPointer != null ? myScriptPointer.resolve(MPSModuleRepository.getInstance()) : null;

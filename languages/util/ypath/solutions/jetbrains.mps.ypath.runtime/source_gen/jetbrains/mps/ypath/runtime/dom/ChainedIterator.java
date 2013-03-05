@@ -27,10 +27,12 @@ public class ChainedIterator<E> implements Iterator<E> {
     }
   }
 
+  @Override
   public boolean hasNext() {
     return index < iterators.size();
   }
 
+  @Override
   public E next() {
     if (hasNext()) {
       E tmp = iterators.get(index).next();
@@ -40,6 +42,7 @@ public class ChainedIterator<E> implements Iterator<E> {
     throw new NoSuchElementException();
   }
 
+  @Override
   public void remove() {
     throw new UnsupportedOperationException();
   }

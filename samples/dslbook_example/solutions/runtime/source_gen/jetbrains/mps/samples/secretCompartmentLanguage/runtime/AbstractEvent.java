@@ -20,10 +20,12 @@ public class AbstractEvent {
     return name;
   }
 
+  @Override
   public String toString() {
     return name;
   }
 
+  @Override
   public boolean equals(Object object) {
     if (getClass() != object.getClass()) {
       return false;
@@ -32,6 +34,7 @@ public class AbstractEvent {
     return (code.equals(other.code) && name.equals(other.name));
   }
 
+  @Override
   public int hashCode() {
     return name.hashCode();
   }

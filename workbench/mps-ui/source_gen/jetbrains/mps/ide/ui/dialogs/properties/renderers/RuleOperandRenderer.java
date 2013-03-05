@@ -18,7 +18,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -36,6 +36,7 @@ public class RuleOperandRenderer implements TableCellRenderer {
   public RuleOperandRenderer() {
   }
 
+  @Override
   public Component getTableCellRendererComponent(JTable table, final Object value, boolean isSelected, boolean hasFocus, int row, int column) {
     if (value == null) {
       return new JLabel("Error");
@@ -55,13 +56,14 @@ public class RuleOperandRenderer implements TableCellRenderer {
       } else {
         final SNodeReference p = new SNodePointer(refC.getModelUID(), refC.getNodeID());
         nodeName = ModelAccess.instance().runReadAction(new Computable<String>() {
+          @Override
           public String compute() {
-            SModelDescriptor model = SNodeOperations.getModelFromNodeReference((SNodePointer) p);
+            SModel model = SNodeOperations.getModelFromNodeReference((SNodePointer) p);
             SNode node = p.resolve(MPSModuleRepository.getInstance());
             if (model == null || node == null) {
               return null;
             }
-            String modelName = NameUtil.shortNameFromLongName(model.getLongName());
+            String modelName = NameUtil.shortNameFromLongName(SNodeOperations.getModelLongName(model));
             return modelName + "." + node.getName();
           }
         });

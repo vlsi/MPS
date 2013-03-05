@@ -40,6 +40,7 @@ public class Complex {
     }
   }
 
+  @Override
   public String toString() {
     if (this.myImaginary == 0) {
       return this.myReal + "";

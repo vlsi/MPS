@@ -5,28 +5,28 @@ package jetbrains.mps.smodel.resources;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.make.resources.IResourceWithProperties;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.make.resources.IPropertiesIO;
 
-public class TResource extends DResource implements Tuples._3<Iterable<IDelta>, IModule, SModelDescriptor>, ITResource, IResourceWithProperties {
-  private MultiTuple._2<IModule, SModelDescriptor> tuple;
+public class TResource extends DResource implements Tuples._3<Iterable<IDelta>, IModule, SModel>, ITResource, IResourceWithProperties {
+  private MultiTuple._2<IModule, SModel> tuple;
 
   public TResource() {
     super();
   }
 
-  public TResource(Iterable<IDelta> delta, IModule module, SModelDescriptor modelDescriptor) {
+  public TResource(Iterable<IDelta> delta, IModule module, SModel modelDescriptor) {
     super(delta);
-    this.tuple = new MultiTuple._2<IModule, SModelDescriptor>(module, modelDescriptor);
+    this.tuple = new MultiTuple._2<IModule, SModel>(module, modelDescriptor);
   }
 
   public IModule module(IModule value) {
     return this._1(value);
   }
 
-  public SModelDescriptor modelDescriptor(SModelDescriptor value) {
+  public SModel modelDescriptor(SModel value) {
     return this._2(value);
   }
 
@@ -34,7 +34,7 @@ public class TResource extends DResource implements Tuples._3<Iterable<IDelta>, 
     return this._1();
   }
 
-  public SModelDescriptor modelDescriptor() {
+  public SModel modelDescriptor() {
     return this._2();
   }
 
@@ -42,7 +42,7 @@ public class TResource extends DResource implements Tuples._3<Iterable<IDelta>, 
     return tuple._0();
   }
 
-  public SModelDescriptor _2(SModelDescriptor modelDescriptor) {
+  public SModel _2(SModel modelDescriptor) {
     return tuple._1();
   }
 
@@ -50,7 +50,7 @@ public class TResource extends DResource implements Tuples._3<Iterable<IDelta>, 
     return tuple._0();
   }
 
-  public SModelDescriptor _2() {
+  public SModel _2() {
     return tuple._1();
   }
 
@@ -60,14 +60,14 @@ public class TResource extends DResource implements Tuples._3<Iterable<IDelta>, 
     return this;
   }
 
-  public Tuples._3<Iterable<IDelta>, IModule, SModelDescriptor> assign(Tuples._3<? extends Iterable<IDelta>, ? extends IModule, ? extends SModelDescriptor> from) {
+  public Tuples._3<Iterable<IDelta>, IModule, SModel> assign(Tuples._3<? extends Iterable<IDelta>, ? extends IModule, ? extends SModel> from) {
     super.assign(from);
     tuple.assign(from._1(), from._2());
     return this;
   }
 
   @SuppressWarnings(value = "unchecked")
-  public TResource assignFrom(Tuples._2<IModule, SModelDescriptor> from) {
+  public TResource assignFrom(Tuples._2<IModule, SModel> from) {
     return (TResource) super.assign(from);
   }
 

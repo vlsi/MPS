@@ -9,7 +9,7 @@ import jetbrains.mps.cache.CachesManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import java.util.Set;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import java.util.HashSet;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.project.GlobalScope;
@@ -25,6 +25,7 @@ import java.util.List;
   private static final KeyProducer keyProducer = new KeyProducer();
   private static final Logger LOG = Logger.getLogger(ConceptAndSuperConceptsCache.class);
   private static final CachesManager.CacheCreator<SNode> CREATOR = new CachesManager.CacheCreator<SNode>() {
+    @Override
     public AbstractCache create(Object key, SNode element) {
       return new ConceptAndSuperConceptsCache(key, element);
     }
@@ -38,12 +39,12 @@ import java.util.List;
   }
 
   @Override
-  public Set<SModelDescriptor> getDependsOnModels(Object element) {
-    Set<SModelDescriptor> dependsOnModel = new HashSet<SModelDescriptor>();
+  public Set<SModel> getDependsOnModels(Object element) {
+    Set<SModel> dependsOnModel = new HashSet<SModel>();
     for (SNode concept : getConcepts()) {
       //  http://youtrack.jetbrains.net/issue/MPS-8362 
       //  http://youtrack.jetbrains.net/issue/MPS-8556 
-      SModelDescriptor descriptor = concept.getModel().getModelDescriptor();
+      SModel descriptor = concept.getModel().getModelDescriptor();
       if (descriptor == null) {
         LOG.error(getAssertionMessage(element, concept));
       } else {

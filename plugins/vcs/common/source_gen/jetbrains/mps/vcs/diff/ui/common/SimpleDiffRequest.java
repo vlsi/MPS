@@ -7,7 +7,7 @@ import com.intellij.openapi.diff.DiffContent;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import com.intellij.openapi.diff.SimpleContent;
@@ -30,15 +30,18 @@ public class SimpleDiffRequest extends DiffRequest {
     }
   }
 
+  @Override
   public String getWindowTitle() {
     return "Model difference";
   }
 
+  @Override
   public String[] getContentTitles() {
     return myContentTitles;
   }
 
   @NotNull
+  @Override
   public DiffContent[] getContents() {
     return myContents;
   }

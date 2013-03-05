@@ -4,6 +4,7 @@
     <classNode dependClassName="java.awt.GridBagLayout" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
     <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.AbstractAction" />
     <classNode dependClassName="javax.swing.JButton" />
@@ -18,6 +19,7 @@
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.InterruptedException" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Process" />
     <classNode dependClassName="java.lang.ProcessBuilder" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -27,18 +29,22 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.nanoc.debug.ProgramsLocationUtil" />
-    <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
+    <classNode dependClassName="jetbrains.mps.project.facets.JavaModuleFacet" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
+    <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.nanoc.pluginutil.ProgramsLocationEditor" file="ProgramsLocationEditor.java">
     <classNode dependClassName="java.awt.GridBagLayout" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
     <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.AbstractAction" />
     <classNode dependClassName="javax.swing.JButton" />

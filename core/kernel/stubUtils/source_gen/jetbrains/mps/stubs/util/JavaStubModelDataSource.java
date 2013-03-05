@@ -11,10 +11,10 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.baseLanguage.javastub.ASMModelLoader;
 import jetbrains.mps.reloading.ClassPathFactory;
@@ -43,24 +43,24 @@ public class JavaStubModelDataSource extends FolderSetDataSource implements Stub
   }
 
   @Override
-  public SModel loadSModel(IModule module, SModelDescriptor descriptor) {
-    SModel model = new SModel(descriptor.getSModelReference(), new ForeignNodeIdMap());
+  public SModel loadSModel(IModule module, SModel descriptor) {
+    SModel model = new jetbrains.mps.smodel.SModel(descriptor.getReference(), new ForeignNodeIdMap());
     for (Language l : getLanguagesToImport()) {
-      model.addLanguage(l.getModuleReference());
+      ((SModelInternal) model).addLanguage(l.getModuleReference());
     }
     CompositeClassPathItem cp = this.createClassPath(descriptor);
     new ASMModelLoader(module, cp, model, skipPrivate).updateModel();
     return model;
   }
 
-  private CompositeClassPathItem createClassPath(SModelDescriptor descriptor) {
+  private CompositeClassPathItem createClassPath(SModel descriptor) {
     CompositeClassPathItem cp = new CompositeClassPathItem();
     for (String dir : getPaths()) {
       try {
         if (dir.indexOf("!") != -1) {
           cp.add(ClassPathFactory.getInstance().createFromPath(dir.substring(0, dir.indexOf("!")), this.getClass().getName()));
         } else {
-          String name = descriptor.getSModelReference().getLongName().replace('.', File.separatorChar);
+          String name = descriptor.getReference().getLongName().replace('.', File.separatorChar);
 
           // dirty hack for current problems with path separators 
           String dirCorrected = dir.replace('/', File.separatorChar);
@@ -83,7 +83,7 @@ public class JavaStubModelDataSource extends FolderSetDataSource implements Stub
   }
 
   @Override
-  public boolean hasModel(SModelDescriptor md) {
+  public boolean hasModel(SModel md) {
     return !(getPaths().isEmpty());
   }
 }

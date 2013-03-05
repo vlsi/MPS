@@ -20,7 +20,8 @@ import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.ModuleContext;
@@ -38,21 +39,25 @@ public abstract class NodeTreeModel implements TreeModel {
   public abstract SNodeReference[] getChildren(SNodeReference node);
 
   @NotNull
+  @Override
   public Grouper[] getGroupers() {
     return Grouper.EMPTY_ARRAY;
   }
 
   @NotNull
+  @Override
   public Sorter[] getSorters() {
     return Sorter.EMPTY_ARRAY;
   }
 
   @NotNull
+  @Override
   public Filter[] getFilters() {
     return Filter.EMPTY_ARRAY;
   }
 
   @NotNull
+  @Override
   public StructureViewTreeElement getRoot() {
     return new NodeTreeModel.NodeTreeElement(NodeTreeModel.FAKE_ROOT);
   }
@@ -64,6 +69,7 @@ public abstract class NodeTreeModel implements TreeModel {
       this.myNode = node;
     }
 
+    @Override
     public TreeElement[] getChildren() {
       SNodeReference[] children = ((myNode == NodeTreeModel.FAKE_ROOT) ?
         NodeTreeModel.this.getRootNodes() :
@@ -78,20 +84,25 @@ public abstract class NodeTreeModel implements TreeModel {
       return childrenElements;
     }
 
+    @Override
     public Object getValue() {
       return myNode;
     }
 
+    @Override
     public ItemPresentation getPresentation() {
       return ModelAccess.instance().runReadAction(new Computable<ItemPresentation>() {
+        @Override
         public ItemPresentation compute() {
           return new NodeTreeModel.NodeTreeElementPresentation(myNode);
         }
       });
     }
 
+    @Override
     public void navigate(boolean b) {
       DataManager.getInstance().getDataContextFromFocus().doWhenDone(new AsyncResult.Handler<DataContext>() {
+        @Override
         public void run(DataContext dataContext) {
           final Project p = MPSCommonDataKeys.PROJECT.getData(dataContext);
           if (p == null) {
@@ -100,7 +111,7 @@ public abstract class NodeTreeModel implements TreeModel {
           ModelAccess.instance().runWriteInEDT(new Runnable() {
             @Override
             public void run() {
-              SNode node = ((SNodePointer) myNode).getNode();
+              SNode node = ((SNodePointer) myNode).resolve(MPSModuleRepository.getInstance());
               if (node == null) {
                 return;
               }
@@ -119,10 +130,12 @@ public abstract class NodeTreeModel implements TreeModel {
       });
     }
 
+    @Override
     public boolean canNavigate() {
       return true;
     }
 
+    @Override
     public boolean canNavigateToSource() {
       return true;
     }
@@ -130,7 +143,7 @@ public abstract class NodeTreeModel implements TreeModel {
 
   protected static class NodeTreeElementPresentation extends NodePresentation {
     public NodeTreeElementPresentation(SNodeReference node) {
-      super(((SNodePointer) node).getNode());
+      super(((SNodePointer) node).resolve(MPSModuleRepository.getInstance()));
     }
 
     @Override

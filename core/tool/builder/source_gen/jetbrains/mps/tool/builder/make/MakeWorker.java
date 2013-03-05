@@ -13,9 +13,10 @@ import java.util.LinkedHashSet;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -38,8 +39,8 @@ public class MakeWorker extends MpsWorker {
       SetSequence.fromSet(toCompile).addSequence(SetSequence.fromSet(go.getModules()));
     }
     for (final SModel modelDescriptor : go.getModels()) {
-      SModule owningModule = ModelAccess.instance().runReadAction(new Computable<SModule>() {
-        public SModule compute() {
+      SModule owningModule = ModelAccess.instance().runReadAction(new Computable<IModule>() {
+        public IModule compute() {
           return modelDescriptor.getModule();
         }
       });
@@ -47,8 +48,7 @@ public class MakeWorker extends MpsWorker {
     }
     final Set<SModule> finalToCompile = CollectionUtil.filter(toCompile, new Condition<SModule>() {
       public boolean met(SModule module) {
-        boolean compileInMps = !(module instanceof IModule) || ((IModule) module).isCompileInMPS();
-        return compileInMps && !(module.isPackaged());
+        return SModuleOperations.isCompileInMps(module) && !(module.isPackaged());
       }
     });
     if (finalToCompile.isEmpty()) {
@@ -85,6 +85,7 @@ public class MakeWorker extends MpsWorker {
     failBuild("make");
   }
 
+  @Override
   public void work() {
     setupEnvironment();
     final Project project = createDummyProject();

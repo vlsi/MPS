@@ -137,6 +137,7 @@ public class MPSModulesPartitioner {
       this.module = module;
     }
 
+    @Override
     public Set<? extends IVertex> getNexts() {
       return (useMeta ?
         metaDependencies :

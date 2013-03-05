@@ -29,7 +29,8 @@ import jetbrains.mps.lang.test.runtime.TransformationTest;
 import jetbrains.mps.lang.test.runtime.TransformationTestRunner;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.ProjectOperationContext;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -68,7 +69,7 @@ public class EditorTests extends DataMPSFixtureTestCase {
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        SModelDescriptor descr = SModelFileTracker.getInstance().findModel(modelFile);
+        SModel descr = SModelFileTracker.getInstance().findModel(modelFile);
         if (descr == null) {
           thrown[0] = new IllegalStateException("model not found");
           return;
@@ -76,7 +77,7 @@ public class EditorTests extends DataMPSFixtureTestCase {
 
         SModel model = descr.getSModel();
         if (model != null) {
-          for (SNode root : model.roots()) {
+          for (SNode root : model.getRootNodes()) {
             roots.add(root);
           }
         }
@@ -84,7 +85,7 @@ public class EditorTests extends DataMPSFixtureTestCase {
         for (SNode r : roots) {
           if ("EditorTestCase".equals(r.getConcept().getName())) {
             try {
-              Class<?> cls = Class.forName(model.getLongName() + "." + r.getName() + "_Test");
+              Class<?> cls = Class.forName(jetbrains.mps.util.SNodeOperations.getModelLongName(model) + "." + r.getName() + "_Test");
               Method mth = cls.getMethod("test_" + r.getName());
               TransformationTest btt = (TransformationTest) cls.newInstance();
               btt.setTestRunner(new SimpleTransformationTestRunner(r, mth));

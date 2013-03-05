@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.event.SModelListener;
@@ -23,50 +23,109 @@ import org.jetbrains.mps.openapi.module.SModule;
 /**
  * This is a common descriptor used for all models - stub, transient, caches, regular MPS models
  */
-public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel {
+public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel, SModelInternal {
   /**
    * After model loading call SModelRepository.fireModelRepositoryChanged
    */
+  @Deprecated
+  /**
+   * Cast to SModelInternal in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   SModel getSModel();
 
-  @Override
+  @Deprecated
+  /**
+   * Replace with implemented in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   IModule getModule();
 
+  @Deprecated
+  /**
+   * Cast to SModelInternal in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   void setModule(SModule container);
 
-  //------
 
-  void forceLoad();
-
-  // TODO remove
+  @Deprecated
+  /**
+   * Replace with SNodeOperations.isGeneratable in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   boolean isGeneratable();
 
   //------
 
+  @Deprecated
+  /**
+   * Replace with getReference() in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   SModelReference getSModelReference();
 
+  @Deprecated
+  /**
+   * Replace with SNodeOperations.getModelLongName(this) in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   String getLongName();
 
+  @Deprecated
+  /**
+   * Replace with SModelStereotype.getStereotype(this) in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   String getStereotype();
 
   //------
 
+  @Deprecated
+  /**
+   * Replace with SNodeOperations.isRegistered in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   boolean isRegistered();
 
+  @Deprecated
+  /**
+   * Replace with detach() in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   void dispose();
 
   //------
 
-  //not used, left for compatibility
+  @Deprecated
+  /**
+   * Replace with getModule() instanceof TransientModelsModule in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   public boolean isTransient();
 
   //------
 
-  SModelDescriptor resolveModel(SModelReference reference);
+  @Deprecated
+  /**
+   * Cast to SModelInternal in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  SModel resolveModel(SModelReference reference);
 
   //--------------model listeners--------------------
 
+  @Deprecated
+  /**
+   * Cast to SModelInternal in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   void addModelListener(@NotNull SModelListener listener);
 
+  @Deprecated
+  /**
+   * Cast to SModelInternal in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   void removeModelListener(@NotNull SModelListener listener);
 }

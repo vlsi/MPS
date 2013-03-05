@@ -24,10 +24,10 @@
     <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoringTarget" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelInternal" />
     <classNode dependClassName="jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.refactoring.framework.BaseLoggableRefactoring" />
   </dependency>
@@ -46,7 +46,7 @@
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoringTarget" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="jetbrains.mps.refactoring.framework.BaseRefactoring" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.refactorings.Rename_Target" file="Rename_Target.java">

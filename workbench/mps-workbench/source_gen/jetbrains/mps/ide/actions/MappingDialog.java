@@ -12,6 +12,7 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import javax.swing.JScrollPane;
 import com.intellij.ui.ScrollPaneFactory;
+import java.awt.Dimension;
 import javax.swing.tree.TreeSelectionModel;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
@@ -22,15 +23,14 @@ import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
-import java.awt.Dimension;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.icons.MPSIcons;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.util.Condition;
 import com.intellij.ui.treeStructure.Tree;
@@ -44,6 +44,7 @@ public class MappingDialog extends DialogWrapper {
   private Project myProject;
   private SNode myResult;
   private MPSTree myTree = new MPSTree() {
+    @Override
     protected MPSTreeNode rebuild() {
       return MappingDialog.this.rebuildTree();
     }
@@ -56,8 +57,10 @@ public class MappingDialog extends DialogWrapper {
     myLanguage = language;
     JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(myTree);
     myMainComponent.add(scrollPane, BorderLayout.CENTER);
+    myMainComponent.setPreferredSize(new Dimension(500, 400));
     myTree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
     myTree.addTreeSelectionListener(new TreeSelectionListener() {
+      @Override
       public void valueChanged(TreeSelectionEvent e) {
         if (e.getNewLeadSelectionPath() == null) {
           return;
@@ -72,6 +75,7 @@ public class MappingDialog extends DialogWrapper {
         }
         final SNodeTreeNode treeNode = (SNodeTreeNode) node;
         ModelAccess.instance().runWriteInEDT(new Runnable() {
+          @Override
           public void run() {
             SNode node = treeNode.getSNode();
             if (SNodeOperations.isDisposed(node) || node.getModel() == null || node.getModel().getModelDescriptor() == null) {
@@ -90,8 +94,8 @@ public class MappingDialog extends DialogWrapper {
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
-    getWindow().setMinimumSize(new Dimension(500, 400));
     return myMainComponent;
   }
 
@@ -104,12 +108,13 @@ public class MappingDialog extends DialogWrapper {
       ModuleContext moduleContext = new ModuleContext(generator, ProjectHelper.toMPSProject(myProject));
       MPSTreeNode generatorTreeNode = new MappingDialog.MyTreeNode(moduleContext, MPSIcons.Nodes.Generator, generator.getModuleFqName(), "generator/" + generator.getName());
       root.add(generatorTreeNode);
-      for (SModelDescriptor md : generator.getOwnTemplateModels()) {
-        MPSTreeNode modelTreeNode = new MappingDialog.MyTreeNode(moduleContext, IconManager.getIconFor(md), md.toString(), md.getLongName() + "@" + md.getStereotype());
+      for (SModel md : generator.getOwnTemplateModels()) {
+        MPSTreeNode modelTreeNode = new MappingDialog.MyTreeNode(moduleContext, IconManager.getIconFor(md), md.toString(), SNodeOperations.getModelLongName(md) + "@" + SModelStereotype.getStereotype(md));
         generatorTreeNode.add(modelTreeNode);
         SModel model = md.getSModel();
         for (SNode node : SModelOperations.getRoots(model, "jetbrains.mps.lang.generator.structure.MappingConfiguration")) {
           SNodeTreeNode nodeTreeNode = new SNodeTreeNode(node, null, moduleContext, new Condition<SNode>() {
+            @Override
             public boolean met(SNode p0) {
               return false;
             }
@@ -128,6 +133,7 @@ public class MappingDialog extends DialogWrapper {
   @Override
   protected void doOKAction() {
     Object[] selectedNode = myTree.getSelectedNodes(SNodeTreeNode.class, new Tree.NodeFilter() {
+      @Override
       public boolean accept(Object p0) {
         return true;
       }

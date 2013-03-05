@@ -51,6 +51,7 @@
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.ui.components.JBScrollPane" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="javax.swing.AbstractAction" />
     <classNode dependClassName="javax.swing.JComponent" />
@@ -61,10 +62,10 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.container.IEvaluationContainer" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.container.Properties" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.state.DebugSession" />
+    <classNode dependClassName="jetbrains.mps.extapi.model.EditableSModel" />
     <classNode dependClassName="jetbrains.mps.ide.embeddableEditor.EmbeddableEditor" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.Highlighter" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi" />
@@ -133,11 +134,14 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.InvalidEvaluatedExpressionException" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.InvocationTargetEvaluationException" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.proxies.IValueProxy" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.api.state.proxy.JavaLocation" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.api.state.proxy.JavaStackFrame" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.state.proxy.JavaThread" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.state.proxy.JavaValue" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.state.proxy.ValueUtil" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.container.IEvaluationContainer" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.state.DebugSession" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.state.JavaUiStateImpl" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationTree" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

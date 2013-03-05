@@ -9,7 +9,7 @@ import java.util.HashMap;
 import jetbrains.mps.findUsages.UsagesList;
 import java.util.Set;
 import java.util.HashSet;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.ArrayList;
@@ -23,22 +23,25 @@ import java.util.Collection;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.adapter.SConceptNodeAdapterBase;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.smodel.SModelInternal;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -56,14 +59,14 @@ public class RefactoringContext {
   private Set<String> myTransientParameters = new HashSet<String>();
   private boolean myIsLocal = false;
   private boolean myDoesGenerateModels = false;
-  private SModelDescriptor mySelectedModel;
+  private SModel mySelectedModel;
   private SNode mySelectedNode;
   private List<SNode> mySelectedNodes = new ArrayList<SNode>();
   private IOperationContext myCurrentOperationContext;
   private IScope myCurrentScope;
   private Project mySelectedProject;
   private IModule mySelectedModule;
-  private List<SModelDescriptor> mySelectedModels;
+  private List<SModel> mySelectedModels;
   private List<IModule> mySelectedModules;
   private Map<StructureModificationData.ConceptFeature, StructureModificationData.ConceptFeature> myConceptFeatureMap = new HashMap<StructureModificationData.ConceptFeature, StructureModificationData.ConceptFeature>();
   private Map<StructureModificationData.FullNodeId, StructureModificationData.FullNodeId> myMoveMap = new HashMap<StructureModificationData.FullNodeId, StructureModificationData.FullNodeId>();
@@ -213,7 +216,7 @@ public class RefactoringContext {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     List<SNode> targetNodes = CopyUtil.copy(sourceNodes, mapping);
     for (SNode node : targetNodes) {
-      targetModel.addRoot(node);
+      targetModel.addRootNode(node);
     }
     for (SNode key : mapping.keySet()) {
       SNode target = mapping.get(key);
@@ -284,6 +287,7 @@ public class RefactoringContext {
       } else {
         if (newFeatureName != null && !(newFeatureName.equals(oldFeatureName))) {
           SPropertyOperations.set(SNodeOperations.cast(feature, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "name", newFeatureName);
+          ((SConceptNodeAdapterBase) SConceptRepository.getInstance().getConcept(oldFeatureName)).internalSetId(newFeatureName);
         }
       }
     }
@@ -305,16 +309,16 @@ public class RefactoringContext {
     }
   }
 
-  public void changeModelName(EditableSModelDescriptor model, String newName) {
+  public void changeModelName(EditableSModel model, String newName) {
     if (LanguageAspect.STRUCTURE.is(model)) {
-      for (SNode concept : ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getNodes(((SModel) model.getSModel()), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
+      for (SNode concept : ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getNodes(((SModel) ((SModelInternal) model).getSModel()), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
         this.changeFeatureName(concept, NameUtil.longNameFromNamespaceAndShortName(newName, SPropertyOperations.getString(concept, "name")), SPropertyOperations.getString(concept, "name"));
       }
     }
 
-    SModelReference oldModelRef = model.getSModelReference();
-    model.rename(SModelFqName.fromString(newName), false);
-    ListSequence.fromList(myLoggedData.getData()).addElement(new StructureModification.RenameModel(oldModelRef, model.getSModelReference()));
+    SModelReference oldModelRef = model.getReference();
+    model.rename(newName, false);
+    ListSequence.fromList(myLoggedData.getData()).addElement(new StructureModification.RenameModel(oldModelRef, model.getReference()));
   }
 
   public void updateByDefault(SModel model) {
@@ -350,7 +354,7 @@ public class RefactoringContext {
       computeCaches();
     }
 
-    for (SNode node : model.nodes()) {
+    for (SNode node : new NodesIterable(model)) {
       String conceptFQName = node.getConcept().getConceptId();
       Set<StructureModificationData.ConceptFeature> exactConceptFeatures = myFQNamesToConceptFeaturesCache.get(conceptFQName);
       if (exactConceptFeatures != null) {
@@ -472,7 +476,7 @@ public class RefactoringContext {
       if (data.type == StructureModification.RenameNode.RenameType.CONCEPT) {
         continue;
       }
-      SNode oldNode = ((SNodePointer) data.oldID).getNode();
+      SNode oldNode = ((SNodePointer) data.oldID).resolve(MPSModuleRepository.getInstance());
       if (oldNode == null || oldNode.getParent() == null) {
         continue;
       }
@@ -516,19 +520,19 @@ public class RefactoringContext {
     mySelectedNodes = selectedNodes;
   }
 
-  public SModelDescriptor getSelectedModel() {
+  public SModel getSelectedModel() {
     return mySelectedModel;
   }
 
-  public void setSelectedModel(SModelDescriptor selectedModel) {
+  public void setSelectedModel(SModel selectedModel) {
     mySelectedModel = selectedModel;
   }
 
-  public List<SModelDescriptor> getSelectedModels() {
+  public List<SModel> getSelectedModels() {
     return mySelectedModels;
   }
 
-  public void setSelectedModels(List<SModelDescriptor> selectedModels) {
+  public void setSelectedModels(List<SModel> selectedModels) {
     mySelectedModels = selectedModels;
   }
 
@@ -594,7 +598,7 @@ public class RefactoringContext {
 
               break;
             case MODEL:
-              SModelDescriptor descriptor = ((SModel) target).getModelDescriptor();
+              SModel descriptor = ((SModel) target).getModelDescriptor();
               setSelectedModel(descriptor);
               setSelectedModule(descriptor.getModule());
               break;

@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.testbench.junit.util.ScopesTest" file="ScopesTest.java">
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="java.lang.System" />

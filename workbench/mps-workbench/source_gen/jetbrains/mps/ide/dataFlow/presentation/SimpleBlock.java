@@ -11,6 +11,7 @@ public class SimpleBlock extends AbstractBlock {
     super(x, y, width, height, source, caption);
   }
 
+  @Override
   public void paintBlock(Graphics g) {
     g.setColor(Color.WHITE);
     g.fillRect(this.myX, this.myY, this.myWidth, this.myHeight);

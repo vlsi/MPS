@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Set;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -47,7 +47,7 @@ public class SetNodePackage_Action extends BaseAction {
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).all(new IWhereFilter<SNode>() {
       public boolean accept(SNode n) {
-        return SNodeOperations.getParent(n) == null && !(SNodeOperations.getModel(n).isNotEditable());
+        return SNodeOperations.getParent(n) == null && !(SNodeOperations.getModel(n).isReadOnly());
       }
     });
   }

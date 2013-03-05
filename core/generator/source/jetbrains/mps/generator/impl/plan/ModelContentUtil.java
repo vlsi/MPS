@@ -17,7 +17,8 @@ package jetbrains.mps.generator.impl.plan;
 
 import jetbrains.mps.generator.impl.TemplateModelScanner;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.Collection;
@@ -43,23 +44,23 @@ public class ModelContentUtil {
       TemplateModelScanner templateModelScanner = new TemplateModelScanner(model);
       templateModelScanner.scan();
       Set<String> namespaces = new HashSet<String>(templateModelScanner.getQueryLanguages());
-      for (ModuleReference ref : model.engagedOnGenerationLanguages()) {
+      for (ModuleReference ref : ((jetbrains.mps.smodel.SModel) model).engagedOnGenerationLanguages()) {
         namespaces.add(ref.getModuleFqName());
       }
       return namespaces;
     }
     Set<String> namespaces = new HashSet<String>();
-    for (ModuleReference ref : model.engagedOnGenerationLanguages()) {
+    for (ModuleReference ref : ((jetbrains.mps.smodel.SModel) model).engagedOnGenerationLanguages()) {
       namespaces.add(ref.getModuleFqName());
     }
-    for (SNode root : model.roots()) {
+    for (SNode root : model.getRootNodes()) {
       namespaces.add(NameUtil.namespaceFromConceptFQName(root.getConcept().getId()));
       for (SNode child : jetbrains.mps.util.SNodeOperations.getDescendants(root, null)) {
         namespaces.add(NameUtil.namespaceFromConceptFQName(child.getConcept().getId()));
       }
     }
     // empty behavior model should have it's behavior aspect descriptor generated
-    SModelDescriptor modelDescriptor = model.getModelDescriptor();
+    SModel modelDescriptor = model.getModelDescriptor();
     if (modelDescriptor != null && modelDescriptor.getModule() instanceof Language && LanguageAspect.BEHAVIOR.is(modelDescriptor)) {
       namespaces.add(BootstrapLanguages.BEHAVIOR.getModuleFqName());
     }

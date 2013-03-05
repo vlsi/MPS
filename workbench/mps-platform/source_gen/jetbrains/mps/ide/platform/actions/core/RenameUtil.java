@@ -44,6 +44,7 @@ public class RenameUtil {
       this.add(this.myTextField, BorderLayout.CENTER);
     }
 
+    @Override
     public String getName() {
       return this.myTextField.getText();
     }

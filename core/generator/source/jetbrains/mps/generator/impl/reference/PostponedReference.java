@@ -18,7 +18,8 @@ package jetbrains.mps.generator.impl.reference;
 import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
 import jetbrains.mps.generator.impl.TemplateGenerator;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -41,11 +42,13 @@ public class PostponedReference extends SReference {
     myGenerator = generator;
   }
 
+  @Override
   @Deprecated
   public boolean isExternal() {
     return false;
   }
 
+  @Override
   @Nullable
   public synchronized SModelReference getTargetSModelReference() {
     if (myReferenceInfo != null) {
@@ -58,6 +61,7 @@ public class PostponedReference extends SReference {
     return null;
   }
 
+  @Override
   @Deprecated
   /**
    * Use method in SReferenceBase class, as when you change ref, you know what ref it is
@@ -67,10 +71,12 @@ public class PostponedReference extends SReference {
     throw new RuntimeException("not supported");
   }
 
+  @Override
   public org.jetbrains.mps.openapi.model.SModel getTargetModel() {
     return SModelRepository.getInstance().getModelDescriptor(getTargetSModelReference());
   }
 
+  @Override
   protected SNode getTargetNode_internal() {
     SReference ref = getReplacementReference();
     if (ref == null) return null;
@@ -127,7 +133,7 @@ public class PostponedReference extends SReference {
           myReplacementReference = new StaticReference(
             role,
             outputSourceNode,
-            targetModelReference == null ? myGenerator.getOutputModel().getSModelReference() : targetModelReference,
+            targetModelReference == null ? myGenerator.getOutputModel().getReference() : targetModelReference,
             null,
             myReferenceInfo.getResolveInfoForNothing());
         }
@@ -139,7 +145,7 @@ public class PostponedReference extends SReference {
         myReplacementReference = new StaticReference(
           role,
           outputSourceNode,
-          targetModelReference == null ? myGenerator.getOutputModel().getSModelReference() : targetModelReference,
+          targetModelReference == null ? myGenerator.getOutputModel().getReference() : targetModelReference,
           null,
           myReferenceInfo.getResolveInfoForNothing());
       } else {

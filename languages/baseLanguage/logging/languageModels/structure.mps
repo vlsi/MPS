@@ -9,6 +9,7 @@
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1167227138527">
       <property name="name" nameId="tpck.1169194664001" value="LogStatement" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
     </node>
     <node type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="1167245107475">
@@ -20,6 +21,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="PrintStatement" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="print" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
     </node>

@@ -18,18 +18,18 @@ package jetbrains.mps.idea.core.psi.impl;
 
 import com.intellij.psi.PsiElement;
 import com.intellij.util.ArrayUtil;
-import com.intellij.util.SmartList;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -68,8 +68,8 @@ public class MPSPsiNode extends MPSPsiNodeBase {
     return myContainingRole;
   }
 
-  public SNodeReference getNodeReference() {
-    return new SNodePointer((SModelReference) getContainingModel().getModelReference(), myId);
+  public SNodeReference getSNodeReference() {
+    return new SNodePointer((SModelReference) getContainingModel().getSModelReference(), myId);
   }
 
   public String getProperty(String key) {
@@ -93,10 +93,9 @@ public class MPSPsiNode extends MPSPsiNodeBase {
   protected <T extends PsiElement> T getReferenceTarget(String role, @NotNull Class<T> aClass) {
     if (role == null) return null;
 
-    List<T> result = null;
     for (PsiElement child = getFirstChild(); child != null; child = child.getNextSibling()) {
       if (child instanceof MPSPsiRef && role.equals(((MPSPsiRef) child).getContainingRole())) {
-        MPSPsiNode refTarget = ((MPSPsiRef) child).resolve();
+        PsiElement refTarget = ((MPSPsiRef) child).resolve();
         if (aClass.isInstance(refTarget)) {
           return (T) refTarget;
         }
@@ -105,10 +104,21 @@ public class MPSPsiNode extends MPSPsiNodeBase {
     return null;
   }
 
+  public MPSPsiRef[] getReferences(String role) {
+    if (role == null) return null;
+
+    List<MPSPsiRef> result = new ArrayList<MPSPsiRef>();
+    for (PsiElement child = getFirstChild(); child != null; child = child.getNextSibling()) {
+      if (child instanceof MPSPsiRef && role.equals(((MPSPsiRef) child).getContainingRole())) {
+        result.add((MPSPsiRef) child);
+      }
+    }
+    return ArrayUtil.toObjectArray(result, MPSPsiRef.class);
+  }
+
   public <T extends PsiElement> T getChildOfType(String role, @NotNull Class<T> aClass) {
     if (role == null) return null;
 
-    List<T> result = null;
     for (PsiElement child = getFirstChild(); child != null; child = child.getNextSibling()) {
       if (child instanceof MPSPsiNode && role.equals(((MPSPsiNode) child).getContainingRole()) && aClass.isInstance(child)) {
         return (T) child;
@@ -128,10 +138,10 @@ public class MPSPsiNode extends MPSPsiNodeBase {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
-        SNode node = getNodeReference().resolve(MPSModuleRepository.getInstance());
+        SNode node = getSNodeReference().resolve(MPSModuleRepository.getInstance());
         if (node == null) return;
 
-        SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
+        SModel modelDescriptor = node.getModel().getModelDescriptor();
         if (modelDescriptor == null) return;
 
         IModule module = modelDescriptor.getModule();

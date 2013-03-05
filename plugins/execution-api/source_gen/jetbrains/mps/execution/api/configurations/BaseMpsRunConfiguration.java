@@ -17,10 +17,12 @@ public abstract class BaseMpsRunConfiguration extends RunConfigurationBase imple
     return DefaultRunExecutor.EXECUTOR_ID.equals(executorId);
   }
 
+  @Override
   public boolean isGeneratedName() {
     return true;
   }
 
+  @Override
   public String suggestedName() {
     return getName();
   }

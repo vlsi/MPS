@@ -72,6 +72,7 @@ public class XmlTestReporter implements ITestReporter {
     new XMLOutputter(Format.getPrettyFormat()).output(document, os);
   }
 
+  @Override
   public void runFinished() {
     long suiteFinished = System.currentTimeMillis();
     root.setAttribute(jdom.attribute(ATTR_TESTS, String.valueOf(MapSequence.fromMap(testStarted).count()))).setAttribute(jdom.attribute(ATTR_FAILURES, String.valueOf(SetSequence.fromSet(testFailed).count()))).setAttribute(jdom.attribute(ATTR_ERRORS, String.valueOf(0))).setAttribute(jdom.attribute(ATTR_TIME, seconds(suiteFinished - suiteStarted)));
@@ -83,12 +84,14 @@ public class XmlTestReporter implements ITestReporter {
     }
   }
 
+  @Override
   public void testStarted(String testFQname) {
     MapSequence.fromMap(testStarted).put(testFQname, System.currentTimeMillis());
     MapSequence.fromMap(testElement).put(testFQname, jdom.element(TESTCASE).setAttribute(jdom.attribute(ATTR_NAME, shortName(testFQname))).setAttribute(jdom.attribute(ATTR_CLASSNAME, prefix(testFQname))));
     root.addContent(MapSequence.fromMap(testElement).get(testFQname));
   }
 
+  @Override
   public void testFinished(String testFQname) {
     if (!(MapSequence.fromMap(testElement).containsKey(testFQname))) {
       testStarted(testFQname);
@@ -103,6 +106,7 @@ public class XmlTestReporter implements ITestReporter {
     }
   }
 
+  @Override
   public void testFailed(String testFQname, String msg, String longMsg) {
     if (!(MapSequence.fromMap(testElement).containsKey(testFQname))) {
       testStarted(testFQname);
@@ -116,6 +120,7 @@ public class XmlTestReporter implements ITestReporter {
     }
   }
 
+  @Override
   public void testOutputLine(String testFQname, String msg) {
     if (!(MapSequence.fromMap(testElement).containsKey(testFQname))) {
       testStarted(testFQname);
@@ -128,6 +133,7 @@ public class XmlTestReporter implements ITestReporter {
     sb.append(msg).append("\n");
   }
 
+  @Override
   public void testErrorLine(String testFQname, String msg) {
     if (!(MapSequence.fromMap(testElement).containsKey(testFQname))) {
       testStarted(testFQname);
@@ -140,10 +146,12 @@ public class XmlTestReporter implements ITestReporter {
     sb.append(msg).append("\n");
   }
 
+  @Override
   public void outputLine(String msg) {
     suiteStdout.append(msg).append("\n");
   }
 
+  @Override
   public void errorLine(String msg) {
     suiteStderr.append(msg).append("\n");
   }

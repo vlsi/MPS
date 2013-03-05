@@ -9,6 +9,7 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.extapi.persistence.FolderSetDataSource;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.smodel.Language;
@@ -38,7 +39,8 @@ public class JavaClassStubModelDescriptor extends BaseSModelDescriptorWithSource
     myModelRoot = root;
   }
 
-  protected SModel getCurrentModelInternal() {
+  @Override
+  protected org.jetbrains.mps.openapi.model.SModel getCurrentModelInternal() {
     return myModel;
   }
 
@@ -48,10 +50,16 @@ public class JavaClassStubModelDescriptor extends BaseSModelDescriptorWithSource
     return (FolderSetDataSource) super.getSource();
   }
 
+  @Override
+  public boolean isReadOnly() {
+    return true;
+  }
+
+  @Override
   public synchronized SModel getSModel() {
     if (myModel == null) {
       myModel = createModel();
-      myModel.setModelDescriptor(this);
+      ((SModelInternal) myModel).setModelDescriptor(this);
       fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
     }
     return myModel;
@@ -65,7 +73,7 @@ public class JavaClassStubModelDescriptor extends BaseSModelDescriptorWithSource
   private SModel createModel() {
     SModel model = new SModel(getSModelReference(), new ForeignNodeIdMap());
     for (Language l : getLanguagesToImport()) {
-      model.addLanguage(l.getModuleReference());
+      ((SModelInternal) model).addLanguage(l.getModuleReference());
     }
     CompositeClassPathItem cp = createClassPath();
     new ASMModelLoader(((IModule) myModelRoot.getModule()), cp, model, false).updateModel();
@@ -127,6 +135,7 @@ public class JavaClassStubModelDescriptor extends BaseSModelDescriptorWithSource
     }
     final SModel result = createModel();
     super.replaceModel(new Runnable() {
+      @Override
       public void run() {
         myModel = result;
       }

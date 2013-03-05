@@ -8,7 +8,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -36,10 +36,10 @@ public class CloneModel_Action extends BaseAction {
     if (((Integer) MapSequence.fromMap(_params).get("selSize")) != 1) {
       return false;
     }
-    IModule module = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getModule();
+    IModule module = ((SModel) MapSequence.fromMap(_params).get("model")).getModule();
     if (module instanceof Language) {
       Language language = (Language) module;
-      return language.getAspectForModel(((SModelDescriptor) MapSequence.fromMap(_params).get("model"))) == null;
+      return language.getAspectForModel(((SModel) MapSequence.fromMap(_params).get("model"))) == null;
     } else {
       return true;
     }
@@ -81,7 +81,7 @@ public class CloneModel_Action extends BaseAction {
       final Wrappers._T<CloneModelDialog> dialog = new Wrappers._T<CloneModelDialog>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          dialog.value = new CloneModelDialog(((SModelDescriptor) MapSequence.fromMap(_params).get("model")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+          dialog.value = new CloneModelDialog(((SModel) MapSequence.fromMap(_params).get("model")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
         }
       });
       dialog.value.show();

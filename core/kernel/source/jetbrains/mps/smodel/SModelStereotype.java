@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -45,10 +45,6 @@ public class SModelStereotype {
 
   public static final String[] values = new String[]{NONE, GENERATOR, TESTS};
 
-  public static boolean isUserModel(@NotNull SModel model) {
-    return isUserModelStereotype(model.getStereotype());
-  }
-
   public static boolean isUserModel(@NotNull org.jetbrains.mps.openapi.model.SModel model) {
     return isUserModelStereotype(getStereotype(model));
   }
@@ -56,10 +52,6 @@ public class SModelStereotype {
   private static boolean isUserModelStereotype(String stereotype) {
     return NONE.equals(stereotype) || GENERATOR.equals(stereotype) || TEMPLATES.equals(stereotype)
       || TESTS.equals(stereotype) || DESCRIPTOR.equals(stereotype);
-  }
-
-  public static boolean isGeneratorModel(@NotNull SModel model) {
-    return isGeneratorModelStereotype(model.getStereotype());
   }
 
   public static boolean isGeneratorModel(@NotNull org.jetbrains.mps.openapi.model.SModel model) {
@@ -72,10 +64,6 @@ public class SModelStereotype {
 
   public static boolean isTestModel(org.jetbrains.mps.openapi.model.SModel model) {
     return isTestModelStereotype(getStereotype(model));
-  }
-
-  public static boolean isTestModel(SModel model) {
-    return isTestModelStereotype(model.getStereotype());
   }
 
   public static boolean isStubModelStereotype(String stereotype) {
@@ -91,12 +79,24 @@ public class SModelStereotype {
   }
 
   public static String getStereotype(org.jetbrains.mps.openapi.model.SModel model) {
-    String name = model.getModelName();
-    int atIndex = name.lastIndexOf('@');
+    return getStereotype(model.getModelName());
+  }
+
+  public static String getStereotype(String modelName) {
+    int atIndex = modelName.lastIndexOf('@');
     if (atIndex == -1) {
       return "";
     } else {
-      return name.substring(atIndex + 1);
+      return modelName.substring(atIndex + 1);
+    }
+  }
+
+  public static String withoutStereotype(String modelName) {
+    int atIndex = modelName.lastIndexOf('@');
+    if (atIndex == -1) {
+      return modelName;
+    } else {
+      return modelName.substring(0, atIndex);
     }
   }
 }

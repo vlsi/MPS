@@ -32,7 +32,7 @@ public class SNodeGroupTreeNode extends TextTreeNode {
 
   public SNodeGroupTreeNode(SModelTreeNode model, String text, boolean autoDelete) {
     super(text);
-    myModelReference = model.getSModelDescriptor().getSModelReference();
+    myModelReference = model.getSModelDescriptor().getReference();
     myAutoDelete = autoDelete;
   }
 
@@ -44,6 +44,7 @@ public class SNodeGroupTreeNode extends TextTreeNode {
     model.register(parentGroup, this);
   }
 
+  @Override
   protected void doUpdatePresentation() {
     if (hasErrors()) {
       setColor(Color.RED);
@@ -51,6 +52,7 @@ public class SNodeGroupTreeNode extends TextTreeNode {
     setColor(EditorColorsManager.getInstance().getGlobalScheme().getColor(ColorKey.createColorKey("FILESTATUS_NOT_CHANGED")));
   }
 
+  @Override
   public ActionGroup getQuickCreateGroup(boolean plain) {
     return getActionGroup();
   }

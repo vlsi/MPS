@@ -16,7 +16,7 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import java.awt.Frame;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.logging.Logger;
 
 public class FastFindNodeUsages_Action extends BaseAction {
@@ -84,7 +84,7 @@ public class FastFindNodeUsages_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new FindUsagesHelper(((Project) MapSequence.fromMap(_params).get("project")), false).invoke(((EditorCell) MapSequence.fromMap(_params).get("cell")), ((SNode) MapSequence.fromMap(_params).get("node")), ((Frame) MapSequence.fromMap(_params).get("frame")), ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")));
+      new FindUsagesHelper(((Project) MapSequence.fromMap(_params).get("project")), false).invoke(((EditorCell) MapSequence.fromMap(_params).get("cell")), ((SNode) MapSequence.fromMap(_params).get("node")), ((Frame) MapSequence.fromMap(_params).get("frame")), ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SModel) MapSequence.fromMap(_params).get("model")));
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "FastFindNodeUsages", t);
     }

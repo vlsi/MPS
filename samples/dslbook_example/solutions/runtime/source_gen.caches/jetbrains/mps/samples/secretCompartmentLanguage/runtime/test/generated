@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="b9m8rwer2eio1kiuo9v0caf09g79gtz">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3l4d6vah7bipcwb415vkx7fy07t8dxg" />
-  <common hash="-4rkarnjomm181pv2k78bvwj1y5daamm" />
+<dependencies version="2" modelHash="ow0ekhqe5mdw90dggpzh6r913hmun4">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="621em7vpw5ex0v0ghcf6e9cwqktpv6v" />
+  <common hash="-e70coibcd7jyocwjgpbo9ao6wnafsny" />
   <source id="6877931680625740364" name="Test" hash="-224fv5rd0pz8iaxfrahxf4jzkaqdx14">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="Test.java" />
   </source>
-  <source id="6877931680625741277" name="HStateMachineFactory" hash="-6k2kalwk2iqjazcxyi9ulpb77d7mxr2">
+  <source id="6877931680625741277" name="HStateMachineFactory" hash="-cx9dzibmkxyhucxr59tt53w19kh186e">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="HStateMachineFactory.java" />
   </source>

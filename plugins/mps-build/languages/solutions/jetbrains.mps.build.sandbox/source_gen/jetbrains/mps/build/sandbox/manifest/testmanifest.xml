@@ -28,6 +28,10 @@
     <echo file="${build.layout}/build.properties">testmanifest.var=${var}</echo>
   </target>
   
+  <target name="buildDependents" />
+  
+  <target name="fetchDependencies" />
+  
   <target name="build" depends="assemble, check" />
   
   <target name="clean">

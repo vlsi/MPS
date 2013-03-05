@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel.loading;
 
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.Nullable;
 
@@ -31,12 +31,12 @@ import org.jetbrains.annotations.Nullable;
  * This class has an aim to synchronize all loading processes
  */
 public abstract class UpdateableModel {
-  private final SModelDescriptor myDescriptor;
+  private final SModel myDescriptor;
 
   private volatile ModelLoadingState myState = ModelLoadingState.NOT_LOADED;
   private volatile DefaultSModel myModel = null;
 
-  public UpdateableModel(SModelDescriptor descriptor) {
+  public UpdateableModel(SModel descriptor) {
     myDescriptor = descriptor;
   }
 
@@ -63,8 +63,10 @@ public abstract class UpdateableModel {
     myState = state;  //this is for elimination of infinite recursion
 
     ModelLoadResult res = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<ModelLoadResult>() {
+      @Override
       public ModelLoadResult compute() {
         return UndoHelper.getInstance().runNonUndoableAction(new Computable<ModelLoadResult>() {
+          @Override
           public ModelLoadResult compute() {
             return doLoad(state, myModel);
           }

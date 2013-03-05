@@ -16,6 +16,7 @@ public class ModuleRenderer extends ProjectLevelRenderer {
     super(moduleScope, projectScope);
   }
 
+  @Override
   public String getItemLabel(Object value) {
     ModuleReference moduleReference = (ModuleReference) value;
     final IModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
@@ -33,6 +34,7 @@ public class ModuleRenderer extends ProjectLevelRenderer {
     }
   }
 
+  @Override
   public Component getListCellRendererComponent(JList list, final Object value, int index, boolean isSelected, boolean cellHasFocus) {
     final Component result = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
     ModuleReference moduleReference = (ModuleReference) value;

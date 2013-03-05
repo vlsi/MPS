@@ -4,16 +4,18 @@ package jetbrains.mps.nanoc.pluginutil;
 
 import java.io.File;
 import com.intellij.execution.ExecutionException;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.nanoc.debug.ProgramsLocationUtil;
 import java.io.IOException;
 
@@ -22,19 +24,20 @@ public class NanocConfigRunPreparationUtil {
   }
 
   public static File prepare(String nodeId, String modelRef) throws ExecutionException {
-    SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(modelRef));
-    SNode node = descriptor.getSModel().getNodeById(nodeId);
+    SModel descriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(modelRef));
+    SNode node = descriptor.getSModel().getNode(SNodeId.fromString(nodeId));
     final SNode sourceFileNode = SNodeOperations.cast(node, "jetbrains.mps.nanoc.structure.File");
-    IModule module = descriptor.getModule();
+    AbstractModule module = (AbstractModule) descriptor.getModule();
     final Wrappers._T<String> sourceFileName = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         sourceFileName.value = SPropertyOperations.getString(sourceFileNode, "name");
       }
     });
-    String packageName = NameUtil.pathFromNamespace(descriptor.getLongName());
-    File modelSourceFolder = new File(module.getGeneratorOutputPath() + File.separator + packageName);
-    File modelClassesFolder = new File(module.getClassesGen().getPath() + File.separator + packageName);
+    String packageName = NameUtil.pathFromNamespace(jetbrains.mps.util.SNodeOperations.getModelLongName(descriptor));
+    File modelSourceFolder = new File(module.getOutputPath() + File.separator + packageName);
+    File modelClassesFolder = new File(module.getFacet(JavaModuleFacet.class).getClassesGen().getPath() + File.separator + packageName);
     File f = new File(modelSourceFolder, sourceFileName.value + ".c");
     if (!((f.exists()))) {
       throw new ExecutionException("node is not generated");

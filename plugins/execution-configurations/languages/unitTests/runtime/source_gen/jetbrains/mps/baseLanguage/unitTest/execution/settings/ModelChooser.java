@@ -19,7 +19,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ModelChooser extends BaseChooserComponent {
@@ -28,6 +28,7 @@ public class ModelChooser extends BaseChooserComponent {
   public ModelChooser() {
     super();
     this.init(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent p0) {
         ModelChooser.this.collectModels();
         StringBuilder result = new StringBuilder();
@@ -48,7 +49,7 @@ public class ModelChooser extends BaseChooserComponent {
         Set<SNode> usages = FindUsagesManager.getInstance().findUsages(Collections.singleton(concept), SearchType.INSTANCES, GlobalScope.getInstance(), null);
         for (SNode node : ((Set<SNode>) ((Set) usages))) {
           SModel model = SNodeOperations.getModel(node);
-          SModelReference md = model.getSModelReference();
+          SModelReference md = model.getReference();
           if (ListSequence.fromList(ModelChooser.this.myCheckedModels).contains(md)) {
             continue;
           }

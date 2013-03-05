@@ -27,6 +27,7 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
 import jetbrains.mps.openapi.editor.style.StyleChangeEvent;
 import jetbrains.mps.openapi.editor.style.StyleListener;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.Color;
@@ -40,7 +41,7 @@ import java.util.Set;
 
 public class TextLine {
   // COLORS: Remove hardcoded color
-  private static final Color ERROR_COLOR = new Color(255, 220, 220);
+  private static final Color ERROR_COLOR = StyleRegistry.getInstance().isDarkTheme() ? StyleRegistry.getInstance().getEditorBackground() : new Color(255, 220, 220);
 
   private static Map<Font, FontMetrics> ourFontMetricsCache = new HashMap<Font, FontMetrics>();
   private static Map<String, Font> ourFontsCache = new HashMap<String, Font>();
@@ -210,7 +211,7 @@ public class TextLine {
     myUnderlined = myStyle.get(StyleAttributes.UNDERLINED);
 
     myTextColor = myStyle.get(StyleAttributes.TEXT_COLOR);
-    myNullTextColor = EditorColorsManager.getInstance().getGlobalScheme().getDefaultForeground();
+    myNullTextColor = myStyle.get(StyleAttributes.NULL_TEXT_COLOR);
     myTextBackground = myStyle.get(StyleAttributes.TEXT_BACKGROUND_COLOR);
     myNullTextBackground = myStyle.get(StyleAttributes.NULL_TEXT_BACKGROUND_COLOR);
     mySelectedTextBackground = myStyle.get(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR);
@@ -352,8 +353,7 @@ public class TextLine {
   public Color getTextColor() {
     init();
     if (myControlOvered) {
-      // COLORS: Remove hardcoded color
-      return Color.BLUE;
+      return EditorColorsManager.getInstance().getGlobalScheme().getAttributes(EditorColors.REFERENCE_HYPERLINK_COLOR).getForegroundColor();
     }
 
     if (!myNull && myTextColor != null) {
@@ -524,11 +524,7 @@ public class TextLine {
   }
 
   private void drawStrikeOutLine(Graphics g, int beginX, int endX, int constY) {
-    Color textColor = g.getColor();
-    // COLORS: Remove hardcoded color
-    g.setColor(Color.DARK_GRAY);
     g.drawLine(beginX, constY + 1, endX, constY + 1);
-    g.setColor(textColor);
   }
 
   private void drawCaret(Graphics g, int shiftX, int shiftY) {

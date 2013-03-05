@@ -4,6 +4,7 @@
     <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.make.IMakeNotificationListener" file="IMakeNotificationListener.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.make.MakeNotification" />
   </dependency>
   <dependency className="jetbrains.mps.make.IMakeService" file="IMakeService.java">

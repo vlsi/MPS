@@ -38,7 +38,7 @@ import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.project.validation.ModelValidator;
 import jetbrains.mps.project.validation.ModuleValidatorFactory;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.FileUtil;
@@ -51,6 +51,7 @@ import org.jetbrains.mps.openapi.language.SLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.*;
@@ -228,21 +229,21 @@ public class CheckProjectStructureHelper {
 
           SModule module = sm.getModule();
           if (module == null) {
-            errors.add("Model without a module: " + sm.getModelReference().toString());
+            errors.add("Model without a module: " + sm.getReference().toString());
             continue;
           }
           String genHash = ModelGenerationStatusManager.getLastGenerationHash(sm);
           if (genHash == null) {
-            errors.add("No generated hash for " + sm.getModelReference().toString());
+            errors.add("No generated hash for " + sm.getReference().toString());
             continue;
           }
           String realHash = sm.getModelHash();
           if (realHash == null) {
-            errors.add("cannot gen cache for " + sm.getModelReference().toString());
+            errors.add("cannot gen cache for " + sm.getReference().toString());
             continue;
           }
           if (!realHash.equals(genHash)) {
-            errors.add("model requires generation: " + sm.getModelReference().toString() + " last genHash:" + genHash + " modelHash:" + realHash);
+            errors.add("model requires generation: " + sm.getReference().toString() + " last genHash:" + genHash + " modelHash:" + realHash);
           }
         }
       }
@@ -256,7 +257,7 @@ public class CheckProjectStructureHelper {
       public void run() {
         for (SModel sm : models) {
           if (!SModelStereotype.isUserModel(sm)) continue;
-          checkModelNodes(((SModelDescriptor) sm).getSModel(), errors);
+          checkModelNodes(sm.getSModel(), errors);
         }
       }
     });
@@ -295,8 +296,8 @@ public class CheckProjectStructureHelper {
     return errors;
   }
 
-  private static void checkModelNodes(@NotNull jetbrains.mps.smodel.SModel model, @NotNull final List<String> result) {
-    for (final SNode node : model.nodes()) {
+  private static void checkModelNodes(@NotNull SModel model, @NotNull final List<String> result) {
+    for (final SNode node : new NodesIterable(model)) {
       final SConcept concept = node.getConcept();
       if (concept == null) {
         result.add("unknown concept of node: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
@@ -334,7 +335,7 @@ public class CheckProjectStructureHelper {
           if (!SModelStereotype.isUserModel(sm)) continue;
           if (SModelStereotype.isGeneratorModel(sm)) continue;
           ModuleOperationContext operationContext = new ModuleOperationContext(sm.getModule());
-          for (SNode root : jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getRoots(((SModelDescriptor) sm).getSModel(), null)) {
+          for (SNode root : jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getRoots(sm.getSModel(), null)) {
             Set<IErrorReporter> errorReporters = null;
             try {
               errorReporters = checker.getErrors(root, operationContext);
@@ -347,7 +348,7 @@ public class CheckProjectStructureHelper {
                 SNode node = reporter.getSNode();
                 if (!CheckProjectStructureUtil.filterIssue(node)) continue;
                 myErrors++;
-                errors.add("Error message: " + reporter.reportError() + "   model: " + node.getModel().getLongName() + " root: " + node.getContainingRoot() + " node: " + node);
+                errors.add("Error message: " + reporter.reportError() + "   model: " + jetbrains.mps.util.SNodeOperations.getModelLongName(node.getModel()) + " root: " + node.getContainingRoot() + " node: " + node);
               }
               if (reporter.getMessageStatus().equals(MessageStatus.WARNING)) {
                 myWarnings++;
@@ -370,7 +371,7 @@ public class CheckProjectStructureHelper {
       }
     });
     if (!validationResult.isEmpty()) {
-      errorMessages.append("errors in model: ").append(sm.getModelReference().toString()).append("\n");
+      errorMessages.append("errors in model: ").append(sm.getReference().toString()).append("\n");
       for (String item : validationResult) {
         errorMessages.append("\t");
         errorMessages.append(item);
@@ -378,7 +379,7 @@ public class CheckProjectStructureHelper {
       }
     }
 
-    for (SNode node : ((SModelDescriptor) sm).getSModel().nodes()) {
+    for (SNode node : new NodesIterable(sm.getSModel())) {
       Testbench.LOG.debug("Checking node " + node);
       if (SModelUtil.findConceptDeclaration(node.getConcept().getId(), GlobalScope.getInstance()) == null) {
         errorMessages.append("Unknown concept ");
@@ -387,7 +388,7 @@ public class CheckProjectStructureHelper {
       }
     }
 
-    for (SNode node : ((SModelDescriptor) sm).getSModel().nodes()) {
+    for (SNode node : new NodesIterable(sm.getSModel())) {
       for (SReference ref : node.getReferences()) {
         if (SNodeUtil.hasReferenceMacro(node, ref.getRole())) {
           continue;
@@ -396,7 +397,7 @@ public class CheckProjectStructureHelper {
         if (jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref) == null) {
           errorMessages.
             append("Broken reference in model {").
-            append(node.getModel().getLongName()).
+            append(jetbrains.mps.util.SNodeOperations.getModelLongName(node.getModel())).
             append("}").
             append(" node ").
             append(node.getNodeId().toString()).

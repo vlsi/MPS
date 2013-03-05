@@ -74,7 +74,7 @@ public class RunUtil {
       }
     }).select(new ISelector<SNodeReference, SModel>() {
       public SModel select(SNodeReference it) {
-        return (SModel) ((SNodePointer) it).getModel();
+        return (SModel) jetbrains.mps.util.SNodeOperations.getModelFromNodeReference(((SNodePointer) it));
       }
     }).distinct().where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {

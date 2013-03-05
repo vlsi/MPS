@@ -9,7 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -36,14 +36,14 @@ public class QuickFixForClassCreator_QuickFix extends QuickFix_Runtime {
     }
   }
 
-  private static IModule check_8brg4q_a0b0a0a(SModelDescriptor checkedDotOperand) {
+  private static IModule check_8brg4q_a0b0a0a(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModelDescriptor check_8brg4q_a0a1a0a0(SModel checkedDotOperand) {
+  private static SModelInternal check_8brg4q_a0a1a0a0(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }

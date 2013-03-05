@@ -28,12 +28,13 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefSet;
 
 @Deprecated
@@ -44,6 +45,7 @@ public class RuleOperandRenderer implements TableCellRenderer {
   public RuleOperandRenderer() {
   }
 
+  @Override
   public Component getTableCellRendererComponent(JTable table, final Object value, boolean isSelected, boolean hasFocus, int row, int column) {
     if (MapSequence.fromMap(myRenderersCache).containsKey(value)) {
       return MapSequence.fromMap(myRenderersCache).get(value);
@@ -77,6 +79,7 @@ public class RuleOperandRenderer implements TableCellRenderer {
       ));
       tree.setForeground(table.getForeground());
       tree.setCellRenderer(new DefaultTreeCellRenderer() {
+        @Override
         public Component getTreeCellRendererComponent(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row, boolean hasFocus) {
           setBackgroundNonSelectionColor(tree.getBackground());
           return super.getTreeCellRendererComponent(tree, value, selected, expanded, leaf, row, hasFocus);
@@ -113,13 +116,14 @@ public class RuleOperandRenderer implements TableCellRenderer {
       } else {
         final SNodeReference p = new SNodePointer(refC.getModelUID(), refC.getNodeID());
         nodeName = ModelAccess.instance().runReadAction(new Computable<String>() {
+          @Override
           public String compute() {
-            SModelDescriptor model = ((SNodePointer) p).getModel();
-            SNode node = ((SNodePointer) p).getNode();
+            SModel model = SNodeOperations.getModelFromNodeReference(((SNodePointer) p));
+            SNode node = ((SNodePointer) p).resolve(MPSModuleRepository.getInstance());
             if (model == null || node == null) {
               return null;
             }
-            String modelName = NameUtil.shortNameFromLongName(model.getLongName());
+            String modelName = NameUtil.shortNameFromLongName(SNodeOperations.getModelLongName(model));
             return modelName + "." + node.getName();
           }
         });

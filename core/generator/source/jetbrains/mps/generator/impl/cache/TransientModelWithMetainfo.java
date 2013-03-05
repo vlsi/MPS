@@ -19,7 +19,7 @@ import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -132,11 +132,11 @@ public class TransientModelWithMetainfo {
 
   public static TransientModelWithMetainfo create(SModel model, DependenciesBuilder builder) throws GenerationFailureException {
     ArrayList<SNode> roots = new ArrayList<SNode>();
-    for (SNode root1 : model.roots()) {
+    for (SNode root1 : model.getRootNodes()) {
       roots.add(root1);
     }
-    TransientModelWithMetainfo metainfo = new TransientModelWithMetainfo(model.getSModelReference(), roots);
-    Iterator<SNode> it = model.rootsIterator();
+    TransientModelWithMetainfo metainfo = new TransientModelWithMetainfo(model.getReference(), roots);
+    Iterator<SNode> it = model.getRootNodes().iterator();
     while (it.hasNext()) {
       SNode root = it.next();
       SNode node = builder.getOriginalForOutput(root);

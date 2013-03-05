@@ -19,7 +19,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
 import jetbrains.mps.smodel.event.SModelLanguageEvent;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
@@ -63,7 +63,7 @@ public class ModelDependenciesManager {
 
       Set<ModuleReference> result = new LinkedHashSet<ModuleReference>();
 
-      for (ModuleReference lang : myModel.importedLanguages()) {
+      for (ModuleReference lang : ((jetbrains.mps.smodel.SModel) myModel).importedLanguages()) {
         result.add(lang);
         Language module = ModuleRepositoryFacade.getInstance().getModule(lang, Language.class);
         if (module != null) {
@@ -73,7 +73,7 @@ public class ModelDependenciesManager {
         }
       }
 
-      for (ModuleReference dk : myModel.importedDevkits()) {
+      for (ModuleReference dk : ((jetbrains.mps.smodel.SModel) myModel).importedDevkits()) {
         DevKit devkit = ModuleRepositoryFacade.getInstance().getModule(dk, DevKit.class);
         if (devkit == null) continue;
         myModuleWatcher.watchDevKit(devkit);
@@ -118,9 +118,9 @@ public class ModelDependenciesManager {
 
   private class MySModelWatcher extends SModelAdapter {
 
-    private SModelDescriptor mySModelDescriptor;
+    private SModel mySModelDescriptor;
 
-    private MySModelWatcher(SModelDescriptor sModelDescriptor) {
+    private MySModelWatcher(SModel sModelDescriptor) {
       mySModelDescriptor = sModelDescriptor;
       registerSelf();
     }
@@ -151,11 +151,11 @@ public class ModelDependenciesManager {
     }
 
     private void registerSelf() {
-      mySModelDescriptor.addModelListener(this);
+      ((SModelInternal) mySModelDescriptor).addModelListener(this);
     }
 
     private void unregisterSelf() {
-      mySModelDescriptor.removeModelListener(this);
+      ((SModelInternal) mySModelDescriptor).removeModelListener(this);
     }
   }
 

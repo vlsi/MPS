@@ -7,7 +7,7 @@ import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.ide.MPSCoreComponents;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.datatransfer.TextPasteUtil;
 import jetbrains.mps.project.Project;
@@ -21,25 +21,30 @@ public class JavaCopyPasteDataConverter implements ApplicationComponent, CopyPas
   public JavaCopyPasteDataConverter(MPSCoreComponents coreComponents) {
   }
 
+  @Override
   public void initComponent() {
     CopyPasteUtil.setDataConverter(this);
   }
 
+  @Override
   public void disposeComponent() {
     CopyPasteUtil.setDataConverter(null);
   }
 
   @NonNls
   @NotNull
+  @Override
   public String getComponentName() {
     return "Java-specific CopyPaste Data Converter implementation";
   }
 
+  @Override
   public boolean canPasteAsNodes(SModel model, SNode anchor) {
     String text = TextPasteUtil.getStringFromClipboard();
     return text != null && text.length() > MIN_TEXT_LENGTH_TO_CONVERT;
   }
 
+  @Override
   public void pasteAsNodes(SModel model, SNode anchor, Project project) {
     String text = TextPasteUtil.getStringFromClipboard();
     if (text != null && text.length() > MIN_TEXT_LENGTH_TO_CONVERT) {
@@ -47,6 +52,7 @@ public class JavaCopyPasteDataConverter implements ApplicationComponent, CopyPas
     }
   }
 
+  @Override
   public PasteNodeData getPasteNodeData(SModel model, Project project) {
     // requires write action :( 
     String text = TextPasteUtil.getStringFromClipboard();

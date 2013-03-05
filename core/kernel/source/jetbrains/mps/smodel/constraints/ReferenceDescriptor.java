@@ -20,7 +20,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -102,6 +102,7 @@ public abstract class ReferenceDescriptor {
       scopeProvider = getScopeProvider(sourceNodeConcept, genuineRole);
     }
 
+    @Override
     @NotNull
     public Scope getScope() {
       final ReferentConstraintContext context = new ReferentConstraintContext(getModel(), exists, getContextNode(), contextRole, position, enclosingNode, referenceNode, linkTarget, containingLink);
@@ -129,6 +130,7 @@ public abstract class ReferenceDescriptor {
       });
     }
 
+    @Override
     @Nullable
     public String getReferencePresentation(SNode targetNode, boolean visible, boolean smartRef, boolean inEditor) {
       // todo: remove default presentation, use node.getPresentation() instead?
@@ -142,6 +144,7 @@ public abstract class ReferenceDescriptor {
       );
     }
 
+    @Override
     @Nullable
     public ReferenceScopeProvider getScopeProvider() {
       return scopeProvider;

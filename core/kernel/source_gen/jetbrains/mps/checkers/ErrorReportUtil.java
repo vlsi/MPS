@@ -5,7 +5,7 @@ package jetbrains.mps.checkers;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -18,26 +18,26 @@ public class ErrorReportUtil {
 
   public static boolean shouldReportError(SNode node) {
     final Wrappers._T<SNode> _node = new Wrappers._T<SNode>(node);
-    if (SModelStereotype.isStubModelStereotype(_node.value.getModel().getStereotype())) {
+    if (SModelStereotype.isStubModelStereotype(SNodeOperations.getModelStereotype(_node.value.getModel()))) {
       return false;
     }
     SNode parent = _node.value;
     while (parent != null) {
-      if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.core.structure.ISuppressErrors") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(parent, "jetbrains.mps.lang.core.structure.ISuppressErrors"), "virtual_suppress_3393165121846091591", new Object[]{_node.value})) {
+      if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.core.structure.ISuppressErrors") && BehaviorReflection.invokeVirtual(Boolean.TYPE, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(parent, "jetbrains.mps.lang.core.structure.ISuppressErrors"), "virtual_suppress_3393165121846091591", new Object[]{_node.value})) {
         return false;
       }
       if (ListSequence.fromList(AttributeOperations.getAttributeList(parent, new IAttributeDescriptor.AllAttributes())).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode attr) {
-          return SNodeOperations.isInstanceOf(attr, "jetbrains.mps.lang.core.structure.ISuppressErrors") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(attr, "jetbrains.mps.lang.core.structure.ISuppressErrors"), "virtual_suppress_3393165121846091591", new Object[]{_node.value}) && attr != _node.value;
+          return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(attr, "jetbrains.mps.lang.core.structure.ISuppressErrors") && BehaviorReflection.invokeVirtual(Boolean.TYPE, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(attr, "jetbrains.mps.lang.core.structure.ISuppressErrors"), "virtual_suppress_3393165121846091591", new Object[]{_node.value}) && attr != _node.value;
         }
       })) {
         return false;
       }
-      if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.core.structure.IAntisuppressErrors")) {
+      if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.core.structure.IAntisuppressErrors")) {
         return true;
       }
       _node.value = parent;
-      parent = SNodeOperations.getParent(_node.value);
+      parent = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(_node.value);
     }
     return true;
   }

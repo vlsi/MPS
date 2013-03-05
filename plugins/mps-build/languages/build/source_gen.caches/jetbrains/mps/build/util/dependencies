@@ -12,15 +12,15 @@
     <classNode dependClassName="jetbrains.mps.build.util.MacroHelper" />
     <classNode dependClassName="jetbrains.mps.build.util.PathProvider" />
     <classNode dependClassName="jetbrains.mps.build.util.RelativePathHelper" />
+    <classNode dependClassName="jetbrains.mps.generator.TransientSModel" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.build.util.DependenciesHelper" file="DependenciesHelper.java">
@@ -30,6 +30,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.build.util.GenerationUtil" />
     <classNode dependClassName="jetbrains.mps.build.util.MacroHelper" />
+    <classNode dependClassName="jetbrains.mps.generator.TransientSModel" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -37,6 +38,7 @@
   </dependency>
   <dependency className="jetbrains.mps.build.util.DescendantsScope" file="DescendantsScope.java">
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -60,6 +62,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.build.util.UnpackHelper" />
     <classNode dependClassName="jetbrains.mps.build.util.VisibleArtifacts" />
+    <classNode dependClassName="jetbrains.mps.generator.TransientSModel" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -102,6 +105,7 @@
     <classNode dependClassName="java.util.concurrent.ConcurrentMap" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.util.containers.ConcurrentHashSet" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
@@ -117,6 +121,7 @@
     <classNode dependClassName="jetbrains.mps.build.util.JavaModulesClosure" />
     <classNode dependClassName="jetbrains.mps.build.util.RequiredDependenciesBuilder" />
     <classNode dependClassName="jetbrains.mps.build.util.VisibleArtifacts" />
+    <classNode dependClassName="jetbrains.mps.generator.TransientSModel" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
@@ -149,6 +154,7 @@
   <dependency className="jetbrains.mps.build.util.LocalArtifacts" file="LocalArtifacts.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
@@ -201,6 +207,29 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
+  <dependency className="jetbrains.mps.build.util.ProjectDependency" file="ProjectDependency.java">
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildProject_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.util.Context" />
+    <classNode dependClassName="jetbrains.mps.build.util.RelativePathHelper" />
+    <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
   <dependency className="jetbrains.mps.build.util.RelativePathHelper" file="RelativePathHelper.java">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.String" />
@@ -224,6 +253,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.build.util.VisibleArtifacts" />
+    <classNode dependClassName="jetbrains.mps.generator.TransientSModel" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -281,6 +311,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.build.util.DependenciesHelper" />
     <classNode dependClassName="jetbrains.mps.build.util.LocalSourcePathArtifact" />
+    <classNode dependClassName="jetbrains.mps.generator.TransientSModel" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />

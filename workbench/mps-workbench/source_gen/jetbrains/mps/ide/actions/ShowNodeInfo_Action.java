@@ -72,6 +72,7 @@ public class ShowNodeInfo_Action extends BaseAction {
       final Frame frame = ((Frame) MapSequence.fromMap(_params).get("frame"));
       final SNode node = ((SNode) MapSequence.fromMap(_params).get("node"));
       SwingUtilities.invokeLater(new Runnable() {
+        @Override
         public void run() {
           new NodeInformationDialog(((EditorComponent) MapSequence.fromMap(_params).get("editor")), frame, point, node).setVisible(true);
         }

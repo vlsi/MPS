@@ -22,7 +22,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -41,6 +41,7 @@ public interface IModule extends SModule {
   // SModule#getModuleReference
   // ask Misha about return type
   // oooor it doesn't matter here
+  @Override
   @NotNull
   ModuleReference getModuleReference();
 
@@ -52,12 +53,6 @@ public interface IModule extends SModule {
   // add setters to IModule and use it as much as possible
   // invalidate something if only current != prev
   void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses);
-
-  // ?, move to AbstractModule, remove usages as much as possible
-  IFile getDescriptorFile();
-  // IFile getModuleRoot() <- clash with model root // to SModuleOperations / maybe SModule
-  // IFile getModuleFolder() ?
-  // use as much as possible
 
   //----deps
 
@@ -113,38 +108,13 @@ public interface IModule extends SModule {
 
   //----
 
-  // AbstractModule#createModel
-  // ModelAdjuster? WTF? something between creating and registration I think
-  // talk with Evgeny
-  SModelDescriptor createModel(String fqName, ModelRoot root, @Nullable ModelAdjuster adj);
-
   // SModule#getModels. But how to migrate? ModuleOperations.getOwnModelDescriptors with unchecked cast?
   // When is it safe to migrate method call? calc expected type?
-  List<SModelDescriptor> getOwnModelDescriptors();
-
-  // let's go to the mall?
-  // should be property of generator, but for now - cast
-  // ModuleDescriptor should have getOutputPath() method?
-  String getOutputFor(org.jetbrains.mps.openapi.model.SModel model);
-
-  // wtf? If it home for module descriptor just use module descriptor dir!
-  // ooups. for packaged modules it's jar file
-  // so check usages of method! why we need it?
-  // -> getModuleFolder()
-  // so getModuleFolder() is ${module} getter and should be open
-  // getModuleFile() is ok, but with cast
-  // other things is forbidden
-  // !!! to be notice: 2 jars: src and compiled classes
-  IFile getBundleHome();
+  List<SModel> getOwnModelDescriptors();
 
   // SModule#getModuleScope
   @NotNull
   IScope getScope();
-
-  // ???, to util, use model roots? what does it mean source paths?
-  // cast to AbstractModule for now
-  // use facet after generate before compile to add source paths
-  List<String> getSourcePaths();
 
   // should be do nothing, remove
   // should be listening
@@ -166,6 +136,7 @@ public interface IModule extends SModule {
 
   // why we need it?
   // reasonable use: in build scripts, but in this case we have only files, and it's just check for jar file
+  @Override
   boolean isPackaged();
 
   // ?
@@ -184,12 +155,35 @@ public interface IModule extends SModule {
   // ModuleSource (@see DataSource, maybe abstract from files?)
   boolean needReloading();
 
-  // dislike it =(
+  // ----- deprecated part
+  // model creation stuff
+
+  // AbstractModule#createModel
+  // ModelAdjuster? WTF? something between creating and registration I think
+  // talk with Evgeny
+  SModel createModel(String fqName, ModelRoot root, @Nullable ModelAdjuster adj);
+
   public static interface ModelAdjuster {
-    void adjust(SModelDescriptor model);
+    void adjust(SModel model);
   }
 
-  // ----- deprecated part
+  // module source path stuff
+
+  // wtf? If it home for module descriptor just use module descriptor dir!
+  // ooups. for packaged modules it's jar file
+  // so check usages of method! why we need it?
+  // -> getModuleFolder()
+  // so getModuleFolder() is ${module} getter and should be open
+  // getModuleFile() is ok, but with cast
+  // other things is forbidden
+  // !!! to be notice: 2 jars: src and compiled classes
+  IFile getBundleHome();
+
+  // ?, move to AbstractModule, remove usages as much as possible
+  IFile getDescriptorFile();
+  // IFile getModuleRoot() <- clash with model root // to SModuleOperations / maybe SModule
+  // IFile getModuleFolder() ?
+  // use as much as possible
 
   // JavaModuleFacet part. Use module.getFacet(JavaModuleFacet.class).{method}
   @Deprecated
@@ -201,19 +195,28 @@ public interface IModule extends SModule {
   @Deprecated
   boolean isCompileInMPS();
 
-  //  use SModuleOperations#getModuleWithDependenciesClassPathItem instead
+  @Deprecated
+  List<String> getSourcePaths();
+
+  /**
+   * @see jetbrains.mps.project.facets.JavaModuleOperations#collectCompileClasspath instead
+   */
   @Deprecated
   IClassPathItem getModuleWithDependenciesClassPathItem();
 
   // IClassLoadingModule part. Use module.getFacet(IClassLoadingModule).{method}
 
-//  deprecated, use IClassLoadingModule#getClass instead
-//  @Deprecated
-//  Class getClass(String className);
+  /**
+   * @see jetbrains.mps.runtime.IClassLoadingModule#getClass(String)
+   */
+  @Deprecated
+  Class getClass(String className);
 
-//  deprecated, use IClassLoadingModule#reloadClassesAfterGeneration instead
-//  @Deprecated
-//  boolean reloadClassesAfterGeneration();
+  /**
+   * @see jetbrains.mps.runtime.IClassLoadingModule#canLoad()
+   */
+  @Deprecated
+  boolean reloadClassesAfterGeneration();
 
   // other methods
 
@@ -224,13 +227,22 @@ public interface IModule extends SModule {
   String getModuleFqName();
 
   /**
-   * @see ProjectPathUtil#getGeneratorOutputPath(org.jetbrains.mps.openapi.module.SModule)
+   * Simple way: use SModuleOperations#getOutputPathFor
+   * Right way: use AbstractModule#getOutputPath or TestsFacet#getOutputPath instead
+   *
+   * @see SModuleOperations#getOutputPathFor(org.jetbrains.mps.openapi.model.SModel)
+   */
+  @Deprecated
+  String getOutputFor(org.jetbrains.mps.openapi.model.SModel model);
+
+  /**
+   * @see jetbrains.mps.project.AbstractModule#getOutputPath()
    */
   @Deprecated
   String getGeneratorOutputPath();
 
   /**
-   * @see ProjectPathUtil#getGeneratorTestsOutputPath(org.jetbrains.mps.openapi.module.SModule)
+   * @see jetbrains.mps.project.facets.TestsFacet#getTestsOutputPath()
    */
   @Deprecated
   String getTestsGeneratorOutputPath();
@@ -241,7 +253,7 @@ public interface IModule extends SModule {
    * @see ModelsAutoImportsManager
    */
   @Deprecated
-  Collection<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm);
+  Collection<SModel> getImplicitlyImportedModelsFor(SModel sm);
 
   /**
    * This method always returns empty list. All auto imported languages added to model in model creation
@@ -249,7 +261,7 @@ public interface IModule extends SModule {
    * @see ModelsAutoImportsManager
    */
   @Deprecated
-  Collection<Language> getImplicitlyImportedLanguages(SModelDescriptor sm);
+  Collection<Language> getImplicitlyImportedLanguages(SModel sm);
 
   /**
    * @see SModuleOperations#getIndexablePaths

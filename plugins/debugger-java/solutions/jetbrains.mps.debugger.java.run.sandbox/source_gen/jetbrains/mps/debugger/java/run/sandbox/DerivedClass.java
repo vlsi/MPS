@@ -10,6 +10,7 @@ public class DerivedClass extends BaseClass {
   public DerivedClass() {
   }
 
+  @Override
   public int getZero(int arg) {
     return 0;
   }

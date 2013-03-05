@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.util.misc.hash.HashMap;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
@@ -26,12 +26,13 @@ import java.util.*;
 public class DefaultGenerationParametersProvider implements GenerationParametersProviderEx {
 
   private Map<String, Object> defaultParams = new HashMap<String, Object>();
-  private Map<SModelDescriptor, Map<String, Object>> paramMaps = new HashMap<SModelDescriptor, Map<String, Object>>();
+  private Map<SModel, Map<String, Object>> paramMaps = new HashMap<SModel, Map<String, Object>>();
 
   private List<String> defaultLanguages = new ArrayList<String>();
-  private Map<SModelDescriptor, List<String>> additionalLanguages = new HashMap<SModelDescriptor, List<String>>();
+  private Map<SModel, List<String>> additionalLanguages = new HashMap<SModel, List<String>>();
 
-  public Map<String, Object> getParameters(SModelDescriptor descriptor) {
+  @Override
+  public Map<String, Object> getParameters(SModel descriptor) {
     if (descriptor == null) { throw new NullPointerException();}
 
     Map<String, Object> params =
@@ -43,7 +44,7 @@ public class DefaultGenerationParametersProvider implements GenerationParameters
     addParameter(null, key, value);
   }
 
-  public void addParameter (SModelDescriptor descriptor, String key, Object value) {
+  public void addParameter (SModel descriptor, String key, Object value) {
     if (descriptor == null) {
       defaultParams.put(key, value);
     }
@@ -56,7 +57,7 @@ public class DefaultGenerationParametersProvider implements GenerationParameters
   }
 
   @Override
-  public Collection<String> getAdditionalLanguages(SModelDescriptor descriptor) {
+  public Collection<String> getAdditionalLanguages(SModel descriptor) {
     if (descriptor == null) { throw new NullPointerException();}
 
     List<String> modelLanguages = additionalLanguages.containsKey(descriptor) ? additionalLanguages.get(descriptor) : Collections.<String>emptyList();
@@ -69,7 +70,7 @@ public class DefaultGenerationParametersProvider implements GenerationParameters
     return Collections.unmodifiableCollection(modelLanguages);
   }
 
-  public void addLanguagesEngagedOnGeneration(SModelDescriptor descriptor, Collection<String> languages) {
+  public void addLanguagesEngagedOnGeneration(SModel descriptor, Collection<String> languages) {
     if (descriptor == null) { throw new NullPointerException();}
     if(languages == null || languages.isEmpty()) return;
 
@@ -96,6 +97,7 @@ public class DefaultGenerationParametersProvider implements GenerationParameters
       myDefaults = defaults;
     }
 
+    @NotNull
     @Override
     public Set<Entry<K, V>> entrySet() {
       HashSet<Entry<K, V>> set = new HashSet<Entry<K, V>>(myDelegate.entrySet());

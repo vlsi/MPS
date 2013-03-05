@@ -16,9 +16,8 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.SModel;
 import java.util.Set;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -27,6 +26,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.logging.Logger;
 
@@ -73,8 +73,8 @@ public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
           continue;
         }
 
-        for (SModelDescriptor modelDescriptor : ListSequence.fromList(module.getOwnModelDescriptors())) {
-          if (SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype())) {
+        for (SModel modelDescriptor : ListSequence.fromList(module.getOwnModelDescriptors())) {
+          if (SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(modelDescriptor))) {
             continue;
           }
 
@@ -89,13 +89,13 @@ public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
             SetSequence.fromSet(dependencies).addElement(mref);
           }
           // remove all imported already models 
-          SetSequence.fromSet(dependencies).removeElement(modelDescriptor.getSModelReference());
-          for (SModelDescriptor importedModel : ListSequence.fromList(jetbrains.mps.smodel.SModelOperations.allImportedModels(model, GlobalScope.getInstance()))) {
-            SetSequence.fromSet(dependencies).removeElement(importedModel.getSModelReference());
+          SetSequence.fromSet(dependencies).removeElement(modelDescriptor.getReference());
+          for (SModel importedModel : ListSequence.fromList(jetbrains.mps.smodel.SModelOperations.allImportedModels(model, GlobalScope.getInstance()))) {
+            SetSequence.fromSet(dependencies).removeElement(importedModel.getReference());
           }
           // add new dependencies to model 
           for (SModelReference modelToImport : SetSequence.fromSet(dependencies)) {
-            model.addModelImport(modelToImport, false);
+            ((SModelInternal) model).addModelImport(modelToImport, false);
           }
         }
       }
@@ -131,7 +131,7 @@ public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
 
   private static SModelReference check_rft9c_a0b0e0d0e0a(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getSModelReference();
+      return checkedDotOperand.getReference();
     }
     return null;
   }

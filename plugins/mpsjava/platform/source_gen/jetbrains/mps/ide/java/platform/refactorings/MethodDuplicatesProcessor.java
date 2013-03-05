@@ -20,6 +20,7 @@ public abstract class MethodDuplicatesProcessor extends DuplicatesProcessor<Meth
     super(context);
   }
 
+  @Override
   protected List<EditorMessage> createEditorMessages(MethodMatch duplicate) {
     List<EditorMessage> result = new ArrayList<EditorMessage>();
     for (SNode node : ListSequence.fromList(duplicate.getNodes())) {

@@ -24,50 +24,62 @@ public interface IModifiableGenerationSettings extends IGenerationSettings {
 
   void setCheckModelsBeforeGeneration(boolean checkModelsBeforeGeneration);
 
+  @Override
   boolean isParallelGenerator();
 
   void setParallelGenerator(boolean useNewGenerator);
 
+  @Override
   boolean isStrictMode();
 
   void setStrictMode(boolean strictMode);
 
+  @Override
   int getNumberOfParallelThreads();
 
   void setNumberOfParallelThreads(int coreNumber);
 
+  @Override
   int getPerformanceTracingLevel();
 
   void setPerformanceTracingLevel(int performanceTracingLevel);
 
+  @Override
   int getNumberOfModelsToKeep();
 
   void setNumberOfModelsToKeep(int numberOfModelsToKeep);
 
+  @Override
   boolean isShowInfo();
 
   void setShowInfo(boolean showInfo);
 
+  @Override
   boolean isShowWarnings();
 
   void setShowWarnings(boolean showWarnings);
 
+  @Override
   boolean isKeepModelsWithWarnings();
 
   void setKeepModelsWithWarnings(boolean keepModelsWithWarnings);
 
+  @Override
   boolean isIncremental();
 
   void setIncremental(boolean isIncremental);
 
+  @Override
   boolean isIncrementalUseCache();
 
   void setIncrementalUseCache(boolean incrementalUseCache);
 
+  @Override
   boolean isDebugIncrementalDependencies();
 
   void setDebugIncrementalDependencies(boolean value);
 
+  @Override
   boolean isFailOnMissingTextGen();
 
   void setFailOnMissingTextGen(boolean fail);
@@ -76,6 +88,7 @@ public interface IModifiableGenerationSettings extends IGenerationSettings {
 
   void setGenerateDebugInfo(boolean generateDebugInfo);
 
+  @Override
   boolean isShowBadChildWarning();
 
   void setShowBadChildWarning(boolean showBadChildWarning);

@@ -14,15 +14,15 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.SModelAdapter;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.checkers.ConstraintsChecker;
 import jetbrains.mps.checkers.RefScopeChecker;
 import jetbrains.mps.checkers.CardinalitiesChecker;
 import jetbrains.mps.checkers.TargetConceptChecker;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.typesystem.checking.TypesEditorChecker;
 import java.util.List;
@@ -49,6 +49,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
   private Map<SNodeReference, LanguageErrorsComponent> myNodePointersToComponents = MapSequence.fromMap(new HashMap<SNodeReference, LanguageErrorsComponent>());
   private Set<EditorComponent> myEditorComponents = SetSequence.fromSet(new HashSet<EditorComponent>());
   private EditorComponent.EditorDisposeListener myDisposeListener = new EditorComponent.EditorDisposeListener() {
+    @Override
     public void editorWillBeDisposed(EditorComponent editorComponent) {
       SetSequence.fromSet(myEditorComponents).removeElement(editorComponent);
       SNodeReference sNodePointer = editorComponent.getEditedNodePointer();
@@ -58,20 +59,23 @@ public class LanguageEditorChecker extends BaseEditorChecker {
     }
   };
   private SModelRepositoryAdapter myRepositoryListener = new SModelRepositoryAdapter() {
-    public void beforeModelRemoved(SModelDescriptor descriptor) {
+    @Override
+    public void beforeModelRemoved(SModel descriptor) {
       modelDescriptorRemoved(descriptor);
     }
 
-    public void beforeModelDeleted(SModelDescriptor descriptor) {
+    @Override
+    public void beforeModelDeleted(SModel descriptor) {
       modelDescriptorRemoved(descriptor);
     }
   };
   private SModelListener myModelListener = new SModelAdapter() {
+    @Override
     public void beforeModelDisposed(SModel model) {
-      clearForModel(model.getSModelReference());
+      clearForModel(model.getReference());
     }
   };
-  private Set<SModelDescriptor> myListenedModels = SetSequence.fromSet(new HashSet<SModelDescriptor>());
+  private Set<SModel> myListenedModels = SetSequence.fromSet(new HashSet<SModel>());
 
   public LanguageEditorChecker() {
     SetSequence.fromSet(myRules).addElement(new ConstraintsChecker());
@@ -82,6 +86,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
     SModelRepository.getInstance().addModelRepositoryListener(this.myRepositoryListener);
   }
 
+  @Override
   public void doDispose() {
     for (LanguageErrorsComponent comp : MapSequence.fromMap(myNodePointersToComponents).values()) {
       comp.dispose();
@@ -90,27 +95,27 @@ public class LanguageEditorChecker extends BaseEditorChecker {
       component.removeDisposeListener(myDisposeListener);
     }
     SModelRepository.getInstance().removeModelRepositoryListener(myRepositoryListener);
-    for (SModelDescriptor modelDescriptor : SetSequence.fromSetWithValues(new HashSet<SModelDescriptor>(), myListenedModels)) {
+    for (SModel modelDescriptor : SetSequence.fromSetWithValues(new HashSet<SModel>(), myListenedModels)) {
       removeModelListener(modelDescriptor);
     }
     super.doDispose();
   }
 
-  private void modelDescriptorRemoved(SModelDescriptor modelDescriptor) {
+  private void modelDescriptorRemoved(SModel modelDescriptor) {
     this.removeModelListener(modelDescriptor);
-    this.clearForModel(modelDescriptor.getSModelReference());
+    this.clearForModel(modelDescriptor.getReference());
   }
 
-  private void removeModelListener(SModelDescriptor modelDescriptor) {
+  private void removeModelListener(SModel modelDescriptor) {
     if (SetSequence.fromSet(myListenedModels).contains(modelDescriptor)) {
-      modelDescriptor.removeModelListener(myModelListener);
+      ((SModelInternal) modelDescriptor).removeModelListener(myModelListener);
       SetSequence.fromSet(myListenedModels).removeElement(modelDescriptor);
     }
   }
 
-  private void addModelListener(SModelDescriptor modelDescriptor) {
+  private void addModelListener(SModel modelDescriptor) {
     if (!(SetSequence.fromSet(myListenedModels).contains(modelDescriptor))) {
-      modelDescriptor.addModelListener(myModelListener);
+      ((SModelInternal) modelDescriptor).addModelListener(myModelListener);
       SetSequence.fromSet(myListenedModels).addElement(modelDescriptor);
     }
   }
@@ -132,10 +137,12 @@ public class LanguageEditorChecker extends BaseEditorChecker {
     }
   }
 
+  @Override
   public boolean areMessagesChanged() {
     return myMessagesChanged;
   }
 
+  @Override
   public boolean isLaterThan(BaseEditorChecker checker) {
     if (checker instanceof TypesEditorChecker) {
       return true;
@@ -146,12 +153,15 @@ public class LanguageEditorChecker extends BaseEditorChecker {
     return false;
   }
 
+  @Override
   public boolean hasDramaticalEvent(List<SModelEvent> list) {
     return true;
   }
 
+  @Override
   public Set<EditorMessage> createMessages(final SNode node, final List<SModelEvent> list, final boolean wasCheckedOnce, final EditorContext editorContext) {
     return TypeContextManager.getInstance().runTypeCheckingComputation(((EditorComponent) editorContext.getEditorComponent()).getTypecheckingContextOwner(), node, new ITypechecking.Computation<Set<EditorMessage>>() {
+      @Override
       public Set<EditorMessage> compute(TypeCheckingContext p0) {
         return doCreateMessages(node, list, wasCheckedOnce, editorContext);
       }
@@ -175,7 +185,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
       return result;
     }
 
-    SModelDescriptor descriptor = SNodeOperations.getModel(sNode).getModelDescriptor();
+    SModel descriptor = SNodeOperations.getModel(sNode).getModelDescriptor();
     if (descriptor == null) {
       // descriptor is null for a replaced model 
       // after model is replaced but before it is disposed (this can happen asyncronously) 
@@ -217,6 +227,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
     return result;
   }
 
+  @Override
   public void clear(SNode node, EditorComponent component) {
     SNodeReference sNodePointer = component.getEditedNodePointer();
     if (sNodePointer == null) {

@@ -117,11 +117,11 @@ public class DeleteNodesHelper {
     }
 
     ProgressManager.getInstance().run(new Task.Modal(ideaProject, "Finding Usages", true) {
+      @Override
       public void run(@NotNull final ProgressIndicator p0) {
         final Set<SearchResult<SNode>> results = SetSequence.fromSet(new HashSet<SearchResult<SNode>>());
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-
             ListSequence.fromList(myNodesToDelete).visitAll(new IVisitor<SNode>() {
               public void visit(SNode it) {
                 SearchResults<SNode> usages = FindUtils.getSearchResults(new EmptyProgressMonitor(), it, GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
@@ -172,6 +172,7 @@ public class DeleteNodesHelper {
         SwingUtilities.invokeLater(new Runnable() {
           public void run() {
             RefactoringAccess.getInstance().showRefactoringView(ideaProject, new RefactoringViewAction() {
+              @Override
               public void performAction(RefactoringViewItem refactoringViewItem) {
                 ModelAccess.instance().runWriteActionInCommand(new Runnable() {
                   public void run() {

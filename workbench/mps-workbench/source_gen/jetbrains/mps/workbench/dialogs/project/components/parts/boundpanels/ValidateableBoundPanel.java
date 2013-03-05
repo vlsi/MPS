@@ -74,6 +74,7 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
     assertNotInitialized();
     myMultipleChooser = false;
     myChooser = new Computable<List<T>>() {
+      @Override
       public List<T> compute() {
         T result = chooser.compute();
         if (result == null) {
@@ -95,6 +96,7 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
     myCellRenderer = cellRenderer;
   }
 
+  @Override
   public void setTransferHandler(TransferHandler transferHandler) {
     assertNotInitialized();
     myTransferHandler = transferHandler;
@@ -225,6 +227,7 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
     private MyValidator() {
     }
 
+    @Override
     public void run() {
       if (myObjectValidator == null) {
         return;
@@ -252,6 +255,7 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
     private MyKeyAdapter() {
     }
 
+    @Override
     public void keyPressed(KeyEvent e) {
       if (e.getKeyCode() == KeyEvent.VK_INSERT) {
         if (myAddAction != null) {

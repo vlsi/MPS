@@ -55,8 +55,8 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.ActionPlace;
@@ -118,6 +118,7 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
     return new ProjectTreeNode(project);
   }
 
+  @Override
   public void dispose() {
     if (isInitialized()) {
       myTimer.stop();
@@ -126,6 +127,7 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
     myScrollPane = null;
   }
 
+  @Override
   public MPSTree getTree() {
     return (MPSTree) myTree;
   }
@@ -142,16 +144,19 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
     }
   }
 
+  @Override
   public Icon getIcon() {
     return Actions.ShowAsTree;
   }
 
+  @Override
   public JComponent createComponent() {
     if (isInitialized()) {
       return myScrollPane;
     }
     installListeners();
     myTree = new MPSTree() {
+      @Override
       protected MPSTreeNode rebuild() {
         MPSTreeNode node;
         if (myProject != null && !myProject.isDisposed() && (myProject.getBaseDir() != null)) {
@@ -183,9 +188,11 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
     });
 
     myTimer = new Timer(DELAY, new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         //why write? see http://youtrack.jetbrains.net/issue/MPS-8411 for details; IDEA can acquire write lock under that code
         ModelAccess.instance().runWriteInEDT(new Runnable() {
+          @Override
           public void run() {
             getTree().rebuildNow();
           }
@@ -198,6 +205,7 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
     // Looks like this method can be called from different threads
     if (ModelAccess.instance().isInEDT()) {
       ModelAccess.instance().runReadInEDT(new Runnable() {
+        @Override
         public void run() {
           getTree().rebuildNow();
         }
@@ -214,6 +222,7 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
     VirtualFileManager.getInstance().addVirtualFileListener(myFileListener = new FileChangesListener());
     VirtualFileManager.getInstance().addVirtualFileManagerListener(myVirtualFileManagerListener = new RefreshListener());
     myDirectoryMappingListener = new VcsListener() {
+      @Override
       public void directoryMappingChanged() {
         rebuildTreeLater();
       }
@@ -254,15 +263,18 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
     return myScrollPane != null;
   }
 
+  @Override
   public ActionCallback updateFromRoot(boolean restoreExpandedPaths) {
     getTree().rebuildLater();
     return new ActionCallback();
   }
 
+  @Override
   public void select(Object element, VirtualFile file, boolean requestFocus) {
     selectNode(file, false);
   }
 
+  @Override
   public Object getData(String dataId) {
     if (PlatformDataKeys.VIRTUAL_FILE_ARRAY.getName().equals(dataId)) {
       List<VirtualFile> files = new LinkedList<VirtualFile>();
@@ -331,6 +343,7 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
     // assertion was added for http://youtrack.jetbrains.net/issue/MPS-7762
     assert fileTreeNode.getFile().isValid() : "Underlying file is not valid";
     com.intellij.openapi.command.CommandProcessor.getInstance().executeCommand(myProject, new Runnable() {
+      @Override
       public void run() {
         myIdeDocumentHistory.includeCurrentCommandAsNavigation();
         myEditorManager.openFile(fileTreeNode.getFile(), true);
@@ -342,6 +355,7 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
     ToolWindowManager windowManager = ToolWindowManager.getInstance(getProject());
     ToolWindow projectViewToolWindow = windowManager.getToolWindow(ToolWindowId.PROJECT_VIEW);
     projectViewToolWindow.activate(new Runnable() {
+      @Override
       public void run() {
         myProjectView.changeView(getId());
         MPSTreeNode nodeToSelect = getNode(file);
@@ -397,10 +411,12 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
     return null;
   }
 
+  @Override
   public SelectInTarget createSelectInTarget() {
     return new AbstractProjectViewSelectInTarget(myProject, getId(), getWeight(), getTitle()) {
       public VirtualFile myFile;
 
+      @Override
       public boolean canSelect(SelectInContext context) {
         VirtualFile virtualFile = context.getVirtualFile();
         if (!(virtualFile instanceof MPSNodeVirtualFile)) {
@@ -411,11 +427,12 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
 
         final MPSNodeVirtualFile nodeVirtualFile = (MPSNodeVirtualFile) virtualFile;
         SModel smodel = ModelAccess.instance().runReadAction(new Computable<SModel>() {
+          @Override
           public SModel compute() {
             return nodeVirtualFile.getNode().getModel();
           }
         });
-        SModelDescriptor d = smodel.getModelDescriptor();
+        SModel d = smodel.getModelDescriptor();
         if (d == null) return false;
 
         DataSource source = d.getSource();
@@ -436,6 +453,7 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
       @Override
       protected void doSelectIn(SelectInContext context, boolean requestFocus) {
         ModelAccess.instance().runReadAction(new Runnable() {
+          @Override
           public void run() {
             selectNode(myFile, true);
           }
@@ -444,26 +462,31 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
     };
   }
 
+  @Override
   public String getTitle() {
     return TITLE;
   }
 
+  @Override
   @NotNull
   public String getId() {
     return ID;
   }
 
   // used for sorting tabs in the tabbed pane
+  @Override
   public int getWeight() {
     return 5;
   }
 
   private class RefreshListener implements VirtualFileManagerListener {
 
+    @Override
     public void beforeRefreshStart(boolean asynchonous) {
 
     }
 
+    @Override
     public void afterRefreshFinish(boolean asynchonous) {
       rebuildTreeLater();
     }
@@ -499,10 +522,12 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
   }
 
   private class FileStatusChangeListener implements FileStatusListener {
+    @Override
     public void fileStatusesChanged() {
       rebuildTreeLater();
     }
 
+    @Override
     public void fileStatusChanged(@NotNull VirtualFile virtualFile) {
       rebuildTreeLater();
     }

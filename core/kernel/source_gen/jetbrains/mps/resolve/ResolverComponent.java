@@ -37,6 +37,7 @@ public class ResolverComponent implements CoreComponent {
     myScopeResolver = new ScopeResolver();
   }
 
+  @Override
   public void init() {
     if (INSTANCE != null) {
       throw new IllegalStateException("double initialization");
@@ -46,6 +47,7 @@ public class ResolverComponent implements CoreComponent {
     INSTANCE.addResolver(myScopeResolver);
   }
 
+  @Override
   public void dispose() {
     INSTANCE.removeResolver(myScopeResolver);
     INSTANCE = null;

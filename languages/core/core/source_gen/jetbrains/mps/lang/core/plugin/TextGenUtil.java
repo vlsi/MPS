@@ -6,7 +6,7 @@ import jetbrains.mps.generator.textGen.TextGeneratorEngine;
 import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.Map;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import java.util.Collections;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -35,6 +35,7 @@ public class TextGenUtil {
     }
 
     engine.generateModels(modelToInput.keySet(), new TextGeneratorEngine.GenerateCallback() {
+      @Override
       public void modelGenerated(SModel model, List<TextGenerationResult> results) {
         GResource generatedResource = modelToInput.get(model);
         callback.textGenerated(generatedResource, results);
@@ -46,6 +47,7 @@ public class TextGenUtil {
     long outerStartTime = System.currentTimeMillis();
     final AtomicLong innerTime = new AtomicLong(0);
     boolean result = FileSystem.getInstance().runWriteTransaction(new Runnable() {
+      @Override
       public void run() {
         long innerStartTime = System.currentTimeMillis();
         runnable.run();

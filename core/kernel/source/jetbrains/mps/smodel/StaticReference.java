@@ -13,7 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;
+package jetbrains.mps.smodel;
+
+import jetbrains.mps.smodel.SModel.FakeModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.logging.Logger;
@@ -43,6 +46,7 @@ public final class StaticReference extends SReferenceBase {
     myTargetNodeId = nodeId;
   }
 
+  @Override
   @Nullable
   public SNodeId getTargetNodeId() {
     SNode immatureNode = myImmatureTargetNode;
@@ -55,6 +59,7 @@ public final class StaticReference extends SReferenceBase {
     myTargetNodeId = nodeId;
   }
 
+  @Override
   protected SNode getTargetNode_internal() {
     SModelReference mr = getTargetSModelReference();
     if (mr != null) {
@@ -79,7 +84,7 @@ public final class StaticReference extends SReferenceBase {
     SModel targetModel = getTargetSModel();
     if (targetModel == null) return null;
 
-    if (targetModel.isDisposed()) {
+    if (jetbrains.mps.util.SNodeOperations.isModelDisposed(targetModel)) {
       Logger log = Logger.getLogger(this.getClass());
       StringBuilder sb = new StringBuilder();
       sb.append("target model ");
@@ -98,7 +103,7 @@ public final class StaticReference extends SReferenceBase {
       sb.append("\ncurrent thread ");
       sb.append(canRead);
       sb.append("\nstack trace of model disposing is: ");
-      for (StackTraceElement ste : targetModel.getDisposedStacktrace()) {
+      for (StackTraceElement ste : ((jetbrains.mps.smodel.SModel) targetModel).getDisposedStacktrace()) {
         sb.append(ste);
         sb.append("\n");
       }
@@ -107,11 +112,11 @@ public final class StaticReference extends SReferenceBase {
       return null;
     }
 
-    SNode targetNode = targetModel.getNodeById(targetNodeId);
+    SNode targetNode = targetModel.getNode(targetNodeId);
     if (targetNode != null) return targetNode;
-    targetNode = UnregisteredNodes.instance().get(targetModel.getSModelReference(), targetNodeId);
+    targetNode = UnregisteredNodes.instance().get(targetModel.getReference(), targetNodeId);
     if (targetNode == null) {
-      error("target model '" + targetModel.getSModelReference() + "' doesn't contain node with id=" + getTargetNodeId());
+      error("target model '" + targetModel.getReference() + "' doesn't contain node with id=" + getTargetNodeId());
     }
 
     return targetNode;
@@ -119,7 +124,7 @@ public final class StaticReference extends SReferenceBase {
 
   public SModel getTargetSModel() {
     SModel current = getSourceNode().getModel();
-    if (current != null && current.getSModelReference().equals(getTargetSModelReference())) return current;
+    if (current != null && current.getReference().equals(getTargetSModelReference())) return current;
 
     // external
     SModelReference targetModelReference = getTargetSModelReference();
@@ -127,8 +132,8 @@ public final class StaticReference extends SReferenceBase {
     // It can be tmp reference created while copy/pasting a node
     if (targetModelReference == null) return null;
 
-    SModelDescriptor modelDescriptor = null;
-    if (current != null && current.getModelDescriptor() != null) {
+    SModel modelDescriptor = null;
+    if (current != null && current.getModelDescriptor() != null && !(current.getModelDescriptor() instanceof FakeModelDescriptor)) {
       modelDescriptor = current.getModelDescriptor().resolveModel(targetModelReference);
     } else if (!MPSCore.getInstance().isMergeDriverMode()) {
       modelDescriptor = SModelRepository.getInstance().getModelDescriptor(targetModelReference);

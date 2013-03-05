@@ -20,11 +20,13 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.impl.cache.impl.id.IdIndex;
 import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
 import com.intellij.util.indexing.FileBasedIndex;
+import jetbrains.mps.extapi.model.EditableSModel;
+import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import jetbrains.mps.util.containers.MultiMap;
@@ -34,83 +36,109 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.persistence.indexing.FastFindSupport;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.indexing.FastFindUsagesRegistry;
+import org.jetbrains.mps.openapi.persistence.indexing.FindUsagesParticipant;
+import org.jetbrains.mps.openapi.util.Consumer;
 
+import java.util.Arrays;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.HashSet;
 import java.util.Map.Entry;
 import java.util.Set;
 
-public class MPSModelsFastFindSupport implements ApplicationComponent, FastFindSupport {
+public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsagesParticipant {
   private static Logger LOG = Logger.getLogger(MPSModelsFastFindSupport.class);
+  private final Set<String> indexedFileExtensions = new HashSet<String>(Arrays.asList(MPSExtentions.MODEL, MPSExtentions.MODEL_BINARY));
 
+  @Override
   public void initComponent() {
-    FastFindUsagesRegistry.getInstance().setFastFindSupport(PersistenceRegistry.DEFAULT_MODEL_ROOT, this);
+    FastFindUsagesRegistry.getInstance().addParticipant(this);
   }
 
+  @Override
   public void disposeComponent() {
-    FastFindUsagesRegistry.getInstance().setFastFindSupport(PersistenceRegistry.DEFAULT_MODEL_ROOT, null);
+    FastFindUsagesRegistry.getInstance().removeParticipant(this);
   }
 
+  @Override
   @NotNull
   public String getComponentName() {
     return MPSModelsFastFindSupport.class.getSimpleName();
   }
 
-  public Map<SModel, Collection<org.jetbrains.mps.openapi.model.SNode>> findModelsWithPossibleUsages(Collection<SModel> models, Set<org.jetbrains.mps.openapi.model.SNode> nodes) {
-    return findModels(models, nodes, new Mapper<org.jetbrains.mps.openapi.model.SNode, String>() {
-      public String value(org.jetbrains.mps.openapi.model.SNode key) {
+  @Override
+  public void findUsages(Collection<SModel> scope, Set<SNode> nodes, Consumer<SReference> consumer, Consumer<SModel> processedConsumer) {
+    MultiMap<SModel, SNode> candidates = findCandidates(scope, nodes, processedConsumer, new Mapper<SNode, String>() {
+      @Override
+      public String value(SNode key) {
         return key.getNodeId().toString();
       }
     });
+    for (Entry<SModel, Collection<SNode>> candidate : candidates.entrySet()) {
+      FindUsagesManager.collectUsages(candidate.getKey(), candidate.getValue(), consumer);
+    }
   }
 
-  public Map<SModel, Collection<SConcept>> findModelsWithPossibleInstances(Collection<SModel> models, Set<SConcept> concepts) {
-    return findModels(models, concepts, new Mapper<SConcept, String>() {
+  @Override
+  public void findInstances(Collection<SModel> scope, Set<SConcept> concepts, Consumer<SNode> consumer, Consumer<SModel> processedConsumer) {
+    MultiMap<SModel, SConcept> candidates = findCandidates(scope, concepts, processedConsumer, new Mapper<SConcept, String>() {
+      @Override
       public String value(SConcept key) {
         return key.getName();
       }
     });
+    for (Entry<SModel, Collection<SConcept>> candidate : candidates.entrySet()) {
+      FindUsagesManager.collectInstances(candidate.getKey(), candidate.getValue(), consumer);
+    }
   }
 
-  private <T> Map<SModel, Collection<T>> findModels(Collection<SModel> models, Set<T> elems, @Nullable Mapper<T, String> id) {
+  private <T> MultiMap<SModel, T> findCandidates(Collection<SModel> models, Set<T> elems, Consumer<SModel> processedModels, @Nullable Mapper<T, String> id) {
+    // get all files in scope
+    final ManyToManyMap<SModel, VirtualFile> scopeFiles = new ManyToManyMap<SModel, VirtualFile>();
+    for (final SModel sm : models) {
+      if (sm instanceof EditableSModel && ((EditableSModel) sm).isChanged()) {
+        continue;
+      }
+
+      DataSource source = sm.getSource();
+      if (!(source instanceof FileDataSource)) {
+        continue;
+      }
+
+      IFile modelFile = ((FileDataSource) source).getFile();
+      String ext = FileUtil.getExtension(modelFile.getName());
+      if (ext == null || modelFile.isDirectory() || !(indexedFileExtensions.contains(ext.toLowerCase()))) {
+        continue;
+      }
+
+      VirtualFile vf = VirtualFileUtils.getVirtualFile(modelFile);
+      if (vf == null) {
+        LOG.warning("Model " + sm.getModelName() + ": virtual file not found for model file. Model file: " + modelFile.getPath());
+        continue;
+      }
+      processedModels.consume(sm);
+      scopeFiles.addLink(sm, vf);
+    }
+
+    // process indexes
     MultiMap<SModel, T> result = new SetBasedMultiMap<SModel, T>();
     for (T elem : elems) {
       String nodeId = id == null ? elem.toString() : id.value(elem);
 
-      //get all files in scope
-      ManyToManyMap<SModelDescriptor, VirtualFile> scopeFiles = new ManyToManyMap<SModelDescriptor, VirtualFile>();
-      for (SModel sm : models) {
-        assert sm instanceof DefaultSModelDescriptor : "a non-regular model is passed to FindSupport designed for regular models";
-        IFile modelFile = ((DefaultSModelDescriptor) sm).getSource().getFile();
-
-        VirtualFile vf = VirtualFileUtils.getVirtualFile(modelFile);
-        if (vf == null) {
-          LOG.warning("Model " + ((DefaultSModelDescriptor) sm).getLongName() + ": virtual file not found for model file. Model file: " + modelFile.getPath());
-          continue;
-        }
-
-        scopeFiles.addLink(((DefaultSModelDescriptor) sm), vf);
-      }
-
-      //filter files with usages
+      // filter files with usages
       ConcreteFilesGlobalSearchScope allFiles = new ConcreteFilesGlobalSearchScope(scopeFiles.getSecond());
       Collection<VirtualFile> matchingFiles = FileBasedIndex.getInstance().getContainingFiles(IdIndex.NAME, new IdIndexEntry(nodeId, true), allFiles);
 
-      //back-transform
+      // back-transform
       for (VirtualFile file : matchingFiles) {
-        for (SModelDescriptor m : scopeFiles.getBySecond(file)) {
+        for (SModel m : scopeFiles.getBySecond(file)) {
           result.putValue(m, elem);
         }
       }
     }
-
-    Map<SModel, Collection<T>> res = new HashMap<SModel, Collection<T>>();
-    for (Entry<SModel, Collection<T>> e : result.entrySet()) {
-      res.put(e.getKey(), e.getValue());
-    }
-    return res;
+    return result;
   }
 }

@@ -4,13 +4,14 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IType_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.InterfacePart_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 
-public abstract class Type_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IType_BehaviorDescriptor {
+public abstract class Type_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IType_BehaviorDescriptor, InterfacePart_BehaviorDescriptor {
   public Type_BehaviorDescriptor() {
   }
 

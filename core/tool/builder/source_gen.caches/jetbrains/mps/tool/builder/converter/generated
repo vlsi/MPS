@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="2d0mtm2sxsqrobw0n6mmf4clfshfd8q">
+<dependencies version="2" modelHash="8fc7decois2q2f95frg3afrgac2s068">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.persistence.def(MPS.Core/jetbrains.mps.smodel.persistence.def@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-22hsdy8hx47u1rwu32z4quczy3521b0" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="621em7vpw5ex0v0ghcf6e9cwqktpv6v" />
   <common hash="-c11simjn2bgnra15ymyxxk5mj7ddkfd" />
-  <source id="7841036633975757760" name="ConvertToBinaryWorker" hash="lfcwcn3wko49frehauao94ntvqaox1">
+  <source id="7841036633975757760" name="ConvertToBinaryWorker" hash="4zfoiuzrnfc2z9xylix87dxstv9r3ir">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.persistence.def(MPS.Core/jetbrains.mps.smodel.persistence.def@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ConvertToBinaryWorker.java" />

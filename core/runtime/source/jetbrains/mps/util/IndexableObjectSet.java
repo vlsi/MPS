@@ -39,14 +39,17 @@ public abstract class IndexableObjectSet<E> extends AbstractSet<E> {
 
   protected abstract E getObject(int index);
 
+  @Override
   public Iterator<E> iterator() {
     return new Iterator<E>() {
       private int myCurrent = 0;
 
+      @Override
       public boolean hasNext() {
         return myBitSet.nextSetBit(myCurrent) != -1;
       }
 
+      @Override
       public E next() {
         int nextSetBit = myBitSet.nextSetBit(myCurrent);
         if (nextSetBit == -1) throw new NoSuchElementException();
@@ -54,6 +57,7 @@ public abstract class IndexableObjectSet<E> extends AbstractSet<E> {
         return getObject(nextSetBit);
       }
 
+      @Override
       public void remove() {
         if (myCurrent == 0) throw new IllegalStateException();
         myBitSet.set(myCurrent - 1, false);
@@ -61,6 +65,7 @@ public abstract class IndexableObjectSet<E> extends AbstractSet<E> {
     };
   }
 
+  @Override
   public int size() {
     int result = 0;
     for (int i = 0; i < myBitSet.size(); i++) {

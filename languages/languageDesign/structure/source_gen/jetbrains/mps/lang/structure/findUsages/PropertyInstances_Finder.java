@@ -20,25 +20,28 @@ public class PropertyInstances_Finder extends GeneratedFinder {
   public PropertyInstances_Finder() {
   }
 
+  @Override
   public String getDescription() {
     return "Property Instances";
   }
 
+  @Override
   public String getLongDescription() {
     return "";
   }
 
+  @Override
   public String getConcept() {
     return "jetbrains.mps.lang.structure.structure.PropertyDeclaration";
   }
 
+  @Override
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
-    monitor.start(getDescription(), 1);
     try {
       String role = SPropertyOperations.getString(node, "name");
       SNode conceptDeclaration = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
       if (!((conceptDeclaration == null))) {
-        for (SNode instance : FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", conceptDeclaration, scope, monitor.subTask(1))) {
+        for (SNode instance : FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", conceptDeclaration, scope, monitor)) {
           String property = SNodeAccessUtil.getProperty(instance, role);
           if (property != null && !(property.equals(""))) {
             ListSequence.fromList(_results).addElement(instance);
@@ -50,6 +53,7 @@ public class PropertyInstances_Finder extends GeneratedFinder {
     }
   }
 
+  @Override
   public String getNodeCategory(SNode node) {
     return "Property Instances";
   }

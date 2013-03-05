@@ -5,18 +5,18 @@
     <nodeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="29" startPosition="33" endLine="30" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="34" startPosition="83" endLine="35" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="38" startPosition="44" endLine="39" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6017889698595854307" fileName="Inherits_Constraints.java" startLine="49" startPosition="70" endLine="50" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6017889698595854371" fileName="Inherits_Constraints.java" startLine="60" startPosition="70" endLine="61" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6017889698595854307" fileName="Inherits_Constraints.java" startLine="49" startPosition="60" endLine="50" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6017889698595854371" fileName="Inherits_Constraints.java" startLine="60" startPosition="60" endLine="61" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="67" startPosition="63" endLine="68" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="72" startPosition="7" endLine="73" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="76" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_r9hk87_a0a1a0a0a1a0b0a1a1" />
     <nodeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Inherits_Constraints#()V" />
     <nodeInfo nodeId="6017889698595854305" fileName="Inherits_Constraints.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/project/IModule;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6017889698595854367" fileName="Inherits_Constraints.java" startLine="60" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="6017889698595854367" fileName="Inherits_Constraints.java" startLine="60" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
-    <nodeInfo nodeId="6017889698595854316" fileName="Inherits_Constraints.java" startLine="53" startPosition="59" endLine="57" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6017889698595854316" fileName="Inherits_Constraints.java" startLine="53" startPosition="49" endLine="57" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="66" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="6017889698595854314" fileName="Inherits_Constraints.java" startLine="53" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SModelDescriptor;)Z" />
+    <nodeInfo nodeId="6017889698595854314" fileName="Inherits_Constraints.java" startLine="53" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
     <nodeInfo nodeId="6017889698595854293" fileName="Inherits_Constraints.java" startLine="47" startPosition="142" endLine="63" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="46" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
     <nodeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="44" startPosition="56" endLine="70" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -25,8 +25,8 @@
     <nodeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="33" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
     <scopeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="29" startPosition="33" endLine="30" endPosition="57" />
     <scopeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="38" startPosition="44" endLine="39" endPosition="20" />
-    <scopeInfo nodeId="6017889698595854306" fileName="Inherits_Constraints.java" startLine="49" startPosition="70" endLine="50" endPosition="50" />
-    <scopeInfo nodeId="6017889698595854368" fileName="Inherits_Constraints.java" startLine="60" startPosition="70" endLine="61" endPosition="127" />
+    <scopeInfo nodeId="6017889698595854306" fileName="Inherits_Constraints.java" startLine="49" startPosition="60" endLine="50" endPosition="50" />
+    <scopeInfo nodeId="6017889698595854368" fileName="Inherits_Constraints.java" startLine="60" startPosition="60" endLine="61" endPosition="127" />
     <scopeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="67" startPosition="63" endLine="68" endPosition="58" />
     <scopeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="29" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="6017889698595854305" fileName="Inherits_Constraints.java" startLine="49" startPosition="0" endLine="52" endPosition="0">
@@ -36,7 +36,7 @@
       <varInfo nodeId="6017889698595854367" varName="smd" />
     </scopeInfo>
     <scopeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="6017889698595854315" fileName="Inherits_Constraints.java" startLine="53" startPosition="59" endLine="57" endPosition="18" />
+    <scopeInfo nodeId="6017889698595854315" fileName="Inherits_Constraints.java" startLine="53" startPosition="49" endLine="57" endPosition="18" />
     <scopeInfo nodeId="2309001323587048079" fileName="Inherits_Constraints.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
     <scopeInfo nodeId="6017889698595854314" fileName="Inherits_Constraints.java" startLine="53" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="6017889698595854314" varName="smd" />

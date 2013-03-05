@@ -589,6 +589,10 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_Concept_GetDirectSuperConcepts" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.concept" />
     </node>
+    <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="3778812090363806968">
+      <property name="name" nameId="tpck.1169194664001" value="typeof_EnumMemberValueRefExpression" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="reference" />
+    </node>
   </roots>
   <root id="1178287490510">
     <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="1178287490511">
@@ -2105,7 +2109,7 @@
                     <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1203712100031">
                       <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1196933487449">
                         <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1196933487450">
-                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SModel" resolveInfo="SModel" />
+                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ec5l.~SModel" resolveInfo="SModel" />
                         </node>
                       </node>
                     </node>
@@ -2391,8 +2395,8 @@
     <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="1178287491363">
       <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1178287491364">
         <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1196933487473">
-          <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1196933487474">
-            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SModel" resolveInfo="SModel" />
+          <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4420589723408785152">
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ec5l.~SModel" resolveInfo="SModel" />
           </node>
         </node>
       </node>
@@ -5642,7 +5646,7 @@
       <property name="name" nameId="tpck.1169194664001" value="type" />
       <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="1179273814680">
         <node role="patternNode" roleId="tp3t.1136720037778" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1179273850527">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SModel" resolveInfo="SModel" />
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ec5l.~SModel" resolveInfo="SModel" />
         </node>
       </node>
     </node>
@@ -10814,6 +10818,28 @@
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="654553635095414081">
       <property name="name" nameId="tpck.1169194664001" value="operation" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp25.1179350041460" resolveInfo="Concept_GetDirectSuperConcepts" />
+    </node>
+  </root>
+  <root id="3778812090363806968">
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="3778812090363806969">
+      <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateEquationStatement" typeId="tpd4.1174658326157" id="3778812090363822261">
+        <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="3778812090363822262">
+          <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="3778812090363822263">
+            <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.StringType" typeId="tpee.1225271177708" id="3778812090363822264" />
+          </node>
+        </node>
+        <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="3778812090363822265">
+          <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeOfExpression" typeId="tpd4.1174657487114" id="3778812090363822266">
+            <node role="term" roleId="tpd4.1174657509053" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="3778812090363822267">
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="3778812090363806971" resolveInfo="expr" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="3778812090363806971">
+      <property name="name" nameId="tpck.1169194664001" value="expr" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tp25.6973815483243445083" resolveInfo="EnumMemberValueRefExpression" />
     </node>
   </root>
 </model>

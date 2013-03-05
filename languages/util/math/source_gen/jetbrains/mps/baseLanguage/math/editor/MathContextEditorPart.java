@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.math.editor;
 
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -32,9 +32,9 @@ public class MathContextEditorPart extends AbstractCellProvider {
   }
 
   @Deprecated
-  public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  public jetbrains.mps.nodeEditor.cells.EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
     // This method was added in MPS 3.0 for the compatibility with prev. generated code 
-    return createEditorCell((EditorContext) editorContext);
+    return (jetbrains.mps.nodeEditor.cells.EditorCell) createEditorCell((EditorContext) editorContext);
   }
 
   private EditorCell createCollection_qri1nn_a(EditorContext editorContext, SNode node) {
@@ -62,47 +62,9 @@ public class MathContextEditorPart extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createCollection_qri1nn_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_qri1nn_b0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createConstant_qri1nn_a1a(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_qri1nn_b1a(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_qri1nn_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_qri1nn_c0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.SELECTABLE, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createConstant_qri1nn_a2a(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_qri1nn_b2a(editorContext, node));
-    return editorCell;
-  }
-
   private EditorCell createConstant_qri1nn_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "predefined precision setting:");
     editorCell.setCellId("Constant_qri1nn_a0a");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_qri1nn_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "rounding mode:");
-    editorCell.setCellId("Constant_qri1nn_a1a");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_qri1nn_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "precision:");
-    editorCell.setCellId("Constant_qri1nn_a2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -125,6 +87,29 @@ public class MathContextEditorPart extends AbstractCellProvider {
     return editorCell;
   }
 
+  private EditorCell createCollection_qri1nn_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_qri1nn_b0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createConstant_qri1nn_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_qri1nn_b1a(editorContext, node));
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_qri1nn_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getInteger_def(node, "precisionSetting", "0") == 0;
+  }
+
+  private EditorCell createConstant_qri1nn_a1a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "rounding mode:");
+    editorCell.setCellId("Constant_qri1nn_a1a");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   private EditorCell createProperty_qri1nn_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("roundingMode");
@@ -140,6 +125,29 @@ public class MathContextEditorPart extends AbstractCellProvider {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
+    return editorCell;
+  }
+
+  private EditorCell createCollection_qri1nn_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_qri1nn_c0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createConstant_qri1nn_a2a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_qri1nn_b2a(editorContext, node));
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_qri1nn_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getInteger_def(node, "precisionSetting", "0") == 0;
+  }
+
+  private EditorCell createConstant_qri1nn_a2a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "precision:");
+    editorCell.setCellId("Constant_qri1nn_a2a");
+    editorCell.setDefaultText("");
     return editorCell;
   }
 
@@ -159,13 +167,5 @@ public class MathContextEditorPart extends AbstractCellProvider {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_qri1nn_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getInteger_def(node, "precisionSetting", "0") == 0;
-  }
-
-  private static boolean renderingCondition_qri1nn_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getInteger_def(node, "precisionSetting", "0") == 0;
   }
 }

@@ -126,6 +126,7 @@ public class Environment {
       LibraryInitializer.getInstance().addContributor(myLibraryContibutor);
     }
     ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
       public void run() {
         LibraryInitializer.getInstance().update();
       }

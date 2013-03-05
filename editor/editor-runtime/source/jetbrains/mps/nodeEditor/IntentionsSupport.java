@@ -16,7 +16,13 @@
 package jetbrains.mps.nodeEditor;
 
 import com.intellij.ide.DataManager;
-import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DataContext;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.actionSystem.Presentation;
 import com.intellij.openapi.application.RuntimeInterruptedException;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
@@ -24,19 +30,21 @@ import com.intellij.openapi.ui.popup.ListPopup;
 import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.ide.actions.MPSActions;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.intentions.*;
+import jetbrains.mps.intentions.BaseIntention;
+import jetbrains.mps.intentions.IntentionExecutable;
+import jetbrains.mps.intentions.IntentionType;
+import jetbrains.mps.intentions.IntentionsManager;
 import jetbrains.mps.intentions.IntentionsManager.QueryDescriptor;
+import jetbrains.mps.intentions.LightBulbMenu;
 import jetbrains.mps.intentions.icons.Icons;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.nodeEditor.selection.SelectionListener;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
@@ -45,16 +53,29 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
-import javax.swing.*;
+import javax.swing.AbstractAction;
+import javax.swing.Icon;
+import javax.swing.JComponent;
+import javax.swing.KeyStroke;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import java.awt.*;
+import java.awt.Dimension;
+import java.awt.Point;
+import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class IntentionsSupport {
@@ -121,7 +142,7 @@ public class IntentionsSupport {
 
   private void checkAndShowMenu() {
     if (isInconsistentEditor()) return;
-    if (myEditor.isReadOnly() || myEditor.getSelectedNode().getModel().isNotEditable()) return;
+    if (myEditor.isReadOnly() || myEditor.getSelectedNode().getModel().isReadOnly()) return;
 
     showIntentionsMenu();
   }
@@ -262,7 +283,7 @@ public class IntentionsSupport {
       protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
         ModelAccess.instance().runWriteInEDT(new Runnable() {
           public void run() {
-            SNode intentionNode = ((SNodeReference) intention.getDescriptor().getIntentionNodeReference()).resolve(MPSModuleRepository.getInstance());
+            SNode intentionNode = intention.getDescriptor().getIntentionNodeReference().resolve(MPSModuleRepository.getInstance());
             if (intentionNode == null) {
               Messages.showErrorDialog(ProjectHelper.toIdeaProject(myEditor.getOperationContext().getProject()),
                 "Could not find declaration for " + intention.getClass().getSimpleName()

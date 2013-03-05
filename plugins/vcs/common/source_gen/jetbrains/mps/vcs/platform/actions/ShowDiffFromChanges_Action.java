@@ -16,9 +16,9 @@ import jetbrains.mps.vcs.changesmanager.editor.ChangesStripActionsHelper;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.logging.Logger;
 
@@ -69,7 +69,7 @@ public class ShowDiffFromChanges_Action extends BaseAction {
           final SModel model = editedNode.getModel();
           ApplicationManager.getApplication().invokeLater(new Runnable() {
             public void run() {
-              VcsActionsUtil.showRootDifference((EditableSModelDescriptor) model.getModelDescriptor(), editedNode, ((Project) MapSequence.fromMap(_params).get("project")), bounds);
+              VcsActionsUtil.showRootDifference((EditableSModel) model.getModelDescriptor(), editedNode, ((Project) MapSequence.fromMap(_params).get("project")), bounds);
             }
           });
         }

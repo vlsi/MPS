@@ -15,14 +15,14 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.ModelsOnlyScope;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import jetbrains.mps.util.SNodeOperations;
 
 public class LanguageUsagesFinder implements IFinder {
@@ -37,6 +37,7 @@ public class LanguageUsagesFinder implements IFinder {
   public LanguageUsagesFinder() {
   }
 
+  @Override
   public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
     SearchResults searchResults = new SearchResults();
     IHolder objectHolder = query.getObjectHolder();
@@ -73,7 +74,7 @@ public class LanguageUsagesFinder implements IFinder {
       }
     } else if (query.getScope() instanceof ModelsOnlyScope) {
       searchResults.getSearchedNodes().add(language);
-      for (SModelDescriptor modelDescriptor : (as_m2sz3c_a0a0b0a9a8(query.getScope(), ModelsOnlyScope.class)).getModelDescriptors()) {
+      for (SModel modelDescriptor : (as_m2sz3c_a0a0b0a9a8(query.getScope(), ModelsOnlyScope.class)).getModelDescriptors()) {
         collectUsagesInModel(language, modelDescriptor, searchResults);
       }
     }
@@ -113,7 +114,7 @@ public class LanguageUsagesFinder implements IFinder {
   }
 
   private void collectUsagesInModels(Language searchedLanguage, IModule owner, SearchResults searchResults) {
-    for (SModelDescriptor modelDescriptor : owner.getOwnModelDescriptors()) {
+    for (SModel modelDescriptor : owner.getOwnModelDescriptors()) {
       if (!(SModelStereotype.isUserModel(modelDescriptor))) {
         continue;
       }
@@ -124,11 +125,11 @@ public class LanguageUsagesFinder implements IFinder {
     }
   }
 
-  private void collectUsagesInModel(Language searchedLanguage, SModelDescriptor modelDescriptor, SearchResults searchResults) {
+  private void collectUsagesInModel(Language searchedLanguage, SModel modelDescriptor, SearchResults searchResults) {
     if (!(SModelStereotype.isUserModel(modelDescriptor.getSModel()))) {
       return;
     }
-    for (SNode node : modelDescriptor.getSModel().nodes()) {
+    for (SNode node : new NodesIterable(modelDescriptor.getSModel())) {
       if (SNodeOperations.getLanguage(node) == searchedLanguage) {
         searchResults.getSearchResults().add(new SearchResult<SNode>(node, NODES_IN_LANGUAGE));
       }

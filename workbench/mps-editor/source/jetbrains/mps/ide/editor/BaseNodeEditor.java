@@ -65,19 +65,23 @@ public abstract class BaseNodeEditor implements Editor {
     return myComponent;
   }
 
+  @Override
   public EditorComponent getCurrentEditorComponent() {
     return myEditorComponent;
   }
 
+  @Override
   public EditorContext getEditorContext() {
     return myEditorComponent == null ? null : myEditorComponent.getEditorContext();
   }
 
+  @Override
   @NotNull
   public IOperationContext getOperationContext() {
     return myContext;
   }
 
+  @Override
   public SNodeReference getCurrentlyEditedNode() {
     return myCurrentlyEditedNode;
   }
@@ -108,6 +112,7 @@ public abstract class BaseNodeEditor implements Editor {
     }
   }
 
+  @Override
   public void dispose() {
     if (myEditorComponent != null) {
       myEditorComponent.dispose();
@@ -127,6 +132,7 @@ public abstract class BaseNodeEditor implements Editor {
       setBorder(new EmptyBorder(JBInsets.NONE));
     }
 
+    @Override
     @Nullable
     public Object getData(@NonNls String dataId) {
       if (dataId.equals(MPSEditorDataKeys.MPS_EDITOR.getName())) return BaseNodeEditor.this;
@@ -167,6 +173,7 @@ public abstract class BaseNodeEditor implements Editor {
 
   //---state---
 
+  @Override
   @Nullable
   public EditorState saveState(boolean full) {
     BaseEditorState result = new BaseEditorState();
@@ -188,6 +195,7 @@ public abstract class BaseNodeEditor implements Editor {
     return result;
   }
 
+  @Override
   public void loadState(@NotNull EditorState state) {
     if (!(state instanceof BaseEditorState)) return;
 
@@ -233,6 +241,7 @@ public abstract class BaseNodeEditor implements Editor {
       this.myInspectorMemento = source.myInspectorMemento;
     }
 
+    @Override
     public void save(Element e) {
       if (myMemento != null) {
         Element mementoElem = new Element(MEMENTO);
@@ -246,6 +255,7 @@ public abstract class BaseNodeEditor implements Editor {
       }
     }
 
+    @Override
     public void load(Element e) {
       Element mementoElem = e.getChild(MEMENTO);
       if (mementoElem != null) {

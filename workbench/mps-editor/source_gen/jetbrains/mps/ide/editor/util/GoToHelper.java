@@ -39,6 +39,7 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class GoToHelper {
@@ -93,6 +94,7 @@ public class GoToHelper {
       final JList list = new JBList(targets.toArray());
       list.setCellRenderer(listRenderer);
       new PopupChooserBuilder(list).setTitle(title).setMovable(true).setItemChoosenCallback(new Runnable() {
+        @Override
         public void run() {
           int[] ids = list.getSelectedIndices();
           if (ids == null || ids.length == 0) {
@@ -123,6 +125,7 @@ public class GoToHelper {
 
     final Set<SNodeReference> nodes = SetSequence.fromSet(new HashSet<SNodeReference>());
     ProgressManager.getInstance().run(new Task.Modal(project, "Searching...", true) {
+      @Override
       public void run(@NotNull final ProgressIndicator p) {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
@@ -144,28 +147,33 @@ public class GoToHelper {
     public DefaultNodeNavigationItemCellRenderer() {
     }
 
+    @Override
     public String getElementText(final NodeNavigatable element) {
       return ModelAccess.instance().runReadAction(new Computable<String>() {
+        @Override
         public String compute() {
           return getLabelNode(element).getPresentation();
         }
       });
     }
 
+    @Override
     protected String getContainerText(final NodeNavigatable element, String name) {
       return ModelAccess.instance().runReadAction(new Computable<String>() {
+        @Override
         public String compute() {
           return NodePresentationUtil.descriptionText(getContainerNode(element), false);
         }
       });
     }
 
+    @Override
     protected Icon getIcon(NodeNavigatable element) {
       return IconManager.getIconFor(getLabelNode(element));
     }
 
     protected SNode getLabelNode(NodeNavigatable element) {
-      return ((SNodePointer) element.getNodePointer()).getNode();
+      return ((SNodePointer) element.getNodePointer()).resolve(MPSModuleRepository.getInstance());
     }
 
     protected SNode getContainerNode(NodeNavigatable element) {
@@ -180,6 +188,7 @@ public class GoToHelper {
     @Override
     public String getElementText(final NodeNavigatable element) {
       return ModelAccess.instance().runReadAction(new Computable<String>() {
+        @Override
         public String compute() {
           SNode labelNode = getLabelNode(element);
           if (SNodeOperations.isInstanceOf(labelNode, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")) {
@@ -192,8 +201,9 @@ public class GoToHelper {
       });
     }
 
+    @Override
     protected SNode getLabelNode(NodeNavigatable element) {
-      SNode node = ((SNodePointer) element.getNodePointer()).getNode();
+      SNode node = ((SNodePointer) element.getNodePointer()).resolve(MPSModuleRepository.getInstance());
       if (node == null) {
         return null;
       }

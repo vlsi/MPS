@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-b4d1w9oqnk276b1t7gavzy39rjrnymf">
+<dependencies version="2" modelHash="xsv3ib1edbybss80r4p7s2883mykpy">
   <dep model="f:gwt_stub#954c4d77-e24b-4e49-a5a5-5476c966c092#com.google.gwt.user(jetbrains.mps.gwt.client/com.google.gwt.user@gwt_stub)" />
   <dep model="f:gwt_stub#954c4d77-e24b-4e49-a5a5-5476c966c092#com.google.gwt.user.theme.standard(jetbrains.mps.gwt.client/com.google.gwt.user.theme.standard@gwt_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.apple.java(JDK/com.apple.java@java_stub)" />
@@ -980,63 +980,41 @@
   <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.event.shared(jetbrains.mps.ui.gwt.runtime/com.google.gwt.event.shared@java_stub)" />
   <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.user.client(jetbrains.mps.ui.gwt.runtime/com.google.gwt.user.client@java_stub)" />
   <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.user.client.ui(jetbrains.mps.ui.gwt.runtime/com.google.gwt.user.client.ui@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" hash="-a178no4n3wxte35iscwt0swosiltfll" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="8v5mxg7faenizzqancdsnbkmkc74yqj" />
-  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="-33tlavyfw081dpoo7kr33x973l53rit" />
-  <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" hash="9s7tn7r6i6ppg130pq11m1usnjxibg4" />
-  <dep model="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" hash="3whm9bx2oamzny12pafx15if16e6mzc" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3l4d6vah7bipcwb415vkx7fy07t8dxg" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="8qihjmmfail7boj2nvoucmp2h7pt51d" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="621em7vpw5ex0v0ghcf6e9cwqktpv6v" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-1btmsuay4m0oifxjqd0wk9bex9z4aer" />
-  <dep model="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" hash="b6qwmon42e2m3ilphx1s2e0pt88dxyp" />
-  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="3d2lxr8unjxvzzi6xlbsruq2a8tb63l" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="ds41xwd3vhafeazos843c1dygtjbmpd" />
-  <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" hash="-bsx9nqeu3phtzjl7qheg3fy1r62vv3m" />
-  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-1y364c3x08ezyxfrbl16vh2nde1fe7q" />
-  <dep model="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" hash="-4nirrn23q5wrl0mme8ov8v7hn17c6ex" />
-  <dep model="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" hash="-4b42jm5setauc1jgs0sk12290e8tx1e" />
-  <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="-5vfg2ib2be2yqaomu7cvgm97hdvh00d" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-5hwzidtifhzxzto4ufe7o07xsgqc589" />
   <dep model="r:00000000-0000-4000-0000-011c89590576(jetbrains.mps.gtext.generator.baseLanguage.template.main@generator)" hash="6hkhr0r9odhfjwrsix7dek59q02pg9t" />
-  <dep model="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" hash="-90h8ur0t30myxsdozihagm63dtfos75" />
   <dep model="r:00000000-0000-4000-0000-011c89590589(jetbrains.mps.xml.generator.baseLanguage.template.main@generator)" hash="-5qxvr6clp2v0fpa05z1o5g2lnv7onz8" />
   <dep model="r:00000000-0000-4000-0000-011c89590592(jetbrains.mps.xmlInternal.generator.baseLanguage.template.main@generator)" hash="-w9k5at8p4bm2xncg98gvxb3d6gqv2x" />
   <dep model="r:0096937e-0d1c-4498-b54e-f1ebceb78c48(jetbrains.mps.ui.internal.generator.template.main@generator)" hash="-av02mljodobf5xficxyohwiu51bizzs" />
-  <dep model="r:10f25532-8045-4769-a24c-e48e027baa9d(jetbrains.mps.ui.sandbox.gwt)" hash="eqgqdbowq9f6ak2g4u8iz4hk2t0ng25" />
-  <dep model="r:1662aa20-edf5-46c3-8002-c6d4c875fd31(jetbrains.mps.gwt.client.generator.template.main@generator)" hash="bg8dmki9ps5r3w3e1k2pd5i5ou1rzrm" />
+  <dep model="r:10f25532-8045-4769-a24c-e48e027baa9d(jetbrains.mps.ui.sandbox.gwt)" hash="3isuk9b1b8dtgp1vktusul44vi8kk3n" />
+  <dep model="r:1662aa20-edf5-46c3-8002-c6d4c875fd31(jetbrains.mps.gwt.client.generator.template.main@generator)" hash="2cfpubarsm1kehnvgneo7m0zbheoon3" />
   <dep model="r:22d98723-5ac5-4775-a416-434d71d737ed(jetbrains.mps.ui.swing.widgets)" />
-  <dep model="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" hash="-6bmz59p0qeuzy2j0zmtv3lfwfczldfh" />
-  <dep model="r:32537826-1146-4f8d-92f2-d34a6c6f2706(jetbrains.mps.ui.swing.generator.template.main@generator)" hash="6wzmamrkau2k2v3bskukfxgh52nugk" />
-  <dep model="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)" hash="-civmjgp9lyvc1592lp0bed4tl3qfjvc" />
-  <dep model="r:365f182a-cc04-4509-a3b0-2053df8061d1(jetbrains.mps.ui.swt.runtime.widgets)" hash="-7s1337wl11380i7iw76ev61zew5gled" />
-  <dep model="r:36693452-2637-4608-8caa-ab32ee7c1be3(jetbrains.mps.ui.multiplexing)" hash="-bjm41joiinsaf4eq4vwvx8oxwy3uze2" />
-  <dep model="r:383ba4d2-f4ec-41a6-8e7f-108e84a7c9f9(jetbrains.mps.ui.constraints)" hash="-9f53ms5hplw8eljqgpo00sgw1iipqvz" />
-  <dep model="r:39023b18-af4f-44db-bcb1-c118a59086cd(jetbrains.mps.ui.generator.template.meta@generator)" hash="-azgtkc6r92anba52e4jwab1uneifyi0" />
-  <dep model="r:448d8730-24ed-4789-a1c7-efd9de20f14b(jetbrains.mps.ui.internal.structure)" hash="577a736w2jiogru4pdd6x10tnglxqim" />
-  <dep model="r:453b0397-d30d-4f36-9cf6-3903e9b6818d(jetbrains.mps.ui.swing.runtime)" hash="-b0dedxbvwjt1wzu50vmdo40tugw6krh" />
+  <dep model="r:32537826-1146-4f8d-92f2-d34a6c6f2706(jetbrains.mps.ui.swing.generator.template.main@generator)" hash="8zv02i5bkymehthurysbipr2ib57cwe" />
+  <dep model="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)" hash="-58ocwuod1hpr2tjsask05cw1cxy8jv8" />
+  <dep model="r:365f182a-cc04-4509-a3b0-2053df8061d1(jetbrains.mps.ui.swt.runtime.widgets)" hash="-dyyg5jp60s7wzxcwf6yt8v4qylk40j0" />
+  <dep model="r:36693452-2637-4608-8caa-ab32ee7c1be3(jetbrains.mps.ui.multiplexing)" hash="1u094zii4xr3gyu52stj0yy0c5x6zr6" />
+  <dep model="r:39023b18-af4f-44db-bcb1-c118a59086cd(jetbrains.mps.ui.generator.template.meta@generator)" hash="7xhb7pifs0flt7slptlqi38jzao21qx" />
+  <dep model="r:453b0397-d30d-4f36-9cf6-3903e9b6818d(jetbrains.mps.ui.swing.runtime)" hash="-66kibtd5ywv9atp3e39fyl3gqkyjerg" />
   <dep model="r:4bcef4e7-5bde-4076-8e02-73a0681ac6a3(jetbrains.mps.ui.structure)" hash="6ziiknjdispx9jfvn66zoqp5deajg1e" />
-  <dep model="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)" hash="3nf5q8cg1z81eamj6k44m0mbjl68xdq" />
-  <dep model="r:517e9ae1-a31e-409f-939e-e3818e8527df(jetbrains.mps.ui.gwt.structure)" hash="-2d2ap659jik25ccy9jwfpoaope76nl7" />
   <dep model="r:51efe78a-da84-4c87-b8b1-cd2e544fddd2(jetbrains.mps.ui.modeling.ann)" hash="-bif5boeesspp43qhjz7aimtnsc545hi" />
   <dep model="r:66bbcfbe-bddf-4df7-8bd5-fa076512c024(jetbrains.mps.ui.generator.template.variants@generator)" hash="-eis4a9nsu5xc7aqd2j253pch5i7nmip" />
-  <dep model="r:6878192c-cfd9-411c-9af0-6054cf03c27f(jetbrains.mps.ui.gwt.generator.template.main@generator)" hash="-9ws50900ehqvlo488hhna8omhjj7lp4" />
+  <dep model="r:6878192c-cfd9-411c-9af0-6054cf03c27f(jetbrains.mps.ui.gwt.generator.template.main@generator)" hash="-aj3b9c1h21jx65vsqujtxn3trlnzoht" />
   <dep model="r:6e5f3f83-4279-433d-9603-0c8b89b682e3(jetbrains.mps.ui.gwt.events)" />
-  <dep model="r:73e6a865-ca49-4dc1-9fd2-b963d45d4e87(jetbrains.mps.ui.swt.generator.template.main@generator)" hash="67gl4xtzz6zvbl83ppezqogissfhm8l" />
+  <dep model="r:73e6a865-ca49-4dc1-9fd2-b963d45d4e87(jetbrains.mps.ui.swt.generator.template.main@generator)" hash="62hcg8tg4wvzwr5pynnnt95cqo2x3fl" />
   <dep model="r:7fdb3fe3-1923-41bc-947f-2eaffc319dea(jetbrains.mps.ui.generator.template.main@generator)" hash="eiohxh0lsvn5rp6px4n51jysywxc968" />
   <dep model="r:840b989b-d75d-4268-abaa-4676d1720c58(jetbrains.mps.ui.events)" />
   <dep model="r:86ee6b4b-6b14-4232-a964-c35c292583ac(jetbrains.mps.ui.gwt.generator.template.helper)" hash="ata14y4kvm7ntt8rf0kxycor4tl0zqj" />
-  <dep model="r:8999af71-8d74-463c-91cf-52b8c2875292(jetbrains.mps.ui.swt.structure)" hash="-cz5d6o5gg869c0gtmoiv2n518b5f6s4" />
-  <dep model="r:940623f0-75cf-4f64-98fc-aef3fadfaedd(jetbrains.mps.gwt.client.structure)" hash="2jp8vj91lc59j7zj3wow9u3u5mznztx" />
-  <dep model="r:9e833b11-a3b9-451a-a8dc-35cf0834f311(jetbrains.mps.ui.swt.runtime.layout)" hash="d1lk36y3dmd6rjxqw9mhg80sd6rywle" />
-  <dep model="r:a145b87e-922a-44dc-a6ab-743b516afc3a(jetbrains.mps.ui.swing.behavior)" hash="41rginxyo1fz17bcvit6vr45ht74rel" />
+  <dep model="r:9e833b11-a3b9-451a-a8dc-35cf0834f311(jetbrains.mps.ui.swt.runtime.layout)" hash="-cp1y849a0gdku9jpojz1wwj686q114j" />
   <dep model="r:b5bea281-ab90-4fa9-bfa9-a6d130009710(jetbrains.mps.ui.swt.events)" />
   <dep model="r:ba1d89ed-800e-4d0a-ad09-221b1011fbd1(jetbrains.mps.ui.modeling.structure)" hash="6q6nn8kl7siomxu7sm5r58kecvcy7re" />
-  <dep model="r:bc697ec3-2ba9-4c70-aa63-ea0f5f0a693b(jetbrains.mps.ui.swt.behavior)" hash="e61dydeyi2vr9s8h9qrizj7ug65ad8z" />
   <dep model="r:c1b84d62-80cc-499b-b655-943c00c7ba88(jetbrains.mps.ui.widgets)" />
   <dep model="r:c33653ee-1be0-4ff5-9822-83365da4e9b7(jetbrains.mps.ui.modeling.behavior)" hash="-2rw8m8v7tzvjwlkja4742uqy4puwf3w" />
   <dep model="r:dfdf3542-dbcf-43df-870a-3c3504b3c840(jetbrains.mps.baseLanguage.collections.custom)" />
   <dep model="r:e1fb76fe-337f-4b99-9cd2-23a0f09d8877(jetbrains.mps.ui.gwt.widgets)" />
   <dep model="r:e8762dad-daad-468e-8f14-8910b1a06775(jetbrains.mps.ui.swing.events)" />
-  <dep model="r:f3bea3ec-ea9e-4af5-bf2c-a33c2d2491a5(jetbrains.mps.ui.swing.structure)" hash="1d6k7fukve6rk6n4obsdwr7lkp9xuss" />
   <dep model="r:fdfa4297-e47f-4051-a403-8ec60f159a16(jetbrains.mps.ui.swt.widgets)" />
   <common hash="-95naaeh0fqyuconj5re120vusm8aocv">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -1076,36 +1054,19 @@
     <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.event.shared(jetbrains.mps.ui.gwt.runtime/com.google.gwt.event.shared@java_stub)" />
     <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.user.client(jetbrains.mps.ui.gwt.runtime/com.google.gwt.user.client@java_stub)" />
     <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.user.client.ui(jetbrains.mps.ui.gwt.runtime/com.google.gwt.user.client.ui@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" />
     <dep model="r:0096937e-0d1c-4498-b54e-f1ebceb78c48(jetbrains.mps.ui.internal.generator.template.main@generator)" />
     <dep model="r:22d98723-5ac5-4775-a416-434d71d737ed(jetbrains.mps.ui.swing.widgets)" />
-    <dep model="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" />
     <dep model="r:32537826-1146-4f8d-92f2-d34a6c6f2706(jetbrains.mps.ui.swing.generator.template.main@generator)" />
     <dep model="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)" />
     <dep model="r:365f182a-cc04-4509-a3b0-2053df8061d1(jetbrains.mps.ui.swt.runtime.widgets)" />
     <dep model="r:36693452-2637-4608-8caa-ab32ee7c1be3(jetbrains.mps.ui.multiplexing)" />
-    <dep model="r:383ba4d2-f4ec-41a6-8e7f-108e84a7c9f9(jetbrains.mps.ui.constraints)" />
     <dep model="r:39023b18-af4f-44db-bcb1-c118a59086cd(jetbrains.mps.ui.generator.template.meta@generator)" />
     <dep model="r:453b0397-d30d-4f36-9cf6-3903e9b6818d(jetbrains.mps.ui.swing.runtime)" />
     <dep model="r:4bcef4e7-5bde-4076-8e02-73a0681ac6a3(jetbrains.mps.ui.structure)" />
-    <dep model="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)" />
-    <dep model="r:517e9ae1-a31e-409f-939e-e3818e8527df(jetbrains.mps.ui.gwt.structure)" />
     <dep model="r:51efe78a-da84-4c87-b8b1-cd2e544fddd2(jetbrains.mps.ui.modeling.ann)" />
     <dep model="r:66bbcfbe-bddf-4df7-8bd5-fa076512c024(jetbrains.mps.ui.generator.template.variants@generator)" />
     <dep model="r:6878192c-cfd9-411c-9af0-6054cf03c27f(jetbrains.mps.ui.gwt.generator.template.main@generator)" />
@@ -1114,24 +1075,20 @@
     <dep model="r:7fdb3fe3-1923-41bc-947f-2eaffc319dea(jetbrains.mps.ui.generator.template.main@generator)" />
     <dep model="r:840b989b-d75d-4268-abaa-4676d1720c58(jetbrains.mps.ui.events)" />
     <dep model="r:86ee6b4b-6b14-4232-a964-c35c292583ac(jetbrains.mps.ui.gwt.generator.template.helper)" />
-    <dep model="r:8999af71-8d74-463c-91cf-52b8c2875292(jetbrains.mps.ui.swt.structure)" />
     <dep model="r:9e833b11-a3b9-451a-a8dc-35cf0834f311(jetbrains.mps.ui.swt.runtime.layout)" />
-    <dep model="r:a145b87e-922a-44dc-a6ab-743b516afc3a(jetbrains.mps.ui.swing.behavior)" />
     <dep model="r:b5bea281-ab90-4fa9-bfa9-a6d130009710(jetbrains.mps.ui.swt.events)" />
     <dep model="r:ba1d89ed-800e-4d0a-ad09-221b1011fbd1(jetbrains.mps.ui.modeling.structure)" />
-    <dep model="r:bc697ec3-2ba9-4c70-aa63-ea0f5f0a693b(jetbrains.mps.ui.swt.behavior)" />
     <dep model="r:c1b84d62-80cc-499b-b655-943c00c7ba88(jetbrains.mps.ui.widgets)" />
     <dep model="r:c33653ee-1be0-4ff5-9822-83365da4e9b7(jetbrains.mps.ui.modeling.behavior)" />
     <dep model="r:dfdf3542-dbcf-43df-870a-3c3504b3c840(jetbrains.mps.baseLanguage.collections.custom)" />
     <dep model="r:e1fb76fe-337f-4b99-9cd2-23a0f09d8877(jetbrains.mps.ui.gwt.widgets)" />
     <dep model="r:e8762dad-daad-468e-8f14-8910b1a06775(jetbrains.mps.ui.swing.events)" />
-    <dep model="r:f3bea3ec-ea9e-4af5-bf2c-a33c2d2491a5(jetbrains.mps.ui.swing.structure)" />
     <dep model="r:fdfa4297-e47f-4051-a403-8ec60f159a16(jetbrains.mps.ui.swt.widgets)" />
     <file name="UIDemo_GWT.java" />
     <file name="UIDemo_SWT.java" />
     <file name="UIDemo_Swing.java" />
   </source>
-  <source id="7046856741208199003" name="BusinessObject" hash="-9y99lnq10anc4ry85xthyfmy37fg1px">
+  <source id="7046856741208199003" name="BusinessObject" hash="-dgiqi0365ges700bc85w8q70xsvdu1u">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:66bbcfbe-bddf-4df7-8bd5-fa076512c024(jetbrains.mps.ui.generator.template.variants@generator)" />
     <file name="BusinessObject.java" />
@@ -2109,7 +2066,6 @@
     <dep model="r:00000000-0000-4000-0000-011c89590592(jetbrains.mps.xmlInternal.generator.baseLanguage.template.main@generator)" />
     <dep model="r:10f25532-8045-4769-a24c-e48e027baa9d(jetbrains.mps.ui.sandbox.gwt)" />
     <dep model="r:1662aa20-edf5-46c3-8002-c6d4c875fd31(jetbrains.mps.gwt.client.generator.template.main@generator)" />
-    <dep model="r:940623f0-75cf-4f64-98fc-aef3fadfaedd(jetbrains.mps.gwt.client.structure)" />
     <file name="UIDemo.gwt.xml" />
   </source>
   <source id="7001216437968616991" name="PanelsDemo" hash="-abygur3zx1nkr0o0tygdh8oydc42kof" dependsOnCreated="true">
@@ -2141,36 +2097,17 @@
     <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.event.shared(jetbrains.mps.ui.gwt.runtime/com.google.gwt.event.shared@java_stub)" />
     <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.user.client(jetbrains.mps.ui.gwt.runtime/com.google.gwt.user.client@java_stub)" />
     <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.user.client.ui(jetbrains.mps.ui.gwt.runtime/com.google.gwt.user.client.ui@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" />
     <dep model="r:0096937e-0d1c-4498-b54e-f1ebceb78c48(jetbrains.mps.ui.internal.generator.template.main@generator)" />
     <dep model="r:22d98723-5ac5-4775-a416-434d71d737ed(jetbrains.mps.ui.swing.widgets)" />
-    <dep model="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" />
     <dep model="r:32537826-1146-4f8d-92f2-d34a6c6f2706(jetbrains.mps.ui.swing.generator.template.main@generator)" />
     <dep model="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)" />
     <dep model="r:365f182a-cc04-4509-a3b0-2053df8061d1(jetbrains.mps.ui.swt.runtime.widgets)" />
     <dep model="r:36693452-2637-4608-8caa-ab32ee7c1be3(jetbrains.mps.ui.multiplexing)" />
-    <dep model="r:383ba4d2-f4ec-41a6-8e7f-108e84a7c9f9(jetbrains.mps.ui.constraints)" />
     <dep model="r:39023b18-af4f-44db-bcb1-c118a59086cd(jetbrains.mps.ui.generator.template.meta@generator)" />
-    <dep model="r:448d8730-24ed-4789-a1c7-efd9de20f14b(jetbrains.mps.ui.internal.structure)" />
     <dep model="r:453b0397-d30d-4f36-9cf6-3903e9b6818d(jetbrains.mps.ui.swing.runtime)" />
-    <dep model="r:4bcef4e7-5bde-4076-8e02-73a0681ac6a3(jetbrains.mps.ui.structure)" />
-    <dep model="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)" />
-    <dep model="r:517e9ae1-a31e-409f-939e-e3818e8527df(jetbrains.mps.ui.gwt.structure)" />
     <dep model="r:51efe78a-da84-4c87-b8b1-cd2e544fddd2(jetbrains.mps.ui.modeling.ann)" />
     <dep model="r:66bbcfbe-bddf-4df7-8bd5-fa076512c024(jetbrains.mps.ui.generator.template.variants@generator)" />
     <dep model="r:6878192c-cfd9-411c-9af0-6054cf03c27f(jetbrains.mps.ui.gwt.generator.template.main@generator)" />
@@ -2179,18 +2116,14 @@
     <dep model="r:7fdb3fe3-1923-41bc-947f-2eaffc319dea(jetbrains.mps.ui.generator.template.main@generator)" />
     <dep model="r:840b989b-d75d-4268-abaa-4676d1720c58(jetbrains.mps.ui.events)" />
     <dep model="r:86ee6b4b-6b14-4232-a964-c35c292583ac(jetbrains.mps.ui.gwt.generator.template.helper)" />
-    <dep model="r:8999af71-8d74-463c-91cf-52b8c2875292(jetbrains.mps.ui.swt.structure)" />
     <dep model="r:9e833b11-a3b9-451a-a8dc-35cf0834f311(jetbrains.mps.ui.swt.runtime.layout)" />
-    <dep model="r:a145b87e-922a-44dc-a6ab-743b516afc3a(jetbrains.mps.ui.swing.behavior)" />
     <dep model="r:b5bea281-ab90-4fa9-bfa9-a6d130009710(jetbrains.mps.ui.swt.events)" />
     <dep model="r:ba1d89ed-800e-4d0a-ad09-221b1011fbd1(jetbrains.mps.ui.modeling.structure)" />
-    <dep model="r:bc697ec3-2ba9-4c70-aa63-ea0f5f0a693b(jetbrains.mps.ui.swt.behavior)" />
     <dep model="r:c1b84d62-80cc-499b-b655-943c00c7ba88(jetbrains.mps.ui.widgets)" />
     <dep model="r:c33653ee-1be0-4ff5-9822-83365da4e9b7(jetbrains.mps.ui.modeling.behavior)" />
     <dep model="r:dfdf3542-dbcf-43df-870a-3c3504b3c840(jetbrains.mps.baseLanguage.collections.custom)" />
     <dep model="r:e1fb76fe-337f-4b99-9cd2-23a0f09d8877(jetbrains.mps.ui.gwt.widgets)" />
     <dep model="r:e8762dad-daad-468e-8f14-8910b1a06775(jetbrains.mps.ui.swing.events)" />
-    <dep model="r:f3bea3ec-ea9e-4af5-bf2c-a33c2d2491a5(jetbrains.mps.ui.swing.structure)" />
     <dep model="r:fdfa4297-e47f-4051-a403-8ec60f159a16(jetbrains.mps.ui.swt.widgets)" />
     <file name="PanelsDemo_GWT.java" />
     <file name="PanelsDemo_SWT.java" />
@@ -2224,35 +2157,17 @@
     <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.event.dom.client(jetbrains.mps.ui.gwt.runtime/com.google.gwt.event.dom.client@java_stub)" />
     <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.event.logical.shared(jetbrains.mps.ui.gwt.runtime/com.google.gwt.event.logical.shared@java_stub)" />
     <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.user.client.ui(jetbrains.mps.ui.gwt.runtime/com.google.gwt.user.client.ui@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" />
     <dep model="r:0096937e-0d1c-4498-b54e-f1ebceb78c48(jetbrains.mps.ui.internal.generator.template.main@generator)" />
     <dep model="r:22d98723-5ac5-4775-a416-434d71d737ed(jetbrains.mps.ui.swing.widgets)" />
-    <dep model="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" />
     <dep model="r:32537826-1146-4f8d-92f2-d34a6c6f2706(jetbrains.mps.ui.swing.generator.template.main@generator)" />
     <dep model="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)" />
     <dep model="r:365f182a-cc04-4509-a3b0-2053df8061d1(jetbrains.mps.ui.swt.runtime.widgets)" />
     <dep model="r:36693452-2637-4608-8caa-ab32ee7c1be3(jetbrains.mps.ui.multiplexing)" />
-    <dep model="r:383ba4d2-f4ec-41a6-8e7f-108e84a7c9f9(jetbrains.mps.ui.constraints)" />
     <dep model="r:39023b18-af4f-44db-bcb1-c118a59086cd(jetbrains.mps.ui.generator.template.meta@generator)" />
     <dep model="r:453b0397-d30d-4f36-9cf6-3903e9b6818d(jetbrains.mps.ui.swing.runtime)" />
-    <dep model="r:4bcef4e7-5bde-4076-8e02-73a0681ac6a3(jetbrains.mps.ui.structure)" />
-    <dep model="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)" />
-    <dep model="r:517e9ae1-a31e-409f-939e-e3818e8527df(jetbrains.mps.ui.gwt.structure)" />
     <dep model="r:51efe78a-da84-4c87-b8b1-cd2e544fddd2(jetbrains.mps.ui.modeling.ann)" />
     <dep model="r:66bbcfbe-bddf-4df7-8bd5-fa076512c024(jetbrains.mps.ui.generator.template.variants@generator)" />
     <dep model="r:6878192c-cfd9-411c-9af0-6054cf03c27f(jetbrains.mps.ui.gwt.generator.template.main@generator)" />
@@ -2261,18 +2176,14 @@
     <dep model="r:7fdb3fe3-1923-41bc-947f-2eaffc319dea(jetbrains.mps.ui.generator.template.main@generator)" />
     <dep model="r:840b989b-d75d-4268-abaa-4676d1720c58(jetbrains.mps.ui.events)" />
     <dep model="r:86ee6b4b-6b14-4232-a964-c35c292583ac(jetbrains.mps.ui.gwt.generator.template.helper)" />
-    <dep model="r:8999af71-8d74-463c-91cf-52b8c2875292(jetbrains.mps.ui.swt.structure)" />
     <dep model="r:9e833b11-a3b9-451a-a8dc-35cf0834f311(jetbrains.mps.ui.swt.runtime.layout)" />
-    <dep model="r:a145b87e-922a-44dc-a6ab-743b516afc3a(jetbrains.mps.ui.swing.behavior)" />
     <dep model="r:b5bea281-ab90-4fa9-bfa9-a6d130009710(jetbrains.mps.ui.swt.events)" />
     <dep model="r:ba1d89ed-800e-4d0a-ad09-221b1011fbd1(jetbrains.mps.ui.modeling.structure)" />
-    <dep model="r:bc697ec3-2ba9-4c70-aa63-ea0f5f0a693b(jetbrains.mps.ui.swt.behavior)" />
     <dep model="r:c1b84d62-80cc-499b-b655-943c00c7ba88(jetbrains.mps.ui.widgets)" />
     <dep model="r:c33653ee-1be0-4ff5-9822-83365da4e9b7(jetbrains.mps.ui.modeling.behavior)" />
     <dep model="r:dfdf3542-dbcf-43df-870a-3c3504b3c840(jetbrains.mps.baseLanguage.collections.custom)" />
     <dep model="r:e1fb76fe-337f-4b99-9cd2-23a0f09d8877(jetbrains.mps.ui.gwt.widgets)" />
     <dep model="r:e8762dad-daad-468e-8f14-8910b1a06775(jetbrains.mps.ui.swing.events)" />
-    <dep model="r:f3bea3ec-ea9e-4af5-bf2c-a33c2d2491a5(jetbrains.mps.ui.swing.structure)" />
     <dep model="r:fdfa4297-e47f-4051-a403-8ec60f159a16(jetbrains.mps.ui.swt.widgets)" />
     <file name="ControlsDemo_GWT.java" />
     <file name="ControlsDemo_SWT.java" />
@@ -2307,35 +2218,17 @@
     <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.event.shared(jetbrains.mps.ui.gwt.runtime/com.google.gwt.event.shared@java_stub)" />
     <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.user.client(jetbrains.mps.ui.gwt.runtime/com.google.gwt.user.client@java_stub)" />
     <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.user.client.ui(jetbrains.mps.ui.gwt.runtime/com.google.gwt.user.client.ui@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" />
     <dep model="r:0096937e-0d1c-4498-b54e-f1ebceb78c48(jetbrains.mps.ui.internal.generator.template.main@generator)" />
     <dep model="r:22d98723-5ac5-4775-a416-434d71d737ed(jetbrains.mps.ui.swing.widgets)" />
-    <dep model="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" />
     <dep model="r:32537826-1146-4f8d-92f2-d34a6c6f2706(jetbrains.mps.ui.swing.generator.template.main@generator)" />
     <dep model="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)" />
     <dep model="r:365f182a-cc04-4509-a3b0-2053df8061d1(jetbrains.mps.ui.swt.runtime.widgets)" />
     <dep model="r:36693452-2637-4608-8caa-ab32ee7c1be3(jetbrains.mps.ui.multiplexing)" />
-    <dep model="r:383ba4d2-f4ec-41a6-8e7f-108e84a7c9f9(jetbrains.mps.ui.constraints)" />
     <dep model="r:39023b18-af4f-44db-bcb1-c118a59086cd(jetbrains.mps.ui.generator.template.meta@generator)" />
     <dep model="r:453b0397-d30d-4f36-9cf6-3903e9b6818d(jetbrains.mps.ui.swing.runtime)" />
-    <dep model="r:4bcef4e7-5bde-4076-8e02-73a0681ac6a3(jetbrains.mps.ui.structure)" />
-    <dep model="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)" />
-    <dep model="r:517e9ae1-a31e-409f-939e-e3818e8527df(jetbrains.mps.ui.gwt.structure)" />
     <dep model="r:51efe78a-da84-4c87-b8b1-cd2e544fddd2(jetbrains.mps.ui.modeling.ann)" />
     <dep model="r:66bbcfbe-bddf-4df7-8bd5-fa076512c024(jetbrains.mps.ui.generator.template.variants@generator)" />
     <dep model="r:6878192c-cfd9-411c-9af0-6054cf03c27f(jetbrains.mps.ui.gwt.generator.template.main@generator)" />
@@ -2344,18 +2237,14 @@
     <dep model="r:7fdb3fe3-1923-41bc-947f-2eaffc319dea(jetbrains.mps.ui.generator.template.main@generator)" />
     <dep model="r:840b989b-d75d-4268-abaa-4676d1720c58(jetbrains.mps.ui.events)" />
     <dep model="r:86ee6b4b-6b14-4232-a964-c35c292583ac(jetbrains.mps.ui.gwt.generator.template.helper)" />
-    <dep model="r:8999af71-8d74-463c-91cf-52b8c2875292(jetbrains.mps.ui.swt.structure)" />
     <dep model="r:9e833b11-a3b9-451a-a8dc-35cf0834f311(jetbrains.mps.ui.swt.runtime.layout)" />
-    <dep model="r:a145b87e-922a-44dc-a6ab-743b516afc3a(jetbrains.mps.ui.swing.behavior)" />
     <dep model="r:b5bea281-ab90-4fa9-bfa9-a6d130009710(jetbrains.mps.ui.swt.events)" />
     <dep model="r:ba1d89ed-800e-4d0a-ad09-221b1011fbd1(jetbrains.mps.ui.modeling.structure)" />
-    <dep model="r:bc697ec3-2ba9-4c70-aa63-ea0f5f0a693b(jetbrains.mps.ui.swt.behavior)" />
     <dep model="r:c1b84d62-80cc-499b-b655-943c00c7ba88(jetbrains.mps.ui.widgets)" />
     <dep model="r:c33653ee-1be0-4ff5-9822-83365da4e9b7(jetbrains.mps.ui.modeling.behavior)" />
     <dep model="r:dfdf3542-dbcf-43df-870a-3c3504b3c840(jetbrains.mps.baseLanguage.collections.custom)" />
     <dep model="r:e1fb76fe-337f-4b99-9cd2-23a0f09d8877(jetbrains.mps.ui.gwt.widgets)" />
     <dep model="r:e8762dad-daad-468e-8f14-8910b1a06775(jetbrains.mps.ui.swing.events)" />
-    <dep model="r:f3bea3ec-ea9e-4af5-bf2c-a33c2d2491a5(jetbrains.mps.ui.swing.structure)" />
     <dep model="r:fdfa4297-e47f-4051-a403-8ec60f159a16(jetbrains.mps.ui.swt.widgets)" />
     <file name="WindowsDemo_GWT.java" />
     <file name="WindowsDemo_SWT.java" />

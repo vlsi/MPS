@@ -12,7 +12,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.typesystem.inference.DefaultTypecheckingContextOwner;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -32,18 +32,22 @@ public class SpecificModelChecker extends SpecificChecker implements ITypeContex
     myLanguageCheckers = CheckersComponent.getInstance().getCheckers();
   }
 
+  @Override
   public boolean reuseTypecheckingContext() {
     return true;
   }
 
+  @Override
   public SubtypingCache createSubtypingCache() {
     return null;
   }
 
+  @Override
   public TypeCheckingContext createTypecheckingContext(SNode node, TypeContextManager manager) {
     return new DefaultTypecheckingContextOwner().createTypecheckingContext(node, manager);
   }
 
+  @Override
   public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor monitor, final IOperationContext operationContext) {
     final List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
 
@@ -58,6 +62,7 @@ public class SpecificModelChecker extends SpecificChecker implements ITypeContex
       }
       for (final SNode rootNode : SModelOperations.getRoots(model, null)) {
         TypeContextManager.getInstance().runTypeCheckingAction(this, rootNode, new ITypechecking.Action() {
+          @Override
           public void run(TypeCheckingContext p0) {
             Set<IErrorReporter> iErrorReporters = checker.getErrors(rootNode, operationContext);
             for (IErrorReporter errorReporter : SetSequence.fromSet(iErrorReporters)) {
@@ -66,6 +71,7 @@ public class SpecificModelChecker extends SpecificChecker implements ITypeContex
               IModelCheckerFix fix = null;
               if (quickFix != null) {
                 fix = new IModelCheckerFix() {
+                  @Override
                   public boolean doFix() {
                     quickFix.execute(reporter.getSNode());
                     return true;

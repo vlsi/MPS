@@ -91,6 +91,7 @@ __switch__:
 
   public void test_methodParameter() throws Exception {
     Worker wrk = new Worker() {
+      @Override
       public String doWork(final Integer d) {
         return new _FunctionTypes._return_P0_E0<String>() {
           public String invoke() {
@@ -104,6 +105,7 @@ __switch__:
 
   public void test_methodParameter2() throws Exception {
     Worker wrk = new Worker() {
+      @Override
       public String doWork(Integer d) {
         final Wrappers._T<Integer> _d = new Wrappers._T<Integer>(d);
         new _FunctionTypes._return_P0_E0<Integer>() {
@@ -122,6 +124,7 @@ __switch__:
       public int field;
       public int foo;
 
+      @Override
       public String doWork(Integer foo) {
         this.foo = foo;
         this.field = this.foo;

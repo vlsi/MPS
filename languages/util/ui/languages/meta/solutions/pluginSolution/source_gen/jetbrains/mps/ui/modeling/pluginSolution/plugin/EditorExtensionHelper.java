@@ -5,10 +5,9 @@ package jetbrains.mps.ui.modeling.pluginSolution.plugin;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
@@ -26,12 +25,13 @@ public class EditorExtensionHelper {
   }
 
   public void init() {
-    SModelDescriptor wdesc = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(this.getWidgetTemplatesModel(this.templatesBase)));
+    SModel wdesc = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(this.getWidgetTemplatesModel(this.templatesBase)));
     final SModel widgetsModel = (wdesc != null ?
       wdesc.getSModel() :
       null
     );
     this.uiObjectTemplateProvider = new IObjectsProvider<SNode, SNode>() {
+      @Override
       public Iterable<SNode> getObjects() {
         return (widgetsModel != null ?
           SModelOperations.getNodes(widgetsModel, "jetbrains.mps.ui.modeling.structure.UIObjectTemplate") :
@@ -39,6 +39,7 @@ public class EditorExtensionHelper {
         );
       }
 
+      @Override
       public SNode create(final SNode context) {
         final Wrappers._T<SNode> tpl = new Wrappers._T<SNode>();
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
@@ -50,16 +51,18 @@ public class EditorExtensionHelper {
         return tpl.value;
       }
 
+      @Override
       public Object info() {
         return EditorExtensionHelper.this.templatesBase;
       }
     };
-    SModelDescriptor edesc = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(this.getEventHandlerTemplatesModel(this.templatesBase)));
+    SModel edesc = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(this.getEventHandlerTemplatesModel(this.templatesBase)));
     final SModel eventsModel = (edesc != null ?
       edesc.getSModel() :
       null
     );
     this.eventHandlerProvider = new IObjectsProvider<SNode, SNode>() {
+      @Override
       public Iterable<SNode> getObjects() {
         return (eventsModel != null ?
           SModelOperations.getNodes(eventsModel, "jetbrains.mps.ui.modeling.structure.EventHandlerTemplate") :
@@ -67,6 +70,7 @@ public class EditorExtensionHelper {
         );
       }
 
+      @Override
       public SNode create(final SNode context) {
         final Wrappers._T<SNode> eht = new Wrappers._T<SNode>();
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
@@ -78,6 +82,7 @@ public class EditorExtensionHelper {
         return eht.value;
       }
 
+      @Override
       public Object info() {
         return EditorExtensionHelper.this.templatesBase;
       }

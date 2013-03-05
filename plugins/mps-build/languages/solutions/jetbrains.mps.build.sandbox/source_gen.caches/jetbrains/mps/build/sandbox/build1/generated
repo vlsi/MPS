@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="98dumr4poqctek2d82gcy1opyiyjndd">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="8v5mxg7faenizzqancdsnbkmkc74yqj" />
-  <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" hash="-8cg3incxiljk3bq8078a2fws9395rb0" />
-  <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" hash="eowb99uzat1lg2hph15kl2nzk4c3rig" />
+  <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" hash="-3bjizvq8kaigd4ts0x9ur5arzhbonkx" />
+  <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" hash="835rfl0ss7xr4fcr5nywcpppunikwoj" />
   <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" hash="dtt7wsqvomsqa4dnrx887ciou0ozjba" />
-  <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" hash="e2lalwp5e1wopwhv7m25j4dk5tfnifa" />
+  <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" hash="-bw0k65jnqw1tsj8pya59dzc3sfredgg" />
   <common hash="5slix0ygvh2k7bczvektroxq3l7nfy2" />
   <source id="4129895186893541504" name="buildA" hash="-dpangqbirc0ej8jgd4giw5hzlwyd1u6">
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />

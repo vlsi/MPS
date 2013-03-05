@@ -18,7 +18,7 @@ import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.core.plugin.Generate_Facet.Target_configure.Variables;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -86,7 +86,7 @@ public class Sample_Facet extends IFacet.Stub {
                 String paramVal = pa.forResource(mres).properties(Target_readParams.this.getName(), Sample_Facet.Target_readParams.Parameters.class).SomeParam();
                 Integer countVal = pa.forResource(mres).properties(Target_readParams.this.getName(), Sample_Facet.Target_readParams.Parameters.class).Count();
                 String sarch = pa.forResource(mres).properties(Target_readParams.this.getName(), Sample_Facet.Target_readParams.Parameters.class).arch();
-                for (SModelDescriptor smd : mres.models()) {
+                for (SModel smd : mres.models()) {
                   if (paramVal != null) {
                     pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Variables.class).parametersProvider().addParameter(smd, "sample.parameter", paramVal);
                   }

@@ -13,20 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.NullDataSource;
 
 public abstract class BaseSpecialModelDescriptor extends BaseSModelDescriptor {
-  protected SModel mySModel;
+  protected jetbrains.mps.smodel.SModel mySModel;
 
   protected BaseSpecialModelDescriptor(@NotNull SModelReference modelReference) {
     super(modelReference, new NullDataSource());
   }
 
-  public final synchronized SModel getSModel() {
+  @Override
+  public final synchronized jetbrains.mps.smodel.SModel getSModel() {
     if (mySModel == null) {
       mySModel = createModel();
       mySModel.setModelDescriptor(this);
@@ -35,6 +36,10 @@ public abstract class BaseSpecialModelDescriptor extends BaseSModelDescriptor {
     return mySModel;
   }
 
+  @Override
+  public boolean isReadOnly() {
+    return true;
+  }
 
   @Override
   public boolean isLoaded() {
@@ -46,5 +51,5 @@ public abstract class BaseSpecialModelDescriptor extends BaseSModelDescriptor {
     return mySModel;
   }
 
-  protected abstract SModel createModel();
+  protected abstract jetbrains.mps.smodel.SModel createModel();
 }

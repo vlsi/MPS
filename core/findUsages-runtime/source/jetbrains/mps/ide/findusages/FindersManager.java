@@ -21,7 +21,7 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistryListener;
 import jetbrains.mps.smodel.language.LanguageRuntime;
@@ -50,6 +50,7 @@ public class FindersManager implements CoreComponent, LanguageRegistryListener {
     myLanguageRegistry = languageRegistry;
   }
 
+  @Override
   public void init() {
     if (INSTANCE != null) {
       throw new IllegalStateException("double initialization");
@@ -59,6 +60,7 @@ public class FindersManager implements CoreComponent, LanguageRegistryListener {
     myLanguageRegistry.addRegistryListener(this);
   }
 
+  @Override
   public void dispose() {
     myLanguageRegistry.removeRegistryListener(this);
     INSTANCE = null;
@@ -68,6 +70,7 @@ public class FindersManager implements CoreComponent, LanguageRegistryListener {
     checkLoaded();
     return
       ModelAccess.instance().runReadAction(new Computable<Set<ReloadableFinder>>() {
+        @Override
         public Set<ReloadableFinder> compute() {
           Set<ReloadableFinder> result = new HashSet<ReloadableFinder>();
 
@@ -114,7 +117,7 @@ public class FindersManager implements CoreComponent, LanguageRegistryListener {
   }
 
   private ModuleReference getFinderModule(GeneratedFinder finder) {
-    SModelDescriptor finderModel = myNodesByFinder.get(finder).getModelReference() == null ? null : SModelRepository.getInstance().getModelDescriptor(myNodesByFinder.get(finder).getModelReference());
+    SModel finderModel = myNodesByFinder.get(finder).getModelReference() == null ? null : SModelRepository.getInstance().getModelDescriptor(myNodesByFinder.get(finder).getModelReference());
     Language finderLanguage = Language.getLanguageForLanguageAspect(finderModel);
     return finderLanguage.getModuleReference();
   }
@@ -150,6 +153,7 @@ public class FindersManager implements CoreComponent, LanguageRegistryListener {
 
   private void clear() {
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         myFinders.clear();
         myNodesByFinder.clear();

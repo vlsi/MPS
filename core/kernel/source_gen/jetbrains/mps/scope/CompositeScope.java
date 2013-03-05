@@ -37,6 +37,7 @@ public class CompositeScope extends Scope {
     return Collections.unmodifiableCollection(myScopes);
   }
 
+  @Override
   public SNode resolve(SNode contextNode, String refText) {
     SNode result = null;
     for (Scope scope : myScopes) {
@@ -44,7 +45,7 @@ public class CompositeScope extends Scope {
       if (r != null) {
         if (result == null) {
           result = r;
-        } else {
+        } else if (result != r) {
           // ambiguity 
           return null;
         }
@@ -53,6 +54,7 @@ public class CompositeScope extends Scope {
     return result;
   }
 
+  @Override
   public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
     List<SNode> result = new ArrayList<SNode>();
     for (Scope scope : myScopes) {
@@ -61,6 +63,7 @@ public class CompositeScope extends Scope {
     return result;
   }
 
+  @Override
   public String getReferenceText(SNode contextNode, SNode node) {
     String result = null;
     for (Scope scope : myScopes) {

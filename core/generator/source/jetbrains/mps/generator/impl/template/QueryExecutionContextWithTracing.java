@@ -21,7 +21,7 @@ import jetbrains.mps.generator.impl.interpreted.TemplateRootMappingRuleInterpret
 import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.util.performance.IPerformanceTracer;
@@ -45,7 +45,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   }
 
   private static String getRulePackage(SNode ruleNode) {
-    return JavaNameUtil.packageNameForModelUID(ruleNode.getModel().getSModelReference());
+    return JavaNameUtil.packageNameForModelUID(ruleNode.getModel().getReference());
   }
 
   private static String taskName(@NotNull String name, SNode ruleNode) {

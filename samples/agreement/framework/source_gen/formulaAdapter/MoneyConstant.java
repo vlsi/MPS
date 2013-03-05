@@ -13,6 +13,7 @@ public class MoneyConstant implements Function<Money> {
     myMoney = new Money(amount, currency);
   }
 
+  @Override
   public Money compute(Object parm) {
     return myMoney;
   }

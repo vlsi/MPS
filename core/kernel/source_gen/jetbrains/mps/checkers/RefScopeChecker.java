@@ -16,15 +16,17 @@ import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.resolve.ResolverComponent;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelInternal;
 
 public class RefScopeChecker extends AbstractConstraintsChecker {
   public RefScopeChecker() {
   }
 
+  @Override
   public void checkNode(SNode node, LanguageErrorsComponent component, IOperationContext operationContext, IScope scope) {
     if (operationContext == null || node == null || SNodeOperations.getModel(node) == null) {
       return;
@@ -57,7 +59,7 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
         SNode ruleNode = null;
         if (scopeProvider != null) {
           ruleNode = (scopeProvider.getSearchScopeValidatorNode() != null ?
-            ((SNodePointer) scopeProvider.getSearchScopeValidatorNode()).getNode() :
+            ((SNodePointer) scopeProvider.getSearchScopeValidatorNode()).resolve(MPSModuleRepository.getInstance()) :
             null
           );
         }
@@ -79,32 +81,38 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
       myOperationContext = operationContext;
     }
 
+    @Override
     public QuickFix_Runtime getQuickFix() {
       return new QuickFix_Runtime() {
+        @Override
         public void execute(SNode node) {
           ResolverComponent.getInstance().resolve(myReference, myOperationContext);
         }
 
+        @Override
         public String getDescription(SNode node) {
           return "Resolve \"" + myReference.getRole() + "\" reference";
         }
       };
     }
 
+    @Override
     public boolean isExecutedImmediately() {
       return false;
     }
 
+    @Override
     public void setIsError(boolean isError) {
       myIsError = isError;
     }
 
+    @Override
     public boolean isError() {
       return myIsError;
     }
   }
 
-  private static IModule check_bt3k2y_a0b0b(SModelDescriptor checkedDotOperand) {
+  private static IModule check_bt3k2y_a0b0b(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

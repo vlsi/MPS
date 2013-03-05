@@ -7,12 +7,12 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import java.util.List;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.workbench.actions.model.PartitioningHelper;
 import com.intellij.openapi.project.Project;
 import java.awt.Frame;
@@ -34,7 +34,7 @@ public class ShowMappingsPartitioning_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).size() == 1;
+    return ((List<SModel>) MapSequence.fromMap(_params).get("models")).size() == 1;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -73,7 +73,7 @@ public class ShowMappingsPartitioning_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
     }
-    if (!(MapSequence.fromMap(_params).get("model") instanceof EditableSModelDescriptor) || ((EditableSModelDescriptor) MapSequence.fromMap(_params).get("model")).isReadOnly()) {
+    if (!(MapSequence.fromMap(_params).get("model") instanceof EditableSModel) || ((EditableSModel) MapSequence.fromMap(_params).get("model")).isReadOnly()) {
       return false;
     }
     return true;
@@ -81,7 +81,7 @@ public class ShowMappingsPartitioning_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      PartitioningHelper.showMappingPartitioning(((Project) MapSequence.fromMap(_params).get("project")), ((Frame) MapSequence.fromMap(_params).get("frame")), ((IScope) MapSequence.fromMap(_params).get("scope")), ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")));
+      PartitioningHelper.showMappingPartitioning(((Project) MapSequence.fromMap(_params).get("project")), ((Frame) MapSequence.fromMap(_params).get("frame")), ((IScope) MapSequence.fromMap(_params).get("scope")), ((List<SModel>) MapSequence.fromMap(_params).get("models")));
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowMappingsPartitioning", t);
     }

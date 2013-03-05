@@ -14,18 +14,18 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.util.NameUtil;
 
 public class Quotation_quotedNode extends AbstractCellMenuComponent {
   public Quotation_quotedNode() {
-    super(new SubstituteInfoPartExt[]{new Quotation_quotedNode.Quotation_generic_cellMenu_a0()});
+    super(new SubstituteInfoPartExt[]{new Quotation_quotedNode.Quotation_generic_cellMenu_61vnku_a0()});
   }
 
-  public static class Quotation_generic_cellMenu_a0 extends AbstractCellMenuPart_Generic_Group {
-    public Quotation_generic_cellMenu_a0() {
+  public static class Quotation_generic_cellMenu_61vnku_a0 extends AbstractCellMenuPart_Generic_Group {
+    public Quotation_generic_cellMenu_61vnku_a0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {

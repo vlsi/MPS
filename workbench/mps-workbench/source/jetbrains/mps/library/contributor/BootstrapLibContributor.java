@@ -16,7 +16,7 @@
 package jetbrains.mps.library.contributor;
 
 import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.ide.MPSWorkbenchComponents;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.PathManager;
@@ -27,10 +27,11 @@ import java.util.Set;
 
 public class BootstrapLibContributor implements LibraryContributor, ApplicationComponent {
 
-  public BootstrapLibContributor(MPSCoreComponents coreComponents) {
+  public BootstrapLibContributor(MPSWorkbenchComponents dep) {
   }
 
   //not public
+  @Override
   public Set<LibDescriptor> getLibraries() {
     Set<LibDescriptor> res = new HashSet<LibDescriptor>();
     for (String path : PathManager.getBootstrapPaths()) {
@@ -40,19 +41,23 @@ public class BootstrapLibContributor implements LibraryContributor, ApplicationC
     return res;
   }
 
+  @Override
   public void initComponent() {
     LibraryInitializer.getInstance().addContributor(this);
     ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
       public void run() {
         LibraryInitializer.getInstance().update(true);
       }
     });
   }
 
+  @Override
   public void disposeComponent() {
 
   }
 
+  @Override
   @NotNull
   public String getComponentName() {
     return BootstrapLibContributor.class.getSimpleName();

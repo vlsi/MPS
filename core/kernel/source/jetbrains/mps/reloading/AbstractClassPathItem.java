@@ -19,24 +19,26 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.regex.Pattern;
 
 public abstract class AbstractClassPathItem implements IClassPathItem {
   private static final Pattern DIGITS = Pattern.compile("\\d+");
 
+  @Override
   public long getTimestamp() {
     return getTimestamp("");
   }
 
+  @Override
   public IClassPathItem optimize() {
     return this;
   }
 
   //todo can make it faster
+  @Override
   public Iterable<String> getRootClasses(String namespace) {
     return new ConditionalIterable<String>(getAvailableClasses(namespace), new Condition<String>() {
+      @Override
       public boolean met(String className) {
         return !(className.contains("$"));
       }
@@ -68,7 +70,6 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
 
   public void invalidate() {
     myValid = false;
-    callInvalidationListeners();
   }
 
   protected void checkValidity() {
@@ -76,20 +77,5 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
     if (myErrorShown) return;
     myErrorShown = true;
     LOG.error("Using outdated classpath: " + this, new Throwable());
-  }
-
-  //-----------------------
-
-  private final List<Runnable> myInvalidationListeners  = new ArrayList<Runnable>();
-
-  public synchronized void addInvalidationAction(Runnable action){
-    myInvalidationListeners.add(action);
-  }
-
-  protected synchronized void callInvalidationListeners() {
-    for (Runnable action:myInvalidationListeners){
-      action.run();
-    }
-    myInvalidationListeners.clear();
   }
 }

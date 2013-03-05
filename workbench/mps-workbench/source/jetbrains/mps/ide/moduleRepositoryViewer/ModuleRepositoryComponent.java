@@ -27,7 +27,7 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.IModule;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 
@@ -49,6 +49,7 @@ public class ModuleRepositoryComponent {
 
   public void install() {
     ModelAccess.instance().runReadInEDT(new Runnable() {
+      @Override
       public void run() {
         myTree.rebuildNow();
       }
@@ -61,22 +62,27 @@ public class ModuleRepositoryComponent {
   }
 
   private class MyTree extends MPSTree {
+    @Override
     protected MPSTreeNode rebuild() {
       final TextTreeNode[] root = new TextTreeNode[1];
 
       ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
         public void run() {
           root[0] = new TextTreeNode("Loaded Modules") {
             {
               setIcon(Icons.PROJECT_ICON);
             }
 
+            @Override
             protected boolean propogateErrorUpwards() {
               return false;
             }
 
+            @Override
             public ActionGroup getActionGroup() {
               BaseAction refreshAction = new BaseAction("Refresh") {
+                @Override
                 protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
                   myTree.rebuildNow();
                 }
@@ -122,6 +128,7 @@ public class ModuleRepositoryComponent {
         setIcon(IconManager.getIconFor(myOwner));
       }
 
+      @Override
       public boolean isLeaf() {
         return true;
       }
@@ -156,6 +163,7 @@ public class ModuleRepositoryComponent {
         myDeferredUpdate = true;
       } else {
         ModelAccess.instance().runReadInEDT(new Runnable() {
+          @Override
           public void run() {
             myTree.rebuildNow();
           }
@@ -163,11 +171,13 @@ public class ModuleRepositoryComponent {
       }
     }
 
+    @Override
     public void commandFinished() {
       if (!myDeferredUpdate) return;
 
       myDeferredUpdate = false;
       ModelAccess.instance().runReadInEDT(new Runnable() {
+        @Override
         public void run() {
           myTree.rebuildNow();
         }

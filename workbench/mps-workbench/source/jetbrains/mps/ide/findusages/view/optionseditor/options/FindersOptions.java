@@ -53,6 +53,7 @@ public class FindersOptions extends BaseOptions {
     myFindersClassNames = new ArrayList(Arrays.asList(findersClassNames));
   }
 
+  @Override
   public FindersOptions clone() {
     FindersOptions result = new FindersOptions();
     result.myFindersClassNames.addAll(myFindersClassNames);
@@ -100,6 +101,7 @@ public class FindersOptions extends BaseOptions {
     return FindUtils.makeProvider(finders);
   }
 
+  @Override
   public void write(Element element, Project project) {
     Element findersXML = new Element(FINDERS);
     for (String finderClassName : myFindersClassNames) {
@@ -110,6 +112,7 @@ public class FindersOptions extends BaseOptions {
     element.addContent(findersXML);
   }
 
+  @Override
   public void read(Element element, Project project) {
     Element findersXML = element.getChild(FINDERS);
     for (Element finderXML : (List<Element>) findersXML.getChildren(FINDER)) {

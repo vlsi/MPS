@@ -58,6 +58,9 @@
     <component>
       <implementation-class>jetbrains.mps.idea.core.library.MpsModuleLibraryKindContainer</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.idea.core.paths.PluginPathMacroInstaller</implementation-class>
+    </component>
   </application-components>
 
   <xi:include href="../../../workbench/mps-platform/source/META-INF/MPSCore.xml" xpointer="xpointer(/components/*)"/>
@@ -86,9 +89,6 @@
       <implementation-class>jetbrains.mps.idea.core.IdeaLibLoader</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.idea.core.projectView.MPSTreeRootNameInvalidator</implementation-class>
-    </component>
-    <component>
       <implementation-class>jetbrains.mps.idea.core.psi.PsiChangesWatcher</implementation-class>
     </component>
     <component>
@@ -99,6 +99,7 @@
   <extensionPoints>
     <extensionPoint qualifiedName="com.intellij.mps.modelRootContributor" beanClass="jetbrains.mps.idea.core.project.ModelRootContributorEP"/>
     <extensionPoint qualifiedName="com.intellij.mps.psiFactory" interface="jetbrains.mps.idea.core.psi.MPSPsiNodeFactory"/>
+    <extensionPoint qualifiedName="com.intellij.mps.psiSourceFinder" interface="jetbrains.mps.idea.core.psi.MPS2PsiMapper"/>
   </extensionPoints>
 
   <extensions defaultExtensionNs="com.intellij">
@@ -107,6 +108,8 @@
     <frameworkSupport implementation="jetbrains.mps.idea.core.facet.MPSFrameworkSupportProvider"/>
     <mps.LanguageLibrary dir="/languages"/>
     <mps.LanguageLibrary dir="/lib"/>
+    <mps.psiSourceFinder implementation="jetbrains.mps.idea.core.psi.impl.ClassStubPsiMapper"/>
+    <!-- <customUsageSearcher implementation="jetbrains.mps.idea.core.usages.MPSUsageSearcher"/> -->
     <treeStructureProvider implementation="jetbrains.mps.idea.core.projectView.MPSTreeStructureProvider"/>
     <usageGroupingRuleProvider implementation="jetbrains.mps.idea.core.usages.rules.MPSUsageGroupingRuleProviderImpl" />
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
@@ -115,6 +118,10 @@
     <compileServer.plugin classpath="jps/mps-jps-plugin.jar;mps-common.jar;mps-tool.jar;mps-core.jar;mps-openapi.jar;mps-collections.jar;mps-closures.jar;mps-tuples.jar"/>
     <library.type implementation="jetbrains.mps.idea.core.library.ModuleLibraryType"/>
     <projectConfigurable instance="jetbrains.mps.idea.core.codeStyle.MpsCodeStyleSettingsConfigurable" order="after colors"/>
+    <lang.fileViewProviderFactory language="MPS"
+                                  implementationClass="jetbrains.mps.idea.core.psi.MPSFileViewProviderFactory"/>
+    <navbar implementation="jetbrains.mps.idea.core.psi.MPSNavBarExtension" id="MPSNavbar"/>
+    <lang.parserDefinition language="MPS" implementationClass="jetbrains.mps.idea.core.fileType.MPSParserDefinition"/>
   </extensions>
 
   <actions>

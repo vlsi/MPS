@@ -84,10 +84,12 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
     super(project, TOOL_WINDOW_ID, 3, Toolwindows.ToolWindowFind, ToolWindowAnchor.BOTTOM, true);
   }
 
+  @Override
   protected UsagesView getUsagesView(int index) {
     return myUsageViewsData.get(index).myUsagesView;
   }
 
+  @Override
   protected void onRemove(int index) {
     myUsageViewsData.remove(index);
   }
@@ -98,20 +100,23 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
     return 0;
   }
 
+  @Override
   protected boolean isInitiallyAvailable() {
     return true;
   }
 
   //---FIND USAGES STUFF----
 
+  @Override
   public void findUsages(final IResultProvider provider, final SearchQuery query, final boolean isRerunnable, final boolean showOne, final boolean forceNewTab, final String notFoundMsg) {
     SwingUtilities.invokeLater(new Runnable() {
+      @Override
       public void run() {
         final SearchResults[] searchResults = new SearchResults[1];
         final boolean[] isCancelled = new boolean[1];
         ProgressManager.getInstance().run(new Modal(getProject(), "Searching", true) {
+          @Override
           public void run(@NotNull final ProgressIndicator indicator) {
-            indicator.setIndeterminate(true);
             searchResults[0] = FindUtils.getSearchResults(new ProgressMonitorAdapter(indicator), query, provider);
             isCancelled[0] = indicator.isCanceled();
           }
@@ -125,6 +130,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
 
   private void showResults(final IResultProvider provider, final SearchQuery query, final SearchResults searchResults, final boolean showOne, final boolean forceNewTab, final boolean isRerunnable, final String notFoundMsg) {
     SwingUtilities.invokeLater(new Runnable() {
+      @Override
       public void run() {
         int resCount = searchResults.getSearchResults().size();
         if (resCount == 0) {
@@ -132,6 +138,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
           manager.notifyByBalloon(TOOL_WINDOW_ID, MessageType.INFO, notFoundMsg, null, null);
         } else if (resCount == 1 && !showOne) {
           ModelAccess.instance().runWriteInEDT(new Runnable() {
+            @Override
             public void run() {
               SNode node = ((SearchResult<SNode>) searchResults.getSearchResults().get(0)).getObject();
               // TODO: use node pointers here
@@ -144,6 +151,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
         } else {
           int index = getCurrentTabIndex();
           ModelAccess.instance().runReadAction(new Runnable() {
+            @Override
             public void run() {
               UsageViewData usageViewData = new UsageViewData();
               usageViewData.createUsageView();
@@ -190,6 +198,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
         final String caption = usageViewData.myUsagesView.getCaption();
         final Icon icon = usageViewData.myUsagesView.getIcon();
         SwingUtilities.invokeLater(new Runnable() {
+          @Override
           public void run() {
             addContent(usageViewData.myUsagesView.getComponent(), caption, icon, true);
           }
@@ -201,6 +210,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
     myDefaultViewOptions.read(defaultViewOptionsXML, project);
 
     SwingUtilities.invokeLater(new Runnable() {
+      @Override
       public void run() {
         if (getContentManager().getContentCount() == 0) {
           makeUnavailableLater();
@@ -232,8 +242,10 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
     element.addContent(defaultViewOptionsXML);
   }
 
+  @Override
   public Element getState() {
     return ModelAccess.instance().runReadAction(new Computable<Element>() {
+      @Override
       public Element compute() {
         Element state = new Element("state");
         write(state, getProject().getComponent(MPSProject.class));
@@ -242,12 +254,15 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
     });
   }
 
+  @Override
   public void loadState(final Element state) {
     //startup manager is needed cause the contract is that you can't use read and write locks
     //on component load - it can cause a deadlock (MPS-2811) 
     StartupManager.getInstance(getProject()).runWhenProjectIsInitialized(new Runnable() {
+      @Override
       public void run() {
         ModelAccess.instance().runReadAction(new Runnable() {
+          @Override
           public void run() {
             read(state, getProject().getComponent(MPSProject.class));
           }
@@ -266,6 +281,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
 
     public void createUsageView() {
       myUsagesView = new UsagesView(getProject(), myDefaultViewOptions) {
+        @Override
         public void close() {
           int index = myUsageViewsData.indexOf(UsageViewData.this);
           UsagesViewTool.this.closeTab(index);

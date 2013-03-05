@@ -51,6 +51,7 @@ public class ScopesTest_Constraints extends BaseConstraintsDescriptor {
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return new Scope() {
+              @Override
               public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
                 List<SNode> nodes = new ArrayList<SNode>();
                 for (SReference reference : Sequence.fromIterable(SNodeOperations.getReferences(SNodeOperations.getParent(SNodeOperations.cast(_context.getContextNode(), "jetbrains.mps.lang.test.structure.ScopesTest"))))) {
@@ -60,11 +61,13 @@ public class ScopesTest_Constraints extends BaseConstraintsDescriptor {
               }
 
               @Nullable
+              @Override
               public SNode resolve(SNode contextNode, @NotNull String refText) {
                 return null;
               }
 
               @Nullable
+              @Override
               public String getReferenceText(SNode contextNode, @NotNull SNode node) {
                 return null;
               }

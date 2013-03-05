@@ -13,8 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
 
+import jetbrains.mps.extapi.model.PersistenceProblem;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
@@ -62,6 +63,14 @@ public class DefaultSModel extends SModel {
     return fullLoadUpdateMode;
   }
 
+  @Override
+  protected void enforceFullLoad() {
+    org.jetbrains.mps.openapi.model.SModel md = myModelDescriptor;
+    if (!(md instanceof DefaultSModelDescriptor)) return;
+    md.load();
+  }
+
+
   public SModelHeader getSModelHeader() {
     return myHeader;
   }
@@ -76,8 +85,22 @@ public class DefaultSModel extends SModel {
     myHeader.setVersion(version);
   }
 
+  @Override
+  protected SModel createEmptyCopy() {
+    return new DefaultSModel(getReference());
+  }
+
+  @Override
+  protected void copyPropertiesTo(SModel to) {
+    super.copyPropertiesTo(to);
+    if (to instanceof DefaultSModel) {
+      DefaultSModel dto = (DefaultSModel) to;
+      dto.setPersistenceVersion(getPersistenceVersion());
+    }
+  }
+
   /**
-   * @deprecated Use SModelDescriptor.getRefactoringsHistory()
+   * @deprecated Use SModel.getRefactoringsHistory()
    */
   @Deprecated
   public Element getRefactoringHistoryElement() {
@@ -101,10 +124,11 @@ public class DefaultSModel extends SModel {
       myCause = cause;
     }
 
+    @NotNull
     @Override
-    public Collection<IMessage> getProblems() {
-      return Collections.<IMessage>singleton(
-        new Message(MessageKind.ERROR, myCause == null ? "Couldn't read model." : myCause.getMessageEx()));
+    public Iterable<Problem> getProblems() {
+      return Collections.<Problem>singleton(
+        new PersistenceProblem(myCause == null ? "Couldn't read model." : myCause.getMessageEx(), null, true));
     }
   }
 }

@@ -23,6 +23,7 @@ public class DependencyStep extends AbstractStep {
     myHandler = handler;
   }
 
+  @Override
   public JComponent createMainComponent() {
     JPanel panel = new JPanel(new GridBagLayout());
 
@@ -34,6 +35,7 @@ public class DependencyStep extends AbstractStep {
       panel.add(button, LayoutUtil.createLabelConstraints(index));
       group.add(button);
       button.addActionListener(new ActionListener() {
+        @Override
         public void actionPerformed(ActionEvent e) {
           if (button.isSelected()) {
             mySelectedIndex = index;
@@ -45,6 +47,7 @@ public class DependencyStep extends AbstractStep {
     return panel;
   }
 
+  @Override
   public String getDescription() {
     return "Select distribution kind.";
   }

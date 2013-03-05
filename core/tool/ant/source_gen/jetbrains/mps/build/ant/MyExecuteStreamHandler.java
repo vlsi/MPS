@@ -19,11 +19,14 @@ public class MyExecuteStreamHandler implements ExecuteStreamHandler {
     myTask = task;
   }
 
+  @Override
   public void setProcessInputStream(OutputStream os) throws IOException {
   }
 
+  @Override
   public void setProcessErrorStream(final InputStream is) throws IOException {
     myErrorReadingThread = new Thread(new Runnable() {
+      @Override
       public void run() {
         Scanner s = new Scanner(is);
         while (s.hasNextLine()) {
@@ -37,8 +40,10 @@ public class MyExecuteStreamHandler implements ExecuteStreamHandler {
     myTask.log(line, Project.MSG_ERR);
   }
 
+  @Override
   public void setProcessOutputStream(final InputStream is) throws IOException {
     myOutputReadingThread = new Thread(new Runnable() {
+      @Override
       public void run() {
         Scanner s = new Scanner(is);
         while (s.hasNextLine()) {
@@ -52,11 +57,13 @@ public class MyExecuteStreamHandler implements ExecuteStreamHandler {
     myTask.log(line);
   }
 
+  @Override
   public void start() throws IOException {
     myOutputReadingThread.start();
     myErrorReadingThread.start();
   }
 
+  @Override
   public void stop() {
     try {
       myOutputReadingThread.join();

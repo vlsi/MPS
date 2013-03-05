@@ -33,7 +33,7 @@ public class AbstractFunctionType_Constraints extends BaseConstraintsDescriptor 
   }
 
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return LanguageAspect.TYPESYSTEM.is(SNodeOperations.getModel(parentNode));
+    return LanguageAspect.TYPESYSTEM.is(SNodeOperations.getModel(parentNode).getModelDescriptor());
   }
 
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)", "5612111951671408001");

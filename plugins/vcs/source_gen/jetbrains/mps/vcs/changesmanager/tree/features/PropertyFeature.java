@@ -20,6 +20,7 @@ public class PropertyFeature extends AbstractNodeFeature {
   }
 
   @Nullable
+  @Override
   public Feature getParent() {
     return new PropertiesFeature(getNodePointer());
   }

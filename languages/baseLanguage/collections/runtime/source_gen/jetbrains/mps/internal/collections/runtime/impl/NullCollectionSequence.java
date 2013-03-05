@@ -14,74 +14,92 @@ public class NullCollectionSequence<T> extends NullSequence<T> implements IColle
   protected NullCollectionSequence() {
   }
 
+  @Override
   public T addElement(T t) {
     return null;
   }
 
+  @Override
   public ICollectionSequence<T> addSequence(ISequence<? extends T> seq) {
     return this;
   }
 
+  @Override
   public T removeElement(T t) {
     return null;
   }
 
+  @Override
   public ICollectionSequence<T> removeSequence(ISequence<? extends T> seq) {
     return this;
   }
 
+  @Override
   public ICollectionSequence<T> removeWhere(_FunctionTypes._return_P1_E0<? extends Boolean, ? super T> filter) {
     return this;
   }
 
+  @Override
   public boolean add(T o) {
     return false;
   }
 
+  @Override
   public boolean addAll(Collection<? extends T> c) {
     return false;
   }
 
+  @Override
   public void clear() {
   }
 
+  @Override
   public boolean contains(Object o) {
     return false;
   }
 
+  @Override
   public boolean containsAll(Collection<?> c) {
     return false;
   }
 
+  @Override
   public boolean remove(Object o) {
     return false;
   }
 
+  @Override
   public boolean removeAll(Collection<?> c) {
     return false;
   }
 
+  @Override
   public boolean retainAll(Collection<?> c) {
     return false;
   }
 
+  @Override
   public ICollectionSequence<T> asUnmodifiable() {
     return this;
   }
 
+  @Override
   public ICollectionSequence<T> asSynchronized() {
     return this;
   }
 
+  @Override
   public int size() {
     return 0;
   }
 
+  @Override
   public Object[] toArray() {
     return EMPTY_ARRAY;
   }
 
   @SuppressWarnings(value = "unchecked")
+  @Override
   public <U> U[] toArray(U[] a) {
     return (U[]) EMPTY_ARRAY;
   }

@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -24,7 +25,7 @@ import java.util.Collection;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.intentions.IntentionExecutable;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
@@ -54,6 +55,7 @@ public class BaseEditorTestBody extends BaseTestBody {
 
   public Editor initEditor(final String before, final String after) throws Exception {
     SwingUtilities.invokeAndWait(new Runnable() {
+      @Override
       public void run() {
         try {
           BaseEditorTestBody.this.initEditor_internal(before, after);
@@ -99,7 +101,7 @@ public class BaseEditorTestBody extends BaseTestBody {
       public void run() {
         if (BaseEditorTestBody.this.myResult != null) {
           try {
-            SNode editedNode = ((SNodePointer) BaseEditorTestBody.this.myEditor.getCurrentlyEditedNode()).getNode();
+            SNode editedNode = ((SNodePointer) BaseEditorTestBody.this.myEditor.getCurrentlyEditedNode()).resolve(MPSModuleRepository.getInstance());
             Map<SNode, SNode> map = MapSequence.fromMap(new HashMap<SNode, SNode>());
             Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), editedNode), ListSequence.fromListAndArray(new ArrayList<SNode>(), BaseEditorTestBody.this.myResult), (Map) map));
             if (BaseEditorTestBody.this.myFinish != null) {
@@ -123,6 +125,7 @@ public class BaseEditorTestBody extends BaseTestBody {
       this.checkAssertion();
     } finally {
       SwingUtilities.invokeAndWait(new Runnable() {
+        @Override
         public void run() {
           BaseEditorTestBody.closeEditor(BaseEditorTestBody.this.myProject, BaseEditorTestBody.this.myBefore);
         }
@@ -135,6 +138,7 @@ public class BaseEditorTestBody extends BaseTestBody {
 
   public static void invokeIntention(final String name, final Editor editor, final SNode node) throws Exception {
     SwingUtilities.invokeAndWait(new Runnable() {
+      @Override
       public void run() {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
@@ -153,7 +157,7 @@ public class BaseEditorTestBody extends BaseTestBody {
     });
   }
 
-  public static Editor openEditor(Project project, SModelDescriptor model, SNode node) {
+  public static Editor openEditor(Project project, SModel model, SNode node) {
     IOperationContext context = new ModuleContext(model.getModule(), project);
     return NavigationSupport.getInstance().openNode(context, node, true, !(jetbrains.mps.util.SNodeOperations.isRoot(node)));
   }
@@ -169,6 +173,7 @@ public class BaseEditorTestBody extends BaseTestBody {
 
   public static void typeString(final EditorComponent editorComponent, final String text) throws InterruptedException, InvocationTargetException {
     SwingUtilities.invokeAndWait(new Runnable() {
+      @Override
       public void run() {
         for (char ch : text.toCharArray()) {
           editorComponent.processKeyTyped(new KeyEvent(editorComponent, KeyEvent.KEY_TYPED, 0, 0, 0, ch));
@@ -183,6 +188,7 @@ public class BaseEditorTestBody extends BaseTestBody {
 
   public static void pressKeys(final EditorComponent editorComponent, final List<String> keyStrokes) throws InterruptedException, InvocationTargetException {
     SwingUtilities.invokeAndWait(new Runnable() {
+      @Override
       public void run() {
         for (String code : ListSequence.fromList(keyStrokes)) {
           KeyStroke stroke = KeyStroke.getKeyStroke(code);
@@ -199,6 +205,7 @@ public class BaseEditorTestBody extends BaseTestBody {
 
   public static void invokeAction(final EditorComponent editorComponent, final String actionId) throws InvocationTargetException, InterruptedException {
     SwingUtilities.invokeAndWait(new Runnable() {
+      @Override
       public void run() {
         AnAction action = ActionManager.getInstance().getAction(actionId);
         AnActionEvent event = ActionUtils.createEvent(ActionPlaces.MAIN_MENU, BaseEditorTestBody.DATA_MANAGER.getDataContext(editorComponent));
@@ -211,6 +218,7 @@ public class BaseEditorTestBody extends BaseTestBody {
   protected static void flushEventQueueAfterAction() throws InvocationTargetException, InterruptedException {
     // flush queue 
     SwingUtilities.invokeAndWait(new Runnable() {
+      @Override
       public void run() {
         // empty task 
       }
@@ -219,6 +227,7 @@ public class BaseEditorTestBody extends BaseTestBody {
 
     // some actions (Copy/Paste) are runing one more command later 
     SwingUtilities.invokeAndWait(new Runnable() {
+      @Override
       public void run() {
         // empty task 
       }

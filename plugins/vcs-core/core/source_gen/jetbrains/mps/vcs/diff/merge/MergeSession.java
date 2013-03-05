@@ -11,7 +11,7 @@ import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vcs.diff.changes.MetadataChange;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.vcs.diff.changes.NodeChange;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
@@ -100,7 +101,7 @@ public class MergeSession {
   }
 
   public void installResultModelListener() {
-    myResultModel.getModelDescriptor().addModelListener(myModelListener);
+    ((SModelInternal) myResultModel.getModelDescriptor()).addModelListener(myModelListener);
   }
 
   private void fillNodeToChangesMap() {
@@ -323,10 +324,10 @@ public class MergeSession {
   }
 
   public static SModel copyModel(SModel m) {
-    SModelReference ref = m.getSModelReference();
+    SModelReference ref = m.getReference();
     SModel copy = (m instanceof DefaultSModel ?
       new DefaultSModel(ref) :
-      new SModel(ref)
+      new jetbrains.mps.smodel.SModel(ref)
     );
     CopyUtil.copyModelContentAndPreserveIds(m, copy);
     CopyUtil.copyModelProperties(m, copy);
@@ -406,7 +407,7 @@ public class MergeSession {
         return;
       }
 
-      SNode baseParent = myMineChangeSet.getOldModel().getNodeById(parent.getNodeId());
+      SNode baseParent = myMineChangeSet.getOldModel().getNode(parent.getNodeId());
       if (baseParent == null) {
         return;
       }

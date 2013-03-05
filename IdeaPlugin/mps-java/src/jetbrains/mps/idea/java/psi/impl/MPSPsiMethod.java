@@ -76,25 +76,8 @@ public class MPSPsiMethod extends MPSPsiNode implements PsiMethod {
 
   public MPSPsiMethod(SNodeId id, String concept, String containingRole) {
     super(id, concept, containingRole);
-    addChild(null, new MPSPsiMethodModifierList());
-    addChild(null, new MPSPsiParameterList());
-  }
-
-  public void addChild(MPSPsiNodeBase anchor, @NotNull MPSPsiNodeBase node) {
-    if (node instanceof MPSPsiParameter) {
-      MPSPsiParameterList paramList = getChildOfType(MPSPsiParameterList.class);
-      if (paramList != null) {
-        paramList.addChild(paramList.getLastChild(), node);
-        return;
-      }
-    }
-
-    super.addChild(anchor, node);
-  }
-
-  @Override
-  public String toString() {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    addChildLast(new MPSPsiMethodModifierList());
+    addChildLast(new MPSPsiParameterList());
   }
 
   @Nullable
@@ -134,7 +117,7 @@ public class MPSPsiMethod extends MPSPsiNode implements PsiMethod {
 
   @Override
   public boolean isConstructor() {
-    return false;  //To change body of implemented methods use File | Settings | File Templates.
+    return false;
   }
 
   @Override
@@ -250,8 +233,8 @@ public class MPSPsiMethod extends MPSPsiNode implements PsiMethod {
   @Override
   public PsiClass getContainingClass() {
     PsiElement node = getParent();
-    if (node instanceof MPSPsiClass) {
-      return (MPSPsiClass) node;
+    if (node instanceof MPSPsiClassifier) {
+      return (MPSPsiClassifier) node;
     } else {
       return null;
     }

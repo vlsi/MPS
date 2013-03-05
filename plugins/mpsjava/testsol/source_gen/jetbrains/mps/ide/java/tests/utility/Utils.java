@@ -13,7 +13,7 @@ import jetbrains.mps.tool.builder.FileMPSProject;
 import java.io.File;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.ide.java.newparser.JavaParser;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import java.util.List;
@@ -33,7 +33,7 @@ import jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRoot;
 import java.util.Iterator;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.ide.java.newparser.DirParser;
 import jetbrains.mps.baseLanguage.stubs.JavaStubs;
 import jetbrains.mps.project.SModelRoot;
@@ -97,7 +97,7 @@ public class Utils {
     mr.setModule(ourModule);
     mr.setPath(path);
 
-    Iterator<org.jetbrains.mps.openapi.model.SModel> models = mr.loadModels().iterator();
+    Iterator<SModel> models = mr.loadModels().iterator();
     Assert.assertTrue("No models returned from model root", models.hasNext());
 
     Iterator<? extends SNode> roots = models.next().getRootNodes().iterator();
@@ -126,8 +126,8 @@ public class Utils {
     mr.setPath(dirPath);
 
     List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
-    for (org.jetbrains.mps.openapi.model.SModel md : Sequence.fromIterable(mr.loadModels())) {
-      SModel m = ((SModelDescriptor) md).getSModel();
+    for (SModel md : Sequence.fromIterable(mr.loadModels())) {
+      SModel m = ((SModelInternal) md).getSModel();
       ListSequence.fromList(models).addElement(m);
     }
 
@@ -190,8 +190,8 @@ public class Utils {
     SModelRoot binSRoot = new SModelRoot();
     binSRoot.setModule(mod1);
     binSRoot.setPath(binPath);
-    Collection<SModelDescriptor> binStubModels = bin.load(binSRoot);
-    for (SModelDescriptor md : CollectionSequence.fromCollection(binStubModels)) {
+    Collection<SModel> binStubModels = bin.load(binSRoot);
+    for (SModel md : CollectionSequence.fromCollection(binStubModels)) {
       SModel m = md.getSModel();
       ListSequence.fromList(binModels).addElement(m);
 
@@ -208,17 +208,17 @@ public class Utils {
       }
     }
 
-    Iterable<org.jetbrains.mps.openapi.model.SModel> srcModels;
+    Iterable<SModel> srcModels;
     List<SModel> srcModelsX = ListSequence.fromList(new ArrayList<SModel>());
 
     src2.setModule(mod2);
     src2.setPath(sourcePath);
     srcModels = src2.loadModels();
 
-    for (org.jetbrains.mps.openapi.model.SModel m : Sequence.fromIterable(srcModels)) {
+    for (SModel m : Sequence.fromIterable(srcModels)) {
       // <node> 
 
-      SModel zzz = ((SModelDescriptor) m).getSModel();
+      SModel zzz = ((SModelInternal) m).getSModel();
       srcModelsX.add(zzz);
 
       for (SNode srcRoot : ListSequence.fromList(SModelOperations.getRoots(zzz, null))) {
@@ -237,12 +237,12 @@ public class Utils {
 
     Map<String, SModel> leftModelMap = MapSequence.fromMap(new HashMap<String, SModel>());
     for (SModel m : Sequence.fromIterable(leftModels)) {
-      MapSequence.fromMap(leftModelMap).put(m.getLongName(), m);
+      MapSequence.fromMap(leftModelMap).put(jetbrains.mps.util.SNodeOperations.getModelLongName(m), m);
     }
 
     Map<String, SModel> rightModelMap = MapSequence.fromMap(new HashMap<String, SModel>());
     for (SModel m : Sequence.fromIterable(rightModels)) {
-      MapSequence.fromMap(rightModelMap).put(m.getLongName(), m);
+      MapSequence.fromMap(rightModelMap).put(jetbrains.mps.util.SNodeOperations.getModelLongName(m), m);
     }
 
     Assert.assertTrue(SetSequence.fromSet(MapSequence.fromMap(leftModelMap).keySet()).containsSequence(SetSequence.fromSet(MapSequence.fromMap(rightModelMap).keySet())) && SetSequence.fromSet(MapSequence.fromMap(rightModelMap).keySet()).containsSequence(SetSequence.fromSet(MapSequence.fromMap(leftModelMap).keySet())));

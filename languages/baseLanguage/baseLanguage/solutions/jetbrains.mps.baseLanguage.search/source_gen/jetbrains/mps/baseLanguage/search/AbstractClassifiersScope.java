@@ -30,6 +30,7 @@ public abstract class AbstractClassifiersScope extends AbstractSearchScope imple
   }
 
   @NotNull
+  @Override
   public List<SNode> getNodes(Condition<SNode> condition) {
     return this.getNodesFormClassifiersList(getClassifiers(), this.myConstraint, condition);
   }
@@ -109,6 +110,7 @@ public abstract class AbstractClassifiersScope extends AbstractSearchScope imple
     return result;
   }
 
+  @Override
   public List<SNode> getClassifierNodes() {
     return getClassifiers();
   }

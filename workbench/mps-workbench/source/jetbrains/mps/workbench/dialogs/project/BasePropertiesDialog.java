@@ -15,20 +15,15 @@
  */
 package jetbrains.mps.workbench.dialogs.project;
 
-import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.IOperationContext;
 
 import javax.swing.Action;
-import java.awt.Dimension;
 import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
-import java.util.List;
 
 public abstract class BasePropertiesDialog extends BaseTabbedBindedDialog {
   protected BasePropertiesDialog(String text, IOperationContext operationContext) throws HeadlessException {
     super(text, operationContext);
-
-    getWindow().setMinimumSize(new Dimension(500,600));
   }
 
   @Override

@@ -15,7 +15,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.awt.Dimension;
 import java.awt.BorderLayout;
@@ -48,7 +48,7 @@ public class DiffEditor implements EditorMessageOwner {
 
     SModel model = SNodeOperations.getModel(node);
     if (model != null) {
-      boolean editable = !(model.isNotEditable());
+      boolean editable = !(model.isReadOnly());
       setReadOnly(!(editable));
     }
 
@@ -76,7 +76,7 @@ public class DiffEditor implements EditorMessageOwner {
   public void editRoot(@NotNull Project project, @Nullable SNodeId rootId, @NotNull SModel model) {
     SNode root = (rootId == null ?
       null :
-      model.getNodeById(rootId)
+      model.getNode(rootId)
     );
     if (SNodeOperations.getParent(root) == null) {
       getMainEditor().editNode(root, DiffTemporaryModule.getOperationContext(project, model));
@@ -169,6 +169,7 @@ public class DiffEditor implements EditorMessageOwner {
       super(operationContext, false, rightToLeft);
     }
 
+    @Override
     public EditorCell createRootCell(List<SModelEvent> events) {
       if (getEditedNode() == null || getEditedNode().getModel() == null) {
         EditorContext editorContext = getEditorContext();

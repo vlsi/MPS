@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4ebm8270xn4ettw8ff7mxvm3ztu35cb">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3l4d6vah7bipcwb415vkx7fy07t8dxg" />
-  <common hash="9tswpbr493rrk3z9b8pxxtrvhr89chl" />
-  <source id="5797068448049410625" name="GroupedToggleAction" hash="-jol7nnyzcurazq97luicw8d6pevbtj">
+<dependencies version="2" modelHash="462ioma5ovv7ptqdkd541mmscp813di">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="621em7vpw5ex0v0ghcf6e9cwqktpv6v" />
+  <common hash="-cbjhe8zhqcpqj4ir66xac9pcszert2t" />
+  <source id="5797068448049410625" name="GroupedToggleAction" hash="-drizwkkkb94ky4nlpejlw7u89bxgtbp">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="GroupedToggleAction.java" />
   </source>

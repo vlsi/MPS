@@ -36,6 +36,7 @@ public class CompositeWithParentScope {
 
   public static Scope fromLink(SNode link, SNode node, SNode kind) {
     return from(new SimpleRoleScope(node, link, BehaviorReflection.invokeVirtual(String.class, kind, "virtual_getFqName_1213877404258", new Object[]{})) {
+      @Override
       public String getName(SNode child) {
         return SPropertyOperations.getString(SNodeOperations.cast(child, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
       }

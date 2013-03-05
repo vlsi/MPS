@@ -19,6 +19,7 @@ public class MPSProgramBuilder extends StructuralProgramBuilder<SNode> {
     this.myDataFlowManager = dataFlowManager;
   }
 
+  @Override
   protected void doBuild(SNode node) {
     if (node == null) {
       return;
@@ -44,6 +45,7 @@ public class MPSProgramBuilder extends StructuralProgramBuilder<SNode> {
     }
   }
 
+  @Override
   protected void onInstructionEmitted(Instruction instruction) {
     super.onInstructionEmitted(instruction);
     if (this.myMayBeUnreachable || instruction instanceof EndTryInstruction) {

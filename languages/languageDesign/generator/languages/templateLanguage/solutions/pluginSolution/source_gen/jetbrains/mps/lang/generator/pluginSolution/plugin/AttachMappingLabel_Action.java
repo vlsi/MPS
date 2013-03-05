@@ -34,7 +34,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.logging.Logger;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 
 public class AttachMappingLabel_Action extends BaseAction {
@@ -191,7 +190,7 @@ __switch__:
 
   private static Logger LOG = Logger.getLogger(AttachMappingLabel_Action.class);
 
-  private static SModule check_gwd6n9_a0a3a0(SModel checkedDotOperand) {
+  private static IModule check_gwd6n9_a0a3a0(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

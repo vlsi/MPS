@@ -20,6 +20,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1206442659665">
       <property name="name" nameId="tpck.1169194664001" value="BuilderBlock" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="BuilderBlock" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
@@ -28,6 +29,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="node to build DFA for" />
       <property name="name" nameId="tpck.1169194664001" value="NodeParameter" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="BuilderBlock" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="node" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
@@ -36,6 +38,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="EmitStatement" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Instructions" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
     </node>
@@ -43,6 +46,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="EmitNopStatement" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Instructions" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="nop" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1206443583064" resolveInfo="EmitStatement" />
@@ -51,6 +55,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="EmitReadStatement" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Instructions.Variable" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="read" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1206444622344" resolveInfo="BaseEmitVariableStatement" />
@@ -59,6 +64,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="EmitWriteStatement" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Instructions.Variable" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="write" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1206444622344" resolveInfo="BaseEmitVariableStatement" />
@@ -67,6 +73,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="BaseEmitVariableStatement" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Instructions.Variable" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1206443583064" resolveInfo="EmitStatement" />
     </node>
@@ -104,6 +111,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="BaseEmitJumpStatement" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Instructions.Jump" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1206443583064" resolveInfo="EmitStatement" />
     </node>
@@ -111,6 +119,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="EmitIfJumpStatement" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Instructions.Jump" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="ifjump" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1206445181593" resolveInfo="BaseEmitJumpStatement" />
@@ -119,6 +128,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="EmitJumpStatement" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Instructions.Jump" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="jump" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1206445181593" resolveInfo="BaseEmitJumpStatement" />
@@ -127,6 +137,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="EmitCodeForStatement" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Instructions" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="code for" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1206443583064" resolveInfo="EmitStatement" />
@@ -135,6 +146,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="EmitRetStatement" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Instructions" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="ret" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1206443583064" resolveInfo="EmitStatement" />
@@ -144,6 +156,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="emit maybe unreachable command" />
       <property name="name" nameId="tpck.1169194664001" value="EmitMayBeUnreachable" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Instructions" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="{ &lt;emit&gt; }" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
@@ -152,6 +165,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="EmitTryFinallyStatement" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Instructions" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="try" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1206443583064" resolveInfo="EmitStatement" />
@@ -199,6 +213,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="GetCodeForExpression" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="get code for" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
@@ -206,6 +221,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="InstructionType" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="instruction" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
     </node>
@@ -213,6 +229,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="InstructionGetSourceOperation" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="InstructionOperations" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="getSource" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1823319949748058981" resolveInfo="BaseInstructionOperation" />
@@ -221,6 +238,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="BaseInstructionOperation" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="InstructionOperations" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
@@ -228,6 +246,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="InstructionIsNop" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="InstructionOperations" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="isNop" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="7180022869589052771" resolveInfo="BooleanInstructionOperation" />
@@ -236,6 +255,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="InstructionIsRet" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="InstructionOperations" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="isRet" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="7180022869589052771" resolveInfo="BooleanInstructionOperation" />
@@ -244,6 +264,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="BooleanInstructionOperation" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="InstructionOperations" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1823319949748058981" resolveInfo="BaseInstructionOperation" />
     </node>
@@ -251,6 +272,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="InstructionIsJump" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="InstructionOperations" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="isJump" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="7180022869589052771" resolveInfo="BooleanInstructionOperation" />

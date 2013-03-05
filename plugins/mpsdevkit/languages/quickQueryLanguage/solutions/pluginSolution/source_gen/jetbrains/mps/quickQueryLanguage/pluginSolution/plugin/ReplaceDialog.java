@@ -27,7 +27,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.kernel.model.SModelUtil;
 import java.util.Collections;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.project.facets.JavaModuleOperations;
+import jetbrains.mps.project.facets.JavaModuleFacet;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.quickQueryLanguage.runtime.QueryExecutor;
 import jetbrains.mps.quickQueryLanguage.runtime.Query;
 import jetbrains.mps.smodel.IScope;
@@ -78,6 +81,7 @@ public class ReplaceDialog extends BaseDialog {
     this.setModal(false);
   }
 
+  @Override
   protected JComponent getMainComponent() {
     return this.myPanel;
   }
@@ -99,7 +103,7 @@ public class ReplaceDialog extends BaseDialog {
       }
     });
     // <node> 
-    myEditor.make(Collections.singleton(language.value.getClassPathItem()));
+    myEditor.make(Collections.<IClassPathItem>singleton(JavaModuleOperations.createClassPathItem(language.value.getFacet(JavaModuleFacet.class).getClassPath(), FindInstancesDialog.class.getName())));
   }
 
   private void doProcessClassesData(IClassesData cd) {
@@ -113,7 +117,7 @@ public class ReplaceDialog extends BaseDialog {
       }
     });
 
-    String fqName = model.value.getModelDescriptor().getLongName() + "." + QueryExecutor.GENERATED_QUERY_NAME;
+    String fqName = jetbrains.mps.util.SNodeOperations.getModelLongName(model.value.getModelDescriptor()) + "." + QueryExecutor.GENERATED_QUERY_NAME;
     ClassLoader loader = cd.getClassLoader(QueryExecutor.class.getClassLoader());
     final Wrappers._T<Query> query = new Wrappers._T<Query>(null);
     try {
@@ -162,6 +166,7 @@ public class ReplaceDialog extends BaseDialog {
     }
     myDisposed = true;
     ModelAccess.instance().runWriteInEDT(new Runnable() {
+      @Override
       public void run() {
         myEditor.disposeEditor();
         myModelOwner.unregisterModelOwner();

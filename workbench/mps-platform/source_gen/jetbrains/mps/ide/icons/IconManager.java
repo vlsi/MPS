@@ -17,11 +17,11 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SNodeOperations;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import com.intellij.ui.LayeredIcon;
-import com.intellij.util.Icons;
+import com.intellij.util.PlatformIcons;
 import com.intellij.ui.RowIcon;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
@@ -35,7 +35,7 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import java.lang.reflect.Method;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.Solution;
@@ -58,13 +58,16 @@ public class IconManager {
   private static Map<String, Icon> ourPathsToIcons = new HashMap<String, Icon>();
   private static Map<LanguageAspect, Icon> ourAspectsToIcons;
   public static final Icon EMPTY_ICON = new Icon() {
+    @Override
     public void paintIcon(Component c, Graphics g, int x, int y) {
     }
 
+    @Override
     public int getIconWidth() {
       return 18;
     }
 
+    @Override
     public int getIconHeight() {
       return 18;
     }
@@ -83,6 +86,7 @@ public class IconManager {
 
   public static Icon getIconFor(@NotNull final SNode node, final boolean withoutAdditional) {
     return ModelAccess.instance().runReadAction(new Computable<Icon>() {
+      @Override
       public Icon compute() {
         Icon mainIcon = null;
         if (SNodeOperations.isUnknown(node)) {
@@ -112,11 +116,11 @@ public class IconManager {
           }
         }
         SModel model = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(node);
-        if (model == null || model.isDisposed()) {
+        if (model == null || jetbrains.mps.util.SNodeOperations.isModelDisposed(model)) {
           return mainIcon;
         }
-        if (!(SModelStereotype.isUserModel(model)) || model.getModelDescriptor() instanceof EditableSModelDescriptor && ((EditableSModelDescriptor) model.getModelDescriptor()).isReadOnly()) {
-          mainIcon = new LayeredIcon(mainIcon, Icons.LOCKED_ICON);
+        if (!(SModelStereotype.isUserModel(model)) || model.getModelDescriptor() instanceof EditableSModel && ((EditableSModel) model.getModelDescriptor()).isReadOnly()) {
+          mainIcon = new LayeredIcon(mainIcon, PlatformIcons.LOCKED_ICON);
         }
         RowIcon result = new RowIcon(2);
         result.setIcon(mainIcon, 0);
@@ -219,9 +223,9 @@ public class IconManager {
     return IdeIcons.MODEL_ICON;
   }
 
-  public static Icon getIconFor(org.jetbrains.mps.openapi.model.SModel model) {
-    if (model instanceof SModelDescriptor) {
-      SModelDescriptor modelDescriptor = (SModelDescriptor) model;
+  public static Icon getIconFor(SModel model) {
+    if (model instanceof SModel) {
+      SModel modelDescriptor = (SModelInternal) model;
       LanguageAspect aspect = Language.getModelAspect(modelDescriptor);
       if (aspect != null) {
         return getIconForAspect(aspect);

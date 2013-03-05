@@ -84,15 +84,18 @@ public class NodeNodeData extends BaseNodeData {
     return myNodePointer.resolve(MPSModuleRepository.getInstance());
   }
 
+  @Override
   public Icon getIcon() {
     if (myNodePointer.resolve(MPSModuleRepository.getInstance()) == null) return null;
     return IconManager.getIconFor(myNodePointer.resolve(MPSModuleRepository.getInstance()));
   }
 
+  @Override
   public Object getIdObject() {
     return isResultNode() ? (jetbrains.mps.smodel.SNodePointer.serialize(getNodePointer()) + "/" + getPlainText()) : getNode();
   }
 
+  @Override
   public void write(Element element, Project project) throws CantSaveSomethingException {
     super.write(element, project);
     Element nodeXML = new Element(NODE);
@@ -102,10 +105,11 @@ public class NodeNodeData extends BaseNodeData {
     element.addContent(nodeXML);
   }
 
+  @Override
   public void read(Element element, Project project) throws CantLoadSomethingException {
     super.read(element, project);
     List children = element.getChild(NODE).getChildren();
-    myNodePointer = new jetbrains.mps.smodel.SNodePointer((SNode) null);
+    myNodePointer = new jetbrains.mps.smodel.SNodePointer(null);
     if (!children.isEmpty()) {
       myNodePointer = ComponentsUtil.nodePointerFromElement((Element) children.get(0));
     }
@@ -113,6 +117,7 @@ public class NodeNodeData extends BaseNodeData {
 
   public static String snodeRepresentation(final SNode node) {
     return ModelAccess.instance().runReadAction(new Computable<String>() {
+      @Override
       public String compute() {
         try {
           String presentation = SNodeUtil.getPresentation(node);
@@ -130,6 +135,7 @@ public class NodeNodeData extends BaseNodeData {
 
   public static String nodeAdditionalInfo(final SNode node) {
     return ModelAccess.instance().runReadAction(new Computable<String>() {
+      @Override
       public String compute() {
         if (node.getParent() == null) return "";
         return "role: " +
@@ -145,6 +151,7 @@ public class NodeNodeData extends BaseNodeData {
     });
   }
 
+  @Override
   public String getText(TextOptions options) {
     boolean showCounter = options.myCounters && isResultsSection();
     String counter = showCounter ? " " + sizeRepresentation(options.mySubresultsCount) : "";

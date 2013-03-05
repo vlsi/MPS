@@ -77,10 +77,12 @@ public class IClassifier_Behavior {
 
   public static IExtractMethodRefactoringProcessor virtual_getExtractMethodRefactoringProcessor_1221393367929(SNode thisNode, List<SNode> nodesToRefactor) {
     return new AbstractExtractMethodRefactoringProcessor(thisNode, nodesToRefactor) {
+      @Override
       public SNode createNewMethod() {
         return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration", null);
       }
 
+      @Override
       public SNode createMethodCall(SNode methodDeclaration, List<SNode> parameteres) {
         SNode call = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation", null);
         SLinkOperations.setTarget(call, "member", SNodeOperations.cast(methodDeclaration, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration"), false);

@@ -22,6 +22,7 @@
   <import index="nu8v" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)" version="-1" />
   <import index="qe67" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.style(jetbrains.mps.openapi.editor.style@java_stub)" version="-1" />
   <import index="ejnv" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(jetbrains.mps.editor.runtime.style@java_stub)" version="-1" />
+  <import index="ec5l" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" version="-1" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp33" modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" implicit="yes" />
@@ -832,7 +833,7 @@
       </node>
       <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="8543458906717841682">
         <node role="oldMethodSpecification" roleId="tp33.4774682482449846913" type="tp33.DirectMethodSpecification" typeId="tp33.2291767839159498115" id="7941431147613476847">
-          <link role="methodDeclaration" roleId="tp33.2291767839159499865" targetNodeId="9a8.~EditorContext%dgetSelectedCell()%cjetbrains%dmps%dnodeEditor%dcells%dEditorCell" resolveInfo="getSelectedCell" />
+          <link role="methodDeclaration" roleId="tp33.2291767839159499865" targetNodeId="9a8.~EditorContext%dgetSelectedCell()%cjetbrains%dmps%dopenapi%deditor%dcells%dEditorCell" resolveInfo="getSelectedCell" />
         </node>
       </node>
       <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="8543458906717841683">
@@ -908,7 +909,7 @@
       </node>
       <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="459403722176832544">
         <node role="oldMethodSpecification" roleId="tp33.4774682482449846913" type="tp33.DirectMethodSpecification" typeId="tp33.2291767839159498115" id="7941431147613476862">
-          <link role="methodDeclaration" roleId="tp33.2291767839159499865" targetNodeId="9a8.~EditorContext%dgetModel()%cjetbrains%dmps%dsmodel%dSModel" resolveInfo="getModel" />
+          <link role="methodDeclaration" roleId="tp33.2291767839159499865" targetNodeId="9a8.~EditorContext%dgetModel()%corg%djetbrains%dmps%dopenapi%dmodel%dSModel" resolveInfo="getModel" />
         </node>
       </node>
       <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="225468553673072143">
@@ -1014,6 +1015,12 @@
       <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342105639">
         <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="nu8v.~EditorCell%dgetBottomInset()%cint" resolveInfo="getBottomInset" />
       </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="5555027027870715977">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="nu8v.~EditorCell%dsetLeftGap(int)%cvoid" resolveInfo="setLeftGap" />
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="5555027027870716615">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="nu8v.~EditorCell%dsetRightGap(int)%cvoid" resolveInfo="setRightGap" />
+      </node>
       <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342106803">
         <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="nu8v.~EditorCell%dmoveTo(int,int)%cvoid" resolveInfo="moveTo" />
       </node>
@@ -1067,6 +1074,9 @@
       </node>
       <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342113114">
         <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="nu8v.~EditorCell%dend()%cvoid" resolveInfo="end" />
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="5555027027870713552">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="nu8v.~EditorCell%dgetRootParent()%cjetbrains%dmps%dopenapi%deditor%dcells%dEditorCell" resolveInfo="getRootParent" />
       </node>
       <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342113152">
         <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="nu8v.~EditorCell%dfindLeaf(int,int)%cjetbrains%dmps%dopenapi%deditor%dcells%dEditorCell" resolveInfo="findLeaf" />
@@ -1328,7 +1338,7 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2970389781193035805">
             <property name="name" nameId="tpck.1169194664001" value="md" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2970389781193035806">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SModelDescriptor" resolveInfo="SModelDescriptor" />
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ec5l.~SModel" resolveInfo="SModel" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2970389781193035807">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2970389781193035808">
@@ -1380,7 +1390,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2970389781193035805" resolveInfo="md" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2970389781193035829">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModelDescriptor%dgetSModel()%cjetbrains%dmps%dsmodel%dSModel" resolveInfo="getSModel" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ec5l.~SModel%dgetSModel()%corg%djetbrains%dmps%dopenapi%dmodel%dSModel" resolveInfo="getSModel" />
               </node>
             </node>
           </node>

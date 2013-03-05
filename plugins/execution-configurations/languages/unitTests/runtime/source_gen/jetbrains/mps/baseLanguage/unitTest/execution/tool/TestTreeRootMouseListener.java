@@ -16,6 +16,7 @@ public class TestTreeRootMouseListener extends MouseAdapter {
     myTreeComponent = tree;
   }
 
+  @Override
   public void mouseClicked(MouseEvent event) {
     if (myTreeComponent.getPathForLocation(event.getX(), event.getY()) != null) {
       return;

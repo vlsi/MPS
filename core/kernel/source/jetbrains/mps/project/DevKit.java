@@ -33,6 +33,7 @@ import jetbrains.mps.vfs.IFile;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 
 public class DevKit extends AbstractModule {
   private DevkitDescriptor myDescriptor;
@@ -44,10 +45,12 @@ public class DevKit extends AbstractModule {
     setModuleReference(descriptor.getModuleReference());
   }
 
+  @Override
   public DevkitDescriptor getModuleDescriptor() {
     return myDescriptor;
   }
 
+  @Override
   public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
     setDevKitDescriptor((DevkitDescriptor) moduleDescriptor, reloadClasses);
   }
@@ -164,6 +167,7 @@ public class DevKit extends AbstractModule {
     return result;
   }
 
+  @Override
   public void save() {
     super.save();
     DevkitDescriptorPersistence.saveDevKitDescriptor(myDescriptorFile, getModuleDescriptor());
@@ -179,6 +183,11 @@ public class DevKit extends AbstractModule {
 
   public boolean isHidden() {
     return false;
+  }
+
+  @Override
+  protected void collectFacetTypes(Set<String> types) {
+    // no-op
   }
 
   @Deprecated

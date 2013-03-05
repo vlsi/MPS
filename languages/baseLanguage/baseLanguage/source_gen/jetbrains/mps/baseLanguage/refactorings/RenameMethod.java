@@ -13,7 +13,7 @@ import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodRefactoringUtil
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.findusages.view.FindUtils;

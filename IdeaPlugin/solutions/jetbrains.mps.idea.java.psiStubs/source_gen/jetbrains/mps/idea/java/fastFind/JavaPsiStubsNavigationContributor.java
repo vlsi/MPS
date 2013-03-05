@@ -43,7 +43,7 @@ public class JavaPsiStubsNavigationContributor implements NodeNavigationContribu
       for (PsiJavaFile javaFile : Sequence.fromIterable(dataSource.getJavaFiles())) {
         for (PsiClass clas : javaFile.getClasses()) {
           final PsiClass claz = clas;
-          final SModelReference modelRef = model.getModelReference();
+          final SModelReference modelRef = model.getReference();
 
           if (!(modelRef instanceof jetbrains.mps.smodel.SModelReference)) {
             continue;

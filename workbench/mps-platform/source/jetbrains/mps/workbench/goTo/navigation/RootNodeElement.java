@@ -28,10 +28,12 @@ public class RootNodeElement implements NavigationItem {
     myNodeResult = nodeResult;
   }
 
+  @Override
   public String getName() {
     return myNodeResult.getName();
   }
 
+  @Override
   public ItemPresentation getPresentation() {
     return new SNodeDescriptorPresentation(myNodeResult);
   }
@@ -41,16 +43,19 @@ public class RootNodeElement implements NavigationItem {
   }
 
   public SModelReference getModel() {
-    return ((SModelReference) myNodeResult.getNodeReference().getModelReference());
+    return myNodeResult.getNodeReference().getModelReference();
   }
 
+  @Override
   public void navigate(boolean requestFocus) {
   }
 
+  @Override
   public boolean canNavigate() {
     return true;
   }
 
+  @Override
   public boolean canNavigateToSource() {
     return true;
   }

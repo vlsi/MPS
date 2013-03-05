@@ -31,6 +31,7 @@ public class NodeBuilderNode_Behavior {
         return new EmptyScope();
       }
       return new ListScope(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SLinkOperations.getTarget(thisNode, "concept", false))) {
+        @Override
         public String getName(SNode child) {
           return SPropertyOperations.getString(SNodeOperations.cast(child, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "role");
         }

@@ -41,10 +41,12 @@ public class CheckTestStateListener implements TestStateListener {
     return result;
   }
 
+  @Override
   public void onLooseTest(String className, String methodName) {
     myMessages.append("Lost test: ").append(className).append(".").append(methodName).append("\n");
   }
 
+  @Override
   public void onTestFailure(TestEvent event) {
     SetSequence.fromSet(myFailed).addElement(this.getNameFromEvent(event));
     if (!(SetSequence.fromSet(myFailExpected).contains(this.getNameFromEvent(event)))) {
@@ -53,6 +55,7 @@ public class CheckTestStateListener implements TestStateListener {
     }
   }
 
+  @Override
   public void onTestError(TestEvent event) {
     SetSequence.fromSet(myFailed).addElement(this.getNameFromEvent(event));
     if (!(SetSequence.fromSet(myFailExpected).contains(this.getNameFromEvent(event)))) {
@@ -65,6 +68,7 @@ public class CheckTestStateListener implements TestStateListener {
     return event.getTestCaseName() + "." + event.getTestMethodName();
   }
 
+  @Override
   public void onTestEnd(TestEvent event) {
     if (!(SetSequence.fromSet(myFailed).contains(this.getNameFromEvent(event)))) {
       if (!(SetSequence.fromSet(mySuccessExpected).contains(this.getNameFromEvent(event)))) {
@@ -73,6 +77,7 @@ public class CheckTestStateListener implements TestStateListener {
     }
   }
 
+  @Override
   public void onTestStart(TestEvent event) {
   }
 

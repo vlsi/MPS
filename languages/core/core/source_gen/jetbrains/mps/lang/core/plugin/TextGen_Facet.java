@@ -20,18 +20,19 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.make.script.IFeedback;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.concurrent.atomic.AtomicLong;
 import jetbrains.mps.generator.textGen.TextGeneratorEngine;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.util.IterableUtil;
 import java.util.Map;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.make.runtime.java.JavaStreamHandler;
 import java.util.Collections;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.messages.IMessage;
@@ -120,7 +121,7 @@ public class TextGen_Facet extends IFacet.Stub {
 
               for (GResource resource : Sequence.fromIterable(input)) {
                 if (resource.module().getOutputFor(resource.model()) == null) {
-                  monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("no output location for " + resource.model().getLongName())));
+                  monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("no output location for " + SNodeOperations.getModelLongName(resource.model()))));
                 }
               }
               Iterable<GResource> resourcesWithOutput = Sequence.fromIterable(input).where(new IWhereFilter<GResource>() {
@@ -157,7 +158,7 @@ public class TextGen_Facet extends IFacet.Stub {
                         public void run() {
                           SModel outputModel = currentResource.status().getOutputModel();
                           if (outputModel != null) {
-                            currentRootsCount.value += outputModel.rootsCount();
+                            currentRootsCount.value += IterableUtil.asCollection(outputModel.getRootNodes()).size();
                           }
                         }
                       });
@@ -177,13 +178,13 @@ public class TextGen_Facet extends IFacet.Stub {
                   prepareTime += TextGenUtil.withTimeTracking(new Runnable() {
                     public void run() {
                       for (GResource resource : ListSequence.fromList(currentInput)) {
-                        MapSequence.fromMap(retainedFilesDelta).put(resource, RetainedUtil.retainedFilesDelta(Sequence.fromIterable(resource.retainedModels()).where(new IWhereFilter<SModelDescriptor>() {
-                          public boolean accept(SModelDescriptor smd) {
+                        MapSequence.fromMap(retainedFilesDelta).put(resource, RetainedUtil.retainedFilesDelta(Sequence.fromIterable(resource.retainedModels()).where(new IWhereFilter<SModel>() {
+                          public boolean accept(SModel smd) {
                             return GenerationFacade.canGenerate(smd);
                           }
                         }), resource.module(), pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Make_Facet.Target_make.Parameters.class).pathToFile()));
-                        MapSequence.fromMap(retainedCachesDelta).put(resource, RetainedUtil.retainedCachesDelta(Sequence.fromIterable(resource.retainedModels()).where(new IWhereFilter<SModelDescriptor>() {
-                          public boolean accept(SModelDescriptor smd) {
+                        MapSequence.fromMap(retainedCachesDelta).put(resource, RetainedUtil.retainedCachesDelta(Sequence.fromIterable(resource.retainedModels()).where(new IWhereFilter<SModel>() {
+                          public boolean accept(SModel smd) {
                             return GenerationFacade.canGenerate(smd);
                           }
                         }), resource.module(), pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Make_Facet.Target_make.Parameters.class).pathToFile()));
@@ -195,7 +196,7 @@ public class TextGen_Facet extends IFacet.Stub {
                   });
 
                   // textgen 
-                  String nameOfStep = ListSequence.fromList(currentInput).first().status().getInputModel().getSModelReference().getSModelFqName().getLongName();
+                  String nameOfStep = ListSequence.fromList(currentInput).first().status().getInputModel().getReference().getSModelFqName().getLongName();
                   monitor.currentProgress().advanceWork("Writing", ListSequence.fromList(currentInput).count() * 100, nameOfStep);
 
                   final List<IMessage> errors = ListSequence.fromList((ListSequence.fromList(new ArrayList<IMessage>()))).asSynchronized();
@@ -205,6 +206,7 @@ public class TextGen_Facet extends IFacet.Stub {
                       generateTime.value += TextGenUtil.withTimeTracking(new Runnable() {
                         public void run() {
                           TextGenUtil.generateText(engine, currentInput, new TextGenUtil.TextGenerationCallback() {
+                            @Override
                             public void textGenerated(GResource inputResource, List<TextGenerationResult> results) {
                               try {
                                 CacheGenerator[] cacheGenerators = new CacheGenerator[]{BLDependenciesCache.getInstance().getGenerator(), (_generateDebugInfo ?
@@ -244,13 +246,13 @@ public class TextGen_Facet extends IFacet.Stub {
                     });
                     LOG.info("approximate handlers size: " + handlersSize / 1000 / 1000 + " mb");
 
-                    int overallRootsCount = ListSequence.fromList(currentInput).select(new ISelector<GResource, SModelDescriptor>() {
-                      public SModelDescriptor select(GResource it) {
+                    int overallRootsCount = ListSequence.fromList(currentInput).select(new ISelector<GResource, SModel>() {
+                      public SModel select(GResource it) {
                         return it.model();
                       }
-                    }).foldLeft(0, new ILeftCombinator<SModelDescriptor, Integer>() {
-                      public Integer combine(Integer s, SModelDescriptor it) {
-                        return s + it.getSModel().rootsCount();
+                    }).foldLeft(0, new ILeftCombinator<SModel, Integer>() {
+                      public Integer combine(Integer s, SModel it) {
+                        return s + IterableUtil.asCollection(it.getSModel().getRootNodes()).size();
                       }
                     });
                     LOG.info("roots count: " + overallRootsCount);
@@ -289,7 +291,7 @@ public class TextGen_Facet extends IFacet.Stub {
                             public void run() {
                               if (!(Boolean.TRUE.equals(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Generate_Facet.Target_configure.Variables.class).saveTransient()))) {
                                 for (GResource resource : ListSequence.fromList(currentInput)) {
-                                  SModelDescriptor outputMD = resource.status().getOutputModelDescriptor();
+                                  SModel outputMD = resource.status().getOutputModelDescriptor();
                                   if (outputMD instanceof TransientModelsModule.TransientSModelDescriptor) {
                                     ((TransientModelsModule) outputMD.getModule()).removeModel(outputMD);
                                   }
@@ -447,7 +449,7 @@ public class TextGen_Facet extends IFacet.Stub {
                 ModelAccess.instance().runReadAction(new Runnable() {
                   public void run() {
                     sModel.value = resource.status().getOutputModel();
-                    for (SNode root : sModel.value.roots()) {
+                    for (SNode root : sModel.value.getRootNodes()) {
                       TextGenerationResult tgr = TextGenerationUtil.generateText(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).operationContext(), root);
                       errors.value |= tgr.hasErrors();
                       if (errors.value) {

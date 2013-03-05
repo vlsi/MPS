@@ -28,6 +28,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class ReplacementView {
   private UsagesView myUsagesView;
@@ -38,12 +39,14 @@ public class ReplacementView {
   public ReplacementView(RunReplacement_Tool tool, final Project project, IResultProvider provider, SearchQuery searchQuery, final Query query) {
     this.myTool = tool;
     this.myUsagesView = new UsagesView(project, new ViewOptions()) {
+      @Override
       public void close() {
         ReplacementView.this.myTool.closeTab(ReplacementView.this);
       }
     };
     JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
     this.myButton.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent event) {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
@@ -67,6 +70,7 @@ public class ReplacementView {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         ProgressManager.getInstance().run(new Task.Modal(project, "Searching", true) {
+          @Override
           public void run(@NotNull ProgressIndicator indicator) {
             indicator.setIndeterminate(true);
             ReplacementView.this.myUsagesView.run(indicator);
@@ -87,7 +91,7 @@ public class ReplacementView {
   public List<SNode> getExecuteResult(List<SNodeReference> nodes) {
     List<SNode> results = ListSequence.fromList(new ArrayList<SNode>());
     for (SNodeReference nodePointer : nodes) {
-      ListSequence.fromList(results).addElement(((SNodePointer) nodePointer).getNode());
+      ListSequence.fromList(results).addElement(((SNodePointer) nodePointer).resolve(MPSModuleRepository.getInstance()));
     }
     return results;
   }

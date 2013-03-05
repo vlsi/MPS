@@ -22,7 +22,7 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.util.MacroHelper;
 
@@ -74,6 +74,7 @@ public class EditorUtil {
     );
     final JButton button = new JButton();
     button.setAction(new AbstractAction("...") {
+      @Override
       public void actionPerformed(ActionEvent e) {
         Component root = SwingUtilities.getRoot(button);
         JFrame frame = (root instanceof JFrame ?
@@ -97,7 +98,7 @@ public class EditorUtil {
         if (copy) {
           ModelAccess.instance().requireWrite(new Runnable() {
             public void run() {
-              SModelDescriptor model = sourceNode.getModel().getModelDescriptor();
+              SModel model = sourceNode.getModel().getModelDescriptor();
               String outputRoot = model.getModule().getBundleHome().getPath() + File.separator + "icons";
               IFile outputRootFile = FileSystem.getInstance().getFileByPath(outputRoot);
               // <node> 
@@ -114,6 +115,7 @@ public class EditorUtil {
 
         final String pathToShow = shrinkPath.invoke(result.value.getPath());
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          @Override
           public void run() {
             SNodeAccessUtil.setProperty(sourceNode, propertyName, pathToShow);
           }

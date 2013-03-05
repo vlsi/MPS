@@ -4,7 +4,7 @@ package jetbrains.mps.ide.platform.refactoring;
 
 import com.intellij.openapi.project.Project;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.IRefactoring;
@@ -25,7 +25,7 @@ public abstract class RefactoringAccess {
 
   public abstract ModelElementTargetChooser createTargetChooser(Project project, SNode node);
 
-  public abstract ModelElementTargetChooser createTargetChooser(Project project, SModelDescriptor model);
+  public abstract ModelElementTargetChooser createTargetChooser(Project project, SModel model);
 
   public abstract void showRefactoringView(Project project, RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name);
 

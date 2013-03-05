@@ -23,7 +23,7 @@ import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
 import junit.framework.Assert;
 import com.intellij.execution.ExecutionException;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;

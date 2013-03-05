@@ -28,7 +28,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.action.ActionUtils;
 import org.jetbrains.annotations.NotNull;
@@ -52,15 +52,18 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     init();
   }
 
+  @Override
   public boolean isInitialized() {
     return myInitialized;
   }
 
+  @Override
   public void init() {
     populate();
     myInitialized = true;
   }
 
+  @Override
   public Language getModule() {
     return myLanguage;
   }
@@ -69,14 +72,17 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     return myLanguage;
   }
 
+  @Override
   public ActionGroup getQuickCreateGroup(boolean plain) {
     return ActionUtils.getGroup(ProjectPaneActionGroups.LANGUAGE_NEW_ACTIONS);
   }
 
+  @Override
   public ActionGroup getActionGroup() {
     return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_LANGUAGE_ACTIONS);
   }
 
+  @Override
   protected String getModulePresentation() {
     String languageUID = myLanguage.getModuleFqName();
 
@@ -101,8 +107,8 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     if (myLanguage.getAccessoryModels().size() > 0) {
       TextTreeNode accessories = new AccessoriesModelTreeNode(this);
 
-      List<SModelDescriptor> sortedModels = SortUtil.sortModels(myLanguage.getAccessoryModels());
-      for (SModelDescriptor model : sortedModels) {
+      List<SModel> sortedModels = SortUtil.sortModels(myLanguage.getAccessoryModels());
+      for (SModel model : sortedModels) {
         IModule m = model.getModule();
         boolean currentModule = m == null || m == myLanguage;
         IModule module = m == null ? myLanguage : m;

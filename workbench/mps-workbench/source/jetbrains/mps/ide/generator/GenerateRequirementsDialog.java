@@ -75,6 +75,7 @@ class GenerateRequirementsDialog extends DialogWrapper {
       pane.setPreferredSize(preferredSize);
       panel.add(pane, BorderLayout.CENTER);
       SwingUtilities.invokeLater(new Runnable() {
+        @Override
         public void run() {
           final Dimension textSize = messageComponent.getPreferredSize();
           final Dimension preferredSize = new Dimension(Math.min(textSize.width, screenSize.width * 4 / 5) + scrollSize,

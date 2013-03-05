@@ -15,10 +15,11 @@
  */
 package jetbrains.mps.nodeEditor.cellMenu;
 
-import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -32,7 +33,7 @@ public class CompositeSubstituteInfo extends AbstractNodeSubstituteInfo {
   private CellContext myCellContext;
   /**
    * @deprecated starting from MPS 3.0 was replaced with <code>myExtParts</code> all usages should
-   * be removed in the next release
+   *             be removed in the next release
    */
   @Deprecated
   private SubstituteInfoPart[] myParts;
@@ -40,7 +41,7 @@ public class CompositeSubstituteInfo extends AbstractNodeSubstituteInfo {
 
   /**
    * @deprecated starting from MPS 3.0 another constructor should be used:
-   * <code>CompositeSubstituteInfo(... jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt parts)</code>
+   *             <code>CompositeSubstituteInfo(... jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt parts)</code>
    */
   @Deprecated
   public CompositeSubstituteInfo(EditorContext editorContext, CellContext cellContext, SubstituteInfoPart[] parts) {
@@ -55,25 +56,37 @@ public class CompositeSubstituteInfo extends AbstractNodeSubstituteInfo {
     myExtParts = parts;
   }
 
-  protected List<INodeSubstituteAction> createActions() {
-    List<INodeSubstituteAction> actions = new LinkedList<INodeSubstituteAction>();
+  protected List<SubstituteAction> createActions() {
+    List<List<? extends SubstituteAction>> actionLists = new LinkedList<List<? extends SubstituteAction>>();
     if (myExtParts != null) {
       for (SubstituteInfoPartExt menuPart : myExtParts) {
         try {
-          actions.addAll(menuPart.createActions(myCellContext, getEditorContext()));
+          actionLists.add(menuPart.createActions(myCellContext, getEditorContext()));
         } catch (Throwable e) {
           LOG.error(e);
         }
       }
-      return actions;
+      return flatten(actionLists);
     }
     for (SubstituteInfoPart menuPart : myParts) {
       try {
-        actions.addAll(menuPart.createActions(myCellContext, (jetbrains.mps.nodeEditor.EditorContext) getEditorContext()));
+        actionLists.add(menuPart.createActions(myCellContext, (jetbrains.mps.nodeEditor.EditorContext) getEditorContext()));
       } catch (Throwable e) {
         LOG.error(e);
       }
     }
-    return actions;
+    return flatten(actionLists);
+  }
+
+  private List<SubstituteAction> flatten(List<List<? extends SubstituteAction>> actionLists) {
+    int size = 0;
+    for (List<? extends SubstituteAction> actionList : actionLists) {
+      size += actionList.size();
+    }
+    List<SubstituteAction> result = new ArrayList<SubstituteAction>(size);
+    for (List<? extends SubstituteAction> actionList : actionLists) {
+      result.addAll(actionList);
+    }
+    return result;
   }
 }

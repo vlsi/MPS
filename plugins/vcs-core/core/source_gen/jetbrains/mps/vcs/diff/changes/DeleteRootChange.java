@@ -5,7 +5,7 @@ package jetbrains.mps.vcs.diff.changes;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class DeleteRootChange extends ModelChange {
   private SNodeId myNodeId;
@@ -21,17 +21,20 @@ public class DeleteRootChange extends ModelChange {
     return myNodeId;
   }
 
+  @Override
   public void apply(@NotNull SModel model, @NotNull NodeCopier nodeCopier) {
-    assert model.getNodeById(myNodeId) != null;
-    model.getNodeById(myNodeId).delete();
+    assert model.getNode(myNodeId) != null;
+    model.getNode(myNodeId).delete();
   }
 
   @NotNull
+  @Override
   protected ModelChange createOppositeChange() {
     return new AddRootChange(getChangeSet().getOppositeChangeSet(), myNodeId);
   }
 
   @NotNull
+  @Override
   public ChangeType getType() {
     return ChangeType.DELETE;
   }
@@ -41,6 +44,7 @@ public class DeleteRootChange extends ModelChange {
     return "Delete root " + myNodeId;
   }
 
+  @Override
   public String getDescription() {
     return "Deleted root #" + myNodeId;
   }

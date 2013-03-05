@@ -41,10 +41,12 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2163819695913378074">
       <property name="name" nameId="tpck.1169194664001" value="CustomStatementRef" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6010543442198679048">
       <property name="name" nameId="tpck.1169194664001" value="TwoVarStatement" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
     </node>
   </roots>

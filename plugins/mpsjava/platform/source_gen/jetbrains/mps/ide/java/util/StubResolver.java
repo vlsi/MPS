@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
 import java.util.Set;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -26,12 +26,12 @@ import jetbrains.mps.smodel.IOperationContext;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.project.OptimizeImportsHelper;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
@@ -55,7 +55,7 @@ public class StubResolver {
     // resolve only to models from sequence 
     myUsedModels = SetSequence.fromSetWithValues(new HashSet<SModelReference>(), Sequence.fromIterable(models).select(new ISelector<SModel, SModelReference>() {
       public SModelReference select(SModel it) {
-        return it.getSModelReference();
+        return it.getReference();
       }
     }));
   }
@@ -98,7 +98,7 @@ public class StubResolver {
     });
     Sequence.fromIterable(modelsToAdd).visitAll(new IVisitor<SModelReference>() {
       public void visit(SModelReference it) {
-        model.addModelImport(it, false);
+        ((SModelInternal) model).addModelImport(it, false);
       }
     });
     if (Sequence.fromIterable(modelsToAdd).isNotEmpty()) {
@@ -111,8 +111,8 @@ public class StubResolver {
     LOG.info(cnt + " stub references were re-resolved in model " + SModelOperations.getModelName(model) + ". (" + ListSequence.fromList(toResolve).count() + ")");
   }
 
-  public void resolveInModels(List<SModelDescriptor> models, IOperationContext context) {
-    for (SModelDescriptor model : ListSequence.fromList(models)) {
+  public void resolveInModels(List<SModel> models, IOperationContext context) {
+    for (SModel model : ListSequence.fromList(models)) {
       resolveInModel(model.getSModel(), context);
     }
   }
@@ -122,8 +122,8 @@ public class StubResolver {
       if (module.isPackaged()) {
         continue;
       }
-      for (SModelDescriptor model : ListSequence.fromList(module.getOwnModelDescriptors())) {
-        if (SModelStereotype.isUserModel(model) && model instanceof EditableSModelDescriptor) {
+      for (SModel model : ListSequence.fromList(module.getOwnModelDescriptors())) {
+        if (SModelStereotype.isUserModel(model) && model instanceof EditableSModel) {
           resolveInModel(model.getSModel(), context);
         }
       }
@@ -150,7 +150,7 @@ public class StubResolver {
           public IListSequence<SNode> compute() {
             return Sequence.fromIterable(refScope.getAvailableElements(null)).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode n) {
-                return modelRef.equals(SNodeOperations.getModel(n).getSModelReference()) && resolveInfo.equals(jetbrains.mps.util.SNodeOperations.getResolveInfo(n));
+                return modelRef.equals(SNodeOperations.getModel(n).getReference()) && resolveInfo.equals(jetbrains.mps.util.SNodeOperations.getResolveInfo(n));
               }
             }).toListSequence();
           }
@@ -171,9 +171,9 @@ public class StubResolver {
 
   private static Logger LOG = Logger.getLogger(StubResolver.class);
 
-  private static SModelReference check_ar1im2_a0e0a0c0e(SModelDescriptor checkedDotOperand) {
+  private static SModelReference check_ar1im2_a0e0a0c0e(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getSModelReference();
+      return checkedDotOperand.getReference();
     }
     return null;
   }

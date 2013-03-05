@@ -7,22 +7,27 @@ public class ConsoleTestReporter implements ITestReporter {
   public ConsoleTestReporter() {
   }
 
+  @Override
   public void errorLine(String msg) {
     System.err.println(msg);
   }
 
+  @Override
   public void outputLine(String msg) {
     System.out.println(msg);
   }
 
+  @Override
   public void testErrorLine(String testFQname, String msg) {
     System.err.println("[" + testFQname + "] - " + msg);
   }
 
+  @Override
   public void testOutputLine(String testFQname, String msg) {
     System.err.println("[" + testFQname + "] - " + msg);
   }
 
+  @Override
   public void testFailed(String testFQname, String msg, String longMsg) {
     System.err.println("Failure in [" + testFQname + "]: " + msg);
     if (longMsg != null) {
@@ -30,14 +35,17 @@ public class ConsoleTestReporter implements ITestReporter {
     }
   }
 
+  @Override
   public void testFinished(String testFQname) {
     System.out.println("Finished [" + testFQname + "]");
   }
 
+  @Override
   public void testStarted(String testFQname) {
     System.out.println("Started [" + testFQname + "]");
   }
 
+  @Override
   public void runFinished() {
     System.out.println("Finished all.");
   }

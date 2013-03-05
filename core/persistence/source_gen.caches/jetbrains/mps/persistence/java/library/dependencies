@@ -26,15 +26,18 @@
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelInternal" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.loading.ModelLoadingState" />
     <classNode dependClassName="jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
     <classNode extendsClassName="jetbrains.mps.smodel.BaseSModelDescriptorWithSource" />
   </dependency>
   <dependency className="jetbrains.mps.persistence.java.library.JavaClassStubModelRootFactory" file="JavaClassStubModelRootFactory.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
     <classNode extendsClassName="org.jetbrains.mps.openapi.persistence.ModelRootFactory" />
@@ -55,7 +58,6 @@
     <classNode dependClassName="jetbrains.mps.reloading.IClassPathItem" />
     <classNode dependClassName="jetbrains.mps.smodel.BaseSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageID" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.stubs.javastub.classpath.StubHelper" />

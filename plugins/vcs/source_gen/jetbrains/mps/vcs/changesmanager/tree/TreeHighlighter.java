@@ -20,9 +20,9 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vcs.changesmanager.tree.features.Feature;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
 import jetbrains.mps.vcs.changesmanager.tree.features.ModelFeature;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.SModelReference;
@@ -42,7 +42,6 @@ import com.intellij.openapi.vcs.FileStatusListener;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.SModelAdapter;
-import jetbrains.mps.smodel.SModel;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -163,9 +162,9 @@ public class TreeHighlighter implements TreeMessageOwner {
   private void rehighlightNode(@NotNull MPSTreeNode node, @NotNull Feature feature) {
     unhighlightNode(node);
 
-    SModelDescriptor model = SModelRepository.getInstance().getModelDescriptor(feature.getModelReference());
-    if (model instanceof DefaultSModelDescriptor) {
-      DefaultSModelDescriptor emd = (DefaultSModelDescriptor) model;
+    SModel model = SModelRepository.getInstance().getModelDescriptor(feature.getModelReference());
+    if (model instanceof BaseEditableSModelDescriptor) {
+      BaseEditableSModelDescriptor emd = (BaseEditableSModelDescriptor) model;
       myRegistry.getCurrentDifference(emd).setEnabled(true);
 
       ModelChange change = myMap.get(feature);
@@ -213,6 +212,7 @@ public class TreeHighlighter implements TreeMessageOwner {
 
   private void rehighlightAllFeaturesLater() {
     myQueue.queue(new Update(myUpdateId) {
+      @Override
       public void run() {
         if (IMakeService.INSTANCE.isSessionActive()) {
           new Thread(new Runnable() {
@@ -251,7 +251,7 @@ public class TreeHighlighter implements TreeMessageOwner {
   }
 
   @NotNull
-  private TreeMessage getMessage(@NotNull ModelChange modelChange, @NotNull DefaultSModelDescriptor modelDescriptor) {
+  private TreeMessage getMessage(@NotNull ModelChange modelChange, @NotNull BaseEditableSModelDescriptor modelDescriptor) {
     switch (modelChange.getType()) {
       case ADD:
         if (modelChange instanceof AddRootChange) {
@@ -274,9 +274,9 @@ public class TreeHighlighter implements TreeMessageOwner {
 
   @Nullable
   private TreeMessage getMessage(@NotNull ModelFeature modelFeature) {
-    SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(modelFeature.getModelReference());
-    if (md instanceof DefaultSModelDescriptor) {
-      FileStatus status = getModelFileStatus((DefaultSModelDescriptor) md, myRegistry.getProject());
+    SModel md = SModelRepository.getInstance().getModelDescriptor(modelFeature.getModelReference());
+    if (md instanceof BaseEditableSModelDescriptor) {
+      FileStatus status = getModelFileStatus((BaseEditableSModelDescriptor) md, myRegistry.getProject());
       return (status == null ?
         null :
         getMessage(status)
@@ -287,7 +287,7 @@ public class TreeHighlighter implements TreeMessageOwner {
   }
 
   @Nullable
-  private static FileStatus getModelFileStatus(@NotNull DefaultSModelDescriptor ed, @NotNull Project project) {
+  private static FileStatus getModelFileStatus(@NotNull BaseEditableSModelDescriptor ed, @NotNull Project project) {
     VirtualFile vf = VirtualFileUtils.getVirtualFile(ed.getSource().getFile());
     return (vf == null ?
       null :
@@ -299,17 +299,21 @@ public class TreeHighlighter implements TreeMessageOwner {
     public MyTreeNodeListener() {
     }
 
+    @Override
     public void treeNodeAdded(MPSTreeNode node, MPSTree tree) {
       registerNode(node);
     }
 
+    @Override
     public void treeNodeRemoved(MPSTreeNode node, MPSTree tree) {
       unregisterNode(node);
     }
 
+    @Override
     public void treeNodeUpdated(MPSTreeNode node, MPSTree tree) {
     }
 
+    @Override
     public void beforeTreeDisposed(MPSTree tree) {
       TreeHighlighterFactory.getInstance(myRegistry.getProject()).unhighlightTree(myTree);
     }
@@ -319,6 +323,7 @@ public class TreeHighlighter implements TreeMessageOwner {
     public MyFeatureForestMapListener() {
     }
 
+    @Override
     public void featureStateChanged(Feature feature) {
       rehighlightFeatureAndDescendants(feature);
     }
@@ -328,14 +333,16 @@ public class TreeHighlighter implements TreeMessageOwner {
     public MyFileStatusListener() {
     }
 
+    @Override
     public void fileStatusChanged(@NotNull VirtualFile file) {
       IFile ifile = VirtualFileUtils.toIFile(file);
-      SModelDescriptor emd = SModelFileTracker.getInstance().findModel(ifile);
+      SModel emd = SModelFileTracker.getInstance().findModel(ifile);
       if (emd != null) {
-        rehighlightFeatureAndDescendants(new ModelFeature(emd.getSModelReference()));
+        rehighlightFeatureAndDescendants(new ModelFeature(emd.getReference()));
       }
     }
 
+    @Override
     public void fileStatusesChanged() {
       rehighlightAllFeaturesLater();
     }
@@ -347,7 +354,7 @@ public class TreeHighlighter implements TreeMessageOwner {
 
     @Override
     public void beforeModelDisposed(SModel model) {
-      SModelReference modelRef = model.getSModelReference();
+      SModelReference modelRef = model.getReference();
       List<MPSTreeNode> obsoleteTreeNodes = ListSequence.fromList(new ArrayList<MPSTreeNode>());
       synchronized (myFeaturesHolder) {
         for (Feature f : ListSequence.fromList(myFeaturesHolder.getFeaturesByModelReference(modelRef))) {

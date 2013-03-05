@@ -8,11 +8,11 @@ import org.junit.runner.notification.RunNotifier;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.make.MPSCompilationResult;
-import java.util.LinkedHashSet;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import org.junit.runner.notification.Failure;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.AbstractModule;
 import javax.swing.SwingUtilities;
 import com.intellij.openapi.vfs.LocalFileSystem;
@@ -25,12 +25,14 @@ public class MakeRunner extends Runner {
     myDescription = Description.createTestDescription(class_, "Making");
   }
 
+  @Override
   public void run(final RunNotifier notifier) {
     notifier.fireTestStarted(myDescription);
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         ModuleMaker maker = new ModuleMaker();
-        MPSCompilationResult compilationResult = maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), new EmptyProgressMonitor());
+        MPSCompilationResult compilationResult = maker.make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), new EmptyProgressMonitor());
         if (compilationResult != null && compilationResult.getErrors() > 0) {
           notifier.fireTestFailure(new Failure(myDescription, new Exception("Compilation errors: " + compilationResult)));
         }
@@ -43,6 +45,7 @@ public class MakeRunner extends Runner {
     // model repository had already been filled and obviosly it didn't have those stub models 
     // as there were no class files there at the moment yet. 
     ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
       public void run() {
         for (IModule mod : MPSModuleRepository.getInstance().getAllModules()) {
           if (!(mod instanceof AbstractModule)) {
@@ -55,8 +58,10 @@ public class MakeRunner extends Runner {
 
     try {
       SwingUtilities.invokeAndWait(new Runnable() {
+        @Override
         public void run() {
           ModelAccess.instance().runWriteAction(new Runnable() {
+            @Override
             public void run() {
               LocalFileSystem.getInstance().refresh(false);
             }
@@ -71,6 +76,7 @@ public class MakeRunner extends Runner {
     notifier.fireTestFinished(myDescription);
   }
 
+  @Override
   public Description getDescription() {
     return myDescription;
   }

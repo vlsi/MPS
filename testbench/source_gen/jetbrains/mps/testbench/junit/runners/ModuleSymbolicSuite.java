@@ -10,21 +10,19 @@ import org.junit.runners.model.RunnerBuilder;
 import org.junit.runners.model.InitializationError;
 import org.junit.runner.Description;
 import org.junit.runner.notification.RunNotifier;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.runtime.IClassLoadingModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.project.facets.JavaModuleOperations;
+import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.facets.JavaModuleFacet;
 import java.net.URL;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URLClassLoader;
-import jetbrains.mps.reloading.ClasspathStringCollector;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
-import java.util.Set;
-import jetbrains.mps.reloading.CommonPaths;
 import org.junit.runner.notification.Failure;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -79,7 +77,7 @@ public class ModuleSymbolicSuite extends ParentRunner<Runner> {
   }
 
   private void initialize() {
-    IModule mod = MPSModuleRepository.getInstance().getModule(jetbrains.mps.project.structure.modules.ModuleReference.fromString(myModuleRef));
+    SModule mod = MPSModuleRepository.getInstance().getModule(jetbrains.mps.project.structure.modules.ModuleReference.fromString(myModuleRef));
     for (Runner child : myRunners) {
       ((ModuleSymbolicSuite.DelegatingRunner) child).init(mod, myBuilder);
     }
@@ -120,6 +118,7 @@ public class ModuleSymbolicSuite extends ParentRunner<Runner> {
       this.myTests = tests;
     }
 
+    @Override
     public void run(RunNotifier notifier) {
       if (myTests == null) {
         runFailure(createTestDescription(ModuleSymbolicSuite.NO_TESTS), new IllegalStateException("no tests found in " + myClassName), notifier);
@@ -132,6 +131,7 @@ public class ModuleSymbolicSuite extends ParentRunner<Runner> {
       }
     }
 
+    @Override
     public Description getDescription() {
       Description desc = Description.createSuiteDescription(myClassName);
       if (myTests == null) {
@@ -144,7 +144,7 @@ public class ModuleSymbolicSuite extends ParentRunner<Runner> {
       return desc;
     }
 
-    private void init(IModule mod, RunnerBuilder builder) {
+    private void init(SModule mod, RunnerBuilder builder) {
       Class klass = getTestClass(mod, myClassName);
       if (klass != null) {
         this.myDelegate = builder.safeRunnerForClass(klass);
@@ -153,7 +153,7 @@ public class ModuleSymbolicSuite extends ParentRunner<Runner> {
       }
     }
 
-    private static Class getTestClass(IModule module, String className) {
+    private static Class getTestClass(SModule module, String className) {
       if (module instanceof IClassLoadingModule && ((IClassLoadingModule) module).canLoad()) {
         return ((IClassLoadingModule) module).getClass(className);
       } else {
@@ -165,11 +165,10 @@ public class ModuleSymbolicSuite extends ParentRunner<Runner> {
       }
     }
 
-    private static ClassLoader getTestClassLoaderForModule(IModule module) {
+    private static ClassLoader getTestClassLoaderForModule(SModule module) {
       List<String> paths = ListSequence.fromList(new ArrayList<String>());
-      // <node> 
-      ListSequence.fromList(paths).addSequence(ListSequence.fromList(getClasspathForModule(module)));
-
+      ListSequence.fromList(paths).addSequence(SetSequence.fromSet(JavaModuleOperations.collectExecuteClasspath(module)));
+      ListSequence.fromList(paths).removeSequence(SetSequence.fromSet(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("6354ebe7-c22a-4a0f-ac54-50b52ab9b065")).getFacet(JavaModuleFacet.class).getClassPath()));
       URL[] urls = ListSequence.fromList(paths).select(new ISelector<String, URL>() {
         public URL select(String it) {
           try {
@@ -182,23 +181,6 @@ public class ModuleSymbolicSuite extends ParentRunner<Runner> {
       }).toGenericArray(URL.class);
 
       return new URLClassLoader(urls);
-    }
-
-    private static List<String> getClasspathForModule(final IModule module) {
-      final ClasspathStringCollector visitor = new ClasspathStringCollector();
-      module.getClassPathItem().accept(visitor);
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          for (IModule m : CollectionSequence.fromCollection(new GlobalModuleDependenciesManager(module).getModules(GlobalModuleDependenciesManager.Deptype.COMPILE))) {
-            m.getClassPathItem().accept(visitor);
-          }
-        }
-      });
-
-      Set<String> visited = visitor.getClasspath();
-      visited.removeAll(CommonPaths.getJDKPath());
-
-      return ListSequence.fromListWithValues(new ArrayList<String>(), visited);
     }
 
     private void runFailure(Description failDesc, Throwable cause, RunNotifier notifier) {

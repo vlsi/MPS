@@ -28,22 +28,27 @@ public class Graph implements IGraph {
   Set<IVertex> myVertices = new HashSet<IVertex>();
   Map<Pair<IVertex, IVertex>, IEdge> myVerticesToConnectingEdges = new HashMap<Pair<IVertex, IVertex>, IEdge>();
 
+  @Override
   public Set<IEdge> getEdges() {
     return new HashSet<IEdge>(myEdges);
   }
 
+  @Override
   public Set<IVertex> getVertices() {
     return new HashSet<IVertex>(myVertices);
   }
 
+  @Override
   public void addVertex(IVertex vertex) {
     myVertices.add(vertex);
   }
 
+  @Override
   public boolean connect(IVertex vertex1, IVertex vertex2) {
     return connect(vertex1, vertex2, null, null);
   }
 
+  @Override
   public boolean connect(IVertex vertex1, IVertex vertex2, Object key, Object userObject) {
     if (!myVertices.contains(vertex1)) return false;
     if (!myVertices.contains(vertex2)) return false;
@@ -58,12 +63,14 @@ public class Graph implements IGraph {
     return true;
   }
 
+  @Override
   public boolean isConnected(IVertex vertex1, IVertex vertex2) {
     IEdge connectingEdge = myVerticesToConnectingEdges.get(new Pair<IVertex, IVertex>(vertex1, vertex2));
     return connectingEdge != null;
   }
 
 
+  @Override
   public Pair<Integer, Integer> getBaricenter() {
     double x = 0;
     double y = 0;
@@ -76,20 +83,24 @@ public class Graph implements IGraph {
     return new Pair<Integer, Integer>(bcx, bcy);
   }
 
+  @Override
   public int getVerticesCount() {
     return myVertices.size();
   }
 
+  @Override
   public int getEdgesCount() {
     return myEdges.size();
   }
 
+  @Override
   public void move(int deltaX, int deltaY) {
     for (IVertex vertex : myVertices) {
       vertex.setCoords(vertex.getX() + deltaX, vertex.getY() + deltaY);
     }
   }
 
+  @Override
   public Rectangle getFramingRectangle() {
     double minx = 0;
     double miny = 0;
@@ -119,6 +130,7 @@ public class Graph implements IGraph {
     return new Rectangle(x, y, width, height);
   }
 
+  @Override
   public void setUpperLeftCorner(int x, int y) {
     Rectangle rect = getFramingRectangle();
     move(x - rect.x, y - rect.y);

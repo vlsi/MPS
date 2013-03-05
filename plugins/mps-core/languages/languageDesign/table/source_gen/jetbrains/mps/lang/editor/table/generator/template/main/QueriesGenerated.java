@@ -11,8 +11,6 @@ import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 
 public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_3216977149571365620(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -49,9 +47,5 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_8562016843455421178(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "tableModel", true), "body", true), "statement", true);
-  }
-
-  public static SNode weaving_MappingRule_ContextNodeQuery_1642854152031151252(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return QueriesUtil.getGeneratedClassByCellContainer(_context.getNode(), _context);
   }
 }

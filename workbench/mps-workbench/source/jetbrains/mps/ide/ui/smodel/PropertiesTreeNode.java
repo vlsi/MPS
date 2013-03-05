@@ -39,10 +39,12 @@ public class PropertiesTreeNode extends MPSTreeNodeEx {
     return myNode;
   }
 
+  @Override
   public boolean isInitialized() {
     return myInitialized;
   }
 
+  @Override
   protected void doInit() {
     super.doInit();
 
@@ -55,6 +57,7 @@ public class PropertiesTreeNode extends MPSTreeNodeEx {
     ((DefaultTreeModel) getTree().getModel()).nodeStructureChanged(this);
   }
 
+  @Override
   protected void doUpdate() {
     this.removeAllChildren();
     myInitialized = false;

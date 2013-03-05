@@ -23,6 +23,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
   }
 
   @Nullable
+  @Override
   public Tuples._2<Integer, byte[]> mergeContents(byte[] baseContent, byte[] localContent, byte[] latestContent) {
     try {
       ModelDependencies dependencies = loadDependencies(baseContent);

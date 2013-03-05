@@ -6,8 +6,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -15,7 +14,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.ide.java.util.JavaPaster;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.logging.Logger;
@@ -35,7 +34,7 @@ public class PasteAsJavaClass_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    SModel m = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModel();
+    SModel m = ((SModel) MapSequence.fromMap(_params).get("model")).getSModel();
     return m != null && SModelOperations.hasLanguage(m, ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.baseLanguage", Language.class).getModuleReference()) && JavaPaster.areDataAvailableInClipboard();
   }
 
@@ -63,7 +62,7 @@ public class PasteAsJavaClass_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
     }
-    if (!(MapSequence.fromMap(_params).get("model") instanceof EditableSModelDescriptor) || ((EditableSModelDescriptor) MapSequence.fromMap(_params).get("model")).isReadOnly()) {
+    if (!(MapSequence.fromMap(_params).get("model") instanceof EditableSModel) || ((EditableSModel) MapSequence.fromMap(_params).get("model")).isReadOnly()) {
       return false;
     }
     MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
@@ -75,7 +74,7 @@ public class PasteAsJavaClass_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new JavaPaster().pasteJavaAsClass(((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModel(), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
+      new JavaPaster().pasteJavaAsClass(((SModel) MapSequence.fromMap(_params).get("model")).getSModel(), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "PasteAsJavaClass", t);
     }

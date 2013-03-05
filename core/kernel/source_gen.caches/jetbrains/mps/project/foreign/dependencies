@@ -21,6 +21,7 @@
   <dependency className="jetbrains.mps.project.foreign.IdeaModuleSolutionDescriptorIO" file="IdeaModuleSolutionDescriptorIO.java">
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Long" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
@@ -59,6 +60,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.Memento" />
   </dependency>
   <dependency className="jetbrains.mps.project.foreign.ModuleMacroExpander" file="ModuleMacroExpander.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="java.util.regex.Matcher" />
@@ -68,6 +70,7 @@
     <classNode extendsClassName="jetbrains.mps.util.MacroHelper" />
   </dependency>
   <dependency className="jetbrains.mps.project.foreign.ProjectMacroExpander" file="ProjectMacroExpander.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />

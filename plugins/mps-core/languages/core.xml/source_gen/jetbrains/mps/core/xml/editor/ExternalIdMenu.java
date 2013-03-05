@@ -13,15 +13,15 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class ExternalIdMenu extends AbstractCellMenuComponent {
   public ExternalIdMenu() {
-    super(new SubstituteInfoPartExt[]{new ExternalIdMenu.XmlExternalId_generic_cellMenu_a0()});
+    super(new SubstituteInfoPartExt[]{new ExternalIdMenu.XmlExternalId_generic_cellMenu_kwmulu_a0()});
   }
 
-  public static class XmlExternalId_generic_cellMenu_a0 extends AbstractCellMenuPart_Generic_Group {
-    public XmlExternalId_generic_cellMenu_a0() {
+  public static class XmlExternalId_generic_cellMenu_kwmulu_a0 extends AbstractCellMenuPart_Generic_Group {
+    public XmlExternalId_generic_cellMenu_kwmulu_a0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {

@@ -17,6 +17,7 @@ public class ClassExtractMethodRefactoringProcessor extends AbstractExtractMetho
     this.myClass = clazz;
   }
 
+  @Override
   public SNode createMethodCall(SNode declaration, List<SNode> parameters) {
     if (SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
       SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalMethodCall", null);
@@ -32,6 +33,7 @@ public class ClassExtractMethodRefactoringProcessor extends AbstractExtractMetho
     }
   }
 
+  @Override
   public SNode createNewMethod() {
     if (isStatic) {
       return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", null);

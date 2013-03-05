@@ -7,7 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.java.newparser.FeatureKind;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import java.awt.datatransfer.Transferable;
 import com.intellij.ide.CopyPasteManagerEx;
 import java.awt.datatransfer.DataFlavor;

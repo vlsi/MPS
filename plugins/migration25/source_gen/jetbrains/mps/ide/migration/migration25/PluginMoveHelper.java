@@ -15,8 +15,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -89,7 +88,7 @@ public class PluginMoveHelper {
   public void moveIconsInAction() {
     for (final Solution solution : ListSequence.fromList(myProject.getProjectModules(Solution.class))) {
       if (solution.getModuleFqName().endsWith(SOLUTION_NAME)) {
-        List<SModelDescriptor> models = solution.getOwnModelDescriptors();
+        List<SModel> models = solution.getOwnModelDescriptors();
         SModel m = ListSequence.fromList(models).first().getSModel();
         ListSequence.fromList(SModelOperations.getNodes(m, "jetbrains.mps.lang.resources.structure.IconResource")).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -157,17 +156,17 @@ public class PluginMoveHelper {
     s.getModuleDescriptor().setKind(SolutionKind.PLUGIN_OTHER);
 
     final String modelName = s.getModuleFqName() + ".plugin";
-    List<SModelDescriptor> solModels = s.getOwnModelDescriptors();
-    final Wrappers._T<SModelDescriptor> pluginModel = new Wrappers._T<SModelDescriptor>(ListSequence.fromList(solModels).where(new IWhereFilter<SModelDescriptor>() {
-      public boolean accept(SModelDescriptor it) {
-        return it.getLongName().equals(modelName);
+    List<SModel> solModels = s.getOwnModelDescriptors();
+    final Wrappers._T<SModel> pluginModel = new Wrappers._T<SModel>(ListSequence.fromList(solModels).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel it) {
+        return jetbrains.mps.util.SNodeOperations.getModelLongName(it).equals(modelName);
       }
     }).first());
     if (pluginModel.value == null) {
       pluginModel.value = s.createModel(modelName, s.getModelRoots().iterator().next(), null);
     }
 
-    List<SNode> nodes = IterableUtil.asList(LanguageAspect.PLUGIN.get(l).getSModel().roots());
+    List<SNode> nodes = IterableUtil.asList(LanguageAspect.PLUGIN.get(l).getSModel().getRootNodes());
 
     Iterable<SNode> nodes2Refactor = ListSequence.fromList(nodes).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -179,6 +178,7 @@ public class PluginMoveHelper {
     rc.setLocal(true);
 
     ModelAccess.instance().runWriteInEDT(new Runnable() {
+      @Override
       public void run() {
         RefactoringAccess.getInstance().getRefactoringFacade().executeSimple(context);
       }

@@ -19,7 +19,9 @@ import jetbrains.mps.TestMain;
 import jetbrains.mps.TestMain.ProjectRunnable;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -66,12 +68,12 @@ public class PackagedLanguageTest {
   }
 
   private void checkStructureModelLoaded() {
-    final SModelDescriptor structureModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(PACKAGED_LANGUAGE + ".structure"));
+    final SModel structureModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(PACKAGED_LANGUAGE + ".structure"));
     Assert.assertNotNull(structureModelDescriptor);
     final SModel structureModel = structureModelDescriptor.getSModel();
     Assert.assertNotNull(structureModel);
-    Assert.assertEquals(1, structureModel.rootsCount());
-    SNode root = structureModel.rootsIterator().next();
+    Assert.assertEquals(1, IterableUtil.asCollection(structureModel.getRootNodes()).size());
+    SNode root = structureModel.getRootNodes().iterator().next();
     Assert.assertEquals(PACKAGED_CONCEPT, SNodeAccessUtil.getProperty(root, "name"));
     final SNode propertyDeclaration = jetbrains.mps.util.SNodeOperations.getChild(root, "propertyDeclaration");
     Assert.assertNotNull(propertyDeclaration);
@@ -79,11 +81,11 @@ public class PackagedLanguageTest {
   }
 
   private void checkEditorModelLoaded() {
-    final SModelDescriptor editorModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(PACKAGED_LANGUAGE + ".editor"));
+    final SModel editorModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(PACKAGED_LANGUAGE + ".editor"));
     Assert.assertNotNull(editorModelDescriptor);
     final SModel editorModel = editorModelDescriptor.getSModel();
     Assert.assertNotNull(editorModel);
-    Assert.assertEquals(1, editorModel.rootsCount());
+    Assert.assertEquals(1, IterableUtil.asCollection(editorModel.getRootNodes()).size());
   }
 
   private void checkIconsLoaded() {
@@ -103,12 +105,12 @@ public class PackagedLanguageTest {
   }
 
   private void checkStubsLoaded() {
-    final SModelDescriptor libraryModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(PACKAGED_LANGUAGE + "/" + "dummy" + "@java_stub"));
+    final SModel libraryModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(PACKAGED_LANGUAGE + "/" + "dummy" + "@java_stub"));
     Assert.assertNotNull(libraryModelDescriptor);
     final SModel libraryModel = libraryModelDescriptor.getSModel();
     Assert.assertNotNull(libraryModel);
-    Assert.assertEquals(1, libraryModel.rootsCount());
-    final SNode root = libraryModel.rootsIterator().next();
+    Assert.assertEquals(1, IterableUtil.asCollection(libraryModel.getRootNodes()).size());
+    final SNode root = libraryModel.getRootNodes().iterator().next();
     Assert.assertEquals("DummyLibraryClass", SNodeAccessUtil.getProperty(root, "name"));
 
     SNode method = null;

@@ -9,7 +9,8 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.logging.Logger;
 
 public class CopyModelName_Action extends BaseAction {
@@ -48,7 +49,7 @@ public class CopyModelName_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      CopyPasteUtil.copyTextToClipboard(((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getLongName());
+      CopyPasteUtil.copyTextToClipboard(SNodeOperations.getModelLongName(((SModel) MapSequence.fromMap(_params).get("model"))));
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "CopyModelName", t);
     }

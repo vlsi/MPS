@@ -10,7 +10,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.Language;
@@ -41,7 +41,7 @@ public class RenameProperty extends BaseLoggableRefactoring {
 
   public void refactor(final RefactoringContext refactoringContext) {
     SNode concept = SNodeOperations.getAncestor(refactoringContext.getSelectedNode(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
-    String newPropName = SNodeOperations.getModel(concept).getSModelFqName() + "." + SPropertyOperations.getString(concept, "name");
+    String newPropName = SNodeOperations.getModel(concept).getReference().getSModelFqName() + "." + SPropertyOperations.getString(concept, "name");
     refactoringContext.changeFeatureName(refactoringContext.getSelectedNode(), newPropName, ((String) refactoringContext.getParameter("newName")));
   }
 

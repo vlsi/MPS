@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class SortedSetType_BehaviorDescriptor extends SetType_BehaviorDescriptor {
   public SortedSetType_BehaviorDescriptor() {

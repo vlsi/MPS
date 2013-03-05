@@ -11,6 +11,7 @@ public class ReadBlock extends AbstractBlock {
     super(x, y, width, height, source, caption);
   }
 
+  @Override
   public void paintBlock(Graphics g) {
     g.setColor(new Color(150, 190, 245));
     g.fillRect(this.myX, this.myY, this.myWidth, this.myHeight);

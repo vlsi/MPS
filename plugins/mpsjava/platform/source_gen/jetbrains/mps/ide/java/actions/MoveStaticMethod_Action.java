@@ -14,7 +14,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.platform.refactoring.MoveNodeDialog;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
@@ -79,7 +79,8 @@ public class MoveStaticMethod_Action extends BaseAction {
     try {
       final SNode whereToMove;
       whereToMove = MoveNodeDialog.getSelectedObject(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), ((SNode) MapSequence.fromMap(_params).get("target")), new MoveNodeDialog.NodeFilter("Select class to move: refactoring can't be applied to selected node") {
-        public boolean check(SNode selectedObject, SNode nodeToMove, SModelDescriptor modelOfSelectedNode) {
+        @Override
+        public boolean check(SNode selectedObject, SNode nodeToMove, SModel modelOfSelectedNode) {
           return SNodeOperations.isInstanceOf(selectedObject, "jetbrains.mps.baseLanguage.structure.ClassConcept") && !(ListSequence.fromList(SNodeOperations.getAncestors(nodeToMove, null, false)).contains(selectedObject));
         }
       });
@@ -88,6 +89,7 @@ public class MoveStaticMethod_Action extends BaseAction {
         return;
       }
       ModelAccess.instance().runReadInEDT(new Runnable() {
+        @Override
         public void run() {
           SNode node = ((SNode) ((SNode) MapSequence.fromMap(_params).get("target")));
           if (!(node.getModel() != null) || jetbrains.mps.util.SNodeOperations.isDisposed(((SNode) ((SNode) MapSequence.fromMap(_params).get("target"))))) {

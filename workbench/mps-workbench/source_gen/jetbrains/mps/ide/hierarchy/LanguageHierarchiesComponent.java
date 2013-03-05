@@ -33,7 +33,7 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import java.util.Map;
 import java.util.HashMap;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -62,6 +62,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import java.awt.Graphics2D;
 import java.awt.Stroke;
 import java.awt.BasicStroke;
@@ -89,18 +90,21 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     myLanguage = language;
     myOperationContext = new ModuleContext(language, context.getProject());
     addMouseListener(new MouseAdapter() {
+      @Override
       public void mouseClicked(MouseEvent e) {
         for (LanguageHierarchiesComponent.ConceptContainer conceptContainer : myRoots) {
           conceptContainer.mouseClicked(e);
         }
       }
 
+      @Override
       public void mousePressed(MouseEvent e) {
         for (LanguageHierarchiesComponent.ConceptContainer conceptContainer : myRoots) {
           conceptContainer.mousePressed(e);
         }
       }
 
+      @Override
       public void mouseReleased(MouseEvent e) {
         for (LanguageHierarchiesComponent.ConceptContainer conceptContainer : myRoots) {
           conceptContainer.mouseReleased(e);
@@ -115,6 +119,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     myScaleField.setEditable(false);
     toolsPane.add(myScaleField);
     toolsPane.add(new JButton(new AbstractAction(null, Icons.ZOOM_IN_ICON) {
+      @Override
       public void actionPerformed(ActionEvent e) {
         if (myScale < 6) {
           myScale += 0.2f;
@@ -130,6 +135,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
       }
     }));
     toolsPane.add(new JButton(new AbstractAction(null, Icons.ZOOM_OUT_ICON) {
+      @Override
       public void actionPerformed(ActionEvent e) {
         if (myScale > 0.2) {
           myScale -= 0.2f;
@@ -145,6 +151,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
       }
     }));
     toolsPane.add(new JButton(new AbstractAction(null, Icons.ACTUAL_ZOOM_ICON) {
+      @Override
       public void actionPerformed(ActionEvent e) {
         if (myScale != 1) {
           myScale = 1;
@@ -158,6 +165,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     }));
     final JCheckBox jCheckBox = new JCheckBox();
     jCheckBox.setAction(new AbstractAction("Include Other Languages") {
+      @Override
       public void actionPerformed(ActionEvent e) {
         if (jCheckBox.getModel().isSelected()) {
           if (mySkipAncestors) {
@@ -244,6 +252,7 @@ outer:
       return;
     }
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         int y = 0;
         int x = 0;
@@ -278,6 +287,7 @@ outer:
 
   public void rebuild() {
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         mySelectedConceptContainer = null;
         myRoots = createHierarchyForest();
@@ -286,6 +296,7 @@ outer:
     });
   }
 
+  @Override
   public Dimension getPreferredSize() {
     Container parent = this;
     while (parent != null) {
@@ -302,10 +313,12 @@ outer:
     return new Dimension(Math.max(viewRect.width, myWidth), Math.max(viewRect.height, myHeight));
   }
 
+  @Override
   protected void paintComponent(final Graphics g) {
     g.setColor(Color.WHITE);
     g.fillRect(0, 0, getWidth(), getHeight());
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         for (LanguageHierarchiesComponent.ConceptContainer root : myRoots) {
           root.paintTree(g);
@@ -314,10 +327,12 @@ outer:
     });
   }
 
+  @Override
   public Dimension getPreferredScrollableViewportSize() {
     return getPreferredSize();
   }
 
+  @Override
   public int getScrollableUnitIncrement(Rectangle visibleRect, int orientation, int direction) {
     if (orientation == SwingConstants.VERTICAL) {
       return 20;
@@ -326,22 +341,27 @@ outer:
     }
   }
 
+  @Override
   public int getScrollableBlockIncrement(Rectangle visibleRect, int orientation, int direction) {
     return visibleRect.height;
   }
 
+  @Override
   public boolean getScrollableTracksViewportWidth() {
     return false;
   }
 
+  @Override
   public boolean getScrollableTracksViewportHeight() {
     return false;
   }
 
   @Nullable
+  @Override
   public Object getData(@NonNls String dataId) {
     if (dataId.equals(MPSCommonDataKeys.NODE.getName())) {
       return ModelAccess.instance().runReadAction(new Computable<Object>() {
+        @Override
         public Object compute() {
           return getSelectedConcept();
         }
@@ -384,6 +404,7 @@ outer:
       myNamespace = SModelUtil.getDeclaringLanguage(conceptDeclaration).getModuleFqName();
       myNodePointer = new SNodePointer(conceptDeclaration);
       addMouseListener(new MouseAdapter() {
+        @Override
         public void mousePressed(final MouseEvent e) {
           Project project = myOperationContext.getProject();
           final ProjectPane projectPane = ProjectPane.getInstance(ProjectHelper.toIdeaProject(project));
@@ -392,6 +413,7 @@ outer:
             myComponent.processPopupMenu(e);
           } else {
             ModelAccess.instance().runWriteInEDT(new Runnable() {
+              @Override
               public void run() {
                 SNode node = getNode();
                 if (node == null) {
@@ -406,6 +428,7 @@ outer:
           }
         }
 
+        @Override
         public void mouseReleased(MouseEvent e) {
           if (e.isPopupTrigger()) {
             myComponent.processPopupMenu(e);
@@ -415,7 +438,7 @@ outer:
     }
 
     public SNode getNode() {
-      return SNodeOperations.cast(((SNodePointer) myNodePointer).getNode(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
+      return SNodeOperations.cast(((SNodePointer) myNodePointer).resolve(MPSModuleRepository.getInstance()), "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
     }
 
     public void paint(Graphics graphics) {
@@ -454,6 +477,7 @@ outer:
     @NotNull
     public String getText() {
       return ModelAccess.instance().runReadAction(new Computable<String>() {
+        @Override
         public String compute() {
           SNode conceptDeclaration = getNode();
           if (conceptDeclaration == null) {
@@ -486,6 +510,7 @@ outer:
 
     public void sortSubtree() {
       Collections.sort(myChildren, new Comparator<LanguageHierarchiesComponent.ConceptContainer>() {
+        @Override
         public int compare(LanguageHierarchiesComponent.ConceptContainer o1, LanguageHierarchiesComponent.ConceptContainer o2) {
           return o1.getText().compareTo(o2.getText());
         }

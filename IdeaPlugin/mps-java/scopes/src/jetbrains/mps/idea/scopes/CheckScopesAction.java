@@ -24,17 +24,21 @@ import com.intellij.psi.PsiClassOwner;
 import com.intellij.psi.PsiFile;
 import jetbrains.mps.baseLanguage.search.MpsScopesUtil;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
-import jetbrains.mps.idea.core.projectView.MPSDataKeys;
+import jetbrains.mps.idea.core.MPSDataKeys;
 import jetbrains.mps.idea.java.trace.GeneratedSourcePosition;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.LanguageHierarchyCache;
+import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.traceInfo.UnitPositionInfo;
-import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.vfs.IFile;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -60,8 +64,8 @@ public class CheckScopesAction extends AnAction {
         long mpsTime = 0, ideaTime = 0;
         int notEqualMembersCount = 0;
 
-        SModelDescriptor descriptor = SModelFileTracker.getInstance().findModel(myModelFile);
-        for (SNode root : descriptor.getSModel().roots()) {
+        SModel descriptor = SModelFileTracker.getInstance().findModel(myModelFile);
+        for (SNode root : descriptor.getSModel().getRootNodes()) {
           if (LanguageHierarchyCache.isAssignable(root.getConcept().getId(), "jetbrains.mps.baseLanguage.structure.Classifier")) {
             PsiClass clazz = getPsiClass(myProject, root);
             if (clazz == null) {
@@ -119,14 +123,14 @@ public class CheckScopesAction extends AnAction {
 
   @Nullable
   private static PsiFile getFileForNode(Project project, SNode node) {
-    SModelDescriptor model = node.getModel().getModelDescriptor();
+    SModel model = node.getModel().getModelDescriptor();
     DebugInfo debugInfo = TraceInfoCache.getInstance().get(model);
     if (debugInfo == null) {
       return null;
     }
     Iterable<UnitPositionInfo> positions = debugInfo.getUnitsForNode(node);
     if (!positions.iterator().hasNext()) return null;
-    return GeneratedSourcePosition.getPsiFile(project, model.getSModelReference(), positions.iterator().next().getFileName());
+    return GeneratedSourcePosition.getPsiFile(project, model.getReference(), positions.iterator().next().getFileName());
   }
 
   @Nullable

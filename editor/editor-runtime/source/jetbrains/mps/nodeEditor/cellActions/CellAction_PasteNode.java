@@ -35,7 +35,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -84,7 +84,7 @@ public class CellAction_PasteNode extends AbstractCellAction {
     final SModel modeltoPaste = nodeSelected.getModel();
 
     // sometimes model is not in repository (paste in merge dialog)
-    final boolean inRepository = SModelRepository.getInstance().getModelDescriptor(modeltoPaste.getSModelId()) != null;
+    final boolean inRepository = SModelRepository.getInstance().getModelDescriptor(modeltoPaste.getModelId()) != null;
 
     PasteNodeData data = CopyPasteUtil.getPasteNodeDataFromClipboard(modeltoPaste);
     if (data == null || data.getNodes().isEmpty()) {
@@ -94,7 +94,7 @@ public class CellAction_PasteNode extends AbstractCellAction {
     final PasteNodeData pasteNodeData = data;
 
     //this is used in case node is in repo to pass it into invokeLater
-    final SNodeReference selectedNodePointer = new jetbrains.mps.smodel.SNodePointer(nodeSelected);
+    final SNodeReference selectedNodePointer = nodeSelected.getReference();
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         final Runnable addImportsRunnable = CopyPasteUtil.addImportsWithDialog(pasteNodeData, modeltoPaste, context.getOperationContext());

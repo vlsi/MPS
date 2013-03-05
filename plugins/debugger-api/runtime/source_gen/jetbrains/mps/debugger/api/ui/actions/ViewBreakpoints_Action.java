@@ -54,6 +54,7 @@ public class ViewBreakpoints_Action extends BaseAction {
     try {
       final BreakpointsBrowserDialog dialog = new BreakpointsBrowserDialog(((IOperationContext) MapSequence.fromMap(_params).get("context")));
       ApplicationManager.getApplication().invokeLater(new Runnable() {
+        @Override
         public void run() {
           dialog.show();
         }

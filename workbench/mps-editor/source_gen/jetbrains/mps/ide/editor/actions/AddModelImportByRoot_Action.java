@@ -4,14 +4,13 @@ package jetbrains.mps.ide.editor.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -20,11 +19,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import java.util.List;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -44,16 +44,9 @@ public class AddModelImportByRoot_Action extends BaseAction {
     return false;
   }
 
-  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((SModelDescriptor) MapSequence.fromMap(_params).get("model")) instanceof EditableSModelDescriptor;
-  }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
+      this.enable(event.getPresentation());
     } catch (Throwable t) {
       LOG.error("User's action doUpdate method failed. Action:" + "AddModelImportByRoot", t);
       this.disable(event.getPresentation());
@@ -76,6 +69,9 @@ public class AddModelImportByRoot_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
     }
+    if (!(MapSequence.fromMap(_params).get("model") instanceof EditableSModel) || ((EditableSModel) MapSequence.fromMap(_params).get("model")).isReadOnly()) {
+      return false;
+    }
     MapSequence.fromMap(_params).put("node", event.getData(MPSCommonDataKeys.NODE));
     MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
     MapSequence.fromMap(_params).put("editorContext", event.getData(MPSEditorDataKeys.EDITOR_CONTEXT));
@@ -95,7 +91,7 @@ public class AddModelImportByRoot_Action extends BaseAction {
         initialText.value = SPropertyOperations.getString(unresolvedReference, "resolveName");
       }
 
-      ImportHelper.addModelImportByRoot(((Project) MapSequence.fromMap(_params).get("project")), ((IModule) MapSequence.fromMap(_params).get("module")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")), initialText.value, AddModelImportByRoot_Action.this, new ImportHelper.ModelImportByRootCallback() {
+      ImportHelper.addModelImportByRoot(((Project) MapSequence.fromMap(_params).get("project")), ((IModule) MapSequence.fromMap(_params).get("module")), ((SModel) MapSequence.fromMap(_params).get("model")), initialText.value, AddModelImportByRoot_Action.this, new ImportHelper.ModelImportByRootCallback() {
         public void importForRootAdded(String rootName) {
           String textToMatch = (rootName != null ?
             rootName :
@@ -104,7 +100,7 @@ public class AddModelImportByRoot_Action extends BaseAction {
           if (textToMatch.length() == 0) {
             return;
           }
-          NodeSubstituteInfo substituteInfo = null;
+          SubstituteInfo substituteInfo = null;
           if (errorLabel != null) {
             substituteInfo = errorLabel.getSubstituteInfo();
           } else if (unresolvedReference != null && ((EditorContext) MapSequence.fromMap(_params).get("editorContext")) != null) {
@@ -115,7 +111,7 @@ public class AddModelImportByRoot_Action extends BaseAction {
             return;
           }
           substituteInfo.invalidateActions();
-          List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(textToMatch, true);
+          List<SubstituteAction> matchingActions = substituteInfo.getMatchingActions(textToMatch, true);
           if ((int) ListSequence.fromList(matchingActions).count() == 1) {
             ListSequence.fromList(matchingActions).first().substitute(((EditorContext) MapSequence.fromMap(_params).get("editorContext")), initialText.value);
           }
@@ -133,7 +129,7 @@ public class AddModelImportByRoot_Action extends BaseAction {
     EditorCell selectedCell = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectedCell();
     if (selectedCell instanceof EditorCell_Label) {
       EditorCell_Label editorCellLabel = (EditorCell_Label) selectedCell;
-      if (editorCellLabel.isErrorState() && !(isEmpty_3mx29z_a0a0b0c0h(editorCellLabel.getText()))) {
+      if (editorCellLabel.isErrorState() && !(isEmpty_3mx29z_a0a0b0c0g(editorCellLabel.getText()))) {
         return editorCellLabel;
       }
     }
@@ -142,7 +138,7 @@ public class AddModelImportByRoot_Action extends BaseAction {
 
   private static Logger LOG = Logger.getLogger(AddModelImportByRoot_Action.class);
 
-  public static boolean isEmpty_3mx29z_a0a0b0c0h(String str) {
+  public static boolean isEmpty_3mx29z_a0a0b0c0g(String str) {
     return str == null || str.length() == 0;
   }
 }

@@ -166,11 +166,12 @@
     <classNode dependClassName="jetbrains.mps.openapi.navigation.NavigationSupport" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.project.ModuleContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="com.intellij.ide.structureView.StructureViewTreeElement" />
@@ -182,6 +183,7 @@
     <classNode dependClassName="com.intellij.ide.util.treeView.smartTree.Sorter" />
     <classNode dependClassName="com.intellij.ide.util.treeView.smartTree.TreeAction" />
     <classNode dependClassName="com.intellij.util.containers.HashSet" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Set" />
     <classNode extendsClassName="com.intellij.ide.structureView.newStructureView.TreeActionsOwner" />

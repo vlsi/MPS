@@ -11,6 +11,7 @@
     <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.tree.features.Feature" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.tree.features.DeletedChildFeature" file="DeletedChildFeature.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.features.Feature" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.features.NodeFeature" />
@@ -31,6 +32,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.tree.features.ModelFeature" file="ModelFeature.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -38,6 +40,7 @@
     <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.tree.features.Feature" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.tree.features.NodeAggregationFeature" file="NodeAggregationFeature.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.features.Feature" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.features.NodeFeature" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -49,6 +52,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.features.Feature" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.features.VirtualPackageFeature" />
@@ -95,6 +99,7 @@
     <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.tree.features.NodeAggregationFeature" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.tree.features.VirtualPackageFeature" file="VirtualPackageFeature.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

@@ -18,7 +18,7 @@ import javax.swing.JComponent;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
@@ -27,6 +27,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.ide.platform.ui.CheckBoxNodeRenderer;
 import java.awt.Color;
 import javax.swing.UIManager;
@@ -51,6 +52,7 @@ import javax.swing.UIManager;
     myBreakpointsManager.addChangeListener(myListener);
     updateBreakpointsData();
     myTree = new GroupedTree<AbstractBreakpointsTree.BreakpointNodeData>(myContext) {
+      @Override
       protected AbstractBreakpointsTree.BreakpointTreeNode createDataNode(IOperationContext operationContext, AbstractBreakpointsTree.BreakpointNodeData data) {
         return new AbstractBreakpointsTree.BreakpointTreeNode(operationContext, data);
       }
@@ -133,6 +135,7 @@ import javax.swing.UIManager;
     return myTree;
   }
 
+  @Override
   public void update() {
     updateBreakpoints();
     updateBreakpointsData();
@@ -179,7 +182,7 @@ import javax.swing.UIManager;
     public IModule getGroup(AbstractBreakpointsTree.BreakpointNodeData breakpointData) {
       IBreakpoint breakpoint = breakpointData.getBreakpoint();
       if (breakpoint instanceof ILocationBreakpoint) {
-        SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(((ILocationBreakpoint) breakpoint).getLocation().getModelReference());
+        SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(((ILocationBreakpoint) breakpoint).getLocation().getModelReference());
         if (modelDescriptor != null) {
           return modelDescriptor.getModule();
         }
@@ -246,7 +249,7 @@ import javax.swing.UIManager;
 
     @Override
     public Icon getIcon(SNodeReference group) {
-      return IconManager.getIconFor(((SNodePointer) group).getNode());
+      return IconManager.getIconFor(((SNodePointer) group).resolve(MPSModuleRepository.getInstance()));
     }
   }
 
@@ -318,6 +321,7 @@ import javax.swing.UIManager;
       setText(bp.getText());
     }
 
+    @Override
     public boolean isLeaf() {
       return true;
     }

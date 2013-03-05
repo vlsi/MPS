@@ -9,8 +9,8 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.extapi.model.EditableSModel;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -23,6 +23,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import jetbrains.mps.datatransfer.PasteEnv;
 import jetbrains.mps.resolve.ResolverComponent;
@@ -48,7 +49,7 @@ public class PasteNode_Action extends BaseAction {
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     boolean searchPanelInactive = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")) == null || !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isSearchPanelVisible());
-    return searchPanelInactive && ((SModelDescriptor) MapSequence.fromMap(_params).get("contextModel")) instanceof EditableSModelDescriptor && PasteNode_Action.this.canPasteNodes(_params);
+    return searchPanelInactive && ((SModel) MapSequence.fromMap(_params).get("contextModel")) instanceof EditableSModel && PasteNode_Action.this.canPasteNodes(_params);
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -85,7 +86,7 @@ public class PasteNode_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("contextModel") == null) {
       return false;
     }
-    if (!(MapSequence.fromMap(_params).get("contextModel") instanceof EditableSModelDescriptor) || ((EditableSModelDescriptor) MapSequence.fromMap(_params).get("contextModel")).isReadOnly()) {
+    if (!(MapSequence.fromMap(_params).get("contextModel") instanceof EditableSModel) || ((EditableSModel) MapSequence.fromMap(_params).get("contextModel")).isReadOnly()) {
       return false;
     }
     MapSequence.fromMap(_params).put("node", event.getData(MPSCommonDataKeys.NODE));
@@ -95,7 +96,7 @@ public class PasteNode_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       PasteNodeData pasteNodeData = PasteNode_Action.this.getPasteData(_params);
-      final Runnable addImportsRunnable = CopyPasteUtil.addImportsWithDialog(pasteNodeData, ((SModelDescriptor) MapSequence.fromMap(_params).get("contextModel")).getSModel(), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+      final Runnable addImportsRunnable = CopyPasteUtil.addImportsWithDialog(pasteNodeData, ((SModel) MapSequence.fromMap(_params).get("contextModel")).getSModel(), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
       final List<SNode> pasteNodes = pasteNodeData.getNodes();
       final Set<SReference> refsToResolve = pasteNodeData.getRequireResolveReferences();
       if (pasteNodes == null || pasteNodes.size() == 0) {
@@ -103,7 +104,7 @@ public class PasteNode_Action extends BaseAction {
       }
       ModelAccess.instance().runCommandInEDT(new Runnable() {
         public void run() {
-          if (((SModelDescriptor) MapSequence.fromMap(_params).get("contextModel")).getSModel().isDisposed()) {
+          if (SNodeOperations.isModelDisposed(((SModel) MapSequence.fromMap(_params).get("contextModel")).getSModel())) {
             return;
           }
           if (addImportsRunnable != null) {
@@ -114,7 +115,7 @@ public class PasteNode_Action extends BaseAction {
             if (!(paster.canPasteAsRoots())) {
               return;
             }
-            paster.pasteAsRoots(((SModelDescriptor) MapSequence.fromMap(_params).get("contextModel")).getSModel(), ((String) MapSequence.fromMap(_params).get("pack")));
+            paster.pasteAsRoots(((SModel) MapSequence.fromMap(_params).get("contextModel")).getSModel(), ((String) MapSequence.fromMap(_params).get("pack")));
           } else {
             NodePaster paster = new NodePaster(pasteNodes);
             if (!(paster.canPaste(((SNode) MapSequence.fromMap(_params).get("node")), PasteEnv.PROJECT_TREE))) {
@@ -145,7 +146,7 @@ public class PasteNode_Action extends BaseAction {
     final Wrappers._T<PasteNodeData> result = new Wrappers._T<PasteNodeData>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        result.value = CopyPasteUtil.getPasteNodeDataFromClipboard(((SModelDescriptor) MapSequence.fromMap(_params).get("contextModel")).getSModel());
+        result.value = CopyPasteUtil.getPasteNodeDataFromClipboard(((SModel) MapSequence.fromMap(_params).get("contextModel")).getSModel());
       }
     });
     return result.value;

@@ -25,6 +25,7 @@ public class RetInstruction extends Instruction {
   public RetInstruction() {
   }
 
+  @Override
   public List<ProgramState> succ(ProgramState s) {
     List<ProgramState> result = new ArrayList<ProgramState>();
     TryFinallyInfo blockInfo = getEnclosingBlock();
@@ -40,6 +41,7 @@ public class RetInstruction extends Instruction {
     return result;
   }
 
+  @Override
   public String commandPresentation() {
     return "ret";
   }

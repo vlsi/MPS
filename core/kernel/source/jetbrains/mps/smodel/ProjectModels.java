@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
@@ -42,30 +42,37 @@ public class ProjectModels {
       myCanFireEvents = canFireEvents;
     }
 
-    protected SModel createModel() {
-      return new SModel(this.getSModelReference()) {
+    @Override
+    protected jetbrains.mps.smodel.SModel createModel() {
+      return new jetbrains.mps.smodel.SModel(this.getSModelReference()) {
+        @Override
         public boolean canFireEvent() {
           return myCanFireEvents;
         }
       };
     }
 
+    @Override
     public boolean isChanged() {
       return false;
     }
 
+    @Override
     public void setChanged(boolean changed) {
 
     }
 
+    @Override
     public void save() {
 
     }
 
-    public void rename(SModelFqName newModelFqName, boolean changeFile) {
-
+    @Override
+    public void rename(String newModelName, boolean changeFile) {
+      throw new UnsupportedOperationException();
     }
 
+    @Override
     public boolean isReadOnly() {
       return false;
     }

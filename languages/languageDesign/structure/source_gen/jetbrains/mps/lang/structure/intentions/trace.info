@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="IntentionsDescriptor.java" startLine="10" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.IntentionsDescriptor" />
+  <unitInfo fileName="IntentionsDescriptor.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.IntentionsDescriptor" />
   <root nodeRef="r:e5a8b5c7-85b5-4d59-9e4e-850a142e2560(jetbrains.mps.lang.structure.intentions)/1224245135252">
     <nodeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
     <nodeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="27" startPosition="30" endLine="28" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -89,6 +89,124 @@
     </scopeInfo>
     <unitInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="70" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.AddDeprecatedAnnotation_Intention$IntentionImplementation" />
     <unitInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="21" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.AddDeprecatedAnnotation_Intention" />
+  </root>
+  <root nodeRef="r:e5a8b5c7-85b5-4d59-9e4e-850a142e2560(jetbrains.mps.lang.structure.intentions)/1957700446084421329">
+    <nodeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
+    <nodeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="33" startPosition="30" endLine="34" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="37" startPosition="35" endLine="38" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="41" startPosition="41" endLine="42" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="45" startPosition="37" endLine="46" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="49" startPosition="34" endLine="50" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="53" startPosition="44" endLine="54" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="57" startPosition="84" endLine="58" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="61" startPosition="53" endLine="62" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="65" startPosition="35" endLine="66" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="70" startPosition="37" endLine="71" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="72" startPosition="5" endLine="73" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1957700446084455603" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="80" startPosition="87" endLine="81" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1957700446084633527" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="86" startPosition="42" endLine="87" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1957700446084633509" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="90" startPosition="42" endLine="91" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1957700446084749961" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="94" startPosition="41" endLine="95" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1957700446084627370" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="97" startPosition="9" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1957700446085882312" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="100" startPosition="143" endLine="101" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1957700446085940217" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="102" startPosition="96" endLine="103" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="109" startPosition="48" endLine="110" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="30" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ForbidIncomingReferencesInSubconcepts_Intention#()V" />
+    <nodeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="77" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
+    <nodeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLanguageFqName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/intentions/IntentionType;" />
+    <nodeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
+    <nodeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="57" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <nodeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="61" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+    <nodeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="65" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
+    <nodeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="69" startPosition="99" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="80" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1957700446084633525" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="86" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
+    <nodeInfo nodeId="1957700446084633507" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="90" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
+    <nodeInfo nodeId="1957700446084749297" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="94" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SModel;" />
+    <nodeInfo nodeId="1957700446084793831" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="101" startPosition="23" endLine="104" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="109" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+    <nodeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="69" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
+    <nodeInfo nodeId="1957700446084655442" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="99" startPosition="55" endLine="105" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1957700446084652571" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="98" startPosition="0" endLine="106" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1957700446084633503" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="84" startPosition="78" endLine="97" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="84" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <scopeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="30" startPosition="60" endLine="30" endPosition="60" />
+    <scopeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="77" startPosition="38" endLine="77" endPosition="38" />
+    <scopeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="33" startPosition="30" endLine="34" endPosition="79" />
+    <scopeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="37" startPosition="35" endLine="38" endPosition="51" />
+    <scopeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="41" startPosition="41" endLine="42" endPosition="101" />
+    <scopeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="45" startPosition="37" endLine="46" endPosition="43" />
+    <scopeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="49" startPosition="34" endLine="50" endPosition="32" />
+    <scopeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="53" startPosition="44" endLine="54" endPosition="17" />
+    <scopeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="57" startPosition="84" endLine="58" endPosition="16" />
+    <scopeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="61" startPosition="53" endLine="62" endPosition="134" />
+    <scopeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="65" startPosition="35" endLine="66" endPosition="17" />
+    <scopeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="70" startPosition="37" endLine="71" endPosition="153" />
+    <scopeInfo nodeId="1957700446084421331" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="80" startPosition="87" endLine="81" endPosition="62" />
+    <scopeInfo nodeId="1957700446084633526" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="86" startPosition="42" endLine="87" endPosition="50" />
+    <scopeInfo nodeId="1957700446084633508" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="90" startPosition="42" endLine="91" endPosition="49" />
+    <scopeInfo nodeId="1957700446084749298" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="94" startPosition="41" endLine="95" endPosition="32" />
+    <scopeInfo nodeId="1957700446084793833" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="102" startPosition="96" endLine="103" endPosition="63" />
+    <scopeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="109" startPosition="48" endLine="110" endPosition="66" />
+    <scopeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="30" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="77" startPosition="0" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="33" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="37" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="41" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="45" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="49" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="53" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="57" startPosition="0" endLine="60" endPosition="0">
+      <varInfo nodeId="1957700446084421329" varName="editorContext" />
+      <varInfo nodeId="1957700446084421329" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="61" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="65" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="80" startPosition="0" endLine="83" endPosition="0">
+      <varInfo nodeId="1957700446084421329" varName="editorContext" />
+      <varInfo nodeId="1957700446084421329" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1957700446084633525" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="86" startPosition="0" endLine="89" endPosition="0">
+      <varInfo nodeId="1957700446084633525" varName="md" />
+    </scopeInfo>
+    <scopeInfo nodeId="1957700446084633507" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="90" startPosition="0" endLine="93" endPosition="0">
+      <varInfo nodeId="1957700446084633507" varName="md" />
+    </scopeInfo>
+    <scopeInfo nodeId="1957700446084749297" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="94" startPosition="0" endLine="97" endPosition="0">
+      <varInfo nodeId="1957700446084749297" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="109" startPosition="0" endLine="112" endPosition="0" />
+    <scopeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="69" startPosition="99" endLine="73" endPosition="30" />
+    <scopeInfo nodeId="1957700446084655445" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="100" startPosition="143" endLine="104" endPosition="11">
+      <varInfo nodeId="1957700446085882315" varName="c" />
+    </scopeInfo>
+    <scopeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="69" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="1957700446084421329" varName="context" />
+      <varInfo nodeId="1957700446084421329" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1957700446084652577" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="99" startPosition="55" endLine="105" endPosition="9" />
+    <scopeInfo nodeId="1957700446084655442" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="99" startPosition="55" endLine="105" endPosition="9">
+      <varInfo nodeId="1957700446084655443" varName="cd" />
+    </scopeInfo>
+    <scopeInfo nodeId="1957700446084652571" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="98" startPosition="0" endLine="106" endPosition="7">
+      <varInfo nodeId="1957700446084652573" varName="model" />
+    </scopeInfo>
+    <scopeInfo nodeId="1957700446084421333" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="84" startPosition="78" endLine="106" endPosition="7">
+      <varInfo nodeId="1957700446084633504" varName="seq" />
+    </scopeInfo>
+    <scopeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="84" startPosition="0" endLine="108" endPosition="0">
+      <varInfo nodeId="1957700446084421329" varName="editorContext" />
+      <varInfo nodeId="1957700446084421329" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="1957700446084633525" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="85" startPosition="136" endLine="89" endPosition="7" unitName="jetbrains.mps.lang.structure.intentions.ForbidIncomingReferencesInSubconcepts_Intention$1" />
+    <unitInfo nodeId="1957700446084633507" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="89" startPosition="19" endLine="93" endPosition="7" unitName="jetbrains.mps.lang.structure.intentions.ForbidIncomingReferencesInSubconcepts_Intention$2" />
+    <unitInfo nodeId="1957700446084749297" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="93" startPosition="20" endLine="97" endPosition="7" unitName="jetbrains.mps.lang.structure.intentions.ForbidIncomingReferencesInSubconcepts_Intention$3" />
+    <unitInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="76" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.ForbidIncomingReferencesInSubconcepts_Intention$IntentionImplementation" />
+    <unitInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="27" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.ForbidIncomingReferencesInSubconcepts_Intention" />
   </root>
   <root nodeRef="r:e5a8b5c7-85b5-4d59-9e4e-850a142e2560(jetbrains.mps.lang.structure.intentions)/2799938697970315260">
     <nodeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />

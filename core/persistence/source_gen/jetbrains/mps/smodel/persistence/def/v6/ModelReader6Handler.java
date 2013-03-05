@@ -13,9 +13,11 @@ import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.xml.BreakParseSAXException;
+import jetbrains.mps.smodel.LazySNode;
 import jetbrains.mps.util.InternUtil;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -160,7 +162,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
       fieldmodel = new DefaultSModel(SModelReference.fromString(attrs.getValue("modelUID")));
       fieldmodel.setPersistenceVersion(6);
       fieldmodel.getSModelHeader().updateDefaults(fieldheader);
-      fieldhelper = new VersionUtil(fieldmodel.getSModelReference());
+      fieldhelper = new VersionUtil(fieldmodel.getReference());
       return new ModelLoadResult(fieldmodel, ModelLoadingState.NOT_LOADED);
     }
 
@@ -212,17 +214,17 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
       }
       if ("language".equals(tagName)) {
         String child = (String) value;
-        fieldmodel.addLanguage(ModuleReference.fromString(child));
+        ((SModelInternal) fieldmodel).addLanguage(ModuleReference.fromString(child));
         return;
       }
       if ("language-engaged-on-generation".equals(tagName)) {
         String child = (String) value;
-        fieldmodel.addEngagedOnGenerationLanguage(ModuleReference.fromString(child));
+        ((SModelInternal) fieldmodel).addEngagedOnGenerationLanguage(ModuleReference.fromString(child));
         return;
       }
       if ("devkit".equals(tagName)) {
         String child = (String) value;
-        fieldmodel.addDevKit(ModuleReference.fromString(child));
+        ((SModelInternal) fieldmodel).addDevKit(ModuleReference.fromString(child));
         return;
       }
       if ("import".equals(tagName)) {
@@ -233,7 +235,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
       if ("node".equals(tagName)) {
         SNode child = (SNode) value;
         if (child != null) {
-          fieldmodel.addRoot(child);
+          fieldmodel.addRootNode(child);
         }
         return;
       }
@@ -369,7 +371,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
       if ("node".equals(tagName)) {
         SNode child = (SNode) value;
         if (fieldtoState == ModelLoadingState.ROOTS_LOADED && child != null) {
-          fieldmodel.addRoot(child);
+          fieldmodel.addRootNode(child);
         }
         return;
       }
@@ -385,7 +387,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
 
     @Override
     protected SNode createObject(Attributes attrs) {
-      return new jetbrains.mps.smodel.SNode(InternUtil.intern(fieldhelper.readType(attrs.getValue("type"))));
+      return new LazySNode(InternUtil.intern(fieldhelper.readType(attrs.getValue("type"))));
     }
 
     @Override

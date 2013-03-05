@@ -9,7 +9,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -32,12 +32,12 @@ public class ShowDefaultHelp_Action extends BaseAction {
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        HelpHelper.HelpType defaultHelp = HelpHelper.getDefaultHelpFor(((IModule) MapSequence.fromMap(_params).get("module")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")), ((SNode) MapSequence.fromMap(_params).get("node")));
+        HelpHelper.HelpType defaultHelp = HelpHelper.getDefaultHelpFor(((IModule) MapSequence.fromMap(_params).get("module")), ((SModel) MapSequence.fromMap(_params).get("model")), ((SNode) MapSequence.fromMap(_params).get("node")));
         if (defaultHelp == null) {
-          this.setEnabledState(event.getPresentation(), false);
+          ShowDefaultHelp_Action.this.setEnabledState(event.getPresentation(), false);
           return;
         }
-        this.setEnabledState(event.getPresentation(), true);
+        ShowDefaultHelp_Action.this.setEnabledState(event.getPresentation(), true);
         event.getPresentation().setText("Show Help for " + NameUtil.capitalize(defaultHelp.getName()));
       }
     } catch (Throwable t) {
@@ -63,7 +63,7 @@ public class ShowDefaultHelp_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      HelpHelper.showHelpFor(((IModule) MapSequence.fromMap(_params).get("module")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")), ((SNode) MapSequence.fromMap(_params).get("node")));
+      HelpHelper.showHelpFor(((IModule) MapSequence.fromMap(_params).get("module")), ((SModel) MapSequence.fromMap(_params).get("model")), ((SNode) MapSequence.fromMap(_params).get("node")));
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowDefaultHelp", t);
     }

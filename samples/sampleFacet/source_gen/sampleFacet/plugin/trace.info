@@ -98,7 +98,7 @@
     <nodeInfo nodeId="5590401931537536727" fileName="Sample_Facet.java" startLine="56" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="extended#()Ljava/lang/Iterable;" />
     <nodeInfo nodeId="5590401931537536727" fileName="Sample_Facet.java" startLine="60" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/IFacet/Name;" />
     <nodeInfo nodeId="5590401931537536727" fileName="Sample_Facet.java" startLine="64" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="propertiesPersistence#()Ljetbrains/mps/make/resources/IPropertiesPersistence;" />
-    <nodeInfo nodeId="240305154326047025" fileName="Sample_Facet.java" startLine="89" startPosition="60" endLine="92" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="240305154326047025" fileName="Sample_Facet.java" startLine="89" startPosition="50" endLine="92" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="240305154326047035" fileName="Sample_Facet.java" startLine="92" startPosition="19" endLine="95" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8014813979421756117" fileName="Sample_Facet.java" startLine="95" startPosition="19" endLine="98" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5590401931537536729" fileName="Sample_Facet.java" startLine="109" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConfig#()Ljetbrains/mps/make/script/IConfig;" />
@@ -305,7 +305,7 @@
     <scopeInfo nodeId="5590401931537536727" fileName="Sample_Facet.java" startLine="306" startPosition="7" endLine="313" endPosition="9">
       <varInfo nodeId="5590401931537536727" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="5590401931537536749" fileName="Sample_Facet.java" startLine="89" startPosition="60" endLine="98" endPosition="19" />
+    <scopeInfo nodeId="5590401931537536749" fileName="Sample_Facet.java" startLine="89" startPosition="50" endLine="98" endPosition="19" />
     <scopeInfo nodeId="1670948443106462380" fileName="Sample_Facet.java" startLine="225" startPosition="48" endLine="234" endPosition="150">
       <varInfo nodeId="1670948443106462385" varName="tres" />
     </scopeInfo>

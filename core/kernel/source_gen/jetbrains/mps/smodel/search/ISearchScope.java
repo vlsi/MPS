@@ -31,15 +31,18 @@ interface ISearchScope {
       this.searchScope = searchScope;
     }
 
+    @Override
     public SNode resolve(SNode anchor, String refText) {
       return null;
     }
 
+    @Override
     public Iterable<SNode> getAvailableElements(@Nullable final String prefix) {
       if ((prefix == null || prefix.length() == 0)) {
         return searchScope.getNodes();
       }
       return searchScope.getNodes(new Condition<SNode>() {
+        @Override
         public boolean met(SNode p0) {
           if (p0 == null) {
             return false;
@@ -50,6 +53,7 @@ interface ISearchScope {
       });
     }
 
+    @Override
     public String getReferenceText(SNode anchor, SNode target) {
       String resolveInfo = SNodeOperations.getResolveInfo(target);
       if ((resolveInfo != null && resolveInfo.length() > 0)) {

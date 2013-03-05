@@ -38,7 +38,7 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
@@ -75,8 +75,10 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
     myContext = new ProjectOperationContext(ProjectHelper.toMPSProject(getProject()));
   }
 
+  @Override
   public void rebuild() {
     ModelAccess.instance().runReadInEDT(new Runnable() {
+      @Override
       public void run() {
         if (isDisposed()) return;
         getTree().rebuildNow();
@@ -84,36 +86,44 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
     });
   }
 
-  public void selectNextModel(SModelDescriptor md) {
+  @Override
+  public void selectNextModel(SModel md) {
     // todo: (after remove)
   }
 
+  @Override
   public String getTitle() {
     return "Favorites";
   }
 
+  @Override
   public Icon getIcon() {
     return IconLoader.getIcon("/general/toolWindowFavorites.png");
   }
 
+  @Override
   @NotNull
   public String getId() {
     return ID;
   }
 
+  @Override
   public JComponent createComponent() {
     if (isComponentCreated()) return myScrollPane;
     myTree = new MyLogicalViewTree();
     myFavoritesListener = new MPSFavoritesListener() {
+      @Override
       public void rootsChanged(String listName) {
         refreshMySubIdsAndSelect(listName);
         getTree().rebuildLater();
       }
 
+      @Override
       public void listAdded(String listName) {
         refreshMySubIdsAndSelect(listName);
       }
 
+      @Override
       public void listRemoved(String listName) {
         String selectedSubId = getSubId();
         refreshMySubIdsAndSelect(selectedSubId);
@@ -143,26 +153,32 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
     return myScrollPane;
   }
 
+  @Override
   protected boolean isComponentCreated() {
     return myScrollPane != null;
   }
 
+  @Override
   public MPSTree getTree() {
     return (MPSTree) myTree;
   }
 
+  @Override
   public ActionCallback updateFromRoot(boolean restoreExpandedPaths) {
     getTree().rebuildLater();
     return new ActionCallback();
   }
 
+  @Override
   public void select(Object element, VirtualFile file, boolean requestFocus) {
   }
 
+  @Override
   public int getWeight() {
     return 10;
   }
 
+  @Override
   public SelectInTarget createSelectInTarget() {
     return new FavoritesSelectInTarget(myProject);
   }
@@ -195,6 +211,7 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
   }
 
   private class MyLogicalViewTree extends MPSTree implements LogicalViewTree {
+    @Override
     protected MPSTreeNode rebuild() {
       String subId = getSubId();
       TextTreeNode invisibleRoot = new TextTreeNode(subId == null ? "Favorites" : subId);
@@ -217,6 +234,7 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
       return invisibleRoot;
     }
 
+    @Override
     public void editNode(final SNode node, IOperationContext context, boolean focus) {
       ModelAccess.assertLegalWrite();
       FavoritesProjectPane.this.editNode(node, context, focus);
@@ -227,6 +245,7 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
       return getTreeChildrenComparator();
     }
 
+    @Override
     public boolean isAutoOpen() {
       return getProjectView().isAutoscrollToSource(getId());
     }

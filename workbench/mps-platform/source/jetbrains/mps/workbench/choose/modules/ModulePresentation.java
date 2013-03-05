@@ -32,6 +32,7 @@ public class ModulePresentation extends BasePresentation {
     myModuleReference = moduleReference;
   }
 
+  @Override
   @NotNull
   public String doGetPresentableText() {
     SModule module = getModule();
@@ -45,10 +46,12 @@ public class ModulePresentation extends BasePresentation {
     return ModuleRepositoryFacade.getInstance().getModule(myModuleReference);
   }
 
+  @Override
   public String doGetLocationString() {
     return "";
   }
 
+  @Override
   public Icon doGetIcon() {
     return IconManager.getIconFor(getModule());
   }

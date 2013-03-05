@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
@@ -29,10 +29,12 @@ class PropertyChangeUndoableAction extends SNodeUndoableAction {
     myNewValue = newValue;
   }
 
+  @Override
   protected void doUndo() {
     SNodeAccessUtil.setProperty(getAffectedNode(), myProperty, myOldValue);
   }
 
+  @Override
   protected void doRedo() {
     SNodeAccessUtil.setProperty(getAffectedNode(), myProperty, myNewValue);
   }

@@ -4,17 +4,18 @@ package jetbrains.mps.ide.properties;
 
 import jetbrains.mps.workbench.dialogs.project.BasePropertiesDialog;
 import jetbrains.mps.ide.ui.dialogs.properties.ModelProperties;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Set;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import javax.swing.JPanel;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.util.SNodeOperations;
 import java.awt.BorderLayout;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
@@ -24,8 +25,8 @@ import javax.swing.JCheckBox;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.util.SNodeOperations;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import javax.swing.AbstractAction;
@@ -45,12 +46,13 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 
 public class ModelPropertiesDialog extends BasePropertiesDialog {
   public ModelProperties myPresenter;
-  public SModelDescriptor myModel;
+  public SModel myModel;
 
-  /*package*/ ModelPropertiesDialog(final SModelDescriptor sm, final IOperationContext context) {
-    super("Model Properties for " + sm.getSModelReference().getSModelFqName(), context);
+  /*package*/ ModelPropertiesDialog(final SModel sm, final IOperationContext context) {
+    super("Model Properties for " + sm.getReference().getSModelFqName(), context);
     myModel = sm;
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         myPresenter = new ModelProperties(sm, context);
       }
@@ -80,11 +82,11 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
   }
 
   public JPanel createNamePanel() {
-    String stereotype = (myModel.getStereotype().equals("") ?
+    String stereotype = (SModelStereotype.getStereotype(myModel).equals("") ?
       "" :
-      " (" + myModel.getStereotype() + ")"
+      " (" + SModelStereotype.getStereotype(myModel) + ")"
     );
-    String initText = myModel.getLongName() + stereotype;
+    String initText = SNodeOperations.getModelLongName(myModel) + stereotype;
     return createFieldPanel("Model UID:", initText);
   }
 
@@ -102,6 +104,7 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
     final JCheckBox checkBox = new JCheckBox("Do Not Generate");
     checkBox.getModel().setSelected(myPresenter.isDoNotGenerate());
     checkBox.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         myPresenter.setDoNotGenerate(checkBox.getModel().isSelected());
       }
@@ -112,17 +115,18 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
   public JComponent createInfoComponent() {
     final StringBuilder messageText = new StringBuilder();
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         int references = 0;
         int properties = 0;
         messageText.append("<html>");
         SModel model = myModel.getSModel();
-        for (SNode node : model.nodes()) {
+        for (SNode node : new NodesIterable(model)) {
           references += IterableUtil.asCollection(node.getReferences()).size();
           properties += SNodeOperations.getProperties(node).keySet().size();
         }
-        messageText.append("Roots : ").append(model.rootsCount()).append("<br>");
-        messageText.append("Nodes : ").append(model.registeredNodesCount()).append("<br>");
+        messageText.append("Roots : ").append(IterableUtil.asCollection(model.getRootNodes()).size()).append("<br>");
+        messageText.append("Nodes : ").append(SNodeOperations.nodesCount(model)).append("<br>");
         messageText.append("References : ").append(references).append("<br>");
         messageText.append("Properties : ").append(properties).append("<br>");
       }
@@ -132,6 +136,7 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
 
   public JComponent createAdditionalButtonsComponent() {
     JButton bShowModelUsages = new JButton(new AbstractAction("Show Model Usages") {
+      @Override
       public void actionPerformed(ActionEvent e) {
         ModelPropertiesDialog.this.dispose();
         performActionInContext(new ModelPropertiesDialog.MyDataContext(), ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.FindModelUsages_Action")));
@@ -149,6 +154,7 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
     return result;
   }
 
+  @Override
   protected boolean doSaveChanges() {
     myPresenter.saveChanges();
     return true;
@@ -166,6 +172,7 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
     }
 
     @Nullable
+    @Override
     public Object getData(@NonNls String dataId) {
       if (dataId.equals(MPSCommonDataKeys.OPERATION_CONTEXT.getName())) {
         return ModelPropertiesDialog.this.getOperationContext();
@@ -184,6 +191,7 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
       myModels = models;
     }
 
+    @Override
     public boolean met(final SModelReference object) {
       return !(myModels.contains(object));
     }
@@ -196,6 +204,7 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
       myUsedLanguages = usedLanguages;
     }
 
+    @Override
     public boolean met(final ModuleReference object) {
       return !(myUsedLanguages.contains(object));
     }

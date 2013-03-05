@@ -25,8 +25,6 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.idea.core.psi.PsiListener.PsiEvent;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.misc.hash.HashMap;
-import jetbrains.mps.util.misc.hash.HashSet;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -38,6 +36,7 @@ import java.util.*;
 public class PsiChangesWatcher implements ProjectComponent {
 
   private final static long DELAY = 300; // milliseconds
+  private final static boolean SYNCHRONOUS = true;
   private final Object LOCK = new Object();
 
   private Project myProject;
@@ -102,7 +101,12 @@ public class PsiChangesWatcher implements ProjectComponent {
       myTimerTask.cancel();
     }
     myTimerTask = new PsiChangeNotifier(myCollectedData);
-    myTimer.schedule(myTimerTask, DELAY);
+
+    if (SYNCHRONOUS) {
+      myTimerTask.run();
+    } else {
+      myTimer.schedule(myTimerTask, DELAY);
+    }
   }
 
   private class OwnPsiListener extends PsiTreeChangeAdapter {
@@ -110,7 +114,7 @@ public class PsiChangesWatcher implements ProjectComponent {
     public void childAdded(PsiTreeChangeEvent event) {
       PsiElement elem = event.getChild();
       if (elem instanceof PsiFile) {
-        myCollectedData.created.add( (PsiFile)elem );
+        myCollectedData.created.add((PsiFile) elem);
       } else {
         queueElement(event.getParent(), event);
       }
@@ -121,7 +125,7 @@ public class PsiChangesWatcher implements ProjectComponent {
     public void childRemoved(PsiTreeChangeEvent event) {
       PsiElement elem = event.getChild();
       if (elem instanceof PsiFile) {
-        myCollectedData.removed.add( (PsiFile)elem );
+        myCollectedData.removed.add((PsiFile) elem);
       } else {
         queueElement(event.getParent(), event);
       }
@@ -189,7 +193,7 @@ public class PsiChangesWatcher implements ProjectComponent {
   private static class PsiChangeData implements PsiEvent {
     Set<PsiFileSystemItem> created = new HashSet<PsiFileSystemItem>();
     Set<PsiFileSystemItem> removed = new HashSet<PsiFileSystemItem>();
-    Map<PsiFile,Set<PsiElement>> changed = new HashMap<PsiFile,Set<PsiElement>>();
+    Map<PsiFile, Set<PsiElement>> changed = new HashMap<PsiFile, Set<PsiElement>>();
 
     @Override
     public Iterable<PsiFileSystemItem> getCreated() {
@@ -219,8 +223,7 @@ public class PsiChangesWatcher implements ProjectComponent {
     public void run() {
       // notify our listeners
 
-      // FIXME !!! Command is temp solution
-      ModelAccess.instance().runCommandInEDT(new Runnable() {
+      ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
         public void run() {
           for (PsiListener l : myListeners) {
             l.psiChanged(data);

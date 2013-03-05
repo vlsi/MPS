@@ -17,17 +17,24 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.model.SReference;
 import java.util.LinkedList;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import java.util.Iterator;
 import java.util.Queue;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.FastNodeFinder;
+import org.jetbrains.mps.openapi.model.util.NodesIterable;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.extapi.model.GeneratableSModel;
 
 public class SNodeOperations {
   public SNodeOperations() {
@@ -223,7 +230,7 @@ public class SNodeOperations {
     }
   }
 
-  public static SModelDescriptor getModelFromNodeReference(SNodeReference ref) {
+  public static SModel getModelFromNodeReference(SNodeReference ref) {
     SModelReference mr = ref.getModelReference();
     if (mr == null) {
       return null;
@@ -252,10 +259,12 @@ public class SNodeOperations {
       }
     }
 
+    @Override
     public boolean hasNext() {
       return current != null;
     }
 
+    @Override
     public SNode next() {
       SNode result = current;
       do {
@@ -264,6 +273,7 @@ public class SNodeOperations {
       return ((SNode) result);
     }
 
+    @Override
     public void remove() {
       throw new UnsupportedOperationException();
     }
@@ -279,6 +289,7 @@ public class SNodeOperations {
       return next;
     }
 
+    @Override
     public Iterator<SNode> iterator() {
       return this;
     }
@@ -291,5 +302,53 @@ public class SNodeOperations {
     } finally {
       jetbrains.mps.smodel.SReference.enableLogging();
     }
+  }
+
+  public static String getModelStereotype(SModel model) {
+    String name = model.getModelName();
+    int index = name.indexOf("@");
+    return (index == -1 ?
+      "" :
+      name.substring(index + 1)
+    );
+  }
+
+  public static String getModelLongName(SModel model) {
+    String name = model.getModelName();
+    int index = name.indexOf("@");
+    return (index == -1 ?
+      name :
+      name.substring(0, index)
+    );
+  }
+
+  public static List<ModuleReference> getUsedLanguages(SModel model) {
+    Iterable<SLanguage> languages = model.getModelScope().getLanguages();
+    return Sequence.fromIterable(languages).select(new ISelector<SLanguage, ModuleReference>() {
+      public ModuleReference select(SLanguage it) {
+        return ((ModuleReference) it.getModule().getModuleReference());
+      }
+    }).toListSequence();
+  }
+
+  public static boolean isModelDisposed(SModel model) {
+    return ((SModelInternal) model).isDisposed();
+  }
+
+  public static FastNodeFinder getModelFastFinder(SModel model) {
+    return ((SModelInternal) model).getFastNodeFinder();
+  }
+
+  public static int nodesCount(SModel model) {
+    return IterableUtil.asCollection(new NodesIterable(model)).size();
+  }
+
+  public static boolean isRegistered(SModel model) {
+    return model.getReference().resolve(MPSModuleRepository.getInstance()) != null;
+  }
+
+  public static boolean isGeneratable(SModel model) {
+    assert model instanceof SModel;
+    return model instanceof GeneratableSModel && ((GeneratableSModel) model).isGeneratable();
   }
 }

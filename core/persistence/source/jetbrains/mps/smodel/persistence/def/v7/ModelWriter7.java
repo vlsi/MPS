@@ -16,7 +16,9 @@
 package jetbrains.mps.smodel.persistence.def.v7;
 
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.persistence.def.DocUtil;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
@@ -35,14 +37,15 @@ public class ModelWriter7 implements IModelWriter {
     return 7;
   }
 
+  @Override
   public Document saveModel(SModel sourceModel) {
     myModel = sourceModel;
-    myHelper = new WriteHelper(sourceModel.getSModelReference());
+    myHelper = new WriteHelper(sourceModel.getReference());
 
     Element rootElement = new Element(ModelPersistence.MODEL);
-    rootElement.setAttribute(ModelPersistence.MODEL_UID, sourceModel.getSModelReference().toString());
+    rootElement.setAttribute(ModelPersistence.MODEL_UID, sourceModel.getReference().toString());
 
-    int version = myModel.getVersion();
+    int version = ((jetbrains.mps.smodel.SModel) myModel).getVersion();
     if (version >= 0) {
       rootElement.setAttribute(SModelHeader.VERSION, Integer.toString(version));
     }
@@ -62,28 +65,28 @@ public class ModelWriter7 implements IModelWriter {
     rootElement.addContent(persistenceElement);
 
     // languages
-    for (ModuleReference languageNamespace : sourceModel.importedLanguages()) {
+    for (ModuleReference languageNamespace : ((jetbrains.mps.smodel.SModel) sourceModel).importedLanguages()) {
       Element languageElem = new Element(ModelPersistence.LANGUAGE);
       languageElem.setAttribute(ModelPersistence.NAMESPACE, languageNamespace.toString());
       rootElement.addContent(languageElem);
     }
 
     // languages engaged on generation
-    for (ModuleReference languageNamespace : sourceModel.engagedOnGenerationLanguages()) {
+    for (ModuleReference languageNamespace : ((jetbrains.mps.smodel.SModel) sourceModel).engagedOnGenerationLanguages()) {
       Element languageElem = new Element(ModelPersistence.LANGUAGE_ENGAGED_ON_GENERATION);
       languageElem.setAttribute(ModelPersistence.NAMESPACE, languageNamespace.toString());
       rootElement.addContent(languageElem);
     }
 
     //devkits
-    for (ModuleReference devkitNamespace : sourceModel.importedDevkits()) {
+    for (ModuleReference devkitNamespace : ((jetbrains.mps.smodel.SModel) sourceModel).importedDevkits()) {
       Element devkitElem = new Element(ModelPersistence.DEVKIT);
       devkitElem.setAttribute(ModelPersistence.NAMESPACE, devkitNamespace.toString());
       rootElement.addContent(devkitElem);
     }
 
     // imports
-    for (ImportElement importElement : sourceModel.importedModels()) {
+    for (ImportElement importElement : ((jetbrains.mps.smodel.SModel) sourceModel).importedModels()) {
       SModelReference modelRef = importElement.getModelReference();
       myHelper.addModelReference(modelRef);
       Element elem = new Element(ModelPersistence.IMPORT_ELEMENT);
@@ -92,7 +95,7 @@ public class ModelWriter7 implements IModelWriter {
       elem.setAttribute(ModelPersistence.VERSION, "" + importElement.getUsedVersion());
       rootElement.addContent(elem);
     }
-    for (ImportElement importElement : sourceModel.getAdditionalModelVersions()) {
+    for (ImportElement importElement : ((jetbrains.mps.smodel.SModel) sourceModel).getAdditionalModelVersions()) {
       SModelReference modelRef = importElement.getModelReference();
       myHelper.addModelReference(modelRef);
       Element elem = new Element(ModelPersistence.IMPORT_ELEMENT);
@@ -105,7 +108,7 @@ public class ModelWriter7 implements IModelWriter {
 
     // roots
     saveRootStubs(rootElement, sourceModel);   // only for quick roots access
-    for (SNode root : sourceModel.roots()) {
+    for (SNode root : sourceModel.getRootNodes()) {
       Element element = new Element(ModelPersistence.ROOT_CONTENT);
       element.setAttribute(ModelPersistence.ID, root.getNodeId().toString());
       for (SNode childNode : root.getChildren()) {
@@ -119,7 +122,7 @@ public class ModelWriter7 implements IModelWriter {
 
   protected void saveRootStubs(Element parent, SModel model) {
     Element roots = new Element(ModelPersistence.ROOTS);
-    for (SNode root : model.roots()) {
+    for (SNode root : model.getRootNodes()) {
       saveNode(roots, root, false);
     }
     parent.addContent(roots);

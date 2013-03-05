@@ -30,10 +30,12 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />
+    <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -48,6 +50,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
   </dependency>
   <dependency className="jetbrains.mps.idea.java.psiStubs.EclipseJavaStubDataSource" file="EclipseJavaStubDataSource.java">
     <classNode dependClassName="com.intellij.openapi.editor.Document" />
@@ -111,11 +114,14 @@
     <classNode extendsClassName="jetbrains.mps.extapi.persistence.DataSourceBase" />
   </dependency>
   <dependency className="jetbrains.mps.idea.java.psiStubs.PsiJavaStubModelDescriptor" file="PsiJavaStubModelDescriptor.java">
+    <classNode dependClassName="com.google.common.collect.BiMap" />
+    <classNode dependClassName="com.google.common.collect.HashBiMap" />
     <classNode dependClassName="com.intellij.psi.PsiClass" />
     <classNode dependClassName="com.intellij.psi.PsiElement" />
     <classNode dependClassName="com.intellij.psi.PsiFile" />
     <classNode dependClassName="com.intellij.psi.PsiFileSystemItem" />
     <classNode dependClassName="com.intellij.psi.PsiJavaFile" />
+    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.HashSet" />
@@ -132,6 +138,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.DataSource" />
@@ -181,7 +188,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelFqName" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelId" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />

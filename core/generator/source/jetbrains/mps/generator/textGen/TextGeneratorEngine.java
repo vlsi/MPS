@@ -16,7 +16,7 @@
 package jetbrains.mps.generator.textGen;
 
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TextGen;
 import jetbrains.mps.textGen.TextGenerationResult;
@@ -89,7 +89,7 @@ public class TextGeneratorEngine {
 
       resultsForModel.put(model, new ArrayList<TextGenerationResult>());
       int rootsCount = 0;
-      for (SNode root : model.roots()) {
+      for (SNode root : model.getRootNodes()) {
         roots.add(root);
         rootsCount++;
         assert root.getModel() == model;
@@ -153,6 +153,7 @@ public class TextGeneratorEngine {
       namePrefix = "textgen-thread-";
     }
 
+    @Override
     @NotNull
     public Thread newThread(@NotNull final Runnable original) {
       Thread t = new Thread(group, original, namePrefix + threadNumber.getAndIncrement());

@@ -24,7 +24,8 @@ import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import org.jetbrains.annotations.NotNull;
 
@@ -48,23 +49,28 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     this.tracer = tracer;
   }
 
+  @Override
   public IOperationContext getOperationContext() {
     return operationContext;
   }
 
+  @Override
   public SModel getOutputModel() {
     return generator.getOutputModel();
   }
 
+  @Override
   @NotNull
   public TemplateGenerator getGenerator() {
     return generator;
   }
 
+  @Override
   public IGenerationTracer getTracer() {
     return tracer;
   }
 
+  @Override
   @NotNull
   public ReductionContext getReductionContext() {
     return reductionContext;
@@ -75,6 +81,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     return new TemplateExecutionEnvironmentImpl(generator, new ReductionContext(reductionContext, inputNode, rule), operationContext, tracer);
   }
 
+  @Override
   public Collection<SNode> copyNodes(Iterable<SNode> inputNodes, SNodeReference templateNode, String templateId, String mappingName, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException {
     Collection<SNode> outputNodes = null;
     for (SNode newInputNode : inputNodes) {
@@ -90,7 +97,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
               generator.getLogger().error(outputNode, "language of output node is '" + outputNodeLang.getModuleFqName() + "' - this language did not show up when computing generation steps!",
                 GeneratorUtil.describe(tNode, "template"),
                 GeneratorUtil.describe(templateContext.getInput(), "input"),
-                new ProblemDescription(null, "workaround: add the language '" + outputNodeLang.getModuleFqName() + "' to list of 'Languages Engaged On Generation' in model '" + generator.getGeneratorSessionContext().getOriginalInputModel().getSModelFqName() + "'"));
+                new ProblemDescription(null, "workaround: add the language '" + outputNodeLang.getModuleFqName() + "' to list of 'Languages Engaged On Generation' in model '" + generator.getGeneratorSessionContext().getOriginalInputModel().getReference().getSModelFqName() + "'"));
             }
           }
         }
@@ -120,7 +127,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
         generator.getLogger().error(child, "language of output node is '" + childLang.getModuleFqName() + "' - this language did not show up when computing generation steps!",
           GeneratorUtil.describe(tNode, "template"),
           GeneratorUtil.describe(templateContext.getInput(), "input"),
-          new ProblemDescription(null, "workaround: add the language '" + childLang.getModuleFqName() + "' to list of 'Languages Engaged On Generation' in model '" + generator.getGeneratorSessionContext().getOriginalInputModel().getSModelFqName() + "'"));
+          new ProblemDescription(null, "workaround: add the language '" + childLang.getModuleFqName() + "' to list of 'Languages Engaged On Generation' in model '" + generator.getGeneratorSessionContext().getOriginalInputModel().getReference().getSModelFqName() + "'"));
       }
     }
 
@@ -136,7 +143,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   private void validateReferences(SNode node, final SNode inputNode) {
     for (SReference ref : node.getReferences()) {
       // reference to input model - illegal
-      if (generator.getInputModel().getSModelReference().equals(ref.getTargetSModelReference())) {
+      if (generator.getInputModel().getReference().equals(ref.getTargetSModelReference())) {
         // replace
         ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
           ref.getRole(),
@@ -154,6 +161,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     }
   }
 
+  @Override
   public Collection<SNode> trySwitch(SNodeReference switch_, String mappingName, TemplateContext context) throws GenerationException {
     Collection<SNode> collection = generator.tryToReduce(context, switch_, mappingName, reductionContext);
     if (collection != null) {
@@ -220,6 +228,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   }
 
 
+  @Override
   public void nodeCopied(TemplateContext context, SNode outputNode, String templateNodeId) {
     GeneratorMappings mappings = generator.getMappings();
     mappings.addOutputNodeByInputAndTemplateNode(context.getInput(), templateNodeId, outputNode);
@@ -229,16 +238,19 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     mappings.addOutputNodeByTemplateNode(templateNodeId, outputNode);
   }
 
+  @Override
   public void registerLabel(SNode inputNode, SNode outputNode, String mappingLabel) {
     generator.getMappings().addOutputNodeByInputNodeAndMappingName(inputNode, mappingLabel, outputNode);
   }
 
+  @Override
   public void registerLabel(SNode inputNode, Iterable<SNode> outputNodes, String mappingLabel) {
     for (SNode outputNode : outputNodes) {
       generator.getMappings().addOutputNodeByInputNodeAndMappingName(inputNode, mappingLabel, outputNode);
     }
   }
 
+  @Override
   public void resolveInTemplateLater(@NotNull SNode outputNode, String role, SNodeReference sourceNode, int parentIndex, String resolveInfo, TemplateContext context) {
     ReferenceInfo_TemplateParent refInfo = new ReferenceInfo_TemplateParent(
       outputNode,
@@ -254,6 +266,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     outputNode.setReference(postponedReference.getRole(), postponedReference);
   }
 
+  @Override
   public void resolveInTemplateLater(@NotNull SNode outputNode, String role, SNodeReference sourceNode, String templateNodeId, String resolveInfo, TemplateContext context) {
     ReferenceInfo_Template refInfo = new ReferenceInfo_Template(
       outputNode,
@@ -269,6 +282,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     outputNode.setReference(postponedReference.getRole(), postponedReference);
   }
 
+  @Override
   public void resolve(ReferenceResolver resolver, SNode outputNode, String role, TemplateContext context) {
     ReferenceInfo_Macro refInfo = new ReferenceInfo_MacroResolver(
       resolver, outputNode,
@@ -284,6 +298,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   /*
   *  returns temporary node
   */
+  @Override
   public SNode insertLater(@NotNull NodeMapper mapper, PostProcessor postProcessor, TemplateContext context) {
     SNode childToReplaceLater = SModelUtil_new.instantiateConceptDeclaration(mapper.getConceptFqName(), generator.getOutputModel(), generator.getScope(), false);
     tracer.pushOutputNodeToReplaceLater(childToReplaceLater);
@@ -291,6 +306,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     return childToReplaceLater;
   }
 
+  @Override
   public void postProcess(@NotNull PostProcessor processor, SNode outputNode, TemplateContext context) {
     generator.getDelayedChanges().addExecutePostProcessor(processor, outputNode, context, reductionContext);
   }

@@ -19,12 +19,14 @@ public abstract class AbstractOverrideEditorMessage extends AbstractLeftEditorHi
     super(node, owner, tooltip);
     final SNode returnTypeNode = SLinkOperations.getTarget(node, "returnType", true);
     this.myReturnTypeCellFinder = CellFinders.byCondition(new Condition<EditorCell>() {
+      @Override
       public boolean met(EditorCell cell) {
         return cell.getSNode() == returnTypeNode;
       }
     }, true);
   }
 
+  @Override
   public EditorCell getAnchorCell(EditorCell bigCell) {
     EditorCell returnTypeCell = bigCell.findChild(this.myReturnTypeCellFinder);
     return (returnTypeCell != null ?
@@ -33,6 +35,7 @@ public abstract class AbstractOverrideEditorMessage extends AbstractLeftEditorHi
     );
   }
 
+  @Override
   public JPopupMenu getPopupMenu() {
     return null;
   }

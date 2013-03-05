@@ -23,9 +23,6 @@ public class Ant_Kind implements ConfigurationType {
 
   public ConfigurationFactory[] getConfigurationFactories() {
     List<ConfigurationFactory> result = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
-    ListSequence.fromList(result).addElement(new BuildLanguageProject_Configuration_Factory(this));
-    ListSequence.fromList(result).addElement(new PackagingBuildScript_Configuration_Factory(this));
-    ListSequence.fromList(result).addElement(new CustomMPSApplication_Configuration_Factory(this));
     ListSequence.fromList(result).addSequence(ListSequence.fromList(myForeignFactories));
     return ListSequence.fromList(result).toGenericArray(ConfigurationFactory.class);
   }

@@ -23,15 +23,17 @@ import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.editor.runtime.impl.NodeSubstituteActionsComparator;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorSettings;
+import jetbrains.mps.nodeEditor.IntelligentInputUtil;
+import jetbrains.mps.nodeEditor.KeyboardHandler;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.openapi.editor.*;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
@@ -39,13 +41,37 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.WindowsUtil;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 
-import javax.swing.*;
+import javax.swing.DefaultListModel;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JWindow;
+import javax.swing.ListCellRenderer;
+import javax.swing.ListModel;
+import javax.swing.ListSelectionModel;
 import javax.swing.event.ListDataListener;
-import java.awt.*;
-import java.awt.event.*;
-import java.util.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.Point;
+import java.awt.Rectangle;
+import java.awt.Window;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Author: Sergey Dmitriev.
@@ -68,8 +94,8 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   private boolean myIsSmart = false;
   private EditorComponent myEditorComponent;
   private NodeSubstitutePatternEditor myPatternEditor;
-  private NodeSubstituteInfo myNodeSubstituteInfo;
-  private List<INodeSubstituteAction> mySubstituteActions = new ArrayList<INodeSubstituteAction>();
+  private SubstituteInfo myNodeSubstituteInfo;
+  private List<SubstituteAction> mySubstituteActions = new ArrayList<SubstituteAction>();
   private boolean myMenuEmpty;
 
   public NodeSubstituteChooser(EditorComponent editorComponent) {
@@ -106,7 +132,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     }
   }
 
-  public void setNodeSubstituteInfo(NodeSubstituteInfo nodeSubstituteInfo) {
+  public void setNodeSubstituteInfo(SubstituteInfo nodeSubstituteInfo) {
     myNodeSubstituteInfo = nodeSubstituteInfo;
   }
 
@@ -168,17 +194,18 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     myChooserActivated = b;
   }
 
-  private List<INodeSubstituteAction> getMatchingActions(final String pattern, final boolean strictMatching) {
-    return TypeContextManager.getInstance().runTypeCheckingComputation(myEditorComponent.getTypecheckingContextOwner(), myEditorComponent.getEditedNode(), new Computation<List<INodeSubstituteAction>>() {
-      @Override
-      public List<INodeSubstituteAction> compute(TypeCheckingContext context) {
-        if (myIsSmart) {
-          return myNodeSubstituteInfo.getSmartMatchingActions(pattern, strictMatching, myContextCell);
-        } else {
-          return myNodeSubstituteInfo.getMatchingActions(pattern, strictMatching);
-        }
-      }
-    });
+  private List<SubstituteAction> getMatchingActions(final String pattern, final boolean strictMatching) {
+    return TypeContextManager.getInstance().runTypeCheckingComputation(myEditorComponent.getTypecheckingContextOwner(), myEditorComponent.getEditedNode(),
+        new Computation<List<SubstituteAction>>() {
+          @Override
+          public List<SubstituteAction> compute(TypeCheckingContext context) {
+            if (myIsSmart) {
+              return myNodeSubstituteInfo.getSmartMatchingActions(pattern, strictMatching, myContextCell);
+            } else {
+              return myNodeSubstituteInfo.getMatchingActions(pattern, strictMatching);
+            }
+          }
+        });
   }
 
   private void rebuildMenuEntries() {
@@ -187,17 +214,17 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         myMenuEmpty = false;
         final String pattern = getPatternEditor().getPattern();
 
-        List<INodeSubstituteAction> matchingActions = getMatchingActions(pattern, false);
+        List<SubstituteAction> matchingActions = getMatchingActions(pattern, false);
         if (matchingActions.isEmpty()) {
           matchingActions = getMatchingActions(IntelligentInputUtil.trimLeft(pattern), false);
         }
 
         try {
-          Collections.sort(matchingActions, new Comparator<INodeSubstituteAction>() {
-            private Map<INodeSubstituteAction, Integer> mySortPriorities = new HashMap<INodeSubstituteAction, Integer>();
-            private Map<INodeSubstituteAction, String> myVisibleMatchingTexts = new HashMap<INodeSubstituteAction, String>();
+          Collections.sort(matchingActions, new Comparator<SubstituteAction>() {
+            private Map<SubstituteAction, Integer> mySortPriorities = new HashMap<SubstituteAction, Integer>();
+            private Map<SubstituteAction, String> myVisibleMatchingTexts = new HashMap<SubstituteAction, String>();
 
-            private int getSortPriority(INodeSubstituteAction a) {
+            private int getSortPriority(SubstituteAction a) {
               Integer result = mySortPriorities.get(a);
               if (result == null) {
                 result = a.getSortPriority(pattern);
@@ -206,7 +233,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
               return result;
             }
 
-            private String getVisibleMatchingText(INodeSubstituteAction a) {
+            private String getVisibleMatchingText(SubstituteAction a) {
               String result = myVisibleMatchingTexts.get(a);
               if (result == null) {
                 result = a.getVisibleMatchingText(pattern);
@@ -215,7 +242,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
               return result;
             }
 
-            public int compare(INodeSubstituteAction i1, INodeSubstituteAction i2) {
+            public int compare(SubstituteAction i1, SubstituteAction i2) {
               boolean strictly1 = i1.canSubstituteStrictly(pattern);
               boolean strictly2 = i2.canSubstituteStrictly(pattern);
               if (strictly1 != strictly2) {
@@ -273,7 +300,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
         int textLength = 0;
         int descriptionLength = 0;
-        for (INodeSubstituteAction item : mySubstituteActions) {
+        for (SubstituteAction item : mySubstituteActions) {
           try {
             textLength = Math.max(textLength, getTextLength(item, pattern));
             descriptionLength = Math.max(descriptionLength, getDescriptionLength(item, pattern));
@@ -285,11 +312,11 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     });
   }
 
-  private void sortSmartActions(List<INodeSubstituteAction> matchingActions) {
+  private void sortSmartActions(List<SubstituteAction> matchingActions) {
     Collections.sort(matchingActions, new NodeSubstituteActionsComparator(myContextCell.getSNode().getContainingRoot()));
   }
 
-  private int getDescriptionLength(INodeSubstituteAction action, String pattern) {
+  private int getDescriptionLength(SubstituteAction action, String pattern) {
     String descriptionText = action.getDescriptionText(pattern);
     if (descriptionText == null) {
       descriptionText = "";
@@ -297,7 +324,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     return descriptionText.length();
   }
 
-  private int getTextLength(INodeSubstituteAction action, String pattern) {
+  private int getTextLength(SubstituteAction action, String pattern) {
     String text = action.getVisibleMatchingText(pattern);
     if (text == null) {
       text = "";
@@ -352,8 +379,8 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   private boolean doSubstitute() {
     String pattern = getPatternEditor().getPattern();
 
-    List<INodeSubstituteAction> matchingActions = new ArrayList<INodeSubstituteAction>();
-    for (INodeSubstituteAction item : mySubstituteActions) {
+    List<SubstituteAction> matchingActions = new ArrayList<SubstituteAction>();
+    for (SubstituteAction item : mySubstituteActions) {
       if (item.canSubstitute(pattern)) {
         matchingActions.add(item);
       }
@@ -419,13 +446,13 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
   private void doSubstituteSelection() {
     String pattern = getPatternEditor().getPattern();
-    INodeSubstituteAction action = mySubstituteActions.get(myPopupWindow.getSelectionIndex());
+    SubstituteAction action = mySubstituteActions.get(myPopupWindow.getSelectionIndex());
     setVisible(false);
     action.substitute(myEditorComponent.getEditorContext(), pattern);
   }
 
   public void doSubstituteSelection(String pattern, int index) {
-    List<INodeSubstituteAction> actions = getMatchingActions(pattern, false);
+    List<SubstituteAction> actions = getMatchingActions(pattern, false);
     actions.get(index).substitute(myEditorComponent.getEditorContext(), pattern);
   }
 

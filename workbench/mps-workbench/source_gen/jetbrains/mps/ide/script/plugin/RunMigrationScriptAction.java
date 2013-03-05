@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.IModule;
 
@@ -33,6 +32,7 @@ public class RunMigrationScriptAction extends BaseAction implements DumbAware {
     myApplyToSelection = applyToSelection;
   }
 
+  @Override
   protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
     IScope migrationScope = AbstractMigrationScriptHelper.createMigrationScope(myModels, myModules, myApplyToSelection);
     if (!(migrationScope.getModelDescriptors().iterator().hasNext())) {
@@ -43,6 +43,7 @@ public class RunMigrationScriptAction extends BaseAction implements DumbAware {
     AbstractMigrationScriptHelper.doRunScripts(scripts, migrationScope, myContext);
   }
 
+  @Override
   protected boolean collectActionData(AnActionEvent e, Map<String, Object> _params) {
     if (!(super.collectActionData(e, _params))) {
       return false;
@@ -57,7 +58,7 @@ public class RunMigrationScriptAction extends BaseAction implements DumbAware {
     }
     myModels = new ArrayList<SModel>();
     if (e.getData(MPSCommonDataKeys.MODELS) != null) {
-      for (SModelDescriptor model : ListSequence.fromList(e.getData(MPSCommonDataKeys.MODELS))) {
+      for (SModel model : ListSequence.fromList(e.getData(MPSCommonDataKeys.MODELS))) {
         myModels.add(model);
       }
     }

@@ -19,26 +19,32 @@ import gnu.trove.TObjectLongHashMap;
 import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.make.java.ModelDependencies;
 import jetbrains.mps.make.java.RootDependencies;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.project.SModuleOperations;
+import jetbrains.mps.project.facets.JavaModuleFacet;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.FlattenIterable;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.File;
-import java.util.*;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 class Dependencies {
 
   private final Map<String, Set<String>> myDependencies = new HashMap<String, Set<String>>();
   private final Map<String, Set<String>> myExtendsDependencies = new HashMap<String, Set<String>>();
-  private final Map<String, IModule> myModules = new HashMap<String, IModule>();
+  private final Map<String, SModule> myModules = new HashMap<String, SModule>();
   private final TObjectLongHashMap<String> myLastModified = new TObjectLongHashMap<String>();
 
-  public Dependencies(Collection<IModule> ms) {
-    for (IModule m : ms) {
+  public Dependencies(Collection<? extends SModule> ms) {
+    for (SModule m : ms) {
       collectDependencies(m);
     }
   }
@@ -68,10 +74,10 @@ class Dependencies {
 
   @Nullable
   private File getJavaFile(String fqName) {
-    IModule m = myModules.get(fqName);
+    SModule m = myModules.get(fqName);
     if (m == null) return null;
 
-    for (String path : m.getSourcePaths()) {
+    for (String path : SModuleOperations.getAllSourcePaths(m)) {
       String outputPath = path + File.separator + NameUtil.pathFromNamespace(fqName) + MPSExtentions.DOT_JAVAFILE;
       File outputFile = new File(outputPath);
       if (outputFile.exists()) {
@@ -82,13 +88,12 @@ class Dependencies {
     return null;
   }
 
-  private void collectDependencies(IModule m) {
-    String outputPath = m.getGeneratorOutputPath();
-    String testOutputPath = m.getTestsGeneratorOutputPath();
-    if (outputPath == null && testOutputPath == null) return;
+  private void collectDependencies(SModule m) {
+    if (m.getFacet(JavaModuleFacet.class) == null || m.isPackaged()) {
+      return;
+    }
 
-    List<SModelDescriptor> models = m.getOwnModelDescriptors();
-    for (SModelDescriptor md : models) {
+    for (SModel md : m.getModels()) {
       if (!SModelStereotype.isUserModel(md)) continue;
 
       ModelDependencies dependRoot = BLDependenciesCache.getInstance().get(md);
@@ -97,7 +102,7 @@ class Dependencies {
     }
   }
 
-  private void add(IModule m, ModelDependencies root) {
+  private void add(SModule m, ModelDependencies root) {
     for (RootDependencies r : root.getDependencies()) {
       final String className = r.getClassName();
 
@@ -118,7 +123,7 @@ class Dependencies {
     return value == -1 ? 0 : value;
   }
 
-  public IModule getModule(String fqName) {
+  public SModule getModule(String fqName) {
     return myModules.get(fqName);
   }
 }

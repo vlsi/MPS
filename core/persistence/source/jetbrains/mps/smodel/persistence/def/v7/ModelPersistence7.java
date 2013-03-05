@@ -15,46 +15,49 @@
  */
 package jetbrains.mps.smodel.persistence.def.v7;
 
+import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
-import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.persistence.def.IHashProvider;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence.IndexEntry;
 import jetbrains.mps.smodel.persistence.def.v6.ModelPersistence6;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.xml.XMLSAXHandler;
+import org.jetbrains.mps.openapi.util.Consumer;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class ModelPersistence7 extends ModelPersistence6 {
+  @Override
   public IModelWriter getModelWriter() {
     return new ModelWriter7();
   }
 
+  @Override
   public IModelReader getModelReader() {
     return new ModelReader7();
   }
 
+  @Override
   public IHashProvider getHashProvider() {
     return new HashProvider7();
   }
 
+  @Override
   public XMLSAXHandler<ModelLoadResult> getModelReaderHandler(ModelLoadingState state, SModelHeader header) {
     return new ModelReader7Handler(state, header);
   }
 
+  @Override
   public XMLSAXHandler<List<LineContent>> getLineToContentMapReaderHandler() {
     return new LineToContentMapReader7Handler();
   }
 
-  public Map<IndexEntry, Integer> index(char[] data) {
+  @Override
+  public void index(char[] data, Consumer<String> consumer) {
     int len = data.length;
-    Map<IndexEntry, Integer> result = new HashMap<IndexEntry, Integer>();
     int wordStart = -1;
     for (int i = 0; i < len; i++) {
       char c = data[i];
@@ -63,17 +66,16 @@ public class ModelPersistence7 extends ModelPersistence6 {
           wordStart = i;
         }
       } else if (wordStart >= 0) {
-        processWord(result, data, len, wordStart, i - wordStart);
+        processWord(data, len, wordStart, i - wordStart, consumer);
         wordStart = -1;
       }
     }
-    return result;
-
   }
+
   private static final String TARGET_NODE_ID_PREFIX = "targetNodeId=\"";
   private static final String TYPE_PREFIX = "type=\"";
 
-  private void processWord(Map<IndexEntry, Integer> result, char[] chars, int charsLength, int offset, int len) {
+  private void processWord(char[] chars, int charsLength, int offset, int len, Consumer<String> consumer) {
     if (chars[offset + len] != '=' || chars[offset] != 't') {
       return; // optimization: ignore
     }
@@ -81,46 +83,38 @@ public class ModelPersistence7 extends ModelPersistence6 {
     if (contains(chars, charsLength, offset, TARGET_NODE_ID_PREFIX)) {
       // check pattern "targetNodeId=\"(?:[0-9]+v?\\.)?(.+?)\""
       offset += TARGET_NODE_ID_PREFIX.length();
-      int end = indexOfQuoteAndVersionColon(chars, charsLength, offset)[0];
+      int end = indexOfClosingQuote(chars, charsLength, offset);
       if (end > offset) {
         int e = offset;
-        while (e < end && chars[e] != '.') ++e;
-        if (e > offset && e + 1 < end && chars[e] == '.')
+        while (e < end && chars[e] != '.') {
+          e++;
+        }
+        if (e > offset && e + 1 < end && chars[e] == '.') {
           offset = e + 1;
-        String test = JDOMUtil.unescapeText(new String(chars, offset, end - offset)).replace("%d", ".").replace("%c", ":");
-        result.put(new IndexEntry(test, true), offset);
+        }
+        String test = WriteHelper.decode(JDOMUtil.unescapeText(new String(chars, offset, end - offset)));
+        consumer.consume(test);
       }
     } else if (contains(chars, charsLength, offset, TYPE_PREFIX)) {
       // check pattern "type=\"(.+?)\" id=\".+?\""
       offset += TYPE_PREFIX.length();
-      int[] indices = indexOfQuoteAndVersionColon(chars, charsLength, offset);
-      int end = indices[0];
+      int end = indexOfClosingQuote(chars, charsLength, offset);
       int start = end;
       while (start >= offset && chars[start] != '.') --start;
       offset = start + 1;
       if (end > offset) {
-        result.put(new IndexEntry(JDOMUtil.unescapeText(new String(chars, offset, end - offset)), true), offset);
+        consumer.consume(JDOMUtil.unescapeText(new String(chars, offset, end - offset)));
       }
     }
   }
 
-  // result[0] - first index; result[1] - index of quote
-  private int[] indexOfQuoteAndVersionColon(char[] chars, int charsLength, int start) {
-    int[] result = {-1, -1};
-    for (int i = start; i < charsLength; i++) {
+  private int indexOfClosingQuote(char[] chars, int charsLength, int start) {
+    for (int i = start; i < charsLength && chars[i] != '\n'; i++) {
       if (chars[i] == '"') {
-        if (result[0] == -1) result[0] = i;
-        result[1] = i;
-        return result;
-      }
-      if (chars[i] == ':' && (i + 1 < charsLength) && chars[i + 1] >= '0' && chars[i + 1] <= '9') {
-        result[0] = i;
-      }
-      if (chars[i] == '\n') {
-        return new int[]{-1, -1};
+        return i;
       }
     }
-    return new int[]{-1, -1};
+    return -1;
   }
 
   private boolean contains(char[] chars, int charsLength, int offset, String s) {

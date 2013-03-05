@@ -75,17 +75,18 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.constraints.MappingRuleTemplateNodeSearchScope" file="MappingRuleTemplateNodeSearchScope.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.smodel.BootstrapLanguages" />
     <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.smodel.search.ISearchScope" />
     <classNode dependClassName="jetbrains.mps.smodel.search.SModelSearchUtil" />
     <classNode dependClassName="jetbrains.mps.util.Condition" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.search.AbstractSearchScope" />
   </dependency>

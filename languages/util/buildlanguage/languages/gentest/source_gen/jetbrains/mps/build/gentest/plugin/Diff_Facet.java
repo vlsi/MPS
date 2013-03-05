@@ -87,7 +87,7 @@ public class Diff_Facet extends IFacet.Stub {
               if (pa.global().properties(Target_diff.this.getName(), Diff_Facet.Target_diff.Parameters.class).fileToPath() != null) {
                 monitor.currentProgress().beginWork("Diffing", 100 * Sequence.fromIterable(input).count(), monitor.currentProgress().workLeft());
                 for (TResource tgres : Sequence.fromIterable(input)) {
-                  String fqn = tgres.modelDescriptor().getSModelReference().getSModelFqName().getLongName();
+                  String fqn = tgres.modelDescriptor().getReference().getSModelFqName().getLongName();
                   monitor.currentProgress().advanceWork("Diffing", 1, fqn);
                   DeltaReconciler dr = new DeltaReconciler(tgres.delta());
                   final Set<String> retainedPaths = SetSequence.fromSet(new HashSet<String>());

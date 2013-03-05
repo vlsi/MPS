@@ -15,9 +15,7 @@
  */
 package jetbrains.mps.persistence.binary;
 
-import jetbrains.mps.messages.IMessage;
-import jetbrains.mps.messages.Message;
-import jetbrains.mps.messages.MessageKind;
+import jetbrains.mps.extapi.model.PersistenceProblem;
 import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
@@ -25,14 +23,12 @@ import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Collection;
 import java.util.Collections;
 
 /**
  * evgeny, 11/21/12
  */
 public class BinarySModel extends SModel {
-
   private final BinaryModelHeader header;
 
   public BinarySModel(@NotNull BinaryModelHeader header) {
@@ -54,6 +50,11 @@ public class BinarySModel extends SModel {
     header.setVersion(version);
   }
 
+  @Override
+  protected SModel createEmptyCopy() {
+    return new BinarySModel(new BinaryModelHeader(getReference()));
+  }
+
   public static class InvalidBinarySModel extends BinarySModel implements InvalidSModel {
 
     @Nullable
@@ -64,10 +65,11 @@ public class BinarySModel extends SModel {
       myCause = cause;
     }
 
+    @NotNull
     @Override
-    public Collection<IMessage> getProblems() {
-      return Collections.<IMessage>singleton(
-        new Message(MessageKind.ERROR, myCause == null ? "Couldn't read model." : myCause.getMessageEx()));
+    public Iterable<Problem> getProblems() {
+      return Collections.<Problem>singleton(
+        new PersistenceProblem(myCause == null ? "Couldn't read model." : myCause.getMessageEx(), null, true));
     }
   }
 }

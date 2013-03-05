@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.PathManager;
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -46,6 +46,7 @@ public class AspectDependenciesChecker extends SpecificChecker {
     this.languagesUtilPath = PathManager.getHomePath() + "/languages/util/";
   }
 
+  @Override
   public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor monitor, final IOperationContext operationContext) {
     List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
     String title = "Checking " + SModelOperations.getModelName(model) + " for wrong aspect dependencies...";
@@ -191,7 +192,7 @@ public class AspectDependenciesChecker extends SpecificChecker {
   }
 
   public static boolean findInModule(SModule module, String modelName, String rootName) {
-    for (org.jetbrains.mps.openapi.model.SModel d : module.getModels()) {
+    for (SModel d : module.getModels()) {
       if (d.getModelName().equals(modelName)) {
         for (SNode _n : d.getRootNodes()) {
           SNode n = (SNode) _n;

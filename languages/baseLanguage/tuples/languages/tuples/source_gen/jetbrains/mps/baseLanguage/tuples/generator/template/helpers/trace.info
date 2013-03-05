@@ -2,11 +2,11 @@
 <debugInfo>
   <root nodeRef="r:ff802b39-fe8b-448c-92e1-659087928d82(jetbrains.mps.baseLanguage.tuples.generator.template.helpers)/1241010420895">
     <nodeInfo nodeId="8911874220955530338" fileName="TupleDeclarationUtil.java" startLine="13" startPosition="63" endLine="14" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8911874220955530346" fileName="TupleDeclarationUtil.java" startLine="14" startPosition="136" endLine="15" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8911874220955530346" fileName="TupleDeclarationUtil.java" startLine="14" startPosition="136" endLine="15" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8911874220955530359" fileName="TupleDeclarationUtil.java" startLine="16" startPosition="47" endLine="17" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8911874220955530380" fileName="TupleDeclarationUtil.java" startLine="18" startPosition="5" endLine="19" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1241010420897" fileName="TupleDeclarationUtil.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TupleDeclarationUtil#()V" />
-    <nodeInfo nodeId="8911874220955530357" fileName="TupleDeclarationUtil.java" startLine="15" startPosition="82" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8911874220955530357" fileName="TupleDeclarationUtil.java" startLine="15" startPosition="152" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8911874220955530330" fileName="TupleDeclarationUtil.java" startLine="13" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getResolveInfo#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="1241010420900" fileName="TupleDeclarationUtil.java" startLine="10" startPosition="33" endLine="10" endPosition="33" />
     <scopeInfo nodeId="8911874220955530358" fileName="TupleDeclarationUtil.java" startLine="16" startPosition="47" endLine="17" endPosition="82" />

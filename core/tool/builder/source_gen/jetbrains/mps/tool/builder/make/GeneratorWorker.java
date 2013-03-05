@@ -29,11 +29,11 @@ import java.util.HashSet;
 import java.util.LinkedHashSet;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.make.ModuleMaker;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.IOperationContext;
@@ -90,6 +90,7 @@ public class GeneratorWorker extends MpsWorker {
     }
   }
 
+  @Override
   protected void showStatistic() {
     failBuild("generation");
   }
@@ -127,6 +128,7 @@ public class GeneratorWorker extends MpsWorker {
     ModelAccess.instance().flushEventQueue();
   }
 
+  @Override
   public void work() {
     setupEnvironment();
     final Wrappers._boolean doneSomething = new Wrappers._boolean(false);
@@ -185,7 +187,7 @@ public class GeneratorWorker extends MpsWorker {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         ClassLoaderManager.getInstance().updateClassPath();
-        new ModuleMaker().make(MPSModuleRepository.getInstance().getAllModules(), new EmptyProgressMonitor());
+        new ModuleMaker().make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), new EmptyProgressMonitor());
       }
     });
     ModelAccess.instance().runWriteAction(new Runnable() {
@@ -207,14 +209,14 @@ public class GeneratorWorker extends MpsWorker {
     }));
   }
 
-  private Iterable<SModelDescriptor> getModelsToGenerate(SModule mod) {
+  private Iterable<SModel> getModelsToGenerate(SModule mod) {
     return Sequence.fromIterable(((Iterable<SModel>) mod.getModels())).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
         return GenerationFacade.canGenerate(it);
       }
-    }).select(new ISelector<SModel, SModelDescriptor>() {
-      public SModelDescriptor select(SModel it) {
-        return (SModelDescriptor) it;
+    }).select(new ISelector<SModel, SModel>() {
+      public SModel select(SModel it) {
+        return (SModel) it;
       }
     });
   }
@@ -260,6 +262,7 @@ public class GeneratorWorker extends MpsWorker {
     /*package*/ MyMessageHandler() {
     }
 
+    @Override
     public void handle(IMessage msg) {
       switch (msg.getKind()) {
         case ERROR:
@@ -294,6 +297,7 @@ public class GeneratorWorker extends MpsWorker {
       myGenerationWarnings.clear();
     }
 
+    @Override
     public void clear() {
     }
   }

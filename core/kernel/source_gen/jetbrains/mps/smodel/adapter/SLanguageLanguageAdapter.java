@@ -28,12 +28,14 @@ public class SLanguageLanguageAdapter implements SLanguage {
     this.myLanguage = language;
   }
 
+  @Override
   public String getPresentation() {
     return myLanguage.getModuleFqName();
   }
 
+  @Override
   public Iterable<SAbstractConcept> getConcepts() {
-    Iterable<SNode> roots = (Iterable<SNode>) LanguageAspect.STRUCTURE.get(myLanguage).getSModel().roots();
+    Iterable<SNode> roots = (Iterable<SNode>) LanguageAspect.STRUCTURE.get(myLanguage).getSModel().getRootNodes();
     List<SAbstractConcept> c = ListSequence.fromList(new ArrayList<SAbstractConcept>());
     ListSequence.fromList(c).addSequence(Sequence.fromIterable(roots).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -56,10 +58,12 @@ public class SLanguageLanguageAdapter implements SLanguage {
     return c;
   }
 
+  @Override
   public Iterable<SModuleReference> getLanguageRuntimes() {
     return null;
   }
 
+  @Override
   public SModule getModule() {
     return myLanguage;
   }

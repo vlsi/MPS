@@ -79,6 +79,7 @@ public final class BehaviorManager {
 
   private Method getMethod(final SNode concept, final String methodName, final Class[] parameterTypes) {
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Method>() {
+      @Override
       public Method compute() {
         Language l = SModelUtil.getDeclaringLanguage(concept);
 

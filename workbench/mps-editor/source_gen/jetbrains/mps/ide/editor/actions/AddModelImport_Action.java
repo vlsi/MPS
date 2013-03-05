@@ -4,16 +4,16 @@ package jetbrains.mps.ide.editor.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.extapi.model.EditableSModel;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.logging.Logger;
 
 public class AddModelImport_Action extends BaseAction {
@@ -30,16 +30,9 @@ public class AddModelImport_Action extends BaseAction {
     return true;
   }
 
-  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((SModelDescriptor) MapSequence.fromMap(_params).get("model")) instanceof EditableSModelDescriptor;
-  }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
+      this.enable(event.getPresentation());
     } catch (Throwable t) {
       LOG.error("User's action doUpdate method failed. Action:" + "AddModelImport", t);
       this.disable(event.getPresentation());
@@ -62,12 +55,15 @@ public class AddModelImport_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
     }
+    if (!(MapSequence.fromMap(_params).get("model") instanceof EditableSModel) || ((EditableSModel) MapSequence.fromMap(_params).get("model")).isReadOnly()) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ImportHelper.addModelImport(((Project) MapSequence.fromMap(_params).get("project")), ((IModule) MapSequence.fromMap(_params).get("module")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")), AddModelImport_Action.this);
+      ImportHelper.addModelImport(((Project) MapSequence.fromMap(_params).get("project")), ((IModule) MapSequence.fromMap(_params).get("module")), ((SModel) MapSequence.fromMap(_params).get("model")), AddModelImport_Action.this);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "AddModelImport", t);
     }

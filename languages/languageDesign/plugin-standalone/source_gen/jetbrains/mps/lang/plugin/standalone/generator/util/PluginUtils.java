@@ -6,7 +6,8 @@ import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.util.SNodeOperations;
 
 public class PluginUtils {
   public PluginUtils() {
@@ -30,7 +31,7 @@ public class PluginUtils {
 
     SModel model = genContext.getOriginalInputModel();
     String correctName = model.getModelDescriptor().getModule().getModuleFqName() + ".plugin";
-    if (eq_l4wyvj_a0f0d(model.getLongName(), correctName)) {
+    if (eq_l4wyvj_a0f0d(SNodeOperations.getModelLongName(model), correctName)) {
       return;
     }
 

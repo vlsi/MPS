@@ -27,21 +27,25 @@ public class JavaFileType extends LanguageFileType {
     super(new JavaLanguage());
   }
 
+  @Override
   @NotNull
   public String getName() {
     return "JAVA";
   }
 
+  @Override
   @NotNull
   public String getDescription() {
     return "Java Programming Language";
   }
 
+  @Override
   @NotNull
   public String getDefaultExtension() {
     return "java";
   }
 
+  @Override
   public Icon getIcon() {
     return FileIcons.JAVA_ICON;
   }

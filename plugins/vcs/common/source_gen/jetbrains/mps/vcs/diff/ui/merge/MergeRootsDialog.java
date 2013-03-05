@@ -43,7 +43,7 @@ import com.intellij.openapi.util.DimensionService;
 import java.awt.Point;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IMapping;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages;
 import java.awt.GridBagConstraints;
@@ -52,6 +52,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
 import javax.swing.JComponent;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import org.jetbrains.annotations.NotNull;
 import javax.swing.Action;
 import java.awt.GraphicsDevice;
 import java.awt.HeadlessException;
@@ -193,6 +194,7 @@ public class MergeRootsDialog extends DialogWrapper {
     return layout;
   }
 
+  @Override
   public String getDimensionServiceKey() {
     return getClass().getName();
   }
@@ -283,7 +285,7 @@ public class MergeRootsDialog extends DialogWrapper {
   }
 
   private SNodeId getRootNodeId(SModel model) {
-    SNode node = model.getNodeById(myRootId);
+    SNode node = model.getNode(myRootId);
     if (node != null && node.getParent() == null) {
       return myRootId;
     }
@@ -300,7 +302,7 @@ public class MergeRootsDialog extends DialogWrapper {
     SNodeId rootId = getRootNodeId(model);
     SNode root = (rootId == null ?
       null :
-      model.getNodeById(rootId)
+      model.getNode(rootId)
     );
     final DiffEditor result = new DiffEditor(DiffTemporaryModule.getOperationContext(myProject, model), root, myTitles[index], index == 0);
 
@@ -323,10 +325,12 @@ public class MergeRootsDialog extends DialogWrapper {
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
     return myContainer;
   }
 
+  @Override
   protected void doOKAction() {
     MergeConfirmation.showMergeConfirmationAndTakeAction(this, myMergeSession, myMergeSession.getChangesForRoot(myRootId), new _FunctionTypes._void_P0_E0() {
       public void invoke() {
@@ -339,6 +343,8 @@ public class MergeRootsDialog extends DialogWrapper {
     });
   }
 
+  @NotNull
+  @Override
   protected Action[] createActions() {
     List<Action> actions = ListSequence.fromList(new ArrayList<Action>());
     ListSequence.fromList(actions).addElement(getOKAction());

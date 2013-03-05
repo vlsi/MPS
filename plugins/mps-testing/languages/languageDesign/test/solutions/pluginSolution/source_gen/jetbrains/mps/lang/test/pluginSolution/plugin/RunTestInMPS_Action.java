@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import java.util.Set;
@@ -20,10 +20,10 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import jetbrains.mps.runtime.IClassLoadingModule;
-import jetbrains.mps.smodel.SModel;
 import java.lang.reflect.Method;
 import java.lang.reflect.Constructor;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
 import jetbrains.mps.logging.Logger;
 
@@ -62,7 +62,7 @@ public class RunTestInMPS_Action extends BaseAction {
       return false;
     }
     {
-      SModelDescriptor modelDescriptor = event.getData(MPSCommonDataKeys.CONTEXT_MODEL);
+      SModel modelDescriptor = event.getData(MPSCommonDataKeys.CONTEXT_MODEL);
       if (modelDescriptor == null) {
         return false;
       }
@@ -109,6 +109,7 @@ public class RunTestInMPS_Action extends BaseAction {
       Constructor ctor = c.getConstructor(Project.class, SModelDescriptor.class);
       final Object testClass = ctor.newInstance(((Project) MapSequence.fromMap(_params).get("project")), ((SModel) MapSequence.fromMap(_params).get("model")).getModelDescriptor());
       Thread thread = new Thread(new Runnable() {
+        @Override
         public void run() {
           try {
             meth.invoke(testClass, className + "$" + NodesTestCase_Behavior.getTestBodyName_1224602741295(), testName, true);

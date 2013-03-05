@@ -4,7 +4,7 @@ package jetbrains.mps.lang.smodel.generator.smodelAdapter;
 
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import java.util.ArrayList;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.util.Condition;
@@ -15,9 +15,10 @@ import jetbrains.mps.smodel.IScope;
 import java.util.Collections;
 import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -39,7 +40,7 @@ public class SModelOperations {
     }
     if (conceptFqName == null) {
       ArrayList<SNode> result = new ArrayList<SNode>();
-      for (SNode root : model.roots()) {
+      for (SNode root : model.getRootNodes()) {
         result.add(root);
       }
       return result;
@@ -47,11 +48,12 @@ public class SModelOperations {
     GlobalScope scope = GlobalScope.getInstance();
     List<SNode> list = new ArrayList<SNode>();
     Condition<SNode> cond = new Condition<SNode>() {
+      @Override
       public boolean met(SNode node) {
         return SNodeUtil.isInstanceOf(node, SNodeOperations.getConcept(conceptFqName));
       }
     };
-    Iterable<SNode> iterable = new ConditionalIterable<SNode>(model.roots(), cond);
+    Iterable<SNode> iterable = new ConditionalIterable<SNode>(model.getRootNodes(), cond);
     for (SNode node : iterable) {
       list.add(node);
     }
@@ -90,22 +92,22 @@ public class SModelOperations {
   private static List<SNode> allNodesIncludingImported(SModel sModel, IScope scope, boolean roots, @Nullable SNode concept) {
     List<SModel> modelsList = new ArrayList<SModel>();
     modelsList.add(sModel);
-    List<SModelDescriptor> modelDescriptors = jetbrains.mps.smodel.SModelOperations.allImportedModels(sModel, scope);
-    for (SModelDescriptor descriptor : modelDescriptors) {
+    List<SModel> modelDescriptors = jetbrains.mps.smodel.SModelOperations.allImportedModels(sModel, scope);
+    for (SModel descriptor : modelDescriptors) {
       modelsList.add(descriptor.getSModel());
     }
     List<SNode> resultNodes = new ArrayList<SNode>();
     for (SModel aModel : modelsList) {
       Iterable<? extends SNode> nodes = (roots ?
-        aModel.roots() :
-        aModel.nodes()
+        aModel.getRootNodes() :
+        new NodesIterable(aModel)
       );
       if (concept == null) {
         resultNodes.addAll(IterableUtil.asList(nodes));
       } else if (roots) {
         resultNodes.addAll(IterableUtil.asList(new ConditionalIterable(nodes, new IsInstanceCondition(concept))));
       } else {
-        resultNodes.addAll(IterableUtil.asList(aModel.getFastNodeFinder().getNodes(NameUtil.nodeFQName(concept), true)));
+        resultNodes.addAll(IterableUtil.asList(((SModelInternal) aModel).getFastNodeFinder().getNodes(NameUtil.nodeFQName(concept), true)));
       }
     }
     return resultNodes;
@@ -116,10 +118,10 @@ public class SModelOperations {
       return new ArrayList<SNode>();
     }
     if (conceptFqName != null) {
-      return model.getFastNodeFinder().getNodes(conceptFqName, true);
+      return ((SModelInternal) model).getFastNodeFinder().getNodes(conceptFqName, true);
     }
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode node : model.nodes()) {
+    for (SNode node : new NodesIterable(model)) {
       result.add(node);
     }
     return result;
@@ -156,13 +158,13 @@ public class SModelOperations {
 
   public static jetbrains.mps.smodel.SNode createNewRootNode(SModel model, String conceptFqName, SNode prototypeNode) {
     jetbrains.mps.smodel.SNode newNode = createNewNode(model, conceptFqName);
-    model.addRoot(newNode);
+    model.addRootNode(newNode);
     return newNode;
   }
 
   public static SNode addRootNode(SModel model, SNode node) {
     if (model != null && node != null) {
-      model.addRoot(node);
+      model.addRootNode(node);
     }
     return node;
   }
@@ -171,7 +173,7 @@ public class SModelOperations {
     if (model == null) {
       return null;
     }
-    return model.getLongName();
+    return SNodeOperations.getModelLongName(model);
   }
 
   public static SNode getModuleStub(SModel model) {

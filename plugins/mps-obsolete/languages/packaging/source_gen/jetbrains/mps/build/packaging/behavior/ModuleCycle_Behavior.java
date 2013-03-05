@@ -12,11 +12,10 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.facets.JavaModuleOperations;
+import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.io.File;
-import jetbrains.mps.reloading.CommonPaths;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
@@ -36,14 +35,14 @@ public class ModuleCycle_Behavior {
       SetSequence.fromSet(modules).addElement(module);
     }
     // getting classpath 
-    IClassPathItem classpath = AbstractModule.getDependenciesClasspath(modules, false);
-    List<String> stringClasspath = ListSequence.fromList(ModuleUtil.retrieveClassPath(classpath)).select(new ISelector<String, String>() {
+    Set<String> classpath = (Set<String>) JavaModuleOperations.collectCompileClasspath(modules, true);
+    SetSequence.fromSet(classpath).removeSequence(ListSequence.fromList(CommonPaths.getJDKPath()));
+    // creating path holders to use in generator 
+    return ModuleCycle_Behavior.createPathHolders_1218716903754(SetSequence.fromSet(classpath).select(new ISelector<String, String>() {
       public String select(String it) {
         return (String) it.replace(File.separator, Util.SEPARATOR);
       }
-    }).distinct().toListSequence();
-    // creating path holders to use in generator 
-    return ModuleCycle_Behavior.createPathHolders_1218716903754(stringClasspath, ModuleCycle_Behavior.call_getBasedir_1218647622991(thisNode), BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.packaging.structure.IMacroHolder", true, true), "virtual_getMacro_1107726059764558743", new Object[]{}));
+    }), ModuleCycle_Behavior.call_getBasedir_1218647622991(thisNode), BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.packaging.structure.IMacroHolder", true, true), "virtual_getMacro_1107726059764558743", new Object[]{}));
   }
 
   public static List<SNode> getMPSClassPath_1218716245482(String homePath, List<SNode> macro) {

@@ -10,7 +10,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
+import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class XYCTableModel implements TableModel {
@@ -36,6 +36,7 @@ public class XYCTableModel implements TableModel {
     return SNodeOperations.getChildren(node, ylink);
   }
 
+  @Override
   public int getMaxColumnWidth(int columnNumber) {
     return -1;
   }
@@ -44,10 +45,12 @@ public class XYCTableModel implements TableModel {
     return SNodeOperations.getChildren(node, clink);
   }
 
+  @Override
   public int getRowCount() {
     return ListSequence.fromList(y()).count() + 1;
   }
 
+  @Override
   public int getColumnCount() {
     return ListSequence.fromList(x()).count() + 1;
   }
@@ -56,6 +59,7 @@ public class XYCTableModel implements TableModel {
     return (row - 1) * (getColumnCount() - 1) + (col - 1);
   }
 
+  @Override
   public void insertColumn(int columnNumber) {
     Utils.insertElementAt(x(), SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(xlink, "target", false)), null), columnNumber - 1);
     for (int i = 0; i < getRowCount() - 1; i++) {
@@ -64,9 +68,11 @@ public class XYCTableModel implements TableModel {
     }
   }
 
+  @Override
   public void deleteColumn(int columnNumber) {
   }
 
+  @Override
   public void insertRow(int rowNumber) {
     if (rowNumber == 0) {
       rowNumber = 1;
@@ -78,7 +84,8 @@ public class XYCTableModel implements TableModel {
     }
   }
 
-  public NodeSubstituteInfo getSubstituteInfo(int row, int column) {
+  @Override
+  public SubstituteInfo getSubstituteInfo(int row, int column) {
     if (row == 0 && column == 0) {
       return null;
     }
@@ -91,6 +98,7 @@ public class XYCTableModel implements TableModel {
     return new DefaultChildSubstituteInfo(node, getValueAt(row, column), clink, editorCtx);
   }
 
+  @Override
   public void createElement(int row, int column) {
     if (row == 0 && column == 0) {
       return;
@@ -107,6 +115,7 @@ public class XYCTableModel implements TableModel {
     }
   }
 
+  @Override
   public SNode getValueAt(int row, int column) {
     if (row == 0 && column == 0) {
       return null;
@@ -124,6 +133,7 @@ public class XYCTableModel implements TableModel {
     return c().get(idx);
   }
 
+  @Override
   public void deleteRow(int rowNumber) {
     ListSequence.fromList(y()).removeElementAt(rowNumber - 1);
     for (int i = 0; i < getColumnCount() - 1; i++) {

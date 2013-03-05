@@ -62,6 +62,12 @@ public class SolutionDescriptorPersistence {
 
           result_8ckma3_a0a0g0b0e.getModelRootDescriptors().addAll(ModuleDescriptorPersistence.loadModelRoots(XmlUtil.children(XmlUtil.first(rootElement, "models"), "modelRoot"), contentRoot, macroHelper));
 
+          Element facets = XmlUtil.first(rootElement, "facets");
+          if (facets != null) {
+            result_8ckma3_a0a0g0b0e.getModuleFacetDescriptors().addAll(ModuleDescriptorPersistence.loadFacets(XmlUtil.children(facets, "facet"), macroHelper));
+          }
+
+
           Element stubModelEntries = XmlUtil.first(rootElement, "stubModelEntries");
           if (stubModelEntries != null) {
             List<String> roots = ModuleDescriptorPersistence.loadStubModelEntries(stubModelEntries, macroHelper);
@@ -111,6 +117,13 @@ public class SolutionDescriptorPersistence {
     Element models = new Element("models");
     ModuleDescriptorPersistence.saveModelRoots(models, descriptor.getModelRootDescriptors(), macroHelper);
     result.addContent(models);
+
+    if (!(descriptor.getModuleFacetDescriptors().isEmpty())) {
+      Element facets = new Element("facets");
+      ModuleDescriptorPersistence.saveFacets(facets, descriptor.getModuleFacetDescriptors(), macroHelper);
+      result.addContent(facets);
+    }
+
 
     if (!(descriptor.getAdditionalJavaStubPaths().isEmpty())) {
       Element stubModelEntries = new Element("stubModelEntries");

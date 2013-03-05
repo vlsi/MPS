@@ -15,7 +15,9 @@
  */
 package jetbrains.mps.textGen;
 
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
@@ -162,7 +164,7 @@ public abstract class SNodeTextGen {
         return "???";
       }
       shortName = jetbrains.mps.util.SNodeOperations.getResolveInfo(targetNode);
-      packageName = targetNode.getModel().getSModelReference().getLongName();
+      packageName = targetNode.getModel().getReference().getLongName();
     }
     if (uniq) {
       // todo: uniq, wtf?

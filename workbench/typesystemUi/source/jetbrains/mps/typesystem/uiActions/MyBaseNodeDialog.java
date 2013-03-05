@@ -20,7 +20,7 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.nodeEditor.GoToTypeErrorRuleUtil;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Computable;
 
@@ -103,7 +103,7 @@ public class MyBaseNodeDialog extends BaseNodeDialog {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         if (!myWasRegistered) {
-          myModel.removeRoot(myType.getContainingRoot());
+          myModel.removeRootNode(myType.getContainingRoot());
           myWasRegistered = true;
         }
         MyBaseNodeDialog.super.dispose();

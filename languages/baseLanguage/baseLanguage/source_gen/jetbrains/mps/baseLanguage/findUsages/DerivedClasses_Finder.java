@@ -19,18 +19,22 @@ public class DerivedClasses_Finder extends GeneratedFinder {
   public DerivedClasses_Finder() {
   }
 
+  @Override
   public String getDescription() {
     return "Derived Classes";
   }
 
+  @Override
   public String getLongDescription() {
     return "";
   }
 
+  @Override
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.ClassConcept";
   }
 
+  @Override
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 1);
     try {
@@ -53,6 +57,7 @@ public class DerivedClasses_Finder extends GeneratedFinder {
     }
   }
 
+  @Override
   public String getNodeCategory(SNode node) {
     return "Derived Classes";
   }

@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -115,7 +116,7 @@ public class GenerateToString_Action extends BaseAction {
       );
       SNode currentExpression = null;
       for (SNodeReference fieldPtr : selectedFields) {
-        SNode field = SNodeOperations.cast(((SNodePointer) fieldPtr).getNode(), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+        SNode field = SNodeOperations.cast(((SNodePointer) fieldPtr).resolve(MPSModuleRepository.getInstance()), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
         SNode fieldRef = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
         SLinkOperations.setTarget(fieldRef, "variableDeclaration", field, false);
         SNode item = _quotation_createNode_satqj4_a0d0p0a(((fieldPtr == firstField ?

@@ -16,14 +16,15 @@
 package jetbrains.mps.smodel.persistence.def.v4;
 
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.persistence.def.*;
 import org.jdom.Document;
 import org.jdom.Element;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -37,9 +38,10 @@ public class ModelWriter4 implements IModelWriter {
     return 4;
   }
 
+  @Override
   public Document saveModel(SModel sourceModel) {
     Element rootElement = new Element(ModelPersistence.MODEL);
-    rootElement.setAttribute(ModelPersistence.MODEL_UID, sourceModel.getSModelReference().toString());
+    rootElement.setAttribute(ModelPersistence.MODEL_UID, sourceModel.getReference().toString());
     Element persistenceElement = new Element(ModelPersistence.PERSISTENCE);
     persistenceElement.setAttribute(ModelPersistence.PERSISTENCE_VERSION, getModelPersistenceVersion() + "");
     rootElement.addContent(persistenceElement);
@@ -50,12 +52,12 @@ public class ModelWriter4 implements IModelWriter {
 
     // languages
     Set<String> writtenAspects = new HashSet<String>();
-    for (ModuleReference languageNamespace : sourceModel.importedLanguages()) {
+    for (ModuleReference languageNamespace : ((jetbrains.mps.smodel.SModel) sourceModel).importedLanguages()) {
       Element languageElem = new Element(ModelPersistence.LANGUAGE);
       languageElem.setAttribute(ModelPersistence.NAMESPACE, languageNamespace.toString());
       rootElement.addContent(languageElem);
     }
-    for (ImportElement aspectElement : sourceModel.getAdditionalModelVersions()) {
+    for (ImportElement aspectElement : ((jetbrains.mps.smodel.SModel) sourceModel).getAdditionalModelVersions()) {
       SModelReference modelReference = aspectElement.getModelReference();
       if (modelReference == null) continue;
       if (!writtenAspects.contains(modelReference.toString())) {
@@ -65,14 +67,14 @@ public class ModelWriter4 implements IModelWriter {
     }
 
     // languages engaged on generation
-    for (ModuleReference languageNamespace : sourceModel.engagedOnGenerationLanguages()) {
+    for (ModuleReference languageNamespace : ((jetbrains.mps.smodel.SModel) sourceModel).engagedOnGenerationLanguages()) {
       Element languageElem = new Element(ModelPersistence.LANGUAGE_ENGAGED_ON_GENERATION);
       languageElem.setAttribute(ModelPersistence.NAMESPACE, languageNamespace.toString());
       rootElement.addContent(languageElem);
     }
 
     //devkits
-    for (ModuleReference devkitNamespace : sourceModel.importedDevkits()) {
+    for (ModuleReference devkitNamespace : ((jetbrains.mps.smodel.SModel) sourceModel).importedDevkits()) {
       Element devkitElem = new Element(ModelPersistence.DEVKIT);
       devkitElem.setAttribute(ModelPersistence.NAMESPACE, devkitNamespace.toString());
       rootElement.addContent(devkitElem);
@@ -80,18 +82,25 @@ public class ModelWriter4 implements IModelWriter {
 
     // imports
     Element maxRefID = new Element(ModelPersistence.MAX_IMPORT_INDEX);
-    maxRefID.setAttribute(ModelPersistence.VALUE, "" + sourceModel.getMaxImportIndex());
     rootElement.addContent(maxRefID);
 
-    for (ImportElement importElement : sourceModel.importedModels()) {
+    int maxImport = 0;
+    for (ImportElement importElement : ((jetbrains.mps.smodel.SModel) sourceModel).importedModels()) {
+      maxImport = Math.max(maxImport, importElement.getReferenceID());
+    }
+
+    for (ImportElement importElement : ((jetbrains.mps.smodel.SModel) sourceModel).importedModels()) {
       Element importElem = new Element(ModelPersistence.IMPORT_ELEMENT);
+      if (importElement.getReferenceID() < 0) {
+        importElement.setReferenceID(++maxImport);
+      }
       importElem.setAttribute(ModelPersistence.MODEL_IMPORT_INDEX, "" + importElement.getReferenceID());
       SModelReference modelReference = importElement.getModelReference();
       importElem.setAttribute(ModelPersistence.MODEL_UID, modelReference.toString());
       importElem.setAttribute(ModelPersistence.VERSION, "" + importElement.getUsedVersion());
 
       int version = -1;
-      SModelDescriptor importedModelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
+      SModel importedModelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
       if (importedModelDescriptor instanceof DefaultSModelDescriptor) {
         version = ((DefaultSModelDescriptor) importedModelDescriptor).getVersion();
       }
@@ -101,9 +110,11 @@ public class ModelWriter4 implements IModelWriter {
       rootElement.addContent(importElem);
     }
 
+    maxRefID.setAttribute(ModelPersistence.VALUE, "" + maxImport);
+
     VisibleModelElements visibleModelElements = new DOMVisibleModelElements(rootElement);
 
-    for (SNode root : sourceModel.roots()) {
+    for (SNode root : sourceModel.getRootNodes()) {
       saveNode(rootElement, root, visibleModelElements);
     }
 

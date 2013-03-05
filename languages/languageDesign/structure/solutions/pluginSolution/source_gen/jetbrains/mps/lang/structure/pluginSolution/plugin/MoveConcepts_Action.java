@@ -16,7 +16,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -25,11 +25,11 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.ide.refactoring.SModelReferenceDialog;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.logging.Logger;
@@ -101,14 +101,14 @@ public class MoveConcepts_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      if (!(this.init(_params))) {
+      if (!(MoveConcepts_Action.this.init(_params))) {
         return;
       }
       final SModelReference targetModel;
       List<SModelReference> myModels;
-      myModels = ListSequence.fromList(((List<SModelDescriptor>) (SModelRepository.getInstance().getModelDescriptors()))).select(new ISelector<SModelDescriptor, SModelReference>() {
-        public SModelReference select(SModelDescriptor it) {
-          return it.getSModelReference();
+      myModels = ListSequence.fromList(((List<SModel>) (SModelRepository.getInstance().getModelDescriptors()))).select(new ISelector<SModel, SModelReference>() {
+        public SModelReference select(SModel it) {
+          return it.getReference();
         }
       }).where(new IWhereFilter<SModelReference>() {
         public boolean accept(SModelReference it) {
@@ -120,13 +120,15 @@ public class MoveConcepts_Action extends BaseAction {
         return;
       }
       ModelAccess.instance().runReadInEDT(new Runnable() {
+        @Override
         public void run() {
           for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("target")))) {
             if (!(((SNode) node).getModel() != null) || jetbrains.mps.util.SNodeOperations.isDisposed(node)) {
               return;
             }
           }
-          if (!(SModelRepository.getInstance().getModelDescriptor(targetModel).isRegistered())) {
+
+          if (targetModel.resolve(MPSModuleRepository.getInstance()) == null) {
             return;
           }
           RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.structure.refactorings.MoveConcepts", Arrays.asList("targetModel"), Arrays.asList(targetModel), ((List<SNode>) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));

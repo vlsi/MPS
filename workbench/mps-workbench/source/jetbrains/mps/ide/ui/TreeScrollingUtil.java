@@ -168,21 +168,25 @@ public class TreeScrollingUtil {
 
   public static void installActions(final JTree tree) {
     tree.getActionMap().put("scrollUpChangeSelection", new AbstractAction() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         movePageUp(tree);
       }
     });
     tree.getActionMap().put("scrollDownChangeSelection", new AbstractAction() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         movePageDown(tree);
       }
     });
     tree.getActionMap().put("selectPrevious", new AbstractAction() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         moveUp(tree);
       }
     });
     tree.getActionMap().put("selectNext", new AbstractAction() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         moveDown(tree);
       }

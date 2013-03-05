@@ -12,7 +12,7 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 import java.awt.Dimension;
 import org.jetbrains.annotations.NonNls;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class MoveNodeDialog extends ModelOrNodeChooserDialog {
   private SNode myNodeToMove;
@@ -26,6 +26,7 @@ public class MoveNodeDialog extends ModelOrNodeChooserDialog {
     setTitle(REFACTORING_NAME + " " + "node");
   }
 
+  @Override
   protected void doRefactoringAction() {
     final Object selectedObject = myChooser.getSelectedObject();
     if (!(selectedObject instanceof SNode)) {
@@ -51,6 +52,7 @@ public class MoveNodeDialog extends ModelOrNodeChooserDialog {
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -90,9 +92,9 @@ public class MoveNodeDialog extends ModelOrNodeChooserDialog {
       super(errorMessage);
     }
 
-    public abstract boolean check(SNode selectedObject, SNode nodeToMove, SModelDescriptor modelOfSelectedNode);
+    public abstract boolean check(SNode selectedObject, SNode nodeToMove, SModel modelOfSelectedNode);
 
-    private boolean checkForObject(SNode selectedObject, SNode nodeToMove, SModelDescriptor modelOfSelectedNode, JComponent component) {
+    private boolean checkForObject(SNode selectedObject, SNode nodeToMove, SModel modelOfSelectedNode, JComponent component) {
       if (!(check(selectedObject, nodeToMove, modelOfSelectedNode))) {
         showError("Nodes can't be moved", component);
         return false;

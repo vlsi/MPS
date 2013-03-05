@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -32,7 +32,7 @@ public class ModuleSuite_Behavior {
     return module.getScope();
   }
 
-  public static Iterable<SModelDescriptor> call_models_1280144168199531863(SNode thisNode) {
+  public static Iterable<SModel> call_models_1280144168199531863(SNode thisNode) {
     ModuleReference moduleReference = BehaviorReflection.invokeVirtual(ModuleReference.class, SLinkOperations.getTarget(thisNode, "moduleRef", true), "virtual_moduleReference_1280144168199513544", new Object[]{});
     if (moduleReference == null) {
       return null;

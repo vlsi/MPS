@@ -68,6 +68,7 @@ public class LanguageRegistry implements CoreComponent {
   @Override
   public void dispose() {
     ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
       public void run() {
         notifyUnload(myLanguages.values(), true);
         myLanguageToNamespace.clear();
@@ -82,6 +83,7 @@ public class LanguageRegistry implements CoreComponent {
     if (myLanguages != null) return;
 
     ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
       public void run() {
         myLanguageToNamespace = new HashMap<Language, String>();
         myLanguages = new HashMap<String, LanguageRuntime>();
@@ -188,6 +190,7 @@ public class LanguageRegistry implements CoreComponent {
   }
 
   private class MyModuleRepositoryAdapter extends SRepositoryListenerAdapter {
+    @Override
     public void moduleAdded(SModule module) {
       if (!(module instanceof Language)) return;
 

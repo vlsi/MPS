@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-7wcaayz4v3c9fhpozv0iqcpzvy1nnw3">
+<dependencies version="2" modelHash="-27gidzbao9pdlv8o18hndtj5jswkcca">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.image(JDK/java.awt.image@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -8,9 +8,9 @@
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.text(JDK/javax.swing.text@java_stub)" />
   <dep model="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.common(MPS.Workbench/jetbrains.mps.ide.common@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3l4d6vah7bipcwb415vkx7fy07t8dxg" />
-  <common hash="-5bd39zdq73dulvntsf9u8rgd76lyebf" />
-  <source id="8247677264794236929" name="ExecutableParametersEditor" hash="5oyw3ui9cg1mobz92ze7tj9icn3dw3f">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
+  <common hash="-4un41xpl9qhtyqq2acgurl1qj8kz5gv" />
+  <source id="8247677264794236929" name="ExecutableParametersEditor" hash="-2mph7tdctz866vurj6tlkk9nqqqxg26">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.image(JDK/java.awt.image@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -22,12 +22,12 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ExecutableParametersEditor.java" />
   </source>
-  <source id="8247677264794237122" name="NanocConfigRunPreparationUtil" hash="-3kjmc7gx5nv0vqv56uivqozwss9n0q4">
+  <source id="8247677264794237122" name="NanocConfigRunPreparationUtil" hash="-5ap2mx6thpltlxe982v5dy3f3fucdjo">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="NanocConfigRunPreparationUtil.java" />
   </source>
-  <source id="8247677264794237383" name="ProgramsLocationEditor" hash="-709is6j7bix35cswt5euxvol6nkc9c6">
+  <source id="8247677264794237383" name="ProgramsLocationEditor" hash="5ty93u5ucmx16pmf4a6pmijsiy0lk9m">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.image(JDK/java.awt.image@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />

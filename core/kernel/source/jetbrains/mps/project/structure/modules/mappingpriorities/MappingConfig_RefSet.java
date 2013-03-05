@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.project.structure.modules.mappingpriorities;
 
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -35,6 +35,7 @@ public class MappingConfig_RefSet extends MappingConfig_AbstractRef {
     return myRefs;
   }
 
+  @Override
   public MappingConfig_RefSet getCopy() {
     MappingConfig_RefSet result = new MappingConfig_RefSet();
     for (MappingConfig_AbstractRef ref : myRefs) {

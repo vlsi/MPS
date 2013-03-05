@@ -24,6 +24,7 @@ public class ConstantFinder implements IFinder {
   public ConstantFinder() {
   }
 
+  @Override
   public SearchResults<SNode> find(SearchQuery query, ProgressMonitor monitor) {
     return myResults;
   }
@@ -46,6 +47,7 @@ public class ConstantFinder implements IFinder {
 
     public ConstantHolder(final Collection<SNode> nodes, final String categoryName) {
       ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
         public void run() {
           for (SNode node : nodes) {
             myData.getSearchResults().add(new SearchResult<SNode>(node, categoryName));
@@ -54,11 +56,13 @@ public class ConstantFinder implements IFinder {
       });
     }
 
+    @Override
     public SearchResults<SNode> getObject() {
       return myData;
     }
 
     @NotNull
+    @Override
     public String getCaption() {
       return myCaption;
     }
@@ -67,10 +71,12 @@ public class ConstantFinder implements IFinder {
       return myIcon;
     }
 
+    @Override
     public void read(Element element, Project project) throws CantLoadSomethingException {
       throw new CantLoadSomethingException("do not call read on ConstantHolder!!!");
     }
 
+    @Override
     public void write(Element element, Project project) throws CantSaveSomethingException {
       throw new CantSaveSomethingException("do not call write on ConstantHolder!!!");
     }

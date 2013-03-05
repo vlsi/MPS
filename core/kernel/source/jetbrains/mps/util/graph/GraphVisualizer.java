@@ -23,6 +23,7 @@ import java.awt.Graphics;
 public class GraphVisualizer implements IGraphVisualizer {
   public static final int VERTEX_RADIUS = 8;
 
+  @Override
   public void paint(IGraph graph, Graphics g) {
     g.setColor(Color.black);
 

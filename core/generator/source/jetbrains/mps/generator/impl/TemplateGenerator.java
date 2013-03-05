@@ -48,7 +48,7 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.StaticReference;
@@ -133,7 +133,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
     // publish roots
     for (SNode outputRoot : myOutputRoots) {
-      myOutputModel.addRoot(outputRoot);
+      myOutputModel.addRootNode(outputRoot);
     }
 
     // reload "required" roots from cache
@@ -188,7 +188,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     // root mapping rules
     ttrace.push("root mappings", false);
     ArrayList<SNode> rootsToCopy = new ArrayList<SNode>();
-    for (SNode root : myInputModel.roots()) {
+    for (SNode root : myInputModel.getRootNodes()) {
       rootsToCopy.add(root);
     }
     for (TemplateRootMappingRule rule : myRuleManager.getRoot_MappingRules()) {
@@ -233,7 +233,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       return;
     }
     boolean includeInheritors = rule.applyToInheritors();
-    Iterable<SNode> inputNodes = myInputModel.getFastNodeFinder().getNodes(applicableConcept, includeInheritors);
+    Iterable<SNode> inputNodes = ((jetbrains.mps.smodel.SModel) myInputModel).getFastNodeFinder().getNodes(applicableConcept, includeInheritors);
     for (SNode inputNode : inputNodes) {
       // do not apply root mapping if root node has been copied from input model on previous micro-step
       // because some roots can be already mapped and copied as well (if some rule has 'keep root' = true)
@@ -377,6 +377,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return false;
   }
 
+  @Override
   public boolean isDirty(SNode node) {
     RootDependenciesBuilder builder = myDependenciesBuilder.getRootBuilder(node);
     if (builder != null && builder.isUnchanged()) {
@@ -552,12 +553,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         boolean external = true;
         if (inputReference instanceof PostponedReference){
           external = false;
-        } else if (inputNode.getModel().getSModelReference().equals(inputReference.getTargetSModelReference())){
+        } else if (inputNode.getModel().getReference().equals(inputReference.getTargetSModelReference())){
           external = false;
         }
         if (inputReference instanceof DynamicReference || external) {
           // dynamic & external references don't need validation => replace input model with output
-          SModelReference targetModelReference = external ? inputReference.getTargetSModelReference() : myOutputModel.getSModelReference();
+          SModelReference targetModelReference = external ? inputReference.getTargetSModelReference() : myOutputModel.getReference();
           if (inputReference instanceof StaticReference) {
             if (targetModelReference == null) {
               myLogger.error(inputNode, "broken reference '" + inputReference.getRole() + "' in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(inputNode) + " (target model is null)",
@@ -645,7 +646,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   private void revalidateAllReferences() throws GenerationCanceledException {
     // replace all postponed references
-    for (SNode root : myOutputModel.roots()) {
+    for (SNode root : myOutputModel.getRootNodes()) {
       checkMonitorCanceled();
       revalidateAllReferences(root);
     }
@@ -658,7 +659,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
 
     for (org.jetbrains.mps.openapi.model.SNode child : jetbrains.mps.util.SNodeOperations.getChildren(node)) {
-      revalidateAllReferences(((SNode) child));
+      revalidateAllReferences(child);
     }
   }
 
@@ -702,10 +703,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return myIsStrict ? myAreMappingsReady : true;
   }
 
+  @Override
   public GenerationSessionContext getGeneratorSessionContext() {
     return (GenerationSessionContext) getOperationContext();
   }
 
+  @Override
   public boolean isStrict() {
     return myIsStrict;
   }
@@ -714,23 +717,17 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myChanged = true;
   }
 
-  private void registerRoot(@NotNull SNode outputRoot, SNode inputNode, SNodeReference templateNode, boolean isCopied) {
-    synchronized (this) {
-      registerInModel(outputRoot, inputNode, templateNode);
-      myNewToOldRoot.put(outputRoot, inputNode);
-      myDependenciesBuilder.registerRoot(outputRoot, inputNode);
-      if (isCopied) {
-        getGeneratorSessionContext().registerCopiedRoot(outputRoot);
-      }
+  protected void registerRoot(@NotNull SNode outputRoot, SNode inputNode, SNodeReference templateNode, boolean isCopied) {
+    myOutputRoots.add(outputRoot);
+    myNewToOldRoot.put(outputRoot, inputNode);
+    myDependenciesBuilder.registerRoot(outputRoot, inputNode);
+    if (isCopied) {
+      getGeneratorSessionContext().registerCopiedRoot(outputRoot);
     }
   }
 
   void rootReplaced(SNode old, SNode new_) {
     myDependenciesBuilder.rootReplaced(old, new_);
-  }
-
-  protected void registerInModel(SNode outputRoot, SNode inputNode, SNodeReference templateNode) {
-    myOutputRoots.add(outputRoot);
   }
 
   public SNode getOriginalRootByGenerated(SNode root) {

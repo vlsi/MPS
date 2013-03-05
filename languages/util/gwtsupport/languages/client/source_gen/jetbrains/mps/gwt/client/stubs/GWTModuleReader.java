@@ -19,6 +19,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.DynamicReference;
+import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.SNodeId;
 
 public class GWTModuleReader {
@@ -148,7 +149,7 @@ public class GWTModuleReader {
 
   private void addGWTModuleReference(SNode link, SNode src, final String fqName) {
     SModelReference trgsmref = this.gwtstubResolver.stubModelReference(namespace(fqName));
-    if (SNodeOperations.getModel(src).getSModelReference().equals(trgsmref)) {
+    if (SNodeOperations.getModel(src).getReference().equals(trgsmref)) {
       SNode trg = ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(src), "jetbrains.mps.gwt.client.structure.GWTModule")).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode gwtmod) {
           return SPropertyOperations.getString(gwtmod, "name").equals(shortName(fqName));
@@ -164,7 +165,7 @@ public class GWTModuleReader {
 
   private void addClassifierReference(SNode link, SNode src, String fqClassName) {
     SModelReference trgsmref = this.javastubResolver.stubModelReference(namespace(fqClassName));
-    SNodeOperations.getModel(src).addModelImport(trgsmref, false);
+    ((SModelInternal) SNodeOperations.getModel(src)).addModelImport(trgsmref, false);
     src.setReference(SReference.create(SPropertyOperations.getString(link, "role"), src, trgsmref, createId(fqClassName)).getRole(), SReference.create(SPropertyOperations.getString(link, "role"), src, trgsmref, createId(fqClassName)));
   }
 

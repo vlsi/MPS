@@ -60,7 +60,6 @@ public class ProjectPropertiesComponent extends JBPanel implements Modifiable {
 
 
   private Object getGridConstraints(int row, boolean fill) {
-    // TODO: resolve problem with com.intellij.uiDesigner.core.GridLayoutManager & com.intellij.uiDesigner.core.GridConstraints in stubs 
     if (fill) {
       return new GridConstraints(row, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, null, null, null);
     }
@@ -75,24 +74,30 @@ public class ProjectPropertiesComponent extends JBPanel implements Modifiable {
 
     ToolbarDecorator decorator = ToolbarDecorator.createDecorator(list);
     decorator.setAddAction(new AnActionButtonRunnable() {
+      @Override
       public void run(AnActionButton button) {
         Path path = new ModulePathChooser(new IBindedDialog() {
+          @Override
           public JComponent getMainComponent() {
             return null;
           }
 
+          @Override
           public IOperationContext getOperationContext() {
             return null;
           }
 
+          @Override
           public IScope getModuleScope() {
             return null;
           }
 
+          @Override
           public IScope getProjectScope() {
             return null;
           }
 
+          @Override
           public void addBinding(AutoBinding p0) {
           }
         }).compute();
@@ -107,6 +112,7 @@ public class ProjectPropertiesComponent extends JBPanel implements Modifiable {
         }
       }
     }).setRemoveAction(new AnActionButtonRunnable() {
+      @Override
       public void run(AnActionButton button) {
         ((ProjectPropertiesComponent.PathsListModel) list.getModel()).removePath(list.getSelectedValue());
       }
@@ -126,6 +132,7 @@ public class ProjectPropertiesComponent extends JBPanel implements Modifiable {
 
     ToolbarDecorator decorator = ToolbarDecorator.createDecorator(list);
     decorator.setAddAction(new AnActionButtonRunnable() {
+      @Override
       public void run(AnActionButton button) {
         TestConfigurationDialog dialog = new TestConfigurationDialog(myProject, null);
         dialog.show();
@@ -137,10 +144,12 @@ public class ProjectPropertiesComponent extends JBPanel implements Modifiable {
         ((ProjectPropertiesComponent.TestConfigListModel) list.getModel()).addTestConfig(config);
       }
     }).setRemoveAction(new AnActionButtonRunnable() {
+      @Override
       public void run(AnActionButton button) {
         ((ProjectPropertiesComponent.TestConfigListModel) list.getModel()).removeTestConfig(list.getSelectedValue());
       }
     }).disableUpAction().disableDownAction().setEditAction(new AnActionButtonRunnable() {
+      @Override
       public void run(AnActionButton button) {
         Object value = list.getSelectedValue();
         if (value == null) {
@@ -194,6 +203,7 @@ public class ProjectPropertiesComponent extends JBPanel implements Modifiable {
   @Override
   public void apply() {
     ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
       public void run() {
         myProperties.saveTo(myProject);
       }
@@ -223,10 +233,12 @@ public class ProjectPropertiesComponent extends JBPanel implements Modifiable {
 
 
 
+    @Override
     public int getSize() {
       return myProperties.getModules().size();
     }
 
+    @Override
     public Object getElementAt(int i) {
       return myProperties.getModules().get(i);
     }
@@ -256,10 +268,12 @@ public class ProjectPropertiesComponent extends JBPanel implements Modifiable {
 
 
 
+    @Override
     public int getSize() {
       return myProperties.getTestConfigurations().size();
     }
 
+    @Override
     public Object getElementAt(int i) {
       return myProperties.getTestConfigurations().get(i);
     }

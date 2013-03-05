@@ -20,7 +20,7 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.smodel.UndoHandler;
 import jetbrains.mps.util.Computable;
@@ -36,12 +36,14 @@ public class WorkbenchUndoHandler implements UndoHandler {
   private boolean ourUndoBlocked = false;
   private List<SNodeUndoableAction> myActions = new LinkedList<SNodeUndoableAction>();
 
+  @Override
   public void addUndoableAction(SNodeUndoableAction action) {
     if (!ModelAccess.instance().isInsideCommand()) return;
 
     myActions.add(action);
   }
 
+  @Override
   public <T> T runNonUndoableAction(Computable<T> t) {
     if (!ThreadUtils.isEventDispatchThread() || ourUndoBlocked) return t.compute();
 
@@ -53,14 +55,17 @@ public class WorkbenchUndoHandler implements UndoHandler {
     }
   }
 
+  @Override
   public boolean needRegisterUndo(@NotNull SModel model) {
     return isInsideUndoableCommand();
   }
 
+  @Override
   public boolean isInsideUndoableCommand() {
     return ModelAccess.instance().isInsideCommand() && !ourUndoBlocked && ThreadUtils.isEventDispatchThread();
   }
 
+  @Override
   public void flushCommand(Project project) {
     if (project == null || myActions.isEmpty()) {
       myActions.clear();

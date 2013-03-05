@@ -35,6 +35,7 @@ public abstract class AbstractErrorReporter implements IErrorReporter {
     myRuleModel = model;
   }
 
+  @Override
   public void setIntentionProvider(QuickFixProvider intentionProvider) {
     addIntentionProvider(intentionProvider);
   }
@@ -48,6 +49,7 @@ public abstract class AbstractErrorReporter implements IErrorReporter {
     myIntentionProviders.add(intentionProvider);
   }
 
+  @Override
   public QuickFixProvider getIntentionProvider() {
     if (myIntentionProviders == null) return null;
     if (myIntentionProviders.isEmpty()) return null;
@@ -63,6 +65,7 @@ public abstract class AbstractErrorReporter implements IErrorReporter {
     return result;
   }
 
+  @Override
   public void addAdditionalRuleId(String ruleModel, String ruleId) {
     Pair<String, String> pair = new Pair<String, String>(ruleModel, ruleId);
     if (myAdditionalRuleIds == null) {
@@ -71,17 +74,20 @@ public abstract class AbstractErrorReporter implements IErrorReporter {
     myAdditionalRuleIds.add(pair);
   }
 
+  @Override
   public List<Pair<String, String>> getAdditionalRulesIds() {
     if (myAdditionalRuleIds == null) return new ArrayList<Pair<String, String>>(0);
     return new ArrayList<Pair<String, String>>(myAdditionalRuleIds);
   }
 
+  @Override
   public List<Pair<String, String>> getAdditionalRulesIdsInReverseOrder() {
     ArrayList<Pair<String, String>> result = new ArrayList<Pair<String, String>>(myAdditionalRuleIds);
     Collections.reverse(result);
     return result;
   }
 
+  @Override
   public void setAdditionalRulesIds(List<Pair<String, String>> ids) {
     if (ids != null && !ids.isEmpty()) {
       myAdditionalRuleIds = new ArrayList<Pair<String, String>>(ids);
@@ -91,10 +97,12 @@ public abstract class AbstractErrorReporter implements IErrorReporter {
   }
 
 
+  @Override
   public String getRuleId() {
     return myRuleId;
   }
 
+  @Override
   public String getRuleModel() {
     return myRuleModel;
   }

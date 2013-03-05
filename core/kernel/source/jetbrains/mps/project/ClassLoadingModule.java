@@ -19,6 +19,9 @@ import gnu.trove.THashSet;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
+import jetbrains.mps.project.facets.JavaModuleFacet;
+import jetbrains.mps.project.facets.JavaModuleOperations;
+import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.runtime.IClassLoadingModule;
 import jetbrains.mps.runtime.ModuleClassLoader;
 import jetbrains.mps.util.InternUtil;
@@ -30,8 +33,7 @@ import java.util.Set;
 public abstract class ClassLoadingModule extends AbstractModule implements IClassLoadingModule {
   private static Logger LOG = Logger.getLogger(ClassLoadingModule.class);
 
-  private static final Object LOADING_LOCK = new Object();
-  private ModuleClassLoader myClassLoader = null;
+  private volatile ModuleClassLoader myClassLoader = null;
   private Set<IClassLoadingModule> myClassLoadingDepsCache = null;
   private final Object LOCK = new Object();
 
@@ -42,15 +44,14 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
     super(myDescriptorFile);
   }
 
+  @Override
   public Class getClass(String fqName) {
     if (myClassLoader == null) return null;
 
     try {
       fqName = InternUtil.intern(fqName);
       try {
-        synchronized (LOADING_LOCK) {
-          return myClassLoader.loadClass(fqName);
-        }
+        return myClassLoader.loadClass(fqName);
       } catch (ClassNotFoundException e) {
         return null;
       }
@@ -68,6 +69,7 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
     }
   }
 
+  @Override
   public String getPluginPath() {
     IFile bundleHome = getBundleHome();
     if (bundleHome == null) return null;
@@ -82,26 +84,32 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
   }
 
   //can be used only from ModuleClassLoader
+  @Override
   public ModuleClassLoader getClassLoader() {
     return myClassLoader;
   }
 
+  @Override
   public boolean canFindClass(String name) {
-    return getClassPathItem().hasClass(name);
+    return createClassPathItem().hasClass(name);
   }
 
+  @Override
   public byte[] findClassBytes(String name) {
-    return getClassPathItem().getClass(name);
+    return createClassPathItem().getClass(name);
   }
 
+  @Override
   public URL findResource(String name) {
-    return getClassPathItem().getResource(name);
+    return createClassPathItem().getResource(name);
   }
 
+  @Override
   public String findLibrary(String name) {
     return null;
   }
 
+  @Override
   public Iterable<IClassLoadingModule> getClassLoadingDependencies() {
     synchronized (LOCK) {
       if (myClassLoadingDepsCache == null) {
@@ -116,15 +124,17 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
     }
   }
 
+  private IClassPathItem createClassPathItem() {
+    return JavaModuleOperations.createClassPathItem(getFacet(JavaModuleFacet.class).getClassPath(), ClassLoadingModule.class.getName());
+  }
+
+  @Override
   public boolean canLoadFromSelf() {
     return true;
   }
 
+  @Override
   public boolean canLoad() {
-    return true;
-  }
-
-  public boolean reloadClassesAfterGeneration() {
     return true;
   }
 }

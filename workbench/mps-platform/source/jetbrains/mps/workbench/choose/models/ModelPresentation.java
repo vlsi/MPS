@@ -17,7 +17,7 @@ package jetbrains.mps.workbench.choose.models;
 
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.workbench.choose.base.BasePresentation;
@@ -32,27 +32,30 @@ public class ModelPresentation extends BasePresentation {
     myModelReference = modelReference;
   }
 
+  @Override
   @NotNull
   public String doGetPresentableText() {
     return myModelReference.getSModelFqName().toString();
   }
 
+  @Override
   public String doGetLocationString() {
     return "(" + getModuleUID() + ")";
   }
 
+  @Override
   public Icon doGetIcon() {
     return IconManager.getIconFor(getModelDescriptor());
   }
 
   private String getModuleUID() {
-    SModelDescriptor descriptor = getModelDescriptor();
+    SModel descriptor = getModelDescriptor();
     IModule module;
     if (descriptor == null || (module = descriptor.getModule()) == null) return "no module";
     return module.getModuleFqName();
   }
 
-  private SModelDescriptor getModelDescriptor() {
+  private SModel getModelDescriptor() {
     if (SModelRepository.getInstance() == null) return null;
     return SModelRepository.getInstance().getModelDescriptor(myModelReference);
   }

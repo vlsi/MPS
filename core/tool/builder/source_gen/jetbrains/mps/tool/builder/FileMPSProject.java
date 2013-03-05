@@ -48,6 +48,7 @@ public class FileMPSProject extends Project {
     setProjectFile(file);
   }
 
+  @Override
   public String getName() {
     return getProjectFile().getName();
   }
@@ -63,6 +64,7 @@ public class FileMPSProject extends Project {
   }
 
   @Deprecated
+  @Override
   public <T> T getComponent(Class<T> cls) {
     return null;
   }
@@ -71,6 +73,7 @@ public class FileMPSProject extends Project {
   public void dispose() {
     super.dispose();
     ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
       public void run() {
         ClassLoaderManager.getInstance().unloadAll(new EmptyProgressMonitor());
         ModuleRepositoryFacade.getInstance().unregisterModules(FileMPSProject.this);
@@ -127,6 +130,7 @@ public class FileMPSProject extends Project {
     }
     assert !(isDisposed());
     ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
       public void run() {
         readModules(myDescriptor);
         //  TODO FIXME get rid of onModuleLoad 
@@ -141,6 +145,7 @@ public class FileMPSProject extends Project {
     return myDescriptor;
   }
 
+  @Override
   public List<String> getWatchedModulesPaths() {
     return Collections.emptyList();
   }

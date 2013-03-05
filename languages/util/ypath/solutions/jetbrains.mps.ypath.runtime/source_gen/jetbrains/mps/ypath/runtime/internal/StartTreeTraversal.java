@@ -22,10 +22,12 @@ public class StartTreeTraversal<T> extends AbstractTreeTraversal<T> implements I
     this.startingIterable = startingIterable;
   }
 
+  @Override
   public ITreePath<T> getTreePath() {
     return treePath;
   }
 
+  @Override
   public Iterator<T> iterator() {
     if (startingIterable != null) {
       return startingIterable.iterator();

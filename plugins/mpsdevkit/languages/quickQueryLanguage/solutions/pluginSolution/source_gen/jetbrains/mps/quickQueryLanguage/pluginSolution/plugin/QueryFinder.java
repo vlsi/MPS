@@ -21,6 +21,7 @@ public class QueryFinder implements IFinder {
     this.myQuery = query;
   }
 
+  @Override
   public SearchResults find(SearchQuery searchQuery, ProgressMonitor monitor) {
     Object queryObject = searchQuery.getObjectHolder().getObject();
     assert queryObject instanceof SNode;

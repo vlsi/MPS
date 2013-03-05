@@ -16,7 +16,7 @@
 package jetbrains.mps.ide.ui.dialogs.properties.tables.models;
 
 import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItem;
-import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItemRole;
+import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItem.ModuleType;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
@@ -25,10 +25,13 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.util.misc.hash.HashSet;
+import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.module.SDependencyScope;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class ModuleDependTableModel extends DependTableModel<ModuleDescriptor> {
@@ -40,17 +43,29 @@ public class ModuleDependTableModel extends DependTableModel<ModuleDescriptor> {
   @Override
   public void init() {
     if(!(myItem instanceof DevkitDescriptor)) {
-      for(Dependency dependency : myItem.getDependencies()) {
-        DependenciesTableItem<ModuleReference> item = new DependenciesTableItem<ModuleReference>(dependency.getModuleRef(), DependenciesTableItemRole.DEPEND, dependency.isReexport());
-        myTableItems.add(item);
-      }
+      ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
+        public void run() {
+          for(Dependency dependency : myItem.getDependencies()) {
+            ModuleReference moduleReference = dependency.getModuleRef();
+            DependenciesTableItem<ModuleReference> item = null;
+            if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleFqName()) instanceof Language)
+              item = new DependenciesTableItem<ModuleReference>(dependency.getModuleRef(), SDependencyScope.DEFAULT, dependency.isReexport()).setModuleType(ModuleType.LANGUAGE);
+            else if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleFqName()) instanceof Generator)
+              item = new DependenciesTableItem<ModuleReference>(dependency.getModuleRef(), SDependencyScope.DEFAULT, dependency.isReexport()).setModuleType(ModuleType.GENERATOR);
+            else
+              item = new DependenciesTableItem<ModuleReference>(dependency.getModuleRef(), SDependencyScope.DEFAULT, dependency.isReexport());
+            myTableItems.add(item);
+          }
+        }
+      });
     }
 
     if(myItem instanceof LanguageDescriptor) {
       LanguageDescriptor languageDescriptor = (LanguageDescriptor) myItem;
 
       for(ModuleReference moduleReference : languageDescriptor.getExtendedLanguages()) {
-        myTableItems.add(new DependenciesTableItem<ModuleReference>(moduleReference, DependenciesTableItemRole.EXTEND));
+        myTableItems.add(new DependenciesTableItem<ModuleReference>(moduleReference, SDependencyScope.EXTENDS).setModuleType(ModuleType.LANGUAGE));
       }
     }
     else if(myItem instanceof SolutionDescriptor) {
@@ -59,22 +74,22 @@ public class ModuleDependTableModel extends DependTableModel<ModuleDescriptor> {
       GeneratorDescriptor generatorDescriptor = (GeneratorDescriptor) myItem;
 
       for(ModuleReference moduleReference : generatorDescriptor.getDepGenerators()) {
-        myTableItems.add(new DependenciesTableItem<ModuleReference>(moduleReference, DependenciesTableItemRole.EXTEND));
+        myTableItems.add(new DependenciesTableItem<ModuleReference>(moduleReference, SDependencyScope.EXTENDS).setModuleType(ModuleType.GENERATOR));
       }
     }
     else if(myItem instanceof DevkitDescriptor) {
       DevkitDescriptor devkitDescriptor = (DevkitDescriptor) myItem;
 
       for(ModuleReference moduleReference : devkitDescriptor.getExtendedDevkits()) {
-        myTableItems.add(new DependenciesTableItem<ModuleReference>(moduleReference, DependenciesTableItemRole.EXTEND));
+        myTableItems.add(new DependenciesTableItem<ModuleReference>(moduleReference, SDependencyScope.EXTENDS).setModuleType(ModuleType.DEVKIT));
       }
 
       for(ModuleReference moduleReference : devkitDescriptor.getExportedLanguages()) {
-        myTableItems.add(new DependenciesTableItem<ModuleReference>(moduleReference, DependenciesTableItemRole.EXPORT));
+        myTableItems.add(new DependenciesTableItem<ModuleReference>(moduleReference, SDependencyScope.EXTENDS).setModuleType(ModuleType.LANGUAGE));
       }
 
       for(ModuleReference moduleReference : devkitDescriptor.getExportedSolutions()) {
-        myTableItems.add(new DependenciesTableItem<ModuleReference>(moduleReference, DependenciesTableItemRole.EXPORT));
+        myTableItems.add(new DependenciesTableItem<ModuleReference>(moduleReference, SDependencyScope.EXTENDS).setModuleType(ModuleType.SOLUTION));
       }
     }
   }
@@ -99,9 +114,9 @@ public class ModuleDependTableModel extends DependTableModel<ModuleDescriptor> {
     else if(myItem instanceof DevkitDescriptor) {
       DevkitDescriptor devkitDescriptor = (DevkitDescriptor) myItem;
 
-      equals = equals && devkitDescriptor.getExtendedDevkits().containsAll(getExtendedModules()) && getExtendedModules().containsAll(devkitDescriptor.getExtendedDevkits());
-      equals = equals && devkitDescriptor.getExportedLanguages().containsAll(getExportedModules(Language.class)) && getExportedModules(Language.class).containsAll(devkitDescriptor.getExportedLanguages());
-      equals = equals && devkitDescriptor.getExportedSolutions().containsAll(getExportedModules(Solution.class)) && getExportedModules(Solution.class).containsAll(devkitDescriptor.getExportedSolutions());
+      equals = equals && devkitDescriptor.getExtendedDevkits().containsAll(getModulesByType(ModuleType.DEVKIT)) && getModulesByType(ModuleType.DEVKIT).containsAll(devkitDescriptor.getExtendedDevkits());
+      equals = equals && devkitDescriptor.getExportedLanguages().containsAll(getModulesByType(ModuleType.LANGUAGE)) && getModulesByType(ModuleType.LANGUAGE).containsAll(devkitDescriptor.getExportedLanguages());
+      equals = equals && devkitDescriptor.getExportedSolutions().containsAll(getModulesByType(ModuleType.SOLUTION)) && getModulesByType(ModuleType.SOLUTION).containsAll(devkitDescriptor.getExportedSolutions());
     }
 
     return !equals;
@@ -118,7 +133,6 @@ public class ModuleDependTableModel extends DependTableModel<ModuleDescriptor> {
     if(myItem instanceof LanguageDescriptor) {
       LanguageDescriptor languageDescriptor = (LanguageDescriptor) myItem;
 
-
       languageDescriptor.getExtendedLanguages().clear();
       languageDescriptor.getExtendedLanguages().addAll(getExtendedModules());
     }
@@ -134,20 +148,20 @@ public class ModuleDependTableModel extends DependTableModel<ModuleDescriptor> {
       DevkitDescriptor devkitDescriptor = (DevkitDescriptor) myItem;
 
       devkitDescriptor.getExtendedDevkits().clear();
-      devkitDescriptor.getExtendedDevkits().addAll(getExtendedModules());
+      devkitDescriptor.getExtendedDevkits().addAll(getModulesByType(ModuleType.DEVKIT));
 
       devkitDescriptor.getExportedLanguages().clear();
-      devkitDescriptor.getExportedLanguages().addAll(getExportedModules(Language.class));
+      devkitDescriptor.getExportedLanguages().addAll(getModulesByType(ModuleType.LANGUAGE));
 
       devkitDescriptor.getExportedSolutions().clear();
-      devkitDescriptor.getExportedSolutions().addAll(getExportedModules(Solution.class));
+      devkitDescriptor.getExportedSolutions().addAll(getModulesByType(ModuleType.SOLUTION));
     }
   }
 
   private Set<Dependency> getDependencies() {
     Set<Dependency> dependencies = new HashSet<Dependency>();
     for(DependenciesTableItem<?> tableItem : myTableItems)
-      if(tableItem.getItem() instanceof ModuleReference && tableItem.getRole() == DependenciesTableItemRole.DEPEND)
+      if(tableItem.getItem() instanceof ModuleReference && tableItem.getRole() == SDependencyScope.DEFAULT)
         dependencies.add(new Dependency((ModuleReference)tableItem.getItem(), tableItem.isReExport()) );
 
     return dependencies;
@@ -156,19 +170,17 @@ public class ModuleDependTableModel extends DependTableModel<ModuleDescriptor> {
   private Set<ModuleReference> getExtendedModules() {
     Set<ModuleReference> set = new HashSet<ModuleReference>();
     for(DependenciesTableItem<?> tableItem : myTableItems)
-      if(tableItem.getItem() instanceof ModuleReference && tableItem.getRole() == DependenciesTableItemRole.EXTEND)
+      if(tableItem.getItem() instanceof ModuleReference && tableItem.getRole() == SDependencyScope.EXTENDS)
         set.add((ModuleReference) tableItem.getItem());
 
     return set;
   }
 
-  private Set<ModuleReference> getExportedModules(Class klass) {
+  private Set<ModuleReference> getModulesByType(ModuleType type) {
     Set<ModuleReference> set = new HashSet<ModuleReference>();
     for(DependenciesTableItem<?> tableItem : myTableItems)
-      if(tableItem.getItem() instanceof ModuleReference && tableItem.getRole() == DependenciesTableItemRole.EXPORT
-        && MPSModuleRepository.getInstance().getModuleById(((ModuleReference) tableItem.getItem()).getModuleId()).getClass().equals(klass))
+      if(tableItem.getItem() instanceof ModuleReference && tableItem.getModuleType().equals(type))
         set.add((ModuleReference)tableItem.getItem());
-
 
     return set;
   }
@@ -195,5 +207,12 @@ public class ModuleDependTableModel extends DependTableModel<ModuleDescriptor> {
   public int getExportColumnIndex() {
     if(myItem instanceof DevkitDescriptor) return -1;
     return super.getExportColumnIndex();
+  }
+
+  @Override
+  public boolean isCellEditable(int rowIndex, int columnIndex) {
+    if(columnIndex == getRoleColumnIndex())
+      return true;
+    return super.isCellEditable(rowIndex, columnIndex);
   }
 }

@@ -37,23 +37,28 @@ import javax.swing.Icon;
  * evgeny, 12/25/11
  */
 public class NodeFileIconProvider implements FileIconProvider, ApplicationComponent {
+  @Override
   @NonNls
   @NotNull
   public String getComponentName() {
     return "MPS Node File Icon Provider";
   }
 
+  @Override
   public void initComponent() {
   }
 
+  @Override
   public void disposeComponent() {
   }
 
+  @Override
   @Nullable
   public Icon getIcon(final VirtualFile file, int flags, final Project project) {
     if (file instanceof MPSNodeVirtualFile) {
       final MPSNodeVirtualFile nodeFile = (MPSNodeVirtualFile) file;
       return ModelAccess.instance().runReadAction(new Computable<Icon>() {
+        @Override
         public Icon compute() {
           if (IconDeferrer.getInstance() instanceof DefaultIconDeferrer) {
             SNode node = MPSEditorUtil.getCurrentEditedNode(project, nodeFile);

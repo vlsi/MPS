@@ -75,6 +75,7 @@ public class PullUpMethod_Constraints extends BaseConstraintsDescriptor {
                 }
               })) {
                 @Nullable
+                @Override
                 public String getReferenceText(@NotNull SNode target) {
                   return target.getName();
                 }

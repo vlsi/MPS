@@ -15,10 +15,12 @@ import java.util.Collection;
     myComparator = comparator;
   }
 
+  @Override
   public int size() {
     return myList.size();
   }
 
+  @Override
   public T get(int index) {
     return myList.get(index);
   }
@@ -66,10 +68,12 @@ import java.util.Collection;
     return myList.remove(index);
   }
 
+  @Override
   public void add(int index, T element) {
     add(element);
   }
 
+  @Override
   public boolean add(T o) {
     int index = myList.size();
     for (int i = 0; i < myList.size(); i++) {
@@ -87,6 +91,7 @@ import java.util.Collection;
     return true;
   }
 
+  @Override
   public boolean addAll(Collection<? extends T> c) {
     for (T element : c) {
       add(element);
@@ -94,6 +99,7 @@ import java.util.Collection;
     return true;
   }
 
+  @Override
   public boolean addAll(int index, Collection<? extends T> c) {
     return addAll(c);
   }

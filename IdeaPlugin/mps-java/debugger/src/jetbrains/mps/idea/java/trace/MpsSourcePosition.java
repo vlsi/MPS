@@ -34,7 +34,7 @@ import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.Computable;
@@ -161,7 +161,7 @@ public class MpsSourcePosition extends SourcePosition {
         if (node == null) {
           return null;
         }
-        SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
+        SModel modelDescriptor = node.getModel().getModelDescriptor();
         IModule module = modelDescriptor.getModule();
         if (!(module instanceof SolutionIdea)) {
           return null;

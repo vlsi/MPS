@@ -20,6 +20,7 @@ public class ToDoHighlighter extends EditorCheckerAdapter {
   public ToDoHighlighter() {
   }
 
+  @Override
   public Set<EditorMessage> createMessages(SNode rootNode, List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext) {
     Set<EditorMessage> messages = SetSequence.fromSet(new LinkedHashSet<EditorMessage>());
     SNode node = rootNode;
@@ -36,6 +37,7 @@ public class ToDoHighlighter extends EditorCheckerAdapter {
     return messages;
   }
 
+  @Override
   public boolean isPropertyEventDramatical(SModelPropertyEvent propertyEvent) {
     SNode node = propertyEvent.getNode();
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.RemarkStatement")) {

@@ -18,17 +18,17 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.testbench.suite.behavior.ModuleSuite_Behavior;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.baseLanguage.search.AllSubclassifiersScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.baseLanguage.search.ReachableClassifiersScope;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
@@ -93,8 +93,8 @@ public class QueriesGenerated {
           public Object compute() {
             SNode msuite = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.testbench.suite.structure.ModuleSuite", true, false);
             final IScope mscope = ModuleSuite_Behavior.call_scope_1280144168199518341(msuite);
-            return Sequence.fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(msuite)).translate(new ITranslator2<SModelDescriptor, SNode>() {
-              public Iterable<SNode> translate(SModelDescriptor smd) {
+            return Sequence.fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(msuite)).translate(new ITranslator2<SModel, SNode>() {
+              public Iterable<SNode> translate(SModel smd) {
                 return new AllSubclassifiersScope(SLinkOperations.getTarget(_quotation_createNode_lmauyr_a0a0a0a0a0a2a0a1a(), "classifier", false), smd.getSModel(), IClassifiersSearchScope.CLASS, (mscope != null ?
                   mscope :
                   operationContext.getScope()
@@ -115,7 +115,7 @@ public class QueriesGenerated {
                 SNode tref = SConceptOperations.createNewNode("jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef", null);
                 SLinkOperations.setTarget(tref, "klass", (item), false);
                 model.getModelDescriptor().getModule().addDependency(SNodeOperations.getModel((item)).getModelDescriptor().getModule().getModuleReference(), false);
-                model.addModelImport(SNodeOperations.getModel((item)).getSModelReference(), false);
+                ((SModelInternal) model).addModelImport(SNodeOperations.getModel((item)).getReference(), false);
                 return tref;
               }
 
@@ -146,8 +146,8 @@ public class QueriesGenerated {
             final IScope mscope = ModuleSuite_Behavior.call_scope_1280144168199518341(msuite);
             final SNode testAnn = SLinkOperations.getTarget(_quotation_createNode_wt5x6r_a0a2a0a1a(), "annotation", false);
 
-            return Sequence.fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(msuite)).translate(new ITranslator2<SModelDescriptor, SNode>() {
-              public Iterable<SNode> translate(SModelDescriptor smd) {
+            return Sequence.fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(msuite)).translate(new ITranslator2<SModel, SNode>() {
+              public Iterable<SNode> translate(SModel smd) {
                 return new ReachableClassifiersScope(smd.getSModel(), IClassifiersSearchScope.CLASS, (mscope != null ?
                   mscope :
                   operationContext.getScope()
@@ -176,7 +176,7 @@ public class QueriesGenerated {
                 SNode tref = SConceptOperations.createNewNode("jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef", null);
                 SLinkOperations.setTarget(tref, "klass", (item), false);
                 model.getModelDescriptor().getModule().addDependency(SNodeOperations.getModel((item)).getModelDescriptor().getModule().getModuleReference(), false);
-                model.addModelImport(SNodeOperations.getModel((item)).getSModelReference(), false);
+                ((SModelInternal) model).addModelImport(SNodeOperations.getModel((item)).getReference(), false);
                 return tref;
               }
 
@@ -204,8 +204,8 @@ public class QueriesGenerated {
         Computable computable = new Computable() {
           public Object compute() {
             SNode msuite = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.testbench.suite.structure.ModuleSuite", true, false);
-            return Sequence.fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(msuite)).translate(new ITranslator2<SModelDescriptor, SNode>() {
-              public Iterable<SNode> translate(SModelDescriptor smd) {
+            return Sequence.fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(msuite)).translate(new ITranslator2<SModel, SNode>() {
+              public Iterable<SNode> translate(SModel smd) {
                 return SModelOperations.getNodes(((SModel) smd.getSModel()), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase");
               }
             }).toListSequence();
@@ -219,7 +219,7 @@ public class QueriesGenerated {
                 SNode tref = SConceptOperations.createNewNode("jetbrains.mps.testbench.suite.structure.TestCaseRef", null);
                 SLinkOperations.setTarget(tref, "testCase", (item), false);
                 model.getModelDescriptor().getModule().addDependency(SNodeOperations.getModel((item)).getModelDescriptor().getModule().getModuleReference(), false);
-                model.addModelImport(SNodeOperations.getModel((item)).getSModelReference(), false);
+                ((SModelInternal) model).addModelImport(SNodeOperations.getModel((item)).getReference(), false);
                 return tref;
               }
 

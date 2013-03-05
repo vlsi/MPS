@@ -65,22 +65,27 @@ public class ChangeGroupMessages {
       myChangeGroup = changeGroup;
     }
 
+    @Override
     public EditorMessageOwner getOwner() {
       return ChangeGroupMessages.ourOwner;
     }
 
+    @Override
     public Color getColor() {
       return ChangeColors.get(myChangeGroup.getChangeType());
     }
 
+    @Override
     public String getMessage() {
       return null;
     }
 
+    @Override
     public int getStart(EditorComponent component) {
       return (int) myChangeGroup.getBounds(myLeft).start();
     }
 
+    @Override
     public int getHeight(EditorComponent component) {
       return myChangeGroup.getBounds(myLeft).length();
     }

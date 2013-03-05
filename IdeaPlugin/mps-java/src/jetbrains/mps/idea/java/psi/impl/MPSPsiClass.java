@@ -39,6 +39,14 @@ public class MPSPsiClass extends MPSPsiClassifier implements PsiClass {
     super(id, concept, containingRole);
   }
 
+  @NotNull
+  @Override
+  public PsiMethod[] getConstructors() {
+    MPSPsiConstructor[] constructors = getChildrenOfType("member", MPSPsiConstructor.class);
+    if (constructors == null) return PsiMethod.EMPTY_ARRAY;
+    else return ArrayUtil.toObjectArray(PsiMethod.class, constructors);
+  }
+
   @Nullable
   @Override
   public PsiReferenceList getExtendsList() {
@@ -54,15 +62,13 @@ public class MPSPsiClass extends MPSPsiClassifier implements PsiClass {
   @NotNull
   @Override
   public PsiClassType[] getExtendsListTypes() {
-    return getTypes("superclass");
+    return getClassTypes("superclass");
   }
 
   @NotNull
   @Override
   public PsiClassType[] getImplementsListTypes() {
-    return getTypes("implementedInterface");
+    return getClassTypes("implementedInterface");
   }
-
-
 
 }

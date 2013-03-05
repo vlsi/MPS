@@ -34,8 +34,8 @@ public class BehaviorReflection {
     OUR_DEFAULT_VALUE.put(Short.class, (short) 0);
     OUR_DEFAULT_VALUE.put(short.class, (short) 0);
 
-    OUR_DEFAULT_VALUE.put(Integer.class, (int) 0);
-    OUR_DEFAULT_VALUE.put(int.class, (int) 0);
+    OUR_DEFAULT_VALUE.put(Integer.class, 0);
+    OUR_DEFAULT_VALUE.put(int.class, 0);
 
     OUR_DEFAULT_VALUE.put(Long.class, (long) 0);
     OUR_DEFAULT_VALUE.put(long.class, (long) 0);

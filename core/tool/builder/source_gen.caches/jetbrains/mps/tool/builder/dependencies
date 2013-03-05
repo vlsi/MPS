@@ -16,6 +16,7 @@
   <dependency className="jetbrains.mps.tool.builder.Environment" file="Environment.java">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="java.lang.String" />
@@ -97,6 +98,7 @@
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.PrintWriter" />
     <classNode dependClassName="java.io.StringWriter" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="java.lang.String" />
@@ -127,7 +129,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.ModuleFileTracker" />
     <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelFileTracker" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelHeader" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
@@ -139,6 +140,7 @@
     <classNode dependClassName="jetbrains.mps.tool.builder.util.PathManager" />
     <classNode dependClassName="jetbrains.mps.tool.common.Script" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
+    <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.apache.log4j.Level" />

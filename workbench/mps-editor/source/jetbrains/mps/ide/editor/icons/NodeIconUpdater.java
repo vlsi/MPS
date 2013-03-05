@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelAdapter;
+import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.event.SModelCommandListener;
@@ -67,7 +68,7 @@ public class NodeIconUpdater extends AbstractProjectComponent {
       if (root == null) return;
       if (root.getModel() == null) return;
       synchronized (myUpdatedRoots) {
-        myUpdatedRoots.add(new jetbrains.mps.smodel.SNodePointer(event.getModel().getSModelReference(), root.getNodeId()));
+        myUpdatedRoots.add(new jetbrains.mps.smodel.SNodePointer(event.getModel().getReference(), root.getNodeId()));
       }
     }
   }

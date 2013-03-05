@@ -16,7 +16,7 @@ import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import com.intellij.openapi.actionSystem.ActionToolbar;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import com.intellij.openapi.diff.DiffRequest;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
@@ -38,11 +38,11 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.MetadataChange;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import org.jetbrains.annotations.NotNull;
 import javax.swing.Action;
 import java.util.List;
 import java.util.ArrayList;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.annotations.NotNull;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -60,7 +60,7 @@ import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import jetbrains.mps.vcs.diff.ui.common.ChangeColors;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelInternal;
 
 public class MergeModelsDialog extends DialogWrapper {
   public static final Icon APPLY_NON_CONFLICTS = AllIcons.Diff.ApplyNotConflicts;
@@ -140,10 +140,12 @@ public class MergeModelsDialog extends DialogWrapper {
     init();
   }
 
+  @Override
   public String getDimensionServiceKey() {
     return getClass().getName();
   }
 
+  @Override
   protected void doOKAction() {
     MergeConfirmation.showMergeConfirmationAndTakeAction(this, myMergeSession, Sequence.fromIterable(myMergeSession.getAllChanges()).where(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange ch) {
@@ -164,6 +166,8 @@ public class MergeModelsDialog extends DialogWrapper {
     });
   }
 
+  @Override
+  @NotNull
   protected Action[] createActions() {
     List<Action> actions = ListSequence.fromList(new ArrayList<Action>());
     ListSequence.fromList(actions).addElement(getOKAction());
@@ -412,6 +416,7 @@ public class MergeModelsDialog extends DialogWrapper {
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
     return myPanel;
   }
@@ -439,10 +444,12 @@ public class MergeModelsDialog extends DialogWrapper {
     }
 
     @Nullable
+    @Override
     protected SNodeId getCurrentNodeId() {
       return getCurrentRoot();
     }
 
+    @Override
     public void setCurrentNodeId(@Nullable SNodeId nodeId) {
       setCurrentRoot(nodeId);
     }
@@ -452,17 +459,20 @@ public class MergeModelsDialog extends DialogWrapper {
     private MergeModelsTree() {
       super(DiffTemporaryModule.getOperationContext(myProject, myMergeSession.getResultModel()));
       addTreeSelectionListener(new TreeSelectionListener() {
+        @Override
         public void valueChanged(TreeSelectionEvent event) {
           myToolbar.updateActionsImmediately();
         }
       });
     }
 
+    @Override
     protected Iterable<BaseAction> getRootActions() {
       MergeModelsDialog md = MergeModelsDialog.this;
       return Arrays.<BaseAction>asList(new InvokeMergeRootsAction(md), AcceptYoursTheirs.yoursInstance(md), AcceptYoursTheirs.theirsInstance(md));
     }
 
+    @Override
     protected void updateRootCustomPresentation(@NotNull DiffModelTree.RootTreeNode rootTreeNode) {
       final MergeSession session = (rootTreeNode.getRootId() == null ?
         myMetadataMergeSession :
@@ -490,7 +500,7 @@ public class MergeModelsDialog extends DialogWrapper {
         rootTreeNode.setAdditionalText("with conflicts");
       } else {
         if (nonConflictedCount == 0) {
-          if (rootTreeNode.getRootId() != null && myMergeSession.getResultModel().getNodeById(rootTreeNode.getRootId()) == null) {
+          if (rootTreeNode.getRootId() != null && myMergeSession.getResultModel().getNode(rootTreeNode.getRootId()) == null) {
             rootTreeNode.setTextStyle(SimpleTextAttributes.STYLE_STRIKEOUT);
           }
         } else {
@@ -523,10 +533,12 @@ public class MergeModelsDialog extends DialogWrapper {
       }
     }
 
+    @Override
     protected Iterable<SModel> getModels() {
       return Arrays.asList(myMergeSession.getBaseModel(), myMergeSession.getMyModel(), myMergeSession.getRepositoryModel());
     }
 
+    @Override
     protected Iterable<SNodeId> getAffectedRoots() {
       return myMergeSession.getAffectedRoots();
     }
@@ -537,14 +549,14 @@ public class MergeModelsDialog extends DialogWrapper {
     }
   }
 
-  private static IModule check_3qqb0l_a0b0v(SModelDescriptor checkedDotOperand) {
+  private static IModule check_3qqb0l_a0b0v(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModelDescriptor check_3qqb0l_a0a1a12(SModel checkedDotOperand) {
+  private static SModelInternal check_3qqb0l_a0a1a12(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }

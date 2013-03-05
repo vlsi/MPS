@@ -94,7 +94,7 @@
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.make.script.behavior.ExpectedOption_Behavior" />
     <classNode dependClassName="jetbrains.mps.make.script.behavior.IExpected_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
@@ -172,7 +172,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IWillBeClassifier_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.make.script.behavior.OptionType_Behavior" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
@@ -224,7 +224,7 @@
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.make.script.behavior.QueryDefinition_Behavior" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />

@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.make.script.IConfig" file="IConfig.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="jetbrains.mps.make.resources.IPropertiesAccessor" />
     <classNode dependClassName="jetbrains.mps.make.script.IConfigMonitor" />
   </dependency>
   <dependency className="jetbrains.mps.make.script.IConfigMonitor" file="IConfigMonitor.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.make.script.IOption" />
     <classNode dependClassName="jetbrains.mps.make.script.IProgress" />
     <classNode dependClassName="jetbrains.mps.make.script.IQuery" />
@@ -24,6 +26,7 @@
   <dependency className="jetbrains.mps.make.script.IJob" file="IJob.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="jetbrains.mps.make.resources.IPropertiesAccessor" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
@@ -34,6 +37,7 @@
   </dependency>
   <dependency className="jetbrains.mps.make.script.IJobMonitor" file="IJobMonitor.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.make.script.IFeedback" />
     <classNode dependClassName="jetbrains.mps.make.script.IProgress" />
   </dependency>
@@ -41,6 +45,7 @@
     <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.make.script.IProgress" file="IProgress.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.make.script.IPropertiesPool" file="IPropertiesPool.java">
@@ -55,6 +60,7 @@
   </dependency>
   <dependency className="jetbrains.mps.make.script.IResult" file="IResult.java">
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
   </dependency>
   <dependency className="jetbrains.mps.make.script.IScript" file="IScript.java">
@@ -69,6 +75,7 @@
   <dependency className="jetbrains.mps.make.script.IScriptController" file="IScriptController.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />

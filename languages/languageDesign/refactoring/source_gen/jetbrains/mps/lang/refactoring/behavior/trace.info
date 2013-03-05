@@ -586,11 +586,11 @@
     <unitInfo nodeId="4205271146524200389" fileName="Refactoring_Behavior.java" startLine="12" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.refactoring.behavior.Refactoring_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590312(jetbrains.mps.lang.refactoring.behavior)/4598603396803851280">
-    <nodeInfo nodeId="4598603396803852562" fileName="OldRefactoring_Behavior.java" startLine="13" startPosition="91" endLine="14" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4598603396803852562" fileName="OldRefactoring_Behavior.java" startLine="13" startPosition="91" endLine="14" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4598603396803851280" fileName="OldRefactoring_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="4598603396803851280" fileName="OldRefactoring_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getGeneratedClassLongName_4598603396803851284#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="4598603396803851282" fileName="OldRefactoring_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
-    <scopeInfo nodeId="4598603396803851287" fileName="OldRefactoring_Behavior.java" startLine="13" startPosition="91" endLine="14" endPosition="137" />
+    <scopeInfo nodeId="4598603396803851287" fileName="OldRefactoring_Behavior.java" startLine="13" startPosition="91" endLine="14" endPosition="207" />
     <scopeInfo nodeId="4598603396803851280" fileName="OldRefactoring_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0">
       <varInfo nodeId="4598603396803851280" varName="thisNode" />
     </scopeInfo>
@@ -662,11 +662,11 @@
     <nodeInfo nodeId="7012097027058652475" fileName="ModelDescriptorOperation_Behavior.java" startLine="29" startPosition="108" endLine="30" endPosition="298" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7012097027058652486" fileName="ModelDescriptorOperation_Behavior.java" startLine="33" startPosition="60" endLine="34" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7012097027058652486" fileName="ModelDescriptorOperation_Behavior.java" startLine="34" startPosition="30" endLine="35" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7012097027058652486" fileName="ModelDescriptorOperation_Behavior.java" startLine="35" startPosition="165" endLine="36" endPosition="274" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7012097027058652486" fileName="ModelDescriptorOperation_Behavior.java" startLine="36" startPosition="274" endLine="37" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7012097027058652486" fileName="ModelDescriptorOperation_Behavior.java" startLine="35" startPosition="165" endLine="36" endPosition="289" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7012097027058652486" fileName="ModelDescriptorOperation_Behavior.java" startLine="36" startPosition="289" endLine="37" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7012097027058652475" fileName="ModelDescriptorOperation_Behavior.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="7012097027058652486" fileName="ModelDescriptorOperation_Behavior.java" startLine="34" startPosition="30" endLine="36" endPosition="274" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7012097027058652486" fileName="ModelDescriptorOperation_Behavior.java" startLine="34" startPosition="30" endLine="36" endPosition="274" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7012097027058652486" fileName="ModelDescriptorOperation_Behavior.java" startLine="34" startPosition="30" endLine="36" endPosition="289" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7012097027058652486" fileName="ModelDescriptorOperation_Behavior.java" startLine="34" startPosition="30" endLine="36" endPosition="289" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7012097027058652475" fileName="ModelDescriptorOperation_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_createType_7012097027058652452#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="7012097027058652475" fileName="ModelDescriptorOperation_Behavior.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_createType_7012097027058652478#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="7012097027058652475" fileName="ModelDescriptorOperation_Behavior.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_createType_7012097027058652478#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -678,7 +678,7 @@
     <scopeInfo nodeId="7012097027058652475" fileName="ModelDescriptorOperation_Behavior.java" startLine="16" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="7012097027058652475" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7012097027058652486" fileName="ModelDescriptorOperation_Behavior.java" startLine="34" startPosition="30" endLine="36" endPosition="274" />
+    <scopeInfo nodeId="7012097027058652486" fileName="ModelDescriptorOperation_Behavior.java" startLine="34" startPosition="30" endLine="36" endPosition="289" />
     <scopeInfo nodeId="7012097027058652475" fileName="ModelDescriptorOperation_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="7012097027058652475" varName="thisNode" />
     </scopeInfo>

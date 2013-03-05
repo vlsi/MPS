@@ -21,7 +21,9 @@ import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.progress.ProgressMonitor;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
@@ -52,13 +54,14 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     myInputModel = inputModel;
     myOutputModel = outputModel;
     myShowBadChildWarning = showBadChildWarning;
-    myMappings = new GeneratorMappings(inputModel.registeredNodesCount());
+    myMappings = new GeneratorMappings(IterableUtil.asCollection(inputModel.getRootNodes()).size());
   }
 
   public IOperationContext getOperationContext() {
     return myOperationContext;
   }
 
+  @Override
   public IScope getScope() {
     if (myOperationContext != null) {
       return myOperationContext.getScope();
@@ -66,6 +69,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     return null;
   }
 
+  @Override
   public ProgressMonitor getProgressMonitor() {
     return myProgressMonitor;
   }
@@ -86,10 +90,12 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     }
   }
 
+  @Override
   public void showErrorMessage(SNode inputNode, SNode templateNode, String message) {
     showErrorMessage(inputNode, templateNode, null, message);
   }
 
+  @Override
   public void showErrorMessage(SNode inputNode, SNode templateNode, SNode ruleNode, String message) {
     if (ruleNode != null && !myFailedRules.add(ruleNode)) {
       // do not show duplicating messages
@@ -102,10 +108,12 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
       GeneratorUtil.describeIfExists(templateNode, "template"));
   }
 
+  @Override
   public IGeneratorLogger getLogger() {
     return myLogger;
   }
 
+  @Override
   public SModel getInputModel() {
     return myInputModel;
   }
@@ -113,10 +121,12 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   /**
    * @deprecated
    */
+  @Override
   public SModel getSourceModel() {
     return myInputModel;
   }
 
+  @Override
   public SModel getOutputModel() {
     return myOutputModel;
   }
@@ -124,6 +134,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   /**
    * @deprecated
    */
+  @Override
   public SModel getTargetModel() {
     return myOutputModel;
   }
@@ -132,6 +143,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     return myMappings;
   }
 
+  @Override
   public void registerMappingLabel(SNode inputNode, String mappingName, SNode outputNode) {
     myMappings.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNode);
   }
@@ -180,11 +192,11 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   }
 
   public SNode findOutputNodeById(SNodeId nodeId) {
-    return myOutputModel.getNodeById(nodeId);
+    return myOutputModel.getNode(nodeId);
   }
 
   public SNode findInputNodeById(SNodeId nodeId) {
-    return myInputModel.getNodeById(nodeId);
+    return myInputModel.getNode(nodeId);
   }
 
 

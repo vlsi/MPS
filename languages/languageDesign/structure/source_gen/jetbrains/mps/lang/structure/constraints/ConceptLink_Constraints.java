@@ -43,6 +43,7 @@ public class ConceptLink_Constraints extends BaseConstraintsDescriptor {
             // concept links declared in hierarchy of enclosing concept 
             SNode enclosingConcept = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", true, false);
             return (List<SNode>) new ConceptAndSuperConceptsScope(enclosingConcept).getNodes(new Condition<SNode>() {
+              @Override
               public boolean met(SNode node) {
                 return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration");
               }

@@ -61,6 +61,7 @@ public class OpenMPSProjectAction extends BaseAction {
     }
   }
 
+  @Override
   public void doExecute(AnActionEvent e, Map<String, Object> _params) {
     final Project currentProject = PlatformDataKeys.PROJECT.getData(e.getDataContext());
 

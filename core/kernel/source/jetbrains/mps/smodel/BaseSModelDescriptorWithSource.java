@@ -13,11 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
 
@@ -40,9 +41,14 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
   }
 
   @Override
-  public void dispose() {
+  public void detach() {
     getSource().removeListener(mySourceListener);
-    super.dispose();
+    super.detach();
+  }
+
+  @Override
+  public void dispose() {
+    detach();
   }
 
   //----------reloading stuff--------
@@ -80,14 +86,14 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
     final SModel oldSModel = getCurrentModelInternal();
 
     if (oldSModel != null) {
-      oldSModel.setModelDescriptor(null);
+      ((jetbrains.mps.smodel.SModel) oldSModel).setModelDescriptor(null);
     }
 
     replacer.run();
 
     SModel newModel = getCurrentModelInternal();
     if (newModel != null) {
-      newModel.setModelDescriptor(this);
+      ((jetbrains.mps.smodel.SModel) newModel).setModelDescriptor(this);
     }
 
     notifyModelReplaced(oldSModel);

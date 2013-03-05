@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -27,7 +28,7 @@ public class GenerationTracerUtil {
   public static SNodeReference getSNodePointer(SModel model, SNode node) {
     //this is a hack to somehow show input nodes created during generation (e.g. .type.copy)
     //actually, we should put another TracerNode here. showing the node is not from an input model at all
-    return new jetbrains.mps.smodel.SNodePointer(model == null ? null : model.getSModelReference(), node.getNodeId());
+    return new jetbrains.mps.smodel.SNodePointer(model == null ? null : model.getReference(), node.getNodeId());
   }
 
 }

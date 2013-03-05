@@ -28,6 +28,7 @@ public class ErrorStateNodeUpdate extends NodeUpdate {
     myErrorState = myTooltipText == null ? ErrorState.NONE : (isWarning ? ErrorState.WARNING : ErrorState.ERROR);
   }
 
+  @Override
   public boolean needed(MPSTreeNode node) {
     return !(
       EqualUtil.equals(node.getErrorState(), myErrorState) &&
@@ -35,6 +36,7 @@ public class ErrorStateNodeUpdate extends NodeUpdate {
     );
   }
 
+  @Override
   public void update(MPSTreeNode node) {
     node.setErrorState(myErrorState);
     node.setTooltipText(myTooltipText);

@@ -8,9 +8,9 @@
     <projectModules>
       <modulePath path="${project}/languages/KajaAndOr/KajaAndOr.mpl" folder="" />
       <modulePath path="${project}/languages/KajaSceneConstruction/KajaSceneConstruction.mpl" folder="" />
-      <modulePath path="${project}/languages/Kajak/Kajak.mpl" />
+      <modulePath path="${project}/languages/Kajak/Kajak.mpl" folder="" />
       <modulePath path="${project}/solutions/JavaKajak/JavaKajak.msd" folder="" />
-      <modulePath path="${project}/solutions/Kajak.sandbox/Kajak.sandbox.msd" />
+      <modulePath path="${project}/solutions/Kajak.sandbox/Kajak.sandbox.msd" folder="" />
     </projectModules>
     <genConfs />
   </component>
@@ -19,7 +19,7 @@
     <option name="version" value="2.5" />
   </component>
   <component name="VcsDirectoryMappings">
-    <mapping directory="" vcs="Git" />
+    <mapping directory="" vcs="" />
   </component>
 </project>
 

@@ -34,70 +34,86 @@ public class NullPsiDocumentManager extends PsiDocumentManager {
     return false;
   }
 
+  @Override
   @Nullable
   public PsiFile getPsiFile(@NotNull Document document) {
     return null;
   }
 
+  @Override
   @Nullable
   public PsiFile getCachedPsiFile(@NotNull Document document) {
     return null;
   }
 
+  @Override
   @Nullable
   public Document getDocument(@NotNull PsiFile file) {
     return new DocumentImpl("");
   }
 
+  @Override
   @Nullable
   public Document getCachedDocument(@NotNull PsiFile file) {
     return null;
   }
 
+  @Override
   public void commitAllDocuments() {
 
   }
 
+  @Override
   public void performForCommittedDocument(@NotNull Document document, @NotNull Runnable action) {
 
   }
 
+  @Override
   public void commitDocument(Document document) {
 
   }
 
+  @Override
   public Document[] getUncommittedDocuments() {
     return new Document[0];
   }
 
+  @Override
   public boolean isUncommited(Document document) {
     return false;
   }
 
+  @Override
   public boolean hasUncommitedDocuments() {
     return false;
   }
 
+  @Override
   public void commitAndRunReadAction(@NotNull Runnable runnable) {
 
   }
 
+  @Override
   public <T> T commitAndRunReadAction(@NotNull Computable<T> computation) {
     return null;
   }
 
+  @Override
   public void addListener(@NotNull Listener listener) {
 
   }
 
+  @Override
   public void removeListener(@NotNull Listener listener) {
 
   }
 
+  @Override
   public boolean isDocumentBlockedByPsi(@NotNull Document doc) {
     return false;
   }
 
+  @Override
   public void doPostponedOperationsAndUnblockDocument(@NotNull Document doc) {
 
   }

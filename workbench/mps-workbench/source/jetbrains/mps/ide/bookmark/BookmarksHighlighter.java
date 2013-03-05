@@ -35,10 +35,12 @@ public class BookmarksHighlighter extends EditorCheckerAdapter implements Editor
   private BookmarkManager myBookmarkManager;
   private boolean myChanged = true;
   private BookmarkListener myListener = new BookmarkListener() {
+    @Override
     public void bookmarkAdded(int number, SNode node) {
       myChanged = true;
     }
 
+    @Override
     public void bookmarkRemoved(int number, SNode node) {
       myChanged = true;
     }
@@ -49,11 +51,13 @@ public class BookmarksHighlighter extends EditorCheckerAdapter implements Editor
     myBookmarkManager.addBookmarkListener(myListener);
   }
 
+  @Override
   public void doDispose() {
     myBookmarkManager.removeBookmarkListener(myListener);
     super.doDispose();
   }
 
+  @Override
   public Set<EditorMessage> createMessages(SNode rootNode, List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext) {
     myChanged = false;
     Set<EditorMessage> result = new HashSet<EditorMessage>();
@@ -64,10 +68,12 @@ public class BookmarksHighlighter extends EditorCheckerAdapter implements Editor
     return result;
   }
 
+  @Override
   public boolean hasDramaticalEvent(List<SModelEvent> events) {
     return myChanged;
   }
 
+  @Override
   public void clear(SNode node, EditorComponent editor) {
     myChanged = true;
   }

@@ -19,7 +19,10 @@ package jetbrains.mps.workbench.goTo;
 import com.intellij.navigation.GotoClassContributor;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.project.Project;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.workbench.choose.nodes.BaseNodePointerModel;
@@ -29,31 +32,37 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GoToClassMPSContributor implements GotoClassContributor {
+  @NotNull
+  @Override
   public String[] getNames(Project project, boolean includeNonProjectItems) {
     return createModel(project).getNames(includeNonProjectItems);
   }
 
+  @NotNull
+  @Override
   public NavigationItem[] getItemsByName(String name, String pattern, Project project, boolean includeNonProjectItems) {
     return createModel(project).getElementsByName(name, includeNonProjectItems, pattern);
   }
 
   private BaseNodePointerModel createModel(final Project project) {
     return new BaseNodePointerModel(project, "root") {
+      @Override
       public SNodeReference[] find(IScope scope) {
         final List<SNodeReference> nodes = new ArrayList<SNodeReference>();
-        Iterable<SModelDescriptor> modelDescriptors = scope.getModelDescriptors();
+        Iterable<SModel> modelDescriptors = scope.getModelDescriptors();
 
         Condition<SNode> cond = new Condition<SNode>() {
+          @Override
           public boolean met(SNode node) {
             String name = node.getName();
             return name != null && name.length() > 0;
           }
         };
 
-        for (SModelDescriptor modelDescriptor : modelDescriptors) {
+        for (SModel modelDescriptor : modelDescriptors) {
           if (!SModelStereotype.isUserModel(modelDescriptor)) continue;
 
-          Iterable<SNode> iter = new ConditionalIterable<SNode>(modelDescriptor.getSModel().roots(), cond);
+          Iterable<SNode> iter = new ConditionalIterable<SNode>(modelDescriptor.getSModel().getRootNodes(), cond);
           for (SNode node : iter){
             nodes.add(new jetbrains.mps.smodel.SNodePointer(node));
           }
@@ -61,6 +70,7 @@ public class GoToClassMPSContributor implements GotoClassContributor {
         return nodes.toArray(new SNodeReference[nodes.size()]);
       }
 
+      @Override
       public boolean willOpenEditor() {
         return true;
       }

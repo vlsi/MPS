@@ -70,7 +70,6 @@
         <property name="vertical" nameId="tpc2.1073389446425" value="false" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1225194241671">
           <property name="text" nameId="tpc2.1073389577007" value="concept behavior" />
-          <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="1225194241672">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="1i04.1225194240799" />

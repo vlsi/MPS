@@ -23,14 +23,17 @@ public class TestMethodRow implements TestStatisticsRow {
     myTestMethodName = testMethod.getName();
   }
 
+  @Override
   public String getText() {
     return myTestMethodName;
   }
 
+  @Override
   public String getAdditionalText() {
     return null;
   }
 
+  @Override
   public long getElapsedTime() {
     long elapsedTime = -1;
     if (myStartTime >= 0 && myFinishTime >= 0) {
@@ -47,6 +50,7 @@ public class TestMethodRow implements TestStatisticsRow {
     myFinishTime = finishTime;
   }
 
+  @Override
   public long getUsageBefore() {
     return myUsageBefore;
   }
@@ -55,6 +59,7 @@ public class TestMethodRow implements TestStatisticsRow {
     myUsageBefore = usageBefore;
   }
 
+  @Override
   public long getUsageAfter() {
     return myUsageAfter;
   }
@@ -63,6 +68,7 @@ public class TestMethodRow implements TestStatisticsRow {
     myUsageAfter = usageAfter;
   }
 
+  @Override
   public long getUsageDelta() {
     long usageDelta = -1;
     if (myUsageAfter >= 0 && myUsageBefore >= 0) {
@@ -83,6 +89,7 @@ public class TestMethodRow implements TestStatisticsRow {
     myState = ERRORED;
   }
 
+  @Override
   public int getSuccessful() {
     return (myState == SUCCEED ?
       1 :
@@ -90,6 +97,7 @@ public class TestMethodRow implements TestStatisticsRow {
     );
   }
 
+  @Override
   public int getErrored() {
     return (myState == ERRORED ?
       1 :
@@ -97,6 +105,7 @@ public class TestMethodRow implements TestStatisticsRow {
     );
   }
 
+  @Override
   public int getFailed() {
     return (myState == FAILED ?
       1 :
@@ -104,6 +113,7 @@ public class TestMethodRow implements TestStatisticsRow {
     );
   }
 
+  @Override
   public boolean matches(String testCase, String testMethod) {
     return testCase == null || (eq_52sp5f_a0a0a0a82(testCase, myTestCaseName) && (testMethod == null || eq_52sp5f_a0a0a0a0a82(testMethod, myTestMethodName)));
   }

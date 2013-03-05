@@ -32,10 +32,12 @@ public class DeletedNodeMessageTarget implements MessageTarget {
     myRole = role;
   }
 
+  @Override
   public MessageTargetEnum getTarget() {
     return MessageTargetEnum.DELETED_CHILD;
   }
 
+  @Override
   public String getRole() {
     return myRole;
   }
@@ -44,6 +46,7 @@ public class DeletedNodeMessageTarget implements MessageTarget {
     return myNextChildIndex;
   }
 
+  @Override
   public boolean sameAs(@NotNull MessageTarget errorTarget) {
     return errorTarget instanceof DeletedNodeMessageTarget && EqualUtil.equals(errorTarget.getRole(), getRole())
       && myNextChildIndex == ((DeletedNodeMessageTarget) errorTarget).myNextChildIndex;

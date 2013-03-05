@@ -74,6 +74,7 @@ public class ViewOptions implements IExternalizeable {
     myAdditionalInfoButtonVisible = additionalInfoButtonNeeded;
   }
 
+  @Override
   public void read(Element element, Project project) {
     Element viewOptionsXML = element.getChild(OPTIONS);
 
@@ -93,6 +94,7 @@ public class ViewOptions implements IExternalizeable {
     myAutoscrolls = Boolean.valueOf(viewOptionsXML.getAttributeValue(AUTOSCROLL_OPTION));
   }
 
+  @Override
   public void write(Element element, Project project) {
     Element viewOptionsXML = new Element(OPTIONS);
 

@@ -4,19 +4,19 @@ package jetbrains.mps.bash.editor;
 
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ExternalCommandDescription_EditorComponent extends AbstractCellProvider {
   public ExternalCommandDescription_EditorComponent(SNode node) {
@@ -32,9 +32,9 @@ public class ExternalCommandDescription_EditorComponent extends AbstractCellProv
   }
 
   @Deprecated
-  public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  public jetbrains.mps.nodeEditor.cells.EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
     // This method was added in MPS 3.0 for the compatibility with prev. generated code 
-    return createEditorCell((EditorContext) editorContext);
+    return (jetbrains.mps.nodeEditor.cells.EditorCell) createEditorCell((EditorContext) editorContext);
   }
 
   private EditorCell createCollection_3xyrme_a(EditorContext editorContext, SNode node) {
@@ -56,6 +56,10 @@ public class ExternalCommandDescription_EditorComponent extends AbstractCellProv
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
+  }
+
+  private static boolean renderingCondition_3xyrme_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return isNotEmpty_3xyrme_a0a0g(SPropertyOperations.getString(node, "description"));
   }
 
   private EditorCell createProperty_3xyrme_b0(EditorContext editorContext, SNode node) {
@@ -80,11 +84,7 @@ public class ExternalCommandDescription_EditorComponent extends AbstractCellProv
     return editorCell;
   }
 
-  private static boolean renderingCondition_3xyrme_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return isNotEmpty_3xyrme_a0a0h(SPropertyOperations.getString(node, "description"));
-  }
-
-  public static boolean isNotEmpty_3xyrme_a0a0h(String str) {
+  public static boolean isNotEmpty_3xyrme_a0a0g(String str) {
     return str != null && str.length() > 0;
   }
 }

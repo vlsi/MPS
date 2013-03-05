@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="1d53ix9a4yinmlq5pz9j0zuqj0hm8f7">
+<dependencies version="2" modelHash="-2yrtmw0qtbo35knoefq5wnljdecwdy4">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.image(JDK/java.awt.image@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -8,16 +8,16 @@
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.accessibility(JDK/javax.accessibility@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing.table(JDK/javax.swing.table@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3l4d6vah7bipcwb415vkx7fy07t8dxg" />
-  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="akhdydbhjjog28feg67o2k0h0fepfz2" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-7xlr3obdo4gr891eot1txwmjhgwo5hf" />
   <dep model="r:dfdf3542-dbcf-43df-870a-3c3504b3c840(jetbrains.mps.baseLanguage.collections.custom)" />
-  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-42u6f9vbzpf201qzziwe8drcbr8ay4o" />
-  <common hash="-30jb34705wguoldyqgpebw427ks99w6" />
-  <source id="1560298786499489409" name="PathRenderer" hash="50snm38cq1ny22eixdyv7erengtw5hb">
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="8lb0ssmvoceitlofqs9sah312lyoau7" />
+  <common hash="-9khqidxnprzhhlf6an0nck2zz9ilzpp" />
+  <source id="1560298786499489409" name="PathRenderer" hash="ax1c5mj8e65wfs8g19ozu94z865h3ca">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="PathRenderer.java" />
   </source>
-  <source id="1560298786499490098" name="ProjectPathRenderer" hash="dv3dtnvmx0onqo8dj3iovrz24rfg4c1">
+  <source id="1560298786499490098" name="ProjectPathRenderer" hash="-895bsgt70si8gbdhxla6wwgvf4umsou">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -28,11 +28,11 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ProjectLevelRenderer.java" />
   </source>
-  <source id="1560298786499492799" name="StringPathRenderer" hash="-5e5ytz3yman3and02mogmr3b7yvsno8">
+  <source id="1560298786499492799" name="StringPathRenderer" hash="-8pc7zq57rtn3ifot6vez19jxbz9e3og">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <file name="StringPathRenderer.java" />
   </source>
-  <source id="1560298786499492868" name="ModelRenderer" hash="-6qjo6r1fj6ca188miozeb1fnsutacki">
+  <source id="1560298786499492868" name="ModelRenderer" hash="-1nyk3wrz14dfqdsn0sojn3xshhrs8cb">
     <dep root="1560298786499492721" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.image(JDK/java.awt.image@java_stub)" />
@@ -43,7 +43,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ModelRenderer.java" />
   </source>
-  <source id="1560298786499493036" name="ManagerRenderer" hash="-cb8h8zuylma8c1znvjyg9wlzolo6mc1">
+  <source id="1560298786499493036" name="ManagerRenderer" hash="ea2kbmvn0xwp4z62mx3m96nltc7r7rm">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ManagerRenderer.java" />
   </source>
@@ -51,11 +51,11 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ModuleImportRenderer.java" />
   </source>
-  <source id="1560298786499494305" name="ListRendererAdapter" hash="-2d71y0ej6e8pks32awc9xw8ff969qed">
+  <source id="1560298786499494305" name="ListRendererAdapter" hash="1ggdgxpge7pu63n43m0aob2fn4nbq4l">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ListRendererAdapter.java" />
   </source>
-  <source id="1560298786499494573" name="ModuleRenderer" hash="6t2p7h0519zvizrdvunp5mehq2bbvn2">
+  <source id="1560298786499494573" name="ModuleRenderer" hash="g554p0sj72g5eyzijixxl1pqz4hiqj">
     <dep root="1560298786499492721" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.image(JDK/java.awt.image@java_stub)" />
@@ -66,22 +66,22 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ModuleRenderer.java" />
   </source>
-  <source id="1560298786499495877" name="TestConfigListCellRenderer" hash="-2mj47wwsfqkorue886kd8qo89mich0b">
+  <source id="1560298786499495877" name="TestConfigListCellRenderer" hash="-5x88ua2g4efb3dwrfmumrembtg7zp4r">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="TestConfigListCellRenderer.java" />
   </source>
-  <source id="1560298786499498121" name="BooleanRenderer" hash="9gwa09fgg3p4alp6wgwz1vjgburfk32">
+  <source id="1560298786499498121" name="BooleanRenderer" hash="npc009yk2q006ib22zktuzkjzitcci">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="BooleanRenderer.java" />
   </source>
   <source id="1560298786499498265" name="GeneratorRenderer" hash="-25jktv6g7fbhianaj532ss3rj3h559n">
     <file name="GeneratorRenderer.java" />
   </source>
-  <source id="262971659834150299" name="ModelRootRenderer" hash="-7itc5oakncmh0ww60prp467m09bc8j">
+  <source id="262971659834150299" name="ModelRootRenderer" hash="c965jwvtay7re13etmopj7t37yqlzol">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ModelRootRenderer.java" />
   </source>
-  <source id="7093733149214777406" name="RuleOperandRenderer" hash="8uuz1rdbjlv9b5vveqp2aqtnwkc880g">
+  <source id="7093733149214777406" name="RuleOperandRenderer" hash="86lfshucq4sto7t87x8z3j13bje2v67">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.image(JDK/java.awt.image@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />

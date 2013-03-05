@@ -25,10 +25,12 @@ public class GenStatusNodeUpdate extends NodeUpdate {
     myText = addText;
   }
 
+  @Override
   public boolean needed(MPSTreeNode node) {
     return !EqualUtil.equals(node.getAdditionalText(), myText);
   }
 
+  @Override
   public void update(MPSTreeNode node) {
     node.setAdditionalText(myText);
   }

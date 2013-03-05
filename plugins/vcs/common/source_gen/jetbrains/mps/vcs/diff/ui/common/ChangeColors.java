@@ -35,13 +35,13 @@ public class ChangeColors {
 
   static {
     MapSequence.fromMap(ourColors).put(ChangeType.ADD, ADD);
-    MapSequence.fromMap(ourTreeColors).put(ChangeType.ADD, FileStatus.COLOR_ADDED);
+    MapSequence.fromMap(ourTreeColors).put(ChangeType.ADD, FileStatus.ADDED.getColor());
 
     MapSequence.fromMap(ourColors).put(ChangeType.DELETE, DELETE);
-    MapSequence.fromMap(ourTreeColors).put(ChangeType.DELETE, FileStatus.COLOR_MISSING);
+    MapSequence.fromMap(ourTreeColors).put(ChangeType.DELETE, FileStatus.DELETED.getColor());
 
     MapSequence.fromMap(ourColors).put(ChangeType.CHANGE, CHANGE);
-    MapSequence.fromMap(ourTreeColors).put(ChangeType.CHANGE, FileStatus.COLOR_MODIFIED);
+    MapSequence.fromMap(ourTreeColors).put(ChangeType.CHANGE, FileStatus.MODIFIED.getColor());
 
     MapSequence.fromMap(ourColors).put(ChangeType.CONFLICTED, CONFLICTED);
     MapSequence.fromMap(ourTreeColors).put(ChangeType.CONFLICTED, FileStatus.MERGED_WITH_CONFLICTS.getColor());

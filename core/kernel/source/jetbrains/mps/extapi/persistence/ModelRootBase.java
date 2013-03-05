@@ -15,8 +15,9 @@
  */
 package jetbrains.mps.extapi.persistence;
 
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -56,7 +57,7 @@ public abstract class ModelRootBase implements ModelRoot {
   public abstract Iterable<SModel> loadModels();
 
   @Override
-  public boolean isReadOnly() {
+  public boolean canCreateModels() {
     return getModule().isPackaged();
   }
 
@@ -69,8 +70,8 @@ public abstract class ModelRootBase implements ModelRoot {
   public void dispose() {
     SModelRepository smRepo = SModelRepository.getInstance();
     for (SModel model : myModels) {
-      SModelDescriptor modelDescriptor = (SModelDescriptor) model;
-      if (!modelDescriptor.isRegistered()) {
+      SModel modelDescriptor = model;
+      if (modelDescriptor.getReference().resolve(MPSModuleRepository.getInstance())!=modelDescriptor) {
         // TODO fix the problem and remove continue statement
         // theoretically can happen in JavaStubs (where several roots share the same model)
         continue;
@@ -93,16 +94,16 @@ public abstract class ModelRootBase implements ModelRoot {
 
   protected void register(SModel model) {
     SModelRepository modelRepository = SModelRepository.getInstance();
-    if (modelRepository.getModelDescriptor(model.getModelReference()) == null) {
-      modelRepository.registerModelDescriptor((SModelDescriptor) model, getModule());
+    if (modelRepository.getModelDescriptor(model.getReference()) == null) {
+      modelRepository.registerModelDescriptor(model, getModule());
       myModels.add(model);
     }
   }
 
   protected void unregister(SModel model) {
     SModelRepository modelRepository = SModelRepository.getInstance();
-    if (modelRepository.getModelDescriptor(model.getModelReference()) != null) {
-      modelRepository.unRegisterModelDescriptor((SModelDescriptor) model, getModule());
+    if (modelRepository.getModelDescriptor(model.getReference()) != null) {
+      modelRepository.unRegisterModelDescriptor(model, getModule());
       myModels.remove(model);
     }
   }
@@ -113,14 +114,14 @@ public abstract class ModelRootBase implements ModelRoot {
     Set<org.jetbrains.mps.openapi.model.SModelReference> loaded = new HashSet<org.jetbrains.mps.openapi.model.SModelReference>();
     SModelRepository modelRepository = SModelRepository.getInstance();
     for (SModel model : loadModels()) {
-      loaded.add(model.getModelReference());
+      loaded.add(model.getReference());
       register(model);
     }
     Iterator<SModel> it = myModels.iterator();
     while (it.hasNext()) {
       SModel model = it.next();
-      if (loaded.contains(model.getModelReference())) continue;
-      modelRepository.unRegisterModelDescriptor((SModelDescriptor) model, getModule());
+      if (loaded.contains(model.getReference())) continue;
+      modelRepository.unRegisterModelDescriptor(model, getModule());
       it.remove();
     }
   }

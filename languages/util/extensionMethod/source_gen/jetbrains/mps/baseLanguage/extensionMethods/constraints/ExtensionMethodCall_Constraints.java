@@ -53,6 +53,7 @@ public class ExtensionMethodCall_Constraints extends BaseConstraintsDescriptor {
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return new AbstractSearchScope() {
               @NotNull
+              @Override
               public List<SNode> getNodes(Condition<SNode> p0) {
                 List<SNode> result = new ArrayList<SNode>();
                 SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);

@@ -24,7 +24,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.nodeEditor.SNodeEditorUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
@@ -79,7 +79,7 @@ public class NodePaster {
       pasteToParent(pasteTarget, role_, PastePlaceHint.DEFAULT);
     } else if (status == PASTE_TO_ROOT) {
       for (SNode pasteNode : myPasteNodes) {
-        pasteNode.getModel().addRoot(pasteNode);
+        pasteNode.getModel().addRootNode(pasteNode);
       }
     }
   }
@@ -93,7 +93,7 @@ public class NodePaster {
 
   public void pasteAsRoots(SModel model) {
     for (SNode pasteNode : myPasteNodes) {
-      model.addRoot(pasteNode);
+      model.addRootNode(pasteNode);
     }
   }
 

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.persistence.FileDataSource;
@@ -45,6 +45,7 @@ public class SModelFileTracker implements CoreComponent {
     return INSTANCE;
   }
 
+  @Override
   public void init() {
     if (INSTANCE != null) {
       throw new IllegalStateException("double initialization");
@@ -56,6 +57,7 @@ public class SModelFileTracker implements CoreComponent {
     INSTANCE = this;
   }
 
+  @Override
   public void dispose() {
     INSTANCE = null;
 
@@ -84,11 +86,13 @@ public class SModelFileTracker implements CoreComponent {
   }
 
   private class MySModelRepositoryAdapter extends SModelRepositoryAdapter {
-    public void modelRemoved(SModelDescriptor modelDescriptor) {
+    @Override
+    public void modelRemoved(SModel modelDescriptor) {
       removeModelFromFileCache(modelDescriptor);
     }
 
-    public void modelAdded(SModelDescriptor modelDescriptor) {
+    @Override
+    public void modelAdded(SModel modelDescriptor) {
       addModelToFileCache(modelDescriptor);
     }
   }
@@ -98,18 +102,22 @@ public class SModelFileTracker implements CoreComponent {
       super(SModelListenerPriority.PLATFORM);
     }
 
+    @Override
     public void beforeModelRenamed(SModelRenamedEvent event) {
       removeModelFromFileCache(event.getModelDescriptor());
     }
 
+    @Override
     public void modelRenamed(SModelRenamedEvent event) {
       addModelToFileCache(event.getModelDescriptor());
     }
 
+    @Override
     public void beforeModelFileChanged(SModelFileChangedEvent event) {
       removeModelFromFileCache(event.getModelDescriptor());
     }
 
+    @Override
     public void modelFileChanged(SModelFileChangedEvent event) {
       addModelToFileCache(event.getModelDescriptor());
     }

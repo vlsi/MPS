@@ -37,6 +37,7 @@ public class Poster {
   @NotNull
   public Response send(final Query query) {
     Performable send = new Performable() {
+      @Override
       @NotNull
       public Response perform() throws Exception {
         HttpClient client = new HttpClient();
@@ -58,6 +59,7 @@ public class Poster {
 
   public Response test(final Query query) {
     Performable test = new Performable() {
+      @Override
       @NotNull
       public Response perform() throws Exception {
         HttpClient client = new HttpClient();

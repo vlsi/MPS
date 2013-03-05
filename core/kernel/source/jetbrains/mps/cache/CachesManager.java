@@ -19,7 +19,8 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 
 import java.util.ArrayList;
@@ -36,20 +37,23 @@ public class CachesManager implements CoreComponent {
 
   private ConcurrentMap<Object, AbstractCache> myCaches = new ConcurrentHashMap<Object, AbstractCache>();
   private ConcurrentMap<AbstractCache, ModelEventRouter> myModelEventRouters = new ConcurrentHashMap<AbstractCache, ModelEventRouter>();
-  private ConcurrentMap<Object, List<SModelDescriptor>> myDependsOnModels = new ConcurrentHashMap<Object, List<SModelDescriptor>>();
+  private ConcurrentMap<Object, List<SModel>> myDependsOnModels = new ConcurrentHashMap<Object, List<SModel>>();
   private SModelRepositoryAdapter myModelRepoListener = new SModelRepositoryAdapter() {
-    public void modelRemoved(SModelDescriptor modelDescriptor) {
+    @Override
+    public void modelRemoved(SModel modelDescriptor) {
       onModelRemoved(modelDescriptor);
     }
 
-    public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
-      for (SModelDescriptor replacedModel : replacedModels) {
+    @Override
+    public void modelsReplaced(Set<SModel> replacedModels) {
+      for (SModel replacedModel : replacedModels) {
         onModelRemoved(replacedModel);
       }
     }
   };
 
   private ReloadAdapter myCLMListener = new ReloadAdapter() {
+    @Override
     public void unload() {
       removeAllCaches();
     }
@@ -66,6 +70,7 @@ public class CachesManager implements CoreComponent {
     mySModelRepository = repo;
   }
 
+  @Override
   public void init() {
     if (INSTANCE != null) {
       throw new IllegalStateException("double initialization");
@@ -76,19 +81,20 @@ public class CachesManager implements CoreComponent {
     myClassLoaderManager.addReloadHandler(myCLMListener);
   }
 
+  @Override
   public void dispose() {
     myClassLoaderManager.removeReloadHandler(myCLMListener);
     mySModelRepository.removeModelRepositoryListener(myModelRepoListener);
     INSTANCE = null;
   }
 
-  private AbstractCache putCache(Object key, AbstractCache cache, List<SModelDescriptor> dependsOnModels) {
+  private AbstractCache putCache(Object key, AbstractCache cache, List<SModel> dependsOnModels) {
     // register
     myDependsOnModels.put(key, dependsOnModels);
     ModelEventRouter eventRouter = new ModelEventRouter(cache);
     myModelEventRouters.put(cache, eventRouter);
-    for (SModelDescriptor dependsOnModel : dependsOnModels) {
-      dependsOnModel.addModelListener(eventRouter);
+    for (SModel dependsOnModel : dependsOnModels) {
+      ((SModelInternal) dependsOnModel).addModelListener(eventRouter);
     }
 
     // publish
@@ -97,8 +103,8 @@ public class CachesManager implements CoreComponent {
       // already exists => cleanup
       myModelEventRouters.remove(cache);
       myDependsOnModels.remove(key);
-      for (SModelDescriptor dependsOnModel : dependsOnModels) {
-        dependsOnModel.removeModelListener(eventRouter);
+      for (SModel dependsOnModel : dependsOnModels) {
+        ((SModelInternal) dependsOnModel).removeModelListener(eventRouter);
       }
       cache.clearCache();
       return existing;
@@ -110,22 +116,22 @@ public class CachesManager implements CoreComponent {
     AbstractCache result = myCaches.get(key);
     if (result != null || element == null || creator == null) return result;
     result = creator.create(key, element);
-    Set<SModelDescriptor> descriptorSet = result.getDependsOnModels(element);
+    Set<SModel> descriptorSet = result.getDependsOnModels(element);
     if (descriptorSet.contains(null)) {
       LOG.error("Dependent models for cache contains null", new Throwable());
       descriptorSet.remove(null);
     }
-    return putCache(key, result, new ArrayList<SModelDescriptor>(descriptorSet));
+    return putCache(key, result, new ArrayList<SModel>(descriptorSet));
   }
 
   public void removeCache(Object key) {
     AbstractCache cache = myCaches.remove(key);
     if (cache == null) return;
     ModelEventRouter eventRouter = myModelEventRouters.remove(cache);
-    List<SModelDescriptor> dependsOnModels = myDependsOnModels.remove(key);
+    List<SModel> dependsOnModels = myDependsOnModels.remove(key);
     if (eventRouter != null && dependsOnModels != null) {
-      for (SModelDescriptor dependsOnModel : dependsOnModels) {
-        dependsOnModel.removeModelListener(eventRouter);
+      for (SModel dependsOnModel : dependsOnModels) {
+        ((SModelInternal) dependsOnModel).removeModelListener(eventRouter);
       }
     }
     cache.clearCache();
@@ -144,16 +150,16 @@ public class CachesManager implements CoreComponent {
     removeAllCaches();
   }
 
-  private void onModelRemoved(SModelDescriptor modelDescriptor) {
+  private void onModelRemoved(SModel modelDescriptor) {
     List<Object> keysToRemove = new ArrayList<Object>();
-    SModelReference reference = modelDescriptor.getSModelReference();
+    SModelReference reference = modelDescriptor.getReference();
     for (Object key : myDependsOnModels.keySet()) {
-      List<SModelDescriptor> dependsOnModels = myDependsOnModels.get(key);
+      List<SModel> dependsOnModels = myDependsOnModels.get(key);
       if (dependsOnModels == null) {
         continue;
       }
-      for (SModelDescriptor dependsOnModel : dependsOnModels) {
-        if (dependsOnModel.getSModelReference().equals(reference)) {
+      for (SModel dependsOnModel : dependsOnModels) {
+        if (dependsOnModel.getReference().equals(reference)) {
           keysToRemove.add(key);
         }
       }
@@ -177,34 +183,42 @@ public class CachesManager implements CoreComponent {
     }
 
 
+    @Override
     public void languageAdded(SModelLanguageEvent event) {
       myCache.languageAdded(event);
     }
 
+    @Override
     public void languageRemoved(SModelLanguageEvent event) {
       myCache.languageRemoved(event);
     }
 
+    @Override
     public void importAdded(SModelImportEvent event) {
       myCache.importAdded(event);
     }
 
+    @Override
     public void importRemoved(SModelImportEvent event) {
       myCache.importRemoved(event);
     }
 
+    @Override
     public void devkitAdded(SModelDevKitEvent event) {
       myCache.devkitAdded(event);
     }
 
+    @Override
     public void devkitRemoved(SModelDevKitEvent event) {
       myCache.devkitRemoved(event);
     }
 
+    @Override
     public void rootAdded(SModelRootEvent event) {
       myCache.rootAdded(event);
     }
 
+    @Override
     public void rootRemoved(SModelRootEvent event) {
       myCache.rootRemoved(event);
       if (!myCache.isAttached()) return;
@@ -216,6 +230,7 @@ public class CachesManager implements CoreComponent {
       }
     }
 
+    @Override
     public void beforeRootRemoved(SModelRootEvent event) {
       myCache.beforeRootRemoved(event);
       if (!myCache.isAttached()) return;
@@ -227,6 +242,7 @@ public class CachesManager implements CoreComponent {
       }
     }
 
+    @Override
     public void propertyChanged(SModelPropertyEvent event) {
       myCache.propertyChanged(event);
       if (!myCache.isAttached()) return;
@@ -238,6 +254,7 @@ public class CachesManager implements CoreComponent {
       }
     }
 
+    @Override
     public void childAdded(SModelChildEvent event) {
       myCache.childAdded(event);
       if (!myCache.isAttached()) return;
@@ -249,6 +266,7 @@ public class CachesManager implements CoreComponent {
       }
     }
 
+    @Override
     public void childRemoved(SModelChildEvent event) {
       myCache.childRemoved(event);
       if (!myCache.isAttached()) return;
@@ -261,6 +279,7 @@ public class CachesManager implements CoreComponent {
       }
     }
 
+    @Override
     public void beforeChildRemoved(SModelChildEvent event) {
       myCache.beforeChildRemoved(event);
       if (!myCache.isAttached()) return;
@@ -273,6 +292,7 @@ public class CachesManager implements CoreComponent {
       }
     }
 
+    @Override
     public void referenceAdded(SModelReferenceEvent event) {
       myCache.referenceAdded(event);
       if (!myCache.isAttached()) return;
@@ -284,6 +304,7 @@ public class CachesManager implements CoreComponent {
       }
     }
 
+    @Override
     public void referenceRemoved(SModelReferenceEvent event) {
       myCache.referenceRemoved(event);
       if (!myCache.isAttached()) return;

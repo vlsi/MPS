@@ -4,19 +4,19 @@ package jetbrains.mps.build.packaging.editor;
 
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class IncludeExcludeEditorComponent extends AbstractCellProvider {
   public IncludeExcludeEditorComponent(SNode node) {
@@ -32,9 +32,9 @@ public class IncludeExcludeEditorComponent extends AbstractCellProvider {
   }
 
   @Deprecated
-  public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  public jetbrains.mps.nodeEditor.cells.EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
     // This method was added in MPS 3.0 for the compatibility with prev. generated code 
-    return createEditorCell((EditorContext) editorContext);
+    return (jetbrains.mps.nodeEditor.cells.EditorCell) createEditorCell((EditorContext) editorContext);
   }
 
   private EditorCell createCollection_ex5pkv_a(EditorContext editorContext, SNode node) {
@@ -61,27 +61,13 @@ public class IncludeExcludeEditorComponent extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createCollection_ex5pkv_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_ex5pkv_b0");
-    editorCell.addEditorCell(this.createConstant_ex5pkv_a1a(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_ex5pkv_b1a(editorContext, node));
-    return editorCell;
+  private static boolean renderingCondition_ex5pkv_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getString(node, "excludes") != null && SPropertyOperations.getString(node, "excludes").length() > 0;
   }
 
   private EditorCell createConstant_ex5pkv_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "excludes");
     editorCell.setCellId("Constant_ex5pkv_a0a");
-    Style style = new StyleImpl();
-    PackagingStyles_StyleSheet.applyKeyword(style, editorCell);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_ex5pkv_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "includes");
-    editorCell.setCellId("Constant_ex5pkv_a1a");
     Style style = new StyleImpl();
     PackagingStyles_StyleSheet.applyKeyword(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -108,6 +94,28 @@ public class IncludeExcludeEditorComponent extends AbstractCellProvider {
     return editorCell;
   }
 
+  private EditorCell createCollection_ex5pkv_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_ex5pkv_b0");
+    editorCell.addEditorCell(this.createConstant_ex5pkv_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_ex5pkv_b1a(editorContext, node));
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_ex5pkv_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getString(node, "includes") != null && SPropertyOperations.getString(node, "includes").length() > 0;
+  }
+
+  private EditorCell createConstant_ex5pkv_a1a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "includes");
+    editorCell.setCellId("Constant_ex5pkv_a1a");
+    Style style = new StyleImpl();
+    PackagingStyles_StyleSheet.applyKeyword(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   private EditorCell createProperty_ex5pkv_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("includes");
@@ -125,13 +133,5 @@ public class IncludeExcludeEditorComponent extends AbstractCellProvider {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_ex5pkv_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getString(node, "excludes") != null && SPropertyOperations.getString(node, "excludes").length() > 0;
-  }
-
-  private static boolean renderingCondition_ex5pkv_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getString(node, "includes") != null && SPropertyOperations.getString(node, "includes").length() > 0;
   }
 }

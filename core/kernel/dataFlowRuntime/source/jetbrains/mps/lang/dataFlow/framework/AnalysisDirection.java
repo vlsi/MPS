@@ -20,20 +20,24 @@ import java.util.List;
 public enum AnalysisDirection {
 
   FORWARD() {
+    @Override
     public List<ProgramState> dependencies(ProgramState s) {
       return s.pred();
     }
 
+    @Override
     public List<ProgramState> dependents(ProgramState s) {
       return s.succ();
     }
   },
 
   BACKWARD() {
+    @Override
     public List<ProgramState> dependencies(ProgramState s) {
       return s.succ();
     }
 
+    @Override
     public List<ProgramState> dependents(ProgramState s) {
       return s.pred();
     }

@@ -18,10 +18,9 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.SModel;
 
 public class ModuleUsagesFinder implements IFinder {
   private static final String USED_BY = "used by";
@@ -37,6 +36,7 @@ public class ModuleUsagesFinder implements IFinder {
   public ModuleUsagesFinder() {
   }
 
+  @Override
   public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
     SearchResults searchResults = new SearchResults();
     IHolder objectHolder = query.getObjectHolder();
@@ -117,7 +117,7 @@ public class ModuleUsagesFinder implements IFinder {
   }
 
   private void collectUsagesInModels(IModule searchedModule, IModule owner, SearchResults searchResults) {
-    for (SModelDescriptor modelDescriptor : owner.getOwnModelDescriptors()) {
+    for (SModel modelDescriptor : owner.getOwnModelDescriptors()) {
       if (!(SModelStereotype.isUserModel(modelDescriptor))) {
         continue;
       }

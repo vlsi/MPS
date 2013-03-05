@@ -17,10 +17,15 @@ package jetbrains.mps.smodel.persistence.def.v6;
 
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.DynamicReference;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.StaticReference;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -37,32 +42,31 @@ public class VersionUtil {
   private Map<SModelReference, ImportElement> myImports;
 
   public VersionUtil(SModel model) {
-    myModelRef = model.getSModelReference();
+    myModelRef = model.getReference();
     myImports = new HashMap<SModelReference, ImportElement>();
     fillReferenceIDs(model);  // replace "-1" indice to valid values and advance maxImportIndex
-    for (ImportElement elem : model.importedModels()) {
+    for (ImportElement elem : ((jetbrains.mps.smodel.SModel) model).importedModels()) {
       myImports.put(elem.getModelReference(), elem);
     }
-    for (ImportElement elem : model.getAdditionalModelVersions()) {
+    for (ImportElement elem : ((jetbrains.mps.smodel.SModel) model).getAdditionalModelVersions()) {
       myImports.put(elem.getModelReference(), elem);
     }
   }
 
   // when upgrading to 6 persistence some of IDs can be -1 and need to be fixed
   static void fillReferenceIDs(SModel model) {
-    for (ImportElement elem : model.importedModels()) {
-      fixReferenceID(model, elem);
+    int maxImport = 0;
+    for (ImportElement elem : ((jetbrains.mps.smodel.SModel) model).importedModels()) {
+      maxImport = Math.max(elem.getReferenceID(), maxImport);
     }
-    for (ImportElement elem : model.getAdditionalModelVersions()) {
-      fixReferenceID(model, elem);
+    for (ImportElement elem : ((jetbrains.mps.smodel.SModel) model).getAdditionalModelVersions()) {
+      maxImport = Math.max(elem.getReferenceID(), maxImport);
     }
-  }
-
-  static void fixReferenceID(SModel model, ImportElement elem) {
-    if (elem.getReferenceID() < 0) {
-      int id = model.getMaxImportIndex();
-      model.setMaxImportIndex(++id);
-      elem.setReferenceID(id);
+    for (ImportElement elem : ((jetbrains.mps.smodel.SModel) model).importedModels()) {
+      if (elem.getReferenceID() < 0) elem.setReferenceID(++maxImport);
+    }
+    for (ImportElement elem : ((jetbrains.mps.smodel.SModel) model).getAdditionalModelVersions()) {
+      if (elem.getReferenceID() < 0) elem.setReferenceID(++maxImport);
     }
   }
 
@@ -86,7 +90,7 @@ public class VersionUtil {
 
   @NotNull
   private String genReferenceString(@Nullable SNode node, @NotNull String text, boolean usemodel) {
-    return node == null ? text : genReferenceString(node.getModel().getSModelReference(), text, usemodel);
+    return node == null ? text : genReferenceString(node.getModel().getReference(), text, usemodel);
   }
 
   public String genType(@NotNull SNode node) {
@@ -128,13 +132,12 @@ public class VersionUtil {
     int ix = Integer.parseInt(index);
     SModelReference modelRef = SModelReference.fromString(modelUID);
     ImportElement elem = new ImportElement(modelRef, ix, version);
-    if (model.getMaxImportIndex() < ix) model.setMaxImportIndex(ix);
     myImports.put(modelRef, elem);
     myImportByIx.put(ix, elem);
     if (implicit)
-      model.addAdditionalModelVersion(elem);
+      ((jetbrains.mps.smodel.SModel) model).addAdditionalModelVersion(elem);
     else
-      model.addModelImport(elem);
+      ((jetbrains.mps.smodel.SModel) model).addModelImport(elem);
   }
 
   public SModelReference getSModelReference(int ix) {

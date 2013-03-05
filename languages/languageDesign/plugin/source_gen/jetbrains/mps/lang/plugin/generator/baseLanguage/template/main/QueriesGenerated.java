@@ -24,7 +24,7 @@ import jetbrains.mps.lang.plugin.behavior.PreferencesComponentDeclaration_Behavi
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.plugin.behavior.PreferencePage_Behavior;
 import jetbrains.mps.util.JavaNameUtil;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.plugin.behavior.GroupAnchor_Behavior;
 import jetbrains.mps.lang.plugin.behavior.KeyMapKeystroke_Behavior;
 import jetbrains.mps.lang.plugin.behavior.KeymapChangesDeclaration_Behavior;
@@ -300,7 +300,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_3575782568432656827(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "componentDeclaration", false)).getLongName() + "." + PreferencesComponentDeclaration_Behavior.call_getClassName_1213877322095(SLinkOperations.getTarget(_context.getNode(), "componentDeclaration", false));
+    return jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "componentDeclaration", false))) + "." + PreferencesComponentDeclaration_Behavior.call_getClassName_1213877322095(SLinkOperations.getTarget(_context.getNode(), "componentDeclaration", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_7050292266500712660(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -1721,7 +1721,7 @@ public class QueriesGenerated {
   private static SNode _quotation_createNode_x583g4_a0a1a21() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SModel")));
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SModel")));
     return quotedNode_1;
   }
 

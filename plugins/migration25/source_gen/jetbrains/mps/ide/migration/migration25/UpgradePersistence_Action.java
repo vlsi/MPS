@@ -10,17 +10,18 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.logging.Logger;
-import java.util.List;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
-import java.util.ArrayList;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.extapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.smodel.persistence.def.ModelReadException;
+import jetbrains.mps.persistence.DefaultModelRoot;
+import jetbrains.mps.util.FileUtil;
+import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import java.io.IOException;
 
 public class UpgradePersistence_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -57,43 +58,39 @@ public class UpgradePersistence_Action extends BaseAction {
     try {
       Logger LOG = Logger.getLogger("jetbrains.mps.ide.migration.UpgradePersistence_Action");
 
-      List<DefaultSModelDescriptor> modelDescriptors = new ArrayList<DefaultSModelDescriptor>();
       final MPSProject mpsProject = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSProject.class);
       for (SModule module : mpsProject.getModulesWithGenerators()) {
-        for (SModel smd : module.getModels()) {
-          if (smd instanceof DefaultSModelDescriptor) {
-            int modelVersion = ((DefaultSModelDescriptor) smd).getPersistenceVersion();
-            if (modelVersion < ModelPersistence.LAST_VERSION) {
-              modelDescriptors.add(((DefaultSModelDescriptor) smd));
-            }
+        for (SModel model : module.getModels()) {
+          if (!(model instanceof EditableSModel)) {
+            continue;
           }
-        }
-      }
+          DataSource source = model.getSource();
+          if (!(source instanceof FileDataSource)) {
+            continue;
+          }
+          FileDataSource fileSource = (FileDataSource) source;
+          if (!(model.getModelRoot() instanceof DefaultModelRoot) || fileSource.isReadOnly()) {
+            continue;
+          }
 
-      for (final DefaultSModelDescriptor modelDescriptor : modelDescriptors) {
-        FileDataSource source = modelDescriptor.getSource();
-        if (source.isReadOnly()) {
-          continue;
-        }
-        IFile file = source.getFile();
-        boolean wasInitialized = modelDescriptor.isLoaded();
-        if (wasInitialized) {
-          modelDescriptor.save();
-        }
-        int fromVersion = modelDescriptor.getPersistenceVersion();
-        if (fromVersion >= ModelPersistence.LAST_VERSION) {
-          continue;
-        }
-        assert file != null;
-        try {
-          jetbrains.mps.smodel.SModel model = (wasInitialized ?
-            modelDescriptor.getSModel() :
-            ModelPersistence.readModel(file, false)
-          );
-          ModelPersistence.saveModel(model, file, ModelPersistence.LAST_VERSION);
-          modelDescriptor.reloadFromDisk();
-        } catch (ModelReadException e) {
-          LOG.error(e);
+          String ext = FileUtil.getExtension(fileSource.getFile().getName());
+          ModelFactory factory = PersistenceFacade.getInstance().getModelFactory(ext);
+          try {
+            if (factory == null || !(factory.needsUpgrade(fileSource))) {
+              continue;
+            }
+
+            boolean wasInitialized = model.isLoaded();
+            if (wasInitialized) {
+              model.save();
+            }
+
+            factory.upgrade(fileSource);
+            ((EditableSModel) model).reloadFromDisk();
+
+          } catch (IOException ex) {
+            LOG.error(ex);
+          }
         }
       }
     } catch (Throwable t) {

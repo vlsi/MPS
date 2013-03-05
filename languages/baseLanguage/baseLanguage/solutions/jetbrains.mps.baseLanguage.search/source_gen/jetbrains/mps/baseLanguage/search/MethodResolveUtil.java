@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
@@ -121,7 +121,7 @@ public class MethodResolveUtil {
   }
 
   private static boolean hasEqualsFQName(SModel model1, SModel model2) {
-    return model1.getLongName().equals(model2.getLongName());
+    return jetbrains.mps.util.SNodeOperations.getModelLongName(model1).equals(jetbrains.mps.util.SNodeOperations.getModelLongName(model2));
   }
 
   public static SNode chooseByParameterType(List<SNode> candidates, List<SNode> actualArgs, Map<SNode, SNode> typeByTypeVar) {
@@ -141,6 +141,7 @@ public class MethodResolveUtil {
           typeOfArg = nodesAndTypes.get(term);
         } else {
           typeOfArg = TypeContextManager.getInstance().runResolveAction(new Computable<SNode>() {
+            @Override
             public SNode compute() {
               return TypeChecker.getInstance().getTypeOf(term);
             }

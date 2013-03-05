@@ -17,7 +17,7 @@ package jetbrains.mps.generator.impl.reference;
 
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.TemplateGenerator;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

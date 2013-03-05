@@ -27,7 +27,7 @@ import jetbrains.mps.ide.findusages.model.scopes.FindUsagesScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -77,6 +77,7 @@ public class SearchQuery implements IExternalizeable {
     return myObjectHolder.getCaption();
   }
 
+  @Override
   public void write(Element element, Project project) throws CantSaveSomethingException {
     if (myScope instanceof FindUsagesScope) {
       FindUsagesScope.save((FindUsagesScope) myScope, element, project);
@@ -90,6 +91,7 @@ public class SearchQuery implements IExternalizeable {
     element.addContent(holderXML);
   }
 
+  @Override
   public void read(Element element, Project project) throws CantLoadSomethingException {
     myScope = FindUsagesScope.load(element, project);
 

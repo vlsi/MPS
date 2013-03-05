@@ -49,11 +49,10 @@ import jetbrains.mps.idea.java.psiStubs.PsiJavaStubModelRoot;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -239,7 +238,7 @@ public class ProjectJavaSourceImporter extends AbstractJavaStubSolutionManager i
 //        }
 //      });
 //
-//      for (SModelDescriptor desc: SModelRepository.getInstance().getModelDescriptors(solution)) {
+//      for (SModel desc: SModelRepository.getInstance().getModelDescriptors(solution)) {
 //        if (desc instanceof BaseStubModelDescriptor) {
 //          BaseStubModelDescriptor modelDesc = (BaseStubModelDescriptor)desc;
 //          FolderSetDataSource modelDataSource = (FolderSetDataSource) modelDesc.getSource();

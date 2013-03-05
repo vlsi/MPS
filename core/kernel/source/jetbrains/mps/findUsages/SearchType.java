@@ -15,16 +15,12 @@
  */
 package jetbrains.mps.findUsages;
 
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.Mapper;
-import jetbrains.mps.util.containers.MultiMap;
-import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.persistence.indexing.FastFindSupport;
-import org.jetbrains.mps.openapi.persistence.indexing.FastFindUsagesRegistry;
+import org.jetbrains.mps.openapi.module.SearchScope;
 
 import java.util.Set;
 
@@ -37,15 +33,5 @@ public abstract class SearchType<T, R> {
 
   //--------intfc---------
 
-  public abstract MultiMap<SModel, R> findMatchingModelsInCache(Set<R> nodes, Iterable<SModel> models, @Nullable Computable<Boolean> callback);
-
-  public abstract Set<T> findInModel(MultiMap<SModel, R> models, @Nullable Computable<Boolean> callback);
-
-  protected MultiMap<FastFindSupport, SModel> groupModelByFastFindSupport(Iterable<? extends SModel> models) {
-    return ModelGroupingUtil.groupModelsByRootMapping(models, new Mapper<String, FastFindSupport>() {
-      public FastFindSupport value(String key) {
-        return FastFindUsagesRegistry.getInstance().getFastFindSupport(key);
-      }
-    });
-  }
+  public abstract Set<T> search(Set<R> elements, SearchScope scope, @NotNull ProgressMonitor monitor);
 }

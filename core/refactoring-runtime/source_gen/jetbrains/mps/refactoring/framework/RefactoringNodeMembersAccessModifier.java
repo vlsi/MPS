@@ -9,7 +9,7 @@ import jetbrains.mps.util.Pair;
 import java.util.HashMap;
 import java.util.Set;
 import java.util.HashSet;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
@@ -34,6 +34,7 @@ public class RefactoringNodeMembersAccessModifier implements NodeMemberAccessMod
   public RefactoringNodeMembersAccessModifier() {
   }
 
+  @Override
   public void addModelsToModify(Collection<SModel> models) {
     LOG.assertCanRead();
     myModifiableModels.addAll(models);
@@ -105,6 +106,7 @@ public class RefactoringNodeMembersAccessModifier implements NodeMemberAccessMod
     return myModifiableModels.contains(model) && SetSequence.fromSet(myOldNames).contains(oldName);
   }
 
+  @Override
   public String getNewChildRole(SModel model, String conceptFQName, String role) {
     if (isModificationMode(model, role)) {
       String newRole = getNewFeatureRole_internal(conceptFQName, role, StructureModificationData.ConceptFeatureKind.CHILD);
@@ -115,6 +117,7 @@ public class RefactoringNodeMembersAccessModifier implements NodeMemberAccessMod
     return role;
   }
 
+  @Override
   public String getNewReferentRole(SModel model, String conceptFQName, String role) {
     if (isModificationMode(model, role)) {
       String newRole = getNewFeatureRole_internal(conceptFQName, role, StructureModificationData.ConceptFeatureKind.REFERENCE);
@@ -125,6 +128,7 @@ public class RefactoringNodeMembersAccessModifier implements NodeMemberAccessMod
     return role;
   }
 
+  @Override
   public String getNewPropertyName(SModel model, String conceptFQName, String propertyName) {
     if (isModificationMode(model, propertyName)) {
       String newName = getNewFeatureRole_internal(conceptFQName, propertyName, StructureModificationData.ConceptFeatureKind.PROPERTY);

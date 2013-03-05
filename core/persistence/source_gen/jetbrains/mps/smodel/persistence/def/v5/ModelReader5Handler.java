@@ -17,6 +17,7 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -191,9 +192,6 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
       if ("persistence".equals(tagName)) {
         return persistencehandler;
       }
-      if ("maxImportIndex".equals(tagName)) {
-        return maxImportIndexhandler;
-      }
       if ("languageAspect".equals(tagName)) {
         return languageAspecthandler;
       }
@@ -224,46 +222,36 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
       if ("persistence".equals(tagName)) {
         return;
       }
-      if ("maxImportIndex".equals(tagName)) {
-        Integer child = (Integer) value;
-        if (child > fieldmodel.getMaxImportIndex()) {
-          fieldmodel.setMaxImportIndex(child);
-        }
-        return;
-      }
       if ("languageAspect".equals(tagName)) {
         String[] child = (String[]) value;
         int version = Integer.parseInt(child[1]);
-        fieldmodel.addAdditionalModelVersion(SModelReference.fromString(child[0]), version);
+        ((SModelInternal) fieldmodel).addAdditionalModelVersion(SModelReference.fromString(child[0]), version);
         return;
       }
       if ("language".equals(tagName)) {
         String child = (String) value;
-        fieldmodel.addLanguage(ModuleReference.fromString(child));
+        ((SModelInternal) fieldmodel).addLanguage(ModuleReference.fromString(child));
         return;
       }
       if ("language-engaged-on-generation".equals(tagName)) {
         String child = (String) value;
-        fieldmodel.addEngagedOnGenerationLanguage(ModuleReference.fromString(child));
+        ((SModelInternal) fieldmodel).addEngagedOnGenerationLanguage(ModuleReference.fromString(child));
         return;
       }
       if ("devkit".equals(tagName)) {
         String child = (String) value;
-        fieldmodel.addDevKit(ModuleReference.fromString(child));
+        ((SModelInternal) fieldmodel).addDevKit(ModuleReference.fromString(child));
         return;
       }
       if ("import".equals(tagName)) {
         SModel.ImportElement child = (SModel.ImportElement) value;
-        if (child.getReferenceID() > fieldmodel.getMaxImportIndex()) {
-          fieldmodel.setMaxImportIndex(child.getReferenceID());
-        }
-        fieldmodel.addModelImport(child);
+        ((SModelInternal) fieldmodel).addModelImport(child);
         return;
       }
       if ("node".equals(tagName)) {
         SNode child = (SNode) value;
         if (child != null) {
-          fieldmodel.addRoot(child);
+          fieldmodel.addRootNode(child);
         }
         return;
       }

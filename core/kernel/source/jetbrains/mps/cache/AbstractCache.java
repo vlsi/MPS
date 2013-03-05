@@ -17,7 +17,7 @@ package jetbrains.mps.cache;
 
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SModelAdapter;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.Computable;
 
@@ -52,7 +52,7 @@ public abstract class AbstractCache extends SModelAdapter {
     return CachesManager.getInstance().getCache(myKey, null, null) == this;
   }
 
-  public abstract Set<SModelDescriptor> getDependsOnModels(Object element);
+  public abstract Set<SModel> getDependsOnModels(Object element);
 
   public void removeDataSet(DataSet dataSet) {
     myDataSets.remove(dataSet.getId());
@@ -85,48 +85,63 @@ public abstract class AbstractCache extends SModelAdapter {
 
   // model listener
 
+  @Override
   public void languageAdded(SModelLanguageEvent event) {
   }
 
+  @Override
   public void languageRemoved(SModelLanguageEvent event) {
   }
 
+  @Override
   public void importAdded(SModelImportEvent event) {
   }
 
+  @Override
   public void importRemoved(SModelImportEvent event) {
   }
 
+  @Override
   public void devkitAdded(SModelDevKitEvent event) {
   }
 
+  @Override
   public void devkitRemoved(SModelDevKitEvent event) {
   }
 
+  @Override
   public void rootAdded(SModelRootEvent event) {
   }
 
+  @Override
   public void rootRemoved(SModelRootEvent event) {
   }
 
+  @Override
   public void beforeRootRemoved(SModelRootEvent event) {
   }
 
+  @Override
   public void propertyChanged(SModelPropertyEvent event) {
   }
 
+  @Override
   public void childAdded(SModelChildEvent event) {
   }
 
+  @Override
   public void childRemoved(SModelChildEvent event) {
   }
 
+  @Override
   public void beforeChildRemoved(SModelChildEvent event) {
   }
 
+  @Override
   public void referenceAdded(SModelReferenceEvent event) {
   }
 
+  @Override
   public void referenceRemoved(SModelReferenceEvent event) {
   }
 

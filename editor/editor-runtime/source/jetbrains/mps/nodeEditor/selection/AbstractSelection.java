@@ -16,6 +16,8 @@
 package jetbrains.mps.nodeEditor.selection;
 
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.openapi.editor.cells.CellAction;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
 import org.jetbrains.annotations.NotNull;
 
 public abstract class AbstractSelection implements Selection {

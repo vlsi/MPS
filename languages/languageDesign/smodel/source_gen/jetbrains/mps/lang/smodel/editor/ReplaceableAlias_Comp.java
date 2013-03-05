@@ -4,9 +4,11 @@ package jetbrains.mps.lang.smodel.editor;
 
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -15,10 +17,8 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ReplaceableAlias_Comp extends AbstractCellProvider {
   public ReplaceableAlias_Comp(SNode node) {
@@ -34,18 +34,9 @@ public class ReplaceableAlias_Comp extends AbstractCellProvider {
   }
 
   @Deprecated
-  public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  public jetbrains.mps.nodeEditor.cells.EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
     // This method was added in MPS 3.0 for the compatibility with prev. generated code 
-    return createEditorCell((EditorContext) editorContext);
-  }
-
-  public static class ReplaceWith_SNodeOperation_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_SNodeOperation_cellMenu_a0a0() {
-    }
-
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.lang.smodel.structure.SNodeOperation";
-    }
+    return (jetbrains.mps.nodeEditor.cells.EditorCell) createEditorCell((EditorContext) editorContext);
   }
 
   private EditorCell createAlternation_gk1mhy_a(EditorContext editorContext, SNode node) {
@@ -60,23 +51,32 @@ public class ReplaceableAlias_Comp extends AbstractCellProvider {
     return editorCell;
   }
 
+  private static boolean renderingCondition_gk1mhy_a0(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.smodel.structure.SNodeOperation"));
+  }
+
   private EditorCell createComponent_gk1mhy_a0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AliasEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ReplaceableAlias_Comp.ReplaceWith_SNodeOperation_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ReplaceableAlias_Comp.ReplaceWith_SNodeOperation_cellMenu_gk1mhy_a0a0()}));
     return editorCell;
+  }
+
+  public static class ReplaceWith_SNodeOperation_cellMenu_gk1mhy_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_SNodeOperation_cellMenu_gk1mhy_a0a0() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.lang.smodel.structure.SNodeOperation";
+    }
   }
 
   private EditorCell createError_gk1mhy_a0(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<choose operaion>");
     editorCell.setCellId("Error_gk1mhy_a0");
     return editorCell;
-  }
-
-  private static boolean renderingCondition_gk1mhy_a0(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.smodel.structure.SNodeOperation"));
   }
 }

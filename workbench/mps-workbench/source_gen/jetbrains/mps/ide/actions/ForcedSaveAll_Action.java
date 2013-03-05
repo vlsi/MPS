@@ -7,11 +7,11 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.logging.Logger;
 
 public class ForcedSaveAll_Action extends BaseAction {
@@ -46,19 +46,19 @@ public class ForcedSaveAll_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      for (SModelDescriptor descr : ListSequence.fromList(SModelRepository.getInstance().getModelDescriptors())) {
-        if (!(SModelStereotype.isUserModel(descr) && descr instanceof EditableSModelDescriptor)) {
+      for (SModel descr : ListSequence.fromList(SModelRepository.getInstance().getModelDescriptors())) {
+        if (!(SModelStereotype.isUserModel(descr) && descr instanceof EditableSModel)) {
           continue;
         }
-        EditableSModelDescriptor modelDescr = (EditableSModelDescriptor) descr;
-        if (modelDescr.isReadOnly()) {
+        EditableSModel model = (EditableSModel) descr;
+        if (model.isReadOnly()) {
           continue;
         }
         // ensure model is loaded 
-        modelDescr.getSModel();
+        model.load();
         //  and force to save model 
-        modelDescr.setChanged(true);
-        modelDescr.save();
+        model.setChanged(true);
+        model.save();
       }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ForcedSaveAll", t);

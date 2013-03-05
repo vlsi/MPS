@@ -17,7 +17,7 @@ package jetbrains.mps.generator.test;
 
 import jetbrains.mps.TestMain;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.junit.Test;
 
 import java.io.File;
@@ -31,7 +31,7 @@ public class ParallelGenerationMeasuringTest extends GenerationTestBase {
   @Test
   public void testParallelEditor() throws IOException {
     final Project p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/MPS.mpr"));
-    final SModelDescriptor descr = findModel(p, "jetbrains.mps.baseLanguage.editor");
+    final SModel descr = findModel(p, "jetbrains.mps.baseLanguage.editor");
 
     doMeasureParallelGeneration(p, descr, 4);
     cleanup(p);
@@ -40,7 +40,7 @@ public class ParallelGenerationMeasuringTest extends GenerationTestBase {
   @Test
   public void testParallelIdeActions() throws IOException {
     final Project p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/MPS.mpr"));
-    final SModelDescriptor descr = findModel(p, "jetbrains.mps.ide.actions");
+    final SModel descr = findModel(p, "jetbrains.mps.ide.actions");
 
     doMeasureParallelGeneration(p, descr, 4);
     cleanup(p);

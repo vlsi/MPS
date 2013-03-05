@@ -18,7 +18,7 @@ package org.jetbrains.mps.openapi.model;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
@@ -87,7 +87,7 @@ public class SNodeAccessUtil {
 
   public static void setReferenceTarget(SNode node, String role, @Nullable SNode target) {
     SModel model = node.getModel();
-    if (model == null || !model.canFireEvent()) {
+    if (model == null || !((jetbrains.mps.smodel.SModel) model).canFireEvent()) {
       //todo[Mihail Muhin]: why?
       node.setReferenceTarget(role, target);
       return;
@@ -127,6 +127,7 @@ public class SNodeAccessUtil {
   }
 
   private static class InProgressThreadLocal extends ThreadLocal<Set<Pair<SNode, String>>> {
+    @Override
     protected Set<Pair<SNode, String>> initialValue() {
       return new HashSet<Pair<SNode, String>>();
     }

@@ -16,7 +16,7 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.module.SModule;
 
@@ -44,6 +44,7 @@ public class TransientModelsProvider {
 
   protected void clearAll() {
     ModelAccess.instance().requireWrite(new Runnable() {
+      @Override
       public void run() {
         List<TransientModelsModule> toRemove = new ArrayList<TransientModelsModule>(myModuleMap.values());
         myModuleMap.clear();
@@ -61,8 +62,9 @@ public class TransientModelsProvider {
     myKeptModels = 0;
   }
 
-  public synchronized void publishAll() {
+  public void publishAll() {
     ModelAccess.instance().requireWrite(new Runnable() {
+      @Override
       public void run() {
         for (TransientModelsModule m : myModuleMap.values()) {
           m.publishAll();

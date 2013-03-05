@@ -25,10 +25,12 @@ public class TrivialClassLoader extends AbstractClassLoader {
     myCls = cls;
   }
 
+  @Override
   protected byte[] findClassBytes(String name) {
     return EqualUtil.equals(name, myName) ? myCls : null;
   }
 
+  @Override
   protected boolean isExcluded(String name) {
     return false;
   }

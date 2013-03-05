@@ -15,12 +15,10 @@
  */
 package jetbrains.mps.smodel.loading;
 
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.UnregisteredNodes;
-
-import java.util.ArrayList;
 
 public class ModelLoader {
   private SModel myModel;
@@ -33,8 +31,8 @@ public class ModelLoader {
 
   public void update() {
     UnregisteredNodes.instance().clear();
-    for (SNode root : myModel.roots()) {
-      SNode fullRoot = myFullModel.getNodeById(root.getNodeId());
+    for (SNode root : myModel.getRootNodes()) {
+      SNode fullRoot = myFullModel.getNode(root.getNodeId());
       if (fullRoot == null) continue; //this can happen after model update if the
       for (SNode child : IterableUtil.copyToList(fullRoot.getChildren())) {
         String role = child.getRoleInParent();

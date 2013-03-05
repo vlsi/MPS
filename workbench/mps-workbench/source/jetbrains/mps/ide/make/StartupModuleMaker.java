@@ -17,14 +17,12 @@ package jetbrains.mps.ide.make;
 
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.components.AbstractProjectComponent;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.messages.MessagesViewTool;
-import jetbrains.mps.ide.platform.watching.FSChangesWatcher;
 import jetbrains.mps.ide.platform.watching.FSChangesWatcher;
 import jetbrains.mps.library.ProjectLibraryManager;
 import jetbrains.mps.make.ModuleMaker;
@@ -34,16 +32,12 @@ import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.MPSProjectMigrationListener;
-import jetbrains.mps.project.MPSProjectMigrationState;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
-
-import java.util.LinkedHashSet;
+import jetbrains.mps.util.IterableUtil;
 
 public class StartupModuleMaker extends AbstractProjectComponent {
   private final FSChangesWatcher myWatcher;
@@ -60,7 +54,7 @@ public class StartupModuleMaker extends AbstractProjectComponent {
   }
 
 
-  private void compileProjectModulesWithProgress (final boolean early) {
+  private void compileProjectModulesWithProgress(final boolean early) {
     ApplicationManagerEx.getApplicationEx().runProcessWithProgressSynchronously(new Runnable() {
       @Override
       public void run() {
@@ -77,6 +71,7 @@ public class StartupModuleMaker extends AbstractProjectComponent {
     try {
       //todo eliminate read access as it can potentially lead to a deadlock
       ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
         public void run() {
           ClassLoaderManager.getInstance().updateClassPath();
           monitor.advance(1);
@@ -84,8 +79,9 @@ public class StartupModuleMaker extends AbstractProjectComponent {
           final ModuleMaker maker = new ModuleMaker(new MessageHandler(), MessageKind.ERROR);
 
           myWatcher.executeUnderBlockedReload(new Computable<Object>() {
+            @Override
             public Object compute() {
-              maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), monitor.subTask(9));
+              maker.make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), monitor.subTask(9));
               return null;
             }
           });
@@ -99,6 +95,7 @@ public class StartupModuleMaker extends AbstractProjectComponent {
 
   private void reloadClasses(final ProgressIndicator indicator, boolean asPreStartup) {
     final Runnable reloadTask = new Runnable() {
+      @Override
       public void run() {
         ClassLoaderManager.getInstance().reloadAll(indicator != null ? new ProgressMonitorAdapter(indicator) : new EmptyProgressMonitor());
       }
@@ -106,11 +103,12 @@ public class StartupModuleMaker extends AbstractProjectComponent {
     if (asPreStartup) {
       //the pre-startup activity is needed because all project components must be already instantiated when first class reload happens
       StartupManager.getInstance(myProject).registerPreStartupActivity(new Runnable() {
+        @Override
         public void run() {
           ModelAccess.instance().runWriteAction(reloadTask);
         }
       });
-    }else {
+    } else {
       ThreadUtils.runInUIThreadNoWait(new Runnable() {
         @Override
         public void run() {
@@ -127,13 +125,15 @@ public class StartupModuleMaker extends AbstractProjectComponent {
       this.mvt = myProject.getComponent(MessagesViewTool.class);
     }
 
+    @Override
     public void clear() {
       this.mvt.clear();
     }
 
+    @Override
     public void handle(IMessage message) {
       this.mvt.add(message);
     }
-}
+  }
 
 }

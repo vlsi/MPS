@@ -250,6 +250,7 @@ __switch__:
     public ModulesGraph() {
     }
 
+    @Override
     public Iterable<ModuleReference> forwardEdges(ModuleReference v) {
       return ListSequence.fromList(MapSequence.fromMap(allDeps).get(v).dependent).where(new IWhereFilter<ModuleReference>() {
         public boolean accept(ModuleReference mod) {
@@ -258,6 +259,7 @@ __switch__:
       });
     }
 
+    @Override
     public Iterable<ModuleReference> backwardEdges(ModuleReference v) {
       return ListSequence.fromList(MapSequence.fromMap(allDeps).get(v).required).where(new IWhereFilter<ModuleReference>() {
         public boolean accept(ModuleReference mod) {
@@ -266,6 +268,7 @@ __switch__:
       });
     }
 
+    @Override
     public Iterable<ModuleReference> vertices() {
       return MapSequence.fromMap(allDeps).keySet();
     }

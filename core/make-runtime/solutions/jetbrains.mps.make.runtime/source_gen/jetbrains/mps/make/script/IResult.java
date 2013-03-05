@@ -15,10 +15,12 @@ public interface IResult {
       this.output = output;
     }
 
+    @Override
     public boolean isSucessful() {
       return true;
     }
 
+    @Override
     public Iterable<IResource> output() {
       return output;
     }
@@ -31,10 +33,12 @@ public interface IResult {
       this.output = output;
     }
 
+    @Override
     public boolean isSucessful() {
       return false;
     }
 
+    @Override
     public Iterable<IResource> output() {
       return output;
     }

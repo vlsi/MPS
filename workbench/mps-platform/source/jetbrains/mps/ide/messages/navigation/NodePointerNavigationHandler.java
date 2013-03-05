@@ -21,11 +21,12 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 class NodePointerNavigationHandler implements INavigationHandler<SNodeReference> {
+  @Override
   public boolean canNavigate(SNodeReference object) {
     return isCorrectNode(object);
   }
@@ -36,7 +37,7 @@ class NodePointerNavigationHandler implements INavigationHandler<SNodeReference>
 
     if (!(realNode.getModel() != null)) return false;
 
-    SModelDescriptor modelDescriptor = realNode.getModel().getModelDescriptor();
+    SModel modelDescriptor = realNode.getModel().getModelDescriptor();
     if (modelDescriptor == null) return false;
 
     IModule module = modelDescriptor.getModule();
@@ -45,6 +46,7 @@ class NodePointerNavigationHandler implements INavigationHandler<SNodeReference>
     return true;
   }
 
+  @Override
   public void navigate(SNodeReference node, Project project, boolean focus, boolean select) {
     IModule module = node.resolve(MPSModuleRepository.getInstance()).getModel().getModelDescriptor().getModule();
     ModuleContext context = new ModuleContext(module, ProjectHelper.toMPSProject(project));

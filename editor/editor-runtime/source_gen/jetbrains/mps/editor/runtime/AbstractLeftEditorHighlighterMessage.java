@@ -38,14 +38,17 @@ public abstract class AbstractLeftEditorHighlighterMessage extends DefaultEditor
     return false;
   }
 
+  @Override
   public String getTooltipText() {
     return myTooltip;
   }
 
+  @Override
   public Cursor getMouseOverCursor() {
     return Cursor.getPredefinedCursor(Cursor.HAND_CURSOR);
   }
 
+  @Override
   public boolean showInGutter() {
     return false;
   }

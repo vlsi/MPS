@@ -17,7 +17,7 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.*;
@@ -42,7 +42,7 @@ public class TransientModelNodeFinder implements FastNodeFinder {
   }
 
   private void initCache() {
-    for (SNode root : myModel.roots()) {
+    for (SNode root : myModel.getRootNodes()) {
       addToCache(root);
     }
     myInitialized = true;
@@ -51,7 +51,7 @@ public class TransientModelNodeFinder implements FastNodeFinder {
   @Override
   public List<SNode> getNodes(String conceptFqName, boolean includeInherited) {
     // notify 'model nodes read access'
-    myModel.rootsIterator();
+    myModel.getRootNodes().iterator();
 
     synchronized (myLock) {
       if (!myInitialized) {

@@ -6,6 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
@@ -35,13 +36,14 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
     if (breakingNodePointer == null) {
       return null;
     } else {
-      SNode node = ((SNodePointer) breakingNodePointer).getNode();
+      SNode node = ((SNodePointer) breakingNodePointer).resolve(MPSModuleRepository.getInstance());
       checkingNodeContext.setBreakingNode(null);
 
       return node;
     }
   }
 
+  @Override
   public void checkNode(final SNode node, LanguageErrorsComponent component, final IOperationContext operationContext, IScope scope) {
     final ConstraintsDescriptor newDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getConceptId());
 
@@ -122,7 +124,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       final PropertySupport ps = PropertySupport.getPropertySupport(p);
       final String propertyName = SPropertyOperations.getString(p, "name");
       if (propertyName == null) {
-        LOG.error("Property declaration has a null name, declaration id: " + p.getNodeId() + ", model: " + SNodeOperations.getModel(p).getSModelFqName());
+        LOG.error("Property declaration has a null name, declaration id: " + p.getNodeId() + ", model: " + SNodeOperations.getModel(p).getReference().getSModelFqName());
         continue;
       }
       final String value = ps.fromInternalValue(SNodeAccessUtil.getProperty(node, propertyName));

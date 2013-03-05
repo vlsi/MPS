@@ -37,6 +37,7 @@ import com.sun.jdi.IncompatibleThreadStateException;
   }
 
   @NotNull
+  @Override
   public IValueProxy getFieldValue(String fieldName) throws InvalidEvaluatedExpressionException {
     ObjectReference value = getObjectValue();
     Field f = EvaluationUtils.getInstance().findField(myReferenceType, fieldName);

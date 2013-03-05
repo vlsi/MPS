@@ -33,9 +33,10 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.backports.Deque;
 import jetbrains.mps.internal.collections.runtime.DequeSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.DynamicReference;
+import jetbrains.mps.smodel.SModelInternal;
 
 public class JavaParser {
   private static Logger LOG = Logger.getLogger(JavaParser.class);
@@ -326,6 +327,7 @@ public class JavaParser {
         }
 
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          @Override
           public void run() {
             SNode theRightNode = subst.invoke();
             SNodeOperations.replaceWithAnother(unkNode, theRightNode);
@@ -366,7 +368,7 @@ public class JavaParser {
 
         SModel targetModel = target.getModel();
         if (targetModel != null) {
-          ourModel.addModelImport(targetModel.getSModelReference(), true);
+          ((SModelInternal) ourModel).addModelImport(targetModel.getReference(), true);
         }
       }
     }

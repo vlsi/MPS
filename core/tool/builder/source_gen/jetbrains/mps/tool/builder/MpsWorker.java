@@ -10,6 +10,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.make.ModuleMaker;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.util.Set;
@@ -37,7 +38,6 @@ import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import org.apache.log4j.Level;
@@ -120,10 +120,11 @@ public abstract class MpsWorker {
 
   protected void make() {
     ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
       public void run() {
         ClassLoaderManager.getInstance().updateClassPath();
         ModuleMaker maker = new ModuleMaker();
-        maker.make(MPSModuleRepository.getInstance().getAllModules(), new EmptyProgressMonitor());
+        maker.make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), new EmptyProgressMonitor());
       }
     });
     reload();
@@ -131,6 +132,7 @@ public abstract class MpsWorker {
 
   protected void reload() {
     ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
       public void run() {
         ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
       }
@@ -290,7 +292,7 @@ public abstract class MpsWorker {
       }
       info("Read model " + modelReference);
       SModelHeader d = ModelPersistence.loadDescriptor(ifile);
-      SModelDescriptor existingDescr = SModelRepository.getInstance().getModelDescriptor(d.getModelReference());
+      SModel existingDescr = SModelRepository.getInstance().getModelDescriptor(d.getModelReference());
       if (existingDescr == null) {
         error("Module for " + ifile.getPath() + " was not found. Use \"library\" tag to load required modules.");
       } else {
@@ -369,18 +371,22 @@ public abstract class MpsWorker {
     public MyMessageHandlerAppender() {
     }
 
+    @Override
     public void info(LogEntry e) {
       MpsWorker.this.info(e.getMessage());
     }
 
+    @Override
     public void warning(LogEntry e) {
       MpsWorker.this.warning(e.getMessage());
     }
 
+    @Override
     public void debug(LogEntry e) {
       MpsWorker.this.debug(e.getMessage());
     }
 
+    @Override
     public void error(LogEntry e) {
       if (e.getThrowable() != null) {
         MpsWorker.this.log(e.getThrowable());
@@ -389,6 +395,7 @@ public abstract class MpsWorker {
       }
     }
 
+    @Override
     public void fatal(LogEntry e) {
       if (e.getThrowable() != null) {
         MpsWorker.this.log(e.getThrowable());
@@ -406,6 +413,7 @@ public abstract class MpsWorker {
     public SystemOutLogger() {
     }
 
+    @Override
     public void log(String text, Level level) {
       if (level == Level.ERROR) {
         System.err.println(text);
@@ -419,6 +427,7 @@ public abstract class MpsWorker {
     public LogLogger() {
     }
 
+    @Override
     public void log(String text, Level level) {
       switch (level.toInt()) {
         case Level.ERROR_INT:

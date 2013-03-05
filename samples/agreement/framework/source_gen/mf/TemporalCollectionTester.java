@@ -13,6 +13,7 @@ public abstract class TemporalCollectionTester extends TestCase {
     super(name);
   }
 
+  @Override
   public void setUp() {
     createSubject();
     mySubject.put(new MfDate(1999, 8, 1), "aug");

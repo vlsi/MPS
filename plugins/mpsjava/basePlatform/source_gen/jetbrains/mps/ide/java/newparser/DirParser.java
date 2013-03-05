@@ -8,7 +8,7 @@ import java.util.Map;
 import org.eclipse.jdt.internal.compiler.batch.CompilationUnit;
 import java.util.HashMap;
 import java.util.List;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.io.File;
@@ -20,10 +20,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -83,6 +83,7 @@ public class DirParser {
     }
 
     ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
+      @Override
       public void run() {
         for (SModel m : ListSequence.fromList(myAffectedModels)) {
           Iterable<SNode> roots = SModelOperations.getRoots(m, null);
@@ -140,11 +141,12 @@ public class DirParser {
     final String finalPkg = pkg;
     if (pkg != null && ListSequence.fromList(roots).count() > 0) {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        @Override
         public void run() {
           SModel mdl = registerModelForPackage(finalPkg);
 
           if (mdl != null) {
-            mdl.addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.baseLanguage", Language.class).getModuleReference());
+            ((SModelInternal) mdl).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.baseLanguage", Language.class).getModuleReference());
             for (SNode r : ListSequence.fromList(roots)) {
               SModelOperations.addRootNode(mdl, r);
             }
@@ -164,7 +166,7 @@ public class DirParser {
 
   private SModel registerModelForPackage(String fqName) {
     SModelFqName sModelFqName = SModelFqName.fromString(fqName);
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(sModelFqName);
+    SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(sModelFqName);
     if (modelDescriptor != null) {
       if (!(myModule.getOwnModelDescriptors().contains(modelDescriptor))) {
         LOG.error("model with fq name " + fqName + " is not owned by module " + myModule.getModuleFqName());
@@ -185,7 +187,7 @@ public class DirParser {
       return null;
     }
 
-    SModelDescriptor modelDescr = myModule.createModel(packageName, getRootToCreateModel(packageName), null);
+    SModel modelDescr = myModule.createModel(packageName, getRootToCreateModel(packageName), null);
     assert modelDescr != null;
 
     return modelDescr.getSModel();

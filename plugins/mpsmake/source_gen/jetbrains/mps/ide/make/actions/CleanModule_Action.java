@@ -6,8 +6,8 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -37,8 +37,7 @@ public class CleanModule_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    IModule m = ((IOperationContext) MapSequence.fromMap(_params).get("context")).getModule();
-    return m != null && m.isCompileInMPS();
+    return SModuleOperations.isCompileInMps(((IModule) MapSequence.fromMap(_params).get("module")));
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -61,8 +60,8 @@ public class CleanModule_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.MODULE));
+    if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }
     return true;
@@ -70,13 +69,13 @@ public class CleanModule_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final IModule m = ((IOperationContext) MapSequence.fromMap(_params).get("context")).getModule();
       ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.fromMap(_params).get("project")), "Cleaning", true) {
+        @Override
         public void run(@NotNull final ProgressIndicator indicator) {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               ModuleMaker maker = new ModuleMaker();
-              maker.clean(CollectionUtil.set(m), new ProgressMonitorAdapter(indicator));
+              maker.clean(CollectionUtil.set(((IModule) MapSequence.fromMap(_params).get("module"))), new ProgressMonitorAdapter(indicator));
             }
           });
         }

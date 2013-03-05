@@ -17,14 +17,15 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.List;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import java.util.Iterator;
@@ -56,11 +57,14 @@ public class SideTransformUtil {
 
     Iterable<SNode> result = Sequence.fromIterable(Collections.<SNode>emptyList());
     for (Language language : ListSequence.fromList(SModelOperations.getLanguages(SNodeOperations.getModel(node), context.getScope()))) {
-      EditableSModelDescriptor actionsModelDescriptor = LanguageAspect.ACTIONS.get(language);
-      if (actionsModelDescriptor == null || actionsModelDescriptor.getSModel() == null) {
+      EditableSModel actionsModelDescriptor = LanguageAspect.ACTIONS.get(language);
+      if (actionsModelDescriptor == null) {
         continue;
       }
-      SModel model = actionsModelDescriptor.getSModel();
+      SModel model = ((SModelInternal) actionsModelDescriptor).getSModel();
+      if (model == null) {
+        continue;
+      }
       result = Sequence.fromIterable(result).concat(ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getRoots(model, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions")).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
           return SLinkOperations.getTargets(it, "actionsBuilder", true);
@@ -74,11 +78,11 @@ public class SideTransformUtil {
     return result;
   }
 
-  public static List<INodeSubstituteAction> createActions(SNode node, Set<String> stringTags, CellSide cellSide, IOperationContext context) {
+  public static List<SubstituteAction> createActions(SNode node, Set<String> stringTags, CellSide cellSide, IOperationContext context) {
 
     Set<SNode> conceptsToRemove = SetSequence.fromSet(new HashSet<SNode>());
     List<SNode> removeByConditions = new ArrayList<SNode>();
-    List<INodeSubstituteAction> result = ListSequence.fromList(new LinkedList<INodeSubstituteAction>());
+    List<SubstituteAction> result = ListSequence.fromList(new LinkedList<SubstituteAction>());
 
     for (SNode actionBuilder : Sequence.fromIterable(getApplicableActionsBuilders(node, stringTags, cellSide, context))) {
       SetSequence.fromSet(conceptsToRemove).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(actionBuilder, "jetbrains.mps.lang.actions.structure.RemovePart", false, new String[]{})).where(new IWhereFilter<SNode>() {
@@ -100,8 +104,8 @@ public class SideTransformUtil {
     }
 
     // remove with remove concept 
-    for (Iterator<INodeSubstituteAction> it = ListSequence.fromList(result).iterator(); it.hasNext();) {
-      INodeSubstituteAction action = it.next();
+    for (Iterator<SubstituteAction> it = ListSequence.fromList(result).iterator(); it.hasNext();) {
+      SubstituteAction action = it.next();
       SNode concept = SNodeOperations.cast(action.getOutputConcept(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
       if (SetSequence.fromSet(conceptsToRemove).contains(concept)) {
         it.remove();
@@ -137,7 +141,7 @@ public class SideTransformUtil {
     return true;
   }
 
-  private static void invokeRemoveByCondition(SNode removeByCondition, Iterator<INodeSubstituteAction> actions, SNode node, IOperationContext context) {
+  private static void invokeRemoveByCondition(SNode removeByCondition, Iterator<SubstituteAction> actions, SNode node, IOperationContext context) {
     try {
       QueryMethodGenerated.invoke(BehaviorReflection.invokeNonVirtual(String.class, removeByCondition, "jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart", "call_getQueryMethodName_1220279474449", new Object[]{}), context, new RemoveSideTransformActionByConditionContext(actions, node), SNodeOperations.getModel(removeByCondition));
     } catch (Exception e) {
@@ -145,9 +149,9 @@ public class SideTransformUtil {
     }
   }
 
-  private static List<INodeSubstituteAction> invokeActionBuilder(SNode actionsBuilder, SNode node, CellSide cellSide, IOperationContext context) {
+  private static List<SubstituteAction> invokeActionBuilder(SNode actionsBuilder, SNode node, CellSide cellSide, IOperationContext context) {
     try {
-      return (List<INodeSubstituteAction>) QueryMethodGenerated.invoke(BehaviorReflection.invokeNonVirtual(String.class, actionsBuilder, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder", "call_getBuilderQueryMethodName_1220279234749", new Object[]{}), context, new SideTransformActionsBuilderContext(node, SNodeOperations.getModel(node), cellSide, null), SNodeOperations.getModel(actionsBuilder));
+      return (List<SubstituteAction>) QueryMethodGenerated.invoke(BehaviorReflection.invokeNonVirtual(String.class, actionsBuilder, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder", "call_getBuilderQueryMethodName_1220279234749", new Object[]{}), context, new SideTransformActionsBuilderContext(node, SNodeOperations.getModel(node), cellSide, null), SNodeOperations.getModel(actionsBuilder));
     } catch (Exception e) {
       LOG.error(e);
       return Collections.emptyList();

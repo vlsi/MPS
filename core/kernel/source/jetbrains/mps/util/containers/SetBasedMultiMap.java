@@ -18,14 +18,14 @@ package jetbrains.mps.util.containers;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
-import java.util.Map.Entry;
-import java.util.Set;
 
 public class SetBasedMultiMap<K, V> extends MultiMap<K, V> {
+  @Override
   protected Collection<V> createCollection() {
     return new HashSet<V>();
   }
 
+  @Override
   protected Collection<V> createEmptyCollection() {
     return Collections.emptySet();
   }

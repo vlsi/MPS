@@ -12,7 +12,7 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.workbench.dialogs.DeleteDialog;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -77,8 +77,8 @@ public class DeleteModels_Action extends BaseAction {
       }
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          for (SModelDescriptor model : ListSequence.fromList(((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")))) {
-            if (SModelStereotype.isStubModelStereotype(model.getStereotype())) {
+          for (SModel model : ListSequence.fromList(((List<SModel>) MapSequence.fromMap(_params).get("models")))) {
+            if (SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(model))) {
               continue;
             }
             DeleteModelHelper.deleteModel(((Project) MapSequence.fromMap(_params).get("project")), ((IModule) MapSequence.fromMap(_params).get("contextModule")), model, safeOption.selected, filesOption.selected);

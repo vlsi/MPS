@@ -4,7 +4,7 @@ package jetbrains.mps.lang.typesystem.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.smodel.LanguageAspect;
@@ -33,7 +33,7 @@ public class SubtypingRule_Constraints extends BaseConstraintsDescriptor {
   }
 
   public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
-    return LanguageAspect.TYPESYSTEM.is(model) || SModelStereotype.isGeneratorModel(model);
+    return LanguageAspect.TYPESYSTEM.is(model.getModelDescriptor()) || SModelStereotype.isGeneratorModel(model);
   }
 
   private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)", "1227088641112");

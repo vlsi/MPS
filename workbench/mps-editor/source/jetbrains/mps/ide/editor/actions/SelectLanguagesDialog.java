@@ -49,10 +49,12 @@ public class SelectLanguagesDialog extends DialogWrapper {
     init();
   }
 
+  @Override
   public String getDimensionServiceKey() {
     return getClass().getName();
   }
 
+  @Override
   protected JComponent createCenterPanel() {
     final JPanel panel = new JPanel(new BorderLayout());
     JTextArea area = new JTextArea(
@@ -84,6 +86,7 @@ public class SelectLanguagesDialog extends DialogWrapper {
     return panel;
   }
 
+  @Override
   public JComponent getPreferredFocusedComponent() {
     return myList;
   }
@@ -110,6 +113,7 @@ public class SelectLanguagesDialog extends DialogWrapper {
       return moduleReference.getModuleFqName();
     }
 
+    @Override
     public Component getListCellRendererComponent(JList list, final Object value, int index, boolean isSelected, boolean cellHasFocus) {
       final Component result = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
       ModuleReference moduleReference = (ModuleReference) value;

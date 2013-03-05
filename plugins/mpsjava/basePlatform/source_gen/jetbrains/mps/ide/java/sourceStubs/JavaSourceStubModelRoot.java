@@ -72,6 +72,7 @@ public class JavaSourceStubModelRoot extends ModelRootBase implements FileSystem
 
 
 
+  @Override
   public void dispose() {
     FileSystem.getInstance().removeListener(this);
     super.dispose();
@@ -185,15 +186,18 @@ public class JavaSourceStubModelRoot extends ModelRootBase implements FileSystem
 
 
 
+  @Override
   public IFile getFileToListen() {
     return FileSystem.getInstance().getFileByPath(myPath);
   }
 
+  @Override
   public Iterable<FileSystemListener> getListenerDependencies() {
     // <node> 
     return null;
   }
 
+  @Override
   public void update(ProgressMonitor monitor, FileSystemListener.FileSystemEvent event) {
     LOG.info("HEY!!! FS CHANGED !!!");
   }

@@ -16,17 +16,17 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ypath.behavior.IFeature_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class menu_FeatureSetOpposite extends AbstractCellMenuComponent {
   public menu_FeatureSetOpposite() {
-    super(new SubstituteInfoPartExt[]{new menu_FeatureSetOpposite.IFeature_generic_cellMenu_a0()});
+    super(new SubstituteInfoPartExt[]{new menu_FeatureSetOpposite.IFeature_generic_cellMenu_atgo95_a0()});
   }
 
-  public static class IFeature_generic_cellMenu_a0 extends AbstractCellMenuPart_Generic_Group {
-    public IFeature_generic_cellMenu_a0() {
+  public static class IFeature_generic_cellMenu_atgo95_a0 extends AbstractCellMenuPart_Generic_Group {
+    public IFeature_generic_cellMenu_atgo95_a0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {

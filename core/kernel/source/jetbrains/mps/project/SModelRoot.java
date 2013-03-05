@@ -22,7 +22,7 @@ import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.runtime.IClassLoadingModule;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.InvalidModelRootManager;
@@ -104,12 +104,12 @@ public class SModelRoot extends FolderModelRootBase {
     //model with model root manager not yet loaded - should be loaded after classes reloading
     if (manager == null) return Collections.emptyList();
 
-    Collection<SModelDescriptor> models = manager.load(this);
+    Collection<SModel> models = manager.load(this);
     return (Iterable) models;
   }
 
   @Override
-  public boolean isReadOnly() {
+  public boolean canCreateModels() {
     return getModule().isPackaged() || !getManager().canCreateModel(this, null);
   }
 

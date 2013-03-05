@@ -22,7 +22,7 @@ import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.logging.Logger;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SLink;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -45,11 +45,13 @@ public abstract class ReferenceInfo_Macro extends ReferenceInfo {
     myReductionContext = reductionContext;
   }
 
+  @Override
   public SModelReference getTargetModelReference(TemplateGenerator generator) {
     ensureMacroProcessed(generator);
     return myExternalTargetModelReference;
   }
 
+  @Override
   public SNode doResolve_Straightforward(TemplateGenerator generator) {
     ensureMacroProcessed(generator);
     return myOutputTargetNode;
@@ -61,15 +63,18 @@ public abstract class ReferenceInfo_Macro extends ReferenceInfo {
     expandReferenceMacro(generator);
   }
 
+  @Override
   public SNode doResolve_Tricky(TemplateGenerator generator) {
     // nothing
     return null;
   }
 
+  @Override
   public String getResolveInfoForDynamicResolve() {
     return myResolveInfoForDynamicResolve;
   }
 
+  @Override
   public String getResolveInfoForNothing() {
     SNode templateTargetNode = getInputTargetNode();
     if (templateTargetNode != null) {
@@ -78,6 +83,7 @@ public abstract class ReferenceInfo_Macro extends ReferenceInfo {
     return null;
   }
 
+  @Override
   public boolean isRequired() {
     String role = getReferenceRole();
     SConcept concept = getOutputSourceNode().getConcept();

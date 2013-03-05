@@ -40,6 +40,7 @@ public class FileClassPathItemFS extends RealClassPathItemFS {
     myBaseFile = FileSystem.getInstance().getFileByPath(myClassPath);
   }
 
+  @Override
   public IFile getBaseFile() {
     return myBaseFile;
   }
@@ -49,6 +50,7 @@ public class FileClassPathItemFS extends RealClassPathItemFS {
     return myClassPath;
   }
 
+  @Override
   public URL getResource(String name) {
     checkValidity();
     try {
@@ -60,12 +62,14 @@ public class FileClassPathItemFS extends RealClassPathItemFS {
     }
   }
 
+  @Override
   public synchronized Iterable<String> getAvailableClasses(String namespace) {
     checkValidity();
 
     THashSet<String> classes = getAllClasses(namespace);
 
     Condition<String> cond = new Condition<String>() {
+      @Override
       public boolean met(String className) {
         return !isAnonymous(className);
       }
@@ -87,6 +91,7 @@ public class FileClassPathItemFS extends RealClassPathItemFS {
     return classes;
   }
 
+  @Override
   public synchronized Iterable<String> getSubpackages(String namespace) {
     checkValidity();
 
@@ -103,6 +108,7 @@ public class FileClassPathItemFS extends RealClassPathItemFS {
     return subpacks;
   }
 
+  @Override
   public long getClassesTimestamp(String namespace) {
     checkValidity();
     IFile dir = getModelDir(namespace);

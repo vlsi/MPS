@@ -10,7 +10,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.refactoring.StructureModification;
 import jetbrains.mps.internal.collections.runtime.IMapping;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 

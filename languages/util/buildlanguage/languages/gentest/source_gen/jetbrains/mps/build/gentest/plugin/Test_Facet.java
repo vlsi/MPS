@@ -20,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.make.facet.ITargetEx;
 import jetbrains.mps.make.script.IFeedback;
@@ -181,7 +181,7 @@ public class Test_Facet extends IFacet.Stub {
               }
               monitor.currentProgress().beginWork("Testing", Sequence.fromIterable(input).count() * 100, monitor.currentProgress().workLeft());
               for (ITestResource resource : Sequence.fromIterable(input)) {
-                String fqn = resource.getModule().getModuleFqName();
+                String fqn = resource.getModule().getModuleName();
                 monitor.currentProgress().advanceWork("Testing", 1, fqn);
                 ProcessBuilder pb = new ProcessBuilder(resource.buildCommandLine());
                 try {

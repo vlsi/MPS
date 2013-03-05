@@ -5,8 +5,8 @@ package jetbrains.mps.build.packaging.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.plugin.behavior.IdeaInitializerDescriptor_Behavior;
 
@@ -26,14 +26,14 @@ public class IdeaInitializerReference_Behavior {
     return check_s9baa0_a0a2(SLinkOperations.getTarget(thisNode, "ideaInitializer", false));
   }
 
-  private static IModule check_s9baa0_a0a0(SModelDescriptor checkedDotOperand) {
+  private static IModule check_s9baa0_a0a0(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModelDescriptor check_s9baa0_a0a0a(SModel checkedDotOperand) {
+  private static SModelInternal check_s9baa0_a0a0a(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }

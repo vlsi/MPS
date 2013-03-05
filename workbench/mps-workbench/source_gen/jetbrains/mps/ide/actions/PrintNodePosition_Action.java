@@ -11,7 +11,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.traceInfo.PositionInfo;
 import jetbrains.mps.logging.Logger;
 
@@ -64,7 +64,7 @@ public class PrintNodePosition_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      DebugInfo result = TraceInfoCache.getInstance().get(((SModelDescriptor) MapSequence.fromMap(_params).get("model")));
+      DebugInfo result = TraceInfoCache.getInstance().get(((SModel) MapSequence.fromMap(_params).get("model")));
       if (result != null) {
         PositionInfo positionInfo = result.getPositionForNode(((SNode) MapSequence.fromMap(_params).get("node")));
         System.out.println(positionInfo);

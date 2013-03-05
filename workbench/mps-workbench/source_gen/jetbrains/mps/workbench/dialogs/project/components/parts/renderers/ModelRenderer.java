@@ -4,7 +4,7 @@ package jetbrains.mps.workbench.dialogs.project.components.parts.renderers;
 
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import java.awt.Component;
 import javax.swing.JList;
@@ -16,9 +16,10 @@ public class ModelRenderer extends ProjectLevelRenderer {
     super(moduleScope, projectScope);
   }
 
+  @Override
   public String getItemLabel(Object value) {
     final SModelReference modelReference = (SModelReference) value;
-    SModelDescriptor model = SModelRepository.getInstance().getModelDescriptor(modelReference);
+    SModel model = SModelRepository.getInstance().getModelDescriptor(modelReference);
     if (model == null) {
       String longName = modelReference.getSModelFqName().toString();
       return (longName.equals("") ?
@@ -29,6 +30,7 @@ public class ModelRenderer extends ProjectLevelRenderer {
     return modelReference.getSModelFqName().toString();
   }
 
+  @Override
   public Component getListCellRendererComponent(JList list, final Object value, int index, boolean isSelected, boolean cellHasFocus) {
     Component result = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
     final SModelReference modelReference = (SModelReference) value;

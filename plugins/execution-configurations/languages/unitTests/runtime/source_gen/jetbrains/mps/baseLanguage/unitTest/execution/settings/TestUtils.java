@@ -6,12 +6,12 @@ import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.Nls;
-import jetbrains.mps.smodel.SModelReference;
-import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
@@ -29,8 +29,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -51,16 +51,14 @@ public class TestUtils {
       return null;
     }
     String[] split = pointerString.split(POINTER_SEPARATOR);
-    SModelReference smodelId = SModelReference.fromString(split[0]);
-    SNodeId id = jetbrains.mps.smodel.SNodeId.fromString(split[1]);
-    return new SNodePointer(smodelId, id);
+    return new SNodePointer(split[0], split[1]);
   }
 
   public static String pointerToString(@NotNull final SNodeReference pointer) {
     final Wrappers._T<String> value = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        value.value = ((SNodePointer) pointer).getModel().getSModelReference().toString() + POINTER_SEPARATOR + ((SNodePointer) pointer).getNode().getNodeId().toString();
+        value.value = SNodeOperations.getModelFromNodeReference(((SNodePointer) pointer)).getReference().toString() + POINTER_SEPARATOR + ((SNodePointer) pointer).resolve(MPSModuleRepository.getInstance()).getNodeId().toString();
       }
     });
     return value.value;

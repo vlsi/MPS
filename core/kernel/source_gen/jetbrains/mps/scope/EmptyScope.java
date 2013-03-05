@@ -10,14 +10,17 @@ public class EmptyScope extends Scope {
   public EmptyScope() {
   }
 
+  @Override
   public SNode resolve(SNode contextNode, String refText) {
     return null;
   }
 
+  @Override
   public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
     return new ArrayList<SNode>();
   }
 
+  @Override
   public String getReferenceText(SNode contextNode, SNode node) {
     return null;
   }

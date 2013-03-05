@@ -53,19 +53,23 @@ public class RootChooseModel extends BaseMPSChooseModel<NodeDescriptor> {
     return find(new FilterStubsScope(new ModulesScope(project.getModulesWithGenerators())));
   }
 
+  @Override
   public NodeDescriptor[] find(final IScope scope) {
     Collection<NodeDescriptor> nodes = GotoNavigationUtil.getNodeElements(scope.getModelDescriptors(), ProjectHelper.toMPSProject(getProject()));
     return nodes.toArray(new NodeDescriptor[nodes.size()]);
   }
 
+  @Override
   public NavigationItem doGetNavigationItem(final NodeDescriptor object) {
     return new RootNodeElement(object) {
       private Project myProject = getProject();
 
+      @Override
       public void navigate(boolean requestFocus) {
         ModelAccess.instance().runWriteInEDT(new Runnable() {
+          @Override
           public void run() {
-            SNode node = ((SNode) object.getNodeReference().resolve(MPSModuleRepository.getInstance()));
+            SNode node = object.getNodeReference().resolve(MPSModuleRepository.getInstance());
             if (node == null) {
               LOG.error("Can't find node for: " + object.getNodeReference());
               return;
@@ -79,16 +83,19 @@ public class RootChooseModel extends BaseMPSChooseModel<NodeDescriptor> {
     };
   }
 
+  @Override
   public String doGetObjectName(NodeDescriptor object) {
     return object.getName();
   }
 
+  @Override
   public String doGetFullName(Object element) {
     SNodeDescriptorPresentation presentation = (SNodeDescriptorPresentation) ((NavigationItem) element).getPresentation();
     assert presentation != null;
     return presentation.getModelName() + "." + presentation.getPresentableText();
   }
 
+  @Override
   protected String doGetCheckBoxName() {
     return "Include stubs and &non-&&project models";
   }

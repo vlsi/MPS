@@ -11,6 +11,7 @@ public class TestConfigListCellRenderer extends DefaultListCellRenderer {
   public TestConfigListCellRenderer() {
   }
 
+  @Override
   public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
     String name = ((BaseTestConfiguration) value).getName();
     return super.getListCellRendererComponent(list, name, index, isSelected, cellHasFocus);

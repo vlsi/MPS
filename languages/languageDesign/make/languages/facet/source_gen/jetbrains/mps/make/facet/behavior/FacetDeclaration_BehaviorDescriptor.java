@@ -8,7 +8,7 @@ import jetbrains.mps.baseLanguage.behavior.IWillBeClassifier_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.behavior.IWillBeClassifier_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class FacetDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, IWillBeClassifier_BehaviorDescriptor {
   public FacetDeclaration_BehaviorDescriptor() {

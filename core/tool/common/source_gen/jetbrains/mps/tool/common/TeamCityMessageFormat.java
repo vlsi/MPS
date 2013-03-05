@@ -14,10 +14,12 @@ public class TeamCityMessageFormat implements IMessageFormat {
   public TeamCityMessageFormat() {
   }
 
+  @Override
   public String escapeBuildMessage(@NotNull String rawMessage) {
     return rawMessage.replace("|", "||").replace("'", "|'").replace("\n", LINES_SEPARATOR).replace("\r", "|r").replace("]", "|]");
   }
 
+  @Override
   public StringBuffer escapeBuildMessage(@NotNull StringBuffer message) {
     String[] replacements = new String[]{"\\|", "||", "'", "|'", "\n", LINES_SEPARATOR, "\r", "|r", "]", "|]"};
     for (int i = 0; i < replacements.length; i += 2) {
@@ -37,14 +39,17 @@ public class TeamCityMessageFormat implements IMessageFormat {
     return message;
   }
 
+  @Override
   public String getLinesSeparator() {
     return LINES_SEPARATOR;
   }
 
+  @Override
   public String formatTestStart(@NotNull String testName) {
     return "##teamcity[testStarted name='" + testName + "' captureStandardOutput='true']";
   }
 
+  @Override
   public String formatTestFinish(@NotNull String testName) {
     return "##teamcity[testFinished name='" + testName + "']";
   }
@@ -53,16 +58,19 @@ public class TeamCityMessageFormat implements IMessageFormat {
     return "##teamcity[testFailed name='" + testName + "' message='" + message + "' details='" + detailes + "']";
   }
 
+  @Override
   public CharSequence formatTestFailure(@NotNull String testName, @NotNull String message, @NotNull CharSequence details) {
     StringBuffer sb = new StringBuffer();
     sb.append("##teamcity[testFailed name='").append(testName).append("' message='").append(message).append("' details='").append(details).append("']");
     return sb;
   }
 
+  @Override
   public boolean isBuildServerMessage(@NotNull CharSequence message) {
     return (message.length() >= SERVER_PREFIX.length()) && message.subSequence(0, SERVER_PREFIX.length()).toString().equals(SERVER_PREFIX);
   }
 
+  @Override
   public int hasContinuation(@NotNull String message) {
     return (message.endsWith("\\") ?
       1 :

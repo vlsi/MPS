@@ -21,7 +21,7 @@ import jetbrains.mps.make.dependencies.graph.Graph;
 import jetbrains.mps.make.dependencies.graph.Graphs;
 import java.util.Collections;
 import java.util.Comparator;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;

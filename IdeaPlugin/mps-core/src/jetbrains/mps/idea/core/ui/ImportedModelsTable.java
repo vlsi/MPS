@@ -19,14 +19,14 @@ package jetbrains.mps.idea.core.ui;
 import jetbrains.mps.fileTypes.FileIcons;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.util.misc.hash.HashSet;
 
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -52,18 +52,18 @@ public class ImportedModelsTable extends MpsElementsTable<SModelReference> {
     @Override
     protected List<SModelReference> getAllVisibleElements() {
         Set<SModelReference> modelsToHide = new HashSet<SModelReference>();
-        modelsToHide.add(myModelDescriptor.getSModelReference());
+        modelsToHide.add(myModelDescriptor.getReference());
         for (SModelReference importedModelRef : getElements()) {
             modelsToHide.add(importedModelRef);
         }
 
         List<SModelReference> result = new ArrayList<SModelReference>();
         IModule module = myModelDescriptor.getModule();
-        for (SModelDescriptor modelDescriptor : module.getScope().getModelDescriptors()) {
-            if (modelsToHide.contains(modelDescriptor.getSModelReference())) {
+        for (SModel modelDescriptor : module.getScope().getModelDescriptors()) {
+            if (modelsToHide.contains(modelDescriptor.getReference())) {
                 continue;
             }
-            result.add(modelDescriptor.getSModelReference());
+            result.add(modelDescriptor.getReference());
         }
         return result;
     }

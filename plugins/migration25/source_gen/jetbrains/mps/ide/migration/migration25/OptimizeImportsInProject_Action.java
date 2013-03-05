@@ -17,7 +17,7 @@ import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
 import java.util.List;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.util.concurrent.CountDownLatch;
@@ -26,7 +26,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.project.OptimizeImportsHelper;
@@ -72,7 +72,7 @@ public class OptimizeImportsInProject_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Queue<IModule> modules = QueueSequence.fromQueueWithValues(new LinkedList<IModule>(), ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSProject.class).getModules());
-      final List<SModelDescriptor> modelsToFix = ListSequence.fromList(new ArrayList<SModelDescriptor>());
+      final List<SModel> modelsToFix = ListSequence.fromList(new ArrayList<SModel>());
       final CountDownLatch latch = new CountDownLatch(1);
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
@@ -86,11 +86,11 @@ public class OptimizeImportsInProject_Action extends BaseAction {
                 QueueSequence.fromQueue(modules).addSequence(CollectionSequence.fromCollection(((Language) module).getGenerators()));
               }
               IScope moduleScope = module.getScope();
-              for (SModelDescriptor model : ListSequence.fromList(module.getOwnModelDescriptors())) {
+              for (SModel model : ListSequence.fromList(module.getOwnModelDescriptors())) {
                 if (!(SModelStereotype.isUserModel(model))) {
                   continue;
                 }
-                if (!(model instanceof EditableSModelDescriptor)) {
+                if (!(model instanceof EditableSModel)) {
                   continue;
                 }
 

@@ -6,7 +6,7 @@ import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -41,7 +41,7 @@ public class FixReferencesToMpsLaunch_MigrationScript extends BaseMigrationScrip
 
       public void doUpdateInstanceNode(SNode node) {
         SNode mpsLaunch = SLinkOperations.getTarget(_quotation_createNode_ueer6d_a0a0a0a(), "classifier", false);
-        ScriptsUtil.updateReferencesToClassifier(node, "jetbrains.mps.baseLanguage.util.plugin.run", SPropertyOperations.getString(mpsLaunch, "name"), SNodeOperations.getModel(mpsLaunch).getSModelReference(), mpsLaunch);
+        ScriptsUtil.updateReferencesToClassifier(node, "jetbrains.mps.baseLanguage.util.plugin.run", SPropertyOperations.getString(mpsLaunch, "name"), SNodeOperations.getModel(mpsLaunch).getReference(), mpsLaunch);
       }
 
       public boolean isShowAsIntention() {

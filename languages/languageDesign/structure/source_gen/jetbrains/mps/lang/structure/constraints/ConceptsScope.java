@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -35,16 +35,16 @@ public class ConceptsScope extends SimpleScope {
         SetSequence.fromSet(contextLanguages).addElement((Language) module);
       }
     }
-    Iterable<SNode> concepts = SetSequence.fromSet(contextLanguages).select(new ISelector<Language, SModelDescriptor>() {
-      public SModelDescriptor select(Language it) {
+    Iterable<SNode> concepts = SetSequence.fromSet(contextLanguages).select(new ISelector<Language, SModel>() {
+      public SModel select(Language it) {
         return it.getStructureModelDescriptor();
       }
-    }).where(new IWhereFilter<SModelDescriptor>() {
-      public boolean accept(SModelDescriptor it) {
+    }).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel it) {
         return it != null;
       }
-    }).translate(new ITranslator2<SModelDescriptor, SNode>() {
-      public Iterable<SNode> translate(SModelDescriptor it) {
+    }).translate(new ITranslator2<SModel, SNode>() {
+      public Iterable<SNode> translate(SModel it) {
         return (Iterable<SNode>) it.getRootNodes();
       }
     }).where(new IWhereFilter<SNode>() {
@@ -61,6 +61,7 @@ public class ConceptsScope extends SimpleScope {
   }
 
   @Nullable
+  @Override
   public String getReferenceText(@NotNull SNode target) {
     return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(target, "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Object[]{});
   }

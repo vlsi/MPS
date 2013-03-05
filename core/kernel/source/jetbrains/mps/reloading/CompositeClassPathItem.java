@@ -19,7 +19,11 @@ import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.util.FlattenIterable;
 
 import java.net.URL;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
 
 /**
  * @author Kostik
@@ -28,16 +32,22 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
   private List<IClassPathItem> myChildren = new ArrayList<IClassPathItem>();
 
   public CompositeClassPathItem() {
-    ClassPathFactory.getInstance().addCompositeClassPathItem(this);
+    this(true);
+  }
+
+  public CompositeClassPathItem(boolean registerForInvalidate) {
+    if (registerForInvalidate) {
+      ClassPathFactory.getInstance().addCompositeClassPathItem(this);
+    }
   }
 
   public void add(IClassPathItem item) {
     assert item != null;
     checkValidity();
     myChildren.add(item);
-    item.addInvalidationAction(myInvalidationListener);
   }
 
+  @Override
   public boolean hasClass(String name) {
     checkValidity();
     for (IClassPathItem item : myChildren) {
@@ -47,6 +57,7 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
     return false;
   }
 
+  @Override
   public byte[] getClass(String name) {
     checkValidity();
     for (IClassPathItem item : myChildren) {
@@ -56,6 +67,7 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
     return null;
   }
 
+  @Override
   public ClassifierKind getClassifierKind(String name) {
     checkValidity();
     for (IClassPathItem item : myChildren) {
@@ -65,6 +77,7 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
     return null;
   }
 
+  @Override
   public URL getResource(String name) {
     checkValidity();
     for (IClassPathItem item : myChildren) {
@@ -73,6 +86,7 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
     return null;
   }
 
+  @Override
   public Iterable<String> getAvailableClasses(String namespace) {
     checkValidity();
     FlattenIterable<String> result = new FlattenIterable<String>();
@@ -83,6 +97,7 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
     return result;
   }
 
+  @Override
   public Iterable<String> getSubpackages(String namespace) {
     checkValidity();
     FlattenIterable<String> result = new FlattenIterable<String>();
@@ -93,6 +108,7 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
     return result;
   }
 
+  @Override
   public long getClassesTimestamp(String namespace) {
     checkValidity();
     long result = 0;
@@ -102,6 +118,7 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
     return result;
   }
 
+  @Override
   public long getTimestamp() {
     checkValidity();
     long result = 0;
@@ -116,6 +133,7 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
     return new ArrayList<IClassPathItem>(myChildren);
   }
 
+  @Override
   public List<RealClassPathItem> flatten() {
     checkValidity();
     List<RealClassPathItem> result = new ArrayList<RealClassPathItem>();
@@ -127,6 +145,7 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
     return result;
   }
 
+  @Override
   public CompositeClassPathItem optimize() {
     checkValidity();
     List<RealClassPathItem> flattenedItems = flatten();
@@ -183,10 +202,4 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
     result.append("}");
     return result.toString();
   }
-
-  private final Runnable myInvalidationListener = new Runnable() {
-    public void run() {
-      callInvalidationListeners();
-    }
-  };
 }

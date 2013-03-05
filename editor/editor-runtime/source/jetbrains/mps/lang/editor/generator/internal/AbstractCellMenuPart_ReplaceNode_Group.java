@@ -20,17 +20,19 @@ import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModel;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -39,20 +41,20 @@ import java.util.List;
  */
 public abstract class AbstractCellMenuPart_ReplaceNode_Group implements SubstituteInfoPart, SubstituteInfoPartExt {
   @Override
-  public List<INodeSubstituteAction> createActions(CellContext cellContext, final EditorContext editorContext) {
+  public List<SubstituteAction> createActions(CellContext cellContext, final EditorContext editorContext) {
     final SNode node = (SNode) cellContext.get(BasicCellContext.EDITED_NODE);
     final SNode parent = node.getParent();
     if (parent == null) {
-      return new LinkedList<INodeSubstituteAction>();
+      return Collections.emptyList();
     }
 
     final IOperationContext context = editorContext.getOperationContext();
     List parameterObjects = createParameterObjects(node, context.getScope(), context, editorContext);
     if (parameterObjects == null) {
-      return new LinkedList<INodeSubstituteAction>();
+      return Collections.emptyList();
     }
 
-    List<INodeSubstituteAction> actions = new LinkedList<INodeSubstituteAction>();
+    List<SubstituteAction> actions = new ArrayList<SubstituteAction>(parameterObjects.size());
     for (final Object parameterObject : parameterObjects) {
       actions.add(new AbstractNodeSubstituteAction(null, null, node) {
 
@@ -80,7 +82,7 @@ public abstract class AbstractCellMenuPart_ReplaceNode_Group implements Substitu
   }
 
   public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
-    return createActions(cellContext, (EditorContext) editorContext);
+    return (List) createActions(cellContext, (EditorContext) editorContext);
   }
 
   protected String getMatchingText(Object parameterObject) {
@@ -100,7 +102,7 @@ public abstract class AbstractCellMenuPart_ReplaceNode_Group implements Substitu
 
   /**
    * @deprecated starting from MPS 3.0 another method should be used:
-   * <code>createParameterObjects(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   *             <code>createParameterObjects(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
    */
   @Deprecated
   protected List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
@@ -116,7 +118,7 @@ public abstract class AbstractCellMenuPart_ReplaceNode_Group implements Substitu
 
   /**
    * @deprecated starting from MPS 3.0 another method should be used:
-   * <code>createReplacementNode(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   *             <code>createReplacementNode(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
    */
   @Deprecated
   protected SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
@@ -126,7 +128,8 @@ public abstract class AbstractCellMenuPart_ReplaceNode_Group implements Substitu
   /**
    * should become abstract after MPS 3.0
    */
-  protected SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+  protected SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext,
+      EditorContext editorContext) {
     return createReplacementNode(parameterObject, node, model, scope, operationContext);
   }
 

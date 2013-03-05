@@ -23,17 +23,7 @@ import com.intellij.facet.FacetManagerAdapter;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.roots.CompilerModuleExtension;
-import com.intellij.openapi.roots.JdkOrderEntry;
-import com.intellij.openapi.roots.LibraryOrderEntry;
-import com.intellij.openapi.roots.ModifiableRootModel;
-import com.intellij.openapi.roots.ModuleRootEvent;
-import com.intellij.openapi.roots.ModuleRootListener;
-import com.intellij.openapi.roots.ModuleRootManager;
-import com.intellij.openapi.roots.OrderEntry;
-import com.intellij.openapi.roots.OrderEnumerator;
-import com.intellij.openapi.roots.OrderRootType;
-import com.intellij.openapi.roots.RootProvider;
+import com.intellij.openapi.roots.*;
 import com.intellij.openapi.roots.RootProvider.RootSetChangedListener;
 import com.intellij.openapi.roots.impl.libraries.ProjectLibraryTable;
 import com.intellij.openapi.roots.libraries.Library;
@@ -44,16 +34,17 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.CommonProcessors.FindProcessor;
 import com.intellij.util.Processor;
 import com.intellij.util.messages.MessageBusConnection;
+import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.library.ModuleLibrariesUtil;
 import jetbrains.mps.idea.core.library.ModuleLibraryType;
 import jetbrains.mps.idea.core.project.stubs.DifferentSdkException;
 import jetbrains.mps.idea.core.project.stubs.JdkStubSolutionManager;
-import jetbrains.mps.project.JavaModuleFacet;
-import jetbrains.mps.project.JavaModuleFacetImpl;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.facets.JavaModuleFacet;
+import jetbrains.mps.project.facets.JavaModuleFacetImpl;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -64,18 +55,11 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.Set;
 
 public class SolutionIdea extends Solution {
   @NotNull
@@ -124,10 +108,10 @@ public class SolutionIdea extends Solution {
         @Override
         public void run() {
           Messages.showErrorDialog(myModule.getProject(),
-            "There are more than one different SDKs used in modules with MPS facets.\n" +
-              "Trying to use " + e.getRequestedSdk().getName() +
-              " while " + e.getCurrentSdk().getName() + " is already used." + "\n",
-            "Multiple SDKs not supported in MPS plugin"
+              "There are more than one different SDKs used in modules with MPS facets.\n" +
+                  "Trying to use " + e.getRequestedSdk().getName() +
+                  " while " + e.getCurrentSdk().getName() + " is already used." + "\n",
+              "Multiple SDKs not supported in MPS plugin"
           );
         }
       });
@@ -328,23 +312,26 @@ public class SolutionIdea extends Solution {
   }
 
   @Override
-  protected JavaModuleFacet createJavaModuleFacet() {
-    return new JavaModuleFacetImpl(this) {
-      @Override
-      public IFile getClassesGen() {
-        IFile descriptorFile = getDescriptorFile();
-        if (descriptorFile != null && descriptorFile.isReadOnly()) {
-          return super.getClassesGen();
-        }
+  protected ModuleFacetBase setupFacet(ModuleFacetBase facet, Memento memento) {
+    if (facet instanceof JavaModuleFacet) {
+      facet = new JavaModuleFacetImpl() {
+        @Override
+        public IFile getClassesGen() {
+          IFile descriptorFile = getDescriptorFile();
+          if (descriptorFile != null && descriptorFile.isReadOnly()) {
+            return super.getClassesGen();
+          }
 
-        CompilerModuleExtension compilerModuleExtension = ModuleRootManager.getInstance(myModule).getModuleExtension(CompilerModuleExtension.class);
-        VirtualFile compilerOutputPath = compilerModuleExtension.getCompilerOutputPath();
-        if (compilerOutputPath == null) {
-          return null;
+          CompilerModuleExtension compilerModuleExtension = ModuleRootManager.getInstance(myModule).getModuleExtension(CompilerModuleExtension.class);
+          VirtualFile compilerOutputPath = compilerModuleExtension.getCompilerOutputPath();
+          if (compilerOutputPath == null) {
+            return null;
+          }
+          return FileSystem.getInstance().getFileByPath(compilerOutputPath.getPath());
         }
-        return FileSystem.getInstance().getFileByPath(compilerOutputPath.getPath());
-      }
-    };
+      };
+    }
+    return super.setupFacet(facet, memento);
   }
 
   private void addLibs(SolutionDescriptor solutionDescriptor) {
@@ -418,7 +405,7 @@ public class SolutionIdea extends Solution {
         @Override
         protected boolean accept(OrderEntry orderEntry) {
           return orderEntry instanceof LibraryOrderEntry && ((LibraryOrderEntry) orderEntry).getLibrary().getRootProvider() == wrapper
-            || orderEntry instanceof JdkOrderEntry;
+              || orderEntry instanceof JdkOrderEntry;
         }
       };
       ModuleRootManager.getInstance(myModule).orderEntries().forEach(processor);

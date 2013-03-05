@@ -42,6 +42,7 @@ public class StubSolution extends Solution {
     return registered;
   }
 
+  @Override
   protected SolutionDescriptor loadDescriptor() {
     return getModuleDescriptor();
   }

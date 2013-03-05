@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.library.ModulesMiner;
@@ -40,6 +40,7 @@ public class ModuleFileTracker implements CoreComponent {
     return INSTANCE;
   }
 
+  @Override
   public void init() {
     if (INSTANCE != null) {
       throw new IllegalStateException("double initialization");
@@ -49,6 +50,7 @@ public class ModuleFileTracker implements CoreComponent {
     INSTANCE = this;
   }
 
+  @Override
   public void dispose() {
     INSTANCE = null;
     myRepo.removeModuleRepositoryListener(myListener);
@@ -89,6 +91,7 @@ public class ModuleFileTracker implements CoreComponent {
   }
 
   private class MyModuleRepositoryListener extends ModuleRepositoryAdapter {
+    @Override
     public void beforeModuleRemoved(IModule module) {
       IFile file = module.getDescriptorFile();
       if (file == null) return;
@@ -96,6 +99,7 @@ public class ModuleFileTracker implements CoreComponent {
       removeModuleFile(ModulesMiner.getRealDescriptorFile(module));
     }
 
+    @Override
     public void moduleAdded(IModule module) {
       IFile file = module.getDescriptorFile();
       if (file == null) return;

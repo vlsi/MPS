@@ -6,7 +6,7 @@ import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -36,8 +36,8 @@ public class NodeCopier {
     for (SNode node : ListSequence.fromList(SNodeOperations.getDescendants(copy, null, true, new String[]{}))) {
       SNodeId nodeId = node.getNodeId();
       SNodeId replacedId = nodeId;
-      while (myModel.getNodeById(replacedId) != null) {
-        replacedId = SModel.generateUniqueId();
+      while (myModel.getNode(replacedId) != null) {
+        replacedId = jetbrains.mps.smodel.SModel.generateUniqueId();
       }
       ((jetbrains.mps.smodel.SNode) node).setId(replacedId);
       if (replacedId != nodeId && !(MapSequence.fromMap(myIdReplacementCache).containsKey(nodeId))) {
@@ -77,9 +77,9 @@ public class NodeCopier {
 
   private void softRestoreIds() {
     for (SNodeId id : SetSequence.fromSet(MapSequence.fromMap(myIdReplacementCache).keySet())) {
-      if (MapSequence.fromMap(myIdReplacementCache).get(id) != null && myModel.getNodeById(id) == null) {
+      if (MapSequence.fromMap(myIdReplacementCache).get(id) != null && myModel.getNode(id) == null) {
         // node id is free now! 
-        setId(myModel.getNodeById(MapSequence.fromMap(myIdReplacementCache).get(id)), id);
+        setId(myModel.getNode(MapSequence.fromMap(myIdReplacementCache).get(id)), id);
 
         MapSequence.fromMap(myIdReplacementCache).put(id, null);
       }
@@ -88,9 +88,9 @@ public class NodeCopier {
 
   private void evictOtherDuplicates() {
     for (SNodeId id : SetSequence.fromSet(MapSequence.fromMap(myIdReplacementCache).keySet())) {
-      SNode toBeEvicted = myModel.getNodeById(id);
+      SNode toBeEvicted = myModel.getNode(id);
       assert toBeEvicted != null;
-      setId(toBeEvicted, SModel.generateUniqueId());
+      setId(toBeEvicted, jetbrains.mps.smodel.SModel.generateUniqueId());
     }
   }
 

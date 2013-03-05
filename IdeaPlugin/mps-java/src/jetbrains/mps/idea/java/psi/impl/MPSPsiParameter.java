@@ -17,11 +17,13 @@
 package jetbrains.mps.idea.java.psi.impl;
 
 import com.intellij.pom.java.LanguageLevel;
+import com.intellij.psi.PsiAnnotation;
 import com.intellij.psi.PsiClassType;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiExpression;
 import com.intellij.psi.PsiIdentifier;
 import com.intellij.psi.PsiJavaCodeReferenceElement;
+import com.intellij.psi.PsiMethod;
 import com.intellij.psi.PsiModifier.ModifierConstant;
 import com.intellij.psi.PsiModifierList;
 import com.intellij.psi.PsiParameter;
@@ -57,8 +59,8 @@ public class MPSPsiParameter extends MPSPsiNode implements PsiParameter {
     final PsiElement parent = getParent();
     if (parent == null) return this;
 
-    if (parent instanceof PsiParameterList) {
-      return parent.getParent();
+    if (parent instanceof PsiMethod) {
+      return parent;
     }
     return null;
   }
@@ -73,7 +75,7 @@ public class MPSPsiParameter extends MPSPsiNode implements PsiParameter {
   public PsiType getType() {
     MPSPsiNode typeNode = getChildOfType("type", MPSPsiNode.class);
     if (!(typeNode instanceof ComputesPsiType)) {
-      return null;
+      return new NonJavaMPSType(PsiAnnotation.EMPTY_ARRAY);
     }
 
     return ((ComputesPsiType) typeNode).getPsiType();

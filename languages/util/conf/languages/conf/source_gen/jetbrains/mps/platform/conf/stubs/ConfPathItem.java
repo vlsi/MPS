@@ -41,6 +41,7 @@ public class ConfPathItem extends PathItem {
     }
   }
 
+  @Override
   public String baseName(String res) {
     if (res == null) {
       return null;

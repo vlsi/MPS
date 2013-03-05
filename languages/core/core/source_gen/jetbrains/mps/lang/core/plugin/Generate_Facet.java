@@ -35,8 +35,8 @@ import jetbrains.mps.generator.TransientModelsProvider;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.smodel.resources.MResource;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -425,13 +425,13 @@ public class Generate_Facet extends IFacet.Stub {
               }
               monitor.currentProgress().beginWork("Pre-loading models", work, monitor.currentProgress().workLeft());
               Sequence.fromIterable(input).visitAll(new IVisitor<MResource>() {
-                public void visit(MResource mod) {
+                public void visit(final MResource mod) {
                   monitor.currentProgress().advanceWork("Pre-loading models", 100);
-                  Sequence.fromIterable(mod.models()).visitAll(new IVisitor<SModelDescriptor>() {
-                    public void visit(final SModelDescriptor smd) {
-                      ModelAccess.instance().runReadAction(new Runnable() {
-                        public void run() {
-                          smd.forceLoad();
+                  ModelAccess.instance().runReadAction(new Runnable() {
+                    public void run() {
+                      Sequence.fromIterable(mod.models()).visitAll(new IVisitor<SModel>() {
+                        public void visit(SModel m) {
+                          m.load();
                         }
                       });
                     }
@@ -528,7 +528,7 @@ public class Generate_Facet extends IFacet.Stub {
                   tracer.discardTracing();
                 }
               }
-              final Wrappers._T<Map<IModule, Iterable<SModelDescriptor>>> retainedModels = new Wrappers._T<Map<IModule, Iterable<SModelDescriptor>>>();
+              final Wrappers._T<Map<IModule, Iterable<SModel>>> retainedModels = new Wrappers._T<Map<IModule, Iterable<SModel>>>();
 
               ModelAccess.instance().runReadAction(new Runnable() {
                 public void run() {
@@ -544,10 +544,12 @@ public class Generate_Facet extends IFacet.Stub {
                 }
               });
               IMessageHandler mh = new IMessageHandler() {
+                @Override
                 public void handle(IMessage msg) {
                   monitor.reportFeedback(new IFeedback.MESSAGE(msg));
                 }
 
+                @Override
                 public void clear() {
                 }
               };
@@ -558,8 +560,8 @@ public class Generate_Facet extends IFacet.Stub {
                 }
               }));
               try {
-                List<SModelDescriptor> models = Sequence.fromIterable(input).translate(new ITranslator2<MResource, SModelDescriptor>() {
-                  public Iterable<SModelDescriptor> translate(MResource in) {
+                List<SModel> models = Sequence.fromIterable(input).translate(new ITranslator2<MResource, SModel>() {
+                  public Iterable<SModel> translate(MResource in) {
                     return in.models();
                   }
                 }).toListSequence();
@@ -573,14 +575,17 @@ public class Generate_Facet extends IFacet.Stub {
                 return new IResult.FAILURE(_output_fi61u2_a0d.value);
               }
               _output_fi61u2_a0d.value = Sequence.fromIterable(_output_fi61u2_a0d.value).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new DResource(Sequence.<IDelta>singleton(new IInternalDelta() {
+                @Override
                 public IDelta merge(IDelta toMerge) {
                   return this;
                 }
 
+                @Override
                 public boolean contains(IDelta other) {
                   return false;
                 }
 
+                @Override
                 public boolean reconcile() {
                   if (!(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Generate_Facet.Target_configure.Variables.class).saveTransient())) {
                     pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Generate_Facet.Target_configure.Variables.class).transientModelsProvider().removeAllTransient();
@@ -588,6 +593,7 @@ public class Generate_Facet extends IFacet.Stub {
                   return true;
                 }
 
+                @Override
                 public boolean acceptVisitor(IDeltaVisitor visitor) {
                   return true;
                 }

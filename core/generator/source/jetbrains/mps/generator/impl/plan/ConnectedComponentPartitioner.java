@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.generator.impl.plan;
 
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.util.GraphUtil;
 import jetbrains.mps.util.SNodeOperations;
@@ -72,7 +72,7 @@ public class ConnectedComponentPartitioner {
     for (SReference ref : node.getReferences()) {
       SModel sm = node.getModel();
       assert sm != null;
-      if (!sm.getSModelReference().equals(ref.getTargetSModelReference())) continue;
+      if (!sm.getReference().equals(ref.getTargetSModelReference())) continue;
       SNode targetNode = ref.getTargetNode();
       if (targetNode != null) {
         Integer targetIndex = rootIndex.get(targetNode.getContainingRoot());

@@ -30,6 +30,7 @@ public abstract class TaskQueue<T> extends BaseTaskQueue<T> {
     myVirtualFileManager.removeVirtualFileManagerListener(myVirtualFileManagerListener);
   }
 
+  @Override
   protected boolean isProcessingAllowed() {
     for (Project p : myManager.getOpenProjects()) {
       ProjectLevelVcsManager vcsMan = p.getComponent(ProjectLevelVcsManager.class);
@@ -52,6 +53,7 @@ public abstract class TaskQueue<T> extends BaseTaskQueue<T> {
     private BanVFMListener() {
     }
 
+    @Override
     public void beforeRefreshStart(boolean async) {
       if (async) {
         return;
@@ -59,6 +61,7 @@ public abstract class TaskQueue<T> extends BaseTaskQueue<T> {
       myVFMBan++;
     }
 
+    @Override
     public void afterRefreshFinish(boolean async) {
       if (async) {
         return;
@@ -77,10 +80,12 @@ public abstract class TaskQueue<T> extends BaseTaskQueue<T> {
     private BanReloadListener() {
     }
 
+    @Override
     public void reloadStarted() {
       myReloadBan++;
     }
 
+    @Override
     public void reloadFinished() {
       myReloadBan--;
     }

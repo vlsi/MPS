@@ -11,9 +11,9 @@ import jetbrains.mps.smodel.Generator;
 import com.intellij.openapi.project.Project;
 import java.awt.HeadlessException;
 import java.awt.GridLayout;
+import java.awt.Dimension;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
-import java.awt.Dimension;
 import javax.swing.JLabel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -34,10 +34,10 @@ import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.extapi.model.EditableSModel;
+import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -55,14 +55,15 @@ public class NewGeneratorDialog extends DialogWrapper {
     setTitle("New Generator");
     mySourceLanguage = sourceLanguage;
     myContenetPane = new JPanel(new GridLayout(4, 1));
+    myContenetPane.setPreferredSize(new Dimension(600, 100));
     initContentPane();
 
     init();
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
-    getWindow().setMinimumSize(new Dimension(600, 200));
     return myContenetPane;
   }
 
@@ -74,6 +75,7 @@ public class NewGeneratorDialog extends DialogWrapper {
 
     myTemplateModelsDir = new TextFieldWithBrowseButton();
     myTemplateModelsDir.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         String oldPath = myTemplateModelsDir.getText();
         TreeFileChooser chooser = new TreeFileChooser();
@@ -151,6 +153,7 @@ public class NewGeneratorDialog extends DialogWrapper {
     super.doOKAction();
   }
 
+  @Override
   protected void dispose() {
     super.dispose();
     Disposer.dispose(myTemplateModelsDir);
@@ -181,7 +184,7 @@ public class NewGeneratorDialog extends DialogWrapper {
 
   private void adjustTemplateModel(Language sourceLanguage, Generator newGenerator) {
     boolean alreadyOwnsTemplateModel = false;
-    for (SModelDescriptor modelDescriptor : newGenerator.getOwnModelDescriptors()) {
+    for (SModel modelDescriptor : newGenerator.getOwnModelDescriptors()) {
       if (SModelStereotype.isGeneratorModel(modelDescriptor)) {
         alreadyOwnsTemplateModel = true;
         break;
@@ -190,8 +193,8 @@ public class NewGeneratorDialog extends DialogWrapper {
     if (alreadyOwnsTemplateModel) {
       return;
     }
-    EditableSModelDescriptor templateModelDescriptor = newGenerator.createModel(getTemplateModelPrefix(sourceLanguage) + "." + "main@" + SModelStereotype.GENERATOR, newGenerator.getModelRoots().iterator().next(), null);
-    SModel templateModel = templateModelDescriptor.getSModel();
+    EditableSModel templateModelDescriptor = newGenerator.createModel(getTemplateModelPrefix(sourceLanguage) + "." + "main@" + SModelStereotype.GENERATOR, newGenerator.getModelRoots().iterator().next(), null);
+    SModel templateModel = ((SModelInternal) templateModelDescriptor).getSModel();
     SNode mappingConfiguration = SModelOperations.createNewNode(templateModel, null, "jetbrains.mps.lang.generator.structure.MappingConfiguration");
     SPropertyOperations.set(mappingConfiguration, "name", "main");
     SModelOperations.addRootNode(templateModel, mappingConfiguration);

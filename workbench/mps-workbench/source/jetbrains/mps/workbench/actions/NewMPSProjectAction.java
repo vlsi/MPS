@@ -47,6 +47,7 @@ public class NewMPSProjectAction extends BaseAction implements DumbAware {
     }
   }
 
+  @Override
   public void doExecute(AnActionEvent e, Map<String, Object> _params) {
     Project project = e.getData(PlatformDataKeys.PROJECT);
     NewProjectWizard wizard = new NewProjectWizard("New Project", project);

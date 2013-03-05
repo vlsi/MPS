@@ -16,11 +16,10 @@
 package jetbrains.mps.workbench.dialogs.project.utildialogs.clonemodel;
 
 import jetbrains.mps.extapi.persistence.FolderModelRootBase;
-import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.model.RootReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.ModelRootUtil;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -108,18 +107,18 @@ public class CloneModelProperties {
   }
 
   public void loadFrom(SModel model) {
-    myLongName = model.getLongName();
+    myLongName = jetbrains.mps.util.SNodeOperations.getModelLongName(model);
 
-    myStereotype = model.getStereotype();
+    myStereotype = jetbrains.mps.util.SNodeOperations.getModelStereotype(model);
     ModelRoot modelRoot = ModelRootUtil.getModelRoot(model.getModelDescriptor());
     if (modelRoot instanceof FolderModelRootBase) {
       myRoot = new RootReference();
       myRoot.setPath(((FolderModelRootBase)modelRoot).getPath());
     }
 
-    myImportedLanguages.addAll(model.importedLanguages());
+    myImportedLanguages.addAll(((jetbrains.mps.smodel.SModel) model).importedLanguages());
     myImportedModels.addAll(SModelOperations.getImportedModelUIDs(model));
-    myImportedDevkits.addAll(model.importedDevkits());
-    myLanguagesInGeneration.addAll(model.engagedOnGenerationLanguages());
+    myImportedDevkits.addAll(((jetbrains.mps.smodel.SModel) model).importedDevkits());
+    myLanguagesInGeneration.addAll(((jetbrains.mps.smodel.SModel) model).engagedOnGenerationLanguages());
   }
 }

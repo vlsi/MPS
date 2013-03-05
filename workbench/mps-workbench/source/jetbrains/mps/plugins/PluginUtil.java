@@ -30,6 +30,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.ModuleNameUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -126,10 +127,12 @@ public class PluginUtil {
   }
 
   public static final class ProjectPluginCreator extends PluginCreator<BaseProjectPlugin> {
+    @Override
     public String getPlugin(Language l) {
-      return LanguageAspect.PLUGIN.get(l).getLongName() + "." + ModuleNameUtil.getModuleShortName(l) + "_ProjectPlugin";
+      return SNodeOperations.getModelLongName(LanguageAspect.PLUGIN.get(l)) + "." + ModuleNameUtil.getModuleShortName(l) + "_ProjectPlugin";
     }
 
+    @Override
     public String getPlugin(Solution s) {
       if (s.getModuleFqName().equals(IDE_MODULE_ID)) return IDE_MODULE_PROJECTPLUGIN;
       return s.getModuleFqName() + ".plugin." + NameUtil.capitalize(NameUtil.shortNameFromLongName(s.getModuleFqName())) + "_ProjectPlugin";
@@ -137,10 +140,12 @@ public class PluginUtil {
   }
 
   public static final class ApplicationPluginCreator extends PluginCreator<BaseApplicationPlugin> {
+    @Override
     public String getPlugin(Language l) {
-      return LanguageAspect.PLUGIN.get(l).getLongName() + "." + ModuleNameUtil.getModuleShortName(l) + "_ApplicationPlugin";
+      return SNodeOperations.getModelLongName(LanguageAspect.PLUGIN.get(l)) + "." + ModuleNameUtil.getModuleShortName(l) + "_ApplicationPlugin";
     }
 
+    @Override
     public String getPlugin(Solution s) {
       if (s.getModuleFqName().equals(IDE_MODULE_ID)) return IDE_MODULE_APPPLUGIN;
       return s.getModuleFqName() + ".plugin." + NameUtil.capitalize(NameUtil.shortNameFromLongName(s.getModuleFqName())) + "_ApplicationPlugin";

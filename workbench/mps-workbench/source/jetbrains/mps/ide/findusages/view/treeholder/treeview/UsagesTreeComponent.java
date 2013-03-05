@@ -45,7 +45,7 @@ import jetbrains.mps.ide.ui.TreeHighlighterExtension;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
 
@@ -88,6 +88,7 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
 
     myTree = new UsagesTree(UsagesTreeComponent.this.getProject());
     myOccurenceNavigator = new OccurenceNavigatorSupport(myTree) {
+      @Override
       protected Navigatable createDescriptorForNode(DefaultMutableTreeNode node) {
         if (node.getChildCount() > 0) return null;
         if (!(node instanceof UsagesTreeNode)) return null;
@@ -103,10 +104,12 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
       }
 
 
+      @Override
       public String getNextOccurenceActionName() {
         return UsageViewBundle.message("action.next.occurrence");
       }
 
+      @Override
       public String getPreviousOccurenceActionName() {
         return UsageViewBundle.message("action.previous.occurrence");
       }
@@ -147,6 +150,7 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
     return myOccurenceNavigator;
   }
 
+  @Override
   public void changed() {
     myTree.setContents(myContents, myPathProvider);
   }
@@ -229,11 +233,11 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
     element.addContent(contentsXML);
   }
 
-  public List<SModelDescriptor> getIncludedModels() {
+  public List<SModel> getIncludedModels() {
     return myContents.getIncludedModels();
   }
 
-  public List<SModelDescriptor> getAllModels() {
+  public List<SModel> getAllModels() {
     return myContents.getAllModels();
   }
 
@@ -316,20 +320,24 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
 
       public ViewOptionsToolbar() {
         myAdditionalInfoNeededButton = new MyBaseToggleAction("Additional node info", "", General.Information) {
+          @Override
           public boolean isSelected(AnActionEvent e) {
             return myTree.isAdditionalInfoNeeded();
           }
 
+          @Override
           public void doSetSelected(AnActionEvent e, boolean state) {
             myTree.setAdditionalInfoNeeded(state);
           }
         };
 
         myShowSearchedNodesButton = new MyBaseToggleAction("Show searched nodes", "", Actions.SearchedNodes) {
+          @Override
           public boolean isSelected(AnActionEvent e) {
             return myTree.isShowSearchedNodes();
           }
 
+          @Override
           public void doSetSelected(AnActionEvent e, boolean state) {
             myTree.setShowSearchedNodes(state);
             if (!myTree.isShowSearchedNodes() && myGroupSearchedNodesButton.isSelected(null)) {
@@ -339,10 +347,12 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
         };
 
         myGroupSearchedNodesButton = new MyBaseToggleAction("Group searched nodes", "", Actions.GroupSearched) {
+          @Override
           public boolean isSelected(AnActionEvent e) {
             return myTree.isGroupSearchedNodes();
           }
 
+          @Override
           public void doSetSelected(AnActionEvent e, boolean state) {
             myTree.startAdjusting();
             myTree.setGroupSearchedNodes(state);
@@ -421,10 +431,12 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
         myModelPathButton = new MyBasePathToggleAction(PathItemRole.ROLE_MODEL, "Group by model", Icons.MODEL_ICON);
 
         myRootPathButton = new MyBaseToggleAction("Group by root node", "", Icons.ROOT_ICON) {
+          @Override
           public boolean isSelected(AnActionEvent e) {
             return myPathProvider.contains(PathItemRole.ROLE_ROOT);
           }
 
+          @Override
           public void doSetSelected(AnActionEvent e, boolean state) {
             if (state) {
               addPathComponent(PathItemRole.ROLE_ROOT);
@@ -440,10 +452,12 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
         };
 
         myNamedConceptPathButton = new MyBaseToggleAction("Group by path", "", Icons.PATH_ICON) {
+          @Override
           public boolean isSelected(AnActionEvent e) {
             return myPathProvider.contains(PathItemRole.ROLE_ROOT_TO_TARGET_NODE);
           }
 
+          @Override
           public void doSetSelected(AnActionEvent e, boolean state) {
             if (state) {
               myTree.startAdjusting();
@@ -509,10 +523,12 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
         myPathItemRole = itemRole;
       }
 
+      @Override
       public boolean isSelected(AnActionEvent e) {
         return myPathProvider.contains(myPathItemRole);
       }
 
+      @Override
       public void doSetSelected(AnActionEvent e, boolean state) {
         if (myPathItemRole == null) return;
         if (state) {
@@ -544,10 +560,12 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
       myActions.add(actionsManager.createPrevOccurenceAction(getOccurenceNavigator()));
       myActions.add(actionsManager.createNextOccurenceAction(getOccurenceNavigator()));
       myAutoscrollButton = new MyBaseToggleAction("Autoscroll to source", "", Icons.AUTOSCROLL_ICON) {
+        @Override
         public boolean isSelected(AnActionEvent e) {
           return myTree.isAutoscroll();
         }
 
+        @Override
         public void doSetSelected(AnActionEvent e, boolean state) {
           myTree.setAutoscroll(state);
         }
@@ -573,6 +591,7 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
       super(text, description, icon);
     }
 
+    @Override
     public final void setSelected(AnActionEvent e, boolean state) {
       doSetSelected(e, state);
       getComponentsViewOptions(myViewOptions);

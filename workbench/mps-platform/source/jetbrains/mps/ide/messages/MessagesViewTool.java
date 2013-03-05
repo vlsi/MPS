@@ -80,6 +80,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
 
   public void openToolLater(final boolean setActive) {
     SwingUtilities.invokeLater(new Runnable() {
+      @Override
       public void run() {
         getDefaultList().show(setActive);
       }
@@ -106,36 +107,44 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     list.add(message);
 
     SwingUtilities.invokeLater(new Runnable() {
+      @Override
       public void run() {
         list.show(false);
       }
     });
   }
 
+  @Override
   @NotNull
   public String getComponentName() {
     return MessagesViewTool.class.getSimpleName();
   }
 
+  @Override
   public void initComponent() {
     getDefaultList().createContent();
   }
 
+  @Override
   public void disposeComponent() {
     Disposer.dispose(this);
     myDisposed = true;
   }
 
+  @Override
   public void projectOpened() {
   }
 
+  @Override
   public void projectClosed() {
   }
 
+  @Override
   public MessageListState getState() {
     return getDefaultList().getState();
   }
 
+  @Override
   public void loadState(MessageListState state) {
     getDefaultList().loadState(state);
   }
@@ -234,6 +243,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
 
       final MessageView service = getMessagesService();
       service.runWhenInitialized(new Runnable() {
+        @Override
         public void run() {
           initUI();
           Content content = service.getContentManager().getFactory().createContent(getComponent(), "Messages", true);
@@ -256,6 +266,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     protected void setDisplayInfo(final String name) {
       final MessageView service = getMessagesService();
       service.runWhenInitialized(new Runnable() {
+        @Override
         public void run() {
           Content content = service.getContentManager().getContent(getComponent());
           if (content != null) {
@@ -284,10 +295,12 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
       if (MPSCore.getInstance().isTestMode()) return;
 
       SwingUtilities.invokeLater(new Runnable() {
+        @Override
         public void run() {
 
           final MessageView service = getMessagesService();
           service.runWhenInitialized(new Runnable() {
+            @Override
             public void run() {
               initUI();
               final Content content = service.getContentManager().getFactory().createContent(getComponent(), myName, true);
@@ -295,6 +308,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
 
               content.setCloseable(true);
               content.setDisposer(new Disposable() {
+                @Override
                 public void dispose() {
                   AuxMessageList list = (AuxMessageList) myContents.remove(content);
                   if (list != null) {

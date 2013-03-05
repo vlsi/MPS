@@ -18,7 +18,7 @@ import com.intellij.openapi.vcs.history.VcsFileRevision;
 import com.intellij.openapi.vcs.annotate.LineAnnotationAspect;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import java.util.Set;
@@ -30,7 +30,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
@@ -88,8 +88,9 @@ import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.vcs.changes.BackgroundFromStartOption;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.vcs.CommittedChangesProvider;
-import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.vcs.versionBrowser.CommittedChangeList;
+import com.intellij.openapi.vcs.versionBrowser.ChangeBrowserSettings;
+import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.vcs.FilePath;
 import com.intellij.openapi.vcs.FilePathImpl;
 import com.intellij.openapi.vcs.ui.VcsBalloonProblemNotifier;
@@ -116,7 +117,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
   private LineAnnotationAspect myAuthorAnnotationAspect;
   private AbstractVcs myVcs;
   private VirtualFile myModelVirtualFile;
-  private DefaultSModelDescriptor myModelDescriptor;
+  private BaseEditableSModelDescriptor myModelDescriptor;
   private List<LineContent> myFileLineToContent;
   private Map<ModelChange, LineContent[]> myChangesToLineContents = MapSequence.fromMap(new HashMap<ModelChange, LineContent[]>());
   private Set<Integer> myCurrentPseudoLines = null;
@@ -169,7 +170,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
       SNode node = null;
       SNodeId id = check_5mnya_a0b0l0w(ListSequence.fromList(myFileLineToContent).getElement(line));
       if (id != null && SetSequence.fromSet(descendantIds).contains(id)) {
-        node = model.getNodeById(id);
+        node = model.getNode(id);
       }
       if (node == null) {
         continue;
@@ -196,7 +197,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
     myRevisionRange = new VcsRevisionRange(this, myFileAnnotation);
     ListSequence.fromList(myAspectSubcolumns).addElement(new HighlightRevisionSubcolumn(this, myRevisionRange));
     myModelVirtualFile = modelVirtualFile;
-    myModelDescriptor = (DefaultSModelDescriptor) model.getModelDescriptor();
+    myModelDescriptor = (BaseEditableSModelDescriptor) model.getModelDescriptor();
     myVcs = vcs;
     final CurrentDifferenceRegistry registry = CurrentDifferenceRegistry.getInstance(getProject());
     registry.getCommandQueue().runTask(new Runnable() {
@@ -250,10 +251,12 @@ public class AnnotationColumn extends AbstractLeftColumn {
     });
   }
 
+  @Override
   public String getName() {
     return "Annotations";
   }
 
+  @Override
   public void paint(Graphics graphics) {
     graphics.setFont(myFont);
     EditorComponent.turnOnAliasingIfPossible((Graphics2D) graphics);
@@ -306,6 +309,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
     }
   }
 
+  @Override
   public int getWidth() {
     return (ListSequence.fromList(myAspectSubcolumns).isEmpty() ?
       0 :
@@ -331,7 +335,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
     }
     EditorComponent editor = getEditorComponent();
     SNode editedNode = editor.getEditedNode();
-    SNode node = editedNode.getModel().getNodeById(content.getNodeId());
+    SNode node = editedNode.getModel().getNode(content.getNodeId());
     if (node == null || !(ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).contains(editedNode))) {
       return null;
     }
@@ -353,8 +357,8 @@ public class AnnotationColumn extends AbstractLeftColumn {
     if (cell == null) {
       return Sequence.fromIterable(Collections.<Integer>emptyList());
     }
-    final int startPseudoLine = Collections.binarySearch(myPseudoLinesY, cell.getY());
-    final Wrappers._int endPseudoLine = new Wrappers._int(Collections.binarySearch(myPseudoLinesY, cell.getY() + cell.getHeight()));
+    final int startPseudoLine = Collections.binarySearch((List) myPseudoLinesY, cell.getY());
+    final Wrappers._int endPseudoLine = new Wrappers._int(Collections.binarySearch((List) myPseudoLinesY, cell.getY() + cell.getHeight()));
     if (endPseudoLine.value < 0) {
       endPseudoLine.value = -endPseudoLine.value - 1;
     }
@@ -411,6 +415,7 @@ __switch__:
     }.invoke();
   }
 
+  @Override
   public void relayout() {
     EditorComponent editor = getEditorComponent();
     if (editor == null || editor.isDisposed() || editor.getGraphics() == null) {
@@ -504,7 +509,7 @@ __switch__:
   }
 
   private int findPseudoLineByY(int y) {
-    int pseudoLine = Collections.binarySearch(myPseudoLinesY, y);
+    int pseudoLine = Collections.binarySearch((List) myPseudoLinesY, y);
     if (pseudoLine < 0) {
       pseudoLine = -pseudoLine - 2;
     }
@@ -531,6 +536,7 @@ __switch__:
     List<AnAction> actions = ListSequence.fromList(new ArrayList<AnAction>());
     final int fileLine = findFileLineByY(event.getY());
     ListSequence.fromList(actions).addElement(new BaseAction("Close Annotations") {
+      @Override
       protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
         close();
       }
@@ -540,6 +546,7 @@ __switch__:
     if (fileLine != -1) {
       ListSequence.fromList(actions).addElement(new AnnotationColumn.ShowDiffFromAnnotationAction(fileLine));
       ListSequence.fromList(actions).addElement(new BaseAction("Copy revision number") {
+        @Override
         protected void doExecute(AnActionEvent e, Map<String, Object> params) {
           String asString = myFileAnnotation.getLineRevisionNumber(fileLine).asString();
           CopyPasteManager.getInstance().setContents(new TextTransferrable(asString, asString));
@@ -608,6 +615,7 @@ __switch__:
     public MyAnnotationListener() {
     }
 
+    @Override
     public void onAnnotationChanged() {
       final EditorComponent editor = getEditorComponent();
       close();
@@ -623,6 +631,7 @@ __switch__:
     public MyDifferenceListener() {
     }
 
+    @Override
     public void changeUpdateFinished() {
       calculateCurrentPseudoLinesLater();
     }
@@ -646,13 +655,15 @@ __switch__:
       myFileLine = fileLine;
     }
 
+    @Override
     public void actionPerformed(AnActionEvent event) {
       final VcsRevisionNumber revisionNumber = myFileAnnotation.getLineRevisionNumber(myFileLine);
       if (revisionNumber != null) {
         final Project project = getProject();
         ProgressManager.getInstance().run(new Task.Backgroundable(project, "Loading revision " + revisionNumber.asString() + " contents", true, BackgroundFromStartOption.getInstance()) {
+          @Override
           public void run(@NotNull ProgressIndicator pi) {
-            CommittedChangesProvider provider = myVcs.getCommittedChangesProvider();
+            CommittedChangesProvider<CommittedChangeList, ChangeBrowserSettings> provider = myVcs.getCommittedChangesProvider();
 
             try {
               Pair<CommittedChangeList, FilePath> pair = null;
@@ -697,7 +708,7 @@ __switch__:
 
                 final Wrappers._T<SModel> beforeModel = new Wrappers._T<SModel>();
                 if (before == null) {
-                  beforeModel.value = new SModel(myModelDescriptor.getSModelReference());
+                  beforeModel.value = new jetbrains.mps.smodel.SModel(myModelDescriptor.getSModelReference());
                 } else {
                   beforeModel.value = ModelPersistence.readModel(before.getContent(), false);
                 }
@@ -714,9 +725,9 @@ __switch__:
                 ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SNodeId>() {
                   public SNodeId invoke() {
                     SNodeId nodeId = check_5mnya_a0a0a91a8a2a0a0a0a1a1a2vb(ListSequence.fromList(myFileLineToContent).getElement(myFileLine));
-                    SNode node = afterModel.getNodeById(nodeId);
+                    SNode node = afterModel.getNode(nodeId);
                     if ((node == null)) {
-                      node = beforeModel.value.getNodeById(nodeId);
+                      node = beforeModel.value.getNode(nodeId);
                     }
                     return rootId.value = check_5mnya_a0d0a91a8a2a0a0a0a1a1a2vb(SNodeOperations.getContainingRoot(node));
                   }
@@ -760,9 +771,11 @@ __switch__:
     public MyEditorComponentCreateListener() {
     }
 
+    @Override
     public void editorComponentCreated(@NotNull EditorComponent ec) {
     }
 
+    @Override
     public void editorComponentDisposed(@NotNull EditorComponent ec) {
       if (ec == getEditorComponent()) {
         close();

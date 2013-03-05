@@ -21,10 +21,9 @@ import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.paramchooser.mps.IChooserSettings;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
@@ -36,7 +35,6 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 
 public abstract class ChooserType<T> {
   public abstract ChooseByNameModel createChooserModel(IChooserSettings<T> settings, RefactoringContext context, String paramName);
@@ -55,35 +53,42 @@ public abstract class ChooserType<T> {
     public ModelChooserType() {
     }
 
+    @Override
     public ChooseByNameModel createChooserModel(final IChooserSettings<SModelReference> settings, final RefactoringContext context, final String paramName) {
       DataContext dataContext = DataManager.getInstance().getDataContext();
       final Project project = MPSDataKeys.PROJECT.getData(dataContext);
 
       return new BaseModelModel(project) {
+        @Override
         public NavigationItem doGetNavigationItem(final SModelReference ref) {
           return new BaseModelItem(ref) {
+            @Override
             public void navigate(boolean requestFocus) {
               context.setParameter(paramName, getModelReference());
             }
           };
         }
 
+        @Override
         public SModelReference[] find(boolean checkboxState) {
-          List<SModelDescriptor> modelDescriptors = SModelRepository.getInstance().getModelDescriptors();
+          List<SModel> modelDescriptors = SModelRepository.getInstance().getModelDescriptors();
           List<SModelReference> modelReferencess = new ArrayList<SModelReference>(modelDescriptors.size());
-          for (SModelDescriptor md:modelDescriptors) modelReferencess.add(md.getSModelReference());
+          for (SModel md:modelDescriptors) modelReferencess.add(md.getReference());
           List<SModelReference> filteredModelRefs = filter(settings, modelReferencess);
           return filteredModelRefs.toArray(new SModelReference[filteredModelRefs.size()]);
         }
 
+        @Override
         public SModelReference[] find(IScope scope) {
           throw new UnsupportedOperationException("must not be used");
         }
 
+        @Override
         public boolean loadInitialCheckBoxState() {
           return false;
         }
 
+        @Override
         public String getPromptText() {
           return settings.getTitle();
         }
@@ -96,6 +101,7 @@ public abstract class ChooserType<T> {
     public ModuleChooserType() {
     }
 
+    @Override
     public ChooseByNameModel createChooserModel(final IChooserSettings<IModule> settings, final RefactoringContext context, final String paramName) {
       DataContext dataContext = DataManager.getInstance().getDataContext();
       final Project project = MPSDataKeys.PROJECT.getData(dataContext);
@@ -104,6 +110,7 @@ public abstract class ChooserType<T> {
         @Override
         public NavigationItem doGetNavigationItem(final SModuleReference module) {
           return new BaseModuleItem(module) {
+            @Override
             public void navigate(boolean requestFocus) {
               context.setParameter(paramName, ModuleRepositoryFacade.getInstance().getModule(module));
             }

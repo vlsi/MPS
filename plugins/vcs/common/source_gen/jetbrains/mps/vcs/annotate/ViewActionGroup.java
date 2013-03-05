@@ -27,10 +27,12 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
       mySubcolumn = subcolumn;
     }
 
+    @Override
     public void setSelected(AnActionEvent event, boolean selected) {
       mySubcolumn.setEnabled(selected);
     }
 
+    @Override
     public boolean isSelected(AnActionEvent event) {
       return mySubcolumn.isEnabled();
     }

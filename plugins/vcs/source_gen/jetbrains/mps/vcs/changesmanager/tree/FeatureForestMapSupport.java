@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.changesmanager.tree.features.NodeFeature;
 import jetbrains.mps.smodel.SNodePointer;
@@ -61,7 +61,7 @@ public class FeatureForestMapSupport extends AbstractProjectComponent {
   private static Feature[] getFeaturesForChange(@NotNull ModelChange change) {
     ModelAccess.assertLegalRead();
     List<Feature> result = ListSequence.fromList(new ArrayList<Feature>());
-    SModelReference modelReference = change.getChangeSet().getNewModel().getSModelReference();
+    SModelReference modelReference = change.getChangeSet().getNewModel().getReference();
     if (change instanceof AddRootChange) {
       AddRootChange arc = ((AddRootChange) change);
       ListSequence.fromList(result).addElement(new NodeFeature(new SNodePointer(modelReference, arc.getRootId())));
@@ -80,7 +80,7 @@ public class FeatureForestMapSupport extends AbstractProjectComponent {
       if (begin == end) {
         ListSequence.fromList(result).addElement(new DeletedChildFeature(new SNodePointer(modelReference, parentId), role, begin));
       } else {
-        List<SNode> changeChildren = ((List) IterableUtil.asList(change.getChangeSet().getNewModel().getNodeById(parentId).getChildren(role)));
+        List<SNode> changeChildren = ((List<SNode>) IterableUtil.asList(change.getChangeSet().getNewModel().getNode(parentId).getChildren(role)));
         for (int i = begin; i < end; i++) {
           if (i < ListSequence.fromList(changeChildren).count()) {
             ListSequence.fromList(result).addElement(new NodeFeature(new SNodePointer(modelReference, ListSequence.fromList(changeChildren).getElement(i).getNodeId())));

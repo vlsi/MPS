@@ -31,7 +31,8 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.Language;
@@ -69,7 +70,7 @@ public class EvaluationContainer implements IEvaluationContainer {
         BaseSModelDescriptor descriptor = ProjectModels.createDescriptorFor(true);
         SModule containerModule = myContainerModule.resolve(myDebuggerRepository);
         SModelRepository.getInstance().registerModelDescriptor(descriptor, containerModule);
-        myContainerModel = descriptor.getModelReference();
+        myContainerModel = descriptor.getReference();
         myContext = new ModuleContext(containerModule, ProjectHelper.toMPSProject(myProject));
       }
     });
@@ -86,20 +87,24 @@ public class EvaluationContainer implements IEvaluationContainer {
 
 
 
+  @Override
   public Class generateClass() throws EvaluationException {
     return GeneratorUtil.generateAndLoadEvaluatorClass(myProject, SModelRepository.getInstance().getModelDescriptor(myContainerModel), Properties.EVALUATOR_NAME, getContext(), Properties.IS_DEVELOPER_MODE, new TransformingGenerationHandler(false, true, myGenerationListeners), ((ClassLoadingModule) MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("cf8c9de5-1b4a-4dc8-8e6d-847159af31dd"))).getClassLoader());
   }
 
+  @Override
   public void addGenerationListener(_FunctionTypes._void_P1_E0<? super SNode> listener) {
     ListSequence.fromList(myGenerationListeners).addElement(listener);
   }
 
+  @Override
   public Evaluator createEvaluatorInstance(Class clazz) throws EvaluationException {
     return GeneratorUtil.createInstance(clazz, new Class[]{JavaUiState.class}, new Object[]{myUiState});
   }
 
 
 
+  @Override
   public IEvaluationContainer copy(boolean isWatch) {
     final SNodeReference reference = myNode;
     return new EvaluationContainer(myProject, myDebugSession, myContainerModule, ListSequence.fromList(new ArrayList<SNodeReference>())) {
@@ -112,18 +117,22 @@ public class EvaluationContainer implements IEvaluationContainer {
 
 
 
+  @Override
   public String getPresentation() {
     return ModelAccess.instance().runReadAction(new Computable<String>() {
+      @Override
       public String compute() {
         return PresentationUtil.getPresentation(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(getNode(), "jetbrains.mps.debugger.java.evaluation.structure.IEvaluatorConcept"), "virtual_getCode_317191294093624551", new Object[]{}));
       }
     });
   }
 
+  @Override
   public IOperationContext getContext() {
     return myContext;
   }
 
+  @Override
   public SNode getNode() {
     if (myNode == null) {
       return null;
@@ -133,6 +142,7 @@ public class EvaluationContainer implements IEvaluationContainer {
 
 
 
+  @Override
   public void updateState() {
     myUiState = myDebugSession.getUiState();
   }
@@ -141,7 +151,7 @@ public class EvaluationContainer implements IEvaluationContainer {
 
   protected void setUpNode(List<SNodeReference> nodesToImport) {
     // wanted to use resolve method here, but it was not implemented:( 
-    SModelDescriptor containerModel = (SModelDescriptor) SModelRepository.getInstance().getModelDescriptor(myContainerModel);
+    SModel containerModel = (SModelInternal) SModelRepository.getInstance().getModelDescriptor(myContainerModel);
 
     SNode evaluatorNode = createEvaluatorNode();
     containerModel.addRootNode(evaluatorNode);
@@ -151,8 +161,8 @@ public class EvaluationContainer implements IEvaluationContainer {
     new EvaluationContainer.MyBaseLanguagesImportHelper().tryToImport(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), evaluatorNode, "virtual_getCode_317191294093624551", new Object[]{}), nodesToImport);
 
     SModelOperations.validateLanguagesAndImports(containerModel.getSModel(), true, true);
-    containerModel.getSModel().addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.debugger.java.evaluation", Language.class).getModuleReference());
-    containerModel.getSModel().addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.debugger.java.privateMembers", Language.class).getModuleReference());
+    ((SModelInternal) containerModel.getSModel()).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.debugger.java.evaluation", Language.class).getModuleReference());
+    ((SModelInternal) containerModel.getSModel()).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.debugger.java.privateMembers", Language.class).getModuleReference());
   }
 
   protected SNode createEvaluatorNode() {
@@ -162,10 +172,12 @@ public class EvaluationContainer implements IEvaluationContainer {
   }
 
   private class MyBaseLanguagesImportHelper extends BaseLanguagesImportHelper {
+    @Override
     public SNode findVariable(SReference variableReference) {
       return null;
     }
 
+    @Override
     public SNode createVariableReference(SNode variable) {
       return createInternalVariableReference_jbng3m_a0a1cb(variable.getName());
     }

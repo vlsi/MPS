@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -33,99 +33,121 @@ public class SModelAdapter implements SModelListener {
     myPriority = priority;
   }
 
+  @Override
   public void languageAdded(SModelLanguageEvent event) {
     eventFired(event);
     modelChanged(event.getModel());
   }
 
+  @Override
   public void languageRemoved(SModelLanguageEvent event) {
     eventFired(event);
     modelChanged(event.getModel());
   }
 
+  @Override
   public void importAdded(SModelImportEvent event) {
     eventFired(event);
     modelChanged(event.getModel());
   }
 
+  @Override
   public void importRemoved(SModelImportEvent event) {
     eventFired(event);
     modelChanged(event.getModel());
   }
 
+  @Override
   public void devkitAdded(SModelDevKitEvent event) {
     eventFired(event);
     modelChanged(event.getModel());
   }
 
 
+  @Override
   public void devkitRemoved(SModelDevKitEvent event) {
     eventFired(event);
     modelChanged(event.getModel());
   }
 
+  @Override
   public void rootAdded(SModelRootEvent event) {
     eventFired(event);
     modelChangedDramatically(event.getModel());
   }
 
+  @Override
   public void rootRemoved(SModelRootEvent event) {
     eventFired(event);
     modelChangedDramatically(event.getModel());
   }
 
+  @Override
   public void beforeRootRemoved(SModelRootEvent event) {
   }
 
+  @Override
   public void propertyChanged(SModelPropertyEvent event) {
     eventFired(event);
     modelChanged(event.getModel());
   }
 
+  @Override
   public void childAdded(SModelChildEvent event) {
     eventFired(event);
     modelChangedDramatically(event.getModel());
   }
 
+  @Override
   public void childRemoved(SModelChildEvent event) {
     eventFired(event);
     modelChangedDramatically(event.getModel());
   }
 
+  @Override
   public void beforeChildRemoved(SModelChildEvent event) {
   }
 
+  @Override
   public void referenceAdded(SModelReferenceEvent event) {
     eventFired(event);
     modelChangedDramatically(event.getModel());
   }
 
+  @Override
   public void referenceRemoved(SModelReferenceEvent event) {
     eventFired(event);
     modelChangedDramatically(event.getModel());
   }
 
+  @Override
   public void beforeModelRenamed(SModelRenamedEvent event) {
   }
 
+  @Override
   public void modelRenamed(SModelRenamedEvent event) {
     eventFired(event);
   }
 
+  @Override
   public void beforeModelFileChanged(SModelFileChangedEvent event) {
   }
 
+  @Override
   public void modelFileChanged(SModelFileChangedEvent event) {
     eventFired(event);
   }
 
-  public void modelLoadingStateChanged(SModelDescriptor sm, ModelLoadingState oldState, ModelLoadingState newState) {
+  @Override
+  public void modelLoadingStateChanged(SModel sm, ModelLoadingState oldState, ModelLoadingState newState) {
   }
 
+  @Override
   public void beforeModelDisposed(SModel sm) {
   }
 
-  public void modelSaved(SModelDescriptor sm) {
+  @Override
+  public void modelSaved(SModel sm) {
   }
 
   public void eventFired(SModelEvent event) {

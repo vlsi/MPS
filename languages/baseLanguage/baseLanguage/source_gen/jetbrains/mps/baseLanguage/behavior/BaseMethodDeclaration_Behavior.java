@@ -25,7 +25,7 @@ import jetbrains.mps.baseLanguage.scopes.Scopes;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -57,6 +57,10 @@ public class BaseMethodDeclaration_Behavior {
       expectedRetType = null;
     }
     return expectedRetType;
+  }
+
+  public static boolean virtual_isImplementation_1319728274783152230(SNode thisNode, SNode child) {
+    return SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.StatementList");
   }
 
   public static SNode virtual_getBody_1239354440022(SNode thisNode) {
@@ -116,7 +120,7 @@ public class BaseMethodDeclaration_Behavior {
   }
 
   public static Method call_getMethod_1213877350393(SNode thisNode, IModule module) {
-    IModule m = check_tq0gdw_a0a0j(SNodeOperations.getModel(thisNode).getModelDescriptor());
+    IModule m = check_tq0gdw_a0a0k(SNodeOperations.getModel(thisNode).getModelDescriptor());
     if (m != null) {
       Method method = null;
       try {
@@ -172,7 +176,7 @@ public class BaseMethodDeclaration_Behavior {
   }
 
   public static boolean call_hasSameSignature_1213877350435(SNode thisNode, SNode checked) {
-    if (neq_tq0gdw_a0a0q(SPropertyOperations.getString(thisNode, "name"), SPropertyOperations.getString(checked, "name"))) {
+    if (neq_tq0gdw_a0a0r(SPropertyOperations.getString(thisNode, "name"), SPropertyOperations.getString(checked, "name"))) {
       return false;
     }
     if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count() != ListSequence.fromList(SLinkOperations.getTargets(checked, "parameter", true)).count()) {
@@ -273,7 +277,7 @@ public class BaseMethodDeclaration_Behavior {
         }
       } else if (actualArgs == formalParams) {
         // array may be passed as value for vararg 
-        ListSequence.fromList(result).addElement(_quotation_createNode_tq0gdw_a0a1a0d0d0z(SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(last, "jetbrains.mps.baseLanguage.structure.VariableArityType"), "componentType", true)), SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(last, "jetbrains.mps.baseLanguage.structure.VariableArityType"), "componentType", true))));
+        ListSequence.fromList(result).addElement(_quotation_createNode_tq0gdw_a0a1a0d0d0ab(SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(last, "jetbrains.mps.baseLanguage.structure.VariableArityType"), "componentType", true)), SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(last, "jetbrains.mps.baseLanguage.structure.VariableArityType"), "componentType", true))));
       }
     }
 
@@ -396,14 +400,14 @@ public class BaseMethodDeclaration_Behavior {
     return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_getScopeVariables_5067982036267369894", new Class[]{SNode.class}, new Object[]{});
   }
 
-  private static IModule check_tq0gdw_a0a0j(SModelDescriptor checkedDotOperand) {
+  private static IModule check_tq0gdw_a0a0k(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SNode _quotation_createNode_tq0gdw_a0a1a0d0d0z(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_tq0gdw_a0a1a0d0d0ab(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -422,7 +426,7 @@ public class BaseMethodDeclaration_Behavior {
     return quotedNode_3;
   }
 
-  private static boolean neq_tq0gdw_a0a0q(Object a, Object b) {
+  private static boolean neq_tq0gdw_a0a0r(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b

@@ -4,7 +4,7 @@ package jetbrains.mps.lang.behavior.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import java.util.Map;
@@ -67,7 +67,7 @@ public class ConceptBehavior_Constraints extends BaseConstraintsDescriptor {
   }
 
   public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
-    return LanguageAspect.BEHAVIOR.is(model) || SModelStereotype.isGeneratorModel(model);
+    return LanguageAspect.BEHAVIOR.is(model.getModelDescriptor()) || SModelStereotype.isGeneratorModel(model);
   }
 
   private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:6786d6ee-e5cc-4a77-9efd-65a8dca8b187(jetbrains.mps.lang.behavior.constraints)", "1227088888254");

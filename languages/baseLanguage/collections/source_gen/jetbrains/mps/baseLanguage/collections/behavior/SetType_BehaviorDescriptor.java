@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.behavior.IGenericType_Behavior;
 import java.util.List;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class SetType_BehaviorDescriptor extends Type_BehaviorDescriptor implements IGenericType_BehaviorDescriptor {
   public SetType_BehaviorDescriptor() {

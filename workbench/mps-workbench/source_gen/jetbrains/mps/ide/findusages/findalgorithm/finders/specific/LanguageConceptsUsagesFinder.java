@@ -11,8 +11,8 @@ import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModuleHolder;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.util.IterableUtil;
 import java.util.List;
 import java.util.LinkedList;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -27,6 +27,7 @@ public class LanguageConceptsUsagesFinder implements IFinder {
   public LanguageConceptsUsagesFinder() {
   }
 
+  @Override
   public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
     SearchResults<SNode> searchResults = new SearchResults<SNode>();
     IHolder holder = query.getObjectHolder();
@@ -34,7 +35,7 @@ public class LanguageConceptsUsagesFinder implements IFinder {
     IModule module = ((ModuleHolder) holder).getObject();
     assert module instanceof Language;
     Language language = (Language) module;
-    SModelDescriptor structureModel = language.getStructureModelDescriptor();
+    SModel structureModel = language.getStructureModelDescriptor();
     if (structureModel == null) {
       return searchResults;
     }
@@ -42,23 +43,23 @@ public class LanguageConceptsUsagesFinder implements IFinder {
     if (sModel == null) {
       return searchResults;
     }
-    if (sModel.rootsCount() == 0) {
+    if (IterableUtil.asCollection(sModel.getRootNodes()).size() == 0) {
       return searchResults;
     }
     List<SNode> roots = new LinkedList<SNode>();
-    for (SNode root : sModel.roots()) {
+    for (SNode root : sModel.getRootNodes()) {
       roots.add(root);
     }
     searchResults.getSearchedNodes().addAll(roots);
 
-    monitor.start("", sModel.rootsCount() + 1);
+    monitor.start("", IterableUtil.asCollection(sModel.getRootNodes()).size() + 1);
     try {
       SearchResults<SModel> modelResults = FindUtils.getSearchResults(monitor.subTask(1), new SearchQuery(sModel, GlobalScopeMinusTransient.getInstance()), new ModelUsagesFinder());
-      List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
+      List<SModel> models = new ArrayList<SModel>();
       for (SearchResult<SModel> sModelSearchResult : modelResults.getSearchResults()) {
         models.add(sModelSearchResult.getObject().getModelDescriptor());
       }
-      IScope scope = new ModelsScope(models.toArray(new SModelDescriptor[models.size()]));
+      IScope scope = new ModelsScope(models.toArray(new SModel[models.size()]));
       SearchResults<SNode> results = new SearchResults();
       for (SNode node : roots) {
         if (monitor != null && monitor.isCanceled()) {

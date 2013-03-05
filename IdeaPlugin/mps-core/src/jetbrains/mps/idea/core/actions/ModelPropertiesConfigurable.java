@@ -30,15 +30,24 @@ import jetbrains.mps.idea.core.ui.ImportedModelsTable;
 import jetbrains.mps.idea.core.ui.UsedLanguagesTable;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.Nls;
 
-import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class ModelPropertiesConfigurable implements Configurable, Disposable {
   private EditableSModelDescriptor myDescriptor;
@@ -63,9 +72,9 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
   }
 
   private void initState(SModel sModel) {
-    myUsedLanguages = sModel.importedLanguages();
+    myUsedLanguages = SNodeOperations.getUsedLanguages(sModel);
     myImportedModels = SModelOperations.getImportedModelUIDs(sModel);
-    myModelLongName = myDescriptor.getLongName();
+    myModelLongName = SNodeOperations.getModelLongName(myDescriptor);
     IModule module = myDescriptor.getModule();
     myVisibleLanguages = new HashSet<ModuleReference>();
     for (Language visibleLanguage : module.getScope().getVisibleLanguages()) {
@@ -85,7 +94,7 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
   @Nls
   @Override
   public String getDisplayName() {
-    return MPSBundle.message("model.properties.configurable.display.name", myDescriptor.getLongName());
+    return MPSBundle.message("model.properties.configurable.display.name", SNodeOperations.getModelLongName(myDescriptor));
   }
 
   @Override
@@ -169,25 +178,29 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
     if (myModelLongName.equals(myPackageName.getText())) {
       return;
     }
-    SModelFqName oldFqName = myDescriptor.getSModelReference().getSModelFqName();
-    SModelFqName newFqName = new SModelFqName(myPackageName.getText(), oldFqName.getStereotype());
-    myDescriptor.rename(newFqName, true);
+    String oldStereo = SModelStereotype.getStereotype(myDescriptor);
+    String newName = myPackageName.getText();
+    if (oldStereo != null && oldStereo.length() > 0) {
+      newName = newName + "@" + oldStereo;
+    }
+
+    myDescriptor.rename(newName, true);
   }
 
   private void saveUsedLanguages(SModel sModel, IModule module) {
-    List<ModuleReference> currentlyUsedLanguages = sModel.importedLanguages();
+    List<ModuleReference> currentlyUsedLanguages = SNodeOperations.getUsedLanguages(sModel);
     List<ModuleReference> usedLanguages = myUsedLanguagesTable.getElements();
 
     Set<ModuleReference> languagesToRemove = new HashSet<ModuleReference>(currentlyUsedLanguages);
     languagesToRemove.removeAll(usedLanguages);
     for (ModuleReference language : languagesToRemove) {
-      sModel.deleteLanguage(language);
+      ((jetbrains.mps.smodel.SModel) sModel).deleteLanguage(language);
     }
 
     Set<ModuleReference> languagesToAdd = new HashSet<ModuleReference>(usedLanguages);
     languagesToAdd.removeAll(currentlyUsedLanguages);
     for (ModuleReference language : languagesToAdd) {
-      sModel.addLanguage(language);
+      ((jetbrains.mps.smodel.SModel) sModel).addLanguage(language);
     }
 
     Collection<ModuleReference> addedLanguages = new ArrayList<ModuleReference>();
@@ -206,13 +219,13 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
     Set<SModelReference> modelsToRemove = new HashSet<SModelReference>(currentlyImportedModels);
     modelsToRemove.removeAll(importedModels);
     for (SModelReference modelReference : modelsToRemove) {
-      sModel.deleteModelImport(modelReference);
+      ((jetbrains.mps.smodel.SModel) sModel).deleteModelImport(modelReference);
     }
 
     Set<SModelReference> modelsToAdd = new HashSet<SModelReference>(importedModels);
     modelsToAdd.removeAll(currentlyImportedModels);
     for (SModelReference modelReference : modelsToAdd) {
-      sModel.addModelImport(modelReference, false);
+      ((jetbrains.mps.smodel.SModel) sModel).addModelImport(modelReference, false);
     }
   }
 

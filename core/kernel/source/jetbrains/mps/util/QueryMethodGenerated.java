@@ -17,23 +17,14 @@ package jetbrains.mps.util;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.runtime.IClassLoadingModule;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IllegalModelChangeError;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNodeUtil;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SModule;
 
-import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.HashMap;
@@ -46,10 +37,10 @@ public class QueryMethodGenerated implements CoreComponent {
   private static final Logger LOG = Logger.getLogger(QueryMethodGenerated.class);
 
   private static ConcurrentMap<SModelReference, Map<String, Method>> ourMethods = new ConcurrentHashMap<SModelReference, Map<String, Method>>();
-  private static ConcurrentMap<String, Constructor> ourAdaptorsConstructors = new ConcurrentHashMap<String, Constructor>();
   private static Set<String> ourClassesReportedAsNotFound = new ConcurrentHashSet<String>();
 
   private ReloadAdapter myReloadHandler = new ReloadAdapter() {
+    @Override
     public void unload() {
       clearCaches();
     }
@@ -61,10 +52,12 @@ public class QueryMethodGenerated implements CoreComponent {
     myClassLoaderManager = manager;
   }
 
+  @Override
   public void init() {
     myClassLoaderManager.addReloadHandler(myReloadHandler);
   }
 
+  @Override
   public void dispose() {
     myClassLoaderManager.removeReloadHandler(myReloadHandler);
   }
@@ -72,7 +65,6 @@ public class QueryMethodGenerated implements CoreComponent {
   public static void clearCaches() {
     ourMethods.clear();
     ourClassesReportedAsNotFound.clear();
-    ourAdaptorsConstructors.clear();
   }
 
   public static boolean needReport(String className) {
@@ -89,15 +81,15 @@ public class QueryMethodGenerated implements CoreComponent {
   }
 
   @NotNull
-  public static Class getQueriesGeneratedClassFor(@NotNull SModelDescriptor sm, boolean suppressErrorLogging) throws ClassNotFoundException {
-    String packageName = JavaNameUtil.packageNameForModelUID(sm.getSModel().getSModelReference());
+  public static Class getQueriesGeneratedClassFor(@NotNull SModel sm, boolean suppressErrorLogging) throws ClassNotFoundException {
+    String packageName = SModelStereotype.withoutStereotype(sm.getModelName());
     String queriesClassName = packageName + ".QueriesGenerated";
 
-    IModule module = sm.getModule();
+    SModule module = sm.getModule();
     if (module == null) {
       reportErrorWhileClassLoading(
         queriesClassName, suppressErrorLogging,
-        "couldn't find class 'QueriesGenerated': no module for model '" + sm.getSModelReference() + "'");
+        "couldn't find class 'QueriesGenerated': no module for model '" + sm.getReference() + "'");
     }
     if (!(module instanceof IClassLoadingModule)) {
       reportErrorWhileClassLoading(
@@ -109,7 +101,7 @@ public class QueryMethodGenerated implements CoreComponent {
     if (queriesClass == null) {
       reportErrorWhileClassLoading(
         queriesClassName, suppressErrorLogging,
-        "couldn't find class 'QueriesGenerated' for model '" + sm.getSModelReference() + "' : TRY TO GENERATE"
+        "couldn't find class 'QueriesGenerated' for model '" + sm.getReference() + "' : TRY TO GENERATE"
       );
     }
 
@@ -117,12 +109,12 @@ public class QueryMethodGenerated implements CoreComponent {
   }
 
   private static Method getQueryMethod(SModel sourceModel, String methodName, boolean suppressErrorLogging) throws ClassNotFoundException, NoSuchMethodException {
-    Map<String, Method> methods = ourMethods.get(sourceModel.getSModelReference());
+    Map<String, Method> methods = ourMethods.get(sourceModel.getReference());
 
     if (methods == null) {
       Class queriesClass = getQueriesGeneratedClassFor(sourceModel.getModelDescriptor(), suppressErrorLogging);
 
-      methods = ourMethods.get(sourceModel.getSModelReference());
+      methods = ourMethods.get(sourceModel.getReference());
       if (methods == null) {
         methods = new HashMap<String, Method>();
         Method[] declaredMethods = queriesClass.getDeclaredMethods();
@@ -132,16 +124,16 @@ public class QueryMethodGenerated implements CoreComponent {
           methods.put(name, declaredMethod);
         }
 
-        ourMethods.putIfAbsent(sourceModel.getSModelReference(), methods);
+        ourMethods.putIfAbsent(sourceModel.getReference(), methods);
       }
     }
 
 
     Method method = methods.get(methodName);
     if (method == null) {
-      String className = JavaNameUtil.packageNameForModelUID(sourceModel.getSModelReference()) + ".QueriesGenerated";
+      String className = JavaNameUtil.packageNameForModelUID(sourceModel.getReference()) + ".QueriesGenerated";
       if (!suppressErrorLogging) {
-        LOG.error("couldn't find method '" + methodName + "' in '" + className + "' : TRY TO GENERATE model '" + sourceModel.getSModelReference() + "'");
+        LOG.error("couldn't find method '" + methodName + "' in '" + className + "' : TRY TO GENERATE model '" + sourceModel.getReference() + "'");
       }
       throw new NoSuchMethodException("couldn't find method '" + methodName + "' in '" + className + "'");
     }
@@ -170,50 +162,5 @@ public class QueryMethodGenerated implements CoreComponent {
       throw new RuntimeException("error invocation method: \"" + methodName + "\" in " + method.getDeclaringClass().getName(), e);
     }
     return result;
-  }
-
-  public static Constructor getAdapterConstructor(final String className) {
-    Constructor result = ourAdaptorsConstructors.get(className);
-    if (result != null) return result;
-
-    try {
-      String namespace = NameUtil.namespaceFromLongName(className);
-
-      assert namespace.endsWith(".structure");
-      String languageNamespace = className.substring(0, namespace.length() - ".structure".length());
-      Language l = ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class);
-
-
-      Class cls;
-      if (l == null) {
-        return null;
-      }
-      cls = l.getClass(className);
-      if (cls == null) {
-        throw new ClassNotFoundException("class " + className + " was not found in language: " + languageNamespace);
-      }
-
-      Constructor ctor;
-      if (cls.isInterface()) {
-        ctor = className.equals(SNodeUtil.concept_BaseConcept) ? null : getAdapterConstructor(SNodeUtil.concept_BaseConcept);
-      } else {
-        ctor = cls.getConstructor(SNode.class);
-      }
-
-      if (ctor != null) {
-        ctor.setAccessible(true);
-        result = ourAdaptorsConstructors.putIfAbsent(className, ctor);
-      }
-      return result != null ? result : ctor;
-    } catch (NoSuchMethodException e) {
-      LOG.error(e);
-    } catch (ClassNotFoundException e) {
-      if (needReport(className)) {
-        LOG.error("Can't find a class : " + e.getMessage());
-      }
-    } catch (NoClassDefFoundError e) {
-      LOG.error("no class def found : " + e.getMessage() + " because of " + className);
-    }
-    return null;
   }
 }

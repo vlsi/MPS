@@ -333,181 +333,181 @@
     <nodeInfo nodeId="9003987136928266020" fileName="DockLayout.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="south" />
     <nodeInfo nodeId="9003987136928266023" fileName="DockLayout.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="east" />
     <nodeInfo nodeId="9003987136928266026" fileName="DockLayout.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="west" />
-    <nodeInfo nodeId="9003987136928267775" fileName="DockLayout.java" startLine="24" startPosition="89" endLine="25" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9003987136928266054" fileName="DockLayout.java" startLine="25" startPosition="48" endLine="26" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9003987136928266086" fileName="DockLayout.java" startLine="26" startPosition="122" endLine="27" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9003987136928266100" fileName="DockLayout.java" startLine="27" startPosition="65" endLine="28" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9003987136928266114" fileName="DockLayout.java" startLine="28" startPosition="65" endLine="29" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9003987136928266146" fileName="DockLayout.java" startLine="29" startPosition="142" endLine="30" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9003987136928266170" fileName="DockLayout.java" startLine="30" startPosition="101" endLine="31" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9003987136928266192" fileName="DockLayout.java" startLine="34" startPosition="61" endLine="35" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9003987136928266198" fileName="DockLayout.java" startLine="35" startPosition="43" endLine="36" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9003987136928267728" fileName="DockLayout.java" startLine="36" startPosition="83" endLine="37" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9003987136928267566" fileName="DockLayout.java" startLine="38" startPosition="46" endLine="39" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9003987136928267676" fileName="DockLayout.java" startLine="40" startPosition="40" endLine="41" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9003987136928267742" fileName="DockLayout.java" startLine="42" startPosition="34" endLine="43" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9003987136928266259" fileName="DockLayout.java" startLine="45" startPosition="5" endLine="46" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9003987136928266276" fileName="DockLayout.java" startLine="50" startPosition="46" endLine="51" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9003987136928266295" fileName="DockLayout.java" startLine="55" startPosition="23" endLine="56" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9003987136928266299" fileName="DockLayout.java" startLine="57" startPosition="5" endLine="58" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9003987136928266311" fileName="DockLayout.java" startLine="60" startPosition="17" endLine="61" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9003987136928266327" fileName="DockLayout.java" startLine="61" startPosition="78" endLine="62" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9003987136928266335" fileName="DockLayout.java" startLine="62" startPosition="26" endLine="63" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="9003987136928266339" fileName="DockLayout.java" startLine="64" startPosition="17" endLine="65" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9003987136928266359" fileName="DockLayout.java" startLine="65" startPosition="90" endLine="66" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9003987136928266367" fileName="DockLayout.java" startLine="66" startPosition="31" endLine="67" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="9003987136928266371" fileName="DockLayout.java" startLine="68" startPosition="16" endLine="69" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9003987136928266395" fileName="DockLayout.java" startLine="69" startPosition="90" endLine="70" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9003987136928266403" fileName="DockLayout.java" startLine="70" startPosition="30" endLine="71" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="9003987136928266407" fileName="DockLayout.java" startLine="72" startPosition="16" endLine="73" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9003987136928266427" fileName="DockLayout.java" startLine="73" startPosition="79" endLine="74" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9003987136928266435" fileName="DockLayout.java" startLine="74" startPosition="26" endLine="75" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="9003987136928266439" fileName="DockLayout.java" startLine="76" startPosition="18" endLine="77" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9003987136928266463" fileName="DockLayout.java" startLine="77" startPosition="100" endLine="78" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="9003987136928266465" fileName="DockLayout.java" startLine="79" startPosition="14" endLine="80" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="9003987136928266772" fileName="DockLayout.java" startLine="96" startPosition="13" endLine="97" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9003987136928267429" fileName="DockLayout.java" startLine="98" startPosition="13" endLine="99" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9003987136928266825" fileName="DockLayout.java" startLine="100" startPosition="14" endLine="101" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9003987136928266812" fileName="DockLayout.java" startLine="102" startPosition="36" endLine="103" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9003987136928266834" fileName="DockLayout.java" startLine="103" startPosition="76" endLine="104" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9003987136928266851" fileName="DockLayout.java" startLine="104" startPosition="24" endLine="105" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9003987136928267499" fileName="DockLayout.java" startLine="106" startPosition="9" endLine="107" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9003987136928267502" fileName="DockLayout.java" startLine="111" startPosition="51" endLine="112" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9003987136928267514" fileName="DockLayout.java" startLine="112" startPosition="22" endLine="113" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9003987136928267526" fileName="DockLayout.java" startLine="113" startPosition="22" endLine="114" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9003987136928267538" fileName="DockLayout.java" startLine="114" startPosition="21" endLine="115" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9003987136928267761" fileName="DockLayout.java" startLine="115" startPosition="21" endLine="116" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9003987136928266508" fileName="DockLayout.java" startLine="119" startPosition="19" endLine="120" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9003987136928266514" fileName="DockLayout.java" startLine="120" startPosition="58" endLine="121" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="9003987136928266518" fileName="DockLayout.java" startLine="122" startPosition="19" endLine="123" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9003987136928266524" fileName="DockLayout.java" startLine="123" startPosition="58" endLine="124" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="9003987136928266528" fileName="DockLayout.java" startLine="125" startPosition="18" endLine="126" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9003987136928266534" fileName="DockLayout.java" startLine="126" startPosition="56" endLine="127" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="9003987136928266538" fileName="DockLayout.java" startLine="128" startPosition="18" endLine="129" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9003987136928266544" fileName="DockLayout.java" startLine="129" startPosition="56" endLine="130" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="9003987136928266548" fileName="DockLayout.java" startLine="132" startPosition="31" endLine="133" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9003987136928266554" fileName="DockLayout.java" startLine="134" startPosition="11" endLine="135" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="9003987136928266556" fileName="DockLayout.java" startLine="136" startPosition="16" endLine="137" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="9003987136928267773" fileName="DockLayout.java" startLine="139" startPosition="5" endLine="140" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9003987136928266616" fileName="DockLayout.java" startLine="144" startPosition="23" endLine="145" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9003987136928266627" fileName="DockLayout.java" startLine="146" startPosition="5" endLine="147" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9003987136928266638" fileName="DockLayout.java" startLine="147" startPosition="19" endLine="148" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9003987136928267775" fileName="DockLayout.java" startLine="25" startPosition="89" endLine="26" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9003987136928266054" fileName="DockLayout.java" startLine="26" startPosition="48" endLine="27" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9003987136928266086" fileName="DockLayout.java" startLine="27" startPosition="122" endLine="28" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9003987136928266100" fileName="DockLayout.java" startLine="28" startPosition="65" endLine="29" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9003987136928266114" fileName="DockLayout.java" startLine="29" startPosition="65" endLine="30" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9003987136928266146" fileName="DockLayout.java" startLine="30" startPosition="142" endLine="31" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9003987136928266170" fileName="DockLayout.java" startLine="31" startPosition="101" endLine="32" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9003987136928266192" fileName="DockLayout.java" startLine="36" startPosition="61" endLine="37" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9003987136928266198" fileName="DockLayout.java" startLine="37" startPosition="43" endLine="38" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9003987136928267728" fileName="DockLayout.java" startLine="38" startPosition="83" endLine="39" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9003987136928267566" fileName="DockLayout.java" startLine="40" startPosition="46" endLine="41" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9003987136928267676" fileName="DockLayout.java" startLine="42" startPosition="40" endLine="43" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9003987136928267742" fileName="DockLayout.java" startLine="44" startPosition="34" endLine="45" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9003987136928266259" fileName="DockLayout.java" startLine="47" startPosition="5" endLine="48" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9003987136928266276" fileName="DockLayout.java" startLine="52" startPosition="46" endLine="53" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9003987136928266295" fileName="DockLayout.java" startLine="57" startPosition="23" endLine="58" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9003987136928266299" fileName="DockLayout.java" startLine="59" startPosition="5" endLine="60" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9003987136928266311" fileName="DockLayout.java" startLine="62" startPosition="17" endLine="63" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9003987136928266327" fileName="DockLayout.java" startLine="63" startPosition="78" endLine="64" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9003987136928266335" fileName="DockLayout.java" startLine="64" startPosition="26" endLine="65" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="9003987136928266339" fileName="DockLayout.java" startLine="66" startPosition="17" endLine="67" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9003987136928266359" fileName="DockLayout.java" startLine="67" startPosition="90" endLine="68" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9003987136928266367" fileName="DockLayout.java" startLine="68" startPosition="31" endLine="69" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="9003987136928266371" fileName="DockLayout.java" startLine="70" startPosition="16" endLine="71" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9003987136928266395" fileName="DockLayout.java" startLine="71" startPosition="90" endLine="72" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9003987136928266403" fileName="DockLayout.java" startLine="72" startPosition="30" endLine="73" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="9003987136928266407" fileName="DockLayout.java" startLine="74" startPosition="16" endLine="75" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9003987136928266427" fileName="DockLayout.java" startLine="75" startPosition="79" endLine="76" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9003987136928266435" fileName="DockLayout.java" startLine="76" startPosition="26" endLine="77" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="9003987136928266439" fileName="DockLayout.java" startLine="78" startPosition="18" endLine="79" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9003987136928266463" fileName="DockLayout.java" startLine="79" startPosition="100" endLine="80" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="9003987136928266465" fileName="DockLayout.java" startLine="81" startPosition="14" endLine="82" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="9003987136928266772" fileName="DockLayout.java" startLine="98" startPosition="13" endLine="99" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9003987136928267429" fileName="DockLayout.java" startLine="100" startPosition="13" endLine="101" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9003987136928266825" fileName="DockLayout.java" startLine="102" startPosition="14" endLine="103" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9003987136928266812" fileName="DockLayout.java" startLine="104" startPosition="36" endLine="105" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9003987136928266834" fileName="DockLayout.java" startLine="105" startPosition="76" endLine="106" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9003987136928266851" fileName="DockLayout.java" startLine="106" startPosition="24" endLine="107" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9003987136928267499" fileName="DockLayout.java" startLine="108" startPosition="9" endLine="109" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9003987136928267502" fileName="DockLayout.java" startLine="113" startPosition="51" endLine="114" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9003987136928267514" fileName="DockLayout.java" startLine="114" startPosition="22" endLine="115" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9003987136928267526" fileName="DockLayout.java" startLine="115" startPosition="22" endLine="116" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9003987136928267538" fileName="DockLayout.java" startLine="116" startPosition="21" endLine="117" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9003987136928267761" fileName="DockLayout.java" startLine="117" startPosition="21" endLine="118" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9003987136928266508" fileName="DockLayout.java" startLine="121" startPosition="19" endLine="122" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9003987136928266514" fileName="DockLayout.java" startLine="122" startPosition="58" endLine="123" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="9003987136928266518" fileName="DockLayout.java" startLine="124" startPosition="19" endLine="125" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9003987136928266524" fileName="DockLayout.java" startLine="125" startPosition="58" endLine="126" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="9003987136928266528" fileName="DockLayout.java" startLine="127" startPosition="18" endLine="128" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9003987136928266534" fileName="DockLayout.java" startLine="128" startPosition="56" endLine="129" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="9003987136928266538" fileName="DockLayout.java" startLine="130" startPosition="18" endLine="131" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9003987136928266544" fileName="DockLayout.java" startLine="131" startPosition="56" endLine="132" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="9003987136928266548" fileName="DockLayout.java" startLine="134" startPosition="31" endLine="135" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9003987136928266554" fileName="DockLayout.java" startLine="136" startPosition="11" endLine="137" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="9003987136928266556" fileName="DockLayout.java" startLine="138" startPosition="16" endLine="139" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="9003987136928267773" fileName="DockLayout.java" startLine="141" startPosition="5" endLine="142" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9003987136928266616" fileName="DockLayout.java" startLine="146" startPosition="23" endLine="147" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9003987136928266627" fileName="DockLayout.java" startLine="148" startPosition="5" endLine="149" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9003987136928266638" fileName="DockLayout.java" startLine="149" startPosition="19" endLine="150" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9003987136928266032" fileName="DockLayout.java" startLine="21" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DockLayout#()V" />
-    <nodeInfo nodeId="9003987136928266293" fileName="DockLayout.java" startLine="54" startPosition="105" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9003987136928266705" fileName="DockLayout.java" startLine="131" startPosition="20" endLine="134" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9003987136928266608" fileName="DockLayout.java" startLine="143" startPosition="70" endLine="146" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9003987136928266270" fileName="DockLayout.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="flushCache#(Lorg/eclipse/swt/widgets/Control;)Z" />
-    <nodeInfo nodeId="9003987136928266478" fileName="DockLayout.java" startLine="84" startPosition="56" endLine="88" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9003987136928267690" fileName="DockLayout.java" startLine="39" startPosition="65" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9003987136928266784" fileName="DockLayout.java" startLine="101" startPosition="36" endLine="106" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="9003987136928266471" fileName="DockLayout.java" startLine="84" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="size#(Lorg/eclipse/swt/widgets/Control;Z)Lorg/eclipse/swt/graphics/Point;" />
-    <nodeInfo nodeId="9003987136928266593" fileName="DockLayout.java" startLine="143" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addControl#(Lorg/eclipse/swt/widgets/Control;Ljava/util/List;)Ljava/util/List;" />
-    <nodeInfo nodeId="9003987136928267564" fileName="DockLayout.java" startLine="37" startPosition="26" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="9003987136928266037" fileName="DockLayout.java" startLine="24" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="computeSize#(Lorg/eclipse/swt/widgets/Composite;IIZ)Lorg/eclipse/swt/graphics/Point;" />
-    <nodeInfo nodeId="9003987136928266179" fileName="DockLayout.java" startLine="34" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="layout#(Lorg/eclipse/swt/widgets/Composite;Z)V" />
-    <nodeInfo nodeId="9003987136928267453" fileName="DockLayout.java" startLine="91" startPosition="63" endLine="108" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="9003987136928266730" fileName="DockLayout.java" startLine="91" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="size#(Ljava/util/List;Z)Lorg/eclipse/swt/graphics/Point;" />
-    <nodeInfo nodeId="9003987136928266504" fileName="DockLayout.java" startLine="117" startPosition="46" endLine="138" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="9003987136928266307" fileName="DockLayout.java" startLine="58" startPosition="43" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="9003987136928266494" fileName="DockLayout.java" startLine="116" startPosition="26" endLine="139" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="9003987136928266280" fileName="DockLayout.java" startLine="54" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="placeControl#(Lorg/eclipse/swt/widgets/Control;Ljetbrains/mps/ui/swt/runtime/layout/DockLayoutData;Lorg/eclipse/swt/graphics/Rectangle;Z)V" />
-    <nodeInfo nodeId="9003987136928266491" fileName="DockLayout.java" startLine="111" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectControls#(Lorg/eclipse/swt/widgets/Composite;)Lorg/eclipse/swt/widgets/Control;" />
+    <nodeInfo nodeId="9003987136928266293" fileName="DockLayout.java" startLine="56" startPosition="105" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9003987136928266705" fileName="DockLayout.java" startLine="133" startPosition="20" endLine="136" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9003987136928266608" fileName="DockLayout.java" startLine="145" startPosition="70" endLine="148" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9003987136928266270" fileName="DockLayout.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="flushCache#(Lorg/eclipse/swt/widgets/Control;)Z" />
+    <nodeInfo nodeId="9003987136928266478" fileName="DockLayout.java" startLine="86" startPosition="56" endLine="90" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9003987136928267690" fileName="DockLayout.java" startLine="41" startPosition="65" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9003987136928266784" fileName="DockLayout.java" startLine="103" startPosition="36" endLine="108" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="9003987136928266471" fileName="DockLayout.java" startLine="86" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="size#(Lorg/eclipse/swt/widgets/Control;Z)Lorg/eclipse/swt/graphics/Point;" />
+    <nodeInfo nodeId="9003987136928266593" fileName="DockLayout.java" startLine="145" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addControl#(Lorg/eclipse/swt/widgets/Control;Ljava/util/List;)Ljava/util/List;" />
+    <nodeInfo nodeId="9003987136928267564" fileName="DockLayout.java" startLine="39" startPosition="26" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="9003987136928266037" fileName="DockLayout.java" startLine="24" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="computeSize#(Lorg/eclipse/swt/widgets/Composite;IIZ)Lorg/eclipse/swt/graphics/Point;" />
+    <nodeInfo nodeId="9003987136928266179" fileName="DockLayout.java" startLine="35" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="layout#(Lorg/eclipse/swt/widgets/Composite;Z)V" />
+    <nodeInfo nodeId="9003987136928267453" fileName="DockLayout.java" startLine="93" startPosition="63" endLine="110" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="9003987136928266730" fileName="DockLayout.java" startLine="93" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="size#(Ljava/util/List;Z)Lorg/eclipse/swt/graphics/Point;" />
+    <nodeInfo nodeId="9003987136928266504" fileName="DockLayout.java" startLine="119" startPosition="46" endLine="140" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="9003987136928266307" fileName="DockLayout.java" startLine="60" startPosition="43" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="9003987136928266494" fileName="DockLayout.java" startLine="118" startPosition="26" endLine="141" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="9003987136928266280" fileName="DockLayout.java" startLine="56" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="placeControl#(Lorg/eclipse/swt/widgets/Control;Ljetbrains/mps/ui/swt/runtime/layout/DockLayoutData;Lorg/eclipse/swt/graphics/Rectangle;Z)V" />
+    <nodeInfo nodeId="9003987136928266491" fileName="DockLayout.java" startLine="113" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectControls#(Lorg/eclipse/swt/widgets/Composite;)Lorg/eclipse/swt/widgets/Control;" />
     <scopeInfo nodeId="9003987136928266035" fileName="DockLayout.java" startLine="21" startPosition="23" endLine="21" endPosition="23" />
-    <scopeInfo nodeId="9003987136928267691" fileName="DockLayout.java" startLine="40" startPosition="40" endLine="41" endPosition="58" />
-    <scopeInfo nodeId="9003987136928267735" fileName="DockLayout.java" startLine="42" startPosition="34" endLine="43" endPosition="23" />
-    <scopeInfo nodeId="9003987136928266275" fileName="DockLayout.java" startLine="50" startPosition="46" endLine="51" endPosition="34" />
-    <scopeInfo nodeId="9003987136928266294" fileName="DockLayout.java" startLine="55" startPosition="23" endLine="56" endPosition="13" />
-    <scopeInfo nodeId="9003987136928266464" fileName="DockLayout.java" startLine="79" startPosition="14" endLine="80" endPosition="69" />
-    <scopeInfo nodeId="9003987136928267468" fileName="DockLayout.java" startLine="96" startPosition="13" endLine="97" endPosition="31" />
-    <scopeInfo nodeId="9003987136928267481" fileName="DockLayout.java" startLine="98" startPosition="13" endLine="99" endPosition="51" />
-    <scopeInfo nodeId="9003987136928266706" fileName="DockLayout.java" startLine="132" startPosition="31" endLine="133" endPosition="27" />
-    <scopeInfo nodeId="9003987136928266555" fileName="DockLayout.java" startLine="136" startPosition="16" endLine="137" endPosition="71" />
-    <scopeInfo nodeId="9003987136928266610" fileName="DockLayout.java" startLine="144" startPosition="23" endLine="145" endPosition="38" />
+    <scopeInfo nodeId="9003987136928267691" fileName="DockLayout.java" startLine="42" startPosition="40" endLine="43" endPosition="58" />
+    <scopeInfo nodeId="9003987136928267735" fileName="DockLayout.java" startLine="44" startPosition="34" endLine="45" endPosition="23" />
+    <scopeInfo nodeId="9003987136928266275" fileName="DockLayout.java" startLine="52" startPosition="46" endLine="53" endPosition="34" />
+    <scopeInfo nodeId="9003987136928266294" fileName="DockLayout.java" startLine="57" startPosition="23" endLine="58" endPosition="13" />
+    <scopeInfo nodeId="9003987136928266464" fileName="DockLayout.java" startLine="81" startPosition="14" endLine="82" endPosition="69" />
+    <scopeInfo nodeId="9003987136928267468" fileName="DockLayout.java" startLine="98" startPosition="13" endLine="99" endPosition="31" />
+    <scopeInfo nodeId="9003987136928267481" fileName="DockLayout.java" startLine="100" startPosition="13" endLine="101" endPosition="51" />
+    <scopeInfo nodeId="9003987136928266706" fileName="DockLayout.java" startLine="134" startPosition="31" endLine="135" endPosition="27" />
+    <scopeInfo nodeId="9003987136928266555" fileName="DockLayout.java" startLine="138" startPosition="16" endLine="139" endPosition="71" />
+    <scopeInfo nodeId="9003987136928266610" fileName="DockLayout.java" startLine="146" startPosition="23" endLine="147" endPosition="38" />
     <scopeInfo nodeId="9003987136928266032" fileName="DockLayout.java" startLine="21" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="9003987136928266438" fileName="DockLayout.java" startLine="76" startPosition="18" endLine="78" endPosition="14" />
-    <scopeInfo nodeId="9003987136928266507" fileName="DockLayout.java" startLine="119" startPosition="19" endLine="121" endPosition="16" />
-    <scopeInfo nodeId="9003987136928266517" fileName="DockLayout.java" startLine="122" startPosition="19" endLine="124" endPosition="16" />
-    <scopeInfo nodeId="9003987136928266527" fileName="DockLayout.java" startLine="125" startPosition="18" endLine="127" endPosition="16" />
-    <scopeInfo nodeId="9003987136928266537" fileName="DockLayout.java" startLine="128" startPosition="18" endLine="130" endPosition="16" />
-    <scopeInfo nodeId="9003987136928266310" fileName="DockLayout.java" startLine="60" startPosition="17" endLine="63" endPosition="14" />
-    <scopeInfo nodeId="9003987136928266338" fileName="DockLayout.java" startLine="64" startPosition="17" endLine="67" endPosition="14" />
-    <scopeInfo nodeId="9003987136928266370" fileName="DockLayout.java" startLine="68" startPosition="16" endLine="71" endPosition="14" />
-    <scopeInfo nodeId="9003987136928266406" fileName="DockLayout.java" startLine="72" startPosition="16" endLine="75" endPosition="14" />
-    <scopeInfo nodeId="9003987136928266785" fileName="DockLayout.java" startLine="102" startPosition="36" endLine="105" endPosition="24">
+    <scopeInfo nodeId="9003987136928266438" fileName="DockLayout.java" startLine="78" startPosition="18" endLine="80" endPosition="14" />
+    <scopeInfo nodeId="9003987136928266507" fileName="DockLayout.java" startLine="121" startPosition="19" endLine="123" endPosition="16" />
+    <scopeInfo nodeId="9003987136928266517" fileName="DockLayout.java" startLine="124" startPosition="19" endLine="126" endPosition="16" />
+    <scopeInfo nodeId="9003987136928266527" fileName="DockLayout.java" startLine="127" startPosition="18" endLine="129" endPosition="16" />
+    <scopeInfo nodeId="9003987136928266537" fileName="DockLayout.java" startLine="130" startPosition="18" endLine="132" endPosition="16" />
+    <scopeInfo nodeId="9003987136928266310" fileName="DockLayout.java" startLine="62" startPosition="17" endLine="65" endPosition="14" />
+    <scopeInfo nodeId="9003987136928266338" fileName="DockLayout.java" startLine="66" startPosition="17" endLine="69" endPosition="14" />
+    <scopeInfo nodeId="9003987136928266370" fileName="DockLayout.java" startLine="70" startPosition="16" endLine="73" endPosition="14" />
+    <scopeInfo nodeId="9003987136928266406" fileName="DockLayout.java" startLine="74" startPosition="16" endLine="77" endPosition="14" />
+    <scopeInfo nodeId="9003987136928266785" fileName="DockLayout.java" startLine="104" startPosition="36" endLine="107" endPosition="24">
       <varInfo nodeId="9003987136928266813" varName="sz" />
     </scopeInfo>
-    <scopeInfo nodeId="9003987136928266270" fileName="DockLayout.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
+    <scopeInfo nodeId="9003987136928266270" fileName="DockLayout.java" startLine="51" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="9003987136928266273" varName="comp" />
     </scopeInfo>
-    <scopeInfo nodeId="9003987136928266477" fileName="DockLayout.java" startLine="84" startPosition="56" endLine="88" endPosition="6" />
-    <scopeInfo nodeId="9003987136928266547" fileName="DockLayout.java" startLine="131" startPosition="20" endLine="135" endPosition="16" />
-    <scopeInfo nodeId="9003987136928266784" fileName="DockLayout.java" startLine="101" startPosition="36" endLine="106" endPosition="9">
+    <scopeInfo nodeId="9003987136928266477" fileName="DockLayout.java" startLine="86" startPosition="56" endLine="90" endPosition="6" />
+    <scopeInfo nodeId="9003987136928266547" fileName="DockLayout.java" startLine="133" startPosition="20" endLine="137" endPosition="16" />
+    <scopeInfo nodeId="9003987136928266784" fileName="DockLayout.java" startLine="103" startPosition="36" endLine="108" endPosition="9">
       <varInfo nodeId="9003987136928266788" varName="ctrl" />
     </scopeInfo>
-    <scopeInfo nodeId="9003987136928266596" fileName="DockLayout.java" startLine="143" startPosition="70" endLine="148" endPosition="16" />
-    <scopeInfo nodeId="9003987136928267565" fileName="DockLayout.java" startLine="38" startPosition="46" endLine="44" endPosition="7">
+    <scopeInfo nodeId="9003987136928266596" fileName="DockLayout.java" startLine="145" startPosition="70" endLine="150" endPosition="16" />
+    <scopeInfo nodeId="9003987136928267565" fileName="DockLayout.java" startLine="40" startPosition="46" endLine="46" endPosition="7">
       <varInfo nodeId="9003987136928267567" varName="bd" />
     </scopeInfo>
-    <scopeInfo nodeId="9003987136928266471" fileName="DockLayout.java" startLine="84" startPosition="0" endLine="90" endPosition="0">
+    <scopeInfo nodeId="9003987136928266471" fileName="DockLayout.java" startLine="86" startPosition="0" endLine="92" endPosition="0">
       <varInfo nodeId="9003987136928266472" varName="ctrl" />
       <varInfo nodeId="9003987136928266474" varName="flushCache" />
     </scopeInfo>
-    <scopeInfo nodeId="9003987136928266048" fileName="DockLayout.java" startLine="24" startPosition="89" endLine="31" endPosition="70">
+    <scopeInfo nodeId="9003987136928266048" fileName="DockLayout.java" startLine="25" startPosition="89" endLine="32" endPosition="70">
       <varInfo nodeId="9003987136928267776" varName="center" />
       <varInfo nodeId="9003987136928266147" varName="height" />
       <varInfo nodeId="9003987136928266115" varName="mheight" />
       <varInfo nodeId="9003987136928266055" varName="width" />
     </scopeInfo>
-    <scopeInfo nodeId="9003987136928267455" fileName="DockLayout.java" startLine="100" startPosition="14" endLine="107" endPosition="19">
+    <scopeInfo nodeId="9003987136928267455" fileName="DockLayout.java" startLine="102" startPosition="14" endLine="109" endPosition="19">
       <varInfo nodeId="9003987136928266826" varName="res" />
     </scopeInfo>
-    <scopeInfo nodeId="9003987136928266593" fileName="DockLayout.java" startLine="143" startPosition="0" endLine="150" endPosition="0">
+    <scopeInfo nodeId="9003987136928266593" fileName="DockLayout.java" startLine="145" startPosition="0" endLine="152" endPosition="0">
       <varInfo nodeId="9003987136928266601" varName="ctrl" />
       <varInfo nodeId="9003987136928266603" varName="list" />
     </scopeInfo>
-    <scopeInfo nodeId="9003987136928267564" fileName="DockLayout.java" startLine="37" startPosition="26" endLine="45" endPosition="5">
+    <scopeInfo nodeId="9003987136928267564" fileName="DockLayout.java" startLine="39" startPosition="26" endLine="47" endPosition="5">
       <varInfo nodeId="9003987136928267668" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="9003987136928266037" fileName="DockLayout.java" startLine="24" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="9003987136928266037" fileName="DockLayout.java" startLine="24" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="9003987136928266040" varName="comp" />
       <varInfo nodeId="9003987136928266046" varName="flushCache" />
       <varInfo nodeId="9003987136928266044" varName="hHint" />
       <varInfo nodeId="9003987136928266042" varName="wHint" />
     </scopeInfo>
-    <scopeInfo nodeId="9003987136928266186" fileName="DockLayout.java" startLine="34" startPosition="61" endLine="46" endPosition="74">
+    <scopeInfo nodeId="9003987136928266186" fileName="DockLayout.java" startLine="36" startPosition="61" endLine="48" endPosition="74">
       <varInfo nodeId="9003987136928266193" varName="carea" />
       <varInfo nodeId="9003987136928267729" varName="center" />
       <varInfo nodeId="9003987136928266199" varName="insides" />
     </scopeInfo>
-    <scopeInfo nodeId="9003987136928266179" fileName="DockLayout.java" startLine="34" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="9003987136928266179" fileName="DockLayout.java" startLine="35" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="9003987136928266182" varName="comp" />
       <varInfo nodeId="9003987136928266184" varName="flushCache" />
     </scopeInfo>
-    <scopeInfo nodeId="9003987136928266736" fileName="DockLayout.java" startLine="91" startPosition="63" endLine="108" endPosition="5" />
-    <scopeInfo nodeId="9003987136928266730" fileName="DockLayout.java" startLine="91" startPosition="0" endLine="110" endPosition="0">
+    <scopeInfo nodeId="9003987136928266736" fileName="DockLayout.java" startLine="93" startPosition="63" endLine="110" endPosition="5" />
+    <scopeInfo nodeId="9003987136928266730" fileName="DockLayout.java" startLine="93" startPosition="0" endLine="112" endPosition="0">
       <varInfo nodeId="9003987136928266731" varName="ctrls" />
       <varInfo nodeId="9003987136928266733" varName="flushCache" />
     </scopeInfo>
-    <scopeInfo nodeId="9003987136928266495" fileName="DockLayout.java" startLine="117" startPosition="46" endLine="138" endPosition="7" />
-    <scopeInfo nodeId="9003987136928266494" fileName="DockLayout.java" startLine="116" startPosition="26" endLine="139" endPosition="5">
+    <scopeInfo nodeId="9003987136928266495" fileName="DockLayout.java" startLine="119" startPosition="46" endLine="140" endPosition="7" />
+    <scopeInfo nodeId="9003987136928266494" fileName="DockLayout.java" startLine="118" startPosition="26" endLine="141" endPosition="5">
       <varInfo nodeId="9003987136928266567" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="9003987136928266292" fileName="DockLayout.java" startLine="54" startPosition="105" endLine="81" endPosition="5">
+    <scopeInfo nodeId="9003987136928266292" fileName="DockLayout.java" startLine="56" startPosition="105" endLine="83" endPosition="5">
       <varInfo nodeId="9003987136928266300" varName="pt" />
     </scopeInfo>
-    <scopeInfo nodeId="9003987136928266280" fileName="DockLayout.java" startLine="54" startPosition="0" endLine="83" endPosition="0">
+    <scopeInfo nodeId="9003987136928266280" fileName="DockLayout.java" startLine="56" startPosition="0" endLine="85" endPosition="0">
       <varInfo nodeId="9003987136928266283" varName="border" />
       <varInfo nodeId="9003987136928266281" varName="ctrl" />
       <varInfo nodeId="9003987136928266289" varName="flushCache" />
       <varInfo nodeId="9003987136928266287" varName="insides" />
     </scopeInfo>
-    <scopeInfo nodeId="9003987136928266493" fileName="DockLayout.java" startLine="111" startPosition="51" endLine="140" endPosition="18">
+    <scopeInfo nodeId="9003987136928266493" fileName="DockLayout.java" startLine="113" startPosition="51" endLine="142" endPosition="18">
       <varInfo nodeId="9003987136928267762" varName="center" />
     </scopeInfo>
-    <scopeInfo nodeId="9003987136928266491" fileName="DockLayout.java" startLine="111" startPosition="0" endLine="142" endPosition="0">
+    <scopeInfo nodeId="9003987136928266491" fileName="DockLayout.java" startLine="113" startPosition="0" endLine="144" endPosition="0">
       <varInfo nodeId="9003987136928266570" varName="comp" />
     </scopeInfo>
-    <unitInfo nodeId="9003987136928266009" fileName="DockLayout.java" startLine="14" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.ui.swt.runtime.layout.DockLayout" />
+    <unitInfo nodeId="9003987136928266009" fileName="DockLayout.java" startLine="14" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.ui.swt.runtime.layout.DockLayout" />
   </root>
   <root nodeRef="r:9e833b11-a3b9-451a-a8dc-35cf0834f311(jetbrains.mps.ui.swt.runtime.layout)/9003987136928268772">
     <nodeInfo nodeId="9003987136928268782" fileName="DockLayoutData.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />

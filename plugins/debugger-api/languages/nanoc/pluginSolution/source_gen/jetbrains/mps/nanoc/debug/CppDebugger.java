@@ -19,11 +19,13 @@ public class CppDebugger extends AbstractDebugger<GDBBreakpoint, GDBBreakpoint.G
   }
 
   @NotNull
+  @Override
   public GDBBreakpointsProvider getBreakpointsProvider() {
     return this.myBreakpointsProvider;
   }
 
   @NotNull
+  @Override
   public AbstractDebugSessionCreator createDebugSessionCreator(@NotNull Project project) {
     return new CppGDBCreator();
   }

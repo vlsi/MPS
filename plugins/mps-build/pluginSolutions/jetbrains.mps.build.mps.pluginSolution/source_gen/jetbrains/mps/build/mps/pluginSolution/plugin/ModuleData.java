@@ -21,14 +21,17 @@ public class ModuleData implements NodeData {
     this.myModule = module;
   }
 
+  @Override
   public String getText() {
     return this.myModule.getModuleFqName();
   }
 
+  @Override
   public List<NodeData> getChildren() {
     return ListSequence.fromList(new ArrayList<NodeData>());
   }
 
+  @Override
   public Icon getIcon(boolean expanded) {
     if (this.myModule instanceof AbstractModule) {
       IFile file = this.myModule.getDescriptorFile();
@@ -46,17 +49,21 @@ public class ModuleData implements NodeData {
     return this.myModule;
   }
 
+  @Override
   public boolean canHaveChildren() {
     return false;
   }
 
+  @Override
   public void addChildren(NodeData nodeData) {
   }
 
+  @Override
   public NodeData getParent() {
     return this.myParent;
   }
 
+  @Override
   public void setParent(NodeData parent) {
     this.myParent = parent;
   }

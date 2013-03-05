@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="1qsq50d7fj2mfzjd462o6y9xqb0ozdt">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3l4d6vah7bipcwb415vkx7fy07t8dxg" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
   <common hash="-d3wa95w4rsd61b6hyyxqx6f0svy3rra" />
   <source id="873604604380664433" name="SWTTransientValues" hash="dhr57tnh5e6i0i3dvsjjhk2xmjfk64d">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />

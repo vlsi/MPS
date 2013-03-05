@@ -446,163 +446,163 @@
     <nodeInfo nodeId="2975785153735223848" fileName="ThreadSafeSample.java" startLine="23" startPosition="96" endLine="24" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2975785153735224089" fileName="ThreadSafeSample.java" startLine="24" startPosition="54" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2975785153735248669" fileName="ThreadSafeSample.java" startLine="25" startPosition="0" endLine="26" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2975785153735224014" fileName="ThreadSafeSample.java" startLine="30" startPosition="24" endLine="31" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2975785153735224027" fileName="ThreadSafeSample.java" startLine="33" startPosition="42" endLine="34" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2975785153735223863" fileName="ThreadSafeSample.java" startLine="37" startPosition="7" endLine="38" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2975785153735224080" fileName="ThreadSafeSample.java" startLine="38" startPosition="19" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2975785153735224092" fileName="ThreadSafeSample.java" startLine="39" startPosition="0" endLine="40" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2975785153735224091" fileName="ThreadSafeSample.java" startLine="40" startPosition="110" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="42" startPosition="5" endLine="43" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="43" startPosition="96" endLine="44" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="44" startPosition="83" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="46" startPosition="39" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="47" startPosition="0" endLine="48" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="48" startPosition="35" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2975785153735248686" fileName="ThreadSafeSample.java" startLine="53" startPosition="19" endLine="54" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2975785153735224104" fileName="ThreadSafeSample.java" startLine="54" startPosition="56" endLine="55" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2975785153735248689" fileName="ThreadSafeSample.java" startLine="55" startPosition="34" endLine="56" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2975785153735248692" fileName="ThreadSafeSample.java" startLine="56" startPosition="108" endLine="57" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2975785153735247499" fileName="ThreadSafeSample.java" startLine="58" startPosition="48" endLine="59" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="61" startPosition="42" endLine="62" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="63" startPosition="23" endLine="64" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="67" startPosition="10" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="68" startPosition="0" endLine="69" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="69" startPosition="37" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="72" startPosition="11" endLine="73" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="74" startPosition="40" endLine="75" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="77" startPosition="63" endLine="78" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="79" startPosition="7" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2975785153735224082" fileName="ThreadSafeSample.java" startLine="81" startPosition="5" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2975785153735296297" fileName="ThreadSafeSample.java" startLine="82" startPosition="0" endLine="83" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2975785153735296300" fileName="ThreadSafeSample.java" startLine="83" startPosition="119" endLine="84" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2975785153735296339" fileName="ThreadSafeSample.java" startLine="84" startPosition="36" endLine="85" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2975785153735291407" fileName="ThreadSafeSample.java" startLine="85" startPosition="93" endLine="86" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2975785153735296341" fileName="ThreadSafeSample.java" startLine="86" startPosition="46" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="88" startPosition="5" endLine="89" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="89" startPosition="96" endLine="90" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="90" startPosition="83" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="92" startPosition="39" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="93" startPosition="0" endLine="94" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="94" startPosition="35" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2975785153735296242" fileName="ThreadSafeSample.java" startLine="98" startPosition="17" endLine="99" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2975785153735296252" fileName="ThreadSafeSample.java" startLine="99" startPosition="87" endLine="100" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="101" startPosition="42" endLine="102" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="103" startPosition="23" endLine="104" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="107" startPosition="10" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="108" startPosition="0" endLine="109" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="109" startPosition="37" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="112" startPosition="11" endLine="113" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="114" startPosition="40" endLine="115" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="117" startPosition="63" endLine="118" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="119" startPosition="7" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2975785153735224058" fileName="ThreadSafeSample.java" startLine="121" startPosition="5" endLine="122" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2975785153735296279" fileName="ThreadSafeSample.java" startLine="125" startPosition="43" endLine="126" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2975785153735224014" fileName="ThreadSafeSample.java" startLine="31" startPosition="24" endLine="32" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2975785153735224027" fileName="ThreadSafeSample.java" startLine="34" startPosition="42" endLine="35" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2975785153735223863" fileName="ThreadSafeSample.java" startLine="38" startPosition="7" endLine="39" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2975785153735224080" fileName="ThreadSafeSample.java" startLine="39" startPosition="19" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2975785153735224092" fileName="ThreadSafeSample.java" startLine="40" startPosition="0" endLine="41" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2975785153735224091" fileName="ThreadSafeSample.java" startLine="41" startPosition="110" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="43" startPosition="5" endLine="44" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="44" startPosition="96" endLine="45" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="45" startPosition="83" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="47" startPosition="39" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="48" startPosition="0" endLine="49" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="49" startPosition="35" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2975785153735248686" fileName="ThreadSafeSample.java" startLine="54" startPosition="19" endLine="55" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2975785153735224104" fileName="ThreadSafeSample.java" startLine="55" startPosition="56" endLine="56" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2975785153735248689" fileName="ThreadSafeSample.java" startLine="56" startPosition="34" endLine="57" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2975785153735248692" fileName="ThreadSafeSample.java" startLine="57" startPosition="108" endLine="58" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2975785153735247499" fileName="ThreadSafeSample.java" startLine="59" startPosition="48" endLine="60" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="62" startPosition="42" endLine="63" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="64" startPosition="23" endLine="65" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="68" startPosition="10" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="69" startPosition="0" endLine="70" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="70" startPosition="37" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="73" startPosition="11" endLine="74" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="75" startPosition="40" endLine="76" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="78" startPosition="63" endLine="79" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="80" startPosition="7" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2975785153735224082" fileName="ThreadSafeSample.java" startLine="82" startPosition="5" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2975785153735296297" fileName="ThreadSafeSample.java" startLine="83" startPosition="0" endLine="84" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2975785153735296300" fileName="ThreadSafeSample.java" startLine="84" startPosition="119" endLine="85" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2975785153735296339" fileName="ThreadSafeSample.java" startLine="85" startPosition="36" endLine="86" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2975785153735291407" fileName="ThreadSafeSample.java" startLine="86" startPosition="93" endLine="87" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2975785153735296341" fileName="ThreadSafeSample.java" startLine="87" startPosition="46" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="89" startPosition="5" endLine="90" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="90" startPosition="96" endLine="91" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="91" startPosition="83" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="93" startPosition="39" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="94" startPosition="0" endLine="95" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="95" startPosition="35" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2975785153735296242" fileName="ThreadSafeSample.java" startLine="99" startPosition="17" endLine="100" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2975785153735296252" fileName="ThreadSafeSample.java" startLine="100" startPosition="87" endLine="101" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="102" startPosition="42" endLine="103" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="104" startPosition="23" endLine="105" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="108" startPosition="10" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="109" startPosition="0" endLine="110" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="110" startPosition="37" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="113" startPosition="11" endLine="114" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="115" startPosition="40" endLine="116" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="118" startPosition="63" endLine="119" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="120" startPosition="7" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2975785153735224058" fileName="ThreadSafeSample.java" startLine="122" startPosition="5" endLine="123" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2975785153735296279" fileName="ThreadSafeSample.java" startLine="126" startPosition="43" endLine="127" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2975785153735223831" fileName="ThreadSafeSample.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ThreadSafeSample#()V" />
-    <nodeInfo nodeId="2975785153735246335" fileName="ThreadSafeSample.java" startLine="29" startPosition="13" endLine="32" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="76" startPosition="7" endLine="79" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="116" startPosition="7" endLine="119" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2975785153735296273" fileName="ThreadSafeSample.java" startLine="125" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="log#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="71" startPosition="7" endLine="76" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="111" startPosition="7" endLine="116" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="2975785153735224012" fileName="ThreadSafeSample.java" startLine="28" startPosition="25" endLine="35" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="2975785153735245163" fileName="ThreadSafeSample.java" startLine="52" startPosition="17" endLine="60" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="97" startPosition="29" endLine="105" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="2975785153735224008" fileName="ThreadSafeSample.java" startLine="28" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="97" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="2975785153735223999" fileName="ThreadSafeSample.java" startLine="26" startPosition="84" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="95" startPosition="0" endLine="107" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="51" startPosition="29" endLine="65" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="51" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="49" startPosition="0" endLine="67" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="91" startPosition="0" endLine="111" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="45" startPosition="0" endLine="71" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="87" startPosition="0" endLine="121" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="41" startPosition="0" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2975785153735223835" fileName="ThreadSafeSample.java" startLine="18" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
+    <nodeInfo nodeId="2975785153735246335" fileName="ThreadSafeSample.java" startLine="30" startPosition="13" endLine="33" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="77" startPosition="7" endLine="80" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="117" startPosition="7" endLine="120" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2975785153735296273" fileName="ThreadSafeSample.java" startLine="126" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="log#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="72" startPosition="7" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="112" startPosition="7" endLine="117" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="2975785153735224012" fileName="ThreadSafeSample.java" startLine="29" startPosition="25" endLine="36" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="2975785153735245163" fileName="ThreadSafeSample.java" startLine="53" startPosition="17" endLine="61" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="98" startPosition="29" endLine="106" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="2975785153735224008" fileName="ThreadSafeSample.java" startLine="28" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="98" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2975785153735223999" fileName="ThreadSafeSample.java" startLine="26" startPosition="84" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="96" startPosition="0" endLine="108" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="52" startPosition="29" endLine="66" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="52" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="50" startPosition="0" endLine="68" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="92" startPosition="0" endLine="112" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="46" startPosition="0" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="88" startPosition="0" endLine="122" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="42" startPosition="0" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2975785153735223835" fileName="ThreadSafeSample.java" startLine="18" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
     <scopeInfo nodeId="2975785153735223834" fileName="ThreadSafeSample.java" startLine="15" startPosition="29" endLine="15" endPosition="29" />
-    <scopeInfo nodeId="2975785153735246337" fileName="ThreadSafeSample.java" startLine="30" startPosition="24" endLine="31" endPosition="62" />
-    <scopeInfo nodeId="2975785153735224023" fileName="ThreadSafeSample.java" startLine="33" startPosition="0" endLine="34" endPosition="44">
+    <scopeInfo nodeId="2975785153735246337" fileName="ThreadSafeSample.java" startLine="31" startPosition="24" endLine="32" endPosition="62" />
+    <scopeInfo nodeId="2975785153735224023" fileName="ThreadSafeSample.java" startLine="34" startPosition="0" endLine="35" endPosition="44">
       <varInfo nodeId="2975785153735224024" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="2975785153735224026" fileName="ThreadSafeSample.java" startLine="33" startPosition="42" endLine="34" endPosition="44" />
-    <scopeInfo nodeId="2975785153735245165" fileName="ThreadSafeSample.java" startLine="58" startPosition="0" endLine="59" endPosition="46">
+    <scopeInfo nodeId="2975785153735224026" fileName="ThreadSafeSample.java" startLine="34" startPosition="42" endLine="35" endPosition="44" />
+    <scopeInfo nodeId="2975785153735245165" fileName="ThreadSafeSample.java" startLine="59" startPosition="0" endLine="60" endPosition="46">
       <varInfo nodeId="2975785153735245166" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="2975785153735245168" fileName="ThreadSafeSample.java" startLine="58" startPosition="48" endLine="59" endPosition="46" />
-    <scopeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="61" startPosition="0" endLine="62" endPosition="66">
+    <scopeInfo nodeId="2975785153735245168" fileName="ThreadSafeSample.java" startLine="59" startPosition="48" endLine="60" endPosition="46" />
+    <scopeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="62" startPosition="0" endLine="63" endPosition="66">
       <varInfo nodeId="2975785153735223857" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="61" startPosition="42" endLine="62" endPosition="66" />
-    <scopeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="63" startPosition="23" endLine="64" endPosition="36" />
-    <scopeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="72" startPosition="11" endLine="73" endPosition="26" />
-    <scopeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="74" startPosition="0" endLine="75" endPosition="60">
+    <scopeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="62" startPosition="42" endLine="63" endPosition="66" />
+    <scopeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="64" startPosition="23" endLine="65" endPosition="36" />
+    <scopeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="73" startPosition="11" endLine="74" endPosition="26" />
+    <scopeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="75" startPosition="0" endLine="76" endPosition="60">
       <varInfo nodeId="2975785153735223857" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="74" startPosition="40" endLine="75" endPosition="60" />
-    <scopeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="77" startPosition="63" endLine="78" endPosition="93" />
-    <scopeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="101" startPosition="0" endLine="102" endPosition="66">
+    <scopeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="75" startPosition="40" endLine="76" endPosition="60" />
+    <scopeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="78" startPosition="63" endLine="79" endPosition="93" />
+    <scopeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="102" startPosition="0" endLine="103" endPosition="66">
       <varInfo nodeId="2975785153735291414" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="101" startPosition="42" endLine="102" endPosition="66" />
-    <scopeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="103" startPosition="23" endLine="104" endPosition="36" />
-    <scopeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="112" startPosition="11" endLine="113" endPosition="26" />
-    <scopeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="114" startPosition="0" endLine="115" endPosition="60">
+    <scopeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="102" startPosition="42" endLine="103" endPosition="66" />
+    <scopeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="104" startPosition="23" endLine="105" endPosition="36" />
+    <scopeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="113" startPosition="11" endLine="114" endPosition="26" />
+    <scopeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="115" startPosition="0" endLine="116" endPosition="60">
       <varInfo nodeId="2975785153735291414" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="114" startPosition="40" endLine="115" endPosition="60" />
-    <scopeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="117" startPosition="63" endLine="118" endPosition="93" />
-    <scopeInfo nodeId="2975785153735296276" fileName="ThreadSafeSample.java" startLine="125" startPosition="43" endLine="126" endPosition="32" />
+    <scopeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="115" startPosition="40" endLine="116" endPosition="60" />
+    <scopeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="118" startPosition="63" endLine="119" endPosition="93" />
+    <scopeInfo nodeId="2975785153735296276" fileName="ThreadSafeSample.java" startLine="126" startPosition="43" endLine="127" endPosition="32" />
     <scopeInfo nodeId="2975785153735223831" fileName="ThreadSafeSample.java" startLine="15" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="98" startPosition="17" endLine="100" endPosition="44">
+    <scopeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="99" startPosition="17" endLine="101" endPosition="44">
       <varInfo nodeId="2975785153735296243" varName="finalString" />
     </scopeInfo>
-    <scopeInfo nodeId="2975785153735224013" fileName="ThreadSafeSample.java" startLine="29" startPosition="13" endLine="32" endPosition="11" />
-    <scopeInfo nodeId="2975785153735296273" fileName="ThreadSafeSample.java" startLine="125" startPosition="0" endLine="128" endPosition="0">
+    <scopeInfo nodeId="2975785153735224013" fileName="ThreadSafeSample.java" startLine="30" startPosition="13" endLine="33" endPosition="11" />
+    <scopeInfo nodeId="2975785153735296273" fileName="ThreadSafeSample.java" startLine="126" startPosition="0" endLine="129" endPosition="0">
       <varInfo nodeId="2975785153735296277" varName="message" />
     </scopeInfo>
-    <scopeInfo nodeId="2975785153735245164" fileName="ThreadSafeSample.java" startLine="53" startPosition="19" endLine="57" endPosition="72" />
-    <scopeInfo nodeId="2975785153735224011" fileName="ThreadSafeSample.java" startLine="28" startPosition="25" endLine="35" endPosition="9" />
-    <scopeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="52" startPosition="17" endLine="60" endPosition="15" />
-    <scopeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="97" startPosition="29" endLine="105" endPosition="13" />
-    <scopeInfo nodeId="2975785153735224008" fileName="ThreadSafeSample.java" startLine="28" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="97" startPosition="0" endLine="107" endPosition="0" />
-    <scopeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="51" startPosition="29" endLine="65" endPosition="13" />
-    <scopeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="51" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="92" startPosition="39" endLine="110" endPosition="0">
+    <scopeInfo nodeId="2975785153735245164" fileName="ThreadSafeSample.java" startLine="54" startPosition="19" endLine="58" endPosition="72" />
+    <scopeInfo nodeId="2975785153735224011" fileName="ThreadSafeSample.java" startLine="29" startPosition="25" endLine="36" endPosition="9" />
+    <scopeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="53" startPosition="17" endLine="61" endPosition="15" />
+    <scopeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="98" startPosition="29" endLine="106" endPosition="13" />
+    <scopeInfo nodeId="2975785153735224008" fileName="ThreadSafeSample.java" startLine="28" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="98" startPosition="0" endLine="108" endPosition="0" />
+    <scopeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="52" startPosition="29" endLine="66" endPosition="13" />
+    <scopeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="52" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="93" startPosition="39" endLine="111" endPosition="0">
       <varInfo nodeId="2975785153735291414" varName="localA" />
       <varInfo nodeId="2975785153735291414" varName="runnable" />
     </scopeInfo>
-    <scopeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="91" startPosition="0" endLine="111" endPosition="7">
+    <scopeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="92" startPosition="0" endLine="112" endPosition="7">
       <varInfo nodeId="2975785153735291414" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="46" startPosition="39" endLine="70" endPosition="0">
+    <scopeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="47" startPosition="39" endLine="71" endPosition="0">
       <varInfo nodeId="2975785153735223857" varName="localA" />
       <varInfo nodeId="2975785153735223857" varName="runnable" />
     </scopeInfo>
-    <scopeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="45" startPosition="0" endLine="71" endPosition="7">
+    <scopeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="46" startPosition="0" endLine="72" endPosition="7">
       <varInfo nodeId="2975785153735223857" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="88" startPosition="5" endLine="120" endPosition="0">
+    <scopeInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="89" startPosition="5" endLine="121" endPosition="0">
       <varInfo nodeId="2975785153735291414" varName="exceptions_u0c" />
       <varInfo nodeId="2975785153735291414" varName="latch_u0c" />
     </scopeInfo>
-    <scopeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="42" startPosition="5" endLine="80" endPosition="0">
+    <scopeInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="43" startPosition="5" endLine="81" endPosition="0">
       <varInfo nodeId="2975785153735223857" varName="exceptions_n0c" />
       <varInfo nodeId="2975785153735223857" varName="latch_n0c" />
     </scopeInfo>
-    <scopeInfo nodeId="2975785153735223838" fileName="ThreadSafeSample.java" startLine="18" startPosition="70" endLine="122" endPosition="23">
+    <scopeInfo nodeId="2975785153735223838" fileName="ThreadSafeSample.java" startLine="18" startPosition="70" endLine="123" endPosition="23">
       <varInfo nodeId="2975785153735223849" varName="box" />
       <varInfo nodeId="2975785153735291408" varName="fixedValue" />
       <varInfo nodeId="2975785153735224093" varName="names" />
       <varInfo nodeId="2975785153735224000" varName="thread" />
     </scopeInfo>
-    <scopeInfo nodeId="2975785153735223835" fileName="ThreadSafeSample.java" startLine="18" startPosition="0" endLine="124" endPosition="0">
+    <scopeInfo nodeId="2975785153735223835" fileName="ThreadSafeSample.java" startLine="18" startPosition="0" endLine="125" endPosition="0">
       <varInfo nodeId="2975785153735223839" varName="args" />
     </scopeInfo>
-    <unitInfo nodeId="2975785153735224006" fileName="ThreadSafeSample.java" startLine="27" startPosition="35" endLine="37" endPosition="5" unitName="Samples.ThreadSafeSample$1" />
-    <unitInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="96" startPosition="38" endLine="107" endPosition="9" unitName="Samples.ThreadSafeSample$3" />
-    <unitInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="50" startPosition="38" endLine="67" endPosition="9" unitName="Samples.ThreadSafeSample$2" />
-    <unitInfo nodeId="2975785153735223829" fileName="ThreadSafeSample.java" startLine="12" startPosition="0" endLine="129" endPosition="0" unitName="Samples.ThreadSafeSample" />
+    <unitInfo nodeId="2975785153735224006" fileName="ThreadSafeSample.java" startLine="27" startPosition="35" endLine="38" endPosition="5" unitName="Samples.ThreadSafeSample$1" />
+    <unitInfo nodeId="2975785153735291414" fileName="ThreadSafeSample.java" startLine="97" startPosition="38" endLine="108" endPosition="9" unitName="Samples.ThreadSafeSample$3" />
+    <unitInfo nodeId="2975785153735223857" fileName="ThreadSafeSample.java" startLine="51" startPosition="38" endLine="68" endPosition="9" unitName="Samples.ThreadSafeSample$2" />
+    <unitInfo nodeId="2975785153735223829" fileName="ThreadSafeSample.java" startLine="12" startPosition="0" endLine="130" endPosition="0" unitName="Samples.ThreadSafeSample" />
   </root>
   <root nodeRef="r:e4037414-5f44-49d5-a48e-7fa4d3a4ee2e(Samples)/3385910400465347285">
     <nodeInfo nodeId="7427325263439038937" fileName="MoneySample.java" startLine="11" startPosition="42" endLine="12" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />

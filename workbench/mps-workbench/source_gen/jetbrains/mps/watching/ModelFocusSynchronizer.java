@@ -7,7 +7,7 @@ import com.intellij.ide.FrameStateManager;
 import com.intellij.ide.FrameStateListener;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.Set;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import com.intellij.openapi.project.Project;
@@ -19,7 +19,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.editor.MPSEditorUtil;
 import com.intellij.openapi.vfs.newvfs.RefreshSession;
 import com.intellij.openapi.vfs.newvfs.RefreshQueue;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.workbench.ModelUtil;
@@ -30,9 +29,11 @@ import org.jetbrains.annotations.NotNull;
 public class ModelFocusSynchronizer implements ApplicationComponent {
   public ModelFocusSynchronizer(FrameStateManager frameStateManager) {
     frameStateManager.addListener(new FrameStateListener() {
+      @Override
       public void onFrameDeactivated() {
       }
 
+      @Override
       public void onFrameActivated() {
         ModelAccess.instance().runReadInEDT(new Runnable() {
           public void run() {
@@ -54,7 +55,7 @@ public class ModelFocusSynchronizer implements ApplicationComponent {
 
             RefreshSession session = RefreshQueue.getInstance().createSession(true, true, null);
             for (SModel model : SetSequence.fromSet(models)) {
-              SModelDescriptor md = model.getModelDescriptor();
+              SModel md = model.getModelDescriptor();
               for (IFile file : CollectionSequence.fromCollection(ModelUtil.getFilesByModelDescriptor(md))) {
                 IFile fileToRefresh = file;
                 while (!(fileToRefresh.exists())) {
@@ -75,13 +76,16 @@ public class ModelFocusSynchronizer implements ApplicationComponent {
 
   @NonNls
   @NotNull
+  @Override
   public String getComponentName() {
     return getClass().getName();
   }
 
+  @Override
   public void initComponent() {
   }
 
+  @Override
   public void disposeComponent() {
   }
 }

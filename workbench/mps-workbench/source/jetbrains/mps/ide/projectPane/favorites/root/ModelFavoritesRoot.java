@@ -18,7 +18,8 @@ package jetbrains.mps.ide.projectPane.favorites.root;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.project.ModuleContext;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 
 import java.util.ArrayList;
@@ -29,24 +30,27 @@ class ModelFavoritesRoot extends FavoritesRoot<SModelReference> {
     super(value);
   }
 
+  @Override
   public MPSTreeNode getTreeNode(IOperationContext context) {
-    SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(getValue());
+    SModel md = SModelRepository.getInstance().getModelDescriptor(getValue());
     if (md == null) return null;
     return new SModelTreeNode(md, null, new ModuleContext(md.getModule(), context.getProject()));
   }
 
+  @Override
   public List<SNode> getAvaliableNodes() {
     List<SNode> result = new ArrayList<SNode>();
-    final SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(getValue());
+    final SModel md = SModelRepository.getInstance().getModelDescriptor(getValue());
     if (md == null) return result;
     SModel model = ModelAccess.instance().runReadAction(new Computable<SModel>() {
+      @Override
       public SModel compute() {
         return md.getSModel();
       }
     });
     if (model == null) return result;
 
-    for (SNode node : model.roots()) {
+    for (SNode node : model.getRootNodes()) {
       result.add(node);
     }
     return result;

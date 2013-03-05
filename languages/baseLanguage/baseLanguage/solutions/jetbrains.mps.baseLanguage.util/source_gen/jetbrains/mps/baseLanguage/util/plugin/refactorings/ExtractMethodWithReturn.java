@@ -15,6 +15,7 @@ public class ExtractMethodWithReturn extends ExtractMethodFromStatementsRefactor
     super(params);
   }
 
+  @Override
   public SNode getMethodType() {
     return this.myAnalyzer.getExtractMethodReafactoringProcessor().getContainerReturnType();
   }

@@ -21,6 +21,7 @@ import jetbrains.mps.progress.ProgressMonitor;
 import org.jetbrains.annotations.NotNull;
 
 public class UnionNode extends BaseNode {
+  @Override
   public SearchResults doGetResults(SearchQuery query, @NotNull ProgressMonitor monitor) {
     SearchResults results = new SearchResults();
     monitor.start("", myChildren.size());

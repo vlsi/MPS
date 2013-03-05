@@ -31,8 +31,10 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.*;
+import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 
@@ -65,7 +67,7 @@ public abstract class ProjectTreeFindHelper {
       new NodeForModuleCondition(module));
   }
 
-  public SModelTreeNode findMostSuitableModelTreeNode(@NotNull SModelDescriptor model) {
+  public SModelTreeNode findMostSuitableModelTreeNode(@NotNull SModel model) {
     MPSProject project = getProject().getComponent(MPSProject.class);
 
     SModule module = getModuleForModel(project, model);
@@ -77,11 +79,11 @@ public abstract class ProjectTreeFindHelper {
     return findModelTreeNodeInModule(model, moduleTreeNode);
   }
 
-  protected SModelTreeNode findModelTreeNodeInModule(final @NotNull SModelDescriptor model, @NotNull ProjectModuleTreeNode moduleNode) {
+  protected SModelTreeNode findModelTreeNodeInModule(final @NotNull SModel model, @NotNull ProjectModuleTreeNode moduleNode) {
     return (SModelTreeNode) findTreeNode(moduleNode, new ModelInModuleCondition(model), new NodeForModelCondition(model));
   }
 
-  protected SModelTreeNode findModelTreeNodeAnywhere(@NotNull SModelDescriptor model, @NotNull MPSTreeNode parentNode) {
+  protected SModelTreeNode findModelTreeNodeAnywhere(@NotNull SModel model, @NotNull MPSTreeNode parentNode) {
     return (SModelTreeNode) findTreeNode(parentNode, new ModelEverywhereCondition(model), new NodeForModelCondition(model));
   }
 
@@ -110,6 +112,7 @@ public abstract class ProjectTreeFindHelper {
 
       currentTreeNode = findTreeNode(finalCurrentTreeNode,
         new Condition<MPSTreeNode>() {
+          @Override
           public boolean met(MPSTreeNode object) {
             if (object == finalCurrentTreeNode) return true;
             if (!(object instanceof PackageNode)) return false;
@@ -118,6 +121,7 @@ public abstract class ProjectTreeFindHelper {
             return vp != null && vp.startsWith(pack);
           }
         }, new Condition<MPSTreeNode>() {
+        @Override
         public boolean met(MPSTreeNode tNode) {
           return (tNode instanceof SNodeTreeNode) && (((SNodeTreeNode) tNode).getSNode() == anc);
         }
@@ -162,7 +166,7 @@ public abstract class ProjectTreeFindHelper {
   }
 
   //todo: will work bad e.g. if operating with project data from modules pool
-  public MPSTreeNode findNextTreeNode(SModelDescriptor modelDescriptor) {
+  public MPSTreeNode findNextTreeNode(SModel modelDescriptor) {
     SModelTreeNode sModelNode = findMostSuitableModelTreeNode(modelDescriptor);
     if (sModelNode == null) return null;
     DefaultMutableTreeNode parentNode = (DefaultMutableTreeNode) sModelNode.getParent();
@@ -175,6 +179,7 @@ public abstract class ProjectTreeFindHelper {
   //----node find conditions----
 
   private static class ModuleInProjectCondition extends ModuleEverywhereCondition {
+    @Override
     public boolean met(MPSTreeNode object) {
       if (!super.met(object)) return false;
       return !(object instanceof jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModulesPoolTreeNode);
@@ -182,6 +187,7 @@ public abstract class ProjectTreeFindHelper {
   }
 
   private static class ModuleEverywhereCondition implements Condition<MPSTreeNode> {
+    @Override
     public boolean met(MPSTreeNode node) {
       if (node instanceof ProjectModuleTreeNode && !(node instanceof ProjectLanguageTreeNode)) return false;
       if (node instanceof SModelTreeNode) return false;
@@ -195,10 +201,11 @@ public abstract class ProjectTreeFindHelper {
   }
 
   private static class ModelInModuleCondition extends ModelEverywhereCondition {
-    private ModelInModuleCondition(SModelDescriptor model) {
+    private ModelInModuleCondition(SModel model) {
       super(model);
     }
 
+    @Override
     public boolean met(MPSTreeNode node) {
       if (!super.met(node)) return false;
 
@@ -206,8 +213,8 @@ public abstract class ProjectTreeFindHelper {
         SModelTreeNode modelNode = (SModelTreeNode) node;
         if (!modelNode.hasModelsUnder()) return false;
 
-        String outerName = modelNode.getSModelDescriptor().getLongName();
-        String innerName = myModel.getLongName();
+        String outerName = SNodeOperations.getModelLongName(modelNode.getSModelDescriptor());
+        String innerName = SNodeOperations.getModelLongName(myModel);
         return innerName.startsWith(outerName + ".");
       }
 
@@ -232,20 +239,21 @@ public abstract class ProjectTreeFindHelper {
   }
 
   private static class ModelEverywhereCondition implements Condition<MPSTreeNode> {
-    protected SModelDescriptor myModel;
+    protected SModel myModel;
 
-    public ModelEverywhereCondition(SModelDescriptor model) {
+    public ModelEverywhereCondition(SModel model) {
       myModel = model;
     }
 
+    @Override
     public boolean met(MPSTreeNode node) {
       if (node instanceof SNodeTreeNode) return false;
       if (node instanceof SModelTreeNode) {
         SModelTreeNode modelNode = (SModelTreeNode) node;
         if (!modelNode.hasModelsUnder()) return false;
 
-        String outerName = modelNode.getSModelDescriptor().getLongName();
-        String innerName = myModel.getLongName();
+        String outerName = SNodeOperations.getModelLongName(modelNode.getSModelDescriptor());
+        String innerName = jetbrains.mps.util.SNodeOperations.getModelLongName(myModel);
         return innerName.startsWith(outerName + ".");
       }
       if (!node.isInitialized() && !node.hasInfiniteSubtree()) {
@@ -263,6 +271,7 @@ public abstract class ProjectTreeFindHelper {
       myModule = module;
     }
 
+    @Override
     public boolean met(MPSTreeNode treeNode) {
       if (!(treeNode instanceof ProjectModuleTreeNode)) return false;
       IOperationContext nodeContext = treeNode.getOperationContext();
@@ -271,18 +280,19 @@ public abstract class ProjectTreeFindHelper {
   }
 
   private static class NodeForModelCondition implements Condition<MPSTreeNode> {
-    private final SModelDescriptor myModel;
+    private final SModel myModel;
 
-    public NodeForModelCondition(SModelDescriptor model) {
+    public NodeForModelCondition(SModel model) {
       myModel = model;
     }
 
+    @Override
     public boolean met(MPSTreeNode node) {
       if (!(node instanceof SModelTreeNode)) return false;
       SModelTreeNode modelNode = (SModelTreeNode) node;
-      SModelDescriptor modelDescriptor = modelNode.getSModelDescriptor();
-      SModelReference modelReference = modelDescriptor.getSModelReference();
-      return modelReference.equals(myModel.getSModelReference());
+      SModel modelDescriptor = modelNode.getSModelDescriptor();
+      SModelReference modelReference = modelDescriptor.getReference();
+      return modelReference.equals(myModel.getReference());
     }
   }
 
@@ -296,7 +306,7 @@ public abstract class ProjectTreeFindHelper {
 
   //-----------find module by model------------
 
-  private static SModule getModuleForModel(MPSProject project, SModelDescriptor model) {
+  private static SModule getModuleForModel(MPSProject project, SModel model) {
     //language's and solution's own models (+generator models in language)
     SModule owner = model.getModule();
     SModule mainModule = owner instanceof Generator ? ((Generator) owner).getSourceLanguage() : owner;

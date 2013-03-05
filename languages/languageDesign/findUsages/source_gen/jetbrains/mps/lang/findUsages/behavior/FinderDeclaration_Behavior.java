@@ -7,8 +7,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.checkedName.PropertyReference;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
@@ -25,7 +24,7 @@ public class FinderDeclaration_Behavior {
   }
 
   public static String call_getGeneratedClassLongName_1213877240120(SNode thisNode) {
-    return ((SModel) SNodeOperations.getModel(thisNode)).getModelDescriptor().getLongName() + "." + FinderDeclaration_Behavior.call_getGeneratedClassName_1213877240101(thisNode);
+    return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode).getModelDescriptor()) + "." + FinderDeclaration_Behavior.call_getGeneratedClassName_1213877240101(thisNode);
   }
 
   public static PropertyReference virtual_getPropertyToCheck_4844813484172611473(SNode thisNode) {
@@ -52,11 +51,11 @@ public class FinderDeclaration_Behavior {
 
   @Deprecated
   public static SNode callSuper_getBaseConcept_8952337903384724634(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.findUsages.structure.FinderDeclaration"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(thisNode, "jetbrains.mps.lang.findUsages.structure.FinderDeclaration"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
   public static void callSuper_setBaseConcept_6261424444345979396(SNode thisNode, String callerConceptFqName, SNode baseConcept) {
-    BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.findUsages.structure.FinderDeclaration"), callerConceptFqName, "virtual_setBaseConcept_6261424444345963020", new Class[]{SNode.class, SNode.class}, new Object[]{baseConcept});
+    BehaviorManager.getInstance().invokeSuper(Void.class, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(thisNode, "jetbrains.mps.lang.findUsages.structure.FinderDeclaration"), callerConceptFqName, "virtual_setBaseConcept_6261424444345963020", new Class[]{SNode.class, SNode.class}, new Object[]{baseConcept});
   }
 }

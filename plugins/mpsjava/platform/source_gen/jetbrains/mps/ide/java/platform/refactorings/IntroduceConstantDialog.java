@@ -20,11 +20,13 @@ public class IntroduceConstantDialog extends IntroduceVariableDialog {
     init();
   }
 
+  @Override
   public IntroduceVariableRefactoring getRefactoring() {
     return this.myRefactoring;
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
     initPanel();
     int gridy = 1;

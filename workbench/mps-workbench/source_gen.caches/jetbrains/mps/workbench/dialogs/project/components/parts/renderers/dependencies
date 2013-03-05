@@ -4,6 +4,7 @@
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="javax.swing.JCheckBox" />
     <classNode dependClassName="javax.swing.JList" />
     <classNode extendsClassName="javax.swing.DefaultListCellRenderer" />
@@ -16,6 +17,7 @@
     <classNode dependClassName="com.intellij.ui.components.JBList" />
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="javax.swing.JTable" />
     <classNode dependClassName="javax.swing.ListCellRenderer" />
     <classNode extendsClassName="javax.swing.table.TableCellRenderer" />
@@ -23,6 +25,7 @@
   <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ManagerRenderer" file="ManagerRenderer.java">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.JList" />
     <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRootManager" />
@@ -33,18 +36,20 @@
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.JList" />
     <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.properties.StateUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.IScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ProjectLevelRenderer" />
   </dependency>
   <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ModelRootRenderer" file="ModelRootRenderer.java">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="javax.swing.JList" />
     <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRootDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
@@ -64,6 +69,7 @@
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.JList" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
@@ -76,6 +82,7 @@
   <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.PathRenderer" file="PathRenderer.java">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="javax.swing.JList" />
@@ -94,6 +101,7 @@
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="javax.swing.JList" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
@@ -131,11 +139,12 @@
     <classNode dependClassName="jetbrains.mps.smodel.Generator" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
+    <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="javax.swing.table.TableCellRenderer" />
@@ -144,6 +153,7 @@
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.JList" />
     <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.properties.StateUtil" />
@@ -152,6 +162,7 @@
   <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.TestConfigListCellRenderer" file="TestConfigListCellRenderer.java">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.JList" />
     <classNode dependClassName="jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration" />

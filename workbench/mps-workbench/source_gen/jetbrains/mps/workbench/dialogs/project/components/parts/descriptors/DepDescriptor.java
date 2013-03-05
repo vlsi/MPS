@@ -16,6 +16,7 @@ public class DepDescriptor extends VoidColumnDescriptor {
     myOwner = owner;
   }
 
+  @Override
   public TableCellRenderer createRenderer() {
     ModuleRenderer renderer = new ModuleRenderer(myOwner.getModuleScope(), myOwner.getProjectScope());
     return new ListRendererAdapter(renderer);

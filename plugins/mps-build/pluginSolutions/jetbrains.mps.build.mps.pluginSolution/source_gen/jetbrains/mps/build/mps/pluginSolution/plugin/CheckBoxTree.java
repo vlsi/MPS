@@ -25,6 +25,7 @@ public class CheckBoxTree<N extends NodeData> extends JPanel {
     this.myTree.setCellRenderer(new CheckBoxCellRenderrer());
     this.myTree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
     this.myTree.addMouseListener(new MouseAdapter() {
+      @Override
       public void mousePressed(MouseEvent e) {
         CheckBoxTree.this.mouseParessed(e.getX(), e.getY());
       }

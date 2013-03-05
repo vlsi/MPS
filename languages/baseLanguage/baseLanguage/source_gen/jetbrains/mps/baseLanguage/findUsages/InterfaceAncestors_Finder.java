@@ -22,18 +22,22 @@ public class InterfaceAncestors_Finder extends GeneratedFinder {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "extendedInterface", true)).isNotEmpty();
   }
 
+  @Override
   public String getDescription() {
     return "Interface Ancestors";
   }
 
+  @Override
   public String getLongDescription() {
     return "";
   }
 
+  @Override
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.Interface";
   }
 
+  @Override
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 1);
     try {
@@ -53,6 +57,7 @@ public class InterfaceAncestors_Finder extends GeneratedFinder {
     }
   }
 
+  @Override
   public String getNodeCategory(SNode node) {
     return "Ancestor";
   }

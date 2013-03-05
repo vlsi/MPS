@@ -6,7 +6,7 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuComponent;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -14,11 +14,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class VerticalAlignment_Chooser extends AbstractCellMenuComponent {
   public VerticalAlignment_Chooser() {
-    super(new SubstituteInfoPartExt[]{new VerticalAlignment_Chooser.VerticalAlignment_generic_cellMenu_a0(), new VerticalAlignment_Chooser.VerticalAlignment_generic_cellMenu_b0(), new VerticalAlignment_Chooser.VerticalAlignment_generic_cellMenu_c0(), new VerticalAlignment_Chooser.VerticalAlignment_generic_cellMenu_d0()});
+    super(new SubstituteInfoPartExt[]{new VerticalAlignment_Chooser.VerticalAlignment_generic_cellMenu_k52tic_a0(), new VerticalAlignment_Chooser.VerticalAlignment_generic_cellMenu_k52tic_b0(), new VerticalAlignment_Chooser.VerticalAlignment_generic_cellMenu_k52tic_c0(), new VerticalAlignment_Chooser.VerticalAlignment_generic_cellMenu_k52tic_d0()});
   }
 
-  public static class VerticalAlignment_generic_cellMenu_a0 extends AbstractCellMenuPart_Generic_Item {
-    public VerticalAlignment_generic_cellMenu_a0() {
+  public static class VerticalAlignment_generic_cellMenu_k52tic_a0 extends AbstractCellMenuPart_Generic_Item {
+    public VerticalAlignment_generic_cellMenu_k52tic_a0() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -30,8 +30,8 @@ public class VerticalAlignment_Chooser extends AbstractCellMenuComponent {
     }
   }
 
-  public static class VerticalAlignment_generic_cellMenu_b0 extends AbstractCellMenuPart_Generic_Item {
-    public VerticalAlignment_generic_cellMenu_b0() {
+  public static class VerticalAlignment_generic_cellMenu_k52tic_b0 extends AbstractCellMenuPart_Generic_Item {
+    public VerticalAlignment_generic_cellMenu_k52tic_b0() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -43,8 +43,8 @@ public class VerticalAlignment_Chooser extends AbstractCellMenuComponent {
     }
   }
 
-  public static class VerticalAlignment_generic_cellMenu_c0 extends AbstractCellMenuPart_Generic_Item {
-    public VerticalAlignment_generic_cellMenu_c0() {
+  public static class VerticalAlignment_generic_cellMenu_k52tic_c0 extends AbstractCellMenuPart_Generic_Item {
+    public VerticalAlignment_generic_cellMenu_k52tic_c0() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -56,8 +56,8 @@ public class VerticalAlignment_Chooser extends AbstractCellMenuComponent {
     }
   }
 
-  public static class VerticalAlignment_generic_cellMenu_d0 extends AbstractCellMenuPart_Generic_Item {
-    public VerticalAlignment_generic_cellMenu_d0() {
+  public static class VerticalAlignment_generic_cellMenu_k52tic_d0 extends AbstractCellMenuPart_Generic_Item {
+    public VerticalAlignment_generic_cellMenu_k52tic_d0() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {

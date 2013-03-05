@@ -52,10 +52,12 @@ public class DialogDimensionsSettings implements PersistentStateComponent<MyStat
     myState.myDialogsDimensions.put(cls.getName(), dialogDimensions);
   }
 
+  @Override
   public MyState getState() {
     return myState;
   }
 
+  @Override
   public void loadState(MyState state) {
     myState = state;
   }

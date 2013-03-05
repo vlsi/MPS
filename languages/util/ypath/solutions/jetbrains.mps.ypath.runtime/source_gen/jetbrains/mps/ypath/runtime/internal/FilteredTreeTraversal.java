@@ -15,6 +15,7 @@ public class FilteredTreeTraversal<T> extends AbstractChainTreeTraversal<T> impl
     this.filter = filter;
   }
 
+  @Override
   public Iterator<T> iterator() {
     return new FilteredTreeTraversal.FilteringIterator(getSourceTraversal().iterator());
   }
@@ -42,10 +43,12 @@ public class FilteredTreeTraversal<T> extends AbstractChainTreeTraversal<T> impl
       }
     }
 
+    @Override
     public boolean hasNext() {
       return hasNextNode;
     }
 
+    @Override
     public T next() {
       if (!(hasNextNode)) {
         throw new NoSuchElementException();
@@ -55,6 +58,7 @@ public class FilteredTreeTraversal<T> extends AbstractChainTreeTraversal<T> impl
       return tmp;
     }
 
+    @Override
     public void remove() {
       throw new UnsupportedOperationException();
     }

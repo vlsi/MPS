@@ -42,6 +42,7 @@ import javax.swing.table.TableCellRenderer;
     return new Dimension((int) widthWithMargin, totalHeight + numRows * table.getRowMargin());
   }
 
+  @Override
   public Dimension getMinimumSize(JComponent c) {
     long width = 0;
     Enumeration enumeration = table.getColumnModel().getColumns();
@@ -52,6 +53,7 @@ import javax.swing.table.TableCellRenderer;
     return createTableSize(width);
   }
 
+  @Override
   public Dimension getPreferredSize(JComponent c) {
     long width = 0;
     Enumeration enumeration = table.getColumnModel().getColumns();
@@ -62,6 +64,7 @@ import javax.swing.table.TableCellRenderer;
     return createTableSize(width);
   }
 
+  @Override
   public Dimension getMaximumSize(JComponent c) {
     long width = 0;
     Enumeration enumeration = table.getColumnModel().getColumns();
@@ -72,6 +75,7 @@ import javax.swing.table.TableCellRenderer;
     return createTableSize(width);
   }
 
+  @Override
   public void paint(Graphics g, JComponent c) {
     Rectangle oldClipBounds = g.getClipBounds();
     Rectangle clipBounds = new Rectangle(oldClipBounds);

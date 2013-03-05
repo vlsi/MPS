@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
@@ -33,6 +33,7 @@ public class ModuleOperationContext extends StandaloneMPSContext {
 
   public ModuleOperationContext(@NotNull final SModule module) {
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         myModuleReference = module.getModuleReference();
       }
@@ -44,14 +45,17 @@ public class ModuleOperationContext extends StandaloneMPSContext {
     return null;
   }
 
+  @Override
   public IModule getModule() {
     return ModuleRepositoryFacade.getInstance().getModule(myModuleReference);
   }
 
+  @Override
   public boolean isValid() {
     return getModule() != null;
   }
 
+  @Override
   @NotNull
   public IScope getScope() {
     IModule module = getModule();

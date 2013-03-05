@@ -36,25 +36,30 @@ public class SpecialMigrations {
     List<AbstractMigrationRefactoring> migrations = ListSequence.fromList(new ArrayList<AbstractMigrationRefactoring>());
 
     ListSequence.fromList(migrations).addElement(new SimpleMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SLinkAccess")) {
+      @Override
       public String getName() {
         return "Migrate specialized link reference access for " + SPropertyOperations.getString(config.sourceConcept, "name");
       }
 
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return SLinkOperations.getTarget(node, "link", false) == sourceLinkDeclaration;
       }
 
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         SLinkOperations.setTarget(node, "link", targetLinkDeclaration, false);
         // <node> 
       }
     });
     ListSequence.fromList(migrations).addElement(new SModelMethodMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation"), config) {
+      @Override
       public boolean isApplicableInstanceNode(SNode node) {
         SNode qualifier = SLinkOperations.getTarget(SLinkOperations.getTarget(node, "linkQualifier", true), "linkQualifier", true);
         return SNodeOperations.isInstanceOf(qualifier, "jetbrains.mps.lang.smodel.structure.LinkRefQualifier") && SLinkOperations.getTarget(SNodeOperations.cast(qualifier, "jetbrains.mps.lang.smodel.structure.LinkRefQualifier"), "link", false) == sourceLinkDeclaration;
       }
 
+      @Override
       public void doUpdateInstanceNode(SNode node) {
         SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "linkQualifier", true), "linkQualifier", true), "jetbrains.mps.lang.smodel.structure.LinkRefQualifier"), "link", targetLinkDeclaration, false);
       }

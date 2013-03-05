@@ -24,7 +24,7 @@
     <nodeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="54" startPosition="27" endLine="55" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="55" startPosition="85" endLine="56" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="61" startPosition="53" endLine="62" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="64" startPosition="5" endLine="65" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="64" startPosition="5" endLine="65" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="66" startPosition="36" endLine="67" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="68" startPosition="7" endLine="69" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="71" startPosition="60" endLine="72" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -45,15 +45,15 @@
     <nodeInfo nodeId="5487985028841906109" fileName="RunTestInMPS_Action.java" startLine="107" startPosition="375" endLine="108" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5487985028841906119" fileName="RunTestInMPS_Action.java" startLine="108" startPosition="91" endLine="109" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5487985028841906127" fileName="RunTestInMPS_Action.java" startLine="109" startPosition="81" endLine="110" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841906157" fileName="RunTestInMPS_Action.java" startLine="113" startPosition="15" endLine="114" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841906173" fileName="RunTestInMPS_Action.java" startLine="115" startPosition="33" endLine="116" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841906177" fileName="RunTestInMPS_Action.java" startLine="119" startPosition="9" endLine="120" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841906185" fileName="RunTestInMPS_Action.java" startLine="121" startPosition="27" endLine="122" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="126" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="5487985028841906157" fileName="RunTestInMPS_Action.java" startLine="114" startPosition="15" endLine="115" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841906173" fileName="RunTestInMPS_Action.java" startLine="116" startPosition="33" endLine="117" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841906177" fileName="RunTestInMPS_Action.java" startLine="120" startPosition="9" endLine="121" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841906185" fileName="RunTestInMPS_Action.java" startLine="122" startPosition="27" endLine="123" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="127" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="75" startPosition="57" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
     <nodeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="60" startPosition="95" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="65" startPosition="88" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="65" startPosition="78" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="70" startPosition="5" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="79" startPosition="5" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="83" startPosition="89" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -62,19 +62,19 @@
     <nodeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="49" startPosition="9" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="82" startPosition="5" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="33" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RunTestInMPS_Action#()V" />
-    <nodeInfo nodeId="5487985028841906155" fileName="RunTestInMPS_Action.java" startLine="112" startPosition="27" endLine="117" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="5487985028841906155" fileName="RunTestInMPS_Action.java" startLine="113" startPosition="27" endLine="118" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="73" startPosition="5" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="63" startPosition="5" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5487985028841906151" fileName="RunTestInMPS_Action.java" startLine="112" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5487985028841906151" fileName="RunTestInMPS_Action.java" startLine="112" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="48" startPosition="89" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="73" startPosition="5" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="90" startPosition="96" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="5487985028841906142" fileName="RunTestInMPS_Action.java" startLine="110" startPosition="180" endLine="119" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="63" startPosition="5" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5487985028841906142" fileName="RunTestInMPS_Action.java" startLine="110" startPosition="180" endLine="120" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="48" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <nodeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="90" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="5487985028841906064" fileName="RunTestInMPS_Action.java" startLine="102" startPosition="81" endLine="123" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="5487985028841906062" fileName="RunTestInMPS_Action.java" startLine="102" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runTest#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="5487985028841906064" fileName="RunTestInMPS_Action.java" startLine="102" startPosition="81" endLine="124" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="5487985028841906062" fileName="RunTestInMPS_Action.java" startLine="102" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runTest#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Map;)V" />
     <nodeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="60" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
     <scopeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="76" startPosition="25" endLine="76" endPosition="25" />
     <scopeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="40" startPosition="32" endLine="41" endPosition="16" />
@@ -89,15 +89,15 @@
       <varInfo nodeId="5487985028841906061" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="97" startPosition="27" endLine="98" endPosition="84" />
-    <scopeInfo nodeId="5487985028841906156" fileName="RunTestInMPS_Action.java" startLine="113" startPosition="15" endLine="114" endPosition="125" />
-    <scopeInfo nodeId="5487985028841906169" fileName="RunTestInMPS_Action.java" startLine="115" startPosition="0" endLine="116" endPosition="32">
+    <scopeInfo nodeId="5487985028841906156" fileName="RunTestInMPS_Action.java" startLine="114" startPosition="15" endLine="115" endPosition="125" />
+    <scopeInfo nodeId="5487985028841906169" fileName="RunTestInMPS_Action.java" startLine="116" startPosition="0" endLine="117" endPosition="32">
       <varInfo nodeId="5487985028841906170" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841906172" fileName="RunTestInMPS_Action.java" startLine="115" startPosition="33" endLine="116" endPosition="32" />
-    <scopeInfo nodeId="5487985028841906181" fileName="RunTestInMPS_Action.java" startLine="121" startPosition="0" endLine="122" endPosition="26">
+    <scopeInfo nodeId="5487985028841906172" fileName="RunTestInMPS_Action.java" startLine="116" startPosition="33" endLine="117" endPosition="32" />
+    <scopeInfo nodeId="5487985028841906181" fileName="RunTestInMPS_Action.java" startLine="122" startPosition="0" endLine="123" endPosition="26">
       <varInfo nodeId="5487985028841906182" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841906184" fileName="RunTestInMPS_Action.java" startLine="121" startPosition="27" endLine="122" endPosition="26" />
+    <scopeInfo nodeId="5487985028841906184" fileName="RunTestInMPS_Action.java" startLine="122" startPosition="27" endLine="123" endPosition="26" />
     <scopeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="50" startPosition="7" endLine="52" endPosition="63">
       <varInfo nodeId="5487985028841906061" varName="enabled" />
     </scopeInfo>
@@ -126,8 +126,8 @@
     <scopeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="91" startPosition="9" endLine="96" endPosition="7">
       <varInfo nodeId="5487985028841906195" varName="tests" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841906154" fileName="RunTestInMPS_Action.java" startLine="112" startPosition="27" endLine="117" endPosition="11" />
-    <scopeInfo nodeId="5487985028841906151" fileName="RunTestInMPS_Action.java" startLine="112" startPosition="0" endLine="119" endPosition="0" />
+    <scopeInfo nodeId="5487985028841906154" fileName="RunTestInMPS_Action.java" startLine="113" startPosition="27" endLine="118" endPosition="11" />
+    <scopeInfo nodeId="5487985028841906151" fileName="RunTestInMPS_Action.java" startLine="112" startPosition="0" endLine="120" endPosition="0" />
     <scopeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="48" startPosition="89" endLine="57" endPosition="5" />
     <scopeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="73" startPosition="5" endLine="82" endPosition="5" />
     <scopeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="90" startPosition="96" endLine="99" endPosition="5" />
@@ -140,7 +140,7 @@
       <varInfo nodeId="5487985028841906061" varName="_params" />
       <varInfo nodeId="5487985028841906061" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841906065" fileName="RunTestInMPS_Action.java" startLine="103" startPosition="9" endLine="120" endPosition="21">
+    <scopeInfo nodeId="5487985028841906065" fileName="RunTestInMPS_Action.java" startLine="103" startPosition="9" endLine="121" endPosition="21">
       <varInfo nodeId="1159863276217044766" varName="c" />
       <varInfo nodeId="5487985028841906067" varName="className" />
       <varInfo nodeId="5487985028841906120" varName="ctor" />
@@ -149,8 +149,8 @@
       <varInfo nodeId="5487985028841906075" varName="testName" />
       <varInfo nodeId="5487985028841906143" varName="thread" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841906063" fileName="RunTestInMPS_Action.java" startLine="102" startPosition="81" endLine="123" endPosition="5" />
-    <scopeInfo nodeId="5487985028841906062" fileName="RunTestInMPS_Action.java" startLine="102" startPosition="0" endLine="125" endPosition="0">
+    <scopeInfo nodeId="5487985028841906063" fileName="RunTestInMPS_Action.java" startLine="102" startPosition="81" endLine="124" endPosition="5" />
+    <scopeInfo nodeId="5487985028841906062" fileName="RunTestInMPS_Action.java" startLine="102" startPosition="0" endLine="126" endPosition="0">
       <varInfo nodeId="5487985028841906062" varName="_params" />
       <varInfo nodeId="5487985028841906190" varName="test" />
     </scopeInfo>
@@ -159,8 +159,8 @@
       <varInfo nodeId="5487985028841906061" varName="_params" />
       <varInfo nodeId="5487985028841906061" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="5487985028841906149" fileName="RunTestInMPS_Action.java" startLine="111" startPosition="37" endLine="119" endPosition="7" unitName="jetbrains.mps.lang.test.pluginSolution.plugin.RunTestInMPS_Action$1" />
-    <unitInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="30" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.lang.test.pluginSolution.plugin.RunTestInMPS_Action" />
+    <unitInfo nodeId="5487985028841906149" fileName="RunTestInMPS_Action.java" startLine="111" startPosition="37" endLine="120" endPosition="7" unitName="jetbrains.mps.lang.test.pluginSolution.plugin.RunTestInMPS_Action$1" />
+    <unitInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="30" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.lang.test.pluginSolution.plugin.RunTestInMPS_Action" />
   </root>
   <root nodeRef="r:f259e14f-253f-462e-a3ef-037f01ed5523(jetbrains.mps.lang.test.pluginSolution.plugin)/5487985028841906241">
     <nodeInfo nodeId="5487985028841906241" fileName="EditorInternalAddition_ActionGroup.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />

@@ -4,18 +4,8 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
-import java.util.List;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -24,9 +14,19 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.FocusPolicy;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.util.NameUtil;
 
 public class VariableDeclaration_NameCellComponent extends AbstractCellProvider {
   public VariableDeclaration_NameCellComponent(SNode node) {
@@ -42,13 +42,47 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
   }
 
   @Deprecated
-  public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  public jetbrains.mps.nodeEditor.cells.EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
     // This method was added in MPS 3.0 for the compatibility with prev. generated code 
-    return createEditorCell((EditorContext) editorContext);
+    return (jetbrains.mps.nodeEditor.cells.EditorCell) createEditorCell((EditorContext) editorContext);
   }
 
-  public static class VariableDeclaration_name_postfixCellMenu_a0a extends AbstractCellMenuPart_PropertyPostfixHints {
-    public VariableDeclaration_name_postfixCellMenu_a0a() {
+  private EditorCell createProperty_j36akn_a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("name");
+    provider.setNoTargetText("<no name>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_name");
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyVariableName(style, editorCell);
+    style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
+    editorCell.getStyle().putAll(style);
+    if (renderingCondition_j36akn_a0(node, editorContext, editorContext.getScope())) {
+      editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
+    }
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new VariableDeclaration_NameCellComponent.VariableDeclaration_name_postfixCellMenu_j36akn_a0a()}));
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_j36akn_a0(SNode node, EditorContext editorContext, IScope scope) {
+    boolean condition = SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "type", true)) != SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type");
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.baseLanguage.structure.Type")) {
+      return condition && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(node, "type", true), "virtual_hasMissingParameters_3508583411997314206", new Object[]{}));
+    } else {
+      return condition;
+    }
+  }
+
+  public static class VariableDeclaration_name_postfixCellMenu_j36akn_a0a extends AbstractCellMenuPart_PropertyPostfixHints {
+    public VariableDeclaration_name_postfixCellMenu_j36akn_a0a() {
     }
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -68,40 +102,6 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
         }
       }
       return result;
-    }
-  }
-
-  private EditorCell createProperty_j36akn_a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("name");
-    provider.setNoTargetText("<no name>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_name");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyVariableName(style, editorCell);
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
-    editorCell.getStyle().putAll(style);
-    if (renderingCondition_j36akn_a0(node, editorContext, editorContext.getScope())) {
-      editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
-    }
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new VariableDeclaration_NameCellComponent.VariableDeclaration_name_postfixCellMenu_a0a()}));
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private static boolean renderingCondition_j36akn_a0(SNode node, EditorContext editorContext, IScope scope) {
-    boolean condition = SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "type", true)) != SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type");
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.baseLanguage.structure.Type")) {
-      return condition && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(node, "type", true), "virtual_hasMissingParameters_3508583411997314206", new Object[]{}));
-    } else {
-      return condition;
     }
   }
 }

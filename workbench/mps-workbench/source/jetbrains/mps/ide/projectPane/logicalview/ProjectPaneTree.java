@@ -26,7 +26,9 @@ import jetbrains.mps.ide.projectPane.ProjectPaneDnDListener;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.ProjectPaneTreeHighlighter;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.PackageNode;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
@@ -45,6 +47,7 @@ import java.util.List;
 public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
   private ProjectPane myProjectPane;
   private KeyAdapter myKeyListener = new KeyAdapter() {
+    @Override
     public void keyPressed(KeyEvent e) {
       if (e.getModifiers() != 0) return;
       if (!(e.getKeyCode() == KeyEvent.VK_ENTER)) return;
@@ -72,21 +75,25 @@ public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
     new DropTarget(this, new ProjectPaneDnDListener(this, new MyTransferable(null).getTransferDataFlavors()[0]));
   }
 
+  @Override
   public void dispose() {
     myHighlighter.dispose();
     removeKeyListener(myKeyListener);
     super.dispose();
   }
 
+  @Override
   public Comparator<Object> getChildrenComparator() {
     return myProjectPane.getTreeChildrenComparator();
   }
 
+  @Override
   public void editNode(final SNode node, IOperationContext context, boolean focus) {
     ModelAccess.assertLegalWrite();
     myProjectPane.editNode(node, context, focus);
   }
 
+  @Override
   public boolean isAutoOpen() {
     return myProjectPane.getProjectView().isAutoscrollToSource(myProjectPane.getId());
   }
@@ -99,6 +106,7 @@ public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
       myObject = o;
     }
 
+    @Override
     public DataFlavor[] getTransferDataFlavors() {
       Class aClass = MyTransferable.class;
       DataFlavor dataFlavor = null;
@@ -110,27 +118,32 @@ public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
       return new DataFlavor[]{dataFlavor};
     }
 
+    @Override
     public boolean isDataFlavorSupported(DataFlavor flavor) {
       DataFlavor[] flavors = getTransferDataFlavors();
       return ArrayUtil.find(flavors, flavor) != -1;
     }
 
+    @Override
     public Object getTransferData(DataFlavor flavor) throws UnsupportedFlavorException, IOException {
       return myObject;
     }
   }
 
   private class MyDragSourceListener extends DragSourceAdapter {
+    @Override
     public void dragEnter(DragSourceDragEvent dsde) {
       dsde.getDragSourceContext().setCursor(null);
     }
 
+    @Override
     public void dropActionChanged(DragSourceDragEvent dsde) {
       dsde.getDragSourceContext().setCursor(null);
     }
   }
 
   private class MyDragGestureListener implements DragGestureListener {
+    @Override
     public void dragGestureRecognized(final DragGestureEvent dge) {
       if ((dge.getDragAction() & DnDConstants.ACTION_COPY_OR_MOVE) == 0) return;
       ProjectView projectView = ProjectView.getInstance(myProjectPane.getProject());
@@ -141,16 +154,17 @@ public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
       final List<Pair<SNodeReference, String>> result = new ArrayList<Pair<SNodeReference, String>>();
 
       ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
         public void run() {
           for (SNode node : myProjectPane.getSelectedSNodes()) {
             result.add(new Pair(new jetbrains.mps.smodel.SNodePointer(node), ""));
           }
-          SModelDescriptor contextDescriptor = myProjectPane.getContextModel();
+          SModel contextDescriptor = myProjectPane.getContextModel();
           if (contextDescriptor != null) {
             for (PackageNode treeNode : myProjectPane.getSelectedTreeNodes(PackageNode.class)) {
               String searchedPack = treeNode.getFullPackage();
               if (treeNode.getChildCount() == 0 || searchedPack == null) continue;
-              for (final SNode node : contextDescriptor.getSModel().roots()) {
+              for (final SNode node : contextDescriptor.getSModel().getRootNodes()) {
                 String nodePack = SNodeAccessUtil.getProperty(node, SNodeUtil.property_BaseConcept_virtualPackage);
                 if (nodePack == null) continue;
                 if (!nodePack.startsWith(searchedPack)) continue;

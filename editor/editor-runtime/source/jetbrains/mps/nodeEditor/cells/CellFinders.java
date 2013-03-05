@@ -16,10 +16,6 @@
 package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Iterator;
@@ -34,7 +30,7 @@ public class CellFinders {
   public static final CellFinder<EditorCell> FIRST_SELECTABLE_LEAF = new SelectableLeafCellFinder(true);
   public static final CellFinder<EditorCell> LAST_SELECTABLE_LEAF = new SelectableLeafCellFinder(false);
 
-  public static<C extends EditorCell> CellFinder<C> byClass(final Class<C> cls, final boolean first) {
+  public static <C extends EditorCell> CellFinder<C> byClass(final Class<C> cls, final boolean first) {
     return new ByClassCellCellFinder<C>(cls, first);
   }
 
@@ -54,19 +50,22 @@ public class CellFinders {
     return new OrConditionFinder(finders);
   }
 
-  private static abstract class BaseCellFinder<C extends EditorCell> implements CellFinder<C> {
+  private static abstract class BaseCellFinder<C extends jetbrains.mps.openapi.editor.cells.EditorCell> implements CellFinder<C> {
     abstract boolean isSuitable(C cell);
+
     abstract Class<C> getCellClass();
+
     abstract boolean isFirstChild();
 
-    public C find(EditorCell cell, boolean includeThis) {
+    @Override
+    public C find(jetbrains.mps.openapi.editor.cells.EditorCell cell, boolean includeThis) {
       if (includeThis && getCellClass().isInstance(cell) && isSuitable((C) cell)) {
         return (C) cell;
       }
 
-      if (cell instanceof EditorCell_Collection) {
-        EditorCell_Collection collection = (EditorCell_Collection) cell;
-        if (collection.isUnfoldedCollection()) {
+      if (cell instanceof jetbrains.mps.openapi.editor.cells.EditorCell_Collection) {
+        jetbrains.mps.openapi.editor.cells.EditorCell_Collection collection = (jetbrains.mps.openapi.editor.cells.EditorCell_Collection) cell;
+        if (!collection.isFolded()) {
           Iterator<jetbrains.mps.openapi.editor.cells.EditorCell> iterator = isFirstChild() ? collection.iterator() : collection.reverseIterator();
 
           while (iterator.hasNext()) {
@@ -94,14 +93,17 @@ public class CellFinders {
       myFirst = first;
     }
 
+    @Override
     public Class<EditorCell_Label> getCellClass() {
       return EditorCell_Label.class;
     }
 
+    @Override
     public boolean isSuitable(EditorCell_Label cell) {
       return cell.isEditable() && cell.isSelectable();
     }
 
+    @Override
     public boolean isFirstChild() {
       return myFirst;
     }
@@ -114,14 +116,17 @@ public class CellFinders {
       myFirst = first;
     }
 
+    @Override
     public boolean isSuitable(EditorCell cell) {
-      return cell.isSelectable() && !(cell instanceof EditorCell_Collection);
+      return cell.isSelectable() && !(cell instanceof jetbrains.mps.openapi.editor.cells.EditorCell_Collection);
     }
 
+    @Override
     public Class<EditorCell> getCellClass() {
       return EditorCell.class;
     }
 
+    @Override
     public boolean isFirstChild() {
       return myFirst;
     }
@@ -134,20 +139,23 @@ public class CellFinders {
       myFirst = first;
     }
 
+    @Override
     boolean isSuitable(EditorCell_Label cell) {
       return cell instanceof EditorCell_Error || cell.isErrorState();
     }
 
+    @Override
     Class<EditorCell_Label> getCellClass() {
       return EditorCell_Label.class;
     }
 
+    @Override
     boolean isFirstChild() {
       return myFirst;
     }
   }
 
-  private static class ByClassCellCellFinder<C extends EditorCell> extends BaseCellFinder<C> {
+  private static class ByClassCellCellFinder<C extends jetbrains.mps.openapi.editor.cells.EditorCell> extends BaseCellFinder<C> {
     private final Class<C> myCls;
     private final boolean myFirst;
 
@@ -156,14 +164,17 @@ public class CellFinders {
       myFirst = first;
     }
 
+    @Override
     public boolean isSuitable(C cell) {
       return true;
     }
 
+    @Override
     public Class<C> getCellClass() {
       return myCls;
     }
 
+    @Override
     public boolean isFirstChild() {
       return myFirst;
     }
@@ -178,14 +189,17 @@ public class CellFinders {
       myFirst = first;
     }
 
+    @Override
     public boolean isSuitable(EditorCell cell) {
       return myCondition.met(cell);
     }
 
+    @Override
     public Class<EditorCell> getCellClass() {
       return EditorCell.class;
     }
 
+    @Override
     public boolean isFirstChild() {
       return myFirst;
     }
@@ -198,7 +212,8 @@ public class CellFinders {
       myFinders = finders;
     }
 
-    public EditorCell find(EditorCell cell, boolean includeThis) {
+    @Override
+    public EditorCell find(jetbrains.mps.openapi.editor.cells.EditorCell cell, boolean includeThis) {
       for (CellFinder<? extends EditorCell> finder : myFinders) {
         EditorCell result = finder.find(cell, includeThis);
         if (result != null) return result;

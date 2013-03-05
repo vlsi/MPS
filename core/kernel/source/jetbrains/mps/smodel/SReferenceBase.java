@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;
-
-import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -62,34 +62,40 @@ abstract class SReferenceBase extends SReference {
     myImmatureTargetNode = immatureTargetNode;
   }
 
+  @Override
   @Deprecated
   public boolean isExternal() {
     SModel m = getSourceNode().getModel();
     if (m == null) return true;
 
-    return !(m.getSModelReference().equals(getTargetSModelReference()));
+    return !(m.getReference().equals(getTargetSModelReference()));
   }
 
+  @Override
   public SModelReference getTargetSModelReference() {
     SNode immatureNode = myImmatureTargetNode;
     if (immatureNode == null || makeIndirect()) return myTargetModelReference;
     SModel model = immatureNode.getModel();
-    return model == null ? null : model.getSModelReference();
+    return model == null ? null : model.getReference();
   }
 
+  @Override
   public synchronized void setTargetSModelReference(@NotNull SModelReference modelReference) {
     if (!makeIndirect()) makeMature(); // hack: make mature anyway: only can store ref to target model in 'mature' ref.
     myTargetModelReference = modelReference;
   }
 
+  @Override
   public org.jetbrains.mps.openapi.model.SModel getTargetModel() {
     return SModelRepository.getInstance().getModelDescriptor(getTargetSModelReference());
   }
 
+  @Override
   public final boolean makeIndirect() {
     return makeIndirect(false);
   }
 
+  @Override
   public void makeDirect() {
     myImmatureTargetNode = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(this);
     if (myImmatureTargetNode != null) {
@@ -107,7 +113,7 @@ abstract class SReferenceBase extends SReference {
       if (force && myImmatureTargetNode != null) {
         if (getSourceNode().getModel() != null && !jetbrains.mps.util.SNodeOperations.isDisposed(getSourceNode())) {
           error("Impossible to resolve immature reference",
-            new ProblemDescription(new jetbrains.mps.smodel.SNodePointer(myImmatureTargetNode),
+            new ProblemDescription(myImmatureTargetNode.getReference(),
               "ImmatureTargetNode(modelID: " +
                 (myImmatureTargetNode.getModel() == null ? "null" : myImmatureTargetNode.getModel().toString()) +
                 ", nodeID: " + myImmatureTargetNode.getNodeId().toString() +
@@ -140,7 +146,7 @@ abstract class SReferenceBase extends SReference {
     final SNode immatureNode = myImmatureTargetNode;
     myImmatureTargetNode = null;
     adjustMature(immatureNode);
-    setTargetSModelReference(immatureNode.getModel().getSModelReference());
+    setTargetSModelReference(immatureNode.getModel().getReference());
     setResolveInfo(jetbrains.mps.util.SNodeOperations.getResolveInfo(immatureNode));
   }
 

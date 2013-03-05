@@ -22,9 +22,10 @@ import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
@@ -32,6 +33,7 @@ import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 
 import javax.swing.Icon;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -41,15 +43,15 @@ import java.util.List;
  */
 public abstract class AbstractCellMenuPart_Generic_Group implements SubstituteInfoPart, SubstituteInfoPartExt {
   @Override
-  public List<INodeSubstituteAction> createActions(CellContext cellContext, final EditorContext editorContext) {
+  public List<SubstituteAction> createActions(CellContext cellContext, final EditorContext editorContext) {
     final SNode node = (SNode) cellContext.get(BasicCellContext.EDITED_NODE);
     final IOperationContext context = editorContext.getOperationContext();
     List parameterObjects = createParameterObjects(node, context.getScope(), context, editorContext);
     if (parameterObjects == null) {
-      return new LinkedList<INodeSubstituteAction>();
+      return Collections.emptyList();
     }
 
-    List<INodeSubstituteAction> actions = new LinkedList<INodeSubstituteAction>();
+    List<SubstituteAction> actions = new LinkedList<SubstituteAction>();
     for (final Object parameterObject : parameterObjects) {
       actions.add(new AbstractNodeSubstituteAction(null, parameterObject, node) {
 
@@ -61,8 +63,8 @@ public abstract class AbstractCellMenuPart_Generic_Group implements SubstituteIn
           return AbstractCellMenuPart_Generic_Group.this.getDescriptionText(parameterObject);
         }
 
-        public Icon getIconFor(String pattern, boolean referent_presentation) {
-          return AbstractCellMenuPart_Generic_Group.this.getIconFor(parameterObject);
+        public Icon getIconFor(String pattern) {
+          return getIconFor(pattern, isReferentPresentation());
         }
 
         public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
@@ -76,7 +78,7 @@ public abstract class AbstractCellMenuPart_Generic_Group implements SubstituteIn
   }
 
   public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
-    return createActions(cellContext, (EditorContext) editorContext);
+    return (List) createActions(cellContext, (EditorContext) editorContext);
   }
 
   protected String getMatchingText(Object parameterObject) {
@@ -92,13 +94,6 @@ public abstract class AbstractCellMenuPart_Generic_Group implements SubstituteIn
       return NodePresentationUtil.descriptionText((SNode) parameterObject, isReferentPresentation());
     }
     return "";
-  }
-
-  protected Icon getIconFor(Object parameterObject) {
-    if (parameterObject instanceof SNode) {
-      return NodeIconUtil.getIcon((SNode) parameterObject, isReferentPresentation());
-    }
-    return IdeIcons.DEFAULT_ICON;
   }
 
   /**

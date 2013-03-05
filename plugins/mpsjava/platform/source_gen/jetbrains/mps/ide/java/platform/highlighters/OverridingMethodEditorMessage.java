@@ -19,6 +19,7 @@ public class OverridingMethodEditorMessage extends AbstractOverrideEditorMessage
     this.isOverriding = overriding;
   }
 
+  @Override
   public Icon getIcon() {
     return (this.isOverriding ?
       IconResourceBundle_OverrideImplements.getInstance().getResource("OVERRIDING") :
@@ -26,10 +27,12 @@ public class OverridingMethodEditorMessage extends AbstractOverrideEditorMessage
     );
   }
 
+  @Override
   public EditorMessageIconRenderer.IconRendererType getType() {
     return TYPE;
   }
 
+  @Override
   public AnAction getClickAction() {
     return ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.java.actions.GoToOverridenMethod_Action"));
   }

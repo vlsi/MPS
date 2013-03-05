@@ -28,6 +28,7 @@ public class InlineVariableReferenceRefactoring extends InlineVariableRefactorin
     this.findAssignment(node);
   }
 
+  @Override
   public SNode doRefactoring() {
     SNode variable = SLinkOperations.getTarget(this.myReference, "variableDeclaration", false);
     SNode nodeToSelect;

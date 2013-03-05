@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.reloading.ReflectionUtil;
 import org.jetbrains.mps.openapi.language.SConcept;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelInternal;
 
 public class VariableReference_Behavior {
   public static void init(SNode thisNode) {
@@ -30,7 +30,7 @@ public class VariableReference_Behavior {
       // todo 
       SNode declaration = SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
       SNode classifier = SNodeOperations.as(SNodeOperations.getParent(declaration), "jetbrains.mps.baseLanguage.structure.Classifier");
-      if ((classifier != null) && SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(classifier).getSModelReference().getStereotype())) {
+      if ((classifier != null) && SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(classifier).getReference().getStereotype())) {
         return Expression_Behavior.call_eval_1213877519769(thisNode, module);
       } else {
         return (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(declaration, "initializer", true), "virtual_isCompileTimeConstant_1238860258777", new Object[]{}) ?
@@ -120,7 +120,7 @@ public class VariableReference_Behavior {
     return true;
   }
 
-  private static IModule check_gidzrl_a0e0a0e(SModelDescriptor checkedDotOperand) {
+  private static IModule check_gidzrl_a0e0a0e(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

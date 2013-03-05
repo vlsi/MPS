@@ -28,7 +28,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathProvider;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import org.jdom.Element;
@@ -90,11 +90,11 @@ public class DataTree implements IExternalizeable, IChangeListener {
 
   //----DATA QUERY----
 
-  public List<SModelDescriptor> getIncludedModels() {
+  public List<SModel> getIncludedModels() {
     return getResultsNode().getIncludedModels();
   }
 
-  public List<SModelDescriptor> getAllModels() {
+  public List<SModel> getAllModels() {
     return getResultsNode().getAllModels();
   }
 
@@ -139,6 +139,7 @@ public class DataTree implements IExternalizeable, IChangeListener {
 
   public DataNode build(final SearchResults results, final INodeRepresentator nodeRepresentator) {
     return ModelAccess.instance().runReadAction(new Computable<DataNode>() {
+      @Override
       public DataNode compute() {
         DataNode root = new DataNode(new MainNodeData(PathItemRole.ROLE_MAIN_ROOT));
 
@@ -245,12 +246,14 @@ public class DataTree implements IExternalizeable, IChangeListener {
 
   //----READ/WRITE STUFF----
 
+  @Override
   public void read(Element element, Project project) throws CantLoadSomethingException {
     myTreeRoot.read(element, project);
     notifyChangeListeners();
     updateNotifier();
   }
 
+  @Override
   public void write(Element element, Project project) throws CantSaveSomethingException {
     myTreeRoot.write(element, project);
   }
@@ -271,6 +274,7 @@ public class DataTree implements IExternalizeable, IChangeListener {
     }
   }
 
+  @Override
   public void changed() {
     notifyChangeListeners();
   }

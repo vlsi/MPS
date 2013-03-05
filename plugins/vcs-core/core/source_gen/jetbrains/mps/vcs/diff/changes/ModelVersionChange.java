@@ -4,23 +4,27 @@ package jetbrains.mps.vcs.diff.changes;
 
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vcs.diff.ChangeSet;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelInternal;
 
 public class ModelVersionChange extends MetadataChange {
   public ModelVersionChange(@NotNull ChangeSet changeSet) {
     super(changeSet);
   }
 
+  @Override
   public void apply(@NotNull SModel model, @NotNull NodeCopier nodeCopier) {
-    model.setVersion(getChangeSet().getNewModel().getVersion());
+    ((SModelInternal) model).setVersion(((SModelInternal) getChangeSet().getNewModel()).getVersion());
   }
 
   @NotNull
+  @Override
   protected ModelChange createOppositeChange() {
     return new ModelVersionChange(getChangeSet().getOppositeChangeSet());
   }
 
   @NotNull
+  @Override
   public ChangeType getType() {
     return ChangeType.CHANGE;
   }

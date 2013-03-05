@@ -22,6 +22,7 @@ public abstract class AbstractChainTreeTraversal<T> extends AbstractTreeTraversa
     featureDesc = feature;
   }
 
+  @Override
   public ITreePath<T> getTreePath() {
     return sourceTraversal.getTreePath();
   }

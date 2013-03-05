@@ -21,6 +21,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListRemoveAction;
 import javax.swing.border.TitledBorder;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -86,6 +87,7 @@ public class ListPanel extends JPanel {
     this.myListModel = new ListPanel.MyAbstractListModel();
     this.myListComponent = new JBList(this.myListModel);
     AnAction add = new ListAddAction(this.myListComponent) {
+      @Override
       protected int doAdd(AnActionEvent p0) {
         List<SNodeReference> nodesList = getCandidates();
 
@@ -99,7 +101,7 @@ public class ListPanel extends JPanel {
         final Wrappers._T<ITestNodeWrapper> wrapper = new Wrappers._T<ITestNodeWrapper>();
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            wrapper.value = TestNodeWrapperFactory.tryToWrap(((SNodePointer) resultNode).getNode());
+            wrapper.value = TestNodeWrapperFactory.tryToWrap(((SNodePointer) resultNode).resolve(MPSModuleRepository.getInstance()));
           }
         });
         if (wrapper.value == null) {
@@ -115,6 +117,7 @@ public class ListPanel extends JPanel {
       }
     };
     AnAction remove = new ListRemoveAction(this.myListComponent) {
+      @Override
       protected void doRemove(AnActionEvent p0) {
         for (Object value : ListPanel.this.myListComponent.getSelectedValues()) {
           for (final ITestNodeWrapper node : ListPanel.this.myValues) {
@@ -163,6 +166,7 @@ public class ListPanel extends JPanel {
 
     if (needsUpdate) {
       ProgressManager.getInstance().runProcessWithProgressSynchronously(new Runnable() {
+        @Override
         public void run() {
           final List<SNode> nodesList = new ArrayList<SNode>();
           ModelAccess.instance().runReadAction(new Runnable() {
@@ -230,10 +234,12 @@ public class ListPanel extends JPanel {
     public MyAbstractListModel() {
     }
 
+    @Override
     public Object getElementAt(int p0) {
       return ListSequence.fromList(ListPanel.this.myValues).getElement(p0).getCachedFqName();
     }
 
+    @Override
     public int getSize() {
       return ListSequence.fromList(ListPanel.this.myValues).count();
     }

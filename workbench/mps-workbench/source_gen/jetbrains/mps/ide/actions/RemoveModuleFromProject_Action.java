@@ -88,6 +88,7 @@ public class RemoveModuleFromProject_Action extends BaseAction {
         }
 
         @Nullable
+        @Override
         protected JComponent createCenterPanel() {
           JPanel panel = new JPanel(new GridBagLayout());
           GridBagConstraints gbc = new GridBagConstraints();

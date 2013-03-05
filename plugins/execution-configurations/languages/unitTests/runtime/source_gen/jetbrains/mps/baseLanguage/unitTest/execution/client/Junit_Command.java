@@ -20,11 +20,13 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Set;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.SNodePointer;
-import java.util.LinkedHashSet;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.debug.api.run.IDebuggerConfiguration;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.api.IDebuggerSettings;
@@ -159,20 +161,20 @@ public class Junit_Command {
   }
 
   private static List<String> getClasspath(final List<ITestNodeWrapper> tests) {
-    final Set<IModule> uniqueModules = SetSequence.fromSet(new HashSet<IModule>());
+    final Set<SModule> uniqueModules = SetSequence.fromSet(new HashSet<SModule>());
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (ITestNodeWrapper testable : tests) {
-          IModule module = ((SNodePointer) testable.getNodePointer()).getModel().getModule();
+          IModule module = SNodeOperations.getModelFromNodeReference(((SNodePointer) testable.getNodePointer())).getModule();
           SetSequence.fromSet(uniqueModules).addElement(module);
         }
       }
     });
-    Set<String> classpath = SetSequence.fromSet(new LinkedHashSet<String>());
-    for (IModule module : uniqueModules) {
-      SetSequence.fromSet(classpath).addSequence(ListSequence.fromList(Java_Command.getClasspath(module, true)));
-    }
-    return SetSequence.fromSet(classpath).toListSequence();
+    return SetSequence.fromSet(uniqueModules).translate(new ITranslator2<SModule, String>() {
+      public Iterable<String> translate(SModule it) {
+        return Java_Command.getClasspath(it);
+      }
+    }).distinct().toListSequence();
   }
 
   public static IDebuggerConfiguration getDebuggerConfiguration() {

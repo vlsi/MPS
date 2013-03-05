@@ -10,11 +10,11 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -29,7 +29,7 @@ public abstract class BaseLanguagesImportHelper {
   public void tryToImport(SNode container, List<SNodeReference> nodesToImport) {
     List<SNode> nodes = CopyUtil.copy(ListSequence.fromList(nodesToImport).select(new ISelector<SNodeReference, SNode>() {
       public SNode select(SNodeReference it) {
-        return (SNode) ((SNodePointer) it).getNode();
+        return (SNode) ((SNodePointer) it).resolve(MPSModuleRepository.getInstance());
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -55,13 +55,13 @@ public abstract class BaseLanguagesImportHelper {
     for (SReference reference : ListSequence.fromList(SNodeOperations.getReferences(node))) {
       SModel targetModel = SNodeOperations.getModel(SLinkOperations.getTargetNode(reference));
       if (neq_5vd2f2_a0b0a0d(targetModel, containerModel)) {
-        SModelDescriptor scopeModel = GlobalScope.getInstance().getModelDescriptor(targetModel.getSModelReference());
+        SModel scopeModel = GlobalScope.getInstance().getModelDescriptor(targetModel.getReference());
         if (scopeModel != null && neq_5vd2f2_a0a1a1a0a3(scopeModel.getSModel(), targetModel)) {
           String resolveInfo = SLinkOperations.getResolveInfo(reference);
           if ((resolveInfo == null || resolveInfo.length() == 0)) {
             resolveInfo = jetbrains.mps.util.SNodeOperations.getResolveInfo(SLinkOperations.getTargetNode(reference));
           }
-          node.setReference(SLinkOperations.getRole(reference), new DynamicReference(SLinkOperations.getRole(reference), node, scopeModel.getSModelReference(), resolveInfo));
+          node.setReference(SLinkOperations.getRole(reference), new DynamicReference(SLinkOperations.getRole(reference), node, scopeModel.getReference(), resolveInfo));
         }
       }
     }

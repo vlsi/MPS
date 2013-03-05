@@ -24,37 +24,45 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.Icon;
 
 public class MPSNodeFileType implements FileType, FileTypeIdentifiableByVirtualFile {
+  @Override
   @NotNull
   public String getName() {
     return "MPS Node File Type";
   }
 
+  @Override
   @NotNull
   public String getDescription() {
     return "MPS Node File Type";
   }
 
+  @Override
   @NotNull
   public String getDefaultExtension() {
     return "impossibleext";
   }
 
+  @Override
   public Icon getIcon() {
     return null;
   }
 
+  @Override
   public boolean isBinary() {
     return false;
   }
 
+  @Override
   public boolean isReadOnly() {
     return true;
   }
 
+  @Override
   public String getCharset(@NotNull VirtualFile file, byte[] content) {
     return null;
   }
 
+  @Override
   public boolean isMyFileType(VirtualFile file) {
     return file instanceof MPSNodeVirtualFile;
   }

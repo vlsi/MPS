@@ -11,6 +11,7 @@ public class GenerateBuildWizard extends AbstractWizard {
   private final Project myProject;
   protected final AbstractBuildGenerator myGenerator;
   protected IErrorHandler myErrorHandler = new IErrorHandler() {
+    @Override
     public void setErrorText(String text) {
       GenerateBuildWizard.this.setErrorText(text);
     }
@@ -24,10 +25,12 @@ public class GenerateBuildWizard extends AbstractWizard {
     initWizard();
   }
 
+  @Override
   public String getHelpID() {
     return null;
   }
 
+  @Override
   protected JComponent createCenterPanel() {
     JComponent panel = super.createCenterPanel();
     assert panel != null;
@@ -35,11 +38,13 @@ public class GenerateBuildWizard extends AbstractWizard {
     return panel;
   }
 
+  @Override
   protected void updateStep() {
     getFinishButton().setEnabled((getCurrentStep() == mySteps.size() - 1) && myGenerator.isValid());
     super.updateStep();
   }
 
+  @Override
   protected void doOKAction() {
     super.doOKAction();
     myGenerator.generate();

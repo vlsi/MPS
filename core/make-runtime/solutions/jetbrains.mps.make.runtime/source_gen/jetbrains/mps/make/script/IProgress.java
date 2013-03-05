@@ -14,18 +14,23 @@ public interface IProgress {
     public Stub() {
     }
 
+    @Override
     public void finishWork(String name) {
     }
 
+    @Override
     public void advanceWork(String name, int done) {
     }
 
+    @Override
     public void advanceWork(String name, int done, String comment) {
     }
 
+    @Override
     public void beginWork(String name, int estimate, int ofTotal) {
     }
 
+    @Override
     public int workLeft() {
       return 0;
     }

@@ -16,8 +16,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelInternal;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 
 public class ExportScope_Behavior {
@@ -66,11 +66,11 @@ public class ExportScope_Behavior {
       return true;
     }
     // while problem with adapters is not solved 
-    if (SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(node).getStereotype()) && targetNamespace.startsWith("jetbrains.mps")) {
+    if (SModelStereotype.isStubModelStereotype(jetbrains.mps.util.SNodeOperations.getModelStereotype(SNodeOperations.getModel(node))) && targetNamespace.startsWith("jetbrains.mps")) {
       return namespace.startsWith("jetbrains.mps");
     }
     // stubs are module by default, all other are public now 
-    return !(SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(node).getStereotype()));
+    return !(SModelStereotype.isStubModelStereotype(jetbrains.mps.util.SNodeOperations.getModelStereotype(SNodeOperations.getModel(node))));
   }
 
   public static boolean checkExport_2565736246230031479(boolean isConcept, SNode node, String namespace) {
@@ -91,14 +91,14 @@ public class ExportScope_Behavior {
     return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ExportScope"), callerConceptFqName, "virtual_checkExport_2565736246230026584", new Class[]{SNode.class, String.class, SNode.class}, new Object[]{sourceNamespace, targetNode});
   }
 
-  private static IModule check_ogf5a0_a0a0a(SModelDescriptor checkedDotOperand) {
+  private static IModule check_ogf5a0_a0a0a(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModelDescriptor check_ogf5a0_a0a0a0(SModel checkedDotOperand) {
+  private static SModelInternal check_ogf5a0_a0a0a0(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }

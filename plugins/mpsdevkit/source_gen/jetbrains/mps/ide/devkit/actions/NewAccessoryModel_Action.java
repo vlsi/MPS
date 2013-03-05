@@ -20,7 +20,7 @@ import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.logging.Logger;
@@ -83,7 +83,7 @@ public class NewAccessoryModel_Action extends BaseAction {
       final Language language = ((Language) ((IModule) MapSequence.fromMap(_params).get("module")));
       NewModelDialog d = new NewModelDialog(((Project) MapSequence.fromMap(_params).get("project")), ((IModule) MapSequence.fromMap(_params).get("module")), language.getModuleFqName(), ((IOperationContext) MapSequence.fromMap(_params).get("context")), SModelStereotype.NONE, true);
       d.show();
-      final SModelDescriptor result = d.getResult();
+      final SModel result = d.getResult();
 
       if (result == null) {
         return;
@@ -91,7 +91,7 @@ public class NewAccessoryModel_Action extends BaseAction {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
           LanguageDescriptor descriptor = language.getModuleDescriptor();
-          descriptor.getAccessoryModels().add(result.getSModelReference());
+          descriptor.getAccessoryModels().add(result.getReference());
           language.setLanguageDescriptor(descriptor, true);
           language.save();
         }

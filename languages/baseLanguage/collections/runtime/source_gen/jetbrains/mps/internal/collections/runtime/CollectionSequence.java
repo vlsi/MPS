@@ -19,6 +19,7 @@ public abstract class CollectionSequence<T> extends Sequence<T> implements IColl
   protected CollectionSequence() {
   }
 
+  @Override
   public T addElement(T t) {
     if (Sequence.IGNORE_NULL_VALUES) {
       if (t == null) {
@@ -31,6 +32,7 @@ public abstract class CollectionSequence<T> extends Sequence<T> implements IColl
     return null;
   }
 
+  @Override
   public T removeElement(T t) {
     if (remove((Object) t)) {
       return t;
@@ -38,6 +40,7 @@ public abstract class CollectionSequence<T> extends Sequence<T> implements IColl
     return null;
   }
 
+  @Override
   public ICollectionSequence<T> addSequence(ISequence<? extends T> seq) {
     if (Sequence.USE_NULL_SEQUENCE) {
       if (seq == null) {
@@ -54,6 +57,7 @@ public abstract class CollectionSequence<T> extends Sequence<T> implements IColl
     return this;
   }
 
+  @Override
   public ICollectionSequence<T> removeSequence(ISequence<? extends T> seq) {
     if (Sequence.USE_NULL_SEQUENCE) {
       if (seq == null) {
@@ -70,6 +74,7 @@ public abstract class CollectionSequence<T> extends Sequence<T> implements IColl
     return this;
   }
 
+  @Override
   public ICollectionSequence<T> removeWhere(@AdapterClass(value = "IWhereFilter") _FunctionTypes._return_P1_E0<? extends Boolean, ? super T> filter) {
     for (Iterator<T> it = getCollection().iterator(); it.hasNext();) {
       if (filter.invoke(it.next())) {
@@ -79,6 +84,7 @@ public abstract class CollectionSequence<T> extends Sequence<T> implements IColl
     return this;
   }
 
+  @Override
   public boolean add(T e) {
     if (IGNORE_NULL_VALUES) {
       if (e == null) {
@@ -88,18 +94,22 @@ public abstract class CollectionSequence<T> extends Sequence<T> implements IColl
     return getCollection().add(e);
   }
 
+  @Override
   public boolean addAll(Collection<? extends T> c) {
     return getCollection().addAll(c);
   }
 
+  @Override
   public void clear() {
     getCollection().clear();
   }
 
+  @Override
   public boolean contains(Object o) {
     return getCollection().contains(o);
   }
 
+  @Override
   public boolean containsAll(Collection<?> c) {
     return getCollection().containsAll(c);
   }
@@ -109,6 +119,7 @@ public abstract class CollectionSequence<T> extends Sequence<T> implements IColl
     return getCollection().isEmpty();
   }
 
+  @Override
   public boolean remove(Object o) {
     if (IGNORE_NULL_VALUES) {
       if (o == null) {
@@ -118,42 +129,52 @@ public abstract class CollectionSequence<T> extends Sequence<T> implements IColl
     return getCollection().remove(o);
   }
 
+  @Override
   public boolean removeAll(Collection<?> c) {
     return getCollection().removeAll(c);
   }
 
+  @Override
   public boolean retainAll(Collection<?> c) {
     return getCollection().retainAll(c);
   }
 
+  @Override
   public int size() {
     return getCollection().size();
   }
 
+  @Override
   public Object[] toArray() {
     return getCollection().toArray();
   }
 
+  @Override
   public <U> U[] toArray(U[] a) {
     return getCollection().toArray(a);
   }
 
+  @Override
   public Iterator<T> iterator() {
     return getCollection().iterator();
   }
 
+  @Override
   public ICollectionSequence<T> asUnmodifiable() {
     final Collection<T> unmodifiableCollection = Collections.unmodifiableCollection(getCollection());
     return new CollectionSequence<T>() {
+      @Override
       protected Collection<T> getCollection() {
         return unmodifiableCollection;
       }
     };
   }
 
+  @Override
   public ICollectionSequence<T> asSynchronized() {
     final Collection<T> synchronizedCollection = CollectionUtils.synchronizedCollection(getCollection());
     return new CollectionSequence<T>() {
+      @Override
       protected Collection<T> getCollection() {
         return synchronizedCollection;
       }
@@ -207,6 +228,7 @@ public abstract class CollectionSequence<T> extends Sequence<T> implements IColl
       return (ICollectionSequence<U>) coll;
     }
     return new CollectionSequence<U>() {
+      @Override
       protected Collection<U> getCollection() {
         return coll;
       }
@@ -245,6 +267,7 @@ public abstract class CollectionSequence<T> extends Sequence<T> implements IColl
     }
     final Collection<U> myColl = tmp;
     return new CollectionSequence<U>() {
+      @Override
       protected Collection<U> getCollection() {
         return myColl;
       }
@@ -270,6 +293,7 @@ public abstract class CollectionSequence<T> extends Sequence<T> implements IColl
         }
         final Collection<U> myColl = coll;
         return new CollectionSequence<U>() {
+          @Override
           protected Collection<U> getCollection() {
             return myColl;
           }
@@ -291,6 +315,7 @@ public abstract class CollectionSequence<T> extends Sequence<T> implements IColl
     }
     final Collection<U> myColl = coll;
     return new CollectionSequence<U>() {
+      @Override
       protected Collection<U> getCollection() {
         return myColl;
       }

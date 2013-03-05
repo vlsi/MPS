@@ -21,12 +21,15 @@ public class JavaHighlighters implements ProjectComponent {
     myProject = project;
   }
 
+  @Override
   public void projectOpened() {
   }
 
+  @Override
   public void projectClosed() {
   }
 
+  @Override
   public void initComponent() {
     Highlighter highlighter = getHighlighter();
     highlighter.addChecker(DequeSequence.fromDeque(myCheckers).pushElement(new OverrideMethodsChecker()));
@@ -36,6 +39,7 @@ public class JavaHighlighters implements ProjectComponent {
     mdf.init();
   }
 
+  @Override
   public void disposeComponent() {
     Highlighter highlighter = getHighlighter();
     while (DequeSequence.fromDeque(myCheckers).isNotEmpty()) {
@@ -49,6 +53,7 @@ public class JavaHighlighters implements ProjectComponent {
 
   @NonNls
   @NotNull
+  @Override
   public String getComponentName() {
     return "JavaHighlighters";
   }

@@ -4,7 +4,7 @@ package jetbrains.mps.lang.dataFlow.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import java.util.Map;
@@ -58,7 +58,7 @@ public class DataFlowBuilderDeclaration_Constraints extends BaseConstraintsDescr
   }
 
   public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
-    return LanguageAspect.DATA_FLOW.is(model);
+    return LanguageAspect.DATA_FLOW.is(model.getModelDescriptor());
   }
 
   private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590377(jetbrains.mps.lang.dataFlow.constraints)", "1227089120379");

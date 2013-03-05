@@ -12,6 +12,7 @@ public class MultiplyOperation implements Function<Double> {
     myRightOperand = rightOperand;
   }
 
+  @Override
   public Double compute(Object parm) {
     Double num1 = myLeftOperand.compute(parm);
     Double num2 = myRightOperand.compute(parm);

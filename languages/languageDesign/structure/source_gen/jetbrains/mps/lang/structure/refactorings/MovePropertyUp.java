@@ -11,7 +11,7 @@ import jetbrains.mps.lang.structure.scripts.RefUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.project.Project;
@@ -53,7 +53,7 @@ public class MovePropertyUp extends BaseLoggableRefactoring {
       }
     */
     refactoringContext.moveNodeToNode(node, node.getRoleInParent(), ((SNode) refactoringContext.getParameter("targetConcept")));
-    refactoringContext.changeFeatureName(node, SNodeOperations.getModel(((SNode) refactoringContext.getParameter("targetConcept"))).getSModelFqName() + "." + SPropertyOperations.getString(((SNode) refactoringContext.getParameter("targetConcept")), "name"), SPropertyOperations.getString(node, "name"));
+    refactoringContext.changeFeatureName(node, SNodeOperations.getModel(((SNode) refactoringContext.getParameter("targetConcept"))).getReference().getSModelFqName() + "." + SPropertyOperations.getString(((SNode) refactoringContext.getParameter("targetConcept")), "name"), SPropertyOperations.getString(node, "name"));
   }
 
   public List<SModel> getModelsToGenerate(final RefactoringContext refactoringContext) {

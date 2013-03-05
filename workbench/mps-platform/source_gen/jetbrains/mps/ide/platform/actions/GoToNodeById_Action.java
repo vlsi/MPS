@@ -12,7 +12,8 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -68,7 +69,7 @@ public class GoToNodeById_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      String value = JOptionPane.showInputDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Enter node ID:", "Find node in model " + ((SModelDescriptor) MapSequence.fromMap(_params).get("CONTEXT_MODEL")).getLongName(), JOptionPane.QUESTION_MESSAGE);
+      String value = JOptionPane.showInputDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Enter node ID:", "Find node in model " + SNodeOperations.getModelLongName(((SModel) MapSequence.fromMap(_params).get("CONTEXT_MODEL"))), JOptionPane.QUESTION_MESSAGE);
       if (value == null) {
         return;
       }
@@ -83,9 +84,10 @@ public class GoToNodeById_Action extends BaseAction {
       }
       final String trimmedValue = value;
       ModelAccess.instance().runWriteInEDT(new Runnable() {
+        @Override
         public void run() {
           SNode node;
-          node = ((SModelDescriptor) MapSequence.fromMap(_params).get("CONTEXT_MODEL")).getSModel().getNodeById(id);
+          node = ((SModel) MapSequence.fromMap(_params).get("CONTEXT_MODEL")).getSModel().getNode(id);
           if (node == null) {
             JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Can't find node with id " + trimmedValue);
             return;

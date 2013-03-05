@@ -4,7 +4,7 @@ package jetbrains.mps.lang.editor.editor;
 
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -23,9 +23,9 @@ public class _CellModel_Common extends AbstractCellProvider {
   }
 
   @Deprecated
-  public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  public jetbrains.mps.nodeEditor.cells.EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
     // This method was added in MPS 3.0 for the compatibility with prev. generated code 
-    return createEditorCell((EditorContext) editorContext);
+    return (jetbrains.mps.nodeEditor.cells.EditorCell) createEditorCell((EditorContext) editorContext);
   }
 
   private EditorCell createCollection_1stfn5_a(EditorContext editorContext, SNode node) {
@@ -43,16 +43,16 @@ public class _CellModel_Common extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createComponent_1stfn5_c0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new Common_Component(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
-    return editorCell;
-  }
-
   private EditorCell createConstant_1stfn5_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_1stfn5_b0");
     editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createComponent_1stfn5_c0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new Common_Component(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 }

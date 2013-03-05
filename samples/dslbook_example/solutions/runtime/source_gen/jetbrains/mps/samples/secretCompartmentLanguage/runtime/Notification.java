@@ -35,6 +35,7 @@ public class Notification {
     return !(errors.isEmpty());
   }
 
+  @Override
   public String toString() {
     return ((isOk()) ?
       "OK" :

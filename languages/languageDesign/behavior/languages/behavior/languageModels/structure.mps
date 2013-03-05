@@ -9,8 +9,8 @@
   <import index="1i04" modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1225194240794">
-      <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/behavior.png" />
       <property name="name" nameId="tpck.1169194664001" value="ConceptBehavior" />
@@ -20,6 +20,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1225194413805">
       <property name="name" nameId="tpck.1169194664001" value="ConceptConstructorDeclaration" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Behavior" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
@@ -38,6 +39,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="super node" />
       <property name="name" nameId="tpck.1169194664001" value="SuperNodeExpression" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Behavior" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="super" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
@@ -47,12 +49,14 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="this node" />
       <property name="name" nameId="tpck.1169194664001" value="ThisNodeExpression" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Behavior" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="this" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6496299201655527393">
       <property name="name" nameId="tpck.1169194664001" value="LocalBehaviorMethodCall" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Behavior" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068499141036" resolveInfo="BaseMethodCall" />
     </node>

@@ -21,7 +21,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_931497059330190638(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode extension = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodCall"), "baseMethodDeclaration", false);
-    String namespace = SNodeOperations.getModel(extension).getSModelFqName().getLongName();
+    String namespace = SNodeOperations.getModel(extension).getReference().getSModelFqName().getLongName();
     String className = SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(extension), "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
     return namespace + "." + className;
   }

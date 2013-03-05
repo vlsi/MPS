@@ -75,6 +75,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
 
   public void addBreakpoint(@NotNull final IBreakpoint breakpoint) {
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         synchronized (myBreakpoints) {
           if (breakpoint instanceof ILocationBreakpoint && myBreakpointsForRootInitialized) {
@@ -146,6 +147,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     }
   }
 
+  @Override
   public void loadState(Element state) {
     Set<IBreakpoint> newBreakpoints = SetSequence.fromSet(new HashSet<IBreakpoint>());
     Set<IBreakpoint> oldBreakpoints = SetSequence.fromSet(new HashSet<IBreakpoint>());
@@ -186,6 +188,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     }
   }
 
+  @Override
   public Element getState() {
     Element rootElement = new Element(BREAKPOINTS_LIST_ELEMENT);
     synchronized (myBreakpoints) {
@@ -266,6 +269,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
 
   public Set<ILocationBreakpoint> getBreakpoints(final SNodeReference rootPointer) {
     return ModelAccess.instance().runReadAction(new Computable<Set<ILocationBreakpoint>>() {
+      @Override
       public Set<ILocationBreakpoint> compute() {
         synchronized (myBreakpoints) {
           if (!(myBreakpointsForRootInitialized)) {

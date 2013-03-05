@@ -18,6 +18,7 @@ public class ProjectPathRenderer extends PathRenderer {
     myProject = project;
   }
 
+  @Override
   public Component getListCellRendererComponent(JList list, final Object value, int index, boolean isSelected, boolean cellHasFocus) {
     Path path = (Path) value;
     Component result = super.getListCellRendererComponent(list, path, index, isSelected, cellHasFocus);

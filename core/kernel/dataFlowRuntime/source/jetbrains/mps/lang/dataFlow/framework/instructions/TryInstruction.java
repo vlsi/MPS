@@ -16,6 +16,7 @@
 package jetbrains.mps.lang.dataFlow.framework.instructions;
 
 public class TryInstruction extends Instruction {
+  @Override
   public String commandPresentation() {
     return "try";
   }

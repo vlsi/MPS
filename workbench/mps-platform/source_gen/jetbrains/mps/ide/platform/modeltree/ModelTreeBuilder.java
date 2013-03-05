@@ -6,7 +6,7 @@ import javax.swing.event.TreeExpansionListener;
 import javax.swing.JTree;
 import javax.swing.event.TreeExpansionEvent;
 import javax.swing.tree.DefaultTreeModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.ide.icons.IconManager;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -26,6 +26,7 @@ public abstract class ModelTreeBuilder implements TreeExpansionListener {
     myTree.addTreeExpansionListener(this);
   }
 
+  @Override
   public void treeExpanded(TreeExpansionEvent event) {
     Object lastNode = event.getPath().getLastPathComponent();
     if (lastNode instanceof ModelTreeNode) {
@@ -37,6 +38,7 @@ public abstract class ModelTreeBuilder implements TreeExpansionListener {
     }
   }
 
+  @Override
   public void treeCollapsed(TreeExpansionEvent event) {
   }
 
@@ -46,8 +48,8 @@ public abstract class ModelTreeBuilder implements TreeExpansionListener {
     ((DefaultTreeModel) myTree.getModel()).nodeStructureChanged(modelTreeNode);
   }
 
-  public static ModelTreeNode createSModelTreeNode(SModelDescriptor descriptor) {
-    SModelReference sModelReference = descriptor.getSModelReference();
+  public static ModelTreeNode createSModelTreeNode(SModel descriptor) {
+    SModelReference sModelReference = descriptor.getReference();
     String label = sModelReference.getLongName();
     if (sModelReference.getStereotype().length() > 0) {
       label += "@" + sModelReference.getStereotype();

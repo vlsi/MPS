@@ -41,11 +41,13 @@ public class FileDeleteActionFixed extends DeleteAction {
   private static class MyDeleteProvider implements DeleteProvider {
     private final static Logger LOG = Logger.getLogger(MyDeleteProvider.class);
 
+    @Override
     public boolean canDeleteElement(DataContext dataContext) {
       final VirtualFile[] files = PlatformDataKeys.VIRTUAL_FILE_ARRAY.getData(dataContext);
       return files != null && files.length > 0;
     }
 
+    @Override
     public void deleteElement(DataContext dataContext) {
       final VirtualFile[] files = PlatformDataKeys.VIRTUAL_FILE_ARRAY.getData(dataContext);
       if (files == null || files.length == 0) return;
@@ -57,6 +59,7 @@ public class FileDeleteActionFixed extends DeleteAction {
       Arrays.sort(files, FileComparator.getInstance());
 
       ModelAccess.instance().runWriteAction(new Runnable() {
+        @Override
         public void run() {
           for (final VirtualFile file : files) {
             try {
@@ -64,6 +67,7 @@ public class FileDeleteActionFixed extends DeleteAction {
             }
             catch (IOException e) {
               ApplicationManager.getApplication().invokeLater(new Runnable() {
+                @Override
                 public void run() {
                   Messages.showMessageDialog("Could not erase file or folder: " + file.getName(),
                     "Error", Messages.getErrorIcon());
@@ -82,6 +86,7 @@ public class FileDeleteActionFixed extends DeleteAction {
         return ourInstance;
       }
 
+      @Override
       public int compare(final VirtualFile o1, final VirtualFile o2) {
         // files first
         return o2.getPath().compareTo(o1.getPath());

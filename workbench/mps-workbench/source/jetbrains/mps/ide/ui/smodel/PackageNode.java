@@ -17,7 +17,8 @@ package jetbrains.mps.ide.ui.smodel;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.actions.model.CreateRootNodeGroup;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -39,14 +40,17 @@ public class PackageNode extends SNodeGroupTreeNode {
     }
   }
 
+  @Override
   public ActionGroup getActionGroup() {
     return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_PACKAGE_ACTIONS);
   }
 
+  @Override
   public ActionGroup getQuickCreateGroup(boolean plain) {
     return new CreateRootNodeGroup(plain);
   }
 
+  @Override
   public IOperationContext getOperationContext() {
     return myModelNode.getOperationContext();
   }
@@ -57,7 +61,7 @@ public class PackageNode extends SNodeGroupTreeNode {
     if (getOperationContext().getModule() instanceof Language) {
       Language l = (Language) getOperationContext().getModule();
 
-      for (SModelDescriptor sm : LanguageAspect.getAspectModels(l)) {
+      for (SModel sm : LanguageAspect.getAspectModels(l)) {
         result.addAll(getNodesUnderPackage(sm));
       }
     }
@@ -67,9 +71,9 @@ public class PackageNode extends SNodeGroupTreeNode {
     return result;
   }
 
-  public Set<SNode> getNodesUnderPackage(SModelDescriptor sm) {
+  public Set<SNode> getNodesUnderPackage(SModel sm) {
     Set<SNode> nodes = new LinkedHashSet<SNode>();
-    for (SNode root : sm.getSModel().roots()) {
+    for (SNode root : sm.getSModel().getRootNodes()) {
       String rootPack = SNodeAccessUtil.getProperty(root, SModelTreeNode.PACK);
       if (rootPack != null && (rootPack.startsWith(getFullPackage() + ".") || rootPack.equals(getFullPackage()))) {
         nodes.add(root);

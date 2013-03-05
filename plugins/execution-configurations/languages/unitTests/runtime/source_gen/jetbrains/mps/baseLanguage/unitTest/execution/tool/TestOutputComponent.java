@@ -43,6 +43,7 @@ public class TestOutputComponent implements TestView {
     myState = state;
   }
 
+  @Override
   public void update() {
     if (myState.getLostClass() != null && myState.getLostMethod() != null) {
       final String method = myState.getLostMethod();
@@ -67,6 +68,7 @@ public class TestOutputComponent implements TestView {
     }
   }
 
+  @Override
   public void init() {
     clear();
   }
@@ -128,6 +130,7 @@ public class TestOutputComponent implements TestView {
     public CompositeMessage() {
     }
 
+    @Override
     public void print() {
       if (matches(myFilterClass, myFilterMethod)) {
         for (TestOutputComponent.IMessage message : ListSequence.fromList(myChildren)) {
@@ -206,6 +209,7 @@ public class TestOutputComponent implements TestView {
     public RootMessage() {
     }
 
+    @Override
     public TestOutputComponent.IMessage createChildMessage(String testClass, String testMethod, String text, Key key) {
       TestOutputComponent.ClassMessage message = new TestOutputComponent.ClassMessage(testClass);
       message.addMessage(testClass, testMethod, text, key);
@@ -234,6 +238,7 @@ public class TestOutputComponent implements TestView {
       return (testClass == null || testClass.length() == 0) || merges(testClass, testMethod);
     }
 
+    @Override
     public TestOutputComponent.IMessage createChildMessage(String testClass, String testMethod, String text, Key key) {
       TestOutputComponent.MethodMessage message = new TestOutputComponent.MethodMessage(testMethod);
       message.addMessage(testClass, testMethod, text, key);
@@ -259,6 +264,7 @@ public class TestOutputComponent implements TestView {
       return (testMethod == null || testMethod.length() == 0) || merges(testClass, testMethod);
     }
 
+    @Override
     public TestOutputComponent.IMessage createChildMessage(String testClass, String testMethod, String text, Key key) {
       return new TestOutputComponent.TestMessage(text, key);
     }
@@ -352,6 +358,7 @@ public class TestOutputComponent implements TestView {
       myKey = key;
     }
 
+    @Override
     public void print() {
       TestOutputComponent.print(myConsoleView, myKey, myText);
     }

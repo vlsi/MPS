@@ -24,7 +24,7 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 
@@ -51,7 +51,7 @@ public class GenerationPlan {
   }
 
   public GenerationPlan(@NotNull SModel inputModel, Collection<String> additionalLanguages) {
-    myInputName = inputModel.getLongName();
+    myInputName = jetbrains.mps.util.SNodeOperations.getModelLongName(inputModel);
     try {
       myGenerators = GenerationPartitioningUtil.getTemplateModules(inputModel, additionalLanguages);
 
@@ -68,12 +68,12 @@ public class GenerationPlan {
       myConflictingPriorityRules = partitioner.getConflictingPriorityRules();
     } catch (Throwable t) {
       LOG.error(t);
-      throw new RuntimeException("Couldn't compute generation steps for model '" + inputModel.getLongName() + "'", t);
+      throw new RuntimeException("Couldn't compute generation steps for model '" + jetbrains.mps.util.SNodeOperations.getModelLongName(inputModel) + "'", t);
     }
   }
 
   public GenerationPlan(@NotNull SModel inputModel, @NotNull ModelGenerationPlan plan) {
-    myInputName = inputModel.getLongName();
+    myInputName = jetbrains.mps.util.SNodeOperations.getModelLongName(inputModel);
     myGenerators = new HashSet<TemplateModule>();
     myPlan = plan.getSteps();
     for (List<TemplateMappingConfiguration> step : myPlan) {

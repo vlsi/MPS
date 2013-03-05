@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.openapi.editor.EditorContext;
 import java.util.List;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -138,7 +139,7 @@ public class GenerateConstructor_Action extends BaseAction {
       SNode constructorDeclaration = null;
       Project project = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext().getProject();
       for (SNodeReference ptr : selectedConstructors) {
-        SNode selectedSuperConstructor = SNodeOperations.cast(((SNodePointer) ptr).getNode(), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
+        SNode selectedSuperConstructor = SNodeOperations.cast(((SNodePointer) ptr).resolve(MPSModuleRepository.getInstance()), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
         SNode constructor = SNodeFactoryOperations.addNewChild(classConcept, "member", "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
         constructorDeclaration = constructor;
         SNodeFactoryOperations.setNewChild(constructor, "body", "jetbrains.mps.baseLanguage.structure.StatementList");
@@ -154,7 +155,7 @@ public class GenerateConstructor_Action extends BaseAction {
           }
         }
         for (SNodeReference fieldPtr : selectedFields) {
-          SNode field = SNodeOperations.cast(((SNodePointer) fieldPtr).getNode(), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+          SNode field = SNodeOperations.cast(((SNodePointer) fieldPtr).resolve(MPSModuleRepository.getInstance()), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
           SNode parameterDeclaration = _quotation_createNode_yl16du_a0b0f0r0a(SNodeOperations.copyNode(SLinkOperations.getTarget(field, "type", true)), GenerateGettersAndSettersUtil.getParameterNameForField(field, project));
           ListSequence.fromList(SLinkOperations.getTargets(constructor, "parameter", true)).addElement(parameterDeclaration);
           SNode expressionStatement = SNodeFactoryOperations.addNewChild(SLinkOperations.getTarget(constructor, "body", true), "statement", "jetbrains.mps.baseLanguage.structure.ExpressionStatement");

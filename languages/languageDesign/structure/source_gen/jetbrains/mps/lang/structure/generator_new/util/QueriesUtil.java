@@ -13,7 +13,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
@@ -114,7 +114,7 @@ public class QueriesUtil {
     if ((conceptDeclaration == null)) {
       return "jetbrains.mps.core.structure.BaseConcept";
     }
-    return SNodeOperations.getModel(conceptDeclaration).getLongName() + "." + SPropertyOperations.getString(conceptDeclaration, "name");
+    return jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(conceptDeclaration)) + "." + SPropertyOperations.getString(conceptDeclaration, "name");
   }
 
   public static String getEnumClassResolveInfo(SNode enumDeclaration) {

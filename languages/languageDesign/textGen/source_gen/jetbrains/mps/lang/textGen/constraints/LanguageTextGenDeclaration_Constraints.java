@@ -4,7 +4,7 @@ package jetbrains.mps.lang.textGen.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.smodel.LanguageAspect;
@@ -33,7 +33,7 @@ public class LanguageTextGenDeclaration_Constraints extends BaseConstraintsDescr
   }
 
   public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
-    return LanguageAspect.TEXT_GEN.is(model) || SModelStereotype.isGeneratorModel(model);
+    return LanguageAspect.TEXT_GEN.is(model.getModelDescriptor()) || SModelStereotype.isGeneratorModel(model);
   }
 
   private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:472e3702-e789-4c3f-b300-132c65ad44f1(jetbrains.mps.lang.textGen.constraints)", "1233929745439");

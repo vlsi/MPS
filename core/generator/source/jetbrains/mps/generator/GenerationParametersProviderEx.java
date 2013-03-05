@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.Collection;
 
@@ -24,5 +24,5 @@ import java.util.Collection;
  */
 public interface GenerationParametersProviderEx extends GenerationParametersProvider {
 
-  Collection<String> getAdditionalLanguages(SModelDescriptor descriptor);
+  Collection<String> getAdditionalLanguages(SModel descriptor);
 }

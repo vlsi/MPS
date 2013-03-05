@@ -15,31 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.cellMenu;
 
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.typesystem.inference.InequalitySystem;
+import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 
-import java.util.List;
-
-public interface NodeSubstituteInfo {
-  List<INodeSubstituteAction> getMatchingActions(String pattern, boolean strictMatching);
-
-  List<INodeSubstituteAction> getSmartMatchingActions(String pattern, boolean strictMatching, EditorCell contextCell);
-
-  void invalidateActions();
-
-  void setOriginalNode(SNode node);
-
-  SNode getOriginalNode();
-
-  void setOriginalText(String text);
-
-  String getOriginalText();
-
-  boolean hasExactlyNActions(String pattern, boolean strictMatching, int n);
-
-  boolean hasNoActionsWithPrefix(String pattern);
-
-  public InequalitySystem getInequalitiesSystem(EditorCell contextCell);
+public interface NodeSubstituteInfo extends SubstituteInfo {
 }

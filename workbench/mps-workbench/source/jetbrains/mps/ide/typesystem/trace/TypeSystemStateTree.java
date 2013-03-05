@@ -204,7 +204,8 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
       list.add(new TypeTreeNode(myOperationContext, node, type, myState.expand(type), myEditorComponent));
     }
     Collections.sort(list, new Comparator<TypeTreeNode>() {
-      public int compare(TypeTreeNode o1, TypeTreeNode o2) {
+      @Override
+    public int compare(TypeTreeNode o1, TypeTreeNode o2) {
         return o1.toString().compareTo(o2.toString());
       }
     });
@@ -229,7 +230,8 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
   private void highlightNodesWithTypes(final Collection<? extends MPSTreeNode> treeNodes) {
     clearHighlighting();
     ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
+      @Override
+    public void run() {
         NodeMaps maps = myState.getNodeMaps();
         List<EditorMessage> messages = new ArrayList<EditorMessage>();
         for (MPSTreeNode treeNode : treeNodes) {
@@ -259,9 +261,10 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
   protected JPopupMenu createPopupMenu(final MPSTreeNode treeNode) {
     BaseAction goToNode = null;
     final TypeSystemStateTreeNode stateNode = (TypeSystemStateTreeNode) treeNode;
-    final DefaultActionGroup group = ActionUtils.groupFromActions(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.GoToRule_Action")), goToNode);
+    final DefaultActionGroup group = ActionUtils.groupFromActions(ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.GoToRule_Action"), goToNode);
     ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
+      @Override
+    public void run() {
         NodeMaps maps = myState.getNodeMaps();
         List<SNode> vars = stateNode.getVariables();
         if (null == vars) {
@@ -272,9 +275,11 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
           if (node != null && node.getModel() != null) {
             final SNodeReference pointer = new jetbrains.mps.smodel.SNodePointer(node);
             group.add(new BaseAction("Go to node with type " + var) {
-              public void doExecute(AnActionEvent e, Map<String, Object> _params) {
+              @Override
+        public void doExecute(AnActionEvent e, Map<String, Object> _params) {
                 ModelAccess.instance().runWriteInEDT(new Runnable() {
-                  public void run() {
+                  @Override
+          public void run() {
                     SNode node = pointer.resolve(MPSModuleRepository.getInstance());
                     if (node == null) {
                       return;
@@ -291,6 +296,7 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
     return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent();
   }
 
+  @Override
   @Nullable
   public Object getData(@NonNls String id) {
     TypeSystemStateTreeNode currentNode = (TypeSystemStateTreeNode) this.getCurrentNode();
@@ -371,7 +377,8 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
     public EditorMessageUpdater() {
     }
 
-    public void valueChanged(TreeSelectionEvent event) {
+    @Override
+  public void valueChanged(TreeSelectionEvent event) {
       List<MPSTreeNode> selection = new ArrayList<MPSTreeNode>();
       TreePath[] selectionPaths = getSelectionPaths();
       if (selectionPaths == null) {

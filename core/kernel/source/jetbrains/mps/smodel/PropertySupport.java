@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
@@ -66,6 +66,7 @@ public abstract class PropertySupport {
 
   public static PropertySupport getPropertySupport(@NotNull final SNode propertyDeclaration) {
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<PropertySupport>() {
+      @Override
       public PropertySupport compute() {
         SNode dataType = SNodeUtil.getPropertyDeclaration_DataType(propertyDeclaration);
         if (dataType != null) {
@@ -132,12 +133,14 @@ public abstract class PropertySupport {
   }
 
   private static class DefaultPropertySupport extends PropertySupport {
+    @Override
     public boolean canSetValue(String value) {
       return true;
     }
   }
 
   private static class IntegerPropertySupport extends PropertySupport {
+    @Override
     public boolean canSetValue(String value) {
       try {
         Integer.parseInt(value);
@@ -150,10 +153,12 @@ public abstract class PropertySupport {
   }
 
   private static class BooleanPropertySupport extends PropertySupport {
+    @Override
     public boolean canSetValue(String value) {
       return String.valueOf(value).equals("true") || String.valueOf(value).equals("false");
     }
 
+    @Override
     public String fromInternalValue(String value) {
       if ("true".equals(value)) {
         return value;
@@ -161,6 +166,7 @@ public abstract class PropertySupport {
       return "false";
     }
 
+    @Override
     public String toInternalValue(String value) {
       if ("true".equals(value)) {
         return value;

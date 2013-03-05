@@ -31,7 +31,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.kernel.model.SModelUtil;
 import java.util.Collections;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.project.facets.JavaModuleOperations;
+import jetbrains.mps.project.facets.JavaModuleFacet;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.quickQueryLanguage.runtime.QueryExecutor;
 import jetbrains.mps.quickQueryLanguage.runtime.Query;
 import jetbrains.mps.smodel.IScope;
@@ -98,6 +101,7 @@ public class FindInstancesDialog extends BaseDialog {
     });
   }
 
+  @Override
   protected JComponent getMainComponent() {
     return this.myPanel;
   }
@@ -119,7 +123,7 @@ public class FindInstancesDialog extends BaseDialog {
       }
     });
     // <node> 
-    myEditor.make(Collections.singleton(language.value.getClassPathItem()));
+    myEditor.make(Collections.<IClassPathItem>singleton(JavaModuleOperations.createClassPathItem(language.value.getFacet(JavaModuleFacet.class).getClassPath(), FindInstancesDialog.class.getName())));
   }
 
   private void doProcessClassesData(final IClassesData cd) {
@@ -132,7 +136,7 @@ public class FindInstancesDialog extends BaseDialog {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         model.value = SNodeOperations.getModel(myNode);
-        fqName.value = model.value.getModelDescriptor().getLongName() + "." + QueryExecutor.GENERATED_QUERY_NAME;
+        fqName.value = jetbrains.mps.util.SNodeOperations.getModelLongName(model.value.getModelDescriptor()) + "." + QueryExecutor.GENERATED_QUERY_NAME;
         loader.value = cd.getClassLoader(SModelUtil.getDeclaringLanguage(SNodeOperations.getConceptDeclaration(FindInstancesDialog.this.myNode)).getClassLoader());
       }
     });
@@ -186,6 +190,7 @@ public class FindInstancesDialog extends BaseDialog {
     }
     myDisposed = true;
     ModelAccess.instance().runWriteInEDT(new Runnable() {
+      @Override
       public void run() {
         myEditor.disposeEditor();
         myModelOwner.unregisterModelOwner();

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.nanoc.debug.programState.DefaultThread" file="DefaultThread.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -18,6 +19,7 @@
   </dependency>
   <dependency className="jetbrains.mps.nanoc.debug.programState.GDBLocation" file="GDBLocation.java">
     <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
@@ -25,6 +27,7 @@
   </dependency>
   <dependency className="jetbrains.mps.nanoc.debug.programState.GDBStackFrame" file="GDBStackFrame.java">
     <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -43,6 +46,7 @@
     <classNode extendsClassName="jetbrains.mps.debug.api.programState.IStackFrame" />
   </dependency>
   <dependency className="jetbrains.mps.nanoc.debug.programState.SimpleValue" file="SimpleValue.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -51,6 +55,7 @@
     <classNode extendsClassName="jetbrains.mps.debug.api.programState.IValue" />
   </dependency>
   <dependency className="jetbrains.mps.nanoc.debug.programState.SimpleVarWatchable" file="SimpleVarWatchable.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.IValue" />

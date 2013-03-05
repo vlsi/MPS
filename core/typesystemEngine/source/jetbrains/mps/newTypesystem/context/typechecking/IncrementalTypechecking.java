@@ -30,7 +30,8 @@ import jetbrains.mps.newTypesystem.context.component.TypeSystemComponent;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
@@ -350,8 +351,8 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
 
   private class MyModelListenerManager {
     private ReferenceQueue<SNode> myReferenceQueue = new ReferenceQueue<SNode>();
-    private Map<SModelDescriptor, Integer> myNodesCount = new THashMap<SModelDescriptor, Integer>();
-    private Map<WeakReference, SModelDescriptor> myDescriptors = new THashMap<WeakReference, SModelDescriptor>();
+    private Map<SModel, Integer> myNodesCount = new THashMap<SModel, Integer>();
+    private Map<WeakReference, SModel> myDescriptors = new THashMap<WeakReference, SModel>();
     private SModelListener myListener;
 
     MyModelListenerManager(SModelListener listener) {
@@ -363,12 +364,12 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
      * We do not check for duplicated nodes
      */
     void track(SNode node) {
-      SModelDescriptor sm = node.getModel().getModelDescriptor();
+      SModel sm = node.getModel().getModelDescriptor();
 
       if (sm == null) return;
 
       if (!myNodesCount.containsKey(sm)) {
-        sm.addModelListener(myListener);
+        ((SModelInternal) sm).addModelListener(myListener);
         myNodesCount.put(sm, 1);
       } else {
         Integer oldValue = myNodesCount.get(sm);
@@ -385,10 +386,10 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
         WeakReference<SNode> ref = (WeakReference<SNode>) myReferenceQueue.poll();
         if (ref == null) return;
 
-        SModelDescriptor sm = myDescriptors.get(ref);
+        SModel sm = myDescriptors.get(ref);
         Integer count = myNodesCount.get(sm);
         if (count == 1) {
-          sm.removeModelListener(myListener);
+          ((SModelInternal) sm).removeModelListener(myListener);
           myNodesCount.remove(sm);
         } else {
           myNodesCount.put(sm, count - 1);
@@ -399,8 +400,8 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
     }
 
     void dispose() {
-      for (SModelDescriptor sm : Collections.unmodifiableCollection(myNodesCount.keySet())) {
-        sm.removeModelListener(myListener);
+      for (SModel sm : Collections.unmodifiableCollection(myNodesCount.keySet())) {
+        ((SModelInternal) sm).removeModelListener(myListener);
       }
     }
   }

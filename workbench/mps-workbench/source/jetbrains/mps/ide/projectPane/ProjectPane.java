@@ -53,7 +53,8 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.annotation.Hack;
 import org.jetbrains.annotations.NonNls;
@@ -80,6 +81,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   private static final Logger LOG = Logger.getLogger(ProjectPane.class);
   private ProjectView myProjectView;
   private ProjectTreeFindHelper myFindHelper = new ProjectTreeFindHelper() {
+    @Override
     protected ProjectTree getTree() {
       return ProjectPane.this.getTree();
     }
@@ -91,6 +93,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   public static final String ID = ProjectViewPane.ID;
 
   private FileEditorManagerAdapter myEditorListener = new FileEditorManagerAdapter() {
+    @Override
     public void selectionChanged(FileEditorManagerEvent event) {
       FileEditor fileEditor = event.getNewEditor();
       if (fileEditor instanceof MPSFileNodeEditor) {
@@ -100,6 +103,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
           if (editorComponent == null) return;
           final SNode sNode = editorComponent.getEditedNode();
           ModelAccess.instance().runReadInEDT(new Runnable() {
+            @Override
             public void run() {
               selectNodeWithoutExpansion(sNode);
             }
@@ -159,41 +163,51 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     return null;
   }
 
+  @Override
   public ProjectTree getTree() {
     return (jetbrains.mps.ide.projectPane.logicalview.ProjectTree) myTree;
   }
 
+  @Override
   public Project getProject() {
     return myProject;
   }
 
+  @Override
   public ProjectView getProjectView() {
     return myProjectView;
   }
 
+  @Override
   public String getTitle() {
     return "Logical View";
   }
 
+  @Override
   @NotNull
   public String getId() {
     return ID;
   }
 
+  @Override
   public int getWeight() {
     return 0;
   }
 
+  @Override
   public SelectInTarget createSelectInTarget() {
     return new ProjectPaneSelectInTarget(this.myProject, true);
   }
 
+  @Override
   public Icon getIcon() {
     return MPSIcons.ProjectPane.LogicalView;
   }
 
+  @Override
   public ActionCallback updateFromRoot(boolean restoreExpandedPaths) {
     myUpdateQueue.queue(new AbstractUpdate(UpdateID.REBUILD) {
+      @Override
       public void run() {
         if (getTree() == null) {
           return;
@@ -204,10 +218,12 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     return new ActionCallback(); // todo
   }
 
+  @Override
   public void select(Object element, final VirtualFile file, final boolean requestFocus) {
 
   }
 
+  @Override
   public JComponent createComponent() {
     if (isComponentCreated()) return myScrollPane;
 
@@ -220,6 +236,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     if (IdeMain.getTestMode() != TestMode.CORE_TEST) {
       // Looks like thid method can be called from different threads
       ThreadUtils.runInUIThreadNoWait(new Runnable() {
+        @Override
         public void run() {
           rebuildTree();
         }
@@ -237,6 +254,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
 
   public void rebuildTree() {
     myUpdateQueue.queue(new AbstractUpdate(UpdateID.REBUILD) {
+      @Override
       public void run() {
         if (getTree() == null || getProject().isDisposed()) {
           return;
@@ -254,8 +272,10 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     activatePane(new PaneActivator(false), true);
   }
 
+  @Override
   public void rebuild() {
     ModelAccess.instance().runReadInEDT(new Runnable() {
+      @Override
       public void run() {
         if (isDisposed() || getTree() == null) return;
         rebuildTree();
@@ -267,6 +287,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
 
   public void selectModule(@NotNull final SModule module, final boolean autofocus) {
     ModelAccess.instance().runReadInEDT(new Runnable() {
+      @Override
       public void run() {
         activatePane(new PaneActivator(true) {
           @Override
@@ -285,7 +306,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     });
   }
 
-  public void selectModel(@NotNull final SModelDescriptor model, boolean autofocus) {
+  public void selectModel(@NotNull final SModel model, boolean autofocus) {
     if (!ThreadUtils.isEventDispatchThread()) {
       throw new IllegalStateException("Can't use this outside of EDT");
     }
@@ -294,7 +315,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
       public void doOnPaneActivation() {
         SModelTreeNode modelTreeNode = myFindHelper.findMostSuitableModelTreeNode(model);
         if (modelTreeNode == null) {
-          LOG.warning("Couldn't select model \"" + model.getLongName() + "\" : tree node not found.");
+          LOG.warning("Couldn't select model \"" + SNodeOperations.getModelLongName(model) + "\" : tree node not found.");
           return;
         }
         getTree().selectNode(modelTreeNode);
@@ -322,6 +343,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
 
   private void selectNodeWithoutExpansion(final SNode node) {
     getTree().runWithoutExpansion(new Runnable() {
+      @Override
       public void run() {
         MPSTreeNodeEx sNodeNode = myFindHelper.findMostSuitableSNodeTreeNode(node);
         if (sNodeNode == null) {
@@ -335,7 +357,8 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
 
   //----select next queries----
 
-  public void selectNextModel(SModelDescriptor modelDescriptor) {
+  @Override
+  public void selectNextModel(SModel modelDescriptor) {
     final MPSTreeNode mpsTreeNode = myFindHelper.findNextTreeNode(modelDescriptor);
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       @Override
@@ -407,6 +430,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
       super(view);
     }
 
+    @Override
     @Nullable
     public Object getData(@NonNls String dataId) {
       return ProjectPane.this.getData(dataId);
@@ -424,6 +448,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     public final void run() {
       getProjectView().changeView(getId());
       myUpdateQueue.queue(new AbstractUpdate(UpdateID.SELECT) {
+        @Override
         public void run() {
           // TODO: check if we need running read action here, or should we better do it inside myFindHelper methods.
           if (myRunReadAction) {

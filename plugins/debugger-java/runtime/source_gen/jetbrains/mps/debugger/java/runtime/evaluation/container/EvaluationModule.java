@@ -17,9 +17,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.JavaModuleFacet;
-import jetbrains.mps.project.JavaModuleFacetImpl;
-import java.util.Collection;
 
 public class EvaluationModule extends AbstractModule implements SModule {
   private final ModuleDescriptor myDescriptor;
@@ -31,6 +28,7 @@ public class EvaluationModule extends AbstractModule implements SModule {
     myDescriptor = new ModuleDescriptor();
   }
 
+  @Override
   public String toString() {
     return "Evaluation Module";
   }
@@ -56,24 +54,15 @@ public class EvaluationModule extends AbstractModule implements SModule {
       path = null;
     } else {
       SetSequence.fromSet(myClassPaths).addElement(path);
+      myDescriptor.getAdditionalJavaStubPaths().add(path);
     }
-    invalidateClassPath();
     MPSModuleRepository.getInstance().fireModuleChanged(this);
     return path;
   }
 
   @NotNull
+  @Override
   public IScope getScope() {
     return GlobalScope.getInstance();
-  }
-
-  @Override
-  protected JavaModuleFacet createJavaModuleFacet() {
-    return new JavaModuleFacetImpl(this) {
-      @Override
-      public Collection<String> getAdditionalClassPath() {
-        return myClassPaths;
-      }
-    };
   }
 }

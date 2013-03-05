@@ -23,7 +23,7 @@ import jetbrains.mps.persistence.ModelDigestHelper;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
 import jetbrains.mps.smodel.InvalidSModel;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -72,9 +72,9 @@ public class BinarySModelDescriptor extends BaseEditableSModelDescriptor impleme
   @NotNull
   private BinarySModel loadSModel() {
     try {
-      return BinaryPersistence.readModel(getModelReference(), getSource().getFile());
+      return BinaryPersistence.readModel(getReference(), getSource().getFile());
     } catch (ModelReadException e) {
-      return new InvalidBinarySModel(getModelReference(), e);
+      return new InvalidBinarySModel(getReference(), e);
     }
   }
 
@@ -134,7 +134,7 @@ public class BinarySModelDescriptor extends BaseEditableSModelDescriptor impleme
   @Override
   public int getVersion() {
     SModel model = getCurrentModelInternal();
-    if (model != null) return model.getVersion();
+    if (model != null) return ((jetbrains.mps.smodel.SModel) model).getVersion();
     return myHeader.getVersion();
   }
 

@@ -26,6 +26,7 @@ public class TypeVarScope extends SearchScopeWithNode {
   }
 
   @NotNull
+  @Override
   public List<SNode> getNodes(Condition<SNode> condition) {
     List<SNode> vars = new ArrayList<SNode>();
 

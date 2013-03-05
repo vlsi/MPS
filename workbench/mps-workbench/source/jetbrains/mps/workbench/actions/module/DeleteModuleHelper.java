@@ -19,10 +19,14 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.*;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.StandaloneMPSProject;
+import jetbrains.mps.project.facets.JavaModuleFacet;
+import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
@@ -54,15 +58,25 @@ public class DeleteModuleHelper {
     }
 
     if (deleteFiles) {
-      for (SModelDescriptor model : module.getOwnModelDescriptors()) {
+      for (SModel model : module.getOwnModelDescriptors()) {
         DeleteModelHelper.delete(module, model, true);
       }
 
-      deleteFile(module.getClassesGen().getPath());
-      deleteFile(module.getGeneratorOutputPath());
-      deleteFile(module.getTestsGeneratorOutputPath());
-      deleteFile(FileGenerationUtil.getCachesPath(module.getGeneratorOutputPath()));
-      if (module.getBundleHome().getChildren().isEmpty()){
+      if (module.getFacet(JavaModuleFacet.class) != null) {
+        IFile classesGen = module.getFacet(JavaModuleFacet.class).getClassesGen();
+        if (classesGen != null) {
+          deleteFile(classesGen.getPath());
+        }
+      }
+      if (module instanceof AbstractModule) {
+        String outputPath = ((AbstractModule) module).getOutputPath().getPath();
+        deleteFile(outputPath);
+        deleteFile(FileGenerationUtil.getCachesPath(outputPath));
+      }
+      if (module.getFacet(TestsFacet.class) != null) {
+        deleteFile(module.getFacet(TestsFacet.class).getTestsOutputPath().getPath());
+      }
+      if (module.getBundleHome().getChildren().isEmpty()) {
         deleteFile(module.getBundleHome().getPath());
       }
 

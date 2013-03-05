@@ -60,9 +60,11 @@ public class GoToRootNode_Action extends BaseAction {
       ChooseByNamePopup popup = MpsPopupFactory.createNodePopupWithParentAction(project, chooseSNodeResult, GoToRootNode_Action.this);
 
       popup.invoke(new ChooseByNamePopupComponent.Callback() {
+        @Override
         public void onClose() {
         }
 
+        @Override
         public void elementChosen(Object element) {
           ((NavigationItem) element).navigate(true);
         }

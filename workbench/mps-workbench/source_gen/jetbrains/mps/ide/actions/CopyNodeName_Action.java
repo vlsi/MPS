@@ -56,7 +56,7 @@ public class CopyNodeName_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      CopyPasteUtil.copyTextToClipboard(((SNode) MapSequence.fromMap(_params).get("node")).getModel().getLongName() + "." + ((SNode) MapSequence.fromMap(_params).get("node")).getName());
+      CopyPasteUtil.copyTextToClipboard(SNodeOperations.getModelLongName(((SNode) MapSequence.fromMap(_params).get("node")).getModel()) + "." + ((SNode) MapSequence.fromMap(_params).get("node")).getName());
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "CopyNodeName", t);
     }

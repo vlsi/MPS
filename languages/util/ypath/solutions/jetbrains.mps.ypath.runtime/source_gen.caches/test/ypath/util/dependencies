@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="test.ypath.util.TestFilterTraversal" file="TestFilterTraversal.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.ypath.runtime.IFilter" />
     <classNode dependClassName="jetbrains.mps.ypath.runtime.TraversalAxis" />

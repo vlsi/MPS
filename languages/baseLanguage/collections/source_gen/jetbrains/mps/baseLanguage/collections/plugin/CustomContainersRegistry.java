@@ -11,13 +11,12 @@ import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SModelDescriptor;
 
 public class CustomContainersRegistry {
   /*package*/ static CustomContainersRegistry INSTANCE = new CustomContainersRegistry();
@@ -62,7 +61,7 @@ public class CustomContainersRegistry {
   }
 
   public IModule getOwningModule(SModel model) {
-    SModelDescriptor fmdesc = model.getModelDescriptor();
+    SModel fmdesc = model.getModelDescriptor();
     return (fmdesc != null ?
       fmdesc.getModule() :
       null

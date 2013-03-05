@@ -14,10 +14,10 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.make.TextPreviewUtil;
-import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.List;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.logging.Logger;
 
 public class TextPreviewModel_Action extends BaseAction {
@@ -79,21 +79,21 @@ public class TextPreviewModel_Action extends BaseAction {
   }
 
   private SModel modelToGenerate(final Map<String, Object> _params) {
-    SModelDescriptor md = null;
-    if (((SModelDescriptor) MapSequence.fromMap(_params).get("cmodel")) != null) {
-      md = ((SModelDescriptor) MapSequence.fromMap(_params).get("cmodel"));
-    } else if (((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")) != null && ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).size() > 0) {
-      md = ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).get(0);
+    SModel md = null;
+    if (((SModel) MapSequence.fromMap(_params).get("cmodel")) != null) {
+      md = ((SModel) MapSequence.fromMap(_params).get("cmodel"));
+    } else if (((List<SModel>) MapSequence.fromMap(_params).get("models")) != null && ((List<SModel>) MapSequence.fromMap(_params).get("models")).size() > 0) {
+      md = ((List<SModel>) MapSequence.fromMap(_params).get("models")).get(0);
     }
     return md;
   }
 
   private boolean isUserEditableModel(SModel md, final Map<String, Object> _params) {
     // TODO SModelDescriptor cast 
-    if (!(SModelStereotype.isUserModel((SModelDescriptor) md))) {
+    if (!(SModelStereotype.isUserModel((SModelInternal) md))) {
       return false;
     }
-    return md instanceof EditableSModelDescriptor && !(((EditableSModelDescriptor) md).isReadOnly());
+    return md instanceof EditableSModel && !(((EditableSModel) md).isReadOnly());
   }
 
   private static Logger LOG = Logger.getLogger(TextPreviewModel_Action.class);

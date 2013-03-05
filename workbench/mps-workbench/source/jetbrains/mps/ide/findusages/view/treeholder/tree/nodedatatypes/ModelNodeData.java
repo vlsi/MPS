@@ -23,8 +23,9 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jdom.Element;
@@ -42,42 +43,44 @@ public class ModelNodeData extends BaseNodeData {
     super(role,
       (isResult && nodeRepresentator != null) ?
         nodeRepresentator.getPresentation(result.getObject()) :
-        ((SModel) result.getPathObject()).getModelDescriptor().getLongName(),
+        SNodeOperations.getModelLongName(((SModel) result.getPathObject()).getModelDescriptor()),
       "",
       false,
       isResult,
       resultsSection);
-    myModelReference = ((SModel) result.getPathObject()).getModelDescriptor().getSModelReference();
+    myModelReference = ((SModel) result.getPathObject()).getModelDescriptor().getReference();
   }
 
   public ModelNodeData(PathItemRole role, SModel model, boolean isResult, boolean resultsSection) {
-    super(role, model.getModelDescriptor().getLongName()+ (!model.getStereotype().isEmpty() ? "@"+ model.getStereotype(): ""), "", false, isResult, resultsSection);
-    myModelReference = model.getModelDescriptor().getSModelReference();
+    super(role, SNodeOperations.getModelLongName(model.getModelDescriptor()) + (!jetbrains.mps.util.SNodeOperations.getModelStereotype(model).isEmpty() ? "@"+ jetbrains.mps.util.SNodeOperations.getModelStereotype(model) : ""), "", false, isResult, resultsSection);
+    myModelReference = model.getModelDescriptor().getReference();
   }
 
   public ModelNodeData(Element element, Project project) throws CantLoadSomethingException {
     read(element, project);
   }
 
+  @Override
   public Icon getIcon() {
-    SModelDescriptor modelDescriptor = getModelDescriptor();
+    SModel modelDescriptor = getModelDescriptor();
     if (modelDescriptor != null) {
       return IconManager.getIconFor(modelDescriptor);
     }
     return jetbrains.mps.ide.projectPane.Icons.MODEL_ICON;
   }
 
+  @Override
   public Object getIdObject() {
     return isResultNode() ? (getModelReference().toString() + "/" + getPlainText()) : getModel();
   }
 
   public SModel getModel() {
-    SModelDescriptor modelDescriptor = getModelDescriptor();
+    SModel modelDescriptor = getModelDescriptor();
     if (modelDescriptor == null) return null;
     return modelDescriptor.getSModel();
   }
 
-  public SModelDescriptor getModelDescriptor() {
+  public SModel getModelDescriptor() {
     return SModelRepository.getInstance().getModelDescriptor(myModelReference);
   }
 
@@ -85,6 +88,7 @@ public class ModelNodeData extends BaseNodeData {
     return myModelReference;
   }
 
+  @Override
   public void write(Element element, Project project) throws CantSaveSomethingException {
     super.write(element, project);
     Element modelXML = new Element(MODEL);
@@ -92,12 +96,14 @@ public class ModelNodeData extends BaseNodeData {
     element.addContent(modelXML);
   }
 
+  @Override
   public void read(Element element, Project project) throws CantLoadSomethingException {
     super.read(element, project);
     Element modelXML = element.getChild(MODEL);
     myModelReference = SModelReference.fromString(modelXML.getAttributeValue(UID));
   }
 
+  @Override
   public String getText(TextOptions options) {
     boolean showCounter = options.myCounters && isResultsSection();
     String counter = showCounter ? " " + sizeRepresentation(options.mySubresultsCount) : "";

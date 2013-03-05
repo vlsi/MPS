@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
 
 @Deprecated
 public class ModelsOnlyScope extends ModelsScope {
-  public ModelsOnlyScope(SModelDescriptor... modelDescriptors) {
+  public ModelsOnlyScope(SModel... modelDescriptors) {
     super(modelDescriptors);
   }
 }

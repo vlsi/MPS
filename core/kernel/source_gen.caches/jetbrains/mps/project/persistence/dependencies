@@ -114,6 +114,7 @@
     <classNode dependClassName="jetbrains.mps.project.structure.modules.Dependency" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.LanguageDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleDescriptor" />
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleFacetDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageID" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />

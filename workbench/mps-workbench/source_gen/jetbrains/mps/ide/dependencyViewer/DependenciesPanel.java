@@ -91,6 +91,7 @@ public class DependenciesPanel extends JPanel {
     myScope = sourceScope;
     final Wrappers._T<SearchResults<SNode>> results = new Wrappers._T<SearchResults<SNode>>(new SearchResults<SNode>());
     ProgressManager.getInstance().run(new Task.Modal(myProject, "Analyzing dependencies", true) {
+      @Override
       public void run(@NotNull final ProgressIndicator indicator) {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
@@ -125,6 +126,7 @@ public class DependenciesPanel extends JPanel {
       return results[0];
     }
     ProgressManager.getInstance().run(new Task.Modal(myProject, "Analyzing dependencies", true) {
+      @Override
       public void run(@NotNull ProgressIndicator indicator) {
         ProgressMonitor monitor = new ProgressMonitorAdapter(indicator);
         SearchResults result = (myIsMeta ?
@@ -160,6 +162,7 @@ public class DependenciesPanel extends JPanel {
       super("Close", "Close dependencies viewer", AllIcons.Actions.Cancel);
     }
 
+    @Override
     public void actionPerformed(AnActionEvent event) {
       myTool.setAvailable(false);
     }
@@ -170,6 +173,7 @@ public class DependenciesPanel extends JPanel {
       super("Rerun", "Rerun dependencies viewer", AllIcons.Actions.RefreshUsages);
     }
 
+    @Override
     public void actionPerformed(AnActionEvent event) {
       resetContent(myInitialScope, myMPSProject, myIsMeta);
     }
@@ -180,10 +184,12 @@ public class DependenciesPanel extends JPanel {
       super("Show used languages", "Show used languages", MPSIcons.Nodes.Language);
     }
 
+    @Override
     public boolean isSelected(AnActionEvent event) {
       return myIsMeta;
     }
 
+    @Override
     public void setSelected(AnActionEvent event, boolean b) {
       resetContent(myInitialScope, myMPSProject, b);
     }

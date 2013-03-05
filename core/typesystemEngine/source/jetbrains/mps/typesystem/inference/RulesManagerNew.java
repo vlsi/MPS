@@ -17,36 +17,39 @@ package jetbrains.mps.typesystem.inference;
 
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.misc.hash.HashMap;
+import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class RulesManagerNew {
-  private Map<SModelDescriptor, ModelRules> myModelsToRules = new HashMap<SModelDescriptor, ModelRules>();
+  private Map<SModel, ModelRules> myModelsToRules = new HashMap<SModel, ModelRules>();
   private TypeChecker myTypeChecker;
 
   public RulesManagerNew(TypeChecker typeChecker) {
     myTypeChecker = typeChecker;
     //myOverloadedOperationsManager = new OverloadedOperationsManager(myTypeChecker);
     SModelRepository.getInstance().addModelRepositoryListener(new SModelRepositoryAdapter() {
-      public void modelRemoved(SModelDescriptor modelDescriptor) {
+      public void modelRemoved(SModel modelDescriptor) {
         myModelsToRules.remove(modelDescriptor);
       }
     });
   }
 
   public void clear() {
-    for (Map.Entry<SModelDescriptor, ModelRules> entry : myModelsToRules.entrySet()) {
+    for (Map.Entry<SModel, ModelRules> entry : myModelsToRules.entrySet()) {
       entry.getValue().clear();
     }
     myModelsToRules.clear();
   }
 
   private ModelRules getModelRules(SNode node) {
-    SModelDescriptor model = node.getModel().getModelDescriptor();
+    SModel model = node.getModel().getModelDescriptor();
     ModelRules result = myModelsToRules.get(model);
     if (result == null) {
       result = new ModelRules(model);

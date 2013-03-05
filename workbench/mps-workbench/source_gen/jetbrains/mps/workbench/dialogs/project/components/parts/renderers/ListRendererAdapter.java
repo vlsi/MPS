@@ -15,6 +15,7 @@ public class ListRendererAdapter implements TableCellRenderer {
     myCellRenderer = cellRenderer;
   }
 
+  @Override
   public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
     return myCellRenderer.getListCellRendererComponent(new JBList(), value, row, isSelected, hasFocus);
   }

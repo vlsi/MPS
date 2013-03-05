@@ -30,7 +30,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
@@ -117,7 +117,7 @@ public final class CreateFromUsageUtil {
               ModelAccess.instance().runWriteActionInCommand(new Runnable() {
                 public void run() {
                   SNode result = NodeFactoryManager.createNode(concept, null, null, model, scope);
-                  model.addRoot(result);
+                  model.addRootNode(result);
                   if (newRootHandler != null) {
                     newRootHandler.set(result);
                   }

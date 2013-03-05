@@ -13,10 +13,10 @@ import jetbrains.mps.lang.resources.behavior.IconResource_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.extapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -55,8 +55,8 @@ public class ExtractIconsUtil {
   }
 
   private static SNode getIconResourceBundle(Language lang) {
-    EditableSModelDescriptor pluginModel = getPluginModel(lang);
-    SModel smodel = pluginModel.getSModel();
+    EditableSModel pluginModel = getPluginModel(lang);
+    SModel smodel = ((SModelInternal) pluginModel).getSModel();
     SNode irb = ListSequence.fromList(SModelOperations.getRoots(smodel, "jetbrains.mps.lang.resources.structure.IconResourceBundle")).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode irb) {
         return "Behavior".equals(SPropertyOperations.getString(irb, "name"));
@@ -69,8 +69,8 @@ public class ExtractIconsUtil {
     return irb;
   }
 
-  private static EditableSModelDescriptor getPluginModel(Language lang) {
-    SModelDescriptor plugin = LanguageAspect.PLUGIN.get(lang);
+  private static EditableSModel getPluginModel(Language lang) {
+    SModel plugin = LanguageAspect.PLUGIN.get(lang);
     LanguageAspect aspectForModel = lang.getAspectForModel(plugin);
     return aspectForModel.getOrCreate(lang);
   }

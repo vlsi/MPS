@@ -19,7 +19,6 @@ package jetbrains.mps.excluded;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.containers.MultiMap;
-import jetbrains.mps.util.misc.hash.HashSet;
 import junit.framework.Assert;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -29,6 +28,7 @@ import org.junit.Test;
 import java.io.File;
 import java.io.IOException;
 import java.io.StringReader;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 

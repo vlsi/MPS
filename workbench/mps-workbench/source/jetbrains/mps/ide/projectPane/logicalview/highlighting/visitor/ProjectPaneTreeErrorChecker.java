@@ -23,7 +23,10 @@ import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.validation.ModelValidator;
 import jetbrains.mps.project.validation.ModuleValidator;
 import jetbrains.mps.project.validation.ModuleValidatorFactory;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -32,10 +35,12 @@ import java.util.Collections;
 import java.util.List;
 
 public class ProjectPaneTreeErrorChecker extends TreeNodeVisitor {
+  @Override
   protected void visitModelNode(final SModelTreeNode node) {
     List<String> errors = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
+      @Override
       public List<String> compute() {
-        final SModelDescriptor modelDescriptor = node.getSModelDescriptor();
+        final SModel modelDescriptor = node.getSModelDescriptor();
         if (modelDescriptor == null) return Collections.emptyList();
         if (!(modelDescriptor.isLoaded())) return Collections.emptyList();
         IOperationContext context = node.getOperationContext();
@@ -57,8 +62,10 @@ public class ProjectPaneTreeErrorChecker extends TreeNodeVisitor {
     ourUpdater.addUpdate(node, new ErrorStateNodeUpdate(result, false));
   }
 
+  @Override
   protected void visitModuleNode(final ProjectModuleTreeNode node) {
     Pair<List<String>, List<String>> problems = ModelAccess.instance().runReadAction(new Computable<Pair<List<String>, List<String>>>() {
+      @Override
       public Pair<List<String>, List<String>> compute() {
         SModule module = node.getModule();
         if (module == null) return null;
@@ -93,8 +100,9 @@ public class ProjectPaneTreeErrorChecker extends TreeNodeVisitor {
     ourUpdater.addUpdate(node, new ErrorStateNodeUpdate(result, warning));
   }
 
+  @Override
   protected void visitProjectNode(final ProjectTreeNode node) {
-    String errors = ((StandaloneMPSProject)node.getProject()).getErrors();
+    String errors = ((StandaloneMPSProject) node.getProject()).getErrors();
     ourUpdater.addUpdate(node, new ErrorStateNodeUpdate(errors, false));
   }
 }

@@ -22,11 +22,11 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.UnregisteredNodes;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
+import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
@@ -63,13 +63,13 @@ public class InternalActionsUtils {
       public void run() {
         Iterable<IModule> modules = MPSModuleRepository.getInstance().getAllModules();
         LOG.warning("Modules: " + Sequence.fromIterable(modules).count());
-        modelReferences.value = Sequence.fromIterable(modules).translate(new ITranslator2<IModule, SModelDescriptor>() {
-          public Iterable<SModelDescriptor> translate(IModule it) {
+        modelReferences.value = Sequence.fromIterable(modules).translate(new ITranslator2<IModule, SModel>() {
+          public Iterable<SModel> translate(IModule it) {
             return it.getOwnModelDescriptors();
           }
-        }).select(new ISelector<SModelDescriptor, SModelReference>() {
-          public SModelReference select(SModelDescriptor it) {
-            return it.getSModelReference();
+        }).select(new ISelector<SModel, SModelReference>() {
+          public SModelReference select(SModel it) {
+            return it.getReference();
           }
         });
         LOG.warning("Models: " + Sequence.fromIterable(modelReferences.value).count());
@@ -90,7 +90,7 @@ public class InternalActionsUtils {
             }
             SModel model = check_6btuvs_a0d0a0a2a4a2(SModelRepository.getInstance().getModelDescriptor(modelRef));
             if (model != null) {
-              for (SNode node : model.nodes()) {
+              for (SNode node : new NodesIterable(model)) {
                 try {
                   nodeCallback.invoke(node);
                 } catch (Throwable t) {
@@ -115,6 +115,7 @@ public class InternalActionsUtils {
       throw new IllegalStateException("Must be executed outside of write action");
     }
     ProgressManager.getInstance().run(new Task.Modal(project, actionName, true) {
+      @Override
       public void run(@NotNull ProgressIndicator indicator) {
         executeActionOnAllNodes(actionName, new ProgressMonitorAdapter(indicator), nodeCallback);
       }
@@ -123,11 +124,12 @@ public class InternalActionsUtils {
 
   public static void showUsagesViewForNodes(Project project, final List<SNodeReference> nodes) {
     IResultProvider provider = FindUtils.makeProvider(new IFinder() {
+      @Override
       public SearchResults find(SearchQuery query, ProgressMonitor progress) {
         SearchResults results = new SearchResults<SNode>();
         for (SNode node : ListSequence.fromList(nodes).select(new ISelector<SNodeReference, SNode>() {
           public SNode select(SNodeReference it) {
-            return ((SNodePointer) it).getNode();
+            return ((SNodePointer) it).resolve(MPSModuleRepository.getInstance());
           }
         }).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -145,7 +147,7 @@ public class InternalActionsUtils {
 
   private static Logger LOG = Logger.getLogger(InternalActionsUtils.class);
 
-  private static SModel check_6btuvs_a0d0a0a2a4a2(SModelDescriptor checkedDotOperand) {
+  private static SModel check_6btuvs_a0d0a0a2a4a2(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSModel();
     }

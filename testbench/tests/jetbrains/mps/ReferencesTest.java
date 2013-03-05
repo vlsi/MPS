@@ -28,8 +28,11 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.validation.ModelValidator;
 import jetbrains.mps.project.validation.ModuleValidatorFactory;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
+import org.jetbrains.mps.openapi.model.util.NodesIterable;
 
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
@@ -81,7 +84,7 @@ public class ReferencesTest extends BaseMPSTest {
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (SModelDescriptor sm : SModelRepository.getInstance().getModelDescriptors()) {
+        for (SModel sm : SModelRepository.getInstance().getModelDescriptors()) {
           if (!SModelStereotype.isUserModel(sm)) continue;
           checkModel(sm);
         }
@@ -98,7 +101,7 @@ public class ReferencesTest extends BaseMPSTest {
     assertTrue(fatals.isEmpty());
   }
 
-  private void checkModel(final SModelDescriptor sm) {
+  private void checkModel(final SModel sm) {
     final IScope scope = sm.getModule().getScope();
     List<String> validationResult = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
       public List<String> compute() {
@@ -106,16 +109,16 @@ public class ReferencesTest extends BaseMPSTest {
       }
     });
     for (String item : validationResult) {
-      LOG.error("Error in model " + sm.getSModelReference().getSModelFqName() + " : " + item);
+      LOG.error("Error in model " + sm.getReference().getSModelFqName() + " : " + item);
     }
 
-    for (SNode node : sm.getSModel().nodes()) {
+    for (SNode node : new NodesIterable(sm.getSModel())) {
       if (SModelUtil.findConceptDeclaration(node.getConcept().getId(), GlobalScope.getInstance()) == null) {
-        LOG.error("Error in model " + sm.getSModelReference().getSModelFqName() + " : Unknown concept " + node.getConcept().getId());
+        LOG.error("Error in model " + sm.getReference().getSModelFqName() + " : Unknown concept " + node.getConcept().getId());
       }
     }
 
-    for (SNode node : sm.getSModel().nodes()) {
+    for (SNode node : new NodesIterable(sm.getSModel())) {
 
       for (SReference ref : node.getReferences()) {
         if (SNodeUtil.hasReferenceMacro(node, ref.getRole())) {
@@ -123,7 +126,7 @@ public class ReferencesTest extends BaseMPSTest {
         }
 
         if (ref.getTargetNode() == null) {
-          LOG.error("Error in model " + sm.getSModelReference().getSModelFqName() + " : Broken reference in node " + node);
+          LOG.error("Error in model " + sm.getReference().getSModelFqName() + " : Broken reference in node " + node);
         }
       }
     }

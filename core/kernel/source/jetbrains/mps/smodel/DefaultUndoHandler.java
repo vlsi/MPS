@@ -13,29 +13,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
 import jetbrains.mps.project.Project;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.Nullable;
 
 public class DefaultUndoHandler implements UndoHandler {
+  @Override
   public void addUndoableAction(SNodeUndoableAction action) {
 
   }
 
+  @Override
   public <T> T runNonUndoableAction(Computable<T> t) {
     return t.compute();
   }
 
+  @Override
   public boolean needRegisterUndo(@Nullable SModel model) {
     return false;
   }
 
+  @Override
   public boolean isInsideUndoableCommand() {
     return false;
   }
 
+  @Override
   public void flushCommand(Project p) {
 
   }

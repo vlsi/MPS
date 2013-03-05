@@ -20,7 +20,8 @@ import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.generator.template.TemplateFunctionMethodName;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.QueryMethodGenerated;
@@ -43,7 +44,7 @@ public class TemplateMappingScriptInterpreted implements TemplateMappingScript {
 
   @Override
   public String getLongName() {
-    return "'" + scriptNode.getName() + "' (" + scriptNode.getModel().getSModelFqName() + ")";
+    return "'" + scriptNode.getName() + "' (" + scriptNode.getModel().getReference().getSModelFqName() + ")";
   }
 
   @Override

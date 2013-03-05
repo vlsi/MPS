@@ -128,6 +128,8 @@ public interface EditorCell {
 
   Style getStyle();
 
+  void setStyle(Style style);
+
   KeyMap getKeyMap();
 
   void addKeyMap(KeyMap keyMap);
@@ -139,4 +141,8 @@ public interface EditorCell {
   Collection<CellActionType> getAvailableActions();
 
   List<SimpleEditorMessage> getMessages();
+
+  void setSubstituteInfo(SubstituteInfo info);
+
+  SubstituteInfo getSubstituteInfo();
 }

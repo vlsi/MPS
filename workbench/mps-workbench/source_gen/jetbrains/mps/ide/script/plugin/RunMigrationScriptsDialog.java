@@ -69,6 +69,7 @@ public class RunMigrationScriptsDialog extends JDialog {
     contentPane.setLayout(new BorderLayout());
     contentPane.setBorder(BorderFactory.createEmptyBorder(4, 4, 4, 4));
     contentPane.registerKeyboardAction(new AbstractAction("Dispose dialog") {
+      @Override
       public void actionPerformed(ActionEvent e) {
         setVisible(false);
       }
@@ -96,6 +97,7 @@ public class RunMigrationScriptsDialog extends JDialog {
     buttonsFlow.add(myOpenSelectedButton);
     buttonsFlow.add(closeButton);
     myCheckButton.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         int[] ints = myTable.getSelectedRows();
         for (int i : ints) {
@@ -104,6 +106,7 @@ public class RunMigrationScriptsDialog extends JDialog {
       }
     });
     myUnCheckButton.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         int[] ints = myTable.getSelectedRows();
         for (int i : ints) {
@@ -112,18 +115,21 @@ public class RunMigrationScriptsDialog extends JDialog {
       }
     });
     myRunCheckedButton.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         myRunChecked = true;
         RunMigrationScriptsDialog.this.setVisible(false);
       }
     });
     myOpenSelectedButton.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         myOpenSelected = true;
         RunMigrationScriptsDialog.this.setVisible(false);
       }
     });
     closeButton.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         RunMigrationScriptsDialog.this.setVisible(false);
       }
@@ -133,11 +139,13 @@ public class RunMigrationScriptsDialog extends JDialog {
     buttons.add(buttonsFlow, BorderLayout.EAST);
     panel.add(buttons, BorderLayout.SOUTH);
     myTable.getModel().addTableModelListener(new TableModelListener() {
+      @Override
       public void tableChanged(TableModelEvent e) {
         RunMigrationScriptsDialog.this.updateButtons();
       }
     });
     myTable.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+      @Override
       public void valueChanged(ListSelectionEvent e) {
         RunMigrationScriptsDialog.this.updateButtons();
       }
@@ -196,10 +204,12 @@ public class RunMigrationScriptsDialog extends JDialog {
       super(new String[]{"", "script", "category", "language"}, ListSequence.fromList(myScripts).count());
     }
 
+    @Override
     public boolean isCellEditable(int row, int column) {
       return column == 0;
     }
 
+    @Override
     public Class<?> getColumnClass(int column) {
       if (column == 0) {
         return Boolean.class;
@@ -207,6 +217,7 @@ public class RunMigrationScriptsDialog extends JDialog {
       return super.getColumnClass(column);
     }
 
+    @Override
     public Object getValueAt(int row, int column) {
       SNode sn = ListSequence.fromList(myScripts).getElement(row);
       if (column == 0) {
@@ -229,6 +240,7 @@ public class RunMigrationScriptsDialog extends JDialog {
       return null;
     }
 
+    @Override
     public void setValueAt(Object aValue, int row, int column) {
       String id = ListSequence.fromList(myScripts).getElement(row).getNodeId().toString();
       if ((Boolean) aValue) {
@@ -251,18 +263,22 @@ public class RunMigrationScriptsDialog extends JDialog {
     private MySortingTableModel() {
     }
 
+    @Override
     public boolean isCellEditable(int row, int column) {
       return super.isCellEditable(convertRowIndexToModel(row), column);
     }
 
+    @Override
     public Class<?> getColumnClass(int column) {
       return super.getColumnClass(column);
     }
 
+    @Override
     public Object getValueAt(int row, int column) {
       return super.getValueAt(convertRowIndexToModel(row), column);
     }
 
+    @Override
     public void setValueAt(Object aValue, int row, int column) {
       super.setValueAt(aValue, convertRowIndexToModel(row), column);
       fireTableCellUpdated(row, column);
@@ -295,6 +311,7 @@ public class RunMigrationScriptsDialog extends JDialog {
       TableColumnModel columnModel = table.getColumnModel();
       for (int i = 0; i < columnModel.getColumnCount(); i++) {
         columnModel.getColumn(i).setHeaderRenderer(new TableCellRenderer() {
+          @Override
           public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
             Component c = table.getTableHeader().getDefaultRenderer().getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
             column = table.convertColumnIndexToModel(column);
@@ -315,6 +332,7 @@ public class RunMigrationScriptsDialog extends JDialog {
       }
       final JTableHeader header = table.getTableHeader();
       header.addMouseListener(new MouseAdapter() {
+        @Override
         public void mouseClicked(MouseEvent e) {
           int col = header.columnAtPoint(e.getPoint());
           col = header.getTable().convertColumnIndexToModel(col);
@@ -362,6 +380,7 @@ public class RunMigrationScriptsDialog extends JDialog {
         }
         List<Pair<Integer, String>> valuesSorted = new ArrayList<Pair<Integer, String>>(values);
         Collections.sort(valuesSorted, new Comparator<Pair<Integer, String>>() {
+          @Override
           public int compare(Pair<Integer, String> o1, Pair<Integer, String> o2) {
             return o1.o2.compareTo(o2.o2);
           }
@@ -387,15 +406,18 @@ public class RunMigrationScriptsDialog extends JDialog {
       mySize = size;
     }
 
+    @Override
     public void paintIcon(Component c, Graphics g, int x, int y) {
       g.setColor(UIManager.getColor("controlDkShadow"));
       g.fillPolygon(new int[]{myXoff + 0, myXoff + mySize, myXoff + mySize / 2}, new int[]{myYoff + 0, myYoff + 0, myYoff + (int) (mySize * 0.87)}, 3);
     }
 
+    @Override
     public int getIconWidth() {
       return mySize + myXoff;
     }
 
+    @Override
     public int getIconHeight() {
       return mySize + myYoff;
     }
@@ -410,15 +432,18 @@ public class RunMigrationScriptsDialog extends JDialog {
       mySize = size;
     }
 
+    @Override
     public void paintIcon(Component c, Graphics g, int x, int y) {
       g.setColor(UIManager.getColor("controlDkShadow"));
       g.fillPolygon(new int[]{myXoff + 0, myXoff + mySize / 2, myXoff + mySize}, new int[]{myYoff + (int) (mySize * 0.87), myYoff + 0, myYoff + (int) (mySize * 0.87)}, 3);
     }
 
+    @Override
     public int getIconWidth() {
       return mySize + myXoff;
     }
 
+    @Override
     public int getIconHeight() {
       return mySize + myYoff;
     }

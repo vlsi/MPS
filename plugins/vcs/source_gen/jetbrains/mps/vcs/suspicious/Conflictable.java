@@ -24,6 +24,7 @@ public abstract class Conflictable {
     return getFile().equals(((Conflictable) object).getFile());
   }
 
+  @Override
   public int hashCode() {
     return getFile().hashCode();
   }

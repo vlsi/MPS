@@ -54,6 +54,7 @@ public abstract class Feature {
   }
 
   @NotNull
+  @Override
   public abstract String toString();
 
   public Feature[] getAncestors() {

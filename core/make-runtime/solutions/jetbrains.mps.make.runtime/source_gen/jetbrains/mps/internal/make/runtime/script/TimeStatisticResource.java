@@ -13,6 +13,7 @@ public class TimeStatisticResource implements IResource {
     this.statistic = statistic;
   }
 
+  @Override
   public String describe() {
     return "Statistic of targets execution time (for internal use only)";
   }

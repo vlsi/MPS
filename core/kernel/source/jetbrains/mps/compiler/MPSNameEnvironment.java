@@ -24,6 +24,7 @@ import org.eclipse.jdt.internal.compiler.env.NameEnvironmentAnswer;
 public abstract class MPSNameEnvironment implements INameEnvironment {
   protected abstract IClassPathItem getClassPathItem();
 
+  @Override
   public NameEnvironmentAnswer findType(char[][] compoundTypeName) {
     StringBuilder fqName = new StringBuilder();
     for (int i = 0; i < compoundTypeName.length; i++) {
@@ -36,10 +37,12 @@ public abstract class MPSNameEnvironment implements INameEnvironment {
     return findType(fqName.toString());
   }
 
+  @Override
   public NameEnvironmentAnswer findType(char[] typeName, char[][] packageName) {
     return findType(toQualifiedName(packageName, typeName));
   }
 
+  @Override
   public boolean isPackage(char[][] parentPackageName, char[] packageName) {
     String pname = toQualifiedName(parentPackageName, packageName);
     return getClassPathItem().getAvailableClasses(pname).iterator().hasNext() ||
@@ -66,6 +69,7 @@ public abstract class MPSNameEnvironment implements INameEnvironment {
     return new String(result);
   }
 
+  @Override
   public void cleanup() {
   }
 

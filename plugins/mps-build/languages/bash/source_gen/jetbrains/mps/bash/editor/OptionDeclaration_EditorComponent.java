@@ -4,14 +4,14 @@ package jetbrains.mps.bash.editor;
 
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class OptionDeclaration_EditorComponent extends AbstractCellProvider {
   public OptionDeclaration_EditorComponent(SNode node) {
@@ -27,9 +27,9 @@ public class OptionDeclaration_EditorComponent extends AbstractCellProvider {
   }
 
   @Deprecated
-  public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  public jetbrains.mps.nodeEditor.cells.EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
     // This method was added in MPS 3.0 for the compatibility with prev. generated code 
-    return createEditorCell((EditorContext) editorContext);
+    return (jetbrains.mps.nodeEditor.cells.EditorCell) createEditorCell((EditorContext) editorContext);
   }
 
   private EditorCell createCollection_vqukkr_a(EditorContext editorContext, SNode node) {
@@ -38,13 +38,6 @@ public class OptionDeclaration_EditorComponent extends AbstractCellProvider {
     editorCell.addEditorCell(this.createProperty_vqukkr_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_vqukkr_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_vqukkr_c0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createConstant_vqukkr_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@");
-    editorCell.setCellId("Constant_vqukkr_b0");
-    editorCell.setDefaultText("");
     return editorCell;
   }
 
@@ -63,6 +56,13 @@ public class OptionDeclaration_EditorComponent extends AbstractCellProvider {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
+    return editorCell;
+  }
+
+  private EditorCell createConstant_vqukkr_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@");
+    editorCell.setCellId("Constant_vqukkr_b0");
+    editorCell.setDefaultText("");
     return editorCell;
   }
 

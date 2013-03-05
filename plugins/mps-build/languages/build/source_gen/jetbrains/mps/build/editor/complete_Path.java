@@ -13,15 +13,15 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class complete_Path extends AbstractCellMenuComponent {
   public complete_Path() {
-    super(new SubstituteInfoPartExt[]{new complete_Path.BuildSourcePath_generic_cellMenu_a0()});
+    super(new SubstituteInfoPartExt[]{new complete_Path.BuildSourcePath_generic_cellMenu_1iqwn9_a0()});
   }
 
-  public static class BuildSourcePath_generic_cellMenu_a0 extends AbstractCellMenuPart_Generic_Group {
-    public BuildSourcePath_generic_cellMenu_a0() {
+  public static class BuildSourcePath_generic_cellMenu_1iqwn9_a0 extends AbstractCellMenuPart_Generic_Group {
+    public BuildSourcePath_generic_cellMenu_1iqwn9_a0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {

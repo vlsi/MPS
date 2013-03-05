@@ -39,6 +39,7 @@ public class ControlsDemo_Swing {
     widget_e1wtj0_a0a0c.setText("Tree");
     widget_e1wtj0_a0a0c.setActionCommand("tree");
     widget_e1wtj0_a0a0c.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
@@ -53,6 +54,7 @@ public class ControlsDemo_Swing {
     widget_e1wtj0_b0a0c.setText("Table");
     widget_e1wtj0_b0a0c.setActionCommand("tree");
     widget_e1wtj0_b0a0c.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {

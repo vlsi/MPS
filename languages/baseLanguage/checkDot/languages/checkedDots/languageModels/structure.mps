@@ -8,6 +8,7 @@
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4079382982702596667">
       <property name="name" nameId="tpck.1169194664001" value="CheckedDotExpression" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1197027756228" resolveInfo="DotExpression" />
     </node>
   </roots>

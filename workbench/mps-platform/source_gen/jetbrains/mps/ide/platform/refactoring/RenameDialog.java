@@ -14,6 +14,7 @@ public class RenameDialog extends StringChooserDialog {
   public RenameDialog(@NotNull Project project, String oldName, String nodeType) {
     super(project, REFACTORING_NAME, "Rename " + nodeType, oldName);
     myTextField.getDocument().addDocumentListener(new DocumentAdapter() {
+      @Override
       protected void textChanged(DocumentEvent p0) {
         update();
       }

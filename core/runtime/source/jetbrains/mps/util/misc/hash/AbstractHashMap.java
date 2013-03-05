@@ -21,31 +21,38 @@ public abstract class AbstractHashMap<K, V> extends AbstractMap<K, V> {
 
   protected int size;
 
+  @Override
   public int size() {
     return size;
   }
 
+  @Override
   public void clear() {
     init(0);
   }
 
+  @Override
   public V get(final Object key) {
     Map.Entry<K, V> e = getEntry(key);
     return e == null ? null : e.getValue();
   }
 
+  @Override
   public boolean containsKey(final Object key) {
     return getEntry(key) != null;
   }
 
+  @Override
   public Set<K> keySet() {
     return new KeySet();
   }
 
+  @Override
   public Collection<V> values() {
     return new Values();
   }
 
+  @Override
   public Set<Map.Entry<K, V>> entrySet() {
     return new EntrySet();
   }
@@ -95,10 +102,12 @@ public abstract class AbstractHashMap<K, V> extends AbstractMap<K, V> {
       this.decorated = hashIterator();
     }
 
+    @Override
     public boolean hasNext() {
       return decorated.hasNext();
     }
 
+    @Override
     public void remove() {
       decorated.remove();
     }
@@ -106,14 +115,17 @@ public abstract class AbstractHashMap<K, V> extends AbstractMap<K, V> {
 
   private final class EntrySet extends AbstractSet<Entry<K, V>> {
 
+    @Override
     public Iterator<Map.Entry<K, V>> iterator() {
       return new HashIteratorDecorator<Entry<K, V>>() {
+        @Override
         public Entry<K, V> next() {
           return decorated.nextEntry();
         }
       };
     }
 
+    @Override
     public boolean contains(Object o) {
       if (!(o instanceof Map.Entry)) {
         return false;
@@ -123,6 +135,7 @@ public abstract class AbstractHashMap<K, V> extends AbstractMap<K, V> {
       return leftEntry != null && leftEntry.getValue().equals(rightEntry.getValue());
     }
 
+    @Override
     public boolean remove(Object o) {
       if (!(o instanceof Map.Entry)) {
         return false;
@@ -131,10 +144,12 @@ public abstract class AbstractHashMap<K, V> extends AbstractMap<K, V> {
       return AbstractHashMap.this.remove(e.getKey()) != null;
     }
 
+    @Override
     public int size() {
       return size;
     }
 
+    @Override
     public void clear() {
       AbstractHashMap.this.clear();
     }
@@ -142,26 +157,32 @@ public abstract class AbstractHashMap<K, V> extends AbstractMap<K, V> {
 
   private final class KeySet extends AbstractSet<K> {
 
+    @Override
     public Iterator<K> iterator() {
       return new HashIteratorDecorator<K>() {
+        @Override
         public K next() {
           return decorated.nextEntry().getKey();
         }
       };
     }
 
+    @Override
     public int size() {
       return size;
     }
 
+    @Override
     public boolean contains(Object o) {
       return AbstractHashMap.this.containsKey(o);
     }
 
+    @Override
     public boolean remove(Object o) {
       return AbstractHashMap.this.remove(o) != null;
     }
 
+    @Override
     public void clear() {
       AbstractHashMap.this.clear();
     }
@@ -169,22 +190,27 @@ public abstract class AbstractHashMap<K, V> extends AbstractMap<K, V> {
 
   private final class Values extends AbstractCollection<V> {
 
+    @Override
     public Iterator<V> iterator() {
       return new HashIteratorDecorator<V>() {
+        @Override
         public V next() {
           return decorated.nextEntry().getValue();
         }
       };
     }
 
+    @Override
     public int size() {
       return size;
     }
 
+    @Override
     public boolean contains(Object o) {
       return containsValue(o);
     }
 
+    @Override
     public void clear() {
       AbstractHashMap.this.clear();
     }

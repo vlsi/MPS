@@ -95,20 +95,24 @@ public class Generator_Test extends MockTestCase {
       {
         final Object[] cfg = new Object[1];
         exactly(1).of(mons).runConfigWithMonitor((_FunctionTypes._void_P1_E0<? super IConfigMonitor>) with(new BaseMatcher<Object>() {
+          @Override
           public boolean matches(Object o) {
             cfg[0] = o;
             return true;
           }
 
+          @Override
           public void describeTo(Description p0) {
           }
         }));
         will(new Action() {
+          @Override
           public Object invoke(Invocation invocation) throws Throwable {
             ((_FunctionTypes._void_P1_E0<? super IConfigMonitor>) cfg[0]).invoke(cmon);
             return null;
           }
 
+          @Override
           public void describeTo(Description description) {
           }
         });
@@ -116,6 +120,7 @@ public class Generator_Test extends MockTestCase {
 
         final IQuery[] query = new IQuery[1];
         exactly(1).of(cmon).relayQuery(with(new BaseMatcher<IQuery>() {
+          @Override
           public boolean matches(Object o) {
             if (o instanceof IQuery) {
               query[0] = (IQuery) o;
@@ -124,14 +129,17 @@ public class Generator_Test extends MockTestCase {
             return false;
           }
 
+          @Override
           public void describeTo(Description p0) {
           }
         }));
         will(new Action() {
+          @Override
           public Object invoke(Invocation invocation) throws Throwable {
             return Sequence.fromIterable(query[0].options()).first();
           }
 
+          @Override
           public void describeTo(Description description) {
           }
         });
@@ -160,20 +168,24 @@ public class Generator_Test extends MockTestCase {
       {
         final Object[] cfg = new Object[1];
         exactly(1).of(mons).runConfigWithMonitor((_FunctionTypes._void_P1_E0<? super IConfigMonitor>) with(new BaseMatcher<Object>() {
+          @Override
           public boolean matches(Object o) {
             cfg[0] = o;
             return true;
           }
 
+          @Override
           public void describeTo(Description p0) {
           }
         }));
         will(new Action() {
+          @Override
           public Object invoke(Invocation invocation) throws Throwable {
             ((_FunctionTypes._void_P1_E0<? super IConfigMonitor>) cfg[0]).invoke(cmon);
             return null;
           }
 
+          @Override
           public void describeTo(Description description) {
           }
         });
@@ -182,6 +194,7 @@ public class Generator_Test extends MockTestCase {
 
         final IQuery[] query = new IQuery[1];
         exactly(1).of(cmon).relayQuery(with(new BaseMatcher<IQuery>() {
+          @Override
           public boolean matches(Object o) {
             if (o instanceof IQuery) {
               query[0] = (IQuery) o;
@@ -190,14 +203,17 @@ public class Generator_Test extends MockTestCase {
             return false;
           }
 
+          @Override
           public void describeTo(Description p0) {
           }
         }));
         will(new Action() {
+          @Override
           public Object invoke(Invocation invocation) throws Throwable {
             return Sequence.fromIterable(query[0].options()).last();
           }
 
+          @Override
           public void describeTo(Description description) {
           }
         });
@@ -292,10 +308,12 @@ public class Generator_Test extends MockTestCase {
         oneOf(logger).info(with(equal("\u221e/" + internalWorkName("script") + "/" + internalWorkName(new ITarget.Name("Worker_.work").toString()) + "/WORK -- finished")));
 
         allowing(logger).info(with(new BaseMatcher<String>() {
+          @Override
           public boolean matches(Object s) {
             return !(((String) s).matches(".*WORK -- .*"));
           }
 
+          @Override
           public void describeTo(Description p0) {
           }
         }));

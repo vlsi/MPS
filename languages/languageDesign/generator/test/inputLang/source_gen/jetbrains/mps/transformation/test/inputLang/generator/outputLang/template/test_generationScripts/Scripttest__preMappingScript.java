@@ -4,7 +4,7 @@ package jetbrains.mps.transformation.test.inputLang.generator.outputLang.templat
 
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.smodel.SNodePointer;

@@ -4,13 +4,12 @@ package jetbrains.mps.ide.modelchecker.actions;
 
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.validation.ModelValidator;
 import jetbrains.mps.util.NameUtil;
@@ -20,12 +19,13 @@ public class ModelPropertiesChecker extends SpecificChecker {
   public ModelPropertiesChecker() {
   }
 
+  @Override
   public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor monitor, IOperationContext operationContext) {
     monitor.start("Checking " + SModelOperations.getModelName(model) + " model properties...", 1);
 
     List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
 
-    SModelDescriptor modelDescriptor = model.getModelDescriptor();
+    SModel modelDescriptor = model.getModelDescriptor();
     IScope scope = check_t4d01o_a0f0b(check_t4d01o_a0a5a1(modelDescriptor));
     if (false) {
       List<String> errors = new ModelValidator(modelDescriptor).validate(scope);
@@ -50,7 +50,7 @@ public class ModelPropertiesChecker extends SpecificChecker {
     return null;
   }
 
-  private static IModule check_t4d01o_a0a5a1(SModelDescriptor checkedDotOperand) {
+  private static IModule check_t4d01o_a0a5a1(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

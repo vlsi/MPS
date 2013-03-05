@@ -650,8 +650,8 @@
                           </node>
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2323553266848914946">
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2323553266848914947">
-                              <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_VarRef" typeId="tpf3.2721957369897614808" id="2323553266848914948">
-                                <link role="varmacro" roleId="tpf3.2721957369897614810" targetNodeId="2379134940433430090" resolveInfo="methodDecl" />
+                              <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_ParameterRef" typeId="tpf3.5190093307972723402" id="1957700446087409642">
+                                <link role="parameter" roleId="tpf3.5190093307972736266" targetNodeId="2323553266848864143" resolveInfo="methodDecl" />
                               </node>
                               <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="2323553266848914949" />
                             </node>

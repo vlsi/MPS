@@ -5,7 +5,7 @@ package jetbrains.mps.ide.java.platform.refactorings;
 import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.smodel.IOperationContext;
 import java.util.Set;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import com.intellij.ui.treeStructure.SimpleTree;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.openapi.project.Project;
@@ -15,7 +15,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelOperations;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -30,6 +29,7 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeSelectionModel;
 import jetbrains.mps.ide.platform.modeltree.ModelTreeCellRenderer;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import javax.swing.event.TreeSelectionListener;
@@ -42,11 +42,11 @@ import org.jetbrains.annotations.NonNls;
 
 public abstract class BaseChooseNodeDialog extends DialogWrapper {
   private IOperationContext myContext;
-  private Set<SModelDescriptor> myVisibleModels;
+  private Set<SModel> myVisibleModels;
   private SimpleTree myTree;
   private SNodeReference mySelectedNode;
 
-  public BaseChooseNodeDialog(Project project, IOperationContext context, SModelDescriptor contextModel, String title) throws HeadlessException {
+  public BaseChooseNodeDialog(Project project, IOperationContext context, SModel contextModel, String title) throws HeadlessException {
     super(project, true);
     setTitle(title);
     myContext = context;
@@ -57,15 +57,15 @@ public abstract class BaseChooseNodeDialog extends DialogWrapper {
 
   protected abstract boolean isAcceptable(SNode node);
 
-  private void initVisibleModels(SModelDescriptor modelDescriptor) {
-    myVisibleModels = SetSequence.fromSet(new HashSet<SModelDescriptor>());
+  private void initVisibleModels(SModel modelDescriptor) {
+    myVisibleModels = SetSequence.fromSet(new HashSet<SModel>());
     SetSequence.fromSet(myVisibleModels).addElement(modelDescriptor);
-    for (SModelDescriptor nextOwnModelDescriptor : ListSequence.fromList(((AbstractModule) modelDescriptor.getModule()).getOwnModelDescriptors())) {
+    for (SModel nextOwnModelDescriptor : ListSequence.fromList(((AbstractModule) modelDescriptor.getModule()).getOwnModelDescriptors())) {
       SetSequence.fromSet(myVisibleModels).addElement(nextOwnModelDescriptor);
     }
     SModel model = modelDescriptor.getSModel();
     for (SModelReference sm : SModelOperations.getImportedModelUIDs(model)) {
-      SModelDescriptor importedModelDescriptor = myContext.getScope().getModelDescriptor(sm);
+      SModel importedModelDescriptor = myContext.getScope().getModelDescriptor(sm);
       if (importedModelDescriptor != null) {
         SetSequence.fromSet(myVisibleModels).addElement(importedModelDescriptor);
       }
@@ -74,13 +74,13 @@ public abstract class BaseChooseNodeDialog extends DialogWrapper {
 
   private DefaultMutableTreeNode createRootNode() {
     ModelTreeNode rootNode = new ModelTreeNode("Root");
-    for (SModelDescriptor descriptor : SetSequence.fromSet(myVisibleModels).where(new IWhereFilter<SModelDescriptor>() {
-      public boolean accept(SModelDescriptor it) {
-        return !(SModelStereotype.isStubModelStereotype(it.getStereotype()));
+    for (SModel descriptor : SetSequence.fromSet(myVisibleModels).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel it) {
+        return !(SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(it)));
       }
-    }).sort(new ISelector<SModelDescriptor, String>() {
-      public String select(SModelDescriptor it) {
-        return it.getSModelReference().toString();
+    }).sort(new ISelector<SModel, String>() {
+      public String select(SModel it) {
+        return it.getReference().toString();
       }
     }, true)) {
       rootNode.add(ModelTreeBuilder.createSModelTreeNode(descriptor));
@@ -93,6 +93,7 @@ public abstract class BaseChooseNodeDialog extends DialogWrapper {
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
     final DefaultMutableTreeNode rootNode = createRootNode();
     myTree = new SimpleTree(new DefaultTreeModel(rootNode));
@@ -101,17 +102,19 @@ public abstract class BaseChooseNodeDialog extends DialogWrapper {
     myTree.setRootVisible(false);
     myTree.setShowsRootHandles(true);
     new ModelTreeBuilder(myTree) {
+      @Override
       protected void initTreeNode(final ModelTreeNode node) {
-        if (node.getUserObject() instanceof SModelDescriptor) {
+        if (node.getUserObject() instanceof SModel) {
           ModelAccess.instance().runReadInEDT(new Runnable() {
+            @Override
             public void run() {
-              initModelDescriptorNode(node, (SModelDescriptor) node.getUserObject());
+              initModelDescriptorNode(node, (SModelInternal) node.getUserObject());
             }
           });
         }
       }
 
-      private void initModelDescriptorNode(ModelTreeNode node, SModelDescriptor descriptor) {
+      private void initModelDescriptorNode(ModelTreeNode node, SModel descriptor) {
         SModel sModel = descriptor.getSModel();
         for (SNode nextRoot : Sequence.fromIterable(ModelTreeBuilder.sortChildNodes(ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getRoots(sModel, "jetbrains.mps.lang.core.structure.BaseConcept")).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -127,6 +130,7 @@ public abstract class BaseChooseNodeDialog extends DialogWrapper {
       }
     };
     myTree.getSelectionModel().addTreeSelectionListener(new TreeSelectionListener() {
+      @Override
       public void valueChanged(TreeSelectionEvent event) {
         Object selectedNode = event.getPath().getLastPathComponent();
         if (selectedNode instanceof ModelTreeNode) {

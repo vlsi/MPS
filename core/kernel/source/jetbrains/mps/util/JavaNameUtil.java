@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.util;
 
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -64,7 +64,7 @@ public final class JavaNameUtil {
   }
 
   public static String packageName(@NotNull SModel model) {
-    return packageNameForModelUID(model.getSModelReference());
+    return packageNameForModelUID(model.getReference());
   }
 
   public static String packageName(@Nullable String fqName) {

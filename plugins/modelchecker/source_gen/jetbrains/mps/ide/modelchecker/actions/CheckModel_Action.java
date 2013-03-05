@@ -9,12 +9,12 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import java.util.List;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import org.jetbrains.mps.openapi.model.SModel;
 import java.util.ArrayList;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.project.Project;
@@ -40,8 +40,8 @@ public class CheckModel_Action extends BaseAction {
     try {
       {
         String whatToCheck = "Model";
-        if (((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).size() > 1) {
-          whatToCheck = ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).size() + " Models";
+        if (((List<SModel>) MapSequence.fromMap(_params).get("models")).size() > 1) {
+          whatToCheck = ((List<SModel>) MapSequence.fromMap(_params).get("models")).size() + " Models";
         }
         event.getPresentation().setText("Check " + whatToCheck);
       }
@@ -78,13 +78,13 @@ public class CheckModel_Action extends BaseAction {
     try {
       // check all models in model 
       List<SModel> modelsToCheck = new ArrayList<SModel>();
-      modelsToCheck.addAll(((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")));
-      for (SModelDescriptor model : ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models"))) {
-        String name = model.getLongName();
-        boolean isStub = SModelStereotype.isStubModelStereotype(model.getStereotype());
-        for (SModelDescriptor innerModel : ListSequence.fromList(model.getModule().getOwnModelDescriptors())) {
-          if (innerModel.getLongName().startsWith(name + ".")) {
-            if (isStub == SModelStereotype.isStubModelStereotype(innerModel.getStereotype())) {
+      modelsToCheck.addAll(((List<SModel>) MapSequence.fromMap(_params).get("models")));
+      for (SModel model : ((List<SModel>) MapSequence.fromMap(_params).get("models"))) {
+        String name = SNodeOperations.getModelLongName(model);
+        boolean isStub = SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(model));
+        for (SModel innerModel : ListSequence.fromList(model.getModule().getOwnModelDescriptors())) {
+          if (SNodeOperations.getModelLongName(innerModel).startsWith(name + ".")) {
+            if (isStub == SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(innerModel))) {
               modelsToCheck.add(innerModel);
             }
           }

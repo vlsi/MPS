@@ -38,6 +38,7 @@ import java.util.ArrayList;
     return myPresentation;
   }
 
+  @Override
   public List<IWatchable> calculateSubvalues() {
     return new ArrayList<IWatchable>();
   }

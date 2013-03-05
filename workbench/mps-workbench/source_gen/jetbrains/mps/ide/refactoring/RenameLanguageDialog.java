@@ -30,7 +30,6 @@ import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
 
 public class RenameLanguageDialog extends RenameDialog {
   private JCheckBox myRegenerateLanguage;
@@ -44,6 +43,7 @@ public class RenameLanguageDialog extends RenameDialog {
     setTitle("Rename Language");
 
     myRegenerateLanguage.getModel().setSelected(ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      @Override
       public Boolean compute() {
         return !(myLanguage.isBootstrap());
       }
@@ -86,6 +86,7 @@ public class RenameLanguageDialog extends RenameDialog {
     if (needToRegenerate) {
       final Set<Language> langs = new LinkedHashSet<Language>();
       ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
         public void run() {
           langs.add(myLanguage);
           langs.addAll(ModuleRepositoryFacade.getInstance().getAllExtendingLanguages(myLanguage));
@@ -93,6 +94,7 @@ public class RenameLanguageDialog extends RenameDialog {
       });
       for (final Language l : langs) {
         GenParameters params = ModelAccess.instance().runReadAction(new Computable<GenParameters>() {
+          @Override
           public GenParameters compute() {
             ModuleTestConfiguration languageConfig = new ModuleTestConfiguration();
             languageConfig.setModuleRef(l.getModuleReference());
@@ -111,7 +113,7 @@ public class RenameLanguageDialog extends RenameDialog {
         ModuleContext context = new ModuleContext(myLanguage, ProjectHelper.toMPSProject(myProject));
         MakeSession sess = new MakeSession(context);
         if (IMakeService.INSTANCE.get().openNewSession(sess)) {
-          IMakeService.INSTANCE.get().make(sess, new ModelsToResources(context, ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModelDescriptor>) params.getModelDescriptors())).resources(false));
+          IMakeService.INSTANCE.get().make(sess, new ModelsToResources(context, ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModel>) params.getModelDescriptors())).resources(false));
         }
         //         GeneratorUIFacade.getInstance().generateModels(new ModuleContext(myLanguage, myProject), params.getModelDescriptors(), GeneratorUIFacade.getInstance().getDefaultGenerationHandler(), true, false); 
       }

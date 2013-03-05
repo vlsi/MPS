@@ -20,31 +20,38 @@ public class QueueSequence<T> extends CollectionSequence<T> implements Queue<T>,
     setQueue(queue);
   }
 
+  @Override
   public T element() {
     return getQueue().element();
   }
 
+  @Override
   public boolean offer(T o) {
     return getQueue().offer(o);
   }
 
+  @Override
   public T peek() {
     return getQueue().peek();
   }
 
+  @Override
   public T poll() {
     return getQueue().poll();
   }
 
+  @Override
   public T remove() {
     return getQueue().remove();
   }
 
+  @Override
   public T addLastElement(T t) {
     getQueue().add(t);
     return t;
   }
 
+  @Override
   public T first() {
     if (Sequence.NULL_WHEN_EMPTY) {
       return getQueue().peek();
@@ -52,6 +59,7 @@ public class QueueSequence<T> extends CollectionSequence<T> implements Queue<T>,
     return getQueue().element();
   }
 
+  @Override
   public T removeFirstElement() {
     if (Sequence.NULL_WHEN_EMPTY) {
       return getQueue().poll();
@@ -84,6 +92,7 @@ public class QueueSequence<T> extends CollectionSequence<T> implements Queue<T>,
     throw new UnsupportedOperationException();
   }
 
+  @Override
   public Queue<T> toQueue() {
     return this;
   }

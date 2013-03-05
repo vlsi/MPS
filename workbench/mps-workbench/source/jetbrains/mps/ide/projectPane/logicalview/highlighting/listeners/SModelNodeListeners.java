@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.projectPane.logicalview.highlighting.listeners;
 
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.generator.ModelGenerationStatusListener;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -33,16 +34,10 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeGroupTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelRepositoryAdapter;
-import jetbrains.mps.smodel.SModelRepositoryListener;
-import jetbrains.mps.smodel.SModelStereotype;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelEvent;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.tree.DefaultTreeModel;
 import java.util.List;
@@ -56,7 +51,7 @@ public class SModelNodeListeners implements NodeListeners {
   private MySNodeTreeUpdater myTreeUpdater;
 
   private SModelTreeNode myTreeNode;
-  private SModelDescriptor myModel;
+  private SModel myModel;
 
   private ProjectPaneTreeGenStatusUpdater myGenStatusVisitor = new ProjectPaneTreeGenStatusUpdater();
   private ProjectPaneTreeErrorChecker myErrorVisitor = new ProjectPaneTreeErrorChecker();
@@ -69,39 +64,41 @@ public class SModelNodeListeners implements NodeListeners {
     mySimpleModelListener = new MySimpleModelListener(modelNode);
     myModelRepositoryListener = new SModelRepositoryAdapter() {
       @Override
-      public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
+      public void modelsReplaced(Set<SModel> replacedModels) {
         if (replacedModels.contains(myModel)) {
           visitNode(modelNode);
         }
       }
     };
     myStatusListener = new MyGenerationStatusListener();
-    if (myModel instanceof EditableSModelDescriptor) {
+    if (myModel instanceof EditableSModel) {
       myTreeUpdater = new MySNodeTreeUpdater(modelNode.getOperationContext().getProject(), modelNode);
       myTreeUpdater.setDependencyRecorder(modelNode.getDependencyRecorder());
     }
     myEventsListener = new MySModelEventsListener();
   }
 
+  @Override
   public void startListening() {
     visitNode(myTreeNode);
 
     SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
 
     SModelEventsDispatcher.getInstance().registerListener(myEventsListener);
-    myModel.addModelListener(mySimpleModelListener);
+    ((SModelInternal) myModel).addModelListener(mySimpleModelListener);
 
-    if (!SModelStereotype.isStubModelStereotype(myModel.getStereotype())) {
+    if (!SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(myModel))) {
       ModelGenerationStatusManager.getInstance().addGenerationStatusListener(myStatusListener);
     }
   }
 
+  @Override
   public void stopListening() {
-    if (!SModelStereotype.isStubModelStereotype(myModel.getStereotype())) {
+    if (!SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(myModel))) {
       ModelGenerationStatusManager.getInstance().removeGenerationStatusListener(myStatusListener);
     }
 
-    myModel.removeModelListener(mySimpleModelListener);
+    ((SModelInternal) myModel).removeModelListener(mySimpleModelListener);
     SModelEventsDispatcher.getInstance().unregisterListener(myEventsListener);
 
     SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
@@ -129,17 +126,20 @@ public class SModelNodeListeners implements NodeListeners {
       myModelNode = modelNode;
     }
 
+    @Override
     public void modelChangedDramatically(SModel model) {
       updateNodePresentation(false, true);
       visitNode(myModelNode);
     }
 
+    @Override
     public void modelChanged(SModel model) {
       updateNodePresentation(false, true);
       visitNode(myModelNode);
     }
 
-    public void modelSaved(SModelDescriptor sm) {
+    @Override
+    public void modelSaved(SModel sm) {
       visitNode(myModelNode);
     }
 
@@ -147,16 +147,18 @@ public class SModelNodeListeners implements NodeListeners {
     public boolean isValid() {
       if (!super.isValid()) return false;
       if (!(myModel.isLoaded())) return true;
-      return !myModel.getSModel().isDisposed();
+      return !jetbrains.mps.util.SNodeOperations.isModelDisposed(myModel.getSModel());
     }
   }
 
   private class MySModelEventsListener implements SModelEventsListener {
+    @Override
     @NotNull
-    public SModelDescriptor getModelDescriptor() {
+    public SModel getModelDescriptor() {
       return myModel;
     }
 
+    @Override
     public void eventsHappened(List<SModelEvent> events) {
       if (myTreeUpdater == null) return;
       myTreeUpdater.eventsHappenedInCommand(events);
@@ -168,6 +170,7 @@ public class SModelNodeListeners implements NodeListeners {
       super(project, treeNode);
     }
 
+    @Override
     public boolean showPropertiesAndReferences() {
       return showPropertiesAndReferences(myTreeNode);
     }
@@ -201,10 +204,12 @@ public class SModelNodeListeners implements NodeListeners {
       return null;
     }
 
-    public SModelDescriptor getSModelDescriptor() {
+    @Override
+    public SModel getSModelDescriptor() {
       return myTreeNode.getSModelDescriptor();
     }
 
+    @Override
     public void addAndRemoveRoots(Set<SNode> removedRoots, Set<SNode> addedRoots) {
       DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
       for (SNode root : removedRoots) {
@@ -221,6 +226,7 @@ public class SModelNodeListeners implements NodeListeners {
       myTreeNode.insertRoots(addedRoots);
     }
 
+    @Override
     public void updateNodesWithChangedPackages(Set<SNode> nodesWithChangedPackages) {
       DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
 

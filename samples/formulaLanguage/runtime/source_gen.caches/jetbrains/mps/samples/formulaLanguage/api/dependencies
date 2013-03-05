@@ -3,6 +3,7 @@
   <dependency className="jetbrains.mps.samples.formulaLanguage.api.DoubleConstant" file="DoubleConstant.java">
     <classNode dependClassName="java.lang.Double" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode extendsClassName="jetbrains.mps.samples.formulaLanguage.api.Function" />
   </dependency>
   <dependency className="jetbrains.mps.samples.formulaLanguage.api.Function" file="Function.java">
@@ -11,11 +12,13 @@
   <dependency className="jetbrains.mps.samples.formulaLanguage.api.IfFunction" file="IfFunction.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode extendsClassName="jetbrains.mps.samples.formulaLanguage.api.Function" />
   </dependency>
   <dependency className="jetbrains.mps.samples.formulaLanguage.api.MultiplyOperation" file="MultiplyOperation.java">
     <classNode dependClassName="java.lang.Double" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode extendsClassName="jetbrains.mps.samples.formulaLanguage.api.Function" />
   </dependency>
 </dependenciesRoot>

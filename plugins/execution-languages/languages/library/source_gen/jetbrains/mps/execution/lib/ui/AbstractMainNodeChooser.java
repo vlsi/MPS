@@ -26,6 +26,7 @@ import com.intellij.ide.DataManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.annotations.NotNull;
@@ -39,6 +40,7 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
 
   public AbstractMainNodeChooser() {
     this.init(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent p0) {
 
         final FindUsagesManager findUsegesManager = FindUsagesManager.getInstance();
@@ -66,6 +68,7 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
     });
 
     addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent event) {
         final String text = getText();
         if ((text == null || text.length() == 0)) {
@@ -99,14 +102,14 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
     });
   }
 
-  protected abstract Iterable<SNode> findNodes(jetbrains.mps.smodel.SModel model, String fqName);
+  protected abstract Iterable<SNode> findNodes(SModel model, String fqName);
 
   protected abstract Iterable<SModel> getModels(String model);
 
   protected abstract List<SNode> findToChooseFromOnInit(FindUsagesManager manager, ProgressMonitor monitor);
 
   public SNode getNode() {
-    return ((SNodePointer) this.myNodePointer).getNode();
+    return ((SNodePointer) this.myNodePointer).resolve(MPSModuleRepository.getInstance());
   }
 
   public void setNode(SNode node) {
@@ -131,7 +134,7 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.INamedConcept")) {
       return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Object[]{});
     } else {
-      String longName = SNodeOperations.getModel(node).getLongName();
+      String longName = jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(node));
       if (longName.equals("")) {
         return node.getNodeId().toString();
       }
@@ -161,11 +164,12 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
   private void fireNodeChanged() {
     ListSequence.fromList(this.myListeners).visitAll(new IVisitor<_FunctionTypes._void_P1_E0<? super SNode>>() {
       public void visit(_FunctionTypes._void_P1_E0<? super SNode> it) {
-        it.invoke(((SNodePointer) AbstractMainNodeChooser.this.myNodePointer).getNode());
+        it.invoke(((SNodePointer) AbstractMainNodeChooser.this.myNodePointer).resolve(MPSModuleRepository.getInstance()));
       }
     });
   }
 
+  @Override
   public void dispose() {
     super.dispose();
     ListSequence.fromList(myListeners).clear();

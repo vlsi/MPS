@@ -89,6 +89,7 @@ public class ShowMembers_Action extends BaseAction {
       });
 
       Disposable auxDisposable = new Disposable() {
+        @Override
         public void dispose() {
         }
       };

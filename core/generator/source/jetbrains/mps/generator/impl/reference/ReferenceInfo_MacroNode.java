@@ -39,14 +39,17 @@ public class ReferenceInfo_MacroNode extends ReferenceInfo_Macro {
     return AttributeOperations.getLinkRole(macro);
   }
 
+  @Override
   public SNode getInputTargetNode() {
-    return (SNode) myTemplateReferenceNode.getReferenceTarget(getReferenceRole());
+    return myTemplateReferenceNode.getReferenceTarget(getReferenceRole());
   }
 
+  @Override
   protected SNode getMacroNode() {
     return myReferenceMacro;
   }
 
+  @Override
   protected Object resolveReference() {
     return myReductionContext.getQueryExecutor().getReferentTarget(getInputNode(), getOutputSourceNode(), myReferenceMacro, myContext);
   }

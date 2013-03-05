@@ -60,6 +60,10 @@ public class StyleImpl implements Style {
     myEditorCell = contextCell;
   }
 
+  public EditorCell getContextCell() {
+    return myEditorCell;
+  }
+
   @Override
   public void apply(@NotNull EditorCell cell) {
     cell.getStyle().putAll(this);

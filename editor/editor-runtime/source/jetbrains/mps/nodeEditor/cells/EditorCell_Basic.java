@@ -31,7 +31,6 @@ import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.EditorSettings;
-import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
@@ -41,12 +40,13 @@ import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Condition;
@@ -95,7 +95,7 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   private EditorCell_Collection myParent = null;
   private SNode myNode;
-  private NodeSubstituteInfo mySubstituteInfo;
+  private SubstituteInfo mySubstituteInfo;
   private Map<CellActionType, CellAction> myActionMap = new ListMap<CellActionType, CellAction>();
 
   private Style myStyle = new Style(this);
@@ -149,7 +149,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public boolean validate(boolean strict, boolean canActivatePopup) {
-    NodeSubstituteInfo substituteInfo = getSubstituteInfo();
+    SubstituteInfo substituteInfo = getSubstituteInfo();
     if (substituteInfo == null) {
       return false;
     }
@@ -161,7 +161,7 @@ public abstract class EditorCell_Basic implements EditorCell {
 
     if (pattern.equals("")) return false;
 
-    List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(pattern, strict);
+    List<SubstituteAction> matchingActions = substituteInfo.getMatchingActions(pattern, strict);
     if (matchingActions.size() == 0 && canActivatePopup) {
       return false;
     }
@@ -240,7 +240,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     SNode operationNode = null;
     SNode linkDeclaration = SModelUtil.getGenuineLinkDeclaration(getLinkDeclaration());
     if (linkDeclaration != null && SNodeUtil.getLinkDeclaration_IsReference(linkDeclaration)) {
-      SNode referentNode = (SNode) node.getReferenceTarget(SModelUtil.getLinkDeclarationRole(linkDeclaration));
+      SNode referentNode = node.getReferenceTarget(SModelUtil.getLinkDeclarationRole(linkDeclaration));
       if (referentNode != null) {
         operationNode = referentNode;
       }
@@ -630,14 +630,13 @@ public abstract class EditorCell_Basic implements EditorCell {
     return new NodeSubstitutePatternEditor();
   }
 
-  public void setSubstituteInfo(NodeSubstituteInfo substituteInfo) {
-    mySubstituteInfo = substituteInfo;
-    if (mySubstituteInfo != null) {
-      mySubstituteInfo.setOriginalNode(getSNode());
-    }
+  @Override
+  public void setSubstituteInfo(SubstituteInfo info) {
+    mySubstituteInfo = info;
   }
 
-  public NodeSubstituteInfo getSubstituteInfo() {
+  @Override
+  public SubstituteInfo getSubstituteInfo() {
     return mySubstituteInfo;
   }
 
@@ -1283,6 +1282,11 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   public Style getStyle() {
     return myStyle;
+  }
+
+  @Override
+  public void setStyle(jetbrains.mps.openapi.editor.style.Style style) {
+    myStyle = (Style) style;
   }
 
   public boolean isLeaf() {

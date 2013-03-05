@@ -4,16 +4,16 @@ package jetbrains.mps.build.generictasks.editor;
 
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class GenericAttributeDeclarationInEnum_EditorComponent extends AbstractCellProvider {
   public GenericAttributeDeclarationInEnum_EditorComponent(SNode node) {
@@ -29,9 +29,9 @@ public class GenericAttributeDeclarationInEnum_EditorComponent extends AbstractC
   }
 
   @Deprecated
-  public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  public jetbrains.mps.nodeEditor.cells.EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
     // This method was added in MPS 3.0 for the compatibility with prev. generated code 
-    return createEditorCell((EditorContext) editorContext);
+    return (jetbrains.mps.nodeEditor.cells.EditorCell) createEditorCell((EditorContext) editorContext);
   }
 
   private EditorCell createCollection_pdjfsm_a(EditorContext editorContext, SNode node) {
@@ -53,6 +53,10 @@ public class GenericAttributeDeclarationInEnum_EditorComponent extends AbstractC
     return editorCell;
   }
 
+  private static boolean renderingCondition_pdjfsm_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "enum", true) != null) || editorContext.isInspector();
+  }
+
   private EditorCell createRefNode_pdjfsm_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("enum");
@@ -68,10 +72,6 @@ public class GenericAttributeDeclarationInEnum_EditorComponent extends AbstractC
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_pdjfsm_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "enum", true) != null) || editorContext.isInspector();
   }
 
   private static boolean renderingCondition_pdjfsm_a1a(SNode node, EditorContext editorContext, IScope scope) {

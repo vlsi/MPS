@@ -19,6 +19,7 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.workbench.choose.base.BasePresentation;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.indexing.NodeDescriptor;
@@ -33,21 +34,24 @@ public class SNodeDescriptorPresentation extends BasePresentation {
   }
 
   public String getModelName() {
-    SModelReference mr = ((SModelReference) myNodeResult.getNodeReference().getModelReference());
+    SModelReference mr = myNodeResult.getNodeReference().getModelReference();
     SModelFqName modelFqName = mr.getSModelFqName();
     if (modelFqName!=null) return modelFqName.toString();
-    return SModelRepository.getInstance().getModelDescriptor(mr).getLongName();
+    return SNodeOperations.getModelLongName(SModelRepository.getInstance().getModelDescriptor(mr));
   }
 
+  @Override
   @NotNull
   public String doGetPresentableText() {
     return myNodeResult.getName();
   }
 
+  @Override
   public String doGetLocationString() {
     return "(" + getModelName() + ")";
   }
 
+  @Override
   public Icon doGetIcon() {
     String conceptFqName = myNodeResult.getConcept().getId();
 

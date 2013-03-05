@@ -21,34 +21,36 @@ import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.Collections;
 import java.util.List;
 
 /**
  * Igor Alshannikov
  * Date: Nov 29, 2006
  */
-public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends AbstractChildNodeSetter implements SubstituteInfoPart, SubstituteInfoPartExt, IChildNodeSetter {
+public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends AbstractChildNodeSetter implements SubstituteInfoPart, SubstituteInfoPartExt,
+    IChildNodeSetter {
   @Override
-  public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+  public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
     SNode node = (SNode) cellContext.get(PropertyCellContext.EDITED_NODE);
     SNode parent = node.getParent();
     if (parent == null) {
-      return new LinkedList<INodeSubstituteAction>();
+      return Collections.emptyList();
     }
 
     String replacementConceptFqName = getReplacementConceptName();
@@ -56,9 +58,9 @@ public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends
     SNode replacementConcept = SModelUtil.findConceptDeclaration(replacementConceptFqName, context.getScope());
 
 
-    List<INodeSubstituteAction> actions = ModelActions.createChildSubstituteActions(parent, node, replacementConcept, this, context);
-    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
-    for (INodeSubstituteAction a : actions) {
+    List<SubstituteAction> actions = ModelActions.createChildNodeSubstituteActions(parent, node, replacementConcept, this, context);
+    List<SubstituteAction> result = new ArrayList<SubstituteAction>(actions.size());
+    for (SubstituteAction a : actions) {
       result.add(new NodeSubstituteActionWrapper(a) {
         public SNode substitute(@Nullable EditorContext context, String pattern) {
           String selectedCellId = null;
@@ -73,7 +75,7 @@ public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends
             if (toSelect != null) {
               context.select(result, selectedCellId);
               if (context.getSelectedCell() instanceof EditorCell_Label) {
-                ((EditorCell_Label) context.getSelectedCell()).end();
+                context.getSelectedCell().end();
               }
             }
           }
@@ -86,7 +88,7 @@ public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends
   }
 
   public List<INodeSubstituteAction> createActions(CellContext cellContext, final jetbrains.mps.nodeEditor.EditorContext editorContext) {
-    return createActions(cellContext, (EditorContext) editorContext);
+    return (List) createActions(cellContext, (EditorContext) editorContext);
   }
 
   protected abstract String getReplacementConceptName();

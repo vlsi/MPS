@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.Map;
 
@@ -26,5 +26,5 @@ public interface GenerationParametersProvider {
 
   public static final String HASH = "__parametersHash";
 
-  Map<String, Object> getParameters(SModelDescriptor descriptor);
+  Map<String, Object> getParameters(SModel descriptor);
 }

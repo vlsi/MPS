@@ -36,7 +36,8 @@ import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
@@ -71,8 +72,9 @@ public class MPSEditorOpener {
   public void openNode(final SNode node) {
     if (node == null) return;
     ModelAccess.instance().runWriteInEDT(new Runnable() {
+      @Override
       public void run() {
-        SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
+        SModel modelDescriptor = node.getModel().getModelDescriptor();
         if (modelDescriptor == null) return;
 
         IModule module = modelDescriptor.getModule();
@@ -123,7 +125,7 @@ public class MPSEditorOpener {
         ", top-level node: " + current +
         ", isDisposed: " + jetbrains.mps.util.SNodeOperations.isDisposed(node) +
         ", model: " + node.getModel() +
-        (node.getModel() != null ? ", modelDisposed: " + node.getModel().isDisposed() : "");
+        (node.getModel() != null ? ", modelDisposed: " + jetbrains.mps.util.SNodeOperations.isModelDisposed(node.getModel()) : "");
     }
     // [--] for http://youtrack.jetbrains.net/issue/MPS-7663
     final Editor nodeEditor = openEditor(node.getContainingRoot(), context, false);

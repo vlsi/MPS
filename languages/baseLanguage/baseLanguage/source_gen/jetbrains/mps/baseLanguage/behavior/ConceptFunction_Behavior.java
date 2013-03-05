@@ -35,6 +35,10 @@ public class ConceptFunction_Behavior {
     return SLinkOperations.getConceptLinkTargets(thisNode, "conceptFunctionThrowsType");
   }
 
+  public static boolean virtual_isImplementation_1319728274783152230(SNode thisNode, SNode child) {
+    return SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.StatementList");
+  }
+
   public static SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
     return ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(thisNode);
   }
@@ -116,12 +120,12 @@ public class ConceptFunction_Behavior {
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     // todo: rewrite using filtering scope 
     {
-      SNode concept_b0l;
-      concept_b0l = kind;
-      if (SConceptOperations.isSubConceptOf(concept_b0l, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
+      SNode concept_b0m;
+      concept_b0m = kind;
+      if (SConceptOperations.isSubConceptOf(concept_b0m, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
         return new EmptyScope();
       }
-      if (SConceptOperations.isSubConceptOf(concept_b0l, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
+      if (SConceptOperations.isSubConceptOf(concept_b0m, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
         return new EmptyScope();
       }
     }
