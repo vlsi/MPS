@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
@@ -34,9 +34,10 @@ import jetbrains.mps.smodel.nodeidmap.RegularNodeIdMap;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.RefactoringsPersistence;
-import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 
 import java.util.Map;
 
@@ -75,7 +76,7 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
   private final Object myRefactoringHistoryLock = new Object();
   private StructureModificationLog myStructureModificationLog;
 
-  public DefaultSModelDescriptor(FileDataSource source, SModelReference modelReference, SModelHeader header) {
+  public DefaultSModelDescriptor(StreamDataSource source, SModelReference modelReference, SModelHeader header) {
     super(modelReference, source);
     myHeader = header;
   }
@@ -112,8 +113,9 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
   private ModelLoadResult loadSModel(ModelLoadingState state) {
     SModelReference dsmRef = getReference();
 
-    IFile modelFile = getSource().getFile();
-    if (!modelFile.isReadOnly() && !modelFile.exists()) {
+    StreamDataSource source = getSource();
+    if (!source.isReadOnly() && source.getTimestamp() == -1) {
+      // no file on disk
       DefaultSModel model = new DefaultSModel(dsmRef, new RegularNodeIdMap());
       return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
     }
@@ -121,7 +123,7 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
     ModelLoadResult result;
     try {
       // TODO use DataSource
-      result = ModelPersistence.readModel(myHeader, modelFile, state);
+      result = ModelPersistence.readModel(myHeader, source, state);
     } catch (ModelReadException e) {
       SuspiciousModelHandler.getHandler().handleSuspiciousModel(this, false);
       DefaultSModel newModel = new InvalidDefaultSModel(getSModelReference(), e);
@@ -132,13 +134,13 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
     if (result.getState() == ModelLoadingState.FULLY_LOADED) {
       boolean needToSave = ((jetbrains.mps.smodel.SModel) model).updateSModelReferences() || ((jetbrains.mps.smodel.SModel) model).updateModuleReferences();
 
-      if (needToSave && !modelFile.isReadOnly()) {
-        SModelRepository.getInstance().markChanged(model);
+      if (needToSave && !source.isReadOnly()) {
+        setChanged(true);
       }
     }
 
     LOG.assertLog(model.getReference().equals(dsmRef),
-      "\nError loading model from file: \"" + modelFile + "\"\n" +
+      "\nError loading model from: \"" + source.getLocation() + "\"\n" +
         "expected model UID     : \"" + dsmRef + "\"\n" +
         "but was UID            : \"" + model.getReference() + "\"\n" +
         "the model will not be available.\n" +
@@ -160,8 +162,8 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
   @NotNull
   public StructureModificationLog getStructureModificationLog() {
     synchronized (myRefactoringHistoryLock) {
-      if (myStructureModificationLog == null) {
-        myStructureModificationLog = RefactoringsPersistence.load(getSource().getFile());
+      if (myStructureModificationLog == null && getSource() instanceof FileDataSource) {
+        myStructureModificationLog = RefactoringsPersistence.load(((FileDataSource) getSource()).getFile());
       }
       if (myStructureModificationLog == null) {
         myStructureModificationLog = new StructureModificationLog();
@@ -173,7 +175,8 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
   @Override
   public void saveStructureModificationLog(@NotNull StructureModificationLog log) {
     myStructureModificationLog = log;
-    RefactoringsPersistence.save(getSource().getFile(), log);
+    if (!(getSource() instanceof FileDataSource)) throw new UnsupportedOperationException("cannot save structure modification log");
+    RefactoringsPersistence.save(((FileDataSource) getSource()).getFile(), log);
   }
 
   @Override
@@ -183,7 +186,7 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
       // we do not save stub model to not overwrite the real model
       return false;
     }
-    return ModelPersistence.saveModel(smodel, getSource().getFile()) != null;
+    return ModelPersistence.saveModel(smodel, getSource()) != null;
   }
 
   @Override
@@ -201,7 +204,7 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
     String modelHash = ModelDigestHelper.getInstance().getModelHash(getSource());
     if (modelHash != null) return modelHash;
 
-    return ModelDigestUtil.hash(getSource().getFile(), true);
+    return ModelDigestUtil.hash(getSource(), true);
   }
 
   @Override
@@ -209,7 +212,7 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
     Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(getSource());
     if (generationHashes != null) return generationHashes;
 
-    return DefaultModelPersistence.getDigestMap(getSource().getFile());
+    return DefaultModelPersistence.getDigestMap(getSource());
   }
 
   @Override
@@ -274,7 +277,7 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
   @Override
   protected void reload() {
     try {
-      myHeader = ModelPersistence.loadDescriptor(getSource().getFile());
+      myHeader = ModelPersistence.loadDescriptor(getSource());
     } catch (ModelReadException e) {
       updateDiskTimestamp();
       SuspiciousModelHandler.getHandler().handleSuspiciousModel(this, false);

@@ -35,6 +35,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.vcs.changesmanager.BaseVersionUtil;
 import jetbrains.mps.vcs.platform.util.ConflictsUtil;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.ide.ui.MPSTreeNodeListener;
@@ -288,7 +289,10 @@ public class TreeHighlighter implements TreeMessageOwner {
 
   @Nullable
   private static FileStatus getModelFileStatus(@NotNull BaseEditableSModelDescriptor ed, @NotNull Project project) {
-    VirtualFile vf = VirtualFileUtils.getVirtualFile(ed.getSource().getFile());
+    if (!(ed.getSource() instanceof FileDataSource)) {
+      return null;
+    }
+    VirtualFile vf = VirtualFileUtils.getVirtualFile(((FileDataSource) ed.getSource()).getFile());
     return (vf == null ?
       null :
       FileStatusManager.getInstance(project).getStatus(vf)

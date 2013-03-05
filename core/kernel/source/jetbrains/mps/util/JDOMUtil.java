@@ -24,6 +24,7 @@ import org.jdom.output.Format;
 import org.jdom.output.XMLOutputter;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -141,11 +142,16 @@ public class JDOMUtil {
   }
 
   public static void writeDocument(Document document, IFile file) throws IOException {
-    if (!file.exists()) {
-      file.createNewFile();
-    }
-
     OutputStream stream = new BufferedOutputStream(file.openOutputStream());
+    try {
+      writeDocument(document, stream);
+    } finally {
+      stream.close();
+    }
+  }
+
+  public static void writeDocument(Document document, StreamDataSource source) throws IOException {
+    OutputStream stream = new BufferedOutputStream(source.openOutputStream());
     try {
       writeDocument(document, stream);
     } finally {

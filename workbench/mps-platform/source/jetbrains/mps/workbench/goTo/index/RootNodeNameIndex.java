@@ -26,23 +26,21 @@ import com.intellij.util.indexing.SingleEntryFileBasedIndexExtension;
 import com.intellij.util.indexing.SingleEntryIndexer;
 import com.intellij.util.io.DataExternalizer;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.StubModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
-import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,9 +59,8 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<List<S
 
     if (model == null) {
       //todo only roots loading
-      IFile file = VirtualFileUtils.toIFile(inputData.getFile());
       try {
-        model = ModelPersistence.readModel(file, false);
+        model = ModelPersistence.readModel(inputData.getContentAsText().toString(), false);
       } catch (ModelReadException e) {
         model = new StubModel(SModelReference.fromPath(inputData.getFile().getPath()), e);
       }

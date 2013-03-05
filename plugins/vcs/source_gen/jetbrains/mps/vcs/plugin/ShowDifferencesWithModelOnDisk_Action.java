@@ -4,16 +4,17 @@ package jetbrains.mps.vcs.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.extapi.model.EditableSModel;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
 import com.intellij.openapi.project.Project;
@@ -33,9 +34,16 @@ public class ShowDifferencesWithModelOnDisk_Action extends BaseAction {
     return true;
   }
 
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    return ((SModel) MapSequence.fromMap(_params).get("model")).getSource() instanceof FileDataSource && ((SModel) MapSequence.fromMap(_params).get("model")) instanceof BaseEditableSModelDescriptor;
+  }
+
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      this.enable(event.getPresentation());
+      {
+        boolean enabled = this.isApplicable(event, _params);
+        this.setEnabledState(event.getPresentation(), enabled);
+      }
     } catch (Throwable t) {
       LOG.error("User's action doUpdate method failed. Action:" + "ShowDifferencesWithModelOnDisk", t);
       this.disable(event.getPresentation());
@@ -46,11 +54,11 @@ public class ShowDifferencesWithModelOnDisk_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("modelDescriptor", event.getData(MPSCommonDataKeys.MODEL));
-    if (MapSequence.fromMap(_params).get("modelDescriptor") == null) {
+    MapSequence.fromMap(_params).put("model", event.getData(MPSCommonDataKeys.MODEL));
+    if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
     }
-    if (!(MapSequence.fromMap(_params).get("modelDescriptor") instanceof EditableSModel) || ((EditableSModel) MapSequence.fromMap(_params).get("modelDescriptor")).isReadOnly()) {
+    if (!(MapSequence.fromMap(_params).get("model") instanceof EditableSModel) || ((EditableSModel) MapSequence.fromMap(_params).get("model")).isReadOnly()) {
       return false;
     }
     MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
@@ -62,8 +70,8 @@ public class ShowDifferencesWithModelOnDisk_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final SModel memory = ((SModel) MapSequence.fromMap(_params).get("modelDescriptor")).getSModel();
-      final SModel disk = ModelPersistence.readModel(((DefaultSModelDescriptor) ((SModel) MapSequence.fromMap(_params).get("modelDescriptor"))).getSource().getFile(), false);
+      final SModel memory = ((SModel) MapSequence.fromMap(_params).get("model")).getSModel();
+      final SModel disk = ModelPersistence.readModel((FileDataSource) ((SModel) MapSequence.fromMap(_params).get("model")).getSource(), false);
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
           new ModelDifferenceDialog(disk, memory, ((Project) MapSequence.fromMap(_params).get("project")), "Disk", "Memory").show();

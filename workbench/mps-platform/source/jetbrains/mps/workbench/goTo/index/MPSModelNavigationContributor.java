@@ -20,17 +20,20 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.ID;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
-import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -39,6 +42,7 @@ import org.jetbrains.mps.openapi.persistence.indexing.FastGoToRegistry;
 import org.jetbrains.mps.openapi.persistence.indexing.NodeDescriptor;
 import org.jetbrains.mps.openapi.persistence.indexing.NodeNavigationContributor;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
@@ -50,6 +54,9 @@ import java.util.Set;
  * @see RootNodeNameIndex
  */
 public class MPSModelNavigationContributor implements NodeNavigationContributor, ApplicationComponent {
+
+  private Set<String> supportedExtensions = new HashSet<String>(Arrays.asList(MPSExtentions.MODEL));
+
   @Override
   public Collection<NodeDescriptor> getNodeDescriptors(Collection<SModel> models, Project p) {
     RootNodeNameIndex index = new RootNodeNameIndex();
@@ -62,17 +69,21 @@ public class MPSModelNavigationContributor implements NodeNavigationContributor,
     for (SModel sm : models) {
       if (!SModelStereotype.isUserModel(sm)) continue;
 
+      if (!(sm instanceof BaseEditableSModelDescriptor) || !(sm.getSource() instanceof FileDataSource)) {
+        continue;
+      }
+
+      FileDataSource source = (FileDataSource) sm.getSource();
+      if (!supportedExtensions.contains(FileUtil.getExtension(source.getFile().getName()))) {
+        continue;
+      }
+
       if (sm.isLoaded()) {
         findDirectly.add(sm);
         continue;
       }
 
-      if (!(sm instanceof DefaultSModelDescriptor)) {
-        continue;
-      }
-
-      DefaultSModelDescriptor esm = (DefaultSModelDescriptor) sm;
-      IFile modelFile = esm.getSource().getFile();
+      IFile modelFile = source.getFile();
       VirtualFile vf = VirtualFileUtils.getVirtualFile(modelFile);
       if (vf == null) continue; // e.g. model was deleted
 
@@ -84,7 +95,8 @@ public class MPSModelNavigationContributor implements NodeNavigationContributor,
 
       boolean needToLoad = false;
       for (NodeDescriptor snd : descriptors.get(0)) {
-        PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(snd.getConcept().getId()).getProperty(SNodeUtil.property_INamedConcept_name);
+        PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(snd.getConcept().getId()).getProperty(
+          SNodeUtil.property_INamedConcept_name);
         if (descriptor instanceof BasePropertyConstraintsDescriptor && !((BasePropertyConstraintsDescriptor) descriptor).isGetterDefault()) {
           needToLoad = true;
           break;

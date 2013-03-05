@@ -29,5 +29,7 @@ public interface StreamDataSource extends DataSource {
 
   InputStream openInputStream() throws IOException;
 
+  boolean isReadOnly();
+
   OutputStream openOutputStream() throws IOException;
 }

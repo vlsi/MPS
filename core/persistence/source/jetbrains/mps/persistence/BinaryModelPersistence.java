@@ -2,16 +2,18 @@ package jetbrains.mps.persistence;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.model.GeneratableSModel;
-import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.persistence.binary.*;
+import jetbrains.mps.persistence.binary.BinaryModelHeader;
+import jetbrains.mps.persistence.binary.BinaryPersistence;
+import jetbrains.mps.persistence.binary.BinarySModel;
+import jetbrains.mps.persistence.binary.BinarySModelDescriptor;
+import jetbrains.mps.persistence.binary.NodesWriter;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.io.ModelOutputStream;
-import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -43,12 +45,10 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
   }
 
   @Override
-  public SModel load(StreamDataSource dataSource) {
-    if (!(dataSource instanceof FileDataSource)) return null;
-    FileDataSource source = (FileDataSource) dataSource;
+  public SModel load(StreamDataSource source) {
     BinaryModelHeader binaryModelHeader;
     try {
-      binaryModelHeader = BinaryPersistence.readHeader(source.getFile());
+      binaryModelHeader = BinaryPersistence.readHeader(source);
     } catch (ModelReadException e) {
       LOG.debug(e.getMessageEx());
       return null;
@@ -57,16 +57,14 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
   }
 
   @Override
-  public SModel create(String modelName, StreamDataSource dataSource) {
-    if (!(dataSource instanceof FileDataSource)) return null;
-    FileDataSource source = (FileDataSource) dataSource;
+  public SModel create(String modelName, StreamDataSource source) {
     SModelReference ref = new SModelReference(SModelFqName.fromString(modelName), jetbrains.mps.smodel.SModelId.generate());
     return new BinarySModelDescriptor(source, new BinaryModelHeader(ref));
   }
 
   @Override
   public boolean canCreate(String modelName, StreamDataSource dataSource) {
-    return dataSource instanceof FileDataSource;
+    return true;
   }
 
   @Override
@@ -79,11 +77,16 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
     // no-op
   }
 
-  public static Map<String, String> getDigestMap(@NotNull IFile mpsFile) {
+  @Override
+  public boolean isBinary() {
+    return true;
+  }
+
+  public static Map<String, String> getDigestMap(@NotNull StreamDataSource source) {
     try {
-      BinarySModel model = BinaryPersistence.readModel(mpsFile.openInputStream());
+      BinarySModel model = BinaryPersistence.readModel(source.openInputStream());
       Map<String, String> result = getDigestMap(model);
-      result.put(GeneratableSModel.FILE, ModelDigestUtil.hashBytes(mpsFile.openInputStream()));
+      result.put(GeneratableSModel.FILE, ModelDigestUtil.hashBytes(source.openInputStream()));
       return result;
     } catch (ModelReadException ignored) {
       /* ignore */
