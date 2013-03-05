@@ -802,6 +802,7 @@
     <orderEntry type="module" module-name="mps-editor" />
     <orderEntry type="module" module-name="debugger-api-api" />
     <orderEntry type="module" module-name="mps-icons" />
+    <orderEntry type="module" module-name="persistence" />
   </component>
 </module>
 

@@ -237,6 +237,9 @@ public class BinaryPersistence {
       BinaryModelHeader modelHeader = loadHeader(mis);
       BinarySModel model = new BinarySModel(modelHeader);
       loadModelProperties(model, mis);
+      for (ImportElement element : model.importedModels()) {
+        consumer.consume(element.getModelReference().getModelName());
+      }
       new NodesReader(modelHeader.getReference()) {
         @Override
         protected String readConceptQualifiedName(ModelInputStream is) throws IOException {

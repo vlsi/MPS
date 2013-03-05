@@ -15,13 +15,12 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.extapi.model.SModelData;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel.ImportElement;
-import org.jetbrains.mps.openapi.model.SModel;
-
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
@@ -29,8 +28,9 @@ import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
-import org.jetbrains.mps.openapi.model.*;
+import org.jetbrains.mps.openapi.model.SModelScope;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -330,6 +330,13 @@ public abstract class BaseSModelDescriptor implements jetbrains.mps.smodel.SMode
   //-------------------------temporary
 
   public abstract jetbrains.mps.smodel.SModel getSModel();
+
+  /**
+   * Dangerous, allows to replace model data.
+   */
+  public void replace(SModelData modelData) {
+    throw new UnsupportedOperationException();
+  }
 
   @Override
   public ModelDependenciesManager getModelDepsManager() {

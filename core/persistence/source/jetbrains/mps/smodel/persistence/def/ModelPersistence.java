@@ -395,16 +395,6 @@ public class ModelPersistence {
     }
   }
 
-  public static class IndexEntry {
-    public String data;
-    public boolean caseSensitive;
-
-    public IndexEntry(String data, boolean caseSensitive) {
-      this.data = data;
-      this.caseSensitive = caseSensitive;
-    }
-  }
-
   public static void index(char[] data, Consumer<String> consumer) throws ModelReadException {
     SModelHeader header = loadDescriptor(new InputSource(new CharArrayReader(data)));
     IModelPersistence mp = getModelPersistence(header);
