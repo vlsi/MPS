@@ -2886,8 +2886,8 @@
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6592725815061263106">
               <property name="name" nameId="tpck.1169194664001" value="toSelect" />
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6592725815061263107">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="jsgz.~APICellAdapter" resolveInfo="APICellAdapter" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jsgz.~APICellAdapter%dgetPrevLeaf(jetbrains%dmps%dopenapi%deditor%dcells%dEditorCell,jetbrains%dmps%dutil%dCondition)%cjetbrains%dmps%dopenapi%deditor%dcells%dEditorCell" resolveInfo="getPrevLeaf" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="nu8v.~CellTraversalUtil" resolveInfo="CellTraversalUtil" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="nu8v.~CellTraversalUtil%dgetPrevLeaf(jetbrains%dmps%dopenapi%deditor%dcells%dEditorCell,jetbrains%dmps%dutil%dCondition)%cjetbrains%dmps%dopenapi%deditor%dcells%dEditorCell" resolveInfo="getPrevLeaf" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="6592725815061263108">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6592725815061263100" resolveInfo="current" />
                 </node>
@@ -2957,8 +2957,8 @@
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="698920857052050104">
               <property name="name" nameId="tpck.1169194664001" value="toSelect" />
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6592725815061255551">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="jsgz.~APICellAdapter" resolveInfo="APICellAdapter" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jsgz.~APICellAdapter%dgetPrevLeaf(jetbrains%dmps%dopenapi%deditor%dcells%dEditorCell,jetbrains%dmps%dutil%dCondition)%cjetbrains%dmps%dopenapi%deditor%dcells%dEditorCell" resolveInfo="getPrevLeaf" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="nu8v.~CellTraversalUtil" resolveInfo="CellTraversalUtil" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="nu8v.~CellTraversalUtil%dgetPrevLeaf(jetbrains%dmps%dopenapi%deditor%dcells%dEditorCell,jetbrains%dmps%dutil%dCondition)%cjetbrains%dmps%dopenapi%deditor%dcells%dEditorCell" resolveInfo="getPrevLeaf" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="6592725815061255687">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="698920857052046926" resolveInfo="current" />
                 </node>
@@ -3028,8 +3028,8 @@
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6592725815061276925">
               <property name="name" nameId="tpck.1169194664001" value="toSelect" />
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6592725815061276926">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="jsgz.~APICellAdapter" resolveInfo="APICellAdapter" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jsgz.~APICellAdapter%dgetPrevLeaf(jetbrains%dmps%dopenapi%deditor%dcells%dEditorCell,jetbrains%dmps%dutil%dCondition)%cjetbrains%dmps%dopenapi%deditor%dcells%dEditorCell" resolveInfo="getPrevLeaf" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="nu8v.~CellTraversalUtil" resolveInfo="CellTraversalUtil" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="nu8v.~CellTraversalUtil%dgetPrevLeaf(jetbrains%dmps%dopenapi%deditor%dcells%dEditorCell,jetbrains%dmps%dutil%dCondition)%cjetbrains%dmps%dopenapi%deditor%dcells%dEditorCell" resolveInfo="getPrevLeaf" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="6592725815061276927">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6592725815061276919" resolveInfo="current" />
                 </node>
@@ -3511,8 +3511,8 @@
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6592725815061676535">
               <property name="name" nameId="tpck.1169194664001" value="toSelect" />
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6592725815061676536">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="jsgz.~APICellAdapter" resolveInfo="APICellAdapter" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jsgz.~APICellAdapter%dgetPrevLeaf(jetbrains%dmps%dopenapi%deditor%dcells%dEditorCell,jetbrains%dmps%dutil%dCondition)%cjetbrains%dmps%dopenapi%deditor%dcells%dEditorCell" resolveInfo="getPrevLeaf" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="nu8v.~CellTraversalUtil" resolveInfo="CellTraversalUtil" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="nu8v.~CellTraversalUtil%dgetPrevLeaf(jetbrains%dmps%dopenapi%deditor%dcells%dEditorCell,jetbrains%dmps%dutil%dCondition)%cjetbrains%dmps%dopenapi%deditor%dcells%dEditorCell" resolveInfo="getPrevLeaf" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="6592725815061676537">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6592725815061676529" resolveInfo="current" />
                 </node>
@@ -3582,8 +3582,8 @@
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6592725815061674237">
               <property name="name" nameId="tpck.1169194664001" value="toSelect" />
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6592725815061674238">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="jsgz.~APICellAdapter" resolveInfo="APICellAdapter" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jsgz.~APICellAdapter%dgetPrevLeaf(jetbrains%dmps%dopenapi%deditor%dcells%dEditorCell,jetbrains%dmps%dutil%dCondition)%cjetbrains%dmps%dopenapi%deditor%dcells%dEditorCell" resolveInfo="getPrevLeaf" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="nu8v.~CellTraversalUtil" resolveInfo="CellTraversalUtil" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="nu8v.~CellTraversalUtil%dgetPrevLeaf(jetbrains%dmps%dopenapi%deditor%dcells%dEditorCell,jetbrains%dmps%dutil%dCondition)%cjetbrains%dmps%dopenapi%deditor%dcells%dEditorCell" resolveInfo="getPrevLeaf" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="6592725815061674239">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6592725815061674231" resolveInfo="current" />
                 </node>
@@ -3653,8 +3653,8 @@
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6592725815061671113">
               <property name="name" nameId="tpck.1169194664001" value="toSelect" />
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6592725815061671114">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="jsgz.~APICellAdapter" resolveInfo="APICellAdapter" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jsgz.~APICellAdapter%dgetPrevLeaf(jetbrains%dmps%dopenapi%deditor%dcells%dEditorCell,jetbrains%dmps%dutil%dCondition)%cjetbrains%dmps%dopenapi%deditor%dcells%dEditorCell" resolveInfo="getPrevLeaf" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="nu8v.~CellTraversalUtil" resolveInfo="CellTraversalUtil" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="nu8v.~CellTraversalUtil%dgetPrevLeaf(jetbrains%dmps%dopenapi%deditor%dcells%dEditorCell,jetbrains%dmps%dutil%dCondition)%cjetbrains%dmps%dopenapi%deditor%dcells%dEditorCell" resolveInfo="getPrevLeaf" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="6592725815061671115">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6592725815061671107" resolveInfo="current" />
                 </node>
@@ -3724,8 +3724,8 @@
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6592725815061667408">
               <property name="name" nameId="tpck.1169194664001" value="toSelect" />
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6592725815061667409">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="jsgz.~APICellAdapter" resolveInfo="APICellAdapter" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jsgz.~APICellAdapter%dgetPrevLeaf(jetbrains%dmps%dopenapi%deditor%dcells%dEditorCell,jetbrains%dmps%dutil%dCondition)%cjetbrains%dmps%dopenapi%deditor%dcells%dEditorCell" resolveInfo="getPrevLeaf" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="nu8v.~CellTraversalUtil" resolveInfo="CellTraversalUtil" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="nu8v.~CellTraversalUtil%dgetPrevLeaf(jetbrains%dmps%dopenapi%deditor%dcells%dEditorCell,jetbrains%dmps%dutil%dCondition)%cjetbrains%dmps%dopenapi%deditor%dcells%dEditorCell" resolveInfo="getPrevLeaf" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="6592725815061667410">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6592725815061667402" resolveInfo="current" />
                 </node>
