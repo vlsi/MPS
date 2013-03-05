@@ -27,14 +27,10 @@ import com.intellij.platform.ProjectBaseDirectory;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import jetbrains.mps.library.LanguageDesign_DevKit;
 import jetbrains.mps.project.*;
-import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -182,23 +178,7 @@ public class ProjectFactory {
   }
 
   private Language createNewLanguage(MPSProject mpsProject) {
-    String descriptorFileName = NameUtil.shortNameFromLongName(myOptions.getLanguageNamespace()) + MPSExtentions.DOT_LANGUAGE;
-    String descriptorPath = myOptions.getLanguagePath() + File.separator + descriptorFileName;
-    IFile descriptorFile = FileSystem.getInstance().getFileByPath(descriptorPath);
-
-    Language language = NewModuleUtil.createNewLanguage(myOptions.getLanguageNamespace(), descriptorFile, mpsProject);
-    LanguageDescriptor languageDescriptor = language.getModuleDescriptor();
-    languageDescriptor.getUsedDevkits().add(LanguageDesign_DevKit.MODULE_REFERENCE);
-
-    LanguageAspect.STRUCTURE.createNew(language, false).save();
-    LanguageAspect.EDITOR.createNew(language, false).save();
-    LanguageAspect.CONSTRAINTS.createNew(language, false).save();
-    LanguageAspect.BEHAVIOR.createNew(language, false).save();
-    LanguageAspect.TYPESYSTEM.createNew(language, false).save();
-
-    language.setLanguageDescriptor(languageDescriptor, false);
-
-    return language;
+    return NewModuleUtil.createNewLanguage(myOptions.getLanguageNamespace(), myOptions.getLanguagePath(), mpsProject);
   }
 
   public static class ProjectNotCreatedException extends Exception {
