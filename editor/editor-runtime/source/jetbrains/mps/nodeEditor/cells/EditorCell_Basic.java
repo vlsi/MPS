@@ -1429,11 +1429,6 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   @Override
-  public void setStyle(jetbrains.mps.openapi.editor.style.Style style) {
-    myStyle = (Style) style;
-  }
-
-  @Override
   public boolean isLeaf() {
     return true;
   }
