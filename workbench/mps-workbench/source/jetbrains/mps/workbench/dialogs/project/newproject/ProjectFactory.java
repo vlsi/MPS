@@ -170,11 +170,7 @@ public class ProjectFactory {
   }
 
   private Solution createNewSolution(MPSProject mpsProject) {
-    String descriptorFileName = myOptions.getSolutionNamespace() + MPSExtentions.DOT_SOLUTION;
-    String descriptorPath = myOptions.getSolutionPath() + File.separator + descriptorFileName;
-    IFile descriptorFile = FileSystem.getInstance().getFileByPath(descriptorPath);
-
-    return NewModuleUtil.createNewSolution(myOptions.getSolutionNamespace(), descriptorFile, mpsProject);
+    return NewModuleUtil.createSolution(myOptions.getSolutionNamespace(), myOptions.getSolutionPath(), mpsProject);
   }
 
   private Language createNewLanguage(MPSProject mpsProject) {

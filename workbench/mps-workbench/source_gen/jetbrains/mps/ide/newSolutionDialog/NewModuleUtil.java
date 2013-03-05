@@ -18,7 +18,6 @@ import jetbrains.mps.ide.NewModuleCheckUtil;
 import java.io.File;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -32,6 +31,7 @@ import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.persistence.DefaultModelRoot;
@@ -109,19 +109,9 @@ public class NewModuleUtil {
     return null;
   }
 
-  public static <T extends IModule> T createModule(String extension, String namespace, String rootPath, MPSProject project, _FunctionTypes._return_P3_E0<? extends T, ? super String, ? super IFile, ? super MPSProject> creator, _FunctionTypes._void_P1_E0<? super ModuleDescriptor> descAdjuster) {
-    IFile descriptorFile = NewModuleUtil.getModuleFile(namespace, rootPath, extension);
-    T module = creator.invoke(namespace, descriptorFile, project);
-    ModuleDescriptor d = module.getModuleDescriptor();
-    descAdjuster.invoke(d);
-    module.setModuleDescriptor(d, false);
-    project.addModule(module.getModuleReference());
-    module.save();
-    return module;
-  }
 
 
-
+  @Deprecated
   public static Language createNewLanguage(String namespace, IFile descriptorFile, boolean importLangDevDevkit, boolean createMainAspectModels, MPSModuleOwner moduleOwner) {
     assert !(descriptorFile.exists());
     LanguageDescriptor descriptor = createNewLanguageDescriptor(namespace, descriptorFile);
@@ -141,6 +131,7 @@ public class NewModuleUtil {
     return language;
   }
 
+  @Deprecated
   public static Solution createNewSolution(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
     assert !(descriptorFile.exists());
     SolutionDescriptor descriptor = createNewSolutionDescriptor(namespace, descriptorFile);
@@ -148,6 +139,7 @@ public class NewModuleUtil {
     return (Solution) ModuleRepositoryFacade.createModule(ModulesMiner.getInstance().loadModuleHandle(descriptorFile), moduleOwner);
   }
 
+  @Deprecated
   public static DevKit createNewDevkit(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
     assert !(descriptorFile.exists());
     DevkitDescriptor descriptor = createNewDevkitDescriptor(namespace);
@@ -174,6 +166,17 @@ public class NewModuleUtil {
   }
 
 
+
+  private static <T extends IModule> T createModule(String extension, String namespace, String rootPath, MPSProject project, _FunctionTypes._return_P3_E0<? extends T, ? super String, ? super IFile, ? super MPSProject> creator, _FunctionTypes._void_P1_E0<? super ModuleDescriptor> descAdjuster) {
+    IFile descriptorFile = NewModuleUtil.getModuleFile(namespace, rootPath, extension);
+    T module = creator.invoke(namespace, descriptorFile, project);
+    ModuleDescriptor d = module.getModuleDescriptor();
+    descAdjuster.invoke(d);
+    module.setModuleDescriptor(d, false);
+    project.addModule(module.getModuleReference());
+    module.save();
+    return module;
+  }
 
   private static IFile getModuleFile(String namespace, String rootPath, String extension) {
     String path = rootPath + File.separator + namespace + extension;
