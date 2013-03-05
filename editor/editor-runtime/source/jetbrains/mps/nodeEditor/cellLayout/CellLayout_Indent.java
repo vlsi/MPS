@@ -23,6 +23,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Basic;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cells.GeometryUtil;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 
@@ -348,7 +349,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
     }
 
     private int getFirstChildLeftGap(EditorCell_Collection collection) {
-      EditorCell firstLeaf = APICellAdapter.getFirstLeaf(collection);
+      EditorCell firstLeaf = CellTraversalUtil.getFirstLeaf(collection);
       if (firstLeaf != null) {
         return PunctuationUtil.getLeftGap(firstLeaf);
       }
@@ -474,7 +475,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
       EditorCell result = cell;
 
       while (true) {
-        EditorCell prevLeaf = APICellAdapter.getPrevLeaf(result);
+        EditorCell prevLeaf = CellTraversalUtil.getPrevLeaf(result);
         // taking into account prevLeafs located inside collections with non-indent layouts:
         // in this case topmost collection itself will be included into myLineContent as a
         // child element 

@@ -27,8 +27,7 @@ import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.nodeEditor.selection.SingularSelection;
 import jetbrains.mps.nodeEditor.selection.SingularSelection.SideSelectDirection;
-import jetbrains.mps.openapi.editor.*;
-import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.smodel.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -313,26 +312,26 @@ public class NodeEditorActions {
   public static class MoveNext extends NavigationAction {
     public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorCell selection = ((EditorComponent) context.getEditorComponent()).getSelectedCell();
-      return selection != null && APICellAdapter.getNextLeaf(selection, CellConditions.EDITABLE) != null;
+      return selection != null && CellTraversalUtil.getNextLeaf(selection, CellConditions.EDITABLE) != null;
     }
 
     public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorComponent editorComponent = (EditorComponent) context.getEditorComponent();
       EditorCell selection = editorComponent.getSelectedCell();
-      editorComponent.changeSelection(APICellAdapter.getNextLeaf(selection, CellConditions.EDITABLE));
+      editorComponent.changeSelection(CellTraversalUtil.getNextLeaf(selection, CellConditions.EDITABLE));
     }
   }
 
   public static class MovePrev extends NavigationAction {
     public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorCell selection = ((EditorComponent) context.getEditorComponent()).getSelectedCell();
-      return selection != null && APICellAdapter.getPrevLeaf(selection, CellConditions.EDITABLE) != null;
+      return selection != null && CellTraversalUtil.getPrevLeaf(selection, CellConditions.EDITABLE) != null;
     }
 
     public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorComponent editorComponent = (EditorComponent) context.getEditorComponent();
       EditorCell selection = editorComponent.getSelectedCell();
-      editorComponent.changeSelection(APICellAdapter.getPrevLeaf(selection, CellConditions.EDITABLE));
+      editorComponent.changeSelection(CellTraversalUtil.getPrevLeaf(selection, CellConditions.EDITABLE));
     }
   }
 
@@ -440,9 +439,9 @@ public class NodeEditorActions {
 
     private jetbrains.mps.openapi.editor.cells.EditorCell getNextLeaf(EditorCell current) {
       if (mySide == CellSide.LEFT) {
-        return APICellAdapter.getPrevLeaf(current, CellConditions.SELECTABLE);
+        return CellTraversalUtil.getPrevLeaf(current, CellConditions.SELECTABLE);
       } else {
-        return APICellAdapter.getNextLeaf(current, CellConditions.SELECTABLE);
+        return CellTraversalUtil.getNextLeaf(current, CellConditions.SELECTABLE);
       }
     }
 

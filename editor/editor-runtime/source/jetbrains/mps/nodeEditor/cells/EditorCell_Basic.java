@@ -29,6 +29,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.EditorMessage;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
@@ -778,12 +779,12 @@ public abstract class EditorCell_Basic implements EditorCell {
 
       assert anchorCell.getParent() != null : "No cell parent for node " + node.getNodeId().toString() + " " + node.getModel();
 
-      jetbrains.mps.openapi.editor.cells.EditorCell nextSibling = APICellAdapter.getNextSibling(anchorCell);
+      jetbrains.mps.openapi.editor.cells.EditorCell nextSibling = CellTraversalUtil.getNextSibling(anchorCell);
       if (nextSibling instanceof EditorCell_STHint) {
         return (EditorCell_Label) nextSibling;
       }
 
-      jetbrains.mps.openapi.editor.cells.EditorCell prevSibling = APICellAdapter.getPrevSibling(anchorCell);
+      jetbrains.mps.openapi.editor.cells.EditorCell prevSibling = CellTraversalUtil.getPrevSibling(anchorCell);
       if (prevSibling instanceof EditorCell_STHint) {
         return (EditorCell_Label) prevSibling;
       }
