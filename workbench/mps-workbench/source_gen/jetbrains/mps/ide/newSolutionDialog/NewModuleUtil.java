@@ -37,7 +37,7 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.persistence.DefaultModelRoot;
 
 public class NewModuleUtil {
-  public static Solution createNewSolution(String namespace, String rootPath, MPSProject project) {
+  public static Solution createSolution(String namespace, String rootPath, MPSProject project) {
     return NewModuleUtil.createModule(MPSExtentions.DOT_SOLUTION, namespace, rootPath, project, new _FunctionTypes._return_P3_E0<Solution, String, IFile, MPSProject>() {
       public Solution invoke(String s, IFile f, MPSProject p) {
         return createNewSolution(s, f, p);
@@ -48,7 +48,7 @@ public class NewModuleUtil {
     });
   }
 
-  public static Language createNewLanguage(String namespace, String rootPath, MPSProject project) {
+  public static Language createLanguage(String namespace, String rootPath, MPSProject project) {
     return NewModuleUtil.createModule(MPSExtentions.DOT_LANGUAGE, namespace, rootPath, project, new _FunctionTypes._return_P3_E0<Language, String, IFile, MPSProject>() {
       public Language invoke(String s, IFile f, MPSProject p) {
         return createNewLanguage(s, f, true, true, p);
@@ -59,7 +59,7 @@ public class NewModuleUtil {
     });
   }
 
-  public static DevKit createNewDevKit(String namespace, String rootPath, MPSProject project) {
+  public static DevKit createDevKit(String namespace, String rootPath, MPSProject project) {
     return NewModuleUtil.createModule(MPSExtentions.DOT_DEVKIT, namespace, rootPath, project, new _FunctionTypes._return_P3_E0<DevKit, String, IFile, MPSProject>() {
       public DevKit invoke(String s, IFile f, MPSProject p) {
         return createNewDevkit(s, f, p);
@@ -171,11 +171,6 @@ public class NewModuleUtil {
   @Deprecated
   public static Language createNewLanguage(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
     return createNewLanguage(namespace, descriptorFile, false, false, moduleOwner);
-  }
-
-  @Deprecated
-  public static Solution createSolution(String namespace, String rootPath, MPSProject p) {
-    return createNewSolution(namespace, rootPath, p);
   }
 
 

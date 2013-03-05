@@ -214,7 +214,7 @@ public class NewLanguageDialogContentPane extends JPanel {
     myThis.getDialog().dispose();
     NewModuleUtil.runModuleCreation(myThis.getProject().getProject(), new _FunctionTypes._void_P0_E0() {
       public void invoke() {
-        Language language = NewModuleUtil.createNewLanguage(myThis.getLanguageNamespace(), myThis.getLanguagePath(), myThis.getProject());
+        Language language = NewModuleUtil.createLanguage(myThis.getLanguageNamespace(), myThis.getLanguagePath(), myThis.getProject());
 
         if (myThis.myNeedRuntime_hneum8_f0.isSelected()) {
           Solution runtime = myThis.createRuntimeSolution();

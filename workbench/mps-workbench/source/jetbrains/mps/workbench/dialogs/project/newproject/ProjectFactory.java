@@ -178,7 +178,7 @@ public class ProjectFactory {
   }
 
   private Language createNewLanguage(MPSProject mpsProject) {
-    return NewModuleUtil.createNewLanguage(myOptions.getLanguageNamespace(), myOptions.getLanguagePath(), mpsProject);
+    return NewModuleUtil.createLanguage(myOptions.getLanguageNamespace(), myOptions.getLanguagePath(), mpsProject);
   }
 
   public static class ProjectNotCreatedException extends Exception {
