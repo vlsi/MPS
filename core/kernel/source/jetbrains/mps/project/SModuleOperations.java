@@ -128,6 +128,9 @@ public class SModuleOperations {
   }
 
   public static EditableSModel createModelWithAdjustments(String name, @NotNull ModelRoot root) {
+    // todo: review usages of this method: a) i think in most cases we don't need adjustments b) in most cases we got first modelroot from module,
+    // create method like createModel(SModule module, String name) ?
+
     // move to platform
     // need for model creation from ui (maybe even workbench)
 
