@@ -63,8 +63,8 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.InspectorTool" />
-    <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="jetbrains.mps.project.SModuleOperations" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
     <classNode dependClassName="jetbrains.mps.smodel.BaseEditableSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />

@@ -661,6 +661,7 @@
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.project.ModuleId" />
+    <classNode dependClassName="jetbrains.mps.project.SModuleOperations" />
     <classNode dependClassName="jetbrains.mps.project.Solution" />
     <classNode dependClassName="jetbrains.mps.project.StandaloneMPSProject" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />

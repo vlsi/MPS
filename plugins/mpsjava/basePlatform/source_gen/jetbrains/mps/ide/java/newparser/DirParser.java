@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.project.SModuleOperations;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -187,7 +188,7 @@ public class DirParser {
       return null;
     }
 
-    SModel modelDescr = myModule.createModel(packageName, getRootToCreateModel(packageName), null);
+    SModel modelDescr = SModuleOperations.createModelWithAdjustments(packageName, getRootToCreateModel(packageName));
     assert modelDescr != null;
 
     return modelDescr.getSModel();

@@ -36,6 +36,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import java.util.Iterator;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.ModelPropertiesConfigurable;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
@@ -203,7 +204,7 @@ public class NewModelDialog extends DialogWrapper {
       public SModel compute() {
         String fqName = getFqName();
         ModelRoot mr = (ModelRoot) myModelRoots.getSelectedItem();
-        return myModule.createModel(fqName, mr, null);
+        return SModuleOperations.createModelWithAdjustments(fqName, mr);
       }
     }, myContext.getProject());
 
