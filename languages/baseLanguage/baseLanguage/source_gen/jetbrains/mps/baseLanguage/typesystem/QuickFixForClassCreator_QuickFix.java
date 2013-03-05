@@ -43,14 +43,14 @@ public class QuickFixForClassCreator_QuickFix extends QuickFix_Runtime {
     return null;
   }
 
-  private static SModelInternal check_8brg4q_a0a1a0a0(SModel checkedDotOperand) {
+  private static SModelInternal check_8brg4q_a0a1a0a0(org.jetbrains.mps.openapi.model.SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }
 
-  private static SModel check_8brg4q_a0a0b0a0a(SNode checkedDotOperand) {
+  private static org.jetbrains.mps.openapi.model.SModel check_8brg4q_a0a0b0a0a(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModel();
     }
