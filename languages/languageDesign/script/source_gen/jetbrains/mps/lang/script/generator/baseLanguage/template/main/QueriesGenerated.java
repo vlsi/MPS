@@ -374,7 +374,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_2312049224520222344(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SPropertyOperations.getBoolean(_context.getNode(), "updateClassifierTypes");
+    return SPropertyOperations.getBoolean(_context.getNode(), "updateClassifierTypes") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "newClassifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept");
   }
 
   public static boolean ifMacro_Condition_2037769997942587086(final IOperationContext operationContext, final IfMacroContext _context) {
