@@ -80,7 +80,7 @@ public class DecisionTable_Editor extends DefaultNodeEditor {
         return new XYCTableModel(node, SLinkOperations.findLinkDeclaration("org.jetbrains.mps.samples.DecisionTable.structure.DecisionTable", "colHeaders"), SLinkOperations.findLinkDeclaration("org.jetbrains.mps.samples.DecisionTable.structure.DecisionTable", "rowHeaders"), SLinkOperations.findLinkDeclaration("org.jetbrains.mps.samples.DecisionTable.structure.DecisionTable", "resultValues"), editorContext);
       }
     };
-    EditorCell_Collection editorCell = EditorCell_Table.createTable(editorContext, node, creator.createTableModel(node, editorContext), "Table_h1ymql_d0");
+    jetbrains.mps.openapi.editor.cells.EditorCell_Collection editorCell = EditorCell_Table.createTable(editorContext, node, creator.createTableModel(node, editorContext), "Table_h1ymql_d0");
     editorCell.setCellId("Table_h1ymql_d0_0");
     return editorCell;
   }
