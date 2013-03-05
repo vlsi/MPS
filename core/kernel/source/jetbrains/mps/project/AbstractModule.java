@@ -94,7 +94,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   }
 
   /**
-   * Do notjing. If you need it please vote and add comment to MPS-17524
+   * Do nothing. If you need it please vote and add comment to MPS-17524
    */
   @Deprecated
   public static void unregisterModelCreationListener(ModelCreationListener creationListener) {

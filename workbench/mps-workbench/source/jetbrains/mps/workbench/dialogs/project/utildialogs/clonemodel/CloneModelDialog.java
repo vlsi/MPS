@@ -20,13 +20,13 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.IModule.ModelAdjuster;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.structure.model.RootReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.*;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.dialogs.project.BaseStretchingBindedDialog;
 import org.jdesktop.beansbinding.*;
 import org.jdesktop.beansbinding.AutoBinding.UpdateStrategy;
@@ -123,7 +123,8 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
     myModelProperties = new CloneModelProperties();
     myModelProperties.loadFrom(myCloningModel);
 
-    String newName = createNameForCopy(jetbrains.mps.util.SNodeOperations.getModelLongName(myCloningModel), jetbrains.mps.util.SNodeOperations.getModelStereotype(myCloningModel));
+    String newName = createNameForCopy(jetbrains.mps.util.SNodeOperations.getModelLongName(myCloningModel),
+        jetbrains.mps.util.SNodeOperations.getModelStereotype(myCloningModel));
     myModelProperties.setLongName(newName);
   }
 
@@ -173,35 +174,37 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
 
     final ModelRoot modelRoot = ModuleUtil.findModelRoot(module, reference.getPath());
     final SModel modelDescriptor = ModelAccess.instance().runWriteActionInCommand(
-      new Computable<SModel>() {
-        @Override
-        public SModel compute() {
-          return module.createModel(modelName, modelRoot, new ModelAdjuster() {
-            @Override
-            public void adjust(SModel model) {
-              for (SModelReference ref : myModelProperties.getImportedModels()) {
-                ((jetbrains.mps.smodel.SModel) model.getSModel()).addModelImport(ref, false);
-              }
+        new Computable<SModel>() {
+          @Override
+          public SModel compute() {
+            EditableSModel model = (EditableSModel) modelRoot.createModel(modelName);
 
-              for (ModuleReference mr : myModelProperties.getImportedLanguages()) {
-                ((jetbrains.mps.smodel.SModel) model.getSModel()).addLanguage(mr);
-              }
-
-              for (ModuleReference mr : myModelProperties.getImportedDevkits()) {
-                ((jetbrains.mps.smodel.SModel) model.getSModel()).addDevKit(mr);
-              }
-
-              for (ModuleReference mr : myModelProperties.getLanguagesInGeneration()) {
-                ((jetbrains.mps.smodel.SModel) model.getSModel()).addEngagedOnGenerationLanguage(mr);
-              }
-
-              SModel smodel = model.getSModel();
-              CopyUtil.copyModelContent(myCloningModel, smodel);
-              ((EditableSModel) smodel.getModelDescriptor()).save();
+            for (SModelReference ref : myModelProperties.getImportedModels()) {
+              ((jetbrains.mps.smodel.SModel) model.getSModel()).addModelImport(ref, false);
             }
-          });
-        }
-      }, project);
+
+            for (ModuleReference mr : myModelProperties.getImportedLanguages()) {
+              ((jetbrains.mps.smodel.SModel) model.getSModel()).addLanguage(mr);
+            }
+
+            for (ModuleReference mr : myModelProperties.getImportedDevkits()) {
+              ((jetbrains.mps.smodel.SModel) model.getSModel()).addDevKit(mr);
+            }
+
+            for (ModuleReference mr : myModelProperties.getLanguagesInGeneration()) {
+              ((jetbrains.mps.smodel.SModel) model.getSModel()).addEngagedOnGenerationLanguage(mr);
+            }
+
+            SModel smodel = model.getSModel();
+            CopyUtil.copyModelContent(myCloningModel, smodel);
+
+            // todo: register here
+            model.setChanged(true);
+            ((EditableSModel) smodel.getModelDescriptor()).save();
+
+            return model;
+          }
+        }, project);
 
     if (modelDescriptor == null) {
       setErrorText("You can't create a model in the model root that you specified");
