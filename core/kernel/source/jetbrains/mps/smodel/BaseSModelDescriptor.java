@@ -78,7 +78,7 @@ public abstract class BaseSModelDescriptor implements jetbrains.mps.smodel.SMode
 
   @Override
   public synchronized SModel getSModel() {
-    return getSModelInternal();
+    return this;
   }
 
   @Override
