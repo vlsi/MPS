@@ -14,6 +14,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.Generator" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelInternal" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.platform.util.ConflictsUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -37,6 +38,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.extapi.model.EditableSModel" />
+    <classNode dependClassName="jetbrains.mps.extapi.persistence.FileDataSource" />
     <classNode dependClassName="jetbrains.mps.ide.platform.watching.FSChangesWatcher" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
@@ -51,6 +53,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.util.MergeDriverBackupUtil" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.DataSource" />
     <classNode extendsClassName="jetbrains.mps.smodel.DiskMemoryConflictResolver" />
     <classNode extendsClassName="jetbrains.mps.vcs.util.ModelVersion" />
   </dependency>

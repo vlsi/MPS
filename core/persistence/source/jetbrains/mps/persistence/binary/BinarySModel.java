@@ -52,7 +52,7 @@ public class BinarySModel extends SModel {
 
   @Override
   protected SModel createEmptyCopy() {
-    return new BinarySModel(new BinaryModelHeader(((SModelReference) getReference())));
+    return new BinarySModel(new BinaryModelHeader(getReference()));
   }
 
   public static class InvalidBinarySModel extends BinarySModel implements InvalidSModel {

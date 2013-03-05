@@ -40,7 +40,7 @@ public class ModelWriter7 implements IModelWriter {
   @Override
   public Document saveModel(SModel sourceModel) {
     myModel = sourceModel;
-    myHelper = new WriteHelper((SModelReference) sourceModel.getReference());
+    myHelper = new WriteHelper(sourceModel.getReference());
 
     Element rootElement = new Element(ModelPersistence.MODEL);
     rootElement.setAttribute(ModelPersistence.MODEL_UID, sourceModel.getReference().toString());

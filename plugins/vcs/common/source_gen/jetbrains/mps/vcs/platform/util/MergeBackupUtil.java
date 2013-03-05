@@ -34,7 +34,7 @@ public class MergeBackupUtil {
 
   public static File zipModel(DiffContent[] contents, VirtualFile file) throws IOException {
     File tmpDir = FileUtil.createTmpDir();
-    MergeDriverBackupUtil.writeContentsToFile(contents[MergeConstants.ORIGINAL].getDocument().getText(), file.getName(), tmpDir, MergeVersion.BASE.getSuffix());
+    MergeDriverBackupUtil.writeContentsToFile(contents[MergeConstants.ORIGINAL].getDocument().getText().getBytes(FileUtil.DEFAULT_CHARSET), file.getName(), tmpDir, MergeVersion.BASE.getSuffix());
     MergeBackupUtil.writeContentsToFile(contents[MergeConstants.CURRENT], file, tmpDir, MergeVersion.MINE.getSuffix());
     MergeBackupUtil.writeContentsToFile(contents[MergeConstants.LAST_REVISION], file, tmpDir, MergeVersion.REPOSITORY.getSuffix());
     File zipfile = chooseZipFileForModelFile(VirtualFileUtils.toIFile(file));
@@ -75,7 +75,7 @@ public class MergeBackupUtil {
   }
 
   private static void writeContentsToFile(DiffContent contents, VirtualFile file, File tmpDir, String suffix) throws IOException {
-    MergeDriverBackupUtil.writeContentsToFile(new String(contents.getBytes(), FileUtil.DEFAULT_CHARSET), file.getName(), tmpDir, suffix);
+    MergeDriverBackupUtil.writeContentsToFile(contents.getBytes(), file.getName(), tmpDir, suffix);
   }
 
   @Nullable

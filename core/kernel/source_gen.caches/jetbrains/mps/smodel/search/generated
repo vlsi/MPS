@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="381bgcw4r81p1x3ltf6uoakedueeqqz">
+<dependencies version="2" modelHash="-1cv1dcfi09wk27sdkx19q2vki89vbr7">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.cache(MPS.Core/jetbrains.mps.cache@java_stub)" />
@@ -17,7 +17,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="SimpleSearchScope.java" />
   </source>
-  <source id="4642948870877886557" name="ModelAndImportedModelsScope" hash="49we9hkg322f9s9brrxjrbmdgq6eh8m">
+  <source id="4642948870877886557" name="ModelAndImportedModelsScope" hash="-d1itdtsbs8r81uit780qqn3xxbnki4a">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ModelAndImportedModelsScope.java" />
   </source>
@@ -72,7 +72,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ConceptAndSuperConceptsScope.java" />
   </source>
-  <source id="8484262519286299121" name="ConceptAndSuperConceptsCache" hash="-47x94ntq9vsjz7sb5xiwszblz6z8908">
+  <source id="8484262519286299121" name="ConceptAndSuperConceptsCache" hash="-cc0kx4u634gu6xpug8tvnubohxw0om4">
     <dep root="8484262519286305935" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.search(MPS.Core/jetbrains.mps.smodel.search@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />

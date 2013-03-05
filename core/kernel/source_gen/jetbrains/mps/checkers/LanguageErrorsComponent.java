@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -57,7 +57,7 @@ public class LanguageErrorsComponent {
 
   private void removeModelListener() {
     for (SModel modelDescriptor : myListenedModels) {
-      ((SModelDescriptor) modelDescriptor).removeModelListener(myModelListener);
+      ((SModelInternal) modelDescriptor).removeModelListener(myModelListener);
     }
     SetSequence.fromSet(myListenedModels).clear();
   }
@@ -127,7 +127,7 @@ public class LanguageErrorsComponent {
       return;
     }
     if (!(SetSequence.fromSet(myListenedModels).contains(modelDescriptor))) {
-      ((SModelDescriptor) modelDescriptor).addModelListener(myModelListener);
+      ((SModelInternal) modelDescriptor).addModelListener(myModelListener);
       SetSequence.fromSet(myListenedModels).addElement(modelDescriptor);
     }
   }
@@ -353,14 +353,14 @@ public class LanguageErrorsComponent {
     return null;
   }
 
-  private static IModule check_29uvfh_a0a7a12(SModel checkedDotOperand) {
+  private static IModule check_29uvfh_a0a7a12(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModel check_29uvfh_a0a0h0v(SModel checkedDotOperand) {
+  private static SModelInternal check_29uvfh_a0a0h0v(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }

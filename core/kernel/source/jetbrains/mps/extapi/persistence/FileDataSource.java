@@ -45,6 +45,10 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
   private IFile myFile;
   private final ModelRoot myModelRoot;
 
+  public FileDataSource(@NotNull IFile file) {
+    this(file, null);
+  }
+
   /**
    * @param modelRoot (optional) containing model root, which should be notified before the source during the update
    */
@@ -75,6 +79,7 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
     return "FileDataSource(" + myFile.toString() + ")";
   }
 
+  @Override
   public boolean isReadOnly() {
     return FileSystem.getInstance().isPackaged(myFile);
   }

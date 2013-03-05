@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
 
@@ -60,7 +60,7 @@ public class ModelAndImportedModelsScope extends AbstractSearchScope {
           if (model == null) {
             continue;
           }
-          SModel md = ((SModelDescriptor) model).getSModel();
+          SModel md = ((SModelInternal) model).getSModel();
           if (condition instanceof IsInstanceCondition) {
             IsInstanceCondition isInstance = (IsInstanceCondition) condition;
             result.addAll(SNodeOperations.getModelFastFinder(md).getNodes(isInstance.getConceptFqName(), true));

@@ -26,6 +26,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.logging.Logger;
 
@@ -94,7 +95,7 @@ public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
           }
           // add new dependencies to model 
           for (SModelReference modelToImport : SetSequence.fromSet(dependencies)) {
-            ((jetbrains.mps.smodel.SModel) model).addModelImport(modelToImport, false);
+            ((SModelInternal) model).addModelImport(modelToImport, false);
           }
         }
       }

@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor;
 
 
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.keymaps.KeymapHandler;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.KeyMapAction;
@@ -40,7 +41,7 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
     }
 
     jetbrains.mps.openapi.editor.cells.CellActionType actionType = editorContext.getNodeEditorComponent().getActionType(keyEvent, editorContext);
-    jetbrains.mps.nodeEditor.cells.EditorCell selectedCell = editorContext.getSelectedCell();
+    EditorCell selectedCell = editorContext.getSelectedCell();
 
     // process action
     if (selectedCell != null && actionType != null && editorContext.getEditorComponent().getActionHandler().executeAction(selectedCell, actionType)) {
@@ -63,8 +64,8 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
       return true;
     }
 
-    final jetbrains.mps.nodeEditor.cells.EditorCell selectedCell = editorContext.getSelectedCell();
-    if (selectedCell != null && selectedCell.processKeyTyped(keyEvent, false)) {
+    final EditorCell selectedCell = editorContext.getSelectedCell();
+    if (selectedCell != null && ((jetbrains.mps.nodeEditor.cells.EditorCell) selectedCell).processKeyTyped(keyEvent, false)) {
       keyEvent.consume();
       return true;
     }
@@ -75,7 +76,7 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
       boolean strictMatching = jetbrains.mps.openapi.editor.cells.CellActionType.RIGHT_TRANSFORM.equals(actionType) || jetbrains.mps.openapi.editor.cells.CellActionType.LEFT_TRANSFORM.equals(actionType);
 
       if (selectedCell.isErrorState() && strictMatching) {
-        if (selectedCell.validate(strictMatching, false)) {
+        if (APICellAdapter.validate(selectedCell, strictMatching, false)) {
           return true;
         }
       }
@@ -87,7 +88,7 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
       }
     }
 
-    if (selectedCell != null && selectedCell.processKeyTyped(keyEvent, true)) {
+    if (selectedCell != null && ((jetbrains.mps.nodeEditor.cells.EditorCell) selectedCell).processKeyTyped(keyEvent, true)) {
       keyEvent.consume();
       return true;
     }

@@ -135,9 +135,6 @@ public class ModelRepositoryComponent {
         }
         setColor(EditorColorsManager.getInstance().getGlobalScheme().getColor(ColorKey.createColorKey("FILESTATUS_NOT_CHANGED")));
         String text = jetbrains.mps.util.SNodeOperations.getModelLongName(myModelDescriptor);
-        if (myModelDescriptor instanceof DefaultSModelDescriptor) {
-          text += "(" + ((DefaultSModelDescriptor) myModelDescriptor).getLoadingState().toString() + ")";
-        }
         setText(text);
       }
     }

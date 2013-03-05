@@ -16,6 +16,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.MPSExtentions;
@@ -92,7 +93,7 @@ public class ConvertToBinaryPersistence_Action extends BaseAction {
         }
       }).select(new ISelector<SModel, IFile>() {
         public IFile select(SModel it) {
-          return ((DefaultSModelDescriptor) it).getSource().getFile();
+          return ((FileDataSource) it.getSource()).getFile();
         }
       });
 
@@ -105,7 +106,7 @@ public class ConvertToBinaryPersistence_Action extends BaseAction {
 
             DefaultSModel rmodel;
             try {
-              rmodel = ModelPersistence.readModel(oldFile, false);
+              rmodel = ModelPersistence.readModel(new FileDataSource(oldFile), false);
             } catch (ModelReadException ex) {
               LOG.error("cannot read " + oldFile, ex);
               continue;
@@ -117,7 +118,7 @@ public class ConvertToBinaryPersistence_Action extends BaseAction {
 
             IFile newFile = oldFile.getParent().getDescendant(FileUtil.getNameWithoutExtension(oldFile.getName()) + "." + MPSExtentions.MODEL_BINARY);
             SModule module = modelDescriptor.getModule();
-            if (BinaryPersistence.writeModel(rmodel, newFile)) {
+            if (BinaryPersistence.writeModel(rmodel, new FileDataSource(newFile))) {
               SModelRepository.getInstance().removeModelDescriptor(modelDescriptor);
               oldFile.delete();
               ((AbstractModule) module).updateModelsSet();

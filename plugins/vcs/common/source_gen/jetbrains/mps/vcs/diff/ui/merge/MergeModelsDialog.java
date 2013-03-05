@@ -38,11 +38,11 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.MetadataChange;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import org.jetbrains.annotations.NotNull;
 import javax.swing.Action;
 import java.util.List;
 import java.util.ArrayList;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.annotations.NotNull;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -60,6 +60,7 @@ import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import jetbrains.mps.vcs.diff.ui.common.ChangeColors;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.SModelInternal;
 
 public class MergeModelsDialog extends DialogWrapper {
   public static final Icon APPLY_NON_CONFLICTS = AllIcons.Diff.ApplyNotConflicts;
@@ -166,6 +167,7 @@ public class MergeModelsDialog extends DialogWrapper {
   }
 
   @Override
+  @NotNull
   protected Action[] createActions() {
     List<Action> actions = ListSequence.fromList(new ArrayList<Action>());
     ListSequence.fromList(actions).addElement(getOKAction());
@@ -547,14 +549,14 @@ public class MergeModelsDialog extends DialogWrapper {
     }
   }
 
-  private static IModule check_3qqb0l_a0b0v(SModel checkedDotOperand) {
+  private static IModule check_3qqb0l_a0b0v(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModel check_3qqb0l_a0a1a12(SModel checkedDotOperand) {
+  private static SModelInternal check_3qqb0l_a0a1a12(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }

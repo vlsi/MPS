@@ -31,7 +31,6 @@ import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.EditorSettings;
-import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
@@ -94,7 +93,7 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   private EditorCell_Collection myParent = null;
   private SNode myNode;
-  private NodeSubstituteInfo mySubstituteInfo;
+  private SubstituteInfo mySubstituteInfo;
   private Map<CellActionType, CellAction> myActionMap = new ListMap<CellActionType, CellAction>();
 
   private Style myStyle = new Style(this);
@@ -148,7 +147,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public boolean validate(boolean strict, boolean canActivatePopup) {
-    NodeSubstituteInfo substituteInfo = getSubstituteInfo();
+    SubstituteInfo substituteInfo = getSubstituteInfo();
     if (substituteInfo == null) {
       return false;
     }
@@ -239,7 +238,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     SNode operationNode = null;
     SNode linkDeclaration = SModelUtil.getGenuineLinkDeclaration(getLinkDeclaration());
     if (linkDeclaration != null && SNodeUtil.getLinkDeclaration_IsReference(linkDeclaration)) {
-      SNode referentNode = (SNode) node.getReferenceTarget(SModelUtil.getLinkDeclarationRole(linkDeclaration));
+      SNode referentNode = node.getReferenceTarget(SModelUtil.getLinkDeclarationRole(linkDeclaration));
       if (referentNode != null) {
         operationNode = referentNode;
       }
@@ -631,14 +630,11 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   @Override
   public void setSubstituteInfo(SubstituteInfo info) {
-    mySubstituteInfo = (NodeSubstituteInfo) info;
+    mySubstituteInfo = info;
   }
 
-  public void setSubstituteInfo(NodeSubstituteInfo substituteInfo) {
-    mySubstituteInfo = substituteInfo;
-  }
-
-  public NodeSubstituteInfo getSubstituteInfo() {
+  @Override
+  public SubstituteInfo getSubstituteInfo() {
     return mySubstituteInfo;
   }
 

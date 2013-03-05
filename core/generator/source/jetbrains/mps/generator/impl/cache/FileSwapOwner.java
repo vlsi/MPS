@@ -99,7 +99,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     public boolean swapOut(TransientSModel model) {
       if (mySpaceDir == null || !mySpaceDir.exists()) throw new IllegalStateException("no swap dir");
 
-      String modelId = ((SModelReference) model.getReference()).getSModelId().toString();
+      String modelId = model.getReference().getSModelId().toString();
       if (modelId == null || modelId.isEmpty()) {
         LOG.error("Bad model id <" + modelId + ">");
         return false;
@@ -120,7 +120,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
       IOException ioex = null;
       try {
         mos = new ModelOutputStream(new FileOutputStream(swapFile));
-        saveModel((SModelReference) model.getReference(), roots, mos);
+        saveModel(model.getReference(), roots, mos);
       } catch (IOException e) {
         ioex = e;
         LOG.error(e);
@@ -211,13 +211,13 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
 
   // method created for testing
   public static SNode writeAndReadNode(SNode node) throws IOException {
-    NodesWriter writer = new NodesWriter((SModelReference) node.getModel().getReference());
+    NodesWriter writer = new NodesWriter(node.getModel().getReference());
     ByteArrayOutputStream os = new ByteArrayOutputStream();
     ModelOutputStream mos = new ModelOutputStream(os);
     writer.writeNode(node, mos);
     mos.close();
 
-    NodesReader reader = new NodesReader((SModelReference) node.getModel().getReference());
+    NodesReader reader = new NodesReader(node.getModel().getReference());
     ByteArrayInputStream is = new ByteArrayInputStream(os.toByteArray());
 
     return reader.readNode(node.getModel(), new ModelInputStream(is)).o2;
@@ -234,7 +234,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
       roots.add(it.next());
     }
     mos.writeInt(43);
-    new NodesWriter((SModelReference) model.getReference()).writeNodes(roots, mos);
+    new NodesWriter(model.getReference()).writeNodes(roots, mos);
     mos.close();
 
     SModel resultModel = new jetbrains.mps.smodel.SModel(new SModelReference("smodel.long.name.for.testing", ""));
@@ -246,7 +246,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     if (version != 43) {
       return null;
     }
-    List<Pair<String,SNode>> resultRoots = new NodesReader((SModelReference) resultModel.getReference()).readNodes(resultModel, mis);
+    List<Pair<String,SNode>> resultRoots = new NodesReader(resultModel.getReference()).readNodes(resultModel, mis);
     for (Pair<String,SNode> root : resultRoots) {
       resultModel.addRootNode(root.o2);
     }

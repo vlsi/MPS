@@ -74,6 +74,8 @@ public abstract class StyleRegistry {
     ourStyleMap.put(key, style);
   }
 
+  public abstract boolean isDarkTheme();
+
   protected void clearCache() {
     ourColorMap.clear();
     ourStyleAttributesMap.clear();

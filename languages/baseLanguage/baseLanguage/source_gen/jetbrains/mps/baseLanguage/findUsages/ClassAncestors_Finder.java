@@ -22,18 +22,22 @@ public class ClassAncestors_Finder extends GeneratedFinder {
     return SLinkOperations.getTarget(node, "superclass", true) != null;
   }
 
+  @Override
   public String getDescription() {
     return "Ancestors";
   }
 
+  @Override
   public String getLongDescription() {
     return "";
   }
 
+  @Override
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.ClassConcept";
   }
 
+  @Override
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 0);
     try {
@@ -52,6 +56,7 @@ public class ClassAncestors_Finder extends GeneratedFinder {
     }
   }
 
+  @Override
   public String getNodeCategory(SNode node) {
     return "Ancestor";
   }

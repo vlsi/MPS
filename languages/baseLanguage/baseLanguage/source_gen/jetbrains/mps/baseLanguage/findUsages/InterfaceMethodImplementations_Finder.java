@@ -23,22 +23,27 @@ public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
   public InterfaceMethodImplementations_Finder() {
   }
 
+  @Override
   public String getDescription() {
     return "Interface Method Implementations";
   }
 
+  @Override
   public String getLongDescription() {
     return "";
   }
 
+  @Override
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration";
   }
 
+  @Override
   public boolean isApplicable(SNode node) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Interface") && SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
   }
 
+  @Override
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 1);
     try {
@@ -62,6 +67,7 @@ public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
     }
   }
 
+  @Override
   public String getNodeCategory(SNode node) {
     return "Method Implementation";
   }

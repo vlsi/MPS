@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.logging.Logger;
 
 public class TestMergeAction_Action extends BaseAction {
@@ -99,7 +100,7 @@ public class TestMergeAction_Action extends BaseAction {
                 if (!(iFile.exists())) {
                   iFile.createNewFile();
                 }
-                ModelPersistence.saveModel(result, iFile);
+                ModelPersistence.saveModel(result, new FileDataSource(iFile));
               }
             });
           }

@@ -18,6 +18,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -106,7 +107,7 @@ public class SModelOperations {
       } else if (roots) {
         resultNodes.addAll(IterableUtil.asList(new ConditionalIterable(nodes, new IsInstanceCondition(concept))));
       } else {
-        resultNodes.addAll(IterableUtil.asList(((jetbrains.mps.smodel.SModel) aModel).getFastNodeFinder().getNodes(NameUtil.nodeFQName(concept), true)));
+        resultNodes.addAll(IterableUtil.asList(((SModelInternal) aModel).getFastNodeFinder().getNodes(NameUtil.nodeFQName(concept), true)));
       }
     }
     return resultNodes;
@@ -117,7 +118,7 @@ public class SModelOperations {
       return new ArrayList<SNode>();
     }
     if (conceptFqName != null) {
-      return ((jetbrains.mps.smodel.SModel) model).getFastNodeFinder().getNodes(conceptFqName, true);
+      return ((SModelInternal) model).getFastNodeFinder().getNodes(conceptFqName, true);
     }
     List<SNode> result = new ArrayList<SNode>();
     for (SNode node : new NodesIterable(model)) {

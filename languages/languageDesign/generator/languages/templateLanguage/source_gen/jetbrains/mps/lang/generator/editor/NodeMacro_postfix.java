@@ -4,7 +4,7 @@ package jetbrains.mps.lang.generator.editor;
 
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -29,6 +29,7 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 
 public class NodeMacro_postfix extends AbstractCellProvider {
   public NodeMacro_postfix(SNode node) {
@@ -44,9 +45,9 @@ public class NodeMacro_postfix extends AbstractCellProvider {
   }
 
   @Deprecated
-  public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  public jetbrains.mps.nodeEditor.cells.EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
     // This method was added in MPS 3.0 for the compatibility with prev. generated code 
-    return createEditorCell((EditorContext) editorContext);
+    return (jetbrains.mps.nodeEditor.cells.EditorCell) createEditorCell((EditorContext) editorContext);
   }
 
   private EditorCell createCollection_crgygw_a(EditorContext editorContext, SNode node) {
@@ -198,7 +199,7 @@ public class NodeMacro_postfix extends AbstractCellProvider {
   private EditorCell createAttributedNodeCell_crgygw_d0(EditorContext editorContext, SNode node) {
     IOperationContext opContext = editorContext.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-    EditorCell editorCell = manager.getCurrentAttributedNodeCell();
+    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class);
     Style style = new StyleImpl();
     Styles_StyleSheet.applyNodeUnderMacro(style, editorCell);
     editorCell.getStyle().putAll(style);

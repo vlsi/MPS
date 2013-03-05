@@ -164,7 +164,7 @@ public abstract class SNodeTextGen {
         return "???";
       }
       shortName = jetbrains.mps.util.SNodeOperations.getResolveInfo(targetNode);
-      packageName = ((SModelReference) targetNode.getModel().getReference()).getLongName();
+      packageName = targetNode.getModel().getReference().getLongName();
     }
     if (uniq) {
       // todo: uniq, wtf?

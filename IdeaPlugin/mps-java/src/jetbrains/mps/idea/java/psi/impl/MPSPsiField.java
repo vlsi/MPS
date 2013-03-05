@@ -16,6 +16,7 @@
 
 package jetbrains.mps.idea.java.psi.impl;
 
+import com.intellij.psi.PsiAnnotation;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiExpression;
@@ -59,10 +60,11 @@ public class MPSPsiField extends MPSPsiNode implements PsiField {
   @Override
   public PsiType getType() {
     MPSPsiNode typeNode = getChildOfType("type", MPSPsiNode.class);
-    if (typeNode instanceof ComputesPsiType) {
-      return ((ComputesPsiType) typeNode).getPsiType();
+    if (!(typeNode instanceof ComputesPsiType)) {
+      return new NonJavaMPSType(PsiAnnotation.EMPTY_ARRAY);
     }
-    return null;
+
+    return ((ComputesPsiType) typeNode).getPsiType();
   }
 
   @Nullable

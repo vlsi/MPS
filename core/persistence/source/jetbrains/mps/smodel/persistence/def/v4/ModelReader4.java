@@ -66,7 +66,7 @@ public class ModelReader4 implements IModelReader {
     for (Object language : languages) {
       Element element = (Element) language;
       String languageNamespace = element.getAttributeValue(ModelPersistence.NAMESPACE);
-      ((jetbrains.mps.smodel.SModel) model).addLanguage(ModuleReference.fromString(languageNamespace));
+      model.addLanguage(ModuleReference.fromString(languageNamespace));
       List<Element> aspectElements = element.getChildren(ModelPersistence.LANGUAGE_ASPECT);
 
       //aspect models versions
@@ -81,7 +81,7 @@ public class ModelReader4 implements IModelReader {
     for (Object languageEOG : languagesEOG) {
       Element element = (Element) languageEOG;
       String languageNamespace = element.getAttributeValue(ModelPersistence.NAMESPACE);
-      ((jetbrains.mps.smodel.SModel) model).addEngagedOnGenerationLanguage(ModuleReference.fromString(languageNamespace));
+      model.addEngagedOnGenerationLanguage(ModuleReference.fromString(languageNamespace));
     }
 
     //devkits
@@ -89,7 +89,7 @@ public class ModelReader4 implements IModelReader {
     for (Object devkit : devkits) {
       Element element = (Element) devkit;
       String devkitNamespace = element.getAttributeValue(ModelPersistence.NAMESPACE);
-      ((jetbrains.mps.smodel.SModel) model).addDevKit(ModuleReference.fromString(devkitNamespace));
+      model.addDevKit(ModuleReference.fromString(devkitNamespace));
     }
 
     // imports
@@ -123,7 +123,7 @@ public class ModelReader4 implements IModelReader {
       }
 
       SModelReference importedModelReference = SModelReference.fromString(importedModelUIDString);
-      ((jetbrains.mps.smodel.SModel) model).addModelImport(new ImportElement(importedModelReference, importIndex, usedModelVersion));
+      model.addModelImport(new ImportElement(importedModelReference, importIndex, usedModelVersion));
     }
 
     ArrayList<IReferencePersister> referenceDescriptors = new ArrayList<IReferencePersister>();

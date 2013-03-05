@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
@@ -104,7 +105,7 @@ public class StubRefUtil {
       }
     })) {
       SModelReference targetModelRef = ref.getTargetSModelReference();
-      ((jetbrains.mps.smodel.SModel) model).addModelImport(targetModelRef, false);
+      ((SModelInternal) model).addModelImport(targetModelRef, false);
 
       IModule sourceModule = check_4tnolf_a0d0a0o(model.getModelDescriptor());
       IModule targetModule = check_4tnolf_a0e0a0o(SModelRepository.getInstance().getModelDescriptor(targetModelRef));
@@ -170,7 +171,7 @@ public class StubRefUtil {
     return null;
   }
 
-  private static IModule check_4tnolf_a0d0a0o(SModel checkedDotOperand) {
+  private static IModule check_4tnolf_a0d0a0o(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

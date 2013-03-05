@@ -17,6 +17,8 @@ package org.jetbrains.mps.openapi.persistence;
 
 import org.jetbrains.mps.openapi.model.SModel;
 
+import java.io.IOException;
+
 /**
  * Creates models (instances of SModel) from data sources
  */
@@ -46,4 +48,20 @@ public interface ModelFactory {
    * Indicates, whether the supplied data source can be used to hold models created by this factory.
    */
   boolean canCreate(String modelName, StreamDataSource dataSource);
+
+
+  /**
+   *  Checks if the source content is outdated and needs to be upgraded.
+   */
+  boolean needsUpgrade(StreamDataSource dataSource) throws IOException;
+
+  /**
+   *  Loads the model content, and saves it back in the up-to-date format.
+   */
+  void upgrade(StreamDataSource dataSource) throws IOException;
+
+  /**
+   *  returns true if plain text is not enough to represent stored data.
+   */
+  boolean isBinary();
 }

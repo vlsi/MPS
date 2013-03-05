@@ -16,6 +16,13 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
 
 public class ParallelFor_Behavior {
   public static void init(SNode thisNode) {
@@ -55,5 +62,22 @@ public class ParallelFor_Behavior {
 
   public static boolean virtual_implicitThrows_4989157187872658723(SNode thisNode) {
     return true;
+  }
+
+  public static SNode call_findPoolDeclaration_7704855178165020537(SNode thisNode) {
+    SNode prevSibling = SNodeOperations.getPrevSibling(thisNode);
+    while (prevSibling != null) {
+      if (SNodeOperations.isInstanceOf(prevSibling, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement") && SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(prevSibling, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), "localVariableDeclaration", true), "type", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true), "classifier", false) == SLinkOperations.getTarget(_quotation_createNode_1tdh13_a0a0a0b0h(), "classifier", false)) {
+        return SLinkOperations.getTarget(SNodeOperations.cast(prevSibling, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), "localVariableDeclaration", true);
+      }
+    }
+    return null;
+  }
+
+  private static SNode _quotation_createNode_1tdh13_a0a0a0b0h() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent(JDK/java.util.concurrent@java_stub)"), SNodeId.fromString("~ExecutorService")));
+    return quotedNode_1;
   }
 }

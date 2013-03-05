@@ -143,7 +143,7 @@ public class StyleRegistryIdeaImpl extends StyleRegistry implements EditorColors
 
   @Override
   public Color getSimpleColor(Color color, final Color bg) {
-    if(!EditorColorsManager.getInstance().getGlobalScheme().getName().contains("Darcula") || color == null || bg == null)
+    if(!isDarkTheme() || color == null || bg == null)
         return color;
 
     final Color original = color;
@@ -222,6 +222,11 @@ public class StyleRegistryIdeaImpl extends StyleRegistry implements EditorColors
     return style;
   }
 
+  @Override
+  public boolean isDarkTheme() {
+    return EditorColorsManager.getInstance().getGlobalScheme().getName().contains("Darcula");
+  }
+
   private void fillIdeaMappings() {
     try {
       addIdeaMappingsExt("DEFAULT_NULL_TEXT_COLOR","NOT_USED_ELEMENT_ATTRIBUTES");
@@ -237,6 +242,7 @@ public class StyleRegistryIdeaImpl extends StyleRegistry implements EditorColors
       addIdeaMappingsExt("STATIC_FIELD","STATIC_FIELD_ATTRIBUTES");
       addIdeaMappingsExt("STATIC_FINAL_FIELD","STATIC_FINAL_FIELD_ATTRIBUTES");
       addIdeaMappingsExt("STATIC_METHOD","STATIC_METHOD_ATTRIBUTES");
+      addIdeaMappingsExt("DEPRECATED","DEPRECATED_ATTRIBUTES");
 
       addIdeaMappingsExt("CLASS_NAME","CLASS_NAME_ATTRIBUTES");
 

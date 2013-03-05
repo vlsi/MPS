@@ -13,21 +13,21 @@ import jetbrains.mps.util.FileUtil;
 
   @Nullable
   @Override
-  public Tuples._2<Integer, byte[]> mergeContents(byte[] baseContent, byte[] localContent, byte[] latestContent) {
+  public Tuples._2<Integer, byte[]> mergeContents(FileContent baseContent, FileContent localContent, FileContent latestContent) {
     String baseAsString = contentAsString(baseContent);
     String localAsString = contentAsString(localContent);
     String latestAsString = contentAsString(latestContent);
 
     if (baseAsString.equals(localAsString)) {
-      return MultiTuple.<Integer,byte[]>from(MERGED, latestContent);
+      return MultiTuple.<Integer,byte[]>from(MERGED, latestContent.getData());
     }
     if (baseAsString.equals(latestAsString) || localAsString.equals(latestAsString)) {
-      return MultiTuple.<Integer,byte[]>from(MERGED, localContent);
+      return MultiTuple.<Integer,byte[]>from(MERGED, localContent.getData());
     }
-    return MultiTuple.<Integer,byte[]>from(CONFLICTS, localContent);
+    return MultiTuple.<Integer,byte[]>from(CONFLICTS, localContent.getData());
   }
 
-  private static String contentAsString(byte[] bytes) {
-    return new String(bytes, FileUtil.DEFAULT_CHARSET).replace("\r\n", "\n");
+  private static String contentAsString(FileContent content) {
+    return new String(content.getData(), FileUtil.DEFAULT_CHARSET).replace("\r\n", "\n");
   }
 }

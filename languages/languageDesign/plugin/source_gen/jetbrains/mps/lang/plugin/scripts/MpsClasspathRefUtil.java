@@ -15,6 +15,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelRepository;
 import java.util.Collection;
 import jetbrains.mps.project.structure.modules.Dependency;
@@ -55,8 +56,8 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
           ((jetbrains.mps.smodel.SReference) ref).setTargetSModelReference(oldModelRef);
           continue;
         }
-        ((jetbrains.mps.smodel.SModel) model).addModelImport(modelRef, false);
-        ((jetbrains.mps.smodel.SModel) model).deleteModelImport(oldModelRef);
+        ((SModelInternal) model).addModelImport(modelRef, false);
+        ((SModelInternal) model).deleteModelImport(oldModelRef);
         SModelRepository.getInstance().markChanged(model);
         // update module dependencies 
         if (module != null && module.getModuleDescriptor() != null) {
@@ -77,7 +78,7 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
     }
   }
 
-  private static IModule check_xpwqv8_a0d0b(SModel checkedDotOperand) {
+  private static IModule check_xpwqv8_a0d0b(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

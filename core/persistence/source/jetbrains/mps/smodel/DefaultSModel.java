@@ -16,16 +16,12 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.extapi.model.PersistenceProblem;
-import jetbrains.mps.messages.IMessage;
-import jetbrains.mps.messages.Message;
-import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Collection;
 import java.util.Collections;
 
 /**
@@ -87,7 +83,7 @@ public class DefaultSModel extends SModel {
 
   @Override
   protected SModel createEmptyCopy() {
-    return new DefaultSModel(((SModelReference) getReference()));
+    return new DefaultSModel(getReference());
   }
 
   @Override

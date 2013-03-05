@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 public class DefaultNodeEditor implements INodeEditor {
@@ -31,10 +31,10 @@ public class DefaultNodeEditor implements INodeEditor {
 
   /**
    * @deprecated starting from MPS 3.0 another method should be used:
-   * <code>createEditorCell(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   *             <code>createEditorCell(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
    */
   @Deprecated
-  public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+  public jetbrains.mps.nodeEditor.cells.EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return new EditorCell_Error(editorContext, node, "no editor found");
   }
 
@@ -45,10 +45,10 @@ public class DefaultNodeEditor implements INodeEditor {
 
   /**
    * @deprecated starting from MPS 3.0 another method should be used:
-   * <code>createInspectedCell(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   *             <code>createInspectedCell(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
    */
   @Deprecated
-  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+  public jetbrains.mps.nodeEditor.cells.EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return new DefaultInspectorCell(editorContext, node, SNodeUtil.getDebugText(node), true);
   }
 

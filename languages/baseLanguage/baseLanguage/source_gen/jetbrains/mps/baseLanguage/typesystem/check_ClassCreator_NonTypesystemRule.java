@@ -17,7 +17,8 @@ import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.SModel;
 
 public class check_ClassCreator_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ClassCreator_NonTypesystemRule() {
@@ -59,21 +60,21 @@ public class check_ClassCreator_NonTypesystemRule extends AbstractNonTypesystemR
     return false;
   }
 
-  private static IModule check_gfouwf_a0b0a0b(SModel checkedDotOperand) {
+  private static IModule check_gfouwf_a0b0a0b(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModel check_gfouwf_a0a1a0a1(jetbrains.mps.smodel.SModel checkedDotOperand) {
+  private static SModelInternal check_gfouwf_a0a1a0a1(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }
 
-  private static jetbrains.mps.smodel.SModel check_gfouwf_a0a0b0a0b(SNode checkedDotOperand) {
+  private static SModel check_gfouwf_a0a0b0a0b(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModel();
     }

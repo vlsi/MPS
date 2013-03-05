@@ -158,7 +158,7 @@ public class SModelsSubtree {
   private static int buildChildModels(SModelTreeNode treeNode, List<SModel> candidates, int rootIndex) {
     int index = rootIndex + 1;
     while (index < candidates.size()) {
-      SModel candidate = (SModel) candidates.get(index);
+      SModel candidate = candidates.get(index);
       if (treeNode.isSubfolderModel(candidate)) {
         IOperationContext context = treeNode.getOperationContext();
         int countNamePart = getCountNamePart(candidate, SNodeOperations.getModelLongName(treeNode.getSModelDescriptor()));

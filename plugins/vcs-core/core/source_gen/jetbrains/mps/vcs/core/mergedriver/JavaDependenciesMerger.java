@@ -10,7 +10,6 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.io.IOException;
 import org.jdom.JDOMException;
 import jetbrains.mps.util.JDOMUtil;
-import java.io.ByteArrayInputStream;
 import java.io.OutputStream;
 import org.jdom.Document;
 import jetbrains.mps.make.java.RootDependencies;
@@ -24,7 +23,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 
   @Nullable
   @Override
-  public Tuples._2<Integer, byte[]> mergeContents(byte[] baseContent, byte[] localContent, byte[] latestContent) {
+  public Tuples._2<Integer, byte[]> mergeContents(FileContent baseContent, FileContent localContent, FileContent latestContent) {
     try {
       ModelDependencies dependencies = loadDependencies(baseContent);
       copyDependencies(loadDependencies(localContent), dependencies);
@@ -45,8 +44,8 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
     }
   }
 
-  private static ModelDependencies loadDependencies(byte[] content) throws IOException, JDOMException {
-    return ModelDependencies.fromXml(JDOMUtil.loadDocument(new ByteArrayInputStream(content)).getRootElement());
+  private static ModelDependencies loadDependencies(FileContent content) throws IOException, JDOMException {
+    return ModelDependencies.fromXml(JDOMUtil.loadDocument(content.openInputStream()).getRootElement());
   }
 
   private static void saveDependencies(ModelDependencies deps, OutputStream out) throws IOException {

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FileDataSource;
@@ -25,7 +25,9 @@ import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 
 /**
  * evgeny, 11/21/12
@@ -36,14 +38,14 @@ public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorW
 
   private boolean myChanged = false;
 
-  protected BaseEditableSModelDescriptor(@NotNull SModelReference modelReference, @NotNull FileDataSource source) {
+  protected BaseEditableSModelDescriptor(@NotNull SModelReference modelReference, @NotNull StreamDataSource source) {
     super(modelReference, source);
   }
 
   @Override
   @NotNull
-  public FileDataSource getSource() {
-    return (FileDataSource) super.getSource();
+  public StreamDataSource getSource() {
+    return (StreamDataSource) super.getSource();
   }
 
   @Override
@@ -65,7 +67,7 @@ public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorW
   public void reloadFromDisk() {
     ModelAccess.assertLegalWrite();
 
-    if (!getSource().getFile().exists()) {
+    if (getSource().getTimestamp() == -1) {
       SModelRepository.getInstance().removeModelDescriptor(this);
       return;
     }
@@ -87,13 +89,14 @@ public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorW
   protected abstract void reload();
 
   public void resolveDiskConflict() {
-    LOG.warning("Model=" + ((SModelReference) getSModel().getReference()).getSModelFqName() + ", file ts=" + getSource().getTimestamp() + ", model ts=" + getSourceTimestamp(), new Throwable());  // more information
-    DiskMemoryConflictResolver.getResolver().resolveDiskMemoryConflict(getSource().getFile(), getSModel(), this);
+    LOG.warning("Model=" + getSModel().getReference().getSModelFqName() + ", file ts=" + getSource().getTimestamp() + ", model ts=" + getSourceTimestamp(),
+      new Throwable());  // more information
+    DiskMemoryConflictResolver.getResolver().resolveDiskMemoryConflict(getSource(), getSModel(), this);
   }
 
   public boolean checkAndResolveConflictOnSave() {
     if (needsReloading()) {
-      LOG.warning("Model file " + ((SModelReference) getSModel().getReference()).getSModelFqName() + " was modified externally!\n" +
+      LOG.warning("Model file " + getSModel().getReference().getSModelFqName() + " was modified externally!\n" +
         "You might want to turn \"Synchronize files on frame activation/deactivation\" option on to avoid conflicts.");
       resolveDiskConflict();
       return false;
@@ -106,12 +109,17 @@ public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorW
 
   public void changeModelFile(IFile newModelFile) {
     ModelAccess.assertLegalWrite();
-    if (getSource().getFile().getPath().equals(newModelFile.getPath())) return;
+    if (!(getSource() instanceof FileDataSource)) {
+      throw new UnsupportedOperationException("cannot change model file on non-file data source");
+    }
 
-    IFile oldFile = getSource().getFile();
+    FileDataSource source = (FileDataSource) getSource();
+    if (source.getFile().getPath().equals(newModelFile.getPath())) return;
+
+    IFile oldFile = source.getFile();
     SModel model = getSModel();
     fireBeforeModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
-    getSource().setFile(newModelFile);
+    source.setFile(newModelFile);
     updateDiskTimestamp();
     fireModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
   }
@@ -145,6 +153,10 @@ public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorW
   public void rename(String newModelName, boolean changeFile) {
     ModelAccess.assertLegalWrite();
 
+    if (changeFile && !(getSource() instanceof FileDataSource)) {
+      throw new UnsupportedOperationException("cannot change model file on non-file data source");
+    }
+
     String oldFqName = getReference().getModelName();
     SModel model = getSModel();
     fireBeforeModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelName));
@@ -155,7 +167,7 @@ public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorW
     if (!changeFile) {
       save();
     } else {
-      IFile oldFile = getSource().getFile();
+      IFile oldFile = ((FileDataSource) getSource()).getFile();
       ModelRoot root = ModelRootUtil.getModelRoot(this);
       if (root instanceof DefaultModelRoot) {
         DefaultModelRoot defaultModelRoot = (DefaultModelRoot) root;
@@ -192,6 +204,6 @@ public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorW
   }
 
   public String toString() {
-    return getReference().toString() + " in " + getSource().getFile();
+    return getReference().toString() + " in " + getSource().getLocation();
   }
 }

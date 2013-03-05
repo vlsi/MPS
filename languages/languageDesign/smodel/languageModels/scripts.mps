@@ -52,6 +52,10 @@
       <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 3.0" />
       <property name="type" nameId="tp33.5299416737274925395" value="migration" />
     </node>
+    <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="9143954849119546773">
+      <property name="title" nameId="tp33.1177457669450" value="replace casts to SModel and SModelDescriptor" />
+      <property name="name" nameId="tpck.1169194664001" value="ReplaceSModelAndDescriptorCasts" />
+    </node>
   </roots>
   <root id="1239475791620">
     <node role="part" roleId="tp33.1177458178889" type="tp33.MigrationScriptPart_Instance" typeId="tp33.1177457850499" id="1239475791621">
@@ -1383,6 +1387,67 @@
         </node>
       </node>
     </node>
+  </root>
+  <root id="9143954849119546773">
+    <node role="part" roleId="tp33.1177458178889" type="tp33.MigrationScriptPart_Instance" typeId="tp33.1177457850499" id="9143954849119575854">
+      <property name="description" nameId="tp33.1177457972041" value="replace casts to SModel and SModelDescriptor" />
+      <property name="showAsIntention" nameId="tp33.1225457189692" value="true" />
+      <link role="affectedInstanceConcept" roleId="tp33.1177457957477" targetNodeId="tpee.1070534934090" resolveInfo="CastExpression" />
+      <node role="affectedInstanceUpdater" roleId="tp33.1177458005323" type="tp33.MigrationScriptPart_Instance_Updater" typeId="tp33.1177458491964" id="9143954849119575856">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="9143954849119575858">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="9143954849119634490">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="9143954849119647633">
+              <node role="rValue" roleId="tpee.1068498886297" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="9143954849119647705">
+                <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="9143954849119647790">
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SModelInternal" resolveInfo="SModelInternal" />
+                </node>
+              </node>
+              <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9143954849119634950">
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="9143954849119642898">
+                  <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1070534934091" />
+                </node>
+                <node role="operand" roleId="tpee.1197027771414" type="tp33.MigrationScriptPart_node" typeId="tp33.1177458237937" id="9143954849119634489" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="affectedInstancePredicate" roleId="tp33.1177457957478" type="tp33.MigrationScriptPart_Instance_Predicate" typeId="tp33.1177458061340" id="9143954849119575864">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="9143954849119575865">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="9143954849119578245">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.OrExpression" typeId="tpee.1080223426719" id="9143954849119632616">
+              <node role="leftExpression" roleId="tpee.1081773367580" type="tp25.EqualsStructurallyExpression" typeId="tp25.1227264722563" id="9143954849119629646">
+                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9143954849119578705">
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="9143954849119586867">
+                    <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1070534934091" />
+                  </node>
+                  <node role="operand" roleId="tpee.1197027771414" type="tp33.MigrationScriptPart_node" typeId="tp33.1177458237937" id="9143954849119578244" />
+                </node>
+                <node role="rightExpression" roleId="tpee.1081773367579" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="9143954849119629930">
+                  <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="9143954849119630511">
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SModel" resolveInfo="SModel" />
+                  </node>
+                </node>
+              </node>
+              <node role="rightExpression" roleId="tpee.1081773367579" type="tp25.EqualsStructurallyExpression" typeId="tp25.1227264722563" id="9143954849119632965">
+                <node role="rightExpression" roleId="tpee.1081773367579" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="9143954849119632966">
+                  <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="9143954849119633404">
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SModelDescriptor" resolveInfo="SModelDescriptor" />
+                  </node>
+                </node>
+                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9143954849119632968">
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="9143954849119632969">
+                    <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1070534934091" />
+                  </node>
+                  <node role="operand" roleId="tpee.1197027771414" type="tp33.MigrationScriptPart_node" typeId="tp33.1177458237937" id="9143954849119632970" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="part" roleId="tp33.1177458178889" type="tp33.WhitespaceMigrationScriptPart" typeId="tp33.2598676492883244606" id="9143954849119575761" />
   </root>
 </model>
 

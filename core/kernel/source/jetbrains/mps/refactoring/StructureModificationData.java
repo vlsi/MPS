@@ -46,7 +46,7 @@ public class StructureModificationData {
     }
 
     public FullNodeId(SNode node) {
-      this(node.getNodeId(), (SModelReference) node.getModel().getReference());
+      this(node.getNodeId(), node.getModel().getReference());
     }
 
     @Override

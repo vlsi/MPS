@@ -34,6 +34,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.vcs.diff.changes.DependencyChange;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISequence;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.vcs.diff.changes.ImportedModelChange;
 import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -204,7 +205,7 @@ public class ChangeSetBuilder {
   private void buildForImports() {
     _FunctionTypes._return_P1_E0<? extends Iterable<SModelReference>, ? super SModel> importedModelsExtractor = new _FunctionTypes._return_P1_E0<ISequence<SModelReference>, SModel>() {
       public ISequence<SModelReference> invoke(SModel model) {
-        return ListSequence.fromList(((List<jetbrains.mps.smodel.SModel.ImportElement>) ((jetbrains.mps.smodel.SModel) model).importedModels())).select(new ISelector<jetbrains.mps.smodel.SModel.ImportElement, SModelReference>() {
+        return ListSequence.fromList(((List<jetbrains.mps.smodel.SModel.ImportElement>) ((SModelInternal) model).importedModels())).select(new ISelector<jetbrains.mps.smodel.SModel.ImportElement, SModelReference>() {
           public SModelReference select(jetbrains.mps.smodel.SModel.ImportElement ie) {
             return ie.getModelReference();
           }
@@ -233,17 +234,17 @@ public class ChangeSetBuilder {
 
     buildForDependencies(ModuleDependencyChange.DependencyType.USED_LANG, new _FunctionTypes._return_P1_E0<List<ModuleReference>, SModel>() {
       public List<ModuleReference> invoke(SModel model) {
-        return ((jetbrains.mps.smodel.SModel) model).importedLanguages();
+        return ((SModelInternal) model).importedLanguages();
       }
     });
     buildForDependencies(ModuleDependencyChange.DependencyType.USED_DEVKIT, new _FunctionTypes._return_P1_E0<List<ModuleReference>, SModel>() {
       public List<ModuleReference> invoke(SModel model) {
-        return ((jetbrains.mps.smodel.SModel) model).importedDevkits();
+        return ((SModelInternal) model).importedDevkits();
       }
     });
     buildForDependencies(ModuleDependencyChange.DependencyType.LANG_ENGAGED_ON_GENERATION, new _FunctionTypes._return_P1_E0<List<ModuleReference>, SModel>() {
       public List<ModuleReference> invoke(SModel model) {
-        return ((jetbrains.mps.smodel.SModel) model).engagedOnGenerationLanguages();
+        return ((SModelInternal) model).engagedOnGenerationLanguages();
       }
     });
 
@@ -252,7 +253,7 @@ public class ChangeSetBuilder {
         ListSequence.fromList(myNewChanges).addElement(new DoNotGenerateOptionChange(myChangeSet));
       }
     }
-    if (((jetbrains.mps.smodel.SModel) myNewModel).getVersion() != ((jetbrains.mps.smodel.SModel) myOldModel).getVersion()) {
+    if (((SModelInternal) myNewModel).getVersion() != ((SModelInternal) myOldModel).getVersion()) {
       ListSequence.fromList(myNewChanges).addElement(new ModelVersionChange(myChangeSet));
     }
   }

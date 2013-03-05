@@ -16,6 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 
@@ -90,14 +91,14 @@ public class ExportScope_Behavior {
     return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ExportScope"), callerConceptFqName, "virtual_checkExport_2565736246230026584", new Class[]{SNode.class, String.class, SNode.class}, new Object[]{sourceNamespace, targetNode});
   }
 
-  private static IModule check_ogf5a0_a0a0a(SModel checkedDotOperand) {
+  private static IModule check_ogf5a0_a0a0a(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModel check_ogf5a0_a0a0a0(SModel checkedDotOperand) {
+  private static SModelInternal check_ogf5a0_a0a0a0(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }

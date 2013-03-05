@@ -75,8 +75,6 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
 
   // TODO: move this group of methods to open API
   NodeSubstitutePatternEditor createSubstitutePatternEditor();
-  void setSubstituteInfo(NodeSubstituteInfo substitueInfo);
-  NodeSubstituteInfo getSubstituteInfo();
 
   /**
    * Since MPS 3.0 use setAction(jetbrains.mps.openapi.editor.cells.CellActionType, jetbrains.mps.openapi.editor.cells.CellAction) instead

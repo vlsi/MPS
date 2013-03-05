@@ -18,6 +18,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.SModelInternal;
 
 public class ConflictingModelsWarnings implements EditorWarningsProvider {
   public ConflictingModelsWarnings() {
@@ -77,7 +78,7 @@ public class ConflictingModelsWarnings implements EditorWarningsProvider {
     return null;
   }
 
-  private static SModel check_bmsafs_a0a0b(jetbrains.mps.smodel.SModel checkedDotOperand) {
+  private static SModelInternal check_bmsafs_a0a0b(jetbrains.mps.smodel.SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }

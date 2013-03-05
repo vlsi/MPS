@@ -30,6 +30,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.FastNodeFinder;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -331,11 +332,11 @@ public class SNodeOperations {
   }
 
   public static boolean isModelDisposed(SModel model) {
-    return ((jetbrains.mps.smodel.SModel) model).isDisposed();
+    return ((SModelInternal) model).isDisposed();
   }
 
   public static FastNodeFinder getModelFastFinder(SModel model) {
-    return ((jetbrains.mps.smodel.SModel) model).getFastNodeFinder();
+    return ((SModelInternal) model).getFastNodeFinder();
   }
 
   public static int nodesCount(SModel model) {

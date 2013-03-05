@@ -10,7 +10,7 @@ import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import java.util.Collections;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -32,7 +32,7 @@ public class NodeFactoryUtil {
     if (actionsModelDescriptor == null) {
       return Collections.emptyList();
     }
-    SModel model = ((SModelDescriptor) actionsModelDescriptor).getSModel();
+    SModel model = ((SModelInternal) actionsModelDescriptor).getSModel();
     return ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.actions.structure.NodeFactories")).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SLinkOperations.getTargets(it, "nodeFactory", true);

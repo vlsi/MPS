@@ -45,7 +45,7 @@ public class NodesReader {
   }
 
   public Pair<String, SNode> readNode(SModel model, ModelInputStream is) throws IOException {
-    String conceptFqName = is.readString();
+    String conceptFqName = readConceptQualifiedName(is);
     SNodeId nodeId = is.readNodeId();
     String nodeRole = is.readString();
     if (is.readByte() != '{') {
@@ -69,6 +69,10 @@ public class NodesReader {
     return new Pair<String, SNode>(nodeRole, node);
   }
 
+  protected String readConceptQualifiedName(ModelInputStream is) throws IOException {
+    return is.readString();
+  }
+
   protected void readChildren(SModel model, ModelInputStream is, SNode node) throws IOException {
     List<Pair<String, SNode>> children = readNodes(model, is);
     for (Pair<String, SNode> child : children) {
@@ -80,7 +84,7 @@ public class NodesReader {
     int references = is.readInt();
     for (; references > 0; references--) {
       int kind = is.readInt();
-      SNodeId targetNodeId = kind == 1 ? is.readNodeId() : null;
+      SNodeId targetNodeId = kind == 1 ? readTargetNodeId(is) : null;
       DynamicReferenceOrigin origin = kind == 3 ? new DynamicReferenceOrigin(is.readNodePointer(), is.readNodePointer()) : null;
       String role = is.readString();
       SModelReference modelRef = is.readModelReference();
@@ -110,6 +114,10 @@ public class NodesReader {
         throw new IOException("unknown reference type");
       }
     }
+  }
+
+  protected SNodeId readTargetNodeId(ModelInputStream is) throws IOException {
+    return is.readNodeId();
   }
 
   protected void readProperties(ModelInputStream is, SNode node) throws IOException {

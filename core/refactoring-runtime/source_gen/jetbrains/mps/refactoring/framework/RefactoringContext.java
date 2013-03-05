@@ -33,7 +33,7 @@ import jetbrains.mps.smodel.adapter.SConceptNodeAdapterBase;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
@@ -311,7 +311,7 @@ public class RefactoringContext {
 
   public void changeModelName(EditableSModel model, String newName) {
     if (LanguageAspect.STRUCTURE.is(model)) {
-      for (SNode concept : ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getNodes(((SModel) ((SModelDescriptor) model).getSModel()), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
+      for (SNode concept : ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getNodes(((SModel) ((SModelInternal) model).getSModel()), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
         this.changeFeatureName(concept, NameUtil.longNameFromNamespaceAndShortName(newName, SPropertyOperations.getString(concept, "name")), SPropertyOperations.getString(concept, "name"));
       }
     }

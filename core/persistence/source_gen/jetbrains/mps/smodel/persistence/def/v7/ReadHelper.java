@@ -7,6 +7,7 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -37,9 +38,9 @@ public class ReadHelper {
     SModelReference modelRef = SModelReference.fromString(modelUID);
     jetbrains.mps.smodel.SModel.ImportElement elem = new jetbrains.mps.smodel.SModel.ImportElement(modelRef, ++myMaxImportIndex, version);
     if (implicit) {
-      ((jetbrains.mps.smodel.SModel) model).addAdditionalModelVersion(elem);
+      ((SModelInternal) model).addAdditionalModelVersion(elem);
     } else {
-      ((jetbrains.mps.smodel.SModel) model).addModelImport(elem);
+      ((SModelInternal) model).addModelImport(elem);
     }
     addModelRef(index, modelRef);
   }
@@ -54,21 +55,17 @@ public class ReadHelper {
   @NotNull
   public Pair<Boolean, SNodeReference> readLink_internal(String src) {
     // returns <true, xxx> - if src is Dynamic Reference 
-    // [modelID.]nodeID[:version] | [modelID.]^[:version] 
+    // [modelID.]nodeID | [modelID.]^ 
     Pair<Boolean, SNodeReference> result = new Pair<Boolean, SNodeReference>(false, null);
     if (src == null) {
       return result;
     }
-    int i0 = src.indexOf(WriteHelper.MODEL_SEPARATOR_CHAR);
-    int i1 = src.lastIndexOf(WriteHelper.VERSION_SEPARATOR_CHAR);
-    String text = WriteHelper.decode(src.substring(i0 + 1, (i1 < 0 ?
-      src.length() :
-      i1
-    )));
+    int dotIndex = src.indexOf(WriteHelper.MODEL_SEPARATOR_CHAR);
+    String text = WriteHelper.decode(src.substring(dotIndex + 1, src.length()));
     result.o1 = WriteHelper.DYNAMIC_REFERENCE_ID.equals(text);
-    org.jetbrains.mps.openapi.model.SModelReference modelRef = getSModelReference((i0 < 0 ?
+    org.jetbrains.mps.openapi.model.SModelReference modelRef = getSModelReference((dotIndex < 0 ?
       "" :
-      src.substring(0, i0)
+      src.substring(0, dotIndex)
     ));
     SNodeId nodeId = (result.o1 ?
       null :

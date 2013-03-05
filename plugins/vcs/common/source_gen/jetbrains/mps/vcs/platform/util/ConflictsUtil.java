@@ -9,6 +9,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.vcs.FileStatus;
 import com.intellij.openapi.vcs.FileStatusManager;
@@ -29,8 +30,8 @@ public class ConflictsUtil {
 
   @Nullable
   public static VirtualFile getModelFileIfConflicting(@Nullable SModel md, @NotNull Project project) {
-    if (md instanceof BaseEditableSModelDescriptor) {
-      VirtualFile vf = VirtualFileUtils.getVirtualFile(((BaseEditableSModelDescriptor) md).getSource().getFile());
+    if (md instanceof BaseEditableSModelDescriptor && md.getSource() instanceof FileDataSource) {
+      VirtualFile vf = VirtualFileUtils.getVirtualFile(((FileDataSource) md.getSource()).getFile());
       if (vf != null) {
         FileStatus status = FileStatusManager.getInstance(project).getStatus(vf);
         if (FileStatus.MERGED_WITH_CONFLICTS == status || FileStatus.MERGED_WITH_BOTH_CONFLICTS == status) {

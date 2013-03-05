@@ -23,5 +23,5 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
   }
 
   @Nullable
-  public abstract Tuples._2<Integer, byte[]> mergeContents(byte[] baseContent, byte[] localContent, byte[] latestContent);
+  public abstract Tuples._2<Integer, byte[]> mergeContents(FileContent baseContent, FileContent localContent, FileContent latestContent);
 }

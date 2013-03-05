@@ -23,20 +23,23 @@ public class ExactConceptInstances_Finder extends GeneratedFinder {
   public ExactConceptInstances_Finder() {
   }
 
+  @Override
   public String getDescription() {
     return "Exact Concept Instances";
   }
 
+  @Override
   public String getLongDescription() {
     return "only instances of the specified concept, not including instances of it's subconcepts";
   }
 
+  @Override
   public String getConcept() {
     return "jetbrains.mps.lang.structure.structure.ConceptDeclaration";
   }
 
+  @Override
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
-    monitor.start(getDescription(), 0);
     try {
       SConcept concept = SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(node));
       Set<SNode> nodes = FindUsagesManager.getInstance().findUsages(Collections.singleton(concept), SearchType.EXACT_INSTANCES, scope, monitor);
@@ -48,6 +51,7 @@ public class ExactConceptInstances_Finder extends GeneratedFinder {
     }
   }
 
+  @Override
   public String getNodeCategory(SNode node) {
     return "Concept Instances";
   }

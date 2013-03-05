@@ -24,18 +24,22 @@ public class OverridingFields_Finder extends GeneratedFinder {
   public OverridingFields_Finder() {
   }
 
+  @Override
   public String getDescription() {
     return "Overriding Fields";
   }
 
+  @Override
   public String getLongDescription() {
     return "";
   }
 
+  @Override
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.VariableDeclaration";
   }
 
+  @Override
   public boolean isApplicable(SNode node) {
     if (SNodeOperations.getParent(node) == null || !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
       return false;
@@ -46,6 +50,7 @@ public class OverridingFields_Finder extends GeneratedFinder {
     return true;
   }
 
+  @Override
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 1);
     try {
@@ -67,6 +72,7 @@ public class OverridingFields_Finder extends GeneratedFinder {
     }
   }
 
+  @Override
   public String getNodeCategory(SNode node) {
     return "Overriding Fields";
   }

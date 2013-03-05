@@ -21,20 +21,23 @@ public class NodeUsages_Finder extends GeneratedFinder {
   public NodeUsages_Finder() {
   }
 
+  @Override
   public String getDescription() {
     return "Node Usages";
   }
 
+  @Override
   public String getLongDescription() {
     return "";
   }
 
+  @Override
   public String getConcept() {
     return "jetbrains.mps.lang.core.structure.BaseConcept";
   }
 
+  @Override
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
-    monitor.start(getDescription(), 0);
     try {
       Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(Collections.<SNode>singleton(node), SearchType.USAGES, scope, monitor);
       for (SReference reference : resRefs) {
@@ -45,6 +48,7 @@ public class NodeUsages_Finder extends GeneratedFinder {
     }
   }
 
+  @Override
   public String getNodeCategory(SNode node) {
     return "Node Usages";
   }

@@ -16,16 +16,18 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new ConceptFunctionParameter_model_BehaviorDescriptor();
       case 3:
         return new ConceptFunctionParameter_operationContext_BehaviorDescriptor();
-      case 4:
+      case 5:
         return new ConceptFunctionParameter_scope_BehaviorDescriptor();
       case 0:
         return new ConceptFunctionParameter_editorContext_BehaviorDescriptor();
       case 2:
         return new ConceptFunctionParameter_node_BehaviorDescriptor();
+      case 4:
+        return new ConceptFunctionParameter_progressMonitor_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext", "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model", "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_node", "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_operationContext", "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_scope"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext", "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model", "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_node", "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_operationContext", "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_progressMonitor", "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_scope"};
 }

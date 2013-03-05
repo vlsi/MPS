@@ -73,7 +73,7 @@ public class ScopeOperations {
     if (model != null && !(model instanceof SModel)) {
       throw new IllegalStateException();
     }
-    return (SModel) model;
+    return model;
   }
 
   @Deprecated
