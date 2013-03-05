@@ -28,9 +28,13 @@ import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.library.LanguageDesign_DevKit;
-import jetbrains.mps.project.*;
+import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.MPSProjectVersion;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModelAccess;
@@ -106,8 +110,9 @@ public class ProjectFactory {
               myCreatedSolution.save();
 
               if (myOptions.getCreateModel()) {
-                EditableSModel model = myCreatedSolution.createModel(myCreatedSolution.getModuleReference().getModuleFqName() + ".sandbox", myCreatedSolution.getModelRoots().iterator().next(), null);
-                ((DefaultSModelDescriptor) model).getSModel().addLanguage(myCreatedLanguage.getModuleReference());
+                EditableSModel model = myCreatedSolution.createModel(myCreatedSolution.getModuleReference().getModuleFqName() + ".sandbox",
+                  myCreatedSolution.getModelRoots().iterator().next(), null);
+                ((BaseEditableSModelDescriptor) model).getSModel().addLanguage(myCreatedLanguage.getModuleReference());
                 model.save();
               }
             }

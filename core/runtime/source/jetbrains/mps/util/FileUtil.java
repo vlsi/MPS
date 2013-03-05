@@ -293,12 +293,7 @@ public class FileUtil {
     } catch (IOException e) {
       throw new RuntimeException(e);
     } finally {
-      if (writer != null) {
-        try {
-          writer.close();
-        } catch (IOException e) {
-        }
-      }
+      FileUtil.closeFileSafe(writer);
     }
   }
 

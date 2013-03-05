@@ -4,9 +4,9 @@ package jetbrains.mps.vcs.util;
 
 import java.io.File;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SModelFqName;
 import java.io.IOException;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NotNull;
@@ -20,25 +20,25 @@ public class MergeDriverBackupUtil {
     // Used in MergeProviderDecorator 
   }
 
-  public static File zipModel(String[] contents, @Nullable SModelFqName modelFqName) throws IOException {
+  public static File zipModel(byte[][] contents, @Nullable String modelName) throws IOException {
     String shortFileName = "unknown.mps";
-    if (modelFqName != null) {
-      shortFileName = NameUtil.shortNameFromLongName(modelFqName.getLongName()) + MPSExtentions.DOT_MODEL;
+    if (modelName != null) {
+      shortFileName = NameUtil.shortNameFromLongName(SModelStereotype.withoutStereotype(modelName)) + MPSExtentions.DOT_MODEL;
     }
     File tmp = FileUtil.createTmpDir();
     writeContentsToFile(contents[MergeConstants.ORIGINAL], shortFileName, tmp, MergeVersion.BASE.getSuffix());
     writeContentsToFile(contents[MergeConstants.CURRENT], shortFileName, tmp, MergeVersion.MINE.getSuffix());
     writeContentsToFile(contents[MergeConstants.LAST_REVISION], shortFileName, tmp, MergeVersion.REPOSITORY.getSuffix());
-    File zipfile = chooseZipFileForModelLongName("unknown.mps", check_rdkmuq_b0a6a2(modelFqName));
+    File zipfile = chooseZipFileForModelLongName("unknown.mps", modelName);
     zipfile.getParentFile().mkdirs();
     FileUtil.zip(tmp, zipfile);
     FileUtil.delete(tmp);
     return zipfile;
   }
 
-  public static void writeContentsToFile(String contents, String name, File tmpDir, String suffix) throws IOException {
+  public static void writeContentsToFile(byte[] contents, String name, File tmpDir, String suffix) throws IOException {
     File file = new File(tmpDir.getAbsolutePath() + File.separator + name + "." + suffix);
-    FileUtil.writeFile(file, contents);
+    FileUtil.write(file, contents);
   }
 
   public static File chooseZipFileForModelLongName(@NotNull String defaultFileName, @Nullable String modelLongName) {
@@ -63,12 +63,5 @@ public class MergeDriverBackupUtil {
 
   public static void setMergeBackupDirPath(String path) {
     backupDirPath = path;
-  }
-
-  private static String check_rdkmuq_b0a6a2(SModelFqName checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getLongName();
-    }
-    return null;
   }
 }
