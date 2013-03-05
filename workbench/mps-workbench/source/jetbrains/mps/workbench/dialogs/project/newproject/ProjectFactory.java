@@ -31,8 +31,6 @@ import jetbrains.mps.project.*;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -86,14 +84,12 @@ public class ProjectFactory {
           @Override
           public void run() {
             if (myOptions.getCreateNewLanguage()) {
-              myCreatedLanguage = createNewLanguage(mpsProject);
+              myCreatedLanguage = NewModuleUtil.createLanguage(myOptions.getLanguageNamespace(), myOptions.getLanguagePath(), mpsProject);
               mpsProject.addModule(myCreatedLanguage.getModuleReference());
-              myCreatedLanguage.save();
             }
 
             if (myOptions.getCreateNewSolution()) {
-              myCreatedSolution = createNewSolution(mpsProject);
-              myCreatedSolution.save();
+              myCreatedSolution = NewModuleUtil.createSolution(myOptions.getSolutionNamespace(), myOptions.getSolutionPath(), mpsProject);
               mpsProject.addModule(myCreatedSolution.getModuleReference());
             }
 
@@ -167,14 +163,6 @@ public class ProjectFactory {
     }
 
     return null;
-  }
-
-  private Solution createNewSolution(MPSProject mpsProject) {
-    return NewModuleUtil.createSolution(myOptions.getSolutionNamespace(), myOptions.getSolutionPath(), mpsProject);
-  }
-
-  private Language createNewLanguage(MPSProject mpsProject) {
-    return NewModuleUtil.createLanguage(myOptions.getLanguageNamespace(), myOptions.getLanguagePath(), mpsProject);
   }
 
   public static class ProjectNotCreatedException extends Exception {
