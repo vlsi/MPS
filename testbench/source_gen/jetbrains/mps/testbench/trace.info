@@ -541,7 +541,7 @@
     <nodeInfo nodeId="5294483648489414437" fileName="Testbench.java" startLine="55" startPosition="33" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="5294483648489414395" fileName="Testbench.java" startLine="55" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="initLibs#()V" />
     <scopeInfo nodeId="5294483648489414290" fileName="Testbench.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="5294483648489414197" fileName="Testbench.java" startLine="77" startPosition="37" endLine="77" endPosition="37" />
+    <scopeInfo nodeId="5294483648489414197" fileName="Testbench.java" startLine="77" startPosition="36" endLine="77" endPosition="36" />
     <scopeInfo nodeId="5294483648489414316" fileName="Testbench.java" startLine="31" startPosition="46" endLine="32" endPosition="66" />
     <scopeInfo nodeId="5294483648489414384" fileName="Testbench.java" startLine="49" startPosition="25" endLine="50" endPosition="79" />
     <scopeInfo nodeId="5294483648489414419" fileName="Testbench.java" startLine="61" startPosition="31" endLine="62" endPosition="56" />
@@ -607,6 +607,62 @@
     <unitInfo nodeId="5294483648489414404" fileName="Testbench.java" startLine="57" startPosition="39" endLine="66" endPosition="7" unitName="jetbrains.mps.testbench.Testbench$3" />
     <unitInfo nodeId="5294483648489414191" fileName="Testbench.java" startLine="76" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.testbench.Testbench$LoggingHandlerAdapter" />
     <unitInfo nodeId="5294483648489414188" fileName="Testbench.java" startLine="22" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.testbench.Testbench" />
+  </root>
+  <root nodeRef="r:c7fd1483-2eda-4417-bb41-aecb48302c10(jetbrains.mps.testbench)/7781441327978255133">
+    <nodeInfo nodeId="7781441327978686046" fileName="GeneratedTestEnvironment.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="cachesInvalidated" />
+    <nodeInfo nodeId="7781441327978294803" fileName="GeneratedTestEnvironment.java" startLine="20" startPosition="49" endLine="21" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="878521226300894028" fileName="GeneratedTestEnvironment.java" startLine="24" startPosition="23" endLine="25" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="878521226300894034" fileName="GeneratedTestEnvironment.java" startLine="25" startPosition="34" endLine="26" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="878521226300894039" fileName="GeneratedTestEnvironment.java" startLine="26" startPosition="48" endLine="27" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5835181105771483165" fileName="GeneratedTestEnvironment.java" startLine="27" startPosition="69" endLine="28" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7781441327978800232" fileName="GeneratedTestEnvironment.java" startLine="28" startPosition="52" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7781441327978798417" fileName="GeneratedTestEnvironment.java" startLine="29" startPosition="0" endLine="30" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7781441327978800759" fileName="GeneratedTestEnvironment.java" startLine="30" startPosition="24" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5294483648489408682" fileName="GeneratedTestEnvironment.java" startLine="32" startPosition="31" endLine="33" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489408685" fileName="GeneratedTestEnvironment.java" startLine="33" startPosition="35" endLine="34" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7781441327978801495" fileName="GeneratedTestEnvironment.java" startLine="35" startPosition="5" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5294483648489408691" fileName="GeneratedTestEnvironment.java" startLine="37" startPosition="9" endLine="38" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489408702" fileName="GeneratedTestEnvironment.java" startLine="39" startPosition="27" endLine="40" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="7781441327978640427" fileName="GeneratedTestEnvironment.java" startLine="41" startPosition="5" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7781441327978749214" fileName="GeneratedTestEnvironment.java" startLine="42" startPosition="0" endLine="43" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7781441327978880956" fileName="GeneratedTestEnvironment.java" startLine="48" startPosition="25" endLine="49" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7781441327978868701" fileName="GeneratedTestEnvironment.java" startLine="56" startPosition="29" endLine="57" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7781441327978868714" fileName="GeneratedTestEnvironment.java" startLine="53" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7781441327978294787" fileName="GeneratedTestEnvironment.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Ljava/util/Map;)V" />
+    <nodeInfo nodeId="5294483648489408677" fileName="GeneratedTestEnvironment.java" startLine="31" startPosition="0" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7781441327978868708" fileName="GeneratedTestEnvironment.java" startLine="51" startPosition="11" endLine="55" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5294483648489408703" fileName="GeneratedTestEnvironment.java" startLine="36" startPosition="0" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7781441327978868698" fileName="GeneratedTestEnvironment.java" startLine="50" startPosition="33" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7781441327978868688" fileName="GeneratedTestEnvironment.java" startLine="49" startPosition="20" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="7781441327978868686" fileName="GeneratedTestEnvironment.java" startLine="48" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="878521226300894024" fileName="GeneratedTestEnvironment.java" startLine="24" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setup#()V" />
+    <scopeInfo nodeId="7781441327978868715" fileName="GeneratedTestEnvironment.java" startLine="53" startPosition="29" endLine="53" endPosition="29" />
+    <scopeInfo nodeId="7781441327978294790" fileName="GeneratedTestEnvironment.java" startLine="20" startPosition="49" endLine="21" endPosition="123" />
+    <scopeInfo nodeId="5294483648489408690" fileName="GeneratedTestEnvironment.java" startLine="37" startPosition="9" endLine="38" endPosition="44" />
+    <scopeInfo nodeId="5294483648489408704" fileName="GeneratedTestEnvironment.java" startLine="39" startPosition="0" endLine="40" endPosition="36">
+      <varInfo nodeId="5294483648489408695" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="5294483648489408699" fileName="GeneratedTestEnvironment.java" startLine="39" startPosition="27" endLine="40" endPosition="36" />
+    <scopeInfo nodeId="7781441327978868699" fileName="GeneratedTestEnvironment.java" startLine="56" startPosition="0" endLine="57" endPosition="28">
+      <varInfo nodeId="7781441327978868705" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="7781441327978868700" fileName="GeneratedTestEnvironment.java" startLine="56" startPosition="29" endLine="57" endPosition="28" />
+    <scopeInfo nodeId="5294483648489408681" fileName="GeneratedTestEnvironment.java" startLine="32" startPosition="31" endLine="34" endPosition="31" />
+    <scopeInfo nodeId="7781441327978868714" fileName="GeneratedTestEnvironment.java" startLine="53" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="7781441327978294787" fileName="GeneratedTestEnvironment.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
+      <varInfo nodeId="7781441327978448966" varName="libraries" />
+    </scopeInfo>
+    <scopeInfo nodeId="7781441327978868707" fileName="GeneratedTestEnvironment.java" startLine="51" startPosition="11" endLine="55" endPosition="11" />
+    <scopeInfo nodeId="7781441327978868697" fileName="GeneratedTestEnvironment.java" startLine="50" startPosition="33" endLine="58" endPosition="7" />
+    <scopeInfo nodeId="7781441327978868688" fileName="GeneratedTestEnvironment.java" startLine="49" startPosition="20" endLine="59" endPosition="5">
+      <varInfo nodeId="7781441327978868689" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="7781441327978868687" fileName="GeneratedTestEnvironment.java" startLine="48" startPosition="25" endLine="59" endPosition="5" />
+    <scopeInfo nodeId="7781441327978868686" fileName="GeneratedTestEnvironment.java" startLine="48" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="878521226300894027" fileName="GeneratedTestEnvironment.java" startLine="24" startPosition="23" endLine="43" endPosition="20" />
+    <scopeInfo nodeId="878521226300894024" fileName="GeneratedTestEnvironment.java" startLine="24" startPosition="0" endLine="45" endPosition="0" />
+    <unitInfo nodeId="7781441327978868712" fileName="GeneratedTestEnvironment.java" startLine="52" startPosition="41" endLine="55" endPosition="9" unitName="jetbrains.mps.testbench.GeneratedTestEnvironment$1" />
+    <unitInfo nodeId="7781441327978255133" fileName="GeneratedTestEnvironment.java" startLine="17" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.testbench.GeneratedTestEnvironment" />
   </root>
 </debugInfo>
 

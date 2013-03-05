@@ -73,8 +73,8 @@ public class Testbench {
     jetbrains.mps.logging.Logger.addLoggingHandler(new Testbench.LoggingHandlerAdapter());
   }
 
-  private static class LoggingHandlerAdapter implements ILoggingHandler {
-    private LoggingHandlerAdapter() {
+  public static class LoggingHandlerAdapter implements ILoggingHandler {
+    public LoggingHandlerAdapter() {
     }
 
     public void info(LogEntry e) {
