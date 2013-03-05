@@ -29,6 +29,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.tools.BaseTool;
 import jetbrains.mps.openapi.editor.EditorInspector;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
@@ -157,7 +158,7 @@ public class InspectorTool extends BaseTool implements EditorInspector, ProjectC
     private MyMessagePanel() {
       setLayout(new BorderLayout());
 
-      setBackground(LightColors.YELLOW);
+      setBackground(StyleRegistry.getInstance().getSimpleColor(LightColors.YELLOW));
       setBorder(BorderFactory.createEmptyBorder(0, 4, 0, 4));
 
       add(myLabel, BorderLayout.CENTER);

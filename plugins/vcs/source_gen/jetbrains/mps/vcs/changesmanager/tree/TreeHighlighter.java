@@ -22,7 +22,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vcs.changesmanager.tree.features.Feature;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
 import jetbrains.mps.vcs.changesmanager.tree.features.ModelFeature;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.SModelReference;
@@ -35,6 +35,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.vcs.changesmanager.BaseVersionUtil;
 import jetbrains.mps.vcs.platform.util.ConflictsUtil;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.ide.ui.MPSTreeNodeListener;
@@ -163,8 +164,8 @@ public class TreeHighlighter implements TreeMessageOwner {
     unhighlightNode(node);
 
     SModel model = SModelRepository.getInstance().getModelDescriptor(feature.getModelReference());
-    if (model instanceof DefaultSModelDescriptor) {
-      DefaultSModelDescriptor emd = (DefaultSModelDescriptor) model;
+    if (model instanceof BaseEditableSModelDescriptor) {
+      BaseEditableSModelDescriptor emd = (BaseEditableSModelDescriptor) model;
       myRegistry.getCurrentDifference(emd).setEnabled(true);
 
       ModelChange change = myMap.get(feature);
@@ -251,7 +252,7 @@ public class TreeHighlighter implements TreeMessageOwner {
   }
 
   @NotNull
-  private TreeMessage getMessage(@NotNull ModelChange modelChange, @NotNull DefaultSModelDescriptor modelDescriptor) {
+  private TreeMessage getMessage(@NotNull ModelChange modelChange, @NotNull BaseEditableSModelDescriptor modelDescriptor) {
     switch (modelChange.getType()) {
       case ADD:
         if (modelChange instanceof AddRootChange) {
@@ -275,8 +276,8 @@ public class TreeHighlighter implements TreeMessageOwner {
   @Nullable
   private TreeMessage getMessage(@NotNull ModelFeature modelFeature) {
     SModel md = SModelRepository.getInstance().getModelDescriptor(modelFeature.getModelReference());
-    if (md instanceof DefaultSModelDescriptor) {
-      FileStatus status = getModelFileStatus((DefaultSModelDescriptor) md, myRegistry.getProject());
+    if (md instanceof BaseEditableSModelDescriptor) {
+      FileStatus status = getModelFileStatus((BaseEditableSModelDescriptor) md, myRegistry.getProject());
       return (status == null ?
         null :
         getMessage(status)
@@ -287,8 +288,11 @@ public class TreeHighlighter implements TreeMessageOwner {
   }
 
   @Nullable
-  private static FileStatus getModelFileStatus(@NotNull DefaultSModelDescriptor ed, @NotNull Project project) {
-    VirtualFile vf = VirtualFileUtils.getVirtualFile(ed.getSource().getFile());
+  private static FileStatus getModelFileStatus(@NotNull BaseEditableSModelDescriptor ed, @NotNull Project project) {
+    if (!(ed.getSource() instanceof FileDataSource)) {
+      return null;
+    }
+    VirtualFile vf = VirtualFileUtils.getVirtualFile(((FileDataSource) ed.getSource()).getFile());
     return (vf == null ?
       null :
       FileStatusManager.getInstance(project).getStatus(vf)

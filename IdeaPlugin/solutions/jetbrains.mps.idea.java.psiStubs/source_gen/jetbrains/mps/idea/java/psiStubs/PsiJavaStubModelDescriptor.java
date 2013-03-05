@@ -17,17 +17,17 @@ import com.intellij.psi.PsiFile;
 import com.google.common.collect.BiMap;
 import com.intellij.psi.PsiElement;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.google.common.collect.HashBiMap;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import com.intellij.psi.PsiClass;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import com.intellij.psi.PsiFileSystemItem;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor implements PsiListener, DataSourceListener {
   private SModelReference myModelRef;
@@ -59,9 +59,9 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
   }
 
   @Override
-  protected jetbrains.mps.smodel.SModel createModel() {
+  protected SModel createModel() {
 
-    jetbrains.mps.smodel.SModel ourModel = new jetbrains.mps.smodel.SModel(myModelRef);
+    SModel ourModel = new SModel(myModelRef);
 
     for (PsiJavaFile jf : Sequence.fromIterable(myDataSource.getJavaFiles())) {
 
@@ -75,7 +75,7 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
         SNode node = converter.convertClass(cls);
         // TODO check for duplicate ids (in java sources there may be 2 classes with the same name 
         //  which is an error but none the less) 
-        SModelOperations.addRootNode(ourModel, node);
+        ourModel.addRootNode(node);
         SetSequence.fromSet(roots).addElement(node);
         MapSequence.fromMap(myRootsById).put(node.getNodeId(), node);
       }
@@ -94,7 +94,7 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
   }
 
   public void psiChanged(final PsiListener.PsiEvent event) {
-    SModel ourModel = getCurrentModelInternal();
+    org.jetbrains.mps.openapi.model.SModel ourModel = getCurrentModelInternal();
 
     // already attached, but not createModel'd yet? 
     if (ourModel == null) {
@@ -207,7 +207,11 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
     if (file == null) {
       return null;
     }
-    SNodeId nodeId = MapSequence.fromMap(myMps2PsiMappings).get(file).inverse().get(element);
+    BiMap<SNodeId, PsiElement> mapping = MapSequence.fromMap(myMps2PsiMappings).get(file);
+    if (mapping == null) {
+      return null;
+    }
+    SNodeId nodeId = mapping.inverse().get(element);
     return mySModel.getNode(nodeId);
   }
 }

@@ -30,7 +30,7 @@ public abstract class BaseSpecialModelDescriptor extends BaseSModelDescriptor {
   public final synchronized jetbrains.mps.smodel.SModel getSModel() {
     if (mySModel == null) {
       mySModel = createModel();
-      ((jetbrains.mps.smodel.SModel) mySModel).setModelDescriptor(this);
+      mySModel.setModelDescriptor(this);
       fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
     }
     return mySModel;

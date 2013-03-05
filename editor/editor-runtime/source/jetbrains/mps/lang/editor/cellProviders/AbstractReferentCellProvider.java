@@ -125,7 +125,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
       SReference reference = node.getReference(myGenuineRole);
       if (reference != null) {
         referentNode = reference.getTargetNode();
-        if (referentNode == null || context.getScope().getModelDescriptor((SModelReference) referentNode.getModel().getReference()) == null) {
+        if (referentNode == null || context.getScope().getModelDescriptor(referentNode.getModel().getReference()) == null) {
           String rinfo = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
           myErrorText = rinfo != null ? rinfo : "?" + SModelUtil.getLinkDeclarationRole(myLinkDeclaration) + "?";
           return createErrorCell(myErrorText, node, context);

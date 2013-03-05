@@ -295,7 +295,7 @@ public class IntentionsSupport {
         ModelAccess.instance().runWriteInEDT(new Runnable() {
           @Override
           public void run() {
-            SNode intentionNode = ((SNodeReference) intention.getDescriptor().getIntentionNodeReference()).resolve(MPSModuleRepository.getInstance());
+            SNode intentionNode = intention.getDescriptor().getIntentionNodeReference().resolve(MPSModuleRepository.getInstance());
             if (intentionNode == null) {
               Messages.showErrorDialog(ProjectHelper.toIdeaProject(myEditor.getOperationContext().getProject()),
                 "Could not find declaration for " + intention.getClass().getSimpleName()

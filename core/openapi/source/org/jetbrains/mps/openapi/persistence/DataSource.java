@@ -31,6 +31,7 @@ public interface DataSource {
   /**
    * Retrieves the last modification timestamp.
    * The timestamp should reliably reflect all external changes to the data source.
+   * @return 0 if timestamp is not supported for the source, or -1 if the source is dead
    */
   long getTimestamp();
 }

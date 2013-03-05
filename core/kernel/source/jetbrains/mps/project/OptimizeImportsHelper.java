@@ -161,7 +161,7 @@ public class OptimizeImportsHelper {
     // add auto imports as dependencies
     result.myUsedLanguages.addAll(ModelsAutoImportsManager.getAutoImportedLanguages(modelDescriptor.getModule(), modelDescriptor));
     for (org.jetbrains.mps.openapi.model.SModel model : ModelsAutoImportsManager.getAutoImportedModels(modelDescriptor.getModule(), modelDescriptor)) {
-      result.myUsedModels.add(((SModelReference) model.getReference()));
+      result.myUsedModels.add(model.getReference());
     }
 
     return result;
@@ -253,7 +253,7 @@ public class OptimizeImportsHelper {
     }
 
     for (SModelReference model : unusedModels) {
-      ((jetbrains.mps.smodel.SModel) modelDescriptor.getSModel()).deleteModelImport((SModelReference) model);
+      ((jetbrains.mps.smodel.SModel) modelDescriptor.getSModel()).deleteModelImport(model);
       report.append("Model ").append(model.getModelName()).append(" was removed from imports\n");
     }
 

@@ -10440,7 +10440,8 @@
     <nodeInfo nodeId="6624237184120342777" fileName="AnnotationMethodDeclaration_Behavior.java" startLine="40" startPosition="147" endLine="41" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6624237184120342794" fileName="AnnotationMethodDeclaration_Behavior.java" startLine="42" startPosition="7" endLine="43" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6624237184120341674" fileName="AnnotationMethodDeclaration_Behavior.java" startLine="45" startPosition="99" endLine="46" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6624237184120341678" fileName="AnnotationMethodDeclaration_Behavior.java" startLine="47" startPosition="5" endLine="48" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4480898598409357728" fileName="AnnotationMethodDeclaration_Behavior.java" startLine="48" startPosition="96" endLine="49" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6624237184120341678" fileName="AnnotationMethodDeclaration_Behavior.java" startLine="50" startPosition="5" endLine="51" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1233077629853" fileName="AnnotationMethodDeclaration_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1233077629853" fileName="AnnotationMethodDeclaration_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canBeAnnotated_1233076312117#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="6624237184120654495" fileName="AnnotationMethodDeclaration_Behavior.java" startLine="17" startPosition="95" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -10449,10 +10450,11 @@
     <nodeInfo nodeId="6624237184120342781" fileName="AnnotationMethodDeclaration_Behavior.java" startLine="36" startPosition="7" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6624237184120342768" fileName="AnnotationMethodDeclaration_Behavior.java" startLine="39" startPosition="7" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6624237184120341662" fileName="AnnotationMethodDeclaration_Behavior.java" startLine="44" startPosition="5" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4480898598409340262" fileName="AnnotationMethodDeclaration_Behavior.java" startLine="47" startPosition="5" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6624237184120543358" fileName="AnnotationMethodDeclaration_Behavior.java" startLine="22" startPosition="155" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6624237184120298290" fileName="AnnotationMethodDeclaration_Behavior.java" startLine="20" startPosition="5" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6624237184120341589" fileName="AnnotationMethodDeclaration_Behavior.java" startLine="28" startPosition="5" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1233077629853" fileName="AnnotationMethodDeclaration_Behavior.java" startLine="17" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isGoodReturnType_6624237184120289968#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1233077629853" fileName="AnnotationMethodDeclaration_Behavior.java" startLine="17" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isGoodReturnType_6624237184120289968#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <scopeInfo nodeId="1233077629855" fileName="AnnotationMethodDeclaration_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="1233077632576" fileName="AnnotationMethodDeclaration_Behavior.java" startLine="13" startPosition="78" endLine="14" endPosition="17" />
     <scopeInfo nodeId="6624237184120654496" fileName="AnnotationMethodDeclaration_Behavior.java" startLine="18" startPosition="94" endLine="19" endPosition="19" />
@@ -10461,6 +10463,7 @@
     <scopeInfo nodeId="6624237184120342782" fileName="AnnotationMethodDeclaration_Behavior.java" startLine="37" startPosition="148" endLine="38" endPosition="20" />
     <scopeInfo nodeId="6624237184120342769" fileName="AnnotationMethodDeclaration_Behavior.java" startLine="40" startPosition="147" endLine="41" endPosition="20" />
     <scopeInfo nodeId="6624237184120341663" fileName="AnnotationMethodDeclaration_Behavior.java" startLine="45" startPosition="99" endLine="46" endPosition="18" />
+    <scopeInfo nodeId="4480898598409340264" fileName="AnnotationMethodDeclaration_Behavior.java" startLine="48" startPosition="96" endLine="49" endPosition="18" />
     <scopeInfo nodeId="1233077629853" fileName="AnnotationMethodDeclaration_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0">
       <varInfo nodeId="1233077629853" varName="thisNode" />
     </scopeInfo>
@@ -10474,12 +10477,12 @@
     <scopeInfo nodeId="6624237184120341590" fileName="AnnotationMethodDeclaration_Behavior.java" startLine="29" startPosition="100" endLine="43" endPosition="19">
       <varInfo nodeId="6624237184120341602" varName="classifier" />
     </scopeInfo>
-    <scopeInfo nodeId="6624237184120289971" fileName="AnnotationMethodDeclaration_Behavior.java" startLine="17" startPosition="95" endLine="48" endPosition="17" />
-    <scopeInfo nodeId="1233077629853" fileName="AnnotationMethodDeclaration_Behavior.java" startLine="17" startPosition="0" endLine="50" endPosition="0">
+    <scopeInfo nodeId="6624237184120289971" fileName="AnnotationMethodDeclaration_Behavior.java" startLine="17" startPosition="95" endLine="51" endPosition="17" />
+    <scopeInfo nodeId="1233077629853" fileName="AnnotationMethodDeclaration_Behavior.java" startLine="17" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="1233077629853" varName="thisNode" />
       <varInfo nodeId="6624237184120298288" varName="type" />
     </scopeInfo>
-    <unitInfo nodeId="1233077629853" fileName="AnnotationMethodDeclaration_Behavior.java" startLine="9" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AnnotationMethodDeclaration_Behavior" />
+    <unitInfo nodeId="1233077629853" fileName="AnnotationMethodDeclaration_Behavior.java" startLine="9" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AnnotationMethodDeclaration_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/1233920947404">
     <nodeInfo nodeId="1233921046889" fileName="TypeAnnotable_Behavior.java" startLine="14" startPosition="79" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

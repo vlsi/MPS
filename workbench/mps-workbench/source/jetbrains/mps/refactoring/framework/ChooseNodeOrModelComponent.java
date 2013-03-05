@@ -129,7 +129,7 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
     for (SModel model : new ArrayList<SModel>(models)) {
       if (!(model instanceof EditableSModel)) {
         models.remove(model);
-      } else if (((EditableSModel) model).isReadOnly()) {
+      } else if (model.isReadOnly()) {
         models.remove(model);
       } else if (myReturnLoadedModels && !condition.met(model.getSModel())) {
         models.remove(model);

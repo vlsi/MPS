@@ -51,7 +51,7 @@ import java.util.Set;
 
 public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsagesParticipant {
   private static Logger LOG = Logger.getLogger(MPSModelsFastFindSupport.class);
-  private final Set<String> indexedFileExtensions = new HashSet<String>(Arrays.asList(MPSExtentions.MODEL));
+  private final Set<String> indexedFileExtensions = new HashSet<String>(Arrays.asList(MPSExtentions.MODEL, MPSExtentions.MODEL_BINARY));
 
   @Override
   public void initComponent() {

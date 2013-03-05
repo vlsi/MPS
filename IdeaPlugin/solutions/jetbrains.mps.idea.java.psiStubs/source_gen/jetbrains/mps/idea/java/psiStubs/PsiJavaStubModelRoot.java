@@ -22,7 +22,6 @@ import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiJavaFile;
 import jetbrains.mps.smodel.SModelReference;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.internal.collections.runtime.SetSequence;

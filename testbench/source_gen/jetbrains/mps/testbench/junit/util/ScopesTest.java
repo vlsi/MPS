@@ -110,7 +110,7 @@ public class ScopesTest {
         ScopesTest.ourNodesToCheck.clear();
 
         for (SModel model : ScopesTest.ourProject.getProjectModels()) {
-          for (SNode node : (Iterable<SNode>) model.getRootNodes()) {
+          for (SNode node : model.getRootNodes()) {
             ScopesTest.checkNodes(node);
           }
         }

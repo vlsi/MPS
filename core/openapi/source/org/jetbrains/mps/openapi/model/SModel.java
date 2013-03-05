@@ -17,10 +17,7 @@ package org.jetbrains.mps.openapi.model;
 
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelInternal;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
@@ -129,8 +126,8 @@ public interface SModel {
   void detach();
 
   /**
-     * Represents a problem with the persitence.
-     */
+   * Represents a problem with the persitence.
+   */
   interface Problem {
 
     int getColumn();
@@ -142,7 +139,7 @@ public interface SModel {
     String getText();
 
     /**
-     *  Errors usually cause model to be partially loaded, so it cannot be saved back to the storage later.
+     * Errors usually cause model to be partially loaded, so it cannot be saved back to the storage later.
      */
     boolean isError();
   }

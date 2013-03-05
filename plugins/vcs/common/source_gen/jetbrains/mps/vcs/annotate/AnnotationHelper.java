@@ -10,8 +10,11 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import org.jetbrains.mps.openapi.persistence.DataSource;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.util.FileUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.project.Project;
@@ -58,10 +61,16 @@ public class AnnotationHelper {
     final SNode root = editorComponent.getEditedNode();
     SModel model = check_19hp0u_a0d0c(root);
     SModel modelDescriptor = check_19hp0u_a0e0c(model);
-    if (!((modelDescriptor instanceof DefaultSModelDescriptor))) {
+
+    DataSource source = modelDescriptor.getSource();
+    if (!(source instanceof FileDataSource)) {
       return false;
     }
-    IFile modelFile = ((DefaultSModelDescriptor) modelDescriptor).getSource().getFile();
+    IFile modelFile = ((FileDataSource) source).getFile();
+    if (!(MPSExtentions.MODEL.equals(FileUtil.getExtension(modelFile.getName())))) {
+      return false;
+    }
+
     final VirtualFile file = VirtualFileUtils.getVirtualFile(modelFile);
     final Project project = ProjectHelper.toIdeaProject(editorComponent.getOperationContext().getProject());
     final AbstractVcs vcs = ProjectLevelVcsManager.getInstance(project).getVcsFor(file);

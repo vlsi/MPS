@@ -38,11 +38,11 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.MetadataChange;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import org.jetbrains.annotations.NotNull;
 import javax.swing.Action;
 import java.util.List;
 import java.util.ArrayList;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.annotations.NotNull;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -167,6 +167,7 @@ public class MergeModelsDialog extends DialogWrapper {
   }
 
   @Override
+  @NotNull
   protected Action[] createActions() {
     List<Action> actions = ListSequence.fromList(new ArrayList<Action>());
     ListSequence.fromList(actions).addElement(getOKAction());

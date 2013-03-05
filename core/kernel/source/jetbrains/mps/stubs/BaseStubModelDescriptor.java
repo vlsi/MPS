@@ -50,7 +50,7 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
   public synchronized jetbrains.mps.smodel.SModel getSModel() {
     if (mySModel == null) {
       mySModel = createModel();
-      ((jetbrains.mps.smodel.SModel) mySModel).setModelDescriptor(this);
+      mySModel.setModelDescriptor(this);
       fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
     }
     return mySModel;

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.testbench.util.CachingAppender" file="CachingAppender.java">
+    <classNode dependClassName="com.intellij.openapi.util.Pair" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.StringBuilder" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="org.apache.log4j.Priority" />
+    <classNode dependClassName="org.apache.log4j.spi.LoggingEvent" />
+    <classNode extendsClassName="jetbrains.mps.testbench.util.Output" />
+    <classNode extendsClassName="org.apache.log4j.AppenderSkeleton" />
+  </dependency>
+  <dependency className="jetbrains.mps.testbench.util.CachingPrintStream" file="CachingPrintStream.java">
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.io.OutputStream" />
+    <classNode dependClassName="java.lang.IllegalStateException" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.StringBuilder" />
+    <classNode dependClassName="java.lang.System" />
+    <classNode extendsClassName="java.io.PrintStream" />
+    <classNode extendsClassName="jetbrains.mps.testbench.util.Output" />
+  </dependency>
+  <dependency className="jetbrains.mps.testbench.util.FilesCollector" file="FilesCollector.java">
+    <classNode dependClassName="com.intellij.openapi.util.Pair" />
+    <classNode dependClassName="com.intellij.openapi.util.io.FileUtil" />
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="java.util.regex.Pattern" />
+    <classNode dependClassName="org.apache.tools.ant.Project" />
+    <classNode dependClassName="org.apache.tools.ant.types.FileSet" />
+    <classNode dependClassName="org.apache.tools.ant.types.resources.FileResource" />
+  </dependency>
+  <dependency className="jetbrains.mps.testbench.util.Output" file="Output.java">
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.testbench.util.ThreadWatcher" file="ThreadWatcher.java">
+    <classNode dependClassName="gnu.trove.TLongObjectHashMap" />
+    <classNode dependClassName="java.lang.IllegalStateException" />
+    <classNode dependClassName="java.lang.InterruptedException" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.StringBuilder" />
+    <classNode dependClassName="java.lang.Thread" />
+    <classNode dependClassName="java.lang.management.ManagementFactory" />
+    <classNode dependClassName="java.lang.management.ThreadInfo" />
+    <classNode dependClassName="java.lang.management.ThreadMXBean" />
+    <classNode dependClassName="java.util.regex.Pattern" />
+    <classNode extendsClassName="jetbrains.mps.testbench.util.Output" />
+  </dependency>
+</dependenciesRoot>
+

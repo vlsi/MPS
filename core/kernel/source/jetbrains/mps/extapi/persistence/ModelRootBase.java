@@ -70,7 +70,7 @@ public abstract class ModelRootBase implements ModelRoot {
   public void dispose() {
     SModelRepository smRepo = SModelRepository.getInstance();
     for (SModel model : myModels) {
-      SModel modelDescriptor = (SModel) model;
+      SModel modelDescriptor = model;
       if (modelDescriptor.getReference().resolve(MPSModuleRepository.getInstance())!=modelDescriptor) {
         // TODO fix the problem and remove continue statement
         // theoretically can happen in JavaStubs (where several roots share the same model)
@@ -95,7 +95,7 @@ public abstract class ModelRootBase implements ModelRoot {
   protected void register(SModel model) {
     SModelRepository modelRepository = SModelRepository.getInstance();
     if (modelRepository.getModelDescriptor(model.getReference()) == null) {
-      modelRepository.registerModelDescriptor((SModel) model, getModule());
+      modelRepository.registerModelDescriptor(model, getModule());
       myModels.add(model);
     }
   }
@@ -103,7 +103,7 @@ public abstract class ModelRootBase implements ModelRoot {
   protected void unregister(SModel model) {
     SModelRepository modelRepository = SModelRepository.getInstance();
     if (modelRepository.getModelDescriptor(model.getReference()) != null) {
-      modelRepository.unRegisterModelDescriptor((SModel) model, getModule());
+      modelRepository.unRegisterModelDescriptor(model, getModule());
       myModels.remove(model);
     }
   }
@@ -121,7 +121,7 @@ public abstract class ModelRootBase implements ModelRoot {
     while (it.hasNext()) {
       SModel model = it.next();
       if (loaded.contains(model.getReference())) continue;
-      modelRepository.unRegisterModelDescriptor((SModel) model, getModule());
+      modelRepository.unRegisterModelDescriptor(model, getModule());
       it.remove();
     }
   }

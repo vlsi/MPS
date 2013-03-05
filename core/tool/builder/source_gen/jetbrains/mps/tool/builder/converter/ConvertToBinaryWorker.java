@@ -9,6 +9,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.persistence.binary.BinaryPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 
@@ -31,11 +32,11 @@ public class ConvertToBinaryWorker {
   private void convertModelToBinary(String sourceFile, String destFile) throws IOException {
     IFile source = FileSystem.getInstance().getFileByPath(sourceFile);
     try {
-      DefaultSModel model = ModelPersistence.readModel(source, false);
+      DefaultSModel model = ModelPersistence.readModel(new FileDataSource(source), false);
       if (model.getSModelHeader().getPersistenceVersion() < ModelPersistence.LAST_VERSION) {
         throw new IOException("cannot convert " + sourceFile + ": model persistence is too old, please upgrade");
       }
-      boolean success = BinaryPersistence.writeModel(model, FileSystem.getInstance().getFileByPath(destFile));
+      boolean success = BinaryPersistence.writeModel(model, new FileDataSource(FileSystem.getInstance().getFileByPath(destFile)));
       if (!(success)) {
         throw new IOException("cannot save " + destFile);
       }

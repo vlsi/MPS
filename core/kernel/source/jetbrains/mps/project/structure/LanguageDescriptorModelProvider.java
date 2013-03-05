@@ -17,14 +17,31 @@ package jetbrains.mps.project.structure;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.model.GeneratableSModel;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
+import jetbrains.mps.smodel.BootstrapLanguages;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModuleRepositoryAdapter;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -195,7 +212,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
           return false;
         }
       };
-      ((jetbrains.mps.smodel.SModel) model).addEngagedOnGenerationLanguage(BootstrapLanguages.DESCRIPTOR);
+      model.addEngagedOnGenerationLanguage(BootstrapLanguages.DESCRIPTOR);
       return model;
     }
 
@@ -214,7 +231,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
       String hash = myHash;
       if (hash == null) {
         IFile descriptorFile = myModule.getDescriptorFile();
-        hash = ModelDigestUtil.hash(descriptorFile, true);
+        hash = ModelDigestUtil.hash(new FileDataSource(descriptorFile), true);
         // TODO add existing aspects hash
         myHash = hash;
       }

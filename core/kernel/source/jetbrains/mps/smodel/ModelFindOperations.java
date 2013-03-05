@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
@@ -21,9 +21,10 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.DataSource;
+import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -90,11 +91,11 @@ public class ModelFindOperations {
     DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
     if (dsm.isChanged()) return true;
 
-    IFile modelFile = dsm.getSource().getFile();
-    if (!modelFile.exists()) return true;
+    StreamDataSource source = dsm.getSource();
+    if (source.getTimestamp() == -1) return true;
     BufferedReader r = null;
     try {
-      r = new BufferedReader(new InputStreamReader(modelFile.openInputStream(), FileUtil.DEFAULT_CHARSET));
+      r = new BufferedReader(new InputStreamReader(source.openInputStream(), FileUtil.DEFAULT_CHARSET));
       String line;
       boolean result = false;
       while ((line = r.readLine()) != null) {

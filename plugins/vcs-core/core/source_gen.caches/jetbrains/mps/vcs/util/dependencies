@@ -8,7 +8,7 @@
     <classNode dependClassName="java.text.SimpleDateFormat" />
     <classNode dependClassName="java.util.Date" />
     <classNode dependClassName="jetbrains.mps.project.MPSExtentions" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelFqName" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.util.MergeConstants" />

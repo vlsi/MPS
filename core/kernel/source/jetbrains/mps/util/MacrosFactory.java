@@ -61,7 +61,7 @@ public class MacrosFactory {
    */
   @Deprecated
   public static OldMacros moduleDescriptor(IModule module) {
-    IFile descriptorFile = ((AbstractModule) module).getDescriptorFile();
+    IFile descriptorFile = module.getDescriptorFile();
     MacroHelper macroHelper = forModuleFile(descriptorFile);
     Macros macros = macroHelper instanceof MacroHelperImpl
       ? ((MacroHelperImpl) macroHelper).macros

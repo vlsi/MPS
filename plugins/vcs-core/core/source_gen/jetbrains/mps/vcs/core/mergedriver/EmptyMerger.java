@@ -12,7 +12,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
   @Nullable
   @Override
-  public Tuples._2<Integer, byte[]> mergeContents(byte[] baseContent, byte[] localContent, byte[] latestContent) {
+  public Tuples._2<Integer, byte[]> mergeContents(FileContent baseContent, FileContent localContent, FileContent latestContent) {
     return MultiTuple.<Integer,byte[]>from(MERGED, new byte[0]);
   }
 }
