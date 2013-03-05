@@ -3272,10 +3272,7 @@
     <mkdir dir="${build.tmp}/java/out/mps-test" />
     <javac2 destdir="${build.tmp}/java/out/mps-test" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
-      <src>
-        <pathelement path="${mps_home}/testbench/source" />
-        <pathelement path="${mps_home}/testbench/source_gen" />
-      </src>
+      <src path="${mps_home}/testbench/source_gen" />
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-openapi" />
         <pathelement path="${build.tmp}/java/out/mps-closures" />
@@ -3294,7 +3291,6 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/mps-test">
-      <fileset dir="${mps_home}/testbench/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/testbench/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>

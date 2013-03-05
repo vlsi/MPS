@@ -45,7 +45,7 @@
     <nodeInfo nodeId="4052780437581224461" fileName="ScopesTest.java" startLine="108" startPosition="25" endLine="109" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4052780437579011235" fileName="ScopesTest.java" startLine="109" startPosition="82" endLine="110" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4052780437579010600" fileName="ScopesTest.java" startLine="110" startPosition="43" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3798371591902458075" fileName="ScopesTest.java" startLine="113" startPosition="69" endLine="114" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3798371591902458075" fileName="ScopesTest.java" startLine="113" startPosition="51" endLine="114" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4052780437579010252" fileName="ScopesTest.java" startLine="118" startPosition="7" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4052780437579010254" fileName="ScopesTest.java" startLine="119" startPosition="0" endLine="120" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4052780437579011291" fileName="ScopesTest.java" startLine="124" startPosition="93" endLine="125" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -76,7 +76,7 @@
     <scopeInfo nodeId="4052780437579008138" fileName="ScopesTest.java" startLine="29" startPosition="33" endLine="30" endPosition="18" />
     <scopeInfo nodeId="4052780437579008470" fileName="ScopesTest.java" startLine="35" startPosition="76" endLine="36" endPosition="67" />
     <scopeInfo nodeId="4052780437579008572" fileName="ScopesTest.java" startLine="43" startPosition="57" endLine="44" endPosition="25" />
-    <scopeInfo nodeId="4052780437579011165" fileName="ScopesTest.java" startLine="113" startPosition="69" endLine="114" endPosition="40" />
+    <scopeInfo nodeId="4052780437579011165" fileName="ScopesTest.java" startLine="113" startPosition="51" endLine="114" endPosition="40" />
     <scopeInfo nodeId="4052780437579011269" fileName="ScopesTest.java" startLine="124" startPosition="93" endLine="125" endPosition="56" />
     <scopeInfo nodeId="4052780437579011313" fileName="ScopesTest.java" startLine="127" startPosition="59" endLine="128" endPosition="24" />
     <scopeInfo nodeId="9120563202187871721" fileName="ScopesTest.java" startLine="85" startPosition="132" endLine="87" endPosition="18" />

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.refactoring.tests.IRefactoringTester" file="IRefactoringTester.java">
+    <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="jetbrains.mps.smodel.Language" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+  </dependency>
+</dependenciesRoot>
+
