@@ -800,7 +800,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   //--------------
 
   public org.jetbrains.mps.openapi.model.SModel getModel() {
-    return getContainingModel();
+    return myModel == null ? null : myModel.getModelDescriptor();
   }
 
   public SModel getModelInternal() {
