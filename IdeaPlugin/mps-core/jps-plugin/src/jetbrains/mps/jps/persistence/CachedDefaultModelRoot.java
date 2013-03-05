@@ -21,7 +21,6 @@ import jetbrains.mps.idea.core.module.CachedModelData;
 import jetbrains.mps.idea.core.module.CachedModuleData;
 import jetbrains.mps.idea.core.module.CachedRepositoryData;
 import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.persistence.binary.BinaryModelHeader;
 import jetbrains.mps.persistence.binary.BinarySModelDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -53,9 +52,9 @@ public class CachedDefaultModelRoot extends DefaultModelRoot {
   @Override
   public Iterable<SModel> loadModels() {
     SModule module = getModule();
-        if (module instanceof Generator) {
-            module = ((Generator) module).getSourceLanguage();
-        }
+    if (module instanceof Generator) {
+      module = ((Generator) module).getSourceLanguage();
+    }
     if (module == null || !(module.getModuleReference() instanceof ModuleReference)) {
       return super.loadModels();
     }
