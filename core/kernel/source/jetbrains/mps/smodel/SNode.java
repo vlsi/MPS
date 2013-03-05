@@ -799,7 +799,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   //--------------
 
-  public SModel getModel() {
+  public org.jetbrains.mps.openapi.model.SModel getModel() {
     return getModelInternal();
   }
 

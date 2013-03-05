@@ -149,7 +149,7 @@ public class SModel implements SModelInternal {
     ModelChange.assertLegalNodeRegistration(this, node);
     enforceFullLoad();
     if (myRoots.contains(node)) return;
-    SModel model = node.getModel();
+    SModel model = ((SNode) node).getModelInternal();
     if (model != null && model != this && model.isRoot(node)) {
       model.removeRoot(node);
     } else {
