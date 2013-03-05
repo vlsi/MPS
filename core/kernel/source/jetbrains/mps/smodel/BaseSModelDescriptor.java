@@ -77,6 +77,11 @@ public abstract class BaseSModelDescriptor implements jetbrains.mps.smodel.SMode
   }
 
   @Override
+  public synchronized SModel getSModel() {
+    return getSModelInternal();
+  }
+
+  @Override
   public void setModelRoot(ModelRoot modelRoot) {
 //    if (myModelRoot != null && modelRoot != null) {
 //      LOG.error("Duplicate model roots for model " + getLongName() + " in module " + modelRoot.getModule() + ": \n" +

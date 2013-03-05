@@ -59,11 +59,6 @@ public class BinarySModelDescriptor extends BaseEditableSModelDescriptor impleme
   }
 
   @Override
-  public synchronized BinarySModel getSModel() {
-    return getSModelInternal();
-  }
-
-  @Override
   public synchronized BinarySModel getSModelInternal() {
     if (myModel == null) {
       myModel = loadSModel();

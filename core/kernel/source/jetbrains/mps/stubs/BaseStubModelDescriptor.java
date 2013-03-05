@@ -47,11 +47,6 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
   //------------common descriptor stuff-------------------
 
   @Override
-  public synchronized jetbrains.mps.smodel.SModel getSModel() {
-    return getSModelInternal();
-  }
-
-  @Override
   public synchronized jetbrains.mps.smodel.SModel getSModelInternal() {
     if (mySModel == null) {
       mySModel = createModel();

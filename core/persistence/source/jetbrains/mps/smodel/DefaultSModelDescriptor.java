@@ -85,11 +85,6 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
   }
 
   @Override
-  public final jetbrains.mps.smodel.SModel getSModel() {
-    return getSModelInternal();
-  }
-
-  @Override
   public final jetbrains.mps.smodel.SModel getSModelInternal() {
     synchronized (myModel) {
       ModelLoadingState oldState = myModel.getState();
