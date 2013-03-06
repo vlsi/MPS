@@ -19,11 +19,11 @@ import jetbrains.mps.actions.runtime.impl.ActionsUtil;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.IScope;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.awt.Font;
 
@@ -87,24 +87,6 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
       return mySetter.execute(parentNode, myCurrentChild, newChild, getScope(), editorContext);
     }
     return null;
-  }
-
-  @Override
-  public int getFontStyleFor(String pattern) {
-    if (getParameterObject() instanceof SNode) {
-      SNode parameterNode = (SNode) getParameterObject();
-      return NodePresentationUtil.getFontStyle(parameterNode, getSourceNode());
-    }
-    return Font.PLAIN;
-  }
-
-  @Override
-  public int getSortPriority(String pattern) {
-    if (getParameterObject() instanceof SNode) {
-      SNode parameterNode = (SNode) getParameterObject();
-      return NodePresentationUtil.getSortPriority(getSourceNode(), parameterNode);
-    }
-    return 0;
   }
 
   public SNode createChildNode(Object parameterObject, SModel model, String pattern) {

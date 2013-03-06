@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.lang.editor.generator.internal;
 
-import jetbrains.mps.actions.runtime.impl.NodeIconUtil;
-import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
@@ -25,12 +23,12 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.Icon;
 import java.util.Collections;
@@ -66,8 +64,8 @@ public abstract class AbstractCellMenuPart_Generic_Group implements SubstituteIn
         }
 
         @Override
-        public Icon getIconFor(String pattern) {
-          return getIconFor(pattern, isReferentPresentation());
+        public boolean isReferentPresentation() {
+          return AbstractCellMenuPart_Generic_Group.this.isReferentPresentation();
         }
 
         @Override

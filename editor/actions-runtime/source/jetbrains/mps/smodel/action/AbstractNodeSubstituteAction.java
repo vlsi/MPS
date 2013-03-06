@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.actions.runtime.impl.NodeIconUtil;
-import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -27,7 +25,6 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.Icon;
-import java.awt.Font;
 
 public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAction {
   private static final Logger LOG = Logger.getLogger(AbstractNodeSubstituteAction.class);
@@ -91,13 +88,18 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
   }
 
   @Override
-  public Icon getIconFor(String pattern) {
-    return getIconFor(pattern, false);
+  public SNode getIconNode() {
+    return myParameterObject instanceof SNode ? (SNode) myParameterObject : null;
   }
 
   @Override
-  public int getFontStyleFor(String pattern) {
-    return Font.PLAIN;
+  public boolean isReferentPresentation() {
+    return false;
+  }
+
+  @Override
+  public Icon getIconFor(String pattern) {
+    return null;
   }
 
   @Override
@@ -122,13 +124,6 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
       return NodePresentationUtil.descriptionText((SNode) myParameterObject, referent_presentation);
     }
     return "";
-  }
-
-  public Icon getIconFor(String pattern, boolean referent_presentation) {
-    if (myParameterObject instanceof SNode) {
-      return NodeIconUtil.getIcon((SNode) myParameterObject, referent_presentation);
-    }
-    return IdeIcons.DEFAULT_ICON;
   }
 
   @Override
@@ -191,11 +186,6 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
     }
 
     return newNode[0];
-  }
-
-  @Override
-  public int getSortPriority(String pattern) {
-    return 0;
   }
 
   public String toString() {

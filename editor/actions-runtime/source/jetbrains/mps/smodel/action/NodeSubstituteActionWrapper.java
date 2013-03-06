@@ -22,7 +22,6 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.Icon;
-import java.awt.Font;
 
 /**
  * Igor Alshannikov
@@ -51,13 +50,18 @@ public class NodeSubstituteActionWrapper implements INodeSubstituteAction {
   }
 
   @Override
-  public Icon getIconFor(String pattern) {
-    return mySubstituteAction instanceof INodeSubstituteAction ? ((INodeSubstituteAction) mySubstituteAction).getIconFor(pattern) : null;
+  public SNode getIconNode() {
+    return mySubstituteAction.getIconNode();
   }
 
   @Override
-  public int getFontStyleFor(String pattern) {
-    return mySubstituteAction instanceof INodeSubstituteAction ? ((INodeSubstituteAction) mySubstituteAction).getFontStyleFor(pattern) : Font.PLAIN;
+  public boolean isReferentPresentation() {
+    return mySubstituteAction.isReferentPresentation();
+  }
+
+  @Override
+  public Icon getIconFor(String pattern) {
+    return mySubstituteAction instanceof INodeSubstituteAction ? ((INodeSubstituteAction) mySubstituteAction).getIconFor(pattern) : null;
   }
 
   @Override
@@ -99,11 +103,6 @@ public class NodeSubstituteActionWrapper implements INodeSubstituteAction {
   @Deprecated
   public SNode substitute(@Nullable jetbrains.mps.nodeEditor.EditorContext context, String pattern) {
     return mySubstituteAction.substitute(context, pattern);
-  }
-
-  @Override
-  public int getSortPriority(String pattern) {
-    return mySubstituteAction.getSortPriority(pattern);
   }
 
   @Override
