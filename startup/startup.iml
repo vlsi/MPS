@@ -77,7 +77,6 @@
     <orderEntry type="module" module-name="refactoring-runtime" scope="PROVIDED" />
     <orderEntry type="module" module-name="resources" scope="PROVIDED" />
     <orderEntry type="module" module-name="resources_en" scope="PROVIDED" />
-    <orderEntry type="module" module-name="runtime" scope="PROVIDED" />
     <orderEntry type="module" module-name="samples" scope="PROVIDED" />
     <orderEntry type="module" module-name="testbench" scope="PROVIDED" />
     <orderEntry type="module" module-name="Tuples-runtime" scope="PROVIDED" />
