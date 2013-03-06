@@ -29,6 +29,7 @@ public class URLCellProvider extends PropertyCellProvider {
     super(node, context);
   }
 
+  @Override
   public EditorCell createEditorCell(EditorContext context) {
     EditorCell_URL editorCell = EditorCell_URL.create(context, getSNode(), getPropertyName());
     editorCell.setDefaultText(myNoTargetText);

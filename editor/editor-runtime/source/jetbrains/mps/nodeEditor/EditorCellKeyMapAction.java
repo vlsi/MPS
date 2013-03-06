@@ -40,6 +40,7 @@ public abstract class EditorCellKeyMapAction extends KeyMapActionImpl {
     return true;
   }
 
+  @Override
   public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
     return canExecute(null, (EditorContext) context);
   }
@@ -53,6 +54,7 @@ public abstract class EditorCellKeyMapAction extends KeyMapActionImpl {
   public void execute(KeyEvent keyEvent, EditorContext context) {
   }
 
+  @Override
   public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
     execute(null, (EditorContext) context);
   }

@@ -52,6 +52,7 @@ public abstract class AbstractCellMenuPart_PropertyValues implements SubstituteI
     return actions;
   }
 
+  @Override
   public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
     return (List) createActions(cellContext, (EditorContext) editorContext);
   }

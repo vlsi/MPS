@@ -51,14 +51,17 @@ public class EditorCell_Error extends EditorCell_Label {
     getStyle().set(StyleAttributes.PADDING_RIGHT, new Padding(0.0));
   }
 
+  @Override
   public boolean canPasteText() {
     return isEditable();
   }
 
+  @Override
   public boolean isValidText(String text) {
     return text.equals(myDefaultText);
   }
 
+  @Override
   public void synchronizeViewWithModel() {
     setText(myEditable ? myDefaultText : "");
     setDefaultText(myDefaultText);

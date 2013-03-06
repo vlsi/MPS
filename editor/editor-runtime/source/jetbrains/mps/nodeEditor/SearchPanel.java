@@ -85,10 +85,12 @@ public class SearchPanel extends AbstractSearchPanel {
     return true;
   }
 
+  @Override
   protected boolean canExportToFindTool() {
     return !getMessages().isEmpty();
   }
 
+  @Override
   public void goToPrevious() {
     if (mySearchEntries.size() == 0) return;
     addToHistory();
@@ -120,6 +122,7 @@ public class SearchPanel extends AbstractSearchPanel {
     entryToSelect.select();
   }
 
+  @Override
   public void goToNext() {
     if (mySearchEntries.size() == 0) return;
     addToHistory();
@@ -157,6 +160,7 @@ public class SearchPanel extends AbstractSearchPanel {
     }
   }
 
+  @Override
   protected void search() {
     search(true);
   }
@@ -256,6 +260,7 @@ public class SearchPanel extends AbstractSearchPanel {
 
   private void highlight(final List<SearchEntry> searchEntries) {
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         myHighlightManager = myEditor.getHighlightManager();
         List<EditorMessage> messages = new ArrayList<EditorMessage>();
@@ -287,10 +292,12 @@ public class SearchPanel extends AbstractSearchPanel {
     return searchMessages;
   }
 
+  @Override
   public void exportToFindTool() {
     final List<SearchPanelEditorMessage> searchMessages = getMessages();
     final List<EditorCell_Label> editorLabels = allCellsAndContent().o1;
     Collections.sort(searchMessages, new Comparator<SearchPanelEditorMessage>() {
+      @Override
       public int compare(SearchPanelEditorMessage o1, SearchPanelEditorMessage o2) {
         Integer i1 = editorLabels.indexOf(o1.getCell(myEditor));
         Integer i2 = editorLabels.indexOf(o2.getCell(myEditor));
@@ -322,6 +329,7 @@ public class SearchPanel extends AbstractSearchPanel {
 //    usagesViewTool.findUsages(baseNode, searchQuery, false, false, false, null);
   }
 
+  @Override
   public void deactivate() {
     setVisible(false);
     clearHighlight();
@@ -336,6 +344,7 @@ public class SearchPanel extends AbstractSearchPanel {
     myEditor.requestFocus();
   }
 
+  @Override
   public void activate() {
     String initValue = "";
     if (myEditor.getDeepestSelectedCell() instanceof EditorCell_Label) {
@@ -367,14 +376,17 @@ public class SearchPanel extends AbstractSearchPanel {
       myPositions = positions;
     }
 
+    @Override
     public EditorCell getCell(EditorComponent editor) {
       return myCell;
     }
 
+    @Override
     public boolean acceptCell(EditorCell cell, EditorComponent editor) {
       return myCell == cell;
     }
 
+    @Override
     public void paint(Graphics g, EditorComponent editorComponent, EditorCell cell) {
       if (cell == null || !(cell instanceof EditorCell_Label)) return;
       EditorCell_Label editorCell = (EditorCell_Label) cell;

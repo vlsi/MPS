@@ -124,6 +124,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
       }
     });
     addMouseMotionListener(new MouseMotionAdapter() {
+      @Override
       public void mouseMoved(MouseEvent e) {
         if (isInFoldingArea(e)) {
           mouseExitedIconsArea(e);
@@ -140,6 +141,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     });
     MPSToolTipManager.getInstance().registerComponent(this);
     editorComponent.addRebuildListener(new RebuildListener() {
+      @Override
       public void editorRebuilt(EditorComponent editor) {
         assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter$RebuildListener should be called in eventDispatchThread";
         for (AbstractFoldingAreaPainter painter : myFoldingAreaPainters) {
@@ -562,6 +564,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     return renderer.getAnchorCell(nodeCell);
   }
 
+  @Override
   public String getMPSTooltipText(MouseEvent e) {
     if (isInFoldingArea(e)) {
       for (AbstractFoldingAreaPainter painter : myFoldingAreaPainters) {

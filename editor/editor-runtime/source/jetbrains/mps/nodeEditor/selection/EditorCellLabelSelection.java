@@ -214,6 +214,7 @@ public class EditorCellLabelSelection extends EditorCellSelection {
       }
 
       if (target == null || ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+        @Override
         public Boolean compute() {
           return jetbrains.mps.util.SNodeOperations.isAncestor(target.getSNode(), selectedCell.getSNode());
         }

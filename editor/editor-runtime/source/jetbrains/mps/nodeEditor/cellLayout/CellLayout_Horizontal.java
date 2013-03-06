@@ -26,6 +26,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
  */
 public class CellLayout_Horizontal extends AbstractCellLayout {
 
+  @Override
   public void doLayout(EditorCell_Collection editorCells) {
     if (CellLayout_Indent_Old.DO_INDENT_EVERYWHERE) {
       CellLayout_Indent_Old._doLayout(editorCells);
@@ -65,6 +66,7 @@ public class CellLayout_Horizontal extends AbstractCellLayout {
     }
   }
 
+  @Override
   public TextBuilder doLayoutText(Iterable<EditorCell> editorCells) {
     TextBuilder result = TextBuilder.getEmptyTextBuilder();
     for (EditorCell editorCell : editorCells) {

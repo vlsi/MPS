@@ -41,6 +41,7 @@ public class EditorMessageWithTarget extends DefaultEditorMessage {
     myMessageTarget = target;
   }
 
+  @Override
   public boolean acceptCell(EditorCell cell, EditorComponent editor) {
     //cell can be not a big one so we don't call super.acceptCell
     if (cell == null || !editor.isValid(cell) || cell.getSNode() != getNode()) {
@@ -72,6 +73,7 @@ public class EditorMessageWithTarget extends DefaultEditorMessage {
     }
   }
 
+  @Override
   public EditorCell getCell(EditorComponent editor) {
     switch (myMessageTarget.getTarget()) {
       case NODE:

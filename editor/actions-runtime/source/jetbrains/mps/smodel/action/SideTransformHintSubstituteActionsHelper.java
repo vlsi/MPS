@@ -75,6 +75,7 @@ public class SideTransformHintSubstituteActionsHelper {
     if (!isValid()) return Collections.emptyList();
     // enable R/O access
     return ModelAccess.instance().runReadAction(new Computable<List<SubstituteAction>>() {
+      @Override
       public List<SubstituteAction> compute() {
         return TypeContextManager.getInstance().runResolveAction(new Computable<List<SubstituteAction>>() {
           @Override

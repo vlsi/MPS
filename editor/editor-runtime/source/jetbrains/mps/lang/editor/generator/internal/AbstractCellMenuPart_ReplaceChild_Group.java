@@ -60,14 +60,17 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Group implements Substit
     List<SubstituteAction> actions = new ArrayList<SubstituteAction>(parameterObjects.size());
     for (final Object parameterObject : parameterObjects) {
       actions.add(new DefaultChildNodeSubstituteAction(parameterObject, parentNode, currentChild, setter, context.getScope()) {
+        @Override
         protected String getMatchingText(String pattern, boolean referent_presentation, boolean visible) {
           return AbstractCellMenuPart_ReplaceChild_Group.this.getMatchingText(parameterObject);
         }
 
+        @Override
         public String getDescriptionText(String pattern) {
           return AbstractCellMenuPart_ReplaceChild_Group.this.getDescriptionText(parameterObject);
         }
 
+        @Override
         public SNode createChildNode(Object parameterObjectWhichActuallyAnOutputConcept, SModel model, String pattern) {
           SNode newChild;
           if (isCustomCreateChildNode()) {
@@ -83,6 +86,7 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Group implements Substit
     return actions;
   }
 
+  @Override
   public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
     return (List) createActions(cellContext, (EditorContext) editorContext);
   }

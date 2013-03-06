@@ -736,8 +736,8 @@
     <nodeInfo nodeId="1324308523799788289" fileName="check_CellKeyMapItem_NonTypesystemRule.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
     <nodeInfo nodeId="1324308523799788289" fileName="check_CellKeyMapItem_NonTypesystemRule.java" startLine="51" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
     <nodeInfo nodeId="1324308523799788289" fileName="check_CellKeyMapItem_NonTypesystemRule.java" startLine="44" startPosition="68" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1324308523799901888" fileName="check_CellKeyMapItem_NonTypesystemRule.java" startLine="23" startPosition="121" endLine="28" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1324308523799924995" fileName="check_CellKeyMapItem_NonTypesystemRule.java" startLine="30" startPosition="124" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1324308523799901888" fileName="check_CellKeyMapItem_NonTypesystemRule.java" startLine="23" startPosition="272" endLine="28" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1324308523799924995" fileName="check_CellKeyMapItem_NonTypesystemRule.java" startLine="30" startPosition="199" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1324308523799788289" fileName="check_CellKeyMapItem_NonTypesystemRule.java" startLine="44" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
     <nodeInfo nodeId="1324308523799815025" fileName="check_CellKeyMapItem_NonTypesystemRule.java" startLine="22" startPosition="132" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1324308523799924986" fileName="check_CellKeyMapItem_NonTypesystemRule.java" startLine="29" startPosition="5" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -760,8 +760,8 @@
     <scopeInfo nodeId="1324308523799788289" fileName="check_CellKeyMapItem_NonTypesystemRule.java" startLine="40" startPosition="0" endLine="43" endPosition="0" />
     <scopeInfo nodeId="1324308523799788289" fileName="check_CellKeyMapItem_NonTypesystemRule.java" startLine="51" startPosition="0" endLine="54" endPosition="0" />
     <scopeInfo nodeId="1324308523799788289" fileName="check_CellKeyMapItem_NonTypesystemRule.java" startLine="44" startPosition="68" endLine="48" endPosition="5" />
-    <scopeInfo nodeId="1324308523799815027" fileName="check_CellKeyMapItem_NonTypesystemRule.java" startLine="23" startPosition="121" endLine="28" endPosition="7" />
-    <scopeInfo nodeId="1324308523799924994" fileName="check_CellKeyMapItem_NonTypesystemRule.java" startLine="30" startPosition="124" endLine="35" endPosition="7" />
+    <scopeInfo nodeId="1324308523799815027" fileName="check_CellKeyMapItem_NonTypesystemRule.java" startLine="23" startPosition="272" endLine="28" endPosition="7" />
+    <scopeInfo nodeId="1324308523799924994" fileName="check_CellKeyMapItem_NonTypesystemRule.java" startLine="30" startPosition="199" endLine="35" endPosition="7" />
     <scopeInfo nodeId="1324308523799788289" fileName="check_CellKeyMapItem_NonTypesystemRule.java" startLine="44" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="1324308523799788289" varName="argument" />
     </scopeInfo>

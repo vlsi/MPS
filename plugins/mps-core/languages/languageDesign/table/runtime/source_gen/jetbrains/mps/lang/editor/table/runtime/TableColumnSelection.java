@@ -13,8 +13,9 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.selection.SelectionStoreException;
 import jetbrains.mps.nodeEditor.selection.SelectionRestoreException;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.selection.SelectionInfo;
+import java.util.List;
 import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import com.intellij.ide.CopyPasteManagerEx;
@@ -23,7 +24,7 @@ import java.util.Collections;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 
 public class TableColumnSelection extends AbstractMultipleSelection {
   private static final String COLUMN_NUMBER_PROPERTY = "columnNumber";
@@ -64,7 +65,7 @@ public class TableColumnSelection extends AbstractMultipleSelection {
   }
 
   private void initSelectedCells() {
-    setSelectedCells(myTableCell.getColumnCells(myColumnNumber));
+    setSelectedCells((List) myTableCell.getColumnCells(myColumnNumber));
   }
 
 
@@ -134,7 +135,7 @@ public class TableColumnSelection extends AbstractMultipleSelection {
   private TextBuilder renderText() {
     TextBuilder result = TextBuilder.getEmptyTextBuilder();
     for (EditorCell cell : getSelectedCells()) {
-      result = result.appendToTheBottom(cell.renderText());
+      result = result.appendToTheBottom(((jetbrains.mps.nodeEditor.cells.EditorCell) cell).renderText());
     }
     return result;
   }
@@ -145,7 +146,7 @@ public class TableColumnSelection extends AbstractMultipleSelection {
       return;
     }
     SelectionManager selectionManager = getEditorComponent().getSelectionManager();
-    selectionManager.pushSelection(selectionManager.createSelection(cell));
+    selectionManager.pushSelection(selectionManager.createSelection((jetbrains.mps.nodeEditor.cells.EditorCell) cell));
   }
 
   private EditorCell getCellToSelectUp() {

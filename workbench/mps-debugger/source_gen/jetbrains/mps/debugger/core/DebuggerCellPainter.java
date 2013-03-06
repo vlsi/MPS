@@ -8,7 +8,7 @@ import java.awt.Color;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.awt.Graphics;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import java.awt.Rectangle;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.CellFinders;
@@ -119,9 +119,9 @@ public abstract class DebuggerCellPainter<E> extends AbstractAdditionalPainter<E
       return null;
     }
     if (nodeCell instanceof EditorCell_Label) {
-      return ((EditorCell_Label) nodeCell);
+      return (EditorCell_Label) nodeCell;
     }
-    return (EditorCell_Label) nodeCell.findChild(CellFinders.byClass(EditorCell_Label.class, true));
+    return ((jetbrains.mps.nodeEditor.cells.EditorCell) nodeCell).findChild(CellFinders.byClass(EditorCell_Label.class, true));
   }
 
   @Nullable
@@ -164,7 +164,7 @@ public abstract class DebuggerCellPainter<E> extends AbstractAdditionalPainter<E
       // if immediate parent is a horisontal collection 
       return true;
     }
-    return nodeCell.findParent(new Condition<jetbrains.mps.nodeEditor.cells.EditorCell_Collection>() {
+    return ((jetbrains.mps.nodeEditor.cells.EditorCell) nodeCell).findParent(new Condition<jetbrains.mps.nodeEditor.cells.EditorCell_Collection>() {
       @Override
       public boolean met(jetbrains.mps.nodeEditor.cells.EditorCell_Collection cellCollection) {
         // do not want an explicit dependency on table.runtime 

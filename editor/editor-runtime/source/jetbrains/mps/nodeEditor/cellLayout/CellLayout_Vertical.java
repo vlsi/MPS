@@ -34,10 +34,12 @@ public class CellLayout_Vertical extends AbstractCellLayout {
     myGridLayout = gridLayout;
   }
 
+  @Override
   public boolean canBeFolded() {
     return true;
   }
 
+  @Override
   public void doLayout(EditorCell_Collection editorCells) {
     if(CellLayout_Indent_Old.DO_INDENT_EVERYWHERE) {
       CellLayout_Indent_Old._doLayout(editorCells);
@@ -189,12 +191,14 @@ public class CellLayout_Vertical extends AbstractCellLayout {
     return cell instanceof  EditorCell_Collection ? ((EditorCell_Collection) cell).getBracesIndent() : 0;
   }
 
+  @Override
   public int getRightInternalInset(EditorCell_Collection editorCell_collection) {
     EditorCell editorCell = editorCell_collection.firstCell();
     if (editorCell == null) return 0;
     return editorCell.getRightInset();
   }
 
+  @Override
   public TextBuilder doLayoutText(Iterable<EditorCell> editorCells) {
     TextBuilder result = TextBuilder.getEmptyTextBuilder();
     for (EditorCell editorCell : editorCells) {
@@ -203,6 +207,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
     return result;
   }
 
+  @Override
   public int getAscent(EditorCell_Collection editorCells) {
     for (EditorCell cell : editorCells) {
       if (cell.getStyle().get(StyleAttributes.BASE_LINE_CELL)) {

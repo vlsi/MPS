@@ -31,10 +31,12 @@ public class StyleAttributeSet extends IndexableObjectSet<StyleAttribute> {
     this(false);
   }
 
+  @Override
   protected int getIndex(StyleAttribute styleAttribute) {
     return styleAttribute.getIndex();
   }
 
+  @Override
   protected StyleAttribute getObject(int index) {
     return StyleAttributes.getAttribute(index);
   }

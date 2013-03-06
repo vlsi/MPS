@@ -40,28 +40,35 @@ import java.util.List;
 public class SearchHistoryComponent implements ProjectComponent, PersistentStateComponent<MyState>, SearchHistoryStorage {
   private MyState myState = new MyState();
 
+  @Override
   public void projectOpened() {
   }
 
+  @Override
   public void projectClosed() {
   }
 
+  @Override
   @NonNls
   @NotNull
   public String getComponentName() {
     return "MPS editor search history component";
   }
 
+  @Override
   public void initComponent() {
   }
 
+  @Override
   public void disposeComponent() {
   }
 
+  @Override
   public MyState getState() {
     return myState;
   }
 
+  @Override
   public void loadState(MyState state) {
     myState = state;
   }
@@ -74,10 +81,12 @@ public class SearchHistoryComponent implements ProjectComponent, PersistentState
     return added;
   }
 
+  @Override
   public List<String> getSearches() {
     return Collections.unmodifiableList(myState.mySearches);
   }
 
+  @Override
   public void setSearches(List<String> searches) {
     myState.getSearches().clear();
     myState.getSearches().addAll(searches);

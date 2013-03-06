@@ -126,8 +126,6 @@ public interface EditorCell {
 
   Style getStyle();
 
-  void setStyle(Style style);
-
   KeyMap getKeyMap();
 
   void addKeyMap(KeyMap keyMap);

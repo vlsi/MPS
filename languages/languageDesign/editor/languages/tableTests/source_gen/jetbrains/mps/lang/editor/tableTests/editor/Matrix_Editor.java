@@ -76,7 +76,7 @@ public class Matrix_Editor extends DefaultNodeEditor {
         return new XYCTableModel(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.tableTests.structure.Matrix", "xs"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.tableTests.structure.Matrix", "ys"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.tableTests.structure.Matrix", "contents"), editorContext);
       }
     };
-    EditorCell_Collection editorCell = EditorCell_Table.createTable(editorContext, node, creator.createTableModel(node, editorContext), "Table_io08np_c0");
+    jetbrains.mps.openapi.editor.cells.EditorCell_Collection editorCell = EditorCell_Table.createTable(editorContext, node, creator.createTableModel(node, editorContext), "Table_io08np_c0");
     editorCell.setCellId("Table_io08np_c0_0");
     return editorCell;
   }

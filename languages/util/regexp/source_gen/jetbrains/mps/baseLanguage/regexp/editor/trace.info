@@ -3965,15 +3965,15 @@
     <nodeInfo nodeId="5752270015879787943" fileName="UnaryRegexp_Regexp_actions.java" startLine="34" startPosition="96" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="5752270015879787897" fileName="UnaryRegexp_Regexp_actions.java" startLine="35" startPosition="0" endLine="36" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5752270015879787901" fileName="UnaryRegexp_Regexp_actions.java" startLine="36" startPosition="34" endLine="37" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5752270015879787907" fileName="UnaryRegexp_Regexp_actions.java" startLine="37" startPosition="66" endLine="38" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5752270015879787919" fileName="UnaryRegexp_Regexp_actions.java" startLine="39" startPosition="25" endLine="40" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5752270015879787926" fileName="UnaryRegexp_Regexp_actions.java" startLine="40" startPosition="105" endLine="41" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5752270015879787907" fileName="UnaryRegexp_Regexp_actions.java" startLine="37" startPosition="66" endLine="38" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5752270015879787919" fileName="UnaryRegexp_Regexp_actions.java" startLine="39" startPosition="25" endLine="40" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5752270015879787926" fileName="UnaryRegexp_Regexp_actions.java" startLine="40" startPosition="120" endLine="41" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5752270015879787933" fileName="UnaryRegexp_Regexp_actions.java" startLine="42" startPosition="51" endLine="43" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1174901330112" fileName="UnaryRegexp_Regexp_actions.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="1174901330112" fileName="UnaryRegexp_Regexp_actions.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UnaryRegexp_Regexp_actions_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1174901330112" fileName="UnaryRegexp_Regexp_actions.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="5752270015879787931" fileName="UnaryRegexp_Regexp_actions.java" startLine="41" startPosition="41" endLine="44" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5752270015879787914" fileName="UnaryRegexp_Regexp_actions.java" startLine="38" startPosition="123" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5752270015879787914" fileName="UnaryRegexp_Regexp_actions.java" startLine="38" startPosition="48" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1174901330112" fileName="UnaryRegexp_Regexp_actions.java" startLine="32" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="1174901330112" fileName="UnaryRegexp_Regexp_actions.java" startLine="17" startPosition="95" endLine="18" endPosition="120" />
     <scopeInfo nodeId="1174901330112" fileName="UnaryRegexp_Regexp_actions.java" startLine="24" startPosition="58" endLine="25" endPosition="25" />
@@ -4015,15 +4015,15 @@
     <nodeInfo nodeId="5752270015879908201" fileName="ParensRegexp_Actions.java" startLine="34" startPosition="94" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="5752270015879908203" fileName="ParensRegexp_Actions.java" startLine="35" startPosition="0" endLine="36" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5752270015879908207" fileName="ParensRegexp_Actions.java" startLine="36" startPosition="34" endLine="37" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5752270015879908213" fileName="ParensRegexp_Actions.java" startLine="37" startPosition="66" endLine="38" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5752270015879908225" fileName="ParensRegexp_Actions.java" startLine="39" startPosition="25" endLine="40" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5752270015879908232" fileName="ParensRegexp_Actions.java" startLine="40" startPosition="105" endLine="41" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5752270015879908213" fileName="ParensRegexp_Actions.java" startLine="37" startPosition="66" endLine="38" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5752270015879908225" fileName="ParensRegexp_Actions.java" startLine="39" startPosition="25" endLine="40" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5752270015879908232" fileName="ParensRegexp_Actions.java" startLine="40" startPosition="120" endLine="41" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5752270015879908239" fileName="ParensRegexp_Actions.java" startLine="42" startPosition="51" endLine="43" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1174902509875" fileName="ParensRegexp_Actions.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="1174902509875" fileName="ParensRegexp_Actions.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ParensRegexp_Actions_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1174902509875" fileName="ParensRegexp_Actions.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="5752270015879908237" fileName="ParensRegexp_Actions.java" startLine="41" startPosition="41" endLine="44" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5752270015879908220" fileName="ParensRegexp_Actions.java" startLine="38" startPosition="123" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5752270015879908220" fileName="ParensRegexp_Actions.java" startLine="38" startPosition="48" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1174902509875" fileName="ParensRegexp_Actions.java" startLine="32" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="1174902509875" fileName="ParensRegexp_Actions.java" startLine="17" startPosition="95" endLine="18" endPosition="108" />
     <scopeInfo nodeId="1174902509875" fileName="ParensRegexp_Actions.java" startLine="24" startPosition="52" endLine="25" endPosition="25" />
@@ -6483,156 +6483,156 @@
     <unitInfo nodeId="1353467374623956844" fileName="OrRegexp_Editor.java" startLine="23" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.OrRegexp_Editor" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590516(jetbrains.mps.baseLanguage.regexp.editor)/1767845709140465500">
-    <nodeInfo nodeId="1767845709140465500" fileName="ReplaceRegexpOperation_removeI.java" startLine="14" startPosition="95" endLine="15" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1767845709140465500" fileName="ReplaceRegexpOperation_removeI.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="1767845709140465500" fileName="ReplaceRegexpOperation_removeI.java" startLine="21" startPosition="62" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1767845709140465500" fileName="ReplaceRegexpOperation_removeI.java" startLine="25" startPosition="54" endLine="26" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1767845709140515304" fileName="ReplaceRegexpOperation_removeI.java" startLine="29" startPosition="75" endLine="30" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1767845709140515310" fileName="ReplaceRegexpOperation_removeI.java" startLine="30" startPosition="134" endLine="31" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1767845709140515317" fileName="ReplaceRegexpOperation_removeI.java" startLine="31" startPosition="106" endLine="32" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1767845709140515323" fileName="ReplaceRegexpOperation_removeI.java" startLine="32" startPosition="69" endLine="33" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1767845709140465500" fileName="ReplaceRegexpOperation_removeI.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1767845709140465500" fileName="ReplaceRegexpOperation_removeI.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReplaceRegexpOperation_removeI_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1767845709140465500" fileName="ReplaceRegexpOperation_removeI.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1767845709140465500" fileName="ReplaceRegexpOperation_removeI.java" startLine="29" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="1767845709140465500" fileName="ReplaceRegexpOperation_removeI.java" startLine="14" startPosition="95" endLine="15" endPosition="128" />
-    <scopeInfo nodeId="1767845709140465500" fileName="ReplaceRegexpOperation_removeI.java" startLine="21" startPosition="62" endLine="22" endPosition="25" />
-    <scopeInfo nodeId="1767845709140465500" fileName="ReplaceRegexpOperation_removeI.java" startLine="25" startPosition="54" endLine="26" endPosition="56" />
-    <scopeInfo nodeId="1767845709140465500" fileName="ReplaceRegexpOperation_removeI.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
+    <nodeInfo nodeId="1767845709140465500" fileName="ReplaceRegexpOperation_removeI.java" startLine="15" startPosition="95" endLine="16" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1767845709140465500" fileName="ReplaceRegexpOperation_removeI.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="1767845709140465500" fileName="ReplaceRegexpOperation_removeI.java" startLine="22" startPosition="62" endLine="23" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1767845709140465500" fileName="ReplaceRegexpOperation_removeI.java" startLine="26" startPosition="54" endLine="27" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1767845709140515304" fileName="ReplaceRegexpOperation_removeI.java" startLine="30" startPosition="75" endLine="31" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1767845709140515310" fileName="ReplaceRegexpOperation_removeI.java" startLine="31" startPosition="59" endLine="32" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1767845709140515317" fileName="ReplaceRegexpOperation_removeI.java" startLine="32" startPosition="91" endLine="33" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1767845709140515323" fileName="ReplaceRegexpOperation_removeI.java" startLine="33" startPosition="69" endLine="34" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1767845709140465500" fileName="ReplaceRegexpOperation_removeI.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1767845709140465500" fileName="ReplaceRegexpOperation_removeI.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReplaceRegexpOperation_removeI_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1767845709140465500" fileName="ReplaceRegexpOperation_removeI.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1767845709140465500" fileName="ReplaceRegexpOperation_removeI.java" startLine="30" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="1767845709140465500" fileName="ReplaceRegexpOperation_removeI.java" startLine="15" startPosition="95" endLine="16" endPosition="128" />
+    <scopeInfo nodeId="1767845709140465500" fileName="ReplaceRegexpOperation_removeI.java" startLine="22" startPosition="62" endLine="23" endPosition="25" />
+    <scopeInfo nodeId="1767845709140465500" fileName="ReplaceRegexpOperation_removeI.java" startLine="26" startPosition="54" endLine="27" endPosition="56" />
+    <scopeInfo nodeId="1767845709140465500" fileName="ReplaceRegexpOperation_removeI.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="1767845709140465500" varName="context" />
       <varInfo nodeId="1767845709140465500" varName="editorCell" />
       <varInfo nodeId="1767845709140465500" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1767845709140465500" fileName="ReplaceRegexpOperation_removeI.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
+    <scopeInfo nodeId="1767845709140465500" fileName="ReplaceRegexpOperation_removeI.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="1767845709140465500" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1767845709140465500" fileName="ReplaceRegexpOperation_removeI.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
+    <scopeInfo nodeId="1767845709140465500" fileName="ReplaceRegexpOperation_removeI.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="1767845709140465500" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1767845709140471610" fileName="ReplaceRegexpOperation_removeI.java" startLine="29" startPosition="75" endLine="33" endPosition="67">
+    <scopeInfo nodeId="1767845709140471610" fileName="ReplaceRegexpOperation_removeI.java" startLine="30" startPosition="75" endLine="34" endPosition="67">
       <varInfo nodeId="1767845709140515305" varName="current" />
       <varInfo nodeId="1767845709140515311" varName="toSelect" />
     </scopeInfo>
-    <scopeInfo nodeId="1767845709140465500" fileName="ReplaceRegexpOperation_removeI.java" startLine="29" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="1767845709140465500" fileName="ReplaceRegexpOperation_removeI.java" startLine="30" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="1767845709140465500" varName="editorContext" />
       <varInfo nodeId="1767845709140465500" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1767845709140465500" fileName="ReplaceRegexpOperation_removeI.java" startLine="18" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_removeI$ReplaceRegexpOperation_removeI_DELETE" />
-    <unitInfo nodeId="1767845709140465500" fileName="ReplaceRegexpOperation_removeI.java" startLine="13" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_removeI" />
+    <unitInfo nodeId="1767845709140465500" fileName="ReplaceRegexpOperation_removeI.java" startLine="19" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_removeI$ReplaceRegexpOperation_removeI_DELETE" />
+    <unitInfo nodeId="1767845709140465500" fileName="ReplaceRegexpOperation_removeI.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_removeI" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590516(jetbrains.mps.baseLanguage.regexp.editor)/1767845709140471611">
-    <nodeInfo nodeId="1767845709140471611" fileName="ReplaceRegexpOperation_removeM.java" startLine="14" startPosition="95" endLine="15" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1767845709140471611" fileName="ReplaceRegexpOperation_removeM.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="1767845709140471611" fileName="ReplaceRegexpOperation_removeM.java" startLine="21" startPosition="62" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1767845709140471611" fileName="ReplaceRegexpOperation_removeM.java" startLine="25" startPosition="54" endLine="26" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1767845709140515331" fileName="ReplaceRegexpOperation_removeM.java" startLine="29" startPosition="75" endLine="30" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1767845709140515337" fileName="ReplaceRegexpOperation_removeM.java" startLine="30" startPosition="134" endLine="31" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1767845709140515344" fileName="ReplaceRegexpOperation_removeM.java" startLine="31" startPosition="106" endLine="32" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1767845709140515350" fileName="ReplaceRegexpOperation_removeM.java" startLine="32" startPosition="63" endLine="33" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1767845709140471611" fileName="ReplaceRegexpOperation_removeM.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1767845709140471611" fileName="ReplaceRegexpOperation_removeM.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReplaceRegexpOperation_removeM_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1767845709140471611" fileName="ReplaceRegexpOperation_removeM.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1767845709140471611" fileName="ReplaceRegexpOperation_removeM.java" startLine="29" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="1767845709140471611" fileName="ReplaceRegexpOperation_removeM.java" startLine="14" startPosition="95" endLine="15" endPosition="128" />
-    <scopeInfo nodeId="1767845709140471611" fileName="ReplaceRegexpOperation_removeM.java" startLine="21" startPosition="62" endLine="22" endPosition="25" />
-    <scopeInfo nodeId="1767845709140471611" fileName="ReplaceRegexpOperation_removeM.java" startLine="25" startPosition="54" endLine="26" endPosition="56" />
-    <scopeInfo nodeId="1767845709140471611" fileName="ReplaceRegexpOperation_removeM.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
+    <nodeInfo nodeId="1767845709140471611" fileName="ReplaceRegexpOperation_removeM.java" startLine="15" startPosition="95" endLine="16" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1767845709140471611" fileName="ReplaceRegexpOperation_removeM.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="1767845709140471611" fileName="ReplaceRegexpOperation_removeM.java" startLine="22" startPosition="62" endLine="23" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1767845709140471611" fileName="ReplaceRegexpOperation_removeM.java" startLine="26" startPosition="54" endLine="27" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1767845709140515331" fileName="ReplaceRegexpOperation_removeM.java" startLine="30" startPosition="75" endLine="31" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1767845709140515337" fileName="ReplaceRegexpOperation_removeM.java" startLine="31" startPosition="59" endLine="32" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1767845709140515344" fileName="ReplaceRegexpOperation_removeM.java" startLine="32" startPosition="91" endLine="33" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1767845709140515350" fileName="ReplaceRegexpOperation_removeM.java" startLine="33" startPosition="63" endLine="34" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1767845709140471611" fileName="ReplaceRegexpOperation_removeM.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1767845709140471611" fileName="ReplaceRegexpOperation_removeM.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReplaceRegexpOperation_removeM_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1767845709140471611" fileName="ReplaceRegexpOperation_removeM.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1767845709140471611" fileName="ReplaceRegexpOperation_removeM.java" startLine="30" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="1767845709140471611" fileName="ReplaceRegexpOperation_removeM.java" startLine="15" startPosition="95" endLine="16" endPosition="128" />
+    <scopeInfo nodeId="1767845709140471611" fileName="ReplaceRegexpOperation_removeM.java" startLine="22" startPosition="62" endLine="23" endPosition="25" />
+    <scopeInfo nodeId="1767845709140471611" fileName="ReplaceRegexpOperation_removeM.java" startLine="26" startPosition="54" endLine="27" endPosition="56" />
+    <scopeInfo nodeId="1767845709140471611" fileName="ReplaceRegexpOperation_removeM.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="1767845709140471611" varName="context" />
       <varInfo nodeId="1767845709140471611" varName="editorCell" />
       <varInfo nodeId="1767845709140471611" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1767845709140471611" fileName="ReplaceRegexpOperation_removeM.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
+    <scopeInfo nodeId="1767845709140471611" fileName="ReplaceRegexpOperation_removeM.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="1767845709140471611" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1767845709140471611" fileName="ReplaceRegexpOperation_removeM.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
+    <scopeInfo nodeId="1767845709140471611" fileName="ReplaceRegexpOperation_removeM.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="1767845709140471611" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1767845709140471614" fileName="ReplaceRegexpOperation_removeM.java" startLine="29" startPosition="75" endLine="33" endPosition="67">
+    <scopeInfo nodeId="1767845709140471614" fileName="ReplaceRegexpOperation_removeM.java" startLine="30" startPosition="75" endLine="34" endPosition="67">
       <varInfo nodeId="1767845709140515332" varName="current" />
       <varInfo nodeId="1767845709140515338" varName="toSelect" />
     </scopeInfo>
-    <scopeInfo nodeId="1767845709140471611" fileName="ReplaceRegexpOperation_removeM.java" startLine="29" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="1767845709140471611" fileName="ReplaceRegexpOperation_removeM.java" startLine="30" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="1767845709140471611" varName="editorContext" />
       <varInfo nodeId="1767845709140471611" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1767845709140471611" fileName="ReplaceRegexpOperation_removeM.java" startLine="18" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_removeM$ReplaceRegexpOperation_removeM_DELETE" />
-    <unitInfo nodeId="1767845709140471611" fileName="ReplaceRegexpOperation_removeM.java" startLine="13" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_removeM" />
+    <unitInfo nodeId="1767845709140471611" fileName="ReplaceRegexpOperation_removeM.java" startLine="19" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_removeM$ReplaceRegexpOperation_removeM_DELETE" />
+    <unitInfo nodeId="1767845709140471611" fileName="ReplaceRegexpOperation_removeM.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_removeM" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590516(jetbrains.mps.baseLanguage.regexp.editor)/1767845709140471615">
-    <nodeInfo nodeId="1767845709140471615" fileName="ReplaceRegexpOperation_removeS.java" startLine="14" startPosition="95" endLine="15" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1767845709140471615" fileName="ReplaceRegexpOperation_removeS.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="1767845709140471615" fileName="ReplaceRegexpOperation_removeS.java" startLine="21" startPosition="62" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1767845709140471615" fileName="ReplaceRegexpOperation_removeS.java" startLine="25" startPosition="54" endLine="26" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1767845709140515358" fileName="ReplaceRegexpOperation_removeS.java" startLine="29" startPosition="75" endLine="30" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1767845709140515364" fileName="ReplaceRegexpOperation_removeS.java" startLine="30" startPosition="134" endLine="31" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1767845709140515371" fileName="ReplaceRegexpOperation_removeS.java" startLine="31" startPosition="106" endLine="32" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1767845709140515377" fileName="ReplaceRegexpOperation_removeS.java" startLine="32" startPosition="60" endLine="33" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1767845709140471615" fileName="ReplaceRegexpOperation_removeS.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1767845709140471615" fileName="ReplaceRegexpOperation_removeS.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReplaceRegexpOperation_removeS_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1767845709140471615" fileName="ReplaceRegexpOperation_removeS.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1767845709140471615" fileName="ReplaceRegexpOperation_removeS.java" startLine="29" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="1767845709140471615" fileName="ReplaceRegexpOperation_removeS.java" startLine="14" startPosition="95" endLine="15" endPosition="128" />
-    <scopeInfo nodeId="1767845709140471615" fileName="ReplaceRegexpOperation_removeS.java" startLine="21" startPosition="62" endLine="22" endPosition="25" />
-    <scopeInfo nodeId="1767845709140471615" fileName="ReplaceRegexpOperation_removeS.java" startLine="25" startPosition="54" endLine="26" endPosition="56" />
-    <scopeInfo nodeId="1767845709140471615" fileName="ReplaceRegexpOperation_removeS.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
+    <nodeInfo nodeId="1767845709140471615" fileName="ReplaceRegexpOperation_removeS.java" startLine="15" startPosition="95" endLine="16" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1767845709140471615" fileName="ReplaceRegexpOperation_removeS.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="1767845709140471615" fileName="ReplaceRegexpOperation_removeS.java" startLine="22" startPosition="62" endLine="23" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1767845709140471615" fileName="ReplaceRegexpOperation_removeS.java" startLine="26" startPosition="54" endLine="27" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1767845709140515358" fileName="ReplaceRegexpOperation_removeS.java" startLine="30" startPosition="75" endLine="31" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1767845709140515364" fileName="ReplaceRegexpOperation_removeS.java" startLine="31" startPosition="59" endLine="32" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1767845709140515371" fileName="ReplaceRegexpOperation_removeS.java" startLine="32" startPosition="91" endLine="33" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1767845709140515377" fileName="ReplaceRegexpOperation_removeS.java" startLine="33" startPosition="60" endLine="34" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1767845709140471615" fileName="ReplaceRegexpOperation_removeS.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1767845709140471615" fileName="ReplaceRegexpOperation_removeS.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReplaceRegexpOperation_removeS_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1767845709140471615" fileName="ReplaceRegexpOperation_removeS.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1767845709140471615" fileName="ReplaceRegexpOperation_removeS.java" startLine="30" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="1767845709140471615" fileName="ReplaceRegexpOperation_removeS.java" startLine="15" startPosition="95" endLine="16" endPosition="128" />
+    <scopeInfo nodeId="1767845709140471615" fileName="ReplaceRegexpOperation_removeS.java" startLine="22" startPosition="62" endLine="23" endPosition="25" />
+    <scopeInfo nodeId="1767845709140471615" fileName="ReplaceRegexpOperation_removeS.java" startLine="26" startPosition="54" endLine="27" endPosition="56" />
+    <scopeInfo nodeId="1767845709140471615" fileName="ReplaceRegexpOperation_removeS.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="1767845709140471615" varName="context" />
       <varInfo nodeId="1767845709140471615" varName="editorCell" />
       <varInfo nodeId="1767845709140471615" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1767845709140471615" fileName="ReplaceRegexpOperation_removeS.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
+    <scopeInfo nodeId="1767845709140471615" fileName="ReplaceRegexpOperation_removeS.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="1767845709140471615" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1767845709140471615" fileName="ReplaceRegexpOperation_removeS.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
+    <scopeInfo nodeId="1767845709140471615" fileName="ReplaceRegexpOperation_removeS.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="1767845709140471615" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1767845709140471618" fileName="ReplaceRegexpOperation_removeS.java" startLine="29" startPosition="75" endLine="33" endPosition="67">
+    <scopeInfo nodeId="1767845709140471618" fileName="ReplaceRegexpOperation_removeS.java" startLine="30" startPosition="75" endLine="34" endPosition="67">
       <varInfo nodeId="1767845709140515359" varName="current" />
       <varInfo nodeId="1767845709140515365" varName="toSelect" />
     </scopeInfo>
-    <scopeInfo nodeId="1767845709140471615" fileName="ReplaceRegexpOperation_removeS.java" startLine="29" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="1767845709140471615" fileName="ReplaceRegexpOperation_removeS.java" startLine="30" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="1767845709140471615" varName="editorContext" />
       <varInfo nodeId="1767845709140471615" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1767845709140471615" fileName="ReplaceRegexpOperation_removeS.java" startLine="18" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_removeS$ReplaceRegexpOperation_removeS_DELETE" />
-    <unitInfo nodeId="1767845709140471615" fileName="ReplaceRegexpOperation_removeS.java" startLine="13" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_removeS" />
+    <unitInfo nodeId="1767845709140471615" fileName="ReplaceRegexpOperation_removeS.java" startLine="19" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_removeS$ReplaceRegexpOperation_removeS_DELETE" />
+    <unitInfo nodeId="1767845709140471615" fileName="ReplaceRegexpOperation_removeS.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_removeS" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590516(jetbrains.mps.baseLanguage.regexp.editor)/1767845709140471619">
-    <nodeInfo nodeId="1767845709140471619" fileName="ReplaceRegexpOperation_removeG.java" startLine="14" startPosition="95" endLine="15" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1767845709140471619" fileName="ReplaceRegexpOperation_removeG.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="1767845709140471619" fileName="ReplaceRegexpOperation_removeG.java" startLine="21" startPosition="62" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1767845709140471619" fileName="ReplaceRegexpOperation_removeG.java" startLine="25" startPosition="54" endLine="26" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1767845709140515277" fileName="ReplaceRegexpOperation_removeG.java" startLine="29" startPosition="75" endLine="30" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1767845709140515283" fileName="ReplaceRegexpOperation_removeG.java" startLine="30" startPosition="134" endLine="31" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1767845709140515290" fileName="ReplaceRegexpOperation_removeG.java" startLine="31" startPosition="106" endLine="32" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1767845709140515296" fileName="ReplaceRegexpOperation_removeG.java" startLine="32" startPosition="67" endLine="33" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1767845709140471619" fileName="ReplaceRegexpOperation_removeG.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1767845709140471619" fileName="ReplaceRegexpOperation_removeG.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReplaceRegexpOperation_removeG_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1767845709140471619" fileName="ReplaceRegexpOperation_removeG.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1767845709140471619" fileName="ReplaceRegexpOperation_removeG.java" startLine="29" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="1767845709140471619" fileName="ReplaceRegexpOperation_removeG.java" startLine="14" startPosition="95" endLine="15" endPosition="128" />
-    <scopeInfo nodeId="1767845709140471619" fileName="ReplaceRegexpOperation_removeG.java" startLine="21" startPosition="62" endLine="22" endPosition="25" />
-    <scopeInfo nodeId="1767845709140471619" fileName="ReplaceRegexpOperation_removeG.java" startLine="25" startPosition="54" endLine="26" endPosition="56" />
-    <scopeInfo nodeId="1767845709140471619" fileName="ReplaceRegexpOperation_removeG.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
+    <nodeInfo nodeId="1767845709140471619" fileName="ReplaceRegexpOperation_removeG.java" startLine="15" startPosition="95" endLine="16" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1767845709140471619" fileName="ReplaceRegexpOperation_removeG.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="1767845709140471619" fileName="ReplaceRegexpOperation_removeG.java" startLine="22" startPosition="62" endLine="23" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1767845709140471619" fileName="ReplaceRegexpOperation_removeG.java" startLine="26" startPosition="54" endLine="27" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1767845709140515277" fileName="ReplaceRegexpOperation_removeG.java" startLine="30" startPosition="75" endLine="31" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1767845709140515283" fileName="ReplaceRegexpOperation_removeG.java" startLine="31" startPosition="59" endLine="32" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1767845709140515290" fileName="ReplaceRegexpOperation_removeG.java" startLine="32" startPosition="91" endLine="33" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1767845709140515296" fileName="ReplaceRegexpOperation_removeG.java" startLine="33" startPosition="67" endLine="34" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1767845709140471619" fileName="ReplaceRegexpOperation_removeG.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1767845709140471619" fileName="ReplaceRegexpOperation_removeG.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReplaceRegexpOperation_removeG_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1767845709140471619" fileName="ReplaceRegexpOperation_removeG.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1767845709140471619" fileName="ReplaceRegexpOperation_removeG.java" startLine="30" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="1767845709140471619" fileName="ReplaceRegexpOperation_removeG.java" startLine="15" startPosition="95" endLine="16" endPosition="128" />
+    <scopeInfo nodeId="1767845709140471619" fileName="ReplaceRegexpOperation_removeG.java" startLine="22" startPosition="62" endLine="23" endPosition="25" />
+    <scopeInfo nodeId="1767845709140471619" fileName="ReplaceRegexpOperation_removeG.java" startLine="26" startPosition="54" endLine="27" endPosition="56" />
+    <scopeInfo nodeId="1767845709140471619" fileName="ReplaceRegexpOperation_removeG.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="1767845709140471619" varName="context" />
       <varInfo nodeId="1767845709140471619" varName="editorCell" />
       <varInfo nodeId="1767845709140471619" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1767845709140471619" fileName="ReplaceRegexpOperation_removeG.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
+    <scopeInfo nodeId="1767845709140471619" fileName="ReplaceRegexpOperation_removeG.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="1767845709140471619" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1767845709140471619" fileName="ReplaceRegexpOperation_removeG.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
+    <scopeInfo nodeId="1767845709140471619" fileName="ReplaceRegexpOperation_removeG.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="1767845709140471619" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1767845709140471622" fileName="ReplaceRegexpOperation_removeG.java" startLine="29" startPosition="75" endLine="33" endPosition="67">
+    <scopeInfo nodeId="1767845709140471622" fileName="ReplaceRegexpOperation_removeG.java" startLine="30" startPosition="75" endLine="34" endPosition="67">
       <varInfo nodeId="1767845709140515278" varName="current" />
       <varInfo nodeId="1767845709140515284" varName="toSelect" />
     </scopeInfo>
-    <scopeInfo nodeId="1767845709140471619" fileName="ReplaceRegexpOperation_removeG.java" startLine="29" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="1767845709140471619" fileName="ReplaceRegexpOperation_removeG.java" startLine="30" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="1767845709140471619" varName="editorContext" />
       <varInfo nodeId="1767845709140471619" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1767845709140471619" fileName="ReplaceRegexpOperation_removeG.java" startLine="18" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_removeG$ReplaceRegexpOperation_removeG_DELETE" />
-    <unitInfo nodeId="1767845709140471619" fileName="ReplaceRegexpOperation_removeG.java" startLine="13" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_removeG" />
+    <unitInfo nodeId="1767845709140471619" fileName="ReplaceRegexpOperation_removeG.java" startLine="19" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_removeG$ReplaceRegexpOperation_removeG_DELETE" />
+    <unitInfo nodeId="1767845709140471619" fileName="ReplaceRegexpOperation_removeG.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.ReplaceRegexpOperation_removeG" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590516(jetbrains.mps.baseLanguage.regexp.editor)/3050481019131644558">
     <nodeInfo nodeId="3050481019131644558" fileName="RegexpSequenceByEnter.java" startLine="19" startPosition="34" endLine="20" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -8152,118 +8152,118 @@
     <unitInfo nodeId="6129327962765122924" fileName="IntervalSymbolClassPart_removeLeft.java" startLine="13" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.IntervalSymbolClassPart_removeLeft" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590516(jetbrains.mps.baseLanguage.regexp.editor)/6129327962765651523">
-    <nodeInfo nodeId="6129327962765651523" fileName="InlineRegexpExpression_removeM.java" startLine="14" startPosition="95" endLine="15" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6129327962765651523" fileName="InlineRegexpExpression_removeM.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="6129327962765651523" fileName="InlineRegexpExpression_removeM.java" startLine="21" startPosition="62" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6129327962765651523" fileName="InlineRegexpExpression_removeM.java" startLine="25" startPosition="54" endLine="26" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="698920857052155248" fileName="InlineRegexpExpression_removeM.java" startLine="29" startPosition="75" endLine="30" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="698920857052155254" fileName="InlineRegexpExpression_removeM.java" startLine="30" startPosition="134" endLine="31" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="698920857052155275" fileName="InlineRegexpExpression_removeM.java" startLine="31" startPosition="106" endLine="32" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="698920857052155267" fileName="InlineRegexpExpression_removeM.java" startLine="32" startPosition="63" endLine="33" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6129327962765651523" fileName="InlineRegexpExpression_removeM.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="6129327962765651523" fileName="InlineRegexpExpression_removeM.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InlineRegexpExpression_removeM_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="6129327962765651523" fileName="InlineRegexpExpression_removeM.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="6129327962765651523" fileName="InlineRegexpExpression_removeM.java" startLine="29" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="6129327962765651523" fileName="InlineRegexpExpression_removeM.java" startLine="14" startPosition="95" endLine="15" endPosition="128" />
-    <scopeInfo nodeId="6129327962765651523" fileName="InlineRegexpExpression_removeM.java" startLine="21" startPosition="62" endLine="22" endPosition="25" />
-    <scopeInfo nodeId="6129327962765651523" fileName="InlineRegexpExpression_removeM.java" startLine="25" startPosition="54" endLine="26" endPosition="56" />
-    <scopeInfo nodeId="6129327962765651523" fileName="InlineRegexpExpression_removeM.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
+    <nodeInfo nodeId="6129327962765651523" fileName="InlineRegexpExpression_removeM.java" startLine="15" startPosition="95" endLine="16" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6129327962765651523" fileName="InlineRegexpExpression_removeM.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="6129327962765651523" fileName="InlineRegexpExpression_removeM.java" startLine="22" startPosition="62" endLine="23" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6129327962765651523" fileName="InlineRegexpExpression_removeM.java" startLine="26" startPosition="54" endLine="27" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="698920857052155248" fileName="InlineRegexpExpression_removeM.java" startLine="30" startPosition="75" endLine="31" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="698920857052155254" fileName="InlineRegexpExpression_removeM.java" startLine="31" startPosition="59" endLine="32" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="698920857052155275" fileName="InlineRegexpExpression_removeM.java" startLine="32" startPosition="91" endLine="33" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="698920857052155267" fileName="InlineRegexpExpression_removeM.java" startLine="33" startPosition="63" endLine="34" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6129327962765651523" fileName="InlineRegexpExpression_removeM.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="6129327962765651523" fileName="InlineRegexpExpression_removeM.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InlineRegexpExpression_removeM_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="6129327962765651523" fileName="InlineRegexpExpression_removeM.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="6129327962765651523" fileName="InlineRegexpExpression_removeM.java" startLine="30" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="6129327962765651523" fileName="InlineRegexpExpression_removeM.java" startLine="15" startPosition="95" endLine="16" endPosition="128" />
+    <scopeInfo nodeId="6129327962765651523" fileName="InlineRegexpExpression_removeM.java" startLine="22" startPosition="62" endLine="23" endPosition="25" />
+    <scopeInfo nodeId="6129327962765651523" fileName="InlineRegexpExpression_removeM.java" startLine="26" startPosition="54" endLine="27" endPosition="56" />
+    <scopeInfo nodeId="6129327962765651523" fileName="InlineRegexpExpression_removeM.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="6129327962765651523" varName="context" />
       <varInfo nodeId="6129327962765651523" varName="editorCell" />
       <varInfo nodeId="6129327962765651523" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6129327962765651523" fileName="InlineRegexpExpression_removeM.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
+    <scopeInfo nodeId="6129327962765651523" fileName="InlineRegexpExpression_removeM.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="6129327962765651523" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6129327962765651523" fileName="InlineRegexpExpression_removeM.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
+    <scopeInfo nodeId="6129327962765651523" fileName="InlineRegexpExpression_removeM.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="6129327962765651523" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="6129327962765651526" fileName="InlineRegexpExpression_removeM.java" startLine="29" startPosition="75" endLine="33" endPosition="67">
+    <scopeInfo nodeId="6129327962765651526" fileName="InlineRegexpExpression_removeM.java" startLine="30" startPosition="75" endLine="34" endPosition="67">
       <varInfo nodeId="698920857052155249" varName="current" />
       <varInfo nodeId="698920857052155255" varName="toSelect" />
     </scopeInfo>
-    <scopeInfo nodeId="6129327962765651523" fileName="InlineRegexpExpression_removeM.java" startLine="29" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="6129327962765651523" fileName="InlineRegexpExpression_removeM.java" startLine="30" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="6129327962765651523" varName="editorContext" />
       <varInfo nodeId="6129327962765651523" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="6129327962765651523" fileName="InlineRegexpExpression_removeM.java" startLine="18" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.InlineRegexpExpression_removeM$InlineRegexpExpression_removeM_DELETE" />
-    <unitInfo nodeId="6129327962765651523" fileName="InlineRegexpExpression_removeM.java" startLine="13" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.InlineRegexpExpression_removeM" />
+    <unitInfo nodeId="6129327962765651523" fileName="InlineRegexpExpression_removeM.java" startLine="19" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.InlineRegexpExpression_removeM$InlineRegexpExpression_removeM_DELETE" />
+    <unitInfo nodeId="6129327962765651523" fileName="InlineRegexpExpression_removeM.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.InlineRegexpExpression_removeM" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590516(jetbrains.mps.baseLanguage.regexp.editor)/6129327962765754916">
-    <nodeInfo nodeId="6129327962765754916" fileName="InlineRegexpExpression_removeI.java" startLine="14" startPosition="95" endLine="15" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6129327962765754916" fileName="InlineRegexpExpression_removeI.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="6129327962765754916" fileName="InlineRegexpExpression_removeI.java" startLine="21" startPosition="62" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6129327962765754916" fileName="InlineRegexpExpression_removeI.java" startLine="25" startPosition="54" endLine="26" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="698920857052046925" fileName="InlineRegexpExpression_removeI.java" startLine="29" startPosition="75" endLine="30" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="698920857052050103" fileName="InlineRegexpExpression_removeI.java" startLine="30" startPosition="134" endLine="31" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6129327962765754920" fileName="InlineRegexpExpression_removeI.java" startLine="31" startPosition="106" endLine="32" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="698920857052050111" fileName="InlineRegexpExpression_removeI.java" startLine="32" startPosition="69" endLine="33" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6129327962765754916" fileName="InlineRegexpExpression_removeI.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="6129327962765754916" fileName="InlineRegexpExpression_removeI.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InlineRegexpExpression_removeI_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="6129327962765754916" fileName="InlineRegexpExpression_removeI.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="6129327962765754916" fileName="InlineRegexpExpression_removeI.java" startLine="29" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="6129327962765754916" fileName="InlineRegexpExpression_removeI.java" startLine="14" startPosition="95" endLine="15" endPosition="128" />
-    <scopeInfo nodeId="6129327962765754916" fileName="InlineRegexpExpression_removeI.java" startLine="21" startPosition="62" endLine="22" endPosition="25" />
-    <scopeInfo nodeId="6129327962765754916" fileName="InlineRegexpExpression_removeI.java" startLine="25" startPosition="54" endLine="26" endPosition="56" />
-    <scopeInfo nodeId="6129327962765754916" fileName="InlineRegexpExpression_removeI.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
+    <nodeInfo nodeId="6129327962765754916" fileName="InlineRegexpExpression_removeI.java" startLine="15" startPosition="95" endLine="16" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6129327962765754916" fileName="InlineRegexpExpression_removeI.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="6129327962765754916" fileName="InlineRegexpExpression_removeI.java" startLine="22" startPosition="62" endLine="23" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6129327962765754916" fileName="InlineRegexpExpression_removeI.java" startLine="26" startPosition="54" endLine="27" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="698920857052046925" fileName="InlineRegexpExpression_removeI.java" startLine="30" startPosition="75" endLine="31" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="698920857052050103" fileName="InlineRegexpExpression_removeI.java" startLine="31" startPosition="59" endLine="32" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6129327962765754920" fileName="InlineRegexpExpression_removeI.java" startLine="32" startPosition="91" endLine="33" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="698920857052050111" fileName="InlineRegexpExpression_removeI.java" startLine="33" startPosition="69" endLine="34" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6129327962765754916" fileName="InlineRegexpExpression_removeI.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="6129327962765754916" fileName="InlineRegexpExpression_removeI.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InlineRegexpExpression_removeI_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="6129327962765754916" fileName="InlineRegexpExpression_removeI.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="6129327962765754916" fileName="InlineRegexpExpression_removeI.java" startLine="30" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="6129327962765754916" fileName="InlineRegexpExpression_removeI.java" startLine="15" startPosition="95" endLine="16" endPosition="128" />
+    <scopeInfo nodeId="6129327962765754916" fileName="InlineRegexpExpression_removeI.java" startLine="22" startPosition="62" endLine="23" endPosition="25" />
+    <scopeInfo nodeId="6129327962765754916" fileName="InlineRegexpExpression_removeI.java" startLine="26" startPosition="54" endLine="27" endPosition="56" />
+    <scopeInfo nodeId="6129327962765754916" fileName="InlineRegexpExpression_removeI.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="6129327962765754916" varName="context" />
       <varInfo nodeId="6129327962765754916" varName="editorCell" />
       <varInfo nodeId="6129327962765754916" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6129327962765754916" fileName="InlineRegexpExpression_removeI.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
+    <scopeInfo nodeId="6129327962765754916" fileName="InlineRegexpExpression_removeI.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="6129327962765754916" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6129327962765754916" fileName="InlineRegexpExpression_removeI.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
+    <scopeInfo nodeId="6129327962765754916" fileName="InlineRegexpExpression_removeI.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="6129327962765754916" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="6129327962765754919" fileName="InlineRegexpExpression_removeI.java" startLine="29" startPosition="75" endLine="33" endPosition="67">
+    <scopeInfo nodeId="6129327962765754919" fileName="InlineRegexpExpression_removeI.java" startLine="30" startPosition="75" endLine="34" endPosition="67">
       <varInfo nodeId="698920857052046926" varName="current" />
       <varInfo nodeId="698920857052050104" varName="toSelect" />
     </scopeInfo>
-    <scopeInfo nodeId="6129327962765754916" fileName="InlineRegexpExpression_removeI.java" startLine="29" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="6129327962765754916" fileName="InlineRegexpExpression_removeI.java" startLine="30" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="6129327962765754916" varName="editorContext" />
       <varInfo nodeId="6129327962765754916" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="6129327962765754916" fileName="InlineRegexpExpression_removeI.java" startLine="18" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.InlineRegexpExpression_removeI$InlineRegexpExpression_removeI_DELETE" />
-    <unitInfo nodeId="6129327962765754916" fileName="InlineRegexpExpression_removeI.java" startLine="13" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.InlineRegexpExpression_removeI" />
+    <unitInfo nodeId="6129327962765754916" fileName="InlineRegexpExpression_removeI.java" startLine="19" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.InlineRegexpExpression_removeI$InlineRegexpExpression_removeI_DELETE" />
+    <unitInfo nodeId="6129327962765754916" fileName="InlineRegexpExpression_removeI.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.InlineRegexpExpression_removeI" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590516(jetbrains.mps.baseLanguage.regexp.editor)/6129327962765858411">
-    <nodeInfo nodeId="6129327962765858411" fileName="InlineRegexpExpression_removeS.java" startLine="14" startPosition="95" endLine="15" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6129327962765858411" fileName="InlineRegexpExpression_removeS.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="6129327962765858411" fileName="InlineRegexpExpression_removeS.java" startLine="21" startPosition="62" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6129327962765858411" fileName="InlineRegexpExpression_removeS.java" startLine="25" startPosition="54" endLine="26" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="698920857052155284" fileName="InlineRegexpExpression_removeS.java" startLine="29" startPosition="75" endLine="30" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="698920857052155290" fileName="InlineRegexpExpression_removeS.java" startLine="30" startPosition="134" endLine="31" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="698920857052155311" fileName="InlineRegexpExpression_removeS.java" startLine="31" startPosition="106" endLine="32" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="698920857052155303" fileName="InlineRegexpExpression_removeS.java" startLine="32" startPosition="60" endLine="33" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6129327962765858411" fileName="InlineRegexpExpression_removeS.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="6129327962765858411" fileName="InlineRegexpExpression_removeS.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InlineRegexpExpression_removeS_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="6129327962765858411" fileName="InlineRegexpExpression_removeS.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="6129327962765858411" fileName="InlineRegexpExpression_removeS.java" startLine="29" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="6129327962765858411" fileName="InlineRegexpExpression_removeS.java" startLine="14" startPosition="95" endLine="15" endPosition="128" />
-    <scopeInfo nodeId="6129327962765858411" fileName="InlineRegexpExpression_removeS.java" startLine="21" startPosition="62" endLine="22" endPosition="25" />
-    <scopeInfo nodeId="6129327962765858411" fileName="InlineRegexpExpression_removeS.java" startLine="25" startPosition="54" endLine="26" endPosition="56" />
-    <scopeInfo nodeId="6129327962765858411" fileName="InlineRegexpExpression_removeS.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
+    <nodeInfo nodeId="6129327962765858411" fileName="InlineRegexpExpression_removeS.java" startLine="15" startPosition="95" endLine="16" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6129327962765858411" fileName="InlineRegexpExpression_removeS.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="6129327962765858411" fileName="InlineRegexpExpression_removeS.java" startLine="22" startPosition="62" endLine="23" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6129327962765858411" fileName="InlineRegexpExpression_removeS.java" startLine="26" startPosition="54" endLine="27" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="698920857052155284" fileName="InlineRegexpExpression_removeS.java" startLine="30" startPosition="75" endLine="31" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="698920857052155290" fileName="InlineRegexpExpression_removeS.java" startLine="31" startPosition="59" endLine="32" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="698920857052155311" fileName="InlineRegexpExpression_removeS.java" startLine="32" startPosition="91" endLine="33" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="698920857052155303" fileName="InlineRegexpExpression_removeS.java" startLine="33" startPosition="60" endLine="34" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6129327962765858411" fileName="InlineRegexpExpression_removeS.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="6129327962765858411" fileName="InlineRegexpExpression_removeS.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InlineRegexpExpression_removeS_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="6129327962765858411" fileName="InlineRegexpExpression_removeS.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="6129327962765858411" fileName="InlineRegexpExpression_removeS.java" startLine="30" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="6129327962765858411" fileName="InlineRegexpExpression_removeS.java" startLine="15" startPosition="95" endLine="16" endPosition="128" />
+    <scopeInfo nodeId="6129327962765858411" fileName="InlineRegexpExpression_removeS.java" startLine="22" startPosition="62" endLine="23" endPosition="25" />
+    <scopeInfo nodeId="6129327962765858411" fileName="InlineRegexpExpression_removeS.java" startLine="26" startPosition="54" endLine="27" endPosition="56" />
+    <scopeInfo nodeId="6129327962765858411" fileName="InlineRegexpExpression_removeS.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="6129327962765858411" varName="context" />
       <varInfo nodeId="6129327962765858411" varName="editorCell" />
       <varInfo nodeId="6129327962765858411" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6129327962765858411" fileName="InlineRegexpExpression_removeS.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
+    <scopeInfo nodeId="6129327962765858411" fileName="InlineRegexpExpression_removeS.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="6129327962765858411" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6129327962765858411" fileName="InlineRegexpExpression_removeS.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
+    <scopeInfo nodeId="6129327962765858411" fileName="InlineRegexpExpression_removeS.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="6129327962765858411" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="6129327962765858414" fileName="InlineRegexpExpression_removeS.java" startLine="29" startPosition="75" endLine="33" endPosition="67">
+    <scopeInfo nodeId="6129327962765858414" fileName="InlineRegexpExpression_removeS.java" startLine="30" startPosition="75" endLine="34" endPosition="67">
       <varInfo nodeId="698920857052155285" varName="current" />
       <varInfo nodeId="698920857052155291" varName="toSelect" />
     </scopeInfo>
-    <scopeInfo nodeId="6129327962765858411" fileName="InlineRegexpExpression_removeS.java" startLine="29" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="6129327962765858411" fileName="InlineRegexpExpression_removeS.java" startLine="30" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="6129327962765858411" varName="editorContext" />
       <varInfo nodeId="6129327962765858411" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="6129327962765858411" fileName="InlineRegexpExpression_removeS.java" startLine="18" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.InlineRegexpExpression_removeS$InlineRegexpExpression_removeS_DELETE" />
-    <unitInfo nodeId="6129327962765858411" fileName="InlineRegexpExpression_removeS.java" startLine="13" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.InlineRegexpExpression_removeS" />
+    <unitInfo nodeId="6129327962765858411" fileName="InlineRegexpExpression_removeS.java" startLine="19" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.InlineRegexpExpression_removeS$InlineRegexpExpression_removeS_DELETE" />
+    <unitInfo nodeId="6129327962765858411" fileName="InlineRegexpExpression_removeS.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.editor.InlineRegexpExpression_removeS" />
   </root>
 </debugInfo>
 

@@ -53,6 +53,7 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
   private WeakSet<QuickFix_Runtime> myOnceExecutedQuickFixes = new WeakSet<QuickFix_Runtime>();
   private boolean myMessagesChanged = false;
 
+  @Override
   public Set<EditorMessage> createMessages(final SNode rootNode, List<SModelEvent> events, final boolean wasCheckedOnce, final EditorContext editorContext) {
     myMessagesChanged = false;
     return TypeContextManager.getInstance().runTypeCheckingComputation(((EditorComponent) editorContext.getEditorComponent()).getTypecheckingContextOwner(), rootNode, new Computation<Set<EditorMessage>>() {
@@ -102,6 +103,7 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
         for (Pair<SNode, List<IErrorReporter>> errorNode : context.getNodesWithErrors()) {
           List<IErrorReporter> errors = new ArrayList<IErrorReporter>(errorNode.o2);
           Collections.sort(errors, new Comparator<IErrorReporter>() {
+            @Override
             public int compare(IErrorReporter o1, IErrorReporter o2) {
               return o2.getMessageStatus().compareTo(o1.getMessageStatus());
             }
@@ -128,6 +130,7 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
                   if (!myOnceExecutedQuickFixes.contains(intention)) {
                     myOnceExecutedQuickFixes.add(intention);
                     LaterInvocator.invokeLater(new Runnable() {
+                      @Override
                       public void run() {
                         EditorCell selectedCell = editorContext.getSelectedCell();
                         if (selectedCell == null) return;
@@ -159,6 +162,7 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
                         }
 
                         ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
+                          @Override
                           public void run() {
                             intention.execute(quickFixNode);
                           }
@@ -187,18 +191,22 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
     });
   }
 
+  @Override
   protected boolean isPropertyEventDramatical(SModelPropertyEvent event) {
     return true;
   }
 
+  @Override
   public boolean hasDramaticalEvent(List<SModelEvent> events) {
     return true; //processed in another place
   }
 
+  @Override
   public boolean areMessagesChanged() {
     return myMessagesChanged;
   }
 
+  @Override
   public void clear(SNode node, EditorComponent editorComponent) {
     if (node == null) return;
     TypeCheckingContext context = editorComponent.getTypeCheckingContext();

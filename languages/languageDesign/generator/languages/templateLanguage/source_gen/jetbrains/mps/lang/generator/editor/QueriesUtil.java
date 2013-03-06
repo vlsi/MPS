@@ -177,8 +177,8 @@ public class QueriesUtil {
   }
 
   public static String getEditedLinkRole(EditorCell cell) {
-    jetbrains.mps.nodeEditor.cells.EditorCell editorCellImpl = (jetbrains.mps.nodeEditor.cells.EditorCell) cell;
-    SNode link = SNodeOperations.cast(editorCellImpl.getLinkDeclaration(), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
+    EditorCell editorCellImpl = cell;
+    SNode link = SNodeOperations.cast(((jetbrains.mps.nodeEditor.cells.EditorCell) editorCellImpl).getLinkDeclaration(), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     SNode referentNode = editorCellImpl.getRefNode();
     if (referentNode == null || link == null) {
       return null;
@@ -187,6 +187,6 @@ public class QueriesUtil {
   }
 
   public static SNode getEditedLinkReferentNode(EditorCell cell) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getRefNode();
+    return cell.getRefNode();
   }
 }

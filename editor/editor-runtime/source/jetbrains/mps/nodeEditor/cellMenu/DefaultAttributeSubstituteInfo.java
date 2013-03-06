@@ -26,6 +26,7 @@ public class DefaultAttributeSubstituteInfo extends DefaultChildSubstituteInfo {
     super(parentNode, currChildNode, linkDeclaration, editorContext);
   }
 
+  @Override
   protected DefaultChildNodeSetter createDefaultNodeSetter() {
     return new DefaultAttributeNodeSetter(getLinkDeclaration());
   }

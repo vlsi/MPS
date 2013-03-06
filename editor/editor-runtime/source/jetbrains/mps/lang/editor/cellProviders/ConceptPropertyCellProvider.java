@@ -36,6 +36,7 @@ public class ConceptPropertyCellProvider extends CellProviderWithRole {
   private String myConceptPropertyName;
   private SNode myConceptPropertyDeclaration;
 
+  @Override
   public void setRole(Object role) {
     myConceptPropertyName = role.toString();
     myConceptPropertyDeclaration = CellUtil.getConceptPropertyDeclaration(getSNode(), myConceptPropertyName);
@@ -45,6 +46,7 @@ public class ConceptPropertyCellProvider extends CellProviderWithRole {
     super(node, context);
   }
 
+  @Override
   public EditorCell createEditorCell(EditorContext editorContext) {
     String text = ((jetbrains.mps.smodel.SNode) getSNode()).getConceptProperty(myConceptPropertyName);
     EditorCell_Label editorCell;
@@ -60,18 +62,22 @@ public class ConceptPropertyCellProvider extends CellProviderWithRole {
   }
 
 
+  @Override
   public NodeSubstituteInfo createDefaultSubstituteInfo() {
     return null;
   }
 
+  @Override
   public SNode getRoleAttribute() {
     return null;
   }
 
+  @Override
   public Class getRoleAttributeClass() {
     return AttributeKind.Nothing.class;
   }
 
+  @Override
   public CellContext getCellContext() {
     return new ConceptPropertyCellContext(getSNode(), myConceptPropertyDeclaration);
   }

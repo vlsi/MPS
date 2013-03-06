@@ -44,6 +44,7 @@ public class CellAction_PasteNodeRelative extends AbstractCellAction {
     myPastePlaceHint = pasteBefore ? PastePlaceHint.BEFORE_ANCHOR : PastePlaceHint.AFTER_ANCHOR;
   }
 
+  @Override
   public boolean canExecute(EditorContext context) {
     EditorCell selectedCell = (EditorCell) context.getSelectedCell();
     if (selectedCell == null) {
@@ -65,6 +66,7 @@ public class CellAction_PasteNodeRelative extends AbstractCellAction {
     return true;
   }
 
+  @Override
   public void execute(EditorContext context) {
     LOG.assertInCommand();
     EditorComponent editorComponent = (EditorComponent) context.getEditorComponent();

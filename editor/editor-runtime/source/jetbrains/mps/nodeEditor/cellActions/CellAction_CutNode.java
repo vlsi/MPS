@@ -26,11 +26,13 @@ import java.util.Set;
 
 public class CellAction_CutNode extends CellAction_CopyNode {
 
+  @Override
   public boolean canExecute(EditorContext context) {
     return super.canExecute(context);
     // todo: what about read-only models?
   }
 
+  @Override
   public void execute(EditorContext context) {
     _3<List<SNode>, Map<SNode, Set<SNode>>, String> tuple = extractSelection(context);
     if (tuple == null) return;

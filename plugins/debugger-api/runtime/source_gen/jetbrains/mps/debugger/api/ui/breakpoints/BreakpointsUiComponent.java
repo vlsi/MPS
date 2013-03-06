@@ -29,7 +29,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.editor.util.EditorComponentUtil;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointKind;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointsProvider;
 import com.intellij.openapi.ui.Messages;
@@ -170,7 +170,7 @@ public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint
       if (myDebugInfoManager.isDebuggableNode(node)) {
         return cell;
       }
-      cell = (EditorCell) cell.getParent();
+      cell = cell.getParent();
     }
     return null;
   }

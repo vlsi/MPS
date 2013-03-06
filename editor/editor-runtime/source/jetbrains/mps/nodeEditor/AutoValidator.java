@@ -56,8 +56,10 @@ class AutoValidator {
       final SNode node = editorCell.getSNode();
       final CellInfo cellInfo = editorCell.getCellInfo();
       SwingUtilities.invokeLater(new Runnable() {
+        @Override
         public void run() {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+            @Override
             public void run() {
               if (editorCell.isErrorState()) {
                 EditorCell cell = cellInfo.findCell(editorComponent);

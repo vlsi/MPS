@@ -20,6 +20,7 @@ import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import java.util.Comparator;
 
 public class PriorityComparator implements Comparator<BaseEditorChecker> {
+  @Override
   public int compare(BaseEditorChecker o1, BaseEditorChecker o2) {
     if (o1.isLaterThanProtected(o2)) {
       return 1;

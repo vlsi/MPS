@@ -45,8 +45,10 @@ public class NodeInformationDialog extends AbstractNodeInformationDialog {
     myEditorComponent.setNodeInformationDialog(null);
   }
 
+  @Override
   protected String createNodeInfo(final SNode node) {
     return ModelAccess.instance().runReadAction(new Computable<String>() {
+      @Override
       public String compute() {
         StringBuilder result = new StringBuilder();
 

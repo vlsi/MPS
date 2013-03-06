@@ -44,6 +44,7 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
   public DefaultChildSubstituteInfo(final SNode sourceNode, final SNode linkDeclaration, final EditorContext editorContext) {
     super(editorContext);
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
+      @Override
       public void run() {
         if (isNotAggregation(linkDeclaration)) {
           LOG.error("only aggregation links are allowed here", linkDeclaration);
@@ -65,6 +66,7 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
   public DefaultChildSubstituteInfo(final SNode parentNode, final SNode currChildNode, final SNode linkDeclaration, final EditorContext editorContext) {
     super(editorContext);
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
+      @Override
       public void run() {
         if (linkDeclaration == null) {
           LOG.error("link declaration is null", new IllegalArgumentException("link declaration is null"));
@@ -79,6 +81,7 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
     });
   }
 
+  @Override
   public List<SubstituteAction> createActions() {
     List<SubstituteAction> actions = ModelActions.createChildNodeSubstituteActions(myParentNode, myCurrentChild,
       SModelUtil.getLinkDeclarationTarget(myLinkDeclaration),
@@ -87,6 +90,7 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
     return actions;
   }
 
+  @Override
   protected InequalitySystem getInequalitiesSystem(EditorCell contextCell) {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     CopyUtil.copy(Arrays.asList(myParentNode.getContainingRoot()), mapping).get(0);

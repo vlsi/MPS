@@ -210,6 +210,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
   private void rebuildMenuEntries() {
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         myMenuEmpty = false;
         final String pattern = getPatternEditor().getPattern();
@@ -242,6 +243,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
               return result;
             }
 
+            @Override
             public int compare(SubstituteAction i1, SubstituteAction i2) {
               boolean strictly1 = i1.canSubstituteStrictly(pattern);
               boolean strictly2 = i2.canSubstituteStrictly(pattern);
@@ -284,14 +286,17 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         if (mySubstituteActions.size() == 0) {
           myMenuEmpty = true;
           mySubstituteActions.add(new AbstractNodeSubstituteAction() {
+            @Override
             public String getMatchingText(String pattern) {
               return "No variants for \"" + getPatternEditor().getPattern() + "\"";
             }
 
+            @Override
             public String getVisibleMatchingText(String pattern) {
               return getMatchingText(pattern);
             }
 
+            @Override
             public SNode doSubstitute(@Nullable final jetbrains.mps.openapi.editor.EditorContext editorContext, String pattern) {
               return null;
             }
@@ -332,6 +337,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     return text.length();
   }
 
+  @Override
   public boolean processKeyPressed(EditorContext editorContext, KeyEvent keyEvent) {
     if (getPatternEditor().processKeyPressed(keyEvent)) {
       if (myPopupActivated) {
@@ -357,6 +363,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     return false;
   }
 
+  @Override
   public boolean processKeyTyped(EditorContext editorContext, KeyEvent keyEvent) {
     if (getPatternEditor().processKeyTyped(keyEvent)) {
       if (myPopupActivated) {
@@ -372,6 +379,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     return false;
   }
 
+  @Override
   public boolean processKeyReleased(EditorContext editorContext, KeyEvent keyEvent) {
     return false;
   }
@@ -539,6 +547,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     private JScrollPane myScroller = ScrollPaneFactory.createScrollPane(myList, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
     private EditorCell myRelativeCell;
     ComponentAdapter myComponentListener = new ComponentAdapter() {
+      @Override
       public void componentMoved(ComponentEvent e) {
         if (myRelativeCell == null) return;
         NodeSubstituteChooser.this.setLocationRelative(myRelativeCell);
@@ -561,18 +570,22 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       myList.setSelectionForeground(SELECTED_FOREGROUND_COLOR);
 
       myList.addMouseListener(new MouseAdapter() {
+        @Override
         public void mousePressed(MouseEvent e) {
           repaintPopupMenu();
           ModelAccess.instance().runReadAction(new Runnable() {
+            @Override
             public void run() {
               updatePatternEditor();
             }
           });
         }
 
+        @Override
         public void mouseClicked(MouseEvent e) {
           if (e.getClickCount() == 2) {
             ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+              @Override
               public void run() {
                 doSubstituteSelection();
               }
@@ -593,6 +606,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     }
 
 
+    @Override
     public void dispose() {
       getOwner().removeComponentListener(myComponentListener);
 
@@ -623,6 +637,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     public String getSelectedText(final String pattern) {
       if (getSelectionIndex() != -1) {
         String result = ModelAccess.instance().runReadAction(new Computable<String>() {
+          @Override
           public String compute() {
             return mySubstituteActions.get(getSelectionIndex()).getMatchingText(pattern);
           }
@@ -686,17 +701,21 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       myCellRenderer.setLightweightMode(true);
       try {
         myList.setModel(new ListModel() {
+          @Override
           public int getSize() {
             return mySubstituteActions.size();
           }
 
+          @Override
           public Object getElementAt(int index) {
             return mySubstituteActions.get(index);
           }
 
+          @Override
           public void addListDataListener(ListDataListener l) {
           }
 
+          @Override
           public void removeListDataListener(ListDataListener l) {
           }
         });
@@ -733,8 +752,10 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       add(myRight, BorderLayout.EAST);
     }
 
+    @Override
     public Component getListCellRendererComponent(final JList list, final Object value, int index, final boolean isSelected, boolean cellHasFocus) {
       ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
         public void run() {
           setupThis(list, value, isSelected);
         }

@@ -41,9 +41,9 @@ public class BinaryOperation_Symbol_Actions {
       SNodeOperations.replaceWithAnother(node, newExpression);
       editorContext.flushEvents();
       EditorComponent editor = editorContext.getEditorComponent();
-      jetbrains.mps.nodeEditor.cells.EditorCell cell = (jetbrains.mps.nodeEditor.cells.EditorCell) editor.findNodeCell(newExpression);
+      EditorCell cell = editor.findNodeCell(newExpression);
       if (cell != null) {
-        jetbrains.mps.nodeEditor.cells.EditorCell firstLeaf = cell.getFirstLeaf(CellConditions.SELECTABLE);
+        EditorCell firstLeaf = ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getFirstLeaf(CellConditions.SELECTABLE);
         editor.changeSelection(firstLeaf);
         if (firstLeaf instanceof EditorCell_Label) {
           ((EditorCell_Label) firstLeaf).home();
