@@ -17,7 +17,6 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NullSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.CellFinders;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
@@ -448,7 +447,7 @@ public class IntelligentInputUtil {
 
   private static boolean hasSideActions(EditorCell cell, CellSide side, String prefix) {
     final SideTransformHintSubstituteActionsHelper helper = new SideTransformHintSubstituteActionsHelper(cell.getSNode(), side, cell.getRightTransformAnchorTag(), cell.getContext().getOperationContext());
-    NodeSubstituteInfo info = new AbstractNodeSubstituteInfo(cell.getContext()) {
+    SubstituteInfo info = new AbstractNodeSubstituteInfo(cell.getContext()) {
       @Override
       protected List<SubstituteAction> createActions() {
         return helper.createActions();

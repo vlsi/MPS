@@ -23,13 +23,13 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.cellMenu.BooleanPropertySubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
-import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.Primitives;
 import jetbrains.mps.smodel.SNodeOperations;
@@ -86,10 +86,10 @@ public class PropertyCellProvider extends CellProviderWithRole {
   }
 
   @Override
-  public NodeSubstituteInfo createDefaultSubstituteInfo() {
-    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<NodeSubstituteInfo>() {
+  public SubstituteInfo createDefaultSubstituteInfo() {
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SubstituteInfo>() {
       @Override
-      public NodeSubstituteInfo compute() {
+      public SubstituteInfo compute() {
         if (myPropertyDeclaration == null) {
           return null;
         }
