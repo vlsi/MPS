@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project.validation;
 
+import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.MessageKind;
@@ -37,7 +38,7 @@ public class ModelValidator {
     ModelAccess.assertLegalRead();
 
     List<String> errors = new ArrayList<String>();
-    if (myModel instanceof TransientSModel) {
+    if (myModel .getModule() instanceof TransientModelsModule) {
       return errors;
     }
     if (jetbrains.mps.util.SNodeOperations.isModelDisposed(myModel)) {

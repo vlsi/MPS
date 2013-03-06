@@ -206,7 +206,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     if (model == null) {
       return null;
     }
-    if (!(model instanceof TransientSModel)) {
+    if (!(model .getModule() instanceof TransientModelsModule)) {
       return new jetbrains.mps.smodel.SNodePointer(node);
     }
 

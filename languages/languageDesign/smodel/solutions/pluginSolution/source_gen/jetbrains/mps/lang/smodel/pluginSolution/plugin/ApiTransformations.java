@@ -719,7 +719,7 @@ public class ApiTransformations {
 
     // ----------------- 
 
-    String cat63 = "SModel: isTransient->instanceof TransientSModel";
+    String cat63 = "SModel: isTransient->.getModule() instanceof TransientModelsModule";
     SNode md63 = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_f4dkew_a0a0a844a1(), "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", false);
     _FunctionTypes._void_P1_E0<? super SNode> transformer63 = new _Adapters._return_P1_E0_to__void_P1_E0_adapter<SNode>(new _FunctionTypes._return_P1_E0<SNode, SNode>() {
       public SNode invoke(SNode usage) {

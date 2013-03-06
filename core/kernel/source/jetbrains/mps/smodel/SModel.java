@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
@@ -1178,7 +1179,7 @@ public class SModel implements SModelInternal {
    * @Deprecated in 3.0
    */
   public boolean isTransient() {
-    return this instanceof TransientSModel;
+    return this .getModule() instanceof TransientModelsModule;
   }
 
   @Deprecated

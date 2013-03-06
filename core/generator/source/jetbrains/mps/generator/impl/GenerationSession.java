@@ -556,7 +556,7 @@ class GenerationSession {
 
   private void recycleWasteModel(@NotNull SModel model) {
     SModel md = model.getModelDescriptor();
-    if (model instanceof TransientSModel) {
+    if (model .getModule() instanceof TransientModelsModule) {
       ttrace.push("recycling", false);
       ((jetbrains.mps.smodel.SModelInternal) model).disposeFastNodeFinder();
       if (myDiscardTransients && !mySessionContext.isTransientModelToKeep(model)) {
