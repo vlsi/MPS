@@ -153,7 +153,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
         }
       });
       if (messageToRepaint != null) {
-        ((ChangeEditorMessage) messageToRepaint).paint(graphics, ((EditorComponent) cell.getEditorComponent()), (jetbrains.mps.nodeEditor.cells.EditorCell) parent);
+        ((ChangeEditorMessage) messageToRepaint).paint(graphics, (EditorComponent) cell.getEditorComponent(), (jetbrains.mps.nodeEditor.cells.EditorCell) parent);
       }
     }
   }
