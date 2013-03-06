@@ -25,6 +25,5 @@ public interface TextBuilder {
   String getText();
   List<StringBuffer> getLines();
   public TextBuilder appendToTheBottom(jetbrains.mps.openapi.editor.TextBuilder builder);
-  public jetbrains.mps.openapi.editor.TextBuilder appendToTheRight(jetbrains.mps.openapi.editor.TextBuilder builder, boolean insertSpace);
-  public jetbrains.mps.openapi.editor.TextBuilder appendToTheRight(jetbrains.mps.openapi.editor.TextBuilder builder);
+  public TextBuilder appendToTheRight(jetbrains.mps.openapi.editor.TextBuilder builder, boolean insertSpace);
 }

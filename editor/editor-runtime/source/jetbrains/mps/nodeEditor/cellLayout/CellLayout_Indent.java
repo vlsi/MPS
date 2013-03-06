@@ -158,7 +158,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
         }
         if (isOnNewLine(rootCell, current) || newLineAfter) {
           newLineAfter = false;
-          result = result.appendToTheRight(jetbrains.mps.nodeEditor.text.TextBuilder.fromString("\n"));
+          result = result.appendToTheRight(jetbrains.mps.nodeEditor.text.TextBuilder.fromString("\n"), true);
           for (int i = 0; i < getIndent(rootCell, current, false); i++) {
             result = result.appendToTheRight(jetbrains.mps.nodeEditor.text.TextBuilder.fromString(EditorCell_Indent.getIndentText()), false);
           }

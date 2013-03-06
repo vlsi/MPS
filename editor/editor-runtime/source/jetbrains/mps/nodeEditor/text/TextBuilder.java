@@ -141,9 +141,9 @@ public class TextBuilder implements jetbrains.mps.openapi.editor.TextBuilder {
 
   public static void main(String[] args) {
     jetbrains.mps.openapi.editor.TextBuilder textBuilder1 = fromString("was").appendToTheRight(fromString("it"))
-        .appendToTheRight(fromString("a"))
-        .appendToTheRight(fromString("cat"))
-        .appendToTheRight(fromString("?"));
+        .appendToTheRight(fromString("a"), true)
+        .appendToTheRight(fromString("cat"), true)
+        .appendToTheRight(fromString("?"), true);
     String testString1 = textBuilder1.getText();
     System.err.println(testString1);
 
