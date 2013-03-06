@@ -107,7 +107,7 @@ public class MPSPsiRef extends MPSPsiNodeBase {
     return new PsiReference() {
       @Override
       public PsiElement getElement() {
-        return MPSPsiRef.this;
+        return getContainingModel(); //MPSPsiRef.this;
       }
 
       @Override
