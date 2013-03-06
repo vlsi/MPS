@@ -35,9 +35,9 @@ public class ParensRegexp_Actions {
 
       editorContext.flushEvents();
       EditorComponent editor = editorContext.getEditorComponent();
-      jetbrains.mps.nodeEditor.cells.EditorCell cell = (jetbrains.mps.nodeEditor.cells.EditorCell) editor.findNodeCell(nn);
+      EditorCell cell = editor.findNodeCell(nn);
       if (cell != null) {
-        jetbrains.mps.nodeEditor.cells.EditorCell lastLeaf = cell.getLastLeaf(CellConditions.SELECTABLE);
+        EditorCell lastLeaf = ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getLastLeaf(CellConditions.SELECTABLE);
         editor.changeSelection(lastLeaf);
         if (lastLeaf instanceof EditorCell_Label) {
           ((EditorCell_Label) lastLeaf).end();

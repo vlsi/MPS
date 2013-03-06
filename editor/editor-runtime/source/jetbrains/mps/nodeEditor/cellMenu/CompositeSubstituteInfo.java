@@ -56,6 +56,7 @@ public class CompositeSubstituteInfo extends AbstractNodeSubstituteInfo {
     myExtParts = parts;
   }
 
+  @Override
   protected List<SubstituteAction> createActions() {
     List<List<? extends SubstituteAction>> actionLists = new LinkedList<List<? extends SubstituteAction>>();
     if (myExtParts != null) {

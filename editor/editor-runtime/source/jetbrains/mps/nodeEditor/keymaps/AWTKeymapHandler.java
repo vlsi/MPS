@@ -176,6 +176,7 @@ public class AWTKeymapHandler extends KeymapHandler<KeyEvent> {
     return keyCodes;
   }
 
+  @Override
   public Collection<ActionKey> getActionKeys(KeyEvent event) {
     List<ActionKey> keys = new LinkedList<ActionKey>();
     List<String> modifiers = modifiersForEvent(event);
@@ -211,8 +212,10 @@ public class AWTKeymapHandler extends KeymapHandler<KeyEvent> {
         menuItem.setAccelerator(KeyStroke.getKeyStroke(acc));
       }
       ActionListener actionListener = new ActionListener() {
+        @Override
         public void actionPerformed(ActionEvent e) {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+            @Override
             public void run() {
               executeAction(action, contextCell, editorContext);
             }

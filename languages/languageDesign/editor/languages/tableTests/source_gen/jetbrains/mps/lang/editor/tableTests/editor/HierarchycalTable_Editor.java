@@ -76,7 +76,7 @@ public class HierarchycalTable_Editor extends DefaultNodeEditor {
         return new HierarchycalTableModelWithHeader(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.tableTests.structure.Table", "rows"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.tableTests.structure.Row", "cells"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.tableTests.structure.HierarchycalTable", "headers"));
       }
     };
-    EditorCell_Collection editorCell = EditorCell_Table.createTable(editorContext, node, creator.createTableModel(node, editorContext), "Table_sl01pn_c0");
+    jetbrains.mps.openapi.editor.cells.EditorCell_Collection editorCell = EditorCell_Table.createTable(editorContext, node, creator.createTableModel(node, editorContext), "Table_sl01pn_c0");
     editorCell.setCellId("Table_sl01pn_c0_0");
     return editorCell;
   }

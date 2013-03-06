@@ -97,6 +97,7 @@ public class CellLayout_Flow extends AbstractCellLayout {
   }
 
 
+  @Override
   public void doLayout(EditorCell_Collection editorCells) {
     if (myBossLayout == null) init();
     new FlowLayouter(editorCells).doLayout();
@@ -309,6 +310,7 @@ public class CellLayout_Flow extends AbstractCellLayout {
     return result;
   }
 
+  @Override
   public List<Rectangle> getSelectionBounds(EditorCell_Collection editorCells) {
     LOG.assertLog(getFlowLayout(editorCells) == this);
     List<Rectangle> result = new ArrayList<Rectangle>();
@@ -318,6 +320,7 @@ public class CellLayout_Flow extends AbstractCellLayout {
     return result;
   }
 
+  @Override
   public TextBuilder doLayoutText(Iterable<EditorCell> editorCells) {
     TextBuilder result = TextBuilder.getEmptyTextBuilder();
     Iterator<EditorCell> it = editorCells.iterator();

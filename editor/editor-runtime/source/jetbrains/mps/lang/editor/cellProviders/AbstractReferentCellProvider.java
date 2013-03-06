@@ -62,6 +62,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
   }
 
 
+  @Override
   public void
   setRole(Object role) {
     myLinkDeclaration = ((jetbrains.mps.smodel.SNode) getSNode()).getLinkDeclaration(role.toString());
@@ -72,6 +73,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
     }
 
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
+      @Override
       public void run() {
         myGenuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(myLinkDeclaration);
         myGenuineRole = SModelUtil.getLinkDeclarationRole(myGenuineLinkDeclaration);
@@ -83,15 +85,18 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
   }
 
   //gets an attribute for this provider's node hanging on this provider's role
+  @Override
   public SNode getRoleAttribute() {
     return AttributeOperations.getLinkAttribute(getSNode(), null, myGenuineRole);
   }
 
   // gets a kind of attributes possibly hanging on this provider's role
+  @Override
   public Class getRoleAttributeClass() {
     return AttributeKind.Reference.class;
   }
 
+  @Override
   public EditorCell createEditorCell(EditorContext context) {
     EditorCell result = createCell_internal(myEditorContext);
     // do not override role/link-declaration if they are already set
@@ -158,6 +163,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
 
   protected abstract EditorCell createRefCell(EditorContext context, SNode referencedNode, SNode node);
 
+  @Override
   public NodeSubstituteInfo createDefaultSubstituteInfo() {
     if (myIsAggregation) return new DefaultChildSubstituteInfo(getSNode(), myLinkDeclaration, myEditorContext);
     return new DefaultReferenceSubstituteInfo(getSNode(), myLinkDeclaration, myEditorContext);
@@ -168,6 +174,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
     return myLinkDeclaration;
   }
 
+  @Override
   public CellContext getCellContext() {
     if (myIsAggregation) {
       SNode parentNode = getSNode();

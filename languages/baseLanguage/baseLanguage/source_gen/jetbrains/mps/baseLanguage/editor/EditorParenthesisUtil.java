@@ -9,7 +9,7 @@ import jetbrains.mps.baseLanguage.behavior.ParenthesisUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.openapi.editor.EditorComponent;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.CellFinders;
 
 public class EditorParenthesisUtil {
@@ -80,8 +80,8 @@ public class EditorParenthesisUtil {
   private static void selectNode(EditorContext context, SNode expr, boolean selectLastLeaf) {
     context.flushEvents();
     EditorComponent component = context.getEditorComponent();
-    EditorCell nodeCell = (EditorCell) component.findNodeCell(expr);
-    EditorCell cell = nodeCell.findChild((selectLastLeaf ?
+    EditorCell nodeCell = component.findNodeCell(expr);
+    EditorCell cell = ((jetbrains.mps.nodeEditor.cells.EditorCell) nodeCell).findChild((selectLastLeaf ?
       CellFinders.LAST_SELECTABLE_LEAF :
       CellFinders.FIRST_SELECTABLE_LEAF
     ));

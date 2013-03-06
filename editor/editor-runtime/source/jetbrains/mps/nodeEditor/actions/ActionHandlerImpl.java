@@ -37,6 +37,7 @@ public class ActionHandlerImpl implements ActionHandler {
     myEditorComponent = editorComponent;
   }
 
+  @Override
   public boolean executeAction(EditorCell editorCell, CellActionType type) {
     return executeAction(editorCell, getApplicableCellAction(editorCell, type));
   }
@@ -49,6 +50,7 @@ public class ActionHandlerImpl implements ActionHandler {
 
     if (action.executeInCommand()) {
       getEditorContext().executeCommand(new Runnable() {
+        @Override
         public void run() {
           action.execute(getEditorContext());
         }
@@ -59,6 +61,7 @@ public class ActionHandlerImpl implements ActionHandler {
     return true;
   }
 
+  @Override
   public CellAction getApplicableCellAction(final EditorCell editorCell, final CellActionType type) {
     if (editorCell == null) {
       return null;

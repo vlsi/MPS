@@ -10,7 +10,7 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.Padding;
+import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 
@@ -24,7 +24,7 @@ public class BuildProjectPart_Editor extends DefaultNodeEditor {
       public AbstractCellProvider invoke() {
         return new AbstractCellProvider() {
           @Override
-          public jetbrains.mps.nodeEditor.cells.EditorCell createEditorCell(EditorContext context) {
+          public EditorCell createEditorCell(EditorContext context) {
             EditorCell_Error result = new EditorCell_Error(context, node, "<project part>");
             result.getStyle().set(StyleAttributes.PADDING_LEFT, new Padding(0.0));
             result.getStyle().set(StyleAttributes.PADDING_RIGHT, new Padding(0.0));

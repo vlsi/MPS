@@ -35,6 +35,7 @@ public class CellLayout_Table extends AbstractCellLayout {
   private int[] myRowDescents = null;
   private int[] myColumnWidths = null;
 
+  @Override
   public boolean canBeFolded() {
     return true;
   }
@@ -77,6 +78,7 @@ public class CellLayout_Table extends AbstractCellLayout {
     }
   }
 
+  @Override
   public void doLayout(EditorCell_Collection editorCells) {
     final int x = editorCells.getX();
     final int y = editorCells.getY();
@@ -223,6 +225,7 @@ public class CellLayout_Table extends AbstractCellLayout {
     editorCells.setHeight(height);
   }
 
+  @Override
   public TextBuilder doLayoutText(Iterable<EditorCell> editorCells) {
     TextBuilder result = TextBuilder.getEmptyTextBuilder();
     for (EditorCell editorCell : editorCells) {
@@ -231,6 +234,7 @@ public class CellLayout_Table extends AbstractCellLayout {
     return result;
   }
 
+  @Override
   public int getAscent(EditorCell_Collection editorCells) {
     for (EditorCell cell : editorCells) {
       if (cell.getStyle().get(StyleAttributes.BASE_LINE_CELL)) {
@@ -263,6 +267,7 @@ public class CellLayout_Table extends AbstractCellLayout {
     return 0;
   }
 
+  @Override
   public int getRightInternalInset(EditorCell_Collection editorCell_collection) {
     EditorCell editorCell = editorCell_collection.firstCell();
     if (editorCell != null) return editorCell.getRightInset();

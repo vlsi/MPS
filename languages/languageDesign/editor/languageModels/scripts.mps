@@ -975,6 +975,7 @@
     </node>
     <node role="part" roleId="tp33.1177458178889" type="tp33.WhitespaceMigrationScriptPart" typeId="tp33.2598676492883244606" id="2783385774420420452" />
     <node role="part" roleId="tp33.1177458178889" type="tp33.ExtractInterfaceMigration" typeId="tp33.6655357163912246425" id="2783385774420420454">
+      <property name="updateClassifierTypes" nameId="tp33.7867202088808133349" value="true" />
       <link role="newClassifier" roleId="tp33.6655357163912246427" targetNodeId="nu8v.~EditorCell" resolveInfo="EditorCell" />
       <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619341785149">
         <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="nu8v.~EditorCell%dsetX(int)%cvoid" resolveInfo="setX" />
@@ -1287,6 +1288,14 @@
       </node>
       <node role="oldClassifier" roleId="tp33.5434557751112108415" type="tp33.DirectClassifierSpecification" typeId="tp33.5434557751112207651" id="6715535892752751133">
         <link role="classifier" roleId="tp33.5434557751112207965" targetNodeId="9a8.~EditorCellAction" resolveInfo="EditorCellAction" />
+      </node>
+    </node>
+    <node role="part" roleId="tp33.1177458178889" type="tp33.WhitespaceMigrationScriptPart" typeId="tp33.2598676492883244606" id="2312049224513455992" />
+    <node role="part" roleId="tp33.1177458178889" type="tp33.ExtractInterfaceMigration" typeId="tp33.6655357163912246425" id="2312049224513456365">
+      <property name="updateClassifierTypes" nameId="tp33.7867202088808133349" value="true" />
+      <link role="newClassifier" roleId="tp33.6655357163912246427" targetNodeId="ejnv.~Padding" resolveInfo="Padding" />
+      <node role="oldClassifier" roleId="tp33.5434557751112108415" type="tp33.DirectClassifierSpecification" typeId="tp33.5434557751112207651" id="2312049224513456556">
+        <link role="classifier" roleId="tp33.5434557751112207965" targetNodeId="mceb.~Padding" resolveInfo="Padding" />
       </node>
     </node>
   </root>

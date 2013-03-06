@@ -14,7 +14,6 @@
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="library" name="Annotations" level="project" />
-    <orderEntry type="module" module-name="persistence" />
   </component>
 </module>
 

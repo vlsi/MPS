@@ -12,7 +12,7 @@ import jetbrains.mps.ide.editor.util.EditorComponentUtil;
 import java.util.Set;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.generator.traceInfo.TraceDown;
@@ -77,7 +77,7 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
   }
 
   protected EditorCell findTraceableCell(EditorCell foundCell) {
-    DebugInfo debugInfo = TraceInfoCache.getInstance().get(foundCell.getEditor().getEditedNode().getModel().getModelDescriptor());
+    DebugInfo debugInfo = TraceInfoCache.getInstance().get(foundCell.getEditorComponent().getEditedNode().getModel().getModelDescriptor());
     if (debugInfo == null) {
       return null;
     }
@@ -96,9 +96,9 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
   }
 
   private SNode findDebuggableNode(final EditorComponent editorComponent, int x, final int y) {
-    EditorCell foundCell = editorComponent.getRootCell().findCellWeak(x, y, new Condition<EditorCell>() {
+    EditorCell foundCell = editorComponent.getRootCell().findCellWeak(x, y, new Condition<jetbrains.mps.nodeEditor.cells.EditorCell>() {
       @Override
-      public boolean met(EditorCell object) {
+      public boolean met(jetbrains.mps.nodeEditor.cells.EditorCell object) {
         EditorCell debuggableOrTraceableCell = findDebuggableOrTraceableCell(object);
         if (debuggableOrTraceableCell == null) {
           return false;

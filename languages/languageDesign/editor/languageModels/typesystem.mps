@@ -1624,22 +1624,55 @@
   <root id="1324308523799788289">
     <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="1324308523799788609">
       <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="1324308523799815025">
-        <node role="condition" roleId="tpee.1068580123160" type="tpee.NotExpression" typeId="tpee.1081516740877" id="1324308523799900914">
-          <node role="expression" roleId="tpee.1081516765348" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1324308523799900916">
-            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1324308523799900917">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dcontains(java%dlang%dObject)%cboolean" resolveInfo="contains" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1324308523799900918">
-                <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="1324308523799900919">
-                  <link role="property" roleId="tp25.1138056395725" targetNodeId="tpc2.1136923970224" resolveInfo="keycode" />
+        <node role="condition" roleId="tpee.1068580123160" type="tpee.AndExpression" typeId="tpee.1080120340718" id="2312049224508359957">
+          <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.AndExpression" typeId="tpee.1080120340718" id="2312049224508374889">
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.GreaterThanExpression" typeId="tpee.1081506762703" id="2312049224508399524">
+              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="2312049224508399527">
+                <property name="value" nameId="tpee.1068580320021" value="1" />
+              </node>
+              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2312049224508386640">
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2312049224508394248">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dlength()%cint" resolveInfo="length" />
                 </node>
-                <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1324308523799900920">
-                  <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1324308523799788611" resolveInfo="cellKeyMapKeystroke" />
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2312049224508376381">
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="2312049224508382033">
+                    <link role="property" roleId="tp25.1138056395725" targetNodeId="tpc2.1136923970224" resolveInfo="keycode" />
+                  </node>
+                  <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="2312049224508375783">
+                    <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1324308523799788611" resolveInfo="cellKeyMapKeystroke" />
+                  </node>
                 </node>
               </node>
             </node>
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1324308523799900921">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oz2g.~AWTKeymapHandler%dgetValidKeyCodes()%cjava%dutil%dList" resolveInfo="getValidKeyCodes" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="oz2g.~AWTKeymapHandler" resolveInfo="AWTKeymapHandler" />
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="2312049224508373596">
+              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2312049224508361518">
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="2312049224508364724">
+                  <link role="property" roleId="tp25.1138056395725" targetNodeId="tpc2.1136923970224" resolveInfo="keycode" />
+                </node>
+                <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="2312049224508360951">
+                  <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1324308523799788611" resolveInfo="cellKeyMapKeystroke" />
+                </node>
+              </node>
+              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="2312049224508374467" />
+            </node>
+          </node>
+          <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NotExpression" typeId="tpee.1081516740877" id="1324308523799900914">
+            <node role="expression" roleId="tpee.1081516765348" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1324308523799900916">
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1324308523799900917">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dcontains(java%dlang%dObject)%cboolean" resolveInfo="contains" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1324308523799900918">
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="1324308523799900919">
+                    <link role="property" roleId="tp25.1138056395725" targetNodeId="tpc2.1136923970224" resolveInfo="keycode" />
+                  </node>
+                  <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1324308523799900920">
+                    <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1324308523799788611" resolveInfo="cellKeyMapKeystroke" />
+                  </node>
+                </node>
+              </node>
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1324308523799900921">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oz2g.~AWTKeymapHandler%dgetValidKeyCodes()%cjava%dutil%dList" resolveInfo="getValidKeyCodes" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="oz2g.~AWTKeymapHandler" resolveInfo="AWTKeymapHandler" />
+              </node>
             </node>
           </node>
         </node>
@@ -1668,20 +1701,33 @@
         </node>
       </node>
       <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="1324308523799924986">
-        <node role="condition" roleId="tpee.1068580123160" type="tpee.NotExpression" typeId="tpee.1081516740877" id="1324308523799924987">
-          <node role="expression" roleId="tpee.1081516765348" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1324308523799924988">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1324308523799928822">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oz2g.~AWTKeymapHandler%dgetValidModifiers()%cjava%dutil%dList" resolveInfo="getValidModifiers" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="oz2g.~AWTKeymapHandler" resolveInfo="AWTKeymapHandler" />
+        <node role="condition" roleId="tpee.1068580123160" type="tpee.AndExpression" typeId="tpee.1080120340718" id="2312049224507711622">
+          <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="2312049224507726173">
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="2312049224507726976" />
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2312049224507713789">
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="2312049224507719317">
+                <link role="property" roleId="tp25.1138056395725" targetNodeId="tpc2.1136923970223" resolveInfo="modifiers" />
+              </node>
+              <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="2312049224507713222">
+                <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1324308523799788611" resolveInfo="cellKeyMapKeystroke" />
+              </node>
             </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1324308523799924989">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dcontains(java%dlang%dObject)%cboolean" resolveInfo="contains" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1324308523799924990">
-                <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="1324308523799931050">
-                  <link role="property" roleId="tp25.1138056395725" targetNodeId="tpc2.1136923970223" resolveInfo="modifiers" />
-                </node>
-                <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1324308523799924992">
-                  <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1324308523799788611" resolveInfo="cellKeyMapKeystroke" />
+          </node>
+          <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NotExpression" typeId="tpee.1081516740877" id="1324308523799924987">
+            <node role="expression" roleId="tpee.1081516765348" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1324308523799924988">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1324308523799928822">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oz2g.~AWTKeymapHandler%dgetValidModifiers()%cjava%dutil%dList" resolveInfo="getValidModifiers" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="oz2g.~AWTKeymapHandler" resolveInfo="AWTKeymapHandler" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1324308523799924989">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~List%dcontains(java%dlang%dObject)%cboolean" resolveInfo="contains" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1324308523799924990">
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="1324308523799931050">
+                    <link role="property" roleId="tp25.1138056395725" targetNodeId="tpc2.1136923970223" resolveInfo="modifiers" />
+                  </node>
+                  <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1324308523799924992">
+                    <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1324308523799788611" resolveInfo="cellKeyMapKeystroke" />
+                  </node>
                 </node>
               </node>
             </node>

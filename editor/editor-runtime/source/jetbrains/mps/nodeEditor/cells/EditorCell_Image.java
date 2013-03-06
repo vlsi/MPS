@@ -38,14 +38,17 @@ public class EditorCell_Image extends EditorCell_Basic {
   private ImageAlignment myAlignment = ImageAlignment.justify;
   private Image myImage;
   private ImageObserver mySizeObserver = new ImageObserver() {
+    @Override
     public boolean imageUpdate(Image img, int infoflags, int x, int y, int width, int height) {
       int mask = ImageObserver.HEIGHT | ImageObserver.WIDTH;
       boolean done = (infoflags & mask) == mask;
       if (done) {
         SwingUtilities.invokeLater(new Runnable() {
 
+          @Override
           public void run() {
             ModelAccess.instance().runReadAction(new Runnable() {
+              @Override
               public void run() {
                 getEditor().rebuildEditorContent();
               }
@@ -77,6 +80,7 @@ public class EditorCell_Image extends EditorCell_Basic {
     return result;
   }
 
+  @Override
   public void paintContent(Graphics g, ParentSettings parentSettings) {
     if (myImage == null) return;
     switch (myAlignment) {
@@ -96,6 +100,7 @@ public class EditorCell_Image extends EditorCell_Basic {
     }
   }
 
+  @Override
   protected void relayoutImpl() {
     if (myImage == null) return;
     if (myAlignment == ImageAlignment.justify) {
@@ -110,10 +115,12 @@ public class EditorCell_Image extends EditorCell_Basic {
     }
   }
 
+  @Override
   public int getAscent() {
     return myHeight - getDescent();
   }
 
+  @Override
   public int getDescent() {
     return myDescent >= 0 ? myDescent : 0;
   }

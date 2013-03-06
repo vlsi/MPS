@@ -226,11 +226,11 @@ public class MacrosSwitch_KeyMap extends KeyMapImpl {
       if (ListSequence.fromList(selectedNodes).count() != 1) {
         return false;
       }
-      return QueriesUtil.isReferenceMacroApplicable(node, (jetbrains.mps.nodeEditor.cells.EditorCell) editorContext.getSelectedCell());
+      return QueriesUtil.isReferenceMacroApplicable(node, editorContext.getSelectedCell());
     }
 
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      SNode referenceMacro = QueriesUtil.addReferenceMacro(node, (jetbrains.mps.nodeEditor.cells.EditorCell) editorContext.getSelectedCell());
+      SNode referenceMacro = QueriesUtil.addReferenceMacro(node, editorContext.getSelectedCell());
       // set caret 
       editorContext.selectAndSetCaret(referenceMacro, 2);
       EditorInspector inspector = editorContext.getInspector();

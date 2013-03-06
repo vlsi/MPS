@@ -16,7 +16,6 @@
 package jetbrains.mps.persistence;
 
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DefaultSModel;
@@ -24,11 +23,9 @@ import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
@@ -60,41 +57,32 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
 
   @Override
   public SModel load(StreamDataSource dataSource) {
-    if (!(dataSource instanceof FileDataSource)) return null;
-    FileDataSource source = (FileDataSource) dataSource;
-
     SModelHeader header;
     try {
-      header = ModelPersistence.loadDescriptor(source.getFile());
+      header = ModelPersistence.loadDescriptor(dataSource);
     } catch (ModelReadException ignored) {
       LOG.error("Can't read model: ", ignored);
       header = new SModelHeader();
     }
 
     SModelReference modelReference;
-    assert header.getUID() != null : "wrong model: " + source.getFile().getPath();
+    assert header.getUID() != null : "wrong model: " + dataSource.getLocation();
 
     modelReference = SModelReference.fromString(header.getUID());
 
-    LOG.debug("Getting model " + modelReference + " from " + source.getLocation());
-
-    SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
-    if (modelDescriptor == null) {
-      modelDescriptor = new DefaultSModelDescriptor(source, modelReference, header);
-    }
-    return modelDescriptor;
+    LOG.debug("Getting model " + modelReference + " from " + dataSource.getLocation());
+    return new DefaultSModelDescriptor(dataSource, modelReference, header);
   }
 
   @Override
   public SModel create(String modelName, StreamDataSource dataSource) {
-    if (!(dataSource instanceof FileDataSource)) return null;
     SModelReference ref = new SModelReference(SModelFqName.fromString(modelName), jetbrains.mps.smodel.SModelId.generate());
-    return new DefaultSModelDescriptor((FileDataSource) dataSource, ref, new SModelHeader());
+    return new DefaultSModelDescriptor(dataSource, ref, new SModelHeader());
   }
 
   @Override
   public boolean canCreate(String modelName, StreamDataSource dataSource) {
-    return dataSource instanceof FileDataSource;
+    return true;
   }
 
   @Override
@@ -115,26 +103,23 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
 
   @Override
   public void upgrade(StreamDataSource dataSource) throws IOException {
-    if (!(dataSource instanceof FileDataSource)) {
-      // TODO support streams
-      throw new IOException("cannot upgrade `" + dataSource.getLocation() + "', file is expected");
-    }
-
-    FileDataSource source = (FileDataSource) dataSource;
-    IFile file = source.getFile();
-
     try {
-      DefaultSModel model = ModelPersistence.readModel(file, false);
-      ModelPersistence.saveModel(model, file, ModelPersistence.LAST_VERSION);
+      DefaultSModel model = ModelPersistence.readModel(dataSource, false);
+      ModelPersistence.saveModel(model, dataSource, ModelPersistence.LAST_VERSION);
     } catch (ModelReadException ex) {
       throw new IOException(ex.getMessage(), ex);
     }
   }
 
-  public static Map<String, String> getDigestMap(@NotNull IFile mpsFile) {
+  @Override
+  public boolean isBinary() {
+    return false;
+  }
+
+  public static Map<String, String> getDigestMap(@NotNull StreamDataSource source) {
     InputStream is = null;
     try {
-      is = mpsFile.openInputStream();
+      is = source.openInputStream();
       return getDigestMap(new InputStreamReader(is, FileUtil.DEFAULT_CHARSET));
     } catch (IOException e) {
       /* ignore */

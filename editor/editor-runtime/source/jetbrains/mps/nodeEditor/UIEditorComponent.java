@@ -43,10 +43,12 @@ public class UIEditorComponent extends EditorComponent {
     });
   }
 
+  @Override
   public void editNode(SNode semanticNode) {
     super.editNode(semanticNode);
   }
 
+  @Override
   public EditorCell createRootCell(List<SModelEvent> events) {
     if (getEditedNode() == null || getEditorContext() == null) {
       return new EditorCell_Constant(new EditorContext(this, null, null), null, "<NO NODE>");

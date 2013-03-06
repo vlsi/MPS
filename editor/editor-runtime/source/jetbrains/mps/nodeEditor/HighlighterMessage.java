@@ -53,10 +53,12 @@ public class HighlighterMessage extends EditorMessageWithTarget {
     return super.sameAs(message);
   }
 
+  @Override
   public EditorCell getCellForParentNodeInMainEditor(EditorComponent editor) {
     return super.getCellForParentNodeInMainEditor(editor);
   }
 
+  @Override
   public boolean isBackground() {
     return isWarning();
   }
@@ -70,6 +72,7 @@ public class HighlighterMessage extends EditorMessageWithTarget {
     return getStatus() == MessageStatus.WARNING;
   }
 
+  @Override
   public void paint(Graphics g, EditorComponent editorComponent, EditorCell cell) {
     paintDecorations(g, cell);
   }

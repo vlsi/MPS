@@ -145,6 +145,18 @@ public class QueriesGenerated {
     return PasteWrappersManager.PASTE_WRAPPER_CLASS_NAME;
   }
 
+  public static Object propertyMacro_GetPropertyValue_2028694650682793417(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_EditorCell"), "conceptAlias");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_2028694650682870685(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_EditorCell"), "conceptAlias");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_2028694650682882766(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_EditorCell"), "conceptAlias");
+  }
+
   public static Object propertyMacro_GetPropertyValue_1235659476375(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "description");
   }

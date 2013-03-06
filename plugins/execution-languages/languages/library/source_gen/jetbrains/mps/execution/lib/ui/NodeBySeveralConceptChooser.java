@@ -71,7 +71,7 @@ public class NodeBySeveralConceptChooser extends AbstractMainNodeChooser {
         String targetConcept = it._0();
         final _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> function = it._1();
         SConcept concept = SConceptRepository.getInstance().getConcept(targetConcept);
-        Set<SNode> instances = ((Set) manager.findUsages(Collections.singleton(concept), SearchType.INSTANCES, myScope, monitor));
+        Set<SNode> instances = manager.findUsages(Collections.singleton(concept), SearchType.INSTANCES, myScope, monitor);
         if (function == null) {
           return instances;
         } else {

@@ -440,18 +440,21 @@ public class EditorManager {
 
     // delete the hint when pressed ctrl-delete, delete or backspace
     sideTransformHintCell.setAction(jetbrains.mps.openapi.editor.cells.CellActionType.DELETE, new AbstractCellAction() {
+      @Override
       public void execute(final jetbrains.mps.openapi.editor.EditorContext context) {
         removeSTHintAndChangeSelection(context, node, nodeCellInfo);
       }
     });
     // delete the hint when double press 'space'
     sideTransformHintCell.setAction(jetbrains.mps.openapi.editor.cells.CellActionType.RIGHT_TRANSFORM, new AbstractCellAction() {
+      @Override
       public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
         removeSTHintAndChangeSelection(context, node, nodeCellInfo);
       }
     });
 
     sideTransformHintCell.setAction(jetbrains.mps.openapi.editor.cells.CellActionType.LEFT_TRANSFORM, new AbstractCellAction() {
+      @Override
       public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
         removeSTHintAndChangeSelection(context, node, nodeCellInfo);
       }
@@ -460,6 +463,7 @@ public class EditorManager {
     // delete the hint when double press 'esc'
     KeyMap keyMap = new KeyMapImpl();
     keyMap.putAction(KeyMap.KEY_MODIFIERS_NONE, "VK_ESCAPE", new KeyMapActionImpl() {
+      @Override
       public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
         removeSTHintAndChangeSelection(context, node, nodeCellInfo);
       }
@@ -469,13 +473,16 @@ public class EditorManager {
     // create the hint's auto-completion menu
     final String transformTag = (String) node.getUserObject(SIDE_TRANSFORM_HINT_ANCHOR_TAG);
     sideTransformHintCell.setSubstituteInfo(new AbstractNodeSubstituteInfo(context) {
+      @Override
       protected List<SubstituteAction> createActions() {
         List<SubstituteAction> list = ModelActions.createSideTransformHintSubstituteActions(node, side, transformTag, context.getOperationContext());
         List<SubstituteAction> wrapperList = new ArrayList<SubstituteAction>(list.size());
         for (final SubstituteAction action : list) {
           wrapperList.add(new NodeSubstituteActionWrapper(action) {
+            @Override
             public SNode substitute(@Nullable jetbrains.mps.openapi.editor.EditorContext context, String pattern) {
               ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+                @Override
                 public void run() {
                   SNodeEditorUtil.removeRightTransformHint(node);
                   SNodeEditorUtil.removeLeftTransformHint(node);
@@ -562,10 +569,12 @@ public class EditorManager {
       mySide = side;
     }
 
+    @Override
     public CellInfo getCellInfo() {
       return new STHintCellInfo(EditorCell_STHint.this, myAnchorCell);
     }
 
+    @Override
     public void changeText(String text) {
       super.changeText(text);
       if ("".equals(getText())) {
@@ -574,6 +583,7 @@ public class EditorManager {
       }
     }
 
+    @Override
     public void setCaretPosition(int position, boolean selection) {
       if (position != getText().length() && mySide == CellSide.LEFT) {
         validate(true, false);
@@ -593,6 +603,7 @@ public class EditorManager {
       myAnchorCell = anchorCell;
     }
 
+    @Override
     public void synchronizeViewWithModel() {
 
     }
@@ -636,12 +647,14 @@ public class EditorManager {
       myAnchorCellInfo = ((jetbrains.mps.nodeEditor.cells.EditorCell) anchorCell).getCellInfo();
     }
 
+    @Override
     public jetbrains.mps.nodeEditor.cells.EditorCell findCell(EditorComponent editorComponent) {
       EditorCell anchorCell = myAnchorCellInfo.findCell(editorComponent);
       if (anchorCell == null) return super.findCell(editorComponent);
       return ((jetbrains.mps.nodeEditor.cells.EditorCell) anchorCell).getSTHintCell();
     }
 
+    @Override
     public jetbrains.mps.nodeEditor.cells.EditorCell findClosestCell(EditorComponent editorComponent) {
       EditorCell anchorCell = myAnchorCellInfo.findCell(editorComponent);
       if (anchorCell == null) return super.findCell(editorComponent);

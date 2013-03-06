@@ -39,11 +39,13 @@ public class CellAction_DeleteNode extends EditorCellAction {
     return mySemanticNode;
   }
 
+  @Override
   public boolean canExecute(EditorContext context) {
     EditorCell cell = (EditorCell) context.getEditorComponent().findNodeCell(mySemanticNode);
     return cell != null && cell.getParent() != null;
   }
 
+  @Override
   public void execute(EditorContext context) {
     List<SNode> nodes = new ArrayList<SNode>();
     nodes.add(CellUtil.getNodeToDelete(mySemanticNode));

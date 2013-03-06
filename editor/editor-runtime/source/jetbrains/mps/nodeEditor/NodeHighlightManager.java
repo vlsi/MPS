@@ -36,6 +36,7 @@ import java.util.Map.Entry;
 
 public class NodeHighlightManager implements EditorMessageOwner {
   private static final Comparator<SimpleEditorMessage> EDITOR_MESSAGES_COMPARATOR = new Comparator<SimpleEditorMessage>() {
+    @Override
     public int compare(SimpleEditorMessage m1, SimpleEditorMessage m2) {
       return m1.getPriority() - m2.getPriority();
     }
@@ -56,6 +57,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
   private Map<EditorCell, List<SimpleEditorMessage>> myMessagesCache = Collections.emptyMap();
   private volatile boolean myRebuildMessagesCache = false;
   public ReloadAdapter myHandler = new ReloadAdapter() {
+    @Override
     public void unload() {
       clear();
     }
@@ -68,6 +70,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
     myEditor = editor;
 
     editor.addRebuildListener(myRebuildListener = new RebuildListener() {
+      @Override
       public void editorRebuilt(EditorComponent editor) {
         boolean needRebuild = getMessagesCache().isEmpty();
         if (!needRebuild) {
@@ -290,6 +293,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
    */
   public void repaintAndRebuildEditorMessages() {
     ModelAccess.instance().runReadInEDT(new Runnable() {
+      @Override
       public void run() {
         refreshMessagesCache();
         myEditor.getExternalComponent().repaint();

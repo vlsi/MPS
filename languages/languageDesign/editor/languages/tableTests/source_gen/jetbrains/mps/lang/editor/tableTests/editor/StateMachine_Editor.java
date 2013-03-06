@@ -227,7 +227,7 @@ public class StateMachine_Editor extends DefaultNodeEditor {
         };
       }
     };
-    EditorCell_Collection editorCell = EditorCell_Table.createTable(editorContext, node, creator.createTableModel(node, editorContext), "Table_qpt50r_c0");
+    jetbrains.mps.openapi.editor.cells.EditorCell_Collection editorCell = EditorCell_Table.createTable(editorContext, node, creator.createTableModel(node, editorContext), "Table_qpt50r_c0");
     editorCell.setCellId("Table_qpt50r_c0_0");
     return editorCell;
   }

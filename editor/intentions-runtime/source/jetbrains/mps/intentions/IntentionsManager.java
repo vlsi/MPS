@@ -82,6 +82,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   }
 
   private ReloadAdapter myReloadHandler = new ReloadAdapter() {
+    @Override
     public void unload() {
       clear();
     }
@@ -363,6 +364,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
   private void load() {
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         List<Language> allLanguages = (List<Language>) ModuleRepositoryFacade.getInstance().getAllModules(Language.class);
         for (Language language : allLanguages) {
@@ -404,6 +406,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
   private void clear() {
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         myIntentionFactories.clear();
         myConcept2IntentionFactories.clear();
@@ -529,24 +532,29 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
   //-------------component methods-----------------
 
+  @Override
   public void initComponent() {
     myClassLoaderManager.addReloadHandler(myReloadHandler);
   }
 
+  @Override
   @NonNls
   @NotNull
   public String getComponentName() {
     return "MPS Intention Manager";
   }
 
+  @Override
   public void disposeComponent() {
     myClassLoaderManager.removeReloadHandler(myReloadHandler);
   }
 
+  @Override
   public MyState getState() {
     return myState;
   }
 
+  @Override
   public void loadState(MyState state) {
     myState = state;
   }

@@ -55,18 +55,22 @@ public abstract class AbstractCellMenuPart_Generic_Group implements SubstituteIn
     for (final Object parameterObject : parameterObjects) {
       actions.add(new AbstractNodeSubstituteAction(null, parameterObject, node) {
 
+        @Override
         protected String getMatchingText(String pattern, boolean referent_presentation, boolean visible) {
           return AbstractCellMenuPart_Generic_Group.this.getMatchingText(parameterObject);
         }
 
+        @Override
         public String getDescriptionText(String pattern) {
           return AbstractCellMenuPart_Generic_Group.this.getDescriptionText(parameterObject);
         }
 
+        @Override
         public Icon getIconFor(String pattern) {
           return getIconFor(pattern, isReferentPresentation());
         }
 
+        @Override
         public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
           handleAction(parameterObject, node, node.getModel(), context.getScope(), context, editorContext);
           return null;
@@ -77,6 +81,7 @@ public abstract class AbstractCellMenuPart_Generic_Group implements SubstituteIn
     return actions;
   }
 
+  @Override
   public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
     return (List) createActions(cellContext, (EditorContext) editorContext);
   }

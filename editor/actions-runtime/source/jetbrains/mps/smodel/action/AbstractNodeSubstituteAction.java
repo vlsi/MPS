@@ -60,42 +60,52 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
     throw new UnsupportedOperationException();
   }
 
+  @Override
   public SNode getSourceNode() {
     return mySourceNode;
   }
 
+  @Override
   public SNode getOutputConcept() {
     return myOutputConcept;
   }
 
+  @Override
   public final Object getParameterObject() {
     return myParameterObject;
   }
 
+  @Override
   public String getMatchingText(String pattern) {
     return getMatchingText(pattern, false, false);
   }
 
+  @Override
   public String getVisibleMatchingText(String pattern) {
     return getMatchingText(pattern, false, true);
   }
 
+  @Override
   public String getDescriptionText(String pattern) {
     return getDescriptionText(pattern, false);
   }
 
+  @Override
   public Icon getIconFor(String pattern) {
     return getIconFor(pattern, false);
   }
 
+  @Override
   public int getFontStyleFor(String pattern) {
     return Font.PLAIN;
   }
 
+  @Override
   public SNode getActionType(String pattern) {
     return null;
   }
 
+  @Override
   public SNode getActionType(String pattern, EditorCell contextCell) {
     return getActionType(pattern);
   }
@@ -121,6 +131,7 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
     return IdeIcons.DEFAULT_ICON;
   }
 
+  @Override
   public boolean canSubstituteStrictly(String pattern) {
     if (pattern == null || getMatchingText(pattern) == null) return false;
     return getMatchingText(pattern).equals(pattern);
@@ -129,6 +140,7 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
   /**
    * @param pattern . NULL if pattern is not available yet
    */
+  @Override
   public boolean canSubstitute(String pattern) {
     if (pattern == null || pattern.length() == 0) {
       return true;
@@ -150,10 +162,12 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
     return matchingText.startsWith(pattern);
   }
 
+  @Override
   public final SNode substitute(@Nullable final EditorContext context, final String pattern) {
     final SNode[] newNode = new SNode[1];
 
     Runnable runnable = new Runnable() {
+      @Override
       public void run() {
         if (context != null) {
           // completion can be invoked by typing invalid stuff into exising cells, revert it back to the model state
@@ -179,6 +193,7 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
     return newNode[0];
   }
 
+  @Override
   public int getSortPriority(String pattern) {
     return 0;
   }

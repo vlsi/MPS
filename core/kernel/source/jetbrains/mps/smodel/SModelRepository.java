@@ -311,11 +311,6 @@ public class SModelRepository implements CoreComponent {
     }
   }
 
-
-  public void replaceModel(DefaultSModelDescriptor descriptor, DefaultSModel newModel, final ModelLoadingState state) {
-    descriptor.replaceModel(newModel, state);
-  }
-
   //---------------------------events----------------------------
 
   public void addModelRepositoryListener(@NotNull SModelRepositoryListener l) {

@@ -1379,7 +1379,7 @@
   </root>
   <root nodeRef="r:1267752b-a233-4432-a848-3e68e0ea0db1(jetbrains.mps.build.workflow.editor)/2769948622284567284">
     <nodeInfo nodeId="2769948622284567284" fileName="BwfProjectPart_Editor.java" startLine="18" startPosition="79" endLine="19" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7389400916848073751" fileName="BwfProjectPart_Editor.java" startLine="27" startPosition="100" endLine="28" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7389400916848073751" fileName="BwfProjectPart_Editor.java" startLine="27" startPosition="69" endLine="28" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7389400916848073759" fileName="BwfProjectPart_Editor.java" startLine="28" startPosition="92" endLine="29" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7389400916848073769" fileName="BwfProjectPart_Editor.java" startLine="29" startPosition="82" endLine="30" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7389400916848073779" fileName="BwfProjectPart_Editor.java" startLine="30" startPosition="83" endLine="31" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1390,7 +1390,7 @@
     <nodeInfo nodeId="7389400916848073740" fileName="BwfProjectPart_Editor.java" startLine="39" startPosition="60" endLine="40" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7389400916848073740" fileName="BwfProjectPart_Editor.java" startLine="40" startPosition="40" endLine="41" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2769948622284567284" fileName="BwfProjectPart_Editor.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="7389400916848073747" fileName="BwfProjectPart_Editor.java" startLine="26" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="7389400916848073747" fileName="BwfProjectPart_Editor.java" startLine="26" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="7389400916848073743" fileName="BwfProjectPart_Editor.java" startLine="24" startPosition="44" endLine="33" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7389400916848073740" fileName="BwfProjectPart_Editor.java" startLine="24" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljetbrains/mps/nodeEditor/AbstractCellProvider;" />
     <nodeInfo nodeId="7389400916848073740" fileName="BwfProjectPart_Editor.java" startLine="22" startPosition="97" endLine="35" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1400,7 +1400,7 @@
       <varInfo nodeId="2769948622284567284" varName="editorContext" />
       <varInfo nodeId="2769948622284567284" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="7389400916848073750" fileName="BwfProjectPart_Editor.java" startLine="27" startPosition="100" endLine="31" endPosition="26">
+    <scopeInfo nodeId="7389400916848073750" fileName="BwfProjectPart_Editor.java" startLine="27" startPosition="69" endLine="31" endPosition="26">
       <varInfo nodeId="7389400916848073752" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="7389400916848073747" fileName="BwfProjectPart_Editor.java" startLine="26" startPosition="0" endLine="33" endPosition="0">

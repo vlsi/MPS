@@ -83,6 +83,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
     return false;
   }
 
+  @Override
   public int getAscent(EditorCell_Collection editorCells) {
     for (EditorCell cell : editorCells) {
       if (cell.getStyle().get(StyleAttributes.BASE_LINE_CELL)) {
@@ -115,6 +116,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
     return 0;
   }
 
+  @Override
   public void doLayout(EditorCell_Collection editorCells) {
     if (editorCells.getParent() != null && editorCells.getParent().getCellLayout() instanceof CellLayout_Indent) {
       return;
@@ -135,6 +137,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
     return settings.getSpacesWidth(settings.getIndentSize());
   }
 
+  @Override
   public TextBuilder doLayoutText(Iterable<EditorCell> editorCells) {
     Set<EditorCell> editorCellsSet = new HashSet<EditorCell>();
     for (EditorCell editorCell : editorCells) {

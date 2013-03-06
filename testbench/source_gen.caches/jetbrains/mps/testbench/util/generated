@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="ew6cd50h6s8gdluaimzy4ups6o3c9ii">
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
+  <common hash="-3vu68ycnr4uvsw47pi8o479x71ygnl9" />
+  <source id="5294483648489409095" name="ThreadWatcher" hash="dkiilpv7zpoe8vblu4r6o9xmvcrpci7">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ThreadWatcher.java" />
+  </source>
+  <source id="5294483648489409912" name="Output" hash="-5uaez69lkerbh5751ezkxvanofz8hpm">
+    <file name="Output.java" />
+  </source>
+  <source id="5294483648489409936" name="FilesCollector" hash="-et8a7bl0xijmciqzmongo9pw6393uq3">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="FilesCollector.java" />
+  </source>
+  <source id="5294483648489410428" name="CachingAppender" hash="-di2cjzvq75tl6txkfmmlkt3ry2gjp9i">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="CachingAppender.java" />
+  </source>
+  <source id="5294483648489410732" name="CachingPrintStream" hash="-e2m3xadpfurdcluhghjm5liqlvtpn3z">
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="CachingPrintStream.java" />
+  </source>
+</dependencies>
+

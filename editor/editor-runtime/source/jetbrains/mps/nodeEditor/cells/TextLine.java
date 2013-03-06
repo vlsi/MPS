@@ -225,6 +225,7 @@ public class TextLine {
     myInitialized = true;
     updateStyle(null);
     myStyle.addListener(new StyleListener() {
+      @Override
       public void styleChanged(StyleChangeEvent e) {
         Set<StyleAttribute> changedAttributes = e.getChangedAttributes();
         updateStyle(changedAttributes);

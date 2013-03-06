@@ -23,6 +23,7 @@ import com.intellij.openapi.compiler.*;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.idea.core.MPSBundle;
@@ -30,22 +31,19 @@ import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.library.contributor.LibraryContributor.LibDescriptor;
 import jetbrains.mps.library.contributor.PluginLibrariesContributor;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.util.*;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class MPSCompiler2 implements SourceGeneratingCompiler {
 
@@ -191,7 +189,10 @@ public class MPSCompiler2 implements SourceGeneratingCompiler {
       MPSFacet facet = chunk.getKey();
       final Set<File> modelsToMake = new HashSet<File>();
       for (final SModel model : chunk.getValue()) {
-        modelsToMake.add(new File(((DefaultSModelDescriptor) model).getSource().getFile().getPath()));
+        DataSource source = model.getSource();
+        if (source instanceof FileDataSource) {
+          modelsToMake.add(new File(((FileDataSource) source).getFile().getPath()));
+        }
       }
 
       // TODO: report actually generated models only
@@ -245,15 +246,15 @@ public class MPSCompiler2 implements SourceGeneratingCompiler {
               public void run() {
                 String path = null;
                 SModel model = navigatable.lookupModel();
-                if (model != null && model.getModelDescriptor() instanceof DefaultSModelDescriptor) {
-                  path = "file://"+((DefaultSModelDescriptor) model.getModelDescriptor()).getSource().getFile().getPath();
+                if (model != null && model.getModelDescriptor() instanceof BaseEditableSModelDescriptor
+                    && model.getSource() instanceof FileDataSource) {
+                  path = "file://" + ((FileDataSource) model.getModelDescriptor().getSource()).getFile().getPath();
                 }
 
                 context.addMessage(category, text, path, -1, -1, navigatable);
               }
             });
-          }
-          else {
+          } else {
             context.addMessage(category, text, null, -1, -1);
           }
         }
@@ -333,13 +334,13 @@ public class MPSCompiler2 implements SourceGeneratingCompiler {
       return false;  //To change body of implemented methods use File | Settings | File Templates.
     }
   }
-  
+
   public static final class GeneratedValidityState implements ValidityState {
 
     private long generatedTimeStamp;
     private long modelTimeStamp;
 
-    public GeneratedValidityState (long generatedTimeStamp, long modelTimeStamp) {
+    public GeneratedValidityState(long generatedTimeStamp, long modelTimeStamp) {
       this.generatedTimeStamp = generatedTimeStamp;
       this.modelTimeStamp = modelTimeStamp;
     }
@@ -347,9 +348,9 @@ public class MPSCompiler2 implements SourceGeneratingCompiler {
     @Override
     public boolean equalsTo(ValidityState otherState) {
       if (!(otherState instanceof GeneratedValidityState)) return false;
-      return generatedTimeStamp == ((GeneratedValidityState)otherState).generatedTimeStamp &&
-             generatedTimeStamp != 0L &&
-             modelTimeStamp == ((GeneratedValidityState)otherState).modelTimeStamp;
+      return generatedTimeStamp == ((GeneratedValidityState) otherState).generatedTimeStamp &&
+          generatedTimeStamp != 0L &&
+          modelTimeStamp == ((GeneratedValidityState) otherState).modelTimeStamp;
     }
 
     @Override

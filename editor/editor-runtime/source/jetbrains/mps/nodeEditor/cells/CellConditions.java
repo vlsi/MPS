@@ -19,12 +19,14 @@ import jetbrains.mps.util.Condition;
 
 public class CellConditions {
   public static final Condition<jetbrains.mps.openapi.editor.cells.EditorCell> SELECTABLE = new Condition<jetbrains.mps.openapi.editor.cells.EditorCell>() {
+    @Override
     public boolean met(jetbrains.mps.openapi.editor.cells.EditorCell object) {
       return object.isSelectable();
     }
   };
 
   public static final Condition<jetbrains.mps.openapi.editor.cells.EditorCell> EDITABLE = new Condition<jetbrains.mps.openapi.editor.cells.EditorCell>() {
+    @Override
     public boolean met(jetbrains.mps.openapi.editor.cells.EditorCell object) {
       return  object.isSelectable() && object instanceof EditorCell_Label && ((EditorCell_Label) object).isEditable();
     }

@@ -54,6 +54,7 @@ public class InspectorEditorComponent extends EditorComponent {
     }
   }
 
+  @Override
   public void editNode(SNode semanticNode, IOperationContext operationContext) {
     //never used
     inspectNode(semanticNode, operationContext);
@@ -64,6 +65,7 @@ public class InspectorEditorComponent extends EditorComponent {
       notifyDisposal();
     }
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         clearModelDisposedTrace();
         myNode = node;
@@ -82,11 +84,13 @@ public class InspectorEditorComponent extends EditorComponent {
     });
   }
 
+  @Override
   @NotNull
   public JComponent getExternalComponent() {
     return super.getExternalComponent();
   }
 
+  @Override
   public EditorCell createRootCell(List<SModelEvent> events) {
     if (getEditedNode() == null || getEditedNode().getModel() == null) {
       return new EditorCell_Constant(getEditorContext(), null, "<no inspect info>");

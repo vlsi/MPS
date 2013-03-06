@@ -24,6 +24,7 @@ import jetbrains.mps.util.Condition;
 
 public class CellAction_FoldCell extends AbstractCellAction {
 
+  @Override
   public boolean canExecute(EditorContext context) {
     EditorCell editorCell = ((EditorComponent) context.getEditorComponent()).getSelectedCell();
     if (editorCell == null) return false;
@@ -35,6 +36,7 @@ public class CellAction_FoldCell extends AbstractCellAction {
     return false;
   }
 
+  @Override
   public void execute(EditorContext context) {
     EditorComponent component = (EditorComponent) context.getEditorComponent();
     EditorCell editorCell = component.getSelectedCell();
@@ -44,6 +46,7 @@ public class CellAction_FoldCell extends AbstractCellAction {
 
   private static EditorCell_Collection findCell(EditorCell editorCell) {
     return editorCell.findParent(new Condition<EditorCell_Collection>() {
+      @Override
       public boolean met(EditorCell_Collection object) {
         return object.canBePossiblyFolded() && !object.isFolded();
       }

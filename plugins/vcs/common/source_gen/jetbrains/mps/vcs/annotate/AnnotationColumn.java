@@ -59,7 +59,7 @@ import java.awt.Graphics2D;
 import java.awt.FontMetrics;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.messageTargets.CellFinder;
 import java.util.Collections;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -353,7 +353,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
   }
 
   private Iterable<Integer> getPseudoLinesForContent(@Nullable LineContent content) {
-    jetbrains.mps.openapi.editor.cells.EditorCell cell = findCellForContent(content);
+    EditorCell cell = findCellForContent(content);
     if (cell == null) {
       return Sequence.fromIterable(Collections.<Integer>emptyList());
     }
@@ -421,13 +421,13 @@ __switch__:
     if (editor == null || editor.isDisposed() || editor.getGraphics() == null) {
       return;
     }
-    Iterable<jetbrains.mps.openapi.editor.cells.EditorCell> nonTrivialCells = Sequence.fromIterable(EditorUtils.getCellDescendants(editor.getRootCell())).where(new IWhereFilter<jetbrains.mps.openapi.editor.cells.EditorCell>() {
-      public boolean accept(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+    Iterable<EditorCell> nonTrivialCells = Sequence.fromIterable(EditorUtils.getCellDescendants(editor.getRootCell())).where(new IWhereFilter<EditorCell>() {
+      public boolean accept(EditorCell cell) {
         return cell.getWidth() * cell.getHeight() != 0;
       }
     });
-    Set<Integer> yCoordinatesSet = SetSequence.fromSetWithValues(new HashSet<Integer>(), Sequence.fromIterable(nonTrivialCells).select(new ISelector<jetbrains.mps.openapi.editor.cells.EditorCell, Integer>() {
-      public Integer select(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+    Set<Integer> yCoordinatesSet = SetSequence.fromSetWithValues(new HashSet<Integer>(), Sequence.fromIterable(nonTrivialCells).select(new ISelector<EditorCell, Integer>() {
+      public Integer select(EditorCell cell) {
         return cell.getY();
       }
     }));

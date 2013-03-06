@@ -59,4 +59,9 @@ public interface ModelFactory {
    *  Loads the model content, and saves it back in the up-to-date format.
    */
   void upgrade(StreamDataSource dataSource) throws IOException;
+
+  /**
+   *  returns true if plain text is not enough to represent stored data.
+   */
+  boolean isBinary();
 }

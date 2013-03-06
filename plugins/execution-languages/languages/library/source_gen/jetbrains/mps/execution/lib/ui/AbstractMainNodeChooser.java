@@ -25,7 +25,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.ide.DataManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.BaseSModelDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -86,10 +86,10 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
             Iterable<SModel> models = getModels(text.substring(0, lastDot));
             SNode foundNode = null;
             for (SModel model : Sequence.fromIterable(models)) {
-              if (!(model instanceof DefaultSModelDescriptor)) {
+              if (!(model instanceof BaseSModelDescriptor)) {
                 LOG.error("Unknown kind of model " + model);
               }
-              Iterable<SNode> nodes = findNodes(((DefaultSModelDescriptor) model).getSModel(), text);
+              Iterable<SNode> nodes = findNodes(((BaseSModelDescriptor) model).getSModel(), text);
               if (!(Sequence.fromIterable(nodes).isEmpty())) {
                 foundNode = Sequence.fromIterable(nodes).first();
                 break;

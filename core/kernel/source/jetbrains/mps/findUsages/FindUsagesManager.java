@@ -18,6 +18,8 @@ package jetbrains.mps.findUsages;
 import gnu.trove.THashSet;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.StaticReference;
@@ -86,6 +88,18 @@ public class FindUsagesManager {
     for (SNode child : current.getChildren()) {
       collectUsages(child, nodes, srefs, consumer);
     }
+  }
+
+  public static boolean hasModelUsages(SModel m, Collection<org.jetbrains.mps.openapi.model.SModelReference> models) {
+    SModel model = m.getSModel();
+    if (model == null) return false;
+
+    for (SModel modelDescriptor : SModelOperations.allImportedModels(model, GlobalScope.getInstance())) {
+      if (models.contains(modelDescriptor.getReference())) {
+        return true;
+      }
+    }
+    return false;
   }
 
   private static class StaticReferenceInfo {

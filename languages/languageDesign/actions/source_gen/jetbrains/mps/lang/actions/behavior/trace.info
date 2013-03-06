@@ -29,14 +29,14 @@
   <unitInfo fileName="CopyPasteHandlers_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.CopyPasteHandlers_BehaviorDescriptor" />
   <unitInfo fileName="CopyPreProcessFunction_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.CopyPreProcessFunction_BehaviorDescriptor" />
   <unitInfo fileName="CopyPreProcessor_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.CopyPreProcessor_BehaviorDescriptor" />
-  <unitInfo fileName="ExecuteSmartActionFunction_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.ExecuteSmartActionFunction_BehaviorDescriptor" />
+  <unitInfo fileName="ExecuteSmartActionFunction_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.ExecuteSmartActionFunction_BehaviorDescriptor" />
   <unitInfo fileName="GenerateCodeAction_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.GenerateCodeAction_BehaviorDescriptor" />
   <unitInfo fileName="GenericSubstituteMenuPart_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.GenericSubstituteMenuPart_BehaviorDescriptor" />
   <unitInfo fileName="GetActionUIFunction_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.GetActionUIFunction_BehaviorDescriptor" />
   <unitInfo fileName="ISideTransform_String_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.ISideTransform_String_BehaviorDescriptor" />
   <unitInfo fileName="ISubstitute_String_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.ISubstitute_String_BehaviorDescriptor" />
   <unitInfo fileName="IncludeRightTransformForNodePart_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.IncludeRightTransformForNodePart_BehaviorDescriptor" />
-  <unitInfo fileName="IsSmartActionApplicableFunction_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.IsSmartActionApplicableFunction_BehaviorDescriptor" />
+  <unitInfo fileName="IsSmartActionApplicableFunction_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.IsSmartActionApplicableFunction_BehaviorDescriptor" />
   <unitInfo fileName="MenuBuilderPart_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.MenuBuilderPart_BehaviorDescriptor" />
   <unitInfo fileName="MenuPart_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.MenuPart_BehaviorDescriptor" />
   <unitInfo fileName="NF_Concept_NewInstance_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.NF_Concept_NewInstance_BehaviorDescriptor" />
@@ -1533,23 +1533,41 @@
     <unitInfo nodeId="3044950653914718496" fileName="QueryFunction_ReturnSmallPart_Behavior.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_ReturnSmallPart_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/3044950653914719003">
-    <nodeInfo nodeId="3044950653914718977" fileName="ExecuteSmartActionFunction_Behavior.java" startLine="16" startPosition="117" endLine="17" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914718992" fileName="ExecuteSmartActionFunction_Behavior.java" startLine="17" startPosition="261" endLine="18" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914718997" fileName="ExecuteSmartActionFunction_Behavior.java" startLine="18" startPosition="167" endLine="19" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914719001" fileName="ExecuteSmartActionFunction_Behavior.java" startLine="19" startPosition="167" endLine="20" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914719003" fileName="ExecuteSmartActionFunction_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="3044950653914719003" fileName="ExecuteSmartActionFunction_Behavior.java" startLine="16" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
-    <scopeInfo nodeId="3044950653914719005" fileName="ExecuteSmartActionFunction_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="3044950653914719003" fileName="ExecuteSmartActionFunction_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
+    <nodeInfo nodeId="2028694650681103162" fileName="ExecuteSmartActionFunction_Behavior.java" startLine="17" startPosition="81" endLine="18" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2028694650681103174" fileName="ExecuteSmartActionFunction_Behavior.java" startLine="18" startPosition="71" endLine="19" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2028694650681103169" fileName="ExecuteSmartActionFunction_Behavior.java" startLine="19" startPosition="164" endLine="20" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2028694650681103179" fileName="ExecuteSmartActionFunction_Behavior.java" startLine="20" startPosition="170" endLine="21" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2028694650681099839" fileName="ExecuteSmartActionFunction_Behavior.java" startLine="21" startPosition="18" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2028694650681124656" fileName="ExecuteSmartActionFunction_Behavior.java" startLine="25" startPosition="83" endLine="26" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2028694650681124671" fileName="ExecuteSmartActionFunction_Behavior.java" startLine="29" startPosition="60" endLine="30" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2028694650681124671" fileName="ExecuteSmartActionFunction_Behavior.java" startLine="30" startPosition="30" endLine="31" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2028694650681124671" fileName="ExecuteSmartActionFunction_Behavior.java" startLine="30" startPosition="30" endLine="31" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2028694650681124671" fileName="ExecuteSmartActionFunction_Behavior.java" startLine="30" startPosition="30" endLine="31" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2028694650681124671" fileName="ExecuteSmartActionFunction_Behavior.java" startLine="31" startPosition="159" endLine="32" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3044950653914719003" fileName="ExecuteSmartActionFunction_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="3044950653914719003" fileName="ExecuteSmartActionFunction_Behavior.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2028694650681124671" fileName="ExecuteSmartActionFunction_Behavior.java" startLine="29" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_jkiduv_a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="3044950653914719003" fileName="ExecuteSmartActionFunction_Behavior.java" startLine="17" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getParameters_1213877374450#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+    <scopeInfo nodeId="3044950653914719005" fileName="ExecuteSmartActionFunction_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="2028694650681123995" fileName="ExecuteSmartActionFunction_Behavior.java" startLine="25" startPosition="83" endLine="26" endPosition="47" />
+    <scopeInfo nodeId="2028694650681124671" fileName="ExecuteSmartActionFunction_Behavior.java" startLine="30" startPosition="30" endLine="31" endPosition="159" />
+    <scopeInfo nodeId="3044950653914719003" fileName="ExecuteSmartActionFunction_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="3044950653914719003" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914718976" fileName="ExecuteSmartActionFunction_Behavior.java" startLine="16" startPosition="117" endLine="20" endPosition="18">
-      <varInfo nodeId="3044950653914718978" varName="result" />
+    <scopeInfo nodeId="3044950653914719003" fileName="ExecuteSmartActionFunction_Behavior.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="3044950653914719003" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914719003" fileName="ExecuteSmartActionFunction_Behavior.java" startLine="16" startPosition="0" endLine="22" endPosition="0">
-      <varInfo nodeId="3044950653914719003" varName="thisConcept" />
+    <scopeInfo nodeId="2028694650681124671" fileName="ExecuteSmartActionFunction_Behavior.java" startLine="29" startPosition="60" endLine="32" endPosition="24">
+      <varInfo nodeId="2028694650681124671" varName="quotedNode_1" />
     </scopeInfo>
-    <unitInfo nodeId="3044950653914719003" fileName="ExecuteSmartActionFunction_Behavior.java" startLine="12" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.ExecuteSmartActionFunction_Behavior" />
+    <scopeInfo nodeId="2028694650681051032" fileName="ExecuteSmartActionFunction_Behavior.java" startLine="17" startPosition="81" endLine="22" endPosition="0">
+      <varInfo nodeId="2028694650681103163" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="2028694650681124671" fileName="ExecuteSmartActionFunction_Behavior.java" startLine="29" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="3044950653914719003" fileName="ExecuteSmartActionFunction_Behavior.java" startLine="17" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="3044950653914719003" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="3044950653914719003" fileName="ExecuteSmartActionFunction_Behavior.java" startLine="13" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.ExecuteSmartActionFunction_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/3044950653914721336">
     <nodeInfo nodeId="3044950653914721285" fileName="QueryFunction_SubstituteIcon_Behavior.java" startLine="16" startPosition="117" endLine="17" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1576,23 +1594,40 @@
     <unitInfo nodeId="3044950653914721336" fileName="QueryFunction_SubstituteIcon_Behavior.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_SubstituteIcon_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/3044950653914721820">
-    <nodeInfo nodeId="3044950653914721794" fileName="IsSmartActionApplicableFunction_Behavior.java" startLine="16" startPosition="117" endLine="17" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914721809" fileName="IsSmartActionApplicableFunction_Behavior.java" startLine="17" startPosition="261" endLine="18" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914721814" fileName="IsSmartActionApplicableFunction_Behavior.java" startLine="18" startPosition="167" endLine="19" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914721818" fileName="IsSmartActionApplicableFunction_Behavior.java" startLine="19" startPosition="167" endLine="20" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914721820" fileName="IsSmartActionApplicableFunction_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="3044950653914721820" fileName="IsSmartActionApplicableFunction_Behavior.java" startLine="16" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
-    <scopeInfo nodeId="3044950653914721822" fileName="IsSmartActionApplicableFunction_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="3044950653914721820" fileName="IsSmartActionApplicableFunction_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
+    <nodeInfo nodeId="2028694650680914856" fileName="IsSmartActionApplicableFunction_Behavior.java" startLine="17" startPosition="81" endLine="18" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2028694650680958307" fileName="IsSmartActionApplicableFunction_Behavior.java" startLine="18" startPosition="71" endLine="19" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2028694650680919257" fileName="IsSmartActionApplicableFunction_Behavior.java" startLine="19" startPosition="164" endLine="20" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213877374483" fileName="IsSmartActionApplicableFunction_Behavior.java" startLine="20" startPosition="170" endLine="21" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2028694650681030366" fileName="IsSmartActionApplicableFunction_Behavior.java" startLine="24" startPosition="83" endLine="25" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2028694650681030381" fileName="IsSmartActionApplicableFunction_Behavior.java" startLine="28" startPosition="60" endLine="29" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2028694650681030381" fileName="IsSmartActionApplicableFunction_Behavior.java" startLine="29" startPosition="30" endLine="30" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2028694650681030381" fileName="IsSmartActionApplicableFunction_Behavior.java" startLine="29" startPosition="30" endLine="30" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2028694650681030381" fileName="IsSmartActionApplicableFunction_Behavior.java" startLine="29" startPosition="30" endLine="30" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2028694650681030381" fileName="IsSmartActionApplicableFunction_Behavior.java" startLine="30" startPosition="162" endLine="31" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3044950653914721820" fileName="IsSmartActionApplicableFunction_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="3044950653914721820" fileName="IsSmartActionApplicableFunction_Behavior.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2028694650681030381" fileName="IsSmartActionApplicableFunction_Behavior.java" startLine="28" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_c0abki_a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="3044950653914721820" fileName="IsSmartActionApplicableFunction_Behavior.java" startLine="17" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getParameters_1213877374450#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+    <scopeInfo nodeId="3044950653914721822" fileName="IsSmartActionApplicableFunction_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="2028694650681009826" fileName="IsSmartActionApplicableFunction_Behavior.java" startLine="24" startPosition="83" endLine="25" endPosition="47" />
+    <scopeInfo nodeId="2028694650681030381" fileName="IsSmartActionApplicableFunction_Behavior.java" startLine="29" startPosition="30" endLine="30" endPosition="162" />
+    <scopeInfo nodeId="3044950653914721820" fileName="IsSmartActionApplicableFunction_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="3044950653914721820" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914721793" fileName="IsSmartActionApplicableFunction_Behavior.java" startLine="16" startPosition="117" endLine="20" endPosition="18">
-      <varInfo nodeId="3044950653914721795" varName="result" />
+    <scopeInfo nodeId="3044950653914721820" fileName="IsSmartActionApplicableFunction_Behavior.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="3044950653914721820" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914721820" fileName="IsSmartActionApplicableFunction_Behavior.java" startLine="16" startPosition="0" endLine="22" endPosition="0">
-      <varInfo nodeId="3044950653914721820" varName="thisConcept" />
+    <scopeInfo nodeId="2028694650681030381" fileName="IsSmartActionApplicableFunction_Behavior.java" startLine="28" startPosition="60" endLine="31" endPosition="24">
+      <varInfo nodeId="2028694650681030381" varName="quotedNode_1" />
     </scopeInfo>
-    <unitInfo nodeId="3044950653914721820" fileName="IsSmartActionApplicableFunction_Behavior.java" startLine="12" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.IsSmartActionApplicableFunction_Behavior" />
+    <scopeInfo nodeId="2028694650680404844" fileName="IsSmartActionApplicableFunction_Behavior.java" startLine="17" startPosition="81" endLine="21" endPosition="18">
+      <varInfo nodeId="2028694650680914859" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="2028694650681030381" fileName="IsSmartActionApplicableFunction_Behavior.java" startLine="28" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="3044950653914721820" fileName="IsSmartActionApplicableFunction_Behavior.java" startLine="17" startPosition="0" endLine="23" endPosition="0">
+      <varInfo nodeId="3044950653914721820" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="3044950653914721820" fileName="IsSmartActionApplicableFunction_Behavior.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.IsSmartActionApplicableFunction_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/3044950653914724437">
     <nodeInfo nodeId="3044950653914724411" fileName="CopyPreProcessFunction_Behavior.java" startLine="16" startPosition="117" endLine="17" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

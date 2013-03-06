@@ -35,46 +35,57 @@ public class NodeSubstituteActionWrapper implements INodeSubstituteAction {
     mySubstituteAction = substituteAction;
   }
 
+  @Override
   public SNode getSourceNode() {
     return mySubstituteAction.getSourceNode();
   }
 
+  @Override
   public SNode getOutputConcept() {
     return mySubstituteAction.getOutputConcept();
   }
 
+  @Override
   public SNode getActionType(String pattern) {
     return mySubstituteAction.getActionType(pattern);
   }
 
+  @Override
   public Icon getIconFor(String pattern) {
     return mySubstituteAction instanceof INodeSubstituteAction ? ((INodeSubstituteAction) mySubstituteAction).getIconFor(pattern) : null;
   }
 
+  @Override
   public int getFontStyleFor(String pattern) {
     return mySubstituteAction instanceof INodeSubstituteAction ? ((INodeSubstituteAction) mySubstituteAction).getFontStyleFor(pattern) : Font.PLAIN;
   }
 
+  @Override
   public String getMatchingText(String pattern) {
     return mySubstituteAction.getMatchingText(pattern);
   }
 
+  @Override
   public String getVisibleMatchingText(String pattern) {
     return mySubstituteAction.getVisibleMatchingText(pattern);
   }
 
+  @Override
   public String getDescriptionText(String pattern) {
     return mySubstituteAction.getDescriptionText(pattern);
   }
 
+  @Override
   public boolean canSubstituteStrictly(String pattern) {
     return mySubstituteAction.canSubstituteStrictly(pattern);
   }
 
+  @Override
   public boolean canSubstitute(String pattern) {
     return mySubstituteAction.canSubstitute(pattern);
   }
 
+  @Override
   public SNode substitute(@Nullable EditorContext context, String pattern) {
     return substitute((jetbrains.mps.nodeEditor.EditorContext) context, pattern);
   }
@@ -90,14 +101,17 @@ public class NodeSubstituteActionWrapper implements INodeSubstituteAction {
     return mySubstituteAction.substitute(context, pattern);
   }
 
+  @Override
   public int getSortPriority(String pattern) {
     return mySubstituteAction.getSortPriority(pattern);
   }
 
+  @Override
   public SNode getActionType(String pattern, EditorCell contextCell) {
     return mySubstituteAction.getActionType(pattern, contextCell);
   }
 
+  @Override
   public Object getParameterObject() {
     return mySubstituteAction.getParameterObject();
   }

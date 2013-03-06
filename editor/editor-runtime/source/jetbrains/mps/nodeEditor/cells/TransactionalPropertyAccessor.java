@@ -33,6 +33,7 @@ public class TransactionalPropertyAccessor extends PropertyAccessor implements T
     super(node, propertyName, readOnly, allowEmptyText, context);
   }
 
+  @Override
   protected String doGetValue() {
     if (myHasValueToCommit) {
       return myUncommitedValue;
@@ -40,18 +41,21 @@ public class TransactionalPropertyAccessor extends PropertyAccessor implements T
     return super.doGetValue();
   }
 
+  @Override
   protected void doSetValue(String newText) {
     myHasValueToCommit = true;
     myUncommitedValue = newText;
     myOldValue = super.doGetValue();
   }
 
+  @Override
   public void commit() {
     if (myHasValueToCommit) {
       doCommit(myOldValue, myUncommitedValue);
       myUncommitedValue = null;
       myHasValueToCommit = false;
       ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
         public void run() {
           myOldValue = doGetValue();
         }

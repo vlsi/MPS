@@ -25,12 +25,12 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
-import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import org.jetbrains.mps.openapi.util.Consumer;
 
 import java.io.ByteArrayInputStream;
@@ -49,10 +49,10 @@ public class BinaryPersistence {
 
   private static final Logger LOG = Logger.getLogger(BinaryPersistence.class);
 
-  public static BinaryModelHeader readHeader(@NotNull IFile file) throws ModelReadException {
+  public static BinaryModelHeader readHeader(@NotNull StreamDataSource source) throws ModelReadException {
     ModelInputStream mis = null;
     try {
-      mis = new ModelInputStream(file.openInputStream());
+      mis = new ModelInputStream(source.openInputStream());
       return loadHeader(mis);
     } catch (IOException e) {
       throw new ModelReadException("Couldn't read model: " + e.getMessage(), e);
@@ -61,10 +61,10 @@ public class BinaryPersistence {
     }
   }
 
-  public static BinarySModel readModel(@NotNull SModelReference mref, @NotNull IFile file) throws ModelReadException {
+  public static BinarySModel readModel(@NotNull SModelReference mref, @NotNull StreamDataSource source) throws ModelReadException {
     ModelInputStream mis = null;
     try {
-      mis = new ModelInputStream(file.openInputStream());
+      mis = new ModelInputStream(source.openInputStream());
       return loadModel(mref, mis);
     } catch (IOException e) {
       throw new ModelReadException("Couldn't read model: " + e.getMessage(), e, mref);
@@ -86,19 +86,19 @@ public class BinaryPersistence {
     }
   }
 
-  public static boolean writeModel(@NotNull SModel model, @NotNull IFile file) {
-    if (file.isReadOnly()) {
-      LOG.error("Can't write to " + file);
+  public static boolean writeModel(@NotNull SModel model, @NotNull StreamDataSource source) {
+    if (source.isReadOnly()) {
+      LOG.error("Can't write to " + source.getLocation());
       return false;
     }
 
     ModelOutputStream os = null;
     try {
-      os = new ModelOutputStream(file.openOutputStream());
+      os = new ModelOutputStream(source.openOutputStream());
       saveModel(model, os);
       return true;
     } catch (IOException e) {
-      LOG.error("Can't write to " + file, e);
+      LOG.error("Can't write to " + source.getLocation(), e);
     } finally {
       FileUtil.closeFileSafe(os);
     }
@@ -237,6 +237,9 @@ public class BinaryPersistence {
       BinaryModelHeader modelHeader = loadHeader(mis);
       BinarySModel model = new BinarySModel(modelHeader);
       loadModelProperties(model, mis);
+      for (ImportElement element : model.importedModels()) {
+        consumer.consume(element.getModelReference().getModelName());
+      }
       new NodesReader(modelHeader.getReference()) {
         @Override
         protected String readConceptQualifiedName(ModelInputStream is) throws IOException {

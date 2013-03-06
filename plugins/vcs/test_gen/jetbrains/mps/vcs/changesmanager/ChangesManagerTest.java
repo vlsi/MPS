@@ -18,7 +18,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.vcs.impl.projectlevelman.AllVcses;
 import com.intellij.openapi.vcs.VcsShowConfirmationOption;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.ide.platform.watching.FSChangesWatcher;
 import javax.swing.SwingUtilities;
 import java.lang.reflect.InvocationTargetException;
@@ -33,6 +33,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.vcs.FileStatusListener;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
+import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -57,8 +58,7 @@ import com.intellij.openapi.vcs.VcsException;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import java.util.Set;
 import java.io.IOException;
@@ -84,8 +84,6 @@ import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.extapi.model.EditableSModel;
-import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
@@ -139,7 +137,7 @@ public class ChangesManagerTest {
 
     setAutoaddPolicy(VcsShowConfirmationOption.Value.DO_NOTHING_SILENTLY);
 
-    myUtilVirtualFile = VirtualFileUtils.getVirtualFile(((BaseEditableSModelDescriptor) myUtilDiff.getModelDescriptor()).getSource().getFile());
+    myUtilVirtualFile = VirtualFileUtils.getVirtualFile(((FileDataSource) myUtilDiff.getModelDescriptor().getSource()).getFile());
 
     FSChangesWatcher.instance().addReloadListener(new ChangesManagerTest.MyReloadListener());
 
@@ -397,9 +395,9 @@ public class ChangesManagerTest {
 
   private void modifyExternally() throws ModelReadException {
     int changesBefore = ListSequence.fromList(check_4gxggu_a0a0a53(myUtilDiff.getChangeSet())).count();
-    final SModel modelContent = ModelPersistence.readModel(((DefaultSModelDescriptor) myUtilDiff.getModelDescriptor()).getSource().getFile(), false);
+    final SModel modelContent = ModelPersistence.readModel(myUtilDiff.getModelDescriptor().getSource(), false);
     createNewRoot(modelContent);
-    final EditableSModelDescriptor modelDescriptor = myUtilDiff.getModelDescriptor();
+    final EditableSModel modelDescriptor = myUtilDiff.getModelDescriptor();
     waitForSomething(new Runnable() {
       public void run() {
         SModelRepository.getInstance().addModelRepositoryListener(new SModelRepositoryAdapter() {
@@ -967,7 +965,7 @@ public class ChangesManagerTest {
     doSomethingAndWaitForFileStatusChange(new Runnable() {
       public void run() {
       }
-    }, VirtualFileUtils.getVirtualFile(((BaseEditableSModelDescriptor) myUiDiff.getModelDescriptor()).getSource().getFile()), FileStatus.MODIFIED);
+    }, VirtualFileUtils.getVirtualFile(((FileDataSource) myUiDiff.getModelDescriptor().getSource()).getFile()), FileStatus.MODIFIED);
     waitForChangesManager();
     Assert.assertEquals(changeSetStringBefore, getChangeSetString(myUiDiff.getChangeSet()));
 

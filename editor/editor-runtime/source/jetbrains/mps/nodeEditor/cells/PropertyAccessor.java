@@ -62,10 +62,12 @@ public class PropertyAccessor implements ModelAccessor {
     return myPropertyName;
   }
 
+  @Override
   public String getText() {
     return fromInternal(doGetValue());
   }
 
+  @Override
   public void setText(String text) {
     if (!myReadOnly) {
       isValidText(text);
@@ -94,6 +96,7 @@ public class PropertyAccessor implements ModelAccessor {
     SNodeAccessUtil.setProperty(myNode, myPropertyName, newText);
   }
 
+  @Override
   @Hack
   public boolean isValidText(String text) {
     return (isValidText_internal(text) && !isInvalidEmptyText(text));

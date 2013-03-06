@@ -32,29 +32,58 @@ import com.intellij.openapi.wm.impl.status.InlineProgressIndicator;
 import com.intellij.ui.components.JBCheckBox;
 import com.intellij.ui.components.JBList;
 import com.intellij.ui.components.JBScrollPane;
+import jetbrains.mps.extapi.model.EditableSModel;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.icons.MPSIcons.General;
 import jetbrains.mps.icons.MPSIcons.Small;
 import jetbrains.mps.ide.migration.assistant.MigrationProcessor.Callback;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProjectMigrationState;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.FileUtil;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.persistence.DataSource;
+import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
-import javax.swing.*;
+import javax.swing.BorderFactory;
+import javax.swing.DefaultListCellRenderer;
+import javax.swing.Icon;
+import javax.swing.JButton;
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JTextPane;
+import javax.swing.SwingUtilities;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.font.TextAttribute;
-import java.util.*;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -66,6 +95,8 @@ import java.util.regex.Pattern;
  * To change this template use File | Settings | File Templates.
  */
 public class MigrationAssistantWizard extends AbstractWizardEx {
+
+  private static Logger LOG = Logger.getLogger(MigrationAssistantWizard.class);
 
   private static final List<String> STEP_IDS = new ArrayList<String>();
 
@@ -368,7 +399,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     }
 
     private List<String> getModelPaths() {
-      return new ModelPersistenceDetector(myProject).getModelsWithPersistenceVersionAtMost(ModelPersistenceDetector.OLD_VERSION);
+      return new ModelPersistenceDetector(myProject).getModelsWhichNeedUpgrade();
     }
   }
 
@@ -424,7 +455,8 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       JPanel buttonsPanel = new JPanel(layout);
 
       Insets insets = new Insets(2, 2, 2, 2);
-      GridBagConstraints gbc = new GridBagConstraints(0, 0, 1, 1, 1., 0., GridBagConstraints.FIRST_LINE_START, GridBagConstraints.HORIZONTAL, insets, 0, 0);
+      GridBagConstraints gbc = new GridBagConstraints(0, 0, 1, 1, 1., 0., GridBagConstraints.FIRST_LINE_START, GridBagConstraints.HORIZONTAL, insets, 0,
+        0);
 
       myIncludeBtn = new JButton("Include");
       myIncludeBtn.setMnemonic('I');
@@ -925,8 +957,6 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
   private static class ModelPersistenceDetector {
 
-    private static final int OLD_VERSION = ModelPersistence.LAST_VERSION - 1;
-
     private final Project myProject;
 
     public ModelPersistenceDetector(Project project) {
@@ -934,23 +964,37 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     }
 
     public boolean hasModelsInOldPersistence() {
-      return getModelsWithPersistenceVersionAtMost(OLD_VERSION).size() > 0;
+      return getModelsWhichNeedUpgrade().size() > 0;
     }
 
-    public List<String> getModelsWithPersistenceVersionAtMost(final int version) {
+    public List<String> getModelsWhichNeedUpgrade() {
       final List<String> result = new ArrayList<String>();
       final MPSProject mpsProject = myProject.getComponent(MPSProject.class);
       ModelAccess.instance().runReadAction(new Runnable() {
         @Override
         public void run() {
-          for (IModule module : mpsProject.getModulesWithGenerators()) {
-            for (SModel smd : SModelRepository.getInstance().getModelDescriptors(module)) {
-              if (smd instanceof DefaultSModelDescriptor) {
-                DefaultSModelDescriptor md = (DefaultSModelDescriptor) smd;
-                int modelVersion = md.getPersistenceVersion();
-                if (modelVersion <= version) {
-                  result.add(md.getSource().getFile().getPath());
+          for (SModule module : mpsProject.getModulesWithGenerators()) {
+            for (SModel model : module.getModels()) {
+              if (!(model instanceof EditableSModel)) {
+                continue;
+              }
+              DataSource source = model.getSource();
+              if (!(source instanceof FileDataSource)) {
+                continue;
+              }
+              FileDataSource fileSource = (FileDataSource) source;
+              if (!(model.getModelRoot() instanceof DefaultModelRoot) || fileSource.isReadOnly()) {
+                continue;
+              }
+
+              String ext = FileUtil.getExtension(fileSource.getFile().getName());
+              ModelFactory factory = PersistenceFacade.getInstance().getModelFactory(ext);
+              try {
+                if (factory != null && factory.needsUpgrade(fileSource)) {
+                  result.add(fileSource.getFile().getPath());
                 }
+              } catch (IOException ex) {
+                LOG.error(ex);
               }
             }
           }
@@ -960,5 +1004,4 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     }
 
   }
-
 }

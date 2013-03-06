@@ -61,24 +61,28 @@ public class EditorCell_Property extends EditorCell_Label {
     }
   }
 
+  @Override
   public void synchronizeViewWithModel() {
     String text = myModelAccessor.getText();
     setErrorState(!isValidText(text));
     setText(text);
   }
 
+  @Override
   public void setSelected(boolean selected) {
     boolean oldSelected = isSelected();
     super.setSelected(selected);
     if (oldSelected && !selected && myModelAccessor instanceof TransactionalModelAccessor) {
       if (myCommitInCommand) {
         ModelAccess.instance().runCommandInEDT(new Runnable() {
+          @Override
           public void run() {
             commit();
           }
         }, getOperationContext().getProject());
       } else {
         ModelAccess.instance().runWriteInEDT(new Runnable() {
+          @Override
           public void run() {
             commit();
           }
@@ -111,6 +115,7 @@ public class EditorCell_Property extends EditorCell_Label {
     }
   }
 
+  @Override
   public void changeText(String text) {
     super.changeText(text);
 
@@ -124,8 +129,10 @@ public class EditorCell_Property extends EditorCell_Label {
     setErrorState(!isValidText(text));
   }
 
+  @Override
   public boolean isValidText(final String text) {
     return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      @Override
       public Boolean compute() {
         return myModelAccessor.isValidText(text);
       }
@@ -136,6 +143,7 @@ public class EditorCell_Property extends EditorCell_Label {
   public SubstituteInfo getSubstituteInfo() {
     final SubstituteInfo substituteInfo = super.getSubstituteInfo();
     return ModelAccess.instance().runReadAction(new Computable<SubstituteInfo>() {
+      @Override
       public SubstituteInfo compute() {
         if (substituteInfo != null) {
           substituteInfo.setOriginalText(myModelAccessor.getText());

@@ -47,10 +47,12 @@ import java.util.Set;
 public class CellAction_CopyNode extends AbstractCellAction {
   private static final Logger LOG = Logger.getLogger(CellAction_CopyNode.class);
 
+  @Override
   public boolean canExecute(EditorContext context) {
     return ((EditorComponent) context.getEditorComponent()).getSelectionManager().getSelection() != null;
   }
 
+  @Override
   public void execute(EditorContext context) {
     _3<List<SNode>, Map<SNode, Set<SNode>>, String> tuple = extractSelection(context);
     if (tuple == null) return;
@@ -82,6 +84,7 @@ public class CellAction_CopyNode extends AbstractCellAction {
       final SNode parent = node.getParent();
       if (parent != null && AttributeOperations.isAttribute(node)) {
         Condition<EditorCell> condition = new Condition<EditorCell>() {
+          @Override
           public boolean met(EditorCell object) {
             SNode selectedNode = object.getSNode();
             return selectedNode != null &&

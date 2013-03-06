@@ -57,11 +57,13 @@ public class DefaultEditorMessage implements EditorMessage {
     myStatus = status;
   }
 
+  @Override
   public boolean sameAs(SimpleEditorMessage message) {
     return message.getNode() == getNode() && getOwner() == message.getOwner() &&
       getStatus() == message.getStatus() && getMessage().equals(message.getMessage());
   }
 
+  @Override
   public void putUserObject(Object key, Object value) {
     if (myUserObjects == null) {
       myUserObjects = new HashMap<Object, Object>(1);
@@ -69,6 +71,7 @@ public class DefaultEditorMessage implements EditorMessage {
     myUserObjects.put(key, value);
   }
 
+  @Override
   public Object getUserObject(Object key) {
     if (myUserObjects == null) {
       return null;
@@ -76,22 +79,27 @@ public class DefaultEditorMessage implements EditorMessage {
     return myUserObjects.get(key);
   }
 
+  @Override
   public String getMessage() {
     return myMessage;
   }
 
+  @Override
   public Color getColor() {
     return myColor;
   }
 
+  @Override
   public EditorMessageOwner getOwner() {
     return myOwner;
   }
 
+  @Override
   public boolean isValid(EditorComponent editorComponent) {
     return getCellInBothWays(editorComponent) != null;
   }
 
+  @Override
   public int getStart(jetbrains.mps.openapi.editor.EditorComponent editorComponent) {
     EditorCell editorCell = getCellInBothWays((EditorComponent) editorComponent);
     if (editorCell == null) {
@@ -100,6 +108,7 @@ public class DefaultEditorMessage implements EditorMessage {
     return editorCell.getY();
   }
 
+  @Override
   public int getHeight(jetbrains.mps.openapi.editor.EditorComponent editorComponent) {
     EditorCell editorCell = getCellInBothWays((EditorComponent) editorComponent);
     if (editorCell == null) {
@@ -108,6 +117,7 @@ public class DefaultEditorMessage implements EditorMessage {
     return editorCell.getHeight();
   }
 
+  @Override
   public void doNavigate(EditorComponent editorComponent) {
     editorComponent.changeSelection(getCellInBothWays(editorComponent));
   }
@@ -120,15 +130,18 @@ public class DefaultEditorMessage implements EditorMessage {
     return getCellForParentNodeInMainEditor(editor);
   }
 
+  @Override
   public MessageStatus getStatus() {
     return myStatus;
   }
 
+  @Override
   public EditorCell getCell(EditorComponent editor) {
     if (editor == null) return null;
     return editor.getBigValidCellForNode(getNode());
   }
 
+  @Override
   public EditorCell getCellForParentNodeInMainEditor(EditorComponent editor) {
     if (getNode() == null) return null;
     if (editor instanceof InspectorEditorComponent) {
@@ -146,15 +159,18 @@ public class DefaultEditorMessage implements EditorMessage {
     return result;
   }
 
+  @Override
   public boolean acceptCell(EditorCell cell, EditorComponent editor) {
     if (cell == null) return false;
     return cell.isBigCell() && editor.isValid(cell) && cell.getSNode() == getNode();
   }
 
+  @Override
   public SNode getNode() {
     return myNode;
   }
 
+  @Override
   public void paint(Graphics g, EditorComponent editorComponent, EditorCell cell) {
     paintWithColor(g, cell, getColor());
   }
@@ -171,6 +187,7 @@ public class DefaultEditorMessage implements EditorMessage {
     g.fillRect(x, y, width, height);
   }
 
+  @Override
   public boolean isBackground() {
     return false;
   }
@@ -186,12 +203,14 @@ public class DefaultEditorMessage implements EditorMessage {
     myIntentionProviders.add(intentionProvider);
   }
 
+  @Override
   public QuickFixProvider getIntentionProvider() {
     if (myIntentionProviders == null) return null;
     if (myIntentionProviders.isEmpty()) return null;
     return myIntentionProviders.get(0);
   }
 
+  @Override
   public List<QuickFixProvider> getIntentionProviders() {
     ArrayList<QuickFixProvider> result = new ArrayList<QuickFixProvider>(1);
     if (myIntentionProviders != null) {

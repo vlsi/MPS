@@ -88,10 +88,12 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     setAction(CellActionType.CLEAR_SELECTION, new ClearSelection());
   }
 
+  @Override
   public boolean isFirstPositionInBigCell() {
     return getContainingBigCell().getFirstLeaf() == this && isFirstCaretPosition();
   }
 
+  @Override
   public boolean isLastPositionInBigCell() {
     return getContainingBigCell().getLastLeaf() == this && isLastCaretPosition() && !getTextLine().hasNonTrivialSelection();
   }
@@ -100,6 +102,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     return true;
   }
 
+  @Override
   public void setSelected(boolean selected) {
     super.setSelected(selected);
     if (!selected && !getEditor().selectionStackContains(this)) {
@@ -188,6 +191,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     return position >= 0 && position <= myTextLine.getText().length();
   }
 
+  @Override
   public void home() {
     if (isFirstPositionAllowed()) {
       setCaretPosition(0);
@@ -196,6 +200,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     }
   }
 
+  @Override
   public void end() {
     if (isLastPositionAllowed()) {
       setCaretPosition(getText().length());
@@ -204,6 +209,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     }
   }
 
+  @Override
   public boolean isSelectable() {
     if (!super.isSelectable()) return false;
 
@@ -218,6 +224,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     return true;
   }
 
+  @Override
   public boolean isFirstCaretPosition() {
     if (!isFirstPositionAllowed()) {
       return getCaretPosition() == 1;
@@ -226,6 +233,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     }
   }
 
+  @Override
   public boolean isLastCaretPosition() {
     if (!isLastPositionAllowed()) {
       return getCaretPosition() == getText().length() - 1;
@@ -252,22 +260,27 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     myNullTextLine.setText(text);
   }
 
+  @Override
   public int getEffectiveWidth() {
     return getTextLineWidth();
   }
 
+  @Override
   public int getLeftInset() {
     return getRenderedTextLine().getPaddingLeft() + myGapLeft;
   }
 
+  @Override
   public int getRightInset() {
     return getRenderedTextLine().getPaddingRight() + myGapRight;
   }
 
+  @Override
   public int getTopInset() {
     return getRenderedTextLine().getPaddingTop();
   }
 
+  @Override
   public int getBottomInset() {
     return getRenderedTextLine().getPaddingBottom();
   }
@@ -291,6 +304,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     getStyle().set(StyleAttributes.EDITABLE, editable);
   }
 
+  @Override
   public void setErrorState(boolean errorState) {
     super.setErrorState(errorState);
     if (errorState) {
@@ -302,6 +316,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     }
   }
 
+  @Override
   public void relayoutImpl() {
     if (isPunctuationLayout()) {
       getStyle().set(StyleAttributes.PADDING_LEFT, new Padding(0.0));
@@ -319,14 +334,17 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     }
   }
 
+  @Override
   public void switchCaretVisible() {
     myCaretIsVisible = !myCaretIsVisible;
   }
 
+  @Override
   protected boolean isSelectionPainted() {
     return isSelected() && getEditor().getSelectionManager().getSelection() instanceof MultipleSelection;
   }
 
+  @Override
   public void paintContent(Graphics g, ParentSettings parentSettings) {
     TextLine textLine = getRenderedTextLine();
     boolean toShowCaret = toShowCaret();
@@ -341,6 +359,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     }
   }
 
+  @Override
   public void paintSelection(Graphics g, Color c, boolean drawBorder, ParentSettings parentSettings) {
     if (!isSelectionPaintedOnAncestor(parentSettings).isSelectionPainted() && getEditor().getAdditionalCellFontColor(this) != null) {
       /*
@@ -376,6 +395,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     return textLine;
   }
 
+  @Override
   public void setCaretX(int x) {
     myTextLine.setCaretByXCoord(x - myX);
     makePositionValid();
@@ -391,10 +411,12 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     getEditor().getBracesHighlighter().updateBracesSelection(this);
   }
 
+  @Override
   public int getCaretX() {
     return myTextLine.getCaretX(myX);
   }
 
+  @Override
   public boolean processMousePressed(MouseEvent e) {
     myTextLine.setCaretByXCoord(e.getX() - myX);
     myTextLine.resetSelection();
@@ -407,6 +429,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     getEditor().scrollRectToVisible(new Rectangle(getCaretX() - 2 * myTextLine.charWidth(), myY, 4 * myTextLine.charWidth(), myHeight));
   }
 
+  @Override
   protected boolean doProcessKeyTyped(final KeyEvent keyEvent, final boolean allowErrors) {
     final int wasPosition = getCaretPosition();
     final CellSide side;
@@ -430,6 +453,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
         }
       });
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        @Override
         public void run() {
           if (processMutableKeyTyped(keyEvent, allowErrors)) {
             getContext().flushEvents();
@@ -454,6 +478,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     }
     if (!isEditable() && allowsIntelligentInputKeyStroke(keyEvent)) {
       String pattern = ModelAccess.instance().runReadAction(new Computable<String>() {
+        @Override
         public String compute() {
           return getRenderedTextOn(keyEvent);
         }
@@ -471,6 +496,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
 
   private String getRenderedTextOn(KeyEvent keyEvent) {
     return emulateKeyType(keyEvent, new Computable<String>() {
+      @Override
       public String compute() {
         return getRenderedText();
       }
@@ -626,14 +652,17 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     getStyle().set(StyleAttributes.UNDERLINED, b);
   }
 
+  @Override
   public int getAscent() {
     return getRenderedTextLine().getAscent();
   }
 
+  @Override
   public int getDescent() {
     return getRenderedTextLine().getDescent();
   }
 
+  @Override
   public NodeSubstitutePatternEditor createSubstitutePatternEditor() {
     NodeSubstitutePatternEditor pattern = new NodeSubstitutePatternEditor();
     pattern.setText(getText());
@@ -723,6 +752,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     return NameUtil.shortNameFromLongName(getClass().getName()) + "[text=" + getText() + "]";
   }
 
+  @Override
   public TextBuilder renderText() {
     return TextBuilder.fromString(getRenderedText());
   }
@@ -753,6 +783,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       myText = text;
     }
 
+    @Override
     protected void doUndo() {
       EditorComponent editor = myEditor.get();
       if (editor == null) return;
@@ -764,6 +795,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       }
     }
 
+    @Override
     protected void doRedo() {
       EditorComponent editor = myEditor.get();
       if (editor == null) return;
@@ -782,10 +814,12 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       myWithSelection = withSelection;
     }
 
+    @Override
     public boolean canExecute(EditorContext context) {
       return isCaretPositionAllowed(getCaretPosition() - 1);
     }
 
+    @Override
     public void execute(EditorContext context) {
       setCaretPosition(getCaretPosition() - 1, myWithSelection);
       ((EditorComponent) context.getEditorComponent()).resetLastCaretX();
@@ -800,10 +834,12 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       myWithSelection = withSelection;
     }
 
+    @Override
     public boolean canExecute(EditorContext context) {
       return isCaretPositionAllowed(getCaretPosition() + 1);
     }
 
+    @Override
     public void execute(EditorContext context) {
       setCaretPosition(getCaretPosition() + 1, myWithSelection);
       ((EditorComponent) context.getEditorComponent()).resetLastCaretX();
@@ -812,11 +848,13 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   }
 
   private class SelectHome extends AbstractCellAction {
+    @Override
     public boolean canExecute(EditorContext context) {
       if (!isCaretPositionAllowed(0)) return false;
       return true;
     }
 
+    @Override
     public void execute(EditorContext context) {
       setCaretPosition(0, true);
       ((EditorComponent) context.getEditorComponent()).resetLastCaretX();
@@ -825,11 +863,13 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   }
 
   private class SelectEnd extends AbstractCellAction {
+    @Override
     public boolean canExecute(EditorContext context) {
       if (!isCaretPositionAllowed(getText().length())) return false;
       return true;
     }
 
+    @Override
     public void execute(EditorContext context) {
       setCaretPosition(getText().length(), true);
       ((EditorComponent) context.getEditorComponent()).resetLastCaretX();
@@ -838,6 +878,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   }
 
   private class CopyLabelText extends AbstractCellAction {
+    @Override
     public boolean canExecute(EditorContext context) {
       SelectionManager selectionManager = ((EditorComponent) context.getEditorComponent()).getSelectionManager();
       if (selectionManager.getSelection() instanceof EditorCellLabelSelection) {
@@ -847,6 +888,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       return false;
     }
 
+    @Override
     public void execute(EditorContext context) {
       EditorCell_Label label = (EditorCell_Label) context.getSelectedCell();
       CopyPasteUtil.copyTextToClipboard(label.getSelectedText());
@@ -860,10 +902,12 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       mySelect = select;
     }
 
+    @Override
     public boolean canExecute(EditorContext context) {
       return !isFirstCaretPosition() && (isFirstPositionAllowed() || getPrevLocalHome(true) != 0);
     }
 
+    @Override
     public void execute(EditorContext context) {
       setCaretPosition(getPrevLocalHome(true), mySelect);
     }
@@ -877,10 +921,12 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       mySelect = select;
     }
 
+    @Override
     public boolean canExecute(EditorContext context) {
       return !isLastCaretPosition() && (isLastPositionAllowed() || getNextLocalEnd(true) != getText().length());
     }
 
+    @Override
     public void execute(EditorContext context) {
       setCaretPosition(getNextLocalEnd(true), mySelect);
     }
@@ -900,6 +946,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   }
 
   private class PasteIntoLabelText extends AbstractCellAction {
+    @Override
     public boolean canExecute(EditorContext context) {
       if (!(context.getSelectedCell() instanceof EditorCell_Label)) return false;
       EditorCell_Label label = (EditorCell_Label) context.getSelectedCell();
@@ -907,6 +954,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       return node != null && label.canPasteText() && TextPasteUtil.hasStringInClipboard() && !(CopyPasteUtil.doesClipboardContainNode());
     }
 
+    @Override
     public void execute(EditorContext context) {
       EditorCell_Label cell = (EditorCell_Label) context.getSelectedCell();
       final String s = TextPasteUtil.getStringFromClipboard();
@@ -917,6 +965,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   }
 
   private class CutLabelText extends AbstractCellAction {
+    @Override
     public boolean canExecute(EditorContext context) {
       SelectionManager selectionManager = ((EditorComponent) context.getEditorComponent()).getSelectionManager();
       if (selectionManager.getSelection() instanceof EditorCellLabelSelection) {
@@ -926,6 +975,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       return false;
     }
 
+    @Override
     public void execute(EditorContext context) {
       EditorCell_Label label = (EditorCell_Label) context.getSelectedCell();
       String toCopy = label.getSelectedText();

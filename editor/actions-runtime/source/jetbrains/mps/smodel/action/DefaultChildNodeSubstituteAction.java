@@ -79,6 +79,7 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
     return myScope;
   }
 
+  @Override
   public final SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
     SNode parentNode = getSourceNode();
     SNode newChild = createChildNode(getParameterObject(), parentNode.getModel(), pattern);
@@ -114,6 +115,7 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
     return NodeFactoryManager.createNode(conceptDeclaration, myOldChild, getSourceNode(), model, getScope());
   }
 
+  @Override
   public SNode getActionType(String pattern) {
     SNode node = createChildNode(getParameterObject(), null, pattern);
     return ActionsUtil.isInstanceOfIType(node) ? node : TypeChecker.getInstance().getTypeOf(node);

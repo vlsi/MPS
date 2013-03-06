@@ -19,12 +19,12 @@ import java.io.IOException;
 
   @Nullable
   @Override
-  public Tuples._2<Integer, byte[]> mergeContents(byte[] baseContent, byte[] localContent, byte[] latestContent) {
+  public Tuples._2<Integer, byte[]> mergeContents(FileContent baseContent, FileContent localContent, FileContent latestContent) {
     SVNDiffOptions diffOptions = null;
     FSMergerBySequence merger = new FSMergerBySequence(myConflictStart, mySeparator, myConflictEnd);
-    QSequenceLineRAData baseData = new QSequenceLineRAByteData(baseContent);
-    QSequenceLineRAData localData = new QSequenceLineRAByteData(localContent);
-    QSequenceLineRAData latestData = new QSequenceLineRAByteData(latestContent);
+    QSequenceLineRAData baseData = new QSequenceLineRAByteData(baseContent.getData());
+    QSequenceLineRAData localData = new QSequenceLineRAByteData(localContent.getData());
+    QSequenceLineRAData latestData = new QSequenceLineRAByteData(latestContent.getData());
     ByteArrayOutputStream out = new ByteArrayOutputStream();
     try {
       int mergeResult = merger.merge(baseData, localData, latestData, diffOptions, out, SVNDiffConflictChoiceStyle.CHOOSE_MODIFIED_LATEST);

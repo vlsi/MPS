@@ -30,10 +30,12 @@ public class RefNodeListHandlerElementKeyMap extends KeyMapImpl {
     myListHandler = listHandler;
     if (elementSeparator != null && elementSeparator.length() == 1) {
       KeyMapActionImpl insertAction = new KeyMapActionImpl() {
+        @Override
         public String getDescriptionText() {
           return "insert " + myListHandler.getElementRole();
         }
 
+        @Override
         public void execute(EditorContext context) {
           SNode anchorNode = getAnchorNode(context);
           SNode nodeToInsert = myListHandler.createNodeToInsert(context);
@@ -44,10 +46,12 @@ public class RefNodeListHandlerElementKeyMap extends KeyMapImpl {
       insertAction.setCaretPolicy(KeyMapAction.CARET_AT_FIRST_POSITION);
 
       KeyMapActionImpl addAction = new KeyMapActionImpl() {
+        @Override
         public String getDescriptionText() {
           return "add " + myListHandler.getElementRole();
         }
 
+        @Override
         public void execute(EditorContext context) {
           SNode anchorNode = getAnchorNode(context);
           SNode nodeToInsert = myListHandler.createNodeToInsert(context);

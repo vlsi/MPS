@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.event.*;
 import java.util.List;
 
 public abstract class EditorCheckerAdapter extends BaseEditorChecker {
+  @Override
   public boolean hasDramaticalEvent(List<SModelEvent> events) {
     for (SModelEvent event : events) {
       if (event instanceof SModelRootEvent || event instanceof SModelChildEvent || event instanceof SModelReferenceEvent) {
@@ -38,6 +39,7 @@ public abstract class EditorCheckerAdapter extends BaseEditorChecker {
     return false;
   }
 
+  @Override
   public boolean areMessagesChanged() {
     return true;
   }

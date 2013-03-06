@@ -173,6 +173,7 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
 
   private void validateStatus() {
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
+      @Override
       public void run() {
         GutterStatus status = GutterStatus.OK;
         for (SimpleEditorMessage message : myMessages) {
@@ -270,6 +271,7 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
     //Set<EditorMessage> messagesToRemove = new HashSet<EditorMessage>();
     List<SimpleEditorMessage> editorMessages = new ArrayList<SimpleEditorMessage>(myMessages);
     Collections.sort(editorMessages, new Comparator<SimpleEditorMessage>() {
+      @Override
       public int compare(SimpleEditorMessage o1, SimpleEditorMessage o2) {
         if (o1 == o2) return 0;
         if (o1 == null) return -1;
@@ -372,6 +374,7 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
     return result;
   }
 
+  @Override
   public String getMPSTooltipText(MouseEvent event) {
     int y = event.getY();
 
@@ -404,6 +407,7 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
       setFocusable(false);
     }
 
+    @Override
     public void paint(Graphics g) {
       final Rectangle bounds = getBounds();
 

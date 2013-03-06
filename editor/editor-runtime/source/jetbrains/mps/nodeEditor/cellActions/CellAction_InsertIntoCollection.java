@@ -29,10 +29,12 @@ public class CellAction_InsertIntoCollection extends AbstractCellAction {
     myInsertBefore = insertBefore;
   }
 
+  @Override
   public boolean canExecute(EditorContext context) {
     return true;
   }
 
+  @Override
   public void execute(EditorContext context) {
     boolean before = myInsertBefore;
     EditorCell contextCell = context.getContextCell();

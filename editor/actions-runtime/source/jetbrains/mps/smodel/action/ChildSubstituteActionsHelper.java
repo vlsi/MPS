@@ -63,6 +63,7 @@ public class ChildSubstituteActionsHelper {
   // Not used
   @Deprecated
   public static final Condition<SNode> TRUE_CONDITION = new Condition<SNode>() {
+    @Override
     public boolean met(SNode object) {
       return true;
     }
@@ -92,19 +93,23 @@ public class ChildSubstituteActionsHelper {
         List<SubstituteAction> resultActions = new ArrayList<SubstituteAction>(allVisibleConcepts.size());
         for (final SNode visibleConcept : allVisibleConcepts) {
           resultActions.add(new DefaultChildNodeSubstituteAction(visibleConcept, parentNode, currentChild, childSetter, context.getScope()) {
+            @Override
             public String getMatchingText(String pattern) {
               return getMatchingText(pattern, true, true);
             }
 
+            @Override
             public String getVisibleMatchingText(String pattern) {
               return getMatchingText(pattern);
             }
 
+            @Override
             public String getDescriptionText(String pattern) {
               String fqName = NameUtil.nodeFQName(visibleConcept);
               return "lang: " + NameUtil.compactNamespace(NameUtil.namespaceFromConceptFQName(fqName));
             }
 
+            @Override
             public Icon getIconFor(String pattern) {
               return getIconFor(pattern, true);
             }
@@ -294,6 +299,7 @@ public class ChildSubstituteActionsHelper {
       myPresentation = presentation;
     }
 
+    @Override
     public String getMatchingText(String pattern) {
       if (myMatchingText == null) {
         if (myPresentation != null) {
@@ -305,6 +311,7 @@ public class ChildSubstituteActionsHelper {
       return myMatchingText;
     }
 
+    @Override
     public String getVisibleMatchingText(String pattern) {
       if (myVisibleMatchingText == null) {
         if (myPresentation != null) {
@@ -316,6 +323,7 @@ public class ChildSubstituteActionsHelper {
       return myVisibleMatchingText;
     }
 
+    @Override
     public Icon getIconFor(String pattern) {
       return NodeIconUtil.getIcon(myReferentNode, true);
     }
@@ -330,10 +338,12 @@ public class ChildSubstituteActionsHelper {
       return NodePresentationUtil.getSortPriority(myParentNode, myReferentNode);
     }
 
+    @Override
     public String getDescriptionText(String pattern) {
       return "^" + NodePresentationUtil.descriptionText(myReferentNode, true);
     }
 
+    @Override
     public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
       SNode childNode = SModelUtil_new.instantiateConceptDeclaration(NameUtil.nodeFQName(mySmartConcept), model, GlobalScope.getInstance());
       String referentRole = SModelUtil.getGenuineLinkRole(mySmartReference);

@@ -47,6 +47,7 @@ public class ChildrenCollectionFinder {
 
   public EditorCell find() {
     return ModelAccess.instance().runReadAction(new Computable<EditorCell>() {
+      @Override
       public EditorCell compute() {
         if (myCheckFirst && isMultipleCollectionCell(myCurrent)) {
           return myCurrent;

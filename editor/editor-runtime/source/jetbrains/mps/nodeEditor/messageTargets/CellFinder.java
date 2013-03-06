@@ -43,6 +43,7 @@ public class CellFinder {
     EditorCell rawCell = getRawCell(editorComponent, node);
     if (rawCell == null) { return null; }
     EditorCell child = rawCell.findChild(CellFinders.byCondition(new Condition<EditorCell>() {
+      @Override
       public boolean met(EditorCell cell) {
         return cell.isReferenceCell() && role.equals(cell.getRole()) && node == cell.getSNode();
       }
@@ -59,6 +60,7 @@ public class CellFinder {
     EditorCell rawCell = getRawCell(editorComponent, node);
     if (rawCell == null) { return null; }
     EditorCell child = rawCell.findChild(CellFinders.byCondition(new Condition<EditorCell>() {
+      @Override
       public boolean met(EditorCell cell) {
         if (!(cell instanceof EditorCell_Property)) return false;
         EditorCell_Property propertyCell = (EditorCell_Property) cell;
