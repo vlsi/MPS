@@ -34,7 +34,7 @@ import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.text.TextBuilder;
+import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.nodeEditor.DfsTraverser;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellAction;
@@ -906,7 +906,7 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   @Override
   public TextBuilder renderText() {
-    return TextBuilder.getEmptyTextBuilder();
+    return jetbrains.mps.nodeEditor.text.TextBuilder.getEmptyTextBuilder();
   }
 
   @Override

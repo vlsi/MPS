@@ -22,7 +22,7 @@ import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Basic;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cells.GeometryUtil;
-import jetbrains.mps.nodeEditor.text.TextBuilder;
+import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
@@ -143,7 +143,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
     for (EditorCell editorCell : editorCells) {
       editorCellsSet.add(editorCell);
     }
-    TextBuilder result = TextBuilder.getEmptyTextBuilder();
+    TextBuilder result = jetbrains.mps.nodeEditor.text.TextBuilder.getEmptyTextBuilder();
     Iterator<EditorCell> iterator = editorCells.iterator();
     if (iterator.hasNext()) {
       boolean newLineAfter = false;
@@ -158,13 +158,13 @@ public class CellLayout_Indent extends AbstractCellLayout {
         }
         if (isOnNewLine(rootCell, current) || newLineAfter) {
           newLineAfter = false;
-          result = result.appendToTheRight(TextBuilder.fromString("\n"));
+          result = result.appendToTheRight(jetbrains.mps.nodeEditor.text.TextBuilder.fromString("\n"));
           for (int i = 0; i < getIndent(rootCell, current, false); i++) {
-            result = result.appendToTheRight(TextBuilder.fromString(EditorCell_Indent.getIndentText()), false);
+            result = result.appendToTheRight(jetbrains.mps.nodeEditor.text.TextBuilder.fromString(EditorCell_Indent.getIndentText()), false);
           }
         }
 
-        result = result.appendToTheRight(APICellAdapter.renderText(current), PunctuationUtil.hasLeftGap(current));
+        result = result.appendToTheRight(current.renderText(), PunctuationUtil.hasLeftGap(current));
 
         if (isNewLineAfter(rootCell, current)) {
           newLineAfter = true;

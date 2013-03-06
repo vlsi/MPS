@@ -20,7 +20,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.nodeEditor.text.TextBuilder;
+import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 
@@ -138,9 +138,9 @@ public class CellLayout_Superscript extends AbstractCellLayout {
 
   @Override
   public TextBuilder doLayoutText(Iterable<EditorCell> editorCells) {
-    TextBuilder result = TextBuilder.getEmptyTextBuilder();
+    TextBuilder result = jetbrains.mps.nodeEditor.text.TextBuilder.getEmptyTextBuilder();
     for (EditorCell editorCell : editorCells) {
-      result = result.appendToTheBottom(APICellAdapter.renderText(editorCell));
+      result = result.appendToTheBottom(editorCell.renderText());
     }
     return result;
   }

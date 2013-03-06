@@ -15,10 +15,16 @@
  */
 package jetbrains.mps.openapi.editor;
 
+import java.util.List;
+
 /**
  * Semen Alperovich
  * 02 21, 2013
  */
 public interface TextBuilder {
   String getText();
+  List<StringBuffer> getLines();
+  public TextBuilder appendToTheBottom(jetbrains.mps.openapi.editor.TextBuilder builder);
+  public jetbrains.mps.openapi.editor.TextBuilder appendToTheRight(jetbrains.mps.openapi.editor.TextBuilder builder, boolean insertSpace);
+  public jetbrains.mps.openapi.editor.TextBuilder appendToTheRight(jetbrains.mps.openapi.editor.TextBuilder builder);
 }

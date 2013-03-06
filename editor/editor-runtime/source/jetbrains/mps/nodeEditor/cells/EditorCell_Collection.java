@@ -33,7 +33,7 @@ import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.nodeEditor.selection.SelectionListener;
 import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.text.TextBuilder;
+import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;

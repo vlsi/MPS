@@ -25,7 +25,7 @@ import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.text.TextBuilder;
+import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.mps.openapi.model.SNode;

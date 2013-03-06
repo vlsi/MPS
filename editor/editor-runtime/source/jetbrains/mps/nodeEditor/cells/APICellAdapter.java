@@ -41,10 +41,6 @@ import java.util.List;
 public class APICellAdapter {
 
 
-  public static TextBuilder renderText(EditorCell cell) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).renderText();
-  }
-
   public static boolean isPunctuationLayout(EditorCell cell) {
     return LayoutConstraints.PUNCTUATION_LAYOUT_CONSTRAINT.equals(cell.getStyle().get(StyleAttributes.LAYOUT_CONSTRAINT));
   }

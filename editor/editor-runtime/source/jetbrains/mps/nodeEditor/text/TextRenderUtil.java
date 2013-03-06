@@ -21,6 +21,7 @@ import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.TextBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +30,7 @@ public class TextRenderUtil {
 
   public static TextBuilder renderText(Selection selection) {
     if (selection == null || selection.getSelectedCells().size() == 0) {
-      return TextBuilder.getEmptyTextBuilder();
+      return jetbrains.mps.nodeEditor.text.TextBuilder.getEmptyTextBuilder();
     }
     List<EditorCell> selectedCells = new ArrayList<EditorCell>();
     for (EditorCell selectedCell : selection.getSelectedCells()) {
@@ -37,7 +38,7 @@ public class TextRenderUtil {
     }
     EditorCell firstSelectedCell = selectedCells.get(0);
     if (selectedCells.size() == 1) {
-      return APICellAdapter.renderText(firstSelectedCell);
+      return firstSelectedCell.renderText();
     }
     EditorCell_Collection parentCell = firstSelectedCell.getParent();
     CellLayout layout = (CellLayout) parentCell.getCellLayout();
