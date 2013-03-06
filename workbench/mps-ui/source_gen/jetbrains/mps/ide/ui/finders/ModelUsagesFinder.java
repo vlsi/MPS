@@ -19,8 +19,12 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.workbench.choose.base.ModulesOnlyScope;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelId;
-import jetbrains.mps.smodel.ModelFindOperations;
-import jetbrains.mps.util.CollectionUtil;
+import java.util.Set;
+import jetbrains.mps.findUsages.FindUsagesManager;
+import java.util.Collections;
+import jetbrains.mps.findUsages.SearchType;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 
 public class ModelUsagesFinder implements IFinder {
   public ModelUsagesFinder() {
@@ -84,16 +88,16 @@ public class ModelUsagesFinder implements IFinder {
         }
       }
     } else {
-      for (SModel modelDescriptor : SModelRepository.getInstance().getModelDescriptors()) {
+      Set<SModel> usages = FindUsagesManager.getInstance().findUsages(Collections.singleton((org.jetbrains.mps.openapi.model.SModelReference) modelReference), SearchType.MODEL_USAGES, GlobalScope.getInstance(), new EmptyProgressMonitor());
+
+      for (SModel modelDescriptor : usages) {
         if (monitor.isCanceled()) {
           return searchResults;
         }
         if (!(SModelStereotype.isUserModel(modelDescriptor))) {
           continue;
         }
-        if (new ModelFindOperations(modelDescriptor).hasUsages(CollectionUtil.set(modelReference))) {
-          searchResults.getSearchResults().add(new SearchResult<SModel>(modelDescriptor.getSModel(), "usages in imports"));
-        }
+        searchResults.getSearchResults().add(new SearchResult<SModel>(modelDescriptor.getSModel(), "usages in imports"));
       }
     }
     return searchResults;

@@ -143,132 +143,134 @@
     <unitInfo nodeId="4132059805486520986" fileName="ModuleUsagesFinder.java" startLine="25" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.ide.ui.finders.ModuleUsagesFinder" />
   </root>
   <root nodeRef="r:50589489-29e2-47e3-84bb-6bbe4094b4ce(jetbrains.mps.ide.ui.finders)/4132059805486521473">
-    <nodeInfo nodeId="4132059805486521488" fileName="ModelUsagesFinder.java" startLine="30" startPosition="73" endLine="31" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4132059805486521493" fileName="ModelUsagesFinder.java" startLine="31" startPosition="54" endLine="32" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4132059805486521499" fileName="ModelUsagesFinder.java" startLine="32" startPosition="45" endLine="33" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="4132059805486521503" fileName="ModelUsagesFinder.java" startLine="33" startPosition="41" endLine="34" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4132059805486521512" fileName="ModelUsagesFinder.java" startLine="34" startPosition="54" endLine="35" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4132059805486521519" fileName="ModelUsagesFinder.java" startLine="35" startPosition="48" endLine="36" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4132059805486521549" fileName="ModelUsagesFinder.java" startLine="39" startPosition="35" endLine="40" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4132059805486521556" fileName="ModelUsagesFinder.java" startLine="42" startPosition="63" endLine="43" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="4132059805486521575" fileName="ModelUsagesFinder.java" startLine="47" startPosition="80" endLine="48" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="4132059805486521576" fileName="ModelUsagesFinder.java" startLine="49" startPosition="13" endLine="50" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4132059805486521587" fileName="ModelUsagesFinder.java" startLine="51" startPosition="47" endLine="52" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="4132059805486521594" fileName="ModelUsagesFinder.java" startLine="54" startPosition="62" endLine="55" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4132059805486521618" fileName="ModelUsagesFinder.java" startLine="60" startPosition="71" endLine="61" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4132059805486521637" fileName="ModelUsagesFinder.java" startLine="63" startPosition="35" endLine="64" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4132059805486521639" fileName="ModelUsagesFinder.java" startLine="65" startPosition="9" endLine="66" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4132059805486521650" fileName="ModelUsagesFinder.java" startLine="66" startPosition="114" endLine="67" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4132059805486521663" fileName="ModelUsagesFinder.java" startLine="68" startPosition="58" endLine="69" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="4132059805486521682" fileName="ModelUsagesFinder.java" startLine="73" startPosition="80" endLine="74" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="4132059805486521683" fileName="ModelUsagesFinder.java" startLine="75" startPosition="13" endLine="76" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4132059805486521694" fileName="ModelUsagesFinder.java" startLine="77" startPosition="47" endLine="78" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="4132059805486521701" fileName="ModelUsagesFinder.java" startLine="80" startPosition="62" endLine="81" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4132059805486521730" fileName="ModelUsagesFinder.java" startLine="88" startPosition="35" endLine="89" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4132059805486521737" fileName="ModelUsagesFinder.java" startLine="91" startPosition="63" endLine="92" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="4132059805486521747" fileName="ModelUsagesFinder.java" startLine="94" startPosition="101" endLine="95" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4132059805486521760" fileName="ModelUsagesFinder.java" startLine="98" startPosition="5" endLine="99" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4132059805486521476" fileName="ModelUsagesFinder.java" startLine="26" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelUsagesFinder#()V" />
-    <nodeInfo nodeId="4132059805486521544" fileName="ModelUsagesFinder.java" startLine="38" startPosition="123" endLine="41" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4132059805486521551" fileName="ModelUsagesFinder.java" startLine="41" startPosition="9" endLine="44" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4132059805486521569" fileName="ModelUsagesFinder.java" startLine="46" startPosition="61" endLine="49" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4132059805486521582" fileName="ModelUsagesFinder.java" startLine="50" startPosition="88" endLine="53" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4132059805486521588" fileName="ModelUsagesFinder.java" startLine="53" startPosition="13" endLine="56" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4132059805486521632" fileName="ModelUsagesFinder.java" startLine="62" startPosition="110" endLine="65" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4132059805486521658" fileName="ModelUsagesFinder.java" startLine="67" startPosition="18" endLine="70" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4132059805486521676" fileName="ModelUsagesFinder.java" startLine="72" startPosition="61" endLine="75" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4132059805486521689" fileName="ModelUsagesFinder.java" startLine="76" startPosition="88" endLine="79" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4132059805486521695" fileName="ModelUsagesFinder.java" startLine="79" startPosition="13" endLine="82" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4132059805486521725" fileName="ModelUsagesFinder.java" startLine="87" startPosition="91" endLine="90" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4132059805486521732" fileName="ModelUsagesFinder.java" startLine="90" startPosition="9" endLine="93" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4132059805486521738" fileName="ModelUsagesFinder.java" startLine="93" startPosition="9" endLine="96" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4132059805486521536" fileName="ModelUsagesFinder.java" startLine="102" startPosition="69" endLine="106" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4132059805486521624" fileName="ModelUsagesFinder.java" startLine="109" startPosition="70" endLine="113" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4132059805486521536" fileName="ModelUsagesFinder.java" startLine="102" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="as_s8v3jk_a0a0a0g0b#(Ljava/lang/Object;Ljava/lang/Class;)null" />
-    <nodeInfo nodeId="4132059805486521624" fileName="ModelUsagesFinder.java" startLine="109" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="as_s8v3jk_a0a0b0a6a1#(Ljava/lang/Object;Ljava/lang/Class;)null" />
-    <nodeInfo nodeId="4132059805486521718" fileName="ModelUsagesFinder.java" startLine="86" startPosition="12" endLine="97" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4132059805486521564" fileName="ModelUsagesFinder.java" startLine="45" startPosition="75" endLine="57" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4132059805486521671" fileName="ModelUsagesFinder.java" startLine="71" startPosition="70" endLine="83" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4132059805486521716" fileName="ModelUsagesFinder.java" startLine="86" startPosition="10" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4132059805486521557" fileName="ModelUsagesFinder.java" startLine="44" startPosition="9" endLine="58" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4132059805486521664" fileName="ModelUsagesFinder.java" startLine="70" startPosition="9" endLine="84" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4132059805486521532" fileName="ModelUsagesFinder.java" startLine="37" startPosition="54" endLine="59" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4132059805486521620" fileName="ModelUsagesFinder.java" startLine="61" startPosition="54" endLine="85" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4132059805486521525" fileName="ModelUsagesFinder.java" startLine="36" startPosition="58" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4132059805486521480" fileName="ModelUsagesFinder.java" startLine="29" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="find#(Ljetbrains/mps/ide/findusages/model/SearchQuery;Ljetbrains/mps/progress/ProgressMonitor;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
-    <scopeInfo nodeId="4132059805486521479" fileName="ModelUsagesFinder.java" startLine="26" startPosition="30" endLine="26" endPosition="30" />
-    <scopeInfo nodeId="4132059805486521548" fileName="ModelUsagesFinder.java" startLine="39" startPosition="35" endLine="40" endPosition="31" />
-    <scopeInfo nodeId="4132059805486521555" fileName="ModelUsagesFinder.java" startLine="42" startPosition="63" endLine="43" endPosition="19" />
-    <scopeInfo nodeId="4132059805486521574" fileName="ModelUsagesFinder.java" startLine="47" startPosition="80" endLine="48" endPosition="23" />
-    <scopeInfo nodeId="4132059805486521586" fileName="ModelUsagesFinder.java" startLine="51" startPosition="47" endLine="52" endPosition="23" />
-    <scopeInfo nodeId="4132059805486521593" fileName="ModelUsagesFinder.java" startLine="54" startPosition="62" endLine="55" endPosition="102" />
-    <scopeInfo nodeId="4132059805486521636" fileName="ModelUsagesFinder.java" startLine="63" startPosition="35" endLine="64" endPosition="31" />
-    <scopeInfo nodeId="4132059805486521662" fileName="ModelUsagesFinder.java" startLine="68" startPosition="58" endLine="69" endPosition="19" />
-    <scopeInfo nodeId="4132059805486521681" fileName="ModelUsagesFinder.java" startLine="73" startPosition="80" endLine="74" endPosition="23" />
-    <scopeInfo nodeId="4132059805486521693" fileName="ModelUsagesFinder.java" startLine="77" startPosition="47" endLine="78" endPosition="23" />
-    <scopeInfo nodeId="4132059805486521700" fileName="ModelUsagesFinder.java" startLine="80" startPosition="62" endLine="81" endPosition="102" />
-    <scopeInfo nodeId="4132059805486521729" fileName="ModelUsagesFinder.java" startLine="88" startPosition="35" endLine="89" endPosition="31" />
-    <scopeInfo nodeId="4132059805486521736" fileName="ModelUsagesFinder.java" startLine="91" startPosition="63" endLine="92" endPosition="19" />
-    <scopeInfo nodeId="4132059805486521746" fileName="ModelUsagesFinder.java" startLine="94" startPosition="101" endLine="95" endPosition="123" />
-    <scopeInfo nodeId="4132059805486521476" fileName="ModelUsagesFinder.java" startLine="26" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="4132059805486521536" fileName="ModelUsagesFinder.java" startLine="102" startPosition="69" endLine="106" endPosition="6" />
-    <scopeInfo nodeId="4132059805486521624" fileName="ModelUsagesFinder.java" startLine="109" startPosition="70" endLine="113" endPosition="6" />
-    <scopeInfo nodeId="4132059805486521536" fileName="ModelUsagesFinder.java" startLine="102" startPosition="0" endLine="108" endPosition="0">
+    <nodeInfo nodeId="4132059805486521488" fileName="ModelUsagesFinder.java" startLine="34" startPosition="73" endLine="35" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4132059805486521493" fileName="ModelUsagesFinder.java" startLine="35" startPosition="54" endLine="36" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4132059805486521499" fileName="ModelUsagesFinder.java" startLine="36" startPosition="45" endLine="37" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="4132059805486521503" fileName="ModelUsagesFinder.java" startLine="37" startPosition="41" endLine="38" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4132059805486521512" fileName="ModelUsagesFinder.java" startLine="38" startPosition="54" endLine="39" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4132059805486521519" fileName="ModelUsagesFinder.java" startLine="39" startPosition="48" endLine="40" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4132059805486521549" fileName="ModelUsagesFinder.java" startLine="43" startPosition="35" endLine="44" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4132059805486521556" fileName="ModelUsagesFinder.java" startLine="46" startPosition="63" endLine="47" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="4132059805486521575" fileName="ModelUsagesFinder.java" startLine="51" startPosition="80" endLine="52" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="4132059805486521576" fileName="ModelUsagesFinder.java" startLine="53" startPosition="13" endLine="54" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4132059805486521587" fileName="ModelUsagesFinder.java" startLine="55" startPosition="47" endLine="56" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="4132059805486521594" fileName="ModelUsagesFinder.java" startLine="58" startPosition="62" endLine="59" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4132059805486521618" fileName="ModelUsagesFinder.java" startLine="64" startPosition="71" endLine="65" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4132059805486521637" fileName="ModelUsagesFinder.java" startLine="67" startPosition="35" endLine="68" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4132059805486521639" fileName="ModelUsagesFinder.java" startLine="69" startPosition="9" endLine="70" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4132059805486521650" fileName="ModelUsagesFinder.java" startLine="70" startPosition="114" endLine="71" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4132059805486521663" fileName="ModelUsagesFinder.java" startLine="72" startPosition="58" endLine="73" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="4132059805486521682" fileName="ModelUsagesFinder.java" startLine="77" startPosition="80" endLine="78" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="4132059805486521683" fileName="ModelUsagesFinder.java" startLine="79" startPosition="13" endLine="80" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4132059805486521694" fileName="ModelUsagesFinder.java" startLine="81" startPosition="47" endLine="82" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="4132059805486521701" fileName="ModelUsagesFinder.java" startLine="84" startPosition="62" endLine="85" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1578360511943522179" fileName="ModelUsagesFinder.java" startLine="90" startPosition="12" endLine="91" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1578360511943517111" fileName="ModelUsagesFinder.java" startLine="91" startPosition="239" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4132059805486521730" fileName="ModelUsagesFinder.java" startLine="94" startPosition="35" endLine="95" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4132059805486521737" fileName="ModelUsagesFinder.java" startLine="97" startPosition="63" endLine="98" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="4132059805486521747" fileName="ModelUsagesFinder.java" startLine="99" startPosition="9" endLine="100" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4132059805486521760" fileName="ModelUsagesFinder.java" startLine="102" startPosition="5" endLine="103" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4132059805486521476" fileName="ModelUsagesFinder.java" startLine="30" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelUsagesFinder#()V" />
+    <nodeInfo nodeId="4132059805486521544" fileName="ModelUsagesFinder.java" startLine="42" startPosition="123" endLine="45" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4132059805486521551" fileName="ModelUsagesFinder.java" startLine="45" startPosition="9" endLine="48" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4132059805486521569" fileName="ModelUsagesFinder.java" startLine="50" startPosition="61" endLine="53" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4132059805486521582" fileName="ModelUsagesFinder.java" startLine="54" startPosition="88" endLine="57" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4132059805486521588" fileName="ModelUsagesFinder.java" startLine="57" startPosition="13" endLine="60" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4132059805486521632" fileName="ModelUsagesFinder.java" startLine="66" startPosition="110" endLine="69" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4132059805486521658" fileName="ModelUsagesFinder.java" startLine="71" startPosition="18" endLine="74" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4132059805486521676" fileName="ModelUsagesFinder.java" startLine="76" startPosition="61" endLine="79" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4132059805486521689" fileName="ModelUsagesFinder.java" startLine="80" startPosition="88" endLine="83" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4132059805486521695" fileName="ModelUsagesFinder.java" startLine="83" startPosition="13" endLine="86" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4132059805486521725" fileName="ModelUsagesFinder.java" startLine="93" startPosition="45" endLine="96" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4132059805486521732" fileName="ModelUsagesFinder.java" startLine="96" startPosition="9" endLine="99" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4132059805486521536" fileName="ModelUsagesFinder.java" startLine="106" startPosition="69" endLine="110" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4132059805486521624" fileName="ModelUsagesFinder.java" startLine="113" startPosition="70" endLine="117" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4132059805486521536" fileName="ModelUsagesFinder.java" startLine="106" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="as_s8v3jk_a0a0a0g0b#(Ljava/lang/Object;Ljava/lang/Class;)null" />
+    <nodeInfo nodeId="4132059805486521624" fileName="ModelUsagesFinder.java" startLine="113" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="as_s8v3jk_a0a0b0a6a1#(Ljava/lang/Object;Ljava/lang/Class;)null" />
+    <nodeInfo nodeId="4132059805486521718" fileName="ModelUsagesFinder.java" startLine="92" startPosition="0" endLine="101" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4132059805486521564" fileName="ModelUsagesFinder.java" startLine="49" startPosition="75" endLine="61" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4132059805486521671" fileName="ModelUsagesFinder.java" startLine="75" startPosition="70" endLine="87" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4132059805486521716" fileName="ModelUsagesFinder.java" startLine="90" startPosition="10" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4132059805486521557" fileName="ModelUsagesFinder.java" startLine="48" startPosition="9" endLine="62" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4132059805486521664" fileName="ModelUsagesFinder.java" startLine="74" startPosition="9" endLine="88" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4132059805486521532" fileName="ModelUsagesFinder.java" startLine="41" startPosition="54" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4132059805486521620" fileName="ModelUsagesFinder.java" startLine="65" startPosition="54" endLine="89" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4132059805486521525" fileName="ModelUsagesFinder.java" startLine="40" startPosition="58" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4132059805486521480" fileName="ModelUsagesFinder.java" startLine="33" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="find#(Ljetbrains/mps/ide/findusages/model/SearchQuery;Ljetbrains/mps/progress/ProgressMonitor;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
+    <scopeInfo nodeId="4132059805486521479" fileName="ModelUsagesFinder.java" startLine="30" startPosition="30" endLine="30" endPosition="30" />
+    <scopeInfo nodeId="4132059805486521548" fileName="ModelUsagesFinder.java" startLine="43" startPosition="35" endLine="44" endPosition="31" />
+    <scopeInfo nodeId="4132059805486521555" fileName="ModelUsagesFinder.java" startLine="46" startPosition="63" endLine="47" endPosition="19" />
+    <scopeInfo nodeId="4132059805486521574" fileName="ModelUsagesFinder.java" startLine="51" startPosition="80" endLine="52" endPosition="23" />
+    <scopeInfo nodeId="4132059805486521586" fileName="ModelUsagesFinder.java" startLine="55" startPosition="47" endLine="56" endPosition="23" />
+    <scopeInfo nodeId="4132059805486521593" fileName="ModelUsagesFinder.java" startLine="58" startPosition="62" endLine="59" endPosition="102" />
+    <scopeInfo nodeId="4132059805486521636" fileName="ModelUsagesFinder.java" startLine="67" startPosition="35" endLine="68" endPosition="31" />
+    <scopeInfo nodeId="4132059805486521662" fileName="ModelUsagesFinder.java" startLine="72" startPosition="58" endLine="73" endPosition="19" />
+    <scopeInfo nodeId="4132059805486521681" fileName="ModelUsagesFinder.java" startLine="77" startPosition="80" endLine="78" endPosition="23" />
+    <scopeInfo nodeId="4132059805486521693" fileName="ModelUsagesFinder.java" startLine="81" startPosition="47" endLine="82" endPosition="23" />
+    <scopeInfo nodeId="4132059805486521700" fileName="ModelUsagesFinder.java" startLine="84" startPosition="62" endLine="85" endPosition="102" />
+    <scopeInfo nodeId="4132059805486521729" fileName="ModelUsagesFinder.java" startLine="94" startPosition="35" endLine="95" endPosition="31" />
+    <scopeInfo nodeId="4132059805486521736" fileName="ModelUsagesFinder.java" startLine="97" startPosition="63" endLine="98" endPosition="19" />
+    <scopeInfo nodeId="4132059805486521476" fileName="ModelUsagesFinder.java" startLine="30" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="4132059805486521536" fileName="ModelUsagesFinder.java" startLine="106" startPosition="69" endLine="110" endPosition="6" />
+    <scopeInfo nodeId="4132059805486521624" fileName="ModelUsagesFinder.java" startLine="113" startPosition="70" endLine="117" endPosition="6" />
+    <scopeInfo nodeId="4132059805486521536" fileName="ModelUsagesFinder.java" startLine="106" startPosition="0" endLine="112" endPosition="0">
       <varInfo nodeId="4132059805486521536" varName="o" />
       <varInfo nodeId="4132059805486521536" varName="type" />
     </scopeInfo>
-    <scopeInfo nodeId="4132059805486521624" fileName="ModelUsagesFinder.java" startLine="109" startPosition="0" endLine="115" endPosition="0">
+    <scopeInfo nodeId="4132059805486521624" fileName="ModelUsagesFinder.java" startLine="113" startPosition="0" endLine="119" endPosition="0">
       <varInfo nodeId="4132059805486521624" varName="o" />
       <varInfo nodeId="4132059805486521624" varName="type" />
     </scopeInfo>
-    <scopeInfo nodeId="4132059805486521724" fileName="ModelUsagesFinder.java" startLine="87" startPosition="91" endLine="96" endPosition="9" />
-    <scopeInfo nodeId="4132059805486521568" fileName="ModelUsagesFinder.java" startLine="46" startPosition="61" endLine="56" endPosition="13">
-      <varInfo nodeId="4132059805486521577" varName="targetModelReference" />
-    </scopeInfo>
-    <scopeInfo nodeId="4132059805486521675" fileName="ModelUsagesFinder.java" startLine="72" startPosition="61" endLine="82" endPosition="13">
-      <varInfo nodeId="4132059805486521684" varName="targetModelReference" />
-    </scopeInfo>
-    <scopeInfo nodeId="4132059805486521717" fileName="ModelUsagesFinder.java" startLine="86" startPosition="12" endLine="97" endPosition="7" />
-    <scopeInfo nodeId="4132059805486521718" fileName="ModelUsagesFinder.java" startLine="86" startPosition="12" endLine="97" endPosition="7">
+    <scopeInfo nodeId="4132059805486521724" fileName="ModelUsagesFinder.java" startLine="93" startPosition="45" endLine="100" endPosition="121" />
+    <scopeInfo nodeId="4132059805486521718" fileName="ModelUsagesFinder.java" startLine="92" startPosition="0" endLine="101" endPosition="7">
       <varInfo nodeId="4132059805486521722" varName="modelDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="4132059805486521563" fileName="ModelUsagesFinder.java" startLine="45" startPosition="75" endLine="57" endPosition="11" />
-    <scopeInfo nodeId="4132059805486521564" fileName="ModelUsagesFinder.java" startLine="45" startPosition="75" endLine="57" endPosition="11">
+    <scopeInfo nodeId="4132059805486521568" fileName="ModelUsagesFinder.java" startLine="50" startPosition="61" endLine="60" endPosition="13">
+      <varInfo nodeId="4132059805486521577" varName="targetModelReference" />
+    </scopeInfo>
+    <scopeInfo nodeId="4132059805486521675" fileName="ModelUsagesFinder.java" startLine="76" startPosition="61" endLine="86" endPosition="13">
+      <varInfo nodeId="4132059805486521684" varName="targetModelReference" />
+    </scopeInfo>
+    <scopeInfo nodeId="4132059805486521717" fileName="ModelUsagesFinder.java" startLine="90" startPosition="12" endLine="101" endPosition="7">
+      <varInfo nodeId="1578360511943522178" varName="usages" />
+    </scopeInfo>
+    <scopeInfo nodeId="4132059805486521563" fileName="ModelUsagesFinder.java" startLine="49" startPosition="75" endLine="61" endPosition="11" />
+    <scopeInfo nodeId="4132059805486521564" fileName="ModelUsagesFinder.java" startLine="49" startPosition="75" endLine="61" endPosition="11">
       <varInfo nodeId="4132059805486521605" varName="reference" />
     </scopeInfo>
-    <scopeInfo nodeId="4132059805486521670" fileName="ModelUsagesFinder.java" startLine="71" startPosition="70" endLine="83" endPosition="11" />
-    <scopeInfo nodeId="4132059805486521671" fileName="ModelUsagesFinder.java" startLine="71" startPosition="70" endLine="83" endPosition="11">
+    <scopeInfo nodeId="4132059805486521670" fileName="ModelUsagesFinder.java" startLine="75" startPosition="70" endLine="87" endPosition="11" />
+    <scopeInfo nodeId="4132059805486521671" fileName="ModelUsagesFinder.java" startLine="75" startPosition="70" endLine="87" endPosition="11">
       <varInfo nodeId="4132059805486521712" varName="reference" />
     </scopeInfo>
-    <scopeInfo nodeId="4132059805486521557" fileName="ModelUsagesFinder.java" startLine="44" startPosition="9" endLine="58" endPosition="9">
+    <scopeInfo nodeId="4132059805486521557" fileName="ModelUsagesFinder.java" startLine="48" startPosition="9" endLine="62" endPosition="9">
       <varInfo nodeId="4132059805486521607" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4132059805486521664" fileName="ModelUsagesFinder.java" startLine="70" startPosition="9" endLine="84" endPosition="9">
+    <scopeInfo nodeId="4132059805486521664" fileName="ModelUsagesFinder.java" startLine="74" startPosition="9" endLine="88" endPosition="9">
       <varInfo nodeId="4132059805486521714" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4132059805486521543" fileName="ModelUsagesFinder.java" startLine="38" startPosition="123" endLine="58" endPosition="9" />
-    <scopeInfo nodeId="4132059805486521531" fileName="ModelUsagesFinder.java" startLine="37" startPosition="54" endLine="59" endPosition="7" />
-    <scopeInfo nodeId="4132059805486521532" fileName="ModelUsagesFinder.java" startLine="37" startPosition="54" endLine="59" endPosition="7">
+    <scopeInfo nodeId="4132059805486521543" fileName="ModelUsagesFinder.java" startLine="42" startPosition="123" endLine="62" endPosition="9" />
+    <scopeInfo nodeId="4132059805486521531" fileName="ModelUsagesFinder.java" startLine="41" startPosition="54" endLine="63" endPosition="7" />
+    <scopeInfo nodeId="4132059805486521532" fileName="ModelUsagesFinder.java" startLine="41" startPosition="54" endLine="63" endPosition="7">
       <varInfo nodeId="4132059805486521541" varName="modelDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="4132059805486521631" fileName="ModelUsagesFinder.java" startLine="62" startPosition="110" endLine="84" endPosition="9">
+    <scopeInfo nodeId="4132059805486521631" fileName="ModelUsagesFinder.java" startLine="66" startPosition="110" endLine="88" endPosition="9">
       <varInfo nodeId="4132059805486521640" varName="descriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="4132059805486521620" fileName="ModelUsagesFinder.java" startLine="61" startPosition="54" endLine="85" endPosition="7">
+    <scopeInfo nodeId="4132059805486521620" fileName="ModelUsagesFinder.java" startLine="65" startPosition="54" endLine="89" endPosition="7">
       <varInfo nodeId="4132059805486521629" varName="scopeModel" />
     </scopeInfo>
-    <scopeInfo nodeId="4132059805486521617" fileName="ModelUsagesFinder.java" startLine="60" startPosition="71" endLine="85" endPosition="7" />
-    <scopeInfo nodeId="4132059805486521487" fileName="ModelUsagesFinder.java" startLine="30" startPosition="73" endLine="99" endPosition="25">
+    <scopeInfo nodeId="4132059805486521617" fileName="ModelUsagesFinder.java" startLine="64" startPosition="71" endLine="89" endPosition="7" />
+    <scopeInfo nodeId="4132059805486521487" fileName="ModelUsagesFinder.java" startLine="34" startPosition="73" endLine="103" endPosition="25">
       <varInfo nodeId="4132059805486521494" varName="holder" />
       <varInfo nodeId="4132059805486521504" varName="model" />
       <varInfo nodeId="4132059805486521520" varName="modelReference" />
       <varInfo nodeId="4132059805486521489" varName="searchResults" />
     </scopeInfo>
-    <scopeInfo nodeId="4132059805486521480" fileName="ModelUsagesFinder.java" startLine="29" startPosition="0" endLine="101" endPosition="0">
+    <scopeInfo nodeId="4132059805486521480" fileName="ModelUsagesFinder.java" startLine="33" startPosition="0" endLine="105" endPosition="0">
       <varInfo nodeId="4132059805486521485" varName="monitor" />
       <varInfo nodeId="4132059805486521483" varName="query" />
     </scopeInfo>
-    <unitInfo nodeId="4132059805486521473" fileName="ModelUsagesFinder.java" startLine="25" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.ide.ui.finders.ModelUsagesFinder" />
+    <unitInfo nodeId="4132059805486521473" fileName="ModelUsagesFinder.java" startLine="29" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.ide.ui.finders.ModelUsagesFinder" />
   </root>
   <root nodeRef="r:50589489-29e2-47e3-84bb-6bbe4094b4ce(jetbrains.mps.ide.ui.finders)/4132059805486521762">
     <nodeInfo nodeId="4132059805486521765" fileName="LanguageUsagesFinder.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="USED_BY" />

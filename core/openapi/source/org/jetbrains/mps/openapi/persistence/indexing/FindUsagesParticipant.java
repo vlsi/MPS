@@ -17,6 +17,7 @@ package org.jetbrains.mps.openapi.persistence.indexing;
 
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.util.Consumer;
@@ -41,4 +42,9 @@ public interface FindUsagesParticipant {
    * Finds instances of the provided concepts in the scope.
    */
   void findInstances(Collection<SModel> scope, Set<SConcept> concepts, Consumer<SNode> consumer, Consumer<SModel> processedConsumer);
+
+  /**
+   * Finds models referencing the provided set of models in the scope.
+   */
+  void findModelUsages(Collection<SModel> scope, Set<SModelReference> modelReferences, Consumer<SModel> consumer, Consumer<SModel> processedConsumer);
 }

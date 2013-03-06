@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.extapi.model.GeneratableSModel;
+import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.findUsages.fastfind.FastFindSupport;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportProvider;
@@ -86,10 +87,10 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
   }
 
   @Override
-  public final jetbrains.mps.smodel.SModel getSModel() {
+  public final DefaultSModel getSModel() {
     synchronized (myModel) {
       ModelLoadingState oldState = myModel.getState();
-      jetbrains.mps.smodel.SModel res = myModel.getModel(ModelLoadingState.ROOTS_LOADED);
+      DefaultSModel res = myModel.getModel(ModelLoadingState.ROOTS_LOADED);
       if (res == null) return null; // this is when we are in recursion
       res.setModelDescriptor(this);
       if (oldState != myModel.getState()) {
@@ -97,6 +98,16 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
       }
       return res;
     }
+  }
+
+  @Override
+  public void replace(SModelData modelData) {
+    ModelAccess.assertLegalWrite();
+
+    if (!(modelData instanceof DefaultSModel)) {
+      throw new IllegalArgumentException();
+    }
+    replaceModel((DefaultSModel) modelData, ModelLoadingState.FULLY_LOADED);
   }
 
   @Override

@@ -42,7 +42,6 @@ import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProjectMigrationState;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -400,7 +399,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     }
 
     private List<String> getModelPaths() {
-      return new ModelPersistenceDetector(myProject).getModelsWithPersistenceVersionAtMost(ModelPersistenceDetector.OLD_VERSION);
+      return new ModelPersistenceDetector(myProject).getModelsWhichNeedUpgrade();
     }
   }
 
@@ -958,8 +957,6 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
   private static class ModelPersistenceDetector {
 
-    private static final int OLD_VERSION = ModelPersistence.LAST_VERSION - 1;
-
     private final Project myProject;
 
     public ModelPersistenceDetector(Project project) {
@@ -967,10 +964,10 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     }
 
     public boolean hasModelsInOldPersistence() {
-      return getModelsWithPersistenceVersionAtMost(OLD_VERSION).size() > 0;
+      return getModelsWhichNeedUpgrade().size() > 0;
     }
 
-    public List<String> getModelsWithPersistenceVersionAtMost(final int version) {
+    public List<String> getModelsWhichNeedUpgrade() {
       final List<String> result = new ArrayList<String>();
       final MPSProject mpsProject = myProject.getComponent(MPSProject.class);
       ModelAccess.instance().runReadAction(new Runnable() {

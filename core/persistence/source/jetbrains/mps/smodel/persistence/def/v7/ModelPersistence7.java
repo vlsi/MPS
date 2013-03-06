@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.persistence.def.v7;
 
 import jetbrains.mps.smodel.SModelHeader;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.IHashProvider;
@@ -74,9 +75,10 @@ public class ModelPersistence7 extends ModelPersistence6 {
 
   private static final String TARGET_NODE_ID_PREFIX = "targetNodeId=\"";
   private static final String TYPE_PREFIX = "type=\"";
+  private static final String MODEL_UID_PREFIX = "modelUID=\"";
 
   private void processWord(char[] chars, int charsLength, int offset, int len, Consumer<String> consumer) {
-    if (chars[offset + len] != '=' || chars[offset] != 't') {
+    if (chars[offset + len] != '=' || chars[offset] != 't' && chars[offset] != 'm') {
       return; // optimization: ignore
     }
 
@@ -104,6 +106,14 @@ public class ModelPersistence7 extends ModelPersistence6 {
       offset = start + 1;
       if (end > offset) {
         consumer.consume(JDOMUtil.unescapeText(new String(chars, offset, end - offset)));
+      }
+    } else if (contains(chars, charsLength, offset, MODEL_UID_PREFIX)) {
+      // check pattern "modelUID=\"(.+?)\""
+      offset += MODEL_UID_PREFIX.length();
+      int end = indexOfClosingQuote(chars, charsLength, offset);
+      if (end > offset) {
+        String modelRef = JDOMUtil.unescapeText(new String(chars, offset, end - offset));
+        consumer.consume(SModelReference.fromString(modelRef).getModelName());
       }
     }
   }
