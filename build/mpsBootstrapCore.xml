@@ -2843,7 +2843,6 @@
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/core/openapi/source" />
-        <pathelement path="${mps_home}/core/runtime/source" />
         <pathelement path="${mps_home}/core/kernel/source" />
         <pathelement path="${mps_home}/core/kernel/source_gen" />
         <pathelement path="${mps_home}/core/kernel/dataFlowRuntime/source" />
@@ -2912,7 +2911,6 @@
     <javac2 destdir="${build.tmp}/java/out/mps-core" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <pathelement path="${mps_home}/core/runtime/source" />
         <pathelement path="${mps_home}/core/kernel/source" />
         <pathelement path="${mps_home}/core/kernel/source_gen" />
         <pathelement path="${mps_home}/core/kernel/dataFlowRuntime/source" />
@@ -2951,7 +2949,6 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/mps-core">
-      <fileset dir="${mps_home}/core/runtime/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/kernel/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/kernel/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/kernel/dataFlowRuntime/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
