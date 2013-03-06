@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="78kobzxuvotxl820wxuxo1yijhmcmy0">
+<dependencies version="2" modelHash="20mexgk2scvbrh1qq5h6o0t50ibyaul">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
   <common hash="-4ielr9er6m8170d30ijl6efkyr5i38d" />
-  <source id="7314351270975463225" name="DiskMemoryConflictsTest" hash="day026f1nsmgz958qlpf7glrf58sve0">
+  <source id="7314351270975463225" name="DiskMemoryConflictsTest" hash="1oathy0ce62xwh3knnsn2vub0immh1d">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="DiskMemoryConflictsTest.java" />
   </source>
