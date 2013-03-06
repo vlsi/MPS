@@ -10,7 +10,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -43,14 +43,14 @@ public class QuickFixForClassCreator_QuickFix extends QuickFix_Runtime {
     return null;
   }
 
-  private static SModelInternal check_8brg4q_a0a1a0a0(org.jetbrains.mps.openapi.model.SModel checkedDotOperand) {
+  private static SModelInternal check_8brg4q_a0a1a0a0(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }
 
-  private static org.jetbrains.mps.openapi.model.SModel check_8brg4q_a0a0b0a0a(SNode checkedDotOperand) {
+  private static SModel check_8brg4q_a0a0b0a0a(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModel();
     }
