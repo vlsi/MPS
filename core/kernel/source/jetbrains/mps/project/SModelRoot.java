@@ -27,7 +27,6 @@ import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.InvalidModelRootManager;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.persistence.Memento;
 
@@ -110,7 +109,7 @@ public class SModelRoot extends FolderModelRootBase {
 
   @Override
   public boolean canCreateModels() {
-    return getModule().isPackaged() || !getManager().canCreateModel(this, null);
+    return !getModule().isPackaged() || getManager().canCreateModel(this, null);
   }
 
   @Override
