@@ -2548,7 +2548,7 @@ parametersLoop:
       SModel originalModel = _context.getOriginalInputModel();
       String modelId = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix") ?
         jetbrains.mps.util.SNodeOperations.getModelLongName(originalModel) :
-        originalModel.toString()
+        originalModel.getReference().toString()
       );
       String nodeId = _context.getOriginalCopiedInputNode(node).getNodeId().toString();
       SNode annotation = AttributeOperations.createAndSetAttrbiute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.OriginalNodeId")), "jetbrains.mps.lang.typesystem.structure.OriginalNodeId");
