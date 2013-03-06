@@ -13,6 +13,7 @@ import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.diff.DiffProvider;
 import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import com.intellij.openapi.vcs.changes.ContentRevision;
+import com.intellij.openapi.vcs.changes.BinaryContentRevision;
 import com.intellij.openapi.vcs.VcsException;
 import jetbrains.mps.logging.Logger;
 
@@ -25,7 +26,7 @@ public class BaseVersionUtil {
   }
 
   @Nullable
-  public static String getBaseVersionContent(@NotNull VirtualFile file, @NotNull Project project) {
+  public static Object getBaseVersionContent(@NotNull VirtualFile file, @NotNull Project project) {
     if (ModelAccess.instance().canRead()) {
       LOG.error("BaseVersionUtil.getBaseVersionContent() is invoked from read action: possible deadlock", new IllegalStateException());
     }
@@ -45,6 +46,9 @@ public class BaseVersionUtil {
       ContentRevision revision = diffProvider.createFileContent(revisionNumber, file);
       if (revision == null) {
         return null;
+      }
+      if (revision instanceof BinaryContentRevision) {
+        return ((BinaryContentRevision) revision).getBinaryContent();
       }
       return revision.getContent();
     } catch (VcsException ex) {

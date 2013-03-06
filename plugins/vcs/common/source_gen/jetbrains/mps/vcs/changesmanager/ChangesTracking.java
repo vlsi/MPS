@@ -33,13 +33,12 @@ import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.vcs.platform.util.ConflictsUtil;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.smodel.persistence.def.ModelReadException;
+import jetbrains.mps.persistence.PersistenceUtil;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
 import jetbrains.mps.vcs.diff.ChangeSetImpl;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.IterableUtil;
@@ -191,17 +190,36 @@ public class ChangesTracking {
     if (BaseVersionUtil.isAddedFileStatus(status) || ConflictsUtil.isModelOrModuleConflicting(myModelDescriptor, myProject)) {
       baseVersionModel.value = new jetbrains.mps.smodel.SModel(myModelDescriptor.getSModelReference());
     } else {
-      String content = BaseVersionUtil.getBaseVersionContent(modelVFile, myProject);
+      Object content = BaseVersionUtil.getBaseVersionContent(modelVFile, myProject);
       if (content == null && status != FileStatus.NOT_CHANGED) {
         LOG.error("Base version content is null while file status is " + status);
       }
       if (content == null) {
         return;
       }
-      try {
-        baseVersionModel.value = ModelPersistence.readModel(content, false);
-      } catch (ModelReadException e) {
-        LOG.warning("", e);
+      String ext = modelVFile.getExtension();
+      SModel md = (content instanceof String ?
+        PersistenceUtil.loadModel((String) content, ext) :
+        PersistenceUtil.loadModel((byte[]) content, ext)
+      );
+      if (md == null) {
+        return;
+      }
+      baseVersionModel.value = md.getSModel();
+
+      if (Sequence.fromIterable(((Iterable<SModel.Problem>) md.getProblems())).any(new IWhereFilter<SModel.Problem>() {
+        public boolean accept(SModel.Problem it) {
+          return it.isError();
+        }
+      })) {
+        StringBuilder sb = new StringBuilder();
+        for (SModel.Problem p : Sequence.fromIterable((Iterable<SModel.Problem>) md.getProblems())) {
+          sb.append((p.isError() ?
+            "error: " :
+            "warn: "
+          )).append(p.getText()).append("\n");
+        }
+        LOG.warning(sb.toString());
         return;
       }
     }
