@@ -24,7 +24,7 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.debugger.java.api.evaluation.EvaluationException;
-import jetbrains.mps.project.ClassLoadingModule;
+import jetbrains.mps.classloading.ClassLoadingModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.debugger.java.api.evaluation.Evaluator;
 import jetbrains.mps.smodel.CopyUtil;

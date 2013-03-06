@@ -8,8 +8,8 @@ import java.util.HashMap;
 import jetbrains.mps.ypath.design.IFeatureDesign;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.runtime.IClassLoadingModule;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.classloading.IClassLoadingModule;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 
 public class DesignPartLoader {

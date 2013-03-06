@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.runtime;
+package jetbrains.mps.util;
 
 import java.security.CodeSource;
 import java.security.ProtectionDomain;

@@ -13,7 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.lang.reflect.Method;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.runtime.IClassLoadingModule;
+import jetbrains.mps.classloading.IClassLoadingModule;
 import jetbrains.mps.logging.Logger;
 
 public class ExecuteCalculator_Action extends BaseAction {

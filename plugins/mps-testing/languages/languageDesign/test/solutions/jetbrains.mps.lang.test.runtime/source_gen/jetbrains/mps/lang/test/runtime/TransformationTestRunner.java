@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import java.util.Arrays;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.runtime.IClassLoadingModule;
+import jetbrains.mps.classloading.IClassLoadingModule;
 import java.awt.GraphicsEnvironment;
 import java.awt.Toolkit;
 import java.util.Map;

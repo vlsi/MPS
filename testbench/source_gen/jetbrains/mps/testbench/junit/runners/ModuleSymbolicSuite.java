@@ -12,7 +12,7 @@ import org.junit.runner.Description;
 import org.junit.runner.notification.RunNotifier;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.runtime.IClassLoadingModule;
+import jetbrains.mps.classloading.IClassLoadingModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.project.facets.JavaModuleOperations;

@@ -30,7 +30,7 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.runtime.IClassLoadingModule;
+import jetbrains.mps.classloading.IClassLoadingModule;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;

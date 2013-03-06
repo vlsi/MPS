@@ -17,7 +17,7 @@ package jetbrains.mps.typesystem;
 
 import jetbrains.mps.checkers.CheckersComponent;
 import jetbrains.mps.components.ComponentPlugin;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeContextManager;

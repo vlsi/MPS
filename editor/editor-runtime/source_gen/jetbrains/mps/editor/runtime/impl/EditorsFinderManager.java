@@ -6,7 +6,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import java.util.Map;
 import java.lang.reflect.Constructor;
 import jetbrains.mps.internal.collections.runtime.MapSequence;

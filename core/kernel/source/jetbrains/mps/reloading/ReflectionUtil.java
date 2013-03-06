@@ -16,7 +16,7 @@
 package jetbrains.mps.reloading;
 
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.runtime.IClassLoadingModule;
+import jetbrains.mps.classloading.IClassLoadingModule;
 import jetbrains.mps.util.JavaNameUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 

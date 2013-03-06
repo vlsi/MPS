@@ -17,7 +17,6 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.extapi.persistence.ModelRootBase;
-import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.MementoImpl;
@@ -32,9 +31,9 @@ import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.project.persistence.ModuleReadException;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.*;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.runtime.IClassLoadingModule;
+import jetbrains.mps.classloading.IClassLoadingModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -870,7 +869,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   }
 
   /**
-   * @see jetbrains.mps.runtime.IClassLoadingModule#canLoad()
+   * @see jetbrains.mps.classloading.IClassLoadingModule#canLoad()
    */
   @Override
   @Deprecated
@@ -879,7 +878,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   }
 
   /**
-   * @see jetbrains.mps.runtime.IClassLoadingModule#canLoad()
+   * @see jetbrains.mps.classloading.IClassLoadingModule#canLoad()
    */
   @Deprecated
   @Override

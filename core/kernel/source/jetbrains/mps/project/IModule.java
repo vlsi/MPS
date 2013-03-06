@@ -201,13 +201,13 @@ public interface IModule extends SModule {
   // IClassLoadingModule part. Use module.getFacet(IClassLoadingModule).{method}
 
   /**
-   * @see jetbrains.mps.runtime.IClassLoadingModule#getClass(String)
+   * @see jetbrains.mps.classloading.IClassLoadingModule#getClass(String)
    */
   @Deprecated
   Class getClass(String className);
 
   /**
-   * @see jetbrains.mps.runtime.IClassLoadingModule#canLoad()
+   * @see jetbrains.mps.classloading.IClassLoadingModule#canLoad()
    */
   @Deprecated
   boolean reloadClassesAfterGeneration();

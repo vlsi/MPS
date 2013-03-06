@@ -13,14 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.runtime;
+package jetbrains.mps.classloading;
 
 import gnu.trove.THashMap;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.ClassLoadingModule;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.ProtectionDomainUtil;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.IOException;

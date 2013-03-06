@@ -22,8 +22,8 @@ import jetbrains.mps.project.dependency.modules.GeneratorDependenciesManager;
 import jetbrains.mps.project.dependency.modules.ModuleDependenciesManager;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.project.structure.modules.mappingpriorities.*;
-import jetbrains.mps.runtime.IClassLoadingModule;
-import jetbrains.mps.runtime.ModuleClassLoader;
+import jetbrains.mps.classloading.IClassLoadingModule;
+import jetbrains.mps.classloading.ModuleClassLoader;
 import jetbrains.mps.vfs.IFile;
 
 import java.net.URL;

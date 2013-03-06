@@ -30,7 +30,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.PathMacros;
 import jetbrains.mps.project.structure.LanguageDescriptorModelProvider;
 import jetbrains.mps.project.structure.ProjectStructureModule;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.ImmatureReferences;

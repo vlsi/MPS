@@ -13,17 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;
+package jetbrains.mps.classloading;
 
 import gnu.trove.THashSet;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.runtime.IClassLoadingModule;
-import jetbrains.mps.runtime.ModuleClassLoader;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.vfs.IFile;
 
