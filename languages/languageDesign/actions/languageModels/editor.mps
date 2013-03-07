@@ -105,10 +105,6 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="menuBuilderParts" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpdg.1197454626277" resolveInfo="RemoveSTByConditionPart" />
     </node>
-    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1197933062682">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="menuBuilderParts" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpdg.1177323240852" resolveInfo="MenuBuilderPart" />
-    </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1199902725181">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="menuParts.Substitute" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpdg.1199902626702" resolveInfo="GenericSubstituteMenuPart" />
@@ -369,8 +365,8 @@
         <property name="vertical" nameId="tpc2.1073389446425" value="false" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="1112119223812">
           <property name="vertical" nameId="tpc2.1140524450554" value="true" />
-          <property name="separatorText" nameId="tpc2.1140524450557" value="----------" />
           <property name="gridLayout" nameId="tpc2.1140524450555" value="true" />
+          <property name="separatorText" nameId="tpc2.1140524450557" value="----------" />
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpdg.1112058057696" />
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="1214310996136">
             <property name="flag" nameId="tpc2.1186414551515" value="false" />
@@ -609,8 +605,8 @@
         <property name="vertical" nameId="tpc2.1073389446425" value="false" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="1138079516426">
           <property name="vertical" nameId="tpc2.1140524450554" value="true" />
-          <property name="gridLayout" nameId="tpc2.1140524450555" value="true" />
           <property name="separatorText" nameId="tpc2.1140524450557" value="----------" />
+          <property name="gridLayout" nameId="tpc2.1140524450555" value="true" />
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpdg.1138079416599" />
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="1214310995002">
             <property name="flag" nameId="tpc2.1186414551515" value="false" />
@@ -1795,11 +1791,6 @@
         <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="1239880240617" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Vertical" typeId="tpc2.1106270571710" id="1239880240633" />
-    </node>
-  </root>
-  <root id="1197933062682">
-    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Error" typeId="tpc2.1075375595203" id="1197933065153">
-      <property name="text" nameId="tpc2.1075375595204" value="menu builder part" />
     </node>
   </root>
   <root id="1199902725181">

@@ -95,13 +95,6 @@
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="node setup function" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
-    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1177323240852">
-      <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
-      <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="MenuBuilderPart" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="menuBuilderParts" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1177323652379">
       <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
@@ -151,7 +144,6 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="ConceptPart" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="menuBuilderParts" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1177323240852" resolveInfo="MenuBuilderPart" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1177335944525">
       <property name="name" nameId="tpck.1169194664001" value="QueryFunction_SubstituteString" />
@@ -231,7 +223,6 @@
       <property name="name" nameId="tpck.1169194664001" value="RemovePart" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="menuBuilderParts" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="remove concept" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1177323240852" resolveInfo="MenuBuilderPart" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1177413882405">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
@@ -239,7 +230,6 @@
       <property name="name" nameId="tpck.1169194664001" value="RemoveByConditionPart" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="menuBuilderParts" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="remove by condition" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1177323240852" resolveInfo="MenuBuilderPart" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1177413954598">
       <property name="name" nameId="tpck.1169194664001" value="QueryFunction_RemoveBy_Condition" />
@@ -352,7 +342,6 @@
       <property name="name" nameId="tpck.1169194664001" value="RemoveDefaultsPart" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="menuBuilderParts" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="remove defaults" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1177323240852" resolveInfo="MenuBuilderPart" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1177768753302">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
@@ -396,7 +385,6 @@
       <property name="name" nameId="tpck.1169194664001" value="IncludeRightTransformForNodePart" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="menuBuilderParts.RightTransform" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="include transform for" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1177323240852" resolveInfo="MenuBuilderPart" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1180134965967">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
@@ -404,7 +392,6 @@
       <property name="name" nameId="tpck.1169194664001" value="ConceptSubstitutePart" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="menuBuilderParts.Substitute" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="add concept" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1177323240852" resolveInfo="MenuBuilderPart" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1182819125053">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
@@ -412,7 +399,6 @@
       <property name="name" nameId="tpck.1169194664001" value="ConceptRightTransformPart" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="menuBuilderParts.RightTransform" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="add concept" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1177323240852" resolveInfo="MenuBuilderPart" />
     </node>
     <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="1196433731217">
       <property name="name" nameId="tpck.1169194664001" value="ISideTransform_String" />
@@ -448,7 +434,6 @@
       <property name="name" nameId="tpck.1169194664001" value="RemoveSTByConditionPart" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="menuBuilderParts" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="remove by condition" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1177323240852" resolveInfo="MenuBuilderPart" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1199902626702">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
@@ -832,6 +817,14 @@
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="enclosingNode" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
     </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="8372849190626007445">
+      <property name="name" nameId="tpck.1169194664001" value="SideTransformMenuBuilderPart" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="menuBuilderParts" />
+    </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="8372849190626008398">
+      <property name="name" nameId="tpck.1169194664001" value="NodeSubstituteMenuBuilderPart" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="menuBuilderParts" />
+    </node>
   </roots>
   <root id="1112056943463">
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1173470386323">
@@ -867,7 +860,7 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="part" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1177323240852" resolveInfo="MenuBuilderPart" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="8372849190626008398" resolveInfo="NodeSubstituteMenuBuilderPart" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1178540170602">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -909,7 +902,7 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="part" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1177323240852" resolveInfo="MenuBuilderPart" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="8372849190626007445" resolveInfo="SideTransformMenuBuilderPart" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1203347873675">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -1016,9 +1009,15 @@
     </node>
   </root>
   <root id="1158701162220" />
-  <root id="1177323240852" />
   <root id="1177323652379" />
-  <root id="1177323996388" />
+  <root id="1177323996388">
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="8372849190626014051">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="8372849190626008398" resolveInfo="NodeSubstituteMenuBuilderPart" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="8372849190626014705">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="8372849190626007445" resolveInfo="SideTransformMenuBuilderPart" />
+    </node>
+  </root>
   <root id="1177327161126">
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1177327222295">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137545148427" resolveInfo="conceptFunctionReturnType" />
@@ -1190,6 +1189,12 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpce.1071489090640" resolveInfo="ConceptDeclaration" />
     </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="8372849190626014376">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="8372849190626008398" resolveInfo="NodeSubstituteMenuBuilderPart" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="8372849190626015036">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="8372849190626007445" resolveInfo="SideTransformMenuBuilderPart" />
+    </node>
   </root>
   <root id="1177413882405">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1177414109676">
@@ -1198,8 +1203,8 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1177413954598" resolveInfo="QueryFunction_RemoveBy_Condition" />
     </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1262430001741703557">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="8372849190626013726">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="8372849190626008398" resolveInfo="NodeSubstituteMenuBuilderPart" />
     </node>
   </root>
   <root id="1177413954598">
@@ -1323,8 +1328,8 @@
     </node>
   </root>
   <root id="1177614709184">
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1262430001741718285">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="8372849190626008721">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="8372849190626008398" resolveInfo="NodeSubstituteMenuBuilderPart" />
     </node>
   </root>
   <root id="1177768753302">
@@ -1375,8 +1380,8 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1178537049112" resolveInfo="QueryFunction_SideTransform_NodeQuery" />
     </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1262430001741719849">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="8372849190626015368">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="8372849190626007445" resolveInfo="SideTransformMenuBuilderPart" />
     </node>
   </root>
   <root id="1180134965967">
@@ -1385,8 +1390,8 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpce.1071489090640" resolveInfo="ConceptDeclaration" />
     </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1262430001741647107">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="8372849190626013399">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="8372849190626008398" resolveInfo="NodeSubstituteMenuBuilderPart" />
     </node>
   </root>
   <root id="1182819125053">
@@ -1406,8 +1411,8 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1177526592562" resolveInfo="QueryFunction_SideTransform_ConceptHandler" />
     </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1262430001741498867">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="8372849190626015701">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="8372849190626007445" resolveInfo="SideTransformMenuBuilderPart" />
     </node>
   </root>
   <root id="1196433731217" />
@@ -1446,8 +1451,8 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1197454418909" resolveInfo="QueryFunction_ST_RemoveBy_Condition" />
     </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1262430001741647088">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="8372849190626016035">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="8372849190626007445" resolveInfo="SideTransformMenuBuilderPart" />
     </node>
   </root>
   <root id="1199902626702">
@@ -1809,5 +1814,7 @@
       <node role="target" roleId="tpce.1105736901241" type="tp25.SNodeType" typeId="tp25.1138055754698" id="5584396657084920684" />
     </node>
   </root>
+  <root id="8372849190626007445" />
+  <root id="8372849190626008398" />
 </model>
 

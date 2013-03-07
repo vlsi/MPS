@@ -7526,27 +7526,7 @@
     </scopeInfo>
     <unitInfo nodeId="1197454664800" fileName="RemoveSTByConditionPart_Editor.java" startLine="21" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.actions.editor.RemoveSTByConditionPart_Editor" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902a5(jetbrains.mps.lang.actions.editor)/1197933062682">
-    <nodeInfo nodeId="1197933062682" fileName="MenuBuilderPart_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197933065153" fileName="MenuBuilderPart_Editor.java" startLine="16" startPosition="84" endLine="17" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197933065153" fileName="MenuBuilderPart_Editor.java" startLine="17" startPosition="97" endLine="18" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1197933065153" fileName="MenuBuilderPart_Editor.java" startLine="18" startPosition="43" endLine="19" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197933062682" fileName="MenuBuilderPart_Editor.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1197933065153" fileName="MenuBuilderPart_Editor.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createError_yx9opa_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <scopeInfo nodeId="1197933062682" fileName="MenuBuilderPart_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="58" />
-    <scopeInfo nodeId="1197933062682" fileName="MenuBuilderPart_Editor.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="1197933062682" varName="editorContext" />
-      <varInfo nodeId="1197933062682" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1197933065153" fileName="MenuBuilderPart_Editor.java" startLine="16" startPosition="84" endLine="19" endPosition="22">
-      <varInfo nodeId="1197933065153" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="1197933065153" fileName="MenuBuilderPart_Editor.java" startLine="16" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="1197933065153" varName="editorContext" />
-      <varInfo nodeId="1197933065153" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="1197933062682" fileName="MenuBuilderPart_Editor.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.actions.editor.MenuBuilderPart_Editor" />
-  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902a5(jetbrains.mps.lang.actions.editor)/1197933062682" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a5(jetbrains.mps.lang.actions.editor)/1199902725181">
     <nodeInfo nodeId="1199902725181" fileName="GenericSubstituteMenuPart_Editor.java" startLine="23" startPosition="79" endLine="24" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1199902725181" fileName="GenericSubstituteMenuPart_Editor.java" startLine="27" startPosition="89" endLine="28" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
