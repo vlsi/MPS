@@ -194,7 +194,7 @@ public class ChildSubstituteActionsHelper {
   }
 
   /**
-   * TODO: remove this method adter MPS 3.0
+   * TODO: remove this method after MPS 3.0
    *
    * @deprecated since MPS 3.0, createDefaultSubstituteActions() should be used instead
    */

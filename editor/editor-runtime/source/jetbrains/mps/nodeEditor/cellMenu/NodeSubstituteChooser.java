@@ -21,8 +21,8 @@ import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBList;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.MPSCore;
-import jetbrains.mps.actions.runtime.impl.NodeIconUtil;
 import jetbrains.mps.editor.runtime.impl.NodeSubstituteActionsComparator;
+import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.CellSide;
@@ -36,6 +36,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
@@ -43,6 +44,7 @@ import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.WindowsUtil;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -787,7 +789,12 @@ public class NodeSubstituteChooser implements KeyboardHandler {
           }
           if (icon == null) {
             SNode iconNode = action.getIconNode();
-            icon = iconNode != null ? NodeIconUtil.getIcon(iconNode, action.isReferentPresentation()) : IdeIcons.DEFAULT_ICON;
+            if (iconNode != null) {
+              icon = (SNodeUtil.isInstanceOfConceptDeclaration(iconNode) && !(action.isReferentPresentation())) ?
+                  IconManager.getIconForConceptFQName(NameUtil.nodeFQName(iconNode)) : IconManager.getIconFor(iconNode);
+            } else {
+              icon = IdeIcons.DEFAULT_ICON;
+            }
           }
           myLeft.setIcon(icon);
         } catch (Throwable t) {

@@ -64,7 +64,7 @@
   <unitInfo fileName="PasteWrappers_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.PasteWrappers_BehaviorDescriptor" />
   <unitInfo fileName="QueryFunction_ActionType_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_ActionType_BehaviorDescriptor" />
   <unitInfo fileName="QueryFunction_CanSubstitute_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_CanSubstitute_BehaviorDescriptor" />
-  <unitInfo fileName="QueryFunction_GenericSubstituteMenuPart_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_GenericSubstituteMenuPart_BehaviorDescriptor" />
+  <unitInfo fileName="QueryFunction_GenericSubstituteMenuPart_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_GenericSubstituteMenuPart_BehaviorDescriptor" />
   <unitInfo fileName="QueryFunction_ParameterizedSideTransform_Handler_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_ParameterizedSideTransform_Handler_BehaviorDescriptor" />
   <unitInfo fileName="QueryFunction_ParameterizedSideTransform_Query_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_ParameterizedSideTransform_Query_BehaviorDescriptor" />
   <unitInfo fileName="QueryFunction_ParameterizedSubstitute_Handler_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_ParameterizedSubstitute_Handler_BehaviorDescriptor" />
@@ -1467,32 +1467,57 @@
     <unitInfo nodeId="1262430001741718908" fileName="QueryFunction_SideTransform_NodeQuery_Behavior.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_SideTransform_NodeQuery_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1262430001741718926">
-    <nodeInfo nodeId="1262430001741718924" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="16" startPosition="95" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914720307" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="20" startPosition="117" endLine="21" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914720322" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="21" startPosition="261" endLine="22" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914720327" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="22" startPosition="167" endLine="23" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914720332" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="23" startPosition="167" endLine="24" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914720337" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="24" startPosition="167" endLine="25" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914720342" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="25" startPosition="174" endLine="26" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914720346" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="26" startPosition="167" endLine="27" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741718926" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1262430001741718926" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_usesParameterObject_1262430001741497984#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
-    <nodeInfo nodeId="1262430001741718926" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="20" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
-    <scopeInfo nodeId="1262430001741718928" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="1262430001741718923" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="16" startPosition="95" endLine="17" endPosition="16" />
-    <scopeInfo nodeId="1262430001741718926" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
+    <nodeInfo nodeId="1262430001741718924" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="21" startPosition="95" endLine="22" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6012793257439815147" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="25" startPosition="81" endLine="26" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6012793257439817961" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="26" startPosition="71" endLine="27" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6012793257439856594" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="27" startPosition="166" endLine="28" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6012793257439857351" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="28" startPosition="165" endLine="29" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6012793257439858340" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="29" startPosition="164" endLine="30" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6012793257439859060" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="30" startPosition="177" endLine="31" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6012793257439815169" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="31" startPosition="171" endLine="32" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6012793257439791023" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="35" startPosition="83" endLine="36" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6012793257439791038" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="39" startPosition="60" endLine="40" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6012793257439791038" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="40" startPosition="30" endLine="41" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6012793257439791038" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="41" startPosition="30" endLine="42" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6012793257439791038" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="42" startPosition="171" endLine="43" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6012793257439791038" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="43" startPosition="165" endLine="44" endPosition="304" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6012793257439791038" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="44" startPosition="304" endLine="45" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6012793257439791038" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="45" startPosition="55" endLine="46" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741718926" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1262430001741718926" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_usesParameterObject_1262430001741497984#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
+    <nodeInfo nodeId="1262430001741718926" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="6012793257439791038" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="42" startPosition="171" endLine="45" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6012793257439791038" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="42" startPosition="171" endLine="45" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6012793257439791038" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="41" startPosition="30" endLine="45" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6012793257439791038" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="41" startPosition="30" endLine="45" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1262430001741718926" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="25" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getParameters_1213877374450#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+    <nodeInfo nodeId="6012793257439791038" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="39" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_ynjj1y_a0a2#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="1262430001741718928" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="18" startPosition="43" endLine="18" endPosition="43" />
+    <scopeInfo nodeId="1262430001741718923" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="21" startPosition="95" endLine="22" endPosition="16" />
+    <scopeInfo nodeId="6012793257439764874" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="35" startPosition="83" endLine="36" endPosition="47" />
+    <scopeInfo nodeId="1262430001741718926" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="18" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="1262430001741718926" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741718926" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
+    <scopeInfo nodeId="1262430001741718926" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="1262430001741718926" varName="thisConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914720306" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="20" startPosition="117" endLine="27" endPosition="18">
-      <varInfo nodeId="3044950653914720308" varName="result" />
+    <scopeInfo nodeId="1262430001741718926" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="35" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="1262430001741718926" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741718926" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="20" startPosition="0" endLine="29" endPosition="0">
-      <varInfo nodeId="1262430001741718926" varName="thisConcept" />
+    <scopeInfo nodeId="6012793257439791038" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="42" startPosition="171" endLine="45" endPosition="55" />
+    <scopeInfo nodeId="6012793257439791038" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="41" startPosition="30" endLine="45" endPosition="55" />
+    <scopeInfo nodeId="6012793257439758434" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="25" startPosition="81" endLine="32" endPosition="18">
+      <varInfo nodeId="6012793257439815148" varName="result" />
     </scopeInfo>
-    <unitInfo nodeId="1262430001741718926" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_GenericSubstituteMenuPart_Behavior" />
+    <scopeInfo nodeId="6012793257439791038" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="39" startPosition="60" endLine="46" endPosition="24">
+      <varInfo nodeId="6012793257439791038" varName="quotedNode_1" />
+      <varInfo nodeId="6012793257439791038" varName="quotedNode_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741718926" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="25" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="1262430001741718926" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="6012793257439791038" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="39" startPosition="0" endLine="48" endPosition="0" />
+    <unitInfo nodeId="1262430001741718926" fileName="QueryFunction_GenericSubstituteMenuPart_Behavior.java" startLine="17" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_GenericSubstituteMenuPart_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1262430001741719785">
     <nodeInfo nodeId="1262430001741719783" fileName="NF_Model_CreateNewNodeOperation_Behavior.java" startLine="12" startPosition="93" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
