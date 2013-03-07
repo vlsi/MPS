@@ -17,10 +17,12 @@ package jetbrains.mps.openapi.editor.cells;
 
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.style.Style;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collection;
+import java.util.List;
 
 /**
  * evgeny, 11/17/11
@@ -135,6 +137,8 @@ public interface EditorCell {
   void setAction(CellActionType type, CellAction action);
 
   Collection<CellActionType> getAvailableActions();
+
+  List<SimpleEditorMessage> getMessages();
 
   void setSubstituteInfo(SubstituteInfo info);
 

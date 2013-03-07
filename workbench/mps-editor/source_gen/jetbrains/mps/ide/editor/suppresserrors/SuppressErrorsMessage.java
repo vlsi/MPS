@@ -5,7 +5,7 @@ package jetbrains.mps.ide.editor.suppresserrors;
 import jetbrains.mps.editor.runtime.AbstractLeftEditorHighlighterMessage;
 import jetbrains.mps.nodeEditor.EditorMessageIconRenderer;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.EditorMessageOwner;
+import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import javax.swing.Icon;
 import com.intellij.icons.AllIcons;
 import jetbrains.mps.nodeEditor.cells.EditorCell;

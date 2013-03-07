@@ -13,10 +13,10 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.APICellAdapter" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellTraversalUtil" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelEvent" />
@@ -28,7 +28,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorMessageOwner" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.message.EditorMessageOwner" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.editor.ChangeStripsPainter" file="ChangeStripsPainter.java">
     <classNode dependClassName="java.awt.Color" />
@@ -143,7 +143,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorMessageOwner" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.message.EditorMessageOwner" />
     <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.editor.EditorHighlighterFactory" file="EditorHighlighterFactory.java">

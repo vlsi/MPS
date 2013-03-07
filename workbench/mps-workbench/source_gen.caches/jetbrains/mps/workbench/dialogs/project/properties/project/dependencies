@@ -55,7 +55,7 @@
     <classNode dependClassName="org.jdesktop.beansbinding.AutoBinding" />
     <classNode extendsClassName="com.intellij.ui.components.JBPanel" />
     <classNode extendsClassName="javax.swing.AbstractListModel" />
-    <classNode extendsClassName="jetbrains.mps.ide.ui.dialogs.properties.Modifiable" />
+    <classNode extendsClassName="org.jetbrains.mps.openapi.ui.Modifiable" />
   </dependency>
   <dependency className="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesDialog" file="ProjectPropertiesDialog.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />

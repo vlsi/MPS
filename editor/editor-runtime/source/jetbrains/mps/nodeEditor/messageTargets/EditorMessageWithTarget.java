@@ -20,11 +20,12 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.nodeEditor.DefaultEditorMessage;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
-import jetbrains.mps.nodeEditor.EditorMessageOwner;
+import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
+import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 
@@ -90,7 +91,7 @@ public class EditorMessageWithTarget extends DefaultEditorMessage {
   }
 
   @Override
-  public boolean sameAs(EditorMessage message) {
+  public boolean sameAs(SimpleEditorMessage message) {
     return super.sameAs(message) && message instanceof EditorMessageWithTarget
       && myMessageTarget.sameAs(((EditorMessageWithTarget) message).myMessageTarget);
   }

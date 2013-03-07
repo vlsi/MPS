@@ -16,7 +16,7 @@
 package jetbrains.mps.ide.ui.dialogs.properties.tables.models;
 
 import com.intellij.util.ui.ItemRemovable;
-import jetbrains.mps.ide.ui.dialogs.properties.Modifiable;
+import org.jetbrains.mps.openapi.ui.Modifiable;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;

@@ -7,7 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
-import jetbrains.mps.nodeEditor.cells.APICellAdapter;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.nodeEditor.cells.CellConditions;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -29,7 +29,7 @@ public class InlineRegexpExpression_removeI {
 
     public void execute_internal(EditorContext editorContext, SNode node) {
       EditorCell current = editorContext.getSelectedCell();
-      EditorCell toSelect = APICellAdapter.getPrevLeaf(current, CellConditions.SELECTABLE);
+      EditorCell toSelect = CellTraversalUtil.getPrevLeaf(current, CellConditions.SELECTABLE);
       SPropertyOperations.set(node, "caseInsensitive", "" + (false));
       editorContext.getEditorComponent().changeSelection(toSelect);
     }

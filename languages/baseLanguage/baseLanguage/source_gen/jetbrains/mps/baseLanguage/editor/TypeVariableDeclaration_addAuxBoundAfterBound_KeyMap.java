@@ -11,7 +11,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.nodeEditor.cells.APICellAdapter;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap extends KeyMapImpl {
@@ -63,7 +63,7 @@ public class TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap extends KeyMap
 
       // Next cell should belong to some other SNode, not our typeVarDeclaration 
       EditorCell selectedCell = editorContext.getSelectedCell();
-      EditorCell nextLeaf = APICellAdapter.getNextLeaf(selectedCell);
+      EditorCell nextLeaf = CellTraversalUtil.getNextLeaf(selectedCell);
       if (nextLeaf == null) {
         return false;
       }

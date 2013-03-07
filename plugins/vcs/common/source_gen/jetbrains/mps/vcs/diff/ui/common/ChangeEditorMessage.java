@@ -6,7 +6,7 @@ import jetbrains.mps.nodeEditor.messageTargets.EditorMessageWithTarget;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
-import jetbrains.mps.nodeEditor.EditorMessageOwner;
+import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.errors.MessageStatus;
 import java.awt.Color;
 import jetbrains.mps.vcs.diff.changes.ChangeType;
@@ -23,10 +23,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.messageTargets.CellFinder;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
-import jetbrains.mps.nodeEditor.EditorMessage;
+import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
-import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.errors.messageTargets.DeletedNodeMessageTarget;
 import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
@@ -148,13 +147,13 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     // "conflicted" red frame. In this case, we repaint conflicted red frame again 
     EditorCell_Collection parent = cell.getParent();
     if (parent != null && parent.getCellsCount() == 1) {
-      EditorMessage messageToRepaint = ListSequence.fromList(((List<EditorMessage>) APICellAdapter.getMessages(parent))).findFirst(new IWhereFilter<EditorMessage>() {
-        public boolean accept(EditorMessage m) {
+      SimpleEditorMessage messageToRepaint = ListSequence.fromList(((List<SimpleEditorMessage>) parent.getMessages())).findFirst(new IWhereFilter<SimpleEditorMessage>() {
+        public boolean accept(SimpleEditorMessage m) {
           return m instanceof ChangeEditorMessage && ((ChangeEditorMessage) m).isConflicted();
         }
       });
       if (messageToRepaint != null) {
-        messageToRepaint.paint(graphics, (EditorComponent) cell.getEditorComponent(), (jetbrains.mps.nodeEditor.cells.EditorCell) parent);
+        ((ChangeEditorMessage) messageToRepaint).paint(graphics, (EditorComponent) cell.getEditorComponent(), (jetbrains.mps.nodeEditor.cells.EditorCell) parent);
       }
     }
   }
@@ -365,13 +364,13 @@ __switch__:
   }
 
   @Override
-  public int getStart(EditorComponent component) {
-    return (int) getBounds(component).start();
+  public int getStart(jetbrains.mps.openapi.editor.EditorComponent component) {
+    return (int) getBounds(((EditorComponent) component)).start();
   }
 
   @Override
-  public int getHeight(EditorComponent component) {
-    return getBounds(component).length();
+  public int getHeight(jetbrains.mps.openapi.editor.EditorComponent component) {
+    return getBounds(((EditorComponent) component)).length();
   }
 
   public void setHighlighted(boolean highlighted) {

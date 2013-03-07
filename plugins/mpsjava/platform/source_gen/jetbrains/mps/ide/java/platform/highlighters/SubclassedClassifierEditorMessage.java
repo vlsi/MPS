@@ -7,7 +7,7 @@ import jetbrains.mps.nodeEditor.EditorMessageIconRenderer;
 import jetbrains.mps.nodeEditor.cells.CellFinder;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.EditorMessageOwner;
+import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.cells.CellFinders;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;

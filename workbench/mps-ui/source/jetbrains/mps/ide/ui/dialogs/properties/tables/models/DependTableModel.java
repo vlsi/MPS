@@ -16,10 +16,9 @@
 package jetbrains.mps.ide.ui.dialogs.properties.tables.models;
 
 import com.intellij.util.ui.ItemRemovable;
-import jetbrains.mps.ide.ui.dialogs.properties.Modifiable;
+import org.jetbrains.mps.openapi.ui.Modifiable;
 import jetbrains.mps.ide.ui.dialogs.properties.PropertiesBundle;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItem;
-import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItemRole;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
 
 import javax.swing.table.AbstractTableModel;

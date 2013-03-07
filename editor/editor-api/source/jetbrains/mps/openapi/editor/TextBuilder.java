@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,18 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor;
+package jetbrains.mps.openapi.editor;
 
-import java.awt.Color;
-
-public interface SimpleEditorMessage {
-  int getStart(EditorComponent editorComponent);
-
-  int getHeight(EditorComponent editorComponent);
-
-  String getMessage();
-
-  Color getColor();
-
-  EditorMessageOwner getOwner();
+/**
+ * Semen Alperovich
+ * 02 21, 2013
+ */
+public interface TextBuilder {
+  String getText();
 }

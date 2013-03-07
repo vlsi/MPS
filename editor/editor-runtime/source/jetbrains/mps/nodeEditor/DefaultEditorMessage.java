@@ -18,6 +18,8 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
+import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
+import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 
@@ -56,7 +58,7 @@ public class DefaultEditorMessage implements EditorMessage {
   }
 
   @Override
-  public boolean sameAs(EditorMessage message) {
+  public boolean sameAs(SimpleEditorMessage message) {
     return message.getNode() == getNode() && getOwner() == message.getOwner() &&
       getStatus() == message.getStatus() && getMessage().equals(message.getMessage());
   }
@@ -98,8 +100,8 @@ public class DefaultEditorMessage implements EditorMessage {
   }
 
   @Override
-  public int getStart(EditorComponent editorComponent) {
-    EditorCell editorCell = getCellInBothWays(editorComponent);
+  public int getStart(jetbrains.mps.openapi.editor.EditorComponent editorComponent) {
+    EditorCell editorCell = getCellInBothWays((EditorComponent) editorComponent);
     if (editorCell == null) {
       return -1;
     }
@@ -107,8 +109,8 @@ public class DefaultEditorMessage implements EditorMessage {
   }
 
   @Override
-  public int getHeight(EditorComponent editorComponent) {
-    EditorCell editorCell = getCellInBothWays(editorComponent);
+  public int getHeight(jetbrains.mps.openapi.editor.EditorComponent editorComponent) {
+    EditorCell editorCell = getCellInBothWays((EditorComponent) editorComponent);
     if (editorCell == null) {
       return -1;
     }

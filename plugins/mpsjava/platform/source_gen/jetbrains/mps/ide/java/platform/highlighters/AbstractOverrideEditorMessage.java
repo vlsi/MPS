@@ -6,7 +6,7 @@ import jetbrains.mps.editor.runtime.AbstractLeftEditorHighlighterMessage;
 import jetbrains.mps.nodeEditor.cells.CellFinder;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.EditorMessageOwner;
+import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.CellFinders;
 import jetbrains.mps.util.Condition;

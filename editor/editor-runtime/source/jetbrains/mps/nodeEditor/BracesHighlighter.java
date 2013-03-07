@@ -22,6 +22,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.nodeEditor.selection.SelectionListener;
 import jetbrains.mps.nodeEditor.selection.SingularSelection;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.util.Condition;
@@ -65,7 +66,7 @@ public class BracesHighlighter {
     } else if (newSelection instanceof EditorCell_Label) {
       EditorCell_Label editorCell = (EditorCell_Label) newSelection;
       if (editorCell.getCaretPosition() == 0) {
-        EditorCell cell = editorCell.getPrevLeaf();
+        jetbrains.mps.openapi.editor.cells.EditorCell cell = CellTraversalUtil.getPrevLeaf(editorCell);
         if (cell instanceof EditorCell_Label) {
           EditorCell_Label label = (EditorCell_Label) cell;
           if (label.getWidth() == 0 && editorCell.getLeftInset() == 0) {
@@ -73,7 +74,7 @@ public class BracesHighlighter {
           }
         }
       } else if (editorCell.getCaretPosition() == editorCell.getText().length()) {
-        EditorCell cell = editorCell.getNextLeaf();
+        jetbrains.mps.openapi.editor.cells.EditorCell cell = CellTraversalUtil.getNextLeaf(editorCell);
         if (cell instanceof EditorCell_Label) {
           EditorCell_Label label = (EditorCell_Label) cell;
           if (label.getWidth() == 0 && editorCell.getRightInset() == 0) {

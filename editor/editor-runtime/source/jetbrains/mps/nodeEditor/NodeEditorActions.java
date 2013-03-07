@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.CellConditions;
 import jetbrains.mps.nodeEditor.cells.CellFinders;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -26,8 +27,7 @@ import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.nodeEditor.selection.SingularSelection;
 import jetbrains.mps.nodeEditor.selection.SingularSelection.SideSelectDirection;
-import jetbrains.mps.openapi.editor.*;
-import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.smodel.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -60,7 +60,7 @@ public class NodeEditorActions {
       SelectionManager selectionManager = ((EditorComponent) context.getEditorComponent()).getSelectionManager();
       EditorCell cell = findTarget(selectionManager);
       selectionManager.setSelection(cell);
-      if (cell.isPunctuationLayout() && (cell instanceof EditorCell_Label) && ((EditorCell_Label) cell).isCaretPositionAllowed(1)) {
+      if (APICellAdapter.isPunctuationLayout(cell) && (cell instanceof EditorCell_Label) && ((EditorCell_Label) cell).isCaretPositionAllowed(1)) {
         ((EditorCell_Label) cell).setCaretPosition(1);
       } else {
         cell.home();
@@ -329,14 +329,14 @@ public class NodeEditorActions {
     @Override
     public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorCell selection = ((EditorComponent) context.getEditorComponent()).getSelectedCell();
-      return selection != null && selection.getNextLeaf(CellConditions.EDITABLE) != null;
+      return selection != null && CellTraversalUtil.getNextLeaf(selection, CellConditions.EDITABLE) != null;
     }
 
     @Override
     public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorComponent editorComponent = (EditorComponent) context.getEditorComponent();
       EditorCell selection = editorComponent.getSelectedCell();
-      editorComponent.changeSelection(selection.getNextLeaf(CellConditions.EDITABLE));
+      editorComponent.changeSelection(CellTraversalUtil.getNextLeaf(selection, CellConditions.EDITABLE));
     }
   }
 
@@ -344,14 +344,14 @@ public class NodeEditorActions {
     @Override
     public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorCell selection = ((EditorComponent) context.getEditorComponent()).getSelectedCell();
-      return selection != null && selection.getPrevLeaf(CellConditions.EDITABLE) != null;
+      return selection != null && CellTraversalUtil.getPrevLeaf(selection, CellConditions.EDITABLE) != null;
     }
 
     @Override
     public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorComponent editorComponent = (EditorComponent) context.getEditorComponent();
       EditorCell selection = editorComponent.getSelectedCell();
-      editorComponent.changeSelection(selection.getPrevLeaf(CellConditions.EDITABLE));
+      editorComponent.changeSelection(CellTraversalUtil.getPrevLeaf(selection, CellConditions.EDITABLE));
     }
   }
 
@@ -465,11 +465,11 @@ public class NodeEditorActions {
       mySide = side;
     }
 
-    private EditorCell getNextLeaf(EditorCell current) {
+    private jetbrains.mps.openapi.editor.cells.EditorCell getNextLeaf(EditorCell current) {
       if (mySide == CellSide.LEFT) {
-        return current.getPrevLeaf(CellConditions.SELECTABLE);
+        return CellTraversalUtil.getPrevLeaf(current, CellConditions.SELECTABLE);
       } else {
-        return current.getNextLeaf(CellConditions.SELECTABLE);
+        return CellTraversalUtil.getNextLeaf(current, CellConditions.SELECTABLE);
       }
     }
 
@@ -483,7 +483,7 @@ public class NodeEditorActions {
           return true;
         }
         EditorCell selected = singularSelection.getEditorCell();
-        EditorCell nextLeaf = getNextLeaf(selected);
+        jetbrains.mps.openapi.editor.cells.EditorCell nextLeaf = getNextLeaf(selected);
         return nextLeaf != null && getCommonSelectableAncestor(selected, nextLeaf) != null;
       }
       return false;
@@ -498,7 +498,7 @@ public class NodeEditorActions {
         return;
       }
       EditorCell selected = selection.getEditorCell();
-      EditorCell nextLeaf = getNextLeaf(selected);
+      jetbrains.mps.openapi.editor.cells.EditorCell nextLeaf = getNextLeaf(selected);
       EditorCell cellToSelect = getCommonSelectableAncestor(selected, nextLeaf);
       Selection newSelection = selectionManager.createSelection(cellToSelect);
       if (newSelection instanceof SingularSelection) {

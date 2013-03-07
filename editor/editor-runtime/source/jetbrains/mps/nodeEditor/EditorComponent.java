@@ -96,6 +96,10 @@ import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.nodeEditor.selection.SelectionListener;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.nodeEditor.selection.SingularSelection;
+import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
+import jetbrains.mps.openapi.editor.cells.*;
+import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.openapi.editor.ActionHandler;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.KeyMapAction;
@@ -814,7 +818,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     new CellNavigator(this) {
       @Override
       boolean isSuitableCell(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
-        for (EditorMessage m : getHighlightManager().getMessagesFor(cell.getSNode())) {
+        for (SimpleEditorMessage m : getHighlightManager().getMessagesFor(cell.getSNode())) {
           if (m.getOwner() == getHighlightMessagesOwner()) {
             return true;
           }
@@ -1143,8 +1147,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     getExternalComponent().repaint();
   }
 
-  protected Set<EditorMessage> getMessages() {
-    return new LinkedHashSet<EditorMessage>(myHighlightManager.getMessages());
+  protected Set<SimpleEditorMessage> getMessages() {
+    return new LinkedHashSet<SimpleEditorMessage>(myHighlightManager.getMessages());
   }
 
   @Override
