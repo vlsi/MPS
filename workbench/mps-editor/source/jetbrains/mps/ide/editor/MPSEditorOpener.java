@@ -74,7 +74,7 @@ public class MPSEditorOpener {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
-        SModel modelDescriptor = node.getModel().getModelDescriptor();
+        SModel modelDescriptor = node.getContainingModel();
         if (modelDescriptor == null) return;
 
         IModule module = modelDescriptor.getModule();
@@ -110,7 +110,7 @@ public class MPSEditorOpener {
   private Editor doOpenNode(final SNode node, IOperationContext context, final boolean focus, boolean select) {
     assert node.getModel() != null : "You can't edit unregistered node";
 
-    if (node.getModel().getModelDescriptor() == null) {
+    if (node.getContainingModel() == null) {
       return null;
     }
 

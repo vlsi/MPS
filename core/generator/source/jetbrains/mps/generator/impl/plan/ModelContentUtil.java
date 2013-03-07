@@ -44,13 +44,13 @@ public class ModelContentUtil {
       TemplateModelScanner templateModelScanner = new TemplateModelScanner(model);
       templateModelScanner.scan();
       Set<String> namespaces = new HashSet<String>(templateModelScanner.getQueryLanguages());
-      for (ModuleReference ref : ((jetbrains.mps.smodel.SModel) model).engagedOnGenerationLanguages()) {
+      for (ModuleReference ref : ((jetbrains.mps.smodel.SModelInternal) model).engagedOnGenerationLanguages()) {
         namespaces.add(ref.getModuleFqName());
       }
       return namespaces;
     }
     Set<String> namespaces = new HashSet<String>();
-    for (ModuleReference ref : ((jetbrains.mps.smodel.SModel) model).engagedOnGenerationLanguages()) {
+    for (ModuleReference ref : ((jetbrains.mps.smodel.SModelInternal) model).engagedOnGenerationLanguages()) {
       namespaces.add(ref.getModuleFqName());
     }
     for (SNode root : model.getRootNodes()) {

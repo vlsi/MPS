@@ -12,7 +12,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.generator.TransientSModel;
+import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.typesystem.checking.HighlightUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.IOperationContext;
@@ -36,7 +36,7 @@ public class AutoResolver extends EditorCheckerAdapter {
     if (SNodeOperations.getModel(rootNode) == null || SNodeOperations.getModel(rootNode).getModelDescriptor() == null) {
       return messages;
     }
-    if (SNodeOperations.getModel(rootNode) instanceof TransientSModel) {
+    if (SNodeOperations.getModel(rootNode).getModule() instanceof TransientModelsModule) {
       return messages;
     }
     boolean autoresolve = !(hasUnresolvedImportedModels(SNodeOperations.getModel(rootNode), editorContext));

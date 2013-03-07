@@ -17,7 +17,6 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.project.IModule;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -42,9 +41,7 @@ public class GenParameters {
   @Deprecated
   public List<SModel> getModelDescriptors() {
     for (SModel model : myModels) {
-      if (!(model instanceof SModel)) {
-        throw new IllegalStateException();
-      }
+      throw new IllegalStateException();
     }
     return (List) Collections.unmodifiableList(myModels);
   }

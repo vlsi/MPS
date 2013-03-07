@@ -18,8 +18,6 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel.ImportElement;
-import org.jetbrains.mps.openapi.model.SModel;
-
 import jetbrains.mps.smodel.event.SModelListener;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -30,9 +28,13 @@ import java.util.List;
 
 public interface SModelInternal extends SModel {
   SModel resolveModel(jetbrains.mps.smodel.SModelReference reference);
+
   SModel getSModel();
+
   void setModule(SModule container);
+
   void addModelListener(@NotNull SModelListener listener);
+
   void removeModelListener(@NotNull SModelListener listener);
 
 
@@ -97,7 +99,15 @@ public interface SModelInternal extends SModel {
 
   void updateImportedModelUsedVersion(SModelReference sModelReference, int currentVersion);
 
+  boolean canFireReadEvent();
+
   boolean updateSModelReferences();
 
+  void changeModelReference(jetbrains.mps.smodel.SModelReference newModelReference);
+
   boolean updateModuleReferences();
+
+  void copyPropertiesTo(SModelInternal to);
+
+  SModel createEmptyCopy();
 }

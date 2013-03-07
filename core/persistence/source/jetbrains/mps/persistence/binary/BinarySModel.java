@@ -51,7 +51,7 @@ public class BinarySModel extends SModel {
   }
 
   @Override
-  protected SModel createEmptyCopy() {
+  public SModel createEmptyCopy() {
     return new BinarySModel(new BinaryModelHeader(getReference()));
   }
 
@@ -59,6 +59,11 @@ public class BinarySModel extends SModel {
 
     @Nullable
     private final ModelReadException myCause;
+
+    @Override
+    public SModel createEmptyCopy() {
+      throw new UnsupportedOperationException("not supported");
+    }
 
     public InvalidBinarySModel(@NotNull SModelReference modelReference, @Nullable ModelReadException cause) {
       super(new BinaryModelHeader(modelReference));

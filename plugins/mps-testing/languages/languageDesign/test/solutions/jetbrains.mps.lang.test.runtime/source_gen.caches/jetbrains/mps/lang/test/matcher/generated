@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-7yofbml2lleuckvuqvyvlwyiwbyr87k">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="621em7vpw5ex0v0ghcf6e9cwqktpv6v" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
   <common hash="a9sgoxlwksl0kerf2yevl1l39pp3opa" />
   <source id="8984393347190225578" name="DifferanceItem" hash="-2grtgdnulr4ld8szi84bdq2imlexycz">
     <file name="DifferanceItem.java" />

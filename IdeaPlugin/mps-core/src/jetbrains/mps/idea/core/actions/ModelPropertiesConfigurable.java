@@ -194,13 +194,13 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
     Set<ModuleReference> languagesToRemove = new HashSet<ModuleReference>(currentlyUsedLanguages);
     languagesToRemove.removeAll(usedLanguages);
     for (ModuleReference language : languagesToRemove) {
-      ((jetbrains.mps.smodel.SModel) sModel).deleteLanguage(language);
+      ((jetbrains.mps.smodel.SModelInternal) sModel).deleteLanguage(language);
     }
 
     Set<ModuleReference> languagesToAdd = new HashSet<ModuleReference>(usedLanguages);
     languagesToAdd.removeAll(currentlyUsedLanguages);
     for (ModuleReference language : languagesToAdd) {
-      ((jetbrains.mps.smodel.SModel) sModel).addLanguage(language);
+      ((jetbrains.mps.smodel.SModelInternal) sModel).addLanguage(language);
     }
 
     Collection<ModuleReference> addedLanguages = new ArrayList<ModuleReference>();
@@ -219,13 +219,13 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
     Set<SModelReference> modelsToRemove = new HashSet<SModelReference>(currentlyImportedModels);
     modelsToRemove.removeAll(importedModels);
     for (SModelReference modelReference : modelsToRemove) {
-      ((jetbrains.mps.smodel.SModel) sModel).deleteModelImport(modelReference);
+      ((jetbrains.mps.smodel.SModelInternal) sModel).deleteModelImport(modelReference);
     }
 
     Set<SModelReference> modelsToAdd = new HashSet<SModelReference>(importedModels);
     modelsToAdd.removeAll(currentlyImportedModels);
     for (SModelReference modelReference : modelsToAdd) {
-      ((jetbrains.mps.smodel.SModel) sModel).addModelImport(modelReference, false);
+      ((jetbrains.mps.smodel.SModelInternal) sModel).addModelImport(modelReference, false);
     }
   }
 

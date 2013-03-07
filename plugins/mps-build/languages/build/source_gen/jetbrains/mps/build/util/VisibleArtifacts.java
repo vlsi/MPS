@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.ArrayList;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.generator.TransientSModel;
+import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -36,7 +36,7 @@ public class VisibleArtifacts {
       new DependenciesHelper(genContext, project) :
       null
     );
-    if (genContext == null && SNodeOperations.getModel(project) instanceof TransientSModel) {
+    if (genContext == null && SNodeOperations.getModel(project).getModule() instanceof TransientModelsModule) {
       throw new IllegalArgumentException("cannot instantiate VisibleArtifacts for transient model without generation context");
     }
   }
@@ -74,7 +74,7 @@ public class VisibleArtifacts {
     if (target == null) {
       return;
     }
-    assert project == target || !(SNodeOperations.getModel(target) instanceof TransientSModel);
+    assert project == target || !(SNodeOperations.getModel(target).getModule() instanceof TransientModelsModule);
 
     ListSequence.fromList(visibleLayouts).addElement(SLinkOperations.getTarget(target, "layout", true));
     if (SLinkOperations.getTarget(target, "layout", true) != parent) {
@@ -90,7 +90,7 @@ public class VisibleArtifacts {
     if (target == null) {
       return;
     }
-    assert !(SNodeOperations.getModel(target) instanceof TransientSModel);
+    assert !(SNodeOperations.getModel(target).getModule() instanceof TransientModelsModule);
 
     ListSequence.fromList(visibleLayouts).addElement(target);
     parentMap.put(target, parent);
@@ -180,7 +180,7 @@ public class VisibleArtifacts {
       if (parentMap.containsKey(node) && SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildLayout_PathElement")) {
         return SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildLayout_PathElement");
       }
-      if (SNodeOperations.getModel(node) instanceof TransientSModel) {
+      if (SNodeOperations.getModel(node).getModule() instanceof TransientModelsModule) {
         throw new IllegalArgumentException("findArtifact() cannot be called for transient nodes: " + node);
       }
     }
@@ -192,7 +192,7 @@ public class VisibleArtifacts {
       return result;
     }
     for (SNode artifact : this.getArtifacts()) {
-      assert !(SNodeOperations.getModel(artifact) instanceof TransientSModel);
+      assert !(SNodeOperations.getModel(artifact).getModule() instanceof TransientModelsModule);
       if (BehaviorReflection.invokeVirtual(Boolean.TYPE, artifact, "virtual_exports_6547494638219603457", new Object[]{id})) {
         dependenciesHelper.artifacts().put(id, artifact);
         return artifact;
@@ -233,7 +233,7 @@ public class VisibleArtifacts {
   }
 
   public static VisibleArtifacts createFor(final SNode project) {
-    assert !(SNodeOperations.getModel(project) instanceof TransientSModel);
+    assert !(SNodeOperations.getModel(project).getModule() instanceof TransientModelsModule);
     return getFromCache(VisibleArtifacts.class, project, new _FunctionTypes._return_P0_E0<VisibleArtifacts>() {
       public VisibleArtifacts invoke() {
         VisibleArtifacts artifacts = new VisibleArtifacts(project, null);

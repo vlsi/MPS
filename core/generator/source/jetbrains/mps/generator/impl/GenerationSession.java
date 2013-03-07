@@ -342,7 +342,7 @@ class GenerationSession {
       // probably we can forget about former input model here
       recycleWasteModel(currentInputModel);
       currentInputModel = currentOutputModel;
-      ((jetbrains.mps.smodel.SModel) currentInputModel).disposeFastNodeFinder();
+      ((jetbrains.mps.smodel.SModelInternal) currentInputModel).disposeFastNodeFinder();
 
       SModel transientModel = createTransientModel();
       if (myLogger.needsInfo()) {
@@ -556,9 +556,9 @@ class GenerationSession {
 
   private void recycleWasteModel(@NotNull SModel model) {
     SModel md = model.getModelDescriptor();
-    if (model instanceof TransientSModel) {
+    if (model .getModule() instanceof TransientModelsModule) {
       ttrace.push("recycling", false);
-      ((jetbrains.mps.smodel.SModel) model).disposeFastNodeFinder();
+      ((jetbrains.mps.smodel.SModelInternal) model).disposeFastNodeFinder();
       if (myDiscardTransients && !mySessionContext.isTransientModelToKeep(model)) {
         mySessionContext.getModule().removeModel(md);
       }

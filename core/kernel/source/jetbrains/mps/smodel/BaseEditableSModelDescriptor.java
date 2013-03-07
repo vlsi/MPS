@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
@@ -118,7 +118,7 @@ public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorW
     if (source.getFile().getPath().equals(newModelFile.getPath())) return;
 
     IFile oldFile = source.getFile();
-    SModel model = getSModel();
+    SModel model = getSModelInternal();
     fireBeforeModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
     source.setFile(newModelFile);
     updateDiskTimestamp();
@@ -159,11 +159,11 @@ public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorW
     }
 
     String oldFqName = getReference().getModelName();
-    SModel model = getSModel();
+    SModel model = getSModelInternal();
     fireBeforeModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelName));
 
     SModelReference newModelReference = new SModelReference(SModelFqName.fromString(newModelName), getReference().getSModelId());
-    ((jetbrains.mps.smodel.SModel) model).changeModelReference(newModelReference);
+    ((SModelInternal) model).changeModelReference(newModelReference);
 
     if (!changeFile) {
       save();

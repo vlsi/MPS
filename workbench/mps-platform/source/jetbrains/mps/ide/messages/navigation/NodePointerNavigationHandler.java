@@ -35,9 +35,7 @@ class NodePointerNavigationHandler implements INavigationHandler<SNodeReference>
     SNode realNode = object.resolve(MPSModuleRepository.getInstance());
     if (realNode == null) return false;
 
-    if (!(realNode.getModel() != null)) return false;
-
-    SModel modelDescriptor = realNode.getModel().getModelDescriptor();
+    SModel modelDescriptor = realNode.getContainingModel();
     if (modelDescriptor == null) return false;
 
     IModule module = modelDescriptor.getModule();

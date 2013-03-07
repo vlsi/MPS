@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.impl.reference;
 
+import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
 import jetbrains.mps.generator.impl.TemplateGenerator;
@@ -181,7 +182,7 @@ public class PostponedReference extends SReference {
           myReferenceInfo.getErrorDescriptions());
         return false;
       }
-      if (referentNodeModel instanceof TransientSModel) {
+      if (referentNodeModel .getModule() instanceof TransientModelsModule) {
         // references on transient nodes are not acceptable
         myGenerator.getLogger().error(outputNode, "bad reference, cannot refer to a transient model: " + SNodeUtil.getDebugText(outputTargetNode) + " for role '" + role + "' in " + SNodeUtil.getDebugText(outputNode),
           myReferenceInfo.getErrorDescriptions());

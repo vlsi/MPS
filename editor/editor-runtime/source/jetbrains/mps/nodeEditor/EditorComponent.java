@@ -1370,7 +1370,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     StringBuilder sb = new StringBuilder("editor (" + this + ") is invalid");
     if (myNode != null) {
       sb.append(", myNode is disposed");
-      StackTraceElement[] modelDisposedTrace = ((jetbrains.mps.smodel.SModel) model).getDisposedStacktrace();
+      StackTraceElement[] modelDisposedTrace = ((jetbrains.mps.smodel.SModelInternal) model).getDisposedStacktrace();
       if (modelDisposedTrace != null) {
         for (StackTraceElement element : modelDisposedTrace) {
           sb.append("\nat ");
@@ -1410,9 +1410,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
    */
   private boolean isInvalid() {
     return isInvalidLightweight() ||
-      getEditedNode().getModel() == null ||
       jetbrains.mps.util.SNodeOperations.isModelDisposed(getEditedNode().getModel()) ||
-      getEditedNode().getModel().getModelDescriptor() == null;
+      getEditedNode().getContainingModel() == null;
   }
 
   /*

@@ -116,9 +116,9 @@ public class CloneModelProperties {
       myRoot.setPath(((FolderModelRootBase)modelRoot).getPath());
     }
 
-    myImportedLanguages.addAll(((jetbrains.mps.smodel.SModel) model).importedLanguages());
+    myImportedLanguages.addAll(((jetbrains.mps.smodel.SModelInternal) model).importedLanguages());
     myImportedModels.addAll(SModelOperations.getImportedModelUIDs(model));
-    myImportedDevkits.addAll(((jetbrains.mps.smodel.SModel) model).importedDevkits());
-    myLanguagesInGeneration.addAll(((jetbrains.mps.smodel.SModel) model).engagedOnGenerationLanguages());
+    myImportedDevkits.addAll(((jetbrains.mps.smodel.SModelInternal) model).importedDevkits());
+    myLanguagesInGeneration.addAll(((jetbrains.mps.smodel.SModelInternal) model).engagedOnGenerationLanguages());
   }
 }

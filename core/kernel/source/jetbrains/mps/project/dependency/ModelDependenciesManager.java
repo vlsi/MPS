@@ -63,7 +63,7 @@ public class ModelDependenciesManager {
 
       Set<ModuleReference> result = new LinkedHashSet<ModuleReference>();
 
-      for (ModuleReference lang : ((jetbrains.mps.smodel.SModel) myModel).importedLanguages()) {
+      for (ModuleReference lang : ((jetbrains.mps.smodel.SModelInternal) myModel).importedLanguages()) {
         result.add(lang);
         Language module = ModuleRepositoryFacade.getInstance().getModule(lang, Language.class);
         if (module != null) {
@@ -73,7 +73,7 @@ public class ModelDependenciesManager {
         }
       }
 
-      for (ModuleReference dk : ((jetbrains.mps.smodel.SModel) myModel).importedDevkits()) {
+      for (ModuleReference dk : ((jetbrains.mps.smodel.SModelInternal) myModel).importedDevkits()) {
         DevKit devkit = ModuleRepositoryFacade.getInstance().getModule(dk, DevKit.class);
         if (devkit == null) continue;
         myModuleWatcher.watchDevKit(devkit);
