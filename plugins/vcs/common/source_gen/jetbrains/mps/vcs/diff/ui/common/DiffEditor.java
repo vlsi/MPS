@@ -17,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SModelOperations;
 import java.awt.Dimension;
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
@@ -48,7 +49,7 @@ public class DiffEditor implements EditorMessageOwner {
 
     SModel model = SNodeOperations.getModel(node);
     if (model != null) {
-      boolean editable = !(model.isReadOnly());
+      boolean editable = !(SModelOperations.isReadOnly(model));
       setReadOnly(!(editable));
     }
 

@@ -278,11 +278,6 @@ public class TransientModelsModule extends ClassLoadingModule {
     }
 
     @Override
-    public boolean isReadOnly() {
-      return true;
-    }
-
-    @Override
     public SModel resolveModel(SModelReference reference) {
       if (reference.getLongName().equals(myLongName)) {
         SModel descriptor = myModels.get(reference.getModelName());

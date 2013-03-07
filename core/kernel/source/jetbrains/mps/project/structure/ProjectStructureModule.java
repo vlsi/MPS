@@ -337,11 +337,6 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     }
 
     @Override
-    public boolean isReadOnly() {
-      return true;
-    }
-
-    @Override
     public SModel resolveModel(SModelReference reference) {
       return myProjectStructureModule.myModels.get(reference);
     }

@@ -16,7 +16,6 @@
 package jetbrains.mps.refactoring.framework;
 
 import com.intellij.ui.ScrollPaneFactory;
-import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -24,17 +23,21 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.smodel.IOperationContext;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import javax.swing.*;
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
-import java.awt.*;
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
@@ -93,7 +96,8 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
   }
 
 
-  public ChooseNodeOrModelComponent(IOperationContext operationContext, String conceptFQName, boolean mayBeModel, boolean mayBeNode, boolean useLoadedModels) {
+  public ChooseNodeOrModelComponent(IOperationContext operationContext, String conceptFQName, boolean mayBeModel, boolean mayBeNode,
+    boolean useLoadedModels) {
     this(operationContext, conceptFQName, mayBeModel, mayBeNode);
     myReturnLoadedModels = useLoadedModels;
   }
@@ -127,9 +131,7 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
   private Set<SModel> getModelsFrom(Condition<Object> condition) {
     Set<SModel> models = new HashSet<SModel>(SModelRepository.getInstance().getModelDescriptors());
     for (SModel model : new ArrayList<SModel>(models)) {
-      if (!(model instanceof EditableSModel)) {
-        models.remove(model);
-      } else if (model.isReadOnly()) {
+      if (SModelOperations.isReadOnly(model)) {
         models.remove(model);
       } else if (myReturnLoadedModels && !condition.met(model.getSModel())) {
         models.remove(model);

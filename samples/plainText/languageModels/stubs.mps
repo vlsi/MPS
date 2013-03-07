@@ -32,6 +32,7 @@
   <import index="pxpg" modelUID="r:5a550369-d6d9-4c89-a89b-1bb748dc20b3(jetbrains.mps.baseLanguage.checkedDots.structure)" version="-1" implicit="yes" />
   <import index="qff7" modelUID="r:2ba2e307-a81d-4a21-9e0b-de3624e2fb83(jetbrains.mps.lang.access.structure)" version="0" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
+  <import index="51te" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.model(MPS.Core/jetbrains.mps.extapi.model@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="n3kn.ModelManagerDeclaration" typeId="n3kn.5553449326502622462" id="681855071694401672">
       <property name="name" nameId="tpck.1169194664001" value="PlainText" />
@@ -503,7 +504,7 @@
                             <link role="classifier" roleId="tpee.1107535924139" targetNodeId="qx6n.~MultiStreamDataSource" resolveInfo="MultiStreamDataSource" />
                           </node>
                           <node role="expression" roleId="tpee.1070534934092" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="4895370762350654903">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~BaseSModelDescriptor%dgetSource()%corg%djetbrains%dmps%dopenapi%dpersistence%dDataSource" resolveInfo="getSource" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="51te.~SModelBase%dgetSource()%corg%djetbrains%dmps%dopenapi%dpersistence%dDataSource" resolveInfo="getSource" />
                           </node>
                         </node>
                       </node>
@@ -671,8 +672,8 @@
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="681855071694416272">
       <property name="isDeprecated" nameId="tpee.1224848525476" value="false" />
       <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
-      <property name="isSynchronized" nameId="tpee.4276006055363816570" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="getSModel" />
+      <property name="isSynchronized" nameId="tpee.4276006055363816570" value="true" />
       <property name="isFinal" nameId="tpee.1181808852946" value="false" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2033319863819672214">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SModel" resolveInfo="SModel" />
@@ -774,7 +775,7 @@
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="qx6n.~MultiStreamDataSource" resolveInfo="MultiStreamDataSource" />
               </node>
               <node role="expression" roleId="tpee.1070534934092" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="4895370762350692421">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~BaseSModelDescriptor%dgetSource()%corg%djetbrains%dmps%dopenapi%dpersistence%dDataSource" resolveInfo="getSource" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="51te.~SModelBase%dgetSource()%corg%djetbrains%dmps%dopenapi%dpersistence%dDataSource" resolveInfo="getSource" />
               </node>
             </node>
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4895370762350684539">

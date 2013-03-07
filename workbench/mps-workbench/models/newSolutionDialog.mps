@@ -36,6 +36,7 @@
   <import index="tprh" modelUID="r:00000000-0000-4000-0000-011c895904b1(jetbrains.mps.ide.uiLanguage.structure)" version="-1" implicit="yes" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" implicit="yes" />
   <import index="tphr" modelUID="r:00000000-0000-4000-0000-011c89590553(jetbrains.mps.uiLanguage.structure)" version="1" implicit="yes" />
+  <import index="l077" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.module(MPS.Core/jetbrains.mps.extapi.module@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tphr.ComponentController" typeId="tphr.1202388384249" id="7619659760484896449">
       <link role="component" roleId="tphr.1202388401455" targetNodeId="7619659760484896415" resolveInfo="NewSolutionDialog" />
@@ -891,7 +892,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4543209876460423607" resolveInfo="module" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4543209876460423656">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~IModule%dsave()%cvoid" resolveInfo="save" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="l077.~EditableSModule%dsave()%cvoid" resolveInfo="save" />
             </node>
           </node>
         </node>

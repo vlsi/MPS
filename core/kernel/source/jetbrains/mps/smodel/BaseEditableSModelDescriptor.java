@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.logging.Logger;
@@ -32,7 +33,7 @@ import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 /**
  * evgeny, 11/21/12
  */
-public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorWithSource implements EditableSModelDescriptor {
+public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorWithSource implements EditableSModel, EditableSModelDescriptor {
 
   private static final Logger LOG = Logger.getLogger(BaseEditableSModelDescriptor.class);
 
@@ -161,7 +162,7 @@ public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorW
     SModel model = getSModel();
     fireBeforeModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelName));
 
-    SModelReference newModelReference = new SModelReference(SModelFqName.fromString(newModelName), myModelReference.getSModelId());
+    SModelReference newModelReference = new SModelReference(SModelFqName.fromString(newModelName), getReference().getSModelId());
     ((jetbrains.mps.smodel.SModel) model).changeModelReference(newModelReference);
 
     if (!changeFile) {
@@ -188,7 +189,7 @@ public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorW
       }
     }
 
-    myModelReference = newModelReference;
+    updateReferenceAfterRename(newModelReference);
 
     fireModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelName));
   }

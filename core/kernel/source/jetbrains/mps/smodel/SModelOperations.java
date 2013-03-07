@@ -13,11 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
-
-import org.jetbrains.mps.openapi.model.SReference;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
@@ -29,7 +28,9 @@ import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
 
 import java.util.ArrayList;
@@ -49,6 +50,13 @@ public class SModelOperations {
       if (name.equals(root.getName())) return root;
     }
     return null;
+  }
+
+  public static boolean isReadOnly(SModel model) {
+    if (model instanceof jetbrains.mps.smodel.SModel) {
+      model = model.getModelDescriptor();
+    }
+    return !(model instanceof EditableSModel) || ((EditableSModel) model).isReadOnly();
   }
 
   public static void validateLanguagesAndImports(SModel model, boolean respectModulesScopes, boolean firstVersion) {

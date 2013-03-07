@@ -34,11 +34,6 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   @Override
-  public boolean isReadOnly() {
-    return true;
-  }
-
-  @Override
   @NotNull
   public StubModelDataSource getSource() {
     return (StubModelDataSource) super.getSource();

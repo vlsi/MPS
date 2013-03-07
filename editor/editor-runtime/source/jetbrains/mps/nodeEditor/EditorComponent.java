@@ -96,15 +96,13 @@ import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.nodeEditor.selection.SelectionListener;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.nodeEditor.selection.SingularSelection;
-import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
-import jetbrains.mps.openapi.editor.cells.*;
-import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
-import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.openapi.editor.ActionHandler;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.KeyMapAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
+import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
+import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -113,8 +111,7 @@ import jetbrains.mps.smodel.EventsCollector;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.smodel.event.EventUtil;
@@ -211,7 +208,8 @@ import java.util.Stack;
 import java.util.TreeSet;
 import java.util.WeakHashMap;
 
-public abstract class EditorComponent extends JComponent implements Scrollable, DataProvider, ITypeContextOwner, TooltipComponent, jetbrains.mps.openapi.editor.EditorComponent {
+public abstract class EditorComponent extends JComponent implements Scrollable, DataProvider, ITypeContextOwner, TooltipComponent,
+  jetbrains.mps.openapi.editor.EditorComponent {
   private static final Logger LOG = Logger.getLogger(EditorComponent.class);
   private static final boolean TRACE_ENABLED = false;
   public static final String EDITOR_POPUP_MENU_ACTIONS = MPSActions.EDITOR_POPUP_GROUP;
@@ -658,7 +656,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       public void focusLost(FocusEvent e) {
         repaint();
         if (myNodeSubstituteChooser.getWindow() != null &&
-          (myNodeSubstituteChooser.getWindow().isAncestorOf(e.getOppositeComponent()) || myNodeSubstituteChooser.getWindow() == e.getOppositeComponent()))
+          (myNodeSubstituteChooser.getWindow().isAncestorOf(
+            e.getOppositeComponent()) || myNodeSubstituteChooser.getWindow() == e.getOppositeComponent()))
           return;
         deactivateSubstituteChooser();
       }
@@ -996,7 +995,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     setOperationContext(operationContext);
     editNode(node);
-    setReadOnly(node == null || node.getModel() == null || node.getModel().isReadOnly());
+    setReadOnly(node == null || node.getModel() == null || SModelOperations.isReadOnly(node.getModel()));
   }
 
   protected void editNode(final SNode node) {
@@ -1488,7 +1487,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       // For models created by Diff Editor this condition is false
       boolean registered = model.getReference().resolve(MPSModuleRepository.getInstance()) == model;
       if (registered) {
-        assert myModelDescriptorsWithListener.contains(model) : "Listener was not added to a containing model of current node. Editor: " + EditorComponent.this;
+        assert myModelDescriptorsWithListener.contains(
+          model) : "Listener was not added to a containing model of current node. Editor: " + EditorComponent.this;
       }
     }
 
@@ -1751,7 +1751,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return (EditorCell) findNodeCellWithRole(rootCell, role, node);
   }
 
-  private jetbrains.mps.openapi.editor.cells.EditorCell findNodeCellWithRole(jetbrains.mps.openapi.editor.cells.EditorCell rootCell, String role, SNode node) {
+  private jetbrains.mps.openapi.editor.cells.EditorCell findNodeCellWithRole(jetbrains.mps.openapi.editor.cells.EditorCell rootCell, String role,
+    SNode node) {
     if (role == null) return null;
     if (role.equals(APICellAdapter.getCellRole(rootCell)) && node == rootCell.getSNode()) {
       return rootCell;
@@ -1777,7 +1778,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return (EditorCell) findCellWithIdWithingBigCell(bigCell, id, node);
   }
 
-  private jetbrains.mps.openapi.editor.cells.EditorCell findCellWithIdWithingBigCell(jetbrains.mps.openapi.editor.cells.EditorCell root, String id, SNode node) {
+  private jetbrains.mps.openapi.editor.cells.EditorCell findCellWithIdWithingBigCell(jetbrains.mps.openapi.editor.cells.EditorCell root, String id,
+    SNode node) {
     if (id == null) {
       return null;
     }
@@ -1974,8 +1976,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
                           ModelAccess.instance().runWriteInEDT(new Runnable() {
                             @Override
                             public void run() {
-                              GoToTypeErrorRuleUtil.goToRuleById(myOperationContext, new Pair<String, String>(herror.getRuleModel(),
-                                herror.getRuleId()));
+                              GoToTypeErrorRuleUtil.goToRuleById(myOperationContext,
+                                new Pair<String, String>(herror.getRuleModel(),
+                                  herror.getRuleId()));
                               dialog.dispose();
                             }
                           });
@@ -2590,17 +2593,19 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return true;
   }
 
-  private List<SubstituteAction> getMatchingActions(final EditorCell editorCell, final SubstituteInfo substituteInfo, final boolean isSmart, final String pattern) {
+  private List<SubstituteAction> getMatchingActions(final EditorCell editorCell, final SubstituteInfo substituteInfo, final boolean isSmart,
+    final String pattern) {
     return ModelAccess.instance().runReadAction(new Computable<List<SubstituteAction>>() {
       @Override
       public List<SubstituteAction> compute() {
-        return TypeContextManager.getInstance().runTypeCheckingComputation(getTypecheckingContextOwner(), myNode, new Computation<List<SubstituteAction>>() {
-          @Override
-          public List<SubstituteAction> compute(TypeCheckingContext context) {
-            return isSmart ? substituteInfo.getSmartMatchingActions(pattern, false, editorCell) :
-              substituteInfo.getMatchingActions(pattern, false);
-          }
-        });
+        return TypeContextManager.getInstance().runTypeCheckingComputation(getTypecheckingContextOwner(), myNode,
+          new Computation<List<SubstituteAction>>() {
+            @Override
+            public List<SubstituteAction> compute(TypeCheckingContext context) {
+              return isSmart ? substituteInfo.getSmartMatchingActions(pattern, false, editorCell) :
+                substituteInfo.getMatchingActions(pattern, false);
+            }
+          });
       }
     });
   }
@@ -2891,7 +2896,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           Pair<SNodeReference, String> pair = new Pair<SNodeReference, String>(nodeProxy, propertyName);
           Set<EditorCell_Property> editorCell_properties = myNodePropertiesAccessedCleanlyToDependentCellsMap.get(pair);
           Set<jetbrains.mps.openapi.editor.cells.EditorCell> editorCells = myNodePropertiesAccessedDirtilyToDependentCellsMap.get(pair);
-          Set<jetbrains.mps.openapi.editor.cells.EditorCell> editorCellsDependentOnExistence = myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap.get(pair);
+          Set<jetbrains.mps.openapi.editor.cells.EditorCell> editorCellsDependentOnExistence = myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap.get(
+            pair);
           if (editorCellsDependentOnExistence != null) {
             if (EventUtil.isPropertyAddedOrRemoved(events.get(0))) {
               rebuildEditorContent(events);

@@ -13,32 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.extapi.model;
+package jetbrains.mps.extapi.module;
 
-import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 
 /**
- * evgeny, 2/14/13
+ * evgeny, 3/7/13
  */
-public interface EditableSModel extends SModel {
+public interface EditableSModule extends SModule {
 
   boolean isChanged();
 
-  void setChanged(boolean changed);
+  void setChanged();
 
-  /**
-   * When owning a write action lock, this method will save the model into the storage.
-   * Throws an exception if there were fatal errors during the load phase.
-   */
   void save();
-
-  void rename(String newModelName, boolean changeFile);
-
-  boolean isReadOnly();
-
-  void updateDiskTimestamp();
-
-  boolean needsReloading();
-
-  void reloadFromDisk();
 }

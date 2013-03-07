@@ -37,11 +37,6 @@ public abstract class BaseSpecialModelDescriptor extends BaseSModelDescriptor {
   }
 
   @Override
-  public boolean isReadOnly() {
-    return true;
-  }
-
-  @Override
   public boolean isLoaded() {
     return mySModel != null;
   }

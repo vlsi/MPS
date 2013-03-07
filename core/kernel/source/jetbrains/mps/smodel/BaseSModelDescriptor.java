@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel.ImportElement;
@@ -27,15 +27,11 @@ import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelScope;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.DataSource;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.io.IOException;
 import java.util.Collections;
@@ -43,69 +39,13 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public abstract class BaseSModelDescriptor implements jetbrains.mps.smodel.SModelDescriptor {
+public abstract class BaseSModelDescriptor extends SModelBase implements jetbrains.mps.smodel.SModelDescriptor {
   private static final Logger LOG = Logger.getLogger(BaseSModelDescriptor.class);
 
-  private ModelRoot myModelRoot;
-  @NotNull
-  private final DataSource mySource;
-  @NotNull
-  protected SModelReference myModelReference;
-
   private List<SModelListener> myModelListeners = new CopyOnWriteArrayList<SModelListener>();
-  private volatile SModule myModule;
-
 
   protected BaseSModelDescriptor(@NotNull SModelReference modelReference, @NotNull DataSource source) {
-    myModelReference = modelReference;
-    mySource = source;
-  }
-
-  @Override
-  public SModelInternal getModelDescriptor() {
-    return this;
-  }
-
-  @Override
-  public SModelScope getModelScope() {
-    return getSModel().getModelScope();
-  }
-
-  @Override
-  public boolean isRoot(org.jetbrains.mps.openapi.model.SNode node) {
-    return getSModel().isRoot(node);
-  }
-
-  @Override
-  public void setModelRoot(ModelRoot modelRoot) {
-//    if (myModelRoot != null && modelRoot != null) {
-//      LOG.error("Duplicate model roots for model " + getLongName() + " in module " + modelRoot.getModule() + ": \n" +
-//        "1. " + myModelRoot.getPresentation() + "\n" +
-//        "2. " + modelRoot.getPresentation()
-//      );
-//    }
-    myModelRoot = modelRoot;
-  }
-
-  @Override
-  public ModelRoot getModelRoot() {
-    return myModelRoot;
-  }
-
-  @Override
-  public SModelId getModelId() {
-    return myModelReference.getSModelId();
-  }
-
-  @Override
-  public String getModelName() {
-    return myModelReference.getModelName();
-  }
-
-  @Override
-  @NotNull
-  public DataSource getSource() {
-    return mySource;
+    super(modelReference, source);
   }
 
   @Override
@@ -124,11 +64,18 @@ public abstract class BaseSModelDescriptor implements jetbrains.mps.smodel.SMode
   }
 
   @Override
-  public SNode getNode(SNodeId id) {
-    return getSModel().getNode(id);
+  public SModelScope getModelScope() {
+    return getSModel().getModelScope();
   }
 
-  public void attach() {
+  @Override
+  public boolean isRoot(org.jetbrains.mps.openapi.model.SNode node) {
+    return getSModel().isRoot(node);
+  }
+
+  @Override
+  public SNode getNode(SNodeId id) {
+    return getSModel().getNode(id);
   }
 
   @Override
@@ -142,6 +89,7 @@ public abstract class BaseSModelDescriptor implements jetbrains.mps.smodel.SMode
     clearListeners();
   }
 
+  @Override
   public void dispose() {
     detach();
   }
@@ -152,15 +100,8 @@ public abstract class BaseSModelDescriptor implements jetbrains.mps.smodel.SMode
   }
 
   @Override
-  public boolean isRegistered() {
-    SModule copy = myModule;
-    return copy != null && copy.getRepository() != null;
-  }
-
-  @Override
-  @NotNull
-  public SModelReference getReference() {
-    return myModelReference;
+  public SModelInternal getModelDescriptor() {
+    return this;
   }
 
   /**
@@ -169,30 +110,18 @@ public abstract class BaseSModelDescriptor implements jetbrains.mps.smodel.SMode
   @Override
   @Deprecated
   public SModelReference getSModelReference() {
-    return myModelReference;
+    return getReference();
   }
 
   @Override
   public String getLongName() {
-    return myModelReference.getLongName();
+    return getReference().getLongName();
   }
 
   @Override
   @NotNull
   public String getStereotype() {
-    return myModelReference.getStereotype();
-  }
-
-
-  @Override
-  public void setModule(SModule module) {
-    myModule = module;
-  }
-
-  @Override
-  @Nullable
-  public IModule getModule() {
-    return ((IModule) myModule);
+    return getReference().getStereotype();
   }
 
   protected abstract SModel getCurrentModelInternal();
@@ -315,11 +244,6 @@ public abstract class BaseSModelDescriptor implements jetbrains.mps.smodel.SMode
   @Override
   public Iterable<Problem> getProblems() {
     return Collections.emptySet();
-  }
-
-  @Override
-  public void save() throws IOException {
-    // TODO implement
   }
 
   @Override

@@ -82,7 +82,7 @@ public class UpgradePersistence_Action extends BaseAction {
 
             boolean wasInitialized = model.isLoaded();
             if (wasInitialized) {
-              model.save();
+              ((EditableSModel) model).save();
             }
 
             factory.upgrade(fileSource);

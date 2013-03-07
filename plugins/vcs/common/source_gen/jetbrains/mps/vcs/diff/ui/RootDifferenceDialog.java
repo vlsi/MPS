@@ -50,6 +50,7 @@ import java.awt.Insets;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -262,7 +263,7 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
       myTopPanel
     )).add(separator, gbc);
     ListSequence.fromList(myEditorSeparators).addElement(separator);
-    if (!(myChangeSet.getNewModel().isReadOnly())) {
+    if (!(SModelOperations.isReadOnly(myChangeSet.getNewModel()))) {
       DiffButtonsPainter.addTo(this, myOldEditor, layout, inspector);
       DiffButtonsPainter.addTo(this, myNewEditor, layout, inspector);
     }

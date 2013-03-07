@@ -51,11 +51,6 @@ public class JavaClassStubModelDescriptor extends BaseSModelDescriptorWithSource
   }
 
   @Override
-  public boolean isReadOnly() {
-    return true;
-  }
-
-  @Override
   public synchronized SModel getSModel() {
     if (myModel == null) {
       myModel = createModel();

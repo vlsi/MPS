@@ -12,6 +12,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -26,7 +27,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.Collections;
 import jetbrains.mps.logging.Logger;
 
@@ -47,7 +47,7 @@ public class SetNodePackage_Action extends BaseAction {
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).all(new IWhereFilter<SNode>() {
       public boolean accept(SNode n) {
-        return SNodeOperations.getParent(n) == null && !(SNodeOperations.getModel(n).isReadOnly());
+        return SNodeOperations.getParent(n) == null && !(SModelOperations.isReadOnly(SNodeOperations.getModel(n)));
       }
     });
   }
@@ -140,7 +140,7 @@ public class SetNodePackage_Action extends BaseAction {
     }));
     Set<String> packages = SetSequence.fromSetWithValues(new HashSet<String>(), SetSequence.fromSet(models).translate(new ITranslator2<SModel, SNode>() {
       public Iterable<SNode> translate(SModel m) {
-        return SModelOperations.getRoots(m, "jetbrains.mps.lang.core.structure.BaseConcept");
+        return jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getRoots(m, "jetbrains.mps.lang.core.structure.BaseConcept");
       }
     }).select(new ISelector<SNode, String>() {
       public String select(SNode r) {

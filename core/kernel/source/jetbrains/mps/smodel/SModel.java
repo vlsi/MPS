@@ -241,17 +241,6 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
   }
 
   @Override
-  public boolean isReadOnly() {
-    org.jetbrains.mps.openapi.model.SModel md = getModelDescriptor();
-    return md != null && md.isReadOnly();
-  }
-
-  @Override
-  public void save() throws IOException {
-    //todo
-  }
-
-  @Override
   public void load() {
     // already loaded
   }
@@ -1186,15 +1175,6 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
    * Inline content in java code, use migration in MPS
    * @Deprecated in 3.0
    */
-  public boolean isNotEditable() {
-    return isReadOnly();
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
   public final Iterable<org.jetbrains.mps.openapi.model.SNode> roots() {
     return getRootNodes();
   }
@@ -1352,11 +1332,6 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
     }
 
     @Override
-    public boolean isReadOnly() {
-      return false;
-    }
-
-    @Override
     public Iterable<org.jetbrains.mps.openapi.model.SNode> getRootNodes() {
       return myModel.getRootNodes();
     }
@@ -1406,11 +1381,6 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
     @Override
     public Iterable<Problem> getProblems() {
       return Collections.emptySet();
-    }
-
-    @Override
-    public void save() throws IOException {
-
     }
 
     @Override
