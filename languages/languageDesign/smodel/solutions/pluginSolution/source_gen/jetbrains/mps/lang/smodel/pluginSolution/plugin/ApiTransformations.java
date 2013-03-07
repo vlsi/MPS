@@ -719,7 +719,7 @@ public class ApiTransformations {
 
     // ----------------- 
 
-    String cat63 = "SModel: isTransient->.getModule() instanceof TransientModelsModule";
+    String cat63 = "SModel: isTransient->instanceof TransientSModel";
     SNode md63 = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_f4dkew_a0a0a844a1(), "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", false);
     _FunctionTypes._void_P1_E0<? super SNode> transformer63 = new _Adapters._return_P1_E0_to__void_P1_E0_adapter<SNode>(new _FunctionTypes._return_P1_E0<SNode, SNode>() {
       public SNode invoke(SNode usage) {
@@ -1212,7 +1212,7 @@ public class ApiTransformations {
       quotedNode_3.addChild("operand", HUtil.copyIfNecessary(quotedNode_5));
     }
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, GlobalScope.getInstance(), false);
-    quotedNode_6.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_6, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.getModel():jetbrains.mps.smodel.SModel")));
+    quotedNode_6.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_6, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.getModel():org.jetbrains.mps.openapi.model.SModel")));
     quotedNode_3.addChild("operation", quotedNode_6);
     quotedNode_2.addChild("leftExpression", quotedNode_3);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, GlobalScope.getInstance(), false);
@@ -3381,14 +3381,21 @@ public class ApiTransformations {
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;
     SNode quotedNode_7 = null;
+    SNode quotedNode_8 = null;
+    SNode quotedNode_9 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceOfExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setReference("classifier", SReference.create("classifier", quotedNode_3, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator(MPS.Core/jetbrains.mps.generator@java_stub)"), SNodeId.fromString("~TransientSModel")));
+    quotedNode_3.setReference("classifier", SReference.create("classifier", quotedNode_3, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator(MPS.Core/jetbrains.mps.generator@java_stub)"), SNodeId.fromString("~TransientModelsModule")));
     quotedNode_2.addChild("classType", quotedNode_3);
-    quotedNode_4 = (SNode) parameter_1;
-    if (quotedNode_4 != null) {
-      quotedNode_2.addChild("leftExpression", HUtil.copyIfNecessary(quotedNode_4));
+    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);
+    quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, GlobalScope.getInstance(), false);
+    quotedNode_5.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_5, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~BaseSModelDescriptor.getModule():jetbrains.mps.project.IModule")));
+    quotedNode_4.addChild("operation", quotedNode_5);
+    quotedNode_6 = (SNode) parameter_1;
+    if (quotedNode_6 != null) {
+      quotedNode_4.addChild("operand", HUtil.copyIfNecessary(quotedNode_6));
     }
+    quotedNode_2.addChild("leftExpression", quotedNode_4);
     return quotedNode_2;
   }
 
