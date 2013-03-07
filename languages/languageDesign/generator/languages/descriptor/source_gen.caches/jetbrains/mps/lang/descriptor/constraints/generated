@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="agdvj32gh0xqgaj24glg847we11l8dx">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-b2l5iyygy2vjqkbekn4rvaubf6n8cmr" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="38s949ymo9nq7jj7p2lrfowy0hurndx" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-c1prn3teyxjh37lzg3o3idls8kjv8gf" />
+  <dep model="r:00000000-0000-4000-0000-011c8959030e(jetbrains.mps.lang.constraints.generator.baseLanguage.template.main@generator)" hash="cn2j12pghse1qiihj1kvokxpjkncqfp" />
+  <dep model="r:6c8689b4-7e32-4a3b-a4f7-e167320d47c9(jetbrains.mps.lang.descriptor.constraints)" hash="agdvj32gh0xqgaj24glg847we11l8dx" />
+  <dep model="r:cdf8afc0-fdc6-47ca-b829-7b2226168efa(jetbrains.mps.lang.descriptor.structure)" hash="-czvkrhw0tw4pplm2ctz3bhhk8oe02h3" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
+  <common hash="-6vnq48furhbzu295crobkiiq1dfbn42">
+    <dep root="8780540425167303919" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959030e(jetbrains.mps.lang.constraints.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:6c8689b4-7e32-4a3b-a4f7-e167320d47c9(jetbrains.mps.lang.descriptor.constraints)" />
+    <dep model="r:cdf8afc0-fdc6-47ca-b829-7b2226168efa(jetbrains.mps.lang.descriptor.structure)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="ConstraintsAspectDescriptor.java" />
+  </common>
+  <source id="8780540425167303919" name="LanguageDescriptor_Constraints" hash="6vjpv97o3ztyanc44bb6gga236q1b53">
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959030e(jetbrains.mps.lang.constraints.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:cdf8afc0-fdc6-47ca-b829-7b2226168efa(jetbrains.mps.lang.descriptor.structure)" />
+    <file name="LanguageDescriptor_Constraints.java" />
+  </source>
+</dependencies>
+
