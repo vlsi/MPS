@@ -585,6 +585,7 @@
       <property name="caption" nameId="tp4k.1205250923097" value="Cut" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5033107305426734988">
+      <property name="mnemonic" nameId="tp4k.1215865999894" value="F" />
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="FastFindNodeUsages" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Node.Actions" />
@@ -20605,11 +20606,11 @@
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="6714867774530130714" resolveInfo="FindPrevious" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="9018540612698627331" />
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="3569690866539290539">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="5033107305426734988" resolveInfo="FastFindNodeUsages" />
+      </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="9018540612698627334">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="5033107305426766812" resolveInfo="FindSpecificNodeUsages" />
-      </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="9018540612698627336">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="5033107305426734988" resolveInfo="FastFindNodeUsages" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="9018540612698627338">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="5533671870987003804" resolveInfo="HighlightUsages" />
@@ -22248,6 +22249,9 @@
       <link role="point" roleId="tp4k.1204992316090" targetNodeId="ekwn.1755502566255660800" resolveInfo="find" />
     </node>
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1587195459761469118">
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="3569690866539290552">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="5033107305426734988" resolveInfo="FastFindNodeUsages" />
+      </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="1587195459761469120">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="5033107305426766812" resolveInfo="FindSpecificNodeUsages" />
       </node>

@@ -26,6 +26,7 @@ public class FastFindNodeUsages_Action extends BaseAction {
     super("Find Usages (Without Options Dialog)", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
+    this.setMnemonic("F".charAt(0));
   }
 
   @Override

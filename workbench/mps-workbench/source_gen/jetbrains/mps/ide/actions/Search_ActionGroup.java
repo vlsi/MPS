@@ -18,8 +18,8 @@ public class Search_ActionGroup extends GeneratedActionGroup {
       Search_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FindNext_Action");
       Search_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FindPrevious_Action");
       Search_ActionGroup.this.addSeparator();
-      Search_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FindSpecificNodeUsages_Action");
       Search_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FastFindNodeUsages_Action");
+      Search_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FindSpecificNodeUsages_Action");
       Search_ActionGroup.this.addAction("jetbrains.mps.ide.actions.HighlightUsages_Action");
       Search_ActionGroup.this.addAction("jetbrains.mps.ide.actions.HighlightInstances_Action");
     } catch (Throwable t) {

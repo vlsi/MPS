@@ -18,6 +18,7 @@ public class FindUsages_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
+      FindUsages_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FastFindNodeUsages_Action");
       FindUsages_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FindSpecificNodeUsages_Action");
       {
         LabelledAnchor action = new LabelledAnchor(FindUsages_ActionGroup.LABEL_ID_find_instances);
