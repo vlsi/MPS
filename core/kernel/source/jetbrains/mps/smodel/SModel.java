@@ -1302,12 +1302,12 @@ public class SModel implements SModelInternal, SModelData {
 
     @Override
     public void addModelListener(@NotNull SModelListener listener) {
-      throw new UnsupportedOperationException("remove exception if excess");
+      LOG.error("remove exception if excess",new Throwable());
     }
 
     @Override
     public void removeModelListener(@NotNull SModelListener listener) {
-      throw new UnsupportedOperationException("remove exception if excess");
+      LOG.error("remove exception if excess",new Throwable());
     }
 
     @Override
