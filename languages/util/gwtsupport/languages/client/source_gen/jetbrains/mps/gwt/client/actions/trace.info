@@ -4,8 +4,13 @@
   <root nodeRef="r:94daacce-6018-4d62-b895-93aae292f1f8(jetbrains.mps.gwt.client.actions)/1572321421813616681">
     <nodeInfo nodeId="1572321421813623432" fileName="QueriesGenerated.java" startLine="11" startPosition="43" endLine="12" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1572321421813643427" fileName="QueriesGenerated.java" startLine="10" startPosition="149" endLine="13" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1572321421813616683" fileName="QueriesGenerated.java" startLine="10" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="nodeFactory_NodeSetup_GWTModule_1572321421813616683#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSetupContext;)V" />
     <scopeInfo nodeId="1572321421813643428" fileName="QueriesGenerated.java" startLine="11" startPosition="43" endLine="12" endPosition="120" />
     <scopeInfo nodeId="1572321421813623428" fileName="QueriesGenerated.java" startLine="10" startPosition="149" endLine="13" endPosition="5" />
+    <scopeInfo nodeId="1572321421813616683" fileName="QueriesGenerated.java" startLine="10" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1572321421813616683" varName="_context" />
+      <varInfo nodeId="1572321421813616683" varName="operationContext" />
+    </scopeInfo>
   </root>
 </debugInfo>
 
