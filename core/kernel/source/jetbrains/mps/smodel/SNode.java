@@ -797,6 +797,11 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   //--------------
 
   public org.jetbrains.mps.openapi.model.SModel getModel() {
+    assertRead();
+    assertDisposed();
+
+    fireNodeReadAccess();
+
     return myModel == null ? null : myModel.getModelDescriptor();
   }
 
