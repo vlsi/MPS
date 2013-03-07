@@ -41,10 +41,12 @@ import jetbrains.mps.ide.ui.dialogs.properties.tables.models.ModelImportedModels
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.ModelUsedLangTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.ModelsLangEngagedOnGenTM;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel;
+import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
 import jetbrains.mps.ide.ui.finders.LanguageUsagesFinder;
 import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.Nls;
@@ -135,7 +137,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
     }
   }
 
-  protected class ModelDependenciesComponent extends Tab {
+  protected class ModelDependenciesComponent extends BaseTab {
     private ModelImportedModelsTableModel myImportedModels;
     private JPanel myImportedModelsComponent;
 
@@ -372,7 +374,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
     }
   }
 
-  public class InfoTab extends Tab {
+  public class InfoTab extends BaseTab {
     private final boolean myIsDefSModelDescr;
     private JBCheckBox myDoNotGenerateCheckBox;
     private JBCheckBox myGenerateIntoModelFolderCheckBox;
