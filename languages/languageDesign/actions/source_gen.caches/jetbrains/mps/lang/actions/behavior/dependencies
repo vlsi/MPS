@@ -4,6 +4,9 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.ConceptPart_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.behavior.NodeSubstituteMenuBuilderPart_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.behavior.SideTransformMenuBuilderPart_BehaviorDescriptor" />
+    <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.actions.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
@@ -311,22 +314,22 @@
   <dependency className="jetbrains.mps.lang.actions.behavior.ConceptPart_BehaviorDescriptor" file="ConceptPart_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.actions.behavior.MenuBuilderPart_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.actions.behavior.ConceptRightTransformPart_BehaviorDescriptor" file="ConceptRightTransformPart_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.actions.behavior.MenuBuilderPart_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.behavior.SideTransformMenuBuilderPart_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.actions.behavior.ConceptSubstitutePart_BehaviorDescriptor" file="ConceptSubstitutePart_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.actions.behavior.MenuBuilderPart_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.behavior.NodeSubstituteMenuBuilderPart_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
@@ -443,8 +446,8 @@
   <dependency className="jetbrains.mps.lang.actions.behavior.IncludeRightTransformForNodePart_BehaviorDescriptor" file="IncludeRightTransformForNodePart_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.actions.behavior.MenuBuilderPart_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.behavior.SideTransformMenuBuilderPart_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
@@ -464,12 +467,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.IsSmartActionApplicableFunction_Behavior" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.actions.behavior.MenuBuilderPart_BehaviorDescriptor" file="MenuBuilderPart_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.actions.behavior.MenuPart_BehaviorDescriptor" file="MenuPart_BehaviorDescriptor.java">
@@ -696,6 +693,7 @@
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.actions.behavior.NodeSubstituteMenuBuilderPart_BehaviorDescriptor" file="NodeSubstituteMenuBuilderPart_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.lang.actions.behavior.NodeSubstitutePreconditionFunction_Behavior" file="NodeSubstitutePreconditionFunction_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -1373,23 +1371,26 @@
   <dependency className="jetbrains.mps.lang.actions.behavior.RemoveByConditionPart_BehaviorDescriptor" file="RemoveByConditionPart_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.actions.behavior.MenuBuilderPart_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.behavior.NodeSubstituteMenuBuilderPart_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.actions.behavior.RemoveDefaultsPart_BehaviorDescriptor" file="RemoveDefaultsPart_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.actions.behavior.MenuBuilderPart_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.behavior.NodeSubstituteMenuBuilderPart_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.actions.behavior.RemovePart_BehaviorDescriptor" file="RemovePart_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.actions.behavior.MenuBuilderPart_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.behavior.NodeSubstituteMenuBuilderPart_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.behavior.SideTransformMenuBuilderPart_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.actions.behavior.RemoveSTByConditionPart_Behavior" file="RemoveSTByConditionPart_Behavior.java">
@@ -1399,8 +1400,8 @@
   <dependency className="jetbrains.mps.lang.actions.behavior.RemoveSTByConditionPart_BehaviorDescriptor" file="RemoveSTByConditionPart_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.actions.behavior.MenuBuilderPart_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.behavior.SideTransformMenuBuilderPart_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
@@ -1472,6 +1473,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.actions.behavior.SideTransformMenuBuilderPart_BehaviorDescriptor" file="SideTransformMenuBuilderPart_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.lang.actions.behavior.SideTransformMenuPart_BehaviorDescriptor" file="SideTransformMenuPart_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

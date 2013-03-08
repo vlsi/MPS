@@ -892,11 +892,11 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static Iterable sourceNodesQuery_4692357616858447090(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_4692357616861972997(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "part", true);
   }
 
-  public static Iterable sourceNodesQuery_4692357616861972997(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_4692357616858447090(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "part", true);
   }
 }
