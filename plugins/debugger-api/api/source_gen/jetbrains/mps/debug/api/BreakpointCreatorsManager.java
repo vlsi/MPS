@@ -110,7 +110,7 @@ public class BreakpointCreatorsManager implements ApplicationComponent {
         }
         SNode concept = (SNode) SModelUtil.findConceptDeclaration(conceptFqName, ProjectHelper.toMPSProject(project).getScope());
 
-        createBreakpoint(concept, node, project);
+        return createBreakpoint(concept, node, project);
       }
     }
 
