@@ -21,10 +21,13 @@ import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
+import org.jetbrains.mps.openapi.persistence.indexing.FindUsagesParticipant;
 
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedHashSet;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * evgeny, 10/23/12
@@ -37,6 +40,7 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
 
   private Map<String, ModelRootFactory> myRootFactories = new HashMap<String, ModelRootFactory>();
   private Map<String, ModelFactory> myExtensionToModelFactoryMap = new HashMap<String, ModelFactory>();
+  private Set<FindUsagesParticipant> myParticipants = new LinkedHashSet<FindUsagesParticipant>();
 
   @Override
   public ModelRootFactory getModelRootFactory(String type) {
@@ -77,6 +81,19 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
   @Override
   public Iterable<String> getTypeIds() {
     return Collections.unmodifiableCollection(myRootFactories.keySet());
+  }
+
+  public void addFindUsagesParticipant(FindUsagesParticipant participant) {
+    myParticipants.add(participant);
+  }
+
+  public void removeFindUsagesParticipant(FindUsagesParticipant participant) {
+    myParticipants.remove(participant);
+  }
+
+  @Override
+  public Set<FindUsagesParticipant> getFindUsagesParticipants() {
+    return Collections.unmodifiableSet(myParticipants);
   }
 
   @Override

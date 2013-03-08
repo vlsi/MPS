@@ -13,20 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;
 
 import gnu.trove.THashMap;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.model.EditableSModel;
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.persistence.DataSourceBase;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.containers.MultiMap;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -87,7 +87,8 @@ public class SModelRepository implements CoreComponent {
       SModule prevModule = myModelOwner.get(modelDescriptor);
       if (prevModule != null) {
         if (prevModule != container) {
-          LOG.error("Model \"" + modelDescriptor.getModelName() + "\" is already registered by another module: existing=" + prevModule + ", new=" + container);
+          LOG.error(
+            "Model \"" + modelDescriptor.getModelName() + "\" is already registered by another module: existing=" + prevModule + ", new=" + container);
         }
         return;
       }
@@ -114,7 +115,7 @@ public class SModelRepository implements CoreComponent {
       if (modelReference.getSModelFqName() != null) {
         myFqNameToModelDescriptorMap.put(modelReference.getSModelFqName(), modelDescriptor);
       }
-      modelDescriptor.attach();
+      ((SModelBase) modelDescriptor).attach();
       ((SModelInternal) modelDescriptor).addModelListener(myModelsListener);
     }
     fireModelAdded(modelDescriptor);
@@ -143,7 +144,7 @@ public class SModelRepository implements CoreComponent {
       myFqNameToModelDescriptorMap.remove(md.getReference().getSModelFqName());
       ((SModelInternal) md).removeModelListener(myModelsListener);
       fireModelRemoved(md);
-      md.detach();
+      ((SModelBase) md).dispose();
     }
   }
 
