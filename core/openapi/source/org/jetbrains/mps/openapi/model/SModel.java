@@ -21,8 +21,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
-import java.io.IOException;
-
 /**
  * Represents a model. Models are loaded lazily when needed.
  */
@@ -58,10 +56,9 @@ public interface SModel {
 
   /**
    * Retrieves the owning module
+   * TODO: fix remove IModule!
    */
   IModule getModule();
-
-  boolean isReadOnly();
 
   /**
    * Returns a collection of root nodes. Root nodes are all nodes added to model using addRootNode.
@@ -108,12 +105,6 @@ public interface SModel {
    */
   @NotNull
   Iterable<Problem> getProblems();
-
-  /**
-   * When owning a write action lock, this method will save the model into the storage.
-   * Throws an exception if there were fatal errors during the load phase.
-   */
-  void save() throws IOException;
 
   /**
    * When owning a write action lock, this method will discard the in-memory representation of the model.

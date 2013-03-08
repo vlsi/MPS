@@ -26,12 +26,14 @@ public interface EditableSModel extends SModel {
 
   void setChanged(boolean changed);
 
-  @Override
+  /**
+   * When owning a write action lock, this method will save the model into the storage.
+   * Throws an exception if there were fatal errors during the load phase.
+   */
   void save();
 
   void rename(String newModelName, boolean changeFile);
 
-  @Override
   boolean isReadOnly();
 
   void updateDiskTimestamp();

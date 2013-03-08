@@ -45,6 +45,7 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
@@ -54,7 +55,6 @@ import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.AbstractAction;
 import javax.swing.Icon;
@@ -149,7 +149,7 @@ public class IntentionsSupport {
 
   private void checkAndShowMenu() {
     if (isInconsistentEditor()) return;
-    if (myEditor.isReadOnly() || myEditor.getSelectedNode().getModel().isReadOnly()) return;
+    if (myEditor.isReadOnly() || SModelOperations.isReadOnly(myEditor.getSelectedNode().getModel())) return;
 
     showIntentionsMenu();
   }

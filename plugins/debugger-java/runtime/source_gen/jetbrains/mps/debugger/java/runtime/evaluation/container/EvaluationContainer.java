@@ -16,7 +16,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.BaseSModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.ProjectModels;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.SModelRepository;
@@ -31,7 +31,6 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -67,7 +66,7 @@ public class EvaluationContainer implements IEvaluationContainer {
     myUiState = myDebugSession.getUiState();
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        BaseSModelDescriptor descriptor = ProjectModels.createDescriptorFor(true);
+        SModel descriptor = ProjectModels.createDescriptorFor(true);
         SModule containerModule = myContainerModule.resolve(myDebuggerRepository);
         SModelRepository.getInstance().registerModelDescriptor(descriptor, containerModule);
         myContainerModel = descriptor.getReference();
@@ -151,7 +150,7 @@ public class EvaluationContainer implements IEvaluationContainer {
 
   protected void setUpNode(List<SNodeReference> nodesToImport) {
     // wanted to use resolve method here, but it was not implemented:( 
-    SModel containerModel = (SModelInternal) SModelRepository.getInstance().getModelDescriptor(myContainerModel);
+    SModel containerModel = (SModelInternal) myContainerModel.resolve(MPSModuleRepository.getInstance());
 
     SNode evaluatorNode = createEvaluatorNode();
     containerModel.addRootNode(evaluatorNode);

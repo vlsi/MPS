@@ -129,7 +129,7 @@ public class NodeReadEventsCaster {
     }
 
     public void fireModelNodesReadAccess(SModel model) {
-      if (myEventsBlocked || !((jetbrains.mps.smodel.SModel) model).canFireReadEvent()) return;
+      if (myEventsBlocked || !((SModelInternal) model).canFireReadEvent()) return;
       myListenersStack.peek().modelNodesReadAccess(model);
     }
 

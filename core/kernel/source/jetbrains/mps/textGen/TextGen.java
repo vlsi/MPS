@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.textGen;
 
+import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.messages.IMessage;
@@ -64,7 +65,7 @@ public class TextGen {
     } else if (failIfNoTextgen) {
       String error = "Can't generate text from " + node;
       Message m = new Message(MessageKind.ERROR, error);
-      if (node != null && node.getModel() != null && !(node.getModel() instanceof TransientSModel)) {
+      if (node != null && node.getModel() != null && !(node.getModel() .getModule() instanceof TransientModelsModule)) {
         m.setHintObject(new jetbrains.mps.smodel.SNodePointer(node));
       }
       return new TextGenerationResult(node, NO_TEXTGEN, true, Collections.<IMessage>singleton(m), null, null, null, null);

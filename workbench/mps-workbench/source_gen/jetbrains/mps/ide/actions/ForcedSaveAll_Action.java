@@ -7,11 +7,18 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.project.MPSProject;
+import java.util.List;
 import jetbrains.mps.extapi.model.EditableSModel;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.logging.Logger;
 
 public class ForcedSaveAll_Action extends BaseAction {
@@ -41,16 +48,31 @@ public class ForcedSaveAll_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      for (SModel descr : ListSequence.fromList(SModelRepository.getInstance().getModelDescriptors())) {
-        if (!(SModelStereotype.isUserModel(descr) && descr instanceof EditableSModel)) {
-          continue;
+      Iterable<SModule> modules = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModules();
+      List<EditableSModel> allModels = Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
+        public Iterable<SModel> translate(SModule it) {
+          return it.getModels();
         }
-        EditableSModel model = (EditableSModel) descr;
+      }).where(new IWhereFilter<SModel>() {
+        public boolean accept(SModel it) {
+          return SModelStereotype.isUserModel(it) && it instanceof EditableSModel;
+        }
+      }).select(new ISelector<SModel, EditableSModel>() {
+        public EditableSModel select(SModel it) {
+          return (EditableSModel) it;
+        }
+      }).toListSequence();
+
+      for (EditableSModel model : ListSequence.fromList(allModels)) {
         if (model.isReadOnly()) {
           continue;
         }

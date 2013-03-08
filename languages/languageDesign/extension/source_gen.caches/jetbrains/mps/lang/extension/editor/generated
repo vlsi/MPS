@@ -15,7 +15,7 @@
   <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" hash="iak6qkoqvisy1gghydx23iwnxiu2qf" />
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-dqdp89qyu48i5kq0qomcw0yllca2bc3" />
   <dep model="r:2a0fe383-d602-4f5b-813c-e41afdbbb97e(jetbrains.mps.lang.extension.structure)" hash="-cia9xxxfuqiutf6zb4fv3ebfem3jw2d" />
-  <dep model="r:d209fa1f-db47-4e3b-92ec-6c4d44d11cab(jetbrains.mps.lang.extension.behavior)" hash="739hwb07mt5cqgv2tnmseeaygf2j4me" />
+  <dep model="r:d209fa1f-db47-4e3b-92ec-6c4d44d11cab(jetbrains.mps.lang.extension.behavior)" hash="9zi1iza3s0pd1eswt7tieo4rochkrsf" />
   <common hash="1neriunubpvku08ivv3ekxiolfrnghf" />
   <source id="3729007189729192408" name="ExtensionPointDeclaration_Editor" hash="-3u0sckk0byj2xw771xhnhtvuqfmskib">
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />

@@ -128,49 +128,98 @@ public class MPSPsiRef extends MPSPsiNodeBase {
         return null;
       }
 
+      // Must be called in command
+      private void setTarget(final SNode ourSource, @Nullable final SNodeReference nodeReference, final String resolveInfo) {
+        if (nodeReference == null) {
+          // invalidating the SReference
+          ourSource.setReferenceTarget(role, null);
+          model = null;
+          nodeId = null;
+          referenceText = null;
+
+        } else {
+          // FIXME resolveInfo
+          SReference ref = StaticReference.create(role, ourSource, nodeReference, resolveInfo);
+          ourSource.setReference(role, ref);
+
+          model = nodeReference.getModelReference();
+          // FIXME what shoud I use?
+          // nodeReference.resolve().getNodeId() is bad because during rename refactoring:
+          // actual rename may happen after handling usage => resolve will fail
+          nodeId = ((SNodePointer) nodeReference).getNodeId();
+          // FIXME  1) toString is a bad fallback 2) use resolveInfo?
+          referenceText = resolveInfo;
+        }
+      }
+
       @Override
-      public PsiElement handleElementRename(String newElementName) throws IncorrectOperationException {
+      public PsiElement handleElementRename(final String newElementName) throws IncorrectOperationException {
+        ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
+          @Override
+          public void run() {
+
+            PsiElement target = resolve();
+            if (target instanceof MPSPsiNode) {
+              // Target is an MPS node, rename doesn't need to be handled.
+              // Well we probably will never receive such notifications about our nodes, but just in case
+              return;
+            }
+
+            // do stuff
+            PsiElement parent = getParent();
+            assert parent instanceof MPSPsiNode;
+
+            MPSPsiNode psiSource = (MPSPsiNode) parent;
+            SNode source = psiSource.getSNodeReference().resolve(MPSModuleRepository.getInstance());
+
+            // rename implies that model has remained the same
+            // FIXME do it better: discriminate between static and dynamic refs, use resolve info
+            SReference oldRef = source.getReference(role);
+            SModelReference modelRef = null;
+            if (oldRef != null) {
+              modelRef = oldRef.getTargetSModelReference();
+            }
+            SNodeId targetNodeId = MPS2PsiMapperUtil.getNodeId(target, newElementName);
+            SNodeReference targetNodeReference = targetNodeId == null ? null : new SNodePointer(modelRef, targetNodeId);
+
+            // FIXME resolveInfo = newElementName may be wrong: what resolve info do inner classes have? probably [non-fully] qualified name
+            setTarget(source, targetNodeReference, newElementName);
+          }
+        }, new MPSProject(getProject()));
+
+
         return MPSPsiRef.this;
       }
 
       @Override
       public PsiElement bindToElement(final @NotNull PsiElement element) throws IncorrectOperationException {
-        if (element instanceof MPSPsiNodeBase) {
-          // TODO targeting mps node
-        } else {
-          final Project project = getProject();
-          final SNode newTargetNode = MPS2PsiMapperUtil.findNodeByPsi(element, project);
+        ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
+          @Override
+          public void run() {
 
-          PsiElement psiParent = getParent();
-          if (psiParent instanceof MPSPsiNode) {
-            MPSPsiNode mpsParent = (MPSPsiNode) psiParent;
-            final SNode parentNode = mpsParent.getSNodeReference().resolve(MPSModuleRepository.getInstance());
+            if (element instanceof MPSPsiNodeBase) {
+              // TODO targeting mps node
+            } else {
 
-            ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
-              @Override
-              public void run() {
-                // setReferenceTarget: ignoring the fact that there may be multiple references in one role?
-                if (newTargetNode == null) {
-                  // invalidating the SReference
-                  parentNode.setReferenceTarget(role, null);
-                  // TODO what to do with this MPSPsiRef?
+              PsiElement parent = getParent();
+              assert parent instanceof MPSPsiNode;
 
-                } else {
-//                  parentNode.setReferenceTarget(role, newTargetNode);
-                  // let's try immature reference
-                  SReference ref = new StaticReference(role, parentNode, newTargetNode);
-//                  new DynamicReference(role, parentNode, newTargetNode);
-                  parentNode.setReference(role, ref);
+              MPSPsiNode psiSource = (MPSPsiNode) parent;
+              SNode source = psiSource.getSNodeReference().resolve(MPSModuleRepository.getInstance());
 
-                  model = newTargetNode.getModel().getReference();
-                  nodeId = newTargetNode.getNodeId();
-                  // TODO toString is a bad fallback
-                  referenceText = element instanceof PsiNamedElement ? ((PsiNamedElement) element).getName() : element.toString();
-                }
+              Project project = getProject();
+              SNode newTargetNode = MPS2PsiMapperUtil.findNodeByPsi(element, project);
+
+              if (newTargetNode == null) {
+                // link has gone dead
+                setTarget(source, null, "");
+              } else {
+                String resolveInfo = element instanceof PsiNamedElement ? ((PsiNamedElement) element).getName() : "";
+                setTarget(source, newTargetNode.getReference(), resolveInfo);
               }
-            }, new MPSProject(project));
+            }
           }
-        }
+        }, new MPSProject(getProject()));
 
         return MPSPsiRef.this;
       }
@@ -194,7 +243,10 @@ public class MPSPsiRef extends MPSPsiNodeBase {
     }
 
       ;
+
   }
+
+  ;
 
   @Override
   public String toString() {

@@ -246,16 +246,16 @@
     <node type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="6839387317842789764">
       <property name="name" nameId="tpck.1169194664001" value="node_operations" />
     </node>
-    <node type="tpf8.TemplateSwitch" typeId="tpf8.1112730859144" id="4692357616858166258">
-      <property name="name" nameId="tpck.1169194664001" value="RegisterMenuBuilder_subst" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="MenuParts.Substitute" />
-    </node>
     <node type="tpf8.TemplateSwitch" typeId="tpf8.1112730859144" id="4692357616861820086">
       <property name="name" nameId="tpck.1169194664001" value="RegisterMenuBuilder_st" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="MenuParts.RTransform" />
     </node>
     <node type="tpf8.TemplateSwitch" typeId="tpf8.1112730859144" id="4692357616869439635">
       <property name="name" nameId="tpck.1169194664001" value="MenuBuilderPartMethod_subst" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="MenuParts.Substitute" />
+    </node>
+    <node type="tpf8.TemplateSwitch" typeId="tpf8.1112730859144" id="4692357616858166258">
+      <property name="name" nameId="tpck.1169194664001" value="RegisterMenuBuilder_subst" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="MenuParts.Substitute" />
     </node>
     <node type="tpf8.TemplateSwitch" typeId="tpf8.1112730859144" id="4692357616869484868">
@@ -1276,8 +1276,8 @@
         </node>
       </node>
       <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="4692357616858634452">
-        <property name="isSynchronized" nameId="tpee.4276006055363816570" value="false" />
         <property name="name" nameId="tpck.1169194664001" value="preconditionQuery" />
+        <property name="isSynchronized" nameId="tpee.4276006055363816570" value="false" />
         <property name="isFinal" nameId="tpee.1181808852946" value="false" />
         <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="4692357616858854798" />
         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4692357616858634455">
@@ -1305,8 +1305,8 @@
         </node>
       </node>
       <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="4692357616859333493">
-        <property name="isSynchronized" nameId="tpee.4276006055363816570" value="false" />
         <property name="name" nameId="tpck.1169194664001" value="removeByCondition" />
+        <property name="isSynchronized" nameId="tpee.4276006055363816570" value="false" />
         <property name="isFinal" nameId="tpee.1181808852946" value="false" />
         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4692357616859333496" />
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4692357616859326263" />
@@ -1334,6 +1334,7 @@
     </node>
   </root>
   <root id="1177329385615">
+    <node role="defaultConsequence" roleId="tpf8.1168558750579" type="tpf8.AbandonInput_RuleConsequence" typeId="tpf8.1202776937179" id="4692357616858538283" />
     <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1177399477662">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpdg.1177398027324" resolveInfo="ConceptsSubstituteMenuPart" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1177399635014">
@@ -1364,7 +1365,6 @@
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1177404507206" resolveInfo="RegisterMenuPart_Wrapper_subst" />
       </node>
     </node>
-    <node role="defaultConsequence" roleId="tpf8.1168558750579" type="tpf8.AbandonInput_RuleConsequence" typeId="tpf8.1202776937179" id="4692357616858538283" />
   </root>
   <root id="1177329420522">
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="1177331076763">
@@ -3039,7 +3039,7 @@
                                           </node>
                                         </node>
                                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1208997309883">
-                                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ec5l.~SNode%dgetModel()%cjetbrains%dmps%dsmodel%dSModel" resolveInfo="getModel" />
+                                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ec5l.~SNode%dgetModel()%corg%djetbrains%dmps%dopenapi%dmodel%dSModel" resolveInfo="getModel" />
                                         </node>
                                       </node>
                                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7429695487346938047">
@@ -3957,8 +3957,8 @@
         </node>
       </node>
       <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="4692357616862193279">
-        <property name="isSynchronized" nameId="tpee.4276006055363816570" value="false" />
         <property name="name" nameId="tpck.1169194664001" value="preconditionQuery" />
+        <property name="isSynchronized" nameId="tpee.4276006055363816570" value="false" />
         <property name="isFinal" nameId="tpee.1181808852946" value="false" />
         <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="4692357616862193280" />
         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4692357616862193281">
@@ -3986,8 +3986,8 @@
         </node>
       </node>
       <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="4692357616862430862">
-        <property name="isSynchronized" nameId="tpee.4276006055363816570" value="false" />
         <property name="name" nameId="tpck.1169194664001" value="removeByCondition" />
+        <property name="isSynchronized" nameId="tpee.4276006055363816570" value="false" />
         <property name="isFinal" nameId="tpee.1181808852946" value="false" />
         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4692357616862430863" />
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4692357616862430864" />
@@ -4015,6 +4015,7 @@
     </node>
   </root>
   <root id="1177442049832">
+    <node role="defaultConsequence" roleId="tpf8.1168558750579" type="tpf8.AbandonInput_RuleConsequence" typeId="tpf8.1202776937179" id="4692357616862019263" />
     <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1177499564461">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpdg.1177498013932" resolveInfo="SimpleSideTransformMenuPart" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1177499625717">
@@ -4027,7 +4028,6 @@
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1177509909246" resolveInfo="RegisterMenuPart_Parameterized_st" />
       </node>
     </node>
-    <node role="defaultConsequence" roleId="tpf8.1168558750579" type="tpf8.AbandonInput_RuleConsequence" typeId="tpf8.1202776937179" id="4692357616862019263" />
   </root>
   <root id="1177499191569">
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1177499217120">
@@ -8635,43 +8635,6 @@
       </node>
     </node>
   </root>
-  <root id="4692357616858166258">
-    <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="4692357616858274839">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpdg.1177323996388" resolveInfo="AddMenuPart" />
-      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="4692357616858447070">
-        <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="4692357616858447078">
-          <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="4692357616858447080">
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="4692357616858447084">
-              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LoopMacro" typeId="tpf8.1118786554307" id="4692357616858447088">
-                <node role="sourceNodesQuery" roleId="tpf8.1167952069335" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="4692357616858447090">
-                  <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4692357616858447092">
-                    <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4692357616858453047">
-                      <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4692357616858453551">
-                        <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="4692357616858463793">
-                          <link role="link" roleId="tp25.1138056546658" targetNodeId="tpdg.1177333559040" />
-                        </node>
-                        <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="4692357616858453046" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.SwitchMacro" typeId="tpf8.1112731569622" id="4692357616858448618">
-                <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="1177329385615" resolveInfo="RegisterMenuPart_subst" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="4692357616858174709">
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpdg.1180134965967" resolveInfo="ConceptSubstitutePart" />
-      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="4692357616861962719">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1180136156066" resolveInfo="RegisterMenuBuilder_Concept_subst" />
-      </node>
-    </node>
-    <node role="defaultConsequence" roleId="tpf8.1168558750579" type="tpf8.AbandonInput_RuleConsequence" typeId="tpf8.1202776937179" id="4692357616858170193" />
-  </root>
   <root id="4692357616861820086">
     <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="4692357616861932812">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpdg.1177323996388" resolveInfo="AddMenuPart" />
@@ -8723,6 +8686,43 @@
       </node>
     </node>
     <node role="defaultConsequence" roleId="tpf8.1168558750579" type="tpf8.AbandonInput_RuleConsequence" typeId="tpf8.1202776937179" id="4692357616869443484" />
+  </root>
+  <root id="4692357616858166258">
+    <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="4692357616858274839">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpdg.1177323996388" resolveInfo="AddMenuPart" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="4692357616858447070">
+        <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="4692357616858447078">
+          <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="4692357616858447080">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="4692357616858447084">
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LoopMacro" typeId="tpf8.1118786554307" id="4692357616858447088">
+                <node role="sourceNodesQuery" roleId="tpf8.1167952069335" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="4692357616858447090">
+                  <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4692357616858447092">
+                    <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4692357616858453047">
+                      <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4692357616858453551">
+                        <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="4692357616858463793">
+                          <link role="link" roleId="tp25.1138056546658" targetNodeId="tpdg.1177333559040" />
+                        </node>
+                        <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="4692357616858453046" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.SwitchMacro" typeId="tpf8.1112731569622" id="4692357616858448618">
+                <link role="templateSwitch" roleId="tpf8.1112731629154" targetNodeId="1177329385615" resolveInfo="RegisterMenuPart_subst" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="4692357616858174709">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tpdg.1180134965967" resolveInfo="ConceptSubstitutePart" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="4692357616861962719">
+        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1180136156066" resolveInfo="RegisterMenuBuilder_Concept_subst" />
+      </node>
+    </node>
+    <node role="defaultConsequence" roleId="tpf8.1168558750579" type="tpf8.AbandonInput_RuleConsequence" typeId="tpf8.1202776937179" id="4692357616858170193" />
   </root>
   <root id="4692357616869484868">
     <node role="reductionMappingRule" roleId="tpf8.1167340453568" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="4692357616869496389">

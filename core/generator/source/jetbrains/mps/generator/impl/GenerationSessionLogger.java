@@ -17,6 +17,7 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.IGeneratorLogger;
+import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
@@ -188,7 +189,7 @@ public class GenerationSessionLogger implements IGeneratorLogger {
           NodeWithContext context = new NodeWithContext(node, myOperationContext.getInvocationContext());
           message.setHintObject(context);
         }
-      } else if (node.getModel() != null && node.getModel() != null && !(node.getModel() instanceof TransientSModel)) {
+      } else if (node.getModel() != null && node.getModel() != null && !(node.getModel() .getModule() instanceof TransientModelsModule)) {
         message.setHintObject(new jetbrains.mps.smodel.SNodePointer(node));
       }
     }
@@ -200,7 +201,7 @@ public class GenerationSessionLogger implements IGeneratorLogger {
     if (model == null) {
       return false;
     }
-    if (model instanceof TransientSModel) {
+    if (model .getModule() instanceof TransientModelsModule) {
       if (isWarning && !myKeepModelsWithWarnings) {
         return false;
       }

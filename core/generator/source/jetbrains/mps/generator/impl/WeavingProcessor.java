@@ -40,7 +40,7 @@ public class WeavingProcessor {
   public WeavingProcessor(TemplateGenerator generator) {
     myGenerator = generator;
     myGenerationTracer = myGenerator.getGenerationTracer();
-    myFastNodeFinder = ((jetbrains.mps.smodel.SModel) myGenerator.getInputModel()).getFastNodeFinder();
+    myFastNodeFinder = ((jetbrains.mps.smodel.SModelInternal) myGenerator.getInputModel()).getFastNodeFinder();
   }
 
   public void apply(TemplateWeavingRule rule)

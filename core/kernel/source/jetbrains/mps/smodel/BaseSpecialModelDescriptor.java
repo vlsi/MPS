@@ -27,18 +27,13 @@ public abstract class BaseSpecialModelDescriptor extends BaseSModelDescriptor {
   }
 
   @Override
-  public final synchronized jetbrains.mps.smodel.SModel getSModel() {
+  public final synchronized jetbrains.mps.smodel.SModel getSModelInternal() {
     if (mySModel == null) {
       mySModel = createModel();
       mySModel.setModelDescriptor(this);
       fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
     }
     return mySModel;
-  }
-
-  @Override
-  public boolean isReadOnly() {
-    return true;
   }
 
   @Override

@@ -228,7 +228,7 @@ public class IncrementalGenerationHandler {
       String oldHash = entry.getValue();
       if (oldHash == null) {
         // TODO hash for packaged models
-        if ((sm instanceof EditableSModel) && !sm.isReadOnly()) {
+        if ((sm instanceof EditableSModel) && !((EditableSModel)sm).isReadOnly()) {
           changedModels.add(modelReference);
         }
         continue;

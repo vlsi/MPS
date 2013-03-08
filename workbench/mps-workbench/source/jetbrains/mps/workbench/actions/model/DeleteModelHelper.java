@@ -43,6 +43,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.vfs.FileSystem;
@@ -190,7 +191,7 @@ public class DeleteModelHelper {
         SearchType.MODEL_USAGES, GlobalScope.getInstance(), new EmptyProgressMonitor());
       for (SModel md : usages) {
         if (SModelStereotype.isUserModel(md)) {
-          ((jetbrains.mps.smodel.SModel) md.getSModel()).deleteModelImport(modelDescriptor.getReference());
+          ((SModelInternal) md.getSModel()).deleteModelImport(modelDescriptor.getReference());
         }
       }
 

@@ -1449,7 +1449,7 @@
     <nodeInfo nodeId="700892246829418181" fileName="AnnotationHelper.java" startLine="117" startPosition="31" endLine="120" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="700892246829418250" fileName="AnnotationHelper.java" startLine="136" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="annotate#(Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
     <nodeInfo nodeId="700892246829418265" fileName="AnnotationHelper.java" startLine="140" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isAnnotateable#(Ljetbrains/mps/nodeEditor/EditorComponent;)Z" />
-    <nodeInfo nodeId="700892246829418013" fileName="AnnotationHelper.java" startLine="144" startPosition="90" endLine="147" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="700892246829418013" fileName="AnnotationHelper.java" startLine="144" startPosition="69" endLine="147" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="700892246829418019" fileName="AnnotationHelper.java" startLine="151" startPosition="78" endLine="154" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="700892246829418170" fileName="AnnotationHelper.java" startLine="111" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onCancel#()V" />
     <nodeInfo nodeId="700892246829418198" fileName="AnnotationHelper.java" startLine="124" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
@@ -1458,7 +1458,7 @@
     <nodeInfo nodeId="700892246829418153" fileName="AnnotationHelper.java" startLine="103" startPosition="61" endLine="108" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="700892246829417986" fileName="AnnotationHelper.java" startLine="54" startPosition="99" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="700892246829418197" fileName="AnnotationHelper.java" startLine="122" startPosition="39" endLine="128" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="700892246829418013" fileName="AnnotationHelper.java" startLine="144" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_19hp0u_a0d0c#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/smodel/SModel;" />
+    <nodeInfo nodeId="700892246829418013" fileName="AnnotationHelper.java" startLine="144" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_19hp0u_a0d0c#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SModel;" />
     <nodeInfo nodeId="700892246829418019" fileName="AnnotationHelper.java" startLine="151" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_19hp0u_a0e0c#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/smodel/SModelInternal;" />
     <nodeInfo nodeId="700892246829418146" fileName="AnnotationHelper.java" startLine="102" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
     <nodeInfo nodeId="700892246829418195" fileName="AnnotationHelper.java" startLine="121" startPosition="0" endLine="129" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -1504,7 +1504,7 @@
     <scopeInfo nodeId="700892246829417987" fileName="AnnotationHelper.java" startLine="55" startPosition="56" endLine="59" endPosition="18" />
     <scopeInfo nodeId="700892246829418170" fileName="AnnotationHelper.java" startLine="111" startPosition="0" endLine="115" endPosition="0" />
     <scopeInfo nodeId="700892246829418198" fileName="AnnotationHelper.java" startLine="124" startPosition="0" endLine="128" endPosition="0" />
-    <scopeInfo nodeId="700892246829418013" fileName="AnnotationHelper.java" startLine="144" startPosition="90" endLine="148" endPosition="16" />
+    <scopeInfo nodeId="700892246829418013" fileName="AnnotationHelper.java" startLine="144" startPosition="69" endLine="148" endPosition="16" />
     <scopeInfo nodeId="700892246829418019" fileName="AnnotationHelper.java" startLine="151" startPosition="78" endLine="155" endPosition="16" />
     <scopeInfo nodeId="700892246829337613" fileName="AnnotationHelper.java" startLine="44" startPosition="98" endLine="49" endPosition="5">
       <varInfo nodeId="700892246829337614" varName="column" />

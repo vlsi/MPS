@@ -86,14 +86,14 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
     final SModel oldSModel = getCurrentModelInternal();
 
     if (oldSModel != null) {
-      ((jetbrains.mps.smodel.SModel) oldSModel).setModelDescriptor(null);
+      ((jetbrains.mps.smodel.SModelInternal) oldSModel).setModelDescriptor(null);
     }
 
     replacer.run();
 
     SModel newModel = getCurrentModelInternal();
     if (newModel != null) {
-      ((jetbrains.mps.smodel.SModel) newModel).setModelDescriptor(this);
+      ((jetbrains.mps.smodel.SModelInternal) newModel).setModelDescriptor(this);
     }
 
     notifyModelReplaced(oldSModel);

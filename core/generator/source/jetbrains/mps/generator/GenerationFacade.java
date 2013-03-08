@@ -54,7 +54,7 @@ public class GenerationFacade {
     List<SModel> list = generator.getOwnTemplateModels();
     List<SNode> mappings = new ArrayList<SNode>();
     for (SModel templateModel : list) {
-      List<SNode> nodes = ((jetbrains.mps.smodel.SModel) templateModel.getSModel()).getFastNodeFinder().getNodes(BootstrapLanguages.concept_generator_MappingConfiguration, true);
+      List<SNode> nodes = ((jetbrains.mps.smodel.SModelInternal) templateModel.getSModel()).getFastNodeFinder().getNodes(BootstrapLanguages.concept_generator_MappingConfiguration, true);
       mappings.addAll(nodes);
     }
     return mappings;

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project.validation;
 
+import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.MessageKind;
@@ -37,7 +38,7 @@ public class ModelValidator {
     ModelAccess.assertLegalRead();
 
     List<String> errors = new ArrayList<String>();
-    if (myModel instanceof TransientSModel) {
+    if (myModel .getModule() instanceof TransientModelsModule) {
       return errors;
     }
     if (jetbrains.mps.util.SNodeOperations.isModelDisposed(myModel)) {
@@ -63,15 +64,15 @@ public class ModelValidator {
     }
 
     List<ModuleReference> langsToCheck = new ArrayList<ModuleReference>();
-    langsToCheck.addAll(IterableUtil.asCollection(((jetbrains.mps.smodel.SModel) myModel).getModelDepsManager().getAllImportedLanguages()));
-    langsToCheck.addAll(((jetbrains.mps.smodel.SModel) myModel).engagedOnGenerationLanguages());
+    langsToCheck.addAll(IterableUtil.asCollection(((jetbrains.mps.smodel.SModelInternal) myModel).getModelDepsManager().getAllImportedLanguages()));
+    langsToCheck.addAll(((jetbrains.mps.smodel.SModelInternal) myModel).engagedOnGenerationLanguages());
     for (ModuleReference lang : langsToCheck) {
       if (scope.getLanguage(lang) == null) {
         errors.add("Can't find language: " + lang.getModuleFqName());
       }
     }
 
-    for (ModuleReference devKit : ((jetbrains.mps.smodel.SModel) myModel).importedDevkits()) {
+    for (ModuleReference devKit : ((jetbrains.mps.smodel.SModelInternal) myModel).importedDevkits()) {
       if (scope.getDevKit(devKit) == null) {
         errors.add("Can't find devkit: " + devKit.getModuleFqName());
       }

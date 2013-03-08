@@ -103,7 +103,7 @@ public final class StaticReference extends SReferenceBase {
       sb.append("\ncurrent thread ");
       sb.append(canRead);
       sb.append("\nstack trace of model disposing is: ");
-      for (StackTraceElement ste : ((jetbrains.mps.smodel.SModel) targetModel).getDisposedStacktrace()) {
+      for (StackTraceElement ste : ((jetbrains.mps.smodel.SModelInternal) targetModel).getDisposedStacktrace()) {
         sb.append(ste);
         sb.append("\n");
       }

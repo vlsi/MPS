@@ -21,6 +21,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiElement;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
 /**
  * danilla 2/13/13
@@ -33,4 +34,10 @@ public interface MPS2PsiMapper {
   @Nullable
   PsiElement getPsiSource(SNode node, Project project);
   SNode getMPSNodeForPsi(PsiElement element, Project project);
+
+  boolean canComputeNodeId(PsiElement element);
+  @Nullable
+  SNodeId computeNodeId(PsiElement element);
+  @Nullable
+  SNodeId computeNodeId(PsiElement element, String newName);
 }

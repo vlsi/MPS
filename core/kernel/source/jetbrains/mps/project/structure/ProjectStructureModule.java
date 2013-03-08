@@ -28,12 +28,12 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.stub.ProjectStructureBuilder;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
 import org.jetbrains.mps.openapi.module.SRepositoryListenerAdapter;
@@ -317,7 +317,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
       if (mySModel == null) return;
 
       final SModel oldModel = mySModel;
-      ((jetbrains.mps.smodel.SModel) oldModel).setModelDescriptor(null);
+      ((jetbrains.mps.smodel.SModelInternal) oldModel).setModelDescriptor(null);
       mySModel = null;
       if (ModelAccess.instance().canWrite()) {
         notifyModelReplaced(oldModel);
@@ -334,11 +334,6 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     @Override
     public IModule getModule() {
       return myProjectStructureModule;
-    }
-
-    @Override
-    public boolean isReadOnly() {
-      return true;
     }
 
     @Override

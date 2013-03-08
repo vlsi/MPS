@@ -7,7 +7,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import java.util.Map;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.generator.TransientSModel;
+import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.template.TracingUtil;
 import org.jetbrains.annotations.NotNull;
 import java.util.Set;
@@ -90,7 +90,7 @@ public class DebugInfoBuilder {
   private static SNode getOriginalInputNodeForNearestParent(SNode output) {
     while (output != null) {
       SNode input = output;
-      while (input != null && !((SNodeOperations.isDisposed(input))) && (input.getModel() instanceof TransientSModel)) {
+      while (input != null && !((SNodeOperations.isDisposed(input))) && (input.getModel().getModule() instanceof TransientModelsModule)) {
         input = TracingUtil.getInputNode(input);
       }
       SNode node = input;

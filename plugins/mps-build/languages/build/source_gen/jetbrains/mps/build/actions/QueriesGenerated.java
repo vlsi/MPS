@@ -5,7 +5,7 @@ package jetbrains.mps.build.actions;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.generator.TransientSModel;
+import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -50,7 +50,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_BuildProject_6099797596647447257(final IOperationContext operationContext, final NodeSetupContext _context) {
     SModel modelDescriptor = _context.getModel().getModelDescriptor();
-    if (_context.getModel() instanceof TransientSModel || modelDescriptor == null) {
+    if (_context.getModel().getModule() instanceof TransientModelsModule || modelDescriptor == null) {
       return;
     }
     IModule module = modelDescriptor.getModule();

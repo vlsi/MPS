@@ -25,7 +25,7 @@ public class LanguageScopeExecutor {
   public static <T> T execWithModelScope(SModel sModel, Computable<T> computable) {
     LanguageScope languageScope = sModel == null ? LanguageScope.getGlobal() :
       LanguageScopeFactory.getInstance().getLanguageScope(
-        ((jetbrains.mps.smodel.SModel) sModel).getModelDepsManager().getAllImportedLanguages());
+        ((jetbrains.mps.smodel.SModelInternal) sModel).getModelDepsManager().getAllImportedLanguages());
     try{
       LanguageScope.pushCurrent(languageScope, computable);
       return computable.compute();

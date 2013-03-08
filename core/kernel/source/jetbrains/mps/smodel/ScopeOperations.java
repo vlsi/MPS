@@ -70,7 +70,7 @@ public class ScopeOperations {
   @Deprecated
   public static SModel getModelDescriptor(SearchScope scope, SModelReference modelReference) {
     org.jetbrains.mps.openapi.model.SModel model = scope.resolve(modelReference);
-    if (model != null && !(model instanceof SModel)) {
+    if (model != null && !(model instanceof SModelDescriptor)) {
       throw new IllegalStateException();
     }
     return model;
@@ -79,7 +79,7 @@ public class ScopeOperations {
   @Deprecated
   public static Iterable<SModel> getModelDescriptors(SearchScope scope) {
     for (org.jetbrains.mps.openapi.model.SModel model : scope.getModels()) {
-      if (!(model instanceof SModel)) {
+      if (!(model instanceof SModelDescriptor)) {
         throw new IllegalStateException();
       }
     }
