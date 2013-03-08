@@ -16,15 +16,15 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new NodeSubstituteActions_BehaviorDescriptor();
       case 48:
         return new NodeSubstituteActionsBuilder_BehaviorDescriptor();
-      case 91:
-        return new SideTransformHintSubstituteActionsBuilder_BehaviorDescriptor();
       case 90:
+        return new SideTransformHintSubstituteActionsBuilder_BehaviorDescriptor();
+      case 89:
         return new SideTransformHintSubstituteActions_BehaviorDescriptor();
       case 49:
         return new NodeSubstitutePreconditionFunction_BehaviorDescriptor();
       case 14:
         return new ConceptFunctionParameter_parentNode_BehaviorDescriptor();
-      case 92:
+      case 91:
         return new SideTransformHintSubstitutePreconditionFunction_BehaviorDescriptor();
       case 41:
         return new NodeFactories_BehaviorDescriptor();
@@ -38,45 +38,45 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new QueryFunction_CanSubstitute_BehaviorDescriptor();
       case 15:
         return new ConceptFunctionParameter_pattern_BehaviorDescriptor();
-      case 84:
+      case 83:
         return new QueryFunction_Substitute_Handler_BehaviorDescriptor();
-      case 96:
+      case 95:
         return new SimpleItemSubstitutePart_BehaviorDescriptor();
-      case 80:
+      case 79:
         return new QueryFunction_SubstituteString_BehaviorDescriptor();
       case 51:
         return new ParameterizedSubstituteMenuPart_BehaviorDescriptor();
       case 13:
         return new ConceptFunctionParameter_parameterObject_BehaviorDescriptor();
-      case 64:
+      case 63:
         return new QueryFunction_ParameterizedSubstitute_Query_BehaviorDescriptor();
-      case 65:
+      case 64:
         return new QueryFunction_ParameterizedSubstitute_String_BehaviorDescriptor();
       case 61:
         return new QueryFunction_ParameterizedSubstitute_Handler_BehaviorDescriptor();
       case 23:
         return new ConceptsSubstituteMenuPart_BehaviorDescriptor();
-      case 104:
+      case 103:
         return new WrapperSubstituteMenuPart_BehaviorDescriptor();
-      case 82:
+      case 81:
         return new QueryFunction_SubstituteWrapper_BehaviorDescriptor();
       case 12:
         return new ConceptFunctionParameter_nodeToWrap_BehaviorDescriptor();
-      case 87:
+      case 86:
         return new RemovePart_BehaviorDescriptor();
-      case 85:
+      case 84:
         return new RemoveByConditionPart_BehaviorDescriptor();
-      case 67:
+      case 66:
         return new QueryFunction_RemoveBy_Condition_BehaviorDescriptor();
       case 5:
         return new ConceptFunctionParameter_concept_BehaviorDescriptor();
       case 17:
         return new ConceptFunctionParameter_sourceNode_BehaviorDescriptor();
-      case 97:
+      case 96:
         return new SimpleSideTransformMenuPart_BehaviorDescriptor();
-      case 77:
+      case 76:
         return new QueryFunction_SideTransform_String_BehaviorDescriptor();
-      case 73:
+      case 72:
         return new QueryFunction_SideTransform_Handler_BehaviorDescriptor();
       case 50:
         return new ParameterizedSideTransformMenuPart_BehaviorDescriptor();
@@ -86,23 +86,23 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new QueryFunction_ParameterizedSideTransform_Handler_BehaviorDescriptor();
       case 16:
         return new ConceptFunctionParameter_result_BehaviorDescriptor();
-      case 72:
+      case 71:
         return new QueryFunction_SideTransform_ConceptHandler_BehaviorDescriptor();
       case 6:
         return new ConceptFunctionParameter_currentTargetNode_BehaviorDescriptor();
-      case 86:
+      case 85:
         return new RemoveDefaultsPart_BehaviorDescriptor();
       case 3:
         return new ConceptFunctionParameter_childConcept_BehaviorDescriptor();
-      case 76:
+      case 75:
         return new QueryFunction_SideTransform_NodeQuery_BehaviorDescriptor();
-      case 101:
+      case 100:
         return new SubstituteNodeBuilderVariableDeclaration_BehaviorDescriptor();
-      case 102:
+      case 101:
         return new SubstituteNodeBuilderVariableReference_BehaviorDescriptor();
-      case 83:
+      case 82:
         return new QueryFunction_Substitute_CommonInitializer_BehaviorDescriptor();
-      case 81:
+      case 80:
         return new QueryFunction_SubstituteVariableInitializer_BehaviorDescriptor();
       case 31:
         return new IncludeRightTransformForNodePart_BehaviorDescriptor();
@@ -110,13 +110,13 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new ConceptSubstitutePart_BehaviorDescriptor();
       case 21:
         return new ConceptRightTransformPart_BehaviorDescriptor();
-      case 95:
+      case 94:
         return new SideTransform_SimpleString_BehaviorDescriptor();
-      case 103:
+      case 102:
         return new Substitute_SimpleString_BehaviorDescriptor();
-      case 71:
+      case 70:
         return new QueryFunction_ST_RemoveBy_Condition_BehaviorDescriptor();
-      case 88:
+      case 87:
         return new RemoveSTByConditionPart_BehaviorDescriptor();
       case 29:
         return new GenericSubstituteMenuPart_BehaviorDescriptor();
@@ -126,19 +126,19 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new ConceptFunctionParameter_childSetter_BehaviorDescriptor();
       case 62:
         return new QueryFunction_ParameterizedSubstitute_Icon_BehaviorDescriptor();
-      case 78:
+      case 77:
         return new QueryFunction_SubstituteIcon_BehaviorDescriptor();
-      case 74:
+      case 73:
         return new QueryFunction_SideTransform_Icon_BehaviorDescriptor();
-      case 93:
+      case 92:
         return new SideTransformVariableDeclaration_BehaviorDescriptor();
-      case 69:
-        return new QueryFunction_STVariableInitializer_BehaviorDescriptor();
-      case 94:
-        return new SideTransformVariableReference_BehaviorDescriptor();
-      case 70:
-        return new QueryFunction_ST_CommonInitializer_BehaviorDescriptor();
       case 68:
+        return new QueryFunction_STVariableInitializer_BehaviorDescriptor();
+      case 93:
+        return new SideTransformVariableReference_BehaviorDescriptor();
+      case 69:
+        return new QueryFunction_ST_CommonInitializer_BehaviorDescriptor();
+      case 67:
         return new QueryFunction_ReturnSmallPart_BehaviorDescriptor();
       case 18:
         return new ConceptFunctionParameter_strictly_BehaviorDescriptor();
@@ -150,19 +150,19 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new PasteWrapper_BehaviorDescriptor();
       case 11:
         return new ConceptFunctionParameter_nodeToPasteWrap_BehaviorDescriptor();
-      case 66:
+      case 65:
         return new QueryFunction_PasteWrapper_BehaviorDescriptor();
       case 7:
         return new ConceptFunctionParameter_link_BehaviorDescriptor();
       case 56:
         return new QueryFunction_ActionType_BehaviorDescriptor();
-      case 100:
+      case 99:
         return new SmartEditorActions_BehaviorDescriptor();
       case 28:
         return new GenerateCodeAction_BehaviorDescriptor();
-      case 98:
+      case 97:
         return new SmartActionParameter_BehaviorDescriptor();
-      case 99:
+      case 98:
         return new SmartActionParameterReference_BehaviorDescriptor();
       case 32:
         return new IsSmartActionApplicableFunction_BehaviorDescriptor();
@@ -190,7 +190,7 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new ConceptFunctionParameter_nodeToCopyPreProcessOriginal_BehaviorDescriptor();
       case 24:
         return new CopyPasteHandlers_BehaviorDescriptor();
-      case 89:
+      case 88:
         return new SNodeCreatorAndInitializer_BehaviorDescriptor();
       case 33:
         return new NF_Concept_NewInstance_BehaviorDescriptor();
@@ -216,16 +216,14 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new NodeSetupFunction_SampleNode_BehaviorDescriptor();
       case 44:
         return new NodeSetupFunction_EnclosingNode_BehaviorDescriptor();
-      case 63:
-        return new QueryFunction_ParameterizedSubstitute_IconNode_BehaviorDescriptor();
-      case 79:
+      case 78:
         return new QueryFunction_SubstituteIconNode_BehaviorDescriptor();
-      case 75:
+      case 74:
         return new QueryFunction_SideTransform_IconNode_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.actions.structure.AddMenuPart", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_EditorCell", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_OperationContext", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_childConcept", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_childSetter", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_concept", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_currentTargetNode", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_link", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToCopyPreProcess", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToCopyPreProcessOriginal", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToPastePostProcess", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToPasteWrap", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToWrap", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parameterObject", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_pattern", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_result", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_strictly", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_targetNode", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_wrapped", "jetbrains.mps.lang.actions.structure.ConceptRightTransformPart", "jetbrains.mps.lang.actions.structure.ConceptSubstitutePart", "jetbrains.mps.lang.actions.structure.ConceptsSubstituteMenuPart", "jetbrains.mps.lang.actions.structure.CopyPasteHandlers", "jetbrains.mps.lang.actions.structure.CopyPreProcessFunction", "jetbrains.mps.lang.actions.structure.CopyPreProcessor", "jetbrains.mps.lang.actions.structure.ExecuteSmartActionFunction", "jetbrains.mps.lang.actions.structure.GenerateCodeAction", "jetbrains.mps.lang.actions.structure.GenericSubstituteMenuPart", "jetbrains.mps.lang.actions.structure.GetActionUIFunction", "jetbrains.mps.lang.actions.structure.IncludeRightTransformForNodePart", "jetbrains.mps.lang.actions.structure.IsSmartActionApplicableFunction", "jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance", "jetbrains.mps.lang.actions.structure.NF_LinkList_AddNewChildOperation", "jetbrains.mps.lang.actions.structure.NF_Link_SetNewChildOperation", "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewNodeOperation", "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewRootNodeOperation", "jetbrains.mps.lang.actions.structure.NF_Node_InsertNewNextSiblingOperation", "jetbrains.mps.lang.actions.structure.NF_Node_InsertNewPrevSiblingOperation", "jetbrains.mps.lang.actions.structure.NF_Node_ReplaceWithNewOperation", "jetbrains.mps.lang.actions.structure.NodeFactories", "jetbrains.mps.lang.actions.structure.NodeFactory", "jetbrains.mps.lang.actions.structure.NodeSetupFunction", "jetbrains.mps.lang.actions.structure.NodeSetupFunction_EnclosingNode", "jetbrains.mps.lang.actions.structure.NodeSetupFunction_NewNode", "jetbrains.mps.lang.actions.structure.NodeSetupFunction_SampleNode", "jetbrains.mps.lang.actions.structure.NodeSubstituteActions", "jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder", "jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction", "jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart", "jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart", "jetbrains.mps.lang.actions.structure.PastePostProcessFunction", "jetbrains.mps.lang.actions.structure.PastePostProcessor", "jetbrains.mps.lang.actions.structure.PasteWrapper", "jetbrains.mps.lang.actions.structure.PasteWrappers", "jetbrains.mps.lang.actions.structure.QueryFunction_ActionType", "jetbrains.mps.lang.actions.structure.QueryFunction_CanSubstitute", "jetbrains.mps.lang.actions.structure.QueryFunction_GenericSubstituteMenuPart", "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSideTransform_Handler", "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSideTransform_Query", "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Handler", "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Icon", "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_IconNode", "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Query", "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_String", "jetbrains.mps.lang.actions.structure.QueryFunction_PasteWrapper", "jetbrains.mps.lang.actions.structure.QueryFunction_RemoveBy_Condition", "jetbrains.mps.lang.actions.structure.QueryFunction_ReturnSmallPart", "jetbrains.mps.lang.actions.structure.QueryFunction_STVariableInitializer", "jetbrains.mps.lang.actions.structure.QueryFunction_ST_CommonInitializer", "jetbrains.mps.lang.actions.structure.QueryFunction_ST_RemoveBy_Condition", "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_ConceptHandler", "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Handler", "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Icon", "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_IconNode", "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_NodeQuery", "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_String", "jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteIcon", "jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteIconNode", "jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteString", "jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteVariableInitializer", "jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteWrapper", "jetbrains.mps.lang.actions.structure.QueryFunction_Substitute_CommonInitializer", "jetbrains.mps.lang.actions.structure.QueryFunction_Substitute_Handler", "jetbrains.mps.lang.actions.structure.RemoveByConditionPart", "jetbrains.mps.lang.actions.structure.RemoveDefaultsPart", "jetbrains.mps.lang.actions.structure.RemovePart", "jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart", "jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer", "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions", "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder", "jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction", "jetbrains.mps.lang.actions.structure.SideTransformVariableDeclaration", "jetbrains.mps.lang.actions.structure.SideTransformVariableReference", "jetbrains.mps.lang.actions.structure.SideTransform_SimpleString", "jetbrains.mps.lang.actions.structure.SimpleItemSubstitutePart", "jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart", "jetbrains.mps.lang.actions.structure.SmartActionParameter", "jetbrains.mps.lang.actions.structure.SmartActionParameterReference", "jetbrains.mps.lang.actions.structure.SmartEditorActions", "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableDeclaration", "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableReference", "jetbrains.mps.lang.actions.structure.Substitute_SimpleString", "jetbrains.mps.lang.actions.structure.WrapperSubstituteMenuPart"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.actions.structure.AddMenuPart", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_EditorCell", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_OperationContext", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_childConcept", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_childSetter", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_concept", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_currentTargetNode", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_link", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToCopyPreProcess", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToCopyPreProcessOriginal", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToPastePostProcess", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToPasteWrap", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToWrap", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parameterObject", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_pattern", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_result", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_strictly", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_targetNode", "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_wrapped", "jetbrains.mps.lang.actions.structure.ConceptRightTransformPart", "jetbrains.mps.lang.actions.structure.ConceptSubstitutePart", "jetbrains.mps.lang.actions.structure.ConceptsSubstituteMenuPart", "jetbrains.mps.lang.actions.structure.CopyPasteHandlers", "jetbrains.mps.lang.actions.structure.CopyPreProcessFunction", "jetbrains.mps.lang.actions.structure.CopyPreProcessor", "jetbrains.mps.lang.actions.structure.ExecuteSmartActionFunction", "jetbrains.mps.lang.actions.structure.GenerateCodeAction", "jetbrains.mps.lang.actions.structure.GenericSubstituteMenuPart", "jetbrains.mps.lang.actions.structure.GetActionUIFunction", "jetbrains.mps.lang.actions.structure.IncludeRightTransformForNodePart", "jetbrains.mps.lang.actions.structure.IsSmartActionApplicableFunction", "jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance", "jetbrains.mps.lang.actions.structure.NF_LinkList_AddNewChildOperation", "jetbrains.mps.lang.actions.structure.NF_Link_SetNewChildOperation", "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewNodeOperation", "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewRootNodeOperation", "jetbrains.mps.lang.actions.structure.NF_Node_InsertNewNextSiblingOperation", "jetbrains.mps.lang.actions.structure.NF_Node_InsertNewPrevSiblingOperation", "jetbrains.mps.lang.actions.structure.NF_Node_ReplaceWithNewOperation", "jetbrains.mps.lang.actions.structure.NodeFactories", "jetbrains.mps.lang.actions.structure.NodeFactory", "jetbrains.mps.lang.actions.structure.NodeSetupFunction", "jetbrains.mps.lang.actions.structure.NodeSetupFunction_EnclosingNode", "jetbrains.mps.lang.actions.structure.NodeSetupFunction_NewNode", "jetbrains.mps.lang.actions.structure.NodeSetupFunction_SampleNode", "jetbrains.mps.lang.actions.structure.NodeSubstituteActions", "jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder", "jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction", "jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart", "jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart", "jetbrains.mps.lang.actions.structure.PastePostProcessFunction", "jetbrains.mps.lang.actions.structure.PastePostProcessor", "jetbrains.mps.lang.actions.structure.PasteWrapper", "jetbrains.mps.lang.actions.structure.PasteWrappers", "jetbrains.mps.lang.actions.structure.QueryFunction_ActionType", "jetbrains.mps.lang.actions.structure.QueryFunction_CanSubstitute", "jetbrains.mps.lang.actions.structure.QueryFunction_GenericSubstituteMenuPart", "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSideTransform_Handler", "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSideTransform_Query", "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Handler", "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Icon", "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Query", "jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_String", "jetbrains.mps.lang.actions.structure.QueryFunction_PasteWrapper", "jetbrains.mps.lang.actions.structure.QueryFunction_RemoveBy_Condition", "jetbrains.mps.lang.actions.structure.QueryFunction_ReturnSmallPart", "jetbrains.mps.lang.actions.structure.QueryFunction_STVariableInitializer", "jetbrains.mps.lang.actions.structure.QueryFunction_ST_CommonInitializer", "jetbrains.mps.lang.actions.structure.QueryFunction_ST_RemoveBy_Condition", "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_ConceptHandler", "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Handler", "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Icon", "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_IconNode", "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_NodeQuery", "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_String", "jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteIcon", "jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteIconNode", "jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteString", "jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteVariableInitializer", "jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteWrapper", "jetbrains.mps.lang.actions.structure.QueryFunction_Substitute_CommonInitializer", "jetbrains.mps.lang.actions.structure.QueryFunction_Substitute_Handler", "jetbrains.mps.lang.actions.structure.RemoveByConditionPart", "jetbrains.mps.lang.actions.structure.RemoveDefaultsPart", "jetbrains.mps.lang.actions.structure.RemovePart", "jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart", "jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer", "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions", "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder", "jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction", "jetbrains.mps.lang.actions.structure.SideTransformVariableDeclaration", "jetbrains.mps.lang.actions.structure.SideTransformVariableReference", "jetbrains.mps.lang.actions.structure.SideTransform_SimpleString", "jetbrains.mps.lang.actions.structure.SimpleItemSubstitutePart", "jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart", "jetbrains.mps.lang.actions.structure.SmartActionParameter", "jetbrains.mps.lang.actions.structure.SmartActionParameterReference", "jetbrains.mps.lang.actions.structure.SmartEditorActions", "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableDeclaration", "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableReference", "jetbrains.mps.lang.actions.structure.Substitute_SimpleString", "jetbrains.mps.lang.actions.structure.WrapperSubstituteMenuPart"};
 }
