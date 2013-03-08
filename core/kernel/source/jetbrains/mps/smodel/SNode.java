@@ -338,7 +338,8 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
       }
     }
     if (toDelete.size() > 1) {
-      LOG.errorWithTrace("ERROR! " + toDelete.size() + " references found for role '" + role + "' in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
+      LOG.errorWithTrace(
+          "ERROR! " + toDelete.size() + " references found for role '" + role + "' in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
     }
 
     for (SReference reference : toDelete) {
@@ -441,8 +442,10 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     final SNode schild = (SNode) child;
     SNode parentOfChild = schild.getParent();
     if (parentOfChild != null) {
-      throw new RuntimeException(org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(schild) + " already has parent: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(parentOfChild) + "\n" +
-        "Couldn't add it to: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
+      throw new RuntimeException(
+          org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(schild) + " already has parent: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(
+              parentOfChild) + "\n" +
+              "Couldn't add it to: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
     }
 
     if (getTopmostAncestor() == child) {
@@ -457,7 +460,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     SModel model = getModelInternal();
     if (model != null) {
       schild.registerInModel(model);
-    } else if (schild.getModelInternal() != null) {
+    } else {
       schild.clearModel();
     }
 
@@ -816,6 +819,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   //--------seems these methods are not needed-------
 
   private void clearModel() {
+    if (myModel == null) return;
     myModel = null;
     for (SNode child : getChildren()) {
       child.clearModel();
@@ -1283,7 +1287,8 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     List<SNode> children = getChildren(role);
     int size = children.size();
     if (size > 1) {
-      String errorMessage = "ERROR: SNode.getChild() executed when there are " + size + " children for role " + role + " in " + NameUtil.shortNameFromLongName(getClass().getName()) + "[" + getNodeId().toString() + "] " + getModel().getReference() + "\n";
+      String errorMessage = "ERROR: SNode.getChild() executed when there are " + size + " children for role " + role + " in " + NameUtil.shortNameFromLongName(
+          getClass().getName()) + "[" + getNodeId().toString() + "] " + getModel().getReference() + "\n";
       errorMessage += "they are : " + getChildren(role);
       LOG.error(errorMessage, new Throwable(), this);
     }
