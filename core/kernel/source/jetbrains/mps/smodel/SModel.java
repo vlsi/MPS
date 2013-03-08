@@ -17,16 +17,13 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.extapi.model.EditableSModel;
+import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.generator.TransientModelsModule;
-import jetbrains.mps.extapi.model.SModelData;
-import jetbrains.mps.extapi.model.SModelData;
-import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.adapter.SLanguageLanguageAdapter;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
@@ -39,7 +36,8 @@ import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.smodel.nodeidmap.UniversalOptimizedNodeIdMap;
 import jetbrains.mps.smodel.persistence.RoleIdsComponent;
-import jetbrains.mps.util.*;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.iterable.TranslatingIterator;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -55,7 +53,6 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.NullDataSource;
 
-import java.io.IOException;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -88,6 +85,7 @@ public class SModel implements SModelInternal, SModelData {
 
   private StackTraceElement[] myDisposedStacktrace = null;
   private ModelDependenciesManager myModelDependenciesManager;
+  private FakeModelDescriptor myFakeModelDescriptor;
 
   public SModel(@NotNull SModelReference modelReference) {
     this(modelReference, new UniversalOptimizedNodeIdMap());
@@ -324,7 +322,12 @@ public class SModel implements SModelInternal, SModelData {
   @Override
   @NotNull
   public SModelInternal getModelDescriptor() {
-    return myModelDescriptor != null ? myModelDescriptor : new FakeModelDescriptor(this);
+    if (myModelDescriptor!=null) return myModelDescriptor;
+
+    if (myFakeModelDescriptor == null) {
+      myFakeModelDescriptor = new FakeModelDescriptor(this);
+    }
+    return myFakeModelDescriptor;
   }
 
   @Override
@@ -377,7 +380,8 @@ public class SModel implements SModelInternal, SModelData {
 
   private List<SModelListener> getModelListeners() {
     SModelInternal modelDescriptor = getModelDescriptor();
-    return modelDescriptor instanceof BaseSModelDescriptor ?  ((BaseSModelDescriptor) modelDescriptor).getModelListeners():Collections.<SModelListener>emptyList();
+    return modelDescriptor instanceof BaseSModelDescriptor ? ((BaseSModelDescriptor) modelDescriptor).getModelListeners() :
+        Collections.<SModelListener>emptyList();
   }
 
   //todo code in the following methods should be written w/o duplication
@@ -707,7 +711,8 @@ public class SModel implements SModelInternal, SModelData {
     if (importElement != null) return;
     importElement = SModelOperations.getAdditionalModelElement(this, modelReference);
     if (importElement == null) {
-      org.jetbrains.mps.openapi.model.SModel modelDescriptor = MPSCore.getInstance().isMergeDriverMode() ? null : SModelRepository.getInstance().getModelDescriptor(modelReference);
+      org.jetbrains.mps.openapi.model.SModel modelDescriptor =
+          MPSCore.getInstance().isMergeDriverMode() ? null : SModelRepository.getInstance().getModelDescriptor(modelReference);
       int usedVersion = -1;
       if (modelDescriptor instanceof RefactorableSModelDescriptor) {
         usedVersion = ((RefactorableSModelDescriptor) modelDescriptor).getVersion();
@@ -939,9 +944,9 @@ public class SModel implements SModelInternal, SModelData {
 
     public String toString() {
       return "ImportElement(" +
-        "uid=" + myModelReference + ", " +
-        "referenceId=" + myReferenceID + ", " +
-        "usedVersion=" + myUsedVersion + ")";
+          "uid=" + myModelReference + ", " +
+          "referenceId=" + myReferenceID + ", " +
+          "usedVersion=" + myUsedVersion + ")";
     }
 
     @Override
@@ -1177,7 +1182,7 @@ public class SModel implements SModelInternal, SModelData {
    * @Deprecated in 3.0
    */
   public boolean isTransient() {
-    return this .getModule() instanceof TransientModelsModule;
+    return this.getModule() instanceof TransientModelsModule;
   }
 
   @Deprecated
@@ -1273,7 +1278,7 @@ public class SModel implements SModelInternal, SModelData {
   /**
    * This is for migration purposes, until we get rid of SModel class
    */
-  public static class FakeModelDescriptor implements org.jetbrains.mps.openapi.model.SModel,SModelInternal {
+  public static class FakeModelDescriptor implements org.jetbrains.mps.openapi.model.SModel, SModelInternal {
     private SModel myModel;
 
     public FakeModelDescriptor(@NotNull SModel md) {
@@ -1302,12 +1307,12 @@ public class SModel implements SModelInternal, SModelData {
 
     @Override
     public void addModelListener(@NotNull SModelListener listener) {
-      LOG.error("remove exception if excess",new Throwable());
+      LOG.error("remove exception if excess", new Throwable());
     }
 
     @Override
     public void removeModelListener(@NotNull SModelListener listener) {
-      LOG.error("remove exception if excess",new Throwable());
+      LOG.error("remove exception if excess", new Throwable());
     }
 
     @Override
