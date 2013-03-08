@@ -825,6 +825,24 @@
       <property name="name" nameId="tpck.1169194664001" value="NodeSubstituteMenuBuilderPart" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="menuBuilderParts" />
     </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6400740936056441205">
+      <property name="name" nameId="tpck.1169194664001" value="QueryFunction_ParameterizedSubstitute_IconNode" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="queryFunctions" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6400740936061763657">
+      <property name="name" nameId="tpck.1169194664001" value="QueryFunction_SubstituteIconNode" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="queryFunctions" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5179659504400987925">
+      <property name="name" nameId="tpck.1169194664001" value="QueryFunction_SideTransform_IconNode" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="queryFunctions" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
   </roots>
   <root id="1112056943463">
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1173470386323">
@@ -1054,6 +1072,12 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="icon" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1203073162537" resolveInfo="QueryFunction_SubstituteIcon" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="6400740936061184956" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6400740936063391052">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="iconNode" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="6400740936061763657" resolveInfo="QueryFunction_SubstituteIconNode" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1177327698839">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -1117,6 +1141,12 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="icon" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1203072734037" resolveInfo="QueryFunction_ParameterizedSubstitute_Icon" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="6400740936056404596" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6400740936056405411">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="iconNode" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="6400740936056441205" resolveInfo="QueryFunction_ParameterizedSubstitute_IconNode" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1177339421668">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -1251,6 +1281,12 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="icon" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1203073706921" resolveInfo="QueryFunction_SideTransform_Icon" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="5179659504401323020" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="5179659504401323022">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="iconNode" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="5179659504400987925" resolveInfo="QueryFunction_SideTransform_IconNode" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1177498207384">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -1301,6 +1337,12 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="icon" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1203073706921" resolveInfo="QueryFunction_SideTransform_Icon" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="5179659504405341940" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="5179659504405341942">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="iconNode" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="5179659504400987925" resolveInfo="QueryFunction_SideTransform_IconNode" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1177508966300">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -1476,31 +1518,13 @@
     </node>
   </root>
   <root id="1203072734037">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1203072734043">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137545148427" resolveInfo="conceptFunctionReturnType" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1203072857922">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dbrf.~Icon" resolveInfo="Icon" />
-      </node>
-    </node>
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="6400740936061185282" />
   </root>
   <root id="1203073162537">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1203073162542">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137545148427" resolveInfo="conceptFunctionReturnType" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1203073169905">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dbrf.~Icon" resolveInfo="Icon" />
-      </node>
-    </node>
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="6400740936061185616" />
   </root>
   <root id="1203073706921">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1203073706926">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137545148427" resolveInfo="conceptFunctionReturnType" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1203073722527">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dbrf.~Icon" resolveInfo="Icon" />
-      </node>
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1203073706929">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1196433731217" resolveInfo="ISideTransform_String" />
-    </node>
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="5179659504400513940" />
   </root>
   <root id="1203347547493">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1203347547494">
@@ -1816,5 +1840,8 @@
   </root>
   <root id="8372849190626007445" />
   <root id="8372849190626008398" />
+  <root id="6400740936056441205" />
+  <root id="6400740936061763657" />
+  <root id="5179659504400987925" />
 </model>
 

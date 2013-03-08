@@ -788,7 +788,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
             icon = ((INodeSubstituteAction) action).getIconFor(pattern);
           }
           if (icon == null) {
-            SNode iconNode = action.getIconNode();
+            SNode iconNode = action.getIconNode(pattern);
             if (iconNode != null) {
               icon = (SNodeUtil.isInstanceOfConceptDeclaration(iconNode) && !(action.isReferentPresentation())) ?
                   IconManager.getIconForConceptFQName(NameUtil.nodeFQName(iconNode)) : IconManager.getIconFor(iconNode);

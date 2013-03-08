@@ -24,7 +24,7 @@ import org.jetbrains.mps.openapi.model.SNode;
  * Date: 2/15/13
  */
 public interface SubstituteAction {
-  SNode getIconNode();
+  SNode getIconNode(String pattern);
 
   boolean isReferentPresentation();
 

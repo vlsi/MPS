@@ -328,7 +328,7 @@ public class ChildSubstituteActionsHelper {
     }
 
     @Override
-    public SNode getIconNode() {
+    public SNode getIconNode(String pattern) {
       return myReferentNode;
     }
 

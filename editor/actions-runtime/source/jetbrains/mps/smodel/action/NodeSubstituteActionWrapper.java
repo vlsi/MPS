@@ -50,8 +50,8 @@ public class NodeSubstituteActionWrapper implements INodeSubstituteAction {
   }
 
   @Override
-  public SNode getIconNode() {
-    return mySubstituteAction.getIconNode();
+  public SNode getIconNode(String pattern) {
+    return mySubstituteAction.getIconNode(pattern);
   }
 
   @Override

@@ -88,7 +88,7 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
   }
 
   @Override
-  public SNode getIconNode() {
+  public SNode getIconNode(String pattern) {
     return myParameterObject instanceof SNode ? (SNode) myParameterObject : null;
   }
 

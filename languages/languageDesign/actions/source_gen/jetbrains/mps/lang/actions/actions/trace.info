@@ -94,5 +94,8 @@
       <varInfo nodeId="3757480014665236943" varName="operationContext" />
     </scopeInfo>
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902a2(jetbrains.mps.lang.actions.actions)/5179659504393947245" />
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902a2(jetbrains.mps.lang.actions.actions)/5179659504396628515" />
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902a2(jetbrains.mps.lang.actions.actions)/6400740936050666093" />
 </debugInfo>
 

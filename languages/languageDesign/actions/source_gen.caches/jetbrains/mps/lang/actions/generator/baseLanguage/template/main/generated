@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="18fzougeg214o09nzazkhhdlwrjhfry">
+<dependencies version="2" modelHash="-bwmd8yyzvrlk8mv6kusnfz64a5k0agk">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.datatransfer(MPS.Core/jetbrains.mps.datatransfer@java_stub)" />
@@ -7,8 +7,8 @@
   <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" hash="-bdzts3vtkj4n71fbv88bxss1027oy95" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-b2l5iyygy2vjqkbekn4rvaubf6n8cmr" />
   <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="8iq1c63z020s2os52d6vke4fdjpb056" />
-  <dep model="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)" hash="-3ktqj30vnxaj49zgay13ib32hycntgj" />
-  <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" hash="1hdsiysmxwoyvx08zhqvqkzrbhgzmll" />
+  <dep model="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)" hash="65r9m9k7unfliz76330d38b8wtukqz6" />
+  <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" hash="bwrspxkk391m54lk0ijobolwa7yk2k9" />
   <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="2m2jg5yl2oz9z2m42ce59jvrl9ef2zg" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="38s949ymo9nq7jj7p2lrfowy0hurndx" />
   <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" hash="iak6qkoqvisy1gghydx23iwnxiu2qf" />
@@ -94,43 +94,43 @@
   <source id="1154468370111" name="reduce_NodeSubstitutePreconditionFunction" hash="334lzx3b57ocaa5d8guw4spodjd2tug">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1154625371759" name="reduce_SideTransformHintSubstitutePreconditionFunction" hash="-zo4iyba5lvp1gibp18kr3ju5lqh84t">
+  <source id="1154625371759" name="reduce_SideTransformHintSubstitutePreconditionFunction" hash="-7th5ani8kfj1xxwhbj70epyj29qd6uy">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1158787047577" name="reduce_NodeSetupFunction" hash="-297l5aqdu2s2j74dofmufi2vsawaj2h">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1177328723612" name="reduce_NodeSubstituteActionsBuilder" hash="30km086nugdm17kj2fxxi3tgnbnzxfb">
+  <source id="1177328723612" name="reduce_NodeSubstituteActionsBuilder" hash="-5czp35jawagonj5gipzq38btoc8h2k8">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1177329385615" name="RegisterMenuPart_subst" hash="-bizwl2ii3ydv6e20niq8dhiw68ddajm">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1177329420522" name="RegisterMenuPart_Simple_subst" hash="-19hqp38yzekvbwjmfl03iv2jzlkj5qy">
+  <source id="1177329420522" name="RegisterMenuPart_Simple_subst" hash="-4f93lfhbpueapvu4588wopszfe5h8mp">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1177340188418" name="RegisterMenuPart_Concepts_subst" hash="-4tjr8xxu6sfcikev18mwaj8x10ybk01">
+  <source id="1177340188418" name="RegisterMenuPart_Concepts_subst" hash="-ajgb524u17vzdup0jq85k9si507sarw">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1177399350680" name="RegisterMenuPart_Parameterized_subst" hash="-18w9x2j3373as5rz31ls7rxdva0rbos">
+  <source id="1177399350680" name="RegisterMenuPart_Parameterized_subst" hash="5te5xvnbbes1cfpg89ix0mdt2b0lpaz">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1177404507206" name="RegisterMenuPart_Wrapper_subst" hash="-bhxtwxr7z6vsfeakbndczlxk0aqbjlo">
+  <source id="1177404507206" name="RegisterMenuPart_Wrapper_subst" hash="-8plf7oon4xptk1kjhlrw6fs98ejql1w">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1177414724801" name="MenuBuilderPartMethodRemoveByCondition_subst" hash="-3dyixvm10jl6gsl22eob00qyfpp3f48">
+  <source id="1177414724801" name="MenuBuilderPartMethodRemoveByCondition_subst" hash="-8vdnjubzx6w4ot9cw1vwwj4ft75tp2g">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1177441873733" name="reduce_SideTransformActionsBuilder" hash="-603985qv0jv4w3k5v63bbs4nb7wx0en">
+  <source id="1177441873733" name="reduce_SideTransformActionsBuilder" hash="41cgh690dvh554nz5q6lf0o58h6igtn">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1177442049832" name="RegisterMenuPart_st" hash="-2tfa4z3r9lhxqnhzw5wtltbf17sajgi">
+  <source id="1177442049832" name="RegisterMenuPart_st" hash="azxtbbwpbvyy8na910n83pou86ggzid">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1177499191569" name="RegisterMenuPart_Simple_st" hash="-cntz7lpdiz69da369btzrd6j1bneg54">
+  <source id="1177499191569" name="RegisterMenuPart_Simple_st" hash="-7u92uhenikfaf9zss1gcaccdmaq7q3u">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1177509909246" name="RegisterMenuPart_Parameterized_st" hash="eeplln1x5i7rjwl43gcrcsn3q7odcly">
+  <source id="1177509909246" name="RegisterMenuPart_Parameterized_st" hash="76t2iygjrcodzo4odtptof6sgkynatn">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1177528376329" name="reduce_ConceptFunctionParameter_result" hash="bpcutzo03g29x85feegjmpsajrxtbc1">
@@ -139,13 +139,13 @@
   <source id="1178542138400" name="reduce_SubstituteNodeBuilderVariableReference" hash="-8ax9u5h8ao5gm01k4jdd9fe3l2u0nt9">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1180114556430" name="RegisterMenuBuilder_Include_st" hash="2g727gu539721efcgqv3cegodabaez1">
+  <source id="1180114556430" name="RegisterMenuBuilder_Include_st" hash="3pzxf8imm1j2lxyl06tzq4yo83h3gp6">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1180136156066" name="RegisterMenuBuilder_Concept_subst" hash="8af63bido1gwmtkc5ze5u1ud1i64lq2">
+  <source id="1180136156066" name="RegisterMenuBuilder_Concept_subst" hash="5vht5ht69rw6i6zg511un2mf61zpfgx">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1182820930185" name="RegisterMenuBuilder_Concept_st" hash="399xcbrgo9uiqz23ydmly223wnbx1d9">
+  <source id="1182820930185" name="RegisterMenuBuilder_Concept_st" hash="4q5fyg0n2a426wy3c9ilnfbxit9mou5">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1196434186575" name="reduce_SideTransform_SimpleString" hash="89kqcfikuctbz0klwmk5gla4w2gvb1d">
@@ -157,10 +157,10 @@
   <source id="1196434782260" name="reduce_Substitute_SimpleString" hash="69hs1th31314kikqefsp3a94ng7ok2t">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1197455154720" name="MenuBuilderPartMethod_RemoveByCondition_st" hash="7j8lsetdsfhjm2rfhahypaa1qqq9zdy">
+  <source id="1197455154720" name="MenuBuilderPartMethod_RemoveByCondition_st" hash="-b3jsoxxqikpwlvs3gtj97jbfzjd8mob">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1199903065200" name="RegisterMenuPart_Generic_subst" hash="6i2w66j3t1gxcn9pr70hdil027enhkw">
+  <source id="1199903065200" name="RegisterMenuPart_Generic_subst" hash="2ndneuevexihwuq2i6f7w4ibfshdzru">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1221137101806" name="pasteWrappers" hash="-30anl2qm9vno6u3nz0p1f2msm52kmx">
@@ -223,7 +223,7 @@
   <source id="6839387317842789764" name="node_operations" hash="-94itluaze3dlm56i0r5sq1es1t16u3f">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="4692357616861820086" name="RegisterMenuBuilder_st" hash="-bp0046baamytbf7x8sk0wyl3y81rqlf">
+  <source id="4692357616861820086" name="RegisterMenuBuilder_st" hash="-4bgwlt32r2qafxgooqa2vwe3oeouxm3">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="4692357616869439635" name="MenuBuilderPartMethod_subst" hash="dkkpbgjc1d1n03st1336ulzjldvvrt6">
@@ -232,7 +232,7 @@
   <source id="4692357616858166258" name="RegisterMenuBuilder_subst" hash="a0yj7qesuaz2jrn5ygv3t4aopyt4w6p">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="4692357616869484868" name="MenuBuilderPartMethod_st" hash="8in65uctk9ohzpis8esuy6dp0acwdxs">
+  <source id="4692357616869484868" name="MenuBuilderPartMethod_st" hash="2k8x24n6imp5y24kqq3xg539rb68tei">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
 </dependencies>
