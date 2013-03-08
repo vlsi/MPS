@@ -60,7 +60,7 @@ public class ModelDiffTool implements DiffTool {
     if (type == null) {
       return true;
     }
-    return type.equals(MPSFileTypeFactory.MODEL_FILE_TYPE);
+    return type.equals(MPSFileTypeFactory.MPS_FILE_TYPE);
   }
 
   @Nullable

@@ -18,7 +18,6 @@ package jetbrains.mps.fileTypes;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.fileTypes.FileType;
-import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -56,6 +55,6 @@ public class MPSFileTypesManager implements ApplicationComponent {
 
   public boolean isModelFile(VirtualFile vfile) {
     if (vfile == null) return false;
-    return vfile.getFileType().equals(MPSFileTypeFactory.MODEL_FILE_TYPE);
+    return vfile.getFileType().equals(MPSFileTypeFactory.MPS_FILE_TYPE);
   }
 }
