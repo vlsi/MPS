@@ -805,7 +805,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return myModel == null ? null : myModel.getModelDescriptor();
   }
 
-  public SModel getModelInternal() {
+  private SModel getModelInternal() {
     assertRead();
     assertDisposed();
 

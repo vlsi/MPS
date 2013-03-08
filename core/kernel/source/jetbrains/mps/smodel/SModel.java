@@ -152,9 +152,9 @@ public class SModel implements SModelInternal, SModelData {
     ModelChange.assertLegalNodeRegistration(this, node);
     enforceFullLoad();
     if (myRoots.contains(node)) return;
-    SModel model = ((SNode) node).getModelInternal();
-    if (model != null && model != this && model.isRoot(node)) {
-      model.removeRoot(node);
+    org.jetbrains.mps.openapi.model.SModel model = node.getModel();
+    if (model != null && model != getModelDescriptor() && model.isRoot(node)) {
+      model.removeRootNode(node);
     } else {
       org.jetbrains.mps.openapi.model.SNode parent = node.getParent();
       if (parent != null) {
