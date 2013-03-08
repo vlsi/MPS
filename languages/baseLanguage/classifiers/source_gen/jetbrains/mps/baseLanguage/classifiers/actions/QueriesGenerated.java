@@ -29,39 +29,30 @@ import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
 public class QueriesGenerated {
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1205921334476(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    final SNode contextClassifier;
-    final boolean multipleClassifiers;
-    {
-      Computable calc = new Computable() {
-        public Object compute() {
-          SNode contextPart = SNodeOperations.getAncestorWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart"}, true, false);
-          if (SNodeOperations.isInstanceOf(contextPart, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier")) {
-            return SNodeOperations.cast(contextPart, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier");
-          } else {
-            return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(contextPart, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart"), "virtual_getMainClassifier_1213877255428", new Object[]{});
-          }
+    final SNode contextClassifier = new Computable<SNode>() {
+      public SNode compute() {
+        SNode contextPart = SNodeOperations.getAncestorWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart"}, true, false);
+        if (SNodeOperations.isInstanceOf(contextPart, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier")) {
+          return SNodeOperations.cast(contextPart, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier");
+        } else {
+          return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(contextPart, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart"), "virtual_getMainClassifier_1213877255428", new Object[]{});
         }
-      };
-      contextClassifier = (SNode) calc.compute();
-    }
-    {
-      Computable calc = new Computable() {
-        public Object compute() {
-          return ListSequence.fromList(SNodeOperations.getAncestorsWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart", "jetbrains.mps.baseLanguage.structure.Classifier"}, true)).count() > 1;
-        }
-      };
-      multipleClassifiers = (Boolean) calc.compute();
-    }
+      }
+    }.compute();
+    final boolean multipleClassifiers = new Computable<Boolean>() {
+      public Boolean compute() {
+        return ListSequence.fromList(SNodeOperations.getAncestorsWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart", "jetbrains.mps.baseLanguage.structure.Classifier"}, true)).count() > 1;
+      }
+    }.compute();
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        Computable computable = new Computable() {
-          public Object compute() {
+        Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
+          public Iterable<SNode> compute() {
             return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), contextClassifier, "virtual_getMembers_1213877528020", new Object[]{_context.getParentNode()});
           }
-        };
-        Iterable<SNode> queryResult = (Iterable) computable.compute();
+        }.compute();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
@@ -89,31 +80,30 @@ public class QueriesGenerated {
   public static List<SubstituteAction> sideTransform_ActionsFactory_ThisClassifierExpression_1219068300355(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
-      final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression");
-      Computable computable = new Computable() {
-        public Object compute() {
+      Iterable<SNode> parameterObjects = new Computable<Iterable<SNode>>() {
+        public Iterable<SNode> compute() {
           return ThisClassifierExpression_Behavior.call_getPossibleClassifiers_1219068414643(_context.getSourceNode());
         }
-      };
-      Iterable<SNode> parameterObjects = (Iterable<SNode>) computable.compute();
-      assert parameterObjects != null;
-      for (final SNode item : parameterObjects) {
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
-          public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-            SNode expr = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression", null);
-            SLinkOperations.setTarget(expr, "classifier", (item), false);
-            SNodeOperations.replaceWithAnother(_context.getSourceNode(), expr);
-            return expr;
-          }
+      }.compute();
+      if (parameterObjects != null) {
+        for (final SNode item : parameterObjects) {
+          ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression"), item, _context.getSourceNode()) {
+            public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+              SNode expr = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression", null);
+              SLinkOperations.setTarget(expr, "classifier", (item), false);
+              SNodeOperations.replaceWithAnother(_context.getSourceNode(), expr);
+              return expr;
+            }
 
-          public String getMatchingText(String pattern) {
-            return (item) + ".";
-          }
+            public String getMatchingText(String pattern) {
+              return (item) + ".";
+            }
 
-          public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
-          }
-        });
+            public String getVisibleMatchingText(String pattern) {
+              return getMatchingText(pattern);
+            }
+          });
+        }
       }
     }
     return result;

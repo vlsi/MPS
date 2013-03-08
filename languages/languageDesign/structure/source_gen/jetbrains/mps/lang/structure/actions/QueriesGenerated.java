@@ -11,8 +11,8 @@ import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -26,23 +26,20 @@ public class QueriesGenerated {
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_ConceptDeclaration_100768563187670098(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SPropertyOperations.set(SNodeOperations.cast(_context.getSourceNode(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "abstract", "" + (true));
-          return _context.getSourceNode();
-        }
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SPropertyOperations.set(SNodeOperations.cast(_context.getSourceNode(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "abstract", "" + (true));
+        return _context.getSourceNode();
+      }
 
-        public String getMatchingText(String pattern) {
-          return "abstract";
-        }
+      public String getMatchingText(String pattern) {
+        return "abstract";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
-      });
-    }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+    });
     return result;
   }
 
@@ -52,23 +49,20 @@ public class QueriesGenerated {
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_ConceptDeclaration_6375966607167092186(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SPropertyOperations.set(SNodeOperations.cast(_context.getSourceNode(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "final", "" + (true));
-          return _context.getSourceNode();
-        }
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SPropertyOperations.set(SNodeOperations.cast(_context.getSourceNode(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "final", "" + (true));
+        return _context.getSourceNode();
+      }
 
-        public String getMatchingText(String pattern) {
-          return "final";
-        }
+      public String getMatchingText(String pattern) {
+        return "final";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
-      });
-    }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+    });
     return result;
   }
 

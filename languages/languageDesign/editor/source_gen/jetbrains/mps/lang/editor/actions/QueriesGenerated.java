@@ -14,8 +14,8 @@ import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
 import jetbrains.mps.lang.editor.behavior.CellMenuUtil;
 import jetbrains.mps.util.NameUtil;
@@ -88,16 +88,8 @@ public class QueriesGenerated {
 
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_CellMenuPart_Abstract_1199894656684(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues");
-      List<SubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultSubstituteActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(defaultActions));
-    }
-    {
-      SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints");
-      List<SubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultSubstituteActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(defaultActions));
-    }
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues"), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext)));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints"), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext)));
     return result;
   }
 
@@ -108,11 +100,7 @@ public class QueriesGenerated {
 
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_CellMenuPart_Abstract_1199894924671(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_ReferentPrimary");
-      List<SubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultSubstituteActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(defaultActions));
-    }
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_ReferentPrimary"), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext)));
     return result;
   }
 
@@ -123,26 +111,10 @@ public class QueriesGenerated {
 
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_CellMenuPart_Abstract_1199895015795(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group");
-      List<SubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultSubstituteActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(defaultActions));
-    }
-    {
-      SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item");
-      List<SubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultSubstituteActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(defaultActions));
-    }
-    {
-      SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept");
-      List<SubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultSubstituteActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(defaultActions));
-    }
-    {
-      SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChildPrimary");
-      List<SubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultSubstituteActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(defaultActions));
-    }
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group"), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext)));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item"), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext)));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept"), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext)));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChildPrimary"), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext)));
     return result;
   }
 
@@ -173,7 +145,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -201,7 +173,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -226,7 +198,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -254,7 +226,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -279,7 +251,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -307,7 +279,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -332,7 +304,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -357,7 +329,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -382,7 +354,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -410,7 +382,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -435,7 +407,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -463,7 +435,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -486,7 +458,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -509,7 +481,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -532,7 +504,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -556,7 +528,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -580,7 +552,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -613,7 +585,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -646,7 +618,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -655,13 +627,12 @@ public class QueriesGenerated {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.EditorCellModel");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        Computable computable = new Computable() {
-          public Object compute() {
+        Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
+          public Iterable<SNode> compute() {
             SNode container = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.lang.editor.structure.BaseEditorComponent", true, false);
             return BaseEditorComponent_Behavior.call_getApplicableComponents_1213877372457(container, operationContext.getScope());
           }
-        };
-        Iterable<SNode> queryResult = (Iterable) computable.compute();
+        }.compute();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
@@ -676,7 +647,7 @@ public class QueriesGenerated {
               }
 
               public String getVisibleMatchingText(String pattern) {
-                return this.getMatchingText(pattern);
+                return getMatchingText(pattern);
               }
             });
           }
@@ -692,12 +663,11 @@ public class QueriesGenerated {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.CellActionMapItem");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        Computable computable = new Computable() {
-          public Object compute() {
+        Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
+          public Iterable<SNode> compute() {
             return SLinkOperations.getTargets(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "1139535328871"), "member", true);
           }
-        };
-        Iterable<SNode> queryResult = (Iterable) computable.compute();
+        }.compute();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
@@ -712,7 +682,7 @@ public class QueriesGenerated {
               }
 
               public String getVisibleMatchingText(String pattern) {
-                return this.getMatchingText(pattern);
+                return getMatchingText(pattern);
               }
 
               public String getDescriptionText(String pattern) {
@@ -732,8 +702,8 @@ public class QueriesGenerated {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        Computable computable = new Computable() {
-          public Object compute() {
+        Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
+          public Iterable<SNode> compute() {
             List<SNode> emptyList = ListSequence.fromList(new ArrayList<SNode>());
             if (!(SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
               return emptyList;
@@ -751,8 +721,7 @@ public class QueriesGenerated {
               }
             }).toListSequence();
           }
-        };
-        Iterable<SNode> queryResult = (Iterable) computable.compute();
+        }.compute();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {

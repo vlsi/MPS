@@ -59,17 +59,17 @@ public class QueriesGenerated {
     Iterator<SubstituteAction> actions = _context.getSubstituteActions();
     while (actions.hasNext()) {
       SubstituteAction current = actions.next();
-      final SNode concept = current.getOutputConcept();
+      SNode outputConcept = (SNode) current.getOutputConcept();
       SNode applicableConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type");
-      Condition cond = new Condition() {
-        public boolean met(Object object) {
+      Condition<SNode> cond = new Condition<SNode>() {
+        public boolean met(SNode concept) {
           boolean isNode = SConceptOperations.isExactly(concept, "jetbrains.mps.lang.smodel.structure.SNodeType");
           boolean isNList = SConceptOperations.isExactly(concept, "jetbrains.mps.lang.smodel.structure.SNodeListType");
           boolean isModel = SConceptOperations.isExactly(concept, "jetbrains.mps.lang.smodel.structure.SModelType");
           return !(isNode || isNList || isModel);
         }
       };
-      if (SConceptOperations.isSuperConceptOf(applicableConcept, NameUtil.nodeFQName(concept)) && cond.met(concept)) {
+      if (SConceptOperations.isSuperConceptOf(applicableConcept, NameUtil.nodeFQName(outputConcept)) && cond.met(outputConcept)) {
         actions.remove();
       }
     }
@@ -81,12 +81,11 @@ public class QueriesGenerated {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.plugin.structure.ActionParameter");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        Computable computable = new Computable() {
-          public Object compute() {
+        Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
+          public Iterable<SNode> compute() {
             return ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_tuayuq_a0a0a0a1a(), _quotation_createNode_tuayuq_b0a0a0a1a(), _quotation_createNode_tuayuq_c0a0a0a1a());
           }
-        };
-        Iterable<SNode> queryResult = (Iterable) computable.compute();
+        }.compute();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
@@ -115,16 +114,15 @@ public class QueriesGenerated {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        Computable computable = new Computable() {
-          public Object compute() {
+        Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
+          public Iterable<SNode> compute() {
             List<SNode> dataKeys = new ArrayList<SNode>();
             ListSequence.fromList(dataKeys).addSequence(Sequence.fromIterable(Classifier_Behavior.call_staticFields_5292274854859223538(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_tuayuq_a0a0a0b0a0c0(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
             ListSequence.fromList(dataKeys).addSequence(Sequence.fromIterable(Classifier_Behavior.call_staticFields_5292274854859223538(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_tuayuq_a0a0a0c0a0c0(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
             ListSequence.fromList(dataKeys).addSequence(Sequence.fromIterable(Classifier_Behavior.call_staticFields_5292274854859223538(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_tuayuq_a0a0a0d0a0c0(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
             return dataKeys;
           }
-        };
-        Iterable<SNode> queryResult = (Iterable) computable.compute();
+        }.compute();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {

@@ -9,10 +9,10 @@ import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.baseLanguage.overloadedOperators.behavior.CustomOperatorUsage_Behavior;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -24,32 +24,31 @@ public class QueriesGenerated {
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_1141736782992981496(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
-      final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage");
-      Computable computable = new Computable() {
-        public Object compute() {
+      Iterable<SNode> parameterObjects = new Computable<Iterable<SNode>>() {
+        public Iterable<SNode> compute() {
           return CustomOperatorUsage_Behavior.getVisibleCustomOperators_1141736782992984505(_context.getModel());
         }
-      };
-      Iterable<SNode> parameterObjects = (Iterable<SNode>) computable.compute();
-      assert parameterObjects != null;
-      for (final SNode item : parameterObjects) {
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
-          public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-            SNode usage = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage", null);
-            SNodeOperations.replaceWithAnother(_context.getSourceNode(), usage);
-            SLinkOperations.setTarget(usage, "operator", (item), false);
-            SLinkOperations.setTarget(usage, "leftExpression", _context.getSourceNode(), true);
-            return usage;
-          }
+      }.compute();
+      if (parameterObjects != null) {
+        for (final SNode item : parameterObjects) {
+          ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage"), item, _context.getSourceNode()) {
+            public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+              SNode usage = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage", null);
+              SNodeOperations.replaceWithAnother(_context.getSourceNode(), usage);
+              SLinkOperations.setTarget(usage, "operator", (item), false);
+              SLinkOperations.setTarget(usage, "leftExpression", _context.getSourceNode(), true);
+              return usage;
+            }
 
-          public String getMatchingText(String pattern) {
-            return SPropertyOperations.getString((item), "name");
-          }
+            public String getMatchingText(String pattern) {
+              return SPropertyOperations.getString((item), "name");
+            }
 
-          public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
-          }
-        });
+            public String getVisibleMatchingText(String pattern) {
+              return getMatchingText(pattern);
+            }
+          });
+        }
       }
     }
     return result;

@@ -48,7 +48,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -67,7 +67,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -97,7 +97,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -146,7 +146,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -179,7 +179,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -209,7 +209,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -244,7 +244,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -254,16 +254,8 @@ public class QueriesGenerated {
 
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_XmlPrologElement_8411468024378177418(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlComment");
-      List<SubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultSubstituteActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(defaultActions));
-    }
-    {
-      SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlProcessingInstruction");
-      List<SubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultSubstituteActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(defaultActions));
-    }
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlComment"), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext)));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlProcessingInstruction"), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext)));
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlPrologElement");
       SNode childConcept = (SNode) _context.getChildConcept();
@@ -290,7 +282,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -323,7 +315,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -391,28 +383,25 @@ public class QueriesGenerated {
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_XmlElement_6999033275467558443(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlElement");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SPropertyOperations.set(_context.getSourceNode(), "shortEmptyNotation", "" + (true));
-          ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "content", true)).clear();
-          return _context.getSourceNode();
-        }
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlElement"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SPropertyOperations.set(_context.getSourceNode(), "shortEmptyNotation", "" + (true));
+        ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "content", true)).clear();
+        return _context.getSourceNode();
+      }
 
-        public String getMatchingText(String pattern) {
-          return "/";
-        }
+      public String getMatchingText(String pattern) {
+        return "/";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
 
-        public String getDescriptionText(String pattern) {
-          return "short notation for empty element";
-        }
-      });
-    }
+      public String getDescriptionText(String pattern) {
+        return "short notation for empty element";
+      }
+    });
     return result;
   }
 
@@ -422,29 +411,26 @@ public class QueriesGenerated {
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_XmlBaseAttribute_6999033275467568951(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlElement");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SNode elem = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.core.xml.structure.XmlElement");
-          ListSequence.fromList(SLinkOperations.getTargets(elem, "content", true)).clear();
-          SPropertyOperations.set(elem, "shortEmptyNotation", "" + (true));
-          return elem;
-        }
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.structure.XmlElement"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode elem = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.core.xml.structure.XmlElement");
+        ListSequence.fromList(SLinkOperations.getTargets(elem, "content", true)).clear();
+        SPropertyOperations.set(elem, "shortEmptyNotation", "" + (true));
+        return elem;
+      }
 
-        public String getMatchingText(String pattern) {
-          return "/";
-        }
+      public String getMatchingText(String pattern) {
+        return "/";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
 
-        public String getDescriptionText(String pattern) {
-          return "short notation for empty element";
-        }
-      });
-    }
+      public String getDescriptionText(String pattern) {
+        return "short notation for empty element";
+      }
+    });
     return result;
   }
 

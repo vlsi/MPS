@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.make.facet.behavior.FacetDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -21,7 +22,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
@@ -57,8 +57,8 @@ public class QueriesGenerated {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.make.facet.structure.TargetDependency");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        Computable computable = new Computable() {
-          public Object compute() {
+        Iterable<Tuples._2<SNode, SNode>> queryResult = new Computable<Iterable<Tuples._2<SNode, SNode>>>() {
+          public Iterable<Tuples._2<SNode, SNode>> compute() {
             final Iterable<SNode> relatedFacets = FacetDeclaration_Behavior.call_allRelated_8351679702044331818(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.make.facet.structure.FacetDeclaration", false, false));
             return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.make.facet.structure.TargetDeclaration")).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode fct) {
@@ -114,8 +114,7 @@ __switch__:
               }
             }).toListSequence();
           }
-        };
-        Iterable<Tuples._2<SNode, SNode>> queryResult = (Iterable) computable.compute();
+        }.compute();
         if (queryResult != null) {
           for (final Tuples._2<SNode, SNode> item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
@@ -131,7 +130,7 @@ __switch__:
               }
 
               public String getVisibleMatchingText(String pattern) {
-                return this.getMatchingText(pattern);
+                return getMatchingText(pattern);
               }
             });
           }
@@ -147,12 +146,11 @@ __switch__:
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.make.facet.structure.LocalParametersComponentExpression");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        Computable computable = new Computable() {
-          public Object compute() {
+        Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
+          public Iterable<SNode> compute() {
             return SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.make.facet.structure.TargetDeclaration", false, false), "parameters", true), "component", true);
           }
-        };
-        Iterable<SNode> queryResult = (Iterable) computable.compute();
+        }.compute();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
@@ -169,7 +167,7 @@ __switch__:
               }
 
               public String getVisibleMatchingText(String pattern) {
-                return this.getMatchingText(pattern);
+                return getMatchingText(pattern);
               }
             });
           }
@@ -189,8 +187,8 @@ __switch__:
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.make.facet.structure.ForeignParametersComponentExpression");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        Computable computable = new Computable() {
-          public Object compute() {
+        Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
+          public Iterable<SNode> compute() {
             final SNode td = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.make.facet.structure.TargetDeclaration", false, false);
             SNode fd = SNodeOperations.cast(SNodeOperations.getParent(td), "jetbrains.mps.make.facet.structure.FacetDeclaration");
             return ListSequence.fromList(SLinkOperations.getTargets(fd, "targetDeclaration", true)).where(new IWhereFilter<SNode>() {
@@ -211,8 +209,7 @@ __switch__:
               }
             }).toListSequence();
           }
-        };
-        Iterable<SNode> queryResult = (Iterable) computable.compute();
+        }.compute();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
@@ -227,7 +224,7 @@ __switch__:
               }
 
               public String getVisibleMatchingText(String pattern) {
-                return this.getMatchingText(pattern);
+                return getMatchingText(pattern);
               }
             });
           }
@@ -243,12 +240,11 @@ __switch__:
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.make.facet.structure.FacetReferenceExpression");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        Computable computable = new Computable() {
-          public Object compute() {
+        Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
+          public Iterable<SNode> compute() {
             return SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.make.facet.structure.FacetDeclaration");
           }
-        };
-        Iterable<SNode> queryResult = (Iterable) computable.compute();
+        }.compute();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
@@ -261,7 +257,7 @@ __switch__:
               }
 
               public String getVisibleMatchingText(String pattern) {
-                return this.getMatchingText(pattern);
+                return getMatchingText(pattern);
               }
 
               public String getDescriptionText(String pattern) {
@@ -286,27 +282,24 @@ __switch__:
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_IPropertyExpression_2191561637326275634(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.make.facet.structure.ResourceSpecificPropertiesExpression");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SLinkOperations.setNewChild(_context.getSourceNode(), "resource", "jetbrains.mps.baseLanguage.structure.Expression");
-          return _context.getSourceNode();
-        }
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.make.facet.structure.ResourceSpecificPropertiesExpression"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SLinkOperations.setNewChild(_context.getSourceNode(), "resource", "jetbrains.mps.baseLanguage.structure.Expression");
+        return _context.getSourceNode();
+      }
 
-        public String getMatchingText(String pattern) {
-          return "@";
-        }
+      public String getMatchingText(String pattern) {
+        return "@";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
 
-        public String getDescriptionText(String pattern) {
-          return "specify resource";
-        }
-      });
-    }
+      public String getDescriptionText(String pattern) {
+        return "specify resource";
+      }
+    });
     return result;
   }
 
@@ -317,31 +310,30 @@ __switch__:
   public static List<SubstituteAction> sideTransform_ActionsFactory_FacetReferenceExpression_8703512757937161165(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
-      final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.make.facet.structure.TargetReferenceExpression");
-      Computable computable = new Computable() {
-        public Object compute() {
+      Iterable<SNode> parameterObjects = new Computable<Iterable<SNode>>() {
+        public Iterable<SNode> compute() {
           return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getSourceNode(), "reference", true), "facet", false), "targetDeclaration", true);
         }
-      };
-      Iterable<SNode> parameterObjects = (Iterable<SNode>) computable.compute();
-      assert parameterObjects != null;
-      for (final SNode item : parameterObjects) {
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
-          public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-            SNode tre = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.make.facet.structure.TargetReferenceExpression");
-            SLinkOperations.setTarget(tre, "facetRef", _context.getSourceNode(), true);
-            SLinkOperations.setTarget(tre, "target", (item), false);
-            return tre;
-          }
+      }.compute();
+      if (parameterObjects != null) {
+        for (final SNode item : parameterObjects) {
+          ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.make.facet.structure.TargetReferenceExpression"), item, _context.getSourceNode()) {
+            public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+              SNode tre = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.make.facet.structure.TargetReferenceExpression");
+              SLinkOperations.setTarget(tre, "facetRef", _context.getSourceNode(), true);
+              SLinkOperations.setTarget(tre, "target", (item), false);
+              return tre;
+            }
 
-          public String getMatchingText(String pattern) {
-            return ":" + SPropertyOperations.getString((item), "name");
-          }
+            public String getMatchingText(String pattern) {
+              return ":" + SPropertyOperations.getString((item), "name");
+            }
 
-          public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
-          }
-        });
+            public String getVisibleMatchingText(String pattern) {
+              return getMatchingText(pattern);
+            }
+          });
+        }
       }
     }
     return result;
@@ -353,15 +345,11 @@ __switch__:
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_FacetReference_8703512757937205090(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      Computable computable = new Computable() {
-        public Object compute() {
-          return SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.make.facet.structure.FacetReferenceExpression", false, false);
-        }
-      };
-      SNode node = (SNode) computable.compute();
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createSideTransformHintSubstituteActions(node, _context.getSide(), _context.getTransformationTag(), operationContext)));
-    }
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createSideTransformHintSubstituteActions(new Computable<SNode>() {
+      public SNode compute() {
+        return SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.make.facet.structure.FacetReferenceExpression", false, false);
+      }
+    }.compute(), _context.getSide(), _context.getTransformationTag(), operationContext)));
     return result;
   }
 
@@ -371,23 +359,20 @@ __switch__:
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_TargetDeclaration_7219266275016399963(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.make.facet.structure.TargetDeclaration");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SPropertyOperations.set(_context.getSourceNode(), "optional", "" + (true));
-          return _context.getSourceNode();
-        }
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.make.facet.structure.TargetDeclaration"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SPropertyOperations.set(_context.getSourceNode(), "optional", "" + (true));
+        return _context.getSourceNode();
+      }
 
-        public String getMatchingText(String pattern) {
-          return "optional";
-        }
+      public String getMatchingText(String pattern) {
+        return "optional";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
-      });
-    }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+    });
     return result;
   }
 

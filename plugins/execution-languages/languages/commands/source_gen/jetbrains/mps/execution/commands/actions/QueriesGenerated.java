@@ -36,12 +36,11 @@ public class QueriesGenerated {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandReferenceExpression");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        Computable computable = new Computable() {
-          public Object compute() {
+        Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
+          public Iterable<SNode> compute() {
             return SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.execution.commands.structure.CommandDeclaration");
           }
-        };
-        Iterable<SNode> queryResult = (Iterable) computable.compute();
+        }.compute();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
@@ -56,7 +55,7 @@ public class QueriesGenerated {
               }
 
               public String getVisibleMatchingText(String pattern) {
-                return this.getMatchingText(pattern);
+                return getMatchingText(pattern);
               }
 
               public String getDescriptionText(String pattern) {
@@ -76,12 +75,11 @@ public class QueriesGenerated {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandBuilderExpression");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        Computable computable = new Computable() {
-          public Object compute() {
+        Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
+          public Iterable<SNode> compute() {
             return SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.execution.commands.structure.ExecuteCommandPart");
           }
-        };
-        Iterable<SNode> queryResult = (Iterable) computable.compute();
+        }.compute();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
@@ -96,7 +94,7 @@ public class QueriesGenerated {
               }
 
               public String getVisibleMatchingText(String pattern) {
-                return this.getMatchingText(pattern);
+                return getMatchingText(pattern);
               }
 
               public String getDescriptionText(String pattern) {
@@ -130,7 +128,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -160,7 +158,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -185,7 +183,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -195,25 +193,22 @@ public class QueriesGenerated {
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_5365453833390719311(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.RedirectOutputExpression");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SNode redirect = SNodeFactoryOperations.createNewNode("jetbrains.mps.execution.commands.structure.RedirectOutputExpression", null);
-          SNodeOperations.replaceWithAnother(_context.getSourceNode(), redirect);
-          SLinkOperations.setTarget(redirect, "processHandler", _context.getSourceNode(), true);
-          return redirect;
-        }
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.RedirectOutputExpression"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode redirect = SNodeFactoryOperations.createNewNode("jetbrains.mps.execution.commands.structure.RedirectOutputExpression", null);
+        SNodeOperations.replaceWithAnother(_context.getSourceNode(), redirect);
+        SLinkOperations.setTarget(redirect, "processHandler", _context.getSourceNode(), true);
+        return redirect;
+      }
 
-        public String getMatchingText(String pattern) {
-          return ">";
-        }
+      public String getMatchingText(String pattern) {
+        return ">";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
-      });
-    }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+    });
     return result;
   }
 
@@ -223,30 +218,27 @@ public class QueriesGenerated {
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_ProcessType_1810236057992543712(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandProcessType");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          return SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.execution.commands.structure.CommandProcessType");
-        }
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandProcessType"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        return SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.execution.commands.structure.CommandProcessType");
+      }
 
-        public String getMatchingText(String pattern) {
-          return "<";
-        }
+      public String getMatchingText(String pattern) {
+        return "<";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
 
-        public String getDescriptionText(String pattern) {
-          return "command process";
-        }
+      public String getDescriptionText(String pattern) {
+        return "command process";
+      }
 
-        public SNode getActionType(String pattern) {
-          return _quotation_createNode_5e23hz_a0a0a0a();
-        }
-      });
-    }
+      public SNode getActionType(String pattern) {
+        return _quotation_createNode_5e23hz_a0a0a0a();
+      }
+    });
     return result;
   }
 

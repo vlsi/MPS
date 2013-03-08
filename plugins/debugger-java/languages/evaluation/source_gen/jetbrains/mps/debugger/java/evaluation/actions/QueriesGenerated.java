@@ -8,9 +8,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -22,28 +22,25 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class QueriesGenerated {
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_7915630211773500743(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.evaluation.structure.DownCastToLowLevel");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SNode downcast = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.debugger.java.evaluation.structure.DownCastToLowLevel");
-          SLinkOperations.setTarget(downcast, "expression", _context.getSourceNode(), true);
-          return downcast;
-        }
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.evaluation.structure.DownCastToLowLevel"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode downcast = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.debugger.java.evaluation.structure.DownCastToLowLevel");
+        SLinkOperations.setTarget(downcast, "expression", _context.getSourceNode(), true);
+        return downcast;
+      }
 
-        public String getMatchingText(String pattern) {
-          return "/";
-        }
+      public String getMatchingText(String pattern) {
+        return "/";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
 
-        public String getDescriptionText(String pattern) {
-          return "downcast to low-level type";
-        }
-      });
-    }
+      public String getDescriptionText(String pattern) {
+        return "downcast to low-level type";
+      }
+    });
     return result;
   }
 

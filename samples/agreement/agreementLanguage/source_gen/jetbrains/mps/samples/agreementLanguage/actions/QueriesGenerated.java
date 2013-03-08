@@ -57,7 +57,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -97,7 +97,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }

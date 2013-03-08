@@ -166,38 +166,34 @@ public class QueriesGenerated {
 
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_SNodeOperation_1138413233760(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    final ApplicableTypesInfo appTypesInfo;
-    {
-      Computable calc = new Computable() {
-        public Object compute() {
-          ApplicableTypesInfo result = new ApplicableTypesInfo();
-          SNode leftExpression = SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
-          SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);
-          SNode operation = SLinkOperations.getTarget(SNodeOperations.as(leftExpression, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true);
-          SNode linkAccess = SNodeOperations.as(operation, "jetbrains.mps.lang.smodel.structure.ILinkAccess");
-          result.myLinkAccess = linkAccess;
-          if ((linkAccess != null) && BehaviorReflection.invokeVirtual(Boolean.TYPE, linkAccess, "virtual_isSingularCardinality_4024382256428848847", new Object[]{})) {
-            if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SConceptType"), true) != null) {
-              result.myLinkToConcept = true;
-            }
+    final ApplicableTypesInfo appTypesInfo = new Computable<ApplicableTypesInfo>() {
+      public ApplicableTypesInfo compute() {
+        ApplicableTypesInfo result = new ApplicableTypesInfo();
+        SNode leftExpression = SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
+        SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);
+        SNode operation = SLinkOperations.getTarget(SNodeOperations.as(leftExpression, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true);
+        SNode linkAccess = SNodeOperations.as(operation, "jetbrains.mps.lang.smodel.structure.ILinkAccess");
+        result.myLinkAccess = linkAccess;
+        if ((linkAccess != null) && BehaviorReflection.invokeVirtual(Boolean.TYPE, linkAccess, "virtual_isSingularCardinality_4024382256428848847", new Object[]{})) {
+          if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SConceptType"), true) != null) {
+            result.myLinkToConcept = true;
           }
-          // is concept ? 
-          if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SConceptType"), false) != null) {
-            result.myToConcept = true;
-          }
-          // is node ? 
-          if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), false) != null) {
-            result.myToNode = true;
-          }
-          // is smodel ? 
-          if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SModelType"), false) != null) {
-            result.myToModel = true;
-          }
-          return result;
         }
-      };
-      appTypesInfo = (ApplicableTypesInfo) calc.compute();
-    }
+        // is concept ? 
+        if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SConceptType"), false) != null) {
+          result.myToConcept = true;
+        }
+        // is node ? 
+        if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), false) != null) {
+          result.myToNode = true;
+        }
+        // is smodel ? 
+        if (TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SModelType"), false) != null) {
+          result.myToModel = true;
+        }
+        return result;
+      }
+    }.compute();
     return result;
   }
 
@@ -237,10 +233,10 @@ public class QueriesGenerated {
     Iterator<SubstituteAction> actions = _context.getSubstituteActions();
     while (actions.hasNext()) {
       SubstituteAction current = actions.next();
-      final SNode concept = current.getOutputConcept();
+      SNode outputConcept = (SNode) current.getOutputConcept();
       SNode applicableConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeOperation");
-      Condition cond = new Condition() {
-        public boolean met(Object object) {
+      Condition<SNode> cond = new Condition<SNode>() {
+        public boolean met(SNode concept) {
           SNode parameterOp = (SNode) concept;
           SNode leftExpression = SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
           SNode leftOperation = null;
@@ -288,7 +284,7 @@ public class QueriesGenerated {
           return true;
         }
       };
-      if (SConceptOperations.isSuperConceptOf(applicableConcept, NameUtil.nodeFQName(concept)) && cond.met(concept)) {
+      if (SConceptOperations.isSuperConceptOf(applicableConcept, NameUtil.nodeFQName(outputConcept)) && cond.met(outputConcept)) {
         actions.remove();
       }
     }
@@ -330,10 +326,10 @@ public class QueriesGenerated {
     Iterator<SubstituteAction> actions = _context.getSubstituteActions();
     while (actions.hasNext()) {
       SubstituteAction current = actions.next();
-      final SNode concept = current.getOutputConcept();
+      SNode outputConcept = (SNode) current.getOutputConcept();
       SNode applicableConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeOperation");
-      Condition cond = new Condition() {
-        public boolean met(Object object) {
+      Condition<SNode> cond = new Condition<SNode>() {
+        public boolean met(SNode concept) {
           SNode linkAccess = appTypesInfo.myLinkAccess;
           if (linkAccess != null && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, linkAccess, "virtual_isAggregation_4024382256428848854", new Object[]{}))) {
             //  some operations are only applicable to aggregation links 
@@ -350,7 +346,7 @@ public class QueriesGenerated {
           return false;
         }
       };
-      if (SConceptOperations.isSuperConceptOf(applicableConcept, NameUtil.nodeFQName(concept)) && cond.met(concept)) {
+      if (SConceptOperations.isSuperConceptOf(applicableConcept, NameUtil.nodeFQName(outputConcept)) && cond.met(outputConcept)) {
         actions.remove();
       }
     }
@@ -362,12 +358,11 @@ public class QueriesGenerated {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        Computable computable = new Computable() {
-          public Object compute() {
+        Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
+          public Iterable<SNode> compute() {
             return StaticConceptMethodCall_Behavior.getClassifiersWithStaticMethods_1213877485028(_context.getModel(), operationContext.getScope(), _context.getParentNode());
           }
-        };
-        Iterable<SNode> queryResult = (Iterable) computable.compute();
+        }.compute();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
@@ -382,7 +377,7 @@ public class QueriesGenerated {
               }
 
               public String getVisibleMatchingText(String pattern) {
-                return this.getMatchingText(pattern);
+                return getMatchingText(pattern);
               }
 
               public String getDescriptionText(String pattern) {
@@ -399,15 +394,14 @@ public class QueriesGenerated {
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_AbstractOperationParameter_1206996889215(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
-      Computable computable = new Computable() {
-        public Object compute() {
+      Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
+        public Iterable<SNode> compute() {
           return ((List<SNode>) BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.lang.smodel.structure.SNodeOperation")))), "virtual_getApplicableParameter_3044950653914717056", new Object[]{}));
         }
-      };
-      Iterable queryResult = (Iterable) computable.compute();
+      }.compute();
       if (queryResult != null) {
-        for (Object item : queryResult) {
-          ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions((SNode) item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext)));
+        for (SNode item : queryResult) {
+          ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext)));
         }
       }
     }
@@ -416,27 +410,24 @@ public class QueriesGenerated {
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_SNodeOperation_1144103719164(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeOperation");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SNodeFactoryOperations.addNewChild(_context.getSourceNode(), "parameter", "jetbrains.mps.lang.smodel.structure.AbstractOperationParameter");
-          return _context.getSourceNode();
-        }
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeOperation"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNodeFactoryOperations.addNewChild(_context.getSourceNode(), "parameter", "jetbrains.mps.lang.smodel.structure.AbstractOperationParameter");
+        return _context.getSourceNode();
+      }
 
-        public String getMatchingText(String pattern) {
-          return "< .. >";
-        }
+      public String getMatchingText(String pattern) {
+        return "< .. >";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
 
-        public String getDescriptionText(String pattern) {
-          return "add operation parameter(s)";
-        }
-      });
-    }
+      public String getDescriptionText(String pattern) {
+        return "add operation parameter(s)";
+      }
+    });
     return result;
   }
 
@@ -450,51 +441,45 @@ public class QueriesGenerated {
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_1179535189125(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SNode newNode = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression");
-          SLinkOperations.setTarget(newNode, "leftExpression", _context.getSourceNode(), true);
-          return newNode;
-        }
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode newNode = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression");
+        SLinkOperations.setTarget(newNode, "leftExpression", _context.getSourceNode(), true);
+        return newNode;
+      }
 
-        public String getMatchingText(String pattern) {
-          return ":";
-        }
+      public String getMatchingText(String pattern) {
+        return ":";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
 
-        public String getDescriptionText(String pattern) {
-          return "node type cast";
-        }
-      });
-    }
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SNode newNode = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression");
-          SLinkOperations.setTarget(newNode, "leftExpression", _context.getSourceNode(), true);
-          SPropertyOperations.set(newNode, "asCast", "" + (true));
-          return newNode;
-        }
+      public String getDescriptionText(String pattern) {
+        return "node type cast";
+      }
+    });
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode newNode = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression");
+        SLinkOperations.setTarget(newNode, "leftExpression", _context.getSourceNode(), true);
+        SPropertyOperations.set(newNode, "asCast", "" + (true));
+        return newNode;
+      }
 
-        public String getMatchingText(String pattern) {
-          return "as";
-        }
+      public String getMatchingText(String pattern) {
+        return "as";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
 
-        public String getDescriptionText(String pattern) {
-          return "node as cast";
-        }
-      });
-    }
+      public String getDescriptionText(String pattern) {
+        return "node as cast";
+      }
+    });
     return result;
   }
 
@@ -506,28 +491,25 @@ public class QueriesGenerated {
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_1179535648214(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SNode newNode = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression");
-          SLinkOperations.setTarget(newNode, "leftExpression", _context.getSourceNode(), true);
-          return newNode;
-        }
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode newNode = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression");
+        SLinkOperations.setTarget(newNode, "leftExpression", _context.getSourceNode(), true);
+        return newNode;
+      }
 
-        public String getMatchingText(String pattern) {
-          return "/";
-        }
+      public String getMatchingText(String pattern) {
+        return "/";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
 
-        public String getDescriptionText(String pattern) {
-          return "downcast to lower semantic level";
-        }
-      });
-    }
+      public String getDescriptionText(String pattern) {
+        return "downcast to lower semantic level";
+      }
+    });
     return result;
   }
 
@@ -550,29 +532,21 @@ public class QueriesGenerated {
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_SEnumOperation_1241013269073(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      Computable computable = new Computable() {
-        public Object compute() {
-          return SNodeOperations.getParent(_context.getSourceNode());
-        }
-      };
-      SNode node = (SNode) computable.compute();
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createSideTransformHintSubstituteActions(node, _context.getSide(), _context.getTransformationTag(), operationContext)));
-    }
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createSideTransformHintSubstituteActions(new Computable<SNode>() {
+      public SNode compute() {
+        return SNodeOperations.getParent(_context.getSourceNode());
+      }
+    }.compute(), _context.getSide(), _context.getTransformationTag(), operationContext)));
     return result;
   }
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_AttributeQualifier_2788452359611995743(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      Computable computable = new Computable() {
-        public Object compute() {
-          return SNodeOperations.getParent(_context.getSourceNode());
-        }
-      };
-      SNode node = (SNode) computable.compute();
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createSideTransformHintSubstituteActions(node, _context.getSide(), _context.getTransformationTag(), operationContext)));
-    }
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createSideTransformHintSubstituteActions(new Computable<SNode>() {
+      public SNode compute() {
+        return SNodeOperations.getParent(_context.getSourceNode());
+      }
+    }.compute(), _context.getSide(), _context.getTransformationTag(), operationContext)));
     return result;
   }
 }

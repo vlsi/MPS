@@ -44,13 +44,12 @@ public class QueriesGenerated {
 
           @Override
           public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
-            SNode wrappedNode = this.wrapNode(nc, nc.getModel(), editorContext);
+            SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
             _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
-            if (this.returnSmallPart(nc)) {
-              return nc;
-            } else {
-              return wrappedNode;
-            }
+            return (returnSmallPart(nc) ?
+              nc :
+              wrappedNode
+            );
           }
         };
         ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext)));
@@ -83,13 +82,12 @@ public class QueriesGenerated {
 
           @Override
           public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
-            SNode wrappedNode = this.wrapNode(nc, nc.getModel(), editorContext);
+            SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
             _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
-            if (this.returnSmallPart(nc)) {
-              return nc;
-            } else {
-              return wrappedNode;
-            }
+            return (returnSmallPart(nc) ?
+              nc :
+              wrappedNode
+            );
           }
         };
         ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext)));
@@ -118,13 +116,12 @@ public class QueriesGenerated {
 
           @Override
           public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
-            SNode wrappedNode = this.wrapNode(nc, nc.getModel(), editorContext);
+            SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
             _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
-            if (this.returnSmallPart(nc)) {
-              return nc;
-            } else {
-              return wrappedNode;
-            }
+            return (returnSmallPart(nc) ?
+              nc :
+              wrappedNode
+            );
           }
         };
         ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext)));

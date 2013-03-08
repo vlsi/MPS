@@ -8,9 +8,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -21,84 +21,75 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class QueriesGenerated {
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_1187360495057(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), "jetbrains.mps.baseLanguage.money.structure.MoneyType")) {
-            SNode mgcmc = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.money.structure.MoneyGetCurrencyMethodCall", null);
-            SNodeOperations.replaceWithAnother(_context.getSourceNode(), mgcmc);
-            SLinkOperations.setTarget(mgcmc, "instance", _context.getSourceNode(), true);
-            return mgcmc;
-          }
-          return _context.getSourceNode();
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), "jetbrains.mps.baseLanguage.money.structure.MoneyType")) {
+          SNode mgcmc = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.money.structure.MoneyGetCurrencyMethodCall", null);
+          SNodeOperations.replaceWithAnother(_context.getSourceNode(), mgcmc);
+          SLinkOperations.setTarget(mgcmc, "instance", _context.getSourceNode(), true);
+          return mgcmc;
         }
+        return _context.getSourceNode();
+      }
 
-        public String getMatchingText(String pattern) {
-          return ". currency";
-        }
+      public String getMatchingText(String pattern) {
+        return ". currency";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
 
-        public String getDescriptionText(String pattern) {
-          return "get currency";
+      public String getDescriptionText(String pattern) {
+        return "get currency";
+      }
+    });
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), "jetbrains.mps.baseLanguage.money.structure.MoneyType")) {
+          SNode mgcmc = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.money.structure.MoneyIsZeroMethodCall", null);
+          SNodeOperations.replaceWithAnother(_context.getSourceNode(), mgcmc);
+          SLinkOperations.setTarget(mgcmc, "instance", _context.getSourceNode(), true);
+          return mgcmc;
         }
-      });
-    }
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), "jetbrains.mps.baseLanguage.money.structure.MoneyType")) {
-            SNode mgcmc = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.money.structure.MoneyIsZeroMethodCall", null);
-            SNodeOperations.replaceWithAnother(_context.getSourceNode(), mgcmc);
-            SLinkOperations.setTarget(mgcmc, "instance", _context.getSourceNode(), true);
-            return mgcmc;
-          }
-          return _context.getSourceNode();
-        }
+        return _context.getSourceNode();
+      }
 
-        public String getMatchingText(String pattern) {
-          return ". isZero";
-        }
+      public String getMatchingText(String pattern) {
+        return ". isZero";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
 
-        public String getDescriptionText(String pattern) {
-          return "compare to zero";
+      public String getDescriptionText(String pattern) {
+        return "compare to zero";
+      }
+    });
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), "jetbrains.mps.baseLanguage.money.structure.MoneyType")) {
+          SNode mgcmc = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.money.structure.MoneyGetAmountMethodCall", null);
+          SNodeOperations.replaceWithAnother(_context.getSourceNode(), mgcmc);
+          SLinkOperations.setTarget(mgcmc, "instance", _context.getSourceNode(), true);
+          return mgcmc;
         }
-      });
-    }
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), "jetbrains.mps.baseLanguage.money.structure.MoneyType")) {
-            SNode mgcmc = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.money.structure.MoneyGetAmountMethodCall", null);
-            SNodeOperations.replaceWithAnother(_context.getSourceNode(), mgcmc);
-            SLinkOperations.setTarget(mgcmc, "instance", _context.getSourceNode(), true);
-            return mgcmc;
-          }
-          return _context.getSourceNode();
-        }
+        return _context.getSourceNode();
+      }
 
-        public String getMatchingText(String pattern) {
-          return ". amount";
-        }
+      public String getMatchingText(String pattern) {
+        return ". amount";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
 
-        public String getDescriptionText(String pattern) {
-          return "get amount";
-        }
-      });
-    }
+      public String getDescriptionText(String pattern) {
+        return "get amount";
+      }
+    });
     return result;
   }
 }

@@ -52,7 +52,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -81,7 +81,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -106,7 +106,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -131,7 +131,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -141,25 +141,22 @@ public class QueriesGenerated {
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_LambdaExpression_1934341835352174459(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SNode application = SNodeFactoryOperations.createNewNode("jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication", null);
-          SNodeOperations.replaceWithAnother(_context.getSourceNode(), application);
-          SLinkOperations.setTarget(application, "function", _context.getSourceNode(), true);
-          return application;
-        }
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode application = SNodeFactoryOperations.createNewNode("jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication", null);
+        SNodeOperations.replaceWithAnother(_context.getSourceNode(), application);
+        SLinkOperations.setTarget(application, "function", _context.getSourceNode(), true);
+        return application;
+      }
 
-        public String getMatchingText(String pattern) {
-          return "[";
-        }
+      public String getMatchingText(String pattern) {
+        return "[";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
-      });
-    }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+    });
     return result;
   }
 
@@ -193,25 +190,22 @@ public class QueriesGenerated {
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_LambdaExpression_5864443919858363011(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.lambdaCalculus.structure.MultipleExpression");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SNode multiple = SNodeFactoryOperations.createNewNode("jetbrains.mps.samples.lambdaCalculus.structure.MultipleExpression", null);
-          SNodeOperations.replaceWithAnother(_context.getSourceNode(), multiple);
-          ListSequence.fromList(SLinkOperations.getTargets(multiple, "expressions", true)).insertElement(0, _context.getSourceNode());
-          return multiple;
-        }
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.lambdaCalculus.structure.MultipleExpression"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode multiple = SNodeFactoryOperations.createNewNode("jetbrains.mps.samples.lambdaCalculus.structure.MultipleExpression", null);
+        SNodeOperations.replaceWithAnother(_context.getSourceNode(), multiple);
+        ListSequence.fromList(SLinkOperations.getTargets(multiple, "expressions", true)).insertElement(0, _context.getSourceNode());
+        return multiple;
+      }
 
-        public String getMatchingText(String pattern) {
-          return ";";
-        }
+      public String getMatchingText(String pattern) {
+        return ";";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
-      });
-    }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+    });
     return result;
   }
 }

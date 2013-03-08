@@ -102,7 +102,6 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.regex.Matcher" />
     <classNode dependClassName="java.util.regex.Pattern" />
-    <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.actions.ExpectedType_FactoryUtil" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.actions.PrecedenceUtil" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.AssignmentExpression_Behavior" />
@@ -117,7 +116,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.Members" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.IClassifiersSearchScope" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.VisibleClassifiersScope" />
-    <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />

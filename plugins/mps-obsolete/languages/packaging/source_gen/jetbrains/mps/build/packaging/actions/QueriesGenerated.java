@@ -11,9 +11,9 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.build.packaging.behavior.Module_Behavior;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -38,12 +38,11 @@ public class QueriesGenerated {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.packaging.structure.Module");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        Computable computable = new Computable() {
-          public Object compute() {
+        Iterable<IModule> queryResult = new Computable<Iterable<IModule>>() {
+          public Iterable<IModule> compute() {
             return Module_Behavior.getAllAvailableModules_1222444746697();
           }
-        };
-        Iterable<IModule> queryResult = (Iterable) computable.compute();
+        }.compute();
         if (queryResult != null) {
           for (final IModule item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
@@ -71,8 +70,8 @@ public class QueriesGenerated {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.packaging.structure.PathComponent");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        Computable computable = new Computable() {
-          public Object compute() {
+        Iterable<String> queryResult = new Computable<Iterable<String>>() {
+          public Iterable<String> compute() {
             File baseDir = new File(Path_Behavior.call_getPathUntilCurrent_55204148067303513(SNodeOperations.cast(SNodeOperations.getParent(_context.getParentNode()), "jetbrains.mps.build.packaging.structure.Path"), _context.getCurrentTargetNode()));
 
             boolean inRootDir = false;
@@ -103,8 +102,7 @@ public class QueriesGenerated {
               Sequence.<String>singleton("..")
             ))).toListSequence();
           }
-        };
-        Iterable<String> queryResult = (Iterable) computable.compute();
+        }.compute();
         if (queryResult != null) {
           for (final String item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
@@ -123,27 +121,22 @@ public class QueriesGenerated {
 
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_MacroReference_1220979539658(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    final String no_macro;
-    {
-      Computable calc = new Computable() {
-        public Object compute() {
-          return "no macro";
-        }
-      };
-      no_macro = (String) calc.compute();
-    }
+    final String no_macro = new Computable<String>() {
+      public String compute() {
+        return "no macro";
+      }
+    }.compute();
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.packaging.structure.MacroReference");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        Computable computable = new Computable() {
-          public Object compute() {
+        Iterable<String> queryResult = new Computable<Iterable<String>>() {
+          public Iterable<String> compute() {
             List<String> allMacroNames = BehaviorReflection.invokeVirtual((Class<List<String>>) ((Class) Object.class), SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.build.packaging.structure.IMacroHolder", true, false), "virtual_getAllMacroNames_1234975567387", new Object[]{BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.build.packaging.structure.IPath")))), "virtual_canStartFromBasedir_1262430001741498253", new Object[]{})});
             ListSequence.fromList(allMacroNames).addElement(no_macro);
             return allMacroNames;
           }
-        };
-        Iterable<String> queryResult = (Iterable) computable.compute();
+        }.compute();
         if (queryResult != null) {
           for (final String item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
@@ -170,12 +163,11 @@ public class QueriesGenerated {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.buildlanguage.structure.TargetReference");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        Computable computable = new Computable() {
-          public Object compute() {
+        Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
+          public Iterable<SNode> compute() {
             return SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.build.packaging.structure.Antcall"), "project", false), "target", true);
           }
-        };
-        Iterable<SNode> queryResult = (Iterable) computable.compute();
+        }.compute();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
@@ -226,7 +218,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }

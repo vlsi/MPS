@@ -42,7 +42,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -71,7 +71,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -81,29 +81,26 @@ public class QueriesGenerated {
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_Attribute_1225239967737(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.sampleXML.structure.Attribute");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          //  add next attribute 
-          SNode nextAttr = SConceptOperations.createNewNode("jetbrains.mps.sampleXML.structure.Attribute", null);
-          SPropertyOperations.set(nextAttr, "name", ((pattern == null ?
-            null :
-            pattern.trim()
-          )));
-          SNodeOperations.insertNextSiblingChild(_context.getSourceNode(), nextAttr);
-          return nextAttr;
-        }
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.sampleXML.structure.Attribute"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        //  add next attribute 
+        SNode nextAttr = SConceptOperations.createNewNode("jetbrains.mps.sampleXML.structure.Attribute", null);
+        SPropertyOperations.set(nextAttr, "name", ((pattern == null ?
+          null :
+          pattern.trim()
+        )));
+        SNodeOperations.insertNextSiblingChild(_context.getSourceNode(), nextAttr);
+        return nextAttr;
+      }
 
-        public String getMatchingText(String pattern) {
-          return pattern;
-        }
+      public String getMatchingText(String pattern) {
+        return pattern;
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
-      });
-    }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+    });
     return result;
   }
 }

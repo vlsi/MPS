@@ -60,7 +60,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -70,55 +70,52 @@ public class QueriesGenerated {
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_LocalVariableDeclaration_5853558151363158390(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SNode lso = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation", null);
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode lso = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation", null);
+        {
+          SNode matchedNode_fo7if3_b0a0a0 = SLinkOperations.getTarget(_context.getSourceNode(), "type", true);
           {
-            SNode matchedNode_fo7if3_b0a0a0 = SLinkOperations.getTarget(_context.getSourceNode(), "type", true);
+            boolean matches_fo7if3_a1a0a0a = false;
             {
-              boolean matches_fo7if3_a1a0a0a = false;
+              SNode matchingNode_fo7if3_a1a0a0a = SLinkOperations.getTarget(_context.getSourceNode(), "type", true);
+              if (matchingNode_fo7if3_a1a0a0a != null) {
+                matches_fo7if3_a1a0a0a = SModelUtil_new.isAssignableConcept(matchingNode_fo7if3_a1a0a0a.getConcept().getConceptId(), "jetbrains.mps.baseLanguage.math.structure.MatrixType");
+              }
+            }
+            if (matches_fo7if3_a1a0a0a) {
+              SLinkOperations.setTarget(lso, "type", SNodeOperations.cast(SLinkOperations.getTarget(_context.getSourceNode(), "type", true), "jetbrains.mps.baseLanguage.math.structure.MatrixType"), true);
+            } else {
+              boolean matches_fo7if3_b1a0a0a = false;
               {
-                SNode matchingNode_fo7if3_a1a0a0a = SLinkOperations.getTarget(_context.getSourceNode(), "type", true);
-                if (matchingNode_fo7if3_a1a0a0a != null) {
-                  matches_fo7if3_a1a0a0a = SModelUtil_new.isAssignableConcept(matchingNode_fo7if3_a1a0a0a.getConcept().getConceptId(), "jetbrains.mps.baseLanguage.math.structure.MatrixType");
+                SNode matchingNode_fo7if3_b1a0a0a = SLinkOperations.getTarget(_context.getSourceNode(), "type", true);
+                if (matchingNode_fo7if3_b1a0a0a != null) {
+                  matches_fo7if3_b1a0a0a = SModelUtil_new.isAssignableConcept(matchingNode_fo7if3_b1a0a0a.getConcept().getConceptId(), "jetbrains.mps.baseLanguage.math.structure.VectorType");
                 }
               }
-              if (matches_fo7if3_a1a0a0a) {
-                SLinkOperations.setTarget(lso, "type", SNodeOperations.cast(SLinkOperations.getTarget(_context.getSourceNode(), "type", true), "jetbrains.mps.baseLanguage.math.structure.MatrixType"), true);
-              } else {
-                boolean matches_fo7if3_b1a0a0a = false;
-                {
-                  SNode matchingNode_fo7if3_b1a0a0a = SLinkOperations.getTarget(_context.getSourceNode(), "type", true);
-                  if (matchingNode_fo7if3_b1a0a0a != null) {
-                    matches_fo7if3_b1a0a0a = SModelUtil_new.isAssignableConcept(matchingNode_fo7if3_b1a0a0a.getConcept().getConceptId(), "jetbrains.mps.baseLanguage.math.structure.VectorType");
-                  }
-                }
-                if (matches_fo7if3_b1a0a0a) {
-                  SLinkOperations.setTarget(lso, "type", SNodeOperations.cast(SLinkOperations.getTarget(_context.getSourceNode(), "type", true), "jetbrains.mps.baseLanguage.math.structure.VectorType"), true);
-                }
+              if (matches_fo7if3_b1a0a0a) {
+                SLinkOperations.setTarget(lso, "type", SNodeOperations.cast(SLinkOperations.getTarget(_context.getSourceNode(), "type", true), "jetbrains.mps.baseLanguage.math.structure.VectorType"), true);
               }
             }
           }
-          SPropertyOperations.set(lso, "name", SPropertyOperations.getString(_context.getSourceNode(), "name"));
-          SNodeOperations.replaceWithAnother(_context.getSourceNode(), lso);
-          return SLinkOperations.getTarget(lso, "matrix", true);
         }
+        SPropertyOperations.set(lso, "name", SPropertyOperations.getString(_context.getSourceNode(), "name"));
+        SNodeOperations.replaceWithAnother(_context.getSourceNode(), lso);
+        return SLinkOperations.getTarget(lso, "matrix", true);
+      }
 
-        public String getMatchingText(String pattern) {
-          return ":";
-        }
+      public String getMatchingText(String pattern) {
+        return ":";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
 
-        public String getDescriptionText(String pattern) {
-          return "Initialize as a vector satisfying linear equation";
-        }
-      });
-    }
+      public String getDescriptionText(String pattern) {
+        return "Initialize as a vector satisfying linear equation";
+      }
+    });
     return result;
   }
 
@@ -128,29 +125,26 @@ public class QueriesGenerated {
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_6389121991274660119(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression", null);
-          SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
-          SLinkOperations.setTarget(result, "expression", _context.getSourceNode(), true);
-          return SLinkOperations.getTarget(result, "rowIndex", true);
-        }
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression", null);
+        SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
+        SLinkOperations.setTarget(result, "expression", _context.getSourceNode(), true);
+        return SLinkOperations.getTarget(result, "rowIndex", true);
+      }
 
-        public String getMatchingText(String pattern) {
-          return "[";
-        }
+      public String getMatchingText(String pattern) {
+        return "[";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
 
-        public String getDescriptionText(String pattern) {
-          return "Matrix element access";
-        }
-      });
-    }
+      public String getDescriptionText(String pattern) {
+        return "Matrix element access";
+      }
+    });
     return result;
   }
 
@@ -160,36 +154,32 @@ public class QueriesGenerated {
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_963844843316088781(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SNode result = SNodeOperations.replaceWithAnother(_context.getSourceNode(), _quotation_createNode_fo7if3_a0a0a0a0a2(_context.getSourceNode()));
-          return SLinkOperations.getTarget(result, "exponent", true);
-        }
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode result = SNodeOperations.replaceWithAnother(_context.getSourceNode(), _quotation_createNode_fo7if3_a0a0a0a0a2(_context.getSourceNode()));
+        return SLinkOperations.getTarget(result, "exponent", true);
+      }
 
-        public String getMatchingText(String pattern) {
-          return "^";
-        }
+      public String getMatchingText(String pattern) {
+        return "^";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
 
-        public String getDescriptionText(String pattern) {
-          return "Raise to power";
-        }
-      });
-    }
+      public String getDescriptionText(String pattern) {
+        return "Raise to power";
+      }
+    });
     return result;
   }
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_7255837154369265165(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
-      final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
-      Computable computable = new Computable() {
-        public Object compute() {
+      Iterable<SNode> parameterObjects = new Computable<Iterable<SNode>>() {
+        public Iterable<SNode> compute() {
           List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
           for (SNode a : ListSequence.fromList(SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation"), _context.getModel(), operationContext.getScope()))) {
             if (!(SPropertyOperations.getBoolean(a, "abstract"))) {
@@ -198,27 +188,27 @@ public class QueriesGenerated {
           }
           return result;
         }
-      };
-      Iterable<SNode> parameterObjects = (Iterable<SNode>) computable.compute();
-      assert parameterObjects != null;
-      for (final SNode item : parameterObjects) {
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
-          public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-            return SNodeOperations.replaceWithAnother(_context.getSourceNode(), SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName((item)), _quotation_createNode_fo7if3_a0a0a0a0a0d(_context.getSourceNode())));
-          }
+      }.compute();
+      if (parameterObjects != null) {
+        for (final SNode item : parameterObjects) {
+          ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression"), item, _context.getSourceNode()) {
+            public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+              return SNodeOperations.replaceWithAnother(_context.getSourceNode(), SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName((item)), _quotation_createNode_fo7if3_a0a0a0a0a0d(_context.getSourceNode())));
+            }
 
-          public String getMatchingText(String pattern) {
-            return "^" + BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName((item))), "virtual_getOperationSymbol_1262430001741497831", new Object[]{});
-          }
+            public String getMatchingText(String pattern) {
+              return "^" + BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName((item))), "virtual_getOperationSymbol_1262430001741497831", new Object[]{});
+            }
 
-          public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
-          }
+            public String getVisibleMatchingText(String pattern) {
+              return getMatchingText(pattern);
+            }
 
-          public String getDescriptionText(String pattern) {
-            return SPropertyOperations.getString((item), "shortDescription");
-          }
-        });
+            public String getDescriptionText(String pattern) {
+              return SPropertyOperations.getString((item), "shortDescription");
+            }
+          });
+        }
       }
     }
     return result;

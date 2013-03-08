@@ -64,7 +64,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -106,7 +106,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -142,7 +142,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -175,7 +175,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -228,12 +228,11 @@ public class QueriesGenerated {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.VariableAssingment");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        Computable computable = new Computable() {
-          public Object compute() {
+        Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
+          public Iterable<SNode> compute() {
             return SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.bash.structure.ShellScript", true, false), "usedVars", true);
           }
-        };
-        Iterable<SNode> queryResult = (Iterable) computable.compute();
+        }.compute();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
@@ -286,7 +285,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -296,24 +295,21 @@ public class QueriesGenerated {
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_IGeneralizedWordUnit_3147078024758607987(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.ArithmeticExpansion");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SNode newNode = SNodeFactoryOperations.createNewNode("jetbrains.mps.bash.structure.ArithmeticExpansion", null);
-          SNodeOperations.insertNextSiblingChild(_context.getSourceNode(), newNode);
-          return newNode;
-        }
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.ArithmeticExpansion"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode newNode = SNodeFactoryOperations.createNewNode("jetbrains.mps.bash.structure.ArithmeticExpansion", null);
+        SNodeOperations.insertNextSiblingChild(_context.getSourceNode(), newNode);
+        return newNode;
+      }
 
-        public String getMatchingText(String pattern) {
-          return "$((";
-        }
+      public String getMatchingText(String pattern) {
+        return "$((";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
-      });
-    }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+    });
     return result;
   }
 
@@ -401,80 +397,71 @@ public class QueriesGenerated {
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_CommandTerminator_2635812496400429947(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.CommentedText");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SNode commonCommand = SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.bash.structure.CommandList", false, false);
-          SNodeFactoryOperations.setNewChild(commonCommand, "comment", "jetbrains.mps.bash.structure.CommentedText");
-          return SLinkOperations.getTarget(commonCommand, "comment", true);
-        }
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.CommentedText"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode commonCommand = SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.bash.structure.CommandList", false, false);
+        SNodeFactoryOperations.setNewChild(commonCommand, "comment", "jetbrains.mps.bash.structure.CommentedText");
+        return SLinkOperations.getTarget(commonCommand, "comment", true);
+      }
 
-        public String getMatchingText(String pattern) {
-          return "#";
-        }
+      public String getMatchingText(String pattern) {
+        return "#";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
 
-        public String getDescriptionText(String pattern) {
-          return "simple text comment";
-        }
-      });
-    }
+      public String getDescriptionText(String pattern) {
+        return "simple text comment";
+      }
+    });
     return result;
   }
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_FollowingCommandList_8474643070110067667(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.CommentedFollowingCommandList");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SNode comment = SNodeFactoryOperations.createNewNode("jetbrains.mps.bash.structure.CommentedFollowingCommandList", null);
-          SNodeOperations.replaceWithAnother(_context.getSourceNode(), comment);
-          SLinkOperations.setTarget(comment, "command", _context.getSourceNode(), true);
-          return comment;
-        }
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.CommentedFollowingCommandList"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode comment = SNodeFactoryOperations.createNewNode("jetbrains.mps.bash.structure.CommentedFollowingCommandList", null);
+        SNodeOperations.replaceWithAnother(_context.getSourceNode(), comment);
+        SLinkOperations.setTarget(comment, "command", _context.getSourceNode(), true);
+        return comment;
+      }
 
-        public String getMatchingText(String pattern) {
-          if (pattern.startsWith("#")) {
-            return pattern;
-          }
-          return "";
+      public String getMatchingText(String pattern) {
+        if (pattern.startsWith("#")) {
+          return pattern;
         }
+        return "";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
-      });
-    }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+    });
     return result;
   }
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_Command_8457058248752905941(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.CommentedCommandList");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SNode comment = SNodeFactoryOperations.createNewNode("jetbrains.mps.bash.structure.CommentedCommandList", null);
-          SNode sourceCommandList = SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.bash.structure.CommandList", false, false);
-          SNodeOperations.replaceWithAnother(sourceCommandList, comment);
-          SLinkOperations.setTarget(comment, "commandList", sourceCommandList, true);
-          return comment;
-        }
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.CommentedCommandList"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode comment = SNodeFactoryOperations.createNewNode("jetbrains.mps.bash.structure.CommentedCommandList", null);
+        SNode sourceCommandList = SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.bash.structure.CommandList", false, false);
+        SNodeOperations.replaceWithAnother(sourceCommandList, comment);
+        SLinkOperations.setTarget(comment, "commandList", sourceCommandList, true);
+        return comment;
+      }
 
-        public String getMatchingText(String pattern) {
-          return "#";
-        }
+      public String getMatchingText(String pattern) {
+        return "#";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
-      });
-    }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+    });
     return result;
   }
 
@@ -662,42 +649,41 @@ public class QueriesGenerated {
   public static List<SubstituteAction> sideTransform_ActionsFactory_AbstractCommand_975347375211919463(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
-      final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.RedirectedCommand");
-      Computable computable = new Computable() {
-        public Object compute() {
+      Iterable<String> parameterObjects = new Computable<Iterable<String>>() {
+        public Iterable<String> compute() {
           return ListSequence.fromListAndArray(new ArrayList<String>(), ">", "&>", "<");
         }
-      };
-      Iterable<String> parameterObjects = (Iterable<String>) computable.compute();
-      assert parameterObjects != null;
-      for (final String item : parameterObjects) {
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
-          public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-            SNode redirectedCommand = SNodeFactoryOperations.createNewNode("jetbrains.mps.bash.structure.RedirectedCommand", null);
-            SNode redirection;
-            if ((item).equals(">")) {
-              redirection = SNodeFactoryOperations.createNewNode("jetbrains.mps.bash.structure.OutputRedirection", null);
-            } else if ((item).equals("&>")) {
-              redirection = SNodeFactoryOperations.createNewNode("jetbrains.mps.bash.structure.OutputErrorRedirection", null);
-            } else {
-              redirection = SNodeFactoryOperations.createNewNode("jetbrains.mps.bash.structure.InputRedirection", null);
+      }.compute();
+      if (parameterObjects != null) {
+        for (final String item : parameterObjects) {
+          ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.RedirectedCommand"), item, _context.getSourceNode()) {
+            public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+              SNode redirectedCommand = SNodeFactoryOperations.createNewNode("jetbrains.mps.bash.structure.RedirectedCommand", null);
+              SNode redirection;
+              if ((item).equals(">")) {
+                redirection = SNodeFactoryOperations.createNewNode("jetbrains.mps.bash.structure.OutputRedirection", null);
+              } else if ((item).equals("&>")) {
+                redirection = SNodeFactoryOperations.createNewNode("jetbrains.mps.bash.structure.OutputErrorRedirection", null);
+              } else {
+                redirection = SNodeFactoryOperations.createNewNode("jetbrains.mps.bash.structure.InputRedirection", null);
+              }
+              ListSequence.fromList(SLinkOperations.getTargets(redirectedCommand, "redirection", true)).addElement(redirection);
+              SNode command = _context.getSourceNode();
+              SNodeOperations.replaceWithAnother(_context.getSourceNode(), redirectedCommand);
+              SLinkOperations.setTarget(redirectedCommand, "command", command, true);
+              return redirectedCommand;
             }
-            ListSequence.fromList(SLinkOperations.getTargets(redirectedCommand, "redirection", true)).addElement(redirection);
-            SNode command = _context.getSourceNode();
-            SNodeOperations.replaceWithAnother(_context.getSourceNode(), redirectedCommand);
-            SLinkOperations.setTarget(redirectedCommand, "command", command, true);
-            return redirectedCommand;
-          }
 
-          public String getDescriptionText(String pattern) {
-            if ((item).equals(">")) {
-              return "redirect output";
-            } else if ((item).equals("&>")) {
-              return "redirect error output";
+            public String getDescriptionText(String pattern) {
+              if ((item).equals(">")) {
+                return "redirect output";
+              } else if ((item).equals("&>")) {
+                return "redirect error output";
+              }
+              return "redirect input";
             }
-            return "redirect input";
-          }
-        });
+          });
+        }
       }
     }
     return result;

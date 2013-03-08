@@ -36,12 +36,11 @@ public class QueriesGenerated {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.modeling.structure.LayoutConstraintExpression");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        Computable computable = new Computable() {
-          public Object compute() {
+        Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
+          public Iterable<SNode> compute() {
             return ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.modeling.structure.BoxLayoutConstraint"), SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.modeling.structure.CellLayoutConstraint"), SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.modeling.structure.AlignmentLayoutConstraint"));
           }
-        };
-        Iterable<SNode> queryResult = (Iterable) computable.compute();
+        }.compute();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
@@ -54,7 +53,7 @@ public class QueriesGenerated {
               }
 
               public String getVisibleMatchingText(String pattern) {
-                return this.getMatchingText(pattern);
+                return getMatchingText(pattern);
               }
             });
           }
@@ -66,38 +65,32 @@ public class QueriesGenerated {
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_2663453265347375464(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.modeling.structure.ExpressionWithUnit");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          return SNodeOperations.replaceWithAnother(_context.getSourceNode(), _quotation_createNode_9can6o_a0a0a0a0a(_context.getSourceNode(), "PERCENT"));
-        }
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.modeling.structure.ExpressionWithUnit"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        return SNodeOperations.replaceWithAnother(_context.getSourceNode(), _quotation_createNode_9can6o_a0a0a0a0a(_context.getSourceNode(), "PERCENT"));
+      }
 
-        public String getMatchingText(String pattern) {
-          return "%";
-        }
+      public String getMatchingText(String pattern) {
+        return "%";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
-      });
-    }
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.modeling.structure.ExpressionWithUnit");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          return SNodeOperations.replaceWithAnother(_context.getSourceNode(), _quotation_createNode_9can6o_a0a0a0b0a(_context.getSourceNode(), "PIXEL"));
-        }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+    });
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.modeling.structure.ExpressionWithUnit"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        return SNodeOperations.replaceWithAnother(_context.getSourceNode(), _quotation_createNode_9can6o_a0a0a0b0a(_context.getSourceNode(), "PIXEL"));
+      }
 
-        public String getMatchingText(String pattern) {
-          return "px";
-        }
+      public String getMatchingText(String pattern) {
+        return "px";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
-      });
-    }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+    });
     return result;
   }
 
@@ -107,23 +100,20 @@ public class QueriesGenerated {
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_ColumnLayoutConstraint_8508807536211371507(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.modeling.structure.ColumnLayoutConstraint");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SNodeFactoryOperations.setNewChild(_context.getSourceNode(), "spanCols", "jetbrains.mps.baseLanguage.structure.Expression");
-          return _context.getSourceNode();
-        }
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.modeling.structure.ColumnLayoutConstraint"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNodeFactoryOperations.setNewChild(_context.getSourceNode(), "spanCols", "jetbrains.mps.baseLanguage.structure.Expression");
+        return _context.getSourceNode();
+      }
 
-        public String getMatchingText(String pattern) {
-          return ":";
-        }
+      public String getMatchingText(String pattern) {
+        return ":";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
-      });
-    }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+    });
     return result;
   }
 
@@ -133,23 +123,20 @@ public class QueriesGenerated {
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_RowLayoutConstraint_8508807536211441142(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.modeling.structure.RowLayoutConstraint");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SNodeFactoryOperations.setNewChild(_context.getSourceNode(), "spanRows", "jetbrains.mps.baseLanguage.structure.Expression");
-          return _context.getSourceNode();
-        }
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.ui.modeling.structure.RowLayoutConstraint"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNodeFactoryOperations.setNewChild(_context.getSourceNode(), "spanRows", "jetbrains.mps.baseLanguage.structure.Expression");
+        return _context.getSourceNode();
+      }
 
-        public String getMatchingText(String pattern) {
-          return ":";
-        }
+      public String getMatchingText(String pattern) {
+        return ":";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
-      });
-    }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+    });
     return result;
   }
 

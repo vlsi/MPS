@@ -11,12 +11,12 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -47,8 +47,8 @@ public class QueriesGenerated {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.testbench.suite.structure.SolutionRef");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        Computable computable = new Computable() {
-          public Object compute() {
+        Iterable<ModuleReference> queryResult = new Computable<Iterable<ModuleReference>>() {
+          public Iterable<ModuleReference> compute() {
             Iterable<Solution> allSolutions = ModuleRepositoryFacade.getInstance().getAllModules(Solution.class);
             return Sequence.fromIterable(allSolutions).select(new ISelector<Solution, ModuleReference>() {
               public ModuleReference select(Solution s) {
@@ -56,8 +56,7 @@ public class QueriesGenerated {
               }
             }).toListSequence();
           }
-        };
-        Iterable<ModuleReference> queryResult = (Iterable) computable.compute();
+        }.compute();
         if (queryResult != null) {
           for (final ModuleReference item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
@@ -73,7 +72,7 @@ public class QueriesGenerated {
               }
 
               public String getVisibleMatchingText(String pattern) {
-                return this.getMatchingText(pattern);
+                return getMatchingText(pattern);
               }
             });
           }
@@ -89,8 +88,8 @@ public class QueriesGenerated {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        Computable computable = new Computable() {
-          public Object compute() {
+        Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
+          public Iterable<SNode> compute() {
             SNode msuite = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.testbench.suite.structure.ModuleSuite", true, false);
             final IScope mscope = ModuleSuite_Behavior.call_scope_1280144168199518341(msuite);
             return Sequence.fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(msuite)).translate(new ITranslator2<SModel, SNode>() {
@@ -106,8 +105,7 @@ public class QueriesGenerated {
               }
             }).toListSequence();
           }
-        };
-        Iterable<SNode> queryResult = (Iterable) computable.compute();
+        }.compute();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
@@ -124,7 +122,7 @@ public class QueriesGenerated {
               }
 
               public String getVisibleMatchingText(String pattern) {
-                return this.getMatchingText(pattern);
+                return getMatchingText(pattern);
               }
             });
           }
@@ -140,8 +138,8 @@ public class QueriesGenerated {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        Computable computable = new Computable() {
-          public Object compute() {
+        Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
+          public Iterable<SNode> compute() {
             SNode msuite = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.testbench.suite.structure.ModuleSuite", true, false);
             final IScope mscope = ModuleSuite_Behavior.call_scope_1280144168199518341(msuite);
             final SNode testAnn = SLinkOperations.getTarget(_quotation_createNode_wt5x6r_a0a2a0a1a(), "annotation", false);
@@ -167,8 +165,7 @@ public class QueriesGenerated {
               }
             }).toListSequence();
           }
-        };
-        Iterable<SNode> queryResult = (Iterable) computable.compute();
+        }.compute();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
@@ -185,7 +182,7 @@ public class QueriesGenerated {
               }
 
               public String getVisibleMatchingText(String pattern) {
-                return this.getMatchingText(pattern);
+                return getMatchingText(pattern);
               }
             });
           }
@@ -201,8 +198,8 @@ public class QueriesGenerated {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.testbench.suite.structure.TestCaseRef");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        Computable computable = new Computable() {
-          public Object compute() {
+        Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
+          public Iterable<SNode> compute() {
             SNode msuite = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.testbench.suite.structure.ModuleSuite", true, false);
             return Sequence.fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(msuite)).translate(new ITranslator2<SModel, SNode>() {
               public Iterable<SNode> translate(SModel smd) {
@@ -210,8 +207,7 @@ public class QueriesGenerated {
               }
             }).toListSequence();
           }
-        };
-        Iterable<SNode> queryResult = (Iterable) computable.compute();
+        }.compute();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
@@ -228,7 +224,7 @@ public class QueriesGenerated {
               }
 
               public String getVisibleMatchingText(String pattern) {
-                return this.getMatchingText(pattern);
+                return getMatchingText(pattern);
               }
             });
           }

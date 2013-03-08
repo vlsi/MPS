@@ -8,9 +8,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -20,144 +20,126 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class QueriesGenerated {
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_1196261413060(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SNode result = SModelOperations.createNewNode(_context.getModel(), null, "jetbrains.mps.samples.complex.structure.ReExpression");
-          SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
-          SLinkOperations.setTarget(result, "complexExpression", _context.getSourceNode(), true);
-          return result;
-        }
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode result = SModelOperations.createNewNode(_context.getModel(), null, "jetbrains.mps.samples.complex.structure.ReExpression");
+        SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
+        SLinkOperations.setTarget(result, "complexExpression", _context.getSourceNode(), true);
+        return result;
+      }
 
-        public String getMatchingText(String pattern) {
-          return "re";
-        }
+      public String getMatchingText(String pattern) {
+        return "re";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
 
-        public String getDescriptionText(String pattern) {
-          return "complex real part";
-        }
-      });
-    }
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SNode result = SModelOperations.createNewNode(_context.getModel(), null, "jetbrains.mps.samples.complex.structure.ImExpression");
-          SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
-          SLinkOperations.setTarget(result, "complexExpression", _context.getSourceNode(), true);
-          return result;
-        }
+      public String getDescriptionText(String pattern) {
+        return "complex real part";
+      }
+    });
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode result = SModelOperations.createNewNode(_context.getModel(), null, "jetbrains.mps.samples.complex.structure.ImExpression");
+        SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
+        SLinkOperations.setTarget(result, "complexExpression", _context.getSourceNode(), true);
+        return result;
+      }
 
-        public String getMatchingText(String pattern) {
-          return "im";
-        }
+      public String getMatchingText(String pattern) {
+        return "im";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
 
-        public String getDescriptionText(String pattern) {
-          return "complex imaginary part";
-        }
-      });
-    }
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SNode result = SModelOperations.createNewNode(_context.getModel(), null, "jetbrains.mps.samples.complex.structure.AbsExpression");
-          SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
-          SLinkOperations.setTarget(result, "complexExpression", _context.getSourceNode(), true);
-          return result;
-        }
+      public String getDescriptionText(String pattern) {
+        return "complex imaginary part";
+      }
+    });
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode result = SModelOperations.createNewNode(_context.getModel(), null, "jetbrains.mps.samples.complex.structure.AbsExpression");
+        SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
+        SLinkOperations.setTarget(result, "complexExpression", _context.getSourceNode(), true);
+        return result;
+      }
 
-        public String getMatchingText(String pattern) {
-          return "abs";
-        }
+      public String getMatchingText(String pattern) {
+        return "abs";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
 
-        public String getDescriptionText(String pattern) {
-          return "complex absolute value";
-        }
-      });
-    }
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SNode result = SModelOperations.createNewNode(_context.getModel(), null, "jetbrains.mps.samples.complex.structure.ArgExpression");
-          SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
-          SLinkOperations.setTarget(result, "complexExpression", _context.getSourceNode(), true);
-          return result;
-        }
+      public String getDescriptionText(String pattern) {
+        return "complex absolute value";
+      }
+    });
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode result = SModelOperations.createNewNode(_context.getModel(), null, "jetbrains.mps.samples.complex.structure.ArgExpression");
+        SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
+        SLinkOperations.setTarget(result, "complexExpression", _context.getSourceNode(), true);
+        return result;
+      }
 
-        public String getMatchingText(String pattern) {
-          return "arg";
-        }
+      public String getMatchingText(String pattern) {
+        return "arg";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
 
-        public String getDescriptionText(String pattern) {
-          return "complex argument";
-        }
-      });
-    }
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SNode result = SModelOperations.createNewNode(_context.getModel(), null, "jetbrains.mps.samples.complex.structure.ConjugateComplexExpression");
-          SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
-          SLinkOperations.setTarget(result, "complexExpression", _context.getSourceNode(), true);
-          return result;
-        }
+      public String getDescriptionText(String pattern) {
+        return "complex argument";
+      }
+    });
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode result = SModelOperations.createNewNode(_context.getModel(), null, "jetbrains.mps.samples.complex.structure.ConjugateComplexExpression");
+        SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
+        SLinkOperations.setTarget(result, "complexExpression", _context.getSourceNode(), true);
+        return result;
+      }
 
-        public String getMatchingText(String pattern) {
-          return "conj";
-        }
+      public String getMatchingText(String pattern) {
+        return "conj";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
 
-        public String getDescriptionText(String pattern) {
-          return "complex conjugative";
-        }
-      });
-    }
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SNode result = SModelOperations.createNewNode(_context.getModel(), null, "jetbrains.mps.samples.complex.structure.DegreeComplexExpression");
-          SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
-          SLinkOperations.setTarget(result, "complexExpression", _context.getSourceNode(), true);
-          return result;
-        }
+      public String getDescriptionText(String pattern) {
+        return "complex conjugative";
+      }
+    });
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode result = SModelOperations.createNewNode(_context.getModel(), null, "jetbrains.mps.samples.complex.structure.DegreeComplexExpression");
+        SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
+        SLinkOperations.setTarget(result, "complexExpression", _context.getSourceNode(), true);
+        return result;
+      }
 
-        public String getMatchingText(String pattern) {
-          return "^";
-        }
+      public String getMatchingText(String pattern) {
+        return "^";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
 
-        public String getDescriptionText(String pattern) {
-          return "complex degree";
-        }
-      });
-    }
+      public String getDescriptionText(String pattern) {
+        return "complex degree";
+      }
+    });
     return result;
   }
 }

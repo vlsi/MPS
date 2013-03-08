@@ -120,7 +120,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -158,7 +158,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -192,7 +192,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -226,7 +226,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -259,7 +259,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -292,7 +292,7 @@ public class QueriesGenerated {
           }
 
           public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
+            return getMatchingText(pattern);
           }
         });
       }
@@ -302,78 +302,66 @@ public class QueriesGenerated {
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_1175165206848(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SNode findMatchExpression = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression");
-          SLinkOperations.setTarget(findMatchExpression, "inputExpression", _context.getSourceNode(), true);
-          return findMatchExpression;
-        }
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode findMatchExpression = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression");
+        SLinkOperations.setTarget(findMatchExpression, "inputExpression", _context.getSourceNode(), true);
+        return findMatchExpression;
+      }
 
-        public String getMatchingText(String pattern) {
-          return "=~";
-        }
+      public String getMatchingText(String pattern) {
+        return "=~";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
-      });
-    }
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SNode matchRegexpExpression = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression");
-          SLinkOperations.setTarget(matchRegexpExpression, "inputExpression", _context.getSourceNode(), true);
-          return matchRegexpExpression;
-        }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+    });
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode matchRegexpExpression = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression");
+        SLinkOperations.setTarget(matchRegexpExpression, "inputExpression", _context.getSourceNode(), true);
+        return matchRegexpExpression;
+      }
 
-        public String getMatchingText(String pattern) {
-          return "matches";
-        }
+      public String getMatchingText(String pattern) {
+        return "matches";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
-      });
-    }
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SNode node = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression");
-          SLinkOperations.setTarget(node, "expr", _context.getSourceNode(), true);
-          return node;
-        }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+    });
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode node = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression");
+        SLinkOperations.setTarget(node, "expr", _context.getSourceNode(), true);
+        return node;
+      }
 
-        public String getMatchingText(String pattern) {
-          return "replace with regexp";
-        }
+      public String getMatchingText(String pattern) {
+        return "replace with regexp";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
-      });
-    }
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.SplitExpression");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SNode node = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.regexp.structure.SplitExpression");
-          SLinkOperations.setTarget(node, "expr", _context.getSourceNode(), true);
-          return node;
-        }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+    });
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.SplitExpression"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode node = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.regexp.structure.SplitExpression");
+        SLinkOperations.setTarget(node, "expr", _context.getSourceNode(), true);
+        return node;
+      }
 
-        public String getMatchingText(String pattern) {
-          return "split with";
-        }
+      public String getMatchingText(String pattern) {
+        return "split with";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
-      });
-    }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+    });
     return result;
   }
 
@@ -383,153 +371,143 @@ public class QueriesGenerated {
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_Regexp_1353467374625925690(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.NTimesRegexp"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode node = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.regexp.structure.NTimesRegexp", null);
+        SNodeOperations.replaceWithAnother(_context.getSourceNode(), node);
+        SLinkOperations.setTarget(node, "regexp", _context.getSourceNode(), true);
+        {
+          Pattern _pattern_0 = REGEXP_x583g4_a0a0d0a0a0a0a0b0m;
+          Matcher _matcher_0 = _pattern_0.matcher(pattern);
+          if (_matcher_0.find()) {
+            SPropertyOperations.set(node, "n", "" + (Integer.parseInt(_matcher_0.group(1))));
+          }
+        }
+        return node;
+      }
+
+      public String getMatchingText(String pattern) {
+        if (!(REGEXP_x583g4_a0a0a0b0a0a0a0b0m.matcher(pattern).matches())) {
+          return "{n}";
+        }
+        String s = pattern;
+        if (!(s.endsWith("}"))) {
+          s += "}";
+        }
+        return s;
+      }
+
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+    });
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.AtLeastNTimesRegexp"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode node = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.regexp.structure.AtLeastNTimesRegexp", null);
+        SNodeOperations.replaceWithAnother(_context.getSourceNode(), node);
+        SLinkOperations.setTarget(node, "regexp", _context.getSourceNode(), true);
+        {
+          Pattern _pattern_0 = REGEXP_x583g4_a0a0d0a0a0a0a0c0m;
+          Matcher _matcher_0 = _pattern_0.matcher(pattern);
+          if (_matcher_0.find()) {
+            SPropertyOperations.set(node, "n", "" + (Integer.parseInt(_matcher_0.group(1))));
+          }
+        }
+        return node;
+      }
+
+      public String getMatchingText(String pattern) {
+        if (!(REGEXP_x583g4_a0a0a0b0a0a0a0c0m.matcher(pattern).matches())) {
+          return "{n,}";
+        }
+        String s = pattern;
+        if (!(s.endsWith(",}"))) {
+          s += (s.endsWith(",") ?
+            "}" :
+            ",}"
+          );
+        }
+        return s;
+      }
+
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+    });
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.FromNToMTimesRegexp"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode node = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.regexp.structure.FromNToMTimesRegexp", null);
+        SNodeOperations.replaceWithAnother(_context.getSourceNode(), node);
+        SLinkOperations.setTarget(node, "regexp", _context.getSourceNode(), true);
+        {
+          Pattern _pattern_0 = REGEXP_x583g4_a0a0d0a0a0a0a0d0m;
+          Matcher _matcher_0 = _pattern_0.matcher(pattern);
+          if (_matcher_0.find()) {
+            SPropertyOperations.set(node, "m", "" + (Integer.parseInt(_matcher_0.group(1))));
+          }
+        }
+        {
+          Pattern _pattern_0 = REGEXP_x583g4_a0a0e0a0a0a0a0d0m;
+          Matcher _matcher_0 = _pattern_0.matcher(pattern);
+          if (_matcher_0.find()) {
+            SPropertyOperations.set(node, "n", "" + (Integer.parseInt(_matcher_0.group(1))));
+          }
+        }
+        return node;
+      }
+
+      public String getMatchingText(String pattern) {
+        if (!(REGEXP_x583g4_a0a0a0b0a0a0a0d0m.matcher(pattern).matches())) {
+          return "{n,m}";
+        }
+        String left = "n";
+        String right = "m";
+        {
+          Pattern _pattern_0 = REGEXP_x583g4_a0a0d0b0a0a0a0d0m;
+          Matcher _matcher_0 = _pattern_0.matcher(pattern);
+          if (_matcher_0.find()) {
+            right = _matcher_0.group(1);
+          }
+        }
+        {
+          Pattern _pattern_0 = REGEXP_x583g4_a0a0e0b0a0a0a0d0m;
+          Matcher _matcher_0 = _pattern_0.matcher(pattern);
+          if (_matcher_0.find()) {
+            left = _matcher_0.group(1);
+          }
+        }
+        return "{" + left + "," + right + "}";
+      }
+
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+    });
     {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.NTimesRegexp");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SNode node = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.regexp.structure.NTimesRegexp", null);
-          SNodeOperations.replaceWithAnother(_context.getSourceNode(), node);
-          SLinkOperations.setTarget(node, "regexp", _context.getSourceNode(), true);
-          {
-            Pattern _pattern_0 = REGEXP_x583g4_a0a0d0a0a0a0b0a0b0m;
-            Matcher _matcher_0 = _pattern_0.matcher(pattern);
-            if (_matcher_0.find()) {
-              SPropertyOperations.set(node, "n", "" + (Integer.parseInt(_matcher_0.group(1))));
-            }
-          }
-          return node;
-        }
-
-        public String getMatchingText(String pattern) {
-          if (!(REGEXP_x583g4_a0a0a0b0a0a0b0a0b0m.matcher(pattern).matches())) {
-            return "{n}";
-          }
-          String s = pattern;
-          if (!(s.endsWith("}"))) {
-            s += "}";
-          }
-          return s;
-        }
-
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
-      });
-    }
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.AtLeastNTimesRegexp");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SNode node = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.regexp.structure.AtLeastNTimesRegexp", null);
-          SNodeOperations.replaceWithAnother(_context.getSourceNode(), node);
-          SLinkOperations.setTarget(node, "regexp", _context.getSourceNode(), true);
-          {
-            Pattern _pattern_0 = REGEXP_x583g4_a0a0d0a0a0a0b0a0c0m;
-            Matcher _matcher_0 = _pattern_0.matcher(pattern);
-            if (_matcher_0.find()) {
-              SPropertyOperations.set(node, "n", "" + (Integer.parseInt(_matcher_0.group(1))));
-            }
-          }
-          return node;
-        }
-
-        public String getMatchingText(String pattern) {
-          if (!(REGEXP_x583g4_a0a0a0b0a0a0b0a0c0m.matcher(pattern).matches())) {
-            return "{n,}";
-          }
-          String s = pattern;
-          if (!(s.endsWith(",}"))) {
-            s += (s.endsWith(",") ?
-              "}" :
-              ",}"
-            );
-          }
-          return s;
-        }
-
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
-      });
-    }
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.FromNToMTimesRegexp");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SNode node = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.regexp.structure.FromNToMTimesRegexp", null);
-          SNodeOperations.replaceWithAnother(_context.getSourceNode(), node);
-          SLinkOperations.setTarget(node, "regexp", _context.getSourceNode(), true);
-          {
-            Pattern _pattern_0 = REGEXP_x583g4_a0a0d0a0a0a0b0a0d0m;
-            Matcher _matcher_0 = _pattern_0.matcher(pattern);
-            if (_matcher_0.find()) {
-              SPropertyOperations.set(node, "m", "" + (Integer.parseInt(_matcher_0.group(1))));
-            }
-          }
-          {
-            Pattern _pattern_0 = REGEXP_x583g4_a0a0e0a0a0a0b0a0d0m;
-            Matcher _matcher_0 = _pattern_0.matcher(pattern);
-            if (_matcher_0.find()) {
-              SPropertyOperations.set(node, "n", "" + (Integer.parseInt(_matcher_0.group(1))));
-            }
-          }
-          return node;
-        }
-
-        public String getMatchingText(String pattern) {
-          if (!(REGEXP_x583g4_a0a0a0b0a0a0b0a0d0m.matcher(pattern).matches())) {
-            return "{n,m}";
-          }
-          String left = "n";
-          String right = "m";
-          {
-            Pattern _pattern_0 = REGEXP_x583g4_a0a0d0b0a0a0b0a0d0m;
-            Matcher _matcher_0 = _pattern_0.matcher(pattern);
-            if (_matcher_0.find()) {
-              right = _matcher_0.group(1);
-            }
-          }
-          {
-            Pattern _pattern_0 = REGEXP_x583g4_a0a0e0b0a0a0b0a0d0m;
-            Matcher _matcher_0 = _pattern_0.matcher(pattern);
-            if (_matcher_0.find()) {
-              left = _matcher_0.group(1);
-            }
-          }
-          return "{" + left + "," + right + "}";
-        }
-
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
-      });
-    }
-    {
-      final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp");
-      Computable computable = new Computable() {
-        public Object compute() {
+      Iterable<SNode> parameterObjects = new Computable<Iterable<SNode>>() {
+        public Iterable<SNode> compute() {
           return ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.StarRegexp"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.QuestionRegexp"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.LazyPlusRegexp"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.LazyQuestionRegexp"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.LazyStarRegexp"));
         }
-      };
-      Iterable<SNode> parameterObjects = (Iterable<SNode>) computable.compute();
-      assert parameterObjects != null;
-      for (final SNode item : parameterObjects) {
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
-          public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-            SNode newRegexp = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName((item)), null);
-            SNodeOperations.replaceWithAnother(_context.getSourceNode(), newRegexp);
-            SLinkOperations.setTarget(newRegexp, "regexp", _context.getSourceNode(), true);
-            return newRegexp;
-          }
+      }.compute();
+      if (parameterObjects != null) {
+        for (final SNode item : parameterObjects) {
+          ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"), item, _context.getSourceNode()) {
+            public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+              SNode newRegexp = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName((item)), null);
+              SNodeOperations.replaceWithAnother(_context.getSourceNode(), newRegexp);
+              SLinkOperations.setTarget(newRegexp, "regexp", _context.getSourceNode(), true);
+              return newRegexp;
+            }
 
-          public String getMatchingText(String pattern) {
-            return SPropertyOperations.getString((item), "conceptAlias");
-          }
+            public String getMatchingText(String pattern) {
+              return SPropertyOperations.getString((item), "conceptAlias");
+            }
 
-          public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
-          }
-        });
+            public String getVisibleMatchingText(String pattern) {
+              return getMatchingText(pattern);
+            }
+          });
+        }
       }
     }
     return result;
@@ -564,33 +542,29 @@ public class QueriesGenerated {
         });
       }
     }
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SNode pr = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp");
-          SLinkOperations.setTarget(pr, "expr", _context.getSourceNode(), true);
-          return pr;
-        }
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode pr = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp");
+        SLinkOperations.setTarget(pr, "expr", _context.getSourceNode(), true);
+        return pr;
+      }
 
-        public String getMatchingText(String pattern) {
-          return ")";
-        }
+      public String getMatchingText(String pattern) {
+        return ")";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
-      });
-    }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+    });
     return result;
   }
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_Regexp_1177531335474(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
-      final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.Regexp");
-      Computable computable = new Computable() {
-        public Object compute() {
+      Iterable<SNode> parameterObjects = new Computable<Iterable<SNode>>() {
+        public Iterable<SNode> compute() {
           final List<SNode> excludeList = ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp"));
           List<SNode> regexps = SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.Regexp"), _context.getModel(), operationContext.getScope());
           return ListSequence.fromList(regexps).where(new IWhereFilter<SNode>() {
@@ -604,20 +578,20 @@ public class QueriesGenerated {
             }
           }).toListSequence();
         }
-      };
-      Iterable<SNode> parameterObjects = (Iterable<SNode>) computable.compute();
-      assert parameterObjects != null;
-      for (final SNode item : parameterObjects) {
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
-          public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-            SNode newRegexp = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName((item)), null);
-            SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp", null);
-            SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
-            SLinkOperations.setTarget(result, "left", _context.getSourceNode(), true);
-            SLinkOperations.setTarget(result, "right", newRegexp, true);
-            return newRegexp;
-          }
-        });
+      }.compute();
+      if (parameterObjects != null) {
+        for (final SNode item : parameterObjects) {
+          ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.Regexp"), item, _context.getSourceNode()) {
+            public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+              SNode newRegexp = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName((item)), null);
+              SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp", null);
+              SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
+              SLinkOperations.setTarget(result, "left", _context.getSourceNode(), true);
+              SLinkOperations.setTarget(result, "right", newRegexp, true);
+              return newRegexp;
+            }
+          });
+        }
       }
     }
     return result;
@@ -626,109 +600,106 @@ public class QueriesGenerated {
   public static List<SubstituteAction> sideTransform_ActionsFactory_Regexp_3050481019131578404(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
-      final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp");
-      Computable computable = new Computable() {
-        public Object compute() {
+      Iterable<SNode> parameterObjects = new Computable<Iterable<SNode>>() {
+        public Iterable<SNode> compute() {
           Scope refScope = ModelConstraints.getSmartReferenceDescriptor(_context.getSourceNode(), null, 0, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp")).getScope();
           return (List<SNode>) refScope.getAvailableElements(null);
         }
-      };
-      Iterable<SNode> parameterObjects = (Iterable<SNode>) computable.compute();
-      assert parameterObjects != null;
-      for (final SNode item : parameterObjects) {
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
-          public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-            SNode seq = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp", null);
-            SNode ref = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp", null);
-            SLinkOperations.setTarget(ref, "match", (item), false);
-            SNodeOperations.replaceWithAnother(_context.getSourceNode(), seq);
-            SLinkOperations.setTarget(seq, "left", _context.getSourceNode(), true);
-            SLinkOperations.setTarget(seq, "right", ref, true);
-            return ref;
-          }
+      }.compute();
+      if (parameterObjects != null) {
+        for (final SNode item : parameterObjects) {
+          ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp"), item, _context.getSourceNode()) {
+            public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+              SNode seq = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp", null);
+              SNode ref = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp", null);
+              SLinkOperations.setTarget(ref, "match", (item), false);
+              SNodeOperations.replaceWithAnother(_context.getSourceNode(), seq);
+              SLinkOperations.setTarget(seq, "left", _context.getSourceNode(), true);
+              SLinkOperations.setTarget(seq, "right", ref, true);
+              return ref;
+            }
 
-          public String getMatchingText(String pattern) {
-            return "\\(" + SPropertyOperations.getString((item), "name") + ")";
-          }
+            public String getMatchingText(String pattern) {
+              return "\\(" + SPropertyOperations.getString((item), "name") + ")";
+            }
 
-          public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
-          }
+            public String getVisibleMatchingText(String pattern) {
+              return getMatchingText(pattern);
+            }
 
-          public String getDescriptionText(String pattern) {
-            return "";
-          }
-        });
+            public String getDescriptionText(String pattern) {
+              return "";
+            }
+          });
+        }
       }
     }
     {
-      final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp");
-      Computable computable = new Computable() {
-        public Object compute() {
+      Iterable<SNode> parameterObjects = new Computable<Iterable<SNode>>() {
+        public Iterable<SNode> compute() {
           return SModelOperations.getNodesIncludingImported(SNodeOperations.getModel(_context.getSourceNode()), operationContext.getScope(), "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassDeclaration");
         }
-      };
-      Iterable<SNode> parameterObjects = (Iterable<SNode>) computable.compute();
-      assert parameterObjects != null;
-      for (final SNode item : parameterObjects) {
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
-          public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-            SNode res = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp", null);
-            SNodeOperations.replaceWithAnother(_context.getSourceNode(), res);
-            SLinkOperations.setTarget(res, "left", _context.getSourceNode(), true);
-            SNode ref = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp", null);
-            SLinkOperations.setTarget(ref, "symbolClass", (item), false);
-            SLinkOperations.setTarget(res, "right", ref, true);
-            return ref;
-          }
+      }.compute();
+      if (parameterObjects != null) {
+        for (final SNode item : parameterObjects) {
+          ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp"), item, _context.getSourceNode()) {
+            public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+              SNode res = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp", null);
+              SNodeOperations.replaceWithAnother(_context.getSourceNode(), res);
+              SLinkOperations.setTarget(res, "left", _context.getSourceNode(), true);
+              SNode ref = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp", null);
+              SLinkOperations.setTarget(ref, "symbolClass", (item), false);
+              SLinkOperations.setTarget(res, "right", ref, true);
+              return ref;
+            }
 
-          public String getMatchingText(String pattern) {
-            return SPropertyOperations.getString((item), "name");
-          }
+            public String getMatchingText(String pattern) {
+              return SPropertyOperations.getString((item), "name");
+            }
 
-          public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
-          }
+            public String getVisibleMatchingText(String pattern) {
+              return getMatchingText(pattern);
+            }
 
-          public String getDescriptionText(String pattern) {
-            return SPropertyOperations.getString((item), "description");
-          }
-        });
+            public String getDescriptionText(String pattern) {
+              return SPropertyOperations.getString((item), "description");
+            }
+          });
+        }
       }
     }
     {
-      final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp");
-      Computable computable = new Computable() {
-        public Object compute() {
+      Iterable<SNode> parameterObjects = new Computable<Iterable<SNode>>() {
+        public Iterable<SNode> compute() {
           return SModelOperations.getNodesIncludingImported(SNodeOperations.getModel(_context.getSourceNode()), operationContext.getScope(), "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration");
         }
-      };
-      Iterable<SNode> parameterObjects = (Iterable<SNode>) computable.compute();
-      assert parameterObjects != null;
-      for (final SNode item : parameterObjects) {
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
-          public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-            SNode seq = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp", null);
-            SNodeOperations.replaceWithAnother(_context.getSourceNode(), seq);
-            SLinkOperations.setTarget(seq, "left", _context.getSourceNode(), true);
-            SNode ref = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp", null);
-            SLinkOperations.setTarget(ref, "regexp", (item), false);
-            SLinkOperations.setTarget(seq, "right", ref, true);
-            return SLinkOperations.getTarget(seq, "right", true);
-          }
+      }.compute();
+      if (parameterObjects != null) {
+        for (final SNode item : parameterObjects) {
+          ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp"), item, _context.getSourceNode()) {
+            public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+              SNode seq = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp", null);
+              SNodeOperations.replaceWithAnother(_context.getSourceNode(), seq);
+              SLinkOperations.setTarget(seq, "left", _context.getSourceNode(), true);
+              SNode ref = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp", null);
+              SLinkOperations.setTarget(ref, "regexp", (item), false);
+              SLinkOperations.setTarget(seq, "right", ref, true);
+              return SLinkOperations.getTarget(seq, "right", true);
+            }
 
-          public String getMatchingText(String pattern) {
-            return SPropertyOperations.getString((item), "name");
-          }
+            public String getMatchingText(String pattern) {
+              return SPropertyOperations.getString((item), "name");
+            }
 
-          public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
-          }
+            public String getVisibleMatchingText(String pattern) {
+              return getMatchingText(pattern);
+            }
 
-          public String getDescriptionText(String pattern) {
-            return SPropertyOperations.getString((item), "description");
-          }
-        });
+            public String getDescriptionText(String pattern) {
+              return SPropertyOperations.getString((item), "description");
+            }
+          });
+        }
       }
     }
     return result;
@@ -820,27 +791,24 @@ public class QueriesGenerated {
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_InlineRegexpExpression_6129327962765963105(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SPropertyOperations.set(_context.getSourceNode(), "multiLine", "" + (true));
-          return _context.getSourceNode();
-        }
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SPropertyOperations.set(_context.getSourceNode(), "multiLine", "" + (true));
+        return _context.getSourceNode();
+      }
 
-        public String getMatchingText(String pattern) {
-          return "m";
-        }
+      public String getMatchingText(String pattern) {
+        return "m";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
 
-        public String getDescriptionText(String pattern) {
-          return "enables multiline mode";
-        }
-      });
-    }
+      public String getDescriptionText(String pattern) {
+        return "enables multiline mode";
+      }
+    });
     return result;
   }
 
@@ -850,27 +818,24 @@ public class QueriesGenerated {
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_InlineRegexpExpression_6129327962766071563(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SPropertyOperations.set(_context.getSourceNode(), "dotAll", "" + (true));
-          return _context.getSourceNode();
-        }
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SPropertyOperations.set(_context.getSourceNode(), "dotAll", "" + (true));
+        return _context.getSourceNode();
+      }
 
-        public String getMatchingText(String pattern) {
-          return "s";
-        }
+      public String getMatchingText(String pattern) {
+        return "s";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
 
-        public String getDescriptionText(String pattern) {
-          return "enables dotall mode";
-        }
-      });
-    }
+      public String getDescriptionText(String pattern) {
+        return "enables dotall mode";
+      }
+    });
     return result;
   }
 
@@ -880,27 +845,24 @@ public class QueriesGenerated {
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_InlineRegexpExpression_6129327962766071585(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SPropertyOperations.set(_context.getSourceNode(), "caseInsensitive", "" + (true));
-          return _context.getSourceNode();
-        }
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SPropertyOperations.set(_context.getSourceNode(), "caseInsensitive", "" + (true));
+        return _context.getSourceNode();
+      }
 
-        public String getMatchingText(String pattern) {
-          return "i";
-        }
+      public String getMatchingText(String pattern) {
+        return "i";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
 
-        public String getDescriptionText(String pattern) {
-          return "enables case-insensitive matching";
-        }
-      });
-    }
+      public String getDescriptionText(String pattern) {
+        return "enables case-insensitive matching";
+      }
+    });
     return result;
   }
 
@@ -910,27 +872,24 @@ public class QueriesGenerated {
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_ReplaceRegexpOperation_1767845709140648074(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SPropertyOperations.set(_context.getSourceNode(), "globalReplace", "" + (true));
-          return _context.getSourceNode();
-        }
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SPropertyOperations.set(_context.getSourceNode(), "globalReplace", "" + (true));
+        return _context.getSourceNode();
+      }
 
-        public String getMatchingText(String pattern) {
-          return "g";
-        }
+      public String getMatchingText(String pattern) {
+        return "g";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
 
-        public String getDescriptionText(String pattern) {
-          return "global replace";
-        }
-      });
-    }
+      public String getDescriptionText(String pattern) {
+        return "global replace";
+      }
+    });
     return result;
   }
 
@@ -940,27 +899,24 @@ public class QueriesGenerated {
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_ReplaceRegexpOperation_1767845709140648050(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SPropertyOperations.set(_context.getSourceNode(), "multiLine", "" + (true));
-          return _context.getSourceNode();
-        }
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SPropertyOperations.set(_context.getSourceNode(), "multiLine", "" + (true));
+        return _context.getSourceNode();
+      }
 
-        public String getMatchingText(String pattern) {
-          return "m";
-        }
+      public String getMatchingText(String pattern) {
+        return "m";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
 
-        public String getDescriptionText(String pattern) {
-          return "enables multiline mode";
-        }
-      });
-    }
+      public String getDescriptionText(String pattern) {
+        return "enables multiline mode";
+      }
+    });
     return result;
   }
 
@@ -970,27 +926,24 @@ public class QueriesGenerated {
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_ReplaceRegexpOperation_1767845709140629296(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SPropertyOperations.set(_context.getSourceNode(), "dotAll", "" + (true));
-          return _context.getSourceNode();
-        }
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SPropertyOperations.set(_context.getSourceNode(), "dotAll", "" + (true));
+        return _context.getSourceNode();
+      }
 
-        public String getMatchingText(String pattern) {
-          return "s";
-        }
+      public String getMatchingText(String pattern) {
+        return "s";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
 
-        public String getDescriptionText(String pattern) {
-          return "enables dotall mode";
-        }
-      });
-    }
+      public String getDescriptionText(String pattern) {
+        return "enables dotall mode";
+      }
+    });
     return result;
   }
 
@@ -1000,27 +953,24 @@ public class QueriesGenerated {
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_ReplaceRegexpOperation_1767845709140648026(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SPropertyOperations.set(_context.getSourceNode(), "caseInsensitive", "" + (true));
-          return _context.getSourceNode();
-        }
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SPropertyOperations.set(_context.getSourceNode(), "caseInsensitive", "" + (true));
+        return _context.getSourceNode();
+      }
 
-        public String getMatchingText(String pattern) {
-          return "i";
-        }
+      public String getMatchingText(String pattern) {
+        return "i";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
 
-        public String getDescriptionText(String pattern) {
-          return "enables case-insensitive matching";
-        }
-      });
-    }
+      public String getDescriptionText(String pattern) {
+        return "enables case-insensitive matching";
+      }
+    });
     return result;
   }
 
@@ -1040,13 +990,13 @@ public class QueriesGenerated {
   private static Pattern REGEXP_x583g4_a0a0a0b0a0a0a0c0a0c0j = Pattern.compile("\\(\\w+:?", 0);
   private static Pattern REGEXP_x583g4_a0a0a2a0a0a0a2a0a3a9 = Pattern.compile("[^\\-\\+\\*\\[\\]\\.\\{\\}\\(\\)\\\\\\^'\\$]+", 0);
   private static Pattern REGEXP_x583g4_a0a0a2a0a0a0a2a1a3a9 = Pattern.compile("^\\\\[\\-\\+\\*\\[\\]\\.\\{\\}\\(\\)\\^'\\$]$", 0);
-  private static Pattern REGEXP_x583g4_a0a0d0a0a0a0b0a0b0m = Pattern.compile("^\\{(\\d+)", 0);
-  private static Pattern REGEXP_x583g4_a0a0a0b0a0a0b0a0b0m = Pattern.compile("\\{\\d+\\}?", 0);
-  private static Pattern REGEXP_x583g4_a0a0d0a0a0a0b0a0c0m = Pattern.compile("^\\{(\\d+)", 0);
-  private static Pattern REGEXP_x583g4_a0a0a0b0a0a0b0a0c0m = Pattern.compile("\\{\\d+(?:,\\}?)?", 0);
-  private static Pattern REGEXP_x583g4_a0a0d0a0a0a0b0a0d0m = Pattern.compile("\\{\\d+,(\\d+)", 0);
-  private static Pattern REGEXP_x583g4_a0a0e0a0a0a0b0a0d0m = Pattern.compile("\\{(\\d+)", 0);
-  private static Pattern REGEXP_x583g4_a0a0a0b0a0a0b0a0d0m = Pattern.compile("\\{\\d+(?:,(?:\\d+\\}?)?)?", 0);
-  private static Pattern REGEXP_x583g4_a0a0d0b0a0a0b0a0d0m = Pattern.compile("\\{\\d+,(\\d+)", 0);
-  private static Pattern REGEXP_x583g4_a0a0e0b0a0a0b0a0d0m = Pattern.compile("\\{(\\d+)", 0);
+  private static Pattern REGEXP_x583g4_a0a0d0a0a0a0a0b0m = Pattern.compile("^\\{(\\d+)", 0);
+  private static Pattern REGEXP_x583g4_a0a0a0b0a0a0a0b0m = Pattern.compile("\\{\\d+\\}?", 0);
+  private static Pattern REGEXP_x583g4_a0a0d0a0a0a0a0c0m = Pattern.compile("^\\{(\\d+)", 0);
+  private static Pattern REGEXP_x583g4_a0a0a0b0a0a0a0c0m = Pattern.compile("\\{\\d+(?:,\\}?)?", 0);
+  private static Pattern REGEXP_x583g4_a0a0d0a0a0a0a0d0m = Pattern.compile("\\{\\d+,(\\d+)", 0);
+  private static Pattern REGEXP_x583g4_a0a0e0a0a0a0a0d0m = Pattern.compile("\\{(\\d+)", 0);
+  private static Pattern REGEXP_x583g4_a0a0a0b0a0a0a0d0m = Pattern.compile("\\{\\d+(?:,(?:\\d+\\}?)?)?", 0);
+  private static Pattern REGEXP_x583g4_a0a0d0b0a0a0a0d0m = Pattern.compile("\\{\\d+,(\\d+)", 0);
+  private static Pattern REGEXP_x583g4_a0a0e0b0a0a0a0d0m = Pattern.compile("\\{(\\d+)", 0);
 }

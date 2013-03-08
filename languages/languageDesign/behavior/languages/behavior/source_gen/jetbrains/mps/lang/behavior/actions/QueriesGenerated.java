@@ -48,13 +48,12 @@ public class QueriesGenerated {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        Computable computable = new Computable() {
-          public Object compute() {
+        Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
+          public Iterable<SNode> compute() {
             SNode behavior = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.lang.behavior.structure.ConceptBehavior", true, false);
             return AbstractConceptDeclaration_Behavior.call_getAvailableConceptMethods_1213877394200(SLinkOperations.getTarget(behavior, "concept", false), _context.getParentNode());
           }
-        };
-        Iterable<SNode> queryResult = (Iterable) computable.compute();
+        }.compute();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
@@ -80,30 +79,27 @@ public class QueriesGenerated {
 
   public static List<SubstituteAction> sideTransform_ActionsFactory_SuperNodeExpression_7448026190102456640(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.behavior.structure.SuperNodeExpression");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-          SNode result = SuperNodeExpression_Behavior.call_getSuperConcept_7448026190102457310(_context.getSourceNode());
-          if (result == null) {
-            result = SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626");
-          }
-          return SLinkOperations.setTarget(_context.getSourceNode(), "superConcept", result, false);
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.behavior.structure.SuperNodeExpression"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode result = SuperNodeExpression_Behavior.call_getSuperConcept_7448026190102457310(_context.getSourceNode());
+        if (result == null) {
+          result = SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626");
         }
+        return SLinkOperations.setTarget(_context.getSourceNode(), "superConcept", result, false);
+      }
 
-        public String getMatchingText(String pattern) {
-          return "<";
-        }
+      public String getMatchingText(String pattern) {
+        return "<";
+      }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
 
-        public String getDescriptionText(String pattern) {
-          return "add qualifier for super expression";
-        }
-      });
-    }
+      public String getDescriptionText(String pattern) {
+        return "add qualifier for super expression";
+      }
+    });
     return result;
   }
 
