@@ -458,13 +458,14 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     schild.setRoleInParent(role);
 
     SModel model = getModelInternal();
-    if (model != null) {
-      schild.registerInModel(model);
-    } else {
-      schild.clearModel();
+    if (model == null) {
+      if (schild.myModel != null) {
+        schild.clearModel();
+      }
+      return;
     }
 
-    if (model == null) return;
+    schild.registerInModel(model);
 
     final String finalRole = role;
     model.performUndoableAction(new Computable<SNodeUndoableAction>() {
@@ -819,7 +820,6 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   //--------seems these methods are not needed-------
 
   private void clearModel() {
-    if (myModel == null) return;
     myModel = null;
     for (SNode child : getChildren()) {
       child.clearModel();
