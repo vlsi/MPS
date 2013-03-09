@@ -21,7 +21,6 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
@@ -37,13 +36,13 @@ public class FileStubSource extends FileDataSource implements StubModelDataSourc
   }
 
   @Override
-  public SModel loadSModel(IModule module, SModel descriptor) {
-    SModel model = new jetbrains.mps.smodel.SModel(descriptor.getReference(), new ForeignNodeIdMap());
+  public jetbrains.mps.smodel.SModel loadSModel(IModule module, SModel descriptor) {
+    jetbrains.mps.smodel.SModel model = new jetbrains.mps.smodel.SModel(descriptor.getReference(), new ForeignNodeIdMap());
     final ModuleDescriptor moduleDesc = ModulesMiner.getInstance().loadModuleDescriptor(getFile());
-    new ProjectStructureBuilder(moduleDesc, getFile(), model) {
+    new ProjectStructureBuilder(moduleDesc, getFile(), model.getModelDescriptor()) {
       @Override
       public Iterable<org.jetbrains.mps.openapi.model.SModelReference> loadReferences(SNode m, final ModuleDescriptor d) {
-        return Sequence.fromIterable(((Iterable<ModelRootDescriptor>) d.getModelRootDescriptors())).translate(new ITranslator2<ModelRootDescriptor, org.jetbrains.mps.openapi.model.SModelReference>() {
+        return Sequence.fromIterable((d.getModelRootDescriptors())).translate(new ITranslator2<ModelRootDescriptor, org.jetbrains.mps.openapi.model.SModelReference>() {
           public Iterable<org.jetbrains.mps.openapi.model.SModelReference> translate(ModelRootDescriptor it) {
             return loadModels(it, d);
           }
@@ -52,7 +51,7 @@ public class FileStubSource extends FileDataSource implements StubModelDataSourc
     }.convert();
 
     ModuleReference lang = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("86ef8290-12bb-4ca7-947f-093788f263a9")).getModuleReference();
-    ((SModelInternal) model).addLanguage(lang);
+    model.addLanguage(lang);
     module.addUsedLanguage(lang);
     return model;
   }

@@ -43,13 +43,13 @@ public class JavaStubModelDataSource extends FolderSetDataSource implements Stub
   }
 
   @Override
-  public SModel loadSModel(IModule module, SModel descriptor) {
-    SModel model = new jetbrains.mps.smodel.SModel(descriptor.getReference(), new ForeignNodeIdMap());
+  public jetbrains.mps.smodel.SModel loadSModel(IModule module, SModel descriptor) {
+    jetbrains.mps.smodel.SModel model = new jetbrains.mps.smodel.SModel(descriptor.getReference(), new ForeignNodeIdMap());
     for (Language l : getLanguagesToImport()) {
-      ((SModelInternal) model).addLanguage(l.getModuleReference());
+      ( model).addLanguage(l.getModuleReference());
     }
     CompositeClassPathItem cp = this.createClassPath(descriptor);
-    new ASMModelLoader(module, cp, model, skipPrivate).updateModel();
+    new ASMModelLoader(module, cp, model.getModelDescriptor(), skipPrivate).updateModel();
     return model;
   }
 
