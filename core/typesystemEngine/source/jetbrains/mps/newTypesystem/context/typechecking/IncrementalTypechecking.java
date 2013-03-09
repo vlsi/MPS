@@ -366,7 +366,7 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
     void track(SNode node) {
       if (!node.isInRepository()) return;
 
-      SModel sm = node.getContainingModel();
+      SModel sm = node.getModel();
       if (!myNodesCount.containsKey(sm)) {
         ((SModelInternal) sm).addModelListener(myListener);
         myNodesCount.put(sm, 1);

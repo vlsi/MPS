@@ -48,7 +48,9 @@ public interface SNode {
 
   //common properties
 
-  //migration-time only
+  /**
+   * Containing model or null if the node is not contained in any model
+   */
   SModel getModel();
 
   /**
@@ -77,9 +79,6 @@ public interface SNode {
    */
   String getName();
 
-  /**
-   * Containing model or null if the node is not contained in any model
-   */
   SModel getContainingModel();
 
   SRepository getRepository();

@@ -1480,7 +1480,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     // Adding this assertion to ensure the reason is not in incorrectly removed listener (dependencies collection logic)
     if (myNode != null && myNode.isInRepository()) {
       assert myModelDescriptorsWithListener.contains(
-          myNode.getContainingModel()) : "Listener was not added to a containing model of current node. Editor: " + EditorComponent.this;
+          myNode.getModel()) : "Listener was not added to a containing model of current node. Editor: " + EditorComponent.this;
     }
 
     revalidate();

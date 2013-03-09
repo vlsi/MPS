@@ -76,7 +76,7 @@ public class MPSEditorOpener {
       public void run() {
         if (!node.isInRepository()) return;
 
-        ModuleContext context = new ModuleContext(node.getContainingModel().getModule(), ProjectHelper.toMPSProject(myProject));
+        ModuleContext context = new ModuleContext(node.getModel().getModule(), ProjectHelper.toMPSProject(myProject));
         openNode(node, context, true, !(node.getModel() != null && node.getModel().isRoot(node)));
       }
     });
