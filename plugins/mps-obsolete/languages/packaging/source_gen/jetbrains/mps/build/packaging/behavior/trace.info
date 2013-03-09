@@ -1292,7 +1292,7 @@
     <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
     <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="39" startPosition="28" endLine="40" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="40" startPosition="54" endLine="41" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3252260136478914021" fileName="Variable_Behavior.java" startLine="42" startPosition="27" endLine="43" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3252260136478914021" fileName="Variable_Behavior.java" startLine="42" startPosition="27" endLine="43" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3252260136478914021" fileName="Variable_Behavior.java" startLine="45" startPosition="57" endLine="46" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3252260136478914021" fileName="Variable_Behavior.java" startLine="46" startPosition="40" endLine="47" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="3252260136478914021" fileName="Variable_Behavior.java" startLine="48" startPosition="23" endLine="49" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1338,7 +1338,7 @@
     <scopeInfo nodeId="3252260136478914023" fileName="Variable_Behavior.java" startLine="69" startPosition="27" endLine="69" endPosition="27" />
     <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="72" startPosition="27" endLine="72" endPosition="27" />
     <scopeInfo nodeId="5558646027962551672" fileName="Variable_Behavior.java" startLine="21" startPosition="69" endLine="22" endPosition="138" />
-    <scopeInfo nodeId="3252260136478914021" fileName="Variable_Behavior.java" startLine="42" startPosition="27" endLine="43" endPosition="85" />
+    <scopeInfo nodeId="3252260136478914021" fileName="Variable_Behavior.java" startLine="42" startPosition="27" endLine="43" endPosition="73" />
     <scopeInfo nodeId="3252260136478915206" fileName="Variable_Behavior.java" startLine="52" startPosition="27" endLine="53" endPosition="209" />
     <scopeInfo nodeId="7323449223785135136" fileName="Variable_Behavior.java" startLine="75" startPosition="28" endLine="76" endPosition="37" />
     <scopeInfo nodeId="1213877518466" fileName="Variable_Behavior.java" startLine="18" startPosition="0" endLine="20" endPosition="0">

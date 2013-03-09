@@ -3,7 +3,7 @@
   <root nodeRef="r:c4d60913-c4ac-4da1-b5c2-2281d3022e80(jetbrains.mps.lang.typesystem.pluginSolution.plugin)/1381359735925524321">
     <nodeInfo nodeId="7423714904715845308" fileName="AuxilaryRuntimeModel.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
     <nodeInfo nodeId="7423714904715846982" fileName="AuxilaryRuntimeModel.java" startLine="15" startPosition="33" endLine="16" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7423714904715831229" fileName="AuxilaryRuntimeModel.java" startLine="25" startPosition="29" endLine="26" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7423714904715831229" fileName="AuxilaryRuntimeModel.java" startLine="25" startPosition="29" endLine="26" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7423714904715833742" fileName="AuxilaryRuntimeModel.java" startLine="30" startPosition="33" endLine="31" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1381359735925524362" fileName="AuxilaryRuntimeModel.java" startLine="41" startPosition="39" endLine="42" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7423714904715841276" fileName="AuxilaryRuntimeModel.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="register#()V" />
@@ -19,7 +19,7 @@
     <scopeInfo nodeId="1381359735925637384" fileName="AuxilaryRuntimeModel.java" startLine="22" startPosition="28" endLine="22" endPosition="28" />
     <scopeInfo nodeId="1381359735925524342" fileName="AuxilaryRuntimeModel.java" startLine="37" startPosition="74" endLine="37" endPosition="74" />
     <scopeInfo nodeId="1381359735925524385" fileName="AuxilaryRuntimeModel.java" startLine="15" startPosition="33" endLine="16" endPosition="60" />
-    <scopeInfo nodeId="7423714904715862677" fileName="AuxilaryRuntimeModel.java" startLine="25" startPosition="29" endLine="26" endPosition="31" />
+    <scopeInfo nodeId="7423714904715862677" fileName="AuxilaryRuntimeModel.java" startLine="25" startPosition="29" endLine="26" endPosition="19" />
     <scopeInfo nodeId="1381359735925524330" fileName="AuxilaryRuntimeModel.java" startLine="30" startPosition="33" endLine="31" endPosition="90" />
     <scopeInfo nodeId="1381359735925524361" fileName="AuxilaryRuntimeModel.java" startLine="41" startPosition="39" endLine="42" endPosition="23" />
     <scopeInfo nodeId="7423714904715841276" fileName="AuxilaryRuntimeModel.java" startLine="19" startPosition="0" endLine="21" endPosition="0" />

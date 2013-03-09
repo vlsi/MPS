@@ -52,7 +52,7 @@ public class MissingDependenciesFixer {
         }
         SearchScope moduleScope = module.getModuleScope();
         ModuleDescriptor md = ((AbstractModule) module).getModuleDescriptor();
-        for (SModelReference modelImport : SModelOperations.getImportedModelUIDs(myModelDescriptor.getSModel())) {
+        for (SModelReference modelImport : SModelOperations.getImportedModelUIDs(myModelDescriptor)) {
           if (moduleScope.resolve(modelImport) != null) {
             continue;
           }
@@ -76,7 +76,7 @@ public class MissingDependenciesFixer {
           md.getDependencies().add(dep);
           wereChanges = true;
         }
-        for (ModuleReference namespace : CollectionUtil.union(((SModelInternal) myModelDescriptor.getSModel()).importedLanguages(), ((SModelInternal) myModelDescriptor.getSModel()).engagedOnGenerationLanguages())) {
+        for (ModuleReference namespace : CollectionUtil.union(((SModelInternal) myModelDescriptor).importedLanguages(), ((SModelInternal) myModelDescriptor).engagedOnGenerationLanguages())) {
           if (moduleScope.resolve(namespace) instanceof Language) {
             continue;
           }
@@ -88,7 +88,7 @@ public class MissingDependenciesFixer {
           md.getUsedLanguages().add(ref);
           wereChanges = true;
         }
-        for (ModuleReference devKitNamespace : ((SModelInternal) myModelDescriptor.getSModel()).importedDevkits()) {
+        for (ModuleReference devKitNamespace : ((SModelInternal) myModelDescriptor).importedDevkits()) {
           if (moduleScope.resolve(devKitNamespace) instanceof DevKit) {
             continue;
           }

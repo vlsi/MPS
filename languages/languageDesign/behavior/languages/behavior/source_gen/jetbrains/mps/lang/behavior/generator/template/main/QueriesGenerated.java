@@ -518,7 +518,7 @@ public class QueriesGenerated {
     SModel behaviorModel = _context.getOriginalInputModel();
 
     Language language = Language.getLanguageForLanguageAspect(behaviorModel);
-    SModel structureModel = LanguageAspect.STRUCTURE.get(language).getSModel();
+    SModel structureModel = LanguageAspect.STRUCTURE.get(language);
 
     return ListSequence.fromList(SModelOperations.getNodes(structureModel, null)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -573,7 +573,7 @@ public class QueriesGenerated {
     SModel behaviorModel = _context.getOriginalInputModel();
 
     Language language = Language.getLanguageForLanguageAspect(behaviorModel);
-    SModel structureModel = LanguageAspect.STRUCTURE.get(language).getSModel();
+    SModel structureModel = LanguageAspect.STRUCTURE.get(language);
 
     return ListSequence.fromList(SModelOperations.getNodes(structureModel, null)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

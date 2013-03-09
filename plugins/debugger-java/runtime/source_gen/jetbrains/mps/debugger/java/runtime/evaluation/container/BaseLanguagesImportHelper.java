@@ -56,7 +56,7 @@ public abstract class BaseLanguagesImportHelper {
       SModel targetModel = SNodeOperations.getModel(SLinkOperations.getTargetNode(reference));
       if (neq_5vd2f2_a0b0a0d(targetModel, containerModel)) {
         SModel scopeModel = GlobalScope.getInstance().getModelDescriptor(targetModel.getReference());
-        if (scopeModel != null && neq_5vd2f2_a0a1a1a0a3(scopeModel.getSModel(), targetModel)) {
+        if (scopeModel != null && neq_5vd2f2_a0a1a1a0a3(scopeModel, targetModel)) {
           String resolveInfo = SLinkOperations.getResolveInfo(reference);
           if ((resolveInfo == null || resolveInfo.length() == 0)) {
             resolveInfo = jetbrains.mps.util.SNodeOperations.getResolveInfo(SLinkOperations.getTargetNode(reference));

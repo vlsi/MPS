@@ -105,7 +105,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
           if (language == null) {
             continue;
           }
-          SModel structureModel = language.getStructureModelDescriptor().getSModel();
+          SModel structureModel = language.getStructureModelDescriptor();
           for (SNode nodeToAdd : SModelOperations.getRoots(structureModel, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
             SNode conceptToAdd = (SNode) nodeToAdd;
             if (SPropertyOperations.getBoolean(nodeToAdd, "rootable")) {
@@ -181,7 +181,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
             if (generator.getOwnTemplateModels().isEmpty()) {
               continue;
             }
-            model = generator.getOwnTemplateModels().get(0).getSModel();
+            model = generator.getOwnTemplateModels().get(0);
           }
           assert model != null : "model should have been already created";
 

@@ -63,7 +63,7 @@ public class Utils {
     try {
       JavaParser parser = new JavaParser();
       SModel mdl;
-      mdl = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.placeholder", "")).getSModel();
+      mdl = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.placeholder", ""));
       List<SNode> res = parser.parse(code, SModelOperations.getModelName(mdl), FeatureKind.CLASS_STUB, true).getNodes();
       Assert.assertSame(ListSequence.fromList(res).count(), 1);
 
@@ -155,7 +155,7 @@ public class Utils {
       // FIXME  
       JavaParser parser = new JavaParser();
       DirParser dirParser = new DirParser(ourModule, new FileMPSProject(new File(PathManager.getHomePath() + "/MPS.mpr")));
-      SModel result = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.placeholder", "")).getSModel();
+      SModel result = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.placeholder", ""));
       for (SNode r : ListSequence.fromList(SModelOperations.getRoots(result, null))) {
         SNodeOperations.detachNode(r);
       }
@@ -192,7 +192,7 @@ public class Utils {
     binSRoot.setPath(binPath);
     Collection<SModel> binStubModels = bin.load(binSRoot);
     for (SModel md : CollectionSequence.fromCollection(binStubModels)) {
-      SModel m = md.getSModel();
+      SModel m = md;
       ListSequence.fromList(binModels).addElement(m);
 
       for (SNode binRoot : ListSequence.fromList(SModelOperations.getRoots(m, null))) {

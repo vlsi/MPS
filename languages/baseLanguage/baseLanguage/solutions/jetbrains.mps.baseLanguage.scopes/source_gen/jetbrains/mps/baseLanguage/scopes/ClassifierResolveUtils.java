@@ -182,7 +182,7 @@ public class ClassifierResolveUtils {
   private static Iterable<SNode> resolveClassifierByNestedName(SModel modelDescriptor, String classifierNestedName) {
     assert !(classifierNestedName.contains("$"));
 
-    SModel model = modelDescriptor.getSModel();
+    SModel model = modelDescriptor;
     if (model == null) {
       // todo: ? 
       return Collections.<SNode>emptyList();
@@ -318,7 +318,7 @@ public class ClassifierResolveUtils {
 
       // putting on-demand imports into model list 
       List<SModel> javaImportedModels = ListSequence.fromList(new ArrayList<SModel>());
-      ListSequence.fromList(javaImportedModels).addElement(SModelRepository.getInstance().getModelDescriptor(new SModelReference("java.lang", "java_stub")).getSModel());
+      ListSequence.fromList(javaImportedModels).addElement(SModelRepository.getInstance().getModelDescriptor(new SModelReference("java.lang", "java_stub")));
       for (SNode imp : ListSequence.fromList(SLinkOperations.getTargets(javaImports, "entries", true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SPropertyOperations.getBoolean(it, "onDemand");

@@ -59,7 +59,7 @@ public class SModelUtil {
       if (!(modelName.equals(SNodeOperations.getModelLongName(descriptor)))) {
         continue;
       }
-      SModel model = descriptor.getSModel();
+      SModel model = descriptor;
       for (SNode root : ListSequence.fromList(SModelOperations.getRoots(model, null))) {
         if (name.equals(root.getName()) && jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(root, NameUtil.nodeFQName(concept))) {
           return root;

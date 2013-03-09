@@ -88,7 +88,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       public void run() {
         SModel descriptor = getSModelDescriptor(new EmptyProgressIndicator());
 
-        addRequiredImports(descriptor.getSModel(), descriptor.getModule().getModuleDescriptor());
+        addRequiredImports(descriptor, descriptor.getModule().getModuleDescriptor());
 
         final EditableSModel targetModelDescriptor = ((EditableSModel) descriptor);
         Iterable<SNode> result = createBuildScripts(targetModelDescriptor, BuildGeneratorImpl.this.getProjectName(), BuildGeneratorImpl.this.myProject.getBaseDir().getPath(), BuildGeneratorImpl.this.getModules());
@@ -177,7 +177,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     ((SModelInternal) smodel).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build.mps", Language.class).getModuleReference());
 
     moduleDescriptor.getDependencies().add(new Dependency(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("422c2909-59d6-41a9-b318-40e6256b250f")).getModuleReference(), false));
-    ((SModelInternal) smodel).addModelImport(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.build", "")).getSModel().getReference(), false);
+    ((SModelInternal) smodel).addModelImport(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.build", "")).getReference(), false);
   }
 
   public SModel getSModelDescriptor(ProgressIndicator indicator) {

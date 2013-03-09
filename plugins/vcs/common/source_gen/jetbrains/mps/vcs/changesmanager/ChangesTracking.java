@@ -205,7 +205,7 @@ public class ChangesTracking {
       if (md == null) {
         return;
       }
-      baseVersionModel.value = md.getSModel();
+      baseVersionModel.value = md;
 
       if (Sequence.fromIterable(((Iterable<SModel.Problem>) md.getProblems())).any(new IWhereFilter<SModel.Problem>() {
         public boolean accept(SModel.Problem it) {

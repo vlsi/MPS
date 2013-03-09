@@ -63,7 +63,7 @@ public class NodeFactory_Constraints extends BaseConstraintsDescriptor {
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             // concepts from this language 
             Language language = Language.getLanguageForLanguageAspect(_context.getModel());
-            SModel structureModel = language.getStructureModelDescriptor().getSModel();
+            SModel structureModel = language.getStructureModelDescriptor();
             return new ModelNodesSearchScope(structureModel);
           }
 

@@ -88,7 +88,7 @@ public class InternalActionsUtils {
             if (num.value++ % 100 == 0) {
               LOG.warning("Model num: " + num.value + ", name: " + modelRef.getLongName());
             }
-            SModel model = check_6btuvs_a0d0a0a2a4a2(SModelRepository.getInstance().getModelDescriptor(modelRef));
+            SModel model = SModelRepository.getInstance().getModelDescriptor(modelRef);
             if (model != null) {
               for (SNode node : new NodesIterable(model)) {
                 try {
@@ -146,11 +146,4 @@ public class InternalActionsUtils {
   }
 
   private static Logger LOG = Logger.getLogger(InternalActionsUtils.class);
-
-  private static SModel check_6btuvs_a0d0a0a2a4a2(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getSModel();
-    }
-    return null;
-  }
 }

@@ -55,7 +55,6 @@ import jetbrains.mps.vcs.diff.ChangeSetBuilder;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -323,8 +322,8 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
     DiffTemporaryModule.createModuleForModel(newModel, "new", p);
 
     final Wrappers._T<RootDifferenceDialog> dialog = new Wrappers._T<RootDifferenceDialog>();
-    ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<RootDifferenceDialog>() {
-      public RootDifferenceDialog invoke() {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
         ModelChangeSet changeSet = ChangeSetBuilder.buildChangeSet(oldModel, newModel, true);
 
         SNode node = newModel.getNode(rootId);
@@ -336,11 +335,11 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
           node.getPresentation()
         );
 
-        boolean isEditable = newModel instanceof EditableSModel && check_vu2gar_a0a0g0a7a23(SModelRepository.getInstance().getModelDescriptor(newModel.getReference())) == newModel;
+        boolean isEditable = newModel instanceof EditableSModel && SModelRepository.getInstance().getModelDescriptor(newModel.getReference()) == newModel;
 
-        return dialog.value = new RootDifferenceDialog(project, changeSet, rootId, rootName, contentTitles, WindowManager.getInstance().getFrame(project), isEditable, null, scrollTo);
+        dialog.value = new RootDifferenceDialog(project, changeSet, rootId, rootName, contentTitles, WindowManager.getInstance().getFrame(project), isEditable, null, scrollTo);
       }
-    }));
+    });
     dialog.value.show();
   }
 
@@ -354,13 +353,6 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
   private static GraphicsDevice check_vu2gar_a0a53a61(GraphicsEnvironment checkedDotOperand) throws HeadlessException {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getDefaultScreenDevice();
-    }
-    return null;
-  }
-
-  private static SModel check_vu2gar_a0a0g0a7a23(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getSModel();
     }
     return null;
   }

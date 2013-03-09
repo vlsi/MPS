@@ -37,7 +37,6 @@ public interface SModelInternal extends SModel {
 
   void removeModelListener(@NotNull SModelListener listener);
 
-
   //todo get rid of, try to cast, show an error if not casted
   boolean isDisposed();
 

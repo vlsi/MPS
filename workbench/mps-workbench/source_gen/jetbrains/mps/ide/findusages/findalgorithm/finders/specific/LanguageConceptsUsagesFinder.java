@@ -39,7 +39,7 @@ public class LanguageConceptsUsagesFinder implements IFinder {
     if (structureModel == null) {
       return searchResults;
     }
-    SModel sModel = structureModel.getSModel();
+    SModel sModel = structureModel;
     if (sModel == null) {
       return searchResults;
     }

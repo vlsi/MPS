@@ -166,7 +166,6 @@
     <classNode dependClassName="javax.swing.JSplitPane" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.extapi.model.EditableSModel" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
@@ -182,7 +181,6 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.DiffButtonsPainter" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.RevertRootsAction" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui._Adapters" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.Bounds" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages" />
@@ -202,11 +200,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode extendsClassName="com.intellij.openapi.actionSystem.DataProvider" />
     <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
-  </dependency>
-  <dependency className="jetbrains.mps.vcs.diff.ui._Adapters" file="_Adapters.java">
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode extendsClassName="java.lang.Runnable" />
   </dependency>
 </dependenciesRoot>
 

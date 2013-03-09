@@ -81,7 +81,7 @@ public class RefactoringUtil {
     {
       SModel scriptsModelDescriptor = LanguageAspect.SCRIPTS.get(language);
       if (scriptsModelDescriptor != null) {
-        SModel scriptsModel = scriptsModelDescriptor.getSModel();
+        SModel scriptsModel = scriptsModelDescriptor;
         String packageName = SNodeOperations.getModelLongName(scriptsModel);
         for (SNode refactoring : SModelOperations.getRoots(scriptsModel, "jetbrains.mps.lang.refactoring.structure.OldRefactoring")) {
           try {
@@ -103,7 +103,7 @@ public class RefactoringUtil {
     }
     SModel refModelDescriptor = LanguageAspect.REFACTORINGS.get(language);
     if (refModelDescriptor != null) {
-      SModel refactoringsModel = refModelDescriptor.getSModel();
+      SModel refactoringsModel = refModelDescriptor;
       String packageName = SNodeOperations.getModelLongName(refactoringsModel);
       for (SNode refactoring : SModelOperations.getRoots(refactoringsModel, "jetbrains.mps.lang.refactoring.structure.Refactoring")) {
         try {

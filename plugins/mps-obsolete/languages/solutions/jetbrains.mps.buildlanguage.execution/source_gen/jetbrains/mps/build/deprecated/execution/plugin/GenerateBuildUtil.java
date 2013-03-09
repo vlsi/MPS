@@ -56,7 +56,7 @@ public class GenerateBuildUtil {
     final Wrappers._T<SNode> layout = new Wrappers._T<SNode>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        SModel model = descriptor.getSModel();
+        SModel model = descriptor;
         layout.value = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.build.packaging.structure.Layout")).first();
       }
     });

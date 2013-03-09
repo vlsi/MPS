@@ -103,7 +103,7 @@ public class CopyPasteManager extends AbstractManager implements CoreComponent {
       if (actionsModelDescriptor == null) {
         continue;
       }
-      Iterable<SNode> roots = new ConditionalIterable<SNode>(actionsModelDescriptor.getSModel().getRootNodes(), new Condition<SNode>() {
+      Iterable<SNode> roots = new ConditionalIterable<SNode>(actionsModelDescriptor.getRootNodes(), new Condition<SNode>() {
         public boolean met(SNode node) {
           return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.actions.structure.CopyPasteHandlers");
         }

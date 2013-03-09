@@ -70,7 +70,7 @@ public class ShowDifferencesWithModelOnDisk_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final SModel memory = ((SModel) MapSequence.fromMap(_params).get("model")).getSModel();
+      final SModel memory = ((SModel) MapSequence.fromMap(_params).get("model"));
       final SModel disk = ModelPersistence.readModel((FileDataSource) ((SModel) MapSequence.fromMap(_params).get("model")).getSource(), false);
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {

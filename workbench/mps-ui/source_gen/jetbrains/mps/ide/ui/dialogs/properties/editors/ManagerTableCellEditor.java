@@ -74,7 +74,7 @@ public class ManagerTableCellEditor extends DefaultCellEditor {
           if (stubsAspect == null) {
             continue;
           }
-          SModel model = stubsAspect.getSModel();
+          SModel model = stubsAspect;
           result.addAll(SModelOperations.getRoots(model, "jetbrains.mps.lang.stubs.structure.ModelManagerDeclaration"));
         }
 
@@ -85,7 +85,7 @@ public class ManagerTableCellEditor extends DefaultCellEditor {
 
             for (SModel smd : SModelRepository.getInstance().getModelDescriptors(s)) {
               if (jetbrains.mps.util.SNodeOperations.getModelLongName(smd).endsWith(".stubManagers")) {
-                SModel m = smd.getSModel();
+                SModel m = smd;
                 ListSequence.fromList(result).addSequence(ListSequence.fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.stubs.structure.ModelManagerDeclaration")));
               }
             }

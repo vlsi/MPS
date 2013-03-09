@@ -47,7 +47,7 @@ public class FindLanguageConceptsUsages_Action extends BaseAction {
     if (structureModelDescriptor == null) {
       return false;
     }
-    if (IterableUtil.asCollection(structureModelDescriptor.getSModel().getRootNodes()).size() == 0) {
+    if (IterableUtil.asCollection(structureModelDescriptor.getRootNodes()).size() == 0) {
       return false;
     }
     return true;

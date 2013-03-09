@@ -27,7 +27,7 @@ public class EditorExtensionHelper {
   public void init() {
     SModel wdesc = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(this.getWidgetTemplatesModel(this.templatesBase)));
     final SModel widgetsModel = (wdesc != null ?
-      wdesc.getSModel() :
+      wdesc :
       null
     );
     this.uiObjectTemplateProvider = new IObjectsProvider<SNode, SNode>() {
@@ -58,7 +58,7 @@ public class EditorExtensionHelper {
     };
     SModel edesc = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(this.getEventHandlerTemplatesModel(this.templatesBase)));
     final SModel eventsModel = (edesc != null ?
-      edesc.getSModel() :
+      edesc :
       null
     );
     this.eventHandlerProvider = new IObjectsProvider<SNode, SNode>() {

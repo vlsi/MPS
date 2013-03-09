@@ -110,7 +110,7 @@ public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
                 return new EmptyScope();
               }
 
-              SModel structure = check_guz8cy_a0c0a0(check_guz8cy_a0a2a0a(Language.getLanguageForLanguageAspect(_context.getModel())));
+              SModel structure = check_guz8cy_a0c0a0(Language.getLanguageForLanguageAspect(_context.getModel()));
               if (structure == null) {
                 return new EmptyScope();
               }
@@ -161,14 +161,7 @@ public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
     return LanguageAspect.CONSTRAINTS.is(model) || SModelStereotype.isGeneratorModel(model);
   }
 
-  private static SModel check_guz8cy_a0c0a0(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getSModel();
-    }
-    return null;
-  }
-
-  private static SModel check_guz8cy_a0a2a0a(Language checkedDotOperand) {
+  private static SModel check_guz8cy_a0c0a0(Language checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getStructureModelDescriptor();
     }

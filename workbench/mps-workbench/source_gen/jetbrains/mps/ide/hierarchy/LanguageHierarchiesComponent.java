@@ -221,7 +221,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
   public List<LanguageHierarchiesComponent.ConceptContainer> createHierarchyForest() {
     List<LanguageHierarchiesComponent.ConceptContainer> result = new ArrayList<LanguageHierarchiesComponent.ConceptContainer>();
     Map<SNode, LanguageHierarchiesComponent.ConceptContainer> processed = new HashMap<SNode, LanguageHierarchiesComponent.ConceptContainer>();
-    SModel structureModel = myLanguage.getStructureModelDescriptor().getSModel();
+    SModel structureModel = myLanguage.getStructureModelDescriptor();
     SNode baseConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
 outer:
     for (SNode concept : SModelOperations.getRoots(structureModel, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {

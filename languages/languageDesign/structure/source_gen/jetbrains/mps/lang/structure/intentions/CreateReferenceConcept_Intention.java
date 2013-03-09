@@ -103,7 +103,7 @@ public class CreateReferenceConcept_Intention implements IntentionFactory {
 
       // find editor model 
       Language language = Language.getLanguageFor(SNodeOperations.getModel(node));
-      SModel editorModel = LanguageAspect.EDITOR.get(language).getSModel();
+      SModel editorModel = LanguageAspect.EDITOR.get(language);
 
       // editor 
       SNode editor = _quotation_createNode_vn7eng_a0l0a(concept, link);

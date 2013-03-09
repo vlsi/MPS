@@ -91,8 +91,8 @@ public class NewSubTestModel_Action extends BaseAction {
         public void run() {
           SModelFqName newModelFqName = new SModelFqName(NewSubTestModel_Action.this.getTestModelName(_params), SModelStereotype.TESTS);
           result.value = ((SModel) MapSequence.fromMap(_params).get("model")).getModule().createModel(newModelFqName.toString(), ModelRootUtil.getModelRoot(((SModel) MapSequence.fromMap(_params).get("model"))), null);
-          SModel createdModel = result.value.getSModel();
-          SModel sourceModel = ((SModel) MapSequence.fromMap(_params).get("model")).getSModel();
+          SModel createdModel = result.value;
+          SModel sourceModel = ((SModel) MapSequence.fromMap(_params).get("model"));
           ((SModelInternal) createdModel).addModelImport(sourceModel.getReference(), false);
           for (jetbrains.mps.smodel.SModel.ImportElement importElement : ((SModelInternal) sourceModel).importedModels()) {
             ((SModelInternal) createdModel).addModelImport(sourceModel.getReference(), false);

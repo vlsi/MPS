@@ -65,7 +65,7 @@ public class AddPluginDependencies_Action extends BaseAction {
         }
 
         lang.addDependency(standaloneRef, false);
-        SModel model = aspect.getSModel();
+        SModel model = aspect;
         ((SModelInternal) model).addLanguage(standaloneRef);
         SModelOperations.createNewRootNode(model, "jetbrains.mps.lang.plugin.standalone.structure.StandalonePluginDescriptor", null);
       }

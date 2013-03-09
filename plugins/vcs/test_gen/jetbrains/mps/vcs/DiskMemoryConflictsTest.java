@@ -111,7 +111,7 @@ public class DiskMemoryConflictsTest {
           try {
             final SModel modelDescriptor = myModelDescriptor;
             Assert.assertNotNull(modelDescriptor);
-            SNode node = modelDescriptor.getSModel().getNode(SNodeId.fromString("6010389230754495469"));
+            SNode node = modelDescriptor.getNode(SNodeId.fromString("6010389230754495469"));
             Assert.assertNotNull(node);
             if (nameToWrite == null) {
               result[0] = SNodeAccessUtil.getProperty(node, "name");

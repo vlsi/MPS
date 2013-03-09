@@ -39,7 +39,7 @@ public class RenameLinkRefactoringTester_Hierarchy implements IRefactoringTester
       @Override
       public void run() {
         SModel structureModelDescriptor = testRefactoringTargetLanguage.getStructureModelDescriptor();
-        SModel model = structureModelDescriptor.getSModel();
+        SModel model = structureModelDescriptor;
         SNode node = SModelOperations.getRootByName(model, "AbstractGoodConcept");
         SNode link = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "linkDeclaration", true)).first();
         refactoringContext.setSelectedProject(project);
@@ -62,7 +62,7 @@ public class RenameLinkRefactoringTester_Hierarchy implements IRefactoringTester
                 result[0] = false;
                 return;
               }
-              SModel sModel = sandbox1.getSModel();
+              SModel sModel = sandbox1;
               SNode root = sModel.getRootNodes().iterator().next();
               result[0] = (IterableUtil.asCollection(root.getChildren(newLinkName)).size() == 4);
             } catch (Throwable t) {

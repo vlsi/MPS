@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="bnp8js4bgzlorrbbju0jk369bkk1omd">
+<dependencies version="2" modelHash="-6r9toian09l4oodnlgflsqslxb4z3yl">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.dataFlow.framework.instructions(MPS.Core/jetbrains.mps.lang.dataFlow.framework.instructions@java_stub)" />
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="38s949ymo9nq7jj7p2lrfowy0hurndx" />
   <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="-b5n45squa5g1bvgomh8vpjoxp4hdqn" />
-  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-dqdp89qyu48i5kq0qomcw0yllca2bc3" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="2atf7uvlpyv8yt5s22boef6of4g0s5t" />
   <common hash="c505fhppzi2cefxx6ndbigx4br654wa" />
   <source id="4282822416100096468" name="MPSProgramBuilder" hash="7ynx5ypqgcro3kb8slrodjd4l7737lg">
     <dep root="4282822416100098655" />
@@ -36,7 +36,7 @@
   <source id="4282822416100099045" name="DataFlowBuilder" hash="-8uk62y2lfwkpjj4fybfozxpnitehbl6">
     <file name="DataFlowBuilder.java" />
   </source>
-  <source id="4282822416100099058" name="DataFlowManager" hash="7lya6r0m5d000wohrb64d2iok6smdtb">
+  <source id="4282822416100099058" name="DataFlowManager" hash="-aascgh8z3j4hro7sash5st2446cc5fa">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="DataFlowManager.java" />
   </source>

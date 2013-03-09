@@ -107,7 +107,7 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
             continue;
           }
 
-          mine = ReRunMergeFromBackup_Action.this.selectMineModel(ModelPersistence.modelToString(((SModel) MapSequence.fromMap(_params).get("model")).getSModel()), mine, _params);
+          mine = ReRunMergeFromBackup_Action.this.selectMineModel(ModelPersistence.modelToString(((SModel) MapSequence.fromMap(_params).get("model"))), mine, _params);
           if (mine == null) {
             return;
           }

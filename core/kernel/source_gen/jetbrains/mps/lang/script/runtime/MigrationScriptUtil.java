@@ -36,7 +36,7 @@ public class MigrationScriptUtil {
     SModel modelDescr = LanguageAspect.SCRIPTS.get(language);
     SModel model = (modelDescr == null ?
       null :
-      modelDescr.getSModel()
+      modelDescr
     );
     return SModelOperations.getRoots(model, "jetbrains.mps.lang.script.structure.MigrationScript");
   }

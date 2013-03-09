@@ -72,8 +72,8 @@ public class CompareTransientModels_Action extends BaseAction {
       final List<SModel> sortedModels = SortUtil.sortModels(((List<SModel>) MapSequence.fromMap(_params).get("models")));
       ModelAccess.instance().runReadInEDT(new Runnable() {
         public void run() {
-          final SModel first = sortedModels.get(0).getSModel();
-          final SModel second = sortedModels.get(1).getSModel();
+          final SModel first = sortedModels.get(0);
+          final SModel second = sortedModels.get(1);
           ApplicationManager.getApplication().invokeLater(new Runnable() {
             public void run() {
               new ModelDifferenceDialog(first, second, ((Project) MapSequence.fromMap(_params).get("project")), first.getReference().getSModelFqName().toString(), second.getReference().getSModelFqName().toString()).show();

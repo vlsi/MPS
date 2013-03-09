@@ -94,9 +94,9 @@ public class AddGenerationSupportLanguages_Action extends BaseAction {
         }
       }).visitAll(new IVisitor<SModel>() {
         public void visit(SModel it) {
-          ((SModelInternal) it.getSModel()).addDevKit(genPurpose);
-          ((SModelInternal) it.getSModel()).addLanguage(generator);
-          ((SModelInternal) it.getSModel()).addLanguage(genContext);
+          ((SModelInternal) it).addDevKit(genPurpose);
+          ((SModelInternal) it).addLanguage(generator);
+          ((SModelInternal) it).addLanguage(genContext);
         }
       });
 

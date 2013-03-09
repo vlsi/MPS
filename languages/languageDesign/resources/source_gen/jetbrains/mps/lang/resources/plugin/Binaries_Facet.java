@@ -103,7 +103,7 @@ public class Binaries_Facet extends IFacet.Stub {
                     final IModule module = res.module();
                     Iterable<Tuples._2<IFile, IFile>> seq = Sequence.fromIterable(res.models()).translate(new ITranslator2<SModel, Tuples._2<IFile, IFile>>() {
                       public Iterable<Tuples._2<IFile, IFile>> translate(SModel smd) {
-                        SModel model = smd.getSModel();
+                        SModel model = smd;
                         String output = module.getOutputFor(smd);
                         if (output == null) {
                           monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("no output location for " + SNodeOperations.getModelLongName(smd))));

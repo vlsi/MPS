@@ -408,7 +408,7 @@
     <nodeInfo nodeId="2440919800288585440" fileName="StubUtil.java" startLine="94" startPosition="10" endLine="100" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5992322387945371777" fileName="StubUtil.java" startLine="103" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_g10q2g_a0a0f0c#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
     <nodeInfo nodeId="4149553233885952429" fileName="StubUtil.java" startLine="110" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_g10q2g_a0a0d0d#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="4149553233885952378" fileName="StubUtil.java" startLine="65" startPosition="125" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4149553233885952378" fileName="StubUtil.java" startLine="65" startPosition="113" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4149553233885952374" fileName="StubUtil.java" startLine="64" startPosition="0" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4149553233885954349" fileName="StubUtil.java" startLine="32" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isReferenceToDebuggerStub#(Lorg/jetbrains/mps/openapi/model/SReference;)Z" />
     <nodeInfo nodeId="2440919800288580198" fileName="StubUtil.java" startLine="87" startPosition="85" endLine="100" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -450,7 +450,7 @@
       <varInfo nodeId="4149553233885952429" varName="a" />
       <varInfo nodeId="4149553233885952429" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="4149553233885952377" fileName="StubUtil.java" startLine="65" startPosition="125" endLine="73" endPosition="7" />
+    <scopeInfo nodeId="4149553233885952377" fileName="StubUtil.java" startLine="65" startPosition="113" endLine="73" endPosition="7" />
     <scopeInfo nodeId="4149553233885954352" fileName="StubUtil.java" startLine="32" startPosition="73" endLine="41" endPosition="89">
       <varInfo nodeId="4149553233885954362" varName="model" />
       <varInfo nodeId="6727196686829006648" varName="targetSModelReference" />

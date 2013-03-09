@@ -113,7 +113,7 @@ public class StubResolver {
 
   public void resolveInModels(List<SModel> models, IOperationContext context) {
     for (SModel model : ListSequence.fromList(models)) {
-      resolveInModel(model.getSModel(), context);
+      resolveInModel(model, context);
     }
   }
 
@@ -124,7 +124,7 @@ public class StubResolver {
       }
       for (SModel model : ListSequence.fromList(module.getOwnModelDescriptors())) {
         if (SModelStereotype.isUserModel(model) && model instanceof EditableSModel) {
-          resolveInModel(model.getSModel(), context);
+          resolveInModel(model, context);
         }
       }
     }

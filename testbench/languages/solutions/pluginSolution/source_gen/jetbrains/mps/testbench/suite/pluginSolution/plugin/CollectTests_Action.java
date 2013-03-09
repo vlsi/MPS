@@ -58,7 +58,7 @@ public class CollectTests_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return InternalFlag.isInternalMode() && CollectTests_Action.this.isUserEditableModel(((SModel) MapSequence.fromMap(_params).get("modelDesc")), _params) && ((SModelInternal) ((SModel) MapSequence.fromMap(_params).get("modelDesc")).getSModel()).importedLanguages().contains(ModuleReference.fromString("d3c5a46f-b8c2-47db-ad0a-30b8f19c2055(jetbrains.mps.testbench.suite)"));
+    return InternalFlag.isInternalMode() && CollectTests_Action.this.isUserEditableModel(((SModel) MapSequence.fromMap(_params).get("modelDesc")), _params) && ((SModelInternal) ((SModel) MapSequence.fromMap(_params).get("modelDesc"))).importedLanguages().contains(ModuleReference.fromString("d3c5a46f-b8c2-47db-ad0a-30b8f19c2055(jetbrains.mps.testbench.suite)"));
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -113,7 +113,7 @@ public class CollectTests_Action extends BaseAction {
 
   private boolean doExecute(ProgressIndicator proInd, final Map<String, Object> _params) {
     final Logger LOG = Logger.getLogger("jetbrains.mps.testbench.suite");
-    final SModel model = ((SModel) MapSequence.fromMap(_params).get("modelDesc")).getSModel();
+    final SModel model = ((SModel) MapSequence.fromMap(_params).get("modelDesc"));
     final Wrappers._T<List<ModuleReference>> solutions = new Wrappers._T<List<ModuleReference>>();
     final Wrappers._T<List<ModuleReference>> existing = new Wrappers._T<List<ModuleReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -142,7 +142,7 @@ public class CollectTests_Action extends BaseAction {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               try {
-                smodel.value = smd.getSModel();
+                smodel.value = smd;
               } catch (RuntimeException ex) {
                 LOG.error(ex);
               }

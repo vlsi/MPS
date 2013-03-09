@@ -159,9 +159,9 @@ public class EvaluationContainer implements IEvaluationContainer {
     // todo: variables 
     new EvaluationContainer.MyBaseLanguagesImportHelper().tryToImport(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), evaluatorNode, "virtual_getCode_317191294093624551", new Object[]{}), nodesToImport);
 
-    SModelOperations.validateLanguagesAndImports(containerModel.getSModel(), true, true);
-    ((SModelInternal) containerModel.getSModel()).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.debugger.java.evaluation", Language.class).getModuleReference());
-    ((SModelInternal) containerModel.getSModel()).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.debugger.java.privateMembers", Language.class).getModuleReference());
+    SModelOperations.validateLanguagesAndImports(containerModel, true, true);
+    ((SModelInternal) containerModel).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.debugger.java.evaluation", Language.class).getModuleReference());
+    ((SModelInternal) containerModel).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.debugger.java.privateMembers", Language.class).getModuleReference());
   }
 
   protected SNode createEvaluatorNode() {

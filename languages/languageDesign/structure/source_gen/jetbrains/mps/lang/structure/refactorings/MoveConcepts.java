@@ -92,7 +92,7 @@ public class MoveConcepts extends BaseLoggableRefactoring {
         return it != null;
       }
     }).toListSequence();
-    SModel srcModel = ((SModel) refactoringContext.getParameter("sourceModel")).getSModel();
+    SModel srcModel = ((SModel) refactoringContext.getParameter("sourceModel"));
     boolean isSourceExtends = ListSequence.fromList(SModelOperations.getRoots(srcModel, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")).subtract(ListSequence.fromList(refactoringContext.getSelectedNodes())).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SConceptOperations.getDirectSuperConcepts(it, false);
@@ -103,11 +103,11 @@ public class MoveConcepts extends BaseLoggableRefactoring {
     for (SNode node : refactoringContext.getSelectedNodes()) {
       refactoringContext.changeFeatureName(node, ((SModelReference) refactoringContext.getParameter("targetModel")).getSModelFqName().toString() + "." + SPropertyOperations.getString(node, "name"), SPropertyOperations.getString(node, "name"));
     }
-    refactoringContext.moveNodesToModel(refactoringContext.getSelectedNodes(), SModelRepository.getInstance().getModelDescriptor(((SModelReference) refactoringContext.getParameter("targetModel"))).getSModel());
+    refactoringContext.moveNodesToModel(refactoringContext.getSelectedNodes(), SModelRepository.getInstance().getModelDescriptor(((SModelReference) refactoringContext.getParameter("targetModel"))));
     // move aspects 
     for (LanguageAspect aspect : SetSequence.fromSet(MapSequence.fromMap(aspectNodes).keySet())) {
-      SModel fromModel = aspect.get(((Language) refactoringContext.getParameter("sourceLanguage"))).getSModel();
-      SModel toModel = aspect.getOrCreate(targetLanguage).getSModel();
+      SModel fromModel = aspect.get(((Language) refactoringContext.getParameter("sourceLanguage")));
+      SModel toModel = aspect.getOrCreate(targetLanguage);
       refactoringContext.updateByDefault(fromModel);
       refactoringContext.moveNodesToModel(MapSequence.fromMap(aspectNodes).get(aspect), toModel);
       refactoringContext.updateByDefault(toModel);

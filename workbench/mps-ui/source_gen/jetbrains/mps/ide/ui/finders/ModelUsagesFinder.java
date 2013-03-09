@@ -46,7 +46,7 @@ public class ModelUsagesFinder implements IFinder {
         if (!(SModelStereotype.isUserModel(modelDescriptor))) {
           continue;
         }
-        for (SNode node : new NodesIterable(modelDescriptor.getSModel())) {
+        for (SNode node : new NodesIterable(modelDescriptor)) {
           for (SReference reference : node.getReferences()) {
             if (!(((jetbrains.mps.smodel.SReference) reference).isExternal())) {
               continue;
@@ -72,7 +72,7 @@ public class ModelUsagesFinder implements IFinder {
         if (!(SModelStereotype.isUserModel(scopeModel))) {
           continue;
         }
-        for (SNode node : new NodesIterable(descriptor.getSModel())) {
+        for (SNode node : new NodesIterable(descriptor)) {
           for (SReference reference : node.getReferences()) {
             if (!(((jetbrains.mps.smodel.SReference) reference).isExternal())) {
               continue;
@@ -97,7 +97,7 @@ public class ModelUsagesFinder implements IFinder {
         if (!(SModelStereotype.isUserModel(modelDescriptor))) {
           continue;
         }
-        searchResults.getSearchResults().add(new SearchResult<SModel>(modelDescriptor.getSModel(), "usages in imports"));
+        searchResults.getSearchResults().add(new SearchResult<SModel>(modelDescriptor, "usages in imports"));
       }
     }
     return searchResults;

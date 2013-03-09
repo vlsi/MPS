@@ -63,7 +63,7 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
     final Wrappers._T<Set<SModelReference>> models = new Wrappers._T<Set<SModelReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        SModel m = myPresenter.getModelDescriptor().getSModel();
+        SModel m = myPresenter.getModelDescriptor();
         models.value = SModelOperations.getUsedImportedModels(m);
       }
     });
@@ -74,7 +74,7 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
     final Wrappers._T<Set<ModuleReference>> usedLanguages = new Wrappers._T<Set<ModuleReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        SModel m = myPresenter.getModelDescriptor().getSModel();
+        SModel m = myPresenter.getModelDescriptor();
         usedLanguages.value = SModelOperations.getUsedLanguages(m);
       }
     });
@@ -120,7 +120,7 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
         int references = 0;
         int properties = 0;
         messageText.append("<html>");
-        SModel model = myModel.getSModel();
+        SModel model = myModel;
         for (SNode node : new NodesIterable(model)) {
           references += IterableUtil.asCollection(node.getReferences()).size();
           properties += SNodeOperations.getProperties(node).keySet().size();

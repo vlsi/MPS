@@ -1048,7 +1048,7 @@
     <nodeInfo nodeId="8634372234400541187" fileName="TextGen_Facet.java" startLine="246" startPosition="23" endLine="247" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8634372234400413431" fileName="TextGen_Facet.java" startLine="247" startPosition="97" endLine="248" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8634372234441103219" fileName="TextGen_Facet.java" startLine="250" startPosition="58" endLine="251" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8634372234441132414" fileName="TextGen_Facet.java" startLine="254" startPosition="68" endLine="255" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8634372234441132414" fileName="TextGen_Facet.java" startLine="254" startPosition="68" endLine="255" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8634372234441151873" fileName="TextGen_Facet.java" startLine="257" startPosition="23" endLine="258" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4960740046992445745" fileName="TextGen_Facet.java" startLine="258" startPosition="66" endLine="259" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4960740046992437028" fileName="TextGen_Facet.java" startLine="260" startPosition="19" endLine="261" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -1299,7 +1299,7 @@
     <scopeInfo nodeId="6045769742827956862" fileName="TextGen_Facet.java" startLine="218" startPosition="41" endLine="219" endPosition="97" />
     <scopeInfo nodeId="4572289200694933867" fileName="TextGen_Facet.java" startLine="243" startPosition="79" endLine="244" endPosition="69" />
     <scopeInfo nodeId="8634372234441102845" fileName="TextGen_Facet.java" startLine="250" startPosition="58" endLine="251" endPosition="42" />
-    <scopeInfo nodeId="8634372234441130514" fileName="TextGen_Facet.java" startLine="254" startPosition="68" endLine="255" endPosition="99" />
+    <scopeInfo nodeId="8634372234441130514" fileName="TextGen_Facet.java" startLine="254" startPosition="68" endLine="255" endPosition="87" />
     <scopeInfo nodeId="8740518691369653220" fileName="TextGen_Facet.java" startLine="267" startPosition="139" endLine="268" endPosition="54" />
     <scopeInfo nodeId="1832337102018571127" fileName="TextGen_Facet.java" startLine="295" startPosition="108" endLine="296" endPosition="105" />
     <scopeInfo nodeId="6648795410103966568" fileName="TextGen_Facet.java" startLine="330" startPosition="20" endLine="331" endPosition="61" />

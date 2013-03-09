@@ -70,7 +70,7 @@ public class ModelDifferenceDialog extends DialogWrapper {
     DiffTemporaryModule.createModuleForModel(newModel, "new", p);
     myContentTitles = diffRequest.getContentTitles();
     assert myContentTitles.length == 2;
-    myEditable = newModel instanceof EditableSModel && check_vk52pz_a0a0h0j(SModelRepository.getInstance().getModelDescriptor(newModel.getReference())) == newModel;
+    myEditable = newModel instanceof EditableSModel && SModelRepository.getInstance().getModelDescriptor(newModel.getReference()) == newModel;
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         setTitle("Difference for model: " + SModelOperations.getModelName(oldModel));
@@ -301,12 +301,5 @@ public class ModelDifferenceDialog extends DialogWrapper {
     protected Iterable<SNodeId> getAffectedRoots() {
       return myChangeSet.getAffectedRoots();
     }
-  }
-
-  private static SModel check_vk52pz_a0a0h0j(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getSModel();
-    }
-    return null;
   }
 }

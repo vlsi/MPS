@@ -1757,7 +1757,7 @@ public class QueriesGenerated {
         Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
           public Iterable<SNode> compute() {
             List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-            SModel blStructure = BootstrapLanguages.baseLanguage().getStructureModelDescriptor().getSModel();
+            SModel blStructure = BootstrapLanguages.baseLanguage().getStructureModelDescriptor();
             for (SNode conceptDeclaration : SModelOperations.getRoots(blStructure, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
               if (SConceptOperations.isSubConceptOf(conceptDeclaration, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
                 SNode param = (SNode) conceptDeclaration;

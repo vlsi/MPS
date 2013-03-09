@@ -25,7 +25,7 @@ public class NanocConfigRunPreparationUtil {
 
   public static File prepare(String nodeId, String modelRef) throws ExecutionException {
     SModel descriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(modelRef));
-    SNode node = descriptor.getSModel().getNode(SNodeId.fromString(nodeId));
+    SNode node = descriptor.getNode(SNodeId.fromString(nodeId));
     final SNode sourceFileNode = SNodeOperations.cast(node, "jetbrains.mps.nanoc.structure.File");
     AbstractModule module = (AbstractModule) descriptor.getModule();
     final Wrappers._T<String> sourceFileName = new Wrappers._T<String>();

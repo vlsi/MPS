@@ -163,7 +163,7 @@ public class DirParser {
       }
       // package is already present... 
       // maybe we shouldn't touch it then, maybe it should be an option 
-      return modelDescriptor.getSModel();
+      return modelDescriptor;
     } else {
       return createModel(fqName);
     }
@@ -179,7 +179,7 @@ public class DirParser {
     SModel modelDescr = ((AbstractModule) myModule).createModel(packageName, getRootToCreateModel(packageName), null);
     assert modelDescr != null;
 
-    return modelDescr.getSModel();
+    return modelDescr;
   }
 
   @Nullable

@@ -79,7 +79,7 @@ public class DataFlowManager implements CoreComponent {
   private void load() {
     for (Language l : ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
       SModel dfaModel = LanguageAspect.DATA_FLOW.get(l);
-      if (dfaModel != null && dfaModel.getSModel().getRootNodes().iterator().hasNext()) {
+      if (dfaModel != null && dfaModel.getRootNodes().iterator().hasNext()) {
         String dfaBuildersClassName = SNodeOperations.getModelLongName(dfaModel) + ".DFABuilders";
         Class<? extends DataFlowBuilders> buildersClass = l.getClass(dfaBuildersClassName);
         if (buildersClass != null) {

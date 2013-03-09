@@ -87,7 +87,7 @@ public class EditOperandDialog extends DialogWrapper {
       MappingSelectTree.ModelRefNodeData modelData = new MappingSelectTree.ModelRefNodeData(templateModel.getReference());
       DefaultMutableTreeNode modelNode = new DefaultMutableTreeNode(modelData);
       genNode.add(modelNode);
-      for (SNode mapping : SModelOperations.getRoots(((SModel) templateModel.getSModel()), "jetbrains.mps.lang.generator.structure.MappingConfiguration")) {
+      for (SNode mapping : SModelOperations.getRoots(((SModel) templateModel), "jetbrains.mps.lang.generator.structure.MappingConfiguration")) {
         SNodeReference np = new SNodePointer(mapping);
         MappingSelectTree.NodeRefNodeData nodeData = new MappingSelectTree.NodeRefNodeData(np);
         DefaultMutableTreeNode nodeNode = new DefaultMutableTreeNode(nodeData);

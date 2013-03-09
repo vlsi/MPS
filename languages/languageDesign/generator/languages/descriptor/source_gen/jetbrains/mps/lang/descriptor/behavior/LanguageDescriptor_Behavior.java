@@ -31,7 +31,7 @@ public class LanguageDescriptor_Behavior {
     if (ts == null) {
       return true;
     }
-    SModel m = ts.getSModel();
+    SModel m = ts;
     if (m == null) {
       genContext.showErrorMessage(SLinkOperations.getTarget(thisNode, "language", true), "Cannot load model: " + SNodeOperations.getModelLongName(ts));
       return true;

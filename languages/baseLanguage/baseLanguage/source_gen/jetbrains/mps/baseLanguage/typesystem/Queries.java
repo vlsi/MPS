@@ -31,7 +31,7 @@ public class Queries {
     if (mayBeString) {
       SModel javaLangJavaStubModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString("java.lang@java_stub"));
       assert javaLangJavaStubModelDescriptor != null;
-      SModel javaLang = javaLangJavaStubModelDescriptor.getSModel();
+      SModel javaLang = javaLangJavaStubModelDescriptor;
       SNode stringClass = SModelOperations.getRootByName(javaLang, "String");
       if (SNodeOperations.isInstanceOf(leftType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget((SNodeOperations.cast(leftType, "jetbrains.mps.baseLanguage.structure.ClassifierType")), "classifier", false) == stringClass || SNodeOperations.isInstanceOf(rightType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget((SNodeOperations.cast(rightType, "jetbrains.mps.baseLanguage.structure.ClassifierType")), "classifier", false) == stringClass) {
         SNode classifierType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);

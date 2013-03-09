@@ -143,7 +143,7 @@ public class ChildSubstituteActionsUtil {
       if (actionsModelDescr == null) {
         continue;
       }
-      SModel sModel = actionsModelDescr.getSModel();
+      SModel sModel = actionsModelDescr;
       ListSequence.fromList(result).addSequence(ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getRoots(sModel, "jetbrains.mps.lang.actions.structure.NodeSubstituteActions")).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
           return SLinkOperations.getTargets(it, "actionsBuilder", true);

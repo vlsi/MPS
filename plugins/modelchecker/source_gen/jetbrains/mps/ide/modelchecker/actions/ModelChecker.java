@@ -57,7 +57,7 @@ public class ModelChecker {
 
           if (module != null && project != null) {
             IOperationContext operationContext = new ModelChecker.ModelCheckerOperationContext(project, module);
-            SModel model = modelDescriptor.getSModel();
+            SModel model = modelDescriptor;
 
             for (SpecificChecker specificChecker : ListSequence.fromList(specificCheckers.value)) {
               try {

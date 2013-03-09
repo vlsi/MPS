@@ -77,7 +77,7 @@ public class ModelDiffTool implements DiffTool {
         return ModelAccess.instance().runReadAction(new Computable<SModel>() {
           @Override
           public SModel compute() {
-            return modelDescriptor.getSModel();
+            return modelDescriptor;
           }
         });
       }

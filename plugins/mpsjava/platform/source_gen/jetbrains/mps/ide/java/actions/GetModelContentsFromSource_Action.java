@@ -96,7 +96,7 @@ public class GetModelContentsFromSource_Action extends BaseAction {
       TreeFileChooser treeFileChooser = new TreeFileChooser();
       treeFileChooser.setDirectoriesAreAlwaysVisible(true);
       treeFileChooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
-      final SModel sModel = ((SModel) MapSequence.fromMap(_params).get("model")).getSModel();
+      final SModel sModel = ((SModel) MapSequence.fromMap(_params).get("model"));
       String generatorOutputPath = module.getGeneratorOutputPath();
       File initial = null;
       File output = new File(generatorOutputPath);
