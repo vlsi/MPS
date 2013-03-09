@@ -79,8 +79,6 @@ public interface SNode {
    */
   String getName();
 
-  SModel getContainingModel();
-
   SRepository getRepository();
 
   boolean isInRepository();

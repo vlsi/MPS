@@ -134,8 +134,8 @@ public class ClassifierType_Behavior {
         SNode matchedNode_hz3823_a0a0j = thisNode;
         {
           boolean matches_hz3823_a0a0a9 = false;
-          GeneratedMatchingPattern matchingPattern = new ClassifierType_Behavior.Pattern_hz3823_a0a1a1a0a0a01();
-          matches_hz3823_a0a0a9 = matchingPattern.match(matchedNode_hz3823_a0a0j);
+          GeneratedMatchingPattern matchingPattern_hz3823_a0a0a9 = new ClassifierType_Behavior.Pattern_hz3823_a0a1a1a0a0a01();
+          matches_hz3823_a0a0a9 = matchingPattern_hz3823_a0a0a9.match(matchedNode_hz3823_a0a0j);
           if (matches_hz3823_a0a0a9) {
             return true;
           } else

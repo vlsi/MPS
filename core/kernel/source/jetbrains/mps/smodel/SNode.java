@@ -117,16 +117,6 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   @Override
-  public org.jetbrains.mps.openapi.model.SModel getContainingModel() {
-    assertRead();
-    assertDisposed();
-
-    fireNodeReadAccess();
-
-    return myModel == null ? null : myModel.getModelDescriptor();
-  }
-
-  @Override
   public SRepository getRepository() {
     org.jetbrains.mps.openapi.model.SModel model = getModel();
     return model == null ? null : model.getRepository();
