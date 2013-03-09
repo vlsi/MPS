@@ -868,18 +868,12 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     return SModuleOperations.getModuleWithDependenciesClassPathItem(this);
   }
 
-  /**
-   * @see ClassLoaderManager#canLoad(org.jetbrains.mps.openapi.module.SModule)
-   */
   @Override
   @Deprecated
   public final boolean reloadClassesAfterGeneration() {
     return ClassLoaderManager.getInstance().canLoad(this);
   }
 
-  /**
-   * @see jetbrains.mps.classloading.ClassLoaderManager#getClass(org.jetbrains.mps.openapi.module.SModule, String)
-   */
   @Deprecated
   @Override
   public final Class getClass(String className) {

@@ -198,7 +198,7 @@ public interface IModule extends SModule {
   @Deprecated
   IClassPathItem getModuleWithDependenciesClassPathItem();
 
-  // IClassLoadingModule part. Use module.getFacet(IClassLoadingModule).{method}
+  // IClassLoadingModule part. Use ClassLoaderManager instead
 
   /**
    * @see jetbrains.mps.classloading.ClassLoaderManager#getClass(org.jetbrains.mps.openapi.module.SModule, String)
@@ -207,7 +207,7 @@ public interface IModule extends SModule {
   Class getClass(String className);
 
   /**
-   * @see jetbrains.mps.classloading.IClassLoadingModule#canLoad()
+   * @see jetbrains.mps.classloading.ClassLoaderManager#canLoad(org.jetbrains.mps.openapi.module.SModule)
    */
   @Deprecated
   boolean reloadClassesAfterGeneration();
