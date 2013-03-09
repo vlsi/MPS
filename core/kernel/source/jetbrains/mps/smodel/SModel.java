@@ -300,11 +300,6 @@ public class SModel implements SModelInternal, SModelData {
   }
 
   @Override
-  public org.jetbrains.mps.openapi.model.SModel getSModel() {
-    return this;
-  }
-
-  @Override
   public void setModule(SModule container) {
     getModelDescriptor().setModule(container);
   }
