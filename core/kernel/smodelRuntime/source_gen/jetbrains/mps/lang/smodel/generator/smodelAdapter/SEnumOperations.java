@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class SEnumOperations {
   public static SNode getEnum(String modelUID, final String nodeName) {
     SModelReference ref = SModelReference.fromString(modelUID);
-    SModel m = SModelRepository.getInstance().getModelDescriptor(ref).getSModel();
+    SModel m = SModelRepository.getInstance().getModelDescriptor(ref);
     return (ListSequence.fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals(nodeName);

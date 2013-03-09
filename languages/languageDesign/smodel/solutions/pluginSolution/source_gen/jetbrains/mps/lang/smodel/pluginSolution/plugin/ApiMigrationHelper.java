@@ -255,10 +255,10 @@ public class ApiMigrationHelper {
     if (SModelOperations.isReadOnly(n.getModel())) {
       return false;
     }
-    if (eq_yke5lt_a0b0m(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(SNodeOperations.getModel(n)), jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.lang.smodel.pluginSolution.plugin", "")).getSModel()))) {
+    if (eq_yke5lt_a0b0m(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(SNodeOperations.getModel(n)), jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.lang.smodel.pluginSolution.plugin", ""))))) {
       return false;
     }
-    if (eq_yke5lt_a0c0m(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(SNodeOperations.getModel(n)), jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.lang.smodel.generator.smodelAdapter", "")).getSModel()))) {
+    if (eq_yke5lt_a0c0m(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(SNodeOperations.getModel(n)), jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.lang.smodel.generator.smodelAdapter", ""))))) {
       return false;
     }
     SNode root = SNodeOperations.getContainingRoot(n);

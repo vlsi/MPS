@@ -94,7 +94,7 @@ public class SModelOperations {
     modelsList.add(sModel);
     List<SModel> modelDescriptors = jetbrains.mps.smodel.SModelOperations.allImportedModels(sModel, scope);
     for (SModel descriptor : modelDescriptors) {
-      modelsList.add(descriptor.getSModel());
+      modelsList.add(descriptor);
     }
     List<SNode> resultNodes = new ArrayList<SNode>();
     for (SModel aModel : modelsList) {
