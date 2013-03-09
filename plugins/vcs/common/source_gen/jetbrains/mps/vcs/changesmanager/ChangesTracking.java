@@ -171,7 +171,7 @@ public class ChangesTracking {
     if (myDifference.getChangeSet() != null) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          if (myDifference.getChangeSet().getNewModel() != myModelDescriptor.getSModel()) {
+          if (myDifference.getChangeSet().getNewModel() != myModelDescriptor) {
             _force.value = true;
           }
         }
@@ -227,7 +227,7 @@ public class ChangesTracking {
       public void run() {
         synchronized (ChangesTracking.this) {
           if (!(myDisposed)) {
-            ChangeSet changeSet = ChangeSetBuilder.buildChangeSet(baseVersionModel.value, myModelDescriptor.getSModel(), true);
+            ChangeSet changeSet = ChangeSetBuilder.buildChangeSet(baseVersionModel.value, myModelDescriptor, true);
             myDifference.setChangeSet((ChangeSetImpl) changeSet);
             buildCaches();
           }

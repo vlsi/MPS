@@ -228,7 +228,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
       MapSequence.fromMap(myChangesToLineContents).put(ch, new LineContent[]{new ReferenceLineContent(src.getAffectedNodeId(), src.getRole())});
     } else if (ch instanceof NodeGroupChange) {
       NodeGroupChange ngc = (NodeGroupChange) ch;
-      List<? extends SNode> newChildren = IterableUtil.asList(myModelDescriptor.getSModel().getNode(ngc.getParentNodeId()).getChildren(ngc.getRole()));
+      List<? extends SNode> newChildren = IterableUtil.asList(myModelDescriptor.getNode(ngc.getParentNodeId()).getChildren(ngc.getRole()));
       MapSequence.fromMap(myChangesToLineContents).put(ch, ListSequence.fromList(newChildren).page(ngc.getResultBegin(), ngc.getResultEnd()).select(new ISelector<SNode, NodeLineContent>() {
         public NodeLineContent select(SNode n) {
           return new NodeLineContent(n.getNodeId());

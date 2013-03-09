@@ -74,7 +74,7 @@ public class DiskMemoryConflictsTest {
           ModelAccess.instance().runReadAction(new Runnable() {
             @Override
             public void run() {
-              myNodeBackup = CopyUtil.copyAndPreserveId(myModelDescriptor.getSModel().getRootNodes().iterator().next());
+              myNodeBackup = CopyUtil.copyAndPreserveId(myModelDescriptor.getRootNodes().iterator().next());
             }
           });
           checkInitialState();
@@ -298,7 +298,7 @@ public class DiskMemoryConflictsTest {
         @Override
         public void run() {
           myModelDescriptor = (BaseEditableSModelDescriptor) myModule.createModel(DiskMemoryConflictsTest.MODEL_REFERENCE.getSModelFqName().toString(), myModule.getModelRoots().iterator().next(), null);
-          myModelDescriptor.getSModel().addRootNode(CopyUtil.copyAndPreserveId(myNodeBackup));
+          myModelDescriptor.addRootNode(CopyUtil.copyAndPreserveId(myNodeBackup));
           myModelDescriptor.save();
         }
       }, myProject);

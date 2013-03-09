@@ -539,20 +539,8 @@
                                     </node>
                                     <node role="initializer" roleId="tpee.1068431790190" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="1240470842553499151">
                                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1240470842553498754" resolveInfo="findNodes" />
-                                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="215870359525349368">
-                                        <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="215870359525382346">
-                                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~BaseSModelDescriptor%dgetSModel()%corg%djetbrains%dmps%dopenapi%dmodel%dSModel" resolveInfo="getSModel" />
-                                        </node>
-                                        <node role="operand" roleId="tpee.1197027771414" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="215870359525341401">
-                                          <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="5288213350645244541">
-                                            <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3879106533706783594">
-                                              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~BaseSModelDescriptor" resolveInfo="BaseSModelDescriptor" />
-                                            </node>
-                                            <node role="expression" roleId="tpee.1070534934092" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="5288213350644913796">
-                                              <link role="variable" roleId="tp2q.1153944258490" targetNodeId="1240470842553499138" resolveInfo="model" />
-                                            </node>
-                                          </node>
-                                        </node>
+                                      <node role="actualArgument" roleId="tpee.1068499141038" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="1894532042879415011">
+                                        <link role="variable" roleId="tp2q.1153944258490" targetNodeId="1240470842553499138" resolveInfo="model" />
                                       </node>
                                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1240470842553499153">
                                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1240470842553499091" resolveInfo="text" />

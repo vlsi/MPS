@@ -89,7 +89,7 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
               if (!(model instanceof BaseSModelDescriptor)) {
                 LOG.error("Unknown kind of model " + model);
               }
-              Iterable<SNode> nodes = findNodes(((BaseSModelDescriptor) model).getSModel(), text);
+              Iterable<SNode> nodes = findNodes(model, text);
               if (!(Sequence.fromIterable(nodes).isEmpty())) {
                 foundNode = Sequence.fromIterable(nodes).first();
                 break;
