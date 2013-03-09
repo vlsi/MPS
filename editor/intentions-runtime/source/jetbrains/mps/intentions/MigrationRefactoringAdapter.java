@@ -34,38 +34,47 @@ public class MigrationRefactoringAdapter extends BaseIntention {
     myPresentation = migrationScript.getName();
   }
 
+  @Override
   public String getConcept() {
     return myRefactoring.getFqNameOfConceptToSearchInstances();
   }
 
+  @Override
   public boolean isParameterized() {
     return false;  
   }
 
+  @Override
   public String getDescription(SNode node, EditorContext editorContext) {
     return "Migration: " + NameUtil.multiWordCapitalize(myRefactoring.getName());
   }
 
+  @Override
   public boolean isApplicable(SNode node, EditorContext editorContext) {
     return myRefactoring.isApplicableInstanceNode(node);
   }
 
+  @Override
   public boolean isAvailableInChildNodes() {
     return false;
   }
 
+  @Override
   public void execute(SNode node, EditorContext editorContext) {
     myRefactoring.doUpdateInstanceNode(node);
   }
 
+  @Override
   public IntentionType getType() {
     return IntentionType.MIGRATION;
   }
 
+  @Override
   public String getLocationString() {
     return jetbrains.mps.util.SNodeOperations.getModelLongName(myMigrationScript.getModel());
   }
 
+  @Override
   public SNode getNodeByIntention() {
     return null;
   }

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-b4klszt5du4n32g5glew01yo4r4i49x">
+  <common hash="1wl278lbbghx0snw7ifyniuwoyih9k5" />
+  <source id="5294483648489409055" name="IRefactoringTester" hash="-b9v0rmdlxy0jbm8f17ot18b0dihiaql">
+    <file name="IRefactoringTester.java" />
+  </source>
+</dependencies>
+

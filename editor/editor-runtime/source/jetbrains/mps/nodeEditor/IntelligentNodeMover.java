@@ -49,6 +49,7 @@ class IntelligentNodeMover {
   void move() {
     final List<SNode> nodes = new ArrayList<SNode>();
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      @Override
       public void run() {
         nodes.addAll(myEditorContext.getSelectedNodes());
 
@@ -61,6 +62,7 @@ class IntelligentNodeMover {
     });
 
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         if (nodes.size() == 1) {
           myEditorContext.getNodeEditorComponent().selectNode(nodes.get(0));

@@ -25,7 +25,6 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_Insert;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
@@ -33,8 +32,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
-import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -62,6 +61,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
   }
 
 
+  @Override
   public void
   setRole(Object role) {
     myLinkDeclaration = ((jetbrains.mps.smodel.SNode) getSNode()).getLinkDeclaration(role.toString());
@@ -72,6 +72,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
     }
 
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
+      @Override
       public void run() {
         myGenuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(myLinkDeclaration);
         myGenuineRole = SModelUtil.getLinkDeclarationRole(myGenuineLinkDeclaration);
@@ -83,15 +84,18 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
   }
 
   //gets an attribute for this provider's node hanging on this provider's role
+  @Override
   public SNode getRoleAttribute() {
     return AttributeOperations.getLinkAttribute(getSNode(), null, myGenuineRole);
   }
 
   // gets a kind of attributes possibly hanging on this provider's role
+  @Override
   public Class getRoleAttributeClass() {
     return AttributeKind.Reference.class;
   }
 
+  @Override
   public EditorCell createEditorCell(EditorContext context) {
     EditorCell result = createCell_internal(myEditorContext);
     // do not override role/link-declaration if they are already set
@@ -158,7 +162,8 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
 
   protected abstract EditorCell createRefCell(EditorContext context, SNode referencedNode, SNode node);
 
-  public NodeSubstituteInfo createDefaultSubstituteInfo() {
+  @Override
+  public SubstituteInfo createDefaultSubstituteInfo() {
     if (myIsAggregation) return new DefaultChildSubstituteInfo(getSNode(), myLinkDeclaration, myEditorContext);
     return new DefaultReferenceSubstituteInfo(getSNode(), myLinkDeclaration, myEditorContext);
   }
@@ -168,6 +173,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
     return myLinkDeclaration;
   }
 
+  @Override
   public CellContext getCellContext() {
     if (myIsAggregation) {
       SNode parentNode = getSNode();

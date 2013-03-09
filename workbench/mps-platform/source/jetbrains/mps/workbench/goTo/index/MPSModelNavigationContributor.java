@@ -27,7 +27,6 @@ import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.language.ConceptRegistry;
@@ -111,7 +110,7 @@ public class MPSModelNavigationContributor implements NodeNavigationContributor,
     }
 
     for (SModel sm : findDirectly) {
-      for (SNode root : index.getRootsToIterate(((DefaultSModelDescriptor) sm).getSModel())) {
+      for (SNode root : index.getRootsToIterate(sm)) {
         String nodeName = (root.getName() == null) ? "null" : root.getName();
         NodeDescriptor nodeDescriptor = SNodeDescriptor.fromModelReference(
           nodeName, root.getConcept().getId(), root.getModel().getReference(), root.getNodeId());

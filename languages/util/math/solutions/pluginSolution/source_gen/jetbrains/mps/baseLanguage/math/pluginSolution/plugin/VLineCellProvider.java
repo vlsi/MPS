@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.math.pluginSolution.plugin;
 
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 
 public class VLineCellProvider extends AbstractCellProvider {

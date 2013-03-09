@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.nodeEditor.cells.CellConditions;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -27,8 +28,8 @@ public class ReplaceRegexpOperation_removeM {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      jetbrains.mps.nodeEditor.cells.EditorCell current = (jetbrains.mps.nodeEditor.cells.EditorCell) editorContext.getSelectedCell();
-      jetbrains.mps.nodeEditor.cells.EditorCell toSelect = current.getPrevLeaf(CellConditions.SELECTABLE);
+      EditorCell current = editorContext.getSelectedCell();
+      EditorCell toSelect = CellTraversalUtil.getPrevLeaf(current, CellConditions.SELECTABLE);
       SPropertyOperations.set(node, "multiLine", "" + (false));
       editorContext.getEditorComponent().changeSelection(toSelect);
     }

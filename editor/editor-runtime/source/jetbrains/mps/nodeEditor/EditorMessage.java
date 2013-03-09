@@ -17,21 +17,18 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
+import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 import java.awt.*;
-import java.util.*;
 import java.util.List;
 
 public interface EditorMessage extends SimpleEditorMessage {
+
   void doNavigate(EditorComponent editorComponent);
 
   boolean isValid(EditorComponent editorComponent);
-
-  SNode getNode();
-
-  MessageStatus getStatus();
 
   EditorCell getCell(EditorComponent editorComponent);
 
@@ -43,8 +40,6 @@ public interface EditorMessage extends SimpleEditorMessage {
 
   boolean isBackground();
 
-  boolean sameAs(EditorMessage message);
-
   QuickFixProvider getIntentionProvider();
 
   List<QuickFixProvider> getIntentionProviders();
@@ -52,7 +47,4 @@ public interface EditorMessage extends SimpleEditorMessage {
   public void putUserObject(Object key, Object value);
   public Object getUserObject(Object key);
 
-  int getPriority();
-
-  boolean showInGutter();
 }

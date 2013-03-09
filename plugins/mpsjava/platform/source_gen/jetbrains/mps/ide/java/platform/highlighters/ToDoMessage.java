@@ -4,7 +4,7 @@ package jetbrains.mps.ide.java.platform.highlighters;
 
 import jetbrains.mps.nodeEditor.DefaultEditorMessage;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.EditorMessageOwner;
+import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import java.awt.Color;
 import java.awt.Graphics;
 import jetbrains.mps.nodeEditor.EditorComponent;

@@ -17,7 +17,6 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NullSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.CellFinders;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
@@ -25,6 +24,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.cells.CellAction;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.action.SideTransformHintSubstituteActionsHelper;
@@ -47,6 +47,7 @@ public class IntelligentInputUtil {
     }
 
     return editorContext.executeCommand(new Computable<Boolean>() {
+      @Override
       public Boolean compute() {
         return TypeContextManager.getInstance().runTypeCheckingComputation(
           ((EditorComponent)editorContext.getEditorComponent()).getTypecheckingContextOwner(),
@@ -78,9 +79,9 @@ public class IntelligentInputUtil {
     SubstituteInfo info = cell.getSubstituteInfo();
     String smallPattern = pattern.substring(0, pattern.length() - 1);
     String tail = "" + pattern.charAt(pattern.length() - 1);
-    EditorCell nextCell = cell.getNextLeaf();
+    jetbrains.mps.openapi.editor.cells.EditorCell nextCell = CellTraversalUtil.getNextLeaf(cell);
     while (nextCell != null && !nextCell.isSelectable()) {
-      nextCell = nextCell.getNextLeaf();
+      nextCell = CellTraversalUtil.getNextLeaf(nextCell);
     }
 
     if (canCompleteSmallPatternImmediately(info, pattern, "") ||
@@ -447,7 +448,8 @@ public class IntelligentInputUtil {
 
   private static boolean hasSideActions(EditorCell cell, CellSide side, String prefix) {
     final SideTransformHintSubstituteActionsHelper helper = new SideTransformHintSubstituteActionsHelper(cell.getSNode(), side, cell.getRightTransformAnchorTag(), cell.getContext().getOperationContext());
-    NodeSubstituteInfo info = new AbstractNodeSubstituteInfo(cell.getContext()) {
+    SubstituteInfo info = new AbstractNodeSubstituteInfo(cell.getContext()) {
+      @Override
       protected List<SubstituteAction> createActions() {
         return helper.createActions();
       }

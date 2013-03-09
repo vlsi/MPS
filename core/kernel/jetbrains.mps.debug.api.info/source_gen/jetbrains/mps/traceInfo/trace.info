@@ -1234,7 +1234,7 @@
     <nodeInfo nodeId="2522627450234088859" fileName="DebugInfoBuilder.java" startLine="83" startPosition="69" endLine="84" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2522627450234098211" fileName="DebugInfoBuilder.java" startLine="84" startPosition="64" endLine="85" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2522627450234091255" fileName="DebugInfoBuilder.java" startLine="91" startPosition="28" endLine="92" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2522627450234091277" fileName="DebugInfoBuilder.java" startLine="93" startPosition="120" endLine="94" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2522627450234091277" fileName="DebugInfoBuilder.java" startLine="93" startPosition="138" endLine="94" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2522627450234091284" fileName="DebugInfoBuilder.java" startLine="95" startPosition="7" endLine="96" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2522627450234091293" fileName="DebugInfoBuilder.java" startLine="97" startPosition="25" endLine="98" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2522627450234091295" fileName="DebugInfoBuilder.java" startLine="99" startPosition="7" endLine="100" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1285,7 +1285,7 @@
     <scopeInfo nodeId="2522627450234088575" fileName="DebugInfoBuilder.java" startLine="63" startPosition="79" endLine="64" endPosition="13" />
     <scopeInfo nodeId="2522627450234088608" fileName="DebugInfoBuilder.java" startLine="69" startPosition="70" endLine="70" endPosition="109" />
     <scopeInfo nodeId="2522627450234088702" fileName="DebugInfoBuilder.java" startLine="77" startPosition="70" endLine="78" endPosition="110" />
-    <scopeInfo nodeId="2522627450234091276" fileName="DebugInfoBuilder.java" startLine="93" startPosition="120" endLine="94" endPosition="48" />
+    <scopeInfo nodeId="2522627450234091276" fileName="DebugInfoBuilder.java" startLine="93" startPosition="138" endLine="94" endPosition="48" />
     <scopeInfo nodeId="2522627450234091292" fileName="DebugInfoBuilder.java" startLine="97" startPosition="25" endLine="98" endPosition="20" />
     <scopeInfo nodeId="7186895126144896466" fileName="DebugInfoBuilder.java" startLine="114" startPosition="74" endLine="115" endPosition="46" />
     <scopeInfo nodeId="7186895126145018019" fileName="DebugInfoBuilder.java" startLine="119" startPosition="74" endLine="120" endPosition="51" />

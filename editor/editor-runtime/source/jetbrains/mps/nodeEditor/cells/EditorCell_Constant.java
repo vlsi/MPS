@@ -41,15 +41,18 @@ public class EditorCell_Constant extends EditorCell_Label {
     setEditable(editable);
   }
 
+  @Override
   public boolean canPasteText() {
     return isEditable();
   }
 
+  @Override
   public void changeText(String text) {
     setErrorState(!isValidText(text));
     super.changeText(text);
   }
 
+  @Override
   public boolean isValidText(String text) {
     return text.equals(myOriginalText);
   }
@@ -59,6 +62,7 @@ public class EditorCell_Constant extends EditorCell_Label {
   }
 
 
+  @Override
   public void synchronizeViewWithModel() {
     setText(myOriginalText);
     setErrorState(false);

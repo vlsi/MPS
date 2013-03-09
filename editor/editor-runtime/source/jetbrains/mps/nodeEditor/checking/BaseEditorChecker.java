@@ -17,7 +17,7 @@ package jetbrains.mps.nodeEditor.checking;
 
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
-import jetbrains.mps.nodeEditor.EditorMessageOwner;
+import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -32,6 +32,7 @@ public abstract class BaseEditorChecker implements EditorMessageOwner {
   public final Set<EditorMessage> createMessagesProtected(final SNode rootNode, final List<SModelEvent> events, final boolean wasCheckedOnce, final EditorContext editorContext){
     final Set<EditorMessage> result = new HashSet<EditorMessage>();
     performUninterruptableAction(new Runnable() {
+      @Override
       public void run() {
         result.addAll(createMessages(rootNode, events, wasCheckedOnce, editorContext));
       }
@@ -42,6 +43,7 @@ public abstract class BaseEditorChecker implements EditorMessageOwner {
   public final boolean hasDramaticalEventProtected(final List<SModelEvent> events){
     final boolean[] result = {false};
     performUninterruptableAction(new Runnable() {
+      @Override
       public void run() {
         result[0] = hasDramaticalEvent(events);
       }
@@ -52,6 +54,7 @@ public abstract class BaseEditorChecker implements EditorMessageOwner {
   public final boolean isLaterThanProtected(final BaseEditorChecker editorChecker) {
     final boolean[] result = {false};
     performUninterruptableAction(new Runnable() {
+      @Override
       public void run() {
         result[0] = isLaterThan(editorChecker);
       }
@@ -62,6 +65,7 @@ public abstract class BaseEditorChecker implements EditorMessageOwner {
   public final boolean areMessagesChangedProtected(){
     final boolean[] result = {false};
     performUninterruptableAction(new Runnable() {
+      @Override
       public void run() {
         result[0] = areMessagesChanged();
       }
@@ -71,6 +75,7 @@ public abstract class BaseEditorChecker implements EditorMessageOwner {
 
   public final void clearProtected(final SNode node, final EditorComponent editor) {
     performUninterruptableAction(new Runnable() {
+      @Override
       public void run() {
         clear(node,editor);
       }

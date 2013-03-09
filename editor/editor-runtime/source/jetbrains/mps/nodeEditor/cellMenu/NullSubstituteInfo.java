@@ -17,11 +17,13 @@ package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class NullSubstituteInfo implements NodeSubstituteInfo {
+public class NullSubstituteInfo implements SubstituteInfo {
+  @Override
   public List<SubstituteAction> getMatchingActions(String pattern, boolean strictMatching) {
     return new ArrayList<SubstituteAction>();
   }
@@ -31,16 +33,20 @@ public class NullSubstituteInfo implements NodeSubstituteInfo {
     return new ArrayList<SubstituteAction>();
   }
 
+  @Override
   public void invalidateActions() {
   }
 
+  @Override
   public void setOriginalText(String text) {
   }
 
+  @Override
   public String getOriginalText() {
     return null;
   }
 
+  @Override
   public boolean hasExactlyNActions(String pattern, boolean strictMatching, int n) {
     return n == 0;
   }

@@ -19,7 +19,7 @@ import jetbrains.mps.editor.runtime.style.Measure;
 import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.EditorSettings;
-import jetbrains.mps.nodeEditor.cells.APICellAdapter;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 
@@ -74,7 +74,7 @@ public class PunctuationUtil {
       return leftCellHasPunctuationRight(parent);
     }
 
-    EditorCell leftCell = APICellAdapter.getPrevLeaf(currentCell);
+    EditorCell leftCell = CellTraversalUtil.getPrevLeaf(currentCell);
     if (parent.getCellLayout() instanceof CellLayout_Indent && CellLayout_Indent.isNewLineAfter(parent, leftCell)) {
       return true;
     }
@@ -94,7 +94,7 @@ public class PunctuationUtil {
       return rightCellHasPunctuationLeft(parent);
     }
 
-    EditorCell rightCell = APICellAdapter.getNextLeaf(currentCell);
+    EditorCell rightCell = CellTraversalUtil.getNextLeaf(currentCell);
     if (rightCell instanceof EditorCell_Collection) {
       return rightCellHasPunctuationLeft(rightCell);
     }
@@ -105,14 +105,14 @@ public class PunctuationUtil {
     if (cell == null) {
       return true;
     }
-    return APICellAdapter.getLastLeaf(cell).getStyle().get(StyleAttributes.PUNCTUATION_RIGHT);
+    return CellTraversalUtil.getLastLeaf(cell).getStyle().get(StyleAttributes.PUNCTUATION_RIGHT);
   }
 
   static Boolean hasPunctuationLeft(EditorCell cell) {
     if (cell == null) {
       return true;
     }
-    return APICellAdapter.getFirstLeaf(cell).getStyle().get(StyleAttributes.PUNCTUATION_LEFT);
+    return CellTraversalUtil.getFirstLeaf(cell).getStyle().get(StyleAttributes.PUNCTUATION_LEFT);
   }
 
   private static int getHorizontalGap(EditorCell_Collection editorCells) {

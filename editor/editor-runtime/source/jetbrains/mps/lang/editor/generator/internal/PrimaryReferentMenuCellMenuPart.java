@@ -41,6 +41,7 @@ public class PrimaryReferentMenuCellMenuPart implements SubstituteInfoPart, Subs
     return ModelActions.createReferentSubstituteActions(referenceNode, currentReferent, linkDeclaration, editorContext.getOperationContext());
   }
 
+  @Override
   public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
     return (List) createActions(cellContext, (EditorContext) editorContext);
   }

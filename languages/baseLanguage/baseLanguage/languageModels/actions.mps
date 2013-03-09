@@ -6793,21 +6793,17 @@
           <node role="matchingText" roleId="tpdg.1177336013307" type="tpdg.Substitute_SimpleString" typeId="tpdg.1196434649611" id="1210680306631">
             <property name="text" nameId="tpdg.1196434851095" value="sout" />
           </node>
-          <node role="icon" roleId="tpdg.1203073188906" type="tpdg.QueryFunction_SubstituteIcon" typeId="tpdg.1203073162537" id="1210681256507">
-            <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1210681256508">
-              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1210681328767">
-                <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1210681337325">
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ai1m.~IconManager" resolveInfo="IconManager" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ai1m.~IconManager%dgetIconFor(org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cjavax%dswing%dIcon" resolveInfo="getIconFor" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="1219331211447">
-                    <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tpee.1202948039474" resolveInfo="InstanceMethodCallOperation" />
-                  </node>
+          <node role="descriptionText" roleId="tpdg.1177336018902" type="tpdg.Substitute_SimpleString" typeId="tpdg.1196434649611" id="1210680322396">
+            <property name="text" nameId="tpdg.1196434851095" value="Prints a string to System.out" />
+          </node>
+          <node role="iconNode" roleId="tpdg.6400740936063391052" type="tpdg.QueryFunction_SubstituteIconNode" typeId="tpdg.6400740936061763657" id="4824500480023709035">
+            <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4824500480023709036">
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7927316827900283001">
+                <node role="expression" roleId="tpee.1068580123156" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="1219331211447">
+                  <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tpee.1068580123165" resolveInfo="InstanceMethodDeclaration" />
                 </node>
               </node>
             </node>
-          </node>
-          <node role="descriptionText" roleId="tpdg.1177336018902" type="tpdg.Substitute_SimpleString" typeId="tpdg.1196434649611" id="1210680322396">
-            <property name="text" nameId="tpdg.1196434851095" value="Prints a string to System.out" />
           </node>
         </node>
         <node role="part" roleId="tpdg.1177333559040" type="tpdg.SimpleItemSubstitutePart" typeId="tpdg.1177327666243" id="1210681211685">
@@ -6831,24 +6827,20 @@
               </node>
             </node>
           </node>
-          <node role="icon" roleId="tpdg.1203073188906" type="tpdg.QueryFunction_SubstituteIcon" typeId="tpdg.1203073162537" id="1210681424471">
-            <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1210681424472">
-              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1210681424473">
-                <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1210681424474">
-                  <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ai1m.~IconManager" resolveInfo="IconManager" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ai1m.~IconManager%dgetIconFor(org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cjavax%dswing%dIcon" resolveInfo="getIconFor" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="1219331199896">
-                    <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tpee.1202948039474" resolveInfo="InstanceMethodCallOperation" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
           <node role="descriptionText" roleId="tpdg.1177336018902" type="tpdg.Substitute_SimpleString" typeId="tpdg.1196434649611" id="1210681211695">
             <property name="text" nameId="tpdg.1196434851095" value="Prints a string to System.err" />
           </node>
           <node role="matchingText" roleId="tpdg.1177336013307" type="tpdg.Substitute_SimpleString" typeId="tpdg.1196434649611" id="1210681211694">
             <property name="text" nameId="tpdg.1196434851095" value="serr" />
+          </node>
+          <node role="iconNode" roleId="tpdg.6400740936063391052" type="tpdg.QueryFunction_SubstituteIconNode" typeId="tpdg.6400740936061763657" id="4824500480023774112">
+            <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4824500480023774113">
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7927316827902199403">
+                <node role="expression" roleId="tpee.1068580123156" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="7927316827902199404">
+                  <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tpee.1068580123165" resolveInfo="InstanceMethodDeclaration" />
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>

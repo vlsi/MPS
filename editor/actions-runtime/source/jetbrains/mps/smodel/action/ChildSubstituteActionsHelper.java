@@ -16,15 +16,20 @@
 package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.actions.runtime.impl.ChildSubstituteActionsUtil;
-import jetbrains.mps.actions.runtime.impl.NodeIconUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.scope.Scope;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageHierarchyCache;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.constraints.IReferencePresentation;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
@@ -42,7 +47,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
-import javax.swing.Icon;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
@@ -63,6 +67,7 @@ public class ChildSubstituteActionsHelper {
   // Not used
   @Deprecated
   public static final Condition<SNode> TRUE_CONDITION = new Condition<SNode>() {
+    @Override
     public boolean met(SNode object) {
       return true;
     }
@@ -92,21 +97,25 @@ public class ChildSubstituteActionsHelper {
         List<SubstituteAction> resultActions = new ArrayList<SubstituteAction>(allVisibleConcepts.size());
         for (final SNode visibleConcept : allVisibleConcepts) {
           resultActions.add(new DefaultChildNodeSubstituteAction(visibleConcept, parentNode, currentChild, childSetter, context.getScope()) {
+            @Override
             public String getMatchingText(String pattern) {
               return getMatchingText(pattern, true, true);
             }
 
+            @Override
             public String getVisibleMatchingText(String pattern) {
               return getMatchingText(pattern);
             }
 
+            @Override
             public String getDescriptionText(String pattern) {
               String fqName = NameUtil.nodeFQName(visibleConcept);
               return "lang: " + NameUtil.compactNamespace(NameUtil.namespaceFromConceptFQName(fqName));
             }
 
-            public Icon getIconFor(String pattern) {
-              return getIconFor(pattern, true);
+            @Override
+            public boolean isReferentPresentation() {
+              return true;
             }
           });
         }
@@ -185,7 +194,7 @@ public class ChildSubstituteActionsHelper {
   }
 
   /**
-   * TODO: remove this method adter MPS 3.0
+   * TODO: remove this method after MPS 3.0
    *
    * @deprecated since MPS 3.0, createDefaultSubstituteActions() should be used instead
    */
@@ -294,6 +303,7 @@ public class ChildSubstituteActionsHelper {
       myPresentation = presentation;
     }
 
+    @Override
     public String getMatchingText(String pattern) {
       if (myMatchingText == null) {
         if (myPresentation != null) {
@@ -305,6 +315,7 @@ public class ChildSubstituteActionsHelper {
       return myMatchingText;
     }
 
+    @Override
     public String getVisibleMatchingText(String pattern) {
       if (myVisibleMatchingText == null) {
         if (myPresentation != null) {
@@ -316,24 +327,22 @@ public class ChildSubstituteActionsHelper {
       return myVisibleMatchingText;
     }
 
-    public Icon getIconFor(String pattern) {
-      return NodeIconUtil.getIcon(myReferentNode, true);
+    @Override
+    public SNode getIconNode(String pattern) {
+      return myReferentNode;
     }
 
     @Override
-    public int getFontStyleFor(String pattern) {
-      return NodePresentationUtil.getFontStyle(myParentNode, myReferentNode);
+    public boolean isReferentPresentation() {
+      return true;
     }
 
     @Override
-    public int getSortPriority(String pattern) {
-      return NodePresentationUtil.getSortPriority(myParentNode, myReferentNode);
-    }
-
     public String getDescriptionText(String pattern) {
       return "^" + NodePresentationUtil.descriptionText(myReferentNode, true);
     }
 
+    @Override
     public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
       SNode childNode = SModelUtil_new.instantiateConceptDeclaration(NameUtil.nodeFQName(mySmartConcept), model, GlobalScope.getInstance());
       String referentRole = SModelUtil.getGenuineLinkRole(mySmartReference);

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.extapi.module.EditableSModule;
 import jetbrains.mps.project.dependency.modules.DependenciesManager;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -33,7 +34,7 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import java.util.Collection;
 import java.util.List;
 
-public interface IModule extends SModule {
+public interface IModule extends SModule, EditableSModule {
   // events
   // dependency change
   // used languages change
@@ -119,16 +120,6 @@ public interface IModule extends SModule {
   // should be do nothing, remove
   // should be listening
   void invalidateCaches();
-
-  // just for file-backed modules
-  // for now cast!
-  boolean isChanged();
-
-  // ...
-  void setChanged();
-
-  // ...
-  void save();
 
   // AbstractModule#onModuleLoad
   // is it refactorings? move to it

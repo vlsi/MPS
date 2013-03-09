@@ -13,7 +13,7 @@ import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.nodeEditor.NodeHighlightManager;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.EditorMessageOwner;
+import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import java.util.Set;
@@ -24,7 +24,7 @@ import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.nodeEditor.EditorMessage;
+import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.logging.Logger;
@@ -85,7 +85,7 @@ public class HighlightUsages_Action extends BaseAction {
             if (highlight) {
               highlightManager.mark(node, HighlightConstants.NODE_COLOR, "source node", messageOwner);
             } else {
-              for (EditorMessage message : ListSequence.fromList(highlightManager.getMessagesFor(node, messageOwner))) {
+              for (SimpleEditorMessage message : ListSequence.fromList(highlightManager.getMessagesFor(node, messageOwner))) {
                 highlightManager.unmark(message);
               }
             }
@@ -95,7 +95,7 @@ public class HighlightUsages_Action extends BaseAction {
               if (highlight) {
                 highlightManager.mark(((SNode) ref.getSourceNode()), HighlightConstants.USAGES_COLOR, "usage", messageOwner);
               } else {
-                for (EditorMessage message : ListSequence.fromList(highlightManager.getMessagesFor(((SNode) ref.getSourceNode()), messageOwner))) {
+                for (SimpleEditorMessage message : ListSequence.fromList(highlightManager.getMessagesFor(((SNode) ref.getSourceNode()), messageOwner))) {
                   highlightManager.unmark(message);
                 }
               }

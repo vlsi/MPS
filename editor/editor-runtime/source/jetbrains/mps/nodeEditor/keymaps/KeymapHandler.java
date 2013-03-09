@@ -17,9 +17,9 @@ package jetbrains.mps.nodeEditor.keymaps;
 
 import jetbrains.mps.editor.runtime.impl.LanguagesKeymapManager;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
 import jetbrains.mps.openapi.editor.cells.KeyMap.ActionKey;
@@ -62,6 +62,7 @@ public abstract class KeymapHandler<E> {
     final Collection<ActionKey> actionKeys = getActionKeys(event);
     assert !actionKeys.isEmpty();
     return ModelAccess.instance().runReadAction(new Computable<List<Pair<KeyMapAction, EditorCell>>>() {
+      @Override
       public List<Pair<KeyMapAction, EditorCell>> compute() {
         // collect all keymaps available
         List<Pair<KeyMap, EditorCell>> keymapsAndCells = getRegisteredKeymaps(selectedCell, context);
@@ -78,8 +79,10 @@ public abstract class KeymapHandler<E> {
 
   public void executeAction(final KeyMapAction action, EditorCell contextCell, final EditorContext editorContext) {
     editorContext.runWithContextCell(contextCell, new Runnable() {
+      @Override
       public void run() {
         editorContext.executeCommand(new Runnable() {
+          @Override
           public void run() {
             action.execute(editorContext);
           }
@@ -174,9 +177,9 @@ public abstract class KeymapHandler<E> {
     int actualCaretPosition = KeyMapAction.CARET_AT_ANY_POSITION;
     if (selectedCell instanceof EditorCell_Label) {
       EditorCell_Label label = (EditorCell_Label) selectedCell;
-      if (isStrictlyFirstCaretPosition(label) && APICellAdapter.getFirstLeaf(keyMapCell) == selectedCell) {
+      if (isStrictlyFirstCaretPosition(label) && CellTraversalUtil.getFirstLeaf(keyMapCell) == selectedCell) {
         actualCaretPosition = KeyMapAction.CARET_AT_FIRST_POSITION;
-      } else if (isStrictlyLastCaretPosition(label) && APICellAdapter.getLastLeaf(keyMapCell) == selectedCell) {
+      } else if (isStrictlyLastCaretPosition(label) && CellTraversalUtil.getLastLeaf(keyMapCell) == selectedCell) {
         actualCaretPosition = KeyMapAction.CARET_AT_LAST_POSITION;
       } else {
         actualCaretPosition = KeyMapAction.CARET_AT_INTERMEDIATE_POSITION;
@@ -217,6 +220,7 @@ public abstract class KeymapHandler<E> {
 
   private boolean canExecuteKeyMapAction(final KeyMapAction action, EditorCell contextCell, final EditorContext editorContext) {
     return editorContext.runWithContextCell(contextCell, new Computable<Boolean>() {
+      @Override
       public Boolean compute() {
         return action.canExecute(editorContext);
       }

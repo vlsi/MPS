@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.IGeneratorLogger;
+import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
@@ -150,7 +151,7 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
 
   private Message prepare(MessageKind kind, String text, SNode node) {
     Message message = new Message(kind, text);
-    if (node != null && node.getModel() != null && node.getModel() != null && !(node.getModel() instanceof TransientSModel)) {
+    if (node != null && node.getModel() != null && node.getModel() != null && !(node.getModel() .getModule() instanceof TransientModelsModule)) {
       message.setHintObject(new jetbrains.mps.smodel.SNodePointer(node));
     }
     return message;

@@ -1016,7 +1016,7 @@
     <nodeInfo nodeId="6820702584720070327" fileName="CustomConstructorUsage_Editor.java" startLine="98" startPosition="44" endLine="99" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6820702584720070342" fileName="CustomConstructorUsage_Editor.java" startLine="99" startPosition="105" endLine="100" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6820702584720070395" fileName="CustomConstructorUsage_Editor.java" startLine="102" startPosition="141" endLine="103" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6820702584720070423" fileName="CustomConstructorUsage_Editor.java" startLine="108" startPosition="113" endLine="109" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6820702584720070423" fileName="CustomConstructorUsage_Editor.java" startLine="108" startPosition="82" endLine="109" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6820702584720070444" fileName="CustomConstructorUsage_Editor.java" startLine="109" startPosition="210" endLine="110" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6820702584720070453" fileName="CustomConstructorUsage_Editor.java" startLine="110" startPosition="48" endLine="111" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6820702584720070478" fileName="CustomConstructorUsage_Editor.java" startLine="111" startPosition="81" endLine="112" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1049,7 +1049,7 @@
     <nodeInfo nodeId="6820702584720070311" fileName="CustomConstructorUsage_Editor.java" startLine="97" startPosition="144" endLine="101" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6820702584720069074" fileName="CustomConstructorUsage_Editor.java" startLine="81" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="6820702584720070202" fileName="CustomConstructorUsage_Editor.java" startLine="88" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="6820702584720070412" fileName="CustomConstructorUsage_Editor.java" startLine="108" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="6820702584720070412" fileName="CustomConstructorUsage_Editor.java" startLine="108" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="6820702584719569332" fileName="CustomConstructorUsage_Editor.java" startLine="36" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_pubti2_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="6820702584720070272" fileName="CustomConstructorUsage_Editor.java" startLine="95" startPosition="142" endLine="105" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6820702584719764398" fileName="CustomConstructorUsage_Editor.java" startLine="45" startPosition="103" endLine="57" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1057,8 +1057,8 @@
     <nodeInfo nodeId="6820702584719790405" fileName="CustomConstructorUsage_Editor.java" startLine="127" startPosition="103" endLine="139" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6820702584719764398" fileName="CustomConstructorUsage_Editor.java" startLine="45" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createModelAccess_pubti2_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="6820702584719790405" fileName="CustomConstructorUsage_Editor.java" startLine="127" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createModelAccess_pubti2_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="6820702584720069038" fileName="CustomConstructorUsage_Editor.java" startLine="74" startPosition="106" endLine="115" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6820702584720060140" fileName="CustomConstructorUsage_Editor.java" startLine="73" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="6820702584720069038" fileName="CustomConstructorUsage_Editor.java" startLine="74" startPosition="75" endLine="115" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6820702584720060140" fileName="CustomConstructorUsage_Editor.java" startLine="73" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="6820702584720017007" fileName="CustomConstructorUsage_Editor.java" startLine="71" startPosition="44" endLine="119" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6820702584720012686" fileName="CustomConstructorUsage_Editor.java" startLine="71" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljetbrains/mps/nodeEditor/AbstractCellProvider;" />
     <nodeInfo nodeId="6820702584720012686" fileName="CustomConstructorUsage_Editor.java" startLine="69" startPosition="98" endLine="121" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1103,7 +1103,7 @@
     <scopeInfo nodeId="6820702584720069045" fileName="CustomConstructorUsage_Editor.java" startLine="76" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="6820702584720069048" varName="p0" />
     </scopeInfo>
-    <scopeInfo nodeId="6820702584720070415" fileName="CustomConstructorUsage_Editor.java" startLine="108" startPosition="113" endLine="113" endPosition="34">
+    <scopeInfo nodeId="6820702584720070415" fileName="CustomConstructorUsage_Editor.java" startLine="108" startPosition="82" endLine="113" endPosition="34">
       <varInfo nodeId="6820702584720070424" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="6820702584719569332" fileName="CustomConstructorUsage_Editor.java" startLine="36" startPosition="89" endLine="42" endPosition="22">
@@ -1149,7 +1149,7 @@
       <varInfo nodeId="6820702584719790405" varName="editorContext" />
       <varInfo nodeId="6820702584719790405" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6820702584720060145" fileName="CustomConstructorUsage_Editor.java" startLine="74" startPosition="106" endLine="117" endPosition="79">
+    <scopeInfo nodeId="6820702584720060145" fileName="CustomConstructorUsage_Editor.java" startLine="74" startPosition="75" endLine="117" endPosition="79">
       <varInfo nodeId="6820702584720069039" varName="handler" />
     </scopeInfo>
     <scopeInfo nodeId="6820702584720060140" fileName="CustomConstructorUsage_Editor.java" startLine="73" startPosition="0" endLine="119" endPosition="0">

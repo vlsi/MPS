@@ -15,6 +15,7 @@
     <orderEntry type="module" module-name="editor-runtime" />
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="library" name="Idea-plaform" level="project" />
+    <orderEntry type="module" module-name="generator-engine" />
   </component>
 </module>
 

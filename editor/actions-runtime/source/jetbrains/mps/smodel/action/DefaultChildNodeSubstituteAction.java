@@ -79,6 +79,7 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
     return myScope;
   }
 
+  @Override
   public final SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
     SNode parentNode = getSourceNode();
     SNode newChild = createChildNode(getParameterObject(), parentNode.getModel(), pattern);
@@ -86,24 +87,6 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
       return mySetter.execute(parentNode, myCurrentChild, newChild, getScope(), editorContext);
     }
     return null;
-  }
-
-  @Override
-  public int getFontStyleFor(String pattern) {
-    if (getParameterObject() instanceof SNode) {
-      SNode parameterNode = (SNode) getParameterObject();
-      return NodePresentationUtil.getFontStyle(parameterNode, getSourceNode());
-    }
-    return Font.PLAIN;
-  }
-
-  @Override
-  public int getSortPriority(String pattern) {
-    if (getParameterObject() instanceof SNode) {
-      SNode parameterNode = (SNode) getParameterObject();
-      return NodePresentationUtil.getSortPriority(getSourceNode(), parameterNode);
-    }
-    return 0;
   }
 
   public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
@@ -114,6 +97,7 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
     return NodeFactoryManager.createNode(conceptDeclaration, myOldChild, getSourceNode(), model, getScope());
   }
 
+  @Override
   public SNode getActionType(String pattern) {
     SNode node = createChildNode(getParameterObject(), null, pattern);
     return ActionsUtil.isInstanceOfIType(node) ? node : TypeChecker.getInstance().getTypeOf(node);

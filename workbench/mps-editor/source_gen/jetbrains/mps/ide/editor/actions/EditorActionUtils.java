@@ -14,6 +14,7 @@ import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.ChildrenCollectionFinder;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
@@ -41,7 +42,7 @@ public class EditorActionUtils {
     if (!(selection instanceof SingularSelection)) {
       return null;
     }
-    Iterator<jetbrains.mps.nodeEditor.cells.EditorCell> iterator = selection.getSelectedCells().iterator();
+    Iterator<EditorCell> iterator = (Iterator<EditorCell>) ((Iterator) selection.getSelectedCells().iterator());
     if (!(iterator.hasNext())) {
       return null;
     }
@@ -80,8 +81,8 @@ public class EditorActionUtils {
   public static EditorCell getSiblingCollectionForInsert(@NotNull EditorCell cell, boolean forward) {
     // TODO FIXME rewrite without hasSingleRolesAtLeftBoundary, cleanup ChildrenCollectionFinder 
     EditorCell nextLeaf = (forward ?
-      APICellAdapter.getNextLeaf(cell) :
-      APICellAdapter.getPrevLeaf(cell)
+      CellTraversalUtil.getNextLeaf(cell) :
+      CellTraversalUtil.getPrevLeaf(cell)
     );
 
     if ((APICellAdapter.isBigCell(cell) || APICellAdapter.isLastPositionInBigCell(cell)) && ((forward ?
@@ -143,7 +144,7 @@ public class EditorActionUtils {
     if (isOnRightBoundary(cell)) {
       final EditorCell_Collection parentCell = cell.getParent();
       if (parentCell != null) {
-        final EditorCell nextLeaf = APICellAdapter.getNextLeaf(cell);
+        final EditorCell nextLeaf = CellTraversalUtil.getNextLeaf(cell);
         if (nextLeaf != null) {
           final Wrappers._boolean ancestor = new Wrappers._boolean(false);
           ModelAccess.instance().runReadAction(new Runnable() {
@@ -176,7 +177,7 @@ public class EditorActionUtils {
     if (isOnLeftBoundary(cell)) {
       final EditorCell_Collection parentCell = cell.getParent();
       if (parentCell != null) {
-        final EditorCell prevLeaf = APICellAdapter.getPrevLeaf(cell);
+        final EditorCell prevLeaf = CellTraversalUtil.getPrevLeaf(cell);
         if (prevLeaf != null) {
           final Wrappers._boolean ancestor = new Wrappers._boolean(false);
           ModelAccess.instance().runReadAction(new Runnable() {
@@ -188,19 +189,19 @@ public class EditorActionUtils {
             return true;
           }
         }
-        return hasSingleRolesAtLeftBoundary((jetbrains.mps.nodeEditor.cells.EditorCell) parentCell);
+        return hasSingleRolesAtLeftBoundary((EditorCell) parentCell);
       }
     }
     return true;
   }
 
   public static boolean isOnLeftBoundary(EditorCell cell) {
-    EditorCell prevLeaf = APICellAdapter.getPrevLeaf(cell);
+    EditorCell prevLeaf = CellTraversalUtil.getPrevLeaf(cell);
     return prevLeaf == null || prevLeaf.getSNode() != cell.getSNode();
   }
 
   public static boolean isOnRightBoundary(EditorCell cell) {
-    EditorCell nextLeaf = APICellAdapter.getNextLeaf(cell);
+    EditorCell nextLeaf = CellTraversalUtil.getNextLeaf(cell);
     return nextLeaf == null || nextLeaf.getSNode() != cell.getSNode();
   }
 

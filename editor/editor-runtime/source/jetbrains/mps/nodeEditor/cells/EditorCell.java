@@ -20,12 +20,12 @@ import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorMessage;
-import jetbrains.mps.nodeEditor.EditorMessageOwner;
+import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.FocusPolicy;
-import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
+import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -63,10 +63,10 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
   @Deprecated
   EditorContext getEditorContext();
 
-  EditorCell findLeaf(int x, int y, Condition<EditorCell> condition);
+  EditorCell findLeaf(int x, int y, Condition<? super EditorCell> condition);
 
   EditorCell findCellWeak(int x, int y);
-  EditorCell findCellWeak(int x, int y, Condition<EditorCell> condition);
+  EditorCell findCellWeak(int x, int y, Condition<? super EditorCell> condition);
 
   void synchronizeViewWithModel();
 
@@ -141,53 +141,53 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
   void setFocusPolicy(FocusPolicy fp);
 
   // TODO: move to open API
-  List<EditorMessage> getMessages();
-  <T extends EditorMessage> List<T> getMessages(Class<T> clazz);
-  List<EditorMessage> getMessagesForOwner(EditorMessageOwner owner);
+  <T extends SimpleEditorMessage> List<T> getMessages(Class<T> clazz);
+  List<SimpleEditorMessage> getMessagesForOwner(EditorMessageOwner owner);
   boolean hasErrorMessages();
 
   EditorCell_Label getSTHintCell();
 
   // TODO: move to open API
+  @Override
   Style getStyle();
 
   boolean isLeaf();
 
   EditorCell getNextSibling();
-  EditorCell getNextSibling(Condition<EditorCell> condition);
+  EditorCell getNextSibling(Condition<? super EditorCell> condition);
 
   EditorCell getPrevSibling();
-  EditorCell getPrevSibling(Condition<EditorCell> condition);
+  EditorCell getPrevSibling(Condition<? super EditorCell> condition);
 
   EditorCell getNextLeaf();
-  EditorCell getNextLeaf(Condition<EditorCell> condition);
+  EditorCell getNextLeaf(Condition<? super EditorCell> condition);
 
   EditorCell getPrevLeaf();
-  EditorCell getPrevLeaf(Condition<EditorCell> condition);
+  EditorCell getPrevLeaf(Condition<? super EditorCell> condition);
 
   EditorCell getFirstLeaf();
-  EditorCell getFirstLeaf(Condition<EditorCell> condition);
+  EditorCell getFirstLeaf(Condition<? super EditorCell> condition);
 
   EditorCell getLastLeaf();
-  EditorCell getLastLeaf(Condition<EditorCell> condition);
+  EditorCell getLastLeaf(Condition<? super EditorCell> condition);
 
-  EditorCell getFirstDescendant(Condition<EditorCell> condition);
-  EditorCell getLastDescendant(Condition<EditorCell> condition);
+  EditorCell getFirstDescendant(Condition<? super EditorCell> condition);
+  EditorCell getLastDescendant(Condition<? super EditorCell> condition);
 
   EditorCell getLastChild();
   EditorCell getFirstChild();
 
-  EditorCell getEndCell(Condition<EditorCell> condition);
-  EditorCell getHomeCell(Condition<EditorCell> condition);
+  EditorCell getEndCell(Condition<? super EditorCell> condition);
+  EditorCell getHomeCell(Condition<? super EditorCell> condition);
 
-  EditorCell getLeafToLeft(Condition<EditorCell> condition);
-  EditorCell getLeafToRight(Condition<EditorCell> condition);
+  EditorCell getLeafToLeft(Condition<? super EditorCell> condition);
+  EditorCell getLeafToRight(Condition<? super EditorCell> condition);
 
   boolean isAbove(EditorCell cell);
   boolean isBelow(EditorCell cell);
   boolean isToLeft(EditorCell cell);
   boolean isToRight(EditorCell cell);
 
-  EditorCell getUpper(Condition<EditorCell> condition, int baseX);
-  EditorCell getLower(Condition<EditorCell> condition, int baseX);
+  EditorCell getUpper(Condition<? super EditorCell> condition, int baseX);
+  EditorCell getLower(Condition<? super EditorCell> condition, int baseX);
 }

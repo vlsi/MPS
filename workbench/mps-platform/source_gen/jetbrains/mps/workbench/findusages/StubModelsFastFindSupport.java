@@ -25,6 +25,8 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.containers.SetBasedMultiMap;
 import jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor;
@@ -102,6 +104,28 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
     for (Map.Entry<SModel, Collection<SConcept>> e : candidates.entrySet()) {
       FindUsagesManager.collectInstances(e.getKey(), e.getValue(), consumer);
     }
+  }
+
+  @Override
+  public void findModelUsages(Collection<SModel> scope, Set<SModelReference> modelReferences, Consumer<SModel> consumer, Consumer<SModel> processedConsumer) {
+    modelReferences = SetSequence.fromSetWithValues(new HashSet<SModelReference>(), SetSequence.fromSet(modelReferences).where(new IWhereFilter<SModelReference>() {
+      public boolean accept(SModelReference it) {
+        return "java_stub".equals(SModelStereotype.getStereotype(it.getModelName()));
+      }
+    }));
+    MultiMap<SModel, SModelReference> candidates = findCandidates(scope, modelReferences, processedConsumer, new Mapper<SModelReference, String>() {
+      @Override
+      public String value(SModelReference key) {
+        return key.getModelName();
+      }
+    });
+    for (Map.Entry<SModel, Collection<SModelReference>> e : candidates.entrySet()) {
+      if (FindUsagesManager.hasModelUsages(e.getKey(), e.getValue())) {
+        consumer.consume(e.getKey());
+      }
+    }
+
+
   }
 
   private <T> MultiMap<SModel, T> findCandidates(Collection<SModel> models, Set<T> elems, Consumer<SModel> processedConsumer, @Nullable Mapper<T, String> id) {

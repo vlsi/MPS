@@ -28,9 +28,9 @@ import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.*;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -98,9 +98,10 @@ public class ProjectFactory {
               myCreatedSolution.save();
 
               if (myOptions.getCreateModel()) {
-                EditableSModel model = SModuleOperations.createModelWithAdjustments(myCreatedSolution.getModuleReference().getModuleFqName() + ".sandbox",
+                EditableSModel model = SModuleOperations.createModelWithAdjustments(
+                    myCreatedSolution.getModuleReference().getModuleFqName() + ".sandbox",
                     myCreatedSolution.getModelRoots().iterator().next());
-                ((DefaultSModelDescriptor) model).getSModel().addLanguage(myCreatedLanguage.getModuleReference());
+                ((SModelInternal) model.getSModel()).addLanguage(myCreatedLanguage.getModuleReference());
                 model.save();
               }
             }

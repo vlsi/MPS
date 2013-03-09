@@ -29,6 +29,7 @@ import jetbrains.mps.baseLanguage.javastub.asm.ASMExtendsType;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMSuperType;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMUnboundedType;
 import jetbrains.mps.baseLanguage.javastub.ASMNodeId;
+import jetbrains.mps.util.NameUtil;
 
 public class ClassifierCacher {
   private Map<IdIndexEntry, Integer> myResult = new THashMap<IdIndexEntry, Integer>();
@@ -49,6 +50,10 @@ public class ClassifierCacher {
       return;
     }
     myResult.put(new IdIndexEntry(((jetbrains.mps.smodel.SNodeId.Foreign) id).getId(), true), 0);
+  }
+
+  private void modelRef(String packageName) {
+    myResult.put(new IdIndexEntry(packageName + "@java_stub", true), 0);
   }
 
   public void updateClassifier(ClassifierKind kind, ASMClass ac) {
@@ -495,6 +500,7 @@ public class ClassifierCacher {
   private void addClassifierReference(ASMClassType clsType) {
     SNodeId nodeId = ASMNodeId.createId(clsType.getName());
     ref(nodeId);
+    modelRef(NameUtil.namespaceFromLongName(clsType.getName()));
   }
 
   private void addAnnotationMethodReference(ASMClassType annotationType, String method) {

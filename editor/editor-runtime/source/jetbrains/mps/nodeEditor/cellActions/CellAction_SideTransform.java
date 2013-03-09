@@ -36,6 +36,7 @@ public class CellAction_SideTransform extends AbstractCellAction {
     mySide = side;
   }
 
+  @Override
   public boolean canExecute(EditorContext context) {
     return context.getSelectedCell() != null && canCreateRightTransformHint((EditorCell) context.getSelectedCell());
   }
@@ -60,6 +61,7 @@ public class CellAction_SideTransform extends AbstractCellAction {
     } else {
       EditorCell nodeMainCell = selectedCell.getContainingBigCell();
       EditorCell defAnchorCell = nodeMainCell.findChild(CellFinders.byCondition(new Condition<EditorCell>() {
+        @Override
         public boolean met(EditorCell object) {
           return object.hasRightTransformAnchorTag(SideTransformTagUtils.getDefaultSideTransformTag()) && object.getSNode() == node;
         }
@@ -85,6 +87,7 @@ public class CellAction_SideTransform extends AbstractCellAction {
     return anchorCell;
   }
 
+  @Override
   public void execute(EditorContext context) {
     EditorCell selectedCell = (EditorCell) context.getSelectedCell();
     SNode node = selectedCell.getSNode();

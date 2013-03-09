@@ -938,7 +938,7 @@
     <nodeInfo nodeId="8149197049716796535" fileName="BreakpointCreatorsManager.java" startLine="108" startPosition="36" endLine="109" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8149197049716799074" fileName="BreakpointCreatorsManager.java" startLine="110" startPosition="9" endLine="111" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8149197049716796607" fileName="BreakpointCreatorsManager.java" startLine="111" startPosition="129" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8149197049716796745" fileName="BreakpointCreatorsManager.java" startLine="112" startPosition="0" endLine="113" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9131147740779418559" fileName="BreakpointCreatorsManager.java" startLine="112" startPosition="0" endLine="113" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8149197049716796490" fileName="BreakpointCreatorsManager.java" startLine="115" startPosition="5" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4474271214082915153" fileName="BreakpointCreatorsManager.java" startLine="116" startPosition="0" endLine="117" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4474271214082914944" fileName="BreakpointCreatorsManager.java" startLine="128" startPosition="57" endLine="129" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1010,7 +1010,7 @@
     <scopeInfo nodeId="8149197049716796254" fileName="BreakpointCreatorsManager.java" startLine="84" startPosition="41" endLine="90" endPosition="46">
       <varInfo nodeId="8149197049716796614" varName="function" />
     </scopeInfo>
-    <scopeInfo nodeId="8149197049716796523" fileName="BreakpointCreatorsManager.java" startLine="106" startPosition="29" endLine="113" endPosition="49">
+    <scopeInfo nodeId="8149197049716796523" fileName="BreakpointCreatorsManager.java" startLine="106" startPosition="29" endLine="113" endPosition="56">
       <varInfo nodeId="8149197049716799075" varName="concept" />
       <varInfo nodeId="8149197049716796525" varName="conceptFqName" />
     </scopeInfo>

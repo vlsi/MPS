@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
 import org.junit.Test;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.smodel.SModelRepository;
@@ -54,7 +54,7 @@ public class DiskMemoryConflictsTest {
   private Project myProject;
   private Solution myModule;
   private SNode myNodeBackup;
-  private DefaultSModelDescriptor myModelDescriptor;
+  private BaseEditableSModelDescriptor myModelDescriptor;
 
   public DiskMemoryConflictsTest() {
   }
@@ -70,7 +70,7 @@ public class DiskMemoryConflictsTest {
         final boolean[] resultArr = new boolean[1];
         try {
           myProject = project;
-          myModelDescriptor = (DefaultSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(DiskMemoryConflictsTest.MODEL_REFERENCE);
+          myModelDescriptor = (BaseEditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(DiskMemoryConflictsTest.MODEL_REFERENCE);
           myModule = (Solution) myModelDescriptor.getModule();
           ModelAccess.instance().runReadAction(new Runnable() {
             @Override
@@ -298,7 +298,7 @@ public class DiskMemoryConflictsTest {
       ModelAccess.instance().runCommandInEDT(new Runnable() {
         @Override
         public void run() {
-          myModelDescriptor = ((DefaultSModelDescriptor) SModuleOperations.createModelWithAdjustments(MODEL_REFERENCE.getSModelFqName().toString(), myModule.getModelRoots().iterator().next()));
+          myModelDescriptor = ((BaseEditableSModelDescriptor) SModuleOperations.createModelWithAdjustments(MODEL_REFERENCE.getSModelFqName().toString(), myModule.getModelRoots().iterator().next()));
           myModelDescriptor.getSModel().addRootNode(CopyUtil.copyAndPreserveId(myNodeBackup));
           myModelDescriptor.save();
         }

@@ -108,7 +108,7 @@ public class TypeContextManager implements CoreComponent {
           for (SNodeReference nodePointer : new ArrayList<SNodeReference>(myTypeCheckingContexts.keySet())) {
             if (nodePointer == null)continue;
             SNode node = nodePointer.resolve(MPSModuleRepository.getInstance());
-            if (node == null || node.getModel() == null || node.getModel().getModelDescriptor()==null ||
+            if (node == null || node.getContainingModel() == null ||
               jetbrains.mps.util.SNodeOperations.isDisposed(node) || modelRef.equals(nodePointer.getModelReference())) {
               removeContextForNode(nodePointer);
             }

@@ -31,7 +31,6 @@
     <orderEntry type="module" module-name="ant-mps-common" scope="PROVIDED" />
     <orderEntry type="module" module-name="baseLanguage-search" scope="PROVIDED" />
     <orderEntry type="module" module-name="baseLanguage-util" scope="PROVIDED" />
-    <orderEntry type="module" module-name="build-deprecated" scope="PROVIDED" />
     <orderEntry type="module" module-name="Closures-runtime" scope="PROVIDED" />
     <orderEntry type="module" module-name="collections-runtime" scope="PROVIDED" />
     <orderEntry type="module" module-name="debugger-api-api" scope="PROVIDED" />

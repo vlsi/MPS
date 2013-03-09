@@ -67,7 +67,7 @@ public class NewModuleUtil {
     }
 
     sandbox.save();
-    sandboxModel.save();
+    ((EditableSModel) sandboxModel).save();
     return sandbox;
   }
 

@@ -9,7 +9,7 @@ import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.project.IModule;
@@ -89,7 +89,7 @@ public class EditorResolver implements IResolver {
     }
 
     @Override
-    protected EditorCell createRootCell(List<SModelEvent> events) {
+    protected jetbrains.mps.nodeEditor.cells.EditorCell createRootCell(List<SModelEvent> events) {
       return getEditorContext().createRootCell(getEditedNode(), events);
     }
   }

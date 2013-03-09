@@ -45,14 +45,17 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Item implements Substitu
     final IOperationContext context = editorContext.getOperationContext();
     return Collections.<SubstituteAction>singletonList(
         new DefaultChildNodeSubstituteAction(defaultConceptOfChild, parentNode, currentChild, setter, context.getScope()) {
+          @Override
           protected String getMatchingText(String pattern, boolean referent_presentation, boolean visible) {
             return AbstractCellMenuPart_ReplaceChild_Item.this.getMatchingText();
           }
 
+          @Override
           public String getDescriptionText(String pattern) {
             return AbstractCellMenuPart_ReplaceChild_Item.this.getDescriptionText();
           }
 
+          @Override
           public SNode createChildNode(Object parameterConcept, SModel model, String pattern) {
             SNode parameterNode = (SNode) parameterConcept;
             if (isCustomCreateChildNode()) {
@@ -68,6 +71,7 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Item implements Substitu
         });
   }
 
+  @Override
   public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
     return (List) createActions(cellContext, (EditorContext) editorContext);
   }

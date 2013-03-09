@@ -34,11 +34,6 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   @Override
-  public boolean isReadOnly() {
-    return true;
-  }
-
-  @Override
   @NotNull
   public StubModelDataSource getSource() {
     return (StubModelDataSource) super.getSource();
@@ -47,7 +42,7 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
   //------------common descriptor stuff-------------------
 
   @Override
-  public synchronized jetbrains.mps.smodel.SModel getSModel() {
+  public synchronized jetbrains.mps.smodel.SModel getSModelInternal() {
     if (mySModel == null) {
       mySModel = createModel();
       mySModel.setModelDescriptor(this);

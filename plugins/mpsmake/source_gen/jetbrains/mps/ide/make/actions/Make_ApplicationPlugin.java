@@ -27,6 +27,7 @@ public class Make_ApplicationPlugin extends BaseApplicationPlugin {
 
   public void createGroups() {
     // actions w/o parameters 
+    addAction(new BuildAllActions_Action());
     addAction(new BuildAllBehaviors_Action());
     addAction(new BuildAllConstraints_Action());
     addAction(new BuildAllEditors_Action());

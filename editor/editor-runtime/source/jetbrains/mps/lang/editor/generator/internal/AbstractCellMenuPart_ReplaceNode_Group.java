@@ -58,14 +58,17 @@ public abstract class AbstractCellMenuPart_ReplaceNode_Group implements Substitu
     for (final Object parameterObject : parameterObjects) {
       actions.add(new AbstractNodeSubstituteAction(null, null, node) {
 
+        @Override
         public String getMatchingText(String pattern, boolean referent_presentation, boolean visible) {
           return AbstractCellMenuPart_ReplaceNode_Group.this.getMatchingText(parameterObject);
         }
 
+        @Override
         public String getDescriptionText(String pattern) {
           return AbstractCellMenuPart_ReplaceNode_Group.this.getDescriptionText(parameterObject);
         }
 
+        @Override
         public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
           SNode newNode = createReplacementNode(parameterObject, node, node.getModel(), context.getScope(), context, editorContext);
           if (newNode != node) {
@@ -81,6 +84,7 @@ public abstract class AbstractCellMenuPart_ReplaceNode_Group implements Substitu
     return actions;
   }
 
+  @Override
   public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
     return (List) createActions(cellContext, (EditorContext) editorContext);
   }

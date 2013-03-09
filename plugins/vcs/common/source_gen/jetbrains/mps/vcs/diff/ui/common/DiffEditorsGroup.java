@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import java.awt.Point;
 import java.awt.Rectangle;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -119,14 +119,14 @@ public class DiffEditorsGroup {
     }
   }
 
-  private static SNode check_s6qw4f_a0a0c0a1a5(jetbrains.mps.openapi.editor.cells.EditorCell checkedDotOperand) {
+  private static SNode check_s6qw4f_a0a0c0a1a5(EditorCell checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSNode();
     }
     return null;
   }
 
-  private static jetbrains.mps.smodel.SModel check_s6qw4f_a0d0a1a5(SNode checkedDotOperand) {
+  private static SModel check_s6qw4f_a0d0a1a5(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModel();
     }
@@ -154,21 +154,21 @@ public class DiffEditorsGroup {
     return null;
   }
 
-  private static SNode check_s6qw4f_a0a0a0a0b6(EditorCell checkedDotOperand) {
+  private static SNode check_s6qw4f_a0a0a0a0b6(jetbrains.mps.nodeEditor.cells.EditorCell checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSNode();
     }
     return null;
   }
 
-  private static jetbrains.mps.smodel.SNode check_s6qw4f_a0a0a0a1a0a0b6(jetbrains.mps.smodel.SModel checkedDotOperand, SNodeId selectionId) {
+  private static SNode check_s6qw4f_a0a0a0a1a0a0b6(SModel checkedDotOperand, SNodeId selectionId) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNode(selectionId);
     }
     return null;
   }
 
-  private static jetbrains.mps.smodel.SModel check_s6qw4f_a0a0a0a0b0a0a1g(SNode checkedDotOperand) {
+  private static SModel check_s6qw4f_a0a0a0a0b0a0a1g(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModel();
     }

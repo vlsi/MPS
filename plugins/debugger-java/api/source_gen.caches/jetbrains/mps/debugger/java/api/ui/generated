@@ -2,10 +2,12 @@
 <dependencies version="2" modelHash="bf41oqi9y2iqtvi4amdey6fb1ahdtpy">
   <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.icons(MPS.Platform/com.intellij.icons@java_stub)" />
   <dep model="r:4aa0c7da-6277-43fd-90b0-e616e98e56e0(jetbrains.mps.lang.resources.generator.template.main@generator)" hash="-65yjz5ofvmtff0oq1433gachvyzhkhe" />
-  <common hash="a7gxm8dywy9xdktor5a65elun46vhin" dependsOnNodes="true">
+  <dep model="r:96c2681b-d258-4b28-81fb-0850456a3cee(jetbrains.mps.debugger.java.api.ui)" hash="bf41oqi9y2iqtvi4amdey6fb1ahdtpy" />
+  <common hash="a7gxm8dywy9xdktor5a65elun46vhin">
     <dep root="3432969378036014082" />
     <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.icons(MPS.Platform/com.intellij.icons@java_stub)" />
     <dep model="r:4aa0c7da-6277-43fd-90b0-e616e98e56e0(jetbrains.mps.lang.resources.generator.template.main@generator)" />
+    <dep model="r:96c2681b-d258-4b28-81fb-0850456a3cee(jetbrains.mps.debugger.java.api.ui)" />
     <file name="IconContainer.java" />
   </common>
   <source id="3432969378036014082" name="Icons" hash="eiyrt4obgtl04jp25blwypam26zm6t5" dependsOnCreated="true">

@@ -71,7 +71,7 @@ public class CustomConstructorUsage_Editor extends DefaultNodeEditor {
       public AbstractCellProvider invoke() {
         return new AbstractCellProvider() {
           @Override
-          public jetbrains.mps.nodeEditor.cells.EditorCell createEditorCell(EditorContext editorContext) {
+          public EditorCell createEditorCell(EditorContext editorContext) {
             RefNodeListHandler handler = new RefNodeListHandler(node, "element", editorContext) {
               @Override
               public SNode createNodeToInsert(EditorContext p0) {
@@ -105,7 +105,7 @@ public class CustomConstructorUsage_Editor extends DefaultNodeEditor {
                 }
               }
 
-              public jetbrains.mps.nodeEditor.cells.EditorCell createSeparatorCell(EditorContext editorContext) {
+              public EditorCell createSeparatorCell(EditorContext editorContext) {
                 EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), SPropertyOperations.getString(SLinkOperations.getTarget(node, "customConstructor", false), "separator"));
                 editorCell.setSelectable(false);
                 editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");

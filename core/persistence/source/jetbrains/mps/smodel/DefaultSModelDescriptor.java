@@ -13,9 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.extapi.model.GeneratableSModel;
+import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.findUsages.fastfind.FastFindSupport;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportProvider;
@@ -86,10 +87,10 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
   }
 
   @Override
-  public final jetbrains.mps.smodel.SModel getSModel() {
+  public final DefaultSModel getSModelInternal() {
     synchronized (myModel) {
       ModelLoadingState oldState = myModel.getState();
-      jetbrains.mps.smodel.SModel res = myModel.getModel(ModelLoadingState.ROOTS_LOADED);
+      DefaultSModel res = myModel.getModel(ModelLoadingState.ROOTS_LOADED);
       if (res == null) return null; // this is when we are in recursion
       res.setModelDescriptor(this);
       if (oldState != myModel.getState()) {
@@ -97,6 +98,16 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
       }
       return res;
     }
+  }
+
+  @Override
+  public void replace(SModelData modelData) {
+    ModelAccess.assertLegalWrite();
+
+    if (!(modelData instanceof DefaultSModel)) {
+      throw new IllegalArgumentException();
+    }
+    replaceModel((DefaultSModel) modelData, ModelLoadingState.FULLY_LOADED);
   }
 
   @Override
@@ -132,7 +143,7 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
 
     SModel model = result.getModel();
     if (result.getState() == ModelLoadingState.FULLY_LOADED) {
-      boolean needToSave = ((jetbrains.mps.smodel.SModel) model).updateSModelReferences() || ((jetbrains.mps.smodel.SModel) model).updateModuleReferences();
+      boolean needToSave = ((jetbrains.mps.smodel.SModelInternal) model).updateSModelReferences() || ((jetbrains.mps.smodel.SModelInternal) model).updateModuleReferences();
 
       if (needToSave && !source.isReadOnly()) {
         setChanged(true);
@@ -181,7 +192,7 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
 
   @Override
   protected boolean saveModel() {
-    SModel smodel = getSModel();
+    SModel smodel = getSModelInternal();
     if (smodel instanceof InvalidSModel) {
       // we do not save stub model to not overwrite the real model
       return false;
@@ -255,7 +266,7 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
     int latestVersion = getStructureModificationLog().getLatestVersion(getSModelReference());
     myStructureModificationLog = null;  // we don't need to keep log in memory
     if (latestVersion != -1) {
-      ((jetbrains.mps.smodel.SModel) loadedSModel).setVersion(latestVersion);
+      ((jetbrains.mps.smodel.SModelInternal) loadedSModel).setVersion(latestVersion);
       LOG.error("Version for model " + getSModelReference().getSModelFqName() + " was not set.");
     }
   }

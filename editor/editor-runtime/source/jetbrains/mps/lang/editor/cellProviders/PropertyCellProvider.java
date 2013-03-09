@@ -23,13 +23,13 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.cellMenu.BooleanPropertySubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
-import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.Primitives;
 import jetbrains.mps.smodel.SNodeOperations;
@@ -44,6 +44,7 @@ public class PropertyCellProvider extends CellProviderWithRole {
   private String myPropertyName;
   private SNode myPropertyDeclaration;
 
+  @Override
   public void setRole(Object role) {
     myPropertyName = InternUtil.intern(role.toString());
     myPropertyDeclaration = ((jetbrains.mps.smodel.SNode) getSNode()).getPropertyDeclaration(myPropertyName);
@@ -59,6 +60,7 @@ public class PropertyCellProvider extends CellProviderWithRole {
     super(node, context);
   }
 
+  @Override
   public EditorCell createEditorCell(EditorContext context) {
     PropertyAccessor propertyAccessor = new PropertyAccessor(getSNode(), myPropertyName, myReadOnly, myAllowsEmptyTarget, context);
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, getSNode());
@@ -71,19 +73,23 @@ public class PropertyCellProvider extends CellProviderWithRole {
     return editorCell;
   }
 
+  @Override
   public SNode getRoleAttribute() {
     SNode node = getSNode();
     return AttributeOperations.getPropertyAttribute(node, null, myPropertyName);
   }
 
   // gets a kind of attributes possibly hanging on this provider's role
+  @Override
   public Class getRoleAttributeClass() {
     return AttributeKind.Property.class;
   }
 
-  public NodeSubstituteInfo createDefaultSubstituteInfo() {
-    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<NodeSubstituteInfo>() {
-      public NodeSubstituteInfo compute() {
+  @Override
+  public SubstituteInfo createDefaultSubstituteInfo() {
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SubstituteInfo>() {
+      @Override
+      public SubstituteInfo compute() {
         if (myPropertyDeclaration == null) {
           return null;
         }
@@ -100,6 +106,7 @@ public class PropertyCellProvider extends CellProviderWithRole {
     });
   }
 
+  @Override
   public CellContext getCellContext() {
     return myPropertyDeclaration != null ? new PropertyCellContext(getSNode(), myPropertyDeclaration) : super.getCellContext();
   }

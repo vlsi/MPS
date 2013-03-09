@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.nodeEditor.actions;
 
-import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.openapi.editor.ActionHandler;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.smodel.ModelAccess;
@@ -37,6 +37,7 @@ public class ActionHandlerImpl implements ActionHandler {
     myEditorComponent = editorComponent;
   }
 
+  @Override
   public boolean executeAction(EditorCell editorCell, CellActionType type) {
     return executeAction(editorCell, getApplicableCellAction(editorCell, type));
   }
@@ -49,6 +50,7 @@ public class ActionHandlerImpl implements ActionHandler {
 
     if (action.executeInCommand()) {
       getEditorContext().executeCommand(new Runnable() {
+        @Override
         public void run() {
           action.execute(getEditorContext());
         }
@@ -59,6 +61,7 @@ public class ActionHandlerImpl implements ActionHandler {
     return true;
   }
 
+  @Override
   public CellAction getApplicableCellAction(final EditorCell editorCell, final CellActionType type) {
     if (editorCell == null) {
       return null;
@@ -87,7 +90,7 @@ public class ActionHandlerImpl implements ActionHandler {
   }
 
   private CellAction getOverridingRightBoundaryAction(CellAction action, EditorCell editorCell, CellActionType type) {
-    for (EditorCell_Collection currentCell = editorCell.getParent(); currentCell != null && APICellAdapter.getLastLeaf(currentCell) == editorCell; currentCell = currentCell.getParent()) {
+    for (EditorCell_Collection currentCell = editorCell.getParent(); currentCell != null && CellTraversalUtil.getLastLeaf(currentCell) == editorCell; currentCell = currentCell.getParent()) {
       CellAction currentCellAction = currentCell.getAction(type);
       if (currentCellAction != null) {
         action = currentCellAction;

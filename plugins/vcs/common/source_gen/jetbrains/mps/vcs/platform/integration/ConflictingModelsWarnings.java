@@ -78,7 +78,7 @@ public class ConflictingModelsWarnings implements EditorWarningsProvider {
     return null;
   }
 
-  private static SModelInternal check_bmsafs_a0a0b(jetbrains.mps.smodel.SModel checkedDotOperand) {
+  private static SModelInternal check_bmsafs_a0a0b(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }

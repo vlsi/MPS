@@ -271,7 +271,7 @@ public class SModelRepository implements CoreComponent {
     ModelAccess.assertLegalWrite();
 
     if (mySModelRepositoryListeners.isEmpty()) {
-      ((jetbrains.mps.smodel.SModel) oldSModel).dispose();
+      ((jetbrains.mps.smodel.SModelInternal) oldSModel).dispose();
       return;
     }
 
@@ -305,14 +305,9 @@ public class SModelRepository implements CoreComponent {
   private void disposeOldModels() {
     for (SModel oldModel : myReloadingDescriptorMap.values()) {
       if (oldModel != null) {
-        ((jetbrains.mps.smodel.SModel) oldModel).dispose();
+        ((jetbrains.mps.smodel.SModelInternal) oldModel).dispose();
       }
     }
-  }
-
-
-  public void replaceModel(DefaultSModelDescriptor descriptor, DefaultSModel newModel, final ModelLoadingState state) {
-    descriptor.replaceModel(newModel, state);
   }
 
   //---------------------------events----------------------------

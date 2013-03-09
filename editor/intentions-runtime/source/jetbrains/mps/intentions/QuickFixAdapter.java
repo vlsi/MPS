@@ -37,18 +37,22 @@ public class QuickFixAdapter extends BaseIntention  {
     myIsError = isError;
   }
 
+  @Override
   public String getConcept() {
     return null;
   }
 
+  @Override
   public boolean isParameterized() {
     return false;
   }
 
+  @Override
   public String getDescription(SNode node, EditorContext editorContext) {
     return myQuickFix.getDescription(node);
   }
 
+  @Override
   public boolean isApplicable(SNode node, EditorContext editorContext) {
     /*Quick fixes are added "manually" by typesystem rules.
     * Having a quick fix in messages already means that is is applicable.
@@ -56,10 +60,12 @@ public class QuickFixAdapter extends BaseIntention  {
     return true;
   }
 
+  @Override
   public boolean isAvailableInChildNodes() {
     return true;
   }
 
+  @Override
   public void execute(SNode node, EditorContext editorContext) {
     EditorCell selectedCell = editorContext.getSelectedCell();
     int caretX = -1;
@@ -82,16 +88,19 @@ public class QuickFixAdapter extends BaseIntention  {
     }
   }
 
+  @Override
   public IntentionType getType() {
     return myIsError ? IntentionType.ERROR : IntentionType.NORMAL;
     //return IntentionType.QUICKFIX;
   }
 
+  @Override
   public String getLocationString() {
     return null;  //todo?
   }
 
   //if generated returns source, if not returns null
+  @Override
   public SNode getNodeByIntention() {
     String classFQName = myQuickFix.getClass().getName();
     SModelReference reference = SModelReference.fromString(NameUtil.namespaceFromLongName(classFQName));

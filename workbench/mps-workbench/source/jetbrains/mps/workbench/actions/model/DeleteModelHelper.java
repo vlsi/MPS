@@ -16,6 +16,8 @@
 package jetbrains.mps.workbench.actions.model;
 
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.findUsages.FindUsagesManager;
+import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -28,15 +30,30 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.project.*;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.refactoring.framework.BaseRefactoring;
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.refactoring.framework.IRefactoringTarget;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
+
+import java.util.Collections;
+import java.util.Set;
 
 public class DeleteModelHelper {
   private static final Logger LOG = Logger.getLogger(DeleteModelHelper.class);
@@ -76,7 +93,8 @@ public class DeleteModelHelper {
     } else if (contextModule instanceof Generator) {
       deleteModelFromGenerator((Generator) contextModule, modelDescriptor);
     } else {
-      LOG.warning("Module type " + contextModule.getClass().getSimpleName() + " is not supported by delete refactoring. Changes will not be saved automatically for modules of this type.");
+      LOG.warning(
+        "Module type " + contextModule.getClass().getSimpleName() + " is not supported by delete refactoring. Changes will not be saved automatically for modules of this type.");
     }
 
     if (deleteFiles && deleteIfAsked) {
@@ -95,7 +113,7 @@ public class DeleteModelHelper {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
-        if (modelDescriptor.getReference().resolve(MPSModuleRepository.getInstance())!=modelDescriptor) return;
+        if (modelDescriptor.getReference().resolve(MPSModuleRepository.getInstance()) != modelDescriptor) return;
         RefactoringAccess.getInstance().getRefactoringFacade().execute(context);
       }
     });
@@ -164,13 +182,16 @@ public class DeleteModelHelper {
       } else if (modelOwner instanceof Generator) {
         deleteModelFromGenerator((Generator) modelOwner, modelDescriptor);
       } else if (modelOwner != null) {
-        LOG.warning("Module type " + modelOwner.getClass().getSimpleName() + " is not supported by delete refactoring. Changes will not be saved automatically for modules of this type.");
+        LOG.warning(
+          "Module type " + modelOwner.getClass().getSimpleName() + " is not supported by delete refactoring. Changes will not be saved automatically for modules of this type.");
       }
 
       // delete imports from available models, helps if there are no references to deleted model
-      for (SModel md : SModelRepository.getInstance().getModelDescriptors()) {
-        if (SModelStereotype.isUserModel(md) && new ModelFindOperations(md).hasImportedModel(modelDescriptor)) {
-          ((jetbrains.mps.smodel.SModel) md.getSModel()).deleteModelImport(modelDescriptor.getReference());
+      Set<SModel> usages = FindUsagesManager.getInstance().findUsages(Collections.singleton((SModelReference) modelDescriptor.getReference()),
+        SearchType.MODEL_USAGES, GlobalScope.getInstance(), new EmptyProgressMonitor());
+      for (SModel md : usages) {
+        if (SModelStereotype.isUserModel(md)) {
+          ((SModelInternal) md.getSModel()).deleteModelImport(modelDescriptor.getReference());
         }
       }
 

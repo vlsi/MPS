@@ -94,7 +94,7 @@ public class TransientModelsModule extends ClassLoadingModule {
   }
 
   public boolean addModelToKeep(SModel model, boolean force) {
-    assert model instanceof TransientSModel;
+    assert model .getModule() instanceof TransientModelsModule;
     String modelRef = model.getReference().toString();
     if (force) {
       myModelsToKeep.add(modelRef);
@@ -114,7 +114,7 @@ public class TransientModelsModule extends ClassLoadingModule {
   }
 
   public boolean isModelToKeep(SModel model) {
-    assert model instanceof TransientSModel;
+    assert model .getModule() instanceof TransientModelsModule;
     return myModelsToKeep.contains(model.getReference().toString());
   }
 
@@ -269,11 +269,6 @@ public class TransientModelsModule extends ClassLoadingModule {
     @Override
     public IModule getModule() {
       return TransientModelsModule.this;
-    }
-
-    @Override
-    public boolean isReadOnly() {
-      return true;
     }
 
     @Override

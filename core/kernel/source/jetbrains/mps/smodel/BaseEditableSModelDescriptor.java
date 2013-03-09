@@ -13,8 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
 
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.logging.Logger;
@@ -32,7 +33,7 @@ import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 /**
  * evgeny, 11/21/12
  */
-public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorWithSource implements EditableSModelDescriptor {
+public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorWithSource implements EditableSModel, EditableSModelDescriptor {
 
   private static final Logger LOG = Logger.getLogger(BaseEditableSModelDescriptor.class);
 
@@ -117,7 +118,7 @@ public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorW
     if (source.getFile().getPath().equals(newModelFile.getPath())) return;
 
     IFile oldFile = source.getFile();
-    SModel model = getSModel();
+    SModel model = getSModelInternal();
     fireBeforeModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
     source.setFile(newModelFile);
     updateDiskTimestamp();
@@ -158,11 +159,11 @@ public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorW
     }
 
     String oldFqName = getReference().getModelName();
-    SModel model = getSModel();
+    SModel model = getSModelInternal();
     fireBeforeModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelName));
 
-    SModelReference newModelReference = new SModelReference(SModelFqName.fromString(newModelName), myModelReference.getSModelId());
-    ((jetbrains.mps.smodel.SModel) model).changeModelReference(newModelReference);
+    SModelReference newModelReference = new SModelReference(SModelFqName.fromString(newModelName), getReference().getSModelId());
+    ((SModelInternal) model).changeModelReference(newModelReference);
 
     if (!changeFile) {
       save();
@@ -188,7 +189,7 @@ public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorW
       }
     }
 
-    myModelReference = newModelReference;
+    updateReferenceAfterRename(newModelReference);
 
     fireModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelName));
   }

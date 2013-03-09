@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.actions.runtime.impl.NodeIconUtil;
-import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -27,7 +25,6 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.Icon;
-import java.awt.Font;
 
 public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAction {
   private static final Logger LOG = Logger.getLogger(AbstractNodeSubstituteAction.class);
@@ -60,42 +57,57 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
     throw new UnsupportedOperationException();
   }
 
+  @Override
   public SNode getSourceNode() {
     return mySourceNode;
   }
 
+  @Override
   public SNode getOutputConcept() {
     return myOutputConcept;
   }
 
+  @Override
   public final Object getParameterObject() {
     return myParameterObject;
   }
 
+  @Override
   public String getMatchingText(String pattern) {
     return getMatchingText(pattern, false, false);
   }
 
+  @Override
   public String getVisibleMatchingText(String pattern) {
     return getMatchingText(pattern, false, true);
   }
 
+  @Override
   public String getDescriptionText(String pattern) {
     return getDescriptionText(pattern, false);
   }
 
+  @Override
+  public SNode getIconNode(String pattern) {
+    return myParameterObject instanceof SNode ? (SNode) myParameterObject : null;
+  }
+
+  @Override
+  public boolean isReferentPresentation() {
+    return false;
+  }
+
+  @Override
   public Icon getIconFor(String pattern) {
-    return getIconFor(pattern, false);
+    return null;
   }
 
-  public int getFontStyleFor(String pattern) {
-    return Font.PLAIN;
-  }
-
+  @Override
   public SNode getActionType(String pattern) {
     return null;
   }
 
+  @Override
   public SNode getActionType(String pattern, EditorCell contextCell) {
     return getActionType(pattern);
   }
@@ -114,13 +126,7 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
     return "";
   }
 
-  public Icon getIconFor(String pattern, boolean referent_presentation) {
-    if (myParameterObject instanceof SNode) {
-      return NodeIconUtil.getIcon((SNode) myParameterObject, referent_presentation);
-    }
-    return IdeIcons.DEFAULT_ICON;
-  }
-
+  @Override
   public boolean canSubstituteStrictly(String pattern) {
     if (pattern == null || getMatchingText(pattern) == null) return false;
     return getMatchingText(pattern).equals(pattern);
@@ -129,6 +135,7 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
   /**
    * @param pattern . NULL if pattern is not available yet
    */
+  @Override
   public boolean canSubstitute(String pattern) {
     if (pattern == null || pattern.length() == 0) {
       return true;
@@ -150,10 +157,12 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
     return matchingText.startsWith(pattern);
   }
 
+  @Override
   public final SNode substitute(@Nullable final EditorContext context, final String pattern) {
     final SNode[] newNode = new SNode[1];
 
     Runnable runnable = new Runnable() {
+      @Override
       public void run() {
         if (context != null) {
           // completion can be invoked by typing invalid stuff into exising cells, revert it back to the model state
@@ -177,10 +186,6 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
     }
 
     return newNode[0];
-  }
-
-  public int getSortPriority(String pattern) {
-    return 0;
   }
 
   public String toString() {

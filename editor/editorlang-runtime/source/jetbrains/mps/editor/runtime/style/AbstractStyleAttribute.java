@@ -34,6 +34,7 @@ public abstract class AbstractStyleAttribute<T> implements StyleAttribute<T> {
     }
   }
 
+  @Override
   public String getName() {
     return myName;
   }
@@ -42,10 +43,12 @@ public abstract class AbstractStyleAttribute<T> implements StyleAttribute<T> {
     return myName;
   }
 
+  @Override
   public int getIndex() {
     assert myIndex != -1;
     return myIndex;
   }
 
+  @Override
   public abstract T combine(T parentValue, T currentValue);
 }

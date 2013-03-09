@@ -35,7 +35,7 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
       public AbstractCellProvider invoke() {
         return new AbstractCellProvider() {
           @Override
-          public jetbrains.mps.nodeEditor.cells.EditorCell createEditorCell(EditorContext context) {
+          public EditorCell createEditorCell(EditorContext context) {
             EditorCell_Collection collection = jetbrains.mps.nodeEditor.cells.EditorCell_Collection.createVertical(context, node);
             collection.addEditorCell(new EditorCell_Constant(context, node, "Concept function help:"));
             if (SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "shortDescription") != null) {
@@ -52,7 +52,7 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
               EditorCell_Constant message = new EditorCell_Constant(context, node, alias + " : " + description);
               collection.addEditorCell(message);
             }
-            return (jetbrains.mps.nodeEditor.cells.EditorCell) collection;
+            return collection;
           }
         };
       }

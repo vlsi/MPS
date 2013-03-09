@@ -47,7 +47,7 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
 
   @Override
   public void save() {
-    org.jetbrains.mps.openapi.model.SModel model = getSModel();
+    org.jetbrains.mps.openapi.model.SModel model = getSModelInternal();
     for (SNode tf : ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.samples.plainText.structure.TextFile"))) {
       try {
         OutputStream os = ((MultiStreamDataSource) getSource()).openOutputStream(SPropertyOperations.getString(tf, "name"));
@@ -79,7 +79,7 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
   }
 
   @Override
-  public synchronized SModel getSModel() {
+  public synchronized SModel getSModelInternal() {
     if (myModel == null) {
       myModel = loadSModel();
       ((SModelInternal) myModel).setModelDescriptor(this);

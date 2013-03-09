@@ -22,6 +22,8 @@ import com.intellij.ui.components.JBList;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.editor.runtime.impl.NodeSubstituteActionsComparator;
+import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -34,17 +36,21 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.WindowsUtil;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.DefaultListModel;
+import javax.swing.Icon;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
@@ -58,6 +64,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.Window;
@@ -127,8 +134,8 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       getPopupWindow().setRelativeCell(cell);
       myPatternEditorLocation = new Point(anchor.x + cell.getX() + cell.getLeftInset(), anchor.y + cell.getY() + cell.getTopInset());
       myPatternEditorSize = new Dimension(
-        cell.getWidth() - cell.getLeftInset() - cell.getRightInset() + 1,
-        cell.getHeight() - cell.getTopInset() - cell.getBottomInset() + 1);
+          cell.getWidth() - cell.getLeftInset() - cell.getRightInset() + 1,
+          cell.getHeight() - cell.getTopInset() - cell.getBottomInset() + 1);
     }
   }
 
@@ -210,6 +217,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
   private void rebuildMenuEntries() {
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         myMenuEmpty = false;
         final String pattern = getPatternEditor().getPattern();
@@ -227,7 +235,11 @@ public class NodeSubstituteChooser implements KeyboardHandler {
             private int getSortPriority(SubstituteAction a) {
               Integer result = mySortPriorities.get(a);
               if (result == null) {
-                result = a.getSortPriority(pattern);
+                if (a.getParameterObject() instanceof SNode) {
+                  result = NodePresentationUtil.getSortPriority(a.getSourceNode(), (SNode) a.getParameterObject());
+                } else {
+                  result = 0;
+                }
                 mySortPriorities.put(a, result);
               }
               return result;
@@ -242,6 +254,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
               return result;
             }
 
+            @Override
             public int compare(SubstituteAction i1, SubstituteAction i2) {
               boolean strictly1 = i1.canSubstituteStrictly(pattern);
               boolean strictly2 = i2.canSubstituteStrictly(pattern);
@@ -284,14 +297,17 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         if (mySubstituteActions.size() == 0) {
           myMenuEmpty = true;
           mySubstituteActions.add(new AbstractNodeSubstituteAction() {
+            @Override
             public String getMatchingText(String pattern) {
               return "No variants for \"" + getPatternEditor().getPattern() + "\"";
             }
 
+            @Override
             public String getVisibleMatchingText(String pattern) {
               return getMatchingText(pattern);
             }
 
+            @Override
             public SNode doSubstitute(@Nullable final jetbrains.mps.openapi.editor.EditorContext editorContext, String pattern) {
               return null;
             }
@@ -332,6 +348,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     return text.length();
   }
 
+  @Override
   public boolean processKeyPressed(EditorContext editorContext, KeyEvent keyEvent) {
     if (getPatternEditor().processKeyPressed(keyEvent)) {
       if (myPopupActivated) {
@@ -357,6 +374,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     return false;
   }
 
+  @Override
   public boolean processKeyTyped(EditorContext editorContext, KeyEvent keyEvent) {
     if (getPatternEditor().processKeyTyped(keyEvent)) {
       if (myPopupActivated) {
@@ -372,6 +390,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     return false;
   }
 
+  @Override
   public boolean processKeyReleased(EditorContext editorContext, KeyEvent keyEvent) {
     return false;
   }
@@ -496,7 +515,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
     String prefix = pattern.substring(0, pattern.length() - 1);
     if (myNodeSubstituteInfo.hasExactlyNActions(pattern, false, 0) &&
-      myNodeSubstituteInfo.hasExactlyNActions(prefix, true, 1)) {
+        myNodeSubstituteInfo.hasExactlyNActions(prefix, true, 1)) {
 
       EditorCell cell = myEditorComponent.getSelectedCell();
       if (cell instanceof EditorCell_Label) {
@@ -536,9 +555,11 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     };
     private NodeItemCellRenderer myCellRenderer;
     private PopupWindowPosition myPosition = PopupWindowPosition.BOTTOM;
-    private JScrollPane myScroller = ScrollPaneFactory.createScrollPane(myList, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+    private JScrollPane myScroller = ScrollPaneFactory.createScrollPane(myList, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
+        JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
     private EditorCell myRelativeCell;
     ComponentAdapter myComponentListener = new ComponentAdapter() {
+      @Override
       public void componentMoved(ComponentEvent e) {
         if (myRelativeCell == null) return;
         NodeSubstituteChooser.this.setLocationRelative(myRelativeCell);
@@ -561,18 +582,22 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       myList.setSelectionForeground(SELECTED_FOREGROUND_COLOR);
 
       myList.addMouseListener(new MouseAdapter() {
+        @Override
         public void mousePressed(MouseEvent e) {
           repaintPopupMenu();
           ModelAccess.instance().runReadAction(new Runnable() {
+            @Override
             public void run() {
               updatePatternEditor();
             }
           });
         }
 
+        @Override
         public void mouseClicked(MouseEvent e) {
           if (e.getClickCount() == 2) {
             ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+              @Override
               public void run() {
                 doSubstituteSelection();
               }
@@ -593,6 +618,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     }
 
 
+    @Override
     public void dispose() {
       getOwner().removeComponentListener(myComponentListener);
 
@@ -623,6 +649,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     public String getSelectedText(final String pattern) {
       if (getSelectionIndex() != -1) {
         String result = ModelAccess.instance().runReadAction(new Computable<String>() {
+          @Override
           public String compute() {
             return mySubstituteActions.get(getSelectionIndex()).getMatchingText(pattern);
           }
@@ -636,7 +663,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       Component component = myEditorComponent;
       Point anchor = component.getLocationOnScreen();
       Point location =
-        new Point(anchor.x + myRelativeCell.getX() + myRelativeCell.getLeftInset(), anchor.y + myRelativeCell.getY() + myRelativeCell.getHeight());
+          new Point(anchor.x + myRelativeCell.getX() + myRelativeCell.getLeftInset(), anchor.y + myRelativeCell.getY() + myRelativeCell.getHeight());
 
       Rectangle deviceBounds = WindowsUtil.findDeviceBoundsAt(location);
 
@@ -686,17 +713,21 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       myCellRenderer.setLightweightMode(true);
       try {
         myList.setModel(new ListModel() {
+          @Override
           public int getSize() {
             return mySubstituteActions.size();
           }
 
+          @Override
           public Object getElementAt(int index) {
             return mySubstituteActions.get(index);
           }
 
+          @Override
           public void addListDataListener(ListDataListener l) {
           }
 
+          @Override
           public void removeListDataListener(ListDataListener l) {
           }
         });
@@ -733,8 +764,10 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       add(myRight, BorderLayout.EAST);
     }
 
+    @Override
     public Component getListCellRendererComponent(final JList list, final Object value, int index, final boolean isSelected, boolean cellHasFocus) {
       ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
         public void run() {
           setupThis(list, value, isSelected);
         }
@@ -744,19 +777,38 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     }
 
     private void setupThis(JList list, Object value, boolean isSelected) {
-      INodeSubstituteAction action = (INodeSubstituteAction) value;
+      SubstituteAction action = (SubstituteAction) value;
       String pattern = getPatternEditor().getPattern();
 
       if (!myLightweightMode) {
         try {
-          myLeft.setIcon(action.getIconFor(pattern));
+          Icon icon = null;
+          // Remove this if() after MPS 3.0
+          if (action instanceof INodeSubstituteAction) {
+            icon = ((INodeSubstituteAction) action).getIconFor(pattern);
+          }
+          if (icon == null) {
+            SNode iconNode = action.getIconNode(pattern);
+            if (iconNode != null) {
+              icon = (SNodeUtil.isInstanceOfConceptDeclaration(iconNode) && !(action.isReferentPresentation())) ?
+                  IconManager.getIconForConceptFQName(NameUtil.nodeFQName(iconNode)) : IconManager.getIconFor(iconNode);
+            } else {
+              icon = IdeIcons.DEFAULT_ICON;
+            }
+          }
+          myLeft.setIcon(icon);
         } catch (Throwable t) {
           LOG.error(t);
         }
       }
 
       try {
-        int style = action.getFontStyleFor(pattern);
+        int style;
+        if (action.getParameterObject() instanceof SNode) {
+          style = NodePresentationUtil.getFontStyle(action.getSourceNode(), (SNode) action.getParameterObject());
+        } else {
+          style = Font.PLAIN;
+        }
         int oldStyle = myLeft.getFont().getStyle();
 
         if (oldStyle != style) {

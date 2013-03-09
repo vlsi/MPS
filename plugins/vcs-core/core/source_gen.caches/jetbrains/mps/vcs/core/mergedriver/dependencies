@@ -3,12 +3,14 @@
   <dependency className="jetbrains.mps.vcs.core.mergedriver.AbstractContentMerger" file="AbstractContentMerger.java">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="jetbrains.mps.vcs.core.mergedriver.FileContent" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.core.mergedriver.CompositeMerger" file="CompositeMerger.java">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="jetbrains.mps.vcs.core.mergedriver.FileContent" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.vcs.core.mergedriver.AbstractContentMerger" />
   </dependency>
@@ -17,12 +19,21 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="jetbrains.mps.vcs.core.mergedriver.FileContent" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.vcs.core.mergedriver.AbstractContentMerger" />
   </dependency>
-  <dependency className="jetbrains.mps.vcs.core.mergedriver.FileMerger" file="FileMerger.java">
+  <dependency className="jetbrains.mps.vcs.core.mergedriver.FileContent" file="FileContent.java">
+    <classNode dependClassName="java.io.ByteArrayInputStream" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.FileInputStream" />
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.io.InputStream" />
+    <classNode dependClassName="jetbrains.mps.util.FileUtil" />
+    <classNode dependClassName="jetbrains.mps.util.ReadUtil" />
+  </dependency>
+  <dependency className="jetbrains.mps.vcs.core.mergedriver.FileMerger" file="FileMerger.java">
+    <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.FileOutputStream" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.OutputStream" />
@@ -32,8 +43,8 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
-    <classNode dependClassName="jetbrains.mps.util.ReadUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.core.mergedriver.AbstractContentMerger" />
+    <classNode dependClassName="jetbrains.mps.vcs.core.mergedriver.FileContent" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.core.mergedriver.FileType" file="FileType.java">
     <classNode dependClassName="java.io.File" />
@@ -48,7 +59,6 @@
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.core.mergedriver.JavaDependenciesMerger" file="JavaDependenciesMerger.java">
-    <classNode dependClassName="java.io.ByteArrayInputStream" />
     <classNode dependClassName="java.io.ByteArrayOutputStream" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.OutputStream" />
@@ -64,6 +74,7 @@
     <classNode dependClassName="jetbrains.mps.make.java.ModelDependencies" />
     <classNode dependClassName="jetbrains.mps.make.java.RootDependencies" />
     <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
+    <classNode dependClassName="jetbrains.mps.vcs.core.mergedriver.FileContent" />
     <classNode dependClassName="org.jdom.Document" />
     <classNode dependClassName="org.jdom.JDOMException" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
@@ -132,11 +143,11 @@
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.smodel.DefaultSModel" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelFqName" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.RoleIdsComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelReadException" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
+    <classNode dependClassName="jetbrains.mps.vcs.core.mergedriver.FileContent" />
     <classNode dependClassName="jetbrains.mps.vcs.core.mergedriver.MergerRoleIdsHandler" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.merge.MergeSession" />
@@ -151,6 +162,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
+    <classNode dependClassName="jetbrains.mps.vcs.core.mergedriver.FileContent" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.vcs.core.mergedriver.AbstractContentMerger" />
   </dependency>
@@ -163,6 +175,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="jetbrains.mps.vcs.core.mergedriver.FileContent" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.tmatesoft.svn.core.internal.wc.FSMergerBySequence" />
     <classNode dependClassName="org.tmatesoft.svn.core.internal.wc.SVNDiffConflictChoiceStyle" />

@@ -171,7 +171,7 @@ public class ModelReader4 implements IModelReader {
         }
       }
       if (aspectModelUID != null) {
-        ((jetbrains.mps.smodel.SModel) model).addAdditionalModelVersion(SModelReference.fromString(aspectModelUID), version);
+        ((jetbrains.mps.smodel.SModelInternal) model).addAdditionalModelVersion(SModelReference.fromString(aspectModelUID), version);
       }
     }
   }

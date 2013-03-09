@@ -121,7 +121,7 @@ public class Table_Editor extends DefaultNodeEditor {
         };
       }
     };
-    EditorCell_Collection editorCell = EditorCell_Table.createTable(editorContext, node, creator.createTableModel(node, editorContext), "Table_3p37vj_c0");
+    jetbrains.mps.openapi.editor.cells.EditorCell_Collection editorCell = EditorCell_Table.createTable(editorContext, node, creator.createTableModel(node, editorContext), "Table_3p37vj_c0");
     editorCell.setCellId("Table_3p37vj_c0_0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);

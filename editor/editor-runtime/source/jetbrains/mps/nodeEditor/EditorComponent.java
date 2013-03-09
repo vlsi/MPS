@@ -101,6 +101,8 @@ import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.KeyMapAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
+import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
+import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -109,6 +111,7 @@ import jetbrains.mps.smodel.EventsCollector;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
@@ -205,7 +208,8 @@ import java.util.Stack;
 import java.util.TreeSet;
 import java.util.WeakHashMap;
 
-public abstract class EditorComponent extends JComponent implements Scrollable, DataProvider, ITypeContextOwner, TooltipComponent, jetbrains.mps.openapi.editor.EditorComponent {
+public abstract class EditorComponent extends JComponent implements Scrollable, DataProvider, ITypeContextOwner, TooltipComponent,
+  jetbrains.mps.openapi.editor.EditorComponent {
   private static final Logger LOG = Logger.getLogger(EditorComponent.class);
   private static final boolean TRACE_ENABLED = false;
   public static final String EDITOR_POPUP_MENU_ACTIONS = MPSActions.EDITOR_POPUP_GROUP;
@@ -268,11 +272,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private final List<LeftMarginMouseListener> myLeftMarginPressListeners = new ArrayList<LeftMarginMouseListener>(0);
 
   private EditorSettingsListener mySettingsListener = new EditorSettingsListener() {
+    @Override
     public void settingsChanged() {
       rebuildEditorContent();
     }
   };
   private ReloadListener myReloadListener = new ReloadAdapter() {
+    @Override
     public void onAfterReload() {
       ModelAccess.instance().runReadInEDT(new Runnable() {
         @Override
@@ -370,6 +376,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     setFocusCycleRoot(true);
     setFocusTraversalPolicy(new FocusTraversalPolicy() {
+      @Override
       public Component getComponentAfter(Container aContainer, Component aComponent) {
         if (myIsInFiguresHierarchy) {
           executeComponentAction(jetbrains.mps.openapi.editor.cells.CellActionType.NEXT);
@@ -377,6 +384,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         return myIsInFiguresHierarchy ? aContainer : null;
       }
 
+      @Override
       public Component getComponentBefore(Container aContainer, Component aComponent) {
         if (myIsInFiguresHierarchy) {
           executeComponentAction(jetbrains.mps.openapi.editor.cells.CellActionType.PREV);
@@ -384,14 +392,17 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         return myIsInFiguresHierarchy ? aContainer : null;
       }
 
+      @Override
       public Component getFirstComponent(Container aContainer) {
         return myIsInFiguresHierarchy ? aContainer : null;
       }
 
+      @Override
       public Component getLastComponent(Container aContainer) {
         return myIsInFiguresHierarchy ? aContainer : null;
       }
 
+      @Override
       public Component getDefaultComponent(Container aContainer) {
         return myIsInFiguresHierarchy ? aContainer : null;
       }
@@ -409,6 +420,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myScrollPane.setViewportView(this);
     myScrollPane.getViewport().addChangeListener(new ChangeListener() {
 
+      @Override
       public void stateChanged(ChangeEvent e) {
         deactivateSubstituteChooser();
       }
@@ -489,34 +501,40 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myActionMap.put(jetbrains.mps.openapi.editor.cells.CellActionType.SHOW_MESSAGE, new ShowMessage());
 
     registerKeyboardAction(new AbstractAction() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         goToNextErrorCell(false);
       }
     }, KeyStroke.getKeyStroke("F2"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     registerKeyboardAction(new AbstractAction() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         goToNextErrorCell(true);
       }
     }, KeyStroke.getKeyStroke("shift F2"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     registerKeyboardAction(new AbstractAction() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         goToNextHighlightedCell(false);
       }
     }, KeyStroke.getKeyStroke("F3"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     registerKeyboardAction(new AbstractAction() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         goToNextHighlightedCell(true);
       }
     }, KeyStroke.getKeyStroke("shift F3"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     registerKeyboardAction(new AbstractAction() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         final EditorCell cell = getSelectedCell();
         if (cell == null) return;
         ModelAccess.instance().runReadAction(new Runnable() {
+          @Override
           public void run() {
             showPopupMenu(cell.getX(), cell.getY());
           }
@@ -525,6 +543,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }, KeyStroke.getKeyStroke("CONTEXT_MENU"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     addMouseListener(new MouseAdapter() {
+      @Override
       public void mousePressed(final MouseEvent e) {
         if (areMouseEventsBlocked()) {
           return;
@@ -536,6 +555,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
       }
 
+      @Override
       public void mouseClicked(MouseEvent e) {
         if (areMouseEventsBlocked()) {
           return;
@@ -548,6 +568,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
       }
 
+      @Override
       public void mouseReleased(MouseEvent e) {
         if (areMouseEventsBlocked()) {
           return;
@@ -560,14 +581,17 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     });
 
     addKeyListener(new KeyAdapter() {
+      @Override
       public void keyPressed(final KeyEvent e) {
         processKeyPressed(e);
       }
 
+      @Override
       public void keyTyped(KeyEvent e) {
         processKeyTyped(e);
       }
 
+      @Override
       public void keyReleased(final KeyEvent e) {
         processKeyReleased(e);
       }
@@ -601,6 +625,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myScrollPane.setRowHeaderView(myLeftHighlighter);
 
     addFocusListener(new FocusListener() {
+      @Override
       public void focusGained(FocusEvent e) {
         if (isDisposed()) {
           return;
@@ -627,10 +652,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         repaint();
       }
 
+      @Override
       public void focusLost(FocusEvent e) {
         repaint();
         if (myNodeSubstituteChooser.getWindow() != null &&
-          (myNodeSubstituteChooser.getWindow().isAncestorOf(e.getOppositeComponent()) || myNodeSubstituteChooser.getWindow() == e.getOppositeComponent()))
+          (myNodeSubstituteChooser.getWindow().isAncestorOf(
+            e.getOppositeComponent()) || myNodeSubstituteChooser.getWindow() == e.getOppositeComponent()))
           return;
         deactivateSubstituteChooser();
       }
@@ -644,6 +671,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     CaretBlinker.getInstance().registerEditor(this);
 
     KeyboardFocusManager.getCurrentKeyboardFocusManager().addPropertyChangeListener("focusOwner", myFocusListener = new PropertyChangeListener() {
+      @Override
       public void propertyChange(PropertyChangeEvent evt) {
         Component focusOwner = KeyboardFocusManager.getCurrentKeyboardFocusManager().getFocusOwner();
         if (EditorComponent.this.isAncestorOf(focusOwner)) {
@@ -659,6 +687,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
 
     addFocusListener(new FocusAdapter() {
+      @Override
       public void focusLost(FocusEvent e) {
         commitAll();
       }
@@ -732,6 +761,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myVerticalScrollBar;
   }
 
+  @Override
   public SNode getSelectedNode() {
     EditorCell selectedCell = getSelectedCell();
     if (selectedCell == null) {
@@ -740,6 +770,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return selectedCell.getSNode();
   }
 
+  @Override
   public List<SNode> getSelectedNodes() {
     Selection selection = mySelectionManager.getSelection();
     return selection != null ? selection.getSelectedNodes() : Collections.<SNode>emptyList();
@@ -768,6 +799,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       return;
     }
     new CellNavigator(this) {
+      @Override
       boolean isSuitableCell(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
         if (APICellAdapter.hasErrorMessages(cell)) {
           return true;
@@ -783,8 +815,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       return;
     }
     new CellNavigator(this) {
+      @Override
       boolean isSuitableCell(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
-        for (EditorMessage m : getHighlightManager().getMessagesFor(cell.getSNode())) {
+        for (SimpleEditorMessage m : getHighlightManager().getMessagesFor(cell.getSNode())) {
           if (m.getOwner() == getHighlightMessagesOwner()) {
             return true;
           }
@@ -794,6 +827,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }.goToNextCell(backwards);
   }
 
+  @Override
   public SNode getEditedNode() {
     return myNode;
   }
@@ -803,12 +837,15 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myVirtualFile;
   }
 
+  @Override
   public SNodeReference getEditedNodePointer() {
     return myNodePointer;
   }
 
+  @Override
   public String getMPSTooltipText(final MouseEvent event) {
     return ModelAccess.instance().tryRead(new Computable<String>() {
+      @Override
       public String compute() {
         if (myRootCell == null) {
           return null;
@@ -826,6 +863,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @Override
   public Point getToolTipLocation(final MouseEvent event) {
     return ModelAccess.instance().tryRead(new Computable<Point>() {
+      @Override
       public Point compute() {
         if (myRootCell == null) {
           return null;
@@ -846,6 +884,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   public void updateStatusBarMessage() {
     ModelAccess.instance().runReadInEDT(new Runnable() {
+      @Override
       public void run() {
         if (!isFocusOwner()) return;
         if (getOperationContext() == null || getOperationContext().getProject() == null) return;
@@ -956,11 +995,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     setOperationContext(operationContext);
     editNode(node);
-    setReadOnly(node == null || node.getModel() == null || node.getModel().isReadOnly());
+    setReadOnly(node == null || node.getModel() == null || SModelOperations.isReadOnly(node.getModel()));
   }
 
   protected void editNode(final SNode node) {
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         IOperationContext operationContext = getOperationContext();
         disposeTypeCheckingContext();
@@ -1106,10 +1146,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     getExternalComponent().repaint();
   }
 
-  protected Set<EditorMessage> getMessages() {
-    return new LinkedHashSet<EditorMessage>(myHighlightManager.getMessages());
+  protected Set<SimpleEditorMessage> getMessages() {
+    return new LinkedHashSet<SimpleEditorMessage>(myHighlightManager.getMessages());
   }
 
+  @Override
   public IOperationContext getOperationContext() {
     return myOperationContext;
   }
@@ -1137,6 +1178,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private void processPopupMenu(final MouseEvent e) {
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         showPopupMenu(e);
       }
@@ -1168,6 +1210,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   public void executeIntention(final Intention intention, final SNode node, final jetbrains.mps.openapi.editor.EditorContext context) {
     context.executeCommand(new Runnable() {
+      @Override
       public void run() {
         try {
           intention.execute(node, context);
@@ -1213,6 +1256,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myContainer;
   }
 
+  @Override
   public EditorContext getEditorContext() {
     return myEditorContext;
   }
@@ -1259,6 +1303,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myEventsCollector.flush();
   }
 
+  @Override
   public void dispose() {
     if (myDisposed) throw new IllegalStateException(myDisposedTrace);
     fireEditorWillBeDisposed();
@@ -1303,6 +1348,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return selectedNode != null && !((jetbrains.mps.smodel.SNode) selectedNode).isDisposed() && selectedNode.getModel() != null;
   }
 
+  @Override
   public boolean isDisposed() {
     return myDisposed;
   }
@@ -1324,7 +1370,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     StringBuilder sb = new StringBuilder("editor (" + this + ") is invalid");
     if (myNode != null) {
       sb.append(", myNode is disposed");
-      StackTraceElement[] modelDisposedTrace = ((jetbrains.mps.smodel.SModel) model).getDisposedStacktrace();
+      StackTraceElement[] modelDisposedTrace = ((jetbrains.mps.smodel.SModelInternal) model).getDisposedStacktrace();
       if (modelDisposedTrace != null) {
         for (StackTraceElement element : modelDisposedTrace) {
           sb.append("\nat ");
@@ -1364,9 +1410,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
    */
   private boolean isInvalid() {
     return isInvalidLightweight() ||
-      getEditedNode().getModel() == null ||
       jetbrains.mps.util.SNodeOperations.isModelDisposed(getEditedNode().getModel()) ||
-      getEditedNode().getModel().getModelDescriptor() == null;
+      getEditedNode().getContainingModel() == null;
   }
 
   /*
@@ -1436,13 +1481,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     // Sometimes EditorComponent doesn't react on ModelReplaced notifications.
     // Adding this assertion to ensure the reason is not in incorrectly removed listener (dependencies collection logic)
-    if (myNode != null && myNode.getModel() != null) {
-      SModel model = myNode.getModel();
-      SModel modelDescriptor = model.getModelDescriptor();
-      boolean registered = modelDescriptor.getReference().resolve(MPSModuleRepository.getInstance()) != modelDescriptor;
-
-      if (modelDescriptor != null && registered) {
-        //assert myModelDescriptorsWithListener.contains(modelDescriptor) : "Listener was not added to a containing model of current node. Editor: " + EditorComponent.this;
+    if (myNode != null && myNode.getContainingModel() != null) {
+      SModel model = myNode.getContainingModel();
+      // For models created by Diff Editor this condition is false
+      boolean registered = model.getReference().resolve(MPSModuleRepository.getInstance()) == model;
+      if (registered) {
+        assert myModelDescriptorsWithListener.contains(
+          model) : "Listener was not added to a containing model of current node. Editor: " + EditorComponent.this;
       }
     }
 
@@ -1488,6 +1533,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return result;
   }
 
+  @Override
   public EditorCell getRootCell() {
     return myRootCell;
   }
@@ -1576,6 +1622,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     final CellAction action = getComponentAction(type);
     if (action != null && action.executeInCommand()) {
       executeCommand(new Runnable() {
+        @Override
         public void run() {
           jetbrains.mps.openapi.editor.EditorContext editorContext = getEditorContext();
           if (!editorContext.getOperationContext().isValid()) return;
@@ -1588,8 +1635,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return false;
   }
 
+  @Override
   public CellAction getComponentAction(final jetbrains.mps.openapi.editor.cells.CellActionType type) {
     return ModelAccess.instance().runReadAction(new Computable<CellAction>() {
+      @Override
       public CellAction compute() {
         CellAction action = myActionMap.get(type);
         if (action != null && action.canExecute(getEditorContext())) {
@@ -1642,8 +1691,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myLeftHighlighter.unHighlight(cell);
   }
 
+  @Override
   public void selectNode(final SNode node) {
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         EditorCell nodeCell = findNodeCell(node);
         if (nodeCell != null) {
@@ -1655,6 +1706,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   public void selectNode(final SNode node, final String cellId) {
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         EditorCell nodeCell = findCellWithId(node, cellId);
         if (nodeCell != null) {
@@ -1680,6 +1732,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     changeSelection(cell.getLastLeaf(CellConditions.SELECTABLE));
   }
 
+  @Override
   @Nullable
   public EditorCell findNodeCell(final SNode node) {
     WeakReference<jetbrains.mps.openapi.editor.cells.EditorCell> weakReference = myNodesToBigCellsMap.get(node);
@@ -1697,7 +1750,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return (EditorCell) findNodeCellWithRole(rootCell, role, node);
   }
 
-  private jetbrains.mps.openapi.editor.cells.EditorCell findNodeCellWithRole(jetbrains.mps.openapi.editor.cells.EditorCell rootCell, String role, SNode node) {
+  private jetbrains.mps.openapi.editor.cells.EditorCell findNodeCellWithRole(jetbrains.mps.openapi.editor.cells.EditorCell rootCell, String role,
+    SNode node) {
     if (role == null) return null;
     if (role.equals(APICellAdapter.getCellRole(rootCell)) && node == rootCell.getSNode()) {
       return rootCell;
@@ -1712,6 +1766,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return null;
   }
 
+  @Override
   public EditorCell findCellWithId(SNode node, @NotNull String id) {
     EditorCell bigCell = findNodeCell(node);
 
@@ -1722,7 +1777,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return (EditorCell) findCellWithIdWithingBigCell(bigCell, id, node);
   }
 
-  private jetbrains.mps.openapi.editor.cells.EditorCell findCellWithIdWithingBigCell(jetbrains.mps.openapi.editor.cells.EditorCell root, String id, SNode node) {
+  private jetbrains.mps.openapi.editor.cells.EditorCell findCellWithIdWithingBigCell(jetbrains.mps.openapi.editor.cells.EditorCell root, String id,
+    SNode node) {
     if (id == null) {
       return null;
     }
@@ -1746,6 +1802,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return null;
   }
 
+  @Override
   public void rebuildEditorContent() {
     LOG.assertLog(ModelAccess.instance().isInEDT(), "You should do this in EDT");
 
@@ -1763,6 +1820,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     getEditorContext().pushTracerTask("Rebuilding Editor Content", true);
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         if (getComponents().length > 0) {
           removeAll();
@@ -1774,6 +1832,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
         getEditorContext().pushTracerTask("Running swap editor cell action", true);
         runSwapCellsActions(new Runnable() {
+          @Override
           public void run() {
             setRootCell(createRootCell(events));
           }
@@ -1863,6 +1922,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private void goByCurrentReference() {
     final DataContext dataContext = DataManager.getInstance().getDataContext(this);
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      @Override
       public void run() {
         AnAction action = ActionManager.getInstance().getAction(MPSActions.EDITOR_GOTO_DECLARATION);
         if (action != null) {
@@ -1877,11 +1937,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     final jetbrains.mps.openapi.editor.cells.EditorCell selectedCell = getSelectedCell();
     if (selectedCell != null) {
       ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
         public void run() {
           final HighlighterMessage message = getHighlighterMessageFor(selectedCell);
           if (message == null) return;
           final IErrorReporter herror = message.getErrorReporter();
           SwingUtilities.invokeLater(new Runnable() {
+            @Override
             public void run() {
               String s = message.getMessage();
               final MPSErrorDialog dialog = new MPSErrorDialog(myEditorContext.getMainFrame(), s, message.getStatus().getPresentation(), false);
@@ -1889,13 +1951,16 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
                 final boolean hasAdditionalRuleIds = !herror.getAdditionalRulesIds().isEmpty();
                 final JButton button = new JButton();
                 AbstractAction action = new AbstractAction("Go To Rule") {
+                  @Override
                   public void actionPerformed(ActionEvent e) {
                     if (hasAdditionalRuleIds) {
                       JPopupMenu popupMenu = new JPopupMenu();
                       for (final Pair<String, String> id : herror.getAdditionalRulesIds()) {
                         popupMenu.add(new AbstractAction("Go To Rule " + id.o2) {
+                          @Override
                           public void actionPerformed(ActionEvent e) {
                             ModelAccess.instance().runWriteInEDT(new Runnable() {
+                              @Override
                               public void run() {
                                 GoToTypeErrorRuleUtil.goToRuleById(myOperationContext, id);
                                 dialog.dispose();
@@ -1905,11 +1970,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
                         });
                       }
                       popupMenu.add(new AbstractAction("Go To Immediate Rule") {
+                        @Override
                         public void actionPerformed(ActionEvent e) {
                           ModelAccess.instance().runWriteInEDT(new Runnable() {
+                            @Override
                             public void run() {
-                              GoToTypeErrorRuleUtil.goToRuleById(myOperationContext, new Pair<String, String>(herror.getRuleModel(),
-                                herror.getRuleId()));
+                              GoToTypeErrorRuleUtil.goToRuleById(myOperationContext,
+                                new Pair<String, String>(herror.getRuleModel(),
+                                  herror.getRuleId()));
                               dialog.dispose();
                             }
                           });
@@ -1918,6 +1986,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
                       popupMenu.show(dialog, button.getX(), button.getY() + button.getHeight());
                     } else {
                       ModelAccess.instance().runWriteInEDT(new Runnable() {
+                        @Override
                         public void run() {
                           GoToTypeErrorRuleUtil.goToRuleById(myOperationContext, new Pair<String, String>(herror.getRuleModel(),
                             herror.getRuleId()));
@@ -2053,6 +2122,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
+  @Override
   public void scrollToNode(SNode node) {
     EditorCell cell = findNodeCell(node);
     if (cell != null) {
@@ -2067,6 +2137,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     scrollToCell(getSelectedCell());
   }
 
+  @Override
   public void scrollToCell(@NotNull jetbrains.mps.openapi.editor.cells.EditorCell cell) {
     if (getVisibleRect().isEmpty()) {
       return;
@@ -2142,6 +2213,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return rectangle;
   }
 
+  @Override
   protected void paintComponent(Graphics gg) {
     Graphics2D g = (Graphics2D) gg;
 
@@ -2191,6 +2263,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   }
 
+  @Override
   public Dimension getPreferredSize() {
     if (myRootCell == null) {
       JViewport viewport = myScrollPane.getViewport();
@@ -2200,10 +2273,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return new Dimension(myRootCell.getWidth() + myShiftX + 10, myRootCell.getHeight() + myShiftY + 10);
   }
 
+  @Override
   public Dimension getPreferredScrollableViewportSize() {
     return getPreferredSize();
   }
 
+  @Override
   public int getScrollableUnitIncrement(Rectangle visibleRect, int orientation, int direction) {
     if (orientation == SwingConstants.VERTICAL) {
       return 20;
@@ -2212,18 +2287,22 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
+  @Override
   public int getScrollableBlockIncrement(Rectangle visibleRect, int orientation, int direction) {
     return visibleRect.height;
   }
 
+  @Override
   public boolean getScrollableTracksViewportWidth() {
     return myScrollPane.getViewport().getWidth() > getPreferredSize().width;
   }
 
+  @Override
   public boolean getScrollableTracksViewportHeight() {
     return myScrollPane.getViewport().getHeight() > getPreferredSize().height;
   }
 
+  @Override
   public EditorCell getDeepestSelectedCell() {
     if (isDisposed()) {
       return null;
@@ -2315,10 +2394,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
+  @Override
   public void update() {
     Highlighter.runUpdateMessagesAction(new Runnable() {
+      @Override
       public void run() {
         ModelAccess.instance().runReadAction(new Runnable() {
+          @Override
           public void run() {
             SNode sNode = getRootCell().getSNode();
             if (sNode == null) {
@@ -2417,6 +2499,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myInsideOfCommand = true;
     try {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        @Override
         public void run() {
           r.run();
         }
@@ -2509,17 +2592,19 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return true;
   }
 
-  private List<SubstituteAction> getMatchingActions(final EditorCell editorCell, final SubstituteInfo substituteInfo, final boolean isSmart, final String pattern) {
+  private List<SubstituteAction> getMatchingActions(final EditorCell editorCell, final SubstituteInfo substituteInfo, final boolean isSmart,
+    final String pattern) {
     return ModelAccess.instance().runReadAction(new Computable<List<SubstituteAction>>() {
       @Override
       public List<SubstituteAction> compute() {
-        return TypeContextManager.getInstance().runTypeCheckingComputation(getTypecheckingContextOwner(), myNode, new Computation<List<SubstituteAction>>() {
-          @Override
-          public List<SubstituteAction> compute(TypeCheckingContext context) {
-            return isSmart ? substituteInfo.getSmartMatchingActions(pattern, false, editorCell) :
-              substituteInfo.getMatchingActions(pattern, false);
-          }
-        });
+        return TypeContextManager.getInstance().runTypeCheckingComputation(getTypecheckingContextOwner(), myNode,
+          new Computation<List<SubstituteAction>>() {
+            @Override
+            public List<SubstituteAction> compute(TypeCheckingContext context) {
+              return isSmart ? substituteInfo.getSmartMatchingActions(pattern, false, editorCell) :
+                substituteInfo.getMatchingActions(pattern, false);
+            }
+          });
       }
     });
   }
@@ -2540,6 +2625,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myNodeInformationDialog != null;
   }
 
+  @Override
   public void paint(Graphics g) {
     super.paint(g);
     Selection selection = getSelectionManager().getSelection();
@@ -2724,6 +2810,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myRecentlySelectedCellInfo;
   }
 
+  @Override
   public boolean isReadOnly() {
     return myReadOnly;
   }
@@ -2736,6 +2823,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myPopupMenuEnabled = popupMenuEnabled;
   }
 
+  @Override
   @Nullable
   public Object getData(@NonNls String dataId) {
     //MPSDK
@@ -2746,6 +2834,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (dataId.equals(MPSCommonDataKeys.NODES.getName())) return getSelectedNodes();
     if (dataId.equals(MPSEditorDataKeys.CONTEXT_MODEL.getName())) {
       return ModelAccess.instance().runReadAction(new Computable() {
+        @Override
         public Object compute() {
           SNode node = getRootCell().getSNode();
           if (node == null) return null;
@@ -2806,7 +2895,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           Pair<SNodeReference, String> pair = new Pair<SNodeReference, String>(nodeProxy, propertyName);
           Set<EditorCell_Property> editorCell_properties = myNodePropertiesAccessedCleanlyToDependentCellsMap.get(pair);
           Set<jetbrains.mps.openapi.editor.cells.EditorCell> editorCells = myNodePropertiesAccessedDirtilyToDependentCellsMap.get(pair);
-          Set<jetbrains.mps.openapi.editor.cells.EditorCell> editorCellsDependentOnExistence = myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap.get(pair);
+          Set<jetbrains.mps.openapi.editor.cells.EditorCell> editorCellsDependentOnExistence = myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap.get(
+            pair);
           if (editorCellsDependentOnExistence != null) {
             if (EventUtil.isPropertyAddedOrRemoved(events.get(0))) {
               rebuildEditorContent(events);
@@ -3013,6 +3103,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     final boolean[] wereReverted = new boolean[1];
     for (SModelEvent e : events) {
       e.accept(new SModelEventVisitorAdapter() {
+        @Override
         public void visitPropertyEvent(SModelPropertyEvent event) {
           EditorCell cell = findNodeCell(event.getNode());
           if (cell != null && isErrorWithinBigCell(cell)) {
@@ -3021,6 +3112,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           }
         }
 
+        @Override
         public void visitReferenceEvent(SModelReferenceEvent event) {
           EditorCell cell = findNodeCell(event.getReference().getSourceNode());
           if (cell != null && isErrorWithinBigCell(cell)) {
@@ -3071,6 +3163,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
 
     ModelAccess.instance().runCommandInEDT(new Runnable() {
+      @Override
       public void run() {
         doCommitAll(getRootCell());
       }
@@ -3141,6 +3234,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
     }
 
+    @Override
     protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
       try {
         myAction.execute(myEditorContext);
@@ -3188,6 +3282,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private class MyEventsCollector extends EventsCollector {
+    @Override
     protected void eventsHappened(List<SModelEvent> events) {
       handleEvents(events);
     }
@@ -3205,6 +3300,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     public void editorWillBeDisposed(EditorComponent component);
   }
 
+  @Override
   public void repaint() {
     super.repaint();
     if (myLeftHighlighter != null) {
@@ -3212,6 +3308,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
+  @Override
   public ActionHandler getActionHandler() {
     return myActionHandler;
   }
@@ -3221,12 +3318,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     private ReferenceUnderliner() {
       addKeyListener(new KeyAdapter() {
+        @Override
         public void keyPressed(KeyEvent e) {
           if (e.getKeyCode() == getKeyCode()) {
             setControlOver();
           }
         }
 
+        @Override
         public void keyReleased(KeyEvent e) {
           if (e.getKeyCode() == getKeyCode()) {
             clearControlOver();
@@ -3238,9 +3337,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
       });
       addMouseMotionListener(new MouseMotionListener() {
+        @Override
         public void mouseDragged(MouseEvent e) {
         }
 
+        @Override
         public void mouseMoved(MouseEvent e) {
           if (!myEditorContext.getNodeEditorComponent().isFocusOwner()) return;
 
@@ -3260,6 +3361,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
             return;
           }
           SNode snodeWRTReference = ModelAccess.instance().runReadAction(new Computable<SNode>() {
+            @Override
             public SNode compute() {
               return isInvalid() ? null : APICellAdapter.getSNodeWRTReference(editorCell);
             }
@@ -3274,9 +3376,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
       });
       addFocusListener(new FocusListener() {
+        @Override
         public void focusGained(FocusEvent e) {
         }
 
+        @Override
         public void focusLost(FocusEvent e) {
           clearControlOver();
           myLastReferenceCell = null;
@@ -3303,6 +3407,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
 
   private class MyCutProvider implements CutProvider {
+    @Override
     public void performCut(@NotNull DataContext dataContext) {
       ModelAccess.instance().runCommandInEDT(new Runnable() {
         @Override
@@ -3320,6 +3425,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }, getCurrentProject());
     }
 
+    @Override
     public boolean isCutEnabled(@NotNull DataContext dataContext) {
       return !isDisposed() &&
         !isInvalidLightweight() &&
@@ -3327,12 +3433,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         getSelectionManager().getSelection() != null;
     }
 
+    @Override
     public boolean isCutVisible(@NotNull DataContext dataContext) {
       return true;
     }
   }
 
   private class MyCopyProvider implements CopyProvider {
+    @Override
     public void performCopy(@NotNull DataContext dataContext) {
       ModelAccess.instance().runCommandInEDT(new Runnable() {
         @Override
@@ -3350,18 +3458,21 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }, getCurrentProject());
     }
 
+    @Override
     public boolean isCopyEnabled(@NotNull DataContext dataContext) {
       return !isDisposed() &&
         !isInvalidLightweight() &&
         getSelectionManager().getSelection() != null;
     }
 
+    @Override
     public boolean isCopyVisible(@NotNull DataContext dataContext) {
       return true;
     }
   }
 
   private class MyPasteProvider implements PasteProvider {
+    @Override
     public void performPaste(@NotNull DataContext dataContext) {
       ModelAccess.instance().runCommandInEDT(new Runnable() {
         @Override
@@ -3379,6 +3490,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }, getCurrentProject());
     }
 
+    @Override
     public boolean isPastePossible(@NotNull DataContext dataContext) {
       return !isDisposed() &&
         !isInvalidLightweight() &&
@@ -3386,6 +3498,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         getSelectionManager().getSelection() != null;
     }
 
+    @Override
     public boolean isPasteEnabled(@NotNull DataContext dataContext) {
       return true;
     }
@@ -3484,12 +3597,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
     }
 
+    @Override
     public int getUnitIncrement(int direction) {
       JViewport vp = myScrollPane.getViewport();
       Rectangle vr = vp.getViewRect();
       return getScrollableUnitIncrement(vr, SwingConstants.VERTICAL, direction);
     }
 
+    @Override
     public int getBlockIncrement(int direction) {
       JViewport vp = myScrollPane.getViewport();
       Rectangle vr = vp.getViewRect();

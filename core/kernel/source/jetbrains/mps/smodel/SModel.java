@@ -16,7 +16,9 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.MPSCore;
-import jetbrains.mps.generator.TransientSModel;
+import jetbrains.mps.extapi.model.EditableSModel;
+import jetbrains.mps.extapi.model.SModelData;
+import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
@@ -34,7 +36,8 @@ import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.smodel.nodeidmap.UniversalOptimizedNodeIdMap;
 import jetbrains.mps.smodel.persistence.RoleIdsComponent;
-import jetbrains.mps.util.*;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.iterable.TranslatingIterator;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -50,7 +53,6 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.NullDataSource;
 
-import java.io.IOException;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -61,7 +63,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicLong;
 
-public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInternal {
+public class SModel implements SModelInternal, SModelData {
   private static final Logger LOG = Logger.getLogger(SModel.class);
 
   private Set<SNode> myRoots = new LinkedHashSet<SNode>();
@@ -83,6 +85,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
 
   private StackTraceElement[] myDisposedStacktrace = null;
   private ModelDependenciesManager myModelDependenciesManager;
+  private FakeModelDescriptor myFakeModelDescriptor;
 
   public SModel(@NotNull SModelReference modelReference) {
     this(modelReference, new UniversalOptimizedNodeIdMap());
@@ -111,12 +114,12 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
 
   @Override
   public ModelRoot getModelRoot() {
-    return getModelDescriptor() == null ? null : getModelDescriptor().getModelRoot();
+    return getModelDescriptor() instanceof FakeModelDescriptor ? null : getModelDescriptor().getModelRoot();
   }
 
   @Override
   public void setModelRoot(ModelRoot mr) {
-    if (getModelDescriptor() != null) {
+    if (!(getModelDescriptor() instanceof FakeModelDescriptor)) {
       getModelDescriptor().setModelRoot(mr);
     }
   }
@@ -124,7 +127,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
   @Override
   public IModule getModule() {
     org.jetbrains.mps.openapi.model.SModel md = getModelDescriptor();
-    return md == null ? null : md.getModule();
+    return md instanceof FakeModelDescriptor ? null : md.getModule();
   }
 
   @Override
@@ -149,9 +152,9 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
     ModelChange.assertLegalNodeRegistration(this, node);
     enforceFullLoad();
     if (myRoots.contains(node)) return;
-    SModel model = node.getModel();
-    if (model != null && model != this && model.isRoot(node)) {
-      model.removeRoot(node);
+    org.jetbrains.mps.openapi.model.SModel model = node.getModel();
+    if (model != null && model != getModelDescriptor() && model.isRoot(node)) {
+      model.removeRootNode(node);
     } else {
       org.jetbrains.mps.openapi.model.SNode parent = node.getParent();
       if (parent != null) {
@@ -231,7 +234,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
   @NotNull
   public DataSource getSource() {
     org.jetbrains.mps.openapi.model.SModel md = getModelDescriptor();
-    return md == null ? new NullDataSource() : md.getSource();
+    return md instanceof FakeModelDescriptor ? new NullDataSource() : md.getSource();
   }
 
   @Override
@@ -239,15 +242,9 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
     return true;
   }
 
-  @Override
   public boolean isReadOnly() {
     org.jetbrains.mps.openapi.model.SModel md = getModelDescriptor();
-    return md != null && md.isReadOnly();
-  }
-
-  @Override
-  public void save() throws IOException {
-    //todo
+    return !(md instanceof EditableSModel) || ((EditableSModel) md).isReadOnly();
   }
 
   @Override
@@ -323,8 +320,14 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
 
   //todo will migrate after SModel is migrated
   @Override
+  @NotNull
   public SModelInternal getModelDescriptor() {
-    return myModelDescriptor != null ? myModelDescriptor : new FakeModelDescriptor(this);
+    if (myModelDescriptor!=null) return myModelDescriptor;
+
+    if (myFakeModelDescriptor == null) {
+      myFakeModelDescriptor = new FakeModelDescriptor(this);
+    }
+    return myFakeModelDescriptor;
   }
 
   @Override
@@ -351,7 +354,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
     return myModelDescriptor != null && jetbrains.mps.util.SNodeOperations.isRegistered(myModelDescriptor) && !isUpdateMode();
   }
 
-  protected boolean canFireReadEvent() {
+  public boolean canFireReadEvent() {
     return canFireEvent();
   }
 
@@ -376,8 +379,9 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
 //---------listeners--------
 
   private List<SModelListener> getModelListeners() {
-    BaseSModelDescriptor modelDescriptor = (BaseSModelDescriptor) getModelDescriptor();
-    return modelDescriptor != null ? modelDescriptor.getModelListeners() : Collections.<SModelListener>emptyList();
+    SModelInternal modelDescriptor = getModelDescriptor();
+    return modelDescriptor instanceof BaseSModelDescriptor ? ((BaseSModelDescriptor) modelDescriptor).getModelListeners() :
+        Collections.<SModelListener>emptyList();
   }
 
   //todo code in the following methods should be written w/o duplication
@@ -707,7 +711,8 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
     if (importElement != null) return;
     importElement = SModelOperations.getAdditionalModelElement(this, modelReference);
     if (importElement == null) {
-      org.jetbrains.mps.openapi.model.SModel modelDescriptor = MPSCore.getInstance().isMergeDriverMode() ? null : SModelRepository.getInstance().getModelDescriptor(modelReference);
+      org.jetbrains.mps.openapi.model.SModel modelDescriptor =
+          MPSCore.getInstance().isMergeDriverMode() ? null : SModelRepository.getInstance().getModelDescriptor(modelReference);
       int usedVersion = -1;
       if (modelDescriptor instanceof RefactorableSModelDescriptor) {
         usedVersion = ((RefactorableSModelDescriptor) modelDescriptor).getVersion();
@@ -939,9 +944,9 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
 
     public String toString() {
       return "ImportElement(" +
-        "uid=" + myModelReference + ", " +
-        "referenceId=" + myReferenceID + ", " +
-        "usedVersion=" + myUsedVersion + ")";
+          "uid=" + myModelReference + ", " +
+          "referenceId=" + myReferenceID + ", " +
+          "usedVersion=" + myUsedVersion + ")";
     }
 
     @Override
@@ -1059,7 +1064,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
     return changed;
   }
 
-  void changeModelReference(SModelReference newModelReference) {
+  public void changeModelReference(SModelReference newModelReference) {
     enforceFullLoad();
     SModelReference oldReference = myReference;
     myReference = newModelReference;
@@ -1099,11 +1104,11 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
     return myModelDescriptor != null && getReference().resolve(MPSModuleRepository.getInstance()) == myModelDescriptor;
   }
 
-  protected SModel createEmptyCopy() {
+  public SModel createEmptyCopy() {
     return new jetbrains.mps.smodel.SModel(getReference());
   }
 
-  protected void copyPropertiesTo(SModel to) {
+  public void copyPropertiesTo(SModelInternal to) {
     for (ImportElement ie : getAdditionalModelVersions()) {
       to.addAdditionalModelVersion(ie.copy());
     }
@@ -1177,16 +1182,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
    * @Deprecated in 3.0
    */
   public boolean isTransient() {
-    return this instanceof TransientSModel;
-  }
-
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public boolean isNotEditable() {
-    return isReadOnly();
+    return this.getModule() instanceof TransientModelsModule;
   }
 
   @Deprecated
@@ -1282,11 +1278,16 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
   /**
    * This is for migration purposes, until we get rid of SModel class
    */
-  public static class FakeModelDescriptor implements org.jetbrains.mps.openapi.model.SModel,SModelInternal {
+  public static class FakeModelDescriptor implements org.jetbrains.mps.openapi.model.SModel, SModelInternal {
     private SModel myModel;
 
     public FakeModelDescriptor(@NotNull SModel md) {
       myModel = md;
+    }
+
+    @Override
+    public org.jetbrains.mps.openapi.model.SModel createEmptyCopy() {
+      throw new UnsupportedOperationException("not supported");
     }
 
     @Override
@@ -1306,17 +1307,17 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
 
     @Override
     public void addModelListener(@NotNull SModelListener listener) {
-      throw new UnsupportedOperationException("remove exception if excess");
+      LOG.error("remove exception if excess", new Throwable());
     }
 
     @Override
     public void removeModelListener(@NotNull SModelListener listener) {
-      throw new UnsupportedOperationException("remove exception if excess");
+      LOG.error("remove exception if excess", new Throwable());
     }
 
     @Override
-    public SModel getModelDescriptor() {
-      throw new UnsupportedOperationException();
+    public SModelInternal getModelDescriptor() {
+      return this;
     }
 
     @Override
@@ -1348,11 +1349,6 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
     @Override
     public IModule getModule() {
       return null;
-    }
-
-    @Override
-    public boolean isReadOnly() {
-      return false;
     }
 
     @Override
@@ -1405,11 +1401,6 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
     @Override
     public Iterable<Problem> getProblems() {
       return Collections.emptySet();
-    }
-
-    @Override
-    public void save() throws IOException {
-
     }
 
     @Override
@@ -1573,13 +1564,28 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
     }
 
     @Override
+    public boolean canFireReadEvent() {
+      return myModel.canFireReadEvent();
+    }
+
+    @Override
     public boolean updateSModelReferences() {
       return myModel.updateSModelReferences();
     }
 
     @Override
+    public void changeModelReference(SModelReference newModelReference) {
+      myModel.changeModelReference(newModelReference);
+    }
+
+    @Override
     public boolean updateModuleReferences() {
       return myModel.updateModuleReferences();
+    }
+
+    @Override
+    public void copyPropertiesTo(SModelInternal to) {
+      myModel.copyPropertiesTo(to);
     }
   }
 }

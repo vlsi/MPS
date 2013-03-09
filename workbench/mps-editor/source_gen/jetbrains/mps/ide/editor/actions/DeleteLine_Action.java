@@ -25,8 +25,9 @@ import jetbrains.mps.openapi.editor.cells.CellLayout;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.nodeEditor.cells.APICellAdapter;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.nodeEditor.cells.CellConditions;
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.logging.Logger;
 
 public class DeleteLine_Action extends BaseAction {
@@ -110,7 +111,7 @@ public class DeleteLine_Action extends BaseAction {
               if (currentCellPassed) {
                 ListSequence.fromList(nodesToDelete).addElement(sibling.getSNode());
                 if (CellLayout_Indent.isNewLineAfter(root, sibling)) {
-                  cellToSelect = APICellAdapter.getNextLeaf(sibling, CellConditions.SELECTABLE);
+                  cellToSelect = CellTraversalUtil.getNextLeaf(sibling, CellConditions.SELECTABLE);
                   break;
                 }
               } else if (sibling == current) {
@@ -118,14 +119,14 @@ public class DeleteLine_Action extends BaseAction {
               }
             }
             if (cellToSelect == null) {
-              cellToSelect = APICellAdapter.getNextLeaf(current, CellConditions.SELECTABLE);
+              cellToSelect = CellTraversalUtil.getNextLeaf(current, CellConditions.SELECTABLE);
             }
             break;
           }
         } else if (layout instanceof CellLayout_Vertical) {
           if (APICellAdapter.isBigCell(current)) {
             ListSequence.fromList(nodesToDelete).addElement(current.getSNode());
-            cellToSelect = APICellAdapter.getNextLeaf(current, CellConditions.SELECTABLE);
+            cellToSelect = CellTraversalUtil.getNextLeaf(current, CellConditions.SELECTABLE);
             break;
           }
         }

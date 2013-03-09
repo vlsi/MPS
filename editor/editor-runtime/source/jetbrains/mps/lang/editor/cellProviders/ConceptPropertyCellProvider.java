@@ -20,13 +20,13 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
-import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.ConstantModelAccessor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class ConceptPropertyCellProvider extends CellProviderWithRole {
@@ -36,6 +36,7 @@ public class ConceptPropertyCellProvider extends CellProviderWithRole {
   private String myConceptPropertyName;
   private SNode myConceptPropertyDeclaration;
 
+  @Override
   public void setRole(Object role) {
     myConceptPropertyName = role.toString();
     myConceptPropertyDeclaration = CellUtil.getConceptPropertyDeclaration(getSNode(), myConceptPropertyName);
@@ -45,6 +46,7 @@ public class ConceptPropertyCellProvider extends CellProviderWithRole {
     super(node, context);
   }
 
+  @Override
   public EditorCell createEditorCell(EditorContext editorContext) {
     String text = ((jetbrains.mps.smodel.SNode) getSNode()).getConceptProperty(myConceptPropertyName);
     EditorCell_Label editorCell;
@@ -60,18 +62,22 @@ public class ConceptPropertyCellProvider extends CellProviderWithRole {
   }
 
 
-  public NodeSubstituteInfo createDefaultSubstituteInfo() {
+  @Override
+  public SubstituteInfo createDefaultSubstituteInfo() {
     return null;
   }
 
+  @Override
   public SNode getRoleAttribute() {
     return null;
   }
 
+  @Override
   public Class getRoleAttributeClass() {
     return AttributeKind.Nothing.class;
   }
 
+  @Override
   public CellContext getCellContext() {
     return new ConceptPropertyCellContext(getSNode(), myConceptPropertyDeclaration);
   }

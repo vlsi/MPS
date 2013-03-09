@@ -3,12 +3,17 @@
     <component>
       <implementation-class>jetbrains.mps.ide.ui.dialogs.properties.persistence.ModelRootEntryPersistenceComponent</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.ide.ui.dialogs.properties.persistence.FacetTabPersistenceComponent</implementation-class>
+    </component>
   </application-components>
   <extensionPoints>
     <extensionPoint qualifiedName="com.intellij.mps.modelRootEntry" beanClass="jetbrains.mps.ide.ui.dialogs.properties.persistence.ModelRootEntryEP"/>
+    <extensionPoint qualifiedName="com.intellij.mps.facetTabFactory" beanClass="jetbrains.mps.ide.ui.dialogs.properties.persistence.FacetTabEP"/>
   </extensionPoints>
 
   <extensions defaultExtensionNs="com.intellij">
     <mps.modelRootEntry rootType="java_classes" className="jetbrains.mps.ide.java.ui.JavaClassStubsModelRootEntry"/>
+    <mps.facetTabFactory facetType="java" className="jetbrains.mps.ide.java.ui.JavaModuleFacetTabFactory"/>
   </extensions>
 </components>

@@ -240,7 +240,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
   public List<SNode> getConceptDeclarations() {
     SModel structureModel = getStructureModelDescriptor();
     if (structureModel == null) return Collections.emptyList();
-    return ((jetbrains.mps.smodel.SModel) structureModel.getSModel()).getFastNodeFinder().getNodes(SNodeUtil.concept_ConceptDeclaration, true);
+    return ((jetbrains.mps.smodel.SModelInternal) structureModel.getSModel()).getFastNodeFinder().getNodes(SNodeUtil.concept_ConceptDeclaration, true);
   }
 
   public List<EditableSModelDescriptor> getUtilModels() {

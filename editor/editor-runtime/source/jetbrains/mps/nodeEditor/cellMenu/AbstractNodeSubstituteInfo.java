@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor.cellMenu;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.typesystem.inference.InequalitySystem;
@@ -34,7 +35,7 @@ import java.util.Map;
  * Author: Sergey Dmitriev.
  * Time: Oct 29, 2003 2:17:38 PM
  */
-public abstract class AbstractNodeSubstituteInfo implements NodeSubstituteInfo {
+public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
   private List<SubstituteAction> myCachedActionList;
   private Map<String, List<SubstituteAction>> myPatternsToActionListsCache = new HashMap<String, List<SubstituteAction>>();
   private Map<String, List<SubstituteAction>> myStrictPatternsToActionListsCache = new HashMap<String, List<SubstituteAction>>();
@@ -53,24 +54,29 @@ public abstract class AbstractNodeSubstituteInfo implements NodeSubstituteInfo {
     return myEditorContext.getOperationContext();
   }
 
+  @Override
   public void setOriginalText(String text) {
     myOriginalText = text;
   }
 
+  @Override
   public String getOriginalText() {
     return myOriginalText;
   }
 
   protected abstract List<SubstituteAction> createActions();
 
+  @Override
   public void invalidateActions() {
     myCachedActionList = null;
     myPatternsToActionListsCache.clear();
     myStrictPatternsToActionListsCache.clear();
   }
 
+  @Override
   public boolean hasExactlyNActions(final String pattern, final boolean strictMatching, final int n) {
     return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      @Override
       public Boolean compute() {
         int count = 0;
         for (SubstituteAction action : getActionsFromCache(pattern, strictMatching)) {
@@ -90,6 +96,7 @@ public abstract class AbstractNodeSubstituteInfo implements NodeSubstituteInfo {
     return null;
   }
 
+  @Override
   public List<SubstituteAction> getSmartMatchingActions(String pattern, boolean strictMatching, EditorCell contextCell) {
     InequalitySystem inequalitiesSystem = getInequalitiesSystem(contextCell);
 
@@ -107,8 +114,10 @@ public abstract class AbstractNodeSubstituteInfo implements NodeSubstituteInfo {
     return result;
   }
 
+  @Override
   public List<SubstituteAction> getMatchingActions(final String pattern, final boolean strictMatching) {
     return ModelAccess.instance().runReadAction(new Computable<List<SubstituteAction>>() {
+      @Override
       public List<SubstituteAction> compute() {
         List<SubstituteAction> actionsFromCache = getActionsFromCache(pattern, strictMatching);
         ArrayList<SubstituteAction> result = new ArrayList<SubstituteAction>(actionsFromCache.size());
@@ -127,6 +136,7 @@ public abstract class AbstractNodeSubstituteInfo implements NodeSubstituteInfo {
   private List<SubstituteAction> getActions() {
     if (myCachedActionList == null) {
       ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
         public void run() {
           myCachedActionList = createActions();
         }

@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.CellConditions;
 import jetbrains.mps.nodeEditor.cells.CellFinders;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -26,8 +27,7 @@ import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.nodeEditor.selection.SingularSelection;
 import jetbrains.mps.nodeEditor.selection.SingularSelection.SideSelectDirection;
-import jetbrains.mps.openapi.editor.*;
-import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.smodel.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -50,15 +50,17 @@ public class NodeEditorActions {
       myHome = home;
     }
 
+    @Override
     public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
       return findTarget(((EditorComponent) context.getEditorComponent()).getSelectionManager()) != null;
     }
 
+    @Override
     public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
       SelectionManager selectionManager = ((EditorComponent) context.getEditorComponent()).getSelectionManager();
       EditorCell cell = findTarget(selectionManager);
       selectionManager.setSelection(cell);
-      if (cell.isPunctuationLayout() && (cell instanceof EditorCell_Label) && ((EditorCell_Label) cell).isCaretPositionAllowed(1)) {
+      if (APICellAdapter.isPunctuationLayout(cell) && (cell instanceof EditorCell_Label) && ((EditorCell_Label) cell).isCaretPositionAllowed(1)) {
         ((EditorCell_Label) cell).setCaretPosition(1);
       } else {
         cell.home();
@@ -81,11 +83,13 @@ public class NodeEditorActions {
   }
 
   public static class MoveLeft extends NavigationAction {
+    @Override
     public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorCell selection = getDeepestSelectedCell(context);
       return selection != null && findTarget(selection) != null;
     }
 
+    @Override
     public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorCell selection = getDeepestSelectedCell(context);
       EditorCell target = findTarget(selection);
@@ -122,10 +126,12 @@ public class NodeEditorActions {
       myHome = home;
     }
 
+    @Override
     public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
       return findTarget(((EditorComponent) context.getEditorComponent()).getSelectionManager()) != null;
     }
 
+    @Override
     public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
       SelectionManager selectionManager = ((EditorComponent) context.getEditorComponent()).getSelectionManager();
       selectionManager.setSelection(findTarget(selectionManager));
@@ -149,10 +155,12 @@ public class NodeEditorActions {
   }
 
   public static class MoveHome extends NavigationAction {
+    @Override
     public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
       return findTarget(((EditorComponent) context.getEditorComponent())) != null;
     }
 
+    @Override
     public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorComponent editorComponent = ((EditorComponent) context.getEditorComponent());
       EditorCell target = findTarget(editorComponent);
@@ -178,10 +186,12 @@ public class NodeEditorActions {
 
   public static class MoveEnd extends NavigationAction {
 
+    @Override
     public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
       return findTarget(((EditorComponent) context.getEditorComponent())) != null;
     }
 
+    @Override
     public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorComponent editorComponent = ((EditorComponent) context.getEditorComponent());
       EditorCell target = findTarget(editorComponent);
@@ -205,11 +215,13 @@ public class NodeEditorActions {
   }
 
   public static class MoveRight extends NavigationAction {
+    @Override
     public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorCell selection = getDeepestSelectedCell(context);
       return selection != null && findTarget(selection) != null;
     }
 
+    @Override
     public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorCell selection = getDeepestSelectedCell(context);
       EditorCell target = findTarget(selection);
@@ -242,11 +254,13 @@ public class NodeEditorActions {
   }
 
   public static class MoveUp extends NavigationAction {
+    @Override
     public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorCell selectedCell = getDeepestSelectedCell(context);
       return selectedCell != null && selectedCell.getParent() != null && findTarget(selectedCell, selectedCell.getCaretX()) != null;
     }
 
+    @Override
     public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorCell selectedCell = getDeepestSelectedCell(context);
       int caretX = selectedCell.getCaretX();
@@ -276,11 +290,13 @@ public class NodeEditorActions {
   }
 
   public static class MoveDown extends NavigationAction {
+    @Override
     public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorCell selectedCell = getDeepestSelectedCell(context);
       return selectedCell != null && findTarget(selectedCell, selectedCell.getCaretX()) != null;
     }
 
+    @Override
     public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorCell selectedCell = getDeepestSelectedCell(context);
       int caretX = selectedCell.getCaretX();
@@ -310,28 +326,32 @@ public class NodeEditorActions {
   }
 
   public static class MoveNext extends NavigationAction {
+    @Override
     public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorCell selection = ((EditorComponent) context.getEditorComponent()).getSelectedCell();
-      return selection != null && selection.getNextLeaf(CellConditions.EDITABLE) != null;
+      return selection != null && CellTraversalUtil.getNextLeaf(selection, CellConditions.EDITABLE) != null;
     }
 
+    @Override
     public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorComponent editorComponent = (EditorComponent) context.getEditorComponent();
       EditorCell selection = editorComponent.getSelectedCell();
-      editorComponent.changeSelection(selection.getNextLeaf(CellConditions.EDITABLE));
+      editorComponent.changeSelection(CellTraversalUtil.getNextLeaf(selection, CellConditions.EDITABLE));
     }
   }
 
   public static class MovePrev extends NavigationAction {
+    @Override
     public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorCell selection = ((EditorComponent) context.getEditorComponent()).getSelectedCell();
-      return selection != null && selection.getPrevLeaf(CellConditions.EDITABLE) != null;
+      return selection != null && CellTraversalUtil.getPrevLeaf(selection, CellConditions.EDITABLE) != null;
     }
 
+    @Override
     public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorComponent editorComponent = (EditorComponent) context.getEditorComponent();
       EditorCell selection = editorComponent.getSelectedCell();
-      editorComponent.changeSelection(selection.getPrevLeaf(CellConditions.EDITABLE));
+      editorComponent.changeSelection(CellTraversalUtil.getPrevLeaf(selection, CellConditions.EDITABLE));
     }
   }
 
@@ -355,30 +375,36 @@ public class NodeEditorActions {
   }
 
   public static class MovePageUp extends NavigationAction {
+    @Override
     public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
       return true;
     }
 
+    @Override
     public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
       navigatePage(context, true);
     }
   }
 
   public static class MovePageDown extends NavigationAction {
+    @Override
     public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
       return true;
     }
 
+    @Override
     public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
       navigatePage(context, false);
     }
   }
 
   public static class SelectUp extends NavigationAction {
+    @Override
     public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
       return findTarget(((EditorComponent) context.getEditorComponent()).getSelectionManager()) != null;
     }
 
+    @Override
     public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
       SelectionManager selectionManager = ((EditorComponent) context.getEditorComponent()).getSelectionManager();
       EditorCell cell = findTarget(selectionManager);
@@ -421,10 +447,12 @@ public class NodeEditorActions {
   }
 
   public static class SelectDown extends NavigationAction {
+    @Override
     public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
       return ((EditorComponent) context.getEditorComponent()).getSelectionManager().getSelectionStackSize() > 1;
     }
 
+    @Override
     public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
       ((EditorComponent) context.getEditorComponent()).getSelectionManager().popSelection();
     }
@@ -437,14 +465,15 @@ public class NodeEditorActions {
       mySide = side;
     }
 
-    private EditorCell getNextLeaf(EditorCell current) {
+    private jetbrains.mps.openapi.editor.cells.EditorCell getNextLeaf(EditorCell current) {
       if (mySide == CellSide.LEFT) {
-        return current.getPrevLeaf(CellConditions.SELECTABLE);
+        return CellTraversalUtil.getPrevLeaf(current, CellConditions.SELECTABLE);
       } else {
-        return current.getNextLeaf(CellConditions.SELECTABLE);
+        return CellTraversalUtil.getNextLeaf(current, CellConditions.SELECTABLE);
       }
     }
 
+    @Override
     public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
       SelectionManager selectionManager = ((EditorComponent) context.getEditorComponent()).getSelectionManager();
       Selection selection = selectionManager.getSelection();
@@ -454,12 +483,13 @@ public class NodeEditorActions {
           return true;
         }
         EditorCell selected = singularSelection.getEditorCell();
-        EditorCell nextLeaf = getNextLeaf(selected);
+        jetbrains.mps.openapi.editor.cells.EditorCell nextLeaf = getNextLeaf(selected);
         return nextLeaf != null && getCommonSelectableAncestor(selected, nextLeaf) != null;
       }
       return false;
     }
 
+    @Override
     public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
       SelectionManager selectionManager = ((EditorComponent) context.getEditorComponent()).getSelectionManager();
       SingularSelection selection = (SingularSelection) selectionManager.getSelection();
@@ -468,7 +498,7 @@ public class NodeEditorActions {
         return;
       }
       EditorCell selected = selection.getEditorCell();
-      EditorCell nextLeaf = getNextLeaf(selected);
+      jetbrains.mps.openapi.editor.cells.EditorCell nextLeaf = getNextLeaf(selected);
       EditorCell cellToSelect = getCommonSelectableAncestor(selected, nextLeaf);
       Selection newSelection = selectionManager.createSelection(cellToSelect);
       if (newSelection instanceof SingularSelection) {
@@ -572,11 +602,13 @@ public class NodeEditorActions {
   }
 
   public static class Complete extends AbstractCellAction {
+    @Override
     public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorCell selection = (EditorCell) context.getSelectedCell();
       return selection != null && selection.getSubstituteInfo() != null;
     }
 
+    @Override
     public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorCell selection = (EditorCell) context.getSelectedCell();
       ((EditorComponent) context.getEditorComponent()).activateNodeSubstituteChooser(selection, ((selection instanceof EditorCell_Label) && ((EditorCell_Label) selection).isEverythingSelected()), false);
@@ -584,11 +616,13 @@ public class NodeEditorActions {
   }
 
   public static class CompleteSmart extends AbstractCellAction {
+    @Override
     public boolean canExecute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorCell selection = (EditorCell) context.getSelectedCell();
       return selection != null && selection.getSubstituteInfo() != null;
     }
 
+    @Override
     public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorCell selection = (EditorCell) context.getSelectedCell();
       ((EditorComponent) context.getEditorComponent()).activateNodeSubstituteChooser(selection, ((selection instanceof EditorCell_Label) && ((EditorCell_Label) selection).isEverythingSelected()), true);
@@ -596,6 +630,7 @@ public class NodeEditorActions {
   }
 
   public static class ShowMessage extends AbstractCellAction {
+    @Override
     public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
       ((EditorComponent) context.getEditorComponent()).showMessageTooltip();
     }

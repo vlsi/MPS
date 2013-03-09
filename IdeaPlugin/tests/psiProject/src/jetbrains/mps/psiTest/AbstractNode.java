@@ -9,4 +9,11 @@ public abstract class AbstractNode {
     }
 
     public void abstractNodeMethod() {}
+
+    public class NodeDescriptor {
+        private String myDescription;
+        public String getDescription() {
+            return myDescription;
+        }
+    }
 }

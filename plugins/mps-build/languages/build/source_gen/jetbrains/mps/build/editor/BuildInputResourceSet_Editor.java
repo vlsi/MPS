@@ -12,7 +12,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.Padding;
+import jetbrains.mps.editor.runtime.style.Padding;
 
 public class BuildInputResourceSet_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -24,7 +24,7 @@ public class BuildInputResourceSet_Editor extends DefaultNodeEditor {
       public AbstractCellProvider invoke() {
         return new AbstractCellProvider() {
           @Override
-          public jetbrains.mps.nodeEditor.cells.EditorCell createEditorCell(EditorContext context) {
+          public EditorCell createEditorCell(EditorContext context) {
             EditorCell_Error result = new EditorCell_Error(context, node, "<no " + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "conceptAlias") + ">");
             result.getStyle().set(StyleAttributes.PADDING_LEFT, new Padding(0.0));
             result.getStyle().set(StyleAttributes.PADDING_RIGHT, new Padding(0.0));

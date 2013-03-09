@@ -45,6 +45,7 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
@@ -54,7 +55,6 @@ import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.AbstractAction;
 import javax.swing.Icon;
@@ -94,8 +94,10 @@ public class IntentionsSupport {
     myEditor = editor;
 
     myLightBulb = new LightBulbMenu() {
+      @Override
       public void activate() {
         ModelAccess.instance().runReadAction(new Runnable() {
+          @Override
           public void run() {
             checkAndShowMenu();
           }
@@ -104,14 +106,17 @@ public class IntentionsSupport {
     };
 
     myEditor.getViewport().addChangeListener(new ChangeListener() {
+      @Override
       public void stateChanged(ChangeEvent e) {
         adjustLightBulbLocation();
       }
     });
 
     myShowIntentionsAction = new AbstractAction() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         ModelAccess.instance().runReadAction(new Runnable() {
+          @Override
           public void run() {
             checkAndShowMenu();
           }
@@ -121,10 +126,12 @@ public class IntentionsSupport {
     myEditor.registerKeyboardAction(myShowIntentionsAction, KeyStroke.getKeyStroke("alt ENTER"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     myEditor.addFocusListener(new FocusAdapter() {
+      @Override
       public void focusGained(FocusEvent e) {
         updateIntentionsStatus();
       }
 
+      @Override
       public void focusLost(FocusEvent e) {
         hideLightBulb();
       }
@@ -142,7 +149,7 @@ public class IntentionsSupport {
 
   private void checkAndShowMenu() {
     if (isInconsistentEditor()) return;
-    if (myEditor.isReadOnly() || myEditor.getSelectedNode().getModel().isReadOnly()) return;
+    if (myEditor.isReadOnly() || SModelOperations.isReadOnly(myEditor.getSelectedNode().getModel())) return;
 
     showIntentionsMenu();
   }
@@ -156,6 +163,7 @@ public class IntentionsSupport {
     hideLightBulb();
 
     myShowIntentionsThread.set(new Thread("Intentions") {
+      @Override
       public void run() {
         try {
           Thread.sleep(IntentionsSupport.INTENTION_SHOW_DELAY);
@@ -164,6 +172,7 @@ public class IntentionsSupport {
           }
 
           final IntentionType intentionType = ModelAccess.instance().runReadAction(new Computable<IntentionType>() {
+            @Override
             public IntentionType compute() {
               if (isInconsistentEditor() || myEditor.isReadOnly()) return null;
               // TODO check for ActionsAsIntentions
@@ -181,6 +190,7 @@ public class IntentionsSupport {
           }
 
           ModelAccess.instance().runReadInEDT(new Runnable() {
+            @Override
             public void run() {
               if (isInconsistentEditor() || myEditor.isReadOnly() || interrupted()) return;
 
@@ -271,6 +281,7 @@ public class IntentionsSupport {
         }
 
         ModelAccess.instance().runCommandInEDT(new Runnable() {
+          @Override
           public void run() {
             intention.execute(node, myEditor.getEditorContext());
           }
@@ -282,6 +293,7 @@ public class IntentionsSupport {
       @Override
       protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
         ModelAccess.instance().runWriteInEDT(new Runnable() {
+          @Override
           public void run() {
             SNode intentionNode = intention.getDescriptor().getIntentionNodeReference().resolve(MPSModuleRepository.getInstance());
             if (intentionNode == null) {
@@ -322,6 +334,7 @@ public class IntentionsSupport {
     }
     // TODO sort actions & intentions together
     Collections.sort(groupItems, new Comparator<Pair<IntentionExecutable, SNode>>() {
+      @Override
       public int compare(Pair<IntentionExecutable, SNode> o1, Pair<IntentionExecutable, SNode> o2) {
         IntentionExecutable intention1 = o1.o1;
         IntentionExecutable intention2 = o2.o1;
@@ -357,6 +370,7 @@ public class IntentionsSupport {
   private void showIntentionsMenu() {
     final EditorContext editorContext = myEditor.getEditorContext();
     ListPopup popup = ModelAccess.instance().runReadAction(new Computable<ListPopup>() {
+      @Override
       public ListPopup compute() {
         DataContext dataContext = DataManager.getInstance().getDataContext(editorContext.getNodeEditorComponent());
         BaseGroup group = getIntentionsGroup(dataContext);

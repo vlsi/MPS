@@ -41,20 +41,24 @@ public abstract class LightBulbMenu extends JLabel implements TooltipComponent {
     setSize(getWidth(), getHeight());
 
     addMouseListener(new MouseAdapter() {
+      @Override
       public void mousePressed(MouseEvent e) {
         activate();
       }
     });
   }
 
+  @Override
   public String getMPSTooltipText(MouseEvent event) {
     return "Click or press Alt+Enter";
   }
 
+  @Override
   public int getWidth() {
     return getIcon().getIconWidth() + 6;
   }
 
+  @Override
   public int getHeight() {
     return getIcon().getIconHeight();
   }

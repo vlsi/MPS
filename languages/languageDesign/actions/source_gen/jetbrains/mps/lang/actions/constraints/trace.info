@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.ConstraintsAspectDescriptor" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)/1213104855837">
     <nodeInfo nodeId="1213104855837" fileName="SubstituteNodeBuilderVariableReference_Constraints.java" startLine="25" startPosition="63" endLine="26" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1213104855837" fileName="SubstituteNodeBuilderVariableReference_Constraints.java" startLine="30" startPosition="83" endLine="31" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -342,13 +342,7 @@
     <unitInfo nodeId="1235053871244" fileName="SmartActionParameterReference_Constraints.java" startLine="31" startPosition="47" endLine="56" endPosition="5" unitName="jetbrains.mps.lang.actions.constraints.SmartActionParameterReference_Constraints$1" />
     <unitInfo nodeId="1235053871244" fileName="SmartActionParameterReference_Constraints.java" startLine="23" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.SmartActionParameterReference_Constraints" />
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)/1371735981988471172">
-    <nodeInfo nodeId="1371735981988471172" fileName="ConceptPart_Constraints.java" startLine="8" startPosition="36" endLine="9" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1371735981988471172" fileName="ConceptPart_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConceptPart_Constraints#()V" />
-    <scopeInfo nodeId="1371735981988471172" fileName="ConceptPart_Constraints.java" startLine="8" startPosition="36" endLine="9" endPosition="62" />
-    <scopeInfo nodeId="1371735981988471172" fileName="ConceptPart_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" />
-    <unitInfo nodeId="1371735981988471172" fileName="ConceptPart_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.ConceptPart_Constraints" />
-  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)/1371735981988471172" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)/1371735981988471173">
     <nodeInfo nodeId="1371735981988471173" fileName="SideTransformMenuPart_Constraints.java" startLine="14" startPosition="46" endLine="15" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1371735981988471173" fileName="SideTransformMenuPart_Constraints.java" startLine="19" startPosition="43" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

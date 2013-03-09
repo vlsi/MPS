@@ -58,7 +58,7 @@ import com.intellij.openapi.vcs.VcsException;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import java.util.Set;
 import java.io.IOException;
@@ -84,7 +84,6 @@ import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.SModuleOperations;
-import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
@@ -398,7 +397,7 @@ public class ChangesManagerTest {
     int changesBefore = ListSequence.fromList(check_4gxggu_a0a0a53(myUtilDiff.getChangeSet())).count();
     final SModel modelContent = ModelPersistence.readModel(myUtilDiff.getModelDescriptor().getSource(), false);
     createNewRoot(modelContent);
-    final EditableSModelDescriptor modelDescriptor = myUtilDiff.getModelDescriptor();
+    final EditableSModel modelDescriptor = myUtilDiff.getModelDescriptor();
     waitForSomething(new Runnable() {
       public void run() {
         SModelRepository.getInstance().addModelRepositoryListener(new SModelRepositoryAdapter() {

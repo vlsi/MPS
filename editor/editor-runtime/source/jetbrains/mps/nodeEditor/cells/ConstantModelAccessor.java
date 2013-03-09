@@ -24,13 +24,16 @@ public class ConstantModelAccessor implements ModelAccessor {
     myValue = value;
   }
 
+  @Override
   public String getText() {
     return myValue;
   }
 
+  @Override
   public void setText(String text) {
   }
 
+  @Override
   public boolean isValidText(String text) {
     return EqualUtil.equals(myValue, text);
   }

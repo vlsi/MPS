@@ -23,32 +23,45 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.Icon;
 
+/**
+ * Should be removed after MPS 3.0
+ *
+ * @deprecated was replaced with jetbrains.mps.openapi.editor.cells.SubstituteAction
+ */
+@Deprecated
 public interface INodeSubstituteAction extends SubstituteAction {
+  @Override
   SNode getSourceNode();
 
+  @Override
   SNode getOutputConcept();
 
+  @Override
   SNode getActionType(String pattern);
 
+  @Override
   SNode getActionType(String pattern, EditorCell contextCell);
 
+  @Override
   String getMatchingText(String pattern);
 
+  @Override
   String getVisibleMatchingText(String pattern);
 
+  @Override
   String getDescriptionText(String pattern);
 
   Icon getIconFor(String pattern);
 
-  int getFontStyleFor(String pattern);
-
-  int getSortPriority(String pattern);
-
+  @Override
   boolean canSubstituteStrictly(String pattern);
 
+  @Override
   boolean canSubstitute(String pattern);
 
+  @Override
   public Object getParameterObject();
 
+  @Override
   SNode substitute(@Nullable EditorContext context, String pattern);
 }

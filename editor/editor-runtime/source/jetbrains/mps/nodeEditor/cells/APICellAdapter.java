@@ -15,14 +15,22 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
+import jetbrains.mps.editor.runtime.impl.LayoutConstraints;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.util.Condition;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -31,60 +39,37 @@ import java.util.List;
  */
 // TODO: Temporary adapter should be removed at the end of migration onto EditorCel API
 public class APICellAdapter {
-  public static jetbrains.mps.openapi.editor.cells.EditorCell getNextSibling(EditorCell cell) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getNextSibling();
-  }
 
-  public static jetbrains.mps.openapi.editor.cells.EditorCell getPrevSibling(EditorCell cell) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getPrevSibling();
-  }
-
-  public static jetbrains.mps.openapi.editor.cells.EditorCell getNextLeaf(EditorCell cell) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getNextLeaf();
-  }
-
-  public static jetbrains.mps.openapi.editor.cells.EditorCell getNextLeaf(EditorCell cell, Condition<jetbrains.mps.nodeEditor.cells.EditorCell> condition) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getNextLeaf(condition);
-  }
-
-  public static jetbrains.mps.openapi.editor.cells.EditorCell getPrevLeaf(EditorCell cell) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getPrevLeaf();
-  }
-
-  public static jetbrains.mps.openapi.editor.cells.EditorCell getPrevLeaf(EditorCell cell, Condition<jetbrains.mps.nodeEditor.cells.EditorCell> condition) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getPrevLeaf(condition);
-  }
-
-  public static jetbrains.mps.openapi.editor.cells.EditorCell getFirstLeaf(EditorCell cell) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getFirstLeaf();
-  }
-
-  public static jetbrains.mps.openapi.editor.cells.EditorCell getLastLeaf(EditorCell cell) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getLastLeaf();
-  }
 
   public static TextBuilder renderText(EditorCell cell) {
     return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).renderText();
   }
 
   public static boolean isPunctuationLayout(EditorCell cell) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).isPunctuationLayout();
+    return LayoutConstraints.PUNCTUATION_LAYOUT_CONSTRAINT.equals(cell.getStyle().get(StyleAttributes.LAYOUT_CONSTRAINT));
   }
 
   public static boolean hasErrorMessages(EditorCell cell) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).hasErrorMessages();
+    for (SimpleEditorMessage message : cell.getMessages()) {
+      if (message.getStatus() == MessageStatus.ERROR) {
+        return true;
+      }
+    }
+    return false;
   }
 
   public static String getCellRole(EditorCell cell) {
     return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getCellRole();
   }
 
-  public static List<EditorMessage> getMessages(EditorCell cell) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getMessages();
-  }
-
   public static <T extends EditorMessage> List<T> getMessages(EditorCell cell, Class<T> clazz) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getMessages(clazz);
+    List<T> result = new ArrayList<T>();
+    for (SimpleEditorMessage message : cell.getMessages()) {
+      if (clazz.isInstance(message)) {
+        result.add((T) message);
+      }
+    }
+    return result;
   }
 
   public static void synchronizeViewWithModel(EditorCell cell) {
@@ -92,7 +77,8 @@ public class APICellAdapter {
   }
 
   public static boolean isBigCell(EditorCell cell) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).isBigCell();
+    //??? EditorCell_Empty ???
+    return cell.getParent() == null || cell.getParent().getSNode() != cell.getSNode();
   }
 
   public static SNode getSNodeWRTReference(EditorCell cell) {

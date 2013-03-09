@@ -184,10 +184,12 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
     myPreferencesPage = null;
   }
 
+  @Override
   public MyState getState() {
     return myState;
   }
 
+  @Override
   public void loadState(MyState state) {
     myState = state;
     updateCachedValue();

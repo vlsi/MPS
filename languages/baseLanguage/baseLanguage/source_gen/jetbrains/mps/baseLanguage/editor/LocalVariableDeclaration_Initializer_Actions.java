@@ -37,8 +37,8 @@ public class LocalVariableDeclaration_Initializer_Actions {
       SNodeOperations.detachNode(SLinkOperations.getTarget(node, "initializer", true));
       editorContext.flushEvents();
       EditorComponent editor = editorContext.getEditorComponent();
-      jetbrains.mps.nodeEditor.cells.EditorCell nodeCell = (jetbrains.mps.nodeEditor.cells.EditorCell) editor.findNodeCell(node);
-      jetbrains.mps.nodeEditor.cells.EditorCell lastSelectable = nodeCell.getLastLeaf(CellConditions.SELECTABLE);
+      EditorCell nodeCell = editor.findNodeCell(node);
+      EditorCell lastSelectable = ((jetbrains.mps.nodeEditor.cells.EditorCell) nodeCell).getLastLeaf(CellConditions.SELECTABLE);
       editor.changeSelection(lastSelectable);
       if (lastSelectable instanceof EditorCell_Label) {
         ((EditorCell_Label) lastSelectable).end();

@@ -21,6 +21,8 @@ import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
 import jetbrains.mps.nodeEditor.cells.*;
+import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
+import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.nodeEditor.messageTargets.EditorMessageWithTarget;
@@ -44,17 +46,19 @@ public class HighlighterMessage extends EditorMessageWithTarget {
   }
 
   @Override
-  public boolean sameAs(EditorMessage message) {
+  public boolean sameAs(SimpleEditorMessage message) {
     if (!(message instanceof HighlighterMessage)) {
       return false;
     }
     return super.sameAs(message);
   }
 
+  @Override
   public EditorCell getCellForParentNodeInMainEditor(EditorComponent editor) {
     return super.getCellForParentNodeInMainEditor(editor);
   }
 
+  @Override
   public boolean isBackground() {
     return isWarning();
   }
@@ -68,6 +72,7 @@ public class HighlighterMessage extends EditorMessageWithTarget {
     return getStatus() == MessageStatus.WARNING;
   }
 
+  @Override
   public void paint(Graphics g, EditorComponent editorComponent, EditorCell cell) {
     paintDecorations(g, cell);
   }

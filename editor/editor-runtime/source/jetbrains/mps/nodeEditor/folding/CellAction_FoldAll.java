@@ -25,10 +25,12 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class CellAction_FoldAll extends AbstractCellAction {
+  @Override
   public boolean canExecute(EditorContext context) {
     return context.getEditorComponent().getRootCell() instanceof EditorCell_Collection;
   }
 
+  @Override
   public void execute(EditorContext context) {
     EditorComponent component = context.getEditorComponent();
     Queue<EditorCell_Collection> cellsToProcess = new LinkedList<EditorCell_Collection>();

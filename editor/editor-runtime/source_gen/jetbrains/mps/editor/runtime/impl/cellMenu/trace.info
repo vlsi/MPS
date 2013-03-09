@@ -18,7 +18,7 @@
     <nodeInfo nodeId="2479108860610978833" fileName="DefaultReferenceSubstituteInfoActionsFactory.java" startLine="53" startPosition="5" endLine="54" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2479108860610978839" fileName="DefaultReferenceSubstituteInfoActionsFactory.java" startLine="54" startPosition="104" endLine="55" endPosition="254" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2479108860611100008" fileName="DefaultReferenceSubstituteInfoActionsFactory.java" startLine="55" startPosition="254" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2479108860611060386" fileName="DefaultReferenceSubstituteInfoActionsFactory.java" startLine="57" startPosition="358" endLine="58" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2479108860611060386" fileName="DefaultReferenceSubstituteInfoActionsFactory.java" startLine="57" startPosition="404" endLine="58" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2479108860611060452" fileName="DefaultReferenceSubstituteInfoActionsFactory.java" startLine="58" startPosition="61" endLine="59" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2479108860611089129" fileName="DefaultReferenceSubstituteInfoActionsFactory.java" startLine="59" startPosition="72" endLine="60" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2479108860610978904" fileName="DefaultReferenceSubstituteInfoActionsFactory.java" startLine="60" startPosition="123" endLine="61" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -34,7 +34,7 @@
     <scopeInfo nodeId="3368017140643690431" fileName="DefaultReferenceSubstituteInfoActionsFactory.java" startLine="40" startPosition="104" endLine="41" endPosition="121" />
     <scopeInfo nodeId="659731673107302987" fileName="DefaultReferenceSubstituteInfoActionsFactory.java" startLine="43" startPosition="194" endLine="44" endPosition="124" />
     <scopeInfo nodeId="2479108860610978830" fileName="DefaultReferenceSubstituteInfoActionsFactory.java" startLine="51" startPosition="36" endLine="52" endPosition="37" />
-    <scopeInfo nodeId="2479108860610978881" fileName="DefaultReferenceSubstituteInfoActionsFactory.java" startLine="57" startPosition="358" endLine="61" endPosition="213">
+    <scopeInfo nodeId="2479108860610978881" fileName="DefaultReferenceSubstituteInfoActionsFactory.java" startLine="57" startPosition="404" endLine="61" endPosition="213">
       <varInfo nodeId="2479108860611060387" varName="parent" />
       <varInfo nodeId="2479108860611060453" varName="role" />
       <varInfo nodeId="2479108860611089130" varName="roleLink" />

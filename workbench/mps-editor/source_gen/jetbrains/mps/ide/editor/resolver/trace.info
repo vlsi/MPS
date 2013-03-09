@@ -50,7 +50,7 @@
     <nodeInfo nodeId="1802459475176582256" fileName="EditorResolver.java" startLine="85" startPosition="80" endLine="86" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1802459475176582264" fileName="EditorResolver.java" startLine="86" startPosition="30" endLine="87" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1802459475176582292" fileName="EditorResolver.java" startLine="87" startPosition="98" endLine="88" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1802459475176582296" fileName="EditorResolver.java" startLine="92" startPosition="67" endLine="93" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1802459475176582296" fileName="EditorResolver.java" startLine="92" startPosition="98" endLine="93" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4953860923773797627" fileName="EditorResolver.java" startLine="98" startPosition="36" endLine="99" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4953860923773797627" fileName="EditorResolver.java" startLine="100" startPosition="5" endLine="101" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1802459475176571475" fileName="EditorResolver.java" startLine="26" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EditorResolver#()V" />
@@ -79,7 +79,7 @@
     <scopeInfo nodeId="3391050862413798842" fileName="EditorResolver.java" startLine="51" startPosition="15" endLine="52" endPosition="27" />
     <scopeInfo nodeId="4953860923773797667" fileName="EditorResolver.java" startLine="59" startPosition="25" endLine="60" endPosition="20" />
     <scopeInfo nodeId="1802459475176586912" fileName="EditorResolver.java" startLine="75" startPosition="29" endLine="76" endPosition="22" />
-    <scopeInfo nodeId="1802459475176573224" fileName="EditorResolver.java" startLine="92" startPosition="67" endLine="93" endPosition="72" />
+    <scopeInfo nodeId="1802459475176573224" fileName="EditorResolver.java" startLine="92" startPosition="98" endLine="93" endPosition="72" />
     <scopeInfo nodeId="4953860923773797627" fileName="EditorResolver.java" startLine="98" startPosition="36" endLine="99" endPosition="43" />
     <scopeInfo nodeId="1802459475176571475" fileName="EditorResolver.java" startLine="26" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="4953860923773797638" fileName="EditorResolver.java" startLine="64" startPosition="43" endLine="66" endPosition="58">

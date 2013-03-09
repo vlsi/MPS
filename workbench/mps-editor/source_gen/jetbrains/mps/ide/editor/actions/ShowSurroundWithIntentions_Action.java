@@ -117,12 +117,12 @@ public class ShowSurroundWithIntentions_Action extends BaseAction {
     }
   }
 
-  private jetbrains.mps.nodeEditor.cells.EditorCell getAnchorCell(final Map<String, Object> _params) {
+  private EditorCell getAnchorCell(final Map<String, Object> _params) {
     Selection selection = ((EditorComponent) ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getEditorComponent()).getSelectionManager().getSelection();
     if (selection == null) {
       return null;
     }
-    List<jetbrains.mps.nodeEditor.cells.EditorCell> selectedCells = selection.getSelectedCells();
+    List<EditorCell> selectedCells = ((List<EditorCell>) ((List) selection.getSelectedCells()));
     if (ListSequence.fromList(selectedCells).isNotEmpty()) {
       return ListSequence.fromList(selectedCells).first();
     }

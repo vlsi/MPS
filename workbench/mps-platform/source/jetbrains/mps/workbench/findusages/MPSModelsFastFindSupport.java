@@ -36,6 +36,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
@@ -92,6 +93,21 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsage
     });
     for (Entry<SModel, Collection<SConcept>> candidate : candidates.entrySet()) {
       FindUsagesManager.collectInstances(candidate.getKey(), candidate.getValue(), consumer);
+    }
+  }
+
+  @Override
+  public void findModelUsages(Collection<SModel> scope, Set<SModelReference> modelReferences, Consumer<SModel> consumer, Consumer<SModel> processedConsumer) {
+    MultiMap<SModel, SModelReference> candidates = findCandidates(scope, modelReferences, processedConsumer, new Mapper<SModelReference, String>() {
+      @Override
+      public String value(SModelReference key) {
+        return key.getModelName();
+      }
+    });
+    for (Entry<SModel, Collection<SModelReference>> candidate : candidates.entrySet()) {
+      if (FindUsagesManager.hasModelUsages(candidate.getKey(), candidate.getValue())) {
+        consumer.consume(candidate.getKey());
+      }
     }
   }
 

@@ -305,7 +305,7 @@ public class ModelPersistence {
       modelPersistence = getCurrentModelPersistence();
     }
 
-    ((jetbrains.mps.smodel.SModel) sourceModel).calculateImplicitImports();
+    ((jetbrains.mps.smodel.SModelInternal) sourceModel).calculateImplicitImports();
     return modelPersistence.getModelWriter().saveModel(sourceModel);
   }
 
@@ -392,16 +392,6 @@ public class ModelPersistence {
       throw new ModelReadException("Couldn't read " + what + ": " + e.getMessage(), e);
     } catch (IOException e) {
       throw new ModelReadException("Couldn't read " + what + ": " + e.getMessage(), e);
-    }
-  }
-
-  public static class IndexEntry {
-    public String data;
-    public boolean caseSensitive;
-
-    public IndexEntry(String data, boolean caseSensitive) {
-      this.data = data;
-      this.caseSensitive = caseSensitive;
     }
   }
 

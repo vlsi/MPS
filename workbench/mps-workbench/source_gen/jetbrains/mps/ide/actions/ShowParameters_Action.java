@@ -87,7 +87,7 @@ public class ShowParameters_Action extends BaseAction {
     try {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("editing.showParameters");
       Point p = new Point(((EditorCell) MapSequence.fromMap(_params).get("cell")).getX() + ((EditorCell) MapSequence.fromMap(_params).get("cell")).getWidth(), ((EditorCell) MapSequence.fromMap(_params).get("cell")).getY() + ((EditorCell) MapSequence.fromMap(_params).get("cell")).getHeight());
-      EditorCell currentCell = ((EditorCell) MapSequence.fromMap(_params).get("cell"));
+      jetbrains.mps.openapi.editor.cells.EditorCell currentCell = ((EditorCell) MapSequence.fromMap(_params).get("cell"));
       while (currentCell != null) {
         ParametersInformation parametersInformation = currentCell.getStyle().get(StyleAttributes.PARAMETERS_INFORMATION);
         if (parametersInformation != null) {
@@ -95,7 +95,7 @@ public class ShowParameters_Action extends BaseAction {
           MPSToolTipManager.getInstance().showToolTip(new ToolTipData(component), ((EditorComponent) MapSequence.fromMap(_params).get("editor")), p);
           return;
         }
-        currentCell = (EditorCell) currentCell.getParent();
+        currentCell = currentCell.getParent();
       }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowParameters", t);

@@ -29,7 +29,7 @@ public class TextRenderUtil {
 
   public static TextBuilder renderText(Selection selection) {
     if (selection == null || selection.getSelectedCells().size() == 0) {
-      TextBuilder.getEmptyTextBuilder();
+      return TextBuilder.getEmptyTextBuilder();
     }
     List<EditorCell> selectedCells = new ArrayList<EditorCell>();
     for (EditorCell selectedCell : selection.getSelectedCells()) {

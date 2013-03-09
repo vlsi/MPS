@@ -30,10 +30,12 @@ public class CellAction_Insert extends AbstractCellAction {
     myRole = role;
   }
 
+  @Override
   public boolean canExecute(EditorContext context) {
     return true;
   }
 
+  @Override
   public void execute(EditorContext context) {
     SNode nodeToInsert = NodeFactoryManager.createNode(myNode, context, myRole);
     SNodeEditorUtil.setSingleChild(myNode, myRole, nodeToInsert);

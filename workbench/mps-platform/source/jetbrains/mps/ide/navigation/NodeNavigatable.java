@@ -48,7 +48,7 @@ public class NodeNavigatable extends BaseNavigatable {
       return;
     }
 
-    SModel modelDescriptor = node.getModel().getModelDescriptor();
+    SModel modelDescriptor = node.getContainingModel();
     if (modelDescriptor == null) return;
 
     IModule module = modelDescriptor.getModule();

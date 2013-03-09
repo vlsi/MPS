@@ -539,15 +539,12 @@ public class ClassifierResolveUtils {
   public static Iterable<SModel> getModelsByName(SearchScope moduleScope, String name) {
     List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
 
-    // THINK maybe we should put those models together, not use if-else 
-
-    SModel model = moduleScope.resolve(SModelReference.fromString(name));
-    if (model != null) {
-      ListSequence.fromList(models).addElement(model);
-    } else {
-      // FIXME it's wrong: deprecated and ignores module scope 
-      ListSequence.fromList(models).addSequence(ListSequence.fromList(SModelRepository.getInstance().getModelDescriptorsByModelName(name)));
+    for (SModel candidate : Sequence.fromIterable(moduleScope.getModels())) {
+      if (candidate.getReference().getLongName().equals(name)) {
+        ListSequence.fromList(models).addElement(candidate);
+      }
     }
+
     return models;
   }
 

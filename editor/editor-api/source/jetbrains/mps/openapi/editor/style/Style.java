@@ -31,8 +31,6 @@ public interface Style {
   @Deprecated
   void apply(@NotNull EditorCell cell);
 
-  EditorCell getContextCell();
-
   void putAll(@NotNull Style style);
 
   <T> void set(StyleAttribute<T> attribute, T value);

@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
@@ -108,13 +108,14 @@ public class AbstractConceptDeclaration_deprecatedStuff extends AbstractCellProv
 
   private EditorCell createRefNodeList_za92a3_b0a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new AbstractConceptDeclaration_deprecatedStuff.conceptPropertyListHandler_za92a3_b0a(node, "conceptProperty", editorContext);
-    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
+    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_conceptProperty");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
+    editorCell.setGridLayout(true);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -180,13 +181,14 @@ public class AbstractConceptDeclaration_deprecatedStuff extends AbstractCellProv
 
   private EditorCell createRefNodeList_za92a3_e0a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new AbstractConceptDeclaration_deprecatedStuff.conceptLinkListHandler_za92a3_e0a(node, "conceptLink", editorContext);
-    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
+    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_conceptLink");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
+    editorCell.setGridLayout(true);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -271,13 +273,14 @@ public class AbstractConceptDeclaration_deprecatedStuff extends AbstractCellProv
 
   private EditorCell createRefNodeList_za92a3_b1a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new AbstractConceptDeclaration_deprecatedStuff.conceptPropertyDeclarationListHandler_za92a3_b1a(node, "conceptPropertyDeclaration", editorContext);
-    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
+    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_conceptPropertyDeclaration");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
+    editorCell.setGridLayout(true);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -343,13 +346,14 @@ public class AbstractConceptDeclaration_deprecatedStuff extends AbstractCellProv
 
   private EditorCell createRefNodeList_za92a3_e1a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new AbstractConceptDeclaration_deprecatedStuff.conceptLinkDeclarationListHandler_za92a3_e1a(node, "conceptLinkDeclaration", editorContext);
-    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
+    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_conceptLinkDeclaration");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
+    editorCell.setGridLayout(true);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

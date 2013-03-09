@@ -32,6 +32,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -81,6 +82,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   }
 
   private ReloadAdapter myReloadHandler = new ReloadAdapter() {
+    @Override
     public void unload() {
       clear();
     }
@@ -219,9 +221,10 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       result.addAll(factory.instances(node, context));
     }
 
-    List<EditorMessage> messages = ((EditorComponent) context.getEditorComponent()).getHighlightManager().getMessagesFor(node);
-    for (EditorMessage message : messages) {
-      List<QuickFixProvider> intentionProviders = message.getIntentionProviders();
+    List<SimpleEditorMessage> messages = ((EditorComponent) context.getEditorComponent()).getHighlightManager().getMessagesFor(node);
+    for (SimpleEditorMessage message : messages) {
+      //TODO remove this cast
+      List<QuickFixProvider> intentionProviders = ((EditorMessage) message).getIntentionProviders();
       for (QuickFixProvider intentionProvider : intentionProviders) {
         Intention intention = new QuickFixAdapter(intentionProvider.getQuickFix(), intentionProvider.isError());
         if (intention == null || (isAncestor && !intention.isAvailableInChildNodes()) || !intention.isApplicable(node, context)) {
@@ -364,6 +367,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
   private void load() {
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         List<Language> allLanguages = (List<Language>) ModuleRepositoryFacade.getInstance().getAllModules(Language.class);
         for (Language language : allLanguages) {
@@ -405,6 +409,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
   private void clear() {
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         myIntentionFactories.clear();
         myConcept2IntentionFactories.clear();
@@ -530,24 +535,29 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
   //-------------component methods-----------------
 
+  @Override
   public void initComponent() {
     myClassLoaderManager.addReloadHandler(myReloadHandler);
   }
 
+  @Override
   @NonNls
   @NotNull
   public String getComponentName() {
     return "MPS Intention Manager";
   }
 
+  @Override
   public void disposeComponent() {
     myClassLoaderManager.removeReloadHandler(myReloadHandler);
   }
 
+  @Override
   public MyState getState() {
     return myState;
   }
 
+  @Override
   public void loadState(MyState state) {
     myState = state;
   }

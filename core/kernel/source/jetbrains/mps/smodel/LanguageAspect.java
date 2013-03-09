@@ -216,7 +216,7 @@ public enum LanguageAspect {
   }
 
   public boolean is(org.jetbrains.mps.openapi.model.SModel sm) {
-    assert sm instanceof SModel;//temporary
+    assert sm instanceof SModelDescriptor;//temporary
     return Language.getModelAspect(sm) == this;
   }
 

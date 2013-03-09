@@ -4,11 +4,13 @@ package jetbrains.mps.ide.typesystem.trace;
 
 import jetbrains.mps.ide.ui.MPSTree;
 import com.intellij.openapi.actionSystem.DataProvider;
+import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
+import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.NodeHighlightManager;
-import jetbrains.mps.nodeEditor.EditorMessageOwner;
+
 import java.util.HashSet;
 import java.util.List;
 import javax.swing.tree.TreePath;
@@ -347,7 +349,7 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
     }
 
     @Override
-    public boolean sameAs(EditorMessage that) {
+    public boolean sameAs(SimpleEditorMessage that) {
       return super.sameAs(that) && this.equals(that);
     }
 

@@ -17,12 +17,11 @@ import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import java.util.Collections;
-import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -88,11 +87,11 @@ public class ChildSubstituteActionsUtil {
     });
   }
 
-  public static List<INodeSubstituteAction> invokeActionFactory(SNode builder, SNode parentNode, SNode currentChild, SNode childConcept, IChildNodeSetter childSetter, IOperationContext context) {
+  public static List<SubstituteAction> invokeActionFactory(SNode builder, SNode parentNode, SNode currentChild, SNode childConcept, IChildNodeSetter childSetter, IOperationContext context) {
 
     String methodName = BehaviorReflection.invokeNonVirtual(String.class, builder, "jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder", "call_getBuilderQueryMethodName_1220278926652", new Object[]{});
     try {
-      return (List<INodeSubstituteAction>) QueryMethodGenerated.invoke(methodName, context, new NodeSubstituteActionsFactoryContext(parentNode, currentChild, childConcept, childSetter), SNodeOperations.getModel(builder));
+      return (List<SubstituteAction>) QueryMethodGenerated.invoke(methodName, context, new NodeSubstituteActionsFactoryContext(parentNode, currentChild, childConcept, childSetter), SNodeOperations.getModel(builder));
     } catch (Throwable t) {
       LOG.error(t);
       return Collections.emptyList();

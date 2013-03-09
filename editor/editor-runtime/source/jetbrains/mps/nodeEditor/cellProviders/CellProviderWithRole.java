@@ -16,9 +16,9 @@
 package jetbrains.mps.nodeEditor.cellProviders;
 
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class CellProviderWithRole extends AbstractCellProvider {
@@ -61,7 +61,7 @@ public abstract class CellProviderWithRole extends AbstractCellProvider {
   public abstract Class getRoleAttributeClass();
 
 
-  public abstract NodeSubstituteInfo createDefaultSubstituteInfo();
+  public abstract SubstituteInfo createDefaultSubstituteInfo();
 
   //sets a text to show in a cell if no target can be obtained by role
   public void setNoTargetText(String text) {

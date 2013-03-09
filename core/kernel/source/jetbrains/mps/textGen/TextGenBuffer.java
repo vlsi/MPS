@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.textGen;
 
+import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
@@ -101,7 +102,7 @@ public final class TextGenBuffer {
 
   private Message prepare(MessageKind kind, String text, @Nullable SNode node) {
     Message message = new Message(kind, text);
-    if (node != null && node.getModel() != null && node.getModel() != null && !(node.getModel() instanceof TransientSModel)) {
+    if (node != null && node.getModel() != null && node.getModel() != null && !(node.getModel() .getModule() instanceof TransientModelsModule)) {
       message.setHintObject(new jetbrains.mps.smodel.SNodePointer(node));
     }
     return message;

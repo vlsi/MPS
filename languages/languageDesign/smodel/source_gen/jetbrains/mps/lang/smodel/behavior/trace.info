@@ -2605,18 +2605,12 @@
     <unitInfo nodeId="4040588429969441025" fileName="LanguageReferenceExpression_Behavior.java" startLine="16" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.LanguageReferenceExpression_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)/559557797393017727">
-    <nodeInfo nodeId="559557797393017735" fileName="ModelReferenceExpression_Behavior.java" startLine="15" startPosition="73" endLine="16" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="559557797393017727" fileName="ModelReferenceExpression_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="559557797393017727" fileName="ModelReferenceExpression_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getModel_559557797393017730#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SModel;" />
-    <scopeInfo nodeId="559557797393017729" fileName="ModelReferenceExpression_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
-    <scopeInfo nodeId="559557797393017733" fileName="ModelReferenceExpression_Behavior.java" startLine="15" startPosition="73" endLine="16" endPosition="198" />
-    <scopeInfo nodeId="559557797393017727" fileName="ModelReferenceExpression_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0">
+    <nodeInfo nodeId="559557797393017727" fileName="ModelReferenceExpression_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="559557797393017729" fileName="ModelReferenceExpression_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="559557797393017727" fileName="ModelReferenceExpression_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
       <varInfo nodeId="559557797393017727" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="559557797393017727" fileName="ModelReferenceExpression_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
-      <varInfo nodeId="559557797393017727" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="559557797393017727" fileName="ModelReferenceExpression_Behavior.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.ModelReferenceExpression_Behavior" />
+    <unitInfo nodeId="559557797393017727" fileName="ModelReferenceExpression_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.ModelReferenceExpression_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)/5815925154349132185">
     <nodeInfo nodeId="5815925154349134246" fileName="OperationParm_LinkQualifier_Behavior.java" startLine="22" startPosition="77" endLine="23" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

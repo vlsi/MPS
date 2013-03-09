@@ -38,9 +38,9 @@ public class BinaryOperation_RightArgument_Actions {
       SNodeOperations.replaceWithAnother(node, leftExpression);
       editorContext.flushEvents();
       EditorComponent editor = editorContext.getEditorComponent();
-      jetbrains.mps.nodeEditor.cells.EditorCell cell = (jetbrains.mps.nodeEditor.cells.EditorCell) editor.findNodeCell(leftExpression);
+      EditorCell cell = editor.findNodeCell(leftExpression);
       if (cell != null) {
-        jetbrains.mps.nodeEditor.cells.EditorCell lastLeaf = cell.getLastLeaf(CellConditions.SELECTABLE);
+        EditorCell lastLeaf = ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getLastLeaf(CellConditions.SELECTABLE);
         editor.changeSelection(lastLeaf);
         if (lastLeaf instanceof EditorCell_Label) {
           ((EditorCell_Label) lastLeaf).end();

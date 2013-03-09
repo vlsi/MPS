@@ -238,7 +238,7 @@
    <int>1</int>
   </void>
   <void method="put">
-   <string>public void jetbrains.mps.smodel.SNode.changeModel(jetbrains.mps.smodel.SModel)</string>
+   <string>public void jetbrains.mps.smodel.SNode.changeModel(jetbrains.mps.smodel.SModelInternal)</string>
    <null/>
   </void>
   <void method="put">

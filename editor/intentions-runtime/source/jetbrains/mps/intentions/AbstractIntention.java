@@ -25,11 +25,13 @@ import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public abstract class AbstractIntention implements Intention {
+  @Override
   public abstract String getConcept();
 
   /**
    * should become abstract after MPS 3.0
    */
+  @Override
   public String getDescription(SNode node, EditorContext editorContext) {
     return getDescription(node, (jetbrains.mps.nodeEditor.EditorContext) editorContext);
   }
@@ -43,6 +45,7 @@ public abstract class AbstractIntention implements Intention {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   public boolean isApplicable(SNode node, EditorContext editorContext) {
     return isApplicable(node, (jetbrains.mps.nodeEditor.EditorContext) editorContext);
   }
@@ -59,6 +62,7 @@ public abstract class AbstractIntention implements Intention {
   /**
    * should become abstract after MPS 3.0
    */
+  @Override
   public void execute(SNode node, EditorContext editorContext) {
     execute(node, (jetbrains.mps.nodeEditor.EditorContext) editorContext);
   }
@@ -81,6 +85,7 @@ public abstract class AbstractIntention implements Intention {
     return false;
   }
 
+  @Override
   public boolean isAvailableInChildNodes() {
     return false;
   }
@@ -89,18 +94,22 @@ public abstract class AbstractIntention implements Intention {
    * @deprecated starting from MPS 3.0 proper content will be generated into getType() method
    * of sub-classes. This method should be removed.
    */
+  @Override
   public IntentionType getType() {
     return isErrorIntention() ? IntentionType.ERROR : IntentionType.NORMAL;
   }
 
+  @Override
   public boolean isParameterized() {
     return false;
   }
 
+  @Override
   public SNode getNodeByIntention() {
     return null;
   }
 
+  @Override
   public String getLocationString() {
     return "";
   }

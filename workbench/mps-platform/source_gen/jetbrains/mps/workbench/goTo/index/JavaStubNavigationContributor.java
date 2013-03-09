@@ -10,7 +10,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.Project;
 import java.util.Set;
 import java.util.HashSet;
-import jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.extapi.persistence.FolderSetDataSource;
 import jetbrains.mps.reloading.ClassPathFactory;
@@ -38,8 +37,6 @@ public class JavaStubNavigationContributor implements NodeNavigationContributor,
   public Collection<NodeDescriptor> getNodeDescriptors(Collection<SModel> models, Project project) {
     Set<NodeDescriptor> res = new HashSet<NodeDescriptor>();
     for (SModel model : models) {
-      String path = ((JavaClassStubsModelRoot) model.getModelRoot()).getPath();
-
       CompositeClassPathItem cp = new CompositeClassPathItem();
       for (String dir : ((FolderSetDataSource) model.getSource()).getPaths()) {
         try {

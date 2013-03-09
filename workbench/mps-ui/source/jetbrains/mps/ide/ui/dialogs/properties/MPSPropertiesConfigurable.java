@@ -45,6 +45,7 @@ import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.ui.dialogs.properties.creators.LanguageOrDevKitChooser;
 import jetbrains.mps.ide.ui.dialogs.properties.renders.DependencyTableCellRender;
 import jetbrains.mps.ide.ui.dialogs.properties.renders.ModuleTableCellRender;
+import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.IScope;
@@ -55,6 +56,8 @@ import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableIte
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
+import org.jetbrains.mps.openapi.ui.Modifiable;
+import org.jetbrains.mps.openapi.ui.persistence.Tab;
 
 import javax.swing.DefaultCellEditor;
 import javax.swing.Icon;
@@ -122,11 +125,11 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
 
   protected void addTab(Tab tab) {
     if(tab == null || tab.getTabComponent() == null) return;
-    if(tab.getTip() == null) tab.setTip(tab.getName());
+    if(tab.getToolTip() == null && tab instanceof BaseTab) ((BaseTab)tab).setToolTip(tab.getTitle());
 
     if(!myTabs.contains(tab)) myTabs.add(tab);
     if(myTabbedPaneWrapper.indexOfComponent(tab.getTabComponent()) < 0)
-      myTabbedPaneWrapper.addTab(tab.getName(), tab.getIcon(), tab.getTabComponent(), tab.getTip());
+      myTabbedPaneWrapper.addTab(tab.getTitle(), tab.getIcon(), tab.getTabComponent(), tab.getToolTip());
   }
 
   private void removeTab(int index) {
@@ -185,59 +188,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
    */
   protected void save() {}
 
-
-  //Tab classes
-
-  public abstract class Tab implements Modifiable {
-    private String myName;
-    private JComponent myTabComponent;
-    private Icon myIcon;
-    private String myTip;
-
-    public Tab() {
-      this("", null, "");
-    }
-
-    public Tab(String name, Icon icon, String tip){
-      setName(name);
-      setIcon(icon);
-      setTip(tip);
-    }
-
-    public String getName() {
-      return myName;
-    }
-
-    public void setName(String name) {
-      myName = name;
-    }
-
-    public JComponent getTabComponent() {
-      return myTabComponent;
-    }
-
-    protected void setTabComponent(JComponent tabComponent) {
-      myTabComponent = tabComponent;
-    }
-
-    public Icon getIcon() {
-      return myIcon;
-    }
-
-    public void setIcon(Icon icon) {
-      myIcon = icon;
-    }
-
-    public String getTip() {
-      return myTip;
-    }
-
-    public void setTip(String tip) {
-      myTip = tip;
-    }
-  }
-
-  public abstract class CommonTab extends Tab {
+  public abstract class CommonTab extends BaseTab {
 
     protected JTextField myTextFieldName;
 
@@ -289,7 +240,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
     }
   }
 
-  public abstract class DependenciesTab extends Tab {
+  public abstract class DependenciesTab extends BaseTab {
 
     protected DependTableModel myDependTableModel;
 
@@ -444,7 +395,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
     protected abstract AnActionButtonRunnable getAnActionButtonRunnable();
   }
 
-  public abstract class UsedLanguagesTab extends Tab {
+  public abstract class UsedLanguagesTab extends BaseTab {
 
     protected UsedLangsTableModel myUsedLangsTableModel;
 

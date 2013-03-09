@@ -42,6 +42,7 @@ public class DefaultCellInfo implements CellInfo {
 
   public DefaultCellInfo(final EditorCell cell) {
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         SNode n = cell.getSNode();
         myNodePointer = (n == null || n.getModel() == null) ? null : new jetbrains.mps.smodel.SNodePointer(n);
@@ -119,10 +120,12 @@ public class DefaultCellInfo implements CellInfo {
       (myNodePointer == null ? 0 : myNodePointer.hashCode()) + (myCellId == null ? 0 : myCellId.hashCode()) + myCellNumber;
   }
 
+  @Override
   public EditorCell findCell(final EditorComponent editorComponent) {
     if (myCellId != null) {
       if (myNodePointer == null) return null;
       return ModelAccess.instance().runReadAction(new Computable<EditorCell>() {
+        @Override
         public EditorCell compute() {
           // This is needed while merging: if node pointer points to node from current model,
           // it should be used instead of model in model repository.
@@ -158,6 +161,7 @@ public class DefaultCellInfo implements CellInfo {
     return null;
   }
 
+  @Override
   public EditorCell findClosestCell(EditorComponent editorComponent) {
     return findCell(editorComponent);
   }

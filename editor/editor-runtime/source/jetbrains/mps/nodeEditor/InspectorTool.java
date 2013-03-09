@@ -58,15 +58,18 @@ public class InspectorTool extends BaseTool implements EditorInspector, ProjectC
     super(project, ID, 2, IdeIcons.INSPECTOR_ICON, ToolWindowAnchor.BOTTOM, true, false);
   }
 
+  @Override
   public void initComponent() {
     createTool();
     StartupManager.getInstance(getProject()).registerPostStartupActivity(new Runnable() {
+      @Override
       public void run() {
         registerLater();
       }
     });
   }
 
+  @Override
   public void disposeComponent() {
     if (myInspectorComponent == null) return;
     myInspectorComponent.dispose();
@@ -88,6 +91,7 @@ public class InspectorTool extends BaseTool implements EditorInspector, ProjectC
       @Override
       public void run() {
         SwingUtilities.invokeLater(new Runnable() {
+          @Override
           public void run() {
             InspectorTool.this.myMessagePanel = new MyMessagePanel();
             myComponent = new MyPanel();
@@ -101,6 +105,7 @@ public class InspectorTool extends BaseTool implements EditorInspector, ProjectC
     });
   }
 
+  @Override
   protected boolean isInitiallyAvailable() {
     return true;
   }
@@ -114,6 +119,7 @@ public class InspectorTool extends BaseTool implements EditorInspector, ProjectC
     return myInspectorComponent;
   }
 
+  @Override
   public JComponent getComponent() {
     return myComponent;
   } 
@@ -129,6 +135,7 @@ public class InspectorTool extends BaseTool implements EditorInspector, ProjectC
       super(new BorderLayout());
     }
 
+    @Override
     @Nullable
     public Object getData(@NonNls String dataId) {
       if (MPSCommonDataKeys.FILE_EDITOR.getName().equals(dataId)) {
@@ -159,8 +166,10 @@ public class InspectorTool extends BaseTool implements EditorInspector, ProjectC
 
       myOpenConceptLabel.setOpaque(false);
       myOpenConceptLabel.addHyperlinkListener(new HyperlinkListener() {
+        @Override
         public void hyperlinkUpdate(HyperlinkEvent e) {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+            @Override
             public void run() {
               SNode concept = SNodeOperations.getConceptDeclaration(myNode);
               ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(getProject()));

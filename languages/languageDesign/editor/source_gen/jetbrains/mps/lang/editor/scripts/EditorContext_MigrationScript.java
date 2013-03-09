@@ -14,6 +14,10 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class EditorContext_MigrationScript extends BaseMigrationScript {
   public EditorContext_MigrationScript(IOperationContext operationContext) {
@@ -471,6 +475,62 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
     // whitespace 
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
+        return "Replacing jetbrains.mps.nodeEditor.cells.EditorCell classifier type instances with jetbrains.mps.openapi.editor.cells.EditorCell";
+      }
+
+      public String getAdditionalInfo() {
+        return "Replacing jetbrains.mps.nodeEditor.cells.EditorCell classifier type instances with jetbrains.mps.openapi.editor.cells.EditorCell";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.baseLanguage.structure.ClassifierType";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return SLinkOperations.getTarget(node, "classifier", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)", "~EditorCell");
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SLinkOperations.setTarget(node, "classifier", SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)", "~EditorCell"), false);
+
+        ((SModelInternal) node.getModel()).addModelImport(SModelReference.fromString("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)"), false);
+        node.getModel().getModelDescriptor().getModule().addDependency(ModuleReference.fromString("1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)"), false);
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "Replacing jetbrains.mps.nodeEditor.cells.EditorCell classifier type with jetbrains.mps.openapi.editor.cells.EditorCell in static field references";
+      }
+
+      public String getAdditionalInfo() {
+        return "Replacing jetbrains.mps.nodeEditor.cells.EditorCell classifier type with jetbrains.mps.openapi.editor.cells.EditorCell in static field references";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.baseLanguage.structure.StaticFieldReference";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return SLinkOperations.getTarget(node, "classifier", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)", "~EditorCell");
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SLinkOperations.setTarget(node, "classifier", SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)", "~EditorCell"), false);
+
+        ((SModelInternal) node.getModel()).addModelImport(SModelReference.fromString("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)"), false);
+        node.getModel().getModelDescriptor().getModule().addDependency(ModuleReference.fromString("1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)"), false);
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
         return "Replacing static field references referencing static fields declared in jetbrains.mps.nodeEditor.cells.EditorCell classified with static fields from jetbrains.mps.openapi.editor.cells.EditorCell";
       }
 
@@ -501,6 +561,88 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
         SReference newReference = new StaticReference(oldReference.getRole(), node, SModelReference.fromString("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)"), oldReference.getTargetNodeId(), ((jetbrains.mps.smodel.SReference) oldReference).getResolveInfo());
         node.setReference(oldReference.getRole(), null);
         node.setReference("staticFieldDeclaration", newReference);
+
+        ((SModelInternal) node.getModel()).addModelImport(SModelReference.fromString("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)"), false);
+        node.getModel().getModelDescriptor().getModule().addDependency(ModuleReference.fromString("1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)"), false);
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "Replacing ClassCreators using jetbrains.mps.nodeEditor.cells.EditorCell as a parameter with jetbrains.mps.openapi.editor.cells.EditorCell";
+      }
+
+      public String getAdditionalInfo() {
+        return "Replacing ClassCreators using jetbrains.mps.nodeEditor.cells.EditorCell as a parameter with jetbrains.mps.openapi.editor.cells.EditorCell";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.baseLanguage.structure.ClassCreator";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        SReference reference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration"));
+        if (reference == null || jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference) != null) {
+          return false;
+        }
+        SNodeId targetNodeId = reference.getTargetNodeId();
+        if (targetNodeId == null) {
+          return false;
+        }
+        return targetNodeId.toString().contains("jetbrains.mps.nodeEditor.cells.EditorCell");
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SReference oldReference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration"));
+        SNodeId oldNodeId = oldReference.getTargetNodeId();
+        SNodeId newNodeId = jetbrains.mps.smodel.SNodeId.fromString(oldNodeId.toString().replaceAll("jetbrains.mps.nodeEditor.cells.EditorCell", "jetbrains.mps.openapi.editor.cells.EditorCell"));
+        SReference newReference = new StaticReference(oldReference.getRole(), node, oldReference.getTargetSModelReference(), newNodeId, ((jetbrains.mps.smodel.SReference) oldReference).getResolveInfo());
+        node.setReference(oldReference.getRole(), null);
+        node.setReference("constructorDeclaration", newReference);
+
+        ((SModelInternal) node.getModel()).addModelImport(SModelReference.fromString("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)"), false);
+        node.getModel().getModelDescriptor().getModule().addDependency(ModuleReference.fromString("1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)"), false);
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "Replacing IMethodCalls using jetbrains.mps.nodeEditor.cells.EditorCell as a parameter with jetbrains.mps.openapi.editor.cells.EditorCell";
+      }
+
+      public String getAdditionalInfo() {
+        return "Replacing IMethodCalls using jetbrains.mps.nodeEditor.cells.EditorCell as a parameter with jetbrains.mps.openapi.editor.cells.EditorCell";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.baseLanguage.structure.IMethodCall";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        SReference reference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "baseMethodDeclaration"));
+        if (reference == null || jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference) != null) {
+          return false;
+        }
+        SNodeId targetNodeId = reference.getTargetNodeId();
+        if (targetNodeId == null) {
+          return false;
+        }
+        return targetNodeId.toString().contains("jetbrains.mps.nodeEditor.cells.EditorCell");
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SReference oldReference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "baseMethodDeclaration"));
+        SNodeId oldNodeId = oldReference.getTargetNodeId();
+        SNodeId newNodeId = jetbrains.mps.smodel.SNodeId.fromString(oldNodeId.toString().replaceAll("jetbrains.mps.nodeEditor.cells.EditorCell", "jetbrains.mps.openapi.editor.cells.EditorCell"));
+        SReference newReference = new StaticReference(oldReference.getRole(), node, oldReference.getTargetSModelReference(), newNodeId, ((jetbrains.mps.smodel.SReference) oldReference).getResolveInfo());
+        node.setReference(oldReference.getRole(), null);
+        node.setReference("baseMethodDeclaration", newReference);
 
         ((SModelInternal) node.getModel()).addModelImport(SModelReference.fromString("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)"), false);
         node.getModel().getModelDescriptor().getModule().addDependency(ModuleReference.fromString("1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)"), false);
@@ -1182,9 +1324,6 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
         if (jetbrains.mps.smodel.SNodeId.fromString("~EditorCell.getStyle():jetbrains.mps.openapi.editor.style.Style").equals(targetNodeId)) {
           return true;
         }
-        if (jetbrains.mps.smodel.SNodeId.fromString("~EditorCell.setStyle(jetbrains.mps.openapi.editor.style.Style):void").equals(targetNodeId)) {
-          return true;
-        }
         if (jetbrains.mps.smodel.SNodeId.fromString("~EditorCell.getKeyMap():jetbrains.mps.openapi.editor.cells.KeyMap").equals(targetNodeId)) {
           return true;
         }
@@ -1198,6 +1337,9 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
           return true;
         }
         if (jetbrains.mps.smodel.SNodeId.fromString("~EditorCell.getAvailableActions():java.util.Collection").equals(targetNodeId)) {
+          return true;
+        }
+        if (jetbrains.mps.smodel.SNodeId.fromString("~EditorCell.getMessages():java.util.List").equals(targetNodeId)) {
           return true;
         }
         if (jetbrains.mps.smodel.SNodeId.fromString("~EditorCell.setSubstituteInfo(jetbrains.mps.openapi.editor.cells.SubstituteInfo):void").equals(targetNodeId)) {
@@ -1903,6 +2045,269 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
           SLinkOperations.setTarget(node, "baseMethodDeclaration", SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)", "~CellAction.canExecute(jetbrains.mps.openapi.editor.EditorContext):boolean"), false);
           return;
         }
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
+    // whitespace 
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "Replacing jetbrains.mps.nodeEditor.style.Padding classifier type instances with jetbrains.mps.editor.runtime.style.Padding";
+      }
+
+      public String getAdditionalInfo() {
+        return "Replacing jetbrains.mps.nodeEditor.style.Padding classifier type instances with jetbrains.mps.editor.runtime.style.Padding";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.baseLanguage.structure.ClassifierType";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return SLinkOperations.getTarget(node, "classifier", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.style(MPS.Editor/jetbrains.mps.nodeEditor.style@java_stub)", "~Padding");
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SLinkOperations.setTarget(node, "classifier", SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)", "~Padding"), false);
+
+        ((SModelInternal) node.getModel()).addModelImport(SModelReference.fromString("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)"), false);
+        node.getModel().getModelDescriptor().getModule().addDependency(ModuleReference.fromString("1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)"), false);
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "Replacing jetbrains.mps.nodeEditor.style.Padding classifier type with jetbrains.mps.editor.runtime.style.Padding in static field references";
+      }
+
+      public String getAdditionalInfo() {
+        return "Replacing jetbrains.mps.nodeEditor.style.Padding classifier type with jetbrains.mps.editor.runtime.style.Padding in static field references";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.baseLanguage.structure.StaticFieldReference";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return SLinkOperations.getTarget(node, "classifier", false) == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.style(MPS.Editor/jetbrains.mps.nodeEditor.style@java_stub)", "~Padding");
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SLinkOperations.setTarget(node, "classifier", SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)", "~Padding"), false);
+
+        ((SModelInternal) node.getModel()).addModelImport(SModelReference.fromString("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)"), false);
+        node.getModel().getModelDescriptor().getModule().addDependency(ModuleReference.fromString("1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)"), false);
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "Replacing static field references referencing static fields declared in jetbrains.mps.nodeEditor.style.Padding classified with static fields from jetbrains.mps.editor.runtime.style.Padding";
+      }
+
+      public String getAdditionalInfo() {
+        return "Replacing static field references referencing static fields declared in jetbrains.mps.nodeEditor.style.Padding classified with static fields from jetbrains.mps.editor.runtime.style.Padding";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.baseLanguage.structure.StaticFieldReference";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        SReference reference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", "staticFieldDeclaration"));
+        if (reference == null || jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference) != null) {
+          return false;
+        }
+
+        if (!(SModelReference.fromString("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.style(MPS.Editor/jetbrains.mps.nodeEditor.style@java_stub)").equals(reference.getTargetSModelReference()))) {
+          return false;
+        }
+
+        SNodeId targetNodeId = reference.getTargetNodeId();
+        return false;
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SReference oldReference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", "staticFieldDeclaration"));
+        SReference newReference = new StaticReference(oldReference.getRole(), node, SModelReference.fromString("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)"), oldReference.getTargetNodeId(), ((jetbrains.mps.smodel.SReference) oldReference).getResolveInfo());
+        node.setReference(oldReference.getRole(), null);
+        node.setReference("staticFieldDeclaration", newReference);
+
+        ((SModelInternal) node.getModel()).addModelImport(SModelReference.fromString("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)"), false);
+        node.getModel().getModelDescriptor().getModule().addDependency(ModuleReference.fromString("1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)"), false);
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "Replacing ClassCreators using jetbrains.mps.nodeEditor.style.Padding as a parameter with jetbrains.mps.editor.runtime.style.Padding";
+      }
+
+      public String getAdditionalInfo() {
+        return "Replacing ClassCreators using jetbrains.mps.nodeEditor.style.Padding as a parameter with jetbrains.mps.editor.runtime.style.Padding";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.baseLanguage.structure.ClassCreator";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        SReference reference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration"));
+        if (reference == null || jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference) != null) {
+          return false;
+        }
+        SNodeId targetNodeId = reference.getTargetNodeId();
+        if (targetNodeId == null) {
+          return false;
+        }
+        return targetNodeId.toString().contains("jetbrains.mps.nodeEditor.style.Padding");
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SReference oldReference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration"));
+        SNodeId oldNodeId = oldReference.getTargetNodeId();
+        SNodeId newNodeId = jetbrains.mps.smodel.SNodeId.fromString(oldNodeId.toString().replaceAll("jetbrains.mps.nodeEditor.style.Padding", "jetbrains.mps.editor.runtime.style.Padding"));
+        SReference newReference = new StaticReference(oldReference.getRole(), node, oldReference.getTargetSModelReference(), newNodeId, ((jetbrains.mps.smodel.SReference) oldReference).getResolveInfo());
+        node.setReference(oldReference.getRole(), null);
+        node.setReference("constructorDeclaration", newReference);
+
+        ((SModelInternal) node.getModel()).addModelImport(SModelReference.fromString("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)"), false);
+        node.getModel().getModelDescriptor().getModule().addDependency(ModuleReference.fromString("1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)"), false);
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "Replacing IMethodCalls using jetbrains.mps.nodeEditor.style.Padding as a parameter with jetbrains.mps.editor.runtime.style.Padding";
+      }
+
+      public String getAdditionalInfo() {
+        return "Replacing IMethodCalls using jetbrains.mps.nodeEditor.style.Padding as a parameter with jetbrains.mps.editor.runtime.style.Padding";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.baseLanguage.structure.IMethodCall";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        SReference reference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "baseMethodDeclaration"));
+        if (reference == null || jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference) != null) {
+          return false;
+        }
+        SNodeId targetNodeId = reference.getTargetNodeId();
+        if (targetNodeId == null) {
+          return false;
+        }
+        return targetNodeId.toString().contains("jetbrains.mps.nodeEditor.style.Padding");
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SReference oldReference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "baseMethodDeclaration"));
+        SNodeId oldNodeId = oldReference.getTargetNodeId();
+        SNodeId newNodeId = jetbrains.mps.smodel.SNodeId.fromString(oldNodeId.toString().replaceAll("jetbrains.mps.nodeEditor.style.Padding", "jetbrains.mps.editor.runtime.style.Padding"));
+        SReference newReference = new StaticReference(oldReference.getRole(), node, oldReference.getTargetSModelReference(), newNodeId, ((jetbrains.mps.smodel.SReference) oldReference).getResolveInfo());
+        node.setReference(oldReference.getRole(), null);
+        node.setReference("baseMethodDeclaration", newReference);
+
+        ((SModelInternal) node.getModel()).addModelImport(SModelReference.fromString("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)"), false);
+        node.getModel().getModelDescriptor().getModule().addDependency(ModuleReference.fromString("1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)"), false);
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "Replacing ClassCreators of jetbrains.mps.nodeEditor.style.Padding with corresponding ClassCreators from jetbrains.mps.editor.runtime.style.Padding";
+      }
+
+      public String getAdditionalInfo() {
+        return "Replacing ClassCreators of jetbrains.mps.nodeEditor.style.Padding with corresponding ClassCreators from jetbrains.mps.editor.runtime.style.Padding";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.baseLanguage.structure.ClassCreator";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        SNode classifier = SNodeOperations.getAncestor(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+        return classifier == SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.style(MPS.Editor/jetbrains.mps.nodeEditor.style@java_stub)", "~Padding");
+      }
+
+      public void doUpdateInstanceNode(final SNode node) {
+        SNode newConstructor = Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)", "~Padding"))).findFirst(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return (int) ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).count() == (int) ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "parameter", true)).count();
+          }
+        });
+        if (newConstructor != null) {
+          SLinkOperations.setTarget(node, "baseMethodDeclaration", newConstructor, false);
+        }
+
+        ((SModelInternal) node.getModel()).addModelImport(SModelReference.fromString("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)"), false);
+        node.getModel().getModelDescriptor().getModule().addDependency(ModuleReference.fromString("1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)"), false);
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "Pull up and remove all methods from jetbrains.mps.nodeEditor.style.Padding to jetbrains.mps.editor.runtime.style.Padding";
+      }
+
+      public String getAdditionalInfo() {
+        return "Pull up and remove all methods from jetbrains.mps.nodeEditor.style.Padding to jetbrains.mps.editor.runtime.style.Padding";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.baseLanguage.structure.IMethodCall";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        SReference reference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "baseMethodDeclaration"));
+        if (reference == null || jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference) != null) {
+          return false;
+        }
+
+        if (!(SModelReference.fromString("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.style(MPS.Editor/jetbrains.mps.nodeEditor.style@java_stub)").equals(reference.getTargetSModelReference()))) {
+          return false;
+        }
+
+        SNodeId targetNodeId = reference.getTargetNodeId();
+        if (jetbrains.mps.smodel.SNodeId.fromString("~Padding.getValue():double").equals(targetNodeId)) {
+          return true;
+        }
+        if (jetbrains.mps.smodel.SNodeId.fromString("~Padding.getType():jetbrains.mps.editor.runtime.style.Measure").equals(targetNodeId)) {
+          return true;
+        }
+        return false;
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SReference oldReference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "baseMethodDeclaration"));
+        SReference newReference = new StaticReference(oldReference.getRole(), node, SModelReference.fromString("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)"), oldReference.getTargetNodeId(), ((jetbrains.mps.smodel.SReference) oldReference).getResolveInfo());
+        node.setReference(oldReference.getRole(), null);
+        node.setReference("baseMethodDeclaration", newReference);
+
+        ((SModelInternal) node.getModel()).addModelImport(SModelReference.fromString("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)"), false);
+        node.getModel().getModelDescriptor().getModule().addDependency(ModuleReference.fromString("1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)"), false);
       }
 
       public boolean isShowAsIntention() {

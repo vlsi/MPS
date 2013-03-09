@@ -181,17 +181,17 @@ public class BinaryPersistence {
     os.writeInt(HEADER);
     os.writeInt(STREAM_ID);
     os.writeModelReference(model.getReference());
-    os.writeInt(((jetbrains.mps.smodel.SModel) model).getVersion());
+    os.writeInt(((jetbrains.mps.smodel.SModelInternal) model).getVersion());
     os.writeBoolean(model instanceof BinarySModel && ((BinarySModel) model).getHeader().isDoNotGenerate());
     os.writeInt(0xabab);
 
-    saveModuleRefList(((jetbrains.mps.smodel.SModel) model).importedLanguages(), os);
-    saveModuleRefList(((jetbrains.mps.smodel.SModel) model).engagedOnGenerationLanguages(), os);
-    saveModuleRefList(((jetbrains.mps.smodel.SModel) model).importedDevkits(), os);
+    saveModuleRefList(((jetbrains.mps.smodel.SModelInternal) model).importedLanguages(), os);
+    saveModuleRefList(((jetbrains.mps.smodel.SModelInternal) model).engagedOnGenerationLanguages(), os);
+    saveModuleRefList(((jetbrains.mps.smodel.SModelInternal) model).importedDevkits(), os);
 
     // imports
-    saveImports(((jetbrains.mps.smodel.SModel) model).importedModels(), os);
-    saveImports(((jetbrains.mps.smodel.SModel) model).getAdditionalModelVersions(), os);
+    saveImports(((jetbrains.mps.smodel.SModelInternal) model).importedModels(), os);
+    saveImports(((jetbrains.mps.smodel.SModelInternal) model).getAdditionalModelVersions(), os);
 
     os.writeInt(0xbaba);
   }
@@ -237,6 +237,9 @@ public class BinaryPersistence {
       BinaryModelHeader modelHeader = loadHeader(mis);
       BinarySModel model = new BinarySModel(modelHeader);
       loadModelProperties(model, mis);
+      for (ImportElement element : model.importedModels()) {
+        consumer.consume(element.getModelReference().getModelName());
+      }
       new NodesReader(modelHeader.getReference()) {
         @Override
         protected String readConceptQualifiedName(ModelInputStream is) throws IOException {

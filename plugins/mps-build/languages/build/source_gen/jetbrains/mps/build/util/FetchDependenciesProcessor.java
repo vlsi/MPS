@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.generator.TransientSModel;
+import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
@@ -86,7 +86,7 @@ public class FetchDependenciesProcessor {
     }
 
     private boolean check(SNode node) {
-      if (SNodeOperations.getModel(node) instanceof TransientSModel) {
+      if (SNodeOperations.getModel(node).getModule() instanceof TransientModelsModule) {
         genContext.showErrorMessage(dep, "returned dependency in transient model: " + jetbrains.mps.util.SNodeOperations.getDebugText(node));
         return false;
       }
@@ -98,7 +98,7 @@ public class FetchDependenciesProcessor {
     }
 
     private boolean checkArtifactId(Object artifactId) {
-      if (artifactId instanceof SNode && ((SNode) artifactId).getModel() instanceof TransientSModel) {
+      if (artifactId instanceof SNode && ((SNode) artifactId).getModel().getModule() instanceof TransientModelsModule) {
         genContext.showErrorMessage(dep, "cannot register artifact in transient model " + jetbrains.mps.util.SNodeOperations.getDebugText(((SNode) artifactId)));
         return false;
       }

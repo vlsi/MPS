@@ -36,10 +36,12 @@ public class PropertySubstituteAction extends AbstractNodeSubstituteAction {
     myPropertyValue = propertyValue;
   }
 
+  @Override
   public String getMatchingText(String pattern) {
     return myPropertySupport.fromInternalValue(myPropertyValue);
   }
 
+  @Override
   public String getVisibleMatchingText(String pattern) {
     return getMatchingText(pattern);
   }

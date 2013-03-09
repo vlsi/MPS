@@ -1,37 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-cccj0l9ytvrrfolewafekpo05otu2be">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="621em7vpw5ex0v0ghcf6e9cwqktpv6v" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
   <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="5cgkv9hjtx5w7uuovfx48bh4lywgdpw" />
+  <dep model="r:2ab484bd-6d9e-44f0-999f-0e78b0351ba4(jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests)" hash="-cccj0l9ytvrrfolewafekpo05otu2be" />
   <common hash="-a7pynxayfj9y8mxfnrve1j4dwzghiyt" />
-  <source id="5934496548013480005" name="refScopesInInputLang" hash="-ci2cpk2djvo3m3twf44bir84q7zvtny" dependsOnNodes="true">
+  <source id="5934496548013480005" name="refScopesInInputLang" hash="-ci2cpk2djvo3m3twf44bir84q7zvtny">
     <dep root="3715568794894753648" />
     <dep root="3715568794894764093" />
     <dep root="5934496548013527349" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:2ab484bd-6d9e-44f0-999f-0e78b0351ba4(jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests)" />
     <file name="refScopesInInputLang_Test.java" />
   </source>
   <source id="5934496548013527349" hash="-4kbt8fn2tdhvtgscx463zjyjhvo1qam">
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="3715568794894753648" name="refScopeInInputLang_paramConflict" hash="-3adwz8eyer7vpecqgubp7y27vt40y8y" dependsOnNodes="true">
+  <source id="3715568794894753648" name="refScopeInInputLang_paramConflict" hash="-3adwz8eyer7vpecqgubp7y27vt40y8y">
     <dep root="3715568794894764093" />
     <dep root="5934496548013480005" />
     <dep root="5934496548013527349" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:2ab484bd-6d9e-44f0-999f-0e78b0351ba4(jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests)" />
     <file name="refScopeInInputLang_paramConflict_Test.java" />
   </source>
-  <source id="3715568794894764093" name="refScopeInInputLang_superMeth" hash="bqz09c2ialpyu6ifz8a7mh95m04b2db" dependsOnNodes="true">
+  <source id="3715568794894764093" name="refScopeInInputLang_superMeth" hash="bqz09c2ialpyu6ifz8a7mh95m04b2db">
     <dep root="3715568794894753648" />
     <dep root="5934496548013480005" />
     <dep root="5934496548013527349" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:2ab484bd-6d9e-44f0-999f-0e78b0351ba4(jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests)" />
     <file name="refScopeInInputLang_superMeth_Test.java" />
   </source>
 </dependencies>

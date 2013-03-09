@@ -16,6 +16,7 @@ import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -31,7 +32,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -118,7 +118,7 @@ public class ApiMigrationHelper {
     final Set<Tuples._2<SNode, SReference>> changedClassUsagesInTypes = SetSequence.fromSet(new HashSet<Tuples._2<SNode, SReference>>());
     for (SReference ref : SetSequence.fromSet(usages)) {
       SNode rNode = ((SNode) ref.getSourceNode());
-      if (rNode.getModel().isReadOnly()) {
+      if (SModelOperations.isReadOnly(rNode.getModel())) {
         continue;
       }
 
@@ -182,7 +182,7 @@ public class ApiMigrationHelper {
 
       for (jetbrains.mps.smodel.SReference ref : SetSequence.fromSet(smusages)) {
         SNode rNode = ref.getSourceNode();
-        if (rNode.getModel().isReadOnly()) {
+        if (SModelOperations.isReadOnly(rNode.getModel())) {
           continue;
         }
         SetSequence.fromSet(unknownUsages).addElement(rNode);
@@ -252,13 +252,13 @@ public class ApiMigrationHelper {
   }
 
   private boolean needMigration(SNode n) {
-    if (n.getModel().isReadOnly()) {
+    if (SModelOperations.isReadOnly(n.getModel())) {
       return false;
     }
-    if (eq_yke5lt_a0b0m(SModelOperations.getModelName(SNodeOperations.getModel(n)), SModelOperations.getModelName(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.lang.smodel.pluginSolution.plugin", "")).getSModel()))) {
+    if (eq_yke5lt_a0b0m(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(SNodeOperations.getModel(n)), jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.lang.smodel.pluginSolution.plugin", "")).getSModel()))) {
       return false;
     }
-    if (eq_yke5lt_a0c0m(SModelOperations.getModelName(SNodeOperations.getModel(n)), SModelOperations.getModelName(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.lang.smodel.generator.smodelAdapter", "")).getSModel()))) {
+    if (eq_yke5lt_a0c0m(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(SNodeOperations.getModel(n)), jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.lang.smodel.generator.smodelAdapter", "")).getSModel()))) {
       return false;
     }
     SNode root = SNodeOperations.getContainingRoot(n);

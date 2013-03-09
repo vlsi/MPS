@@ -87,10 +87,12 @@ public class CaretBlinker implements PersistentStateComponent<MyState>, Applicat
     }
   }
 
+  @Override
   public MyState getState() {
     return myState;
   }
 
+  @Override
   public void loadState(MyState state) {
     myState = state;
   }
@@ -111,6 +113,7 @@ public class CaretBlinker implements PersistentStateComponent<MyState>, Applicat
   }
 
   private class MyRunnable implements Runnable {
+    @Override
     @SuppressWarnings({"InfiniteLoopStatement"})
     public void run() {
       while (true) {
