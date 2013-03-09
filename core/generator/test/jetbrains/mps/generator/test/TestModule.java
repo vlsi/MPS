@@ -97,7 +97,7 @@ public class TestModule extends ClassLoadingModule {
     }
 
     SModelFqName fqName = new SModelFqName(SNodeOperations.getModelLongName(originalModel), stereotype);
-    SModel result = new TestSModelDescriptor(fqName, jetbrains.mps.util.SNodeOperations.getModelLongName(originalModel), originalModel.getSModel());
+    SModel result = new TestSModelDescriptor(fqName, jetbrains.mps.util.SNodeOperations.getModelLongName(originalModel), originalModel);
 
     myModels.put(result.getReference().getSModelFqName(), result);
     myOriginalModels.put(result, originalModel);

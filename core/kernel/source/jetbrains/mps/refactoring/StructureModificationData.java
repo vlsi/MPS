@@ -92,7 +92,7 @@ public class StructureModificationData {
       if (model == null) {
         return null;
       }
-      return model.getSModel().getNode(myNodeId);
+      return model.getNode(myNodeId);
     }
 
     public SModel getModel() {

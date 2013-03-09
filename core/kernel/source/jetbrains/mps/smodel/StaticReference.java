@@ -141,7 +141,7 @@ public final class StaticReference extends SReferenceBase {
 
     if (modelDescriptor == null) return null;
 
-    SModel model = modelDescriptor.getSModel();
+    SModel model = modelDescriptor;
     if (model == null) {
       error("failed to get model '" + getTargetSModelReference() + "' from model desctiptor");
     }

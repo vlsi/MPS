@@ -66,7 +66,7 @@ public class RunTestInMPS_Action extends BaseAction {
       if (modelDescriptor == null) {
         return false;
       }
-      MapSequence.fromMap(_params).put("model", modelDescriptor.getSModel());
+      MapSequence.fromMap(_params).put("model", modelDescriptor);
     }
     if (MapSequence.fromMap(_params).get("model") == null) {
       return false;

@@ -51,7 +51,7 @@ public class GoToTypeErrorRuleUtil {
 
     jetbrains.mps.smodel.SNodeId nodeId = jetbrains.mps.smodel.SNodeId.fromString(ruleID);
     assert nodeId != null : "wrong node id string";
-    SNode rule = modelDescriptor.getSModel().getNode(nodeId);
+    SNode rule = modelDescriptor.getNode(nodeId);
     if (rule == null) {
       LOG.error("can't find rule with id " + ruleID + " in the model " + modelDescriptor);
       return;

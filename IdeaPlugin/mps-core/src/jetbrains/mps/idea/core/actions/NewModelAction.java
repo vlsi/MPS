@@ -134,7 +134,7 @@ public class NewModelAction extends AnAction {
           public SModel compute() {
             // TODO create model in mySourceRoot
             EditableSModelDescriptor descriptor = mySolution.createModel(modelFqName.toString(), myModelRoot, null);
-            template.preConfigure(descriptor.getSModel(), mySolution);
+            template.preConfigure(descriptor, mySolution);
             descriptor.save();
             return descriptor;
           }

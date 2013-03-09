@@ -42,7 +42,7 @@ public class TemplateModuleInterpreted implements TemplateModule {
     this.generator = generator;
     this.models = new ArrayList<TemplateModel>();
     for (SModel sModelDescriptor : generator.getOwnTemplateModels()) {
-      SModel sModel = sModelDescriptor.getSModel();
+      SModel sModel = sModelDescriptor;
       if (sModel != null) {
         models.add(new TemplateModelInterpreted(this, sModel));
       }
@@ -84,7 +84,7 @@ public class TemplateModuleInterpreted implements TemplateModule {
   public Collection<String> getUsedLanguages() {
     Set<String> languages = new HashSet<String>();
     for (SModel templateModel : generator.getOwnTemplateModels()) {
-      languages.addAll(ModelContentUtil.getUsedLanguageNamespaces(templateModel.getSModel(), true));
+      languages.addAll(ModelContentUtil.getUsedLanguageNamespaces(templateModel, true));
     }
     return languages;
   }

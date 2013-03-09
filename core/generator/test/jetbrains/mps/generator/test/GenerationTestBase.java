@@ -403,7 +403,7 @@ public class GenerationTestBase {
     }
 
     void buildHash() {
-      Map<String, String> hashes = getHashes(myModel.getSModel());
+      Map<String, String> hashes = getHashes(myModel);
       if (myHash != null) {
         Assert.assertEquals("header's SHA1 shouldn't change after model change", myHash.get(GeneratableSModel.HEADER), hashes.get(GeneratableSModel.HEADER));
         Assert.assertNotSame("file's SHA1 should change after model change", myHash.get(GeneratableSModel.FILE), hashes.get(GeneratableSModel.FILE));

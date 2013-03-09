@@ -75,7 +75,7 @@ public class EditorTests extends DataMPSFixtureTestCase {
           return;
         }
 
-        SModel model = descr.getSModel();
+        SModel model = descr;
         if (model != null) {
           for (SNode root : model.getRootNodes()) {
             roots.add(root);

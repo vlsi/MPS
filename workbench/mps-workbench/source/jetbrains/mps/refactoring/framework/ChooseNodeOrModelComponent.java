@@ -133,7 +133,7 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
     for (SModel model : new ArrayList<SModel>(models)) {
       if (SModelOperations.isReadOnly(model)) {
         models.remove(model);
-      } else if (myReturnLoadedModels && !condition.met(model.getSModel())) {
+      } else if (myReturnLoadedModels && !condition.met(model)) {
         models.remove(model);
       } else if (!myReturnLoadedModels && !condition.met(model)) {
         models.remove(model);
@@ -198,7 +198,7 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
       }
       SModel modelDescriptor = ((SModelTreeNode) node).getSModelDescriptor();
       if (myReturnLoadedModels) {
-        return modelDescriptor.getSModel();
+        return modelDescriptor;
       } else {
         return modelDescriptor;
       }

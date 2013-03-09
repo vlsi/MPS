@@ -61,7 +61,7 @@ public class GoToModelPlatformAction extends BaseAction implements DumbAware {
             VirtualFile modelFile = ModelAccess.instance().runReadAction(new Computable<VirtualFile>() {
               @Override
               public VirtualFile compute() {
-                return ModelUtil.getFileByModel(md.getSModel());
+                return ModelUtil.getFileByModel(md);
               }
             });
 

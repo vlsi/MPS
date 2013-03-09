@@ -48,7 +48,7 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        myCloningModel = modelDescriptor.getSModel();
+        myCloningModel = modelDescriptor;
       }
     });
 
@@ -180,22 +180,22 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
             @Override
             public void adjust(SModel model) {
               for (SModelReference ref : myModelProperties.getImportedModels()) {
-                ((jetbrains.mps.smodel.SModelInternal) model.getSModel()).addModelImport(ref, false);
+                ((jetbrains.mps.smodel.SModelInternal) model).addModelImport(ref, false);
               }
 
               for (ModuleReference mr : myModelProperties.getImportedLanguages()) {
-                ((jetbrains.mps.smodel.SModelInternal) model.getSModel()).addLanguage(mr);
+                ((jetbrains.mps.smodel.SModelInternal) model).addLanguage(mr);
               }
 
               for (ModuleReference mr : myModelProperties.getImportedDevkits()) {
-                ((jetbrains.mps.smodel.SModelInternal) model.getSModel()).addDevKit(mr);
+                ((jetbrains.mps.smodel.SModelInternal) model).addDevKit(mr);
               }
 
               for (ModuleReference mr : myModelProperties.getLanguagesInGeneration()) {
-                ((jetbrains.mps.smodel.SModelInternal) model.getSModel()).addEngagedOnGenerationLanguage(mr);
+                ((jetbrains.mps.smodel.SModelInternal) model).addEngagedOnGenerationLanguage(mr);
               }
 
-              SModel smodel = model.getSModel();
+              SModel smodel = model;
               CopyUtil.copyModelContent(myCloningModel, smodel);
               ((EditableSModel) smodel.getModelDescriptor()).save();
             }

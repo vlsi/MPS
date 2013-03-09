@@ -62,7 +62,7 @@ public class GoToClassMPSContributor implements GotoClassContributor {
         for (SModel modelDescriptor : modelDescriptors) {
           if (!SModelStereotype.isUserModel(modelDescriptor)) continue;
 
-          Iterable<SNode> iter = new ConditionalIterable<SNode>(modelDescriptor.getSModel().getRootNodes(), cond);
+          Iterable<SNode> iter = new ConditionalIterable<SNode>(modelDescriptor.getRootNodes(), cond);
           for (SNode node : iter){
             nodes.add(new jetbrains.mps.smodel.SNodePointer(node));
           }

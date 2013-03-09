@@ -40,7 +40,7 @@ import java.util.*;
 public class PartitioningHelper {
   public static void showMappingPartitioning(Project project, Frame frame, IScope scope, List<SModel> models) {
     // no multiple input models
-    SModel inputModel = models.get(0).getSModel();
+    SModel inputModel = models.get(0);
 
     GenerationPlan plan = new GenerationPlan(inputModel);
 
@@ -112,7 +112,7 @@ public class PartitioningHelper {
     // other
     List<SNode> roots = new ArrayList<SNode>();
     for (SModel md : models) {
-      SModel model = md.getSModel();
+      SModel model = md;
       for (SNode root : model.getRootNodes()) {
         roots.add(root);
       }
@@ -128,7 +128,7 @@ public class PartitioningHelper {
     for(Generator g : repo.getAllGenerators()) {
       List<SModel> templateModels = g.getOwnTemplateModels();
       for (SModel templateModel : templateModels) {
-        SModel m = templateModel.getSModel();
+        SModel m = templateModel;
         for(SNode root : m.getRoots()) {
           for(SNode node : root.getDescendants(new IsInstanceCondition(MappingLabelDeclaration.concept))){
             MappingLabelDeclaration label = (MappingLabelDeclaration) node.getAdapter();

@@ -71,7 +71,7 @@ public class NewRootAction extends AnAction {
           @Override
           public void run() {
             SNode concept = conceptPointer.resolve(MPSModuleRepository.getInstance());
-            SModel model = myModelDescriptor.getSModel();
+            SModel model = myModelDescriptor;
             SNode newNode = NodeFactoryManager.createNode(concept, null, null, model, myOperationContext.getScope());
             ((jetbrains.mps.smodel.SNode) newNode).setName(getNameField().getText());
             model.addRootNode(newNode);
@@ -150,7 +150,7 @@ public class NewRootAction extends AnAction {
             ModelAccess.instance().runReadAction(new Runnable() {
               @Override
               public void run() {
-                SModel model = myModelDescriptor.getSModel();
+                SModel model = myModelDescriptor;
                 List<Language> modelLanguages = SModelOperations.getLanguages(model, myOperationContext.getScope());
                 for (Language language : modelLanguages) {
                   for (SNode concept : language.getConceptDeclarations()) {

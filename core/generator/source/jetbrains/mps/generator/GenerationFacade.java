@@ -54,7 +54,7 @@ public class GenerationFacade {
     List<SModel> list = generator.getOwnTemplateModels();
     List<SNode> mappings = new ArrayList<SNode>();
     for (SModel templateModel : list) {
-      List<SNode> nodes = ((jetbrains.mps.smodel.SModelInternal) templateModel.getSModel()).getFastNodeFinder().getNodes(BootstrapLanguages.concept_generator_MappingConfiguration, true);
+      List<SNode> nodes = ((jetbrains.mps.smodel.SModelInternal) templateModel).getFastNodeFinder().getNodes(BootstrapLanguages.concept_generator_MappingConfiguration, true);
       mappings.addAll(nodes);
     }
     return mappings;
@@ -208,7 +208,7 @@ public class GenerationFacade {
   }
 
   public static ModelGenerationPlan getGenerationPlan(@NotNull SModel inputModel, @Nullable Collection<String> additionalLanguages) {
-    GenerationPlan generationPlan = new GenerationPlan(inputModel.getSModel(), additionalLanguages);
+    GenerationPlan generationPlan = new GenerationPlan(inputModel, additionalLanguages);
     final List<List<TemplateMappingConfiguration>> result = new ArrayList<List<TemplateMappingConfiguration>>(generationPlan.getStepCount());
     for (int i = 0; i < generationPlan.getStepCount(); i++) {
       List<TemplateMappingConfiguration> oneStep = new ArrayList<TemplateMappingConfiguration>(generationPlan.getMappingConfigurations(i));

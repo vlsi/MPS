@@ -40,7 +40,7 @@ public class IncrementalGenerationTest extends GenerationTestBase {
       new ModelChangeRunnable() {
         @Override
         public void run(SModel descr) {
-          SModel model = descr.getSModel();
+          SModel model = descr;
           SNode root = SModelOperations.getRootByName(model,"User");
           Assert.assertNotNull("No root in model", root);
 
@@ -67,7 +67,7 @@ public class IncrementalGenerationTest extends GenerationTestBase {
       new ModelChangeRunnable() {
         @Override
         public void run(SModel descr) {
-          SModel model = descr.getSModel();
+          SModel model = descr;
           SNode root = SModelOperations.getRootByName(model,"GoToFile");
           Assert.assertNotNull("No root in model", root);
           SNodeAccessUtil.setProperty(root, SNodeUtil.property_INamedConcept_name, "GoToFile2");
@@ -86,7 +86,7 @@ public class IncrementalGenerationTest extends GenerationTestBase {
       new ModelChangeRunnable() {
         @Override
         public void run(SModel descr) {
-          SModel model = descr.getSModel();
+          SModel model = descr;
           SNode root = SModelOperations.getRootByName(model,"Expression");
           Assert.assertNotNull("No root in model", root);
           SNodeAccessUtil.setProperty(root, SNodeUtil.property_INamedConcept_name, "ReExpression");
@@ -105,10 +105,10 @@ public class IncrementalGenerationTest extends GenerationTestBase {
       new ModelChangeRunnable() {
         @Override
         public void run(SModel descr) {
-          SModel model = descr.getSModel();
+          SModel model = descr;
           SNode root = SModelOperations.getRootByName(model,"StatementList_Editor");
           Assert.assertNotNull("No root in model", root);
-          descr.getSModel().removeRootNode(root);
+          descr.removeRootNode(root);
         }
       });
 

@@ -114,7 +114,7 @@ public class ProjectFactory {
               if (myOptions.getCreateModel()) {
                 EditableSModel model = myCreatedSolution.createModel(myCreatedSolution.getModuleReference().getModuleFqName() + ".sandbox",
                   myCreatedSolution.getModelRoots().iterator().next(), null);
-                ((SModelInternal) model.getSModel()).addLanguage(myCreatedLanguage.getModuleReference());
+                ((SModelInternal) model).addLanguage(myCreatedLanguage.getModuleReference());
                 model.save();
               }
             }

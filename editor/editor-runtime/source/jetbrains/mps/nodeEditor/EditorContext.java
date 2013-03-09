@@ -112,7 +112,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
 
   @Override
   public SModel getModel() {
-    return myModelDescriptor.getSModel();
+    return myModelDescriptor;
   }
 
   @Override

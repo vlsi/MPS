@@ -123,7 +123,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     SModelReference ref = getSModelReference(module);
 
     ProjectStructureSModelDescriptor descriptor = myModels.get(ref);
-    return descriptor == null ? null : descriptor.getSModel();
+    return descriptor == null ? null : descriptor;
   }
 
   private void refresh() {

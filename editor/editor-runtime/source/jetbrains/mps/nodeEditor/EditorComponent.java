@@ -3251,7 +3251,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           if (myNode.getModel().getReference().equals(descriptor.getReference())) {
             clearModelDisposedTrace();
             SNodeId oldId = myNode.getNodeId();
-            myNode = descriptor.getSModel().getNode(oldId);
+            myNode = descriptor.getNode(oldId);
             needToRebuild = true;
           }
         }

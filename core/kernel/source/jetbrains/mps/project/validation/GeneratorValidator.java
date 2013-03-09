@@ -43,7 +43,7 @@ public class GeneratorValidator extends BaseModuleValidator<Generator> {
     Set<String> usedLanguages = new HashSet<String>();
     for (SModel model : myModule.getOwnTemplateModels()) {
       if(SModelStereotype.isGeneratorModel(model)) {
-        usedLanguages.addAll(ModelContentUtil.getUsedLanguageNamespacesInTemplateModel(model.getSModel()));
+        usedLanguages.addAll(ModelContentUtil.getUsedLanguageNamespacesInTemplateModel(model));
       }
     }
     Set<String> extendedLanguages = new HashSet<String>();

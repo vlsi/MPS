@@ -102,8 +102,8 @@ class GenerationSession {
         : null;
     ModelGenerationPlan customPlan = myGenerationOptions.getCustomPlan(myOriginalInputModel);
     myGenerationPlan = customPlan != null
-      ? new GenerationPlan(myOriginalInputModel.getSModel(), customPlan)
-      : new GenerationPlan(myOriginalInputModel.getSModel(), additionalLanguages);
+      ? new GenerationPlan(myOriginalInputModel, customPlan)
+      : new GenerationPlan(myOriginalInputModel, additionalLanguages);
     if (!checkGenerationPlan(myGenerationPlan)) {
       if (myGenerationOptions.isStrictMode()) {
         throw new GenerationCanceledException();
@@ -140,7 +140,7 @@ class GenerationSession {
 
         if (myGenerationOptions.getTracingMode() != GenerationOptions.TRACE_OFF) {
           myLogger.info("Processing:");
-          for (SNode node : myOriginalInputModel.getSModel().getRootNodes()) {
+          for (SNode node : myOriginalInputModel.getRootNodes()) {
             if (incrementalHandler.getRequiredRoots().contains(node)) {
               myLogger.info(node.getName() + " (cache)");
             } else if (!incrementalHandler.getIgnoredRoots().contains(node)) {
@@ -161,7 +161,7 @@ class GenerationSession {
       myNewCache = incrementalHandler.createNewCache();
       ttrace.pop();
       try {
-        SModel currInputModel = myOriginalInputModel.getSModel();
+        SModel currInputModel = myOriginalInputModel;
         SModel currOutput = null;
 
         ttrace.push("steps", false);
@@ -551,7 +551,7 @@ class GenerationSession {
     String longName = jetbrains.mps.util.SNodeOperations.getModelLongName(myOriginalInputModel);
     String stereotype = Integer.toString(myMajorStep + 1) + "_" + ++myMinorStep;
     SModel transientModel = mySessionContext.getModule().createTransientModel(longName, stereotype);
-    return transientModel.getSModel();
+    return transientModel;
   }
 
   private void recycleWasteModel(@NotNull SModel model) {

@@ -48,7 +48,7 @@ public class ModelHolder implements IHolder<SModel> {
   public SModel getObject() {
     SModel modelDescriptor = getModelDescriptor();
     if (modelDescriptor == null) return null;
-    return modelDescriptor.getSModel();
+    return modelDescriptor;
   }
 
   @Override

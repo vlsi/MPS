@@ -168,7 +168,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
         public void run() {
           if (value instanceof SModelReference) {
             query[0] = new SearchQuery(
-              SModelRepository.getInstance().getModelDescriptor(((jetbrains.mps.smodel.SModelReference) value).getSModelId()).getSModel(), scope);
+              SModelRepository.getInstance().getModelDescriptor(((jetbrains.mps.smodel.SModelReference) value).getSModelId()), scope);
             provider[0] = FindUtils.makeProvider(new ModelUsagesFinder());
           }
         }
@@ -394,7 +394,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
           int references = 0;
           int properties = 0;
           messageText.append("<html>");
-          SModel model = myModelDescriptor.getSModel();
+          SModel model = myModelDescriptor;
           for (SNode node : new NodesIterable(model)) {
             references += IterableUtil.asCollection(node.getReferences()).size();
             properties += jetbrains.mps.util.SNodeOperations.getProperties(node).keySet().size();

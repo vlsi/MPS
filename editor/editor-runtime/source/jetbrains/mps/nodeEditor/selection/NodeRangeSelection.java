@@ -63,7 +63,7 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     if (sModelDescriptor == null) {
       throw new SelectionRestoreException();
     }
-    SModel sModel = sModelDescriptor.getSModel();
+    SModel sModel = sModelDescriptor;
     myFirstNode = findNode(sModel, properties, FIRST_NODE_ID_PROPERTY_NAME);
     myLastNode = findNode(sModel, properties, LAST_NODE_ID_PROPERTY_NAME);
     myParentNode = findNode(sModel, properties, PARENT_NODE_ID_PROPERTY_NAME);

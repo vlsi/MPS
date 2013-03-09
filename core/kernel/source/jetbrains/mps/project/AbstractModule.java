@@ -149,7 +149,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     if (adj != null) {
       adj.adjust(model);
     }
-    model.getSModel();
+    model;
     model.setChanged(true);
     model.save();
 

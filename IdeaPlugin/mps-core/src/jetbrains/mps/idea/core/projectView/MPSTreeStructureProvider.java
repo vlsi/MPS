@@ -181,7 +181,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
     jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
     if (mpsProject == null || modelDescriptor == null) return null;
 
-    SModel sModel = modelDescriptor.getSModel();
+    SModel sModel = modelDescriptor;
     if (sModel == null) return null;
 
     return createProvider.create(selectedNodePointers, modelDescriptor, sModel, mpsProject);
@@ -199,7 +199,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
     jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
     if (mpsProject == null || modelDescriptor == null) return null;
 
-    SModel sModel = modelDescriptor.getSModel();
+    SModel sModel = modelDescriptor;
     if (sModel == null) return null;
 
     return createProvider.create(modelDescriptor, sModel, mpsProject);

@@ -145,7 +145,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
             return node.getPresentation().equals(name);
           }
         };
-        Iterator<SNode> iter = new ConditionalIterator<SNode>(sm.getSModel().getRootNodes().iterator(), cond);
+        Iterator<SNode> iter = new ConditionalIterator<SNode>(sm.getRootNodes().iterator(), cond);
         if (!iter.hasNext()) return null;
         return getFileFor(iter.next());
       }
@@ -267,7 +267,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
       if (!(modelDescriptor.isLoaded())) return;
 
       Collection<MPSNodeVirtualFile> deletedFiles = new ArrayList<MPSNodeVirtualFile>();
-      for (SNode root : modelDescriptor.getSModel().getRootNodes()) {
+      for (SNode root : modelDescriptor.getRootNodes()) {
         SNodeReference pointer = new jetbrains.mps.smodel.SNodePointer(root);
         MPSNodeVirtualFile vf = myVirtualFiles.get(pointer);
         if (vf == null) continue;
@@ -285,7 +285,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
       for (SModel md : descriptors) {
         if (md.getReference().resolve(MPSModuleRepository.getInstance()) != md) return;
 
-        for (SNode root : md.getSModel().getRootNodes()) {
+        for (SNode root : md.getRootNodes()) {
           updateModificationStamp(root);
         }
 

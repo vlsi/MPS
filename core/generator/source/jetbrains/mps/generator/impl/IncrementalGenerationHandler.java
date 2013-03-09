@@ -241,7 +241,7 @@ public class IncrementalGenerationHandler {
     }
 
     // collect unchanged roots (same hash; external dependencies are unchanged)
-    SModel smodel = myModel.getSModel();
+    SModel smodel = myModel;
     myRootsCount = IterableUtil.asCollection(smodel.getRootNodes()).size();
 
     myUnchangedRoots = new HashSet<SNode>();
@@ -553,7 +553,7 @@ public class IncrementalGenerationHandler {
       return new NonIncrementalDependenciesBuilder(myGenerationHashes, myParametersHash);
     }
 
-    IncrementalDependenciesBuilder result = new IncrementalDependenciesBuilder(myModel.getSModel(), myGenerationHashes, myParametersHash, myCache);
+    IncrementalDependenciesBuilder result = new IncrementalDependenciesBuilder(myModel, myGenerationHashes, myParametersHash, myCache);
     result.propagateDependencies(myUnchangedRoots, myRequiredRoots, myConditionalsUnchanged, myConditionalsRequired, mySavedDependencies);
     return result;
   }

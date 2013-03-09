@@ -325,7 +325,7 @@ public class GenerationTracer implements IGenerationTracer {
     if (reference == null) return null;
     SModel descriptor = SModelRepository.getInstance().getModelDescriptor(reference);
     if (descriptor == null) return null;
-    SModel outputModel = descriptor.getSModel();
+    SModel outputModel = descriptor;
     SNode inputNode = node;
     SNode outputNode = null;
     while (inputNode != null) {
@@ -390,7 +390,7 @@ public class GenerationTracer implements IGenerationTracer {
     if (reference == null) return null;
     SModel descriptor = SModelRepository.getInstance().getModelDescriptor(reference);
     if (descriptor == null) return null;
-    SModel inputModel = descriptor.getSModel();
+    SModel inputModel = descriptor;
     SNode outputNode = node;
     SNode inputNode = null;
     while (outputNode != null) {

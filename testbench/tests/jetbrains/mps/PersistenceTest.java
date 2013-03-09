@@ -69,7 +69,7 @@ public class PersistenceTest extends BaseMPSTest {
               try {
                 DefaultSModelDescriptor testModel = (DefaultSModelDescriptor) TestMain.getModel(project, TEST_MODEL);
                 assertTrue(testModel.getPersistenceVersion() == START_PERSISTENCE_TEST_VERSION);
-                SModel model = testModel.getSModel();
+                SModel model = testModel;
                 for (int i = START_PERSISTENCE_TEST_VERSION; i <= ModelPersistence.LAST_VERSION; ++i) {
                   try { // errors about not found attributes are expected for old models
                     filter.start();
@@ -207,7 +207,7 @@ public class PersistenceTest extends BaseMPSTest {
       assert source != null;
 
       try {
-        SModel model = wasInitialized ? modelDescriptor.getSModel() : ModelPersistence.readModel(source, false);
+        SModel model = wasInitialized ? modelDescriptor : ModelPersistence.readModel(source, false);
         ModelPersistence.saveModel(model, source, toVersion);
         modelDescriptor.reloadFromDisk();
       } catch (ModelReadException e) {

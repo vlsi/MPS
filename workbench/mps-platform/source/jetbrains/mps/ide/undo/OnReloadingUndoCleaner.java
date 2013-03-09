@@ -55,7 +55,7 @@ class OnReloadingUndoCleaner implements ApplicationComponent {
           if (!jetbrains.mps.util.SNodeOperations.isRegistered(sm)) {
             continue;
           }
-          for (SNode root : sm.getSModel().getRootNodes()) {
+          for (SNode root : sm.getRootNodes()) {
             final MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(root);
             assert file.hasValidMPSNode() : "invalid file returned by MPS VFS for following model root: " + root;
             for (final Project p : myProjectManager.getOpenProjects()) {

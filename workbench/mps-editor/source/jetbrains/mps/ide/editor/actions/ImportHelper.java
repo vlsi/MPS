@@ -168,7 +168,7 @@ public class ImportHelper {
           langs.remove(ModuleRepositoryFacade.getInstance().getModule(BootstrapLanguages.CORE, Language.class));
 
           for (Language l : langs) {
-            Collection<ModuleReference> impLangs = ((jetbrains.mps.smodel.SModelInternal) myModel.getSModel()).getModelDepsManager().getAllImportedLanguages();
+            Collection<ModuleReference> impLangs = ((jetbrains.mps.smodel.SModelInternal) myModel).getModelDepsManager().getAllImportedLanguages();
             if (impLangs.contains(l.getModuleReference())) continue;
             importCandidates.add(l.getModuleReference());
           }
@@ -195,7 +195,7 @@ public class ImportHelper {
               myContextModule.addUsedLanguage((ModuleReference) ref);
               reload = true;
             }
-            ((jetbrains.mps.smodel.SModelInternal) myModel.getSModel()).addLanguage((ModuleReference) ref);
+            ((jetbrains.mps.smodel.SModelInternal) myModel).addLanguage((ModuleReference) ref);
           }
           if (reload) {
             ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
@@ -305,7 +305,7 @@ public class ImportHelper {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         @Override
         public void run() {
-          ((jetbrains.mps.smodel.SModelInternal) myModel.getSModel()).addModelImport(getModelReference(), false);
+          ((jetbrains.mps.smodel.SModelInternal) myModel).addModelImport(getModelReference(), false);
         }
       });
     }

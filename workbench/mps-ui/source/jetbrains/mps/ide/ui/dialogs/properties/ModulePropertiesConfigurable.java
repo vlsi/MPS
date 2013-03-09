@@ -637,7 +637,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         public void run() {
           if(value instanceof SModelReference) {
             query[0] = new SearchQuery(
-              SModelRepository.getInstance().getModelDescriptor(((jetbrains.mps.smodel.SModelReference) value).getSModelId()).getSModel(),
+              SModelRepository.getInstance().getModelDescriptor(((jetbrains.mps.smodel.SModelReference) value).getSModelId()),
               new ModulesOnlyScope(Arrays.asList(myModule))
             );
             provider[0] = FindUtils.makeProvider(new ModelUsagesFinder());

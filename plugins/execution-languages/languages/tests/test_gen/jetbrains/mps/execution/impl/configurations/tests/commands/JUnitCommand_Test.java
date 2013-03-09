@@ -84,7 +84,7 @@ public class JUnitCommand_Test extends BaseTransformationTest4 {
       final List<ITestNodeWrapper> result = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          SModel model = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.execution.impl.configurations.tests.commands.sandbox", "tests")).getSModel();
+          SModel model = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.execution.impl.configurations.tests.commands.sandbox", "tests"));
           for (final String name : Sequence.fromIterable(names)) {
             SNode mainNode = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.core.structure.INamedConcept")).findFirst(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {

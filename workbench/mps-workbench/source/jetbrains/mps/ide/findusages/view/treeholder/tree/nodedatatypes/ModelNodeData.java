@@ -77,7 +77,7 @@ public class ModelNodeData extends BaseNodeData {
   public SModel getModel() {
     SModel modelDescriptor = getModelDescriptor();
     if (modelDescriptor == null) return null;
-    return modelDescriptor.getSModel();
+    return modelDescriptor;
   }
 
   public SModel getModelDescriptor() {

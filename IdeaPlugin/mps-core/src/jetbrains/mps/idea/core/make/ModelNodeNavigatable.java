@@ -82,12 +82,12 @@ public class ModelNodeNavigatable implements Navigatable {
       SModelRepository smrepo = SModelRepository.getInstance();
       for (SModel smd: smrepo.getModelDescriptors(facet.getSolution())) {
         if (smd.getReference().getLongName().equals(modelName)) {
-          model = smd.getSModel();
+          model = smd;
         }
       }
     }
     else {
-      model = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(modelName)).getSModel();
+      model = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(modelName));
     }
     return model;
   }

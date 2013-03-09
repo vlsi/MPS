@@ -92,19 +92,19 @@ public class ModelsAutoImportsManager {
     public void onCreate(SModule module, SModel model) {
       for (SModel modelToImport : getAutoImportedModels(module, model)) {
         // todo: ! what's up with module? add model module to module dependencies?
-        ((jetbrains.mps.smodel.SModelInternal) model.getSModel()).addModelImport(modelToImport.getReference(), false);
+        ((jetbrains.mps.smodel.SModelInternal) model).addModelImport(modelToImport.getReference(), false);
       }
       for (Language language : getAutoImportedLanguages(module, model)) {
         if (!new GlobalModuleDependenciesManager(model.getModule()).getUsedLanguages().contains(language)) {
           model.getModule().addUsedLanguage(language.getModuleReference());
         }
-        ((jetbrains.mps.smodel.SModelInternal) model.getSModel()).addLanguage(language.getModuleReference());
+        ((jetbrains.mps.smodel.SModelInternal) model).addLanguage(language.getModuleReference());
       }
       for (DevKit devKit : getAutoImportedDevKits(module, model)) {
         if (!model.getModule().getUsedDevkitReferences().contains(devKit.getModuleReference())) {
           model.getModule().addUsedDevkit(devKit.getModuleReference());
         }
-        ((jetbrains.mps.smodel.SModelInternal) model.getSModel()).addDevKit(devKit.getModuleReference());
+        ((jetbrains.mps.smodel.SModelInternal) model).addDevKit(devKit.getModuleReference());
       }
     }
   }

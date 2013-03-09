@@ -42,7 +42,7 @@ public class JavaModelUtil_new {
       if (reportErrors) LOG.error("couldn't find model '" + fqName + "'");
       return null;
     }
-    SModel model = modelDescriptor.getSModel();
+    SModel model = modelDescriptor;
     SNode rootByName = SModelOperations.getRootByName(model, shortClassName);
     if (rootByName == null && reportErrors) {
       LOG.error("couldn't find root '" + shortClassName + "' in model '" + fqName + "'");
