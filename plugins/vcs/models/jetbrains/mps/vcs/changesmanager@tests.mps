@@ -1525,7 +1525,7 @@
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3619977242337326329" resolveInfo="md" />
                               </node>
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2722862962576141202">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ec5l.~SModel%dgetRootNodes()%cjava%dlang%dIterable" resolveInfo="getRootNodes" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~BaseSModelDescriptor%dgetRootNodes()%cjava%dlang%dIterable" resolveInfo="getRootNodes" />
                               </node>
                             </node>
                           </node>
@@ -1595,7 +1595,7 @@
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3619977242337326283" resolveInfo="md" />
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2722862962576141239">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ec5l.~SModel%dgetRootNodes()%cjava%dlang%dIterable" resolveInfo="getRootNodes" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~BaseSModelDescriptor%dgetRootNodes()%cjava%dlang%dIterable" resolveInfo="getRootNodes" />
                             </node>
                           </node>
                         </node>

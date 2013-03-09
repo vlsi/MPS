@@ -101,10 +101,10 @@
    <string>public abstract void org.jetbrains.mps.openapi.model.SNode.setReference(java.lang.String,org.jetbrains.mps.openapi.model.SReference)</string>
   </void>
   <void method="add">
-   <string>public abstract boolean jetbrains.mps.smodel.SNode.isInRepository()</string>
+   <string>public abstract boolean org.jetbrains.mps.openapi.model.SNode.isInRepository()</string>
   </void>
   <void method="add">
-   <string>public abstract org.jetbrains.mps.openapi.module.SRepository jetbrains.mps.smodel.SNode.getRepository()</string>
+   <string>public abstract org.jetbrains.mps.openapi.module.SRepository org.jetbrains.mps.openapi.model.SNode.getRepository()</string>
   </void>
  </object>
 </java> 
