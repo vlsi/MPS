@@ -1285,7 +1285,7 @@ public class SModel implements SModelInternal, SModelData {
   /**
    * This is for migration purposes, until we get rid of SModel class
    */
-  public static class FakeModelDescriptor implements org.jetbrains.mps.openapi.model.SModel, SModelInternal {
+  public static class FakeModelDescriptor implements org.jetbrains.mps.openapi.model.SModel, SModelDescriptor, SModelInternal {
     private SModel myModel;
 
     public FakeModelDescriptor(@NotNull SModel md) {
@@ -1310,6 +1310,31 @@ public class SModel implements SModelInternal, SModelData {
     @Override
     public void setModule(SModule container) {
       throw new UnsupportedOperationException("remove exception if excess");
+    }
+
+    @Override
+    public boolean isGeneratable() {
+      return false;
+    }
+
+    @Override
+    public SModelReference getSModelReference() {
+      return getReference();
+    }
+
+    @Override
+    public String getLongName() {
+      return getReference().getLongName();
+    }
+
+    @Override
+    public String getStereotype() {
+      return getReference().getStereotype();
+    }
+
+    @Override
+    public boolean isRegistered() {
+      return false;
     }
 
     @Override
@@ -1558,6 +1583,11 @@ public class SModel implements SModelInternal, SModelData {
     @Override
     public void dispose() {
       myModel.dispose();
+    }
+
+    @Override
+    public boolean isTransient() {
+      return false;
     }
 
     @Override
