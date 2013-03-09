@@ -8,6 +8,7 @@ import java.util.HashMap;
 import jetbrains.mps.ypath.design.IFeatureDesign;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 
@@ -34,6 +35,10 @@ public class DesignPartLoader {
     try {
       Class<?> klass = classes.get(fqClassName);
       if (klass == null) {
+        // todo: ???, use original module from genContext here 
+        if (module instanceof TransientModelsModule) {
+          module = ((TransientModelsModule) module).getOriginalModule();
+        }
         klass = ClassLoaderManager.getInstance().getClass(module, fqClassName);
         classes.put(fqClassName, klass);
       }
