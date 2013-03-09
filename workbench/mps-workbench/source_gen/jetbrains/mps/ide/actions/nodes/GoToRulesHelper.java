@@ -67,7 +67,7 @@ public class GoToRulesHelper {
     if (typesystem == null) {
       return Collections.emptyList();
     }
-    SModel typesystemModel = ((SModelInternal) typesystem).getSModel();
+    SModel typesystemModel = ((SModelInternal) typesystem);
     if (typesystemModel == null) {
       return Collections.emptyList();
     }

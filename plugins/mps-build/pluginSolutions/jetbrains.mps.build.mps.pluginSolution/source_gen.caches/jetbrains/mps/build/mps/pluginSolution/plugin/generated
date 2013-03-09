@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="5q9utahwu8vapvvcmyykdle5d4eme26">
+<dependencies version="2" modelHash="84sknxkcoz5znclc8wlblyid1t61ktj">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.ide.editor(MPS.Editor/jetbrains.mps.ide.editor@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.navigation(MPS.Editor/jetbrains.mps.openapi.navigation@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
@@ -311,7 +311,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="GenerateBuildWizard.java" />
   </source>
-  <source id="8722937377469658290" name="BuildGeneratorImpl" hash="dk9kbpcv3cijd4nr4x6zw9z4ohnkd0p">
+  <source id="8722937377469658290" name="BuildGeneratorImpl" hash="-2gdp2eijq6yzzq3x3ytk8au5rvnh6ai">
     <dep root="8722937377469654773" />
     <dep root="8722937377469655024" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.navigation(MPS.Editor/jetbrains.mps.openapi.navigation@java_stub)" />

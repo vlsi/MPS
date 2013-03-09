@@ -60,7 +60,7 @@ public class ModelAndImportedModelsScope extends AbstractSearchScope {
           if (model == null) {
             continue;
           }
-          SModel md = ((SModelInternal) model).getSModel();
+          SModel md = ((SModelInternal) model);
           if (condition instanceof IsInstanceCondition) {
             IsInstanceCondition isInstance = (IsInstanceCondition) condition;
             result.addAll(SNodeOperations.getModelFastFinder(md).getNodes(isInstance.getConceptFqName(), true));

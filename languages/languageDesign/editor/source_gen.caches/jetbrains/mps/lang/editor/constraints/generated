@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="a06dvc3kymsmzoc2t9q48jd8lk2ns79">
+<dependencies version="2" modelHash="7kti1o04ijhsntsyz5ih2o5xnzbg7gb">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -16,7 +16,7 @@
   <dep model="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" hash="-9ycm6u6sfopw2db5cjnetu8hedy3t4f" />
   <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="8iq1c63z020s2os52d6vke4fdjpb056" />
   <dep model="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)" hash="-110ks80nor8746ud32orp41gyle6pqn" />
-  <dep model="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" hash="a06dvc3kymsmzoc2t9q48jd8lk2ns79" />
+  <dep model="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" hash="7kti1o04ijhsntsyz5ih2o5xnzbg7gb" />
   <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="-2cs3uocpxj6c48rdxxrywwv21wz9yhx" />
   <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" hash="-2pfgs5l9xgdeg3nuvw9wsk21zkjyohc" />
   <dep model="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" hash="-8hrv3mh2xlpseyailk1mdc5hw58wcze" />
@@ -424,7 +424,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="PreDefinedStyleSheetClass_Constraints.java" />
   </source>
-  <source id="1873972548978313577" name="StyleSheetClass_Constraints" hash="-1w0woac577h28orzcifilblcagoz6er">
+  <source id="1873972548978313577" name="StyleSheetClass_Constraints" hash="-7the09tippuswyaac1dqqqs4ortlwk4">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />

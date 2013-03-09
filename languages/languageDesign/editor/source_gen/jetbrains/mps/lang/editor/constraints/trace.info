@@ -822,7 +822,7 @@
     <nodeInfo nodeId="7609778533465519000" fileName="StyleSheetClass_Constraints.java" startLine="49" startPosition="9" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7609778533465765376" fileName="StyleSheetClass_Constraints.java" startLine="52" startPosition="45" endLine="53" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7609778533465638018" fileName="StyleSheetClass_Constraints.java" startLine="56" startPosition="44" endLine="57" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1873972548978593492" fileName="StyleSheetClass_Constraints.java" startLine="60" startPosition="55" endLine="61" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1873972548978593492" fileName="StyleSheetClass_Constraints.java" startLine="60" startPosition="55" endLine="61" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1873972548978648220" fileName="StyleSheetClass_Constraints.java" startLine="63" startPosition="11" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="1213877372477" fileName="StyleSheetClass_Constraints.java" startLine="64" startPosition="0" endLine="65" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1873972548978313577" fileName="StyleSheetClass_Constraints.java" startLine="69" startPosition="59" endLine="70" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -844,7 +844,7 @@
     <scopeInfo nodeId="8857655676208057681" fileName="StyleSheetClass_Constraints.java" startLine="46" startPosition="43" endLine="47" endPosition="80" />
     <scopeInfo nodeId="7609778533465765375" fileName="StyleSheetClass_Constraints.java" startLine="52" startPosition="45" endLine="53" endPosition="58" />
     <scopeInfo nodeId="7609778533465637882" fileName="StyleSheetClass_Constraints.java" startLine="56" startPosition="44" endLine="57" endPosition="30" />
-    <scopeInfo nodeId="7609778533465842736" fileName="StyleSheetClass_Constraints.java" startLine="60" startPosition="55" endLine="61" endPosition="146" />
+    <scopeInfo nodeId="7609778533465842736" fileName="StyleSheetClass_Constraints.java" startLine="60" startPosition="55" endLine="61" endPosition="134" />
     <scopeInfo nodeId="1873972548978313577" fileName="StyleSheetClass_Constraints.java" startLine="69" startPosition="59" endLine="70" endPosition="46" />
     <scopeInfo nodeId="1873972548978313577" fileName="StyleSheetClass_Constraints.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
     <scopeInfo nodeId="8857655676208055033" fileName="StyleSheetClass_Constraints.java" startLine="45" startPosition="99" endLine="48" endPosition="11" />

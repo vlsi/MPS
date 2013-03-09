@@ -122,7 +122,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
           if (!(namespace.equals(descriptor.getModelName()))) {
             continue;
           }
-          SNode node = ((SModelInternal) descriptor).getSModel().getNode(SNodeId.fromString(id));
+          SNode node = ((SModelInternal) descriptor).getNode(SNodeId.fromString(id));
           if (node != null) {
             ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
             NavigationSupport.getInstance().openNode(context, node, true, !(SNodeOperations.isRoot(node)));

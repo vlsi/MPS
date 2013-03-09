@@ -61,7 +61,7 @@ public class SideTransformUtil {
       if (actionsModelDescriptor == null) {
         continue;
       }
-      SModel model = ((SModelInternal) actionsModelDescriptor).getSModel();
+      SModel model = ((SModelInternal) actionsModelDescriptor);
       if (model == null) {
         continue;
       }

@@ -237,7 +237,7 @@ public class EmbeddableEditor {
   }
 
   private final SModel smodel() {
-    return ((SModelInternal) myModel).getSModel();
+    return ((SModelInternal) myModel);
   }
 
   public void disposeEditor() {

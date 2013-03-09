@@ -56,7 +56,7 @@ public class ExtractIconsUtil {
 
   private static SNode getIconResourceBundle(Language lang) {
     EditableSModel pluginModel = getPluginModel(lang);
-    SModel smodel = ((SModelInternal) pluginModel).getSModel();
+    SModel smodel = ((SModelInternal) pluginModel);
     SNode irb = ListSequence.fromList(SModelOperations.getRoots(smodel, "jetbrains.mps.lang.resources.structure.IconResourceBundle")).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode irb) {
         return "Behavior".equals(SPropertyOperations.getString(irb, "name"));

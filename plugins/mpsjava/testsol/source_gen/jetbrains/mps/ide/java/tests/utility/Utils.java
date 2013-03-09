@@ -127,7 +127,7 @@ public class Utils {
 
     List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
     for (SModel md : Sequence.fromIterable(mr.loadModels())) {
-      SModel m = ((SModelInternal) md).getSModel();
+      SModel m = ((SModelInternal) md);
       ListSequence.fromList(models).addElement(m);
     }
 
@@ -218,7 +218,7 @@ public class Utils {
     for (SModel m : Sequence.fromIterable(srcModels)) {
       // <node> 
 
-      SModel zzz = ((SModelInternal) m).getSModel();
+      SModel zzz = ((SModelInternal) m);
       srcModelsX.add(zzz);
 
       for (SNode srcRoot : ListSequence.fromList(SModelOperations.getRoots(zzz, null))) {

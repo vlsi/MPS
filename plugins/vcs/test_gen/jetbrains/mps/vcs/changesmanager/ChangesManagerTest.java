@@ -892,7 +892,7 @@ public class ChangesManagerTest {
 
     runCommandAndWait(new Runnable() {
       public void run() {
-        SModel m = ((SModelInternal) md).getSModel();
+        SModel m = ((SModelInternal) md);
         ((SModelInternal) m).addLanguage(ModuleReference.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"));
         createNewRoot(m);
       }

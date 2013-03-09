@@ -18,6 +18,7 @@ import java.io.FileNotFoundException;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.debug.api.IDebugger;
@@ -31,7 +32,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Set;
 import jetbrains.mps.project.facets.JavaModuleOperations;
@@ -48,11 +48,11 @@ import jetbrains.mps.debug.api.IDebuggerSettings;
 import jetbrains.mps.debugger.java.api.settings.LocalConnectionSettings;
 import jetbrains.mps.debug.api.Debuggers;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
 public class Java_Command {
@@ -160,7 +160,7 @@ public class Java_Command {
   }
 
   public ProcessHandler createProcess(final SNodeReference nodePointer) throws ExecutionException {
-    IModule module = check_yvpt_a0a0a3(check_yvpt_a0a0a0d(((SNodePointer) nodePointer)));
+    IModule module = check_yvpt_a0a0a3(check_yvpt_a0a0a0a3(((SNodePointer) nodePointer)).resolve(MPSModuleRepository.getInstance()));
     if (module == null) {
       final Wrappers._T<String> text = new Wrappers._T<String>();
       ModelAccess.instance().runReadAction(new Runnable() {
@@ -355,9 +355,9 @@ public class Java_Command {
     return null;
   }
 
-  private static SModel check_yvpt_a0a0a0d(SNodePointer checkedDotOperand) {
+  private static SModelReference check_yvpt_a0a0a0a3(SNodePointer checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getModel();
+      return checkedDotOperand.getModelReference();
     }
     return null;
   }
