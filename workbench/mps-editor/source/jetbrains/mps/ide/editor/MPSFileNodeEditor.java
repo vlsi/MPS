@@ -241,7 +241,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
 
     assert isValid() : "createOperationContext() was called for MPSFileNodeEditor with invalid file: " + myFile;
     SNode node = myFile.getNode();
-    if (node == null || node.getContainingModel() == null) {
+    if (node == null || !node.isInRepository()) {
       myIsValid = false;
       return null;
     }

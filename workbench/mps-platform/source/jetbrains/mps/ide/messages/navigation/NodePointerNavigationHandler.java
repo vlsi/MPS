@@ -33,15 +33,7 @@ class NodePointerNavigationHandler implements INavigationHandler<SNodeReference>
 
   public static boolean isCorrectNode(SNodeReference object) {
     SNode realNode = object.resolve(MPSModuleRepository.getInstance());
-    if (realNode == null) return false;
-
-    SModel modelDescriptor = realNode.getContainingModel();
-    if (modelDescriptor == null) return false;
-
-    IModule module = modelDescriptor.getModule();
-    if (module == null) return false;
-
-    return true;
+    return realNode != null;
   }
 
   @Override

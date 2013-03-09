@@ -74,13 +74,9 @@ public class MPSEditorOpener {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
-        SModel modelDescriptor = node.getContainingModel();
-        if (modelDescriptor == null) return;
+        if (!node.isInRepository()) return;
 
-        IModule module = modelDescriptor.getModule();
-        if (module == null) return;
-
-        ModuleContext context = new ModuleContext(module, ProjectHelper.toMPSProject(myProject));
+        ModuleContext context = new ModuleContext(node.getContainingModel().getModule(), ProjectHelper.toMPSProject(myProject));
         openNode(node, context, true, !(node.getModel() != null && node.getModel().isRoot(node)));
       }
     });
@@ -110,9 +106,7 @@ public class MPSEditorOpener {
   private Editor doOpenNode(final SNode node, IOperationContext context, final boolean focus, boolean select) {
     assert node.getModel() != null : "You can't edit unregistered node";
 
-    if (node.getContainingModel() == null) {
-      return null;
-    }
+    if (!node.isInRepository()) return null;
 
     //open editor
     // [++] for http://youtrack.jetbrains.net/issue/MPS-7663
