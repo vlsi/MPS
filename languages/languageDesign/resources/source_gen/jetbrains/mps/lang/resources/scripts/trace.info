@@ -49,7 +49,7 @@
     <unitInfo nodeId="2990235398086684968" fileName="ExtractIconsToPlugin_MigrationScript.java" startLine="14" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.resources.scripts.ExtractIconsToPlugin_MigrationScript" />
   </root>
   <root nodeRef="r:04e320a0-32b8-420a-bb46-6bfe53d8f651(jetbrains.mps.lang.resources.scripts)/2990235398086687528">
-    <nodeInfo nodeId="2990235398086690118" fileName="ExtractIconsUtil.java" startLine="30" startPosition="57" endLine="31" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2990235398086690118" fileName="ExtractIconsUtil.java" startLine="30" startPosition="57" endLine="31" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2990235398086690148" fileName="ExtractIconsUtil.java" startLine="32" startPosition="37" endLine="33" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2990235398086692144" fileName="ExtractIconsUtil.java" startLine="35" startPosition="9" endLine="36" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2990235398086692144" fileName="ExtractIconsUtil.java" startLine="36" startPosition="57" endLine="37" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -100,7 +100,7 @@
     <nodeInfo nodeId="2990235398086688361" fileName="ExtractIconsUtil.java" startLine="57" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getIconResourceBundle#(Ljetbrains/mps/smodel/Language;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="2990235398086692144" fileName="ExtractIconsUtil.java" startLine="34" startPosition="188" endLine="52" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2990235398086690172" fileName="ExtractIconsUtil.java" startLine="33" startPosition="59" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2990235398086690131" fileName="ExtractIconsUtil.java" startLine="31" startPosition="83" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2990235398086690131" fileName="ExtractIconsUtil.java" startLine="31" startPosition="62" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2990235398086690055" fileName="ExtractIconsUtil.java" startLine="30" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="updateIconResourceBundle#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="2990235398086687533" fileName="ExtractIconsUtil.java" startLine="27" startPosition="29" endLine="27" endPosition="29" />
     <scopeInfo nodeId="2990235398087945718" fileName="ExtractIconsUtil.java" startLine="41" startPosition="47" endLine="42" endPosition="82" />

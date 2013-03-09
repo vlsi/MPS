@@ -60,14 +60,14 @@ public class MovePropertyUp extends BaseLoggableRefactoring {
     List<SModel> result = ListSequence.fromList(new ArrayList<SModel>());
 
     Project project = refactoringContext.getSelectedProject();
-    Language sourceLanguage = Language.getLanguageFor(SNodeOperations.getModel(refactoringContext.getSelectedNode()).getModelDescriptor());
+    Language sourceLanguage = Language.getLanguageFor(SNodeOperations.getModel(refactoringContext.getSelectedNode()));
     if (sourceLanguage != null) {
       Map<IModule, List<SModel>> models = RefactoringUtil.getLanguageAndItsExtendingLanguageModels(project, sourceLanguage);
       for (List<SModel> list : CollectionSequence.fromCollection(models.values())) {
         ListSequence.fromList(result).addSequence(ListSequence.fromList((List<SModel>) list));
       }
     }
-    Language targetLanguage = Language.getLanguageFor(SNodeOperations.getModel(((SNode) refactoringContext.getParameter("targetConcept"))).getModelDescriptor());
+    Language targetLanguage = Language.getLanguageFor(SNodeOperations.getModel(((SNode) refactoringContext.getParameter("targetConcept"))));
     if (targetLanguage != null) {
       Map<IModule, List<SModel>> models = RefactoringUtil.getLanguageAndItsExtendingLanguageModels(project, targetLanguage);
       for (List<SModel> list : CollectionSequence.fromCollection(models.values())) {

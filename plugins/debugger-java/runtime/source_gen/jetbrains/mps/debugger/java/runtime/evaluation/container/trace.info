@@ -501,7 +501,7 @@
     <nodeInfo nodeId="9172312269976661987" fileName="PresentationUtil.java" startLine="56" startPosition="5" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6647443673251191206" fileName="PresentationUtil.java" startLine="58" startPosition="112" endLine="59" endPosition="265" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9172312269976661988" fileName="PresentationUtil.java" startLine="60" startPosition="5" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3451429699316823893" fileName="PresentationUtil.java" startLine="62" startPosition="236" endLine="63" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3451429699316823893" fileName="PresentationUtil.java" startLine="62" startPosition="236" endLine="63" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9172312269976661989" fileName="PresentationUtil.java" startLine="64" startPosition="5" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="864648422614491036" fileName="PresentationUtil.java" startLine="65" startPosition="0" endLine="66" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5439191097839083294" fileName="PresentationUtil.java" startLine="70" startPosition="28" endLine="71" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -536,7 +536,7 @@
     <scopeInfo nodeId="864648422614491011" fileName="PresentationUtil.java" startLine="50" startPosition="107" endLine="51" endPosition="527" />
     <scopeInfo nodeId="3451429699316823905" fileName="PresentationUtil.java" startLine="54" startPosition="105" endLine="55" endPosition="154" />
     <scopeInfo nodeId="6647443673251191195" fileName="PresentationUtil.java" startLine="58" startPosition="112" endLine="59" endPosition="265" />
-    <scopeInfo nodeId="3451429699316823892" fileName="PresentationUtil.java" startLine="62" startPosition="236" endLine="63" endPosition="215" />
+    <scopeInfo nodeId="3451429699316823892" fileName="PresentationUtil.java" startLine="62" startPosition="236" endLine="63" endPosition="194" />
     <scopeInfo nodeId="5439191097839083288" fileName="PresentationUtil.java" startLine="70" startPosition="28" endLine="71" endPosition="20" />
     <scopeInfo nodeId="5439191097839083299" fileName="PresentationUtil.java" startLine="73" startPosition="131" endLine="74" endPosition="109" />
     <scopeInfo nodeId="5439191097839083312" fileName="PresentationUtil.java" startLine="89" startPosition="61" endLine="90" endPosition="43" />

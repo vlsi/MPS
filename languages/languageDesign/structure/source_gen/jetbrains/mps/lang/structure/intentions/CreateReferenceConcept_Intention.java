@@ -102,7 +102,7 @@ public class CreateReferenceConcept_Intention implements IntentionFactory {
       SNode link = ListSequence.fromList(SLinkOperations.getTargets(concept, "linkDeclaration", true)).first();
 
       // find editor model 
-      Language language = Language.getLanguageFor(SNodeOperations.getModel(node).getModelDescriptor());
+      Language language = Language.getLanguageFor(SNodeOperations.getModel(node));
       SModel editorModel = LanguageAspect.EDITOR.get(language).getSModel();
 
       // editor 

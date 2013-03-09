@@ -126,7 +126,7 @@ public class Classifier_add_GenerateVariant_Intention implements IntentionFactor
       ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(ann, "value", true)).first(), "value", true), "jetbrains.mps.baseLanguage.structure.ArrayLiteral"), "item", true)).addElement(_quotation_createNode_3484lm_a0a3a0(myParameter));
       IModule langToDep = Variants.moduleToGenerate(myParameter);
       ModuleReference langRefToEng = langToDep.getModuleReference();
-      IModule module = SNodeOperations.getModel(node).getModelDescriptor().getModule();
+      IModule module = SNodeOperations.getModel(node).getModule();
       for (IModule depOn : ModuleUtil.depsToModules(module.getDependencies())) {
         if (depOn.equals(langToDep)) {
           langToDep = null;
@@ -134,7 +134,7 @@ public class Classifier_add_GenerateVariant_Intention implements IntentionFactor
         }
       }
       if (langToDep != null) {
-        SNodeOperations.getModel(node).getModelDescriptor().getModule().addDependency(langToDep.getModuleReference(), false);
+        SNodeOperations.getModel(node).getModule().addDependency(langToDep.getModuleReference(), false);
       }
       for (ModuleReference eng : ((SModelInternal) SNodeOperations.getModel(node)).engagedOnGenerationLanguages()) {
         if (eng.equals(langRefToEng)) {

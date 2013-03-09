@@ -112,7 +112,7 @@ public class QueriesGenerated {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode tref = SConceptOperations.createNewNode("jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef", null);
                 SLinkOperations.setTarget(tref, "klass", (item), false);
-                model.getModelDescriptor().getModule().addDependency(SNodeOperations.getModel((item)).getModelDescriptor().getModule().getModuleReference(), false);
+                model.getModule().addDependency(SNodeOperations.getModel((item)).getModule().getModuleReference(), false);
                 ((SModelInternal) model).addModelImport(SNodeOperations.getModel((item)).getReference(), false);
                 return tref;
               }
@@ -172,7 +172,7 @@ public class QueriesGenerated {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode tref = SConceptOperations.createNewNode("jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef", null);
                 SLinkOperations.setTarget(tref, "klass", (item), false);
-                model.getModelDescriptor().getModule().addDependency(SNodeOperations.getModel((item)).getModelDescriptor().getModule().getModuleReference(), false);
+                model.getModule().addDependency(SNodeOperations.getModel((item)).getModule().getModuleReference(), false);
                 ((SModelInternal) model).addModelImport(SNodeOperations.getModel((item)).getReference(), false);
                 return tref;
               }
@@ -214,7 +214,7 @@ public class QueriesGenerated {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode tref = SConceptOperations.createNewNode("jetbrains.mps.testbench.suite.structure.TestCaseRef", null);
                 SLinkOperations.setTarget(tref, "testCase", (item), false);
-                model.getModelDescriptor().getModule().addDependency(SNodeOperations.getModel((item)).getModelDescriptor().getModule().getModuleReference(), false);
+                model.getModule().addDependency(SNodeOperations.getModel((item)).getModule().getModuleReference(), false);
                 ((SModelInternal) model).addModelImport(SNodeOperations.getModel((item)).getReference(), false);
                 return tref;
               }

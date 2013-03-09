@@ -83,7 +83,7 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
       if (!(SNodeOperations.isInstanceOf(snode, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"))) {
         continue;
       }
-      candidates.putValue(SNodeOperations.getModel(snode).getModelDescriptor(), node);
+      candidates.putValue(SNodeOperations.getModel(snode), node);
     }
 
     for (Map.Entry<SModel, Collection<SNode>> e : candidates.entrySet()) {

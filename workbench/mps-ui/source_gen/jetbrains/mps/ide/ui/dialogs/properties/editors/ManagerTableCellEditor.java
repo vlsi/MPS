@@ -50,9 +50,9 @@ public class ManagerTableCellEditor extends DefaultCellEditor {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (SNode node : ListSequence.fromList(getManagerNodes())) {
-          Language language = Language.getLanguageFor(SNodeOperations.getModel(node).getModelDescriptor());
+          Language language = Language.getLanguageFor(SNodeOperations.getModel(node));
 
-          ModelRootManager manager = new ModelRootManager(SNodeOperations.getModel(node).getModelDescriptor().getModule().getModuleDescriptor().getId().toString(), jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(node)) + "." + NameUtil.toValidIdentifier(SPropertyOperations.getString(node, "name")));
+          ModelRootManager manager = new ModelRootManager(SNodeOperations.getModel(node).getModule().getModuleDescriptor().getId().toString(), jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(node)) + "." + NameUtil.toValidIdentifier(SPropertyOperations.getString(node, "name")));
 
           ListSequence.fromList(result).addElement(manager);
         }

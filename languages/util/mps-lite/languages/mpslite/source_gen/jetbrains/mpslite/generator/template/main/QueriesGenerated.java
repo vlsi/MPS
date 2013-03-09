@@ -28,7 +28,7 @@ import jetbrains.mps.smodel.SModelRepository;
 
 public class QueriesGenerated {
   public static void mappingScript_CodeBlock_1238589718396(final IOperationContext operationContext, final MappingScriptContext _context) {
-    Language language = Language.getLanguageFor(_context.getOriginalInputModel().getModelDescriptor());
+    Language language = Language.getLanguageFor(_context.getOriginalInputModel());
     if (language == null) {
       return;
     }

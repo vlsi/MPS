@@ -49,7 +49,7 @@ public class NodeByConceptChooser extends AbstractMainNodeChooser {
 
     Language language = ModelAccess.instance().runReadAction(new Computable<Language>() {
       public Language compute() {
-        return (Language) getTargetConceptNode().getModel().getModelDescriptor().getModule();
+        return (Language) getTargetConceptNode().getModel().getModule();
       }
     });
 

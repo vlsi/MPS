@@ -593,12 +593,12 @@ public class RefactoringContext {
             case NODE:
               SNode node = ((SNode) target);
               setSelectedNode(node);
-              setSelectedModel(node.getModel().getModelDescriptor());
-              setSelectedModule(node.getModel().getModelDescriptor().getModule());
+              setSelectedModel(node.getModel());
+              setSelectedModule(node.getModel().getModule());
 
               break;
             case MODEL:
-              SModel descriptor = ((SModel) target).getModelDescriptor();
+              SModel descriptor = ((SModel) target);
               setSelectedModel(descriptor);
               setSelectedModule(descriptor.getModule());
               break;

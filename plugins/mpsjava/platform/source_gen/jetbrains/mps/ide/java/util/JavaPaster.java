@@ -78,7 +78,7 @@ public class JavaPaster {
   }
 
   public void pasteJavaAsNode(SNode anchor, final SModel model, String javaCode, IOperationContext operationContext, FeatureKind featureKind, Project project) {
-    IModule module = model.getModelDescriptor().getModule();
+    IModule module = model.getModule();
     JavaParser parser = new JavaParser();
 
     try {
@@ -167,7 +167,7 @@ public class JavaPaster {
   }
 
   public static List<SNode> getStatementsFromJavaText(String javaCode, SModel model, IOperationContext context, Project project) {
-    IModule module = model.getModelDescriptor().getModule();
+    IModule module = model.getModule();
     try {
       JavaParser.JavaParseResult result = new JavaParser().parse(javaCode, SModelOperations.getModelName(model), FeatureKind.STATEMENTS, true);
       String msg = result.getErrorMsg();

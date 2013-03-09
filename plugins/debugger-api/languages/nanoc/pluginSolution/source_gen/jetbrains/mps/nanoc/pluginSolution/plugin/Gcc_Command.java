@@ -83,7 +83,7 @@ public class Gcc_Command {
     final Wrappers._T<String> packageName = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        module.value = SNodeOperations.getModel(file).getModelDescriptor().getModule();
+        module.value = SNodeOperations.getModel(file).getModule();
         sourceName.value = TraceDown.anyUnitName(file);
         packageName.value = jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(file)).replace(".", "/");
       }
@@ -97,7 +97,7 @@ public class Gcc_Command {
     final Wrappers._T<String> packageName = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        module.value = SNodeOperations.getModel(file).getModelDescriptor().getModule();
+        module.value = SNodeOperations.getModel(file).getModule();
         sourceName.value = TraceInfoUtil.getUnitName(file);
         packageName.value = jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(file)).replace(".", "/");
       }

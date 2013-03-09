@@ -146,7 +146,7 @@
     <nodeInfo nodeId="4197214709893771556" fileName="GenerateBuildUtil.java" startLine="66" startPosition="121" endLine="67" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4197214709893771559" fileName="GenerateBuildUtil.java" startLine="67" startPosition="69" endLine="68" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4197214709893771565" fileName="GenerateBuildUtil.java" startLine="70" startPosition="25" endLine="71" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4197214709893771571" fileName="GenerateBuildUtil.java" startLine="71" startPosition="90" endLine="72" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4197214709893771571" fileName="GenerateBuildUtil.java" startLine="71" startPosition="90" endLine="72" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4197214709893771580" fileName="GenerateBuildUtil.java" startLine="74" startPosition="7" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4197214709893771581" fileName="GenerateBuildUtil.java" startLine="75" startPosition="0" endLine="76" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4197214709893771592" fileName="GenerateBuildUtil.java" startLine="79" startPosition="34" endLine="80" endPosition="270" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -186,7 +186,7 @@
     <scopeInfo nodeId="4197214709893771532" fileName="GenerateBuildUtil.java" startLine="58" startPosition="25" endLine="60" endPosition="137">
       <varInfo nodeId="4197214709893771534" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="4197214709893771564" fileName="GenerateBuildUtil.java" startLine="70" startPosition="25" endLine="72" endPosition="81" />
+    <scopeInfo nodeId="4197214709893771564" fileName="GenerateBuildUtil.java" startLine="70" startPosition="25" endLine="72" endPosition="60" />
     <scopeInfo nodeId="4197214709893771480" fileName="GenerateBuildUtil.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
     <scopeInfo nodeId="4197214709893771502" fileName="GenerateBuildUtil.java" startLine="48" startPosition="0" endLine="51" endPosition="0" />
     <scopeInfo nodeId="4197214709893771531" fileName="GenerateBuildUtil.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />

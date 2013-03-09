@@ -119,7 +119,7 @@ public abstract class NodeTreeModel implements TreeModel {
               if (model == null) {
                 return;
               }
-              IModule module = model.getModelDescriptor().getModule();
+              IModule module = model.getModule();
               if (module == null) {
                 return;
               }

@@ -20,7 +20,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import java.util.List;
 import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.smodel.SModelInternal;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class EditorResolver implements IResolver {
   public EditorResolver() {
@@ -59,7 +59,7 @@ public class EditorResolver implements IResolver {
     if (result != null) {
       return result;
     }
-    IModule module = check_jllgm1_a0c0c(SNodeOperations.getModel(sourceNode).getModelDescriptor());
+    IModule module = check_jllgm1_a0c0c(SNodeOperations.getModel(sourceNode));
     SNode target = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference);
     if (target != null && module != null) {
       Scope scope = ModelConstraints.getScope(reference);
@@ -94,7 +94,7 @@ public class EditorResolver implements IResolver {
     }
   }
 
-  private static IModule check_jllgm1_a0c0c(SModelInternal checkedDotOperand) {
+  private static IModule check_jllgm1_a0c0c(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

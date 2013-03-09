@@ -35,7 +35,7 @@ public class ModelAndImportedModelsScope extends AbstractSearchScope {
         myModels = new ArrayList<SModel>(1);
       } else {
         myModels = SModelOperations.allImportedModels(myModel, myScope);
-        myModels.add(0, myModel.getModelDescriptor());
+        myModels.add(0, myModel);
       }
     }
     return myModels;

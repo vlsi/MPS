@@ -36,7 +36,7 @@ public class MoveNodeDialog extends ModelOrNodeChooserDialog {
     final Wrappers._boolean doRefactoring = new Wrappers._boolean(false);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        if (myNodeFilter == null || myNodeFilter.checkForObject(((SNode) selectedObject), myNodeToMove, myNodeToMove.getModel().getModelDescriptor(), myChooser.getComponent())) {
+        if (myNodeFilter == null || myNodeFilter.checkForObject(((SNode) selectedObject), myNodeToMove, myNodeToMove.getModel(), myChooser.getComponent())) {
           mySelectedObject = ((SNode) selectedObject);
           doRefactoring.value = true;
         }

@@ -104,7 +104,7 @@ public class VariantsUtil {
   }
 
   public static String languageSuffix(final SModel _this) {
-    IModule module = _this.getModelDescriptor().getModule();
+    IModule module = _this.getModule();
     return NameUtil.shortNameFromLongName(module.getModuleFqName());
   }
 

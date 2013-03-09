@@ -15,7 +15,7 @@
     <nodeInfo nodeId="1233750346381" fileName="ConceptTextGenDeclaration_Constraints.java" startLine="54" startPosition="37" endLine="55" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1233750421355" fileName="ConceptTextGenDeclaration_Constraints.java" startLine="54" startPosition="37" endLine="55" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1233750346381" fileName="ConceptTextGenDeclaration_Constraints.java" startLine="57" startPosition="7" endLine="58" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1233758203985" fileName="ConceptTextGenDeclaration_Constraints.java" startLine="61" startPosition="99" endLine="62" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1233758203985" fileName="ConceptTextGenDeclaration_Constraints.java" startLine="61" startPosition="99" endLine="62" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1233750346381" fileName="ConceptTextGenDeclaration_Constraints.java" startLine="65" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeRootBreakingPoint" />
     <nodeInfo nodeId="1233750346381" fileName="ConceptTextGenDeclaration_Constraints.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConceptTextGenDeclaration_Constraints#()V" />
     <nodeInfo nodeId="1233750346381" fileName="ConceptTextGenDeclaration_Constraints.java" startLine="35" startPosition="0" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -31,7 +31,7 @@
     <scopeInfo nodeId="1233750346381" fileName="ConceptTextGenDeclaration_Constraints.java" startLine="36" startPosition="51" endLine="37" endPosition="66" />
     <scopeInfo nodeId="1233750346381" fileName="ConceptTextGenDeclaration_Constraints.java" startLine="48" startPosition="37" endLine="49" endPosition="20" />
     <scopeInfo nodeId="1233750418026" fileName="ConceptTextGenDeclaration_Constraints.java" startLine="54" startPosition="37" endLine="55" endPosition="128" />
-    <scopeInfo nodeId="1233758188296" fileName="ConceptTextGenDeclaration_Constraints.java" startLine="61" startPosition="99" endLine="62" endPosition="110" />
+    <scopeInfo nodeId="1233758188296" fileName="ConceptTextGenDeclaration_Constraints.java" startLine="61" startPosition="99" endLine="62" endPosition="89" />
     <scopeInfo nodeId="1233750346381" fileName="ConceptTextGenDeclaration_Constraints.java" startLine="53" startPosition="56" endLine="55" endPosition="128">
       <varInfo nodeId="1233750346381" varName="propertyName" />
     </scopeInfo>
@@ -153,7 +153,7 @@
     <nodeInfo nodeId="1233929742891" fileName="LanguageTextGenDeclaration_Constraints.java" startLine="28" startPosition="51" endLine="29" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1233929742891" fileName="LanguageTextGenDeclaration_Constraints.java" startLine="30" startPosition="5" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="1233929742891" fileName="LanguageTextGenDeclaration_Constraints.java" startLine="31" startPosition="0" endLine="32" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1233929755301" fileName="LanguageTextGenDeclaration_Constraints.java" startLine="35" startPosition="99" endLine="36" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1233929755301" fileName="LanguageTextGenDeclaration_Constraints.java" startLine="35" startPosition="99" endLine="36" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1233929742891" fileName="LanguageTextGenDeclaration_Constraints.java" startLine="39" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeRootBreakingPoint" />
     <nodeInfo nodeId="1233929742891" fileName="LanguageTextGenDeclaration_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LanguageTextGenDeclaration_Constraints#()V" />
     <nodeInfo nodeId="1233929742891" fileName="LanguageTextGenDeclaration_Constraints.java" startLine="27" startPosition="0" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -163,7 +163,7 @@
     <scopeInfo nodeId="1233929742891" fileName="LanguageTextGenDeclaration_Constraints.java" startLine="15" startPosition="51" endLine="16" endPosition="77" />
     <scopeInfo nodeId="1233929742891" fileName="LanguageTextGenDeclaration_Constraints.java" startLine="20" startPosition="42" endLine="21" endPosition="16" />
     <scopeInfo nodeId="1233929742891" fileName="LanguageTextGenDeclaration_Constraints.java" startLine="28" startPosition="51" endLine="29" endPosition="66" />
-    <scopeInfo nodeId="1233929745440" fileName="LanguageTextGenDeclaration_Constraints.java" startLine="35" startPosition="99" endLine="36" endPosition="110" />
+    <scopeInfo nodeId="1233929745440" fileName="LanguageTextGenDeclaration_Constraints.java" startLine="35" startPosition="99" endLine="36" endPosition="89" />
     <scopeInfo nodeId="1233929742891" fileName="LanguageTextGenDeclaration_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
     <scopeInfo nodeId="1233929742891" fileName="LanguageTextGenDeclaration_Constraints.java" startLine="35" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="1233929742891" varName="model" />

@@ -197,7 +197,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
     myRevisionRange = new VcsRevisionRange(this, myFileAnnotation);
     ListSequence.fromList(myAspectSubcolumns).addElement(new HighlightRevisionSubcolumn(this, myRevisionRange));
     myModelVirtualFile = modelVirtualFile;
-    myModelDescriptor = (BaseEditableSModelDescriptor) model.getModelDescriptor();
+    myModelDescriptor = (BaseEditableSModelDescriptor) model;
     myVcs = vcs;
     final CurrentDifferenceRegistry registry = CurrentDifferenceRegistry.getInstance(getProject());
     registry.getCommandQueue().runTask(new Runnable() {

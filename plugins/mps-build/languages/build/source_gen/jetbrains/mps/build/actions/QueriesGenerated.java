@@ -49,7 +49,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_BuildProject_6099797596647447257(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SModel modelDescriptor = _context.getModel().getModelDescriptor();
+    SModel modelDescriptor = _context.getModel();
     if (_context.getModel().getModule() instanceof TransientModelsModule || modelDescriptor == null) {
       return;
     }

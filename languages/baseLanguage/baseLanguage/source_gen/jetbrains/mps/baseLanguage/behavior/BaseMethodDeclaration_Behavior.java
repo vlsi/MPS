@@ -25,7 +25,7 @@ import jetbrains.mps.baseLanguage.scopes.Scopes;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.smodel.SModelInternal;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -120,7 +120,7 @@ public class BaseMethodDeclaration_Behavior {
   }
 
   public static Method call_getMethod_1213877350393(SNode thisNode, IModule module) {
-    IModule m = check_tq0gdw_a0a0k(SNodeOperations.getModel(thisNode).getModelDescriptor());
+    IModule m = check_tq0gdw_a0a0k(SNodeOperations.getModel(thisNode));
     if (m != null) {
       Method method = null;
       try {
@@ -400,7 +400,7 @@ public class BaseMethodDeclaration_Behavior {
     return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_getScopeVariables_5067982036267369894", new Class[]{SNode.class}, new Object[]{});
   }
 
-  private static IModule check_tq0gdw_a0a0k(SModelInternal checkedDotOperand) {
+  private static IModule check_tq0gdw_a0a0k(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

@@ -36,7 +36,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
     if (model == null) {
       return null;
     }
-    return model.getModelDescriptor().getModule();
+    return model.getModule();
   }
 
   @Nullable

@@ -33,7 +33,7 @@ public class SurroundWithIntentionDeclaration_Constraints extends BaseConstraint
   }
 
   public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
-    return LanguageAspect.INTENTIONS.is(model.getModelDescriptor()) || SModelStereotype.isGeneratorModel(model);
+    return LanguageAspect.INTENTIONS.is(model) || SModelStereotype.isGeneratorModel(model);
   }
 
   private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)", "6263518417926802272");

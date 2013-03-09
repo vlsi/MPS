@@ -38,7 +38,7 @@ public class ModelPlusImportedScope extends Scope {
         imported = Collections.emptyList();
       } else {
         imported = SModelOperations.allImportedModels(myModel, myModuleScope);
-        imported.add(0, myModel.getModelDescriptor());
+        imported.add(0, myModel);
       }
       myModels = imported;
     }
@@ -47,7 +47,7 @@ public class ModelPlusImportedScope extends Scope {
 
   @Override
   public boolean contains(SNode node) {
-    return SNodeUtil.isInstanceOf(node, SConceptRepository.getInstance().getConcept(myTargetConcept)) && (!(myRootsOnly) || SNodeOperations.isRoot(node)) && getModels().contains(node.getModel().getModelDescriptor());
+    return SNodeUtil.isInstanceOf(node, SConceptRepository.getInstance().getConcept(myTargetConcept)) && (!(myRootsOnly) || SNodeOperations.isRoot(node)) && getModels().contains(node.getModel());
   }
 
   @Override

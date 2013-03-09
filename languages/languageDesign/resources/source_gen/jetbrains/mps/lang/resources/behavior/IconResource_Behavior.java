@@ -24,7 +24,7 @@ public class IconResource_Behavior {
   public static void virtual_generate_8974276187400030152(final SNode thisNode) {
     ModelAccess.instance().writeFilesInEDT(new Runnable() {
       public void run() {
-        SModel model = SNodeOperations.getModel(thisNode).getModelDescriptor();
+        SModel model = SNodeOperations.getModel(thisNode);
         String outputRoot = model.getModule().getOutputFor(model);
         IFile outputRootFile = FileSystem.getInstance().getFileByPath(outputRoot);
         IFile output = FileGenerationUtil.getDefaultOutputDir(model, outputRootFile);
@@ -39,7 +39,7 @@ public class IconResource_Behavior {
   }
 
   public static boolean call_isValid_8974276187400030063(SNode thisNode) {
-    IModule module = SNodeOperations.getModel(thisNode).getModelDescriptor().getModule();
+    IModule module = SNodeOperations.getModel(thisNode).getModule();
     if (module == null) {
       return false;
     }

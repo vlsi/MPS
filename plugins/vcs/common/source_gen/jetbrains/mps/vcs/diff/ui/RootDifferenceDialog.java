@@ -336,7 +336,7 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
           node.getPresentation()
         );
 
-        boolean isEditable = newModel.getModelDescriptor() instanceof EditableSModel && check_vu2gar_a0a0g0a7a23(SModelRepository.getInstance().getModelDescriptor(newModel.getReference())) == newModel;
+        boolean isEditable = newModel instanceof EditableSModel && check_vu2gar_a0a0g0a7a23(SModelRepository.getInstance().getModelDescriptor(newModel.getReference())) == newModel;
 
         return dialog.value = new RootDifferenceDialog(project, changeSet, rootId, rootName, contentTitles, WindowManager.getInstance().getFrame(project), isEditable, null, scrollTo);
       }

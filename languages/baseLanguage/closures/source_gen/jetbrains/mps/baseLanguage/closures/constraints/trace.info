@@ -737,7 +737,7 @@
     <nodeInfo nodeId="5612111951671408000" fileName="AbstractFunctionType_Constraints.java" startLine="28" startPosition="51" endLine="29" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5612111951671408000" fileName="AbstractFunctionType_Constraints.java" startLine="30" startPosition="5" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="5612111951671408000" fileName="AbstractFunctionType_Constraints.java" startLine="31" startPosition="0" endLine="32" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5612111951671415373" fileName="AbstractFunctionType_Constraints.java" startLine="35" startPosition="148" endLine="36" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5612111951671415373" fileName="AbstractFunctionType_Constraints.java" startLine="35" startPosition="148" endLine="36" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5612111951671408000" fileName="AbstractFunctionType_Constraints.java" startLine="39" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
     <nodeInfo nodeId="5612111951671408000" fileName="AbstractFunctionType_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AbstractFunctionType_Constraints#()V" />
     <nodeInfo nodeId="5612111951671408000" fileName="AbstractFunctionType_Constraints.java" startLine="27" startPosition="0" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -747,7 +747,7 @@
     <scopeInfo nodeId="5612111951671408000" fileName="AbstractFunctionType_Constraints.java" startLine="15" startPosition="45" endLine="16" endPosition="80" />
     <scopeInfo nodeId="5612111951671408000" fileName="AbstractFunctionType_Constraints.java" startLine="20" startPosition="43" endLine="21" endPosition="16" />
     <scopeInfo nodeId="5612111951671408000" fileName="AbstractFunctionType_Constraints.java" startLine="28" startPosition="51" endLine="29" endPosition="67" />
-    <scopeInfo nodeId="5612111951671408002" fileName="AbstractFunctionType_Constraints.java" startLine="35" startPosition="148" endLine="36" endPosition="99" />
+    <scopeInfo nodeId="5612111951671408002" fileName="AbstractFunctionType_Constraints.java" startLine="35" startPosition="148" endLine="36" endPosition="78" />
     <scopeInfo nodeId="5612111951671408000" fileName="AbstractFunctionType_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
     <scopeInfo nodeId="5612111951671408000" fileName="AbstractFunctionType_Constraints.java" startLine="35" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="5612111951671408000" varName="childConcept" />

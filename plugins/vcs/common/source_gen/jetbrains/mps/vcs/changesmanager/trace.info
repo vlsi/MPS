@@ -88,7 +88,7 @@
     <nodeInfo nodeId="2722286076674338505" fileName="NodeFileStatusMapping.java" startLine="131" startPosition="58" endLine="132" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2722286076674338511" fileName="NodeFileStatusMapping.java" startLine="134" startPosition="25" endLine="135" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2722286076674338528" fileName="NodeFileStatusMapping.java" startLine="139" startPosition="33" endLine="140" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2722286076674338534" fileName="NodeFileStatusMapping.java" startLine="141" startPosition="175" endLine="142" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2722286076674338534" fileName="NodeFileStatusMapping.java" startLine="141" startPosition="175" endLine="142" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2722286076674338557" fileName="NodeFileStatusMapping.java" startLine="144" startPosition="78" endLine="145" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2722286076674338573" fileName="NodeFileStatusMapping.java" startLine="153" startPosition="36" endLine="154" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2722286076674338588" fileName="NodeFileStatusMapping.java" startLine="160" startPosition="36" endLine="161" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -158,7 +158,7 @@
     <scopeInfo nodeId="2722286076674338416" fileName="NodeFileStatusMapping.java" startLine="99" startPosition="51" endLine="100" endPosition="78" />
     <scopeInfo nodeId="2722286076674338449" fileName="NodeFileStatusMapping.java" startLine="108" startPosition="69" endLine="109" endPosition="37" />
     <scopeInfo nodeId="2722286076674338494" fileName="NodeFileStatusMapping.java" startLine="124" startPosition="14" endLine="125" endPosition="21" />
-    <scopeInfo nodeId="2722286076674338533" fileName="NodeFileStatusMapping.java" startLine="141" startPosition="175" endLine="142" endPosition="138" />
+    <scopeInfo nodeId="2722286076674338533" fileName="NodeFileStatusMapping.java" startLine="141" startPosition="175" endLine="142" endPosition="117" />
     <scopeInfo nodeId="2722286076674338556" fileName="NodeFileStatusMapping.java" startLine="144" startPosition="78" endLine="145" endPosition="115" />
     <scopeInfo nodeId="2722286076674338572" fileName="NodeFileStatusMapping.java" startLine="153" startPosition="36" endLine="154" endPosition="73" />
     <scopeInfo nodeId="2722286076674338587" fileName="NodeFileStatusMapping.java" startLine="160" startPosition="36" endLine="161" endPosition="67" />

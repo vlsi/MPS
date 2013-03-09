@@ -74,7 +74,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6291350464112430620(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getOriginalInputModel().getModelDescriptor().getModule().getModuleFqName();
+    return _context.getOriginalInputModel().getModule().getModuleFqName();
   }
 
   public static Object propertyMacro_GetPropertyValue_1212583749804(final IOperationContext operationContext, final PropertyMacroContext _context) {

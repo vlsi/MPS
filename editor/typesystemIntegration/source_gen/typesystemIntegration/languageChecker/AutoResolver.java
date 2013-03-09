@@ -33,7 +33,7 @@ public class AutoResolver extends EditorCheckerAdapter {
   @Override
   public Set<EditorMessage> createMessages(SNode rootNode, List<SModelEvent> events, boolean wasCheckedOnce, final EditorContext editorContext) {
     Set<EditorMessage> messages = SetSequence.fromSet(new LinkedHashSet<EditorMessage>());
-    if (SNodeOperations.getModel(rootNode) == null || SNodeOperations.getModel(rootNode).getModelDescriptor() == null) {
+    if (SNodeOperations.getModel(rootNode) == null || SNodeOperations.getModel(rootNode) == null) {
       return messages;
     }
     if (SNodeOperations.getModel(rootNode).getModule() instanceof TransientModelsModule) {

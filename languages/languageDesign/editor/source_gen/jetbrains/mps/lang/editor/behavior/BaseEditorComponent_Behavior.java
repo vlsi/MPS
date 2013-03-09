@@ -28,7 +28,7 @@ public class BaseEditorComponent_Behavior {
   public static List<SNode> call_getApplicableComponents_1213877372457(SNode thisNode, IScope scope) {
     final SNode conceptDeclaration = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{});
 
-    SModule contextModule = SNodeOperations.getModel(thisNode).getModelDescriptor().getModule();
+    SModule contextModule = SNodeOperations.getModel(thisNode).getModule();
 
     Set<Language> contextLanguages = SetSequence.fromSet(new HashSet<Language>());
     for (SModule module : Sequence.fromIterable(contextModule.getModuleScope().getModules())) {

@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
-import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -24,7 +23,7 @@ public class QuickFixForClassCreator_QuickFix extends QuickFix_Runtime {
   public void execute(SNode node) {
     if (SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassCreator"), "baseMethodDeclaration", false) == null && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassCreator"), "actualArgument", true)).isEmpty()) {
       String refText = SLinkOperations.getResolveInfo(SNodeOperations.getReference(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassCreator"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration")));
-      IModule module = check_8brg4q_a0b0a0a(check_8brg4q_a0a1a0a0(check_8brg4q_a0a0b0a0a(node)));
+      IModule module = check_8brg4q_a0b0a0a(check_8brg4q_a0a1a0a0(node));
 
       if ((refText != null && refText.length() > 0) && module != null) {
         SNode clazz = SNodeOperations.cast(ClassifierScopes.getVisibleClassifiersWithDefaultConstructors(node, module.getScope()).resolve(node, refText), "jetbrains.mps.baseLanguage.structure.ClassConcept");
@@ -36,21 +35,14 @@ public class QuickFixForClassCreator_QuickFix extends QuickFix_Runtime {
     }
   }
 
-  private static IModule check_8brg4q_a0b0a0a(SModelInternal checkedDotOperand) {
+  private static IModule check_8brg4q_a0b0a0a(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModelInternal check_8brg4q_a0a1a0a0(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelDescriptor();
-    }
-    return null;
-  }
-
-  private static SModel check_8brg4q_a0a0b0a0a(SNode checkedDotOperand) {
+  private static SModel check_8brg4q_a0a1a0a0(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModel();
     }

@@ -618,7 +618,7 @@
     <nodeInfo nodeId="1227088436106" fileName="InferenceRule_Constraints.java" startLine="28" startPosition="51" endLine="29" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1227088436106" fileName="InferenceRule_Constraints.java" startLine="30" startPosition="5" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="1227088436106" fileName="InferenceRule_Constraints.java" startLine="31" startPosition="0" endLine="32" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1227088481579" fileName="InferenceRule_Constraints.java" startLine="35" startPosition="99" endLine="36" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1227088481579" fileName="InferenceRule_Constraints.java" startLine="35" startPosition="99" endLine="36" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1227088436106" fileName="InferenceRule_Constraints.java" startLine="39" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeRootBreakingPoint" />
     <nodeInfo nodeId="1227088436106" fileName="InferenceRule_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InferenceRule_Constraints#()V" />
     <nodeInfo nodeId="1227088436106" fileName="InferenceRule_Constraints.java" startLine="27" startPosition="0" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -628,7 +628,7 @@
     <scopeInfo nodeId="1227088436106" fileName="InferenceRule_Constraints.java" startLine="15" startPosition="38" endLine="16" endPosition="67" />
     <scopeInfo nodeId="1227088436106" fileName="InferenceRule_Constraints.java" startLine="20" startPosition="42" endLine="21" endPosition="16" />
     <scopeInfo nodeId="1227088436106" fileName="InferenceRule_Constraints.java" startLine="28" startPosition="51" endLine="29" endPosition="66" />
-    <scopeInfo nodeId="1227088438467" fileName="InferenceRule_Constraints.java" startLine="35" startPosition="99" endLine="36" endPosition="112" />
+    <scopeInfo nodeId="1227088438467" fileName="InferenceRule_Constraints.java" startLine="35" startPosition="99" endLine="36" endPosition="91" />
     <scopeInfo nodeId="1227088436106" fileName="InferenceRule_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
     <scopeInfo nodeId="1227088436106" fileName="InferenceRule_Constraints.java" startLine="35" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="1227088436106" varName="model" />
@@ -653,7 +653,7 @@
     <nodeInfo nodeId="1227088545213" fileName="ComparisonRule_Constraints.java" startLine="28" startPosition="51" endLine="29" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1227088545213" fileName="ComparisonRule_Constraints.java" startLine="30" startPosition="5" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="1227088545213" fileName="ComparisonRule_Constraints.java" startLine="31" startPosition="0" endLine="32" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1227088547169" fileName="ComparisonRule_Constraints.java" startLine="35" startPosition="99" endLine="36" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1227088547169" fileName="ComparisonRule_Constraints.java" startLine="35" startPosition="99" endLine="36" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1227088545213" fileName="ComparisonRule_Constraints.java" startLine="39" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeRootBreakingPoint" />
     <nodeInfo nodeId="1227088545213" fileName="ComparisonRule_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ComparisonRule_Constraints#()V" />
     <nodeInfo nodeId="1227088545213" fileName="ComparisonRule_Constraints.java" startLine="27" startPosition="0" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -663,7 +663,7 @@
     <scopeInfo nodeId="1227088545213" fileName="ComparisonRule_Constraints.java" startLine="15" startPosition="39" endLine="16" endPosition="68" />
     <scopeInfo nodeId="1227088545213" fileName="ComparisonRule_Constraints.java" startLine="20" startPosition="42" endLine="21" endPosition="16" />
     <scopeInfo nodeId="1227088545213" fileName="ComparisonRule_Constraints.java" startLine="28" startPosition="51" endLine="29" endPosition="66" />
-    <scopeInfo nodeId="1227088546715" fileName="ComparisonRule_Constraints.java" startLine="35" startPosition="99" endLine="36" endPosition="112" />
+    <scopeInfo nodeId="1227088546715" fileName="ComparisonRule_Constraints.java" startLine="35" startPosition="99" endLine="36" endPosition="91" />
     <scopeInfo nodeId="1227088545213" fileName="ComparisonRule_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
     <scopeInfo nodeId="1227088545213" fileName="ComparisonRule_Constraints.java" startLine="35" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="1227088545213" varName="model" />
@@ -688,7 +688,7 @@
     <nodeInfo nodeId="1227088567867" fileName="TypesystemQuickFix_Constraints.java" startLine="28" startPosition="51" endLine="29" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1227088567867" fileName="TypesystemQuickFix_Constraints.java" startLine="30" startPosition="5" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="1227088567867" fileName="TypesystemQuickFix_Constraints.java" startLine="31" startPosition="0" endLine="32" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1227088570838" fileName="TypesystemQuickFix_Constraints.java" startLine="35" startPosition="99" endLine="36" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1227088570838" fileName="TypesystemQuickFix_Constraints.java" startLine="35" startPosition="99" endLine="36" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1227088567867" fileName="TypesystemQuickFix_Constraints.java" startLine="39" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeRootBreakingPoint" />
     <nodeInfo nodeId="1227088567867" fileName="TypesystemQuickFix_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TypesystemQuickFix_Constraints#()V" />
     <nodeInfo nodeId="1227088567867" fileName="TypesystemQuickFix_Constraints.java" startLine="27" startPosition="0" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -698,7 +698,7 @@
     <scopeInfo nodeId="1227088567867" fileName="TypesystemQuickFix_Constraints.java" startLine="15" startPosition="43" endLine="16" endPosition="72" />
     <scopeInfo nodeId="1227088567867" fileName="TypesystemQuickFix_Constraints.java" startLine="20" startPosition="42" endLine="21" endPosition="16" />
     <scopeInfo nodeId="1227088567867" fileName="TypesystemQuickFix_Constraints.java" startLine="28" startPosition="51" endLine="29" endPosition="66" />
-    <scopeInfo nodeId="1227088570447" fileName="TypesystemQuickFix_Constraints.java" startLine="35" startPosition="99" endLine="36" endPosition="112" />
+    <scopeInfo nodeId="1227088570447" fileName="TypesystemQuickFix_Constraints.java" startLine="35" startPosition="99" endLine="36" endPosition="91" />
     <scopeInfo nodeId="1227088567867" fileName="TypesystemQuickFix_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
     <scopeInfo nodeId="1227088567867" fileName="TypesystemQuickFix_Constraints.java" startLine="35" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="1227088567867" varName="model" />
@@ -723,7 +723,7 @@
     <nodeInfo nodeId="1227088583369" fileName="InequationReplacementRule_Constraints.java" startLine="28" startPosition="51" endLine="29" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1227088583369" fileName="InequationReplacementRule_Constraints.java" startLine="30" startPosition="5" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="1227088583369" fileName="InequationReplacementRule_Constraints.java" startLine="31" startPosition="0" endLine="32" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1227088585685" fileName="InequationReplacementRule_Constraints.java" startLine="35" startPosition="99" endLine="36" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1227088585685" fileName="InequationReplacementRule_Constraints.java" startLine="35" startPosition="99" endLine="36" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1227088583369" fileName="InequationReplacementRule_Constraints.java" startLine="39" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeRootBreakingPoint" />
     <nodeInfo nodeId="1227088583369" fileName="InequationReplacementRule_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InequationReplacementRule_Constraints#()V" />
     <nodeInfo nodeId="1227088583369" fileName="InequationReplacementRule_Constraints.java" startLine="27" startPosition="0" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -733,7 +733,7 @@
     <scopeInfo nodeId="1227088583369" fileName="InequationReplacementRule_Constraints.java" startLine="15" startPosition="50" endLine="16" endPosition="79" />
     <scopeInfo nodeId="1227088583369" fileName="InequationReplacementRule_Constraints.java" startLine="20" startPosition="42" endLine="21" endPosition="16" />
     <scopeInfo nodeId="1227088583369" fileName="InequationReplacementRule_Constraints.java" startLine="28" startPosition="51" endLine="29" endPosition="66" />
-    <scopeInfo nodeId="1227088585371" fileName="InequationReplacementRule_Constraints.java" startLine="35" startPosition="99" endLine="36" endPosition="112" />
+    <scopeInfo nodeId="1227088585371" fileName="InequationReplacementRule_Constraints.java" startLine="35" startPosition="99" endLine="36" endPosition="91" />
     <scopeInfo nodeId="1227088583369" fileName="InequationReplacementRule_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
     <scopeInfo nodeId="1227088583369" fileName="InequationReplacementRule_Constraints.java" startLine="35" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="1227088583369" varName="model" />
@@ -758,7 +758,7 @@
     <nodeInfo nodeId="1227088611953" fileName="NonTypesystemRule_Constraints.java" startLine="28" startPosition="51" endLine="29" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1227088611953" fileName="NonTypesystemRule_Constraints.java" startLine="30" startPosition="5" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="1227088611953" fileName="NonTypesystemRule_Constraints.java" startLine="31" startPosition="0" endLine="32" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1227088613441" fileName="NonTypesystemRule_Constraints.java" startLine="35" startPosition="99" endLine="36" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1227088613441" fileName="NonTypesystemRule_Constraints.java" startLine="35" startPosition="99" endLine="36" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1227088611953" fileName="NonTypesystemRule_Constraints.java" startLine="39" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeRootBreakingPoint" />
     <nodeInfo nodeId="1227088611953" fileName="NonTypesystemRule_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NonTypesystemRule_Constraints#()V" />
     <nodeInfo nodeId="1227088611953" fileName="NonTypesystemRule_Constraints.java" startLine="27" startPosition="0" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -768,7 +768,7 @@
     <scopeInfo nodeId="1227088611953" fileName="NonTypesystemRule_Constraints.java" startLine="15" startPosition="42" endLine="16" endPosition="71" />
     <scopeInfo nodeId="1227088611953" fileName="NonTypesystemRule_Constraints.java" startLine="20" startPosition="42" endLine="21" endPosition="16" />
     <scopeInfo nodeId="1227088611953" fileName="NonTypesystemRule_Constraints.java" startLine="28" startPosition="51" endLine="29" endPosition="66" />
-    <scopeInfo nodeId="1227088613159" fileName="NonTypesystemRule_Constraints.java" startLine="35" startPosition="99" endLine="36" endPosition="112" />
+    <scopeInfo nodeId="1227088613159" fileName="NonTypesystemRule_Constraints.java" startLine="35" startPosition="99" endLine="36" endPosition="91" />
     <scopeInfo nodeId="1227088611953" fileName="NonTypesystemRule_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
     <scopeInfo nodeId="1227088611953" fileName="NonTypesystemRule_Constraints.java" startLine="35" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="1227088611953" varName="model" />
@@ -793,7 +793,7 @@
     <nodeInfo nodeId="1227088639814" fileName="SubtypingRule_Constraints.java" startLine="28" startPosition="51" endLine="29" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1227088639814" fileName="SubtypingRule_Constraints.java" startLine="30" startPosition="5" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="1227088639814" fileName="SubtypingRule_Constraints.java" startLine="31" startPosition="0" endLine="32" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1227088641395" fileName="SubtypingRule_Constraints.java" startLine="35" startPosition="99" endLine="36" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1227088641395" fileName="SubtypingRule_Constraints.java" startLine="35" startPosition="99" endLine="36" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1227088639814" fileName="SubtypingRule_Constraints.java" startLine="39" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeRootBreakingPoint" />
     <nodeInfo nodeId="1227088639814" fileName="SubtypingRule_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SubtypingRule_Constraints#()V" />
     <nodeInfo nodeId="1227088639814" fileName="SubtypingRule_Constraints.java" startLine="27" startPosition="0" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -803,7 +803,7 @@
     <scopeInfo nodeId="1227088639814" fileName="SubtypingRule_Constraints.java" startLine="15" startPosition="38" endLine="16" endPosition="67" />
     <scopeInfo nodeId="1227088639814" fileName="SubtypingRule_Constraints.java" startLine="20" startPosition="42" endLine="21" endPosition="16" />
     <scopeInfo nodeId="1227088639814" fileName="SubtypingRule_Constraints.java" startLine="28" startPosition="51" endLine="29" endPosition="66" />
-    <scopeInfo nodeId="1227088641113" fileName="SubtypingRule_Constraints.java" startLine="35" startPosition="99" endLine="36" endPosition="112" />
+    <scopeInfo nodeId="1227088641113" fileName="SubtypingRule_Constraints.java" startLine="35" startPosition="99" endLine="36" endPosition="91" />
     <scopeInfo nodeId="1227088639814" fileName="SubtypingRule_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
     <scopeInfo nodeId="1227088639814" fileName="SubtypingRule_Constraints.java" startLine="35" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="1227088639814" varName="model" />

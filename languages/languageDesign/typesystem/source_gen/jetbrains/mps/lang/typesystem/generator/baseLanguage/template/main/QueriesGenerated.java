@@ -49,7 +49,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_1175254554283(final IOperationContext operationContext, final CreateRootRuleContext _context) {
     SModel model = _context.getOriginalInputModel();
-    return (Language.getModelAspect(model.getModelDescriptor()) == LanguageAspect.TYPESYSTEM) && !(ListSequence.fromList(SModelOperations.getRoots(model, null)).isEmpty());
+    return (Language.getModelAspect(model) == LanguageAspect.TYPESYSTEM) && !(ListSequence.fromList(SModelOperations.getRoots(model, null)).isEmpty());
   }
 
   public static boolean baseMappingRule_Condition_1188901620278(final IOperationContext operationContext, final BaseMappingRuleContext _context) {

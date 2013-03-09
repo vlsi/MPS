@@ -20,7 +20,7 @@ public abstract class ChangeModel {
   }
 
   public void rollback(SModel model) {
-    BaseSModelDescriptor md = (BaseSModelDescriptor) model.getModelDescriptor();
+    BaseSModelDescriptor md = (BaseSModelDescriptor) model;
     md.replace(this.myModel);
   }
 }

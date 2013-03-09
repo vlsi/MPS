@@ -259,7 +259,7 @@
     <nodeInfo nodeId="8182547171709544253" fileName="NodeBuilderNode_Constraints.java" startLine="83" startPosition="114" endLine="84" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8182547171709544296" fileName="NodeBuilderNode_Constraints.java" startLine="84" startPosition="203" endLine="85" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8182547171709544314" fileName="NodeBuilderNode_Constraints.java" startLine="86" startPosition="230" endLine="87" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8182547171709544354" fileName="NodeBuilderNode_Constraints.java" startLine="88" startPosition="161" endLine="89" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8182547171709544354" fileName="NodeBuilderNode_Constraints.java" startLine="88" startPosition="140" endLine="89" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8182547171709544119" fileName="NodeBuilderNode_Constraints.java" startLine="91" startPosition="17" endLine="92" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8182547171709536125" fileName="NodeBuilderNode_Constraints.java" startLine="93" startPosition="22" endLine="94" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8182547171709478763" fileName="NodeBuilderNode_Constraints.java" startLine="100" startPosition="7" endLine="101" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -291,7 +291,7 @@
     <scopeInfo nodeId="8182547171709478763" fileName="NodeBuilderNode_Constraints.java" startLine="60" startPosition="44" endLine="61" endPosition="20" />
     <scopeInfo nodeId="8182547171709478763" fileName="NodeBuilderNode_Constraints.java" startLine="69" startPosition="63" endLine="70" endPosition="58" />
     <scopeInfo nodeId="8182547171709535956" fileName="NodeBuilderNode_Constraints.java" startLine="78" startPosition="205" endLine="79" endPosition="24" />
-    <scopeInfo nodeId="8182547171709544323" fileName="NodeBuilderNode_Constraints.java" startLine="88" startPosition="161" endLine="89" endPosition="65" />
+    <scopeInfo nodeId="8182547171709544323" fileName="NodeBuilderNode_Constraints.java" startLine="88" startPosition="140" endLine="89" endPosition="65" />
     <scopeInfo nodeId="8182547171709544112" fileName="NodeBuilderNode_Constraints.java" startLine="93" startPosition="22" endLine="94" endPosition="167" />
     <scopeInfo nodeId="8182547171709478765" fileName="NodeBuilderNode_Constraints.java" startLine="104" startPosition="148" endLine="105" endPosition="525" />
     <scopeInfo nodeId="8182547171709478763" fileName="NodeBuilderNode_Constraints.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />

@@ -107,7 +107,7 @@ public class StubRefUtil {
       SModelReference targetModelRef = ref.getTargetSModelReference();
       ((SModelInternal) model).addModelImport(targetModelRef, false);
 
-      IModule sourceModule = check_4tnolf_a0d0a0o(model.getModelDescriptor());
+      IModule sourceModule = check_4tnolf_a0d0a0o(model);
       IModule targetModule = check_4tnolf_a0e0a0o(SModelRepository.getInstance().getModelDescriptor(targetModelRef));
       if (sourceModule != null && targetModule != null) {
         if (!(new GlobalModuleDependenciesManager(sourceModule).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE).contains(targetModule))) {
@@ -171,7 +171,7 @@ public class StubRefUtil {
     return null;
   }
 
-  private static IModule check_4tnolf_a0d0a0o(SModelInternal checkedDotOperand) {
+  private static IModule check_4tnolf_a0d0a0o(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

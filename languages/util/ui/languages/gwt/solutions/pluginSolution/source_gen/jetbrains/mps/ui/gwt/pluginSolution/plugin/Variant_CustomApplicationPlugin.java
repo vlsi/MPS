@@ -21,12 +21,12 @@ public class Variant_CustomApplicationPlugin extends BaseCustomApplicationPlugin
   public void doInit() {
     Variants.register(new _FunctionTypes._void_P1_E0<Variants>() {
       public void invoke(Variants vars) {
-        vars.addVariant("GWT", SNodeOperations.getModel(SLinkOperations.getTarget(_quotation_createNode_fq17w2_a0a0a1a0a0a0a0a(), "plugin", false)).getModelDescriptor().getModule());
+        vars.addVariant("GWT", SNodeOperations.getModel(SLinkOperations.getTarget(_quotation_createNode_fq17w2_a0a0b0a0a0a0a0(), "plugin", false)).getModule());
       }
     });
   }
 
-  private static SNode _quotation_createNode_fq17w2_a0a0a1a0a0a0a0a() {
+  private static SNode _quotation_createNode_fq17w2_a0a0b0a0a0a0a0() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("plugin", SReference.create("plugin", quotedNode_1, SModelReference.fromString("r:5c48d15b-8e31-45b6-af73-b6432909d8d3(jetbrains.mps.ui.gwt.pluginSolution.plugin)"), SNodeId.fromString("5487985028841944287")));

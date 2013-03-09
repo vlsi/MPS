@@ -45,7 +45,7 @@ public class RenameConcept extends BaseLoggableRefactoring {
 
   public List<SModel> getModelsToGenerate(final RefactoringContext refactoringContext) {
     Set<SModel> result = SetSequence.fromSetWithValues(new HashSet<SModel>(), (List<SModel>) refactoringContext.getModelsFromUsages(refactoringContext.getSelectedModel().getSModel()));
-    Language sourceLanguage = Language.getLanguageFor(SNodeOperations.getModel(refactoringContext.getSelectedNode()).getModelDescriptor());
+    Language sourceLanguage = Language.getLanguageFor(SNodeOperations.getModel(refactoringContext.getSelectedNode()));
     if (sourceLanguage != null) {
       for (List<SModel> value : CollectionSequence.fromCollection(RefactoringUtil.getLanguageAndItsExtendingLanguageModels(refactoringContext.getSelectedProject(), sourceLanguage).values())) {
         SetSequence.fromSet(result).addSequence(ListSequence.fromList(value));

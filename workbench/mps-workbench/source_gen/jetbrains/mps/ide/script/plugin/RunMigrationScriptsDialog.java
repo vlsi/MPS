@@ -235,7 +235,7 @@ public class RunMigrationScriptsDialog extends JDialog {
         }
       }
       if (column == 3) {
-        return SNodeOperations.getModel(sn).getModelDescriptor().getModule().getModuleFqName();
+        return SNodeOperations.getModel(sn).getModule().getModuleFqName();
       }
       return null;
     }

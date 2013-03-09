@@ -40,7 +40,7 @@ public class LoggingGenerationUtil {
   }
 
   public static boolean isDesignTimeModel(SModel sm) {
-    IModule module = sm.getModelDescriptor().getModule();
+    IModule module = sm.getModule();
 
     if (module instanceof Generator) {
       return true;

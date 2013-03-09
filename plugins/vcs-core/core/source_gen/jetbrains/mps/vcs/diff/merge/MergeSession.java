@@ -100,7 +100,7 @@ public class MergeSession {
   }
 
   public void installResultModelListener() {
-    ((SModelInternal) myResultModel.getModelDescriptor()).addModelListener(myModelListener);
+    ((SModelInternal) myResultModel).addModelListener(myModelListener);
   }
 
   private void fillNodeToChangesMap() {

@@ -190,7 +190,7 @@ public class Java_Command {
 
   private static String getClassName(SNode node) {
     SModel model = SNodeOperations.getModel(node);
-    DebugInfo debugInfo = TraceInfoCache.getInstance().get(model.getModelDescriptor());
+    DebugInfo debugInfo = TraceInfoCache.getInstance().get(model);
     if (debugInfo == null) {
       LOG.error("No trace.info found for model " + model + ". Check that model is generated.");
       return null;
@@ -229,7 +229,7 @@ public class Java_Command {
   }
 
   public static List<String> getClasspath(SNode node) {
-    return Java_Command.getClasspath(SNodeOperations.getModel(node).getModelDescriptor().getModule());
+    return Java_Command.getClasspath(SNodeOperations.getModel(node).getModule());
   }
 
   public static List<String> getClasspath(final SModule module) {

@@ -106,11 +106,11 @@ public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
-              if (!(LanguageAspect.CONSTRAINTS.is(_context.getModel().getModelDescriptor()))) {
+              if (!(LanguageAspect.CONSTRAINTS.is(_context.getModel()))) {
                 return new EmptyScope();
               }
 
-              SModel structure = check_guz8cy_a0c0a0(check_guz8cy_a0a2a0a(Language.getLanguageForLanguageAspect(_context.getModel().getModelDescriptor())));
+              SModel structure = check_guz8cy_a0c0a0(check_guz8cy_a0a2a0a(Language.getLanguageForLanguageAspect(_context.getModel())));
               if (structure == null) {
                 return new EmptyScope();
               }
@@ -134,7 +134,7 @@ public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             SNode concept = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getReferenceNode(), "jetbrains.mps.lang.constraints.structure.ConceptConstraints", true, false), "concept", false);
-            Language currentLanguage = Language.getLanguageForLanguageAspect(_context.getModel().getModelDescriptor());
+            Language currentLanguage = Language.getLanguageForLanguageAspect(_context.getModel());
             if (currentLanguage == null) {
               return ListSequence.fromList(new ArrayList<SNode>());
             }
@@ -158,7 +158,7 @@ public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
   }
 
   public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
-    return LanguageAspect.CONSTRAINTS.is(model.getModelDescriptor()) || SModelStereotype.isGeneratorModel(model);
+    return LanguageAspect.CONSTRAINTS.is(model) || SModelStereotype.isGeneratorModel(model);
   }
 
   private static SModel check_guz8cy_a0c0a0(SModel checkedDotOperand) {

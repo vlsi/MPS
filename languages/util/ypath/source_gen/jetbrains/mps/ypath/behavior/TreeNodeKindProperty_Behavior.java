@@ -15,7 +15,7 @@ public class TreeNodeKindProperty_Behavior {
   }
 
   public static String call_getFQClassName_1213877513221(SNode thisNode) {
-    String packageName = jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(thisNode).getModelDescriptor());
+    String packageName = jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(thisNode));
     String outerClassName = SPropertyOperations.getString(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.ypath.structure.TreePathAspect", false, false), "name");
     String innerClassName = TreeNodeKindProperty_Behavior.call_getClassName_1213877513203(thisNode);
     return packageName + "!" + outerClassName + "." + innerClassName;

@@ -39,7 +39,7 @@ public class StyleSheetClass_Constraints extends BaseConstraintsDescriptor {
     return new BaseReferenceScopeProvider() {
       @Override
       public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-        SModule contextModule = _context.getModel().getModelDescriptor().getModule();
+        SModule contextModule = _context.getModel().getModule();
 
         Set<Language> contextLanguages = SetSequence.fromSet(new HashSet<Language>());
         for (SModule module : Sequence.fromIterable(contextModule.getModuleScope().getModules())) {

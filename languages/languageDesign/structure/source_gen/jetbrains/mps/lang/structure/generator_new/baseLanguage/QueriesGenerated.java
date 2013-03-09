@@ -90,12 +90,12 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1225099518029(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String capitalizedName = NameUtil.capitalize(NameUtil.shortNameFromLongName(_context.getOriginalInputModel().getModelDescriptor().getModule().getModuleFqName()));
+    String capitalizedName = NameUtil.capitalize(NameUtil.shortNameFromLongName(_context.getOriginalInputModel().getModule().getModuleFqName()));
     return capitalizedName + "_Language";
   }
 
   public static Object propertyMacro_GetPropertyValue_1225099631046(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getOriginalInputModel().getModelDescriptor().getModule().getModuleReference().toString();
+    return _context.getOriginalInputModel().getModule().getModuleReference().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_1281791650135608761(final IOperationContext operationContext, final PropertyMacroContext _context) {

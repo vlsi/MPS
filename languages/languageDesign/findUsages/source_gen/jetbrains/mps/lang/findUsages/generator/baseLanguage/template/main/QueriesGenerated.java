@@ -28,7 +28,7 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_7991477654791680147(final IOperationContext operationContext, final CreateRootRuleContext _context) {
     SModel model = _context.getOriginalInputModel();
-    return ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.findUsages.structure.FinderDeclaration")).isNotEmpty() && Language.getModelAspect(model.getModelDescriptor()) == LanguageAspect.FIND_USAGES;
+    return ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.findUsages.structure.FinderDeclaration")).isNotEmpty() && Language.getModelAspect(model) == LanguageAspect.FIND_USAGES;
   }
 
   public static Object propertyMacro_GetPropertyValue_4192433084863763942(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -74,11 +74,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7991477654791670147(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getOriginalInputModel().getModelDescriptor().getModule().getModuleFqName();
+    return _context.getOriginalInputModel().getModule().getModuleFqName();
   }
 
   public static Object propertyMacro_GetPropertyValue_7991477654791670162(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getOriginalInputModel().getModelDescriptor().getModule().getModuleReference().getModuleId().toString();
+    return _context.getOriginalInputModel().getModule().getModuleReference().getModuleId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_7991477654791670182(final IOperationContext operationContext, final PropertyMacroContext _context) {

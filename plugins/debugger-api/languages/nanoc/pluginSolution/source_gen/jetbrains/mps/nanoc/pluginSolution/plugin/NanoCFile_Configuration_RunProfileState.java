@@ -89,7 +89,7 @@ public class NanoCFile_Configuration_RunProfileState extends DebuggerRunProfileS
         final Wrappers._T<GdbDebuggerSettings> settings = new Wrappers._T<GdbDebuggerSettings>();
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            settings.value = new GdbDebuggerSettings(SNodeOperations.getModel(myRunConfiguration.getNode().getNode()).getModelDescriptor().getModule().getGeneratorOutputPath());
+            settings.value = new GdbDebuggerSettings(SNodeOperations.getModel(myRunConfiguration.getNode().getNode()).getModule().getGeneratorOutputPath());
           }
         });
         return settings.value;

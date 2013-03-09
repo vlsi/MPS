@@ -28,7 +28,7 @@ public class SelectImageFileButton extends JButton {
     this.myNode = node;
     this.setFont(EditorSettings.getInstance().getDefaultEditorFont());
     this.setBorder(new MetalBorders.ButtonBorder());
-    final Language language = Language.getLanguageFor(SNodeOperations.getModel(this.myNode).getModelDescriptor());
+    final Language language = Language.getLanguageFor(SNodeOperations.getModel(this.myNode));
     String filename = MacrosFactory.forModuleFile(language.getDescriptorFile()).expandPath(SPropertyOperations.getString(node, "imageFile"));
     final File baseFile = (filename == null ?
       null :

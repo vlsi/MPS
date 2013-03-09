@@ -27,7 +27,7 @@ public class FacetsScope extends SimpleScope {
   }
 
   public static Iterable<SNode> getAvailableFacets(SNode contextNode) {
-    SModule contextModule = contextNode.getModel().getModelDescriptor().getModule();
+    SModule contextModule = contextNode.getModel().getModule();
 
     Set<SModule> contextModules = SetSequence.fromSet(new HashSet<SModule>());
     for (SModule module : Sequence.fromIterable(contextModule.getModuleScope().getModules())) {

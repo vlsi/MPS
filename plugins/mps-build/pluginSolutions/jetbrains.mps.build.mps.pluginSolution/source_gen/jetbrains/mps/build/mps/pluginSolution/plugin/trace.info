@@ -1855,7 +1855,7 @@
     <nodeInfo nodeId="3606213998577102041" fileName="BuildGeneratorImpl.java" startLine="176" startPosition="150" endLine="177" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3606213998577102048" fileName="BuildGeneratorImpl.java" startLine="177" startPosition="154" endLine="178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3606213998577102051" fileName="BuildGeneratorImpl.java" startLine="178" startPosition="0" endLine="179" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3606213998577102063" fileName="BuildGeneratorImpl.java" startLine="179" startPosition="197" endLine="180" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3606213998577102063" fileName="BuildGeneratorImpl.java" startLine="179" startPosition="197" endLine="180" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8722937377469658717" fileName="BuildGeneratorImpl.java" startLine="184" startPosition="27" endLine="185" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8722937377469658725" fileName="BuildGeneratorImpl.java" startLine="186" startPosition="32" endLine="187" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8722937377469658733" fileName="BuildGeneratorImpl.java" startLine="187" startPosition="104" endLine="188" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -5185,7 +5185,7 @@
       <varInfo nodeId="7949420916281972105" varName="targetDir" />
       <varInfo nodeId="7949420916281972107" varName="targetName" />
     </scopeInfo>
-    <scopeInfo nodeId="3606213998577102009" fileName="BuildGeneratorImpl.java" startLine="173" startPosition="85" endLine="180" endPosition="203" />
+    <scopeInfo nodeId="3606213998577102009" fileName="BuildGeneratorImpl.java" startLine="173" startPosition="85" endLine="180" endPosition="182" />
     <scopeInfo nodeId="8722937377469659172" fileName="BuildGeneratorImpl.java" startLine="305" startPosition="22" endLine="312" endPosition="5">
       <varInfo nodeId="8722937377469659173" varName="module" />
     </scopeInfo>

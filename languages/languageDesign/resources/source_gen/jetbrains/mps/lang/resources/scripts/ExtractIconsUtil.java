@@ -28,7 +28,7 @@ public class ExtractIconsUtil {
   }
 
   public static void updateIconResourceBundle(SNode cb) {
-    IModule module = SNodeOperations.getModel(cb).getModelDescriptor().getModule();
+    IModule module = SNodeOperations.getModel(cb).getModule();
     if (module instanceof Language) {
       SNode irb = getIconResourceBundle((Language) module);
       for (SNode ire : ListSequence.fromList(SNodeOperations.getDescendants(cb, "jetbrains.mps.lang.resources.structure.IconResourceExpression", false, new String[]{})).toListSequence()) {

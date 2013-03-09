@@ -309,7 +309,7 @@ public class ExtractMethodDialog extends RefactoringDialog {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         myRefactoringModel = SNodeOperations.getModel(ListSequence.fromList(ExtractMethodDialog.this.myParameters.getNodesToRefactor()).first());
-        model.value = myRefactoringModel.getModelDescriptor();
+        model.value = myRefactoringModel;
       }
     });
 

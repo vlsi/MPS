@@ -89,12 +89,12 @@ public class BuildProject_Behavior {
 
   public static Scope call_getScope_1224588814561808649(SNode thisNode, SNode kind, String role) {
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.build.structure.BuildExternalLayout")) {
-      return new ModelPlusImportedScope(SNodeOperations.getModel(thisNode), true, SNodeOperations.getModel(thisNode).getModelDescriptor().getModule().getScope(), NameUtil.nodeFQName(kind));
+      return new ModelPlusImportedScope(SNodeOperations.getModel(thisNode), true, SNodeOperations.getModel(thisNode).getModule().getScope(), NameUtil.nodeFQName(kind));
     }
 
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.build.structure.BuildProject")) {
       final SNode _this = thisNode;
-      return ScopeUtil.where(new ModelPlusImportedScope(SNodeOperations.getModel(thisNode), true, SNodeOperations.getModel(thisNode).getModelDescriptor().getModule().getScope(), NameUtil.nodeFQName(kind)), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
+      return ScopeUtil.where(new ModelPlusImportedScope(SNodeOperations.getModel(thisNode), true, SNodeOperations.getModel(thisNode).getModule().getScope(), NameUtil.nodeFQName(kind)), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
         public Boolean invoke(SNode n) {
           return n != _this && !(Sequence.fromIterable(BuildProject_Behavior.call_getVisibleProjects_1224588814561807665(SNodeOperations.cast(n, "jetbrains.mps.build.structure.BuildProject"), false)).contains(_this));
         }

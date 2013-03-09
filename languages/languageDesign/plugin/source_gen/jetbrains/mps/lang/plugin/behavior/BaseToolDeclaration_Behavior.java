@@ -41,7 +41,7 @@ public class BaseToolDeclaration_Behavior {
   }
 
   public static String call_getExpandedIconPath_6547237850567463492(SNode thisNode) {
-    IModule module = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode).getModelDescriptor().getModule();
+    IModule module = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode).getModule();
     if (module == null) {
       return null;
     }

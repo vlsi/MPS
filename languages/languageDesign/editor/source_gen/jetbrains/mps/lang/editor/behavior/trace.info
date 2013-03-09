@@ -729,8 +729,8 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/1213877372456">
     <nodeInfo nodeId="1213877372462" fileName="BaseEditorComponent_Behavior.java" startLine="28" startPosition="102" endLine="29" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7609778533465446043" fileName="BaseEditorComponent_Behavior.java" startLine="29" startPosition="188" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6311899720715991092" fileName="BaseEditorComponent_Behavior.java" startLine="30" startPosition="0" endLine="31" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6311899720715985722" fileName="BaseEditorComponent_Behavior.java" startLine="31" startPosition="96" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6311899720715991092" fileName="BaseEditorComponent_Behavior.java" startLine="30" startPosition="0" endLine="31" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6311899720715985722" fileName="BaseEditorComponent_Behavior.java" startLine="31" startPosition="75" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8857655676208044961" fileName="BaseEditorComponent_Behavior.java" startLine="32" startPosition="0" endLine="33" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8857655676208064246" fileName="BaseEditorComponent_Behavior.java" startLine="35" startPosition="39" endLine="36" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7609778533465519000" fileName="BaseEditorComponent_Behavior.java" startLine="38" startPosition="5" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />

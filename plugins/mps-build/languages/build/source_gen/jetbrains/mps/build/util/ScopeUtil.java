@@ -82,7 +82,7 @@ public class ScopeUtil {
 
   public static Scope getVisibleArtifactsScope(SNode project, boolean includeLayoutRoots) {
     if (SNodeOperations.getModel(project).getModule() instanceof TransientModelsModule) {
-      IModule transientModule = SNodeOperations.getModel(project).getModelDescriptor().getModule();
+      IModule transientModule = SNodeOperations.getModel(project).getModule();
       return new ModelPlusImportedScope(SNodeOperations.getModel(project), false, transientModule.getScope(), "jetbrains.mps.build.structure.BuildLayout_Node");
     }
     return new ScopeUtil.VisibleArtifactsScope(VisibleArtifacts.createFor(project), includeLayoutRoots);
@@ -90,7 +90,7 @@ public class ScopeUtil {
 
   public static Scope getVisibleJarsScope(SNode project) {
     if (SNodeOperations.getModel(project).getModule() instanceof TransientModelsModule) {
-      IModule transientModule = SNodeOperations.getModel(project).getModelDescriptor().getModule();
+      IModule transientModule = SNodeOperations.getModel(project).getModule();
       return new ModelPlusImportedScope(SNodeOperations.getModel(project), false, transientModule.getScope(), "jetbrains.mps.build.structure.BuildSource_SingleFile");
     }
     return new ScopeUtil.VisibleJarsScope(VisibleArtifacts.createFor(project));
@@ -98,7 +98,7 @@ public class ScopeUtil {
 
   public static Scope getVisibleJarFoldersScope(SNode project) {
     if (SNodeOperations.getModel(project).getModule() instanceof TransientModelsModule) {
-      IModule transientModule = SNodeOperations.getModel(project).getModelDescriptor().getModule();
+      IModule transientModule = SNodeOperations.getModel(project).getModule();
       return new ModelPlusImportedScope(SNodeOperations.getModel(project), false, transientModule.getScope(), "jetbrains.mps.build.structure.BuildSource_SingleFolder");
     }
     return new ScopeUtil.VisibleJarFoldersScope(VisibleArtifacts.createFor(project));

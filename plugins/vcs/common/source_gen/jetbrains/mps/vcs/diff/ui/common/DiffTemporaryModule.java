@@ -51,7 +51,7 @@ public class DiffTemporaryModule extends AbstractModule {
 
   @Override
   public List<SModel> getOwnModelDescriptors() {
-    return Arrays.asList(((SModel) myModel.getModelDescriptor()));
+    return Arrays.asList(((SModel) myModel));
   }
 
   @Override
@@ -65,7 +65,7 @@ public class DiffTemporaryModule extends AbstractModule {
 
   private SModel findModel(SModelReference reference) {
     if (reference.equals(myModel.getReference())) {
-      return myModel.getModelDescriptor();
+      return myModel;
     }
     List<IScope> scopes = ListSequence.fromList(new ArrayList<IScope>());
     IScope ps = myProject.getScope();
@@ -95,7 +95,7 @@ public class DiffTemporaryModule extends AbstractModule {
   }
 
   public static void createModuleForModel(SModel model, String version, Project project, boolean mergeResultModel) {
-    if (model.getModelDescriptor() != null && !(model.getModelDescriptor() instanceof jetbrains.mps.smodel.SModel.FakeModelDescriptor)) {
+    if (model != null && !(model instanceof jetbrains.mps.smodel.SModel.FakeModelDescriptor)) {
       return;
     }
     IModule module = null;
@@ -124,20 +124,20 @@ public class DiffTemporaryModule extends AbstractModule {
   }
 
   public static void registerModel(SModel model, MPSModuleOwner owner) {
-    IModule module = model.getModelDescriptor().getModule();
+    IModule module = model.getModule();
     MPSModuleRepository.getInstance().registerModule(module, owner);
-    SModelRepository.getInstance().registerModelDescriptor(model.getModelDescriptor(), module);
+    SModelRepository.getInstance().registerModelDescriptor(model, module);
   }
 
   public static void unregisterModel(SModel model, MPSModuleOwner owner) {
-    IModule module = model.getModelDescriptor().getModule();
+    IModule module = model.getModule();
     MPSModuleRepository.getInstance().registerModule(module, owner);
-    SModelRepository.getInstance().unRegisterModelDescriptor(model.getModelDescriptor(), module);
+    SModelRepository.getInstance().unRegisterModelDescriptor(model, module);
 
   }
 
   public static IOperationContext getOperationContext(com.intellij.openapi.project.Project project, SModel model) {
-    SModel md = model.getModelDescriptor();
+    SModel md = model;
     assert md != null;
     IModule module = md.getModule();
     if (module instanceof DiffTemporaryModule) {

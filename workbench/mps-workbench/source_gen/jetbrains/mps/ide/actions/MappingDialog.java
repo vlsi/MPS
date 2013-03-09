@@ -78,7 +78,7 @@ public class MappingDialog extends DialogWrapper {
           @Override
           public void run() {
             SNode node = treeNode.getSNode();
-            if (SNodeOperations.isDisposed(node) || node.getModel() == null || node.getModel().getModelDescriptor() == null) {
+            if (SNodeOperations.isDisposed(node) || node.getModel() == null || node.getModel() == null) {
               return;
             }
             // TODO: use node pointers here 

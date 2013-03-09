@@ -253,7 +253,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_fl5ndt_a2b1b0(SNode node, EditorContext editorContext, IScope scope) {
     String path = null;
-    IModule module = SNodeOperations.getModel(node).getModelDescriptor().getModule();
+    IModule module = SNodeOperations.getModel(node).getModule();
     if (module != null) {
       path = MacrosFactory.forModuleFile(module.getDescriptorFile()).expandPath(SPropertyOperations.getString(node, "icon"));
     }

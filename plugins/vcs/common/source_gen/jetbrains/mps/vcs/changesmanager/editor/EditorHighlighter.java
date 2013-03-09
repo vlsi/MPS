@@ -61,7 +61,7 @@ public class EditorHighlighter implements EditorMessageOwner {
               }
               final SModel model = editedNode.getModel();
               SModel descriptor = (model != null ?
-                model.getModelDescriptor() :
+                model :
                 null
               );
               if (descriptor instanceof BaseEditableSModelDescriptor) {

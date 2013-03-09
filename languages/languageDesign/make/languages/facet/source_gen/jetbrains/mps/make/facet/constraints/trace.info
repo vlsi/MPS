@@ -274,8 +274,8 @@
   </root>
   <root nodeRef="r:6df86908-c97f-4644-97f0-5eff375e8e15(jetbrains.mps.make.facet.constraints)/6311899720715889427">
     <nodeInfo nodeId="6311899720716087059" fileName="FacetsScope.java" startLine="25" startPosition="41" endLine="26" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="6311899720715991092" fileName="FacetsScope.java" startLine="29" startPosition="71" endLine="30" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6311899720721169853" fileName="FacetsScope.java" startLine="30" startPosition="84" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6311899720715991092" fileName="FacetsScope.java" startLine="29" startPosition="71" endLine="30" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6311899720721169853" fileName="FacetsScope.java" startLine="30" startPosition="63" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6311899720721169012" fileName="FacetsScope.java" startLine="31" startPosition="0" endLine="32" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8857655676208064246" fileName="FacetsScope.java" startLine="34" startPosition="94" endLine="35" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5848593913397110705" fileName="FacetsScope.java" startLine="37" startPosition="5" endLine="38" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

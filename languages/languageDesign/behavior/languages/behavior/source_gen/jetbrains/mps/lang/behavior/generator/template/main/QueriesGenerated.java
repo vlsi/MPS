@@ -44,11 +44,11 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_2056529430201935245(final IOperationContext operationContext, final CreateRootRuleContext _context) {
-    return LanguageAspect.BEHAVIOR.is(_context.getOriginalInputModel().getModelDescriptor());
+    return LanguageAspect.BEHAVIOR.is(_context.getOriginalInputModel());
   }
 
   public static boolean createRootRule_Condition_7923290658387314702(final IOperationContext operationContext, final CreateRootRuleContext _context) {
-    return LanguageAspect.BEHAVIOR.is(_context.getOriginalInputModel().getModelDescriptor());
+    return LanguageAspect.BEHAVIOR.is(_context.getOriginalInputModel());
   }
 
   public static boolean baseMappingRule_Condition_1144956008583649232(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -517,7 +517,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_7923290658387314672(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SModel behaviorModel = _context.getOriginalInputModel();
 
-    Language language = Language.getLanguageForLanguageAspect(behaviorModel.getModelDescriptor());
+    Language language = Language.getLanguageForLanguageAspect(behaviorModel);
     SModel structureModel = LanguageAspect.STRUCTURE.get(language).getSModel();
 
     return ListSequence.fromList(SModelOperations.getNodes(structureModel, null)).where(new IWhereFilter<SNode>() {
@@ -572,7 +572,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_2056529430201935318(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SModel behaviorModel = _context.getOriginalInputModel();
 
-    Language language = Language.getLanguageForLanguageAspect(behaviorModel.getModelDescriptor());
+    Language language = Language.getLanguageForLanguageAspect(behaviorModel);
     SModel structureModel = LanguageAspect.STRUCTURE.get(language).getSModel();
 
     return ListSequence.fromList(SModelOperations.getNodes(structureModel, null)).where(new IWhereFilter<SNode>() {

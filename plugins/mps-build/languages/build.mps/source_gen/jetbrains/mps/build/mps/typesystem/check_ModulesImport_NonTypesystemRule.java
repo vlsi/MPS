@@ -29,7 +29,7 @@ public class check_ModulesImport_NonTypesystemRule extends AbstractNonTypesystem
   }
 
   public void applyRule(final SNode buildProject, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SNodeOperations.getModel(buildProject).getModule() instanceof TransientModelsModule || SModelStereotype.isGeneratorModel(SNodeOperations.getModel(buildProject)) || !(jetbrains.mps.util.SNodeOperations.isGeneratable(SNodeOperations.getModel(buildProject).getModelDescriptor()))) {
+    if (SNodeOperations.getModel(buildProject).getModule() instanceof TransientModelsModule || SModelStereotype.isGeneratorModel(SNodeOperations.getModel(buildProject)) || !(jetbrains.mps.util.SNodeOperations.isGeneratable(SNodeOperations.getModel(buildProject)))) {
       return;
     }
 

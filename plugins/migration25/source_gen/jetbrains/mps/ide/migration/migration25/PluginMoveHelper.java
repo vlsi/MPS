@@ -124,7 +124,7 @@ public class PluginMoveHelper {
   }
 
   private boolean isValid(SNode icon) {
-    IModule module = SNodeOperations.getModel(icon).getModelDescriptor().getModule();
+    IModule module = SNodeOperations.getModel(icon).getModule();
     if (module == null) {
       return false;
     }
@@ -193,7 +193,7 @@ public class PluginMoveHelper {
   }
 
   private boolean isFromFacetLang(SNode node) {
-    ModuleReference ref = SNodeOperations.getModel(SNodeOperations.getConceptDeclaration(node)).getModelDescriptor().getModule().getModuleReference();
+    ModuleReference ref = SNodeOperations.getModel(SNodeOperations.getConceptDeclaration(node)).getModule().getModuleReference();
     ModuleReference plugin = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("696c1165-4a59-463b-bc5d-902caab85dd0")).getModuleReference();
     return ref.equals(plugin);
   }

@@ -69,7 +69,7 @@ public class GenerateBuildUtil {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         baseFolder.value = Layout_Behavior.call_getFolderToGenerate_1229522949966(layout);
-        descriptor.value = SNodeOperations.getModel(layout).getModelDescriptor();
+        descriptor.value = SNodeOperations.getModel(layout);
       }
     });
 

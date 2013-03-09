@@ -301,7 +301,7 @@ public class RefactoringFacade {
     SNode.setNodeMemberAccessModifier(modifier);
     for (SModel model : sourceModels) {
       if (!(SNodeOperations.isModelDisposed(model))) {
-        descriptors.add(model.getModelDescriptor());
+        descriptors.add(model);
       }
     }
 

@@ -36,7 +36,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_6490356536635245644(final IOperationContext operationContext, final CreateRootRuleContext _context) {
     SModel model = _context.getOriginalInputModel();
-    return (Language.getModelAspect(model.getModelDescriptor()) == LanguageAspect.CONSTRAINTS) && !(ListSequence.fromList(SModelOperations.getRoots(model, null)).isEmpty());
+    return (Language.getModelAspect(model) == LanguageAspect.CONSTRAINTS) && !(ListSequence.fromList(SModelOperations.getRoots(model, null)).isEmpty());
 
   }
 

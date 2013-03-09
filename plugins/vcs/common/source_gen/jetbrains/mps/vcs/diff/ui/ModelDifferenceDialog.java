@@ -70,7 +70,7 @@ public class ModelDifferenceDialog extends DialogWrapper {
     DiffTemporaryModule.createModuleForModel(newModel, "new", p);
     myContentTitles = diffRequest.getContentTitles();
     assert myContentTitles.length == 2;
-    myEditable = newModel.getModelDescriptor() instanceof EditableSModel && check_vk52pz_a0a0h0j(SModelRepository.getInstance().getModelDescriptor(newModel.getReference())) == newModel;
+    myEditable = newModel instanceof EditableSModel && check_vk52pz_a0a0h0j(SModelRepository.getInstance().getModelDescriptor(newModel.getReference())) == newModel;
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         setTitle("Difference for model: " + SModelOperations.getModelName(oldModel));

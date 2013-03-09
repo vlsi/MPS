@@ -94,7 +94,7 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
       final SNode targetNode = ((EditorCell) MapSequence.fromMap(_params).get("cell")).getSNodeWRTReference();
       SNode node = ((EditorCell) MapSequence.fromMap(_params).get("cell")).getSNodeWRTReference();
       SModel model = node.getModel();
-      IModule module = model.getModelDescriptor().getModule();
+      IModule module = model.getModule();
       assert module != null;
       if (module instanceof Generator) {
         module = ((Generator) module).getSourceLanguage();

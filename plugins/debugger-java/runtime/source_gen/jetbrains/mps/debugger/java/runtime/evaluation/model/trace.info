@@ -478,7 +478,7 @@
     <nodeInfo nodeId="7757449281563189180" fileName="EvaluationContext.java" startLine="26" startPosition="38" endLine="27" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7063083761593335342" fileName="EvaluationContext.java" startLine="34" startPosition="38" endLine="35" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7063083761593335357" fileName="EvaluationContext.java" startLine="36" startPosition="24" endLine="37" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7757449281563190737" fileName="EvaluationContext.java" startLine="38" startPosition="5" endLine="39" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7757449281563190737" fileName="EvaluationContext.java" startLine="38" startPosition="5" endLine="39" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7757449281563190748" fileName="EvaluationContext.java" startLine="43" startPosition="39" endLine="44" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7757449281563189198" fileName="EvaluationContext.java" startLine="47" startPosition="35" endLine="48" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7757449281563189204" fileName="EvaluationContext.java" startLine="51" startPosition="47" endLine="52" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -531,7 +531,7 @@
     </scopeInfo>
     <scopeInfo nodeId="7757449281563189176" fileName="EvaluationContext.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="7757449281563190744" fileName="EvaluationContext.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="7757449281563190736" fileName="EvaluationContext.java" startLine="34" startPosition="38" endLine="39" endPosition="50">
+    <scopeInfo nodeId="7757449281563190736" fileName="EvaluationContext.java" startLine="34" startPosition="38" endLine="39" endPosition="29">
       <varInfo nodeId="7063083761593335343" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="7757449281563190733" fileName="EvaluationContext.java" startLine="33" startPosition="0" endLine="41" endPosition="0" />

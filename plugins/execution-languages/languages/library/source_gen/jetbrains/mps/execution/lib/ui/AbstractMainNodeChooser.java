@@ -179,7 +179,7 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
 
   private static SNode check_wlpn4v_a0a0i(SNodePointer checkedDotOperand, AbstractMainNodeChooser checkedDotThisExpression) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getNode();
+      return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
     }
     return null;
   }

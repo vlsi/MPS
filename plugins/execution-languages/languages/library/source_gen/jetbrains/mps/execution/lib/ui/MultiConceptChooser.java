@@ -63,7 +63,7 @@ public class MultiConceptChooser extends AbstractMainNodeChooser {
       public Language select(final Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> it) {
         return ModelAccess.instance().runReadAction(new Computable<Language>() {
           public Language compute() {
-            return (Language) SNodeOperations.getModel(it._0()).getModelDescriptor().getModule();
+            return (Language) SNodeOperations.getModel(it._0()).getModule();
           }
         });
       }

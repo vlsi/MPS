@@ -104,10 +104,10 @@ public class RunTestInMPS_Action extends BaseAction {
       final String className = BehaviorReflection.invokeVirtual(String.class, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), test, "virtual_getTestCase_1216134500045", new Object[]{}), "virtual_getClassName_1216136193905", new Object[]{});
       final String testName = BehaviorReflection.invokeVirtual(String.class, test, "virtual_getTestName_1216136419751", new Object[]{});
       System.out.println("Test " + className + "." + testName);
-      final Class c = ((IClassLoadingModule) ((SModel) MapSequence.fromMap(_params).get("model")).getModelDescriptor().getModule()).getClass(BehaviorReflection.invokeVirtual(String.class, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), test, "virtual_getTestCase_1216134500045", new Object[]{}), "virtual_getClassName_1216136193905", new Object[]{}));
+      final Class c = ((IClassLoadingModule) ((SModel) MapSequence.fromMap(_params).get("model")).getModule()).getClass(BehaviorReflection.invokeVirtual(String.class, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), test, "virtual_getTestCase_1216134500045", new Object[]{}), "virtual_getClassName_1216136193905", new Object[]{}));
       final Method meth = c.getMethod("runTest", String.class, String.class, Boolean.TYPE);
       Constructor ctor = c.getConstructor(Project.class, SModelDescriptor.class);
-      final Object testClass = ctor.newInstance(((Project) MapSequence.fromMap(_params).get("project")), ((SModel) MapSequence.fromMap(_params).get("model")).getModelDescriptor());
+      final Object testClass = ctor.newInstance(((Project) MapSequence.fromMap(_params).get("project")), ((SModel) MapSequence.fromMap(_params).get("model")));
       Thread thread = new Thread(new Runnable() {
         @Override
         public void run() {

@@ -64,7 +64,7 @@ public class DesignPartLoader {
   }
 
   private SModule getModuleFor(SModel smodel) {
-    SModel smd = smodel.getModelDescriptor();
+    SModel smd = smodel;
     return (smd != null ?
       smd.getModule() :
       null

@@ -185,7 +185,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
       return result;
     }
 
-    SModel descriptor = SNodeOperations.getModel(sNode).getModelDescriptor();
+    SModel descriptor = SNodeOperations.getModel(sNode);
     if (descriptor == null) {
       // descriptor is null for a replaced model 
       // after model is replaced but before it is disposed (this can happen asyncronously) 

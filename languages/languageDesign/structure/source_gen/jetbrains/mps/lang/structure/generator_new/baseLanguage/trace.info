@@ -160,10 +160,10 @@
     <scopeInfo nodeId="1174697681348" fileName="QueriesGenerated.java" startLine="88" startPosition="148" endLine="89" endPosition="75" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)/1225099204495">
-    <nodeInfo nodeId="1225099547320" fileName="QueriesGenerated.java" startLine="92" startPosition="148" endLine="93" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225099575166" fileName="QueriesGenerated.java" startLine="93" startPosition="166" endLine="94" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225099631048" fileName="QueriesGenerated.java" startLine="97" startPosition="148" endLine="98" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1225099631047" fileName="QueriesGenerated.java" startLine="97" startPosition="148" endLine="98" endPosition="109" />
+    <nodeInfo nodeId="1225099547320" fileName="QueriesGenerated.java" startLine="92" startPosition="148" endLine="93" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1225099575166" fileName="QueriesGenerated.java" startLine="93" startPosition="145" endLine="94" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225099631048" fileName="QueriesGenerated.java" startLine="97" startPosition="148" endLine="98" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="1225099631047" fileName="QueriesGenerated.java" startLine="97" startPosition="148" endLine="98" endPosition="88" />
     <scopeInfo nodeId="1225099518030" fileName="QueriesGenerated.java" startLine="92" startPosition="148" endLine="94" endPosition="41">
       <varInfo nodeId="1225099547321" varName="capitalizedName" />
     </scopeInfo>

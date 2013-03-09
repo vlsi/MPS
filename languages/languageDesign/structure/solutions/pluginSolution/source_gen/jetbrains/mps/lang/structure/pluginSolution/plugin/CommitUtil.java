@@ -51,7 +51,7 @@ public class CommitUtil {
         refactoringContext.setSelectedNode(node);
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            refactoringContext.setSelectedModel(SNodeOperations.getModel(node).getModelDescriptor());
+            refactoringContext.setSelectedModel(SNodeOperations.getModel(node));
           }
         });
         refactoringContext.setSelectedModule(context.getModule());

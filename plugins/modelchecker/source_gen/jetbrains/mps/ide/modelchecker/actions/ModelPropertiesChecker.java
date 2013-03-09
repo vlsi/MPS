@@ -25,7 +25,7 @@ public class ModelPropertiesChecker extends SpecificChecker {
 
     List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
 
-    SModel modelDescriptor = model.getModelDescriptor();
+    SModel modelDescriptor = model;
     IScope scope = check_t4d01o_a0f0b(check_t4d01o_a0a5a1(modelDescriptor));
     if (false) {
       List<String> errors = new ModelValidator(modelDescriptor).validate(scope);

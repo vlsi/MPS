@@ -97,7 +97,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
       return new HashSet<EditorMessage>();
     }
     SModel model = SNodeOperations.getModel(rootNode);
-    if (model.getModelDescriptor() == null || model.getModule() instanceof TransientModelsModule || jetbrains.mps.util.SNodeOperations.isModelDisposed(model)) {
+    if (model == null || model.getModule() instanceof TransientModelsModule || jetbrains.mps.util.SNodeOperations.isModelDisposed(model)) {
       return new HashSet<EditorMessage>(0);
     }
     final Map<SNode, SNode> reResolvedTargets = new HashMap<SNode, SNode>();

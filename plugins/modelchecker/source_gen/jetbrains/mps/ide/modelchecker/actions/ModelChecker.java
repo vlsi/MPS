@@ -64,7 +64,7 @@ public class ModelChecker {
                 List<SearchResult<ModelCheckerIssue>> specificCheckerResults = specificChecker.checkModel(model, monitor.subTask(1), operationContext);
                 myResults.getSearchResults().addAll(specificCheckerResults);
               } catch (Throwable t) {
-                LOG.error("Error while " + SNodeOperations.getModelLongName(model.getModelDescriptor()) + " model checking", t);
+                LOG.error("Error while " + SNodeOperations.getModelLongName(model) + " model checking", t);
               }
               if (monitor.isCanceled()) {
                 break;

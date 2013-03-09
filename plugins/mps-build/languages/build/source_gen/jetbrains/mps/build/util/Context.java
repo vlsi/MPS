@@ -63,9 +63,9 @@ public class Context {
   @NotNull
   public IModule getModule(SModel model) {
     if (myGenerationContext != null) {
-      return myGenerationContext.getOriginalInputModel().getModelDescriptor().getModule();
+      return myGenerationContext.getOriginalInputModel().getModule();
     }
-    return model.getModelDescriptor().getModule();
+    return model.getModule();
   }
 
   public String getTempPath(SNode node, String name, String... categories) {
@@ -97,7 +97,7 @@ public class Context {
     if (model.getModule() instanceof TransientModelsModule && myGenerationContext != null) {
       model = myGenerationContext.getOriginalInputModel();
     }
-    SModel modelDescriptor = model.getModelDescriptor();
+    SModel modelDescriptor = model;
     if (model.getModule() instanceof TransientModelsModule || modelDescriptor == null) {
       return null;
     }

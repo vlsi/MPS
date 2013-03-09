@@ -85,7 +85,7 @@ public class NodeBuilderNode_Constraints extends BaseConstraintsDescriptor {
                 List<SNode> result = new ArrayList<SNode>();
                 for (String cname : SetSequence.fromSet(LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(BehaviorReflection.invokeVirtual(String.class, target, "virtual_getFqName_1213877404258", new Object[]{})))) {
                   SNode cc = SModelUtil.findConceptDeclaration(cname, GlobalScope.getInstance());
-                  if ((cc != null) && operationContext.getScope().getModelDescriptor(SNodeOperations.getModel(cc).getModelDescriptor().getReference()) != null) {
+                  if ((cc != null) && operationContext.getScope().getModelDescriptor(SNodeOperations.getModel(cc).getReference()) != null) {
                     ListSequence.fromList(result).addElement(cc);
                   }
                 }

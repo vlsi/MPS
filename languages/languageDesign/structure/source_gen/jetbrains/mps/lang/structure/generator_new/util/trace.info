@@ -32,7 +32,7 @@
     <nodeInfo nodeId="1198510051070" fileName="QueriesUtil.java" startLine="114" startPosition="39" endLine="115" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1198510069870" fileName="QueriesUtil.java" startLine="116" startPosition="5" endLine="117" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1234209424112" fileName="QueriesUtil.java" startLine="120" startPosition="71" endLine="121" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225099425951" fileName="QueriesUtil.java" startLine="124" startPosition="62" endLine="125" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225099425951" fileName="QueriesUtil.java" startLine="124" startPosition="62" endLine="125" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="545838410333635581" fileName="QueriesUtil.java" startLine="129" startPosition="68" endLine="130" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="545838410333635464" fileName="QueriesUtil.java" startLine="131" startPosition="5" endLine="132" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="545838410333635492" fileName="QueriesUtil.java" startLine="133" startPosition="120" endLine="134" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -154,7 +154,7 @@
     <scopeInfo nodeId="1167265071245" fileName="QueriesUtil.java" startLine="99" startPosition="172" endLine="100" endPosition="22" />
     <scopeInfo nodeId="1198510042564" fileName="QueriesUtil.java" startLine="114" startPosition="39" endLine="115" endPosition="56" />
     <scopeInfo nodeId="1234209362030" fileName="QueriesUtil.java" startLine="120" startPosition="71" endLine="121" endPosition="153" />
-    <scopeInfo nodeId="1225099380391" fileName="QueriesUtil.java" startLine="124" startPosition="62" endLine="125" endPosition="68" />
+    <scopeInfo nodeId="1225099380391" fileName="QueriesUtil.java" startLine="124" startPosition="62" endLine="125" endPosition="47" />
     <scopeInfo nodeId="545838410333635572" fileName="QueriesUtil.java" startLine="129" startPosition="68" endLine="130" endPosition="16" />
     <scopeInfo nodeId="545838410333635501" fileName="QueriesUtil.java" startLine="135" startPosition="84" endLine="136" endPosition="17" />
     <scopeInfo nodeId="545838410333635520" fileName="QueriesUtil.java" startLine="138" startPosition="85" endLine="139" endPosition="17" />

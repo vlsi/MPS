@@ -167,7 +167,7 @@ public class GoToRulesHelper {
             ModelAccess.instance().runWriteInEDT(new Runnable() {
               @Override
               public void run() {
-                if (SNodeOperations.isDisposed(node) || node.getModel() == null || node.getModel().getModelDescriptor() == null) {
+                if (SNodeOperations.isDisposed(node) || node.getModel() == null || node.getModel() == null) {
                   return;
                 }
                 // TODO: use node pointers here 

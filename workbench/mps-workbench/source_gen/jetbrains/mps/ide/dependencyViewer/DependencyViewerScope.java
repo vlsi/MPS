@@ -34,7 +34,7 @@ public class DependencyViewerScope {
     if (CollectionSequence.fromCollection(myRoots).contains(root) || CollectionSequence.fromCollection(myRoots).contains(node)) {
       return true;
     }
-    SModel descriptor = ((SNode) root).getModel().getModelDescriptor();
+    SModel descriptor = ((SNode) root).getModel();
     if (CollectionSequence.fromCollection(myModels).contains(descriptor)) {
       return true;
     }

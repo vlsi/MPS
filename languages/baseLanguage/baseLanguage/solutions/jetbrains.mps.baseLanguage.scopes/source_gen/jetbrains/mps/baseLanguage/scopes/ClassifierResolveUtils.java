@@ -58,7 +58,7 @@ public class ClassifierResolveUtils {
 
   public static SNode resolveNonSpecialSyntax(@NotNull String classifierName, @NotNull SNode contextNode) {
     // try to resolve as nested name in current model 
-    Iterable<SNode> result = resolveClassifierByNestedName(check_8z6r2b_a0a1a2(SNodeOperations.getModel(contextNode)), classifierName);
+    Iterable<SNode> result = resolveClassifierByNestedName(SNodeOperations.getModel(contextNode), classifierName);
     if (Sequence.fromIterable(result).isNotEmpty()) {
       return ((int) Sequence.fromIterable(result).count() == 1 ?
         Sequence.fromIterable(result).first() :
@@ -67,7 +67,7 @@ public class ClassifierResolveUtils {
     }
 
     // try to resolve as fq name in current model 
-    result = resolveClassifierByFqName(check_8z6r2b_a0a5a2(SNodeOperations.getModel(contextNode)), classifierName);
+    result = resolveClassifierByFqName(SNodeOperations.getModel(contextNode), classifierName);
     if (Sequence.fromIterable(result).isNotEmpty()) {
       return ((int) Sequence.fromIterable(result).count() == 1 ?
         Sequence.fromIterable(result).first() :
@@ -76,7 +76,7 @@ public class ClassifierResolveUtils {
     }
 
     // try to resolve as fq name in current scope 
-    Iterable<IModule> visibleModules = check_8z6r2b_a0a9a2(check_8z6r2b_a0a0j0c(check_8z6r2b_a0a0a9a2(SNodeOperations.getModel(contextNode)))).getVisibleModules();
+    Iterable<IModule> visibleModules = check_8z6r2b_a0a9a2(check_8z6r2b_a0a0j0c(SNodeOperations.getModel(contextNode))).getVisibleModules();
     result = resolveClassifierByFqNameWithNonStubPriority(Sequence.fromIterable(visibleModules).translate(new ITranslator2<IModule, SModel>() {
       public Iterable<SModel> translate(IModule it) {
         return it.getOwnModelDescriptors();
@@ -89,7 +89,7 @@ public class ClassifierResolveUtils {
   }
 
   public static SNode resolveWithSpecifiedTargetModelName(@NotNull String targetModelName, @NotNull String classifierFqName, @Nullable SModel sourceModel) {
-    Iterable<SNode> sameModelResult = resolveClassifierByFqName(check_8z6r2b_a0a0a3(sourceModel), classifierFqName);
+    Iterable<SNode> sameModelResult = resolveClassifierByFqName(sourceModel, classifierFqName);
     if (Sequence.fromIterable(sameModelResult).isNotEmpty()) {
       return ((int) Sequence.fromIterable(sameModelResult).count() == 1 ?
         Sequence.fromIterable(sameModelResult).first() :
@@ -97,7 +97,7 @@ public class ClassifierResolveUtils {
       );
     }
 
-    IScope modelScope = check_8z6r2b_a0d0d(check_8z6r2b_a0a3a3(check_8z6r2b_a0a0d0d(sourceModel)));
+    IScope modelScope = check_8z6r2b_a0d0d(check_8z6r2b_a0a3a3(sourceModel));
 
     if (modelScope != null) {
       Iterable<SNode> result = resolveInScope(targetModelName, classifierFqName, modelScope);
@@ -233,7 +233,7 @@ public class ClassifierResolveUtils {
     SModel oldModel = contextNode.getModel();
     SModel contextNodeModel = (oldModel == null ?
       null :
-      oldModel.getModelDescriptor()
+      oldModel
     );
 
     StringTokenizer tokenizer = new StringTokenizer(refText, ".");
@@ -318,7 +318,7 @@ public class ClassifierResolveUtils {
 
       // putting on-demand imports into model list 
       List<SModel> javaImportedModels = ListSequence.fromList(new ArrayList<SModel>());
-      ListSequence.fromList(javaImportedModels).addElement(SModelRepository.getInstance().getModelDescriptor(new SModelReference("java.lang", "java_stub")).getSModel().getModelDescriptor());
+      ListSequence.fromList(javaImportedModels).addElement(SModelRepository.getInstance().getModelDescriptor(new SModelReference("java.lang", "java_stub")).getSModel());
       for (SNode imp : ListSequence.fromList(SLinkOperations.getTargets(javaImports, "entries", true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SPropertyOperations.getBoolean(it, "onDemand");
@@ -374,7 +374,7 @@ public class ClassifierResolveUtils {
     // try to resolve as fq name in current model 
     Iterable<SNode> result;
 
-    result = resolveClassifierByFqName(check_8z6r2b_a0a25a21(SNodeOperations.getModel(contextNode)), refText);
+    result = resolveClassifierByFqName(SNodeOperations.getModel(contextNode), refText);
     if (Sequence.fromIterable(result).isNotEmpty()) {
       return ((int) Sequence.fromIterable(result).count() == 1 ?
         Sequence.fromIterable(result).first() :
@@ -383,7 +383,7 @@ public class ClassifierResolveUtils {
     }
 
     // try to resolve as fq name in current scope 
-    Iterable<IModule> visibleModules = check_8z6r2b_a0a65a21(check_8z6r2b_a0a0ec0m(check_8z6r2b_a0a0a65a21(SNodeOperations.getModel(contextNode)))).getVisibleModules();
+    Iterable<IModule> visibleModules = check_8z6r2b_a0a65a21(check_8z6r2b_a0a0ec0m(SNodeOperations.getModel(contextNode))).getVisibleModules();
     result = resolveClassifierByFqNameWithNonStubPriority(Sequence.fromIterable(visibleModules).translate(new ITranslator2<IModule, SModel>() {
       public Iterable<SModel> translate(IModule it) {
         return it.getOwnModelDescriptors();
@@ -561,7 +561,7 @@ public class ClassifierResolveUtils {
    */
   public static Iterable<SNode> staticImportedThings(final SNode neededConcept, SNode imports) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-    IScope moduleScope = SNodeOperations.getModel(imports).getModelDescriptor().getModule().getScope();
+    IScope moduleScope = SNodeOperations.getModel(imports).getModule().getScope();
     for (SNode imp : ListSequence.fromList(SLinkOperations.getTargets(imports, "entries", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "static");
@@ -629,20 +629,6 @@ public class ClassifierResolveUtils {
     return false;
   }
 
-  private static SModelInternal check_8z6r2b_a0a1a2(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelDescriptor();
-    }
-    return null;
-  }
-
-  private static SModelInternal check_8z6r2b_a0a5a2(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelDescriptor();
-    }
-    return null;
-  }
-
   private static IScope check_8z6r2b_a0a9a2(IModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getScope();
@@ -650,23 +636,9 @@ public class ClassifierResolveUtils {
     return null;
   }
 
-  private static IModule check_8z6r2b_a0a0j0c(SModelInternal checkedDotOperand) {
+  private static IModule check_8z6r2b_a0a0j0c(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
-    }
-    return null;
-  }
-
-  private static SModelInternal check_8z6r2b_a0a0a9a2(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelDescriptor();
-    }
-    return null;
-  }
-
-  private static SModelInternal check_8z6r2b_a0a0a3(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }
@@ -678,23 +650,9 @@ public class ClassifierResolveUtils {
     return null;
   }
 
-  private static IModule check_8z6r2b_a0a3a3(SModelInternal checkedDotOperand) {
+  private static IModule check_8z6r2b_a0a3a3(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
-    }
-    return null;
-  }
-
-  private static SModelInternal check_8z6r2b_a0a0d0d(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelDescriptor();
-    }
-    return null;
-  }
-
-  private static SModelInternal check_8z6r2b_a0a25a21(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }
@@ -706,16 +664,9 @@ public class ClassifierResolveUtils {
     return null;
   }
 
-  private static IModule check_8z6r2b_a0a0ec0m(SModelInternal checkedDotOperand) {
+  private static IModule check_8z6r2b_a0a0ec0m(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
-    }
-    return null;
-  }
-
-  private static SModelInternal check_8z6r2b_a0a0a65a21(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }

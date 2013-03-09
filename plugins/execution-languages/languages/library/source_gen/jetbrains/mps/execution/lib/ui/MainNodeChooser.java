@@ -56,7 +56,7 @@ public class MainNodeChooser<C extends SNode> extends AbstractMainNodeChooser {
 
     Language language = ModelAccess.instance().runReadAction(new Computable<Language>() {
       public Language compute() {
-        return (Language) SNodeOperations.getModel(targetConcept).getModelDescriptor().getModule();
+        return (Language) SNodeOperations.getModel(targetConcept).getModule();
       }
     });
 
