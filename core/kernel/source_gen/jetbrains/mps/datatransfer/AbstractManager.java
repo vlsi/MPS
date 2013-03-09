@@ -47,7 +47,7 @@ public abstract class AbstractManager {
 
     public T getInstance() {
       if (!(myWasInitialized)) {
-        Class postProcessorClass = myLanguage.getClass(myClassName);
+        Class postProcessorClass = ClassLoaderManager.getInstance().getClass(myLanguage, myClassName);
         if (postProcessorClass != null) {
           try {
             myInstance = (T) postProcessorClass.newInstance();

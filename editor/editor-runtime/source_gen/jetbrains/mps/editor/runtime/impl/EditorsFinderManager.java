@@ -180,7 +180,7 @@ public class EditorsFinderManager implements ApplicationComponent {
     }
     try {
       String editorClassName = editorUID + "." + SPropertyOperations.getString(conceptDeclaration, "name") + "_Editor";
-      Class editorClass = language.getClass(editorClassName);
+      Class editorClass = myClassLoaderManager.getClass(language, editorClassName);
       if (editorClass == null) {
         return null;
       }
