@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes;
 
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.filters.BaseFilter;
@@ -104,7 +105,7 @@ public class FilterNode extends BaseNode {
     try {
       Class filterClass = null;
       for (Language l : project.getProjectModules(Language.class)) {
-        filterClass = l.getClass(filterName);
+        filterClass = ClassLoaderManager.getInstance().getClass(l, filterName);
         if (filterClass != null) break;
       }
       if (filterClass == null) {

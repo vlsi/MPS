@@ -29,6 +29,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryAdapter;
 import jetbrains.mps.smodel.structure.ExtensionDescriptor;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -60,7 +61,7 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
     return INSTANCE;
   }
 
-  public ExtensionRegistry(@Nullable ClassLoaderManager clm,@Nullable MPSModuleRepository repo) {
+  public ExtensionRegistry(@Nullable ClassLoaderManager clm, @Nullable MPSModuleRepository repo) {
     myClm = clm;
     myRepo = repo;
   }
@@ -176,16 +177,17 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
   }
 
   @Nullable
-  public static Object getObjectByClassName(String className, @Nullable IModule module, boolean avoidLogErrors) {
+  public static Object getObjectByClassName(String className, @Nullable SModule module, boolean avoidLogErrors) {
     try {
       if (module == null) {
         return null;
       }
 
-      if (!(module instanceof ClassLoadingModule)) return null;
-      ClassLoadingModule clm  = ((ClassLoadingModule) module);
+      if (!(ClassLoaderManager.getInstance().canLoad(module))) {
+        return null;
+      }
 
-      Class clazz = clm.getClass(className);
+      Class clazz = ClassLoaderManager.getInstance().getClass(module, className);
       if (clazz == null) {
         return null;
       }
@@ -194,6 +196,7 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
     } catch (Throwable e) {
       LOG.debug("error loading class\"" + className + "\"", e);
     }
+
     return null;
   }
 

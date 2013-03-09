@@ -76,6 +76,9 @@ public class ClassLoaderManager implements CoreComponent {
   }
 
   public Class getClass(SModule module, String classFqName) {
+    // todo: make version without possible exception and with Language instead of SModule argument?
+    // todo: add onlyFromSelf argument?
+    // todo: or even onlyFromSelf by default???
     if (!canLoad(module)) {
       throw new IllegalArgumentException("Module " + module.getModuleName() + " can't load classes");
     }

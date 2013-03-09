@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.selection;
 
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
@@ -24,6 +25,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -88,7 +90,7 @@ public class SelectionInfo {
     try {
       Class<Selection> selectionClass;
       if (myModuleID != null) {
-        IModule module = MPSModuleRepository.getInstance().getModuleByFqName(myModuleID);
+        SModule module = MPSModuleRepository.getInstance().getModuleByFqName(myModuleID);
         if (module == null) {
           LOG.error("Specified selection class module was not found by ID: " + myModuleID);
           return null;
@@ -97,7 +99,7 @@ public class SelectionInfo {
           LOG.error("Specified selection class module was not Language: " + myModuleID);
           return null;
         }
-        selectionClass = ((Language) module).getClass(mySelectionClassName);
+        selectionClass = ClassLoaderManager.getInstance().getClass(module, mySelectionClassName);
       } else {
         selectionClass = (Class<Selection>) getClass().getClassLoader().loadClass(mySelectionClassName);
       }

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.action;
 
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -67,7 +68,7 @@ import java.lang.reflect.Method;
     String languageNamespace = NameUtil.namespaceFromConceptFQName(NameUtil.nodeFQName(conceptDeclaration));
     Language language = ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class);
     assert language != null;
-    return language.getClass(languageNamespace + ".Factory");
+    return ClassLoaderManager.getInstance().getClass(language, languageNamespace + ".Factory");
   }
 
   private static Method getSetupMethod_new(Class factoryClass, SNode node) {
