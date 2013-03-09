@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.smodel.persistence.def;
 
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModel;
+import org.jdom.Element;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
-import org.jdom.Element;
 
 public interface IReferencePersister {
   public void fillFields(Element linkElement, SNode sourceNode, boolean useUIDs);

@@ -118,11 +118,11 @@ public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorW
     if (source.getFile().getPath().equals(newModelFile.getPath())) return;
 
     IFile oldFile = source.getFile();
-    SModel model = getSModelInternal();
-    fireBeforeModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
+    jetbrains.mps.smodel.SModel model = getSModelInternal();
+    fireBeforeModelFileChanged(new SModelFileChangedEvent(model.getModelDescriptor(), oldFile, newModelFile));
     source.setFile(newModelFile);
     updateDiskTimestamp();
-    fireModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
+    fireModelFileChanged(new SModelFileChangedEvent(model.getModelDescriptor(), oldFile, newModelFile));
   }
 
   @Override
@@ -159,11 +159,10 @@ public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorW
     }
 
     String oldFqName = getReference().getModelName();
-    SModel model = getSModelInternal();
-    fireBeforeModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelName));
+    fireBeforeModelRenamed(new SModelRenamedEvent(this, oldFqName, newModelName));
 
     SModelReference newModelReference = new SModelReference(SModelFqName.fromString(newModelName), getReference().getSModelId());
-    ((SModelInternal) model).changeModelReference(newModelReference);
+    changeModelReference(newModelReference);
 
     if (!changeFile) {
       save();
@@ -191,7 +190,7 @@ public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorW
 
     updateReferenceAfterRename(newModelReference);
 
-    fireModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelName));
+    fireModelRenamed(new SModelRenamedEvent(this, oldFqName, newModelName));
   }
 
   @Override

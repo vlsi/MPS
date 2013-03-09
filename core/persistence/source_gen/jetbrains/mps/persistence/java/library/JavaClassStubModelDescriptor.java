@@ -40,7 +40,7 @@ public class JavaClassStubModelDescriptor extends BaseSModelDescriptorWithSource
   }
 
   @Override
-  protected org.jetbrains.mps.openapi.model.SModel getCurrentModelInternal() {
+  protected SModel getCurrentModelInternal() {
     return myModel;
   }
 
@@ -68,10 +68,10 @@ public class JavaClassStubModelDescriptor extends BaseSModelDescriptorWithSource
   private SModel createModel() {
     SModel model = new SModel(getSModelReference(), new ForeignNodeIdMap());
     for (Language l : getLanguagesToImport()) {
-      ((SModelInternal) model).addLanguage(l.getModuleReference());
+      model.addLanguage(l.getModuleReference());
     }
     CompositeClassPathItem cp = createClassPath();
-    new ASMModelLoader(((IModule) myModelRoot.getModule()), cp, model, false).updateModel();
+    new ASMModelLoader(((IModule) myModelRoot.getModule()), cp, model.getModelDescriptor(), false).updateModel();
     updateDiskTimestamp();
     return model;
   }

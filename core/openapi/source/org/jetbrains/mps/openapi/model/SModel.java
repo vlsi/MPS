@@ -30,7 +30,10 @@ public interface SModel {
   @Deprecated
 //todo migration only. REMOVE
       @NotNull
-  SModelInternal getModelDescriptor();
+  SModel getModelDescriptor();
+
+  //todo is it needed?
+  SModel resolveModel(jetbrains.mps.smodel.SModelReference reference);
 
   SRepository getRepository();
 

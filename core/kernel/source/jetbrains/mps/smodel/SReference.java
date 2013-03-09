@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
-
-import jetbrains.mps.generator.TransientSModel;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.logging.Logger;
@@ -25,6 +23,7 @@ import jetbrains.mps.util.WeakSet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLink;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -187,7 +186,8 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
       ourErrorReportedRefs.add(this);
 
       Logger log = Logger.getLogger(this.getClass());
-      log.error("\ncouldn't resolve reference '" + getRole() + "' from " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(getSourceNode()), validNode(getSourceNode()));
+      log.error("\ncouldn't resolve reference '" + getRole() + "' from " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(getSourceNode()),
+          validNode(getSourceNode()));
       if (message != null) log.error(" -- " + message);
       if (problems != null) {
         for (ProblemDescription pd : problems) {
@@ -206,11 +206,11 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     if (model == null) {
       return null;
     }
-    if (!(model .getModule() instanceof TransientModelsModule)) {
+    if (!(model.getModule() instanceof TransientModelsModule)) {
       return new jetbrains.mps.smodel.SNodePointer(node);
     }
 
-    IModule module = model.getModelDescriptor().getModule();
+    IModule module = model.getModule();
     if (module instanceof TransientModelsModule) {
       if (((TransientModelsModule) module).addModelToKeep(model, false)) {
         return new jetbrains.mps.smodel.SNodePointer(node);

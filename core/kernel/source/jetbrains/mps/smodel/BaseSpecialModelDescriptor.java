@@ -42,7 +42,7 @@ public abstract class BaseSpecialModelDescriptor extends BaseSModelDescriptor {
   }
 
   @Override
-  protected SModel getCurrentModelInternal() {
+  protected jetbrains.mps.smodel.SModel getCurrentModelInternal() {
     return mySModel;
   }
 

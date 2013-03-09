@@ -28,7 +28,7 @@ public class MissingDependenciesFixer {
   private SModel myModelDescriptor;
 
   public MissingDependenciesFixer(SModel modelDescriptor) {
-    myModelDescriptor = (SModelInternal) modelDescriptor;
+    myModelDescriptor = modelDescriptor;
   }
 
   @Deprecated

@@ -118,7 +118,7 @@ public class OldRefactoringAdapter implements IRefactoring {
         return myOldRefactoring.isApplicableWRTConcept((SNode) o);
       } else
       if (myTarget == RefactoringTarget.MODEL) {
-        return myOldRefactoring.isApplicableToModel((SModelInternal) o);
+        return myOldRefactoring.isApplicableToModel((SModel) o);
       } else {
         return myOldRefactoring.isApplicableToModule((IModule) o);
       }

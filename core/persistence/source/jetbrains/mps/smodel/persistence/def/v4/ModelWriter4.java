@@ -16,9 +16,18 @@
 package jetbrains.mps.smodel.persistence.def.v4;
 
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.DefaultSModel;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
-import jetbrains.mps.smodel.persistence.def.*;
+import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.persistence.def.DocUtil;
+import jetbrains.mps.smodel.persistence.def.IModelWriter;
+import jetbrains.mps.smodel.persistence.def.IReferencePersister;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.smodel.persistence.def.VisibleModelElements;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -100,7 +109,7 @@ public class ModelWriter4 implements IModelWriter {
       importElem.setAttribute(ModelPersistence.VERSION, "" + importElement.getUsedVersion());
 
       int version = -1;
-      SModel importedModelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
+      org.jetbrains.mps.openapi.model.SModel importedModelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
       if (importedModelDescriptor instanceof DefaultSModelDescriptor) {
         version = ((DefaultSModelDescriptor) importedModelDescriptor).getVersion();
       }
@@ -134,7 +143,7 @@ public class ModelWriter4 implements IModelWriter {
   }
 
   private void writeAspect(SModel sourceModel, Element parent, SModelReference aspectReference) {
-    int modelVersion = SModelOperations.getLanguageAspectModelVersion(sourceModel, aspectReference);
+    int modelVersion = SModelOperations.getLanguageAspectModelVersion(sourceModel.getModelDescriptor(), aspectReference);
     Element aspectModelElement = new Element(ModelPersistence.LANGUAGE_ASPECT);
     aspectModelElement.setAttribute(ModelPersistence.MODEL_UID, aspectReference.toString());
     aspectModelElement.setAttribute(ModelPersistence.VERSION, "" + modelVersion);

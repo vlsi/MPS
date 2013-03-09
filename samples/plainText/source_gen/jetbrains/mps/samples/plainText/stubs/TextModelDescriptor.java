@@ -74,7 +74,7 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
   }
 
   @Override
-  protected org.jetbrains.mps.openapi.model.SModel getCurrentModelInternal() {
+  protected SModel getCurrentModelInternal() {
     return myModel;
   }
 

@@ -35,9 +35,9 @@ public class ModelsToResources {
       }
     }, true);
     if (dirtyOnly) {
-      smds = ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModel>) GenerationFacade.getModifiedModels(Sequence.fromIterable(smds).select(new ISelector<SModel, SModelInternal>() {
-        public SModelInternal select(SModel it) {
-          return (SModelInternal) it;
+      smds = ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModel>) GenerationFacade.getModifiedModels(Sequence.fromIterable(smds).select(new ISelector<SModel, SModel>() {
+        public SModel select(SModel it) {
+          return  it;
         }
       }).toListSequence(), this.context));
     }
@@ -121,7 +121,7 @@ __switch__:
                       this.__CP__ = 12;
                       break;
                     case 13:
-                      ListSequence.fromList(models.value).addElement((SModelInternal) smd);
+                      ListSequence.fromList(models.value).addElement( smd);
                       this.__CP__ = 11;
                       break;
                     case 15:
@@ -132,7 +132,7 @@ __switch__:
                       this.__CP__ = 11;
                       break;
                     case 18:
-                      models.value = ListSequence.fromListAndArray(new ArrayList<SModel>(), (SModelInternal) smd);
+                      models.value = ListSequence.fromListAndArray(new ArrayList<SModel>(),  smd);
                       this.__CP__ = 1;
                       break;
                     default:
