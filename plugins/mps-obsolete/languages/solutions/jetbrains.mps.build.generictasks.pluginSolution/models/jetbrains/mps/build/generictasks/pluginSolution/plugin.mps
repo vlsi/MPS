@@ -54,13 +54,8 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4416206207494612887">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bqrc.1462969652806436758" resolveInfo="generateTasks" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4416206207494612888">
-                <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4416206207494612889">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5487985028841915987" resolveInfo="model" />
-                </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4416206207494612890">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ec5l.~SModel%dgetSModel()%corg%djetbrains%dmps%dopenapi%dmodel%dSModel" resolveInfo="getSModel" />
-                </node>
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4416206207494612889">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5487985028841915987" resolveInfo="model" />
               </node>
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4416206207494612891">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5487985028841915989" resolveInfo="m" />
