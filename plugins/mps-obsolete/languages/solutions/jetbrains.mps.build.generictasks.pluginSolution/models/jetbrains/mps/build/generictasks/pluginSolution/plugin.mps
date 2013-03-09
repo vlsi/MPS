@@ -123,15 +123,10 @@
               <node role="actualArgument" roleId="tp4f.1205770614681" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5487985028841916006">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5487985028841915994" resolveInfo="language" />
               </node>
-              <node role="actualArgument" roleId="tp4f.1205770614681" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4416206207494611576">
-                <node role="operand" roleId="tpee.1197027771414" type="tp25.SemanticDowncastExpression" typeId="tp25.1145404486709" id="4416206207494611564">
-                  <node role="leftExpression" roleId="tp25.1145404616321" type="tp25.ModelReferenceExpression" typeId="tp25.559557797393017698" id="4416206207494611503">
-                    <property name="stereotype" nameId="tp25.559557797393021807" value="" />
-                    <property name="name" nameId="tp25.559557797393017702" value="jetbrains.mps.build.generictasks.generated" />
-                  </node>
-                </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4416206207494612844">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ec5l.~SModel%dgetModelDescriptor()%cjetbrains%dmps%dsmodel%dSModelInternal" resolveInfo="getModelDescriptor" />
+              <node role="actualArgument" roleId="tp4f.1205770614681" type="tp25.SemanticDowncastExpression" typeId="tp25.1145404486709" id="4416206207494611564">
+                <node role="leftExpression" roleId="tp25.1145404616321" type="tp25.ModelReferenceExpression" typeId="tp25.559557797393017698" id="4416206207494611503">
+                  <property name="stereotype" nameId="tp25.559557797393021807" value="" />
+                  <property name="name" nameId="tp25.559557797393017702" value="jetbrains.mps.build.generictasks.generated" />
                 </node>
               </node>
               <node role="actualArgument" roleId="tp4f.1205770614681" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5487985028841916009">
@@ -149,15 +144,10 @@
               <node role="actualArgument" roleId="tp4f.1205770614681" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5487985028841916014">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5487985028841915994" resolveInfo="language" />
               </node>
-              <node role="actualArgument" roleId="tp4f.1205770614681" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4416206207494612867">
-                <node role="operand" roleId="tpee.1197027771414" type="tp25.SemanticDowncastExpression" typeId="tp25.1145404486709" id="4416206207494612855">
-                  <node role="leftExpression" roleId="tp25.1145404616321" type="tp25.ModelReferenceExpression" typeId="tp25.559557797393017698" id="4416206207494611511">
-                    <property name="stereotype" nameId="tp25.559557797393021807" value="" />
-                    <property name="name" nameId="tp25.559557797393017702" value="jetbrains.mps.build.generictasks.optional" />
-                  </node>
-                </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4416206207494612873">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ec5l.~SModel%dgetModelDescriptor()%cjetbrains%dmps%dsmodel%dSModelInternal" resolveInfo="getModelDescriptor" />
+              <node role="actualArgument" roleId="tp4f.1205770614681" type="tp25.SemanticDowncastExpression" typeId="tp25.1145404486709" id="4416206207494612855">
+                <node role="leftExpression" roleId="tp25.1145404616321" type="tp25.ModelReferenceExpression" typeId="tp25.559557797393017698" id="4416206207494611511">
+                  <property name="stereotype" nameId="tp25.559557797393021807" value="" />
+                  <property name="name" nameId="tp25.559557797393017702" value="jetbrains.mps.build.generictasks.optional" />
                 </node>
               </node>
               <node role="actualArgument" roleId="tp4f.1205770614681" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5487985028841916017">
