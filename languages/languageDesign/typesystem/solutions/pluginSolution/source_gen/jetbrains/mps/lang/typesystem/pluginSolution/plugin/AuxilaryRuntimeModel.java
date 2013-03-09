@@ -22,7 +22,7 @@ public class AuxilaryRuntimeModel {
   public void unregister() {
   }
 
-  public SModel getSModel() {
+  public SModel getModel() {
     return myModel;
   }
 
