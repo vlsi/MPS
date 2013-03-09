@@ -884,19 +884,8 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   private static Set<String> ourErroredModels = new ConcurrentHashSet<String>();
 
   private void assertRead() {
-    if (myModel == null) return;
-
-    org.jetbrains.mps.openapi.model.SModel desc = myModel.getModelDescriptor();
-    if (desc instanceof FakeModelDescriptor) return;
-
-    SModule module = desc.getModule();
-    if (module == null) return;
-
-    SRepository repository = module.getRepository();
-    if (repository == null) return;
-
-    org.jetbrains.mps.openapi.module.ModelAccess ma = repository.getModelAccess();
-    ma.checkReadAccess();
+    if (!isInRepository()) return;
+    getRepository().getModelAccess().checkReadAccess();
   }
 
   private void assertDisposed() {
