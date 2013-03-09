@@ -29,8 +29,6 @@ import java.util.List;
 public interface SModelInternal extends SModel {
   SModel resolveModel(jetbrains.mps.smodel.SModelReference reference);
 
-  SModel getSModel();
-
   void setModule(SModule container);
 
   void addModelListener(@NotNull SModelListener listener);
