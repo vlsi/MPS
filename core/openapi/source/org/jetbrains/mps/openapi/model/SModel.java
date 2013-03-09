@@ -18,6 +18,7 @@ package org.jetbrains.mps.openapi.model;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
@@ -33,6 +34,10 @@ public interface SModel {
   @Deprecated
 //todo migration only. REMOVE
   SModelInternal getModelDescriptor();
+
+  SRepository getRepository();
+
+  boolean isInRepository();
 
   /**
    * Returns the id of the model valid within the containing module.

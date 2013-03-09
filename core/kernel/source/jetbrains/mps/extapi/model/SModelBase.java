@@ -22,6 +22,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
@@ -38,6 +39,17 @@ public abstract class SModelBase implements SModel {
   protected SModelBase(@NotNull SModelReference modelReference, @NotNull DataSource source) {
     myModelReference = modelReference;
     mySource = source;
+  }
+
+  @Override
+  public SRepository getRepository() {
+    IModule module = getModule();
+    return module == null ? null : module.getRepository();
+  }
+
+  @Override
+  public boolean isInRepository() {
+    return getRepository() != null;
   }
 
   @Override

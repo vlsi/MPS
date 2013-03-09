@@ -19,6 +19,7 @@ import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.mo
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 /**
  * NODE STATES
@@ -80,6 +81,10 @@ public interface SNode {
    * Containing model or null if the node is not contained in any model
    */
   SModel getContainingModel();
+
+  SRepository getRepository();
+
+  boolean isInRepository();
 
   // tree operation
 

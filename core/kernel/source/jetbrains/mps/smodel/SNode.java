@@ -130,6 +130,17 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   @Override
+  public SRepository getRepository() {
+    org.jetbrains.mps.openapi.model.SModel model = getContainingModel();
+    return model == null ? null : model.getRepository();
+  }
+
+  @Override
+  public boolean isInRepository() {
+    return getRepository() != null;
+  }
+
+  @Override
   public final boolean hasProperty(String propertyName) {
     assertRead();
     assertDisposed();

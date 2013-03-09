@@ -49,6 +49,7 @@ import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import org.jetbrains.mps.openapi.model.util.NodesIterator;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.NullDataSource;
@@ -322,12 +323,23 @@ public class SModel implements SModelInternal, SModelData {
   @Override
   @NotNull
   public SModelInternal getModelDescriptor() {
-    if (myModelDescriptor!=null) return myModelDescriptor;
+    if (myModelDescriptor != null) return myModelDescriptor;
 
     if (myFakeModelDescriptor == null) {
       myFakeModelDescriptor = new FakeModelDescriptor(this);
     }
     return myFakeModelDescriptor;
+  }
+
+  @Override
+  public SRepository getRepository() {
+    IModule module = getModule();
+    return module == null ? null : module.getRepository();
+  }
+
+  @Override
+  public boolean isInRepository() {
+    return getRepository() != null;
   }
 
   @Override
@@ -1318,6 +1330,16 @@ public class SModel implements SModelInternal, SModelData {
     @Override
     public SModelInternal getModelDescriptor() {
       return this;
+    }
+
+    @Override
+    public SRepository getRepository() {
+      return null;
+    }
+
+    @Override
+    public boolean isInRepository() {
+      return false;
     }
 
     @Override
