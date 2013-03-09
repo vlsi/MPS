@@ -57,15 +57,6 @@ public class TransientModelsModule extends ClassLoadingModule {
     setModuleReference(reference);
   }
 
-  @Override
-  public Class getClass(String fqName) {
-    // todo: TransientModelsModule? seriously?
-    if (!(myOriginalModule instanceof IClassLoadingModule)) {
-      throw new IllegalStateException();
-    }
-    return ((IClassLoadingModule) myOriginalModule).getClass(fqName);
-  }
-
   public boolean hasPublished() {
     return !myPublished.isEmpty();
   }
