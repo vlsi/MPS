@@ -180,11 +180,6 @@ public class Solution extends ClassLoadingModule {
     return getModuleDescriptor().getCompileInMPS();
   }
 
-  @Override
-  public boolean canLoad() {
-    return MPSCore.getInstance().isTestMode() || getModuleDescriptor().getKind() != SolutionKind.NONE;
-  }
-
   @Deprecated
   public static Solution newInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
     return (Solution) ModuleRepositoryFacade.createModule(handle, moduleOwner);

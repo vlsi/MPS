@@ -16,14 +16,19 @@
 package jetbrains.mps.classloading;
 
 import gnu.trove.THashMap;
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.ReloadListener;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -72,7 +77,15 @@ public class ClassLoaderManager implements CoreComponent {
   }
 
   public boolean canLoad(SModule module) {
-    return module instanceof ClassLoadingModule && ((ClassLoadingModule) module).canLoad();
+    if (module instanceof Language || module instanceof Generator) {
+      return true;
+    }
+    if (module instanceof Solution) {
+      // todo: remove isTestMode here!
+      return MPSCore.getInstance().isTestMode() || ((Solution) module).getModuleDescriptor().getKind() != SolutionKind.NONE;
+    }
+
+    return false;
   }
 
   public Class getClass(SModule module, String classFqName) {

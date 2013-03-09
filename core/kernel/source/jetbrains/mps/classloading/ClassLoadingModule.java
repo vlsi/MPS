@@ -133,8 +133,9 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
     return true;
   }
 
+  @Deprecated
   @Override
-  public boolean canLoad() {
-    return true;
+  public final boolean canLoad() {
+    return ClassLoaderManager.getInstance().canLoad(this);
   }
 }

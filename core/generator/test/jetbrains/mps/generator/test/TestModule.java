@@ -125,11 +125,6 @@ public class TestModule extends ClassLoadingModule {
   }
 
   @Override
-  public boolean canLoad() {
-    return myPeer instanceof IClassLoadingModule && ((IClassLoadingModule) myPeer).canLoad();
-  }
-
-  @Override
   public ModuleDescriptor getModuleDescriptor() {
     // todo: is it ok?
     return myPeer.getModuleDescriptor();

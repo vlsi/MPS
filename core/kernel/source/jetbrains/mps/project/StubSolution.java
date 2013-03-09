@@ -48,11 +48,6 @@ public class StubSolution extends Solution {
   }
 
   @Override
-  public boolean canLoad() {
-    return false;
-  }
-
-  @Override
   public boolean canLoadFromSelf() {
     return false;
   }

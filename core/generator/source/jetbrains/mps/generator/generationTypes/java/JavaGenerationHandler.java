@@ -128,7 +128,7 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
 
         for (Pair<SModule, List<SModel>> moduleListPair : input) {
           SModule module = moduleListPair.o1;
-          if (module instanceof IClassLoadingModule && ((IClassLoadingModule) module).canLoad()) {
+          if (ClassLoaderManager.getInstance().canLoad(module)) {
             needToReload = true;
           }
           boolean compilationResult = compileModuleInMPS(module, monitor.subTask(4));

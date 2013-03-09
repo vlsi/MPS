@@ -142,8 +142,8 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     ModuleReference oldValue = myModuleReference;
     myModuleReference = reference;
     if (oldValue != null &&
-      oldValue.getModuleFqName() != null &&
-      !oldValue.getModuleFqName().equals(myModuleReference.getModuleFqName())) {
+        oldValue.getModuleFqName() != null &&
+        !oldValue.getModuleFqName().equals(myModuleReference.getModuleFqName())) {
 
       MPSModuleRepository.getInstance().moduleFqNameChanged(this, oldValue.getModuleFqName());
     }
@@ -354,8 +354,8 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
 
     for (String jarFile : dd.getLibraries()) {
       IFile jar = jarFile.startsWith("/")
-        ? FileSystem.getInstance().getFileByPath(PathManager.getHomePath() + jarFile)
-        : bundleParent.getDescendant(jarFile);
+          ? FileSystem.getInstance().getFileByPath(PathManager.getHomePath() + jarFile)
+          : bundleParent.getDescendant(jarFile);
       if (jar.exists()) {
         String path = jar.getPath();
         descriptor.getAdditionalJavaStubPaths().add(path);
@@ -385,12 +385,12 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     }
 
     types.addAll(FacetsFacade.getInstance().getApplicableFacetTypes(
-      new TranslatingIterator<ModuleReference, String>(descriptor.getUsedLanguages().iterator()) {
-        @Override
-        protected String translate(ModuleReference node) {
-          return node.getModuleName();
-        }
-      }));
+        new TranslatingIterator<ModuleReference, String>(descriptor.getUsedLanguages().iterator()) {
+          @Override
+          protected String translate(ModuleReference node) {
+            return node.getModuleName();
+          }
+        }));
 
     // TODO: why java module facet by default?
     types.add(JavaModuleFacet.FACET_TYPE);
@@ -869,21 +869,21 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   }
 
   /**
-   * @see jetbrains.mps.classloading.IClassLoadingModule#canLoad()
+   * @see ClassLoaderManager#canLoad(org.jetbrains.mps.openapi.module.SModule)
    */
   @Override
   @Deprecated
   public final boolean reloadClassesAfterGeneration() {
-    return (this instanceof IClassLoadingModule) && ((IClassLoadingModule) this).canLoad();
+    return ClassLoaderManager.getInstance().canLoad(this);
   }
 
   /**
-   * @see jetbrains.mps.classloading.IClassLoadingModule#canLoad()
+   * @see jetbrains.mps.classloading.ClassLoaderManager#getClass(org.jetbrains.mps.openapi.module.SModule, String)
    */
   @Deprecated
   @Override
   public Class getClass(String className) {
-    throw new UnsupportedOperationException();
+    return ClassLoaderManager.getInstance().getClass(this, className);
   }
 
   /**
