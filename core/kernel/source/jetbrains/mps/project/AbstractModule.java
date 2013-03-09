@@ -882,7 +882,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
    */
   @Deprecated
   @Override
-  public Class getClass(String className) {
+  public final Class getClass(String className) {
     return ClassLoaderManager.getInstance().getClass(this, className);
   }
 

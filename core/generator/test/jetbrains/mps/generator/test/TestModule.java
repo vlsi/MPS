@@ -64,15 +64,6 @@ public class TestModule extends ClassLoadingModule {
   }
 
   @Override
-  public Class getClass(String fqName) {
-    if (!(myPeer instanceof IClassLoadingModule)) {
-      throw new IllegalStateException();
-    }
-
-    return ((IClassLoadingModule) myPeer).getClass(fqName);
-  }
-
-  @Override
   public DependenciesManager getDependenciesManager() {
     if (myPeer == null) throw new IllegalStateException();
     return myPeer.getDependenciesManager();

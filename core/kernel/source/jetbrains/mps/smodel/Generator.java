@@ -13,7 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;
+
+import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
@@ -247,11 +249,6 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
   }
 
   // classloading part
-  @Override
-  public Class getClass(String fqName) {
-    return mySourceLanguage.getClass(fqName);
-  }
-
   @Override
   public boolean canFindClass(String name) {
 //    return mySourceLanguage.canFindClass(name);

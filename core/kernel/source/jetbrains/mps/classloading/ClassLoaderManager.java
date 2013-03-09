@@ -95,7 +95,36 @@ public class ClassLoaderManager implements CoreComponent {
     if (!canLoad(module)) {
       throw new IllegalArgumentException("Module " + module.getModuleName() + " can't load classes");
     }
-    return ((ClassLoadingModule) module).getClass(classFqName);
+    // todo: =(
+    if (module instanceof Generator) {
+      return getClass(((Generator) module).getSourceLanguage(), classFqName);
+    }
+    // todo: hack for stubs
+    if (module instanceof Language) {
+      if (classFqName.startsWith(module.getModuleName() + ".stubs.")) {
+        try {
+          return ((Language) module).getStubsLoader().loadClass(classFqName);
+        } catch (ClassNotFoundException e) {
+          LOG.error(e);
+          return null;
+        }
+      }
+    }
+
+    ModuleClassLoader classLoader = getClassLoader(module);
+    if (classLoader == null) {
+      return null;
+    }
+    try {
+      try {
+        return classLoader.loadClass(InternUtil.intern(classFqName));
+      } catch (ClassNotFoundException e) {
+        return null;
+      }
+    } catch (Throwable t) {
+      LOG.error(t);
+      return null;
+    }
   }
 
   public ModuleClassLoader getClassLoader(SModule module) {
@@ -261,4 +290,3 @@ public class ClassLoaderManager implements CoreComponent {
     }
   }
 }
-                                          

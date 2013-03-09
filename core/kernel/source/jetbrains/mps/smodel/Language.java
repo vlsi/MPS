@@ -266,6 +266,10 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     myNamesWithNoConcepts.clear();
   }
 
+  public ClassLoader getStubsLoader() {
+    return myStubsLoader;
+  }
+
   @Deprecated
   public IClassPathItem getLanguageRuntimeClasspath() {
     return new CompositeClassPathItem();
@@ -394,17 +398,6 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     SModule owner = SModelRepository.getInstance().getOwner(sm);
     if (owner instanceof Language) {
       return (Language) owner;
-    }
-    return null;
-  }
-
-  @Override
-  public Class getClass(String fqName) {
-    if (!fqName.startsWith(getModuleName() + ".stubs.")) return super.getClass(fqName);
-    try {
-      return myStubsLoader.loadClass(fqName);
-    } catch (ClassNotFoundException e) {
-      LOG.error(e);
     }
     return null;
   }

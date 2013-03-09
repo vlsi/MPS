@@ -45,23 +45,6 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
   }
 
   @Override
-  public Class getClass(String fqName) {
-    if (myClassLoader == null) return null;
-
-    try {
-      fqName = InternUtil.intern(fqName);
-      try {
-        return myClassLoader.loadClass(fqName);
-      } catch (ClassNotFoundException e) {
-        return null;
-      }
-    } catch (Throwable t) {
-      LOG.error(t);
-      return null;
-    }
-  }
-
-  @Override
   public void invalidateDependencies() {
     super.invalidateDependencies();
     synchronized (LOCK) {
