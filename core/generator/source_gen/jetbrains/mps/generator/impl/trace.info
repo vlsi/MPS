@@ -468,7 +468,7 @@
     <nodeInfo nodeId="2381446136244093908" fileName="RootTemplateAnnotator.java" startLine="54" startPosition="36" endLine="55" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2381446136244093908" fileName="RootTemplateAnnotator.java" startLine="56" startPosition="5" endLine="57" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="263434549788570117" fileName="RootTemplateAnnotator.java" startLine="22" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RootTemplateAnnotator#(Ljetbrains/mps/smodel/GlobalSModelEventsManager;)V" />
-    <nodeInfo nodeId="263434549788685425" fileName="RootTemplateAnnotator.java" startLine="32" startPosition="351" endLine="35" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="263434549788685425" fileName="RootTemplateAnnotator.java" startLine="32" startPosition="331" endLine="35" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="263434549788570193" fileName="RootTemplateAnnotator.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
     <nodeInfo nodeId="2381446136244093866" fileName="RootTemplateAnnotator.java" startLine="46" startPosition="83" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2381446136244093908" fileName="RootTemplateAnnotator.java" startLine="53" startPosition="85" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -487,7 +487,7 @@
     <scopeInfo nodeId="263434549788570117" fileName="RootTemplateAnnotator.java" startLine="22" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="2481791643076243538" varName="dep" />
     </scopeInfo>
-    <scopeInfo nodeId="263434549788570170" fileName="RootTemplateAnnotator.java" startLine="32" startPosition="351" endLine="35" endPosition="13" />
+    <scopeInfo nodeId="263434549788570170" fileName="RootTemplateAnnotator.java" startLine="32" startPosition="331" endLine="35" endPosition="13" />
     <scopeInfo nodeId="263434549788570193" fileName="RootTemplateAnnotator.java" startLine="42" startPosition="0" endLine="45" endPosition="0" />
     <scopeInfo nodeId="2381446136244093866" fileName="RootTemplateAnnotator.java" startLine="46" startPosition="83" endLine="50" endPosition="16" />
     <scopeInfo nodeId="2381446136244093908" fileName="RootTemplateAnnotator.java" startLine="53" startPosition="85" endLine="57" endPosition="16" />
