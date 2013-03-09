@@ -18,7 +18,7 @@ package jetbrains.mps.idea.core;
 
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.startup.StartupManager;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
 

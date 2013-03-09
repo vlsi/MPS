@@ -16,10 +16,9 @@
 
 package jetbrains.mps.jps.model;
 
-import com.intellij.openapi.projectRoots.Sdk;
-import com.intellij.project.model.JpsSdkManager;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.baseLanguage.search.MPSBaseLanguage;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.generator.MPSGenerator;
 import jetbrains.mps.idea.core.make.MPSMakeConstants;
 import jetbrains.mps.idea.core.module.CachedModuleData;
@@ -36,12 +35,8 @@ import jetbrains.mps.persistence.MPSPersistence;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.BaseMPSModuleOwner;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -61,12 +56,9 @@ import org.jetbrains.jps.incremental.messages.CompilerMessage;
 import org.jetbrains.jps.model.JpsProject;
 import org.jetbrains.jps.model.java.JpsJavaSdkType;
 import org.jetbrains.jps.model.library.JpsLibrary;
-import org.jetbrains.jps.model.library.sdk.JpsSdk;
-import org.jetbrains.jps.model.library.sdk.JpsSdkType;
 import org.jetbrains.jps.model.module.JpsDependencyElement;
 import org.jetbrains.jps.model.module.JpsModule;
 import org.jetbrains.jps.model.module.JpsSdkDependency;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
