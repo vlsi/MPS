@@ -33,6 +33,7 @@ public interface SModel {
 
   @Deprecated
 //todo migration only. REMOVE
+      @NotNull
   SModelInternal getModelDescriptor();
 
   SRepository getRepository();
