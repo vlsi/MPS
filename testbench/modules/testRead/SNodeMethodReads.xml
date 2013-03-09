@@ -609,5 +609,13 @@
     <string>public org.jetbrains.mps.openapi.model.SNode jetbrains.mps.smodel.SNode.getPrevSibling()</string>
     <int>3</int>
   </void>
+  <void method="put">
+    <string>public boolean jetbrains.mps.smodel.SNode.isInRepository()</string>
+    <int>1</int>
+  </void>
+  <void method="put">
+    <string>public org.jetbrains.mps.openapi.module.SRepository jetbrains.mps.smodel.SNode.getRepository()</string>
+    <int>1</int>
+  </void>
  </object>
 </java> 

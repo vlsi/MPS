@@ -31,7 +31,7 @@
   <void method="add"> 
    <string>public abstract java.lang.String org.jetbrains.mps.openapi.model.SNode.getPresentation()</string> 
   </void> 
-  <void method="add">                                x
+  <void method="add">
    <string>public abstract void org.jetbrains.mps.openapi.model.SNode.insertChild(java.lang.String,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode)</string> 
   </void>
   <void method="add"> 
@@ -100,5 +100,11 @@
   <void method="add">
    <string>public abstract void org.jetbrains.mps.openapi.model.SNode.setReference(java.lang.String,org.jetbrains.mps.openapi.model.SReference)</string>
   </void>
- </object> 
+  <void method="add">
+   <string>public abstract boolean jetbrains.mps.smodel.SNode.isInRepository()</string>
+  </void>
+  <void method="add">
+   <string>public abstract org.jetbrains.mps.openapi.module.SRepository jetbrains.mps.smodel.SNode.getRepository()</string>
+  </void>
+ </object>
 </java> 
