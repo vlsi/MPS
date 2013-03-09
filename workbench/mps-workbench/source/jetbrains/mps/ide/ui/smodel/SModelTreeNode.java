@@ -23,8 +23,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.util.*;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -232,7 +231,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
    * use getModel
    */
   @Deprecated
-  public final SModel getSModel1() {
+  public final SModel getSModel() {
     return getModel();
   }
 
@@ -427,7 +426,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
 
     final ArrayList<SNode> allRoots = new ArrayList<SNode>();
-    for (SNode root1 : getSModel1().getRootNodes()) {
+    for (SNode root1 : getSModel().getRootNodes()) {
       allRoots.add(root1);
     }
     Collections.sort(allRoots, new ToStringComparator(true));

@@ -93,14 +93,14 @@ public class ShowNodeType_Action extends BaseAction {
         ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
             tmpModel.register();
-            tmpModel.getModel().addRootNode(type.value);
+            tmpModel.getSModel().addRootNode(type.value);
           }
         });
         new MyBaseNodeDialog(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SNode) MapSequence.fromMap(_params).get("node")), type.value, reporter.value).show();
       } finally {
         ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
-            tmpModel.getModel().removeRootNode(type.value);
+            tmpModel.getSModel().removeRootNode(type.value);
             tmpModel.unregister();
           }
         });
