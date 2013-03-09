@@ -475,7 +475,7 @@
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~ImmatureReferences%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSModelRepository)" resolveInfo="ImmatureReferences" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7082776126571004800">
                   <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7082776126571007713">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModelRepository%d&lt;init&gt;(jetbrains%dmps%dreloading%dClassLoaderManager)" resolveInfo="SModelRepository" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModelRepository%d&lt;init&gt;(jetbrains%dmps%dclassloading%dClassLoaderManager)" resolveInfo="SModelRepository" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="7082776126571007775" />
                   </node>
                 </node>

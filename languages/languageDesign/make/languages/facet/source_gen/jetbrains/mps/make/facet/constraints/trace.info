@@ -277,7 +277,7 @@
     <nodeInfo nodeId="6311899720715991092" fileName="FacetsScope.java" startLine="29" startPosition="71" endLine="30" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6311899720721169853" fileName="FacetsScope.java" startLine="30" startPosition="84" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6311899720721169012" fileName="FacetsScope.java" startLine="31" startPosition="0" endLine="32" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8857655676208064246" fileName="FacetsScope.java" startLine="34" startPosition="94" endLine="35" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8857655676208064246" fileName="FacetsScope.java" startLine="34" startPosition="61" endLine="35" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5848593913397110705" fileName="FacetsScope.java" startLine="37" startPosition="5" endLine="38" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5848593913396825119" fileName="FacetsScope.java" startLine="38" startPosition="66" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="5848593913396897376" fileName="FacetsScope.java" startLine="39" startPosition="0" endLine="40" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -307,7 +307,7 @@
     <nodeInfo nodeId="8857655676208326520" fileName="FacetsScope.java" startLine="51" startPosition="22" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6311899720715974635" fileName="FacetsScope.java" startLine="29" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getAvailableFacets#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
     <scopeInfo nodeId="4799451663045878233" fileName="FacetsScope.java" startLine="25" startPosition="41" endLine="26" endPosition="43" />
-    <scopeInfo nodeId="8857655676208057681" fileName="FacetsScope.java" startLine="34" startPosition="94" endLine="35" endPosition="63" />
+    <scopeInfo nodeId="8857655676208057681" fileName="FacetsScope.java" startLine="34" startPosition="61" endLine="35" endPosition="63" />
     <scopeInfo nodeId="5848593913396915189" fileName="FacetsScope.java" startLine="43" startPosition="37" endLine="44" endPosition="86" />
     <scopeInfo nodeId="5848593913396921844" fileName="FacetsScope.java" startLine="45" startPosition="16" endLine="46" endPosition="32" />
     <scopeInfo nodeId="8857655676208633097" fileName="FacetsScope.java" startLine="53" startPosition="40" endLine="54" endPosition="26" />

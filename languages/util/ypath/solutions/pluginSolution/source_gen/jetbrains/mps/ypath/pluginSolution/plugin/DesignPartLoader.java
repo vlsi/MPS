@@ -8,7 +8,6 @@ import java.util.HashMap;
 import jetbrains.mps.ypath.design.IFeatureDesign;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.classloading.IClassLoadingModule;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 
@@ -25,17 +24,17 @@ public class DesignPartLoader {
   public IFeatureDesign getFeatureDesign(String fqClassName, SModel smodel) {
     SModule module = getModuleFor(smodel);
     if (module != null) {
-      return getFeatureDesign(fqClassName, (IClassLoadingModule) module);
+      return getFeatureDesign(fqClassName, module);
     }
     return null;
   }
 
   @SuppressWarnings("unchecked")
-  private IFeatureDesign getFeatureDesign(String fqClassName, IClassLoadingModule module) {
+  private IFeatureDesign getFeatureDesign(String fqClassName, SModule module) {
     try {
       Class<?> klass = classes.get(fqClassName);
       if (klass == null) {
-        klass = module.getClass(fqClassName);
+        klass = ClassLoaderManager.getInstance().getClass(module, fqClassName);
         classes.put(fqClassName, klass);
       }
       if (klass == null) {

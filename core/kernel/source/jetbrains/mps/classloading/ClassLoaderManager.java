@@ -71,6 +71,24 @@ public class ClassLoaderManager implements CoreComponent {
     INSTANCE = null;
   }
 
+  public boolean canLoad(SModule module) {
+    return module instanceof ClassLoadingModule && ((ClassLoadingModule) module).canLoad();
+  }
+
+  public Class getClass(SModule module, String classFqName) {
+    if (!canLoad(module)) {
+      throw new IllegalArgumentException("Module " + module.getModuleName() + " can't load classes");
+    }
+    return ((ClassLoadingModule) module).getClass(classFqName);
+  }
+
+  public ModuleClassLoader getClassLoader(SModule module) {
+    if (!canLoad(module)) {
+      throw new IllegalArgumentException("Module " + module.getModuleName() + " can't load classes");
+    }
+    return ((ClassLoadingModule) module).getClassLoader();
+  }
+
   public void reloadAll(@NotNull ProgressMonitor monitor) {
     LOG.assertCanWrite();
     isReloadRequested = false;
@@ -165,9 +183,9 @@ public class ClassLoaderManager implements CoreComponent {
         ModuleReference oldLoaderId = myLoadedClasses.get(name);
         if (!EqualUtil.equals(oldLoaderId, id)) {
           String s = "Class \"" + name + "\" was loaded by multiple module classloaders simultaneously.\n" +
-            "Classloaders: \n" +
-            "  " + id.toString() + "\n" +
-            "  " + oldLoaderId.toString();
+              "Classloaders: \n" +
+              "  " + id.toString() + "\n" +
+              "  " + oldLoaderId.toString();
           //throw new IllegalStateException(s);
           LOG.warning(s);
         }
