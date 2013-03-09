@@ -16,6 +16,7 @@
 package jetbrains.mps.plugins;
 
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.logging.Logger;
@@ -24,7 +25,6 @@ import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionKind;
-import jetbrains.mps.classloading.IClassLoadingModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -32,6 +32,7 @@ import jetbrains.mps.util.ModuleNameUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -55,7 +56,7 @@ public class PluginUtil {
     for (Solution s : (List<Solution>) ModuleRepositoryFacade.getInstance().getAllModules(Solution.class)) {
       if (s.getModuleDescriptor().getKind() == SolutionKind.NONE) continue;
       if (s.getModuleDescriptor().getKind() == SolutionKind.PLUGIN_OTHER && MPSCore.getInstance().isTestMode()
-        && IdeMain.getTestMode() != TestMode.UI_TEST) continue;
+          && IdeMain.getTestMode() != TestMode.UI_TEST) continue;
       modules.add(s);
     }
 
@@ -66,11 +67,11 @@ public class PluginUtil {
     List<IModule> sortedModules = PluginSorter.sortByDependencies(modules);
 
     final ArrayList<T> plugins = new ArrayList<T>();
-    for (IModule module : sortedModules) {
-      if (module instanceof IClassLoadingModule) {
+    for (SModule module : sortedModules) {
+      if (ClassLoaderManager.getInstance().canLoad(module)) {
         String pluginClassName = creator.getPlugin(module);
         if (pluginClassName == null) continue;
-        T plugin = (T) createPlugin((IClassLoadingModule) module, pluginClassName);
+        T plugin = (T) createPlugin(module, pluginClassName);
         if (plugin == null) continue;
 
         plugins.add(plugin);
@@ -80,9 +81,9 @@ public class PluginUtil {
     return plugins;
   }
 
-  private static Object createPlugin(IClassLoadingModule module, String className) {
+  private static Object createPlugin(SModule module, String className) {
     try {
-      Class pluginClass = module.getClass(className);
+      Class pluginClass = ClassLoaderManager.getInstance().getClass(module, className);
       if (pluginClass == null) return null;
 
       return pluginClass.newInstance();
@@ -106,7 +107,7 @@ public class PluginUtil {
 
   private static abstract class PluginCreator<T> {
     @Nullable
-    public final String getPlugin(IModule module) {
+    public final String getPlugin(SModule module) {
       if (module instanceof Language) {
         Language language = (Language) module;
         if (LanguageAspect.PLUGIN.get(language) == null) return null;

@@ -32,6 +32,7 @@ import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.Element;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -132,6 +133,10 @@ public class TestModule extends ClassLoadingModule {
   public ModuleDescriptor getModuleDescriptor() {
     // todo: is it ok?
     return myPeer.getModuleDescriptor();
+  }
+
+  public SModule getPeer() {
+    return myPeer;
   }
 
   public class TestModuleScope extends ModuleScope {

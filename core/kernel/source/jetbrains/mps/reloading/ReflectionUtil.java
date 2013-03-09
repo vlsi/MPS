@@ -15,10 +15,11 @@
  */
 package jetbrains.mps.reloading;
 
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.classloading.IClassLoadingModule;
 import jetbrains.mps.util.JavaNameUtil;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -28,30 +29,23 @@ public final class ReflectionUtil {
   private ReflectionUtil() {
   }
 
-  private static Class forName(IClassLoadingModule module, String className) {
-    Class result = module.getClass(className);
-    if (result != null) {
-      return result;
-    } else {
-      throw new RuntimeException(className);
+  public static Class forName(SModule module, SNode classNode) {
+    if (!ClassLoaderManager.getInstance().canLoad(module)) {
+      throw new IllegalStateException("Module: " + module + "; class node: " + classNode);
     }
-  }
-
-  @Deprecated
-  public static Class forName(IModule module, SNode classNode) {
-    if (!(module instanceof IClassLoadingModule)) {
-      throw new IllegalStateException();
-    }
-    return forName((IClassLoadingModule) module, classNode);
-  }
-
-  public static Class forName(IClassLoadingModule module, SNode classNode) {
     String dottedName = classNode.getName();
     String dollarName = "null";
     if (dottedName != null) {
       dollarName = dottedName.replaceAll("\\.", "\\$");
     }
-    return forName(module, JavaNameUtil.fqClassName(classNode, dollarName));
+    String className = JavaNameUtil.fqClassName(classNode, dollarName);
+
+    Class result = ClassLoaderManager.getInstance().getClass(module, className);
+    if (result != null) {
+      return result;
+    } else {
+      throw new RuntimeException(className);
+    }
   }
 
   public static Method getMethod(IModule module, SNode classNode, String methodName, Class[] parameterTypes) {

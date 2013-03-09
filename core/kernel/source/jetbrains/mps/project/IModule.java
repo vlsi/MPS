@@ -201,7 +201,7 @@ public interface IModule extends SModule {
   // IClassLoadingModule part. Use module.getFacet(IClassLoadingModule).{method}
 
   /**
-   * @see jetbrains.mps.classloading.IClassLoadingModule#getClass(String)
+   * @see jetbrains.mps.classloading.ClassLoaderManager#getClass(org.jetbrains.mps.openapi.module.SModule, String)
    */
   @Deprecated
   Class getClass(String className);

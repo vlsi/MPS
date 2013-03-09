@@ -19,7 +19,6 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.classloading.IClassLoadingModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
@@ -92,13 +91,13 @@ public class QueryMethodGenerated implements CoreComponent {
         queriesClassName, suppressErrorLogging,
         "couldn't find class 'QueriesGenerated': no module for model '" + sm.getReference() + "'");
     }
-    if (!(module instanceof IClassLoadingModule)) {
+    if (!ClassLoaderManager.getInstance().canLoad(module)) {
       reportErrorWhileClassLoading(
         queriesClassName, suppressErrorLogging,
-        "couldn't find class 'QueriesGenerated': module " + module.getModuleName() + " not implements IClassLoadingModule");
+        "couldn't find class 'QueriesGenerated': module " + module.getModuleName() + " not classloading");
     }
 
-    Class queriesClass = ((IClassLoadingModule) module).getClass(queriesClassName);
+    Class queriesClass = ClassLoaderManager.getInstance().getClass(module, queriesClassName);
     if (queriesClass == null) {
       reportErrorWhileClassLoading(
         queriesClassName, suppressErrorLogging,
