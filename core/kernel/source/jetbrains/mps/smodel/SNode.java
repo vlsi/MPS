@@ -123,10 +123,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
     fireNodeReadAccess();
 
-    if (myModel == null) return null;
-
-    SModelInternal md = myModel.getModelDescriptor();
-    return md instanceof FakeModelDescriptor ? null : md;
+    return myModel == null ? null : myModel.getModelDescriptor();
   }
 
   @Override
