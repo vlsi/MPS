@@ -21,7 +21,6 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -30,7 +29,6 @@ import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
@@ -59,11 +57,15 @@ public class ClassLoaderManager implements CoreComponent {
   private final Map<SModule, ModuleClassLoader> myClassLoaders = new HashMap<SModule, ModuleClassLoader>();
   private final Map<SModule, Set<SModule>> myBackRefs = new HashMap<SModule, Set<SModule>>();
 
-  private final Map<String, ModuleReference> myLoadedClasses = new THashMap<String, ModuleReference>();
+  // this field for checking classes loading (double load from different modules)
+  private final Map<String, SModuleReference> myLoadedClasses = new THashMap<String, SModuleReference>();
+
+  // for updateModels oO
+  private final List<SModuleReference> myLoadedModules = new ArrayList<SModuleReference>();
+
+  // reload handlers
   private List<ReloadListener> myReloadHandlers = new CopyOnWriteArrayList<ReloadListener>();
   private volatile boolean isReloadRequested;
-
-  private final List<SModuleReference> myLoadedModules = new ArrayList<SModuleReference>();
 
   // component stuff
   public ClassLoaderManager() {
@@ -167,11 +169,27 @@ public class ClassLoaderManager implements CoreComponent {
     for (SModule module : toReload) {
       myBackRefs.remove(module);
     }
+
     // clean myClassLoaders
     for (SModule module : toReload) {
       // here we update
       myClassLoaders.get(module).dispose();
       myClassLoaders.remove(module);
+    }
+
+    // update loaded classes checking map
+    Set<SModuleReference> moduleReferences = new HashSet<SModuleReference>();
+    for (SModule module : toReload) {
+      moduleReferences.add(module.getModuleReference());
+    }
+    Set<String> classesToRemove = new HashSet<String>();
+    for (Map.Entry<String, SModuleReference> entry : myLoadedClasses.entrySet()) {
+      if (moduleReferences.contains(entry.getValue())) {
+        classesToRemove.add(entry.getKey());
+      }
+    }
+    for (String className : classesToRemove) {
+      myLoadedClasses.remove(className);
     }
   }
 
@@ -197,7 +215,7 @@ public class ClassLoaderManager implements CoreComponent {
     monitor.start("Reloading classes...", 5);
     try {
       monitor.step("Updating classpath...");
-      updateClassPath();
+      invalidateClasses(MPSModuleRepository.getInstance().getModules());
       monitor.advance(1);
 
       monitor.step("Disposing old classes...");
@@ -278,10 +296,10 @@ public class ClassLoaderManager implements CoreComponent {
     }
   }
 
-  public void classLoaded(String name, ModuleReference id) {
+  /* package */ void classLoaded(String name, ModuleReference id) {
     synchronized (myLoadedClasses) {
       if (myLoadedClasses.containsKey(name)) {
-        ModuleReference oldLoaderId = myLoadedClasses.get(name);
+        SModuleReference oldLoaderId = myLoadedClasses.get(name);
         if (!EqualUtil.equals(oldLoaderId, id)) {
           String s = "Class \"" + name + "\" was loaded by multiple module classloaders simultaneously.\n" +
               "Classloaders: \n" +
@@ -296,9 +314,10 @@ public class ClassLoaderManager implements CoreComponent {
     }
   }
 
+  // todo: remove all usages
+  @Deprecated
   public void updateClassPath() {
-    myLoadedClasses.clear();
-    invalidateClasses(ModuleRepositoryFacade.getInstance().getAllModules(IModule.class));
+    invalidateClasses(MPSModuleRepository.getInstance().getModules());
   }
 
   public boolean isReloadRequested() {
