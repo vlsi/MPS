@@ -61,7 +61,7 @@ public class GWTStubsSource extends FolderSetDataSource implements FastFindSuppo
         gwtModule = SConceptOperations.createNewNode(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.gwt.client.structure.GWTModule")), sample);
         ((jetbrains.mps.smodel.SNode) gwtModule).setId(id);
         SPropertyOperations.set(gwtModule, "name", pi.baseName(modres));
-        SModelOperations.addRootNode(((SModel) model), gwtModule);
+        SModelOperations.addRootNode(( model.getModelDescriptor()), gwtModule);
       }
       ListSequence.fromList(modlst).addElement(MultiTuple.<String,String,SNode>from(pkg, modres, gwtModule));
     }
