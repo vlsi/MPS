@@ -300,7 +300,7 @@ public class SModel implements SModelData {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.devkitAdded(new SModelDevKitEvent(getModelDescriptor(), ref, true));
+        sModelListener.devkitAdded(new SModelDevKitEvent(getDescriptorChecked(), ref, true));
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -311,7 +311,7 @@ public class SModel implements SModelData {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.devkitRemoved(new SModelDevKitEvent(getModelDescriptor(), ref, false));
+        sModelListener.devkitRemoved(new SModelDevKitEvent(getDescriptorChecked(), ref, false));
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -322,7 +322,7 @@ public class SModel implements SModelData {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.languageAdded(new SModelLanguageEvent(getModelDescriptor(), ref, true));
+        sModelListener.languageAdded(new SModelLanguageEvent(getDescriptorChecked(), ref, true));
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -333,7 +333,7 @@ public class SModel implements SModelData {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.languageRemoved(new SModelLanguageEvent(getModelDescriptor(), ref, false));
+        sModelListener.languageRemoved(new SModelLanguageEvent(getDescriptorChecked(), ref, false));
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -344,7 +344,7 @@ public class SModel implements SModelData {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.importAdded(new SModelImportEvent(getModelDescriptor(), modelReference, true));
+        sModelListener.importAdded(new SModelImportEvent(getDescriptorChecked(), modelReference, true));
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -355,7 +355,7 @@ public class SModel implements SModelData {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.importAdded(new SModelImportEvent(getModelDescriptor(), modelReference, false));
+        sModelListener.importAdded(new SModelImportEvent(getDescriptorChecked(), modelReference, false));
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -366,7 +366,7 @@ public class SModel implements SModelData {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.rootAdded(new SModelRootEvent(getModelDescriptor(), root, true));
+        sModelListener.rootAdded(new SModelRootEvent(getDescriptorChecked(), root, true));
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -377,7 +377,7 @@ public class SModel implements SModelData {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.rootRemoved(new SModelRootEvent(getModelDescriptor(), root, false));
+        sModelListener.rootRemoved(new SModelRootEvent(getDescriptorChecked(), root, false));
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -388,7 +388,7 @@ public class SModel implements SModelData {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.propertyChanged(new SModelPropertyEvent(getModelDescriptor(), property, node, oldValue, newValue));
+        sModelListener.propertyChanged(new SModelPropertyEvent(getDescriptorChecked(), property, node, oldValue, newValue));
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -400,7 +400,7 @@ public class SModel implements SModelData {
     int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.childAdded(new SModelChildEvent(getModelDescriptor(), true, parent, role, childIndex, child));
+        sModelListener.childAdded(new SModelChildEvent(getDescriptorChecked(), true, parent, role, childIndex, child));
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -412,7 +412,7 @@ public class SModel implements SModelData {
     int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.childRemoved(new SModelChildEvent(getModelDescriptor(), false, parent, role, childIndex, child));
+        sModelListener.childRemoved(new SModelChildEvent(getDescriptorChecked(), false, parent, role, childIndex, child));
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -424,7 +424,7 @@ public class SModel implements SModelData {
     int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.beforeChildRemoved(new SModelChildEvent(getModelDescriptor(), false, parent, role, childIndex, child));
+        sModelListener.beforeChildRemoved(new SModelChildEvent(getDescriptorChecked(), false, parent, role, childIndex, child));
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -435,7 +435,7 @@ public class SModel implements SModelData {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.referenceAdded(new SModelReferenceEvent(getModelDescriptor(), reference, true));
+        sModelListener.referenceAdded(new SModelReferenceEvent(getDescriptorChecked(), reference, true));
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -446,7 +446,7 @@ public class SModel implements SModelData {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.referenceRemoved(new SModelReferenceEvent(getModelDescriptor(), reference, false));
+        sModelListener.referenceRemoved(new SModelReferenceEvent(getDescriptorChecked(), reference, false));
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -465,7 +465,13 @@ public class SModel implements SModelData {
   }
 
   protected FastNodeFinder createFastNodeFinder() {
-    return new DefaultFastNodeFinder(getModelDescriptor());
+    return new DefaultFastNodeFinder(getDescriptorChecked());
+  }
+
+  private SModelDescriptor getDescriptorChecked() {
+    SModelDescriptor des = getModelDescriptor();
+    if (des instanceof FakeModelDescriptor) throw new IllegalStateException();
+    return des;
   }
 
   //todo this is an external functionality. Should be implemented externally
@@ -543,7 +549,7 @@ public class SModel implements SModelData {
   //---------imports manipulation--------
 
   public ModelDependenciesManager getModelDepsManager() {
-    if (myModelDependenciesManager == null) myModelDependenciesManager = new ModelDependenciesManager(getModelDescriptor());
+    if (myModelDependenciesManager == null) myModelDependenciesManager = new ModelDependenciesManager(getDescriptorChecked());
     return myModelDependenciesManager;
   }
 
@@ -768,7 +774,7 @@ public class SModel implements SModelData {
       myLanguagesEngagedOnGeneration.remove(ref);
       // don't send event but mark model as changed
       if (canFireEvent()) {
-        SModelRepository.getInstance().markChanged(getModelDescriptor());
+        SModelRepository.getInstance().markChanged(getDescriptorChecked());
       }
     }
   }
