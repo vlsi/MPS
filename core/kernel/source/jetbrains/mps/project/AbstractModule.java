@@ -678,7 +678,8 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
 
   @Override
   public void invalidateDependencies() {
-    //do nothing by default
+    // invalidate loaded into MPS classes
+    ClassLoaderManager.getInstance().invalidateClasses(Arrays.asList(this));
   }
 
   protected ModuleDescriptor loadDescriptor() {
