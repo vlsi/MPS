@@ -92,9 +92,6 @@
    <string>public abstract java.lang.Iterable&lt;? extends org.jetbrains.mps.openapi.model.SNode&gt; org.jetbrains.mps.openapi.model.SNode.getChildren()</string>
   </void>
   <void method="add">
-   <string>public abstract org.jetbrains.mps.openapi.model.SModel org.jetbrains.mps.openapi.model.SNode.getContainingModel()</string>
-  </void>
-  <void method="add">
    <string>public abstract org.jetbrains.mps.openapi.model.SModel org.jetbrains.mps.openapi.model.SNode.getModel()</string>
   </void>
   <void method="add">
