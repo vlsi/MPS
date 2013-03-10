@@ -192,19 +192,7 @@ public class LanguageRegistry implements CoreComponent {
   private class MyModuleRepositoryAdapter extends SRepositoryListenerAdapter {
     @Override
     public void moduleAdded(SModule module) {
-      if (!(module instanceof Language)) return;
-
-      Language l = (Language) module;
-      String namespace = l.getModuleName();
-      // avoid duplicates in registry
-      if (myLanguages.containsKey(namespace)) return;
-
-      LanguageRuntime runtime = createRuntime(l, true);
-      if (runtime == null) return;
-
-      myLanguages.put(namespace, runtime);
-      myLanguageToNamespace.put(l, namespace);
-      notifyLoad(Collections.singleton(runtime));
+      // awaiting next classes reload?
     }
 
     @Override

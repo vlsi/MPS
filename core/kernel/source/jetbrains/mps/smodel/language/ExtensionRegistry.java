@@ -202,16 +202,7 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
   private class MyModuleRepositoryAdapter extends ModuleRepositoryAdapter {
     @Override
     public void moduleAdded(IModule module) {
-      String namespace = module.getModuleName();
-      // avoid duplicates in registry
-      if (myExtensionDescriptors.containsKey(namespace)) return;
-
-      ExtensionDescriptor desc = findExtensionDescriptor(module);
-      if (desc == null) return;
-
-      myExtensionDescriptors.put(namespace, desc);
-      myModuleToNamespace.put(module, namespace);
-      registerExtensionDescriptor(desc);
+      // awaiting next classes reload?
     }
 
     @Override

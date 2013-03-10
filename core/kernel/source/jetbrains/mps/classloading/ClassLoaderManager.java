@@ -45,7 +45,6 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -283,8 +282,11 @@ public class ClassLoaderManager implements CoreComponent {
     if (!myClassLoadingDepsCache.containsKey(module)) {
       Set<SModule> classLoadingDepsCache = new THashSet<SModule>();
       classLoadingDepsCache.add(module);
-      for (IModule m : new GlobalModuleDependenciesManager(module).getModules(Deptype.COMPILE)) {
-        classLoadingDepsCache.add(m);
+      for (SModule m : new GlobalModuleDependenciesManager(module).getModules(Deptype.COMPILE)) {
+        if (canLoad(m)) {
+          // todo: canLoad - remove here
+          classLoadingDepsCache.add(m);
+        }
       }
       myClassLoadingDepsCache.put(module, classLoadingDepsCache);
       return classLoadingDepsCache;

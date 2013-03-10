@@ -16,14 +16,10 @@
 package jetbrains.mps.classloading;
 
 import gnu.trove.THashMap;
-import gnu.trove.THashSet;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModuleOperations;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ProtectionDomainUtil;
@@ -130,7 +126,7 @@ public class ModuleClassLoader extends ClassLoader {
       // todo: wrong now
       if (!ClassLoaderManager.getInstance().canLoad(myModule)) continue;
 
-      if (canLoadFromSelf(m) && getLocator().canFindClass(name)) {
+      if (canLoadFromSelf(m) && ClassLoaderManager.getInstance().getClassLoader(m).getLocator().canFindClass(name)) {
         //here it will load with self, with any values as two last parameters
         return Class.forName(name, false, ClassLoaderManager.getInstance().getClassLoader(m));
       } else {
