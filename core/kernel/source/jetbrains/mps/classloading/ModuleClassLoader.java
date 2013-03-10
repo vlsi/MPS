@@ -18,9 +18,11 @@ package jetbrains.mps.classloading;
 import gnu.trove.THashMap;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ProtectionDomainUtil;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.IOException;
@@ -46,8 +48,15 @@ public class ModuleClassLoader extends ClassLoader {
   private final Map<String, Class> myClasses = Collections.synchronizedMap(new THashMap<String, Class>());
 
   public ModuleClassLoader(IClassLoadingModule module) {
-    super(LibraryInitializer.getInstance().getParentLoaderForModule(module));
+    super(getParentPluginClassLoader((SModule) module));
     myModule = module;
+  }
+
+  private static ClassLoader getParentPluginClassLoader(SModule module) {
+    IFile bundleHome = ((AbstractModule) module).getBundleHome();
+    if (bundleHome == null) return null;
+    String path = bundleHome.getPath();
+    return LibraryInitializer.getInstance().getPluginClassLoaderForPath(path);
   }
 
   @Override

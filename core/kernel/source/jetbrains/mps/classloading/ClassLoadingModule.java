@@ -52,13 +52,6 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
     }
   }
 
-  @Override
-  public String getPluginPath() {
-    IFile bundleHome = getBundleHome();
-    if (bundleHome == null) return null;
-    return bundleHome.getPath();
-  }
-
   public void invalidateClasses() {
     if (myClassLoader != null) {
       myClassLoader.dispose();

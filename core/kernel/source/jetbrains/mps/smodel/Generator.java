@@ -67,11 +67,6 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
     throw new UnsupportedOperationException();
   }
 
-  @Override
-  public String getPluginPath() {
-    return getSourceLanguage().getPluginPath();
-  }
-
   private void upgradeGeneratorDescriptor() {
     for (MappingPriorityRule mappingPriorityRule : myGeneratorDescriptor.getPriorityRules()) {
       MappingConfig_AbstractRef lesser = mappingPriorityRule.getRight();

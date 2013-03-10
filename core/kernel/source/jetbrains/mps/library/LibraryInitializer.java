@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.*;
@@ -73,9 +74,8 @@ public class LibraryInitializer implements CoreComponent {
     update(false);
   }
 
-  public ClassLoader getParentLoaderForModule(IClassLoadingModule module) {
+  public ClassLoader getPluginClassLoaderForPath(@Nullable String pluginPath) {
     // TODO find classloader using ModuleOwner (SLibrary)
-    String pluginPath = module.getPluginPath();
     if (pluginPath != null) {
       String foundPath = "";
       for (String path : myParentLoaders.keySet()) {
