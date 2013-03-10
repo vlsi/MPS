@@ -95,7 +95,10 @@ public abstract class BaseSModelDescriptor extends SModelBase implements jetbrai
   public void detach() {
     ModelAccess.assertLegalWrite();
     fireBeforeModelDisposed(this);
-    getCurrentModelInternal().dispose();
+    jetbrains.mps.smodel.SModel model = getCurrentModelInternal();
+    if (model != null) {
+      model.dispose();
+    }
     clearListeners();
   }
 
