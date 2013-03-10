@@ -113,7 +113,7 @@ public class ModuleClassLoader extends ClassLoader {
 
   private static boolean canLoadFromSelf(SModule module) {
     // todo: remove hack for classpath for compiled in idea modules and for this modules we got empty classpath so we don't need this hack
-    return !SModuleOperations.isCompileInIdea(module);
+    return ClassLoaderManager.getInstance().canLoad(module) && !SModuleOperations.isCompileInIdea(module);
   }
 
   private Class<?> findInSelfAndDependencies(String name) throws ClassNotFoundException {
