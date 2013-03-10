@@ -16,7 +16,6 @@
 package jetbrains.mps.classloading;
 
 import gnu.trove.THashMap;
-import gnu.trove.THashSet;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
@@ -25,11 +24,8 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionKind;
-import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
@@ -45,6 +41,7 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -59,16 +56,17 @@ public class ClassLoaderManager implements CoreComponent {
     return INSTANCE;
   }
 
+  private final Map<SModule, ModuleClassLoader> myClassLoaders = new HashMap<SModule, ModuleClassLoader>();
+  private final Map<SModule, Set<SModule>> myBackRefs = new HashMap<SModule, Set<SModule>>();
+
   private final Map<String, ModuleReference> myLoadedClasses = new THashMap<String, ModuleReference>();
   private List<ReloadListener> myReloadHandlers = new CopyOnWriteArrayList<ReloadListener>();
   private volatile boolean isReloadRequested;
 
   private final List<SModuleReference> myLoadedModules = new ArrayList<SModuleReference>();
 
-  private final Map<SModule, ModuleClassLoader> myModuleClassLoaders = new HashMap<SModule, ModuleClassLoader>();
-
+  // component stuff
   public ClassLoaderManager() {
-
   }
 
   @Override
@@ -84,11 +82,7 @@ public class ClassLoaderManager implements CoreComponent {
     INSTANCE = null;
   }
 
-  public void invalidateClasses(Iterable<? extends SModule> modules) {
-    // todo: call it!
-    myModuleClassLoaders.clear();
-  }
-
+  // main api
   public boolean canLoad(SModule module) {
     if (module instanceof Language || module instanceof Generator) {
       return true;
@@ -137,6 +131,7 @@ public class ClassLoaderManager implements CoreComponent {
     }
   }
 
+  // main internal method. use getClass instead
   public synchronized ModuleClassLoader getClassLoader(SModule module) {
     if (!canLoad(module)) {
       throw new IllegalArgumentException("Module " + module.getModuleName() + " can't load classes");
@@ -144,14 +139,57 @@ public class ClassLoaderManager implements CoreComponent {
     if (module instanceof Generator) {
       return getClassLoader(((Generator) module).getSourceLanguage());
     }
-    if (myModuleClassLoaders.containsKey(module)) {
-      return myModuleClassLoaders.get(module);
+    if (myClassLoaders.containsKey(module)) {
+      return myClassLoaders.get(module);
     }
     ModuleClassLoader classLoader = new ModuleClassLoader(module);
-    myModuleClassLoaders.put(module, classLoader);
+    // save back references
+    for (SModule dep : classLoader.getSupport().getCompileDependencies()) {
+      if (!myBackRefs.containsKey(dep)) {
+        myBackRefs.put(dep, new HashSet<SModule>());
+      }
+      myBackRefs.get(dep).add(module);
+    }
+    myClassLoaders.put(module, classLoader);
     return classLoader;
   }
 
+  // invalidate classes
+  // better - listen dependency changes && java facet changes on modules?
+  // for now - call this method from all places with important module modification
+  // + after modules make
+  public synchronized void invalidateClasses(Iterable<? extends SModule> modules) {
+    Set<SModule> toReload = collectBackReferences(modules);
+    // update back refs
+    for (Set<SModule> backRefs : myBackRefs.values()) {
+      backRefs.removeAll(toReload);
+    }
+    for (SModule module : toReload) {
+      myBackRefs.remove(module);
+    }
+    // clean myClassLoaders
+    for (SModule module : toReload) {
+      // here we update
+      myClassLoaders.get(module).dispose();
+      myClassLoaders.remove(module);
+    }
+  }
+
+  private Set<SModule> collectBackReferences(Iterable<? extends SModule> startModules) {
+    Set<SModule> modules = new HashSet<SModule>();
+    Set<SModule> queue = new HashSet<SModule>();
+    queue.addAll(modules);
+    while (!queue.isEmpty()) {
+      SModule module = queue.iterator().next();
+      if (!modules.contains(module)) {
+        modules.add(module);
+        queue.addAll(myBackRefs.get(module));
+      }
+    }
+    return modules;
+  }
+
+  // ext api
   public void reloadAll(@NotNull ProgressMonitor monitor) {
     LOG.assertCanWrite();
     isReloadRequested = false;
@@ -261,7 +299,6 @@ public class ClassLoaderManager implements CoreComponent {
   public void updateClassPath() {
     myLoadedClasses.clear();
     invalidateClasses(ModuleRepositoryFacade.getInstance().getAllModules(IModule.class));
-    ClassPathFactory.getInstance().invalidateAll();
   }
 
   public boolean isReloadRequested() {

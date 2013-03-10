@@ -49,6 +49,10 @@ public class ModuleClassLoaderSupport {
     }
   }
 
+  public IClassPathItem getClassPathItem() {
+    return classPathItem;
+  }
+
   public boolean canFindClass(String name) {
     return classPathItem.hasClass(name);
   }

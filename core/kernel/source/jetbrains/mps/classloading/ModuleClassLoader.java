@@ -21,6 +21,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ProtectionDomainUtil;
 import jetbrains.mps.util.iterable.IterableEnumeration;
@@ -39,6 +40,8 @@ import java.util.Set;
 
 public class ModuleClassLoader extends ClassLoader {
   private static final Logger LOG = Logger.getLogger(ModuleClassLoader.class);
+
+  private final Object myLock = new Object();
 
   //this is for debug purposes (heap dumps)
   @SuppressWarnings({"UnusedDeclaration", "FieldCanBeLocal"})
@@ -182,6 +185,11 @@ public class ModuleClassLoader extends ClassLoader {
 
   public void dispose() {
     myDisposed = true;
+    synchronized (myLock) {
+      if (mySupport != null) {
+        ClassPathFactory.getInstance().invalidate(mySupport.getClassPathItem());
+      }
+    }
   }
 
   public String toString() {
@@ -190,7 +198,10 @@ public class ModuleClassLoader extends ClassLoader {
 
   /* package */ ModuleClassLoaderSupport getSupport() {
     if (mySupport == null) {
-      mySupport = new ModuleClassLoaderSupport(myModule);
+      synchronized (myLock) {
+        // todo: if disposed here?
+        mySupport = new ModuleClassLoaderSupport(myModule);
+      }
     }
     return mySupport;
   }
