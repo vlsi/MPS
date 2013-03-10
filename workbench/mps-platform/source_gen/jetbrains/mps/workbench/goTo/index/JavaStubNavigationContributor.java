@@ -59,9 +59,7 @@ public class JavaStubNavigationContributor implements NodeNavigationContributor,
         }
       }
 
-      SModel md = (SModelInternal) model;
-      iterateClassPath(md.getModule().getModuleReference(), cp, res, SNodeOperations.getModelLongName(md));
-
+      iterateClassPath(model.getModule().getModuleReference(), cp, res, SNodeOperations.getModelLongName(model));
     }
     return res;
   }

@@ -74,7 +74,7 @@ public class EmbeddableEditor {
     myModel = ((EditableSModel) ProjectModels.createDescriptorFor(true));
     ((SModelInternal) smodel()).addDevKit(GeneralPurpose_DevKit.MODULE_REFERENCE);
     ((SModelInternal) smodel()).addLanguage(ModuleReference.fromString("d745e97c-8235-4470-b086-ba3da1f4c03c(jetbrains.mps.quickQueryLanguage)"));
-    SModelRepository.getInstance().registerModelDescriptor((SModelInternal) myModel, myOwner);
+    SModelRepository.getInstance().registerModelDescriptor(myModel, myOwner);
     setNode(node, true);
   }
 
@@ -237,7 +237,7 @@ public class EmbeddableEditor {
   }
 
   private final SModel smodel() {
-    return ((SModelInternal) myModel);
+    return ( myModel);
   }
 
   public void disposeEditor() {

@@ -80,7 +80,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
   protected void setUpNode(List<SNodeReference> nodesToImport) {
     EvaluationModule containerModule = (EvaluationModule) myContainerModule.resolve(myDebuggerRepository);
     // wanted to use resolve method here, but it was not implemented:( 
-    SModel containerModel = (SModelInternal) SModelRepository.getInstance().getModelDescriptor(myContainerModel);
+    SModel containerModel = SModelRepository.getInstance().getModelDescriptor(myContainerModel);
 
     setUpDependencies(containerModule, containerModel);
 

@@ -67,9 +67,8 @@ public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, 
         continue;
       }
       if (emd.isChanged()) {
-        SModel m = ((SModelInternal) md);
-        ListSequence.fromList(modifiedClasses).addSequence(ListSequence.fromList(SModelOperations.getNodes(m, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
-        ListSequence.fromList(modifiedInterfaces).addSequence(ListSequence.fromList(SModelOperations.getNodes(m, "jetbrains.mps.baseLanguage.structure.Interface")));
+        ListSequence.fromList(modifiedClasses).addSequence(ListSequence.fromList(SModelOperations.getNodes(( md), "jetbrains.mps.baseLanguage.structure.ClassConcept")));
+        ListSequence.fromList(modifiedInterfaces).addSequence(ListSequence.fromList(SModelOperations.getNodes(( md), "jetbrains.mps.baseLanguage.structure.Interface")));
       } else {
         SetSequence.fromSet(unModifiedModelFiles).addElement(VirtualFileUtils.getVirtualFile(modelFile));
       }

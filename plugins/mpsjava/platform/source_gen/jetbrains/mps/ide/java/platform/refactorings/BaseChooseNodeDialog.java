@@ -108,7 +108,7 @@ public abstract class BaseChooseNodeDialog extends DialogWrapper {
           ModelAccess.instance().runReadInEDT(new Runnable() {
             @Override
             public void run() {
-              initModelDescriptorNode(node, (SModelInternal) node.getUserObject());
+              initModelDescriptorNode(node, (SModel) node.getUserObject());
             }
           });
         }

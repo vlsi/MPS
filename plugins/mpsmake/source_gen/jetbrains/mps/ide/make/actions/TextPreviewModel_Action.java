@@ -90,7 +90,7 @@ public class TextPreviewModel_Action extends BaseAction {
 
   private boolean isUserEditableModel(SModel md, final Map<String, Object> _params) {
     // TODO SModelDescriptor cast 
-    if (!(SModelStereotype.isUserModel((SModelInternal) md))) {
+    if (!(SModelStereotype.isUserModel( md))) {
       return false;
     }
     return md instanceof EditableSModel && !(((EditableSModel) md).isReadOnly());

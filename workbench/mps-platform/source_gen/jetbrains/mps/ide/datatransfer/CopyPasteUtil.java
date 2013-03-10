@@ -199,18 +199,18 @@ public class CopyPasteUtil {
     }
   }
 
-  private static SModel copyModelProperties(SModel model) {
+  private static jetbrains.mps.smodel.SModel copyModelProperties(SModel model) {
     SModelReference modelReference = model.getReference();
     SModelFqName fqName = new SModelFqName(modelReference.getLongName(), SModelStereotype.INTERNAL_COPY);
-    SModel newModel = new jetbrains.mps.smodel.SModel(new SModelReference(fqName, SModelId.generate()));
+    jetbrains.mps.smodel.SModel newModel = new jetbrains.mps.smodel.SModel(new SModelReference(fqName, SModelId.generate()));
     for (ModuleReference language : ((SModelInternal) model).importedLanguages()) {
-      ((SModelInternal) newModel).addLanguage(language);
+      ( newModel).addLanguage(language);
     }
     for (SModelReference importedModel : SModelOperations.getImportedModelUIDs(model)) {
-      ((SModelInternal) newModel).addModelImport(importedModel, false);
+      ( newModel).addModelImport(importedModel, false);
     }
     for (ModuleReference devKit : ((SModelInternal) model).importedDevkits()) {
-      ((SModelInternal) newModel).addDevKit(devKit);
+      ( newModel).addDevKit(devKit);
     }
     return newModel;
   }

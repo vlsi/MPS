@@ -38,7 +38,7 @@ public class GenerationResult implements IClassesData {
   }
 
   public SModel getModelDescriptor() {
-    return (SModelInternal) myModel;
+    return  myModel;
   }
 
   public boolean isSuccessful() {

@@ -150,7 +150,7 @@ public class EvaluationContainer implements IEvaluationContainer {
 
   protected void setUpNode(List<SNodeReference> nodesToImport) {
     // wanted to use resolve method here, but it was not implemented:( 
-    SModel containerModel = (SModelInternal) myContainerModel.resolve(MPSModuleRepository.getInstance());
+    SModel containerModel =  myContainerModel.resolve(MPSModuleRepository.getInstance());
 
     SNode evaluatorNode = createEvaluatorNode();
     containerModel.addRootNode(evaluatorNode);

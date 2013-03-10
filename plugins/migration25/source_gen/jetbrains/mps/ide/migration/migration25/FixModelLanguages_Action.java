@@ -71,7 +71,7 @@ public class FixModelLanguages_Action extends BaseAction {
             continue;
           }
 
-          SModel m = ((SModelInternal) md);
+          SModel m = ( md);
           for (SNode node : SModelOperations.getNodes(m, null)) {
             Language l = ((Language) node.getConcept().getLanguage().getModule());
             ModuleReference lr = l.getModuleReference();

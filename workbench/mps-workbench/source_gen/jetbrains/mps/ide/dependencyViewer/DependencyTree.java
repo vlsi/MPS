@@ -40,7 +40,7 @@ public class DependencyTree extends MPSTree {
       root.add(ProjectModuleTreeNode.createFor(myProject, module));
     }
     for (SModel model : myScope.getModels()) {
-      SModelTreeNode node = new SModelTreeNode((SModelInternal) model, null, new ModuleContext((IModule) model.getModule(), myProject));
+      SModelTreeNode node = new SModelTreeNode( model, null, new ModuleContext((IModule) model.getModule(), myProject));
       root.add(node);
     }
     for (SNode node : myScope.getRoots()) {

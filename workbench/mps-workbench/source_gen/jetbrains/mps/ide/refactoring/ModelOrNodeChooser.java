@@ -40,7 +40,7 @@ public class ModelOrNodeChooser extends JBScrollPane implements ModelElementTarg
             if (initialValue instanceof SNode) {
               treeNode = myHelper.findMostSuitableSNodeTreeNode(((SNode) initialValue));
             } else if (initialValue instanceof SModel) {
-              treeNode = myHelper.findMostSuitableModelTreeNode(((SModelInternal) initialValue));
+              treeNode = myHelper.findMostSuitableModelTreeNode(((SModel) initialValue));
             }
             if (treeNode == null) {
               return;
