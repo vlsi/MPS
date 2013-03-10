@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.classloading.ClassLoadingModule;
 import jetbrains.mps.classloading.ModuleClassesLocator;
 import org.jetbrains.mps.openapi.model.SModel;
 
@@ -53,7 +52,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class Language extends ClassLoadingModule implements MPSModuleOwner {
+public class Language extends AbstractModule implements MPSModuleOwner {
   private static final Logger LOG = Logger.getLogger(Language.class);
 
   public static final String LANGUAGE_MODELS = "languageModels";

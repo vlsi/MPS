@@ -31,7 +31,6 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.classloading.IClassLoadingModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.CollectionUtil;

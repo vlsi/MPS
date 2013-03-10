@@ -46,9 +46,4 @@ public class StubSolution extends Solution {
   protected SolutionDescriptor loadDescriptor() {
     return getModuleDescriptor();
   }
-
-  @Override
-  public boolean canLoadFromSelf() {
-    return false;
-  }
 }

@@ -33,7 +33,6 @@ import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.classloading.IClassLoadingModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;

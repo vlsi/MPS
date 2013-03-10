@@ -17,7 +17,6 @@ package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.classloading.ClassLoadingModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;

@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.classloading;
 
-import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.reloading.IClassPathItem;
@@ -46,7 +45,7 @@ public class ModuleClassesLocator {
 
   private IClassPathItem getClassPathItem() {
     // todo: cache it
-    return JavaModuleOperations.createClassPathItem(getTargetModule().getFacet(JavaModuleFacet.class).getClassPath(), ClassLoadingModule.class.getName());
+    return JavaModuleOperations.createClassPathItem(getTargetModule().getFacet(JavaModuleFacet.class).getClassPath(), ModuleClassesLocator.class.getName());
   }
 
   private SModule getTargetModule() {

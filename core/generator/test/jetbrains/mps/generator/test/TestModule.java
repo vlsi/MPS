@@ -16,13 +16,11 @@
 package jetbrains.mps.generator.test;
 
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.classloading.ClassLoadingModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.dependency.modules.DependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.classloading.IClassLoadingModule;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -40,7 +38,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * Evgeny Gryaznov, 10/18/10
  */
-public class TestModule extends ClassLoadingModule {
+public class TestModule extends AbstractModule {
 
   private IModule myPeer;
   private Map<SModelFqName, SModel> myModels = new ConcurrentHashMap<SModelFqName, SModel>();

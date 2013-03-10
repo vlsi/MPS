@@ -24,14 +24,11 @@ import jetbrains.mps.project.dependency.modules.GeneratorDependenciesManager;
 import jetbrains.mps.project.dependency.modules.ModuleDependenciesManager;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.project.structure.modules.mappingpriorities.*;
-import jetbrains.mps.classloading.IClassLoadingModule;
-import jetbrains.mps.classloading.ModuleClassLoader;
 import jetbrains.mps.vfs.IFile;
 
-import java.net.URL;
 import java.util.*;
 
-public class Generator extends AbstractModule implements IClassLoadingModule {
+public class Generator extends AbstractModule {
   public static final Logger LOG = Logger.getLogger(Generator.class);
 
   static {
@@ -60,11 +57,6 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
 
     upgradeGeneratorDescriptor();
     reloadAfterDescriptorChange();
-  }
-
-  @Override
-  public Iterable<IClassLoadingModule> getClassLoadingDependencies() {
-    throw new UnsupportedOperationException();
   }
 
   private void upgradeGeneratorDescriptor() {
@@ -241,12 +233,6 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
       }
     }
     return result;
-  }
-
-  // classloading part
-  @Override
-  public boolean canLoadFromSelf() {
-    return true;
   }
 
   @Override

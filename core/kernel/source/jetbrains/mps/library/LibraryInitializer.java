@@ -21,7 +21,6 @@ import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.library.contributor.LibraryContributor.LibDescriptor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.classloading.IClassLoadingModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.language.ExtensionRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;

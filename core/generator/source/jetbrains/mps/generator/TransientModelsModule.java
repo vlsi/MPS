@@ -17,7 +17,7 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.TransientModelsProvider.TransientSwapSpace;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.classloading.ClassLoadingModule;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
@@ -32,7 +32,7 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class TransientModelsModule extends ClassLoadingModule {
+public class TransientModelsModule extends AbstractModule {
   private static final Logger LOG = Logger.getLogger(TransientModelsModule.class);
 
   private static final AtomicInteger ourModuleCounter = new AtomicInteger();

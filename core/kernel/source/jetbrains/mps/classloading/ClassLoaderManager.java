@@ -16,13 +16,17 @@
 package jetbrains.mps.classloading;
 
 import gnu.trove.THashMap;
+import gnu.trove.THashSet;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.reloading.ClassPathFactory;
@@ -41,8 +45,10 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ClassLoaderManager implements CoreComponent {
@@ -62,6 +68,9 @@ public class ClassLoaderManager implements CoreComponent {
 
   private final Map<SModule, ModuleClassLoader> myModuleClassLoaders = new HashMap<SModule, ModuleClassLoader>();
 
+  // extract to "support" classes like locator?
+  private Map<SModule, Set<SModule>> myClassLoadingDepsCache = new HashMap<SModule, Set<SModule>>();
+
   public ClassLoaderManager() {
 
   }
@@ -77,6 +86,12 @@ public class ClassLoaderManager implements CoreComponent {
   @Override
   public void dispose() {
     INSTANCE = null;
+  }
+
+  public void invalidateClasses(Iterable<? extends SModule> modules) {
+    // todo: call it!
+    myModuleClassLoaders.clear();
+    myClassLoadingDepsCache.clear();
   }
 
   public boolean canLoad(SModule module) {
@@ -137,7 +152,7 @@ public class ClassLoaderManager implements CoreComponent {
     if (myModuleClassLoaders.containsKey(module)) {
       return myModuleClassLoaders.get(module);
     }
-    ModuleClassLoader classLoader = new ModuleClassLoader((IClassLoadingModule) module);
+    ModuleClassLoader classLoader = new ModuleClassLoader(module);
     myModuleClassLoaders.put(module, classLoader);
     return classLoader;
   }
@@ -250,9 +265,7 @@ public class ClassLoaderManager implements CoreComponent {
 
   public void updateClassPath() {
     myLoadedClasses.clear();
-    for (ClassLoadingModule m : ModuleRepositoryFacade.getInstance().getAllModules(ClassLoadingModule.class)) {
-      m.invalidateClasses();
-    }
+    invalidateClasses(ModuleRepositoryFacade.getInstance().getAllModules(IModule.class));
     ClassPathFactory.getInstance().invalidateAll();
   }
 
@@ -264,6 +277,19 @@ public class ClassLoaderManager implements CoreComponent {
     LOG.assertCanWrite();
 
     isReloadRequested = true;
+  }
+
+  public synchronized Iterable<SModule> getClassLoadingDependencies(SModule module) {
+    if (!myClassLoadingDepsCache.containsKey(module)) {
+      Set<SModule> classLoadingDepsCache = new THashSet<SModule>();
+      classLoadingDepsCache.add(module);
+      for (IModule m : new GlobalModuleDependenciesManager(module).getModules(Deptype.COMPILE)) {
+        classLoadingDepsCache.add(m);
+      }
+      myClassLoadingDepsCache.put(module, classLoadingDepsCache);
+      return classLoadingDepsCache;
+    }
+    return myClassLoadingDepsCache.get(module);
   }
 
   //---------------reload handlers------------------

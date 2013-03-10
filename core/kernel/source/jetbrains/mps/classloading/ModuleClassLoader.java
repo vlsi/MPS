@@ -16,10 +16,15 @@
 package jetbrains.mps.classloading;
 
 import gnu.trove.THashMap;
+import gnu.trove.THashSet;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModuleOperations;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ProtectionDomainUtil;
 import jetbrains.mps.vfs.IFile;
@@ -42,13 +47,13 @@ public class ModuleClassLoader extends ClassLoader {
   //this is for debug purposes (heap dumps)
   @SuppressWarnings({"UnusedDeclaration", "FieldCanBeLocal"})
   private boolean myDisposed;
-  private IClassLoadingModule myModule;
+  private SModule myModule;
 
   //This must be thread-safe. This does not include results of parent classloader
   private final Map<String, Class> myClasses = Collections.synchronizedMap(new THashMap<String, Class>());
 
-  public ModuleClassLoader(IClassLoadingModule module) {
-    super(getParentPluginClassLoader((SModule) module));
+  public ModuleClassLoader(SModule module) {
+    super(getParentPluginClassLoader(module));
     myModule = module;
   }
 
@@ -85,7 +90,7 @@ public class ModuleClassLoader extends ClassLoader {
   }
 
   private synchronized Class<?> loadFromSelf(String name) {
-    if (myModule.canLoadFromSelf()) {
+    if (canLoadFromSelf(myModule)) {
       Class c = findLoadedClass(name);
       if (c != null) return c;
 
@@ -95,7 +100,7 @@ public class ModuleClassLoader extends ClassLoader {
         if (getPackage(pack) == null) {
           definePackage(pack, null, null, null, null, null, null, null);
         }
-        ClassLoaderManager.getInstance().classLoaded(name, ((ClassLoadingModule) myModule).getModuleReference());
+        ClassLoaderManager.getInstance().classLoaded(name, (ModuleReference) myModule.getModuleReference());
         return defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain());
       }
     }
@@ -106,6 +111,11 @@ public class ModuleClassLoader extends ClassLoader {
     return Class.forName(name, false, getParent());
   }
 
+  private static boolean canLoadFromSelf(SModule module) {
+    // todo: remove hack for classpath for compiled in idea modules and for this modules we got empty classpath so we don't need this hack
+    return !SModuleOperations.isCompileInIdea(module);
+  }
+
   private Class<?> findInSelfAndDependencies(String name) throws ClassNotFoundException {
     //from self
     Class c = loadFromSelf(name);
@@ -114,15 +124,15 @@ public class ModuleClassLoader extends ClassLoader {
     }
 
     //from dependencies (try modules only)
-    List<IClassLoadingModule> queue = new ArrayList<IClassLoadingModule>();
-    for (IClassLoadingModule m : myModule.getClassLoadingDependencies()) {
+    List<SModule> queue = new ArrayList<SModule>();
+    for (SModule m : ClassLoaderManager.getInstance().getClassLoadingDependencies(myModule)) {
       if (m.equals(myModule)) continue;
       // todo: wrong now
-      if (!ClassLoaderManager.getInstance().canLoad((SModule) myModule)) continue;
+      if (!ClassLoaderManager.getInstance().canLoad(myModule)) continue;
 
-      if (m.canLoadFromSelf() && getLocator().canFindClass(name)) {
+      if (canLoadFromSelf(m) && getLocator().canFindClass(name)) {
         //here it will load with self, with any values as two last parameters
-        return Class.forName(name, false, ClassLoaderManager.getInstance().getClassLoader((SModule) m));
+        return Class.forName(name, false, ClassLoaderManager.getInstance().getClassLoader(m));
       } else {
         queue.add(m);
       }
@@ -130,11 +140,11 @@ public class ModuleClassLoader extends ClassLoader {
 
     //from dependencies (try parent class loaders also)
     Set<ClassLoader> processedParentClassLoaders = new HashSet<ClassLoader>();
-    for (IClassLoadingModule m : queue) {
+    for (SModule m : queue) {
       try {
         ModuleClassLoader classLoader = ClassLoaderManager.getInstance().getClassLoader((SModule) m);
         if (classLoader == null) {
-          LOG.warning("Null classloader for module with canLoad() = true; module name: " + ((SModule) m).getModuleName() + "; module class " + m.getClass());
+          LOG.warning("Null classloader for module with canLoad() = true; module name: " + m.getModuleName() + "; module class " + m.getClass());
           continue;
         }
         if (processedParentClassLoaders.contains(classLoader.getParent())) {
@@ -151,8 +161,8 @@ public class ModuleClassLoader extends ClassLoader {
 
   @Override
   protected URL findResource(String name) {
-    for (IClassLoadingModule m : myModule.getClassLoadingDependencies()) {
-      URL res = getLocator().findResource(name);
+    for (SModule m : ClassLoaderManager.getInstance().getClassLoadingDependencies((SModule) myModule)) {
+      URL res = ClassLoaderManager.getInstance().getClassLoader(m).getLocator().findResource(name);
       if (res == null) continue;
       return res;
     }
@@ -163,8 +173,8 @@ public class ModuleClassLoader extends ClassLoader {
   @Override
   protected Enumeration<URL> findResources(String name) throws IOException {
     ArrayList<URL> result = new ArrayList<URL>();
-    for (IClassLoadingModule m : myModule.getClassLoadingDependencies()) {
-      URL res = getLocator().findResource(name);
+    for (SModule m : ClassLoaderManager.getInstance().getClassLoadingDependencies((SModule) myModule)) {
+      URL res = ClassLoaderManager.getInstance().getClassLoader(m).getLocator().findResource(name);
       if (res == null) continue;
       result.add(res);
     }
