@@ -1167,8 +1167,7 @@ public class SModel implements SModelData {
     private SModel myModel;
 
     public FakeModelDescriptor(@NotNull SModel md) {
-      super(new SModelReference(jetbrains.mps.util.SNodeOperations.getModelLongName(md.getModelDescriptor()),
-          jetbrains.mps.util.SNodeOperations.getModelStereotype(md.getModelDescriptor())), new NullDataSource());
+      super(md.getReference(), new NullDataSource());
       myModel = md;
     }
 

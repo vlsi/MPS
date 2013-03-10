@@ -118,7 +118,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   @Override
   public SRepository getRepository() {
-    org.jetbrains.mps.openapi.model.SModel model = getModel();
+    org.jetbrains.mps.openapi.model.SModel model = internal_getModel();
     return model == null ? null : model.getRepository();
   }
 
@@ -808,7 +808,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return internal_getModel();
   }
 
-  private SModelInternal internal_getModel() {
+  private SModelDescriptor internal_getModel() {
     return myModel == null ? null : myModel.getModelDescriptor();
   }
 
@@ -900,7 +900,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   private void assertDisposed() {
     //this is only while exceptions are not fixed
     //actually, detached models should not be distinguishable by some "disposed" property
-    if (myModel == null || !jetbrains.mps.util.SNodeOperations.isModelDisposed(getModel())) return;
+    if (myModel == null || !jetbrains.mps.util.SNodeOperations.isModelDisposed(internal_getModel() )) return;
 
     String modelName = jetbrains.mps.util.SNodeOperations.getModelLongName(getModel());
     if (ourErroredModels.add(modelName)) {
