@@ -47,8 +47,8 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
 
   @Override
   public void save() {
-    org.jetbrains.mps.openapi.model.SModel model = getSModelInternal();
-    for (SNode tf : ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.samples.plainText.structure.TextFile"))) {
+    SModel model = getSModelInternal();
+    for (SNode tf : ListSequence.fromList(SModelOperations.getRoots(model.getModelDescriptor(), "jetbrains.mps.samples.plainText.structure.TextFile"))) {
       try {
         OutputStream os = ((MultiStreamDataSource) getSource()).openOutputStream(SPropertyOperations.getString(tf, "name"));
         os.write(SPropertyOperations.getString(tf, "text").getBytes());
@@ -117,8 +117,8 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
   public void reloadFromDisk() {
     ModelAccess.assertLegalWrite();
 
-    org.jetbrains.mps.openapi.model.SModel old = myModel;
-    notifyModelReplaced(old);
+    SModel old = myModel;
+    notifyModelReplaced(old.getModelDescriptor());
 
     check_bp2jat_a5a31(((SModelInternal) old));
 

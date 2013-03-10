@@ -45,10 +45,10 @@ public class GWTStubsSource extends FolderSetDataSource implements FastFindSuppo
   }
 
   @Override
-  public SModel loadSModel(IModule module, SModel descriptor) {
-    SModel model = new jetbrains.mps.smodel.SModel(descriptor.getReference(), new ForeignNodeIdMap());
+  public jetbrains.mps.smodel.SModel loadSModel(IModule module, SModel descriptor) {
+    jetbrains.mps.smodel.SModel model = new jetbrains.mps.smodel.SModel(descriptor.getReference(), new ForeignNodeIdMap());
     ModuleReference lang = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("954c4d77-e24b-4e49-a5a5-5476c966c092")).getModuleReference();
-    ((SModelInternal) model).addLanguage(lang);
+    ( model).addLanguage(lang);
 
     String pkg = model.getReference().getSModelFqName().getLongName();
     PathItem pi = GWTModulePathItem.getPathItem(path);
