@@ -87,7 +87,7 @@ public class SModelEventProcessor {
     @Override
     protected void invalidateNode(SNode sNode) {
       NodePath affPath = NodePath.forSNode(sNode);
-      SModel containingModel = sNode.getContainingModel();
+      SModel containingModel = sNode.getModel();
       if (containingModel == null) return;
 
       SModelReference mref = containingModel.getReference();
