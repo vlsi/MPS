@@ -54,7 +54,7 @@ public class JavaClassStubModelDescriptor extends BaseSModelDescriptorWithSource
   public synchronized SModel getSModelInternal() {
     if (myModel == null) {
       myModel = createModel();
-      ((SModelInternal) myModel).setModelDescriptor(this);
+      ( myModel).setModelDescriptor(this);
       fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
     }
     return myModel;
