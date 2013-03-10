@@ -40,6 +40,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -58,6 +59,8 @@ public class ClassLoaderManager implements CoreComponent {
   private volatile boolean isReloadRequested;
 
   private final List<SModuleReference> myLoadedModules = new ArrayList<SModuleReference>();
+
+  private final Map<SModule, ModuleClassLoader> myModuleClassLoaders = new HashMap<SModule, ModuleClassLoader>();
 
   public ClassLoaderManager() {
 
@@ -95,11 +98,8 @@ public class ClassLoaderManager implements CoreComponent {
     if (!canLoad(module)) {
       throw new IllegalArgumentException("Module " + module.getModuleName() + " can't load classes");
     }
-    // todo: =(
-    if (module instanceof Generator) {
-      return getClass(((Generator) module).getSourceLanguage(), classFqName);
-    }
     // todo: hack for stubs
+    // todo: move it! stub classes should not be managed by ClassLoaderManager
     if (module instanceof Language) {
       if (classFqName.startsWith(module.getModuleName() + ".stubs.")) {
         try {
@@ -127,11 +127,19 @@ public class ClassLoaderManager implements CoreComponent {
     }
   }
 
-  public ModuleClassLoader getClassLoader(SModule module) {
+  public synchronized ModuleClassLoader getClassLoader(SModule module) {
     if (!canLoad(module)) {
       throw new IllegalArgumentException("Module " + module.getModuleName() + " can't load classes");
     }
-    return ((ClassLoadingModule) module).getClassLoader();
+    if (module instanceof Generator) {
+      return getClassLoader(((Generator) module).getSourceLanguage());
+    }
+    if (myModuleClassLoaders.containsKey(module)) {
+      return myModuleClassLoaders.get(module);
+    }
+    ModuleClassLoader classLoader = new ModuleClassLoader((IClassLoadingModule) module);
+    myModuleClassLoaders.put(module, classLoader);
+    return classLoader;
   }
 
   public void reloadAll(@NotNull ProgressMonitor monitor) {

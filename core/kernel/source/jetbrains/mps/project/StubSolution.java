@@ -51,9 +51,4 @@ public class StubSolution extends Solution {
   public boolean canLoadFromSelf() {
     return false;
   }
-
-  @Override
-  public ModuleClassLoader getClassLoader() {
-    return null;
-  }
 }

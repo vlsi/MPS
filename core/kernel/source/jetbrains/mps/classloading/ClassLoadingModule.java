@@ -61,11 +61,6 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
 
   //can be used only from ModuleClassLoader
   @Override
-  public ModuleClassLoader getClassLoader() {
-    return myClassLoader;
-  }
-
-  @Override
   public Iterable<IClassLoadingModule> getClassLoadingDependencies() {
     synchronized (LOCK) {
       if (myClassLoadingDepsCache == null) {

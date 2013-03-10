@@ -245,11 +245,6 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
 
   // classloading part
   @Override
-  public ModuleClassLoader getClassLoader() {
-    return mySourceLanguage.getClassLoader();
-  }
-
-  @Override
   public boolean canLoadFromSelf() {
     return true;
   }

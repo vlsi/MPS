@@ -19,11 +19,6 @@ public interface IClassLoadingModule {
   //should include self
   Iterable<IClassLoadingModule> getClassLoadingDependencies();
 
-  //---class
-  Class getClass(String className);
-
-  ModuleClassLoader getClassLoader();
-
   boolean canLoadFromSelf();
 
   boolean canLoad();

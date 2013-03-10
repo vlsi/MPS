@@ -120,7 +120,7 @@ public class ModuleClassLoader extends ClassLoader {
 
       if (m.canLoadFromSelf() && getLocator().canFindClass(name)) {
         //here it will load with self, with any values as two last parameters
-        return Class.forName(name, false, m.getClassLoader());
+        return Class.forName(name, false, ClassLoaderManager.getInstance().getClassLoader((SModule) m));
       } else {
         queue.add(m);
       }
@@ -130,7 +130,7 @@ public class ModuleClassLoader extends ClassLoader {
     Set<ClassLoader> processedParentClassLoaders = new HashSet<ClassLoader>();
     for (IClassLoadingModule m : queue) {
       try {
-        ModuleClassLoader classLoader = m.getClassLoader();
+        ModuleClassLoader classLoader = ClassLoaderManager.getInstance().getClassLoader((SModule) m);
         if (classLoader == null) {
           LOG.warning("Null classloader for module with canLoad() = true; module name: " + ((SModule) m).getModuleName() + "; module class " + m.getClass());
           continue;
