@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.MPSCore;
-import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.logging.Logger;
@@ -1164,10 +1163,12 @@ public class SModel implements SModelData {
   /**
    * This is for migration purposes, until we get rid of SModel class
    */
-  public static class FakeModelDescriptor implements org.jetbrains.mps.openapi.model.SModel, SModelDescriptor, SModelInternal {
+  public static class FakeModelDescriptor extends BaseSModelDescriptor implements org.jetbrains.mps.openapi.model.SModel, SModelDescriptor, SModelInternal {
     private SModel myModel;
 
     public FakeModelDescriptor(@NotNull SModel md) {
+      super(new SModelReference(jetbrains.mps.util.SNodeOperations.getModelLongName(md.getModelDescriptor()),
+          jetbrains.mps.util.SNodeOperations.getModelStereotype(md.getModelDescriptor())), new NullDataSource());
       myModel = md;
     }
 
@@ -1204,6 +1205,11 @@ public class SModel implements SModelData {
     @Override
     public String getStereotype() {
       return getReference().getStereotype();
+    }
+
+    @Override
+    protected SModel getCurrentModelInternal() {
+      return myModel;
     }
 
     @Override
@@ -1322,6 +1328,11 @@ public class SModel implements SModelData {
     @Override
     public void unload() {
       throw new UnsupportedOperationException("remove exception if excess");
+    }
+
+    @Override
+    public SModel getSModelInternal() {
+      return myModel;
     }
 
     @Override
