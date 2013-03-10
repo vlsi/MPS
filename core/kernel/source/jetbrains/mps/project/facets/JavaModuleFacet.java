@@ -40,4 +40,7 @@ public interface JavaModuleFacet extends SModuleFacet {
   Set<String> getClassPath();
 
   Set<String> getAdditionalSourcePaths();
+
+  // java libraries, for mbeddr? moved from IClassLoadingModule
+  String findLibrary(String name);
 }

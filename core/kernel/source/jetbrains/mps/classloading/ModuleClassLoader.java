@@ -18,6 +18,7 @@ package jetbrains.mps.classloading;
 import gnu.trove.THashMap;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ProtectionDomainUtil;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -163,7 +164,7 @@ public class ModuleClassLoader extends ClassLoader {
   @Override
   protected String findLibrary(String name) {
     for (IClassLoadingModule m : myModule.getClassLoadingDependencies()) {
-      String res = m.findLibrary(name);
+      String res = SModuleOperations.getJavaFacet((SModule) m).findLibrary(name);
       if (res == null) continue;
       return res;
     }

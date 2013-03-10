@@ -283,7 +283,7 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
 
   @Override
   public String findLibrary(String name) {
-    return mySourceLanguage.findLibrary(name);
+    return SModuleOperations.getJavaFacet(this).findLibrary(name);
   }
 
   @Override

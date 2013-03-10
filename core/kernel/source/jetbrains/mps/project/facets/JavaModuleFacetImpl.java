@@ -114,4 +114,9 @@ public class JavaModuleFacetImpl extends ModuleFacetBase implements JavaModuleFa
 
     return new HashSet<String>(moduleDescriptor.getSourcePaths());
   }
+
+  @Override
+  public String findLibrary(String name) {
+    return null;
+  }
 }

@@ -19,12 +19,12 @@ import gnu.trove.THashSet;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.vfs.IFile;
 
 import java.net.URL;
@@ -89,7 +89,7 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
 
   @Override
   public String findLibrary(String name) {
-    return null;
+    return SModuleOperations.getJavaFacet(this).findLibrary(name);
   }
 
   @Override
