@@ -431,7 +431,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       @Override
       public Boolean compute() {
         final SNode editedNode = component.getEditedNode();
-        if (editedNode != null && !jetbrains.mps.util.SNodeOperations.isDisposed(editedNode)) {
+        if (editedNode != null && editedNode.isInRepository()) {
           final Set<BaseEditorChecker> checkersToRecheck = new LinkedHashSet<BaseEditorChecker>();
           boolean rootWasCheckedOnce = wasCheckedOnce(component);
           if (!rootWasCheckedOnce) {
