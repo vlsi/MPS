@@ -707,7 +707,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   in this case, isDisposed() can be replaced with false
    */
   public boolean isDisposed() {
-    return myModel != null && jetbrains.mps.util.SNodeOperations.isModelDisposed(myModel);
+    return myModel != null && jetbrains.mps.util.SNodeOperations.isModelDisposed(internal_getModel());
   }
 
   public void setId(@Nullable org.jetbrains.mps.openapi.model.SNodeId id) {
@@ -801,6 +801,10 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
     fireNodeReadAccess();
 
+    return internal_getModel();
+  }
+
+  private SModelInternal internal_getModel() {
     return myModel == null ? null : myModel.getModelDescriptor();
   }
 
