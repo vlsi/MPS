@@ -67,7 +67,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
 
     // pre-loading model to avoid deadlock (model loading process requires a lock)
     // model cannot be unloaded afterwards, because we have model read access
-    ((jetbrains.mps.smodel.SModel) myModel).enforceFullLoad();
+    ((BaseSModelDescriptor) myModel).getSModelInternal().enforceFullLoad();
 
     synchronized (myLock) {
       if (!myInitialized) {
