@@ -79,7 +79,7 @@ public class ModuleClassLoader extends ClassLoader {
       Class c = findLoadedClass(name);
       if (c != null) return c;
 
-      byte[] bytes = myModule.findClassBytes(name);
+      byte[] bytes = getLocator().findClassBytes(name);
       if (bytes != null) {
         String pack = NameUtil.namespaceFromLongName(name);
         if (getPackage(pack) == null) {
@@ -109,7 +109,7 @@ public class ModuleClassLoader extends ClassLoader {
       if (m.equals(myModule)) continue;
       if (!m.canLoad()) continue;
 
-      if (m.canLoadFromSelf() && m.canFindClass(name)) {
+      if (m.canLoadFromSelf() && getLocator().canFindClass(name)) {
         //here it will load with self, with any values as two last parameters
         return Class.forName(name, false, m.getClassLoader());
       } else {
@@ -141,7 +141,7 @@ public class ModuleClassLoader extends ClassLoader {
   @Override
   protected URL findResource(String name) {
     for (IClassLoadingModule m : myModule.getClassLoadingDependencies()) {
-      URL res = m.findResource(name);
+      URL res = getLocator().findResource(name);
       if (res == null) continue;
       return res;
     }
@@ -153,7 +153,7 @@ public class ModuleClassLoader extends ClassLoader {
   protected Enumeration<URL> findResources(String name) throws IOException {
     ArrayList<URL> result = new ArrayList<URL>();
     for (IClassLoadingModule m : myModule.getClassLoadingDependencies()) {
-      URL res = m.findResource(name);
+      URL res = getLocator().findResource(name);
       if (res == null) continue;
       result.add(res);
     }
@@ -170,6 +170,10 @@ public class ModuleClassLoader extends ClassLoader {
     }
 
     return null;
+  }
+
+  private ModuleClassesLocator getLocator() {
+    return new ModuleClassesLocator((SModule) myModule);
   }
 
   public void dispose() {

@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.classloading;
 
-import java.net.URL;
-
 public interface IClassLoadingModule {
   //should include self
   Iterable<IClassLoadingModule> getClassLoadingDependencies();
@@ -26,21 +24,9 @@ public interface IClassLoadingModule {
   //---class
   Class getClass(String className);
 
-  boolean canFindClass(String name);
-
-  byte[] findClassBytes(String name);
-
   ModuleClassLoader getClassLoader();
 
   boolean canLoadFromSelf();
 
   boolean canLoad();
-
-  //---resource
-
-  URL findResource(String name);
-
-  //---library
-
-  String findLibrary(String name);
 }

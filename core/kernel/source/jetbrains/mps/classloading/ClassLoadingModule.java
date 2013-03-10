@@ -73,26 +73,6 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
   }
 
   @Override
-  public boolean canFindClass(String name) {
-    return createClassPathItem().hasClass(name);
-  }
-
-  @Override
-  public byte[] findClassBytes(String name) {
-    return createClassPathItem().getClass(name);
-  }
-
-  @Override
-  public URL findResource(String name) {
-    return createClassPathItem().getResource(name);
-  }
-
-  @Override
-  public String findLibrary(String name) {
-    return SModuleOperations.getJavaFacet(this).findLibrary(name);
-  }
-
-  @Override
   public Iterable<IClassLoadingModule> getClassLoadingDependencies() {
     synchronized (LOCK) {
       if (myClassLoadingDepsCache == null) {
@@ -105,10 +85,6 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
       }
       return myClassLoadingDepsCache;
     }
-  }
-
-  private IClassPathItem createClassPathItem() {
-    return JavaModuleOperations.createClassPathItem(getFacet(JavaModuleFacet.class).getClassPath(), ClassLoadingModule.class.getName());
   }
 
   @Override

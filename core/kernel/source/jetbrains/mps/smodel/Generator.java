@@ -250,18 +250,6 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
 
   // classloading part
   @Override
-  public boolean canFindClass(String name) {
-//    return mySourceLanguage.canFindClass(name);
-    throw new UnsupportedOperationException();
-  }
-
-  @Override
-  public byte[] findClassBytes(String name) {
-//    return mySourceLanguage.findClassBytes(name);
-    throw new UnsupportedOperationException();
-  }
-
-  @Override
   public ModuleClassLoader getClassLoader() {
     return mySourceLanguage.getClassLoader();
   }
@@ -274,16 +262,6 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
   @Override
   public boolean canLoad() {
     return true;
-  }
-
-  @Override
-  public URL findResource(String name) {
-    return mySourceLanguage.findResource(name);
-  }
-
-  @Override
-  public String findLibrary(String name) {
-    return SModuleOperations.getJavaFacet(this).findLibrary(name);
   }
 
   @Override
