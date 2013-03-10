@@ -167,7 +167,7 @@ public class TestModule extends ClassLoadingModule {
 
     @Override
     public jetbrains.mps.smodel.SModel createModel() {
-      Document document = ModelPersistence.saveModel(myToCopy);
+      Document document = ModelPersistence.saveModel(((BaseSModelDescriptor) myToCopy).getSModelInternal());
       Element rootElement = document.getRootElement();
       rootElement.setAttribute(ModelPersistence.MODEL_UID, getSModelReference().toString());
       String modelContent = JDOMUtil.asString(document);

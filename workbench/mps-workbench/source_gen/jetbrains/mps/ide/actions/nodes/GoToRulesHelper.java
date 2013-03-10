@@ -67,13 +67,9 @@ public class GoToRulesHelper {
     if (typesystem == null) {
       return Collections.emptyList();
     }
-    SModel typesystemModel = ((SModelInternal) typesystem);
-    if (typesystemModel == null) {
-      return Collections.emptyList();
-    }
 
     // todo: populate rules from other typesystem models! 
-    List<SNode> rules = ListSequence.fromList(SModelOperations.getRoots(typesystemModel, "jetbrains.mps.lang.typesystem.structure.AbstractRule")).where(new IWhereFilter<SNode>() {
+    List<SNode> rules = ListSequence.fromList(SModelOperations.getRoots(typesystem, "jetbrains.mps.lang.typesystem.structure.AbstractRule")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode node) {
         return isApplicable(node, concept, exactConcept);
       }

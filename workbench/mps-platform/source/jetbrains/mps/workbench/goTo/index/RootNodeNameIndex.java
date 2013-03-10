@@ -52,10 +52,10 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<List<S
   @NonNls
   public static final ID<Integer, List<SNodeDescriptor>> NAME = ID.create("RootNodeNameIndex2");
   private static final Logger LOG = Logger.getLogger(RootNodeNameIndex.class);
-  private static final Key<SModel> PARSED_MODEL = new Key<SModel>("parsed-model");
+  private static final Key<jetbrains.mps.smodel.SModel> PARSED_MODEL = new Key<jetbrains.mps.smodel.SModel>("parsed-model");
 
-  public static SModel doModelParsing(FileContent inputData) {
-    SModel model = inputData.getUserData(PARSED_MODEL);
+  public static jetbrains.mps.smodel.SModel doModelParsing(FileContent inputData) {
+    jetbrains.mps.smodel.SModel model = inputData.getUserData(PARSED_MODEL);
 
     if (model == null) {
       //todo only roots loading
@@ -137,9 +137,9 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<List<S
         @Override
         public void run() {
           try {
-            SModel model = doModelParsing(inputData);
+            jetbrains.mps.smodel.SModel model = doModelParsing(inputData);
 
-            for (final SNode node : getRootsToIterate(model)) {
+            for (final SNode node : getRootsToIterate(model.getModelDescriptor())) {
               String persistentName = node.getProperty(SNodeUtil.property_INamedConcept_name);
               String nodeName = (persistentName == null) ? "null" : persistentName;
               String conceptFqName = node.getConcept().getId();

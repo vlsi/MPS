@@ -15,8 +15,11 @@
  */
 package jetbrains.mps.persistence.binary;
 
+import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.FileUtil;
@@ -27,7 +30,6 @@ import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
@@ -86,7 +88,7 @@ public class BinaryPersistence {
     }
   }
 
-  public static boolean writeModel(@NotNull BinarySModel model, @NotNull StreamDataSource source) {
+  public static boolean writeModel(@NotNull SModel model, @NotNull StreamDataSource source) {
     if (source.isReadOnly()) {
       LOG.error("Can't write to " + source.getLocation());
       return false;
@@ -165,7 +167,7 @@ public class BinaryPersistence {
     return model;
   }
 
-  private static void saveModel(BinarySModel model, ModelOutputStream os) throws IOException {
+  private static void saveModel(SModel model, ModelOutputStream os) throws IOException {
     saveModelProperties(model, os);
 
     ArrayList<SNode> roots = new ArrayList<SNode>(IterableUtil.asCollection(model.getRootNodes()).size());
@@ -176,22 +178,23 @@ public class BinaryPersistence {
     new NodesWriter(model.getReference()).writeNodes(roots, os);
   }
 
-  public static void saveModelProperties(BinarySModel model, ModelOutputStream os) throws IOException {
+  public static void saveModelProperties(SModel model, ModelOutputStream os) throws IOException {
     // header
     os.writeInt(HEADER);
     os.writeInt(STREAM_ID);
     os.writeModelReference(model.getReference());
-    os.writeInt(( model).getVersion());
-    os.writeBoolean(model.getHeader().isDoNotGenerate());
+    os.writeInt((model).getVersion());
+    SModelDescriptor md = model.getModelDescriptor();
+    os.writeBoolean((md instanceof GeneratableSModel) && ((GeneratableSModel) md).isDoNotGenerate());
     os.writeInt(0xabab);
 
-    saveModuleRefList(( model).importedLanguages(), os);
-    saveModuleRefList(( model).engagedOnGenerationLanguages(), os);
-    saveModuleRefList(( model).importedDevkits(), os);
+    saveModuleRefList((model).importedLanguages(), os);
+    saveModuleRefList((model).engagedOnGenerationLanguages(), os);
+    saveModuleRefList((model).importedDevkits(), os);
 
     // imports
-    saveImports(( model).importedModels(), os);
-    saveImports(( model).getAdditionalModelVersions(), os);
+    saveImports((model).importedModels(), os);
+    saveImports((model).getAdditionalModelVersions(), os);
 
     os.writeInt(0xbaba);
   }
