@@ -65,7 +65,7 @@ public class ModuleClassLoader extends ClassLoader {
   @Override
   protected synchronized Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
     // todo: wrong now
-    if (!ClassLoaderManager.getInstance().canLoad((SModule) myModule)) throw new ClassNotFoundException(name);
+    if (!ClassLoaderManager.getInstance().canLoad(myModule)) throw new ClassNotFoundException(name);
 
     //This does not guarantee that if one class was loaded, it will be returned by sequential loadClass immediately,
     //but only makes classloading faster.
@@ -92,7 +92,7 @@ public class ModuleClassLoader extends ClassLoader {
       Class c = findLoadedClass(name);
       if (c != null) return c;
 
-      byte[] bytes = getLocator().findClassBytes(name);
+      byte[] bytes = getSupport().findClassBytes(name);
       if (bytes != null) {
         String pack = NameUtil.namespaceFromLongName(name);
         if (getPackage(pack) == null) {
@@ -128,7 +128,7 @@ public class ModuleClassLoader extends ClassLoader {
       // todo: wrong now
       if (!ClassLoaderManager.getInstance().canLoad(myModule)) continue;
 
-      if (canLoadFromSelf(m) && ClassLoaderManager.getInstance().getClassLoader(m).getLocator().canFindClass(name)) {
+      if (canLoadFromSelf(m) && ClassLoaderManager.getInstance().getClassLoader(m).getSupport().canFindClass(name)) {
         //here it will load with self, with any values as two last parameters
         return Class.forName(name, false, ClassLoaderManager.getInstance().getClassLoader(m));
       } else {
@@ -140,7 +140,7 @@ public class ModuleClassLoader extends ClassLoader {
     Set<ClassLoader> processedParentClassLoaders = new HashSet<ClassLoader>();
     for (SModule m : queue) {
       try {
-        ModuleClassLoader classLoader = ClassLoaderManager.getInstance().getClassLoader((SModule) m);
+        ModuleClassLoader classLoader = ClassLoaderManager.getInstance().getClassLoader(m);
         if (classLoader == null) {
           LOG.warning("Null classloader for module with canLoad() = true; module name: " + m.getModuleName() + "; module class " + m.getClass());
           continue;
@@ -160,7 +160,7 @@ public class ModuleClassLoader extends ClassLoader {
   @Override
   protected URL findResource(String name) {
     for (SModule m : getSupport().getCompileDependencies()) {
-      URL res = ClassLoaderManager.getInstance().getClassLoader(m).getLocator().findResource(name);
+      URL res = ClassLoaderManager.getInstance().getClassLoader(m).getSupport().findResource(name);
       if (res == null) continue;
       return res;
     }
@@ -172,16 +172,12 @@ public class ModuleClassLoader extends ClassLoader {
   protected Enumeration<URL> findResources(String name) throws IOException {
     ArrayList<URL> result = new ArrayList<URL>();
     for (SModule m : getSupport().getCompileDependencies()) {
-      URL res = ClassLoaderManager.getInstance().getClassLoader(m).getLocator().findResource(name);
+      URL res = ClassLoaderManager.getInstance().getClassLoader(m).getSupport().findResource(name);
       if (res == null) continue;
       result.add(res);
     }
 
     return new IterableEnumeration<URL>(result);
-  }
-
-  private ModuleClassLoaderSupport getLocator() {
-    return new ModuleClassLoaderSupport((SModule) myModule);
   }
 
   public void dispose() {
@@ -192,7 +188,7 @@ public class ModuleClassLoader extends ClassLoader {
     return myModule + " class loader";
   }
 
-  private ModuleClassLoaderSupport getSupport() {
+  /* package */ ModuleClassLoaderSupport getSupport() {
     if (mySupport == null) {
       mySupport = new ModuleClassLoaderSupport(myModule);
     }
