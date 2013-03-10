@@ -20,6 +20,4 @@ public interface IClassLoadingModule {
   Iterable<IClassLoadingModule> getClassLoadingDependencies();
 
   boolean canLoadFromSelf();
-
-  boolean canLoad();
 }

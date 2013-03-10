@@ -250,11 +250,6 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
   }
 
   @Override
-  public boolean canLoad() {
-    return true;
-  }
-
-  @Override
   public IFile getOutputPath() {
     return mySourceLanguage.getOutputPath();
   }

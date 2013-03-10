@@ -61,7 +61,8 @@ public class ModuleClassLoader extends ClassLoader {
 
   @Override
   protected synchronized Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
-    if (!myModule.canLoad()) throw new ClassNotFoundException(name);
+    // todo: wrong now
+    if (!ClassLoaderManager.getInstance().canLoad((SModule) myModule)) throw new ClassNotFoundException(name);
 
     //This does not guarantee that if one class was loaded, it will be returned by sequential loadClass immediately,
     //but only makes classloading faster.
@@ -116,7 +117,8 @@ public class ModuleClassLoader extends ClassLoader {
     List<IClassLoadingModule> queue = new ArrayList<IClassLoadingModule>();
     for (IClassLoadingModule m : myModule.getClassLoadingDependencies()) {
       if (m.equals(myModule)) continue;
-      if (!m.canLoad()) continue;
+      // todo: wrong now
+      if (!ClassLoaderManager.getInstance().canLoad((SModule) myModule)) continue;
 
       if (m.canLoadFromSelf() && getLocator().canFindClass(name)) {
         //here it will load with self, with any values as two last parameters
