@@ -18,10 +18,11 @@ import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.classloading.ClassLoaderManager;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.make.script.IConfig;
 import java.util.Map;
@@ -75,26 +76,25 @@ public class ReloadClasses_Facet extends IFacet.Stub {
           final Iterable<TResource> input = (Iterable<TResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
-              boolean nonEmptyCompilation = pa.global().properties(new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compile"), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything() != null && pa.global().properties(new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compile"), JavaCompile_Facet.Target_compile.Parameters.class).compiledAnything();
-
-              if (nonEmptyCompilation && Sequence.fromIterable(input).any(new IWhereFilter<TResource>() {
-                public boolean accept(TResource in) {
-                  return ClassLoaderManager.getInstance().canLoad(in.module());
+              final Iterable<SModule> modules = Sequence.fromIterable(input).select(new ISelector<TResource, SModule>() {
+                public SModule select(TResource it) {
+                  return (SModule) it.module();
                 }
-              })) {
-                monitor.currentProgress().beginWork("Reloading classes", 1, monitor.currentProgress().workLeft());
-                FileSystem.getInstance().runWriteTransaction(new Runnable() {
-                  public void run() {
-                    ModelAccess.instance().requireWrite(new Runnable() {
-                      public void run() {
-                        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
-                      }
-                    });
-                  }
-                });
-                monitor.currentProgress().advanceWork("Reloading classes", 1);
-                monitor.currentProgress().finishWork("Reloading classes");
-              }
+              });
+
+              monitor.currentProgress().beginWork("Reloading classes", 1, monitor.currentProgress().workLeft());
+              FileSystem.getInstance().runWriteTransaction(new Runnable() {
+                public void run() {
+                  ModelAccess.instance().requireWrite(new Runnable() {
+                    public void run() {
+                      ClassLoaderManager.getInstance().reloadClasses(modules, new EmptyProgressMonitor());
+                    }
+                  });
+                }
+              });
+              monitor.currentProgress().advanceWork("Reloading classes", 1);
+              monitor.currentProgress().finishWork("Reloading classes");
+
               _output_i849au_a0a = Sequence.fromIterable(_output_i849au_a0a).concat(Sequence.fromIterable(input));
             default:
               return new IResult.SUCCESS(_output_i849au_a0a);

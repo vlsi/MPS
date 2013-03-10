@@ -160,7 +160,8 @@ public class ClassLoaderManager implements CoreComponent {
   // better - listen dependency changes && java facet changes on modules?
   // for now - call this method from all places with important module modification
   // + after modules make
-  public synchronized void invalidateClasses(Iterable<? extends SModule> modules) {
+  // returns affected modules
+  public synchronized Set<SModule> invalidateClasses(Iterable<? extends SModule> modules) {
     Set<SModule> toReload = collectBackReferences(modules);
     // update back refs
     for (Set<SModule> backRefs : myBackRefs.values()) {
@@ -173,8 +174,10 @@ public class ClassLoaderManager implements CoreComponent {
     // clean myClassLoaders
     for (SModule module : toReload) {
       // here we update
-      myClassLoaders.get(module).dispose();
-      myClassLoaders.remove(module);
+      if (myClassLoaders.containsKey(module)) {
+        myClassLoaders.get(module).dispose();
+        myClassLoaders.remove(module);
+      }
     }
 
     // update loaded classes checking map
@@ -191,6 +194,8 @@ public class ClassLoaderManager implements CoreComponent {
     for (String className : classesToRemove) {
       myLoadedClasses.remove(className);
     }
+
+    return toReload;
   }
 
   private Set<SModule> collectBackReferences(Iterable<? extends SModule> startModules) {
@@ -201,6 +206,7 @@ public class ClassLoaderManager implements CoreComponent {
     }
     while (!queue.isEmpty()) {
       SModule module = queue.iterator().next();
+      queue.remove(module);
       if (!modules.contains(module)) {
         modules.add(module);
         if (myBackRefs.containsKey(module)) {
@@ -211,15 +217,14 @@ public class ClassLoaderManager implements CoreComponent {
     return modules;
   }
 
-  // ext api
-  public void reloadAll(@NotNull ProgressMonitor monitor) {
+  public void reloadClasses(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
     LOG.assertCanWrite();
     isReloadRequested = false;
 
     monitor.start("Reloading classes...", 5);
     try {
       monitor.step("Updating classpath...");
-      invalidateClasses(MPSModuleRepository.getInstance().getModules());
+      invalidateClasses(modules);
       monitor.advance(1);
 
       monitor.step("Disposing old classes...");
@@ -255,6 +260,11 @@ public class ClassLoaderManager implements CoreComponent {
     } finally {
       monitor.done();
     }
+  }
+
+  // ext api
+  public void reloadAll(@NotNull ProgressMonitor monitor) {
+    reloadClasses(MPSModuleRepository.getInstance().getModules(), monitor);
   }
 
   public void updateModels() {

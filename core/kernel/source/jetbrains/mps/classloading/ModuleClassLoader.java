@@ -187,7 +187,8 @@ public class ModuleClassLoader extends ClassLoader {
     myDisposed = true;
     synchronized (myLock) {
       if (mySupport != null) {
-        ClassPathFactory.getInstance().invalidate(mySupport.getClassPathItem());
+//        ClassPathFactory.getInstance().invalidate(mySupport.getClassPathItem());
+        // todo: ? this code fails with outdated classpath
       }
     }
   }
