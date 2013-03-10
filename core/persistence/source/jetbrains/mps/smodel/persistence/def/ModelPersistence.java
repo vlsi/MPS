@@ -304,11 +304,11 @@ public class ModelPersistence {
       modelPersistence = getCurrentModelPersistence();
     }
 
-    ((jetbrains.mps.smodel.SModelInternal) sourceModel).calculateImplicitImports();
+    (sourceModel).calculateImplicitImports();
     return modelPersistence.getModelWriter().saveModel(sourceModel);
   }
 
-  //-------- --------
+  //----------------
 
   @NotNull
   private static Document loadModelDocument(@NotNull InputSource source) throws ModelReadException {

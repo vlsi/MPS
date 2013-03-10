@@ -95,7 +95,7 @@ public class MoveNodes extends BaseLoggableRefactoring {
     SModel targetModel = null;
     List<SNode> movedNodes = null;
     if (((Object) refactoringContext.getParameter("target")) instanceof SModel) {
-      targetModel = ((SModelInternal) ((Object) refactoringContext.getParameter("target")));
+      targetModel = ((SModel) ((Object) refactoringContext.getParameter("target")));
       movedNodes = refactoringContext.moveNodesToModel(nodes, targetModel);
     }
     if (((Object) refactoringContext.getParameter("target")) instanceof SNode) {

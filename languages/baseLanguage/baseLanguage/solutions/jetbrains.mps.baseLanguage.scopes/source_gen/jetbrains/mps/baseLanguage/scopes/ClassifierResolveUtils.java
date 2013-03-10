@@ -347,7 +347,7 @@ public class ClassifierResolveUtils {
 
     for (SModel model : Sequence.fromIterable(models)) {
       // FIXME will be unnecessary when transient models live in a separate repository 
-      if (!(model.equals(contextNodeModel)) && model instanceof SModel && (((SModelInternal) model).getModule() instanceof TransientModelsModule)) {
+      if (!(model.equals(contextNodeModel)) && model instanceof SModel && (((SModel) model).getModule() instanceof TransientModelsModule)) {
         continue;
       }
 
@@ -505,7 +505,7 @@ public class ClassifierResolveUtils {
       for (SModel m : Sequence.fromIterable(models)) {
 
         // FIXME will be unnecessary when transient models live in a separate repository 
-        if (!(m.equals(contextNodeModel)) && m instanceof SModel && (((SModelInternal) m).getModule() instanceof TransientModelsModule)) {
+        if (!(m.equals(contextNodeModel)) && m instanceof SModel && (( m).getModule() instanceof TransientModelsModule)) {
           continue;
         }
 

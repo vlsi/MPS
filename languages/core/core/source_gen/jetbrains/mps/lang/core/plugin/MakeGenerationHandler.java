@@ -29,7 +29,7 @@ public class MakeGenerationHandler extends GenerationHandlerBase {
 
   @Override
   public boolean handleOutput(SModule module, SModel descriptor, GenerationStatus status, IOperationContext context, ProgressMonitor helper) {
-    return resourceHandler.invoke(new GResource(((IModule) module), (SModelInternal) descriptor, null, status));
+    return resourceHandler.invoke(new GResource(((IModule) module), descriptor, null, status));
   }
 
   @Override

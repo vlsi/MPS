@@ -129,7 +129,7 @@ public class ChangeModelProcessor {
     final SModel[] model = new SModel[]{null};
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        model[0] = ((SModelInternal) modelDescriptor);
+        model[0] = ( modelDescriptor);
       }
     });
     return model[0];
