@@ -706,7 +706,7 @@ __switch__:
                 }
                 pi.setText("Loading model before change");
 
-                final Wrappers._T<SModel> beforeModel = new Wrappers._T<SModel>();
+                final Wrappers._T<jetbrains.mps.smodel.SModel> beforeModel = new Wrappers._T<jetbrains.mps.smodel.SModel>();
                 if (before == null) {
                   beforeModel.value = new jetbrains.mps.smodel.SModel(myModelDescriptor.getSModelReference());
                 } else {
@@ -719,7 +719,7 @@ __switch__:
 
                 pi.setText("Loading model after change");
                 assert after != null;
-                final SModel afterModel = ModelPersistence.readModel(after.getContent(), false);
+                final jetbrains.mps.smodel.SModel afterModel = ModelPersistence.readModel(after.getContent(), false);
 
                 final Wrappers._T<SNodeId> rootId = new Wrappers._T<SNodeId>();
                 ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SNodeId>() {
@@ -741,9 +741,9 @@ __switch__:
                 ApplicationManager.getApplication().invokeLater(new Runnable() {
                   public void run() {
                     if (rootId.value == null) {
-                      new ModelDifferenceDialog(beforeModel.value, afterModel, project, titles[0], titles[1]).show();
+                      new ModelDifferenceDialog(beforeModel.value.getModelDescriptor(), afterModel.getModelDescriptor(), project, titles[0], titles[1]).show();
                     } else {
-                      RootDifferenceDialog.invokeDialog(beforeModel.value, afterModel, rootId.value, project, titles, null);
+                      RootDifferenceDialog.invokeDialog(beforeModel.value.getModelDescriptor(), afterModel.getModelDescriptor(), rootId.value, project, titles, null);
                     }
                   }
                 });

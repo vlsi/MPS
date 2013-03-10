@@ -10,6 +10,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.mock.MockProjectEx;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.bookmark.BookmarkManager;
+import jetbrains.mps.smodel.BaseSModelDescriptor;
 import org.jdom.JDOMException;
 import java.io.IOException;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
@@ -73,10 +74,11 @@ public class TestMergeDialog {
     IdeMain.setTestMode(IdeMain.TestMode.NO_TEST);
     TestMain.configureMPS();
     IconLoader.activate();
-    final SModel[] models = new SModel[3];
+    final jetbrains.mps.smodel.SModel[] models = new jetbrains.mps.smodel.SModel[3];
     String resultFile;
     if (args.length == 2 || args.length == 1) {
-      final SModel[] zipped = MergeBackupUtil.loadZippedModels(new File(args[0]), new MergeVersion[]{MergeVersion.BASE, MergeVersion.MINE, MergeVersion.REPOSITORY});
+      final jetbrains.mps.smodel.SModel[] zipped = MergeBackupUtil.loadZippedModels(new File(args[0]),
+          new MergeVersion[]{MergeVersion.BASE, MergeVersion.MINE, MergeVersion.REPOSITORY});
       models[0] = zipped[0];
       models[1] = zipped[1];
       models[2] = zipped[2];
@@ -104,7 +106,8 @@ public class TestMergeDialog {
       public void run() {
         MergeModelsDialog dialog = ModelAccess.instance().runReadAction(new Computable<MergeModelsDialog>() {
           public MergeModelsDialog compute() {
-            return new MergeModelsDialog(models[0], models[1], models[2], new SimpleDiffRequest(TestMergeDialog.ourProject, null, new String[]{"Local Version", "Merge Result", "Remote Version"}));
+            return new MergeModelsDialog(models[0], models[1], models[2], new SimpleDiffRequest(TestMergeDialog.ourProject,
+                (jetbrains.mps.smodel.SModel[]) null, new String[]{"Local Version", "Merge Result", "Remote Version"}));
           }
         });
         try {
@@ -127,7 +130,7 @@ public class TestMergeDialog {
             if (!(iFile.exists())) {
               iFile.createNewFile();
             }
-            ModelPersistence.saveModel(result, new FileDataSource(iFile));
+            ModelPersistence.saveModel(((BaseSModelDescriptor) result).getSModelInternal(), new FileDataSource(iFile));
           }
         });
         dialog.unregisterResultModel();

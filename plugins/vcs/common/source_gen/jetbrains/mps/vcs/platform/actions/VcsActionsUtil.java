@@ -57,7 +57,7 @@ public class VcsActionsUtil {
       VcsRevisionNumber revisionNumber = vcs.getDiffProvider().getCurrentRevision(file);
       String[] contentTitles = {revisionNumber.asString() + " (Read-Only)", "Your Version"};
       ContentRevision content = vcs.getDiffProvider().createFileContent(revisionNumber, file);
-      SModel oldModel = ModelPersistence.readModel(content.getContent(), false);
+      jetbrains.mps.smodel.SModel oldModel = ModelPersistence.readModel(content.getContent(), false);
       final Wrappers._T<SModel> newModel = new Wrappers._T<SModel>();
       final Wrappers._T<SNodeId> id = new Wrappers._T<SNodeId>();
       ModelAccess.instance().runReadAction(new Runnable() {
@@ -66,7 +66,7 @@ public class VcsActionsUtil {
           id.value = node.getNodeId();
         }
       });
-      RootDifferenceDialog.invokeDialog(oldModel, newModel.value, id.value, project, contentTitles, bounds);
+      RootDifferenceDialog.invokeDialog(oldModel.getModelDescriptor(), newModel.value, id.value, project, contentTitles, bounds);
     } catch (VcsException e) {
       LOG.warning("", e);
       Messages.showErrorDialog(project, "Can't show difference due to the following error: " + e.getMessage(), "Error");

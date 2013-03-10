@@ -6,6 +6,7 @@ import com.intellij.openapi.ui.DialogWrapper;
 import javax.swing.Icon;
 import com.intellij.icons.AllIcons;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.vcs.diff.merge.MergeSession;
 import jetbrains.mps.vcs.diff.merge.MergeSessionState;
 import javax.swing.JPanel;
@@ -78,13 +79,16 @@ public class MergeModelsDialog extends DialogWrapper {
   private Set<ModelChange> myAppliedMetadataChanges = SetSequence.fromSet(new HashSet<ModelChange>());
   private ActionToolbar myToolbar;
 
-  public MergeModelsDialog(final SModel baseModel, final SModel mineModel, final SModel repositoryModel, DiffRequest request) {
+  public MergeModelsDialog(final jetbrains.mps.smodel.SModel baseModel, final jetbrains.mps.smodel.SModel mineModel, final jetbrains.mps.smodel.SModel repositoryModel, DiffRequest request) {
     super(request.getProject(), true);
-    setTitle("Merging " + SModelOperations.getModelName(baseModel));
+    final SModel baseMD = baseModel.getModelDescriptor();
+    final SModel mineMD = mineModel.getModelDescriptor();
+    final SModel repMD = repositoryModel.getModelDescriptor();
+    setTitle("Merging " + SModelOperations.getModelName(baseMD));
     myProject = request.getProject();
     myContentTitles = request.getContentTitles();
     assert myContentTitles.length == 3;
-    myMergeSession = new MergeSession(baseModel, mineModel, repositoryModel);
+    myMergeSession = MergeSession.createMergeSession(baseModel, mineModel, repositoryModel);
     DiffTemporaryModule.setSModelId(myMergeSession.getResultModel(), "result");
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -94,10 +98,10 @@ public class MergeModelsDialog extends DialogWrapper {
     if (ListSequence.fromList(myMergeSession.getMetadataChanges()).isNotEmpty()) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          SModel baseMetaModel = MetadataUtil.createMetadataModel(baseModel);
-          SModel mineMetaModel = MetadataUtil.createMetadataModel(mineModel);
-          SModel repoMetaModel = MetadataUtil.createMetadataModel(repositoryModel);
-          myMetadataMergeSession = new MergeSession(baseMetaModel, mineMetaModel, repoMetaModel);
+          jetbrains.mps.smodel.SModel baseMetaModel = MetadataUtil.createMetadataModel(baseMD);
+          jetbrains.mps.smodel.SModel mineMetaModel = MetadataUtil.createMetadataModel(mineMD);
+          jetbrains.mps.smodel.SModel repoMetaModel = MetadataUtil.createMetadataModel(repMD);
+          myMetadataMergeSession = MergeSession.createMergeSession(baseMetaModel, mineMetaModel, repoMetaModel);
           DiffTemporaryModule.setSModelId(myMetadataMergeSession.getResultModel(), "result");
           myMetadataInitialState = myMetadataMergeSession.getCurrentState();
         }
@@ -111,8 +115,8 @@ public class MergeModelsDialog extends DialogWrapper {
       }
     });
     myMergeSession.installResultModelListener();
-    DiffTemporaryModule.createModuleForModel(mineModel, "mine", p);
-    DiffTemporaryModule.createModuleForModel(repositoryModel, "repository", p);
+    DiffTemporaryModule.createModuleForModel(mineMD, "mine", p);
+    DiffTemporaryModule.createModuleForModel(repMD, "repository", p);
     if (myMetadataMergeSession != null) {
       DiffTemporaryModule.createModuleForModel(myMetadataMergeSession.getResultModel(), "result", p, true);
       ModelAccess.instance().runWriteAction(new Runnable() {

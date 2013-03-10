@@ -76,8 +76,8 @@ public class ModelDifferenceDialog extends DialogWrapper {
         setTitle("Difference for model: " + SModelOperations.getModelName(oldModel));
         myChangeSet = ChangeSetBuilder.buildChangeSet(oldModel, newModel, true);
         if (Sequence.fromIterable(myChangeSet.getChangesForRoot(null)).isNotEmpty()) {
-          SModel oldMetaModel = MetadataUtil.createMetadataModel(oldModel);
-          SModel newMetaModel = MetadataUtil.createMetadataModel(newModel);
+          SModel oldMetaModel = MetadataUtil.createMetadataModel(oldModel).getModelDescriptor();
+          SModel newMetaModel = MetadataUtil.createMetadataModel(newModel).getModelDescriptor();
           DiffTemporaryModule.createModuleForModel(oldMetaModel, "old", p);
           DiffTemporaryModule.createModuleForModel(newMetaModel, "new", p, true);
           myMetadataChangeSet = ChangeSetBuilder.buildChangeSet(oldMetaModel, newMetaModel, true);

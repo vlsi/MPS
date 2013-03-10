@@ -4,6 +4,7 @@ package jetbrains.mps.vcs.diff.ui.common;
 
 import com.intellij.openapi.diff.DiffRequest;
 import com.intellij.openapi.diff.DiffContent;
+import jetbrains.mps.smodel.BaseSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
@@ -18,13 +19,25 @@ public class SimpleDiffRequest extends DiffRequest {
   private String[] myContentTitles;
   private DiffContent[] myContents;
 
+  public SimpleDiffRequest(@NotNull Project project, @Nullable jetbrains.mps.smodel.SModel[] models, @NotNull String[] contentTitles) {
+    super(project);
+    myContentTitles = contentTitles;
+    if (models != null) {
+      myContents = Sequence.fromIterable(Sequence.fromArray(models)).select(new ISelector<jetbrains.mps.smodel.SModel, SimpleContent>() {
+        public SimpleContent select(jetbrains.mps.smodel.SModel m) {
+          return new SimpleContent(ModelPersistence.modelToString(m), MPSFileTypeFactory.MODEL_FILE_TYPE);
+        }
+      }).toGenericArray(SimpleContent.class);
+    }
+  }
+
   public SimpleDiffRequest(@NotNull Project project, @Nullable SModel[] models, @NotNull String[] contentTitles) {
     super(project);
     myContentTitles = contentTitles;
     if (models != null) {
       myContents = Sequence.fromIterable(Sequence.fromArray(models)).select(new ISelector<SModel, SimpleContent>() {
         public SimpleContent select(SModel m) {
-          return new SimpleContent(ModelPersistence.modelToString(m), MPSFileTypeFactory.MODEL_FILE_TYPE);
+          return new SimpleContent(ModelPersistence.modelToString(((BaseSModelDescriptor) m).getSModelInternal()), MPSFileTypeFactory.MODEL_FILE_TYPE);
         }
       }).toGenericArray(SimpleContent.class);
     }

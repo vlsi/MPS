@@ -188,7 +188,7 @@ public class ChangesTracking {
     }
     final Wrappers._T<SModel> baseVersionModel = new Wrappers._T<SModel>(null);
     if (BaseVersionUtil.isAddedFileStatus(status) || ConflictsUtil.isModelOrModuleConflicting(myModelDescriptor, myProject)) {
-      baseVersionModel.value = new jetbrains.mps.smodel.SModel(myModelDescriptor.getSModelReference());
+      baseVersionModel.value = new jetbrains.mps.smodel.SModel(myModelDescriptor.getSModelReference()).getModelDescriptor();
     } else {
       Object content = BaseVersionUtil.getBaseVersionContent(modelVFile, myProject);
       if (content == null && status != FileStatus.NOT_CHANGED) {

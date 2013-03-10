@@ -29,11 +29,11 @@ public class MetadataUtil {
   public MetadataUtil() {
   }
 
-  public static SModel createMetadataModel(SModel model) {
-    SModel metadataModel = new jetbrains.mps.smodel.SModel(new SModelReference(new SModelFqName(SModelOperations.getModelName(model), "metadata"), SModelId.generate()));
-    ((SModelInternal) metadataModel).addLanguage(ModuleReference.fromString("6df0089f-3288-4998-9d57-e698e7c8e145(jetbrains.mps.ide.vcs.modelmetadata)"));
-    ((SModelInternal) metadataModel).addLanguage(ModuleReference.fromString("86ef8290-12bb-4ca7-947f-093788f263a9(jetbrains.mps.lang.project)"));
-    SModelOperations.addRootNode(metadataModel, createModelRoot(model));
+  public static jetbrains.mps.smodel.SModel createMetadataModel(SModel model) {
+    jetbrains.mps.smodel.SModel metadataModel = new jetbrains.mps.smodel.SModel(new SModelReference(new SModelFqName(SModelOperations.getModelName(model), "metadata"), SModelId.generate()));
+    ( metadataModel).addLanguage(ModuleReference.fromString("6df0089f-3288-4998-9d57-e698e7c8e145(jetbrains.mps.ide.vcs.modelmetadata)"));
+    ( metadataModel).addLanguage(ModuleReference.fromString("86ef8290-12bb-4ca7-947f-093788f263a9(jetbrains.mps.lang.project)"));
+    SModelOperations.addRootNode(metadataModel.getModelDescriptor(), createModelRoot(model));
     return metadataModel;
   }
 

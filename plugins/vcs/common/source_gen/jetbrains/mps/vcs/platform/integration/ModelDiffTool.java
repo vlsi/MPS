@@ -86,10 +86,10 @@ public class ModelDiffTool implements DiffTool {
       byte[] bytes = content.getBytes();
       // for added/deleted models create empty model to compare with 
       if (bytes.length == 0) {
-        return new DefaultSModel(new SModelReference("", ""));
+        return new DefaultSModel(new SModelReference("", "")).getModelDescriptor();
       }
 
-      return ModelPersistence.readModel(new String(bytes, FileUtil.DEFAULT_CHARSET), false);
+      return ModelPersistence.readModel(new String(bytes, FileUtil.DEFAULT_CHARSET), false).getModelDescriptor();
     } catch (IOException ioe) {
       throw new ModelReadException("Couldn't read content: " + ioe.getMessage(), ioe);
     }

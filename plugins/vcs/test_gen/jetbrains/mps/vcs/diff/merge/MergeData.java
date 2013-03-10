@@ -7,6 +7,8 @@ import java.util.zip.ZipFile;
 import java.io.IOException;
 import java.util.Enumeration;
 import java.util.zip.ZipEntry;
+
+import jetbrains.mps.smodel.BaseSModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.RoleIdsComponent;
 import jetbrains.mps.vcs.core.mergedriver.MergerRoleIdsHandler;
@@ -83,7 +85,7 @@ public class MergeData {
     DefaultSModel mineModel = ModelPersistence.readModel(myMineModelString, false);
     DefaultSModel repositoryModel = ModelPersistence.readModel(myRepositoryModelString, false);
 
-    final MergeSession session = new MergeSession(baseModel, mineModel, repositoryModel);
+    final MergeSession session = MergeSession.createMergeSession(baseModel, mineModel, repositoryModel);
     String resultModelString = null;
     if (Sequence.fromIterable(session.getAllChanges()).all(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange c) {
@@ -92,7 +94,7 @@ public class MergeData {
     })) {
       // no conflicts 
       session.applyChanges(Sequence.fromIterable(session.getAllChanges()).toListSequence());
-      resultModelString = ModelPersistence.modelToString(session.getResultModel());
+      resultModelString = ModelPersistence.modelToString(((BaseSModelDescriptor) session.getResultModel()).getSModelInternal());
     }
     RoleIdsComponent.setHandler(null);
 

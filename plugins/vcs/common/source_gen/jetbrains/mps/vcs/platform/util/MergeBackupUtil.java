@@ -104,12 +104,12 @@ public class MergeBackupUtil {
   }
 
   @Nullable
-  public static SModel[] loadZippedModels(File zipfile, ModelVersion[] versions) throws IOException, ModelReadException {
+  public static jetbrains.mps.smodel.SModel[] loadZippedModels(File zipfile, ModelVersion[] versions) throws IOException, ModelReadException {
     String[] modelsAsText = MergeBackupUtil.loadZippedModelsAsText(zipfile, versions);
     if (modelsAsText == null) {
       return null;
     }
-    SModel[] models = new SModel[modelsAsText.length];
+    jetbrains.mps.smodel.SModel[] models = new jetbrains.mps.smodel.SModel[modelsAsText.length];
     for (int i = 0; i < models.length; i++) {
       models[i] = ModelPersistence.readModel(modelsAsText[i], false);
     }

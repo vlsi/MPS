@@ -71,10 +71,10 @@ public class ShowDifferencesWithModelOnDisk_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final SModel memory = ((SModel) MapSequence.fromMap(_params).get("model"));
-      final SModel disk = ModelPersistence.readModel((FileDataSource) ((SModel) MapSequence.fromMap(_params).get("model")).getSource(), false);
+      final jetbrains.mps.smodel.SModel disk = ModelPersistence.readModel((FileDataSource) ((SModel) MapSequence.fromMap(_params).get("model")).getSource(), false);
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
-          new ModelDifferenceDialog(disk, memory, ((Project) MapSequence.fromMap(_params).get("project")), "Disk", "Memory").show();
+          new ModelDifferenceDialog(disk.getModelDescriptor(), memory, ((Project) MapSequence.fromMap(_params).get("project")), "Disk", "Memory").show();
         }
       });
     } catch (Throwable t) {
