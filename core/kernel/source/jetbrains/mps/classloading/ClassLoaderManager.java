@@ -67,9 +67,6 @@ public class ClassLoaderManager implements CoreComponent {
 
   private final Map<SModule, ModuleClassLoader> myModuleClassLoaders = new HashMap<SModule, ModuleClassLoader>();
 
-  // extract to "support" classes like locator?
-  private Map<SModule, Set<SModule>> myClassLoadingDepsCache = new HashMap<SModule, Set<SModule>>();
-
   public ClassLoaderManager() {
 
   }
@@ -90,7 +87,6 @@ public class ClassLoaderManager implements CoreComponent {
   public void invalidateClasses(Iterable<? extends SModule> modules) {
     // todo: call it!
     myModuleClassLoaders.clear();
-    myClassLoadingDepsCache.clear();
   }
 
   public boolean canLoad(SModule module) {
@@ -276,22 +272,6 @@ public class ClassLoaderManager implements CoreComponent {
     LOG.assertCanWrite();
 
     isReloadRequested = true;
-  }
-
-  public synchronized Iterable<SModule> getClassLoadingDependencies(SModule module) {
-    if (!myClassLoadingDepsCache.containsKey(module)) {
-      Set<SModule> classLoadingDepsCache = new THashSet<SModule>();
-      classLoadingDepsCache.add(module);
-      for (SModule m : new GlobalModuleDependenciesManager(module).getModules(Deptype.COMPILE)) {
-        if (canLoad(m)) {
-          // todo: canLoad - remove here
-          classLoadingDepsCache.add(m);
-        }
-      }
-      myClassLoadingDepsCache.put(module, classLoadingDepsCache);
-      return classLoadingDepsCache;
-    }
-    return myClassLoadingDepsCache.get(module);
   }
 
   //---------------reload handlers------------------

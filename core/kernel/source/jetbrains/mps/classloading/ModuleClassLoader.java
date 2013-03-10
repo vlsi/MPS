@@ -23,6 +23,7 @@ import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ProtectionDomainUtil;
+import jetbrains.mps.util.iterable.IterableEnumeration;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.module.SModule;
 
@@ -32,7 +33,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -44,6 +44,8 @@ public class ModuleClassLoader extends ClassLoader {
   @SuppressWarnings({"UnusedDeclaration", "FieldCanBeLocal"})
   private boolean myDisposed;
   private SModule myModule;
+
+  private volatile ModuleClassLoaderSupport mySupport;
 
   //This must be thread-safe. This does not include results of parent classloader
   private final Map<String, Class> myClasses = Collections.synchronizedMap(new THashMap<String, Class>());
@@ -121,7 +123,7 @@ public class ModuleClassLoader extends ClassLoader {
 
     //from dependencies (try modules only)
     List<SModule> queue = new ArrayList<SModule>();
-    for (SModule m : ClassLoaderManager.getInstance().getClassLoadingDependencies(myModule)) {
+    for (SModule m : getSupport().getCompileDependencies()) {
       if (m.equals(myModule)) continue;
       // todo: wrong now
       if (!ClassLoaderManager.getInstance().canLoad(myModule)) continue;
@@ -157,7 +159,7 @@ public class ModuleClassLoader extends ClassLoader {
 
   @Override
   protected URL findResource(String name) {
-    for (SModule m : ClassLoaderManager.getInstance().getClassLoadingDependencies((SModule) myModule)) {
+    for (SModule m : getSupport().getCompileDependencies()) {
       URL res = ClassLoaderManager.getInstance().getClassLoader(m).getLocator().findResource(name);
       if (res == null) continue;
       return res;
@@ -169,17 +171,17 @@ public class ModuleClassLoader extends ClassLoader {
   @Override
   protected Enumeration<URL> findResources(String name) throws IOException {
     ArrayList<URL> result = new ArrayList<URL>();
-    for (SModule m : ClassLoaderManager.getInstance().getClassLoadingDependencies((SModule) myModule)) {
+    for (SModule m : getSupport().getCompileDependencies()) {
       URL res = ClassLoaderManager.getInstance().getClassLoader(m).getLocator().findResource(name);
       if (res == null) continue;
       result.add(res);
     }
 
-    return new IterableToEnumWrapper<URL>(result);
+    return new IterableEnumeration<URL>(result);
   }
 
-  private ModuleClassesLocator getLocator() {
-    return new ModuleClassesLocator((SModule) myModule);
+  private ModuleClassLoaderSupport getLocator() {
+    return new ModuleClassLoaderSupport((SModule) myModule);
   }
 
   public void dispose() {
@@ -190,21 +192,10 @@ public class ModuleClassLoader extends ClassLoader {
     return myModule + " class loader";
   }
 
-  private static class IterableToEnumWrapper<E> implements Enumeration<E> {
-    private Iterator<E> myIterator;
-
-    public IterableToEnumWrapper(Iterable<E> iterable) {
-      myIterator = iterable.iterator();
+  private ModuleClassLoaderSupport getSupport() {
+    if (mySupport == null) {
+      mySupport = new ModuleClassLoaderSupport(myModule);
     }
-
-    @Override
-    public boolean hasMoreElements() {
-      return myIterator.hasNext();
-    }
-
-    @Override
-    public E nextElement() {
-      return myIterator.next();
-    }
+    return mySupport;
   }
 }
