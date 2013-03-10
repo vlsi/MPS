@@ -196,12 +196,16 @@ public class ClassLoaderManager implements CoreComponent {
   private Set<SModule> collectBackReferences(Iterable<? extends SModule> startModules) {
     Set<SModule> modules = new HashSet<SModule>();
     Set<SModule> queue = new HashSet<SModule>();
-    queue.addAll(modules);
+    for (SModule module : startModules) {
+      queue.add(module);
+    }
     while (!queue.isEmpty()) {
       SModule module = queue.iterator().next();
       if (!modules.contains(module)) {
         modules.add(module);
-        queue.addAll(myBackRefs.get(module));
+        if (myBackRefs.containsKey(module)) {
+          queue.addAll(myBackRefs.get(module));
+        }
       }
     }
     return modules;
