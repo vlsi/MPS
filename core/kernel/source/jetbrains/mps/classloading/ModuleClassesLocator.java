@@ -44,10 +44,6 @@ public class ModuleClassesLocator {
     return getClassPathItem().getResource(name);
   }
 
-  public String findLibrary(String name) {
-    return SModuleOperations.getJavaFacet(getTargetModule()).findLibrary(name);
-  }
-
   private IClassPathItem getClassPathItem() {
     // todo: cache it
     return JavaModuleOperations.createClassPathItem(getTargetModule().getFacet(JavaModuleFacet.class).getClassPath(), ClassLoadingModule.class.getName());

@@ -161,17 +161,6 @@ public class ModuleClassLoader extends ClassLoader {
     return new IterableToEnumWrapper<URL>(result);
   }
 
-  @Override
-  protected String findLibrary(String name) {
-    for (IClassLoadingModule m : myModule.getClassLoadingDependencies()) {
-      String res = SModuleOperations.getJavaFacet((SModule) m).findLibrary(name);
-      if (res == null) continue;
-      return res;
-    }
-
-    return null;
-  }
-
   private ModuleClassesLocator getLocator() {
     return new ModuleClassesLocator((SModule) myModule);
   }
