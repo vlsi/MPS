@@ -15,7 +15,7 @@ import com.intellij.openapi.application.ModalityState;
 import java.awt.Dimension;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
-import jetbrains.mps.extapi.persistence.indexing.NodeDescriptor;
+import org.jetbrains.mps.openapi.persistence.NavigationParticipant;
 
 public abstract class StubsClassChooserDialog extends DialogWrapper {
   private final ChooseByNamePanel myPanel;
@@ -60,7 +60,7 @@ public abstract class StubsClassChooserDialog extends DialogWrapper {
 
   @Override
   protected void doOKAction() {
-    NodeDescriptor chosenElement = (NodeDescriptor) myPanel.getChosenElement();
+    NavigationParticipant.NavigationTarget chosenElement = (NavigationParticipant.NavigationTarget) myPanel.getChosenElement();
     if (chosenElement != null) {
       mySelected = myModel.getFullName(chosenElement);
     }

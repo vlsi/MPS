@@ -22,6 +22,7 @@ import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
 import org.jetbrains.mps.openapi.persistence.FindUsagesParticipant;
+import org.jetbrains.mps.openapi.persistence.NavigationParticipant;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -40,7 +41,8 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
 
   private Map<String, ModelRootFactory> myRootFactories = new HashMap<String, ModelRootFactory>();
   private Map<String, ModelFactory> myExtensionToModelFactoryMap = new HashMap<String, ModelFactory>();
-  private Set<FindUsagesParticipant> myParticipants = new LinkedHashSet<FindUsagesParticipant>();
+  private Set<FindUsagesParticipant> myFindUsagesParticipants = new LinkedHashSet<FindUsagesParticipant>();
+  private Set<NavigationParticipant> myNavigationParticipants = new LinkedHashSet<NavigationParticipant>();
 
   @Override
   public ModelRootFactory getModelRootFactory(String type) {
@@ -83,17 +85,34 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
     return Collections.unmodifiableCollection(myRootFactories.keySet());
   }
 
+  @Override
   public void addFindUsagesParticipant(FindUsagesParticipant participant) {
-    myParticipants.add(participant);
+    myFindUsagesParticipants.add(participant);
   }
 
+  @Override
   public void removeFindUsagesParticipant(FindUsagesParticipant participant) {
-    myParticipants.remove(participant);
+    myFindUsagesParticipants.remove(participant);
   }
 
   @Override
   public Set<FindUsagesParticipant> getFindUsagesParticipants() {
-    return Collections.unmodifiableSet(myParticipants);
+    return Collections.unmodifiableSet(myFindUsagesParticipants);
+  }
+
+  @Override
+  public void addNavigationParticipant(NavigationParticipant participant) {
+    myNavigationParticipants.add(participant);
+  }
+
+  @Override
+  public void removeNavigationParticipant(NavigationParticipant participant) {
+    myNavigationParticipants.remove(participant);
+  }
+
+  @Override
+  public Set<NavigationParticipant> getNavigationParticipants() {
+    return myNavigationParticipants;
   }
 
   @Override

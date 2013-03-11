@@ -75,9 +75,16 @@ public abstract class PersistenceFacade {
    */
   public abstract SModelId getModelId(String text);
 
+  public abstract Set<FindUsagesParticipant> getFindUsagesParticipants();
+
   public abstract void addFindUsagesParticipant(FindUsagesParticipant participant);
 
   public abstract void removeFindUsagesParticipant(FindUsagesParticipant participant);
 
-  public abstract Set<FindUsagesParticipant> getFindUsagesParticipants();
+  public abstract Set<NavigationParticipant> getNavigationParticipants();
+
+  public abstract void addNavigationParticipant(NavigationParticipant participant);
+
+  public abstract void removeNavigationParticipant(NavigationParticipant participant);
+
 }

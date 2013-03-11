@@ -17,32 +17,29 @@ package jetbrains.mps.workbench.goTo.index;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.ID;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.workbench.findusages.ConcreteFilesGlobalSearchScope;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.extapi.persistence.indexing.FastGoToRegistry;
-import jetbrains.mps.extapi.persistence.indexing.NodeDescriptor;
-import jetbrains.mps.extapi.persistence.indexing.NodeNavigationContributor;
+import org.jetbrains.mps.openapi.persistence.DataSource;
+import org.jetbrains.mps.openapi.persistence.NavigationParticipant;
+import org.jetbrains.mps.openapi.util.Consumer;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -52,48 +49,41 @@ import java.util.Set;
  *
  * @see RootNodeNameIndex
  */
-public class MPSModelNavigationContributor implements NodeNavigationContributor, ApplicationComponent {
+public class MPSModelNavigationContributor implements ApplicationComponent, NavigationParticipant {
 
-  private Set<String> supportedExtensions = new HashSet<String>(Arrays.asList(MPSExtentions.MODEL));
+  private final Set<String> supportedExtensions = new HashSet<String>(Arrays.asList(MPSExtentions.MODEL));
 
   @Override
-  public Collection<NodeDescriptor> getNodeDescriptors(Collection<SModel> models, Project p) {
-    RootNodeNameIndex index = new RootNodeNameIndex();
-    final ID<Integer, List<SNodeDescriptor>> indexName = index.getName();
+  public void findTargets(TargetKind kind, Collection<SModel> scope, Consumer<NavigationTarget> consumer, Consumer<SModel> processedConsumer) {
+    final ID<Integer, List<SNodeDescriptor>> indexName = RootNodeNameIndex.NAME;
     final FileBasedIndex fileBasedIndex = FileBasedIndex.getInstance();
 
-    Set<SModel> findDirectly = new HashSet<SModel>();
-    final Set<NodeDescriptor> keys = new HashSet<NodeDescriptor>();
-
-    for (SModel sm : models) {
-      if (!SModelStereotype.isUserModel(sm)) continue;
-
-      if (!(sm instanceof BaseEditableSModelDescriptor) || !(sm.getSource() instanceof FileDataSource)) {
+    for (SModel sm : scope) {
+      if (sm instanceof EditableSModel && ((EditableSModel) sm).isChanged()) {
         continue;
       }
 
-      FileDataSource source = (FileDataSource) sm.getSource();
-      if (!supportedExtensions.contains(FileUtil.getExtension(source.getFile().getName()))) {
+      DataSource source = sm.getSource();
+      if (!(source instanceof FileDataSource)) {
         continue;
       }
 
-      if (sm.isLoaded()) {
-        findDirectly.add(sm);
+      IFile modelFile = ((FileDataSource) source).getFile();
+      String ext = FileUtil.getExtension(modelFile.getName());
+      if (ext == null || modelFile.isDirectory() || !(supportedExtensions.contains(ext.toLowerCase()))) {
         continue;
       }
 
-      IFile modelFile = source.getFile();
       VirtualFile vf = VirtualFileUtils.getVirtualFile(modelFile);
       if (vf == null) continue; // e.g. model was deleted
 
       int fileId = FileBasedIndex.getFileId(vf);
-
-      GlobalSearchScope scope = GlobalSearchScope.fileScope(ProjectHelper.toIdeaProject(p), vf);
-      List<List<SNodeDescriptor>> descriptors = fileBasedIndex.getValues(indexName, fileId, scope);
+      ConcreteFilesGlobalSearchScope fileScope = new ConcreteFilesGlobalSearchScope(Collections.singleton(vf));
+      List<List<SNodeDescriptor>> descriptors = fileBasedIndex.getValues(indexName, fileId, fileScope);
       if (descriptors.isEmpty()) continue;
 
       boolean needToLoad = false;
-      for (NodeDescriptor snd : descriptors.get(0)) {
+      for (NavigationTarget snd : descriptors.get(0)) {
         PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(snd.getConcept().getId()).getProperty(
           SNodeUtil.property_INamedConcept_name);
         if (descriptor instanceof BasePropertyConstraintsDescriptor && !((BasePropertyConstraintsDescriptor) descriptor).isGetterDefault()) {
@@ -102,33 +92,23 @@ public class MPSModelNavigationContributor implements NodeNavigationContributor,
         }
       }
 
-      if (needToLoad) {
-        findDirectly.add(sm);
-      } else {
-        keys.addAll(descriptors.get(0));
+      if (!needToLoad) {
+        for (SNodeDescriptor desc : descriptors.get(0)) {
+          consumer.consume(desc);
+        }
+        processedConsumer.consume(sm);
       }
     }
-
-    for (SModel sm : findDirectly) {
-      for (SNode root : index.getRootsToIterate(sm)) {
-        String nodeName = (root.getName() == null) ? "null" : root.getName();
-        NodeDescriptor nodeDescriptor = SNodeDescriptor.fromModelReference(
-          nodeName, root.getConcept().getId(), root.getModel().getReference(), root.getNodeId());
-        keys.add(nodeDescriptor);
-      }
-    }
-
-    return keys;
   }
 
   @Override
   public void initComponent() {
-    FastGoToRegistry.getInstance().setNavigationContributor(PersistenceRegistry.DEFAULT_MODEL_ROOT, this);
+    PersistenceRegistry.getInstance().addNavigationParticipant(this);
   }
 
   @Override
   public void disposeComponent() {
-    FastGoToRegistry.getInstance().setNavigationContributor(PersistenceRegistry.DEFAULT_MODEL_ROOT, null);
+    PersistenceRegistry.getInstance().removeNavigationParticipant(this);
   }
 
   @NotNull

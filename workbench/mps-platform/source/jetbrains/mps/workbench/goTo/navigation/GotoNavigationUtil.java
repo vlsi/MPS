@@ -15,37 +15,63 @@
  */
 package jetbrains.mps.workbench.goTo.navigation;
 
-import jetbrains.mps.findUsages.ModelGroupingUtil;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.util.Mapper;
-import jetbrains.mps.util.containers.MultiMap;
+import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.progress.SubProgressKind;
+import jetbrains.mps.util.CollectConsumer;
+import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.workbench.goTo.index.RootNodeNameIndex;
+import jetbrains.mps.workbench.goTo.index.SNodeDescriptor;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.extapi.persistence.indexing.FastGoToRegistry;
-import jetbrains.mps.extapi.persistence.indexing.NodeDescriptor;
-import jetbrains.mps.extapi.persistence.indexing.NodeNavigationContributor;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SearchScope;
+import org.jetbrains.mps.openapi.persistence.NavigationParticipant;
+import org.jetbrains.mps.openapi.persistence.NavigationParticipant.NavigationTarget;
+import org.jetbrains.mps.openapi.persistence.NavigationParticipant.TargetKind;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.mps.openapi.util.Consumer;
 
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.Map.Entry;
+import java.util.Set;
 
 public class GotoNavigationUtil {
-  public static Collection<NodeDescriptor> getNodeElements(Iterable<? extends SModel> models, Project p) {
-    MultiMap<NodeNavigationContributor, SModel> modelsByNNC = ModelGroupingUtil.groupModelsByRootMapping(models, new Mapper<String, NodeNavigationContributor>() {
-      @Override
-      public NodeNavigationContributor value(String key) {
-        return FastGoToRegistry.getInstance().getNavigationContributor(key);
+
+  public static Collection<NavigationTarget> getNavigationTargets(TargetKind kind, SearchScope scope, ProgressMonitor monitor) {
+    CollectConsumer<NavigationTarget> consumer = new CollectConsumer(new HashSet<NavigationTarget>());
+    Collection<NavigationParticipant> participants = PersistenceFacade.getInstance().getNavigationParticipants();
+
+    monitor.start("Finding targets...", participants.size() + 5);
+    try {
+      Collection<SModel> current = IterableUtil.asCollection(scope.getModels());
+      for (NavigationParticipant participant : participants) {
+        final Set<SModel> next = new HashSet<SModel>(current);
+        participant.findTargets(kind, current, consumer, new Consumer<SModel>() {
+          @Override
+          public void consume(SModel sModel) {
+            next.remove(sModel);
+          }
+        });
+        current = next;
+        monitor.advance(1);
       }
-    });
 
-    HashSet<NodeDescriptor> res = new HashSet<NodeDescriptor>();
-
-    for (Entry<NodeNavigationContributor, Collection<SModel>> e : modelsByNNC.entrySet()) {
-      NodeNavigationContributor nnc = e.getKey();
-      if (nnc == null) continue; //todo support this case
-
-      res.addAll(nnc.getNodeDescriptors(e.getValue(), p));
+      ProgressMonitor subMonitor = monitor.subTask(4, SubProgressKind.DEFAULT);
+      subMonitor.start("", current.size());
+      for (SModel m : current) {
+        subMonitor.step(m.getModelName());
+        for (SNode root : RootNodeNameIndex.getRootsToIterate(m)) {
+          String nodeName = (root.getName() == null) ? "null" : root.getName();
+          consumer.consume(
+            SNodeDescriptor.fromModelReference(
+              nodeName, root.getConcept().getId(), root.getModel().getReference(), root.getNodeId()));
+        }
+        if (monitor.isCanceled()) break;
+        subMonitor.advance(1);
+      }
+      subMonitor.done();
+    } finally {
+      monitor.done();
     }
-
-    return res;
+    return consumer.getResult();
   }
 }

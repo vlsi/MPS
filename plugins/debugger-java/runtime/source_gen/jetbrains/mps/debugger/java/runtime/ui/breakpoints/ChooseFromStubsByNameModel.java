@@ -5,7 +5,7 @@ package jetbrains.mps.debugger.java.runtime.ui.breakpoints;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import java.util.Map;
 import java.util.List;
-import jetbrains.mps.extapi.persistence.indexing.NodeDescriptor;
+import org.jetbrains.mps.openapi.persistence.NavigationParticipant;
 import java.util.LinkedHashMap;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
@@ -15,6 +15,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.workbench.goTo.navigation.GotoNavigationUtil;
+import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -27,9 +29,9 @@ import javax.swing.JList;
 import org.jetbrains.annotations.NotNull;
 
 /*package*/ abstract class ChooseFromStubsByNameModel implements ChooseByNameModel {
-  private final Map<String, List<NodeDescriptor>> myPossibleNodes = new LinkedHashMap<String, List<NodeDescriptor>>();
+  private final Map<String, List<NavigationParticipant.NavigationTarget>> myPossibleNodes = new LinkedHashMap<String, List<NavigationParticipant.NavigationTarget>>();
 
-  /*package*/ ChooseFromStubsByNameModel(final Project p) {
+  /*package*/ ChooseFromStubsByNameModel(Project p) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         List<SModel> mds = SModelRepository.getInstance().getModelDescriptors();
@@ -38,13 +40,13 @@ import org.jetbrains.annotations.NotNull;
             return SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(it));
           }
         });
-        Iterable<NodeDescriptor> descr = GotoNavigationUtil.getNodeElements(stubModels, p);
+        Iterable<NavigationParticipant.NavigationTarget> descr = GotoNavigationUtil.getNavigationTargets(NavigationParticipant.TargetKind.ROOT, new ModelsScope(stubModels), new EmptyProgressMonitor());
 
-        for (NodeDescriptor descriptor : descr) {
+        for (NavigationParticipant.NavigationTarget descriptor : descr) {
           String name = getName(descriptor);
-          List<NodeDescriptor> descriptorList = myPossibleNodes.get(name);
+          List<NavigationParticipant.NavigationTarget> descriptorList = myPossibleNodes.get(name);
           if (descriptorList == null) {
-            descriptorList = new ArrayList<NodeDescriptor>();
+            descriptorList = new ArrayList<NavigationParticipant.NavigationTarget>();
             myPossibleNodes.put(name, descriptorList);
           }
           descriptorList.add(descriptor);
@@ -55,7 +57,7 @@ import org.jetbrains.annotations.NotNull;
 
   protected abstract boolean isValid(SNode node);
 
-  private boolean isValidClassifier(final NodeDescriptor descriptor) {
+  private boolean isValidClassifier(final NavigationParticipant.NavigationTarget descriptor) {
     final Wrappers._boolean result = new Wrappers._boolean();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -66,11 +68,11 @@ import org.jetbrains.annotations.NotNull;
     return result.value;
   }
 
-  private String getName(NodeDescriptor descriptor) {
-    return descriptor.getName();
+  private String getName(NavigationParticipant.NavigationTarget descriptor) {
+    return descriptor.getPresentation();
   }
 
-  private String getNamespace(NodeDescriptor descriptor) {
+  private String getNamespace(NavigationParticipant.NavigationTarget descriptor) {
     SModelReference modelReference = ((SModelReference) descriptor.getNodeReference().getModelReference());
     if (modelReference != null) {
       return modelReference.getLongName();
@@ -117,7 +119,7 @@ import org.jetbrains.annotations.NotNull;
     ListCellRendererWrapper wrapper = new ListCellRendererWrapper<Object>(new DefaultListCellRenderer()) {
       @Override
       public void customize(JList list, Object value, int index, boolean selected, boolean hasFocus) {
-        if (value != null && value instanceof NodeDescriptor) {
+        if (value != null && value instanceof NavigationParticipant.NavigationTarget) {
           String fullName = getFullName(value);
           if (fullName != null) {
             setText(fullName);
@@ -135,19 +137,19 @@ import org.jetbrains.annotations.NotNull;
 
   @Override
   public Object[] getElementsByName(String name, boolean checkBoxState, String pattern) {
-    List<NodeDescriptor> descriptors = new ArrayList<NodeDescriptor>();
-    for (NodeDescriptor descriptor : myPossibleNodes.get(name)) {
+    List<NavigationParticipant.NavigationTarget> descriptors = new ArrayList<NavigationParticipant.NavigationTarget>();
+    for (NavigationParticipant.NavigationTarget descriptor : myPossibleNodes.get(name)) {
       String descriptorName = getElementName(descriptor);
       if (descriptorName != null && descriptorName.equals(name) && isValidClassifier(descriptor)) {
         descriptors.add(descriptor);
       }
     }
-    return descriptors.toArray(new NodeDescriptor[descriptors.size()]);
+    return descriptors.toArray(new NavigationParticipant.NavigationTarget[descriptors.size()]);
   }
 
   @Override
   public String getElementName(Object element) {
-    return getName((NodeDescriptor) element);
+    return getName((NavigationParticipant.NavigationTarget) element);
   }
 
   @NotNull
@@ -158,8 +160,9 @@ import org.jetbrains.annotations.NotNull;
 
   @Override
   public String getFullName(Object element) {
-    String name = getName((NodeDescriptor) element);
-    String namespace = getNamespace((NodeDescriptor) element);
+    NavigationParticipant.NavigationTarget navTarget = (NavigationParticipant.NavigationTarget) element;
+    String name = getName(navTarget);
+    String namespace = getNamespace(navTarget);
     if (namespace == null) {
       return name;
     }
