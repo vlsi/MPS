@@ -196,7 +196,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       indicator.setText("Creating Model...");
       return BuildGeneratorUtil.createModel(getNewModelName(), solution);
     } else {
-      return (SModel) this.getModel();
+      return this.getModel();
     }
   }
 
@@ -215,7 +215,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     this.setNewSolutionName(solutionName);
   }
 
-  protected Iterable<SNode> createBuildScripts(EditableSModel targetModelDescriptor, String name, String basedir, List<NodeData> selectedData) {
+  protected Iterable<SNode> createBuildScripts(SModel targetModelDescriptor, String name, String basedir, List<NodeData> selectedData) {
     // setup build project 
     SNode buildProject = SConceptOperations.createNewNode("jetbrains.mps.build.structure.BuildProject", null);
     SPropertyOperations.set(buildProject, "name", name);
@@ -223,9 +223,8 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     ListSequence.fromList(SLinkOperations.getTargets(buildProject, "plugins", true)).addElement(SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMPSPlugin", null));
 
     // internal base dir is a project base dir 
-    SModel targetSModel = ((SModel) targetModelDescriptor);
     try {
-      String relativeToModuleProjectPath = Context.defaultContext().getRelativePathHelper(targetSModel).makeRelative(myProject.getBasePath());
+      String relativeToModuleProjectPath = Context.defaultContext().getRelativePathHelper(targetModelDescriptor).makeRelative(myProject.getBasePath());
       SPropertyOperations.set(buildProject, "internalBaseDirectory", relativeToModuleProjectPath);
     } catch (RelativePathHelper.PathException e) {
       LOG.warning("Can't calculate project path relative to module " + targetModelDescriptor.getModule(), e);
@@ -239,37 +238,37 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     SNode buildNumber = null;
     SNode branding = null;
 
-    if (eq_un708i_a0s0n(getDependencyKind(), DependencyStep.DependencyKind.MPS)) {
-      SNode macro = _quotation_createNode_un708i_a0a0s0n();
+    if (eq_un708i_a0r0n(getDependencyKind(), DependencyStep.DependencyKind.MPS)) {
+      SNode macro = _quotation_createNode_un708i_a0a0r0n();
       ListSequence.fromList(macros).addElement(macro);
-      ListSequence.fromList(dependencies).addElement(_quotation_createNode_un708i_a0a2a81a31(macro));
+      ListSequence.fromList(dependencies).addElement(_quotation_createNode_un708i_a0a2a71a31(macro));
       userMacroNames.remove("mps_home");
-    } else if (eq_un708i_a0a81a31(getDependencyKind(), DependencyStep.DependencyKind.IDEA)) {
-      SNode macro = _quotation_createNode_un708i_a0a0a81a31();
+    } else if (eq_un708i_a0a71a31(getDependencyKind(), DependencyStep.DependencyKind.IDEA)) {
+      SNode macro = _quotation_createNode_un708i_a0a0a71a31();
       ListSequence.fromList(macros).addElement(macro);
       userMacroNames.remove("idea_home");
-      ListSequence.fromList(dependencies).addElement(_quotation_createNode_un708i_a0a3a0s0n(macro));
-      macro = _quotation_createNode_un708i_a0e0a81a31(macro);
+      ListSequence.fromList(dependencies).addElement(_quotation_createNode_un708i_a0a3a0r0n(macro));
+      macro = _quotation_createNode_un708i_a0e0a71a31(macro);
       ListSequence.fromList(macros).addElement(macro);
       userMacroNames.remove("plugins_home");
-      ListSequence.fromList(dependencies).addElement(_quotation_createNode_un708i_a0a7a0s0n(macro));
-    } else if (eq_un708i_a0b81a31(getDependencyKind(), DependencyStep.DependencyKind.STANDALONE)) {
-      dateMacro = _quotation_createNode_un708i_a0a0b81a31();
+      ListSequence.fromList(dependencies).addElement(_quotation_createNode_un708i_a0a7a0r0n(macro));
+    } else if (eq_un708i_a0b71a31(getDependencyKind(), DependencyStep.DependencyKind.STANDALONE)) {
+      dateMacro = _quotation_createNode_un708i_a0a0b71a31();
       ListSequence.fromList(macros).addElement(dateMacro);
-      buildNumber = _quotation_createNode_un708i_a0c0b81a31(name + "-SNAPSHOT");
+      buildNumber = _quotation_createNode_un708i_a0c0b71a31(name + "-SNAPSHOT");
       ListSequence.fromList(macros).addElement(buildNumber);
-      SNode macro = _quotation_createNode_un708i_a0e0b81a31();
+      SNode macro = _quotation_createNode_un708i_a0e0b71a31();
       ListSequence.fromList(macros).addElement(macro);
-      ListSequence.fromList(dependencies).addElement(_quotation_createNode_un708i_a0a6a1s0n(macro));
-      ListSequence.fromList(dependencies).addElement(_quotation_createNode_un708i_a0a7a1s0n(macro));
+      ListSequence.fromList(dependencies).addElement(_quotation_createNode_un708i_a0a6a1r0n(macro));
+      ListSequence.fromList(dependencies).addElement(_quotation_createNode_un708i_a0a7a1r0n(macro));
       userMacroNames.remove("mps_home");
       userMacroNames.remove("date");
       userMacroNames.remove("build.number");
-      branding = _quotation_createNode_un708i_a0l0b81a31(buildNumber, ICONS, name, name, name, ICONS, dateMacro, ICONS, ICONS, ICONS, ICONS, ICONS, ICONS);
+      branding = _quotation_createNode_un708i_a0l0b71a31(buildNumber, ICONS, name, name, name, ICONS, dateMacro, ICONS, ICONS, ICONS, ICONS, ICONS, ICONS);
       ListSequence.fromList(SLinkOperations.getTargets(buildProject, "parts", true)).addElement(branding);
     }
     for (String macro : SetSequence.fromSet(userMacroNames)) {
-      ListSequence.fromList(macros).addElement(_quotation_createNode_un708i_a0a0a91a31(macro));
+      ListSequence.fromList(macros).addElement(_quotation_createNode_un708i_a0a0a81a31(macro));
     }
     ListSequence.fromList(SLinkOperations.getTargets(buildProject, "macros", true)).addSequence(ListSequence.fromList(macros));
     ListSequence.fromList(SLinkOperations.getTargets(buildProject, "dependencies", true)).addSequence(ListSequence.fromList(dependencies));
@@ -277,28 +276,28 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     // project structure and layout 
     Set<ModuleData> moduleData = SetSequence.fromSet(new LinkedHashSet<ModuleData>());
     extractModules(selectedData, moduleData);
-    SNode group = _quotation_createNode_un708i_a0ab0n(SetSequence.fromSet(moduleData).select(new ISelector<ModuleData, SNode>() {
+    SNode group = _quotation_createNode_un708i_a0z0n(SetSequence.fromSet(moduleData).select(new ISelector<ModuleData, SNode>() {
       public SNode select(ModuleData it) {
         return createModuleNode(it);
       }
     }).toListSequence(), name);
-    SNode plugin = _quotation_createNode_un708i_a0bb0n(name, group, name, name);
+    SNode plugin = _quotation_createNode_un708i_a0ab0n(name, group, name, name);
 
     SLinkOperations.setNewChild(buildProject, "layout", "jetbrains.mps.build.structure.BuildLayout");
     ListSequence.fromList(SLinkOperations.getTargets(buildProject, "parts", true)).addElement(plugin);
     ListSequence.fromList(SLinkOperations.getTargets(buildProject, "parts", true)).addElement(group);
-    if (eq_un708i_a0gb0n(getDependencyKind(), DependencyStep.DependencyKind.STANDALONE)) {
-      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(buildProject, "layout", true), "children", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(_quotation_createNode_un708i_a0a0a0gb0n(buildNumber, convertToMacroRelative(_quotation_createNode_un708i_a0a0b2a0a0a0a23a31(), SNodeOperations.cast(ListSequence.fromList(macros).findFirst(new IWhereFilter<SNode>() {
+    if (eq_un708i_a0fb0n(getDependencyKind(), DependencyStep.DependencyKind.STANDALONE)) {
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(buildProject, "layout", true), "children", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(_quotation_createNode_un708i_a0a0a0fb0n(buildNumber, convertToMacroRelative(_quotation_createNode_un708i_a0a0b2a0a0a0a13a31(), SNodeOperations.cast(ListSequence.fromList(macros).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return eq_un708i_a0a0a0a0a0b1a0a0a0a23a31(SPropertyOperations.getString(it, "name"), "mps_home");
+          return eq_un708i_a0a0a0a0a0b1a0a0a0a13a31(SPropertyOperations.getString(it, "name"), "mps_home");
         }
       }), "jetbrains.mps.build.structure.BuildFolderMacro")), branding, plugin, buildNumber, dateMacro), "children", true)));
     } else {
-      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(buildProject, "layout", true), "children", true)).addElement(_quotation_createNode_un708i_a0a0a0gb0n_0(name + ".zip", plugin));
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(buildProject, "layout", true), "children", true)).addElement(_quotation_createNode_un708i_a0a0a0fb0n_0(name + ".zip", plugin));
     }
 
     // add mps layout to the target model 
-    SModelOperations.addRootNode(targetSModel, buildProject);
+    SModelOperations.addRootNode(targetModelDescriptor, buildProject);
 
     PathConverter pathConverter = new PathConverter(buildProject);
     VisibleModules visible = new VisibleModules(buildProject, null);
@@ -311,8 +310,8 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       }
     }
 
-    if (eq_un708i_a0qb0n(getDependencyKind(), DependencyStep.DependencyKind.STANDALONE)) {
-      SNode buildStandalone = addStandaloneBuild(targetSModel, buildProject);
+    if (eq_un708i_a0pb0n(getDependencyKind(), DependencyStep.DependencyKind.STANDALONE)) {
+      SNode buildStandalone = addStandaloneBuild(targetModelDescriptor, buildProject);
       return ListSequence.fromListAndArray(new ArrayList<SNode>(), buildProject, buildStandalone);
     }
 
@@ -429,14 +428,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
 
   private static Logger LOG = Logger.getLogger(BuildGeneratorImpl.class);
 
-  private static SNode _quotation_createNode_un708i_a0a0s0n() {
+  private static SNode _quotation_createNode_un708i_a0a0r0n() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFolderMacro", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_1, "name", "mps_home");
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_un708i_a0a2a81a31(Object parameter_1) {
+  private static SNode _quotation_createNode_un708i_a0a2a71a31(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildProjectDependency", null, null, GlobalScope.getInstance(), false);
@@ -447,14 +446,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_un708i_a0a0a81a31() {
+  private static SNode _quotation_createNode_un708i_a0a0a71a31() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFolderMacro", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_1, "name", "idea_home");
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_un708i_a0a3a0s0n(Object parameter_1) {
+  private static SNode _quotation_createNode_un708i_a0a3a0r0n(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildExternalLayoutDependency", null, null, GlobalScope.getInstance(), false);
@@ -465,7 +464,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_un708i_a0e0a81a31(Object parameter_1) {
+  private static SNode _quotation_createNode_un708i_a0e0a71a31(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -480,7 +479,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_un708i_a0a7a0s0n(Object parameter_1) {
+  private static SNode _quotation_createNode_un708i_a0a7a0r0n(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildProjectDependency", null, null, GlobalScope.getInstance(), false);
@@ -491,7 +490,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_un708i_a0a0b81a31() {
+  private static SNode _quotation_createNode_un708i_a0a0b71a31() {
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVariableMacro", null, null, GlobalScope.getInstance(), false);
@@ -502,7 +501,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_un708i_a0c0b81a31(Object parameter_1) {
+  private static SNode _quotation_createNode_un708i_a0c0b71a31(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -519,14 +518,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_un708i_a0e0b81a31() {
+  private static SNode _quotation_createNode_un708i_a0e0b71a31() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFolderMacro", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_1, "name", "mps_home");
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_un708i_a0a6a1s0n(Object parameter_1) {
+  private static SNode _quotation_createNode_un708i_a0a6a1r0n(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildProjectDependency", null, null, GlobalScope.getInstance(), false);
@@ -537,7 +536,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_un708i_a0a7a1s0n(Object parameter_1) {
+  private static SNode _quotation_createNode_un708i_a0a7a1r0n(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildProjectDependency", null, null, GlobalScope.getInstance(), false);
@@ -548,7 +547,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_un708i_a0l0b81a31(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6, Object parameter_7, Object parameter_8, Object parameter_9, Object parameter_10, Object parameter_11, Object parameter_12, Object parameter_13) {
+  private static SNode _quotation_createNode_un708i_a0l0b71a31(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6, Object parameter_7, Object parameter_8, Object parameter_9, Object parameter_10, Object parameter_11, Object parameter_12, Object parameter_13) {
     SNode quotedNode_14 = null;
     SNode quotedNode_15 = null;
     SNode quotedNode_16 = null;
@@ -687,14 +686,14 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     return quotedNode_14;
   }
 
-  private static SNode _quotation_createNode_un708i_a0a0a91a31(Object parameter_1) {
+  private static SNode _quotation_createNode_un708i_a0a0a81a31(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFolderMacro", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_2, "name", (String) parameter_1);
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_un708i_a0ab0n(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_un708i_a0z0n(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -709,7 +708,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     return quotedNode_3;
   }
 
-  private static SNode _quotation_createNode_un708i_a0bb0n(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
+  private static SNode _quotation_createNode_un708i_a0ab0n(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;
     SNode quotedNode_7 = null;
@@ -745,7 +744,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     return quotedNode_5;
   }
 
-  private static SNode _quotation_createNode_un708i_a0a0a0gb0n(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6) {
+  private static SNode _quotation_createNode_un708i_a0a0a0fb0n(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6) {
     SNode quotedNode_7 = null;
     SNode quotedNode_8 = null;
     SNode quotedNode_9 = null;
@@ -922,7 +921,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     return quotedNode_7;
   }
 
-  private static SNode _quotation_createNode_un708i_a0a0b2a0a0a0a23a31() {
+  private static SNode _quotation_createNode_un708i_a0a0b2a0a0a0a13a31() {
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -936,7 +935,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_un708i_a0a0a0gb0n_0(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_un708i_a0a0a0fb0n_0(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -2304,42 +2303,42 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     );
   }
 
-  private static boolean eq_un708i_a0s0n(Object a, Object b) {
+  private static boolean eq_un708i_a0r0n(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_un708i_a0a81a31(Object a, Object b) {
+  private static boolean eq_un708i_a0a71a31(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_un708i_a0b81a31(Object a, Object b) {
+  private static boolean eq_un708i_a0b71a31(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_un708i_a0a0a0a0a0b1a0a0a0a23a31(Object a, Object b) {
+  private static boolean eq_un708i_a0a0a0a0a0b1a0a0a0a13a31(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_un708i_a0gb0n(Object a, Object b) {
+  private static boolean eq_un708i_a0fb0n(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_un708i_a0qb0n(Object a, Object b) {
+  private static boolean eq_un708i_a0pb0n(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

@@ -160,6 +160,7 @@ public class SModelOperations {
     jetbrains.mps.smodel.SNode newNode = createNewNode(model, conceptFqName);
     model.addRootNode(newNode);
     return newNode;
+
   }
 
   public static SNode addRootNode(SModel model, SNode node) {

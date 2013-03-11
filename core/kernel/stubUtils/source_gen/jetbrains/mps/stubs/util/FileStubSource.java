@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.smodel.SModelReference;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -36,13 +36,13 @@ public class FileStubSource extends FileDataSource implements StubModelDataSourc
   }
 
   @Override
-  public jetbrains.mps.smodel.SModel loadSModel(IModule module, SModel descriptor) {
-    jetbrains.mps.smodel.SModel model = new jetbrains.mps.smodel.SModel(descriptor.getReference(), new ForeignNodeIdMap());
+  public SModel loadSModel(IModule module, org.jetbrains.mps.openapi.model.SModel descriptor) {
+    SModel model = new SModel(descriptor.getReference(), new ForeignNodeIdMap());
     final ModuleDescriptor moduleDesc = ModulesMiner.getInstance().loadModuleDescriptor(getFile());
     new ProjectStructureBuilder(moduleDesc, getFile(), model.getModelDescriptor()) {
       @Override
       public Iterable<org.jetbrains.mps.openapi.model.SModelReference> loadReferences(SNode m, final ModuleDescriptor d) {
-        return Sequence.fromIterable((d.getModelRootDescriptors())).translate(new ITranslator2<ModelRootDescriptor, org.jetbrains.mps.openapi.model.SModelReference>() {
+        return Sequence.fromIterable(((Iterable<ModelRootDescriptor>) d.getModelRootDescriptors())).translate(new ITranslator2<ModelRootDescriptor, org.jetbrains.mps.openapi.model.SModelReference>() {
           public Iterable<org.jetbrains.mps.openapi.model.SModelReference> translate(ModelRootDescriptor it) {
             return loadModels(it, d);
           }
@@ -63,9 +63,9 @@ public class FileStubSource extends FileDataSource implements StubModelDataSourc
       ModelRoot created = modelRootFactory.create();
       created.load(root.getMemento());
       ((ModelRootBase) created).setModule(module);
-      Iterable<SModel> mds = ((ModelRootBase) created).loadModels();
-      return Sequence.fromIterable(mds).select(new ISelector<SModel, org.jetbrains.mps.openapi.model.SModelReference>() {
-        public org.jetbrains.mps.openapi.model.SModelReference select(SModel it) {
+      Iterable<org.jetbrains.mps.openapi.model.SModel> mds = ((ModelRootBase) created).loadModels();
+      return Sequence.fromIterable(mds).select(new ISelector<org.jetbrains.mps.openapi.model.SModel, org.jetbrains.mps.openapi.model.SModelReference>() {
+        public org.jetbrains.mps.openapi.model.SModelReference select(org.jetbrains.mps.openapi.model.SModel it) {
           return (org.jetbrains.mps.openapi.model.SModelReference) it.getReference();
         }
       });
@@ -75,7 +75,7 @@ public class FileStubSource extends FileDataSource implements StubModelDataSourc
   }
 
   @Override
-  public boolean hasModel(SModel descriptor) {
+  public boolean hasModel(org.jetbrains.mps.openapi.model.SModel descriptor) {
     return getFile() != null && getFile().exists();
   }
 }

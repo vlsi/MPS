@@ -11,10 +11,9 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
-import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.baseLanguage.javastub.ASMModelLoader;
 import jetbrains.mps.reloading.ClassPathFactory;
@@ -43,17 +42,17 @@ public class JavaStubModelDataSource extends FolderSetDataSource implements Stub
   }
 
   @Override
-  public jetbrains.mps.smodel.SModel loadSModel(IModule module, SModel descriptor) {
-    jetbrains.mps.smodel.SModel model = new jetbrains.mps.smodel.SModel(descriptor.getReference(), new ForeignNodeIdMap());
+  public SModel loadSModel(IModule module, org.jetbrains.mps.openapi.model.SModel descriptor) {
+    SModel model = new SModel(descriptor.getReference(), new ForeignNodeIdMap());
     for (Language l : getLanguagesToImport()) {
-      ( model).addLanguage(l.getModuleReference());
+      model.addLanguage(l.getModuleReference());
     }
     CompositeClassPathItem cp = this.createClassPath(descriptor);
     new ASMModelLoader(module, cp, model.getModelDescriptor(), skipPrivate).updateModel();
     return model;
   }
 
-  private CompositeClassPathItem createClassPath(SModel descriptor) {
+  private CompositeClassPathItem createClassPath(org.jetbrains.mps.openapi.model.SModel descriptor) {
     CompositeClassPathItem cp = new CompositeClassPathItem();
     for (String dir : getPaths()) {
       try {
@@ -83,7 +82,7 @@ public class JavaStubModelDataSource extends FolderSetDataSource implements Stub
   }
 
   @Override
-  public boolean hasModel(SModel md) {
+  public boolean hasModel(org.jetbrains.mps.openapi.model.SModel md) {
     return !(getPaths().isEmpty());
   }
 }

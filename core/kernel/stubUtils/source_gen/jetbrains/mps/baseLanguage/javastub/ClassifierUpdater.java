@@ -39,7 +39,6 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;

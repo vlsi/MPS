@@ -255,86 +255,86 @@
     <unitInfo nodeId="8306023725008094203" fileName="RenameLinkRefactoringTester_Simple.java" startLine="22" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.refactoring.tests.RenameLinkRefactoringTester_Simple" />
   </root>
   <root nodeRef="r:9f33ff09-28dd-4da2-8dbe-cebf2d7195a4(jetbrains.mps.refactoring.tests)/8306023725008094437">
-    <nodeInfo nodeId="8306023725008094440" fileName="RenameConceptRefactoringTester.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STRMD" />
-    <nodeInfo nodeId="8306023725008094462" fileName="RenameConceptRefactoringTester.java" startLine="28" startPosition="189" endLine="29" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1122791325004695794" fileName="RenameConceptRefactoringTester.java" startLine="29" startPosition="55" endLine="30" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7711885061309965782" fileName="RenameConceptRefactoringTester.java" startLine="32" startPosition="25" endLine="33" endPosition="302" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8306023725008094471" fileName="RenameConceptRefactoringTester.java" startLine="35" startPosition="7" endLine="36" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8306023725008094478" fileName="RenameConceptRefactoringTester.java" startLine="36" startPosition="92" endLine="37" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8306023725008094521" fileName="RenameConceptRefactoringTester.java" startLine="40" startPosition="25" endLine="41" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8306023725008094527" fileName="RenameConceptRefactoringTester.java" startLine="41" startPosition="102" endLine="42" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8306023725008094533" fileName="RenameConceptRefactoringTester.java" startLine="42" startPosition="104" endLine="43" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8306023725008094539" fileName="RenameConceptRefactoringTester.java" startLine="43" startPosition="48" endLine="44" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8306023725008094545" fileName="RenameConceptRefactoringTester.java" startLine="44" startPosition="84" endLine="45" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8306023725008094550" fileName="RenameConceptRefactoringTester.java" startLine="45" startPosition="52" endLine="46" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8306023725008094555" fileName="RenameConceptRefactoringTester.java" startLine="46" startPosition="55" endLine="47" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8306023725008094560" fileName="RenameConceptRefactoringTester.java" startLine="47" startPosition="70" endLine="48" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8306023725008094494" fileName="RenameConceptRefactoringTester.java" startLine="50" startPosition="7" endLine="51" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8306023725008094500" fileName="RenameConceptRefactoringTester.java" startLine="51" startPosition="68" endLine="52" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8306023725008094601" fileName="RenameConceptRefactoringTester.java" startLine="60" startPosition="40" endLine="61" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8306023725008094606" fileName="RenameConceptRefactoringTester.java" startLine="61" startPosition="120" endLine="62" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8306023725008094612" fileName="RenameConceptRefactoringTester.java" startLine="62" startPosition="34" endLine="63" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8306023725008094613" fileName="RenameConceptRefactoringTester.java" startLine="64" startPosition="15" endLine="65" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8306023725008094619" fileName="RenameConceptRefactoringTester.java" startLine="65" startPosition="39" endLine="66" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8306023725008094629" fileName="RenameConceptRefactoringTester.java" startLine="66" startPosition="105" endLine="67" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8306023725008094638" fileName="RenameConceptRefactoringTester.java" startLine="67" startPosition="135" endLine="68" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8306023725008094581" fileName="RenameConceptRefactoringTester.java" startLine="69" startPosition="35" endLine="70" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8306023725008094585" fileName="RenameConceptRefactoringTester.java" startLine="70" startPosition="34" endLine="71" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8306023725008094516" fileName="RenameConceptRefactoringTester.java" startLine="76" startPosition="7" endLine="77" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8306023725008094444" fileName="RenameConceptRefactoringTester.java" startLine="24" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RenameConceptRefactoringTester#()V" />
-    <nodeInfo nodeId="7711885061309965787" fileName="RenameConceptRefactoringTester.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7711885061309965786" fileName="RenameConceptRefactoringTester.java" startLine="30" startPosition="82" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8306023725008094594" fileName="RenameConceptRefactoringTester.java" startLine="59" startPosition="17" endLine="64" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8306023725008094491" fileName="RenameConceptRefactoringTester.java" startLine="39" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="8306023725008094484" fileName="RenameConceptRefactoringTester.java" startLine="37" startPosition="88" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8306023725008094578" fileName="RenameConceptRefactoringTester.java" startLine="58" startPosition="29" endLine="72" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="8306023725008094574" fileName="RenameConceptRefactoringTester.java" startLine="57" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="8306023725008094567" fileName="RenameConceptRefactoringTester.java" startLine="55" startPosition="25" endLine="74" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8306023725008094513" fileName="RenameConceptRefactoringTester.java" startLine="54" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="8306023725008094508" fileName="RenameConceptRefactoringTester.java" startLine="52" startPosition="50" endLine="76" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8306023725008094448" fileName="RenameConceptRefactoringTester.java" startLine="27" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testRefactoring#(Ljetbrains/mps/project/Project;Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/Language;Ljetbrains/mps/smodel/Language;)Z" />
-    <scopeInfo nodeId="8306023725008094447" fileName="RenameConceptRefactoringTester.java" startLine="24" startPosition="43" endLine="24" endPosition="43" />
-    <scopeInfo nodeId="7711885061309965788" fileName="RenameConceptRefactoringTester.java" startLine="32" startPosition="25" endLine="33" endPosition="302" />
-    <scopeInfo nodeId="8306023725008094444" fileName="RenameConceptRefactoringTester.java" startLine="24" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="8306023725008094579" fileName="RenameConceptRefactoringTester.java" startLine="69" startPosition="0" endLine="71" endPosition="32">
+    <nodeInfo nodeId="8306023725008094440" fileName="RenameConceptRefactoringTester.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STRMD" />
+    <nodeInfo nodeId="8306023725008094462" fileName="RenameConceptRefactoringTester.java" startLine="27" startPosition="189" endLine="28" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1122791325004695794" fileName="RenameConceptRefactoringTester.java" startLine="28" startPosition="55" endLine="29" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7711885061309965782" fileName="RenameConceptRefactoringTester.java" startLine="31" startPosition="25" endLine="32" endPosition="302" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8306023725008094471" fileName="RenameConceptRefactoringTester.java" startLine="34" startPosition="7" endLine="35" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8306023725008094478" fileName="RenameConceptRefactoringTester.java" startLine="35" startPosition="92" endLine="36" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8306023725008094521" fileName="RenameConceptRefactoringTester.java" startLine="39" startPosition="25" endLine="40" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8306023725008094527" fileName="RenameConceptRefactoringTester.java" startLine="40" startPosition="102" endLine="41" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8306023725008094533" fileName="RenameConceptRefactoringTester.java" startLine="41" startPosition="104" endLine="42" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8306023725008094539" fileName="RenameConceptRefactoringTester.java" startLine="42" startPosition="48" endLine="43" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8306023725008094545" fileName="RenameConceptRefactoringTester.java" startLine="43" startPosition="84" endLine="44" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8306023725008094550" fileName="RenameConceptRefactoringTester.java" startLine="44" startPosition="52" endLine="45" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8306023725008094555" fileName="RenameConceptRefactoringTester.java" startLine="45" startPosition="55" endLine="46" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8306023725008094560" fileName="RenameConceptRefactoringTester.java" startLine="46" startPosition="70" endLine="47" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8306023725008094494" fileName="RenameConceptRefactoringTester.java" startLine="49" startPosition="7" endLine="50" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8306023725008094500" fileName="RenameConceptRefactoringTester.java" startLine="50" startPosition="68" endLine="51" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8306023725008094601" fileName="RenameConceptRefactoringTester.java" startLine="59" startPosition="40" endLine="60" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8306023725008094606" fileName="RenameConceptRefactoringTester.java" startLine="60" startPosition="120" endLine="61" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8306023725008094612" fileName="RenameConceptRefactoringTester.java" startLine="61" startPosition="34" endLine="62" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8306023725008094613" fileName="RenameConceptRefactoringTester.java" startLine="63" startPosition="15" endLine="64" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8306023725008094619" fileName="RenameConceptRefactoringTester.java" startLine="64" startPosition="39" endLine="65" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8306023725008094629" fileName="RenameConceptRefactoringTester.java" startLine="65" startPosition="105" endLine="66" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8306023725008094638" fileName="RenameConceptRefactoringTester.java" startLine="66" startPosition="127" endLine="67" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8306023725008094581" fileName="RenameConceptRefactoringTester.java" startLine="68" startPosition="35" endLine="69" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8306023725008094585" fileName="RenameConceptRefactoringTester.java" startLine="69" startPosition="34" endLine="70" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8306023725008094516" fileName="RenameConceptRefactoringTester.java" startLine="75" startPosition="7" endLine="76" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8306023725008094444" fileName="RenameConceptRefactoringTester.java" startLine="23" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RenameConceptRefactoringTester#()V" />
+    <nodeInfo nodeId="7711885061309965787" fileName="RenameConceptRefactoringTester.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7711885061309965786" fileName="RenameConceptRefactoringTester.java" startLine="29" startPosition="82" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8306023725008094594" fileName="RenameConceptRefactoringTester.java" startLine="58" startPosition="17" endLine="63" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8306023725008094491" fileName="RenameConceptRefactoringTester.java" startLine="38" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8306023725008094484" fileName="RenameConceptRefactoringTester.java" startLine="36" startPosition="88" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8306023725008094578" fileName="RenameConceptRefactoringTester.java" startLine="57" startPosition="29" endLine="71" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="8306023725008094574" fileName="RenameConceptRefactoringTester.java" startLine="56" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8306023725008094567" fileName="RenameConceptRefactoringTester.java" startLine="54" startPosition="25" endLine="73" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8306023725008094513" fileName="RenameConceptRefactoringTester.java" startLine="53" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8306023725008094508" fileName="RenameConceptRefactoringTester.java" startLine="51" startPosition="50" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8306023725008094448" fileName="RenameConceptRefactoringTester.java" startLine="26" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testRefactoring#(Ljetbrains/mps/project/Project;Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/Language;Ljetbrains/mps/smodel/Language;)Z" />
+    <scopeInfo nodeId="8306023725008094447" fileName="RenameConceptRefactoringTester.java" startLine="23" startPosition="43" endLine="23" endPosition="43" />
+    <scopeInfo nodeId="7711885061309965788" fileName="RenameConceptRefactoringTester.java" startLine="31" startPosition="25" endLine="32" endPosition="302" />
+    <scopeInfo nodeId="8306023725008094444" fileName="RenameConceptRefactoringTester.java" startLine="23" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="8306023725008094579" fileName="RenameConceptRefactoringTester.java" startLine="68" startPosition="0" endLine="70" endPosition="32">
       <varInfo nodeId="8306023725008094591" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="8306023725008094580" fileName="RenameConceptRefactoringTester.java" startLine="69" startPosition="35" endLine="71" endPosition="32" />
-    <scopeInfo nodeId="7711885061309965787" fileName="RenameConceptRefactoringTester.java" startLine="32" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="8306023725008094600" fileName="RenameConceptRefactoringTester.java" startLine="60" startPosition="40" endLine="63" endPosition="23" />
-    <scopeInfo nodeId="8306023725008094520" fileName="RenameConceptRefactoringTester.java" startLine="40" startPosition="25" endLine="48" endPosition="67">
+    <scopeInfo nodeId="8306023725008094580" fileName="RenameConceptRefactoringTester.java" startLine="68" startPosition="35" endLine="70" endPosition="32" />
+    <scopeInfo nodeId="7711885061309965787" fileName="RenameConceptRefactoringTester.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="8306023725008094600" fileName="RenameConceptRefactoringTester.java" startLine="59" startPosition="40" endLine="62" endPosition="23" />
+    <scopeInfo nodeId="8306023725008094520" fileName="RenameConceptRefactoringTester.java" startLine="39" startPosition="25" endLine="47" endPosition="67">
       <varInfo nodeId="8306023725008094540" varName="concept" />
       <varInfo nodeId="8306023725008094534" varName="model" />
       <varInfo nodeId="8306023725008094522" varName="structureModelDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="8306023725008094593" fileName="RenameConceptRefactoringTester.java" startLine="59" startPosition="17" endLine="68" endPosition="129">
+    <scopeInfo nodeId="8306023725008094593" fileName="RenameConceptRefactoringTester.java" startLine="58" startPosition="17" endLine="67" endPosition="129">
       <varInfo nodeId="8306023725008094620" varName="conceptFqName" />
       <varInfo nodeId="8306023725008094614" varName="sModel" />
       <varInfo nodeId="8306023725008094630" varName="structureModelDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="8306023725008094491" fileName="RenameConceptRefactoringTester.java" startLine="39" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="8306023725008094577" fileName="RenameConceptRefactoringTester.java" startLine="58" startPosition="29" endLine="72" endPosition="13" />
-    <scopeInfo nodeId="8306023725008094574" fileName="RenameConceptRefactoringTester.java" startLine="57" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="8306023725008094566" fileName="RenameConceptRefactoringTester.java" startLine="55" startPosition="25" endLine="74" endPosition="11" />
-    <scopeInfo nodeId="8306023725008094513" fileName="RenameConceptRefactoringTester.java" startLine="54" startPosition="0" endLine="76" endPosition="0" />
-    <scopeInfo nodeId="8306023725008094461" fileName="RenameConceptRefactoringTester.java" startLine="28" startPosition="189" endLine="77" endPosition="21">
+    <scopeInfo nodeId="8306023725008094491" fileName="RenameConceptRefactoringTester.java" startLine="38" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="8306023725008094577" fileName="RenameConceptRefactoringTester.java" startLine="57" startPosition="29" endLine="71" endPosition="13" />
+    <scopeInfo nodeId="8306023725008094574" fileName="RenameConceptRefactoringTester.java" startLine="56" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="8306023725008094566" fileName="RenameConceptRefactoringTester.java" startLine="54" startPosition="25" endLine="73" endPosition="11" />
+    <scopeInfo nodeId="8306023725008094513" fileName="RenameConceptRefactoringTester.java" startLine="53" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="8306023725008094461" fileName="RenameConceptRefactoringTester.java" startLine="27" startPosition="189" endLine="76" endPosition="21">
       <varInfo nodeId="8306023725008094463" varName="newConceptName" />
       <varInfo nodeId="1122791325004695795" varName="refactoring" />
       <varInfo nodeId="8306023725008094472" varName="refactoringContext" />
       <varInfo nodeId="8306023725008094501" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="8306023725008094448" fileName="RenameConceptRefactoringTester.java" startLine="27" startPosition="0" endLine="79" endPosition="0">
+    <scopeInfo nodeId="8306023725008094448" fileName="RenameConceptRefactoringTester.java" startLine="26" startPosition="0" endLine="78" endPosition="0">
       <varInfo nodeId="8306023725008094451" varName="project" />
       <varInfo nodeId="8306023725008094453" varName="sandbox1" />
       <varInfo nodeId="8306023725008094455" varName="sandbox2" />
       <varInfo nodeId="8306023725008094457" varName="testRefactoringLanguage" />
       <varInfo nodeId="8306023725008094459" varName="testRefactoringTargetLanguage" />
     </scopeInfo>
-    <unitInfo nodeId="7711885061309965787" fileName="RenameConceptRefactoringTester.java" startLine="31" startPosition="45" endLine="35" endPosition="5" unitName="jetbrains.mps.refactoring.tests.RenameConceptRefactoringTester$1" />
-    <unitInfo nodeId="8306023725008094490" fileName="RenameConceptRefactoringTester.java" startLine="38" startPosition="45" endLine="50" endPosition="5" unitName="jetbrains.mps.refactoring.tests.RenameConceptRefactoringTester$2" />
-    <unitInfo nodeId="8306023725008094573" fileName="RenameConceptRefactoringTester.java" startLine="56" startPosition="49" endLine="74" endPosition="9" unitName="jetbrains.mps.refactoring.tests.RenameConceptRefactoringTester$4" />
-    <unitInfo nodeId="8306023725008094512" fileName="RenameConceptRefactoringTester.java" startLine="53" startPosition="41" endLine="76" endPosition="5" unitName="jetbrains.mps.refactoring.tests.RenameConceptRefactoringTester$3" />
-    <unitInfo nodeId="8306023725008094437" fileName="RenameConceptRefactoringTester.java" startLine="21" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.refactoring.tests.RenameConceptRefactoringTester" />
+    <unitInfo nodeId="7711885061309965787" fileName="RenameConceptRefactoringTester.java" startLine="30" startPosition="45" endLine="34" endPosition="5" unitName="jetbrains.mps.refactoring.tests.RenameConceptRefactoringTester$1" />
+    <unitInfo nodeId="8306023725008094490" fileName="RenameConceptRefactoringTester.java" startLine="37" startPosition="45" endLine="49" endPosition="5" unitName="jetbrains.mps.refactoring.tests.RenameConceptRefactoringTester$2" />
+    <unitInfo nodeId="8306023725008094573" fileName="RenameConceptRefactoringTester.java" startLine="55" startPosition="49" endLine="73" endPosition="9" unitName="jetbrains.mps.refactoring.tests.RenameConceptRefactoringTester$4" />
+    <unitInfo nodeId="8306023725008094512" fileName="RenameConceptRefactoringTester.java" startLine="52" startPosition="41" endLine="75" endPosition="5" unitName="jetbrains.mps.refactoring.tests.RenameConceptRefactoringTester$3" />
+    <unitInfo nodeId="8306023725008094437" fileName="RenameConceptRefactoringTester.java" startLine="20" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.refactoring.tests.RenameConceptRefactoringTester" />
   </root>
   <root nodeRef="r:9f33ff09-28dd-4da2-8dbe-cebf2d7195a4(jetbrains.mps.refactoring.tests)/8306023725008095390">
     <nodeInfo nodeId="2529529415857702876" fileName="RefactoringTestFacade.java" startLine="15" startPosition="76" endLine="16" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

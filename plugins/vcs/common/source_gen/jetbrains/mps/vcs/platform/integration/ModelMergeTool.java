@@ -9,17 +9,16 @@ import com.intellij.openapi.diff.impl.mergeTool.MergeRequestImpl;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import java.io.File;
-
-import jetbrains.mps.smodel.BaseSModelDescriptor;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import com.intellij.openapi.diff.DiffContent;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vcs.util.MergeConstants;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog;
 import javax.swing.SwingUtilities;
+import jetbrains.mps.smodel.BaseSModelDescriptor;
 import java.io.IOException;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import com.intellij.openapi.ui.DialogWrapper;
@@ -43,9 +42,9 @@ public class ModelMergeTool extends MergeTool {
       }
       File backupFile = MergeBackupUtil.zipModel(request.getContents(), file);
       DiffContent[] contents = mrequest.getContents();
-      final jetbrains.mps.smodel.SModel baseModel;
-      final jetbrains.mps.smodel.SModel mineModel;
-      final jetbrains.mps.smodel.SModel newModel;
+      final SModel baseModel;
+      final SModel mineModel;
+      final SModel newModel;
       try {
         baseModel = ModelPersistence.readModel(contents[MergeConstants.ORIGINAL].getDocument().getText(), false);
         mineModel = ModelPersistence.readModel(new String(contents[MergeConstants.CURRENT].getBytes(), FileUtil.DEFAULT_CHARSET), false);

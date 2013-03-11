@@ -9,7 +9,6 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.extapi.persistence.FolderSetDataSource;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.smodel.Language;
@@ -54,7 +53,7 @@ public class JavaClassStubModelDescriptor extends BaseSModelDescriptorWithSource
   public synchronized SModel getSModelInternal() {
     if (myModel == null) {
       myModel = createModel();
-      ( myModel).setModelDescriptor(this);
+      myModel.setModelDescriptor(this);
       fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
     }
     return myModel;

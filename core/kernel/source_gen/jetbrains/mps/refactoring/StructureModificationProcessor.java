@@ -37,7 +37,7 @@ public class StructureModificationProcessor {
     boolean result = data.apply(myModelMap);
     for (IMapping<SModelReference, Integer> entry : MapSequence.fromMap(data.getDependencies())) {
       // also adds implicit import if necessary 
-      ( myModel).updateImportedModelUsedVersion(entry.key(), entry.value() + 1);
+      myModel.updateImportedModelUsedVersion(entry.key(), entry.value() + 1);
     }
     return result;
   }
@@ -56,7 +56,7 @@ public class StructureModificationProcessor {
 
   public List<StructureModification> getApplicableModifications() {
     List<StructureModification> result = ListSequence.fromList(new ArrayList<StructureModification>());
-    for (jetbrains.mps.smodel.SModel.ImportElement importElement : ListSequence.fromList(SModelOperations.getAllImportElements(myModel.getModelDescriptor()))) {
+    for (SModel.ImportElement importElement : ListSequence.fromList(SModelOperations.getAllImportElements(myModel.getModelDescriptor()))) {
       RefactorableSModelDescriptor usedModel = as_etzqsh_a0a0a1a5(SModelRepository.getInstance().getModelDescriptor(importElement.getModelReference()), RefactorableSModelDescriptor.class);
       if (usedModel == null) {
         continue;
@@ -141,7 +141,7 @@ lfind:
 
   public static boolean hasRefactoringsToPlay(@NotNull SModel model) {
     if (refactoringsPlaybackEnabled() && SModelStereotype.isUserModel(model.getModelDescriptor())) {
-      for (jetbrains.mps.smodel.SModel.ImportElement importElement : ListSequence.fromList(SModelOperations.getAllImportElements(model.getModelDescriptor()))) {
+      for (SModel.ImportElement importElement : ListSequence.fromList(SModelOperations.getAllImportElements(model.getModelDescriptor()))) {
         RefactorableSModelDescriptor usedModel = as_etzqsh_a0a0a0a0a8(SModelRepository.getInstance().getModelDescriptor(importElement.getModelReference()), RefactorableSModelDescriptor.class);
         if (usedModel != null && importElement.getUsedVersion() < usedModel.getVersion()) {
           return true;

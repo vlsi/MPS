@@ -18,7 +18,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.vcs.util.ModelVersion;
 import jetbrains.mps.util.UnzipUtil;
 import jetbrains.mps.project.MPSExtentions;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vfs.IFile;
@@ -104,12 +104,12 @@ public class MergeBackupUtil {
   }
 
   @Nullable
-  public static jetbrains.mps.smodel.SModel[] loadZippedModels(File zipfile, ModelVersion[] versions) throws IOException, ModelReadException {
+  public static SModel[] loadZippedModels(File zipfile, ModelVersion[] versions) throws IOException, ModelReadException {
     String[] modelsAsText = MergeBackupUtil.loadZippedModelsAsText(zipfile, versions);
     if (modelsAsText == null) {
       return null;
     }
-    jetbrains.mps.smodel.SModel[] models = new jetbrains.mps.smodel.SModel[modelsAsText.length];
+    SModel[] models = new SModel[modelsAsText.length];
     for (int i = 0; i < models.length; i++) {
       models[i] = ModelPersistence.readModel(modelsAsText[i], false);
     }

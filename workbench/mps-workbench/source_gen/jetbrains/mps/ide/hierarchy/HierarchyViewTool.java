@@ -48,7 +48,7 @@ public class HierarchyViewTool extends AbstractHierarchyView {
     super.projectOpened();
     for (SModel md : SModelRepository.getInstance().getModelDescriptors()) {
       if (LanguageAspect.STRUCTURE.is(md)) {
-        myStructureModels.add( md);
+        myStructureModels.add(md);
       }
     }
   }
@@ -71,7 +71,7 @@ public class HierarchyViewTool extends AbstractHierarchyView {
 
       @Override
       public void onCreate(SModule module, SModel model) {
-        onCreateStructureModel( model);
+        onCreateStructureModel(model);
       }
     };
     AbstractModule.registerModelCreationListener(myCreationListener);

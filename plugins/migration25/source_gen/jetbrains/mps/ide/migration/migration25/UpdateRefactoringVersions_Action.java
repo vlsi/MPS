@@ -16,9 +16,9 @@ import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.logging.Logger;
 
 public class UpdateRefactoringVersions_Action extends BaseAction {

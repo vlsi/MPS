@@ -3,8 +3,8 @@
   <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.core.client(jetbrains.mps.ui.gwt.runtime/com.google.gwt.core.client@java_stub)" />
   <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.resources.client(jetbrains.mps.ui.gwt.runtime/com.google.gwt.resources.client@java_stub)" />
   <dep model="f:java_stub#cfae28de-dc36-4914-a95f-7d9a0738cf32#com.google.gwt.user.client.ui(jetbrains.mps.ui.gwt.runtime/com.google.gwt.user.client.ui@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
-  <dep model="r:36693452-2637-4608-8caa-ab32ee7c1be3(jetbrains.mps.ui.multiplexing)" hash="-2hcxhmpxtmesrllycyfw6oawfhz4wuw" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="38s949ymo9nq7jj7p2lrfowy0hurndx" />
+  <dep model="r:36693452-2637-4608-8caa-ab32ee7c1be3(jetbrains.mps.ui.multiplexing)" hash="-3cgwyuu687u89rxtu1uuayn3ujoztud" />
   <dep model="r:61c770cf-d088-4c1b-909e-3424021db8f2(jetbrains.mps.ui.sandbox)" hash="xsv3ib1edbybss80r4p7s2883mykpy" />
   <dep model="r:66bbcfbe-bddf-4df7-8bd5-fa076512c024(jetbrains.mps.ui.generator.template.variants@generator)" hash="-eis4a9nsu5xc7aqd2j253pch5i7nmip" />
   <common hash="cvi2bsepa6eiy48yphuonecoi1m0bhc" />

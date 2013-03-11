@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-dyyg5jp60s7wzxcwf6yt8v4qylk40j0">
   <dep model="f:java_stub#69934240-945d-492b-83e7-39bda70200e7#org.eclipse.swt(jetbrains.mps.ui.swt.runtime/org.eclipse.swt@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="38s949ymo9nq7jj7p2lrfowy0hurndx" />
   <common hash="-dqpv554ddf38uubjoeldp3f8xt9ijqi" />
   <source id="9003987136928267844" name="ControlIterator" hash="-63s57q2hewg5qn289p9cn6n0khv9d5g">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />

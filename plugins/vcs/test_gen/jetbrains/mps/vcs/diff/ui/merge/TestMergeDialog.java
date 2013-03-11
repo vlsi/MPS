@@ -10,7 +10,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.mock.MockProjectEx;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.bookmark.BookmarkManager;
-import jetbrains.mps.smodel.BaseSModelDescriptor;
 import org.jdom.JDOMException;
 import java.io.IOException;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
@@ -18,7 +17,7 @@ import java.util.Scanner;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.TestMain;
 import com.intellij.openapi.util.IconLoader;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import java.io.File;
 import jetbrains.mps.vcs.util.MergeVersion;
@@ -33,6 +32,7 @@ import java.lang.reflect.Field;
 import com.intellij.idea.IdeaTestApplication;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.smodel.BaseSModelDescriptor;
 
 public class TestMergeDialog {
   private static EditorManager ourEditorManager = new EditorManager();
@@ -74,11 +74,10 @@ public class TestMergeDialog {
     IdeMain.setTestMode(IdeMain.TestMode.NO_TEST);
     TestMain.configureMPS();
     IconLoader.activate();
-    final jetbrains.mps.smodel.SModel[] models = new jetbrains.mps.smodel.SModel[3];
+    final SModel[] models = new SModel[3];
     String resultFile;
     if (args.length == 2 || args.length == 1) {
-      final jetbrains.mps.smodel.SModel[] zipped = MergeBackupUtil.loadZippedModels(new File(args[0]),
-          new MergeVersion[]{MergeVersion.BASE, MergeVersion.MINE, MergeVersion.REPOSITORY});
+      final SModel[] zipped = MergeBackupUtil.loadZippedModels(new File(args[0]), new MergeVersion[]{MergeVersion.BASE, MergeVersion.MINE, MergeVersion.REPOSITORY});
       models[0] = zipped[0];
       models[1] = zipped[1];
       models[2] = zipped[2];
@@ -106,8 +105,7 @@ public class TestMergeDialog {
       public void run() {
         MergeModelsDialog dialog = ModelAccess.instance().runReadAction(new Computable<MergeModelsDialog>() {
           public MergeModelsDialog compute() {
-            return new MergeModelsDialog(models[0], models[1], models[2], new SimpleDiffRequest(TestMergeDialog.ourProject,
-                (jetbrains.mps.smodel.SModel[]) null, new String[]{"Local Version", "Merge Result", "Remote Version"}));
+            return new MergeModelsDialog(models[0], models[1], models[2], new SimpleDiffRequest(TestMergeDialog.ourProject, ((SModel[]) null), new String[]{"Local Version", "Merge Result", "Remote Version"}));
           }
         });
         try {
@@ -118,7 +116,7 @@ public class TestMergeDialog {
           e.printStackTrace();
         }
         dialog.show();
-        final SModel result = dialog.getResultModelWithFixedId();
+        final org.jetbrains.mps.openapi.model.SModel result = dialog.getResultModelWithFixedId();
         if (result == null) {
           dialog.close(0);
           System.exit(0);

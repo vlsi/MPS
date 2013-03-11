@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
 

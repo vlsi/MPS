@@ -7,8 +7,6 @@ import java.util.zip.ZipFile;
 import java.io.IOException;
 import java.util.Enumeration;
 import java.util.zip.ZipEntry;
-
-import jetbrains.mps.smodel.BaseSModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.RoleIdsComponent;
 import jetbrains.mps.vcs.core.mergedriver.MergerRoleIdsHandler;
@@ -17,6 +15,7 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
+import jetbrains.mps.smodel.BaseSModelDescriptor;
 import java.util.zip.ZipOutputStream;
 import java.io.FileOutputStream;
 import org.jetbrains.annotations.Nullable;

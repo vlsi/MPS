@@ -29,7 +29,6 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeSelectionModel;
 import jetbrains.mps.ide.platform.modeltree.ModelTreeCellRenderer;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import javax.swing.event.TreeSelectionListener;

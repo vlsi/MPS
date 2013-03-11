@@ -22,7 +22,6 @@ import jetbrains.mps.extapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import java.util.Queue;
@@ -67,8 +66,8 @@ public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, 
         continue;
       }
       if (emd.isChanged()) {
-        ListSequence.fromList(modifiedClasses).addSequence(ListSequence.fromList(SModelOperations.getNodes(( md), "jetbrains.mps.baseLanguage.structure.ClassConcept")));
-        ListSequence.fromList(modifiedInterfaces).addSequence(ListSequence.fromList(SModelOperations.getNodes(( md), "jetbrains.mps.baseLanguage.structure.Interface")));
+        ListSequence.fromList(modifiedClasses).addSequence(ListSequence.fromList(SModelOperations.getNodes(md, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
+        ListSequence.fromList(modifiedInterfaces).addSequence(ListSequence.fromList(SModelOperations.getNodes(md, "jetbrains.mps.baseLanguage.structure.Interface")));
       } else {
         SetSequence.fromSet(unModifiedModelFiles).addElement(VirtualFileUtils.getVirtualFile(modelFile));
       }

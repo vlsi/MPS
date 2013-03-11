@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-b94u3hqqhc0bzcrmfkfchopdt7pmbmo">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="38s949ymo9nq7jj7p2lrfowy0hurndx" />
   <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="5cgkv9hjtx5w7uuovfx48bh4lywgdpw" />
-  <dep model="r:8bac3b50-f9ad-4677-8274-76544dbc0da8(jetbrains.mps.lang.editor.table.matrix.test)" hash="-b94u3hqqhc0bzcrmfkfchopdt7pmbmo" />
-  <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" hash="21ke5b6w2ivmbysoi69kc53plopvudc" />
+  <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" hash="-5v2y2cqfm2mcsyv6ygv9o448nhkq6an" />
   <common hash="1ys1syqd2ghu95rgbg5i0ojwlfrndkp" />
   <source id="4379396156287837026" hash="46ee3s3vniy5n6uq1ckkjmmy7175ohi">
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="4379396156287837027" name="Create" hash="bremvqi14790m54tbpvzgop7g05ghjk">
+  <source id="4379396156287837027" name="Create" hash="bremvqi14790m54tbpvzgop7g05ghjk" dependsOnNodes="true">
     <dep root="1310272842909633660" />
     <dep root="1310272842909656084" />
     <dep root="4379396156287837026" />
@@ -17,11 +16,10 @@
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:8bac3b50-f9ad-4677-8274-76544dbc0da8(jetbrains.mps.lang.editor.table.matrix.test)" />
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
     <file name="Create_Test.java" />
   </source>
-  <source id="1310272842909633660" name="CreateX" hash="dh2bqjyv652k6tufhtalcu0q9npelny">
+  <source id="1310272842909633660" name="CreateX" hash="dh2bqjyv652k6tufhtalcu0q9npelny" dependsOnNodes="true">
     <dep root="1310272842909656084" />
     <dep root="4379396156287837026" />
     <dep root="4379396156287837027" />
@@ -29,11 +27,10 @@
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:8bac3b50-f9ad-4677-8274-76544dbc0da8(jetbrains.mps.lang.editor.table.matrix.test)" />
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
     <file name="CreateX_Test.java" />
   </source>
-  <source id="1310272842909656084" name="CreateY" hash="4t7lelltwmrfqxbfoown778dqsozw0s">
+  <source id="1310272842909656084" name="CreateY" hash="4t7lelltwmrfqxbfoown778dqsozw0s" dependsOnNodes="true">
     <dep root="1310272842909633660" />
     <dep root="4379396156287837026" />
     <dep root="4379396156287837027" />
@@ -41,11 +38,10 @@
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:8bac3b50-f9ad-4677-8274-76544dbc0da8(jetbrains.mps.lang.editor.table.matrix.test)" />
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
     <file name="CreateY_Test.java" />
   </source>
-  <source id="8748948598094995664" name="RemoveY" hash="-7fogx3ujvkb0jnyqilb88g8mt3400oi">
+  <source id="8748948598094995664" name="RemoveY" hash="-7fogx3ujvkb0jnyqilb88g8mt3400oi" dependsOnNodes="true">
     <dep root="1310272842909633660" />
     <dep root="1310272842909656084" />
     <dep root="4379396156287837026" />
@@ -53,7 +49,6 @@
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:8bac3b50-f9ad-4677-8274-76544dbc0da8(jetbrains.mps.lang.editor.table.matrix.test)" />
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
     <file name="RemoveY_Test.java" />
   </source>

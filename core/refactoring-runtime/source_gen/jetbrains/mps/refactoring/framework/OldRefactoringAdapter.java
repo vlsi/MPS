@@ -9,7 +9,6 @@ import java.util.Map;
 import jetbrains.mps.project.IModule;
 import java.util.ArrayList;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.smodel.SModelInternal;
 
 @Deprecated
 public class OldRefactoringAdapter implements IRefactoring {

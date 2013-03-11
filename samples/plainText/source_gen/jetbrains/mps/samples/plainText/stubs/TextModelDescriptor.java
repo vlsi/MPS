@@ -48,7 +48,7 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
   @Override
   public void save() {
     SModel model = getSModelInternal();
-    for (SNode tf : ListSequence.fromList(SModelOperations.getRoots(model.getModelDescriptor(), "jetbrains.mps.samples.plainText.structure.TextFile"))) {
+    for (SNode tf : ListSequence.fromList(SModelOperations.getRoots(((org.jetbrains.mps.openapi.model.SModel) model.getModelDescriptor()), "jetbrains.mps.samples.plainText.structure.TextFile"))) {
       try {
         OutputStream os = ((MultiStreamDataSource) getSource()).openOutputStream(SPropertyOperations.getString(tf, "name"));
         os.write(SPropertyOperations.getString(tf, "text").getBytes());
@@ -92,7 +92,7 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
     SModel m = new SModel(getSModelReference());
     MultiStreamDataSource source = (MultiStreamDataSource) getSource();
     for (String child : Sequence.fromIterable(source.getAvailableStreams())) {
-      SNode root = SModelOperations.createNewRootNode(((org.jetbrains.mps.openapi.model.SModel) m), "jetbrains.mps.samples.plainText.structure.TextFile", null);
+      SNode root = SModelOperations.createNewRootNode(((org.jetbrains.mps.openapi.model.SModel) m.getModelDescriptor()), "jetbrains.mps.samples.plainText.structure.TextFile", null);
       try {
         InputStream is = source.openInputStream(child);
         byte[] buf = new byte[1000000];
