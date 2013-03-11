@@ -24,7 +24,6 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryAdapter;
 import jetbrains.mps.smodel.structure.ExtensionDescriptor;
 import org.jetbrains.annotations.Nullable;
@@ -34,16 +33,14 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComponent {
   private static Logger LOG = Logger.getLogger(ExtensionRegistry.class);
 
   private static ExtensionRegistry INSTANCE;
 
-  private Map<IModule, String> myModuleToNamespace = new HashMap<IModule, String>();
+  private Map<SModule, String> myModuleToNamespace = new HashMap<SModule, String>();
   private HashMap<String, ExtensionDescriptor> myExtensionDescriptors = new HashMap<String, ExtensionDescriptor>();
-  private AtomicBoolean myInitialLoadHappened = new AtomicBoolean(false);
   private ModuleRepositoryAdapter myListener = new MyModuleRepositoryAdapter();
   @Nullable
   private ClassLoaderManager myClm;
@@ -52,7 +49,12 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
   private ReloadAdapter myHandler = new ReloadAdapter() {
     @Override
     public void unload() {
-      reloadExtensionDescriptors();
+      unloadExtensionDescriptors();
+    }
+
+    @Override
+    public void onAfterReload() {
+      loadExtensionDescriptors();
     }
   };
 
@@ -90,22 +92,16 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
     }
   }
 
-  // can be called multiple times
-  public void loadExtensionDescriptors() {
-    if (!myInitialLoadHappened.compareAndSet(false, true)) return;
-    reloadExtensionDescriptors();
-  }
-
-  public void reloadExtensionDescriptors() {
-    ModelAccess.assertLegalWrite();
-
+  private void unloadExtensionDescriptors() {
     for (ExtensionDescriptor desc : myExtensionDescriptors.values()) {
       unregisterExtensionDescriptor(desc);
     }
     myExtensionDescriptors.clear();
+  }
 
-    Set<IModule> existing = new HashSet<IModule>(myModuleToNamespace.keySet());
-    for (IModule mod : MPSModuleRepository.getInstance().getAllModules()) {
+  private void loadExtensionDescriptors() {
+    Set<SModule> existing = new HashSet<SModule>(myModuleToNamespace.keySet());
+    for (SModule mod : MPSModuleRepository.getInstance().getModules()) {
       String namespace = mod.getModuleName();
 
       // duplicate module, ignore
@@ -119,7 +115,7 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
       myExtensionDescriptors.put(namespace, desc);
       registerExtensionDescriptor(desc);
     }
-    for (IModule mod : existing) {
+    for (SModule mod : existing) {
       myModuleToNamespace.remove(mod);
     }
   }
@@ -136,11 +132,11 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
     unregisterExtensions(extensionDescriptor.getExtensions());
   }
 
-  private ExtensionDescriptor findExtensionDescriptor(IModule mod) {
+  private ExtensionDescriptor findExtensionDescriptor(SModule mod) {
     if (mod instanceof Language) {
       return findLanguageExtensionDescriptor((Language) mod);
     } else if (mod instanceof Solution) {
-      SolutionDescriptor sdesc = (SolutionDescriptor) mod.getModuleDescriptor();
+      SolutionDescriptor sdesc = ((Solution) mod).getModuleDescriptor();
       switch (sdesc.getKind()) {
         case PLUGIN_CORE:
         case PLUGIN_EDITOR:

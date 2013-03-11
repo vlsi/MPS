@@ -131,7 +131,7 @@ public class LibraryInitializer implements CoreComponent {
     ClassLoaderManager.getInstance().updateClassPath();
 
     LanguageRegistry.getInstance().loadLanguages();
-    ExtensionRegistry.getInstance().loadExtensionDescriptors();
+//    ExtensionRegistry.getInstance().loadExtensionDescriptors();
 
     for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
       m.invalidateDependencies();
