@@ -144,9 +144,10 @@ public class ClassLoaderManager implements CoreComponent {
     if (myClassLoaders.containsKey(module)) {
       return myClassLoaders.get(module);
     }
-    ModuleClassLoader classLoader = new ModuleClassLoader(module);
+    ModuleClassLoaderSupport support = ModuleClassLoaderSupport.create(module);
+    ModuleClassLoader classLoader = new ModuleClassLoader(support);
     // save back references
-    for (SModule dep : classLoader.getSupport().getCompileDependencies()) {
+    for (SModule dep : support.getCompileDependencies()) {
       if (!myBackRefs.containsKey(dep)) {
         myBackRefs.put(dep, new HashSet<SModule>());
       }

@@ -436,7 +436,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
     @Override
     protected Class<?> findClass(String name) throws ClassNotFoundException {
-      byte[] bytes = new ModuleClassLoaderSupport(Language.this).findClassBytes(name);
+      byte[] bytes = ModuleClassLoaderSupport.create(Language.this).findClassBytes(name);
       if (bytes == null) return null;
       definePackageIfNecessary(name);
       return defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain());

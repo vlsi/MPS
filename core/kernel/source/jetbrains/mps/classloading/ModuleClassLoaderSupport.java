@@ -29,12 +29,15 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class ModuleClassLoaderSupport {
+  private final SModule module;
   private final IClassPathItem classPathItem;
   private final Set<SModule> compileDependencies;
 
-  public ModuleClassLoaderSupport(SModule module) {
+  private ModuleClassLoaderSupport(SModule module) {
     // ModuleClassLoaders should be created only from Language / Solution modules, not Generator!
     assert !(module instanceof Generator);
+
+    this.module = module;
 
     JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
     assert facet != null;
@@ -47,6 +50,23 @@ public class ModuleClassLoaderSupport {
         this.compileDependencies.add(dependency);
       }
     }
+  }
+
+  // ext point possible here
+  public static boolean canCreate(SModule module) {
+    if (module instanceof Generator) {
+      return false;
+    }
+    JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
+    return facet != null && facet.isCompileInMps();
+  }
+
+  public static ModuleClassLoaderSupport create(SModule module) {
+    return new ModuleClassLoaderSupport(module);
+  }
+
+  public SModule getModule() {
+    return module;
   }
 
   public IClassPathItem getClassPathItem() {

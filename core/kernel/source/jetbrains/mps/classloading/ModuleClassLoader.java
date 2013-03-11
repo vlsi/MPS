@@ -21,7 +21,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ProtectionDomainUtil;
 import jetbrains.mps.util.iterable.IterableEnumeration;
@@ -46,16 +45,15 @@ public class ModuleClassLoader extends ClassLoader {
   //this is for debug purposes (heap dumps)
   @SuppressWarnings({"UnusedDeclaration", "FieldCanBeLocal"})
   private boolean myDisposed;
-  private SModule myModule;
 
   private volatile ModuleClassLoaderSupport mySupport;
 
   //This must be thread-safe. This does not include results of parent classloader
   private final Map<String, Class> myClasses = Collections.synchronizedMap(new THashMap<String, Class>());
 
-  public ModuleClassLoader(SModule module) {
-    super(getParentPluginClassLoader(module));
-    myModule = module;
+  public ModuleClassLoader(ModuleClassLoaderSupport classLoaderSupport) {
+    super(getParentPluginClassLoader(classLoaderSupport.getModule()));
+    mySupport = classLoaderSupport;
   }
 
   private static ClassLoader getParentPluginClassLoader(SModule module) {
@@ -68,7 +66,7 @@ public class ModuleClassLoader extends ClassLoader {
   @Override
   protected synchronized Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
     // todo: wrong now
-    if (!ClassLoaderManager.getInstance().canLoad(myModule)) throw new ClassNotFoundException(name);
+    if (!ClassLoaderManager.getInstance().canLoad(mySupport.getModule())) throw new ClassNotFoundException(name);
 
     //This does not guarantee that if one class was loaded, it will be returned by sequential loadClass immediately,
     //but only makes classloading faster.
@@ -91,17 +89,17 @@ public class ModuleClassLoader extends ClassLoader {
   }
 
   private synchronized Class<?> loadFromSelf(String name) {
-    if (canLoadFromSelf(myModule)) {
+    if (canLoadFromSelf(mySupport.getModule())) {
       Class c = findLoadedClass(name);
       if (c != null) return c;
 
-      byte[] bytes = getSupport().findClassBytes(name);
+      byte[] bytes = mySupport.findClassBytes(name);
       if (bytes != null) {
         String pack = NameUtil.namespaceFromLongName(name);
         if (getPackage(pack) == null) {
           definePackage(pack, null, null, null, null, null, null, null);
         }
-        ClassLoaderManager.getInstance().classLoaded(name, (ModuleReference) myModule.getModuleReference());
+        ClassLoaderManager.getInstance().classLoaded(name, (ModuleReference) mySupport.getModule().getModuleReference());
         return defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain());
       }
     }
@@ -126,12 +124,12 @@ public class ModuleClassLoader extends ClassLoader {
 
     //from dependencies (try modules only)
     List<SModule> queue = new ArrayList<SModule>();
-    for (SModule m : getSupport().getCompileDependencies()) {
-      if (m.equals(myModule)) continue;
+    for (SModule m : mySupport.getCompileDependencies()) {
+      if (m.equals(mySupport.getModule())) continue;
       // todo: wrong now
-      if (!ClassLoaderManager.getInstance().canLoad(myModule)) continue;
+      if (!ClassLoaderManager.getInstance().canLoad(mySupport.getModule())) continue;
 
-      if (canLoadFromSelf(m) && ClassLoaderManager.getInstance().getClassLoader(m).getSupport().canFindClass(name)) {
+      if (canLoadFromSelf(m) && ClassLoaderManager.getInstance().getClassLoader(m).mySupport.canFindClass(name)) {
         //here it will load with self, with any values as two last parameters
         return Class.forName(name, false, ClassLoaderManager.getInstance().getClassLoader(m));
       } else {
@@ -162,8 +160,8 @@ public class ModuleClassLoader extends ClassLoader {
 
   @Override
   protected URL findResource(String name) {
-    for (SModule m : getSupport().getCompileDependencies()) {
-      URL res = ClassLoaderManager.getInstance().getClassLoader(m).getSupport().findResource(name);
+    for (SModule m : mySupport.getCompileDependencies()) {
+      URL res = ClassLoaderManager.getInstance().getClassLoader(m).mySupport.findResource(name);
       if (res == null) continue;
       return res;
     }
@@ -174,8 +172,8 @@ public class ModuleClassLoader extends ClassLoader {
   @Override
   protected Enumeration<URL> findResources(String name) throws IOException {
     ArrayList<URL> result = new ArrayList<URL>();
-    for (SModule m : getSupport().getCompileDependencies()) {
-      URL res = ClassLoaderManager.getInstance().getClassLoader(m).getSupport().findResource(name);
+    for (SModule m : mySupport.getCompileDependencies()) {
+      URL res = ClassLoaderManager.getInstance().getClassLoader(m).mySupport.findResource(name);
       if (res == null) continue;
       result.add(res);
     }
@@ -194,16 +192,6 @@ public class ModuleClassLoader extends ClassLoader {
   }
 
   public String toString() {
-    return myModule + " class loader";
-  }
-
-  /* package */ ModuleClassLoaderSupport getSupport() {
-    if (mySupport == null) {
-      synchronized (myLock) {
-        // todo: if disposed here?
-        mySupport = new ModuleClassLoaderSupport(myModule);
-      }
-    }
-    return mySupport;
+    return mySupport.getModule() + " class loader";
   }
 }
