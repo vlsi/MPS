@@ -25,6 +25,7 @@ public interface ReloadListener {
 
   /**
    * If you want to update UI after reload do it here.
+   * Main invariant: onAfterReload() will call after all unload() methods so it's should be impossible to access old classes here
    * <p/>
    * Precondition: all reloadable parts are reloaded under a new classloader
    */
