@@ -24,10 +24,9 @@ public class FindSpecificNodeUsages_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Find;
 
   public FindSpecificNodeUsages_Action() {
-    super("Find Usages...", "", ICON);
+    super("Find Usages Settings...", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
-    this.setMnemonic("U".charAt(0));
   }
 
   @Override

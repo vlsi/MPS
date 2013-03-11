@@ -58,19 +58,13 @@ public abstract class FindersEditor extends BaseEditor<FindersOptions> {
     List<String> correctEnabledFinders = new ArrayList<String>();
 
     for (final ReloadableFinder finder : sortedFinders) {
-      boolean isEnabled = false;
+      boolean isEnabled = finder.isUsedByDefault(node) || (!resetToDefaults() && myOptions.getFindersClassNames().contains(finder.getFinder().getClass().getName()));
 
-      for (String enabledFinderName : myOptions.getFindersClassNames()) {
-        if (enabledFinderName.equals(finder.getFinder().getClass().getName())) {
-          isEnabled = true;
-        }
-      }
-
-      if (finder.isUsedByDefault(node)) {
+      if (isEnabled) {
         correctEnabledFinders.add(finder.getFinder().getClass().getName());
       }
 
-      final JBCheckBox finderCheckBox = new JBCheckBox(finder.getFinder().getDescription(), finder.isUsedByDefault(node));
+      final JBCheckBox finderCheckBox = new JBCheckBox(finder.getFinder().getDescription(), isEnabled);
       finderCheckBox.setBorder(BorderFactory.createEmptyBorder(0, 5, 5, 0));
 
       finderCheckBox.addChangeListener(new ChangeListener() {
@@ -155,5 +149,9 @@ public abstract class FindersEditor extends BaseEditor<FindersOptions> {
 
   protected void findersListChangedByUser() {
 
+  }
+
+  protected boolean resetToDefaults(){
+    return false;
   }
 }

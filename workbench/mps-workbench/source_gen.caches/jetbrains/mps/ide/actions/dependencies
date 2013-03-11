@@ -1057,6 +1057,36 @@
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.actions.FindConceptInstances_Action" file="FindConceptInstances_Action.java">
+    <classNode dependClassName="com.intellij.icons.AllIcons" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.awt.Frame" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.FindUsagesHelper" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.view.optionseditor.DefaultOptionsContainer" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.view.optionseditor.DefaultSearchOptionsComponent" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesOptions" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.actions.FindModelUsages_Action" file="FindModelUsages_Action.java">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -1223,6 +1253,7 @@
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.IResultProvider" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchQuery" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.UsagesViewTool" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.view.optionseditor.DefaultOptionsContainer" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.optionseditor.DefaultSearchOptionsComponent" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesDialog" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesOptions" />
@@ -1711,6 +1742,7 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.Favorites_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.FileActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.FileSystemNewActions_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.FindConceptInstances_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.FindModelUsages_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.FindModelUsages_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.FindNext_Action" />

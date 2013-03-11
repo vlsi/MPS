@@ -51,6 +51,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new EditNode_Action());
     addAction(new ExpandNode_Action());
     addAction(new FastFindNodeUsages_Action());
+    addAction(new FindConceptInstances_Action());
     addAction(new FindModelUsages_Action());
     addAction(new FindNext_Action());
     addAction(new FindPrevious_Action());

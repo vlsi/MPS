@@ -11,6 +11,7 @@ public class GnomeActionsKeymap_KeymapChanges extends BaseKeymapChanges {
   public GnomeActionsKeymap_KeymapChanges() {
     // simple 
     addSimpleShortcut("jetbrains.mps.ide.actions.FastFindNodeUsages_Action", getShortcut("alt shift 7"));
+    addSimpleShortcut("jetbrains.mps.ide.actions.FindConceptInstances_Action", getShortcut("alt shift 6"));
     addSimpleShortcut("jetbrains.mps.ide.actions.FindModelUsages_Action", getShortcut("alt shift 7"));
     addSimpleShortcut("jetbrains.mps.ide.actions.FindSpecificNodeUsages_Action", getShortcut("ctrl alt shift 7"));
     addSimpleShortcut("jetbrains.mps.ide.actions.ShowInLogicalView_Action", getShortcut("alt shift 2"));
