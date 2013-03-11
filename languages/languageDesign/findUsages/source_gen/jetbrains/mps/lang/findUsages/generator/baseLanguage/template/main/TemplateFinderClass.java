@@ -493,7 +493,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                                         try {
                                           environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a3a1a4a1a3a1a5a1a3a1a3a1a01a1a1a1a9a1a3);
                                           environment.nodeCopied(context, tnode35, "tpl/r:00000000-0000-4000-0000-011c8959035c/6297023828538472175");
-                                          tnode35.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode35, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode.getModel():jetbrains.mps.smodel.SModel")));
+                                          tnode35.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode35, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode.getModel():org.jetbrains.mps.openapi.model.SModel")));
 
                                         } finally {
                                           environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode35));
