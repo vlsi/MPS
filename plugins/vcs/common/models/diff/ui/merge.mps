@@ -1238,8 +1238,23 @@
                     </node>
                   </node>
                   <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2660756727518621583">
-                    <node role="expression" roleId="tpee.1068580123156" type="tpee.VariableReference" typeId="tpee.1068498886296" id="2660756727518621582">
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6130275721451984106" resolveInfo="myMetadataMergeSession" />
+                    <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="5064374087341202654">
+                      <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5064374087341212124">
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bmv6.6966417881648619084" resolveInfo="createMergeSession" />
+                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="bmv6.4124845871897265510" resolveInfo="MergeSession" />
+                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="5064374087341217006">
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2660756727518565864" resolveInfo="baseMetaModel" />
+                        </node>
+                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="5064374087341234721">
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2393519854109116636" resolveInfo="mineMetaModel" />
+                        </node>
+                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="5064374087341239450">
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2393519854109116642" resolveInfo="repoMetaModel" />
+                        </node>
+                      </node>
+                      <node role="lValue" roleId="tpee.1068498886295" type="tpee.VariableReference" typeId="tpee.1068498886296" id="2660756727518621582">
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6130275721451984106" resolveInfo="myMetadataMergeSession" />
+                      </node>
                     </node>
                   </node>
                   <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2660756727518809649">
