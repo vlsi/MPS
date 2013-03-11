@@ -51,7 +51,7 @@ import java.util.Set;
  */
 public class MPSModelNavigationContributor implements ApplicationComponent, NavigationParticipant {
 
-  private final Set<String> supportedExtensions = new HashSet<String>(Arrays.asList(MPSExtentions.MODEL));
+  private final Set<String> supportedExtensions = new HashSet<String>(Arrays.asList(MPSExtentions.MODEL, MPSExtentions.MODEL_BINARY));
 
   @Override
   public void findTargets(TargetKind kind, Collection<SModel> scope, Consumer<NavigationTarget> consumer, Consumer<SModel> processedConsumer) {
