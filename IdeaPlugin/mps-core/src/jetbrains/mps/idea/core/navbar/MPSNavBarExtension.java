@@ -14,18 +14,18 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.core.psi;
+package jetbrains.mps.idea.core.navbar;
 
 import com.intellij.ide.navigationToolbar.NavBarModelExtension;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
-import com.intellij.psi.impl.PsiManagerEx;
-import com.intellij.psi.impl.file.impl.FileManager;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.psi.impl.file.FileSourcePsiFile;
-import jetbrains.mps.idea.core.psi.impl.file.RootNodePsiElement;
+import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
@@ -45,21 +45,27 @@ public class MPSNavBarExtension implements NavBarModelExtension{
   @Nullable
   @Override
   public PsiElement getParent(PsiElement psiElement) {
-    if (psiElement instanceof RootNodePsiElement || psiElement instanceof FileSourcePsiFile) {
-      return psiElement.getParent();
+    if (psiElement instanceof MPSPsiModel) {
+      VirtualFile virtualFile = ((MPSPsiModel) psiElement).getSourceVirtualFile();
+      PsiFile file = psiElement.getManager().findFile(virtualFile);
+      if (file == null) return null;
+      return file.getParent();
     }
+    if (psiElement instanceof MPSPsiNodeBase) {
+      return ((MPSPsiNodeBase) psiElement).getParent();
+    }
+
     return null;
   }
 
   @Nullable
   @Override
   public PsiElement adjustElement(PsiElement psiElement) {
-    if (psiElement instanceof MPSPsiModel) {
-      VirtualFile virtualFile = ((MPSPsiModel) psiElement).getSourceVirtualFile();
-      FileManager fileManager = ((PsiManagerEx) PsiManagerEx.getInstance(psiElement.getProject())).getFileManager();
-      PsiFile psiFile = fileManager.findFile(virtualFile);
-      if (psiFile != null) return psiFile;
+    if (psiElement instanceof FileSourcePsiFile) {
+      SModelReference modelReference = ((FileSourcePsiFile) psiElement).getModelReference();
+      return MPSPsiProvider.getInstance(psiElement.getProject()).getPsi(modelReference);
     }
+
     return psiElement;
   }
 

@@ -18,6 +18,8 @@ package jetbrains.mps.idea.core.projectView;
 
 import com.intellij.ide.projectView.PresentationData;
 import com.intellij.ide.projectView.ViewSettings;
+import com.intellij.ide.projectView.impl.nodes.BasePsiNode;
+import com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode;
 import com.intellij.ide.projectView.impl.nodes.PsiFileNode;
 import com.intellij.ide.util.treeView.AbstractTreeNode;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
@@ -30,6 +32,7 @@ import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.ModelPropertiesConfigurable;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiRootNode;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleOperationContext;
 import org.jetbrains.annotations.Nullable;
@@ -44,7 +47,7 @@ import java.util.Collection;
  * User: fyodor
  * Date: 2/28/13
  */
-public class MPSPsiModelTreeNode extends PsiFileNode implements NavigatableWithText {
+public class MPSPsiModelTreeNode extends BasePsiNode<MPSPsiModel> implements NavigatableWithText {
 
   protected MPSPsiModelTreeNode(Project project, MPSPsiModel value, ViewSettings viewSettings) {
     super(project, value, viewSettings);

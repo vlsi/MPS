@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.core.psi;
+package jetbrains.mps.idea.core.psi.impl.file;
 
 import com.intellij.lang.Language;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -25,20 +25,16 @@ import com.intellij.psi.PsiManager;
 import com.intellij.psi.SingleRootFileViewProvider;
 import com.intellij.testFramework.LightVirtualFile;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
-import jetbrains.mps.fileTypes.MPSLanguage;
+import jetbrains.mps.idea.core.psi.MPSSingleRootFileViewProvider;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
-import jetbrains.mps.idea.core.psi.impl.file.FileSourcePsiFile;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.concurrent.atomic.AtomicReference;
+import org.jetbrains.mps.openapi.model.SModel;
 
 /**
  * User: fyodor
@@ -47,54 +43,32 @@ import java.util.concurrent.atomic.AtomicReference;
 public class MPSFileViewProviderFactory implements FileViewProviderFactory {
   @Override
   public FileViewProvider createFileViewProvider(@NotNull VirtualFile file, Language language, @NotNull final PsiManager manager, boolean physical) {
-    return new MySingleRootFileViewProvider(manager, file, physical);
+    return new MyFileViewProvider(manager, file, physical);
   }
 
-  private static class MySingleRootFileViewProvider extends SingleRootFileViewProvider {
-    private AtomicReference<PsiFile> myPsiFile  = new AtomicReference<PsiFile>();;
-
-    public MySingleRootFileViewProvider(PsiManager manager, VirtualFile file, boolean physical) {
+  private static class MyFileViewProvider extends MPSSingleRootFileViewProvider {
+    public MyFileViewProvider(PsiManager manager, VirtualFile file, boolean physical) {
       super(manager, file, physical);
     }
 
-    public MySingleRootFileViewProvider(PsiManager manager, VirtualFile copy, boolean b, Language baseLanguage) {
-      super(manager, copy, false, baseLanguage);
-    }
-
-    @Nullable
-    @Override
-    protected PsiFile getPsiInner(@NotNull Language target) {
-      if (target != MPSLanguage.INSTANCE) {
-        return null;
-      }
-      PsiFile psiFile = myPsiFile.get();
-      if (psiFile == null) {
-        psiFile = createFile();
-        boolean set = myPsiFile.compareAndSet(null, psiFile);
-        if (!set) {
-          psiFile = myPsiFile.get();
-        }
-      }
-      return psiFile;
+    private MyFileViewProvider(PsiManager manager, VirtualFile copy, boolean b, Language baseLanguage) {
+      super(manager, copy, b, baseLanguage);
     }
 
     @NotNull
     @Override
     public SingleRootFileViewProvider createCopy(@NotNull VirtualFile copy) {
-      return new MySingleRootFileViewProvider(getManager(), copy, false, getBaseLanguage());
+      // TODO proper copy?
+      return new MyFileViewProvider(getManager(), copy, false, getBaseLanguage());
     }
 
     @Override
-    public boolean supportsIncrementalReparse(@NotNull Language rootLanguage) {
-      return false;
-    }
-
-    private PsiFile createFile() {
+    protected PsiFile createFile() {
       VirtualFile virtualFile = getVirtualFile();
       if (virtualFile instanceof LightVirtualFile) {
         virtualFile = ((LightVirtualFile)virtualFile).getOriginalFile();
       }
-      if (virtualFile == null || virtualFile.getFileType() != MPSFileTypeFactory.MODEL_FILE_TYPE) {
+      if (virtualFile == null || virtualFile.getFileType() != MPSFileTypeFactory.MPS_FILE_TYPE) {
         return null;
       }
       final IFile modelFile = FileSystem.getInstance().getFileByPath(virtualFile.getPath());
@@ -108,7 +82,7 @@ public class MPSFileViewProviderFactory implements FileViewProviderFactory {
             MPSPsiProvider mpsPsiProvider = MPSPsiProvider.getInstance(getManager().getProject());
             MPSPsiModel psiModel = mpsPsiProvider.getPsi(descr);
 
-            return new FileSourcePsiFile(MySingleRootFileViewProvider.this, descr.getReference(), descr.getModelName());
+            return new FileSourcePsiFile(MyFileViewProvider.this, descr.getReference(), descr.getModelName());
           }
           return null;
         }
@@ -116,5 +90,4 @@ public class MPSFileViewProviderFactory implements FileViewProviderFactory {
       return psiFile;
     }
   }
-
 }

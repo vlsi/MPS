@@ -24,9 +24,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
-import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
-import jetbrains.mps.idea.core.psi.impl.file.RootNodePsiElement;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiRootNode;
 import org.jetbrains.annotations.Nullable;
 
 import java.awt.Color;
@@ -36,9 +35,9 @@ import java.util.Collection;
  * User: fyodor
  * Date: 2/28/13
  */
-public class MPSPsiElementTreeNode extends BasePsiNode<MPSPsiNode> {
+public class MPSPsiElementTreeNode extends BasePsiNode<MPSPsiRootNode> {
 
-  protected MPSPsiElementTreeNode(Project project, MPSPsiNode value, ViewSettings viewSettings) {
+  protected MPSPsiElementTreeNode(Project project, MPSPsiRootNode value, ViewSettings viewSettings) {
     super(project, value, viewSettings);
   }
 
@@ -50,7 +49,7 @@ public class MPSPsiElementTreeNode extends BasePsiNode<MPSPsiNode> {
 
   @Nullable
   @Override
-  protected MPSPsiNode extractPsiFromValue() {
+  protected MPSPsiNodeBase extractPsiFromValue() {
     return getValue();
   }
 
