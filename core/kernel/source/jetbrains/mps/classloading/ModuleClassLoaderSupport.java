@@ -19,6 +19,7 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
+import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.Generator;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -42,7 +43,13 @@ public class ModuleClassLoaderSupport {
     JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
     assert facet != null;
 
-    classPathItem = JavaModuleOperations.createClassPathItem(facet.getClassPath(), ModuleClassLoaderSupport.class.getName());
+    if (facet.isCompileInMps()) {
+      classPathItem = JavaModuleOperations.createClassPathItem(facet.getClassPath(), ModuleClassLoaderSupport.class.getName());
+    } else {
+      // simple classpath without anything
+      // this module doesn't provide anything
+      classPathItem = new CompositeClassPathItem(false);
+    }
     compileDependencies = new HashSet<SModule>();
     for (SModule dependency : new GlobalModuleDependenciesManager(module).getModules(Deptype.COMPILE)) {
       if (canCreate(dependency)) {
@@ -53,11 +60,7 @@ public class ModuleClassLoaderSupport {
 
   // ext point possible here
   public static boolean canCreate(SModule module) {
-    if (module instanceof Generator) {
-      return false;
-    }
-    JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
-    return facet != null && facet.isCompileInMps();
+    return !(module instanceof Generator) && module.getFacet(JavaModuleFacet.class) != null;
   }
 
   public static ModuleClassLoaderSupport create(SModule module) {
