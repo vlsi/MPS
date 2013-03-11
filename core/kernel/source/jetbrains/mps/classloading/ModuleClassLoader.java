@@ -16,8 +16,6 @@
 package jetbrains.mps.classloading;
 
 import gnu.trove.THashMap;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes._return_P1_E0;
-import jetbrains.mps.internal.collections.runtime.impl.TranslatingSequence;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
@@ -43,6 +41,8 @@ public class ModuleClassLoader extends ClassLoader {
   private final ClassLoaderManager myManager;
 
   private final ModuleClassLoaderSupport mySupport;
+
+  private volatile Set<ModuleClassLoader> myDependenciesClassLoaders;
 
   // this must be thread-safe. This does not include results of parent classloader
   private final Map<String, Class> myClasses = Collections.synchronizedMap(new THashMap<String, Class>());
@@ -146,7 +146,6 @@ public class ModuleClassLoader extends ClassLoader {
     return null;
   }
 
-
   @Override
   protected Enumeration<URL> findResources(String name) throws IOException {
     ArrayList<URL> result = new ArrayList<URL>();
@@ -169,18 +168,20 @@ public class ModuleClassLoader extends ClassLoader {
   }
 
   private Iterable<ModuleClassLoader> getDependencyClassLoaders() {
-    return new TranslatingSequence<SModule, ModuleClassLoader>(mySupport.getCompileDependencies(), new _return_P1_E0<Iterable<ModuleClassLoader>, SModule>() {
-      @Override
-      public Iterable<ModuleClassLoader> invoke(SModule module) {
-        ModuleClassLoader classLoader = myManager.getClassLoader(module);
-        if (classLoader != null) {
-          return Collections.singleton(classLoader);
-        } else {
-          LOG.warning("Null classloader for module from compile dependencies; module name: " + module.getModuleName() + "; module class " + module.getClass());
-          return Collections.emptySet();
-        }
+    if (myDependenciesClassLoaders != null) {
+      return myDependenciesClassLoaders;
+    }
+    Set<ModuleClassLoader> classLoaders = new HashSet<ModuleClassLoader>();
+    for (SModule dep : mySupport.getCompileDependencies()) {
+      ModuleClassLoader classLoader = myManager.getClassLoader(dep);
+      if (classLoader != null) {
+        classLoaders.add(classLoader);
+      } else {
+        LOG.warning("Null classloader for module from compile dependencies; module name: " + dep.getModuleName() + "; module class " + dep.getClass());
       }
-    });
+    }
+    myDependenciesClassLoaders = classLoaders;
+    return classLoaders;
   }
 
   private static ClassLoader getParentPluginClassLoader(SModule module) {
