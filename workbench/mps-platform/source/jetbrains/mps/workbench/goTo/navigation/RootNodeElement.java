@@ -19,7 +19,7 @@ import com.intellij.navigation.ItemPresentation;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.smodel.SModelReference;
-import org.jetbrains.mps.openapi.persistence.indexing.NodeDescriptor;
+import jetbrains.mps.extapi.persistence.indexing.NodeDescriptor;
 
 public class RootNodeElement implements NavigationItem {
   private NodeDescriptor myNodeResult;

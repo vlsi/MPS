@@ -6,6 +6,8 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.extapi.persistence.indexing.FastGoToRegistry" />
+    <classNode dependClassName="jetbrains.mps.extapi.persistence.indexing.NodeDescriptor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -17,10 +19,8 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.indexing.FastGoToRegistry" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.indexing.NodeDescriptor" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
-    <classNode extendsClassName="org.jetbrains.mps.openapi.persistence.indexing.NodeNavigationContributor" />
+    <classNode extendsClassName="jetbrains.mps.extapi.persistence.indexing.NodeNavigationContributor" />
   </dependency>
 </dependenciesRoot>
 

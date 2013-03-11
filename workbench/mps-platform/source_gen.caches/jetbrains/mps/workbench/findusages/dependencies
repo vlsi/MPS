@@ -85,7 +85,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.Consumer" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
-    <classNode extendsClassName="org.jetbrains.mps.openapi.persistence.indexing.FindUsagesParticipant" />
+    <classNode extendsClassName="org.jetbrains.mps.openapi.persistence.FindUsagesParticipant" />
   </dependency>
   <dependency className="jetbrains.mps.workbench.findusages.StubModelsIndexer" file="StubModelsIndexer.java">
     <classNode dependClassName="com.intellij.psi.impl.cache.impl.id.IdIndexEntry" />

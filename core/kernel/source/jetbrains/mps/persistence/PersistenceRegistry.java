@@ -21,7 +21,7 @@ import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
-import org.jetbrains.mps.openapi.persistence.indexing.FindUsagesParticipant;
+import org.jetbrains.mps.openapi.persistence.FindUsagesParticipant;
 
 import java.util.Collections;
 import java.util.HashMap;

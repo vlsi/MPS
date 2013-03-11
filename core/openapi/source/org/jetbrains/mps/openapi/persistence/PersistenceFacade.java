@@ -16,7 +16,6 @@
 package org.jetbrains.mps.openapi.persistence;
 
 import org.jetbrains.mps.openapi.model.SModelId;
-import org.jetbrains.mps.openapi.persistence.indexing.FindUsagesParticipant;
 
 import java.util.Set;
 

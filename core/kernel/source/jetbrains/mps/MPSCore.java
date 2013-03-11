@@ -48,7 +48,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.validation.ValidationSettings;
-import org.jetbrains.mps.openapi.persistence.indexing.FastGoToRegistry;
+import jetbrains.mps.extapi.persistence.indexing.FastGoToRegistry;
 
 /**
  * Evgeny Gryaznov, Sep 1, 2010

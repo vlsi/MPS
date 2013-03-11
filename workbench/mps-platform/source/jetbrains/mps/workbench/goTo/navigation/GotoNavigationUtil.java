@@ -20,9 +20,9 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.containers.MultiMap;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.persistence.indexing.FastGoToRegistry;
-import org.jetbrains.mps.openapi.persistence.indexing.NodeDescriptor;
-import org.jetbrains.mps.openapi.persistence.indexing.NodeNavigationContributor;
+import jetbrains.mps.extapi.persistence.indexing.FastGoToRegistry;
+import jetbrains.mps.extapi.persistence.indexing.NodeDescriptor;
+import jetbrains.mps.extapi.persistence.indexing.NodeNavigationContributor;
 
 import java.util.Collection;
 import java.util.HashSet;

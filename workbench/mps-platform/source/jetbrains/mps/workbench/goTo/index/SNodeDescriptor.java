@@ -26,7 +26,7 @@ import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
-import org.jetbrains.mps.openapi.persistence.indexing.NodeDescriptor;
+import jetbrains.mps.extapi.persistence.indexing.NodeDescriptor;
 
 import java.io.DataInput;
 import java.io.DataOutput;

@@ -41,7 +41,7 @@ import jetbrains.mps.workbench.choose.modules.BaseLanguageModel;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.persistence.indexing.NodeDescriptor;
+import jetbrains.mps.extapi.persistence.indexing.NodeDescriptor;
 
 import javax.swing.*;
 import java.awt.*;

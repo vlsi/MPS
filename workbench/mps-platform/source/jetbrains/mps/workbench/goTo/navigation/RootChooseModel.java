@@ -34,7 +34,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import org.jetbrains.mps.openapi.persistence.indexing.NodeDescriptor;
+import jetbrains.mps.extapi.persistence.indexing.NodeDescriptor;
 
 import java.util.Collection;
 

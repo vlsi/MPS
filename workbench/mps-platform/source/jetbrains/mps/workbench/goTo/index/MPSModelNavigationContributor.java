@@ -37,9 +37,9 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.persistence.indexing.FastGoToRegistry;
-import org.jetbrains.mps.openapi.persistence.indexing.NodeDescriptor;
-import org.jetbrains.mps.openapi.persistence.indexing.NodeNavigationContributor;
+import jetbrains.mps.extapi.persistence.indexing.FastGoToRegistry;
+import jetbrains.mps.extapi.persistence.indexing.NodeDescriptor;
+import jetbrains.mps.extapi.persistence.indexing.NodeNavigationContributor;
 
 import java.util.Arrays;
 import java.util.Collection;

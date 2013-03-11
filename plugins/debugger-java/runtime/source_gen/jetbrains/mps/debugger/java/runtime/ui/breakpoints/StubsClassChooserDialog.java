@@ -15,7 +15,7 @@ import com.intellij.openapi.application.ModalityState;
 import java.awt.Dimension;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
-import org.jetbrains.mps.openapi.persistence.indexing.NodeDescriptor;
+import jetbrains.mps.extapi.persistence.indexing.NodeDescriptor;
 
 public abstract class StubsClassChooserDialog extends DialogWrapper {
   private final ChooseByNamePanel myPanel;

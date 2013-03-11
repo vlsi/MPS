@@ -1,4 +1,4 @@
-package org.jetbrains.mps.openapi.persistence.indexing;
+package jetbrains.mps.extapi.persistence.indexing;
 
 import jetbrains.mps.components.CoreComponent;
 

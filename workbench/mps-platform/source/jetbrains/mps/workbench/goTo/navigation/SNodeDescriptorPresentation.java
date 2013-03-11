@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.workbench.choose.base.BasePresentation;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.persistence.indexing.NodeDescriptor;
+import jetbrains.mps.extapi.persistence.indexing.NodeDescriptor;
 
 import javax.swing.Icon;
 
