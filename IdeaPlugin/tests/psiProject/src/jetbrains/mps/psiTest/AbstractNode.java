@@ -8,7 +8,7 @@ public abstract class AbstractNode {
         sb.append("<abstract node>");
     }
 
-    public void abstractNodeMethod() {}
+    public void abstractNodeMethod(String nameParameter) {}
 
     public class NodeDescriptor {
         private String myDescription;

@@ -154,6 +154,7 @@ public class MPSPsiRef extends MPSPsiNodeBase {
 
       @Override
       public PsiElement handleElementRename(final String newElementName) throws IncorrectOperationException {
+        /*
         ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
           @Override
           public void run() {
@@ -187,12 +188,14 @@ public class MPSPsiRef extends MPSPsiNodeBase {
           }
         }, new MPSProject(getProject()));
 
+        */
 
         return MPSPsiRef.this;
       }
 
       @Override
       public PsiElement bindToElement(final @NotNull PsiElement element) throws IncorrectOperationException {
+        /*
         ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
           @Override
           public void run() {
@@ -220,6 +223,7 @@ public class MPSPsiRef extends MPSPsiNodeBase {
             }
           }
         }, new MPSProject(getProject()));
+        */
 
         return MPSPsiRef.this;
       }
@@ -240,13 +244,9 @@ public class MPSPsiRef extends MPSPsiNodeBase {
       public boolean isSoft() {
         return false;
       }
-    }
-
-      ;
+    };
 
   }
-
-  ;
 
   @Override
   public String toString() {
