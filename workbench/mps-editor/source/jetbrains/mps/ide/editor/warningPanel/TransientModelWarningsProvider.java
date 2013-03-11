@@ -27,7 +27,7 @@ public class TransientModelWarningsProvider implements EditorWarningsProvider {
   @Nullable
   public WarningPanel getWarningPanel(@NotNull SNode node, @NotNull Project project) {
     SModel model = node.getModel();
-    if (model != null && model.getModelDescriptor() instanceof TransientSModelDescriptor) {
+    if (model != null && model instanceof TransientSModelDescriptor) {
       return new WarningPanel(this, "Warning: the node is in a transient model. Your changes won't be saved.");
     }
     return null;

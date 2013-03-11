@@ -35,7 +35,8 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.util.*;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -205,7 +206,7 @@ class GenerationSession {
           mySessionContext.keepTransientModel(currOutput, true);
         }
 
-        GenerationStatus generationStatus = new GenerationStatus(myOriginalInputModel, currOutput.getModelDescriptor(),
+        GenerationStatus generationStatus = new GenerationStatus(myOriginalInputModel, currOutput,
           myDependenciesBuilder.getResult(myInvocationContext, myGenerationOptions.getIncrementalStrategy()), myLogger.getErrorCount() > 0,
           myLogger.getWarningCount() > 0, false);
         success = generationStatus.isOk();
@@ -353,7 +354,7 @@ class GenerationSession {
         // nothing has been generated
         myDependenciesBuilder.dropModel();
         tracer.discardTracing(currentInputModel, transientModel);
-        mySessionContext.getModule().removeModel(transientModel.getModelDescriptor());
+        mySessionContext.getModule().removeModel(transientModel);
         myMinorStep--;
         if (myLogger.needsInfo()) {
           myLogger.info("unchanged, empty model '" + transientModel.getReference().getSModelFqName().getStereotype() + "' removed");
@@ -555,7 +556,7 @@ class GenerationSession {
   }
 
   private void recycleWasteModel(@NotNull SModel model) {
-    SModel md = model.getModelDescriptor();
+    SModel md = model;
     if (model .getModule() instanceof TransientModelsModule) {
       ttrace.push("recycling", false);
       ((jetbrains.mps.smodel.SModelInternal) model).disposeFastNodeFinder();

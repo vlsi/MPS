@@ -26,12 +26,6 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
  * Represents a model. Models are loaded lazily when needed.
  */
 public interface SModel {
-
-  @Deprecated
-//todo migration only. REMOVE
-      @NotNull
-  SModel getModelDescriptor();
-
   //todo is it needed?
   SModel resolveModel(jetbrains.mps.smodel.SModelReference reference);
 

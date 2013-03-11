@@ -177,7 +177,7 @@ public class SModelOperations {
   }
 
   public static SNode getModuleStub(SModel model) {
-    final IModule module = model.getModelDescriptor().getModule();
+    final IModule module = model.getModule();
     if (module instanceof Generator) {
       Language lang = ((Generator) module).getSourceLanguage();
       SModel m = ProjectStructureModule.getInstance().getModelByModule(lang);

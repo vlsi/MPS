@@ -400,7 +400,7 @@ public class TypeContextManager implements CoreComponent {
 
   private void addModelListener(SNode node) {
     SModel sModel = node.getModel();
-    SModel descriptor = sModel.getModelDescriptor();
+    SModel descriptor = sModel;
     if (descriptor != null && !myListeningForModels.contains(descriptor)) {
       ((SModelInternal) descriptor).addModelListener(myModelListener);
       myListeningForModels.add(descriptor);

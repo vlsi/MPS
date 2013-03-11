@@ -110,7 +110,7 @@ public class CloneModelProperties {
     myLongName = jetbrains.mps.util.SNodeOperations.getModelLongName(model);
 
     myStereotype = jetbrains.mps.util.SNodeOperations.getModelStereotype(model);
-    ModelRoot modelRoot = ModelRootUtil.getModelRoot(model.getModelDescriptor());
+    ModelRoot modelRoot = ModelRootUtil.getModelRoot(model);
     if (modelRoot instanceof FolderModelRootBase) {
       myRoot = new RootReference();
       myRoot.setPath(((FolderModelRootBase)modelRoot).getPath());

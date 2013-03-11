@@ -1233,11 +1233,6 @@ public class SModel implements SModelData {
     }
 
     @Override
-    public SModelDescriptor getModelDescriptor() {
-      return this;
-    }
-
-    @Override
     public SRepository getRepository() {
       return null;
     }

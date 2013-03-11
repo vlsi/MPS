@@ -4215,6 +4215,7 @@
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6599163591527280909" resolveInfo="newNode" />
           </node>
         </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="613146731766720055" />
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="6599163591527280905">
         <property name="name" nameId="tpck.1169194664001" value="prototypeNode" />

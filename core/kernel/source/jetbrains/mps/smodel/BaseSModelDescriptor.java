@@ -49,11 +49,6 @@ public abstract class BaseSModelDescriptor extends SModelBase implements jetbrai
   }
 
   @Override
-  public SModelDescriptor getModelDescriptor() {
-    return this;
-  }
-
-  @Override
   public SModel getSModel() {
     return this;
   }
