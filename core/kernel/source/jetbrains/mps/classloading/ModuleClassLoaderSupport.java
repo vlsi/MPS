@@ -45,9 +45,8 @@ public class ModuleClassLoaderSupport {
     classPathItem = JavaModuleOperations.createClassPathItem(facet.getClassPath(), ModuleClassLoaderSupport.class.getName());
     compileDependencies = new HashSet<SModule>();
     for (SModule dependency : new GlobalModuleDependenciesManager(module).getModules(Deptype.COMPILE)) {
-      // todo: remove canLoad() check
-      if (dependency.getFacet(JavaModuleFacet.class) != null && ClassLoaderManager.getInstance().canLoad(dependency)) {
-        this.compileDependencies.add(dependency);
+      if (canCreate(dependency)) {
+        compileDependencies.add(dependency);
       }
     }
   }

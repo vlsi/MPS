@@ -33,6 +33,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -89,12 +90,12 @@ public class ClassLoaderManager implements CoreComponent {
     if (module instanceof Language || module instanceof Generator) {
       return true;
     }
-    if (module instanceof Solution) {
-      // todo: remove isTestMode here!
-      return MPSCore.getInstance().isTestMode() || ((Solution) module).getModuleDescriptor().getKind() != SolutionKind.NONE;
+    if (!ModuleClassLoaderSupport.canCreate(module)) {
+      return false;
     }
 
-    return false;
+    // todo: mps facet here
+    return module instanceof Solution && (MPSCore.getInstance().isTestMode() || ((Solution) module).getModuleDescriptor().getKind() != SolutionKind.NONE);
   }
 
   public Class getClass(SModule module, String classFqName) {
@@ -102,7 +103,7 @@ public class ClassLoaderManager implements CoreComponent {
     // todo: add onlyFromSelf argument?
     // todo: or even onlyFromSelf by default???
     if (!canLoad(module)) {
-      throw new IllegalArgumentException("Module " + module.getModuleName() + " can't load classes");
+      throw new IllegalArgumentException("Module " + module.getModuleName() + " can't be start point for classes loading");
     }
     // todo: hack for stubs
     // todo: move it! stub classes should not be managed by ClassLoaderManager
@@ -119,6 +120,7 @@ public class ClassLoaderManager implements CoreComponent {
 
     ModuleClassLoader classLoader = getClassLoader(module);
     if (classLoader == null) {
+      // todo: illegal state?
       return null;
     }
     try {
@@ -134,18 +136,19 @@ public class ClassLoaderManager implements CoreComponent {
   }
 
   // main internal method. use getClass instead
+  @Nullable
   public synchronized ModuleClassLoader getClassLoader(SModule module) {
-    if (!canLoad(module)) {
-      throw new IllegalArgumentException("Module " + module.getModuleName() + " can't load classes");
-    }
     if (module instanceof Generator) {
       return getClassLoader(((Generator) module).getSourceLanguage());
+    }
+    if (!ModuleClassLoaderSupport.canCreate(module)) {
+      throw new IllegalArgumentException("Module " + module.getModuleName() + " can't load classes");
     }
     if (myClassLoaders.containsKey(module)) {
       return myClassLoaders.get(module);
     }
     ModuleClassLoaderSupport support = ModuleClassLoaderSupport.create(module);
-    ModuleClassLoader classLoader = new ModuleClassLoader(support);
+    ModuleClassLoader classLoader = new ModuleClassLoader(this, support);
     // save back references
     for (SModule dep : support.getCompileDependencies()) {
       if (!myBackRefs.containsKey(dep)) {
