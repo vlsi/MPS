@@ -14,10 +14,10 @@ import java.util.HashSet;
 import com.intellij.openapi.extensions.PluginId;
 import com.intellij.ide.plugins.PluginManager;
 import jetbrains.mps.debug.api.BreakpointCreatorsManager;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.util.Mapper2;
 import jetbrains.mps.debug.api.Debuggers;
 import jetbrains.mps.debug.api.DebuggerNotPresentException;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.logging.Logger;
 
 public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
@@ -35,6 +35,14 @@ public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplica
     if (manager == null) {
       return;
     }
+
+    // next lines needed for to be sure that all classes in dispose() loaded after init() 
+    // basically: this code do nothing, but class loading 
+    SetSequence.fromSet(DebugInfoProvider_CustomApplicationPlugin.this.myCreators).visitAll(new IVisitor<Tuples._2<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>>() {
+      public void visit(Tuples._2<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>> it) {
+      }
+    });
+
     {
       Mapper2<SNode, Project, ILocationBreakpoint> creator = new Mapper2<SNode, Project, ILocationBreakpoint>() {
         public ILocationBreakpoint value(SNode debuggableNode, Project project) {
