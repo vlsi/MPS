@@ -61,12 +61,12 @@ public class ModelWriter4 implements IModelWriter {
 
     // languages
     Set<String> writtenAspects = new HashSet<String>();
-    for (ModuleReference languageNamespace : ((jetbrains.mps.smodel.SModelInternal) sourceModel).importedLanguages()) {
+    for (ModuleReference languageNamespace : sourceModel.importedLanguages()) {
       Element languageElem = new Element(ModelPersistence.LANGUAGE);
       languageElem.setAttribute(ModelPersistence.NAMESPACE, languageNamespace.toString());
       rootElement.addContent(languageElem);
     }
-    for (ImportElement aspectElement : ((jetbrains.mps.smodel.SModelInternal) sourceModel).getAdditionalModelVersions()) {
+    for (ImportElement aspectElement : sourceModel.getAdditionalModelVersions()) {
       SModelReference modelReference = aspectElement.getModelReference();
       if (modelReference == null) continue;
       if (!writtenAspects.contains(modelReference.toString())) {
@@ -76,14 +76,14 @@ public class ModelWriter4 implements IModelWriter {
     }
 
     // languages engaged on generation
-    for (ModuleReference languageNamespace : ((jetbrains.mps.smodel.SModelInternal) sourceModel).engagedOnGenerationLanguages()) {
+    for (ModuleReference languageNamespace : sourceModel.engagedOnGenerationLanguages()) {
       Element languageElem = new Element(ModelPersistence.LANGUAGE_ENGAGED_ON_GENERATION);
       languageElem.setAttribute(ModelPersistence.NAMESPACE, languageNamespace.toString());
       rootElement.addContent(languageElem);
     }
 
     //devkits
-    for (ModuleReference devkitNamespace : ((jetbrains.mps.smodel.SModelInternal) sourceModel).importedDevkits()) {
+    for (ModuleReference devkitNamespace : sourceModel.importedDevkits()) {
       Element devkitElem = new Element(ModelPersistence.DEVKIT);
       devkitElem.setAttribute(ModelPersistence.NAMESPACE, devkitNamespace.toString());
       rootElement.addContent(devkitElem);
@@ -94,11 +94,11 @@ public class ModelWriter4 implements IModelWriter {
     rootElement.addContent(maxRefID);
 
     int maxImport = 0;
-    for (ImportElement importElement : ((jetbrains.mps.smodel.SModelInternal) sourceModel).importedModels()) {
+    for (ImportElement importElement : sourceModel.importedModels()) {
       maxImport = Math.max(maxImport, importElement.getReferenceID());
     }
 
-    for (ImportElement importElement : ((jetbrains.mps.smodel.SModelInternal) sourceModel).importedModels()) {
+    for (ImportElement importElement : sourceModel.importedModels()) {
       Element importElem = new Element(ModelPersistence.IMPORT_ELEMENT);
       if (importElement.getReferenceID() < 0) {
         importElement.setReferenceID(++maxImport);
