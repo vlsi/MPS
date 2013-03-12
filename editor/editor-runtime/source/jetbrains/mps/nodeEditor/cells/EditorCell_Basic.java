@@ -595,7 +595,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   @Override
-  public EditorCell findLeaf(int x, int y, Condition<? super EditorCell> condition) {
+  public EditorCell findLeaf(int x, int y, Condition<EditorCell> condition) {
     if (myX <= x && x < myX + myWidth && myY <= y && y < myY + myHeight && condition.met(this)) {
       return this;
     }
@@ -608,7 +608,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   @Override
-  public EditorCell findCellWeak(int x, int y, Condition<? super EditorCell> condition) {
+  public EditorCell findCellWeak(int x, int y, Condition<EditorCell> condition) {
     Set<EditorCell> candidates = new LinkedHashSet<EditorCell>();
     collectCellsWithY(this, y, candidates);
 
@@ -1157,7 +1157,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   @Override
-  public EditorCell getUpper(Condition<? super EditorCell> condition, int baseX) {
+  public EditorCell getUpper(Condition<EditorCell> condition, int baseX) {
     EditorCell bestMatch = null;
     EditorCell current = getPrevLeaf(condition);
 
@@ -1183,7 +1183,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   @Override
-  public EditorCell getLower(Condition<? super EditorCell> condition, int baseX) {
+  public EditorCell getLower(Condition<EditorCell> condition, int baseX) {
     EditorCell bestMatch = null;
     EditorCell current = getNextLeaf(condition);
 
@@ -1209,7 +1209,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   @Override
-  public EditorCell getEndCell(Condition<? super EditorCell> condition) {
+  public EditorCell getEndCell(Condition<EditorCell> condition) {
     EditorCell current = this;
     while (current.getLeafToRight(condition) != null) {
       current = current.getLeafToRight(condition);
@@ -1218,7 +1218,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   @Override
-  public EditorCell getHomeCell(Condition<? super EditorCell> condition) {
+  public EditorCell getHomeCell(Condition<EditorCell> condition) {
     EditorCell current = this;
     while (current.getLeafToLeft(condition) != null) {
       current = current.getLeafToLeft(condition);
@@ -1227,7 +1227,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   @Override
-  public EditorCell getLeafToLeft(Condition<? super EditorCell> condition) {
+  public EditorCell getLeafToLeft(Condition<EditorCell> condition) {
     return getPrevLeaf(new Condition<EditorCell>() {
       @Override
       public boolean met(EditorCell current) {
@@ -1237,7 +1237,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   @Override
-  public EditorCell getLeafToRight(Condition<? super EditorCell> condition) {
+  public EditorCell getLeafToRight(Condition<EditorCell> condition) {
     return getNextLeaf(new Condition<EditorCell>() {
       @Override
       public boolean met(EditorCell current) {
@@ -1259,7 +1259,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   @Override
-  public EditorCell getNextSibling(Condition<? super EditorCell> condition) {
+  public EditorCell getNextSibling(Condition<EditorCell> condition) {
     EditorCell current = getNextSibling();
     while (current != null) {
       if (condition.met(current)) {
@@ -1283,7 +1283,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   @Override
-  public EditorCell getPrevSibling(Condition<? super EditorCell> condition) {
+  public EditorCell getPrevSibling(Condition<EditorCell> condition) {
     EditorCell current = getPrevSibling();
     while (current != null) {
       if (condition.met(current)) {
@@ -1306,7 +1306,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   @Override
-  public EditorCell getNextLeaf(Condition<? super EditorCell> condition) {
+  public EditorCell getNextLeaf(Condition<EditorCell> condition) {
     EditorCell current = getNextLeaf();
     while (current != null) {
       if (condition.met(current)) {
@@ -1329,7 +1329,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   @Override
-  public EditorCell getPrevLeaf(Condition<? super EditorCell> condition) {
+  public EditorCell getPrevLeaf(Condition<EditorCell> condition) {
     EditorCell current = getPrevLeaf();
     while (current != null) {
       if (condition.met(current)) {
@@ -1351,7 +1351,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   @Override
-  public EditorCell getFirstLeaf(final Condition<? super EditorCell> condition) {
+  public EditorCell getFirstLeaf(final Condition<EditorCell> condition) {
     EditorCell firstLeaf = getFirstLeaf();
     if (condition.met(firstLeaf)) {
       return firstLeaf;
@@ -1365,7 +1365,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   @Override
-  public EditorCell getLastLeaf(final Condition<? super EditorCell> condition) {
+  public EditorCell getLastLeaf(final Condition<EditorCell> condition) {
     EditorCell lastLeaf = getLastLeaf();
     if (condition.met(lastLeaf)) {
       return lastLeaf;
@@ -1389,7 +1389,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   @Override
-  public EditorCell getFirstDescendant(Condition<? super EditorCell> condition) {
+  public EditorCell getFirstDescendant(Condition<EditorCell> condition) {
     DfsTraverser traverser = new DfsTraverser(this, true, true);
     while (traverser.getCurrent() != null) {
       if (condition.met((EditorCell) traverser.getCurrent())) {
@@ -1401,7 +1401,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   @Override
-  public EditorCell getLastDescendant(Condition<? super EditorCell> condition) {
+  public EditorCell getLastDescendant(Condition<EditorCell> condition) {
     DfsTraverser traverser = new DfsTraverser(this, false, true);
     while (traverser.getCurrent() != null) {
       if (condition.met((EditorCell) traverser.getCurrent())) {
