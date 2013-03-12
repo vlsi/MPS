@@ -60,7 +60,7 @@
     <nodeInfo nodeId="8096356944928611098" fileName="TableColumnSelection.java" startLine="123" startPosition="61" endLine="124" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8096356944928661745" fileName="TableColumnSelection.java" startLine="126" startPosition="12" endLine="127" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6196452551966305024" fileName="TableColumnSelection.java" startLine="131" startPosition="28" endLine="132" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="442641882176278996" fileName="TableColumnSelection.java" startLine="135" startPosition="36" endLine="136" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="442641882176278996" fileName="TableColumnSelection.java" startLine="135" startPosition="36" endLine="136" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1840382158718184258" fileName="TableColumnSelection.java" startLine="137" startPosition="48" endLine="138" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="442641882176280321" fileName="TableColumnSelection.java" startLine="139" startPosition="5" endLine="140" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5051628863846689954" fileName="TableColumnSelection.java" startLine="143" startPosition="27" endLine="144" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -83,7 +83,7 @@
     <nodeInfo nodeId="7327512164851048489" fileName="TableColumnSelection.java" startLine="98" startPosition="63" endLine="101" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8096356944928871469" fileName="TableColumnSelection.java" startLine="122" startPosition="59" endLine="125" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6196452551966301168" fileName="TableColumnSelection.java" startLine="131" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="copyNodes#()V" />
-    <nodeInfo nodeId="442641882176296165" fileName="TableColumnSelection.java" startLine="136" startPosition="59" endLine="139" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="442641882176296165" fileName="TableColumnSelection.java" startLine="136" startPosition="89" endLine="139" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="5051628863846689959" fileName="TableColumnSelection.java" startLine="144" startPosition="42" endLine="147" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5051628863846689906" fileName="TableColumnSelection.java" startLine="154" startPosition="32" endLine="157" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="8096356944928684296" fileName="TableColumnSelection.java" startLine="115" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecuteAction#(Ljetbrains/mps/openapi/editor/cells/CellActionType;)Z" />
@@ -93,7 +93,7 @@
     <nodeInfo nodeId="5051628863846689904" fileName="TableColumnSelection.java" startLine="153" startPosition="91" endLine="159" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6365263270891632473" fileName="TableColumnSelection.java" startLine="105" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSelectionInfo#()Ljetbrains/mps/nodeEditor/selection/SelectionInfo;" />
     <nodeInfo nodeId="8096356944928566232" fileName="TableColumnSelection.java" startLine="121" startPosition="50" endLine="128" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="442641882176278442" fileName="TableColumnSelection.java" startLine="135" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="renderText#()Ljetbrains/mps/nodeEditor/text/TextBuilder;" />
+    <nodeInfo nodeId="442641882176278442" fileName="TableColumnSelection.java" startLine="135" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="renderText#()Ljetbrains/mps/openapi/editor/TextBuilder;" />
     <nodeInfo nodeId="5051628863846689828" fileName="TableColumnSelection.java" startLine="143" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="selectUp#()V" />
     <nodeInfo nodeId="5051628863846689902" fileName="TableColumnSelection.java" startLine="152" startPosition="42" endLine="160" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="2410328448534410900" fileName="TableColumnSelection.java" startLine="57" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TableColumnSelection#(Ljetbrains/mps/nodeEditor/EditorComponent;Ljetbrains/mps/lang/editor/table/runtime/EditorCell_Table;I)V" />
@@ -125,7 +125,7 @@
     <scopeInfo nodeId="8096356944928172922" fileName="TableColumnSelection.java" startLine="81" startPosition="0" endLine="84" endPosition="0" />
     <scopeInfo nodeId="8096356944928566234" fileName="TableColumnSelection.java" startLine="122" startPosition="59" endLine="125" endPosition="7" />
     <scopeInfo nodeId="6196452551966301168" fileName="TableColumnSelection.java" startLine="131" startPosition="0" endLine="134" endPosition="0" />
-    <scopeInfo nodeId="442641882176296165" fileName="TableColumnSelection.java" startLine="136" startPosition="59" endLine="139" endPosition="5">
+    <scopeInfo nodeId="442641882176296165" fileName="TableColumnSelection.java" startLine="136" startPosition="89" endLine="139" endPosition="5">
       <varInfo nodeId="442641882176296168" varName="cell" />
     </scopeInfo>
     <scopeInfo nodeId="6365263270891632477" fileName="TableColumnSelection.java" startLine="106" startPosition="74" endLine="110" endPosition="25">

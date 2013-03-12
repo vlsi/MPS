@@ -22,7 +22,7 @@ import com.intellij.ide.CopyPasteManagerEx;
 import jetbrains.mps.ide.datatransfer.SNodeTransferable;
 import java.util.Collections;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.text.TextBuilder;
+import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 
@@ -133,7 +133,7 @@ public class TableColumnSelection extends AbstractMultipleSelection {
   }
 
   private TextBuilder renderText() {
-    TextBuilder result = TextBuilder.getEmptyTextBuilder();
+    TextBuilder result = jetbrains.mps.nodeEditor.text.TextBuilder.getEmptyTextBuilder();
     for (EditorCell cell : getSelectedCells()) {
       result = result.appendToTheBottom(((jetbrains.mps.nodeEditor.cells.EditorCell) cell).renderText());
     }

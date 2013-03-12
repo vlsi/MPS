@@ -135,6 +135,7 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.selection.SelectionRestoreException" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.selection.SelectionStoreException" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.text.TextBuilder" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.TextBuilder" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell_Collection" />
