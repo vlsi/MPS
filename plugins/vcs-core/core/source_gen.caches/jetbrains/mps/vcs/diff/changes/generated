@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-773fvsm501s00g27l2marf9sxpxksa6">
+<dependencies version="2" modelHash="45zhrbdc0t82jpz7wgewamsch1rhuyy">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -50,7 +50,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="DeleteRootChange.java" />
   </source>
-  <source id="4972886494893223485" name="NodeGroupChange" hash="e58069omnscog7hidtfynlx9djkcy9d">
+  <source id="4972886494893223485" name="NodeGroupChange" hash="dvhr52rmrglm7bdp6aoqwm89oj22z47">
     <dep root="8813828754313712692" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -67,7 +67,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="NodeGroupChange.java" />
   </source>
-  <source id="2729259761016168456" name="SetPropertyChange" hash="vgxl3yoaiti1kzp5ykzrol2mh9ez9p">
+  <source id="2729259761016168456" name="SetPropertyChange" hash="d40ho6y0gbvgzn1kjeynrx93r6uo25c">
     <dep root="5694687812507036176" />
     <dep root="8813828754313712692" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -96,7 +96,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SetReferenceChange.java" />
   </source>
-  <source id="5694687812507036176" name="NodeChange" hash="-c00rn6etvqswgr620lvvakq0cs2ynvk">
+  <source id="5694687812507036176" name="NodeChange" hash="-b37o2fknb1orxecvpd21jrxg6gznh0n">
     <dep root="8813828754313712692" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="NodeChange.java" />
