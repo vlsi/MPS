@@ -334,7 +334,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
       (mySModel).setModelDescriptor(null);
       mySModel = null;
       if (ModelAccess.instance().canWrite()) {
-        notifyModelReplaced(mySModel.getModelDescriptor());
+        notifyModelReplaced(mySModel == null ? null : mySModel.getModelDescriptor());
       } else {
         ModelAccess.instance().runWriteInEDT(new Runnable() {
           @Override
