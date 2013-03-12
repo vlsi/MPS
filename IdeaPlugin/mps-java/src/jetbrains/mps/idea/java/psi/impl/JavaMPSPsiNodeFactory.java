@@ -156,7 +156,7 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory, MPS2PsiMapper {
     // old SModel, non-openapi
     SModel model = node.getModel();
     if (model == null) return null;
-    SModel mDesc = model.getModelDescriptor();
+    SModel mDesc = model;
     if (mDesc == null || !(mDesc instanceof PsiJavaStubModelDescriptor)) {
       return null;
     }
