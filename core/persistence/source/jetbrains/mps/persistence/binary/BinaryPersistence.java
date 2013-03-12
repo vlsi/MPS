@@ -254,7 +254,9 @@ public class BinaryPersistence {
         @Override
         protected SNodeId readTargetNodeId(ModelInputStream is) throws IOException {
           SNodeId id = super.readTargetNodeId(is);
-          consumer.consume(id.toString());
+          if (id != null) {
+            consumer.consume(id.toString());
+          }
           return id;
         }
       }.readNodes(model, mis);

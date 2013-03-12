@@ -20,11 +20,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 /**
- * Created with IntelliJ IDEA.
  * User: fyodor
  * Date: 1/15/13
- * Time: 2:31 PM
- * To change this template use File | Settings | File Templates.
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({RebuildProjectTest.class})

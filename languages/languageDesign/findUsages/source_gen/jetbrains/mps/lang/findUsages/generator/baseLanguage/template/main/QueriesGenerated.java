@@ -109,6 +109,14 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "isVisibleBlock", true) != null;
   }
 
+  public static boolean ifMacro_Condition_6297023828538094163(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "isVisibleBlock", true) != null;
+  }
+
+  public static boolean ifMacro_Condition_100784871543542637(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "isUsedByDefault", true) != null);
+  }
+
   public static boolean ifMacro_Condition_1216397265033(final IOperationContext operationContext, final IfMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "description") != null && !(SPropertyOperations.getString(_context.getNode(), "description").equals(""));
   }
@@ -156,6 +164,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1216396990767(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "isVisibleBlock", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_100784871586267457(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "isUsedByDefault", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1197207280679(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

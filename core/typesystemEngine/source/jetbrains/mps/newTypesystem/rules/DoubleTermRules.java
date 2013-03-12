@@ -28,11 +28,8 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * Created with IntelliJ IDEA.
  * User: fyodor
  * Date: 8/31/12
- * Time: 12:40 PM
- * To change this template use File | Settings | File Templates.
  */
 public abstract class DoubleTermRules<K> {
 

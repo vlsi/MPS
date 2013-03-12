@@ -416,7 +416,9 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
       }
 
       private void recreateActions() {
-        List<CategoryKind> categoryKinds = Arrays.asList(CategoryKind.DEFAULT_CATEGORY_KIND);
+        List<CategoryKind> categoryKinds = Arrays.asList(
+            new CategoryKind(CategoryKind.DEFAULT_CATEGORY_KIND.getName(), General.Filter, CategoryKind.DEFAULT_CATEGORY_KIND.getTooltip())
+        );
         if (myNodeRepresentator != null) {
           categoryKinds = ((INodeRepresentator<?>) myNodeRepresentator).getCategoryKinds();
         }

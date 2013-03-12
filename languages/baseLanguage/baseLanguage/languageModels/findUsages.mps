@@ -3608,6 +3608,29 @@
         </node>
       </node>
     </node>
+    <node role="categorizeBlock" roleId="tp3b.1218978125367" type="tp3b.CategorizeBlock" typeId="tp3b.1206461221942" id="7785202691174322788">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7785202691174322789">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7785202691174325666">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7785202691174325665">
+            <property name="value" nameId="tpee.1070475926801" value="Exact Mathod Usages" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="isUsedByDefault" roleId="tp3b.100784871544251463" type="tp3b.IsUsedByDefault" typeId="tp3b.100784871586155151" id="3467876158041888448">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3467876158041888449">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3467876158041904648">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3467876158041905885">
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="3467876158041937712">
+              <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="3467876158041938284">
+                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpee.1068580123132" resolveInfo="BaseMethodDeclaration" />
+              </node>
+            </node>
+            <node role="operand" roleId="tpee.1197027771414" type="tp3b.ConceptFunctionParameter_node" typeId="tp3b.1197386047362" id="3467876158041904647" />
+          </node>
+        </node>
+      </node>
+    </node>
   </root>
   <root id="1237738696198">
     <node role="findFunction" roleId="tp3b.1218978125365" type="tp3b.FindBlock" typeId="tp3b.1197044488840" id="1237738696199">
@@ -3691,6 +3714,20 @@
                 <link role="variable" roleId="tp2q.1153944258490" targetNodeId="1237742095138" resolveInfo="constructor" />
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="isUsedByDefault" roleId="tp3b.100784871544251463" type="tp3b.IsUsedByDefault" typeId="tp3b.100784871586155151" id="7785202691164834759">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7785202691164834760">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7785202691164842329">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7785202691164843639">
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="7785202691164913543">
+              <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="7785202691164914114">
+                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
+              </node>
+            </node>
+            <node role="operand" roleId="tpee.1197027771414" type="tp3b.ConceptFunctionParameter_node" typeId="tp3b.1197386047362" id="7785202691164842328" />
           </node>
         </node>
       </node>

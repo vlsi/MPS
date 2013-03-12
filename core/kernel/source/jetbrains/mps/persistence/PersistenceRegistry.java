@@ -17,14 +17,19 @@ package jetbrains.mps.persistence;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.project.structure.ProjectStructureModelRoot;
 import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.persistence.FindUsagesParticipant;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
+import org.jetbrains.mps.openapi.persistence.NavigationParticipant;
 
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedHashSet;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * evgeny, 10/23/12
@@ -37,6 +42,8 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
 
   private Map<String, ModelRootFactory> myRootFactories = new HashMap<String, ModelRootFactory>();
   private Map<String, ModelFactory> myExtensionToModelFactoryMap = new HashMap<String, ModelFactory>();
+  private Set<FindUsagesParticipant> myFindUsagesParticipants = new LinkedHashSet<FindUsagesParticipant>();
+  private Set<NavigationParticipant> myNavigationParticipants = new LinkedHashSet<NavigationParticipant>();
 
   @Override
   public ModelRootFactory getModelRootFactory(String type) {
@@ -80,6 +87,36 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
   }
 
   @Override
+  public void addFindUsagesParticipant(FindUsagesParticipant participant) {
+    myFindUsagesParticipants.add(participant);
+  }
+
+  @Override
+  public void removeFindUsagesParticipant(FindUsagesParticipant participant) {
+    myFindUsagesParticipants.remove(participant);
+  }
+
+  @Override
+  public Set<FindUsagesParticipant> getFindUsagesParticipants() {
+    return Collections.unmodifiableSet(myFindUsagesParticipants);
+  }
+
+  @Override
+  public void addNavigationParticipant(NavigationParticipant participant) {
+    myNavigationParticipants.add(participant);
+  }
+
+  @Override
+  public void removeNavigationParticipant(NavigationParticipant participant) {
+    myNavigationParticipants.remove(participant);
+  }
+
+  @Override
+  public Set<NavigationParticipant> getNavigationParticipants() {
+    return myNavigationParticipants;
+  }
+
+  @Override
   public void init() {
     if (INSTANCE != null) {
       throw new IllegalStateException("double initialization");
@@ -96,6 +133,12 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
       @Override
       public ModelRoot create() {
         return new SModelRoot();
+      }
+    });
+    setModelRootFactory(ProjectStructureModelRoot.TYPE, new ModelRootFactory() {
+      @Override
+      public ModelRoot create() {
+        return new ProjectStructureModelRoot();
       }
     });
   }

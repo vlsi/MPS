@@ -22,11 +22,8 @@ import jetbrains.mps.util.Pair;
 import java.util.List;
 
 /**
- * Created with IntelliJ IDEA.
  * User: fyodor
  * Date: 11/13/12
- * Time: 11:52 AM
- * To change this template use File | Settings | File Templates.
  */
 public class NullErrorReporter implements IErrorReporter {
   @Override

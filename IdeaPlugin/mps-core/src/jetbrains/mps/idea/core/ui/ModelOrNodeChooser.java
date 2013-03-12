@@ -72,7 +72,7 @@ public class ModelOrNodeChooser extends ProjectViewPane implements ModelElementT
           if (o instanceof PsiFileNode) {
             PsiFileNode fileNode = (PsiFileNode) o;
             VirtualFile vFile = fileNode.getVirtualFile();
-            if (vFile != null && vFile.getFileType().equals(MPSFileTypeFactory.MODEL_FILE_TYPE)) {
+            if (vFile != null && vFile.getFileType().equals(MPSFileTypeFactory.MPS_FILE_TYPE)) {
               result.add(o);
             }
           } else if (o instanceof MPSPsiElementTreeNode) {

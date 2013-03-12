@@ -17,6 +17,8 @@ package org.jetbrains.mps.openapi.persistence;
 
 import org.jetbrains.mps.openapi.model.SModelId;
 
+import java.util.Set;
+
 /**
  * Represents a singleton registry of model and model root factories.
  */
@@ -72,4 +74,17 @@ public abstract class PersistenceFacade {
    *             The actual type of the model root is followed by implementation-specific text.
    */
   public abstract SModelId getModelId(String text);
+
+  public abstract Set<FindUsagesParticipant> getFindUsagesParticipants();
+
+  public abstract void addFindUsagesParticipant(FindUsagesParticipant participant);
+
+  public abstract void removeFindUsagesParticipant(FindUsagesParticipant participant);
+
+  public abstract Set<NavigationParticipant> getNavigationParticipants();
+
+  public abstract void addNavigationParticipant(NavigationParticipant participant);
+
+  public abstract void removeNavigationParticipant(NavigationParticipant participant);
+
 }

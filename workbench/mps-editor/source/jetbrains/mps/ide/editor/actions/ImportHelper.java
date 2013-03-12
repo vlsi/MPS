@@ -41,7 +41,7 @@ import jetbrains.mps.workbench.choose.modules.BaseLanguageModel;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.persistence.indexing.NodeDescriptor;
+import org.jetbrains.mps.openapi.persistence.NavigationParticipant.NavigationTarget;
 
 import javax.swing.*;
 import java.awt.*;
@@ -216,7 +216,7 @@ public class ImportHelper {
                       String initialText, @Nullable BaseAction parentAction, final ModelImportByRootCallback callback) {
     BaseMPSChooseModel goToNodeModel = new RootChooseModel(project, new RootNodeNameIndex()) {
       @Override
-      public NavigationItem doGetNavigationItem(final NodeDescriptor object) {
+      public NavigationItem doGetNavigationItem(final NavigationTarget object) {
         return new RootNodeElement(object) {
           @Override
           public void navigate(boolean requestFocus) {

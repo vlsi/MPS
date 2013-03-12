@@ -28,11 +28,8 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * Created with IntelliJ IDEA.
  * User: fyodor
  * Date: 8/28/12
- * Time: 10:35 AM
- * To change this template use File | Settings | File Templates.
  */
 public abstract class SingleTermRules<K> {
 

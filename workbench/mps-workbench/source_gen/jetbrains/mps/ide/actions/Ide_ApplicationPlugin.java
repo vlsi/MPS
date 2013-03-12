@@ -51,6 +51,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new EditNode_Action());
     addAction(new ExpandNode_Action());
     addAction(new FastFindNodeUsages_Action());
+    addAction(new FindConceptInstances_Action());
     addAction(new FindModelUsages_Action());
     addAction(new FindNext_Action());
     addAction(new FindPrevious_Action());
@@ -276,6 +277,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     List<BaseKeymapChanges> res = ListSequence.fromList(new ArrayList<BaseKeymapChanges>());
     ListSequence.fromList(res).addElement(new Default_KeymapChanges());
     ListSequence.fromList(res).addElement(new DependenciesKeyMap_KeymapChanges());
+    ListSequence.fromList(res).addElement(new GnomeActionsKeymap_KeymapChanges());
     ListSequence.fromList(res).addElement(new Mac_10_5_KeymapChanges());
     ListSequence.fromList(res).addElement(new Mac_KeymapChanges());
     ListSequence.fromList(res).addElement(new TraceActions_KeymapChanges());

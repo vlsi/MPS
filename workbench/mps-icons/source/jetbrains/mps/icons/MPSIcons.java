@@ -105,6 +105,7 @@ public class MPSIcons {
     public static final Icon Language = IconLoader.getIcon("/nodes/language.png");
     public static final Icon MappingConfig = IconLoader.getIcon("/nodes/mappingConf.png");
     public static final Icon Model = IconLoader.getIcon("/nodes/model.png");
+    public static final Icon ModelOverlay = IconLoader.getIcon("/nodes/model-overlay.png");
     public static final Icon Node = IconLoader.getIcon("/nodes/node.png");
     public static final Icon ProjectModels = IconLoader.getIcon("/nodes/projectModels.png");
     public static final Icon Reduction = IconLoader.getIcon("/nodes/reduction.png");

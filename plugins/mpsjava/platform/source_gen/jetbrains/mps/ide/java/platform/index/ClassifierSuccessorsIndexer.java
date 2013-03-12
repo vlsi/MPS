@@ -79,7 +79,7 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalS
 
     @Override
     public boolean acceptInput(VirtualFile file) {
-      return MPSFileTypeFactory.MODEL_FILE_TYPE.equals(file.getFileType());
+      return MPSFileTypeFactory.MPS_FILE_TYPE.equals(file.getFileType());
     }
   }
 

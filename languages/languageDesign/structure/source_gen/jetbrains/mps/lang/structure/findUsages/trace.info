@@ -51,49 +51,55 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)/1197636141662">
     <nodeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="25" startPosition="34" endLine="26" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="30" startPosition="38" endLine="31" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="35" startPosition="30" endLine="36" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197636333572" fileName="NodeUsages_Finder.java" startLine="41" startPosition="9" endLine="42" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1200268559644" fileName="NodeUsages_Finder.java" startLine="43" startPosition="44" endLine="44" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="46" startPosition="15" endLine="47" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206463395212" fileName="NodeUsages_Finder.java" startLine="52" startPosition="45" endLine="53" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7785202691165040411" fileName="NodeUsages_Finder.java" startLine="25" startPosition="46" endLine="26" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="30" startPosition="34" endLine="31" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="35" startPosition="38" endLine="36" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="40" startPosition="30" endLine="41" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197636333572" fileName="NodeUsages_Finder.java" startLine="46" startPosition="9" endLine="47" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1200268559644" fileName="NodeUsages_Finder.java" startLine="48" startPosition="44" endLine="49" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="51" startPosition="15" endLine="52" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206463395212" fileName="NodeUsages_Finder.java" startLine="57" startPosition="45" endLine="58" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="21" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeUsages_Finder#()V" />
-    <nodeInfo nodeId="1197636333587" fileName="NodeUsages_Finder.java" startLine="42" startPosition="146" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLongDescription#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodeCategory#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="40" startPosition="98" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="39" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doFind#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IScope;Ljava/util/List;Ljetbrains/mps/progress/ProgressMonitor;)V" />
+    <nodeInfo nodeId="1197636333587" fileName="NodeUsages_Finder.java" startLine="47" startPosition="146" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isUsedByDefault#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLongDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodeCategory#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="45" startPosition="98" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="44" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doFind#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IScope;Ljava/util/List;Ljetbrains/mps/progress/ProgressMonitor;)V" />
     <scopeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="21" startPosition="30" endLine="21" endPosition="30" />
-    <scopeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="25" startPosition="34" endLine="26" endPosition="25" />
-    <scopeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="30" startPosition="38" endLine="31" endPosition="14" />
-    <scopeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="35" startPosition="30" endLine="36" endPosition="59" />
-    <scopeInfo nodeId="1197636333588" fileName="NodeUsages_Finder.java" startLine="43" startPosition="44" endLine="44" endPosition="88" />
-    <scopeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="46" startPosition="15" endLine="47" endPosition="21" />
-    <scopeInfo nodeId="1206463393132" fileName="NodeUsages_Finder.java" startLine="52" startPosition="45" endLine="53" endPosition="25" />
+    <scopeInfo nodeId="7785202691165039189" fileName="NodeUsages_Finder.java" startLine="25" startPosition="46" endLine="26" endPosition="16" />
+    <scopeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="30" startPosition="34" endLine="31" endPosition="25" />
+    <scopeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="35" startPosition="38" endLine="36" endPosition="14" />
+    <scopeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="40" startPosition="30" endLine="41" endPosition="59" />
+    <scopeInfo nodeId="1197636333588" fileName="NodeUsages_Finder.java" startLine="48" startPosition="44" endLine="49" endPosition="88" />
+    <scopeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="51" startPosition="15" endLine="52" endPosition="21" />
+    <scopeInfo nodeId="1206463393132" fileName="NodeUsages_Finder.java" startLine="57" startPosition="45" endLine="58" endPosition="25" />
     <scopeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="21" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="1197636333587" fileName="NodeUsages_Finder.java" startLine="42" startPosition="146" endLine="45" endPosition="7">
+    <scopeInfo nodeId="1197636333587" fileName="NodeUsages_Finder.java" startLine="47" startPosition="146" endLine="50" endPosition="7">
       <varInfo nodeId="1197636333598" varName="reference" />
     </scopeInfo>
-    <scopeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="1197636141666" fileName="NodeUsages_Finder.java" startLine="41" startPosition="9" endLine="45" endPosition="7">
-      <varInfo nodeId="1197636333573" varName="resRefs" />
-    </scopeInfo>
-    <scopeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="51" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="1197636141662" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="40" startPosition="98" endLine="48" endPosition="5" />
-    <scopeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="39" startPosition="0" endLine="50" endPosition="0">
+    <scopeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="1197636141666" fileName="NodeUsages_Finder.java" startLine="46" startPosition="9" endLine="50" endPosition="7">
+      <varInfo nodeId="1197636333573" varName="resRefs" />
+    </scopeInfo>
+    <scopeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="56" startPosition="0" endLine="60" endPosition="0">
+      <varInfo nodeId="1197636141662" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="45" startPosition="98" endLine="53" endPosition="5" />
+    <scopeInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="44" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="1197636141662" varName="_results" />
       <varInfo nodeId="1197636141662" varName="monitor" />
       <varInfo nodeId="1197636141662" varName="node" />
       <varInfo nodeId="1197636141662" varName="scope" />
     </scopeInfo>
-    <unitInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="18" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder" />
+    <unitInfo nodeId="1197636141662" fileName="NodeUsages_Finder.java" startLine="18" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)/1198430852441">
     <nodeInfo nodeId="1198430852441" fileName="NodeAndDescendantsUsages_Finder.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />

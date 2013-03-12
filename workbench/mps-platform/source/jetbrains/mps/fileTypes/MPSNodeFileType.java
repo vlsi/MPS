@@ -27,7 +27,7 @@ public class MPSNodeFileType implements FileType, FileTypeIdentifiableByVirtualF
   @Override
   @NotNull
   public String getName() {
-    return "MPS Node File Type";
+    return "MPS_NODE";
   }
 
   @Override

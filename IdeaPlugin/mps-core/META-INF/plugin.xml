@@ -119,9 +119,10 @@
     <library.type implementation="jetbrains.mps.idea.core.library.ModuleLibraryType"/>
     <projectConfigurable instance="jetbrains.mps.idea.core.codeStyle.MpsCodeStyleSettingsConfigurable" order="after colors"/>
     <lang.fileViewProviderFactory language="MPS"
-                                  implementationClass="jetbrains.mps.idea.core.psi.MPSFileViewProviderFactory"/>
-    <navbar implementation="jetbrains.mps.idea.core.psi.MPSNavBarExtension" id="MPSNavbar"/>
+                                  implementationClass="jetbrains.mps.idea.core.psi.impl.file.MPSFileViewProviderFactory"/>
+    <navbar implementation="jetbrains.mps.idea.core.navbar.MPSNavBarExtension" id="MPSNavbar"/>
     <lang.parserDefinition language="MPS" implementationClass="jetbrains.mps.idea.core.fileType.MPSParserDefinition"/>
+    <iconLayerProvider implementation="jetbrains.mps.idea.core.psi.impl.ModelFileIconLayerProvider"/>
   </extensions>
 
   <actions>

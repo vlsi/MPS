@@ -111,10 +111,6 @@ public interface SModel {
    */
   void unload();
 
-  void attach();
-
-  void detach();
-
   /**
    * Represents a problem with the persitence.
    */

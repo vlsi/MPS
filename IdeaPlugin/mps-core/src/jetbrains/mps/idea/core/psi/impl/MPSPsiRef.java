@@ -90,6 +90,11 @@ public class MPSPsiRef extends MPSPsiNodeBase {
     });
   }
 
+  @Override
+  public PsiFile getContainingFile() {
+    return getContainingRoot();
+  }
+
   public SModelReference getModelReference() {
     return model;
   }
@@ -107,7 +112,7 @@ public class MPSPsiRef extends MPSPsiNodeBase {
     return new PsiReference() {
       @Override
       public PsiElement getElement() {
-        return getContainingModel(); //MPSPsiRef.this;
+        return MPSPsiRef.this;
       }
 
       @Override

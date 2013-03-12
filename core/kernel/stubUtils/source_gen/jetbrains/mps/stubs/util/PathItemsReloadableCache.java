@@ -9,11 +9,13 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import java.util.HashMap;
 
+@Deprecated
 public class PathItemsReloadableCache {
   private static Map<Object, PathItemsReloadableCache> Instances = MapSequence.fromMap(new WeakHashMap<Object, PathItemsReloadableCache>());
   private Map<String, PathItem> cache = null;
   private Class<? extends PathItem> pathItemClass;
 
+  @Deprecated
   private PathItemsReloadableCache(Class<? extends PathItem> cls) {
     this.pathItemClass = cls;
   }

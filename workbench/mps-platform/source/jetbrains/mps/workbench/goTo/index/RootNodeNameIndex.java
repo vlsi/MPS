@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.workbench.goTo.index;
 
+import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.util.Key;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.containers.EmptyIterable;
@@ -27,20 +28,21 @@ import com.intellij.util.indexing.SingleEntryIndexer;
 import com.intellij.util.io.DataExternalizer;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.smodel.StubModel;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
+import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,11 +60,16 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<List<S
     jetbrains.mps.smodel.SModel model = inputData.getUserData(PARSED_MODEL);
 
     if (model == null) {
-      //todo only roots loading
-      try {
-        model = ModelPersistence.readModel(inputData.getContentAsText().toString(), false);
-      } catch (ModelReadException e) {
-        model = new StubModel(SModelReference.fromPath(inputData.getFile().getPath()), e);
+      String ext = FileUtil.getExtension(inputData.getFileName());
+      ModelFactory factory = PersistenceFacade.getInstance().getModelFactory(ext);
+      if (factory == null) {
+        return null;
+      }
+      model = factory.isBinary()
+        ? PersistenceUtil.loadModel(inputData.getContent(), ext)
+        : PersistenceUtil.loadModel(inputData.getContentAsText().toString(), ext);
+      if (model == null) {
+        return null;
       }
       inputData.putUserData(PARSED_MODEL, model);
     }
@@ -75,7 +82,7 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<List<S
     return NAME;
   }
 
-  public Iterable<SNode> getRootsToIterate(SModel model) {
+  public static Iterable<SNode> getRootsToIterate(SModel model) {
     if (SModelStereotype.isStubModelStereotype(jetbrains.mps.util.SNodeOperations.getModelStereotype(model))) return new EmptyIterable<SNode>();
     return new ConditionalIterable<SNode>(model.getRootNodes(), new MyCondition());
   }
@@ -121,7 +128,8 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<List<S
   private static class MyInputFilter implements FileBasedIndex.InputFilter {
     @Override
     public boolean acceptInput(VirtualFile file) {
-      return (file.getFileType().equals(MPSFileTypeFactory.MODEL_FILE_TYPE));
+      FileType fileType = file.getFileType();
+      return MPSFileTypeFactory.MPS_FILE_TYPE.equals(fileType) || MPSFileTypeFactory.MPS_BINARY_FILE_TYPE.equals(fileType);
     }
   }
 

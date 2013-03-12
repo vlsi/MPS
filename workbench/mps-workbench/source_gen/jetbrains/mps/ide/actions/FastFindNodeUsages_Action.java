@@ -23,9 +23,10 @@ public class FastFindNodeUsages_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Find;
 
   public FastFindNodeUsages_Action() {
-    super("Find Usages (Without Options Dialog)", "", ICON);
+    super("Find Usages", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
+    this.setMnemonic("U".charAt(0));
   }
 
   @Override

@@ -119,7 +119,7 @@ public class ModelProperties {
           }
         }
         if (myModelDescriptor instanceof DefaultSModelDescriptor) {
-          DefaultSModel dm = (DefaultSModel) myModelDescriptor;
+          DefaultSModel dm = ((DefaultSModelDescriptor) myModelDescriptor).getSModelInternal();
           if (myGenerateIntoModelFolder) {
             dm.getSModelHeader().setOptionalProperty(USE_MODEL_FOLDER_FOR_GENERATION, Boolean.TRUE.toString());
           } else {

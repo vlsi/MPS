@@ -487,12 +487,16 @@ public class TypeContextManager implements CoreComponent {
 
     @Override
     public void clear() {
-      myContext.clear();
+      if (myContext != null) {
+        myContext.clear();
+      }
     }
 
     @Override
     public void dispose() {
-      myContext.dispose();
+      if (myContext != null) {
+        myContext.dispose();
+      }
       myContext = null;
       myCount = 0;
     }
