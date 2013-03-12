@@ -109,6 +109,7 @@
     <classNode dependClassName="jetbrains.mps.persistence.MementoImpl" />
     <classNode dependClassName="jetbrains.mps.persistence.PersistenceRegistry" />
     <classNode dependClassName="jetbrains.mps.project.persistence.ModuleReadException" />
+    <classNode dependClassName="jetbrains.mps.project.structure.ProjectStructureModelRoot" />
     <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRootDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRootManager" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.Dependency" />

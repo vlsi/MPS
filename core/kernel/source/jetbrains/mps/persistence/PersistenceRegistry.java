@@ -17,11 +17,12 @@ package jetbrains.mps.persistence;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.project.structure.ProjectStructureModelRoot;
 import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.persistence.FindUsagesParticipant;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
-import org.jetbrains.mps.openapi.persistence.FindUsagesParticipant;
 import org.jetbrains.mps.openapi.persistence.NavigationParticipant;
 
 import java.util.Collections;
@@ -132,6 +133,12 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
       @Override
       public ModelRoot create() {
         return new SModelRoot();
+      }
+    });
+    setModelRootFactory(ProjectStructureModelRoot.TYPE, new ModelRootFactory() {
+      @Override
+      public ModelRoot create() {
+        return new ProjectStructureModelRoot();
       }
     });
   }
