@@ -2975,7 +2975,7 @@
     <nodeInfo nodeId="8398535039686069478" fileName="SimpleDiffRequest.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContents" />
     <nodeInfo nodeId="7890429894027177750" fileName="SimpleDiffRequest.java" startLine="21" startPosition="114" endLine="22" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="7890429894027177752" fileName="SimpleDiffRequest.java" startLine="22" startPosition="19" endLine="23" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7890429894027177840" fileName="SimpleDiffRequest.java" startLine="26" startPosition="47" endLine="27" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7890429894027177840" fileName="SimpleDiffRequest.java" startLine="26" startPosition="47" endLine="27" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4864705176521720903" fileName="SimpleDiffRequest.java" startLine="34" startPosition="34" endLine="35" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4652592318748341220" fileName="SimpleDiffRequest.java" startLine="39" startPosition="38" endLine="40" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8398535039686069485" fileName="SimpleDiffRequest.java" startLine="45" startPosition="38" endLine="46" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2986,7 +2986,7 @@
     <nodeInfo nodeId="4652592318748341222" fileName="SimpleDiffRequest.java" startLine="43" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContents#()[Lcom/intellij/openapi/diff/DiffContent;" />
     <nodeInfo nodeId="7890429894027177851" fileName="SimpleDiffRequest.java" startLine="23" startPosition="36" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7890429894027177746" fileName="SimpleDiffRequest.java" startLine="21" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SimpleDiffRequest#(Lcom/intellij/openapi/project/Project;[Lorg/jetbrains/mps/openapi/model/SModel;[Ljava/lang/String;)V" />
-    <scopeInfo nodeId="7890429894027177839" fileName="SimpleDiffRequest.java" startLine="26" startPosition="47" endLine="27" endPosition="106" />
+    <scopeInfo nodeId="7890429894027177839" fileName="SimpleDiffRequest.java" startLine="26" startPosition="47" endLine="27" endPosition="104" />
     <scopeInfo nodeId="4652592318748341212" fileName="SimpleDiffRequest.java" startLine="34" startPosition="34" endLine="35" endPosition="30" />
     <scopeInfo nodeId="4652592318748341219" fileName="SimpleDiffRequest.java" startLine="39" startPosition="38" endLine="40" endPosition="27" />
     <scopeInfo nodeId="4652592318748341226" fileName="SimpleDiffRequest.java" startLine="45" startPosition="38" endLine="46" endPosition="22" />

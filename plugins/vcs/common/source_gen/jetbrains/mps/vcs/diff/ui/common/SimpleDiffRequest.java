@@ -24,7 +24,7 @@ public class SimpleDiffRequest extends DiffRequest {
     if (models != null) {
       myContents = Sequence.fromIterable(Sequence.fromArray(models)).select(new ISelector<SModel, SimpleContent>() {
         public SimpleContent select(SModel m) {
-          return new SimpleContent(ModelPersistence.modelToString(m), MPSFileTypeFactory.MODEL_FILE_TYPE);
+          return new SimpleContent(ModelPersistence.modelToString(m), MPSFileTypeFactory.MPS_FILE_TYPE);
         }
       }).toGenericArray(SimpleContent.class);
     }

@@ -64,11 +64,6 @@ public class NodeEditorComponent extends EditorComponent {
           return;
         }
         if (!isShowing()) return;
-
-        // FIXME!!! wrong focus to editor
-        ToolWindowManager toolWindowManager = ToolWindowManager.getInstance(ProjectHelper.toIdeaProject(operationContext.getProject()));
-        toolWindowManager.getFocusManager().requestFocus(NodeEditorComponent.this,false);
-        
         adjustInspector();
       }
     });

@@ -37,11 +37,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import javax.swing.JComponent;
 
 /**
- * Created with IntelliJ IDEA.
  * User: fyodor
  * Date: 1/31/13
- * Time: 2:01 PM
- * To change this template use File | Settings | File Templates.
  */
 public class MPSStructureViewFactory implements NodeStructureViewProvider {
   @Nullable

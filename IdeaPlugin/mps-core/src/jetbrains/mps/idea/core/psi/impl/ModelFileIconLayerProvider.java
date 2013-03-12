@@ -13,18 +13,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.intellij.openapi.fileEditor;
 
-import com.intellij.openapi.editor.Editor;
-import com.intellij.openapi.fileEditor.FileEditor;
-import com.intellij.openapi.vfs.VirtualFile;
+package jetbrains.mps.idea.core.psi.impl;
+
+import com.intellij.ide.IconLayerProvider;
+import com.intellij.openapi.util.Iconable;
+import jetbrains.mps.fileTypes.FileIcons;
+import jetbrains.mps.idea.core.icons.MPSIcons;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import javax.swing.Icon;
 
 /**
  * User: fyodor
- * Date: 2/1/13
+ * Date: 3/11/13
  */
-public interface FileEditorDataProvider {
+public class ModelFileIconLayerProvider implements IconLayerProvider {
   @Nullable
-  Object getData(String dataId, FileEditor e, final VirtualFile file);
+  @Override
+  public Icon getLayerIcon(@NotNull Iconable element, boolean isLocked) {
+    if (element instanceof MPSPsiModel) {
+      return MPSIcons.MODEL_OVERLAY_ICON;
+    }
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public String getLayerDescription() {
+    return "MPS Model";
+  }
 }

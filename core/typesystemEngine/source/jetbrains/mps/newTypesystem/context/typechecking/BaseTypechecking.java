@@ -33,11 +33,8 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Created with IntelliJ IDEA.
  * User: fyodor
  * Date: 11/12/12
- * Time: 3:24 PM
- * To change this template use File | Settings | File Templates.
  */
 public class BaseTypechecking<STATE extends State, COMP extends SimpleTypecheckingComponent> {
 

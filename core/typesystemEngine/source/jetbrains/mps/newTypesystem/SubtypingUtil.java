@@ -25,11 +25,8 @@ import jetbrains.mps.typesystemEngine.util.LatticeUtil;
 import java.util.*;
 
 /**
- * Created with IntelliJ IDEA.
  * User: fyodor
  * Date: 9/4/12
- * Time: 10:14 AM
- * To change this template use File | Settings | File Templates.
  */
 public class SubtypingUtil {
 

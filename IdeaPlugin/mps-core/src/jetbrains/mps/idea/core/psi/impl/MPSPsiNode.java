@@ -17,6 +17,7 @@
 package jetbrains.mps.idea.core.psi.impl;
 
 import com.intellij.psi.PsiElement;
+import com.intellij.psi.PsiInvalidElementAccessException;
 import com.intellij.util.ArrayUtil;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
@@ -80,6 +81,20 @@ public class MPSPsiNode extends MPSPsiNodeBase {
     }
     return myProperties.get(key);
   }
+
+  public MPSPsiRootNode getContainingRoot () {
+    PsiElement parent = this;
+    while (parent != null && !(parent instanceof MPSPsiRootNode)) {
+      parent = parent.getParent();
+    }
+
+    if (parent == null) {
+      throw new PsiInvalidElementAccessException(this);
+    }
+
+    return (MPSPsiRootNode) parent;
+  }
+
 
   void setProperty(String key, String value) {
     // TODO

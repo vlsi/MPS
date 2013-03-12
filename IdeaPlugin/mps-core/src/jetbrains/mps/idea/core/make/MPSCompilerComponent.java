@@ -59,7 +59,7 @@ public class MPSCompilerComponent implements ProjectComponent {
     project.getMessageBus().connect().subscribe(CustomBuilderMessageHandler.TOPIC, new RefreshFilesCompilationStatusListener());
     project.getMessageBus().connect().subscribe(CustomBuilderMessageHandler.TOPIC, new NavigateToNodesWithErrors(errorMessages));
 
-    compilerManager.addCompilableFileType(MPSFileTypeFactory.MODEL_FILE_TYPE);
+    compilerManager.addCompilableFileType(MPSFileTypeFactory.MPS_FILE_TYPE);
 
     for (MPSCompiler2 compiler : compilerManager.getCompilers(MPSCompiler2.class)) {
       compilerManager.removeCompiler(compiler);

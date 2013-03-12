@@ -16,8 +16,9 @@
 
 package jetbrains.mps.idea.core.psi.impl;
 
+import com.intellij.ide.impl.ProjectViewSelectInTarget;
+import com.intellij.ide.projectView.impl.ProjectViewPane;
 import com.intellij.lang.FileASTNode;
-import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.FileViewProvider;
@@ -31,11 +32,13 @@ import com.intellij.psi.search.PsiElementProcessor;
 import com.intellij.testFramework.LightVirtualFile;
 import com.intellij.util.IncorrectOperationException;
 import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.util.JavaNameUtil;
+import jetbrains.mps.workbench.nodesFs.MPSModelVirtualFile;
+import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -53,36 +56,180 @@ import java.util.Map;
 /**
  * evgeny, 1/25/13
  */
-public class MPSPsiModel extends MPSPsiNodeBase implements PsiFile {
+public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
 
-  private final SModelReference reference;
-  private final Map<SNodeId, MPSPsiNode> nodes = new HashMap<SNodeId, MPSPsiNode>();
-  private final FileViewProvider myViewProvider;
+  public static final PsiDirectory[] EMPTY_PSI_DIRECTORIES = new PsiDirectory[0];
+  private final SModelReference myModelReference;
+  private final Map<SNodeId, MPSPsiNode> myNodes = new HashMap<SNodeId, MPSPsiNode>();
   private VirtualFile mySourceVirtualFile;
 
-  MPSPsiModel(SModelReference reference, PsiManager manager) {
+  public MPSPsiModel(SModelReference reference, PsiManager manager) {
     super(manager);
-    myViewProvider = new SingleRootFileViewProvider(manager, new LightVirtualFile(), false);
-    this.reference = reference;
+    this.myModelReference = reference;
   }
 
-  public String getQualifiedName() {
-    return reference.getModelName();
-  }
-
+  @NotNull
   @Override
   public String getName() {
-    return getQualifiedName();
+    return JavaNameUtil.shortName(getQualifiedName());
   }
 
   public SModelReference getSModelReference() {
-    return reference;
+    return myModelReference;
   }
 
   @Override
   public boolean isValid() {
     return true;
   }
+
+  @Override
+  public boolean isPhysical() {
+    return true;
+  }
+
+
+  @Override
+  public String toString() {
+    return "Model:" + myModelReference.toString();
+  }
+
+  /* PsiFile */
+
+  @Override
+  public void checkSetName(String name) throws IncorrectOperationException {
+    throw new IncorrectOperationException("Not implemented");
+  }
+
+  @NotNull
+  @Override
+  public VirtualFile getVirtualFile() {
+    return MPSNodesVirtualFileSystem.getInstance().getFileFor((jetbrains.mps.smodel.SModelReference) myModelReference);
+  }
+
+  @Override
+  public boolean processChildren(PsiElementProcessor<PsiFileSystemItem> processor) {
+    return false;
+  }
+
+  @Override
+  public boolean isDirectory() {
+    return true;
+  }
+
+  @Nullable
+  @Override
+  public PsiDirectory getParent() {
+    return null;
+  }
+
+  @NotNull
+  @Override
+  public PsiDirectory[] getSubdirectories() {
+    return EMPTY_PSI_DIRECTORIES;  //To change body of implemented methods use File | Settings | File Templates.
+  }
+
+  @NotNull
+  @Override
+  public PsiFile[] getFiles() {
+    return getChildren(PsiFile.class);
+  }
+
+  @Nullable
+  @Override
+  public PsiDirectory findSubdirectory(@NotNull String name) {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public PsiFile findFile(@NotNull @NonNls String name) {
+    throw new IncorrectOperationException("Not implemented");
+  }
+
+  @NotNull
+  @Override
+  public PsiDirectory createSubdirectory(@NotNull String name) throws IncorrectOperationException {
+    throw new IncorrectOperationException("Not implemented");
+  }
+
+  @Override
+  public void checkCreateSubdirectory(@NotNull String name) throws IncorrectOperationException {
+    throw new IncorrectOperationException("Not implemented");
+  }
+
+  @NotNull
+  @Override
+  public PsiFile createFile(@NotNull @NonNls String name) throws IncorrectOperationException {
+    throw new IncorrectOperationException("Not implemented");
+  }
+
+  @NotNull
+  @Override
+  public PsiFile copyFileFrom(@NotNull String newName, @NotNull PsiFile originalFile) throws IncorrectOperationException {
+    throw new IncorrectOperationException("Not implemented");
+  }
+
+  @Override
+  public void checkCreateFile(@NotNull String name) throws IncorrectOperationException {
+    throw new IncorrectOperationException("Not implemented");
+  }
+
+  @Override
+  public FileASTNode getNode() {
+    return null;
+  }
+
+  @NotNull
+  @Override
+  public PsiElement setName(@NonNls @NotNull String name) throws IncorrectOperationException {
+    throw new IncorrectOperationException("Not implemented");
+  }
+
+  @Nullable
+  @Override
+  public PsiDirectory getParentDirectory() {
+    VirtualFile parentFile = getSourceVirtualFile().getParent();
+    if (parentFile == null) return null;
+    return myManager.findDirectory(parentFile);
+  }
+
+  @Override
+  public boolean canNavigateToSource() {
+    return false;
+  }
+
+  @Override
+  public boolean canNavigate() {
+    return true;
+  }
+
+  @Override
+  public void navigate(boolean requestFocus) {
+    ProjectViewSelectInTarget.select(getProject(), this, ProjectViewPane.ID, null, getSourceVirtualFile(), requestFocus);
+  }
+
+  public String getQualifiedName() {
+    return myModelReference.getModelName();
+  }
+
+  public VirtualFile getSourceVirtualFile() {
+    return mySourceVirtualFile;
+  }
+
+  @Override
+  public PsiFile getContainingFile() {
+    return null;
+  }
+
+  // Added only for refactoring in case if we return the whole MPSPsiModel
+  // as the element of PsiReference (which is a work around)
+  @Override
+  public boolean isWritable() {
+    return true;
+  }
+
+  /* package */
 
   MPSPsiNode reload(SNodeId sNodeId) {
     ModelAccess.assertLegalWrite();
@@ -91,13 +238,24 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiFile {
 
     SNode sNode = mpsPsiNode.getSNodeReference().resolve(MPSModuleRepository.getInstance());
     MPSPsiNode replacement = convert(sNode);
-    ((MPSPsiNodeBase)mpsPsiNode.getParent()).replaceChild(mpsPsiNode, replacement);
+
+    if (mpsPsiNode.getParent() instanceof MPSPsiRootNode) {
+      MPSPsiRootNode rootNode = (MPSPsiRootNode) mpsPsiNode.getParent();
+      assert rootNode.getParent() == this;
+
+      MPSPsiRootNode replacementRoot = new MPSPsiRootNode(sNode.getNodeId(), extractName(sNode), getManager());
+      replaceChild(rootNode, replacementRoot);
+      replacementRoot.addChildLast(replacement);
+    }
+    else {
+      ((MPSPsiNodeBase)mpsPsiNode.getParent()).replaceChild(mpsPsiNode, replacement);
+    }
     return replacement;
   }
 
   void reloadAll() {
     ModelAccess.assertLegalWrite();
-    SModel sModel = reference.resolve(MPSModuleRepository.getInstance());
+    SModel sModel = myModelReference.resolve(MPSModuleRepository.getInstance());
     for (SNode root : sModel.getRootNodes()) {
       MPSPsiNode mpsPsiNode = lookupNode(root.getNodeId());
       if (mpsPsiNode == null) continue;
@@ -107,16 +265,17 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiFile {
   }
 
   MPSPsiNode lookupNode(SNodeId nodeId) {
-    return nodes.get(nodeId);
+    return myNodes.get(nodeId);
   }
 
   void reload(SModel model) {
     clearChildren();
-    MPSPsiNode last = null;
     for (SNode root : model.getRootNodes()) {
-      MPSPsiNode psiRoot = convert(root);
-      addChild(last, psiRoot);
-      last = psiRoot;
+      String rootName = null;
+      rootName = extractName(root);
+      MPSPsiRootNode rootNode = new MPSPsiRootNode(root.getNodeId(), rootName, getManager());
+      addChildLast(rootNode);
+      rootNode.addChildLast(convert(root));
     }
 
     // TODO use ModelUtil
@@ -130,7 +289,7 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiFile {
 
   MPSPsiNode convert(SNode node) {
     MPSPsiNode psiNode = MPSPsiProvider.getInstance(getProject()).create(node.getNodeId(), node.getConcept().getQualifiedName(), node.getRoleInParent());
-    nodes.put(node.getNodeId(), psiNode);
+    myNodes.put(node.getNodeId(), psiNode);
 
     // properties
     for (String key : node.getPropertyNames()) {
@@ -157,7 +316,7 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiFile {
   }
 
   void drop (MPSPsiNode psiNode) {
-    nodes.remove(psiNode.getId());
+    myNodes.remove(psiNode.getId());
 
     for (MPSPsiNodeBase node : psiNode.children()) {
       if (node instanceof MPSPsiNode) {
@@ -166,97 +325,14 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiFile {
     }
   }
 
-  @Override
-  public String toString() {
-    return "Model:" + reference.toString();
+  private String extractName(SNode sNode) {
+    String name = "";
+    for (String key : sNode.getPropertyNames()) {
+      if ("name".equals(key)) {
+        name = sNode.getProperty(key);
+      }
+    }
+    return name;
   }
 
-  /* PsiFile */
-
-  @Override
-  public void checkSetName(String name) throws IncorrectOperationException {
-    throw new IncorrectOperationException("Not implemented");
-  }
-
-  @Nullable
-  @Override
-  public VirtualFile getVirtualFile() {
-    return null;
-  }
-
-  @Nullable
-  @Override
-  public PsiDirectory getContainingDirectory() {
-    return null;
-  }
-
-  @Override
-  public boolean processChildren(PsiElementProcessor<PsiFileSystemItem> processor) {
-    return false;
-  }
-
-  @Override
-  public boolean isDirectory() {
-    return false;
-  }
-
-  @Nullable
-  @Override
-  public PsiDirectory getParent() {
-    return null;
-  }
-
-  @Override
-  public long getModificationStamp() {
-    return 0;
-  }
-
-  @NotNull
-  @Override
-  public PsiFile getOriginalFile() {
-    return this;
-  }
-
-  @NotNull
-  @Override
-  public FileType getFileType() {
-    return MPSFileTypeFactory.MODEL_FILE_TYPE;
-  }
-
-  @NotNull
-  @Override
-  public PsiFile[] getPsiRoots() {
-    return new PsiFile[]{this};
-  }
-
-  @NotNull
-  @Override
-  public FileViewProvider getViewProvider() {
-    return myViewProvider;
-  }
-
-  @Override
-  public FileASTNode getNode() {
-    return null;
-  }
-
-  @Override
-  public void subtreeChanged() {
-  }
-
-  @Override
-  public PsiElement setName(@NonNls @NotNull String name) throws IncorrectOperationException {
-    throw new IncorrectOperationException("Not implemented");
-  }
-
-  public VirtualFile getSourceVirtualFile() {
-    return mySourceVirtualFile;
-  }
-
-  // Added only for refactoring in case if we return the whole MPSPsiModel
-  // as the element of PsiReference (which is a work around)
-  @Override
-  public boolean isWritable() {
-    return true;
-  }
 }

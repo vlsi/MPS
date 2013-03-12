@@ -61,7 +61,7 @@ public class MPSCompiler2 implements SourceGeneratingCompiler {
   @Override
   public GenerationItem[] getGenerationItems(final CompileContext context) {
     CompileScope compileScope = context.getCompileScope();
-    final VirtualFile[] files = compileScope.getFiles(MPSFileTypeFactory.MODEL_FILE_TYPE, true);
+    final VirtualFile[] files = compileScope.getFiles(MPSFileTypeFactory.MPS_FILE_TYPE, true);
     if (files.length == 0) return new MyGenerationItem[0];
 
     final HashSet<Module> modulesWithModels = new HashSet<Module>();

@@ -30,11 +30,8 @@ import java.util.ListIterator;
 import java.util.Map;
 
 /**
- * Created with IntelliJ IDEA.
  * User: fyodor
  * Date: 2/18/13
- * Time: 4:34 PM
- * To change this template use File | Settings | File Templates.
  */
 public class SModelEventProcessor {
 

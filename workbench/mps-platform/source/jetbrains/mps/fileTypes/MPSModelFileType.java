@@ -18,28 +18,29 @@ package jetbrains.mps.fileTypes;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.fileTypes.ex.FileTypeIdentifiableByVirtualFile;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.workbench.nodesFs.MPSModelVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 
-public class MPSNodeFileType implements FileType, FileTypeIdentifiableByVirtualFile {
+public class MPSModelFileType implements FileType, FileTypeIdentifiableByVirtualFile {
   @Override
   @NotNull
   public String getName() {
-    return "MPS_NODE";
+    return "MPS_MODEL";
   }
 
   @Override
   @NotNull
   public String getDescription() {
-    return "MPS Node File Type";
+    return "MPS Model File Type";
   }
 
   @Override
   @NotNull
   public String getDefaultExtension() {
-    return "impossibleext";
+    return "/\\NO_SUCH_EXT/\\";
   }
 
   @Override
@@ -64,6 +65,6 @@ public class MPSNodeFileType implements FileType, FileTypeIdentifiableByVirtualF
 
   @Override
   public boolean isMyFileType(VirtualFile file) {
-    return file instanceof MPSNodeVirtualFile;
+    return file instanceof MPSModelVirtualFile;
   }
 }
