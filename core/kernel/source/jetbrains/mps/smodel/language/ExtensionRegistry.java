@@ -46,7 +46,7 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
   private ClassLoaderManager myClm;
   @Nullable
   private MPSModuleRepository myRepo;
-  private ReloadAdapter myHandler = new ReloadAdapter() {
+  private final ReloadAdapter myHandler = new ReloadAdapter() {
     @Override
     public void unload() {
       unloadExtensionDescriptors();

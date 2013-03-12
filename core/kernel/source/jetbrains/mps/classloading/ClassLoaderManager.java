@@ -222,10 +222,13 @@ public class ClassLoaderManager implements CoreComponent {
   }
 
   public void reloadClasses(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
+    // todo: divide into two parts: unloadClasses(modules) && loadClasses(modules)
+    // todo: add unload all classes in dispose
+    // todo: arguments - modules to load/unload. arguments of callbacks - modules actually loaded/unloaded
     LOG.assertCanWrite();
     isReloadRequested = false;
 
-    monitor.start("Reloading classes...", 5);
+    monitor.start("Reloading classes...", 4);
     try {
       monitor.step("Updating classpath...");
       invalidateClasses(modules);
@@ -242,15 +245,6 @@ public class ClassLoaderManager implements CoreComponent {
 
       monitor.step("Updating stub models...");
       updateModels();
-      monitor.advance(1);
-
-      monitor.step("Updating language registry...");
-      safeInvoke(new Runnable() {
-        @Override
-        public void run() {
-          LanguageRegistry.getInstance().reloadLanguages();
-        }
-      });
       monitor.advance(1);
 
       monitor.step("Rebuilding ui...");
