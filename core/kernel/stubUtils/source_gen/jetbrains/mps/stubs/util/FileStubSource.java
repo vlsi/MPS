@@ -31,7 +31,9 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Collections;
 
 @ImmutableObject
+@Deprecated
 public class FileStubSource extends FileDataSource implements StubModelDataSource {
+  @Deprecated
   public FileStubSource(IFile file, ModelRoot modelRoot, SModelReference ref) {
     super(file, modelRoot);
   }
