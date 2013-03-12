@@ -136,6 +136,12 @@
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="make result provider" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="100784871586155151">
+      <property name="name" nameId="tpck.1169194664001" value="IsUsedByDefault" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Methods" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="isUsedByDefault" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
   </roots>
   <root id="1197044488840">
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1206444199040">
@@ -156,6 +162,11 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="isVisibleBlock" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1216396788049" resolveInfo="IsVisibleBlock" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="100784871544251463">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="isUsedByDefault" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="100784871586155151" resolveInfo="IsUsedByDefault" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1197044488851">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
@@ -303,6 +314,12 @@
       <property name="role" nameId="tpce.1071599776563" value="finder" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1..n" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="2005690715325995359" resolveInfo="FinderReference" />
+    </node>
+  </root>
+  <root id="100784871586155151">
+    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="100784871586155205">
+      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137545148427" resolveInfo="conceptFunctionReturnType" />
+      <node role="target" roleId="tpce.1105736901241" type="tpee.BooleanType" typeId="tpee.1070534644030" id="100784871586155209" />
     </node>
   </root>
 </model>

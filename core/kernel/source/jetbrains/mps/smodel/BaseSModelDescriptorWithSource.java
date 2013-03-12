@@ -41,14 +41,9 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
   }
 
   @Override
-  public void detach() {
-    getSource().removeListener(mySourceListener);
-    super.detach();
-  }
-
-  @Override
   public void dispose() {
-    detach();
+    getSource().removeListener(mySourceListener);
+    super.dispose();
   }
 
   //----------reloading stuff--------

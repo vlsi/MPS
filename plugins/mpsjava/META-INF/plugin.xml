@@ -33,9 +33,6 @@
     <component>
       <implementation-class>jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsFinder</implementation-class>
     </component>
-    <component>
-      <implementation-class>jetbrains.mps.ide.java.platform.fastFind.JavaSourceStubNavigationContributor</implementation-class>
-    </component>
   </application-components>
 
   <project-components>

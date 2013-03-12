@@ -7,6 +7,7 @@ import jetbrains.mps.logging.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
 import java.util.List;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -20,6 +21,11 @@ public class ClassAncestors_Finder extends GeneratedFinder {
 
   public boolean isVisible(SNode node, IScope scope) {
     return SLinkOperations.getTarget(node, "superclass", true) != null;
+  }
+
+  @Override
+  public boolean isVisible(SNode node) {
+    return isVisible(node, new ModelsScope(node.getModel()));
   }
 
   @Override

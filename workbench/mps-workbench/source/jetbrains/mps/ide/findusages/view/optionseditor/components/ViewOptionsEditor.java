@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.findusages.view.optionseditor.components;
 
+import com.intellij.ui.IdeBorderFactory;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
 
 import javax.swing.BorderFactory;
@@ -34,10 +35,7 @@ public class ViewOptionsEditor extends BaseEditor<ViewOptions> {
     myPanel = new JPanel();
     myPanel.setLayout(new BoxLayout(myPanel, BoxLayout.Y_AXIS));
 
-    myPanel.setBorder(
-      BorderFactory.createCompoundBorder(
-        BorderFactory.createTitledBorder("View Options"),
-        BorderFactory.createEmptyBorder(5, 5, 5, 5)));
+    myPanel.setBorder(IdeBorderFactory.createTitledBorder("View Options", false));
 
     myShowOneResult = new JCheckBox("Skip results tab with one usages", !myOptions.myShowOneResult);
     myShowOneResult.addChangeListener(new ChangeListener() {

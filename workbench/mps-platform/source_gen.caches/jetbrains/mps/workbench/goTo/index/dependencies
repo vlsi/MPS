@@ -6,11 +6,9 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FolderSetDataSource" />
     <classNode dependClassName="jetbrains.mps.persistence.PersistenceRegistry" />
-    <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
     <classNode dependClassName="jetbrains.mps.reloading.ClassPathFactory" />
     <classNode dependClassName="jetbrains.mps.reloading.CompositeClassPathItem" />
@@ -24,10 +22,9 @@
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.indexing.FastGoToRegistry" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.indexing.NodeDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.Consumer" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
-    <classNode extendsClassName="org.jetbrains.mps.openapi.persistence.indexing.NodeNavigationContributor" />
+    <classNode extendsClassName="org.jetbrains.mps.openapi.persistence.NavigationParticipant" />
   </dependency>
   <dependency className="jetbrains.mps.workbench.goTo.index.JavaStubNodeDescriptor" file="JavaStubNodeDescriptor.java">
     <classNode dependClassName="java.lang.Object" />
@@ -42,7 +39,8 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConceptRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="org.jetbrains.mps.openapi.persistence.indexing.NodeDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.NavigationParticipant" />
+    <classNode extendsClassName="org.jetbrains.mps.openapi.persistence.NavigationTarget" />
   </dependency>
 </dependenciesRoot>
 

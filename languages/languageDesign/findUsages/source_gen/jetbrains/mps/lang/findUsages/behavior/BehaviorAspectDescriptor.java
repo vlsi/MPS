@@ -20,30 +20,32 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new IsApplicableBlock_BehaviorDescriptor();
       case 2:
         return new ConceptFunctionParameter_node_BehaviorDescriptor();
-      case 12:
+      case 13:
         return new ResultStatement_BehaviorDescriptor();
-      case 11:
+      case 12:
         return new NodeStatement_BehaviorDescriptor();
       case 3:
         return new ExecuteFinderExpression_BehaviorDescriptor();
       case 0:
         return new CategorizeBlock_BehaviorDescriptor();
-      case 13:
+      case 14:
         return new SearchedNodesBlock_BehaviorDescriptor();
       case 1:
         return new CheckCancelledStatusStatement_BehaviorDescriptor();
-      case 9:
+      case 10:
         return new IsVisibleBlock_BehaviorDescriptor();
       case 4:
         return new ExecuteFindersGetSearchResults_BehaviorDescriptor();
       case 7:
         return new FinderReference_BehaviorDescriptor();
-      case 10:
+      case 11:
         return new MakeResultProvider_BehaviorDescriptor();
+      case 9:
+        return new IsUsedByDefault_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.findUsages.structure.CategorizeBlock", "jetbrains.mps.lang.findUsages.structure.CheckCancelledStatusStatement", "jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node", "jetbrains.mps.lang.findUsages.structure.ExecuteFinderExpression", "jetbrains.mps.lang.findUsages.structure.ExecuteFindersGetSearchResults", "jetbrains.mps.lang.findUsages.structure.FindBlock", "jetbrains.mps.lang.findUsages.structure.FinderDeclaration", "jetbrains.mps.lang.findUsages.structure.FinderReference", "jetbrains.mps.lang.findUsages.structure.IsApplicableBlock", "jetbrains.mps.lang.findUsages.structure.IsVisibleBlock", "jetbrains.mps.lang.findUsages.structure.MakeResultProvider", "jetbrains.mps.lang.findUsages.structure.NodeStatement", "jetbrains.mps.lang.findUsages.structure.ResultStatement", "jetbrains.mps.lang.findUsages.structure.SearchedNodesBlock"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.findUsages.structure.CategorizeBlock", "jetbrains.mps.lang.findUsages.structure.CheckCancelledStatusStatement", "jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node", "jetbrains.mps.lang.findUsages.structure.ExecuteFinderExpression", "jetbrains.mps.lang.findUsages.structure.ExecuteFindersGetSearchResults", "jetbrains.mps.lang.findUsages.structure.FindBlock", "jetbrains.mps.lang.findUsages.structure.FinderDeclaration", "jetbrains.mps.lang.findUsages.structure.FinderReference", "jetbrains.mps.lang.findUsages.structure.IsApplicableBlock", "jetbrains.mps.lang.findUsages.structure.IsUsedByDefault", "jetbrains.mps.lang.findUsages.structure.IsVisibleBlock", "jetbrains.mps.lang.findUsages.structure.MakeResultProvider", "jetbrains.mps.lang.findUsages.structure.NodeStatement", "jetbrains.mps.lang.findUsages.structure.ResultStatement", "jetbrains.mps.lang.findUsages.structure.SearchedNodesBlock"};
 }

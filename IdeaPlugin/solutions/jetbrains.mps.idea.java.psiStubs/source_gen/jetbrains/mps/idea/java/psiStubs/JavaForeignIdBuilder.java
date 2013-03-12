@@ -21,8 +21,6 @@ public class JavaForeignIdBuilder {
   public static SNodeId.Foreign computeNodeId(PsiElement element) {
     PsiElement parent = element.getParent();
     String prefix;
-
-
     if (parent instanceof PsiFile) {
       // element is root 
       prefix = SNodeId.Foreign.ID_PREFIX;
@@ -39,7 +37,6 @@ public class JavaForeignIdBuilder {
       return null;
     }
     return computeNodeId(prefix, element);
-
   }
 
 
@@ -77,7 +74,6 @@ public class JavaForeignIdBuilder {
       }
       sb.append(name);
       sb.append('(');
-
 
       for (PsiParameter param : method.getParameterList().getParameters()) {
         // for classess we want their name exactly how it is written in the source file 

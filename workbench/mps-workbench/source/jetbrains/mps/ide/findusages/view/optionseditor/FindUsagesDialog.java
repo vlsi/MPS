@@ -34,8 +34,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.Frame;
 
 public class FindUsagesDialog extends DialogWrapper {
   private JPanel myPanel;
@@ -43,11 +41,14 @@ public class FindUsagesDialog extends DialogWrapper {
   private FindersEditor myFindersEditor;
   private ViewOptionsEditor myViewOptionsEditor;
   private boolean myIsCancelled = true;
+  private final boolean myWithDialog;
 
-  public FindUsagesDialog(final FindUsagesOptions defaultOptions, final SNode node, final Project project) {
+  public FindUsagesDialog(final FindUsagesOptions defaultOptions, final SNode node, final Project project, final boolean withDialog) {
     super(project);
+    myWithDialog = withDialog;
     setTitle("Find Usages");
-    setOKButtonText("Find");
+    setOKButtonText("&Find");
+    setCancelButtonText("Ca&ncel");
 
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
@@ -101,7 +102,7 @@ public class FindUsagesDialog extends DialogWrapper {
     return myPanel;
   }
 
-    private class MyFindersEditor extends FindersEditor {
+  private class MyFindersEditor extends FindersEditor {
     private Project myProject;
 
     public MyFindersEditor(FindUsagesOptions defaultOptions, SNode node, Project project) {
@@ -121,6 +122,11 @@ public class FindUsagesDialog extends DialogWrapper {
           NavigationSupport.getInstance().openNode(context, finderNode, true, !(finderNode.getModel() != null && finderNode.getModel().isRoot(finderNode)));
         }
       });
+    }
+
+    @Override
+    protected boolean resetToDefaults() {
+      return !myWithDialog;
     }
   }
 }

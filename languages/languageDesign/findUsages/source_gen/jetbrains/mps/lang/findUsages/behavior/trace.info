@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="AbstractFinderDeclaration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.findUsages.behavior.AbstractFinderDeclaration_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.findUsages.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.findUsages.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="CategorizeBlock_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.findUsages.behavior.CategorizeBlock_BehaviorDescriptor" />
   <unitInfo fileName="CheckCancelledStatusStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.findUsages.behavior.CheckCancelledStatusStatement_BehaviorDescriptor" />
   <unitInfo fileName="ConceptFunctionParameter_node_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.findUsages.behavior.ConceptFunctionParameter_node_BehaviorDescriptor" />
@@ -11,11 +11,36 @@
   <unitInfo fileName="FinderDeclaration_BehaviorDescriptor.java" startLine="15" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.findUsages.behavior.FinderDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="FinderReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.findUsages.behavior.FinderReference_BehaviorDescriptor" />
   <unitInfo fileName="IsApplicableBlock_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.findUsages.behavior.IsApplicableBlock_BehaviorDescriptor" />
+  <unitInfo fileName="IsUsedByDefault_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.findUsages.behavior.IsUsedByDefault_BehaviorDescriptor" />
   <unitInfo fileName="IsVisibleBlock_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.findUsages.behavior.IsVisibleBlock_BehaviorDescriptor" />
   <unitInfo fileName="MakeResultProvider_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.findUsages.behavior.MakeResultProvider_BehaviorDescriptor" />
   <unitInfo fileName="NodeStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.findUsages.behavior.NodeStatement_BehaviorDescriptor" />
   <unitInfo fileName="ResultStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.findUsages.behavior.ResultStatement_BehaviorDescriptor" />
   <unitInfo fileName="SearchedNodesBlock_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.findUsages.behavior.SearchedNodesBlock_BehaviorDescriptor" />
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590357(jetbrains.mps.lang.findUsages.behavior)/100784871586157909">
+    <nodeInfo nodeId="100784871586166373" fileName="IsUsedByDefault_Behavior.java" startLine="16" startPosition="84" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="100784871586181154" fileName="IsUsedByDefault_Behavior.java" startLine="20" startPosition="117" endLine="21" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="100784871586181161" fileName="IsUsedByDefault_Behavior.java" startLine="21" startPosition="261" endLine="22" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="100784871586181166" fileName="IsUsedByDefault_Behavior.java" startLine="22" startPosition="170" endLine="23" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="100784871586157909" fileName="IsUsedByDefault_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="100784871586157909" fileName="IsUsedByDefault_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_showName_1262430001741498082#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
+    <nodeInfo nodeId="100784871586157909" fileName="IsUsedByDefault_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
+    <scopeInfo nodeId="100784871586158071" fileName="IsUsedByDefault_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
+    <scopeInfo nodeId="100784871586166369" fileName="IsUsedByDefault_Behavior.java" startLine="16" startPosition="84" endLine="17" endPosition="16" />
+    <scopeInfo nodeId="100784871586157909" fileName="IsUsedByDefault_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="100784871586157909" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="100784871586157909" fileName="IsUsedByDefault_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
+      <varInfo nodeId="100784871586157909" varName="thisConcept" />
+    </scopeInfo>
+    <scopeInfo nodeId="100784871586180176" fileName="IsUsedByDefault_Behavior.java" startLine="20" startPosition="117" endLine="23" endPosition="18">
+      <varInfo nodeId="100784871586181155" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="100784871586157909" fileName="IsUsedByDefault_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="100784871586157909" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="100784871586157909" fileName="IsUsedByDefault_Behavior.java" startLine="12" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.findUsages.behavior.IsUsedByDefault_Behavior" />
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590357(jetbrains.mps.lang.findUsages.behavior)/1213877240100">
     <nodeInfo nodeId="1213877240104" fileName="FinderDeclaration_Behavior.java" startLine="18" startPosition="81" endLine="19" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877240114" fileName="FinderDeclaration_Behavior.java" startLine="22" startPosition="74" endLine="23" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

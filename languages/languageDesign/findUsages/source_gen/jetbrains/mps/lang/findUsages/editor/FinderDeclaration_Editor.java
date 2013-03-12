@@ -204,6 +204,8 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_m33ofg_l1b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_m33ofg_m1b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_m33ofg_n1b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_m33ofg_o1b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_m33ofg_p1b0(editorContext, node));
     return editorCell;
   }
 
@@ -268,8 +270,8 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_m33ofg_e1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -277,8 +279,8 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNode_m33ofg_f1b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("isVisibleBlock");
-    provider.setNoTargetText("<isVisible = true>");
+    provider.setRole("isUsedByDefault");
+    provider.setNoTargetText("<isUsedByDefault = false>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
@@ -308,8 +310,8 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNode_m33ofg_h1b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("isApplicableFunction");
-    provider.setNoTargetText("<isApplicable = true>");
+    provider.setRole("isVisibleBlock");
+    provider.setNoTargetText("<isVisible = true>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
@@ -339,8 +341,8 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNode_m33ofg_j1b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("findFunction");
-    provider.setNoTargetText("<no findFunction>");
+    provider.setRole("isApplicableFunction");
+    provider.setNoTargetText("<isApplicable = true>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
@@ -370,8 +372,8 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNode_m33ofg_l1b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("searchedNodesBlock");
-    provider.setNoTargetText("<searched nodes default={query node}>");
+    provider.setRole("findFunction");
+    provider.setNoTargetText("<no findFunction>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
@@ -400,6 +402,37 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createRefNode_m33ofg_n1b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("searchedNodesBlock");
+    provider.setNoTargetText("<searched nodes default={query node}>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createConstant_m33ofg_o1b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_m33ofg_o1b0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_m33ofg_p1b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("categorizeBlock");
     provider.setNoTargetText("<categorize block default=\"Uncategorized\">");
