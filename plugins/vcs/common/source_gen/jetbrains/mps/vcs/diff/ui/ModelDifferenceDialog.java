@@ -8,14 +8,13 @@ import jetbrains.mps.vcs.diff.ModelChangeSet;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModel;
 import com.intellij.openapi.diff.DiffRequest;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -35,6 +34,7 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.Action;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions;
@@ -73,11 +73,11 @@ public class ModelDifferenceDialog extends DialogWrapper {
     myEditable = newModel instanceof EditableSModel && SModelRepository.getInstance().getModelDescriptor(newModel.getReference()) == newModel;
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        setTitle("Difference for model: " + SModelOperations.getModelName(oldModel));
+        setTitle("Difference for model: " + oldModel.getModelDescriptor().getModelName());
         myChangeSet = ChangeSetBuilder.buildChangeSet(oldModel, newModel, true);
         if (Sequence.fromIterable(myChangeSet.getChangesForRoot(null)).isNotEmpty()) {
-          SModel oldMetaModel = MetadataUtil.createMetadataModel(oldModel).getModelDescriptor();
-          SModel newMetaModel = MetadataUtil.createMetadataModel(newModel).getModelDescriptor();
+          SModel oldMetaModel = MetadataUtil.createMetadataModel(oldModel);
+          SModel newMetaModel = MetadataUtil.createMetadataModel(newModel);
           DiffTemporaryModule.createModuleForModel(oldMetaModel, "old", p);
           DiffTemporaryModule.createModuleForModel(newMetaModel, "new", p, true);
           myMetadataChangeSet = ChangeSetBuilder.buildChangeSet(oldMetaModel, newMetaModel, true);
@@ -157,7 +157,7 @@ public class ModelDifferenceDialog extends DialogWrapper {
           myChangeSet
         );
         SNodeId nodeId = (rootId == null ?
-          ListSequence.fromList(SModelOperations.getRoots(myMetadataChangeSet.getOldModel(), null)).first().getNodeId() :
+          ListSequence.fromList(SModelOperations.getRoots(((org.jetbrains.mps.openapi.model.SModel) myMetadataChangeSet.getOldModel().getModelDescriptor()), null)).first().getNodeId() :
           rootId
         );
 

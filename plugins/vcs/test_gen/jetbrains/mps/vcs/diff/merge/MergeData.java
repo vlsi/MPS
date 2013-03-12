@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
-import jetbrains.mps.smodel.BaseSModelDescriptor;
 import java.util.zip.ZipOutputStream;
 import java.io.FileOutputStream;
 import org.jetbrains.annotations.Nullable;
@@ -93,7 +92,7 @@ public class MergeData {
     })) {
       // no conflicts 
       session.applyChanges(Sequence.fromIterable(session.getAllChanges()).toListSequence());
-      resultModelString = ModelPersistence.modelToString(((BaseSModelDescriptor) session.getResultModel()).getSModelInternal());
+      resultModelString = ModelPersistence.modelToString(session.getResultModel());
     }
     RoleIdsComponent.setHandler(null);
 

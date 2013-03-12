@@ -25,7 +25,7 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.tree.TreePath;
 import jetbrains.mps.smodel.ModelAccess;
 import javax.swing.tree.DefaultTreeModel;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModel;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -208,7 +208,7 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
   public class ModelTreeNode extends DiffModelTree.TreeNode {
     public ModelTreeNode() {
       setText("model");
-      setText(SNodeOperations.getModelLongName(Sequence.fromIterable(getModels()).first()));
+      setText(SNodeOperations.getModelLongName(Sequence.fromIterable(getModels()).first().getModelDescriptor()));
       setIcon(IdeIcons.MODEL_ICON);
     }
   }

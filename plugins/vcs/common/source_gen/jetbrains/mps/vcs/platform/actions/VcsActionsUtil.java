@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.BaseSModelDescriptor;
 import jetbrains.mps.vcs.diff.ui.RootDifferenceDialog;
 import com.intellij.openapi.vcs.VcsException;
 import com.intellij.openapi.ui.Messages;
@@ -58,15 +59,15 @@ public class VcsActionsUtil {
       String[] contentTitles = {revisionNumber.asString() + " (Read-Only)", "Your Version"};
       ContentRevision content = vcs.getDiffProvider().createFileContent(revisionNumber, file);
       SModel oldModel = ModelPersistence.readModel(content.getContent(), false);
-      final Wrappers._T<org.jetbrains.mps.openapi.model.SModel> newModel = new Wrappers._T<org.jetbrains.mps.openapi.model.SModel>();
+      final Wrappers._T<SModel> newModel = new Wrappers._T<SModel>();
       final Wrappers._T<SNodeId> id = new Wrappers._T<SNodeId>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          newModel.value = node.getModel();
+          newModel.value = ((BaseSModelDescriptor) node.getModel()).getSModelInternal();
           id.value = node.getNodeId();
         }
       });
-      RootDifferenceDialog.invokeDialog(oldModel.getModelDescriptor(), newModel.value, id.value, project, contentTitles, bounds);
+      RootDifferenceDialog.invokeDialog(oldModel, newModel.value, id.value, project, contentTitles, bounds);
     } catch (VcsException e) {
       LOG.warning("", e);
       Messages.showErrorDialog(project, "Can't show difference due to the following error: " + e.getMessage(), "Error");

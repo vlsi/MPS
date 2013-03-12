@@ -11,7 +11,7 @@ import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModel;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vcs.diff.changes.MetadataChange;
-import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.vcs.diff.changes.NodeChange;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
@@ -64,9 +63,9 @@ public class MergeSession {
   private MergeSession.ChangesInvalidateHandler myChangesInvalidateHandler;
 
 
-  public static MergeSession createMergeSession(jetbrains.mps.smodel.SModel base, jetbrains.mps.smodel.SModel mine, jetbrains.mps.smodel.SModel repository) {
+  public static MergeSession createMergeSession(SModel base, SModel mine, SModel repository) {
     // TODO generalize merge for any SModel 
-    jetbrains.mps.smodel.SModel resModel = CopyUtil.copyModel(base);
+    SModel resModel = CopyUtil.copyModel(base);
     SModelDescriptor resMD = resModel.getModelDescriptor();
     SModelDescriptor baseMD = base.getModelDescriptor();
     SModelDescriptor mineMD = mine.getModelDescriptor();
@@ -75,7 +74,7 @@ public class MergeSession {
       int pv = Math.max(getPersistenceVersion(baseMD), Math.max(getPersistenceVersion(mineMD), getPersistenceVersion(repMD)));
       ((DefaultSModel) resModel).setPersistenceVersion(pv);
     }
-    return new MergeSession(baseMD, mineMD, repMD, resMD);
+    return new MergeSession(base, mine, repository, resModel);
   }
 
 
@@ -112,7 +111,7 @@ public class MergeSession {
   }
 
   public void installResultModelListener() {
-    ((SModelInternal) myResultModel).addModelListener(myModelListener);
+    myResultModel.addModelListener(myModelListener);
   }
 
   private void fillNodeToChangesMap() {
@@ -241,7 +240,7 @@ public class MergeSession {
   private void applyChange(ModelChange change) {
     if (SetSequence.fromSet(myResolvedChanges).contains(change)) {
     } else {
-      change.apply(myResultModel, myNodeCopier);
+      change.apply(myResultModel.getModelDescriptor(), myNodeCopier);
       SetSequence.fromSet(myResolvedChanges).addElement(change);
       SetSequence.fromSet(myResolvedChanges).addSequence(ListSequence.fromList(MapSequence.fromMap(mySymmetricChanges).get(change)));
       excludeChangesNoRestoreIds(getConflictedWith(change));
@@ -298,16 +297,16 @@ public class MergeSession {
 
   public void restoreState(MergeSessionState state) {
     MergeSessionState stateCopy = new MergeSessionState(state);
-    ListSequence.fromList(SModelOperations.getRoots(myResultModel, null)).visitAll(new IVisitor<SNode>() {
+    ListSequence.fromList(SModelOperations.getRoots(((org.jetbrains.mps.openapi.model.SModel) myResultModel.getModelDescriptor()), null)).visitAll(new IVisitor<SNode>() {
       public void visit(SNode r) {
         SNodeOperations.deleteNode(r);
       }
     });
-    CopyUtil.clearModelProperties(myResultModel);
-    CopyUtil.copyModelProperties(stateCopy.myResultModel, myResultModel);
-    ListSequence.fromList(SModelOperations.getRoots(stateCopy.myResultModel, null)).visitAll(new IVisitor<SNode>() {
+    CopyUtil.clearModelProperties(myResultModel.getModelDescriptor());
+    CopyUtil.copyModelProperties(stateCopy.myResultModel.getModelDescriptor(), myResultModel.getModelDescriptor());
+    ListSequence.fromList(SModelOperations.getRoots(((org.jetbrains.mps.openapi.model.SModel) stateCopy.myResultModel.getModelDescriptor()), null)).visitAll(new IVisitor<SNode>() {
       public void visit(SNode r) {
-        SModelOperations.addRootNode(myResultModel, r);
+        SModelOperations.addRootNode(((org.jetbrains.mps.openapi.model.SModel) myResultModel.getModelDescriptor()), r);
       }
     });
 
@@ -326,8 +325,8 @@ public class MergeSession {
     }
   }
 
-  private static int getPersistenceVersion(SModel m) {
-    SModel model = m;
+  private static int getPersistenceVersion(org.jetbrains.mps.openapi.model.SModel m) {
+    org.jetbrains.mps.openapi.model.SModel model = m;
     if (model instanceof DefaultSModel) {
       return ((DefaultSModel) model).getPersistenceVersion();
     }

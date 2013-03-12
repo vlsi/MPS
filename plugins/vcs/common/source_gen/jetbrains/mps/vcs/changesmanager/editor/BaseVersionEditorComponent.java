@@ -7,7 +7,7 @@ import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import javax.swing.JScrollPane;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroup;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessage;
@@ -41,7 +41,7 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
 
     Iterable<ChangeEditorMessage> messages = ListSequence.fromList(changeGroup.getChanges()).translate(new ITranslator2<ModelChange, ChangeEditorMessage>() {
       public Iterable<ChangeEditorMessage> translate(ModelChange ch) {
-        return ChangeEditorMessageFactory.createMessages(baseModel, ch, BaseVersionEditorComponent.this, null);
+        return ChangeEditorMessageFactory.createMessages(baseModel.getModelDescriptor(), ch, BaseVersionEditorComponent.this, null);
       }
     });
     Bounds verticalBounds = Sequence.fromIterable(messages).select(new ISelector<ChangeEditorMessage, Bounds>() {

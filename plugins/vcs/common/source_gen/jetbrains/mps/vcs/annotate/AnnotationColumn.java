@@ -741,9 +741,9 @@ __switch__:
                 ApplicationManager.getApplication().invokeLater(new Runnable() {
                   public void run() {
                     if (rootId.value == null) {
-                      new ModelDifferenceDialog(beforeModel.value.getModelDescriptor(), afterModel.getModelDescriptor(), project, titles[0], titles[1]).show();
+                      new ModelDifferenceDialog(beforeModel.value, afterModel, project, titles[0], titles[1]).show();
                     } else {
-                      RootDifferenceDialog.invokeDialog(beforeModel.value.getModelDescriptor(), afterModel.getModelDescriptor(), rootId.value, project, titles, null);
+                      RootDifferenceDialog.invokeDialog(beforeModel.value, afterModel, rootId.value, project, titles, null);
                     }
                   }
                 });

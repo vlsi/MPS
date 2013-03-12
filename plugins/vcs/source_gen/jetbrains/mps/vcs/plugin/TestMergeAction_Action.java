@@ -24,7 +24,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.smodel.BaseSModelDescriptor;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.logging.Logger;
 
@@ -92,7 +91,7 @@ public class TestMergeAction_Action extends BaseAction {
 
           MergeModelsDialog dialog = new MergeModelsDialog(models[0], models[1], models[2], new SimpleDiffRequest(((Project) MapSequence.fromMap(_params).get("project")), models, new String[]{"Local Version", "Merge Result", "Remote Version"}));
           dialog.show();
-          final org.jetbrains.mps.openapi.model.SModel result = dialog.getResultModelWithFixedId();
+          final SModel result = dialog.getResultModelWithFixedId();
           if (result != null) {
             ModelAccess.instance().runWriteAction(new Runnable() {
               @Override
@@ -101,7 +100,7 @@ public class TestMergeAction_Action extends BaseAction {
                 if (!(iFile.exists())) {
                   iFile.createNewFile();
                 }
-                ModelPersistence.saveModel(((BaseSModelDescriptor) result).getSModelInternal(), new FileDataSource(iFile));
+                ModelPersistence.saveModel(result, new FileDataSource(iFile));
               }
             });
           }

@@ -79,6 +79,7 @@ import com.intellij.openapi.command.undo.UndoManager;
 import org.junit.Test;
 import java.util.Random;
 import jetbrains.mps.vcs.diff.changes.NodeCopier;
+import jetbrains.mps.smodel.BaseSModelDescriptor;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;
@@ -768,7 +769,7 @@ public class ChangesManagerTest {
       final ModelChange changeToPick = ListSequence.fromList(changesBefore).getElement(random.nextInt(ListSequence.fromList(changesBefore).count()));
       runCommandAndWait(new Runnable() {
         public void run() {
-          changeToPick.getOppositeChange().apply(model, new NodeCopier(model));
+          changeToPick.getOppositeChange().apply(model, new NodeCopier(((BaseSModelDescriptor) model).getSModelInternal()));
         }
       });
       waitAndCheck(myUiDiff);
@@ -809,7 +810,7 @@ public class ChangesManagerTest {
     }).toListSequence();
     runCommandAndWait(new Runnable() {
       public void run() {
-        final NodeCopier nc = new NodeCopier(model);
+        final NodeCopier nc = new NodeCopier(((BaseSModelDescriptor) model).getSModelInternal());
         ListSequence.fromList(oppositeChanges).where(new IWhereFilter<ModelChange>() {
           public boolean accept(ModelChange ch) {
             return ch instanceof NodeGroupChange;

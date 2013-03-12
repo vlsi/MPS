@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-250gvdy1fksz4c8iu02ylgb0abdw3sz">
+<dependencies version="2" modelHash="-84qfo2n1v5y60p44lgawuknwv98yjzd">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
@@ -27,7 +27,7 @@
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="8lb0ssmvoceitlofqs9sah312lyoau7" />
   <common hash="6cm3ypfwlbd92cqe90ryvrfw1ec3zde" />
-  <source id="4652592318748341229" name="ChangeSetBuilder" hash="-5j1t5j52lhqrff96nfceyolxh2lsmh8">
+  <source id="4652592318748341229" name="ChangeSetBuilder" hash="1z7qd29hado8kd45qgo7639ztpoum75">
     <dep root="3834754559947571411" />
     <dep root="581692556693547169" />
     <dep root="7082523601896740167" />
@@ -58,7 +58,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ChangeSetBuilder.java" />
   </source>
-  <source id="7082523601896740167" name="ChangeSetImpl" hash="bj2tvm3w719m3d959pi0a9hnh97fd43">
+  <source id="7082523601896740167" name="ChangeSetImpl" hash="85ai0x08fov90tbkeciy7h63arysgag">
     <dep root="581692556693547169" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -72,7 +72,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ChangeSetImpl.java" />
   </source>
-  <source id="3834754559947571411" name="ChangeSet" hash="72oi2m9wbuxdfr5ccoqo6tff2x06mfm">
+  <source id="3834754559947571411" name="ChangeSet" hash="-dio2icr4mongg5eoipwb789ae20qitz">
     <dep model="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)" />
     <file name="ChangeSet.java" />
   </source>

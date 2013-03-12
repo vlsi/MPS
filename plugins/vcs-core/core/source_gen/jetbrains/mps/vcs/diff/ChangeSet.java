@@ -5,7 +5,7 @@ package jetbrains.mps.vcs.diff;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModel;
 
 public interface ChangeSet {
   @NotNull

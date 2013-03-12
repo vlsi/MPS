@@ -18,7 +18,6 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.smodel.BaseSModelDescriptor;
 import java.io.IOException;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import com.intellij.openapi.ui.DialogWrapper;
@@ -63,7 +62,7 @@ public class ModelMergeTool extends MergeTool {
       });
       dialog.show();
       if (dialog.getResultModel() != null) {
-        String asString = ModelPersistence.modelToString(((BaseSModelDescriptor) dialog.getResultModelWithFixedId()).getSModelInternal());
+        String asString = ModelPersistence.modelToString(dialog.getResultModelWithFixedId());
         resolved(mrequest, asString);
         MergeBackupUtil.packMergeResult(backupFile, file.getName(), asString);
       }

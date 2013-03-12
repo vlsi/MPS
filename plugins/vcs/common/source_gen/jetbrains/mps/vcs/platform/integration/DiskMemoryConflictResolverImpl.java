@@ -125,7 +125,7 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
       LOG.error("Could not read model", e);
     }
     Project project = ProjectManager.getInstance().getOpenProjects()[0];
-    final ModelDifferenceDialog dialog = new ModelDifferenceDialog(onDisk.getModelDescriptor(), inMemory, project, "Filesystem version (Read-Only)", "Memory Version");
+    final ModelDifferenceDialog dialog = new ModelDifferenceDialog(onDisk, ((BaseSModelDescriptor) inMemory).getSModelInternal(), project, "Filesystem version (Read-Only)", "Memory Version");
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         dialog.toFront();

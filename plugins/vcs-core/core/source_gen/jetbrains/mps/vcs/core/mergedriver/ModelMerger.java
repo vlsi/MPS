@@ -16,7 +16,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.BaseSModelDescriptor;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.io.File;
 import jetbrains.mps.vcs.util.MergeDriverBackupUtil;
@@ -84,7 +83,7 @@ import jetbrains.mps.logging.Logger;
         if (mergeSession.hasIdsToRestore()) {
           LOG.info(String.format("%s: node id duplication detected, should merge in UI.", myModelName));
         } else {
-          String resultString = ModelPersistence.modelToString(((BaseSModelDescriptor) mergeSession.getResultModel()).getSModelInternal());
+          String resultString = ModelPersistence.modelToString(mergeSession.getResultModel());
           LOG.info(String.format("%s: merged successfully.", myModelName));
           backup(baseContent, localContent, latestContent);
           return MultiTuple.<Integer,byte[]>from(MERGED, resultString.getBytes(FileUtil.DEFAULT_CHARSET));

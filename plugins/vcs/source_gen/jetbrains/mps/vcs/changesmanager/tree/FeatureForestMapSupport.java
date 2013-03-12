@@ -80,7 +80,7 @@ public class FeatureForestMapSupport extends AbstractProjectComponent {
       if (begin == end) {
         ListSequence.fromList(result).addElement(new DeletedChildFeature(new SNodePointer(modelReference, parentId), role, begin));
       } else {
-        List<SNode> changeChildren = ((List<SNode>) IterableUtil.asList(change.getChangeSet().getNewModel().getNode(parentId).getChildren(role)));
+        List<SNode> changeChildren = ((List) IterableUtil.asList(change.getChangeSet().getNewModel().getNode(parentId).getChildren(role)));
         for (int i = begin; i < end; i++) {
           if (i < ListSequence.fromList(changeChildren).count()) {
             ListSequence.fromList(result).addElement(new NodeFeature(new SNodePointer(modelReference, ListSequence.fromList(changeChildren).getElement(i).getNodeId())));

@@ -32,7 +32,6 @@ import java.lang.reflect.Field;
 import com.intellij.idea.IdeaTestApplication;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.smodel.BaseSModelDescriptor;
 
 public class TestMergeDialog {
   private static EditorManager ourEditorManager = new EditorManager();
@@ -116,7 +115,7 @@ public class TestMergeDialog {
           e.printStackTrace();
         }
         dialog.show();
-        final org.jetbrains.mps.openapi.model.SModel result = dialog.getResultModelWithFixedId();
+        final SModel result = dialog.getResultModelWithFixedId();
         if (result == null) {
           dialog.close(0);
           System.exit(0);
@@ -128,7 +127,7 @@ public class TestMergeDialog {
             if (!(iFile.exists())) {
               iFile.createNewFile();
             }
-            ModelPersistence.saveModel(((BaseSModelDescriptor) result).getSModelInternal(), new FileDataSource(iFile));
+            ModelPersistence.saveModel(result, new FileDataSource(iFile));
           }
         });
         dialog.unregisterResultModel();

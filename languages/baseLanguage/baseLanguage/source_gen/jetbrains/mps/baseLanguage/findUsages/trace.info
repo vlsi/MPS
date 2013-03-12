@@ -610,61 +610,67 @@
     <unitInfo nodeId="1200425321273" fileName="InterfaceMethodImplementations_Finder.java" startLine="20" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)/1200502085335">
-    <nodeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="1216397986864" fileName="ClassAncestors_Finder.java" startLine="21" startPosition="54" endLine="22" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="26" startPosition="34" endLine="27" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="31" startPosition="38" endLine="32" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="36" startPosition="30" endLine="37" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="41" startPosition="98" endLine="42" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216398022357" fileName="ClassAncestors_Finder.java" startLine="44" startPosition="72" endLine="45" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1200502177136" fileName="ClassAncestors_Finder.java" startLine="46" startPosition="7" endLine="47" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1200502237998" fileName="ClassAncestors_Finder.java" startLine="48" startPosition="31" endLine="49" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200504929055" fileName="ClassAncestors_Finder.java" startLine="50" startPosition="30" endLine="51" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="54" startPosition="15" endLine="55" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206463170240" fileName="ClassAncestors_Finder.java" startLine="60" startPosition="45" endLine="61" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ClassAncestors_Finder#()V" />
-    <nodeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isVisible#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IScope;)Z" />
-    <nodeInfo nodeId="1216397993918" fileName="ClassAncestors_Finder.java" startLine="43" startPosition="9" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1200504922328" fileName="ClassAncestors_Finder.java" startLine="49" startPosition="196" endLine="52" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLongDescription#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodeCategory#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1200502163110" fileName="ClassAncestors_Finder.java" startLine="47" startPosition="27" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="42" startPosition="39" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="40" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doFind#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IScope;Ljava/util/List;Ljetbrains/mps/progress/ProgressMonitor;)V" />
-    <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="18" startPosition="34" endLine="18" endPosition="34" />
-    <scopeInfo nodeId="1216397981723" fileName="ClassAncestors_Finder.java" startLine="21" startPosition="54" endLine="22" endPosition="71" />
-    <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="26" startPosition="34" endLine="27" endPosition="23" />
-    <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="31" startPosition="38" endLine="32" endPosition="14" />
-    <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="36" startPosition="30" endLine="37" endPosition="63" />
-    <scopeInfo nodeId="1216397993919" fileName="ClassAncestors_Finder.java" startLine="44" startPosition="72" endLine="45" endPosition="15" />
-    <scopeInfo nodeId="1200504922329" fileName="ClassAncestors_Finder.java" startLine="50" startPosition="30" endLine="51" endPosition="62" />
-    <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="54" startPosition="15" endLine="55" endPosition="21" />
-    <scopeInfo nodeId="1206463167799" fileName="ClassAncestors_Finder.java" startLine="60" startPosition="45" endLine="61" endPosition="22" />
-    <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
+    <nodeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="1216397986864" fileName="ClassAncestors_Finder.java" startLine="22" startPosition="54" endLine="23" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="27" startPosition="40" endLine="28" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="32" startPosition="34" endLine="33" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="37" startPosition="38" endLine="38" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="42" startPosition="30" endLine="43" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="47" startPosition="98" endLine="48" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1216398022357" fileName="ClassAncestors_Finder.java" startLine="50" startPosition="72" endLine="51" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1200502177136" fileName="ClassAncestors_Finder.java" startLine="52" startPosition="7" endLine="53" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1200502237998" fileName="ClassAncestors_Finder.java" startLine="54" startPosition="31" endLine="55" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1200504929055" fileName="ClassAncestors_Finder.java" startLine="56" startPosition="30" endLine="57" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="60" startPosition="15" endLine="61" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206463170240" fileName="ClassAncestors_Finder.java" startLine="66" startPosition="45" endLine="67" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ClassAncestors_Finder#()V" />
+    <nodeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isVisible#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IScope;)Z" />
+    <nodeInfo nodeId="1216397993918" fileName="ClassAncestors_Finder.java" startLine="49" startPosition="9" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1200504922328" fileName="ClassAncestors_Finder.java" startLine="55" startPosition="196" endLine="58" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isVisible#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLongDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodeCategory#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1200502163110" fileName="ClassAncestors_Finder.java" startLine="53" startPosition="27" endLine="59" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="48" startPosition="39" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="46" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doFind#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IScope;Ljava/util/List;Ljetbrains/mps/progress/ProgressMonitor;)V" />
+    <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="19" startPosition="34" endLine="19" endPosition="34" />
+    <scopeInfo nodeId="1216397981723" fileName="ClassAncestors_Finder.java" startLine="22" startPosition="54" endLine="23" endPosition="71" />
+    <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="27" startPosition="40" endLine="28" endPosition="61" />
+    <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="32" startPosition="34" endLine="33" endPosition="23" />
+    <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="37" startPosition="38" endLine="38" endPosition="14" />
+    <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="42" startPosition="30" endLine="43" endPosition="63" />
+    <scopeInfo nodeId="1216397993919" fileName="ClassAncestors_Finder.java" startLine="50" startPosition="72" endLine="51" endPosition="15" />
+    <scopeInfo nodeId="1200504922329" fileName="ClassAncestors_Finder.java" startLine="56" startPosition="30" endLine="57" endPosition="62" />
+    <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="60" startPosition="15" endLine="61" endPosition="21" />
+    <scopeInfo nodeId="1206463167799" fileName="ClassAncestors_Finder.java" startLine="66" startPosition="45" endLine="67" endPosition="22" />
+    <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="19" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="1200502085335" varName="node" />
       <varInfo nodeId="1200502085335" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="1200502163112" fileName="ClassAncestors_Finder.java" startLine="48" startPosition="31" endLine="52" endPosition="9" />
-    <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="59" startPosition="0" endLine="63" endPosition="0">
+    <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="1200502085335" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1200502085339" fileName="ClassAncestors_Finder.java" startLine="43" startPosition="9" endLine="53" endPosition="7">
+    <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="1200502163112" fileName="ClassAncestors_Finder.java" startLine="54" startPosition="31" endLine="58" endPosition="9" />
+    <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="65" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="1200502085335" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1200502085339" fileName="ClassAncestors_Finder.java" startLine="49" startPosition="9" endLine="59" endPosition="7">
       <varInfo nodeId="1200502177137" varName="current" />
     </scopeInfo>
-    <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="41" startPosition="98" endLine="56" endPosition="5" />
-    <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="40" startPosition="0" endLine="58" endPosition="0">
+    <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="47" startPosition="98" endLine="62" endPosition="5" />
+    <scopeInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="46" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="1200502085335" varName="_results" />
       <varInfo nodeId="1200502085335" varName="monitor" />
       <varInfo nodeId="1200502085335" varName="node" />
       <varInfo nodeId="1200502085335" varName="scope" />
     </scopeInfo>
-    <unitInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="15" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.ClassAncestors_Finder" />
+    <unitInfo nodeId="1200502085335" fileName="ClassAncestors_Finder.java" startLine="16" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.ClassAncestors_Finder" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)/1201091722183">
     <nodeInfo nodeId="1201091722183" fileName="ParameterUsages_Finder.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -1039,70 +1045,76 @@
     <unitInfo nodeId="1204898641595" fileName="BaseMethod_Finder.java" startLine="23" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.BaseMethod_Finder" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)/1204899453042">
-    <nodeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="1216398061275" fileName="InterfaceAncestors_Finder.java" startLine="21" startPosition="54" endLine="22" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="26" startPosition="34" endLine="27" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="31" startPosition="38" endLine="32" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="36" startPosition="30" endLine="37" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="41" startPosition="98" endLine="42" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1216398081687" fileName="InterfaceAncestors_Finder.java" startLine="44" startPosition="105" endLine="45" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1204899912018" fileName="InterfaceAncestors_Finder.java" startLine="46" startPosition="7" endLine="47" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1216398221895" fileName="InterfaceAncestors_Finder.java" startLine="48" startPosition="116" endLine="49" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1204902134985" fileName="InterfaceAncestors_Finder.java" startLine="49" startPosition="94" endLine="50" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1204902252431" fileName="InterfaceAncestors_Finder.java" startLine="51" startPosition="195" endLine="52" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="55" startPosition="15" endLine="56" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206463260263" fileName="InterfaceAncestors_Finder.java" startLine="61" startPosition="45" endLine="62" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InterfaceAncestors_Finder#()V" />
-    <nodeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isVisible#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IScope;)Z" />
-    <nodeInfo nodeId="1216398069080" fileName="InterfaceAncestors_Finder.java" startLine="43" startPosition="9" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1204902212205" fileName="InterfaceAncestors_Finder.java" startLine="50" startPosition="65" endLine="53" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLongDescription#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodeCategory#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1204902118525" fileName="InterfaceAncestors_Finder.java" startLine="47" startPosition="27" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="42" startPosition="39" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="40" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doFind#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IScope;Ljava/util/List;Ljetbrains/mps/progress/ProgressMonitor;)V" />
-    <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="18" startPosition="38" endLine="18" endPosition="38" />
-    <scopeInfo nodeId="1216398057226" fileName="InterfaceAncestors_Finder.java" startLine="21" startPosition="54" endLine="22" endPosition="107" />
-    <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="26" startPosition="34" endLine="27" endPosition="33" />
-    <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="31" startPosition="38" endLine="32" endPosition="14" />
-    <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="36" startPosition="30" endLine="37" endPosition="60" />
-    <scopeInfo nodeId="1216398069081" fileName="InterfaceAncestors_Finder.java" startLine="44" startPosition="105" endLine="45" endPosition="15" />
-    <scopeInfo nodeId="1204902212208" fileName="InterfaceAncestors_Finder.java" startLine="51" startPosition="195" endLine="52" endPosition="71" />
-    <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="55" startPosition="15" endLine="56" endPosition="21" />
-    <scopeInfo nodeId="1206463258072" fileName="InterfaceAncestors_Finder.java" startLine="61" startPosition="45" endLine="62" endPosition="22" />
-    <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
+    <nodeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="1216398061275" fileName="InterfaceAncestors_Finder.java" startLine="22" startPosition="54" endLine="23" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="27" startPosition="40" endLine="28" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="32" startPosition="34" endLine="33" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="37" startPosition="38" endLine="38" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="42" startPosition="30" endLine="43" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="47" startPosition="98" endLine="48" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1216398081687" fileName="InterfaceAncestors_Finder.java" startLine="50" startPosition="105" endLine="51" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1204899912018" fileName="InterfaceAncestors_Finder.java" startLine="52" startPosition="7" endLine="53" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1216398221895" fileName="InterfaceAncestors_Finder.java" startLine="54" startPosition="116" endLine="55" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1204902134985" fileName="InterfaceAncestors_Finder.java" startLine="55" startPosition="94" endLine="56" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1204902252431" fileName="InterfaceAncestors_Finder.java" startLine="57" startPosition="195" endLine="58" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="61" startPosition="15" endLine="62" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1206463260263" fileName="InterfaceAncestors_Finder.java" startLine="67" startPosition="45" endLine="68" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InterfaceAncestors_Finder#()V" />
+    <nodeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isVisible#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IScope;)Z" />
+    <nodeInfo nodeId="1216398069080" fileName="InterfaceAncestors_Finder.java" startLine="49" startPosition="9" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1204902212205" fileName="InterfaceAncestors_Finder.java" startLine="56" startPosition="65" endLine="59" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isVisible#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLongDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="66" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodeCategory#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1204902118525" fileName="InterfaceAncestors_Finder.java" startLine="53" startPosition="27" endLine="60" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="48" startPosition="39" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="46" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doFind#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IScope;Ljava/util/List;Ljetbrains/mps/progress/ProgressMonitor;)V" />
+    <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="19" startPosition="38" endLine="19" endPosition="38" />
+    <scopeInfo nodeId="1216398057226" fileName="InterfaceAncestors_Finder.java" startLine="22" startPosition="54" endLine="23" endPosition="107" />
+    <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="27" startPosition="40" endLine="28" endPosition="61" />
+    <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="32" startPosition="34" endLine="33" endPosition="33" />
+    <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="37" startPosition="38" endLine="38" endPosition="14" />
+    <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="42" startPosition="30" endLine="43" endPosition="60" />
+    <scopeInfo nodeId="1216398069081" fileName="InterfaceAncestors_Finder.java" startLine="50" startPosition="105" endLine="51" endPosition="15" />
+    <scopeInfo nodeId="1204902212208" fileName="InterfaceAncestors_Finder.java" startLine="57" startPosition="195" endLine="58" endPosition="71" />
+    <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="61" startPosition="15" endLine="62" endPosition="21" />
+    <scopeInfo nodeId="1206463258072" fileName="InterfaceAncestors_Finder.java" startLine="67" startPosition="45" endLine="68" endPosition="22" />
+    <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="19" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="1204899453042" varName="node" />
       <varInfo nodeId="1204899453042" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="1204902212205" fileName="InterfaceAncestors_Finder.java" startLine="50" startPosition="65" endLine="53" endPosition="9">
+    <scopeInfo nodeId="1204902212205" fileName="InterfaceAncestors_Finder.java" startLine="56" startPosition="65" endLine="59" endPosition="9">
       <varInfo nodeId="1204902212206" varName="ancestorAncestor" />
     </scopeInfo>
-    <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="60" startPosition="0" endLine="64" endPosition="0">
+    <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="1204899453042" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1204902118530" fileName="InterfaceAncestors_Finder.java" startLine="48" startPosition="116" endLine="53" endPosition="9">
+    <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="66" startPosition="0" endLine="70" endPosition="0">
+      <varInfo nodeId="1204899453042" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1204902118530" fileName="InterfaceAncestors_Finder.java" startLine="54" startPosition="116" endLine="59" endPosition="9">
       <varInfo nodeId="1216398221896" varName="ancestorNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1204902118525" fileName="InterfaceAncestors_Finder.java" startLine="47" startPosition="27" endLine="54" endPosition="7">
+    <scopeInfo nodeId="1204902118525" fileName="InterfaceAncestors_Finder.java" startLine="53" startPosition="27" endLine="60" endPosition="7">
       <varInfo nodeId="1204902118526" varName="ancestor" />
     </scopeInfo>
-    <scopeInfo nodeId="1204899453046" fileName="InterfaceAncestors_Finder.java" startLine="43" startPosition="9" endLine="54" endPosition="7">
+    <scopeInfo nodeId="1204899453046" fileName="InterfaceAncestors_Finder.java" startLine="49" startPosition="9" endLine="60" endPosition="7">
       <varInfo nodeId="1204899912019" varName="current" />
     </scopeInfo>
-    <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="41" startPosition="98" endLine="57" endPosition="5" />
-    <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="40" startPosition="0" endLine="59" endPosition="0">
+    <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="47" startPosition="98" endLine="63" endPosition="5" />
+    <scopeInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="46" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="1204899453042" varName="_results" />
       <varInfo nodeId="1204899453042" varName="monitor" />
       <varInfo nodeId="1204899453042" varName="node" />
       <varInfo nodeId="1204899453042" varName="scope" />
     </scopeInfo>
-    <unitInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="15" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder" />
+    <unitInfo nodeId="1204899453042" fileName="InterfaceAncestors_Finder.java" startLine="16" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)/1216385454403">
     <nodeInfo nodeId="1216385454403" fileName="BaseMethodUsages_Finder.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />

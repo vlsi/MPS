@@ -43,7 +43,7 @@ public class ChangeEditorMessageFactory {
       messageTarget = new ReferenceMessageTarget(((SetReferenceChange) change).getRole());
     } else if (change instanceof NodeGroupChange) {
       NodeGroupChange ngc = ((NodeGroupChange) change);
-      SModel changeModel = change.getChangeSet().getNewModel();
+      jetbrains.mps.smodel.SModel changeModel = change.getChangeSet().getNewModel();
       boolean reversed = changeModel != editedModel;
       if (reversed) {
         changeModel = change.getChangeSet().getOldModel();
