@@ -39,11 +39,11 @@ public class MPSFacetConfiguration {
       } else if ("generatorOutputPath".equals(optionName)) {
         this.generatorOutputPath = ch.getAttributeValue(OPT_VALUE);
       } else if ("modelRoots".equals(optionName)) {
-        ModelRootDescriptor[] moduleDefaultRoot = new ModelRootDescriptor[]{null};
+        ModelRootDescriptor[] cache = new ModelRootDescriptor[2];
         for (ModelRoot root : SetSequence.fromSet(readModelRoots(XmlUtil.first(ch, "set")))) {
           Memento m = new MementoImpl();
           root.save(m);
-          ModelRootDescriptor descr = ModuleDescriptorPersistence.createDescriptor(null, m, null, moduleDefaultRoot);
+          ModelRootDescriptor descr = ModuleDescriptorPersistence.createDescriptor(null, m, null, cache);
           if (descr != null) {
             descriptors.add(descr);
           }

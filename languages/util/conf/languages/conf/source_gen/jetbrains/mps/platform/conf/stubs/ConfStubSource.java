@@ -34,8 +34,6 @@ import java.io.IOException;
 import org.jdom.JDOMException;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.findUsages.fastfind.FastFindSupport;
-import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
-import jetbrains.mps.stubs.util.JavaStubModelDataSource;
 
 public class ConfStubSource extends FolderSetDataSource implements MultiRootModelDataSource, FastFindSupportProvider, StubModelDataSource {
   private List<String> roots;
@@ -116,7 +114,7 @@ public class ConfStubSource extends FolderSetDataSource implements MultiRootMode
 
   @Override
   public FastFindSupport getFastFindSupport() {
-    return FastFindSupportRegistry.getInstance().getFastFindSupport(JavaStubModelDataSource.FAST_FIND_ID);
+    return null;
   }
 
   @Override

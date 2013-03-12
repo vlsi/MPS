@@ -17,10 +17,12 @@ import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
 
+@Deprecated
 public abstract class PathItem {
   private static List<String> EMPTY_LIST = ListSequence.fromList(new ArrayList<String>());
   private IFile file;
 
+  @Deprecated
   public PathItem(String path) {
     IFile container = null;
     for (String p : path.split("!")) {

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.util.InternUtil;
 
@@ -40,7 +40,7 @@ public abstract class SModelId implements org.jetbrains.mps.openapi.model.SModel
   }
 
   public static SModelId foreign(String kind, String moduleId, String id) {
-    if (moduleId==null||moduleId.length()==0){
+    if (moduleId == null || moduleId.length() == 0) {
       return new ForeignSModelId(kind + "#" + id);
     }
     return new ForeignSModelId(kind + "#" + moduleId + "#" + id);
