@@ -220,7 +220,7 @@
     <nodeInfo nodeId="6630310702471993750" fileName="check_KajaDataflow_NonTypesystemRule.java" startLine="37" startPosition="7" endLine="38" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6630310702472049865" fileName="check_KajaDataflow_NonTypesystemRule.java" startLine="38" startPosition="86" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6630310702472129895" fileName="check_KajaDataflow_NonTypesystemRule.java" startLine="40" startPosition="53" endLine="41" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6630310702471405610" fileName="check_KajaDataflow_NonTypesystemRule.java" startLine="42" startPosition="29" endLine="43" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4816737345355957631" fileName="check_KajaDataflow_NonTypesystemRule.java" startLine="42" startPosition="211" endLine="43" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="1223640538234" fileName="check_KajaDataflow_NonTypesystemRule.java" startLine="46" startPosition="11" endLine="47" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1223640538234" fileName="check_KajaDataflow_NonTypesystemRule.java" startLine="47" startPosition="64" endLine="48" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6630310702472189615" fileName="check_KajaDataflow_NonTypesystemRule.java" startLine="51" startPosition="11" endLine="52" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -249,7 +249,7 @@
     <nodeInfo nodeId="6630310702470230800" fileName="check_KajaDataflow_NonTypesystemRule.java" startLine="25" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
     <scopeInfo nodeId="6630310702470230800" fileName="check_KajaDataflow_NonTypesystemRule.java" startLine="22" startPosition="49" endLine="22" endPosition="49" />
     <scopeInfo nodeId="8249991444799099449" fileName="check_KajaDataflow_NonTypesystemRule.java" startLine="26" startPosition="30" endLine="27" endPosition="13" />
-    <scopeInfo nodeId="6630310702471402090" fileName="check_KajaDataflow_NonTypesystemRule.java" startLine="42" startPosition="29" endLine="43" endPosition="17" />
+    <scopeInfo nodeId="6630310702471402090" fileName="check_KajaDataflow_NonTypesystemRule.java" startLine="42" startPosition="211" endLine="43" endPosition="19" />
     <scopeInfo nodeId="6630310702470948038" fileName="check_KajaDataflow_NonTypesystemRule.java" startLine="57" startPosition="0" endLine="58" endPosition="143">
       <varInfo nodeId="6630310702470948040" varName="e" />
     </scopeInfo>

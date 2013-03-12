@@ -6,8 +6,8 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilder;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 
-public class RoutineCall_DataFlow extends DataFlowBuilder {
-  public RoutineCall_DataFlow() {
+public class RoutineDefinition_DataFlow extends DataFlowBuilder {
+  public RoutineDefinition_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {

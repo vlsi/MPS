@@ -14,6 +14,7 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.samples.Kaja.structure.Not", new Not_DataFlow());
     manager.register("jetbrains.mps.samples.Kaja.structure.Repeat", new Repeat_DataFlow());
     manager.register("jetbrains.mps.samples.Kaja.structure.RoutineCall", new RoutineCall_DataFlow());
+    manager.register("jetbrains.mps.samples.Kaja.structure.RoutineDefinition", new RoutineDefinition_DataFlow());
     manager.register("jetbrains.mps.samples.Kaja.structure.Script", new Script_DataFlow());
     manager.register("jetbrains.mps.samples.Kaja.structure.Step", new Step_DataFlow());
     manager.register("jetbrains.mps.samples.Kaja.structure.While", new While_DataFlow());
