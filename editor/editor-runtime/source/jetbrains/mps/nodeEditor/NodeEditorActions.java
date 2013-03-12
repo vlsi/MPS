@@ -467,9 +467,9 @@ public class NodeEditorActions {
 
     private jetbrains.mps.openapi.editor.cells.EditorCell getNextLeaf(EditorCell current) {
       if (mySide == CellSide.LEFT) {
-        return CellTraversalUtil.getPrevLeaf(current, CellConditions.SELECTABLE);
+        return CellTraversalUtil.getPrevLeaf(current, jetbrains.mps.openapi.editor.cells.CellConditions.SELECTABLE);
       } else {
-        return CellTraversalUtil.getNextLeaf(current, CellConditions.SELECTABLE);
+        return CellTraversalUtil.getNextLeaf(current, jetbrains.mps.openapi.editor.cells.CellConditions.SELECTABLE);
       }
     }
 
