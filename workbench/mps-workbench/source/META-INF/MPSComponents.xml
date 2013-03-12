@@ -31,6 +31,10 @@
       <implementation-class>jetbrains.mps.library.contributor.BootstrapLibContributor</implementation-class>
     </component>
     <component>
+      <!-- depends on BootstrapLibContributor -->
+      <implementation-class>jetbrains.mps.library.contributor.PluginLibrariesContributor</implementation-class>
+    </component>
+    <component>
       <implementation-class>jetbrains.mps.watching.WatchedRoots</implementation-class>
     </component>
     <component>

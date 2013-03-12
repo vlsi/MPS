@@ -33,10 +33,6 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.library.contributor.PluginLibrariesContributor</implementation-class>
-    </component>
-
-    <component>
       <implementation-class>jetbrains.mps.VisibleModuleRegistry</implementation-class>
     </component>
 
