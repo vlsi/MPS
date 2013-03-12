@@ -161,6 +161,12 @@ public class ModuleClassLoader extends ClassLoader {
 
   public void dispose() {
     myDisposed = true;
+    // reason for clearing:
+    // if one classloader A leak some classes, all classloaders dependent on A leak too
+    myClasses.clear();
+    if (myDependenciesClassLoaders != null) {
+      myDependenciesClassLoaders.clear();
+    }
   }
 
   public String toString() {
