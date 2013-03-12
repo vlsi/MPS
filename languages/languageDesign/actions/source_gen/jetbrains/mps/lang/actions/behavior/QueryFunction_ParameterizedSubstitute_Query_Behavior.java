@@ -5,7 +5,6 @@ package jetbrains.mps.lang.actions.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -35,7 +34,7 @@ public class QueryFunction_ParameterizedSubstitute_Query_Behavior {
     return _quotation_createNode_6qptm2_a6a0(expectedType);
   }
 
-  public static boolean virtual_usesParameterObject_1262430001741497984(SConcept thisConcept) {
+  public static boolean virtual_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
     return true;
   }
 

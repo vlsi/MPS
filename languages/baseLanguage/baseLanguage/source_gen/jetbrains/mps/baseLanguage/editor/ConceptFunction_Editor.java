@@ -38,16 +38,16 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
           public EditorCell createEditorCell(EditorContext context) {
             EditorCell_Collection collection = jetbrains.mps.nodeEditor.cells.EditorCell_Collection.createVertical(context, node);
             collection.addEditorCell(new EditorCell_Constant(context, node, "Concept function help:"));
-            if (SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "shortDescription") != null) {
-              collection.addEditorCell(new EditorCell_Constant(context, node, SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "shortDescription")));
+            if (SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "conceptShortDescription") != null) {
+              collection.addEditorCell(new EditorCell_Constant(context, node, SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "conceptShortDescription")));
             }
             collection.addEditorCell(new EditorCell_Constant(context, node, ""));
             collection.addEditorCell(new EditorCell_Constant(context, node, "Parameter help:"));
             for (SNode cfp : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), node, "virtual_getParameters_1213877374450", new Object[]{})) {
               String alias = SPropertyOperations.getString(cfp, "conceptAlias");
-              String description = SPropertyOperations.getString(cfp, "shortDescription");
+              String description = SPropertyOperations.getString(cfp, "conceptShortDescription");
               if (description == null) {
-                description = "<no help. use short_description concept function property to create one>";
+                description = "<no help. use conceptShortDescription concept function property to create one>";
               }
               EditorCell_Constant message = new EditorCell_Constant(context, node, alias + " : " + description);
               collection.addEditorCell(message);
