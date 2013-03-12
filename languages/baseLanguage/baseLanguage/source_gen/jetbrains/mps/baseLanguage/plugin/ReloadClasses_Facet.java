@@ -18,8 +18,12 @@ import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import java.util.Collection;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.classloading.ClassLoaderManager;
@@ -76,18 +80,20 @@ public class ReloadClasses_Facet extends IFacet.Stub {
           final Iterable<TResource> input = (Iterable<TResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
-              final Iterable<SModule> modules = Sequence.fromIterable(input).select(new ISelector<TResource, SModule>() {
-                public SModule select(TResource it) {
-                  return (SModule) it.module();
+              final Wrappers._T<Collection<? extends SModule>> modules = new Wrappers._T<Collection<? extends SModule>>(Sequence.fromIterable(input).select(new ISelector<TResource, IModule>() {
+                public IModule select(TResource it) {
+                  return it.module();
                 }
-              });
+              }).toListSequence());
+              // hack because of ModuleMaker 
+              modules.value = new GlobalModuleDependenciesManager(modules.value).getModules(GlobalModuleDependenciesManager.Deptype.COMPILE);
 
               monitor.currentProgress().beginWork("Reloading classes", 1, monitor.currentProgress().workLeft());
               FileSystem.getInstance().runWriteTransaction(new Runnable() {
                 public void run() {
                   ModelAccess.instance().requireWrite(new Runnable() {
                     public void run() {
-                      ClassLoaderManager.getInstance().reloadClasses(modules, new EmptyProgressMonitor());
+                      ClassLoaderManager.getInstance().reloadClasses(modules.value, new EmptyProgressMonitor());
                     }
                   });
                 }

@@ -60,6 +60,7 @@ public class ModuleClassLoaderSupport {
 
   // ext point possible here
   public static boolean canCreate(SModule module) {
+    // + check is module compiled?
     return !(module instanceof Generator) && module.getFacet(JavaModuleFacet.class) != null;
   }
 
