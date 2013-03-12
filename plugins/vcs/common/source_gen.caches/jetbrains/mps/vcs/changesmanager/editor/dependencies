@@ -129,6 +129,7 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.NodeHighlightManager" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter" />
     <classNode dependClassName="jetbrains.mps.smodel.BaseEditableSModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.BaseSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifference" />

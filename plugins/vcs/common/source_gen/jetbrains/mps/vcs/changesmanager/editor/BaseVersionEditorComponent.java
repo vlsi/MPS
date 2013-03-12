@@ -41,7 +41,7 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
 
     Iterable<ChangeEditorMessage> messages = ListSequence.fromList(changeGroup.getChanges()).translate(new ITranslator2<ModelChange, ChangeEditorMessage>() {
       public Iterable<ChangeEditorMessage> translate(ModelChange ch) {
-        return ChangeEditorMessageFactory.createMessages(baseModel.getModelDescriptor(), ch, BaseVersionEditorComponent.this, null);
+        return ChangeEditorMessageFactory.createMessages(baseModel, ch, BaseVersionEditorComponent.this, null);
       }
     });
     Bounds verticalBounds = Sequence.fromIterable(messages).select(new ISelector<ChangeEditorMessage, Bounds>() {
