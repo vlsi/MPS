@@ -18,6 +18,10 @@ public class StaticMethodCall_BehaviorDescriptor extends BaseMethodCall_Behavior
     return StaticMethodCall_Behavior.virtual_getAvailableMethodDeclarations_5776618742611315379(thisNode, methodName);
   }
 
+  public String virtual_getPresentation_1213877396640(SNode thisNode) {
+    return StaticMethodCall_Behavior.virtual_getPresentation_1213877396640(thisNode);
+  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.StaticMethodCall";
