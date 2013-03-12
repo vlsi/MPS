@@ -33,6 +33,7 @@ import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.persistence.MPSPersistence;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
@@ -106,9 +107,8 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
           context.getBuilderParameter(MPSMakeConstants.MPS_LANGUAGES.toString()),
           context.getBuilderParameter(MPSMakeConstants.MPS_REPOSITORY.toString()));
 
-        ClassLoaderManager.getInstance().updateClassPath();
+        ClassLoaderManager.getInstance().reloadClasses(MPSModuleRepository.getInstance().getModules(), new EmptyProgressMonitor());
         LanguageRegistry.getInstance().loadLanguages();
-        ExtensionRegistry.getInstance().loadExtensionDescriptors();
 
         initProject(context);
 
