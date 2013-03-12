@@ -415,7 +415,7 @@
   </root>
   <root nodeRef="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)/4209733725028893042">
     <nodeInfo nodeId="4209733725028893049" fileName="ModelVersionChange.java" startLine="11" startPosition="59" endLine="12" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8788437410273477234" fileName="ModelVersionChange.java" startLine="16" startPosition="76" endLine="17" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8788437410273477234" fileName="ModelVersionChange.java" startLine="16" startPosition="76" endLine="17" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4209733725028893089" fileName="ModelVersionChange.java" startLine="22" startPosition="48" endLine="23" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4209733725028893100" fileName="ModelVersionChange.java" startLine="28" startPosition="31" endLine="29" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4209733725028893107" fileName="ModelVersionChange.java" startLine="33" startPosition="28" endLine="34" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -425,7 +425,7 @@
     <nodeInfo nodeId="4209733725028893084" fileName="ModelVersionChange.java" startLine="20" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createOppositeChange#()Ljetbrains/mps/vcs/diff/changes/ModelChange;" />
     <nodeInfo nodeId="4209733725028893095" fileName="ModelVersionChange.java" startLine="26" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/vcs/diff/changes/ChangeType;" />
     <scopeInfo nodeId="4209733725028893048" fileName="ModelVersionChange.java" startLine="11" startPosition="59" endLine="12" endPosition="21" />
-    <scopeInfo nodeId="4209733725028893063" fileName="ModelVersionChange.java" startLine="16" startPosition="76" endLine="17" endPosition="102" />
+    <scopeInfo nodeId="4209733725028893063" fileName="ModelVersionChange.java" startLine="16" startPosition="76" endLine="17" endPosition="85" />
     <scopeInfo nodeId="4209733725028893088" fileName="ModelVersionChange.java" startLine="22" startPosition="48" endLine="23" endPosition="73" />
     <scopeInfo nodeId="4209733725028893099" fileName="ModelVersionChange.java" startLine="28" startPosition="31" endLine="29" endPosition="29" />
     <scopeInfo nodeId="4209733725028893106" fileName="ModelVersionChange.java" startLine="33" startPosition="28" endLine="34" endPosition="34" />
