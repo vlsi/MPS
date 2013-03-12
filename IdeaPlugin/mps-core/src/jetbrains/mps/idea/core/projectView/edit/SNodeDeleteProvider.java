@@ -62,7 +62,7 @@ public class SNodeDeleteProvider implements DeleteProvider {
         for (SNodeReference selectedNode : mySelectedNodes) {
           SNode nodeToDelete = selectedNode.resolve(MPSModuleRepository.getInstance());
           if (nodeToDelete != null) {
-            SModel modelDescriptor = nodeToDelete.getModel().getModelDescriptor();
+            SModel modelDescriptor = nodeToDelete.getModel();
             if (modelDescriptor instanceof EditableSModel) {
               nodeToDelete.delete();
               modelsToSave.add((EditableSModel) modelDescriptor);

@@ -246,9 +246,9 @@ public class MPSCompiler2 implements SourceGeneratingCompiler {
               public void run() {
                 String path = null;
                 SModel model = navigatable.lookupModel();
-                if (model != null && model.getModelDescriptor() instanceof BaseEditableSModelDescriptor
+                if (model != null && model instanceof BaseEditableSModelDescriptor
                     && model.getSource() instanceof FileDataSource) {
-                  path = "file://" + ((FileDataSource) model.getModelDescriptor().getSource()).getFile().getPath();
+                  path = "file://" + ((FileDataSource) model.getSource()).getFile().getPath();
                 }
 
                 context.addMessage(category, text, path, -1, -1, navigatable);
