@@ -1340,7 +1340,6 @@ public class SModel implements SModelData {
       throw new UnsupportedOperationException("remove exception if excess");
     }
 
-    @Override
     public void detach() {
       throw new UnsupportedOperationException("remove exception if excess");
     }

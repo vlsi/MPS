@@ -94,8 +94,8 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalS
       ModelAccess.instance().runIndexing(new Runnable() {
         @Override
         public void run() {
-          SModel sModel = RootNodeNameIndex.doModelParsing(inputData);
-          for (final SNode nextNode : new NodesIterable(sModel.getModelDescriptor())) {
+          org.jetbrains.mps.openapi.model.SModel sModel = RootNodeNameIndex.doModelParsing(inputData);
+          for (final SNode nextNode : new NodesIterable(sModel)) {
             if (isInstanceOfClassConcept(nextNode)) {
               SNode classNode = (SNode) nextNode;
               if (SLinkOperations.getTarget(classNode, "superclass", true) != null) {

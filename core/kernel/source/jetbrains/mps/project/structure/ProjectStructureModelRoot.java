@@ -122,7 +122,7 @@ public class ProjectStructureModelRoot extends FileBasedModelRoot {
     }
 
     @Override
-    protected org.jetbrains.mps.openapi.model.SModel getCurrentModelInternal() {
+    protected jetbrains.mps.smodel.SModel getCurrentModelInternal() {
       return myModel;
     }
 
@@ -132,7 +132,7 @@ public class ProjectStructureModelRoot extends FileBasedModelRoot {
       final IFile file = getSource().getFile();
 
       final ModuleDescriptor moduleDesc = ModulesMiner.getInstance().loadModuleDescriptor(file);
-      new ProjectStructureBuilder(moduleDesc, file, model) {
+      new ProjectStructureBuilder(moduleDesc, file, model.getModelDescriptor()) {
         @Override
         public Iterable<org.jetbrains.mps.openapi.model.SModelReference> loadReferences(SNode module, ModuleDescriptor descriptor) {
           Set<org.jetbrains.mps.openapi.model.SModelReference> result = new HashSet<org.jetbrains.mps.openapi.model.SModelReference>();
