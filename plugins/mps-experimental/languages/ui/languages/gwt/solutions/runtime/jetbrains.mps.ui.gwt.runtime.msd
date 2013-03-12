@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.ui.gwt.runtime" uuid="cfae28de-dc36-4914-a95f-7d9a0738cf32" compileInMPS="false">
   <models>
-    <modelRoot path="${mps_home}/languages/util/ui/languages/gwt/lib/gwt-user.jar" type="java_classes" />
+    <modelRoot path="${mps_home}/plugins/mps-experimental/languages/ui/languages/gwt/lib/gwt-user.jar" type="java_classes" />
   </models>
   <stubModelEntries>
-    <stubModelEntry path="${mps_home}/languages/util/ui/languages/gwt/lib/gwt-user.jar" />
+    <stubModelEntry path="${mps_home}/plugins/mps-experimental/languages/ui/languages/gwt/lib/gwt-user.jar" />
   </stubModelEntries>
   <sourcePath />
   <dependencies>
