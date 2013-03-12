@@ -94,11 +94,8 @@ public abstract class BaseSModelDescriptor extends SModelBase implements jetbrai
     return getSModelInternal().getNode(id);
   }
 
-  public void attach() {
-  }
-
   @Override
-  public void detach() {
+  public void dispose() {
     ModelAccess.assertLegalWrite();
     SModel smodel = getCurrentModelInternal();
     if (smodel != null) {
@@ -106,11 +103,6 @@ public abstract class BaseSModelDescriptor extends SModelBase implements jetbrai
       ((jetbrains.mps.smodel.SModelInternal) smodel).dispose();
     }
     clearListeners();
-  }
-
-  @Override
-  public void dispose() {
-    detach();
   }
 
   @Override

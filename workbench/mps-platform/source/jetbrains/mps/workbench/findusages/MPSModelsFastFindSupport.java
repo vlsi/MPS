@@ -25,6 +25,7 @@ import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.Mapper;
@@ -40,8 +41,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
-import org.jetbrains.mps.openapi.persistence.indexing.FastFindUsagesRegistry;
-import org.jetbrains.mps.openapi.persistence.indexing.FindUsagesParticipant;
+import org.jetbrains.mps.openapi.persistence.FindUsagesParticipant;
 import org.jetbrains.mps.openapi.util.Consumer;
 
 import java.util.Arrays;
@@ -56,12 +56,12 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsage
 
   @Override
   public void initComponent() {
-    FastFindUsagesRegistry.getInstance().addParticipant(this);
+    PersistenceRegistry.getInstance().addFindUsagesParticipant(this);
   }
 
   @Override
   public void disposeComponent() {
-    FastFindUsagesRegistry.getInstance().removeParticipant(this);
+    PersistenceRegistry.getInstance().removeFindUsagesParticipant(this);
   }
 
   @Override

@@ -265,16 +265,6 @@ public class SModel implements SModelInternal, SModelData {
     //todo
   }
 
-  @Override
-  public void attach() {
-    throw new UnsupportedOperationException("shouldn't be called");
-  }
-
-  @Override
-  public void detach() {
-    throw new UnsupportedOperationException("shouldn't be called");
-  }
-
   @NotNull
   public String toString() {
     return getSModelReference().toString();
@@ -1447,16 +1437,6 @@ public class SModel implements SModelInternal, SModelData {
 
     @Override
     public void unload() {
-      throw new UnsupportedOperationException("remove exception if excess");
-    }
-
-    @Override
-    public void attach() {
-      throw new UnsupportedOperationException("remove exception if excess");
-    }
-
-    @Override
-    public void detach() {
       throw new UnsupportedOperationException("remove exception if excess");
     }
 

@@ -19,18 +19,18 @@ import com.intellij.navigation.ItemPresentation;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.smodel.SModelReference;
-import org.jetbrains.mps.openapi.persistence.indexing.NodeDescriptor;
+import org.jetbrains.mps.openapi.persistence.NavigationParticipant.NavigationTarget;
 
 public class RootNodeElement implements NavigationItem {
-  private NodeDescriptor myNodeResult;
+  private NavigationTarget myNodeResult;
 
-  public RootNodeElement(NodeDescriptor nodeResult) {
+  public RootNodeElement(NavigationTarget nodeResult) {
     myNodeResult = nodeResult;
   }
 
   @Override
   public String getName() {
-    return myNodeResult.getName();
+    return myNodeResult.getPresentation();
   }
 
   @Override

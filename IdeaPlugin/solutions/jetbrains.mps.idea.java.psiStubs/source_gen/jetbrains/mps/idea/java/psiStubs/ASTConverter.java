@@ -90,7 +90,7 @@ public class ASTConverter {
 
     final Wrappers._T<ASTConverter> childConverter = new Wrappers._T<ASTConverter>(this);
 
-    if (needToSetId() && isNotEmpty_rbndtb_a0a41a2(SPropertyOperations.getString(classifier.value, "name"))) {
+    if (needToSetId() && isNotEmpty_rbndtb_a0a41a5(SPropertyOperations.getString(classifier.value, "name"))) {
       String id = getIdPrefix() + SPropertyOperations.getString(classifier.value, "name");
       ((jetbrains.mps.smodel.SNode) classifier.value).setId(new jetbrains.mps.smodel.SNodeId.Foreign(id));
       childConverter.value = new ASTConverter.WithState(this, id + ".");
@@ -358,9 +358,9 @@ public class ASTConverter {
       SNode bound = convertType(t.getBound());
 
       if (t.isExtends()) {
-        return _quotation_createNode_rbndtb_a0a6a2c0f(bound);
+        return _quotation_createNode_rbndtb_a0a6a2c0i(bound);
       } else {
-        return _quotation_createNode_rbndtb_a0a0g0c2a5(bound);
+        return _quotation_createNode_rbndtb_a0a0g0c2a8(bound);
       }
 
     } else {
@@ -389,7 +389,7 @@ public class ASTConverter {
     if (exp instanceof PsiLiteralExpression) {
       Object value = ((PsiLiteralExpression) exp).getValue();
       if (value instanceof String) {
-        return _quotation_createNode_rbndtb_a0a1a0a7(value.toString());
+        return _quotation_createNode_rbndtb_a0a1a0a01(value.toString());
       } else if (value instanceof Integer) {
         SNode c = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
         SPropertyOperations.set(c, "value", "" + (((Integer) value).intValue()));
@@ -545,7 +545,7 @@ public class ASTConverter {
     return str;
   }
 
-  private static SNode _quotation_createNode_rbndtb_a0a6a2c0f(Object parameter_1) {
+  private static SNode _quotation_createNode_rbndtb_a0a6a2c0i(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UpperBoundType", null, null, GlobalScope.getInstance(), false);
@@ -556,7 +556,7 @@ public class ASTConverter {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_rbndtb_a0a0g0c2a5(Object parameter_1) {
+  private static SNode _quotation_createNode_rbndtb_a0a0g0c2a8(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LowerBoundType", null, null, GlobalScope.getInstance(), false);
@@ -567,14 +567,14 @@ public class ASTConverter {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_rbndtb_a0a1a0a7(Object parameter_1) {
+  private static SNode _quotation_createNode_rbndtb_a0a1a0a01(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);
     return quotedNode_2;
   }
 
-  public static boolean isNotEmpty_rbndtb_a0a41a2(String str) {
+  public static boolean isNotEmpty_rbndtb_a0a41a5(String str) {
     return str != null && str.length() > 0;
   }
 }

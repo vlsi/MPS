@@ -15,18 +15,18 @@
  */
 package jetbrains.mps.workbench.goTo.index;
 
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelId;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
-import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SNodeId.Regular;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
-import org.jetbrains.mps.openapi.persistence.indexing.NodeDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.persistence.NavigationParticipant.NavigationTarget;
 
 import java.io.DataInput;
 import java.io.DataOutput;
@@ -36,7 +36,7 @@ import java.util.UUID;
 /**
  * Element to be stored in index for each of root nodes in a model
  */
-public final class SNodeDescriptor implements NodeDescriptor {
+public final class SNodeDescriptor implements NavigationTarget {
   private String myNodeName;
   private long myMostSignificantBits;
   private long myLeastSignificantBits;
@@ -60,23 +60,8 @@ public final class SNodeDescriptor implements NodeDescriptor {
     myConceptFqName = InternUtil.intern(fqName);
   }
 
-  public boolean equals(Object obj) {
-    if (!(obj instanceof SNodeDescriptor)) return false;
-    SNodeDescriptor sd = (SNodeDescriptor) obj;
-    return
-      sd.myMostSignificantBits == myMostSignificantBits
-        && sd.myLeastSignificantBits == myLeastSignificantBits
-        && EqualUtil.equals(sd.myId, myId)
-        && sd.myConceptFqName.equals(myConceptFqName)
-        && sd.myNodeName.equals(myNodeName);
-  }
-
-  public int hashCode() {
-    return myNodeName.hashCode();
-  }
-
   @Override
-  public String getName() {
+  public String getPresentation() {
     return myNodeName;
   }
 
@@ -136,5 +121,20 @@ public final class SNodeDescriptor implements NodeDescriptor {
     byte[] bytes = new byte[len];
     System.arraycopy(b, off, bytes, 0, len);
     return new String(bytes);
+  }
+
+  public boolean equals(Object obj) {
+    if (!(obj instanceof SNodeDescriptor)) return false;
+    SNodeDescriptor sd = (SNodeDescriptor) obj;
+    return
+      sd.myMostSignificantBits == myMostSignificantBits
+        && sd.myLeastSignificantBits == myLeastSignificantBits
+        && EqualUtil.equals(sd.myId, myId)
+        && sd.myConceptFqName.equals(myConceptFqName)
+        && sd.myNodeName.equals(myNodeName);
+  }
+
+  public int hashCode() {
+    return myNodeName.hashCode();
   }
 }
