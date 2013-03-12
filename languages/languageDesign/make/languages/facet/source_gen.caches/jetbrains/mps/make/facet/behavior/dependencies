@@ -5,6 +5,7 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.make.facet.behavior.ExtendsFacetReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.make.facet.behavior.FacetDeclaration_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.make.facet.behavior.FacetJavaClassExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.make.facet.behavior.FacetReferenceExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.make.facet.behavior.ForeignParametersComponentExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.make.facet.behavior.ForeignParametersExpression_BehaviorDescriptor" />
@@ -64,6 +65,12 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.facet.behavior.FacetJavaClassExpression_BehaviorDescriptor" file="FacetJavaClassExpression_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.make.facet.behavior.FacetReferenceExpression_Behavior" file="FacetReferenceExpression_Behavior.java">
