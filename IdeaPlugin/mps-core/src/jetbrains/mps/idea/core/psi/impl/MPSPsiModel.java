@@ -222,13 +222,6 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
     return null;
   }
 
-  // Added only for refactoring in case if we return the whole MPSPsiModel
-  // as the element of PsiReference (which is a work around)
-  @Override
-  public boolean isWritable() {
-    return true;
-  }
-
   /* package */
 
   MPSPsiNode reload(SNodeId sNodeId) {

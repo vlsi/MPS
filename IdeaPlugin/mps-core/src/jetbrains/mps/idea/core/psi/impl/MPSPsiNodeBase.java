@@ -252,4 +252,16 @@ public abstract class MPSPsiNodeBase extends LightElement {
     return listEntry;
   }
 
+  public MPSPsiRootNode getContainingRoot () {
+    PsiElement parent = this;
+    while (parent != null && !(parent instanceof MPSPsiRootNode)) {
+      parent = parent.getParent();
+    }
+
+    if (parent == null) {
+      throw new PsiInvalidElementAccessException(this);
+    }
+
+    return (MPSPsiRootNode) parent;
+  }
 }
