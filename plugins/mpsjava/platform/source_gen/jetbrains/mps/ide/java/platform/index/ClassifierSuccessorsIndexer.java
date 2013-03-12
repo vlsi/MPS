@@ -17,7 +17,7 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.workbench.goTo.index.RootNodeNameIndex;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
@@ -94,7 +94,7 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalS
       ModelAccess.instance().runIndexing(new Runnable() {
         @Override
         public void run() {
-          org.jetbrains.mps.openapi.model.SModel sModel = RootNodeNameIndex.doModelParsing(inputData);
+          SModel sModel = RootNodeNameIndex.doModelParsing(inputData);
           for (final SNode nextNode : new NodesIterable(sModel)) {
             if (isInstanceOfClassConcept(nextNode)) {
               SNode classNode = (SNode) nextNode;
