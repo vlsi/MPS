@@ -1118,23 +1118,29 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="708166622413807612">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="6966417881652370462">
-            <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6966417881652387818">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bmv6.6966417881648619084" resolveInfo="createMergeSession" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="bmv6.4124845871897265510" resolveInfo="MergeSession" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="708166622413807616">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="708166622413807715" resolveInfo="baseModel" />
+        <node role="statement" roleId="tpee.1068581517665" type="qff7.ExecuteLightweightCommandStatement" typeId="qff7.8974276187400348181" id="4764520166328923379">
+          <node role="commandClosureLiteral" roleId="qff7.8974276187400348171" type="qff7.CommandClosureLiteral" typeId="qff7.8974276187400348173" id="4764520166328923381">
+            <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="4764520166328923383">
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="708166622413807612">
+                <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="6966417881652370462">
+                  <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6966417881652387818">
+                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="bmv6.4124845871897265510" resolveInfo="MergeSession" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bmv6.6966417881648619084" resolveInfo="createMergeSession" />
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="708166622413807616">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="708166622413807715" resolveInfo="baseModel" />
+                    </node>
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="708166622413807617">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="708166622413807717" resolveInfo="mineModel" />
+                    </node>
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="708166622413807618">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="708166622413807719" resolveInfo="repositoryModel" />
+                    </node>
+                  </node>
+                  <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="708166622413807619">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="708166622413807542" resolveInfo="myMergeSession" />
+                  </node>
+                </node>
               </node>
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="708166622413807617">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="708166622413807717" resolveInfo="mineModel" />
-              </node>
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="708166622413807618">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="708166622413807719" resolveInfo="repositoryModel" />
-              </node>
-            </node>
-            <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="708166622413807619">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="708166622413807542" resolveInfo="myMergeSession" />
             </node>
           </node>
         </node>
@@ -1237,23 +1243,29 @@
                       </node>
                     </node>
                   </node>
-                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2660756727518621583">
-                    <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="5064374087341202654">
-                      <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5064374087341212124">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bmv6.6966417881648619084" resolveInfo="createMergeSession" />
-                        <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="bmv6.4124845871897265510" resolveInfo="MergeSession" />
-                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="5064374087341217006">
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2660756727518565864" resolveInfo="baseMetaModel" />
+                  <node role="statement" roleId="tpee.1068581517665" type="qff7.ExecuteLightweightCommandStatement" typeId="qff7.8974276187400348181" id="5557397440653297917">
+                    <node role="commandClosureLiteral" roleId="qff7.8974276187400348171" type="qff7.CommandClosureLiteral" typeId="qff7.8974276187400348173" id="5557397440653297919">
+                      <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="5557397440653297921">
+                        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2660756727518621583">
+                          <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="5064374087341202654">
+                            <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5064374087341212124">
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bmv6.6966417881648619084" resolveInfo="createMergeSession" />
+                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="bmv6.4124845871897265510" resolveInfo="MergeSession" />
+                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="5064374087341217006">
+                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2660756727518565864" resolveInfo="baseMetaModel" />
+                              </node>
+                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="5064374087341234721">
+                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2393519854109116636" resolveInfo="mineMetaModel" />
+                              </node>
+                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="5064374087341239450">
+                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2393519854109116642" resolveInfo="repoMetaModel" />
+                              </node>
+                            </node>
+                            <node role="lValue" roleId="tpee.1068498886295" type="tpee.VariableReference" typeId="tpee.1068498886296" id="2660756727518621582">
+                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6130275721451984106" resolveInfo="myMetadataMergeSession" />
+                            </node>
+                          </node>
                         </node>
-                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="5064374087341234721">
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2393519854109116636" resolveInfo="mineMetaModel" />
-                        </node>
-                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="5064374087341239450">
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2393519854109116642" resolveInfo="repoMetaModel" />
-                        </node>
-                      </node>
-                      <node role="lValue" roleId="tpee.1068498886295" type="tpee.VariableReference" typeId="tpee.1068498886296" id="2660756727518621582">
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6130275721451984106" resolveInfo="myMetadataMergeSession" />
                       </node>
                     </node>
                   </node>

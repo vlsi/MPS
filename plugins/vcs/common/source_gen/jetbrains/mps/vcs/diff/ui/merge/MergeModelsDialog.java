@@ -19,8 +19,8 @@ import com.intellij.openapi.actionSystem.ActionToolbar;
 import jetbrains.mps.smodel.SModel;
 import com.intellij.openapi.diff.DiffRequest;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.vcs.diff.ui.MetadataUtil;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -88,7 +88,11 @@ public class MergeModelsDialog extends DialogWrapper {
     myProject = request.getProject();
     myContentTitles = request.getContentTitles();
     assert myContentTitles.length == 3;
-    myMergeSession = MergeSession.createMergeSession(baseModel, mineModel, repositoryModel);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        myMergeSession = MergeSession.createMergeSession(baseModel, mineModel, repositoryModel);
+      }
+    });
     DiffTemporaryModule.setSModelId(myMergeSession.getResultModel(), "result");
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -98,10 +102,14 @@ public class MergeModelsDialog extends DialogWrapper {
     if (ListSequence.fromList(myMergeSession.getMetadataChanges()).isNotEmpty()) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          SModel baseMetaModel = MetadataUtil.createMetadataModel(baseModel);
-          SModel mineMetaModel = MetadataUtil.createMetadataModel(mineModel);
-          SModel repoMetaModel = MetadataUtil.createMetadataModel(repositoryModel);
-          myMetadataMergeSession = MergeSession.createMergeSession(baseMetaModel, mineMetaModel, repoMetaModel);
+          final SModel baseMetaModel = MetadataUtil.createMetadataModel(baseModel);
+          final SModel mineMetaModel = MetadataUtil.createMetadataModel(mineModel);
+          final SModel repoMetaModel = MetadataUtil.createMetadataModel(repositoryModel);
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              myMetadataMergeSession = MergeSession.createMergeSession(baseMetaModel, mineMetaModel, repoMetaModel);
+            }
+          });
           DiffTemporaryModule.setSModelId(myMetadataMergeSession.getResultModel(), "result");
           myMetadataInitialState = myMetadataMergeSession.getCurrentState();
         }
