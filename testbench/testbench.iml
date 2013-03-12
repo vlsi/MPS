@@ -70,6 +70,7 @@
     </orderEntry>
     <orderEntry type="module" module-name="mps-ant" />
     <orderEntry type="module" module-name="ant-mps" />
+    <orderEntry type="module" module-name="baseLanguage-facets" scope="RUNTIME" />
   </component>
 </module>
 
