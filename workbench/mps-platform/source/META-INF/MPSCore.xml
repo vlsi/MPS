@@ -59,6 +59,10 @@
     <component>
       <implementation-class>jetbrains.mps.workbench.goTo.index.JavaStubNavigationContributor</implementation-class>
     </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.baseLanguage.facets.BaseLanguageFacets</implementation-class>
+    </component>
   </application-components>
 
   <project-components>

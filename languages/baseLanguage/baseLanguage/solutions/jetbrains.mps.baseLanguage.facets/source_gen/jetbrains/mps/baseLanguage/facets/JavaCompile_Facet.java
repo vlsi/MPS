@@ -37,7 +37,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.internal.make.runtime.java.IdeaJavaCompiler;
-import jetbrains.mps.lang.core.plugin.Generate_Facet.Target_checkParameters.Variables;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.resources.FResource;
 import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -299,7 +299,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
                 return new IResult.FAILURE(_output_wf1ya0_a0b);
               }
 
-              IdeaJavaCompiler compiler = pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Variables.class).project().getComponent(IdeaJavaCompiler.class);
+              IdeaJavaCompiler compiler = pa.global().properties(Target_auxCompile.this.getName(), JavaCompile_Facet.Target_auxCompile.Parameters.class).project().getComponent(IdeaJavaCompiler.class);
               if (compiler == null || !(compiler.isValid())) {
                 monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("IntelliJ IDEA is required for compilation")));
                 return new IResult.FAILURE(_output_wf1ya0_a0b);
@@ -393,7 +393,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       if (t != null) {
-        ((Tuples._1) t).assign((Tuples._1) copyFrom);
+        ((Tuples._2) t).assign((Tuples._2) copyFrom);
       }
       return t;
     }
@@ -402,25 +402,33 @@ public class JavaCompile_Facet extends IFacet.Stub {
       return 100;
     }
 
-    public static class Parameters extends MultiTuple._1<Boolean> {
+    public static class Parameters extends MultiTuple._2<Project, Boolean> {
       public Parameters() {
         super();
       }
 
-      public Parameters(Boolean skipAuxCompile) {
-        super(skipAuxCompile);
+      public Parameters(Project project, Boolean skipAuxCompile) {
+        super(project, skipAuxCompile);
       }
 
-      public Boolean skipAuxCompile(Boolean value) {
+      public Project project(Project value) {
         return super._0(value);
       }
 
-      public Boolean skipAuxCompile() {
+      public Boolean skipAuxCompile(Boolean value) {
+        return super._1(value);
+      }
+
+      public Project project() {
         return super._0();
       }
 
+      public Boolean skipAuxCompile() {
+        return super._1();
+      }
+
       @SuppressWarnings(value = "unchecked")
-      public JavaCompile_Facet.Target_auxCompile.Parameters assignFrom(Tuples._1<Boolean> from) {
+      public JavaCompile_Facet.Target_auxCompile.Parameters assignFrom(Tuples._2<Project, Boolean> from) {
         return (JavaCompile_Facet.Target_auxCompile.Parameters) super.assign(from);
       }
     }
@@ -604,6 +612,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
         ITarget.Name name = new ITarget.Name("JavaCompile.auxCompile");
         if (properties.hasProperties(name)) {
           JavaCompile_Facet.Target_auxCompile.Parameters props = properties.properties(name, JavaCompile_Facet.Target_auxCompile.Parameters.class);
+          MapSequence.fromMap(store).put("JavaCompile.auxCompile.project", null);
           MapSequence.fromMap(store).put("JavaCompile.auxCompile.skipAuxCompile", String.valueOf(props.skipAuxCompile()));
         }
       }
@@ -632,6 +641,9 @@ public class JavaCompile_Facet extends IFacet.Stub {
         {
           ITarget.Name name = new ITarget.Name("JavaCompile.auxCompile");
           JavaCompile_Facet.Target_auxCompile.Parameters props = properties.properties(name, JavaCompile_Facet.Target_auxCompile.Parameters.class);
+          if (MapSequence.fromMap(store).containsKey("JavaCompile.auxCompile.project")) {
+            props.project(null);
+          }
           if (MapSequence.fromMap(store).containsKey("JavaCompile.auxCompile.skipAuxCompile")) {
             props.skipAuxCompile(Boolean.valueOf(MapSequence.fromMap(store).get("JavaCompile.auxCompile.skipAuxCompile")));
           }

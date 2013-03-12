@@ -5,14 +5,12 @@ package jetbrains.mps.baseLanguage.facets;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.ide.MPSCoreComponents;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.make.facet.FacetRegistry;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 public class BaseLanguageFacets implements ApplicationComponent {
-  private String baseLanguageNamespace;
+  private static final String BASELANGUAGE_NAMESPACE = "jetbrains.mps.baseLanguage";
   private IFacet javaCompileFacet;
   private IFacet reloadClassesFacet;
 
@@ -24,11 +22,10 @@ public class BaseLanguageFacets implements ApplicationComponent {
 
   public void initComponent() {
     try {
-      baseLanguageNamespace = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816")).getModuleName();
       javaCompileFacet = JavaCompile_Facet.class.newInstance();
       reloadClassesFacet = ReloadClasses_Facet.class.newInstance();
-      FacetRegistry.getInstance().register(baseLanguageNamespace, javaCompileFacet);
-      FacetRegistry.getInstance().register(baseLanguageNamespace, reloadClassesFacet);
+      FacetRegistry.getInstance().register(BASELANGUAGE_NAMESPACE, javaCompileFacet);
+      FacetRegistry.getInstance().register(BASELANGUAGE_NAMESPACE, reloadClassesFacet);
     } catch (Throwable t) {
       throw new RuntimeException(t);
     }
