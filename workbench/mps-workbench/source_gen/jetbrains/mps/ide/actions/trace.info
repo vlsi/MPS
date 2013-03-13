@@ -6377,7 +6377,7 @@
     <nodeInfo nodeId="2003512433031647760" fileName="GoByCurrentReferenceToIDEA_Action.java" startLine="127" startPosition="182" endLine="128" endPosition="398" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2003512433031647774" fileName="GoByCurrentReferenceToIDEA_Action.java" startLine="128" startPosition="398" endLine="129" endPosition="551" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2003512433031647796" fileName="GoByCurrentReferenceToIDEA_Action.java" startLine="130" startPosition="66" endLine="131" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2003512433031647808" fileName="GoByCurrentReferenceToIDEA_Action.java" startLine="133" startPosition="23" endLine="134" endPosition="221" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2003512433031647808" fileName="GoByCurrentReferenceToIDEA_Action.java" startLine="133" startPosition="23" endLine="134" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2003512433031647827" fileName="GoByCurrentReferenceToIDEA_Action.java" startLine="136" startPosition="48" endLine="137" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2003512433031647841" fileName="GoByCurrentReferenceToIDEA_Action.java" startLine="140" startPosition="31" endLine="141" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2003512433031647849" fileName="GoByCurrentReferenceToIDEA_Action.java" startLine="141" startPosition="113" endLine="142" endPosition="247" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -6390,7 +6390,7 @@
     <nodeInfo nodeId="2003512433031647952" fileName="GoByCurrentReferenceToIDEA_Action.java" startLine="165" startPosition="5" endLine="166" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2003512433031647968" fileName="GoByCurrentReferenceToIDEA_Action.java" startLine="169" startPosition="110" endLine="170" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2003512433031647975" fileName="GoByCurrentReferenceToIDEA_Action.java" startLine="170" startPosition="234" endLine="171" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="2003512433031647979" fileName="GoByCurrentReferenceToIDEA_Action.java" startLine="171" startPosition="30" endLine="172" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2003512433031647979" fileName="GoByCurrentReferenceToIDEA_Action.java" startLine="171" startPosition="30" endLine="172" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2003512433031647705" fileName="GoByCurrentReferenceToIDEA_Action.java" startLine="175" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="2003512433031648132" fileName="GoByCurrentReferenceToIDEA_Action.java" startLine="44" startPosition="102" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2003512433031648139" fileName="GoByCurrentReferenceToIDEA_Action.java" startLine="47" startPosition="5" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -6415,7 +6415,7 @@
     <nodeInfo nodeId="2003512433031647705" fileName="GoByCurrentReferenceToIDEA_Action.java" startLine="32" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GoByCurrentReferenceToIDEA_Action#()V" />
     <nodeInfo nodeId="2003512433031648025" fileName="GoByCurrentReferenceToIDEA_Action.java" startLine="98" startPosition="28" endLine="103" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2003512433031648109" fileName="GoByCurrentReferenceToIDEA_Action.java" startLine="111" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="2003512433031647821" fileName="GoByCurrentReferenceToIDEA_Action.java" startLine="134" startPosition="221" endLine="139" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2003512433031647821" fileName="GoByCurrentReferenceToIDEA_Action.java" startLine="134" startPosition="258" endLine="139" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="2003512433031647862" fileName="GoByCurrentReferenceToIDEA_Action.java" startLine="143" startPosition="80" endLine="148" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2003512433031647898" fileName="GoByCurrentReferenceToIDEA_Action.java" startLine="152" startPosition="166" endLine="157" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="2003512433031647932" fileName="GoByCurrentReferenceToIDEA_Action.java" startLine="159" startPosition="113" endLine="164" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -6467,7 +6467,7 @@
     <scopeInfo nodeId="2003512433031647863" fileName="GoByCurrentReferenceToIDEA_Action.java" startLine="144" startPosition="56" endLine="147" endPosition="11" />
     <scopeInfo nodeId="2003512433031647901" fileName="GoByCurrentReferenceToIDEA_Action.java" startLine="153" startPosition="80" endLine="156" endPosition="9" />
     <scopeInfo nodeId="2003512433031647935" fileName="GoByCurrentReferenceToIDEA_Action.java" startLine="160" startPosition="80" endLine="163" endPosition="9" />
-    <scopeInfo nodeId="2003512433031647967" fileName="GoByCurrentReferenceToIDEA_Action.java" startLine="169" startPosition="110" endLine="172" endPosition="87">
+    <scopeInfo nodeId="2003512433031647967" fileName="GoByCurrentReferenceToIDEA_Action.java" startLine="169" startPosition="110" endLine="172" endPosition="124">
       <varInfo nodeId="2003512433031647969" varName="classifier" />
     </scopeInfo>
     <scopeInfo nodeId="2003512433031647705" fileName="GoByCurrentReferenceToIDEA_Action.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
@@ -6479,7 +6479,7 @@
     <scopeInfo nodeId="2003512433031648165" fileName="GoByCurrentReferenceToIDEA_Action.java" startLine="177" startPosition="62" endLine="181" endPosition="6" />
     <scopeInfo nodeId="2003512433031647705" fileName="GoByCurrentReferenceToIDEA_Action.java" startLine="32" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="2003512433031648109" fileName="GoByCurrentReferenceToIDEA_Action.java" startLine="111" startPosition="0" endLine="116" endPosition="0" />
-    <scopeInfo nodeId="2003512433031647821" fileName="GoByCurrentReferenceToIDEA_Action.java" startLine="134" startPosition="221" endLine="139" endPosition="7">
+    <scopeInfo nodeId="2003512433031647821" fileName="GoByCurrentReferenceToIDEA_Action.java" startLine="134" startPosition="258" endLine="139" endPosition="7">
       <varInfo nodeId="2003512433031647822" varName="np" />
     </scopeInfo>
     <scopeInfo nodeId="2003512433031647861" fileName="GoByCurrentReferenceToIDEA_Action.java" startLine="143" startPosition="80" endLine="148" endPosition="9" />
@@ -13541,171 +13541,171 @@
     <unitInfo nodeId="7397015581138491059" fileName="ShowImplementations_Action.java" startLine="38" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowImplementations_Action" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/7420326557580749696">
-    <nodeInfo nodeId="4006758004392366756" fileName="InternalActionsUtils.java" startLine="48" startPosition="55" endLine="49" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4006758004392366774" fileName="InternalActionsUtils.java" startLine="52" startPosition="304" endLine="53" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4006758004392366971" fileName="InternalActionsUtils.java" startLine="56" startPosition="7" endLine="57" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7660780840540885384" fileName="InternalActionsUtils.java" startLine="60" startPosition="152" endLine="61" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7420326557580750054" fileName="InternalActionsUtils.java" startLine="63" startPosition="25" endLine="64" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7420326557580750061" fileName="InternalActionsUtils.java" startLine="64" startPosition="86" endLine="65" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7420326557580750076" fileName="InternalActionsUtils.java" startLine="67" startPosition="57" endLine="68" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7660780840540886184" fileName="InternalActionsUtils.java" startLine="71" startPosition="52" endLine="72" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7660780840540886881" fileName="InternalActionsUtils.java" startLine="74" startPosition="11" endLine="75" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7420326557580751405" fileName="InternalActionsUtils.java" startLine="77" startPosition="7" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7420326557580751407" fileName="InternalActionsUtils.java" startLine="78" startPosition="0" endLine="79" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7420326557580751614" fileName="InternalActionsUtils.java" startLine="80" startPosition="9" endLine="81" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7660780840540885051" fileName="InternalActionsUtils.java" startLine="81" startPosition="53" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7420326557580751484" fileName="InternalActionsUtils.java" startLine="85" startPosition="29" endLine="86" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7420326557580751486" fileName="InternalActionsUtils.java" startLine="86" startPosition="35" endLine="87" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7420326557580751492" fileName="InternalActionsUtils.java" startLine="88" startPosition="41" endLine="89" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7660780840540888324" fileName="InternalActionsUtils.java" startLine="90" startPosition="13" endLine="91" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7420326557580751682" fileName="InternalActionsUtils.java" startLine="94" startPosition="21" endLine="95" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7420326557580751628" fileName="InternalActionsUtils.java" startLine="96" startPosition="39" endLine="97" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7420326557580751747" fileName="InternalActionsUtils.java" startLine="102" startPosition="11" endLine="103" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7420326557580751836" fileName="InternalActionsUtils.java" startLine="104" startPosition="35" endLine="105" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="7420326557580751717" fileName="InternalActionsUtils.java" startLine="108" startPosition="15" endLine="109" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2955144094772186976" fileName="InternalActionsUtils.java" startLine="114" startPosition="44" endLine="115" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="7420326557580766030" fileName="InternalActionsUtils.java" startLine="119" startPosition="61" endLine="120" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4006758004392427641" fileName="InternalActionsUtils.java" startLine="128" startPosition="78" endLine="129" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4006758004392427786" fileName="InternalActionsUtils.java" startLine="131" startPosition="50" endLine="132" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4006758004392427874" fileName="InternalActionsUtils.java" startLine="135" startPosition="43" endLine="136" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4006758004392427655" fileName="InternalActionsUtils.java" startLine="138" startPosition="13" endLine="139" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4006758004392427950" fileName="InternalActionsUtils.java" startLine="140" startPosition="9" endLine="141" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8848477597120125443" fileName="InternalActionsUtils.java" startLine="143" startPosition="7" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4006758004392427387" fileName="InternalActionsUtils.java" startLine="144" startPosition="0" endLine="145" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7420326557580749696" fileName="InternalActionsUtils.java" startLine="148" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="7420326557580749698" fileName="InternalActionsUtils.java" startLine="45" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InternalActionsUtils#()V" />
-    <nodeInfo nodeId="4006758004392366733" fileName="InternalActionsUtils.java" startLine="51" startPosition="25" endLine="54" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7420326557580750074" fileName="InternalActionsUtils.java" startLine="67" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/project/IModule;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="7660780840540886180" fileName="InternalActionsUtils.java" startLine="71" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/smodel/SModelReference;" />
-    <nodeInfo nodeId="7420326557580751490" fileName="InternalActionsUtils.java" startLine="87" startPosition="49" endLine="90" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7420326557580751777" fileName="InternalActionsUtils.java" startLine="103" startPosition="27" endLine="106" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2955144094772186927" fileName="InternalActionsUtils.java" startLine="113" startPosition="157" endLine="116" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4006758004392427782" fileName="InternalActionsUtils.java" startLine="131" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="4006758004392427870" fileName="InternalActionsUtils.java" startLine="135" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="7420326557580761667" fileName="InternalActionsUtils.java" startLine="118" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
-    <nodeInfo nodeId="4006758004392313092" fileName="InternalActionsUtils.java" startLine="51" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7420326557580751621" fileName="InternalActionsUtils.java" startLine="93" startPosition="59" endLine="98" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="7420326557580761659" fileName="InternalActionsUtils.java" startLine="116" startPosition="5" endLine="122" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4006758004392313091" fileName="InternalActionsUtils.java" startLine="49" startPosition="97" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7420326557580751513" fileName="InternalActionsUtils.java" startLine="92" startPosition="32" endLine="99" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7660780840540886103" fileName="InternalActionsUtils.java" startLine="65" startPosition="74" endLine="74" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7660780840540888338" fileName="InternalActionsUtils.java" startLine="91" startPosition="87" endLine="100" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4006758004392313027" fileName="InternalActionsUtils.java" startLine="48" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getAllConcepts#()Ljava/util/List;" />
-    <nodeInfo nodeId="7420326557580761655" fileName="InternalActionsUtils.java" startLine="113" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="executeActionOnAllNodesInModal#(Ljava/lang/String;Lcom/intellij/openapi/project/Project;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
-    <nodeInfo nodeId="4006758004392427750" fileName="InternalActionsUtils.java" startLine="129" startPosition="59" endLine="140" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7660780840540885381" fileName="InternalActionsUtils.java" startLine="63" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7660780840540885380" fileName="InternalActionsUtils.java" startLine="61" startPosition="112" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4006758004392427482" fileName="InternalActionsUtils.java" startLine="127" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="find#(Ljetbrains/mps/ide/findusages/model/SearchQuery;Ljetbrains/mps/progress/ProgressMonitor;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
-    <nodeInfo nodeId="7420326557580751482" fileName="InternalActionsUtils.java" startLine="85" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="4006758004392427960" fileName="InternalActionsUtils.java" startLine="125" startPosition="96" endLine="143" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7420326557580751481" fileName="InternalActionsUtils.java" startLine="83" startPosition="68" endLine="102" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8848477597120116234" fileName="InternalActionsUtils.java" startLine="125" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showUsagesViewForNodes#(Lcom/intellij/openapi/project/Project;Ljava/util/List;)V" />
-    <nodeInfo nodeId="7420326557580751474" fileName="InternalActionsUtils.java" startLine="82" startPosition="0" endLine="107" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7420326557580751713" fileName="InternalActionsUtils.java" startLine="79" startPosition="84" endLine="110" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="7420326557580749703" fileName="InternalActionsUtils.java" startLine="60" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="executeActionOnAllNodes#(Ljava/lang/String;Ljetbrains/mps/progress/ProgressMonitor;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
-    <scopeInfo nodeId="7420326557580749701" fileName="InternalActionsUtils.java" startLine="45" startPosition="33" endLine="45" endPosition="33" />
-    <scopeInfo nodeId="4006758004392366734" fileName="InternalActionsUtils.java" startLine="52" startPosition="304" endLine="53" endPosition="116" />
-    <scopeInfo nodeId="7420326557580750075" fileName="InternalActionsUtils.java" startLine="67" startPosition="57" endLine="68" endPosition="47" />
-    <scopeInfo nodeId="7660780840540886181" fileName="InternalActionsUtils.java" startLine="71" startPosition="52" endLine="72" endPosition="37" />
-    <scopeInfo nodeId="7420326557580751491" fileName="InternalActionsUtils.java" startLine="88" startPosition="41" endLine="89" endPosition="91" />
-    <scopeInfo nodeId="7420326557580751622" fileName="InternalActionsUtils.java" startLine="94" startPosition="21" endLine="95" endPosition="44" />
-    <scopeInfo nodeId="7420326557580751623" fileName="InternalActionsUtils.java" startLine="96" startPosition="0" endLine="97" endPosition="73">
+    <nodeInfo nodeId="4006758004392366756" fileName="InternalActionsUtils.java" startLine="49" startPosition="55" endLine="50" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4006758004392366774" fileName="InternalActionsUtils.java" startLine="53" startPosition="304" endLine="54" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4006758004392366971" fileName="InternalActionsUtils.java" startLine="57" startPosition="7" endLine="58" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7660780840540885384" fileName="InternalActionsUtils.java" startLine="61" startPosition="152" endLine="62" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7420326557580750054" fileName="InternalActionsUtils.java" startLine="64" startPosition="25" endLine="65" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7420326557580750061" fileName="InternalActionsUtils.java" startLine="65" startPosition="86" endLine="66" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7420326557580750076" fileName="InternalActionsUtils.java" startLine="68" startPosition="57" endLine="69" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7660780840540886184" fileName="InternalActionsUtils.java" startLine="72" startPosition="52" endLine="73" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7660780840540886881" fileName="InternalActionsUtils.java" startLine="75" startPosition="11" endLine="76" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7420326557580751405" fileName="InternalActionsUtils.java" startLine="78" startPosition="7" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7420326557580751407" fileName="InternalActionsUtils.java" startLine="79" startPosition="0" endLine="80" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7420326557580751614" fileName="InternalActionsUtils.java" startLine="81" startPosition="9" endLine="82" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7660780840540885051" fileName="InternalActionsUtils.java" startLine="82" startPosition="53" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7420326557580751484" fileName="InternalActionsUtils.java" startLine="86" startPosition="29" endLine="87" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7420326557580751486" fileName="InternalActionsUtils.java" startLine="87" startPosition="35" endLine="88" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7420326557580751492" fileName="InternalActionsUtils.java" startLine="89" startPosition="41" endLine="90" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7660780840540888324" fileName="InternalActionsUtils.java" startLine="91" startPosition="13" endLine="92" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7420326557580751682" fileName="InternalActionsUtils.java" startLine="95" startPosition="21" endLine="96" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7420326557580751628" fileName="InternalActionsUtils.java" startLine="97" startPosition="39" endLine="98" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7420326557580751747" fileName="InternalActionsUtils.java" startLine="103" startPosition="11" endLine="104" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7420326557580751836" fileName="InternalActionsUtils.java" startLine="105" startPosition="35" endLine="106" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="7420326557580751717" fileName="InternalActionsUtils.java" startLine="109" startPosition="15" endLine="110" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2955144094772186976" fileName="InternalActionsUtils.java" startLine="115" startPosition="44" endLine="116" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="7420326557580766030" fileName="InternalActionsUtils.java" startLine="120" startPosition="61" endLine="121" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4006758004392427641" fileName="InternalActionsUtils.java" startLine="129" startPosition="78" endLine="130" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4006758004392427786" fileName="InternalActionsUtils.java" startLine="132" startPosition="50" endLine="133" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4006758004392427874" fileName="InternalActionsUtils.java" startLine="136" startPosition="43" endLine="137" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4006758004392427655" fileName="InternalActionsUtils.java" startLine="139" startPosition="13" endLine="140" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4006758004392427950" fileName="InternalActionsUtils.java" startLine="141" startPosition="9" endLine="142" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8848477597120125443" fileName="InternalActionsUtils.java" startLine="144" startPosition="7" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4006758004392427387" fileName="InternalActionsUtils.java" startLine="145" startPosition="0" endLine="146" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7420326557580749696" fileName="InternalActionsUtils.java" startLine="149" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="7420326557580749698" fileName="InternalActionsUtils.java" startLine="46" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InternalActionsUtils#()V" />
+    <nodeInfo nodeId="4006758004392366733" fileName="InternalActionsUtils.java" startLine="52" startPosition="25" endLine="55" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7420326557580750074" fileName="InternalActionsUtils.java" startLine="68" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/project/IModule;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="7660780840540886180" fileName="InternalActionsUtils.java" startLine="72" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/smodel/SModelReference;" />
+    <nodeInfo nodeId="7420326557580751490" fileName="InternalActionsUtils.java" startLine="88" startPosition="49" endLine="91" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7420326557580751777" fileName="InternalActionsUtils.java" startLine="104" startPosition="27" endLine="107" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2955144094772186927" fileName="InternalActionsUtils.java" startLine="114" startPosition="157" endLine="117" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4006758004392427782" fileName="InternalActionsUtils.java" startLine="132" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="4006758004392427870" fileName="InternalActionsUtils.java" startLine="136" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="7420326557580761667" fileName="InternalActionsUtils.java" startLine="119" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
+    <nodeInfo nodeId="4006758004392313092" fileName="InternalActionsUtils.java" startLine="52" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7420326557580751621" fileName="InternalActionsUtils.java" startLine="94" startPosition="59" endLine="99" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7420326557580761659" fileName="InternalActionsUtils.java" startLine="117" startPosition="5" endLine="123" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4006758004392313091" fileName="InternalActionsUtils.java" startLine="50" startPosition="97" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7420326557580751513" fileName="InternalActionsUtils.java" startLine="93" startPosition="32" endLine="100" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7660780840540886103" fileName="InternalActionsUtils.java" startLine="66" startPosition="74" endLine="75" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7660780840540888338" fileName="InternalActionsUtils.java" startLine="92" startPosition="87" endLine="101" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4006758004392313027" fileName="InternalActionsUtils.java" startLine="49" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getAllConcepts#()Ljava/util/List;" />
+    <nodeInfo nodeId="7420326557580761655" fileName="InternalActionsUtils.java" startLine="114" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="executeActionOnAllNodesInModal#(Ljava/lang/String;Lcom/intellij/openapi/project/Project;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
+    <nodeInfo nodeId="4006758004392427750" fileName="InternalActionsUtils.java" startLine="130" startPosition="59" endLine="141" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7660780840540885381" fileName="InternalActionsUtils.java" startLine="64" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7660780840540885380" fileName="InternalActionsUtils.java" startLine="62" startPosition="112" endLine="78" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4006758004392427482" fileName="InternalActionsUtils.java" startLine="128" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="find#(Ljetbrains/mps/ide/findusages/model/SearchQuery;Ljetbrains/mps/progress/ProgressMonitor;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
+    <nodeInfo nodeId="7420326557580751482" fileName="InternalActionsUtils.java" startLine="86" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4006758004392427960" fileName="InternalActionsUtils.java" startLine="126" startPosition="96" endLine="144" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7420326557580751481" fileName="InternalActionsUtils.java" startLine="84" startPosition="68" endLine="103" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8848477597120116234" fileName="InternalActionsUtils.java" startLine="126" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showUsagesViewForNodes#(Lcom/intellij/openapi/project/Project;Ljava/util/List;)V" />
+    <nodeInfo nodeId="7420326557580751474" fileName="InternalActionsUtils.java" startLine="83" startPosition="0" endLine="108" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7420326557580751713" fileName="InternalActionsUtils.java" startLine="80" startPosition="84" endLine="111" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="7420326557580749703" fileName="InternalActionsUtils.java" startLine="61" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="executeActionOnAllNodes#(Ljava/lang/String;Ljetbrains/mps/progress/ProgressMonitor;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
+    <scopeInfo nodeId="7420326557580749701" fileName="InternalActionsUtils.java" startLine="46" startPosition="33" endLine="46" endPosition="33" />
+    <scopeInfo nodeId="4006758004392366734" fileName="InternalActionsUtils.java" startLine="53" startPosition="304" endLine="54" endPosition="116" />
+    <scopeInfo nodeId="7420326557580750075" fileName="InternalActionsUtils.java" startLine="68" startPosition="57" endLine="69" endPosition="47" />
+    <scopeInfo nodeId="7660780840540886181" fileName="InternalActionsUtils.java" startLine="72" startPosition="52" endLine="73" endPosition="37" />
+    <scopeInfo nodeId="7420326557580751491" fileName="InternalActionsUtils.java" startLine="89" startPosition="41" endLine="90" endPosition="128" />
+    <scopeInfo nodeId="7420326557580751622" fileName="InternalActionsUtils.java" startLine="95" startPosition="21" endLine="96" endPosition="44" />
+    <scopeInfo nodeId="7420326557580751623" fileName="InternalActionsUtils.java" startLine="97" startPosition="0" endLine="98" endPosition="73">
       <varInfo nodeId="7420326557580751624" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="7420326557580751626" fileName="InternalActionsUtils.java" startLine="96" startPosition="39" endLine="97" endPosition="73" />
-    <scopeInfo nodeId="7420326557580751778" fileName="InternalActionsUtils.java" startLine="104" startPosition="35" endLine="105" endPosition="16" />
-    <scopeInfo nodeId="7420326557580751716" fileName="InternalActionsUtils.java" startLine="108" startPosition="15" endLine="109" endPosition="21" />
-    <scopeInfo nodeId="2955144094772186928" fileName="InternalActionsUtils.java" startLine="114" startPosition="44" endLine="115" endPosition="82" />
-    <scopeInfo nodeId="7420326557580761673" fileName="InternalActionsUtils.java" startLine="119" startPosition="61" endLine="120" endPosition="97" />
-    <scopeInfo nodeId="4006758004392427783" fileName="InternalActionsUtils.java" startLine="131" startPosition="50" endLine="132" endPosition="82" />
-    <scopeInfo nodeId="4006758004392427871" fileName="InternalActionsUtils.java" startLine="135" startPosition="43" endLine="136" endPosition="30" />
-    <scopeInfo nodeId="4006758004392427753" fileName="InternalActionsUtils.java" startLine="138" startPosition="13" endLine="139" endPosition="89" />
-    <scopeInfo nodeId="7420326557580749698" fileName="InternalActionsUtils.java" startLine="45" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="4006758004392313093" fileName="InternalActionsUtils.java" startLine="51" startPosition="25" endLine="54" endPosition="9" />
-    <scopeInfo nodeId="4006758004392366733" fileName="InternalActionsUtils.java" startLine="51" startPosition="25" endLine="54" endPosition="9">
+    <scopeInfo nodeId="7420326557580751626" fileName="InternalActionsUtils.java" startLine="97" startPosition="39" endLine="98" endPosition="73" />
+    <scopeInfo nodeId="7420326557580751778" fileName="InternalActionsUtils.java" startLine="105" startPosition="35" endLine="106" endPosition="16" />
+    <scopeInfo nodeId="7420326557580751716" fileName="InternalActionsUtils.java" startLine="109" startPosition="15" endLine="110" endPosition="21" />
+    <scopeInfo nodeId="2955144094772186928" fileName="InternalActionsUtils.java" startLine="115" startPosition="44" endLine="116" endPosition="82" />
+    <scopeInfo nodeId="7420326557580761673" fileName="InternalActionsUtils.java" startLine="120" startPosition="61" endLine="121" endPosition="97" />
+    <scopeInfo nodeId="4006758004392427783" fileName="InternalActionsUtils.java" startLine="132" startPosition="50" endLine="133" endPosition="82" />
+    <scopeInfo nodeId="4006758004392427871" fileName="InternalActionsUtils.java" startLine="136" startPosition="43" endLine="137" endPosition="30" />
+    <scopeInfo nodeId="4006758004392427753" fileName="InternalActionsUtils.java" startLine="139" startPosition="13" endLine="140" endPosition="89" />
+    <scopeInfo nodeId="7420326557580749698" fileName="InternalActionsUtils.java" startLine="46" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="4006758004392313093" fileName="InternalActionsUtils.java" startLine="52" startPosition="25" endLine="55" endPosition="9" />
+    <scopeInfo nodeId="4006758004392366733" fileName="InternalActionsUtils.java" startLine="52" startPosition="25" endLine="55" endPosition="9">
       <varInfo nodeId="4006758004392366736" varName="concept" />
     </scopeInfo>
-    <scopeInfo nodeId="7420326557580750074" fileName="InternalActionsUtils.java" startLine="67" startPosition="0" endLine="70" endPosition="0">
+    <scopeInfo nodeId="7420326557580750074" fileName="InternalActionsUtils.java" startLine="68" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="7420326557580750074" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="7660780840540886180" fileName="InternalActionsUtils.java" startLine="71" startPosition="0" endLine="74" endPosition="0">
+    <scopeInfo nodeId="7660780840540886180" fileName="InternalActionsUtils.java" startLine="72" startPosition="0" endLine="75" endPosition="0">
       <varInfo nodeId="7660780840540886180" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="4006758004392427782" fileName="InternalActionsUtils.java" startLine="131" startPosition="0" endLine="134" endPosition="0">
+    <scopeInfo nodeId="4006758004392427782" fileName="InternalActionsUtils.java" startLine="132" startPosition="0" endLine="135" endPosition="0">
       <varInfo nodeId="4006758004392427782" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="4006758004392427870" fileName="InternalActionsUtils.java" startLine="135" startPosition="0" endLine="138" endPosition="0">
+    <scopeInfo nodeId="4006758004392427870" fileName="InternalActionsUtils.java" startLine="136" startPosition="0" endLine="139" endPosition="0">
       <varInfo nodeId="4006758004392427870" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="7420326557580761667" fileName="InternalActionsUtils.java" startLine="118" startPosition="0" endLine="122" endPosition="0">
+    <scopeInfo nodeId="7420326557580761667" fileName="InternalActionsUtils.java" startLine="119" startPosition="0" endLine="123" endPosition="0">
       <varInfo nodeId="7420326557580761670" varName="indicator" />
     </scopeInfo>
-    <scopeInfo nodeId="4006758004392313092" fileName="InternalActionsUtils.java" startLine="51" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="7420326557580751514" fileName="InternalActionsUtils.java" startLine="93" startPosition="59" endLine="98" endPosition="17" />
-    <scopeInfo nodeId="7420326557580751513" fileName="InternalActionsUtils.java" startLine="92" startPosition="32" endLine="99" endPosition="15">
+    <scopeInfo nodeId="4006758004392313092" fileName="InternalActionsUtils.java" startLine="52" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="7420326557580751514" fileName="InternalActionsUtils.java" startLine="94" startPosition="59" endLine="99" endPosition="17" />
+    <scopeInfo nodeId="7420326557580751513" fileName="InternalActionsUtils.java" startLine="93" startPosition="32" endLine="100" endPosition="15">
       <varInfo nodeId="7420326557580751606" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="7660780840540888339" fileName="InternalActionsUtils.java" startLine="92" startPosition="32" endLine="99" endPosition="15" />
-    <scopeInfo nodeId="4006758004392313030" fileName="InternalActionsUtils.java" startLine="48" startPosition="55" endLine="57" endPosition="20">
+    <scopeInfo nodeId="7660780840540888339" fileName="InternalActionsUtils.java" startLine="93" startPosition="32" endLine="100" endPosition="15" />
+    <scopeInfo nodeId="4006758004392313030" fileName="InternalActionsUtils.java" startLine="49" startPosition="55" endLine="58" endPosition="20">
       <varInfo nodeId="4006758004392366757" varName="concepts" />
     </scopeInfo>
-    <scopeInfo nodeId="7420326557580761658" fileName="InternalActionsUtils.java" startLine="113" startPosition="157" endLine="122" endPosition="7" />
-    <scopeInfo nodeId="4006758004392313027" fileName="InternalActionsUtils.java" startLine="48" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="7420326557580761655" fileName="InternalActionsUtils.java" startLine="113" startPosition="0" endLine="124" endPosition="0">
+    <scopeInfo nodeId="7420326557580761658" fileName="InternalActionsUtils.java" startLine="114" startPosition="157" endLine="123" endPosition="7" />
+    <scopeInfo nodeId="4006758004392313027" fileName="InternalActionsUtils.java" startLine="49" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="7420326557580761655" fileName="InternalActionsUtils.java" startLine="114" startPosition="0" endLine="125" endPosition="0">
       <varInfo nodeId="7420326557580761777" varName="actionName" />
       <varInfo nodeId="7420326557580766021" varName="nodeCallback" />
       <varInfo nodeId="7420326557580761779" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="4006758004392427750" fileName="InternalActionsUtils.java" startLine="129" startPosition="59" endLine="140" endPosition="9">
+    <scopeInfo nodeId="4006758004392427750" fileName="InternalActionsUtils.java" startLine="130" startPosition="59" endLine="141" endPosition="9">
       <varInfo nodeId="4006758004392427751" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="7660780840540885382" fileName="InternalActionsUtils.java" startLine="63" startPosition="25" endLine="75" endPosition="87">
+    <scopeInfo nodeId="7660780840540885382" fileName="InternalActionsUtils.java" startLine="64" startPosition="25" endLine="76" endPosition="87">
       <varInfo nodeId="7420326557580750055" varName="modules" />
     </scopeInfo>
-    <scopeInfo nodeId="4006758004392427489" fileName="InternalActionsUtils.java" startLine="128" startPosition="78" endLine="141" endPosition="23">
+    <scopeInfo nodeId="4006758004392427489" fileName="InternalActionsUtils.java" startLine="129" startPosition="78" endLine="142" endPosition="23">
       <varInfo nodeId="4006758004392427642" varName="results" />
     </scopeInfo>
-    <scopeInfo nodeId="7660780840540885381" fileName="InternalActionsUtils.java" startLine="63" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="7420326557580751483" fileName="InternalActionsUtils.java" startLine="85" startPosition="29" endLine="100" endPosition="13">
+    <scopeInfo nodeId="7660780840540885381" fileName="InternalActionsUtils.java" startLine="64" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="7420326557580751483" fileName="InternalActionsUtils.java" startLine="86" startPosition="29" endLine="101" endPosition="13">
       <varInfo nodeId="7660780840540888325" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="4006758004392427482" fileName="InternalActionsUtils.java" startLine="127" startPosition="0" endLine="143" endPosition="0">
+    <scopeInfo nodeId="4006758004392427482" fileName="InternalActionsUtils.java" startLine="128" startPosition="0" endLine="144" endPosition="0">
       <varInfo nodeId="4006758004392427487" varName="progress" />
       <varInfo nodeId="4006758004392427485" varName="query" />
     </scopeInfo>
-    <scopeInfo nodeId="7420326557580751482" fileName="InternalActionsUtils.java" startLine="85" startPosition="0" endLine="102" endPosition="0" />
-    <scopeInfo nodeId="8848477597120116237" fileName="InternalActionsUtils.java" startLine="125" startPosition="96" endLine="145" endPosition="143">
+    <scopeInfo nodeId="7420326557580751482" fileName="InternalActionsUtils.java" startLine="86" startPosition="0" endLine="103" endPosition="0" />
+    <scopeInfo nodeId="8848477597120116237" fileName="InternalActionsUtils.java" startLine="126" startPosition="96" endLine="146" endPosition="143">
       <varInfo nodeId="4006758004392427961" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="8848477597120116234" fileName="InternalActionsUtils.java" startLine="125" startPosition="0" endLine="147" endPosition="0">
+    <scopeInfo nodeId="8848477597120116234" fileName="InternalActionsUtils.java" startLine="126" startPosition="0" endLine="148" endPosition="0">
       <varInfo nodeId="8848477597120116247" varName="nodes" />
       <varInfo nodeId="8848477597120116251" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="7420326557580751475" fileName="InternalActionsUtils.java" startLine="83" startPosition="68" endLine="106" endPosition="9" />
-    <scopeInfo nodeId="7420326557580751474" fileName="InternalActionsUtils.java" startLine="82" startPosition="0" endLine="107" endPosition="7">
+    <scopeInfo nodeId="7420326557580751475" fileName="InternalActionsUtils.java" startLine="84" startPosition="68" endLine="107" endPosition="9" />
+    <scopeInfo nodeId="7420326557580751474" fileName="InternalActionsUtils.java" startLine="83" startPosition="0" endLine="108" endPosition="7">
       <varInfo nodeId="7420326557580751477" varName="modelRef" />
     </scopeInfo>
-    <scopeInfo nodeId="7420326557580751714" fileName="InternalActionsUtils.java" startLine="80" startPosition="9" endLine="107" endPosition="7">
+    <scopeInfo nodeId="7420326557580751714" fileName="InternalActionsUtils.java" startLine="81" startPosition="9" endLine="108" endPosition="7">
       <varInfo nodeId="7420326557580751615" varName="num" />
     </scopeInfo>
-    <scopeInfo nodeId="7420326557580749706" fileName="InternalActionsUtils.java" startLine="60" startPosition="152" endLine="110" endPosition="5">
+    <scopeInfo nodeId="7420326557580749706" fileName="InternalActionsUtils.java" startLine="61" startPosition="152" endLine="111" endPosition="5">
       <varInfo nodeId="7660780840540885385" varName="modelReferences" />
     </scopeInfo>
-    <scopeInfo nodeId="7420326557580749703" fileName="InternalActionsUtils.java" startLine="60" startPosition="0" endLine="112" endPosition="0">
+    <scopeInfo nodeId="7420326557580749703" fileName="InternalActionsUtils.java" startLine="61" startPosition="0" endLine="113" endPosition="0">
       <varInfo nodeId="7420326557580751437" varName="actionName" />
       <varInfo nodeId="7420326557580750089" varName="monitor" />
       <varInfo nodeId="7420326557580749707" varName="nodeCallback" />
     </scopeInfo>
-    <unitInfo nodeId="7420326557580750074" fileName="InternalActionsUtils.java" startLine="66" startPosition="77" endLine="70" endPosition="9" unitName="jetbrains.mps.ide.actions.InternalActionsUtils$3" />
-    <unitInfo nodeId="7660780840540886180" fileName="InternalActionsUtils.java" startLine="70" startPosition="22" endLine="74" endPosition="9" unitName="jetbrains.mps.ide.actions.InternalActionsUtils$3" />
-    <unitInfo nodeId="4006758004392427782" fileName="InternalActionsUtils.java" startLine="130" startPosition="66" endLine="134" endPosition="9" unitName="jetbrains.mps.ide.actions.InternalActionsUtils$6" />
-    <unitInfo nodeId="4006758004392427870" fileName="InternalActionsUtils.java" startLine="134" startPosition="21" endLine="138" endPosition="9" unitName="jetbrains.mps.ide.actions.InternalActionsUtils$6" />
-    <unitInfo nodeId="7420326557580761665" fileName="InternalActionsUtils.java" startLine="117" startPosition="42" endLine="122" endPosition="5" unitName="jetbrains.mps.ide.actions.InternalActionsUtils$4" />
-    <unitInfo nodeId="4006758004392313092" fileName="InternalActionsUtils.java" startLine="50" startPosition="45" endLine="56" endPosition="5" unitName="jetbrains.mps.ide.actions.InternalActionsUtils$1" />
-    <unitInfo nodeId="7660780840540885381" fileName="InternalActionsUtils.java" startLine="62" startPosition="45" endLine="77" endPosition="5" unitName="jetbrains.mps.ide.actions.InternalActionsUtils$2" />
-    <unitInfo nodeId="4006758004392427480" fileName="InternalActionsUtils.java" startLine="126" startPosition="58" endLine="143" endPosition="5" unitName="jetbrains.mps.ide.actions.InternalActionsUtils$5" />
-    <unitInfo nodeId="7420326557580751482" fileName="InternalActionsUtils.java" startLine="84" startPosition="49" endLine="102" endPosition="9" unitName="jetbrains.mps.ide.actions.InternalActionsUtils$3" />
-    <unitInfo nodeId="7420326557580749696" fileName="InternalActionsUtils.java" startLine="44" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.ide.actions.InternalActionsUtils" />
+    <unitInfo nodeId="7420326557580750074" fileName="InternalActionsUtils.java" startLine="67" startPosition="77" endLine="71" endPosition="9" unitName="jetbrains.mps.ide.actions.InternalActionsUtils$3" />
+    <unitInfo nodeId="7660780840540886180" fileName="InternalActionsUtils.java" startLine="71" startPosition="22" endLine="75" endPosition="9" unitName="jetbrains.mps.ide.actions.InternalActionsUtils$3" />
+    <unitInfo nodeId="4006758004392427782" fileName="InternalActionsUtils.java" startLine="131" startPosition="66" endLine="135" endPosition="9" unitName="jetbrains.mps.ide.actions.InternalActionsUtils$6" />
+    <unitInfo nodeId="4006758004392427870" fileName="InternalActionsUtils.java" startLine="135" startPosition="21" endLine="139" endPosition="9" unitName="jetbrains.mps.ide.actions.InternalActionsUtils$6" />
+    <unitInfo nodeId="7420326557580761665" fileName="InternalActionsUtils.java" startLine="118" startPosition="42" endLine="123" endPosition="5" unitName="jetbrains.mps.ide.actions.InternalActionsUtils$4" />
+    <unitInfo nodeId="4006758004392313092" fileName="InternalActionsUtils.java" startLine="51" startPosition="45" endLine="57" endPosition="5" unitName="jetbrains.mps.ide.actions.InternalActionsUtils$1" />
+    <unitInfo nodeId="7660780840540885381" fileName="InternalActionsUtils.java" startLine="63" startPosition="45" endLine="78" endPosition="5" unitName="jetbrains.mps.ide.actions.InternalActionsUtils$2" />
+    <unitInfo nodeId="4006758004392427480" fileName="InternalActionsUtils.java" startLine="127" startPosition="58" endLine="144" endPosition="5" unitName="jetbrains.mps.ide.actions.InternalActionsUtils$5" />
+    <unitInfo nodeId="7420326557580751482" fileName="InternalActionsUtils.java" startLine="85" startPosition="49" endLine="103" endPosition="9" unitName="jetbrains.mps.ide.actions.InternalActionsUtils$3" />
+    <unitInfo nodeId="7420326557580749696" fileName="InternalActionsUtils.java" startLine="45" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.ide.actions.InternalActionsUtils" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/7546597551780207004">
     <nodeInfo nodeId="8520793874416515237" fileName="Line.java" startLine="11" startPosition="17" endLine="12" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -21,7 +22,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_931497059330190638(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode extension = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodCall"), "baseMethodDeclaration", false);
-    String namespace = SNodeOperations.getModel(extension).getReference().getSModelFqName().getLongName();
+    String namespace = SModelStereotype.withoutStereotype(SNodeOperations.getModel(extension).getReference().getModelName());
     String className = SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(extension), "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
     return namespace + "." + className;
   }

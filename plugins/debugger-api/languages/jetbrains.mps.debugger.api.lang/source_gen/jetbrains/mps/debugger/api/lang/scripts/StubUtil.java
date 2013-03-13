@@ -38,7 +38,7 @@ public class StubUtil {
     if (targetSModelReference == null) {
       return false;
     }
-    return SModelStereotype.isStubModelStereotype(targetSModelReference.getStereotype());
+    return SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(targetSModelReference.getModelName()));
   }
 
   @Nullable
@@ -51,7 +51,7 @@ public class StubUtil {
     IModule debuggerApi = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("cc7da2f6-419f-4133-a811-31fcd3295a85"));
     List<SModel> debuggerModels = debuggerApi.getOwnModelDescriptors();
     for (SModel debuggerModel : ListSequence.fromList(debuggerModels)) {
-      if (eq_g10q2g_a0a0f0c(SNodeOperations.getModelLongName(debuggerModel), targetSModelReference.getLongName())) {
+      if (eq_g10q2g_a0a0f0c(SNodeOperations.getModelLongName(debuggerModel), SModelStereotype.withoutStereotype(targetSModelReference.getModelName()))) {
         return debuggerModel;
       }
     }

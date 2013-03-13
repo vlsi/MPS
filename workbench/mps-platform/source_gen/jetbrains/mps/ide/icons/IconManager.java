@@ -211,7 +211,7 @@ public class IconManager {
   }
 
   public static Icon getIconForModelReference(@NotNull SModelReference modelReference) {
-    String stereotype = modelReference.getStereotype();
+    String stereotype = SModelStereotype.getStereotype(modelReference.getModelName());
     if (stereotype != null) {
       if (SModelStereotype.isGeneratorModelStereotype(stereotype)) {
         return IdeIcons.TEMPLATES_MODEL_ICON;

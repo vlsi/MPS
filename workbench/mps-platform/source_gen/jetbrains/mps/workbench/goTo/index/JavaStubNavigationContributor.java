@@ -11,6 +11,7 @@ import jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.extapi.persistence.FolderSetDataSource;
 import jetbrains.mps.reloading.ClassPathFactory;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelReference;
 import java.io.File;
 import java.io.IOException;
@@ -42,7 +43,7 @@ public class JavaStubNavigationContributor implements NavigationParticipant, App
           if (dir.indexOf("!") != -1) {
             cp.add(ClassPathFactory.getInstance().createFromPath(dir.substring(0, dir.indexOf("!")), this.getClass().getName()));
           } else {
-            String name = ((SModelReference) model.getReference()).getLongName().replace('.', File.separatorChar);
+            String name = SModelStereotype.withoutStereotype(((SModelReference) model.getReference()).getModelName()).replace('.', File.separatorChar);
 
             // dirty hack for current problems with path separators 
             String dirCorrected = dir.replace('/', File.separatorChar);

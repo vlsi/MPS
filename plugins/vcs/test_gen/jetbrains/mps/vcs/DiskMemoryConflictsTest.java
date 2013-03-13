@@ -297,7 +297,7 @@ public class DiskMemoryConflictsTest {
       ModelAccess.instance().runCommandInEDT(new Runnable() {
         @Override
         public void run() {
-          myModelDescriptor = (BaseEditableSModelDescriptor) myModule.createModel(DiskMemoryConflictsTest.MODEL_REFERENCE.getSModelFqName().toString(), myModule.getModelRoots().iterator().next(), null);
+          myModelDescriptor = (BaseEditableSModelDescriptor) myModule.createModel(DiskMemoryConflictsTest.MODEL_REFERENCE.getModelName(), myModule.getModelRoots().iterator().next(), null);
           myModelDescriptor.addRootNode(CopyUtil.copyAndPreserveId(myNodeBackup));
           myModelDescriptor.save();
         }

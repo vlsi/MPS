@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -180,7 +181,7 @@ public class MappingSelectTree extends Tree {
 
     @Override
     public String getText() {
-      return NameUtil.shortNameFromLongName(getObject().getLongName());
+      return NameUtil.shortNameFromLongName(SModelStereotype.withoutStereotype(getObject().getModelName()));
     }
   }
 

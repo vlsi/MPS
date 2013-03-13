@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
 import java.util.Collections;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
@@ -34,7 +35,7 @@ public class ModelChooser extends BaseChooserComponent {
         StringBuilder result = new StringBuilder();
         SModelReference modelRef = CommonChoosers.showDialogModelChooser(null, ModelChooser.this.myCheckedModels, Collections.EMPTY_LIST);
         if (modelRef != null) {
-          result.append(modelRef.getLongName());
+          result.append(SModelStereotype.withoutStereotype(modelRef.getModelName()));
           ModelChooser.this.setText(result.toString());
         }
       }

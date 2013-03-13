@@ -201,7 +201,7 @@ public class CopyPasteUtil {
 
   private static jetbrains.mps.smodel.SModel copyModelProperties(SModel model) {
     SModelReference modelReference = model.getReference();
-    SModelFqName fqName = new SModelFqName(modelReference.getLongName(), SModelStereotype.INTERNAL_COPY);
+    SModelFqName fqName = new SModelFqName(SModelStereotype.withoutStereotype(modelReference.getModelName()), SModelStereotype.INTERNAL_COPY);
     jetbrains.mps.smodel.SModel newModel = new jetbrains.mps.smodel.SModel(new SModelReference(fqName, SModelId.generate()));
     for (ModuleReference language : ((SModelInternal) model).importedLanguages()) {
       newModel.addLanguage(language);

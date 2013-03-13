@@ -5,13 +5,13 @@ package jetbrains.mps.lang.script.runtime;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -25,7 +25,16 @@ import jetbrains.mps.smodel.SModelFqName;
 
 public class StubRefUtil {
   private static boolean isReferenceToJavaStub(@NotNull SReference reference) {
-    return reference.getTargetNodeId() instanceof SNodeId.Foreign && check_4tnolf_a0a0a(check_4tnolf_a0a0a0(reference.getTargetSModelReference()), SModelStereotype.STUB_SUFFIX);
+    if (!(reference.getTargetNodeId() instanceof SNodeId.Foreign)) {
+      return false;
+    }
+
+    SModelReference tRef = reference.getTargetSModelReference();
+    if (tRef == null) {
+      return false;
+    }
+
+    return SModelStereotype.getStereotype(tRef.getModelName()).endsWith(SModelStereotype.STUB_SUFFIX);
   }
 
   private static String getTargetStringFromReference(@NotNull SReference reference) {
@@ -134,20 +143,6 @@ public class StubRefUtil {
     oldNode.setReference(reference.getRole(), null);
     oldNode.setReference(new StaticReference(reference.getRole(), oldNode, reference.getTargetSModelReference(), reference.getTargetNodeId(), ((jetbrains.mps.smodel.SReference) reference).getResolveInfo()).getRole(), new StaticReference(reference.getRole(), oldNode, reference.getTargetSModelReference(), reference.getTargetNodeId(), ((jetbrains.mps.smodel.SReference) reference).getResolveInfo()));
     StubRefUtil.addRequiredImports(oldNode.getModel(), reference.getSourceNode());
-  }
-
-  private static boolean check_4tnolf_a0a0a(String checkedDotOperand, String STUB_SUFFIX) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.endsWith(SModelStereotype.STUB_SUFFIX);
-    }
-    return false;
-  }
-
-  private static String check_4tnolf_a0a0a0(SModelReference checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getStereotype();
-    }
-    return null;
   }
 
   private static String check_4tnolf_a0a0b(SModelFqName checkedDotOperand) {

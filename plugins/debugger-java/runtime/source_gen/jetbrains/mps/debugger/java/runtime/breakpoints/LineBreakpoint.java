@@ -21,6 +21,7 @@ import com.sun.jdi.ObjectCollectedException;
 import com.sun.jdi.InvalidLineNumberException;
 import com.sun.jdi.InternalException;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.SModelStereotype;
 
 public class LineBreakpoint extends JavaBreakpoint implements ILocationBreakpoint {
   private static final Logger LOG = Logger.getLogger(LineBreakpoint.class);
@@ -77,7 +78,7 @@ public class LineBreakpoint extends JavaBreakpoint implements ILocationBreakpoin
       String fileName = myLocation.getFileName();
       if (fileName != null && fileName.endsWith(".java")) {
         fileName = fileName.substring(0, fileName.length() - ".java".length());
-        className = myLocation.getNodePointer().getModelReference().getLongName() + "." + fileName;
+        className = SModelStereotype.withoutStereotype(myLocation.getNodePointer().getModelReference().getModelName()) + "." + fileName;
       } else {
         return null;
       }

@@ -21,13 +21,13 @@ public class ModelRenderer extends ProjectLevelRenderer {
     final SModelReference modelReference = (SModelReference) value;
     SModel model = SModelRepository.getInstance().getModelDescriptor(modelReference);
     if (model == null) {
-      String longName = modelReference.getSModelFqName().toString();
+      String longName = modelReference.getModelName();
       return (longName.equals("") ?
         "<no name>" :
         longName
       );
     }
-    return modelReference.getSModelFqName().toString();
+    return modelReference.getModelName();
   }
 
   @Override

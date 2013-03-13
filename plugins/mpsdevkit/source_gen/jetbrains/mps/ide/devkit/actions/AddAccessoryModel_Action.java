@@ -27,6 +27,7 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.smodel.IScope;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.logging.Logger;
 
 public class AddAccessoryModel_Action extends BaseAction {
@@ -101,7 +102,7 @@ public class AddAccessoryModel_Action extends BaseAction {
           language.setLanguageDescriptor(descriptor, true);
           IScope scope = language.getScope();
           if (scope.getModelDescriptor(result) == null) {
-            int res = JOptionPane.showConfirmDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "<html>Model <b>" + result.getLongName() + "</b> is added to accessories</html>\n\n" + "Do you want to automatically the module add to dependency?", "Add Dependency", JOptionPane.YES_NO_OPTION);
+            int res = JOptionPane.showConfirmDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "<html>Model <b>" + SModelStereotype.withoutStereotype(result.getModelName()) + "</b> is added to accessories</html>\n\n" + "Do you want to automatically the module add to dependency?", "Add Dependency", JOptionPane.YES_NO_OPTION);
             if (res == JOptionPane.YES_OPTION) {
               SModel md = SModelRepository.getInstance().getModelDescriptor(result);
               language.addDependency(md.getModule().getModuleReference(), false);

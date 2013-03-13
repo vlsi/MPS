@@ -297,7 +297,7 @@
     <nodeInfo nodeId="8299073042392951834" fileName="MoveConcepts.java" startLine="97" startPosition="50" endLine="98" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8299073042392962476" fileName="MoveConcepts.java" startLine="100" startPosition="92" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6934781091951606361" fileName="MoveConcepts.java" startLine="101" startPosition="0" endLine="102" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6934781091951606365" fileName="MoveConcepts.java" startLine="103" startPosition="62" endLine="104" endPosition="243" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6934781091951606365" fileName="MoveConcepts.java" startLine="103" startPosition="62" endLine="104" endPosition="229" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6934781091951606387" fileName="MoveConcepts.java" startLine="105" startPosition="5" endLine="106" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6934781091951606357" fileName="MoveConcepts.java" startLine="106" startPosition="198" endLine="107" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="3883347270486229102" fileName="MoveConcepts.java" startLine="108" startPosition="98" endLine="109" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -379,7 +379,7 @@
     <scopeInfo nodeId="8299073042392964935" fileName="MoveConcepts.java" startLine="87" startPosition="48" endLine="88" endPosition="70" />
     <scopeInfo nodeId="8299073042392964970" fileName="MoveConcepts.java" startLine="91" startPosition="49" endLine="92" endPosition="26" />
     <scopeInfo nodeId="8299073042392951833" fileName="MoveConcepts.java" startLine="97" startPosition="50" endLine="98" endPosition="68" />
-    <scopeInfo nodeId="6934781091951606364" fileName="MoveConcepts.java" startLine="103" startPosition="62" endLine="104" endPosition="243" />
+    <scopeInfo nodeId="6934781091951606364" fileName="MoveConcepts.java" startLine="103" startPosition="62" endLine="104" endPosition="229" />
     <scopeInfo nodeId="3883347270486229119" fileName="MoveConcepts.java" startLine="110" startPosition="58" endLine="111" endPosition="52" />
     <scopeInfo nodeId="3883347270486229123" fileName="MoveConcepts.java" startLine="112" startPosition="97" endLine="113" endPosition="50" />
     <scopeInfo nodeId="8299073042392952008" fileName="MoveConcepts.java" startLine="116" startPosition="26" endLine="117" endPosition="126" />
