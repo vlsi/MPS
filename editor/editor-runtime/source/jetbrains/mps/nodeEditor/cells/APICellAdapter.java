@@ -19,11 +19,14 @@ import jetbrains.mps.editor.runtime.impl.LayoutConstraints;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
@@ -82,7 +85,33 @@ public class APICellAdapter {
   }
 
   public static boolean validate(EditorCell cell, boolean strict, boolean canActivatePopup) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).validate(strict, canActivatePopup);
+    SubstituteInfo substituteInfo = cell.getSubstituteInfo();
+    if (substituteInfo == null) {
+      return false;
+    }
+
+    if (cell instanceof EditorCell_Collection) {
+      return false;
+    }
+    String pattern = cell.renderText().getText();
+
+    if (pattern.equals("")) return false;
+
+    List<SubstituteAction> matchingActions = substituteInfo.getMatchingActions(pattern, strict);
+    if (matchingActions.size() == 0 && canActivatePopup) {
+      return false;
+    }
+    if (matchingActions.size() != 1) {
+      if (canActivatePopup) {
+        ((EditorComponent) cell.getEditorComponent()).activateNodeSubstituteChooser(cell, false);
+      } else {
+        return false;
+      }
+      return true;
+    }
+
+    matchingActions.get(0).substitute(cell.getContext(), pattern);
+    return true;
   }
 
   public static boolean isLastPositionInBigCell(EditorCell cell) {

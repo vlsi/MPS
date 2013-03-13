@@ -2532,11 +2532,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myInsideOfCommand;
   }
 
-  public boolean activateNodeSubstituteChooser(EditorCell editorCell, boolean resetPattern) {
+  public boolean activateNodeSubstituteChooser(jetbrains.mps.openapi.editor.cells.EditorCell editorCell, boolean resetPattern) {
     return activateNodeSubstituteChooser(editorCell, resetPattern, false);
   }
 
-  public boolean activateNodeSubstituteChooser(EditorCell editorCell, boolean resetPattern, boolean isSmart) {
+  public boolean activateNodeSubstituteChooser(jetbrains.mps.openapi.editor.cells.EditorCell editorCell, boolean resetPattern, boolean isSmart) {
     if (myNodeSubstituteChooser.isVisible()) {
       return true;
       //todo: rebuild menu if smartness changed
@@ -2551,18 +2551,18 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return activateNodeSubstituteChooser(editorCell, substituteInfo, resetPattern, isSmart);
   }
 
-  public boolean activateNodeSubstituteChooser(EditorCell editorCell, SubstituteInfo substituteInfo, boolean resetPattern) {
+  public boolean activateNodeSubstituteChooser(jetbrains.mps.openapi.editor.cells.EditorCell editorCell, SubstituteInfo substituteInfo, boolean resetPattern) {
     return activateNodeSubstituteChooser(editorCell, substituteInfo, resetPattern, false);
   }
 
-  public boolean activateNodeSubstituteChooser(EditorCell editorCell, SubstituteInfo substituteInfo, boolean resetPattern, boolean isSmart) {
+  public boolean activateNodeSubstituteChooser(jetbrains.mps.openapi.editor.cells.EditorCell editorCell, SubstituteInfo substituteInfo, boolean resetPattern, boolean isSmart) {
     if (substituteInfo == null) {
       return false;
     }
 
     // do substitute...
     LOG.debug("substitute info : " + substituteInfo);
-    NodeSubstitutePatternEditor patternEditor = editorCell.createSubstitutePatternEditor();
+    NodeSubstitutePatternEditor patternEditor = ((EditorCell) editorCell).createSubstitutePatternEditor();
     if (resetPattern) {
       patternEditor.toggleReplaceMode();
     }
@@ -2590,7 +2590,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return true;
   }
 
-  private List<SubstituteAction> getMatchingActions(final EditorCell editorCell, final SubstituteInfo substituteInfo, final boolean isSmart, final String pattern) {
+  private List<SubstituteAction> getMatchingActions(final jetbrains.mps.openapi.editor.cells.EditorCell editorCell, final SubstituteInfo substituteInfo, final boolean isSmart, final String pattern) {
     return ModelAccess.instance().runReadAction(new Computable<List<SubstituteAction>>() {
       @Override
       public List<SubstituteAction> compute() {
