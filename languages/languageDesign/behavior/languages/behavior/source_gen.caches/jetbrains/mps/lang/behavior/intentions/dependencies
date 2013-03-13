@@ -7,7 +7,7 @@
     <classNode dependClassName="jetbrains.mps.lang.behavior.intentions.MakeVirtual_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.behavior.intentions.RemoveTVD_Intention" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.intentions.BaseIntentionsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.behavior.intentions.MakeAbstract_Intention" file="MakeAbstract_Intention.java">

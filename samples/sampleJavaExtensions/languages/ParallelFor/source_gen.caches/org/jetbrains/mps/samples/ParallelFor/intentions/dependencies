@@ -17,7 +17,7 @@
   <dependency className="org.jetbrains.mps.samples.ParallelFor.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">
     <classNode dependClassName="jetbrains.mps.intentions.IntentionsManager" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.intentions.DetachFromThreadPool_Intention" />
     <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.intentions.MarkAsNonThreadSafe_Intention" />
     <classNode dependClassName="org.jetbrains.mps.samples.ParallelFor.intentions.MarkAsThreadSafe_Intention" />
