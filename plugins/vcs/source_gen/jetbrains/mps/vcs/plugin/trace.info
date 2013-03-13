@@ -462,7 +462,7 @@
     <nodeInfo nodeId="7545884443035896341" fileName="ReRunMergeFromBackup_Action.java" startLine="119" startPosition="33" endLine="120" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7545884443035896344" fileName="ReRunMergeFromBackup_Action.java" startLine="120" startPosition="29" endLine="121" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="7545884443035896346" fileName="ReRunMergeFromBackup_Action.java" startLine="121" startPosition="30" endLine="122" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="7545884443035896357" fileName="ReRunMergeFromBackup_Action.java" startLine="124" startPosition="7" endLine="125" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035896357" fileName="ReRunMergeFromBackup_Action.java" startLine="124" startPosition="7" endLine="125" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="126" startPosition="27" endLine="127" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8670515752676815436" fileName="ReRunMergeFromBackup_Action.java" startLine="131" startPosition="76" endLine="132" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7545884443035896202" fileName="ReRunMergeFromBackup_Action.java" startLine="135" startPosition="65" endLine="136" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -589,7 +589,7 @@
     <scopeInfo nodeId="7545884443035896304" fileName="ReRunMergeFromBackup_Action.java" startLine="98" startPosition="9" endLine="124" endPosition="7">
       <varInfo nodeId="7545884443035896305" varName="backupFile" />
     </scopeInfo>
-    <scopeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="98" startPosition="9" endLine="125" endPosition="196" />
+    <scopeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="98" startPosition="9" endLine="125" endPosition="193" />
     <scopeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="97" startPosition="96" endLine="128" endPosition="5" />
     <scopeInfo nodeId="7545884443035896082" fileName="ReRunMergeFromBackup_Action.java" startLine="97" startPosition="0" endLine="130" endPosition="0">
       <varInfo nodeId="7545884443035896082" varName="_params" />

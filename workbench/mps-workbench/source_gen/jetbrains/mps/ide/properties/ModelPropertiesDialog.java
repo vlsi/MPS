@@ -49,7 +49,7 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
   public SModel myModel;
 
   /*package*/ ModelPropertiesDialog(final SModel sm, final IOperationContext context) {
-    super("Model Properties for " + sm.getReference().getSModelFqName(), context);
+    super("Model Properties for " + sm.getReference().getModelName(), context);
     myModel = sm;
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
