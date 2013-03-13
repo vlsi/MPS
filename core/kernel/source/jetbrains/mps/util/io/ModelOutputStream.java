@@ -135,7 +135,7 @@ public class ModelOutputStream extends DataOutputStream {
         } else {
           writeByte(8);
         }
-        writeString(ref.getSModelFqName().toString());
+        writeString(ref.getModelName());
       } else {
         writeByte(9);
         writeInt(index);
