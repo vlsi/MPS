@@ -204,101 +204,103 @@
     <unitInfo nodeId="15576470009741251" fileName="MigrateParameterReference_MigrationScript.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.MigrateParameterReference_MigrationScript" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)/1645752949772869851">
-    <nodeInfo nodeId="1645752949772869851" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="24" startPosition="92" endLine="25" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="27" startPosition="31" endLine="28" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="31" startPosition="41" endLine="32" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="35" startPosition="59" endLine="36" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1645752949776295216" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="43" startPosition="47" endLine="44" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1645752949776626854" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="49" startPosition="63" endLine="50" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1645752949776650689" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="51" startPosition="9" endLine="52" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1645752949776688111" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="52" startPosition="92" endLine="53" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1645752949777015862" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="60" startPosition="47" endLine="61" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1645752949777015891" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="65" startPosition="28" endLine="66" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1645752949777087188" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="67" startPosition="79" endLine="68" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="72" startPosition="42" endLine="73" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1645752949777350409" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="78" startPosition="68" endLine="79" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1645752949777350409" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="79" startPosition="159" endLine="80" endPosition="219" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1645752949777350409" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="79" startPosition="159" endLine="80" endPosition="219" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1645752949777350409" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="80" startPosition="219" endLine="81" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1645752949776289690" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="1645752949776314835" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="48" startPosition="28" endLine="51" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1645752949777015860" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="60" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="1645752949777081744" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="66" startPosition="92" endLine="69" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="72" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
-    <nodeInfo nodeId="1645752949776080241" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="41" startPosition="43" endLine="46" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1645752949777015856" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="58" startPosition="43" endLine="63" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1645752949777350409" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="78" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createAnnotationInstance_eltaeh_a0a0a2a0a#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1645752949776078802" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="41" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="1645752949777015854" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="58" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="1645752949776062842" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="39" startPosition="59" endLine="48" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1645752949777015847" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="56" startPosition="52" endLine="65" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="56" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="39" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="1645752949772869851" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="25" startPosition="47" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="25" startPosition="47" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1645752949772869851" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="24" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddMissingOverrideAnnotations_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
-    <scopeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="27" startPosition="31" endLine="28" endPosition="43" />
-    <scopeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="31" startPosition="41" endLine="32" endPosition="43" />
-    <scopeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="35" startPosition="59" endLine="36" endPosition="67" />
-    <scopeInfo nodeId="1645752949776289691" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="43" startPosition="47" endLine="44" endPosition="205" />
-    <scopeInfo nodeId="1645752949776314837" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="49" startPosition="63" endLine="50" endPosition="23" />
-    <scopeInfo nodeId="1645752949777015861" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="60" startPosition="47" endLine="61" endPosition="205" />
-    <scopeInfo nodeId="1645752949777081750" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="67" startPosition="79" endLine="68" endPosition="142" />
-    <scopeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="72" startPosition="42" endLine="73" endPosition="20" />
-    <scopeInfo nodeId="1645752949777350409" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="79" startPosition="159" endLine="80" endPosition="219" />
-    <scopeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="1645752949776289690" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="43" startPosition="0" endLine="46" endPosition="0">
+    <nodeInfo nodeId="1645752949772869851" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="23" startPosition="92" endLine="24" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="26" startPosition="31" endLine="27" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="30" startPosition="41" endLine="31" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="34" startPosition="59" endLine="35" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1645752949776295216" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="42" startPosition="47" endLine="43" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1645752949776626854" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="48" startPosition="63" endLine="49" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1645752949776650689" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="50" startPosition="9" endLine="51" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1645752949776688111" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="51" startPosition="92" endLine="52" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1645752949777015862" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="59" startPosition="47" endLine="60" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1645752949777015891" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="64" startPosition="28" endLine="65" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1645752949777087188" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="66" startPosition="79" endLine="67" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="71" startPosition="42" endLine="72" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1645752949777350409" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="77" startPosition="68" endLine="78" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1645752949777350409" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="78" startPosition="63" endLine="79" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1645752949777350409" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="79" startPosition="159" endLine="80" endPosition="221" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1645752949777350409" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="79" startPosition="159" endLine="80" endPosition="221" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1645752949777350409" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="80" startPosition="221" endLine="81" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1645752949776289690" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1645752949776314835" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="47" startPosition="28" endLine="50" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1645752949777015860" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1645752949777081744" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="65" startPosition="92" endLine="68" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="71" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
+    <nodeInfo nodeId="1645752949776080241" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="40" startPosition="43" endLine="45" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1645752949777015856" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="57" startPosition="43" endLine="62" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1645752949777350409" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="77" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createAnnotationInstance_eltaeh_a0a0a2a0a#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1645752949776078802" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="40" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1645752949777015854" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="57" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1645752949776062842" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="38" startPosition="59" endLine="47" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1645752949777015847" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="55" startPosition="52" endLine="64" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="55" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="38" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1645752949772869851" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="24" startPosition="47" endLine="74" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="24" startPosition="47" endLine="74" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1645752949772869851" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="23" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddMissingOverrideAnnotations_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
+    <scopeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="26" startPosition="31" endLine="27" endPosition="43" />
+    <scopeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="30" startPosition="41" endLine="31" endPosition="43" />
+    <scopeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="34" startPosition="59" endLine="35" endPosition="67" />
+    <scopeInfo nodeId="1645752949776289691" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="42" startPosition="47" endLine="43" endPosition="205" />
+    <scopeInfo nodeId="1645752949776314837" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="48" startPosition="63" endLine="49" endPosition="23" />
+    <scopeInfo nodeId="1645752949777015861" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="59" startPosition="47" endLine="60" endPosition="205" />
+    <scopeInfo nodeId="1645752949777081750" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="66" startPosition="79" endLine="67" endPosition="142" />
+    <scopeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="71" startPosition="42" endLine="72" endPosition="20" />
+    <scopeInfo nodeId="1645752949777350409" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="79" startPosition="159" endLine="80" endPosition="221" />
+    <scopeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="1645752949776289690" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="42" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="1645752949776289690" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1645752949777015860" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="60" startPosition="0" endLine="63" endPosition="0">
+    <scopeInfo nodeId="1645752949777015860" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="59" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="1645752949777015860" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1645752949777081744" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="66" startPosition="92" endLine="69" endPosition="9">
+    <scopeInfo nodeId="1645752949777081744" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="65" startPosition="92" endLine="68" endPosition="9">
       <varInfo nodeId="1645752949777081746" varName="meth" />
     </scopeInfo>
-    <scopeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="72" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="1645752949777350409" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="78" startPosition="68" endLine="81" endPosition="14">
+    <scopeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="71" startPosition="0" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="1645752949777350409" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="77" startPosition="68" endLine="81" endPosition="14">
+      <varInfo nodeId="1645752949777350409" varName="facade" />
       <varInfo nodeId="1645752949777350409" varName="n1" />
     </scopeInfo>
-    <scopeInfo nodeId="1645752949776078803" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="41" startPosition="43" endLine="46" endPosition="15" />
-    <scopeInfo nodeId="1645752949777015855" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="58" startPosition="43" endLine="63" endPosition="15" />
-    <scopeInfo nodeId="1645752949777350409" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="78" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="1645752949776078802" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="41" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="1645752949776078803" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="40" startPosition="43" endLine="45" endPosition="15" />
+    <scopeInfo nodeId="1645752949777015855" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="57" startPosition="43" endLine="62" endPosition="15" />
+    <scopeInfo nodeId="1645752949777350409" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="77" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="1645752949776078802" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="40" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="1645752949776078802" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1645752949777015854" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="58" startPosition="0" endLine="65" endPosition="0">
+    <scopeInfo nodeId="1645752949777015854" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="57" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="1645752949777015854" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1645752949772912956" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="56" startPosition="52" endLine="69" endPosition="9">
+    <scopeInfo nodeId="1645752949772912956" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="55" startPosition="52" endLine="68" endPosition="9">
       <varInfo nodeId="1645752949777015892" varName="finder" />
       <varInfo nodeId="1645752949777015848" varName="instanceMethods" />
     </scopeInfo>
-    <scopeInfo nodeId="1645752949772988378" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="39" startPosition="59" endLine="53" endPosition="79">
+    <scopeInfo nodeId="1645752949772988378" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="38" startPosition="59" endLine="52" endPosition="79">
       <varInfo nodeId="1645752949776650690" varName="finder" />
       <varInfo nodeId="1645752949776062843" varName="instanceMethods" />
     </scopeInfo>
-    <scopeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="56" startPosition="0" endLine="71" endPosition="0">
+    <scopeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="55" startPosition="0" endLine="70" endPosition="0">
       <varInfo nodeId="1645752949772912952" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="39" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="38" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="1645752949772912952" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="25" startPosition="47" endLine="75" endPosition="7" />
-    <scopeInfo nodeId="1645752949772869851" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="24" startPosition="92" endLine="75" endPosition="7" />
-    <scopeInfo nodeId="1645752949772869851" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="24" startPosition="0" endLine="77" endPosition="0">
+    <scopeInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="24" startPosition="47" endLine="74" endPosition="7" />
+    <scopeInfo nodeId="1645752949772869851" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="23" startPosition="92" endLine="74" endPosition="7" />
+    <scopeInfo nodeId="1645752949772869851" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="23" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="1645752949772869851" varName="operationContext" />
     </scopeInfo>
-    <unitInfo nodeId="1645752949776289690" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="42" startPosition="144" endLine="46" endPosition="13" unitName="jetbrains.mps.baseLanguage.scripts.AddMissingOverrideAnnotations_MigrationScript$3" />
-    <unitInfo nodeId="1645752949777015860" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="59" startPosition="144" endLine="63" endPosition="13" unitName="jetbrains.mps.baseLanguage.scripts.AddMissingOverrideAnnotations_MigrationScript$3" />
-    <unitInfo nodeId="1645752949776078802" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="40" startPosition="120" endLine="48" endPosition="9" unitName="jetbrains.mps.baseLanguage.scripts.AddMissingOverrideAnnotations_MigrationScript$2" />
-    <unitInfo nodeId="1645752949777015854" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="57" startPosition="120" endLine="65" endPosition="9" unitName="jetbrains.mps.baseLanguage.scripts.AddMissingOverrideAnnotations_MigrationScript$2" />
-    <unitInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="26" startPosition="28" endLine="75" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.AddMissingOverrideAnnotations_MigrationScript$1" />
-    <unitInfo nodeId="1645752949772869851" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="23" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.AddMissingOverrideAnnotations_MigrationScript" />
+    <unitInfo nodeId="1645752949776289690" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="41" startPosition="144" endLine="45" endPosition="13" unitName="jetbrains.mps.baseLanguage.scripts.AddMissingOverrideAnnotations_MigrationScript$3" />
+    <unitInfo nodeId="1645752949777015860" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="58" startPosition="144" endLine="62" endPosition="13" unitName="jetbrains.mps.baseLanguage.scripts.AddMissingOverrideAnnotations_MigrationScript$3" />
+    <unitInfo nodeId="1645752949776078802" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="39" startPosition="120" endLine="47" endPosition="9" unitName="jetbrains.mps.baseLanguage.scripts.AddMissingOverrideAnnotations_MigrationScript$2" />
+    <unitInfo nodeId="1645752949777015854" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="56" startPosition="120" endLine="64" endPosition="9" unitName="jetbrains.mps.baseLanguage.scripts.AddMissingOverrideAnnotations_MigrationScript$2" />
+    <unitInfo nodeId="1645752949772912952" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="25" startPosition="28" endLine="74" endPosition="5" unitName="jetbrains.mps.baseLanguage.scripts.AddMissingOverrideAnnotations_MigrationScript$1" />
+    <unitInfo nodeId="1645752949772869851" fileName="AddMissingOverrideAnnotations_MigrationScript.java" startLine="22" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.baseLanguage.scripts.AddMissingOverrideAnnotations_MigrationScript" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)/1704189004094297789">
     <nodeInfo nodeId="1704189004094297789" fileName="RemoveThisWhereAppropriate_MigrationScript.java" startLine="14" startPosition="89" endLine="15" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

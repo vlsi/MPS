@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.annotations.Nullable;
 import java.io.File;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
@@ -88,6 +89,7 @@ public class PathHolder_Behavior {
   }
 
   private static SNode createPathHolder_ohoc40_a0a0c0b(Object p0, Object p1, Object p2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathHolder", null, GlobalScope.getInstance(), false);
     n1.setProperty("fullPath", (String) p0);
     n1.setProperty("moduleRelativePath", (String) p1);
@@ -96,6 +98,7 @@ public class PathHolder_Behavior {
   }
 
   private static SNode createPathHolder_ohoc40_a0a0a2a1(Object p0) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathHolder", null, GlobalScope.getInstance(), false);
     n1.setProperty("fullPath", (String) p0);
     return n1;
