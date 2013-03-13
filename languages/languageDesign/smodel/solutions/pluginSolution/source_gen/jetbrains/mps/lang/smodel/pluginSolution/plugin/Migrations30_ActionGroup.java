@@ -27,6 +27,7 @@ public class Migrations30_ActionGroup extends GeneratedActionGroup {
       Migrations30_ActionGroup.this.addAction("jetbrains.mps.lang.smodel.pluginSolution.plugin.MigrateToSNodeReferenceOpenAPI_Action");
       Migrations30_ActionGroup.this.addAction("jetbrains.mps.lang.smodel.pluginSolution.plugin.MigrateToSReferenceOpenAPI_Action");
       Migrations30_ActionGroup.this.addAction("jetbrains.mps.lang.smodel.pluginSolution.plugin.MigrateToSModelIdOpenAPI_Action");
+      Migrations30_ActionGroup.this.addAction("jetbrains.mps.lang.smodel.pluginSolution.plugin.MigrateToSModelReferenceOpenAPI_Action");
       {
         LabelledAnchor action = new LabelledAnchor(Migrations30_ActionGroup.LABEL_ID_remove_concept_properties);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();

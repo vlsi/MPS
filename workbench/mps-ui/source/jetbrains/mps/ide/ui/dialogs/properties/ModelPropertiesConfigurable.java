@@ -214,7 +214,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       importedModelsTable.setDefaultRenderer(SModelReference.class,
         new ModelTableCellRender(getScope()) {
           @Override
-          protected DependencyCellState getDependencyCellState(SModelReference modelReference) {
+          protected DependencyCellState getDependencyCellState(org.jetbrains.mps.openapi.model.SModelReference modelReference) {
             if (!StateUtil.isAvailable((jetbrains.mps.smodel.SModelReference) modelReference)) {
               return DependencyCellState.NOT_AVALIABLE;
             }
