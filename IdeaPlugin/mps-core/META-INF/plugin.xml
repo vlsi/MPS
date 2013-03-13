@@ -28,9 +28,6 @@
       <implementation-class>jetbrains.mps.ide.MPSCoreComponents</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.baseLanguage.facets.BaseLanguageFacets</implementation-class>
-    </component>
-    <component>
       <implementation-class>jetbrains.mps.ide.persistence.PersistenceComponent</implementation-class>
     </component>
     <component>

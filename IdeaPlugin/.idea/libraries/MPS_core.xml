@@ -68,6 +68,7 @@
       <root url="file://$PROJECT_DIR$/../core/tool/common/source_gen" />
       <root url="file://$PROJECT_DIR$/../editor/editorlang-runtime/source" />
       <root url="file://$PROJECT_DIR$/../editor/editorlang-runtime/source_gen" />
+      <root url="file://$PROJECT_DIR$/../languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.facets/source_gen" />
     </SOURCES>
   </library>
 </component>
