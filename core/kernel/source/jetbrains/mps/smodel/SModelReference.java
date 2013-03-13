@@ -93,10 +93,6 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
     return myModelFqName.toString();
   }
 
-  public SModelId getSModelId() {
-    return myModelId;
-  }
-
   public SModelReference update() {
     SModel sm = SModelRepository.getInstance().getModelDescriptor(this);
     if (sm == null) return this;
@@ -145,6 +141,15 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
    */
   public SModelFqName getSModelFqName() {
     return myModelFqName;
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public SModelId getSModelId() {
+    return getModelId();
   }
 
   @Deprecated
