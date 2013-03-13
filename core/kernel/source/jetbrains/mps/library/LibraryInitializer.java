@@ -19,11 +19,10 @@ import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.library.contributor.LibraryContributor.LibDescriptor;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.language.ExtensionRegistry;
-import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -128,10 +127,7 @@ public class LibraryInitializer implements CoreComponent {
     if (toUnload.isEmpty() && toLoad.isEmpty()) return;
 
     CleanupManager.getInstance().cleanup();
-    ClassLoaderManager.getInstance().updateClassPath();
-
-    LanguageRegistry.getInstance().loadLanguages();
-//    ExtensionRegistry.getInstance().loadExtensionDescriptors();
+    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
 
     for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
       m.invalidateDependencies();

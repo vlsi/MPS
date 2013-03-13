@@ -97,21 +97,6 @@ public class LanguageRegistry implements CoreComponent {
     INSTANCE = null;
   }
 
-  public void loadLanguages() {
-    if (myLanguages != null) return;
-
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        myLanguageToNamespace = new HashMap<Language, String>();
-        myLanguages = new HashMap<String, LanguageRuntime>();
-
-        MPSModuleRepository.getInstance().addModuleRepositoryListener(new MyModuleRepositoryAdapter());
-        loadLanguageRuntimes();
-      }
-    });
-  }
-
   private void unloadLanguageRuntimes() {
     ModelAccess.assertLegalWrite();
     notifyUnload(myLanguages.values(), true);
