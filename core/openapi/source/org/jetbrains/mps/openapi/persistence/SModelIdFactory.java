@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,16 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.model;
+package org.jetbrains.mps.openapi.persistence;
 
-import org.jetbrains.mps.annotations.Immutable;
+import org.jetbrains.mps.openapi.model.SModelId;
 
 /**
- * Uniquely identifies a node within a model. Will be used as keys in maps and so should correctly implement equals() and hashCode().
- * Custom persistence implementations may provide their own implementations of SNodeId.
+ *  Factories that create SModelId. They are registered through PersistenceFacade and associated with model id types.
  */
-@Immutable
-public interface SNodeId {
+public interface SModelIdFactory {
 
-  String getType();
+  /**
+   *  Given a serialized representation (without a type+colon prefix), creates an Immutable class.
+   */
+  SModelId create(String text);
 }

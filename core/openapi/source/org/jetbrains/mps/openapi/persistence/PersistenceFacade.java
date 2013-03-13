@@ -16,6 +16,7 @@
 package org.jetbrains.mps.openapi.persistence;
 
 import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
 import java.util.Set;
 
@@ -67,20 +68,53 @@ public abstract class PersistenceFacade {
   /**
    * Creates an SModelId from a given text identifier.
    * Allows implementations to provide their own version of SModelId.
-   * todo add SModelIdFactory to openAPI
    *
    * @param text A text that the custom implementation of SModelIdFactory could use to build its own SModelId.
    *             The text comes in the following format: "type:restInterpretedByTheConcreteTypeProvider"
-   *             The actual type of the model root is followed by implementation-specific text.
+   *             The actual type of the model id is followed by implementation-specific text.
+   * @throws IllegalArgumentException if the text does not contain a parsable <code>SModelId</code>.
    */
-  public abstract SModelId getModelId(String text);
+  public abstract SModelId createModelId(String text);
 
+  /**
+   * Registers the factory with the model id type, overwriting potential earlier registration.
+   *
+   * @param factory The factory to register, null to clear the registration for the given type.
+   */
+  public abstract void setModelIdFactory(String type, SModelIdFactory factory);
+
+  /**
+   * Creates an SNodeId from a given text identifier.
+   * Allows implementations to provide their own version of SNodeId.
+   *
+   * @param text A text that the custom implementation of SNodeIdFactory could use to build its own SNodeId.
+   *             The text comes in the following format: "type:restInterpretedByTheConcreteTypeProvider"
+   *             The actual type of the node id is followed by implementation-specific text.
+   * @throws IllegalArgumentException if the text does not contain a parsable <code>SNodeId</code>.
+   */
+  public abstract SNodeId createNodeId(String text);
+
+  /**
+   * Registers the factory with the node id type, overwriting potential earlier registration.
+   *
+   * @param factory The factory to register, null to clear the registration for the given type.
+   */
+  public abstract void setNodeIdFactory(String type, SNodeIdFactory factory);
+
+  /**
+   * Find usages participants speed-up usages search by indexing the content.
+   * see {@link FindUsagesParticipant}
+   */
   public abstract Set<FindUsagesParticipant> getFindUsagesParticipants();
 
   public abstract void addFindUsagesParticipant(FindUsagesParticipant participant);
 
   public abstract void removeFindUsagesParticipant(FindUsagesParticipant participant);
 
+  /**
+   * Navigation participants speed-up building Go to lists by indexing the available targets.
+   * see {@link NavigationParticipant}
+   */
   public abstract Set<NavigationParticipant> getNavigationParticipants();
 
   public abstract void addNavigationParticipant(NavigationParticipant participant);
