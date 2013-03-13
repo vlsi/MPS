@@ -42,7 +42,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class TestModule extends ClassLoadingModule {
 
   private IModule myPeer;
-  private Map<SModelFqName, SModel> myModels = new ConcurrentHashMap<SModelFqName, SModel>();
+  private Map<String, SModel> myModels = new ConcurrentHashMap<String, SModel>();
   private Map<SModel, SModel> myOriginalModels = new HashMap<SModel, SModel>();
 
   public TestModule(String namespace, String moduleId, IModule peer) {
@@ -88,7 +88,7 @@ public class TestModule extends ClassLoadingModule {
     SModelFqName sModelFqName = new SModelFqName(longName, stereotype);
     return
       SModelRepository.getInstance().getModelDescriptor(sModelFqName) == null
-        && !myModels.containsKey(sModelFqName);
+        && !myModels.containsKey(sModelFqName.toString());
   }
 
   public SModel createModel(SModel originalModel) {
@@ -100,7 +100,7 @@ public class TestModule extends ClassLoadingModule {
     SModelFqName fqName = new SModelFqName(SNodeOperations.getModelLongName(originalModel), stereotype);
     SModel result = new TestSModelDescriptor(fqName, jetbrains.mps.util.SNodeOperations.getModelLongName(originalModel), originalModel);
 
-    myModels.put(result.getReference().getSModelFqName(), result);
+    myModels.put(result.getReference().getModelName(), result);
     myOriginalModels.put(result, originalModel);
     invalidateCaches();
     return result;
@@ -182,7 +182,7 @@ public class TestModule extends ClassLoadingModule {
     @Override
     public SModel resolveModel(SModelReference reference) {
       if (SModelStereotype.withoutStereotype(reference.getModelName()).equals(myLongName)) {
-        SModel descriptor = myModels.get(reference.getSModelFqName());
+        SModel descriptor = myModels.get(reference.getModelName());
         if (descriptor != null) {
           return descriptor;
         }
