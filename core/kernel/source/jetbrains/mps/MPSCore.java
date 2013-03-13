@@ -24,6 +24,7 @@ import jetbrains.mps.datatransfer.PasteWrappersManager;
 import jetbrains.mps.extapi.module.FacetsRegistry;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import jetbrains.mps.library.LibraryInitializer;
+import jetbrains.mps.make.facets.BootstrapMakeFacets;
 import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.GlobalScope;
@@ -117,6 +118,8 @@ public class MPSCore extends ComponentPlugin {
 
     init(new FastFindUsagesRegistry());
     init(new FastGoToRegistry());
+    
+    init(new BootstrapMakeFacets());
   }
 
   @Override

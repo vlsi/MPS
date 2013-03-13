@@ -47,6 +47,7 @@
       <modulePath path="${project}/core/kernel/smodelRuntime/jetbrains.mps.runtime.msd" folder="core.kernel" />
       <modulePath path="${project}/core/kernel/solutions/jetbrains.mps.kernel.tests/jetbrains.mps.kernel.tests.msd" folder="core.kernel" />
       <modulePath path="${project}/core/kernel/stubUtils/stubUtils.msd" folder="core" />
+      <modulePath path="${project}/core/make-runtime/solutions/jetbrains.mps.make.facets/jetbrains.mps.make.facets.msd" folder="core.make" />
       <modulePath path="${project}/core/make-runtime/solutions/jetbrains.mps.make.runtime/jetbrains.mps.make.runtime.msd" folder="core.make" />
       <modulePath path="${project}/core/make-runtime/solutions/jetbrains.mps.make/jetbrains.mps.make.msd" folder="core.make" />
       <modulePath path="${project}/core/persistence/jetbrains.mps.persistence.msd" folder="core.kernel" />
@@ -61,7 +62,6 @@
       <modulePath path="${project}/editor/typesystemIntegration/typesystemIntegration.msd" folder="core.editor" />
       <modulePath path="${project}/languages/baseLanguage/baseLanguage/jetbrains.mps.baseLanguage.mpl" folder="baseLanguage" />
       <modulePath path="${project}/languages/baseLanguage/baseLanguage/sandbox/jetbrains.mps.baseLanguage.sandbox.msd" folder="baseLanguage" />
-      <modulePath path="${project}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.facets/jetbrains.mps.baseLanguage.facets.msd" folder="core.make" />
       <modulePath path="${project}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/jetbrains.mps.baseLanguage.test.msd" folder="baseLanguage" />
       <modulePath path="${project}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.scopes/jetbrains.mps.baseLanguage.scopes.msd" folder="baseLanguage" />
       <modulePath path="${project}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/jetbrains.mps.baseLanguage.search.msd" folder="baseLanguage" />

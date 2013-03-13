@@ -10,8 +10,8 @@ core/refactoring-runtime/classes
 core/typesystemEngine/classes
 core/generator/classes
 core/make-runtime/classes
+core/make-runtime/solutions/jetbrains.mps.make.facets/classes
 languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes
-languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.facets/classes
 languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes
 languages/baseLanguage/collections/runtime/classes
 languages/baseLanguage/closures/runtime/classes

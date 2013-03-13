@@ -86,7 +86,7 @@
     <orderEntry type="module" module-name="uiTests" scope="PROVIDED" />
     <orderEntry type="module" module-name="vcs" scope="PROVIDED" />
     <orderEntry type="module" module-name="vcs-core" scope="PROVIDED" />
-    <orderEntry type="module" module-name="baseLanguage-facets" scope="PROVIDED" />
+    <orderEntry type="module" module-name="make-facets" scope="PROVIDED" />
   </component>
 </module>
 

@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.facets.BootstrapMakeFacets" file="BootstrapMakeFacets.java">
+  <dependency className="jetbrains.mps.make.facets.BootstrapMakeFacets" file="BootstrapMakeFacets.java">
     <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.facets.JavaCompile_Facet" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.facets.ReloadClasses_Facet" />
     <classNode dependClassName="jetbrains.mps.make.facet.FacetRegistry" />
     <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
+    <classNode dependClassName="jetbrains.mps.make.facets.JavaCompile_Facet" />
+    <classNode dependClassName="jetbrains.mps.make.facets.ReloadClasses_Facet" />
     <classNode extendsClassName="jetbrains.mps.components.CoreComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.facets.FacetAspectDescriptor" file="FacetAspectDescriptor.java">
+  <dependency className="jetbrains.mps.make.facets.FacetAspectDescriptor" file="FacetAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.facets.FacetManifest" />
     <classNode dependClassName="jetbrains.mps.make.facet.IFacetManifest" />
+    <classNode dependClassName="jetbrains.mps.make.facets.FacetManifest" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.FacetDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.structure.DescriptorProvider" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.facets.FacetManifest" file="FacetManifest.java">
+  <dependency className="jetbrains.mps.make.facets.FacetManifest" file="FacetManifest.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.facets.JavaCompile_Facet" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.facets.ReloadClasses_Facet" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
+    <classNode dependClassName="jetbrains.mps.make.facets.JavaCompile_Facet" />
+    <classNode dependClassName="jetbrains.mps.make.facets.ReloadClasses_Facet" />
     <classNode extendsClassName="jetbrains.mps.make.facet.IFacetManifest" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.facets.JavaCompile_Facet" file="JavaCompile_Facet.java">
+  <dependency className="jetbrains.mps.make.facets.JavaCompile_Facet" file="JavaCompile_Facet.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.ClassLoader" />
@@ -46,9 +46,6 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.MPSCore" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.facets.JavaCompile_Facet.Target_auxCompile.Parameters" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.facets.JavaCompile_Facet.Target_compile.Parameters" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.facets.JavaCompile_Facet.Target_compileToMemory.Parameters" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.compiler.CompilationResultAdapter" />
@@ -67,6 +64,9 @@
     <classNode dependClassName="jetbrains.mps.make.ModuleMaker" />
     <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
+    <classNode dependClassName="jetbrains.mps.make.facets.JavaCompile_Facet.Target_auxCompile.Parameters" />
+    <classNode dependClassName="jetbrains.mps.make.facets.JavaCompile_Facet.Target_compile.Parameters" />
+    <classNode dependClassName="jetbrains.mps.make.facets.JavaCompile_Facet.Target_compileToMemory.Parameters" />
     <classNode dependClassName="jetbrains.mps.make.resources.IPropertiesAccessor" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
     <classNode dependClassName="jetbrains.mps.make.script.IConfig" />
@@ -96,7 +96,7 @@
     <classNode extendsClassName="jetbrains.mps.make.facet.Stub" />
     <classNode extendsClassName="jetbrains.mps.make.resources.IPropertiesPersistence" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.facets.ReloadClasses_Facet" file="ReloadClasses_Facet.java">
+  <dependency className="jetbrains.mps.make.facets.ReloadClasses_Facet" file="ReloadClasses_Facet.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
