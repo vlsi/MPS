@@ -255,7 +255,7 @@ public class MPSPsiRef extends MPSPsiNodeBase {
 
   @Override
   public String toString() {
-    return "reference in " + role;
+    return "MPSPsiRef: reference in " + role;
   }
 
   @Override
