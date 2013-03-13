@@ -162,7 +162,7 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
    * @Deprecated in 3.0
    */
   public String getLongName() {
-    return myModelFqName.getLongName();
+    return SModelStereotype.withoutStereotype(getModelName());
   }
 
   @Deprecated
@@ -171,7 +171,7 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
    * @Deprecated in 3.0
    */
   public String getStereotype() {
-    return myModelFqName.getStereotype();
+    return SModelStereotype.getStereotype(getModelName());
   }
 
   @Deprecated
@@ -180,6 +180,6 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
    * @Deprecated in 3.0
    */
   public boolean hasStereotype() {
-    return myModelFqName.hasStereotype();
+    return !SModelStereotype.getStereotype(getModelName()).equals("");
   }
 }
