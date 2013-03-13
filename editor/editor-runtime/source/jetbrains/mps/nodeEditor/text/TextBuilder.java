@@ -72,12 +72,12 @@ public class TextBuilder implements jetbrains.mps.openapi.editor.TextBuilder {
     TextBuilder result = new TextBuilder();
     String delim = insertSpace ? " " : "";
     int delimWidth = delim.length();
-    
+
     result.myWidth = this.myWidth + getWidth(builder) + delimWidth;
 
     Iterator<StringBuffer> builderIterator = builder.getLines().iterator();
     Iterator<StringBuffer> myIterator = getLines().iterator();
-    while (myIterator.hasNext() || builderIterator.hasNext()){
+    while (myIterator.hasNext() || builderIterator.hasNext()) {
       StringBuffer resultLine;
       if (myIterator.hasNext()) {
         StringBuffer myCurrentLine = myIterator.next();
@@ -96,7 +96,7 @@ public class TextBuilder implements jetbrains.mps.openapi.editor.TextBuilder {
     result.normalizeWidth();
     return result;
   }
-  
+
   private static int getWidth(jetbrains.mps.openapi.editor.TextBuilder builder) {
     int maxWidth = 0;
     for (StringBuffer line : builder.getLines()) {
