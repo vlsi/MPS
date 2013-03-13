@@ -18,6 +18,7 @@ package jetbrains.mps.ide.findusages.model.holders;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
@@ -53,7 +54,7 @@ public class ModelHolder implements IHolder<SModel> {
   @Override
   @NotNull
   public String getCaption() {
-    return NameUtil.shortNameFromLongName(myModelReference.getLongName());
+    return NameUtil.shortNameFromLongName(SModelStereotype.withoutStereotype(myModelReference.getModelName()));
   }
 
   @Override

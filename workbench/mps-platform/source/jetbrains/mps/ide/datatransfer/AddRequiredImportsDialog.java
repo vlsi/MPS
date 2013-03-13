@@ -25,9 +25,9 @@ import com.intellij.ui.SimpleTextAttributes;
 import com.intellij.ui.components.JBList;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 
@@ -192,10 +192,10 @@ public class AddRequiredImportsDialog extends DialogWrapper {
         } else {
           setIcon(IconManager.getIconForModelReference(ref));
         }
-        String longName = ref.getLongName();
+        String longName = SModelStereotype.withoutStereotype(ref.getModelName());
         append(longName, SimpleTextAttributes.REGULAR_ATTRIBUTES);
-        if (!ref.getStereotype().isEmpty()) {
-          append("@" + ref.getStereotype(), SimpleTextAttributes.REGULAR_ATTRIBUTES);
+        if (!SModelStereotype.getStereotype(ref.getModelName()).isEmpty()) {
+          append("@" + SModelStereotype.getStereotype(ref.getModelName()), SimpleTextAttributes.REGULAR_ATTRIBUTES);
         }
         String module = myImport2Module.get(ref);
         if (module != null && !module.isEmpty()) {

@@ -1204,12 +1204,12 @@ public class SModel implements SModelData {
 
     @Override
     public String getLongName() {
-      return getReference().getLongName();
+      return SModelStereotype.withoutStereotype(getReference().getModelName());
     }
 
     @Override
     public String getStereotype() {
-      return getReference().getStereotype();
+      return SModelStereotype.getStereotype(getReference().getModelName());
     }
 
     @Override

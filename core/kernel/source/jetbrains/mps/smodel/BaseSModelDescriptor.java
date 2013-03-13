@@ -116,13 +116,13 @@ public abstract class BaseSModelDescriptor extends SModelBase implements jetbrai
 
   @Override
   public String getLongName() {
-    return getReference().getLongName();
+    return SModelStereotype.withoutStereotype(getReference().getModelName());
   }
 
   @Override
   @NotNull
   public String getStereotype() {
-    return getReference().getStereotype();
+    return SModelStereotype.getStereotype(getReference().getModelName());
   }
 
   protected abstract jetbrains.mps.smodel.SModel getCurrentModelInternal();

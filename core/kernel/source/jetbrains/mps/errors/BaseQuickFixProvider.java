@@ -19,6 +19,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.HashMap;
@@ -37,7 +38,7 @@ public class BaseQuickFixProvider implements QuickFixProvider {
   private boolean myIsError = false;
 
   public BaseQuickFixProvider(String classFQName) {
-    myClassFQName = SModelReference.fromString(NameUtil.namespaceFromLongName(classFQName)).getLongName() +
+    myClassFQName = SModelStereotype.withoutStereotype(SModelReference.fromString(NameUtil.namespaceFromLongName(classFQName)).getModelName()) +
       "." + NameUtil.shortNameFromLongName(classFQName);   //without stereotypes, that is.
     myQuickFix = null;
     myQuickFixTaken = false;

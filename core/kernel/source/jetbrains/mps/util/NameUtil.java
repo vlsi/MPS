@@ -17,6 +17,7 @@ package jetbrains.mps.util;
 
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.misc.ObjectCache;
 import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
@@ -397,8 +398,8 @@ public class NameUtil {
   }
 
   public static String compactModelName(SModelReference ref) {
-    String compactNamespace = NameUtil.compactNamespace(ref.getLongName());
-    String st = ref.getStereotype();
+    String compactNamespace = NameUtil.compactNamespace(SModelStereotype.withoutStereotype(ref.getModelName()));
+    String st = SModelStereotype.getStereotype(ref.getModelName());
     if (st.length() == 0) {
       return compactNamespace;
     } else {

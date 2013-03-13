@@ -25,7 +25,8 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.runtime.IClassLoadingModule;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.SNodeOperations;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.vfs.IFile;
@@ -180,7 +181,7 @@ public class TestModule extends ClassLoadingModule {
 
     @Override
     public SModel resolveModel(SModelReference reference) {
-      if (reference.getLongName().equals(myLongName)) {
+      if (SModelStereotype.withoutStereotype(reference.getModelName()).equals(myLongName)) {
         SModel descriptor = myModels.get(reference.getSModelFqName());
         if (descriptor != null) {
           return descriptor;
