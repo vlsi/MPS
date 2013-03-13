@@ -731,8 +731,8 @@
     <nodeInfo nodeId="2551169102353647757" fileName="Generator_Test.java" startLine="212" startPosition="72" endLine="213" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5646063728432375841" fileName="Generator_Test.java" startLine="221" startPosition="7" endLine="222" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5646063728432375840" fileName="Generator_Test.java" startLine="222" startPosition="36" endLine="223" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5646063728432375695" fileName="Generator_Test.java" startLine="223" startPosition="0" endLine="224" endPosition="286" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8536620230643695560" fileName="Generator_Test.java" startLine="224" startPosition="286" endLine="225" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5646063728432375695" fileName="Generator_Test.java" startLine="223" startPosition="0" endLine="224" endPosition="311" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8536620230643695560" fileName="Generator_Test.java" startLine="224" startPosition="311" endLine="225" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="5646063728432375721" fileName="Generator_Test.java" startLine="225" startPosition="0" endLine="226" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5646063728432375725" fileName="Generator_Test.java" startLine="226" startPosition="37" endLine="227" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5646063728432375731" fileName="Generator_Test.java" startLine="227" startPosition="35" endLine="228" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

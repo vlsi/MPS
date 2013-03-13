@@ -221,7 +221,7 @@ public class Generator_Test extends MockTestCase {
     });
     Mockups.allowing(context, mons);
 
-    IScript scr = scb.withFacetName(new IFacet.Name("jetbrains.mps.make.tests.Maker_")).withFacetName(new IFacet.Name("jetbrains.mps.make.tests.Generator_")).withFacetName(new IFacet.Name("TextGen_")).withFinalTarget(new ITarget.Name("jetbrains.mps.make.tests.Maker_.Make")).toScript();
+    IScript scr = scb.withFacetName(new IFacet.Name("jetbrains.mps.make.tests.Maker_")).withFacetName(new IFacet.Name("jetbrains.mps.make.tests.Generator_")).withFacetName(new IFacet.Name("jetbrains.mps.make.tests.TextGen_")).withFinalTarget(new ITarget.Name("jetbrains.mps.make.tests.Maker_.Make")).toScript();
 
     Assert.assertTrue(scr.isValid());
     ITarget dt = scr.finalTarget();
