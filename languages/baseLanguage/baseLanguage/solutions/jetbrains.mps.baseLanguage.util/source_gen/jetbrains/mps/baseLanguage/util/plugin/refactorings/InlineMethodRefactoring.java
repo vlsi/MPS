@@ -23,6 +23,7 @@ import jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction;
 import jetbrains.mps.baseLanguage.search.LocalVariablesScope;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.baseLanguage.search.VisibilityUtil;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -313,6 +314,7 @@ public class InlineMethodRefactoring {
   }
 
   private static SNode _quotation_createNode_49noxv_a0a0a1a9(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement", null, null, GlobalScope.getInstance(), false);

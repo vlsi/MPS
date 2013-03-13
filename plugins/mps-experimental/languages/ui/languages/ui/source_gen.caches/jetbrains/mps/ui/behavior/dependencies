@@ -32,6 +32,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.ui.behavior.AppendUIObjectStatement_BehaviorDescriptor" file="AppendUIObjectStatement_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -208,6 +209,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.ui.behavior.CreateUIObjectStatement_BehaviorDescriptor" file="CreateUIObjectStatement_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -318,6 +320,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.ui.behavior.InlineController_BehaviorDescriptor" file="InlineController_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -343,6 +346,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.ui.behavior.InsertUIObjectStatement_BehaviorDescriptor" file="InsertUIObjectStatement_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -440,6 +444,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.ui.behavior.UIObjectStatement_BehaviorDescriptor" file="UIObjectStatement_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -488,6 +493,7 @@
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.ui.behavior.Validator_BehaviorDescriptor" file="Validator_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />

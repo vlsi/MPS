@@ -16,6 +16,7 @@ import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
@@ -79,6 +80,7 @@ public class typeof_ConjugateOperation_InferenceRule extends AbstractInferenceRu
   }
 
   private static SNode _quotation_createNode_2f5qmh_a0a0a0a0b(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, null, GlobalScope.getInstance(), false);
@@ -90,6 +92,7 @@ public class typeof_ConjugateOperation_InferenceRule extends AbstractInferenceRu
   }
 
   private static SNode _quotation_createNode_2f5qmh_a0a0a0a0a1(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, null, GlobalScope.getInstance(), false);

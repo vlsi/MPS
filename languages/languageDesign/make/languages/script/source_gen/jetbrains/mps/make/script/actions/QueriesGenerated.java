@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -253,6 +254,7 @@ public class QueriesGenerated {
   }
 
   private static SNode _quotation_createNode_hskkdq_a0a0a0a(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.script.structure.ReportFeedbackStatement", null, null, GlobalScope.getInstance(), false);
@@ -263,6 +265,7 @@ public class QueriesGenerated {
   }
 
   private static SNode _quotation_createNode_kz2qu0_a0a0a0a() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -275,6 +278,7 @@ public class QueriesGenerated {
   }
 
   private static SNode _quotation_createNode_kz2qu0_a0a0a3a(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.script.structure.AdvanceWorkStatement", null, null, GlobalScope.getInstance(), false);
@@ -285,6 +289,7 @@ public class QueriesGenerated {
   }
 
   private static SNode _quotation_createNode_kz2qu0_a0a0a4a(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.script.structure.FinishWorkStatement", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "workStatement", (SNode) parameter_1);

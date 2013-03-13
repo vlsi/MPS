@@ -25,11 +25,10 @@ import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class TransformatorImpl extends TransformatorBuilder.Transformator {
@@ -781,12 +780,14 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
   }
 
   private static SNode _quotation_createNode_s72qk1_b0c0a0a0c0l() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_s72qk1_a0a4a3a71(Object parameter_1, Object parameter_2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -803,6 +804,7 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
   }
 
   private static SNode _quotation_createNode_s72qk1_a0a3a7a71(Object parameter_1, Object parameter_2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -819,20 +821,23 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
   }
 
   private static SNode _quotation_createNode_s72qk1_b0a0a0a1a91() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070560812")));
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070560812")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_s72qk1_b0a0a0b0t() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070560812")));
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070560812")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_s72qk1_a0a0a0a2a2a1a12(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -841,12 +846,12 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     SNode quotedNode_7 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setReference("classifier", SReference.create("classifier", quotedNode_3, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Boolean")));
+    quotedNode_3.setReference("classifier", SReference.create("classifier", quotedNode_3, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Boolean")));
     quotedNode_2.addChild("type", quotedNode_3);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_4, "methodName", "getJavaValue");
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5.setReference("classifier", SReference.create("classifier", quotedNode_5, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
+    quotedNode_5.setReference("classifier", SReference.create("classifier", quotedNode_5, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     quotedNode_4.addChild("returnType", quotedNode_5);
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_7 = (SNode) parameter_1;
@@ -859,12 +864,13 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
   }
 
   private static SNode _quotation_createNode_s72qk1_a0a0a2a1a22(Object parameter_1, Object parameter_2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setReference("classConcept", SReference.create("classConcept", quotedNode_3, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070562907")));
-    quotedNode_3.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_3, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070562913")));
+    quotedNode_3.setReference("classConcept", SReference.create("classConcept", quotedNode_3, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070562907")));
+    quotedNode_3.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_3, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070562913")));
     quotedNode_4 = (SNode) parameter_1;
     if (quotedNode_4 != null) {
       quotedNode_3.addChild("actualArgument", HUtil.copyIfNecessary(quotedNode_4));
@@ -877,28 +883,31 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
   }
 
   private static SNode _quotation_createNode_s72qk1_b0a0c0b0w() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070560812")));
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070560812")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_s72qk1_b0a0a2a1a22() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070560812")));
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070560812")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_s72qk1_a0a0a0c0b0w(Object parameter_1, Object parameter_2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NotExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setReference("classConcept", SReference.create("classConcept", quotedNode_4, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070562907")));
-    quotedNode_4.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_4, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070562913")));
+    quotedNode_4.setReference("classConcept", SReference.create("classConcept", quotedNode_4, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070562907")));
+    quotedNode_4.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_4, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070562913")));
     quotedNode_5 = (SNode) parameter_1;
     if (quotedNode_5 != null) {
       quotedNode_4.addChild("actualArgument", HUtil.copyIfNecessary(quotedNode_5));
@@ -912,20 +921,23 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
   }
 
   private static SNode _quotation_createNode_s72qk1_b0a0a2a1a22_0() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070560812")));
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070560812")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_s72qk1_b0a0a0c0b0w() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070560812")));
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070560812")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_s72qk1_a0a0a0a0a0c0b0w(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -941,17 +953,17 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     SNode quotedNode_14 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setReference("classifier", SReference.create("classifier", quotedNode_3, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~String")));
+    quotedNode_3.setReference("classifier", SReference.create("classifier", quotedNode_3, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~String")));
     quotedNode_2.addChild("type", quotedNode_3);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_4, "methodName", "getJavaValue");
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5.setReference("classifier", SReference.create("classifier", quotedNode_5, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
+    quotedNode_5.setReference("classifier", SReference.create("classifier", quotedNode_5, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     quotedNode_4.addChild("returnType", quotedNode_5);
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_6, "methodName", "invokeMethod");
     quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_7.setReference("classifier", SReference.create("classifier", quotedNode_7, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070560812")));
+    quotedNode_7.setReference("classifier", SReference.create("classifier", quotedNode_7, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070560812")));
     quotedNode_6.addChild("returnType", quotedNode_7);
     quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_8, "value", "toString");
@@ -962,7 +974,7 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_10, "methodName", "getThreadReference");
     quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_12.setReference("classifier", SReference.create("classifier", quotedNode_12, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jdi(JDK/com.sun.jdi@java_stub)"), SNodeId.fromString("~ThreadReference")));
+    quotedNode_12.setReference("classifier", SReference.create("classifier", quotedNode_12, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jdi(JDK/com.sun.jdi@java_stub)"), facade.createNodeId("~ThreadReference")));
     quotedNode_10.addChild("returnType", quotedNode_12);
     quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_10.addChild("instance", quotedNode_13);
@@ -979,33 +991,38 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
   }
 
   private static SNode _quotation_createNode_s72qk1_b0a0a0a0a0a2a1a22() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~String")));
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~String")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_s72qk1_b0a0a0a0a0a0c0b0w() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_s72qk1_b0a0a0a0a0a2a1a22_0() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070563929")));
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070563929")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_s72qk1_b0a0a0a0a0c0b0w() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~String")));
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~String")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_s72qk1_a0a0a0a0a0a2a1a22(Object parameter_1, Object parameter_2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -1020,7 +1037,7 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_5, "methodName", "getJavaValue");
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_6.setReference("classifier", SReference.create("classifier", quotedNode_6, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
+    quotedNode_6.setReference("classifier", SReference.create("classifier", quotedNode_6, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     quotedNode_5.addChild("returnType", quotedNode_6);
     quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_8 = (SNode) parameter_2;
@@ -1033,6 +1050,7 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
   }
 
   private static SNode _quotation_createNode_s72qk1_a0a0a0a1a0c0b0w(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -1048,17 +1066,17 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     SNode quotedNode_14 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setReference("classifier", SReference.create("classifier", quotedNode_3, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~String")));
+    quotedNode_3.setReference("classifier", SReference.create("classifier", quotedNode_3, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~String")));
     quotedNode_2.addChild("type", quotedNode_3);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_4, "methodName", "getJavaValue");
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5.setReference("classifier", SReference.create("classifier", quotedNode_5, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
+    quotedNode_5.setReference("classifier", SReference.create("classifier", quotedNode_5, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     quotedNode_4.addChild("returnType", quotedNode_5);
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_6, "methodName", "invokeMethod");
     quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_7.setReference("classifier", SReference.create("classifier", quotedNode_7, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070560812")));
+    quotedNode_7.setReference("classifier", SReference.create("classifier", quotedNode_7, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070560812")));
     quotedNode_6.addChild("returnType", quotedNode_7);
     quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_8, "value", "toString");
@@ -1069,7 +1087,7 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_10, "methodName", "getThreadReference");
     quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_12.setReference("classifier", SReference.create("classifier", quotedNode_12, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jdi(JDK/com.sun.jdi@java_stub)"), SNodeId.fromString("~ThreadReference")));
+    quotedNode_12.setReference("classifier", SReference.create("classifier", quotedNode_12, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jdi(JDK/com.sun.jdi@java_stub)"), facade.createNodeId("~ThreadReference")));
     quotedNode_10.addChild("returnType", quotedNode_12);
     quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_10.addChild("instance", quotedNode_13);
@@ -1086,33 +1104,38 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
   }
 
   private static SNode _quotation_createNode_s72qk1_b0a0a0a1a0c0b0w() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~String")));
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~String")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_s72qk1_b0a0a0a0a1a0c0b0w() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_s72qk1_b0a0a0a0b0a2a1a22() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~String")));
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~String")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_s72qk1_b0a0a0a0b0a2a1a22_0() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070563929")));
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070563929")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_s72qk1_a0a0a0a0b0a2a1a22(Object parameter_1, Object parameter_2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -1127,7 +1150,7 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_5, "methodName", "getJavaValue");
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_6.setReference("classifier", SReference.create("classifier", quotedNode_6, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
+    quotedNode_6.setReference("classifier", SReference.create("classifier", quotedNode_6, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     quotedNode_5.addChild("returnType", quotedNode_6);
     quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_8 = (SNode) parameter_2;
@@ -1140,6 +1163,7 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
   }
 
   private static SNode _quotation_createNode_s72qk1_a0a0a1a1a32(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -1150,7 +1174,7 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_3, "methodName", "getJavaValue");
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5.setReference("classifier", SReference.create("classifier", quotedNode_5, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
+    quotedNode_5.setReference("classifier", SReference.create("classifier", quotedNode_5, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     quotedNode_3.addChild("returnType", quotedNode_5);
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_7 = (SNode) parameter_1;
@@ -1160,19 +1184,21 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_3.addChild("instance", quotedNode_6);
     quotedNode_2.addChild("expression", quotedNode_3);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setReference("classifier", SReference.create("classifier", quotedNode_4, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Boolean")));
+    quotedNode_4.setReference("classifier", SReference.create("classifier", quotedNode_4, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Boolean")));
     quotedNode_2.addChild("type", quotedNode_4);
     return quotedNode_2;
   }
 
   private static SNode _quotation_createNode_s72qk1_b0a0b0b0x() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070563929")));
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070563929")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_s72qk1_a0a0a2a1a32(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -1183,7 +1209,7 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_3, "methodName", "getJavaValue");
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5.setReference("classifier", SReference.create("classifier", quotedNode_5, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
+    quotedNode_5.setReference("classifier", SReference.create("classifier", quotedNode_5, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     quotedNode_3.addChild("returnType", quotedNode_5);
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_7 = (SNode) parameter_1;
@@ -1198,13 +1224,15 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
   }
 
   private static SNode _quotation_createNode_s72qk1_b0a0c0b0x() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~String")));
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~String")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_s72qk1_a0a0a3a1a32(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -1215,7 +1243,7 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_3, "methodName", "getJavaValue");
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5.setReference("classifier", SReference.create("classifier", quotedNode_5, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
+    quotedNode_5.setReference("classifier", SReference.create("classifier", quotedNode_5, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     quotedNode_3.addChild("returnType", quotedNode_5);
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_7 = (SNode) parameter_1;
@@ -1230,27 +1258,31 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
   }
 
   private static SNode _quotation_createNode_s72qk1_b0a0d0b0x() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~String")));
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~String")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_s72qk1_b0a0a1a72() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070560812")));
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070560812")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_s72qk1_b0a1a1a13() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070560812")));
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070560812")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_s72qk1_a0a0a0a0a23(Object parameter_1, Object parameter_2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -1273,7 +1305,7 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
       quotedNode_7.addChild("expression", HUtil.copyIfNecessary(quotedNode_8));
     }
     quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_9.setReference("classifier", SReference.create("classifier", quotedNode_9, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070563570")));
+    quotedNode_9.setReference("classifier", SReference.create("classifier", quotedNode_9, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070563570")));
     quotedNode_7.addChild("type", quotedNode_9);
     quotedNode_6.addChild("expression", quotedNode_7);
     quotedNode_3.addChild("instance", quotedNode_6);
@@ -1281,13 +1313,15 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
   }
 
   private static SNode _quotation_createNode_s72qk1_a0a0a0b0hb() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070560812")));
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070560812")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_s72qk1_a0a2a0a1a33(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;
     SNode quotedNode_7 = null;
@@ -1321,13 +1355,15 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
   }
 
   private static SNode _quotation_createNode_s72qk1_b0a0a1a33() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070560812")));
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070560812")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_s72qk1_a0a0a0a2a33(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -1343,7 +1379,7 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
       quotedNode_5.addChild("expression", HUtil.copyIfNecessary(quotedNode_6));
     }
     quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_7.setReference("classifier", SReference.create("classifier", quotedNode_7, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070562884")));
+    quotedNode_7.setReference("classifier", SReference.create("classifier", quotedNode_7, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070562884")));
     quotedNode_5.addChild("type", quotedNode_7);
     quotedNode_3.addChild("expression", quotedNode_5);
     quotedNode_2.addChild("instance", quotedNode_3);
@@ -1353,44 +1389,50 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
   }
 
   private static SNode _quotation_createNode_s72qk1_b0a0a2a33() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070560812")));
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070560812")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_s72qk1_b0a0d0b0ib() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_s72qk1_b0a0d0b0ib_0() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070563929")));
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070563929")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_s72qk1_b0a0a3a1a43() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070563570")));
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070563570")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_s72qk1_b0a0a1d0b0ib() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070560812")));
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070560812")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_s72qk1_b0a0b3a1a43() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), SNodeId.fromString("4727801710070560812")));
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070560812")));
     return quotedNode_1;
   }
 }

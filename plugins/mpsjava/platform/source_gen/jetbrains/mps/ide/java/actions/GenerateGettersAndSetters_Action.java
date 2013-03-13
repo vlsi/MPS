@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.logging.Logger;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -144,6 +145,7 @@ public class GenerateGettersAndSetters_Action extends BaseAction {
   private static Logger LOG = Logger.getLogger(GenerateGettersAndSetters_Action.class);
 
   private static SNode _quotation_createNode_5trf1k_a0a4a41a0(Object parameter_1, Object parameter_2, Object parameter_3) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;
@@ -170,6 +172,7 @@ public class GenerateGettersAndSetters_Action extends BaseAction {
   }
 
   private static SNode _quotation_createNode_5trf1k_a0a0i0o0a(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;
     SNode quotedNode_7 = null;

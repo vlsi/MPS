@@ -8,6 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.GlobalScope;
 
 public class subtype_ComplexType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -34,6 +35,7 @@ public class subtype_ComplexType_SubtypingRule extends SubtypingRule_Runtime imp
   }
 
   private static SNode _quotation_createNode_roewzw_a0a1() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.complex.structure.ComplexType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

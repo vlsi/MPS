@@ -18,6 +18,7 @@ import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.logging.Logger;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -163,6 +164,7 @@ public class AnonymousClass_Behavior {
   private static Logger LOG = Logger.getLogger(AnonymousClass_Behavior.class);
 
   private static SNode _quotation_createNode_mhnjwj_a0a3(Object parameter_1, Object parameter_2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);

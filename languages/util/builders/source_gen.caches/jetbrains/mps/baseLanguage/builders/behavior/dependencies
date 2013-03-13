@@ -69,6 +69,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.builders.behavior.BeanBuilder_BehaviorDescriptor" file="BeanBuilder_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Iterable" />
@@ -101,6 +102,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.builders.behavior.BeanPropertyBuilder_BehaviorDescriptor" file="BeanPropertyBuilder_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />

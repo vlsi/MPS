@@ -11,6 +11,7 @@ import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
@@ -55,6 +56,7 @@ public class typeof_RemoveAllSetElementsOperation_InferenceRule extends Abstract
   }
 
   private static SNode _quotation_createNode_t2vuix_a0b0b(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SetType", null, null, GlobalScope.getInstance(), false);
@@ -66,6 +68,7 @@ public class typeof_RemoveAllSetElementsOperation_InferenceRule extends Abstract
   }
 
   private static SNode _quotation_createNode_t2vuix_a0c0b(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", null, null, GlobalScope.getInstance(), false);
@@ -77,6 +80,7 @@ public class typeof_RemoveAllSetElementsOperation_InferenceRule extends Abstract
   }
 
   private static SNode _quotation_createNode_t2vuix_a0d0b() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

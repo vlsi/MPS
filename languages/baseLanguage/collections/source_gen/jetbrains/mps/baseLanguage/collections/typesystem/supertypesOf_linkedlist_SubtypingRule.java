@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
@@ -43,6 +44,7 @@ public class supertypesOf_linkedlist_SubtypingRule extends SubtypingRule_Runtime
   }
 
   private static SNode _quotation_createNode_vg4yju_a0a1a1(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", null, null, GlobalScope.getInstance(), false);
@@ -54,6 +56,7 @@ public class supertypesOf_linkedlist_SubtypingRule extends SubtypingRule_Runtime
   }
 
   private static SNode _quotation_createNode_vg4yju_a0a2a1(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.DequeType", null, null, GlobalScope.getInstance(), false);
@@ -65,6 +68,7 @@ public class supertypesOf_linkedlist_SubtypingRule extends SubtypingRule_Runtime
   }
 
   private static SNode _quotation_createNode_vg4yju_a0a3a1(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.StackType", null, null, GlobalScope.getInstance(), false);

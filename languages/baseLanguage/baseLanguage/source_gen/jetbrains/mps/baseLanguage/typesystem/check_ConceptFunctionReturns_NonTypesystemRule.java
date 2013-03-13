@@ -20,6 +20,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.GlobalScope;
 
 public class check_ConceptFunctionReturns_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -78,6 +79,7 @@ public class check_ConceptFunctionReturns_NonTypesystemRule extends AbstractNonT
   }
 
   private static SNode _quotation_createNode_rs2pxi_b0a0a0b0b() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

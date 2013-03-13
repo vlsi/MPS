@@ -15,12 +15,11 @@ import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.logging.Logger;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNodeId;
 
 public class BuildSourceArchiveRelativePath_Behavior {
   public static void init(SNode thisNode) {
@@ -96,6 +95,7 @@ public class BuildSourceArchiveRelativePath_Behavior {
   private static Logger LOG = Logger.getLogger(BuildSourceArchiveRelativePath_Behavior.class);
 
   private static SNode _quotation_createNode_ll2z5f_a0b0g(Object parameter_1, Object parameter_2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -120,6 +120,7 @@ public class BuildSourceArchiveRelativePath_Behavior {
   }
 
   private static SNode _quotation_createNode_ll2z5f_a0a0a1a1c0g() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, null, GlobalScope.getInstance(), false);
@@ -131,6 +132,7 @@ public class BuildSourceArchiveRelativePath_Behavior {
   }
 
   private static SNode _quotation_createNode_ll2z5f_a0a0a0b0b2a6() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, null, GlobalScope.getInstance(), false);
@@ -142,9 +144,10 @@ public class BuildSourceArchiveRelativePath_Behavior {
   }
 
   private static SNode _quotation_createNode_ll2z5f_a0a0h() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfTaskDependency", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("target", SReference.create("target", quotedNode_1, SModelReference.fromString("r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)"), SNodeId.fromString("7128123785277844790")));
+    quotedNode_1.setReference("target", SReference.create("target", quotedNode_1, facade.createModelReference("r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)"), facade.createNodeId("7128123785277844790")));
     return quotedNode_1;
   }
 }

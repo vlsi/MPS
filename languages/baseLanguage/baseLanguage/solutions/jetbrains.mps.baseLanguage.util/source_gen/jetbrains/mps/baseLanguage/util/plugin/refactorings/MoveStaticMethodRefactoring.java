@@ -7,6 +7,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -66,6 +67,7 @@ public class MoveStaticMethodRefactoring extends BasicMoveRefactoring {
   }
 
   private static SNode _quotation_createNode_f5lqsg_a0a0a1a1(Object parameter_1, Object parameter_2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_3, "classifier", (SNode) parameter_1);
@@ -74,6 +76,7 @@ public class MoveStaticMethodRefactoring extends BasicMoveRefactoring {
   }
 
   private static SNode _quotation_createNode_f5lqsg_a0a0a0b0c(Object parameter_1, Object parameter_2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_3, "baseMethodDeclaration", (SNode) parameter_2);
@@ -82,6 +85,7 @@ public class MoveStaticMethodRefactoring extends BasicMoveRefactoring {
   }
 
   private static SNode _quotation_createNode_f5lqsg_a0a0b0b0e(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalMethodCall", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "baseMethodDeclaration", (SNode) parameter_1);
@@ -89,6 +93,7 @@ public class MoveStaticMethodRefactoring extends BasicMoveRefactoring {
   }
 
   private static SNode _quotation_createNode_f5lqsg_a0a0a1a1a4(Object parameter_1, Object parameter_2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_3, "baseMethodDeclaration", (SNode) parameter_2);

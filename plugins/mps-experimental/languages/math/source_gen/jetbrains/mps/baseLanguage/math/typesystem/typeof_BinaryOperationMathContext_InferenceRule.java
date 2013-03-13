@@ -16,6 +16,7 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.BaseQuickFixProvider;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
@@ -142,6 +143,7 @@ public class typeof_BinaryOperationMathContext_InferenceRule extends AbstractInf
   }
 
   private static SNode _quotation_createNode_3xwkcy_a0a0a0c0b0b0a0f0b() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -156,6 +158,7 @@ public class typeof_BinaryOperationMathContext_InferenceRule extends AbstractInf
   }
 
   private static SNode _quotation_createNode_3xwkcy_a0a0a0c0a2a1a1a0a5a1() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -170,6 +173,7 @@ public class typeof_BinaryOperationMathContext_InferenceRule extends AbstractInf
   }
 
   private static SNode _quotation_createNode_3xwkcy_a0a0a0c0a2a0c0b0b0a0f0b() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -184,6 +188,7 @@ public class typeof_BinaryOperationMathContext_InferenceRule extends AbstractInf
   }
 
   private static SNode _quotation_createNode_3xwkcy_a0a0a0c0a2a0c0a2a1a1a0a5a1() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;

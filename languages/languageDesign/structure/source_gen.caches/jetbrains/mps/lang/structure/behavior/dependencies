@@ -194,6 +194,7 @@
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.behavior.ConstrainedDataTypeDeclaration_BehaviorDescriptor" file="ConstrainedDataTypeDeclaration_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -216,6 +217,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.behavior.DataTypeDeclaration_BehaviorDescriptor" file="DataTypeDeclaration_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -404,6 +406,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.Primitives" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.behavior.PrimitiveDataTypeDeclaration_BehaviorDescriptor" file="PrimitiveDataTypeDeclaration_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />

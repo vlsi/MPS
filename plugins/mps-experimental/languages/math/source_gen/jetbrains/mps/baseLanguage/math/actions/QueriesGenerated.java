@@ -28,6 +28,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
@@ -219,6 +220,7 @@ public class QueriesGenerated {
   }
 
   private static SNode _quotation_createNode_fo7if3_b0a0a0b() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, null, GlobalScope.getInstance(), false);
@@ -228,6 +230,7 @@ public class QueriesGenerated {
   }
 
   private static SNode _quotation_createNode_fo7if3_a0a0a0a0a2(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -242,6 +245,7 @@ public class QueriesGenerated {
   }
 
   private static SNode _quotation_createNode_fo7if3_a0a0a0a0a0d(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = (SNode) parameter_1;
     if (quotedNode_2 != null) {

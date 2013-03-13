@@ -22,6 +22,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationContainer" file="EvaluationContainer.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />

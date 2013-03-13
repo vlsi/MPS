@@ -19,6 +19,7 @@ import jetbrains.mps.ui.swt.generator.template.helper.SWTTransientValues;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
 import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -375,6 +376,7 @@ public class QueriesGenerated {
   }
 
   private static SNode _quotation_createNode_x583g4_a0a85(Object parameter_1, Object parameter_2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -391,6 +393,7 @@ public class QueriesGenerated {
   }
 
   private static SNode _quotation_createNode_x583g4_a0a16(Object parameter_1, Object parameter_2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -413,6 +416,7 @@ public class QueriesGenerated {
   }
 
   private static SNode _quotation_createNode_x583g4_a0a76(Object parameter_1, Object parameter_2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -429,6 +433,7 @@ public class QueriesGenerated {
   }
 
   private static SNode _quotation_createNode_x583g4_a0a07(Object parameter_1, Object parameter_2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;

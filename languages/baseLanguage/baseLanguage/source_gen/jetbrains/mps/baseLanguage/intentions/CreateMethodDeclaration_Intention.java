@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.intentions.IntentionDescriptor;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -120,12 +121,14 @@ public class CreateMethodDeclaration_Intention implements IntentionFactory {
   }
 
   private static SNode _quotation_createNode_v1wtfy_a0a0a5a0() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_v1wtfy_a0g0a(Object parameter_1, Object parameter_2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -144,12 +147,14 @@ public class CreateMethodDeclaration_Intention implements IntentionFactory {
   }
 
   private static SNode _quotation_createNode_v1wtfy_a0a0h0a() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_v1wtfy_a0a9a0(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "baseMethodDeclaration", (SNode) parameter_1);

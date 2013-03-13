@@ -10,6 +10,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.GlobalScope;
 
 public class typeof_OutputResources_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -42,6 +43,7 @@ public class typeof_OutputResources_InferenceRule extends AbstractInferenceRule_
   }
 
   private static SNode _quotation_createNode_rptc1i_a0a0b() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
