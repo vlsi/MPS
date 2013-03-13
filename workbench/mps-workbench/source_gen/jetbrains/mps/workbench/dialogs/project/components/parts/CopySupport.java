@@ -58,8 +58,8 @@ public class CopySupport {
       StringBuilder textPresentation = new StringBuilder();
       for (int i = 0; i < selected.length; i++) {
         SModelReference modelRef = (SModelReference) selected[i];
-        textPresentation.append(modelRef.getSModelFqName());
-        if (i != selected.length) {
+        textPresentation.append(modelRef.getModelName());
+        if (i != selected.length - 1) {
           textPresentation.append("\n");
         }
       }
