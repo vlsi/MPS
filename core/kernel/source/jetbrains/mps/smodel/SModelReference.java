@@ -97,10 +97,6 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
     return myModelId;
   }
 
-  public SModelFqName getSModelFqName() {
-    return myModelFqName;
-  }
-
   public SModelReference update() {
     SModel sm = SModelRepository.getInstance().getModelDescriptor(this);
     if (sm == null) return this;
@@ -141,6 +137,15 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
   }
 
   //------------deprecated-------------
+
+  @Deprecated
+  /**
+   * Automatic migration not possible. Most common cases are migrated with MPS migration script, use getModelName in your case is not covered
+   * @Deprecated in 3.0
+   */
+  public SModelFqName getSModelFqName() {
+    return myModelFqName;
+  }
 
   @Deprecated
   /**
