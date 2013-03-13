@@ -16,6 +16,7 @@
 package jetbrains.mps.util;
 
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.misc.ObjectCache;
 import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
@@ -393,6 +394,16 @@ public class NameUtil {
     }
     String name = node.getName();
     return compactNamespace(SNodeOperations.getModelLongName(node.getModel())) + "." + name;
+  }
+
+  public static String compactModelName(SModelReference ref) {
+    String compactNamespace = NameUtil.compactNamespace(ref.getLongName());
+    String st = ref.getStereotype();
+    if (st.length() == 0) {
+      return compactNamespace;
+    } else {
+      return compactNamespace + "@" + st.charAt(0);
+    }
   }
 
   public static String escapeInvisibleCharacters(String s) {
