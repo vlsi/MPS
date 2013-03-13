@@ -52,6 +52,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.NullDataSource;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.security.SecureRandom;
 import java.util.ArrayList;
@@ -1161,9 +1162,9 @@ public class SModel implements SModelData {
   @Deprecated
   @Nullable
   public SNode getNodeById(String idString) {
-    SNodeId nodeId = jetbrains.mps.smodel.SNodeId.fromString(idString);
+    org.jetbrains.mps.openapi.model.SNodeId nodeId = PersistenceFacade.getInstance().createNodeId(idString);
     assert nodeId != null : "wrong node id string";
-    return getNodeById(nodeId);
+    return getNode(nodeId);
   }
 
   /**

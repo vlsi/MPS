@@ -16,11 +16,17 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.logging.Logger;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public class GoToTypeErrorRuleUtil {
   private static Logger LOG = Logger.getLogger(GoToTypeErrorRuleUtil.class);
@@ -49,7 +55,7 @@ public class GoToTypeErrorRuleUtil {
       return;
     }
 
-    jetbrains.mps.smodel.SNodeId nodeId = jetbrains.mps.smodel.SNodeId.fromString(ruleID);
+    SNodeId nodeId = PersistenceFacade.getInstance().createNodeId(ruleID);
     assert nodeId != null : "wrong node id string";
     SNode rule = modelDescriptor.getNode(nodeId);
     if (rule == null) {

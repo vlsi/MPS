@@ -13,21 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.util.EqualUtil;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public class SNodePointer implements SNodeReference {
   private SModelReference myModelReference;
   private SNodeId myNodeId;
 
   public SNodePointer(String modelUID, String nodeId) {
-    this(jetbrains.mps.smodel.SModelReference.fromString(modelUID), jetbrains.mps.smodel.SNodeId.fromString(nodeId));
+    this(PersistenceFacade.getInstance().createModelReference(modelUID), PersistenceFacade.getInstance().createNodeId(nodeId));
   }
 
   public SNodePointer(SNode node) {

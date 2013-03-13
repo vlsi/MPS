@@ -15,19 +15,20 @@
  */
 package jetbrains.mps.ide.components;
 
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.SModelReference;
 import org.jdom.Element;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 /**
  * @author Kostik
  */
 public class ComponentsUtil {
-  private static final Logger LOG = Logger.getLogger(ComponentsUtil.class);
-
   public static final String NODE = "node";
   public static final String MODEL = "model";
   public static final String MODULE = "module"; // old
@@ -53,7 +54,7 @@ public class ComponentsUtil {
     String id = nodeElement.getAttributeValue(ID);
     SModel modelDescriptor = scope.getModelDescriptor(SModelReference.fromString(modelUID));
     if (modelDescriptor == null) return null;
-    jetbrains.mps.smodel.SNodeId nodeId = jetbrains.mps.smodel.SNodeId.fromString(id);
+    SNodeId nodeId = PersistenceFacade.getInstance().createNodeId(id);
     assert nodeId != null : "wrong node id string";
     return modelDescriptor.getNode(nodeId);
   }
