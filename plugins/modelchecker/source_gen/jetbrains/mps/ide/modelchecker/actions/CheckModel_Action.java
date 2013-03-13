@@ -10,10 +10,10 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import java.util.ArrayList;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -29,6 +29,7 @@ public class CheckModel_Action extends BaseAction {
     super("Check Model", "Check model for unresolved references and typesystem rules", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
+    this.addPlace(null);
   }
 
   @Override
@@ -39,11 +40,21 @@ public class CheckModel_Action extends BaseAction {
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        String whatToCheck = "Model";
-        if (((List<SModel>) MapSequence.fromMap(_params).get("models")).size() > 1) {
-          whatToCheck = ((List<SModel>) MapSequence.fromMap(_params).get("models")).size() + " Models";
+        List<SModel> modelsToCheck = new ArrayList<SModel>();
+        if (((List<SModel>) MapSequence.fromMap(_params).get("models")) != null) {
+          modelsToCheck.addAll(((List<SModel>) MapSequence.fromMap(_params).get("models")));
         }
+        if (((SModel) MapSequence.fromMap(_params).get("model")) != null && !(modelsToCheck.contains(((SModel) MapSequence.fromMap(_params).get("model"))))) {
+          modelsToCheck.add(((SModel) MapSequence.fromMap(_params).get("model")));
+        }
+
+        String whatToCheck = "Model";
+        if (modelsToCheck.size() > 1) {
+          whatToCheck = modelsToCheck.size() + " Models";
+        }
+
         event.getPresentation().setText("Check " + whatToCheck);
+        event.getPresentation().setEnabled(!(modelsToCheck.isEmpty()));
       }
     } catch (Throwable t) {
       LOG.error("User's action doUpdate method failed. Action:" + "CheckModel", t);
@@ -55,14 +66,8 @@ public class CheckModel_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("model", event.getData(MPSCommonDataKeys.MODEL));
-    if (MapSequence.fromMap(_params).get("model") == null) {
-      return false;
-    }
+    MapSequence.fromMap(_params).put("model", event.getData(MPSCommonDataKeys.CONTEXT_MODEL));
     MapSequence.fromMap(_params).put("models", event.getData(MPSCommonDataKeys.MODELS));
-    if (MapSequence.fromMap(_params).get("models") == null) {
-      return false;
-    }
     MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
@@ -78,8 +83,17 @@ public class CheckModel_Action extends BaseAction {
     try {
       // check all models in model 
       List<SModel> modelsToCheck = new ArrayList<SModel>();
-      modelsToCheck.addAll(((List<SModel>) MapSequence.fromMap(_params).get("models")));
-      for (SModel model : ((List<SModel>) MapSequence.fromMap(_params).get("models"))) {
+      if (((List<SModel>) MapSequence.fromMap(_params).get("models")) != null) {
+        modelsToCheck.addAll(((List<SModel>) MapSequence.fromMap(_params).get("models")));
+      }
+      if (((SModel) MapSequence.fromMap(_params).get("model")) != null && !(modelsToCheck.contains(((SModel) MapSequence.fromMap(_params).get("model"))))) {
+        modelsToCheck.add(((SModel) MapSequence.fromMap(_params).get("model")));
+      }
+      if (modelsToCheck.isEmpty()) {
+        return;
+      }
+
+      for (SModel model : modelsToCheck.toArray(new SModel[modelsToCheck.size()])) {
         String name = SNodeOperations.getModelLongName(model);
         boolean isStub = SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(model));
         for (SModel innerModel : ListSequence.fromList(model.getModule().getOwnModelDescriptors())) {
