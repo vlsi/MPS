@@ -89,7 +89,7 @@ public class ModuleContext extends StandaloneMPSContext {
     SModel model = ModelAccess.instance().runReadAction(new Computable<SModel>() {
       @Override
       public SModel compute() {
-        return node.getModel().getModelDescriptor();
+        return node.getModel();
       }
     });
     return create(model, project);

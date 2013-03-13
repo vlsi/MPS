@@ -18,6 +18,7 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.GlobalScope;
 
 public class typeof_SmartClosureParameterDeclaration_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -91,6 +92,7 @@ public class typeof_SmartClosureParameterDeclaration_InferenceRule extends Abstr
   }
 
   private static SNode _quotation_createNode_5rdbtv_a0a0d0a0b(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", null, null, GlobalScope.getInstance(), false);
@@ -102,6 +104,7 @@ public class typeof_SmartClosureParameterDeclaration_InferenceRule extends Abstr
   }
 
   private static SNode _quotation_createNode_5rdbtv_a0a0e0a0b(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", null, null, GlobalScope.getInstance(), false);

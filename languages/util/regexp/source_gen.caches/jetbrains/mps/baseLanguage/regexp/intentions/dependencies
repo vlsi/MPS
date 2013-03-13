@@ -4,7 +4,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.regexp.intentions.convertToNamed_Intention" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionsManager" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.intentions.BaseIntentionsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.regexp.intentions.convertToNamed_Intention" file="convertToNamed_Intention.java">

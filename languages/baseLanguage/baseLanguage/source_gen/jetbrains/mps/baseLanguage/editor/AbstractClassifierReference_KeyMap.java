@@ -13,6 +13,7 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -68,6 +69,7 @@ public class AbstractClassifierReference_KeyMap extends KeyMapImpl {
     }
 
     private static SNode _quotation_createNode_l22mu2_a0a0a0a(Object parameter_1) {
+      PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_2 = null;
       SNode quotedNode_3 = null;
       SNode quotedNode_4 = null;

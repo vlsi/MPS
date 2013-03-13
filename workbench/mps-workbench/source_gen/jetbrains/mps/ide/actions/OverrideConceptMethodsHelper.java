@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -110,6 +111,7 @@ public class OverrideConceptMethodsHelper {
   }
 
   private static SNode _quotation_createNode_7wts1u_a0a0a0a2a0e0g(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "variableDeclaration", (SNode) parameter_1);
@@ -117,6 +119,7 @@ public class OverrideConceptMethodsHelper {
   }
 
   private static SNode _quotation_createNode_7wts1u_a0d0a4a6(Object parameter_1, Object parameter_2, Object parameter_3) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;
@@ -138,6 +141,7 @@ public class OverrideConceptMethodsHelper {
   }
 
   private static SNode _quotation_createNode_7wts1u_a0a0a0a6a6(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null, null, GlobalScope.getInstance(), false);
@@ -149,6 +153,7 @@ public class OverrideConceptMethodsHelper {
   }
 
   private static SNode _quotation_createNode_7wts1u_a0a2a7(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement", null, null, GlobalScope.getInstance(), false);
@@ -160,6 +165,7 @@ public class OverrideConceptMethodsHelper {
   }
 
   private static SNode _quotation_createNode_7wts1u_a0a0c0h(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null, null, GlobalScope.getInstance(), false);

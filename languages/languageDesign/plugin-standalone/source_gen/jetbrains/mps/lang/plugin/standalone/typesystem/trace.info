@@ -2,94 +2,98 @@
 <debugInfo>
   <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.typesystem.TypesystemDescriptor" />
   <root nodeRef="r:4e47f84d-850f-4838-ad49-d37c376b2080(jetbrains.mps.lang.plugin.standalone.typesystem)/481983775135178859">
-    <nodeInfo nodeId="481983775135178861" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="20" startPosition="120" endLine="21" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="24" startPosition="46" endLine="25" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="29" startPosition="5" endLine="30" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="30" startPosition="126" endLine="31" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="35" startPosition="27" endLine="36" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="481983775135178862" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="39" startPosition="60" endLine="40" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="481983775135178861" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="19" startPosition="120" endLine="20" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="23" startPosition="46" endLine="24" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="28" startPosition="5" endLine="29" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="29" startPosition="126" endLine="30" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="34" startPosition="27" endLine="35" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="481983775135178862" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="38" startPosition="60" endLine="39" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="481983775135178862" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="39" startPosition="63" endLine="40" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="481983775135178862" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="40" startPosition="30" endLine="41" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="481983775135178862" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="41" startPosition="165" endLine="42" endPosition="302" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="481983775135178862" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="42" startPosition="302" endLine="43" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Typeof_ProjectPluginType_SubtypingRule#()V" />
-    <nodeInfo nodeId="481983775135178862" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="40" startPosition="30" endLine="42" endPosition="302" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="481983775135178862" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="40" startPosition="30" endLine="42" endPosition="302" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubOrSuperType#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWeak#()Z" />
-    <nodeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="28" startPosition="68" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="481983775135178862" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="39" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_lh579i_a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="17" startPosition="51" endLine="17" endPosition="51" />
-    <scopeInfo nodeId="481983775135178860" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="20" startPosition="120" endLine="21" endPosition="47" />
-    <scopeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="24" startPosition="46" endLine="25" endPosition="78" />
-    <scopeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="35" startPosition="27" endLine="36" endPosition="17" />
-    <scopeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="17" startPosition="0" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="29" startPosition="5" endLine="31" endPosition="45">
+    <nodeInfo nodeId="481983775135178862" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="41" startPosition="165" endLine="42" endPosition="304" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="481983775135178862" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="42" startPosition="304" endLine="43" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Typeof_ProjectPluginType_SubtypingRule#()V" />
+    <nodeInfo nodeId="481983775135178862" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="40" startPosition="30" endLine="42" endPosition="304" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="481983775135178862" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="40" startPosition="30" endLine="42" endPosition="304" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubOrSuperType#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWeak#()Z" />
+    <nodeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="27" startPosition="68" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="27" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="481983775135178862" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="38" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_lh579i_a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="16" startPosition="51" endLine="16" endPosition="51" />
+    <scopeInfo nodeId="481983775135178860" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="19" startPosition="120" endLine="20" endPosition="47" />
+    <scopeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="23" startPosition="46" endLine="24" endPosition="78" />
+    <scopeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="34" startPosition="27" endLine="35" endPosition="17" />
+    <scopeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="28" startPosition="5" endLine="30" endPosition="45">
       <varInfo nodeId="481983775135178859" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="481983775135178862" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="40" startPosition="30" endLine="42" endPosition="302" />
-    <scopeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
+    <scopeInfo nodeId="481983775135178862" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="40" startPosition="30" endLine="42" endPosition="304" />
+    <scopeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="481983775135178859" varName="pluginType" />
       <varInfo nodeId="481983775135178859" varName="status" />
       <varInfo nodeId="481983775135178859" varName="typeCheckingContext" />
     </scopeInfo>
-    <scopeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="28" startPosition="68" endLine="32" endPosition="5" />
-    <scopeInfo nodeId="481983775135178862" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="39" startPosition="60" endLine="43" endPosition="24">
+    <scopeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="27" startPosition="68" endLine="31" endPosition="5" />
+    <scopeInfo nodeId="481983775135178862" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="38" startPosition="60" endLine="43" endPosition="24">
+      <varInfo nodeId="481983775135178862" varName="facade" />
       <varInfo nodeId="481983775135178862" varName="quotedNode_1" />
     </scopeInfo>
-    <scopeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="28" startPosition="0" endLine="34" endPosition="0">
+    <scopeInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="27" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="481983775135178859" varName="argument" />
     </scopeInfo>
-    <scopeInfo nodeId="481983775135178862" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="39" startPosition="0" endLine="45" endPosition="0" />
-    <unitInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="16" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.typesystem.Typeof_ProjectPluginType_SubtypingRule" />
+    <scopeInfo nodeId="481983775135178862" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="38" startPosition="0" endLine="45" endPosition="0" />
+    <unitInfo nodeId="481983775135178859" fileName="Typeof_ProjectPluginType_SubtypingRule.java" startLine="15" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.typesystem.Typeof_ProjectPluginType_SubtypingRule" />
   </root>
   <root nodeRef="r:4e47f84d-850f-4838-ad49-d37c376b2080(jetbrains.mps.lang.plugin.standalone.typesystem)/481983775135178865">
-    <nodeInfo nodeId="481983775135178867" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="20" startPosition="137" endLine="21" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="24" startPosition="46" endLine="25" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="29" startPosition="5" endLine="30" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="30" startPosition="126" endLine="31" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="35" startPosition="27" endLine="36" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="481983775135178868" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="39" startPosition="60" endLine="40" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="481983775135178867" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="19" startPosition="137" endLine="20" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="23" startPosition="46" endLine="24" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="28" startPosition="5" endLine="29" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="29" startPosition="126" endLine="30" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="34" startPosition="27" endLine="35" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="481983775135178868" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="38" startPosition="60" endLine="39" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="481983775135178868" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="39" startPosition="63" endLine="40" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="481983775135178868" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="40" startPosition="30" endLine="41" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="481983775135178868" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="41" startPosition="165" endLine="42" endPosition="306" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="481983775135178868" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="42" startPosition="306" endLine="43" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Typeof_ApplicationPluginType_SubtypingRule#()V" />
-    <nodeInfo nodeId="481983775135178868" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="40" startPosition="30" endLine="42" endPosition="306" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="481983775135178868" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="40" startPosition="30" endLine="42" endPosition="306" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubOrSuperType#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWeak#()Z" />
-    <nodeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="28" startPosition="68" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="481983775135178868" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="39" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_mtmcrl_a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="17" startPosition="55" endLine="17" endPosition="55" />
-    <scopeInfo nodeId="481983775135178866" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="20" startPosition="137" endLine="21" endPosition="47" />
-    <scopeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="24" startPosition="46" endLine="25" endPosition="82" />
-    <scopeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="35" startPosition="27" endLine="36" endPosition="17" />
-    <scopeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="17" startPosition="0" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="29" startPosition="5" endLine="31" endPosition="45">
+    <nodeInfo nodeId="481983775135178868" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="41" startPosition="165" endLine="42" endPosition="308" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="481983775135178868" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="42" startPosition="308" endLine="43" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Typeof_ApplicationPluginType_SubtypingRule#()V" />
+    <nodeInfo nodeId="481983775135178868" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="40" startPosition="30" endLine="42" endPosition="308" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="481983775135178868" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="40" startPosition="30" endLine="42" endPosition="308" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubOrSuperType#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWeak#()Z" />
+    <nodeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="27" startPosition="68" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="27" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="481983775135178868" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="38" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_mtmcrl_a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="16" startPosition="55" endLine="16" endPosition="55" />
+    <scopeInfo nodeId="481983775135178866" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="19" startPosition="137" endLine="20" endPosition="47" />
+    <scopeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="23" startPosition="46" endLine="24" endPosition="82" />
+    <scopeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="34" startPosition="27" endLine="35" endPosition="17" />
+    <scopeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="28" startPosition="5" endLine="30" endPosition="45">
       <varInfo nodeId="481983775135178865" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="481983775135178868" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="40" startPosition="30" endLine="42" endPosition="306" />
-    <scopeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
+    <scopeInfo nodeId="481983775135178868" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="40" startPosition="30" endLine="42" endPosition="308" />
+    <scopeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="481983775135178865" varName="customApplicationPluginType" />
       <varInfo nodeId="481983775135178865" varName="status" />
       <varInfo nodeId="481983775135178865" varName="typeCheckingContext" />
     </scopeInfo>
-    <scopeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="28" startPosition="68" endLine="32" endPosition="5" />
-    <scopeInfo nodeId="481983775135178868" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="39" startPosition="60" endLine="43" endPosition="24">
+    <scopeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="27" startPosition="68" endLine="31" endPosition="5" />
+    <scopeInfo nodeId="481983775135178868" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="38" startPosition="60" endLine="43" endPosition="24">
+      <varInfo nodeId="481983775135178868" varName="facade" />
       <varInfo nodeId="481983775135178868" varName="quotedNode_1" />
     </scopeInfo>
-    <scopeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="28" startPosition="0" endLine="34" endPosition="0">
+    <scopeInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="27" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="481983775135178865" varName="argument" />
     </scopeInfo>
-    <scopeInfo nodeId="481983775135178868" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="39" startPosition="0" endLine="45" endPosition="0" />
-    <unitInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="16" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.typesystem.Typeof_ApplicationPluginType_SubtypingRule" />
+    <scopeInfo nodeId="481983775135178868" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="38" startPosition="0" endLine="45" endPosition="0" />
+    <unitInfo nodeId="481983775135178865" fileName="Typeof_ApplicationPluginType_SubtypingRule.java" startLine="15" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.typesystem.Typeof_ApplicationPluginType_SubtypingRule" />
   </root>
   <root nodeRef="r:4e47f84d-850f-4838-ad49-d37c376b2080(jetbrains.mps.lang.plugin.standalone.typesystem)/681855071694758171">
     <nodeInfo nodeId="681855071694758173" fileName="typeof_GetToolInProjectOperation_InferenceRule.java" startLine="20" startPosition="5" endLine="21" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

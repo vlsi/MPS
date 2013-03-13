@@ -10,6 +10,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
@@ -41,6 +42,7 @@ public class typeof_CommandReferenceExpression_InferenceRule extends AbstractInf
   }
 
   private static SNode _quotation_createNode_ec8mha_a0a0b(Object parameter_1, Object parameter_2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandType", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_3, "classifier", (SNode) parameter_2);

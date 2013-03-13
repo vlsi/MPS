@@ -17,10 +17,9 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNodeId;
 
 public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeOf_BaseMethodDeclaration_InferenceRule() {
@@ -113,9 +112,10 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
   }
 
   private static SNode _quotation_createNode_ifzhbs_a0a0a0b() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Throwable")));
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Throwable")));
     return quotedNode_1;
   }
 }

@@ -23,7 +23,7 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 @Deprecated //use openapi. this does not work
 public interface StubModelDataSource extends DataSource {
 
-  SModel loadSModel(IModule contextModule, SModel descriptor);
+  jetbrains.mps.smodel.SModel loadSModel(IModule module, SModel descriptor);
 
   // todo move to loadSModel - return null in case no model is there
   boolean hasModel(SModel d);

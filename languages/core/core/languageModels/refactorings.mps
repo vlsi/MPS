@@ -142,11 +142,11 @@
               <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="7012097027058651012">
                 <node role="rValue" roleId="tpee.1068498886297" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="7012097027058651015">
                   <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="7012097027058651016">
+                    <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2450295125634505368">
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ec5l.~SModel" resolveInfo="SModel" />
+                    </node>
                     <node role="expression" roleId="tpee.1070534934092" type="tp1h.RefactoringParameterReference" typeId="tp1h.6895093993902496262" id="7012097027058651176">
                       <link role="refactoringParameter" roleId="tp1h.6895093993902496263" targetNodeId="7012097027058633816" resolveInfo="target" />
-                    </node>
-                    <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2033319863820884614">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SModelInternal" resolveInfo="SModelInternal" />
                     </node>
                   </node>
                 </node>

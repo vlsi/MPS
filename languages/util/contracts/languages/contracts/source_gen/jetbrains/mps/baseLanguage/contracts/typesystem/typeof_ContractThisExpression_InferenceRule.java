@@ -14,6 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -51,6 +52,7 @@ public class typeof_ContractThisExpression_InferenceRule extends AbstractInferen
   }
 
   private static SNode _quotation_createNode_scihsm_a0a0a2a1(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "typeVariableDeclaration", (SNode) parameter_1);
@@ -58,6 +60,7 @@ public class typeof_ContractThisExpression_InferenceRule extends AbstractInferen
   }
 
   private static SNode _quotation_createNode_scihsm_a0d0b(Object parameter_1, Object parameter_2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);

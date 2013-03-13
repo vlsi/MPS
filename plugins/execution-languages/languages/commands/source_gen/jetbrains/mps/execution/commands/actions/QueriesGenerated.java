@@ -26,6 +26,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
@@ -243,12 +244,14 @@ public class QueriesGenerated {
   }
 
   private static SNode _quotation_createNode_ytzany_b0a0a0a() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.commands.structure.ProcessType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_5e23hz_a0a0a0a() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandProcessType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

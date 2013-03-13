@@ -76,7 +76,7 @@ public abstract class NodeNavigatable implements Navigatable {
     SNode node = myNode.resolve(MPSModuleRepository.getInstance());
     if (node == null) return;
 
-    SModel modelDescriptor = node.getModel().getModelDescriptor();
+    SModel modelDescriptor = node.getModel();
     if (modelDescriptor == null) return;
 
     IModule module = modelDescriptor.getModule();

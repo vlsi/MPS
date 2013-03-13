@@ -10,6 +10,7 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -61,6 +62,7 @@ public class ConceptConstraints_Behavior {
   }
 
   private static SNode _quotation_createNode_wrxfmp_a0a2a0() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement", null, null, GlobalScope.getInstance(), false);

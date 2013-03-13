@@ -219,7 +219,7 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
   @Override
   public void setInitialValue(Object initialValue) {
     if (myReturnLoadedModels && initialValue instanceof SModel) {
-      initialValue = ((SModel) initialValue).getModelDescriptor();
+      initialValue = ((SModel) initialValue);
     }
     TreeNode treeNode = myTree.findNodeWith(initialValue);
     if (treeNode != null) {

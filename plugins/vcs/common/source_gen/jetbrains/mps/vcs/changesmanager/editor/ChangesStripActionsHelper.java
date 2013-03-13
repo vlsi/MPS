@@ -11,7 +11,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import java.util.List;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.vcs.diff.changes.NodeCopier;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -100,7 +100,7 @@ public class ChangesStripActionsHelper {
         }
         Sequence.fromIterable(oppositeChanges).visitAll(new IVisitor<ModelChange>() {
           public void visit(ModelChange ch) {
-            ch.apply(model, nc);
+            ch.apply(model.getModelDescriptor(), nc);
           }
         });
         nc.restoreIds(true);
@@ -134,7 +134,7 @@ public class ChangesStripActionsHelper {
           return Sequence.<SNode>singleton(oldModel.getNode(((NodeChange) ch).getAffectedNodeId()));
         } else if (ch instanceof NodeGroupChange) {
           NodeGroupChange ngc = (NodeGroupChange) ch;
-          List<SNode> changeChildren = ((List<SNode>) IterableUtil.asList(oldModel.getNode(ngc.getParentNodeId()).getChildren(ngc.getRole())));
+          List<SNode> changeChildren = ((List) IterableUtil.asList(oldModel.getNode(ngc.getParentNodeId()).getChildren(ngc.getRole())));
           return ListSequence.fromList(changeChildren).page(ngc.getBegin(), ngc.getEnd());
         } else {
           return Sequence.fromIterable(Collections.<SNode>emptyList());

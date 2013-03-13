@@ -211,7 +211,7 @@ public class TabbedEditor extends BaseNodeEditor {
         ((SModelInternal) model).removeModelListener(myModelListener);
       }
 
-      SModel md = containingRoot.getModel().getModelDescriptor();
+      SModel md = containingRoot.getModel();
       IModule module = md.getModule();
       assert module != null : md.getReference().toString() + "; node is disposed = " + jetbrains.mps.util.SNodeOperations.isDisposed(node);
       editNode(new SNodePointer(containingRoot), new ModuleContext(module, myContext.getProject()), select);

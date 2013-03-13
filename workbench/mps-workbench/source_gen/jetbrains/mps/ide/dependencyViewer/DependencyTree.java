@@ -10,9 +10,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.project.IModule;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import javax.swing.JPopupMenu;
@@ -40,11 +38,11 @@ public class DependencyTree extends MPSTree {
       root.add(ProjectModuleTreeNode.createFor(myProject, module));
     }
     for (SModel model : myScope.getModels()) {
-      SModelTreeNode node = new SModelTreeNode((SModelInternal) model, null, new ModuleContext((IModule) model.getModule(), myProject));
+      SModelTreeNode node = new SModelTreeNode(model, null, new ModuleContext(model.getModule(), myProject));
       root.add(node);
     }
     for (SNode node : myScope.getRoots()) {
-      SNodeTreeNode treeNode = new SNodeTreeNode((SNode) node, null, new ModuleContext((IModule) ((SNode) node).getModel().getModule(), myProject));
+      SNodeTreeNode treeNode = new SNodeTreeNode(node, null, new ModuleContext(node.getModel().getModule(), myProject));
       root.add(treeNode);
     }
     setRootVisible(false);

@@ -11,6 +11,7 @@ import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
@@ -55,6 +56,7 @@ public class typeof_ReduceRightOperation_InferenceRule extends AbstractInference
   }
 
   private static SNode _quotation_createNode_ok08sq_a0b0b(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", null, null, GlobalScope.getInstance(), false);
@@ -66,6 +68,7 @@ public class typeof_ReduceRightOperation_InferenceRule extends AbstractInference
   }
 
   private static SNode _quotation_createNode_ok08sq_a0d0b(Object parameter_1, Object parameter_2, Object parameter_3) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;

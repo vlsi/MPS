@@ -22,7 +22,6 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.FileSystem;
@@ -146,7 +145,7 @@ public class EditorCell_Image extends EditorCell_Basic {
 
   private static IModule findAnchorModule(SModel sourceModel) {
     IModule module = null;
-    SModel modelDescriptor = sourceModel.getModelDescriptor();
+    SModel modelDescriptor = sourceModel;
     Language modelLang = Language.getLanguageFor(modelDescriptor);
     if (modelLang != null) {
       module = modelLang;

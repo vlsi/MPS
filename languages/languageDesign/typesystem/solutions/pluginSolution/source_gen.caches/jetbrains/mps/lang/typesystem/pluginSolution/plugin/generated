@@ -23,14 +23,11 @@
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-5hwzidtifhzxzto4ufe7o07xsgqc589" />
   <dep model="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" hash="-1jcx7tamiw02w6as89ek19f5fsjg695" />
   <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" hash="-a8r2mm3lt1m1l1dofyht7b5k63fpfjm" />
-  <dep model="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" hash="-6vjfla6zf2rk9xrrpnsma6bgbkc56at" />
+  <dep model="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" hash="-3r4kkf48nrn7gkdls79u1j69turf70t" />
   <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="d5cnpujtqu721m7jpcehnnksdbi4kbf" />
-  <dep model="r:c4d60913-c4ac-4da1-b5c2-2281d3022e80(jetbrains.mps.lang.typesystem.pluginSolution.plugin)" hash="-2tfk1uj61jrb1nyrjuzpd3xcbijw6ze" />
   <dep model="r:f88361e7-5098-4f71-afec-1ad5641911e8(jetbrains.mps.lang.plugin.standalone.generator.template.main@generator)" hash="bv1sewv59u2y056rwh63ooj5jj1tidj" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="8lb0ssmvoceitlofqs9sah312lyoau7" />
-  <common hash="8veqvfucjycdtu5i8611yg79mlqym7x">
-    <dep model="r:c4d60913-c4ac-4da1-b5c2-2281d3022e80(jetbrains.mps.lang.typesystem.pluginSolution.plugin)" />
-  </common>
+  <common hash="8veqvfucjycdtu5i8611yg79mlqym7x" dependsOnNodes="true" />
   <source id="5487985028841908585" name="TypesystemActions" hash="-7ny2uh35ei68jm56q61v577kwt0sbqy">
     <dep root="5487985028841908720" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />

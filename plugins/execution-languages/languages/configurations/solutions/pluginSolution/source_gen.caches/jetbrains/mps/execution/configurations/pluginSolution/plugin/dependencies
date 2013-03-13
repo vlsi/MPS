@@ -74,6 +74,7 @@
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.plugins.relations.RelationDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.execution.configurations.pluginSolution.plugin.Run_Configuration_TabDescriptor" file="Run_Configuration_TabDescriptor.java">

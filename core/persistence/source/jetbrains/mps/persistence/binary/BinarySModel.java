@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel.Problem;
 
 import java.util.Collections;
 

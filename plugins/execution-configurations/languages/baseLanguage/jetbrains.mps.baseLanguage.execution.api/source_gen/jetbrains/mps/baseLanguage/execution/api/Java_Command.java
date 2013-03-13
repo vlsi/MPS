@@ -49,11 +49,11 @@ import jetbrains.mps.debugger.java.api.settings.LocalConnectionSettings;
 import jetbrains.mps.debug.api.Debuggers;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SNodeId;
 
 public class Java_Command {
   private File myWorkingDirectory_File = new File(SystemProperties.getUserHome());
@@ -398,6 +398,7 @@ public class Java_Command {
   }
 
   private static SNode _quotation_createNode_yvpt_a0a0a0a1a0a0b0a2a1() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -417,7 +418,7 @@ public class Java_Command {
     SNodeAccessUtil.setProperty(quotedNode_5, "name", "args");
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", null, null, GlobalScope.getInstance(), false);
     quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_7.setReference("classifier", SReference.create("classifier", quotedNode_7, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~String")));
+    quotedNode_7.setReference("classifier", SReference.create("classifier", quotedNode_7, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~String")));
     quotedNode_6.addChild("componentType", quotedNode_7);
     quotedNode_5.addChild("type", quotedNode_6);
     quotedNode_1.addChild("parameter", quotedNode_5);

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -147,7 +147,7 @@ public class DynamicReference extends SReferenceBase {
   private IModule getModule() {
     SModel model = getSourceNode().getModel();
     if (model != null) {
-      SModel descr = model.getModelDescriptor();
+      SModel descr = model;
       if (descr != null) {
         return descr.getModule();
       }

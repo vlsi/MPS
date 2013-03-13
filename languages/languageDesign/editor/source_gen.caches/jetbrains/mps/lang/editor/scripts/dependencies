@@ -20,6 +20,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.scripts.HorizontalGapMigration_MigrationScript" file="HorizontalGapMigration_MigrationScript.java">

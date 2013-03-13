@@ -52,7 +52,7 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   private jetbrains.mps.smodel.SModel createModel() {
-    jetbrains.mps.smodel.SModel model = ((jetbrains.mps.smodel.SModel) getSource().loadSModel((IModule) myModule, this));
+    jetbrains.mps.smodel.SModel model = getSource().loadSModel((IModule) myModule, this);
     updateDiskTimestamp();
     return model;
   }
@@ -63,7 +63,7 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   @Override
-  protected SModel getCurrentModelInternal() {
+  protected jetbrains.mps.smodel.SModel getCurrentModelInternal() {
     return mySModel;
   }
 //----------------------
@@ -89,7 +89,7 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
       updateDiskTimestamp();
       return;
     }
-    final jetbrains.mps.smodel.SModel result = ((jetbrains.mps.smodel.SModel) getSource().loadSModel((IModule) myModule, this));
+    final jetbrains.mps.smodel.SModel result = (getSource().loadSModel((IModule) myModule, this));
     updateDiskTimestamp();
     replaceModel(new Runnable() {
       @Override

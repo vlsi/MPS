@@ -29,6 +29,7 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.logging.Logger;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -167,6 +168,7 @@ public class QuotationConverter {
   private static Logger LOG = Logger.getLogger(QuotationConverter.class);
 
   private static SNode _quotation_createNode_aytayy_a0a1a0d0l0d(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);
@@ -174,6 +176,7 @@ public class QuotationConverter {
   }
 
   private static SNode _quotation_createNode_aytayy_a0a0b0a3a11a3(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);
@@ -181,6 +184,7 @@ public class QuotationConverter {
   }
 
   private static SNode _quotation_createNode_aytayy_a0a0b0a3a11a3_0(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);

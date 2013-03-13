@@ -43,8 +43,7 @@ public abstract class SModelBase implements SModel {
 
   @Override
   public SRepository getRepository() {
-    IModule module = getModule();
-    return module == null ? null : module.getRepository();
+    return myModule == null ? null : myModule.getRepository();
   }
 
   @Override

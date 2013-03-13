@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="6pf6lzj3o9dcz6pvk6du6rzts3b1grg">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="38s949ymo9nq7jj7p2lrfowy0hurndx" />
+  <common hash="-30665myco3lc2w76m5zifqjrw5c4mkb" />
+  <source id="1650644170366801770" name="IntervalTest" hash="cwhq85j5o5gkpert7nvlo21bhyx2t40">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="IntervalTest.java" />
+  </source>
+</dependencies>
+

@@ -30,7 +30,7 @@ public class TransientSModel extends SModel {
 
   @Override
   protected FastNodeFinder createFastNodeFinder() {
-    return new TransientModelNodeFinder(this);
+    return new TransientModelNodeFinder(getModelDescriptor());
   }
 
   @Override

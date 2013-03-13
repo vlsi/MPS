@@ -26,7 +26,8 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.project.structure.model.RootReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.*;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.dialogs.project.BaseStretchingBindedDialog;
 import org.jdesktop.beansbinding.*;
 import org.jdesktop.beansbinding.AutoBinding.UpdateStrategy;
@@ -197,7 +198,7 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
 
               SModel smodel = model;
               CopyUtil.copyModelContent(myCloningModel, smodel);
-              ((EditableSModel) smodel.getModelDescriptor()).save();
+              ((EditableSModel) smodel).save();
             }
           });
         }

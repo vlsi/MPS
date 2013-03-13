@@ -197,7 +197,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.findUsages.Potentially_not_migratable_usages_Finder" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.findUsages.ImplementedInterfaces_Finder" file="ImplementedInterfaces_Finder.java">

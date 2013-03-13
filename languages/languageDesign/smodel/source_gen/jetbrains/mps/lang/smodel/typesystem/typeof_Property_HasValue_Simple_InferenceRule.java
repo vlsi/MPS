@@ -16,6 +16,7 @@ import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.structure.behavior.DataTypeDeclaration_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.GlobalScope;
 
 public class typeof_Property_HasValue_Simple_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -81,24 +82,28 @@ public class typeof_Property_HasValue_Simple_InferenceRule extends AbstractInfer
   }
 
   private static SNode _quotation_createNode_upj3yy_a0a0b() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_upj3yy_a0a0a0f0b() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_upj3yy_a0a0a0a5a1() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_upj3yy_a0a0a0a0f0b() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

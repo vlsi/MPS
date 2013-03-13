@@ -23,7 +23,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import java.util.ArrayList;
@@ -59,7 +58,7 @@ public abstract class ModelUtil {
   public static VirtualFile getFileByModel(@Nullable SModel model) {
     if (model == null || jetbrains.mps.util.SNodeOperations.isModelDisposed(model)) return null;
 
-    SModel desc = model.getModelDescriptor();
+    SModel desc = model;
     Collection<VirtualFile> files = getVFilesByModelDescriptor(desc);
     if (files.size() == 0) return null;
 

@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.logging.Logger;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -179,6 +180,7 @@ public class GenerateConstructor_Action extends BaseAction {
   private static Logger LOG = Logger.getLogger(GenerateConstructor_Action.class);
 
   private static SNode _quotation_createNode_yl16du_a0b0f0r0a(Object parameter_1, Object parameter_2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, null, GlobalScope.getInstance(), false);
@@ -191,6 +193,7 @@ public class GenerateConstructor_Action extends BaseAction {
   }
 
   private static SNode _quotation_createNode_yl16du_a0a5a5a71a0(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "variableDeclaration", (SNode) parameter_1);
@@ -198,6 +201,7 @@ public class GenerateConstructor_Action extends BaseAction {
   }
 
   private static SNode _quotation_createNode_yl16du_a0a6a5a71a0(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "variableDeclaration", (SNode) parameter_1);

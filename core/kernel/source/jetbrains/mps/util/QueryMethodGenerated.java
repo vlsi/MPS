@@ -20,7 +20,8 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.runtime.IClassLoadingModule;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -112,7 +113,7 @@ public class QueryMethodGenerated implements CoreComponent {
     Map<String, Method> methods = ourMethods.get(sourceModel.getReference());
 
     if (methods == null) {
-      Class queriesClass = getQueriesGeneratedClassFor(sourceModel.getModelDescriptor(), suppressErrorLogging);
+      Class queriesClass = getQueriesGeneratedClassFor(sourceModel, suppressErrorLogging);
 
       methods = ourMethods.get(sourceModel.getReference());
       if (methods == null) {

@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.behavior.FieldDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -82,6 +83,7 @@ public class FieldDeclaration_keyMap extends KeyMapImpl {
     }
 
     private static SNode _quotation_createNode_bsktda_a0b0a0(Object parameter_1, Object parameter_2, Object parameter_3) {
+      PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_4 = null;
       SNode quotedNode_5 = null;
       SNode quotedNode_6 = null;
@@ -162,6 +164,7 @@ public class FieldDeclaration_keyMap extends KeyMapImpl {
     }
 
     private static SNode _quotation_createNode_bsktda_a0b0a1(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
+      PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_5 = null;
       SNode quotedNode_6 = null;
       SNode quotedNode_7 = null;

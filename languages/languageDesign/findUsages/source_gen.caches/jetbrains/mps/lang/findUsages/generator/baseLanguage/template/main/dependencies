@@ -31,14 +31,13 @@
     <classNode dependClassName="jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main.Templatereduce__ExecuteFinderExpression" />
     <classNode dependClassName="jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main.Templatereduce__NodeStatement" />
     <classNode dependClassName="jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main.Templatereduce__ResultStatement" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateCreateRootRule" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateMappingConfiguration" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateReductionRule" />
@@ -89,15 +88,14 @@
     <classNode dependClassName="jetbrains.mps.generator.template.ReferenceMacroContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext" />
     <classNode dependClassName="jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main.QueriesGenerated" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration" />
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main.TemplateFinderClass" file="TemplateFinderClass.java">
@@ -113,15 +111,14 @@
     <classNode dependClassName="jetbrains.mps.generator.template.PropertyMacroContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext" />
     <classNode dependClassName="jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main.QueriesGenerated" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclaration" />
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main.TemplateModelImpl" file="TemplateModelImpl.java">
@@ -157,14 +154,13 @@
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateContext" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateExecutionEnvironment" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationWeavingAware" />
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main.Templatereduce__ExecuteFinderExpression" file="Templatereduce__ExecuteFinderExpression.java">
@@ -178,15 +174,14 @@
     <classNode dependClassName="jetbrains.mps.generator.template.PropertyMacroContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext" />
     <classNode dependClassName="jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main.QueriesGenerated" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationWeavingAware" />
   </dependency>
   <dependency className="jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main.Templatereduce__NodeStatement" file="Templatereduce__NodeStatement.java">

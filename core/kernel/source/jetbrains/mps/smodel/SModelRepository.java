@@ -407,9 +407,8 @@ public class SModelRepository implements CoreComponent {
 
   @Deprecated
   public void markChanged(SModel model) {
-    SModel modelDescriptor = model.getModelDescriptor();
-    if (modelDescriptor instanceof EditableSModel) {
-      ((EditableSModel) modelDescriptor).setChanged(true);
+    if (model instanceof EditableSModel) {
+      ((EditableSModel) model).setChanged(true);
     }
   }
 

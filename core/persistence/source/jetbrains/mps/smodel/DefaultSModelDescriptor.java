@@ -141,9 +141,9 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
       return new ModelLoadResult(newModel, ModelLoadingState.NOT_LOADED);
     }
 
-    SModel model = result.getModel();
+    jetbrains.mps.smodel.SModel model = result.getModel();
     if (result.getState() == ModelLoadingState.FULLY_LOADED) {
-      boolean needToSave = ((jetbrains.mps.smodel.SModelInternal) model).updateSModelReferences() || ((jetbrains.mps.smodel.SModelInternal) model).updateModuleReferences();
+      boolean needToSave = model.updateSModelReferences() || model.updateModuleReferences();
 
       if (needToSave && !source.isReadOnly()) {
         setChanged(true);
@@ -192,7 +192,7 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
 
   @Override
   protected boolean saveModel() {
-    SModel smodel = getSModelInternal();
+    DefaultSModel smodel = getSModelInternal();
     if (smodel instanceof InvalidSModel) {
       // we do not save stub model to not overwrite the real model
       return false;
@@ -260,13 +260,13 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
     return model.getSModelHeader();
   }
 
-  private void tryFixingVersion(SModel loadedSModel) {
+  private void tryFixingVersion(jetbrains.mps.smodel.SModel loadedSModel) {
     if (getVersion() != -1) return;
 
     int latestVersion = getStructureModificationLog().getLatestVersion(getSModelReference());
     myStructureModificationLog = null;  // we don't need to keep log in memory
     if (latestVersion != -1) {
-      ((jetbrains.mps.smodel.SModelInternal) loadedSModel).setVersion(latestVersion);
+      ( loadedSModel).setVersion(latestVersion);
       LOG.error("Version for model " + getSModelReference().getSModelFqName() + " was not set.");
     }
   }

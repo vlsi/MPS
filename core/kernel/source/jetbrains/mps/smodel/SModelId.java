@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.util.InternUtil;
 
@@ -31,6 +31,17 @@ public abstract class SModelId implements org.jetbrains.mps.openapi.model.SModel
     return new RegularSModelId(uid);
   }
 
+  public static SModelId regular(String suffix) {
+    try {
+      UUID uuid = UUID.fromString(suffix);
+      return regular(uuid);
+    } catch (IllegalArgumentException e) {
+      long lower = Long.parseLong(suffix);
+      UUID uuid = new UUID(0x0000000000004000, lower);
+      return regular(uuid);
+    }
+  }
+
   public static SModelId foreign(String id) {
     return new ForeignSModelId(id);
   }
@@ -40,7 +51,7 @@ public abstract class SModelId implements org.jetbrains.mps.openapi.model.SModel
   }
 
   public static SModelId foreign(String kind, String moduleId, String id) {
-    if (moduleId==null||moduleId.length()==0){
+    if (moduleId == null || moduleId.length() == 0) {
       return new ForeignSModelId(kind + "#" + id);
     }
     return new ForeignSModelId(kind + "#" + moduleId + "#" + id);
@@ -49,14 +60,7 @@ public abstract class SModelId implements org.jetbrains.mps.openapi.model.SModel
   public static SModelId fromString(String id) {
     if (id.startsWith(REGULAR_PREFIX)) {
       String suffix = id.substring(REGULAR_PREFIX.length());
-      try {
-        UUID uuid = UUID.fromString(suffix);
-        return regular(uuid);
-      } catch (IllegalArgumentException e) {
-        long lower = Long.parseLong(suffix);
-        UUID uuid = new UUID(0x0000000000004000, lower);
-        return regular(uuid);
-      }
+      return regular(suffix);
     }
     if (id.startsWith(FOREIGN_PREFIX)) {
       String suffix = id.substring(FOREIGN_PREFIX.length());
@@ -72,7 +76,19 @@ public abstract class SModelId implements org.jetbrains.mps.openapi.model.SModel
     return fromString(toString());
   }
 
+  @Override
+  public boolean isGloballyUnique() {
+    return true;
+  }
+
+  @Override
+  public String getModelName() {
+    return null;
+  }
+
   public final static class RegularSModelId extends SModelId {
+    public static final String TYPE = "r";
+
     private UUID myId;
 
     private RegularSModelId(UUID id) {
@@ -92,12 +108,18 @@ public abstract class SModelId implements org.jetbrains.mps.openapi.model.SModel
       return myId.hashCode();
     }
 
+    @Override
+    public String getType() {
+      return TYPE;
+    }
+
     public String toString() {
       return REGULAR_PREFIX + myId;
     }
   }
 
   public final static class ForeignSModelId extends SModelId {
+    public static final String TYPE = "f";
     private String myId;
 
     private ForeignSModelId(String id) {
@@ -115,6 +137,11 @@ public abstract class SModelId implements org.jetbrains.mps.openapi.model.SModel
 
     public int hashCode() {
       return myId.hashCode();
+    }
+
+    @Override
+    public String getType() {
+      return TYPE;
     }
 
     public String toString() {

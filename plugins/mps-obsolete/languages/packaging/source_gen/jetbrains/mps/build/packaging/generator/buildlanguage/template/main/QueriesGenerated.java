@@ -64,6 +64,7 @@ import jetbrains.mps.make.dependencies.StronglyConnectedModules;
 import java.util.HashMap;
 import jetbrains.mps.build.packaging.generator.util.CheckFullDependencyUtil;
 import jetbrains.mps.generator.template.TemplateQueryContext;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -1778,6 +1779,7 @@ __switch__:
   }
 
   private static SNode _quotation_createNode_x583g4_a0a0a0a0kk(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathComponent", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_2, "path", (String) parameter_1);
@@ -1785,6 +1787,7 @@ __switch__:
   }
 
   private static SNode _quotation_createNode_x583g4_a0a0a0a0lk(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathComponent", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_2, "path", (String) parameter_1);
@@ -1792,6 +1795,7 @@ __switch__:
   }
 
   private static SNode _quotation_createNode_x583g4_a0a0a0a0nk(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathComponent", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_2, "path", (String) parameter_1);
@@ -1799,6 +1803,7 @@ __switch__:
   }
 
   private static SNode _quotation_createNode_x583g4_a0a0a0a0ok(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathComponent", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_2, "path", (String) parameter_1);
@@ -1806,6 +1811,7 @@ __switch__:
   }
 
   private static SNode _quotation_createNode_x583g4_a0a0a0a0rk(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathComponent", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_2, "path", (String) parameter_1);
@@ -1813,6 +1819,7 @@ __switch__:
   }
 
   private static SNode _quotation_createNode_x583g4_a0a0a0a0sk(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathComponent", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_2, "path", (String) parameter_1);
@@ -1820,6 +1827,7 @@ __switch__:
   }
 
   private static SNode _quotation_createNode_x583g4_a0a0a0a0tk(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathComponent", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_2, "path", (String) parameter_1);
@@ -1827,6 +1835,7 @@ __switch__:
   }
 
   private static SNode _quotation_createNode_x583g4_a0a0a0a0uk(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathComponent", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_2, "path", (String) parameter_1);

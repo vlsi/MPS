@@ -16,11 +16,11 @@ import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import com.intellij.openapi.actionSystem.ActionToolbar;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModel;
 import com.intellij.openapi.diff.DiffRequest;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.vcs.diff.ui.MetadataUtil;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -43,6 +43,7 @@ import javax.swing.Action;
 import java.util.List;
 import java.util.ArrayList;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -80,11 +81,18 @@ public class MergeModelsDialog extends DialogWrapper {
 
   public MergeModelsDialog(final SModel baseModel, final SModel mineModel, final SModel repositoryModel, DiffRequest request) {
     super(request.getProject(), true);
-    setTitle("Merging " + SModelOperations.getModelName(baseModel));
+    setTitle("Merging " + baseModel.getModelDescriptor().getModelName());
+    SModelDescriptor baseMD = baseModel.getModelDescriptor();
+    SModelDescriptor mineMD = mineModel.getModelDescriptor();
+    SModelDescriptor repMD = repositoryModel.getModelDescriptor();
     myProject = request.getProject();
     myContentTitles = request.getContentTitles();
     assert myContentTitles.length == 3;
-    myMergeSession = new MergeSession(baseModel, mineModel, repositoryModel);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        myMergeSession = MergeSession.createMergeSession(baseModel, mineModel, repositoryModel);
+      }
+    });
     DiffTemporaryModule.setSModelId(myMergeSession.getResultModel(), "result");
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -94,10 +102,14 @@ public class MergeModelsDialog extends DialogWrapper {
     if (ListSequence.fromList(myMergeSession.getMetadataChanges()).isNotEmpty()) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          SModel baseMetaModel = MetadataUtil.createMetadataModel(baseModel);
-          SModel mineMetaModel = MetadataUtil.createMetadataModel(mineModel);
-          SModel repoMetaModel = MetadataUtil.createMetadataModel(repositoryModel);
-          myMetadataMergeSession = new MergeSession(baseMetaModel, mineMetaModel, repoMetaModel);
+          final SModel baseMetaModel = MetadataUtil.createMetadataModel(baseModel);
+          final SModel mineMetaModel = MetadataUtil.createMetadataModel(mineModel);
+          final SModel repoMetaModel = MetadataUtil.createMetadataModel(repositoryModel);
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              myMetadataMergeSession = MergeSession.createMergeSession(baseMetaModel, mineMetaModel, repoMetaModel);
+            }
+          });
           DiffTemporaryModule.setSModelId(myMetadataMergeSession.getResultModel(), "result");
           myMetadataInitialState = myMetadataMergeSession.getCurrentState();
         }
@@ -107,7 +119,7 @@ public class MergeModelsDialog extends DialogWrapper {
     DiffTemporaryModule.createModuleForModel(myMergeSession.getResultModel(), "result", p, true);
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        DiffTemporaryModule.registerModel(myMergeSession.getResultModel(), p);
+        DiffTemporaryModule.registerModel(myMergeSession.getResultModel().getModelDescriptor(), p);
       }
     });
     myMergeSession.installResultModelListener();
@@ -117,7 +129,7 @@ public class MergeModelsDialog extends DialogWrapper {
       DiffTemporaryModule.createModuleForModel(myMetadataMergeSession.getResultModel(), "result", p, true);
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          DiffTemporaryModule.registerModel(myMetadataMergeSession.getResultModel(), p);
+          DiffTemporaryModule.registerModel(myMetadataMergeSession.getResultModel().getModelDescriptor(), p);
         }
       });
       myMetadataMergeSession.installResultModelListener();
@@ -187,7 +199,7 @@ public class MergeModelsDialog extends DialogWrapper {
     }
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        DiffTemporaryModule.resetSModelId(myMergeSession.getResultModel());
+        DiffTemporaryModule.resetSModelId(myMergeSession.getResultModel().getModelDescriptor());
       }
     });
     return myMergeSession.getResultModel();
@@ -195,16 +207,16 @@ public class MergeModelsDialog extends DialogWrapper {
 
   public void unregisterResultModel() {
     final SModel resultModel = myMergeSession.getResultModel();
-    assert check_3qqb0l_a0b0v(resultModel) instanceof DiffTemporaryModule;
+    assert check_3qqb0l_a0b0v(check_3qqb0l_a0a1a12(resultModel)) instanceof DiffTemporaryModule;
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        DiffTemporaryModule.unregisterModel(resultModel, ProjectHelper.toMPSProject(myProject));
+        DiffTemporaryModule.unregisterModel(resultModel.getModelDescriptor(), ProjectHelper.toMPSProject(myProject));
       }
     });
     if (myMetadataMergeSession != null) {
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          DiffTemporaryModule.unregisterModel(myMetadataMergeSession.getResultModel(), ProjectHelper.toMPSProject(myProject));
+          DiffTemporaryModule.unregisterModel(myMetadataMergeSession.getResultModel().getModelDescriptor(), ProjectHelper.toMPSProject(myProject));
         }
       });
     }
@@ -236,7 +248,7 @@ public class MergeModelsDialog extends DialogWrapper {
           myMergeSession
         );
         SNodeId nodeId = (rootId == null ?
-          ListSequence.fromList(SModelOperations.getRoots(myMetadataMergeSession.getBaseModel(), null)).first().getNodeId() :
+          ListSequence.fromList(SModelOperations.getRoots(((org.jetbrains.mps.openapi.model.SModel) myMetadataMergeSession.getBaseModel().getModelDescriptor()), null)).first().getNodeId() :
           rootId
         );
 
@@ -548,9 +560,16 @@ public class MergeModelsDialog extends DialogWrapper {
     }
   }
 
-  private static IModule check_3qqb0l_a0b0v(SModel checkedDotOperand) {
+  private static IModule check_3qqb0l_a0b0v(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
+    }
+    return null;
+  }
+
+  private static SModelDescriptor check_3qqb0l_a0a1a12(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }

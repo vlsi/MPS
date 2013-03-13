@@ -98,7 +98,7 @@ public class MPSUsageSearcher extends CustomUsageSearcher {
                 }
 
                 if (targetPsiElement == element) {
-                  boolean proceed = processor.process(new RenameableNodeUsage(node.getReference(), project, "Usage in MPS model"));
+                  boolean proceed = processor.process(new NodeUsage(node.getReference(), project, "Unclassified usage"));
                   if (!proceed) return;
                 }
               }

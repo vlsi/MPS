@@ -241,11 +241,11 @@ public class QueriesGenerated {
     return _context.getNode().getProperty("role");
   }
 
-  public static Object propertyMacro_GetPropertyValue_4155486055398183735(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_4628059708263185548(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return _context.getNode().getProperty("targetModel");
   }
 
-  public static Object propertyMacro_GetPropertyValue_4155486055398183746(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_4628059708263396060(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return _context.getNode().getProperty("targetNodeId");
   }
 

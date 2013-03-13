@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.util.MacrosFactory;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
@@ -163,6 +164,7 @@ public class Layout_Behavior {
   }
 
   private static SNode createPath_g9j203_a0a01a0(Object p0) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Path", null, GlobalScope.getInstance(), false);
     {
       SNode n2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.MacroReference", null, GlobalScope.getInstance(), false);
@@ -180,6 +182,7 @@ public class Layout_Behavior {
   }
 
   private static SNode createPath_g9j203_a0a11a0(Object p0) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Path", null, GlobalScope.getInstance(), false);
     {
       SNode n2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.MacroReference", null, GlobalScope.getInstance(), false);

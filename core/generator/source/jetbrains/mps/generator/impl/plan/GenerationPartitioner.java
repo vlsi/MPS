@@ -21,14 +21,28 @@ import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.structure.modules.mappingpriorities.*;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefAllGlobal;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefAllLocal;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefSet;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_SimpleRef;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
+import jetbrains.mps.project.structure.modules.mappingpriorities.RuleType;
 import jetbrains.mps.smodel.SModelReference;
-import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.CollectionUtil;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 
 /**
  * Igor Alshannikov
@@ -99,8 +113,9 @@ public class GenerationPartitioner {
       Map<TemplateMappingConfiguration, PriorityData> right = myPriorityMap.get(left);
 
       System.out.println(left.getName() + " (" + left.getModel().getLongName() + ")");
-      for (Entry<TemplateMappingConfiguration, PriorityData> entry : right.entrySet()){
-        System.out.println("\t\t" + (entry.getValue().isStrict() ? "<   " : "<= ") + entry.getKey().getName() + " (" + entry.getKey().getModel().getLongName() + ")");
+      for (Entry<TemplateMappingConfiguration, PriorityData> entry : right.entrySet()) {
+        System.out.println("\t\t" + (entry.getValue().isStrict() ? "<   " :
+            "<= ") + entry.getKey().getName() + " (" + entry.getKey().getModel().getLongName() + ")");
       }
     }
   }
@@ -120,7 +135,7 @@ public class GenerationPartitioner {
     } else {
 
       // swap
-      if(rule.getType() == RuleType.STRICTLY_AFTER || rule.getType() == RuleType.AFTER_OR_TOGETHER) {
+      if (rule.getType() == RuleType.STRICTLY_AFTER || rule.getType() == RuleType.AFTER_OR_TOGETHER) {
         Collection<TemplateMappingConfiguration> temp = hiPrio;
         hiPrio = loPrio;
         loPrio = temp;
@@ -146,7 +161,8 @@ public class GenerationPartitioner {
     }
   }
 
-  private Collection<TemplateMappingConfiguration> getMappingsFromRef(MappingConfig_AbstractRef mappingRef, TemplateModule refGenerator, String sourceGeneratorID) {
+  private Collection<TemplateMappingConfiguration> getMappingsFromRef(MappingConfig_AbstractRef mappingRef, TemplateModule refGenerator,
+      String sourceGeneratorID) {
     if (mappingRef instanceof MappingConfig_RefAllGlobal) {
       return new ArrayList<TemplateMappingConfiguration>(myPriorityMap.keySet());
     }
@@ -196,16 +212,18 @@ public class GenerationPartitioner {
           if (nodeID.equals("*")) {
             return refModel.getConfigurations();
           } else {
-            SNodeReference node = new jetbrains.mps.smodel.SNodePointer(reference, jetbrains.mps.smodel.SNodeId.fromString(nodeID));
+            SNodeReference node = new jetbrains.mps.smodel.SNodePointer(reference, PersistenceFacade.getInstance().createNodeId(nodeID));
             for (TemplateMappingConfiguration m : refModel.getConfigurations()) {
               if (node != null && node.equals(m.getMappingNode())) {
                 return Collections.singletonList(m);
               }
             }
-            LOG.warning("couldn't get node by id: '" + nodeID + "' in model " + modelUID + " while loading priority rules for generator: " + sourceGeneratorID);
+            LOG.warning(
+                "couldn't get node by id: '" + nodeID + "' in model " + modelUID + " while loading priority rules for generator: " + sourceGeneratorID);
           }
         } else {
-          LOG.warning("couldn't get model by uid: '" + modelUID + "' in generator " + refGenerator.getAlias() + " while loading priority rules for generator: " + sourceGeneratorID);
+          LOG.warning(
+              "couldn't get model by uid: '" + modelUID + "' in generator " + refGenerator.getAlias() + " while loading priority rules for generator: " + sourceGeneratorID);
         }
       }
       return Collections.emptyList();

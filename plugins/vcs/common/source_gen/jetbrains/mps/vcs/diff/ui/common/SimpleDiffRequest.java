@@ -12,6 +12,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import com.intellij.openapi.diff.SimpleContent;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.smodel.BaseSModelDescriptor;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 
 public class SimpleDiffRequest extends DiffRequest {
@@ -24,6 +25,18 @@ public class SimpleDiffRequest extends DiffRequest {
     if (models != null) {
       myContents = Sequence.fromIterable(Sequence.fromArray(models)).select(new ISelector<SModel, SimpleContent>() {
         public SimpleContent select(SModel m) {
+          return new SimpleContent(ModelPersistence.modelToString(((BaseSModelDescriptor) m).getSModelInternal()), MPSFileTypeFactory.MPS_FILE_TYPE);
+        }
+      }).toGenericArray(SimpleContent.class);
+    }
+  }
+
+  public SimpleDiffRequest(@NotNull Project project, @Nullable jetbrains.mps.smodel.SModel[] models, @NotNull String[] contentTitles) {
+    super(project);
+    myContentTitles = contentTitles;
+    if (models != null) {
+      myContents = Sequence.fromIterable(Sequence.fromArray(models)).select(new ISelector<jetbrains.mps.smodel.SModel, SimpleContent>() {
+        public SimpleContent select(jetbrains.mps.smodel.SModel m) {
           return new SimpleContent(ModelPersistence.modelToString(m), MPSFileTypeFactory.MPS_FILE_TYPE);
         }
       }).toGenericArray(SimpleContent.class);
