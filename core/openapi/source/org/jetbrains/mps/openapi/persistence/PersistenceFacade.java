@@ -16,7 +16,9 @@
 package org.jetbrains.mps.openapi.persistence;
 
 import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.Set;
 
@@ -75,6 +77,18 @@ public abstract class PersistenceFacade {
    * @throws IllegalArgumentException if the text does not contain a parsable <code>SModelId</code>.
    */
   public abstract SModelId createModelId(String text);
+
+  /**
+   * Creates an SModelReference from a given text identifier.
+   *
+   * @throws IllegalArgumentException if the text does not contain a parsable <code>SModelReference</code>.
+   */
+  public abstract SModelReference createModelReference(String text);
+
+  /**
+   * Creates an SModelReference in a module with a given model id and model name.
+   */
+  public abstract SModelReference createModelReference(SModuleReference module, SModelId modelId, String modelName);
 
   /**
    * Registers the factory with the model id type, overwriting potential earlier registration.

@@ -18,10 +18,13 @@ package jetbrains.mps.persistence;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.ProjectStructureModelRoot;
+import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelId.ForeignSModelId;
 import jetbrains.mps.smodel.SModelId.RegularSModelId;
 import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.FindUsagesParticipant;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -94,6 +97,25 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
       return null;
     }
     return factory.create(text.substring(colon + 1));
+  }
+
+  @Override
+  public SModelReference createModelReference(String text) {
+    if (text == null) {
+      throw new IllegalArgumentException();
+    }
+    return jetbrains.mps.smodel.SModelReference.fromString(text);
+  }
+
+  @Override
+  public SModelReference createModelReference(SModuleReference module, SModelId modelId, String modelName) {
+    SModelFqName name;
+    if (modelId.isGloballyUnique() || module == null) {
+      name = SModelFqName.fromString(modelName);
+    } else {
+      name = SModelFqName.fromString(module.getModuleName() + "/" + modelName);
+    }
+    return new jetbrains.mps.smodel.SModelReference(name, modelId);
   }
 
   @Override

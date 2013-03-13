@@ -76,6 +76,16 @@ public abstract class SModelId implements org.jetbrains.mps.openapi.model.SModel
     return fromString(toString());
   }
 
+  @Override
+  public boolean isGloballyUnique() {
+    return true;
+  }
+
+  @Override
+  public String getModelName() {
+    return null;
+  }
+
   public final static class RegularSModelId extends SModelId {
     public static final String TYPE = "r";
 
