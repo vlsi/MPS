@@ -47,11 +47,11 @@ public class ReportFiles_Facet extends IFacet.Stub {
   }
 
   public Iterable<IFacet.Name> required() {
-    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.lang.core.Make")});
+    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("Make")});
   }
 
   public Iterable<IFacet.Name> extended() {
-    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.lang.core.Make")});
+    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("Make")});
   }
 
   public IFacet.Name getName() {
@@ -132,7 +132,7 @@ public class ReportFiles_Facet extends IFacet.Stub {
     }
 
     public Iterable<ITarget.Name> before() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.Make.reconcile")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("Make.reconcile")});
     }
 
     public ITarget.Name getName() {

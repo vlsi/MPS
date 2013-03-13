@@ -277,7 +277,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
   }
 
   public static IScript defaultMakeScript() {
-    return new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.resources.Binaries"), new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("JavaCompile"), new IFacet.Name("ReloadClasses"), new IFacet.Name("jetbrains.mps.lang.core.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.lang.core.Make.make")).toScript();
+    return new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.resources.Binaries"), new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("JavaCompile"), new IFacet.Name("ReloadClasses"), new IFacet.Name("Make")).withFinalTarget(new ITarget.Name("Make.make")).toScript();
   }
 
   private class TaskRunner extends AbstractMakeService.AbstractInputProcessor {

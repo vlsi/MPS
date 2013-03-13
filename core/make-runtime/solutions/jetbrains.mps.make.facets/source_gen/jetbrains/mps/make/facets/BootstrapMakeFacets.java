@@ -8,17 +8,21 @@ import jetbrains.mps.make.facet.FacetRegistry;
 
 public class BootstrapMakeFacets implements CoreComponent {
   private static final String BASELANGUAGE_NAMESPACE = "jetbrains.mps.baseLanguage";
+  private static final String CORELANGUAGE_NAMESPACE = "jetbrains.mps.lang.core";
 
   private IFacet javaCompileFacet;
   private IFacet reloadClassesFacet;
+  private IFacet makeFacet;
 
 
   public void init() {
     try {
       javaCompileFacet = JavaCompile_Facet.class.newInstance();
       reloadClassesFacet = ReloadClasses_Facet.class.newInstance();
+      makeFacet = Make_Facet.class.newInstance();
       FacetRegistry.getInstance().register(BASELANGUAGE_NAMESPACE, javaCompileFacet);
       FacetRegistry.getInstance().register(BASELANGUAGE_NAMESPACE, reloadClassesFacet);
+      FacetRegistry.getInstance().register(CORELANGUAGE_NAMESPACE, makeFacet);
     } catch (Throwable t) {
       throw new RuntimeException(t);
     }

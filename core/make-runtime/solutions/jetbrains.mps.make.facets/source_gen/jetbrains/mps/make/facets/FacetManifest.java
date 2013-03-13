@@ -14,6 +14,7 @@ public class FacetManifest implements IFacetManifest {
 
   public FacetManifest() {
     ListSequence.fromList(facets).addElement(new JavaCompile_Facet());
+    ListSequence.fromList(facets).addElement(new Make_Facet());
     ListSequence.fromList(facets).addElement(new ReloadClasses_Facet());
   }
 

@@ -164,7 +164,7 @@ public class CopyTraceInfo_Facet extends IFacet.Stub {
     }
 
     public Iterable<ITarget.Name> before() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.Make.reconcile")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("Make.reconcile")});
     }
 
     public ITarget.Name getName() {
