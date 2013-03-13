@@ -15,11 +15,15 @@
  */
 package jetbrains.mps.refactoring;
 
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.InternUtil;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public class StructureModificationData {
 
@@ -83,7 +87,7 @@ public class StructureModificationData {
       if (value.equals(NULL)) {
         myNodeId = null;
       } else {
-        myNodeId = jetbrains.mps.smodel.SNodeId.fromString(value);
+        myNodeId = PersistenceFacade.getInstance().createNodeId(value);
       }
     }
 
