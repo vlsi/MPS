@@ -40,6 +40,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.ypath.design.IParameterizedFeatureDesign" />
     <classNode extendsClassName="jetbrains.mps.ypath.design.Stub" />
   </dependency>
@@ -59,6 +60,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode dependClassName="treepathFeatures.SnodeGenUtil" />
     <classNode extendsClassName="jetbrains.mps.ypath.design.IGenericFeatureDesign" />
     <classNode extendsClassName="jetbrains.mps.ypath.design.IGenericParameterizedFeatureDesign" />

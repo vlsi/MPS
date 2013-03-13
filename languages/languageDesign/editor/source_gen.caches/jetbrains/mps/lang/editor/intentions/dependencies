@@ -375,7 +375,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.intentions.UseIndentLayoutInCollection_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.editor.intentions.UseIndentLayoutInRefNodeList_Intention" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.intentions.BaseIntentionsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.intentions.MigrateToIndentLayout_Intention" file="MigrateToIndentLayout_Intention.java">

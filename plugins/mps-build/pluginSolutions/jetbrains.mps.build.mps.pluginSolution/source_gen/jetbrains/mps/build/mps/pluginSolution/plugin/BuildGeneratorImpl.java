@@ -59,11 +59,11 @@ import jetbrains.mps.smodel.CopyUtil;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.logging.Logger;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class BuildGeneratorImpl extends AbstractBuildGenerator {
@@ -429,6 +429,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   private static Logger LOG = Logger.getLogger(BuildGeneratorImpl.class);
 
   private static SNode _quotation_createNode_un708i_a0a0r0n() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFolderMacro", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_1, "name", "mps_home");
@@ -436,10 +437,11 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a2a71a31(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildProjectDependency", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReference("script", SReference.create("script", quotedNode_2, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("4301118715654192646")));
+    quotedNode_2.setReference("script", SReference.create("script", quotedNode_2, facade.createModelReference("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), facade.createNodeId("4301118715654192646")));
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceMacroRelativePath", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_3, "macro", (SNode) parameter_1);
     quotedNode_2.addChild("artifacts", quotedNode_3);
@@ -447,6 +449,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0a71a31() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFolderMacro", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_1, "name", "idea_home");
@@ -454,10 +457,11 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a3a0r0n(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildExternalLayoutDependency", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReference("layout", SReference.create("layout", quotedNode_2, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("7181125477683264500")));
+    quotedNode_2.setReference("layout", SReference.create("layout", quotedNode_2, facade.createModelReference("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), facade.createNodeId("7181125477683264500")));
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceMacroRelativePath", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_3, "macro", (SNode) parameter_1);
     quotedNode_2.addChild("artifacts", quotedNode_3);
@@ -465,6 +469,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0e0a71a31(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -480,10 +485,11 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a7a0r0n(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildProjectDependency", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReference("script", SReference.create("script", quotedNode_2, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("5148601452480491524")));
+    quotedNode_2.setReference("script", SReference.create("script", quotedNode_2, facade.createModelReference("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), facade.createNodeId("5148601452480491524")));
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceMacroRelativePath", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_3, "macro", (SNode) parameter_1);
     quotedNode_2.addChild("artifacts", quotedNode_3);
@@ -491,6 +497,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0b71a31() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVariableMacro", null, null, GlobalScope.getInstance(), false);
@@ -502,6 +509,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0c0b71a31(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -519,6 +527,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0e0b71a31() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFolderMacro", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_1, "name", "mps_home");
@@ -526,10 +535,11 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a6a1r0n(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildProjectDependency", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReference("script", SReference.create("script", quotedNode_2, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("1392391688312941958")));
+    quotedNode_2.setReference("script", SReference.create("script", quotedNode_2, facade.createModelReference("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), facade.createNodeId("1392391688312941958")));
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceMacroRelativePath", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_3, "macro", (SNode) parameter_1);
     quotedNode_2.addChild("artifacts", quotedNode_3);
@@ -537,10 +547,11 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a7a1r0n(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildProjectDependency", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReference("script", SReference.create("script", quotedNode_2, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("6265574260762011003")));
+    quotedNode_2.setReference("script", SReference.create("script", quotedNode_2, facade.createModelReference("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), facade.createNodeId("6265574260762011003")));
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceMacroRelativePath", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_3, "macro", (SNode) parameter_1);
     quotedNode_2.addChild("artifacts", quotedNode_3);
@@ -548,6 +559,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0l0b71a31(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6, Object parameter_7, Object parameter_8, Object parameter_9, Object parameter_10, Object parameter_11, Object parameter_12, Object parameter_13) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_14 = null;
     SNode quotedNode_15 = null;
     SNode quotedNode_16 = null;
@@ -687,6 +699,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0a81a31(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFolderMacro", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_2, "name", (String) parameter_1);
@@ -694,6 +707,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0z0n(Object parameter_1, Object parameter_2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -709,6 +723,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0ab0n(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;
     SNode quotedNode_7 = null;
@@ -734,7 +749,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     SNodeAccessUtil.setReferenceTarget(quotedNode_8, "group", (SNode) parameter_2);
     quotedNode_5.addChild("content", quotedNode_8);
     quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginDependency", null, null, GlobalScope.getInstance(), false);
-    quotedNode_9.setReference("target", SReference.create("target", quotedNode_9, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("4973949960459588488")));
+    quotedNode_9.setReference("target", SReference.create("target", quotedNode_9, facade.createModelReference("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), facade.createNodeId("4973949960459588488")));
     quotedNode_5.addChild("dependencies", quotedNode_9);
     quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
     quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
@@ -745,6 +760,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0a0fb0n(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_7 = null;
     SNode quotedNode_8 = null;
     SNode quotedNode_9 = null;
@@ -794,10 +810,10 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     SNode quotedNode_53 = null;
     quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout", null, null, GlobalScope.getInstance(), false);
     quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Import", null, null, GlobalScope.getInstance(), false);
-    quotedNode_8.setReference("target", SReference.create("target", quotedNode_8, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("1392391688313033161")));
+    quotedNode_8.setReference("target", SReference.create("target", quotedNode_8, facade.createModelReference("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), facade.createNodeId("1392391688313033161")));
     quotedNode_7.addChild("children", quotedNode_8);
     quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Import", null, null, GlobalScope.getInstance(), false);
-    quotedNode_9.setReference("target", SReference.create("target", quotedNode_9, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("1348803421063031332")));
+    quotedNode_9.setReference("target", SReference.create("target", quotedNode_9, facade.createModelReference("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), facade.createNodeId("1348803421063031332")));
     quotedNode_7.addChild("children", quotedNode_9);
     quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, null, GlobalScope.getInstance(), false);
     quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
@@ -806,7 +822,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_14.addChild("parts", quotedNode_32);
     quotedNode_10.addChild("containerName", quotedNode_14);
     quotedNode_15 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_ImportContent", null, null, GlobalScope.getInstance(), false);
-    quotedNode_15.setReference("target", SReference.create("target", quotedNode_15, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("3684398890534586740")));
+    quotedNode_15.setReference("target", SReference.create("target", quotedNode_15, facade.createModelReference("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), facade.createNodeId("3684398890534586740")));
     quotedNode_33 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFileIncludeSelector", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_33, "pattern", "log.xml");
     quotedNode_15.addChild("selectors", quotedNode_33);
@@ -840,7 +856,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_17.addChild("parts", quotedNode_37);
     quotedNode_11.addChild("containerName", quotedNode_17);
     quotedNode_18 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_ImportContent", null, null, GlobalScope.getInstance(), false);
-    quotedNode_18.setReference("target", SReference.create("target", quotedNode_18, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("1392391688313033167")));
+    quotedNode_18.setReference("target", SReference.create("target", quotedNode_18, facade.createModelReference("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), facade.createNodeId("1392391688313033167")));
     quotedNode_38 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFileExcludeSelector", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_38, "pattern", "MPS-src.zip");
     quotedNode_18.addChild("selectors", quotedNode_38);
@@ -861,16 +877,16 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_7.addChild("children", quotedNode_11);
     quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, null, GlobalScope.getInstance(), false);
     quotedNode_20 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Import", null, null, GlobalScope.getInstance(), false);
-    quotedNode_20.setReference("target", SReference.create("target", quotedNode_20, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("1392391688313033217")));
+    quotedNode_20.setReference("target", SReference.create("target", quotedNode_20, facade.createModelReference("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), facade.createNodeId("1392391688313033217")));
     quotedNode_12.addChild("children", quotedNode_20);
     quotedNode_21 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Import", null, null, GlobalScope.getInstance(), false);
-    quotedNode_21.setReference("target", SReference.create("target", quotedNode_21, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("1392391688313033209")));
+    quotedNode_21.setReference("target", SReference.create("target", quotedNode_21, facade.createModelReference("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), facade.createNodeId("1392391688313033209")));
     quotedNode_12.addChild("children", quotedNode_21);
     quotedNode_22 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Import", null, null, GlobalScope.getInstance(), false);
-    quotedNode_22.setReference("target", SReference.create("target", quotedNode_22, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("1392391688313033226")));
+    quotedNode_22.setReference("target", SReference.create("target", quotedNode_22, facade.createModelReference("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), facade.createNodeId("1392391688313033226")));
     quotedNode_12.addChild("children", quotedNode_22);
     quotedNode_23 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Import", null, null, GlobalScope.getInstance(), false);
-    quotedNode_23.setReference("target", SReference.create("target", quotedNode_23, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("618786790401954546")));
+    quotedNode_23.setReference("target", SReference.create("target", quotedNode_23, facade.createModelReference("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), facade.createNodeId("618786790401954546")));
     quotedNode_12.addChild("children", quotedNode_23);
     quotedNode_24 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_24, "plugin", (SNode) parameter_4);
@@ -879,7 +895,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     SNodeAccessUtil.setProperty(quotedNode_25, "text", "optional plugins");
     quotedNode_12.addChild("children", quotedNode_25);
     quotedNode_26 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Import", null, null, GlobalScope.getInstance(), false);
-    quotedNode_26.setReference("target", SReference.create("target", quotedNode_26, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("6265574260762011106")));
+    quotedNode_26.setReference("target", SReference.create("target", quotedNode_26, facade.createModelReference("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), facade.createNodeId("6265574260762011106")));
     quotedNode_12.addChild("children", quotedNode_26);
     quotedNode_27 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
     quotedNode_42 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
@@ -922,6 +938,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0b2a0a0a0a13a31() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -936,6 +953,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0a0fb0n_0(Object parameter_1, Object parameter_2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -953,6 +971,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a3a41(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildProjectDependency", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "script", (SNode) parameter_1);
@@ -960,6 +979,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0h0o() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFolderMacro", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_1, "name", "mps_home");
@@ -967,6 +987,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0i0o() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -984,13 +1005,15 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0a0a0a0a0l0o() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVarRefStringPart", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("macro", SReference.create("macro", quotedNode_1, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("4301118715654465616")));
+    quotedNode_1.setReference("macro", SReference.create("macro", quotedNode_1, facade.createModelReference("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), facade.createNodeId("4301118715654465616")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_un708i_a0r0o(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6, Object parameter_7, Object parameter_8, Object parameter_9) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_10 = null;
     SNode quotedNode_11 = null;
     SNode quotedNode_12 = null;
@@ -1098,6 +1121,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0a1a0a0r0o() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -1116,6 +1140,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0b1a0a0r0o() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -1134,6 +1159,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0c1a0a0r0o() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -1148,6 +1174,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0d1a0a0r0o() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -1162,6 +1189,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0c0a0a71a41() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
@@ -1172,6 +1200,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0v0o(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6, Object parameter_7, Object parameter_8, Object parameter_9, Object parameter_10, Object parameter_11, Object parameter_12, Object parameter_13, Object parameter_14, Object parameter_15, Object parameter_16, Object parameter_17, Object parameter_18, Object parameter_19, Object parameter_20, Object parameter_21, Object parameter_22, Object parameter_23, Object parameter_24) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_25 = null;
     SNode quotedNode_26 = null;
     SNode quotedNode_27 = null;
@@ -1478,6 +1507,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0a1a0a0v0o() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -1492,6 +1522,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0b1a0a0v0o() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -1506,6 +1537,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0a2b0a0a12a41() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -1520,6 +1552,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0a1c1a0a0v0o() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -1534,6 +1567,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0a3b0a0a12a41() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -1548,6 +1582,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0b3b0a0a12a41() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -1566,6 +1601,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0c3b0a0a12a41() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -1584,6 +1620,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0a0e1a0a0v0o() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -1598,6 +1635,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0a5b0a0a12a41() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -1616,6 +1654,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0b5b0a0a12a41() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -1634,6 +1673,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0c5b0a0a12a41() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -1652,6 +1692,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0d5b0a0a12a41() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -1670,6 +1711,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0e5b0a0a12a41() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -1688,6 +1730,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0f5b0a0a12a41() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -1706,6 +1749,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0g5b0a0a12a41() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -1724,6 +1768,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0a0h5b0a0a12a41() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -1750,6 +1795,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0a1h5b0a0a12a41() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -1776,6 +1822,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0c7f1a0a0v0o() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -1798,6 +1845,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0c0a0a12a41() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
@@ -1808,6 +1856,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0d0a0a12a41() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
@@ -1818,6 +1867,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0y0o(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5, Object parameter_6, Object parameter_7, Object parameter_8, Object parameter_9, Object parameter_10, Object parameter_11, Object parameter_12, Object parameter_13, Object parameter_14, Object parameter_15, Object parameter_16) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_17 = null;
     SNode quotedNode_18 = null;
     SNode quotedNode_19 = null;
@@ -2007,6 +2057,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0a0b0a0a42a41() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -2033,6 +2084,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0a1b0a0a42a41() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -2059,6 +2111,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0c1a0a0y0o() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -2081,6 +2134,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0a2a0a0y0o() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -2099,6 +2153,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0b2a0a0y0o() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -2117,6 +2172,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0c2a0a0y0o() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -2135,6 +2191,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0d2a0a0y0o() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -2153,6 +2210,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0e2a0a0y0o() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -2171,6 +2229,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0f2a0a0y0o() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -2189,6 +2248,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0g2a0a0y0o() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -2207,6 +2267,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0h2a0a0y0o() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -2221,6 +2282,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0d0a0a42a41() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);
@@ -2231,6 +2293,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a3a0a61(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleJars", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "module", (SNode) parameter_1);
@@ -2238,6 +2301,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a1a0a0q(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -2251,6 +2315,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a5a71(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_Solution", null, null, GlobalScope.getInstance(), false);
@@ -2263,6 +2328,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0f0r(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_Language", null, null, GlobalScope.getInstance(), false);
@@ -2275,6 +2341,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0a0f0r_0(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_DevKit", null, null, GlobalScope.getInstance(), false);
@@ -2287,6 +2354,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private static SNode _quotation_createNode_un708i_a0b0t() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, null, GlobalScope.getInstance(), false);

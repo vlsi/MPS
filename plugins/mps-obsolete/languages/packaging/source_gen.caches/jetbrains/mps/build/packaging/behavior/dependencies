@@ -574,6 +574,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.util.MacrosFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.build.packaging.behavior.Layout_BehaviorDescriptor" file="Layout_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -846,6 +847,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.build.packaging.behavior.PathHolder_BehaviorDescriptor" file="PathHolder_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -904,6 +906,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.build.packaging.behavior.PluginModule_BehaviorDescriptor" file="PluginModule_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />

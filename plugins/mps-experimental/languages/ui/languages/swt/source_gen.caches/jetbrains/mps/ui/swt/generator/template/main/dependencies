@@ -23,6 +23,7 @@
     <classNode dependClassName="jetbrains.mps.ui.multiplexing.VariantsUtil" />
     <classNode dependClassName="jetbrains.mps.ui.swt.generator.template.helper.SWTTransientValues" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
 </dependenciesRoot>
 

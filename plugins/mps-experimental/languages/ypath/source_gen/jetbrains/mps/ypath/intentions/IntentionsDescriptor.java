@@ -4,12 +4,12 @@ package jetbrains.mps.ypath.intentions;
 
 import jetbrains.mps.intentions.BaseIntentionsDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.intentions.IntentionsManager;
 
 public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public IntentionsDescriptor() {
-    super(new ModuleReference("d4e445fa-e1ac-4fc8-8d3b-e62b05d0ea4c(jetbrains.mps.ypath)"), SModelReference.fromString("r:00000000-0000-4000-0000-011c895905ab(jetbrains.mps.ypath.intentions)"));
+    super(new ModuleReference("d4e445fa-e1ac-4fc8-8d3b-e62b05d0ea4c(jetbrains.mps.ypath)"), PersistenceFacade.getInstance().createModelReference("r:00000000-0000-4000-0000-011c895905ab(jetbrains.mps.ypath.intentions)"));
   }
 
   public void init() {

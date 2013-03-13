@@ -101,30 +101,32 @@
     <unitInfo nodeId="2264311582634140607" fileName="XMLSAXChildRule_Behavior.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.core.xml.sax.behavior.XMLSAXChildRule_Behavior" />
   </root>
   <root nodeRef="r:9196d39f-1499-4498-ba0c-ace961a07bab(jetbrains.mps.core.xml.sax.behavior)/2264311582634140652">
-    <nodeInfo nodeId="2264311582634140667" fileName="XMLSAXNodeRule_Behavior.java" startLine="24" startPosition="61" endLine="25" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2264311582634140667" fileName="XMLSAXNodeRule_Behavior.java" startLine="23" startPosition="61" endLine="24" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2264311582634140667" fileName="XMLSAXNodeRule_Behavior.java" startLine="24" startPosition="63" endLine="25" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2264311582634140667" fileName="XMLSAXNodeRule_Behavior.java" startLine="25" startPosition="30" endLine="26" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2264311582634140667" fileName="XMLSAXNodeRule_Behavior.java" startLine="26" startPosition="165" endLine="27" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2264311582634140667" fileName="XMLSAXNodeRule_Behavior.java" startLine="27" startPosition="237" endLine="28" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2264311582634140652" fileName="XMLSAXNodeRule_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="2264311582634140667" fileName="XMLSAXNodeRule_Behavior.java" startLine="25" startPosition="30" endLine="27" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2264311582634140667" fileName="XMLSAXNodeRule_Behavior.java" startLine="25" startPosition="30" endLine="27" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2264311582634140657" fileName="XMLSAXNodeRule_Behavior.java" startLine="17" startPosition="72" endLine="21" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2264311582634140652" fileName="XMLSAXNodeRule_Behavior.java" startLine="17" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getType_2264311582634140653#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="2264311582634140667" fileName="XMLSAXNodeRule_Behavior.java" startLine="24" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_odhxgg_a0a0a#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="2264311582634140670" fileName="XMLSAXNodeRule_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
-    <scopeInfo nodeId="2264311582634140652" fileName="XMLSAXNodeRule_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
+    <nodeInfo nodeId="2264311582634140667" fileName="XMLSAXNodeRule_Behavior.java" startLine="26" startPosition="165" endLine="27" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2264311582634140667" fileName="XMLSAXNodeRule_Behavior.java" startLine="27" startPosition="239" endLine="28" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2264311582634140652" fileName="XMLSAXNodeRule_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="2264311582634140667" fileName="XMLSAXNodeRule_Behavior.java" startLine="25" startPosition="30" endLine="27" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2264311582634140667" fileName="XMLSAXNodeRule_Behavior.java" startLine="25" startPosition="30" endLine="27" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2264311582634140657" fileName="XMLSAXNodeRule_Behavior.java" startLine="16" startPosition="72" endLine="20" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2264311582634140652" fileName="XMLSAXNodeRule_Behavior.java" startLine="16" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getType_2264311582634140653#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2264311582634140667" fileName="XMLSAXNodeRule_Behavior.java" startLine="23" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_odhxgg_a0a0a#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="2264311582634140670" fileName="XMLSAXNodeRule_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
+    <scopeInfo nodeId="2264311582634140652" fileName="XMLSAXNodeRule_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="2264311582634140652" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2264311582634140667" fileName="XMLSAXNodeRule_Behavior.java" startLine="25" startPosition="30" endLine="27" endPosition="237" />
-    <scopeInfo nodeId="2264311582634140656" fileName="XMLSAXNodeRule_Behavior.java" startLine="17" startPosition="72" endLine="21" endPosition="6" />
-    <scopeInfo nodeId="2264311582634140667" fileName="XMLSAXNodeRule_Behavior.java" startLine="24" startPosition="61" endLine="28" endPosition="24">
+    <scopeInfo nodeId="2264311582634140667" fileName="XMLSAXNodeRule_Behavior.java" startLine="25" startPosition="30" endLine="27" endPosition="239" />
+    <scopeInfo nodeId="2264311582634140656" fileName="XMLSAXNodeRule_Behavior.java" startLine="16" startPosition="72" endLine="20" endPosition="6" />
+    <scopeInfo nodeId="2264311582634140667" fileName="XMLSAXNodeRule_Behavior.java" startLine="23" startPosition="61" endLine="28" endPosition="24">
+      <varInfo nodeId="2264311582634140667" varName="facade" />
       <varInfo nodeId="2264311582634140667" varName="quotedNode_1" />
     </scopeInfo>
-    <scopeInfo nodeId="2264311582634140652" fileName="XMLSAXNodeRule_Behavior.java" startLine="17" startPosition="0" endLine="23" endPosition="0">
+    <scopeInfo nodeId="2264311582634140652" fileName="XMLSAXNodeRule_Behavior.java" startLine="16" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="2264311582634140652" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2264311582634140667" fileName="XMLSAXNodeRule_Behavior.java" startLine="24" startPosition="0" endLine="30" endPosition="0" />
-    <unitInfo nodeId="2264311582634140652" fileName="XMLSAXNodeRule_Behavior.java" startLine="13" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.core.xml.sax.behavior.XMLSAXNodeRule_Behavior" />
+    <scopeInfo nodeId="2264311582634140667" fileName="XMLSAXNodeRule_Behavior.java" startLine="23" startPosition="0" endLine="30" endPosition="0" />
+    <unitInfo nodeId="2264311582634140652" fileName="XMLSAXNodeRule_Behavior.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.core.xml.sax.behavior.XMLSAXNodeRule_Behavior" />
   </root>
   <root nodeRef="r:9196d39f-1499-4498-ba0c-ace961a07bab(jetbrains.mps.core.xml.sax.behavior)/2264311582634140671">
     <nodeInfo nodeId="1262430001741718574" fileName="XMLSAXFieldReference_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

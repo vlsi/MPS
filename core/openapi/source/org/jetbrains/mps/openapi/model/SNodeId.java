@@ -23,4 +23,6 @@ import org.jetbrains.mps.annotations.Immutable;
  */
 @Immutable
 public interface SNodeId {
+
+  String getType();
 }

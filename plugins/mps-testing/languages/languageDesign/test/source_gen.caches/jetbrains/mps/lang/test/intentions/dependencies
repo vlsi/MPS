@@ -167,7 +167,7 @@
     <classNode dependClassName="jetbrains.mps.lang.test.intentions.AddScopeTestAnnotation_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.test.intentions.AddTestAnnotation_Intention" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.intentions.BaseIntentionsDescriptor" />
   </dependency>
 </dependenciesRoot>
