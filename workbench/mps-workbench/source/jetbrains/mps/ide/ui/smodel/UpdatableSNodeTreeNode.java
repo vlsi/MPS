@@ -146,7 +146,7 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
 
     @Override
     public SModel getSModelDescriptor() {
-      return myTreeNode.getSNode().getModel().getModelDescriptor();
+      return myTreeNode.getSNode().getModel();
     }
 
     @Override

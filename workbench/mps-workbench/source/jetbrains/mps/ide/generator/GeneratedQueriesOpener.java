@@ -28,11 +28,11 @@ import java.lang.reflect.Method;
 public class GeneratedQueriesOpener {
 
   public static boolean openQueryMethod(IOperationContext context, SNode node) {
-    String modelName = SNodeOperations.getModelLongName(node.getModel().getModelDescriptor());
+    String modelName = SNodeOperations.getModelLongName(node.getModel());
 
     Class cls;
     try {
-      cls = QueryMethodGenerated.getQueriesGeneratedClassFor(node.getModel().getModelDescriptor(), true);
+      cls = QueryMethodGenerated.getQueriesGeneratedClassFor(node.getModel(), true);
     } catch (ClassNotFoundException e) {
       return false;
     }

@@ -2832,7 +2832,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           if (node == null) return null;
           SModel model = node.getModel();
           if (model == null) return null; //removed model
-          return model.getModelDescriptor();
+          return model;
         }
       });
     }

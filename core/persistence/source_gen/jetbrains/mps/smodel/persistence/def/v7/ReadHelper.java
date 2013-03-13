@@ -6,8 +6,7 @@ import jetbrains.mps.smodel.SModelReference;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.SModel;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -36,11 +35,11 @@ public class ReadHelper {
       return;
     }
     SModelReference modelRef = SModelReference.fromString(modelUID);
-    jetbrains.mps.smodel.SModel.ImportElement elem = new jetbrains.mps.smodel.SModel.ImportElement(modelRef, ++myMaxImportIndex, version);
+    SModel.ImportElement elem = new SModel.ImportElement(modelRef, ++myMaxImportIndex, version);
     if (implicit) {
-      ((SModelInternal) model).addAdditionalModelVersion(elem);
+      model.addAdditionalModelVersion(elem);
     } else {
-      ((SModelInternal) model).addModelImport(elem);
+      model.addModelImport(elem);
     }
     addModelRef(index, modelRef);
   }

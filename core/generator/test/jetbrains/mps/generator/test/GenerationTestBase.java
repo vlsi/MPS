@@ -318,7 +318,7 @@ public class GenerationTestBase {
   }
 
   private static Map<String, String> getHashes(SModel model) {
-    Document m = ModelPersistence.saveModel(model);
+    Document m = ModelPersistence.saveModel(((BaseSModelDescriptor) model).getSModelInternal());
     ByteArrayOutputStream os = new ByteArrayOutputStream();
     try {
       JDOMUtil.writeDocument(m, os);

@@ -91,7 +91,7 @@ public class MPSPsiModelTreeNode extends BasePsiNode<MPSPsiModel> implements Nav
     SModelReference modelReference = psiModel.getSModelReference();
     SModel sModel = modelReference.resolve(MPSModuleRepository.getInstance());
 
-    MPSPropertiesConfigurable configurable = new ModelPropertiesConfigurable(sModel.getModelDescriptor(),
+    MPSPropertiesConfigurable configurable = new ModelPropertiesConfigurable(sModel,
       new ModuleOperationContext(sModel.getModule()) {
         @Override
         public jetbrains.mps.project.Project getProject() { return ProjectHelper.toMPSProject(MPSPsiModelTreeNode.this.getProject()); }

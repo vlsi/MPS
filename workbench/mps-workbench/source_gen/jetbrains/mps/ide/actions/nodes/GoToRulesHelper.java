@@ -11,10 +11,8 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.Language;
 import java.util.Collections;
-import jetbrains.mps.extapi.model.EditableSModel;
-import jetbrains.mps.smodel.LanguageAspect;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -63,17 +61,13 @@ public class GoToRulesHelper {
     if (language == null) {
       return Collections.emptyList();
     }
-    EditableSModel typesystem = LanguageAspect.TYPESYSTEM.get(language);
+    SModel typesystem = LanguageAspect.TYPESYSTEM.get(language);
     if (typesystem == null) {
-      return Collections.emptyList();
-    }
-    SModel typesystemModel = ((SModelInternal) typesystem);
-    if (typesystemModel == null) {
       return Collections.emptyList();
     }
 
     // todo: populate rules from other typesystem models! 
-    List<SNode> rules = ListSequence.fromList(SModelOperations.getRoots(typesystemModel, "jetbrains.mps.lang.typesystem.structure.AbstractRule")).where(new IWhereFilter<SNode>() {
+    List<SNode> rules = ListSequence.fromList(SModelOperations.getRoots(typesystem, "jetbrains.mps.lang.typesystem.structure.AbstractRule")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode node) {
         return isApplicable(node, concept, exactConcept);
       }

@@ -33,12 +33,8 @@ import jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRoot;
 import java.util.Iterator;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.ide.java.newparser.DirParser;
-import jetbrains.mps.baseLanguage.stubs.JavaStubs;
-import jetbrains.mps.project.SModelRoot;
-import java.util.Collection;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -127,7 +123,7 @@ public class Utils {
 
     List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
     for (SModel md : Sequence.fromIterable(mr.loadModels())) {
-      SModel m = ((SModelInternal) md);
+      SModel m = md;
       ListSequence.fromList(models).addElement(m);
     }
 
@@ -179,7 +175,6 @@ public class Utils {
   }
 
   public static void compareBinAndSrcStubs(String binPath, String sourcePath) {
-    JavaStubs bin = new JavaStubs();
     JavaSourceStubModelRoot src2 = new JavaSourceStubModelRoot();
 
     // just 2 distinct modules 
@@ -187,11 +182,11 @@ public class Utils {
     IModule mod2 = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("49166c31-952a-46f6-8970-ea45964379d0"));
 
     List<SModel> binModels = ListSequence.fromList(new ArrayList<SModel>());
-    SModelRoot binSRoot = new SModelRoot();
+    JavaClassStubsModelRoot binSRoot = new JavaClassStubsModelRoot();
     binSRoot.setModule(mod1);
     binSRoot.setPath(binPath);
-    Collection<SModel> binStubModels = bin.load(binSRoot);
-    for (SModel md : CollectionSequence.fromCollection(binStubModels)) {
+    Iterable<SModel> binStubModels = binSRoot.loadModels();
+    for (SModel md : Sequence.fromIterable(binStubModels)) {
       SModel m = md;
       ListSequence.fromList(binModels).addElement(m);
 
@@ -218,7 +213,7 @@ public class Utils {
     for (SModel m : Sequence.fromIterable(srcModels)) {
       // <node> 
 
-      SModel zzz = ((SModelInternal) m);
+      SModel zzz = m;
       srcModelsX.add(zzz);
 
       for (SNode srcRoot : ListSequence.fromList(SModelOperations.getRoots(zzz, null))) {

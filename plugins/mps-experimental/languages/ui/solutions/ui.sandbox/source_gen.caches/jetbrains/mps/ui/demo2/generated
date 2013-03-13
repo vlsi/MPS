@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="dny0jqxp0a9kj3ohuh5fawdcogzlz38">
+  <dep model="r:36693452-2637-4608-8caa-ab32ee7c1be3(jetbrains.mps.ui.multiplexing)" hash="-3cgwyuu687u89rxtu1uuayn3ujoztud" />
+  <dep model="r:66bbcfbe-bddf-4df7-8bd5-fa076512c024(jetbrains.mps.ui.generator.template.variants@generator)" hash="-eis4a9nsu5xc7aqd2j253pch5i7nmip" />
+  <common hash="7e3uflg9g03lpoxsknknipbrbgcuqw" />
+  <source id="8717063129899269333" name="FooBar" hash="6e06380z4k10hltuhqvqhhndsbqrtlo">
+    <dep model="r:36693452-2637-4608-8caa-ab32ee7c1be3(jetbrains.mps.ui.multiplexing)" />
+    <dep model="r:66bbcfbe-bddf-4df7-8bd5-fa076512c024(jetbrains.mps.ui.generator.template.variants@generator)" />
+    <file name="FooBar_Swing.java" />
+  </source>
+</dependencies>
+

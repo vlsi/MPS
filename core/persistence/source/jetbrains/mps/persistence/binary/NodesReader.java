@@ -15,12 +15,18 @@
  */
 package jetbrains.mps.persistence.binary;
 
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.io.ModelInputStream;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SReference;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -94,18 +100,18 @@ public class NodesReader {
       String resolveInfo = is.readString();
       if (kind == 1) {
         SReference reference = new StaticReference(
-          role,
-          node,
-          modelRef,
-          targetNodeId,
-          resolveInfo);
+            role,
+            node,
+            modelRef,
+            targetNodeId,
+            resolveInfo);
         node.setReference(reference.getRole(), reference);
       } else if (kind == 2 || kind == 3) {
         DynamicReference reference = new DynamicReference(
-          role,
-          node,
-          modelRef,
-          resolveInfo);
+            role,
+            node,
+            modelRef,
+            resolveInfo);
         if (origin != null) {
           reference.setOrigin(origin);
         }

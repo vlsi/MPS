@@ -6,7 +6,7 @@ import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -37,7 +37,7 @@ public class NodeCopier {
       SNodeId nodeId = node.getNodeId();
       SNodeId replacedId = nodeId;
       while (myModel.getNode(replacedId) != null) {
-        replacedId = jetbrains.mps.smodel.SModel.generateUniqueId();
+        replacedId = SModel.generateUniqueId();
       }
       ((jetbrains.mps.smodel.SNode) node).setId(replacedId);
       if (replacedId != nodeId && !(MapSequence.fromMap(myIdReplacementCache).containsKey(nodeId))) {
@@ -61,7 +61,7 @@ public class NodeCopier {
   }
 
   private void setId(SNode node, SNodeId id) {
-    SModel model = SNodeOperations.getModel(node);
+    org.jetbrains.mps.openapi.model.SModel model = SNodeOperations.getModel(node);
     if (SNodeOperations.getParent(node) == null) {
       SNodeOperations.detachNode(node);
       ((jetbrains.mps.smodel.SNode) node).setId(id);
@@ -90,7 +90,7 @@ public class NodeCopier {
     for (SNodeId id : SetSequence.fromSet(MapSequence.fromMap(myIdReplacementCache).keySet())) {
       SNode toBeEvicted = myModel.getNode(id);
       assert toBeEvicted != null;
-      setId(toBeEvicted, jetbrains.mps.smodel.SModel.generateUniqueId());
+      setId(toBeEvicted, SModel.generateUniqueId());
     }
   }
 

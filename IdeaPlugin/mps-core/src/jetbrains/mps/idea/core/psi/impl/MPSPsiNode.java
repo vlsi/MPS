@@ -148,7 +148,7 @@ public class MPSPsiNode extends MPSPsiNodeBase {
         SNode node = getSNodeReference().resolve(MPSModuleRepository.getInstance());
         if (node == null) return;
 
-        SModel modelDescriptor = node.getModel().getModelDescriptor();
+        SModel modelDescriptor = node.getModel();
         if (modelDescriptor == null) return;
 
         IModule module = modelDescriptor.getModule();

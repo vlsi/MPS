@@ -11,7 +11,7 @@ import com.intellij.openapi.vfs.LocalFileSystem;
 import java.io.File;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import com.intellij.openapi.diff.DiffContent;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vcs.util.MergeConstants;
 import jetbrains.mps.util.FileUtil;

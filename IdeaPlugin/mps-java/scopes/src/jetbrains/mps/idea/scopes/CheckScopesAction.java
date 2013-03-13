@@ -123,7 +123,7 @@ public class CheckScopesAction extends AnAction {
 
   @Nullable
   private static PsiFile getFileForNode(Project project, SNode node) {
-    SModel model = node.getModel().getModelDescriptor();
+    SModel model = node.getModel();
     DebugInfo debugInfo = TraceInfoCache.getInstance().get(model);
     if (debugInfo == null) {
       return null;

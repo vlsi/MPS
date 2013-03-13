@@ -21,9 +21,10 @@ import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.smodel.LanguageID;
+import jetbrains.mps.persistence.MementoImpl;
+import jetbrains.mps.project.structure.ProjectStructureModelRoot;
 import jetbrains.mps.util.MacroHelper;
 import java.util.ArrayList;
 import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
@@ -130,7 +131,7 @@ public class ModuleDescriptorPersistence {
     }
   }
 
-  public static ModelRootDescriptor createDescriptor(String type, Memento m, @Nullable String moduleContentRoot, ModelRootDescriptor[] moduleDefaultRoot) {
+  public static ModelRootDescriptor createDescriptor(String type, Memento m, @Nullable String moduleContentRoot, ModelRootDescriptor[] cache) {
     if (type != null) {
       return new ModelRootDescriptor(type, m);
     }
@@ -139,53 +140,62 @@ public class ModuleDescriptorPersistence {
     Memento manager = m.getChild("manager");
     if (manager == null) {
       String path = FileUtil.stripLastSlashes(m.get("path"));
-
-      if (moduleContentRoot != null && (path.startsWith(moduleContentRoot + "/") || path.equals(moduleContentRoot))) {
-        String relPath = path.substring(moduleContentRoot.length());
-        while (relPath.startsWith("/")) {
-          relPath = relPath.substring(1);
-        }
-        ModelRootDescriptor result = null;
-        if (moduleDefaultRoot[0] == null) {
-          m = new MementoImpl();
-          m.put("contentPath", moduleContentRoot);
-          moduleDefaultRoot[0] = new ModelRootDescriptor(PersistenceRegistry.DEFAULT_MODEL_ROOT, m);
-          result = moduleDefaultRoot[0];
-        } else {
-          m = moduleDefaultRoot[0].getMemento();
-        }
-        Memento sr = m.createChild("sourceRoot");
-        sr.put("location", (relPath.isEmpty() ?
-          "." :
-          relPath
-        ));
-        return result;
-      }
-
-      m = new MementoImpl();
-      m.put("contentPath", path);
-      Memento sourceRoot = m.createChild("sourceRoot");
-      sourceRoot.put("location", ".");
-      return new ModelRootDescriptor(PersistenceRegistry.DEFAULT_MODEL_ROOT, m);
+      return mergeFileBasedModelRoot(path, PersistenceRegistry.DEFAULT_MODEL_ROOT, moduleContentRoot, 0, cache);
     } else if (matches(manager, LanguageID.JAVA_MANAGER)) {
       // TODO use JavaClassStubConstants.STUB_TYPE 
       String path = m.get("path");
       m = new MementoImpl();
       m.put("path", path);
       return new ModelRootDescriptor(PersistenceRegistry.JAVA_CLASSES_ROOT, m);
+    } else if ("jetbrains.mps.lang.project.stubs.ProjectStubs".equals(manager.get("className")) && "86ef8290-12bb-4ca7-947f-093788f263a9".equals(manager.get("moduleId"))) {
+      String path = FileUtil.stripLastSlashes(m.get("path"));
+      return mergeFileBasedModelRoot(path, ProjectStructureModelRoot.TYPE, moduleContentRoot, 1, cache);
     } else {
       return new ModelRootDescriptor(PersistenceRegistry.OBSOLETE_MODEL_ROOT, m);
     }
   }
 
+  private static ModelRootDescriptor mergeFileBasedModelRoot(String path, String type, @Nullable String moduleContentRoot, int cacheIndex, ModelRootDescriptor[] cache) {
+    if (moduleContentRoot != null && (path.startsWith(moduleContentRoot + "/") || path.equals(moduleContentRoot))) {
+      String relPath = path.substring(moduleContentRoot.length());
+      while (relPath.startsWith("/")) {
+        relPath = relPath.substring(1);
+      }
+      ModelRootDescriptor result = null;
+      Memento m;
+      if (cache[cacheIndex] == null) {
+        m = new MementoImpl();
+        m.put("contentPath", moduleContentRoot);
+        cache[cacheIndex] = new ModelRootDescriptor(type, m);
+        result = cache[cacheIndex];
+      } else {
+        m = cache[cacheIndex].getMemento();
+      }
+      Memento sr = m.createChild("sourceRoot");
+      sr.put("location", (relPath.isEmpty() ?
+        "." :
+        relPath
+      ));
+      return result;
+    }
+
+    Memento m = new MementoImpl();
+    m.put("contentPath", path);
+    Memento sourceRoot = m.createChild("sourceRoot");
+    sourceRoot.put("location", ".");
+    return new ModelRootDescriptor(type, m);
+  }
+
+
+
   public static List<ModelRootDescriptor> loadModelRoots(Iterable<Element> modelRootElements, String moduleContentRoot, MacroHelper macroHelper) {
     List<ModelRootDescriptor> result = ListSequence.fromList(new ArrayList<ModelRootDescriptor>());
-    ModelRootDescriptor[] moduleDefaultRoot = new ModelRootDescriptor[]{null};
+    ModelRootDescriptor[] cache = new ModelRootDescriptor[2];
     for (Element element : modelRootElements) {
       Memento m = new MementoImpl();
       readMemento(m, element, macroHelper);
       String type = element.getAttributeValue("type");
-      ModelRootDescriptor descriptor = createDescriptor(type, m, moduleContentRoot, moduleDefaultRoot);
+      ModelRootDescriptor descriptor = createDescriptor(type, m, moduleContentRoot, cache);
       if (descriptor != null) {
         ListSequence.fromList(result).addElement(descriptor);
       }

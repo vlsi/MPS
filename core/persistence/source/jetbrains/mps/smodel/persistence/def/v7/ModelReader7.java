@@ -19,8 +19,13 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.refactoring.ModelLinkMap;
 import jetbrains.mps.refactoring.StructureModificationProcessor;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.DefaultSModel;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelHeader;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.InternUtil;
@@ -31,6 +36,8 @@ import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.List;
@@ -55,7 +62,7 @@ public class ModelReader7 implements IModelReader {
     model.setPersistenceVersion(getVersion());
     model.getSModelHeader().updateDefaults(header);
 
-    for (Object att: rootElement.getAttributes()) {
+    for (Object att : rootElement.getAttributes()) {
       String name = ((Attribute) att).getQualifiedName();
       String value = ((Attribute) att).getValue();
       if (SModelHeader.VERSION.equals(name)) {
@@ -66,17 +73,15 @@ public class ModelReader7 implements IModelReader {
           result = -1;
         }
         model.getSModelHeader().setVersion(result);
-      }
-      else if (SModelHeader.DO_NOT_GENERATE.equals(name)) {
+      } else if (SModelHeader.DO_NOT_GENERATE.equals(name)) {
         model.getSModelHeader().setDoNotGenerate(Boolean.parseBoolean(value));
-      }
-      else if (!ModelPersistence.MODEL_UID.equals(name)) {
+      } else if (!ModelPersistence.MODEL_UID.equals(name)) {
         model.getSModelHeader().setOptionalProperty(name, StringUtil.unescapeXml(value));
       }
     }
 
     myHelper = new ReadHelper(modelReference);
-    myLinkMap = new ModelLinkMap(model);
+    myLinkMap = new ModelLinkMap(model.getModelDescriptor());
 
     // languages
     for (Element element : (List<Element>) rootElement.getChildren(ModelPersistence.LANGUAGE)) {
@@ -167,8 +172,8 @@ public class ModelReader7 implements IModelReader {
 //        node.addReference(ref);
 //        myLinkMap.addRoleLocation(myHelper.readLinkId(link.getAttributeValue(ModelPersistence.ROLE_ID)), ref);
 //      } else {
-        StaticReference ref = new StaticReference(role, node, ptr.getModelReference(), ((SNodePointer) ptr).getNodeId(), resolveInfo);
-        myLinkMap.addTargetLocation(ptr, ref);
+      StaticReference ref = new StaticReference(role, node, ptr.getModelReference(), ((SNodePointer) ptr).getNodeId(), resolveInfo);
+      myLinkMap.addTargetLocation(ptr, ref);
       node.setReference(ref.getRole(), ref);
       myLinkMap.addRoleLocation(myHelper.readLinkId(link.getAttributeValue(ModelPersistence.ROLE_ID)), ref);
 //      }
@@ -182,7 +187,7 @@ public class ModelReader7 implements IModelReader {
 
   protected void readChildren(@NotNull SNode node, @NotNull Element nodeElement) {
     for (Element child : (List<Element>) nodeElement.getChildren(ModelPersistence.NODE)) {
-      SNode childNode = readNode(child, node.getModel(), false);
+      SNode childNode = readNode(child, node.getPersistentModel(), false);
       String role = myHelper.readRole(child.getAttributeValue(ModelPersistence.ROLE));
       if (role == null || childNode == null) {
         LOG.errorWithTrace("Error reading child node in node " + SNodeUtil.getDebugText(node));

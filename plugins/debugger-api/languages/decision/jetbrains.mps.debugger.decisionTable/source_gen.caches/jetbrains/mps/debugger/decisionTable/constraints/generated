@@ -15,10 +15,9 @@
   <dep model="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" hash="d83kyboer7yr9ggbbl0mtog0f5n8pwz" />
   <dep model="r:00000000-0000-4000-0000-011c8959030e(jetbrains.mps.lang.constraints.generator.baseLanguage.template.main@generator)" hash="-9rrlu2w4oy379n36c1did4kvk3rolo0" />
   <dep model="r:7c298fbd-556c-4780-a4a2-b80b0ff237fd(jetbrains.mps.debugger.decisionTable.structure)" hash="dezz8ou71peq0e39ak0povp4l95gu80" />
-  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-960h4d4vhdiaf5pkosehvef6lxj72ea" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-62ar1wrc9z6b6maiyjswhoxlb4zjyml" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
-  <dep model="r:f9895147-288e-44e3-852e-62d0bff7f07d(jetbrains.mps.debugger.decisionTable.constraints)" hash="84mcecr7qkpjjnkv76xqimzxqj32pu" />
-  <common hash="by1ssxbeayraen8dh2zn8f7pl99kio7">
+  <common hash="by1ssxbeayraen8dh2zn8f7pl99kio7" dependsOnNodes="true">
     <dep root="5202024118203914179" />
     <dep root="5202024118203919168" />
     <dep root="5202024118204000603" />
@@ -27,7 +26,6 @@
     <dep model="r:00000000-0000-4000-0000-011c8959030e(jetbrains.mps.lang.constraints.generator.baseLanguage.template.main@generator)" />
     <dep model="r:7c298fbd-556c-4780-a4a2-b80b0ff237fd(jetbrains.mps.debugger.decisionTable.structure)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <dep model="r:f9895147-288e-44e3-852e-62d0bff7f07d(jetbrains.mps.debugger.decisionTable.constraints)" />
     <file name="ConstraintsAspectDescriptor.java" />
   </common>
   <source id="5202024118203914179" name="XVariableReference_Constraints" hash="4o17yjy71ebw05qpvi8zgh15k1n7aup">

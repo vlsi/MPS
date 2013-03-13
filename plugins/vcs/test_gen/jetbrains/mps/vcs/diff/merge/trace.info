@@ -132,8 +132,8 @@
     <nodeInfo nodeId="445606167100298416" fileName="MergeData.java" startLine="82" startPosition="83" endLine="83" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="445606167100298422" fileName="MergeData.java" startLine="83" startPosition="83" endLine="84" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="445606167100350482" fileName="MergeData.java" startLine="84" startPosition="95" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="445606167100298453" fileName="MergeData.java" startLine="85" startPosition="0" endLine="86" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="445606167100298549" fileName="MergeData.java" startLine="86" startPosition="89" endLine="87" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="445606167100298453" fileName="MergeData.java" startLine="85" startPosition="0" endLine="86" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="445606167100298549" fileName="MergeData.java" startLine="86" startPosition="104" endLine="87" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="445606167100350464" fileName="MergeData.java" startLine="89" startPosition="44" endLine="90" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="445606167100350480" fileName="MergeData.java" startLine="92" startPosition="9" endLine="93" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="445606167100350513" fileName="MergeData.java" startLine="93" startPosition="22" endLine="94" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

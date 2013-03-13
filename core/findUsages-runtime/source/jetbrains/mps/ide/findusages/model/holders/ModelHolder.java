@@ -19,7 +19,6 @@ import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.NameUtil;
@@ -37,7 +36,7 @@ public class ModelHolder implements IHolder<SModel> {
   }
 
   public ModelHolder(SModel model) {
-    myModelReference = model.getModelDescriptor().getReference();
+    myModelReference = model.getReference();
   }
 
   private SModel getModelDescriptor() {
