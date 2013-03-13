@@ -87,7 +87,7 @@ public class TestModule extends ClassLoadingModule {
   private boolean isValidName(String longName, String stereotype) {
     SModelFqName sModelFqName = new SModelFqName(longName, stereotype);
     return
-      SModelRepository.getInstance().getModelDescriptor(sModelFqName) == null
+      SModelRepository.getInstance().getModelDescriptor(sModelFqName.toString()) == null
         && !myModels.containsKey(sModelFqName.toString());
   }
 

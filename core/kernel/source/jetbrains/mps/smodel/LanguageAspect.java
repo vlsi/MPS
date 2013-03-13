@@ -226,9 +226,7 @@ public enum LanguageAspect {
   }
 
   private EditableSModelDescriptor get_internal(Language l, boolean doCreate) {
-    SModelFqName fqName = new SModelFqName(l.getModuleName() + "." + myName, null);
-
-    EditableSModelDescriptor md = (EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(fqName);
+    EditableSModelDescriptor md = (EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(l.getModuleName() + "." + myName);
     if (md != null && SModelRepository.getInstance().getOwner(md) == l) return md;
     return doCreate ? createNew(l) : null;
   }

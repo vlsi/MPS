@@ -35,7 +35,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
 import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import java.util.Arrays;
@@ -260,7 +259,7 @@ public class ChangesManagerTest {
   }
 
   private CurrentDifference getCurrentDifference(String shortName) {
-    return myRegistry.getCurrentDifference((BaseEditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(MODEL_PREFIX + shortName)));
+    return myRegistry.getCurrentDifference((BaseEditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(MODEL_PREFIX + shortName));
   }
 
   private void checkAndEnable() {

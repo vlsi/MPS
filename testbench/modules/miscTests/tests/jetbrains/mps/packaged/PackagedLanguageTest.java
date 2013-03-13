@@ -68,7 +68,7 @@ public class PackagedLanguageTest {
   }
 
   private void checkStructureModelLoaded() {
-    final SModel structureModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(PACKAGED_LANGUAGE + ".structure"));
+    final SModel structureModelDescriptor = SModelRepository.getInstance().getModelDescriptor(PACKAGED_LANGUAGE + ".structure");
     Assert.assertNotNull(structureModelDescriptor);
     final SModel structureModel = structureModelDescriptor;
     Assert.assertNotNull(structureModel);
@@ -81,7 +81,7 @@ public class PackagedLanguageTest {
   }
 
   private void checkEditorModelLoaded() {
-    final SModel editorModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(PACKAGED_LANGUAGE + ".editor"));
+    final SModel editorModelDescriptor = SModelRepository.getInstance().getModelDescriptor(PACKAGED_LANGUAGE + ".editor");
     Assert.assertNotNull(editorModelDescriptor);
     final SModel editorModel = editorModelDescriptor;
     Assert.assertNotNull(editorModel);
@@ -105,7 +105,7 @@ public class PackagedLanguageTest {
   }
 
   private void checkStubsLoaded() {
-    final SModel libraryModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(PACKAGED_LANGUAGE + "/" + "dummy" + "@java_stub"));
+    final SModel libraryModelDescriptor = SModelRepository.getInstance().getModelDescriptor(PACKAGED_LANGUAGE + "/" + "dummy" + "@java_stub");
     Assert.assertNotNull(libraryModelDescriptor);
     final SModel libraryModel = libraryModelDescriptor;
     Assert.assertNotNull(libraryModel);

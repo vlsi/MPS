@@ -29,12 +29,12 @@ public class SModelRenamedEvent extends SModelEvent {
     myNewName = newName;
   }
 
-  public SModelFqName getOldName() {
-    return SModelFqName.fromString(myOldName);
+  public String getOldName() {
+    return myOldName;
   }
 
-  public SModelFqName getNewName() {
-    return SModelFqName.fromString(myNewName);
+  public String getNewName() {
+    return myNewName;
   }
 
   @Override

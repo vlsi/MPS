@@ -19,7 +19,6 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.IOperationContext;
@@ -70,8 +69,7 @@ public class StubResolver {
           continue;
         }
         // trying to find correspondent nonstub model 
-        SModelFqName modelName = new SModelFqName(SModelStereotype.withoutStereotype(targetModelRef.getModelName()), null);
-        SModelReference modelRef = check_ar1im2_a0e0a0c0e(SModelRepository.getInstance().getModelDescriptor(modelName));
+        SModelReference modelRef = check_ar1im2_a0d0a0c0e(SModelRepository.getInstance().getModelDescriptor(SModelStereotype.withoutStereotype(targetModelRef.getModelName())));
         if (modelRef == null) {
           continue;
         }
@@ -171,7 +169,7 @@ public class StubResolver {
 
   private static Logger LOG = Logger.getLogger(StubResolver.class);
 
-  private static SModelReference check_ar1im2_a0e0a0c0e(SModel checkedDotOperand) {
+  private static SModelReference check_ar1im2_a0d0a0c0e(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
     }

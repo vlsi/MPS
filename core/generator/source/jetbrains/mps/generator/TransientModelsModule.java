@@ -130,7 +130,7 @@ public class TransientModelsModule extends ClassLoadingModule {
   private boolean isValidName(String longName, String stereotype) {
     String modelName = stereotype == null ? longName : longName + "@" + stereotype;
     return
-      SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(modelName)) == null
+      SModelRepository.getInstance().getModelDescriptor(modelName) == null
         && !myModels.containsKey(modelName);
   }
 
