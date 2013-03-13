@@ -252,7 +252,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "snodeId");
   }
 
-  public static Object propertyMacro_GetPropertyValue_6720970695605836604(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_4628059708261168188(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "smodelReference");
   }
 

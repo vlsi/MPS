@@ -4,11 +4,11 @@ package jetbrains.mps.lang.structure.findUsages;
 
 import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public class FindUsagesDescriptor extends BaseFindUsagesDescriptor {
   public FindUsagesDescriptor() {
-    super(new ModuleReference("jetbrains.mps.lang.structure", "c72da2b9-7cce-4447-8389-f407dc1158b7"), SModelReference.fromString("r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)"));
+    super(new ModuleReference("jetbrains.mps.lang.structure", "c72da2b9-7cce-4447-8389-f407dc1158b7"), PersistenceFacade.getInstance().createModelReference("r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)"));
   }
 
   public void init() {
