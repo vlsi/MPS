@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor.text;
 
 import jetbrains.mps.logging.Logger;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -52,7 +53,12 @@ public class TextBuilder implements jetbrains.mps.openapi.editor.TextBuilder {
   }
 
   @Override
-  public List<StringBuffer> getLines() {
+  public int getSize() {
+    return myLines.size();
+  }
+
+  @Override
+  public Iterable<StringBuffer> getLines() {
     return myLines;
   }
 
@@ -68,18 +74,24 @@ public class TextBuilder implements jetbrains.mps.openapi.editor.TextBuilder {
     int delimWidth = delim.length();
     
     result.myWidth = this.myWidth + getWidth(builder) + delimWidth;
-    int builderHeight = builder.getLines().size();
-    int height = Math.max(this.getHeight(), builderHeight);
 
-    for (int i = 0; i < height; i++) {
-      if (i >= this.myLines.size()) {
-        result.myLines.add(makeWhitespaceStringBuffer(this.myWidth + delimWidth));
+    Iterator<StringBuffer> builderIterator = builder.getLines().iterator();
+    Iterator<StringBuffer> myIterator = getLines().iterator();
+    while (myIterator.hasNext() || builderIterator.hasNext()){
+      StringBuffer resultLine;
+      if (myIterator.hasNext()) {
+        StringBuffer myCurrentLine = myIterator.next();
+        resultLine = new StringBuffer(myCurrentLine.append(delim));
       } else {
-        result.myLines.add(new StringBuffer(this.myLines.get(i).append(delim)));
+        resultLine = makeWhitespaceStringBuffer(this.myWidth + delimWidth);
       }
-      if (i < builder.getLines().size()) {
-        result.myLines.get(i).append(builder.getLines().get(i));
+
+
+      if (builderIterator.hasNext()) {
+        StringBuffer builderCurrentLine = builderIterator.next();
+        resultLine.append(builderCurrentLine);
       }
+      result.myLines.add(resultLine);
     }
     result.normalizeWidth();
     return result;

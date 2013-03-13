@@ -23,7 +23,8 @@ import java.util.List;
  */
 public interface TextBuilder {
   String getText();
-  List<StringBuffer> getLines();
+  Iterable<StringBuffer> getLines();
+  int getSize();
   public TextBuilder appendToTheBottom(jetbrains.mps.openapi.editor.TextBuilder builder);
   public TextBuilder appendToTheRight(jetbrains.mps.openapi.editor.TextBuilder builder, boolean insertSpace);
 }
