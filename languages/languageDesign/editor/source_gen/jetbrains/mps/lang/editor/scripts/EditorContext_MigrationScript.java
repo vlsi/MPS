@@ -1348,6 +1348,9 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
         if (jetbrains.mps.smodel.SNodeId.fromString("~EditorCell.getSubstituteInfo():jetbrains.mps.openapi.editor.cells.SubstituteInfo").equals(targetNodeId)) {
           return true;
         }
+        if (jetbrains.mps.smodel.SNodeId.fromString("~EditorCell.renderText():jetbrains.mps.openapi.editor.TextBuilder").equals(targetNodeId)) {
+          return true;
+        }
         return false;
       }
 
