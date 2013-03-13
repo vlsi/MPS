@@ -81,7 +81,7 @@ public class CheckLangForJavaStubModels_Action extends BaseAction {
       for (EditableSModelDescriptor md : CollectionSequence.fromCollection(LanguageAspect.getAspectModels(language))) {
         for (SModelReference model : ListSequence.fromList(SModelOperations.getImportedModelUIDs(md))) {
           if (model.getStereotype().equals(SModelStereotype.getStubStereotypeForId(LanguageID.JAVA))) {
-            SModel langModelForStub = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(model.getLongName()));
+            SModel langModelForStub = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(SModelStereotype.withoutStereotype(model.getModelName())));
             String modelName = model.getModelName();
             if (langModelForStub != null && language.getAspectForModel(langModelForStub) != null) {
               SetSequence.fromSet(langStubModels).addElement(modelName);

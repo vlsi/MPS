@@ -5,6 +5,7 @@ package jetbrains.mps.lang.plugin.scripts;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
+import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -1387,7 +1388,7 @@ public class Mps25ApiMigration_MigrationScript extends BaseMigrationScript {
 
   private static String check_d0rs9v_a0a0a0a0a0a0(SModelReference checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getLongName();
+      return SModelStereotype.withoutStereotype(checkedDotOperand.getModelName());
     }
     return null;
   }
