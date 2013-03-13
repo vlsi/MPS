@@ -13,10 +13,9 @@ import jetbrains.mps.lang.resources.behavior.IconResource_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.extapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -55,15 +54,14 @@ public class ExtractIconsUtil {
   }
 
   private static SNode getIconResourceBundle(Language lang) {
-    EditableSModel pluginModel = getPluginModel(lang);
-    SModel smodel = ((SModelInternal) pluginModel);
-    SNode irb = ListSequence.fromList(SModelOperations.getRoots(smodel, "jetbrains.mps.lang.resources.structure.IconResourceBundle")).findFirst(new IWhereFilter<SNode>() {
+    SModel pluginModel = getPluginModel(lang);
+    SNode irb = ListSequence.fromList(SModelOperations.getRoots(pluginModel, "jetbrains.mps.lang.resources.structure.IconResourceBundle")).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode irb) {
         return "Behavior".equals(SPropertyOperations.getString(irb, "name"));
       }
     });
     if ((irb == null)) {
-      irb = SModelOperations.createNewRootNode(smodel, "jetbrains.mps.lang.resources.structure.IconResourceBundle", null);
+      irb = SModelOperations.createNewRootNode(pluginModel, "jetbrains.mps.lang.resources.structure.IconResourceBundle", null);
       SPropertyOperations.set(irb, "name", "Behavior");
     }
     return irb;

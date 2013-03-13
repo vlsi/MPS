@@ -197,7 +197,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
       }
 
       // ensure imports are back
-      SModelOperations.validateLanguagesAndImports(model, false, false);
+      SModelOperations.validateLanguagesAndImports(model.getModelDescriptor(), false, false);
 
       return model;
     }
@@ -220,7 +220,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     NodesReader reader = new NodesReader(node.getModel().getReference());
     ByteArrayInputStream is = new ByteArrayInputStream(os.toByteArray());
 
-    return reader.readNode(node.getModel(), new ModelInputStream(is)).o2;
+    return reader.readNode(((jetbrains.mps.smodel.SNode) node).getPersistentModel(), new ModelInputStream(is)).o2;
   }
 
   // method created for testing
@@ -237,7 +237,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     new NodesWriter(model.getReference()).writeNodes(roots, mos);
     mos.close();
 
-    SModel resultModel = new jetbrains.mps.smodel.SModel(new SModelReference("smodel.long.name.for.testing", ""));
+    jetbrains.mps.smodel.SModel resultModel = new jetbrains.mps.smodel.SModel(new SModelReference("smodel.long.name.for.testing", ""));
     ByteArrayInputStream is = new ByteArrayInputStream(os.toByteArray());
     ModelInputStream mis = new ModelInputStream(is);
 
@@ -251,8 +251,8 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
       resultModel.addRootNode(root.o2);
     }
 
-    SModelOperations.validateLanguagesAndImports(resultModel, false, false);
+    SModelOperations.validateLanguagesAndImports(resultModel.getModelDescriptor(), false, false);
 
-    return resultModel;
+    return resultModel.getModelDescriptor();
   }
 }

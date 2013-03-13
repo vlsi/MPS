@@ -66,7 +66,7 @@ import jetbrains.mps.logging.Logger;
 
     try {
       LOG.info("Merging " + baseModel.getReference() + "...");
-      final MergeSession mergeSession = new MergeSession(baseModel, localModel, latestModel);
+      final MergeSession mergeSession = MergeSession.createMergeSession(baseModel, localModel, latestModel);
       int conflictingChangesCount = Sequence.fromIterable(mergeSession.getAllChanges()).where(new IWhereFilter<ModelChange>() {
         public boolean accept(ModelChange c) {
           return Sequence.fromIterable(mergeSession.getConflictedWith(c)).isNotEmpty();

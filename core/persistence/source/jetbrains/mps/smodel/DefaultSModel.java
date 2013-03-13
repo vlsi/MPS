@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel.Problem;
 
 import java.util.Collections;
 
@@ -105,7 +106,7 @@ public class DefaultSModel extends SModel {
 
   @Deprecated
   public void setRefactoringHistoryElement(Element history) {
-    ModelChange.assertLegalChange(this);
+    ModelChange.assertLegalChange(getModelDescriptor());
 
     myStructureModificationHistory = history;
   }

@@ -74,7 +74,7 @@ public class DiffEditor implements EditorMessageOwner {
     return getMainEditor().getEditedNode();
   }
 
-  public void editRoot(@NotNull Project project, @Nullable SNodeId rootId, @NotNull SModel model) {
+  public void editRoot(@NotNull Project project, @Nullable SNodeId rootId, @NotNull jetbrains.mps.smodel.SModel model) {
     SNode root = (rootId == null ?
       null :
       model.getNode(rootId)
@@ -116,7 +116,7 @@ public class DiffEditor implements EditorMessageOwner {
     );
   }
 
-  public void highlightChange(SModel model, ModelChange change, ChangeEditorMessage.ConflictChecker conflictChecker) {
+  public void highlightChange(jetbrains.mps.smodel.SModel model, ModelChange change, ChangeEditorMessage.ConflictChecker conflictChecker) {
     final List<ChangeEditorMessage> messages = ChangeEditorMessageFactory.createMessages(model, change, this, conflictChecker);
     if (ListSequence.fromList(messages).isEmpty()) {
       return;

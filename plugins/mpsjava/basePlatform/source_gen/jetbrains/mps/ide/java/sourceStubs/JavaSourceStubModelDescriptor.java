@@ -140,7 +140,7 @@ public class JavaSourceStubModelDescriptor extends BaseSpecialModelDescriptor im
               }
             }).first();
             if (oldNode == null) {
-              SModelOperations.addRootNode(((org.jetbrains.mps.openapi.model.SModel) myModel), newNode);
+              SModelOperations.addRootNode(((org.jetbrains.mps.openapi.model.SModel) myModel.getModelDescriptor()), newNode);
               SetSequence.fromSet(oldNodes).removeElement(oldNode);
             } else {
               SNodeOperations.replaceWithAnother(oldNode, newNode);

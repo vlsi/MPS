@@ -161,7 +161,7 @@ public class MpsSourcePosition extends SourcePosition {
         if (node == null) {
           return null;
         }
-        SModel modelDescriptor = node.getModel().getModelDescriptor();
+        SModel modelDescriptor = node.getModel();
         IModule module = modelDescriptor.getModule();
         if (!(module instanceof SolutionIdea)) {
           return null;

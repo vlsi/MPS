@@ -163,7 +163,7 @@ public class EditorTests extends DataMPSFixtureTestCase {
 
               new MPSEditorOpener(myModule.getProject()).openNode(myRoot, context, true, true);
 
-              btt.setModelDescriptor(myRoot.getModel().getModelDescriptor());
+              btt.setModelDescriptor(myRoot.getModel());
               btt.setProject(ProjectHelper.toMPSProject(myModule.getProject()));
             }
           });

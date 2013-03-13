@@ -66,7 +66,7 @@ public class SNodePasteProvider implements com.intellij.ide.PasteProvider, Runna
   public void run() {
     // Should be executed inside read action
     PasteNodeData nodeData = CopyPasteUtil.getPasteNodeDataFromClipboard(myModel);
-    IOperationContext operationContext = new ModuleContext(myModel.getModelDescriptor().getModule(), myProject);
+    IOperationContext operationContext = new ModuleContext(myModel.getModule(), myProject);
     SwingUtilities.invokeLater(getAddImportsRunnable(nodeData, operationContext));
   }
 

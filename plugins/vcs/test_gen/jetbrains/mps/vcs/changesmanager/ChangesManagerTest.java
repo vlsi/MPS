@@ -79,6 +79,7 @@ import com.intellij.openapi.command.undo.UndoManager;
 import org.junit.Test;
 import java.util.Random;
 import jetbrains.mps.vcs.diff.changes.NodeCopier;
+import jetbrains.mps.smodel.BaseSModelDescriptor;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;
@@ -395,8 +396,8 @@ public class ChangesManagerTest {
 
   private void modifyExternally() throws ModelReadException {
     int changesBefore = ListSequence.fromList(check_4gxggu_a0a0a53(myUtilDiff.getChangeSet())).count();
-    final SModel modelContent = ModelPersistence.readModel(myUtilDiff.getModelDescriptor().getSource(), false);
-    createNewRoot(modelContent);
+    final jetbrains.mps.smodel.SModel modelContent = ModelPersistence.readModel(myUtilDiff.getModelDescriptor().getSource(), false);
+    createNewRoot(modelContent.getModelDescriptor());
     final EditableSModel modelDescriptor = myUtilDiff.getModelDescriptor();
     waitForSomething(new Runnable() {
       public void run() {
@@ -768,7 +769,7 @@ public class ChangesManagerTest {
       final ModelChange changeToPick = ListSequence.fromList(changesBefore).getElement(random.nextInt(ListSequence.fromList(changesBefore).count()));
       runCommandAndWait(new Runnable() {
         public void run() {
-          changeToPick.getOppositeChange().apply(model, new NodeCopier(model));
+          changeToPick.getOppositeChange().apply(model, new NodeCopier(((BaseSModelDescriptor) model).getSModelInternal()));
         }
       });
       waitAndCheck(myUiDiff);
@@ -809,7 +810,7 @@ public class ChangesManagerTest {
     }).toListSequence();
     runCommandAndWait(new Runnable() {
       public void run() {
-        final NodeCopier nc = new NodeCopier(model);
+        final NodeCopier nc = new NodeCopier(((BaseSModelDescriptor) model).getSModelInternal());
         ListSequence.fromList(oppositeChanges).where(new IWhereFilter<ModelChange>() {
           public boolean accept(ModelChange ch) {
             return ch instanceof NodeGroupChange;
@@ -892,9 +893,8 @@ public class ChangesManagerTest {
 
     runCommandAndWait(new Runnable() {
       public void run() {
-        SModel m = ((SModelInternal) md);
-        ((SModelInternal) m).addLanguage(ModuleReference.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"));
-        createNewRoot(m);
+        ((SModelInternal) md).addLanguage(ModuleReference.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"));
+        createNewRoot(md);
       }
     });
     checkOneAddedRoot(newModelDiff.value);

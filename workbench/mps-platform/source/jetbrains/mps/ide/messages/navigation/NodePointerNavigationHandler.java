@@ -21,7 +21,6 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -38,7 +37,7 @@ class NodePointerNavigationHandler implements INavigationHandler<SNodeReference>
 
   @Override
   public void navigate(SNodeReference node, Project project, boolean focus, boolean select) {
-    IModule module = node.resolve(MPSModuleRepository.getInstance()).getModel().getModelDescriptor().getModule();
+    IModule module = node.resolve(MPSModuleRepository.getInstance()).getModel().getModule();
     ModuleContext context = new ModuleContext(module, ProjectHelper.toMPSProject(project));
 
     NavigationSupport.getInstance().openNode(context, node.resolve(MPSModuleRepository.getInstance()), focus, select);

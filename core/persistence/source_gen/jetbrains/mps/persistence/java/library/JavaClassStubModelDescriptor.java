@@ -9,7 +9,6 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.extapi.persistence.FolderSetDataSource;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.smodel.Language;
@@ -40,7 +39,7 @@ public class JavaClassStubModelDescriptor extends BaseSModelDescriptorWithSource
   }
 
   @Override
-  protected org.jetbrains.mps.openapi.model.SModel getCurrentModelInternal() {
+  protected SModel getCurrentModelInternal() {
     return myModel;
   }
 
@@ -54,7 +53,7 @@ public class JavaClassStubModelDescriptor extends BaseSModelDescriptorWithSource
   public synchronized SModel getSModelInternal() {
     if (myModel == null) {
       myModel = createModel();
-      ((SModelInternal) myModel).setModelDescriptor(this);
+      myModel.setModelDescriptor(this);
       fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
     }
     return myModel;
@@ -68,10 +67,10 @@ public class JavaClassStubModelDescriptor extends BaseSModelDescriptorWithSource
   private SModel createModel() {
     SModel model = new SModel(getSModelReference(), new ForeignNodeIdMap());
     for (Language l : getLanguagesToImport()) {
-      ((SModelInternal) model).addLanguage(l.getModuleReference());
+      model.addLanguage(l.getModuleReference());
     }
     CompositeClassPathItem cp = createClassPath();
-    new ASMModelLoader(((IModule) myModelRoot.getModule()), cp, model, false).updateModel();
+    new ASMModelLoader(((IModule) myModelRoot.getModule()), cp, model.getModelDescriptor(), false).updateModel();
     updateDiskTimestamp();
     return model;
   }

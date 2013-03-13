@@ -146,7 +146,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
     return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
-        SModel md = myFile.getNode().getModel().getModelDescriptor();
+        SModel md = myFile.getNode().getModel();
         return md instanceof EditableSModel && ((EditableSModel) md).isChanged();
       }
     });
@@ -245,7 +245,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
       myIsValid = false;
       return null;
     }
-    SModel sm = node.getModel().getModelDescriptor();
+    SModel sm = node.getModel();
 
     IOperationContext result = new ModuleContext(sm.getModule(), ProjectHelper.toMPSProject(myProject));
     assert result.getModule() == sm.getModule() : "Different modules: " + result.getModule() + "/" + sm.getModule();

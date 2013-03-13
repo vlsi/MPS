@@ -41,7 +41,6 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -692,7 +691,7 @@ public class UsagesTree extends MPSTree {
   public void navigateToNode(final SNode node, boolean focus) {
     ModelAccess.assertLegalWrite();
 
-    SModel modelDescriptor = node.getModel().getModelDescriptor();
+    SModel modelDescriptor = node.getModel();
     if (modelDescriptor == null) return;
 
     IModule module = modelDescriptor.getModule();
@@ -707,7 +706,7 @@ public class UsagesTree extends MPSTree {
     if (o instanceof SNode) {
       NavigationSupport.getInstance().selectInTree(context, (SNode) o, focus);
     } else if (o instanceof SModel) {
-      NavigationSupport.getInstance().selectInTree(context, ((SModel) o).getModelDescriptor(), focus);
+      NavigationSupport.getInstance().selectInTree(context, ((SModel) o), focus);
     } else if (o instanceof IModule) {
       NavigationSupport.getInstance().selectInTree(context, (IModule) o, focus);
     } else {

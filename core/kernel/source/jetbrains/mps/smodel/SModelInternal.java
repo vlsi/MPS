@@ -26,9 +26,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.List;
 
-public interface SModelInternal extends SModel {
-  SModel resolveModel(jetbrains.mps.smodel.SModelReference reference);
-
+public interface SModelInternal{
   void setModule(SModule container);
 
   void addModelListener(@NotNull SModelListener listener);
@@ -105,6 +103,4 @@ public interface SModelInternal extends SModel {
   boolean updateModuleReferences();
 
   void copyPropertiesTo(SModelInternal to);
-
-  SModel createEmptyCopy();
 }

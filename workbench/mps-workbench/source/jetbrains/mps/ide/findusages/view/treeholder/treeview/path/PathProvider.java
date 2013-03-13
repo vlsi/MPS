@@ -53,7 +53,7 @@ public class PathProvider {
     if (o instanceof SModel) {
       SModel model = (SModel) o;
       res.add(new PathItem(PathItemRole.ROLE_MODEL, model));
-      o = model.getModelDescriptor().getModule();
+      o = model.getModule();
     }
 
     if (o instanceof IModule) {

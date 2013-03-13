@@ -82,7 +82,7 @@ public abstract class NodeTreeElement implements StructureViewTreeElement {
             if (node == null) return;
             SModel model = node.getModel();
             if (model == null) return;
-            IModule module = model.getModelDescriptor().getModule();
+            IModule module = model.getModule();
             if (module == null) return;
             NavigationSupport.getInstance().openNode(new ModuleContext(module, ProjectHelper.toMPSProject(p)), node, true, true);
           }

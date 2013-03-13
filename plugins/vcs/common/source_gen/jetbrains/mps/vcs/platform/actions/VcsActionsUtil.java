@@ -13,11 +13,12 @@ import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import com.intellij.openapi.vcs.changes.ContentRevision;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.BaseSModelDescriptor;
 import jetbrains.mps.vcs.diff.ui.RootDifferenceDialog;
 import com.intellij.openapi.vcs.VcsException;
 import com.intellij.openapi.ui.Messages;
@@ -62,7 +63,7 @@ public class VcsActionsUtil {
       final Wrappers._T<SNodeId> id = new Wrappers._T<SNodeId>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          newModel.value = node.getModel();
+          newModel.value = ((BaseSModelDescriptor) node.getModel()).getSModelInternal();
           id.value = node.getNodeId();
         }
       });
@@ -174,23 +175,23 @@ __switch__:
     }).toListSequence();
   }
 
-  public static List<SModel> getModels(@Nullable VirtualFile[] virtualFiles) {
+  public static List<org.jetbrains.mps.openapi.model.SModel> getModels(@Nullable VirtualFile[] virtualFiles) {
     if (virtualFiles != null) {
       return Sequence.fromIterable(Sequence.fromArray(virtualFiles)).where(new IWhereFilter<VirtualFile>() {
         public boolean accept(VirtualFile vf) {
           return vf.isInLocalFileSystem() && vf.exists() && !(vf.isDirectory());
         }
-      }).select(new ISelector<VirtualFile, SModel>() {
-        public SModel select(VirtualFile vf) {
-          return ((SModel) SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(vf)));
+      }).select(new ISelector<VirtualFile, org.jetbrains.mps.openapi.model.SModel>() {
+        public org.jetbrains.mps.openapi.model.SModel select(VirtualFile vf) {
+          return ((org.jetbrains.mps.openapi.model.SModel) SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(vf)));
         }
-      }).where(new IWhereFilter<SModel>() {
-        public boolean accept(SModel m) {
+      }).where(new IWhereFilter<org.jetbrains.mps.openapi.model.SModel>() {
+        public boolean accept(org.jetbrains.mps.openapi.model.SModel m) {
           return m != null;
         }
       }).toListSequence();
     } else {
-      return ListSequence.fromList(new ArrayList<SModel>());
+      return ListSequence.fromList(new ArrayList<org.jetbrains.mps.openapi.model.SModel>());
     }
   }
 

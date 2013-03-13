@@ -31,8 +31,8 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -150,7 +150,7 @@ public class EvaluationContainer implements IEvaluationContainer {
 
   protected void setUpNode(List<SNodeReference> nodesToImport) {
     // wanted to use resolve method here, but it was not implemented:( 
-    SModel containerModel = (SModelInternal) myContainerModel.resolve(MPSModuleRepository.getInstance());
+    SModel containerModel = myContainerModel.resolve(MPSModuleRepository.getInstance());
 
     SNode evaluatorNode = createEvaluatorNode();
     containerModel.addRootNode(evaluatorNode);

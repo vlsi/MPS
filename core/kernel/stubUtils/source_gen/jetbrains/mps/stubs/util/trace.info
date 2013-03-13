@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeRef="r:a0983393-0813-40ae-b2fa-3d40356087e3(jetbrains.mps.stubs.util)/230599087727050842" />
-  <root nodeRef="r:a0983393-0813-40ae-b2fa-3d40356087e3(jetbrains.mps.stubs.util)/230599087727051164" />
-  <root nodeRef="r:a0983393-0813-40ae-b2fa-3d40356087e3(jetbrains.mps.stubs.util)/3031904122192783068" />
-  <root nodeRef="r:a0983393-0813-40ae-b2fa-3d40356087e3(jetbrains.mps.stubs.util)/4156706222916980886" />
   <root nodeRef="r:a0983393-0813-40ae-b2fa-3d40356087e3(jetbrains.mps.stubs.util)/4372437818008142012">
     <nodeInfo nodeId="4372437818008142026" fileName="MultiRootModelDataSource.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addRoot#(Ljava/lang/String;)V" />
     <scopeInfo nodeId="4372437818008142026" fileName="MultiRootModelDataSource.java" startLine="8" startPosition="0" endLine="9" endPosition="0">

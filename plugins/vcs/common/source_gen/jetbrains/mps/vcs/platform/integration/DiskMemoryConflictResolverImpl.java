@@ -18,6 +18,7 @@ import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vcs.util.MergeDriverBackupUtil;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.smodel.BaseSModelDescriptor;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import java.io.IOException;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
@@ -101,7 +102,7 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
   private static File doBackup(IFile modelFile, SModel inMemory) {
     try {
       File tmp = FileUtil.createTmpDir();
-      MergeDriverBackupUtil.writeContentsToFile(ModelPersistence.modelToString(inMemory).getBytes(FileUtil.DEFAULT_CHARSET), modelFile.getName(), tmp, DiskMemoryConflictResolverImpl.DiskMemoryConflictVersion.MEMORY.getSuffix());
+      MergeDriverBackupUtil.writeContentsToFile(ModelPersistence.modelToString(((BaseSModelDescriptor) inMemory).getSModelInternal()).getBytes(FileUtil.DEFAULT_CHARSET), modelFile.getName(), tmp, DiskMemoryConflictResolverImpl.DiskMemoryConflictVersion.MEMORY.getSuffix());
       if (modelFile.exists()) {
         com.intellij.openapi.util.io.FileUtil.copy(new File(modelFile.getPath()), new File(tmp.getAbsolutePath(), modelFile.getName() + "." + DiskMemoryConflictResolverImpl.DiskMemoryConflictVersion.FILE_SYSTEM.getSuffix()));
       }
@@ -117,14 +118,14 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
   }
 
   private static void openDiffDialog(IFile modelFile, SModel inMemory) {
-    SModel onDisk = new jetbrains.mps.smodel.SModel(inMemory.getReference());
+    jetbrains.mps.smodel.SModel onDisk = new jetbrains.mps.smodel.SModel(inMemory.getReference());
     try {
       onDisk = ModelPersistence.readModel(new FileDataSource(modelFile), false);
     } catch (ModelReadException e) {
       LOG.error("Could not read model", e);
     }
     Project project = ProjectManager.getInstance().getOpenProjects()[0];
-    final ModelDifferenceDialog dialog = new ModelDifferenceDialog(onDisk, inMemory, project, "Filesystem version (Read-Only)", "Memory Version");
+    final ModelDifferenceDialog dialog = new ModelDifferenceDialog(onDisk, ((BaseSModelDescriptor) inMemory).getSModelInternal(), project, "Filesystem version (Read-Only)", "Memory Version");
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         dialog.toFront();

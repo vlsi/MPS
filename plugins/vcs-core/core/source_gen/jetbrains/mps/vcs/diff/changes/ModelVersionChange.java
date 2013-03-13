@@ -14,7 +14,7 @@ public class ModelVersionChange extends MetadataChange {
 
   @Override
   public void apply(@NotNull SModel model, @NotNull NodeCopier nodeCopier) {
-    ((SModelInternal) model).setVersion(((SModelInternal) getChangeSet().getNewModel()).getVersion());
+    ((SModelInternal) model).setVersion((getChangeSet().getNewModel()).getVersion());
   }
 
   @NotNull

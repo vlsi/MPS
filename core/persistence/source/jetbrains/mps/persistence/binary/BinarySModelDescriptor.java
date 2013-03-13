@@ -103,7 +103,7 @@ public class BinarySModelDescriptor extends BaseEditableSModelDescriptor impleme
 
   @Override
   protected boolean saveModel() {
-    SModel smodel = getSModelInternal();
+    BinarySModel smodel = getSModelInternal();
     if (smodel instanceof InvalidSModel) {
       // we do not save stub model to not overwrite the real model
       return false;
@@ -135,8 +135,7 @@ public class BinarySModelDescriptor extends BaseEditableSModelDescriptor impleme
 
   @Override
   public int getVersion() {
-    SModel model = getCurrentModelInternal();
-    if (model != null) return ((jetbrains.mps.smodel.SModelInternal) model).getVersion();
+    if (myModel != null) return (myModel).getVersion();
     return myHeader.getVersion();
   }
 
