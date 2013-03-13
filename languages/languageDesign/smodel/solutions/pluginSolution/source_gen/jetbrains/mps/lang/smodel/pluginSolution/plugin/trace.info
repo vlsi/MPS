@@ -226,7 +226,7 @@
     <nodeInfo nodeId="5487985028841902728" fileName="CheckLangForJavaStubModels_Action.java" startLine="77" startPosition="9" endLine="78" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5487985028841902737" fileName="CheckLangForJavaStubModels_Action.java" startLine="78" startPosition="94" endLine="79" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5487985028841902744" fileName="CheckLangForJavaStubModels_Action.java" startLine="79" startPosition="78" endLine="80" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841902773" fileName="CheckLangForJavaStubModels_Action.java" startLine="83" startPosition="103" endLine="84" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5487985028841902773" fileName="CheckLangForJavaStubModels_Action.java" startLine="83" startPosition="134" endLine="84" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5487985028841902783" fileName="CheckLangForJavaStubModels_Action.java" startLine="84" startPosition="174" endLine="85" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5487985028841902793" fileName="CheckLangForJavaStubModels_Action.java" startLine="86" startPosition="99" endLine="87" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841902800" fileName="CheckLangForJavaStubModels_Action.java" startLine="88" startPosition="20" endLine="89" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -295,7 +295,7 @@
     <scopeInfo nodeId="5487985028841902721" fileName="CheckLangForJavaStubModels_Action.java" startLine="64" startPosition="5" endLine="68" endPosition="5" />
     <scopeInfo nodeId="5487985028841902721" fileName="CheckLangForJavaStubModels_Action.java" startLine="68" startPosition="5" endLine="72" endPosition="5" />
     <scopeInfo nodeId="5487985028841902721" fileName="CheckLangForJavaStubModels_Action.java" startLine="34" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="5487985028841902772" fileName="CheckLangForJavaStubModels_Action.java" startLine="83" startPosition="103" endLine="90" endPosition="13">
+    <scopeInfo nodeId="5487985028841902772" fileName="CheckLangForJavaStubModels_Action.java" startLine="83" startPosition="134" endLine="90" endPosition="13">
       <varInfo nodeId="5487985028841902774" varName="langModelForStub" />
       <varInfo nodeId="5487985028841902784" varName="modelName" />
     </scopeInfo>

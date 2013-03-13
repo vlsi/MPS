@@ -1043,7 +1043,7 @@ public class SModel implements SModelData {
    * @Deprecated in 3.0
    */
   public SModelFqName getSModelFqName() {
-    return myReference.getSModelFqName();
+    return SModelFqName.fromString(myReference.getModelName());
   }
 
 

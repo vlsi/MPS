@@ -347,7 +347,8 @@ class GenerationSession {
 
       SModel transientModel = createTransientModel();
       if (myLogger.needsInfo()) {
-        myLogger.info("next minor step '" + currentInputModel.getReference().getSModelFqName().getStereotype() + "' --> '" + transientModel.getReference().getSModelFqName().getStereotype() + "'");
+        myLogger.info("next minor step '" + SModelStereotype.getStereotype(
+            currentInputModel.getReference().getModelName()) + "' --> '" + SModelStereotype.getStereotype(transientModel.getReference().getModelName()) + "'");
       }
       tracer.startTracing(currentInputModel, transientModel);
       if (!applyRules(currentInputModel, transientModel, false, ruleManager)) {
@@ -357,7 +358,7 @@ class GenerationSession {
         mySessionContext.getModule().removeModel(transientModel);
         myMinorStep--;
         if (myLogger.needsInfo()) {
-          myLogger.info("unchanged, empty model '" + transientModel.getReference().getSModelFqName().getStereotype() + "' removed");
+          myLogger.info("unchanged, empty model '" + SModelStereotype.getStereotype(transientModel.getReference().getModelName()) + "' removed");
         }
         break;
       }
