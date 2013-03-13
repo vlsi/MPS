@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class FacetJavaClassExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -29,6 +30,7 @@ public class FacetJavaClassExpression_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_u5bg2i_a");
     editorCell.addEditorCell(this.createComponent_u5bg2i_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_u5bg2i_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_u5bg2i_c0(editorContext, node));
     return editorCell;
   }
 
@@ -90,5 +92,15 @@ public class FacetJavaClassExpression_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
+
+  private EditorCell createConstant_u5bg2i_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
+    editorCell.setCellId("Constant_u5bg2i_c0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
   }
 }
