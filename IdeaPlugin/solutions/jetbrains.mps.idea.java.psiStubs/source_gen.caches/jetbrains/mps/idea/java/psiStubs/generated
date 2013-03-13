@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="ojt49rbypnvyfod6j0jldnaiu9d7gg">
+<dependencies version="2" modelHash="714ukvkmdayse33oir3r2f3sg9ojs11">
   <dep model="f:java_stub#034a463b-a655-463c-a5a3-cab829299065#com.intellij.navigation(MPS.IdeaSdk/com.intellij.navigation@java_stub)" />
   <dep model="f:java_stub#034a463b-a655-463c-a5a3-cab829299065#com.intellij.openapi.components(MPS.IdeaSdk/com.intellij.openapi.components@java_stub)" />
   <dep model="f:java_stub#034a463b-a655-463c-a5a3-cab829299065#com.intellij.openapi.module(MPS.IdeaSdk/com.intellij.openapi.module@java_stub)" />
@@ -34,7 +34,7 @@
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="8lb0ssmvoceitlofqs9sah312lyoau7" />
   <common hash="-5z96pxmnknuqh1m1cjz47vx06ud1t01" />
-  <source id="3118313698925873538" name="PsiJavaStubModelDescriptor" hash="7xwjk3g2rv2l13oufsrv0asd5m1hxj3">
+  <source id="3118313698925873538" name="PsiJavaStubModelDescriptor" hash="5i47w7edrp2rqkmqc5ey64f7pq0ccxi">
     <dep root="3118313698926251332" />
     <dep model="f:java_stub#034a463b-a655-463c-a5a3-cab829299065#com.intellij.navigation(MPS.IdeaSdk/com.intellij.navigation@java_stub)" />
     <dep model="f:java_stub#034a463b-a655-463c-a5a3-cab829299065#com.intellij.openapi.util(MPS.IdeaSdk/com.intellij.openapi.util@java_stub)" />
@@ -80,7 +80,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ASTConverter.java" />
   </source>
-  <source id="3118313698926251332" name="PsiJavaStubDataSource" hash="4opayeivr8qf39q80e834bwornw3oxb">
+  <source id="3118313698926251332" name="PsiJavaStubDataSource" hash="dgcpdq2s45w3w25f0wkrevdrkjccgea">
     <dep model="f:java_stub#034a463b-a655-463c-a5a3-cab829299065#com.intellij.navigation(MPS.IdeaSdk/com.intellij.navigation@java_stub)" />
     <dep model="f:java_stub#034a463b-a655-463c-a5a3-cab829299065#com.intellij.openapi.util(MPS.IdeaSdk/com.intellij.openapi.util@java_stub)" />
     <dep model="f:java_stub#034a463b-a655-463c-a5a3-cab829299065#com.intellij.pom(MPS.IdeaSdk/com.intellij.pom@java_stub)" />
@@ -95,7 +95,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="PsiJavaStubDataSource.java" />
   </source>
-  <source id="3118313698926457061" name="PsiJavaStubModelRoot" hash="-34kbooy2ycisrioda2clbil5t3o2oju">
+  <source id="3118313698926457061" name="PsiJavaStubModelRoot" hash="-8m8dcx86yh4deuaszjurpdufjz9mrdb">
     <dep root="3118313698926251332" />
     <dep model="f:java_stub#034a463b-a655-463c-a5a3-cab829299065#com.intellij.navigation(MPS.IdeaSdk/com.intellij.navigation@java_stub)" />
     <dep model="f:java_stub#034a463b-a655-463c-a5a3-cab829299065#com.intellij.openapi.components(MPS.IdeaSdk/com.intellij.openapi.components@java_stub)" />
@@ -122,7 +122,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="EclipseJavaStubModelRoot.java" />
   </source>
-  <source id="9079491090146104459" name="EclipseJavaStubDataSource" hash="5j09kvtoxl3cf2nb11uen55f6gwje0s">
+  <source id="9079491090146104459" name="EclipseJavaStubDataSource" hash="b2513bmzl4n36zvs46f69u3wyygvwrb">
     <dep model="f:java_stub#034a463b-a655-463c-a5a3-cab829299065#com.intellij.navigation(MPS.IdeaSdk/com.intellij.navigation@java_stub)" />
     <dep model="f:java_stub#034a463b-a655-463c-a5a3-cab829299065#com.intellij.openapi.util(MPS.IdeaSdk/com.intellij.openapi.util@java_stub)" />
     <dep model="f:java_stub#034a463b-a655-463c-a5a3-cab829299065#com.intellij.pom(MPS.IdeaSdk/com.intellij.pom@java_stub)" />
@@ -139,7 +139,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="EclipseJavaStubDataSource.java" />
   </source>
-  <source id="6481525656078378666" name="JavaForeignIdBuilder" hash="eot79jpbb6hved77sqn1qeya84szrmt">
+  <source id="6481525656078378666" name="JavaForeignIdBuilder" hash="73bc0zrj57lmtyc51zsmjs58pnbzgel">
     <dep model="f:java_stub#034a463b-a655-463c-a5a3-cab829299065#com.intellij.navigation(MPS.IdeaSdk/com.intellij.navigation@java_stub)" />
     <dep model="f:java_stub#034a463b-a655-463c-a5a3-cab829299065#com.intellij.openapi.util(MPS.IdeaSdk/com.intellij.openapi.util@java_stub)" />
     <dep model="f:java_stub#034a463b-a655-463c-a5a3-cab829299065#com.intellij.pom(MPS.IdeaSdk/com.intellij.pom@java_stub)" />

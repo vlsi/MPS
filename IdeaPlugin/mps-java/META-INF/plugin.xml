@@ -87,6 +87,7 @@
     <directClassInheritorsSearch implementation="jetbrains.mps.idea.java.usages.MPSJavaDirectInheritorsSearcher"/>
     <referencesSearch implementation="jetbrains.mps.idea.java.psi.impl.MPSReferenceSearch"/>
     <methodReferencesSearch implementation="jetbrains.mps.idea.java.usages.MPSMethodReferencesSearch"/>
+    <refactoring.elementListenerProvider implementation="jetbrains.mps.idea.java.usages.RefactoringListenerProvider"/>
   </extensions>
 
   <extensions defaultExtensionNs="jetbrains.mps">
