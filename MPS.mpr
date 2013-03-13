@@ -61,7 +61,7 @@
       <modulePath path="${project}/editor/typesystemIntegration/typesystemIntegration.msd" folder="core.editor" />
       <modulePath path="${project}/languages/baseLanguage/baseLanguage/jetbrains.mps.baseLanguage.mpl" folder="baseLanguage" />
       <modulePath path="${project}/languages/baseLanguage/baseLanguage/sandbox/jetbrains.mps.baseLanguage.sandbox.msd" folder="baseLanguage" />
-      <modulePath path="${project}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.facets/jetbrains.mps.baseLanguage.facets.msd" folder="baseLanguage" />
+      <modulePath path="${project}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.facets/jetbrains.mps.baseLanguage.facets.msd" folder="core.make" />
       <modulePath path="${project}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/jetbrains.mps.baseLanguage.test.msd" folder="baseLanguage" />
       <modulePath path="${project}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.scopes/jetbrains.mps.baseLanguage.scopes.msd" folder="baseLanguage" />
       <modulePath path="${project}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/jetbrains.mps.baseLanguage.search.msd" folder="baseLanguage" />

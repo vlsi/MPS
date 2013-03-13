@@ -6,7 +6,7 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.facet.FacetRegistry;
 
-public class BaseLanguageFacets implements CoreComponent {
+public class BootstrapMakeFacets implements CoreComponent {
   private static final String BASELANGUAGE_NAMESPACE = "jetbrains.mps.baseLanguage";
 
   private IFacet javaCompileFacet;
@@ -27,5 +27,11 @@ public class BaseLanguageFacets implements CoreComponent {
 
 
   public void dispose() {
+    if (javaCompileFacet != null) {
+      FacetRegistry.getInstance().unregister(javaCompileFacet);
+    }
+    if (reloadClassesFacet != null) {
+      FacetRegistry.getInstance().unregister(reloadClassesFacet);
+    }
   }
 }

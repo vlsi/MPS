@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeRef="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)/1289622777586550823">
-    <nodeInfo nodeId="1289622777586562732" fileName="MPSBaseLanguage.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourInstance" />
-    <nodeInfo nodeId="1289622777586562755" fileName="MPSBaseLanguage.java" startLine="16" startPosition="22" endLine="17" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1289622777586562758" fileName="MPSBaseLanguage.java" startLine="17" startPosition="17" endLine="18" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4315828340754763309" fileName="MPSBaseLanguage.java" startLine="18" startPosition="37" endLine="19" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1289622777586562747" fileName="MPSBaseLanguage.java" startLine="22" startPosition="47" endLine="23" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1289622777586550825" fileName="MPSBaseLanguage.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPSBaseLanguage#()V" />
-    <nodeInfo nodeId="1289622777586562742" fileName="MPSBaseLanguage.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/baseLanguage/search/MPSBaseLanguage;" />
-    <nodeInfo nodeId="1289622777586562750" fileName="MPSBaseLanguage.java" startLine="15" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
-    <scopeInfo nodeId="1289622777586550828" fileName="MPSBaseLanguage.java" startLine="12" startPosition="29" endLine="12" endPosition="29" />
-    <scopeInfo nodeId="1289622777586562745" fileName="MPSBaseLanguage.java" startLine="22" startPosition="47" endLine="23" endPosition="23" />
-    <scopeInfo nodeId="1289622777586550825" fileName="MPSBaseLanguage.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
-    <scopeInfo nodeId="1289622777586562753" fileName="MPSBaseLanguage.java" startLine="16" startPosition="22" endLine="19" endPosition="35" />
-    <scopeInfo nodeId="1289622777586562742" fileName="MPSBaseLanguage.java" startLine="22" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1289622777586562750" fileName="MPSBaseLanguage.java" startLine="15" startPosition="0" endLine="21" endPosition="0" />
-    <unitInfo nodeId="1289622777586550823" fileName="MPSBaseLanguage.java" startLine="8" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.MPSBaseLanguage" />
+    <nodeInfo nodeId="1289622777586562732" fileName="MPSBaseLanguage.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourInstance" />
+    <nodeInfo nodeId="1289622777586562755" fileName="MPSBaseLanguage.java" startLine="15" startPosition="22" endLine="16" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1289622777586562758" fileName="MPSBaseLanguage.java" startLine="16" startPosition="17" endLine="17" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1289622777586562747" fileName="MPSBaseLanguage.java" startLine="20" startPosition="47" endLine="21" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1289622777586550825" fileName="MPSBaseLanguage.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPSBaseLanguage#()V" />
+    <nodeInfo nodeId="1289622777586562742" fileName="MPSBaseLanguage.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/baseLanguage/search/MPSBaseLanguage;" />
+    <nodeInfo nodeId="1289622777586562750" fileName="MPSBaseLanguage.java" startLine="14" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
+    <scopeInfo nodeId="1289622777586550828" fileName="MPSBaseLanguage.java" startLine="11" startPosition="29" endLine="11" endPosition="29" />
+    <scopeInfo nodeId="1289622777586562745" fileName="MPSBaseLanguage.java" startLine="20" startPosition="47" endLine="21" endPosition="23" />
+    <scopeInfo nodeId="1289622777586550825" fileName="MPSBaseLanguage.java" startLine="11" startPosition="0" endLine="13" endPosition="0" />
+    <scopeInfo nodeId="1289622777586562753" fileName="MPSBaseLanguage.java" startLine="15" startPosition="22" endLine="17" endPosition="37" />
+    <scopeInfo nodeId="1289622777586562742" fileName="MPSBaseLanguage.java" startLine="20" startPosition="0" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="1289622777586562750" fileName="MPSBaseLanguage.java" startLine="14" startPosition="0" endLine="19" endPosition="0" />
+    <unitInfo nodeId="1289622777586550823" fileName="MPSBaseLanguage.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.MPSBaseLanguage" />
   </root>
   <root nodeRef="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)/3024565449487105984">
     <nodeInfo nodeId="6405505214478649502" fileName="InstanceMethodCall_InstanceMethodScope.java" startLine="10" startPosition="88" endLine="11" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
