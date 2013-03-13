@@ -109,10 +109,8 @@ public class DeleteLine_Action extends BaseAction {
             ListSequence.fromList(nodesToDelete).addElement(current.getSNode());
             if (CellLayout_Indent.isNewLineAfter(root, current)) {
               cellToSelect = CellTraversalUtil.getNextLeaf(current, CellConditions.SELECTABLE);
-            }
-
-            if (cellToSelect == null) {
-              cellToSelect = CellTraversalUtil.getNextLeaf(current, CellConditions.SELECTABLE);
+            } else {
+              cellToSelect = CellTraversalUtil.getNextLeaf(current.getParent().lastCell(), CellConditions.SELECTABLE);
             }
             break;
           }

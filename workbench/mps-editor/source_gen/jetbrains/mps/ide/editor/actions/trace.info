@@ -897,19 +897,19 @@
     <nodeInfo nodeId="3774693388238498854" fileName="DeleteLine_Action.java" startLine="105" startPosition="50" endLine="106" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3774693388238498862" fileName="DeleteLine_Action.java" startLine="107" startPosition="226" endLine="108" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5247353589123667168" fileName="DeleteLine_Action.java" startLine="108" startPosition="89" endLine="109" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5247353589123667177" fileName="DeleteLine_Action.java" startLine="110" startPosition="66" endLine="111" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5247353589123571847" fileName="DeleteLine_Action.java" startLine="112" startPosition="13" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3774693388238498923" fileName="DeleteLine_Action.java" startLine="114" startPosition="39" endLine="115" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3774693388238498933" fileName="DeleteLine_Action.java" startLine="116" startPosition="13" endLine="117" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="3774693388238498953" fileName="DeleteLine_Action.java" startLine="120" startPosition="50" endLine="121" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3774693388238498960" fileName="DeleteLine_Action.java" startLine="121" startPosition="80" endLine="122" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3774693388238498967" fileName="DeleteLine_Action.java" startLine="122" startPosition="93" endLine="123" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="3774693388238498971" fileName="DeleteLine_Action.java" startLine="125" startPosition="9" endLine="126" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3774693388238498981" fileName="DeleteLine_Action.java" startLine="129" startPosition="88" endLine="130" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3774693388238498999" fileName="DeleteLine_Action.java" startLine="133" startPosition="33" endLine="134" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3774693388238499006" fileName="DeleteLine_Action.java" startLine="134" startPosition="110" endLine="135" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="137" startPosition="27" endLine="138" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="142" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="3774693388238498923" fileName="DeleteLine_Action.java" startLine="110" startPosition="66" endLine="111" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7272288387891904949" fileName="DeleteLine_Action.java" startLine="112" startPosition="20" endLine="113" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3774693388238498933" fileName="DeleteLine_Action.java" startLine="114" startPosition="13" endLine="115" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="3774693388238498953" fileName="DeleteLine_Action.java" startLine="118" startPosition="50" endLine="119" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3774693388238498960" fileName="DeleteLine_Action.java" startLine="119" startPosition="80" endLine="120" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3774693388238498967" fileName="DeleteLine_Action.java" startLine="120" startPosition="93" endLine="121" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="3774693388238498971" fileName="DeleteLine_Action.java" startLine="123" startPosition="9" endLine="124" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3774693388238498981" fileName="DeleteLine_Action.java" startLine="127" startPosition="88" endLine="128" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3774693388238498999" fileName="DeleteLine_Action.java" startLine="131" startPosition="33" endLine="132" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3774693388238499006" fileName="DeleteLine_Action.java" startLine="132" startPosition="110" endLine="133" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="135" startPosition="27" endLine="136" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="140" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="7272288387891972762" fileName="DeleteLine_Action.java" startLine="112" startPosition="18" endLine="114" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
     <nodeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="63" startPosition="95" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="67" startPosition="107" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -917,28 +917,27 @@
     <nodeInfo nodeId="3774693388238498785" fileName="DeleteLine_Action.java" startLine="86" startPosition="107" endLine="89" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3774693388238498797" fileName="DeleteLine_Action.java" startLine="90" startPosition="113" endLine="93" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3774693388238498833" fileName="DeleteLine_Action.java" startLine="100" startPosition="20" endLine="103" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5247353589123667175" fileName="DeleteLine_Action.java" startLine="109" startPosition="80" endLine="112" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3774693388238498921" fileName="DeleteLine_Action.java" startLine="113" startPosition="0" endLine="116" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3774693388238498979" fileName="DeleteLine_Action.java" startLine="128" startPosition="48" endLine="131" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3774693388238498979" fileName="DeleteLine_Action.java" startLine="126" startPosition="48" endLine="129" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
     <nodeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="52" startPosition="9" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="66" startPosition="5" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="70" startPosition="5" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3774693388238498997" fileName="DeleteLine_Action.java" startLine="132" startPosition="7" endLine="136" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3774693388238498997" fileName="DeleteLine_Action.java" startLine="130" startPosition="7" endLine="134" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="36" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeleteLine_Action#()V" />
     <nodeInfo nodeId="3774693388238498793" fileName="DeleteLine_Action.java" startLine="89" startPosition="11" endLine="94" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3774693388238498951" fileName="DeleteLine_Action.java" startLine="119" startPosition="59" endLine="124" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3774693388238498977" fileName="DeleteLine_Action.java" startLine="127" startPosition="7" endLine="132" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7272288387891904942" fileName="DeleteLine_Action.java" startLine="109" startPosition="80" endLine="114" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3774693388238498951" fileName="DeleteLine_Action.java" startLine="117" startPosition="59" endLine="122" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3774693388238498977" fileName="DeleteLine_Action.java" startLine="125" startPosition="7" endLine="130" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="51" startPosition="89" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="3774693388238498860" fileName="DeleteLine_Action.java" startLine="106" startPosition="49" endLine="116" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="51" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <nodeInfo nodeId="3774693388238498774" fileName="DeleteLine_Action.java" startLine="84" startPosition="72" endLine="95" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="3774693388238498860" fileName="DeleteLine_Action.java" startLine="106" startPosition="49" endLine="118" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="63" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
     <nodeInfo nodeId="3774693388238498752" fileName="DeleteLine_Action.java" startLine="80" startPosition="81" endLine="96" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3774693388238498849" fileName="DeleteLine_Action.java" startLine="104" startPosition="64" endLine="125" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3774693388238498830" fileName="DeleteLine_Action.java" startLine="99" startPosition="72" endLine="127" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="78" startPosition="96" endLine="139" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="78" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="3774693388238498849" fileName="DeleteLine_Action.java" startLine="104" startPosition="64" endLine="123" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3774693388238498830" fileName="DeleteLine_Action.java" startLine="99" startPosition="72" endLine="125" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="78" startPosition="96" endLine="137" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="78" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <scopeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="43" startPosition="32" endLine="44" endPosition="16" />
     <scopeInfo nodeId="3774693388238499014" fileName="DeleteLine_Action.java" startLine="47" startPosition="87" endLine="48" endPosition="99" />
     <scopeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="64" startPosition="53" endLine="65" endPosition="19" />
@@ -947,13 +946,13 @@
     <scopeInfo nodeId="3774693388238498786" fileName="DeleteLine_Action.java" startLine="87" startPosition="78" endLine="88" endPosition="19" />
     <scopeInfo nodeId="3774693388238498801" fileName="DeleteLine_Action.java" startLine="91" startPosition="61" endLine="92" endPosition="101" />
     <scopeInfo nodeId="3774693388238498834" fileName="DeleteLine_Action.java" startLine="101" startPosition="42" endLine="102" endPosition="16" />
-    <scopeInfo nodeId="5247353589123667176" fileName="DeleteLine_Action.java" startLine="110" startPosition="66" endLine="111" endPosition="95" />
-    <scopeInfo nodeId="3774693388238498922" fileName="DeleteLine_Action.java" startLine="114" startPosition="39" endLine="115" endPosition="95" />
-    <scopeInfo nodeId="3774693388238498980" fileName="DeleteLine_Action.java" startLine="129" startPosition="88" endLine="130" endPosition="51" />
-    <scopeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="137" startPosition="0" endLine="138" endPosition="82">
+    <scopeInfo nodeId="7272288387891904948" fileName="DeleteLine_Action.java" startLine="110" startPosition="66" endLine="111" endPosition="95" />
+    <scopeInfo nodeId="7272288387891972763" fileName="DeleteLine_Action.java" startLine="112" startPosition="20" endLine="113" endPosition="118" />
+    <scopeInfo nodeId="3774693388238498980" fileName="DeleteLine_Action.java" startLine="127" startPosition="88" endLine="128" endPosition="51" />
+    <scopeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="135" startPosition="0" endLine="136" endPosition="82">
       <varInfo nodeId="3774693388238498747" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="137" startPosition="27" endLine="138" endPosition="82" />
+    <scopeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="135" startPosition="27" endLine="136" endPosition="82" />
     <scopeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="53" startPosition="7" endLine="55" endPosition="63">
       <varInfo nodeId="3774693388238498747" varName="enabled" />
     </scopeInfo>
@@ -961,15 +960,15 @@
       <varInfo nodeId="3774693388238498747" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="57" startPosition="27" endLine="59" endPosition="44" />
-    <scopeInfo nodeId="3774693388238498998" fileName="DeleteLine_Action.java" startLine="133" startPosition="33" endLine="135" endPosition="28" />
+    <scopeInfo nodeId="3774693388238498998" fileName="DeleteLine_Action.java" startLine="131" startPosition="33" endLine="133" endPosition="28" />
     <scopeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="36" startPosition="30" endLine="39" endPosition="41" />
     <scopeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="47" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="3774693388238498747" varName="_params" />
       <varInfo nodeId="3774693388238498747" varName="event" />
     </scopeInfo>
     <scopeInfo nodeId="3774693388238498796" fileName="DeleteLine_Action.java" startLine="90" startPosition="113" endLine="93" endPosition="13" />
-    <scopeInfo nodeId="3774693388238498952" fileName="DeleteLine_Action.java" startLine="120" startPosition="50" endLine="123" endPosition="18" />
-    <scopeInfo nodeId="3774693388238498978" fileName="DeleteLine_Action.java" startLine="128" startPosition="48" endLine="131" endPosition="9" />
+    <scopeInfo nodeId="3774693388238498952" fileName="DeleteLine_Action.java" startLine="118" startPosition="50" endLine="121" endPosition="18" />
+    <scopeInfo nodeId="3774693388238498978" fileName="DeleteLine_Action.java" startLine="126" startPosition="48" endLine="129" endPosition="9" />
     <scopeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="52" startPosition="9" endLine="56" endPosition="7" />
     <scopeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="66" startPosition="5" endLine="70" endPosition="5" />
@@ -978,25 +977,25 @@
     <scopeInfo nodeId="3774693388238498793" fileName="DeleteLine_Action.java" startLine="89" startPosition="11" endLine="94" endPosition="11">
       <varInfo nodeId="3774693388238498794" varName="childCell" />
     </scopeInfo>
-    <scopeInfo nodeId="3774693388238498950" fileName="DeleteLine_Action.java" startLine="119" startPosition="59" endLine="124" endPosition="11" />
-    <scopeInfo nodeId="3774693388238498977" fileName="DeleteLine_Action.java" startLine="127" startPosition="7" endLine="132" endPosition="7">
+    <scopeInfo nodeId="3774693388238498950" fileName="DeleteLine_Action.java" startLine="117" startPosition="59" endLine="122" endPosition="11" />
+    <scopeInfo nodeId="3774693388238498977" fileName="DeleteLine_Action.java" startLine="125" startPosition="7" endLine="130" endPosition="7">
       <varInfo nodeId="3774693388238498995" varName="nodeToDelete" />
+    </scopeInfo>
+    <scopeInfo nodeId="3774693388238498861" fileName="DeleteLine_Action.java" startLine="107" startPosition="226" endLine="115" endPosition="18">
+      <varInfo nodeId="3774693388238498863" varName="root" />
     </scopeInfo>
     <scopeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="51" startPosition="89" endLine="60" endPosition="5" />
     <scopeInfo nodeId="3774693388238498778" fileName="DeleteLine_Action.java" startLine="85" startPosition="67" endLine="94" endPosition="11">
       <varInfo nodeId="3774693388238498780" varName="nextCollection" />
     </scopeInfo>
-    <scopeInfo nodeId="3774693388238498861" fileName="DeleteLine_Action.java" startLine="107" startPosition="226" endLine="117" endPosition="18">
-      <varInfo nodeId="3774693388238498863" varName="root" />
-    </scopeInfo>
     <scopeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="51" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="3774693388238498747" varName="_params" />
       <varInfo nodeId="3774693388238498747" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="63" startPosition="95" endLine="75" endPosition="16" />
-    <scopeInfo nodeId="3774693388238498853" fileName="DeleteLine_Action.java" startLine="105" startPosition="50" endLine="118" endPosition="11">
+    <scopeInfo nodeId="3774693388238498853" fileName="DeleteLine_Action.java" startLine="105" startPosition="50" endLine="116" endPosition="11">
       <varInfo nodeId="3774693388238498855" varName="currentNode" />
     </scopeInfo>
+    <scopeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="63" startPosition="95" endLine="75" endPosition="16" />
     <scopeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="63" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="3774693388238498747" varName="_params" />
       <varInfo nodeId="3774693388238498747" varName="event" />
@@ -1005,20 +1004,20 @@
       <varInfo nodeId="3774693388238498755" varName="collection" />
       <varInfo nodeId="3774693388238498763" varName="collections" />
     </scopeInfo>
-    <scopeInfo nodeId="3774693388238498832" fileName="DeleteLine_Action.java" startLine="100" startPosition="20" endLine="126" endPosition="38">
+    <scopeInfo nodeId="3774693388238498832" fileName="DeleteLine_Action.java" startLine="100" startPosition="20" endLine="124" endPosition="38">
       <varInfo nodeId="3774693388238498842" varName="layout" />
     </scopeInfo>
-    <scopeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="79" startPosition="9" endLine="136" endPosition="7">
+    <scopeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="79" startPosition="9" endLine="134" endPosition="7">
       <varInfo nodeId="3774693388238498827" varName="cellToSelect" />
       <varInfo nodeId="3774693388238498815" varName="current" />
       <varInfo nodeId="3774693388238498821" varName="nodesToDelete" />
     </scopeInfo>
-    <scopeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="78" startPosition="96" endLine="139" endPosition="5" />
-    <scopeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="78" startPosition="0" endLine="141" endPosition="0">
+    <scopeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="78" startPosition="96" endLine="137" endPosition="5" />
+    <scopeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="78" startPosition="0" endLine="139" endPosition="0">
       <varInfo nodeId="3774693388238498747" varName="_params" />
       <varInfo nodeId="3774693388238498747" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="33" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.DeleteLine_Action" />
+    <unitInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="33" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.DeleteLine_Action" />
   </root>
   <root nodeRef="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)/4225699205371269974">
     <nodeInfo nodeId="4225699205371269974" fileName="SelectNext_Action.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
