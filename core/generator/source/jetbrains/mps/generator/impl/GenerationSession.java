@@ -217,11 +217,11 @@ class GenerationSession {
         if (gfe.getMessage() != null && gfe.getCause() == null) {
           myLogger.error(gfe.getMessage());
         }
-        myLogger.error("model \"" + myOriginalInputModel.getReference().getSModelFqName() + "\" generation failed : " + gfe);
+        myLogger.error("model \"" + myOriginalInputModel.getReference().getModelName() + "\" generation failed : " + gfe);
         return new GenerationStatus.ERROR(myOriginalInputModel);
       } catch (Exception e) {
         myLogger.handleException(e);
-        myLogger.error("model \"" + myOriginalInputModel.getReference().getSModelFqName() + "\" generation failed (see exception)");
+        myLogger.error("model \"" + myOriginalInputModel.getReference().getModelName() + "\" generation failed (see exception)");
         return new GenerationStatus.ERROR(myOriginalInputModel);
       } finally {
         if (myNewCache != null) {
@@ -244,7 +244,7 @@ class GenerationSession {
     List<TemplateMappingConfiguration> mappingConfigurations = new ArrayList<TemplateMappingConfiguration>(myGenerationPlan.getMappingConfigurations(myMajorStep));
     if (mappingConfigurations.isEmpty()) {
       if (inputModel.getRootNodes().iterator().hasNext()) {
-        myLogger.warning("skip model \"" + inputModel.getReference().getSModelFqName() + "\" : no generator available");
+        myLogger.warning("skip model \"" + inputModel.getReference().getModelName() + "\" : no generator available");
       }
       return inputModel;
     }
@@ -297,7 +297,7 @@ class GenerationSession {
 
     SModel outputModel = executeMajorStepInternal(inputModel, ruleManager);
     if (myLogger.getErrorCount() > 0) {
-      myLogger.warning("model \"" + inputModel.getReference().getSModelFqName() + "\" has been generated with errors");
+      myLogger.warning("model \"" + inputModel.getReference().getModelName() + "\" has been generated with errors");
     }
     return outputModel;
   }
@@ -320,7 +320,7 @@ class GenerationSession {
     // primary mapping
     // -----------------------
     if (myLogger.needsInfo()) {
-      myLogger.info("generating model '" + currentInputModel.getReference().getSModelFqName() + "' --> '" + currentOutputModel.getReference().getSModelFqName() + "'");
+      myLogger.info("generating model '" + currentInputModel.getReference().getModelName() + "' --> '" + currentOutputModel.getReference().getModelName() + "'");
     }
     boolean somethingHasBeenGenerated = applyRules(currentInputModel, currentOutputModel, true, ruleManager);
     if (!somethingHasBeenGenerated) {
@@ -443,7 +443,7 @@ class GenerationSession {
       ttrace.push("model clone", false);
       SModel currentInputModel_clone = createTransientModel();
       if (myLogger.needsInfo()) {
-        myLogger.info("clone model '" + currentInputModel.getReference().getSModelFqName() + "' --> '" + currentInputModel_clone.getReference().getSModelFqName() + "'");
+        myLogger.info("clone model '" + currentInputModel.getReference().getModelName() + "' --> '" + currentInputModel_clone.getReference().getModelName() + "'");
       }
       CloneUtil.cloneModelWithImports(currentInputModel, currentInputModel_clone, currentInputModel == mySessionContext.getOriginalInputModel());
       ttrace.pop();
@@ -503,7 +503,7 @@ class GenerationSession {
       ttrace.push("model clone", false);
       SModel currentOutputModel_clone = createTransientModel();
       if (myLogger.needsInfo()) {
-        myLogger.info("clone model '" + currentModel.getReference().getSModelFqName() + "' --> '" + currentOutputModel_clone.getReference().getSModelFqName() + "'");
+        myLogger.info("clone model '" + currentModel.getReference().getModelName() + "' --> '" + currentOutputModel_clone.getReference().getModelName() + "'");
       }
       CloneUtil.cloneModelWithImports(currentModel, currentOutputModel_clone, false);
       ttrace.pop();
