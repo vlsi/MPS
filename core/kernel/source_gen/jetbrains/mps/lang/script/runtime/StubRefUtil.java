@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.StaticReference;
-import jetbrains.mps.smodel.SModelFqName;
 
 public class StubRefUtil {
   private static boolean isReferenceToJavaStub(@NotNull SReference reference) {
@@ -38,7 +37,7 @@ public class StubRefUtil {
   }
 
   private static String getTargetStringFromReference(@NotNull SReference reference) {
-    String targetPackage = check_4tnolf_a0a0b(check_4tnolf_a0a0a1(check_4tnolf_a0a0a0b(reference)));
+    String targetPackage = SModelStereotype.withoutStereotype(check_4tnolf_a0a0a1(check_4tnolf_a0a0a0b(reference)));
     String targetName = reference.getTargetNodeId().toString();
     return targetPackage + "/" + targetName;
   }
@@ -145,16 +144,9 @@ public class StubRefUtil {
     StubRefUtil.addRequiredImports(oldNode.getModel(), reference.getSourceNode());
   }
 
-  private static String check_4tnolf_a0a0b(SModelFqName checkedDotOperand) {
+  private static String check_4tnolf_a0a0a1(SModelReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getLongName();
-    }
-    return null;
-  }
-
-  private static SModelFqName check_4tnolf_a0a0a1(SModelReference checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getSModelFqName();
     }
     return null;
   }

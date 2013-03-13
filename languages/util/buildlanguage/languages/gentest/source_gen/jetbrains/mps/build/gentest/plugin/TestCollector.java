@@ -5,7 +5,6 @@ package jetbrains.mps.build.gentest.plugin;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.smodel.SModelFqName;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -37,7 +36,7 @@ public class TestCollector {
   private static final String MPS_LAUNCH_ANN = "MPS_LAUNCH_ANN";
   private static final String IGNORE_ANN = "IGNORE_ANN";
   private Iterable<SModel> models;
-  private Map<Tuples._2<SModelFqName, String>, SNode> nodeCache = MapSequence.fromMap(new HashMap<Tuples._2<SModelFqName, String>, SNode>());
+  private Map<Tuples._2<String, String>, SNode> nodeCache = MapSequence.fromMap(new HashMap<Tuples._2<String, String>, SNode>());
 
   public TestCollector(Iterable<SModel> models) {
     this.models = models;
@@ -158,10 +157,10 @@ public class TestCollector {
   }
 
   private SNode getNode(SModel context, String kind, _FunctionTypes._return_P0_E0<? extends SNode> getter) {
-    SNode node = MapSequence.fromMap(nodeCache).get(MultiTuple.<SModelFqName,String>from(context.getReference().getSModelFqName(), kind));
+    SNode node = MapSequence.fromMap(nodeCache).get(MultiTuple.<String,String>from(context.getReference().getModelName(), kind));
     if (node == null) {
       node = getter.invoke();
-      MapSequence.fromMap(nodeCache).put(MultiTuple.<SModelFqName,String>from(context.getReference().getSModelFqName(), kind), node);
+      MapSequence.fromMap(nodeCache).put(MultiTuple.<String,String>from(context.getReference().getModelName(), kind), node);
     }
     return node;
   }
