@@ -13,10 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.annotation.ImmutableObject;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.module.SRepository;
 
@@ -52,14 +53,6 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
     myModelId = modelId;
   }
 
-  public SModelId getSModelId() {
-    return myModelId;
-  }
-
-  public SModelFqName getSModelFqName() {
-    return myModelFqName;
-  }
-
   @Override
   public org.jetbrains.mps.openapi.model.SModelId getModelId() {
     return myModelId;
@@ -68,8 +61,8 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
   @Override
   public String getModelName() {
     return myModelFqName.hasStereotype()
-      ? myModelFqName.getLongName() + "@" + myModelFqName.getStereotype()
-      : myModelFqName.getLongName();
+        ? myModelFqName.getLongName() + "@" + myModelFqName.getStereotype()
+        : myModelFqName.getLongName();
   }
 
   @Override
@@ -112,20 +105,16 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
     return myModelFqName.toString();
   }
 
-  public String getLongName() {
-    return myModelFqName.getLongName();
-  }
-
   public String getCompactPresentation() {
     return myModelFqName.getCompactPresentation();
   }
 
-  public String getStereotype() {
-    return myModelFqName.getStereotype();
+  public SModelId getSModelId() {
+    return myModelId;
   }
 
-  public boolean hasStereotype() {
-    return myModelFqName.hasStereotype();
+  public SModelFqName getSModelFqName() {
+    return myModelFqName;
   }
 
   public SModelReference update() {
@@ -152,5 +141,34 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
       stereotype = "";
     }
     return new SModelReference(modelName, stereotype);
+  }
+
+  //------------deprecated-------------
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public String getLongName() {
+    return myModelFqName.getLongName();
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public String getStereotype() {
+    return myModelFqName.getStereotype();
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public boolean hasStereotype() {
+    return myModelFqName.hasStereotype();
   }
 }
