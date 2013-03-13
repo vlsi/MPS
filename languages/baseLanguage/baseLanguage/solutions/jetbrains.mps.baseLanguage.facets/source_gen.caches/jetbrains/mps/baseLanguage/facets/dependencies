@@ -6,12 +6,9 @@
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.facets.JavaCompile_Facet" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.facets.ReloadClasses_Facet" />
-    <classNode dependClassName="jetbrains.mps.ide.MPSCoreComponents" />
     <classNode dependClassName="jetbrains.mps.make.facet.FacetRegistry" />
     <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
-    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
+    <classNode extendsClassName="jetbrains.mps.components.CoreComponent" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.facets.FacetAspectDescriptor" file="FacetAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />

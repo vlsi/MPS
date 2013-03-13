@@ -256,6 +256,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.search.MPSBaseLanguage" file="MPSBaseLanguage.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.facets.BaseLanguageFacets" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.ClassifierSuccessors" />
     <classNode extendsClassName="jetbrains.mps.components.ComponentPlugin" />
   </dependency>

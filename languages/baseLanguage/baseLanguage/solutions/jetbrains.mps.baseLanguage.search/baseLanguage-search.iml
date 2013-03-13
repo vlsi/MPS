@@ -18,6 +18,7 @@
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="library" name="Annotations" level="project" />
+    <orderEntry type="module" module-name="baseLanguage-facets" />
   </component>
 </module>
 

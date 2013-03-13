@@ -5,36 +5,27 @@
   <unitInfo fileName="FacetManifest.java" startLine="25" startPosition="55" endLine="29" endPosition="5" unitName="jetbrains.mps.baseLanguage.facets.FacetManifest$1" />
   <unitInfo fileName="FacetManifest.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.facets.FacetManifest" />
   <root nodeRef="r:89c0fb70-0977-7777-a076-5906f9d8630f(jetbrains.mps.baseLanguage.facets)/2951837577273070526">
-    <nodeInfo nodeId="4381112213089070964" fileName="BaseLanguageFacets.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="BASELANGUAGE_NAMESPACE" />
-    <nodeInfo nodeId="2951837577273121546" fileName="BaseLanguageFacets.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="javaCompileFacet" />
-    <nodeInfo nodeId="2951837577273130325" fileName="BaseLanguageFacets.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="reloadClassesFacet" />
-    <nodeInfo nodeId="2951837577273135258" fileName="BaseLanguageFacets.java" startLine="24" startPosition="9" endLine="25" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2951837577273144975" fileName="BaseLanguageFacets.java" startLine="25" startPosition="63" endLine="26" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3242884307092035015" fileName="BaseLanguageFacets.java" startLine="26" startPosition="67" endLine="27" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3242884307092094997" fileName="BaseLanguageFacets.java" startLine="27" startPosition="85" endLine="28" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3242884307092267214" fileName="BaseLanguageFacets.java" startLine="29" startPosition="27" endLine="30" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="2951837577273074878" fileName="BaseLanguageFacets.java" startLine="39" startPosition="36" endLine="40" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2951837577273296055" fileName="BaseLanguageFacets.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BaseLanguageFacets#(Ljetbrains/mps/ide/MPSCoreComponents;)V" />
-    <nodeInfo nodeId="2951837577273072418" fileName="BaseLanguageFacets.java" startLine="34" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
-    <nodeInfo nodeId="2951837577273072424" fileName="BaseLanguageFacets.java" startLine="37" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="3242884307092266093" fileName="BaseLanguageFacets.java" startLine="23" startPosition="31" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="2951837577273072412" fileName="BaseLanguageFacets.java" startLine="23" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
-    <scopeInfo nodeId="2951837577273296058" fileName="BaseLanguageFacets.java" startLine="18" startPosition="59" endLine="18" endPosition="59" />
-    <scopeInfo nodeId="2951837577273072423" fileName="BaseLanguageFacets.java" startLine="34" startPosition="34" endLine="34" endPosition="34" />
-    <scopeInfo nodeId="3242884307092266096" fileName="BaseLanguageFacets.java" startLine="29" startPosition="0" endLine="30" endPosition="36">
+    <nodeInfo nodeId="4381112213089070964" fileName="BaseLanguageFacets.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="BASELANGUAGE_NAMESPACE" />
+    <nodeInfo nodeId="2951837577273121546" fileName="BaseLanguageFacets.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="javaCompileFacet" />
+    <nodeInfo nodeId="2951837577273130325" fileName="BaseLanguageFacets.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="reloadClassesFacet" />
+    <nodeInfo nodeId="2951837577273135258" fileName="BaseLanguageFacets.java" startLine="17" startPosition="9" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2951837577273144975" fileName="BaseLanguageFacets.java" startLine="18" startPosition="63" endLine="19" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3242884307092035015" fileName="BaseLanguageFacets.java" startLine="19" startPosition="67" endLine="20" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3242884307092094997" fileName="BaseLanguageFacets.java" startLine="20" startPosition="85" endLine="21" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3242884307092267214" fileName="BaseLanguageFacets.java" startLine="22" startPosition="27" endLine="23" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="4315828340754824334" fileName="BaseLanguageFacets.java" startLine="29" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="3242884307092266093" fileName="BaseLanguageFacets.java" startLine="16" startPosition="22" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4315828340754824329" fileName="BaseLanguageFacets.java" startLine="16" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
+    <scopeInfo nodeId="4315828340754824338" fileName="BaseLanguageFacets.java" startLine="29" startPosition="25" endLine="29" endPosition="25" />
+    <scopeInfo nodeId="3242884307092266096" fileName="BaseLanguageFacets.java" startLine="22" startPosition="0" endLine="23" endPosition="36">
       <varInfo nodeId="3242884307092266098" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="3242884307092266102" fileName="BaseLanguageFacets.java" startLine="29" startPosition="27" endLine="30" endPosition="36" />
-    <scopeInfo nodeId="2951837577273072432" fileName="BaseLanguageFacets.java" startLine="39" startPosition="36" endLine="40" endPosition="46" />
-    <scopeInfo nodeId="2951837577273296055" fileName="BaseLanguageFacets.java" startLine="18" startPosition="0" endLine="20" endPosition="0">
-      <varInfo nodeId="2951837577273271805" varName="repository" />
-    </scopeInfo>
-    <scopeInfo nodeId="2951837577273072418" fileName="BaseLanguageFacets.java" startLine="34" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="3242884307092266095" fileName="BaseLanguageFacets.java" startLine="24" startPosition="9" endLine="28" endPosition="87" />
-    <scopeInfo nodeId="2951837577273072424" fileName="BaseLanguageFacets.java" startLine="37" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="2951837577273072417" fileName="BaseLanguageFacets.java" startLine="23" startPosition="31" endLine="31" endPosition="5" />
-    <scopeInfo nodeId="2951837577273072412" fileName="BaseLanguageFacets.java" startLine="23" startPosition="0" endLine="33" endPosition="0" />
-    <unitInfo nodeId="2951837577273070526" fileName="BaseLanguageFacets.java" startLine="12" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.facets.BaseLanguageFacets" />
+    <scopeInfo nodeId="3242884307092266102" fileName="BaseLanguageFacets.java" startLine="22" startPosition="27" endLine="23" endPosition="36" />
+    <scopeInfo nodeId="4315828340754824334" fileName="BaseLanguageFacets.java" startLine="29" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="3242884307092266095" fileName="BaseLanguageFacets.java" startLine="17" startPosition="9" endLine="21" endPosition="87" />
+    <scopeInfo nodeId="4315828340754824333" fileName="BaseLanguageFacets.java" startLine="16" startPosition="22" endLine="24" endPosition="5" />
+    <scopeInfo nodeId="4315828340754824329" fileName="BaseLanguageFacets.java" startLine="16" startPosition="0" endLine="26" endPosition="0" />
+    <unitInfo nodeId="2951837577273070526" fileName="BaseLanguageFacets.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.facets.BaseLanguageFacets" />
   </root>
   <root nodeRef="r:89c0fb70-0977-7777-a076-5906f9d8630f(jetbrains.mps.baseLanguage.facets)/6648795410103967073">
     <nodeInfo nodeId="6648795410103967073" fileName="JavaCompile_Facet.java" startLine="58" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="targets" />

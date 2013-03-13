@@ -2674,6 +2674,7 @@
         <module file="${mps_home}/languages/baseLanguage/closures/jetbrains.mps.baseLanguage.closures.mpl" bootstrap="true" />
         <module file="${mps_home}/languages/baseLanguage/collections/jetbrains.mps.baseLanguage.collections.mpl" bootstrap="true" />
         <module file="${mps_home}/languages/util/extensionMethod/jetbrains.mps.baseLanguage.extensionMethods.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.facets/jetbrains.mps.baseLanguage.facets.msd" bootstrap="true" />
         <module file="${mps_home}/languages/baseLanguage/javadoc/jetbrains.mps.baseLanguage.javadoc.mpl" bootstrap="true" />
         <module file="${mps_home}/languages/baseLanguage/jdk7/languages/jdk7/jetbrains.mps.baseLanguage.jdk7.mpl" bootstrap="true" />
         <module file="${mps_home}/languages/baseLanguage/logging/jetbrains.mps.baseLanguage.logging.mpl" bootstrap="true" />
@@ -2748,7 +2749,6 @@
         <module file="${mps_home}/languages/core/stub/Testbench/Testbench.msd" />
         <module file="${mps_home}/languages/baseLanguage/constructors/jetbrains.mps.baseLanguage.constructors.mpl" />
         <module file="${mps_home}/languages/baseLanguage/doubleDispatch/jetbrains.mps.baseLanguage.doubleDispatch.mpl" />
-        <module file="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.facets/jetbrains.mps.baseLanguage.facets.msd" />
         <module file="${mps_home}/languages/baseLanguage/overloadedOperators/languages/overloadedOperators/jetbrains.mps.baseLanguage.overloadedOperators.mpl" />
         <module file="${mps_home}/languages/baseLanguage/unitTest/jetbrains.mps.baseLanguage.unitTest.libs.msd" />
         <module file="${mps_home}/languages/util/buildlanguage/languages/gentest/jetbrains.mps.build.gentest.mpl" />
@@ -5740,7 +5740,6 @@
   <target name="cleanSources">
     <delete dir="${mps_home}/languages/baseLanguage/constructors/source_gen" />
     <delete dir="${mps_home}/languages/baseLanguage/doubleDispatch/source_gen" />
-    <delete dir="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.facets/source_gen" />
     <delete dir="${mps_home}/languages/baseLanguage/overloadedOperators/languages/overloadedOperators/source_gen" />
     <delete dir="${mps_home}/languages/util/buildlanguage/languages/gentest/source_gen" />
     <delete dir="${mps_home}/languages/util/buildlanguage/languages/reduced/source_gen" />
