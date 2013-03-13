@@ -163,8 +163,8 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-baseLanguage-baseLanguage-solutions-jetbrains.mps.baseLanguage.search-jetbrains">
       <fileset dir="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-baseLanguage-baseLanguage-solutions-jetbrains.mps.baseLanguage.facets-models">
-      <fileset dir="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.facets/models" includes="**/*.mps, **/*.metadata, **/*.history" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/core-make-runtime-solutions-jetbrains.mps.make.facets-models">
+      <fileset dir="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.facets/models" includes="**/*.mps, **/*.metadata, **/*.history" />
     </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-baseLanguage-baseLanguage-solutions-jetbrains.mps.baseLanguage.util-solution">
       <fileset dir="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/solution" includes="**/*.mps, **/*.metadata, **/*.history" />
@@ -223,9 +223,9 @@
       <zipfileset file="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/jetbrains.mps.baseLanguage.search.msd" prefix="modules/jetbrains.mps.baseLanguage.search" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.baseLanguage.search" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-baseLanguage-baseLanguage-solutions-jetbrains.mps.baseLanguage.search-jetbrains" prefix="modules/jetbrains.mps.baseLanguage.search/jetbrains" />
-      <zipfileset file="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.facets/jetbrains.mps.baseLanguage.facets.msd" prefix="modules/jetbrains.mps.baseLanguage.facets" />
-      <zipfileset dir="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.facets" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.baseLanguage.facets" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-baseLanguage-baseLanguage-solutions-jetbrains.mps.baseLanguage.facets-models" prefix="modules/jetbrains.mps.baseLanguage.facets/models" />
+      <zipfileset file="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.facets/jetbrains.mps.make.facets.msd" prefix="modules/jetbrains.mps.make.facets" />
+      <zipfileset dir="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.facets" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.make.facets" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/core-make-runtime-solutions-jetbrains.mps.make.facets-models" prefix="modules/jetbrains.mps.make.facets/models" />
       <zipfileset file="${mps_home}/languages/core/stub/MPS.Core/MPS.Core.msd" prefix="modules/MPS.Core" />
       <zipfileset dir="${mps_home}/languages/core/stub/MPS.Core" includes="icons/**, resources/**" prefix="modules/MPS.Core" />
       <zipfileset file="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/jetbrains.mps.baseLanguage.util.msd" prefix="modules/jetbrains.mps.baseLanguage.util" />
@@ -2674,7 +2674,6 @@
         <module file="${mps_home}/languages/baseLanguage/closures/jetbrains.mps.baseLanguage.closures.mpl" bootstrap="true" />
         <module file="${mps_home}/languages/baseLanguage/collections/jetbrains.mps.baseLanguage.collections.mpl" bootstrap="true" />
         <module file="${mps_home}/languages/util/extensionMethod/jetbrains.mps.baseLanguage.extensionMethods.mpl" bootstrap="true" />
-        <module file="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.facets/jetbrains.mps.baseLanguage.facets.msd" bootstrap="true" />
         <module file="${mps_home}/languages/baseLanguage/javadoc/jetbrains.mps.baseLanguage.javadoc.mpl" bootstrap="true" />
         <module file="${mps_home}/languages/baseLanguage/jdk7/languages/jdk7/jetbrains.mps.baseLanguage.jdk7.mpl" bootstrap="true" />
         <module file="${mps_home}/languages/baseLanguage/logging/jetbrains.mps.baseLanguage.logging.mpl" bootstrap="true" />
@@ -2758,6 +2757,7 @@
         <module file="${mps_home}/workbench/mps-ui/jetbrains.mps.ide.ui.msd" />
         <module file="${mps_home}/languages/languageDesign/traceable.operations/jetbrains.mps.lang.traceable.operations.mpl" />
         <module file="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make/jetbrains.mps.make.msd" />
+        <module file="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.facets/jetbrains.mps.make.facets.msd" />
         <module file="${mps_home}/core/tool/ant/jetbrains.mps.tool.ant.msd" />
         <module file="${mps_home}/core/tool/builder/jetbrains.mps.tool.builder.msd" />
         <module file="${mps_home}/core/tool/common/jetbrains.mps.tool.common.msd" />
@@ -2862,6 +2862,7 @@
         <pathelement path="${mps_home}/core/kernel/jetbrains.mps.debug.api.info/source_gen" />
         <pathelement path="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make/source_gen" />
         <pathelement path="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.runtime/source_gen" />
+        <pathelement path="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.facets/source_gen" />
         <pathelement path="${mps_home}/core/generator/solutions/traceInfo/util/source_gen" />
         <pathelement path="${mps_home}/core/generator/source" />
         <pathelement path="${mps_home}/core/generator/source_gen" />
@@ -2874,7 +2875,6 @@
         <pathelement path="${mps_home}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/source_gen" />
         <pathelement path="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/source_gen" />
         <pathelement path="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/source_gen" />
-        <pathelement path="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.facets/source_gen" />
         <path location="${mps_home}/core/persistence/source" />
         <path location="${mps_home}/core/persistence/source_gen" />
       </src>
@@ -2931,6 +2931,7 @@
         <pathelement path="${mps_home}/core/kernel/jetbrains.mps.debug.api.info/source_gen" />
         <pathelement path="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make/source_gen" />
         <pathelement path="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.runtime/source_gen" />
+        <pathelement path="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.facets/source_gen" />
         <pathelement path="${mps_home}/core/generator/solutions/traceInfo/util/source_gen" />
         <pathelement path="${mps_home}/core/generator/source" />
         <pathelement path="${mps_home}/core/generator/source_gen" />
@@ -2943,7 +2944,6 @@
         <pathelement path="${mps_home}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/source_gen" />
         <pathelement path="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/source_gen" />
         <pathelement path="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/source_gen" />
-        <pathelement path="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.facets/source_gen" />
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-closures" />
@@ -2970,6 +2970,7 @@
       <fileset dir="${mps_home}/core/kernel/jetbrains.mps.debug.api.info/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.facets/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/generator/solutions/traceInfo/util/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/generator/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/generator/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
@@ -2982,7 +2983,6 @@
       <fileset dir="${mps_home}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-      <fileset dir="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.facets/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -5748,6 +5748,7 @@
     <delete dir="${mps_home}/workbench/mps-ui/source_gen" />
     <delete dir="${mps_home}/languages/languageDesign/traceable.operations/source_gen" />
     <delete dir="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make/source_gen" />
+    <delete dir="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.facets/source_gen" />
     <delete dir="${mps_home}/core/tool/ant/source_gen" />
     <delete dir="${mps_home}/core/tool/builder/source_gen" />
     <delete dir="${mps_home}/core/tool/common/source_gen" />
