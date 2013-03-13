@@ -101,6 +101,7 @@
     <classNode dependClassName="com.intellij.psi.PsiElement" />
     <classNode dependClassName="com.intellij.psi.PsiField" />
     <classNode dependClassName="com.intellij.psi.PsiFile" />
+    <classNode dependClassName="com.intellij.psi.PsiJavaFile" />
     <classNode dependClassName="com.intellij.psi.PsiMethod" />
     <classNode dependClassName="com.intellij.psi.PsiNamedElement" />
     <classNode dependClassName="com.intellij.psi.PsiParameter" />
@@ -109,8 +110,12 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="jetbrains.mps.idea.java.psiStubs.ASTConverter" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelFqName" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelId" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
   </dependency>
   <dependency className="jetbrains.mps.idea.java.psiStubs.PsiJavaStubDataSource" file="PsiJavaStubDataSource.java">
@@ -197,6 +202,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.idea.core.psi.PsiChangesWatcher" />
+    <classNode dependClassName="jetbrains.mps.idea.java.psiStubs.JavaForeignIdBuilder" />
     <classNode dependClassName="jetbrains.mps.idea.java.psiStubs.PsiJavaStubDataSource" />
     <classNode dependClassName="jetbrains.mps.idea.java.psiStubs.PsiJavaStubModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
@@ -206,8 +212,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelFqName" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelId" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

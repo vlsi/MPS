@@ -14,6 +14,7 @@ import com.intellij.refactoring.listeners.RefactoringElementListenerProvider;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.java.psi.impl.JavaMPSPsiNodeFactory;
+import jetbrains.mps.idea.java.psiStubs.JavaForeignIdBuilder;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.ModelAccess;
@@ -44,21 +45,24 @@ public class RefactoringListenerProvider implements RefactoringElementListenerPr
       return null;
     }
 
-    final SNodeId oldNodeId = new JavaMPSPsiNodeFactory().computeNodeId(element);
+    final SNodeId oldNodeId = JavaForeignIdBuilder.computeNodeId(element);
+    final SModelReference oldModelRef = JavaForeignIdBuilder.computeModelReference(element);
 
     return new RefactoringElementListener() {
       @Override
       public void elementMoved(@NotNull PsiElement newElement) {
-        handleMoveOrRename(newElement, true);
+        handleMoveOrRename(newElement);
       }
 
       @Override
       public void elementRenamed(@NotNull PsiElement newElement) {
-        handleMoveOrRename(newElement, false);
+        handleMoveOrRename(newElement);
       }
 
-      private void handleMoveOrRename(@NotNull final PsiElement newElement, final boolean couldModelChange) {
-        final SNodeId newNodeId = new JavaMPSPsiNodeFactory().computeNodeId(newElement);
+      private void handleMoveOrRename(@NotNull final PsiElement newElement) {
+
+        final SNodeId newNodeId = JavaForeignIdBuilder.computeNodeId(newElement);
+        final SModelReference newModelRef = JavaForeignIdBuilder.computeModelReference(newElement);
         final Project project = newElement.getProject();
 
         // find all SReferences starting from oldNodeId.toString and replace the prefix to new newNodeId.toString
@@ -99,19 +103,16 @@ public class RefactoringListenerProvider implements RefactoringElementListenerPr
                           String newTarget = targetNodeIdString.replaceFirst(oldNodeIdString, newNodeIdString);
                           SNodeId newTargetId = new Foreign(newTarget);
                           SNode source = ref.getSourceNode();
-                          SModelReference modelRef;
-                          if (!couldModelChange) {
-                            modelRef = ref.getTargetSModelReference();
-                          } else {
-                            // FIXME temporary
-                            modelRef = ref.getTargetSModelReference();
+                          if (!newModelRef.equals(oldModelRef)) {
+                            // TODO handle model import
+                            System.out.println("Element moved: model changed !");
                           }
                           // FIXME resolveInfo should be handled more carefully
                           String resolveInfo = "";
                           if (newElement instanceof PsiNamedElement) {
                             resolveInfo = ((PsiNamedElement) newElement).getName();
                           }
-                          SReference newRef = StaticReference.create(ref.getRole(), source, new SNodePointer(modelRef, newTargetId), resolveInfo);
+                          SReference newRef = StaticReference.create(ref.getRole(), source, new SNodePointer(newModelRef, newTargetId), resolveInfo);
                           source.setReference(ref.getRole(), newRef);
                         }
                       }
