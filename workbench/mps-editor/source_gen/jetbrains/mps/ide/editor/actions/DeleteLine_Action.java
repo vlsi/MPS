@@ -106,18 +106,11 @@ public class DeleteLine_Action extends BaseAction {
           SNode currentNode = current.getSNode();
           if (SNodeOperations.isInstanceOf(currentNode, "jetbrains.mps.baseLanguage.structure.Statement") || (SNodeOperations.getAncestor(currentNode, "jetbrains.mps.baseLanguage.structure.Statement", false, false) == null)) {
             jetbrains.mps.openapi.editor.cells.EditorCell root = current.getRootParent();
-            boolean currentCellPassed = false;
-            for (jetbrains.mps.openapi.editor.cells.EditorCell sibling : current.getParent()) {
-              if (currentCellPassed) {
-                ListSequence.fromList(nodesToDelete).addElement(sibling.getSNode());
-                if (CellLayout_Indent.isNewLineAfter(root, sibling)) {
-                  cellToSelect = CellTraversalUtil.getNextLeaf(sibling, CellConditions.SELECTABLE);
-                  break;
-                }
-              } else if (sibling == current) {
-                currentCellPassed = true;
-              }
+            ListSequence.fromList(nodesToDelete).addElement(current.getSNode());
+            if (CellLayout_Indent.isNewLineAfter(root, current)) {
+              cellToSelect = CellTraversalUtil.getNextLeaf(current, CellConditions.SELECTABLE);
             }
+
             if (cellToSelect == null) {
               cellToSelect = CellTraversalUtil.getNextLeaf(current, CellConditions.SELECTABLE);
             }
