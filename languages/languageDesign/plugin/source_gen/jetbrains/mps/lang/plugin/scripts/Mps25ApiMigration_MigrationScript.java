@@ -52,7 +52,7 @@ public class Mps25ApiMigration_MigrationScript extends BaseMigrationScript {
               return false;
             }
             // #f3061a53-9226-4cc5-a443-f952ceaf5816# is baseLanguage module id 
-            return it.getTargetSModelReference().getSModelId().toString().contains("#f3061a53-9226-4cc5-a443-f952ceaf5816#") && (longName.endsWith(".search") || longName.endsWith(".index") || longName.endsWith(".javastub"));
+            return it.getTargetSModelReference().getModelId().toString().contains("#f3061a53-9226-4cc5-a443-f952ceaf5816#") && (longName.endsWith(".search") || longName.endsWith(".index") || longName.endsWith(".javastub"));
           }
         }).isNotEmpty();
       }

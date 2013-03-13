@@ -99,7 +99,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     public boolean swapOut(TransientSModel model) {
       if (mySpaceDir == null || !mySpaceDir.exists()) throw new IllegalStateException("no swap dir");
 
-      String modelId = model.getReference().getSModelId().toString();
+      String modelId = model.getReference().getModelId().toString();
       if (modelId == null || modelId.isEmpty()) {
         LOG.error("Bad model id <" + modelId + ">");
         return false;
@@ -140,7 +140,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     public TransientSModel restoreFromSwap(SModelReference mref) {
       if (mySpaceDir == null || !mySpaceDir.exists()) throw new IllegalStateException("no swap dir");
 
-      String modelId = mref.getSModelId().toString();
+      String modelId = mref.getModelId().toString();
       if (modelId == null || modelId.isEmpty()) {
         throw new IllegalStateException("bad modelId");
       }

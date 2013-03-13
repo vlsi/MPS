@@ -115,13 +115,13 @@ public class DiffTemporaryModule extends AbstractModule {
 
   public static void setSModelId(SModel model, String version) {
     SModelReference modelRef = model.getReference();
-    CopyUtil.changeModelReference(model.getModelDescriptor(), new SModelReference(modelRef.getSModelFqName(), genMergeSModelId(modelRef.getSModelId(), version)));
+    CopyUtil.changeModelReference(model.getModelDescriptor(), new SModelReference(modelRef.getSModelFqName(), genMergeSModelId(modelRef.getModelId(), version)));
   }
 
   public static void resetSModelId(org.jetbrains.mps.openapi.model.SModel model) {
     SModelReference modelRef = model.getReference();
-    assert modelRef.getSModelId() instanceof SModelId.ForeignSModelId;
-    CopyUtil.changeModelReference(model, new SModelReference(modelRef.getSModelFqName(), getOriginalSModelId((SModelId.ForeignSModelId) modelRef.getSModelId())));
+    assert modelRef.getModelId() instanceof SModelId.ForeignSModelId;
+    CopyUtil.changeModelReference(model, new SModelReference(modelRef.getSModelFqName(), getOriginalSModelId((SModelId.ForeignSModelId) modelRef.getModelId())));
   }
 
   public static void registerModel(org.jetbrains.mps.openapi.model.SModel model, MPSModuleOwner owner) {

@@ -45,12 +45,12 @@ import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
 import jetbrains.mps.ide.ui.finders.LanguageUsagesFinder;
 import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.Nls;
-import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import org.jetbrains.mps.openapi.persistence.DataSource;
@@ -168,7 +168,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
         public void run() {
           if (value instanceof SModelReference) {
             query[0] = new SearchQuery(
-              SModelRepository.getInstance().getModelDescriptor(((jetbrains.mps.smodel.SModelReference) value).getSModelId()), scope);
+              SModelRepository.getInstance().getModelDescriptor(((SModelReference) value).getModelId()), scope);
             provider[0] = FindUtils.makeProvider(new ModelUsagesFinder());
           }
         }

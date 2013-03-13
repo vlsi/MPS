@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.IScope;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
+
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.search.ModelAndImportedModelsScope;
 import java.util.ArrayList;
@@ -99,7 +100,7 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
       if (targetModelReference == null) {
         targetModelReference = myModel.getReference();
       }
-      if (targetModelReference.getSModelId() != null) {
+      if (targetModelReference.getModelId() != null) {
         SModel targetModel = this.myScope.getModelDescriptor(targetModelReference);
         if (targetModel == null) {
           return null;

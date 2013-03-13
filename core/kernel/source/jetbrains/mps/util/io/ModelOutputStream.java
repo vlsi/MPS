@@ -129,9 +129,9 @@ public class ModelOutputStream extends DataOutputStream {
       Integer index = modelrefToIndex.get(ref);
       if (index == null) {
         modelrefToIndex.put(ref, myRefIndex++);
-        if (ref.getSModelId() != null) {
+        if (ref.getModelId() != null) {
           writeByte(7);
-          writeModelID(ref.getSModelId());
+          writeModelID(ref.getModelId());
         } else {
           writeByte(8);
         }

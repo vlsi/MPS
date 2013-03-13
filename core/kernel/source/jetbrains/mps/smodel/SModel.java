@@ -97,7 +97,7 @@ public class SModel implements SModelData {
   }
 
   public SModelId getModelId() {
-    return getSModelReference().getSModelId();
+    return getSModelReference().getModelId();
   }
 
   @NotNull
@@ -1034,7 +1034,7 @@ public class SModel implements SModelData {
    * @Deprecated in 3.0
    */
   public SModelId getSModelId() {
-    return myReference.getSModelId();
+    return myReference.getModelId();
   }
 
   @Deprecated
