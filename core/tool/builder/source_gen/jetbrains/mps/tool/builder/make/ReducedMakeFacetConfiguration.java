@@ -91,7 +91,7 @@ public class ReducedMakeFacetConfiguration {
           skipCopyTraceinfo._0(true);
         }
 
-        Tuples._2<Boolean, Boolean> compileProps = (Tuples._2<Boolean, Boolean>) pp.properties(new ITarget.Name("JavaCompile.compile"), Object.class);
+        Tuples._2<Boolean, Boolean> compileProps = (Tuples._2<Boolean, Boolean>) pp.properties(new ITarget.Name("jetbrains.mps.make.facets.JavaCompile.compile"), Object.class);
         if (compileProps != null) {
           compileProps._1(true);
         }

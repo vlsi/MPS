@@ -47,8 +47,8 @@ public class LanguageRegistry implements CoreComponent {
   /*
   *  Language namespace can be changed.
   */
-  private Map<Language, String> myLanguageToNamespace;
-  private Map<String, LanguageRuntime> myLanguages;
+  private Map<Language, String> myLanguageToNamespace = new HashMap<Language, String>();
+  private Map<String, LanguageRuntime> myLanguages = new HashMap<String, LanguageRuntime>();
 
   private final ConceptRegistry myConceptRegistry;
 

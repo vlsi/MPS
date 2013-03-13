@@ -31,11 +31,8 @@ public class BootstrapMakeFacets implements CoreComponent {
 
 
   public void dispose() {
-    if (javaCompileFacet != null) {
-      FacetRegistry.getInstance().unregister(javaCompileFacet);
-    }
-    if (reloadClassesFacet != null) {
-      FacetRegistry.getInstance().unregister(reloadClassesFacet);
-    }
+    FacetRegistry.getInstance().unregister(javaCompileFacet);
+    FacetRegistry.getInstance().unregister(reloadClassesFacet);
+    FacetRegistry.getInstance().unregister(makeFacet);
   }
 }
