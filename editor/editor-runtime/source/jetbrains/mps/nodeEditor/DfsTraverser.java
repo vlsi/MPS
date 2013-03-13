@@ -113,7 +113,7 @@ public class DfsTraverser {
     }
 
     if (cell instanceof EditorCell_Collection) {
-      return getCellIterator((EditorCell_Collection) cell);
+      return getCellCollectionIterator((EditorCell_Collection) cell);
     } else {
       return null;
     }
@@ -121,7 +121,7 @@ public class DfsTraverser {
   }
 
 
-  private Iterator<EditorCell> getCellIterator(EditorCell_Collection cell) {
+  private Iterator<EditorCell> getCellCollectionIterator(EditorCell_Collection cell) {
     return myForward ? cell.iterator() : cell.reverseIterator();
   }
 
