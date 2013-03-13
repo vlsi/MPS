@@ -120,21 +120,20 @@
     <nodeInfo nodeId="8351679702044365631" fileName="FacetDeclaration_Behavior.java" startLine="56" startPosition="41" endLine="57" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8351679702044331884" fileName="FacetDeclaration_Behavior.java" startLine="61" startPosition="5" endLine="62" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8853708281362068161" fileName="FacetDeclaration_Behavior.java" startLine="65" startPosition="83" endLine="66" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1919086248986828225" fileName="FacetDeclaration_Behavior.java" startLine="69" startPosition="80" endLine="70" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7854369758457864777" fileName="FacetDeclaration_Behavior.java" startLine="78" startPosition="80" endLine="79" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7854369758457864777" fileName="FacetDeclaration_Behavior.java" startLine="83" startPosition="113" endLine="84" endPosition="263" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="584023828094819203" fileName="FacetDeclaration_Behavior.java" startLine="69" startPosition="80" endLine="70" endPosition="233" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7854369758457864777" fileName="FacetDeclaration_Behavior.java" startLine="74" startPosition="80" endLine="75" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7854369758457864777" fileName="FacetDeclaration_Behavior.java" startLine="79" startPosition="113" endLine="80" endPosition="263" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7854369758457864777" fileName="FacetDeclaration_Behavior.java" startLine="23" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="6447445394688520453" fileName="FacetDeclaration_Behavior.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="8351679702044331871" fileName="FacetDeclaration_Behavior.java" startLine="51" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="8351679702044365629" fileName="FacetDeclaration_Behavior.java" startLine="56" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="7854369758457864777" fileName="FacetDeclaration_Behavior.java" startLine="65" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_classifierName_4609636120081351397#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1919086248986828233" fileName="FacetDeclaration_Behavior.java" startLine="70" startPosition="83" endLine="74" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7854369758457864777" fileName="FacetDeclaration_Behavior.java" startLine="77" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_classifierName_8853708281362019178#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="7854369758457864777" fileName="FacetDeclaration_Behavior.java" startLine="82" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_classifierName_8853708281362019178#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="7854369758457864777" fileName="FacetDeclaration_Behavior.java" startLine="69" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getFacetFqName_1919086248986828221#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="7854369758457864777" fileName="FacetDeclaration_Behavior.java" startLine="73" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_classifierName_8853708281362019178#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="7854369758457864777" fileName="FacetDeclaration_Behavior.java" startLine="78" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_classifierName_8853708281362019178#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="6447445394688511289" fileName="FacetDeclaration_Behavior.java" startLine="32" startPosition="51" endLine="37" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8351679702044331862" fileName="FacetDeclaration_Behavior.java" startLine="49" startPosition="51" endLine="54" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8351679702044365620" fileName="FacetDeclaration_Behavior.java" startLine="54" startPosition="12" endLine="59" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7854369758457864777" fileName="FacetDeclaration_Behavior.java" startLine="69" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getFacetFqName_1919086248986828221#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="6447445394688511264" fileName="FacetDeclaration_Behavior.java" startLine="30" startPosition="69" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6447445394688511240" fileName="FacetDeclaration_Behavior.java" startLine="28" startPosition="92" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="8351679702044331855" fileName="FacetDeclaration_Behavior.java" startLine="47" startPosition="69" endLine="60" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -146,8 +145,9 @@
     <scopeInfo nodeId="8351679702044331872" fileName="FacetDeclaration_Behavior.java" startLine="51" startPosition="41" endLine="52" endPosition="65" />
     <scopeInfo nodeId="8351679702044365630" fileName="FacetDeclaration_Behavior.java" startLine="56" startPosition="41" endLine="57" endPosition="65" />
     <scopeInfo nodeId="8853708281362019180" fileName="FacetDeclaration_Behavior.java" startLine="65" startPosition="83" endLine="66" endPosition="190" />
-    <scopeInfo nodeId="7854369758457864777" fileName="FacetDeclaration_Behavior.java" startLine="78" startPosition="80" endLine="79" endPosition="130" />
-    <scopeInfo nodeId="7854369758457864777" fileName="FacetDeclaration_Behavior.java" startLine="83" startPosition="113" endLine="84" endPosition="263" />
+    <scopeInfo nodeId="1919086248986828224" fileName="FacetDeclaration_Behavior.java" startLine="69" startPosition="80" endLine="70" endPosition="233" />
+    <scopeInfo nodeId="7854369758457864777" fileName="FacetDeclaration_Behavior.java" startLine="74" startPosition="80" endLine="75" endPosition="130" />
+    <scopeInfo nodeId="7854369758457864777" fileName="FacetDeclaration_Behavior.java" startLine="79" startPosition="113" endLine="80" endPosition="263" />
     <scopeInfo nodeId="7854369758457864777" fileName="FacetDeclaration_Behavior.java" startLine="23" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="7854369758457864777" varName="thisNode" />
     </scopeInfo>
@@ -163,20 +163,17 @@
     <scopeInfo nodeId="7854369758457864777" fileName="FacetDeclaration_Behavior.java" startLine="65" startPosition="0" endLine="68" endPosition="0">
       <varInfo nodeId="7854369758457864777" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7854369758457864777" fileName="FacetDeclaration_Behavior.java" startLine="77" startPosition="0" endLine="81" endPosition="0">
+    <scopeInfo nodeId="7854369758457864777" fileName="FacetDeclaration_Behavior.java" startLine="69" startPosition="0" endLine="72" endPosition="0">
       <varInfo nodeId="7854369758457864777" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7854369758457864777" fileName="FacetDeclaration_Behavior.java" startLine="82" startPosition="0" endLine="86" endPosition="0">
+    <scopeInfo nodeId="7854369758457864777" fileName="FacetDeclaration_Behavior.java" startLine="73" startPosition="0" endLine="77" endPosition="0">
+      <varInfo nodeId="7854369758457864777" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="7854369758457864777" fileName="FacetDeclaration_Behavior.java" startLine="78" startPosition="0" endLine="82" endPosition="0">
       <varInfo nodeId="7854369758457864777" varName="callerConceptFqName" />
       <varInfo nodeId="7854369758457864777" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1919086248986828224" fileName="FacetDeclaration_Behavior.java" startLine="69" startPosition="80" endLine="74" endPosition="6">
-      <varInfo nodeId="1919086248986828226" varName="mod" />
-    </scopeInfo>
     <scopeInfo nodeId="6447445394688511265" fileName="FacetDeclaration_Behavior.java" startLine="31" startPosition="56" endLine="37" endPosition="12" />
-    <scopeInfo nodeId="7854369758457864777" fileName="FacetDeclaration_Behavior.java" startLine="69" startPosition="0" endLine="76" endPosition="0">
-      <varInfo nodeId="7854369758457864777" varName="thisNode" />
-    </scopeInfo>
     <scopeInfo nodeId="6447445394688511249" fileName="FacetDeclaration_Behavior.java" startLine="29" startPosition="57" endLine="38" endPosition="7">
       <varInfo nodeId="6447445394688511258" varName="fd" />
     </scopeInfo>
@@ -201,7 +198,7 @@
     <unitInfo nodeId="6447445394688520453" fileName="FacetDeclaration_Behavior.java" startLine="33" startPosition="134" endLine="37" endPosition="9" unitName="jetbrains.mps.make.facet.behavior.FacetDeclaration_Behavior$1" />
     <unitInfo nodeId="8351679702044331871" fileName="FacetDeclaration_Behavior.java" startLine="50" startPosition="134" endLine="54" endPosition="9" unitName="jetbrains.mps.make.facet.behavior.FacetDeclaration_Behavior$2" />
     <unitInfo nodeId="8351679702044365629" fileName="FacetDeclaration_Behavior.java" startLine="55" startPosition="134" endLine="59" endPosition="9" unitName="jetbrains.mps.make.facet.behavior.FacetDeclaration_Behavior$3" />
-    <unitInfo nodeId="7854369758457864777" fileName="FacetDeclaration_Behavior.java" startLine="22" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.FacetDeclaration_Behavior" />
+    <unitInfo nodeId="7854369758457864777" fileName="FacetDeclaration_Behavior.java" startLine="22" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.make.facet.behavior.FacetDeclaration_Behavior" />
   </root>
   <root nodeRef="r:32324a64-526d-42e5-8157-b55154efce2d(jetbrains.mps.make.facet.behavior)/7854369758457971843">
     <nodeInfo nodeId="7854369758457974823" fileName="TargetDeclaration_Behavior.java" startLine="15" startPosition="81" endLine="16" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

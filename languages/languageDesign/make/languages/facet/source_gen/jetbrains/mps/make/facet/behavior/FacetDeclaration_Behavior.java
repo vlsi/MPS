@@ -15,8 +15,8 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class FacetDeclaration_Behavior {
@@ -67,11 +67,7 @@ public class FacetDeclaration_Behavior {
   }
 
   public static String call_getFacetFqName_1919086248986828221(SNode thisNode) {
-    SNode mod = SModelOperations.getModuleStub(SNodeOperations.getModel(thisNode));
-    return (SNodeOperations.isInstanceOf(mod, "jetbrains.mps.lang.project.structure.Language") ?
-      SPropertyOperations.getString(SNodeOperations.cast(mod, "jetbrains.mps.lang.project.structure.Language"), "namespace") + "." + SPropertyOperations.getString(thisNode, "name") :
-      SPropertyOperations.getString(thisNode, "name")
-    );
+    return BehaviorReflection.invokeVirtual(String.class, SModelOperations.getModuleStub(SNodeOperations.getModel(thisNode)), "virtual_getFqName_1213877404258", new Object[]{}) + "." + SPropertyOperations.getString(thisNode, "name");
   }
 
   @Deprecated

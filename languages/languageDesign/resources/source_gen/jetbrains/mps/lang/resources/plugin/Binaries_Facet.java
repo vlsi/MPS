@@ -63,7 +63,7 @@ public class Binaries_Facet extends IFacet.Stub {
   }
 
   public Iterable<IFacet.Name> required() {
-    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("Make"), new IFacet.Name("jetbrains.mps.lang.core.Generate")});
+    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.make.facets.Make"), new IFacet.Name("jetbrains.mps.lang.core.Generate")});
   }
 
   public Iterable<IFacet.Name> extended() {
@@ -109,7 +109,7 @@ public class Binaries_Facet extends IFacet.Stub {
                           monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("no output location for " + SNodeOperations.getModelLongName(smd))));
                           return null;
                         } else {
-                          IFile outputRoot = pa.global().properties(new ITarget.Name("Make.make"), Parameters.class).pathToFile().invoke(output);
+                          IFile outputRoot = pa.global().properties(new ITarget.Name("jetbrains.mps.make.facets.Make.make"), Parameters.class).pathToFile().invoke(output);
                           final IFile outputDir = FileGenerationUtil.getDefaultOutputDir(model, outputRoot);
                           final FilesDelta fd = new FilesDelta(outputDir);
                           ListSequence.fromList(deltaList).addElement(fd);
@@ -197,7 +197,7 @@ public class Binaries_Facet extends IFacet.Stub {
     }
 
     public Iterable<ITarget.Name> before() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("Make.make"), new ITarget.Name("Make.reconcile")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.make.facets.Make.make"), new ITarget.Name("jetbrains.mps.make.facets.Make.reconcile")});
     }
 
     public ITarget.Name getName() {

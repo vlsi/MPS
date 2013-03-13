@@ -52,18 +52,18 @@ public class Generator_Test extends MockTestCase {
     context.checking(new Expectations() {
       {
         exactly(1).of(pstub).beginWork(with(equal(internalWorkName("script"))), with(equal(1020)), with(any(Integer.class)));
-        exactly(1).of(pstub).beginWork(with(equal(internalWorkName(new ITarget.Name("Generator_.Configure").toString()))), with(equal(1000)), with(equal(10)));
-        exactly(1).of(pstub).beginWork(with(equal(internalWorkName(new ITarget.Name("Generator_.Generate").toString()))), with(equal(1000)), with(equal(1000)));
-        exactly(1).of(pstub).beginWork(with(equal(internalWorkName(new ITarget.Name("Maker_.Make").toString()))), with(equal(1000)), with(equal(10)));
+        exactly(1).of(pstub).beginWork(with(equal(internalWorkName(new ITarget.Name("jetbrains.mps.make.tests.Generator_.Configure").toString()))), with(equal(1000)), with(equal(10)));
+        exactly(1).of(pstub).beginWork(with(equal(internalWorkName(new ITarget.Name("jetbrains.mps.make.tests.Generator_.Generate").toString()))), with(equal(1000)), with(equal(1000)));
+        exactly(1).of(pstub).beginWork(with(equal(internalWorkName(new ITarget.Name("jetbrains.mps.make.tests.Maker_.Make").toString()))), with(equal(1000)), with(equal(10)));
 
         exactly(1).of(pstub).beginWork(with(equal("GENERATE")), with(same(100)), with(any(Integer.class)));
         atMost(1).of(pstub).advanceWork(with(equal("GENERATE")), with(same(50)));
         exactly(1).of(pstub).finishWork(with(equal("GENERATE")));
 
         atMost(3).of(pstub).advanceWork(with(equal(internalWorkName("script"))), with(same(1)));
-        exactly(1).of(pstub).finishWork(with(equal(internalWorkName(new ITarget.Name("Maker_.Make").toString()))));
-        exactly(1).of(pstub).finishWork(with(equal(internalWorkName(new ITarget.Name("Generator_.Generate").toString()))));
-        exactly(1).of(pstub).finishWork(with(equal(internalWorkName(new ITarget.Name("Generator_.Configure").toString()))));
+        exactly(1).of(pstub).finishWork(with(equal(internalWorkName(new ITarget.Name("jetbrains.mps.make.tests.Maker_.Make").toString()))));
+        exactly(1).of(pstub).finishWork(with(equal(internalWorkName(new ITarget.Name("jetbrains.mps.make.tests.Generator_.Generate").toString()))));
+        exactly(1).of(pstub).finishWork(with(equal(internalWorkName(new ITarget.Name("jetbrains.mps.make.tests.Generator_.Configure").toString()))));
         exactly(1).of(pstub).finishWork(with(equal(internalWorkName("script"))));
         allowing(pstub).workLeft();
         will(returnValue(Integer.MAX_VALUE));
@@ -71,11 +71,11 @@ public class Generator_Test extends MockTestCase {
     });
 
     final IScriptController mons = new IScriptController.Stub(new IConfigMonitor.Stub(), new IJobMonitor.Stub(pstub));
-    IScript scr = scb.withFacetName(new IFacet.Name("Maker_")).withFacetName(new IFacet.Name("Generator_")).withFinalTarget(new ITarget.Name("Maker_.Make")).toScript();
+    IScript scr = scb.withFacetName(new IFacet.Name("jetbrains.mps.make.tests.Maker_")).withFacetName(new IFacet.Name("jetbrains.mps.make.tests.Generator_")).withFinalTarget(new ITarget.Name("jetbrains.mps.make.tests.Maker_.Make")).toScript();
     Assert.assertTrue(scr.isValid());
     ITarget dt = scr.finalTarget();
     Assert.assertNotNull(dt);
-    Assert.assertEquals(new ITarget.Name("Maker_.Make"), dt.getName());
+    Assert.assertEquals(new ITarget.Name("jetbrains.mps.make.tests.Maker_.Make"), dt.getName());
     IResult res = scr.execute(mons, null, pmstub);
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
@@ -148,11 +148,11 @@ public class Generator_Test extends MockTestCase {
       }
     });
     Mockups.allowing(context, mons);
-    IScript scr = scb.withFacetName(new IFacet.Name("Maker_")).withFacetName(new IFacet.Name("Generator_")).withFacetName(new IFacet.Name("TextGen_")).withFinalTarget(new ITarget.Name("Maker_.Make")).toScript();
+    IScript scr = scb.withFacetName(new IFacet.Name("jetbrains.mps.make.tests.Maker_")).withFacetName(new IFacet.Name("jetbrains.mps.make.tests.Generator_")).withFacetName(new IFacet.Name("jetbrains.mps.make.tests.TextGen_")).withFinalTarget(new ITarget.Name("jetbrains.mps.make.tests.Maker_.Make")).toScript();
     Assert.assertTrue(scr.isValid());
     ITarget dt = scr.finalTarget();
     Assert.assertNotNull(dt);
-    Assert.assertEquals(new ITarget.Name("Maker_.Make"), dt.getName());
+    Assert.assertEquals(new ITarget.Name("jetbrains.mps.make.tests.Maker_.Make"), dt.getName());
     IResult res = scr.execute(mons, null, new EmptyProgressMonitor());
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
@@ -221,12 +221,12 @@ public class Generator_Test extends MockTestCase {
     });
     Mockups.allowing(context, mons);
 
-    IScript scr = scb.withFacetName(new IFacet.Name("Maker_")).withFacetName(new IFacet.Name("Generator_")).withFacetName(new IFacet.Name("TextGen_")).withFinalTarget(new ITarget.Name("Maker_.Make")).toScript();
+    IScript scr = scb.withFacetName(new IFacet.Name("jetbrains.mps.make.tests.Maker_")).withFacetName(new IFacet.Name("jetbrains.mps.make.tests.Generator_")).withFacetName(new IFacet.Name("TextGen_")).withFinalTarget(new ITarget.Name("jetbrains.mps.make.tests.Maker_.Make")).toScript();
 
     Assert.assertTrue(scr.isValid());
     ITarget dt = scr.finalTarget();
     Assert.assertNotNull(dt);
-    Assert.assertEquals(new ITarget.Name("Maker_.Make"), dt.getName());
+    Assert.assertEquals(new ITarget.Name("jetbrains.mps.make.tests.Maker_.Make"), dt.getName());
     IResult res = scr.execute(mons, null, new EmptyProgressMonitor());
     Assert.assertNotNull(res);
     Assert.assertFalse(res.isSucessful());
@@ -244,8 +244,8 @@ public class Generator_Test extends MockTestCase {
     context.checking(new Expectations() {
       {
         exactly(1).of(pstub).beginWork(with(equal(internalWorkName("script"))), with(same(20)), with(any(Integer.class)));
-        exactly(1).of(pstub).beginWork(with(equal(internalWorkName(new ITarget.Name("Worker_.work").toString()))), with(equal(1000)), with(equal(10)));
-        exactly(1).of(pstub).beginWork(with(equal(internalWorkName(new ITarget.Name("Maker_.Make").toString()))), with(equal(1000)), with(equal(10)));
+        exactly(1).of(pstub).beginWork(with(equal(internalWorkName(new ITarget.Name("jetbrains.mps.make.tests.Worker_.work").toString()))), with(equal(1000)), with(equal(10)));
+        exactly(1).of(pstub).beginWork(with(equal(internalWorkName(new ITarget.Name("jetbrains.mps.make.tests.Maker_.Make").toString()))), with(equal(1000)), with(equal(10)));
 
 
         org.jmock.Sequence seq = context.sequence("sequence");
@@ -265,8 +265,8 @@ public class Generator_Test extends MockTestCase {
         inSequence(seq);
 
         atMost(2).of(pstub).advanceWork(with(equal(internalWorkName("script"))), with(same(1)));
-        exactly(1).of(pstub).finishWork(with(equal(internalWorkName(new ITarget.Name("Maker_.Make").toString()))));
-        exactly(1).of(pstub).finishWork(with(equal(internalWorkName(new ITarget.Name("Worker_.work").toString()))));
+        exactly(1).of(pstub).finishWork(with(equal(internalWorkName(new ITarget.Name("jetbrains.mps.make.tests.Maker_.Make").toString()))));
+        exactly(1).of(pstub).finishWork(with(equal(internalWorkName(new ITarget.Name("jetbrains.mps.make.tests.Worker_.work").toString()))));
         exactly(1).of(pstub).finishWork(with(equal(internalWorkName("script"))));
 
         allowing(pstub).workLeft();
@@ -275,12 +275,12 @@ public class Generator_Test extends MockTestCase {
     });
 
     final IScriptController mons = new IScriptController.Stub(new IConfigMonitor.Stub(), new IJobMonitor.Stub(pstub));
-    IScript scr = scb.withFacetName(new IFacet.Name("Maker_")).withFacetName(new IFacet.Name("Worker_")).withFinalTarget(new ITarget.Name("Maker_.Make")).toScript();
+    IScript scr = scb.withFacetName(new IFacet.Name("jetbrains.mps.make.tests.Maker_")).withFacetName(new IFacet.Name("jetbrains.mps.make.tests.Worker_")).withFinalTarget(new ITarget.Name("jetbrains.mps.make.tests.Maker_.Make")).toScript();
 
     Assert.assertTrue(scr.isValid());
     ITarget dt = scr.finalTarget();
     Assert.assertNotNull(dt);
-    Assert.assertEquals(new ITarget.Name("Maker_.Make"), dt.getName());
+    Assert.assertEquals(new ITarget.Name("jetbrains.mps.make.tests.Maker_.Make"), dt.getName());
     IResult res = scr.execute(mons, null, new EmptyProgressMonitor());
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());
@@ -296,16 +296,16 @@ public class Generator_Test extends MockTestCase {
     final LoggingProgressStrategy.Log logger = context.mock(LoggingProgressStrategy.Log.class);
     context.checking(new Expectations() {
       {
-        oneOf(logger).info(with(equal("\u221e/" + internalWorkName("script") + "/" + internalWorkName(new ITarget.Name("Worker_.work").toString()) + "/WORK -- started")));
-        oneOf(logger).info(with(equal("\u221e/" + internalWorkName("script") + "/" + internalWorkName(new ITarget.Name("Worker_.work").toString()) + "/WORK -- done 50%")));
-        oneOf(logger).info(with(equal("\u221e/" + internalWorkName("script") + "/" + internalWorkName(new ITarget.Name("Worker_.work").toString()) + "/WORK/WORKWORK -- started")));
-        oneOf(logger).info(with(equal("\u221e/" + internalWorkName("script") + "/" + internalWorkName(new ITarget.Name("Worker_.work").toString()) + "/WORK -- done 62%")));
-        oneOf(logger).info(with(equal("\u221e/" + internalWorkName("script") + "/" + internalWorkName(new ITarget.Name("Worker_.work").toString()) + "/WORK/WORKWORK -- done 50%")));
-        oneOf(logger).info(with(equal("\u221e/" + internalWorkName("script") + "/" + internalWorkName(new ITarget.Name("Worker_.work").toString()) + "/WORK -- done 74%")));
-        exactly(2).of(logger).info(with(equal("\u221e/" + internalWorkName("script") + "/" + internalWorkName(new ITarget.Name("Worker_.work").toString()) + "/WORK/WORKWORK -- done 100%")));
-        oneOf(logger).info(with(equal("\u221e/" + internalWorkName("script") + "/" + internalWorkName(new ITarget.Name("Worker_.work").toString()) + "/WORK/WORKWORK -- finished")));
-        oneOf(logger).info(with(equal("\u221e/" + internalWorkName("script") + "/" + internalWorkName(new ITarget.Name("Worker_.work").toString()) + "/WORK -- done 100%")));
-        oneOf(logger).info(with(equal("\u221e/" + internalWorkName("script") + "/" + internalWorkName(new ITarget.Name("Worker_.work").toString()) + "/WORK -- finished")));
+        oneOf(logger).info(with(equal("\u221e/" + internalWorkName("script") + "/" + internalWorkName(new ITarget.Name("jetbrains.mps.make.tests.Worker_.work").toString()) + "/WORK -- started")));
+        oneOf(logger).info(with(equal("\u221e/" + internalWorkName("script") + "/" + internalWorkName(new ITarget.Name("jetbrains.mps.make.tests.Worker_.work").toString()) + "/WORK -- done 50%")));
+        oneOf(logger).info(with(equal("\u221e/" + internalWorkName("script") + "/" + internalWorkName(new ITarget.Name("jetbrains.mps.make.tests.Worker_.work").toString()) + "/WORK/WORKWORK -- started")));
+        oneOf(logger).info(with(equal("\u221e/" + internalWorkName("script") + "/" + internalWorkName(new ITarget.Name("jetbrains.mps.make.tests.Worker_.work").toString()) + "/WORK -- done 62%")));
+        oneOf(logger).info(with(equal("\u221e/" + internalWorkName("script") + "/" + internalWorkName(new ITarget.Name("jetbrains.mps.make.tests.Worker_.work").toString()) + "/WORK/WORKWORK -- done 50%")));
+        oneOf(logger).info(with(equal("\u221e/" + internalWorkName("script") + "/" + internalWorkName(new ITarget.Name("jetbrains.mps.make.tests.Worker_.work").toString()) + "/WORK -- done 74%")));
+        exactly(2).of(logger).info(with(equal("\u221e/" + internalWorkName("script") + "/" + internalWorkName(new ITarget.Name("jetbrains.mps.make.tests.Worker_.work").toString()) + "/WORK/WORKWORK -- done 100%")));
+        oneOf(logger).info(with(equal("\u221e/" + internalWorkName("script") + "/" + internalWorkName(new ITarget.Name("jetbrains.mps.make.tests.Worker_.work").toString()) + "/WORK/WORKWORK -- finished")));
+        oneOf(logger).info(with(equal("\u221e/" + internalWorkName("script") + "/" + internalWorkName(new ITarget.Name("jetbrains.mps.make.tests.Worker_.work").toString()) + "/WORK -- done 100%")));
+        oneOf(logger).info(with(equal("\u221e/" + internalWorkName("script") + "/" + internalWorkName(new ITarget.Name("jetbrains.mps.make.tests.Worker_.work").toString()) + "/WORK -- finished")));
 
         allowing(logger).info(with(new BaseMatcher<String>() {
           @Override
@@ -329,11 +329,11 @@ public class Generator_Test extends MockTestCase {
     };
 
     final IScriptController mons = new IScriptController.Stub(new IConfigMonitor.Stub(), jmon);
-    IScript scr = scb.withFacetName(new IFacet.Name("Maker_")).withFacetName(new IFacet.Name("Worker_")).withFinalTarget(new ITarget.Name("Maker_.Make")).toScript();
+    IScript scr = scb.withFacetName(new IFacet.Name("jetbrains.mps.make.tests.Maker_")).withFacetName(new IFacet.Name("jetbrains.mps.make.tests.Worker_")).withFinalTarget(new ITarget.Name("jetbrains.mps.make.tests.Maker_.Make")).toScript();
     Assert.assertTrue(scr.isValid());
     ITarget dt = scr.finalTarget();
     Assert.assertNotNull(dt);
-    Assert.assertEquals(new ITarget.Name("Maker_.Make"), dt.getName());
+    Assert.assertEquals(new ITarget.Name("jetbrains.mps.make.tests.Maker_.Make"), dt.getName());
     IResult res = scr.execute(mons, null, new EmptyProgressMonitor());
     Assert.assertNotNull(res);
     Assert.assertTrue(res.isSucessful());

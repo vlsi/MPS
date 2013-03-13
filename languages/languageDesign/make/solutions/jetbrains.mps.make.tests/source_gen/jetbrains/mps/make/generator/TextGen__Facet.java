@@ -24,7 +24,7 @@ import jetbrains.mps.make.script.IPropertiesPool;
 
 public class TextGen__Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
-  private IFacet.Name name = new IFacet.Name("TextGen_");
+  private IFacet.Name name = new IFacet.Name("jetbrains.mps.make.tests.TextGen_");
 
   public TextGen__Facet() {
     ListSequence.fromList(targets).addElement(new TextGen__Facet.Target_ConditionallyGenerate());
@@ -39,7 +39,7 @@ public class TextGen__Facet extends IFacet.Stub {
   }
 
   public Iterable<IFacet.Name> required() {
-    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("Maker_")});
+    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.make.tests.Maker_")});
   }
 
   public Iterable<IFacet.Name> extended() {
@@ -57,7 +57,7 @@ public class TextGen__Facet extends IFacet.Stub {
   public static class Target_ConditionallyGenerate implements ITargetEx {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-    private ITarget.Name name = new ITarget.Name("TextGen_.ConditionallyGenerate");
+    private ITarget.Name name = new ITarget.Name("jetbrains.mps.make.tests.TextGen_.ConditionallyGenerate");
 
     public Target_ConditionallyGenerate() {
     }
@@ -110,7 +110,7 @@ public class TextGen__Facet extends IFacet.Stub {
     }
 
     public Iterable<ITarget.Name> before() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("Maker_.Make")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.make.tests.Maker_.Make")});
     }
 
     public ITarget.Name getName() {

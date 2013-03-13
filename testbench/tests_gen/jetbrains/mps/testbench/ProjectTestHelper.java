@@ -130,7 +130,7 @@ public class ProjectTestHelper {
   }
 
   private ScriptBuilder defaultScriptBuilder() {
-    return new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.resources.Binaries"), new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("Make")).withFinalTarget(new ITarget.Name("Make.make"));
+    return new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.resources.Binaries"), new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.make.facets.Make.make"));
   }
 
   private Iterable<IModule> withGenerators(Iterable<IModule> modules) {
@@ -206,7 +206,7 @@ public class ProjectTestHelper {
           Tuples._1<Boolean> tparams = (Tuples._1<Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen"), Object.class);
           tparams._0(false);
 
-          Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> makeparams = (Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>>) ppool.properties(new ITarget.Name("Make.make"), Object.class);
+          Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> makeparams = (Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>>) ppool.properties(new ITarget.Name("jetbrains.mps.make.facets.Make.make"), Object.class);
           makeparams._0(new _FunctionTypes._return_P1_E0<IFile, String>() {
             public IFile invoke(String path) {
               return tmpFile(path);

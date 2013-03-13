@@ -34,7 +34,7 @@ import jetbrains.mps.make.script.IPropertiesPool;
 
 public class ReloadClasses_Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
-  private IFacet.Name name = new IFacet.Name("ReloadClasses");
+  private IFacet.Name name = new IFacet.Name("jetbrains.mps.make.facets.ReloadClasses");
 
   public ReloadClasses_Facet() {
     ListSequence.fromList(targets).addElement(new ReloadClasses_Facet.Target_reloadClasses());
@@ -49,7 +49,7 @@ public class ReloadClasses_Facet extends IFacet.Stub {
   }
 
   public Iterable<IFacet.Name> required() {
-    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("JavaCompile"), new IFacet.Name("Make")});
+    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.make.facets.JavaCompile"), new IFacet.Name("jetbrains.mps.make.facets.Make")});
   }
 
   public Iterable<IFacet.Name> extended() {
@@ -67,7 +67,7 @@ public class ReloadClasses_Facet extends IFacet.Stub {
   public static class Target_reloadClasses implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{TResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-    private ITarget.Name name = new ITarget.Name("ReloadClasses.reloadClasses");
+    private ITarget.Name name = new ITarget.Name("jetbrains.mps.make.facets.ReloadClasses.reloadClasses");
 
     public Target_reloadClasses() {
     }
@@ -118,7 +118,7 @@ public class ReloadClasses_Facet extends IFacet.Stub {
     }
 
     public Iterable<ITarget.Name> after() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("JavaCompile.compile"), new ITarget.Name("JavaCompile.auxCompile")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.make.facets.JavaCompile.compile"), new ITarget.Name("jetbrains.mps.make.facets.JavaCompile.auxCompile")});
     }
 
     public Iterable<ITarget.Name> notBefore() {
@@ -126,7 +126,7 @@ public class ReloadClasses_Facet extends IFacet.Stub {
     }
 
     public Iterable<ITarget.Name> before() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("Make.make")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.make.facets.Make.make")});
     }
 
     public ITarget.Name getName() {

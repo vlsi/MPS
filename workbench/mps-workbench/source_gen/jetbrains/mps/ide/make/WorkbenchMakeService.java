@@ -277,7 +277,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
   }
 
   public static IScript defaultMakeScript() {
-    return new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.resources.Binaries"), new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("JavaCompile"), new IFacet.Name("ReloadClasses"), new IFacet.Name("Make")).withFinalTarget(new ITarget.Name("Make.make")).toScript();
+    return new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.resources.Binaries"), new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.make.facets.JavaCompile"), new IFacet.Name("jetbrains.mps.make.facets.ReloadClasses"), new IFacet.Name("jetbrains.mps.make.facets.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.make.facets.Make.make")).toScript();
   }
 
   private class TaskRunner extends AbstractMakeService.AbstractInputProcessor {
@@ -413,7 +413,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
       }
 
       // hack: Generate facet not accessible from JavaCompile facet because it's compiled in IDEA 
-      Tuples._2<Project, Boolean> varsForJavaCompile = (Tuples._2<Project, Boolean>) ppool.properties(new ITarget.Name("JavaCompile.auxCompile"), Object.class);
+      Tuples._2<Project, Boolean> varsForJavaCompile = (Tuples._2<Project, Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.make.facets.JavaCompile.auxCompile"), Object.class);
       if (varsForJavaCompile != null) {
         varsForJavaCompile._0(getSession().getContext().getProject());
       }

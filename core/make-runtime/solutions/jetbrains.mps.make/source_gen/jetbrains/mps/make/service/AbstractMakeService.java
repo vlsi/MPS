@@ -84,7 +84,7 @@ public abstract class AbstractMakeService implements IMakeService {
               }));
             }
           });
-          return scb.withFinalTarget(new ITarget.Name("Make.make"));
+          return scb.withFinalTarget(new ITarget.Name("jetbrains.mps.make.facets.Make.make"));
         }
       }).toListSequence();
 
