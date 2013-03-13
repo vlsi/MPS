@@ -16,7 +16,6 @@
 
 package jetbrains.mps.idea.core.psi.impl;
 
-import com.intellij.openapi.util.TextRange;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiInvalidElementAccessException;
@@ -30,7 +29,6 @@ import jetbrains.mps.idea.core.psi.impl.NodeList.Entry;
 import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -158,19 +156,8 @@ public abstract class MPSPsiNodeBase extends LightElement {
   }
 
   @Override
-  public String getText() {
-    return "MPSPsiNodeBase.getText()";
-  }
-
-  @Override
   public int getTextOffset() {
     return 0;
-  }
-
-  @Override
-  public TextRange getTextRange() {
-    // TODO should probably be a sub-class of TextRange, specific for MPS
-    return new TextRange(0, 1);
   }
 
   protected final Iterable<MPSPsiNodeBase> children () {
