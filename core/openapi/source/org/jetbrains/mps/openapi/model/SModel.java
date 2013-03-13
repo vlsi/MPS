@@ -46,7 +46,7 @@ public interface SModel {
   String getModelName();
 
   @NotNull
-  jetbrains.mps.smodel.SModelReference getReference();
+  SModelReference getReference();
 
   ModelRoot getModelRoot();
 
