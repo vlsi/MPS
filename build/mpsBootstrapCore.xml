@@ -2734,6 +2734,7 @@
         <module file="${mps_home}/languages/languageDesign/traceable/jetbrains.mps.lang.traceable.mpl" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/typesystem/jetbrains.mps.lang.typesystem.mpl" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/make/languages/facet/jetbrains.mps.make.facet.mpl" bootstrap="true" />
+        <module file="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.facets/jetbrains.mps.make.facets.msd" bootstrap="true" />
         <module file="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.runtime/jetbrains.mps.make.runtime.msd" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/make/languages/script/jetbrains.mps.make.script.mpl" bootstrap="true" />
         <module file="${mps_home}/core/persistence/jetbrains.mps.persistence.msd" bootstrap="true" />
@@ -2757,7 +2758,6 @@
         <module file="${mps_home}/workbench/mps-ui/jetbrains.mps.ide.ui.msd" />
         <module file="${mps_home}/languages/languageDesign/traceable.operations/jetbrains.mps.lang.traceable.operations.mpl" />
         <module file="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make/jetbrains.mps.make.msd" />
-        <module file="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.facets/jetbrains.mps.make.facets.msd" />
         <module file="${mps_home}/core/tool/ant/jetbrains.mps.tool.ant.msd" />
         <module file="${mps_home}/core/tool/builder/jetbrains.mps.tool.builder.msd" />
         <module file="${mps_home}/core/tool/common/jetbrains.mps.tool.common.msd" />
@@ -5748,7 +5748,6 @@
     <delete dir="${mps_home}/workbench/mps-ui/source_gen" />
     <delete dir="${mps_home}/languages/languageDesign/traceable.operations/source_gen" />
     <delete dir="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make/source_gen" />
-    <delete dir="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.facets/source_gen" />
     <delete dir="${mps_home}/core/tool/ant/source_gen" />
     <delete dir="${mps_home}/core/tool/builder/source_gen" />
     <delete dir="${mps_home}/core/tool/common/source_gen" />
