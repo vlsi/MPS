@@ -23,6 +23,7 @@ import com.intellij.psi.*;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.idea.core.psi.PsiListener.PsiEvent;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
@@ -112,6 +113,8 @@ public class PsiChangesWatcher implements ProjectComponent {
   private class OwnPsiListener extends PsiTreeChangeAdapter {
     @Override
     public void childAdded(PsiTreeChangeEvent event) {
+
+      if (isFromMPSPsiProvider(event)) return;
       PsiElement elem = event.getChild();
       if (elem instanceof PsiFile) {
         myCollectedData.created.add((PsiFile) elem);
@@ -123,6 +126,8 @@ public class PsiChangesWatcher implements ProjectComponent {
 
     @Override
     public void childRemoved(PsiTreeChangeEvent event) {
+      if (isFromMPSPsiProvider(event)) return;
+
       PsiElement elem = event.getChild();
       if (elem instanceof PsiFile) {
         myCollectedData.removed.add((PsiFile) elem);
@@ -134,6 +139,8 @@ public class PsiChangesWatcher implements ProjectComponent {
 
     @Override
     public void childReplaced(PsiTreeChangeEvent event) {
+      if (isFromMPSPsiProvider(event)) return;
+
       // Q: should we check if it's PsiFile?
       queueElement(event.getNewChild(), event);
       reschedule();
@@ -141,6 +148,8 @@ public class PsiChangesWatcher implements ProjectComponent {
 
     @Override
     public void childrenChanged(PsiTreeChangeEvent event) {
+      if (isFromMPSPsiProvider(event)) return;
+
       if (event.getParent() instanceof PsiFile) {
         // it's some generic notification, we don't need it
         return;
@@ -151,6 +160,8 @@ public class PsiChangesWatcher implements ProjectComponent {
 
     @Override
     public void beforeChildMovement(PsiTreeChangeEvent event) {
+      if (isFromMPSPsiProvider(event)) return;
+
       queueElement(event.getOldParent(), event);
       queueElement(event.getNewParent(), event);
       reschedule();
@@ -158,6 +169,8 @@ public class PsiChangesWatcher implements ProjectComponent {
 
     @Override
     public void beforeChildrenChange(PsiTreeChangeEvent event) {
+      if (isFromMPSPsiProvider(event)) return;
+
       // this event sent always before every PSI change, even not significant one (like after quick typing/backspacing char)
       // mark file dirty just in case
 //      PsiFile psiFile = event.getFile();
@@ -168,10 +181,17 @@ public class PsiChangesWatcher implements ProjectComponent {
 
     @Override
     public void propertyChanged(PsiTreeChangeEvent event) {
+      if (isFromMPSPsiProvider(event)) return;
+
 //      String propertyName = event.getPropertyName();
 //      if (!propertyName.equals(PsiTreeChangeEvent.PROP_WRITABLE)) {
 //        myFileStatusMap.markAllFilesDirty();
 //      }
+    }
+
+    private boolean isFromMPSPsiProvider (PsiTreeChangeEvent event) {
+      PsiElement parent = event.getParent();
+      return (parent instanceof MPSPsiNodeBase);
     }
 
     private void queueElement(PsiElement child, PsiTreeChangeEvent event) {
