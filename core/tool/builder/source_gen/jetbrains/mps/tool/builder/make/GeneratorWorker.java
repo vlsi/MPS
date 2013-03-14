@@ -159,11 +159,7 @@ public class GeneratorWorker extends MpsWorker {
     collectFromModuleFiles(modules);
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        if (doneSomething.value) {
-          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
-        } else {
-          ClassLoaderManager.getInstance().updateModels();
-        }
+        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
       }
     });
     collectFromModelFiles(models);

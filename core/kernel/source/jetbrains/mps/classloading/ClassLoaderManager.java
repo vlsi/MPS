@@ -20,8 +20,7 @@ import jetbrains.mps.MPSCore;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.project.SModelRootClassesListener;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionKind;
@@ -29,16 +28,13 @@ import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -61,9 +57,6 @@ public class ClassLoaderManager implements CoreComponent {
   // this field for checking classes loading (double load from different modules)
   private final Map<String, SModuleReference> myLoadedClasses = new THashMap<String, SModuleReference>();
 
-  // for updateModels oO
-  private final List<SModuleReference> myLoadedModules = new ArrayList<SModuleReference>();
-
   // reload handlers
   private List<ReloadListener> myReloadHandlers = new CopyOnWriteArrayList<ReloadListener>();
   private volatile boolean isReloadRequested;
@@ -78,6 +71,7 @@ public class ClassLoaderManager implements CoreComponent {
       throw new IllegalStateException("double initialization");
     }
     INSTANCE = this;
+    addReloadHandler(SModelRootClassesListener.INSTANCE);
   }
 
   @Override
@@ -228,7 +222,7 @@ public class ClassLoaderManager implements CoreComponent {
     LOG.assertCanWrite();
     isReloadRequested = false;
 
-    monitor.start("Reloading classes...", 4);
+    monitor.start("Reloading classes...", 3);
     try {
       monitor.step("Updating classpath...");
       invalidateClasses(modules);
@@ -241,10 +235,6 @@ public class ClassLoaderManager implements CoreComponent {
           l.unload();
         }
       });
-      monitor.advance(1);
-
-      monitor.step("Updating stub models...");
-      updateModels();
       monitor.advance(1);
 
       monitor.step("Rebuilding ui...");
@@ -263,32 +253,6 @@ public class ClassLoaderManager implements CoreComponent {
   // ext api
   public void reloadAll(@NotNull ProgressMonitor monitor) {
     reloadClasses(MPSModuleRepository.getInstance().getModules(), monitor);
-  }
-
-  public void updateModels() {
-    // TODO remove hack: model root managers are "reloadable", so models can be updated only on reload
-    safeInvoke(new Runnable() {
-      @Override
-      public void run() {
-        for (SModule m : MPSModuleRepository.getInstance().getAllModules()) {
-          if (!(m instanceof AbstractModule)) continue;
-          if (myLoadedModules.contains(m.getModuleReference())) {
-            boolean hasInvalidRoots = false;
-            for (ModelRoot modelRoot : m.getModelRoots()) {
-              if (modelRoot instanceof SModelRoot && ((SModelRoot) modelRoot).isInvalid()) {
-                hasInvalidRoots = true;
-                break;
-              }
-            }
-            if (!hasInvalidRoots) {
-              continue;
-            }
-          }
-          myLoadedModules.add(m.getModuleReference());
-          ((AbstractModule) m).updateModelsSet();
-        }
-      }
-    });
   }
 
   public void unloadAll(@NotNull ProgressMonitor monitor) {
@@ -364,13 +328,5 @@ public class ClassLoaderManager implements CoreComponent {
 
   private interface ListenerCaller {
     void call(ReloadListener l);
-  }
-
-  private void safeInvoke(Runnable runnable) {
-    try {
-      runnable.run();
-    } catch (RuntimeException unexpected) {
-      LOG.error("Unexpected exception", unexpected);
-    }
   }
 }
