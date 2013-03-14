@@ -9,16 +9,16 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.findusages.view.optionseditor.DefaultOptionsContainer;
 import jetbrains.mps.ide.findusages.view.optionseditor.DefaultSearchOptionsComponent;
 import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import java.awt.Frame;
 import jetbrains.mps.smodel.IOperationContext;
@@ -41,7 +41,7 @@ public class FindConceptInstances_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return new FindUsagesHelper(((Project) MapSequence.fromMap(_params).get("project")), false).isApplicable();
+    return new FindUsagesHelper(((Project) MapSequence.fromMap(_params).get("project")), false).isApplicable() && SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
