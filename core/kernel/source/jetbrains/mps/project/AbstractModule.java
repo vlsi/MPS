@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.classloading.MPSClassesReloadManager;
 import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.extapi.persistence.ModelRootBase;
 import jetbrains.mps.library.ModulesMiner;
@@ -550,14 +551,14 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     for (IFile file : event.getRemoved()) {
       if (file.equals(myDescriptorFile)) {
         ModuleRepositoryFacade.getInstance().removeModuleForced(this);
-        ClassLoaderManager.getInstance().requestReload();
+        MPSClassesReloadManager.getInstance().requestReload();
         return;
       }
     }
     for (IFile file : event.getChanged()) {
       if (file.equals(myDescriptorFile)) {
         reloadFromDisk(false);
-        ClassLoaderManager.getInstance().requestReload();
+        MPSClassesReloadManager.getInstance().requestReload();
         return;
       }
     }

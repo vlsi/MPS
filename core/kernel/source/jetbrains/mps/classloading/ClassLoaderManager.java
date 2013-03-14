@@ -29,6 +29,7 @@ import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.NotNull;
@@ -60,19 +61,15 @@ public class ClassLoaderManager implements CoreComponent {
 
   // reload handlers
   private List<MPSClassesListener> myClassesHandlers = new CopyOnWriteArrayList<MPSClassesListener>();
-  private volatile boolean isReloadRequested;
 
   // component stuff
-  public ClassLoaderManager() {
-  }
-
   @Override
   public void init() {
     if (INSTANCE != null) {
       throw new IllegalStateException("double initialization");
     }
     INSTANCE = this;
-    addReloadHandler(SModelRootClassesListener.INSTANCE);
+    addClassesHandler(SModelRootClassesListener.INSTANCE);
   }
 
   @Override
@@ -197,31 +194,11 @@ public class ClassLoaderManager implements CoreComponent {
     return toReload;
   }
 
-  private Set<SModule> collectBackReferences(Iterable<? extends SModule> startModules) {
-    Set<SModule> modules = new HashSet<SModule>();
-    Set<SModule> queue = new HashSet<SModule>();
-    for (SModule module : startModules) {
-      queue.add(module);
-    }
-    while (!queue.isEmpty()) {
-      SModule module = queue.iterator().next();
-      queue.remove(module);
-      if (!modules.contains(module)) {
-        modules.add(module);
-        if (myBackRefs.containsKey(module)) {
-          queue.addAll(myBackRefs.get(module));
-        }
-      }
-    }
-    return modules;
-  }
-
   public void reloadClasses(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
     // todo: divide into two parts: unloadClasses(modules) && loadClasses(modules)
     // todo: add unload all classes in dispose
     // todo: arguments - modules to load/unload. arguments of callbacks - modules actually loaded/unloaded
     LOG.assertCanWrite();
-    isReloadRequested = false;
 
     monitor.start("Reloading classes...", 3);
     try {
@@ -294,16 +271,6 @@ public class ClassLoaderManager implements CoreComponent {
     }
   }
 
-  public boolean isReloadRequested() {
-    return isReloadRequested;
-  }
-
-  public void requestReload() {
-    LOG.assertCanWrite();
-
-    isReloadRequested = true;
-  }
-
   //---------------reload handlers------------------
   public void addClassesHandler(MPSClassesListener handler) {
     myClassesHandlers.add(handler);
@@ -313,7 +280,28 @@ public class ClassLoaderManager implements CoreComponent {
     myClassesHandlers.remove(handler);
   }
 
-  // deprecated part
+  //---------------private part---------------------
+  private Set<SModule> collectBackReferences(Iterable<? extends SModule> startModules) {
+    Set<SModule> modules = new HashSet<SModule>();
+    Set<SModule> queue = new HashSet<SModule>();
+    for (SModule module : startModules) {
+      queue.add(module);
+    }
+    while (!queue.isEmpty()) {
+      SModule module = queue.iterator().next();
+      queue.remove(module);
+      if (!modules.contains(module)) {
+        modules.add(module);
+        if (myBackRefs.containsKey(module)) {
+          queue.addAll(myBackRefs.get(module));
+        }
+      }
+    }
+    return modules;
+  }
+
+
+  //---------------deprecated part------------------
   @Deprecated
   public void updateClassPath() {
     reloadAll(new EmptyProgressMonitor());

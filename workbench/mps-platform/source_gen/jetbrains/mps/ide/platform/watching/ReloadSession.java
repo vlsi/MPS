@@ -8,7 +8,7 @@ import java.util.HashSet;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.progress.SubProgressKind;
-import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.classloading.MPSClassesReloadManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.logging.Logger;
 
@@ -62,9 +62,9 @@ public class ReloadSession {
             fileProcessor.update(monitor.subTask(work++, SubProgressKind.REPLACING));
           }
 
-          if (ClassLoaderManager.getInstance().isReloadRequested()) {
+          if (MPSClassesReloadManager.getInstance().isReloadRequested()) {
             monitor.subTask(1, SubProgressKind.REPLACING).start("Reloading classes... Please wait.", 1);
-            ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
+            MPSClassesReloadManager.getInstance().reloadMPSClasses(new EmptyProgressMonitor());
           }
         }
       });

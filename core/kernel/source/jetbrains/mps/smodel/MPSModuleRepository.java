@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.classloading.MPSClassesReloadManager;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
@@ -113,7 +114,7 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     myModuleToOwners.addLink(module, owner);
     invalidateCaches();
     fireModuleAdded(module);
-    ClassLoaderManager.getInstance().requestReload();
+    MPSClassesReloadManager.getInstance().requestReload();
     return module;
   }
 
@@ -134,7 +135,7 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     for (IModule module : modulesToDispose) {
       fireModuleRemoved(module);
       module.dispose();
-      ClassLoaderManager.getInstance().requestReload();
+      MPSClassesReloadManager.getInstance().requestReload();
     }
     if (repositoryChanged) {
       fireRepositoryChanged();
