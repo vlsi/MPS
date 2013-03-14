@@ -99,7 +99,7 @@ public class MPSCore extends ComponentPlugin {
 
     init(new QueryMethodGenerated(classLoaderManager));
     ConceptRegistry conceptRegistry = init(new ConceptRegistry());
-    init(new LanguageRegistry(myModuleRepository, classLoaderManager, conceptRegistry));
+    init(new LanguageRegistry(classLoaderManager, conceptRegistry));
     init(new ExtensionRegistry(classLoaderManager, myModuleRepository));
     init(new LanguageHierarchyCache(myModuleRepository));
     init(new StructureAspectInterpreted());
