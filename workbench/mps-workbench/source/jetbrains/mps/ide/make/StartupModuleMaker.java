@@ -73,7 +73,6 @@ public class StartupModuleMaker extends AbstractProjectComponent {
       ModelAccess.instance().runReadAction(new Runnable() {
         @Override
         public void run() {
-          ClassLoaderManager.getInstance().updateClassPath();
           monitor.advance(1);
 
           final ModuleMaker maker = new ModuleMaker(new MessageHandler(), MessageKind.ERROR);

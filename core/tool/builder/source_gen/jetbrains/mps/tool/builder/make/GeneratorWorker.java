@@ -18,7 +18,6 @@ import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.util.concurrent.ExecutionException;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Map;
 import java.io.File;
 import java.util.List;
@@ -37,6 +36,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.make.resources.IResource;
@@ -131,7 +131,7 @@ public class GeneratorWorker extends MpsWorker {
   @Override
   public void work() {
     setupEnvironment();
-    final Wrappers._boolean doneSomething = new Wrappers._boolean(false);
+    boolean doneSomething = false;
     //  for each project 
     Map<File, List<String>> mpsProjects = myWhatToDo.getMPSProjectFiles();
     for (File file : mpsProjects.keySet()) {
@@ -150,7 +150,7 @@ public class GeneratorWorker extends MpsWorker {
 
       p.projectClosed();
       disposeProject(p);
-      doneSomething.value = true;
+      doneSomething = true;
     }
 
     // the rest -- using dummy project 
@@ -167,9 +167,9 @@ public class GeneratorWorker extends MpsWorker {
     if (go.hasAnythingToGenerate()) {
       Project project = createDummyProject();
       executeTask(project, go);
-      doneSomething.value = true;
+      doneSomething = true;
     }
-    if (!(doneSomething.value)) {
+    if (!(doneSomething)) {
 
       error("Could not find anything to generate.");
       myTestFailed = true;

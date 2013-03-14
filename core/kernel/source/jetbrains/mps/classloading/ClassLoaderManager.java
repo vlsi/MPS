@@ -19,6 +19,7 @@ import gnu.trove.THashMap;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.SModelRootClassesListener;
 import jetbrains.mps.project.Solution;
@@ -293,12 +294,6 @@ public class ClassLoaderManager implements CoreComponent {
     }
   }
 
-  // todo: remove all usages
-  @Deprecated
-  public void updateClassPath() {
-    invalidateClasses(MPSModuleRepository.getInstance().getModules());
-  }
-
   public boolean isReloadRequested() {
     return isReloadRequested;
   }
@@ -319,6 +314,11 @@ public class ClassLoaderManager implements CoreComponent {
   }
 
   // deprecated part
+  @Deprecated
+  public void updateClassPath() {
+    reloadAll(new EmptyProgressMonitor());
+  }
+
   @Deprecated
   public void addReloadHandler(ReloadListener handler) {
     addClassesHandler(handler);

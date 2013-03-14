@@ -9,11 +9,11 @@ import com.intellij.openapi.application.PathMacros;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.make.ModuleMaker;
 import java.util.LinkedHashSet;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.logging.ILoggingHandler;
@@ -37,7 +37,6 @@ public class Testbench {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         ProgressMonitor monitor = new EmptyProgressMonitor();
-        ClassLoaderManager.getInstance().updateClassPath();
         ModuleMaker maker = new ModuleMaker();
         maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), monitor);
         ClassLoaderManager.getInstance().reloadAll(monitor);
