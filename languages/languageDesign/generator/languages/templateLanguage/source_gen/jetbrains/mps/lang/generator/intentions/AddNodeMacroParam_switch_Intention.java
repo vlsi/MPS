@@ -59,7 +59,7 @@ public class AddNodeMacroParam_switch_Intention implements IntentionFactory {
   }
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    SModel sm = SNodeOperations.getModel(node).getModelDescriptor();
+    SModel sm = SNodeOperations.getModel(node);
     if (sm == null || !(sm.getModule() instanceof Generator)) {
       return false;
     }

@@ -31,7 +31,7 @@ public class check_ThisExpression_ClassConceptSpecified_InGenerator_NonTypesyste
     if (model == null) {
       return;
     }
-    IModule module = model.getModelDescriptor().getModule();
+    IModule module = model.getModule();
     if (!(module instanceof Generator)) {
       return;
     }

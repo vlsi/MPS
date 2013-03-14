@@ -29,7 +29,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.library.contributor.PluginLibrariesContributor</implementation-class>
+      <implementation-class>jetbrains.mps.workbench.findusages.InternalModelsFindUsagesParticipant</implementation-class>
     </component>
 
     <component>

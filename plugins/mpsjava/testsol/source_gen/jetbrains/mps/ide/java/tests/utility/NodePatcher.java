@@ -67,7 +67,7 @@ public class NodePatcher {
   }
 
   public static void removeSourceLevelAnnotations(SNode node) {
-    final SNode retentionAnno = ListSequence.fromList(SModelOperations.getRoots(SModelRepository.getInstance().getModelDescriptor(new SModelReference("java.lang.annotation", "java_stub")).getSModel(), "jetbrains.mps.baseLanguage.structure.Annotation")).findFirst(new IWhereFilter<SNode>() {
+    final SNode retentionAnno = ListSequence.fromList(SModelOperations.getRoots(SModelRepository.getInstance().getModelDescriptor(new SModelReference("java.lang.annotation", "java_stub")), "jetbrains.mps.baseLanguage.structure.Annotation")).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals("Retention");
       }

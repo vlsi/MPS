@@ -69,13 +69,8 @@ public abstract class BaseNodePointerModel extends BaseMPSChooseModel<SNodeRefer
           @Override
           public void run() {
             SNode node = getNode();
-            if (
-                node == null ||
-                    node.getContainingModel() == null ||
-                    jetbrains.mps.util.SNodeOperations.isModelDisposed(node.getContainingModel())
-                ) {
-              return;
-            }
+            if (node == null || !node.isInRepository()) return;
+
             ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
             NavigationSupport.getInstance().openNode(context, node, true, !(node.getModel() != null && node.getModel().isRoot(node)));
           }

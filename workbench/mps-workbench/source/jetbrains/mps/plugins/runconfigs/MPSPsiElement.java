@@ -74,7 +74,7 @@ public class MPSPsiElement<T> extends FakePsiElement {
       if (descriptor == null) {
         return null;
       }
-      return descriptor.getSModel();
+      return descriptor;
     } else if (myItem instanceof SModuleReference) {
       return ModuleRepositoryFacade.getInstance().getModule((SModuleReference) myItem);
     } else if (myItem instanceof MPSProject) {

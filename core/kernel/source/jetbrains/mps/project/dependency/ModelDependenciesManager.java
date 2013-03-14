@@ -56,7 +56,7 @@ public class ModelDependenciesManager {
     if (myInvalidatedFlag.compareAndSet(true, false)) {
       // lazy initialization
       if (mySModelWatcher == null) {
-        mySModelWatcher = new MySModelWatcher(myModel.getModelDescriptor());
+        mySModelWatcher = new MySModelWatcher(myModel);
       }
 
       myModuleWatcher.clear();

@@ -521,8 +521,8 @@
     <nodeInfo nodeId="1684996642972287829" fileName="EditorUtil.java" startLine="33" startPosition="112" endLine="34" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7973955287399271882" fileName="EditorUtil.java" startLine="39" startPosition="98" endLine="40" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1684996642972648922" fileName="EditorUtil.java" startLine="43" startPosition="131" endLine="44" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7973955287399271897" fileName="EditorUtil.java" startLine="49" startPosition="145" endLine="50" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1572311180462203034" fileName="EditorUtil.java" startLine="50" startPosition="82" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7973955287399271897" fileName="EditorUtil.java" startLine="49" startPosition="145" endLine="50" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1572311180462203034" fileName="EditorUtil.java" startLine="50" startPosition="61" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="1572311180462203122" fileName="EditorUtil.java" startLine="53" startPosition="45" endLine="54" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1572311180462205611" fileName="EditorUtil.java" startLine="57" startPosition="46" endLine="58" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1684996642972552439" fileName="EditorUtil.java" startLine="63" startPosition="322" endLine="64" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -535,8 +535,8 @@
     <nodeInfo nodeId="1572311180462136201" fileName="EditorUtil.java" startLine="92" startPosition="9" endLine="93" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1572311180462136213" fileName="EditorUtil.java" startLine="94" startPosition="35" endLine="95" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5002944669283206140" fileName="EditorUtil.java" startLine="96" startPosition="9" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8974276187400029999" fileName="EditorUtil.java" startLine="100" startPosition="31" endLine="101" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8974276187400030008" fileName="EditorUtil.java" startLine="101" startPosition="72" endLine="102" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8974276187400029999" fileName="EditorUtil.java" startLine="100" startPosition="31" endLine="101" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8974276187400030008" fileName="EditorUtil.java" startLine="101" startPosition="51" endLine="102" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8974276187400030017" fileName="EditorUtil.java" startLine="102" startPosition="105" endLine="103" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8644827343618787868" fileName="EditorUtil.java" startLine="103" startPosition="88" endLine="104" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="8974276187400030030" fileName="EditorUtil.java" startLine="104" startPosition="24" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />

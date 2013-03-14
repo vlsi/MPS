@@ -49,7 +49,7 @@ public class GenParameters {
   public List<SModel> getSModels() {
     List<SModel> result = new ArrayList<SModel>();
     for (SModel sm : myModels) {
-      result.add(sm.getSModel());
+      result.add(sm);
     }
     return result;
   }

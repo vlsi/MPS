@@ -92,7 +92,7 @@ public class ExecuteCalculator_Action extends BaseAction {
   private Class getCalcClass(final Map<String, Object> _params) {
     String className = SPropertyOperations.getString(((SNode) MapSequence.fromMap(_params).get("calcNode")), "name");
     String fqClassName = jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("calcNode")))) + "." + className;
-    return ClassLoaderManager.getInstance().getClass(SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("calcNode"))).getModelDescriptor().getModule(), fqClassName);
+    return ClassLoaderManager.getInstance().getClass(SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("calcNode"))).getModule(), fqClassName);
   }
 
   private Method getMainMethod(final Map<String, Object> _params) {

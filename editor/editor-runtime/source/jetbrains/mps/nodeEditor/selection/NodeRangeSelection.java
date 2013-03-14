@@ -21,12 +21,16 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.util.IterableUtil;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -45,7 +49,8 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
   private SNode myParentNode;
   private String myRole;
 
-  public NodeRangeSelection(@NotNull EditorComponent editorComponent, Map<String, String> properties, CellInfo cellInfo) throws SelectionStoreException, SelectionRestoreException {
+  public NodeRangeSelection(@NotNull EditorComponent editorComponent, Map<String, String> properties, CellInfo cellInfo) throws SelectionStoreException,
+      SelectionRestoreException {
     super(editorComponent);
     if (cellInfo != null) {
       throw new SelectionStoreException("Non-null CellInfo objet passed as a parameter: " + cellInfo);
@@ -63,7 +68,7 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     if (sModelDescriptor == null) {
       throw new SelectionRestoreException();
     }
-    SModel sModel = sModelDescriptor.getSModel();
+    SModel sModel = sModelDescriptor;
     myFirstNode = findNode(sModel, properties, FIRST_NODE_ID_PROPERTY_NAME);
     myLastNode = findNode(sModel, properties, LAST_NODE_ID_PROPERTY_NAME);
     myParentNode = findNode(sModel, properties, PARENT_NODE_ID_PROPERTY_NAME);
@@ -86,7 +91,8 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
 
     assert myParentNode != null;
     assert myParentNode == myLastNode.getParent();
-    assert myRole != null && myRole.equals(myLastNode.getRoleInParent()) : "First node role: " + myRole + ", last node role: " + myLastNode.getRoleInParent();
+    assert myRole != null && myRole.equals(
+        myLastNode.getRoleInParent()) : "First node role: " + myRole + ", last node role: " + myLastNode.getRoleInParent();
     initSelectedCells();
   }
 
@@ -164,7 +170,7 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     if (sNodeId == null) {
       throw new SelectionStoreException("Required node Id property missed, propertyName = " + propertyName);
     }
-    jetbrains.mps.smodel.SNodeId nodeId = jetbrains.mps.smodel.SNodeId.fromString(sNodeId);
+    SNodeId nodeId = PersistenceFacade.getInstance().createNodeId(sNodeId);
     assert nodeId != null : "wrong node id string";
     SNode sNode = sModel.getNode(nodeId);
     if (sNode == null) {

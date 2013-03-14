@@ -87,7 +87,7 @@ public class GoToNodeById_Action extends BaseAction {
         @Override
         public void run() {
           SNode node;
-          node = ((SModel) MapSequence.fromMap(_params).get("CONTEXT_MODEL")).getSModel().getNode(id);
+          node = ((SModel) MapSequence.fromMap(_params).get("CONTEXT_MODEL")).getNode(id);
           if (node == null) {
             JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Can't find node with id " + trimmedValue);
             return;

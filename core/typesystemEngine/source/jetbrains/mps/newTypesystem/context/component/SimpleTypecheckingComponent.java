@@ -39,11 +39,8 @@ import java.util.Queue;
 import java.util.Set;
 
 /**
- * Created with IntelliJ IDEA.
  * User: fyodor
  * Date: 11/12/12
- * Time: 10:07 AM
- * To change this template use File | Settings | File Templates.
  */
 /*package*/ public class SimpleTypecheckingComponent<STATE extends State> {
 

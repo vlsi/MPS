@@ -83,7 +83,7 @@ public class MergeData {
     DefaultSModel mineModel = ModelPersistence.readModel(myMineModelString, false);
     DefaultSModel repositoryModel = ModelPersistence.readModel(myRepositoryModelString, false);
 
-    final MergeSession session = new MergeSession(baseModel, mineModel, repositoryModel);
+    final MergeSession session = MergeSession.createMergeSession(baseModel, mineModel, repositoryModel);
     String resultModelString = null;
     if (Sequence.fromIterable(session.getAllChanges()).all(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange c) {

@@ -224,9 +224,6 @@
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="2694170484305022959">
                   <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2694170484305022960">
                     <property name="name" nameId="tpck.1169194664001" value="language" />
-                    <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2694170484305022961">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~Language" resolveInfo="Language" />
-                    </node>
                     <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8784082215665429638">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tprr.8784082215665182087" resolveInfo="createLanguage" />
                       <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tprr.5890305283801268194" resolveInfo="NewModuleUtil" />
@@ -248,6 +245,9 @@
                         </node>
                         <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="8784082215665446467" />
                       </node>
+                    </node>
+                    <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2694170484305022961">
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~Language" resolveInfo="Language" />
                     </node>
                   </node>
                 </node>
@@ -337,11 +337,11 @@
                       <node role="statement" roleId="tpee.1068581517665" type="tpib.LogStatement" typeId="tpib.1167227138527" id="4152098816593725236">
                         <property name="severity" nameId="tpib.1167245565795" value="error" />
                         <property name="hasException" nameId="tpib.1167228628751" value="true" />
+                        <node role="exception" roleId="tpib.1167227561449" type="tpee.VariableReference" typeId="tpee.1068498886296" id="8593264044800904354">
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4152098816593683173" resolveInfo="e" />
+                        </node>
                         <node role="logExpression" roleId="tpib.1167227463056" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4152098816593725238">
                           <property name="value" nameId="tpee.1070475926801" value="Cannot create runtime / sandbox module" />
-                        </node>
-                        <node role="exception" roleId="tpib.1167227561449" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4152098816593725240">
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4152098816593683173" resolveInfo="e" />
                         </node>
                       </node>
                     </node>
@@ -354,10 +354,10 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2694170484305022960" resolveInfo="language" />
                     </node>
                     <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8784082215666113847">
-                      <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="8784082215666113850" />
-                      <node role="operation" roleId="tpee.1197027833540" type="tphr.AttributeReferenceOperation" typeId="tphr.1202478475127" id="8784082215666113852">
+                      <node role="operation" roleId="tpee.1197027833540" type="tphr.AttributeReferenceOperation" typeId="tphr.1202478475127" id="8593264044800976819">
                         <link role="member" roleId="tp4f.1205756909548" targetNodeId="8784082215665983130" resolveInfo="result" />
                       </node>
+                      <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="8784082215666113850" />
                     </node>
                   </node>
                 </node>

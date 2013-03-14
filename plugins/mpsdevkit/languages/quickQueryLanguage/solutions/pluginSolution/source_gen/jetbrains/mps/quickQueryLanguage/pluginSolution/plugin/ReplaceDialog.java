@@ -117,7 +117,7 @@ public class ReplaceDialog extends BaseDialog {
       }
     });
 
-    String fqName = jetbrains.mps.util.SNodeOperations.getModelLongName(model.value.getModelDescriptor()) + "." + QueryExecutor.GENERATED_QUERY_NAME;
+    String fqName = jetbrains.mps.util.SNodeOperations.getModelLongName(model.value) + "." + QueryExecutor.GENERATED_QUERY_NAME;
     ClassLoader loader = cd.getClassLoader(QueryExecutor.class.getClassLoader());
     final Wrappers._T<Query> query = new Wrappers._T<Query>(null);
     try {
@@ -130,7 +130,7 @@ public class ReplaceDialog extends BaseDialog {
     if (query.value == null) {
       return;
     }
-    final IScope scope = this.myScope.getOptions().getScope(this.myContext, model.value.getModelDescriptor());
+    final IScope scope = this.myScope.getOptions().getScope(this.myContext, model.value);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         ReplaceDialog.this.execute(ReplaceDialog.this.myContext.getProject(), query.value, SNodeOperations.cast(myNode, "jetbrains.mps.quickQueryLanguage.structure.BaseQuery"), scope);

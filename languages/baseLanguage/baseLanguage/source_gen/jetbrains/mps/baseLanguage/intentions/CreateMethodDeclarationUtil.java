@@ -45,7 +45,7 @@ public class CreateMethodDeclarationUtil {
       return null;
     }
     SNode classifier = SLinkOperations.getTarget(SNodeOperations.cast(operandType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false);
-    IModule module = SNodeOperations.getModel(classifier).getModelDescriptor().getModule();
+    IModule module = SNodeOperations.getModel(classifier).getModule();
     if (!(SModelStereotype.isUserModel(SNodeOperations.getModel(classifier))) || module.isPackaged()) {
       return null;
     }

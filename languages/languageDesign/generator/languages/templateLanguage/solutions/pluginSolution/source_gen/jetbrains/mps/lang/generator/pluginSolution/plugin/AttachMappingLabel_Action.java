@@ -56,7 +56,7 @@ public class AttachMappingLabel_Action extends BaseAction {
       return false;
     }
     //  not an element form generator language 
-    if ((Language) check_gwd6n9_a0a3a0(SNodeOperations.getConceptDeclaration(((SNode) node)).getContainingModel()) == BootstrapLanguages.generatorLanguage()) {
+    if ((Language) check_gwd6n9_a0a3a0(SNodeOperations.getConceptDeclaration(((SNode) node)).getModel()) == BootstrapLanguages.generatorLanguage()) {
       return false;
     }
     //  not inside macro 

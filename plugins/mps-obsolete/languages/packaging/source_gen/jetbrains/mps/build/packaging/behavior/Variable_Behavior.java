@@ -40,7 +40,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 2:
-                      this._2_node_it = smodel.getSModel().getRootNodes().iterator();
+                      this._2_node_it = smodel.getRootNodes().iterator();
                     case 3:
                       if (!(this._2_node_it.hasNext())) {
                         this.__CP__ = 1;

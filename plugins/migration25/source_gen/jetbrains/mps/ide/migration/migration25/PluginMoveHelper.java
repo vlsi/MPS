@@ -90,7 +90,7 @@ public class PluginMoveHelper {
     for (final Solution solution : ListSequence.fromList(myProject.getProjectModules(Solution.class))) {
       if (solution.getModuleFqName().endsWith(SOLUTION_NAME)) {
         List<SModel> models = solution.getOwnModelDescriptors();
-        SModel m = ListSequence.fromList(models).first().getSModel();
+        SModel m = ListSequence.fromList(models).first();
         ListSequence.fromList(SModelOperations.getNodes(m, "jetbrains.mps.lang.resources.structure.IconResource")).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return (it != null) && isNotEmpty_qerz9l_a0a0a0a0a0a0a2a0a0a4(SPropertyOperations.getString(it, "path")) && !(isValid(it));
@@ -125,7 +125,7 @@ public class PluginMoveHelper {
   }
 
   private boolean isValid(SNode icon) {
-    IModule module = SNodeOperations.getModel(icon).getModelDescriptor().getModule();
+    IModule module = SNodeOperations.getModel(icon).getModule();
     if (module == null) {
       return false;
     }
@@ -167,7 +167,7 @@ public class PluginMoveHelper {
       pluginModel.value = SModuleOperations.createModelWithAdjustments(modelName, s.getModelRoots().iterator().next());
     }
 
-    List<SNode> nodes = IterableUtil.asList(LanguageAspect.PLUGIN.get(l).getSModel().getRootNodes());
+    List<SNode> nodes = IterableUtil.asList(LanguageAspect.PLUGIN.get(l).getRootNodes());
 
     Iterable<SNode> nodes2Refactor = ListSequence.fromList(nodes).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -187,14 +187,14 @@ public class PluginMoveHelper {
 
     // <node> 
 
-    jetbrains.mps.smodel.SModelOperations.validateLanguagesAndImports(pluginModel.value.getSModel(), false, true);
+    jetbrains.mps.smodel.SModelOperations.validateLanguagesAndImports(pluginModel.value, false, true);
 
     s.save();
     SModelRepository.getInstance().saveAll();
   }
 
   private boolean isFromFacetLang(SNode node) {
-    ModuleReference ref = SNodeOperations.getModel(SNodeOperations.getConceptDeclaration(node)).getModelDescriptor().getModule().getModuleReference();
+    ModuleReference ref = SNodeOperations.getModel(SNodeOperations.getConceptDeclaration(node)).getModule().getModuleReference();
     ModuleReference plugin = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("696c1165-4a59-463b-bc5d-902caab85dd0")).getModuleReference();
     return ref.equals(plugin);
   }

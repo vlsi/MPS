@@ -102,18 +102,18 @@ public class StubResolver {
       }
     });
     if (Sequence.fromIterable(modelsToAdd).isNotEmpty()) {
-      new MissingDependenciesFixer(model.getModelDescriptor()).fix(false);
+      new MissingDependenciesFixer(model).fix(false);
     }
 
     int cnt = StubResolver.resolveReferences(toResolve, models, context);
 
-    new OptimizeImportsHelper(context).optimizeModelImports(model.getModelDescriptor());
+    new OptimizeImportsHelper(context).optimizeModelImports(model);
     LOG.info(cnt + " stub references were re-resolved in model " + SModelOperations.getModelName(model) + ". (" + ListSequence.fromList(toResolve).count() + ")");
   }
 
   public void resolveInModels(List<SModel> models, IOperationContext context) {
     for (SModel model : ListSequence.fromList(models)) {
-      resolveInModel(model.getSModel(), context);
+      resolveInModel(model, context);
     }
   }
 
@@ -124,7 +124,7 @@ public class StubResolver {
       }
       for (SModel model : ListSequence.fromList(module.getOwnModelDescriptors())) {
         if (SModelStereotype.isUserModel(model) && model instanceof EditableSModel) {
-          resolveInModel(model.getSModel(), context);
+          resolveInModel(model, context);
         }
       }
     }

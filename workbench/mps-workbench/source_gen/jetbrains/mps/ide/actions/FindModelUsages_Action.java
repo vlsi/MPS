@@ -66,7 +66,7 @@ public class FindModelUsages_Action extends BaseAction {
     try {
       final SearchQuery[] query = new SearchQuery[1];
       final IResultProvider[] provider = new IResultProvider[1];
-      final SModel model = ((SModel) MapSequence.fromMap(_params).get("model")).getSModel();
+      final SModel model = ((SModel) MapSequence.fromMap(_params).get("model"));
       final IScope scope = ((IScope) MapSequence.fromMap(_params).get("scope"));
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {

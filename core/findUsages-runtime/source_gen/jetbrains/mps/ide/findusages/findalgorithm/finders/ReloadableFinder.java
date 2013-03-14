@@ -67,6 +67,15 @@ public class ReloadableFinder implements IInterfacedFinder {
   }
 
   @Override
+  public boolean isUsedByDefault(SNode node) {
+    GeneratedFinder finder = getFinder();
+    if (finder == null) {
+      return false;
+    }
+    return finder.isUsedByDefault(node);
+  }
+
+  @Override
   public String getDescription() {
     GeneratedFinder finder = getFinder();
     if (finder == null) {

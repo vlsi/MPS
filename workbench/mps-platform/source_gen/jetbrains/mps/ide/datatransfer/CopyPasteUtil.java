@@ -71,7 +71,7 @@ public class CopyPasteUtil {
       return PasteNodeData.emptyPasteNodeData(null);
     }
     SModel model = sourceNodes.get(0).getModel();
-    IModule module = model.getModelDescriptor().getModule();
+    IModule module = model.getModule();
     List<SNode> result = new ArrayList<SNode>();
     Map<SNode, SNode> sourceNodesToNewNodes = new HashMap<SNode, SNode>();
     Set<SReference> allReferences = new HashSet<SReference>();
@@ -199,18 +199,18 @@ public class CopyPasteUtil {
     }
   }
 
-  private static SModel copyModelProperties(SModel model) {
+  private static jetbrains.mps.smodel.SModel copyModelProperties(SModel model) {
     SModelReference modelReference = model.getReference();
     SModelFqName fqName = new SModelFqName(modelReference.getLongName(), SModelStereotype.INTERNAL_COPY);
-    SModel newModel = new jetbrains.mps.smodel.SModel(new SModelReference(fqName, SModelId.generate()));
+    jetbrains.mps.smodel.SModel newModel = new jetbrains.mps.smodel.SModel(new SModelReference(fqName, SModelId.generate()));
     for (ModuleReference language : ((SModelInternal) model).importedLanguages()) {
-      ((SModelInternal) newModel).addLanguage(language);
+      newModel.addLanguage(language);
     }
     for (SModelReference importedModel : SModelOperations.getImportedModelUIDs(model)) {
-      ((SModelInternal) newModel).addModelImport(importedModel, false);
+      newModel.addModelImport(importedModel, false);
     }
     for (ModuleReference devKit : ((SModelInternal) model).importedDevkits()) {
-      ((SModelInternal) newModel).addDevKit(devKit);
+      newModel.addDevKit(devKit);
     }
     return newModel;
   }
@@ -284,7 +284,7 @@ public class CopyPasteUtil {
   }
 
   public static PasteNodeData getPasteNodeDataFromClipboard(SModel model) {
-    IModule module = model.getModelDescriptor().getModule();
+    IModule module = model.getModule();
     Transferable content = null;
     for (Transferable trf : CopyPasteManagerEx.getInstanceEx().getAllContents()) {
       if (trf != null && trf.isDataFlavorSupported(SModelDataFlavor.sNode)) {
@@ -315,7 +315,7 @@ public class CopyPasteUtil {
 
   @Nullable
   public static Runnable addImportsWithDialog(final IModule sourceModule, final SModel targetModel, final Set<ModuleReference> necessaryLanguages, final Set<SModelReference> necessaryImports, final IOperationContext context) {
-    if (targetModel.getModelDescriptor().getModule() == null) {
+    if (targetModel.getModule() == null) {
       return null;
     }
     final List<ModuleReference> additionalLanguages = new ArrayList<ModuleReference>();
@@ -375,7 +375,7 @@ public class CopyPasteUtil {
           ((SModelInternal) targetModel).addLanguage(language);
         }
         //  model's module properties 
-        IModule targetModule = targetModel.getModelDescriptor().getModule();
+        IModule targetModule = targetModel.getModule();
         if (targetModule == null) {
           return;
         }

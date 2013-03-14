@@ -94,7 +94,7 @@ public class GeneratorPrioritiesTree {
     for (SModel templateModel : generator.getOwnTemplateModels()) {
       ExtendedCheckedTreeNode templateNode = new ModelCheckedTreeNode(templateModel.getReference());
       generatorNode.add(templateNode);
-      for (SNode mapping : SModelOperations.getRoots(templateModel.getSModel(), "jetbrains.mps.lang.generator.structure.MappingConfiguration")){
+      for (SNode mapping : SModelOperations.getRoots(templateModel, "jetbrains.mps.lang.generator.structure.MappingConfiguration")){
         ExtendedCheckedTreeNode mappingNode = new MappingCheckedTreeNode(new SNodePointer(mapping));
         templateNode.add(mappingNode);
       }

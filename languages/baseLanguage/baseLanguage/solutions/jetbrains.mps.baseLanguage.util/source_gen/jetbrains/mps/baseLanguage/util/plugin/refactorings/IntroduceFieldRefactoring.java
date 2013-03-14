@@ -13,6 +13,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -93,6 +94,7 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
   }
 
   private static SNode _quotation_createNode_baxqxe_a0a0c0d(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;
     SNode quotedNode_7 = null;
@@ -115,6 +117,7 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
   }
 
   private static SNode _quotation_createNode_baxqxe_a0a0a2a3(Object parameter_1, Object parameter_2, Object parameter_3) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;
@@ -132,6 +135,7 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
   }
 
   private static SNode _quotation_createNode_baxqxe_a0g0d(Object parameter_1, Object parameter_2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -156,6 +160,7 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
   }
 
   private static SNode _quotation_createNode_baxqxe_a0a0a4(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;

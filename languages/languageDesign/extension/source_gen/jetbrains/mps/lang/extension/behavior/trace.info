@@ -53,8 +53,8 @@
     <unitInfo nodeId="5234729458457669520" fileName="ExtensionDeclaration_Behavior.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.extension.behavior.ExtensionDeclaration_Behavior" />
   </root>
   <root nodeRef="r:d209fa1f-db47-4e3b-92ec-6c4d44d11cab(jetbrains.mps.lang.extension.behavior)/63012922130945360">
-    <nodeInfo nodeId="63012922131000049" fileName="ExtensionPointDeclaration_Behavior.java" startLine="17" startPosition="69" endLine="18" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="63012922131002375" fileName="ExtensionPointDeclaration_Behavior.java" startLine="18" startPosition="89" endLine="19" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="63012922131000049" fileName="ExtensionPointDeclaration_Behavior.java" startLine="17" startPosition="69" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="63012922131002375" fileName="ExtensionPointDeclaration_Behavior.java" startLine="18" startPosition="68" endLine="19" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="63012922131002398" fileName="ExtensionPointDeclaration_Behavior.java" startLine="19" startPosition="51" endLine="20" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="63012922131002429" fileName="ExtensionPointDeclaration_Behavior.java" startLine="21" startPosition="21" endLine="22" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="63012922130945368" fileName="ExtensionPointDeclaration_Behavior.java" startLine="23" startPosition="5" endLine="24" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

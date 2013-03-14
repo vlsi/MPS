@@ -240,7 +240,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   public List<SNode> getConceptDeclarations() {
     SModel structureModel = getStructureModelDescriptor();
     if (structureModel == null) return Collections.emptyList();
-    return ((jetbrains.mps.smodel.SModelInternal) structureModel.getSModel()).getFastNodeFinder().getNodes(SNodeUtil.concept_ConceptDeclaration, true);
+    return ((jetbrains.mps.smodel.SModelInternal) structureModel).getFastNodeFinder().getNodes(SNodeUtil.concept_ConceptDeclaration, true);
   }
 
   public List<EditableSModelDescriptor> getUtilModels() {
@@ -285,7 +285,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       public SNode compute() {
         SModel structureModelDescriptor = getStructureModelDescriptor();
         if (structureModelDescriptor == null) return null;
-        SModel structureModel = structureModelDescriptor.getSModel();
+        SModel structureModel = structureModelDescriptor;
 
         //if not all the model is loaded, we try to look up the given concept only between root nodes first
         if (myNamesLoadingState.compareTo(ModelLoadingState.FULLY_LOADED) < 0) {

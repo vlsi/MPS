@@ -41,7 +41,7 @@ public class ConceptEditorHelper {
   public static List<SNode> getAvailableConceptAspects(LanguageAspect aspect, SNode node) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     Language language = GlobalScope.getInstance().getLanguage(aspect.getMainLanguage());
-    SModel structureModel = language.getStructureModelDescriptor().getSModel();
+    SModel structureModel = language.getStructureModelDescriptor();
     ListSequence.fromList(result).addSequence(ListSequence.fromList(getAvailableConceptAspects(structureModel, node)));
     return result;
   }
@@ -62,7 +62,7 @@ public class ConceptEditorHelper {
     if (md == null) {
       md = aspect.createNew(language);
     }
-    return createNewConceptAspectInstance(applicableNode, concept, md.getSModel());
+    return createNewConceptAspectInstance(applicableNode, concept, md);
   }
 
   public static List<SNode> sortRootsByConcept(List<SNode> roots, final SNode[] conceptOrder) {

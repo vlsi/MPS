@@ -26,7 +26,7 @@ public class TraceDown {
   @NotNull
   public static Iterable<String> unitNames(SNode node) {
     SModel model = node.getModel();
-    DebugInfo debugInfo = TraceInfoCache.getInstance().get(model.getModelDescriptor());
+    DebugInfo debugInfo = TraceInfoCache.getInstance().get(model);
     if (debugInfo == null) {
       return Sequence.fromIterable(Collections.<String>emptyList());
     }
@@ -47,7 +47,7 @@ public class TraceDown {
 
   public static String unitNameWithPosition(SNode node, _FunctionTypes._return_P1_E0<? extends Boolean, ? super TraceablePositionInfo> positionMatcher) {
     SModel model = node.getModel();
-    DebugInfo debugInfo = TraceInfoCache.getInstance().get(model.getModelDescriptor());
+    DebugInfo debugInfo = TraceInfoCache.getInstance().get(model);
     if (debugInfo == null) {
       return null;
     }
@@ -83,7 +83,7 @@ public class TraceDown {
   }
 
   public static boolean isTraceable(@NotNull SNode node) {
-    DebugInfo info = TraceInfoCache.getInstance().get(SNodeOperations.getModel(node).getModelDescriptor());
+    DebugInfo info = TraceInfoCache.getInstance().get(SNodeOperations.getModel(node));
     if (info == null) {
       return false;
     }

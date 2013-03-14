@@ -52,7 +52,7 @@ public class RunUtil {
       public void run() {
         descriptors.value = ListSequence.fromListWithValues(new ArrayList<SModel>(), ListSequence.fromList(nodes).select(new ISelector<SNode, SModel>() {
           public SModel select(SNode it) {
-            return (SModel) SNodeOperations.getModel(it).getModelDescriptor();
+            return (SModel) SNodeOperations.getModel(it);
           }
         }).distinct().where(new IWhereFilter<SModel>() {
           public boolean accept(SModel it) {

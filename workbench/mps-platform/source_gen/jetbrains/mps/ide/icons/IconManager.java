@@ -36,7 +36,6 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import java.lang.reflect.Method;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.Solution;
@@ -120,7 +119,7 @@ public class IconManager {
         if (model == null || jetbrains.mps.util.SNodeOperations.isModelDisposed(model)) {
           return mainIcon;
         }
-        if (!(SModelStereotype.isUserModel(model)) || model.getModelDescriptor() instanceof EditableSModel && ((EditableSModel) model.getModelDescriptor()).isReadOnly()) {
+        if (!(SModelStereotype.isUserModel(model)) || model instanceof EditableSModel && ((EditableSModel) model).isReadOnly()) {
           mainIcon = new LayeredIcon(mainIcon, PlatformIcons.LOCKED_ICON);
         }
         RowIcon result = new RowIcon(2);
@@ -225,21 +224,18 @@ public class IconManager {
   }
 
   public static Icon getIconFor(SModel model) {
-    if (model instanceof SModel) {
-      SModel modelDescriptor = (SModelInternal) model;
-      LanguageAspect aspect = Language.getModelAspect(modelDescriptor);
-      if (aspect != null) {
-        return getIconForAspect(aspect);
-      } else
-      if (SModelStereotype.isGeneratorModel(modelDescriptor)) {
-        return IdeIcons.TEMPLATES_MODEL_ICON;
-      } else
-      if (Language.isLanguageOwnedAccessoryModel(modelDescriptor)) {
-        return IdeIcons.ACCESSORY_MODEL_ICON;
-      } else
-      if (SModelStereotype.isTestModel(modelDescriptor)) {
-        return IdeIcons.TEST_MODEL_ICON;
-      }
+    LanguageAspect aspect = Language.getModelAspect(model);
+    if (aspect != null) {
+      return getIconForAspect(aspect);
+    } else
+    if (SModelStereotype.isGeneratorModel(model)) {
+      return IdeIcons.TEMPLATES_MODEL_ICON;
+    } else
+    if (Language.isLanguageOwnedAccessoryModel(model)) {
+      return IdeIcons.ACCESSORY_MODEL_ICON;
+    } else
+    if (SModelStereotype.isTestModel(model)) {
+      return IdeIcons.TEST_MODEL_ICON;
     }
     return IdeIcons.MODEL_ICON;
   }

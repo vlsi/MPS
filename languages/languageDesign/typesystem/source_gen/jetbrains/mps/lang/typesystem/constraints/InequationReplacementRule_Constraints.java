@@ -33,7 +33,7 @@ public class InequationReplacementRule_Constraints extends BaseConstraintsDescri
   }
 
   public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
-    return LanguageAspect.TYPESYSTEM.is(model.getModelDescriptor()) || SModelStereotype.isGeneratorModel(model);
+    return LanguageAspect.TYPESYSTEM.is(model) || SModelStereotype.isGeneratorModel(model);
   }
 
   private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)", "1227088585370");

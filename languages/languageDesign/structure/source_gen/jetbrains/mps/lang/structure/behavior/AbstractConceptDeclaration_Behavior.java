@@ -44,7 +44,7 @@ public class AbstractConceptDeclaration_Behavior {
     if (md == null) {
       return null;
     }
-    return md.getSModel();
+    return md;
   }
 
   public static List<SNode> call_findConceptAspectCollection_1567570417158062208(SNode thisNode, LanguageAspect aspect) {
@@ -90,7 +90,7 @@ public class AbstractConceptDeclaration_Behavior {
     }
     for (Generator g : language.getGenerators()) {
       for (SModel sd : g.getOwnTemplateModels()) {
-        SModel m = sd.getSModel();
+        SModel m = sd;
         for (SNode node : ListSequence.fromList(SModelOperations.getRoots(m, null))) {
           if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.TemplateDeclaration") && SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), "applicableConcept", false) == thisNode || SLinkOperations.getTarget(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"))), "applicableConcept", false) == thisNode) {
             ListSequence.fromList(result).addElement(node);

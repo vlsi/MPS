@@ -26,17 +26,12 @@ import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.List;
 
-public interface SModelInternal extends SModel {
-  SModel resolveModel(jetbrains.mps.smodel.SModelReference reference);
-
-  SModel getSModel();
-
+public interface SModelInternal{
   void setModule(SModule container);
 
   void addModelListener(@NotNull SModelListener listener);
 
   void removeModelListener(@NotNull SModelListener listener);
-
 
   //todo get rid of, try to cast, show an error if not casted
   boolean isDisposed();
@@ -108,6 +103,4 @@ public interface SModelInternal extends SModel {
   boolean updateModuleReferences();
 
   void copyPropertiesTo(SModelInternal to);
-
-  SModel createEmptyCopy();
 }

@@ -66,7 +66,7 @@ public class FindUsagesManager {
    */
   public static void collectInstances(SModel model, Collection<SConcept> concepts, Consumer<SNode> consumer) {
     for (SConcept concept : concepts) {
-      for (SNode instance : ((jetbrains.mps.smodel.SModelInternal) model.getSModel()).getFastNodeFinder().getNodes(concept.getId(), false)) {
+      for (SNode instance : ((jetbrains.mps.smodel.SModelInternal) model).getFastNodeFinder().getNodes(concept.getId(), false)) {
         consumer.consume(instance);
       }
     }
@@ -91,7 +91,7 @@ public class FindUsagesManager {
   }
 
   public static boolean hasModelUsages(SModel m, Collection<org.jetbrains.mps.openapi.model.SModelReference> models) {
-    SModel model = m.getSModel();
+    SModel model = m;
     if (model == null) return false;
 
     for (SModel modelDescriptor : SModelOperations.allImportedModels(model, GlobalScope.getInstance())) {

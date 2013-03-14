@@ -90,14 +90,14 @@ public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorW
   protected abstract void reload();
 
   public void resolveDiskConflict() {
-    LOG.warning("Model=" + getSModel().getReference().getSModelFqName() + ", file ts=" + getSource().getTimestamp() + ", model ts=" + getSourceTimestamp(),
+    LOG.warning("Model=" + getReference().getSModelFqName() + ", file ts=" + getSource().getTimestamp() + ", model ts=" + getSourceTimestamp(),
       new Throwable());  // more information
-    DiskMemoryConflictResolver.getResolver().resolveDiskMemoryConflict(getSource(), getSModel(), this);
+    DiskMemoryConflictResolver.getResolver().resolveDiskMemoryConflict(getSource(), this, this);
   }
 
   public boolean checkAndResolveConflictOnSave() {
     if (needsReloading()) {
-      LOG.warning("Model file " + getSModel().getReference().getSModelFqName() + " was modified externally!\n" +
+      LOG.warning("Model file " + getReference().getSModelFqName() + " was modified externally!\n" +
         "You might want to turn \"Synchronize files on frame activation/deactivation\" option on to avoid conflicts.");
       resolveDiskConflict();
       return false;
@@ -118,11 +118,11 @@ public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorW
     if (source.getFile().getPath().equals(newModelFile.getPath())) return;
 
     IFile oldFile = source.getFile();
-    SModel model = getSModelInternal();
-    fireBeforeModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
+    jetbrains.mps.smodel.SModel model = getSModelInternal();
+    fireBeforeModelFileChanged(new SModelFileChangedEvent(model.getModelDescriptor(), oldFile, newModelFile));
     source.setFile(newModelFile);
     updateDiskTimestamp();
-    fireModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
+    fireModelFileChanged(new SModelFileChangedEvent(model.getModelDescriptor(), oldFile, newModelFile));
   }
 
   @Override
@@ -159,11 +159,10 @@ public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorW
     }
 
     String oldFqName = getReference().getModelName();
-    SModel model = getSModelInternal();
-    fireBeforeModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelName));
+    fireBeforeModelRenamed(new SModelRenamedEvent(this, oldFqName, newModelName));
 
     SModelReference newModelReference = new SModelReference(SModelFqName.fromString(newModelName), getReference().getSModelId());
-    ((SModelInternal) model).changeModelReference(newModelReference);
+    changeModelReference(newModelReference);
 
     if (!changeFile) {
       save();
@@ -191,17 +190,13 @@ public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorW
 
     updateReferenceAfterRename(newModelReference);
 
-    fireModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelName));
+    fireModelRenamed(new SModelRenamedEvent(this, oldFqName, newModelName));
   }
 
   @Override
-  public void detach() {
-    UnregisteredNodes.instance().clear(getReference());
-    super.detach();
-  }
-
   public void dispose() {
-    detach();
+    UnregisteredNodes.instance().clear(getReference());
+    super.dispose();
   }
 
   public String toString() {

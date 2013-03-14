@@ -65,7 +65,7 @@ public class CheckScopesAction extends AnAction {
         int notEqualMembersCount = 0;
 
         SModel descriptor = SModelFileTracker.getInstance().findModel(myModelFile);
-        for (SNode root : descriptor.getSModel().getRootNodes()) {
+        for (SNode root : descriptor.getRootNodes()) {
           if (LanguageHierarchyCache.isAssignable(root.getConcept().getId(), "jetbrains.mps.baseLanguage.structure.Classifier")) {
             PsiClass clazz = getPsiClass(myProject, root);
             if (clazz == null) {
@@ -123,7 +123,7 @@ public class CheckScopesAction extends AnAction {
 
   @Nullable
   private static PsiFile getFileForNode(Project project, SNode node) {
-    SModel model = node.getModel().getModelDescriptor();
+    SModel model = node.getModel();
     DebugInfo debugInfo = TraceInfoCache.getInstance().get(model);
     if (debugInfo == null) {
       return null;

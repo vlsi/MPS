@@ -281,9 +281,10 @@ public class NewModuleUtil {
         EditableSModel model = (EditableSModel) root.createModel(modelName);
         // todo: ??? 
         // this is strict model loading. without it save() not working - isLoaded() returns false in save method 
-        model.getSModel();
+        // model.getSModel() 
         model.save();
         return model;
+
       }
     }
     throw new IllegalStateException("can't create model with " + modelName + " in module " + module.getModuleName());

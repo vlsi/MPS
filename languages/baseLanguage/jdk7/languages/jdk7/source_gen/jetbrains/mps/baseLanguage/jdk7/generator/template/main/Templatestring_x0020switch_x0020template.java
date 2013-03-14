@@ -20,8 +20,7 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import java.util.Collection;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public class Templatestring_x0020switch_x0020template implements TemplateDeclarationWeavingAware {
   public Templatestring_x0020switch_x0020template() {
@@ -127,8 +126,8 @@ public class Templatestring_x0020switch_x0020template implements TemplateDeclara
         try {
           environment.getTracer().pushTemplateNode(templateNode_wjpymb_a0a0a1a5a1a2);
           environment.nodeCopied(context, tnode10, "tpl/r:23911370-3645-4974-be70-79d5cfba7db1/3708576844065051160");
-          tnode10.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode10, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), SNodeId.fromString("~Arrays.binarySearch(java.lang.Object[],java.lang.Object):int")));
-          tnode10.setReference("classConcept", SReference.create("classConcept", tnode10, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), SNodeId.fromString("~Arrays")));
+          tnode10.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode10, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Arrays.binarySearch(java.lang.Object[],java.lang.Object):int")));
+          tnode10.setReference("classConcept", SReference.create("classConcept", tnode10, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Arrays")));
 
           {
             final SNode tnode11 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression");

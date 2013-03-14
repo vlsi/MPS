@@ -94,7 +94,7 @@ public class OptimizeImportsInProject_Action extends BaseAction {
                   continue;
                 }
 
-                List<SModelReference> imports = SModelOperations.getImportedModelUIDs(model.getSModel());
+                List<SModelReference> imports = SModelOperations.getImportedModelUIDs(model);
                 ListSequence.fromList(modelsToFix).addElement(model);
               }
             }

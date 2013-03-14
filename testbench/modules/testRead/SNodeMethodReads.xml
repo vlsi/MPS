@@ -570,10 +570,6 @@
    <int>1</int>
   </void>
   <void method="put">
-   <string>public org.jetbrains.mps.openapi.model.SModel jetbrains.mps.smodel.SNode.getContainingModel()</string>
-   <int>1</int>
-  </void>
-  <void method="put">
    <string>public jetbrains.mps.smodel.SModel jetbrains.mps.smodel.SNode.getModel()</string>
    <int>1</int>
   </void>
@@ -608,6 +604,14 @@
   <void method="put">
     <string>public org.jetbrains.mps.openapi.model.SNode jetbrains.mps.smodel.SNode.getPrevSibling()</string>
     <int>3</int>
+  </void>
+  <void method="put">
+    <string>public boolean jetbrains.mps.smodel.SNode.isInRepository()</string>
+    <int>0</int>
+  </void>
+  <void method="put">
+    <string>public org.jetbrains.mps.openapi.module.SRepository jetbrains.mps.smodel.SNode.getRepository()</string>
+    <int>0</int>
   </void>
  </object>
 </java> 

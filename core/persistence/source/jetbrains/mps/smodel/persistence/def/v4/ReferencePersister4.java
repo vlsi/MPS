@@ -16,14 +16,19 @@
 package jetbrains.mps.smodel.persistence.def.v4;
 
 import jetbrains.mps.logging.Logger;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.DynamicReference;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelVersionsInfo;
+import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.persistence.def.IReferencePersister;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.VisibleModelElements;
 import org.jdom.Element;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.model.SReference;
 
 public class ReferencePersister4 implements IReferencePersister {
 
@@ -44,7 +49,8 @@ public class ReferencePersister4 implements IReferencePersister {
   }
 
   public void fillFields(Element linkElement, SNode sourceNode, boolean useUIDs, SModelVersionsInfo versionsInfo) {
-    fillFields(linkElement.getAttributeValue(ModelPersistence.ROLE), linkElement.getAttributeValue(ModelPersistence.RESOLVE_INFO), linkElement.getAttributeValue(ModelPersistence.TARGET_NODE_ID), sourceNode, useUIDs, versionsInfo);
+    fillFields(linkElement.getAttributeValue(ModelPersistence.ROLE), linkElement.getAttributeValue(ModelPersistence.RESOLVE_INFO),
+        linkElement.getAttributeValue(ModelPersistence.TARGET_NODE_ID), sourceNode, useUIDs, versionsInfo);
   }
 
   public void fillFields(String role_, String resolveInfo, String targetNodeId_, SNode sourceNode, boolean useUIDs, SModelVersionsInfo versionsInfo) {
@@ -123,10 +129,11 @@ public class ReferencePersister4 implements IReferencePersister {
       if (myNotImported) {
         importedModelReference = visibleModelElements.getModelUID(getImportIndex());
       } else {
-        importedModelReference = SModelOperations.getImportedModelUID(model, getImportIndex());
+        importedModelReference = SModelOperations.getImportedModelUID(model.getModelDescriptor(), getImportIndex());
       }
       if (importedModelReference == null) {
-        LOG.error("couldn't create reference '" + this.getRole() + "' from " + SNodeUtil.getDebugText(this.getSourceNode()) + " : import for index [" + getImportIndex() + "] not found");
+        LOG.error("couldn't create reference '" + this.getRole() + "' from " + SNodeUtil.getDebugText(
+            this.getSourceNode()) + " : import for index [" + getImportIndex() + "] not found");
         return null;
       }
     }
@@ -138,17 +145,17 @@ public class ReferencePersister4 implements IReferencePersister {
 
     if (this.getTargetId().equals("^")) {
       return new DynamicReference(
+          this.getRole(),
+          this.getSourceNode(),
+          importedModelReference,
+          this.getResolveInfo());
+    }
+    return new StaticReference(
         this.getRole(),
         this.getSourceNode(),
         importedModelReference,
+        jetbrains.mps.smodel.SNodeId.fromString(this.getTargetId()),
         this.getResolveInfo());
-    }
-    return new StaticReference(
-      this.getRole(),
-      this.getSourceNode(),
-      importedModelReference,
-      jetbrains.mps.smodel.SNodeId.fromString(this.getTargetId()),
-      this.getResolveInfo());
   }
 
   @Override
@@ -168,7 +175,7 @@ public class ReferencePersister4 implements IReferencePersister {
     linkElement.setAttribute(ModelPersistence.ROLE, VersionUtil.formVersionedString(reference.getRole(), VersionUtil.getNodeLanguageVersion(node)));
 
     String targetModelInfo = "";
-    if (!((reference instanceof StaticReference) &&(node.getModel().getReference().equals(reference.getTargetSModelReference())))) {
+    if (!((reference instanceof StaticReference) && (node.getModel().getReference().equals(reference.getTargetSModelReference())))) {
       if (useUIDs) {
         targetModelInfo = reference.getTargetSModelReference().toString() + "#";
       } else {
@@ -198,7 +205,8 @@ public class ReferencePersister4 implements IReferencePersister {
     }
 
     //stack overflow was here!!
-    targetNodeId = VersionUtil.formVersionedString(targetModelInfo + targetNodeId, VersionUtil.getReferenceToNodeVersion(node, reference.getTargetSModelReference()));
+    targetNodeId = VersionUtil.formVersionedString(targetModelInfo + targetNodeId,
+        VersionUtil.getReferenceToNodeVersion(node, reference.getTargetSModelReference()));
     linkElement.setAttribute(ModelPersistence.TARGET_NODE_ID, targetNodeId);
     String resolveInfo = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
     if (resolveInfo != null) linkElement.setAttribute(ModelPersistence.RESOLVE_INFO, resolveInfo);

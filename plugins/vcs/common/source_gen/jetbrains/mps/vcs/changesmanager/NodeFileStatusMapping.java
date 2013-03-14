@@ -139,7 +139,7 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
               public void run() {
                 SModel modelDescriptor = null;
                 if (!(SNodeOperations.isDisposed(root) || SNodeOperations.isModelDisposed(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(root)))) {
-                  modelDescriptor = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(root).getModelDescriptor();
+                  modelDescriptor = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(root);
                 }
                 if (modelDescriptor instanceof BaseEditableSModelDescriptor) {
                   myRegistry.getCurrentDifference((BaseEditableSModelDescriptor) modelDescriptor).setEnabled(true);

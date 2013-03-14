@@ -35,7 +35,7 @@ public class SLanguageLanguageAdapter implements SLanguage {
 
   @Override
   public Iterable<SAbstractConcept> getConcepts() {
-    Iterable<SNode> roots = (Iterable<SNode>) LanguageAspect.STRUCTURE.get(myLanguage).getSModel().getRootNodes();
+    Iterable<SNode> roots = (Iterable<SNode>) LanguageAspect.STRUCTURE.get(myLanguage).getRootNodes();
     List<SAbstractConcept> c = ListSequence.fromList(new ArrayList<SAbstractConcept>());
     ListSequence.fromList(c).addSequence(Sequence.fromIterable(roots).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

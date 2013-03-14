@@ -21,7 +21,7 @@ public enum TestState {
   private final Icon myIcon;
 
   TestState(Icon icon) {
-    Language language = Language.getLanguageFor(SNodeOperations.getModel(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")).getModelDescriptor());
+    Language language = Language.getLanguageFor(SNodeOperations.getModel(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")));
     myIcon = icon;
   }
 

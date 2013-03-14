@@ -431,7 +431,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       @Override
       public Boolean compute() {
         final SNode editedNode = component.getEditedNode();
-        if (editedNode != null && !jetbrains.mps.util.SNodeOperations.isDisposed(editedNode)) {
+        if (editedNode != null && editedNode.isInRepository()) {
           final Set<BaseEditorChecker> checkersToRecheck = new LinkedHashSet<BaseEditorChecker>();
           boolean rootWasCheckedOnce = wasCheckedOnce(component);
           if (!rootWasCheckedOnce) {
@@ -517,7 +517,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           SNode node = editor.getEditedNode();
           if (node == null || node.getModel() == null || jetbrains.mps.util.SNodeOperations.isDisposed(node))
             return false;
-          if (node.getContainingModel() == null) {
+          if (!node.isInRepository()) {
             // asking runLoPrioRead() implementation to re-execute this task later:
             // editor was not updated in accordance with last modelReload event yet.
             return null;

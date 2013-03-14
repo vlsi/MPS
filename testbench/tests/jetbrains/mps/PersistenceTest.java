@@ -21,6 +21,7 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.BaseSModelDescriptor;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelHeader;
@@ -69,11 +70,11 @@ public class PersistenceTest extends BaseMPSTest {
               try {
                 DefaultSModelDescriptor testModel = (DefaultSModelDescriptor) TestMain.getModel(project, TEST_MODEL);
                 assertTrue(testModel.getPersistenceVersion() == START_PERSISTENCE_TEST_VERSION);
-                SModel model = testModel.getSModel();
+                SModel model = testModel;
                 for (int i = START_PERSISTENCE_TEST_VERSION; i <= ModelPersistence.LAST_VERSION; ++i) {
                   try { // errors about not found attributes are expected for old models
                     filter.start();
-                    ModelPersistence.saveModel(model, new FileDataSource(file), i);
+                    ModelPersistence.saveModel(((BaseSModelDescriptor) model).getSModelInternal(), new FileDataSource(file), i);
                   } finally {
                     filter.stop();
                   }
@@ -84,7 +85,7 @@ public class PersistenceTest extends BaseMPSTest {
                     fail();
                   }
                   assertTrue(result.getState() == ModelLoadingState.FULLY_LOADED);
-                  ModelAssert.assertDeepModelEquals(model, result.getModel());
+                  ModelAssert.assertDeepModelEquals(model, result.getModel().getModelDescriptor());
                   result.getModel().dispose();
                 }
               } catch (AssertionFailedError e) {
@@ -161,7 +162,7 @@ public class PersistenceTest extends BaseMPSTest {
                       ModelLoadResult result = ModelPersistence.readModel(SModelHeader.create(version[1]), testModel.getSource(),
                         ModelLoadingState.FULLY_LOADED);
                       assertTrue(result.getState() == ModelLoadingState.FULLY_LOADED);
-                      ModelAssert.assertDeepModelEquals(resultFrom.getModel(), result.getModel());
+                      ModelAssert.assertDeepModelEquals(resultFrom.getModel().getModelDescriptor(), result.getModel().getModelDescriptor());
                       return result;
                     } catch (ModelReadException e) {
                       return null;
@@ -207,8 +208,8 @@ public class PersistenceTest extends BaseMPSTest {
       assert source != null;
 
       try {
-        SModel model = wasInitialized ? modelDescriptor.getSModel() : ModelPersistence.readModel(source, false);
-        ModelPersistence.saveModel(model, source, toVersion);
+        SModel model = wasInitialized ? modelDescriptor : ModelPersistence.readModel(source, false).getModelDescriptor();
+        ModelPersistence.saveModel(((BaseSModelDescriptor) model).getSModelInternal(), source, toVersion);
         modelDescriptor.reloadFromDisk();
       } catch (ModelReadException e) {
         // This hardly can happend, unreadable model should be already filtered out

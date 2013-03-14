@@ -11,17 +11,17 @@ import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModel;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.vcs.diff.changes.NodeCopier;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.DefaultSModel;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vcs.diff.changes.MetadataChange;
-import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.vcs.diff.changes.NodeChange;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
@@ -62,7 +62,24 @@ public class MergeSession {
   private MergeSession.MyResultModelListener myModelListener = new MergeSession.MyResultModelListener();
   private MergeSession.ChangesInvalidateHandler myChangesInvalidateHandler;
 
-  public MergeSession(final SModel base, final SModel mine, final SModel repository) {
+
+  public static MergeSession createMergeSession(SModel base, SModel mine, SModel repository) {
+    // TODO generalize merge for any SModel 
+    SModel resModel = CopyUtil.copyModel(base);
+    SModelDescriptor resMD = resModel.getModelDescriptor();
+    SModelDescriptor baseMD = base.getModelDescriptor();
+    SModelDescriptor mineMD = mine.getModelDescriptor();
+    SModelDescriptor repMD = repository.getModelDescriptor();
+    if (resModel instanceof DefaultSModel) {
+      int pv = Math.max(getPersistenceVersion(baseMD), Math.max(getPersistenceVersion(mineMD), getPersistenceVersion(repMD)));
+      ((DefaultSModel) resModel).setPersistenceVersion(pv);
+    }
+    return new MergeSession(base, mine, repository, resModel);
+  }
+
+
+
+  public MergeSession(final SModel base, final SModel mine, final SModel repository, final SModel result) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         MergeConflictsBuilder conflictsBuilder = new MergeConflictsBuilder(base, mine, repository);
@@ -72,13 +89,7 @@ public class MergeSession {
         mySymmetricChanges = conflictsBuilder.mySymmetricChanges;
         fillRootToChangesMap();
         fillNodeToChangesMap();
-
-        // TODO generalize merge for any SModel 
-        myResultModel = CopyUtil.copyModel(base);
-        int pv = Math.max(getPersistenceVersion(base), Math.max(getPersistenceVersion(mine), getPersistenceVersion(repository)));
-        if (myResultModel instanceof DefaultSModel) {
-          ((DefaultSModel) myResultModel).setPersistenceVersion(pv);
-        }
+        myResultModel = result;
         myNodeCopier = new NodeCopier(myResultModel);
       }
     });
@@ -100,7 +111,7 @@ public class MergeSession {
   }
 
   public void installResultModelListener() {
-    ((SModelInternal) myResultModel.getModelDescriptor()).addModelListener(myModelListener);
+    myResultModel.addModelListener(myModelListener);
   }
 
   private void fillNodeToChangesMap() {
@@ -229,7 +240,7 @@ public class MergeSession {
   private void applyChange(ModelChange change) {
     if (SetSequence.fromSet(myResolvedChanges).contains(change)) {
     } else {
-      change.apply(myResultModel, myNodeCopier);
+      change.apply(myResultModel.getModelDescriptor(), myNodeCopier);
       SetSequence.fromSet(myResolvedChanges).addElement(change);
       SetSequence.fromSet(myResolvedChanges).addSequence(ListSequence.fromList(MapSequence.fromMap(mySymmetricChanges).get(change)));
       excludeChangesNoRestoreIds(getConflictedWith(change));
@@ -286,16 +297,16 @@ public class MergeSession {
 
   public void restoreState(MergeSessionState state) {
     MergeSessionState stateCopy = new MergeSessionState(state);
-    ListSequence.fromList(SModelOperations.getRoots(myResultModel, null)).visitAll(new IVisitor<SNode>() {
+    ListSequence.fromList(SModelOperations.getRoots(((org.jetbrains.mps.openapi.model.SModel) myResultModel.getModelDescriptor()), null)).visitAll(new IVisitor<SNode>() {
       public void visit(SNode r) {
         SNodeOperations.deleteNode(r);
       }
     });
-    CopyUtil.clearModelProperties(myResultModel);
-    CopyUtil.copyModelProperties(stateCopy.myResultModel, myResultModel);
-    ListSequence.fromList(SModelOperations.getRoots(stateCopy.myResultModel, null)).visitAll(new IVisitor<SNode>() {
+    CopyUtil.clearModelProperties(myResultModel.getModelDescriptor());
+    CopyUtil.copyModelProperties(stateCopy.myResultModel.getModelDescriptor(), myResultModel.getModelDescriptor());
+    ListSequence.fromList(SModelOperations.getRoots(((org.jetbrains.mps.openapi.model.SModel) stateCopy.myResultModel.getModelDescriptor()), null)).visitAll(new IVisitor<SNode>() {
       public void visit(SNode r) {
-        SModelOperations.addRootNode(myResultModel, r);
+        SModelOperations.addRootNode(((org.jetbrains.mps.openapi.model.SModel) myResultModel.getModelDescriptor()), r);
       }
     });
 
@@ -310,12 +321,12 @@ public class MergeSession {
   private void invalidateChanges(Iterable<ModelChange> changes) {
     if (Sequence.fromIterable(changes).isNotEmpty()) {
       SetSequence.fromSet(myResolvedChanges).addSequence(Sequence.fromIterable(changes));
-      check_bow6nj_a1a0a24(myChangesInvalidateHandler);
+      check_bow6nj_a1a0a54(myChangesInvalidateHandler);
     }
   }
 
-  private static int getPersistenceVersion(SModel m) {
-    SModel model = m;
+  private static int getPersistenceVersion(org.jetbrains.mps.openapi.model.SModel m) {
+    org.jetbrains.mps.openapi.model.SModel model = m;
     if (model instanceof DefaultSModel) {
       return ((DefaultSModel) model).getPersistenceVersion();
     }
@@ -353,7 +364,7 @@ public class MergeSession {
       List<ModelChange> nodeChanges = MapSequence.fromMap(myNodeToChanges).get(event.getReference().getSourceNode().getNodeId());
       invalidateChanges(ListSequence.fromList(nodeChanges).where(new IWhereFilter<ModelChange>() {
         public boolean accept(ModelChange ch) {
-          return ch instanceof SetReferenceChange && eq_bow6nj_a0a0a0a0a0a0b0d54(((SetReferenceChange) ch).getRole(), event.getReference().getRole());
+          return ch instanceof SetReferenceChange && eq_bow6nj_a0a0a0a0a0a0b0d84(((SetReferenceChange) ch).getRole(), event.getReference().getRole());
         }
       }));
       invalidateDeletedRoot(event);
@@ -463,7 +474,7 @@ public class MergeSession {
       List<ModelChange> nodeChanges = MapSequence.fromMap(myNodeToChanges).get(event.getNode().getNodeId());
       invalidateChanges(ListSequence.fromList(nodeChanges).where(new IWhereFilter<ModelChange>() {
         public boolean accept(ModelChange ch) {
-          return ch instanceof SetPropertyChange && eq_bow6nj_a0a0a0a0a0a0b0l54(((SetPropertyChange) ch).getPropertyName(), event.getPropertyName());
+          return ch instanceof SetPropertyChange && eq_bow6nj_a0a0a0a0a0a0b0l84(((SetPropertyChange) ch).getPropertyName(), event.getPropertyName());
         }
       }));
       invalidateDeletedRoot(event);
@@ -476,21 +487,21 @@ public class MergeSession {
     }
   }
 
-  private static void check_bow6nj_a1a0a24(MergeSession.ChangesInvalidateHandler checkedDotOperand) {
+  private static void check_bow6nj_a1a0a54(MergeSession.ChangesInvalidateHandler checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.someChangesInvalidated();
     }
 
   }
 
-  private static boolean eq_bow6nj_a0a0a0a0a0a0b0d54(Object a, Object b) {
+  private static boolean eq_bow6nj_a0a0a0a0a0a0b0d84(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_bow6nj_a0a0a0a0a0a0b0l54(Object a, Object b) {
+  private static boolean eq_bow6nj_a0a0a0a0a0a0b0l84(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

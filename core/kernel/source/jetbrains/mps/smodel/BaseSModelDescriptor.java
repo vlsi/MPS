@@ -34,7 +34,6 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
-import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
@@ -50,18 +49,8 @@ public abstract class BaseSModelDescriptor extends SModelBase implements jetbrai
   }
 
   @Override
-  public SModelInternal getModelDescriptor() {
-    return this;
-  }
-
-  @Override
   public SModel getSModel() {
     return this;
-  }
-
-  @Override
-  public SModel createEmptyCopy() {
-    throw new UnsupportedOperationException("not supported");
   }
 
   @Override
@@ -94,23 +83,15 @@ public abstract class BaseSModelDescriptor extends SModelBase implements jetbrai
     return getSModelInternal().getNode(id);
   }
 
-  public void attach() {
-  }
-
-  @Override
-  public void detach() {
-    ModelAccess.assertLegalWrite();
-    SModel smodel = getCurrentModelInternal();
-    if (smodel != null) {
-      fireBeforeModelDisposed(smodel);
-      ((jetbrains.mps.smodel.SModelInternal) smodel).dispose();
-    }
-    clearListeners();
-  }
-
   @Override
   public void dispose() {
-    detach();
+    ModelAccess.assertLegalWrite();
+    fireBeforeModelDisposed(this);
+    jetbrains.mps.smodel.SModel model = getCurrentModelInternal();
+    if (model != null) {
+      model.dispose();
+    }
+    clearListeners();
   }
 
   @Override
@@ -144,7 +125,7 @@ public abstract class BaseSModelDescriptor extends SModelBase implements jetbrai
     return getReference().getStereotype();
   }
 
-  protected abstract SModel getCurrentModelInternal();
+  protected abstract jetbrains.mps.smodel.SModel getCurrentModelInternal();
 
   @Override
   public void addModelListener(@NotNull SModelListener listener) {

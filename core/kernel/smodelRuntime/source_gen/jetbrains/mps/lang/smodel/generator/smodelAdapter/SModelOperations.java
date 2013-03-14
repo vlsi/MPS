@@ -94,7 +94,7 @@ public class SModelOperations {
     modelsList.add(sModel);
     List<SModel> modelDescriptors = jetbrains.mps.smodel.SModelOperations.allImportedModels(sModel, scope);
     for (SModel descriptor : modelDescriptors) {
-      modelsList.add(descriptor.getSModel());
+      modelsList.add(descriptor);
     }
     List<SNode> resultNodes = new ArrayList<SNode>();
     for (SModel aModel : modelsList) {
@@ -160,6 +160,7 @@ public class SModelOperations {
     jetbrains.mps.smodel.SNode newNode = createNewNode(model, conceptFqName);
     model.addRootNode(newNode);
     return newNode;
+
   }
 
   public static SNode addRootNode(SModel model, SNode node) {
@@ -177,7 +178,7 @@ public class SModelOperations {
   }
 
   public static SNode getModuleStub(SModel model) {
-    final IModule module = model.getModelDescriptor().getModule();
+    final IModule module = model.getModule();
     if (module instanceof Generator) {
       Language lang = ((Generator) module).getSourceLanguage();
       SModel m = ProjectStructureModule.getInstance().getModelByModule(lang);

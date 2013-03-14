@@ -34,7 +34,6 @@ import com.intellij.openapi.vcs.AbstractVcsHelper;
 import java.util.Arrays;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.progress.ProgressManager;
-import jetbrains.mps.smodel.SModelInternal;
 
 public class AnnotationHelper {
   private AnnotationHelper() {
@@ -60,9 +59,8 @@ public class AnnotationHelper {
     }
     final SNode root = editorComponent.getEditedNode();
     SModel model = check_19hp0u_a0d0c(root);
-    SModel modelDescriptor = check_19hp0u_a0e0c(model);
 
-    DataSource source = modelDescriptor.getSource();
+    DataSource source = model.getSource();
     if (!(source instanceof FileDataSource)) {
       return false;
     }
@@ -144,13 +142,6 @@ public class AnnotationHelper {
   private static SModel check_19hp0u_a0d0c(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModel();
-    }
-    return null;
-  }
-
-  private static SModelInternal check_19hp0u_a0e0c(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }

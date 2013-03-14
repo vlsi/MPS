@@ -252,7 +252,7 @@ public class TextGen_Facet extends IFacet.Stub {
                       }
                     }).foldLeft(0, new ILeftCombinator<SModel, Integer>() {
                       public Integer combine(Integer s, SModel it) {
-                        return s + IterableUtil.asCollection(it.getSModel().getRootNodes()).size();
+                        return s + IterableUtil.asCollection(it.getRootNodes()).size();
                       }
                     });
                     LOG.info("roots count: " + overallRootsCount);

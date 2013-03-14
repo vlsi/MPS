@@ -17,6 +17,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.projectPane.SortUtil;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.BaseSModelDescriptor;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
 import com.intellij.openapi.project.Project;
@@ -72,8 +73,8 @@ public class CompareTransientModels_Action extends BaseAction {
       final List<SModel> sortedModels = SortUtil.sortModels(((List<SModel>) MapSequence.fromMap(_params).get("models")));
       ModelAccess.instance().runReadInEDT(new Runnable() {
         public void run() {
-          final SModel first = sortedModels.get(0).getSModel();
-          final SModel second = sortedModels.get(1).getSModel();
+          final jetbrains.mps.smodel.SModel first = ((BaseSModelDescriptor) sortedModels.get(0)).getSModelInternal();
+          final jetbrains.mps.smodel.SModel second = ((BaseSModelDescriptor) sortedModels.get(1)).getSModelInternal();
           ApplicationManager.getApplication().invokeLater(new Runnable() {
             public void run() {
               new ModelDifferenceDialog(first, second, ((Project) MapSequence.fromMap(_params).get("project")), first.getReference().getSModelFqName().toString(), second.getReference().getSModelFqName().toString()).show();

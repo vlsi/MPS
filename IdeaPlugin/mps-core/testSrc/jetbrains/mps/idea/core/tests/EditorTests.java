@@ -75,7 +75,7 @@ public class EditorTests extends DataMPSFixtureTestCase {
           return;
         }
 
-        SModel model = descr.getSModel();
+        SModel model = descr;
         if (model != null) {
           for (SNode root : model.getRootNodes()) {
             roots.add(root);
@@ -163,7 +163,7 @@ public class EditorTests extends DataMPSFixtureTestCase {
 
               new MPSEditorOpener(myModule.getProject()).openNode(myRoot, context, true, true);
 
-              btt.setModelDescriptor(myRoot.getModel().getModelDescriptor());
+              btt.setModelDescriptor(myRoot.getModel());
               btt.setProject(ProjectHelper.toMPSProject(myModule.getProject()));
             }
           });

@@ -84,7 +84,7 @@ public class LanguageErrorsComponent {
       MapSequence.fromMap(myNodesToDependecies).put(currentNode, additional);
     }
     SetSequence.fromSet(additional).addElement(dependency);
-    addModelListener(SNodeOperations.getModel(dependency).getModelDescriptor());
+    addModelListener(SNodeOperations.getModel(dependency));
   }
 
   public void addError(SNode node, String errorString, SNode ruleNode) {
@@ -162,7 +162,7 @@ public class LanguageErrorsComponent {
     Set<SNode> frontier = new HashSet<SNode>(1);
     SetSequence.fromSet(frontier).addElement(root);
     Set<SNode> newFrontier = new HashSet<SNode>(1);
-    IScope scope = check_29uvfh_a0h0v(check_29uvfh_a0a7a12(check_29uvfh_a0a0h0v(SNodeOperations.getModel(root))));
+    IScope scope = check_29uvfh_a0h0v(check_29uvfh_a0a7a12(SNodeOperations.getModel(root)));
     while (!(SetSequence.fromSet(frontier).isEmpty())) {
       for (SNode node : frontier) {
         if (!(myCheckedRoot) || SetSequence.fromSet(myInvalidNodes).contains(node)) {
@@ -353,16 +353,9 @@ public class LanguageErrorsComponent {
     return null;
   }
 
-  private static IModule check_29uvfh_a0a7a12(SModelInternal checkedDotOperand) {
+  private static IModule check_29uvfh_a0a7a12(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
-    }
-    return null;
-  }
-
-  private static SModelInternal check_29uvfh_a0a0h0v(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }

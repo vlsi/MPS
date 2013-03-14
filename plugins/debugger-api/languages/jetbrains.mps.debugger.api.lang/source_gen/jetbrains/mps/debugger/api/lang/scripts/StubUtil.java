@@ -62,7 +62,7 @@ public class StubUtil {
     SReference reference = targetNode.getReference(role);
     SModel newModelDescriptor = StubUtil.getDebuggerModelForReference(reference);
 
-    for (SNode candidate : ListSequence.fromList(SModelOperations.getNodes(newModelDescriptor.getSModel(), conceptFqName))) {
+    for (SNode candidate : ListSequence.fromList(SModelOperations.getNodes(newModelDescriptor, conceptFqName))) {
       if (eq_g10q2g_a0a0d0d(getResolveInfo.invoke(candidate), ((jetbrains.mps.smodel.SReference) reference).getResolveInfo())) {
         SModelReference oldModelReference = reference.getTargetSModelReference();
         ((SModelInternal) jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(targetNode)).deleteModelImport(oldModelReference);

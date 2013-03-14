@@ -68,7 +68,7 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
     myDescriptor = descriptor;
     myImportedModelsTable.setDescriptor(myDescriptor);
     myProject = project;
-    initState(myDescriptor.getSModel());
+    initState(myDescriptor);
   }
 
   private void initState(SModel sModel) {
@@ -148,7 +148,7 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
   public boolean isModified() {
     return myImportedModelsTable.isModified(myImportedModels) ||
       myUsedLanguagesTable.isModified(myUsedLanguages) ||
-      myModelPathsTab.isModified(myDescriptor.getSModel()) ||
+      myModelPathsTab.isModified(myDescriptor) ||
       !myModelLongName.equals(myPackageName.getText());
   }
 
@@ -157,7 +157,7 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
     ModelAccess.instance().runCommandInEDT(new Runnable() {
       @Override
       public void run() {
-        SModel sModel = myDescriptor.getSModel();
+        SModel sModel = myDescriptor;
         IModule module = myDescriptor.getModule();
 
         saveImportedModels(sModel);

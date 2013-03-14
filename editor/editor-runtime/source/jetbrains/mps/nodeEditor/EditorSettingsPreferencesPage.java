@@ -68,7 +68,7 @@ class EditorSettingsPreferencesPage {
     ButtonGroup group = new ButtonGroup();
 
     JPanel editorTabsRB = new JPanel(new GridLayout(4,1));
-    editorTabsRB.setBorder(IdeBorderFactory.createTitledBorder("Editor Tabs", true));
+    editorTabsRB.setBorder(IdeBorderFactory.createTitledBorder("Aspect Tabs", true));
 
     myDontShow = new JBRadioButton("Do not show tabs");
     editorTabsRB.add(myDontShow);

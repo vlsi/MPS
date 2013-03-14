@@ -58,7 +58,7 @@ public class AddNodeMacroParam_copySrclMacro_Intention implements IntentionFacto
   }
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    SModel sm = SNodeOperations.getModel(node).getModelDescriptor();
+    SModel sm = SNodeOperations.getModel(node);
     if (sm == null || !(sm.getModule() instanceof Generator)) {
       return false;
     }

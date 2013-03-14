@@ -38,7 +38,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.project.SModuleOperations;
-import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -194,12 +193,11 @@ public class NewGeneratorDialog extends DialogWrapper {
     if (alreadyOwnsTemplateModel) {
       return;
     }
-    EditableSModel templateModelDescriptor = SModuleOperations.createModelWithAdjustments(getTemplateModelPrefix(sourceLanguage) + "." + "main@" + SModelStereotype.GENERATOR, newGenerator.getModelRoots().iterator().next());
-    SModel templateModel = ((SModelInternal) templateModelDescriptor).getSModel();
+    EditableSModel templateModel = SModuleOperations.createModelWithAdjustments(getTemplateModelPrefix(sourceLanguage) + "." + "main@" + SModelStereotype.GENERATOR, newGenerator.getModelRoots().iterator().next());
     SNode mappingConfiguration = SModelOperations.createNewNode(templateModel, null, "jetbrains.mps.lang.generator.structure.MappingConfiguration");
     SPropertyOperations.set(mappingConfiguration, "name", "main");
     SModelOperations.addRootNode(templateModel, mappingConfiguration);
-    templateModelDescriptor.save();
+    templateModel.save();
   }
 
   private static Logger LOG = Logger.getLogger(NewGeneratorDialog.class);

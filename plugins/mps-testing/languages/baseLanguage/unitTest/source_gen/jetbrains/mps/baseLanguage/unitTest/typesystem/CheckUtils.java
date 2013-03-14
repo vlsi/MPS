@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.SModel;
 
 public class CheckUtils {
@@ -19,7 +18,7 @@ public class CheckUtils {
 
 
   public static boolean checkPluginKindForMPSTestCase(SNode testCase) {
-    IModule module = check_c4dr2s_a0a0c(check_c4dr2s_a0a0a2(SNodeOperations.getModel(testCase)));
+    IModule module = check_c4dr2s_a0a0c(SNodeOperations.getModel(testCase));
     if (BehaviorReflection.invokeVirtual(Boolean.TYPE, testCase, "virtual_isMpsStartRequired_3310779261129403089", new Object[]{})) {
       return module instanceof Solution && ((Solution) module).getModuleDescriptor().getKind() != SolutionKind.NONE;
     } else {
@@ -35,7 +34,7 @@ public class CheckUtils {
       return true;
     }
 
-    IModule module = check_c4dr2s_a0c0e(check_c4dr2s_a0a2a4(SNodeOperations.getModel(testCase)));
+    IModule module = check_c4dr2s_a0c0e(SNodeOperations.getModel(testCase));
     if (module instanceof Solution) {
       SolutionDescriptor descriptor = ((Solution) module).getModuleDescriptor();
       // todo: PLUGIN_OTHER ? 
@@ -49,30 +48,16 @@ public class CheckUtils {
     }
   }
 
-  private static IModule check_c4dr2s_a0a0c(SModelInternal checkedDotOperand) {
+  private static IModule check_c4dr2s_a0a0c(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModelInternal check_c4dr2s_a0a0a2(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelDescriptor();
-    }
-    return null;
-  }
-
-  private static IModule check_c4dr2s_a0c0e(SModelInternal checkedDotOperand) {
+  private static IModule check_c4dr2s_a0c0e(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
-    }
-    return null;
-  }
-
-  private static SModelInternal check_c4dr2s_a0a2a4(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }

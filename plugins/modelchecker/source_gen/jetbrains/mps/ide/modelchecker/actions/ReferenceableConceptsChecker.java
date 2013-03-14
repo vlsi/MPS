@@ -31,7 +31,7 @@ public class ReferenceableConceptsChecker extends SpecificChecker {
   @Override
   public List<SearchResult<ModelCheckerIssue>> checkModel(final SModel model, final ProgressMonitor monitor, IOperationContext operationContext) {
     final List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
-    if (model == null || model.getModelDescriptor() == null || model.getModelDescriptor().getModule() == null) {
+    if (model == null || model == null || model.getModule() == null) {
       return results;
     }
 
@@ -41,7 +41,7 @@ public class ReferenceableConceptsChecker extends SpecificChecker {
     }
     monitor.start(title, 1);
 
-    if (LanguageAspect.STRUCTURE.is(model.getModelDescriptor())) {
+    if (LanguageAspect.STRUCTURE.is(model)) {
       for (SNode concept : ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
         for (SNode ref : ListSequence.fromList(SLinkOperations.getTargets(concept, "linkDeclaration", true)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {

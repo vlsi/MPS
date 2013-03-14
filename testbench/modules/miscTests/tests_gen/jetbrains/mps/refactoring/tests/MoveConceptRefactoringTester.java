@@ -40,7 +40,7 @@ public class MoveConceptRefactoringTester implements IRefactoringTester {
       public void run() {
         SModel structureModelDescriptor = testRefactoringLanguage.getStructureModelDescriptor();
         targetStructureModelReference[0] = (SModelReference) testRefactoringTargetLanguage.getStructureModelDescriptor().getReference();
-        SModel model = structureModelDescriptor.getSModel();
+        SModel model = structureModelDescriptor;
         SNode concept = SModelOperations.getRootByName(model, conceptName);
         refactoringContext.setSelectedProject(project);
         refactoringContext.setSelectedNode(concept);
@@ -63,7 +63,7 @@ public class MoveConceptRefactoringTester implements IRefactoringTester {
                 result[0] = false;
                 return;
               }
-              SModel sModel = sandbox1.getSModel();
+              SModel sModel = sandbox1;
               result[0] = sModel.getRootNodes().iterator().next().getConcept().getConceptId().equals(targetStructureModelReference[0].getSModelFqName() + "." + conceptName);
             } catch (Throwable t) {
               t.printStackTrace();

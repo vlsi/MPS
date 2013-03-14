@@ -79,6 +79,7 @@ import com.intellij.openapi.command.undo.UndoManager;
 import org.junit.Test;
 import java.util.Random;
 import jetbrains.mps.vcs.diff.changes.NodeCopier;
+import jetbrains.mps.smodel.BaseSModelDescriptor;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;
@@ -285,7 +286,7 @@ public class ChangesManagerTest {
       public void run() {
         ListSequence.fromList(interestingModels).translate(new ITranslator2<BaseEditableSModelDescriptor, SNode>() {
           public Iterable<SNode> translate(BaseEditableSModelDescriptor md) {
-            return md.getSModel().getRootNodes();
+            return md.getRootNodes();
           }
         }).visitAll(new IVisitor<SNode>() {
           public void visit(SNode r) {
@@ -300,7 +301,7 @@ public class ChangesManagerTest {
       public void run() {
         for (SNode r : ListSequence.fromList(interestingModels).translate(new ITranslator2<BaseEditableSModelDescriptor, SNode>() {
           public Iterable<SNode> translate(BaseEditableSModelDescriptor md) {
-            return md.getSModel().getRootNodes();
+            return md.getRootNodes();
           }
         })) {
           String simpleName = NameUtil.shortNameFromLongName(SNodeOperations.getModelLongName(r.getModel())) + "." + r.getName();
@@ -319,7 +320,7 @@ public class ChangesManagerTest {
   private void modifyModel() {
     runCommandAndWait(new Runnable() {
       public void run() {
-        SModel model = myUtilDiff.getModelDescriptor().getSModel();
+        SModel model = myUtilDiff.getModelDescriptor();
         SNode root = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept")).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode r) {
             return "ImageLoader".equals(SPropertyOperations.getString(r, "name"));
@@ -395,8 +396,8 @@ public class ChangesManagerTest {
 
   private void modifyExternally() throws ModelReadException {
     int changesBefore = ListSequence.fromList(check_4gxggu_a0a0a53(myUtilDiff.getChangeSet())).count();
-    final SModel modelContent = ModelPersistence.readModel(myUtilDiff.getModelDescriptor().getSource(), false);
-    createNewRoot(modelContent);
+    final jetbrains.mps.smodel.SModel modelContent = ModelPersistence.readModel(myUtilDiff.getModelDescriptor().getSource(), false);
+    createNewRoot(modelContent.getModelDescriptor());
     final EditableSModel modelDescriptor = myUtilDiff.getModelDescriptor();
     waitForSomething(new Runnable() {
       public void run() {
@@ -551,7 +552,7 @@ public class ChangesManagerTest {
   }
 
   private SNode getDocumentLayoutRoot() {
-    SModel model = myUiDiff.getModelDescriptor().getSModel();
+    SModel model = myUiDiff.getModelDescriptor();
     return ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept")).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode r) {
         return "DocumentLayout".equals(SPropertyOperations.getString(r, "name"));
@@ -590,7 +591,7 @@ public class ChangesManagerTest {
     final Wrappers._T<SNode> root = new Wrappers._T<SNode>();
     doSomethingAndUndo(myUiDiff, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
-        SModel model = myUiDiff.getModelDescriptor().getSModel();
+        SModel model = myUiDiff.getModelDescriptor();
         root.value = createNewRoot(model);
         MapSequence.fromMap(myExpectedFileStatuses).put("ui.NewRoot", FileStatus.ADDED);
         return (SNode) null;
@@ -756,7 +757,7 @@ public class ChangesManagerTest {
 
     Random random = new Random(239);
     String stringBeforeAll = getChangeSetString(myUiDiff.getChangeSet());
-    final SModel model = myUiDiff.getModelDescriptor().getSModel();
+    final SModel model = myUiDiff.getModelDescriptor();
 
     List<SNodeReference> affectedNodePointers = ListSequence.fromList(new ArrayList<SNodeReference>());
 
@@ -768,7 +769,7 @@ public class ChangesManagerTest {
       final ModelChange changeToPick = ListSequence.fromList(changesBefore).getElement(random.nextInt(ListSequence.fromList(changesBefore).count()));
       runCommandAndWait(new Runnable() {
         public void run() {
-          changeToPick.getOppositeChange().apply(model, new NodeCopier(model));
+          changeToPick.getOppositeChange().apply(model, new NodeCopier(((BaseSModelDescriptor) model).getSModelInternal()));
         }
       });
       waitAndCheck(myUiDiff);
@@ -795,7 +796,7 @@ public class ChangesManagerTest {
     checkRootStatuses();
 
     String stringBeforeAll = getChangeSetString(myUiDiff.getChangeSet());
-    final SModel model = myUiDiff.getModelDescriptor().getSModel();
+    final SModel model = myUiDiff.getModelDescriptor();
 
     List<SNodeReference> affectedRootPointers = ListSequence.fromList(check_4gxggu_a0a0a5a65(myUiDiff.getChangeSet())).select(new ISelector<ModelChange, SNodeReference>() {
       public SNodeReference select(ModelChange ch) {
@@ -809,7 +810,7 @@ public class ChangesManagerTest {
     }).toListSequence();
     runCommandAndWait(new Runnable() {
       public void run() {
-        final NodeCopier nc = new NodeCopier(model);
+        final NodeCopier nc = new NodeCopier(((BaseSModelDescriptor) model).getSModelInternal());
         ListSequence.fromList(oppositeChanges).where(new IWhereFilter<ModelChange>() {
           public boolean accept(ModelChange ch) {
             return ch instanceof NodeGroupChange;
@@ -892,9 +893,8 @@ public class ChangesManagerTest {
 
     runCommandAndWait(new Runnable() {
       public void run() {
-        SModel m = ((SModelInternal) md).getSModel();
-        ((SModelInternal) m).addLanguage(ModuleReference.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"));
-        createNewRoot(m);
+        ((SModelInternal) md).addLanguage(ModuleReference.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"));
+        createNewRoot(md);
       }
     });
     checkOneAddedRoot(newModelDiff.value);

@@ -94,7 +94,7 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
   }
 
   public void psiChanged(final PsiListener.PsiEvent event) {
-    org.jetbrains.mps.openapi.model.SModel ourModel = getCurrentModelInternal();
+    org.jetbrains.mps.openapi.model.SModel ourModel = getCurrentModelInternal().getModelDescriptor();
 
     // already attached, but not createModel'd yet? 
     if (ourModel == null) {

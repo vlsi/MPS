@@ -30,7 +30,7 @@ public class GlobalSNodeId {
     SModel sModelDescriptor = SModelRepository.getInstance().getModelDescriptor(sModelReference);
     return (sModelDescriptor == null ?
       null :
-      sModelDescriptor.getSModel().getNode(SNodeId.fromString(getNodeId()))
+      sModelDescriptor.getNode(SNodeId.fromString(getNodeId()))
     );
   }
 

@@ -87,7 +87,7 @@ public class GeneratedSourcePosition {
       public SModelReference compute() {
         SNode node = getNode();
         if (node == null) return null;
-        SModel modelDescriptor = node.getModel().getModelDescriptor();
+        SModel modelDescriptor = node.getModel();
         return modelDescriptor.getReference();
       }
     });
@@ -99,7 +99,7 @@ public class GeneratedSourcePosition {
 
   @Nullable
   public static GeneratedSourcePosition fromNode(final SNode node) {
-    SModel model = node.getModel().getModelDescriptor();
+    SModel model = node.getModel();
     DebugInfo debugInfo = TraceInfoCache.getInstance().get(model);
     if (debugInfo == null) {
       return null;

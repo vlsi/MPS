@@ -92,7 +92,7 @@ public class ForbidIncomingReferencesInSubconcepts_Intention implements Intentio
         }
       }).select(new ISelector<SModel, SModel>() {
         public SModel select(SModel it) {
-          return it.getSModel();
+          return it;
         }
       });
 

@@ -18,6 +18,7 @@ package org.jetbrains.mps.openapi.model;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
@@ -25,14 +26,12 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
  * Represents a model. Models are loaded lazily when needed.
  */
 public interface SModel {
+  //todo is it needed?
+  SModel resolveModel(jetbrains.mps.smodel.SModelReference reference);
 
-  @Deprecated
-//todo migration only. REMOVE
-  SModel getSModel();
+  SRepository getRepository();
 
-  @Deprecated
-//todo migration only. REMOVE
-  SModelInternal getModelDescriptor();
+  boolean isInRepository();
 
   /**
    * Returns the id of the model valid within the containing module.
@@ -111,10 +110,6 @@ public interface SModel {
    * A modified model is first saved into the storage so that the changes are preserved.
    */
   void unload();
-
-  void attach();
-
-  void detach();
 
   /**
    * Represents a problem with the persitence.

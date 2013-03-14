@@ -151,7 +151,7 @@ public class FileSwapOwnerTests_Test extends BaseTransformationTest4 {
       this.addNodeById("1732396662099564446");
       Map<Object, Object> userObjects = MapSequence.fromMap(new LinkedHashMap<Object, Object>(16, (float) 0.75, false));
       MapSequence.fromMap(userObjects).put(new SNodePointer(SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")), new SNodePointer(SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")));
-      MapSequence.fromMap(userObjects).put(SNodeOperations.getModel(SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")).getReference(), SModelRepository.getInstance().getModelDescriptor(new SModelReference("java.lang", "java_stub")).getSModel().getReference());
+      MapSequence.fromMap(userObjects).put(SNodeOperations.getModel(SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")).getReference(), SModelRepository.getInstance().getModelDescriptor(new SModelReference("java.lang", "java_stub")).getReference());
       MapSequence.fromMap(userObjects).put(SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement").getNodeId(), new SNodePointer(SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")));
       MapSequence.fromMap(userObjects).put(SNodeOperations.getModel(SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")).getModelId(), SNodeOperations.getModel(SNodeOperations.cast(this.getNodeById("1732396662099564449"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")).getReference());
       this.testUserObjectsSaving(userObjects);
@@ -159,7 +159,7 @@ public class FileSwapOwnerTests_Test extends BaseTransformationTest4 {
 
     public void test_baseLanguageStructure() throws Exception {
       this.addNodeById("1732396662099564446");
-      SModel sampleModel = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.baseLanguage.structure", "")).getSModel();
+      SModel sampleModel = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.baseLanguage.structure", ""));
       SModel resultModel = FileSwapOwner.writeAndReadModel(sampleModel);
 
       ArrayList<NodeDifference> matchNodes = NodesMatcher.matchNodes(SModelOperations.getRoots(sampleModel, null), SModelOperations.getRoots(resultModel, null));
@@ -168,7 +168,7 @@ public class FileSwapOwnerTests_Test extends BaseTransformationTest4 {
 
     public void test_testOverloadedOperatorsSandbox() throws Exception {
       this.addNodeById("1732396662099564446");
-      SModel sampleModel = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test", "")).getSModel();
+      SModel sampleModel = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test", ""));
       SModel resultModel = FileSwapOwner.writeAndReadModel(sampleModel);
 
       ArrayList<NodeDifference> matchNodes = NodesMatcher.matchNodes(SModelOperations.getRoots(sampleModel, null), SModelOperations.getRoots(resultModel, null));

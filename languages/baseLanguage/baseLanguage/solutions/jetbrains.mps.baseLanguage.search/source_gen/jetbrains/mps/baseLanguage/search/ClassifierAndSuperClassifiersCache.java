@@ -62,7 +62,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
   public Set<SModel> getDependsOnModels(Object element) {
     Set<SModel> dependsOnModel = new HashSet<SModel>();
     for (SNode classifier : this.getClassifiers()) {
-      SModel descriptor = SNodeOperations.getModel(classifier).getModelDescriptor();
+      SModel descriptor = SNodeOperations.getModel(classifier);
       assert descriptor != null : "Model descriptor is null for classifier: " + classifier;
       dependsOnModel.add(descriptor);
     }
@@ -115,7 +115,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
   public static ClassifierAndSuperClassifiersCache getInstance(@NotNull SNode topClassifierNode) {
     Object key = keyProducer.createKey(topClassifierNode);
-    if (SNodeOperations.getModel(topClassifierNode).getModelDescriptor() == null) {
+    if (SNodeOperations.getModel(topClassifierNode) == null) {
       return new ClassifierAndSuperClassifiersCache(key, topClassifierNode);
     }
 

@@ -58,7 +58,7 @@ public class StubModelsResolver {
 
     Set<SModelReference> result = new HashSet<SModelReference>();
     for (SModelReference ref : models) {
-      SModel m = SModelRepository.getInstance().getModelDescriptor(ref).getSModel();
+      SModel m = SModelRepository.getInstance().getModelDescriptor(ref);
       if (m.getNode(nodeId) != null) {
         result.add(ref);
       }

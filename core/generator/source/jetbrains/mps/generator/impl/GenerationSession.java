@@ -35,7 +35,8 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.util.*;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -102,8 +103,8 @@ class GenerationSession {
         : null;
     ModelGenerationPlan customPlan = myGenerationOptions.getCustomPlan(myOriginalInputModel);
     myGenerationPlan = customPlan != null
-      ? new GenerationPlan(myOriginalInputModel.getSModel(), customPlan)
-      : new GenerationPlan(myOriginalInputModel.getSModel(), additionalLanguages);
+      ? new GenerationPlan(myOriginalInputModel, customPlan)
+      : new GenerationPlan(myOriginalInputModel, additionalLanguages);
     if (!checkGenerationPlan(myGenerationPlan)) {
       if (myGenerationOptions.isStrictMode()) {
         throw new GenerationCanceledException();
@@ -140,7 +141,7 @@ class GenerationSession {
 
         if (myGenerationOptions.getTracingMode() != GenerationOptions.TRACE_OFF) {
           myLogger.info("Processing:");
-          for (SNode node : myOriginalInputModel.getSModel().getRootNodes()) {
+          for (SNode node : myOriginalInputModel.getRootNodes()) {
             if (incrementalHandler.getRequiredRoots().contains(node)) {
               myLogger.info(node.getName() + " (cache)");
             } else if (!incrementalHandler.getIgnoredRoots().contains(node)) {
@@ -161,7 +162,7 @@ class GenerationSession {
       myNewCache = incrementalHandler.createNewCache();
       ttrace.pop();
       try {
-        SModel currInputModel = myOriginalInputModel.getSModel();
+        SModel currInputModel = myOriginalInputModel;
         SModel currOutput = null;
 
         ttrace.push("steps", false);
@@ -205,7 +206,7 @@ class GenerationSession {
           mySessionContext.keepTransientModel(currOutput, true);
         }
 
-        GenerationStatus generationStatus = new GenerationStatus(myOriginalInputModel, currOutput.getModelDescriptor(),
+        GenerationStatus generationStatus = new GenerationStatus(myOriginalInputModel, currOutput,
           myDependenciesBuilder.getResult(myInvocationContext, myGenerationOptions.getIncrementalStrategy()), myLogger.getErrorCount() > 0,
           myLogger.getWarningCount() > 0, false);
         success = generationStatus.isOk();
@@ -353,7 +354,7 @@ class GenerationSession {
         // nothing has been generated
         myDependenciesBuilder.dropModel();
         tracer.discardTracing(currentInputModel, transientModel);
-        mySessionContext.getModule().removeModel(transientModel.getModelDescriptor());
+        mySessionContext.getModule().removeModel(transientModel);
         myMinorStep--;
         if (myLogger.needsInfo()) {
           myLogger.info("unchanged, empty model '" + transientModel.getReference().getSModelFqName().getStereotype() + "' removed");
@@ -551,11 +552,11 @@ class GenerationSession {
     String longName = jetbrains.mps.util.SNodeOperations.getModelLongName(myOriginalInputModel);
     String stereotype = Integer.toString(myMajorStep + 1) + "_" + ++myMinorStep;
     SModel transientModel = mySessionContext.getModule().createTransientModel(longName, stereotype);
-    return transientModel.getSModel();
+    return transientModel;
   }
 
   private void recycleWasteModel(@NotNull SModel model) {
-    SModel md = model.getModelDescriptor();
+    SModel md = model;
     if (model .getModule() instanceof TransientModelsModule) {
       ttrace.push("recycling", false);
       ((jetbrains.mps.smodel.SModelInternal) model).disposeFastNodeFinder();

@@ -80,7 +80,7 @@ public class LanguagesKeymapManager implements ApplicationComponent {
   private void registerLanguageKeyMaps(Language language) {
     SModel editorModelDescriptor = LanguageAspect.EDITOR.get(language);
     SModel editorModel = (editorModelDescriptor != null ?
-      editorModelDescriptor.getSModel() :
+      editorModelDescriptor :
       null
     );
     List<KeyMap> keyMaps;

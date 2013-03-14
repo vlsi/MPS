@@ -68,7 +68,7 @@ public class SNodeUtil {
 
   public static String getDebugText(@NotNull SNode node) {
     String roleText = "";
-    if (node.getContainingModel() != null) {
+    if (node.getModel() != null) {
       SNode parent = node.getParent();
       roleText = parent == null ? "[root]" : "[" + parent.getRoleOf(node) + "]";
     }
@@ -85,7 +85,7 @@ public class SNodeUtil {
 
       nameText = nameText + "[" + node.getNodeId() + "]";
 
-      SModel model = node.getContainingModel();
+      SModel model = node.getModel();
       modelName = model != null ? model.getModelName() : "<no model>";
 
     } catch (Exception e) {

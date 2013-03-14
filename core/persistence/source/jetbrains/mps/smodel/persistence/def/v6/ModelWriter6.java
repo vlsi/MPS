@@ -16,15 +16,15 @@
 package jetbrains.mps.smodel.persistence.def.v6;
 
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.persistence.def.DocUtil;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import org.jdom.Document;
 import org.jdom.Element;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;
 
 public class ModelWriter6 implements IModelWriter {
   private VersionUtil myHelper;
@@ -46,35 +46,35 @@ public class ModelWriter6 implements IModelWriter {
     rootElement.addContent(persistenceElement);
 
     // languages
-    for (ModuleReference languageNamespace : ((jetbrains.mps.smodel.SModelInternal) sourceModel).importedLanguages()) {
+    for (ModuleReference languageNamespace : sourceModel.importedLanguages()) {
       Element languageElem = new Element(ModelPersistence.LANGUAGE);
       languageElem.setAttribute(ModelPersistence.NAMESPACE, languageNamespace.toString());
       rootElement.addContent(languageElem);
     }
 
     // languages engaged on generation
-    for (ModuleReference languageNamespace : ((jetbrains.mps.smodel.SModelInternal) sourceModel).engagedOnGenerationLanguages()) {
+    for (ModuleReference languageNamespace : sourceModel.engagedOnGenerationLanguages()) {
       Element languageElem = new Element(ModelPersistence.LANGUAGE_ENGAGED_ON_GENERATION);
       languageElem.setAttribute(ModelPersistence.NAMESPACE, languageNamespace.toString());
       rootElement.addContent(languageElem);
     }
 
     //devkits
-    for (ModuleReference devkitNamespace : ((jetbrains.mps.smodel.SModelInternal) sourceModel).importedDevkits()) {
+    for (ModuleReference devkitNamespace : sourceModel.importedDevkits()) {
       Element devkitElem = new Element(ModelPersistence.DEVKIT);
       devkitElem.setAttribute(ModelPersistence.NAMESPACE, devkitNamespace.toString());
       rootElement.addContent(devkitElem);
     }
 
     // imports
-    for (ImportElement importElement : ((jetbrains.mps.smodel.SModelInternal) sourceModel).importedModels()) {
+    for (ImportElement importElement : sourceModel.importedModels()) {
       Element importElem = new Element(ModelPersistence.IMPORT_ELEMENT);
       importElem.setAttribute(ModelPersistence.MODEL_IMPORT_INDEX, "" + myHelper.genImportIndex(importElement));
       importElem.setAttribute(ModelPersistence.MODEL_UID, importElement.getModelReference().toString());
       importElem.setAttribute(ModelPersistence.VERSION, "" + importElement.getUsedVersion());
       rootElement.addContent(importElem);
     }
-    for (ImportElement importElement : ((jetbrains.mps.smodel.SModelInternal) sourceModel).getAdditionalModelVersions()) {
+    for (ImportElement importElement : sourceModel.getAdditionalModelVersions()) {
       Element importElem = new Element(ModelPersistence.IMPORT_ELEMENT);
       importElem.setAttribute(ModelPersistence.MODEL_IMPORT_INDEX, "" + myHelper.genImportIndex(importElement));
       importElem.setAttribute(ModelPersistence.MODEL_UID, importElement.getModelReference().toString());
@@ -122,7 +122,7 @@ public class ModelWriter6 implements IModelWriter {
       linkElement.setAttribute(ModelPersistence.ROLE, myHelper.genRole(reference));
       //DocUtil.setNotNullAttribute(linkElement, ModelPersistence.ROLE_ID, myHelper.genRoleId(reference));
       linkElement.setAttribute(ModelPersistence.TARGET_NODE_ID, myHelper.genTarget(reference));
-      DocUtil.setNotNullAttribute(linkElement, ModelPersistence.RESOLVE_INFO, ((jetbrains.mps.smodel.SReference)reference).getResolveInfo());
+      DocUtil.setNotNullAttribute(linkElement, ModelPersistence.RESOLVE_INFO, ((jetbrains.mps.smodel.SReference) reference).getResolveInfo());
       element.addContent(linkElement);
     }
 

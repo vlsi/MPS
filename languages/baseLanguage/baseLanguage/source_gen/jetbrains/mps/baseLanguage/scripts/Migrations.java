@@ -15,13 +15,13 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.SModel;
 
 public class Migrations {
@@ -433,6 +433,7 @@ public class Migrations {
   }
 
   private static SNode _quotation_createNode_b5gojm_a0a0a2a2a0a0a2(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -457,6 +458,7 @@ public class Migrations {
   }
 
   private static SNode _quotation_createNode_b5gojm_a0a0c0c0a0a0c(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -474,6 +476,7 @@ public class Migrations {
   }
 
   private static SNode _quotation_createNode_b5gojm_a0a0a2a2a0a0a3(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -498,6 +501,7 @@ public class Migrations {
   }
 
   private static SNode _quotation_createNode_b5gojm_a0a0c0c0a0a0d(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -515,6 +519,7 @@ public class Migrations {
   }
 
   private static SNode _quotation_createNode_b5gojm_a0a0a3a2a0a0a4(Object parameter_1, Object parameter_2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.ReferenceConceptLink", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_3, "conceptLinkDeclaration", (SNode) parameter_2);
@@ -523,6 +528,7 @@ public class Migrations {
   }
 
   private static SNode _quotation_createNode_b5gojm_a0a0a0b0a0a0f(Object parameter_1, Object parameter_2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -538,6 +544,7 @@ public class Migrations {
   }
 
   private static SNode _quotation_createNode_b5gojm_a0b0b0a0a0f(Object parameter_1, Object parameter_2, Object parameter_3) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;
@@ -570,6 +577,7 @@ public class Migrations {
   }
 
   private static SNode _quotation_createNode_b5gojm_a0a0a0a0a0a1a0a0a6(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_Concept", null, null, GlobalScope.getInstance(), false);
@@ -580,6 +588,7 @@ public class Migrations {
   }
 
   private static SNode _quotation_createNode_b5gojm_a0d0b0a0a0g(Object parameter_1, Object parameter_2, Object parameter_3) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;
@@ -634,6 +643,7 @@ public class Migrations {
   }
 
   private static SNode _quotation_createNode_b5gojm_a0a0b0c0a0a0h(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "applicableNode", (SNode) parameter_1);
@@ -641,6 +651,7 @@ public class Migrations {
   }
 
   private static SNode _quotation_createNode_b5gojm_a0c0c0a0a0h(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -661,6 +672,7 @@ public class Migrations {
   }
 
   private static SNode _quotation_createNode_b5gojm_a0b0d0c0a0a0o(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -678,6 +690,7 @@ public class Migrations {
   }
 
   private static SNode _quotation_createNode_b5gojm_a0a0a3a2a0a0a41(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -715,16 +728,9 @@ public class Migrations {
     return null;
   }
 
-  private static SModelReference check_b5gojm_a0a0a0e0b0a0a0q(SModelInternal checkedDotOperand) {
+  private static SModelReference check_b5gojm_a0a0a0e0b0a0a0q(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
-    }
-    return null;
-  }
-
-  private static SModelInternal check_b5gojm_a0a0a0a4a1a0a0a61(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }

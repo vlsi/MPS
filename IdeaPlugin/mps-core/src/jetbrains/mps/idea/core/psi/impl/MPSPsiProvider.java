@@ -22,22 +22,20 @@ import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorDataProvider;
 import com.intellij.openapi.fileEditor.FileEditorDataProviderManager;
 import com.intellij.openapi.project.Project;
-import com.intellij.psi.PsiElement;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
+import com.intellij.psi.impl.PsiManagerEx;
 import com.intellij.psi.impl.PsiManagerImpl;
 import com.intellij.psi.impl.PsiModificationTrackerImpl;
 import com.intellij.psi.impl.PsiTreeChangeEventImpl;
-import jetbrains.mps.idea.core.psi.MPS2PsiMapper;
-import com.intellij.psi.impl.PsiManagerEx;
 import com.intellij.psi.impl.file.impl.FileManager;
 import jetbrains.mps.idea.core.psi.MPS2PsiMapperUtil;
 import jetbrains.mps.idea.core.psi.MPSPsiNodeFactory;
-import jetbrains.mps.idea.core.psi.impl.events.SModelEventProcessor.ModelProvider;
 import jetbrains.mps.idea.core.psi.impl.events.SModelEventProcessor;
+import jetbrains.mps.idea.core.psi.impl.events.SModelEventProcessor.ModelProvider;
 import jetbrains.mps.idea.core.psi.impl.events.SModelEventProcessor.ReloadableModel;
-import jetbrains.mps.idea.core.psi.impl.file.RootNodePsiElement;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.event.SModelCommandListener;
@@ -45,11 +43,11 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.*;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
@@ -116,7 +114,7 @@ public class MPSPsiProvider extends AbstractProjectComponent  {
       return source;
     }
 
-    final SModel containingModel = node.getContainingModel();
+    final SModel containingModel = node.getModel();
     if (containingModel == null) return null;
 
     MPSPsiModel psiModel = getPsi(containingModel);
@@ -201,16 +199,9 @@ public class MPSPsiProvider extends AbstractProjectComponent  {
 
     PsiTreeChangeEventImpl event = new PsiTreeChangeEventImpl(manager);
     event.setParent(node != null ? node : model);
-    event.setFile(model);
-    event.setOffset(0);
-    event.setOldLength(0);
     event.setGeneric(false);
 
-
     ((PsiManagerImpl)manager).childrenChanged(event);
-
-
-
   }
 
   private class PsiFileEditorDataProvider implements FileEditorDataProvider {
@@ -237,20 +228,12 @@ public class MPSPsiProvider extends AbstractProjectComponent  {
 
         SNodeReference sNodePointer = mpsFile.getSNodePointer();
 
-        MPSPsiModel mpsPsiModel = models.get(sNodePointer.getModelReference());
-        if (mpsPsiModel == null) return null;
-        VirtualFile sourceVFile = mpsPsiModel.getSourceVirtualFile();
+        MPSPsiModel psiModel = models.get(sNodePointer.getModelReference());
+        if (psiModel == null) return null;
 
-        FileManager fileManager = ((PsiManagerEx) PsiManagerEx.getInstance(myProject)).getFileManager();
-        PsiFile sourceFile = fileManager.findFile(sourceVFile);
-        if (sourceFile == null) return null;
-
-        for (PsiElement psiElement : sourceFile.getChildren()) {
-          if (psiElement instanceof RootNodePsiElement) {
-            SNodeReference nodeRef = ((RootNodePsiElement) psiElement).getSNodeReference();
-            if (sNodePointer.equals(nodeRef)) {
-              return psiElement;
-            }
+        for (MPSPsiRootNode rootNode : psiModel.getChildren(MPSPsiRootNode.class)) {
+          if (rootNode.getSNodeReference().equals(mpsFile.getSNodePointer())) {
+            return rootNode;
           }
         }
 

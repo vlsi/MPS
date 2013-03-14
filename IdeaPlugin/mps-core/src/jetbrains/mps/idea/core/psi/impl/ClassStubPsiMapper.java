@@ -65,7 +65,7 @@ public class ClassStubPsiMapper implements MPS2PsiMapper {
     SModel model = node.getModel();
     if (model == null) return null;
 
-    SModel modelDesc = model.getModelDescriptor();
+    SModel modelDesc = model;
 
     // class file stubs
     if (!(modelDesc instanceof JavaClassStubModelDescriptor)) return null;

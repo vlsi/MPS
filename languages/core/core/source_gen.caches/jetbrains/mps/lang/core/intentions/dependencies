@@ -21,7 +21,7 @@
     <classNode dependClassName="jetbrains.mps.lang.core.intentions.SetExportAnnotation_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.core.intentions.SuppressErrors_Intention" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.intentions.BaseIntentionsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.intentions.SetExportAnnotation_Intention" file="SetExportAnnotation_Intention.java">

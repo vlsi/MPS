@@ -6,6 +6,10 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNodeId;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import com.intellij.psi.PsiJavaFile;
+import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.smodel.SModelId;
 import com.intellij.psi.PsiNamedElement;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiField;
@@ -21,8 +25,6 @@ public class JavaForeignIdBuilder {
   public static SNodeId.Foreign computeNodeId(PsiElement element) {
     PsiElement parent = element.getParent();
     String prefix;
-
-
     if (parent instanceof PsiFile) {
       // element is root 
       prefix = SNodeId.Foreign.ID_PREFIX;
@@ -39,7 +41,33 @@ public class JavaForeignIdBuilder {
       return null;
     }
     return computeNodeId(prefix, element);
+  }
 
+
+
+  @Nullable
+  public static SModelReference computeModelReference(PsiElement element) {
+    PsiFile file = element.getContainingFile();
+    if (!(file instanceof PsiJavaFile)) {
+      return null;
+    }
+    String packageName = ((PsiJavaFile) file).getPackageName();
+
+    return computeModelReference(packageName);
+  }
+
+
+
+  /*package*/ static jetbrains.mps.smodel.SModelReference computeModelReference(String packageName) {
+    String stereotype = "java_stub";
+    if (packageName.length() == 0) {
+      packageName = "<default package>";
+    }
+
+    SModelFqName fqName = new SModelFqName(packageName, stereotype);
+    SModelId modelId = SModelId.foreign(fqName.getStereotype(), fqName.getLongName());
+
+    return new jetbrains.mps.smodel.SModelReference(fqName, modelId);
   }
 
 
@@ -77,7 +105,6 @@ public class JavaForeignIdBuilder {
       }
       sb.append(name);
       sb.append('(');
-
 
       for (PsiParameter param : method.getParameterList().getParameters()) {
         // for classess we want their name exactly how it is written in the source file 

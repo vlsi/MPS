@@ -237,13 +237,8 @@ public abstract class BaseTabsComponent implements TabsComponent {
   protected boolean isDisposedNode() {
     SNode node = myBaseNode.resolve(MPSModuleRepository.getInstance());
     if (node == null) return true;
-    SModel model = node.getModel();
-    if (model == null) return true;
-    SModel md = model.getModelDescriptor();
-    if (md == null) return true;
-    IModule module = md.getModule();
-    if (module == null) return true;
-    return ModuleRepositoryFacade.getInstance().getModule(module.getModuleReference()) == null;
+    assert node.isInRepository();
+    return false;
   }
 
   protected abstract boolean isTabUpdateNeeded(SNodeReference node);

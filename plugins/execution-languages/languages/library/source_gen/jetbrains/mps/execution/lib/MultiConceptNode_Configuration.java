@@ -25,6 +25,7 @@ import jetbrains.mps.util.NameUtil;
 import java.util.List;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class MultiConceptNode_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
   @NotNull
@@ -104,7 +105,7 @@ public class MultiConceptNode_Configuration implements IPersistentConfiguration,
     } else {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          MultiConceptNode_Configuration.this.setModelId(node.getModel().getModelDescriptor().getReference().toString());
+          MultiConceptNode_Configuration.this.setModelId(node.getModel().getReference().toString());
           MultiConceptNode_Configuration.this.setNodeId(node.getNodeId().toString());
         }
       });
@@ -183,7 +184,7 @@ public class MultiConceptNode_Configuration implements IPersistentConfiguration,
 
   private static SNode check_u1vs2g_a0a0a2a0(SNodePointer checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getNode();
+      return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
     }
     return null;
   }

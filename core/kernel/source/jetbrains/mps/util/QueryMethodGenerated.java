@@ -112,7 +112,7 @@ public class QueryMethodGenerated implements CoreComponent {
     Map<String, Method> methods = ourMethods.get(sourceModel.getReference());
 
     if (methods == null) {
-      Class queriesClass = getQueriesGeneratedClassFor(sourceModel.getModelDescriptor(), suppressErrorLogging);
+      Class queriesClass = getQueriesGeneratedClassFor(sourceModel, suppressErrorLogging);
 
       methods = ourMethods.get(sourceModel.getReference());
       if (methods == null) {

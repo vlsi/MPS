@@ -213,7 +213,7 @@ public class RefactoringFacade {
   public void updateLoadedModels(final RefactoringContext context) {
     SetSequence.fromSet(loadedModelsForUpdate(context)).visitAll(new IVisitor<SModel>() {
       public void visit(SModel it) {
-        updateModel(it.getSModel(), context);
+        updateModel(it, context);
       }
     });
   }
@@ -260,7 +260,7 @@ public class RefactoringFacade {
         continue;
       }
       //  we suppose that all models were saved before refactoring started => ImportElements are up to date 
-      for (jetbrains.mps.smodel.SModel.ImportElement elem : ListSequence.fromList(SModelOperations.getAllImportElements(descr.getSModel()))) {
+      for (jetbrains.mps.smodel.SModel.ImportElement elem : ListSequence.fromList(SModelOperations.getAllImportElements(descr))) {
         if (MapSequence.fromMap(dependencies).containsKey(elem.getModelReference())) {
           SetSequence.fromSet(result).addElement(descr);
           break;
@@ -301,7 +301,7 @@ public class RefactoringFacade {
     SNode.setNodeMemberAccessModifier(modifier);
     for (SModel model : sourceModels) {
       if (!(SNodeOperations.isModelDisposed(model))) {
-        descriptors.add(model.getModelDescriptor());
+        descriptors.add(model);
       }
     }
 

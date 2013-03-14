@@ -70,7 +70,7 @@ public class PackagedLanguageTest {
   private void checkStructureModelLoaded() {
     final SModel structureModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(PACKAGED_LANGUAGE + ".structure"));
     Assert.assertNotNull(structureModelDescriptor);
-    final SModel structureModel = structureModelDescriptor.getSModel();
+    final SModel structureModel = structureModelDescriptor;
     Assert.assertNotNull(structureModel);
     Assert.assertEquals(1, IterableUtil.asCollection(structureModel.getRootNodes()).size());
     SNode root = structureModel.getRootNodes().iterator().next();
@@ -83,7 +83,7 @@ public class PackagedLanguageTest {
   private void checkEditorModelLoaded() {
     final SModel editorModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(PACKAGED_LANGUAGE + ".editor"));
     Assert.assertNotNull(editorModelDescriptor);
-    final SModel editorModel = editorModelDescriptor.getSModel();
+    final SModel editorModel = editorModelDescriptor;
     Assert.assertNotNull(editorModel);
     Assert.assertEquals(1, IterableUtil.asCollection(editorModel.getRootNodes()).size());
   }
@@ -107,7 +107,7 @@ public class PackagedLanguageTest {
   private void checkStubsLoaded() {
     final SModel libraryModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(PACKAGED_LANGUAGE + "/" + "dummy" + "@java_stub"));
     Assert.assertNotNull(libraryModelDescriptor);
-    final SModel libraryModel = libraryModelDescriptor.getSModel();
+    final SModel libraryModel = libraryModelDescriptor;
     Assert.assertNotNull(libraryModel);
     Assert.assertEquals(1, IterableUtil.asCollection(libraryModel.getRootNodes()).size());
     final SNode root = libraryModel.getRootNodes().iterator().next();

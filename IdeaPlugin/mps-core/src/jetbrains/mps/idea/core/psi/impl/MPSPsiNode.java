@@ -17,6 +17,8 @@
 package jetbrains.mps.idea.core.psi.impl;
 
 import com.intellij.psi.PsiElement;
+import com.intellij.psi.PsiFile;
+import com.intellij.psi.PsiInvalidElementAccessException;
 import com.intellij.util.ArrayUtil;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
@@ -81,6 +83,11 @@ public class MPSPsiNode extends MPSPsiNodeBase {
     return myProperties.get(key);
   }
 
+  @Override
+  public PsiFile getContainingFile() {
+    return getContainingRoot();
+  }
+
   void setProperty(String key, String value) {
     // TODO
     if (key.equals("name")) {
@@ -141,7 +148,7 @@ public class MPSPsiNode extends MPSPsiNodeBase {
         SNode node = getSNodeReference().resolve(MPSModuleRepository.getInstance());
         if (node == null) return;
 
-        SModel modelDescriptor = node.getModel().getModelDescriptor();
+        SModel modelDescriptor = node.getModel();
         if (modelDescriptor == null) return;
 
         IModule module = modelDescriptor.getModule();

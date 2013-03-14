@@ -73,7 +73,7 @@ public class CalcClassifiersInRootsStatistic_Action extends BaseAction {
           if (SNodeOperations.isRoot(node)) {
             rootsCount.value++;
 
-            String nodeName = node + "@" + SNodeOperations.getModelLongName(node.getModel().getModelDescriptor());
+            String nodeName = node + "@" + SNodeOperations.getModelLongName(node.getModel());
             boolean somethingPrinted = false;
 
             final Wrappers._T<List<SNode>> types = new Wrappers._T<List<SNode>>(ListSequence.fromList(new ArrayList<SNode>()));

@@ -28,11 +28,11 @@ import jetbrains.mps.smodel.SModelRepository;
 
 public class QueriesGenerated {
   public static void mappingScript_CodeBlock_1238589718396(final IOperationContext operationContext, final MappingScriptContext _context) {
-    Language language = Language.getLanguageFor(_context.getOriginalInputModel().getModelDescriptor());
+    Language language = Language.getLanguageFor(_context.getOriginalInputModel());
     if (language == null) {
       return;
     }
-    SModel structureModel = language.getStructureModelDescriptor().getSModel();
+    SModel structureModel = language.getStructureModelDescriptor();
     Map<SNode, SNode> conceptsToTargets = MapSequence.fromMap(new HashMap<SNode, SNode>());
     Map<SNode, SNode> additionalConceptsToTargets = MapSequence.fromMap(new HashMap<SNode, SNode>());
     Map<SNode, SNode> partsToLinkDeclarations = MapSequence.fromMap(new HashMap<SNode, SNode>());
@@ -69,8 +69,8 @@ public class QueriesGenerated {
       BehaviorReflection.invokeVirtual(Void.class, conceptDeclaration, "virtual_fillConcept_1239891562930", new Object[]{((SNode) MapSequence.fromMap(conceptsToTargets).get(conceptDeclaration)), conceptsToTargets, partsToLinkDeclarations});
     }
     // editor 
-    SModel editorModel = LanguageAspect.EDITOR.get(language).getSModel();
-    SModel actionsModel = LanguageAspect.ACTIONS.get(language).getSModel();
+    SModel editorModel = LanguageAspect.EDITOR.get(language);
+    SModel actionsModel = LanguageAspect.ACTIONS.get(language);
     Map<SNode, SNode> conceptsToEditors = MapSequence.fromMap(new HashMap<SNode, SNode>());
     for (SNode conceptDeclaration : allConcepts) {
       SNode editor = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), conceptDeclaration, "virtual_createEditor_1239890004879", new Object[]{conceptsToTargets, partsToLinkDeclarations});
@@ -104,7 +104,7 @@ public class QueriesGenerated {
       ListSequence.fromList(SLinkOperations.getTargets(conceptConstraint, "referent", true)).addElement(varScope);
       MapSequence.fromMap(conceptsToConstraints).put(variableConcept, conceptConstraint);
     }
-    SModel constraintsModel = LanguageAspect.CONSTRAINTS.get(language).getSModel();
+    SModel constraintsModel = LanguageAspect.CONSTRAINTS.get(language);
     // 
     // setting roots and deleting input roots 
     for (SNode root : ListSequence.fromListWithValues(new ArrayList<SNode>(), SModelOperations.getRoots(structureModel, null))) {

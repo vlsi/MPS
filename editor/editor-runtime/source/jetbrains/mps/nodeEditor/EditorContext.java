@@ -58,7 +58,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
 
   public EditorContext(EditorComponent editorComponent, SModel model, IOperationContext operationContext) {
     myNodeEditorComponent = editorComponent;
-    myModelDescriptor = model == null ? null : model.getModelDescriptor();
+    myModelDescriptor = model == null ? null : model;
     myOperationContext = operationContext;
   }
 
@@ -112,7 +112,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
 
   @Override
   public SModel getModel() {
-    return myModelDescriptor.getSModel();
+    return myModelDescriptor;
   }
 
   @Override

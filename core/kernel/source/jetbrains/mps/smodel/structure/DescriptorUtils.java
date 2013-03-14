@@ -94,7 +94,7 @@ public class DescriptorUtils {
   public static List<String> getLanguageConcepts(Language language) {
     List<String> result = new ArrayList<String>();
 
-    for (SNode node : new NodesIterable(LanguageAspect.STRUCTURE.get(language).getSModel())) {
+    for (SNode node : new NodesIterable(LanguageAspect.STRUCTURE.get(language))) {
       if ("jetbrains.mps.lang.structure.structure.ConceptDeclaration".equals(node.getConcept().getId()) ||
           "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration".equals(node.getConcept().getId())) {
         result.add(NameUtil.nodeFQName(node));

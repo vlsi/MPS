@@ -34,8 +34,8 @@ import java.util.Map;
 public class MPSModelsIndexer implements ApplicationComponent {
   @Override
   public void initComponent() {
-    IdTableBuilding.registerIdIndexer(MPSFileTypeFactory.MODEL_FILE_TYPE, new DefaultModelIdIndexer());
-    IdTableBuilding.registerIdIndexer(MPSFileTypeFactory.MODEL_BINARY_FILE_TYPE, new BinaryModelIdIndexer());
+    IdTableBuilding.registerIdIndexer(MPSFileTypeFactory.MPS_FILE_TYPE, new DefaultModelIdIndexer());
+    IdTableBuilding.registerIdIndexer(MPSFileTypeFactory.MPS_BINARY_FILE_TYPE, new BinaryModelIdIndexer());
   }
 
   @Override

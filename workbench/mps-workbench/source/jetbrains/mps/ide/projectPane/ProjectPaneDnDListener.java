@@ -24,7 +24,9 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
@@ -147,7 +149,7 @@ public class ProjectPaneDnDListener implements DropTargetListener {
 
       if (snode==null) continue;
       if (EqualUtil.equals(virtualPackage + node.o2, getVirtualPackage(snode))) continue;
-      SModel sourceModel = snode.getModel().getModelDescriptor();
+      SModel sourceModel = snode.getModel();
       if (EqualUtil.equals(sourceModel, targetModel)) {
         result.add(new Pair(snode, node.o2));
       }

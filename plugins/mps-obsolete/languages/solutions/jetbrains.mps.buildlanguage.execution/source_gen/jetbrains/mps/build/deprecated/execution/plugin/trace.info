@@ -140,13 +140,13 @@
     <nodeInfo nodeId="4197214709893771504" fileName="GenerateBuildUtil.java" startLine="48" startPosition="25" endLine="49" endPosition="250" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4197214709893771520" fileName="GenerateBuildUtil.java" startLine="51" startPosition="7" endLine="52" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4197214709893771527" fileName="GenerateBuildUtil.java" startLine="55" startPosition="58" endLine="56" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4197214709893771533" fileName="GenerateBuildUtil.java" startLine="58" startPosition="25" endLine="59" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4197214709893771539" fileName="GenerateBuildUtil.java" startLine="59" startPosition="46" endLine="60" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4197214709893771533" fileName="GenerateBuildUtil.java" startLine="58" startPosition="25" endLine="59" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4197214709893771539" fileName="GenerateBuildUtil.java" startLine="59" startPosition="34" endLine="60" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4197214709893771547" fileName="GenerateBuildUtil.java" startLine="62" startPosition="7" endLine="63" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4197214709893771556" fileName="GenerateBuildUtil.java" startLine="66" startPosition="121" endLine="67" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4197214709893771559" fileName="GenerateBuildUtil.java" startLine="67" startPosition="69" endLine="68" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4197214709893771565" fileName="GenerateBuildUtil.java" startLine="70" startPosition="25" endLine="71" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4197214709893771571" fileName="GenerateBuildUtil.java" startLine="71" startPosition="90" endLine="72" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4197214709893771571" fileName="GenerateBuildUtil.java" startLine="71" startPosition="90" endLine="72" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4197214709893771580" fileName="GenerateBuildUtil.java" startLine="74" startPosition="7" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4197214709893771581" fileName="GenerateBuildUtil.java" startLine="75" startPosition="0" endLine="76" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4197214709893771592" fileName="GenerateBuildUtil.java" startLine="79" startPosition="34" endLine="80" endPosition="270" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -186,7 +186,7 @@
     <scopeInfo nodeId="4197214709893771532" fileName="GenerateBuildUtil.java" startLine="58" startPosition="25" endLine="60" endPosition="137">
       <varInfo nodeId="4197214709893771534" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="4197214709893771564" fileName="GenerateBuildUtil.java" startLine="70" startPosition="25" endLine="72" endPosition="81" />
+    <scopeInfo nodeId="4197214709893771564" fileName="GenerateBuildUtil.java" startLine="70" startPosition="25" endLine="72" endPosition="60" />
     <scopeInfo nodeId="4197214709893771480" fileName="GenerateBuildUtil.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
     <scopeInfo nodeId="4197214709893771502" fileName="GenerateBuildUtil.java" startLine="48" startPosition="0" endLine="51" endPosition="0" />
     <scopeInfo nodeId="4197214709893771531" fileName="GenerateBuildUtil.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
@@ -274,7 +274,6 @@
     <scopeInfo nodeId="4197214709893781959" fileName="Ant_Kind.java" startLine="30" startPosition="0" endLine="35" endPosition="0" />
     <unitInfo nodeId="4197214709893781959" fileName="Ant_Kind.java" startLine="17" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.build.deprecated.execution.plugin.Ant_Kind" />
   </root>
-  <root nodeRef="r:78fddae4-c085-42f0-a758-ca4c7b372a36(jetbrains.mps.build.deprecated.execution.plugin)/6893245555985399815" />
   <root nodeRef="r:78fddae4-c085-42f0-a758-ca4c7b372a36(jetbrains.mps.build.deprecated.execution.plugin)/7162597690968026150">
     <nodeInfo nodeId="7162597690968026150" fileName="Execution_ApplicationPlugin.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
     <nodeInfo nodeId="7162597690968026150" fileName="Execution_ApplicationPlugin.java" startLine="19" startPosition="27" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

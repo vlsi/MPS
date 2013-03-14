@@ -29,7 +29,7 @@ public class ConceptMoveUtil {
   }
 
   public static List<SNode> getConceptAspects(List<SNode> concepts, SModel aspectModel) {
-    return getConceptsAspects(concepts, check_p1xi3x_b0a0c(aspectModel));
+    return getConceptsAspects(concepts, aspectModel);
   }
 
   public static Map<LanguageAspect, List<SNode>> getAspectNodes(Language language, List<SNode> nodes) {
@@ -42,12 +42,5 @@ public class ConceptMoveUtil {
       }
     }
     return aspectNodesMap;
-  }
-
-  private static SModel check_p1xi3x_b0a0c(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getSModel();
-    }
-    return null;
   }
 }

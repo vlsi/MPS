@@ -25,7 +25,6 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jdom.Element;
@@ -43,17 +42,17 @@ public class ModelNodeData extends BaseNodeData {
     super(role,
       (isResult && nodeRepresentator != null) ?
         nodeRepresentator.getPresentation(result.getObject()) :
-        SNodeOperations.getModelLongName(((SModel) result.getPathObject()).getModelDescriptor()),
+        SNodeOperations.getModelLongName(((SModel) result.getPathObject())),
       "",
       false,
       isResult,
       resultsSection);
-    myModelReference = ((SModel) result.getPathObject()).getModelDescriptor().getReference();
+    myModelReference = ((SModel) result.getPathObject()).getReference();
   }
 
   public ModelNodeData(PathItemRole role, SModel model, boolean isResult, boolean resultsSection) {
-    super(role, SNodeOperations.getModelLongName(model.getModelDescriptor()) + (!jetbrains.mps.util.SNodeOperations.getModelStereotype(model).isEmpty() ? "@"+ jetbrains.mps.util.SNodeOperations.getModelStereotype(model) : ""), "", false, isResult, resultsSection);
-    myModelReference = model.getModelDescriptor().getReference();
+    super(role, SNodeOperations.getModelLongName(model) + (!jetbrains.mps.util.SNodeOperations.getModelStereotype(model).isEmpty() ? "@"+ jetbrains.mps.util.SNodeOperations.getModelStereotype(model) : ""), "", false, isResult, resultsSection);
+    myModelReference = model.getReference();
   }
 
   public ModelNodeData(Element element, Project project) throws CantLoadSomethingException {
@@ -77,7 +76,7 @@ public class ModelNodeData extends BaseNodeData {
   public SModel getModel() {
     SModel modelDescriptor = getModelDescriptor();
     if (modelDescriptor == null) return null;
-    return modelDescriptor.getSModel();
+    return modelDescriptor;
   }
 
   public SModel getModelDescriptor() {

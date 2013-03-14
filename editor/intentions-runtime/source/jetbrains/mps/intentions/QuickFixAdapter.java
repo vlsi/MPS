@@ -106,7 +106,7 @@ public class QuickFixAdapter extends BaseIntention  {
     SModelReference reference = SModelReference.fromString(NameUtil.namespaceFromLongName(classFQName));
     SModel sModelDescriptor = SModelRepository.getInstance().getModelDescriptor(reference);
     if (sModelDescriptor != null) {
-      SModel model = sModelDescriptor.getSModel();
+      SModel model = sModelDescriptor;
       if (model != null) {
         String shortName = NameUtil.shortNameFromLongName(classFQName);
         String rootName = shortName.substring(0, shortName.length() - "_QuickFix".length());

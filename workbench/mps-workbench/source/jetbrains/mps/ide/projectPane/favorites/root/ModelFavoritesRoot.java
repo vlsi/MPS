@@ -45,7 +45,7 @@ class ModelFavoritesRoot extends FavoritesRoot<SModelReference> {
     SModel model = ModelAccess.instance().runReadAction(new Computable<SModel>() {
       @Override
       public SModel compute() {
-        return md.getSModel();
+        return md;
       }
     });
     if (model == null) return result;

@@ -39,7 +39,7 @@ public class LanguageConceptsUsagesFinder implements IFinder {
     if (structureModel == null) {
       return searchResults;
     }
-    SModel sModel = structureModel.getSModel();
+    SModel sModel = structureModel;
     if (sModel == null) {
       return searchResults;
     }
@@ -57,7 +57,7 @@ public class LanguageConceptsUsagesFinder implements IFinder {
       SearchResults<SModel> modelResults = FindUtils.getSearchResults(monitor.subTask(1), new SearchQuery(sModel, GlobalScopeMinusTransient.getInstance()), new ModelUsagesFinder());
       List<SModel> models = new ArrayList<SModel>();
       for (SearchResult<SModel> sModelSearchResult : modelResults.getSearchResults()) {
-        models.add(sModelSearchResult.getObject().getModelDescriptor());
+        models.add(sModelSearchResult.getObject());
       }
       IScope scope = new ModelsScope(models.toArray(new SModel[models.size()]));
       SearchResults<SNode> results = new SearchResults();

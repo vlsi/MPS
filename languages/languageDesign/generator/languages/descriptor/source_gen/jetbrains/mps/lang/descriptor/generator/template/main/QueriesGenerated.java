@@ -153,7 +153,7 @@ public class QueriesGenerated {
     if (ts == null) {
       return false;
     }
-    SModel m = ts.getSModel();
+    SModel m = ts;
     if (m == null) {
       _context.showErrorMessage(SLinkOperations.getTarget(_context.getNode(), "language", true), "Cannot load model: " + SNodeOperations.getModelLongName(ts));
       return false;
@@ -172,7 +172,7 @@ public class QueriesGenerated {
     if (ts == null) {
       return false;
     }
-    SModel m = ts.getSModel();
+    SModel m = ts;
     if (m == null) {
       _context.showErrorMessage(SLinkOperations.getTarget(_context.getNode(), "language", true), "Cannot load model: " + SNodeOperations.getModelLongName(ts));
       return false;
@@ -300,7 +300,7 @@ public class QueriesGenerated {
         if (descriptor == null) {
           return false;
         }
-        SModel m = descriptor.getSModel();
+        SModel m = descriptor;
         if (m == null) {
           return false;
         }
@@ -323,7 +323,7 @@ public class QueriesGenerated {
         SModel m = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(ModelReference_Behavior.call_getModelReference_6236774123822284799(it)));
         return (m == null ?
           Collections.<String>emptyList() :
-          ModelContentUtil.getUsedLanguageNamespaces(m.getSModel(), true)
+          ModelContentUtil.getUsedLanguageNamespaces(m, true)
         );
       }
     }).distinct().sort(new ISelector<String, String>() {

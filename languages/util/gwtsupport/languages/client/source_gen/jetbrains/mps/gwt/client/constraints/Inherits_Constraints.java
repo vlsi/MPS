@@ -53,12 +53,12 @@ public class Inherits_Constraints extends BaseConstraintsDescriptor {
               public boolean accept(SModel smd) {
                 return ((SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(smd))) ?
                   "gwt_stub".equals(SModelStereotype.getStereotype(smd)) :
-                  Sequence.fromIterable(((Iterable<ModuleReference>) ((SModelInternal) smd.getSModel()).importedLanguages())).contains(ModuleReference.fromString("954c4d77-e24b-4e49-a5a5-5476c966c092(jetbrains.mps.gwt.client)"))
+                  Sequence.fromIterable(((Iterable<ModuleReference>) ((SModelInternal) smd).importedLanguages())).contains(ModuleReference.fromString("954c4d77-e24b-4e49-a5a5-5476c966c092(jetbrains.mps.gwt.client)"))
                 );
               }
             }).translate(new ITranslator2<SModel, SNode>() {
               public Iterable<SNode> translate(SModel smd) {
-                return SModelOperations.getNodes((((SModel) smd.getSModel())), "jetbrains.mps.gwt.client.structure.GWTModule");
+                return SModelOperations.getNodes((((SModel) smd)), "jetbrains.mps.gwt.client.structure.GWTModule");
               }
             });
           }

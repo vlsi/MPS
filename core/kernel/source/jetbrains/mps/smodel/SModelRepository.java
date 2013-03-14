@@ -13,26 +13,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;
 
 import gnu.trove.THashMap;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.model.EditableSModel;
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.persistence.DataSourceBase;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.containers.MultiMap;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.DataSource;
+
+import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -86,7 +88,8 @@ public class SModelRepository implements CoreComponent {
       SModule prevModule = myModelOwner.get(modelDescriptor);
       if (prevModule != null) {
         if (prevModule != container) {
-          LOG.error("Model \"" + modelDescriptor.getModelName() + "\" is already registered by another module: existing=" + prevModule + ", new=" + container);
+          LOG.error(
+            "Model \"" + modelDescriptor.getModelName() + "\" is already registered by another module: existing=" + prevModule + ", new=" + container);
         }
         return;
       }
@@ -113,7 +116,7 @@ public class SModelRepository implements CoreComponent {
       if (modelReference.getSModelFqName() != null) {
         myFqNameToModelDescriptorMap.put(modelReference.getSModelFqName(), modelDescriptor);
       }
-      modelDescriptor.attach();
+      ((SModelBase) modelDescriptor).attach();
       ((SModelInternal) modelDescriptor).addModelListener(myModelsListener);
     }
     fireModelAdded(modelDescriptor);
@@ -142,7 +145,7 @@ public class SModelRepository implements CoreComponent {
       myFqNameToModelDescriptorMap.remove(md.getReference().getSModelFqName());
       ((SModelInternal) md).removeModelListener(myModelsListener);
       fireModelRemoved(md);
-      md.detach();
+      ((SModelBase) md).dispose();
     }
   }
 
@@ -405,9 +408,8 @@ public class SModelRepository implements CoreComponent {
 
   @Deprecated
   public void markChanged(SModel model) {
-    SModel modelDescriptor = model.getModelDescriptor();
-    if (modelDescriptor instanceof EditableSModel) {
-      ((EditableSModel) modelDescriptor).setChanged(true);
+    if (model instanceof EditableSModel) {
+      ((EditableSModel) model).setChanged(true);
     }
   }
 

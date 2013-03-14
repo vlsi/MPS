@@ -47,7 +47,7 @@ public class EditorUtil {
 
 
   public static JComponent createSelectIconButton(final SNode sourceNode, final String propertyName, final EditorContext context, boolean copy) {
-    final IModule module = sourceNode.getModel().getModelDescriptor().getModule();
+    final IModule module = sourceNode.getModel().getModule();
 
     return createSelectButton(sourceNode, propertyName, context, true, new _FunctionTypes._return_P1_E0<String, String>() {
       public String invoke(String fullPath) {
@@ -98,7 +98,7 @@ public class EditorUtil {
         if (copy) {
           ModelAccess.instance().requireWrite(new Runnable() {
             public void run() {
-              SModel model = sourceNode.getModel().getModelDescriptor();
+              SModel model = sourceNode.getModel();
               String outputRoot = model.getModule().getBundleHome().getPath() + File.separator + "icons";
               IFile outputRootFile = FileSystem.getInstance().getFileByPath(outputRoot);
               // <node> 

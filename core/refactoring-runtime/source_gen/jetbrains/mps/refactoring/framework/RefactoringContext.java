@@ -312,7 +312,7 @@ public class RefactoringContext {
 
   public void changeModelName(EditableSModel model, String newName) {
     if (LanguageAspect.STRUCTURE.is(model)) {
-      for (SNode concept : ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getNodes(((SModel) ((SModelInternal) model).getSModel()), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
+      for (SNode concept : ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getNodes(((SModel) ((SModelInternal) model)), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
         this.changeFeatureName(concept, NameUtil.longNameFromNamespaceAndShortName(newName, SPropertyOperations.getString(concept, "name")), SPropertyOperations.getString(concept, "name"));
       }
     }
@@ -594,12 +594,12 @@ public class RefactoringContext {
             case NODE:
               SNode node = ((SNode) target);
               setSelectedNode(node);
-              setSelectedModel(node.getModel().getModelDescriptor());
-              setSelectedModule(node.getModel().getModelDescriptor().getModule());
+              setSelectedModel(node.getModel());
+              setSelectedModule(node.getModel().getModule());
 
               break;
             case MODEL:
-              SModel descriptor = ((SModel) target).getModelDescriptor();
+              SModel descriptor = ((SModel) target);
               setSelectedModel(descriptor);
               setSelectedModule(descriptor.getModule());
               break;

@@ -15,12 +15,12 @@ public abstract class ChangeModel {
 
   public void change(SModel model) {
     this.myModel = new DefaultSModel(model.getReference());
-    CopyUtil.copyModelContentAndPreserveIds(model, myModel);
-    CopyUtil.copyModelProperties(model, myModel);
+    CopyUtil.copyModelContentAndPreserveIds(model, myModel.getModelDescriptor());
+    CopyUtil.copyModelProperties(model, myModel.getModelDescriptor());
   }
 
   public void rollback(SModel model) {
-    BaseSModelDescriptor md = (BaseSModelDescriptor) model.getModelDescriptor();
+    BaseSModelDescriptor md = (BaseSModelDescriptor) model;
     md.replace(this.myModel);
   }
 }

@@ -33,7 +33,7 @@ import java.util.ArrayList;
 
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_3341893916018742339(final IOperationContext operationContext, final CreateRootRuleContext _context) {
-    if (LanguageAspect.ACTIONS.is(_context.getOriginalInputModel().getModelDescriptor())) {
+    if (LanguageAspect.ACTIONS.is(_context.getOriginalInputModel())) {
       return true;
     }
     if (ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.actions.structure.NodeSetupFunction")).isNotEmpty() || ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder")).isNotEmpty() || ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder")).isNotEmpty()) {

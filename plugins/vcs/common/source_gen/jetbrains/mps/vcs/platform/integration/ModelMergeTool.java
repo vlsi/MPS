@@ -11,7 +11,7 @@ import com.intellij.openapi.vfs.LocalFileSystem;
 import java.io.File;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import com.intellij.openapi.diff.DiffContent;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vcs.util.MergeConstants;
 import jetbrains.mps.util.FileUtil;
@@ -74,7 +74,7 @@ public class ModelMergeTool extends MergeTool {
 
   @Override
   public boolean canShow(DiffRequest request) {
-    return super.canShow(request) && request.getContents()[MergeConstants.ORIGINAL].getContentType() == MPSFileTypeFactory.MODEL_FILE_TYPE;
+    return super.canShow(request) && request.getContents()[MergeConstants.ORIGINAL].getContentType() == MPSFileTypeFactory.MPS_FILE_TYPE;
   }
 
   private static void resolved(MergeRequestImpl req, final String result) {

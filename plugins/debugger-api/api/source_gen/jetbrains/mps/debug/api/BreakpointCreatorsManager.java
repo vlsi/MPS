@@ -100,7 +100,7 @@ public class BreakpointCreatorsManager implements ApplicationComponent {
       return breakpoint;
     }
 
-    DebugInfo debugInfo = TraceInfoCache.getInstance().get(SNodeOperations.getModel(node).getModelDescriptor());
+    DebugInfo debugInfo = TraceInfoCache.getInstance().get(SNodeOperations.getModel(node));
     if (debugInfo != null) {
       TraceablePositionInfo position = debugInfo.getPositionForNode(node);
       if (position != null) {

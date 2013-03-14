@@ -232,7 +232,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
    */
   @Deprecated
   public final SModel getSModel() {
-    return myModelDescriptor.getSModel();
+    return getModel();
   }
 
   /**
@@ -240,7 +240,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
    */
   @Deprecated
   public final SModel getSModelDescriptor() {
-    return myModelDescriptor;
+    return getModel();
   }
 
   @NotNull

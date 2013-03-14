@@ -60,7 +60,7 @@ public class DefaultOptionsContainer {
     final Wrappers._T<FindersOptions> findersOptions = new Wrappers._T<FindersOptions>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        findersOptions.value = new FindersOptions("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder");
+        findersOptions.value = new FindersOptions("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder");
       }
     });
     return findersOptions.value;

@@ -77,7 +77,7 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
   }
 
   protected EditorCell findTraceableCell(EditorCell foundCell) {
-    DebugInfo debugInfo = TraceInfoCache.getInstance().get(foundCell.getEditorComponent().getEditedNode().getModel().getModelDescriptor());
+    DebugInfo debugInfo = TraceInfoCache.getInstance().get(foundCell.getEditorComponent().getEditedNode().getModel());
     if (debugInfo == null) {
       return null;
     }

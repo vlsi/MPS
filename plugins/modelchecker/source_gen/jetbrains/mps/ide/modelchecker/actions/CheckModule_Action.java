@@ -8,16 +8,16 @@ import jetbrains.mps.icons.MPSIcons;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.List;
+import jetbrains.mps.project.IModule;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.logging.Logger;
@@ -29,6 +29,7 @@ public class CheckModule_Action extends BaseAction {
     super("Check [Module]", "Check [module] for structure and typesystem rules", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
+    this.addPlace(null);
   }
 
   @Override
@@ -39,12 +40,26 @@ public class CheckModule_Action extends BaseAction {
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
-        String whatToCheck = ((IModule) MapSequence.fromMap(_params).get("module")).getClass().getSimpleName();
-        if (((List<IModule>) MapSequence.fromMap(_params).get("modules")).size() > 1) {
-          whatToCheck = ((List<IModule>) MapSequence.fromMap(_params).get("modules")).size() + " Modules";
+        List<IModule> modulesToCheck = new ArrayList<IModule>();
+        if (((List<IModule>) MapSequence.fromMap(_params).get("modules")) != null) {
+          modulesToCheck.addAll(((List<IModule>) MapSequence.fromMap(_params).get("modules")));
         }
+        if (((IModule) MapSequence.fromMap(_params).get("module")) != null && !(modulesToCheck.contains(((IModule) MapSequence.fromMap(_params).get("module"))))) {
+          modulesToCheck.add(((IModule) MapSequence.fromMap(_params).get("module")));
+        }
+
+        String whatToCheck = "Module";
+
+        if (modulesToCheck.size() == 1) {
+          whatToCheck = modulesToCheck.get(0).getClass().getSimpleName();
+        } else if (modulesToCheck.size() > 1) {
+          whatToCheck = modulesToCheck.size() + " Modules";
+        }
+
         event.getPresentation().setText("Check " + whatToCheck);
         event.getPresentation().setDescription("Check " + whatToCheck.toLowerCase() + " for structure and typesystem rules");
+        event.getPresentation().setEnabled(!(modulesToCheck.isEmpty()));
+
       }
     } catch (Throwable t) {
       LOG.error("User's action doUpdate method failed. Action:" + "CheckModule", t);
@@ -56,14 +71,8 @@ public class CheckModule_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.MODULE));
-    if (MapSequence.fromMap(_params).get("module") == null) {
-      return false;
-    }
+    MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.CONTEXT_MODULE));
     MapSequence.fromMap(_params).put("modules", event.getData(MPSDataKeys.MODULES));
-    if (MapSequence.fromMap(_params).get("modules") == null) {
-      return false;
-    }
     MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
@@ -77,10 +86,22 @@ public class CheckModule_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      if (((List<IModule>) MapSequence.fromMap(_params).get("modules")).size() > 1) {
-        ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModules(ListSequence.fromListWithValues(new ArrayList<SModule>(), (Iterable<IModule>) ((List<IModule>) MapSequence.fromMap(_params).get("modules"))), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true);
+      List<IModule> modulesToCheck = new ArrayList<IModule>();
+      if (((List<IModule>) MapSequence.fromMap(_params).get("modules")) != null) {
+        modulesToCheck.addAll(((List<IModule>) MapSequence.fromMap(_params).get("modules")));
+      }
+      if (((IModule) MapSequence.fromMap(_params).get("module")) != null && !(modulesToCheck.contains(((IModule) MapSequence.fromMap(_params).get("module"))))) {
+        modulesToCheck.add(((IModule) MapSequence.fromMap(_params).get("module")));
+      }
+
+      if (modulesToCheck.isEmpty()) {
+        return;
+      }
+
+      if (modulesToCheck.size() > 1) {
+        ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModules(ListSequence.fromListWithValues(new ArrayList<SModule>(), (Iterable<IModule>) modulesToCheck), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true);
       } else {
-        ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModule(((IModule) MapSequence.fromMap(_params).get("module")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true);
+        ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModule(modulesToCheck.get(0), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true);
       }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "CheckModule", t);

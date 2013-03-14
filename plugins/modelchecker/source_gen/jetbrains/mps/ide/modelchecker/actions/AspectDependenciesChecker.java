@@ -89,8 +89,8 @@ public class AspectDependenciesChecker extends SpecificChecker {
   }
 
   public int getModelKind(SModel model, @Nullable SReference reference) {
-    DataSource source = (model.getModelDescriptor() != null ?
-      model.getModelDescriptor().getSource() :
+    DataSource source = (model != null ?
+      model.getSource() :
       null
     );
     IFile modelFile = (source instanceof FileDataSource ?
@@ -104,9 +104,9 @@ public class AspectDependenciesChecker extends SpecificChecker {
       }
     }
 
-    SModule module = model.getModelDescriptor().getModule();
+    SModule module = model.getModule();
     if (module instanceof Language) {
-      LanguageAspect aspect = Language.getModelAspect(model.getModelDescriptor());
+      LanguageAspect aspect = Language.getModelAspect(model);
       if (aspect != null) {
         switch (aspect) {
           case ACTIONS:
@@ -163,7 +163,7 @@ public class AspectDependenciesChecker extends SpecificChecker {
         SNode refTargetRoot = reference.getTargetNode().getContainingRoot();
         if (SNodeOperations.isInstanceOf(refTargetRoot, "jetbrains.mps.baseLanguage.structure.Classifier")) {
           String cName = SPropertyOperations.getString(SNodeOperations.cast(refTargetRoot, "jetbrains.mps.baseLanguage.structure.Classifier"), "name");
-          String modelName = model.getModelDescriptor().getModelName();
+          String modelName = model.getModelName();
           if (findInModule(coreModule, modelName, cName)) {
             return CORE;
           }

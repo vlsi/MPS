@@ -30,22 +30,22 @@ public class BaseTestBody {
   public void addNodeById(final String id) throws Exception {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        SNode node = BaseTestBody.this.myModel.getSModel().getNode(SNodeId.fromString(id));
+        SNode node = BaseTestBody.this.myModel.getNode(SNodeId.fromString(id));
         SNode copy = CopyUtil.copy(node, ((Map<SNode, SNode>) BaseTestBody.this.myMap), true);
         for (SNode a : ListSequence.fromList(SNodeOperations.getDescendants(copy, "jetbrains.mps.lang.test.structure.INodeAnnotattion", false, new String[]{}))) {
           SNodeOperations.deleteNode(a);
         }
-        BaseTestBody.this.myModel.getSModel().addRootNode(copy);
+        BaseTestBody.this.myModel.addRootNode(copy);
         ListSequence.fromList(BaseTestBody.this.myCopyes).addElement(copy);
       }
     });
   }
 
   public SNode getNodeById(String id) {
-    return MapSequence.fromMap(this.myMap).get(this.myModel.getSModel().getNode(SNodeId.fromString(id)));
+    return MapSequence.fromMap(this.myMap).get(this.myModel.getNode(SNodeId.fromString(id)));
   }
 
   public SNode getRealNodeById(String id) {
-    return this.myModel.getSModel().getNode(SNodeId.fromString(id));
+    return this.myModel.getNode(SNodeId.fromString(id));
   }
 }

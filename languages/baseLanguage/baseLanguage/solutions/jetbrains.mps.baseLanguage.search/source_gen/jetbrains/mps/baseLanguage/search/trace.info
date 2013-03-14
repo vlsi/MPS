@@ -178,8 +178,8 @@
     <nodeInfo nodeId="3161373106581137909" fileName="ClassifierAndSuperClassifiersCache.java" startLine="56" startPosition="79" endLine="57" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3161373106581137911" fileName="ClassifierAndSuperClassifiersCache.java" startLine="57" startPosition="15" endLine="58" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3161373106581137864" fileName="ClassifierAndSuperClassifiersCache.java" startLine="62" startPosition="57" endLine="63" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9161721035266980388" fileName="ClassifierAndSuperClassifiersCache.java" startLine="64" startPosition="52" endLine="65" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9161721035266990475" fileName="ClassifierAndSuperClassifiersCache.java" startLine="65" startPosition="84" endLine="66" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="9161721035266980388" fileName="ClassifierAndSuperClassifiersCache.java" startLine="64" startPosition="52" endLine="65" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9161721035266990475" fileName="ClassifierAndSuperClassifiersCache.java" startLine="65" startPosition="63" endLine="66" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="3161373106581137878" fileName="ClassifierAndSuperClassifiersCache.java" startLine="66" startPosition="91" endLine="67" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3161373106581137887" fileName="ClassifierAndSuperClassifiersCache.java" startLine="68" startPosition="5" endLine="69" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6374270137333887457" fileName="ClassifierAndSuperClassifiersCache.java" startLine="72" startPosition="44" endLine="73" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -201,7 +201,7 @@
     <nodeInfo nodeId="3161373106581138072" fileName="ClassifierAndSuperClassifiersCache.java" startLine="111" startPosition="60" endLine="112" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3161373106581138082" fileName="ClassifierAndSuperClassifiersCache.java" startLine="112" startPosition="225" endLine="113" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7055390039634090154" fileName="ClassifierAndSuperClassifiersCache.java" startLine="116" startPosition="98" endLine="117" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5500967171012036944" fileName="ClassifierAndSuperClassifiersCache.java" startLine="118" startPosition="83" endLine="119" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5500967171012036944" fileName="ClassifierAndSuperClassifiersCache.java" startLine="118" startPosition="62" endLine="119" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5500967171012036995" fileName="ClassifierAndSuperClassifiersCache.java" startLine="120" startPosition="5" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7055390039634090224" fileName="ClassifierAndSuperClassifiersCache.java" startLine="124" startPosition="62" endLine="125" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3161373106581137560" fileName="ClassifierAndSuperClassifiersCache.java" startLine="131" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
@@ -495,7 +495,7 @@
     <scopeInfo nodeId="3161373106581139654" fileName="ClassifierAndSuperClassifiersCache.java" startLine="43" startPosition="74" endLine="44" endPosition="79" />
     <scopeInfo nodeId="3161373106581139659" fileName="ClassifierAndSuperClassifiersCache.java" startLine="49" startPosition="74" endLine="50" endPosition="78" />
     <scopeInfo nodeId="3161373106581138002" fileName="ClassifierAndSuperClassifiersCache.java" startLine="90" startPosition="26" endLine="91" endPosition="36" />
-    <scopeInfo nodeId="5500967171012036997" fileName="ClassifierAndSuperClassifiersCache.java" startLine="118" startPosition="83" endLine="119" endPosition="76" />
+    <scopeInfo nodeId="5500967171012036997" fileName="ClassifierAndSuperClassifiersCache.java" startLine="118" startPosition="62" endLine="119" endPosition="76" />
     <scopeInfo nodeId="7055390039634090223" fileName="ClassifierAndSuperClassifiersCache.java" startLine="124" startPosition="62" endLine="125" endPosition="68" />
     <scopeInfo nodeId="3161373106581138098" fileName="ClassifierAndSuperClassifiersCache.java" startLine="142" startPosition="41" endLine="143" endPosition="32" />
     <scopeInfo nodeId="3161373106581138103" fileName="ClassifierAndSuperClassifiersCache.java" startLine="147" startPosition="43" endLine="148" endPosition="35" />
@@ -1131,375 +1131,359 @@
     <unitInfo nodeId="3161373106581136688" fileName="ClassifiersCache.java" startLine="26" startPosition="0" endLine="185" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.ClassifiersCache" />
   </root>
   <root nodeRef="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)/3161373106581137350">
-    <nodeInfo nodeId="2990203945682755988" fileName="VisibilityUtil.java" startLine="22" startPosition="80" endLine="23" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2990203945682755992" fileName="VisibilityUtil.java" startLine="24" startPosition="96" endLine="25" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2933227483039242799" fileName="VisibilityUtil.java" startLine="27" startPosition="122" endLine="28" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2990203945682756003" fileName="VisibilityUtil.java" startLine="30" startPosition="251" endLine="31" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2990203945682756018" fileName="VisibilityUtil.java" startLine="33" startPosition="150" endLine="34" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2990203945682756030" fileName="VisibilityUtil.java" startLine="35" startPosition="5" endLine="36" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2990203945682756034" fileName="VisibilityUtil.java" startLine="37" startPosition="57" endLine="38" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2990203945682756043" fileName="VisibilityUtil.java" startLine="40" startPosition="152" endLine="41" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2990203945682756045" fileName="VisibilityUtil.java" startLine="41" startPosition="50" endLine="42" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2990203945682756139" fileName="VisibilityUtil.java" startLine="45" startPosition="426" endLine="46" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="46179992838786363" fileName="VisibilityUtil.java" startLine="46" startPosition="107" endLine="47" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="546439919561133701" fileName="VisibilityUtil.java" startLine="48" startPosition="427" endLine="49" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2990203945682756163" fileName="VisibilityUtil.java" startLine="51" startPosition="121" endLine="52" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2990203945682756165" fileName="VisibilityUtil.java" startLine="52" startPosition="98" endLine="53" endPosition="323" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2990203945682756184" fileName="VisibilityUtil.java" startLine="54" startPosition="18" endLine="55" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2990203945682756199" fileName="VisibilityUtil.java" startLine="59" startPosition="5" endLine="60" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3192866263144677118" fileName="VisibilityUtil.java" startLine="63" startPosition="57" endLine="64" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3192866263144677178" fileName="VisibilityUtil.java" startLine="67" startPosition="58" endLine="68" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2684528044289749171" fileName="VisibilityUtil.java" startLine="71" startPosition="101" endLine="72" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2684528044289748980" fileName="VisibilityUtil.java" startLine="73" startPosition="31" endLine="74" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2684528044289748956" fileName="VisibilityUtil.java" startLine="76" startPosition="156" endLine="77" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6139857295094308053" fileName="VisibilityUtil.java" startLine="78" startPosition="5" endLine="79" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2684528044289798057" fileName="VisibilityUtil.java" startLine="80" startPosition="53" endLine="81" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2684528044289749000" fileName="VisibilityUtil.java" startLine="83" startPosition="211" endLine="84" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6139857295094308117" fileName="VisibilityUtil.java" startLine="86" startPosition="158" endLine="87" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2684528044289749116" fileName="VisibilityUtil.java" startLine="89" startPosition="100" endLine="90" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2684528044289749121" fileName="VisibilityUtil.java" startLine="93" startPosition="5" endLine="94" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4228096044112584960" fileName="VisibilityUtil.java" startLine="97" startPosition="75" endLine="98" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="9049506802439959956" fileName="VisibilityUtil.java" startLine="98" startPosition="34" endLine="99" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4228096044112585445" fileName="VisibilityUtil.java" startLine="102" startPosition="92" endLine="103" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4228096044112618483" fileName="VisibilityUtil.java" startLine="105" startPosition="40" endLine="106" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3342685437084052880" fileName="VisibilityUtil.java" startLine="111" startPosition="88" endLine="112" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3342685437084052880" fileName="VisibilityUtil.java" startLine="112" startPosition="30" endLine="113" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3342685437084052880" fileName="VisibilityUtil.java" startLine="113" startPosition="165" endLine="114" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3342685437084052880" fileName="VisibilityUtil.java" startLine="114" startPosition="88" endLine="115" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3161373106581137352" fileName="VisibilityUtil.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="VisibilityUtil#()V" />
-    <nodeInfo nodeId="2990203945682756180" fileName="VisibilityUtil.java" startLine="54" startPosition="16" endLine="56" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3342685437084052880" fileName="VisibilityUtil.java" startLine="112" startPosition="30" endLine="114" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3342685437084052880" fileName="VisibilityUtil.java" startLine="112" startPosition="30" endLine="114" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2990203945682755990" fileName="VisibilityUtil.java" startLine="23" startPosition="115" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2933227483039242782" fileName="VisibilityUtil.java" startLine="26" startPosition="5" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2990203945682756001" fileName="VisibilityUtil.java" startLine="29" startPosition="5" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2990203945682756016" fileName="VisibilityUtil.java" startLine="32" startPosition="5" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2990203945682756032" fileName="VisibilityUtil.java" startLine="36" startPosition="35" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="546439919561133667" fileName="VisibilityUtil.java" startLine="47" startPosition="110" endLine="50" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3192866263144677099" fileName="VisibilityUtil.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="packageName#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="3192866263144677170" fileName="VisibilityUtil.java" startLine="67" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="topClassifier#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="2684528044289748970" fileName="VisibilityUtil.java" startLine="72" startPosition="42" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2684528044289748939" fileName="VisibilityUtil.java" startLine="75" startPosition="5" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2684528044289798020" fileName="VisibilityUtil.java" startLine="79" startPosition="124" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2684528044289748983" fileName="VisibilityUtil.java" startLine="82" startPosition="5" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2684528044289749091" fileName="VisibilityUtil.java" startLine="88" startPosition="143" endLine="91" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4228096044112618479" fileName="VisibilityUtil.java" startLine="105" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="9049506802439948323" fileName="VisibilityUtil.java" startLine="97" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isMember#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="2684528044289749072" fileName="VisibilityUtil.java" startLine="87" startPosition="36" endLine="92" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4228096044112585489" fileName="VisibilityUtil.java" startLine="103" startPosition="49" endLine="108" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3342685437084052880" fileName="VisibilityUtil.java" startLine="111" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_v8uv56_b0a2a0a0a2a7a1#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="2684528044289749053" fileName="VisibilityUtil.java" startLine="85" startPosition="5" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4228096044112585437" fileName="VisibilityUtil.java" startLine="102" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isLocalMember#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="2990203945682756128" fileName="VisibilityUtil.java" startLine="44" startPosition="61" endLine="56" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2990203945682756126" fileName="VisibilityUtil.java" startLine="43" startPosition="143" endLine="57" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2990203945682756117" fileName="VisibilityUtil.java" startLine="42" startPosition="124" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2990203945682756041" fileName="VisibilityUtil.java" startLine="39" startPosition="5" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2684528044289748349" fileName="VisibilityUtil.java" startLine="71" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isClassifierAccessible#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="3161373106581137355" fileName="VisibilityUtil.java" startLine="22" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isVisible#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <scopeInfo nodeId="3161373106581137354" fileName="VisibilityUtil.java" startLine="19" startPosition="28" endLine="19" endPosition="28" />
-    <scopeInfo nodeId="2990203945682755991" fileName="VisibilityUtil.java" startLine="24" startPosition="96" endLine="25" endPosition="124" />
-    <scopeInfo nodeId="2933227483039242783" fileName="VisibilityUtil.java" startLine="27" startPosition="122" endLine="28" endPosition="18" />
-    <scopeInfo nodeId="2990203945682756002" fileName="VisibilityUtil.java" startLine="30" startPosition="251" endLine="31" endPosition="18" />
-    <scopeInfo nodeId="2990203945682756017" fileName="VisibilityUtil.java" startLine="33" startPosition="150" endLine="34" endPosition="59" />
-    <scopeInfo nodeId="2990203945682756033" fileName="VisibilityUtil.java" startLine="37" startPosition="57" endLine="38" endPosition="18" />
-    <scopeInfo nodeId="546439919561133668" fileName="VisibilityUtil.java" startLine="48" startPosition="427" endLine="49" endPosition="26" />
-    <scopeInfo nodeId="2990203945682756181" fileName="VisibilityUtil.java" startLine="54" startPosition="18" endLine="55" endPosition="24" />
-    <scopeInfo nodeId="3192866263144677102" fileName="VisibilityUtil.java" startLine="63" startPosition="57" endLine="64" endPosition="89" />
-    <scopeInfo nodeId="3192866263144677173" fileName="VisibilityUtil.java" startLine="67" startPosition="58" endLine="68" endPosition="133" />
-    <scopeInfo nodeId="2684528044289748971" fileName="VisibilityUtil.java" startLine="73" startPosition="31" endLine="74" endPosition="18" />
-    <scopeInfo nodeId="2684528044289748940" fileName="VisibilityUtil.java" startLine="76" startPosition="156" endLine="77" endPosition="65" />
-    <scopeInfo nodeId="2684528044289798021" fileName="VisibilityUtil.java" startLine="80" startPosition="53" endLine="81" endPosition="19" />
-    <scopeInfo nodeId="2684528044289748984" fileName="VisibilityUtil.java" startLine="83" startPosition="211" endLine="84" endPosition="18" />
-    <scopeInfo nodeId="2684528044289749093" fileName="VisibilityUtil.java" startLine="89" startPosition="100" endLine="90" endPosition="22" />
-    <scopeInfo nodeId="4228096044112618480" fileName="VisibilityUtil.java" startLine="105" startPosition="40" endLine="106" endPosition="37" />
-    <scopeInfo nodeId="3161373106581137352" fileName="VisibilityUtil.java" startLine="19" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="2990203945682756162" fileName="VisibilityUtil.java" startLine="51" startPosition="121" endLine="53" endPosition="323" />
-    <scopeInfo nodeId="9049506802439948326" fileName="VisibilityUtil.java" startLine="97" startPosition="75" endLine="99" endPosition="194" />
-    <scopeInfo nodeId="3342685437084052880" fileName="VisibilityUtil.java" startLine="112" startPosition="30" endLine="114" endPosition="88" />
-    <scopeInfo nodeId="3192866263144677099" fileName="VisibilityUtil.java" startLine="63" startPosition="0" endLine="66" endPosition="0">
+    <nodeInfo nodeId="2990203945682755988" fileName="VisibilityUtil.java" startLine="23" startPosition="80" endLine="24" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2990203945682755992" fileName="VisibilityUtil.java" startLine="25" startPosition="96" endLine="26" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2933227483039242799" fileName="VisibilityUtil.java" startLine="28" startPosition="122" endLine="29" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2990203945682756003" fileName="VisibilityUtil.java" startLine="31" startPosition="251" endLine="32" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2990203945682756018" fileName="VisibilityUtil.java" startLine="34" startPosition="150" endLine="35" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2990203945682756030" fileName="VisibilityUtil.java" startLine="36" startPosition="5" endLine="37" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2990203945682756034" fileName="VisibilityUtil.java" startLine="38" startPosition="57" endLine="39" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2990203945682756043" fileName="VisibilityUtil.java" startLine="41" startPosition="152" endLine="42" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2990203945682756045" fileName="VisibilityUtil.java" startLine="42" startPosition="50" endLine="43" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2990203945682756139" fileName="VisibilityUtil.java" startLine="46" startPosition="426" endLine="47" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="46179992838786363" fileName="VisibilityUtil.java" startLine="47" startPosition="107" endLine="48" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="546439919561133701" fileName="VisibilityUtil.java" startLine="49" startPosition="427" endLine="50" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2990203945682756163" fileName="VisibilityUtil.java" startLine="52" startPosition="121" endLine="53" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2990203945682756165" fileName="VisibilityUtil.java" startLine="53" startPosition="98" endLine="54" endPosition="323" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2990203945682756184" fileName="VisibilityUtil.java" startLine="55" startPosition="18" endLine="56" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2990203945682756199" fileName="VisibilityUtil.java" startLine="60" startPosition="5" endLine="61" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3192866263144677118" fileName="VisibilityUtil.java" startLine="64" startPosition="57" endLine="65" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3192866263144677178" fileName="VisibilityUtil.java" startLine="68" startPosition="58" endLine="69" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2684528044289749171" fileName="VisibilityUtil.java" startLine="72" startPosition="101" endLine="73" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2684528044289748980" fileName="VisibilityUtil.java" startLine="74" startPosition="31" endLine="75" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2684528044289748956" fileName="VisibilityUtil.java" startLine="77" startPosition="156" endLine="78" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6139857295094308053" fileName="VisibilityUtil.java" startLine="79" startPosition="5" endLine="80" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2684528044289798057" fileName="VisibilityUtil.java" startLine="81" startPosition="53" endLine="82" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2684528044289749000" fileName="VisibilityUtil.java" startLine="84" startPosition="211" endLine="85" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6139857295094308117" fileName="VisibilityUtil.java" startLine="87" startPosition="158" endLine="88" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2684528044289749116" fileName="VisibilityUtil.java" startLine="90" startPosition="100" endLine="91" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2684528044289749121" fileName="VisibilityUtil.java" startLine="94" startPosition="5" endLine="95" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4228096044112584960" fileName="VisibilityUtil.java" startLine="98" startPosition="75" endLine="99" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="9049506802439959956" fileName="VisibilityUtil.java" startLine="99" startPosition="34" endLine="100" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4228096044112585445" fileName="VisibilityUtil.java" startLine="103" startPosition="92" endLine="104" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4228096044112618483" fileName="VisibilityUtil.java" startLine="106" startPosition="40" endLine="107" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3342685437084052880" fileName="VisibilityUtil.java" startLine="112" startPosition="88" endLine="113" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3342685437084052880" fileName="VisibilityUtil.java" startLine="113" startPosition="63" endLine="114" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3342685437084052880" fileName="VisibilityUtil.java" startLine="114" startPosition="30" endLine="115" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3342685437084052880" fileName="VisibilityUtil.java" startLine="115" startPosition="165" endLine="116" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3342685437084052880" fileName="VisibilityUtil.java" startLine="116" startPosition="88" endLine="117" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3161373106581137352" fileName="VisibilityUtil.java" startLine="20" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="VisibilityUtil#()V" />
+    <nodeInfo nodeId="2990203945682756180" fileName="VisibilityUtil.java" startLine="55" startPosition="16" endLine="57" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3342685437084052880" fileName="VisibilityUtil.java" startLine="114" startPosition="30" endLine="116" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3342685437084052880" fileName="VisibilityUtil.java" startLine="114" startPosition="30" endLine="116" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2990203945682755990" fileName="VisibilityUtil.java" startLine="24" startPosition="115" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2933227483039242782" fileName="VisibilityUtil.java" startLine="27" startPosition="5" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2990203945682756001" fileName="VisibilityUtil.java" startLine="30" startPosition="5" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2990203945682756016" fileName="VisibilityUtil.java" startLine="33" startPosition="5" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2990203945682756032" fileName="VisibilityUtil.java" startLine="37" startPosition="35" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="546439919561133667" fileName="VisibilityUtil.java" startLine="48" startPosition="110" endLine="51" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3192866263144677099" fileName="VisibilityUtil.java" startLine="64" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="packageName#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="3192866263144677170" fileName="VisibilityUtil.java" startLine="68" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="topClassifier#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2684528044289748970" fileName="VisibilityUtil.java" startLine="73" startPosition="42" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2684528044289748939" fileName="VisibilityUtil.java" startLine="76" startPosition="5" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2684528044289798020" fileName="VisibilityUtil.java" startLine="80" startPosition="124" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2684528044289748983" fileName="VisibilityUtil.java" startLine="83" startPosition="5" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2684528044289749091" fileName="VisibilityUtil.java" startLine="89" startPosition="143" endLine="92" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4228096044112618479" fileName="VisibilityUtil.java" startLine="106" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="9049506802439948323" fileName="VisibilityUtil.java" startLine="98" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isMember#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="2684528044289749072" fileName="VisibilityUtil.java" startLine="88" startPosition="36" endLine="93" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4228096044112585489" fileName="VisibilityUtil.java" startLine="104" startPosition="49" endLine="109" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3342685437084052880" fileName="VisibilityUtil.java" startLine="112" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_v8uv56_b0a2a0a0a2a7a1#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2684528044289749053" fileName="VisibilityUtil.java" startLine="86" startPosition="5" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4228096044112585437" fileName="VisibilityUtil.java" startLine="103" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isLocalMember#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="2990203945682756128" fileName="VisibilityUtil.java" startLine="45" startPosition="61" endLine="57" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2990203945682756126" fileName="VisibilityUtil.java" startLine="44" startPosition="143" endLine="58" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2990203945682756117" fileName="VisibilityUtil.java" startLine="43" startPosition="124" endLine="59" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2990203945682756041" fileName="VisibilityUtil.java" startLine="40" startPosition="5" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2684528044289748349" fileName="VisibilityUtil.java" startLine="72" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isClassifierAccessible#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="3161373106581137355" fileName="VisibilityUtil.java" startLine="23" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isVisible#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <scopeInfo nodeId="3161373106581137354" fileName="VisibilityUtil.java" startLine="20" startPosition="28" endLine="20" endPosition="28" />
+    <scopeInfo nodeId="2990203945682755991" fileName="VisibilityUtil.java" startLine="25" startPosition="96" endLine="26" endPosition="124" />
+    <scopeInfo nodeId="2933227483039242783" fileName="VisibilityUtil.java" startLine="28" startPosition="122" endLine="29" endPosition="18" />
+    <scopeInfo nodeId="2990203945682756002" fileName="VisibilityUtil.java" startLine="31" startPosition="251" endLine="32" endPosition="18" />
+    <scopeInfo nodeId="2990203945682756017" fileName="VisibilityUtil.java" startLine="34" startPosition="150" endLine="35" endPosition="59" />
+    <scopeInfo nodeId="2990203945682756033" fileName="VisibilityUtil.java" startLine="38" startPosition="57" endLine="39" endPosition="18" />
+    <scopeInfo nodeId="546439919561133668" fileName="VisibilityUtil.java" startLine="49" startPosition="427" endLine="50" endPosition="26" />
+    <scopeInfo nodeId="2990203945682756181" fileName="VisibilityUtil.java" startLine="55" startPosition="18" endLine="56" endPosition="24" />
+    <scopeInfo nodeId="3192866263144677102" fileName="VisibilityUtil.java" startLine="64" startPosition="57" endLine="65" endPosition="89" />
+    <scopeInfo nodeId="3192866263144677173" fileName="VisibilityUtil.java" startLine="68" startPosition="58" endLine="69" endPosition="133" />
+    <scopeInfo nodeId="2684528044289748971" fileName="VisibilityUtil.java" startLine="74" startPosition="31" endLine="75" endPosition="18" />
+    <scopeInfo nodeId="2684528044289748940" fileName="VisibilityUtil.java" startLine="77" startPosition="156" endLine="78" endPosition="65" />
+    <scopeInfo nodeId="2684528044289798021" fileName="VisibilityUtil.java" startLine="81" startPosition="53" endLine="82" endPosition="19" />
+    <scopeInfo nodeId="2684528044289748984" fileName="VisibilityUtil.java" startLine="84" startPosition="211" endLine="85" endPosition="18" />
+    <scopeInfo nodeId="2684528044289749093" fileName="VisibilityUtil.java" startLine="90" startPosition="100" endLine="91" endPosition="22" />
+    <scopeInfo nodeId="4228096044112618480" fileName="VisibilityUtil.java" startLine="106" startPosition="40" endLine="107" endPosition="37" />
+    <scopeInfo nodeId="3161373106581137352" fileName="VisibilityUtil.java" startLine="20" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="2990203945682756162" fileName="VisibilityUtil.java" startLine="52" startPosition="121" endLine="54" endPosition="323" />
+    <scopeInfo nodeId="9049506802439948326" fileName="VisibilityUtil.java" startLine="98" startPosition="75" endLine="100" endPosition="194" />
+    <scopeInfo nodeId="3342685437084052880" fileName="VisibilityUtil.java" startLine="114" startPosition="30" endLine="116" endPosition="88" />
+    <scopeInfo nodeId="3192866263144677099" fileName="VisibilityUtil.java" startLine="64" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="3192866263144677104" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3192866263144677170" fileName="VisibilityUtil.java" startLine="67" startPosition="0" endLine="70" endPosition="0">
+    <scopeInfo nodeId="3192866263144677170" fileName="VisibilityUtil.java" startLine="68" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="3192866263144677175" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2684528044289749075" fileName="VisibilityUtil.java" startLine="88" startPosition="143" endLine="91" endPosition="9" />
-    <scopeInfo nodeId="4228096044112618479" fileName="VisibilityUtil.java" startLine="105" startPosition="0" endLine="108" endPosition="0">
+    <scopeInfo nodeId="2684528044289749075" fileName="VisibilityUtil.java" startLine="89" startPosition="143" endLine="92" endPosition="9" />
+    <scopeInfo nodeId="4228096044112618479" fileName="VisibilityUtil.java" startLine="106" startPosition="0" endLine="109" endPosition="0">
       <varInfo nodeId="4228096044112618479" varName="cls" />
     </scopeInfo>
-    <scopeInfo nodeId="9049506802439948323" fileName="VisibilityUtil.java" startLine="97" startPosition="0" endLine="101" endPosition="0">
+    <scopeInfo nodeId="9049506802439948323" fileName="VisibilityUtil.java" startLine="98" startPosition="0" endLine="102" endPosition="0">
       <varInfo nodeId="9049506802439959933" varName="classifier" />
       <varInfo nodeId="9049506802439959939" varName="member" />
     </scopeInfo>
-    <scopeInfo nodeId="3342685437084052880" fileName="VisibilityUtil.java" startLine="111" startPosition="88" endLine="115" endPosition="24">
-      <varInfo nodeId="3342685437084052880" varName="quotedNode_2" />
-    </scopeInfo>
-    <scopeInfo nodeId="2990203945682756138" fileName="VisibilityUtil.java" startLine="45" startPosition="426" endLine="50" endPosition="13" />
-    <scopeInfo nodeId="2684528044289749072" fileName="VisibilityUtil.java" startLine="87" startPosition="36" endLine="92" endPosition="7">
+    <scopeInfo nodeId="2990203945682756138" fileName="VisibilityUtil.java" startLine="46" startPosition="426" endLine="51" endPosition="13" />
+    <scopeInfo nodeId="2684528044289749072" fileName="VisibilityUtil.java" startLine="88" startPosition="36" endLine="93" endPosition="7">
       <varInfo nodeId="2684528044289749073" varName="cls" />
     </scopeInfo>
-    <scopeInfo nodeId="2684528044289749054" fileName="VisibilityUtil.java" startLine="86" startPosition="158" endLine="92" endPosition="7" />
-    <scopeInfo nodeId="4228096044112585440" fileName="VisibilityUtil.java" startLine="102" startPosition="92" endLine="108" endPosition="7" />
-    <scopeInfo nodeId="3342685437084052880" fileName="VisibilityUtil.java" startLine="111" startPosition="0" endLine="117" endPosition="0">
+    <scopeInfo nodeId="3342685437084052880" fileName="VisibilityUtil.java" startLine="112" startPosition="88" endLine="117" endPosition="24">
+      <varInfo nodeId="3342685437084052880" varName="facade" />
+      <varInfo nodeId="3342685437084052880" varName="quotedNode_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="2684528044289749054" fileName="VisibilityUtil.java" startLine="87" startPosition="158" endLine="93" endPosition="7" />
+    <scopeInfo nodeId="4228096044112585440" fileName="VisibilityUtil.java" startLine="103" startPosition="92" endLine="109" endPosition="7" />
+    <scopeInfo nodeId="3342685437084052880" fileName="VisibilityUtil.java" startLine="112" startPosition="0" endLine="119" endPosition="0">
       <varInfo nodeId="3342685437084052880" varName="parameter_1" />
     </scopeInfo>
-    <scopeInfo nodeId="4228096044112585437" fileName="VisibilityUtil.java" startLine="102" startPosition="0" endLine="110" endPosition="0">
+    <scopeInfo nodeId="4228096044112585437" fileName="VisibilityUtil.java" startLine="103" startPosition="0" endLine="111" endPosition="0">
       <varInfo nodeId="4228096044112585460" varName="context" />
       <varInfo nodeId="4228096044112585442" varName="member" />
     </scopeInfo>
-    <scopeInfo nodeId="2990203945682756127" fileName="VisibilityUtil.java" startLine="44" startPosition="61" endLine="56" endPosition="11" />
-    <scopeInfo nodeId="2990203945682756125" fileName="VisibilityUtil.java" startLine="43" startPosition="143" endLine="57" endPosition="9" />
-    <scopeInfo nodeId="2990203945682756117" fileName="VisibilityUtil.java" startLine="42" startPosition="124" endLine="58" endPosition="7">
+    <scopeInfo nodeId="2990203945682756127" fileName="VisibilityUtil.java" startLine="45" startPosition="61" endLine="57" endPosition="11" />
+    <scopeInfo nodeId="2990203945682756125" fileName="VisibilityUtil.java" startLine="44" startPosition="143" endLine="58" endPosition="9" />
+    <scopeInfo nodeId="2990203945682756117" fileName="VisibilityUtil.java" startLine="43" startPosition="124" endLine="59" endPosition="7">
       <varInfo nodeId="2990203945682756118" varName="cls" />
     </scopeInfo>
-    <scopeInfo nodeId="2990203945682756042" fileName="VisibilityUtil.java" startLine="40" startPosition="152" endLine="58" endPosition="7">
+    <scopeInfo nodeId="2990203945682756042" fileName="VisibilityUtil.java" startLine="41" startPosition="152" endLine="59" endPosition="7">
       <varInfo nodeId="2990203945682756046" varName="classifier" />
     </scopeInfo>
-    <scopeInfo nodeId="2684528044289748352" fileName="VisibilityUtil.java" startLine="71" startPosition="101" endLine="94" endPosition="17">
+    <scopeInfo nodeId="2684528044289748352" fileName="VisibilityUtil.java" startLine="72" startPosition="101" endLine="95" endPosition="17">
       <varInfo nodeId="6139857295094308054" varName="parent" />
     </scopeInfo>
-    <scopeInfo nodeId="2684528044289748349" fileName="VisibilityUtil.java" startLine="71" startPosition="0" endLine="96" endPosition="0">
+    <scopeInfo nodeId="2684528044289748349" fileName="VisibilityUtil.java" startLine="72" startPosition="0" endLine="97" endPosition="0">
       <varInfo nodeId="2684528044289748356" varName="classifier" />
       <varInfo nodeId="2684528044289748354" varName="context" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581137361" fileName="VisibilityUtil.java" startLine="22" startPosition="80" endLine="60" endPosition="17" />
-    <scopeInfo nodeId="3161373106581137355" fileName="VisibilityUtil.java" startLine="22" startPosition="0" endLine="62" endPosition="0">
+    <scopeInfo nodeId="3161373106581137361" fileName="VisibilityUtil.java" startLine="23" startPosition="80" endLine="61" endPosition="17" />
+    <scopeInfo nodeId="3161373106581137355" fileName="VisibilityUtil.java" startLine="23" startPosition="0" endLine="63" endPosition="0">
       <varInfo nodeId="3161373106581137357" varName="context" />
       <varInfo nodeId="3161373106581137359" varName="name" />
     </scopeInfo>
-    <unitInfo nodeId="4228096044112618479" fileName="VisibilityUtil.java" startLine="104" startPosition="137" endLine="108" endPosition="5" unitName="jetbrains.mps.baseLanguage.search.VisibilityUtil$1" />
-    <unitInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="18" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.VisibilityUtil" />
+    <unitInfo nodeId="4228096044112618479" fileName="VisibilityUtil.java" startLine="105" startPosition="137" endLine="109" endPosition="5" unitName="jetbrains.mps.baseLanguage.search.VisibilityUtil$1" />
+    <unitInfo nodeId="3161373106581137350" fileName="VisibilityUtil.java" startLine="19" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.VisibilityUtil" />
   </root>
   <root nodeRef="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)/3161373106581139670">
-    <nodeInfo nodeId="3161373106581139695" fileName="ReachableClassifiersScope.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myScope" />
-    <nodeInfo nodeId="3161373106581139698" fileName="ReachableClassifiersScope.java" startLine="33" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
-    <nodeInfo nodeId="6405505214478649556" fileName="ReachableClassifiersScope.java" startLine="36" startPosition="80" endLine="37" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3161373106581139710" fileName="ReachableClassifiersScope.java" startLine="37" startPosition="65" endLine="38" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3161373106581139712" fileName="ReachableClassifiersScope.java" startLine="38" startPosition="22" endLine="39" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161373106581139718" fileName="ReachableClassifiersScope.java" startLine="39" startPosition="25" endLine="40" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161373106581139728" fileName="ReachableClassifiersScope.java" startLine="43" startPosition="28" endLine="44" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3161373106581139736" fileName="ReachableClassifiersScope.java" startLine="47" startPosition="28" endLine="48" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3161373106581139745" fileName="ReachableClassifiersScope.java" startLine="53" startPosition="39" endLine="54" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3161373106581139760" fileName="ReachableClassifiersScope.java" startLine="54" startPosition="115" endLine="55" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3161373106581139772" fileName="ReachableClassifiersScope.java" startLine="56" startPosition="33" endLine="57" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3161373106581139780" fileName="ReachableClassifiersScope.java" startLine="57" startPosition="85" endLine="58" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161373106581139785" fileName="ReachableClassifiersScope.java" startLine="59" startPosition="5" endLine="60" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3161373106581139801" fileName="ReachableClassifiersScope.java" startLine="65" startPosition="107" endLine="66" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3161373106581139810" fileName="ReachableClassifiersScope.java" startLine="67" startPosition="5" endLine="68" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3161373106581139676" fileName="ReachableClassifiersScope.java" startLine="72" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
-    <nodeInfo nodeId="3161373106581139679" fileName="ReachableClassifiersScope.java" startLine="73" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myScope" />
-    <nodeInfo nodeId="3161373106581139815" fileName="ReachableClassifiersScope.java" startLine="75" startPosition="72" endLine="76" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161373106581139821" fileName="ReachableClassifiersScope.java" startLine="76" startPosition="27" endLine="77" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="484255784786293072" fileName="ReachableClassifiersScope.java" startLine="81" startPosition="96" endLine="82" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="484255784786293112" fileName="ReachableClassifiersScope.java" startLine="82" startPosition="39" endLine="83" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5218355222333947488" fileName="ReachableClassifiersScope.java" startLine="84" startPosition="58" endLine="85" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5218355222333947443" fileName="ReachableClassifiersScope.java" startLine="85" startPosition="36" endLine="86" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5218355222333947469" fileName="ReachableClassifiersScope.java" startLine="87" startPosition="67" endLine="88" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5218355222333946163" fileName="ReachableClassifiersScope.java" startLine="89" startPosition="9" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5218355222333947492" fileName="ReachableClassifiersScope.java" startLine="90" startPosition="0" endLine="91" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="484255784786293230" fileName="ReachableClassifiersScope.java" startLine="91" startPosition="29" endLine="92" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="484255784786293122" fileName="ReachableClassifiersScope.java" startLine="92" startPosition="59" endLine="93" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5489342298079640443" fileName="ReachableClassifiersScope.java" startLine="94" startPosition="42" endLine="95" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="484255784786293219" fileName="ReachableClassifiersScope.java" startLine="96" startPosition="9" endLine="97" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="484255784786293228" fileName="ReachableClassifiersScope.java" startLine="98" startPosition="7" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5489342298079639029" fileName="ReachableClassifiersScope.java" startLine="100" startPosition="41" endLine="101" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161373106581139828" fileName="ReachableClassifiersScope.java" startLine="103" startPosition="55" endLine="104" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3161373106581139842" fileName="ReachableClassifiersScope.java" startLine="105" startPosition="34" endLine="106" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9115375588018431177" fileName="ReachableClassifiersScope.java" startLine="107" startPosition="9" endLine="108" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="484255784786291159" fileName="ReachableClassifiersScope.java" startLine="109" startPosition="7" endLine="110" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="484255784786293234" fileName="ReachableClassifiersScope.java" startLine="110" startPosition="61" endLine="111" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1592218692215929383" fileName="ReachableClassifiersScope.java" startLine="114" startPosition="91" endLine="115" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="711884569791120986" fileName="ReachableClassifiersScope.java" startLine="119" startPosition="8" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="9115375588018481348" fileName="ReachableClassifiersScope.java" startLine="120" startPosition="0" endLine="121" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4788436444168056267" fileName="ReachableClassifiersScope.java" startLine="123" startPosition="55" endLine="124" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="484255784786293170" fileName="ReachableClassifiersScope.java" startLine="126" startPosition="22" endLine="127" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7396589207137119460" fileName="ReachableClassifiersScope.java" startLine="128" startPosition="33" endLine="129" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="711884569791120980" fileName="ReachableClassifiersScope.java" startLine="131" startPosition="40" endLine="132" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="711884569791120982" fileName="ReachableClassifiersScope.java" startLine="133" startPosition="9" endLine="134" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="711884569791120997" fileName="ReachableClassifiersScope.java" startLine="135" startPosition="7" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="9115375588018481571" fileName="ReachableClassifiersScope.java" startLine="137" startPosition="57" endLine="138" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2713850407672623712" fileName="ReachableClassifiersScope.java" startLine="142" startPosition="57" endLine="143" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6276024251870231366" fileName="ReachableClassifiersScope.java" startLine="145" startPosition="163" endLine="146" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2051574960807840863" fileName="ReachableClassifiersScope.java" startLine="150" startPosition="43" endLine="151" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2051574960807840884" fileName="ReachableClassifiersScope.java" startLine="154" startPosition="72" endLine="155" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2713850407672590133" fileName="ReachableClassifiersScope.java" startLine="156" startPosition="9" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="711884569791121063" fileName="ReachableClassifiersScope.java" startLine="157" startPosition="0" endLine="158" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="711884569791121078" fileName="ReachableClassifiersScope.java" startLine="158" startPosition="58" endLine="159" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="711884569791121085" fileName="ReachableClassifiersScope.java" startLine="159" startPosition="56" endLine="160" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="711884569791121098" fileName="ReachableClassifiersScope.java" startLine="160" startPosition="40" endLine="161" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="711884569791121103" fileName="ReachableClassifiersScope.java" startLine="161" startPosition="31" endLine="162" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="711884569791121090" fileName="ReachableClassifiersScope.java" startLine="162" startPosition="85" endLine="163" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="711884569791122509" fileName="ReachableClassifiersScope.java" startLine="165" startPosition="39" endLine="166" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="711884569791121072" fileName="ReachableClassifiersScope.java" startLine="168" startPosition="11" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="711884569791121044" fileName="ReachableClassifiersScope.java" startLine="169" startPosition="0" endLine="170" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="711884569791121047" fileName="ReachableClassifiersScope.java" startLine="170" startPosition="40" endLine="171" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="711884569791121036" fileName="ReachableClassifiersScope.java" startLine="172" startPosition="7" endLine="173" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6276024251870231362" fileName="ReachableClassifiersScope.java" startLine="177" startPosition="38" endLine="178" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6276024251870231362" fileName="ReachableClassifiersScope.java" startLine="179" startPosition="7" endLine="180" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6276024251870231346" fileName="ReachableClassifiersScope.java" startLine="184" startPosition="38" endLine="185" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6276024251870231346" fileName="ReachableClassifiersScope.java" startLine="186" startPosition="7" endLine="187" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6276024251870230746" fileName="ReachableClassifiersScope.java" startLine="191" startPosition="38" endLine="192" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6276024251870230746" fileName="ReachableClassifiersScope.java" startLine="193" startPosition="7" endLine="194" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6276024251870229488" fileName="ReachableClassifiersScope.java" startLine="198" startPosition="38" endLine="199" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6276024251870229488" fileName="ReachableClassifiersScope.java" startLine="200" startPosition="7" endLine="201" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3161373106581139670" fileName="ReachableClassifiersScope.java" startLine="205" startPosition="0" endLine="206" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="3161373106581139724" fileName="ReachableClassifiersScope.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModel#()Lorg/jetbrains/mps/openapi/model/SModel;" />
-    <nodeInfo nodeId="3161373106581139732" fileName="ReachableClassifiersScope.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScope#()Ljetbrains/mps/smodel/IScope;" />
-    <nodeInfo nodeId="3161373106581139796" fileName="ReachableClassifiersScope.java" startLine="64" startPosition="100" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5218355222333947456" fileName="ReachableClassifiersScope.java" startLine="86" startPosition="133" endLine="89" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5489342298079640428" fileName="ReachableClassifiersScope.java" startLine="93" startPosition="54" endLine="96" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5489342298079639020" fileName="ReachableClassifiersScope.java" startLine="99" startPosition="0" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3161373106581139837" fileName="ReachableClassifiersScope.java" startLine="104" startPosition="83" endLine="107" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4788436444168056263" fileName="ReachableClassifiersScope.java" startLine="123" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="7396589207137045821" fileName="ReachableClassifiersScope.java" startLine="127" startPosition="39" endLine="130" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2210377302243697664" fileName="ReachableClassifiersScope.java" startLine="130" startPosition="9" endLine="133" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="711884569791120999" fileName="ReachableClassifiersScope.java" startLine="136" startPosition="0" endLine="139" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2713850407672590139" fileName="ReachableClassifiersScope.java" startLine="141" startPosition="62" endLine="144" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6276024251870229479" fileName="ReachableClassifiersScope.java" startLine="144" startPosition="11" endLine="147" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2051574960807840842" fileName="ReachableClassifiersScope.java" startLine="150" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="2051574960807806644" fileName="ReachableClassifiersScope.java" startLine="153" startPosition="11" endLine="156" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="711884569791122505" fileName="ReachableClassifiersScope.java" startLine="165" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="6276024251870231362" fileName="ReachableClassifiersScope.java" startLine="176" startPosition="86" endLine="179" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6276024251870231346" fileName="ReachableClassifiersScope.java" startLine="183" startPosition="86" endLine="186" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6276024251870230746" fileName="ReachableClassifiersScope.java" startLine="190" startPosition="88" endLine="193" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6276024251870229488" fileName="ReachableClassifiersScope.java" startLine="197" startPosition="88" endLine="200" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3161373106581139767" fileName="ReachableClassifiersScope.java" startLine="55" startPosition="48" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3161373106581139682" fileName="ReachableClassifiersScope.java" startLine="75" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ClassifierReferenceInfoResolver#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IScope;)V" />
-    <nodeInfo nodeId="7396589207135311912" fileName="ReachableClassifiersScope.java" startLine="115" startPosition="107" endLine="119" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2051574960807840835" fileName="ReachableClassifiersScope.java" startLine="148" startPosition="9" endLine="153" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="711884569791122498" fileName="ReachableClassifiersScope.java" startLine="163" startPosition="61" endLine="168" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6276024251870231362" fileName="ReachableClassifiersScope.java" startLine="176" startPosition="0" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_x9ho2v_a0b0a0h0e7#(Ljetbrains/mps/smodel/SModelInternal;)Ljetbrains/mps/project/IModule;" />
-    <nodeInfo nodeId="6276024251870231346" fileName="ReachableClassifiersScope.java" startLine="183" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_x9ho2v_a0a1a0a7a4h#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/smodel/SModelInternal;" />
-    <nodeInfo nodeId="6276024251870230746" fileName="ReachableClassifiersScope.java" startLine="190" startPosition="0" endLine="196" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_x9ho2v_a0b0a0h0e7_0#(Ljetbrains/mps/smodel/SModelInternal;)Ljetbrains/mps/project/IModule;" />
-    <nodeInfo nodeId="6276024251870229488" fileName="ReachableClassifiersScope.java" startLine="197" startPosition="0" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_x9ho2v_a0a1a0a7a4h_0#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/smodel/SModelInternal;" />
-    <nodeInfo nodeId="3161373106581139701" fileName="ReachableClassifiersScope.java" startLine="35" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReachableClassifiersScope#(Lorg/jetbrains/mps/openapi/model/SModel;ILjetbrains/mps/smodel/IScope;)V" />
-    <nodeInfo nodeId="3161373106581139788" fileName="ReachableClassifiersScope.java" startLine="63" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReferenceInfoResolver#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/smodel/search/IReferenceInfoResolver;" />
-    <nodeInfo nodeId="2210377302243651304" fileName="ReachableClassifiersScope.java" startLine="102" startPosition="7" endLine="109" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2713850407672590134" fileName="ReachableClassifiersScope.java" startLine="140" startPosition="59" endLine="148" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3161373106581139740" fileName="ReachableClassifiersScope.java" startLine="51" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassifiers#()Ljava/util/List;" />
-    <nodeInfo nodeId="1592218692215928764" fileName="ReachableClassifiersScope.java" startLine="121" startPosition="55" endLine="135" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="484255784786293078" fileName="ReachableClassifiersScope.java" startLine="83" startPosition="48" endLine="98" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3161373106581139688" fileName="ReachableClassifiersScope.java" startLine="80" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolve#(Ljava/lang/String;Ljetbrains/mps/smodel/SModelReference;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="711884569791121011" fileName="ReachableClassifiersScope.java" startLine="139" startPosition="7" endLine="172" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="484255784786291148" fileName="ReachableClassifiersScope.java" startLine="114" startPosition="0" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolveClass#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="3161373106581139727" fileName="ReachableClassifiersScope.java" startLine="43" startPosition="28" endLine="44" endPosition="24" />
-    <scopeInfo nodeId="3161373106581139735" fileName="ReachableClassifiersScope.java" startLine="47" startPosition="28" endLine="48" endPosition="24" />
-    <scopeInfo nodeId="3161373106581139800" fileName="ReachableClassifiersScope.java" startLine="65" startPosition="107" endLine="66" endPosition="103" />
-    <scopeInfo nodeId="5218355222333947458" fileName="ReachableClassifiersScope.java" startLine="87" startPosition="67" endLine="88" endPosition="65" />
-    <scopeInfo nodeId="5489342298079640429" fileName="ReachableClassifiersScope.java" startLine="94" startPosition="42" endLine="95" endPosition="50" />
-    <scopeInfo nodeId="5489342298079639021" fileName="ReachableClassifiersScope.java" startLine="100" startPosition="41" endLine="101" endPosition="54" />
-    <scopeInfo nodeId="3161373106581139841" fileName="ReachableClassifiersScope.java" startLine="105" startPosition="34" endLine="106" endPosition="22" />
-    <scopeInfo nodeId="4788436444168056264" fileName="ReachableClassifiersScope.java" startLine="123" startPosition="55" endLine="124" endPosition="32" />
-    <scopeInfo nodeId="7396589207137045823" fileName="ReachableClassifiersScope.java" startLine="128" startPosition="33" endLine="129" endPosition="58" />
-    <scopeInfo nodeId="711884569791120977" fileName="ReachableClassifiersScope.java" startLine="131" startPosition="40" endLine="132" endPosition="19" />
-    <scopeInfo nodeId="711884569791121000" fileName="ReachableClassifiersScope.java" startLine="137" startPosition="57" endLine="138" endPosition="20" />
-    <scopeInfo nodeId="2713850407672590141" fileName="ReachableClassifiersScope.java" startLine="142" startPosition="57" endLine="143" endPosition="23" />
-    <scopeInfo nodeId="6276024251870229480" fileName="ReachableClassifiersScope.java" startLine="145" startPosition="163" endLine="146" endPosition="23" />
-    <scopeInfo nodeId="2051574960807840843" fileName="ReachableClassifiersScope.java" startLine="150" startPosition="43" endLine="151" endPosition="78" />
-    <scopeInfo nodeId="2051574960807806645" fileName="ReachableClassifiersScope.java" startLine="154" startPosition="72" endLine="155" endPosition="64" />
-    <scopeInfo nodeId="711884569791122506" fileName="ReachableClassifiersScope.java" startLine="165" startPosition="39" endLine="166" endPosition="85" />
-    <scopeInfo nodeId="6276024251870231362" fileName="ReachableClassifiersScope.java" startLine="177" startPosition="38" endLine="178" endPosition="45" />
-    <scopeInfo nodeId="6276024251870231346" fileName="ReachableClassifiersScope.java" startLine="184" startPosition="38" endLine="185" endPosition="54" />
-    <scopeInfo nodeId="6276024251870230746" fileName="ReachableClassifiersScope.java" startLine="191" startPosition="38" endLine="192" endPosition="45" />
-    <scopeInfo nodeId="6276024251870229488" fileName="ReachableClassifiersScope.java" startLine="198" startPosition="38" endLine="199" endPosition="54" />
-    <scopeInfo nodeId="3161373106581139771" fileName="ReachableClassifiersScope.java" startLine="56" startPosition="33" endLine="58" endPosition="84">
+    <nodeInfo nodeId="3161373106581139695" fileName="ReachableClassifiersScope.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myScope" />
+    <nodeInfo nodeId="3161373106581139698" fileName="ReachableClassifiersScope.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
+    <nodeInfo nodeId="6405505214478649556" fileName="ReachableClassifiersScope.java" startLine="35" startPosition="80" endLine="36" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3161373106581139710" fileName="ReachableClassifiersScope.java" startLine="36" startPosition="65" endLine="37" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3161373106581139712" fileName="ReachableClassifiersScope.java" startLine="37" startPosition="22" endLine="38" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161373106581139718" fileName="ReachableClassifiersScope.java" startLine="38" startPosition="25" endLine="39" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161373106581139728" fileName="ReachableClassifiersScope.java" startLine="42" startPosition="28" endLine="43" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3161373106581139736" fileName="ReachableClassifiersScope.java" startLine="46" startPosition="28" endLine="47" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3161373106581139745" fileName="ReachableClassifiersScope.java" startLine="52" startPosition="39" endLine="53" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3161373106581139760" fileName="ReachableClassifiersScope.java" startLine="53" startPosition="115" endLine="54" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3161373106581139772" fileName="ReachableClassifiersScope.java" startLine="55" startPosition="33" endLine="56" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3161373106581139780" fileName="ReachableClassifiersScope.java" startLine="56" startPosition="85" endLine="57" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161373106581139785" fileName="ReachableClassifiersScope.java" startLine="58" startPosition="5" endLine="59" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3161373106581139801" fileName="ReachableClassifiersScope.java" startLine="64" startPosition="107" endLine="65" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3161373106581139810" fileName="ReachableClassifiersScope.java" startLine="66" startPosition="5" endLine="67" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3161373106581139676" fileName="ReachableClassifiersScope.java" startLine="71" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
+    <nodeInfo nodeId="3161373106581139679" fileName="ReachableClassifiersScope.java" startLine="72" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myScope" />
+    <nodeInfo nodeId="3161373106581139815" fileName="ReachableClassifiersScope.java" startLine="74" startPosition="72" endLine="75" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161373106581139821" fileName="ReachableClassifiersScope.java" startLine="75" startPosition="27" endLine="76" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="484255784786293072" fileName="ReachableClassifiersScope.java" startLine="80" startPosition="96" endLine="81" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="484255784786293112" fileName="ReachableClassifiersScope.java" startLine="81" startPosition="39" endLine="82" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5218355222333947488" fileName="ReachableClassifiersScope.java" startLine="83" startPosition="58" endLine="84" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5218355222333947443" fileName="ReachableClassifiersScope.java" startLine="84" startPosition="36" endLine="85" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5218355222333947469" fileName="ReachableClassifiersScope.java" startLine="86" startPosition="67" endLine="87" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5218355222333946163" fileName="ReachableClassifiersScope.java" startLine="88" startPosition="9" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5218355222333947492" fileName="ReachableClassifiersScope.java" startLine="89" startPosition="0" endLine="90" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="484255784786293230" fileName="ReachableClassifiersScope.java" startLine="90" startPosition="29" endLine="91" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="484255784786293122" fileName="ReachableClassifiersScope.java" startLine="91" startPosition="59" endLine="92" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5489342298079640443" fileName="ReachableClassifiersScope.java" startLine="93" startPosition="42" endLine="94" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="484255784786293219" fileName="ReachableClassifiersScope.java" startLine="95" startPosition="9" endLine="96" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="484255784786293228" fileName="ReachableClassifiersScope.java" startLine="97" startPosition="7" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5489342298079639029" fileName="ReachableClassifiersScope.java" startLine="99" startPosition="41" endLine="100" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161373106581139828" fileName="ReachableClassifiersScope.java" startLine="102" startPosition="55" endLine="103" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3161373106581139842" fileName="ReachableClassifiersScope.java" startLine="104" startPosition="34" endLine="105" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9115375588018431177" fileName="ReachableClassifiersScope.java" startLine="106" startPosition="9" endLine="107" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="484255784786291159" fileName="ReachableClassifiersScope.java" startLine="108" startPosition="7" endLine="109" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="484255784786293234" fileName="ReachableClassifiersScope.java" startLine="109" startPosition="61" endLine="110" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1592218692215929383" fileName="ReachableClassifiersScope.java" startLine="113" startPosition="91" endLine="114" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="711884569791120986" fileName="ReachableClassifiersScope.java" startLine="118" startPosition="8" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="9115375588018481348" fileName="ReachableClassifiersScope.java" startLine="119" startPosition="0" endLine="120" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4788436444168056267" fileName="ReachableClassifiersScope.java" startLine="122" startPosition="55" endLine="123" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="484255784786293170" fileName="ReachableClassifiersScope.java" startLine="125" startPosition="22" endLine="126" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7396589207137119460" fileName="ReachableClassifiersScope.java" startLine="127" startPosition="33" endLine="128" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="711884569791120980" fileName="ReachableClassifiersScope.java" startLine="130" startPosition="40" endLine="131" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="711884569791120982" fileName="ReachableClassifiersScope.java" startLine="132" startPosition="9" endLine="133" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="711884569791120997" fileName="ReachableClassifiersScope.java" startLine="134" startPosition="7" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="9115375588018481571" fileName="ReachableClassifiersScope.java" startLine="136" startPosition="57" endLine="137" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2713850407672623712" fileName="ReachableClassifiersScope.java" startLine="141" startPosition="57" endLine="142" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6276024251870231366" fileName="ReachableClassifiersScope.java" startLine="144" startPosition="109" endLine="145" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2051574960807840863" fileName="ReachableClassifiersScope.java" startLine="149" startPosition="43" endLine="150" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2051574960807840884" fileName="ReachableClassifiersScope.java" startLine="153" startPosition="72" endLine="154" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2713850407672590133" fileName="ReachableClassifiersScope.java" startLine="155" startPosition="9" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="711884569791121063" fileName="ReachableClassifiersScope.java" startLine="156" startPosition="0" endLine="157" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="711884569791121078" fileName="ReachableClassifiersScope.java" startLine="157" startPosition="58" endLine="158" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="711884569791121085" fileName="ReachableClassifiersScope.java" startLine="158" startPosition="56" endLine="159" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="711884569791121098" fileName="ReachableClassifiersScope.java" startLine="159" startPosition="40" endLine="160" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="711884569791121103" fileName="ReachableClassifiersScope.java" startLine="160" startPosition="31" endLine="161" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="711884569791121090" fileName="ReachableClassifiersScope.java" startLine="161" startPosition="85" endLine="162" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="711884569791122509" fileName="ReachableClassifiersScope.java" startLine="164" startPosition="39" endLine="165" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="711884569791121072" fileName="ReachableClassifiersScope.java" startLine="167" startPosition="11" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="711884569791121044" fileName="ReachableClassifiersScope.java" startLine="168" startPosition="0" endLine="169" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="711884569791121047" fileName="ReachableClassifiersScope.java" startLine="169" startPosition="40" endLine="170" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="711884569791121036" fileName="ReachableClassifiersScope.java" startLine="171" startPosition="7" endLine="172" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6276024251870231362" fileName="ReachableClassifiersScope.java" startLine="176" startPosition="38" endLine="177" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6276024251870231362" fileName="ReachableClassifiersScope.java" startLine="178" startPosition="7" endLine="179" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6276024251870230746" fileName="ReachableClassifiersScope.java" startLine="183" startPosition="38" endLine="184" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6276024251870230746" fileName="ReachableClassifiersScope.java" startLine="185" startPosition="7" endLine="186" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3161373106581139670" fileName="ReachableClassifiersScope.java" startLine="190" startPosition="0" endLine="191" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="3161373106581139724" fileName="ReachableClassifiersScope.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModel#()Lorg/jetbrains/mps/openapi/model/SModel;" />
+    <nodeInfo nodeId="3161373106581139732" fileName="ReachableClassifiersScope.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScope#()Ljetbrains/mps/smodel/IScope;" />
+    <nodeInfo nodeId="3161373106581139796" fileName="ReachableClassifiersScope.java" startLine="63" startPosition="100" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5218355222333947456" fileName="ReachableClassifiersScope.java" startLine="85" startPosition="112" endLine="88" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5489342298079640428" fileName="ReachableClassifiersScope.java" startLine="92" startPosition="54" endLine="95" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5489342298079639020" fileName="ReachableClassifiersScope.java" startLine="98" startPosition="0" endLine="101" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3161373106581139837" fileName="ReachableClassifiersScope.java" startLine="103" startPosition="83" endLine="106" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4788436444168056263" fileName="ReachableClassifiersScope.java" startLine="122" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="7396589207137045821" fileName="ReachableClassifiersScope.java" startLine="126" startPosition="39" endLine="129" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2210377302243697664" fileName="ReachableClassifiersScope.java" startLine="129" startPosition="9" endLine="132" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="711884569791120999" fileName="ReachableClassifiersScope.java" startLine="135" startPosition="0" endLine="138" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2713850407672590139" fileName="ReachableClassifiersScope.java" startLine="140" startPosition="62" endLine="143" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6276024251870229479" fileName="ReachableClassifiersScope.java" startLine="143" startPosition="11" endLine="146" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2051574960807840842" fileName="ReachableClassifiersScope.java" startLine="149" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="2051574960807806644" fileName="ReachableClassifiersScope.java" startLine="152" startPosition="11" endLine="155" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="711884569791122505" fileName="ReachableClassifiersScope.java" startLine="164" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="6276024251870231362" fileName="ReachableClassifiersScope.java" startLine="175" startPosition="78" endLine="178" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6276024251870230746" fileName="ReachableClassifiersScope.java" startLine="182" startPosition="80" endLine="185" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3161373106581139767" fileName="ReachableClassifiersScope.java" startLine="54" startPosition="48" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3161373106581139682" fileName="ReachableClassifiersScope.java" startLine="74" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ClassifierReferenceInfoResolver#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IScope;)V" />
+    <nodeInfo nodeId="7396589207135311912" fileName="ReachableClassifiersScope.java" startLine="114" startPosition="107" endLine="118" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2051574960807840835" fileName="ReachableClassifiersScope.java" startLine="147" startPosition="9" endLine="152" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="711884569791122498" fileName="ReachableClassifiersScope.java" startLine="162" startPosition="61" endLine="167" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6276024251870231362" fileName="ReachableClassifiersScope.java" startLine="175" startPosition="0" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_x9ho2v_a0b0a0h0e7#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/project/IModule;" />
+    <nodeInfo nodeId="6276024251870230746" fileName="ReachableClassifiersScope.java" startLine="182" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_x9ho2v_a0b0a0h0e7_0#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/project/IModule;" />
+    <nodeInfo nodeId="3161373106581139701" fileName="ReachableClassifiersScope.java" startLine="34" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReachableClassifiersScope#(Lorg/jetbrains/mps/openapi/model/SModel;ILjetbrains/mps/smodel/IScope;)V" />
+    <nodeInfo nodeId="3161373106581139788" fileName="ReachableClassifiersScope.java" startLine="62" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReferenceInfoResolver#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/smodel/search/IReferenceInfoResolver;" />
+    <nodeInfo nodeId="2210377302243651304" fileName="ReachableClassifiersScope.java" startLine="101" startPosition="7" endLine="108" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2713850407672590134" fileName="ReachableClassifiersScope.java" startLine="139" startPosition="59" endLine="147" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3161373106581139740" fileName="ReachableClassifiersScope.java" startLine="50" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassifiers#()Ljava/util/List;" />
+    <nodeInfo nodeId="1592218692215928764" fileName="ReachableClassifiersScope.java" startLine="120" startPosition="55" endLine="134" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="484255784786293078" fileName="ReachableClassifiersScope.java" startLine="82" startPosition="48" endLine="97" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3161373106581139688" fileName="ReachableClassifiersScope.java" startLine="79" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolve#(Ljava/lang/String;Ljetbrains/mps/smodel/SModelReference;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="711884569791121011" fileName="ReachableClassifiersScope.java" startLine="138" startPosition="7" endLine="171" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="484255784786291148" fileName="ReachableClassifiersScope.java" startLine="113" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolveClass#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="3161373106581139727" fileName="ReachableClassifiersScope.java" startLine="42" startPosition="28" endLine="43" endPosition="24" />
+    <scopeInfo nodeId="3161373106581139735" fileName="ReachableClassifiersScope.java" startLine="46" startPosition="28" endLine="47" endPosition="24" />
+    <scopeInfo nodeId="3161373106581139800" fileName="ReachableClassifiersScope.java" startLine="64" startPosition="107" endLine="65" endPosition="103" />
+    <scopeInfo nodeId="5218355222333947458" fileName="ReachableClassifiersScope.java" startLine="86" startPosition="67" endLine="87" endPosition="65" />
+    <scopeInfo nodeId="5489342298079640429" fileName="ReachableClassifiersScope.java" startLine="93" startPosition="42" endLine="94" endPosition="50" />
+    <scopeInfo nodeId="5489342298079639021" fileName="ReachableClassifiersScope.java" startLine="99" startPosition="41" endLine="100" endPosition="54" />
+    <scopeInfo nodeId="3161373106581139841" fileName="ReachableClassifiersScope.java" startLine="104" startPosition="34" endLine="105" endPosition="22" />
+    <scopeInfo nodeId="4788436444168056264" fileName="ReachableClassifiersScope.java" startLine="122" startPosition="55" endLine="123" endPosition="32" />
+    <scopeInfo nodeId="7396589207137045823" fileName="ReachableClassifiersScope.java" startLine="127" startPosition="33" endLine="128" endPosition="58" />
+    <scopeInfo nodeId="711884569791120977" fileName="ReachableClassifiersScope.java" startLine="130" startPosition="40" endLine="131" endPosition="19" />
+    <scopeInfo nodeId="711884569791121000" fileName="ReachableClassifiersScope.java" startLine="136" startPosition="57" endLine="137" endPosition="20" />
+    <scopeInfo nodeId="2713850407672590141" fileName="ReachableClassifiersScope.java" startLine="141" startPosition="57" endLine="142" endPosition="23" />
+    <scopeInfo nodeId="6276024251870229480" fileName="ReachableClassifiersScope.java" startLine="144" startPosition="109" endLine="145" endPosition="23" />
+    <scopeInfo nodeId="2051574960807840843" fileName="ReachableClassifiersScope.java" startLine="149" startPosition="43" endLine="150" endPosition="78" />
+    <scopeInfo nodeId="2051574960807806645" fileName="ReachableClassifiersScope.java" startLine="153" startPosition="72" endLine="154" endPosition="64" />
+    <scopeInfo nodeId="711884569791122506" fileName="ReachableClassifiersScope.java" startLine="164" startPosition="39" endLine="165" endPosition="85" />
+    <scopeInfo nodeId="6276024251870231362" fileName="ReachableClassifiersScope.java" startLine="176" startPosition="38" endLine="177" endPosition="45" />
+    <scopeInfo nodeId="6276024251870230746" fileName="ReachableClassifiersScope.java" startLine="183" startPosition="38" endLine="184" endPosition="45" />
+    <scopeInfo nodeId="3161373106581139771" fileName="ReachableClassifiersScope.java" startLine="55" startPosition="33" endLine="57" endPosition="84">
       <varInfo nodeId="3161373106581139773" varName="classifiers" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581139814" fileName="ReachableClassifiersScope.java" startLine="75" startPosition="72" endLine="77" endPosition="27" />
-    <scopeInfo nodeId="3161373106581139724" fileName="ReachableClassifiersScope.java" startLine="43" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="3161373106581139732" fileName="ReachableClassifiersScope.java" startLine="47" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="4788436444168056263" fileName="ReachableClassifiersScope.java" startLine="123" startPosition="0" endLine="126" endPosition="0">
+    <scopeInfo nodeId="3161373106581139814" fileName="ReachableClassifiersScope.java" startLine="74" startPosition="72" endLine="76" endPosition="27" />
+    <scopeInfo nodeId="3161373106581139724" fileName="ReachableClassifiersScope.java" startLine="42" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="3161373106581139732" fileName="ReachableClassifiersScope.java" startLine="46" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="4788436444168056263" fileName="ReachableClassifiersScope.java" startLine="122" startPosition="0" endLine="125" endPosition="0">
       <varInfo nodeId="4788436444168056263" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="2051574960807840842" fileName="ReachableClassifiersScope.java" startLine="150" startPosition="0" endLine="153" endPosition="0">
+    <scopeInfo nodeId="2051574960807840842" fileName="ReachableClassifiersScope.java" startLine="149" startPosition="0" endLine="152" endPosition="0">
       <varInfo nodeId="2051574960807840842" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="711884569791122505" fileName="ReachableClassifiersScope.java" startLine="165" startPosition="0" endLine="168" endPosition="0">
+    <scopeInfo nodeId="711884569791122505" fileName="ReachableClassifiersScope.java" startLine="164" startPosition="0" endLine="167" endPosition="0">
       <varInfo nodeId="711884569791122505" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581139709" fileName="ReachableClassifiersScope.java" startLine="36" startPosition="80" endLine="40" endPosition="25" />
-    <scopeInfo nodeId="3161373106581139767" fileName="ReachableClassifiersScope.java" startLine="55" startPosition="48" endLine="59" endPosition="5">
+    <scopeInfo nodeId="3161373106581139709" fileName="ReachableClassifiersScope.java" startLine="35" startPosition="80" endLine="39" endPosition="25" />
+    <scopeInfo nodeId="3161373106581139767" fileName="ReachableClassifiersScope.java" startLine="54" startPosition="48" endLine="58" endPosition="5">
       <varInfo nodeId="3161373106581139769" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581139795" fileName="ReachableClassifiersScope.java" startLine="64" startPosition="100" endLine="68" endPosition="72" />
-    <scopeInfo nodeId="3161373106581139682" fileName="ReachableClassifiersScope.java" startLine="75" startPosition="0" endLine="79" endPosition="0">
+    <scopeInfo nodeId="3161373106581139795" fileName="ReachableClassifiersScope.java" startLine="63" startPosition="100" endLine="67" endPosition="72" />
+    <scopeInfo nodeId="3161373106581139682" fileName="ReachableClassifiersScope.java" startLine="74" startPosition="0" endLine="78" endPosition="0">
       <varInfo nodeId="3161373106581139684" varName="model" />
       <varInfo nodeId="3161373106581139686" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="6276024251870231362" fileName="ReachableClassifiersScope.java" startLine="176" startPosition="86" endLine="180" endPosition="18" />
-    <scopeInfo nodeId="6276024251870231346" fileName="ReachableClassifiersScope.java" startLine="183" startPosition="86" endLine="187" endPosition="18" />
-    <scopeInfo nodeId="6276024251870230746" fileName="ReachableClassifiersScope.java" startLine="190" startPosition="88" endLine="194" endPosition="18" />
-    <scopeInfo nodeId="6276024251870229488" fileName="ReachableClassifiersScope.java" startLine="197" startPosition="88" endLine="201" endPosition="18" />
-    <scopeInfo nodeId="2210377302243651305" fileName="ReachableClassifiersScope.java" startLine="103" startPosition="55" endLine="108" endPosition="123">
+    <scopeInfo nodeId="6276024251870231362" fileName="ReachableClassifiersScope.java" startLine="175" startPosition="78" endLine="179" endPosition="18" />
+    <scopeInfo nodeId="6276024251870230746" fileName="ReachableClassifiersScope.java" startLine="182" startPosition="80" endLine="186" endPosition="18" />
+    <scopeInfo nodeId="2210377302243651305" fileName="ReachableClassifiersScope.java" startLine="102" startPosition="55" endLine="107" endPosition="123">
       <varInfo nodeId="3161373106581139829" varName="targetModel" />
     </scopeInfo>
-    <scopeInfo nodeId="2713850407672590137" fileName="ReachableClassifiersScope.java" startLine="141" startPosition="62" endLine="147" endPosition="11" />
-    <scopeInfo nodeId="6276024251870231362" fileName="ReachableClassifiersScope.java" startLine="176" startPosition="0" endLine="182" endPosition="0">
+    <scopeInfo nodeId="2713850407672590137" fileName="ReachableClassifiersScope.java" startLine="140" startPosition="62" endLine="146" endPosition="11" />
+    <scopeInfo nodeId="6276024251870231362" fileName="ReachableClassifiersScope.java" startLine="175" startPosition="0" endLine="181" endPosition="0">
       <varInfo nodeId="6276024251870231362" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="6276024251870231346" fileName="ReachableClassifiersScope.java" startLine="183" startPosition="0" endLine="189" endPosition="0">
-      <varInfo nodeId="6276024251870231346" varName="checkedDotOperand" />
-    </scopeInfo>
-    <scopeInfo nodeId="6276024251870230746" fileName="ReachableClassifiersScope.java" startLine="190" startPosition="0" endLine="196" endPosition="0">
+    <scopeInfo nodeId="6276024251870230746" fileName="ReachableClassifiersScope.java" startLine="182" startPosition="0" endLine="188" endPosition="0">
       <varInfo nodeId="6276024251870230746" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="6276024251870229488" fileName="ReachableClassifiersScope.java" startLine="197" startPosition="0" endLine="203" endPosition="0">
-      <varInfo nodeId="6276024251870229488" varName="checkedDotOperand" />
-    </scopeInfo>
-    <scopeInfo nodeId="3161373106581139701" fileName="ReachableClassifiersScope.java" startLine="35" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="3161373106581139701" fileName="ReachableClassifiersScope.java" startLine="34" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="3161373106581139705" varName="constraint" />
       <varInfo nodeId="3161373106581139703" varName="model" />
       <varInfo nodeId="3161373106581139707" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581139744" fileName="ReachableClassifiersScope.java" startLine="53" startPosition="39" endLine="60" endPosition="18">
+    <scopeInfo nodeId="3161373106581139744" fileName="ReachableClassifiersScope.java" startLine="52" startPosition="39" endLine="59" endPosition="18">
       <varInfo nodeId="3161373106581139746" varName="models" />
       <varInfo nodeId="3161373106581139761" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581139788" fileName="ReachableClassifiersScope.java" startLine="63" startPosition="0" endLine="70" endPosition="0">
+    <scopeInfo nodeId="3161373106581139788" fileName="ReachableClassifiersScope.java" startLine="62" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="3161373106581139791" varName="referenceNode" />
       <varInfo nodeId="3161373106581139793" varName="targetConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="1592218692215928767" fileName="ReachableClassifiersScope.java" startLine="126" startPosition="22" endLine="134" endPosition="152">
+    <scopeInfo nodeId="1592218692215928767" fileName="ReachableClassifiersScope.java" startLine="125" startPosition="22" endLine="133" endPosition="152">
       <varInfo nodeId="484255784786293171" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="2713850407672590134" fileName="ReachableClassifiersScope.java" startLine="140" startPosition="59" endLine="148" endPosition="9">
+    <scopeInfo nodeId="2713850407672590134" fileName="ReachableClassifiersScope.java" startLine="139" startPosition="59" endLine="147" endPosition="9">
       <varInfo nodeId="2713850407672590135" varName="cls" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581139740" fileName="ReachableClassifiersScope.java" startLine="51" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="484255784786293080" fileName="ReachableClassifiersScope.java" startLine="84" startPosition="58" endLine="97" endPosition="55">
+    <scopeInfo nodeId="3161373106581139740" fileName="ReachableClassifiersScope.java" startLine="50" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="484255784786293080" fileName="ReachableClassifiersScope.java" startLine="83" startPosition="58" endLine="96" endPosition="55">
       <varInfo nodeId="5218355222333947444" varName="localClassifiers" />
       <varInfo nodeId="484255784786293231" varName="package_" />
     </scopeInfo>
-    <scopeInfo nodeId="1592218692215928764" fileName="ReachableClassifiersScope.java" startLine="121" startPosition="55" endLine="135" endPosition="7">
+    <scopeInfo nodeId="1592218692215928764" fileName="ReachableClassifiersScope.java" startLine="120" startPosition="55" endLine="134" endPosition="7">
       <varInfo nodeId="1592218692215928765" varName="m" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581139827" fileName="ReachableClassifiersScope.java" startLine="81" startPosition="96" endLine="111" endPosition="127">
+    <scopeInfo nodeId="3161373106581139827" fileName="ReachableClassifiersScope.java" startLine="80" startPosition="96" endLine="110" endPosition="127">
       <varInfo nodeId="484255784786293073" varName="classname" />
       <varInfo nodeId="484255784786293113" varName="dotIndex" />
       <varInfo nodeId="484255784786291160" varName="modelName" />
     </scopeInfo>
-    <scopeInfo nodeId="711884569791121012" fileName="ReachableClassifiersScope.java" startLine="140" startPosition="59" endLine="171" endPosition="20">
+    <scopeInfo nodeId="711884569791121012" fileName="ReachableClassifiersScope.java" startLine="139" startPosition="59" endLine="170" endPosition="20">
       <varInfo nodeId="2051574960807840836" varName="userClassifiers" />
       <varInfo nodeId="711884569791121064" varName="warning" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581139688" fileName="ReachableClassifiersScope.java" startLine="80" startPosition="0" endLine="113" endPosition="0">
+    <scopeInfo nodeId="3161373106581139688" fileName="ReachableClassifiersScope.java" startLine="79" startPosition="0" endLine="112" endPosition="0">
       <varInfo nodeId="3161373106581139691" varName="referenceInfo" />
       <varInfo nodeId="3161373106581139693" varName="targetModelReference" />
     </scopeInfo>
-    <scopeInfo nodeId="484255784786291151" fileName="ReachableClassifiersScope.java" startLine="114" startPosition="91" endLine="173" endPosition="62">
+    <scopeInfo nodeId="484255784786291151" fileName="ReachableClassifiersScope.java" startLine="113" startPosition="91" endLine="172" endPosition="62">
       <varInfo nodeId="9115375588018481349" varName="classifiers" />
       <varInfo nodeId="7396589207135311915" varName="modelName" />
       <varInfo nodeId="1592218692215929384" varName="visibleModules" />
     </scopeInfo>
-    <scopeInfo nodeId="484255784786291148" fileName="ReachableClassifiersScope.java" startLine="114" startPosition="0" endLine="175" endPosition="0">
+    <scopeInfo nodeId="484255784786291148" fileName="ReachableClassifiersScope.java" startLine="113" startPosition="0" endLine="174" endPosition="0">
       <varInfo nodeId="484255784786291154" varName="longName" />
       <varInfo nodeId="484255784786291156" varName="nestedClassName" />
       <varInfo nodeId="484255784786293179" varName="stereotype" />
     </scopeInfo>
-    <unitInfo nodeId="4788436444168056263" fileName="ReachableClassifiersScope.java" startLine="122" startPosition="96" endLine="126" endPosition="7" unitName="jetbrains.mps.baseLanguage.search.ReachableClassifiersScope$1" />
-    <unitInfo nodeId="2051574960807840842" fileName="ReachableClassifiersScope.java" startLine="149" startPosition="87" endLine="153" endPosition="9" unitName="jetbrains.mps.baseLanguage.search.ReachableClassifiersScope$2" />
-    <unitInfo nodeId="711884569791122505" fileName="ReachableClassifiersScope.java" startLine="164" startPosition="56" endLine="168" endPosition="9" unitName="jetbrains.mps.baseLanguage.search.ReachableClassifiersScope$3" />
-    <unitInfo nodeId="3161373106581139673" fileName="ReachableClassifiersScope.java" startLine="71" startPosition="0" endLine="204" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.ReachableClassifiersScope$ClassifierReferenceInfoResolver" />
-    <unitInfo nodeId="3161373106581139670" fileName="ReachableClassifiersScope.java" startLine="30" startPosition="0" endLine="207" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.ReachableClassifiersScope" />
+    <unitInfo nodeId="4788436444168056263" fileName="ReachableClassifiersScope.java" startLine="121" startPosition="96" endLine="125" endPosition="7" unitName="jetbrains.mps.baseLanguage.search.ReachableClassifiersScope$1" />
+    <unitInfo nodeId="2051574960807840842" fileName="ReachableClassifiersScope.java" startLine="148" startPosition="87" endLine="152" endPosition="9" unitName="jetbrains.mps.baseLanguage.search.ReachableClassifiersScope$2" />
+    <unitInfo nodeId="711884569791122505" fileName="ReachableClassifiersScope.java" startLine="163" startPosition="56" endLine="167" endPosition="9" unitName="jetbrains.mps.baseLanguage.search.ReachableClassifiersScope$3" />
+    <unitInfo nodeId="3161373106581139673" fileName="ReachableClassifiersScope.java" startLine="70" startPosition="0" endLine="189" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.ReachableClassifiersScope$ClassifierReferenceInfoResolver" />
+    <unitInfo nodeId="3161373106581139670" fileName="ReachableClassifiersScope.java" startLine="29" startPosition="0" endLine="192" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.ReachableClassifiersScope" />
   </root>
   <root nodeRef="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)/3161373106581139869">
     <nodeInfo nodeId="2706803607794599099" fileName="GenericTypesUtil.java" startLine="18" startPosition="107" endLine="19" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2921,43 +2905,45 @@
     <unitInfo nodeId="3161373106581143413" fileName="VisibleThrowablesScope.java" startLine="14" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.VisibleThrowablesScope" />
   </root>
   <root nodeRef="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)/3161373106581143470">
-    <nodeInfo nodeId="3671207155728925344" fileName="ClassifierVisibleStaticMembersScope.java" startLine="14" startPosition="119" endLine="15" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3671207155728925348" fileName="ClassifierVisibleStaticMembersScope.java" startLine="15" startPosition="115" endLine="16" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3573019447813594675" fileName="ClassifierVisibleStaticMembersScope.java" startLine="16" startPosition="117" endLine="17" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8464025797199042944" fileName="ClassifierVisibleStaticMembersScope.java" startLine="18" startPosition="77" endLine="19" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="3161373106581143512" fileName="ClassifierVisibleStaticMembersScope.java" startLine="24" startPosition="29" endLine="25" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3573019447813594653" fileName="ClassifierVisibleStaticMembersScope.java" startLine="26" startPosition="5" endLine="27" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3573019447813594655" fileName="ClassifierVisibleStaticMembersScope.java" startLine="30" startPosition="78" endLine="31" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3573019447813594655" fileName="ClassifierVisibleStaticMembersScope.java" startLine="31" startPosition="30" endLine="32" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3573019447813594655" fileName="ClassifierVisibleStaticMembersScope.java" startLine="32" startPosition="165" endLine="33" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3573019447813594655" fileName="ClassifierVisibleStaticMembersScope.java" startLine="33" startPosition="88" endLine="34" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3573019447813594655" fileName="ClassifierVisibleStaticMembersScope.java" startLine="31" startPosition="30" endLine="33" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3573019447813594655" fileName="ClassifierVisibleStaticMembersScope.java" startLine="31" startPosition="30" endLine="33" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8464025797199042936" fileName="ClassifierVisibleStaticMembersScope.java" startLine="17" startPosition="65" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3161373106581143507" fileName="ClassifierVisibleStaticMembersScope.java" startLine="23" startPosition="59" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3161373106581143501" fileName="ClassifierVisibleStaticMembersScope.java" startLine="23" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="toClassifierType#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="3573019447813594655" fileName="ClassifierVisibleStaticMembersScope.java" startLine="30" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_ctg1ot_a1a1#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="3573019447813594661" fileName="ClassifierVisibleStaticMembersScope.java" startLine="13" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ClassifierVisibleStaticMembersScope#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;I)V" />
-    <scopeInfo nodeId="8464025797199042943" fileName="ClassifierVisibleStaticMembersScope.java" startLine="18" startPosition="77" endLine="19" endPosition="79" />
-    <scopeInfo nodeId="3161373106581143511" fileName="ClassifierVisibleStaticMembersScope.java" startLine="24" startPosition="29" endLine="25" endPosition="18" />
-    <scopeInfo nodeId="3573019447813594655" fileName="ClassifierVisibleStaticMembersScope.java" startLine="31" startPosition="30" endLine="33" endPosition="88" />
-    <scopeInfo nodeId="3161373106581143506" fileName="ClassifierVisibleStaticMembersScope.java" startLine="23" startPosition="59" endLine="27" endPosition="57" />
-    <scopeInfo nodeId="3573019447813594655" fileName="ClassifierVisibleStaticMembersScope.java" startLine="30" startPosition="78" endLine="34" endPosition="24">
+    <nodeInfo nodeId="3671207155728925344" fileName="ClassifierVisibleStaticMembersScope.java" startLine="15" startPosition="119" endLine="16" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3671207155728925348" fileName="ClassifierVisibleStaticMembersScope.java" startLine="16" startPosition="115" endLine="17" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3573019447813594675" fileName="ClassifierVisibleStaticMembersScope.java" startLine="17" startPosition="117" endLine="18" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8464025797199042944" fileName="ClassifierVisibleStaticMembersScope.java" startLine="19" startPosition="77" endLine="20" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="3161373106581143512" fileName="ClassifierVisibleStaticMembersScope.java" startLine="25" startPosition="29" endLine="26" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3573019447813594653" fileName="ClassifierVisibleStaticMembersScope.java" startLine="27" startPosition="5" endLine="28" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3573019447813594655" fileName="ClassifierVisibleStaticMembersScope.java" startLine="31" startPosition="78" endLine="32" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3573019447813594655" fileName="ClassifierVisibleStaticMembersScope.java" startLine="32" startPosition="63" endLine="33" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3573019447813594655" fileName="ClassifierVisibleStaticMembersScope.java" startLine="33" startPosition="30" endLine="34" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3573019447813594655" fileName="ClassifierVisibleStaticMembersScope.java" startLine="34" startPosition="165" endLine="35" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3573019447813594655" fileName="ClassifierVisibleStaticMembersScope.java" startLine="35" startPosition="88" endLine="36" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3573019447813594655" fileName="ClassifierVisibleStaticMembersScope.java" startLine="33" startPosition="30" endLine="35" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3573019447813594655" fileName="ClassifierVisibleStaticMembersScope.java" startLine="33" startPosition="30" endLine="35" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8464025797199042936" fileName="ClassifierVisibleStaticMembersScope.java" startLine="18" startPosition="65" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3161373106581143507" fileName="ClassifierVisibleStaticMembersScope.java" startLine="24" startPosition="59" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3161373106581143501" fileName="ClassifierVisibleStaticMembersScope.java" startLine="24" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="toClassifierType#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="3573019447813594655" fileName="ClassifierVisibleStaticMembersScope.java" startLine="31" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_ctg1ot_a1a1#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="3573019447813594661" fileName="ClassifierVisibleStaticMembersScope.java" startLine="14" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ClassifierVisibleStaticMembersScope#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;I)V" />
+    <scopeInfo nodeId="8464025797199042943" fileName="ClassifierVisibleStaticMembersScope.java" startLine="19" startPosition="77" endLine="20" endPosition="79" />
+    <scopeInfo nodeId="3161373106581143511" fileName="ClassifierVisibleStaticMembersScope.java" startLine="25" startPosition="29" endLine="26" endPosition="18" />
+    <scopeInfo nodeId="3573019447813594655" fileName="ClassifierVisibleStaticMembersScope.java" startLine="33" startPosition="30" endLine="35" endPosition="88" />
+    <scopeInfo nodeId="3161373106581143506" fileName="ClassifierVisibleStaticMembersScope.java" startLine="24" startPosition="59" endLine="28" endPosition="57" />
+    <scopeInfo nodeId="3573019447813594655" fileName="ClassifierVisibleStaticMembersScope.java" startLine="31" startPosition="78" endLine="36" endPosition="24">
+      <varInfo nodeId="3573019447813594655" varName="facade" />
       <varInfo nodeId="3573019447813594655" varName="quotedNode_2" />
     </scopeInfo>
-    <scopeInfo nodeId="3573019447813594664" fileName="ClassifierVisibleStaticMembersScope.java" startLine="14" startPosition="119" endLine="20" endPosition="5" />
-    <scopeInfo nodeId="3161373106581143501" fileName="ClassifierVisibleStaticMembersScope.java" startLine="23" startPosition="0" endLine="29" endPosition="0">
+    <scopeInfo nodeId="3573019447813594664" fileName="ClassifierVisibleStaticMembersScope.java" startLine="15" startPosition="119" endLine="21" endPosition="5" />
+    <scopeInfo nodeId="3161373106581143501" fileName="ClassifierVisibleStaticMembersScope.java" startLine="24" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="3161373106581143504" varName="classifier" />
     </scopeInfo>
-    <scopeInfo nodeId="3573019447813594655" fileName="ClassifierVisibleStaticMembersScope.java" startLine="30" startPosition="0" endLine="36" endPosition="0">
+    <scopeInfo nodeId="3573019447813594655" fileName="ClassifierVisibleStaticMembersScope.java" startLine="31" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="3573019447813594655" varName="parameter_1" />
     </scopeInfo>
-    <scopeInfo nodeId="3573019447813594661" fileName="ClassifierVisibleStaticMembersScope.java" startLine="13" startPosition="0" endLine="22" endPosition="0">
+    <scopeInfo nodeId="3573019447813594661" fileName="ClassifierVisibleStaticMembersScope.java" startLine="14" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="3573019447813594665" varName="classifier" />
       <varInfo nodeId="3573019447813594671" varName="constraint" />
       <varInfo nodeId="3573019447813594668" varName="contextNode" />
     </scopeInfo>
-    <unitInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="11" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.ClassifierVisibleStaticMembersScope" />
+    <unitInfo nodeId="3161373106581143470" fileName="ClassifierVisibleStaticMembersScope.java" startLine="12" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.ClassifierVisibleStaticMembersScope" />
   </root>
   <root nodeRef="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)/3896109655413979709">
     <nodeInfo nodeId="3896109655413989216" fileName="ClassifierSuccessors.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />

@@ -49,8 +49,6 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.validation.ValidationSettings;
-import org.jetbrains.mps.openapi.persistence.indexing.FastFindUsagesRegistry;
-import org.jetbrains.mps.openapi.persistence.indexing.FastGoToRegistry;
 
 /**
  * Evgeny Gryaznov, Sep 1, 2010
@@ -116,9 +114,6 @@ public class MPSCore extends ComponentPlugin {
     init(new CheckersComponent());
     init(new ValidationSettings());
 
-    init(new FastFindUsagesRegistry());
-    init(new FastGoToRegistry());
-    
     init(new BootstrapMakeFacets());
   }
 

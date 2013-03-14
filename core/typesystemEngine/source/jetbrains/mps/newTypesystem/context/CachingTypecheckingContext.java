@@ -27,11 +27,8 @@ import jetbrains.mps.util.Pair;
 import java.util.Map;
 
 /**
- * Created with IntelliJ IDEA.
  * User: fyodor
  * Date: 12/7/12
- * Time: 9:58 AM
- * To change this template use File | Settings | File Templates.
  */
 public class CachingTypecheckingContext extends TargetTypecheckingContext {
   private Map<SNode, SNode> myComputedTypes = new THashMap<SNode, SNode>(1);

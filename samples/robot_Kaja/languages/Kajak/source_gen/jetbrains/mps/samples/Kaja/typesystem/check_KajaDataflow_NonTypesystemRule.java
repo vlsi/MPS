@@ -39,8 +39,8 @@ public class check_KajaDataflow_NonTypesystemRule extends AbstractNonTypesystemR
 
       for (Instruction n : unreachableInstructions) {
         SNode source = (SNode) n.getSource();
-        if (source == null) {
-          return;
+        if (source == null || SNodeOperations.isInstanceOf(source, "jetbrains.mps.samples.Kaja.structure.EmptyLine") || SNodeOperations.isInstanceOf(source, "jetbrains.mps.samples.Kaja.structure.CommentLine")) {
+          continue;
         }
         if (SNodeOperations.isInstanceOf(source, "jetbrains.mps.samples.Kaja.structure.AbstractCommand")) {
           {

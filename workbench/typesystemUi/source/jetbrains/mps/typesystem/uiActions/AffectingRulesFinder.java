@@ -61,7 +61,7 @@ public class AffectingRulesFinder implements IFinder {
 
         SNodeId nodeId = SNodeId.fromString(ruleId.o2);
         assert nodeId != null : "wrong node id string";
-        SNode rule = modelDescriptor.getSModel().getNode(nodeId);
+        SNode rule = modelDescriptor.getNode(nodeId);
         if (rule == null) continue;
 
         rules.add(new SearchResult<SNode>(rule, "rules which affect node's type"));

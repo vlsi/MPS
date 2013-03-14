@@ -35,7 +35,7 @@ public class Rename extends BaseRefactoring {
   }
 
   public List<SModel> getModelsToGenerate(final RefactoringContext refactoringContext) {
-    return (List<SModel>) refactoringContext.getModelsFromUsages(refactoringContext.getSelectedModel().getSModel());
+    return (List<SModel>) refactoringContext.getModelsFromUsages(refactoringContext.getSelectedModel());
   }
 
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {

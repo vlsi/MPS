@@ -309,7 +309,7 @@ public class LanguageHierarchyCache implements CoreComponent {
           if (structureDescriptor == null) continue;
           Iterable<SNode> iterable =
             new ConditionalIterable<SNode>(
-              structureDescriptor.getSModel().getRootNodes(),
+              structureDescriptor.getRootNodes(),
               new IsInstanceCondition(SNodeUtil.concept_AbstractConceptDeclaration));
           for (SNode root : iterable) {
             addToCache(NameUtil.nodeFQName(root));

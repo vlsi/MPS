@@ -104,7 +104,7 @@ public class ModulesClusterizer {
         Iterable<SModel> genModels = mod.getOwnModelDescriptors();
         QueueSequence.fromQueue(nsq).addSequence(Sequence.fromIterable(genModels).translate(new ITranslator2<SModel, String>() {
           public Iterable<String> translate(SModel smd) {
-            return ModelContentUtil.getUsedLanguageNamespaces(smd.getSModel(), false);
+            return ModelContentUtil.getUsedLanguageNamespaces(smd, false);
           }
         }).where(new IWhereFilter<String>() {
           public boolean accept(String ns) {

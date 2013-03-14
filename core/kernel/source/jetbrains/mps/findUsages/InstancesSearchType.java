@@ -26,8 +26,8 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import org.jetbrains.mps.openapi.persistence.indexing.FastFindUsagesRegistry;
-import org.jetbrains.mps.openapi.persistence.indexing.FindUsagesParticipant;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.mps.openapi.persistence.FindUsagesParticipant;
 import org.jetbrains.mps.openapi.util.Consumer;
 
 import java.util.Collection;
@@ -44,7 +44,7 @@ class InstancesSearchType extends SearchType<SNode, SConcept> {
   @Override
   public Set<SNode> search(Set<SConcept> elements, SearchScope scope, @NotNull ProgressMonitor monitor) {
     CollectConsumer<SNode> consumer = new CollectConsumer(new HashSet<SNode>());
-    Collection<FindUsagesParticipant> participants = FastFindUsagesRegistry.getInstance().getParticipants();
+    Collection<FindUsagesParticipant> participants = PersistenceFacade.getInstance().getFindUsagesParticipants();
 
     monitor.start("Finding usages...", participants.size() + 5);
     try {

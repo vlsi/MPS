@@ -39,7 +39,7 @@ public class RenamePropertyRefactoringTester_Simple implements IRefactoringTeste
       @Override
       public void run() {
         SModel structureModelDescriptor = testRefactoringLanguage.getStructureModelDescriptor();
-        SModel model = structureModelDescriptor.getSModel();
+        SModel model = structureModelDescriptor;
         SNode node = SModelOperations.getRootByName(model, "YetAnotherGoodConcept");
         SNode property = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "propertyDeclaration", true)).first();
         refactoringContext.setSelectedProject(project);
@@ -62,7 +62,7 @@ public class RenamePropertyRefactoringTester_Simple implements IRefactoringTeste
                 result[0] = false;
                 return;
               }
-              SModel sModel = sandbox1.getSModel();
+              SModel sModel = sandbox1;
               SNode root = sModel.getRootNodes().iterator().next();
               SNode firstChild = root.getChildren("anotherGoodConcept").iterator().next();
               String propertyValue = SNodeAccessUtil.getProperty(firstChild, newPropertyName);

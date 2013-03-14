@@ -51,7 +51,7 @@ public abstract class ModelListener {
   }
 
   public void aspectAdded(SNode node) {
-    SModel descriptor = node.getModel().getModelDescriptor();
+    SModel descriptor = node.getModel();
     if (!myImportantNodes.containsKey(descriptor.getReference())) {
       ((SModelInternal) descriptor).addModelListener(myRootRemovedListener);
     }

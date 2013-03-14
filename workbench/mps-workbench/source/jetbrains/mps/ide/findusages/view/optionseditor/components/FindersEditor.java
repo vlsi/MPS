@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.findusages.view.optionseditor.components;
 
 import com.intellij.icons.AllIcons.Nodes;
+import com.intellij.ui.IdeBorderFactory;
 import com.intellij.ui.components.JBCheckBox;
 import com.intellij.ui.components.JBLabel;
 import jetbrains.mps.ide.findusages.FindersManager;
@@ -28,6 +29,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.MenuKeyEvent;
+import java.awt.Cursor;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
@@ -41,10 +43,7 @@ public abstract class FindersEditor extends BaseEditor<FindersOptions> {
     myPanel = new JPanel();
     myPanel.setLayout(new BoxLayout(myPanel, BoxLayout.Y_AXIS));
 
-    myPanel.setBorder(
-      BorderFactory.createCompoundBorder(
-        BorderFactory.createTitledBorder("Finders"),
-        BorderFactory.createEmptyBorder(5, 5, 5, 5)));
+    myPanel.setBorder(IdeBorderFactory.createTitledBorder("Finders", false));
 
     Set<ReloadableFinder> availableFinders = FindersManager.getInstance().getAvailableFinders(node);
 
@@ -59,13 +58,7 @@ public abstract class FindersEditor extends BaseEditor<FindersOptions> {
     List<String> correctEnabledFinders = new ArrayList<String>();
 
     for (final ReloadableFinder finder : sortedFinders) {
-      boolean isEnabled = false;
-
-      for (String enabledFinderName : myOptions.getFindersClassNames()) {
-        if (enabledFinderName.equals(finder.getFinder().getClass().getName())) {
-          isEnabled = true;
-        }
-      }
+      boolean isEnabled = finder.isUsedByDefault(node) || (!resetToDefaults() && myOptions.getFindersClassNames().contains(finder.getFinder().getClass().getName()));
 
       if (isEnabled) {
         correctEnabledFinders.add(finder.getFinder().getClass().getName());
@@ -136,6 +129,7 @@ public abstract class FindersEditor extends BaseEditor<FindersOptions> {
           @Override
           public void mouseExited(MouseEvent e) {}
         });
+        goToFinderLabel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
         finderHolder.add(goToFinderLabel);
       }
@@ -155,5 +149,9 @@ public abstract class FindersEditor extends BaseEditor<FindersOptions> {
 
   protected void findersListChangedByUser() {
 
+  }
+
+  protected boolean resetToDefaults(){
+    return false;
   }
 }

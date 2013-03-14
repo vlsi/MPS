@@ -258,7 +258,7 @@ __switch__:
 
   private static SNode check_6qi07j_a0a0a0a0a1a5(SNodePointer checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getNode();
+      return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
     }
     return null;
   }

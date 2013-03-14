@@ -21,11 +21,8 @@ import com.intellij.util.ui.update.Update;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * Created with IntelliJ IDEA.
  * User: fyodor
  * Date: 6/4/12
- * Time: 4:07 PM
- * To change this template use File | Settings | File Templates.
  */
 public class DiagnosticUpdater implements ApplicationComponent {
 

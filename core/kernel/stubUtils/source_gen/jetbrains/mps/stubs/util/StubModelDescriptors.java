@@ -23,15 +23,18 @@ import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.project.StubModelsResolver;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 
+@Deprecated
 public abstract class StubModelDescriptors {
   private String stubStereotype;
   private Iterable<String> paths;
   private SModule module;
 
+  @Deprecated
   public StubModelDescriptors(String stereotype, String mr, SModule module) {
     this(stereotype, Sequence.<String>singleton(mr), module);
   }
 
+  @Deprecated
   public StubModelDescriptors(String stereotype, Iterable<String> roots, SModule module) {
     this.stubStereotype = stereotype;
     this.paths = roots;

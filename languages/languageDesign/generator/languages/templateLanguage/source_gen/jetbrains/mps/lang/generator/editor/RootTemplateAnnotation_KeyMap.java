@@ -63,7 +63,7 @@ public class RootTemplateAnnotation_KeyMap extends KeyMapImpl {
         return false;
       }
       SNode applyToNode = SNodeOperations.getContainingRoot(node);
-      Language language = (Language) check_366854_a0a2a0a(SNodeOperations.getConceptDeclaration(((SNode) applyToNode)).getContainingModel());
+      Language language = (Language) check_366854_a0a2a0a(SNodeOperations.getConceptDeclaration(((SNode) applyToNode)).getModel());
       if (language == BootstrapLanguages.generatorLanguage()) {
         return false;
       }

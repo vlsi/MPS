@@ -143,6 +143,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.evaluation.model.EvaluationContext" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.model.VariableDescription" file="VariableDescription.java">

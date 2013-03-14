@@ -184,10 +184,10 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
           // however there possibly are very little of such nodes and such messages are cleared after the next check.
           //
           // isValid is used incorrectly by AbstractLeftEditorHighlighterMessage so we can't clear all "invalid" messages.
-          if (((EditorMessage) message).getStatus() == MessageStatus.WARNING) {
+          if (message.getStatus() == MessageStatus.WARNING) {
             status = GutterStatus.WARNING;
           }
-          if (((EditorMessage) message).getStatus() == MessageStatus.ERROR) {
+          if (message.getStatus() == MessageStatus.ERROR) {
             status = GutterStatus.ERROR;
             break;
           }
@@ -278,10 +278,10 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
         if (o2 == null) return 1;
         if (o1 instanceof EditorMessage == o2 instanceof EditorMessage) {
           if (o1 instanceof EditorMessage) {
-            if (((EditorMessage) o1).getStatus() == ((EditorMessage) o2).getStatus()) {
+            if (o1.getStatus() == o2.getStatus()) {
               return getMessageStart(o1) - getMessageStart(o2);
             } else {
-              return ((EditorMessage) o1).getStatus().ordinal() - ((EditorMessage) o2).getStatus().ordinal();
+              return o1.getStatus().ordinal() - o2.getStatus().ordinal();
             }
           } else {
             return getMessageStart(o1) - getMessageStart(o2);

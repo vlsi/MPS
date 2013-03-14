@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class Node_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
   @NotNull
@@ -96,7 +97,7 @@ public class Node_Configuration implements IPersistentConfiguration, ITemplatePe
     } else {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          Node_Configuration.this.setModelId(node.getModel().getModelDescriptor().getReference().toString());
+          Node_Configuration.this.setModelId(node.getModel().getReference().toString());
           Node_Configuration.this.setNodeId(node.getNodeId().toString());
         }
       });
@@ -160,7 +161,7 @@ public class Node_Configuration implements IPersistentConfiguration, ITemplatePe
 
   private static SNode check_q2vl_a0a0a1a0(SNodePointer checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getNode();
+      return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
     }
     return null;
   }

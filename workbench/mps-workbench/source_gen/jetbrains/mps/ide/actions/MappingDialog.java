@@ -78,7 +78,7 @@ public class MappingDialog extends DialogWrapper {
           @Override
           public void run() {
             SNode node = treeNode.getSNode();
-            if (SNodeOperations.isDisposed(node) || node.getModel() == null || node.getModel().getModelDescriptor() == null) {
+            if (SNodeOperations.isDisposed(node) || node.getModel() == null || node.getModel() == null) {
               return;
             }
             // TODO: use node pointers here 
@@ -111,7 +111,7 @@ public class MappingDialog extends DialogWrapper {
       for (SModel md : generator.getOwnTemplateModels()) {
         MPSTreeNode modelTreeNode = new MappingDialog.MyTreeNode(moduleContext, IconManager.getIconFor(md), md.toString(), SNodeOperations.getModelLongName(md) + "@" + SModelStereotype.getStereotype(md));
         generatorTreeNode.add(modelTreeNode);
-        SModel model = md.getSModel();
+        SModel model = md;
         for (SNode node : SModelOperations.getRoots(model, "jetbrains.mps.lang.generator.structure.MappingConfiguration")) {
           SNodeTreeNode nodeTreeNode = new SNodeTreeNode(node, null, moduleContext, new Condition<SNode>() {
             @Override
