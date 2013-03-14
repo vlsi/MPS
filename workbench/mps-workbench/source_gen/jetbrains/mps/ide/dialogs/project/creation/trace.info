@@ -26,7 +26,7 @@
     <nodeInfo nodeId="1613125646032871578" fileName="NewModelDialog.java" startLine="87" startPosition="0" endLine="88" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1613125646032871585" fileName="NewModelDialog.java" startLine="88" startPosition="45" endLine="89" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1613125646032871590" fileName="NewModelDialog.java" startLine="89" startPosition="32" endLine="90" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1613125646032871614" fileName="NewModelDialog.java" startLine="92" startPosition="38" endLine="93" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1613125646032871614" fileName="NewModelDialog.java" startLine="92" startPosition="35" endLine="93" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3482941692036781056" fileName="NewModelDialog.java" startLine="94" startPosition="86" endLine="95" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="3482941692036778461" fileName="NewModelDialog.java" startLine="95" startPosition="68" endLine="96" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3298715926002507883" fileName="NewModelDialog.java" startLine="98" startPosition="5" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -166,7 +166,7 @@
     <nodeInfo nodeId="1613125646032871529" fileName="NewModelDialog.java" startLine="84" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initContentPane#()V" />
     <nodeInfo nodeId="5149305731183885477" fileName="NewModelDialog.java" startLine="153" startPosition="0" endLine="225" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doOKAction#()V" />
     <scopeInfo nodeId="1613125646032871526" fileName="NewModelDialog.java" startLine="80" startPosition="29" endLine="81" endPosition="20" />
-    <scopeInfo nodeId="3298715926002507287" fileName="NewModelDialog.java" startLine="92" startPosition="38" endLine="93" endPosition="31" />
+    <scopeInfo nodeId="3298715926002507287" fileName="NewModelDialog.java" startLine="92" startPosition="35" endLine="93" endPosition="31" />
     <scopeInfo nodeId="1613125646032871627" fileName="NewModelDialog.java" startLine="100" startPosition="31" endLine="101" endPosition="66" />
     <scopeInfo nodeId="3298715926002509804" fileName="NewModelDialog.java" startLine="106" startPosition="42" endLine="107" endPosition="58" />
     <scopeInfo nodeId="1613125646032871851" fileName="NewModelDialog.java" startLine="114" startPosition="49" endLine="115" endPosition="16" />

@@ -89,7 +89,7 @@ public class NewModelDialog extends DialogWrapper {
     mainPanel.add(myModelRoots);
     DefaultComboBoxModel model = new DefaultComboBoxModel();
     for (ModelRoot root : myModule.getModelRoots()) {
-      if (!(root.canCreateModels())) {
+      if (root.canCreateModels()) {
         model.addElement(root);
       } else if (myModule instanceof Language && root instanceof FileBasedModelRoot) {
         // Can fix only FileBased model root (default for language) 
