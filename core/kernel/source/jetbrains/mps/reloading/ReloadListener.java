@@ -15,7 +15,14 @@
  */
 package jetbrains.mps.reloading;
 
-public interface ReloadListener {
+import jetbrains.mps.classloading.MPSClassesListener;
+
+/**
+ * @see jetbrains.mps.classloading.MPSClassesListener
+ * @see jetbrains.mps.classloading.MPSClassesAdapter
+ */
+@Deprecated
+public interface ReloadListener extends MPSClassesListener {
   /**
    * If you want to clean caches/unload reloadable parts, do it here
    * <p/>

@@ -58,7 +58,7 @@ public class ClassLoaderManager implements CoreComponent {
   private final Map<String, SModuleReference> myLoadedClasses = new THashMap<String, SModuleReference>();
 
   // reload handlers
-  private List<ReloadListener> myReloadHandlers = new CopyOnWriteArrayList<ReloadListener>();
+  private List<MPSClassesListener> myClassesHandlers = new CopyOnWriteArrayList<MPSClassesListener>();
   private volatile boolean isReloadRequested;
 
   // component stuff
@@ -231,8 +231,8 @@ public class ClassLoaderManager implements CoreComponent {
       monitor.step("Disposing old classes...");
       callListeners(new ListenerCaller() {
         @Override
-        public void call(ReloadListener l) {
-          l.unload();
+        public void call(MPSClassesListener l) {
+          l.onClassesUnload(null);
         }
       });
       monitor.advance(1);
@@ -240,8 +240,8 @@ public class ClassLoaderManager implements CoreComponent {
       monitor.step("Rebuilding ui...");
       callListeners(new ListenerCaller() {
         @Override
-        public void call(ReloadListener l) {
-          l.onAfterReload();
+        public void call(MPSClassesListener l) {
+          l.onClassesLoad(null);
         }
       });
       monitor.advance(1);
@@ -263,8 +263,8 @@ public class ClassLoaderManager implements CoreComponent {
       monitor.step("Disposing old classes...");
       callListeners(new ListenerCaller() {
         @Override
-        public void call(ReloadListener l) {
-          l.unload();
+        public void call(MPSClassesListener l) {
+          l.onClassesUnload(null);
         }
       });
     } finally {
@@ -307,17 +307,27 @@ public class ClassLoaderManager implements CoreComponent {
   }
 
   //---------------reload handlers------------------
-
-  public void addReloadHandler(ReloadListener handler) {
-    myReloadHandlers.add(handler);
+  public void addClassesHandler(MPSClassesListener handler) {
+    myClassesHandlers.add(handler);
   }
 
+  public void removeClassesHandler(MPSClassesListener handler) {
+    myClassesHandlers.remove(handler);
+  }
+
+  // deprecated part
+  @Deprecated
+  public void addReloadHandler(ReloadListener handler) {
+    addClassesHandler(handler);
+  }
+
+  @Deprecated
   public void removeReloadHandler(ReloadListener handler) {
-    myReloadHandlers.remove(handler);
+    removeClassesHandler(handler);
   }
 
   private void callListeners(ListenerCaller caller) {
-    for (ReloadListener listener : myReloadHandlers) {
+    for (MPSClassesListener listener : myClassesHandlers) {
       try {
         caller.call(listener);
       } catch (Throwable t) {
@@ -327,6 +337,6 @@ public class ClassLoaderManager implements CoreComponent {
   }
 
   private interface ListenerCaller {
-    void call(ReloadListener l);
+    void call(MPSClassesListener l);
   }
 }
