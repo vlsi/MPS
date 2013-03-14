@@ -18,7 +18,6 @@ import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.util.concurrent.ExecutionException;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Map;
 import java.io.File;
 import java.util.List;
@@ -27,7 +26,7 @@ import jetbrains.mps.tool.builder.FileMPSProject;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -37,6 +36,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.make.resources.IResource;
@@ -131,7 +131,7 @@ public class GeneratorWorker extends MpsWorker {
   @Override
   public void work() {
     setupEnvironment();
-    final Wrappers._boolean doneSomething = new Wrappers._boolean(false);
+    boolean doneSomething = false;
     //  for each project 
     Map<File, List<String>> mpsProjects = myWhatToDo.getMPSProjectFiles();
     for (File file : mpsProjects.keySet()) {
@@ -150,7 +150,7 @@ public class GeneratorWorker extends MpsWorker {
 
       p.projectClosed();
       disposeProject(p);
-      doneSomething.value = true;
+      doneSomething = true;
     }
 
     // the rest -- using dummy project 
@@ -159,11 +159,7 @@ public class GeneratorWorker extends MpsWorker {
     collectFromModuleFiles(modules);
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        if (doneSomething.value) {
-          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
-        } else {
-          ClassLoaderManager.getInstance().updateModels();
-        }
+        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
       }
     });
     collectFromModelFiles(models);
@@ -171,9 +167,9 @@ public class GeneratorWorker extends MpsWorker {
     if (go.hasAnythingToGenerate()) {
       Project project = createDummyProject();
       executeTask(project, go);
-      doneSomething.value = true;
+      doneSomething = true;
     }
-    if (!(doneSomething.value)) {
+    if (!(doneSomething)) {
 
       error("Could not find anything to generate.");
       myTestFailed = true;
@@ -186,7 +182,6 @@ public class GeneratorWorker extends MpsWorker {
   protected void makeProject() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        ClassLoaderManager.getInstance().updateClassPath();
         new ModuleMaker().make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), new EmptyProgressMonitor());
       }
     });

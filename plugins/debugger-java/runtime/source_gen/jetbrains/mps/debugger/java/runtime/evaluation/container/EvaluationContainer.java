@@ -24,7 +24,7 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.debugger.java.api.evaluation.EvaluationException;
-import jetbrains.mps.project.ClassLoadingModule;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.debugger.java.api.evaluation.Evaluator;
 import jetbrains.mps.smodel.CopyUtil;
@@ -88,7 +88,7 @@ public class EvaluationContainer implements IEvaluationContainer {
 
   @Override
   public Class generateClass() throws EvaluationException {
-    return GeneratorUtil.generateAndLoadEvaluatorClass(myProject, SModelRepository.getInstance().getModelDescriptor(myContainerModel), Properties.EVALUATOR_NAME, getContext(), Properties.IS_DEVELOPER_MODE, new TransformingGenerationHandler(false, true, myGenerationListeners), ((ClassLoadingModule) MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("cf8c9de5-1b4a-4dc8-8e6d-847159af31dd"))).getClassLoader());
+    return GeneratorUtil.generateAndLoadEvaluatorClass(myProject, SModelRepository.getInstance().getModelDescriptor(myContainerModel), Properties.EVALUATOR_NAME, getContext(), Properties.IS_DEVELOPER_MODE, new TransformingGenerationHandler(false, true, myGenerationListeners), ClassLoaderManager.getInstance().getClassLoader(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("cf8c9de5-1b4a-4dc8-8e6d-847159af31dd"))));
   }
 
   @Override

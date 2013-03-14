@@ -7,6 +7,7 @@ import jetbrains.mps.components.ComponentPlugin;
 public class MPSBaseLanguage extends ComponentPlugin {
   private static MPSBaseLanguage ourInstance = new MPSBaseLanguage();
 
+
   private MPSBaseLanguage() {
   }
 

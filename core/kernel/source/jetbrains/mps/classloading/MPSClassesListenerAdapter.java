@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,34 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.runtime;
+package jetbrains.mps.classloading;
 
-import java.net.URL;
+import org.jetbrains.mps.openapi.module.SModule;
 
-public interface IClassLoadingModule {
-  //should include self
-  Iterable<IClassLoadingModule> getClassLoadingDependencies();
+import java.util.Set;
 
-  String getPluginPath();
+public class MPSClassesListenerAdapter implements MPSClassesListener {
+  @Override
+  public void onClassesUnload(Set<SModule> unloadedModules) {
+  }
 
-  //---class
-  Class getClass(String className);
-
-  boolean canFindClass(String name);
-
-  byte[] findClassBytes(String name);
-
-  ModuleClassLoader getClassLoader();
-
-  boolean canLoadFromSelf();
-
-  boolean canLoad();
-
-  //---resource
-
-  URL findResource(String name);
-
-  //---library
-
-  String findLibrary(String name);
+  @Override
+  public void onClassesLoad(Set<SModule> loadedModules) {
+  }
 }

@@ -159,7 +159,7 @@
     <nodeInfo nodeId="6619269785060746478" fileName="JavaClassStubsModelRoot.java" startLine="49" startPosition="73" endLine="50" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6619269785060746483" fileName="JavaClassStubsModelRoot.java" startLine="50" startPosition="42" endLine="51" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6619269785060746491" fileName="JavaClassStubsModelRoot.java" startLine="51" startPosition="81" endLine="52" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6619269785060746497" fileName="JavaClassStubsModelRoot.java" startLine="56" startPosition="36" endLine="57" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6619269785060746497" fileName="JavaClassStubsModelRoot.java" startLine="56" startPosition="36" endLine="57" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6619269785060746505" fileName="JavaClassStubsModelRoot.java" startLine="61" startPosition="48" endLine="62" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6619269785060746513" fileName="JavaClassStubsModelRoot.java" startLine="66" startPosition="44" endLine="67" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6619269785060746531" fileName="JavaClassStubsModelRoot.java" startLine="71" startPosition="9" endLine="72" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -209,7 +209,7 @@
     <nodeInfo nodeId="6619269785060746541" fileName="JavaClassStubsModelRoot.java" startLine="80" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelDescriptors#(Ljava/util/List;Ljava/lang/String;Ljetbrains/mps/reloading/IClassPathItem;Ljava/lang/String;Ljava/lang/String;Lorg/jetbrains/mps/openapi/module/SModule;)V" />
     <scopeInfo nodeId="6619269785060746434" fileName="JavaClassStubsModelRoot.java" startLine="25" startPosition="36" endLine="25" endPosition="36" />
     <scopeInfo nodeId="6619269785060746438" fileName="JavaClassStubsModelRoot.java" startLine="29" startPosition="27" endLine="30" endPosition="44" />
-    <scopeInfo nodeId="6619269785060746496" fileName="JavaClassStubsModelRoot.java" startLine="56" startPosition="36" endLine="57" endPosition="16" />
+    <scopeInfo nodeId="6619269785060746496" fileName="JavaClassStubsModelRoot.java" startLine="56" startPosition="36" endLine="57" endPosition="17" />
     <scopeInfo nodeId="6619269785060746504" fileName="JavaClassStubsModelRoot.java" startLine="61" startPosition="48" endLine="62" endPosition="17" />
     <scopeInfo nodeId="6619269785060746512" fileName="JavaClassStubsModelRoot.java" startLine="66" startPosition="44" endLine="67" endPosition="16" />
     <scopeInfo nodeId="6619269785060746530" fileName="JavaClassStubsModelRoot.java" startLine="71" startPosition="9" endLine="72" endPosition="80" />

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,20 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.runtime;
+package jetbrains.mps.classloading;
 
-import java.security.CodeSource;
-import java.security.ProtectionDomain;
-import java.security.cert.Certificate;
+import org.jetbrains.mps.openapi.module.SModule;
 
-public class ProtectionDomainUtil {
-  private static ProtectionDomain defaultDomain = null;
+import java.util.Set;
 
-  public static ProtectionDomain loadedClassDomain() {
-    if (defaultDomain == null) {
-      CodeSource cs = new CodeSource(null, (Certificate[]) null);
-      defaultDomain = new ProtectionDomain(cs, null);
-    }
-    return defaultDomain;
-  }
+public interface MPSClassesListener {
+  void onClassesUnload(Set<SModule> unloadedModules);
+
+  void onClassesLoad(Set<SModule> loadedModules);
 }

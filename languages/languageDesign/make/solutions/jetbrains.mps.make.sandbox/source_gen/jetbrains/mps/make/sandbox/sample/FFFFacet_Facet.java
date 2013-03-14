@@ -26,7 +26,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class FFFFacet_Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
-  private IFacet.Name name = new IFacet.Name("FFFFacet");
+  private IFacet.Name name = new IFacet.Name("jetbrains.mps.make.sandbox.FFFFacet");
 
   public FFFFacet_Facet() {
     ListSequence.fromList(targets).addElement(new FFFFacet_Facet.Target_QQQ());
@@ -39,15 +39,15 @@ public class FFFFacet_Facet extends IFacet.Stub {
   }
 
   public Iterable<IFacet.Name> optional() {
-    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("GenerateSpecial")});
+    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.make.sandbox.GenerateSpecial")});
   }
 
   public Iterable<IFacet.Name> required() {
-    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("Generate")});
+    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.make.sandbox.Generate")});
   }
 
   public Iterable<IFacet.Name> extended() {
-    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("Generate")});
+    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.make.sandbox.Generate")});
   }
 
   public IFacet.Name getName() {
@@ -61,7 +61,7 @@ public class FFFFacet_Facet extends IFacet.Stub {
   public static class Target_QQQ implements ITargetEx {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-    private ITarget.Name name = new ITarget.Name("FFFFacet.QQQ");
+    private ITarget.Name name = new ITarget.Name("jetbrains.mps.make.sandbox.FFFFacet.QQQ");
 
     public Target_QQQ() {
     }
@@ -75,8 +75,8 @@ public class FFFFacet_Facet extends IFacet.Stub {
           switch (0) {
             case 0:
               pa.forResource(Sequence.fromIterable(input).first()).properties(Target_QQQ.this.getName(), FFFFacet_Facet.Target_QQQ.Parameters.class).text();
-              new IFacet.Name("FFFFacet");
-              pa.global().properties(new ITarget.Name("GenerateSpecial.GenerateSpecialTarget"), GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class).bar(0);
+              new IFacet.Name("jetbrains.mps.make.sandbox.FFFFacet");
+              pa.global().properties(new ITarget.Name("jetbrains.mps.make.sandbox.GenerateSpecial.GenerateSpecialTarget"), GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class).bar(0);
               return new IResult.SUCCESS(_output_chixuw_a0a);
             default:
               return new IResult.SUCCESS(_output_chixuw_a0a);
@@ -90,7 +90,7 @@ public class FFFFacet_Facet extends IFacet.Stub {
     }
 
     public Iterable<ITarget.Name> notAfter() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("GenerateSpecial.GenerateSpecialTarget")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.make.sandbox.GenerateSpecial.GenerateSpecialTarget")});
     }
 
     public Iterable<ITarget.Name> after() {
@@ -168,7 +168,7 @@ public class FFFFacet_Facet extends IFacet.Stub {
   public static class Target_qweqwe implements ITargetEx {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-    private ITarget.Name name = new ITarget.Name("FFFFacet.qweqwe");
+    private ITarget.Name name = new ITarget.Name("jetbrains.mps.make.sandbox.FFFFacet.qweqwe");
 
     public Target_qweqwe() {
     }
@@ -181,11 +181,11 @@ public class FFFFacet_Facet extends IFacet.Stub {
           final Iterable<IResource> input = (Iterable) (Iterable) rawInput;
           switch (0) {
             case 0:
-              pa.global().properties(new ITarget.Name("FFFFacet.QQQ"), FFFFacet_Facet.Target_QQQ.Parameters.class).text();
+              pa.global().properties(new ITarget.Name("jetbrains.mps.make.sandbox.FFFFacet.QQQ"), FFFFacet_Facet.Target_QQQ.Parameters.class).text();
               monitor.currentProgress().beginWork("Foobar", 10, monitor.currentProgress().workLeft());
               monitor.currentProgress().advanceWork("Foobar", 10);
               monitor.currentProgress().finishWork("Foobar");
-              new IFacet.Name("GGG");
+              new IFacet.Name("jetbrains.mps.make.sandbox.GGG");
             default:
               return new IResult.SUCCESS(_output_chixuw_a0b);
           }
@@ -250,7 +250,7 @@ public class FFFFacet_Facet extends IFacet.Stub {
   public static class Target_Nanana implements ITargetEx {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-    private ITarget.Name name = new ITarget.Name("FFFFacet.Nanana");
+    private ITarget.Name name = new ITarget.Name("jetbrains.mps.make.sandbox.FFFFacet.Nanana");
 
     public Target_Nanana() {
     }
@@ -330,10 +330,10 @@ public class FFFFacet_Facet extends IFacet.Stub {
 
     public void storeValues(Map<String, String> store, IPropertiesPool properties) {
       {
-        ITarget.Name name = new ITarget.Name("FFFFacet.QQQ");
+        ITarget.Name name = new ITarget.Name("jetbrains.mps.make.sandbox.FFFFacet.QQQ");
         if (properties.hasProperties(name)) {
           FFFFacet_Facet.Target_QQQ.Parameters props = properties.properties(name, FFFFacet_Facet.Target_QQQ.Parameters.class);
-          MapSequence.fromMap(store).put("FFFFacet.QQQ.text", String.valueOf(props.text()));
+          MapSequence.fromMap(store).put("jetbrains.mps.make.sandbox.FFFFacet.QQQ.text", String.valueOf(props.text()));
         }
       }
     }
@@ -341,10 +341,10 @@ public class FFFFacet_Facet extends IFacet.Stub {
     public void loadValues(Map<String, String> store, IPropertiesPool properties) {
       try {
         {
-          ITarget.Name name = new ITarget.Name("FFFFacet.QQQ");
+          ITarget.Name name = new ITarget.Name("jetbrains.mps.make.sandbox.FFFFacet.QQQ");
           FFFFacet_Facet.Target_QQQ.Parameters props = properties.properties(name, FFFFacet_Facet.Target_QQQ.Parameters.class);
-          if (MapSequence.fromMap(store).containsKey("FFFFacet.QQQ.text")) {
-            props.text(String.valueOf(MapSequence.fromMap(store).get("FFFFacet.QQQ.text")));
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.make.sandbox.FFFFacet.QQQ.text")) {
+            props.text(String.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.make.sandbox.FFFFacet.QQQ.text")));
           }
         }
       } catch (RuntimeException re) {

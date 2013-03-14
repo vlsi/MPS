@@ -34,6 +34,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.newvfs.RefreshSession;
 import com.intellij.openapi.vfs.newvfs.RefreshQueue;
+import jetbrains.mps.project.SModuleOperations;
 import java.io.IOException;
 import jetbrains.mps.ide.ThreadUtils;
 
@@ -297,7 +298,7 @@ public class DiskMemoryConflictsTest {
       ModelAccess.instance().runCommandInEDT(new Runnable() {
         @Override
         public void run() {
-          myModelDescriptor = (BaseEditableSModelDescriptor) myModule.createModel(DiskMemoryConflictsTest.MODEL_REFERENCE.getSModelFqName().toString(), myModule.getModelRoots().iterator().next(), null);
+          myModelDescriptor = ((BaseEditableSModelDescriptor) SModuleOperations.createModelWithAdjustments(MODEL_REFERENCE.getSModelFqName().toString(), myModule.getModelRoots().iterator().next()));
           myModelDescriptor.addRootNode(CopyUtil.copyAndPreserveId(myNodeBackup));
           myModelDescriptor.save();
         }

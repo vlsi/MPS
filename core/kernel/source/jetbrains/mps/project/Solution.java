@@ -16,27 +16,22 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.ClasspathReader;
-import jetbrains.mps.MPSCore;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.project.facets.JavaModuleFacetImpl;
 import jetbrains.mps.project.facets.TestsFacet;
-import jetbrains.mps.project.facets.TestsFacetImpl;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.project.structure.modules.SolutionKind;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFile;
-import org.jetbrains.mps.openapi.module.SModuleFacet;
 
 import java.util.*;
 
@@ -44,7 +39,7 @@ import java.util.*;
  * Igor Alshannikov
  * Aug 26, 2005
  */
-public class Solution extends ClassLoadingModule {
+public class Solution extends AbstractModule {
   private SolutionDescriptor mySolutionDescriptor;
   public static final String SOLUTION_MODELS = "models";
   // idea plugin wants to turn it off sometimes, when it knows better what jdk is and what platform is
@@ -175,16 +170,6 @@ public class Solution extends ClassLoadingModule {
     IFile file = getDescriptorFile();
     assert file != null;
     return (SolutionDescriptor) ModulesMiner.getInstance().loadModuleDescriptor(file);
-  }
-
-  @Override
-  public boolean canLoadFromSelf() {
-    return getModuleDescriptor().getCompileInMPS();
-  }
-
-  @Override
-  public boolean canLoad() {
-    return MPSCore.getInstance().isTestMode() || getModuleDescriptor().getKind() != SolutionKind.NONE;
   }
 
   @Deprecated

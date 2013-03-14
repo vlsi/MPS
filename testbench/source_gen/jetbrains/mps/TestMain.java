@@ -32,7 +32,7 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.refactoring.tests.IRefactoringTester;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import java.util.Arrays;
 import com.intellij.openapi.vfs.newvfs.persistent.FSRecords;

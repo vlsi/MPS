@@ -17,15 +17,14 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.TransientModelsProvider.TransientSwapSpace;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.ClassLoadingModule;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.runtime.IClassLoadingModule;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.mps.openapi.module.SModule;
 
@@ -33,7 +32,7 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class TransientModelsModule extends ClassLoadingModule {
+public class TransientModelsModule extends AbstractModule {
   private static final Logger LOG = Logger.getLogger(TransientModelsModule.class);
 
   private static final AtomicInteger ourModuleCounter = new AtomicInteger();
@@ -56,15 +55,6 @@ public class TransientModelsModule extends ClassLoadingModule {
     String fqName = original.getModuleName() + "@transient" + ourModuleCounter.getAndIncrement();
     ModuleReference reference = new ModuleReference(fqName, ModuleId.regular());
     setModuleReference(reference);
-  }
-
-  @Override
-  public Class getClass(String fqName) {
-    // todo: TransientModelsModule? seriously?
-    if (!(myOriginalModule instanceof IClassLoadingModule)) {
-      throw new IllegalStateException();
-    }
-    return ((IClassLoadingModule) myOriginalModule).getClass(fqName);
   }
 
   public boolean hasPublished() {
@@ -131,8 +121,8 @@ public class TransientModelsModule extends ClassLoadingModule {
   private boolean isValidName(String longName, String stereotype) {
     String modelName = stereotype == null ? longName : longName + "@" + stereotype;
     return
-      SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(modelName)) == null
-        && !myModels.containsKey(modelName);
+        SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(modelName)) == null
+            && !myModels.containsKey(modelName);
   }
 
   public boolean publishTransientModel(SModel model) {
@@ -205,6 +195,10 @@ public class TransientModelsModule extends ClassLoadingModule {
   @Override
   protected ModuleScope createScope() {
     return new TransientModuleScope();
+  }
+
+  public SModule getOriginalModule() {
+    return myOriginalModule;
   }
 
   public class TransientModuleScope extends ModuleScope {

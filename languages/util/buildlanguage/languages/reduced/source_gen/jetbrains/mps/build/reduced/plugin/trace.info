@@ -10,7 +10,7 @@
     <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="37" startPosition="32" endLine="38" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="41" startPosition="38" endLine="42" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="45" startPosition="43" endLine="46" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="49" startPosition="43" endLine="50" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="49" startPosition="43" endLine="50" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="53" startPosition="43" endLine="54" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="57" startPosition="32" endLine="58" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="61" startPosition="57" endLine="62" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -28,7 +28,7 @@
     <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="104" startPosition="46" endLine="105" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="108" startPosition="43" endLine="109" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="112" startPosition="47" endLine="113" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="116" startPosition="44" endLine="117" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="116" startPosition="44" endLine="117" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="120" startPosition="35" endLine="121" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="124" startPosition="33" endLine="125" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="128" startPosition="36" endLine="129" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -104,7 +104,7 @@
     <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="37" startPosition="32" endLine="38" endPosition="88" />
     <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="41" startPosition="38" endLine="42" endPosition="19" />
     <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="45" startPosition="43" endLine="46" endPosition="16" />
-    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="49" startPosition="43" endLine="50" endPosition="151" />
+    <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="49" startPosition="43" endLine="50" endPosition="153" />
     <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="53" startPosition="43" endLine="54" endPosition="16" />
     <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="57" startPosition="32" endLine="58" endPosition="21" />
     <scopeInfo nodeId="10342590403667037" fileName="CollectHashes_Facet.java" startLine="61" startPosition="57" endLine="62" endPosition="54" />
@@ -114,7 +114,7 @@
     <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="104" startPosition="46" endLine="105" endPosition="18" />
     <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="108" startPosition="43" endLine="109" endPosition="115" />
     <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="112" startPosition="47" endLine="113" endPosition="18" />
-    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="116" startPosition="44" endLine="117" endPosition="107" />
+    <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="116" startPosition="44" endLine="117" endPosition="109" />
     <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="120" startPosition="35" endLine="121" endPosition="18" />
     <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="124" startPosition="33" endLine="125" endPosition="19" />
     <scopeInfo nodeId="10342590403667041" fileName="CollectHashes_Facet.java" startLine="128" startPosition="36" endLine="129" endPosition="18" />
@@ -235,8 +235,8 @@
     <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="37" startPosition="30" endLine="38" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="41" startPosition="38" endLine="42" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="45" startPosition="43" endLine="46" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="49" startPosition="43" endLine="50" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="53" startPosition="43" endLine="54" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="49" startPosition="43" endLine="50" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="53" startPosition="43" endLine="54" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="57" startPosition="32" endLine="58" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="61" startPosition="57" endLine="62" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="66" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPECTED_INPUT" />
@@ -260,7 +260,7 @@
     <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="122" startPosition="46" endLine="123" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="126" startPosition="43" endLine="127" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="130" startPosition="47" endLine="131" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="134" startPosition="44" endLine="135" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="134" startPosition="44" endLine="135" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="138" startPosition="35" endLine="139" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="142" startPosition="33" endLine="143" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="146" startPosition="36" endLine="147" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -360,8 +360,8 @@
     <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="37" startPosition="30" endLine="38" endPosition="85" />
     <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="41" startPosition="38" endLine="42" endPosition="19" />
     <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="45" startPosition="43" endLine="46" endPosition="16" />
-    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="49" startPosition="43" endLine="50" endPosition="150" />
-    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="53" startPosition="43" endLine="54" endPosition="98" />
+    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="49" startPosition="43" endLine="50" endPosition="152" />
+    <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="53" startPosition="43" endLine="54" endPosition="100" />
     <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="57" startPosition="32" endLine="58" endPosition="21" />
     <scopeInfo nodeId="8795824097439267909" fileName="ReportFiles_Facet.java" startLine="61" startPosition="57" endLine="62" endPosition="52" />
     <scopeInfo nodeId="8795824097439267913" fileName="ReportFiles_Facet.java" startLine="111" startPosition="20" endLine="112" endPosition="61" />
@@ -369,7 +369,7 @@
     <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="122" startPosition="46" endLine="123" endPosition="18" />
     <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="126" startPosition="43" endLine="127" endPosition="113" />
     <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="130" startPosition="47" endLine="131" endPosition="18" />
-    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="134" startPosition="44" endLine="135" endPosition="112" />
+    <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="134" startPosition="44" endLine="135" endPosition="114" />
     <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="138" startPosition="35" endLine="139" endPosition="18" />
     <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="142" startPosition="33" endLine="143" endPosition="19" />
     <scopeInfo nodeId="8795824097439267911" fileName="ReportFiles_Facet.java" startLine="146" startPosition="36" endLine="147" endPosition="18" />

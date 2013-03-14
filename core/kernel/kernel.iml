@@ -37,7 +37,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="openapi" exported="" />
-    <orderEntry type="module" module-name="runtime" exported="" />
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="module" module-name="collections-runtime" />
@@ -59,6 +58,7 @@
     <orderEntry type="library" scope="TEST" name="xmlunit" level="project" />
     <orderEntry type="library" scope="TEST" name="Idea-plaform" level="project" />
     <orderEntry type="module" module-name="migration" />
+    <orderEntry type="module" module-name="make-facets" />
   </component>
 </module>
 

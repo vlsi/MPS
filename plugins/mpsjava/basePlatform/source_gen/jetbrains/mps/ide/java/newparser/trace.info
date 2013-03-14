@@ -4406,8 +4406,8 @@
     <nodeInfo nodeId="6122461715566550902" fileName="DirParser.java" startLine="174" startPosition="52" endLine="175" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8890409944291606527" fileName="DirParser.java" startLine="175" startPosition="97" endLine="176" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1023591392840705566" fileName="DirParser.java" startLine="177" startPosition="5" endLine="178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8890409944291607326" fileName="DirParser.java" startLine="178" startPosition="0" endLine="179" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8890409944291608049" fileName="DirParser.java" startLine="179" startPosition="118" endLine="180" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="8890409944291607326" fileName="DirParser.java" startLine="178" startPosition="0" endLine="179" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8890409944291608049" fileName="DirParser.java" startLine="179" startPosition="117" endLine="180" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="1023591392840705501" fileName="DirParser.java" startLine="180" startPosition="30" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6122461715566550552" fileName="DirParser.java" startLine="181" startPosition="0" endLine="182" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6122461715566550722" fileName="DirParser.java" startLine="188" startPosition="45" endLine="189" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

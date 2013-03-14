@@ -12,7 +12,7 @@ import jetbrains.mps.openapi.editor.cells.KeyMap;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.ide.MPSCoreComponents;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
@@ -114,7 +114,7 @@ public class LanguagesKeymapManager implements ApplicationComponent {
     if (language == null) {
       return null;
     }
-    return language.getClass(fqName);
+    return myClassLoaderManager.getClass(language, fqName);
   }
 
   private void unregisterLanguageKeyMaps(Language language) {

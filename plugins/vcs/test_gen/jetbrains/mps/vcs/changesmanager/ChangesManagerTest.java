@@ -84,7 +84,7 @@ import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
@@ -866,7 +866,7 @@ public class ChangesManagerTest {
       public void run() {
         String modelName = "newmodel";
         SModule module = myUiDiff.getModelDescriptor().getModule();
-        ((AbstractModule) module).createModel(MODEL_PREFIX + modelName, module.getModelRoots().iterator().next(), null);
+        SModuleOperations.createModelWithAdjustments(MODEL_PREFIX + modelName, module.getModelRoots().iterator().next());
         newModelDiff.value = getCurrentDifference(modelName);
       }
     });

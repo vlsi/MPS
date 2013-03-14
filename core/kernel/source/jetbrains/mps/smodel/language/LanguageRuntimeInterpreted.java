@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.language;
 
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.generator.impl.interpreted.TemplateModuleInterpreted;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
@@ -71,7 +72,7 @@ public class LanguageRuntimeInterpreted extends LanguageRuntime {
       if (findUsages == null) return null;
       String packageName = SNodeOperations.getModelLongName(findUsages);
 
-      Class<?> cls = myLanguage.getClass(packageName + ".FindUsagesDescriptor");
+      Class<?> cls = ClassLoaderManager.getInstance().getClass(myLanguage, packageName + ".FindUsagesDescriptor");
       if (cls == null) {
         return null;
       }

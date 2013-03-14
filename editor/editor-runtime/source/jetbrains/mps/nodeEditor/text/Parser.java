@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.text;
 
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -29,7 +30,7 @@ public class Parser {
     try {
       Language l = (Language) MPSModuleRepository.getInstance().getModuleByFqName(languageNamespace);
       String name = languageNamespace + ".parser.Parser";
-      cls = l.getClass(name);
+      cls = ClassLoaderManager.getInstance().getClass(l, name);
     } catch (Exception e) {
       return null;
     }

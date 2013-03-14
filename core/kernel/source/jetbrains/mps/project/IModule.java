@@ -132,6 +132,7 @@ public interface IModule extends SModule, EditableSModule {
 
   // ?
   // btw onModuleRegistered
+  // setRepository I think
   void attach();
 
   // ?
@@ -149,14 +150,7 @@ public interface IModule extends SModule, EditableSModule {
   // ----- deprecated part
   // model creation stuff
 
-  // AbstractModule#createModel
-  // ModelAdjuster? WTF? something between creating and registration I think
-  // talk with Evgeny
-  SModel createModel(String fqName, ModelRoot root, @Nullable ModelAdjuster adj);
 
-  public static interface ModelAdjuster {
-    void adjust(SModel model);
-  }
 
   // module source path stuff
 
@@ -195,21 +189,37 @@ public interface IModule extends SModule, EditableSModule {
   @Deprecated
   IClassPathItem getModuleWithDependenciesClassPathItem();
 
-  // IClassLoadingModule part. Use module.getFacet(IClassLoadingModule).{method}
+  // IClassLoadingModule part. Use ClassLoaderManager instead
 
   /**
-   * @see jetbrains.mps.runtime.IClassLoadingModule#getClass(String)
+   * @see jetbrains.mps.classloading.ClassLoaderManager#getClass(org.jetbrains.mps.openapi.module.SModule, String)
    */
   @Deprecated
   Class getClass(String className);
 
   /**
-   * @see jetbrains.mps.runtime.IClassLoadingModule#canLoad()
+   * @see jetbrains.mps.classloading.ClassLoaderManager#canLoad(org.jetbrains.mps.openapi.module.SModule)
    */
   @Deprecated
   boolean reloadClassesAfterGeneration();
 
   // other methods
+
+  /**
+   * If you need just model: use root.createModel
+   * If you need model with adjustments (auto imports, optimized imports, etc): use SModuleOperations#createModelWithAdjustments
+   * @see SModuleOperations#createModelWithAdjustments(String, org.jetbrains.mps.openapi.persistence.ModelRoot)
+   */
+  @Deprecated
+  SModel createModel(String fqName, ModelRoot root, @Nullable ModelAdjuster adj);
+
+  /**
+   * Create model through modelRoot.createModel, apply adjuster, and register model in repository after this operations
+   */
+  @Deprecated
+  public static interface ModelAdjuster {
+    void adjust(SModel model);
+  }
 
   /**
    * @see SModule#getModuleName

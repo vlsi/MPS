@@ -19,16 +19,14 @@ import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.library.contributor.LibraryContributor.LibDescriptor;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.runtime.IClassLoadingModule;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.language.ExtensionRegistry;
-import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.*;
@@ -74,9 +72,8 @@ public class LibraryInitializer implements CoreComponent {
     update(false);
   }
 
-  public ClassLoader getParentLoaderForModule(IClassLoadingModule module) {
+  public ClassLoader getPluginClassLoaderForPath(@Nullable String pluginPath) {
     // TODO find classloader using ModuleOwner (SLibrary)
-    String pluginPath = module.getPluginPath();
     if (pluginPath != null) {
       String foundPath = "";
       for (String path : myParentLoaders.keySet()) {
@@ -130,14 +127,7 @@ public class LibraryInitializer implements CoreComponent {
     if (toUnload.isEmpty() && toLoad.isEmpty()) return;
 
     CleanupManager.getInstance().cleanup();
-    ClassLoaderManager.getInstance().updateClassPath();
-
-    LanguageRegistry.getInstance().loadLanguages();
-    ExtensionRegistry.getInstance().loadExtensionDescriptors();
-
-    for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
-      m.invalidateDependencies();
-    }
+    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
   }
 
   //----------bootstrap modules

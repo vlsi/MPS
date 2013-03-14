@@ -20,7 +20,7 @@ import com.intellij.execution.ui.RunContentManagerImpl;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.execution.configurations.RunConfiguration;
-import jetbrains.mps.runtime.ModuleClassLoader;
+import jetbrains.mps.classloading.ModuleClassLoader;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.ArrayList;
 import com.intellij.execution.impl.RunManagerImpl;

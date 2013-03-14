@@ -33,6 +33,7 @@ import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import java.lang.reflect.Method;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -190,7 +191,7 @@ public class IconManager {
       if (language == null) {
         LOG.error("Can't find a language " + namespace);
       } else {
-        Class icons = language.getClass(className);
+        Class icons = ClassLoaderManager.getInstance().getClass(language, className);
         if (icons != null) {
           Method method;
           try {

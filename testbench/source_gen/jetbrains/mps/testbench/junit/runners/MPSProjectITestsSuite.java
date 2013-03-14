@@ -12,7 +12,7 @@ import java.util.Collections;
 import org.junit.runners.model.InitializationError;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.runtime.IClassLoadingModule;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
@@ -43,7 +43,7 @@ public class MPSProjectITestsSuite extends Suite {
   private List<Class<?>> getUnitTestClasses(org.junit.runners.model.TestClass klass) throws InitializationError {
     List<Class<?>> result = ListSequence.fromList(new ArrayList<Class<?>>());
     for (Tuples._2<String, SModule> testClassDescriptor : ListSequence.fromList(getTestClassDescriptors(klass))) {
-      Class testClass = ((IClassLoadingModule) testClassDescriptor._1()).getClass(testClassDescriptor._0());
+      Class testClass = ClassLoaderManager.getInstance().getClass(testClassDescriptor._1(), testClassDescriptor._0());
       if (testClass != null) {
         ListSequence.fromList(result).addElement(testClass);
       } else {

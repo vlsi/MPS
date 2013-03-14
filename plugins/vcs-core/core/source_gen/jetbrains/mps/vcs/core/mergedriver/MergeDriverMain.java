@@ -56,7 +56,7 @@ public class MergeDriverMain {
     }
     configureLog4j();
     // hack: deleting nodes doesn't work now without ImmatureReferences initialized 
-    new ImmatureReferences(new SModelRepository(null)).init();
+    new ImmatureReferences(new SModelRepository()).init();
 
     String systemPath = new File(System.getProperty(LOG_PROPERTY)).getParentFile().getParentFile().getAbsolutePath();
     MergeDriverBackupUtil.setMergeBackupDirPath(systemPath + File.separator + "merge-backup");

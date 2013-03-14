@@ -8,11 +8,11 @@ import java.util.ArrayList;
 import jetbrains.mps.tool.common.Script;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import java.util.Set;
 import java.io.File;
 import jetbrains.mps.project.MPSExtentions;
@@ -123,7 +123,6 @@ public abstract class MpsWorker {
     ModelAccess.instance().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        ClassLoaderManager.getInstance().updateClassPath();
         ModuleMaker maker = new ModuleMaker();
         maker.make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), new EmptyProgressMonitor());
       }

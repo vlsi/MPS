@@ -2471,7 +2471,7 @@
                         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5646063728432375714">
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ud0o.6168415856807657099" resolveInfo="IFacet.Name" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5646063728432375715">
-                            <property name="value" nameId="tpee.1070475926801" value="TextGen_" />
+                            <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.make.tests.TextGen_" />
                           </node>
                         </node>
                       </node>

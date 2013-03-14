@@ -12,6 +12,7 @@ import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import org.junit.runner.notification.Failure;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.AbstractModule;
 import javax.swing.SwingUtilities;
@@ -36,6 +37,13 @@ public class MakeRunner extends Runner {
         if (compilationResult != null && compilationResult.getErrors() > 0) {
           notifier.fireTestFailure(new Failure(myDescription, new Exception("Compilation errors: " + compilationResult)));
         }
+      }
+    });
+
+    // why we need it? because some classes loaded before maker - LanguageRuntime and typesystem classes 
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        ClassLoaderManager.getInstance().reloadClasses(MPSModuleRepository.getInstance().getModules(), new EmptyProgressMonitor());
       }
     });
 

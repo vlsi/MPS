@@ -54,7 +54,7 @@ public class JavaClassStubsModelRoot extends FolderModelRootBase {
 
   @Override
   public boolean canCreateModels() {
-    return true;
+    return false;
   }
 
   @Override

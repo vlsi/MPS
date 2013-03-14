@@ -16,21 +16,21 @@
 package jetbrains.mps.generator.test;
 
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.ClassLoadingModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.dependency.modules.DependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.runtime.IClassLoadingModule;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.SNodeOperations;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.Element;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -38,7 +38,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * Evgeny Gryaznov, 10/18/10
  */
-public class TestModule extends ClassLoadingModule {
+public class TestModule extends AbstractModule {
 
   private IModule myPeer;
   private Map<SModelFqName, SModel> myModels = new ConcurrentHashMap<SModelFqName, SModel>();
@@ -59,15 +59,6 @@ public class TestModule extends ClassLoadingModule {
   @Override
   public IFile getOutputPath() {
     return ((AbstractModule) myPeer).getOutputPath();
-  }
-
-  @Override
-  public Class getClass(String fqName) {
-    if (!(myPeer instanceof IClassLoadingModule)) {
-      throw new IllegalStateException();
-    }
-
-    return ((IClassLoadingModule) myPeer).getClass(fqName);
   }
 
   @Override
@@ -123,14 +114,13 @@ public class TestModule extends ClassLoadingModule {
   }
 
   @Override
-  public boolean canLoad() {
-    return myPeer instanceof IClassLoadingModule && ((IClassLoadingModule) myPeer).canLoad();
-  }
-
-  @Override
   public ModuleDescriptor getModuleDescriptor() {
     // todo: is it ok?
     return myPeer.getModuleDescriptor();
+  }
+
+  public SModule getPeer() {
+    return myPeer;
   }
 
   public class TestModuleScope extends ModuleScope {

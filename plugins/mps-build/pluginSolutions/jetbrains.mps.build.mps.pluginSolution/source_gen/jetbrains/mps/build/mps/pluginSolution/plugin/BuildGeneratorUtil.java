@@ -9,6 +9,7 @@ import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
@@ -35,7 +36,7 @@ public class BuildGeneratorUtil {
     if (modelDescriptor.value == null) {
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          modelDescriptor.value = solution.createModel(newModelFQName.toString(), solution.getModelRoots().iterator().next(), null);
+          modelDescriptor.value = SModuleOperations.createModelWithAdjustments(newModelFQName.toString(), solution.getModelRoots().iterator().next());
         }
       });
     }

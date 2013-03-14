@@ -18,7 +18,7 @@ import java.io.File;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.logging.Logger;
 

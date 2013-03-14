@@ -23,7 +23,7 @@ import jetbrains.mps.make.script.IPropertiesPool;
 
 public class Maker__Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
-  private IFacet.Name name = new IFacet.Name("Maker_");
+  private IFacet.Name name = new IFacet.Name("jetbrains.mps.make.tests.Maker_");
 
   public Maker__Facet() {
     ListSequence.fromList(targets).addElement(new Maker__Facet.Target_Make());
@@ -56,7 +56,7 @@ public class Maker__Facet extends IFacet.Stub {
   public static class Target_Make implements ITargetEx {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-    private ITarget.Name name = new ITarget.Name("Maker_.Make");
+    private ITarget.Name name = new ITarget.Name("jetbrains.mps.make.tests.Maker_.Make");
 
     public Target_Make() {
     }
