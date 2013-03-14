@@ -182,7 +182,6 @@ public class GeneratorWorker extends MpsWorker {
   protected void makeProject() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        ClassLoaderManager.getInstance().updateClassPath();
         new ModuleMaker().make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), new EmptyProgressMonitor());
       }
     });

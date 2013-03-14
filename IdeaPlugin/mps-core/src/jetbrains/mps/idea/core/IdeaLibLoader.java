@@ -19,8 +19,15 @@ package jetbrains.mps.idea.core;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.project.SModelRootClassesListener;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
+
+import java.util.HashSet;
+import java.util.Set;
 
 public class IdeaLibLoader implements ProjectComponent {
   public IdeaLibLoader(StartupManager m) {
@@ -28,7 +35,8 @@ public class IdeaLibLoader implements ProjectComponent {
       public void run() {
         ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
-            ClassLoaderManager.getInstance().updateModels();
+            // todo: WHAT THE HACK???
+            SModelRootClassesListener.INSTANCE.onClassesLoad(SetSequence.fromIterable(MPSModuleRepository.getInstance().getModules()));
           }
         });
       }
