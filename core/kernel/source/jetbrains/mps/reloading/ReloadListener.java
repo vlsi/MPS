@@ -19,7 +19,7 @@ import jetbrains.mps.classloading.MPSClassesListener;
 
 /**
  * @see jetbrains.mps.classloading.MPSClassesListener
- * @see jetbrains.mps.classloading.MPSClassesAdapter
+ * @see jetbrains.mps.classloading.MPSClassesListenerAdapter
  */
 @Deprecated
 public interface ReloadListener extends MPSClassesListener {

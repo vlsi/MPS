@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel.language;
 
-import jetbrains.mps.classloading.MPSClassesAdapter;
+import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
@@ -56,7 +56,7 @@ public class LanguageRegistry implements CoreComponent {
 
   private final ClassLoaderManager myClassLoaderManager;
 
-  private final MPSClassesListener myHandler = new MPSClassesAdapter() {
+  private final MPSClassesListener myHandler = new MPSClassesListenerAdapter() {
     @Override
     public void onClassesUnload(Set<SModule> unloadedModules) {
       // todo: make incremental

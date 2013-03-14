@@ -238,17 +238,26 @@ public class ClassLoaderManager implements CoreComponent {
 
   public Set<SModule> loadClasses(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
     // todo: use logic with module checking according to make status + check is module already is loaded?
+    long startTime = System.currentTimeMillis();
     Set<SModule> modulesToLoad = new HashSet<SModule>();
     for (SModule module : modules) {
       modulesToLoad.add(module);
     }
     modulesToLoad = Collections.unmodifiableSet(modulesToLoad);
 
+    // todo: remove this code?
+    for (SModule module : modules) {
+      if (ModuleClassLoaderSupport.canCreate(module)) {
+        getClassLoader(module);
+      }
+    }
+    addStat("load:main", startTime);
+
     monitor.start("Load classes...", 1);
     try {
       monitor.step("Rebuilding ui...");
       for (MPSClassesListener listener : myClassesHandlers) {
-        long startTime = System.currentTimeMillis();
+        startTime = System.currentTimeMillis();
         try {
           listener.onClassesLoad(modulesToLoad);
         } catch (Throwable t) {

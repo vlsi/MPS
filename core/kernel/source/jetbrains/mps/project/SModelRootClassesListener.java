@@ -15,20 +15,23 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * todo: are stubs reloadable?
  * Registered in ClassLoaderManager
  */
-public class SModelRootClassesListener extends ReloadAdapter {
+public class SModelRootClassesListener extends MPSClassesListenerAdapter {
   private final List<SModuleReference> myLoadedModules = new ArrayList<SModuleReference>();
 
   public static final SModelRootClassesListener INSTANCE = new SModelRootClassesListener();
@@ -37,27 +40,36 @@ public class SModelRootClassesListener extends ReloadAdapter {
   }
 
   @Override
-  public void unload() {
+  public void onClassesUnload(Set<SModule> unloadedModules) {
   }
 
   @Override
-  public void onAfterReload() {
-    for (SModule m : MPSModuleRepository.getInstance().getModules()) {
-      if (!(m instanceof AbstractModule)) continue;
-      if (myLoadedModules.contains(m.getModuleReference())) {
-        boolean hasInvalidRoots = false;
-        for (ModelRoot modelRoot : m.getModelRoots()) {
-          if (modelRoot instanceof SModelRoot && ((SModelRoot) modelRoot).isInvalid()) {
-            hasInvalidRoots = true;
-            break;
+  public void onClassesLoad(Set<SModule> loadedModules) {
+    Set<SModuleId> ids = new HashSet<SModuleId>();
+    for (SModule module : loadedModules) {
+      ids.add(module.getModuleId());
+    }
+
+    for (SModule module : MPSModuleRepository.getInstance().getModules()) {
+      if (!(module instanceof AbstractModule)) continue;
+      if (myLoadedModules.contains(module.getModuleReference())) {
+        boolean hasInvalidRelatedRoots = false;
+        for (ModelRoot modelRoot : module.getModelRoots()) {
+          if (modelRoot instanceof SModelRoot) {
+            SModelRoot root = (SModelRoot) modelRoot;
+            SModuleId modelRootManagerModuleId = ModuleId.fromString(root.getModelRoot().getManager().getModuleId());
+            if (root.isInvalid() && ids.contains(modelRootManagerModuleId)) {
+              hasInvalidRelatedRoots = true;
+              break;
+            }
           }
         }
-        if (!hasInvalidRoots) {
+        if (!hasInvalidRelatedRoots) {
           continue;
         }
       }
-      myLoadedModules.add(m.getModuleReference());
-      ((AbstractModule) m).updateModelsSet();
+      myLoadedModules.add(module.getModuleReference());
+      ((AbstractModule) module).updateModelsSet();
     }
   }
 }

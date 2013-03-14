@@ -19,7 +19,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.Set;
 
-public class MPSClassesAdapter implements MPSClassesListener {
+public class MPSClassesListenerAdapter implements MPSClassesListener {
   @Override
   public void onClassesUnload(Set<SModule> unloadedModules) {
   }
