@@ -36,6 +36,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepositoryListener;
+import org.jetbrains.mps.openapi.module.SRepositoryListenerAdapter;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -63,6 +65,13 @@ public class ClassLoaderManager implements CoreComponent {
   // reload handlers
   private List<MPSClassesListener> myClassesHandlers = new CopyOnWriteArrayList<MPSClassesListener>();
 
+  private SRepositoryListener myRepositoryListener = new SRepositoryListenerAdapter() {
+    @Override
+    public void moduleRemoved(SModule module) {
+      unloadClasses(Collections.singleton(module), new EmptyProgressMonitor());
+    }
+  };
+
   // component stuff
   @Override
   public void init() {
@@ -71,7 +80,8 @@ public class ClassLoaderManager implements CoreComponent {
     }
     INSTANCE = this;
     addClassesHandler(SModelRootClassesListener.INSTANCE);
-    // todo: add listener on module remove? or not?
+    MPSModuleRepository.getInstance().addRepositoryListener(myRepositoryListener);
+    // todo: add listener on module add? or not?
   }
 
   @Override
@@ -82,6 +92,7 @@ public class ClassLoaderManager implements CoreComponent {
         unloadClasses(MPSModuleRepository.getInstance().getModules(), new EmptyProgressMonitor());
       }
     });
+    MPSModuleRepository.getInstance().removeRepositoryListener(myRepositoryListener);
     INSTANCE = null;
   }
 
