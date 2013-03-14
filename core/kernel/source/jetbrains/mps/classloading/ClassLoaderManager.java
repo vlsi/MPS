@@ -22,6 +22,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.SModelRootClassesListener;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionKind;
@@ -177,11 +178,20 @@ public class ClassLoaderManager implements CoreComponent {
   public Set<SModule> unloadClasses(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
     LOG.assertCanWrite();
 
+    // todo: hack for now...
+    // move this hack to make facet, it's or reload facet, or i don't know. it's make facet business to understand what we should unload
+    Set<SModule> toUnload = new HashSet<SModule>();
+    for (SModule module : modules) {
+      if (SModuleOperations.isCompileInMps(module)) {
+        toUnload.add(module);
+      }
+    }
+
     long startTime = System.currentTimeMillis();
     monitor.start("Unloading classes...", 2);
     try {
       monitor.step("Invalidate classloaders...");
-      Set<SModule> toUnload = collectBackReferences(modules);
+      toUnload = collectBackReferences(toUnload);
       // update back refs
       for (Set<SModule> backRefs : myBackRefs.values()) {
         backRefs.removeAll(toUnload);
