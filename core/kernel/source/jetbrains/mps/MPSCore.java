@@ -82,11 +82,11 @@ public class MPSCore extends ComponentPlugin {
     init(new ConceptRepository());
 
     // repositories
+    myModelRepository = init(new SModelRepository());
+    myModuleRepository = init(new MPSModuleRepository());
+    myGlobalSModelEventsManager = init(new GlobalSModelEventsManager(myModelRepository));
     ClassLoaderManager classLoaderManager = init(new ClassLoaderManager());
     init(new MPSClassesReloadManager());
-    myModelRepository = init(new SModelRepository(classLoaderManager));
-    myModuleRepository = init(new MPSModuleRepository(classLoaderManager));
-    myGlobalSModelEventsManager = init(new GlobalSModelEventsManager(myModelRepository));
 
     init(new SModelFileTracker(myModelRepository, myGlobalSModelEventsManager));
     init(new ModuleRepositoryFacade(myModuleRepository));

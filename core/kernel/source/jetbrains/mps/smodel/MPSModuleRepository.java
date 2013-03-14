@@ -47,13 +47,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class MPSModuleRepository implements CoreComponent, SRepository {
   private static final Logger LOG = Logger.getLogger(MPSModuleRepository.class);
-  private ClassLoaderManager myClm;
-  private ReloadAdapter myHandler = new ReloadAdapter() {
-    @Override
-    public void unload() {
-      invalidateCaches();
-    }
-  };
   private List<SRepositoryListener> myModuleListeners = new CopyOnWriteArrayList<SRepositoryListener>();
 
   private Set<IModule> myModules = new LinkedHashSet<IModule>();
@@ -65,18 +58,15 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     return MPSCore.getInstance().getModuleRepository();
   }
 
-  public MPSModuleRepository(ClassLoaderManager clm) {
-    myClm = clm;
+  public MPSModuleRepository() {
   }
 
   @Override
   public void init() {
-    myClm.addReloadHandler(myHandler);
   }
 
   @Override
   public void dispose() {
-    myClm.removeReloadHandler(myHandler);
   }
 
   //-----------------register/unregister-merge-----------

@@ -24,7 +24,6 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.persistence.DataSourceBase;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.util.containers.MultiMap;
@@ -66,7 +65,7 @@ public class SModelRepository implements CoreComponent {
   private SModelListener myModelsListener = new ModelChangeListener();
 
   @SuppressWarnings("UnusedParameters")
-  public SModelRepository(ClassLoaderManager manager) {
+  public SModelRepository() {
 
   }
 
