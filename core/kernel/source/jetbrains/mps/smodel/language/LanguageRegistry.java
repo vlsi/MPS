@@ -89,7 +89,7 @@ public class LanguageRegistry implements CoreComponent {
     ModelAccess.instance().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        notifyUnload(myLanguages.values(), true);
+        notifyUnload(myLanguages.values());
         myLanguageToNamespace.clear();
         myLanguages.clear();
         myLanguages = null;
@@ -100,7 +100,7 @@ public class LanguageRegistry implements CoreComponent {
   }
 
   private void unloadLanguageRuntimes() {
-    notifyUnload(myLanguages.values(), true);
+    notifyUnload(myLanguages.values());
     myLanguages.clear();
     myLanguageToNamespace.clear();
   }
@@ -119,17 +119,17 @@ public class LanguageRegistry implements CoreComponent {
     notifyLoad(myLanguages.values());
   }
 
-  private void notifyUnload(Collection<LanguageRuntime> languages, boolean unloadAll) {
+  private void notifyUnload(Collection<LanguageRuntime> languages) {
     if (languages.isEmpty()) return;
 
     for (LanguageRegistryListener l : myLanguageListeners) {
       try {
-        l.languagesUnloaded(languages, unloadAll);
+        l.languagesUnloaded(languages);
       } catch (Exception ex) {
         LOG.error(ex);
       }
     }
-    myConceptRegistry.languagesUnloaded(languages, unloadAll);
+    myConceptRegistry.languagesUnloaded(languages);
   }
 
   private void notifyLoad(Collection<LanguageRuntime> languages) {

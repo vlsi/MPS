@@ -178,7 +178,7 @@ public class FindersManager implements CoreComponent, LanguageRegistryListener {
   }
 
   @Override
-  public void languagesUnloaded(Iterable<LanguageRuntime> languages, boolean unloadAll) {
+  public void languagesUnloaded(Iterable<LanguageRuntime> languages) {
     clear();
   }
 }

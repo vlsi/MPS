@@ -68,7 +68,7 @@ public class ClassLoaderManager implements CoreComponent {
 
   private SRepositoryListener myRepositoryListener = new SRepositoryListenerAdapter() {
     @Override
-    public void moduleRemoved(SModule module) {
+    public void beforeModuleRemoved(SModule module) {
       unloadClasses(Collections.singleton(module), new EmptyProgressMonitor());
     }
   };
