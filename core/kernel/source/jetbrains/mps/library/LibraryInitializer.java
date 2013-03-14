@@ -128,10 +128,6 @@ public class LibraryInitializer implements CoreComponent {
 
     CleanupManager.getInstance().cleanup();
     ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
-
-    for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
-      m.invalidateDependencies();
-    }
   }
 
   //----------bootstrap modules

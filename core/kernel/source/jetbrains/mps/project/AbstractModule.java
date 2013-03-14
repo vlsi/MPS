@@ -22,6 +22,7 @@ import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.dependency.modules.DependenciesManager;
 import jetbrains.mps.project.dependency.modules.ModuleDependenciesManager;
@@ -65,6 +66,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.FacetsFacade;
 import org.jetbrains.mps.openapi.module.SDependency;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -717,8 +719,13 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
 
   @Override
   public void invalidateDependencies() {
-    // invalidate loaded into MPS classes
-    ClassLoaderManager.getInstance().invalidateClasses(Arrays.asList(this));
+    // todo: =(
+//    Set<SModule> unloadedModules = ClassLoaderManager.getInstance().unloadClasses(Arrays.asList(this), new EmptyProgressMonitor());
+//    ClassLoaderManager.getInstance().loadClasses(unloadedModules, new EmptyProgressMonitor());
+    // temporary disabled because: 1) we load many modules in LibraryInitializer 2) module calls setModuleDescriptor 3) it calls invalidateDependencies
+    // 4) it calls CLM with partly loaded classes (just part of modules)
+    // fix: fix CLM to not load partly loaded module, introduce normal disabled/enabled relation in CLM
+    // btw as for now: as change dependencies doesn't call "make module", this action basically meaningless
   }
 
   protected ModuleDescriptor loadDescriptor() {

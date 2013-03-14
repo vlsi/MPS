@@ -37,6 +37,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -70,10 +71,17 @@ public class ClassLoaderManager implements CoreComponent {
     }
     INSTANCE = this;
     addClassesHandler(SModelRootClassesListener.INSTANCE);
+    // todo: add listener on module remove? or not?
   }
 
   @Override
   public void dispose() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        unloadClasses(MPSModuleRepository.getInstance().getModules(), new EmptyProgressMonitor());
+      }
+    });
     INSTANCE = null;
   }
 
@@ -152,74 +160,76 @@ public class ClassLoaderManager implements CoreComponent {
     return classLoader;
   }
 
-  // invalidate classes
-  // better - listen dependency changes && java facet changes on modules?
-  // for now - call this method from all places with important module modification
-  // + after modules make
-  // returns affected modules
-  public synchronized Set<SModule> invalidateClasses(Iterable<? extends SModule> modules) {
-    Set<SModule> toReload = collectBackReferences(modules);
-    // update back refs
-    for (Set<SModule> backRefs : myBackRefs.values()) {
-      backRefs.removeAll(toReload);
-    }
-    for (SModule module : toReload) {
-      myBackRefs.remove(module);
-    }
-
-    // clean myClassLoaders
-    for (SModule module : toReload) {
-      // here we update
-      if (myClassLoaders.containsKey(module)) {
-        myClassLoaders.get(module).dispose();
-        myClassLoaders.remove(module);
-      }
-    }
-
-    // update loaded classes checking map
-    Set<SModuleReference> moduleReferences = new HashSet<SModuleReference>();
-    for (SModule module : toReload) {
-      moduleReferences.add(module.getModuleReference());
-    }
-    Set<String> classesToRemove = new HashSet<String>();
-    for (Map.Entry<String, SModuleReference> entry : myLoadedClasses.entrySet()) {
-      if (moduleReferences.contains(entry.getValue())) {
-        classesToRemove.add(entry.getKey());
-      }
-    }
-    for (String className : classesToRemove) {
-      myLoadedClasses.remove(className);
-    }
-
-    return toReload;
-  }
-
-  public void reloadClasses(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
-    // todo: divide into two parts: unloadClasses(modules) && loadClasses(modules)
-    // todo: add unload all classes in dispose
-    // todo: arguments - modules to load/unload. arguments of callbacks - modules actually loaded/unloaded
+  public Set<SModule> unloadClasses(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
     LOG.assertCanWrite();
 
-    monitor.start("Reloading classes...", 3);
+    monitor.start("Unloading classes...", 2);
     try {
-      monitor.step("Updating classpath...");
-      invalidateClasses(modules);
+      monitor.step("Invalidate classloaders...");
+      Set<SModule> toUnload = collectBackReferences(modules);
+      // update back refs
+      for (Set<SModule> backRefs : myBackRefs.values()) {
+        backRefs.removeAll(toUnload);
+      }
+      for (SModule module : toUnload) {
+        myBackRefs.remove(module);
+      }
+
+      // clean myClassLoaders
+      for (SModule module : toUnload) {
+        // here we update
+        if (myClassLoaders.containsKey(module)) {
+          myClassLoaders.get(module).dispose();
+          myClassLoaders.remove(module);
+        }
+      }
+
+      // update loaded classes checking map
+      Set<SModuleReference> moduleReferences = new HashSet<SModuleReference>();
+      for (SModule module : toUnload) {
+        moduleReferences.add(module.getModuleReference());
+      }
+      Set<String> classesToRemove = new HashSet<String>();
+      for (Map.Entry<String, SModuleReference> entry : myLoadedClasses.entrySet()) {
+        if (moduleReferences.contains(entry.getValue())) {
+          classesToRemove.add(entry.getKey());
+        }
+      }
+      for (String className : classesToRemove) {
+        myLoadedClasses.remove(className);
+      }
       monitor.advance(1);
 
       monitor.step("Disposing old classes...");
       for (MPSClassesListener listener : myClassesHandlers) {
         try {
-          listener.onClassesUnload(null);
+          listener.onClassesUnload(toUnload);
         } catch (Throwable t) {
           LOG.error(t);
         }
       }
       monitor.advance(1);
 
+      return toUnload;
+    } finally {
+      monitor.done();
+    }
+  }
+
+  public Set<SModule> loadClasses(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
+    // todo: use logic with module checking according to make status + check is module already is loaded?
+    Set<SModule> modulesToLoad = new HashSet<SModule>();
+    for (SModule module : modules) {
+      modulesToLoad.add(module);
+    }
+    modulesToLoad = Collections.unmodifiableSet(modulesToLoad);
+
+    monitor.start("Load classes...", 1);
+    try {
       monitor.step("Rebuilding ui...");
       for (MPSClassesListener listener : myClassesHandlers) {
         try {
-          listener.onClassesLoad(null);
+          listener.onClassesLoad(modulesToLoad);
         } catch (Throwable t) {
           LOG.error(t);
         }
@@ -228,29 +238,18 @@ public class ClassLoaderManager implements CoreComponent {
     } finally {
       monitor.done();
     }
+
+    return modulesToLoad;
   }
 
-  // ext api
-  public void reloadAll(@NotNull ProgressMonitor monitor) {
-    reloadClasses(MPSModuleRepository.getInstance().getModules(), monitor);
-  }
-
-  public void unloadAll(@NotNull ProgressMonitor monitor) {
-    LOG.assertCanWrite();
-
-    monitor.start("Unloading classes...", 1);
-    try {
-      monitor.step("Disposing old classes...");
-      for (MPSClassesListener listener : myClassesHandlers) {
-        try {
-          listener.onClassesUnload(null);
-        } catch (Throwable t) {
-          LOG.error(t);
-        }
+  public void loadAllPossibleClasses(@NotNull ProgressMonitor monitor) {
+    Set<SModule> modulesToLoad = new HashSet<SModule>();
+    for (SModule module : MPSModuleRepository.getInstance().getModules()) {
+      if (!myClassLoaders.containsKey(module) && ModuleClassLoaderSupport.canCreate(module)) {
+        modulesToLoad.add(module);
       }
-    } finally {
-      monitor.done();
     }
+    loadClasses(modulesToLoad, monitor);
   }
 
   /* package */ void classLoaded(String name, ModuleReference id) {
@@ -297,11 +296,31 @@ public class ClassLoaderManager implements CoreComponent {
         }
       }
     }
-    return modules;
+    return Collections.unmodifiableSet(modules);
   }
 
-
   //---------------deprecated part------------------
+  @Deprecated
+  public void reloadClasses(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
+    try {
+      monitor.start("Reload classes...", 2);
+      unloadClasses(modules, monitor.subTask(1));
+      loadAllPossibleClasses(monitor.subTask(1));
+    } finally {
+      monitor.done();
+    }
+  }
+
+  @Deprecated
+  public void reloadAll(@NotNull ProgressMonitor monitor) {
+    reloadClasses(MPSModuleRepository.getInstance().getModules(), monitor);
+  }
+
+  @Deprecated
+  public void unloadAll(@NotNull ProgressMonitor monitor) {
+    unloadClasses(MPSModuleRepository.getInstance().getModules(), monitor);
+  }
+
   @Deprecated
   public void updateClassPath() {
     reloadAll(new EmptyProgressMonitor());
