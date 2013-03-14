@@ -86,7 +86,7 @@ public class ImportedModelsTable extends MpsElementsTable<SModelReference> {
     private static final class ModelReferenceComparator implements Comparator<SModelReference> {
         @Override
         public int compare(SModelReference o1, SModelReference o2) {
-            return o1.getSModelFqName().compareTo(o2.getSModelFqName());
+            return o1.getModelName().compareTo(o2.getModelName());
         }
 
         @Override

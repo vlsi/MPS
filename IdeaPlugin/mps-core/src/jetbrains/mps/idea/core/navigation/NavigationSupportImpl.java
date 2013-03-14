@@ -141,7 +141,7 @@ public class NavigationSupportImpl extends NavigationSupport implements Applicat
     SModel targetModel = classifier.getModel();
     SModelReference ref = targetModel.getReference();
     // FIXME it seems to be wrong for nested classes
-    String fqName = ref.getLongName() + "." + classifier.getName();
+    String fqName = SModelStereotype.withoutStereotype(ref.getModelName()) + "." + classifier.getName();
     final JavaPsiFacade javaPsi = JavaPsiFacade.getInstance(project);
     // FIXME allScope(project) is not entirely correct
     // should take into account how we track java sources (e.g. by dependencies from

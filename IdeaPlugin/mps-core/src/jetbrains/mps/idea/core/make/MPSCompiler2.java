@@ -168,7 +168,7 @@ public class MPSCompiler2 implements SourceGeneratingCompiler {
 
   private MyGenerationItem createGenerationItem(VirtualFile modelFile, Module module, SModelReference ref) {
     String path = JavaNameUtil.packageNameForModelUID(ref).replace('.', '/');
-    String cachesOutputRoot = MPSCompilerPaths.getCachesOutputPath(this, module, SModelStereotype.isTestModelStereotype(ref.getStereotype()));
+    String cachesOutputRoot = MPSCompilerPaths.getCachesOutputPath(this, module, SModelStereotype.isTestModelStereotype(SModelStereotype.getStereotype(ref.getModelName())));
     File modelCachesDir = new File(cachesOutputRoot, path);
     File generated = new File(modelCachesDir, "generated");
 
