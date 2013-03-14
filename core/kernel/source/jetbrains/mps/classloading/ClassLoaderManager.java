@@ -72,6 +72,9 @@ public class ClassLoaderManager implements CoreComponent {
     }
   };
 
+  // temporary stuff for profiling
+  private Map<String, Long> actionToTime = new HashMap<String, Long>();
+
   // component stuff
   @Override
   public void init() {
@@ -174,6 +177,7 @@ public class ClassLoaderManager implements CoreComponent {
   public Set<SModule> unloadClasses(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
     LOG.assertCanWrite();
 
+    long startTime = System.currentTimeMillis();
     monitor.start("Unloading classes...", 2);
     try {
       monitor.step("Invalidate classloaders...");
@@ -211,12 +215,17 @@ public class ClassLoaderManager implements CoreComponent {
       }
       monitor.advance(1);
 
+      addStat("unload:main", startTime);
+
       monitor.step("Disposing old classes...");
       for (MPSClassesListener listener : myClassesHandlers) {
         try {
+          startTime = System.currentTimeMillis();
           listener.onClassesUnload(toUnload);
         } catch (Throwable t) {
           LOG.error(t);
+        } finally {
+          addStat("unload:" + listener.getClass().getName(), startTime);
         }
       }
       monitor.advance(1);
@@ -239,10 +248,13 @@ public class ClassLoaderManager implements CoreComponent {
     try {
       monitor.step("Rebuilding ui...");
       for (MPSClassesListener listener : myClassesHandlers) {
+        long startTime = System.currentTimeMillis();
         try {
           listener.onClassesLoad(modulesToLoad);
         } catch (Throwable t) {
           LOG.error(t);
+        } finally {
+          addStat("load:" + listener.getClass().getName(), startTime);
         }
       }
       monitor.advance(1);
@@ -308,6 +320,14 @@ public class ClassLoaderManager implements CoreComponent {
       }
     }
     return Collections.unmodifiableSet(modules);
+  }
+
+  private void addStat(String name, long beginTime) {
+    long time = System.currentTimeMillis() - beginTime;
+    if (!actionToTime.containsKey(name)) {
+      actionToTime.put(name, time);
+    }
+    actionToTime.put(name, time + actionToTime.get(name));
   }
 
   //---------------deprecated part------------------
