@@ -229,21 +229,23 @@ public class ClassLoaderManager implements CoreComponent {
       monitor.advance(1);
 
       monitor.step("Disposing old classes...");
-      callListeners(new ListenerCaller() {
-        @Override
-        public void call(MPSClassesListener l) {
-          l.onClassesUnload(null);
+      for (MPSClassesListener listener : myClassesHandlers) {
+        try {
+          listener.onClassesUnload(null);
+        } catch (Throwable t) {
+          LOG.error(t);
         }
-      });
+      }
       monitor.advance(1);
 
       monitor.step("Rebuilding ui...");
-      callListeners(new ListenerCaller() {
-        @Override
-        public void call(MPSClassesListener l) {
-          l.onClassesLoad(null);
+      for (MPSClassesListener listener : myClassesHandlers) {
+        try {
+          listener.onClassesLoad(null);
+        } catch (Throwable t) {
+          LOG.error(t);
         }
-      });
+      }
       monitor.advance(1);
     } finally {
       monitor.done();
@@ -261,12 +263,13 @@ public class ClassLoaderManager implements CoreComponent {
     monitor.start("Unloading classes...", 1);
     try {
       monitor.step("Disposing old classes...");
-      callListeners(new ListenerCaller() {
-        @Override
-        public void call(MPSClassesListener l) {
-          l.onClassesUnload(null);
+      for (MPSClassesListener listener : myClassesHandlers) {
+        try {
+          listener.onClassesUnload(null);
+        } catch (Throwable t) {
+          LOG.error(t);
         }
-      });
+      }
     } finally {
       monitor.done();
     }
@@ -324,19 +327,5 @@ public class ClassLoaderManager implements CoreComponent {
   @Deprecated
   public void removeReloadHandler(ReloadListener handler) {
     removeClassesHandler(handler);
-  }
-
-  private void callListeners(ListenerCaller caller) {
-    for (MPSClassesListener listener : myClassesHandlers) {
-      try {
-        caller.call(listener);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  private interface ListenerCaller {
-    void call(MPSClassesListener l);
   }
 }
