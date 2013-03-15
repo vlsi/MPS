@@ -3585,10 +3585,9 @@
     <nodeInfo nodeId="3465865320786305679" fileName="NewAccessoryModel_Action.java" startLine="88" startPosition="27" endLine="89" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3465865320786305686" fileName="NewAccessoryModel_Action.java" startLine="92" startPosition="27" endLine="93" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3465865320786305692" fileName="NewAccessoryModel_Action.java" startLine="93" startPosition="73" endLine="94" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3465865320786305701" fileName="NewAccessoryModel_Action.java" startLine="94" startPosition="69" endLine="95" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3465865320786305707" fileName="NewAccessoryModel_Action.java" startLine="95" startPosition="59" endLine="96" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="99" startPosition="27" endLine="100" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="104" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="3465865320786305707" fileName="NewAccessoryModel_Action.java" startLine="94" startPosition="69" endLine="95" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="98" startPosition="27" endLine="99" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="103" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="54" startPosition="95" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="58" startPosition="86" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="62" startPosition="100" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -3605,12 +3604,12 @@
     <nodeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="69" startPosition="5" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="73" startPosition="5" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="31" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NewAccessoryModel_Action#()V" />
-    <nodeInfo nodeId="3465865320786305684" fileName="NewAccessoryModel_Action.java" startLine="92" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="3465865320786305683" fileName="NewAccessoryModel_Action.java" startLine="90" startPosition="7" endLine="98" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3465865320786305684" fileName="NewAccessoryModel_Action.java" startLine="92" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="3465865320786305683" fileName="NewAccessoryModel_Action.java" startLine="90" startPosition="7" endLine="97" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="42" startPosition="89" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="42" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="81" startPosition="96" endLine="101" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="81" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="81" startPosition="96" endLine="100" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="81" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <nodeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="54" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
     <scopeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="38" startPosition="32" endLine="39" endPosition="16" />
     <scopeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="55" startPosition="53" endLine="56" endPosition="19" />
@@ -3620,15 +3619,18 @@
     <scopeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="71" startPosition="62" endLine="72" endPosition="19" />
     <scopeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="75" startPosition="63" endLine="76" endPosition="19" />
     <scopeInfo nodeId="3465865320786305678" fileName="NewAccessoryModel_Action.java" startLine="88" startPosition="27" endLine="89" endPosition="15" />
-    <scopeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="99" startPosition="0" endLine="100" endPosition="89">
+    <scopeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="98" startPosition="0" endLine="99" endPosition="89">
       <varInfo nodeId="3465865320786305631" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="99" startPosition="27" endLine="100" endPosition="89" />
+    <scopeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="98" startPosition="27" endLine="99" endPosition="89" />
     <scopeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="48" startPosition="0" endLine="50" endPosition="44">
       <varInfo nodeId="3465865320786305631" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="48" startPosition="27" endLine="50" endPosition="44" />
     <scopeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="31" startPosition="37" endLine="34" endPosition="40" />
+    <scopeInfo nodeId="3465865320786305685" fileName="NewAccessoryModel_Action.java" startLine="92" startPosition="27" endLine="95" endPosition="26">
+      <varInfo nodeId="3465865320786305687" varName="descriptor" />
+    </scopeInfo>
     <scopeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
     <scopeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="43" startPosition="9" endLine="47" endPosition="29" />
     <scopeInfo nodeId="3465865320786305712" fileName="NewAccessoryModel_Action.java" startLine="43" startPosition="9" endLine="47" endPosition="29" />
@@ -3637,23 +3639,20 @@
     <scopeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="65" startPosition="5" endLine="69" endPosition="5" />
     <scopeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="69" startPosition="5" endLine="73" endPosition="5" />
     <scopeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="73" startPosition="5" endLine="77" endPosition="5" />
-    <scopeInfo nodeId="3465865320786305685" fileName="NewAccessoryModel_Action.java" startLine="92" startPosition="27" endLine="96" endPosition="26">
-      <varInfo nodeId="3465865320786305687" varName="descriptor" />
-    </scopeInfo>
     <scopeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="31" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="3465865320786305684" fileName="NewAccessoryModel_Action.java" startLine="92" startPosition="0" endLine="98" endPosition="0" />
+    <scopeInfo nodeId="3465865320786305684" fileName="NewAccessoryModel_Action.java" startLine="92" startPosition="0" endLine="97" endPosition="0" />
     <scopeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="42" startPosition="89" endLine="51" endPosition="5" />
     <scopeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="42" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="3465865320786305631" varName="_params" />
       <varInfo nodeId="3465865320786305631" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="82" startPosition="9" endLine="98" endPosition="9">
+    <scopeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="82" startPosition="9" endLine="97" endPosition="9">
       <varInfo nodeId="3465865320786305649" varName="d" />
       <varInfo nodeId="3465865320786305640" varName="language" />
       <varInfo nodeId="3465865320786305671" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="81" startPosition="96" endLine="101" endPosition="5" />
-    <scopeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="81" startPosition="0" endLine="103" endPosition="0">
+    <scopeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="81" startPosition="96" endLine="100" endPosition="5" />
+    <scopeInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="81" startPosition="0" endLine="102" endPosition="0">
       <varInfo nodeId="3465865320786305631" varName="_params" />
       <varInfo nodeId="3465865320786305631" varName="event" />
     </scopeInfo>
@@ -3662,8 +3661,8 @@
       <varInfo nodeId="3465865320786305631" varName="_params" />
       <varInfo nodeId="3465865320786305631" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="3465865320786305684" fileName="NewAccessoryModel_Action.java" startLine="91" startPosition="57" endLine="98" endPosition="7" unitName="jetbrains.mps.ide.devkit.actions.NewAccessoryModel_Action$1" />
-    <unitInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="28" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.NewAccessoryModel_Action" />
+    <unitInfo nodeId="3465865320786305684" fileName="NewAccessoryModel_Action.java" startLine="91" startPosition="57" endLine="97" endPosition="7" unitName="jetbrains.mps.ide.devkit.actions.NewAccessoryModel_Action$1" />
+    <unitInfo nodeId="3465865320786305631" fileName="NewAccessoryModel_Action.java" startLine="28" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.NewAccessoryModel_Action" />
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/3465865320786327838">
     <nodeInfo nodeId="3465865320786327838" fileName="NewAspectModel_Action.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />

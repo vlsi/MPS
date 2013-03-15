@@ -150,7 +150,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
                 if (tres.module() == null) {
                   return new IResult.FAILURE(_output_wf1ya0_a0a);
                 }
-                if (SetSequence.fromSet(toCompile).contains(tres.module())) {
+                if (cr.value.getChangedModules().contains(tres.module())) {
                   _output_wf1ya0_a0a = Sequence.fromIterable(_output_wf1ya0_a0a).concat(Sequence.fromIterable(Sequence.<IResource>singleton(tres)));
                 }
               }
@@ -333,7 +333,6 @@ public class JavaCompile_Facet extends IFacet.Stub {
                 return new IResult.FAILURE(_output_wf1ya0_a0b);
               }
 
-              _output_wf1ya0_a0b = Sequence.fromIterable(_output_wf1ya0_a0b).concat(Sequence.fromIterable(toCompile));
               monitor.currentProgress().finishWork("Compiling in IntelliJ IDEA");
             default:
               return new IResult.SUCCESS(_output_wf1ya0_a0b);

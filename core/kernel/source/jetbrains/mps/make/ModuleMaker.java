@@ -72,8 +72,8 @@ public class ModuleMaker {
 
   public ModuleMaker(@Nullable IMessageHandler handler) {
     this.ttrace = handler != null
-      ? new PerformanceTracer("module maker")
-      : new NullPerformanceTracer();
+        ? new PerformanceTracer("module maker")
+        : new NullPerformanceTracer();
     this.handler = handler;
   }
 
@@ -129,6 +129,7 @@ public class ModuleMaker {
       int warnCount = 0;
       boolean compiled = false;
       List<IMessage> messages = new ArrayList<IMessage>();
+      Set<SModule> changedModules = new HashSet<SModule>();
 
       monitor.step("Building module cycles");
       ttrace.push("building cycles", false);
@@ -150,6 +151,7 @@ public class ModuleMaker {
           errorCount += result.getErrors();
           warnCount += result.getWarnings();
           compiled = compiled || result.isCompiledAnything();
+          changedModules.addAll(result.getChangedModules());
           messages.addAll(result.getMessages());
           for (IMessage msg : result.getMessages()) {
             if (msg.getKind() == MessageKind.ERROR) {
@@ -161,7 +163,7 @@ public class ModuleMaker {
         inner.done();
       }
 
-      return new MPSCompilationResult(errorCount, warnCount, false, compiled, messages);
+      return new MPSCompilationResult(errorCount, warnCount, false, changedModules, messages);
     } finally {
       ttrace.pop();
       final String report = ttrace.report();
@@ -190,7 +192,7 @@ public class ModuleMaker {
     }
 
     if (!hasAnythingToCompile) {
-      return new MPSCompilationResult(0, 0, false, false);
+      return new MPSCompilationResult(0, 0, false, Collections.<SModule>emptySet());
     }
 
     JavaCompiler compiler = new JavaCompiler();
@@ -226,7 +228,7 @@ public class ModuleMaker {
     ttrace.pop();
 
     if (!hasJavaToCompile && !hasFilesToCopyOrDelete) {
-      return new MPSCompilationResult(0, 0, false, false, messages);
+      return new MPSCompilationResult(0, 0, false, Collections.<SModule>emptySet(), messages);
     }
 
     ttrace.push("invalidating classpath", false);
@@ -235,6 +237,7 @@ public class ModuleMaker {
     }
     ttrace.pop();
 
+    Set<SModule> changedModules = new HashSet<SModule>();
     MyCompilationResultAdapter listener = null;
     if (hasJavaToCompile) {
       ttrace.push("compiling java", false);
@@ -244,6 +247,7 @@ public class ModuleMaker {
       ttrace.push("eclipse compiler", true);
       compiler.compile(classPathItems);
       ttrace.pop();
+      changedModules.addAll(listener.myChangedModules);
       compiler.removeCompilationResultListener(listener);
       ttrace.pop();
     }
@@ -261,8 +265,8 @@ public class ModuleMaker {
           IFile classesGen = getJavaFacet(module).getClassesGen();
           if (classesGen != null) {
             FileUtil.copyFile(
-              new File(toCopy.getFile().getAbsolutePath()),
-              new File(classesGen.getDescendant(path).getPath())
+                new File(toCopy.getFile().getAbsolutePath()),
+                new File(classesGen.getDescendant(path).getPath())
             );
           } else {
             // log ?
@@ -278,7 +282,15 @@ public class ModuleMaker {
     }
     ttrace.pop();
 
-    return new MPSCompilationResult(listener == null ? 0 : listener.getErrorCount(), 0, false, hasJavaToCompile, messages);
+    // todo: check possibility of this statements
+    if (hasJavaToCompile && changedModules.isEmpty()) {
+      LOG.error("has java to compile but changed modules is empty");
+    }
+    if (!hasJavaToCompile && !changedModules.isEmpty()) {
+      LOG.error("has not java to compile but changed modules is not empty");
+    }
+
+    return new MPSCompilationResult(listener == null ? 0 : listener.getErrorCount(), 0, false, changedModules, messages);
   }
 
   private void invalidateCompiledClasses(SModule module) {
@@ -394,6 +406,7 @@ public class ModuleMaker {
     private final Set<SModule> myModules;
     private IClassPathItem myClassPathItems;
     private List<MyMessage> myMessages;
+    private Set<SModule> myChangedModules = new HashSet<SModule>();
 
     public MyCompilationResultAdapter(Set<SModule> modules, IClassPathItem classPathItems, List<MyMessage> messages) {
       myModules = modules;
@@ -461,6 +474,7 @@ public class ModuleMaker {
         }
         if (myContainingModules.containsKey(containerClassName)) {
           SModule m = myContainingModules.get(containerClassName);
+          myChangedModules.add(m);
           File classesGen = new File(getJavaFacet(m).getClassesGen().getPath());
           String packageName = NameUtil.namespaceFromLongName(fqName);
           File outputDir = new File(classesGen + File.separator + NameUtil.pathFromNamespace(packageName));

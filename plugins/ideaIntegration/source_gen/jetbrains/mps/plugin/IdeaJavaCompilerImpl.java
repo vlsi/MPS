@@ -9,6 +9,9 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.project.IModule;
+import java.util.Arrays;
+import java.util.Collections;
+import org.jetbrains.mps.openapi.module.SModule;
 import java.rmi.RemoteException;
 
 public class IdeaJavaCompilerImpl implements ProjectComponent, IdeaJavaCompiler {
@@ -65,7 +68,10 @@ public class IdeaJavaCompilerImpl implements ProjectComponent, IdeaJavaCompiler 
     try {
       CompilationResult cr = myIdeaProjectHandler.buildModules(modulePaths);
       if (cr != null) {
-        return new MPSCompilationResult(cr.getErrors(), cr.getWarnings(), cr.isAborted(), cr.isCompiledAnything());
+        return new MPSCompilationResult(cr.getErrors(), cr.getWarnings(), cr.isAborted(), (cr.isCompiledAnything() ?
+          Arrays.asList(modules) :
+          Collections.<SModule>emptySet()
+        ));
       }
     } catch (RemoteException e) {
       e.printStackTrace();
