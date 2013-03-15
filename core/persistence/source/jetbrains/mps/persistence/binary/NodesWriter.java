@@ -15,13 +15,24 @@
  */
 package jetbrains.mps.persistence.binary;
 
-import jetbrains.mps.util.IterableUtil;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SReference;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.NotSerializableException;
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -37,7 +48,6 @@ public class NodesWriter {
   public static final int USER_MODEL_REFERENCE = 5;
   public static final int USER_SERIALIZABLE = 6;
 
-  protected static final SModelReference LOCAL = jetbrains.mps.smodel.SModelReference.fromString("$LOCAL$");
   protected final SModelReference myModelReference;
 
   public NodesWriter(@NotNull SModelReference modelReference) {
@@ -93,7 +103,12 @@ public class NodesWriter {
         throw new IOException("cannot store reference: " + reference.toString());
       }
       os.writeString(reference.getRole());
-      os.writeModelReference(targetModelReference != null && targetModelReference.equals(myModelReference) ? LOCAL : targetModelReference);
+      if (targetModelReference != null && targetModelReference.equals(myModelReference)) {
+        os.writeByte(17);
+      } else {
+        os.writeByte(18);
+        os.writeModelReference(targetModelReference);
+      }
       os.writeString(((jetbrains.mps.smodel.SReference) reference).getResolveInfo());
     }
   }
@@ -113,7 +128,7 @@ public class NodesWriter {
   protected void writeUserObjects(SNode node, ModelOutputStream os) throws IOException {
     // write user objects here
     final ArrayList<Object> knownUserObject = new ArrayList<Object>();
-    for (Object key:node.getUserObjectKeys()){
+    for (Object key : node.getUserObjectKeys()) {
       Object value = node.getUserObject(key);
       if (isKnownUserObject(key) && isKnownUserObject(value)) {
         knownUserObject.add(key);
@@ -162,11 +177,11 @@ public class NodesWriter {
 
   protected boolean isKnownUserObject(Object object) {
     return object == null
-      || object instanceof SNodeReference
-      || object instanceof Serializable
-      || object instanceof SNodeId
-      || object instanceof SModelId
-      || object instanceof SModelReference;
+        || object instanceof SNodeReference
+        || object instanceof Serializable
+        || object instanceof SNodeId
+        || object instanceof SModelId
+        || object instanceof SModelReference;
   }
 
   private static class NullOutputStream extends OutputStream {

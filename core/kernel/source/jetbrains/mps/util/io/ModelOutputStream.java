@@ -16,17 +16,17 @@
 package jetbrains.mps.util.io;
 
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SModelId;
 import jetbrains.mps.smodel.SModelId.ForeignSModelId;
 import jetbrains.mps.smodel.SModelId.RegularSModelId;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.smodel.SNodePointer;
-import org.jetbrains.mps.openapi.model.SNodeId;
-import jetbrains.mps.smodel.SNodeId.Foreign;
 import jetbrains.mps.smodel.SNodeId.Regular;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SModuleId;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.io.BufferedOutputStream;
 import java.io.DataOutputStream;
@@ -44,7 +44,7 @@ public class ModelOutputStream extends DataOutputStream {
 
   private Map<String, Integer> stringToIndex = new HashMap<String, Integer>();
   private Map<SModelReference, Integer> modelrefToIndex = new HashMap<SModelReference, Integer>();
-  private Map<ModuleReference, Integer> moduleRefToIndex = new HashMap<ModuleReference, Integer>();
+  private Map<SModuleReference, Integer> moduleRefToIndex = new HashMap<SModuleReference, Integer>();
   private int myStringIndex = 0;
   private int myRefIndex = 0;
   private int myModuleRefIndex = 0;
@@ -84,7 +84,7 @@ public class ModelOutputStream extends DataOutputStream {
     }
   }
 
-  public void writeModuleReference(ModuleReference ref) throws IOException {
+  public void writeModuleReference(SModuleReference ref) throws IOException {
     if (ref == null) {
       writeByte(0x70);
     } else {
@@ -105,7 +105,7 @@ public class ModelOutputStream extends DataOutputStream {
     }
   }
 
-  public void writeModuleID(ModuleId id) throws IOException {
+  public void writeModuleID(SModuleId id) throws IOException {
     if (id == null) {
       writeByte(0x70);
     } else if (id instanceof ModuleId.Regular) {
@@ -129,13 +129,10 @@ public class ModelOutputStream extends DataOutputStream {
       Integer index = modelrefToIndex.get(ref);
       if (index == null) {
         modelrefToIndex.put(ref, myRefIndex++);
-        if (ref.getModelId() != null) {
-          writeByte(7);
-          writeModelID(ref.getModelId());
-        } else {
-          writeByte(8);
-        }
+        writeByte(7);
+        writeModelID(ref.getModelId());
         writeString(ref.getModelName());
+        writeModuleReference(ref.getModuleReference());
       } else {
         writeByte(9);
         writeInt(index);
@@ -155,7 +152,8 @@ public class ModelOutputStream extends DataOutputStream {
       writeByte(0x27);
       writeString(((ForeignSModelId) id).getId());
     } else {
-      throw new IOException("unknown id");
+      writeByte(0x26);
+      writeString(id.toString());
     }
 
   }
@@ -166,11 +164,9 @@ public class ModelOutputStream extends DataOutputStream {
     } else if (id instanceof Regular) {
       writeByte(0x18);
       writeLong(((Regular) id).getId());
-    } else if (id instanceof Foreign) {
+    } else {
       writeByte(0x17);
       writeString(id.toString());
-    } else {
-      throw new IOException("unknown id");
     }
   }
 

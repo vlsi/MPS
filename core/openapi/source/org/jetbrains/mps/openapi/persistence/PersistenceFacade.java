@@ -15,6 +15,7 @@
  */
 package org.jetbrains.mps.openapi.persistence;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -87,8 +88,9 @@ public abstract class PersistenceFacade {
 
   /**
    * Creates an SModelReference in a module with a given model id and model name.
+   * @param module can be null only if modelId is globally unique (i.e. can be resolved without a module)
    */
-  public abstract SModelReference createModelReference(SModuleReference module, SModelId modelId, String modelName);
+  public abstract SModelReference createModelReference(SModuleReference module, @NotNull SModelId modelId, @NotNull String modelName);
 
   /**
    * Registers the factory with the model id type, overwriting potential earlier registration.

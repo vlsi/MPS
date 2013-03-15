@@ -29,7 +29,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @ImmutableObject
-public class ModuleReference implements SModuleReference {
+public final class ModuleReference implements SModuleReference {
   private static final Pattern MODULE_REFERENCE = Pattern.compile("(.*?)\\((.*?)\\)");
 
   public static ModuleReference fromString(String text) {
@@ -41,25 +41,25 @@ public class ModuleReference implements SModuleReference {
     return new ModuleReference(text);
   }
 
-  private final String myModuleFqName;
+  private final String myModuleName;
   private final ModuleId myModuleId;
 
-  public ModuleReference(String moduleFqName) {
-    this(moduleFqName, (ModuleId) null);
+  public ModuleReference(String moduleName) {
+    this(moduleName, (ModuleId) null);
   }
 
   @Deprecated
-  public ModuleReference(String moduleFqName, String moduleId) {
-    this(moduleFqName, ModuleId.fromString(moduleId));
+  public ModuleReference(String moduleName, String moduleId) {
+    this(moduleName, ModuleId.fromString(moduleId));
   }
 
-  public ModuleReference(String moduleFqName, ModuleId moduleId) {
-    myModuleFqName = InternUtil.intern(moduleFqName);
+  public ModuleReference(String moduleName, ModuleId moduleId) {
+    myModuleName = InternUtil.intern(moduleName);
     myModuleId = moduleId;
   }
 
   public String getModuleFqName() {
-    return myModuleFqName;
+    return myModuleName;
   }
 
   @Override
@@ -75,30 +75,30 @@ public class ModuleReference implements SModuleReference {
   }
 
   public boolean differs(ModuleReference ref) {
-    return !(EqualUtil.equals(myModuleFqName, ref.myModuleFqName) && EqualUtil.equals(myModuleId, ref.myModuleId));
+    return !(EqualUtil.equals(myModuleName, ref.myModuleName) && EqualUtil.equals(myModuleId, ref.myModuleId));
   }
 
   public int hashCode() {
     if (myModuleId != null) return myModuleId.hashCode();
-    return myModuleFqName.hashCode();
+    return myModuleName.hashCode();
   }
 
   public boolean equals(Object obj) {
     if (!(obj instanceof ModuleReference)) return false;
     ModuleReference p = (ModuleReference) obj;
 
-    if (myModuleId == null && p.myModuleId == null) return myModuleFqName.equals(p.myModuleFqName);
+    if (myModuleId == null && p.myModuleId == null) return myModuleName.equals(p.myModuleName);
     return EqualUtil.equals(myModuleId, p.myModuleId);
   }
 
   public String toString() {
-    if (myModuleId == null) return myModuleFqName;
-    return myModuleId.toString() + "(" + myModuleFqName + ")";
+    if (myModuleId == null) return myModuleName;
+    return myModuleId.toString() + "(" + myModuleName + ")";
   }
 
   @Override
   public String getModuleName() {
-    return getModuleFqName();
+    return myModuleName;
   }
 
   @Override

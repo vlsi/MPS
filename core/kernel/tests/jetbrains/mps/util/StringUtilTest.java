@@ -18,6 +18,7 @@ package jetbrains.mps.util;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 /**
  * evgeny, 10/1/12
@@ -28,5 +29,35 @@ public class StringUtilTest {
     assertEquals("aa aa aa", StringUtil.replace("aa%20aa%20aa", "%20", " "));
     assertEquals("aaa", StringUtil.replace("%20%20%20", "%20", "a"));
     assertEquals("bbbb", StringUtil.replace("bbbb", "%20", "a"));
+  }
+
+  @Test
+  public void testRefEscape() throws Exception {
+    assertNull(StringUtil.escapeRefChars(null));
+    assertEquals("", StringUtil.escapeRefChars(""));
+
+    assertNull(StringUtil.unescapeRefChars(null));
+    assertEquals("", StringUtil.unescapeRefChars(""));
+
+    assertEquals("aaaaa%28bbbb%29", StringUtil.escapeRefChars("aaaaa(bbbb)"));
+    assertEquals("aaaaa%25bbbb", StringUtil.escapeRefChars("aaaaa%bbbb"));
+    assertEquals("aaaaa%2Fbbbb", StringUtil.escapeRefChars("aaaaa/bbbb"));
+    assertEquals("aaaaa%252Fbbbb", StringUtil.escapeRefChars(StringUtil.escapeRefChars("aaaaa/bbbb")));
+
+    assertEquals("aaaaa(bbbb)", StringUtil.unescapeRefChars(StringUtil.escapeRefChars("aaaaa(bbbb)")));
+    assertEquals("aaaaa:bbbb", StringUtil.unescapeRefChars(StringUtil.escapeRefChars("aaaaa:bbbb")));
+    assertEquals("aaaaa%bbbb", StringUtil.unescapeRefChars(StringUtil.escapeRefChars("aaaaa%bbbb")));
+    assertEquals("aaaaa/bbbb", StringUtil.unescapeRefChars(StringUtil.escapeRefChars("aaaaa/bbbb")));
+    assertEquals("aaaaa%25bbbb", StringUtil.unescapeRefChars(StringUtil.escapeRefChars("aaaaa%25bbbb")));
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testRefEscapeExc1() throws Exception {
+    StringUtil.unescapeRefChars("%2");
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testRefEscapeExc2() throws Exception {
+    StringUtil.unescapeRefChars("%2G");
   }
 }

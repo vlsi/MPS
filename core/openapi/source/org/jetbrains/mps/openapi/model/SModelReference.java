@@ -15,6 +15,8 @@
  */
 package org.jetbrains.mps.openapi.model;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 /**
@@ -25,13 +27,21 @@ public interface SModelReference {
   /**
    * Retrieves an identifier, which is unique within a module.
    */
+  @NotNull
   SModelId getModelId();
 
   /**
    * The returned name of the model may include a stereotype, such as 'generator' or 'tests', separated by the '@' character,
    * e.g. jetbrains.mps.sample.generator.main@generator
    */
+  @NotNull
   String getModelName();
+
+  /**
+   * Returns module reference when it is a part of this model reference and is available, or null otherwise.
+   * Globally unique SModelIds do not require module references.
+   */
+  SModuleReference getModuleReference();
 
   /**
    * Resolves the model from within the given repository
