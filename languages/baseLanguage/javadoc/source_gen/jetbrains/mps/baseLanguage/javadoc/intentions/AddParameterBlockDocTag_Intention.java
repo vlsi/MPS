@@ -81,7 +81,8 @@ public class AddParameterBlockDocTag_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNodeFactoryOperations.addNewChild(node, "param", "jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag");
+      SNode addedNode = SNodeFactoryOperations.addNewChild(node, "param", "jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag");
+      BlockDocTagHelper.setFocus(editorContext, addedNode);
     }
 
     public IntentionDescriptor getDescriptor() {

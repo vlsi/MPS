@@ -105,6 +105,8 @@ public class AddClassifierDocComment_Intention implements IntentionFactory {
         SLinkOperations.setTarget(paramTag, "parameter", _quotation_createNode_peeqac_a0b0f0a(typeVariableDeclaration), true);
         ListSequence.fromList(SLinkOperations.getTargets(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"))), "param", true)).addElement(paramTag);
       }
+
+      editorContext.select(ListSequence.fromList(SLinkOperations.getTargets(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"))), "body", true)).first());
     }
 
     public IntentionDescriptor getDescriptor() {

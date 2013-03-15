@@ -83,6 +83,8 @@ public class AddReturnBlockTag_Intention implements IntentionFactory {
 
     public void execute(final SNode node, final EditorContext editorContext) {
       SLinkOperations.setTarget(node, "return", SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag", null), true);
+      BlockDocTagHelper.setFocus(editorContext, SLinkOperations.getTarget(node, "return", true));
+
     }
 
     public IntentionDescriptor getDescriptor() {
