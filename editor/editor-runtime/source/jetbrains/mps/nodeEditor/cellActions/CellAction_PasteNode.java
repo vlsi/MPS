@@ -32,6 +32,7 @@ import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster.NodeAndRole;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.CellFinderUtil;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -138,7 +139,7 @@ public class CellAction_PasteNode extends AbstractCellAction {
             EditorCell nodeCell = editorComponent.findNodeCell(pasteNodes.get(0));
             if (nodeCell == null) return; // after 'set reference'?
 
-            EditorCell_Label labelCell = nodeCell.findChild(CellFinders.byClass(EditorCell_Label.class, true));
+            EditorCell_Label labelCell = CellFinderUtil.findChildByClass(nodeCell, EditorCell_Label.class, true);
             if (labelCell != null) {
               editorComponent.changeSelection(labelCell);
             }

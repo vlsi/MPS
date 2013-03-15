@@ -30,6 +30,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.openapi.editor.cells.CellFinder;
+import jetbrains.mps.openapi.editor.cells.CellFinderUtil;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.EditorSettings;
@@ -1032,7 +1033,7 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   @Override
   public <C extends EditorCell> C findChild(CellFinder<C> finder, boolean includeThis) {
-    return finder.find(this, includeThis);
+    return CellFinderUtil.findChild(this, finder, includeThis);
   }
 
   @Override

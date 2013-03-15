@@ -5,6 +5,7 @@ package jetbrains.mps.ide.java.platform.highlighters;
 import jetbrains.mps.editor.runtime.AbstractLeftEditorHighlighterMessage;
 import jetbrains.mps.openapi.editor.cells.CellFinder;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.CellFinderUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -28,7 +29,7 @@ public abstract class AbstractOverrideEditorMessage extends AbstractLeftEditorHi
 
   @Override
   public EditorCell getAnchorCell(EditorCell bigCell) {
-    EditorCell returnTypeCell = bigCell.findChild(this.myReturnTypeCellFinder);
+    EditorCell returnTypeCell = CellFinderUtil.findChild(bigCell, this.myReturnTypeCellFinder);
     return (returnTypeCell != null ?
       returnTypeCell :
       bigCell

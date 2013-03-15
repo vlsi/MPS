@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.CellFinders;
 
 public class EditorParenthesisUtil {
@@ -81,10 +82,11 @@ public class EditorParenthesisUtil {
     context.flushEvents();
     EditorComponent component = context.getEditorComponent();
     EditorCell nodeCell = component.findNodeCell(expr);
-    EditorCell cell = ((jetbrains.mps.nodeEditor.cells.EditorCell) nodeCell).findChild((selectLastLeaf ?
+    EditorCell cell = CellFinderUtil.findChild(nodeCell, (selectLastLeaf ?
       CellFinders.LAST_SELECTABLE_LEAF :
       CellFinders.FIRST_SELECTABLE_LEAF
     ));
+
     if (cell != null) {
       component.changeSelection(cell);
     }

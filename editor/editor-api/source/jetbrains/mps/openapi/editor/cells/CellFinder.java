@@ -16,5 +16,9 @@
 package jetbrains.mps.openapi.editor.cells;
 
 public interface CellFinder<C extends jetbrains.mps.openapi.editor.cells.EditorCell> {
-  C find(jetbrains.mps.openapi.editor.cells.EditorCell cell, boolean includeCurrent);
+  boolean isSuitable(C cell);
+
+  Class<C> getCellClass();
+
+  boolean isFirstChild();
 }

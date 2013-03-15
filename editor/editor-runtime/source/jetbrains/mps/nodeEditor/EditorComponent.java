@@ -105,7 +105,6 @@ import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.KeyMapAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
-import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
@@ -113,7 +112,7 @@ import jetbrains.mps.smodel.EventsCollector;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.util.Condition;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
@@ -143,7 +142,6 @@ import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -636,9 +634,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           EditorCell rootCell = getRootCell();
           if (rootCell instanceof EditorCell_Collection) {
             EditorCell focusPolicyCell = FocusPolicyUtil.findCellToSelectDueToFocusPolicy(rootCell);
-            EditorCell toSelect;
+            jetbrains.mps.openapi.editor.cells.EditorCell toSelect;
             if (focusPolicyCell == null || (focusPolicyCell == rootCell && !FocusPolicyUtil.hasFocusPolicy(focusPolicyCell))) {
-              toSelect = rootCell.findChild(CellFinders.or(CellFinders.FIRST_EDITABLE, CellFinders.FIRST_SELECTABLE_LEAF));
+              toSelect = CellFinderUtil.findChildByManyFinders(rootCell, CellFinders.FIRST_EDITABLE, CellFinders.FIRST_SELECTABLE_LEAF);
             } else {
               toSelect = focusPolicyCell;
             }
@@ -2731,13 +2729,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return ((EditorCell_Basic) cell).isInTree() && cell.getEditor() == this;
   }
 
-  public EditorCell changeSelectionWRTFocusPolicy(@NotNull EditorCell cell) {
+  public jetbrains.mps.openapi.editor.cells.EditorCell changeSelectionWRTFocusPolicy(@NotNull EditorCell cell) {
     EditorCell focusPolicyCell = FocusPolicyUtil.findCellToSelectDueToFocusPolicy(cell);
-    EditorCell toSelect;
+    jetbrains.mps.openapi.editor.cells.EditorCell toSelect;
     if (focusPolicyCell == null || (focusPolicyCell == cell && !FocusPolicyUtil.hasFocusPolicy(focusPolicyCell))) {
-      toSelect = cell.findChild(CellFinders.or(CellFinders.FIRST_ERROR, CellFinders.FIRST_EDITABLE));
+      toSelect = CellFinderUtil.findChildByManyFinders(cell, CellFinders.FIRST_ERROR, CellFinders.FIRST_EDITABLE);
       if (toSelect == null) {
-        toSelect = cell.findChild(CellFinders.FIRST_SELECTABLE_LEAF);
+        toSelect = CellFinderUtil.findChild(cell, CellFinders.FIRST_SELECTABLE_LEAF);
       }
     } else {
       toSelect = focusPolicyCell;
@@ -3086,7 +3084,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (getSelectedNode() == null) {
       EditorCell lastSelectedNodeCell = findNodeCell(lastSelectedNode);
       if (lastSelectedNodeCell != null) {
-        EditorCell child = lastSelectedNodeCell.findChild(CellFinders.FIRST_SELECTABLE_LEAF);
+        EditorCell child = CellFinderUtil.findChild(lastSelectedNodeCell, CellFinders.FIRST_SELECTABLE_LEAF);
         if (child != null) {
           changeSelection(child);
         }

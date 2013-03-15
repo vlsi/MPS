@@ -6,6 +6,7 @@ import jetbrains.mps.editor.runtime.AbstractLeftEditorHighlighterMessage;
 import jetbrains.mps.nodeEditor.EditorMessageIconRenderer;
 import jetbrains.mps.openapi.editor.cells.CellFinder;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.CellFinderUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.cells.CellFinders;
@@ -48,7 +49,7 @@ public class SubclassedClassifierEditorMessage extends AbstractLeftEditorHighlig
 
   @Override
   public EditorCell getAnchorCell(EditorCell bigCell) {
-    EditorCell returnTypeCell = bigCell.findChild(myClassifierNameCellFinder);
+    EditorCell returnTypeCell = CellFinderUtil.findChild(bigCell, myClassifierNameCellFinder);
     return (returnTypeCell != null ?
       returnTypeCell :
       bigCell

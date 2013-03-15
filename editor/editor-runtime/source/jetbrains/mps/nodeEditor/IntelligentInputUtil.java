@@ -25,6 +25,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.cells.CellAction;
+import jetbrains.mps.openapi.editor.cells.CellFinderUtil;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
@@ -107,7 +108,7 @@ public class IntelligentInputUtil {
       EditorCell cellForNewNode = (EditorCell) editorContext.getEditorComponent().findNodeCell(newNode);
       if (cellForNewNode != null) {
         EditorCell_Label target = null;
-        EditorCell errorOrEditable = cellForNewNode.findChild(CellFinders.or(CellFinders.FIRST_ERROR, CellFinders.LAST_EDITABLE), true);
+        jetbrains.mps.openapi.editor.cells.EditorCell errorOrEditable = CellFinderUtil.findChildByManyFinders(cell, true, CellFinders.FIRST_ERROR, CellFinders.LAST_EDITABLE);
         if (errorOrEditable instanceof EditorCell_Label) {
           target = (EditorCell_Label) errorOrEditable;
         }

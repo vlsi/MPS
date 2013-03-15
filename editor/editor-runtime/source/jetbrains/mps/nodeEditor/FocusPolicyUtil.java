@@ -20,6 +20,7 @@ import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.CellFinders;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.cells.CellFinderUtil;
 
 public class FocusPolicyUtil {
   public static boolean hasFocusPolicy(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
@@ -30,7 +31,7 @@ public class FocusPolicyUtil {
     EditorCell selectedCell = (EditorCell) findFocusedCell(cell);
     if (selectedCell == null || selectedCell == cell) return cell;
     if (!FocusPolicyUtil.hasFocusPolicy(selectedCell)) {
-      EditorCell firstEditableCell = selectedCell.findChild(CellFinders.FIRST_SELECTABLE_LEAF);
+      EditorCell firstEditableCell = CellFinderUtil.findChild(selectedCell, CellFinders.FIRST_SELECTABLE_LEAF);
       if (firstEditableCell != null) selectedCell = firstEditableCell;
     }
     return selectedCell;
@@ -44,7 +45,8 @@ public class FocusPolicyUtil {
 
     if (focusedCell.getStyle().get(StyleAttributes.FOCUS_POLICY) == jetbrains.mps.editor.runtime.style.FocusPolicy.FIRST_EDITABLE_CELL ||
       focusedCell.getStyle().get(StyleAttributes.FOCUS_POLICY) == jetbrains.mps.editor.runtime.style.FocusPolicy.ATTRACTS_RECURSIVELY) {
-      jetbrains.mps.openapi.editor.cells.EditorCell result = ((EditorCell) focusedCell).findChild(CellFinders.or(CellFinders.FIRST_ERROR, CellFinders.FIRST_EDITABLE));
+      jetbrains.mps.openapi.editor.cells.EditorCell result = CellFinderUtil.findChildByManyFinders(focusedCell,
+          CellFinders.FIRST_ERROR, CellFinders.FIRST_EDITABLE);
       if (result != null) {
         return result;
       }
