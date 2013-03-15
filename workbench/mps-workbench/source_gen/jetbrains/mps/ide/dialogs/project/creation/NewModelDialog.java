@@ -156,7 +156,7 @@ public class NewModelDialog extends DialogWrapper {
       return;
     }
 
-    if (!(((ModelRoot) myModelRoots.getSelectedItem()).canCreateModels())) {
+    if (!(((ModelRoot) myModelRoots.getSelectedItem()).canCreateModel(getFqName())) && myModule instanceof Language && myModelRoots.getSelectedItem() instanceof FileBasedModelRoot) {
       final FileBasedModelRoot selectedModelRoot = (FileBasedModelRoot) myModelRoots.getSelectedItem();
 
       Memento memento = new MementoImpl();
@@ -269,10 +269,22 @@ public class NewModelDialog extends DialogWrapper {
       return false;
     }
 
-    if (!(mr.canCreateModels()) && !(mr.canCreateModel(getFqName()))) {
+    if (!(mr.canCreateModels())) {
+      setErrorText("Can't create a model under this model root");
+      return false;
+    }
+
+    if (!(mr.canCreateModel(getFqName())) && !(myModule instanceof Language)) {
       setErrorText("Can't create a model with this name under this model root");
       return false;
     }
+
+    if (!(mr.canCreateModel(getFqName())) && myModule instanceof Language && !(mr instanceof FileBasedModelRoot)) {
+      setErrorText("Can't create a model with this name under this model root");
+      return false;
+    }
+
+
 
     setErrorText(null);
     return true;

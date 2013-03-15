@@ -224,6 +224,9 @@ public class IconManager {
   }
 
   public static Icon getIconFor(SModel model) {
+    if (model == null) {
+      return IdeIcons.UNKNOWN_ICON;
+    }
     LanguageAspect aspect = Language.getModelAspect(model);
     if (aspect != null) {
       return getIconForAspect(aspect);
