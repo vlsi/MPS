@@ -156,7 +156,7 @@ public class NewModelDialog extends DialogWrapper {
       return;
     }
 
-    if (((ModelRoot) myModelRoots.getSelectedItem()).canCreateModels()) {
+    if (!(((ModelRoot) myModelRoots.getSelectedItem()).canCreateModels())) {
       final FileBasedModelRoot selectedModelRoot = (FileBasedModelRoot) myModelRoots.getSelectedItem();
 
       Memento memento = new MementoImpl();
