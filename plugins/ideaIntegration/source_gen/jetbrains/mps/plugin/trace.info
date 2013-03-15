@@ -547,80 +547,80 @@
     <unitInfo nodeId="8632185942131071134" fileName="MPSProjectIDEHandler.java" startLine="43" startPosition="0" endLine="221" endPosition="0" unitName="jetbrains.mps.plugin.MPSProjectIDEHandler" />
   </root>
   <root nodeRef="r:20925211-384c-4c5f-b751-56b79dd3b32e(jetbrains.mps.plugin)/8632185942131071966">
-    <nodeInfo nodeId="8632185942131071984" fileName="IdeaJavaCompilerImpl.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
-    <nodeInfo nodeId="8632185942131071987" fileName="IdeaJavaCompilerImpl.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIdeaProjectHandler" />
-    <nodeInfo nodeId="8632185942131071996" fileName="IdeaJavaCompilerImpl.java" startLine="18" startPosition="48" endLine="19" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8632185942131072146" fileName="IdeaJavaCompilerImpl.java" startLine="26" startPosition="25" endLine="27" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4255423530121211561" fileName="IdeaJavaCompilerImpl.java" startLine="33" startPosition="31" endLine="34" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8632185942131072023" fileName="IdeaJavaCompilerImpl.java" startLine="39" startPosition="36" endLine="40" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4255423530121220790" fileName="IdeaJavaCompilerImpl.java" startLine="52" startPosition="28" endLine="53" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652478519508028116" fileName="IdeaJavaCompilerImpl.java" startLine="58" startPosition="23" endLine="59" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652478519508080268" fileName="IdeaJavaCompilerImpl.java" startLine="60" startPosition="5" endLine="61" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4652478519508125422" fileName="IdeaJavaCompilerImpl.java" startLine="62" startPosition="46" endLine="63" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652478519508028128" fileName="IdeaJavaCompilerImpl.java" startLine="65" startPosition="9" endLine="66" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4652478519508028142" fileName="IdeaJavaCompilerImpl.java" startLine="67" startPosition="23" endLine="68" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652478519508028121" fileName="IdeaJavaCompilerImpl.java" startLine="70" startPosition="33" endLine="71" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652478519508028157" fileName="IdeaJavaCompilerImpl.java" startLine="72" startPosition="5" endLine="73" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8632185942131072069" fileName="IdeaJavaCompilerImpl.java" startLine="77" startPosition="45" endLine="78" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8632185942131072071" fileName="IdeaJavaCompilerImpl.java" startLine="79" startPosition="5" endLine="80" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8632185942131071990" fileName="IdeaJavaCompilerImpl.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IdeaJavaCompilerImpl#(Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="8632185942131072026" fileName="IdeaJavaCompilerImpl.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
-    <nodeInfo nodeId="8632185942131072030" fileName="IdeaJavaCompilerImpl.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
-    <nodeInfo nodeId="4652478519508028112" fileName="IdeaJavaCompilerImpl.java" startLine="57" startPosition="65" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4652478519508097125" fileName="IdeaJavaCompilerImpl.java" startLine="61" startPosition="54" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="4652478519508028137" fileName="IdeaJavaCompilerImpl.java" startLine="66" startPosition="76" endLine="69" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8632185942131072064" fileName="IdeaJavaCompilerImpl.java" startLine="76" startPosition="51" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8632185942131072011" fileName="IdeaJavaCompilerImpl.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="8632185942131072015" fileName="IdeaJavaCompilerImpl.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectClosed#()V" />
-    <nodeInfo nodeId="8632185942131072041" fileName="IdeaJavaCompilerImpl.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValid#()Z" />
-    <nodeInfo nodeId="8632185942131072019" fileName="IdeaJavaCompilerImpl.java" startLine="37" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8632185942131072004" fileName="IdeaJavaCompilerImpl.java" startLine="23" startPosition="31" endLine="29" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8632185942131072060" fileName="IdeaJavaCompilerImpl.java" startLine="76" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIdeaProjectHandler#()Ljetbrains/mps/plugin/IProjectHandler;" />
-    <nodeInfo nodeId="4652478519508028118" fileName="IdeaJavaCompilerImpl.java" startLine="64" startPosition="5" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="8632185942131072000" fileName="IdeaJavaCompilerImpl.java" startLine="22" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectOpened#()V" />
-    <nodeInfo nodeId="4255423530121198822" fileName="IdeaJavaCompilerImpl.java" startLine="56" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compileModules#([Ljetbrains/mps/project/IModule;)Ljetbrains/mps/make/MPSCompilationResult;" />
-    <scopeInfo nodeId="8632185942131072029" fileName="IdeaJavaCompilerImpl.java" startLine="44" startPosition="31" endLine="44" endPosition="31" />
-    <scopeInfo nodeId="8632185942131072033" fileName="IdeaJavaCompilerImpl.java" startLine="48" startPosition="34" endLine="48" endPosition="34" />
-    <scopeInfo nodeId="8632185942131071995" fileName="IdeaJavaCompilerImpl.java" startLine="18" startPosition="48" endLine="19" endPosition="24" />
-    <scopeInfo nodeId="8632185942131072145" fileName="IdeaJavaCompilerImpl.java" startLine="26" startPosition="25" endLine="27" endPosition="81" />
-    <scopeInfo nodeId="8632185942131072018" fileName="IdeaJavaCompilerImpl.java" startLine="33" startPosition="31" endLine="34" endPosition="32" />
-    <scopeInfo nodeId="8632185942131072022" fileName="IdeaJavaCompilerImpl.java" startLine="39" startPosition="36" endLine="40" endPosition="32" />
-    <scopeInfo nodeId="8632185942131072044" fileName="IdeaJavaCompilerImpl.java" startLine="52" startPosition="28" endLine="53" endPosition="81" />
-    <scopeInfo nodeId="4652478519508028115" fileName="IdeaJavaCompilerImpl.java" startLine="58" startPosition="23" endLine="59" endPosition="18" />
-    <scopeInfo nodeId="4652478519508097127" fileName="IdeaJavaCompilerImpl.java" startLine="62" startPosition="46" endLine="63" endPosition="59" />
-    <scopeInfo nodeId="4652478519508028141" fileName="IdeaJavaCompilerImpl.java" startLine="67" startPosition="23" endLine="68" endPosition="115" />
-    <scopeInfo nodeId="4652478519508028119" fileName="IdeaJavaCompilerImpl.java" startLine="70" startPosition="0" endLine="71" endPosition="26">
+    <nodeInfo nodeId="8632185942131071984" fileName="IdeaJavaCompilerImpl.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
+    <nodeInfo nodeId="8632185942131071987" fileName="IdeaJavaCompilerImpl.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIdeaProjectHandler" />
+    <nodeInfo nodeId="8632185942131071996" fileName="IdeaJavaCompilerImpl.java" startLine="21" startPosition="48" endLine="22" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8632185942131072146" fileName="IdeaJavaCompilerImpl.java" startLine="29" startPosition="25" endLine="30" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4255423530121211561" fileName="IdeaJavaCompilerImpl.java" startLine="36" startPosition="31" endLine="37" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8632185942131072023" fileName="IdeaJavaCompilerImpl.java" startLine="42" startPosition="36" endLine="43" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4255423530121220790" fileName="IdeaJavaCompilerImpl.java" startLine="55" startPosition="28" endLine="56" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652478519508028116" fileName="IdeaJavaCompilerImpl.java" startLine="61" startPosition="23" endLine="62" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652478519508080268" fileName="IdeaJavaCompilerImpl.java" startLine="63" startPosition="5" endLine="64" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4652478519508125422" fileName="IdeaJavaCompilerImpl.java" startLine="65" startPosition="46" endLine="66" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652478519508028128" fileName="IdeaJavaCompilerImpl.java" startLine="68" startPosition="9" endLine="69" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4652478519508028121" fileName="IdeaJavaCompilerImpl.java" startLine="76" startPosition="33" endLine="77" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652478519508028157" fileName="IdeaJavaCompilerImpl.java" startLine="78" startPosition="5" endLine="79" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8632185942131072069" fileName="IdeaJavaCompilerImpl.java" startLine="83" startPosition="45" endLine="84" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8632185942131072071" fileName="IdeaJavaCompilerImpl.java" startLine="85" startPosition="5" endLine="86" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8632185942131071990" fileName="IdeaJavaCompilerImpl.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IdeaJavaCompilerImpl#(Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="8632185942131072026" fileName="IdeaJavaCompilerImpl.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
+    <nodeInfo nodeId="8632185942131072030" fileName="IdeaJavaCompilerImpl.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
+    <nodeInfo nodeId="4652478519508028112" fileName="IdeaJavaCompilerImpl.java" startLine="60" startPosition="65" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4652478519508097125" fileName="IdeaJavaCompilerImpl.java" startLine="64" startPosition="54" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="8632185942131072064" fileName="IdeaJavaCompilerImpl.java" startLine="82" startPosition="51" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8632185942131072011" fileName="IdeaJavaCompilerImpl.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8632185942131072015" fileName="IdeaJavaCompilerImpl.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectClosed#()V" />
+    <nodeInfo nodeId="8632185942131072041" fileName="IdeaJavaCompilerImpl.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValid#()Z" />
+    <nodeInfo nodeId="4652478519508028142" fileName="IdeaJavaCompilerImpl.java" startLine="70" startPosition="23" endLine="74" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8632185942131072019" fileName="IdeaJavaCompilerImpl.java" startLine="40" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8632185942131072004" fileName="IdeaJavaCompilerImpl.java" startLine="26" startPosition="31" endLine="32" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652478519508028137" fileName="IdeaJavaCompilerImpl.java" startLine="69" startPosition="76" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8632185942131072060" fileName="IdeaJavaCompilerImpl.java" startLine="82" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIdeaProjectHandler#()Ljetbrains/mps/plugin/IProjectHandler;" />
+    <nodeInfo nodeId="8632185942131072000" fileName="IdeaJavaCompilerImpl.java" startLine="25" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectOpened#()V" />
+    <nodeInfo nodeId="4652478519508028118" fileName="IdeaJavaCompilerImpl.java" startLine="67" startPosition="5" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4255423530121198822" fileName="IdeaJavaCompilerImpl.java" startLine="59" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compileModules#([Ljetbrains/mps/project/IModule;)Ljetbrains/mps/make/MPSCompilationResult;" />
+    <scopeInfo nodeId="8632185942131072029" fileName="IdeaJavaCompilerImpl.java" startLine="47" startPosition="31" endLine="47" endPosition="31" />
+    <scopeInfo nodeId="8632185942131072033" fileName="IdeaJavaCompilerImpl.java" startLine="51" startPosition="34" endLine="51" endPosition="34" />
+    <scopeInfo nodeId="8632185942131071995" fileName="IdeaJavaCompilerImpl.java" startLine="21" startPosition="48" endLine="22" endPosition="24" />
+    <scopeInfo nodeId="8632185942131072145" fileName="IdeaJavaCompilerImpl.java" startLine="29" startPosition="25" endLine="30" endPosition="81" />
+    <scopeInfo nodeId="8632185942131072018" fileName="IdeaJavaCompilerImpl.java" startLine="36" startPosition="31" endLine="37" endPosition="32" />
+    <scopeInfo nodeId="8632185942131072022" fileName="IdeaJavaCompilerImpl.java" startLine="42" startPosition="36" endLine="43" endPosition="32" />
+    <scopeInfo nodeId="8632185942131072044" fileName="IdeaJavaCompilerImpl.java" startLine="55" startPosition="28" endLine="56" endPosition="81" />
+    <scopeInfo nodeId="4652478519508028115" fileName="IdeaJavaCompilerImpl.java" startLine="61" startPosition="23" endLine="62" endPosition="18" />
+    <scopeInfo nodeId="4652478519508097127" fileName="IdeaJavaCompilerImpl.java" startLine="65" startPosition="46" endLine="66" endPosition="59" />
+    <scopeInfo nodeId="4652478519508028119" fileName="IdeaJavaCompilerImpl.java" startLine="76" startPosition="0" endLine="77" endPosition="26">
       <varInfo nodeId="4652478519508028125" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4652478519508028120" fileName="IdeaJavaCompilerImpl.java" startLine="70" startPosition="33" endLine="71" endPosition="26" />
-    <scopeInfo nodeId="8632185942131072068" fileName="IdeaJavaCompilerImpl.java" startLine="77" startPosition="45" endLine="78" endPosition="18" />
-    <scopeInfo nodeId="8632185942131071990" fileName="IdeaJavaCompilerImpl.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
+    <scopeInfo nodeId="4652478519508028120" fileName="IdeaJavaCompilerImpl.java" startLine="76" startPosition="33" endLine="77" endPosition="26" />
+    <scopeInfo nodeId="8632185942131072068" fileName="IdeaJavaCompilerImpl.java" startLine="83" startPosition="45" endLine="84" endPosition="18" />
+    <scopeInfo nodeId="8632185942131071990" fileName="IdeaJavaCompilerImpl.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="8632185942131071993" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="8632185942131072026" fileName="IdeaJavaCompilerImpl.java" startLine="43" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="8632185942131072030" fileName="IdeaJavaCompilerImpl.java" startLine="47" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="4652478519508097125" fileName="IdeaJavaCompilerImpl.java" startLine="61" startPosition="54" endLine="64" endPosition="5">
+    <scopeInfo nodeId="8632185942131072026" fileName="IdeaJavaCompilerImpl.java" startLine="46" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="8632185942131072030" fileName="IdeaJavaCompilerImpl.java" startLine="50" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="4652478519508097125" fileName="IdeaJavaCompilerImpl.java" startLine="64" startPosition="54" endLine="67" endPosition="5">
       <varInfo nodeId="4652478519508097128" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="8632185942131072011" fileName="IdeaJavaCompilerImpl.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="8632185942131072015" fileName="IdeaJavaCompilerImpl.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="8632185942131072041" fileName="IdeaJavaCompilerImpl.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="4652478519508028127" fileName="IdeaJavaCompilerImpl.java" startLine="65" startPosition="9" endLine="69" endPosition="7">
+    <scopeInfo nodeId="8632185942131072011" fileName="IdeaJavaCompilerImpl.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="8632185942131072015" fileName="IdeaJavaCompilerImpl.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="8632185942131072041" fileName="IdeaJavaCompilerImpl.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="4652478519508028141" fileName="IdeaJavaCompilerImpl.java" startLine="70" startPosition="23" endLine="74" endPosition="11" />
+    <scopeInfo nodeId="8632185942131072063" fileName="IdeaJavaCompilerImpl.java" startLine="82" startPosition="51" endLine="86" endPosition="64" />
+    <scopeInfo nodeId="8632185942131072019" fileName="IdeaJavaCompilerImpl.java" startLine="40" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="8632185942131072003" fileName="IdeaJavaCompilerImpl.java" startLine="26" startPosition="31" endLine="32" endPosition="15" />
+    <scopeInfo nodeId="8632185942131072060" fileName="IdeaJavaCompilerImpl.java" startLine="82" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="4652478519508028127" fileName="IdeaJavaCompilerImpl.java" startLine="68" startPosition="9" endLine="75" endPosition="7">
       <varInfo nodeId="4652478519508028129" varName="cr" />
     </scopeInfo>
-    <scopeInfo nodeId="8632185942131072063" fileName="IdeaJavaCompilerImpl.java" startLine="76" startPosition="51" endLine="80" endPosition="64" />
-    <scopeInfo nodeId="8632185942131072019" fileName="IdeaJavaCompilerImpl.java" startLine="37" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="8632185942131072003" fileName="IdeaJavaCompilerImpl.java" startLine="23" startPosition="31" endLine="29" endPosition="15" />
-    <scopeInfo nodeId="8632185942131072060" fileName="IdeaJavaCompilerImpl.java" startLine="76" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="8632185942131072000" fileName="IdeaJavaCompilerImpl.java" startLine="22" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="4255423530121198830" fileName="IdeaJavaCompilerImpl.java" startLine="57" startPosition="65" endLine="73" endPosition="16">
+    <scopeInfo nodeId="8632185942131072000" fileName="IdeaJavaCompilerImpl.java" startLine="25" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="4255423530121198830" fileName="IdeaJavaCompilerImpl.java" startLine="60" startPosition="65" endLine="79" endPosition="16">
       <varInfo nodeId="4652478519508080271" varName="modulePaths" />
     </scopeInfo>
-    <scopeInfo nodeId="4255423530121198822" fileName="IdeaJavaCompilerImpl.java" startLine="56" startPosition="0" endLine="75" endPosition="0">
+    <scopeInfo nodeId="4255423530121198822" fileName="IdeaJavaCompilerImpl.java" startLine="59" startPosition="0" endLine="81" endPosition="0">
       <varInfo nodeId="4255423530121198826" varName="modules" />
     </scopeInfo>
-    <unitInfo nodeId="8632185942131072010" fileName="IdeaJavaCompilerImpl.java" startLine="24" startPosition="19" endLine="29" endPosition="5" unitName="jetbrains.mps.plugin.IdeaJavaCompilerImpl$1" />
-    <unitInfo nodeId="8632185942131071966" fileName="IdeaJavaCompilerImpl.java" startLine="14" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.plugin.IdeaJavaCompilerImpl" />
+    <unitInfo nodeId="8632185942131072010" fileName="IdeaJavaCompilerImpl.java" startLine="27" startPosition="19" endLine="32" endPosition="5" unitName="jetbrains.mps.plugin.IdeaJavaCompilerImpl$1" />
+    <unitInfo nodeId="8632185942131071966" fileName="IdeaJavaCompilerImpl.java" startLine="17" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.plugin.IdeaJavaCompilerImpl" />
   </root>
   <root nodeRef="r:20925211-384c-4c5f-b751-56b79dd3b32e(jetbrains.mps.plugin)/8632185942131072152">
     <nodeInfo nodeId="8632185942131072167" fileName="IdeaNavigationProvider.java" startLine="15" startPosition="75" endLine="16" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

@@ -17,10 +17,14 @@ package jetbrains.mps.make;
 
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.MessageKind;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Evgeny Gryaznov, Aug 20, 2010
@@ -31,19 +35,20 @@ public class MPSCompilationResult implements Serializable {
   private int myErrors;
   private int myWarnings;
   private boolean myAborted;
-  private boolean myCompiledAnything;
-  private List<? extends IMessage> myMessages;
 
-  public MPSCompilationResult(int errors, int warnings, boolean aborted, boolean compiled) {
-    this(errors, warnings, aborted, compiled, Collections.<IMessage>emptyList());
+  private List<? extends IMessage> myMessages;
+  private Set<SModule> myChangedModules;
+
+  public MPSCompilationResult(int errors, int warnings, boolean aborted, Collection<? extends SModule> changedModules) {
+    this(errors, warnings, aborted, changedModules, Collections.<IMessage>emptyList());
   }
 
-  public MPSCompilationResult(int errors, int warnings, boolean aborted, boolean compiled, List<? extends IMessage> messages) {
+  public MPSCompilationResult(int errors, int warnings, boolean aborted, Collection<? extends SModule> changedModules, List<? extends IMessage> messages) {
     myErrors = errors;
     myWarnings = warnings;
     myAborted = aborted;
-    myCompiledAnything = compiled;
     myMessages = messages;
+    myChangedModules = new HashSet<SModule>(changedModules);
   }
 
   public int getErrors() {
@@ -59,7 +64,7 @@ public class MPSCompilationResult implements Serializable {
   }
 
   public boolean isCompiledAnything() {
-    return myCompiledAnything;
+    return myChangedModules.isEmpty();
   }
 
   public boolean isOk() {
@@ -67,11 +72,16 @@ public class MPSCompilationResult implements Serializable {
   }
 
   public boolean isReloadingNeeded() {
+    // todo: !
     return isOk() && isCompiledAnything();
   }
 
   public List<IMessage> getMessages() {
     return myMessages != null ? Collections.unmodifiableList(myMessages) : Collections.<IMessage>emptyList();
+  }
+
+  public Set<SModule> getChangedModules() {
+    return Collections.unmodifiableSet(myChangedModules);
   }
 
   public String getErrorsText() {
