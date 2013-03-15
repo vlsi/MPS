@@ -136,6 +136,27 @@ public class RulesManager {
     return success;
   }
 
+  public boolean unloadLanguages(Iterable<LanguageRuntime> languages) {
+    ModelAccess.assertLegalWrite();
+
+    // for now: load languages except unloaded languages
+    Set<String> toLoad = new HashSet<String>();
+    toLoad.addAll(myLoadedLanguages);
+    for (LanguageRuntime runtime : languages) {
+      toLoad.remove(runtime.getNamespace());
+    }
+
+    // unload all languages
+    clear();
+
+    // load
+    Set<LanguageRuntime> toLoadRuntimes = new HashSet<LanguageRuntime>();
+    for (String language : toLoad) {
+      toLoadRuntimes.add(LanguageRegistry.getInstance().getLanguage(language));
+    }
+    return loadLanguages(toLoadRuntimes);
+  }
+
   public IVariableConverter_Runtime getVariableConverter(SNode context, String role, SNode variable, boolean isAggregation) {
     for (IVariableConverter_Runtime converter : myVariableConverters) {
       if (converter.isApplicable(context, role, variable, isAggregation)) return converter;
