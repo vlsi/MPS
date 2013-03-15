@@ -132,6 +132,13 @@ public class MPSNodeVirtualFile extends VirtualFile {
   @Override
   @Nullable
   public VirtualFile getParent() {
+    // Returning the parent of this node's model virtial file
+    // i.e. a real directory wherein the model file lives
+    // Needed for idea scope to work (see PsiSearchScopeUtil.isInScope)
+    MPSModelVirtualFile modelVFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(myNode.getModelReference());
+    if (modelVFile !=null) {
+      return modelVFile.getParent();
+    }
     return null;
   }
 

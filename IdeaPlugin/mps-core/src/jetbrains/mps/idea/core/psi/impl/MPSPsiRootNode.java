@@ -157,6 +157,13 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile {
     return new SNodePointer(psiModel.getSModelReference(), myNodeId);
   }
 
+  // added for idea search scope to work with our virtual files
+  // see PsiSearchScopeUtil.isInScope
+  @Override
+  public PsiElement getContext() {
+    return null;
+  }
+
   @Override
   public boolean isWritable() {
     return true;
