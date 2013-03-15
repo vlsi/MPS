@@ -87,6 +87,10 @@ public class AddMethodDocComment_Intention implements IntentionFactory {
     public void execute(final SNode node, final EditorContext editorContext) {
       if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"))) != null)) {
         AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")), null);
+        if (editorContext.getSelectedNode() != node) {
+          editorContext.selectWRTFocusPolicy(node);
+        }
+
         return;
       }
 

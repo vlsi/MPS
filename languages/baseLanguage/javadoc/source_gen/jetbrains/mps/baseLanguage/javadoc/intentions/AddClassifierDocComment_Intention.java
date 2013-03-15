@@ -94,6 +94,9 @@ public class AddClassifierDocComment_Intention implements IntentionFactory {
     public void execute(final SNode node, final EditorContext editorContext) {
       if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"))) != null)) {
         AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment")), null);
+        if (editorContext.getSelectedNode() != node) {
+          editorContext.selectWRTFocusPolicy(node);
+        }
         return;
       }
 

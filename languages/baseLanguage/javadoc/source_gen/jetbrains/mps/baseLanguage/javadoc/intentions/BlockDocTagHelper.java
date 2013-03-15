@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.logging.Logger;
 
 public class BlockDocTagHelper {
   public static void setFocus(EditorContext editorContext, SNode node, String tagName) {
@@ -17,7 +16,6 @@ public class BlockDocTagHelper {
     if (tagEditorCell instanceof EditorCell_Collection) {
       for (EditorCell childCell : Sequence.fromIterable((EditorCell_Collection) tagEditorCell)) {
         String cellId = childCell.getCellId();
-        LOG.info("AAAAAAAAAAAAAAAAA " + cellId);
         if (cellId != null && cellId.contains(tagName)) {
           cellToSelect = childCell;
           break;
@@ -35,6 +33,4 @@ public class BlockDocTagHelper {
   public static void setFocus(EditorContext editorContext, SNode node) {
     setFocus(editorContext, node, "text");
   }
-
-  private static Logger LOG = Logger.getLogger(BlockDocTagHelper.class);
 }
