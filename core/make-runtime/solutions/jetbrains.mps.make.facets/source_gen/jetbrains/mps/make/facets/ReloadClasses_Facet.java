@@ -18,13 +18,10 @@ import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -80,28 +77,21 @@ public class ReloadClasses_Facet extends IFacet.Stub {
           final Iterable<TResource> input = (Iterable<TResource>) (Iterable) rawInput;
           switch (0) {
             case 0:
-              final Wrappers._T<Collection<? extends SModule>> modules = new Wrappers._T<Collection<? extends SModule>>(Sequence.fromIterable(input).select(new ISelector<TResource, IModule>() {
+              final Collection<? extends SModule> toReload = Sequence.fromIterable(input).select(new ISelector<TResource, IModule>() {
                 public IModule select(TResource it) {
                   return it.module();
                 }
-              }).toListSequence());
-              // hack because of ModuleMaker 
-              modules.value = new GlobalModuleDependenciesManager(modules.value).getModules(GlobalModuleDependenciesManager.Deptype.COMPILE);
+              }).distinct().toListSequence();
 
               monitor.currentProgress().beginWork("Reloading classes", 1, monitor.currentProgress().workLeft());
-              FileSystem.getInstance().runWriteTransaction(new Runnable() {
+              ModelAccess.instance().requireWrite(new Runnable() {
                 public void run() {
-                  ModelAccess.instance().requireWrite(new Runnable() {
-                    public void run() {
-                      ClassLoaderManager.getInstance().reloadClasses(modules.value, new EmptyProgressMonitor());
-                    }
-                  });
+                  ClassLoaderManager.getInstance().unloadClasses(toReload, new EmptyProgressMonitor());
+                  ClassLoaderManager.getInstance().loadAllPossibleClasses(new EmptyProgressMonitor());
                 }
               });
               monitor.currentProgress().advanceWork("Reloading classes", 1);
               monitor.currentProgress().finishWork("Reloading classes");
-
-              _output_i849au_a0a = Sequence.fromIterable(_output_i849au_a0a).concat(Sequence.fromIterable(input));
             default:
               return new IResult.SUCCESS(_output_i849au_a0a);
           }
