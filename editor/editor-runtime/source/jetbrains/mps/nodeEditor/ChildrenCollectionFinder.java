@@ -72,9 +72,8 @@ public class ChildrenCollectionFinder {
             return curr;
           }
         }
-        DfsTraverser traverser = new DfsTraverser(myCurrent, myForward, false);
-        while (traverser.getCurrent() != null) {
-          EditorCell current = traverser.getCurrent();
+
+        for (EditorCell current : new DfsTraverser(myCurrent, myForward, false)) {
           SNode currentNode = current.getSNode();
 
           if (!jetbrains.mps.util.SNodeOperations.isAncestor(anchorNode, currentNode)) {
@@ -84,7 +83,6 @@ public class ChildrenCollectionFinder {
           if (isMultipleCollectionCell(current)) {
             return current;
           }
-          traverser.next();
         }
         return null;
       }

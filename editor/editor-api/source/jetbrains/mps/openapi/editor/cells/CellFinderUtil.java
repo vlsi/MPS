@@ -45,13 +45,10 @@ public class CellFinderUtil {
       return cell;
     }
 
-    DfsTraverser traverser = new DfsTraverser(cell, forward, true);
-
-    while (traverser.getCurrent() != null) {
-      if (condition.met(traverser.getCurrent())){
-        return traverser.getCurrent();
+    for (EditorCell current : new DfsTraverser(cell, forward, true)) {
+      if (condition.met(current)) {
+        return current;
       }
-      traverser.next();
     }
     return null;
   }

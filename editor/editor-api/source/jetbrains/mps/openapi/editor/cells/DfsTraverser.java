@@ -17,9 +17,10 @@ package jetbrains.mps.openapi.editor.cells;
 
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 import java.util.Stack;
 
-public class DfsTraverser {
+public class DfsTraverser implements Iterable<EditorCell>{
   private EditorCell myCurrent;
   private boolean myVisitChildrenOnly;
   private EditorCell myCurrentDfsRoot;
@@ -35,11 +36,8 @@ public class DfsTraverser {
     next();
   }
 
-  public EditorCell getCurrent() {
-    return myCurrent;
-  }
 
-  public void next() {
+  private void next() {
 
     removeFinishedIteratorsFromStack();
 
@@ -122,4 +120,28 @@ public class DfsTraverser {
     return myForward ? cell.iterator() : cell.reverseIterator();
   }
 
+  @Override
+  public Iterator<EditorCell> iterator() {
+    return new Iterator<EditorCell>() {
+      @Override
+      public boolean hasNext() {
+        return myCurrent != null;
+      }
+
+      @Override
+      public EditorCell next() {
+        if (!hasNext()) {
+          throw new NoSuchElementException();
+        }
+        EditorCell result =  myCurrent;
+        DfsTraverser.this.next();
+        return result;
+      }
+
+      @Override
+      public void remove() {
+        throw new UnsupportedOperationException();
+      }
+    };
+  }
 }

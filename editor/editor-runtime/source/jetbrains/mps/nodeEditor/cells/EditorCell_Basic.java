@@ -1391,24 +1391,20 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   @Override
   public EditorCell getFirstDescendant(Condition<EditorCell> condition) {
-    DfsTraverser traverser = new DfsTraverser(this, true, true);
-    while (traverser.getCurrent() != null) {
-      if (condition.met((EditorCell) traverser.getCurrent())) {
-        return (EditorCell) traverser.getCurrent();
+    for (jetbrains.mps.openapi.editor.cells.EditorCell current : new DfsTraverser(this, true, true)) {
+      if (condition.met((EditorCell) current)) {
+        return (EditorCell) current;
       }
-      traverser.next();
     }
     return null;
   }
 
   @Override
   public EditorCell getLastDescendant(Condition<EditorCell> condition) {
-    DfsTraverser traverser = new DfsTraverser(this, false, true);
-    while (traverser.getCurrent() != null) {
-      if (condition.met((EditorCell) traverser.getCurrent())) {
-        return (EditorCell)traverser.getCurrent();
+    for (jetbrains.mps.openapi.editor.cells.EditorCell current : new DfsTraverser(this, false, true)) {
+      if (condition.met((EditorCell) current)) {
+        return (EditorCell) current;
       }
-      traverser.next();
     }
     return null;
   }
