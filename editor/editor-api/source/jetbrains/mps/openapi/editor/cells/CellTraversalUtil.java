@@ -25,6 +25,10 @@ import java.util.Iterator;
  * 03 05, 2013
  */
 public class CellTraversalUtil {
+
+  // no one can instantiate this class.
+  private CellTraversalUtil(){}
+
   public static EditorCell getNextSibling(@NotNull EditorCell cell) {
     return getSibling(cell, true);
   }
