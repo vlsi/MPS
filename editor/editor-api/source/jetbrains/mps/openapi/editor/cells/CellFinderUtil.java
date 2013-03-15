@@ -16,6 +16,7 @@
 package jetbrains.mps.openapi.editor.cells;
 
 import jetbrains.mps.util.Condition;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Semen Alperovich
@@ -25,7 +26,7 @@ public class CellFinderUtil {
   // no one can instantiate this class.
   private CellFinderUtil(){}
 
-  public EditorCell_Collection findParent(EditorCell cell, Condition<EditorCell_Collection> condition) {
+  public EditorCell_Collection findParent(@NotNull EditorCell cell, @NotNull Condition<EditorCell_Collection> condition) {
 
     if (cell instanceof EditorCell_Collection && condition.met(((EditorCell_Collection) cell))) {
       return ((EditorCell_Collection) cell);
@@ -39,10 +40,23 @@ public class CellFinderUtil {
     return null;
   }
 
-//  <C extends EditorCell> C findChild(CellFinder<C> finder, boolean includeThis) {
-//
-//  }
-//  <C extends EditorCell> C findChild(CellFinder<C> finder) {
-//
-//  }
+  EditorCell findChild(@NotNull EditorCell cell, @NotNull Condition<EditorCell> condition, boolean includeThis, boolean forward) {
+    if (includeThis && condition.met(cell)) {
+      return cell;
+    }
+
+    DfsTraverser traverser = new DfsTraverser(cell, forward, true);
+
+    while (traverser.getCurrent() != null) {
+      if (condition.met(traverser.getCurrent())){
+        return traverser.getCurrent();
+      }
+      traverser.next();
+    }
+    return null;
+  }
+
+  EditorCell findChild(EditorCell cell, Condition<EditorCell> condition, boolean forward) {
+    return findChild(cell, condition, false, forward);
+  }
 }

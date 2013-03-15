@@ -16,9 +16,6 @@
 package jetbrains.mps.openapi.editor.cells;
 
 
-import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
-
 import java.util.Iterator;
 import java.util.Stack;
 
