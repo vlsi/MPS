@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor.cells;
+package jetbrains.mps.openapi.editor.cells;
 
 public interface CellFinder<C extends jetbrains.mps.openapi.editor.cells.EditorCell> {
   C find(jetbrains.mps.openapi.editor.cells.EditorCell cell, boolean includeCurrent);
