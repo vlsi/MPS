@@ -18,15 +18,13 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.classloading.MPSClassesReloadManager;
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.extapi.module.EditableSModule;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.RepositoryAccess;
@@ -89,8 +87,8 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
       if (myFqNameToModulesMap.containsKey(moduleFqName)) {
         IModule m = myFqNameToModulesMap.get(moduleFqName);
         LOG.warning(
-          "duplicate module name " + moduleFqName + " : module with the same UID exists at " + m.getDescriptorFile() + " and " + module.getDescriptorFile(),
-          m);
+            "duplicate module name " + moduleFqName + " : module with the same UID exists at " + m.getDescriptorFile() + " and " + module.getDescriptorFile(),
+            m);
       }
 
       myFqNameToModulesMap.put(moduleFqName, module);
@@ -159,7 +157,7 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
   private boolean doUnregisterModule(IModule module, MPSModuleOwner owner) {
     ModelAccess.assertLegalWrite();
     assert myModules.contains(
-      module) : "trying to unregister non-registered module: fqName=" + module.getModuleFqName() + "; file=" + module.getDescriptorFile();
+        module) : "trying to unregister non-registered module: fqName=" + module.getModuleFqName() + "; file=" + module.getDescriptorFile();
 
     myModuleToOwners.removeLink(module, owner);
     boolean remove = myModuleToOwners.getByFirst(module).isEmpty();
@@ -357,9 +355,14 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     getModelAccess().checkWriteAccess();
 
     for (SModule module : getModules()) {
-      AbstractModule m = (AbstractModule) module;
-      if (m.isChanged()) m.save();
+      if (module instanceof EditableSModule) {
+        EditableSModule editableModule = (EditableSModule) module;
+        if (editableModule.isChanged()) {
+          editableModule.save();
+        }
+      }
     }
+
     SModelRepository.getInstance().saveAll();
   }
 
