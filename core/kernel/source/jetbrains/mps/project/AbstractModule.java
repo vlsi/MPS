@@ -345,7 +345,7 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
     for (String path : descriptor.getAdditionalJavaStubPaths()) {
       String canonicalPath = FileUtil.getCanonicalPath(path).toLowerCase();
       if (packagedSourcesPath == null || !canonicalPath.startsWith(packagedSourcesPath)) {
-        String shrinked = MacrosFactory.forModuleFile(getDescriptorFile()).shrinkPath(path);
+        String shrinked = MacrosFactory.forModule(this).shrinkPath(path);
         if (MacrosFactory.containsNonMPSMacros(shrinked)) continue;
       }
       if (dd == null && canonicalPath.startsWith(libPath)) {
@@ -375,7 +375,7 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
       }
 
       if (packagedSourcesPath == null || !canonicalPath.startsWith(packagedSourcesPath)) {
-        String shrinked = MacrosFactory.forModuleFile(getDescriptorFile()).shrinkPath(path);
+        String shrinked = MacrosFactory.forModule(this).shrinkPath(path);
         if (MacrosFactory.containsNonMPSMacros(shrinked)) continue;
       }
       if (dd == null && canonicalPath.startsWith(libPath)) {

@@ -310,16 +310,16 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
-  public static Object propertyMacro_GetPropertyValue_6331861638741615659(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "icon").replaceAll("\\\\", "\\\\\\\\");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_6331861638741616143(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_7446179200425733250(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return ((TemplateQueryContext) _context).getGenerator().getGeneratorSessionContext().getInvocationContext().getModule().getModuleFqName();
   }
 
-  public static Object propertyMacro_GetPropertyValue_6331861638741616160(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_7446179200425733268(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return ((TemplateQueryContext) _context).getGenerator().getGeneratorSessionContext().getInvocationContext().getModule().getModuleReference().getModuleId().toString();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6331861638741615659(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "icon").replaceAll("\\\\", "\\\\\\\\");
   }
 
   public static Object propertyMacro_GetPropertyValue_1557260317236434377(final IOperationContext operationContext, final PropertyMacroContext _context) {
