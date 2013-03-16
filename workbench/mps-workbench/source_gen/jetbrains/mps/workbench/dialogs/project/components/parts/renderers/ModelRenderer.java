@@ -18,7 +18,7 @@ public class ModelRenderer extends ProjectLevelRenderer {
 
   @Override
   public String getItemLabel(Object value) {
-    final SModelReference modelReference = (SModelReference) value;
+    final SModelReference modelReference = (jetbrains.mps.smodel.SModelReference) value;
     SModel model = SModelRepository.getInstance().getModelDescriptor(modelReference);
     if (model == null) {
       String longName = modelReference.getModelName();
@@ -33,7 +33,7 @@ public class ModelRenderer extends ProjectLevelRenderer {
   @Override
   public Component getListCellRendererComponent(JList list, final Object value, int index, boolean isSelected, boolean cellHasFocus) {
     Component result = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
-    final SModelReference modelReference = (SModelReference) value;
+    final SModelReference modelReference = (jetbrains.mps.smodel.SModelReference) value;
     setText(getItemLabel(value));
     if (!(isSelected)) {
       if (!(StateUtil.isAvailable(modelReference))) {

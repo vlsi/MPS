@@ -249,7 +249,7 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog
       Map<SModelReference, Integer> result = (Map<SModelReference, Integer>) resultObject;
       if ("model".equals(tagName)) {
         String[] child = (String[]) value;
-        jetbrains.mps.smodel.SModelReference modelRef = jetbrains.mps.smodel.SModelReference.fromString(child[1]);
+        SModelReference modelRef = jetbrains.mps.smodel.SModelReference.fromString(child[1]);
         MapSequence.fromMap(result).put(modelRef, Integer.parseInt(child[2]));
         fieldhelper.addModelRef(child[0], modelRef);
         return;

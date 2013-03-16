@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.script.runtime.StubRefUtil;
-import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNodeId;
@@ -41,7 +41,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isClassifierType(node, jetbrains.mps.smodel.SModelReference.fromString("r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)"), "4087070200985064052");
+        return StubRefUtil.isClassifierType(node, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)"), "4087070200985064052");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -66,7 +66,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isInstanceMethodCall(node, jetbrains.mps.smodel.SModelReference.fromString("r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)"), "4087070200985064321");
+        return StubRefUtil.isInstanceMethodCall(node, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)"), "4087070200985064321");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -91,7 +91,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isInstanceMethodCall(node, jetbrains.mps.smodel.SModelReference.fromString("r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)"), "2595782876361293165");
+        return StubRefUtil.isInstanceMethodCall(node, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)"), "2595782876361293165");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -116,7 +116,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isClassCreator(node, jetbrains.mps.smodel.SModelReference.fromString("r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)"), "4087070200985064317");
+        return StubRefUtil.isClassCreator(node, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)"), "4087070200985064317");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -141,7 +141,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isClassifierType(node, jetbrains.mps.smodel.SModelReference.fromString("r:b9858adc-db8e-47c0-9e2e-ef86ca91a020(jetbrains.mps.baseLanguage.runConfigurations.runtime)"), "1447676209063504042");
+        return StubRefUtil.isClassifierType(node, SModelReference.fromString("r:b9858adc-db8e-47c0-9e2e-ef86ca91a020(jetbrains.mps.baseLanguage.runConfigurations.runtime)"), "1447676209063504042");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -166,7 +166,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isInstanceMethodCall(node, jetbrains.mps.smodel.SModelReference.fromString("r:b9858adc-db8e-47c0-9e2e-ef86ca91a020(jetbrains.mps.baseLanguage.runConfigurations.runtime)"), "1447676209063504076");
+        return StubRefUtil.isInstanceMethodCall(node, SModelReference.fromString("r:b9858adc-db8e-47c0-9e2e-ef86ca91a020(jetbrains.mps.baseLanguage.runConfigurations.runtime)"), "1447676209063504076");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -191,7 +191,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isInstanceMethodCall(node, jetbrains.mps.smodel.SModelReference.fromString("r:b9858adc-db8e-47c0-9e2e-ef86ca91a020(jetbrains.mps.baseLanguage.runConfigurations.runtime)"), "1447676209063504092");
+        return StubRefUtil.isInstanceMethodCall(node, SModelReference.fromString("r:b9858adc-db8e-47c0-9e2e-ef86ca91a020(jetbrains.mps.baseLanguage.runConfigurations.runtime)"), "1447676209063504092");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -216,7 +216,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isReferenceTo(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.uiLanguage.structure.ComponentInstance", "componentDeclaration")), jetbrains.mps.smodel.SModelReference.fromString("r:b9858adc-db8e-47c0-9e2e-ef86ca91a020(jetbrains.mps.baseLanguage.runConfigurations.runtime)"), SNodeId.fromString("1447676209063345962"));
+        return StubRefUtil.isReferenceTo(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.uiLanguage.structure.ComponentInstance", "componentDeclaration")), SModelReference.fromString("r:b9858adc-db8e-47c0-9e2e-ef86ca91a020(jetbrains.mps.baseLanguage.runConfigurations.runtime)"), SNodeId.fromString("1447676209063345962"));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -243,7 +243,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isReferenceTo(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation", "method")), jetbrains.mps.smodel.SModelReference.fromString("r:b9858adc-db8e-47c0-9e2e-ef86ca91a020(jetbrains.mps.baseLanguage.runConfigurations.runtime)"), SNodeId.fromString("1447676209063346136"));
+        return StubRefUtil.isReferenceTo(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation", "method")), SModelReference.fromString("r:b9858adc-db8e-47c0-9e2e-ef86ca91a020(jetbrains.mps.baseLanguage.runConfigurations.runtime)"), SNodeId.fromString("1447676209063346136"));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -268,7 +268,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isReferenceTo(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation", "method")), jetbrains.mps.smodel.SModelReference.fromString("r:b9858adc-db8e-47c0-9e2e-ef86ca91a020(jetbrains.mps.baseLanguage.runConfigurations.runtime)"), SNodeId.fromString("1447676209063346077"));
+        return StubRefUtil.isReferenceTo(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation", "method")), SModelReference.fromString("r:b9858adc-db8e-47c0-9e2e-ef86ca91a020(jetbrains.mps.baseLanguage.runConfigurations.runtime)"), SNodeId.fromString("1447676209063346077"));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -293,7 +293,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isReferenceTo(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.uiLanguage.structure.ComponentInstance", "componentDeclaration")), jetbrains.mps.smodel.SModelReference.fromString("r:b9858adc-db8e-47c0-9e2e-ef86ca91a020(jetbrains.mps.baseLanguage.runConfigurations.runtime)"), SNodeId.fromString("1447676209063499871"));
+        return StubRefUtil.isReferenceTo(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.uiLanguage.structure.ComponentInstance", "componentDeclaration")), SModelReference.fromString("r:b9858adc-db8e-47c0-9e2e-ef86ca91a020(jetbrains.mps.baseLanguage.runConfigurations.runtime)"), SNodeId.fromString("1447676209063499871"));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -320,7 +320,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isReferenceTo(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.uiLanguage.structure.AttributeValue", "attribute")), jetbrains.mps.smodel.SModelReference.fromString("r:b9858adc-db8e-47c0-9e2e-ef86ca91a020(jetbrains.mps.baseLanguage.runConfigurations.runtime)"), SNodeId.fromString("1447676209063499873"));
+        return StubRefUtil.isReferenceTo(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.uiLanguage.structure.AttributeValue", "attribute")), SModelReference.fromString("r:b9858adc-db8e-47c0-9e2e-ef86ca91a020(jetbrains.mps.baseLanguage.runConfigurations.runtime)"), SNodeId.fromString("1447676209063499873"));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -345,7 +345,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isReferenceTo(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.uiLanguage.structure.AttributeValue", "attribute")), jetbrains.mps.smodel.SModelReference.fromString("r:b9858adc-db8e-47c0-9e2e-ef86ca91a020(jetbrains.mps.baseLanguage.runConfigurations.runtime)"), SNodeId.fromString("1447676209063499875"));
+        return StubRefUtil.isReferenceTo(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.uiLanguage.structure.AttributeValue", "attribute")), SModelReference.fromString("r:b9858adc-db8e-47c0-9e2e-ef86ca91a020(jetbrains.mps.baseLanguage.runConfigurations.runtime)"), SNodeId.fromString("1447676209063499875"));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -370,7 +370,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isClassifierType(node, jetbrains.mps.smodel.SModelReference.fromString("r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)"), "1447676209063504042");
+        return StubRefUtil.isClassifierType(node, SModelReference.fromString("r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)"), "1447676209063504042");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -395,7 +395,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isClassCreator(node, jetbrains.mps.smodel.SModelReference.fromString("r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)"), "8492459591399148867");
+        return StubRefUtil.isClassCreator(node, SModelReference.fromString("r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)"), "8492459591399148867");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -420,7 +420,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isClassifierType(node, jetbrains.mps.smodel.SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.baseLanguage.util.plugin.run(MPS.Classpath/jetbrains.mps.baseLanguage.util.plugin.run@java_stub)"), "~ConfigRunParameters");
+        return StubRefUtil.isClassifierType(node, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.baseLanguage.util.plugin.run(MPS.Classpath/jetbrains.mps.baseLanguage.util.plugin.run@java_stub)"), "~ConfigRunParameters");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -445,7 +445,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isClassCreator(node, jetbrains.mps.smodel.SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.baseLanguage.util.plugin.run(MPS.Classpath/jetbrains.mps.baseLanguage.util.plugin.run@java_stub)"), "~ConfigRunParameters.<init>()");
+        return StubRefUtil.isClassCreator(node, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.baseLanguage.util.plugin.run(MPS.Classpath/jetbrains.mps.baseLanguage.util.plugin.run@java_stub)"), "~ConfigRunParameters.<init>()");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -470,7 +470,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isReferenceTo(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement", "constructorDeclaration")), jetbrains.mps.smodel.SModelReference.fromString("r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)"), SNodeId.fromString("8492459591399148867"));
+        return StubRefUtil.isReferenceTo(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement", "constructorDeclaration")), SModelReference.fromString("r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)"), SNodeId.fromString("8492459591399148867"));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -497,7 +497,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isReferenceTo(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement", "constructorDeclaration")), jetbrains.mps.smodel.SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.baseLanguage.util.plugin.run(MPS.Classpath/jetbrains.mps.baseLanguage.util.plugin.run@java_stub)"), SNodeId.fromString("~ConfigRunParameters.<init>()"));
+        return StubRefUtil.isReferenceTo(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement", "constructorDeclaration")), SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.baseLanguage.util.plugin.run(MPS.Classpath/jetbrains.mps.baseLanguage.util.plugin.run@java_stub)"), SNodeId.fromString("~ConfigRunParameters.<init>()"));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -524,7 +524,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isInstanceMethodCall(node, jetbrains.mps.smodel.SModelReference.fromString("r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)"), "8492459591399148719");
+        return StubRefUtil.isInstanceMethodCall(node, SModelReference.fromString("r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)"), "8492459591399148719");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -549,7 +549,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isInstanceMethodCall(node, jetbrains.mps.smodel.SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.baseLanguage.util.plugin.run(MPS.Classpath/jetbrains.mps.baseLanguage.util.plugin.run@java_stub)"), "~ConfigRunParameters.setVMParameters(java.lang.String):void");
+        return StubRefUtil.isInstanceMethodCall(node, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.baseLanguage.util.plugin.run(MPS.Classpath/jetbrains.mps.baseLanguage.util.plugin.run@java_stub)"), "~ConfigRunParameters.setVMParameters(java.lang.String):void");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -574,7 +574,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isInstanceMethodCall(node, jetbrains.mps.smodel.SModelReference.fromString("r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)"), "8492459591399148807");
+        return StubRefUtil.isInstanceMethodCall(node, SModelReference.fromString("r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)"), "8492459591399148807");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -599,7 +599,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isInstanceMethodCall(node, jetbrains.mps.smodel.SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.baseLanguage.util.plugin.run(MPS.Classpath/jetbrains.mps.baseLanguage.util.plugin.run@java_stub)"), "~ConfigRunParameters.getProgramParameters():java.lang.String");
+        return StubRefUtil.isInstanceMethodCall(node, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.baseLanguage.util.plugin.run(MPS.Classpath/jetbrains.mps.baseLanguage.util.plugin.run@java_stub)"), "~ConfigRunParameters.getProgramParameters():java.lang.String");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -624,7 +624,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isInstanceMethodCall(node, jetbrains.mps.smodel.SModelReference.fromString("r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)"), "8492459591399148731");
+        return StubRefUtil.isInstanceMethodCall(node, SModelReference.fromString("r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)"), "8492459591399148731");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -649,7 +649,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isInstanceMethodCall(node, jetbrains.mps.smodel.SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.baseLanguage.util.plugin.run(MPS.Classpath/jetbrains.mps.baseLanguage.util.plugin.run@java_stub)"), "~ConfigRunParameters.setProgramParameters(java.lang.String):void");
+        return StubRefUtil.isInstanceMethodCall(node, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.baseLanguage.util.plugin.run(MPS.Classpath/jetbrains.mps.baseLanguage.util.plugin.run@java_stub)"), "~ConfigRunParameters.setProgramParameters(java.lang.String):void");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -674,7 +674,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isInstanceMethodCall(node, jetbrains.mps.smodel.SModelReference.fromString("r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)"), "8492459591399148683");
+        return StubRefUtil.isInstanceMethodCall(node, SModelReference.fromString("r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)"), "8492459591399148683");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -699,7 +699,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isInstanceMethodCall(node, jetbrains.mps.smodel.SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.baseLanguage.util.plugin.run(MPS.Classpath/jetbrains.mps.baseLanguage.util.plugin.run@java_stub)"), "~ConfigRunParameters.getErrorReport():java.lang.String");
+        return StubRefUtil.isInstanceMethodCall(node, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.baseLanguage.util.plugin.run(MPS.Classpath/jetbrains.mps.baseLanguage.util.plugin.run@java_stub)"), "~ConfigRunParameters.getErrorReport():java.lang.String");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -724,7 +724,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isClassifierType(node, jetbrains.mps.smodel.SModelReference.fromString("r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)"), "8492459591399147272");
+        return StubRefUtil.isClassifierType(node, SModelReference.fromString("r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)"), "8492459591399147272");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -749,7 +749,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isClassifierType(node, jetbrains.mps.smodel.SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.baseLanguage.util.plugin.run(MPS.Classpath/jetbrains.mps.baseLanguage.util.plugin.run@java_stub)"), "~BaseRunner");
+        return StubRefUtil.isClassifierType(node, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.baseLanguage.util.plugin.run(MPS.Classpath/jetbrains.mps.baseLanguage.util.plugin.run@java_stub)"), "~BaseRunner");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -774,7 +774,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isInstanceMethodCall(node, jetbrains.mps.smodel.SModelReference.fromString("r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)"), "8492459591399147292");
+        return StubRefUtil.isInstanceMethodCall(node, SModelReference.fromString("r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)"), "8492459591399147292");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -799,7 +799,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isInstanceMethodCall(node, jetbrains.mps.smodel.SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.baseLanguage.util.plugin.run(MPS.Classpath/jetbrains.mps.baseLanguage.util.plugin.run@java_stub)"), "~BaseRunner.getCommandString(java.lang.ProcessBuilder):java.lang.String");
+        return StubRefUtil.isInstanceMethodCall(node, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.baseLanguage.util.plugin.run(MPS.Classpath/jetbrains.mps.baseLanguage.util.plugin.run@java_stub)"), "~BaseRunner.getCommandString(java.lang.ProcessBuilder):java.lang.String");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -824,7 +824,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isInstanceMethodCall(node, jetbrains.mps.smodel.SModelReference.fromString("r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)"), "8492459591399147350");
+        return StubRefUtil.isInstanceMethodCall(node, SModelReference.fromString("r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)"), "8492459591399147350");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -854,7 +854,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isInstanceMethodCall(node, jetbrains.mps.smodel.SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.baseLanguage.util.plugin.run(MPS.Classpath/jetbrains.mps.baseLanguage.util.plugin.run@java_stub)"), "~BaseRunner.addJavaCommand(java.lang.ProcessBuilder):java.lang.String");
+        return StubRefUtil.isInstanceMethodCall(node, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.baseLanguage.util.plugin.run(MPS.Classpath/jetbrains.mps.baseLanguage.util.plugin.run@java_stub)"), "~BaseRunner.addJavaCommand(java.lang.ProcessBuilder):java.lang.String");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -884,7 +884,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isInstanceMethodCall(node, jetbrains.mps.smodel.SModelReference.fromString("r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)"), "8492459591399147322");
+        return StubRefUtil.isInstanceMethodCall(node, SModelReference.fromString("r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)"), "8492459591399147322");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -914,7 +914,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isInstanceMethodCall(node, jetbrains.mps.smodel.SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.baseLanguage.util.plugin.run(MPS.Classpath/jetbrains.mps.baseLanguage.util.plugin.run@java_stub)"), "~BaseRunner.splitParams(java.lang.String):java.lang.String[]");
+        return StubRefUtil.isInstanceMethodCall(node, SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.baseLanguage.util.plugin.run(MPS.Classpath/jetbrains.mps.baseLanguage.util.plugin.run@java_stub)"), "~BaseRunner.splitParams(java.lang.String):java.lang.String[]");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -947,7 +947,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
         if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) {
           return false;
         }
-        return StubRefUtil.isReferenceTo(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.LocalMethodCall", "method")), jetbrains.mps.smodel.SModelReference.fromString("r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)"), SNodeId.fromString("8492459591399147278"));
+        return StubRefUtil.isReferenceTo(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.LocalMethodCall", "method")), SModelReference.fromString("r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)"), SNodeId.fromString("8492459591399147278"));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -980,7 +980,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
         if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) {
           return false;
         }
-        return StubRefUtil.isReferenceTo(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.LocalMethodCall", "method")), jetbrains.mps.smodel.SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.baseLanguage.util.plugin.run(MPS.Classpath/jetbrains.mps.baseLanguage.util.plugin.run@java_stub)"), SNodeId.fromString("~BaseRunner.fs():java.lang.String"));
+        return StubRefUtil.isReferenceTo(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.LocalMethodCall", "method")), SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.baseLanguage.util.plugin.run(MPS.Classpath/jetbrains.mps.baseLanguage.util.plugin.run@java_stub)"), SNodeId.fromString("~BaseRunner.fs():java.lang.String"));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -1010,7 +1010,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isReferenceTo(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement", "constructorDeclaration")), jetbrains.mps.smodel.SModelReference.fromString("r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)"), SNodeId.fromString("3038691514508939542"));
+        return StubRefUtil.isReferenceTo(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement", "constructorDeclaration")), SModelReference.fromString("r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)"), SNodeId.fromString("3038691514508939542"));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -1037,7 +1037,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isReferenceTo(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement", "constructorDeclaration")), jetbrains.mps.smodel.SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.baseLanguage.util.plugin.run(MPS.Classpath/jetbrains.mps.baseLanguage.util.plugin.run@java_stub)"), SNodeId.fromString("~BaseRunner.<init>()"));
+        return StubRefUtil.isReferenceTo(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement", "constructorDeclaration")), SModelReference.fromString("f:java_stub#37a3367b-1fb2-44d8-aa6b-18075e74e003#jetbrains.mps.baseLanguage.util.plugin.run(MPS.Classpath/jetbrains.mps.baseLanguage.util.plugin.run@java_stub)"), SNodeId.fromString("~BaseRunner.<init>()"));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -1064,7 +1064,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isClassifierType(node, jetbrains.mps.smodel.SModelReference.fromString("r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)"), "1208270545572");
+        return StubRefUtil.isClassifierType(node, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)"), "1208270545572");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -1089,7 +1089,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isClassifierType(node, jetbrains.mps.smodel.SModelReference.fromString("r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)"), "2281887280934031664");
+        return StubRefUtil.isClassifierType(node, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)"), "2281887280934031664");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -1114,7 +1114,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isClassifierType(node, jetbrains.mps.smodel.SModelReference.fromString("r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)"), "4087070200985119220");
+        return StubRefUtil.isClassifierType(node, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)"), "4087070200985119220");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -1139,7 +1139,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isClassifierType(node, jetbrains.mps.smodel.SModelReference.fromString("r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)"), "4834901852399102787");
+        return StubRefUtil.isClassifierType(node, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)"), "4834901852399102787");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -1164,7 +1164,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isReferenceTo(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.uiLanguage.structure.ComponentInstance", "componentDeclaration")), jetbrains.mps.smodel.SModelReference.fromString("r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)"), SNodeId.fromString("3838358713852016255"));
+        return StubRefUtil.isReferenceTo(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.uiLanguage.structure.ComponentInstance", "componentDeclaration")), SModelReference.fromString("r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)"), SNodeId.fromString("3838358713852016255"));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -1191,7 +1191,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isReferenceTo(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.uiLanguage.structure.ComponentInstance", "componentDeclaration")), jetbrains.mps.smodel.SModelReference.fromString("r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)"), SNodeId.fromString("145554711892090455"));
+        return StubRefUtil.isReferenceTo(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.uiLanguage.structure.ComponentInstance", "componentDeclaration")), SModelReference.fromString("r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)"), SNodeId.fromString("145554711892090455"));
       }
 
       public void doUpdateInstanceNode(SNode node) {

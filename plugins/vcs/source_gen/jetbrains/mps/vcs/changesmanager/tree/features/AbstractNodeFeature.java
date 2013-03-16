@@ -4,7 +4,7 @@ package jetbrains.mps.vcs.changesmanager.tree.features;
 
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodePointer;
 
 public abstract class AbstractNodeFeature extends Feature {

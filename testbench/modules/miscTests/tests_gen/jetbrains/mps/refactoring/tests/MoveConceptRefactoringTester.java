@@ -39,7 +39,7 @@ public class MoveConceptRefactoringTester implements IRefactoringTester {
       @Override
       public void run() {
         SModel structureModelDescriptor = testRefactoringLanguage.getStructureModelDescriptor();
-        targetStructureModelReference[0] = (SModelReference) testRefactoringTargetLanguage.getStructureModelDescriptor().getReference();
+        targetStructureModelReference[0] = (jetbrains.mps.smodel.SModelReference) testRefactoringTargetLanguage.getStructureModelDescriptor().getReference();
         SModel model = structureModelDescriptor;
         SNode concept = SModelOperations.getRootByName(model, conceptName);
         refactoringContext.setSelectedProject(project);

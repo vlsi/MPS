@@ -214,7 +214,7 @@ public class EmbeddableEditor {
   public void addLanguageStructureModel(final Language language) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        SModelReference ref = (SModelReference) language.getStructureModelDescriptor().getReference();
+        SModelReference ref = (jetbrains.mps.smodel.SModelReference) language.getStructureModelDescriptor().getReference();
         ((SModelInternal) smodel()).addModelImport(ref, false);
       }
     });

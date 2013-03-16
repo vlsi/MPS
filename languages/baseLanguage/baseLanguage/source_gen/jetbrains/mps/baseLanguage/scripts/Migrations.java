@@ -42,7 +42,7 @@ public class Migrations {
     ListSequence.fromList(migrations).addElement(migrateSNodeType(config));
     ListSequence.fromList(migrations).addElement(migrateSNodeListType(config));
 
-    ListSequence.fromList(migrations).addElement(migrateNodeAttributes(config));
+    ListSequence.fromList(migrations).addElement(migrgetateNodeAttributes(config));
     ListSequence.fromList(migrations).addElement(migrateInstanceOf(config));
     ListSequence.fromList(migrations).addElement(migrateGetDescendant(config));
 
@@ -106,7 +106,7 @@ public class Migrations {
     };
   }
 
-  public static AbstractMigrationRefactoring migrateNodeAttributes(final MigrationConfig config) {
+  public static AbstractMigrationRefactoring migrgetateNodeAttributes(final MigrationConfig config) {
     return new SimpleMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
       @Override
       public String getName() {
@@ -715,7 +715,7 @@ public class Migrations {
 
   private static String check_b5gojm_a0a0e0b0a0a0q(SModelReference checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return ((jetbrains.mps.smodel.SModelReference) checkedDotOperand).getLongName();
+      return checkedDotOperand.getModelName();
     }
     return null;
   }

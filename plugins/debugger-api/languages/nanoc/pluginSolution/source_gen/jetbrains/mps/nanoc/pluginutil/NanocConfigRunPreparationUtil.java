@@ -6,7 +6,7 @@ import java.io.File;
 import com.intellij.execution.ExecutionException;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
-import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -24,7 +24,7 @@ public class NanocConfigRunPreparationUtil {
   }
 
   public static File prepare(String nodeId, String modelRef) throws ExecutionException {
-    SModel descriptor = SModelRepository.getInstance().getModelDescriptor(jetbrains.mps.smodel.SModelReference.fromString(modelRef));
+    SModel descriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(modelRef));
     SNode node = descriptor.getNode(SNodeId.fromString(nodeId));
     final SNode sourceFileNode = SNodeOperations.cast(node, "jetbrains.mps.nanoc.structure.File");
     AbstractModule module = (AbstractModule) descriptor.getModule();

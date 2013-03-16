@@ -19,7 +19,7 @@
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="38s949ymo9nq7jj7p2lrfowy0hurndx" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-5hwzidtifhzxzto4ufe7o07xsgqc589" />
-  <dep model="r:73cef602-d8a6-459c-91ff-d4e129d1a7c5(jetbrains.mps.tool.builder)" hash="e4lpbe4v66kya8ti9v6vlldn9r2bz06" />
+  <dep model="r:73cef602-d8a6-459c-91ff-d4e129d1a7c5(jetbrains.mps.tool.builder)" hash="avzuffq8bk5dwkiwva2nso48botedrd" />
   <dep model="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)" hash="ep7xms7gvaxnqpih2o662y7vzpeks2q" />
   <common hash="-8pg5lkhvsu404ekauz93l1fxyqa57fn" />
   <source id="7799088097575503432" name="GenModuleXmlTask" hash="-oa87uhj0oyt1ax53ot12yavpfp4zsv">

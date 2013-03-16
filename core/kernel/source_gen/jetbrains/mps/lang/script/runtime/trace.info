@@ -7,8 +7,8 @@
     <nodeInfo nodeId="2188168340793568096" fileName="StubRefUtil.java" startLine="32" startPosition="23" endLine="33" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2188168340793599016" fileName="StubRefUtil.java" startLine="34" startPosition="5" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="1173268376299571727" fileName="StubRefUtil.java" startLine="35" startPosition="0" endLine="36" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1173268376299571749" fileName="StubRefUtil.java" startLine="39" startPosition="85" endLine="40" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1173268376299571759" fileName="StubRefUtil.java" startLine="40" startPosition="116" endLine="41" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1173268376299571749" fileName="StubRefUtil.java" startLine="39" startPosition="85" endLine="40" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1173268376299571759" fileName="StubRefUtil.java" startLine="40" startPosition="159" endLine="41" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1173268376299571767" fileName="StubRefUtil.java" startLine="41" startPosition="63" endLine="42" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1173268376299571779" fileName="StubRefUtil.java" startLine="46" startPosition="67" endLine="47" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1173268376299571788" fileName="StubRefUtil.java" startLine="48" startPosition="5" endLine="49" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -49,8 +49,8 @@
     <nodeInfo nodeId="3393121265071148764" fileName="StubRefUtil.java" startLine="143" startPosition="399" endLine="144" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6396271077998849614" fileName="StubRefUtil.java" startLine="148" startPosition="36" endLine="149" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6396271077998849614" fileName="StubRefUtil.java" startLine="150" startPosition="5" endLine="151" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1173268376299571754" fileName="StubRefUtil.java" startLine="155" startPosition="36" endLine="156" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1173268376299571754" fileName="StubRefUtil.java" startLine="157" startPosition="5" endLine="158" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2569001664461367167" fileName="StubRefUtil.java" startLine="155" startPosition="36" endLine="156" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2569001664461367167" fileName="StubRefUtil.java" startLine="157" startPosition="5" endLine="158" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1173268376299572189" fileName="StubRefUtil.java" startLine="162" startPosition="36" endLine="163" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1173268376299572189" fileName="StubRefUtil.java" startLine="164" startPosition="5" endLine="165" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1173268376299572197" fileName="StubRefUtil.java" startLine="169" startPosition="36" endLine="170" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -60,17 +60,17 @@
     <nodeInfo nodeId="1173268376299571777" fileName="StubRefUtil.java" startLine="45" startPosition="105" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1173268376299571813" fileName="StubRefUtil.java" startLine="53" startPosition="110" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1173268376299571873" fileName="StubRefUtil.java" startLine="62" startPosition="99" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1173268376299571991" fileName="StubRefUtil.java" startLine="81" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isReferenceTo#(Lorg/jetbrains/mps/openapi/model/SReference;Ljetbrains/mps/smodel/SModelReference;Lorg/jetbrains/mps/openapi/model/SNodeId;)Z" />
-    <nodeInfo nodeId="1173268376299572021" fileName="StubRefUtil.java" startLine="85" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isStaticMethodCall#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/SModelReference;Ljava/lang/String;Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="1173268376299572055" fileName="StubRefUtil.java" startLine="89" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isClassifierType#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/SModelReference;Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="1173268376299571991" fileName="StubRefUtil.java" startLine="81" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isReferenceTo#(Lorg/jetbrains/mps/openapi/model/SReference;Lorg/jetbrains/mps/openapi/model/SModelReference;Lorg/jetbrains/mps/openapi/model/SNodeId;)Z" />
+    <nodeInfo nodeId="1173268376299572021" fileName="StubRefUtil.java" startLine="85" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isStaticMethodCall#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModelReference;Ljava/lang/String;Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="1173268376299572055" fileName="StubRefUtil.java" startLine="89" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isClassifierType#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModelReference;Ljava/lang/String;)Z" />
     <nodeInfo nodeId="1173268376299572077" fileName="StubRefUtil.java" startLine="93" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isInstanceMethodCall#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="1173268376299572093" fileName="StubRefUtil.java" startLine="97" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isInstanceMethodCall#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/SModelReference;Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="1173268376299572093" fileName="StubRefUtil.java" startLine="97" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isInstanceMethodCall#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModelReference;Ljava/lang/String;)Z" />
     <nodeInfo nodeId="1173268376299572115" fileName="StubRefUtil.java" startLine="101" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isClassCreator#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="1173268376299572131" fileName="StubRefUtil.java" startLine="105" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isClassCreator#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/SModelReference;Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="1173268376299572131" fileName="StubRefUtil.java" startLine="105" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isClassCreator#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModelReference;Ljava/lang/String;)Z" />
     <nodeInfo nodeId="1173268376299572164" fileName="StubRefUtil.java" startLine="111" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="1173268376299572205" fileName="StubRefUtil.java" startLine="120" startPosition="57" endLine="123" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6396271077998849614" fileName="StubRefUtil.java" startLine="147" startPosition="80" endLine="150" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1173268376299571754" fileName="StubRefUtil.java" startLine="154" startPosition="85" endLine="157" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6396271077998849614" fileName="StubRefUtil.java" startLine="147" startPosition="101" endLine="150" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2569001664461367167" fileName="StubRefUtil.java" startLine="154" startPosition="87" endLine="157" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1173268376299572189" fileName="StubRefUtil.java" startLine="161" startPosition="73" endLine="164" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1173268376299572197" fileName="StubRefUtil.java" startLine="168" startPosition="73" endLine="171" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1173268376299571926" fileName="StubRefUtil.java" startLine="71" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isStaticMethodCall#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
@@ -81,7 +81,7 @@
     <nodeInfo nodeId="1173268376299572203" fileName="StubRefUtil.java" startLine="119" startPosition="117" endLine="124" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3393121265071148725" fileName="StubRefUtil.java" startLine="141" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="replaceReference#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SReference;)V" />
     <nodeInfo nodeId="6396271077998849614" fileName="StubRefUtil.java" startLine="147" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_4tnolf_a0a0a1#(Ljetbrains/mps/smodel/SModelReference;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1173268376299571754" fileName="StubRefUtil.java" startLine="154" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_4tnolf_a0a0a0b#(Lorg/jetbrains/mps/openapi/model/SReference;)Ljetbrains/mps/smodel/SModelReference;" />
+    <nodeInfo nodeId="2569001664461367167" fileName="StubRefUtil.java" startLine="154" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_4tnolf_a0a0a0a0b#(Lorg/jetbrains/mps/openapi/model/SReference;)Lorg/jetbrains/mps/openapi/model/SModelReference;" />
     <nodeInfo nodeId="1173268376299572189" fileName="StubRefUtil.java" startLine="161" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_4tnolf_a0d0a0o#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/project/IModule;" />
     <nodeInfo nodeId="1173268376299572197" fileName="StubRefUtil.java" startLine="168" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_4tnolf_a0e0a0o#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/project/IModule;" />
     <nodeInfo nodeId="1173268376299571774" fileName="StubRefUtil.java" startLine="45" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isReferenceToClass#(Lorg/jetbrains/mps/openapi/model/SReference;Ljava/lang/String;)Z" />
@@ -106,7 +106,7 @@
     <scopeInfo nodeId="1173268376299572165" fileName="StubRefUtil.java" startLine="111" startPosition="54" endLine="112" endPosition="48" />
     <scopeInfo nodeId="1173268376299572206" fileName="StubRefUtil.java" startLine="121" startPosition="150" endLine="122" endPosition="79" />
     <scopeInfo nodeId="6396271077998849614" fileName="StubRefUtil.java" startLine="148" startPosition="36" endLine="149" endPosition="45" />
-    <scopeInfo nodeId="1173268376299571754" fileName="StubRefUtil.java" startLine="155" startPosition="36" endLine="156" endPosition="58" />
+    <scopeInfo nodeId="2569001664461367167" fileName="StubRefUtil.java" startLine="155" startPosition="36" endLine="156" endPosition="58" />
     <scopeInfo nodeId="1173268376299572189" fileName="StubRefUtil.java" startLine="162" startPosition="36" endLine="163" endPosition="43" />
     <scopeInfo nodeId="1173268376299572197" fileName="StubRefUtil.java" startLine="169" startPosition="36" endLine="170" endPosition="43" />
     <scopeInfo nodeId="1173268376299571928" fileName="StubRefUtil.java" startLine="71" startPosition="101" endLine="73" endPosition="410">
@@ -175,8 +175,8 @@
     <scopeInfo nodeId="1173268376299572257" fileName="StubRefUtil.java" startLine="133" startPosition="64" endLine="137" endPosition="5">
       <varInfo nodeId="1173268376299572258" varName="newRef" />
     </scopeInfo>
-    <scopeInfo nodeId="6396271077998849614" fileName="StubRefUtil.java" startLine="147" startPosition="80" endLine="151" endPosition="16" />
-    <scopeInfo nodeId="1173268376299571754" fileName="StubRefUtil.java" startLine="154" startPosition="85" endLine="158" endPosition="16" />
+    <scopeInfo nodeId="6396271077998849614" fileName="StubRefUtil.java" startLine="147" startPosition="101" endLine="151" endPosition="16" />
+    <scopeInfo nodeId="2569001664461367167" fileName="StubRefUtil.java" startLine="154" startPosition="87" endLine="158" endPosition="16" />
     <scopeInfo nodeId="1173268376299572189" fileName="StubRefUtil.java" startLine="161" startPosition="73" endLine="165" endPosition="16" />
     <scopeInfo nodeId="1173268376299572197" fileName="StubRefUtil.java" startLine="168" startPosition="73" endLine="172" endPosition="16" />
     <scopeInfo nodeId="1173268376299571743" fileName="StubRefUtil.java" startLine="39" startPosition="0" endLine="44" endPosition="0">
@@ -201,8 +201,8 @@
     <scopeInfo nodeId="6396271077998849614" fileName="StubRefUtil.java" startLine="147" startPosition="0" endLine="153" endPosition="0">
       <varInfo nodeId="6396271077998849614" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="1173268376299571754" fileName="StubRefUtil.java" startLine="154" startPosition="0" endLine="160" endPosition="0">
-      <varInfo nodeId="1173268376299571754" varName="checkedDotOperand" />
+    <scopeInfo nodeId="2569001664461367167" fileName="StubRefUtil.java" startLine="154" startPosition="0" endLine="160" endPosition="0">
+      <varInfo nodeId="2569001664461367167" varName="checkedDotOperand" />
     </scopeInfo>
     <scopeInfo nodeId="1173268376299572189" fileName="StubRefUtil.java" startLine="161" startPosition="0" endLine="167" endPosition="0">
       <varInfo nodeId="1173268376299572189" varName="checkedDotOperand" />

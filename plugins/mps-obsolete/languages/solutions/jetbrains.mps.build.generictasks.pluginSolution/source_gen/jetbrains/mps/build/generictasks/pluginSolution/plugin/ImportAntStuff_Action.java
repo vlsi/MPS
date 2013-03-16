@@ -13,7 +13,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelRepository;
-import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.build.generictasks.taskfromjar.Generator;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.logging.Logger;
@@ -62,8 +62,8 @@ public class ImportAntStuff_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       Language language = ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build.generictasks", Language.class);
-      ImportAntStuff_Action.this.importTasks(language, SModelRepository.getInstance().getModelDescriptor(new jetbrains.mps.smodel.SModelReference("jetbrains.mps.build.generictasks.generated", "")), Generator.Modes.CORE, _params);
-      ImportAntStuff_Action.this.importTasks(language, SModelRepository.getInstance().getModelDescriptor(new jetbrains.mps.smodel.SModelReference("jetbrains.mps.build.generictasks.optional", "")), Generator.Modes.JUNIT, _params);
+      ImportAntStuff_Action.this.importTasks(language, SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.build.generictasks.generated", "")), Generator.Modes.CORE, _params);
+      ImportAntStuff_Action.this.importTasks(language, SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.build.generictasks.optional", "")), Generator.Modes.JUNIT, _params);
       LOG.info("Import completed.");
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ImportAntStuff", t);
@@ -72,7 +72,7 @@ public class ImportAntStuff_Action extends BaseAction {
 
   private void importTasks(Language l, SModel model, Generator.Modes m, final Map<String, Object> _params) {
     assert model != null;
-    new Generator().generateTasks(model, m, new SModel[]{SModelRepository.getInstance().getModelDescriptor(new jetbrains.mps.smodel.SModelReference("jetbrains.mps.build.generictasks.generated", "")), SModelRepository.getInstance().getModelDescriptor(new jetbrains.mps.smodel.SModelReference("jetbrains.mps.build.generictasks.optional", ""))});
+    new Generator().generateTasks(model, m, new SModel[]{SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.build.generictasks.generated", "")), SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.build.generictasks.optional", ""))});
   }
 
   private static Logger LOG = Logger.getLogger(ImportAntStuff_Action.class);

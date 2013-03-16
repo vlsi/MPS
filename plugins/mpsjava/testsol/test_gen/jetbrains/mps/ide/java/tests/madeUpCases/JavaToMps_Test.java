@@ -13,7 +13,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
-import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.SModelReference;
 
 @MPSLaunch
 public class JavaToMps_Test extends BaseTransformationTest4 {
@@ -86,21 +86,21 @@ public class JavaToMps_Test extends BaseTransformationTest4 {
       this.addNodeById("4795297196607520929");
       this.addNodeById("1218582063869484737");
       this.addNodeById("8083368042256419833");
-      Utils.checkStubModels(PathManager.getHomePath() + "/plugins/mpsjava/tests/testDir1", ListSequence.fromListAndArray(new ArrayList<SModel>(), SModelRepository.getInstance().getModelDescriptor(new jetbrains.mps.smodel.SModelReference("jetbrains.mps.ide.java.testMaterial.testModel1", "")), SModelRepository.getInstance().getModelDescriptor(new jetbrains.mps.smodel.SModelReference("jetbrains.mps.ide.java.testMaterial.testModel1.sub", ""))));
+      Utils.checkStubModels(PathManager.getHomePath() + "/plugins/mpsjava/tests/testDir1", ListSequence.fromListAndArray(new ArrayList<SModel>(), SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.testModel1", "")), SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.testModel1.sub", ""))));
     }
 
     public void test_Imports2() throws Exception {
       this.addNodeById("4795297196607520929");
       this.addNodeById("1218582063869484737");
       this.addNodeById("8083368042256419833");
-      Utils.checkStubModels(PathManager.getHomePath() + "/plugins/mpsjava/tests/testDir2", ListSequence.fromListAndArray(new ArrayList<SModel>(), SModelRepository.getInstance().getModelDescriptor(new jetbrains.mps.smodel.SModelReference("jetbrains.mps.ide.java.testMaterial.testModel2", "")), SModelRepository.getInstance().getModelDescriptor(new jetbrains.mps.smodel.SModelReference("jetbrains.mps.ide.java.testMaterial.testModel2.sub", ""))));
+      Utils.checkStubModels(PathManager.getHomePath() + "/plugins/mpsjava/tests/testDir2", ListSequence.fromListAndArray(new ArrayList<SModel>(), SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.testModel2", "")), SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.testModel2.sub", ""))));
     }
 
     public void test_Imports3() throws Exception {
       this.addNodeById("4795297196607520929");
       this.addNodeById("1218582063869484737");
       this.addNodeById("8083368042256419833");
-      Utils.checkStubModels(PathManager.getHomePath() + "/plugins/mpsjava/tests/testDir3", ListSequence.fromListAndArray(new ArrayList<SModel>(), SModelRepository.getInstance().getModelDescriptor(new jetbrains.mps.smodel.SModelReference("jetbrains.mps.ide.java.testMaterial.testModel3", "")), SModelRepository.getInstance().getModelDescriptor(new jetbrains.mps.smodel.SModelReference("jetbrains.mps.ide.java.testMaterial.testModel3.sub", ""))));
+      Utils.checkStubModels(PathManager.getHomePath() + "/plugins/mpsjava/tests/testDir3", ListSequence.fromListAndArray(new ArrayList<SModel>(), SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.testModel3", "")), SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.testModel3.sub", ""))));
     }
 
     public void test_ClassNesting() throws Exception {
@@ -121,7 +121,7 @@ public class JavaToMps_Test extends BaseTransformationTest4 {
       this.addNodeById("4795297196607520929");
       this.addNodeById("1218582063869484737");
       this.addNodeById("8083368042256419833");
-      Utils.checkSourceModel(PathManager.getHomePath() + "/plugins/mpsjava/tests/singleFiles/statements", SModelRepository.getInstance().getModelDescriptor(new jetbrains.mps.smodel.SModelReference("jetbrains.mps.ide.java.testMaterial.singleFiles", "")));
+      Utils.checkSourceModel(PathManager.getHomePath() + "/plugins/mpsjava/tests/singleFiles/statements", SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.singleFiles", "")));
     }
   }
 }

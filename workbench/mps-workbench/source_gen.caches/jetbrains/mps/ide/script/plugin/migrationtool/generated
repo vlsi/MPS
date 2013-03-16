@@ -30,7 +30,7 @@
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="38s949ymo9nq7jj7p2lrfowy0hurndx" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-5hwzidtifhzxzto4ufe7o07xsgqc589" />
-  <dep model="r:eb359f8b-b521-4c1b-bcbd-ac058df58bd6(jetbrains.mps.lang.script.runtime)" hash="6wb1ms5d2aur22pgrmp7fkxeqdx839o" />
+  <dep model="r:eb359f8b-b521-4c1b-bcbd-ac058df58bd6(jetbrains.mps.lang.script.runtime)" hash="-acxk4k6ug4acu6k5lt2nacqfeua8f3g" />
   <common hash="-3wkuyar4q9xxfb5hic366q5tnr512y7" />
   <source id="7316415153790558500" name="MigrationScriptsView" hash="-a2au8fwfp4p0t37mhbg82hqagfo9c4p">
     <dep root="7316415153790561714" />

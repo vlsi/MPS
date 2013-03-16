@@ -4,7 +4,7 @@ package jetbrains.mps.lang.typesystem.pluginSolution.plugin;
 
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
-import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SNodeUndoableAction;
@@ -28,7 +28,7 @@ public class AuxilaryRuntimeModel {
 
   private static class AuxModelDescriptor extends BaseSpecialModelDescriptor {
     public AuxModelDescriptor() {
-      super(new jetbrains.mps.smodel.SModelReference(new SModelFqName("$AuxModel$", ""), SModelId.generate()));
+      super(new SModelReference(new SModelFqName("$AuxModel$", ""), SModelId.generate()));
     }
 
     @Override

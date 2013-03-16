@@ -57,7 +57,7 @@ public class CopySupport {
       Object[] selected = ((JList) comp).getSelectedValues();
       StringBuilder textPresentation = new StringBuilder();
       for (int i = 0; i < selected.length; i++) {
-        SModelReference modelRef = (SModelReference) selected[i];
+        SModelReference modelRef = (jetbrains.mps.smodel.SModelReference) selected[i];
         textPresentation.append(modelRef.getModelName());
         if (i != selected.length - 1) {
           textPresentation.append("\n");

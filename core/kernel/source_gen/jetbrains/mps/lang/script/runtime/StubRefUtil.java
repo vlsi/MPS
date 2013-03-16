@@ -37,7 +37,7 @@ public class StubRefUtil {
   }
 
   private static String getTargetStringFromReference(@NotNull SReference reference) {
-    String targetPackage = SModelStereotype.withoutStereotype(check_4tnolf_a0a0a1(check_4tnolf_a0a0a0b(reference)));
+    String targetPackage = SModelStereotype.withoutStereotype(check_4tnolf_a0a0a1(((jetbrains.mps.smodel.SModelReference) check_4tnolf_a0a0a0a0b(reference))));
     String targetName = reference.getTargetNodeId().toString();
     return targetPackage + "/" + targetName;
   }
@@ -144,14 +144,14 @@ public class StubRefUtil {
     StubRefUtil.addRequiredImports(oldNode.getModel(), reference.getSourceNode());
   }
 
-  private static String check_4tnolf_a0a0a1(SModelReference checkedDotOperand) {
+  private static String check_4tnolf_a0a0a1(jetbrains.mps.smodel.SModelReference checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return ((jetbrains.mps.smodel.SModelReference) checkedDotOperand).getLongName();
+      return checkedDotOperand.getLongName();
     }
     return null;
   }
 
-  private static SModelReference check_4tnolf_a0a0a0b(SReference checkedDotOperand) {
+  private static SModelReference check_4tnolf_a0a0a0a0b(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTargetSModelReference();
     }

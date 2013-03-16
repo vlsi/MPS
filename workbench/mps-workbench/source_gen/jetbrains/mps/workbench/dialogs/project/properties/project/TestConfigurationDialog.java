@@ -303,7 +303,7 @@ public class TestConfigurationDialog extends DialogWrapper {
       myModelsList.setCellRenderer(new DefaultListCellRenderer() {
         @Override
         public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
-          final org.jetbrains.mps.openapi.model.SModelReference model = (org.jetbrains.mps.openapi.model.SModelReference) value;
+          final SModelReference model = (SModelReference) value;
           final DefaultListCellRenderer ren = this;
           String modelName = model.getModelName();
           if (modelName == null) {
@@ -345,7 +345,7 @@ public class TestConfigurationDialog extends DialogWrapper {
           List<SModel> descrs = SModelRepository.getInstance().getModelDescriptors();
           SModelReference modelRef = CommonChoosers.showDialogModelChooser(ProjectHelper.toIdeaProject(myProject), Sequence.fromIterable(models).select(new ISelector<SModel, SModelReference>() {
             public SModelReference select(SModel it) {
-              return (SModelReference) it.getReference();
+              return it.getReference();
             }
           }).toListSequence(), ListSequence.fromList(descrs).select(new ISelector<SModel, SModelReference>() {
             public SModelReference select(SModel it) {
@@ -367,7 +367,7 @@ public class TestConfigurationDialog extends DialogWrapper {
         @Override
         protected void doRemove(AnActionEvent e) {
           for (Object o : myModelsList.getSelectedValues()) {
-            SModelReference model = (SModelReference) o;
+            SModelReference model = (jetbrains.mps.smodel.SModelReference) o;
             myModels.remove(model);
           }
         }

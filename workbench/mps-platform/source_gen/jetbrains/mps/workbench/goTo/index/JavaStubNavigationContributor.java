@@ -12,7 +12,7 @@ import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.extapi.persistence.FolderSetDataSource;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.smodel.SModelStereotype;
-import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.SModelReference;
 import java.io.File;
 import java.io.IOException;
 import jetbrains.mps.util.SNodeOperations;
@@ -68,7 +68,7 @@ public class JavaStubNavigationContributor implements NavigationParticipant, App
 
 
   public static void iterateClassPath(final ModuleReference module, final IClassPathItem item, Consumer<NavigationParticipant.NavigationTarget> consumer, final String pName) {
-    final SModelReference model = StubHelper.uidForPackageInStubs(pName, LanguageID.JAVA, module, false);
+    final org.jetbrains.mps.openapi.model.SModelReference model = StubHelper.uidForPackageInStubs(pName, LanguageID.JAVA, module, false);
     for (final String cls : item.getRootClasses(pName)) {
       consumer.consume(new JavaStubNodeDescriptor(item, pName, cls, model));
     }

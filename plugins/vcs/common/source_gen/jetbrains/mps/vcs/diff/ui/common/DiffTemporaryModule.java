@@ -176,8 +176,8 @@ public class DiffTemporaryModule extends AbstractModule {
     }
 
     @Override
-    public org.jetbrains.mps.openapi.model.SModel resolve(org.jetbrains.mps.openapi.model.SModelReference reference) {
-      return findModel((SModelReference) reference);
+    public org.jetbrains.mps.openapi.model.SModel resolve(SModelReference reference) {
+      return findModel((jetbrains.mps.smodel.SModelReference) reference);
     }
   }
 

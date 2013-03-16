@@ -33,7 +33,7 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
     for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(node))) {
       SModelReference oldModelRef = ref.getTargetSModelReference();
-      final String fqname = check_xpwqv8_a0b0f0b(oldModelRef);
+      final String fqname = check_xpwqv8_a0b0f0b(((jetbrains.mps.smodel.SModelReference) oldModelRef));
       for (IModule newModule : modules) {
         if (newModule == null) {
           continue;
@@ -85,9 +85,9 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
     return null;
   }
 
-  private static String check_xpwqv8_a0b0f0b(SModelReference checkedDotOperand) {
+  private static String check_xpwqv8_a0b0f0b(jetbrains.mps.smodel.SModelReference checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return ((jetbrains.mps.smodel.SModelReference) checkedDotOperand).getLongName();
+      return checkedDotOperand.getLongName();
     }
     return null;
   }

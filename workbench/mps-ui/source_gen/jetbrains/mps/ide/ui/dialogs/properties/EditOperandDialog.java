@@ -169,8 +169,8 @@ public class EditOperandDialog extends DialogWrapper {
   }
 
   private void setModelMappingRef(DefaultMutableTreeNode root, MappingConfig_SimpleRef operand) {
-    jetbrains.mps.smodel.SModelReference modRef = jetbrains.mps.smodel.SModelReference.fromString(operand.getModelUID());
-    modRef.update();
+    SModelReference modRef = jetbrains.mps.smodel.SModelReference.fromString(operand.getModelUID());
+    ((jetbrains.mps.smodel.SModelReference) modRef).update();
     Enumeration children = root.children();
     while (children.hasMoreElements()) {
       DefaultMutableTreeNode child = (DefaultMutableTreeNode) children.nextElement();

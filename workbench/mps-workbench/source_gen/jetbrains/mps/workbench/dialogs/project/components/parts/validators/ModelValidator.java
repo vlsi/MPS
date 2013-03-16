@@ -19,7 +19,7 @@ public class ModelValidator implements Validator {
     if (!((value instanceof SModelReference))) {
       return true;
     }
-    final SModelReference modelReference = (SModelReference) value;
+    final SModelReference modelReference = (jetbrains.mps.smodel.SModelReference) value;
     if (myModuleScope == null) {
       return true;
     }

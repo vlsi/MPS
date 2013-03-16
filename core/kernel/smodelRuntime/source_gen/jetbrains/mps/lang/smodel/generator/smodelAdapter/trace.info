@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeRef="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)/1101499704720825413">
-    <nodeInfo nodeId="1101499704720825417" fileName="SEnumOperations.java" startLine="15" startPosition="71" endLine="16" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1101499704720825422" fileName="SEnumOperations.java" startLine="16" startPosition="63" endLine="17" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1101499704720825417" fileName="SEnumOperations.java" startLine="15" startPosition="71" endLine="16" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1101499704720825422" fileName="SEnumOperations.java" startLine="16" startPosition="84" endLine="17" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1101499704720825441" fileName="SEnumOperations.java" startLine="19" startPosition="39" endLine="20" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1101499704720825461" fileName="SEnumOperations.java" startLine="25" startPosition="57" endLine="26" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1101499704720825475" fileName="SEnumOperations.java" startLine="29" startPosition="63" endLine="30" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
