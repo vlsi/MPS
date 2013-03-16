@@ -88,12 +88,16 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
 
   @Override
   public final DefaultSModel getSModelInternal() {
+    ModelLoadingState oldState = myModel.getState();
+    if (oldState.ordinal() >= ModelLoadingState.ROOTS_LOADED.ordinal()) {
+      return myModel.getModel(ModelLoadingState.ROOTS_LOADED);
+    }
     synchronized (myModel) {
-      ModelLoadingState oldState = myModel.getState();
+      oldState = myModel.getState();
       DefaultSModel res = myModel.getModel(ModelLoadingState.ROOTS_LOADED);
       if (res == null) return null; // this is when we are in recursion
-      res.setModelDescriptor(this);
       if (oldState != myModel.getState()) {
+        res.setModelDescriptor(this);
         fireModelStateChanged(oldState, myModel.getState());
       }
       return res;

@@ -35,6 +35,7 @@ public abstract class UpdateableModel {
 
   private volatile ModelLoadingState myState = ModelLoadingState.NOT_LOADED;
   private volatile DefaultSModel myModel = null;
+  private boolean myLoading = false;
 
   public UpdateableModel(SModel descriptor) {
     myDescriptor = descriptor;
@@ -49,8 +50,10 @@ public abstract class UpdateableModel {
   public final DefaultSModel getModel(@Nullable ModelLoadingState state) {
     if (state == null) return myModel;
     if (!ModelAccess.instance().canWrite()) {
-      synchronized (this) {
-        ensureLoadedTo(state);
+      if (state.ordinal() > myState.ordinal()) {
+        synchronized (this) {
+          ensureLoadedTo(state);
+        }
       }
     } else {
       ensureLoadedTo(state);
@@ -59,27 +62,30 @@ public abstract class UpdateableModel {
   }
 
   private void ensureLoadedTo(final ModelLoadingState state) {
-    if (state.ordinal() <= myState.ordinal()) return;
-    myState = state;  //this is for elimination of infinite recursion
-
-    ModelLoadResult res = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<ModelLoadResult>() {
-      @Override
-      public ModelLoadResult compute() {
-        return UndoHelper.getInstance().runNonUndoableAction(new Computable<ModelLoadResult>() {
-          @Override
-          public ModelLoadResult compute() {
-            return doLoad(state, myModel);
-          }
-        });
+    if (state.ordinal() <= myState.ordinal() || myLoading) return;
+    myLoading = true;  //this is for elimination of infinite recursion
+    try {
+      ModelLoadResult res = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<ModelLoadResult>() {
+        @Override
+        public ModelLoadResult compute() {
+          return UndoHelper.getInstance().runNonUndoableAction(new Computable<ModelLoadResult>() {
+            @Override
+            public ModelLoadResult compute() {
+              return doLoad(state, myModel);
+            }
+          });
+        }
+      });
+      if (myModel != null) {
+        assert res.getModel() == myModel;
+      } else {
+        myModel = res.getModel();
+        myModel.setModelDescriptor(myDescriptor);
       }
-    });
-    if (myModel != null) {
-      assert res.getModel() == myModel;
-    } else {
-      myModel = res.getModel();
-      myModel.setModelDescriptor(myDescriptor);
+      myState = res.getState();
+    } finally {
+      myLoading = false;
     }
-    myState = res.getState();
   }
 
   protected abstract ModelLoadResult doLoad(ModelLoadingState state, @Nullable DefaultSModel current);

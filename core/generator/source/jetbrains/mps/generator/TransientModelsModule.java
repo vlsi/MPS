@@ -172,6 +172,7 @@ public class TransientModelsModule extends AbstractModule {
 
     String modelName = stereotype == null ? longName : longName + "@" + stereotype;
     SModel result = new TransientSModelDescriptor(modelName);
+    result.load();
 
     myModels.put(result.getModelName(), result);
     invalidateCaches();
