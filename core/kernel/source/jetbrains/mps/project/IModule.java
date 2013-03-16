@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.extapi.module.EditableSModule;
 import jetbrains.mps.project.dependency.modules.DependenciesManager;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -38,13 +37,6 @@ public interface IModule extends SModule {
   // events
   // dependency change
   // used languages change
-
-  // SModule#getModuleReference
-  // ask Misha about return type
-  // oooor it doesn't matter here
-  @Override
-  @NotNull
-  ModuleReference getModuleReference();
 
   // ?, move to AbstractModule, remove usages as much as possible
   // up reasonable getters to SModule
@@ -133,12 +125,11 @@ public interface IModule extends SModule {
   // ?
   // btw onModuleRegistered
   // setRepository I think
+  // change on custom addModuleAdded listener
   void attach();
 
   // ?
   void dispose();
-
-  // ----- deprecated part
 
   // module source path stuff
 
@@ -157,6 +148,8 @@ public interface IModule extends SModule {
   // IFile getModuleRoot() <- clash with model root // to SModuleOperations / maybe SModule
   // IFile getModuleFolder() ?
   // use as much as possible
+
+  // ----- deprecated part
 
   // reload descriptor stuff, now all these methods need AbstractModule, for ConflictableModuleAdapter I think
   /**
@@ -237,6 +230,13 @@ public interface IModule extends SModule {
    */
   @Deprecated
   String getModuleFqName();
+
+  /**
+   * Remove this method after ModuleReference -> SModuleReference migration
+   */
+  @Override
+  @NotNull
+  ModuleReference getModuleReference();
 
   /**
    * Simple way: use SModuleOperations#getOutputPathFor
