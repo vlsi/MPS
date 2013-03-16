@@ -187,7 +187,6 @@ public class NewModelDialog extends DialogWrapper {
           languageDescriptor.getModelRootDescriptors().add(newModelRootDescriptor);
           myModule.setModuleDescriptor(languageDescriptor, true);
           myModule.save();
-          myModule.reloadFromDisk(true);
         }
       });
 

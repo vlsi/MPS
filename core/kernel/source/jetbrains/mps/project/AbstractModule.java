@@ -559,7 +559,7 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
     }
     for (IFile file : event.getChanged()) {
       if (file.equals(myDescriptorFile)) {
-        reloadFromDisk(false);
+        SModuleOperations.reloadFromDisk(this);
         MPSClassesReloadManager.getInstance().requestReload();
         return;
       }
@@ -671,19 +671,14 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
     });
   }
 
+  @Deprecated
   @Override
-  public void reloadFromDisk(boolean reloadClasses) {
-    ModelAccess.instance().checkWriteAccess();
-    try {
-      ModuleDescriptor descriptor = loadDescriptor();
-      setModuleDescriptor(descriptor, reloadClasses);
-    } catch (ModuleReadException e) {
-      handleReadProblem(e, false);
-    }
+  public final void reloadFromDisk(boolean reloadClasses) {
+    SModuleOperations.reloadFromDisk(this, reloadClasses);
   }
 
-  private void handleReadProblem(Exception e, boolean isInConflict) {
-    SuspiciousModelHandler.getHandler().handleSuspiciousModule(this, isInConflict);
+  public static void handleReadProblem(AbstractModule module, Exception e, boolean isInConflict) {
+    SuspiciousModelHandler.getHandler().handleSuspiciousModule(module, isInConflict);
     LOG.error(e.getMessage());
     e.printStackTrace();
   }

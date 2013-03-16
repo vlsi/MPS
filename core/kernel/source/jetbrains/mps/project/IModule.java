@@ -138,11 +138,6 @@ public interface IModule extends SModule {
   // ?
   void dispose();
 
-  // ?, classes oO? possibility to listen reload action in API and use it in facet!
-  // ModuleSource!
-  // reloadClasses -> outside
-  void reloadFromDisk(boolean reloadClasses);
-
   // ----- deprecated part
 
   // module source path stuff
@@ -163,12 +158,18 @@ public interface IModule extends SModule {
   // IFile getModuleFolder() ?
   // use as much as possible
 
-  // reload descriptor stuff, now all these methods need AbstractModule
+  // reload descriptor stuff, now all these methods need AbstractModule, for ConflictableModuleAdapter I think
   /**
    * @see SModuleOperations#needReloading(AbstractModule)
    */
   @Deprecated
   boolean needReloading();
+
+  /**
+   * @see SModuleOperations#reloadFromDisk(AbstractModule)
+   */
+  @Deprecated
+  void reloadFromDisk(boolean reloadClasses);
 
   // EditableSModule part. Cast to EditableSModule when needed
   @Deprecated
