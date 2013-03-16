@@ -15,25 +15,26 @@
  */
 package jetbrains.mps.classloading;
 
-import gnu.trove.THashMap;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ProtectionDomainUtil;
+import jetbrains.mps.util.containers.ConcurrentHashSet;
 import jetbrains.mps.util.iterable.IterableEnumeration;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class ModuleClassLoader extends ClassLoader {
   private static final Logger LOG = Logger.getLogger(ModuleClassLoader.class);
@@ -45,7 +46,8 @@ public class ModuleClassLoader extends ClassLoader {
   private volatile Set<ModuleClassLoader> myDependenciesClassLoaders;
 
   // this must be thread-safe. This does not include results of parent classloader
-  private final Map<String, Class> myClasses = Collections.synchronizedMap(new THashMap<String, Class>());
+  private final Map<String, Class> myClasses = new ConcurrentHashMap<String, Class>();
+  private final Set<String> myLoadedClasses = new ConcurrentHashSet<String>();
 
   // this is for debug purposes (heap dumps)
   @SuppressWarnings({"UnusedDeclaration", "FieldCanBeLocal"})
@@ -58,28 +60,45 @@ public class ModuleClassLoader extends ClassLoader {
   }
 
   @Override
-  protected synchronized Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
+  protected Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
     //This does not guarantee that if one class was loaded, it will be returned by sequential loadClass immediately,
     //but only makes class loading faster.
-    if (myClasses.containsKey(name)) {
+    Class<?> clazz = getClassFromCache(name);
+    if (clazz != null) {
+      return clazz;
+    }
+
+    synchronized (this) {
+      clazz = getClassFromCache(name);
+      if (clazz != null) {
+        return clazz;
+      }
+
+      try {
+        clazz = findInSelfAndDependencies(name);
+        if (resolve) {
+          resolveClass(clazz);
+        }
+        return clazz;
+      } finally {
+        if (clazz != null) {
+          myClasses.put(name, clazz);
+        }
+        myLoadedClasses.add(name);
+      }
+    }
+  }
+
+  private Class<?> getClassFromCache(String name) throws ClassNotFoundException {
+    if (myLoadedClasses.contains(name)) {
       Class cl = myClasses.get(name);
       if (cl == null) throw new ClassNotFoundException(name);
       return cl;
     }
-
-    Class<?> clazz = null;
-    try {
-      clazz = findInSelfAndDependencies(name);
-      if (resolve) {
-        resolveClass(clazz);
-      }
-      return clazz;
-    } finally {
-      myClasses.put(name, clazz);
-    }
+    return null;
   }
 
-  private synchronized Class<?> loadFromSelf(String name) {
+  private Class<?> loadFromSelf(String name) {
     Class c = findLoadedClass(name);
     if (c != null) return c;
 
@@ -162,7 +181,7 @@ public class ModuleClassLoader extends ClassLoader {
   public void dispose() {
     myDisposed = true;
     // reason for clearing:
-    // if one classloader A leak some classes, all classloaders dependent on A leak too
+    // if one classloader A leak some classes, all compile time dependencies of A leak too
     myClasses.clear();
     if (myDependenciesClassLoaders != null) {
       myDependenciesClassLoaders.clear();
