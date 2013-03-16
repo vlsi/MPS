@@ -4,7 +4,6 @@ package jetbrains.mps.lang.quotation.generator.baseLanguage.template.main;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.quotation.generator.baseLanguage.template.util.QuotationUtil;
@@ -31,6 +30,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.lang.quotation.behavior.NodeBuilderNode_Behavior;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -477,7 +477,7 @@ public class QueriesGenerated {
         continue;
       }
       SNode referenceNode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
-      referenceNode.setProperty("targetModel", ((SModelReference) (ref).getTargetSModelReference()).update().toString());
+      referenceNode.setProperty("targetModel", ((SModelReference) ((jetbrains.mps.smodel.SReference) ref).getTargetSModelReference()).update().toString());
       referenceNode.setProperty("role", ref.getRole());
       if (targetNode != null) {
         referenceNode.setProperty("targetNodeId", targetNode.getNodeId().toString());
