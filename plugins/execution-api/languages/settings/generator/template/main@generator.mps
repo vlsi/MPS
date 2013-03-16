@@ -26,6 +26,7 @@
   <import index="ydef" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.execution.configurations(MPS.Platform/com.intellij.execution.configurations@java_stub)" version="-1" />
   <import index="ic0f" modelUID="r:76273c4a-4818-4f7c-8673-bfc2aeb6debb(jetbrains.mps.execution.api.settings)" version="-1" />
   <import index="as9o" modelUID="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" version="-1" />
+  <import index="tprt" modelUID="r:00000000-0000-4000-0000-011c895904a5(jetbrains.mps.ide.common)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpf8" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
@@ -805,8 +806,8 @@
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="2722628536112120732">
         <property name="virtualPackage" nameId="tpck.1193676396447" value="editor.ui" />
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2722628536112121897">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wsna.~LayoutUtil%dcreateLabelConstraints(int)%cjava%dawt%dGridBagConstraints" resolveInfo="createLabelConstraints" />
-          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="wsna.~LayoutUtil" resolveInfo="LayoutUtil" />
+          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tprt.8606486054003576517" resolveInfo="LayoutUtil" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tprt.8606486054003576543" resolveInfo="createLabelConstraints" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="2722628536112144954">
             <property name="value" nameId="tpee.1068580320021" value="1" />
             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="2722628536112144956">
@@ -852,8 +853,8 @@
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="2158326176673567574">
         <property name="virtualPackage" nameId="tpck.1193676396447" value="editor.ui" />
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2158326176673567622">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wsna.~LayoutUtil%dcreatePanelConstraints(int)%cjava%dawt%dGridBagConstraints" resolveInfo="createPanelConstraints" />
-          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="wsna.~LayoutUtil" resolveInfo="LayoutUtil" />
+          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tprt.8606486054003576517" resolveInfo="LayoutUtil" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tprt.8606486054003576568" resolveInfo="createPanelConstraints" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="2158326176673567623">
             <property name="value" nameId="tpee.1068580320021" value="1" />
             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="2158326176673567624">
@@ -899,8 +900,8 @@
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="2158326176673567594">
         <property name="virtualPackage" nameId="tpck.1193676396447" value="editor.ui" />
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2158326176673567631">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wsna.~LayoutUtil%dcreateFieldConstraints(int)%cjava%dawt%dGridBagConstraints" resolveInfo="createFieldConstraints" />
-          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="wsna.~LayoutUtil" resolveInfo="LayoutUtil" />
+          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="tprt.8606486054003576517" resolveInfo="LayoutUtil" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tprt.8606486054003576518" resolveInfo="createFieldConstraints" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="2158326176673567632">
             <property name="value" nameId="tpee.1068580320021" value="1" />
             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="2158326176673567633">
