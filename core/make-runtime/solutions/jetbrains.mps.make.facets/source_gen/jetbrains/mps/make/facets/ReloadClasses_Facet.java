@@ -124,7 +124,7 @@ public class ReloadClasses_Facet extends IFacet.Stub {
     }
 
     public boolean isOptional() {
-      return false;
+      return true;
     }
 
     public boolean requiresInput() {
