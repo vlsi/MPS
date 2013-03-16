@@ -662,28 +662,13 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
   }
 
   @Override
-  public boolean needReloading() {
-    if ((myDescriptorFile == null) || !myDescriptorFile.exists()) {
-      return false;
-    }
-
-    final ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return false;
-
-    String timestampString;
-    if (ModelAccess.instance().canRead()) {
-      timestampString = descriptor.getTimestamp();
-    } else {
-      timestampString = ModelAccess.instance().runReadAction(new Computable<String>() {
-        @Override
-        public String compute() {
-          return descriptor.getTimestamp();
-        }
-      });
-    }
-    if (timestampString == null) return true;
-    long timestamp = Long.decode(timestampString);
-    return timestamp != myDescriptorFile.lastModified();
+  public final boolean needReloading() {
+    return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      @Override
+      public Boolean compute() {
+        return SModuleOperations.needReloading(AbstractModule.this);
+      }
+    });
   }
 
   @Override

@@ -25,11 +25,12 @@ import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.project.facets.TestsFacet;
-import jetbrains.mps.project.listener.ModelCreationListener;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -155,6 +156,25 @@ public class SModuleOperations {
     new MissingDependenciesFixer(model).fix(false);
 
     return model;
+  }
+
+  public static boolean needReloading(AbstractModule module) {
+    // todo: ?
+    ModelAccess.assertLegalRead();
+
+    IFile descriptorFile = module.getDescriptorFile();
+    if ((descriptorFile == null) || !descriptorFile.exists()) {
+      return false;
+    }
+
+    final ModuleDescriptor descriptor = module.getModuleDescriptor();
+    if (descriptor == null) return false;
+
+    String timestampString = descriptor.getTimestamp();
+
+    if (timestampString == null) return true;
+    long timestamp = Long.decode(timestampString);
+    return timestamp != descriptorFile.lastModified();
   }
 
   // deprecated methods

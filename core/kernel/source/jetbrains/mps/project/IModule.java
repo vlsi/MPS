@@ -143,14 +143,7 @@ public interface IModule extends SModule {
   // reloadClasses -> outside
   void reloadFromDisk(boolean reloadClasses);
 
-  // should be final in AbstractModule? expose to SModule?
-  // ModuleSource (@see DataSource, maybe abstract from files?)
-  boolean needReloading();
-
   // ----- deprecated part
-  // model creation stuff
-
-
 
   // module source path stuff
 
@@ -169,6 +162,13 @@ public interface IModule extends SModule {
   // IFile getModuleRoot() <- clash with model root // to SModuleOperations / maybe SModule
   // IFile getModuleFolder() ?
   // use as much as possible
+
+  // reload descriptor stuff, now all these methods need AbstractModule
+  /**
+   * @see SModuleOperations#needReloading(AbstractModule)
+   */
+  @Deprecated
+  boolean needReloading();
 
   // EditableSModule part. Cast to EditableSModule when needed
   @Deprecated
