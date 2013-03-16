@@ -146,7 +146,7 @@ public class StubRefUtil {
 
   private static String check_4tnolf_a0a0a1(SModelReference checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getLongName();
+      return ((jetbrains.mps.smodel.SModelReference) checkedDotOperand).getLongName();
     }
     return null;
   }

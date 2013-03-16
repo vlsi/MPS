@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.NameUtil;
@@ -96,7 +96,7 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
   public SModelReference update() {
     SModel sm = SModelRepository.getInstance().getModelDescriptor(this);
     if (sm == null) return this;
-    return sm.getReference();
+    return ((SModelReference) sm.getReference());
   }
 
   public boolean differs(SModelReference ref) {

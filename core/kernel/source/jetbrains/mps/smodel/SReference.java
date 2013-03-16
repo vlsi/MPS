@@ -78,7 +78,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
 
   @Override
   @Nullable
-  public abstract jetbrains.mps.smodel.SModelReference getTargetSModelReference();
+  public abstract SModelReference getTargetSModelReference();
 
   @Override
   @Nullable
@@ -114,7 +114,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
    * Use method in SReferenceBase class, as when you change ref, you know what ref it is
    * @Deprecated in 3.0
    */
-  public abstract void setTargetSModelReference(@NotNull jetbrains.mps.smodel.SModelReference targetModelReference);
+  public abstract void setTargetSModelReference(@NotNull SModelReference targetModelReference);
 
   @Deprecated
   /**

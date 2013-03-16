@@ -77,15 +77,15 @@ abstract class SReferenceBase extends SReference {
   }
 
   @Override
-  public jetbrains.mps.smodel.SModelReference getTargetSModelReference() {
+  public SModelReference getTargetSModelReference() {
     SNode immatureNode = myImmatureTargetNode;
-    if (immatureNode == null || makeIndirect()) return (jetbrains.mps.smodel.SModelReference) myTargetModelReference;
+    if (immatureNode == null || makeIndirect()) return  myTargetModelReference;
     SModel model = immatureNode.getModel();
     return model == null ? null : model.getReference();
   }
 
   @Override
-  public synchronized void setTargetSModelReference(@NotNull jetbrains.mps.smodel.SModelReference modelReference) {
+  public synchronized void setTargetSModelReference(@NotNull SModelReference modelReference) {
     if (!makeIndirect()) makeMature(); // hack: make mature anyway: only can store ref to target model in 'mature' ref.
     myTargetModelReference = modelReference;
   }

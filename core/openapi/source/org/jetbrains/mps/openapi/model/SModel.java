@@ -27,7 +27,7 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
  */
 public interface SModel {
   //todo is it needed?
-  SModel resolveModel(jetbrains.mps.smodel.SModelReference reference);
+  SModel resolveModel(SModelReference reference);
 
   SRepository getRepository();
 

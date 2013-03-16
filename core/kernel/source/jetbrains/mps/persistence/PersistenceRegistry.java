@@ -104,7 +104,7 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
     if (text == null) {
       throw new IllegalArgumentException();
     }
-    return jetbrains.mps.smodel.jetbrains.mps.smodel.SModelReference.fromString(text);
+    return jetbrains.mps.smodel.SModelReference.fromString(text);
   }
 
   @Override

@@ -87,7 +87,7 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
   private static String check_xpwqv8_a0b0f0b(SModelReference checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getLongName();
+      return ((jetbrains.mps.smodel.SModelReference) checkedDotOperand).getLongName();
     }
     return null;
   }

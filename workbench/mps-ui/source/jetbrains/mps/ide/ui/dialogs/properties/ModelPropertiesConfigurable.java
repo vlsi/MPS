@@ -236,8 +236,8 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       decorator.setAddAction(new AnActionButtonRunnable() {
         @Override
         public void run(AnActionButton anActionButton) {
-          List<jetbrains.mps.smodel.SModelReference> list = (new ModelChooser()).compute();
-          for (jetbrains.mps.smodel.SModelReference reference : list)
+          List<SModelReference> list = (new ModelChooser()).compute();
+          for (SModelReference reference : list)
             myImportedModels.addItem(reference);
         }
       }).setRemoveAction(new AnActionButtonRunnable() {

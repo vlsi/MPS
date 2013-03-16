@@ -715,7 +715,7 @@ public class Migrations {
 
   private static String check_b5gojm_a0a0e0b0a0a0q(SModelReference checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getLongName();
+      return ((jetbrains.mps.smodel.SModelReference) checkedDotOperand).getLongName();
     }
     return null;
   }

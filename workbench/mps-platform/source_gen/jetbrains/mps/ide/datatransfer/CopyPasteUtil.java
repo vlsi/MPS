@@ -60,7 +60,7 @@ public class CopyPasteUtil {
       if (sourceNodesToNewNodes.get(ref.getTargetNode()) == null) {
         SModelReference targetModelReference = ref.getTargetSModelReference();
         if (targetModelReference != null) {
-          necessaryImports.add(targetModelReference.update());
+          necessaryImports.add(((jetbrains.mps.smodel.SModelReference) targetModelReference).update());
         }
       }
     }

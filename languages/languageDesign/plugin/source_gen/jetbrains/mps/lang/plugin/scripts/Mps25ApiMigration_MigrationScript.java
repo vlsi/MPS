@@ -1388,7 +1388,7 @@ public class Mps25ApiMigration_MigrationScript extends BaseMigrationScript {
 
   private static String check_d0rs9v_a0a0a0a0a0a0(SModelReference checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getLongName();
+      return ((jetbrains.mps.smodel.SModelReference) checkedDotOperand).getLongName();
     }
     return null;
   }

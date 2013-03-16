@@ -18,10 +18,10 @@ package jetbrains.mps.smodel.persistence.def.v4;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelOperations;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelVersionsInfo;
 import jetbrains.mps.smodel.SNodeId.Foreign;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class VersionUtil {
@@ -105,8 +105,8 @@ public class VersionUtil {
 
   //this did not work: a model reference did not equal nothing
   public static int getNodeLanguageVersion(SNode node) {
-    SModelReference reference = LanguageAspect.STRUCTURE.get(new ModuleReference(NameUtil.namespaceFromConceptFQName(node.getConcept().getId())));
-    reference = reference.update();
+    ModuleReference moduleRef = new ModuleReference(NameUtil.namespaceFromConceptFQName(node.getConcept().getId()));
+    SModelReference reference = ((jetbrains.mps.smodel.SModelReference) LanguageAspect.STRUCTURE.get(moduleRef)).update();
     return SModelOperations.getUsedVersion(node.getModel(), reference);
   }
 

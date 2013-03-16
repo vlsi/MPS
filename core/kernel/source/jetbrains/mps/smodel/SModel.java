@@ -907,8 +907,9 @@ public class SModel implements SModelData {
       for (SReference reference : node.getReferences()) {
         SModelReference oldReference = reference.getTargetSModelReference();
         if (oldReference == null) continue;
-        SModelReference newRef = oldReference.update();
-        if (newRef.differs(oldReference)) {
+        jetbrains.mps.smodel.SModelReference oldSRef = (jetbrains.mps.smodel.SModelReference) oldReference;
+        jetbrains.mps.smodel.SModelReference newRef = oldSRef.update();
+        if (newRef.differs(oldSRef)) {
           changed = true;
           ((jetbrains.mps.smodel.SReference) reference).setTargetSModelReference(newRef);
         }
@@ -916,18 +917,18 @@ public class SModel implements SModelData {
     }
 
     for (ImportElement e : myImports) {
-      SModelReference oldReference = e.myModelReference;
-      SModelReference newRef = oldReference.update();
-      if (newRef.differs(oldReference)) {
+      jetbrains.mps.smodel.SModelReference oldSRef = (jetbrains.mps.smodel.SModelReference) e.myModelReference;
+      jetbrains.mps.smodel.SModelReference newRef = oldSRef.update();
+      if (newRef.differs(oldSRef)) {
         changed = true;
         e.myModelReference = newRef;
       }
     }
 
     for (ImportElement e : myImplicitImports) {
-      SModelReference oldReference = e.myModelReference;
-      SModelReference newRef = oldReference.update();
-      if (newRef.differs(oldReference)) {
+      jetbrains.mps.smodel.SModelReference oldSRef = (jetbrains.mps.smodel.SModelReference) e.myModelReference;
+      jetbrains.mps.smodel.SModelReference newRef = oldSRef.update();
+      if (newRef.differs(oldSRef)) {
         changed = true;
         e.myModelReference = newRef;
       }
@@ -1255,7 +1256,7 @@ public class SModel implements SModelData {
 
     @NotNull
     @Override
-    public jetbrains.mps.smodel.SModelReference getReference() {
+    public SModelReference getReference() {
       return myModel.getReference();
     }
 
