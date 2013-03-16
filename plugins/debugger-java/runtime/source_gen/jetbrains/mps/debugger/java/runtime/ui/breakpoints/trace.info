@@ -18,7 +18,7 @@
     <nodeInfo nodeId="742486944792922438" fileName="ChooseFromStubsByNameModel.java" startLine="67" startPosition="7" endLine="68" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="742486944792821033" fileName="ChooseFromStubsByNameModel.java" startLine="71" startPosition="77" endLine="72" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="742486944792821043" fileName="ChooseFromStubsByNameModel.java" startLine="75" startPosition="82" endLine="76" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="742486944792821054" fileName="ChooseFromStubsByNameModel.java" startLine="77" startPosition="33" endLine="78" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="742486944792821054" fileName="ChooseFromStubsByNameModel.java" startLine="77" startPosition="33" endLine="78" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="742486944792821058" fileName="ChooseFromStubsByNameModel.java" startLine="79" startPosition="5" endLine="80" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="742486944792821064" fileName="ChooseFromStubsByNameModel.java" startLine="84" startPosition="33" endLine="85" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="742486944792821071" fileName="ChooseFromStubsByNameModel.java" startLine="89" startPosition="35" endLine="90" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -84,7 +84,7 @@
       <varInfo nodeId="742486944792821007" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="742486944792821032" fileName="ChooseFromStubsByNameModel.java" startLine="71" startPosition="77" endLine="72" endPosition="40" />
-    <scopeInfo nodeId="742486944792821053" fileName="ChooseFromStubsByNameModel.java" startLine="77" startPosition="33" endLine="78" endPosition="42" />
+    <scopeInfo nodeId="742486944792821053" fileName="ChooseFromStubsByNameModel.java" startLine="77" startPosition="33" endLine="78" endPosition="79" />
     <scopeInfo nodeId="742486944792821063" fileName="ChooseFromStubsByNameModel.java" startLine="84" startPosition="33" endLine="85" endPosition="16" />
     <scopeInfo nodeId="742486944792821070" fileName="ChooseFromStubsByNameModel.java" startLine="89" startPosition="35" endLine="90" endPosition="16" />
     <scopeInfo nodeId="742486944792821077" fileName="ChooseFromStubsByNameModel.java" startLine="94" startPosition="38" endLine="95" endPosition="16" />

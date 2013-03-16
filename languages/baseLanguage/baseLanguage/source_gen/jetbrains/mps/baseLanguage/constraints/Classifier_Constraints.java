@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -95,7 +96,7 @@ public class Classifier_Constraints extends BaseConstraintsDescriptor {
       @Override
       public Object getValue(SNode node, IScope scope) {
         String propertyName = "shortDescription";
-        return NodePresentationUtil.getAliasOrConceptName(node) + " (" + SNodeOperations.getModel(node).getReference().getSModelFqName().getCompactPresentation() + ")";
+        return NodePresentationUtil.getAliasOrConceptName(node) + " (" + NameUtil.compactModelName(SNodeOperations.getModel(node).getReference()) + ")";
       }
     });
     return properties;

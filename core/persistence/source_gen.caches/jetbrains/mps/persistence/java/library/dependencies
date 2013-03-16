@@ -28,6 +28,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.smodel.loading.ModelLoadingState" />
     <classNode dependClassName="jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

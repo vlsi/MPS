@@ -94,7 +94,7 @@ public class BreakpointLocation {
         SNode node = ((SNodePointer) myNodePointer).resolve(MPSModuleRepository.getInstance());
         if (node != null) {
           SNode root = node.getContainingRoot();
-          return node + " in " + root + " (" + SNodeOperations.getModelFromNodeReference(((SNodePointer) myNodePointer)).getReference().getSModelFqName() + ")";
+          return node + " in " + root + " (" + SNodeOperations.getModelFromNodeReference(((SNodePointer) myNodePointer)).getReference().getModelName() + ")";
         } else {
           return ((SNodePointer) myNodePointer).toString();
         }

@@ -53,7 +53,7 @@ public class HierarchyTreeNode extends MPSTreeNode {
       return null;
     }
 
-    return model.getReference().getSModelFqName().toString();
+    return model.getReference().getModelName();
   }
 
   @Override

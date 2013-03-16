@@ -17,6 +17,9 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.logging.Logger;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
@@ -48,7 +51,7 @@ public class GoToTypeErrorRuleUtil {
       LOG.error("can't find rule's model " + ruleModel);
       return;
     }
-    modelUID = SModelReference.fromString(modelUID.getLongName());
+    modelUID = SModelReference.fromString(SModelStereotype.withoutStereotype(modelUID.getModelName()));
     final SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
     if (modelDescriptor == null) {
       LOG.error("can't find rule's model " + ruleModel);

@@ -2486,18 +2486,23 @@
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~StubModelsResolver%dgetInstance()%cjetbrains%dmps%dproject%dStubModelsResolver" resolveInfo="getInstance" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3337801829813864760">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~StubModelsResolver%dresolveModel(org%djetbrains%dmps%dopenapi%dmodule%dSModule,jetbrains%dmps%dsmodel%dSModelFqName,org%djetbrains%dmps%dopenapi%dmodel%dSNodeId)%cjava%dutil%dSet" resolveInfo="resolveModel" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~StubModelsResolver%dresolveModel(org%djetbrains%dmps%dopenapi%dmodule%dSModule,java%dlang%dString,org%djetbrains%dmps%dopenapi%dmodel%dSNodeId)%cjava%dutil%dSet" resolveInfo="resolveModel" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="8382013213872086313">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8382013213872086300" resolveInfo="module" />
                 </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="3337801829813864766">
-                  <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="3337801829813864767">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModelFqName%d&lt;init&gt;(java%dlang%dString,java%dlang%dString)" resolveInfo="SModelFqName" />
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3337801829813864768">
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="740251325273418856" resolveInfo="pkg" />
-                    </node>
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3059730922272007964">
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="740251325273418863" resolveInfo="stereo" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6396271077995411899">
+                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6396271077995420354">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModelFqName%dtoString()%cjava%dlang%dString" resolveInfo="toString" />
+                  </node>
+                  <node role="operand" roleId="tpee.1197027771414" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="3337801829813864766">
+                    <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="3337801829813864767">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModelFqName%d&lt;init&gt;(java%dlang%dString,java%dlang%dString)" resolveInfo="SModelFqName" />
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="3337801829813864768">
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="740251325273418856" resolveInfo="pkg" />
+                      </node>
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3059730922272007964">
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="740251325273418863" resolveInfo="stereo" />
+                      </node>
                     </node>
                   </node>
                 </node>

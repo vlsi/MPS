@@ -57,6 +57,6 @@ public class SReferenceCreator implements SReferenceHandler {
   }
 
   private Set<SModelReference> getModelReferencesFor(String pack, String rootPresentation) {
-    return StubModelsResolver.getInstance().resolveModel(module, new SModelFqName(pack, SNodeOperations.getModelStereotype(model)), null);
+    return StubModelsResolver.getInstance().resolveModel(module, new SModelFqName(pack, SNodeOperations.getModelStereotype(model)).toString(), null);
   }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9ydidk8k8j0dgcbogvsapg9i45vn3p">
+<dependencies version="2" modelHash="7knd329qivpmrcnbfwyn0ydh11suewd">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-b2l5iyygy2vjqkbekn4rvaubf6n8cmr" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="38s949ymo9nq7jj7p2lrfowy0hurndx" />
   <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" hash="iak6qkoqvisy1gghydx23iwnxiu2qf" />
@@ -39,7 +39,7 @@
   <source id="328127298621285767" name="reduce_ThisExtention" hash="dgfwpnhvmwr6pq87cgpte78yvdbbys4">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="2870858475498606561" name="reduce_ExtensionMethodReference" hash="65vo6uxxa1abqs14ha9l2oecfrf9j49">
+  <source id="2870858475498606561" name="reduce_ExtensionMethodReference" hash="-48svrm217vps61pxjlqtjqyw7ox1arw">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="8022092943110544334" name="BaseExtensionMethodContainerImpl" hash="3zew66j27290prbnmlf90g2aqzcgzh6">

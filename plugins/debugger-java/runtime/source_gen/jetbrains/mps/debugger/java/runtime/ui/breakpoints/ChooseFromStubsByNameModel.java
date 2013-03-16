@@ -75,7 +75,7 @@ import org.jetbrains.annotations.NotNull;
   private String getNamespace(NavigationParticipant.NavigationTarget descriptor) {
     SModelReference modelReference = ((SModelReference) descriptor.getNodeReference().getModelReference());
     if (modelReference != null) {
-      return modelReference.getLongName();
+      return SModelStereotype.withoutStereotype(modelReference.getModelName());
     }
     return null;
   }

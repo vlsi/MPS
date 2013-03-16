@@ -142,7 +142,8 @@ public class SModelsSubtree {
       int rootIndex = 0;
       while (rootIndex < sortedModels.size()) {
         SModel rootModelDescriptor = sortedModels.get(rootIndex);
-        int countNamePart = getCountNamePart(rootModelDescriptor, NameUtil.namespaceFromLongName(rootModelDescriptor.getReference().getLongName()));
+        int countNamePart = getCountNamePart(rootModelDescriptor, NameUtil.namespaceFromLongName(
+            SModelStereotype.withoutStereotype(rootModelDescriptor.getReference().getModelName())));
         SModelTreeNode treeNode = new SModelTreeNode(sortedModels.get(rootIndex), null, context, countNamePart);
         result.add(treeNode);
         rootIndex = (isNeedBuildChildModels) ? buildChildModels(treeNode, sortedModels, rootIndex) : rootIndex + 1;

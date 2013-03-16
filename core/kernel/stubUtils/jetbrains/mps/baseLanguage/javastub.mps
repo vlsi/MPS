@@ -8729,22 +8729,27 @@
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~StubModelsResolver%dgetInstance()%cjetbrains%dmps%dproject%dStubModelsResolver" resolveInfo="getInstance" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="9164481942862205182">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~StubModelsResolver%dresolveModel(org%djetbrains%dmps%dopenapi%dmodule%dSModule,jetbrains%dmps%dsmodel%dSModelFqName,org%djetbrains%dmps%dopenapi%dmodel%dSNodeId)%cjava%dutil%dSet" resolveInfo="resolveModel" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~StubModelsResolver%dresolveModel(org%djetbrains%dmps%dopenapi%dmodule%dSModule,java%dlang%dString,org%djetbrains%dmps%dopenapi%dmodel%dSNodeId)%cjava%dutil%dSet" resolveInfo="resolveModel" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="9164481942862205183">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5423843815843263901" resolveInfo="module" />
               </node>
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="9164481942862205184">
-                <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="9164481942862205185">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModelFqName%d&lt;init&gt;(java%dlang%dString,java%dlang%dString)" resolveInfo="SModelFqName" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="9164481942862205186">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7945956986386958449" resolveInfo="pack" />
-                  </node>
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2722862962576142082">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="unno.9160302885342289749" resolveInfo="getModelStereotype" />
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="unno.2089287822043606602" resolveInfo="SNodeOperations" />
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.SemanticDowncastExpression" typeId="tp25.1145404486709" id="2722862962576142083">
-                      <node role="leftExpression" roleId="tp25.1145404616321" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="2722862962576142084">
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5423843815843266243" resolveInfo="model" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6396271077995442660">
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6396271077995449850">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModelFqName%dtoString()%cjava%dlang%dString" resolveInfo="toString" />
+                </node>
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="9164481942862205184">
+                  <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="9164481942862205185">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModelFqName%d&lt;init&gt;(java%dlang%dString,java%dlang%dString)" resolveInfo="SModelFqName" />
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="9164481942862205186">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7945956986386958449" resolveInfo="pack" />
+                    </node>
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2722862962576142082">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="unno.9160302885342289749" resolveInfo="getModelStereotype" />
+                      <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="unno.2089287822043606602" resolveInfo="SNodeOperations" />
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.SemanticDowncastExpression" typeId="tp25.1145404486709" id="2722862962576142083">
+                        <node role="leftExpression" roleId="tp25.1145404616321" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="2722862962576142084">
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5423843815843266243" resolveInfo="model" />
+                        </node>
                       </node>
                     </node>
                   </node>

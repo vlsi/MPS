@@ -86,7 +86,7 @@ public abstract class StubModelDescriptors {
 
   public SModelReference javaStubRef(String pkg) {
     String stereo = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
-    Set<SModelReference> models = StubModelsResolver.getInstance().resolveModel(module, new SModelFqName(pkg, stereo), null);
+    Set<SModelReference> models = StubModelsResolver.getInstance().resolveModel(module, new SModelFqName(pkg, stereo).toString(), null);
     SModelReference mr = (models.isEmpty() ?
       null :
       models.iterator().next()

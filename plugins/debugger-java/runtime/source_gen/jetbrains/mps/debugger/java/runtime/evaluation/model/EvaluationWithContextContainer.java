@@ -238,7 +238,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
 
   @Nullable
   private SModel findStubForFqName(String fqName) {
-    return SModelRepository.getInstance().getModelDescriptor(new SModelFqName(fqName, "java_stub"));
+    return SModelRepository.getInstance().getModelDescriptor(new SModelFqName(fqName, "java_stub").toString());
   }
 
   private boolean needUpdateVariables() {
@@ -277,7 +277,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
     final String modelFqName = modelFqNameFromUnitName(unitName);
     return Sequence.fromIterable(Sequence.fromArray(SModelStereotype.values)).select(new ISelector<String, SModel>() {
       public SModel select(String stereotype) {
-        return SModelRepository.getInstance().getModelDescriptor(new SModelFqName(modelFqName, stereotype));
+        return SModelRepository.getInstance().getModelDescriptor(new SModelFqName(modelFqName, stereotype).toString());
       }
     }).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {

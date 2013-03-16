@@ -15,11 +15,13 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.ScopeOperations;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -29,7 +31,6 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -82,7 +83,7 @@ public class DiffTemporaryModule extends AbstractModule {
     // if we can't find model using full reference, try to find by fq-name 
     // this is needed for viewing diff on models saved before MPS 2.0 M5 
     for (IScope scope : ListSequence.fromList(scopes)) {
-      org.jetbrains.mps.openapi.model.SModel md = ScopeOperations.getModelDescriptor(scope, reference.getSModelFqName());
+      org.jetbrains.mps.openapi.model.SModel md = Sequence.fromIterable(((Iterable<org.jetbrains.mps.openapi.model.SModel>) ScopeOperations.getModelsByName(scope, reference.getModelName()))).first();
       if (md != null) {
         return md;
       }
@@ -115,13 +116,13 @@ public class DiffTemporaryModule extends AbstractModule {
 
   public static void setSModelId(SModel model, String version) {
     SModelReference modelRef = model.getReference();
-    CopyUtil.changeModelReference(model.getModelDescriptor(), new SModelReference(modelRef.getSModelFqName(), genMergeSModelId(modelRef.getSModelId(), version)));
+    CopyUtil.changeModelReference(model.getModelDescriptor(), new SModelReference(SModelFqName.fromString(modelRef.getModelName()), genMergeSModelId(modelRef.getModelId(), version)));
   }
 
   public static void resetSModelId(org.jetbrains.mps.openapi.model.SModel model) {
     SModelReference modelRef = model.getReference();
-    assert modelRef.getSModelId() instanceof SModelId.ForeignSModelId;
-    CopyUtil.changeModelReference(model, new SModelReference(modelRef.getSModelFqName(), getOriginalSModelId((SModelId.ForeignSModelId) modelRef.getSModelId())));
+    assert modelRef.getModelId() instanceof SModelId.ForeignSModelId;
+    CopyUtil.changeModelReference(model, new SModelReference(SModelFqName.fromString(modelRef.getModelName()), getOriginalSModelId((SModelId.ForeignSModelId) modelRef.getModelId())));
   }
 
   public static void registerModel(org.jetbrains.mps.openapi.model.SModel model, MPSModuleOwner owner) {

@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.ImmutableObject;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
@@ -28,19 +29,6 @@ import java.util.regex.Pattern;
 public final class SModelReference implements org.jetbrains.mps.openapi.model.SModelReference {
   private static final Pattern MODEL_UID_PATTERN = Pattern.compile("(.*?)\\((.*?)\\)");
 
-  public static SModelReference fromString(String s) {
-    if (s == null) return null;
-    s = s.trim();
-    Matcher matcher = MODEL_UID_PATTERN.matcher(s);
-    if (matcher.matches()) {
-      SModelId modelId = jetbrains.mps.smodel.SModelId.fromString(matcher.group(1));
-      SModelId nid = StubMigrationHelper.convertModelId(modelId, false);
-      return new SModelReference(SModelFqName.fromString(matcher.group(2)), nid == null ? modelId : nid);
-    }
-
-    return new SModelReference(SModelFqName.fromString(s), null);
-  }
-
   private final SModelId myModelId;
   private final SModelFqName myModelFqName;
 
@@ -51,14 +39,6 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
   public SModelReference(SModelFqName fqName, SModelId modelId) {
     myModelFqName = fqName;
     myModelId = modelId;
-  }
-
-  public SModelId getSModelId() {
-    return myModelId;
-  }
-
-  public SModelFqName getSModelFqName() {
-    return myModelFqName;
   }
 
   @Override
@@ -113,22 +93,6 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
     return myModelFqName.toString();
   }
 
-  public String getLongName() {
-    return myModelFqName.getLongName();
-  }
-
-  public String getCompactPresentation() {
-    return myModelFqName.getCompactPresentation();
-  }
-
-  public String getStereotype() {
-    return myModelFqName.getStereotype();
-  }
-
-  public boolean hasStereotype() {
-    return myModelFqName.hasStereotype();
-  }
-
   public SModelReference update() {
     SModel sm = SModelRepository.getInstance().getModelDescriptor(this);
     if (sm == null) return this;
@@ -137,6 +101,19 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
 
   public boolean differs(SModelReference ref) {
     return !(EqualUtil.equals(myModelId, ref.myModelId) && EqualUtil.equals(myModelFqName, ref.myModelFqName));
+  }
+
+  public static SModelReference fromString(String s) {
+    if (s == null) return null;
+    s = s.trim();
+    Matcher matcher = MODEL_UID_PATTERN.matcher(s);
+    if (matcher.matches()) {
+      SModelId modelId = jetbrains.mps.smodel.SModelId.fromString(matcher.group(1));
+      SModelId nid = StubMigrationHelper.convertModelId(modelId, false);
+      return new SModelReference(SModelFqName.fromString(matcher.group(2)), nid == null ? modelId : nid);
+    }
+
+    return new SModelReference(SModelFqName.fromString(s), null);
   }
 
   public static SModelReference fromPath(String path) {
@@ -153,5 +130,61 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
       stereotype = "";
     }
     return new SModelReference(modelName, stereotype);
+  }
+
+  //------------deprecated-------------
+
+  @Deprecated
+  /**
+   * Automatic migration not possible. Most common cases are migrated with MPS migration script, use getModelName in your case is not covered
+   * @Deprecated in 3.0
+   */
+  public SModelFqName getSModelFqName() {
+    return myModelFqName;
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public SModelId getSModelId() {
+    return getModelId();
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, not supposed to be used in MPS
+   * @Deprecated in 3.0
+   */
+  public String getCompactPresentation() {
+    return NameUtil.compactModelName(this);
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public String getLongName() {
+    return SModelStereotype.withoutStereotype(getModelName());
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public String getStereotype() {
+    return SModelStereotype.getStereotype(getModelName());
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public boolean hasStereotype() {
+    return !SModelStereotype.getStereotype(getModelName()).equals("");
   }
 }

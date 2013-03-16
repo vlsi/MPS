@@ -77,7 +77,7 @@ public class CompareTransientModels_Action extends BaseAction {
           final jetbrains.mps.smodel.SModel second = ((BaseSModelDescriptor) sortedModels.get(1)).getSModelInternal();
           ApplicationManager.getApplication().invokeLater(new Runnable() {
             public void run() {
-              new ModelDifferenceDialog(first, second, ((Project) MapSequence.fromMap(_params).get("project")), first.getReference().getSModelFqName().toString(), second.getReference().getSModelFqName().toString()).show();
+              new ModelDifferenceDialog(first, second, ((Project) MapSequence.fromMap(_params).get("project")), first.getReference().getModelName(), second.getReference().getModelName()).show();
             }
           });
         }

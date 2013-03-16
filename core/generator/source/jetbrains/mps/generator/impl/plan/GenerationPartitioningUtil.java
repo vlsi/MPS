@@ -21,6 +21,10 @@ import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.project.structure.modules.mappingpriorities.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefAllGlobal;
@@ -209,8 +213,8 @@ public class GenerationPartitioningUtil {
     if (mappingRef instanceof MappingConfig_SimpleRef) {
       String modelUID = ((MappingConfig_SimpleRef) mappingRef).getModelUID();
       String nodeID = ((MappingConfig_SimpleRef) mappingRef).getNodeID();
-      String modelName = moreDetails ? SModelReference.fromString(modelUID).getLongName() :
-          NameUtil.shortNameFromLongName(SModelReference.fromString(modelUID).getLongName());
+      String modelName = moreDetails ? SModelStereotype.withoutStereotype(SModelReference.fromString(modelUID).getModelName()) : NameUtil.shortNameFromLongName(
+          SModelStereotype.withoutStereotype(SModelReference.fromString(modelUID).getModelName()));
       String s = modelName + ".";
       if (nodeID.equals("*")) {
         return s + "*";

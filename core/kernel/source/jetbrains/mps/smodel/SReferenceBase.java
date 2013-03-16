@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.NotNull;
@@ -47,8 +47,9 @@ abstract class SReferenceBase extends SReference {
           SModelId id = targetModelReference.getModelId();
           SModelId nid = StubMigrationHelper.convertModelId(id, false);
           if (nid != null) {
-            targetModelReference = new jetbrains.mps.smodel.SModelReference(
-                ((jetbrains.mps.smodel.SModelReference) targetModelReference).getSModelFqName(), nid);
+            String tms = SModelStereotype.getStereotype(targetModelReference.getModelName());
+            String tml = SModelStereotype.withoutStereotype(targetModelReference.getModelName());
+            targetModelReference = new jetbrains.mps.smodel.SModelReference(new SModelFqName(tml, tms), nid);
           }
         } catch (Throwable t) {
         }

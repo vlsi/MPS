@@ -59,7 +59,7 @@ public abstract class SModelBase implements SModel {
 
   @Override
   public SModelId getModelId() {
-    return myModelReference.getSModelId();
+    return myModelReference.getModelId();
   }
 
   @Override

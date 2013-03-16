@@ -99,7 +99,7 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
       if (targetModelReference == null) {
         targetModelReference = myModel.getReference();
       }
-      if (targetModelReference.getSModelId() != null) {
+      if (targetModelReference.getModelId() != null) {
         SModel targetModel = this.myScope.getModelDescriptor(targetModelReference);
         if (targetModel == null) {
           return null;

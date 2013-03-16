@@ -12,7 +12,6 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -58,9 +57,8 @@ public class MissingDependenciesFixer {
           }
           SModel sm = modelImport.resolve(repository);
           if (sm == null) {
-            SModelFqName fqName = modelImport.getSModelFqName();
-            sm = (fqName != null ?
-              SModelRepository.getInstance().getModelDescriptor(fqName) :
+            sm = (modelImport.getModelName() != null ?
+              SModelRepository.getInstance().getModelDescriptor(modelImport.getModelName()) :
               null
             );
             if (sm == null) {

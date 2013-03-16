@@ -60,6 +60,7 @@ import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListAddA
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListRemoveAction;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -356,7 +357,7 @@ public class TestConfigurationDialog extends DialogWrapper {
           }
           myModels.add(modelRef);
           if (!(myNamePanel.isConfigNameSet())) {
-            String name = NameUtil.shortNameFromLongName(modelRef.getLongName());
+            String name = NameUtil.shortNameFromLongName(SModelStereotype.withoutStereotype(modelRef.getModelName()));
             myNamePanel.setConfigName(name);
           }
           return myModels.indexOf(modelRef);

@@ -124,7 +124,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       final PropertySupport ps = PropertySupport.getPropertySupport(p);
       final String propertyName = SPropertyOperations.getString(p, "name");
       if (propertyName == null) {
-        LOG.error("Property declaration has a null name, declaration id: " + p.getNodeId() + ", model: " + SNodeOperations.getModel(p).getReference().getSModelFqName());
+        LOG.error("Property declaration has a null name, declaration id: " + p.getNodeId() + ", model: " + SNodeOperations.getModel(p).getReference().getModelName());
         continue;
       }
       final String value = ps.fromInternalValue(SNodeAccessUtil.getProperty(node, propertyName));

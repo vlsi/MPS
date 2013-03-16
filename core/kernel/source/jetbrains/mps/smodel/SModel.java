@@ -98,7 +98,7 @@ public class SModel implements SModelData {
   }
 
   public SModelId getModelId() {
-    return getSModelReference().getSModelId();
+    return getSModelReference().getModelId();
   }
 
   @NotNull
@@ -1035,7 +1035,7 @@ public class SModel implements SModelData {
    * @Deprecated in 3.0
    */
   public SModelId getSModelId() {
-    return myReference.getSModelId();
+    return myReference.getModelId();
   }
 
   @Deprecated
@@ -1044,7 +1044,7 @@ public class SModel implements SModelData {
    * @Deprecated in 3.0
    */
   public SModelFqName getSModelFqName() {
-    return myReference.getSModelFqName();
+    return SModelFqName.fromString(myReference.getModelName());
   }
 
 
@@ -1205,12 +1205,12 @@ public class SModel implements SModelData {
 
     @Override
     public String getLongName() {
-      return getReference().getLongName();
+      return SModelStereotype.withoutStereotype(getReference().getModelName());
     }
 
     @Override
     public String getStereotype() {
-      return getReference().getStereotype();
+      return SModelStereotype.getStereotype(getReference().getModelName());
     }
 
     @Override

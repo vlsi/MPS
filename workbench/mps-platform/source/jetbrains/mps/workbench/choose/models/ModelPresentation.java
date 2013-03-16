@@ -35,7 +35,7 @@ public class ModelPresentation extends BasePresentation {
   @Override
   @NotNull
   public String doGetPresentableText() {
-    return myModelReference.getSModelFqName().toString();
+    return myModelReference.getModelName();
   }
 
   @Override

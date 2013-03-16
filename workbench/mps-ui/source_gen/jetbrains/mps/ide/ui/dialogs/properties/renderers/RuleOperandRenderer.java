@@ -14,6 +14,7 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_R
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_SimpleRef;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.ModelAccess;
@@ -52,7 +53,7 @@ public class RuleOperandRenderer implements TableCellRenderer {
       SModelReference modelRef = SModelReference.fromString(refC.getModelUID());
       String nodeName;
       if (refC.getNodeID().equals("*")) {
-        nodeName = NameUtil.shortNameFromLongName(modelRef.getLongName()) + ".*";
+        nodeName = NameUtil.shortNameFromLongName(SModelStereotype.withoutStereotype(modelRef.getModelName())) + ".*";
       } else {
         final SNodeReference p = new SNodePointer(refC.getModelUID(), refC.getNodeID());
         nodeName = ModelAccess.instance().runReadAction(new Computable<String>() {

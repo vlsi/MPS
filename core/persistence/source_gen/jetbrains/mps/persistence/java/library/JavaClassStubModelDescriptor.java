@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.reloading.ClassPathFactory;
+import jetbrains.mps.smodel.SModelStereotype;
 import java.io.File;
 import java.io.IOException;
 import jetbrains.mps.smodel.ModelAccess;
@@ -93,7 +94,7 @@ public class JavaClassStubModelDescriptor extends BaseSModelDescriptorWithSource
         if (dir.indexOf("!") != -1) {
           cp.add(ClassPathFactory.getInstance().createFromPath(dir.substring(0, dir.indexOf("!")), this.getClass().getName()));
         } else {
-          String name = getSModelReference().getLongName().replace('.', File.separatorChar);
+          String name = SModelStereotype.withoutStereotype(getSModelReference().getModelName()).replace('.', File.separatorChar);
 
           // dirty hack for current problems with path separators 
           String dirCorrected = dir.replace('/', File.separatorChar);

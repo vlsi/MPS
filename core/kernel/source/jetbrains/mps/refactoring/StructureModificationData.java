@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.refactoring;
 
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.InternUtil;
@@ -55,7 +58,8 @@ public class StructureModificationData {
 
     @Override
     public int compareTo(FullNodeId o) {
-      int i2 = myModelReference.getLongName().compareTo(o.myModelReference.getLongName());
+      int i2 = SModelStereotype.withoutStereotype(myModelReference.getModelName()).compareTo(
+          SModelStereotype.withoutStereotype(o.myModelReference.getModelName()));
       if (i2 != 0) return i2;
       if (myNodeId == null) {
         if (o.myNodeId == null) {

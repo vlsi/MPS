@@ -23,8 +23,7 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.mps.openapi.module.SModule;
 
@@ -121,8 +120,8 @@ public class TransientModelsModule extends AbstractModule {
   private boolean isValidName(String longName, String stereotype) {
     String modelName = stereotype == null ? longName : longName + "@" + stereotype;
     return
-        SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(modelName)) == null
-            && !myModels.containsKey(modelName);
+      SModelRepository.getInstance().getModelDescriptor(modelName) == null
+        && !myModels.containsKey(modelName);
   }
 
   public boolean publishTransientModel(SModel model) {
@@ -274,7 +273,7 @@ public class TransientModelsModule extends AbstractModule {
 
     @Override
     public SModel resolveModel(SModelReference reference) {
-      if (reference.getLongName().equals(myLongName)) {
+      if (SModelStereotype.withoutStereotype(reference.getModelName()).equals(myLongName)) {
         SModel descriptor = myModels.get(reference.getModelName());
         if (descriptor != null) return descriptor;
       }

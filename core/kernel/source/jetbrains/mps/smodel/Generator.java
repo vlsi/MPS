@@ -97,8 +97,8 @@ public class Generator extends AbstractModule {
     boolean descriptorChanged = false;
     String s = simpleRef.getModelUID();
     SModelReference modelReference = SModelReference.fromString(s);
-    if (modelReference.getStereotype().equals(SModelStereotype.TEMPLATES)) {
-      modelReference = new SModelReference(modelReference.getLongName(), SModelStereotype.GENERATOR);
+    if (SModelStereotype.getStereotype(modelReference.getModelName()).equals(SModelStereotype.TEMPLATES)) {
+      modelReference = new SModelReference(SModelStereotype.withoutStereotype(modelReference.getModelName()), SModelStereotype.GENERATOR);
       s = modelReference.toString();
       simpleRef.setModelUID(s);
       descriptorChanged = true;

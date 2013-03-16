@@ -4,6 +4,7 @@ package jetbrains.mps.lang.plugin.scripts;
 
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelStereotype;
 
 public class ReferenceUtil {
   public ReferenceUtil() {
@@ -17,6 +18,6 @@ public class ReferenceUtil {
     if (targetSModelReference == null) {
       return false;
     }
-    return modelName.equals(targetSModelReference.getLongName());
+    return modelName.equals(SModelStereotype.withoutStereotype(targetSModelReference.getModelName()));
   }
 }

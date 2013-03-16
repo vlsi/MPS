@@ -21,6 +21,7 @@ import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -102,7 +103,7 @@ public class DiffGenerationHandler extends InMemoryJavaGenerationHandler {
   }
 
   public String getName(String outputNode, SModelReference outputModel) {
-    return outputNode.substring(outputModel.getLongName().length() + 1);
+    return outputNode.substring(SModelStereotype.withoutStereotype(outputModel.getModelName()).length() + 1);
   }
 
   public File getOutputDir(SModelReference outputModelRef) {
@@ -127,7 +128,7 @@ public class DiffGenerationHandler extends InMemoryJavaGenerationHandler {
   }
 
   protected String getKey(SModelReference modelReference, String root) {
-    return JavaNameUtil.packageNameForModelUID(modelReference) + "." + root.substring(modelReference.getLongName().length() + 1);
+    return JavaNameUtil.packageNameForModelUID(modelReference) + "." + root.substring(SModelStereotype.withoutStereotype(modelReference.getModelName()).length() + 1);
   }
 
   public String getSourceByNode(SNode outputRoot, SModel outputModel) {

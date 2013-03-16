@@ -41,7 +41,7 @@ public class ImportedModelsTable extends MpsElementsTable<SModelReference> {
 
     @Override
     protected String getText(SModelReference modelReference) {
-        return modelReference.getSModelFqName().toString();
+        return modelReference.getModelName();
     }
 
     @Override

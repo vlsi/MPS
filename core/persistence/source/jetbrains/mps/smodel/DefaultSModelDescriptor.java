@@ -271,7 +271,7 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
     myStructureModificationLog = null;  // we don't need to keep log in memory
     if (latestVersion != -1) {
       ( loadedSModel).setVersion(latestVersion);
-      LOG.error("Version for model " + getSModelReference().getSModelFqName() + " was not set.");
+      LOG.error("Version for model " + getSModelReference().getModelName() + " was not set.");
     }
   }
 
