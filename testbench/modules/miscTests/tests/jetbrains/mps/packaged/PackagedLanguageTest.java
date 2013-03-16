@@ -105,7 +105,7 @@ public class PackagedLanguageTest {
   }
 
   private void checkStubsLoaded() {
-    final SModel libraryModelDescriptor = SModelRepository.getInstance().getModelDescriptor(PACKAGED_LANGUAGE + "/" + "dummy" + "@java_stub");
+    final SModel libraryModelDescriptor = SModelRepository.getInstance().getModelDescriptor("dummy" + "@java_stub");
     Assert.assertNotNull(libraryModelDescriptor);
     final SModel libraryModel = libraryModelDescriptor;
     Assert.assertNotNull(libraryModel);
