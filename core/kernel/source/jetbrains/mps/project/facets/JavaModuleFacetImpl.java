@@ -23,6 +23,7 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Collections;
@@ -86,7 +87,7 @@ public class JavaModuleFacetImpl extends ModuleFacetBase implements JavaModuleFa
       // todo: remove this logic?
       IFile classes = ProjectPathUtil.getClassesFolder(getModule().getDescriptorFile());
       if (classes != null && classes.exists()) {
-        libraryClassPath.add(classes.getPath());
+        libraryClassPath.add(getClassPath(classes));
       }
     }
 
@@ -99,9 +100,17 @@ public class JavaModuleFacetImpl extends ModuleFacetBase implements JavaModuleFa
     result.addAll(getLibraryClassPath());
     IFile classesGen = getClassesGen();
     if (classesGen != null) {
-      result.add(classesGen.getPath());
+      result.add(getClassPath(classesGen));
     }
     return result;
+  }
+
+  private String getClassPath(@NotNull IFile classes) {
+    String path = classes.getPath();
+    if (path.contains("!")) {
+      return path.split("!")[0];
+    }
+    return path;
   }
 
   @Override
