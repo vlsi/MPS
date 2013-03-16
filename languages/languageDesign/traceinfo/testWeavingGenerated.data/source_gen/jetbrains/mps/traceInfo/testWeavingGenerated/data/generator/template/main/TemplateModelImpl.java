@@ -80,5 +80,5 @@ public class TemplateModelImpl implements TemplateModel {
     return templateModule;
   }
 
-  private static SModelReference modelRef_wo91o7_a0a5 = new jetbrains.mps.smodel.SModelReference(new SModelFqName("jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main", "generator"), SModelId.regular(new UUID(6426117384470809586L, -7047529778099592719L)));
+  private static jetbrains.mps.smodel.SModelReference modelRef_wo91o7_a0a5 = new jetbrains.mps.smodel.SModelReference(new SModelFqName("jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main", "generator"), SModelId.regular(new UUID(6426117384470809586L, -7047529778099592719L)));
 }

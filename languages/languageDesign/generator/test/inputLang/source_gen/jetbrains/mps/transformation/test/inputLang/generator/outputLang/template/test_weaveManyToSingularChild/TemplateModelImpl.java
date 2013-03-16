@@ -73,5 +73,5 @@ public class TemplateModelImpl implements TemplateModel {
     return templateModule;
   }
 
-  private static SModelReference modelRef_wo91o7_a0a5 = new jetbrains.mps.smodel.SModelReference(new SModelFqName("jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild", "generator"), SModelId.regular(new UUID(16384L, 1222075024890L)));
+  private static jetbrains.mps.smodel.SModelReference modelRef_wo91o7_a0a5 = new jetbrains.mps.smodel.SModelReference(new SModelFqName("jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild", "generator"), SModelId.regular(new UUID(16384L, 1222075024890L)));
 }

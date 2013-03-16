@@ -83,6 +83,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.descriptor.generator.template.main.TemplateGenerator" file="TemplateGenerator.java">
@@ -157,6 +158,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateModel" />

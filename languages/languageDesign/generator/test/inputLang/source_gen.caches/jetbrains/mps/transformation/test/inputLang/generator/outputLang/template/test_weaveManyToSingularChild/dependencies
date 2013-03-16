@@ -57,6 +57,7 @@
     <classNode dependClassName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.Mappingmain" />
     <classNode dependClassName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.Templatemap__outputNode" />
     <classNode dependClassName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild.Templateweave__InputNode__A" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateModel" />
