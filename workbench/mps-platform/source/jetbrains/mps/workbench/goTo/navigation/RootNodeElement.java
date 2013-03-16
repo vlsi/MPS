@@ -18,7 +18,7 @@ package jetbrains.mps.workbench.goTo.navigation;
 import com.intellij.navigation.ItemPresentation;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.vcs.FileStatus;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.NavigationParticipant.NavigationTarget;
 
 public class RootNodeElement implements NavigationItem {

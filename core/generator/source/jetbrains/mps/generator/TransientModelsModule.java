@@ -23,7 +23,7 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.mps.openapi.module.SModule;
 
@@ -221,7 +221,7 @@ public class TransientModelsModule extends AbstractModule {
     private boolean wasUnloaded = false;
 
     private TransientSModelDescriptor(String modelName) {
-      super(new SModelReference(SModelFqName.fromString(modelName), jetbrains.mps.smodel.SModelId.generate()));
+      super(new jetbrains.mps.smodel.SModelReference(SModelFqName.fromString(modelName), jetbrains.mps.smodel.SModelId.generate()));
       myLongName = SModelStereotype.withoutStereotype(modelName);
     }
 

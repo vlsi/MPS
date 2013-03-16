@@ -70,7 +70,7 @@ public class MappingConfig_SimpleRef extends MappingConfig_AbstractRef {
     if (myModelUID.equals("*")) {
       return false;
     }
-    jetbrains.mps.smodel.SModelReference ref = jetbrains.mps.smodel.SModelReference.fromString(myModelUID);
+    jetbrains.mps.smodel.SModelReference ref = jetbrains.mps.smodel.jetbrains.mps.smodel.SModelReference.fromString(myModelUID);
     jetbrains.mps.smodel.SModelReference newRef = ref.update();
     if (ref.differs(newRef)) {
       myModelUID = newRef.toString();

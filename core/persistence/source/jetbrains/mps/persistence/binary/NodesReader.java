@@ -18,7 +18,7 @@ package jetbrains.mps.persistence.binary;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.Pair;
@@ -34,7 +34,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NodesReader {
-  protected static final SModelReference LOCAL = SModelReference.fromString("$LOCAL$");
+  protected static final SModelReference LOCAL = jetbrains.mps.smodel.SModelReference.fromString("$LOCAL$");
   protected final SModelReference myModelReference;
 
   public NodesReader(@NotNull SModelReference modelReference) {

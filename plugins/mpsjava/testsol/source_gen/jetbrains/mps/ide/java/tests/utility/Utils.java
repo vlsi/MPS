@@ -15,7 +15,7 @@ import jetbrains.mps.util.PathManager;
 import jetbrains.mps.ide.java.newparser.JavaParser;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.ide.java.newparser.FeatureKind;
@@ -59,7 +59,7 @@ public class Utils {
     try {
       JavaParser parser = new JavaParser();
       SModel mdl;
-      mdl = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.placeholder", ""));
+      mdl = SModelRepository.getInstance().getModelDescriptor(new jetbrains.mps.smodel.SModelReference("jetbrains.mps.ide.java.testMaterial.placeholder", ""));
       List<SNode> res = parser.parse(code, SModelOperations.getModelName(mdl), FeatureKind.CLASS_STUB, true).getNodes();
       Assert.assertSame(ListSequence.fromList(res).count(), 1);
 
@@ -151,7 +151,7 @@ public class Utils {
       // FIXME  
       JavaParser parser = new JavaParser();
       DirParser dirParser = new DirParser(ourModule, new FileMPSProject(new File(PathManager.getHomePath() + "/MPS.mpr")));
-      SModel result = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.placeholder", ""));
+      SModel result = SModelRepository.getInstance().getModelDescriptor(new jetbrains.mps.smodel.SModelReference("jetbrains.mps.ide.java.testMaterial.placeholder", ""));
       for (SNode r : ListSequence.fromList(SModelOperations.getRoots(result, null))) {
         SNodeOperations.detachNode(r);
       }

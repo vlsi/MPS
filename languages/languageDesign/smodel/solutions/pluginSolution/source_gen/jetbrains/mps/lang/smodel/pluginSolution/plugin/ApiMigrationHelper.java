@@ -33,7 +33,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -261,10 +261,10 @@ public class ApiMigrationHelper {
     if (SModelOperations.isReadOnly(n.getModel())) {
       return false;
     }
-    if (eq_yke5lt_a0b0n(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(SNodeOperations.getModel(n)), jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.lang.smodel.pluginSolution.plugin", ""))))) {
+    if (eq_yke5lt_a0b0n(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(SNodeOperations.getModel(n)), jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(SModelRepository.getInstance().getModelDescriptor(new jetbrains.mps.smodel.SModelReference("jetbrains.mps.lang.smodel.pluginSolution.plugin", ""))))) {
       return false;
     }
-    if (eq_yke5lt_a0c0n(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(SNodeOperations.getModel(n)), jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.lang.smodel.generator.smodelAdapter", ""))))) {
+    if (eq_yke5lt_a0c0n(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(SNodeOperations.getModel(n)), jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getModelName(SModelRepository.getInstance().getModelDescriptor(new jetbrains.mps.smodel.SModelReference("jetbrains.mps.lang.smodel.generator.smodelAdapter", ""))))) {
       return false;
     }
     SNode root = SNodeOperations.getContainingRoot(n);

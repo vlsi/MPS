@@ -18,7 +18,7 @@ package jetbrains.mps.project.validation;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.IterableUtil;
 
 import java.util.ArrayList;

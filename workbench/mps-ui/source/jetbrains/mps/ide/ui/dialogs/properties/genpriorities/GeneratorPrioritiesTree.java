@@ -160,7 +160,7 @@ public class GeneratorPrioritiesTree {
   }
 
   private void setCheckedStateForModel(ExtendedCheckedTreeNode node, MappingConfig_SimpleRef mapping) {
-    SModelReference modRef = jetbrains.mps.smodel.SModelReference.fromString(mapping.getModelUID());
+    SModelReference modRef = jetbrains.mps.smodel.jetbrains.mps.smodel.SModelReference.fromString(mapping.getModelUID());
     ((jetbrains.mps.smodel.SModelReference)modRef).update();
 
     Enumeration children = node.children();

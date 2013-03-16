@@ -14,7 +14,7 @@ import jetbrains.mps.util.xml.XmlUtil;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.structure.project.testconfigurations.ModelsTestConfiguration;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
 import java.io.OutputStream;
 import org.jdom.Document;
@@ -119,7 +119,7 @@ public class ProjectDescriptorPersistence {
       ModelsTestConfiguration tc = new ModelsTestConfiguration();
       tc.setName(e.getAttributeValue("name"));
       for (Element me : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(e, "models"), "model"))) {
-        tc.addModel(SModelReference.fromString(me.getAttributeValue("modelRef")));
+        tc.addModel(jetbrains.mps.smodel.SModelReference.fromString(me.getAttributeValue("modelRef")));
       }
       result_jnk9az_a1a3.getTestConfigurations().add(tc);
     }

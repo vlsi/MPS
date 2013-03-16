@@ -35,7 +35,7 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import java.lang.reflect.Method;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.Solution;

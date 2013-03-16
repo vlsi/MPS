@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.reloading.ClassPathFactory;
 import java.io.IOException;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.smodel.BaseSModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;

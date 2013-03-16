@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
 
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.NameUtil;
@@ -110,10 +110,10 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
     if (matcher.matches()) {
       SModelId modelId = jetbrains.mps.smodel.SModelId.fromString(matcher.group(1));
       SModelId nid = StubMigrationHelper.convertModelId(modelId, false);
-      return new SModelReference(SModelFqName.fromString(matcher.group(2)), nid == null ? modelId : nid);
+      return new jetbrains.mps.smodel.SModelReference(SModelFqName.fromString(matcher.group(2)), nid == null ? modelId : nid);
     }
 
-    return new SModelReference(SModelFqName.fromString(s), null);
+    return new jetbrains.mps.smodel.SModelReference(SModelFqName.fromString(s), null);
   }
 
   public static SModelReference fromPath(String path) {
@@ -129,7 +129,7 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
     } else {
       stereotype = "";
     }
-    return new SModelReference(modelName, stereotype);
+    return new jetbrains.mps.smodel.SModelReference(modelName, stereotype);
   }
 
   //------------deprecated-------------

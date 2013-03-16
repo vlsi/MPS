@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.unitTest.execution.settings;
 
 import jetbrains.mps.execution.lib.ui.BaseChooserComponent;
 import java.util.List;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.awt.event.ActionListener;

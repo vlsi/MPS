@@ -38,7 +38,7 @@ import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import org.apache.log4j.Level;
@@ -286,9 +286,9 @@ public abstract class MpsWorker {
       SModelHeader dr = ModelPersistence.loadDescriptor(new FileDataSource(ifile));
       SModelReference modelReference;
       if (dr.getUID() != null) {
-        modelReference = SModelReference.fromString(dr.getUID());
+        modelReference = jetbrains.mps.smodel.SModelReference.fromString(dr.getUID());
       } else {
-        modelReference = SModelReference.fromPath(ifile.getPath());
+        modelReference = jetbrains.mps.smodel.SModelReference.fromPath(ifile.getPath());
       }
       info("Read model " + modelReference);
       SModelHeader d = ModelPersistence.loadDescriptor(new FileDataSource(ifile));

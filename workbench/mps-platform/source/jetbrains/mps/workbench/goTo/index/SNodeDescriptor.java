@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.workbench.goTo.index;
 
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNodeId.Regular;
 import jetbrains.mps.util.EqualUtil;

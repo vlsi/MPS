@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.DefaultSModel;
 import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.xml.BreakParseSAXException;
@@ -158,7 +158,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
 
     @Override
     protected ModelLoadResult createObject(Attributes attrs) {
-      fieldmodel = new DefaultSModel(SModelReference.fromString(attrs.getValue("modelUID")));
+      fieldmodel = new DefaultSModel(jetbrains.mps.smodel.SModelReference.fromString(attrs.getValue("modelUID")));
       fieldmodel.setPersistenceVersion(6);
       fieldmodel.getSModelHeader().updateDefaults(fieldheader);
       fieldhelper = new VersionUtil(fieldmodel.getReference());

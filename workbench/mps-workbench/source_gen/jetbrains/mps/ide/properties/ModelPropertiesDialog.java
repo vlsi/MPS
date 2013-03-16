@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Set;
 import jetbrains.mps.smodel.SModelOperations;

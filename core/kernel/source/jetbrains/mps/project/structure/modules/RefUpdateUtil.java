@@ -16,7 +16,7 @@
 package jetbrains.mps.project.structure.modules;
 
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;

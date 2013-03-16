@@ -13,7 +13,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jdom.filter.AbstractFilter;
 import org.jdom.filter.ElementFilter;
 import java.util.List;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;

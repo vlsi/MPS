@@ -18,7 +18,7 @@ package jetbrains.mps.smodel.persistence.def.v4;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelVersionsInfo;
 import jetbrains.mps.smodel.SNodeId.Foreign;
 import jetbrains.mps.util.NameUtil;

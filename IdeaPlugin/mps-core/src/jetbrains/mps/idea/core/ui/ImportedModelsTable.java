@@ -20,7 +20,7 @@ import jetbrains.mps.fileTypes.FileIcons;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.project.IModule;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 import javax.swing.*;

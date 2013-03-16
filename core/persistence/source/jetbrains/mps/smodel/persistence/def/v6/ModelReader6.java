@@ -20,7 +20,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelHeader;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.InternUtil;
@@ -52,7 +52,7 @@ public class ModelReader6 implements IModelReader {
   public DefaultSModel readModel(Document document, SModelHeader header) {
     Element rootElement = document.getRootElement();
 
-    SModelReference modelReference = SModelReference.fromString(rootElement.getAttributeValue(ModelPersistence.MODEL_UID));
+    SModelReference modelReference = jetbrains.mps.smodel.SModelReference.fromString(rootElement.getAttributeValue(ModelPersistence.MODEL_UID));
     DefaultSModel model = new DefaultSModel(modelReference);
     model.setPersistenceVersion(getVersion());
     model.getSModelHeader().updateDefaults(header);

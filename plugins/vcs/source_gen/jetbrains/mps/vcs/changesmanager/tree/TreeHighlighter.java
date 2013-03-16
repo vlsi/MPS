@@ -25,7 +25,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
 import jetbrains.mps.vcs.changesmanager.tree.features.ModelFeature;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.util.ui.update.Update;

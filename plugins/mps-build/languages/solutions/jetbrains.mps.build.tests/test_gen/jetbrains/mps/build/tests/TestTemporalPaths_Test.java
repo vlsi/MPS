@@ -10,7 +10,7 @@ import junit.framework.Assert;
 import jetbrains.mps.build.behavior.BuildLayout_NamedContainer_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 @MPSLaunch
 public class TestTemporalPaths_Test extends BaseTransformationTest4 {
@@ -54,34 +54,34 @@ public class TestTemporalPaths_Test extends BaseTransformationTest4 {
   public static class TestBody extends BaseTestBody {
     public void test_topLevelJar() throws Exception {
       this.addNodeById("4045247515868358884");
-      Assert.assertEquals(TestContext.DEPLOY + "/test.jar", BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(SNodeOperations.cast(this.getNodeById("280273048052535266"), "jetbrains.mps.build.structure.BuildLayout_Jar"), new TestContext(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.build.tests", "tests")))));
+      Assert.assertEquals(TestContext.DEPLOY + "/test.jar", BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(SNodeOperations.cast(this.getNodeById("280273048052535266"), "jetbrains.mps.build.structure.BuildLayout_Jar"), new TestContext(SModelRepository.getInstance().getModelDescriptor(new jetbrains.mps.smodel.SModelReference("jetbrains.mps.build.tests", "tests")))));
     }
 
     public void test_topLevelFolder() throws Exception {
       this.addNodeById("4045247515868358884");
-      Assert.assertEquals(TestContext.DEPLOY + "/folder", BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(SNodeOperations.cast(this.getNodeById("280273048052535287"), "jetbrains.mps.build.structure.BuildLayout_Folder"), new TestContext(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.build.tests", "tests")))));
+      Assert.assertEquals(TestContext.DEPLOY + "/folder", BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(SNodeOperations.cast(this.getNodeById("280273048052535287"), "jetbrains.mps.build.structure.BuildLayout_Folder"), new TestContext(SModelRepository.getInstance().getModelDescriptor(new jetbrains.mps.smodel.SModelReference("jetbrains.mps.build.tests", "tests")))));
     }
 
     public void test_topInternalFolder() throws Exception {
       this.addNodeById("4045247515868358884");
-      Assert.assertEquals(TestContext.DEPLOY + "/folder/internal", BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(SNodeOperations.cast(this.getNodeById("7422876504327290551"), "jetbrains.mps.build.structure.BuildLayout_Folder"), new TestContext(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.build.tests", "tests")))));
+      Assert.assertEquals(TestContext.DEPLOY + "/folder/internal", BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(SNodeOperations.cast(this.getNodeById("7422876504327290551"), "jetbrains.mps.build.structure.BuildLayout_Folder"), new TestContext(SModelRepository.getInstance().getModelDescriptor(new jetbrains.mps.smodel.SModelReference("jetbrains.mps.build.tests", "tests")))));
     }
 
     public void test_jarInFolder() throws Exception {
       this.addNodeById("4045247515868358884");
-      Assert.assertEquals(TestContext.DEPLOY + "/folder/test.jar", BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(SNodeOperations.cast(this.getNodeById("280273048052535289"), "jetbrains.mps.build.structure.BuildLayout_Jar"), new TestContext(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.build.tests", "tests")))));
+      Assert.assertEquals(TestContext.DEPLOY + "/folder/test.jar", BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(SNodeOperations.cast(this.getNodeById("280273048052535289"), "jetbrains.mps.build.structure.BuildLayout_Jar"), new TestContext(SModelRepository.getInstance().getModelDescriptor(new jetbrains.mps.smodel.SModelReference("jetbrains.mps.build.tests", "tests")))));
     }
 
     public void test_folderInJar() throws Exception {
       this.addNodeById("4045247515868358884");
-      TestContext testContext = new TestContext(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.build.tests", "tests")));
+      TestContext testContext = new TestContext(SModelRepository.getInstance().getModelDescriptor(new jetbrains.mps.smodel.SModelReference("jetbrains.mps.build.tests", "tests")));
       Assert.assertEquals(TestContext.TEMP + "/default/test.jar/internalFolder", BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(SNodeOperations.cast(this.getNodeById("8104754176559709900"), "jetbrains.mps.build.structure.BuildLayout_Folder"), testContext));
       Assert.assertEquals(TestContext.TEMP + "/default/test.jar/internalFolder/internalFolder2", BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(SNodeOperations.cast(this.getNodeById("8104754176559709938"), "jetbrains.mps.build.structure.BuildLayout_Folder"), testContext));
     }
 
     public void test_duplicatedNames() throws Exception {
       this.addNodeById("4045247515868358884");
-      TestContext testContext = new TestContext(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.build.tests", "tests")));
+      TestContext testContext = new TestContext(SModelRepository.getInstance().getModelDescriptor(new jetbrains.mps.smodel.SModelReference("jetbrains.mps.build.tests", "tests")));
       Assert.assertEquals(TestContext.TEMP + "/default/some.jar/someFolder", BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(SNodeOperations.cast(this.getNodeById("4209004860870558811"), "jetbrains.mps.build.structure.BuildLayout_Folder"), testContext));
       Assert.assertEquals(TestContext.TEMP + "/default/some.jar1/someFolder", BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(SNodeOperations.cast(this.getNodeById("4209004860870558814"), "jetbrains.mps.build.structure.BuildLayout_Folder"), testContext));
     }

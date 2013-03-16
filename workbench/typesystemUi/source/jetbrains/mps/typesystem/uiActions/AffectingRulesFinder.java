@@ -23,7 +23,7 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.newTypesystem.context.typechecking.IncrementalTypechecking;
 import jetbrains.mps.progress.ProgressMonitor;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNodeId;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -56,7 +56,7 @@ public class AffectingRulesFinder implements IFinder {
       if (rulesIds == null) return createResult(term, rules);
 
       for (Pair<String, String> ruleId : rulesIds) {
-        SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(ruleId.o1));
+        SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(jetbrains.mps.smodel.SModelReference.fromString(ruleId.o1));
         if (modelDescriptor == null) continue;
 
         SNodeId nodeId = SNodeId.fromString(ruleId.o2);

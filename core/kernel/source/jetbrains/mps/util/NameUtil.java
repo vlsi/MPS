@@ -16,7 +16,7 @@
 package jetbrains.mps.util;
 
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.misc.ObjectCache;

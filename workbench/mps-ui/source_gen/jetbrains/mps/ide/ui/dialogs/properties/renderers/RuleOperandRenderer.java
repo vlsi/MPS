@@ -12,7 +12,7 @@ import javax.swing.JLabel;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefAllLocal;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefAllGlobal;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_SimpleRef;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -50,7 +50,7 @@ public class RuleOperandRenderer implements TableCellRenderer {
     } else
     if (value instanceof MappingConfig_SimpleRef) {
       MappingConfig_SimpleRef refC = (MappingConfig_SimpleRef) value;
-      SModelReference modelRef = SModelReference.fromString(refC.getModelUID());
+      SModelReference modelRef = jetbrains.mps.smodel.SModelReference.fromString(refC.getModelUID());
       String nodeName;
       if (refC.getNodeID().equals("*")) {
         nodeName = NameUtil.shortNameFromLongName(SModelStereotype.withoutStereotype(modelRef.getModelName())) + ".*";

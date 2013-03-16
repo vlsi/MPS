@@ -46,7 +46,7 @@ import jetbrains.mps.idea.core.psi.impl.MPSPsiRootNode;
 import jetbrains.mps.idea.core.psi.impl.file.FileSourcePsiFile;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;

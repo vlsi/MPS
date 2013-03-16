@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 /**
  * * Temporary solution to adapt Scope to deprecated ISearchScope.

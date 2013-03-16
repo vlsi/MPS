@@ -19,11 +19,11 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -46,12 +46,12 @@ public class GoToTypeErrorRuleUtil {
 
     String ruleModel = ruleModelAndId.o1;
     final String ruleID = ruleModelAndId.o2;
-    SModelReference modelUID = SModelReference.fromString(ruleModel);
+    SModelReference modelUID = jetbrains.mps.smodel.SModelReference.fromString(ruleModel);
     if (modelUID == null) {
       LOG.error("can't find rule's model " + ruleModel);
       return;
     }
-    modelUID = SModelReference.fromString(SModelStereotype.withoutStereotype(modelUID.getModelName()));
+    modelUID = jetbrains.mps.smodel.SModelReference.fromString(SModelStereotype.withoutStereotype(modelUID.getModelName()));
     final SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
     if (modelDescriptor == null) {
       LOG.error("can't find rule's model " + ruleModel);

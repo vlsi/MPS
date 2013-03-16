@@ -25,7 +25,7 @@ import jetbrains.mps.persistence.binary.NodesReader;
 import jetbrains.mps.persistence.binary.NodesWriter;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Pair;
 
@@ -237,7 +237,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     new NodesWriter(model.getReference()).writeNodes(roots, mos);
     mos.close();
 
-    jetbrains.mps.smodel.SModel resultModel = new jetbrains.mps.smodel.SModel(new SModelReference("smodel.long.name.for.testing", ""));
+    jetbrains.mps.smodel.SModel resultModel = new jetbrains.mps.smodel.SModel(new jetbrains.mps.smodel.SModelReference("smodel.long.name.for.testing", ""));
     ByteArrayInputStream is = new ByteArrayInputStream(os.toByteArray());
     ModelInputStream mis = new ModelInputStream(is);
 

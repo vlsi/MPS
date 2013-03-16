@@ -25,7 +25,7 @@ import com.intellij.execution.ExecutionException;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -84,7 +84,7 @@ public class JUnitCommand_Test extends BaseTransformationTest4 {
       final List<ITestNodeWrapper> result = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          SModel model = SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.execution.impl.configurations.tests.commands.sandbox", "tests"));
+          SModel model = SModelRepository.getInstance().getModelDescriptor(new jetbrains.mps.smodel.SModelReference("jetbrains.mps.execution.impl.configurations.tests.commands.sandbox", "tests"));
           for (final String name : Sequence.fromIterable(names)) {
             SNode mainNode = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.core.structure.INamedConcept")).findFirst(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {

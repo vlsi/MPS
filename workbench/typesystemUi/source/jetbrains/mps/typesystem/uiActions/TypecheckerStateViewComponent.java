@@ -30,7 +30,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.highlighter.EditorsHelper;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystem.debug.EquationLogItem;
 import jetbrains.mps.util.Pair;
 
@@ -162,8 +162,8 @@ public class TypecheckerStateViewComponent extends JPanel {
 
   private void openRule(String ruleModel, final String ruleID) {
     if (ruleModel == null || ruleID == null) return;
-    SModelReference modelUID = SModelReference.fromString(ruleModel);
-    modelUID = SModelReference.fromString(SModelStereotype.withoutStereotype(modelUID.getModelName()));
+    SModelReference modelUID = jetbrains.mps.smodel.SModelReference.fromString(ruleModel);
+    modelUID = jetbrains.mps.smodel.SModelReference.fromString(SModelStereotype.withoutStereotype(modelUID.getModelName()));
     final SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
     if (modelDescriptor == null) {
       LOG.error("can't find rule's model " + ruleModel);

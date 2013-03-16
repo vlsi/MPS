@@ -5,7 +5,7 @@ package jetbrains.mps.idea.java.psiStubs;
 import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
 import jetbrains.mps.idea.core.psi.PsiListener;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import java.util.Map;
 import com.intellij.psi.PsiJavaFile;
 import java.util.Set;

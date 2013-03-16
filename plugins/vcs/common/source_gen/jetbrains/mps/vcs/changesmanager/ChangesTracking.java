@@ -65,7 +65,7 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.vcs.diff.changes.ImportedModelChange;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.logging.Logger;

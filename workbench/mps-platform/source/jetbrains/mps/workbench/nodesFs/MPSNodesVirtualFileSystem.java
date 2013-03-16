@@ -31,7 +31,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelAdapter;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.smodel.SModelRepositoryListener;
@@ -155,7 +155,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
         if (!nodePath.matches() && !modelRef.matches()) return null;
 
         if (nodePath.matches()) {
-          SModelReference reference = SModelReference.fromString(nodePath.group(1));
+          SModelReference reference = jetbrains.mps.smodel.SModelReference.fromString(nodePath.group(1));
           final String name = nodePath.group(2);
           SModel sm = SModelRepository.getInstance().getModelDescriptor(reference);
           if (sm == null) return null;
@@ -171,7 +171,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
           return getFileFor(iter.next());
         }
         else {
-          final SModelReference modelReference = SModelReference.fromString(modelRef.group());
+          final SModelReference modelReference = jetbrains.mps.smodel.SModelReference.fromString(modelRef.group());
           return getFileFor(modelReference);
         }
       }

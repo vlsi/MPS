@@ -12,7 +12,7 @@ import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.extapi.persistence.FolderSetDataSource;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import java.io.File;
 import java.io.IOException;
 import jetbrains.mps.util.SNodeOperations;

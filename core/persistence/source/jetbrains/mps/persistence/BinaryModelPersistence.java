@@ -11,7 +11,7 @@ import jetbrains.mps.persistence.binary.BinarySModelDescriptor;
 import jetbrains.mps.persistence.binary.NodesWriter;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
@@ -58,7 +58,7 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
 
   @Override
   public SModel create(String modelName, StreamDataSource source) {
-    SModelReference ref = new SModelReference(SModelFqName.fromString(modelName), jetbrains.mps.smodel.SModelId.generate());
+    SModelReference ref = new jetbrains.mps.smodel.SModelReference(SModelFqName.fromString(modelName), jetbrains.mps.smodel.SModelId.generate());
     return new BinarySModelDescriptor(source, new BinaryModelHeader(ref));
   }
 

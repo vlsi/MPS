@@ -28,7 +28,7 @@ import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.util.SNodeCompare;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.vcs.diff.changes.ImportedModelChange;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;

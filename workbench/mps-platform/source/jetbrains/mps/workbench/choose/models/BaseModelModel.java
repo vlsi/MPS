@@ -16,7 +16,7 @@
 package jetbrains.mps.workbench.choose.models;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;

@@ -5,7 +5,7 @@ package jetbrains.mps.ide.properties;
 import javax.swing.JPanel;
 import jetbrains.mps.workbench.dialogs.project.IBindedDialog;
 import java.util.List;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundListPanel;

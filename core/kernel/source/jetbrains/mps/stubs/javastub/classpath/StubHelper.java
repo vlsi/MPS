@@ -17,7 +17,7 @@ package jetbrains.mps.stubs.javastub.classpath;
 
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.StubMigrationHelper;
 import org.jetbrains.mps.openapi.model.SModelId;
@@ -55,6 +55,6 @@ public class StubHelper {
     }
 
     SModelFqName fqName = new SModelFqName(moduleName, name.getLongName(), name.getStereotype());
-    return new SModelReference(fqName, id);
+    return new jetbrains.mps.smodel.SModelReference(fqName, id);
   }
 }

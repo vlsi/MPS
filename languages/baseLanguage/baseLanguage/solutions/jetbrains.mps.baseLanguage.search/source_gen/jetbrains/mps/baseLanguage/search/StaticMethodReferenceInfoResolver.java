@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Map;
 

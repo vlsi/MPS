@@ -31,7 +31,7 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.Tokens_Behavior;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.ListIterator;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -317,7 +317,7 @@ public class ClassifierResolveUtils {
 
       // putting on-demand imports into model list 
       List<SModel> javaImportedModels = ListSequence.fromList(new ArrayList<SModel>());
-      ListSequence.fromList(javaImportedModels).addElement(SModelRepository.getInstance().getModelDescriptor(new SModelReference("java.lang", "java_stub")));
+      ListSequence.fromList(javaImportedModels).addElement(SModelRepository.getInstance().getModelDescriptor(new jetbrains.mps.smodel.SModelReference("java.lang", "java_stub")));
       for (SNode imp : ListSequence.fromList(SLinkOperations.getTargets(javaImports, "entries", true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SPropertyOperations.getBoolean(it, "onDemand");

@@ -29,7 +29,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.project.IModule;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -209,7 +209,7 @@ __switch__:
       return null;
     }
 
-    return SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(modelName));
+    return SModelRepository.getInstance().getModelDescriptor(jetbrains.mps.smodel.SModelReference.fromString(modelName));
   }
 
   @Nullable

@@ -17,7 +17,7 @@ package jetbrains.mps.workbench.goTo.navigation;
 
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.SNodeOperations;

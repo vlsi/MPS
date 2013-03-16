@@ -7,7 +7,7 @@ import javax.swing.JTree;
 import javax.swing.event.TreeExpansionEvent;
 import javax.swing.tree.DefaultTreeModel;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.ide.icons.IconManager;
 import org.jetbrains.mps.openapi.model.SNode;

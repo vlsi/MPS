@@ -24,7 +24,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.*;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefAllGlobal;
@@ -34,7 +34,7 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_S
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
@@ -213,13 +213,13 @@ public class GenerationPartitioningUtil {
     if (mappingRef instanceof MappingConfig_SimpleRef) {
       String modelUID = ((MappingConfig_SimpleRef) mappingRef).getModelUID();
       String nodeID = ((MappingConfig_SimpleRef) mappingRef).getNodeID();
-      String modelName = moreDetails ? SModelStereotype.withoutStereotype(SModelReference.fromString(modelUID).getModelName()) : NameUtil.shortNameFromLongName(
-          SModelStereotype.withoutStereotype(SModelReference.fromString(modelUID).getModelName()));
+      String modelName = moreDetails ? SModelStereotype.withoutStereotype(jetbrains.mps.smodel.SModelReference.fromString(modelUID).getModelName()) : NameUtil.shortNameFromLongName(
+          SModelStereotype.withoutStereotype(jetbrains.mps.smodel.SModelReference.fromString(modelUID).getModelName()));
       String s = modelName + ".";
       if (nodeID.equals("*")) {
         return s + "*";
       } else {
-        SModel refModel = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(modelUID));
+        SModel refModel = SModelRepository.getInstance().getModelDescriptor(jetbrains.mps.smodel.SModelReference.fromString(modelUID));
         if (refModel != null) {
           SNodeId nodeId = PersistenceFacade.getInstance().createNodeId(nodeID);
           assert nodeId != null : "wrong node id string";

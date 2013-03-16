@@ -24,7 +24,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.vfs.IFile;
@@ -145,7 +145,7 @@ public class TestModule extends AbstractModule {
     private final SModel myToCopy;
 
     private TestSModelDescriptor(SModelFqName fqName, String longName, SModel toCopy) {
-      super(new SModelReference(fqName, jetbrains.mps.smodel.SModelId.generate()));
+      super(new jetbrains.mps.smodel.SModelReference(fqName, jetbrains.mps.smodel.SModelId.generate()));
       myLongName = longName;
       myToCopy = toCopy;
     }
@@ -164,7 +164,7 @@ public class TestModule extends AbstractModule {
       try {
         return ModelPersistence.readModel(modelContent, false);
       } catch (ModelReadException e) {
-        return new StubModel(SModelReference.fromString(myLongName), e);
+        return new StubModel(jetbrains.mps.smodel.SModelReference.fromString(myLongName), e);
       }
     }
 

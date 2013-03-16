@@ -19,7 +19,7 @@ import org.jdom.Attribute;
 import java.util.List;
 import org.jdom.filter.AbstractFilter;
 import org.jdom.filter.ElementFilter;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SReference;

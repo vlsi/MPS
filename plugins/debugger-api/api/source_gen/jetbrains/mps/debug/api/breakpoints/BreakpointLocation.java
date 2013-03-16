@@ -19,7 +19,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import jetbrains.mps.traceInfo.PositionInfo;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 public class BreakpointLocation {
   private static final Logger LOG = Logger.getLogger(BreakpointLocation.class);

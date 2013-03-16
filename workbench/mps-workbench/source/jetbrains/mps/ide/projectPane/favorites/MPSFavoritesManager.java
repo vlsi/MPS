@@ -23,7 +23,7 @@ import com.intellij.openapi.util.JDOMExternalizable;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.ArrayUtil;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -90,7 +90,7 @@ public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable
         if (modelRef != null) {
           final String nodeId = favoriteElement.getAttributeValue("node_pointer");
           if (nodeId == null) {
-            SModelReference modelReference = SModelReference.fromString(modelRef);
+            SModelReference modelReference = jetbrains.mps.smodel.SModelReference.fromString(modelRef);
             result.add(modelReference);
           } else {
             SNodeReference nodePointer = new jetbrains.mps.smodel.SNodePointer(modelRef, nodeId);

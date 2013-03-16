@@ -21,7 +21,7 @@ import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.workbench.action.ActionUtils;
 

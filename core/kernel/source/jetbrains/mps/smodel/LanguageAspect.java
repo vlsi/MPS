@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
 
 import jetbrains.mps.project.SModuleOperations;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -235,7 +235,7 @@ public enum LanguageAspect {
   }
 
   public SModelReference get(ModuleReference l) {
-    return new SModelReference(l.getModuleName() + "." + myName, null);
+    return new jetbrains.mps.smodel.SModelReference(l.getModuleName() + "." + myName, null);
   }
 
   public String getName() {

@@ -5,7 +5,7 @@ package jetbrains.mps.lang.script.runtime;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.NameUtil;

@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
 import java.util.HashSet;
 import jetbrains.mps.util.JavaNameUtil;

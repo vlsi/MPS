@@ -5,7 +5,7 @@ package jetbrains.mps.ide.java.sourceStubs;
 import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSourceListener;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
 import java.util.Map;

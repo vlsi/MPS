@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.extapi.persistence.FolderSetDataSource;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.loading.ModelLoadingState;

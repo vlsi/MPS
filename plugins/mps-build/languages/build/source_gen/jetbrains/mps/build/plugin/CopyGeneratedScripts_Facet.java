@@ -32,7 +32,7 @@ import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.smodel.resources.GResource;
 import java.util.HashMap;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;

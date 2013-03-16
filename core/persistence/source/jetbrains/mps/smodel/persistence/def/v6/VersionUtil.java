@@ -20,7 +20,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.StaticReference;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -131,7 +131,7 @@ public class VersionUtil {
       return;
     }
     int ix = Integer.parseInt(index);
-    SModelReference modelRef = SModelReference.fromString(modelUID);
+    SModelReference modelRef = jetbrains.mps.smodel.SModelReference.fromString(modelUID);
     ImportElement elem = new ImportElement(modelRef, ix, version);
     myImports.put(modelRef, elem);
     myImportByIx.put(ix, elem);
