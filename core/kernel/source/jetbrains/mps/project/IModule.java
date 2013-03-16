@@ -34,7 +34,7 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import java.util.Collection;
 import java.util.List;
 
-public interface IModule extends SModule, EditableSModule {
+public interface IModule extends SModule {
   // events
   // dependency change
   // used languages change
@@ -169,6 +169,16 @@ public interface IModule extends SModule, EditableSModule {
   // IFile getModuleRoot() <- clash with model root // to SModuleOperations / maybe SModule
   // IFile getModuleFolder() ?
   // use as much as possible
+
+  // EditableSModule part. Cast to EditableSModule when needed
+  @Deprecated
+  boolean isChanged();
+
+  @Deprecated
+  void setChanged();
+
+  @Deprecated
+  void save();
 
   // JavaModuleFacet part. Use module.getFacet(JavaModuleFacet.class).{method}
   @Deprecated
