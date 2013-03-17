@@ -58,7 +58,6 @@ import org.junit.Test;
 import java.io.StringWriter;
 import java.io.PrintWriter;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.tool.builder.Environment;
 
 public class TestMain {
   private static final String[] DEFAULT_ENABLED_PLUGINS = new String[]{"jetbrains.mps.vcs", "jetbrains.mps.ide.editor", "jetbrains.mps.ide.make", "Git4Idea"};
@@ -436,7 +435,7 @@ public class TestMain {
   }
 
   public static class ProjectContainer {
-    private String projectName;
+    protected String projectName;
     protected Project lastProject;
 
     public ProjectContainer() {
@@ -456,24 +455,6 @@ public class TestMain {
       } catch (Exception e) {
         e.printStackTrace();
       }
-    }
-
-    public Project getDummyProject() {
-      Project project = Environment.createTmpDummyProject();
-      if (this.lastProject != null) {
-        try {
-          SwingUtilities.invokeAndWait(new Runnable() {
-            public void run() {
-              ProjectContainer.this.lastProject.dispose();
-            }
-          });
-        } catch (Exception e) {
-          e.printStackTrace();
-        }
-      }
-      this.lastProject = project;
-      this.projectName = project.getProjectFile().getPath();
-      return project;
     }
 
     public Project getProject(String name) {

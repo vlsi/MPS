@@ -5,11 +5,13 @@ package jetbrains.mps.testbench.junit.runners;
 import jetbrains.mps.testbench.GeneratedTestEnvironment;
 import org.junit.runners.model.InitializationError;
 import jetbrains.mps.TestMain;
-import jetbrains.mps.project.Project;
 import java.util.Map;
 import java.io.File;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.tool.builder.Environment;
+import javax.swing.SwingUtilities;
 
 public class MpsModulesRunner extends MPSOpenProjectRunner {
   private static final String PROPERTY_LIBRARY = "mps.libraries";
@@ -32,16 +34,9 @@ public class MpsModulesRunner extends MPSOpenProjectRunner {
       throw new InitializationError("One MPS project was already openned in this java process: " + ourMPSProject.getName());
     }
 
-    TestMain.PROJECT_CONTAINER = new TestMain.ProjectContainer() {
-      @Override
-      public Project getProject(String string) {
-        if (this.lastProject == null) {
-          return getDummyProject();
-        }
-        return this.lastProject;
-      }
-    };
-    ourMPSProject = TestMain.PROJECT_CONTAINER.getDummyProject();
+    MpsModulesRunner.DummyProjectContainer container = new MpsModulesRunner.DummyProjectContainer();
+    TestMain.PROJECT_CONTAINER = container;
+    ourMPSProject = container.getDummyProject();
   }
 
 
@@ -66,5 +61,38 @@ public class MpsModulesRunner extends MPSOpenProjectRunner {
 
   public GeneratedTestEnvironment getEnvironment() {
     return myEnvironment;
+  }
+
+  private class DummyProjectContainer extends TestMain.ProjectContainer {
+    public DummyProjectContainer() {
+    }
+
+    @Override
+    public Project getProject(String string) {
+      if (this.lastProject == null) {
+        return getDummyProject();
+      }
+      return this.lastProject;
+    }
+
+    private Project getDummyProject() {
+      Project project = Environment.createTmpDummyProject();
+      if (this.lastProject != null) {
+        try {
+          SwingUtilities.invokeAndWait(new Runnable() {
+            public void run() {
+              DummyProjectContainer.this.lastProject.dispose();
+            }
+          });
+        } catch (Exception e) {
+          e.printStackTrace();
+        }
+      }
+      this.lastProject = project;
+      this.projectName = project.getProjectFile().getPath();
+      return project;
+    }
+
+
   }
 }
