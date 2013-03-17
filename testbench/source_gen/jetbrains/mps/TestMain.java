@@ -41,10 +41,8 @@ import java.util.List;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import java.util.ArrayList;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
-import junit.framework.TestFailure;
 import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
 import junit.framework.TestResult;
-import java.util.Collections;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
@@ -57,10 +55,6 @@ import java.lang.reflect.Method;
 import junit.framework.TestCase;
 import java.lang.annotation.Annotation;
 import org.junit.Test;
-import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.messages.IMessage;
-import jetbrains.mps.logging.ILoggingHandler;
-import jetbrains.mps.logging.LogEntry;
 import java.io.StringWriter;
 import java.io.PrintWriter;
 import javax.swing.SwingUtilities;
@@ -376,15 +370,6 @@ public class TestMain {
       return res;
     }
 
-    private static List<TestFailure> createTestFailures(@NotNull InMemoryJavaGenerationHandler generationHandler, List<SModel> models) {
-      List<TestFailure> testFailures = new ArrayList<TestFailure>();
-      TestResult result = new TestResult();
-      invokeTests(generationHandler, models, result, null);
-      testFailures.addAll(Collections.list(result.failures()));
-      testFailures.addAll(Collections.list(result.errors()));
-      return testFailures;
-    }
-
     public static void invokeTests(@NotNull InMemoryJavaGenerationHandler generationHandler, List<SModel> outputModels, TestResult testResult, ClassLoader baseClassLoader) {
       Condition<SNode> cond = new Condition<SNode>() {
         public boolean met(SNode node) {
@@ -440,83 +425,6 @@ public class TestMain {
             // exceptions happen for a reason 
           }
         }
-      }
-    }
-
-    private static boolean findAnnotationOfClass(Annotation[] annotations, Class annotationClass) {
-      // we do not want to deal with classloader issues here, so doing it plain and simple 
-      boolean found = false;
-      for (Annotation a : annotations) {
-        if (a.annotationType().getCanonicalName().equals(annotationClass.getCanonicalName())) {
-          found = true;
-          break;
-        }
-      }
-      return found;
-    }
-
-    private static class MyIMessageHandler implements IMessageHandler {
-      private final List<String> myErrors;
-      private final List<String> myWarnings;
-
-      public MyIMessageHandler(List<String> errors, List<String> warnings) {
-        myErrors = errors;
-        myWarnings = warnings;
-      }
-
-      public void handle(IMessage msg) {
-        switch (msg.getKind()) {
-          case ERROR:
-            System.out.println("error: " + msg.getText());
-            myErrors.add(msg.getText());
-            if (msg.getException() != null) {
-              myErrors.add(extractStackTrace(msg.getException()).toString());
-            }
-            break;
-          case WARNING:
-            System.out.println("warn:  " + msg.getText());
-            myWarnings.add(msg.getText());
-            break;
-          case INFORMATION:
-            System.out.println("info:  " + msg.getText());
-            break;
-          default:
-        }
-      }
-
-      @Override
-      public void clear() {
-      }
-    }
-
-    private static class MyILoggingHandler implements ILoggingHandler {
-      private final List<String> myErrors;
-      private final List<String> myWarnings;
-
-      public MyILoggingHandler(List<String> errors, List<String> warnings) {
-        myErrors = errors;
-        myWarnings = warnings;
-      }
-
-      public void info(LogEntry e) {
-      }
-
-      public void warning(LogEntry e) {
-        myWarnings.add(e.getMessage());
-      }
-
-      public void debug(LogEntry e) {
-      }
-
-      public void error(LogEntry e) {
-        myErrors.add(e.getMessage());
-        if (e.getThrowable() != null) {
-          myErrors.add(extractStackTrace(e.getThrowable()).toString());
-        }
-      }
-
-      public void fatal(LogEntry e) {
-        myErrors.add(e.getMessage());
       }
     }
 
