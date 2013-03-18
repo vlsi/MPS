@@ -18,13 +18,7 @@
     <classNode dependClassName="com.intellij.openapi.vfs.newvfs.persistent.FSRecords" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.IOException" />
-    <classNode dependClassName="java.io.PrintWriter" />
-    <classNode dependClassName="java.io.StringWriter" />
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.ClassLoader" />
     <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.Runtime" />
@@ -33,16 +27,10 @@
     <classNode dependClassName="java.lang.StringBuffer" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="java.lang.annotation.Annotation" />
-    <classNode dependClassName="java.lang.reflect.Method" />
-    <classNode dependClassName="java.lang.reflect.Modifier" />
-    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.LinkedHashSet" />
-    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.classloading.ClassLoaderManager" />
-    <classNode dependClassName="jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler" />
     <classNode dependClassName="jetbrains.mps.ide.IdeMain" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IterableUtils" />
@@ -55,29 +43,17 @@
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.LanguageDescriptor" />
     <classNode dependClassName="jetbrains.mps.refactoring.tests.IRefactoringTester" />
-    <classNode dependClassName="jetbrains.mps.smodel.BootstrapLanguages" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.ScopeOperations" />
-    <classNode dependClassName="jetbrains.mps.util.Computable" />
-    <classNode dependClassName="jetbrains.mps.util.Condition" />
-    <classNode dependClassName="jetbrains.mps.util.ConditionalIterable" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.util.PathManager" />
-    <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.util.UnzipUtil" />
-    <classNode dependClassName="junit.framework.TestCase" />
-    <classNode dependClassName="junit.framework.TestResult" />
     <classNode dependClassName="org.apache.log4j.BasicConfigurator" />
-    <classNode dependClassName="org.eclipse.jdt.core.compiler.CategorizedProblem" />
-    <classNode dependClassName="org.eclipse.jdt.internal.compiler.CompilationResult" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConceptRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.junit.Test" />
   </dependency>
 </dependenciesRoot>
 

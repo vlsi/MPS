@@ -37,26 +37,6 @@ import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import java.util.Arrays;
 import com.intellij.openapi.vfs.newvfs.persistent.FSRecords;
 import com.intellij.idea.IdeaTestApplication;
-import java.util.List;
-import org.eclipse.jdt.internal.compiler.CompilationResult;
-import java.util.ArrayList;
-import org.eclipse.jdt.core.compiler.CategorizedProblem;
-import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
-import junit.framework.TestResult;
-import jetbrains.mps.util.Condition;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.smodel.BootstrapLanguages;
-import jetbrains.mps.util.ConditionalIterable;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.SNodeOperations;
-import java.lang.reflect.Modifier;
-import java.lang.reflect.Method;
-import junit.framework.TestCase;
-import java.lang.annotation.Annotation;
-import org.junit.Test;
-import java.io.StringWriter;
-import java.io.PrintWriter;
 import javax.swing.SwingUtilities;
 
 public class TestMain {
@@ -343,95 +323,6 @@ public class TestMain {
 
   public static interface ProjectRunnable {
     public boolean execute(Project project);
-  }
-
-  public static class ProjectTester {
-    private Project myProject;
-    private boolean myIsRunnable;
-
-    public ProjectTester(Project project, boolean isRunnable) {
-      myProject = project;
-      myIsRunnable = isRunnable;
-    }
-
-    public ProjectTester(Project project) {
-    }
-
-    public static List<String> createCompilationProblemsList(List<CompilationResult> compilationResults) {
-      List<String> res = new ArrayList<String>();
-      for (CompilationResult r : compilationResults) {
-        if (r.getErrors() != null) {
-          for (CategorizedProblem p : r.getErrors()) {
-            res.add(new String(r.getCompilationUnit().getFileName()) + " (" + p.getSourceLineNumber() + "): " + p.getMessage());
-          }
-        }
-      }
-      return res;
-    }
-
-    public static void invokeTests(@NotNull InMemoryJavaGenerationHandler generationHandler, List<SModel> outputModels, TestResult testResult, ClassLoader baseClassLoader) {
-      Condition<SNode> cond = new Condition<SNode>() {
-        public boolean met(SNode node) {
-          return node.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(BootstrapLanguages.concept_baseLanguage_ClassConcept));
-        }
-      };
-      for (final SModel model : outputModels) {
-        Iterable<SNode> iterable = new ConditionalIterable<SNode>(model.getRootNodes(), cond);
-        for (final SNode outputRoot : iterable) {
-          if (baseClassLoader == null) {
-            baseClassLoader = model.getClass().getClassLoader();
-          }
-          ClassLoader classLoader = generationHandler.getCompiler().getClassLoader(baseClassLoader);
-          try {
-            String className = ModelAccess.instance().runReadAction(new Computable<String>() {
-              public String compute() {
-                return SNodeOperations.getModelLongName(model) + "." + outputRoot.getName();
-              }
-            });
-            final Class testClass = Class.forName(className, true, classLoader);
-            if (Modifier.isAbstract(testClass.getModifiers()) || Modifier.isInterface(testClass.getModifiers())) {
-              continue;
-            }
-            if (Modifier.isPrivate(testClass.getModifiers())) {
-              continue;
-            }
-            if (testClass.getAnnotation(classLoader.loadClass("jetbrains.mps.MPSLaunch")) != null) {
-              continue;
-            }
-            List<Method> testMethods = new ArrayList<Method>();
-            Class<TestCase> testCaseClass = (Class<TestCase>) classLoader.loadClass(TestCase.class.getName());
-            boolean isTestCase = testCaseClass.isAssignableFrom(testClass);
-            for (Method method : testClass.getMethods()) {
-              if (method.getAnnotation((Class<Annotation>) classLoader.loadClass(Test.class.getName())) != null || (method.getName().startsWith("test") && isTestCase)) {
-                testMethods.add(method);
-              }
-            }
-            for (Method testMethod : testMethods) {
-              try {
-                final Object instance = testClass.newInstance();
-                Method setName = testCaseClass.getMethod("setName", String.class);
-                setName.invoke(instance, testMethod.getName());
-                Method runMethod = testCaseClass.getMethod("run", classLoader.loadClass(TestResult.class.getName()));
-                runMethod.invoke(instance, testResult);
-              } catch (Throwable ignored) {
-                // if one test fails, we still want to try to run the others 
-                System.err.println(testClass.getCanonicalName() + ":");
-                ignored.printStackTrace();
-              }
-            }
-          } catch (Throwable ignored) {
-            ignored.printStackTrace();
-            // exceptions happen for a reason 
-          }
-        }
-      }
-    }
-
-    public static StringBuffer extractStackTrace(Throwable e) {
-      StringWriter writer = new StringWriter();
-      e.printStackTrace(new PrintWriter(writer));
-      return writer.getBuffer();
-    }
   }
 
   public static class ProjectContainer {
