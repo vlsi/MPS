@@ -513,6 +513,15 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
     return new ArrayList<SModel>(SModelRepository.getInstance().getModelDescriptors(this));
   }
 
+  /**
+   * Module sources folder
+   * Can be root of jar file
+   * ${module} expands to this method
+   */
+  public IFile getModuleSourceDir() {
+    return myDescriptorFile.getParent();
+  }
+
   @Override
   public IFile getDescriptorFile() {
     return myDescriptorFile;
