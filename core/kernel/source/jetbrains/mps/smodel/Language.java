@@ -259,13 +259,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return LanguageAspect.STRUCTURE.get(this);
   }
 
-  @Override
-  public void invalidateCaches() {
-    super.invalidateCaches();
-    myNameToConceptCache.clear();
-    myNamesWithNoConcepts.clear();
-  }
-
   public ClassLoader getStubsLoader() {
     return myStubsLoader;
   }
@@ -273,6 +266,11 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   @Deprecated
   public IClassPathItem getLanguageRuntimeClasspath() {
     return new CompositeClassPathItem();
+  }
+
+  private void invalidateConceptDeclarationsCache() {
+    myNameToConceptCache.clear();
+    myNamesWithNoConcepts.clear();
   }
 
   public SNode findConceptDeclaration(@NotNull final String conceptName) {
@@ -420,12 +418,14 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
     @Override
     public void modelChanged(SModel model) {
-      invalidateCaches();
+      invalidateConceptDeclarationsCache();
+      invalidateCaches(); // ?
     }
 
     @Override
     public void modelChangedDramatically(SModel model) {
-      invalidateCaches();
+      invalidateConceptDeclarationsCache();
+      invalidateCaches(); // ?
     }
   }
 

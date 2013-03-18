@@ -660,7 +660,7 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
   }
 
   @Override
-  public void invalidateCaches() {
+  public final void invalidateCaches() {
     myScope.invalidateCaches();
   }
 
