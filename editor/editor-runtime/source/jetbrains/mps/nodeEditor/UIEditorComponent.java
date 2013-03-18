@@ -33,6 +33,7 @@ public class UIEditorComponent extends EditorComponent {
   public UIEditorComponent(IOperationContext operationContext, InspectorEditorComponent inspector) {
     super(operationContext);
     unregisterKeyboardAction(KeyStroke.getKeyStroke("ESCAPE"));
+    setNoVirtualFile(true);
     myInspector = inspector;
 
     getSelectionManager().addSelectionListener(new SingularSelectionListenerAdapter() {
