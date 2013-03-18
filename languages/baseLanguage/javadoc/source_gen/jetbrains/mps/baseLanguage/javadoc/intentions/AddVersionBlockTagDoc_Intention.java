@@ -81,7 +81,8 @@ public class AddVersionBlockTagDoc_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNodeFactoryOperations.addNewChild(node, "version", "jetbrains.mps.baseLanguage.javadoc.structure.VersionBlockDocTag");
+      SNode addedNode = SNodeFactoryOperations.addNewChild(node, "version", "jetbrains.mps.baseLanguage.javadoc.structure.VersionBlockDocTag");
+      BlockDocTagHelper.setFocus(editorContext, addedNode);
     }
 
     public IntentionDescriptor getDescriptor() {

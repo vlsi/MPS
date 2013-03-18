@@ -132,6 +132,7 @@
     <classNode dependClassName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Templatereduce__InputNode__A" />
     <classNode dependClassName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Templatereduce__InputNode__A__included" />
     <classNode dependClassName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Templatereduce__InputNode__A__switch" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateModel" />

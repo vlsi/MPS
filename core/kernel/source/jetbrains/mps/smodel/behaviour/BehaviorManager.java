@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.behaviour;
 
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.Language;
@@ -89,7 +90,7 @@ public final class BehaviorManager {
         String behaviorClass = behaviorClassByConceptFqName(fqName);
 
         try {
-          Class cls = l.getClass(behaviorClass);
+          Class cls = ClassLoaderManager.getInstance().getClass(l, behaviorClass);
           if (cls != null) {
             method = cls.getMethod(methodName, parameterTypes);
           }

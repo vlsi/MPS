@@ -26,7 +26,7 @@ import jetbrains.mps.project.IModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.util.SNodeOperations;
-import jetbrains.mps.lang.core.plugin.Make_Facet.Target_make.Parameters;
+import jetbrains.mps.make.facets.Make_Facet.Target_make.Parameters;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -63,7 +63,7 @@ public class Binaries_Facet extends IFacet.Stub {
   }
 
   public Iterable<IFacet.Name> required() {
-    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.lang.core.Make"), new IFacet.Name("jetbrains.mps.lang.core.Generate")});
+    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.make.facets.Make"), new IFacet.Name("jetbrains.mps.lang.core.Generate")});
   }
 
   public Iterable<IFacet.Name> extended() {
@@ -109,7 +109,7 @@ public class Binaries_Facet extends IFacet.Stub {
                           monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("no output location for " + SNodeOperations.getModelLongName(smd))));
                           return null;
                         } else {
-                          IFile outputRoot = pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Parameters.class).pathToFile().invoke(output);
+                          IFile outputRoot = pa.global().properties(new ITarget.Name("jetbrains.mps.make.facets.Make.make"), Parameters.class).pathToFile().invoke(output);
                           final IFile outputDir = FileGenerationUtil.getDefaultOutputDir(model, outputRoot);
                           final FilesDelta fd = new FilesDelta(outputDir);
                           ListSequence.fromList(deltaList).addElement(fd);
@@ -197,7 +197,7 @@ public class Binaries_Facet extends IFacet.Stub {
     }
 
     public Iterable<ITarget.Name> before() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.Make.make"), new ITarget.Name("jetbrains.mps.lang.core.Make.reconcile")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.make.facets.Make.make"), new ITarget.Name("jetbrains.mps.make.facets.Make.reconcile")});
     }
 
     public ITarget.Name getName() {

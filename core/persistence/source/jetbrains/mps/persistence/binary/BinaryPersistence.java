@@ -15,9 +15,12 @@
  */
 package jetbrains.mps.persistence.binary;
 
+import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.IterableUtil;
@@ -27,7 +30,6 @@ import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
@@ -181,17 +183,18 @@ public class BinaryPersistence {
     os.writeInt(HEADER);
     os.writeInt(STREAM_ID);
     os.writeModelReference(model.getReference());
-    os.writeInt(((jetbrains.mps.smodel.SModelInternal) model).getVersion());
-    os.writeBoolean(model instanceof BinarySModel && ((BinarySModel) model).getHeader().isDoNotGenerate());
+    os.writeInt((model).getVersion());
+    SModelDescriptor md = model.getModelDescriptor();
+    os.writeBoolean((md instanceof GeneratableSModel) && ((GeneratableSModel) md).isDoNotGenerate());
     os.writeInt(0xabab);
 
-    saveModuleRefList(((jetbrains.mps.smodel.SModelInternal) model).importedLanguages(), os);
-    saveModuleRefList(((jetbrains.mps.smodel.SModelInternal) model).engagedOnGenerationLanguages(), os);
-    saveModuleRefList(((jetbrains.mps.smodel.SModelInternal) model).importedDevkits(), os);
+    saveModuleRefList((model).importedLanguages(), os);
+    saveModuleRefList((model).engagedOnGenerationLanguages(), os);
+    saveModuleRefList((model).importedDevkits(), os);
 
     // imports
-    saveImports(((jetbrains.mps.smodel.SModelInternal) model).importedModels(), os);
-    saveImports(((jetbrains.mps.smodel.SModelInternal) model).getAdditionalModelVersions(), os);
+    saveImports((model).importedModels(), os);
+    saveImports((model).getAdditionalModelVersions(), os);
 
     os.writeInt(0xbaba);
   }

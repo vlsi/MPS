@@ -33,15 +33,29 @@ import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.progress.CancellationMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.BootstrapLanguages;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 
 /**
  * Evgeny Gryaznov, 1/25/11
@@ -54,13 +68,14 @@ public class GenerationFacade {
     List<SModel> list = generator.getOwnTemplateModels();
     List<SNode> mappings = new ArrayList<SNode>();
     for (SModel templateModel : list) {
-      List<SNode> nodes = ((jetbrains.mps.smodel.SModelInternal) templateModel).getFastNodeFinder().getNodes(BootstrapLanguages.concept_generator_MappingConfiguration, true);
+      List<SNode> nodes = ((jetbrains.mps.smodel.SModelInternal) templateModel).getFastNodeFinder().getNodes(
+          BootstrapLanguages.concept_generator_MappingConfiguration, true);
       mappings.addAll(nodes);
     }
     return mappings;
   }
 
-  public static Collection<TemplateModule> getPossiblyEngagedGenerators(jetbrains.mps.smodel.SModel model) {
+  public static Collection<TemplateModule> getPossiblyEngagedGenerators(SModel model) {
     return GenerationPartitioningUtil.getTemplateModules(model);
   }
 
@@ -89,7 +104,7 @@ public class GenerationFacade {
       Map<String, String> externalHashes = oldDependencies.getExternalHashes();
       for (Entry<String, String> entry : externalHashes.entrySet()) {
         String modelReference = entry.getKey();
-        SModel rmd = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(modelReference));
+        SModel rmd = SModelRepository.getInstance().getModelDescriptor(jetbrains.mps.smodel.SModelReference.fromString(modelReference));
         if (rmd == null) {
           result.add(sm);
           break;
@@ -130,13 +145,13 @@ public class GenerationFacade {
   }
 
   public static boolean generateModels(final Project p,
-                     final List<? extends SModel> inputModels,
-                     final IOperationContext invocationContext,
-                     final IGenerationHandler generationHandler,
-                     final ProgressMonitor monitor,
-                     final IMessageHandler messages,
-                     final GenerationOptions options,
-                     final TransientModelsProvider tmProvider) {
+      final List<? extends SModel> inputModels,
+      final IOperationContext invocationContext,
+      final IGenerationHandler generationHandler,
+      final ProgressMonitor monitor,
+      final IMessageHandler messages,
+      final GenerationOptions options,
+      final TransientModelsProvider tmProvider) {
     final boolean[] result = new boolean[1];
     final TransientModelsProvider transientModelsComponent = tmProvider;
 
@@ -160,7 +175,8 @@ public class GenerationFacade {
 
     GeneratorLoggerAdapter logger = new GeneratorLoggerAdapter(messages, options.isShowInfo(), options.isShowWarnings(), options.isKeepModelsWithWarnings());
 
-    final GenerationController gc = new GenerationController(inputModels, transientModelsComponent, options, generationHandler, logger, invocationContext, new CancellationMonitor(monitor));
+    final GenerationController gc = new GenerationController(inputModels, transientModelsComponent, options, generationHandler, logger, invocationContext,
+        new CancellationMonitor(monitor));
     ModelAccess.instance().requireRead(new Runnable() {
       @Override
       public void run() {

@@ -4,16 +4,15 @@
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="38s949ymo9nq7jj7p2lrfowy0hurndx" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="5cgkv9hjtx5w7uuovfx48bh4lywgdpw" />
-  <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" hash="-bc0i1l6btg6dfagilgcysc728vr1w6f" />
-  <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" hash="21ke5b6w2ivmbysoi69kc53plopvudc" />
-  <dep model="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)" hash="1npksqwsfqyeqseklv7r5wltavm3wso" />
-  <dep model="r:f88361e7-5098-4f71-afec-1ad5641911e8(jetbrains.mps.lang.plugin.standalone.generator.template.main@generator)" hash="-bcjsytaz4o6te5sld54mrapf0n8wnlt" />
+  <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="aih6mod30hbbl8r1xz9vfu4gypkll6l" />
+  <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" hash="-93gbc26dfs1v8gk2kqfbr5vn9tuq1s9" />
+  <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" hash="-dbfqvaem4cu1zp8j3egrwuzkmvd4kk9" />
+  <dep model="r:f88361e7-5098-4f71-afec-1ad5641911e8(jetbrains.mps.lang.plugin.standalone.generator.template.main@generator)" hash="bv1sewv59u2y056rwh63ooj5jj1tidj" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="8lb0ssmvoceitlofqs9sah312lyoau7" />
   <common hash="1zfz9vdy66ubyvddgyyyozbsn2hqc1l" />
-  <source id="6170050146384276436" name="Create" hash="-9layi3bp2rp9zt2uqolpbermsqbekqm">
+  <source id="6170050146384276436" name="Create" hash="-9layi3bp2rp9zt2uqolpbermsqbekqm" dependsOnNodes="true">
     <dep root="1626657127781621490" />
     <dep root="1626657127781667188" />
     <dep root="2025581204008440327" />
@@ -48,10 +47,9 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
-    <dep model="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)" />
     <file name="Create_Test.java" />
   </source>
-  <source id="6170050146384276465" name="RemoveRow_FromLastCell" hash="q2j32330w5h81xof7fk87hrtns4j8p">
+  <source id="6170050146384276465" name="RemoveRow_FromLastCell" hash="q2j32330w5h81xof7fk87hrtns4j8p" dependsOnNodes="true">
     <dep root="1626657127781621490" />
     <dep root="1626657127781667188" />
     <dep root="2025581204008440327" />
@@ -86,10 +84,9 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
-    <dep model="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)" />
     <file name="RemoveRow_FromLastCell_Test.java" />
   </source>
-  <source id="6170050146384276509" name="EditCell" hash="1luod4p4b8w8wvew6lb65dr4f59ogjw">
+  <source id="6170050146384276509" name="EditCell" hash="1luod4p4b8w8wvew6lb65dr4f59ogjw" dependsOnNodes="true">
     <dep root="1626657127781621490" />
     <dep root="1626657127781667188" />
     <dep root="2025581204008440327" />
@@ -124,10 +121,9 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
-    <dep model="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)" />
     <file name="EditCell_Test.java" />
   </source>
-  <source id="6170050146384276559" name="InsertRowAfter" hash="9w2817v26hm5x1qp9r5x7tsvxz67x6o">
+  <source id="6170050146384276559" name="InsertRowAfter" hash="9w2817v26hm5x1qp9r5x7tsvxz67x6o" dependsOnNodes="true">
     <dep root="1626657127781621490" />
     <dep root="1626657127781667188" />
     <dep root="2025581204008440327" />
@@ -162,10 +158,9 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
-    <dep model="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)" />
     <file name="InsertRowAfter_Test.java" />
   </source>
-  <source id="6341395909949371892" name="InsertRowBefore" hash="deli64fze564svmfoyjvbmwpi6813d2">
+  <source id="6341395909949371892" name="InsertRowBefore" hash="deli64fze564svmfoyjvbmwpi6813d2" dependsOnNodes="true">
     <dep root="1626657127781621490" />
     <dep root="1626657127781667188" />
     <dep root="2025581204008440327" />
@@ -200,10 +195,9 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
-    <dep model="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)" />
     <file name="InsertRowBefore_Test.java" />
   </source>
-  <source id="8143909488490604939" name="RemoveRow_FromFirstCell" hash="-1a0oy54xmb0bnwv3xahychydp5rlvwo">
+  <source id="8143909488490604939" name="RemoveRow_FromFirstCell" hash="-1a0oy54xmb0bnwv3xahychydp5rlvwo" dependsOnNodes="true">
     <dep root="1626657127781621490" />
     <dep root="1626657127781667188" />
     <dep root="2025581204008440327" />
@@ -238,10 +232,9 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
-    <dep model="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)" />
     <file name="RemoveRow_FromFirstCell_Test.java" />
   </source>
-  <source id="6814837785823339529" name="InsertColumnBefore" hash="-1e8qejgf0zt7d4yl64xnqxmga3wtlnr">
+  <source id="6814837785823339529" name="InsertColumnBefore" hash="-1e8qejgf0zt7d4yl64xnqxmga3wtlnr" dependsOnNodes="true">
     <dep root="1626657127781621490" />
     <dep root="1626657127781667188" />
     <dep root="2025581204008440327" />
@@ -276,10 +269,9 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
-    <dep model="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)" />
     <file name="InsertColumnBefore_Test.java" />
   </source>
-  <source id="6814837785823361407" name="InsertColumnAfter" hash="yvd8viom4bhtrkc6yg3gmgfoi335c2">
+  <source id="6814837785823361407" name="InsertColumnAfter" hash="yvd8viom4bhtrkc6yg3gmgfoi335c2" dependsOnNodes="true">
     <dep root="1626657127781621490" />
     <dep root="1626657127781667188" />
     <dep root="2025581204008440327" />
@@ -314,10 +306,9 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
-    <dep model="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)" />
     <file name="InsertColumnAfter_Test.java" />
   </source>
-  <source id="6814837785823361474" name="RemoveColumn" hash="-3hrykpcy9rlixvvp7zc9cx0ff7xshwd">
+  <source id="6814837785823361474" name="RemoveColumn" hash="-3hrykpcy9rlixvvp7zc9cx0ff7xshwd" dependsOnNodes="true">
     <dep root="1626657127781621490" />
     <dep root="1626657127781667188" />
     <dep root="2025581204008440327" />
@@ -352,10 +343,9 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
-    <dep model="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)" />
     <file name="RemoveColumn_Test.java" />
   </source>
-  <source id="1626657127781621490" name="TabNavigation" hash="9oa2w8241rqrbt0j9hjaxc00ck90dhh">
+  <source id="1626657127781621490" name="TabNavigation" hash="9oa2w8241rqrbt0j9hjaxc00ck90dhh" dependsOnNodes="true">
     <dep root="1626657127781667188" />
     <dep root="2025581204008440327" />
     <dep root="2025581204008442830" />
@@ -394,11 +384,10 @@
     <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
-    <dep model="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="TabNavigation_Test.java" />
   </source>
-  <source id="1626657127781667188" name="TabNavigationNextLine" hash="-6dked5toitkhgl7zn73k43zx1yweqhw">
+  <source id="1626657127781667188" name="TabNavigationNextLine" hash="-6dked5toitkhgl7zn73k43zx1yweqhw" dependsOnNodes="true">
     <dep root="1626657127781621490" />
     <dep root="2025581204008440327" />
     <dep root="2025581204008442830" />
@@ -437,11 +426,10 @@
     <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
-    <dep model="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="TabNavigationNextLine_Test.java" />
   </source>
-  <source id="5481602834662762302" name="InsertRowBefore_FromFirstCell_ByIns" hash="-ahx2j5zfpbl8vygfpwu6mik9zhk697l">
+  <source id="5481602834662762302" name="InsertRowBefore_FromFirstCell_ByIns" hash="-ahx2j5zfpbl8vygfpwu6mik9zhk697l" dependsOnNodes="true">
     <dep root="1626657127781621490" />
     <dep root="1626657127781667188" />
     <dep root="2025581204008440327" />
@@ -476,10 +464,9 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
-    <dep model="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)" />
     <file name="InsertRowBefore_FromFirstCell_ByIns_Test.java" />
   </source>
-  <source id="5481602834662808045" name="InsertRowBefore_FromLastCell_ByIns" hash="8lamuhlzt57vuqy70gq10ys15gjgpli">
+  <source id="5481602834662808045" name="InsertRowBefore_FromLastCell_ByIns" hash="8lamuhlzt57vuqy70gq10ys15gjgpli" dependsOnNodes="true">
     <dep root="1626657127781621490" />
     <dep root="1626657127781667188" />
     <dep root="2025581204008440327" />
@@ -514,10 +501,9 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
-    <dep model="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)" />
     <file name="InsertRowBefore_FromLastCell_ByIns_Test.java" />
   </source>
-  <source id="6610030841081007203" name="RemoveLastCell" hash="5o7mk00tjr8g7d8cr3rzud6gtqojx4n">
+  <source id="6610030841081007203" name="RemoveLastCell" hash="5o7mk00tjr8g7d8cr3rzud6gtqojx4n" dependsOnNodes="true">
     <dep root="1626657127781621490" />
     <dep root="1626657127781667188" />
     <dep root="2025581204008440327" />
@@ -552,10 +538,9 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
-    <dep model="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)" />
     <file name="RemoveLastCell_Test.java" />
   </source>
-  <source id="8316952525720946148" name="RemoveLastRow" hash="-en49ylwnnagkktl25fzmtg83a5fyytx">
+  <source id="8316952525720946148" name="RemoveLastRow" hash="-en49ylwnnagkktl25fzmtg83a5fyytx" dependsOnNodes="true">
     <dep root="1626657127781621490" />
     <dep root="1626657127781667188" />
     <dep root="2025581204008440327" />
@@ -590,10 +575,9 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
-    <dep model="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)" />
     <file name="RemoveLastRow_Test.java" />
   </source>
-  <source id="8316952525720946183" name="CreateRowInEmptyTable" hash="-9yvjvnjolpirukcty5u6zbrnn3skc3a">
+  <source id="8316952525720946183" name="CreateRowInEmptyTable" hash="-9yvjvnjolpirukcty5u6zbrnn3skc3a" dependsOnNodes="true">
     <dep root="1626657127781621490" />
     <dep root="1626657127781667188" />
     <dep root="2025581204008440327" />
@@ -628,10 +612,9 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
-    <dep model="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)" />
     <file name="CreateRowInEmptyTable_Test.java" />
   </source>
-  <source id="8316952525720946217" name="CreateCellInEmptyRow" hash="6ajxgz6nof8kaqmg07ewst3993defao">
+  <source id="8316952525720946217" name="CreateCellInEmptyRow" hash="6ajxgz6nof8kaqmg07ewst3993defao" dependsOnNodes="true">
     <dep root="1626657127781621490" />
     <dep root="1626657127781667188" />
     <dep root="2025581204008440327" />
@@ -666,13 +649,12 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
-    <dep model="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)" />
     <file name="CreateCellInEmptyRow_Test.java" />
   </source>
   <source id="458414629082786297" hash="-b8ezf56jnw8cwej68yhjd682467m2ua">
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="7541022036347681895" name="SelectLeftInCell" hash="42ho1tothfefxdqjlrcjqtod578yvyu">
+  <source id="7541022036347681895" name="SelectLeftInCell" hash="42ho1tothfefxdqjlrcjqtod578yvyu" dependsOnNodes="true">
     <dep root="1626657127781621490" />
     <dep root="1626657127781667188" />
     <dep root="2025581204008440327" />
@@ -707,10 +689,9 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
-    <dep model="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)" />
     <file name="SelectLeftInCell_Test.java" />
   </source>
-  <source id="8064689248313190611" name="SelectRow" hash="-c3tfsh6c18rhkc67regr5qmdxj1tk5g">
+  <source id="8064689248313190611" name="SelectRow" hash="-c3tfsh6c18rhkc67regr5qmdxj1tk5g" dependsOnNodes="true">
     <dep root="1626657127781621490" />
     <dep root="1626657127781667188" />
     <dep root="2025581204008440327" />
@@ -745,10 +726,9 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
-    <dep model="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)" />
     <file name="SelectRow_Test.java" />
   </source>
-  <source id="9080919888312484967" name="HomeFromColumnSelection" hash="-5xjxoit80kp5urg11rfm5x3m7oplgk6">
+  <source id="9080919888312484967" name="HomeFromColumnSelection" hash="-5xjxoit80kp5urg11rfm5x3m7oplgk6" dependsOnNodes="true">
     <dep root="1626657127781621490" />
     <dep root="1626657127781667188" />
     <dep root="2025581204008440327" />
@@ -783,10 +763,9 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
-    <dep model="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)" />
     <file name="HomeFromColumnSelection_Test.java" />
   </source>
-  <source id="9080919888312497299" name="EndFromColumnSelection" hash="-7rqvxgjvq03yj58lo9iy5fz43o6eqj3">
+  <source id="9080919888312497299" name="EndFromColumnSelection" hash="-7rqvxgjvq03yj58lo9iy5fz43o6eqj3" dependsOnNodes="true">
     <dep root="1626657127781621490" />
     <dep root="1626657127781667188" />
     <dep root="2025581204008440327" />
@@ -821,10 +800,9 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
-    <dep model="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)" />
     <file name="EndFromColumnSelection_Test.java" />
   </source>
-  <source id="2025581204008440327" name="LocalHomeFromColumnSelection" hash="czuag9rfs5b1ozueonvta7q3xwx80dz">
+  <source id="2025581204008440327" name="LocalHomeFromColumnSelection" hash="czuag9rfs5b1ozueonvta7q3xwx80dz" dependsOnNodes="true">
     <dep root="1626657127781621490" />
     <dep root="1626657127781667188" />
     <dep root="2025581204008442830" />
@@ -859,10 +837,9 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
-    <dep model="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)" />
     <file name="LocalHomeFromColumnSelection_Test.java" />
   </source>
-  <source id="2025581204008442830" name="LocalEndFromColumnSelection" hash="a6p9td5koy2f4si91nyrmm84xfb7lfv">
+  <source id="2025581204008442830" name="LocalEndFromColumnSelection" hash="a6p9td5koy2f4si91nyrmm84xfb7lfv" dependsOnNodes="true">
     <dep root="1626657127781621490" />
     <dep root="1626657127781667188" />
     <dep root="2025581204008440327" />
@@ -897,10 +874,9 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
-    <dep model="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)" />
     <file name="LocalEndFromColumnSelection_Test.java" />
   </source>
-  <source id="2025581204008533737" name="MoveElementsUpFromCoumnSelection" hash="cbzvt2l2govaj5d2xbklajm2w90rfm6">
+  <source id="2025581204008533737" name="MoveElementsUpFromCoumnSelection" hash="cbzvt2l2govaj5d2xbklajm2w90rfm6" dependsOnNodes="true">
     <dep root="1626657127781621490" />
     <dep root="1626657127781667188" />
     <dep root="2025581204008440327" />
@@ -935,10 +911,9 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
-    <dep model="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)" />
     <file name="MoveElementsUpFromCoumnSelection_Test.java" />
   </source>
-  <source id="2025581204008533796" name="MoveElementsDownFromCoumnSelection" hash="5ekndvxkh2oupbid53orgo8l56lw71t">
+  <source id="2025581204008533796" name="MoveElementsDownFromCoumnSelection" hash="5ekndvxkh2oupbid53orgo8l56lw71t" dependsOnNodes="true">
     <dep root="1626657127781621490" />
     <dep root="1626657127781667188" />
     <dep root="2025581204008440327" />
@@ -973,10 +948,9 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
-    <dep model="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)" />
     <file name="MoveElementsDownFromCoumnSelection_Test.java" />
   </source>
-  <source id="5097407566121950102" name="RootHomeFromColumnSelection" hash="-854fzg95tq94sv4wtejsoaoyo0mgx3r">
+  <source id="5097407566121950102" name="RootHomeFromColumnSelection" hash="-854fzg95tq94sv4wtejsoaoyo0mgx3r" dependsOnNodes="true">
     <dep root="1626657127781621490" />
     <dep root="1626657127781667188" />
     <dep root="2025581204008440327" />
@@ -1011,10 +985,9 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
-    <dep model="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)" />
     <file name="RootHomeFromColumnSelection_Test.java" />
   </source>
-  <source id="5097407566121988446" name="RootEndFromColumnSelection" hash="-975izo9oqzpdtqj8kt80o17gcpj2o4f">
+  <source id="5097407566121988446" name="RootEndFromColumnSelection" hash="-975izo9oqzpdtqj8kt80o17gcpj2o4f" dependsOnNodes="true">
     <dep root="1626657127781621490" />
     <dep root="1626657127781667188" />
     <dep root="2025581204008440327" />
@@ -1049,10 +1022,9 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
-    <dep model="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)" />
     <file name="RootEndFromColumnSelection_Test.java" />
   </source>
-  <source id="5476958923832872824" name="SelectUpFromColumnSelection" hash="-1t96kn2b5f6f9xdjzpx63e09gp8rlsq">
+  <source id="5476958923832872824" name="SelectUpFromColumnSelection" hash="-1t96kn2b5f6f9xdjzpx63e09gp8rlsq" dependsOnNodes="true">
     <dep root="1626657127781621490" />
     <dep root="1626657127781667188" />
     <dep root="2025581204008440327" />
@@ -1087,10 +1059,9 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
-    <dep model="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)" />
     <file name="SelectUpFromColumnSelection_Test.java" />
   </source>
-  <source id="5476958923832881572" name="SelectDownFromColumnSelection" hash="oq6qmpdfwlm7ztnsmxqg40voku7479">
+  <source id="5476958923832881572" name="SelectDownFromColumnSelection" hash="oq6qmpdfwlm7ztnsmxqg40voku7479" dependsOnNodes="true">
     <dep root="1626657127781621490" />
     <dep root="1626657127781667188" />
     <dep root="2025581204008440327" />
@@ -1125,7 +1096,6 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
-    <dep model="r:e02ee75b-0624-4ff2-b4d9-d2277a157ff4(jetbrains.mps.lang.editor.table.genericTable.test)" />
     <file name="SelectDownFromColumnSelection_Test.java" />
   </source>
   <source id="7162597690967657579" hash="7m8o5onlkpkaki6tw8henznw94kfn6e">

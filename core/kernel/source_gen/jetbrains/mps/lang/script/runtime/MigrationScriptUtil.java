@@ -20,7 +20,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionKind;
-import jetbrains.mps.runtime.IClassLoadingModule;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -72,11 +72,11 @@ public class MigrationScriptUtil {
       LOG.error("Module not found: " + languageNamespace);
       return null;
     }
-    if (!(mod instanceof IClassLoadingModule)) {
-      LOG.error("Module not IClassLoadingModule: " + languageNamespace);
+    if (!(ClassLoaderManager.getInstance().canLoad(mod))) {
+      LOG.error("Module can't load classes: " + languageNamespace);
       return null;
     }
-    aClass = ((IClassLoadingModule) mod).getClass(fqClassName);
+    aClass = ClassLoaderManager.getInstance().getClass(mod, fqClassName);
     if (aClass == null) {
       return null;
     }

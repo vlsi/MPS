@@ -83,6 +83,7 @@
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.jdom.Document" />
     <classNode dependClassName="org.jdom.Element" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
   </dependency>
   <dependency className="jetbrains.mps.project.persistence.ModuleDescriptorPersistence" file="ModuleDescriptorPersistence.java">
     <classNode dependClassName="java.io.IOException" />
@@ -109,6 +110,7 @@
     <classNode dependClassName="jetbrains.mps.persistence.MementoImpl" />
     <classNode dependClassName="jetbrains.mps.persistence.PersistenceRegistry" />
     <classNode dependClassName="jetbrains.mps.project.persistence.ModuleReadException" />
+    <classNode dependClassName="jetbrains.mps.project.structure.ProjectStructureModelRoot" />
     <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRootDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRootManager" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.Dependency" />
@@ -157,6 +159,7 @@
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.jdom.Document" />
     <classNode dependClassName="org.jdom.Element" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
   </dependency>
   <dependency className="jetbrains.mps.project.persistence.SolutionDescriptorPersistence" file="SolutionDescriptorPersistence.java">
     <classNode dependClassName="java.io.OutputStream" />

@@ -43,7 +43,7 @@ import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
 import com.intellij.openapi.util.Ref;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.Action;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
@@ -262,7 +262,7 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
       myTopPanel
     )).add(separator, gbc);
     ListSequence.fromList(myEditorSeparators).addElement(separator);
-    if (!(SModelOperations.isReadOnly(myChangeSet.getNewModel()))) {
+    if (!(SModelOperations.isReadOnly(myChangeSet.getNewModel().getModelDescriptor()))) {
       DiffButtonsPainter.addTo(this, myOldEditor, layout, inspector);
       DiffButtonsPainter.addTo(this, myNewEditor, layout, inspector);
     }

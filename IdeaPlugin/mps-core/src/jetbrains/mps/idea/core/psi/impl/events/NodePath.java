@@ -29,11 +29,8 @@ import java.util.List;
 import java.util.ListIterator;
 
 /**
- * Created with IntelliJ IDEA.
  * User: fyodor
  * Date: 2/18/13
- * Time: 2:51 PM
- * To change this template use File | Settings | File Templates.
  */
 public final class NodePath {
 

@@ -36,6 +36,7 @@ import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.quickQueryLanguage.runtime.QueryExecutor;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.quickQueryLanguage.runtime.Query;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.Project;
@@ -137,7 +138,7 @@ public class FindInstancesDialog extends BaseDialog {
       public void run() {
         model.value = SNodeOperations.getModel(myNode);
         fqName.value = jetbrains.mps.util.SNodeOperations.getModelLongName(model.value) + "." + QueryExecutor.GENERATED_QUERY_NAME;
-        loader.value = cd.getClassLoader(SModelUtil.getDeclaringLanguage(SNodeOperations.getConceptDeclaration(FindInstancesDialog.this.myNode)).getClassLoader());
+        loader.value = cd.getClassLoader(ClassLoaderManager.getInstance().getClassLoader(SModelUtil.getDeclaringLanguage(SNodeOperations.getConceptDeclaration(FindInstancesDialog.this.myNode))));
       }
     });
     final Wrappers._T<Query> query = new Wrappers._T<Query>(null);

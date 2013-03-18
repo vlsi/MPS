@@ -72,7 +72,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
       } else {
         setText(nodePointer.toString());
       }
-      setAdditionalText("" + nodePointer.getModelReference().getSModelFqName());
+      setAdditionalText("" + nodePointer.getModelReference().getModelName());
     } else {
       setText("<" + kind + ">");
     }

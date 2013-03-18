@@ -12,7 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import java.util.Map;
 import jetbrains.mps.smodel.LanguageAspect;
 import java.util.List;
@@ -101,7 +101,7 @@ public class MoveConcepts extends BaseLoggableRefactoring {
 
     // refactoring itself 
     for (SNode node : refactoringContext.getSelectedNodes()) {
-      refactoringContext.changeFeatureName(node, ((SModelReference) refactoringContext.getParameter("targetModel")).getSModelFqName().toString() + "." + SPropertyOperations.getString(node, "name"), SPropertyOperations.getString(node, "name"));
+      refactoringContext.changeFeatureName(node, ((SModelReference) refactoringContext.getParameter("targetModel")).getModelName() + "." + SPropertyOperations.getString(node, "name"), SPropertyOperations.getString(node, "name"));
     }
     refactoringContext.moveNodesToModel(refactoringContext.getSelectedNodes(), SModelRepository.getInstance().getModelDescriptor(((SModelReference) refactoringContext.getParameter("targetModel"))));
     // move aspects 

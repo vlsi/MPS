@@ -96,6 +96,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.LinkedHashSet" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
+    <classNode dependClassName="jetbrains.mps.classloading.ClassLoaderManager" />
     <classNode dependClassName="jetbrains.mps.library.LibraryInitializer" />
     <classNode dependClassName="jetbrains.mps.logging.LogEntry" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
@@ -103,7 +104,6 @@
     <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
-    <classNode dependClassName="jetbrains.mps.reloading.ClassLoaderManager" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="org.apache.log4j.Logger" />

@@ -27,12 +27,26 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.stub.ProjectStructureBuilder;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.BaseMPSModuleOwner;
+import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
+import jetbrains.mps.smodel.BootstrapLanguages;
+import jetbrains.mps.smodel.FastNodeFinder;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleOwner;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
+import jetbrains.mps.smodel.SModelFqName;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
@@ -53,7 +67,8 @@ import java.util.concurrent.ConcurrentHashMap;
 public class ProjectStructureModule extends AbstractModule implements CoreComponent {
 
   //  private static final Logger LOG = Logger.getLogger(ProjectStructureModule.class);
-  private static final ModuleReference MODULE_REFERENCE = ModuleReference.fromString("642f71f8-327a-425b-84f9-44ad58786d27(jetbrains.mps.lang.project.modules)");
+  private static final ModuleReference MODULE_REFERENCE = ModuleReference.fromString(
+      "642f71f8-327a-425b-84f9-44ad58786d27(jetbrains.mps.lang.project.modules)");
 
   private Map<SModelReference, ProjectStructureSModelDescriptor> myModels = new ConcurrentHashMap<SModelReference, ProjectStructureSModelDescriptor>();
 
@@ -232,7 +247,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     SModelFqName fqName = getModelFqName(module);
     SModuleId moduleId = module.getModuleReference().getModuleId();
     SModelId id = moduleId != null ? jetbrains.mps.smodel.SModelId.foreign("project", moduleId.toString()) : null;
-    return new SModelReference(fqName, id);
+    return new jetbrains.mps.smodel.SModelReference(fqName, id);
   }
 
   public String toString() {
@@ -283,28 +298,28 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
         NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
           @Override
           public void run() {
-            new ProjectStructureBuilder(moduleDescriptor, file, model) {
+            new ProjectStructureBuilder(moduleDescriptor, file, model.getModelDescriptor()) {
               @Override
               public Iterable<org.jetbrains.mps.openapi.model.SModelReference> loadReferences(SNode m, ModuleDescriptor descriptor) {
                 SModule module = moduleDescriptor == descriptor ? myModule :
-                  ModuleRepositoryFacade.getInstance().getModule(descriptor.getModuleReference());
+                    ModuleRepositoryFacade.getInstance().getModule(descriptor.getModuleReference());
                 if (module == null) {
                   return Collections.emptyList();
                 }
 
                 return Sequence.<org.jetbrains.mps.openapi.model.SModel>fromIterable(module.getModels()).
-                  where(new IWhereFilter<org.jetbrains.mps.openapi.model.SModel>() {
-                    @Override
-                    public boolean accept(org.jetbrains.mps.openapi.model.SModel o) {
-                      return SModelStereotype.isUserModel(o);
-                    }
-                  }).
-                  select(new ISelector<org.jetbrains.mps.openapi.model.SModel, org.jetbrains.mps.openapi.model.SModelReference>() {
-                    @Override
-                    public org.jetbrains.mps.openapi.model.SModelReference select(org.jetbrains.mps.openapi.model.SModel o) {
-                      return o.getReference();
-                    }
-                  });
+                    where(new IWhereFilter<org.jetbrains.mps.openapi.model.SModel>() {
+                      @Override
+                      public boolean accept(org.jetbrains.mps.openapi.model.SModel o) {
+                        return SModelStereotype.isUserModel(o);
+                      }
+                    }).
+                    select(new ISelector<org.jetbrains.mps.openapi.model.SModel, org.jetbrains.mps.openapi.model.SModelReference>() {
+                      @Override
+                      public org.jetbrains.mps.openapi.model.SModelReference select(org.jetbrains.mps.openapi.model.SModel o) {
+                        return o.getReference();
+                      }
+                    });
               }
             }.convert();
           }
@@ -316,16 +331,15 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     private void dropModel() {
       if (mySModel == null) return;
 
-      final SModel oldModel = mySModel;
-      ((jetbrains.mps.smodel.SModelInternal) oldModel).setModelDescriptor(null);
+      (mySModel).setModelDescriptor(null);
       mySModel = null;
       if (ModelAccess.instance().canWrite()) {
-        notifyModelReplaced(oldModel);
+        notifyModelReplaced(mySModel == null ? null : mySModel.getModelDescriptor());
       } else {
         ModelAccess.instance().runWriteInEDT(new Runnable() {
           @Override
           public void run() {
-            notifyModelReplaced(oldModel);
+            notifyModelReplaced(mySModel.getModelDescriptor());
           }
         });
       }
@@ -354,7 +368,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
 
     @Override
     protected FastNodeFinder createFastNodeFinder() {
-      return new TransientModelNodeFinder(this);
+      return new TransientModelNodeFinder(this.getModelDescriptor());
     }
   }
 }

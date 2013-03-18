@@ -34,7 +34,7 @@ import com.intellij.psi.PsiExpression;
 import com.intellij.psi.PsiLiteralExpression;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiJavaFile;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import com.intellij.psi.PsiAnnotation;
 import com.intellij.psi.PsiModifierListOwner;
 import com.intellij.psi.PsiTypeParameterListOwner;
@@ -428,7 +428,7 @@ public class ASTConverter {
     PsiJavaFile file = (PsiJavaFile) e;
     String qualClassName = sb.toString();
     String packageName = file.getPackageName();
-    SModelReference modelRef = SModelReference.fromString(packageName);
+    SModelReference modelRef = jetbrains.mps.smodel.SModelReference.fromString(packageName);
 
     SNode clsType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     clsType.setReference("classifier", new DynamicReference("classifier", clsType, modelRef, qualClassName));

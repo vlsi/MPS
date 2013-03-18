@@ -35,11 +35,8 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Created with IntelliJ IDEA.
  * User: fyodor
  * Date: 11/6/12
- * Time: 3:35 PM
- * To change this template use File | Settings | File Templates.
  */
 public abstract class SimpleTypecheckingContext<
     STATE extends State,

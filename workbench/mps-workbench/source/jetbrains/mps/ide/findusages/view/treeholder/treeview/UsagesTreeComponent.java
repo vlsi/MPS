@@ -45,7 +45,7 @@ import jetbrains.mps.ide.ui.TreeHighlighterExtension;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
 

@@ -91,7 +91,7 @@ public class ReducedMakeFacetConfiguration {
           skipCopyTraceinfo._0(true);
         }
 
-        Tuples._2<Boolean, Boolean> compileProps = (Tuples._2<Boolean, Boolean>) pp.properties(new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compile"), Object.class);
+        Tuples._2<Boolean, Boolean> compileProps = (Tuples._2<Boolean, Boolean>) pp.properties(new ITarget.Name("jetbrains.mps.make.facets.JavaCompile.compile"), Object.class);
         if (compileProps != null) {
           compileProps._1(true);
         }
@@ -105,11 +105,11 @@ public class ReducedMakeFacetConfiguration {
         Tuples._1<Map<String, String>> hashes = (Tuples._1<Map<String, String>>) pp.properties(new ITarget.Name("jetbrains.mps.build.reduced.CollectHashes.collect"), Object.class);
         hashes._0(fileHashes);
 
-        Tuples._1<Boolean> skipReconcile = (Tuples._1<Boolean>) pp.properties(new ITarget.Name("jetbrains.mps.lang.core.Make.reconcile"), Object.class);
+        Tuples._1<Boolean> skipReconcile = (Tuples._1<Boolean>) pp.properties(new ITarget.Name("jetbrains.mps.make.facets.Make.reconcile"), Object.class);
         skipReconcile._0(true);
 
         // override solution's output path 
-        Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> pathToFile = (Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>>) pp.properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Object.class);
+        Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> pathToFile = (Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>>) pp.properties(new ITarget.Name("jetbrains.mps.make.facets.Make.make"), Object.class);
         pathToFile._0(new _FunctionTypes._return_P1_E0<IFile, String>() {
           public IFile invoke(String path) {
             return outputPathRedirects.getRedirect(path);

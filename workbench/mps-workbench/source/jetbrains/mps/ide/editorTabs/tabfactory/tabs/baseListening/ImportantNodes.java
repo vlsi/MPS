@@ -17,7 +17,7 @@
 package jetbrains.mps.ide.editorTabs.tabfactory.tabs.baseListening;
 
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.HashMap;

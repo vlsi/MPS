@@ -6,7 +6,7 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;

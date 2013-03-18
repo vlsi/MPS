@@ -28,7 +28,7 @@ public class ShowAdapterUsages_MigrationScript extends BaseMigrationScript {
 
       public boolean isApplicableInstanceNode(SNode node) {
         for (SReference ref : node.getReferences()) {
-          String targetModelFQName = ref.getTargetSModelReference().getSModelFqName().toString();
+          String targetModelFQName = ref.getTargetSModelReference().getModelName();
           if (targetModelFQName.endsWith(".structure@java_stub")) {
             return true;
           }

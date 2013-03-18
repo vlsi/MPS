@@ -17,7 +17,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -25,6 +25,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.UnregisteredNodes;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import com.intellij.openapi.project.Project;
@@ -86,7 +87,7 @@ public class InternalActionsUtils {
             // hack for conf stubs 
             UnregisteredNodes.instance().clear();
             if (num.value++ % 100 == 0) {
-              LOG.warning("Model num: " + num.value + ", name: " + modelRef.getLongName());
+              LOG.warning("Model num: " + num.value + ", name: " + SModelStereotype.withoutStereotype(modelRef.getModelName()));
             }
             SModel model = SModelRepository.getInstance().getModelDescriptor(modelRef);
             if (model != null) {

@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="8xxyoiw9f93vyd88m5yppyu3zd5oyc4">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="38s949ymo9nq7jj7p2lrfowy0hurndx" />
   <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" hash="iak6qkoqvisy1gghydx23iwnxiu2qf" />
   <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="-b5n45squa5g1bvgomh8vpjoxp4hdqn" />
-  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-dqdp89qyu48i5kq0qomcw0yllca2bc3" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-7o8xa3p3tp8si9e68xqt1zj675s726v" />
   <dep model="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" hash="1dipjdn88brcocmkjfipcc52nij965a" />
   <dep model="r:00000000-0000-4000-0000-011c8959037e(jetbrains.mps.lang.dataFlow.generator.baseLanguage.template.main@generator)" hash="-7oxo7z3jbm6egxr2ppryiwwzs1pcsf3" />
-  <dep model="r:a6e35534-2557-4640-a71b-fb8044ae6d8e(jetbrains.mps.baseLanguage.constructors.dataFlow)" hash="8xxyoiw9f93vyd88m5yppyu3zd5oyc4" />
   <dep model="r:bd4b8fd9-079b-4b11-a733-9c0bea3600f2(jetbrains.mps.baseLanguage.constructors.structure)" hash="aq3lj6w2bmt7d4sr0bi3j8b5rtbv2r5" />
-  <common hash="8ytb9nuyxg9hkevqbdsufw9a034lw37">
+  <common hash="8ytb9nuyxg9hkevqbdsufw9a034lw37" dependsOnNodes="true">
     <dep root="3782220528620780954" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959037e(jetbrains.mps.lang.dataFlow.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:a6e35534-2557-4640-a71b-fb8044ae6d8e(jetbrains.mps.baseLanguage.constructors.dataFlow)" />
     <dep model="r:bd4b8fd9-079b-4b11-a733-9c0bea3600f2(jetbrains.mps.baseLanguage.constructors.structure)" />
     <file name="DFABuilders.java" />
   </common>

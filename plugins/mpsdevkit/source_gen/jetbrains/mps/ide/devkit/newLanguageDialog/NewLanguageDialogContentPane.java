@@ -21,17 +21,10 @@ import org.jdesktop.beansbinding.Bindings;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.project.Solution;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.ScopeOperations;
+import java.io.IOException;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.library.LanguageDesign_DevKit;
 import java.io.File;
+import jetbrains.mps.logging.Logger;
 
 public class NewLanguageDialogContentPane extends JPanel {
   public NewLanguageDialogContentPane myThis;
@@ -217,32 +210,21 @@ public class NewLanguageDialogContentPane extends JPanel {
     myThis.getDialog().dispose();
     NewModuleUtil.runModuleCreation(myThis.getProject().getProject(), new _FunctionTypes._void_P0_E0() {
       public void invoke() {
-        Language language = myThis.createNewLanguage();
+        Language language = NewModuleUtil.createLanguage(myThis.getLanguageNamespace(), myThis.getLanguagePath(), myThis.getProject());
 
-        if (language.getModelRoots().iterator().hasNext()) {
-          LanguageAspect.STRUCTURE.createNew(language, false);
-          LanguageAspect.EDITOR.createNew(language, false);
-          LanguageAspect.CONSTRAINTS.createNew(language, false);
-          LanguageAspect.BEHAVIOR.createNew(language, false);
-          LanguageAspect.TYPESYSTEM.createNew(language, false);
-        }
-        if (myThis.myNeedRuntime_hneum8_f0.isSelected()) {
-          Solution runtime = myThis.createRuntimeSolution();
-          runtime.createModel(myThis.getLanguageNamespace() + ".runtime", runtime.getModelRoots().iterator().next(), null);
-        }
-        if (myThis.myNeedSandbox_hneum8_g0.isSelected()) {
-          Solution sandbox = myThis.createSandboxSolution();
-          SModel createdModel = sandbox.createModel(myThis.getLanguageNamespace() + ".sandbox", sandbox.getModelRoots().iterator().next(), null);
-          ((SModelInternal) createdModel).addLanguage(myThis.getResult().getModuleReference());
-          for (ModuleReference extendedLanguage : myThis.getResult().getExtendedLanguageRefs()) {
-            ((SModelInternal) createdModel).addLanguage(extendedLanguage);
+        try {
+          if (myThis.myNeedRuntime_hneum8_f0.isSelected()) {
+            NewModuleUtil.createRuntimeSolution(language, myThis.getLanguagePath(), myThis.getProject());
           }
-          for (ModuleReference addedLanguage : ((SModelInternal) createdModel).importedLanguages()) {
-            if (ScopeOperations.resolveModule(sandbox.getScope(), addedLanguage, Language.class) == null) {
-              sandbox.addUsedLanguage(addedLanguage);
-            }
+          if (myThis.myNeedSandbox_hneum8_g0.isSelected()) {
+            NewModuleUtil.createSandboxSolution(language, myThis.getLanguagePath(), myThis.getProject());
           }
+        } catch (IOException e) {
+          // todo: ! 
+          LOG.error("Cannot create runtime / sandbox module", e);
         }
+
+        myThis.setResult(language);
       }
     });
   }
@@ -255,34 +237,6 @@ public class NewLanguageDialogContentPane extends JPanel {
     return NameUtil.shortNameFromLongName(myThis.getLanguageNamespace());
   }
 
-  /*package*/ Language createNewLanguage() {
-    myThis.setResult(NewModuleUtil.createModule(MPSExtentions.DOT_LANGUAGE, myThis.getLanguageNamespace(), myThis.getLanguagePath(), myThis.getProject(), new _FunctionTypes._return_P3_E0<Language, String, IFile, MPSProject>() {
-      public Language invoke(String s, IFile f, MPSProject p) {
-        return NewModuleUtil.createNewLanguage(s, f, p);
-      }
-    }, new _FunctionTypes._void_P1_E0<ModuleDescriptor>() {
-      public void invoke(ModuleDescriptor d) {
-        ModuleReference devkitRef = LanguageDesign_DevKit.MODULE_REFERENCE;
-        d.getUsedDevkits().add(devkitRef);
-      }
-    }));
-    return myThis.getResult();
-  }
-
-  /*package*/ Solution createRuntimeSolution() {
-    String basePath = myThis.getLanguagePath() + File.separator + "runtime";
-    String namespace = myThis.getLanguageNamespace() + ".runtime";
-    Solution solution = NewModuleUtil.createSolution(namespace, basePath, myThis.getProject());
-    return solution;
-  }
-
-  /*package*/ Solution createSandboxSolution() {
-    String basePath = myThis.getLanguagePath() + File.separator + "sandbox";
-    String namespace = myThis.getLanguageNamespace() + ".sandbox";
-    Solution solution = NewModuleUtil.createSolution(namespace, basePath, myThis.getProject());
-    return solution;
-  }
-
   /*package*/ void updateLanguagePath() {
     if (myThis.getProject() == null) {
       return;
@@ -293,4 +247,6 @@ public class NewLanguageDialogContentPane extends JPanel {
       myThis.setLanguagePath(prefix + NameUtil.shortNameFromLongName(myThis.getLanguageNamespace()));
     }
   }
+
+  private static Logger LOG = Logger.getLogger(NewLanguageDialogContentPane.class);
 }

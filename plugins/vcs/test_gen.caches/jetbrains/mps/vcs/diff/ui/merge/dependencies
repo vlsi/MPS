@@ -27,6 +27,7 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelReadException" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
@@ -38,7 +39,6 @@
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.jdom.JDOMException" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
   </dependency>
 </dependenciesRoot>
 

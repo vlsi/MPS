@@ -11,13 +11,13 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.logging.Logger;
 

@@ -4,7 +4,7 @@ package jetbrains.mps.vcs.changesmanager;
 
 import com.intellij.openapi.components.AbstractProjectComponent;
 import java.util.Map;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.SModelRepositoryListener;

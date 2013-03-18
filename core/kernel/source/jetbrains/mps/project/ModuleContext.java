@@ -17,7 +17,7 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -89,7 +89,7 @@ public class ModuleContext extends StandaloneMPSContext {
     SModel model = ModelAccess.instance().runReadAction(new Computable<SModel>() {
       @Override
       public SModel compute() {
-        return node.getModel().getModelDescriptor();
+        return node.getModel();
       }
     });
     return create(model, project);

@@ -81,7 +81,9 @@ public class AddSeeBlockTag_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNodeFactoryOperations.addNewChild(node, "see", "jetbrains.mps.baseLanguage.javadoc.structure.SeeBlockDocTag");
+      SNode addedNode = SNodeFactoryOperations.addNewChild(node, "see", "jetbrains.mps.baseLanguage.javadoc.structure.SeeBlockDocTag");
+      BlockDocTagHelper.setFocus(editorContext, addedNode, "Error");
+
     }
 
     public IntentionDescriptor getDescriptor() {

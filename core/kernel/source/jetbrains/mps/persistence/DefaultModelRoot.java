@@ -66,16 +66,17 @@ public class DefaultModelRoot extends FileBasedModelRoot {
 
   @Override
   public boolean canCreateModels() {
-    if (super.canCreateModels()) {
-      return true;
-    }
-    Collection<String> modelRoots = getFiles(SOURCE_ROOTS);
-    return modelRoots.isEmpty()
-      || modelRoots.size() == 1 && isLanguageAspectsSourceRoot(modelRoots.iterator().next());
+    return super.canCreateModels() && !getFiles(SOURCE_ROOTS).isEmpty();
   }
 
   @Override
   public boolean canCreateModel(String modelName) {
+    if (!canCreateModels()) {
+      return false;
+    }
+    if (isLanguageAspectModelRoot()) {
+      return isLanguageAspect(modelName, getFiles(SOURCE_ROOTS).iterator().next());
+    }
     ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL);
     FileDataSource source = createSource(modelName, MPSExtentions.MODEL, null);
     return modelFactory.canCreate(modelName, source);
@@ -172,7 +173,6 @@ public class DefaultModelRoot extends FileBasedModelRoot {
     return null;
   }
 
-
   private boolean isLanguageAspect(String modelName, String sourceRoot) {
     if (!isLanguageAspectsSourceRoot(sourceRoot)) return false;
     //prefixed with language namespace
@@ -188,6 +188,12 @@ public class DefaultModelRoot extends FileBasedModelRoot {
   private boolean isLanguageAspectsSourceRoot(String sourceRoot) {
     if (!(getModule() instanceof Language)) return false;
     return FileSystem.getInstance().getFileByPath(sourceRoot).getName().equals(Language.LANGUAGE_MODELS);
+  }
+
+  private boolean isLanguageAspectModelRoot() {
+    if (!(getModule() instanceof Language)) return false;
+    Collection<String> modelRoots = getFiles(SOURCE_ROOTS);
+    return modelRoots.size() == 1 && isLanguageAspectsSourceRoot(modelRoots.iterator().next());
   }
 
   @Deprecated

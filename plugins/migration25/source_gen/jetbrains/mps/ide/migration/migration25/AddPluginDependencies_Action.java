@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.logging.Logger;
 

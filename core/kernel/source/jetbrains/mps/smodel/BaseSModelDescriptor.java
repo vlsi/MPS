@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
 
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
@@ -34,7 +34,6 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
-import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
@@ -50,18 +49,8 @@ public abstract class BaseSModelDescriptor extends SModelBase implements jetbrai
   }
 
   @Override
-  public SModelInternal getModelDescriptor() {
-    return this;
-  }
-
-  @Override
   public SModel getSModel() {
     return this;
-  }
-
-  @Override
-  public SModel createEmptyCopy() {
-    throw new UnsupportedOperationException("not supported");
   }
 
   @Override
@@ -97,10 +86,10 @@ public abstract class BaseSModelDescriptor extends SModelBase implements jetbrai
   @Override
   public void dispose() {
     ModelAccess.assertLegalWrite();
-    SModel smodel = getCurrentModelInternal();
-    if (smodel != null) {
-      fireBeforeModelDisposed(smodel);
-      ((jetbrains.mps.smodel.SModelInternal) smodel).dispose();
+    fireBeforeModelDisposed(this);
+    jetbrains.mps.smodel.SModel model = getCurrentModelInternal();
+    if (model != null) {
+      model.dispose();
     }
     clearListeners();
   }
@@ -127,16 +116,16 @@ public abstract class BaseSModelDescriptor extends SModelBase implements jetbrai
 
   @Override
   public String getLongName() {
-    return getReference().getLongName();
+    return SModelStereotype.withoutStereotype(getReference().getModelName());
   }
 
   @Override
   @NotNull
   public String getStereotype() {
-    return getReference().getStereotype();
+    return SModelStereotype.getStereotype(getReference().getModelName());
   }
 
-  protected abstract SModel getCurrentModelInternal();
+  protected abstract jetbrains.mps.smodel.SModel getCurrentModelInternal();
 
   @Override
   public void addModelListener(@NotNull SModelListener listener) {

@@ -18,7 +18,7 @@ package jetbrains.mps.generator.impl.cache;
 import jetbrains.mps.generator.GenerationCacheContainer.ModelCacheContainer;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.util.FileUtil;
 
 import java.io.*;

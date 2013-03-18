@@ -5,13 +5,13 @@ package jetbrains.mps.gwt.client.stubs;
 import jetbrains.mps.extapi.persistence.FolderSetDataSource;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportProvider;
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.stubs.util.PathItem;
 import java.util.List;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -25,8 +25,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.stubs.util.StubModelDescriptors;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import java.io.InputStream;
 import org.jdom.input.SAXBuilder;
 import jetbrains.mps.util.JDOMUtil;
@@ -34,8 +33,6 @@ import java.io.IOException;
 import org.jdom.JDOMException;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.findUsages.fastfind.FastFindSupport;
-import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
-import jetbrains.mps.stubs.util.JavaStubModelDataSource;
 
 public class GWTStubsSource extends FolderSetDataSource implements FastFindSupportProvider, StubModelDataSource {
   private String path;
@@ -45,12 +42,12 @@ public class GWTStubsSource extends FolderSetDataSource implements FastFindSuppo
   }
 
   @Override
-  public SModel loadSModel(IModule module, SModel descriptor) {
-    SModel model = new jetbrains.mps.smodel.SModel(descriptor.getReference(), new ForeignNodeIdMap());
+  public SModel loadSModel(IModule module, org.jetbrains.mps.openapi.model.SModel descriptor) {
+    SModel model = new SModel(descriptor.getReference(), new ForeignNodeIdMap());
     ModuleReference lang = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("954c4d77-e24b-4e49-a5a5-5476c966c092")).getModuleReference();
-    ((SModelInternal) model).addLanguage(lang);
+    model.addLanguage(lang);
 
-    String pkg = model.getReference().getSModelFqName().getLongName();
+    String pkg = SModelStereotype.withoutStereotype(model.getReference().getModelName());
     PathItem pi = GWTModulePathItem.getPathItem(path);
     List<Tuples._3<String, String, SNode>> modlst = ListSequence.fromList(new ArrayList<Tuples._3<String, String, SNode>>());
     SNode sample = SConceptOperations.createNewNode("jetbrains.mps.gwt.client.structure.GWTModule", null);
@@ -61,7 +58,7 @@ public class GWTStubsSource extends FolderSetDataSource implements FastFindSuppo
         gwtModule = SConceptOperations.createNewNode(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.gwt.client.structure.GWTModule")), sample);
         ((jetbrains.mps.smodel.SNode) gwtModule).setId(id);
         SPropertyOperations.set(gwtModule, "name", pi.baseName(modres));
-        SModelOperations.addRootNode(((SModel) model), gwtModule);
+        SModelOperations.addRootNode(((org.jetbrains.mps.openapi.model.SModel) model.getModelDescriptor()), gwtModule);
       }
       ListSequence.fromList(modlst).addElement(MultiTuple.<String,String,SNode>from(pkg, modres, gwtModule));
     }
@@ -112,11 +109,11 @@ public class GWTStubsSource extends FolderSetDataSource implements FastFindSuppo
 
   @Override
   public FastFindSupport getFastFindSupport() {
-    return FastFindSupportRegistry.getInstance().getFastFindSupport(JavaStubModelDataSource.FAST_FIND_ID);
+    return null;
   }
 
   @Override
-  public boolean hasModel(SModel md) {
+  public boolean hasModel(org.jetbrains.mps.openapi.model.SModel md) {
     return !(getPaths().isEmpty());
   }
 }

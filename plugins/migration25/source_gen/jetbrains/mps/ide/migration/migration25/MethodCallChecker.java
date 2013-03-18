@@ -26,7 +26,7 @@ import jetbrains.mps.ide.modelchecker.actions.IModelCheckerFix;
 import jetbrains.mps.ide.java.platform.highlighters.MethodDeclarationsFixer;
 import java.util.Map;
 import java.util.HashMap;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;

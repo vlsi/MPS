@@ -10,12 +10,12 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationModule;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -80,7 +80,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
   protected void setUpNode(List<SNodeReference> nodesToImport) {
     EvaluationModule containerModule = (EvaluationModule) myContainerModule.resolve(myDebuggerRepository);
     // wanted to use resolve method here, but it was not implemented:( 
-    SModel containerModel = (SModelInternal) SModelRepository.getInstance().getModelDescriptor(myContainerModel);
+    SModel containerModel = SModelRepository.getInstance().getModelDescriptor(myContainerModel);
 
     setUpDependencies(containerModule, containerModel);
 
@@ -238,7 +238,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
 
   @Nullable
   private SModel findStubForFqName(String fqName) {
-    return SModelRepository.getInstance().getModelDescriptor(new SModelFqName(fqName, "java_stub"));
+    return SModelRepository.getInstance().getModelDescriptor(new SModelFqName(fqName, "java_stub").toString());
   }
 
   private boolean needUpdateVariables() {
@@ -277,7 +277,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
     final String modelFqName = modelFqNameFromUnitName(unitName);
     return Sequence.fromIterable(Sequence.fromArray(SModelStereotype.values)).select(new ISelector<String, SModel>() {
       public SModel select(String stereotype) {
-        return SModelRepository.getInstance().getModelDescriptor(new SModelFqName(modelFqName, stereotype));
+        return SModelRepository.getInstance().getModelDescriptor(new SModelFqName(modelFqName, stereotype).toString());
       }
     }).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {

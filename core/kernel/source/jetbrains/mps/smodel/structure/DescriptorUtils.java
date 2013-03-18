@@ -15,9 +15,12 @@
  */
 package jetbrains.mps.smodel.structure;
 
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
@@ -36,14 +39,14 @@ public class DescriptorUtils {
         return null;
       }
 
-      Class clazz = language.getClass(className);
+      Class clazz = ClassLoaderManager.getInstance().getClass(language, className);
       if (clazz == null) {
         return null;
       }
 
       return clazz.newInstance();
     } catch (Throwable e) {
-      LOG.debug("error loading class\""+className+"\"", e);
+      LOG.debug("error loading class\"" + className + "\"", e);
     }
     return null;
   }
@@ -55,7 +58,7 @@ public class DescriptorUtils {
         return null;
       }
 
-      Class clazz = language.getClass(className);
+      Class clazz = ClassLoaderManager.getInstance().getClass(language, className);
       if (clazz == null) {
         return null;
       }
@@ -67,7 +70,7 @@ public class DescriptorUtils {
 
       return castTo.cast(o);
     } catch (Throwable e) {
-      LOG.debug("error loading class\""+className+"\"", e);
+      LOG.debug("error loading class\"" + className + "\"", e);
     }
     return null;
   }
@@ -79,7 +82,8 @@ public class DescriptorUtils {
 
   @Nullable
   public static <T> T getObjectByClassNameForLanguageNamespace(String className, Class<T> castTo, String languageNamespace, boolean avoidLogErrors) {
-    return getObjectByClassNameForLanguage(className, castTo, ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class), avoidLogErrors);
+    return getObjectByClassNameForLanguage(className, castTo, ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class),
+        avoidLogErrors);
   }
 
   @Nullable
@@ -92,7 +96,7 @@ public class DescriptorUtils {
 
     for (SNode node : new NodesIterable(LanguageAspect.STRUCTURE.get(language))) {
       if ("jetbrains.mps.lang.structure.structure.ConceptDeclaration".equals(node.getConcept().getId()) ||
-        "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration".equals(node.getConcept().getId())) {
+          "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration".equals(node.getConcept().getId())) {
         result.add(NameUtil.nodeFQName(node));
       }
     }

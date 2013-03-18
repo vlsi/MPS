@@ -27,13 +27,12 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.logging.Logger;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNodeId;
 
 public class GenerateToString_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -151,6 +150,7 @@ public class GenerateToString_Action extends BaseAction {
   private static Logger LOG = Logger.getLogger(GenerateToString_Action.class);
 
   private static SNode _quotation_createNode_satqj4_a0d0p0a(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);
@@ -158,6 +158,7 @@ public class GenerateToString_Action extends BaseAction {
   }
 
   private static SNode _quotation_createNode_satqj4_a0a0e0p0a(Object parameter_1, Object parameter_2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -173,6 +174,7 @@ public class GenerateToString_Action extends BaseAction {
   }
 
   private static SNode _quotation_createNode_satqj4_a0b0e0p0a(Object parameter_1, Object parameter_2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -189,6 +191,7 @@ public class GenerateToString_Action extends BaseAction {
   }
 
   private static SNode _quotation_createNode_satqj4_a0a0a4a51a0(Object parameter_1, Object parameter_2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -205,6 +208,7 @@ public class GenerateToString_Action extends BaseAction {
   }
 
   private static SNode _quotation_createNode_satqj4_a0b0a4a51a0(Object parameter_1, Object parameter_2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -221,6 +225,7 @@ public class GenerateToString_Action extends BaseAction {
   }
 
   private static SNode _quotation_createNode_satqj4_a0a0q0a(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);
@@ -228,6 +233,7 @@ public class GenerateToString_Action extends BaseAction {
   }
 
   private static SNode _quotation_createNode_satqj4_a0a0a61a0(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -243,6 +249,7 @@ public class GenerateToString_Action extends BaseAction {
   }
 
   private static SNode _quotation_createNode_satqj4_a0a0r0a(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -265,7 +272,7 @@ public class GenerateToString_Action extends BaseAction {
     quotedNode_5.addChild("statement", quotedNode_7);
     quotedNode_2.addChild("body", quotedNode_5);
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, null, GlobalScope.getInstance(), false);
-    quotedNode_6.setReference("annotation", SReference.create("annotation", quotedNode_6, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Override")));
+    quotedNode_6.setReference("annotation", SReference.create("annotation", quotedNode_6, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Override")));
     quotedNode_2.addChild("annotation", quotedNode_6);
     return quotedNode_2;
   }

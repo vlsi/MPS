@@ -32,12 +32,12 @@
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.classloading.ClassLoaderManager" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilders" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.MPSProgramBuilder" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.Program" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="jetbrains.mps.reloading.ClassLoaderManager" />
     <classNode dependClassName="jetbrains.mps.reloading.ReloadAdapter" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />

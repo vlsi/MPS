@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.closures.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -17,6 +18,7 @@ public class UnrestrictedClosureLiteral_Behavior {
   }
 
   private static SNode _quotation_createNode_8me3g4_a0a0(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;
     SNode quotedNode_7 = null;

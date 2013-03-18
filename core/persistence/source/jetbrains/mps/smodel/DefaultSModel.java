@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
 
 import jetbrains.mps.extapi.model.PersistenceProblem;
 import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel.Problem;
 
 import java.util.Collections;
 
@@ -105,7 +106,7 @@ public class DefaultSModel extends SModel {
 
   @Deprecated
   public void setRefactoringHistoryElement(Element history) {
-    ModelChange.assertLegalChange(this);
+    ModelChange.assertLegalChange(getModelDescriptor());
 
     myStructureModificationHistory = history;
   }

@@ -16,21 +16,21 @@
 package jetbrains.mps.generator.test;
 
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.ClassLoadingModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.dependency.modules.DependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.runtime.IClassLoadingModule;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.SNodeOperations;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.Element;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -38,10 +38,10 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * Evgeny Gryaznov, 10/18/10
  */
-public class TestModule extends ClassLoadingModule {
+public class TestModule extends AbstractModule {
 
   private IModule myPeer;
-  private Map<SModelFqName, SModel> myModels = new ConcurrentHashMap<SModelFqName, SModel>();
+  private Map<String, SModel> myModels = new ConcurrentHashMap<String, SModel>();
   private Map<SModel, SModel> myOriginalModels = new HashMap<SModel, SModel>();
 
   public TestModule(String namespace, String moduleId, IModule peer) {
@@ -62,15 +62,6 @@ public class TestModule extends ClassLoadingModule {
   }
 
   @Override
-  public Class getClass(String fqName) {
-    if (!(myPeer instanceof IClassLoadingModule)) {
-      throw new IllegalStateException();
-    }
-
-    return ((IClassLoadingModule) myPeer).getClass(fqName);
-  }
-
-  @Override
   public DependenciesManager getDependenciesManager() {
     if (myPeer == null) throw new IllegalStateException();
     return myPeer.getDependenciesManager();
@@ -86,8 +77,8 @@ public class TestModule extends ClassLoadingModule {
   private boolean isValidName(String longName, String stereotype) {
     SModelFqName sModelFqName = new SModelFqName(longName, stereotype);
     return
-      SModelRepository.getInstance().getModelDescriptor(sModelFqName) == null
-        && !myModels.containsKey(sModelFqName);
+      SModelRepository.getInstance().getModelDescriptor(sModelFqName.toString()) == null
+        && !myModels.containsKey(sModelFqName.toString());
   }
 
   public SModel createModel(SModel originalModel) {
@@ -99,7 +90,7 @@ public class TestModule extends ClassLoadingModule {
     SModelFqName fqName = new SModelFqName(SNodeOperations.getModelLongName(originalModel), stereotype);
     SModel result = new TestSModelDescriptor(fqName, jetbrains.mps.util.SNodeOperations.getModelLongName(originalModel), originalModel);
 
-    myModels.put(result.getReference().getSModelFqName(), result);
+    myModels.put(result.getReference().getModelName(), result);
     myOriginalModels.put(result, originalModel);
     invalidateCaches();
     return result;
@@ -123,14 +114,13 @@ public class TestModule extends ClassLoadingModule {
   }
 
   @Override
-  public boolean canLoad() {
-    return myPeer instanceof IClassLoadingModule && ((IClassLoadingModule) myPeer).canLoad();
-  }
-
-  @Override
   public ModuleDescriptor getModuleDescriptor() {
     // todo: is it ok?
     return myPeer.getModuleDescriptor();
+  }
+
+  public SModule getPeer() {
+    return myPeer;
   }
 
   public class TestModuleScope extends ModuleScope {
@@ -155,7 +145,7 @@ public class TestModule extends ClassLoadingModule {
     private final SModel myToCopy;
 
     private TestSModelDescriptor(SModelFqName fqName, String longName, SModel toCopy) {
-      super(new SModelReference(fqName, jetbrains.mps.smodel.SModelId.generate()));
+      super(new jetbrains.mps.smodel.SModelReference(fqName, jetbrains.mps.smodel.SModelId.generate()));
       myLongName = longName;
       myToCopy = toCopy;
     }
@@ -167,21 +157,21 @@ public class TestModule extends ClassLoadingModule {
 
     @Override
     public jetbrains.mps.smodel.SModel createModel() {
-      Document document = ModelPersistence.saveModel(myToCopy);
+      Document document = ModelPersistence.saveModel(((BaseSModelDescriptor) myToCopy).getSModelInternal());
       Element rootElement = document.getRootElement();
       rootElement.setAttribute(ModelPersistence.MODEL_UID, getSModelReference().toString());
       String modelContent = JDOMUtil.asString(document);
       try {
         return ModelPersistence.readModel(modelContent, false);
       } catch (ModelReadException e) {
-        return new StubModel(SModelReference.fromString(myLongName), e);
+        return new StubModel(jetbrains.mps.smodel.SModelReference.fromString(myLongName), e);
       }
     }
 
     @Override
     public SModel resolveModel(SModelReference reference) {
-      if (reference.getLongName().equals(myLongName)) {
-        SModel descriptor = myModels.get(reference.getSModelFqName());
+      if (SModelStereotype.withoutStereotype(reference.getModelName()).equals(myLongName)) {
+        SModel descriptor = myModels.get(reference.getModelName());
         if (descriptor != null) {
           return descriptor;
         }

@@ -10,6 +10,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -50,6 +51,7 @@ public class QuickFixForClassCreator_QuickFix extends QuickFix_Runtime {
   }
 
   private static SNode _quotation_createNode_8brg4q_a0a0b0d0a0a(Object parameter_1, Object parameter_2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DefaultClassCreator", null, null, GlobalScope.getInstance(), false);

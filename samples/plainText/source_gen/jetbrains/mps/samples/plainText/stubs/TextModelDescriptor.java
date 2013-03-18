@@ -13,7 +13,6 @@ import java.io.OutputStream;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.io.IOException;
-import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.io.InputStream;
@@ -47,8 +46,8 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
 
   @Override
   public void save() {
-    org.jetbrains.mps.openapi.model.SModel model = getSModelInternal();
-    for (SNode tf : ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.samples.plainText.structure.TextFile"))) {
+    SModel model = getSModelInternal();
+    for (SNode tf : ListSequence.fromList(SModelOperations.getRoots(((org.jetbrains.mps.openapi.model.SModel) model.getModelDescriptor()), "jetbrains.mps.samples.plainText.structure.TextFile"))) {
       try {
         OutputStream os = ((MultiStreamDataSource) getSource()).openOutputStream(SPropertyOperations.getString(tf, "name"));
         os.write(SPropertyOperations.getString(tf, "text").getBytes());
@@ -74,7 +73,7 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
   }
 
   @Override
-  protected org.jetbrains.mps.openapi.model.SModel getCurrentModelInternal() {
+  protected SModel getCurrentModelInternal() {
     return myModel;
   }
 
@@ -82,7 +81,7 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
   public synchronized SModel getSModelInternal() {
     if (myModel == null) {
       myModel = loadSModel();
-      ((SModelInternal) myModel).setModelDescriptor(this);
+      (myModel).setModelDescriptor(this);
       fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
     }
     return myModel;
@@ -92,7 +91,7 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
     SModel m = new SModel(getSModelReference());
     MultiStreamDataSource source = (MultiStreamDataSource) getSource();
     for (String child : Sequence.fromIterable(source.getAvailableStreams())) {
-      SNode root = SModelOperations.createNewRootNode(((org.jetbrains.mps.openapi.model.SModel) m), "jetbrains.mps.samples.plainText.structure.TextFile", null);
+      SNode root = SModelOperations.createNewRootNode(((org.jetbrains.mps.openapi.model.SModel) m.getModelDescriptor()), "jetbrains.mps.samples.plainText.structure.TextFile", null);
       try {
         InputStream is = source.openInputStream(child);
         byte[] buf = new byte[1000000];
@@ -117,10 +116,8 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
   public void reloadFromDisk() {
     ModelAccess.assertLegalWrite();
 
-    org.jetbrains.mps.openapi.model.SModel old = myModel;
-    notifyModelReplaced(old);
-
-    check_bp2jat_a5a31(((SModelInternal) old));
+    notifyModelReplaced(myModel.getModelDescriptor());
+    check_bp2jat_a3a31(myModel);
 
     myModel = null;
     isChanged = false;
@@ -138,7 +135,7 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
 
   }
 
-  private static void check_bp2jat_a5a31(SModelInternal checkedDotOperand) {
+  private static void check_bp2jat_a3a31(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.setModelDescriptor(null);
     }

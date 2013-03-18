@@ -12,13 +12,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.regex.Matcher;
 import org.jdom.Attribute;
 import java.util.List;
 import org.jdom.filter.AbstractFilter;
 import org.jdom.filter.ElementFilter;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SReference;
@@ -343,7 +344,7 @@ public class ConfReader {
       if (href.endsWith(".xml") || href.endsWith(".XML")) {
         href = href.substring(0, href.length() - 4);
       }
-      String pkg = SNodeOperations.getModel(node).getReference().getLongName();
+      String pkg = SModelStereotype.withoutStereotype(SNodeOperations.getModel(node).getReference().getModelName());
       String name = href;
       int lastSlash = href.lastIndexOf("/");
       if (lastSlash > 0) {

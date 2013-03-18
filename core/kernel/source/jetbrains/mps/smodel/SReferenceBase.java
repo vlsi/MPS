@@ -13,12 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.io.PrintWriter;
@@ -35,16 +37,19 @@ abstract class SReferenceBase extends SReference {
   protected volatile SNode myImmatureTargetNode;            // young
   private volatile SModelReference myTargetModelReference;  // mature
 
-  protected SReferenceBase(String role, SNode sourceNode, @Nullable SModelReference targetModelReference, @Nullable SNode immatureTargetNode) {
+  protected SReferenceBase(String role, SNode sourceNode, @Nullable SModelReference targetModelReference,
+      @Nullable SNode immatureTargetNode) {
     super(InternUtil.intern(role), sourceNode);
 
     if (ourStubMode) {
       if (targetModelReference != null) {
         try {
-          SModelId id = targetModelReference.getSModelId();
+          SModelId id = targetModelReference.getModelId();
           SModelId nid = StubMigrationHelper.convertModelId(id, false);
           if (nid != null) {
-            targetModelReference = new SModelReference(targetModelReference.getSModelFqName(), nid);
+            String tms = SModelStereotype.getStereotype(targetModelReference.getModelName());
+            String tml = SModelStereotype.withoutStereotype(targetModelReference.getModelName());
+            targetModelReference = new jetbrains.mps.smodel.SModelReference(new SModelFqName(tml, tms), nid);
           }
         } catch (Throwable t) {
         }
@@ -74,7 +79,7 @@ abstract class SReferenceBase extends SReference {
   @Override
   public SModelReference getTargetSModelReference() {
     SNode immatureNode = myImmatureTargetNode;
-    if (immatureNode == null || makeIndirect()) return myTargetModelReference;
+    if (immatureNode == null || makeIndirect()) return  myTargetModelReference;
     SModel model = immatureNode.getModel();
     return model == null ? null : model.getReference();
   }
@@ -106,19 +111,19 @@ abstract class SReferenceBase extends SReference {
   protected synchronized final boolean makeIndirect(boolean force) {
     if (myImmatureTargetNode != null) {
       if (getSourceNode().getModel() != null && myImmatureTargetNode.getModel() != null &&
-        !(jetbrains.mps.util.SNodeOperations.isDisposed(getSourceNode()) || jetbrains.mps.util.SNodeOperations.isDisposed(myImmatureTargetNode))) {
+          !(jetbrains.mps.util.SNodeOperations.isDisposed(getSourceNode()) || jetbrains.mps.util.SNodeOperations.isDisposed(myImmatureTargetNode))) {
         // convert 'young' reference to 'mature'
         makeMature();
       }
       if (force && myImmatureTargetNode != null) {
         if (getSourceNode().getModel() != null && !jetbrains.mps.util.SNodeOperations.isDisposed(getSourceNode())) {
           error("Impossible to resolve immature reference",
-            new ProblemDescription(myImmatureTargetNode.getReference(),
-              "ImmatureTargetNode(modelID: " +
-                (myImmatureTargetNode.getModel() == null ? "null" : myImmatureTargetNode.getModel().toString()) +
-                ", nodeID: " + myImmatureTargetNode.getNodeId().toString() +
-                "): isRegistered = " + (myImmatureTargetNode.getModel() != null) +
-                ", isDisposed = " + jetbrains.mps.util.SNodeOperations.isDisposed(myImmatureTargetNode) + dumpUnregisteredTrace()));
+              new ProblemDescription(myImmatureTargetNode.getReference(),
+                  "ImmatureTargetNode(modelID: " +
+                      (myImmatureTargetNode.getModel() == null ? "null" : myImmatureTargetNode.getModel().toString()) +
+                      ", nodeID: " + myImmatureTargetNode.getNodeId().toString() +
+                      "): isRegistered = " + (myImmatureTargetNode.getModel() != null) +
+                      ", isDisposed = " + jetbrains.mps.util.SNodeOperations.isDisposed(myImmatureTargetNode) + dumpUnregisteredTrace()));
           myImmatureTargetNode = null;
         }
       }

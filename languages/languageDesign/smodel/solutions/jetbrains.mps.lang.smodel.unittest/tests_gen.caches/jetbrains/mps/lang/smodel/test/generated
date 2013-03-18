@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-3ke2hdgf0esxmh4twn2e9yiyx7a1zs8">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
-  <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="5cgkv9hjtx5w7uuovfx48bh4lywgdpw" />
-  <dep model="r:3deabf90-227b-4dd7-a1b3-e4735e4a0270(jetbrains.mps.lang.smodel.test)" hash="-3ke2hdgf0esxmh4twn2e9yiyx7a1zs8" />
-  <common hash="-7nejhlv0k8u5y57vaa5sdehnnoe1qaj">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="38s949ymo9nq7jj7p2lrfowy0hurndx" />
+  <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="aih6mod30hbbl8r1xz9vfu4gypkll6l" />
+  <common hash="-7nejhlv0k8u5y57vaa5sdehnnoe1qaj" dependsOnNodes="true">
     <dep root="1835794636205154554" />
     <dep root="5097124989039381425" />
-    <dep model="r:3deabf90-227b-4dd7-a1b3-e4735e4a0270(jetbrains.mps.lang.smodel.test)" />
   </common>
-  <source id="1835794636205154554" name="InsertPrevSiblingOperation_Focus" hash="-862pviet15ps8uxyxiea7d7vcn2e1j5">
+  <source id="1835794636205154554" name="InsertPrevSiblingOperation_Focus" hash="-862pviet15ps8uxyxiea7d7vcn2e1j5" dependsOnNodes="true">
     <dep root="5097124989039381425" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:3deabf90-227b-4dd7-a1b3-e4735e4a0270(jetbrains.mps.lang.smodel.test)" />
     <file name="InsertPrevSiblingOperation_Focus_Test.java" />
   </source>
   <source id="5097124989039381425" hash="-cjmdqyqxxrg5s9x9ucv979xxpvqndsi">

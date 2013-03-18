@@ -6,6 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
@@ -26,6 +27,7 @@ public class AbstractSubtypingRule_Behavior {
   }
 
   private static SNode _quotation_createNode_23rmn4_a0a2() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;

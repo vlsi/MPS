@@ -31,7 +31,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
@@ -141,7 +141,7 @@ public class NavigationSupportImpl extends NavigationSupport implements Applicat
     SModel targetModel = classifier.getModel();
     SModelReference ref = targetModel.getReference();
     // FIXME it seems to be wrong for nested classes
-    String fqName = ref.getLongName() + "." + classifier.getName();
+    String fqName = SModelStereotype.withoutStereotype(ref.getModelName()) + "." + classifier.getName();
     final JavaPsiFacade javaPsi = JavaPsiFacade.getInstance(project);
     // FIXME allScope(project) is not entirely correct
     // should take into account how we track java sources (e.g. by dependencies from

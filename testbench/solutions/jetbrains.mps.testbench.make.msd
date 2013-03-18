@@ -50,6 +50,7 @@
     <dependency reexport="false">ab46529e-de2c-48b6-80f0-9ec2d78b7df3(jetbrains.mps.lang.test.sandbox)</dependency>
     <dependency reexport="false">f5b70e84-5208-49eb-a417-d53c9f82bdf2(jetbrains.mps.lang.traceable.operations.test)</dependency>
     <dependency reexport="false">20351dc3-a2df-46f5-b667-fc9adab1f1c9(jetbrains.mps.make)</dependency>
+    <dependency reexport="false">f8e20673-3f65-44e9-84c0-c4a4b6ede37e(jetbrains.mps.make.facets)</dependency>
     <dependency reexport="false">a1250a4d-c090-42c3-ad7c-d298a3357dd4(jetbrains.mps.make.runtime)</dependency>
     <dependency reexport="false">ad44d830-d9b6-4c92-9e56-821fcc11b493(jetbrains.mps.make.tests)</dependency>
     <dependency reexport="false">8e87e036-7d3f-4e47-809f-c244e2a938e8(jetbrains.mps.makeTest)</dependency>

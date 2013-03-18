@@ -17,8 +17,12 @@ package jetbrains.mps.smodel.persistence.def.v4;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.DefaultSModel;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
+import jetbrains.mps.smodel.SModelHeader;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.SModelVersionsInfo;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.IReferencePersister;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
@@ -56,7 +60,7 @@ public class ModelReader4 implements IModelReader {
     SModelVersionsInfo versionsInfo = new SModelVersionsInfo();
     Element rootElement = document.getRootElement();
 
-    SModelReference modelReference = SModelReference.fromString(rootElement.getAttributeValue(ModelPersistence.MODEL_UID));
+    SModelReference modelReference = jetbrains.mps.smodel.SModelReference.fromString(rootElement.getAttributeValue(ModelPersistence.MODEL_UID));
     DefaultSModel model = new DefaultSModel(modelReference);
     model.setPersistenceVersion(getVersion());
     model.getSModelHeader().updateDefaults(header);
@@ -122,7 +126,7 @@ public class ModelReader4 implements IModelReader {
         continue;
       }
 
-      SModelReference importedModelReference = SModelReference.fromString(importedModelUIDString);
+      SModelReference importedModelReference = jetbrains.mps.smodel.SModelReference.fromString(importedModelUIDString);
       model.addModelImport(new ImportElement(importedModelReference, importIndex, usedModelVersion));
     }
 
@@ -158,7 +162,7 @@ public class ModelReader4 implements IModelReader {
     }
   }
 
-  protected void readLanguageAspects(SModel model, List<Element> aspectElements) {
+  protected void readLanguageAspects(DefaultSModel model, List<Element> aspectElements) {
     for (Element aspectElement : aspectElements) {
       String aspectModelUID = aspectElement.getAttributeValue(ModelPersistence.MODEL_UID);
       String versionString = aspectElement.getAttributeValue(ModelPersistence.VERSION);
@@ -171,7 +175,7 @@ public class ModelReader4 implements IModelReader {
         }
       }
       if (aspectModelUID != null) {
-        ((jetbrains.mps.smodel.SModelInternal) model).addAdditionalModelVersion(SModelReference.fromString(aspectModelUID), version);
+        model.addAdditionalModelVersion(jetbrains.mps.smodel.SModelReference.fromString(aspectModelUID), version);
       }
     }
   }
@@ -182,10 +186,10 @@ public class ModelReader4 implements IModelReader {
 
   @Nullable
   protected SNode readNode(
-    Element nodeElement,
-    SModel model,
-    boolean useUIDs,
-    VisibleModelElements visibleModelElements, SModelVersionsInfo versionsInfo) {
+      Element nodeElement,
+      SModel model,
+      boolean useUIDs,
+      VisibleModelElements visibleModelElements, SModelVersionsInfo versionsInfo) {
     List<IReferencePersister> referenceDescriptors = new ArrayList<IReferencePersister>();
     SNode result = readNode(nodeElement, model, referenceDescriptors, useUIDs, versionsInfo);
     for (IReferencePersister referencePersister : referenceDescriptors) {
@@ -196,10 +200,10 @@ public class ModelReader4 implements IModelReader {
 
   @Nullable
   protected SNode readNode(
-    Element nodeElement,
-    SModel model,
-    List<IReferencePersister> referenceDescriptors,
-    boolean useUIDs, SModelVersionsInfo versionsInfo
+      Element nodeElement,
+      SModel model,
+      List<IReferencePersister> referenceDescriptors,
+      boolean useUIDs, SModelVersionsInfo versionsInfo
   ) {
 
     String rawFqName = nodeElement.getAttributeValue(ModelPersistence.TYPE);

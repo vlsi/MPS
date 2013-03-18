@@ -33,7 +33,7 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
@@ -73,7 +73,6 @@ public class StartupModuleMaker extends AbstractProjectComponent {
       ModelAccess.instance().runReadAction(new Runnable() {
         @Override
         public void run() {
-          ClassLoaderManager.getInstance().updateClassPath();
           monitor.advance(1);
 
           final ModuleMaker maker = new ModuleMaker(new MessageHandler(), MessageKind.ERROR);

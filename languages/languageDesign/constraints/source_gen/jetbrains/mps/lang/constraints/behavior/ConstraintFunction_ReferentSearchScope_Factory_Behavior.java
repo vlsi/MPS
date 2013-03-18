@@ -9,11 +9,10 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.typesystem.RulesFunctions_BaseLanguage;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class ConstraintFunction_ReferentSearchScope_Factory_Behavior {
@@ -60,13 +59,14 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Behavior {
   }
 
   private static SNode _quotation_createNode_q6xvx3_a2a0(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.JoinType", null, null, GlobalScope.getInstance(), false);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setReference("classifier", SReference.create("classifier", quotedNode_3, SModelReference.fromString("r:22db907b-8239-4180-8797-e91cea0b9573(jetbrains.mps.smodel.search)"), SNodeId.fromString("4642948870877889221")));
+    quotedNode_3.setReference("classifier", SReference.create("classifier", quotedNode_3, facade.createModelReference("r:22db907b-8239-4180-8797-e91cea0b9573(jetbrains.mps.smodel.search)"), facade.createNodeId("4642948870877889221")));
     quotedNode_2.addChild("argument", quotedNode_3);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", null, null, GlobalScope.getInstance(), false);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
@@ -77,6 +77,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Behavior {
   }
 
   private static SNode _quotation_createNode_q6xvx3_a0b0b() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", null, null, GlobalScope.getInstance(), false);

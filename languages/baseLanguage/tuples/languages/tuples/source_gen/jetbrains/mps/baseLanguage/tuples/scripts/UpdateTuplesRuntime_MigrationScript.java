@@ -17,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -97,6 +98,7 @@ public class UpdateTuplesRuntime_MigrationScript extends BaseMigrationScript {
   }
 
   private static SNode _quotation_createNode_yti4yq_a0a0a1a1a0a(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_2, "name", (String) parameter_1);
@@ -104,6 +106,7 @@ public class UpdateTuplesRuntime_MigrationScript extends BaseMigrationScript {
   }
 
   private static SNode _quotation_createNode_yti4yq_a0a0a4a1a0a(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "typeVariableDeclaration", (SNode) parameter_1);
@@ -111,6 +114,7 @@ public class UpdateTuplesRuntime_MigrationScript extends BaseMigrationScript {
   }
 
   private static SNode _quotation_createNode_yti4yq_a0a0a7a1a0a(Object parameter_1, Object parameter_2, Object parameter_3) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;
@@ -139,6 +143,7 @@ public class UpdateTuplesRuntime_MigrationScript extends BaseMigrationScript {
   }
 
   private static SNode _quotation_createNode_yti4yq_a0a0a8a1a0a(Object parameter_1, Object parameter_2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -158,6 +163,7 @@ public class UpdateTuplesRuntime_MigrationScript extends BaseMigrationScript {
   }
 
   private static SNode _quotation_createNode_yti4yq_a0a0l0b0a0(Object parameter_1, Object parameter_2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
@@ -172,6 +178,7 @@ public class UpdateTuplesRuntime_MigrationScript extends BaseMigrationScript {
   }
 
   private static SNode _quotation_createNode_yti4yq_a0n0b0a0(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;
     SNode quotedNode_7 = null;
@@ -205,6 +212,7 @@ public class UpdateTuplesRuntime_MigrationScript extends BaseMigrationScript {
   }
 
   private static SNode _quotation_createNode_yti4yq_a0a0a0a0p0b0a0(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UpperBoundType", null, null, GlobalScope.getInstance(), false);
@@ -216,6 +224,7 @@ public class UpdateTuplesRuntime_MigrationScript extends BaseMigrationScript {
   }
 
   private static SNode _quotation_createNode_yti4yq_a0a61a1a0a(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;
     SNode quotedNode_7 = null;

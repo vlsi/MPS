@@ -36,9 +36,7 @@
     <classNode dependClassName="jetbrains.mps.project.DevKit" />
     <classNode dependClassName="jetbrains.mps.project.MPSExtentions" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleDescriptor" />
     <classNode dependClassName="jetbrains.mps.uiLanguage.runtime.events.Events" />
-    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.jdesktop.beansbinding.AutoBinding" />
     <classNode dependClassName="org.jdesktop.beansbinding.BeanProperty" />
     <classNode dependClassName="org.jdesktop.beansbinding.Bindings" />

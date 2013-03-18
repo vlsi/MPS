@@ -13,7 +13,7 @@ import jetbrains.mps.make.script.IPropertiesPool;
 
 public class GGG_Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
-  private IFacet.Name name = new IFacet.Name("GGG");
+  private IFacet.Name name = new IFacet.Name("jetbrains.mps.make.sandbox.GGG");
 
   public GGG_Facet() {
   }

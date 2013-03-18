@@ -30,7 +30,7 @@ import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.Condition;
@@ -129,7 +129,7 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<List<S
     @Override
     public boolean acceptInput(VirtualFile file) {
       FileType fileType = file.getFileType();
-      return MPSFileTypeFactory.MODEL_FILE_TYPE.equals(fileType) || MPSFileTypeFactory.MODEL_BINARY_FILE_TYPE.equals(fileType);
+      return MPSFileTypeFactory.MPS_FILE_TYPE.equals(fileType) || MPSFileTypeFactory.MPS_BINARY_FILE_TYPE.equals(fileType);
     }
   }
 

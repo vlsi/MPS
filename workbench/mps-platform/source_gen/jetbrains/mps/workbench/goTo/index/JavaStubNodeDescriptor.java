@@ -4,7 +4,7 @@ package jetbrains.mps.workbench.goTo.index;
 
 import org.jetbrains.mps.openapi.persistence.NavigationParticipant;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeId;

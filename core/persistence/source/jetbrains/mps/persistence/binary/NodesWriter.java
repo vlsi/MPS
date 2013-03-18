@@ -16,7 +16,7 @@
 package jetbrains.mps.persistence.binary;
 
 import jetbrains.mps.util.IterableUtil;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
@@ -37,7 +37,7 @@ public class NodesWriter {
   public static final int USER_MODEL_REFERENCE = 5;
   public static final int USER_SERIALIZABLE = 6;
 
-  protected static final SModelReference LOCAL = SModelReference.fromString("$LOCAL$");
+  protected static final SModelReference LOCAL = jetbrains.mps.smodel.SModelReference.fromString("$LOCAL$");
   protected final SModelReference myModelReference;
 
   public NodesWriter(@NotNull SModelReference modelReference) {

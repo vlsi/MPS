@@ -5,7 +5,7 @@ package jetbrains.mps.idea.java.psiStubs;
 import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
 import jetbrains.mps.idea.core.psi.PsiListener;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import java.util.Map;
 import com.intellij.psi.PsiJavaFile;
 import java.util.Set;
@@ -94,7 +94,10 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
   }
 
   public void psiChanged(final PsiListener.PsiEvent event) {
-    org.jetbrains.mps.openapi.model.SModel ourModel = getCurrentModelInternal();
+    SModel model = getCurrentModelInternal();
+    if (model == null) return;
+
+    org.jetbrains.mps.openapi.model.SModel ourModel = model.getModelDescriptor();
 
     // already attached, but not createModel'd yet? 
     if (ourModel == null) {

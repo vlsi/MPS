@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.components.CoreComponent;
 
@@ -31,7 +31,7 @@ public class ImmatureReferences implements CoreComponent {
   private static final Object PRESENT = new Object();
 
   private static ImmatureReferences INSTANCE;
-  private static final SModelReference VIRTUAL_REF = new SModelReference(new SModelFqName("$ImmatureRefsModelRef$", ""), jetbrains.mps.smodel.SModelId.generate());
+  private static final SModelReference VIRTUAL_REF = new jetbrains.mps.smodel.SModelReference(new SModelFqName("$ImmatureRefsModelRef$", ""), jetbrains.mps.smodel.SModelId.generate());
 
   static ImmatureReferences getInstance() {
     return INSTANCE;

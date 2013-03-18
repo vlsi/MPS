@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
@@ -58,7 +57,7 @@ public abstract class ModelRootBase implements ModelRoot {
 
   @Override
   public boolean canCreateModels() {
-    return getModule().isPackaged();
+    return !getModule().isPackaged();
   }
 
   public void attach() {

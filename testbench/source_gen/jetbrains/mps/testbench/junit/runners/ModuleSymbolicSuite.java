@@ -12,7 +12,7 @@ import org.junit.runner.Description;
 import org.junit.runner.notification.RunNotifier;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.runtime.IClassLoadingModule;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.project.facets.JavaModuleOperations;
@@ -154,8 +154,8 @@ public class ModuleSymbolicSuite extends ParentRunner<Runner> {
     }
 
     private static Class getTestClass(SModule module, String className) {
-      if (module instanceof IClassLoadingModule && ((IClassLoadingModule) module).canLoad()) {
-        return ((IClassLoadingModule) module).getClass(className);
+      if (ClassLoaderManager.getInstance().canLoad(module)) {
+        return ClassLoaderManager.getInstance().getClass(module, className);
       } else {
         try {
           return getTestClassLoaderForModule(module).loadClass(className);

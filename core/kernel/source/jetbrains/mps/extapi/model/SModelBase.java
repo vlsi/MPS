@@ -16,7 +16,7 @@
 package jetbrains.mps.extapi.model;
 
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -43,8 +43,7 @@ public abstract class SModelBase implements SModel {
 
   @Override
   public SRepository getRepository() {
-    IModule module = getModule();
-    return module == null ? null : module.getRepository();
+    return myModule == null ? null : myModule.getRepository();
   }
 
   @Override
@@ -60,7 +59,7 @@ public abstract class SModelBase implements SModel {
 
   @Override
   public SModelId getModelId() {
-    return myModelReference.getSModelId();
+    return myModelReference.getModelId();
   }
 
   @Override

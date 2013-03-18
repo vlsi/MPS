@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -38,7 +38,6 @@ public final class CopyUtil {
   }
 
   public static void copyModelContentAndPreserveIds(SModel from, SModel to) {
-
     for (SNode root : from.getRootNodes()) {
       to.addRootNode(copyAndPreserveId(root, true));
     }
@@ -67,10 +66,10 @@ public final class CopyUtil {
     ((jetbrains.mps.smodel.SModelInternal) from).copyPropertiesTo(((jetbrains.mps.smodel.SModelInternal) to));
   }
 
-  public static SModel copyModel(SModel model) {
-    SModel copy = ((jetbrains.mps.smodel.SModelInternal) model).createEmptyCopy();
-    copyModelContentAndPreserveIds(model, copy);
-    copyModelProperties(model, copy);
+  public static jetbrains.mps.smodel.SModel copyModel(jetbrains.mps.smodel.SModel model) {
+    jetbrains.mps.smodel.SModel copy = model.createEmptyCopy();
+    copyModelContentAndPreserveIds(model.getModelDescriptor(), copy.getModelDescriptor());
+    copyModelProperties(model.getModelDescriptor(), copy.getModelDescriptor());
     return copy;
   }
 

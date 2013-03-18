@@ -16,11 +16,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.closures.behavior.FunctionMethodDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNodeId;
 
 public class ClosureLiteralAdapterBuilder {
   private TemplateQueryContext genContext;
@@ -94,9 +93,10 @@ public class ClosureLiteralAdapterBuilder {
   }
 
   private static SNode _quotation_createNode_wzrebk_a0a0a5() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("annotation", SReference.create("annotation", quotedNode_1, SModelReference.fromString("r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)"), SNodeId.fromString("8649343297855554552")));
+    quotedNode_1.setReference("annotation", SReference.create("annotation", quotedNode_1, facade.createModelReference("r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)"), facade.createNodeId("8649343297855554552")));
     return quotedNode_1;
   }
 }

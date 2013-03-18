@@ -13,9 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
 
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.classloading.MPSClassesReloadManager;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
@@ -24,7 +25,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import org.jetbrains.annotations.NotNull;
@@ -46,13 +47,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class MPSModuleRepository implements CoreComponent, SRepository {
   private static final Logger LOG = Logger.getLogger(MPSModuleRepository.class);
-  private ClassLoaderManager myClm;
-  private ReloadAdapter myHandler = new ReloadAdapter() {
-    @Override
-    public void unload() {
-      invalidateCaches();
-    }
-  };
   private List<SRepositoryListener> myModuleListeners = new CopyOnWriteArrayList<SRepositoryListener>();
 
   private Set<IModule> myModules = new LinkedHashSet<IModule>();
@@ -64,18 +58,15 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     return MPSCore.getInstance().getModuleRepository();
   }
 
-  public MPSModuleRepository(ClassLoaderManager clm) {
-    myClm = clm;
+  public MPSModuleRepository() {
   }
 
   @Override
   public void init() {
-    myClm.addReloadHandler(myHandler);
   }
 
   @Override
   public void dispose() {
-    myClm.removeReloadHandler(myHandler);
   }
 
   //-----------------register/unregister-merge-----------
@@ -113,7 +104,7 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     myModuleToOwners.addLink(module, owner);
     invalidateCaches();
     fireModuleAdded(module);
-    ClassLoaderManager.getInstance().requestReload();
+    MPSClassesReloadManager.getInstance().requestReload();
     return module;
   }
 
@@ -134,7 +125,7 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     for (IModule module : modulesToDispose) {
       fireModuleRemoved(module);
       module.dispose();
-      ClassLoaderManager.getInstance().requestReload();
+      MPSClassesReloadManager.getInstance().requestReload();
     }
     if (repositoryChanged) {
       fireRepositoryChanged();

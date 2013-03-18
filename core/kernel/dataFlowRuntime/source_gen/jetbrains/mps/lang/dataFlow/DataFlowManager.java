@@ -4,7 +4,7 @@ package jetbrains.mps.lang.dataFlow;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -81,7 +81,7 @@ public class DataFlowManager implements CoreComponent {
       SModel dfaModel = LanguageAspect.DATA_FLOW.get(l);
       if (dfaModel != null && dfaModel.getRootNodes().iterator().hasNext()) {
         String dfaBuildersClassName = SNodeOperations.getModelLongName(dfaModel) + ".DFABuilders";
-        Class<? extends DataFlowBuilders> buildersClass = l.getClass(dfaBuildersClassName);
+        Class<? extends DataFlowBuilders> buildersClass = ClassLoaderManager.getInstance().getClass(l, dfaBuildersClassName);
         if (buildersClass != null) {
           try {
             DataFlowBuilders builders = buildersClass.newInstance();

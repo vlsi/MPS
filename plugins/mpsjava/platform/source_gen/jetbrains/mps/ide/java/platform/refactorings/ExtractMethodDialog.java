@@ -41,7 +41,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NonNls;
 import javax.swing.JOptionPane;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodMatch;
 import javax.swing.JButton;

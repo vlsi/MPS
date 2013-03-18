@@ -4,7 +4,7 @@ package jetbrains.mps.ide.ui.dialogs.properties.creators;
 
 import jetbrains.mps.util.Computable;
 import java.util.List;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.FilteredGlobalScope;

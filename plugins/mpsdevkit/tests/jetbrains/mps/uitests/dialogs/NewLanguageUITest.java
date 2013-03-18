@@ -18,7 +18,7 @@ package jetbrains.mps.uitests.dialogs;
 import com.intellij.ide.DataManager;
 import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.ide.devkit.newLanguageDialog.NewLanguageDialog;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.Computable;

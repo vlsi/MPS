@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel.persistence.def;
 
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 /**
  * Evgeny Gryaznov, Aug 6, 2010

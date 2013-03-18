@@ -12,6 +12,7 @@ import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
@@ -66,6 +67,7 @@ public class PluginModule_Behavior {
   }
 
   private static SNode createMacroReference_yq0j9l_a2a1(Object p0) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.MacroReference", null, GlobalScope.getInstance(), false);
     n1.setProperty("name", (String) p0);
     return n1;

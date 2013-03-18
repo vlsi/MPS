@@ -34,7 +34,7 @@ import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
@@ -67,12 +67,12 @@ import java.util.Set;
 
 
 @State(
-  name = "MPSIntentionsManager",
-  storages = {
-    @Storage(
-      id = "other",
-      file = "$APP_CONFIG$/intentions.xml"
-    )}
+    name = "MPSIntentionsManager",
+    storages = {
+        @Storage(
+            id = "other",
+            file = "$APP_CONFIG$/intentions.xml"
+        )}
 )
 public class IntentionsManager implements ApplicationComponent, PersistentStateComponent<IntentionsManager.MyState> {
   private static final Logger LOG = Logger.getLogger(IntentionsManager.class);
@@ -140,49 +140,52 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     return visitor.getIntentionType();
   }
 
-  public synchronized Collection<Pair<IntentionExecutable, SNode>> getAvailableIntentions(final QueryDescriptor query, final SNode node, final EditorContext context) {
+  public synchronized Collection<Pair<IntentionExecutable, SNode>> getAvailableIntentions(final QueryDescriptor query, final SNode node,
+      final EditorContext context) {
     ModelAccess.assertLegalRead();
     checkLoaded();
-    return TypeContextManager.getInstance().runTypecheckingAction((ITypeContextOwner) context.getEditorComponent(), new Computable<Collection<Pair<IntentionExecutable,SNode>>>() {
-      @Override
-      public Set<Pair<IntentionExecutable, SNode>> compute() {
-        // Hiding intentions with same IntentionDescriptor
-        // important then currently selected element and it's parent has same intention
-        final Set<IntentionDescriptor> processedIntentionDescriptors = new HashSet<IntentionDescriptor>();
-        Filter filter = new Filter(query.myIntentionClass, query.myEnabledOnly ? getDisabledIntentions() : null, query.mySurroundWith) {
+    return TypeContextManager.getInstance().runTypecheckingAction((ITypeContextOwner) context.getEditorComponent(),
+        new Computable<Collection<Pair<IntentionExecutable, SNode>>>() {
           @Override
-          boolean accept(Intention intention) {
-            return super.accept(intention) && !processedIntentionDescriptors.contains(intention.getDescriptor());
-          }
+          public Set<Pair<IntentionExecutable, SNode>> compute() {
+            // Hiding intentions with same IntentionDescriptor
+            // important then currently selected element and it's parent has same intention
+            final Set<IntentionDescriptor> processedIntentionDescriptors = new HashSet<IntentionDescriptor>();
+            Filter filter = new Filter(query.myIntentionClass, query.myEnabledOnly ? getDisabledIntentions() : null, query.mySurroundWith) {
+              @Override
+              boolean accept(Intention intention) {
+                return super.accept(intention) && !processedIntentionDescriptors.contains(intention.getDescriptor());
+              }
 
-          @Override
-          boolean accept(IntentionFactory intentionFactory) {
-            return super.accept(intentionFactory) && !processedIntentionDescriptors.contains(intentionFactory);
-          }
-        };
-        Set<Pair<IntentionExecutable, SNode>> result = new HashSet<Pair<IntentionExecutable, SNode>>();
+              @Override
+              boolean accept(IntentionFactory intentionFactory) {
+                return super.accept(intentionFactory) && !processedIntentionDescriptors.contains(intentionFactory);
+              }
+            };
+            Set<Pair<IntentionExecutable, SNode>> result = new HashSet<Pair<IntentionExecutable, SNode>>();
 
-        for (IntentionExecutable intentionExecutable : getAvailableIntentionsForExactNode(node, context, false, filter)) {
-          result.add(new Pair<IntentionExecutable, SNode>(intentionExecutable, node));
-          processedIntentionDescriptors.add(intentionExecutable.getDescriptor());
-        }
-
-        if (!query.isCurrentNodeOnly()) {
-          SNode parent = node.getParent();
-          while (parent != null) {
-            for (IntentionExecutable intentionExecutable : getAvailableIntentionsForExactNode(parent, context, true, filter)) {
-              result.add(new Pair<IntentionExecutable, SNode>(intentionExecutable, parent));
+            for (IntentionExecutable intentionExecutable : getAvailableIntentionsForExactNode(node, context, false, filter)) {
+              result.add(new Pair<IntentionExecutable, SNode>(intentionExecutable, node));
               processedIntentionDescriptors.add(intentionExecutable.getDescriptor());
             }
-            parent = parent.getParent();
+
+            if (!query.isCurrentNodeOnly()) {
+              SNode parent = node.getParent();
+              while (parent != null) {
+                for (IntentionExecutable intentionExecutable : getAvailableIntentionsForExactNode(parent, context, true, filter)) {
+                  result.add(new Pair<IntentionExecutable, SNode>(intentionExecutable, parent));
+                  processedIntentionDescriptors.add(intentionExecutable.getDescriptor());
+                }
+                parent = parent.getParent();
+              }
+            }
+            return result;
           }
-        }
-        return result;
-      }
-    });
+        });
   }
 
-  private List<IntentionExecutable> getAvailableIntentionsForExactNode(final SNode node, @NotNull final EditorContext context, boolean isAncestor, Filter filter) {
+  private List<IntentionExecutable> getAvailableIntentionsForExactNode(final SNode node, @NotNull final EditorContext context, boolean isAncestor,
+      Filter filter) {
     assert node != null : "node == null - inconsistent editor state";
     CollectAvailableIntentionsVisitor visitor = new CollectAvailableIntentionsVisitor();
     visitIntentions(node, visitor, filter, isAncestor, context);
@@ -423,7 +426,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
   private void initIntentionsDescriptor(Language language, LanguageAspect aspect, String classShortName) {
     try {
-      Class<?> cls = language.getClass(language.getModuleFqName() + "." + aspect.getName() + "." + classShortName);
+      Class<?> cls = ClassLoaderManager.getInstance().getClass(language, language.getModuleName() + "." + aspect.getName() + "." + classShortName);
       if (cls != null) {
         BaseIntentionsDescriptor desc = (BaseIntentionsDescriptor) cls.newInstance();
         desc.init();

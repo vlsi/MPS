@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="RunConfigurationsInitializer_CustomApplicationPlugin.java" startLine="14" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.build.deprecated.execution.plugin.RunConfigurationsInitializer_CustomApplicationPlugin" />
+  <unitInfo fileName="RunConfigurationsInitializer_CustomApplicationPlugin.java" startLine="14" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.build.deprecated.execution.plugin.RunConfigurationsInitializer_CustomApplicationPlugin" />
   <root nodeRef="r:78fddae4-c085-42f0-a758-ca4c7b372a36(jetbrains.mps.build.deprecated.execution.plugin)/4197214709893770131">
     <nodeInfo nodeId="4197214709893770132" fileName="BuildGenerationHandler.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTargetDirectory" />
     <nodeInfo nodeId="4197214709893770140" fileName="BuildGenerationHandler.java" startLine="13" startPosition="57" endLine="14" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -274,7 +274,6 @@
     <scopeInfo nodeId="4197214709893781959" fileName="Ant_Kind.java" startLine="30" startPosition="0" endLine="35" endPosition="0" />
     <unitInfo nodeId="4197214709893781959" fileName="Ant_Kind.java" startLine="17" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.build.deprecated.execution.plugin.Ant_Kind" />
   </root>
-  <root nodeRef="r:78fddae4-c085-42f0-a758-ca4c7b372a36(jetbrains.mps.build.deprecated.execution.plugin)/6893245555985399815" />
   <root nodeRef="r:78fddae4-c085-42f0-a758-ca4c7b372a36(jetbrains.mps.build.deprecated.execution.plugin)/7162597690968026150">
     <nodeInfo nodeId="7162597690968026150" fileName="Execution_ApplicationPlugin.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
     <nodeInfo nodeId="7162597690968026150" fileName="Execution_ApplicationPlugin.java" startLine="19" startPosition="27" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

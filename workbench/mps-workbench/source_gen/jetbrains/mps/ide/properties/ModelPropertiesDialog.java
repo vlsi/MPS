@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Set;
 import jetbrains.mps.smodel.SModelOperations;
@@ -49,7 +49,7 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
   public SModel myModel;
 
   /*package*/ ModelPropertiesDialog(final SModel sm, final IOperationContext context) {
-    super("Model Properties for " + sm.getReference().getSModelFqName(), context);
+    super("Model Properties for " + sm.getReference().getModelName(), context);
     myModel = sm;
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override

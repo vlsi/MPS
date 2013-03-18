@@ -75,7 +75,7 @@ public class Generate_Facet extends IFacet.Stub {
   }
 
   public Iterable<IFacet.Name> required() {
-    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.lang.core.Make")});
+    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.make.facets.Make")});
   }
 
   public Iterable<IFacet.Name> extended() {
@@ -622,7 +622,7 @@ public class Generate_Facet extends IFacet.Stub {
     }
 
     public Iterable<ITarget.Name> before() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.Make.reconcile"), new ITarget.Name("jetbrains.mps.lang.core.Make.make")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.make.facets.Make.reconcile"), new ITarget.Name("jetbrains.mps.make.facets.Make.make")});
     }
 
     public ITarget.Name getName() {

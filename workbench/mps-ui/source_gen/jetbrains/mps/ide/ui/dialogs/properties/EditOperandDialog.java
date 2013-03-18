@@ -27,7 +27,7 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_R
 import java.util.Enumeration;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefAllLocal;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_SimpleRef;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import java.util.ArrayList;
 import jetbrains.mps.util.Computable;
 
@@ -169,13 +169,13 @@ public class EditOperandDialog extends DialogWrapper {
   }
 
   private void setModelMappingRef(DefaultMutableTreeNode root, MappingConfig_SimpleRef operand) {
-    SModelReference modRef = SModelReference.fromString(operand.getModelUID());
-    modRef.update();
+    SModelReference modRef = jetbrains.mps.smodel.SModelReference.fromString(operand.getModelUID());
+    ((jetbrains.mps.smodel.SModelReference) modRef).update();
     Enumeration children = root.children();
     while (children.hasMoreElements()) {
       DefaultMutableTreeNode child = (DefaultMutableTreeNode) children.nextElement();
       MappingSelectTree.ModelRefNodeData childData = (MappingSelectTree.ModelRefNodeData) child.getUserObject();
-      childData.getObject().update();
+      ((jetbrains.mps.smodel.SModelReference) childData.getObject()).update();
       if (childData.getObject().equals(modRef)) {
         if (operand.getNodeID().equals("*")) {
           childData.setSelected(true);

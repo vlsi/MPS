@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
 
 import gnu.trove.THashMap;
 import jetbrains.mps.MPSCore;
@@ -24,16 +24,16 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.persistence.DataSourceBase;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.util.containers.MultiMap;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.DataSource;
+
+import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -51,7 +51,7 @@ public class SModelRepository implements CoreComponent {
   }
 
   private final Map<org.jetbrains.mps.openapi.model.SModelId, SModel> myIdToModelDescriptorMap = new ConcurrentHashMap<org.jetbrains.mps.openapi.model.SModelId, SModel>();
-  private final Map<SModelFqName, SModel> myFqNameToModelDescriptorMap = new ConcurrentHashMap<SModelFqName, SModel>();
+  private final Map<String, SModel> myFqNameToModelDescriptorMap = new ConcurrentHashMap<String, SModel>();
 
   private final Object myModelsLock = new Object();
   private final Map<SModel, SModule> myModelOwner = new THashMap<SModel, SModule>();
@@ -65,7 +65,7 @@ public class SModelRepository implements CoreComponent {
   private SModelListener myModelsListener = new ModelChangeListener();
 
   @SuppressWarnings("UnusedParameters")
-  public SModelRepository(ClassLoaderManager manager) {
+  public SModelRepository() {
 
   }
 
@@ -112,8 +112,8 @@ public class SModelRepository implements CoreComponent {
       assert modelReference.getModelId() != null : "can't add model w/o model id";
       myIdToModelDescriptorMap.put(modelReference.getModelId(), modelDescriptor);
 
-      if (modelReference.getSModelFqName() != null) {
-        myFqNameToModelDescriptorMap.put(modelReference.getSModelFqName(), modelDescriptor);
+      if (modelReference.getModelName() != null) {
+        myFqNameToModelDescriptorMap.put(modelReference.getModelName(), modelDescriptor);
       }
       ((SModelBase) modelDescriptor).attach();
       ((SModelInternal) modelDescriptor).addModelListener(myModelsListener);
@@ -141,7 +141,7 @@ public class SModelRepository implements CoreComponent {
         myIdToModelDescriptorMap.remove(md.getReference().getModelId());
         ((SModelInternal) md).setModule(null);
       }
-      myFqNameToModelDescriptorMap.remove(md.getReference().getSModelFqName());
+      myFqNameToModelDescriptorMap.remove(md.getReference().getModelName());
       ((SModelInternal) md).removeModelListener(myModelsListener);
       fireModelRemoved(md);
       ((SModelBase) md).dispose();
@@ -202,7 +202,7 @@ public class SModelRepository implements CoreComponent {
 
     //todo remove this code
     if (id == null) {
-      SModelFqName fqName = ((SModelReference) modelReference).getSModelFqName();
+      String fqName =  modelReference.getModelName();
       if (fqName == null) return null;
       return getModelDescriptor(fqName);
     }
@@ -407,13 +407,17 @@ public class SModelRepository implements CoreComponent {
 
   @Deprecated
   public void markChanged(SModel model) {
-    SModel modelDescriptor = model.getModelDescriptor();
-    if (modelDescriptor instanceof EditableSModel) {
-      ((EditableSModel) modelDescriptor).setChanged(true);
+    if (model instanceof EditableSModel) {
+      ((EditableSModel) model).setChanged(true);
     }
   }
 
+  @Deprecated
   public SModel getModelDescriptor(SModelFqName fqName) {
+    return getModelDescriptor(fqName.toString());
+  }
+
+  public SModel getModelDescriptor(String fqName) {
     if (fqName == null) return null;
     return myFqNameToModelDescriptorMap.get(fqName);
   }

@@ -14,7 +14,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.Point;
 import javax.swing.JList;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import java.awt.datatransfer.StringSelection;
 
 public class CopySupport {
@@ -57,9 +57,9 @@ public class CopySupport {
       Object[] selected = ((JList) comp).getSelectedValues();
       StringBuilder textPresentation = new StringBuilder();
       for (int i = 0; i < selected.length; i++) {
-        SModelReference modelRef = (SModelReference) selected[i];
-        textPresentation.append(modelRef.getSModelFqName());
-        if (i != selected.length) {
+        SModelReference modelRef = (jetbrains.mps.smodel.SModelReference) selected[i];
+        textPresentation.append(modelRef.getModelName());
+        if (i != selected.length - 1) {
           textPresentation.append("\n");
         }
       }

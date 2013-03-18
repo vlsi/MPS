@@ -21,9 +21,8 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiJavaFile;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import com.intellij.psi.PsiElement;
@@ -189,15 +188,14 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
     if (packageName.length() > 0 && packageName.charAt(0) == '.') {
       packageName = packageName.substring(1);
     }
-    if (packageName.length() == 0) {
-      packageName = "<default package>";
-    }
+    // <node> 
 
+    // <node> 
+    // <node> 
 
-    SModelFqName fqName = new SModelFqName(packageName, "java_stub");
-    jetbrains.mps.smodel.SModelId modelId = jetbrains.mps.smodel.SModelId.foreign(fqName.getStereotype(), getModule().getModuleId().toString(), fqName.getLongName());
+    // <node> 
 
-    return new SModelReference(fqName, modelId);
+    return JavaForeignIdBuilder.computeModelReference(packageName);
   }
 
   private void syncDirectoryMap() {

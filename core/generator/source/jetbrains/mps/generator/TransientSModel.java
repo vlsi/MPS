@@ -17,7 +17,7 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -30,7 +30,7 @@ public class TransientSModel extends SModel {
 
   @Override
   protected FastNodeFinder createFastNodeFinder() {
-    return new TransientModelNodeFinder(this);
+    return new TransientModelNodeFinder(getModelDescriptor());
   }
 
   @Override

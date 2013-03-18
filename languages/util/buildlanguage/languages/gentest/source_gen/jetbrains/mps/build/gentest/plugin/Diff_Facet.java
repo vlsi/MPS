@@ -18,6 +18,7 @@ import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.make.runtime.util.DeltaReconciler;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -53,7 +54,7 @@ public class Diff_Facet extends IFacet.Stub {
   }
 
   public Iterable<IFacet.Name> required() {
-    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.lang.core.Make")});
+    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.make.facets.Make")});
   }
 
   public Iterable<IFacet.Name> extended() {
@@ -87,7 +88,7 @@ public class Diff_Facet extends IFacet.Stub {
               if (pa.global().properties(Target_diff.this.getName(), Diff_Facet.Target_diff.Parameters.class).fileToPath() != null) {
                 monitor.currentProgress().beginWork("Diffing", 100 * Sequence.fromIterable(input).count(), monitor.currentProgress().workLeft());
                 for (TResource tgres : Sequence.fromIterable(input)) {
-                  String fqn = tgres.modelDescriptor().getReference().getSModelFqName().getLongName();
+                  String fqn = SModelStereotype.withoutStereotype(tgres.modelDescriptor().getReference().getModelName());
                   monitor.currentProgress().advanceWork("Diffing", 1, fqn);
                   DeltaReconciler dr = new DeltaReconciler(tgres.delta());
                   final Set<String> retainedPaths = SetSequence.fromSet(new HashSet<String>());
@@ -103,7 +104,7 @@ public class Diff_Facet extends IFacet.Stub {
                   final String origOutRootPath = tgres.module().getOutputFor(tgres.modelDescriptor());
                   final String outDirPath = FileGenerationUtil.getDefaultOutputDir(tgres.modelDescriptor(), FileSystem.getInstance().getFileByPath(origOutRootPath)).getPath();
 
-                  for (String diff : differ.diff(outDirPath, pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), jetbrains.mps.lang.core.plugin.Make_Facet.Target_make.Parameters.class).pathToFile().invoke(outDirPath).getPath())) {
+                  for (String diff : differ.diff(outDirPath, pa.global().properties(new ITarget.Name("jetbrains.mps.make.facets.Make.make"), jetbrains.mps.make.facets.Make_Facet.Target_make.Parameters.class).pathToFile().invoke(outDirPath).getPath())) {
                     errors.append("\n").append(diff);
                   }
                   if (errors.length() > 0) {
@@ -129,7 +130,7 @@ public class Diff_Facet extends IFacet.Stub {
     }
 
     public Iterable<ITarget.Name> after() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.Make.reconcile")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.make.facets.Make.reconcile")});
     }
 
     public Iterable<ITarget.Name> notBefore() {
@@ -137,7 +138,7 @@ public class Diff_Facet extends IFacet.Stub {
     }
 
     public Iterable<ITarget.Name> before() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.Make.make")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.make.facets.Make.make")});
     }
 
     public ITarget.Name getName() {

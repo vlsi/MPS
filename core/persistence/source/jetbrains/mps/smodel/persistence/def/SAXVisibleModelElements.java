@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel.persistence.def;
 
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -33,7 +33,7 @@ public class SAXVisibleModelElements implements VisibleModelElements {
   }
 
   public void addVisible(int index, String modelUID) {
-    myVisibleModelElements.put(index, SModelReference.fromString(modelUID));
+    myVisibleModelElements.put(index, jetbrains.mps.smodel.SModelReference.fromString(modelUID));
   }
 
   @Override

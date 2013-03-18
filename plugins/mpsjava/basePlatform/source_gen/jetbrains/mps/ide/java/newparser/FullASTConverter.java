@@ -81,6 +81,7 @@ import org.eclipse.jdt.internal.compiler.ast.SingleTypeReference;
 import jetbrains.mps.smodel.StaticReference;
 import org.eclipse.jdt.internal.compiler.ast.ParameterizedSingleTypeReference;
 import org.eclipse.jdt.internal.compiler.ast.ParameterizedQualifiedTypeReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -1351,6 +1352,7 @@ public class FullASTConverter extends ASTConverter {
   }
 
   private static SNode _quotation_createNode_f46ocm_a0b0d0gb(Object parameter_1, Object parameter_2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;

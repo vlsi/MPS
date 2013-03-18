@@ -7,7 +7,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Condition;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 public class EmptySearchScope extends AbstractSearchScope {
   public EmptySearchScope() {

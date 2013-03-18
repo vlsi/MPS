@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import java.lang.reflect.Constructor;
 import java.util.Collection;
 import java.util.Arrays;
@@ -86,7 +87,7 @@ public class RefactoringUtil {
         for (SNode refactoring : SModelOperations.getRoots(scriptsModel, "jetbrains.mps.lang.refactoring.structure.OldRefactoring")) {
           try {
             String fqName = packageName + "." + SPropertyOperations.getString(refactoring, "name");
-            Class<AbstractLoggableRefactoring> cls = language.getClass(fqName);
+            Class<AbstractLoggableRefactoring> cls = ClassLoaderManager.getInstance().getClass(language, fqName);
             if (cls == null) {
               LOG.error("Can't find " + fqName);
               continue;
@@ -108,7 +109,7 @@ public class RefactoringUtil {
       for (SNode refactoring : SModelOperations.getRoots(refactoringsModel, "jetbrains.mps.lang.refactoring.structure.Refactoring")) {
         try {
           String fqName = packageName + "." + SPropertyOperations.getString(refactoring, "name");
-          Class<IRefactoring> cls = language.getClass(fqName);
+          Class<IRefactoring> cls = ClassLoaderManager.getInstance().getClass(language, fqName);
           if (cls == null) {
             LOG.error("Can't find " + fqName);
             continue;

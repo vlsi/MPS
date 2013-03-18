@@ -18,15 +18,20 @@ package jetbrains.mps.workbench.nodesFs;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.vfs.DeprecatedVirtualFileSystem;
+import com.intellij.openapi.vfs.JarFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.VirtualFileManager;
+import com.intellij.openapi.vfs.newvfs.BulkFileListener;
+import com.intellij.openapi.vfs.newvfs.events.VFileCreateEvent;
 import com.intellij.util.LocalTimeCounter;
+import com.intellij.util.messages.MessageBus;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelAdapter;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.smodel.SModelRepositoryListener;
@@ -62,6 +67,9 @@ import java.util.regex.Pattern;
 
 public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem implements ApplicationComponent {
 
+  private static final Pattern NODE_PATH = Pattern.compile("(.*)/(.*)");
+  private static final Pattern MODEL_UID_PATTERN = Pattern.compile("(.*?)\\((.*?)\\)");
+
   public static MPSNodesVirtualFileSystem getInstance() {
     return ApplicationManager.getApplication().getComponent(MPSNodesVirtualFileSystem.class);
   }
@@ -73,6 +81,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
   private SModelListener myModelListener = new MyModelListener();
   private SModelRepositoryListener mySModelRepositoryListener = new MyModelRepositoryListener();
   private Map<SNodeReference, MPSNodeVirtualFile> myVirtualFiles = new ConcurrentHashMap<SNodeReference, MPSNodeVirtualFile>();
+  private Map<SModelReference, MPSModelVirtualFile> myModelVirtualFiles = new ConcurrentHashMap<SModelReference, MPSModelVirtualFile>();
   private boolean myDisposed = false;
 
   public MPSNodeVirtualFile getFileFor(@NotNull final SNode node) {
@@ -90,6 +99,15 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
 
     MPSNodeVirtualFile vf = new MPSNodeVirtualFile(nodePointer);
     myVirtualFiles.put(nodePointer, vf);
+    return vf;
+  }
+
+  public MPSModelVirtualFile getFileFor(@NotNull final SModelReference modelReference) {
+    if (myModelVirtualFiles.containsKey(modelReference)) return myModelVirtualFiles.get(modelReference);
+
+    final MPSModelVirtualFile vf = new MPSModelVirtualFile(modelReference);
+    myModelVirtualFiles.put(modelReference, vf);
+
     return vf;
   }
 
@@ -130,24 +148,32 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     return ModelAccess.instance().runReadAction(new Computable<VirtualFile>() {
       @Override
       public VirtualFile compute() {
-        Pattern p = Pattern.compile("(.*)/(.*)");
-        Matcher m = p.matcher(path);
-        if (!m.matches()) return null;
+        String modelOrNodePath = path;
 
-        SModelReference reference = SModelReference.fromString(m.group(1));
-        final String name = m.group(2);
-        SModel sm = SModelRepository.getInstance().getModelDescriptor(reference);
-        if (sm == null) return null;
+        Matcher modelRef = MODEL_UID_PATTERN.matcher(modelOrNodePath);
+        Matcher nodePath = NODE_PATH.matcher(modelOrNodePath);
+        if (!nodePath.matches() && !modelRef.matches()) return null;
 
-        Condition<SNode> cond = new Condition<SNode>() {
-          @Override
-          public boolean met(SNode node) {
-            return node.getPresentation().equals(name);
-          }
-        };
-        Iterator<SNode> iter = new ConditionalIterator<SNode>(sm.getRootNodes().iterator(), cond);
-        if (!iter.hasNext()) return null;
-        return getFileFor(iter.next());
+        if (nodePath.matches()) {
+          SModelReference reference = jetbrains.mps.smodel.SModelReference.fromString(nodePath.group(1));
+          final String name = nodePath.group(2);
+          SModel sm = SModelRepository.getInstance().getModelDescriptor(reference);
+          if (sm == null) return null;
+
+          Condition<SNode> cond = new Condition<SNode>() {
+            @Override
+            public boolean met(SNode node) {
+              return node.getPresentation().equals(name);
+            }
+          };
+          Iterator<SNode> iter = new ConditionalIterator<SNode>(sm.getRootNodes().iterator(), cond);
+          if (!iter.hasNext()) return null;
+          return getFileFor(iter.next());
+        }
+        else {
+          final SModelReference modelReference = jetbrains.mps.smodel.SModelReference.fromString(modelRef.group());
+          return getFileFor(modelReference);
+        }
       }
     });
   }

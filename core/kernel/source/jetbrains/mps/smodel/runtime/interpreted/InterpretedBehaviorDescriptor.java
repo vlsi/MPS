@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.runtime.interpreted;
 
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.Language;
@@ -109,7 +110,7 @@ public class InterpretedBehaviorDescriptor extends BaseBehaviorDescriptor {
             String fqName = NameUtil.nodeFQName(currentConcept);
             String behaviorClass = behaviorClassByConceptFqName(fqName);
 
-            Class cls = language.getClass(behaviorClass);
+            Class cls = ClassLoaderManager.getInstance().getClass(language, behaviorClass);
             if (cls != null) {
               for (Method method : cls.getMethods()) {
                 if (method.getName().equals(methodName)) {

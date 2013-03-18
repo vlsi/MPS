@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -38,7 +38,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
 
   public DefaultFastNodeFinder(SModel model) {
     myModel = model;
-    myModelDescriptor = model.getModelDescriptor();
+    myModelDescriptor = model;
     SModelRepository.getInstance().addModelRepositoryListener(myRepositoryAdapter);
     ((SModelInternal) myModelDescriptor).addModelListener(myListener);
   }
@@ -67,7 +67,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
 
     // pre-loading model to avoid deadlock (model loading process requires a lock)
     // model cannot be unloaded afterwards, because we have model read access
-    ((jetbrains.mps.smodel.SModel) myModel).enforceFullLoad();
+    ((BaseSModelDescriptor) myModel).getSModelInternal().enforceFullLoad();
 
     synchronized (myLock) {
       if (!myInitialized) {

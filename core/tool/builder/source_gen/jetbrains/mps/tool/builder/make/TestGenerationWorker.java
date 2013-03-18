@@ -41,11 +41,11 @@ import java.util.List;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.tool.builder.FileMPSProject;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
@@ -200,7 +200,7 @@ public class TestGenerationWorker extends MpsWorker {
       @Override
       public void setup(IPropertiesPool ppool, Iterable<ITarget> toExecute, Iterable<? extends IResource> input) {
         super.setup(ppool, toExecute, input);
-        Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> makeparams = (Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Object.class);
+        Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> makeparams = (Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>>) ppool.properties(new ITarget.Name("jetbrains.mps.make.facets.Make.make"), Object.class);
         makeparams._0(new _FunctionTypes._return_P1_E0<IFile, String>() {
           public IFile invoke(String path) {
             return tmpFile(path);
@@ -335,7 +335,6 @@ public class TestGenerationWorker extends MpsWorker {
       p.init(new FileMPSProject.ProjectDescriptor(file));
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          ClassLoaderManager.getInstance().updateClassPath();
           new ModuleMaker().make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), new EmptyProgressMonitor());
         }
       });

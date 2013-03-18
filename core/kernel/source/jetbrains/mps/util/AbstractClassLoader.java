@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.util;
 
-import jetbrains.mps.runtime.ProtectionDomainUtil;
-
 import java.util.HashMap;
 import java.util.Map;
 

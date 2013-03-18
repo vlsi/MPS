@@ -52,7 +52,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 public class EmbeddableEditor {
   private MPSFileNodeEditor myFileNodeEditor;
@@ -74,7 +74,7 @@ public class EmbeddableEditor {
     myModel = ((EditableSModel) ProjectModels.createDescriptorFor(true));
     ((SModelInternal) smodel()).addDevKit(GeneralPurpose_DevKit.MODULE_REFERENCE);
     ((SModelInternal) smodel()).addLanguage(ModuleReference.fromString("d745e97c-8235-4470-b086-ba3da1f4c03c(jetbrains.mps.quickQueryLanguage)"));
-    SModelRepository.getInstance().registerModelDescriptor((SModelInternal) myModel, myOwner);
+    SModelRepository.getInstance().registerModelDescriptor(myModel, myOwner);
     setNode(node, true);
   }
 
@@ -137,7 +137,7 @@ public class EmbeddableEditor {
   }
 
   public void make(final Set<IClassPathItem> classPath) {
-    final IScript scr = new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.baseLanguage.JavaCompile"), new IFacet.Name("jetbrains.mps.lang.core.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compileToMemory")).toScript();
+    final IScript scr = new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.make.facets.JavaCompile"), new IFacet.Name("jetbrains.mps.make.facets.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.make.facets.JavaCompile.compileToMemory")).toScript();
 
 
     ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
@@ -152,7 +152,7 @@ public class EmbeddableEditor {
           @Override
           public void setup(IPropertiesPool ppool) {
             super.setup(ppool);
-            Tuples._1<Iterable<IClassPathItem>> params = (Tuples._1<Iterable<IClassPathItem>>) ppool.properties(new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compileToMemory"), Object.class);
+            Tuples._1<Iterable<IClassPathItem>> params = (Tuples._1<Iterable<IClassPathItem>>) ppool.properties(new ITarget.Name("jetbrains.mps.make.facets.JavaCompile.compileToMemory"), Object.class);
             if (params != null) {
               params._0(classPath);
             }
@@ -214,7 +214,7 @@ public class EmbeddableEditor {
   public void addLanguageStructureModel(final Language language) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        SModelReference ref = (SModelReference) language.getStructureModelDescriptor().getReference();
+        SModelReference ref = (jetbrains.mps.smodel.SModelReference) language.getStructureModelDescriptor().getReference();
         ((SModelInternal) smodel()).addModelImport(ref, false);
       }
     });
@@ -237,7 +237,7 @@ public class EmbeddableEditor {
   }
 
   private final SModel smodel() {
-    return ((SModelInternal) myModel);
+    return myModel;
   }
 
   public void disposeEditor() {

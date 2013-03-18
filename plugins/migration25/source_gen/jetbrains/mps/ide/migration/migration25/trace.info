@@ -62,7 +62,7 @@
     <nodeInfo nodeId="175734484443895487" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
     <nodeInfo nodeId="175734484443895487" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="36" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ImportModelsWithUsedClassifiers_Action#()V" />
     <nodeInfo nodeId="175734484443895487" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="47" startPosition="89" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="3748622964431012559" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="132" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_rft9c_a0b0e0d0e0a#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/smodel/SModelReference;" />
+    <nodeInfo nodeId="3748622964431012559" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="132" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_rft9c_a0b0e0d0e0a#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SModelReference;" />
     <nodeInfo nodeId="175734484443895487" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="56" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
     <nodeInfo nodeId="175734484443895487" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="47" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <nodeInfo nodeId="175734484443909909" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="82" startPosition="98" endLine="90" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -1476,7 +1476,7 @@
     <nodeInfo nodeId="6104662726363129743" fileName="FixModelLanguages_Action.java" startLine="67" startPosition="48" endLine="68" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="6104662726363130339" fileName="FixModelLanguages_Action.java" startLine="70" startPosition="51" endLine="71" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="6104662726363130373" fileName="FixModelLanguages_Action.java" startLine="72" startPosition="11" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6104662726363130637" fileName="FixModelLanguages_Action.java" startLine="73" startPosition="0" endLine="74" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6104662726363130637" fileName="FixModelLanguages_Action.java" startLine="73" startPosition="0" endLine="74" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6104662726363219949" fileName="FixModelLanguages_Action.java" startLine="75" startPosition="65" endLine="76" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6104662726363220130" fileName="FixModelLanguages_Action.java" startLine="76" startPosition="82" endLine="77" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6104662726363220073" fileName="FixModelLanguages_Action.java" startLine="78" startPosition="75" endLine="79" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1493,7 +1493,7 @@
     <nodeInfo nodeId="6104662726362995667" fileName="FixModelLanguages_Action.java" startLine="52" startPosition="5" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6104662726362995667" fileName="FixModelLanguages_Action.java" startLine="29" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FixModelLanguages_Action#()V" />
     <nodeInfo nodeId="6104662726362995667" fileName="FixModelLanguages_Action.java" startLine="40" startPosition="89" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6104662726363130454" fileName="FixModelLanguages_Action.java" startLine="74" startPosition="43" endLine="81" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6104662726363130454" fileName="FixModelLanguages_Action.java" startLine="74" startPosition="24" endLine="81" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="6104662726362995667" fileName="FixModelLanguages_Action.java" startLine="40" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <nodeInfo nodeId="6104662726362995667" fileName="FixModelLanguages_Action.java" startLine="49" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
     <nodeInfo nodeId="6104662726363129700" fileName="FixModelLanguages_Action.java" startLine="65" startPosition="9" endLine="82" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -1525,7 +1525,7 @@
       <varInfo nodeId="6104662726363220131" varName="lr" />
     </scopeInfo>
     <scopeInfo nodeId="6104662726362995667" fileName="FixModelLanguages_Action.java" startLine="40" startPosition="89" endLine="46" endPosition="5" />
-    <scopeInfo nodeId="6104662726363130454" fileName="FixModelLanguages_Action.java" startLine="74" startPosition="43" endLine="81" endPosition="11">
+    <scopeInfo nodeId="6104662726363130454" fileName="FixModelLanguages_Action.java" startLine="74" startPosition="24" endLine="81" endPosition="11">
       <varInfo nodeId="6104662726363130460" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="6104662726362995667" fileName="FixModelLanguages_Action.java" startLine="40" startPosition="0" endLine="48" endPosition="0">
@@ -1964,201 +1964,201 @@
     <unitInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="37" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.ide.migration.migration25.OptimizeImportsInProject_Action" />
   </root>
   <root nodeRef="r:ac0b1498-2795-4a56-a562-d0f2d196bfe1(jetbrains.mps.ide.migration.migration25)/8004978336432944889">
-    <nodeInfo nodeId="8004978336433033240" fileName="PluginMoveHelper.java" startLine="44" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SOLUTION_NAME" />
-    <nodeInfo nodeId="8004978336433012767" fileName="PluginMoveHelper.java" startLine="45" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
-    <nodeInfo nodeId="8004978336433012790" fileName="PluginMoveHelper.java" startLine="47" startPosition="41" endLine="48" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8004978336433033152" fileName="PluginMoveHelper.java" startLine="51" startPosition="22" endLine="52" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8004978336433033205" fileName="PluginMoveHelper.java" startLine="54" startPosition="42" endLine="55" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8004978336433033307" fileName="PluginMoveHelper.java" startLine="59" startPosition="42" endLine="60" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8004978336433033323" fileName="PluginMoveHelper.java" startLine="62" startPosition="7" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8004978336433033350" fileName="PluginMoveHelper.java" startLine="64" startPosition="55" endLine="65" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8004978336433033368" fileName="PluginMoveHelper.java" startLine="67" startPosition="40" endLine="68" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8004978336433033409" fileName="PluginMoveHelper.java" startLine="71" startPosition="28" endLine="72" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8004978336433092117" fileName="PluginMoveHelper.java" startLine="73" startPosition="7" endLine="74" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8004978336433092143" fileName="PluginMoveHelper.java" startLine="75" startPosition="24" endLine="76" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8004978336433033223" fileName="PluginMoveHelper.java" startLine="78" startPosition="5" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1855937925843867750" fileName="PluginMoveHelper.java" startLine="80" startPosition="59" endLine="81" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="457580200161335837" fileName="PluginMoveHelper.java" startLine="82" startPosition="5" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="457580200161335841" fileName="PluginMoveHelper.java" startLine="83" startPosition="0" endLine="84" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="907016400873578002" fileName="PluginMoveHelper.java" startLine="84" startPosition="34" endLine="85" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5318937080028131208" fileName="PluginMoveHelper.java" startLine="90" startPosition="63" endLine="91" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5318937080028151877" fileName="PluginMoveHelper.java" startLine="91" startPosition="64" endLine="92" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5318937080028151910" fileName="PluginMoveHelper.java" startLine="94" startPosition="43" endLine="95" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5318937080028204350" fileName="PluginMoveHelper.java" startLine="98" startPosition="39" endLine="99" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5318937080028204375" fileName="PluginMoveHelper.java" startLine="99" startPosition="89" endLine="100" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5318937080028204400" fileName="PluginMoveHelper.java" startLine="101" startPosition="31" endLine="102" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5318937080028205674" fileName="PluginMoveHelper.java" startLine="103" startPosition="13" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5318937080028205602" fileName="PluginMoveHelper.java" startLine="104" startPosition="0" endLine="105" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5318937080028205696" fileName="PluginMoveHelper.java" startLine="105" startPosition="138" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5318937080028205653" fileName="PluginMoveHelper.java" startLine="106" startPosition="0" endLine="107" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5318937080028205705" fileName="PluginMoveHelper.java" startLine="107" startPosition="136" endLine="108" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5318937080028205677" fileName="PluginMoveHelper.java" startLine="108" startPosition="116" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5318937080028171607" fileName="PluginMoveHelper.java" startLine="109" startPosition="0" endLine="110" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6317362145809465998" fileName="PluginMoveHelper.java" startLine="110" startPosition="62" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2800974637747464712" fileName="PluginMoveHelper.java" startLine="111" startPosition="0" endLine="112" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2800974637747464743" fileName="PluginMoveHelper.java" startLine="113" startPosition="35" endLine="114" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2800974637747464727" fileName="PluginMoveHelper.java" startLine="115" startPosition="13" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3804299821419307929" fileName="PluginMoveHelper.java" startLine="116" startPosition="0" endLine="117" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3804299821419307945" fileName="PluginMoveHelper.java" startLine="117" startPosition="85" endLine="118" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5318937080028205625" fileName="PluginMoveHelper.java" startLine="118" startPosition="28" endLine="119" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4076419548984269324" fileName="PluginMoveHelper.java" startLine="126" startPosition="39" endLine="127" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4076419548984269337" fileName="PluginMoveHelper.java" startLine="128" startPosition="25" endLine="129" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4076419548984269342" fileName="PluginMoveHelper.java" startLine="130" startPosition="5" endLine="131" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4076419548984269354" fileName="PluginMoveHelper.java" startLine="132" startPosition="23" endLine="133" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4076419548984269359" fileName="PluginMoveHelper.java" startLine="134" startPosition="5" endLine="135" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4076419548984269368" fileName="PluginMoveHelper.java" startLine="136" startPosition="27" endLine="137" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4076419548984269376" fileName="PluginMoveHelper.java" startLine="139" startPosition="9" endLine="140" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4076419548984269380" fileName="PluginMoveHelper.java" startLine="140" startPosition="26" endLine="141" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4076419548984269386" fileName="PluginMoveHelper.java" startLine="142" startPosition="27" endLine="143" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8004978336432925683" fileName="PluginMoveHelper.java" startLine="147" startPosition="42" endLine="148" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1855937925843917409" fileName="PluginMoveHelper.java" startLine="148" startPosition="67" endLine="149" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8004978336433092144" fileName="PluginMoveHelper.java" startLine="150" startPosition="20" endLine="151" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4618316083866596705" fileName="PluginMoveHelper.java" startLine="151" startPosition="149" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="457580200161289901" fileName="PluginMoveHelper.java" startLine="152" startPosition="0" endLine="153" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="457580200161285528" fileName="PluginMoveHelper.java" startLine="153" startPosition="70" endLine="154" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4618316083866596707" fileName="PluginMoveHelper.java" startLine="155" startPosition="5" endLine="156" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8004978336433092337" fileName="PluginMoveHelper.java" startLine="156" startPosition="63" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8004978336433092327" fileName="PluginMoveHelper.java" startLine="157" startPosition="0" endLine="158" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8004978336433092177" fileName="PluginMoveHelper.java" startLine="158" startPosition="61" endLine="159" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3573713441992786735" fileName="PluginMoveHelper.java" startLine="161" startPosition="40" endLine="162" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8004978336433092157" fileName="PluginMoveHelper.java" startLine="165" startPosition="36" endLine="166" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8004978336433092340" fileName="PluginMoveHelper.java" startLine="167" startPosition="5" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1855937925843953137" fileName="PluginMoveHelper.java" startLine="168" startPosition="0" endLine="169" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3178711211098718665" fileName="PluginMoveHelper.java" startLine="169" startPosition="89" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3178711211098725027" fileName="PluginMoveHelper.java" startLine="172" startPosition="39" endLine="173" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3800604662869701261" fileName="PluginMoveHelper.java" startLine="175" startPosition="7" endLine="176" endPosition="265" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3800604662869701626" fileName="PluginMoveHelper.java" startLine="176" startPosition="265" endLine="177" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3800604662869701275" fileName="PluginMoveHelper.java" startLine="177" startPosition="57" endLine="178" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1161420610164991301" fileName="PluginMoveHelper.java" startLine="178" startPosition="22" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2183214647889492839" fileName="PluginMoveHelper.java" startLine="182" startPosition="25" endLine="183" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4618316083866595591" fileName="PluginMoveHelper.java" startLine="185" startPosition="7" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3178711211098725042" fileName="PluginMoveHelper.java" startLine="186" startPosition="0" endLine="187" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3573713441992778452" fileName="PluginMoveHelper.java" startLine="187" startPosition="14" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3573713441992786697" fileName="PluginMoveHelper.java" startLine="188" startPosition="0" endLine="189" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2800953503011857159" fileName="PluginMoveHelper.java" startLine="189" startPosition="102" endLine="190" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4618316083866607116" fileName="PluginMoveHelper.java" startLine="190" startPosition="0" endLine="191" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6701815962005538947" fileName="PluginMoveHelper.java" startLine="191" startPosition="13" endLine="192" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8004978336433012691" fileName="PluginMoveHelper.java" startLine="195" startPosition="47" endLine="196" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8004978336433012706" fileName="PluginMoveHelper.java" startLine="196" startPosition="129" endLine="197" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8004978336433012712" fileName="PluginMoveHelper.java" startLine="197" startPosition="159" endLine="198" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8004978336433033253" fileName="PluginMoveHelper.java" startLine="201" startPosition="66" endLine="202" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5173599272688217382" fileName="PluginMoveHelper.java" startLine="205" startPosition="76" endLine="206" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8004978336432944891" fileName="PluginMoveHelper.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PluginMoveHelper#(Ljetbrains/mps/project/MPSProject;)V" />
-    <nodeInfo nodeId="8004978336433033203" fileName="PluginMoveHelper.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/Language;)Z" />
-    <nodeInfo nodeId="8004978336433033305" fileName="PluginMoveHelper.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/Language;)Z" />
-    <nodeInfo nodeId="8004978336433033364" fileName="PluginMoveHelper.java" startLine="67" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/Language;)V" />
-    <nodeInfo nodeId="8004978336433033395" fileName="PluginMoveHelper.java" startLine="70" startPosition="9" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8004978336433092134" fileName="PluginMoveHelper.java" startLine="74" startPosition="184" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1855937925843864856" fileName="PluginMoveHelper.java" startLine="79" startPosition="0" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5318937080028151905" fileName="PluginMoveHelper.java" startLine="94" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="5318937080028204387" fileName="PluginMoveHelper.java" startLine="100" startPosition="101" endLine="103" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2800974637747464729" fileName="PluginMoveHelper.java" startLine="112" startPosition="68" endLine="115" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4076419548984269335" fileName="PluginMoveHelper.java" startLine="127" startPosition="64" endLine="130" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4076419548984269352" fileName="PluginMoveHelper.java" startLine="131" startPosition="130" endLine="134" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4076419548984269366" fileName="PluginMoveHelper.java" startLine="135" startPosition="62" endLine="138" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3573713441992786730" fileName="PluginMoveHelper.java" startLine="161" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
-    <nodeInfo nodeId="8004978336433092341" fileName="PluginMoveHelper.java" startLine="164" startPosition="16" endLine="167" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3178711211098725025" fileName="PluginMoveHelper.java" startLine="172" startPosition="0" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="8004978336433033229" fileName="PluginMoveHelper.java" startLine="201" startPosition="0" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="makePluginSolutionName#(Ljetbrains/mps/smodel/Language;Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5173599272688217382" fileName="PluginMoveHelper.java" startLine="205" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_qerz9l_a0a0a0a0a0a0a2a0a0a4#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="1161420610164992200" fileName="PluginMoveHelper.java" startLine="181" startPosition="0" endLine="185" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="8004978336433033196" fileName="PluginMoveHelper.java" startLine="52" startPosition="71" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8004978336433033298" fileName="PluginMoveHelper.java" startLine="57" startPosition="7" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8004978336433033357" fileName="PluginMoveHelper.java" startLine="65" startPosition="51" endLine="70" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1855937925843917469" fileName="PluginMoveHelper.java" startLine="159" startPosition="56" endLine="164" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3178711211098725018" fileName="PluginMoveHelper.java" startLine="170" startPosition="0" endLine="175" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8004978336432944895" fileName="PluginMoveHelper.java" startLine="195" startPosition="0" endLine="200" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isFromFacetLang#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="4076419548984269374" fileName="PluginMoveHelper.java" startLine="138" startPosition="5" endLine="144" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="8004978336432925712" fileName="PluginMoveHelper.java" startLine="149" startPosition="94" endLine="155" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1161420610164992137" fileName="PluginMoveHelper.java" startLine="179" startPosition="0" endLine="185" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8004978336433033325" fileName="PluginMoveHelper.java" startLine="63" startPosition="0" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8828216506061801937" fileName="PluginMoveHelper.java" startLine="126" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValid#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="5318937080028171596" fileName="PluginMoveHelper.java" startLine="98" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="5318937080028151742" fileName="PluginMoveHelper.java" startLine="92" startPosition="57" endLine="121" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5318937080028108614" fileName="PluginMoveHelper.java" startLine="89" startPosition="104" endLine="122" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5318937080028094968" fileName="PluginMoveHelper.java" startLine="88" startPosition="35" endLine="123" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8004978336433031546" fileName="PluginMoveHelper.java" startLine="51" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="move#()V" />
-    <nodeInfo nodeId="5318937080028094933" fileName="PluginMoveHelper.java" startLine="88" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveIconsInAction#()V" />
-    <nodeInfo nodeId="8004978336433012718" fileName="PluginMoveHelper.java" startLine="147" startPosition="0" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="movePluginOut#(Ljetbrains/mps/smodel/Language;)V" />
-    <scopeInfo nodeId="8004978336432944894" fileName="PluginMoveHelper.java" startLine="47" startPosition="41" endLine="48" endPosition="18" />
-    <scopeInfo nodeId="8004978336433033204" fileName="PluginMoveHelper.java" startLine="54" startPosition="42" endLine="55" endPosition="75" />
-    <scopeInfo nodeId="8004978336433033306" fileName="PluginMoveHelper.java" startLine="59" startPosition="42" endLine="60" endPosition="129" />
-    <scopeInfo nodeId="8004978336433033365" fileName="PluginMoveHelper.java" startLine="67" startPosition="40" endLine="68" endPosition="77" />
-    <scopeInfo nodeId="8004978336433033396" fileName="PluginMoveHelper.java" startLine="71" startPosition="28" endLine="72" endPosition="52" />
-    <scopeInfo nodeId="8004978336433092135" fileName="PluginMoveHelper.java" startLine="75" startPosition="24" endLine="76" endPosition="15" />
-    <scopeInfo nodeId="1855937925843864859" fileName="PluginMoveHelper.java" startLine="80" startPosition="59" endLine="81" endPosition="26" />
-    <scopeInfo nodeId="5318937080028151906" fileName="PluginMoveHelper.java" startLine="94" startPosition="43" endLine="95" endPosition="135" />
-    <scopeInfo nodeId="5318937080028204388" fileName="PluginMoveHelper.java" startLine="101" startPosition="31" endLine="102" endPosition="21" />
-    <scopeInfo nodeId="2800974637747464730" fileName="PluginMoveHelper.java" startLine="113" startPosition="35" endLine="114" endPosition="21" />
-    <scopeInfo nodeId="4076419548984269336" fileName="PluginMoveHelper.java" startLine="128" startPosition="25" endLine="129" endPosition="19" />
-    <scopeInfo nodeId="4076419548984269353" fileName="PluginMoveHelper.java" startLine="132" startPosition="23" endLine="133" endPosition="19" />
-    <scopeInfo nodeId="4076419548984269367" fileName="PluginMoveHelper.java" startLine="136" startPosition="27" endLine="137" endPosition="19" />
-    <scopeInfo nodeId="4076419548984269382" fileName="PluginMoveHelper.java" startLine="142" startPosition="0" endLine="143" endPosition="19">
+    <nodeInfo nodeId="8004978336433033240" fileName="PluginMoveHelper.java" startLine="45" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SOLUTION_NAME" />
+    <nodeInfo nodeId="8004978336433012767" fileName="PluginMoveHelper.java" startLine="46" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
+    <nodeInfo nodeId="8004978336433012790" fileName="PluginMoveHelper.java" startLine="48" startPosition="41" endLine="49" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8004978336433033152" fileName="PluginMoveHelper.java" startLine="52" startPosition="22" endLine="53" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8004978336433033205" fileName="PluginMoveHelper.java" startLine="55" startPosition="42" endLine="56" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8004978336433033307" fileName="PluginMoveHelper.java" startLine="60" startPosition="42" endLine="61" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8004978336433033323" fileName="PluginMoveHelper.java" startLine="63" startPosition="7" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8004978336433033350" fileName="PluginMoveHelper.java" startLine="65" startPosition="55" endLine="66" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8004978336433033368" fileName="PluginMoveHelper.java" startLine="68" startPosition="40" endLine="69" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8004978336433033409" fileName="PluginMoveHelper.java" startLine="72" startPosition="28" endLine="73" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8004978336433092117" fileName="PluginMoveHelper.java" startLine="74" startPosition="7" endLine="75" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8004978336433092143" fileName="PluginMoveHelper.java" startLine="76" startPosition="24" endLine="77" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8004978336433033223" fileName="PluginMoveHelper.java" startLine="79" startPosition="5" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1855937925843867750" fileName="PluginMoveHelper.java" startLine="81" startPosition="59" endLine="82" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="457580200161335837" fileName="PluginMoveHelper.java" startLine="83" startPosition="5" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="457580200161335841" fileName="PluginMoveHelper.java" startLine="84" startPosition="0" endLine="85" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="907016400873578002" fileName="PluginMoveHelper.java" startLine="85" startPosition="34" endLine="86" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5318937080028131208" fileName="PluginMoveHelper.java" startLine="91" startPosition="63" endLine="92" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5318937080028151877" fileName="PluginMoveHelper.java" startLine="92" startPosition="64" endLine="93" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5318937080028151910" fileName="PluginMoveHelper.java" startLine="95" startPosition="43" endLine="96" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5318937080028204350" fileName="PluginMoveHelper.java" startLine="99" startPosition="39" endLine="100" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5318937080028204375" fileName="PluginMoveHelper.java" startLine="100" startPosition="89" endLine="101" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5318937080028204400" fileName="PluginMoveHelper.java" startLine="102" startPosition="31" endLine="103" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5318937080028205674" fileName="PluginMoveHelper.java" startLine="104" startPosition="13" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5318937080028205602" fileName="PluginMoveHelper.java" startLine="105" startPosition="0" endLine="106" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5318937080028205696" fileName="PluginMoveHelper.java" startLine="106" startPosition="138" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5318937080028205653" fileName="PluginMoveHelper.java" startLine="107" startPosition="0" endLine="108" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5318937080028205705" fileName="PluginMoveHelper.java" startLine="108" startPosition="136" endLine="109" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5318937080028205677" fileName="PluginMoveHelper.java" startLine="109" startPosition="116" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5318937080028171607" fileName="PluginMoveHelper.java" startLine="110" startPosition="0" endLine="111" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6317362145809465998" fileName="PluginMoveHelper.java" startLine="111" startPosition="62" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2800974637747464712" fileName="PluginMoveHelper.java" startLine="112" startPosition="0" endLine="113" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2800974637747464743" fileName="PluginMoveHelper.java" startLine="114" startPosition="35" endLine="115" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2800974637747464727" fileName="PluginMoveHelper.java" startLine="116" startPosition="13" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3804299821419307929" fileName="PluginMoveHelper.java" startLine="117" startPosition="0" endLine="118" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3804299821419307945" fileName="PluginMoveHelper.java" startLine="118" startPosition="85" endLine="119" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5318937080028205625" fileName="PluginMoveHelper.java" startLine="119" startPosition="28" endLine="120" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4076419548984269324" fileName="PluginMoveHelper.java" startLine="127" startPosition="39" endLine="128" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4076419548984269337" fileName="PluginMoveHelper.java" startLine="129" startPosition="25" endLine="130" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4076419548984269342" fileName="PluginMoveHelper.java" startLine="131" startPosition="5" endLine="132" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4076419548984269354" fileName="PluginMoveHelper.java" startLine="133" startPosition="23" endLine="134" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4076419548984269359" fileName="PluginMoveHelper.java" startLine="135" startPosition="5" endLine="136" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4076419548984269368" fileName="PluginMoveHelper.java" startLine="137" startPosition="27" endLine="138" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4076419548984269376" fileName="PluginMoveHelper.java" startLine="140" startPosition="9" endLine="141" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4076419548984269380" fileName="PluginMoveHelper.java" startLine="141" startPosition="26" endLine="142" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4076419548984269386" fileName="PluginMoveHelper.java" startLine="143" startPosition="27" endLine="144" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8004978336432925683" fileName="PluginMoveHelper.java" startLine="148" startPosition="42" endLine="149" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1855937925843917409" fileName="PluginMoveHelper.java" startLine="149" startPosition="67" endLine="150" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8004978336433092144" fileName="PluginMoveHelper.java" startLine="151" startPosition="20" endLine="152" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4618316083866596705" fileName="PluginMoveHelper.java" startLine="152" startPosition="149" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="457580200161289901" fileName="PluginMoveHelper.java" startLine="153" startPosition="0" endLine="154" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="457580200161285528" fileName="PluginMoveHelper.java" startLine="154" startPosition="70" endLine="155" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4618316083866596707" fileName="PluginMoveHelper.java" startLine="156" startPosition="5" endLine="157" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8004978336433092337" fileName="PluginMoveHelper.java" startLine="157" startPosition="63" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8004978336433092327" fileName="PluginMoveHelper.java" startLine="158" startPosition="0" endLine="159" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8004978336433092177" fileName="PluginMoveHelper.java" startLine="159" startPosition="61" endLine="160" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3573713441992786735" fileName="PluginMoveHelper.java" startLine="162" startPosition="40" endLine="163" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8004978336433092157" fileName="PluginMoveHelper.java" startLine="166" startPosition="36" endLine="167" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8004978336433092340" fileName="PluginMoveHelper.java" startLine="168" startPosition="5" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1855937925843953137" fileName="PluginMoveHelper.java" startLine="169" startPosition="0" endLine="170" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3178711211098718665" fileName="PluginMoveHelper.java" startLine="170" startPosition="89" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3178711211098725027" fileName="PluginMoveHelper.java" startLine="173" startPosition="39" endLine="174" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3800604662869701261" fileName="PluginMoveHelper.java" startLine="176" startPosition="7" endLine="177" endPosition="265" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3800604662869701626" fileName="PluginMoveHelper.java" startLine="177" startPosition="265" endLine="178" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3800604662869701275" fileName="PluginMoveHelper.java" startLine="178" startPosition="57" endLine="179" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1161420610164991301" fileName="PluginMoveHelper.java" startLine="179" startPosition="22" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2183214647889492839" fileName="PluginMoveHelper.java" startLine="183" startPosition="25" endLine="184" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4618316083866595591" fileName="PluginMoveHelper.java" startLine="186" startPosition="7" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3178711211098725042" fileName="PluginMoveHelper.java" startLine="187" startPosition="0" endLine="188" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3573713441992778452" fileName="PluginMoveHelper.java" startLine="188" startPosition="14" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3573713441992786697" fileName="PluginMoveHelper.java" startLine="189" startPosition="0" endLine="190" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2800953503011857159" fileName="PluginMoveHelper.java" startLine="190" startPosition="102" endLine="191" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4618316083866607116" fileName="PluginMoveHelper.java" startLine="191" startPosition="0" endLine="192" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6701815962005538947" fileName="PluginMoveHelper.java" startLine="192" startPosition="13" endLine="193" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8004978336433012691" fileName="PluginMoveHelper.java" startLine="196" startPosition="47" endLine="197" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8004978336433012706" fileName="PluginMoveHelper.java" startLine="197" startPosition="129" endLine="198" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8004978336433012712" fileName="PluginMoveHelper.java" startLine="198" startPosition="159" endLine="199" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8004978336433033253" fileName="PluginMoveHelper.java" startLine="202" startPosition="66" endLine="203" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5173599272688217382" fileName="PluginMoveHelper.java" startLine="206" startPosition="76" endLine="207" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8004978336432944891" fileName="PluginMoveHelper.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PluginMoveHelper#(Ljetbrains/mps/project/MPSProject;)V" />
+    <nodeInfo nodeId="8004978336433033203" fileName="PluginMoveHelper.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/Language;)Z" />
+    <nodeInfo nodeId="8004978336433033305" fileName="PluginMoveHelper.java" startLine="60" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/Language;)Z" />
+    <nodeInfo nodeId="8004978336433033364" fileName="PluginMoveHelper.java" startLine="68" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/Language;)V" />
+    <nodeInfo nodeId="8004978336433033395" fileName="PluginMoveHelper.java" startLine="71" startPosition="9" endLine="74" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8004978336433092134" fileName="PluginMoveHelper.java" startLine="75" startPosition="184" endLine="78" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1855937925843864856" fileName="PluginMoveHelper.java" startLine="80" startPosition="0" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5318937080028151905" fileName="PluginMoveHelper.java" startLine="95" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="5318937080028204387" fileName="PluginMoveHelper.java" startLine="101" startPosition="101" endLine="104" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2800974637747464729" fileName="PluginMoveHelper.java" startLine="113" startPosition="68" endLine="116" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4076419548984269335" fileName="PluginMoveHelper.java" startLine="128" startPosition="64" endLine="131" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4076419548984269352" fileName="PluginMoveHelper.java" startLine="132" startPosition="130" endLine="135" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4076419548984269366" fileName="PluginMoveHelper.java" startLine="136" startPosition="62" endLine="139" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3573713441992786730" fileName="PluginMoveHelper.java" startLine="162" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
+    <nodeInfo nodeId="8004978336433092341" fileName="PluginMoveHelper.java" startLine="165" startPosition="16" endLine="168" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3178711211098725025" fileName="PluginMoveHelper.java" startLine="173" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="8004978336433033229" fileName="PluginMoveHelper.java" startLine="202" startPosition="0" endLine="205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="makePluginSolutionName#(Ljetbrains/mps/smodel/Language;Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="5173599272688217382" fileName="PluginMoveHelper.java" startLine="206" startPosition="0" endLine="209" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_qerz9l_a0a0a0a0a0a0a2a0a0a4#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="1161420610164992200" fileName="PluginMoveHelper.java" startLine="182" startPosition="0" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8004978336433033196" fileName="PluginMoveHelper.java" startLine="53" startPosition="71" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8004978336433033298" fileName="PluginMoveHelper.java" startLine="58" startPosition="7" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8004978336433033357" fileName="PluginMoveHelper.java" startLine="66" startPosition="51" endLine="71" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1855937925843917469" fileName="PluginMoveHelper.java" startLine="160" startPosition="56" endLine="165" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3178711211098725018" fileName="PluginMoveHelper.java" startLine="171" startPosition="0" endLine="176" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8004978336432944895" fileName="PluginMoveHelper.java" startLine="196" startPosition="0" endLine="201" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isFromFacetLang#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="4076419548984269374" fileName="PluginMoveHelper.java" startLine="139" startPosition="5" endLine="145" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="8004978336432925712" fileName="PluginMoveHelper.java" startLine="150" startPosition="94" endLine="156" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1161420610164992137" fileName="PluginMoveHelper.java" startLine="180" startPosition="0" endLine="186" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8004978336433033325" fileName="PluginMoveHelper.java" startLine="64" startPosition="0" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8828216506061801937" fileName="PluginMoveHelper.java" startLine="127" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValid#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="5318937080028171596" fileName="PluginMoveHelper.java" startLine="99" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="5318937080028151742" fileName="PluginMoveHelper.java" startLine="93" startPosition="57" endLine="122" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5318937080028108614" fileName="PluginMoveHelper.java" startLine="90" startPosition="104" endLine="123" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5318937080028094968" fileName="PluginMoveHelper.java" startLine="89" startPosition="35" endLine="124" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8004978336433031546" fileName="PluginMoveHelper.java" startLine="52" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="move#()V" />
+    <nodeInfo nodeId="5318937080028094933" fileName="PluginMoveHelper.java" startLine="89" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveIconsInAction#()V" />
+    <nodeInfo nodeId="8004978336433012718" fileName="PluginMoveHelper.java" startLine="148" startPosition="0" endLine="195" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="movePluginOut#(Ljetbrains/mps/smodel/Language;)V" />
+    <scopeInfo nodeId="8004978336432944894" fileName="PluginMoveHelper.java" startLine="48" startPosition="41" endLine="49" endPosition="18" />
+    <scopeInfo nodeId="8004978336433033204" fileName="PluginMoveHelper.java" startLine="55" startPosition="42" endLine="56" endPosition="75" />
+    <scopeInfo nodeId="8004978336433033306" fileName="PluginMoveHelper.java" startLine="60" startPosition="42" endLine="61" endPosition="129" />
+    <scopeInfo nodeId="8004978336433033365" fileName="PluginMoveHelper.java" startLine="68" startPosition="40" endLine="69" endPosition="77" />
+    <scopeInfo nodeId="8004978336433033396" fileName="PluginMoveHelper.java" startLine="72" startPosition="28" endLine="73" endPosition="52" />
+    <scopeInfo nodeId="8004978336433092135" fileName="PluginMoveHelper.java" startLine="76" startPosition="24" endLine="77" endPosition="15" />
+    <scopeInfo nodeId="1855937925843864859" fileName="PluginMoveHelper.java" startLine="81" startPosition="59" endLine="82" endPosition="26" />
+    <scopeInfo nodeId="5318937080028151906" fileName="PluginMoveHelper.java" startLine="95" startPosition="43" endLine="96" endPosition="135" />
+    <scopeInfo nodeId="5318937080028204388" fileName="PluginMoveHelper.java" startLine="102" startPosition="31" endLine="103" endPosition="21" />
+    <scopeInfo nodeId="2800974637747464730" fileName="PluginMoveHelper.java" startLine="114" startPosition="35" endLine="115" endPosition="21" />
+    <scopeInfo nodeId="4076419548984269336" fileName="PluginMoveHelper.java" startLine="129" startPosition="25" endLine="130" endPosition="19" />
+    <scopeInfo nodeId="4076419548984269353" fileName="PluginMoveHelper.java" startLine="133" startPosition="23" endLine="134" endPosition="19" />
+    <scopeInfo nodeId="4076419548984269367" fileName="PluginMoveHelper.java" startLine="137" startPosition="27" endLine="138" endPosition="19" />
+    <scopeInfo nodeId="4076419548984269382" fileName="PluginMoveHelper.java" startLine="143" startPosition="0" endLine="144" endPosition="19">
       <varInfo nodeId="4076419548984269383" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="4076419548984269385" fileName="PluginMoveHelper.java" startLine="142" startPosition="27" endLine="143" endPosition="19" />
-    <scopeInfo nodeId="3573713441992786731" fileName="PluginMoveHelper.java" startLine="161" startPosition="40" endLine="162" endPosition="89" />
-    <scopeInfo nodeId="8004978336433092342" fileName="PluginMoveHelper.java" startLine="165" startPosition="36" endLine="166" endPosition="94" />
-    <scopeInfo nodeId="3178711211098725026" fileName="PluginMoveHelper.java" startLine="172" startPosition="39" endLine="173" endPosition="38" />
-    <scopeInfo nodeId="1161420610164992203" fileName="PluginMoveHelper.java" startLine="182" startPosition="25" endLine="183" endPosition="86" />
-    <scopeInfo nodeId="8004978336433033232" fileName="PluginMoveHelper.java" startLine="201" startPosition="66" endLine="202" endPosition="44" />
-    <scopeInfo nodeId="5173599272688217382" fileName="PluginMoveHelper.java" startLine="205" startPosition="76" endLine="206" endPosition="43" />
-    <scopeInfo nodeId="4076419548984269375" fileName="PluginMoveHelper.java" startLine="139" startPosition="9" endLine="141" endPosition="18" />
-    <scopeInfo nodeId="8004978336432944891" fileName="PluginMoveHelper.java" startLine="47" startPosition="0" endLine="50" endPosition="0">
+    <scopeInfo nodeId="4076419548984269385" fileName="PluginMoveHelper.java" startLine="143" startPosition="27" endLine="144" endPosition="19" />
+    <scopeInfo nodeId="3573713441992786731" fileName="PluginMoveHelper.java" startLine="162" startPosition="40" endLine="163" endPosition="89" />
+    <scopeInfo nodeId="8004978336433092342" fileName="PluginMoveHelper.java" startLine="166" startPosition="36" endLine="167" endPosition="119" />
+    <scopeInfo nodeId="3178711211098725026" fileName="PluginMoveHelper.java" startLine="173" startPosition="39" endLine="174" endPosition="38" />
+    <scopeInfo nodeId="1161420610164992203" fileName="PluginMoveHelper.java" startLine="183" startPosition="25" endLine="184" endPosition="86" />
+    <scopeInfo nodeId="8004978336433033232" fileName="PluginMoveHelper.java" startLine="202" startPosition="66" endLine="203" endPosition="44" />
+    <scopeInfo nodeId="5173599272688217382" fileName="PluginMoveHelper.java" startLine="206" startPosition="76" endLine="207" endPosition="43" />
+    <scopeInfo nodeId="4076419548984269375" fileName="PluginMoveHelper.java" startLine="140" startPosition="9" endLine="142" endPosition="18" />
+    <scopeInfo nodeId="8004978336432944891" fileName="PluginMoveHelper.java" startLine="48" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="8004978336433012765" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="8004978336433033203" fileName="PluginMoveHelper.java" startLine="54" startPosition="0" endLine="57" endPosition="0">
+    <scopeInfo nodeId="8004978336433033203" fileName="PluginMoveHelper.java" startLine="55" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="8004978336433033203" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="8004978336433033305" fileName="PluginMoveHelper.java" startLine="59" startPosition="0" endLine="62" endPosition="0">
+    <scopeInfo nodeId="8004978336433033305" fileName="PluginMoveHelper.java" startLine="60" startPosition="0" endLine="63" endPosition="0">
       <varInfo nodeId="8004978336433033305" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="8004978336433033364" fileName="PluginMoveHelper.java" startLine="67" startPosition="0" endLine="70" endPosition="0">
+    <scopeInfo nodeId="8004978336433033364" fileName="PluginMoveHelper.java" startLine="68" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="8004978336433033364" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1855937925843864856" fileName="PluginMoveHelper.java" startLine="79" startPosition="0" endLine="82" endPosition="5">
+    <scopeInfo nodeId="1855937925843864856" fileName="PluginMoveHelper.java" startLine="80" startPosition="0" endLine="83" endPosition="5">
       <varInfo nodeId="1855937925843864857" varName="lang" />
     </scopeInfo>
-    <scopeInfo nodeId="5318937080028151905" fileName="PluginMoveHelper.java" startLine="94" startPosition="0" endLine="97" endPosition="0">
+    <scopeInfo nodeId="5318937080028151905" fileName="PluginMoveHelper.java" startLine="95" startPosition="0" endLine="98" endPosition="0">
       <varInfo nodeId="5318937080028151905" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="3573713441992786730" fileName="PluginMoveHelper.java" startLine="161" startPosition="0" endLine="164" endPosition="0">
+    <scopeInfo nodeId="3573713441992786730" fileName="PluginMoveHelper.java" startLine="162" startPosition="0" endLine="165" endPosition="0">
       <varInfo nodeId="3573713441992786730" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="3178711211098725025" fileName="PluginMoveHelper.java" startLine="172" startPosition="0" endLine="175" endPosition="0">
+    <scopeInfo nodeId="3178711211098725025" fileName="PluginMoveHelper.java" startLine="173" startPosition="0" endLine="176" endPosition="0">
       <varInfo nodeId="3178711211098725025" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="8004978336432944898" fileName="PluginMoveHelper.java" startLine="195" startPosition="47" endLine="198" endPosition="30">
+    <scopeInfo nodeId="8004978336432944898" fileName="PluginMoveHelper.java" startLine="196" startPosition="47" endLine="199" endPosition="30">
       <varInfo nodeId="8004978336433012707" varName="plugin" />
       <varInfo nodeId="8004978336433012692" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="8004978336433033229" fileName="PluginMoveHelper.java" startLine="201" startPosition="0" endLine="204" endPosition="0">
+    <scopeInfo nodeId="8004978336433033229" fileName="PluginMoveHelper.java" startLine="202" startPosition="0" endLine="205" endPosition="0">
       <varInfo nodeId="8004978336433033235" varName="l" />
       <varInfo nodeId="8004978336433033237" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="5173599272688217382" fileName="PluginMoveHelper.java" startLine="205" startPosition="0" endLine="208" endPosition="0">
+    <scopeInfo nodeId="5173599272688217382" fileName="PluginMoveHelper.java" startLine="206" startPosition="0" endLine="209" endPosition="0">
       <varInfo nodeId="5173599272688217382" varName="str" />
     </scopeInfo>
-    <scopeInfo nodeId="8004978336432925713" fileName="PluginMoveHelper.java" startLine="150" startPosition="20" endLine="154" endPosition="55">
+    <scopeInfo nodeId="8004978336432925713" fileName="PluginMoveHelper.java" startLine="151" startPosition="20" endLine="155" endPosition="55">
       <varInfo nodeId="457580200161289902" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="1161420610164992200" fileName="PluginMoveHelper.java" startLine="181" startPosition="0" endLine="185" endPosition="0" />
-    <scopeInfo nodeId="8004978336432944895" fileName="PluginMoveHelper.java" startLine="195" startPosition="0" endLine="200" endPosition="0">
+    <scopeInfo nodeId="1161420610164992200" fileName="PluginMoveHelper.java" startLine="182" startPosition="0" endLine="186" endPosition="0" />
+    <scopeInfo nodeId="8004978336432944895" fileName="PluginMoveHelper.java" startLine="196" startPosition="0" endLine="201" endPosition="0">
       <varInfo nodeId="8004978336433012689" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8004978336433033326" fileName="PluginMoveHelper.java" startLine="64" startPosition="55" endLine="77" endPosition="7">
+    <scopeInfo nodeId="8004978336433033326" fileName="PluginMoveHelper.java" startLine="65" startPosition="55" endLine="78" endPosition="7">
       <varInfo nodeId="8004978336433092118" varName="result" />
       <varInfo nodeId="8004978336433033351" varName="sb" />
     </scopeInfo>
-    <scopeInfo nodeId="8828216506061801940" fileName="PluginMoveHelper.java" startLine="126" startPosition="39" endLine="144" endPosition="5">
+    <scopeInfo nodeId="8828216506061801940" fileName="PluginMoveHelper.java" startLine="127" startPosition="39" endLine="145" endPosition="5">
       <varInfo nodeId="4076419548984269360" varName="file" />
       <varInfo nodeId="4076419548984269325" varName="module" />
       <varInfo nodeId="4076419548984269343" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="8828216506061801937" fileName="PluginMoveHelper.java" startLine="126" startPosition="0" endLine="146" endPosition="0">
+    <scopeInfo nodeId="8828216506061801937" fileName="PluginMoveHelper.java" startLine="127" startPosition="0" endLine="147" endPosition="0">
       <varInfo nodeId="8828216506061802341" varName="icon" />
     </scopeInfo>
-    <scopeInfo nodeId="5318937080028171597" fileName="PluginMoveHelper.java" startLine="98" startPosition="39" endLine="119" endPosition="30">
+    <scopeInfo nodeId="5318937080028171597" fileName="PluginMoveHelper.java" startLine="99" startPosition="39" endLine="120" endPosition="30">
       <varInfo nodeId="2800974637747464713" varName="file" />
       <varInfo nodeId="5318937080028205603" varName="iconPath" />
       <varInfo nodeId="5318937080028204376" varName="lang" />
@@ -2167,26 +2167,26 @@
       <varInfo nodeId="5318937080028205706" varName="newIconPath" />
       <varInfo nodeId="3804299821419307930" varName="parent" />
     </scopeInfo>
-    <scopeInfo nodeId="5318937080028171596" fileName="PluginMoveHelper.java" startLine="98" startPosition="0" endLine="121" endPosition="0">
+    <scopeInfo nodeId="5318937080028171596" fileName="PluginMoveHelper.java" startLine="99" startPosition="0" endLine="122" endPosition="0">
       <varInfo nodeId="5318937080028171596" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="5318937080028108616" fileName="PluginMoveHelper.java" startLine="90" startPosition="63" endLine="121" endPosition="11">
+    <scopeInfo nodeId="5318937080028108616" fileName="PluginMoveHelper.java" startLine="91" startPosition="63" endLine="122" endPosition="11">
       <varInfo nodeId="5318937080028151878" varName="m" />
       <varInfo nodeId="5318937080028131209" varName="models" />
     </scopeInfo>
-    <scopeInfo nodeId="5318937080028094971" fileName="PluginMoveHelper.java" startLine="89" startPosition="104" endLine="122" endPosition="7" />
-    <scopeInfo nodeId="8004978336433031549" fileName="PluginMoveHelper.java" startLine="51" startPosition="22" endLine="85" endPosition="75">
+    <scopeInfo nodeId="5318937080028094971" fileName="PluginMoveHelper.java" startLine="90" startPosition="104" endLine="123" endPosition="7" />
+    <scopeInfo nodeId="8004978336433031549" fileName="PluginMoveHelper.java" startLine="52" startPosition="22" endLine="86" endPosition="75">
       <varInfo nodeId="8004978336433033153" varName="langs" />
       <varInfo nodeId="8004978336433033299" varName="problems" />
       <varInfo nodeId="8004978336433033197" varName="refLangs" />
     </scopeInfo>
-    <scopeInfo nodeId="5318937080028094936" fileName="PluginMoveHelper.java" startLine="88" startPosition="35" endLine="123" endPosition="5" />
-    <scopeInfo nodeId="5318937080028094968" fileName="PluginMoveHelper.java" startLine="88" startPosition="35" endLine="123" endPosition="5">
+    <scopeInfo nodeId="5318937080028094936" fileName="PluginMoveHelper.java" startLine="89" startPosition="35" endLine="124" endPosition="5" />
+    <scopeInfo nodeId="5318937080028094968" fileName="PluginMoveHelper.java" startLine="89" startPosition="35" endLine="124" endPosition="5">
       <varInfo nodeId="5318937080028094969" varName="solution" />
     </scopeInfo>
-    <scopeInfo nodeId="8004978336433031546" fileName="PluginMoveHelper.java" startLine="51" startPosition="0" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="5318937080028094933" fileName="PluginMoveHelper.java" startLine="88" startPosition="0" endLine="125" endPosition="0" />
-    <scopeInfo nodeId="8004978336433012721" fileName="PluginMoveHelper.java" startLine="147" startPosition="42" endLine="192" endPosition="45">
+    <scopeInfo nodeId="8004978336433031546" fileName="PluginMoveHelper.java" startLine="52" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="5318937080028094933" fileName="PluginMoveHelper.java" startLine="89" startPosition="0" endLine="126" endPosition="0" />
+    <scopeInfo nodeId="8004978336433012721" fileName="PluginMoveHelper.java" startLine="148" startPosition="42" endLine="193" endPosition="45">
       <varInfo nodeId="3800604662869701262" varName="context" />
       <varInfo nodeId="8004978336433092328" varName="modelName" />
       <varInfo nodeId="1855937925843953138" varName="nodes" />
@@ -2197,18 +2197,18 @@
       <varInfo nodeId="8004978336433092178" varName="solModels" />
       <varInfo nodeId="8004978336432925684" varName="solutionName" />
     </scopeInfo>
-    <scopeInfo nodeId="8004978336433012718" fileName="PluginMoveHelper.java" startLine="147" startPosition="0" endLine="194" endPosition="0">
+    <scopeInfo nodeId="8004978336433012718" fileName="PluginMoveHelper.java" startLine="148" startPosition="0" endLine="195" endPosition="0">
       <varInfo nodeId="8004978336433012728" varName="l" />
     </scopeInfo>
-    <unitInfo nodeId="8004978336433033203" fileName="PluginMoveHelper.java" startLine="53" startPosition="73" endLine="57" endPosition="5" unitName="jetbrains.mps.ide.migration.migration25.PluginMoveHelper$1" />
-    <unitInfo nodeId="8004978336433033305" fileName="PluginMoveHelper.java" startLine="58" startPosition="76" endLine="62" endPosition="5" unitName="jetbrains.mps.ide.migration.migration25.PluginMoveHelper$2" />
-    <unitInfo nodeId="8004978336433033364" fileName="PluginMoveHelper.java" startLine="66" startPosition="51" endLine="70" endPosition="7" unitName="jetbrains.mps.ide.migration.migration25.PluginMoveHelper$3" />
-    <unitInfo nodeId="5318937080028151905" fileName="PluginMoveHelper.java" startLine="93" startPosition="125" endLine="97" endPosition="9" unitName="jetbrains.mps.ide.migration.migration25.PluginMoveHelper$4" />
-    <unitInfo nodeId="3573713441992786730" fileName="PluginMoveHelper.java" startLine="160" startPosition="111" endLine="164" endPosition="5" unitName="jetbrains.mps.ide.migration.migration25.PluginMoveHelper$6" />
-    <unitInfo nodeId="3178711211098725025" fileName="PluginMoveHelper.java" startLine="171" startPosition="76" endLine="175" endPosition="5" unitName="jetbrains.mps.ide.migration.migration25.PluginMoveHelper$7" />
-    <unitInfo nodeId="1161420610164992198" fileName="PluginMoveHelper.java" startLine="180" startPosition="45" endLine="185" endPosition="5" unitName="jetbrains.mps.ide.migration.migration25.PluginMoveHelper$8" />
-    <unitInfo nodeId="5318937080028171596" fileName="PluginMoveHelper.java" startLine="97" startPosition="24" endLine="121" endPosition="9" unitName="jetbrains.mps.ide.migration.migration25.PluginMoveHelper$5" />
-    <unitInfo nodeId="8004978336432944889" fileName="PluginMoveHelper.java" startLine="43" startPosition="0" endLine="209" endPosition="0" unitName="jetbrains.mps.ide.migration.migration25.PluginMoveHelper" />
+    <unitInfo nodeId="8004978336433033203" fileName="PluginMoveHelper.java" startLine="54" startPosition="73" endLine="58" endPosition="5" unitName="jetbrains.mps.ide.migration.migration25.PluginMoveHelper$1" />
+    <unitInfo nodeId="8004978336433033305" fileName="PluginMoveHelper.java" startLine="59" startPosition="76" endLine="63" endPosition="5" unitName="jetbrains.mps.ide.migration.migration25.PluginMoveHelper$2" />
+    <unitInfo nodeId="8004978336433033364" fileName="PluginMoveHelper.java" startLine="67" startPosition="51" endLine="71" endPosition="7" unitName="jetbrains.mps.ide.migration.migration25.PluginMoveHelper$3" />
+    <unitInfo nodeId="5318937080028151905" fileName="PluginMoveHelper.java" startLine="94" startPosition="125" endLine="98" endPosition="9" unitName="jetbrains.mps.ide.migration.migration25.PluginMoveHelper$4" />
+    <unitInfo nodeId="3573713441992786730" fileName="PluginMoveHelper.java" startLine="161" startPosition="111" endLine="165" endPosition="5" unitName="jetbrains.mps.ide.migration.migration25.PluginMoveHelper$6" />
+    <unitInfo nodeId="3178711211098725025" fileName="PluginMoveHelper.java" startLine="172" startPosition="76" endLine="176" endPosition="5" unitName="jetbrains.mps.ide.migration.migration25.PluginMoveHelper$7" />
+    <unitInfo nodeId="1161420610164992198" fileName="PluginMoveHelper.java" startLine="181" startPosition="45" endLine="186" endPosition="5" unitName="jetbrains.mps.ide.migration.migration25.PluginMoveHelper$8" />
+    <unitInfo nodeId="5318937080028171596" fileName="PluginMoveHelper.java" startLine="98" startPosition="24" endLine="122" endPosition="9" unitName="jetbrains.mps.ide.migration.migration25.PluginMoveHelper$5" />
+    <unitInfo nodeId="8004978336432944889" fileName="PluginMoveHelper.java" startLine="44" startPosition="0" endLine="210" endPosition="0" unitName="jetbrains.mps.ide.migration.migration25.PluginMoveHelper" />
   </root>
   <root nodeRef="r:ac0b1498-2795-4a56-a562-d0f2d196bfe1(jetbrains.mps.ide.migration.migration25)/8534969608023778839">
     <nodeInfo nodeId="8534969608023778839" fileName="MigrationScript_APIMigrationStandalone_Action.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
@@ -2403,7 +2403,7 @@
     <nodeInfo nodeId="9065176582222574603" fileName="UpdateRefactoringVersions_Action.java" startLine="88" startPosition="116" endLine="89" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9065176582222574608" fileName="UpdateRefactoringVersions_Action.java" startLine="89" startPosition="39" endLine="90" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9065176582222574621" fileName="UpdateRefactoringVersions_Action.java" startLine="91" startPosition="71" endLine="92" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9065176582222574639" fileName="UpdateRefactoringVersions_Action.java" startLine="96" startPosition="98" endLine="97" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9065176582222574639" fileName="UpdateRefactoringVersions_Action.java" startLine="96" startPosition="98" endLine="97" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9065176582222574652" fileName="UpdateRefactoringVersions_Action.java" startLine="98" startPosition="133" endLine="99" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9065176582222574665" fileName="UpdateRefactoringVersions_Action.java" startLine="100" startPosition="30" endLine="101" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="9065176582222574671" fileName="UpdateRefactoringVersions_Action.java" startLine="103" startPosition="68" endLine="104" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2433,7 +2433,7 @@
     <nodeInfo nodeId="9065176582222574669" fileName="UpdateRefactoringVersions_Action.java" startLine="102" startPosition="7" endLine="111" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="9065176582222574567" fileName="UpdateRefactoringVersions_Action.java" startLine="47" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
     <nodeInfo nodeId="9065176582222574570" fileName="UpdateRefactoringVersions_Action.java" startLine="84" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateModelVersion#(Ljetbrains/mps/smodel/descriptor/RefactorableSModelDescriptor;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="9065176582222574645" fileName="UpdateRefactoringVersions_Action.java" startLine="97" startPosition="40" endLine="112" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="9065176582222574645" fileName="UpdateRefactoringVersions_Action.java" startLine="97" startPosition="23" endLine="112" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="9065176582222574636" fileName="UpdateRefactoringVersions_Action.java" startLine="96" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateImportVersions#(Ljetbrains/mps/extapi/model/EditableSModel;Ljava/util/Map;)V" />
     <nodeInfo nodeId="9065176582222574567" fileName="UpdateRefactoringVersions_Action.java" startLine="58" startPosition="96" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="9065176582222574567" fileName="UpdateRefactoringVersions_Action.java" startLine="58" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
@@ -2496,7 +2496,7 @@
     <scopeInfo nodeId="9065176582222574651" fileName="UpdateRefactoringVersions_Action.java" startLine="98" startPosition="133" endLine="111" endPosition="7">
       <varInfo nodeId="9065176582222574653" varName="usedModel" />
     </scopeInfo>
-    <scopeInfo nodeId="9065176582222574645" fileName="UpdateRefactoringVersions_Action.java" startLine="97" startPosition="40" endLine="112" endPosition="5">
+    <scopeInfo nodeId="9065176582222574645" fileName="UpdateRefactoringVersions_Action.java" startLine="97" startPosition="23" endLine="112" endPosition="5">
       <varInfo nodeId="9065176582222574646" varName="importElement" />
     </scopeInfo>
     <scopeInfo nodeId="9065176582222574638" fileName="UpdateRefactoringVersions_Action.java" startLine="96" startPosition="98" endLine="112" endPosition="5">

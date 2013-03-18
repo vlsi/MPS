@@ -15,10 +15,12 @@
  */
 package jetbrains.mps.errors;
 
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.HashMap;
@@ -37,7 +39,7 @@ public class BaseQuickFixProvider implements QuickFixProvider {
   private boolean myIsError = false;
 
   public BaseQuickFixProvider(String classFQName) {
-    myClassFQName = SModelReference.fromString(NameUtil.namespaceFromLongName(classFQName)).getLongName() +
+    myClassFQName = SModelStereotype.withoutStereotype(jetbrains.mps.smodel.SModelReference.fromString(NameUtil.namespaceFromLongName(classFQName)).getModelName()) +
       "." + NameUtil.shortNameFromLongName(classFQName);   //without stereotypes, that is.
     myQuickFix = null;
     myQuickFixTaken = false;
@@ -69,7 +71,8 @@ public class BaseQuickFixProvider implements QuickFixProvider {
     }
     try {
       String languageNamespace = NameUtil.namespaceFromLongName(NameUtil.namespaceFromLongName(myClassFQName));
-      Class aClass = ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class).getClass(myClassFQName);
+      Language language = ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class);
+      Class aClass = ClassLoaderManager.getInstance().getClass(language, myClassFQName);
       if (aClass == null) {
         LOG.error("class " + myClassFQName + " not found in a module " + languageNamespace);
         myQuickFixTaken = true;

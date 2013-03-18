@@ -16,10 +16,17 @@
 package jetbrains.mps.refactoring;
 
 import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.InternUtil;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public class StructureModificationData {
 
@@ -51,7 +58,8 @@ public class StructureModificationData {
 
     @Override
     public int compareTo(FullNodeId o) {
-      int i2 = myModelReference.getLongName().compareTo(o.myModelReference.getLongName());
+      int i2 = SModelStereotype.withoutStereotype(myModelReference.getModelName()).compareTo(
+          SModelStereotype.withoutStereotype(o.myModelReference.getModelName()));
       if (i2 != 0) return i2;
       if (myNodeId == null) {
         if (o.myNodeId == null) {
@@ -78,12 +86,12 @@ public class StructureModificationData {
     }
 
     public void fromElement(Element element) {
-      myModelReference = SModelReference.fromString(element.getAttributeValue(MODEL_UID));
+      myModelReference = jetbrains.mps.smodel.SModelReference.fromString(element.getAttributeValue(MODEL_UID));
       String value = element.getAttributeValue(NODE_ID);
       if (value.equals(NULL)) {
         myNodeId = null;
       } else {
-        myNodeId = jetbrains.mps.smodel.SNodeId.fromString(value);
+        myNodeId = PersistenceFacade.getInstance().createNodeId(value);
       }
     }
 

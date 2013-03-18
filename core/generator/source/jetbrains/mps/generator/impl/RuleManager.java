@@ -17,7 +17,7 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.runtime.*;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.FlattenIterable;
 

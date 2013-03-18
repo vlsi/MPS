@@ -81,7 +81,9 @@ public class AddSinceBlockDocTag_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNodeFactoryOperations.addNewChild(node, "since", "jetbrains.mps.baseLanguage.javadoc.structure.SinceBlockDocTag");
+      SNode addedNode = SNodeFactoryOperations.addNewChild(node, "since", "jetbrains.mps.baseLanguage.javadoc.structure.SinceBlockDocTag");
+      BlockDocTagHelper.setFocus(editorContext, addedNode);
+
     }
 
     public IntentionDescriptor getDescriptor() {

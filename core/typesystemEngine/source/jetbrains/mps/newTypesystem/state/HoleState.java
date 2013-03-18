@@ -26,11 +26,8 @@ import jetbrains.mps.typesystem.inference.InequalitySystem;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 
 /**
- * Created with IntelliJ IDEA.
  * User: fyodor
  * Date: 12/3/12
- * Time: 10:59 AM
- * To change this template use File | Settings | File Templates.
  */
 public class HoleState extends State {
 

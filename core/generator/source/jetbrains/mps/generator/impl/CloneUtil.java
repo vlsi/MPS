@@ -21,7 +21,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.DynamicReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.StaticReference;
 import org.jetbrains.mps.openapi.model.SNode;

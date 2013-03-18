@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.openapi.ui.Messages;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -30,6 +30,7 @@ import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
@@ -163,7 +164,7 @@ public class PluginMoveHelper {
       }
     }).first());
     if (pluginModel.value == null) {
-      pluginModel.value = s.createModel(modelName, s.getModelRoots().iterator().next(), null);
+      pluginModel.value = SModuleOperations.createModelWithAdjustments(modelName, s.getModelRoots().iterator().next());
     }
 
     List<SNode> nodes = IterableUtil.asList(LanguageAspect.PLUGIN.get(l).getRootNodes());

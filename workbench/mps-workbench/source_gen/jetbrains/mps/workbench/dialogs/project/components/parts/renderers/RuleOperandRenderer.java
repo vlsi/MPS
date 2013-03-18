@@ -22,8 +22,9 @@ import javax.swing.border.EmptyBorder;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefAllLocal;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefAllGlobal;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_SimpleRef;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.ModelAccess;
@@ -109,10 +110,10 @@ public class RuleOperandRenderer implements TableCellRenderer {
     } else
     if (ref instanceof MappingConfig_SimpleRef) {
       MappingConfig_SimpleRef refC = (MappingConfig_SimpleRef) ref;
-      SModelReference modelRef = SModelReference.fromString(refC.getModelUID());
+      SModelReference modelRef = jetbrains.mps.smodel.SModelReference.fromString(refC.getModelUID());
       String nodeName;
       if (refC.getNodeID().equals("*")) {
-        nodeName = NameUtil.shortNameFromLongName(modelRef.getLongName()) + ".*";
+        nodeName = NameUtil.shortNameFromLongName(SModelStereotype.withoutStereotype(modelRef.getModelName())) + ".*";
       } else {
         final SNodeReference p = new SNodePointer(refC.getModelUID(), refC.getNodeID());
         nodeName = ModelAccess.instance().runReadAction(new Computable<String>() {

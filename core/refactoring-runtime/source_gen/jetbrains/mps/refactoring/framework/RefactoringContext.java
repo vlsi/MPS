@@ -46,6 +46,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import java.lang.reflect.Constructor;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -646,7 +647,7 @@ public class RefactoringContext {
       if (l == null) {
         LOG.errorWithTrace("can't find a language " + namespace);
       } else {
-        Class refactoringClass = l.getClass(className);
+        Class refactoringClass = ClassLoaderManager.getInstance().getClass(l, className);
         if (refactoringClass == null) {
           LOG.errorWithTrace("can't find a class " + className + " in a language " + namespace);
         } else {

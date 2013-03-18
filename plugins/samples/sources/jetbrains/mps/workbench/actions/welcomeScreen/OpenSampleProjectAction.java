@@ -24,11 +24,9 @@ import com.intellij.openapi.fileChooser.FileChooser;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileChooser.ex.FileChooserDialogImpl;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.SystemInfo;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.platform.ProjectBaseDirectory;
-import com.intellij.util.Consumer;
 import jetbrains.mps.build.SamplesExtractor;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.workbench.actions.OpenMPSProjectFileChooserDescriptor;
@@ -60,18 +58,14 @@ public class OpenSampleProjectAction extends AnAction {
 
     descriptor.putUserData(FileChooserDialogImpl.PREFER_LAST_OVER_TO_SELECT, Boolean.TRUE);
 
-    FileChooser.chooseFilesWithSlideEffect(descriptor, currentProject, userHomeDir, new Consumer<VirtualFile[]>() {
-      @Override
-      public void consume(final VirtualFile[] files) {
-        if (files.length == 0 || files[0] == null || files[0].isDirectory()) return;
+    VirtualFile result = FileChooser.chooseFile(descriptor, currentProject, userHomeDir);
+    if(result == null || result.isDirectory()) return;
 
-        String filePath = files[0].getPath();
-        Project project = ProjectUtil.openProject(filePath, currentProject, false);
-        if (project != null) {
-          ProjectBaseDirectory.getInstance(project).setBaseDir(project.getBaseDir());
-        }
-      }
-    });
+    String filePath = result.getPath();
+    Project project = ProjectUtil.openProject(filePath, currentProject, false);
+    if (project != null) {
+      ProjectBaseDirectory.getInstance(project).setBaseDir(project.getBaseDir());
+    }
   }
 
 }

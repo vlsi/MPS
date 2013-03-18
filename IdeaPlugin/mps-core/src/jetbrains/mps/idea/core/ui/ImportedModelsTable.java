@@ -20,7 +20,7 @@ import jetbrains.mps.fileTypes.FileIcons;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.project.IModule;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 import javax.swing.*;
@@ -41,7 +41,7 @@ public class ImportedModelsTable extends MpsElementsTable<SModelReference> {
 
     @Override
     protected String getText(SModelReference modelReference) {
-        return modelReference.getSModelFqName().toString();
+        return modelReference.getModelName();
     }
 
     @Override
@@ -86,7 +86,7 @@ public class ImportedModelsTable extends MpsElementsTable<SModelReference> {
     private static final class ModelReferenceComparator implements Comparator<SModelReference> {
         @Override
         public int compare(SModelReference o1, SModelReference o2) {
-            return o1.getSModelFqName().compareTo(o2.getSModelFqName());
+            return o1.getModelName().compareTo(o2.getModelName());
         }
 
         @Override

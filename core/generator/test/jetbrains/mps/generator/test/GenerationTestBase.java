@@ -32,7 +32,7 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.BaseMPSModuleOwner;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleOwner;
@@ -318,7 +318,7 @@ public class GenerationTestBase {
   }
 
   private static Map<String, String> getHashes(SModel model) {
-    Document m = ModelPersistence.saveModel(model);
+    Document m = ModelPersistence.saveModel(((BaseSModelDescriptor) model).getSModelInternal());
     ByteArrayOutputStream os = new ByteArrayOutputStream();
     try {
       JDOMUtil.writeDocument(m, os);

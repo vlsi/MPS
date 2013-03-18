@@ -26,7 +26,7 @@ import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import jetbrains.mps.project.IModule;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.util.Computable;
@@ -87,7 +87,7 @@ public class GeneratedSourcePosition {
       public SModelReference compute() {
         SNode node = getNode();
         if (node == null) return null;
-        SModel modelDescriptor = node.getModel().getModelDescriptor();
+        SModel modelDescriptor = node.getModel();
         return modelDescriptor.getReference();
       }
     });
@@ -99,7 +99,7 @@ public class GeneratedSourcePosition {
 
   @Nullable
   public static GeneratedSourcePosition fromNode(final SNode node) {
-    SModel model = node.getModel().getModelDescriptor();
+    SModel model = node.getModel();
     DebugInfo debugInfo = TraceInfoCache.getInstance().get(model);
     if (debugInfo == null) {
       return null;

@@ -26,13 +26,13 @@ import jetbrains.mps.newTypesystem.context.InferenceTypecheckingContext;
 import jetbrains.mps.newTypesystem.context.TargetTypecheckingContext;
 import jetbrains.mps.newTypesystem.context.TargetTypecheckingContext_Tracer;
 import jetbrains.mps.newTypesystem.context.TracingTypecheckingContext;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.smodel.event.SModelListener;
@@ -400,7 +400,7 @@ public class TypeContextManager implements CoreComponent {
 
   private void addModelListener(SNode node) {
     SModel sModel = node.getModel();
-    SModel descriptor = sModel.getModelDescriptor();
+    SModel descriptor = sModel;
     if (descriptor != null && !myListeningForModels.contains(descriptor)) {
       ((SModelInternal) descriptor).addModelListener(myModelListener);
       myListeningForModels.add(descriptor);
@@ -487,12 +487,16 @@ public class TypeContextManager implements CoreComponent {
 
     @Override
     public void clear() {
-      myContext.clear();
+      if (myContext != null) {
+        myContext.clear();
+      }
     }
 
     @Override
     public void dispose() {
-      myContext.dispose();
+      if (myContext != null) {
+        myContext.dispose();
+      }
       myContext = null;
       myCount = 0;
     }

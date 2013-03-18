@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.io.ModelInputStream;
@@ -71,7 +71,7 @@ public class SModelHeader {
   }
 
   public SModelReference getModelReference() {
-    return myUID != null ? SModelReference.fromString(myUID) : null;
+    return myUID != null ? jetbrains.mps.smodel.SModelReference.fromString(myUID) : null;
   }
 
   public Map<String, String> getOptionalProperties() {

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes;
 
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.FinderUtils;
@@ -130,7 +131,7 @@ public class FinderNode extends BaseLeaf {
       try {
         //todo make it faster by saving language namespace
         for (Language l : GlobalScope.getInstance().getVisibleLanguages()) {
-          if (l.getClass(finderName) != null) {
+          if (ClassLoaderManager.getInstance().getClass(l, finderName) != null) {
             myFinder = new ReloadableFinder(l.getModuleReference(), finderName);
             return;
           }

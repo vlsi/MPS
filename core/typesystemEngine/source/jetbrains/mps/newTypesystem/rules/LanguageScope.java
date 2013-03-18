@@ -20,11 +20,8 @@ import java.util.Collections;
 import java.util.LinkedList;
 
 /**
- * Created with IntelliJ IDEA.
  * User: fyodor
  * Date: 8/27/12
- * Time: 4:40 PM
- * To change this template use File | Settings | File Templates.
  */
 public class LanguageScope {
 

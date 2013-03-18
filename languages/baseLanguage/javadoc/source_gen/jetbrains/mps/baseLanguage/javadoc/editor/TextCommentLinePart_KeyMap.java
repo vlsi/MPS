@@ -26,7 +26,7 @@ public class TextCommentLinePart_KeyMap extends KeyMapImpl {
     this.setApplicableToEveryModel(false);
     KeyMapAction action;
     action = new TextCommentLinePart_KeyMap.TextCommentLinePart_KeyMap_Action0();
-    this.putAction("any", "VK_ENTER", action);
+    this.putAction("none", "VK_ENTER", action);
     action = new TextCommentLinePart_KeyMap.TextCommentLinePart_KeyMap_Action1();
     this.putAction("any", "VK_BACK_SPACE", action);
     action = new TextCommentLinePart_KeyMap.TextCommentLinePart_KeyMap_Action2();
@@ -72,7 +72,7 @@ public class TextCommentLinePart_KeyMap extends KeyMapImpl {
     }
 
     public String getKeyStroke() {
-      return " ENTER";
+      return "none ENTER";
     }
   }
 

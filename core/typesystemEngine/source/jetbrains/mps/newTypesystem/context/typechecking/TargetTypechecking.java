@@ -20,11 +20,8 @@ import jetbrains.mps.newTypesystem.state.TargetState;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
- * Created with IntelliJ IDEA.
  * User: fyodor
  * Date: 12/3/12
- * Time: 1:26 PM
- * To change this template use File | Settings | File Templates.
  */
 public class TargetTypechecking extends BaseTypechecking<TargetState, TargetTypeheckingComponent> {
   public TargetTypechecking(SNode node, TargetState state) {

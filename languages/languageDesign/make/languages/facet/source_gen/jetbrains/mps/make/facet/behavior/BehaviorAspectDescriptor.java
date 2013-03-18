@@ -14,40 +14,42 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
       case 1:
         return new FacetDeclaration_BehaviorDescriptor();
-      case 13:
-        return new TargetDeclaration_BehaviorDescriptor();
       case 14:
+        return new TargetDeclaration_BehaviorDescriptor();
+      case 15:
         return new TargetDependency_BehaviorDescriptor();
       case 0:
         return new ExtendsFacetReference_BehaviorDescriptor();
-      case 9:
-        return new RelatedFacetReference_BehaviorDescriptor();
-      case 8:
-        return new ParametersDeclaration_BehaviorDescriptor();
-      case 6:
-        return new LocalParametersExpression_BehaviorDescriptor();
-      case 5:
-        return new LocalParametersComponentExpression_BehaviorDescriptor();
-      case 4:
-        return new ForeignParametersExpression_BehaviorDescriptor();
-      case 3:
-        return new ForeignParametersComponentExpression_BehaviorDescriptor();
-      case 12:
-        return new ResourceTypeDeclaration_BehaviorDescriptor();
       case 10:
-        return new ResourceClassifierType_BehaviorDescriptor();
-      case 2:
-        return new FacetReferenceExpression_BehaviorDescriptor();
+        return new RelatedFacetReference_BehaviorDescriptor();
+      case 9:
+        return new ParametersDeclaration_BehaviorDescriptor();
       case 7:
-        return new NamedFacetReference_BehaviorDescriptor();
+        return new LocalParametersExpression_BehaviorDescriptor();
+      case 6:
+        return new LocalParametersComponentExpression_BehaviorDescriptor();
+      case 5:
+        return new ForeignParametersExpression_BehaviorDescriptor();
+      case 4:
+        return new ForeignParametersComponentExpression_BehaviorDescriptor();
+      case 13:
+        return new ResourceTypeDeclaration_BehaviorDescriptor();
       case 11:
+        return new ResourceClassifierType_BehaviorDescriptor();
+      case 3:
+        return new FacetReferenceExpression_BehaviorDescriptor();
+      case 8:
+        return new NamedFacetReference_BehaviorDescriptor();
+      case 12:
         return new ResourceSpecificPropertiesExpression_BehaviorDescriptor();
-      case 15:
+      case 16:
         return new TargetReferenceExpression_BehaviorDescriptor();
+      case 2:
+        return new FacetJavaClassExpression_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.make.facet.structure.ExtendsFacetReference", "jetbrains.mps.make.facet.structure.FacetDeclaration", "jetbrains.mps.make.facet.structure.FacetReferenceExpression", "jetbrains.mps.make.facet.structure.ForeignParametersComponentExpression", "jetbrains.mps.make.facet.structure.ForeignParametersExpression", "jetbrains.mps.make.facet.structure.LocalParametersComponentExpression", "jetbrains.mps.make.facet.structure.LocalParametersExpression", "jetbrains.mps.make.facet.structure.NamedFacetReference", "jetbrains.mps.make.facet.structure.ParametersDeclaration", "jetbrains.mps.make.facet.structure.RelatedFacetReference", "jetbrains.mps.make.facet.structure.ResourceClassifierType", "jetbrains.mps.make.facet.structure.ResourceSpecificPropertiesExpression", "jetbrains.mps.make.facet.structure.ResourceTypeDeclaration", "jetbrains.mps.make.facet.structure.TargetDeclaration", "jetbrains.mps.make.facet.structure.TargetDependency", "jetbrains.mps.make.facet.structure.TargetReferenceExpression"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.make.facet.structure.ExtendsFacetReference", "jetbrains.mps.make.facet.structure.FacetDeclaration", "jetbrains.mps.make.facet.structure.FacetJavaClassExpression", "jetbrains.mps.make.facet.structure.FacetReferenceExpression", "jetbrains.mps.make.facet.structure.ForeignParametersComponentExpression", "jetbrains.mps.make.facet.structure.ForeignParametersExpression", "jetbrains.mps.make.facet.structure.LocalParametersComponentExpression", "jetbrains.mps.make.facet.structure.LocalParametersExpression", "jetbrains.mps.make.facet.structure.NamedFacetReference", "jetbrains.mps.make.facet.structure.ParametersDeclaration", "jetbrains.mps.make.facet.structure.RelatedFacetReference", "jetbrains.mps.make.facet.structure.ResourceClassifierType", "jetbrains.mps.make.facet.structure.ResourceSpecificPropertiesExpression", "jetbrains.mps.make.facet.structure.ResourceTypeDeclaration", "jetbrains.mps.make.facet.structure.TargetDeclaration", "jetbrains.mps.make.facet.structure.TargetDependency", "jetbrains.mps.make.facet.structure.TargetReferenceExpression"};
 }

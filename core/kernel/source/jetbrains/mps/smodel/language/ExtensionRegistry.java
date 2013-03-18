@@ -17,42 +17,44 @@ package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.ClassLoadingModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryAdapter;
 import jetbrains.mps.smodel.structure.ExtensionDescriptor;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComponent {
   private static Logger LOG = Logger.getLogger(ExtensionRegistry.class);
 
   private static ExtensionRegistry INSTANCE;
 
-  private Map<IModule, String> myModuleToNamespace = new HashMap<IModule, String>();
+  private Map<SModule, String> myModuleToNamespace = new HashMap<SModule, String>();
   private HashMap<String, ExtensionDescriptor> myExtensionDescriptors = new HashMap<String, ExtensionDescriptor>();
-  private AtomicBoolean myInitialLoadHappened = new AtomicBoolean(false);
   private ModuleRepositoryAdapter myListener = new MyModuleRepositoryAdapter();
   @Nullable
   private ClassLoaderManager myClm;
   @Nullable
   private MPSModuleRepository myRepo;
-  private ReloadAdapter myHandler = new ReloadAdapter() {
+  private final ReloadAdapter myHandler = new ReloadAdapter() {
     @Override
     public void unload() {
-      reloadExtensionDescriptors();
+      unloadExtensionDescriptors();
+    }
+
+    @Override
+    public void onAfterReload() {
+      loadExtensionDescriptors();
     }
   };
 
@@ -60,7 +62,7 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
     return INSTANCE;
   }
 
-  public ExtensionRegistry(@Nullable ClassLoaderManager clm,@Nullable MPSModuleRepository repo) {
+  public ExtensionRegistry(@Nullable ClassLoaderManager clm, @Nullable MPSModuleRepository repo) {
     myClm = clm;
     myRepo = repo;
   }
@@ -90,22 +92,16 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
     }
   }
 
-  // can be called multiple times
-  public void loadExtensionDescriptors() {
-    if (!myInitialLoadHappened.compareAndSet(false, true)) return;
-    reloadExtensionDescriptors();
-  }
-
-  public void reloadExtensionDescriptors() {
-    ModelAccess.assertLegalWrite();
-
+  private void unloadExtensionDescriptors() {
     for (ExtensionDescriptor desc : myExtensionDescriptors.values()) {
       unregisterExtensionDescriptor(desc);
     }
     myExtensionDescriptors.clear();
+  }
 
-    Set<IModule> existing = new HashSet<IModule>(myModuleToNamespace.keySet());
-    for (IModule mod : MPSModuleRepository.getInstance().getAllModules()) {
+  private void loadExtensionDescriptors() {
+    Set<SModule> existing = new HashSet<SModule>(myModuleToNamespace.keySet());
+    for (SModule mod : MPSModuleRepository.getInstance().getModules()) {
       String namespace = mod.getModuleName();
 
       // duplicate module, ignore
@@ -119,7 +115,7 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
       myExtensionDescriptors.put(namespace, desc);
       registerExtensionDescriptor(desc);
     }
-    for (IModule mod : existing) {
+    for (SModule mod : existing) {
       myModuleToNamespace.remove(mod);
     }
   }
@@ -136,11 +132,11 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
     unregisterExtensions(extensionDescriptor.getExtensions());
   }
 
-  private ExtensionDescriptor findExtensionDescriptor(IModule mod) {
+  private ExtensionDescriptor findExtensionDescriptor(SModule mod) {
     if (mod instanceof Language) {
       return findLanguageExtensionDescriptor((Language) mod);
     } else if (mod instanceof Solution) {
-      SolutionDescriptor sdesc = (SolutionDescriptor) mod.getModuleDescriptor();
+      SolutionDescriptor sdesc = ((Solution) mod).getModuleDescriptor();
       switch (sdesc.getKind()) {
         case PLUGIN_CORE:
         case PLUGIN_EDITOR:
@@ -176,16 +172,17 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
   }
 
   @Nullable
-  public static Object getObjectByClassName(String className, @Nullable IModule module, boolean avoidLogErrors) {
+  public static Object getObjectByClassName(String className, @Nullable SModule module, boolean avoidLogErrors) {
     try {
       if (module == null) {
         return null;
       }
 
-      if (!(module instanceof ClassLoadingModule)) return null;
-      ClassLoadingModule clm  = ((ClassLoadingModule) module);
+      if (!(ClassLoaderManager.getInstance().canLoad(module))) {
+        return null;
+      }
 
-      Class clazz = clm.getClass(className);
+      Class clazz = ClassLoaderManager.getInstance().getClass(module, className);
       if (clazz == null) {
         return null;
       }
@@ -194,22 +191,14 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
     } catch (Throwable e) {
       LOG.debug("error loading class\"" + className + "\"", e);
     }
+
     return null;
   }
 
   private class MyModuleRepositoryAdapter extends ModuleRepositoryAdapter {
     @Override
     public void moduleAdded(IModule module) {
-      String namespace = module.getModuleName();
-      // avoid duplicates in registry
-      if (myExtensionDescriptors.containsKey(namespace)) return;
-
-      ExtensionDescriptor desc = findExtensionDescriptor(module);
-      if (desc == null) return;
-
-      myExtensionDescriptors.put(namespace, desc);
-      myModuleToNamespace.put(module, namespace);
-      registerExtensionDescriptor(desc);
+      // awaiting next classes reload?
     }
 
     @Override

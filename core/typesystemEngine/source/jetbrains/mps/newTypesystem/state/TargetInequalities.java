@@ -20,11 +20,8 @@ import jetbrains.mps.newTypesystem.state.blocks.RelationBlock;
 import java.util.List;
 
 /**
- * Created with IntelliJ IDEA.
  * User: fyodor
  * Date: 12/3/12
- * Time: 12:52 PM
- * To change this template use File | Settings | File Templates.
  */
 public class TargetInequalities extends Inequalities {
   public TargetInequalities(TargetState state) {

@@ -16,15 +16,12 @@
 package jetbrains.mps.project.validation;
 
 import jetbrains.mps.generator.TransientModelsModule;
-import jetbrains.mps.generator.TransientSModel;
-import jetbrains.mps.messages.IMessage;
-import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.IterableUtil;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 public class ModelValidator {
@@ -59,7 +56,7 @@ public class ModelValidator {
 
     for (SModelReference reference : SModelOperations.getImportedModelUIDs(myModel)) {
       if (scope.getModelDescriptor(reference) == null) {
-        errors.add("Can't find model: " + reference.getLongName());
+        errors.add("Can't find model: " + SModelStereotype.withoutStereotype(reference.getModelName()));
       }
     }
 

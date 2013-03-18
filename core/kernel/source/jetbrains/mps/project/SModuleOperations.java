@@ -16,12 +16,16 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.ClasspathReader;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FolderModelRootBase;
+import jetbrains.mps.kernel.model.MissingDependenciesFixer;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.project.facets.TestsFacet;
+import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.reloading.CompositeClassPathItem;
@@ -42,6 +46,8 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class SModuleOperations {
+  private static final Logger LOG = Logger.getLogger(SModuleOperations.class);
+
   public static Collection<String> getIndexablePaths(SModule module) {
     // todo: maybe move getIndexablePaths method to FileBasedModelRoot, or even in ModelRoot classes?
     Set<String> result = new TreeSet<String>();
@@ -119,6 +125,36 @@ public class SModuleOperations {
       paths.addAll(module.getFacet(JavaModuleFacet.class).getAdditionalSourcePaths());
     }
     return paths;
+  }
+
+  public static EditableSModel createModelWithAdjustments(String name, @NotNull ModelRoot root) {
+    // todo: review usages of this method: a) i think in most cases we don't need adjustments b) in most cases we got first modelroot from module,
+    // create method like createModel(SModule module, String name) ?
+
+    // move to platform
+    // need for model creation from ui (maybe even workbench)
+
+    // why ModelRoot register model in module? WTF
+    // should be public AbstractModule#addModel method!
+    // ourModelsCreationListeners should be called in addModel method
+
+    // so this goes to SModuleOperation method with createModel from ModelRoot, apply adj and register in module
+    // deprecated
+    if (!root.canCreateModel(name)) {
+      LOG.error("Can't create a model " + name + " under model root " + root.getPresentation());
+      return null;
+    }
+
+    EditableSModel model = (EditableSModel) root.createModel(name);
+    // model.getSModel() ?
+    model.setChanged(true);
+    model.save();
+    // ((ModelRootBase) root).register(model);
+
+    ModelsAutoImportsManager.doAutoImport(root.getModule(), model);
+    new MissingDependenciesFixer(model).fix(false);
+
+    return model;
   }
 
   // deprecated methods

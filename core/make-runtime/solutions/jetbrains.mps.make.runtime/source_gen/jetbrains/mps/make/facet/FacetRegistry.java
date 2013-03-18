@@ -6,30 +6,49 @@ import jetbrains.mps.logging.Logger;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import java.util.Set;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Collections;
 
 public class FacetRegistry {
   private static Logger LOG = Logger.getLogger(FacetRegistry.class);
   private static FacetRegistry INSTANCE = new FacetRegistry();
   private Map<IFacet.Name, IFacet> facetMap = MapSequence.fromMap(new HashMap<IFacet.Name, IFacet>());
+  private Set<Tuples._2<String, IFacet>> facetsForLanguages = SetSequence.fromSet(new HashSet<Tuples._2<String, IFacet>>());
 
   private FacetRegistry() {
   }
 
+  @Deprecated
   public void register(IFacet facet) {
+    register(null, facet);
+  }
+
+  public void register(String languageNamespace, IFacet facet) {
     if (MapSequence.fromMap(facetMap).containsKey(facet.getName())) {
       throw new IllegalArgumentException("already registered");
     }
     MapSequence.fromMap(facetMap).put(facet.getName(), facet);
+    SetSequence.fromSet(facetsForLanguages).addElement(MultiTuple.<String,IFacet>from(languageNamespace, facet));
   }
 
-  public void unregister(IFacet facet) {
+  public void unregister(final IFacet facet) {
     if (!(MapSequence.fromMap(facetMap).containsKey(facet.getName()))) {
       throw new IllegalArgumentException("not registered");
     }
     MapSequence.fromMap(facetMap).removeKey(facet.getName());
+    facetsForLanguages = SetSequence.fromSetWithValues(new HashSet<Tuples._2<String, IFacet>>(), SetSequence.fromSet(facetsForLanguages).where(new IWhereFilter<Tuples._2<String, IFacet>>() {
+      public boolean accept(Tuples._2<String, IFacet> it) {
+        return !(facet.equals(it._1()));
+      }
+    }));
   }
 
   public IFacet lookup(IFacet.Name fn) {
@@ -47,6 +66,18 @@ public class FacetRegistry {
     // fallback to the "old" mechanism 
     LOG.debug("facet not found, loading using deprecated mechanism " + fn);
     return MapSequence.fromMap(facetMap).get(fn);
+  }
+
+  public Iterable<IFacet> getFacetsForLanguage(final String languageNamespace) {
+    return SetSequence.fromSet(facetsForLanguages).where(new IWhereFilter<Tuples._2<String, IFacet>>() {
+      public boolean accept(Tuples._2<String, IFacet> it) {
+        return languageNamespace.equals(it._0());
+      }
+    }).select(new ISelector<Tuples._2<String, IFacet>, IFacet>() {
+      public IFacet select(Tuples._2<String, IFacet> it) {
+        return it._1();
+      }
+    });
   }
 
   public Map<IFacet.Name, IFacet> allFacets() {

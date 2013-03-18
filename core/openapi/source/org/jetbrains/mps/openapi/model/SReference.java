@@ -15,7 +15,7 @@
  */
 package org.jetbrains.mps.openapi.model;
 
-import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.language.SLink;
@@ -42,7 +42,7 @@ public interface SReference {
   //null if the reference is not by-id. Still can use getTargetModel in this case
   //todo remove as many usages as possible . Symantics not clear
   @Nullable
-  jetbrains.mps.smodel.SModelReference getTargetSModelReference();
+  SModelReference getTargetSModelReference();
 
   //null if the reference is not by-id. Still can use getTargetNode in this case
   //todo remove as many usages as possible . Symantics not clear

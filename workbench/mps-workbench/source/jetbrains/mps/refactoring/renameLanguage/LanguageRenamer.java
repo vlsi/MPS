@@ -26,7 +26,7 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring;
 import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.IFile;
 
 public class LanguageRenamer {
@@ -63,8 +63,8 @@ public class LanguageRenamer {
       if (!SModelStereotype.isUserModel(sm)) continue;
       if (!(sm instanceof EditableSModel)) continue;
 
-      if (sm.getReference().getSModelFqName().toString().startsWith(oldFqName + ".")) {
-        String suffix = sm.getReference().getSModelFqName().toString().substring(oldFqName.length());
+      if (sm.getReference().getModelName().startsWith(oldFqName + ".")) {
+        String suffix = sm.getReference().getModelName().substring(oldFqName.length());
         myContext.changeModelName(((EditableSModel) sm), myNewName + suffix);
       }
     }
@@ -88,8 +88,8 @@ public class LanguageRenamer {
         if (!SModelStereotype.isUserModel(sm)) continue;
         if (!(sm instanceof EditableSModel)) continue;
 
-        if (sm.getReference().getSModelFqName().toString().startsWith(oldFqName + ".")) {
-          String suffix = sm.getReference().getSModelFqName().toString().substring(oldFqName.length());
+        if (sm.getReference().getModelName().startsWith(oldFqName + ".")) {
+          String suffix = sm.getReference().getModelName().substring(oldFqName.length());
           myContext.changeModelName(((EditableSModel) sm), newPrefix + suffix);
         }
       }

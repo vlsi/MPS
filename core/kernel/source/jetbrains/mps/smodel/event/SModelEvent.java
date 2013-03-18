@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel.event;
 
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class SModelEvent {
@@ -35,7 +34,7 @@ public abstract class SModelEvent {
   }
 
   public SModel getModelDescriptor() {
-    return myModel.getModelDescriptor();
+    return myModel;
   }
 
   public boolean isChangeEvent() {

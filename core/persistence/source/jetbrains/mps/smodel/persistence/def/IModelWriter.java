@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel.persistence.def;
 
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModel;
 import org.jdom.Document;
 
 public interface IModelWriter {

@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -93,6 +94,9 @@ public class AddClassifierDocComment_Intention implements IntentionFactory {
     public void execute(final SNode node, final EditorContext editorContext) {
       if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"))) != null)) {
         AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment")), null);
+        if (editorContext.getSelectedNode() != node) {
+          editorContext.selectWRTFocusPolicy(node);
+        }
         return;
       }
 
@@ -104,6 +108,8 @@ public class AddClassifierDocComment_Intention implements IntentionFactory {
         SLinkOperations.setTarget(paramTag, "parameter", _quotation_createNode_peeqac_a0b0f0a(typeVariableDeclaration), true);
         ListSequence.fromList(SLinkOperations.getTargets(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"))), "param", true)).addElement(paramTag);
       }
+
+      editorContext.select(ListSequence.fromList(SLinkOperations.getTargets(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment"))), "body", true)).first());
     }
 
     public IntentionDescriptor getDescriptor() {
@@ -112,6 +118,7 @@ public class AddClassifierDocComment_Intention implements IntentionFactory {
   }
 
   private static SNode _quotation_createNode_peeqac_a0b0f0a(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.DocTypeParameterReference", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "param", (SNode) parameter_1);

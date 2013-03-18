@@ -20,7 +20,7 @@ import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.extapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.Nullable;
 

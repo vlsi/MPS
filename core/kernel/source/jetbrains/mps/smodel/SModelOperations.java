@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.extapi.model.EditableSModel;
@@ -54,7 +54,7 @@ public class SModelOperations {
 
   public static boolean isReadOnly(SModel model) {
     if (model instanceof jetbrains.mps.smodel.SModel) {
-      model = model.getModelDescriptor();
+      model = model;
     }
     return !(model instanceof EditableSModel) || ((EditableSModel) model).isReadOnly();
   }
@@ -63,7 +63,7 @@ public class SModelOperations {
     ModelChange.assertLegalChange(model);
 
     GlobalScope scope = GlobalScope.getInstance();
-    SModel modelDescriptor = model.getModelDescriptor();
+    SModel modelDescriptor = model;
     final IModule module = modelDescriptor == null ? null : modelDescriptor.getModule();
     final Collection<IModule> declaredDependencies = module != null ? new GlobalModuleDependenciesManager(module).getModules(Deptype.VISIBLE) : null;
     final Collection<Language> declaredUsedLanguages = module != null ? new GlobalModuleDependenciesManager(module).getUsedLanguages() : null;
@@ -178,7 +178,7 @@ public class SModelOperations {
 
   //todo rewrite using iterators
   public static List<SModel> allImportedModels(SModel model, IScope scope) {
-    SModel sourceModel = model.getModelDescriptor();
+    SModel sourceModel = model;
     Set<SModel> result = new LinkedHashSet<SModel>();
     for (Language language : getLanguages(model, scope)) {
       for (SModel am : language.getAccessoryModels()) {

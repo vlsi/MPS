@@ -68,6 +68,7 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.JList" />
     <classNode dependClassName="javax.swing.ListCellRenderer" />
+    <classNode dependClassName="jetbrains.mps.classloading.ModuleClassLoader" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
     <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
     <classNode dependClassName="jetbrains.mps.ide.navigation.NodeNavigatable" />
@@ -82,7 +83,6 @@
     <classNode dependClassName="jetbrains.mps.progress.ProgressMonitorAdapter" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
-    <classNode dependClassName="jetbrains.mps.runtime.ModuleClassLoader" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />

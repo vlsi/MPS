@@ -13,10 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
+
+import jetbrains.mps.classloading.ModuleClassLoaderSupport;
+import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.smodel.event.SModelListener;
-import org.jetbrains.mps.openapi.model.SModel;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -27,15 +29,13 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
-import jetbrains.mps.project.facets.JavaModuleFacetImpl;
 import jetbrains.mps.project.facets.TestsFacet;
-import jetbrains.mps.project.facets.TestsFacetImpl;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.*;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.runtime.ProtectionDomainUtil;
+import jetbrains.mps.util.ProtectionDomainUtil;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -48,12 +48,11 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleFacet;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class Language extends ClassLoadingModule implements MPSModuleOwner {
+public class Language extends AbstractModule implements MPSModuleOwner {
   private static final Logger LOG = Logger.getLogger(Language.class);
 
   public static final String LANGUAGE_MODELS = "languageModels";
@@ -267,6 +266,10 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     myNamesWithNoConcepts.clear();
   }
 
+  public ClassLoader getStubsLoader() {
+    return myStubsLoader;
+  }
+
   @Deprecated
   public IClassPathItem getLanguageRuntimeClasspath() {
     return new CompositeClassPathItem();
@@ -400,17 +403,6 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
   }
 
   @Override
-  public Class getClass(String fqName) {
-    if (!fqName.startsWith(getModuleName() + ".stubs.")) return super.getClass(fqName);
-    try {
-      return myStubsLoader.loadClass(fqName);
-    } catch (ClassNotFoundException e) {
-      LOG.error(e);
-    }
-    return null;
-  }
-
-  @Override
   protected void collectFacetTypes(Set<String> types) {
     super.collectFacetTypes(types);
     types.add(TestsFacet.FACET_TYPE);
@@ -444,7 +436,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
 
     @Override
     protected Class<?> findClass(String name) throws ClassNotFoundException {
-      byte[] bytes = findClassBytes(name);
+      byte[] bytes = ModuleClassLoaderSupport.create(Language.this).findClassBytes(name);
       if (bytes == null) return null;
       definePackageIfNecessary(name);
       return defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain());

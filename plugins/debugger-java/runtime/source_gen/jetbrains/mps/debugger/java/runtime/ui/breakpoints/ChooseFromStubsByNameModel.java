@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.generator.JavaModelUtil_new;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import javax.swing.ListCellRenderer;
 import com.intellij.ide.ui.ListCellRendererWrapper;
 import javax.swing.DefaultListCellRenderer;
@@ -73,9 +73,9 @@ import org.jetbrains.annotations.NotNull;
   }
 
   private String getNamespace(NavigationParticipant.NavigationTarget descriptor) {
-    SModelReference modelReference = ((SModelReference) descriptor.getNodeReference().getModelReference());
+    SModelReference modelReference = ((jetbrains.mps.smodel.SModelReference) descriptor.getNodeReference().getModelReference());
     if (modelReference != null) {
-      return modelReference.getLongName();
+      return SModelStereotype.withoutStereotype(modelReference.getModelName());
     }
     return null;
   }

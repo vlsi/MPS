@@ -16,8 +16,8 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.project.structure.modules.*;
-import jetbrains.mps.smodel.SModelReference;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;

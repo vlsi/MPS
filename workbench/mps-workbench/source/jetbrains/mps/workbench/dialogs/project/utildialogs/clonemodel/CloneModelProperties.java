@@ -21,7 +21,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.ModelRootUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.ArrayList;
@@ -110,7 +110,7 @@ public class CloneModelProperties {
     myLongName = jetbrains.mps.util.SNodeOperations.getModelLongName(model);
 
     myStereotype = jetbrains.mps.util.SNodeOperations.getModelStereotype(model);
-    ModelRoot modelRoot = ModelRootUtil.getModelRoot(model.getModelDescriptor());
+    ModelRoot modelRoot = ModelRootUtil.getModelRoot(model);
     if (modelRoot instanceof FolderModelRootBase) {
       myRoot = new RootReference();
       myRoot.setPath(((FolderModelRootBase)modelRoot).getPath());

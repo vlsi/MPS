@@ -32,7 +32,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.Tokens_Behavior;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.ListIterator;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -347,7 +346,7 @@ public class ClassifierResolveUtils {
 
     for (SModel model : Sequence.fromIterable(models)) {
       // FIXME will be unnecessary when transient models live in a separate repository 
-      if (!(model.equals(contextNodeModel)) && model instanceof SModel && (((SModelInternal) model).getModule() instanceof TransientModelsModule)) {
+      if (!(model.equals(contextNodeModel)) && model instanceof SModel && (model.getModule() instanceof TransientModelsModule)) {
         continue;
       }
 
@@ -505,7 +504,7 @@ public class ClassifierResolveUtils {
       for (SModel m : Sequence.fromIterable(models)) {
 
         // FIXME will be unnecessary when transient models live in a separate repository 
-        if (!(m.equals(contextNodeModel)) && m instanceof SModel && (((SModelInternal) m).getModule() instanceof TransientModelsModule)) {
+        if (!(m.equals(contextNodeModel)) && m instanceof SModel && (m.getModule() instanceof TransientModelsModule)) {
           continue;
         }
 
@@ -540,7 +539,7 @@ public class ClassifierResolveUtils {
     List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
 
     for (SModel candidate : Sequence.fromIterable(moduleScope.getModels())) {
-      if (candidate.getReference().getLongName().equals(name)) {
+      if (SModelStereotype.withoutStereotype(candidate.getReference().getModelName()).equals(name)) {
         ListSequence.fromList(models).addElement(candidate);
       }
     }

@@ -35,11 +35,8 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Created with IntelliJ IDEA.
  * User: fyodor
  * Date: 2/27/13
- * Time: 2:26 PM
- * To change this template use File | Settings | File Templates.
  */
 public class SNodeDeleteProvider implements DeleteProvider {
 
@@ -62,7 +59,7 @@ public class SNodeDeleteProvider implements DeleteProvider {
         for (SNodeReference selectedNode : mySelectedNodes) {
           SNode nodeToDelete = selectedNode.resolve(MPSModuleRepository.getInstance());
           if (nodeToDelete != null) {
-            SModel modelDescriptor = nodeToDelete.getModel().getModelDescriptor();
+            SModel modelDescriptor = nodeToDelete.getModel();
             if (modelDescriptor instanceof EditableSModel) {
               nodeToDelete.delete();
               modelsToSave.add((EditableSModel) modelDescriptor);

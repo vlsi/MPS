@@ -19,7 +19,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.navigation.NavigationProvider;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -131,7 +131,7 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
       return false;
     }
     if (isClassifier) {
-      String fqName = ref.getLongName() + "." + SPropertyOperations.getString(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(targetNode, "jetbrains.mps.baseLanguage.structure.Classifier"), "name");
+      String fqName = SModelStereotype.withoutStereotype(ref.getModelName()) + "." + SPropertyOperations.getString(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(targetNode, "jetbrains.mps.baseLanguage.structure.Classifier"), "name");
       for (NavigationProvider np : NavigationProvider.EP_NAME.getExtensions()) {
         if (np.openClass(projectPath, fqName)) {
           return true;
@@ -169,7 +169,7 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
   private String getClassifierName(SNode targetNode, SModelReference ref, final Map<String, Object> _params) {
     SNode classifier = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(targetNode), "jetbrains.mps.baseLanguage.structure.Classifier");
     assert classifier != null;
-    return ref.getLongName() + "." + SPropertyOperations.getString(classifier, "name");
+    return SModelStereotype.withoutStereotype(ref.getModelName()) + "." + SPropertyOperations.getString(classifier, "name");
   }
 
   private static Logger LOG = Logger.getLogger(GoByCurrentReferenceToIDEA_Action.class);

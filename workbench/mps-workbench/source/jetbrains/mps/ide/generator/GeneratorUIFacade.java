@@ -33,7 +33,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.ModelCommandExecutor.RunnableWithProgress;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;

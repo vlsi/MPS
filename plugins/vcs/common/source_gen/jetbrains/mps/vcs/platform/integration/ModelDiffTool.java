@@ -5,7 +5,7 @@ package jetbrains.mps.vcs.platform.integration;
 import com.intellij.openapi.diff.DiffTool;
 import com.intellij.openapi.diff.DiffRequest;
 import com.intellij.openapi.diff.DiffContent;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import com.intellij.openapi.diff.DiffManager;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
@@ -20,8 +20,7 @@ import com.intellij.openapi.diff.DocumentContent;
 import com.intellij.openapi.diff.FileContent;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
+import jetbrains.mps.smodel.BaseSModelDescriptor;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
@@ -60,7 +59,7 @@ public class ModelDiffTool implements DiffTool {
     if (type == null) {
       return true;
     }
-    return type.equals(MPSFileTypeFactory.MODEL_FILE_TYPE);
+    return type.equals(MPSFileTypeFactory.MPS_FILE_TYPE);
   }
 
   @Nullable
@@ -71,15 +70,10 @@ public class ModelDiffTool implements DiffTool {
 
   private static SModel readModel(DiffContent content) throws ModelReadException {
     if ((content instanceof DocumentContent || content instanceof FileContent) && content.getFile() != null) {
-      final SModel modelDescriptor = SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(content.getFile()));
+      final org.jetbrains.mps.openapi.model.SModel modelDescriptor = SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(content.getFile()));
 
       if (modelDescriptor != null) {
-        return ModelAccess.instance().runReadAction(new Computable<SModel>() {
-          @Override
-          public SModel compute() {
-            return modelDescriptor;
-          }
-        });
+        return ((BaseSModelDescriptor) modelDescriptor).getSModelInternal();
       }
     }
     try {

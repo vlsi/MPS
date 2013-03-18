@@ -36,6 +36,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import java.util.Iterator;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.ModelPropertiesConfigurable;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
@@ -88,7 +89,7 @@ public class NewModelDialog extends DialogWrapper {
     mainPanel.add(myModelRoots);
     DefaultComboBoxModel model = new DefaultComboBoxModel();
     for (ModelRoot root : myModule.getModelRoots()) {
-      if (!(root.canCreateModels())) {
+      if (root.canCreateModels()) {
         model.addElement(root);
       } else if (myModule instanceof Language && root instanceof FileBasedModelRoot) {
         // Can fix only FileBased model root (default for language) 
@@ -155,7 +156,7 @@ public class NewModelDialog extends DialogWrapper {
       return;
     }
 
-    if (((ModelRoot) myModelRoots.getSelectedItem()).canCreateModels()) {
+    if (!(((ModelRoot) myModelRoots.getSelectedItem()).canCreateModel(getFqName())) && myModule instanceof Language && myModelRoots.getSelectedItem() instanceof FileBasedModelRoot) {
       final FileBasedModelRoot selectedModelRoot = (FileBasedModelRoot) myModelRoots.getSelectedItem();
 
       Memento memento = new MementoImpl();
@@ -203,7 +204,7 @@ public class NewModelDialog extends DialogWrapper {
       public SModel compute() {
         String fqName = getFqName();
         ModelRoot mr = (ModelRoot) myModelRoots.getSelectedItem();
-        return myModule.createModel(fqName, mr, null);
+        return SModuleOperations.createModelWithAdjustments(fqName, mr);
       }
     }, myContext.getProject());
 
@@ -268,10 +269,22 @@ public class NewModelDialog extends DialogWrapper {
       return false;
     }
 
-    if (!(mr.canCreateModels()) && !(mr.canCreateModel(getFqName()))) {
+    if (!(mr.canCreateModels())) {
+      setErrorText("Can't create a model under this model root");
+      return false;
+    }
+
+    if (!(mr.canCreateModel(getFqName())) && !(myModule instanceof Language)) {
       setErrorText("Can't create a model with this name under this model root");
       return false;
     }
+
+    if (!(mr.canCreateModel(getFqName())) && myModule instanceof Language && !(mr instanceof FileBasedModelRoot)) {
+      setErrorText("Can't create a model with this name under this model root");
+      return false;
+    }
+
+
 
     setErrorText(null);
     return true;

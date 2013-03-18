@@ -18,7 +18,6 @@ package jetbrains.mps.ide.editor.warningPanel;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.IModule;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -29,7 +28,7 @@ public class PackagedModelWarningsProvider implements EditorWarningsProvider {
   public WarningPanel getWarningPanel(@NotNull SNode node, @NotNull Project project) {
     SModel model = node.getModel();
     if (model != null) {
-      SModel md = model.getModelDescriptor();
+      SModel md = model;
       IModule module = md.getModule();
       if (module != null && module.isPackaged()) {
         return new WarningPanel(this, "Warning: the node is in a packaged model. Your changes won't be saved");

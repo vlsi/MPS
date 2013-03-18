@@ -34,7 +34,6 @@
     <classNode dependClassName="jetbrains.mps.debug.api.DebuggerNotPresentException" />
     <classNode dependClassName="jetbrains.mps.debug.api.Debuggers" />
     <classNode dependClassName="jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.util.Mapper2" />

@@ -26,7 +26,7 @@
   <dep model="r:36539f52-7ec3-4937-98bf-1fbc1fbe99fc(jetbrains.mps.vcs.platform.mergedriver)" hash="3cnfhdg5okmfondocss4ho7adxo9un6" />
   <dep model="r:b45707fc-ff12-4ef7-8bef-69287f7e33f2(jetbrains.mps.baseLanguage.checkedDots.generator.template.main@generator)" hash="8mfe7n9xwshuy8g4qjangnfwidrl40j" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
-  <dep model="r:f7252e75-44f2-46f6-9600-c9b291e7dd5f(jetbrains.mps.vcs.platform.integration)" hash="1y7vd0tmu396fbn2cg3g8s9h60tmlvl" />
+  <dep model="r:f7252e75-44f2-46f6-9600-c9b291e7dd5f(jetbrains.mps.vcs.platform.integration)" hash="-dp6oei9kkg42dm3tias5dwh01sp845f" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="8lb0ssmvoceitlofqs9sah312lyoau7" />
   <common hash="5uc9cv9jxdu3ga3bibsw80i6k79rj0a" />
   <source id="3613324658897711340" name="MPSVcsManager" hash="-crqcct7adnmkrjy1yj0awxn8tjv25og">

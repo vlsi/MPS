@@ -46,7 +46,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jdesktop.observablecollections.ObservableCollections;
 import javax.swing.JList;
 import com.intellij.ui.components.JBList;
@@ -60,6 +60,7 @@ import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListAddA
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListRemoveAction;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -302,7 +303,7 @@ public class TestConfigurationDialog extends DialogWrapper {
       myModelsList.setCellRenderer(new DefaultListCellRenderer() {
         @Override
         public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
-          final org.jetbrains.mps.openapi.model.SModelReference model = (org.jetbrains.mps.openapi.model.SModelReference) value;
+          final SModelReference model = (SModelReference) value;
           final DefaultListCellRenderer ren = this;
           String modelName = model.getModelName();
           if (modelName == null) {
@@ -344,7 +345,7 @@ public class TestConfigurationDialog extends DialogWrapper {
           List<SModel> descrs = SModelRepository.getInstance().getModelDescriptors();
           SModelReference modelRef = CommonChoosers.showDialogModelChooser(ProjectHelper.toIdeaProject(myProject), Sequence.fromIterable(models).select(new ISelector<SModel, SModelReference>() {
             public SModelReference select(SModel it) {
-              return (SModelReference) it.getReference();
+              return it.getReference();
             }
           }).toListSequence(), ListSequence.fromList(descrs).select(new ISelector<SModel, SModelReference>() {
             public SModelReference select(SModel it) {
@@ -356,7 +357,7 @@ public class TestConfigurationDialog extends DialogWrapper {
           }
           myModels.add(modelRef);
           if (!(myNamePanel.isConfigNameSet())) {
-            String name = NameUtil.shortNameFromLongName(modelRef.getLongName());
+            String name = NameUtil.shortNameFromLongName(SModelStereotype.withoutStereotype(modelRef.getModelName()));
             myNamePanel.setConfigName(name);
           }
           return myModels.indexOf(modelRef);
@@ -366,7 +367,7 @@ public class TestConfigurationDialog extends DialogWrapper {
         @Override
         protected void doRemove(AnActionEvent e) {
           for (Object o : myModelsList.getSelectedValues()) {
-            SModelReference model = (SModelReference) o;
+            SModelReference model = (jetbrains.mps.smodel.SModelReference) o;
             myModels.remove(model);
           }
         }

@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.workbench.goTo.index;
 
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNodeId.Regular;
 import jetbrains.mps.util.EqualUtil;
@@ -48,7 +48,7 @@ public final class SNodeDescriptor implements NavigationTarget {
   }
 
   public static SNodeDescriptor fromModelReference(String nodeName, String fqName, SModelReference ref, SNodeId id) {
-    UUID uuid = UUID.fromString(ref.getSModelId().toString().substring(2));
+    UUID uuid = UUID.fromString(ref.getModelId().toString().substring(2));
     return new SNodeDescriptor(nodeName, fqName, uuid.getMostSignificantBits(), uuid.getLeastSignificantBits(), id);
   }
 

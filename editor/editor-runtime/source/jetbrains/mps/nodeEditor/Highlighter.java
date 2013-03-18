@@ -37,14 +37,14 @@ import jetbrains.mps.nodeEditor.highlighter.EditorsHelper;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.*;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
@@ -431,7 +431,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       @Override
       public Boolean compute() {
         final SNode editedNode = component.getEditedNode();
-        if (editedNode != null && !jetbrains.mps.util.SNodeOperations.isDisposed(editedNode)) {
+        if (editedNode != null && editedNode.isInRepository()) {
           final Set<BaseEditorChecker> checkersToRecheck = new LinkedHashSet<BaseEditorChecker>();
           boolean rootWasCheckedOnce = wasCheckedOnce(component);
           if (!rootWasCheckedOnce) {

@@ -4,20 +4,19 @@ package jetbrains.mps.kernel.model;
 
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ScopeOperations;
 import jetbrains.mps.project.GlobalScope;
@@ -28,7 +27,7 @@ public class MissingDependenciesFixer {
   private SModel myModelDescriptor;
 
   public MissingDependenciesFixer(SModel modelDescriptor) {
-    myModelDescriptor = (SModelInternal) modelDescriptor;
+    myModelDescriptor = modelDescriptor;
   }
 
   @Deprecated
@@ -58,9 +57,8 @@ public class MissingDependenciesFixer {
           }
           SModel sm = modelImport.resolve(repository);
           if (sm == null) {
-            SModelFqName fqName = modelImport.getSModelFqName();
-            sm = (fqName != null ?
-              SModelRepository.getInstance().getModelDescriptor(fqName) :
+            sm = (modelImport.getModelName() != null ?
+              SModelRepository.getInstance().getModelDescriptor(modelImport.getModelName()) :
               null
             );
             if (sm == null) {

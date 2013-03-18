@@ -19,11 +19,8 @@ package jetbrains.mps.idea.core.fileType;
 import com.intellij.openapi.fileTypes.PlainTextParserDefinition;
 
 /**
- * Created with IntelliJ IDEA.
  * User: fyodor
  * Date: 2/25/13
- * Time: 11:48 AM
- * To change this template use File | Settings | File Templates.
  */
 public class MPSParserDefinition extends PlainTextParserDefinition {
 }

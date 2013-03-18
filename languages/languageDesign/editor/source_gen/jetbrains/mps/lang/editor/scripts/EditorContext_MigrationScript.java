@@ -14,6 +14,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.StaticReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -981,7 +982,7 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
 
       public boolean isApplicableInstanceNode(SNode node) {
         SReference reference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", "classifier"));
-        if (reference == null || jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference) != null || !(SModelReference.fromString("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)").equals(reference.getTargetSModelReference()))) {
+        if (reference == null || jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference) != null || !(PersistenceFacade.getInstance().createModelReference("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)").equals(reference.getTargetSModelReference()))) {
           return false;
         }
         return jetbrains.mps.smodel.SNodeId.fromString("~EditorCell").equals(reference.getTargetNodeId());
@@ -1013,7 +1014,7 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
 
       public boolean isApplicableInstanceNode(SNode node) {
         SReference reference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", "classifier"));
-        if (reference == null || jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference) != null || !(SModelReference.fromString("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)").equals(reference.getTargetSModelReference()))) {
+        if (reference == null || jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference) != null || !(PersistenceFacade.getInstance().createModelReference("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)").equals(reference.getTargetSModelReference()))) {
           return false;
         }
         return jetbrains.mps.smodel.SNodeId.fromString("~EditorCell").equals(reference.getTargetNodeId());

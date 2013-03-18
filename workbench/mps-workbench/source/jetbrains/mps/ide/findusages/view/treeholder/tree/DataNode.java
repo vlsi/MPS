@@ -24,7 +24,6 @@ import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeD
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.Condition;
@@ -106,7 +105,7 @@ public class DataNode implements IExternalizeable {
     List<SModel> result = new ArrayList<SModel>();
     for (DataNode node : modelNodes) {
       SModel model = ((ModelNodeData) node.getData()).getModel();
-      if (model != null) result.add(model.getModelDescriptor());
+      if (model != null) result.add(model);
     }
     return result;
   }

@@ -221,7 +221,7 @@ public class Test_Facet extends IFacet.Stub {
     }
 
     public Iterable<ITarget.Name> before() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.Make.make")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.make.facets.Make.make")});
     }
 
     public ITarget.Name getName() {

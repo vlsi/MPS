@@ -15,13 +15,14 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.classloading.MPSClassesReloadManager;
 import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.extapi.persistence.ModelRootBase;
-import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.dependency.modules.DependenciesManager;
 import jetbrains.mps.project.dependency.modules.ModuleDependenciesManager;
@@ -31,14 +32,13 @@ import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.project.persistence.ModuleReadException;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.DeploymentDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.runtime.IClassLoadingModule;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.DefaultScope;
 import jetbrains.mps.smodel.Generator;
@@ -64,9 +64,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.FacetsFacade;
 import org.jetbrains.mps.openapi.module.SDependency;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -79,6 +79,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -124,53 +125,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     this.myDescriptorFile = myDescriptorFile;
   }
 
-  private static Set<ModelCreationListener> ourModelCreationListeners = new HashSet<ModelCreationListener>();
-
-  public static void registerModelCreationListener(ModelCreationListener listener) {
-    ourModelCreationListeners.add(listener);
-  }
-
-  public static void unregisterModelCreationListener(ModelCreationListener creationListener) {
-    ourModelCreationListeners.remove(creationListener);
-  }
-
-  @Override
-  public final EditableSModelDescriptor createModel(String name, @NotNull ModelRoot root, ModelAdjuster adj) {
-    // why ModelRoot register model in module? WTF
-    // should be public AbstractModule#addModel method!
-    // ourModelsCreationListeners should be called in addModel method
-
-    // so this goes to SModuleOperation method with createModel from ModelRoot, apply adj and register in module
-    // deprecated
-    if (!root.canCreateModel(name)) {
-      LOG.error("Can't create a model " + name + " under model root " + root.getPresentation());
-      return null;
-    }
-
-    EditableSModelDescriptor model = (EditableSModelDescriptor) root.createModel(name);
-    if (adj != null) {
-      adj.adjust(model);
-    }
-
-    model.setChanged(true);
-    model.save();
-
-//    ((ModelRootBase) root).register(model);
-
-    for (ModelCreationListener listener : ourModelCreationListeners) {
-      if (listener.isApplicable(this, model)) {
-        listener.onCreate(this, model);
-      }
-    }
-
-    new MissingDependenciesFixer(model).fix(false);
-
-    return model;
-  }
-
   //----reference
-
-
   @Override
   public SModuleId getModuleId() {
     return getModuleReference().getModuleId();
@@ -598,14 +553,14 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     for (IFile file : event.getRemoved()) {
       if (file.equals(myDescriptorFile)) {
         ModuleRepositoryFacade.getInstance().removeModuleForced(this);
-        ClassLoaderManager.getInstance().requestReload();
+        MPSClassesReloadManager.getInstance().requestReload();
         return;
       }
     }
     for (IFile file : event.getChanged()) {
       if (file.equals(myDescriptorFile)) {
         reloadFromDisk(false);
-        ClassLoaderManager.getInstance().requestReload();
+        MPSClassesReloadManager.getInstance().requestReload();
         return;
       }
     }
@@ -764,7 +719,13 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
 
   @Override
   public void invalidateDependencies() {
-    //do nothing by default
+    // todo: =(
+//    Set<SModule> unloadedModules = ClassLoaderManager.getInstance().unloadClasses(Arrays.asList(this), new EmptyProgressMonitor());
+//    ClassLoaderManager.getInstance().loadClasses(unloadedModules, new EmptyProgressMonitor());
+    // temporary disabled because: 1) we load many modules in LibraryInitializer 2) module calls setModuleDescriptor 3) it calls invalidateDependencies
+    // 4) it calls CLM with partly loaded classes (just part of modules)
+    // fix: fix CLM to not load partly loaded module, introduce normal disabled/enabled relation in CLM
+    // btw as for now: as change dependencies doesn't call "make module", this action basically meaningless
   }
 
   protected ModuleDescriptor loadDescriptor() {
@@ -850,6 +811,29 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     return SModuleOperations.getIndexablePaths(this);
   }
 
+  /**
+   * Do nothing. If you need it please vote and add comment to MPS-17524
+   */
+  @Deprecated
+  public static void registerModelCreationListener(ModelCreationListener listener) {
+  }
+
+  /**
+   * Do nothing. If you need it please vote and add comment to MPS-17524
+   */
+  @Deprecated
+  public static void unregisterModelCreationListener(ModelCreationListener creationListener) {
+  }
+
+  /**
+   * @see SModuleOperations#createModelWithAdjustments
+   */
+  @Override
+  @Deprecated
+  public final EditableSModelDescriptor createModel(String name, @NotNull ModelRoot root, ModelAdjuster adj) {
+    throw new UnsupportedOperationException();
+  }
+
   @Deprecated
   @Override
   public final String getOutputFor(SModel model) {
@@ -930,22 +914,16 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     return SModuleOperations.getModuleWithDependenciesClassPathItem(this);
   }
 
-  /**
-   * @see jetbrains.mps.runtime.IClassLoadingModule#canLoad()
-   */
   @Override
   @Deprecated
   public final boolean reloadClassesAfterGeneration() {
-    return (this instanceof IClassLoadingModule) && ((IClassLoadingModule) this).canLoad();
+    return ClassLoaderManager.getInstance().canLoad(this);
   }
 
-  /**
-   * @see jetbrains.mps.runtime.IClassLoadingModule#canLoad()
-   */
   @Deprecated
   @Override
-  public Class getClass(String className) {
-    throw new UnsupportedOperationException();
+  public final Class getClass(String className) {
+    return ClassLoaderManager.getInstance().getClass(this, className);
   }
 
   /**

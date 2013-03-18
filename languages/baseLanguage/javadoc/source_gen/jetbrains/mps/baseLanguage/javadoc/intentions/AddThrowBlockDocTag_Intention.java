@@ -81,7 +81,10 @@ public class AddThrowBlockDocTag_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNodeFactoryOperations.addNewChild(node, "throwsTag", "jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag");
+      SNode addedNode = SNodeFactoryOperations.addNewChild(node, "throwsTag", "jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag");
+      BlockDocTagHelper.setFocus(editorContext, addedNode, "Error");
+
+
     }
 
     public IntentionDescriptor getDescriptor() {

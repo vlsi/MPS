@@ -22,6 +22,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.make.facet.IFacet;
+import jetbrains.mps.make.facet.FacetRegistry;
 import jetbrains.mps.make.facet.ITarget;
 
 public abstract class AbstractMakeService implements IMakeService {
@@ -76,9 +77,14 @@ public abstract class AbstractMakeService implements IMakeService {
                   return fct.getName();
                 }
               }));
+              scb.withFacetNames(Sequence.fromIterable(FacetRegistry.getInstance().getFacetsForLanguage(ns)).select(new ISelector<IFacet, IFacet.Name>() {
+                public IFacet.Name select(IFacet fct) {
+                  return fct.getName();
+                }
+              }));
             }
           });
-          return scb.withFinalTarget(new ITarget.Name("jetbrains.mps.lang.core.Make.make"));
+          return scb.withFinalTarget(new ITarget.Name("jetbrains.mps.make.facets.Make.make"));
         }
       }).toListSequence();
 

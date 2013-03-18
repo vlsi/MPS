@@ -9,13 +9,13 @@ import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.stubs.util.PathItem;
@@ -26,16 +26,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.stubs.util.StubModelDescriptors;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import java.io.InputStream;
 import org.jdom.input.SAXBuilder;
 import java.io.IOException;
 import org.jdom.JDOMException;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.findUsages.fastfind.FastFindSupport;
-import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
-import jetbrains.mps.stubs.util.JavaStubModelDataSource;
 
 public class ConfStubSource extends FolderSetDataSource implements MultiRootModelDataSource, FastFindSupportProvider, StubModelDataSource {
   private List<String> roots;
@@ -51,12 +48,12 @@ public class ConfStubSource extends FolderSetDataSource implements MultiRootMode
   }
 
   @Override
-  public SModel loadSModel(IModule module, SModel descriptor) {
-    SModel model = new jetbrains.mps.smodel.SModel(descriptor.getReference(), new ForeignNodeIdMap());
+  public SModel loadSModel(IModule module, org.jetbrains.mps.openapi.model.SModel descriptor) {
+    SModel model = new SModel(descriptor.getReference(), new ForeignNodeIdMap());
     ModuleReference lang = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("32d0a39c-772f-4490-8142-e50f9a9f19d4")).getModuleReference();
-    ((SModelInternal) model).addLanguage(lang);
+    model.addLanguage(lang);
 
-    String pkg = model.getReference().getSModelFqName().getLongName();
+    String pkg = SModelStereotype.withoutStereotype(model.getReference().getModelName());
     List<Tuples._4<String, String, SNode, PathItem>> doclst = ListSequence.fromList(new ArrayList<Tuples._4<String, String, SNode, PathItem>>());
     SNode sample = SConceptOperations.createNewNode("jetbrains.mps.platform.conf.structure.ConfigurationXmlDocument", null);
     for (String path : roots) {
@@ -68,7 +65,7 @@ public class ConfStubSource extends FolderSetDataSource implements MultiRootMode
           doc = SConceptOperations.createNewNode(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.platform.conf.structure.ConfigurationXmlDocument")), sample);
           ((jetbrains.mps.smodel.SNode) doc).setId(id);
           SPropertyOperations.set(doc, "name", pi.baseName(docres));
-          SModelOperations.addRootNode(((SModel) model), doc);
+          SModelOperations.addRootNode(((org.jetbrains.mps.openapi.model.SModel) model.getModelDescriptor()), doc);
           ListSequence.fromList(doclst).addElement(MultiTuple.<String,String,SNode,PathItem>from(pkg, docres, doc, pi));
         }
       }
@@ -116,11 +113,11 @@ public class ConfStubSource extends FolderSetDataSource implements MultiRootMode
 
   @Override
   public FastFindSupport getFastFindSupport() {
-    return FastFindSupportRegistry.getInstance().getFastFindSupport(JavaStubModelDataSource.FAST_FIND_ID);
+    return null;
   }
 
   @Override
-  public boolean hasModel(SModel md) {
+  public boolean hasModel(org.jetbrains.mps.openapi.model.SModel md) {
     return !(getPaths().isEmpty());
   }
 }

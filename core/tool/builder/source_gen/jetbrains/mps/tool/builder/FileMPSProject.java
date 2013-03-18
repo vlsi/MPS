@@ -6,11 +6,10 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.logging.Logger;
 import java.io.File;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.project.ProjectManager;
 import java.util.Set;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.project.Path;
@@ -78,10 +77,8 @@ public class FileMPSProject extends Project {
         ClassLoaderManager.getInstance().unloadAll(new EmptyProgressMonitor());
         ModuleRepositoryFacade.getInstance().unregisterModules(FileMPSProject.this);
         CleanupManager.getInstance().cleanup();
-        if (ProjectManager.getInstance().getOpenProjects().length > 0) {
-          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
-        }
-        ClassLoaderManager.getInstance().updateClassPath();
+        // todo: why we need it? 
+        ClassLoaderManager.getInstance().unloadAll(new EmptyProgressMonitor());
       }
     });
   }

@@ -9,6 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
@@ -44,6 +45,7 @@ public class RunConfigurationExecutor_Behavior {
   }
 
   private static SNode _quotation_createNode_wnz9gp_b0a0a1() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandProcessType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

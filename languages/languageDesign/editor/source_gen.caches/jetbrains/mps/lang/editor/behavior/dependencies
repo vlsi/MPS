@@ -71,6 +71,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.AppendTextOperation_BehaviorDescriptor" file="AppendTextOperation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -524,6 +525,7 @@
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellKeyMap_IsApplicableFunction_BehaviorDescriptor" file="CellKeyMap_IsApplicableFunction_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -666,6 +668,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellMenuPart_AbstractGroup_DescriptionText_BehaviorDescriptor" file="CellMenuPart_AbstractGroup_DescriptionText_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -688,6 +691,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellMenuPart_AbstractGroup_MatchingText_BehaviorDescriptor" file="CellMenuPart_AbstractGroup_MatchingText_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -712,6 +716,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellMenuPart_AbstractGroup_Query_BehaviorDescriptor" file="CellMenuPart_AbstractGroup_Query_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -834,6 +839,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellMenuPart_PropertyPostfixHints_GetPostfixes_BehaviorDescriptor" file="CellMenuPart_PropertyPostfixHints_GetPostfixes_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -864,6 +870,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellMenuPart_PropertyValues_GetValues_BehaviorDescriptor" file="CellMenuPart_PropertyValues_GetValues_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -906,13 +913,12 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_CustomChildConcept_Query_BehaviorDescriptor" file="CellMenuPart_ReplaceChild_CustomChildConcept_Query_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -946,6 +952,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_Group_Create_BehaviorDescriptor" file="CellMenuPart_ReplaceChild_Group_Create_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -970,6 +977,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_Group_Query_BehaviorDescriptor" file="CellMenuPart_ReplaceChild_Group_Query_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1003,6 +1011,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_Item_Create_BehaviorDescriptor" file="CellMenuPart_ReplaceChild_Item_Create_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1056,6 +1065,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceNode_Group_Create_BehaviorDescriptor" file="CellMenuPart_ReplaceNode_Group_Create_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2139,6 +2149,7 @@
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunction_Boolean_BehaviorDescriptor" file="QueryFunction_Boolean_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2155,13 +2166,12 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunction_CellProvider_BehaviorDescriptor" file="QueryFunction_CellProvider_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2175,11 +2185,10 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunction_Color_Behavior" file="QueryFunction_Color_Behavior.java">
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunction_Color_BehaviorDescriptor" file="QueryFunction_Color_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2196,6 +2205,7 @@
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunction_FontStyle_BehaviorDescriptor" file="QueryFunction_FontStyle_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2216,6 +2226,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunction_ImagePath_BehaviorDescriptor" file="QueryFunction_ImagePath_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2231,6 +2242,7 @@
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunction_Integer_BehaviorDescriptor" file="QueryFunction_Integer_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2251,6 +2263,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunction_IsMethodCurrent_BehaviorDescriptor" file="QueryFunction_IsMethodCurrent_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2269,13 +2282,12 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunction_JComponent_BehaviorDescriptor" file="QueryFunction_JComponent_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2298,6 +2310,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunction_MethodPresentation_BehaviorDescriptor" file="QueryFunction_MethodPresentation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2320,6 +2333,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunction_ModelAccess_Getter_BehaviorDescriptor" file="QueryFunction_ModelAccess_Getter_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2342,6 +2356,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunction_ModelAccess_Setter_BehaviorDescriptor" file="QueryFunction_ModelAccess_Setter_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2364,6 +2379,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunction_ModelAccess_Validator_BehaviorDescriptor" file="QueryFunction_ModelAccess_Validator_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2383,6 +2399,7 @@
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunction_NodeCondition_BehaviorDescriptor" file="QueryFunction_NodeCondition_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2404,6 +2421,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunction_NodeFactory_BehaviorDescriptor" file="QueryFunction_NodeFactory_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2426,6 +2444,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunction_NodeListFilter_BehaviorDescriptor" file="QueryFunction_NodeListFilter_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2453,6 +2472,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunction_ParametersList_BehaviorDescriptor" file="QueryFunction_ParametersList_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2468,6 +2488,7 @@
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunction_SNode_BehaviorDescriptor" file="QueryFunction_SNode_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2488,6 +2509,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunction_SeparatorText_BehaviorDescriptor" file="QueryFunction_SeparatorText_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2510,6 +2532,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunction_String_BehaviorDescriptor" file="QueryFunction_String_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2529,11 +2552,10 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunction_StyleParameter_BehaviorDescriptor" file="QueryFunction_StyleParameter_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2548,6 +2570,7 @@
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunction_Style_BehaviorDescriptor" file="QueryFunction_Style_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2561,6 +2584,7 @@
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunction_Underlined_BehaviorDescriptor" file="QueryFunction_Underlined_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2667,6 +2691,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.SetBoldOperation_BehaviorDescriptor" file="SetBoldOperation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2776,6 +2801,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.StyleSheet_BehaviorDescriptor" file="StyleSheet_BehaviorDescriptor.java">
@@ -2849,6 +2875,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.TransactionalPropertyHandler_BehaviorDescriptor" file="TransactionalPropertyHandler_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />

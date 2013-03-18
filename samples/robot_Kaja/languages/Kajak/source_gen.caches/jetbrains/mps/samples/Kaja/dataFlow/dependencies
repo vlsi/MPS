@@ -23,6 +23,7 @@
     <classNode dependClassName="jetbrains.mps.samples.Kaja.dataFlow.Not_DataFlow" />
     <classNode dependClassName="jetbrains.mps.samples.Kaja.dataFlow.Repeat_DataFlow" />
     <classNode dependClassName="jetbrains.mps.samples.Kaja.dataFlow.RoutineCall_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.samples.Kaja.dataFlow.RoutineDefinition_DataFlow" />
     <classNode dependClassName="jetbrains.mps.samples.Kaja.dataFlow.Script_DataFlow" />
     <classNode dependClassName="jetbrains.mps.samples.Kaja.dataFlow.Step_DataFlow" />
     <classNode dependClassName="jetbrains.mps.samples.Kaja.dataFlow.While_DataFlow" />
@@ -57,9 +58,12 @@
   </dependency>
   <dependency className="jetbrains.mps.samples.Kaja.dataFlow.RoutineCall_DataFlow" file="RoutineCall_DataFlow.java">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.Kaja.dataFlow.RoutineDefinition_DataFlow" file="RoutineDefinition_DataFlow.java">
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.samples.Kaja.dataFlow.Script_DataFlow" file="Script_DataFlow.java">

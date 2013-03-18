@@ -17,8 +17,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.smodel.SNodePointer;
@@ -127,7 +126,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
         try {
           environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a5a1a3);
           environment.nodeCopied(context, tnode3, "tpl/r:00000000-0000-4000-0000-011c8959035c/3050731179906749556");
-          tnode3.setReference("classifier", SReference.create("classifier", tnode3, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.findalgorithm.finders(MPS.Core/jetbrains.mps.ide.findusages.findalgorithm.finders@java_stub)"), SNodeId.fromString("~GeneratedFinder")));
+          tnode3.setReference("classifier", SReference.create("classifier", tnode3, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.findalgorithm.finders(MPS.Core/jetbrains.mps.ide.findusages.findalgorithm.finders@java_stub)"), PersistenceFacade.getInstance().createNodeId("~GeneratedFinder")));
 
         } finally {
           environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode3));
@@ -165,7 +164,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
             try {
               environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a5a1a6a1a3);
               environment.nodeCopied(context, tnode6, "tpl/r:00000000-0000-4000-0000-011c8959035c/1200410464729");
-              tnode6.setReference("classifier", SReference.create("classifier", tnode6, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.logging(MPS.Core/jetbrains.mps.logging@java_stub)"), SNodeId.fromString("~Logger")));
+              tnode6.setReference("classifier", SReference.create("classifier", tnode6, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.logging(MPS.Core/jetbrains.mps.logging@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Logger")));
 
             } finally {
               environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode6));
@@ -181,8 +180,8 @@ public class TemplateFinderClass implements TemplateDeclaration {
             try {
               environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a6a1a6a1a3);
               environment.nodeCopied(context, tnode7, "tpl/r:00000000-0000-4000-0000-011c8959035c/1200410479733");
-              tnode7.setReference("classConcept", SReference.create("classConcept", tnode7, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.logging(MPS.Core/jetbrains.mps.logging@java_stub)"), SNodeId.fromString("~Logger")));
-              tnode7.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode7, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.logging(MPS.Core/jetbrains.mps.logging@java_stub)"), SNodeId.fromString("~Logger.getLogger(java.lang.String):jetbrains.mps.logging.Logger")));
+              tnode7.setReference("classConcept", SReference.create("classConcept", tnode7, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.logging(MPS.Core/jetbrains.mps.logging@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Logger")));
+              tnode7.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode7, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.logging(MPS.Core/jetbrains.mps.logging@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Logger.getLogger(java.lang.String):jetbrains.mps.logging.Logger")));
 
               {
                 final SNode tnode8 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
@@ -279,7 +278,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a4a1a5a1a1a1a8a1a3);
                       environment.nodeCopied(context, tnode16, "tpl/r:00000000-0000-4000-0000-011c8959035c/1216396947631");
-                      tnode16.setReference("classifier", SReference.create("classifier", tnode16, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~IScope")));
+                      tnode16.setReference("classifier", SReference.create("classifier", tnode16, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), PersistenceFacade.getInstance().createNodeId("~IScope")));
 
                     } finally {
                       environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode16));
@@ -414,7 +413,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a4a1a9a1a1a1a9a1a3);
                       environment.nodeCopied(context, tnode27, "tpl/r:00000000-0000-4000-0000-011c8959035c/6297023828538075417");
-                      tnode27.setReference("classifier", SReference.create("classifier", tnode27, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode")));
+                      tnode27.setReference("classifier", SReference.create("classifier", tnode27, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SNode")));
 
                     } finally {
                       environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode27));
@@ -480,7 +479,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                                 try {
                                   environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a3a1a5a1a3a1a3a1a01a1a1a1a9a1a3);
                                   environment.nodeCopied(context, tnode33, "tpl/r:00000000-0000-4000-0000-011c8959035c/6297023828538550626");
-                                  tnode33.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode33, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.model.scopes(MPS.Core/jetbrains.mps.ide.findusages.model.scopes@java_stub)"), SNodeId.fromString("~ModelsScope.<init>(org.jetbrains.mps.openapi.model.SModel...)")));
+                                  tnode33.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode33, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.model.scopes(MPS.Core/jetbrains.mps.ide.findusages.model.scopes@java_stub)"), PersistenceFacade.getInstance().createNodeId("~ModelsScope.<init>(org.jetbrains.mps.openapi.model.SModel...)")));
 
                                   {
                                     final SNode tnode34 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.DotExpression");
@@ -493,7 +492,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                                         try {
                                           environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a3a1a4a1a3a1a5a1a3a1a3a1a01a1a1a1a9a1a3);
                                           environment.nodeCopied(context, tnode35, "tpl/r:00000000-0000-4000-0000-011c8959035c/6297023828538472175");
-                                          tnode35.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode35, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode.getModel():org.jetbrains.mps.openapi.model.SModel")));
+                                          tnode35.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode35, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SNode.getModel():org.jetbrains.mps.openapi.model.SModel")));
 
                                         } finally {
                                           environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode35));
@@ -579,7 +578,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a11a1a1a1a9a1a3);
                   environment.nodeCopied(context, tnode37, "tpl/r:00000000-0000-4000-0000-011c8959035c/6297023828537985155");
-                  tnode37.setReference("annotation", SReference.create("annotation", tnode37, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Override")));
+                  tnode37.setReference("annotation", SReference.create("annotation", tnode37, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
 
                 } finally {
                   environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode37));
@@ -668,7 +667,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a01a1a1a1a01a1a3);
                   environment.nodeCopied(context, tnode45, "tpl/r:00000000-0000-4000-0000-011c8959035c/100784871543498844");
-                  tnode45.setReference("annotation", SReference.create("annotation", tnode45, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Override")));
+                  tnode45.setReference("annotation", SReference.create("annotation", tnode45, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
 
                 } finally {
                   environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode45));
@@ -737,7 +736,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
             try {
               environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a4a1a11a1a3);
               environment.nodeCopied(context, tnode50, "tpl/r:00000000-0000-4000-0000-011c8959035c/8441762775552293512");
-              tnode50.setReference("annotation", SReference.create("annotation", tnode50, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Override")));
+              tnode50.setReference("annotation", SReference.create("annotation", tnode50, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
 
             } finally {
               environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode50));
@@ -849,7 +848,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a4a1a1a1a21a1a3);
                   environment.nodeCopied(context, tnode58, "tpl/r:00000000-0000-4000-0000-011c8959035c/8441762775552293509");
-                  tnode58.setReference("annotation", SReference.create("annotation", tnode58, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Override")));
+                  tnode58.setReference("annotation", SReference.create("annotation", tnode58, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
 
                 } finally {
                   environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode58));
@@ -963,7 +962,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
             try {
               environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a4a1a31a1a3);
               environment.nodeCopied(context, tnode66, "tpl/r:00000000-0000-4000-0000-011c8959035c/8441762775552293511");
-              tnode66.setReference("annotation", SReference.create("annotation", tnode66, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Override")));
+              tnode66.setReference("annotation", SReference.create("annotation", tnode66, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
 
             } finally {
               environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode66));
@@ -1075,7 +1074,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a4a1a1a1a41a1a3);
                   environment.nodeCopied(context, tnode74, "tpl/r:00000000-0000-4000-0000-011c8959035c/8441762775552230284");
-                  tnode74.setReference("annotation", SReference.create("annotation", tnode74, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Override")));
+                  tnode74.setReference("annotation", SReference.create("annotation", tnode74, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
 
                 } finally {
                   environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode74));
@@ -1188,7 +1187,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
             try {
               environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a4a1a51a1a3);
               environment.nodeCopied(context, tnode83, "tpl/r:00000000-0000-4000-0000-011c8959035c/8441762775552213287");
-              tnode83.setReference("annotation", SReference.create("annotation", tnode83, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Override")));
+              tnode83.setReference("annotation", SReference.create("annotation", tnode83, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
 
             } finally {
               environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode83));
@@ -1257,7 +1256,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a4a1a7a1a51a1a3);
                   environment.nodeCopied(context, tnode88, "tpl/r:00000000-0000-4000-0000-011c8959035c/1206533661668");
-                  tnode88.setReference("classifier", SReference.create("classifier", tnode88, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~IScope")));
+                  tnode88.setReference("classifier", SReference.create("classifier", tnode88, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), PersistenceFacade.getInstance().createNodeId("~IScope")));
 
                 } finally {
                   environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode88));
@@ -1320,7 +1319,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a4a1a9a1a51a1a3);
                   environment.nodeCopied(context, tnode92, "tpl/r:00000000-0000-4000-0000-011c8959035c/5140158946217876019");
-                  tnode92.setReference("classifier", SReference.create("classifier", tnode92, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)"), SNodeId.fromString("~ProgressMonitor")));
+                  tnode92.setReference("classifier", SReference.create("classifier", tnode92, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)"), PersistenceFacade.getInstance().createNodeId("~ProgressMonitor")));
 
                 } finally {
                   environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode92));
@@ -1398,7 +1397,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                             try {
                               environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a4a1a3a1a1a1a3a1a11a1a51a1a3);
                               environment.nodeCopied(context, tnode99, "tpl/r:00000000-0000-4000-0000-011c8959035c/7810572934689530055");
-                              tnode99.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode99, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)"), SNodeId.fromString("~ProgressMonitor.start(java.lang.String,int):void")));
+                              tnode99.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode99, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)"), PersistenceFacade.getInstance().createNodeId("~ProgressMonitor.start(java.lang.String,int):void")));
 
                               {
                                 final SNode tnode100 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall");
@@ -1510,7 +1509,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                                 try {
                                   environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a4a1a3a1a3a1a3a1a4a1a11a1a51a1a3);
                                   environment.nodeCopied(context, tnode108, "tpl/r:00000000-0000-4000-0000-011c8959035c/7810572934689530064");
-                                  tnode108.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode108, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)"), SNodeId.fromString("~ProgressMonitor.done():void")));
+                                  tnode108.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode108, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)"), PersistenceFacade.getInstance().createNodeId("~ProgressMonitor.done():void")));
 
                                 } finally {
                                   environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode108));
@@ -1605,7 +1604,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a4a1a1a1a61a1a3);
                   environment.nodeCopied(context, tnode113, "tpl/r:00000000-0000-4000-0000-011c8959035c/8441762775552293510");
-                  tnode113.setReference("annotation", SReference.create("annotation", tnode113, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Override")));
+                  tnode113.setReference("annotation", SReference.create("annotation", tnode113, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
 
                 } finally {
                   environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode113));
@@ -1674,7 +1673,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a4a1a7a1a1a1a61a1a3);
                       environment.nodeCopied(context, tnode118, "tpl/r:00000000-0000-4000-0000-011c8959035c/1206462878650");
-                      tnode118.setReference("classifier", SReference.create("classifier", tnode118, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~IScope")));
+                      tnode118.setReference("classifier", SReference.create("classifier", tnode118, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), PersistenceFacade.getInstance().createNodeId("~IScope")));
 
                     } finally {
                       environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode118));
@@ -1785,7 +1784,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_i5yf3w_a0a0a1a4a1a1a1a71a1a3);
                   environment.nodeCopied(context, tnode127, "tpl/r:00000000-0000-4000-0000-011c8959035c/8441762775552293508");
-                  tnode127.setReference("annotation", SReference.create("annotation", tnode127, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Override")));
+                  tnode127.setReference("annotation", SReference.create("annotation", tnode127, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
 
                 } finally {
                   environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode127));

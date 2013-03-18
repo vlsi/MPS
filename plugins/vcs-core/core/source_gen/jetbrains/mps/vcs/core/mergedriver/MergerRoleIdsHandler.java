@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class MergerRoleIdsHandler implements RoleIdsComponent.RoleIdsHandler {

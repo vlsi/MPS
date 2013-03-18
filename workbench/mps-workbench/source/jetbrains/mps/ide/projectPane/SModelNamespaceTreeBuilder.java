@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.NameUtil;
 
@@ -23,7 +24,7 @@ public class SModelNamespaceTreeBuilder extends DefaultNamespaceTreeBuilder<SMod
   @Override
   protected String getNamespace(SModelTreeNode node) {
     SModel d = node.getSModelDescriptor();
-    return NameUtil.namespaceFromLongName(d.getReference().getLongName());
+    return NameUtil.namespaceFromLongName(SModelStereotype.withoutStereotype(d.getReference().getModelName()));
   }
 
   @Override

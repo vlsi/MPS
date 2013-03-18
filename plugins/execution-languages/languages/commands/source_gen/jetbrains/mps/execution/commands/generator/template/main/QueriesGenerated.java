@@ -31,12 +31,11 @@ import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNodeId;
 import java.util.List;
 
 public class QueriesGenerated {
@@ -507,12 +506,14 @@ public class QueriesGenerated {
   }
 
   private static SNode _quotation_createNode_x583g4_b0a0a82() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_x583g4_a0a0ed(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_2, "fqClassName", (String) parameter_1);
@@ -520,6 +521,7 @@ public class QueriesGenerated {
   }
 
   private static SNode _quotation_createNode_x583g4_a0a0b0ed(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "variableDeclaration", (SNode) parameter_1);
@@ -527,6 +529,7 @@ public class QueriesGenerated {
   }
 
   private static SNode _quotation_createNode_x583g4_a0e0b0ed(Object parameter_1, Object parameter_2, Object parameter_3) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;
@@ -545,25 +548,27 @@ public class QueriesGenerated {
       quotedNode_6.addChild("actualArgument", HUtil.copyIfNecessary(quotedNode_8));
     }
     quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_9.setReference("classifier", SReference.create("classifier", quotedNode_9, SModelReference.fromString("r:da044acc-81a4-4fd8-b89a-91df4cfe6214(jetbrains.mps.execution.api.commands)"), SNodeId.fromString("3908032508224771422")));
+    quotedNode_9.setReference("classifier", SReference.create("classifier", quotedNode_9, facade.createModelReference("r:da044acc-81a4-4fd8-b89a-91df4cfe6214(jetbrains.mps.execution.api.commands)"), facade.createNodeId("3908032508224771422")));
     quotedNode_6.addChild("returnType", quotedNode_9);
     quotedNode_4.addChild("operation", quotedNode_6);
     return quotedNode_4;
   }
 
   private static SNode _quotation_createNode_x583g4_a0a0a2a0a3a28(Object parameter_1, Object parameter_2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_3, "fqClassName", (String) parameter_1);
     SNodeAccessUtil.setProperty(quotedNode_3, "methodName", (String) parameter_2);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setReference("classifier", SReference.create("classifier", quotedNode_4, SModelReference.fromString("r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)"), SNodeId.fromString("4474271214082912941")));
+    quotedNode_4.setReference("classifier", SReference.create("classifier", quotedNode_4, facade.createModelReference("r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)"), facade.createNodeId("4474271214082912941")));
     quotedNode_3.addChild("returnType", quotedNode_4);
     return quotedNode_3;
   }
 
   private static SNode _quotation_createNode_x583g4_a0a2a0c0a0d0ed(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;
     SNode quotedNode_7 = null;
@@ -584,16 +589,18 @@ public class QueriesGenerated {
   }
 
   private static SNode _quotation_createNode_x583g4_a0a0fd() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_2, SModelReference.fromString("r:da044acc-81a4-4fd8-b89a-91df4cfe6214(jetbrains.mps.execution.api.commands)"), SNodeId.fromString("3908032508224771423")));
+    quotedNode_2.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_2, facade.createModelReference("r:da044acc-81a4-4fd8-b89a-91df4cfe6214(jetbrains.mps.execution.api.commands)"), facade.createNodeId("3908032508224771423")));
     quotedNode_1.addChild("creator", quotedNode_2);
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_x583g4_a0a0b0fd(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "variableDeclaration", (SNode) parameter_1);
@@ -601,6 +608,7 @@ public class QueriesGenerated {
   }
 
   private static SNode _quotation_createNode_x583g4_a0c0b0fd(Object parameter_1, Object parameter_2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -612,7 +620,7 @@ public class QueriesGenerated {
       quotedNode_3.addChild("operand", HUtil.copyIfNecessary(quotedNode_4));
     }
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_5, SModelReference.fromString("r:da044acc-81a4-4fd8-b89a-91df4cfe6214(jetbrains.mps.execution.api.commands)"), SNodeId.fromString("3908032508224771427")));
+    quotedNode_5.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_5, facade.createModelReference("r:da044acc-81a4-4fd8-b89a-91df4cfe6214(jetbrains.mps.execution.api.commands)"), facade.createNodeId("3908032508224771427")));
     quotedNode_7 = (SNode) parameter_2;
     if (quotedNode_7 != null) {
       quotedNode_5.addChild("actualArgument", HUtil.copyIfNecessary(quotedNode_7));
@@ -622,6 +630,7 @@ public class QueriesGenerated {
   }
 
   private static SNode _quotation_createNode_x583g4_a0a2a1a1a0a0a0a0a98(Object parameter_1, Object parameter_2) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandParameterAssignment", null, null, GlobalScope.getInstance(), false);

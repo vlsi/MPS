@@ -35,6 +35,7 @@ import jetbrains.mps.internal.make.runtime.java.JavaStreamHandler;
 import java.util.Collections;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.textGen.TextGenerationResult;
 import jetbrains.mps.generator.cache.CacheGenerator;
@@ -77,7 +78,7 @@ public class TextGen_Facet extends IFacet.Stub {
   }
 
   public Iterable<IFacet.Name> required() {
-    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.Make")});
+    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.make.facets.Make")});
   }
 
   public Iterable<IFacet.Name> extended() {
@@ -182,21 +183,21 @@ public class TextGen_Facet extends IFacet.Stub {
                           public boolean accept(SModel smd) {
                             return GenerationFacade.canGenerate(smd);
                           }
-                        }), resource.module(), pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Make_Facet.Target_make.Parameters.class).pathToFile()));
+                        }), resource.module(), pa.global().properties(new ITarget.Name("jetbrains.mps.make.facets.Make.make"), jetbrains.mps.make.facets.Make_Facet.Target_make.Parameters.class).pathToFile()));
                         MapSequence.fromMap(retainedCachesDelta).put(resource, RetainedUtil.retainedCachesDelta(Sequence.fromIterable(resource.retainedModels()).where(new IWhereFilter<SModel>() {
                           public boolean accept(SModel smd) {
                             return GenerationFacade.canGenerate(smd);
                           }
-                        }), resource.module(), pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Make_Facet.Target_make.Parameters.class).pathToFile()));
+                        }), resource.module(), pa.global().properties(new ITarget.Name("jetbrains.mps.make.facets.Make.make"), jetbrains.mps.make.facets.Make_Facet.Target_make.Parameters.class).pathToFile()));
 
                         String output = resource.module().getOutputFor(resource.model());
-                        MapSequence.fromMap(streamHandlers).put(resource, new JavaStreamHandler(resource.model(), pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Make_Facet.Target_make.Parameters.class).pathToFile().invoke(output), pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Make_Facet.Target_make.Parameters.class).pathToFile().invoke(FileGenerationUtil.getCachesPath(output))));
+                        MapSequence.fromMap(streamHandlers).put(resource, new JavaStreamHandler(resource.model(), pa.global().properties(new ITarget.Name("jetbrains.mps.make.facets.Make.make"), jetbrains.mps.make.facets.Make_Facet.Target_make.Parameters.class).pathToFile().invoke(output), pa.global().properties(new ITarget.Name("jetbrains.mps.make.facets.Make.make"), jetbrains.mps.make.facets.Make_Facet.Target_make.Parameters.class).pathToFile().invoke(FileGenerationUtil.getCachesPath(output))));
                       }
                     }
                   });
 
                   // textgen 
-                  String nameOfStep = ListSequence.fromList(currentInput).first().status().getInputModel().getReference().getSModelFqName().getLongName();
+                  String nameOfStep = SModelStereotype.withoutStereotype(ListSequence.fromList(currentInput).first().status().getInputModel().getReference().getModelName());
                   monitor.currentProgress().advanceWork("Writing", ListSequence.fromList(currentInput).count() * 100, nameOfStep);
 
                   final List<IMessage> errors = ListSequence.fromList((ListSequence.fromList(new ArrayList<IMessage>()))).asSynchronized();
@@ -351,7 +352,7 @@ public class TextGen_Facet extends IFacet.Stub {
     }
 
     public Iterable<ITarget.Name> before() {
-      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.Make.reconcile"), new ITarget.Name("jetbrains.mps.lang.core.Make.make")});
+      return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.make.facets.Make.reconcile"), new ITarget.Name("jetbrains.mps.make.facets.Make.make")});
     }
 
     public ITarget.Name getName() {
