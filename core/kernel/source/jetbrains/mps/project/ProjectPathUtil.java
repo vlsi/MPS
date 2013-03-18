@@ -53,9 +53,7 @@ public class ProjectPathUtil {
     return parent != null ? parent.getDescendant("classes") : null;
   }
 
-  public static IFile getGeneratorOutputPath(IFile file, ModuleDescriptor descriptor) {
-    // file -> module descriptor file
-    // move to AbstractModule
+  public static IFile getGeneratorOutputPath(IFile moduleSourceDir, ModuleDescriptor descriptor) {
     String generatorOutputPath;
     if (descriptor instanceof SolutionDescriptor) {
       generatorOutputPath = ((SolutionDescriptor) descriptor).getOutputPath();
@@ -67,8 +65,9 @@ public class ProjectPathUtil {
     if (generatorOutputPath != null) {
       return FileSystem.getInstance().getFileByPath(generatorOutputPath);
     }
-    if (file != null) {
-      return file.getParent().getDescendant("source_gen");
+    // todo: ???
+    if (moduleSourceDir != null) {
+      return moduleSourceDir.getDescendant("source_gen");
     }
     return null;
   }
@@ -88,8 +87,8 @@ public class ProjectPathUtil {
       return getGeneratorOutputPath(((Generator) module).getSourceLanguage());
     }
     // todo: instance of Language | Solution?
-    if (module instanceof IModule) {
-      return getGeneratorOutputPath(((IModule) module).getDescriptorFile(), ((IModule) module).getModuleDescriptor());
+    if (module instanceof AbstractModule) {
+      return getGeneratorOutputPath(((AbstractModule) module).getModuleSourceDir(), ((AbstractModule) module).getModuleDescriptor());
     } else {
       return null;
     }

@@ -19,8 +19,6 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.Generator;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
@@ -29,7 +27,6 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.List;
@@ -145,22 +142,8 @@ public abstract class BaseModelCache<T> implements CoreComponent {
   public static IFile getCachesDir(SModule module, String outputPath) {
     if (outputPath == null) return null;
 
-    if (module.isPackaged()) {
-      String suffix = outputPath;
-      int index = outputPath.replace("\\", "/").lastIndexOf("/");
-      if (index >= 0) {
-        suffix = outputPath.substring(index + 1);
-      }
-      IFile descriptorFile;
-      if (module instanceof Generator) {
-        descriptorFile = ((Generator) module).getSourceLanguage().getDescriptorFile();
-      } else {
-        descriptorFile = ((IModule) module).getDescriptorFile();
-      }
-      return descriptorFile.getParent().getParent().getDescendant(FileGenerationUtil.getCachesPath(suffix));
-    } else {
-      return FileSystem.getInstance().getFileByPath(FileGenerationUtil.getCachesPath(outputPath));
-    }
+    // output path should be from module sources?
+    return FileSystem.getInstance().getFileByPath(FileGenerationUtil.getCachesPath(outputPath));
   }
 
   protected class MyCacheGenerator implements CacheGenerator {

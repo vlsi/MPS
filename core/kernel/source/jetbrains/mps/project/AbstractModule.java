@@ -500,7 +500,7 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
 
   @Override
   public boolean isPackaged() {
-    return getDescriptorFile() != null && FileSystem.getInstance().isPackaged(getDescriptorFile());
+    return getModuleSourceDir() != null && FileSystem.getInstance().isPackaged(getModuleSourceDir());
   }
 
   @Override
@@ -515,11 +515,12 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
 
   /**
    * Module sources folder
-   * Can be root of jar file
+   * In case of working on sources == dir with module descriptor
+   * In case of working on distribution = {module-name}-src.jar/module/
    * ${module} expands to this method
    */
   public IFile getModuleSourceDir() {
-    return myDescriptorFile.getParent();
+    return myDescriptorFile != null ? myDescriptorFile.getParent() : null;
   }
 
   @Override
@@ -661,8 +662,9 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
   }
 
   @Override
+  @Deprecated
   public IFile getBundleHome() {
-    return FileSystem.getInstance().getBundleHome(getDescriptorFile());
+    return FileSystem.getInstance().getBundleHome(getModuleSourceDir());
   }
 
   @Override
@@ -784,7 +786,7 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
   }
 
   public IFile getOutputPath() {
-    return ProjectPathUtil.getGeneratorOutputPath(getDescriptorFile(), getModuleDescriptor());
+    return ProjectPathUtil.getGeneratorOutputPath(getModuleSourceDir(), getModuleDescriptor());
   }
 
   // deprecated part

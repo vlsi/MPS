@@ -141,7 +141,6 @@ public interface IModule extends SModule {
   // getModuleFile() is ok, but with cast
   // other things is forbidden
   // !!! to be notice: 2 jars: src and compiled classes
-  IFile getBundleHome();
 
   // ?, move to AbstractModule, remove usages as much as possible
   IFile getDescriptorFile();
@@ -150,6 +149,16 @@ public interface IModule extends SModule {
   // use as much as possible
 
   // ----- deprecated part
+
+  //
+
+  /**
+   * ??? bundle home == jar or folder with module sources. Meaningless stuff
+   * @see jetbrains.mps.project.AbstractModule#getModuleSourceDir()
+   */
+  @Deprecated
+  IFile getBundleHome();
+
 
   // reload descriptor stuff, now all these methods need AbstractModule, for ConflictableModuleAdapter I think
   /**
