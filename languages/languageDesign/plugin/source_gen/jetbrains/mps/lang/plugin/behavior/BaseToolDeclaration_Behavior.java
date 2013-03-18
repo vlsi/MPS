@@ -7,6 +7,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.checkedName.PropertyReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -41,10 +42,10 @@ public class BaseToolDeclaration_Behavior {
 
   public static String call_getExpandedIconPath_6547237850567463492(SNode thisNode) {
     IModule module = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode).getModule();
-    if (module == null) {
+    if (!(module instanceof AbstractModule)) {
       return null;
     }
-    return MacrosFactory.forModuleFile(module.getDescriptorFile()).expandPath(SPropertyOperations.getString(thisNode, "icon"));
+    return MacrosFactory.forModule((AbstractModule) module).expandPath(SPropertyOperations.getString(thisNode, "icon"));
   }
 
   public static PropertyReference virtual_getPropertyToCheck_4844813484172611473(SNode thisNode) {

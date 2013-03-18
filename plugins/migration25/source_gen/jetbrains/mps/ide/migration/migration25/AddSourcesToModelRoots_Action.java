@@ -8,13 +8,11 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import jetbrains.mps.project.MPSProject;
-import com.intellij.openapi.project.Project;
-import java.util.List;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.vfs.IFile;
@@ -57,15 +55,21 @@ public class AddSourcesToModelRoots_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      MPSProject mpsProject = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSProject.class);
-      List<IModule> allModules = ListSequence.fromListWithValues(new ArrayList<IModule>(), mpsProject.getModules());
-      for (IModule module : ListSequence.fromList(allModules)) {
+      for (IModule _module : ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("project")).getModules())) {
+        if (!(_module instanceof AbstractModule)) {
+          continue;
+        }
+        AbstractModule module = ((AbstractModule) _module);
+
         ModuleDescriptor descriptor = module.getModuleDescriptor();
         if (descriptor == null) {
           continue;

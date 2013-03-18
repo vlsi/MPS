@@ -16,21 +16,27 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.ClasspathReader;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.project.facets.TestsFacet;
-import jetbrains.mps.project.listener.ModelCreationListener;
+import jetbrains.mps.project.persistence.ModuleReadException;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.util.MacroHelper;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -157,7 +163,48 @@ public class SModuleOperations {
     return model;
   }
 
+  public static boolean needReloading(AbstractModule module) {
+    // todo: ?
+    ModelAccess.assertLegalRead();
+
+    IFile descriptorFile = module.getDescriptorFile();
+    if ((descriptorFile == null) || !descriptorFile.exists()) {
+      return false;
+    }
+
+    final ModuleDescriptor descriptor = module.getModuleDescriptor();
+    if (descriptor == null) return false;
+
+    String timestampString = descriptor.getTimestamp();
+
+    if (timestampString == null) return true;
+    long timestamp = Long.decode(timestampString);
+    return timestamp != descriptorFile.lastModified();
+  }
+
+  /**
+   * Unload classes of module. If you want load classes back call ClassLoaderManager#loadAllPossibleClasses
+   */
+  public static void reloadFromDisk(AbstractModule module) {
+    ModelAccess.assertLegalWrite();
+
+    try {
+      ModuleDescriptor descriptor = module.loadDescriptor();
+      module.setModuleDescriptor(descriptor, false);
+    } catch (ModuleReadException e) {
+      AbstractModule.handleReadProblem(module, e, false);
+    }
+  }
+
   // deprecated methods
+  @Deprecated
+  public static void reloadFromDisk(AbstractModule module, boolean reloadClasses) {
+    reloadFromDisk(module);
+    if (reloadClasses) {
+      ClassLoaderManager.getInstance().loadAllPossibleClasses(new EmptyProgressMonitor());
+    }
+  }
+
   @Deprecated
   public static IClassPathItem getModuleWithDependenciesClassPathItem(IModule module) {
     return getDependenciesClasspath(Collections.singleton(module), false);

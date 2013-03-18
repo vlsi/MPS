@@ -119,11 +119,6 @@ public class SolutionIdea extends Solution {
   }
 
   @Override
-  public boolean needReloading() {
-    return false;
-  }
-
-  @Override
   public void dispose() {
     final ProjectLibraryTable projectLibraryTable = (ProjectLibraryTable) ProjectLibraryTable.getInstance(myModule.getProject());
     ModelAccess.instance().runReadAction(new Runnable() {
