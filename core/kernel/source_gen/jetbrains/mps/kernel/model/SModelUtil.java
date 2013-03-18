@@ -184,6 +184,7 @@ public class SModelUtil {
   }
 
   public static boolean isAssignableConcept(SNode from, SNode to) {
+    assert jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(from) != null && jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(to) != null;
     if (from == to) {
       return true;
     }

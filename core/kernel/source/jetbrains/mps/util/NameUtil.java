@@ -16,15 +16,22 @@
 package jetbrains.mps.util;
 
 import jetbrains.mps.smodel.LanguageAspect;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.misc.ObjectCache;
 import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.io.File;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.StringTokenizer;
 import java.util.regex.Pattern;
 
 public class NameUtil {
@@ -60,12 +67,12 @@ public class NameUtil {
     ESCAPE_MAP.put('\\', "\\\\");
 
     String[] preps = {
-      "about", "above", "across", "after", "against", "along", "among", "around", "at",
-      "before", "behind", "below", "beneath", "beside", "between", "by", "down",
-      "during", "except", "for", "from", "in", "in front of", "inside", "instead of",
-      "into", "like", "near", "of", "off", "on", "onto", "on top of",
-      "out of", "outside", "over", "past", "since", "through", "to", "toward",
-      "under", "underneath", "until", "up", "upon", "with", "within", "without"};
+        "about", "above", "across", "after", "against", "along", "among", "around", "at",
+        "before", "behind", "below", "beneath", "beside", "between", "by", "down",
+        "during", "except", "for", "from", "in", "in front of", "inside", "instead of",
+        "into", "like", "near", "of", "off", "on", "onto", "on top of",
+        "out of", "outside", "over", "past", "since", "through", "to", "toward",
+        "under", "underneath", "until", "up", "upon", "with", "within", "without"};
     PREPOSITIONS = new HashSet<String>(Arrays.asList(preps));
 
     String[] articles = {"a", "an", "the"};
@@ -220,7 +227,7 @@ public class NameUtil {
     if (StringUtil.isEmpty(singular)) return singular;
     // This condition is to distinguish "berry"->"berries" and "array"->"arrays"
     if (singular.endsWith("y") && singular.length() > 1
-      && isConsonant(singular.charAt(singular.length() - 2))) {
+        && isConsonant(singular.charAt(singular.length() - 2))) {
       return singular.substring(0, singular.length() - 1) + "ies";
     }
 
@@ -386,7 +393,10 @@ public class NameUtil {
       return null;
     }
     String name = node.getName();
-    return SNodeOperations.getModelLongName(node.getModel()) + "." + name;
+    SModel model = node.getModel();
+    if (model == null) return name;
+
+    return SNodeOperations.getModelLongName(model) + "." + name;
   }
 
   public static String compactNodeFQName(SNode node) {
