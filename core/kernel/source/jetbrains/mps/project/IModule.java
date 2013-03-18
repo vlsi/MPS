@@ -84,18 +84,6 @@ public interface IModule extends SModule {
    */
   Collection<ModuleReference> getUsedDevkitReferences();
 
-  // remove? invalidate on add?
-  // ouch. basically it's callback on dependencies change
-  // so two purposes: initiate invaliding and invalidate action
-  // maybe we need one big DependenciesManager with invalidating actions
-  void invalidateDependencies();
-
-  //----
-
-  // should be do nothing, remove
-  // should be listening
-  void invalidateCaches();
-
   // AbstractModule#onModuleLoad
   // is it refactorings? move to it
   void onModuleLoad();
@@ -131,8 +119,6 @@ public interface IModule extends SModule {
   // IFile getModuleFolder() ?
   // use as much as possible
 
-
-
   // cast to AbstractModule to use this methods
   void addDependency(SModuleReference moduleRef, boolean reexport);
 
@@ -160,6 +146,14 @@ public interface IModule extends SModule {
   IScope getScope();
 
   // ----- deprecated part
+  /**
+   * Do nothing for now. If method change dependencies it invalidates cache by calling dependenciesChanged()
+   */
+  @Deprecated
+  void invalidateDependencies();
+
+  @Deprecated
+  void invalidateCaches();
 
   /**
    * ??? bundle home == jar or folder with module sources. Meaningless stuff

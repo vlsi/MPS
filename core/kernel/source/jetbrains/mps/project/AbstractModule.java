@@ -204,6 +204,7 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
   @Override
   public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
     setChanged();
+    dependenciesChanged();
   }
 
   @Override
@@ -227,8 +228,7 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
 
       if (reexport && !dep.isReexport()) {
         dep.setReexport(true);
-        invalidateCaches();
-        invalidateDependencies();
+        dependenciesChanged();
         setChanged();
       }
       return;
@@ -239,8 +239,7 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
     dep.setReexport(reexport);
     descriptor.getDependencies().add(dep);
 
-    invalidateCaches();
-    invalidateDependencies();
+    dependenciesChanged();
     setChanged();
   }
 
@@ -252,8 +251,7 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
 
     descriptor.getUsedLanguages().add(langRef);
 
-    invalidateCaches();
-    invalidateDependencies();
+    dependenciesChanged();
     setChanged();
   }
 
@@ -265,8 +263,7 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
 
     descriptor.getUsedDevkits().add(devkitRef);
 
-    invalidateCaches();
-    invalidateDependencies();
+    dependenciesChanged();
     setChanged();
   }
 
@@ -660,11 +657,6 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
   }
 
   @Override
-  public final void invalidateCaches() {
-    myScope.invalidateCaches();
-  }
-
-  @Override
   public final boolean needReloading() {
     return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
       @Override
@@ -700,15 +692,17 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
     }
   }
 
-  @Override
-  public void invalidateDependencies() {
-    // todo: =(
-//    Set<SModule> unloadedModules = ClassLoaderManager.getInstance().unloadClasses(Arrays.asList(this), new EmptyProgressMonitor());
-//    ClassLoaderManager.getInstance().loadClasses(unloadedModules, new EmptyProgressMonitor());
-    // temporary disabled because: 1) we load many modules in LibraryInitializer 2) module calls setModuleDescriptor 3) it calls invalidateDependencies
-    // 4) it calls CLM with partly loaded classes (just part of modules)
-    // fix: fix CLM to not load partly loaded module, introduce normal disabled/enabled relation in CLM
-    // btw as for now: as change dependencies doesn't call "make module", this action basically meaningless
+  protected void dependenciesChanged() {
+    // todo: review all usages after migration!
+
+    // callback on dependencies (any of them) changed event
+    // you can override this method with some invalidation action
+    // call super.dependenciesChanged() at the end
+
+    // todo: as we haven't dependencies listeners...
+    // todo: maybe add ClassLoaderManager.getInstance().unloadClasses(this module) here
+
+    myScope.invalidateCaches();
   }
 
   protected ModuleDescriptor loadDescriptor() {
@@ -742,7 +736,6 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
 
   public class ModuleScope extends DefaultScope {
     protected ModuleScope() {
-
     }
 
     public AbstractModule getModule() {
@@ -782,6 +775,18 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
   }
 
   // deprecated part
+  @Deprecated
+  @Override
+  public final void invalidateCaches() {
+    dependenciesChanged();
+  }
+
+  @Deprecated
+  @Override
+  public void invalidateDependencies() {
+    dependenciesChanged();
+  }
+
   @Override
   @Deprecated
   public final String getModuleFqName() {

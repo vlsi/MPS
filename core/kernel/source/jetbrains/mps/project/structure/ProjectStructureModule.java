@@ -204,7 +204,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
       @Override
       public void run() {
         removeAll();
-        invalidateCaches();
+        dependenciesChanged();
         myModels.clear();
       }
     });
@@ -235,7 +235,6 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     ProjectStructureSModelDescriptor result = new ProjectStructureSModelDescriptor(getSModelReference(module), module, this);
     myModels.put(result.getSModelReference(), result);
     SModelRepository.getInstance().registerModelDescriptor(result, this);
-    invalidateCaches();
     return result;
   }
 

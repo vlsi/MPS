@@ -83,8 +83,6 @@ public class AddGenerationSupportLanguages_Action extends BaseAction {
           it.addUsedDevkit(genPurpose);
           it.addUsedLanguage(generator);
           it.addUsedLanguage(genContext);
-          it.invalidateCaches();
-          it.invalidateDependencies();
           it.save();
         }
       });

@@ -30,7 +30,6 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -105,7 +104,6 @@ public class FixMissingImportsInProject_Action extends BaseAction {
 
           new MissingDependenciesFixer(modelDescriptor).fix(false);
         }
-        ((IModule) module).invalidateCaches();
       }
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {

@@ -68,7 +68,7 @@ public class TransientModelsModule extends AbstractModule {
 
   public void clearAll() {
     removeAll();
-    invalidateCaches();
+    dependenciesChanged();
     myModelsToKeep.clear();
     myPublished.clear();
     myModels.clear();
@@ -174,7 +174,7 @@ public class TransientModelsModule extends AbstractModule {
     result.load();
 
     myModels.put(result.getModelName(), result);
-    invalidateCaches();
+
     return result;
   }
 

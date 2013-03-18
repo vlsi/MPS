@@ -108,8 +108,7 @@ public class Solution extends AbstractModule {
       ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
     }
 
-    invalidateCaches();
-    invalidateDependencies();
+    dependenciesChanged();
   }
 
   public void setUpdateBootstrapSolutions(boolean b) {

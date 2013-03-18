@@ -16,7 +16,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.logging.Logger;
@@ -70,7 +69,6 @@ public class AddMissingImportsInProject_Action extends BaseAction {
           }
 
           new MissingDependenciesFixer(model).fix(false);
-          ((AbstractModule) module).invalidateCaches();
         }
       }
       ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());

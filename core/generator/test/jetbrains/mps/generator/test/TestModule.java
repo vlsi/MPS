@@ -68,7 +68,7 @@ public class TestModule extends AbstractModule {
   }
 
   private void clearAll() {
-    invalidateCaches();
+    dependenciesChanged();
     myPeer = null;
     myModels.clear();
     myOriginalModels.clear();
@@ -92,7 +92,6 @@ public class TestModule extends AbstractModule {
 
     myModels.put(result.getReference().getModelName(), result);
     myOriginalModels.put(result, originalModel);
-    invalidateCaches();
     return result;
   }
 

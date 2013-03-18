@@ -215,7 +215,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       ((SModelInternal) getStructureModelDescriptor()).addModelListener(listener);
     }
 
-    invalidateDependencies();
+    dependenciesChanged();
     setChanged();
   }
 
@@ -419,13 +419,11 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     @Override
     public void modelChanged(SModel model) {
       invalidateConceptDeclarationsCache();
-      invalidateCaches(); // ?
     }
 
     @Override
     public void modelChangedDramatically(SModel model) {
       invalidateConceptDeclarationsCache();
-      invalidateCaches(); // ?
     }
   }
 

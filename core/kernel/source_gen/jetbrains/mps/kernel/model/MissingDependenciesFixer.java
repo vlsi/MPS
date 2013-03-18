@@ -101,8 +101,6 @@ public class MissingDependenciesFixer {
         if (wereChanges) {
           AbstractModule mod = (AbstractModule) module;
           mod.setModuleDescriptor(md, reload);
-          mod.invalidateCaches();
-          mod.invalidateDependencies();
         }
       }
     });
