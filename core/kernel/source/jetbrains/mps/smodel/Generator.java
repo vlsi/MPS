@@ -13,7 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
+package jetbrains.mps.smodel;
+
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 import org.jetbrains.mps.openapi.model.SModel;
 
@@ -124,6 +126,11 @@ public class Generator extends AbstractModule {
   @Override
   public GeneratorDescriptor getModuleDescriptor() {
     return myGeneratorDescriptor;
+  }
+
+  @Override
+  public IFile getModuleSourceDir() {
+    return mySourceLanguage.getModuleSourceDir();
   }
 
   @Override

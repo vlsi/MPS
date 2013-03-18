@@ -210,9 +210,10 @@ public class ModuleClassLoader extends ClassLoader {
   }
 
   private static ClassLoader getParentPluginClassLoader(SModule module) {
-    IFile bundleHome = ((AbstractModule) module).getBundleHome();
-    if (bundleHome == null) return null;
-    String path = bundleHome.getPath();
+    IFile moduleHome = ((AbstractModule) module).getDescriptorFile();
+
+    if (moduleHome == null) return null;
+    String path = moduleHome.getPath();
     return LibraryInitializer.getInstance().getPluginClassLoaderForPath(path);
   }
 }

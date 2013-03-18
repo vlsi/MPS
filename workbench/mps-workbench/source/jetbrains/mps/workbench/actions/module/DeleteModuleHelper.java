@@ -30,6 +30,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.JOptionPane;
 
@@ -44,10 +45,11 @@ public class DeleteModuleHelper {
     }
   }
 
-  private static void delete(Project project, IModule module, boolean deleteFiles) {
+  private static void delete(Project project, SModule module, boolean deleteFiles) {
     MPSProject mpsProject = project.getComponent(MPSProject.class);
     if (!mpsProject.isProjectModule(module) && !deleteFiles) {
-      JOptionPane.showMessageDialog(WindowManager.getInstance().getFrame(project), "Non-project modules can only be deleted with files deletion enabled", "Can't delete module", JOptionPane.WARNING_MESSAGE);
+      JOptionPane.showMessageDialog(WindowManager.getInstance().getFrame(project), "Non-project modules can only be deleted with files deletion enabled",
+          "Can't delete module", JOptionPane.WARNING_MESSAGE);
     }
 
     //remove from project
@@ -58,7 +60,7 @@ public class DeleteModuleHelper {
     }
 
     if (deleteFiles) {
-      for (SModel model : module.getOwnModelDescriptors()) {
+      for (SModel model : module.getModels()) {
         DeleteModelHelper.delete(module, model, true);
       }
 
@@ -68,20 +70,22 @@ public class DeleteModuleHelper {
           deleteFile(classesGen.getPath());
         }
       }
-      if (module instanceof AbstractModule) {
-        String outputPath = ((AbstractModule) module).getOutputPath().getPath();
-        deleteFile(outputPath);
-        deleteFile(FileGenerationUtil.getCachesPath(outputPath));
-      }
       if (module.getFacet(TestsFacet.class) != null) {
         deleteFile(module.getFacet(TestsFacet.class).getTestsOutputPath().getPath());
       }
-      if (module.getBundleHome().getChildren().isEmpty()) {
-        deleteFile(module.getBundleHome().getPath());
+
+      if (module instanceof AbstractModule) {
+        AbstractModule curModule = (AbstractModule) module;
+        String outputPath = curModule.getOutputPath().getPath();
+        deleteFile(outputPath);
+        deleteFile(FileGenerationUtil.getCachesPath(outputPath));
+        curModule.getDescriptorFile().delete();
+        if (curModule.getModuleSourceDir().getChildren().isEmpty()) {
+          deleteFile(curModule.getModuleSourceDir().getPath());
+        }
       }
 
-      module.getDescriptorFile().delete();
-      ModuleRepositoryFacade.getInstance().removeModuleForced(module);
+      ModuleRepositoryFacade.getInstance().removeModuleForced((IModule) module);
     }
   }
 
@@ -90,7 +94,6 @@ public class DeleteModuleHelper {
     if (!file.exists()) return;
     file.delete();
   }
-
 
   private static void safeDelete(Project project, IModule module, boolean deleteFiles) {
     LOG.error("SAFE DELETE MODULE - NOT IMPLEMENTED", new Throwable());

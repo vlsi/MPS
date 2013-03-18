@@ -517,6 +517,7 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
    * Module sources folder
    * In case of working on sources == dir with module descriptor
    * In case of working on distribution = {module-name}-src.jar/module/
+   * In case of Generator = sourceLanguage.getModuleSourceDir()
    * ${module} expands to this method
    */
   public IFile getModuleSourceDir() {
