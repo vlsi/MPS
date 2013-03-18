@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.extapi.model.SModelData;
@@ -98,7 +98,7 @@ public class SModel implements SModelData {
   }
 
   public SModelId getModelId() {
-    return getSModelReference().getSModelId();
+    return getSModelReference().getModelId();
   }
 
   @NotNull
@@ -907,8 +907,9 @@ public class SModel implements SModelData {
       for (SReference reference : node.getReferences()) {
         SModelReference oldReference = reference.getTargetSModelReference();
         if (oldReference == null) continue;
-        SModelReference newRef = oldReference.update();
-        if (newRef.differs(oldReference)) {
+        jetbrains.mps.smodel.SModelReference oldSRef = (jetbrains.mps.smodel.SModelReference) oldReference;
+        jetbrains.mps.smodel.SModelReference newRef = oldSRef.update();
+        if (newRef.differs(oldSRef)) {
           changed = true;
           ((jetbrains.mps.smodel.SReference) reference).setTargetSModelReference(newRef);
         }
@@ -916,18 +917,18 @@ public class SModel implements SModelData {
     }
 
     for (ImportElement e : myImports) {
-      SModelReference oldReference = e.myModelReference;
-      SModelReference newRef = oldReference.update();
-      if (newRef.differs(oldReference)) {
+      jetbrains.mps.smodel.SModelReference oldSRef = (jetbrains.mps.smodel.SModelReference) e.myModelReference;
+      jetbrains.mps.smodel.SModelReference newRef = oldSRef.update();
+      if (newRef.differs(oldSRef)) {
         changed = true;
         e.myModelReference = newRef;
       }
     }
 
     for (ImportElement e : myImplicitImports) {
-      SModelReference oldReference = e.myModelReference;
-      SModelReference newRef = oldReference.update();
-      if (newRef.differs(oldReference)) {
+      jetbrains.mps.smodel.SModelReference oldSRef = (jetbrains.mps.smodel.SModelReference) e.myModelReference;
+      jetbrains.mps.smodel.SModelReference newRef = oldSRef.update();
+      if (newRef.differs(oldSRef)) {
         changed = true;
         e.myModelReference = newRef;
       }
@@ -1035,7 +1036,7 @@ public class SModel implements SModelData {
    * @Deprecated in 3.0
    */
   public SModelId getSModelId() {
-    return myReference.getSModelId();
+    return myReference.getModelId();
   }
 
   @Deprecated
@@ -1044,7 +1045,7 @@ public class SModel implements SModelData {
    * @Deprecated in 3.0
    */
   public SModelFqName getSModelFqName() {
-    return myReference.getSModelFqName();
+    return SModelFqName.fromString(myReference.getModelName());
   }
 
 
@@ -1205,12 +1206,12 @@ public class SModel implements SModelData {
 
     @Override
     public String getLongName() {
-      return getReference().getLongName();
+      return SModelStereotype.withoutStereotype(getReference().getModelName());
     }
 
     @Override
     public String getStereotype() {
-      return getReference().getStereotype();
+      return SModelStereotype.getStereotype(getReference().getModelName());
     }
 
     @Override
@@ -1255,7 +1256,7 @@ public class SModel implements SModelData {
 
     @NotNull
     @Override
-    public jetbrains.mps.smodel.SModelReference getReference() {
+    public SModelReference getReference() {
       return myModel.getReference();
     }
 

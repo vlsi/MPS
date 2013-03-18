@@ -9,7 +9,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.util.SNodeOperations;
 import java.util.Set;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.DynamicReference;
@@ -47,7 +47,7 @@ public class SReferenceCreator implements SReferenceHandler {
       for (SModelReference m : models) {
         ((SModelInternal) model).addModelImport(m, false);
       }
-      return new DynamicReference(role, source, new SModelReference(pack, SNodeOperations.getModelStereotype(model)), resolveInfo);
+      return new DynamicReference(role, source, new jetbrains.mps.smodel.SModelReference(pack, SNodeOperations.getModelStereotype(model)), resolveInfo);
     }
 
     ModuleReference moduleRef = SModelRepository.getInstance().getModelDescriptor(SetSequence.fromSet(models).first()).getModule().getModuleReference();
@@ -57,6 +57,6 @@ public class SReferenceCreator implements SReferenceHandler {
   }
 
   private Set<SModelReference> getModelReferencesFor(String pack, String rootPresentation) {
-    return StubModelsResolver.getInstance().resolveModel(module, new SModelFqName(pack, SNodeOperations.getModelStereotype(model)), null);
+    return StubModelsResolver.getInstance().resolveModel(module, new SModelFqName(pack, SNodeOperations.getModelStereotype(model)).toString(), null);
   }
 }

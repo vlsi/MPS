@@ -29,7 +29,7 @@ import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TextGen;
 import jetbrains.mps.textGen.TextGenerationResult;
@@ -86,7 +86,7 @@ public class TextGenerator {
 
       String name = getFileName(outputRootNode);
       if (name == null) {
-        Message m = new Message(MessageKind.ERROR, "Can't create file with no name. Root node [" + outputRootNode.getNodeId() + "] in model " + outputRootNode.getModel().getReference().getSModelFqName());
+        Message m = new Message(MessageKind.ERROR, "Can't create file with no name. Root node [" + outputRootNode.getNodeId() + "] in model " + outputRootNode.getModel().getReference().getModelName());
         m.setHintObject(new jetbrains.mps.smodel.SNodePointer(outputRootNode));
         errors.add(m);
         continue;

@@ -24,7 +24,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NonNls;
@@ -67,10 +67,10 @@ public class MPSNodeVirtualFile extends VirtualFile {
         if (node == null) {
           LOG.error(new Throwable("Cannot find node for passed SNodeReference: " + myNode.toString()));
           myName = "";
-          myPath = myNode.getModelReference().getSModelFqName() + "/" + myName;
+          myPath = myNode.getModelReference().getModelName() + "/" + myName;
         } else {
           myName = "" + node.getPresentation();
-          myPath = node.getModel().getReference().getSModelFqName() + "/" + myName;
+          myPath = node.getModel().getReference().getModelName() + "/" + myName;
         }
       }
     });

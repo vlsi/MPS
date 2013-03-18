@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.stubs.util.PathItem;
@@ -25,8 +26,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.stubs.util.StubModelDescriptors;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import java.io.InputStream;
 import org.jdom.input.SAXBuilder;
 import java.io.IOException;
@@ -53,7 +53,7 @@ public class ConfStubSource extends FolderSetDataSource implements MultiRootMode
     ModuleReference lang = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("32d0a39c-772f-4490-8142-e50f9a9f19d4")).getModuleReference();
     model.addLanguage(lang);
 
-    String pkg = model.getReference().getSModelFqName().getLongName();
+    String pkg = SModelStereotype.withoutStereotype(model.getReference().getModelName());
     List<Tuples._4<String, String, SNode, PathItem>> doclst = ListSequence.fromList(new ArrayList<Tuples._4<String, String, SNode, PathItem>>());
     SNode sample = SConceptOperations.createNewNode("jetbrains.mps.platform.conf.structure.ConfigurationXmlDocument", null);
     for (String path : roots) {

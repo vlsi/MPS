@@ -25,7 +25,7 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jdom.Element;
 
@@ -35,7 +35,7 @@ public class ModelNodeData extends BaseNodeData {
   private static final String MODEL = "model";
   private static final String UID = "uid";
 
-  public SModelReference myModelReference = SModelReference.fromString("");
+  public SModelReference myModelReference = jetbrains.mps.smodel.SModelReference.fromString("");
 
   public ModelNodeData(PathItemRole role, SearchResult result, boolean isResult,
                        INodeRepresentator nodeRepresentator, boolean resultsSection) {
@@ -99,7 +99,7 @@ public class ModelNodeData extends BaseNodeData {
   public void read(Element element, Project project) throws CantLoadSomethingException {
     super.read(element, project);
     Element modelXML = element.getChild(MODEL);
-    myModelReference = SModelReference.fromString(modelXML.getAttributeValue(UID));
+    myModelReference = jetbrains.mps.smodel.SModelReference.fromString(modelXML.getAttributeValue(UID));
   }
 
   @Override

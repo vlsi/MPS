@@ -16,7 +16,7 @@
 package jetbrains.mps.smodel.event;
 
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class SModelImportEvent extends SModelEvent {

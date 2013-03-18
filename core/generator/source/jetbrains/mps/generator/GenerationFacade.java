@@ -39,7 +39,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.UndoHelper;
@@ -104,7 +104,7 @@ public class GenerationFacade {
       Map<String, String> externalHashes = oldDependencies.getExternalHashes();
       for (Entry<String, String> entry : externalHashes.entrySet()) {
         String modelReference = entry.getKey();
-        SModel rmd = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(modelReference));
+        SModel rmd = SModelRepository.getInstance().getModelDescriptor(jetbrains.mps.smodel.SModelReference.fromString(modelReference));
         if (rmd == null) {
           result.add(sm);
           break;

@@ -14,7 +14,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -46,7 +47,7 @@ public class AdapterUsagesFinder extends ModelCheckerIssueFinder {
         // Check for adapter references 
         for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(node))) {
           SModelReference targetSModelReference = ref.getTargetSModelReference();
-          if (targetSModelReference != null && targetSModelReference.getStereotype().equals("java_stub")) {
+          if (targetSModelReference != null && SModelStereotype.getStereotype(targetSModelReference.getModelName()).equals("java_stub")) {
             SNode target = SLinkOperations.getTargetNode(ref);
             if ((target != null) && SNodeOperations.isInstanceOf(target, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
               String qualifiedName = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(target, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_getFqName_1213877404258", new Object[]{});
@@ -54,7 +55,7 @@ public class AdapterUsagesFinder extends ModelCheckerIssueFinder {
                 addIssue(results, node, "Reference to " + qualifiedName + " in role `" + SLinkOperations.getRole(ref) + "'", ModelChecker.SEVERITY_ERROR, "adapter class usage", null);
               }
 
-              if (targetSModelReference.getLongName().endsWith(".structure") && SModelUtil.findConceptDeclaration(qualifiedName, GlobalScope.getInstance()) != null) {
+              if (SModelStereotype.withoutStereotype(targetSModelReference.getModelName()).endsWith(".structure") && SModelUtil.findConceptDeclaration(qualifiedName, GlobalScope.getInstance()) != null) {
                 addIssue(results, node, "Using adapter of " + qualifiedName + " concept in role `" + SLinkOperations.getRole(ref) + "'", ModelChecker.SEVERITY_ERROR, "adapter class usage", null);
               }
             }

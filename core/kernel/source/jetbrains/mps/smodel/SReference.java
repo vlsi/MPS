@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
 
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.logging.Logger;
@@ -78,7 +78,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
 
   @Override
   @Nullable
-  public abstract jetbrains.mps.smodel.SModelReference getTargetSModelReference();
+  public abstract SModelReference getTargetSModelReference();
 
   @Override
   @Nullable
@@ -114,7 +114,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
    * Use method in SReferenceBase class, as when you change ref, you know what ref it is
    * @Deprecated in 3.0
    */
-  public abstract void setTargetSModelReference(@NotNull jetbrains.mps.smodel.SModelReference targetModelReference);
+  public abstract void setTargetSModelReference(@NotNull SModelReference targetModelReference);
 
   @Deprecated
   /**

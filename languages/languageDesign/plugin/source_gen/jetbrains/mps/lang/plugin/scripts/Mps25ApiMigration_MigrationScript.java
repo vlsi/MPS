@@ -10,10 +10,10 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.script.runtime.StubRefUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -47,12 +47,12 @@ public class Mps25ApiMigration_MigrationScript extends BaseMigrationScript {
       public boolean isApplicableInstanceNode(SNode node) {
         return Sequence.fromIterable(SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
           public boolean accept(SReference it) {
-            String longName = check_d0rs9v_a0a0a0a0a0a0(it.getTargetSModelReference());
+            String longName = check_d0rs9v_a0a0a0a0a0a0(((SModelReference) it.getTargetSModelReference()));
             if (longName == null) {
               return false;
             }
             // #f3061a53-9226-4cc5-a443-f952ceaf5816# is baseLanguage module id 
-            return it.getTargetSModelReference().getSModelId().toString().contains("#f3061a53-9226-4cc5-a443-f952ceaf5816#") && (longName.endsWith(".search") || longName.endsWith(".index") || longName.endsWith(".javastub"));
+            return it.getTargetSModelReference().getModelId().toString().contains("#f3061a53-9226-4cc5-a443-f952ceaf5816#") && (longName.endsWith(".search") || longName.endsWith(".index") || longName.endsWith(".javastub"));
           }
         }).isNotEmpty();
       }
@@ -1124,9 +1124,9 @@ public class Mps25ApiMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SModelReference[] modelRefs = new SModelReference[]{new SModelReference("jetbrains.mps.editor.runtime", ""), new SModelReference("jetbrains.mps.baseLanguage.util", ""), new SModelReference("jetbrains.mps.ide.editor.util", "")};
+        org.jetbrains.mps.openapi.model.SModelReference[] modelRefs = new org.jetbrains.mps.openapi.model.SModelReference[]{new SModelReference("jetbrains.mps.editor.runtime", ""), new SModelReference("jetbrains.mps.baseLanguage.util", ""), new SModelReference("jetbrains.mps.ide.editor.util", "")};
         IModule module = SNodeOperations.getModel(node).getModule();
-        for (SModelReference modelRef : modelRefs) {
+        for (org.jetbrains.mps.openapi.model.SModelReference modelRef : modelRefs) {
           ((SModelInternal) SNodeOperations.getModel(node)).addModelImport(modelRef, false);
           ModuleReference moduleReference = SModelRepository.getInstance().getModelDescriptor(modelRef).getModule().getModuleReference();
           module.addDependency(moduleReference, false);

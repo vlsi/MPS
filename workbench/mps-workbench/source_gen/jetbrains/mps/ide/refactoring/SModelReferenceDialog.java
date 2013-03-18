@@ -6,7 +6,7 @@ import jetbrains.mps.ide.platform.refactoring.RefactoringDialog;
 import jetbrains.mps.workbench.goTo.ui.ChooseByNamePanel;
 import com.intellij.openapi.project.Project;
 import java.util.List;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
 import jetbrains.mps.smodel.IScope;

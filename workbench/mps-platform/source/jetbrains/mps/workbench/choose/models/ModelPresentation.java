@@ -18,7 +18,7 @@ package jetbrains.mps.workbench.choose.models;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.IModule;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.workbench.choose.base.BasePresentation;
 import org.jetbrains.annotations.NotNull;
@@ -35,7 +35,7 @@ public class ModelPresentation extends BasePresentation {
   @Override
   @NotNull
   public String doGetPresentableText() {
-    return myModelReference.getSModelFqName().toString();
+    return myModelReference.getModelName();
   }
 
   @Override

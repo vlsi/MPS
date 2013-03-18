@@ -21,7 +21,8 @@ import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.workbench.action.ActionUtils;
 
 import java.util.ArrayList;
@@ -41,7 +42,7 @@ public class AccessoriesModelTreeNode extends TextTreeNode {
     IScope scope = myProjectLanguageTreeNode.getLanguage().getScope();
     for (SModelReference accessory : myProjectLanguageTreeNode.getLanguage().getModuleDescriptor().getAccessoryModels()) {
       if (scope.getModelDescriptor(accessory) == null) {
-        errors.add("Can't find accessory " + accessory.getLongName());
+        errors.add("Can't find accessory " + SModelStereotype.withoutStereotype(accessory.getModelName()));
       }
     }
     return errors;

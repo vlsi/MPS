@@ -13,7 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -107,7 +107,7 @@ public abstract class ProjectStructureBuilder {
     return result;
   }
 
-  private SNode convert(org.jetbrains.mps.openapi.model.SModelReference source) {
+  private SNode convert(SModelReference source) {
     SNode result = SModelOperations.createNewNode(myModel, null, "jetbrains.mps.lang.project.structure.ModelReference");
     SPropertyOperations.set(result, "uuid", source.getModelId().toString());
     String modelName = source.getModelName();
@@ -253,12 +253,12 @@ public abstract class ProjectStructureBuilder {
   }
 
   protected void collectModels(SNode module, ModuleDescriptor descriptor) {
-    for (org.jetbrains.mps.openapi.model.SModelReference ref : Sequence.fromIterable(loadReferences(module, descriptor))) {
+    for (SModelReference ref : Sequence.fromIterable(loadReferences(module, descriptor))) {
       ListSequence.fromList(SLinkOperations.getTargets(module, "model", true)).addElement(convert(ref));
     }
   }
 
-  public abstract Iterable<org.jetbrains.mps.openapi.model.SModelReference> loadReferences(SNode module, ModuleDescriptor descriptor);
+  public abstract Iterable<SModelReference> loadReferences(SNode module, ModuleDescriptor descriptor);
 
   public static boolean isNotEmpty_5cil7k_a0a0e0o(String str) {
     return str != null && str.length() > 0;

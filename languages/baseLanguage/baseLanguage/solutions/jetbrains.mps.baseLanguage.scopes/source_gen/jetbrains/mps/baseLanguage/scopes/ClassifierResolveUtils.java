@@ -539,7 +539,7 @@ public class ClassifierResolveUtils {
     List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
 
     for (SModel candidate : Sequence.fromIterable(moduleScope.getModels())) {
-      if (candidate.getReference().getLongName().equals(name)) {
+      if (SModelStereotype.withoutStereotype(candidate.getReference().getModelName()).equals(name)) {
         ListSequence.fromList(models).addElement(candidate);
       }
     }

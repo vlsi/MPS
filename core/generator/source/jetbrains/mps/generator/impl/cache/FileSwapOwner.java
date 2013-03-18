@@ -25,7 +25,7 @@ import jetbrains.mps.persistence.binary.NodesReader;
 import jetbrains.mps.persistence.binary.NodesWriter;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Pair;
 
@@ -99,7 +99,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     public boolean swapOut(TransientSModel model) {
       if (mySpaceDir == null || !mySpaceDir.exists()) throw new IllegalStateException("no swap dir");
 
-      String modelId = model.getReference().getSModelId().toString();
+      String modelId = model.getReference().getModelId().toString();
       if (modelId == null || modelId.isEmpty()) {
         LOG.error("Bad model id <" + modelId + ">");
         return false;
@@ -140,7 +140,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     public TransientSModel restoreFromSwap(SModelReference mref) {
       if (mySpaceDir == null || !mySpaceDir.exists()) throw new IllegalStateException("no swap dir");
 
-      String modelId = mref.getSModelId().toString();
+      String modelId = mref.getModelId().toString();
       if (modelId == null || modelId.isEmpty()) {
         throw new IllegalStateException("bad modelId");
       }
@@ -237,7 +237,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     new NodesWriter(model.getReference()).writeNodes(roots, mos);
     mos.close();
 
-    jetbrains.mps.smodel.SModel resultModel = new jetbrains.mps.smodel.SModel(new SModelReference("smodel.long.name.for.testing", ""));
+    jetbrains.mps.smodel.SModel resultModel = new jetbrains.mps.smodel.SModel(new jetbrains.mps.smodel.SModelReference("smodel.long.name.for.testing", ""));
     ByteArrayInputStream is = new ByteArrayInputStream(os.toByteArray());
     ModelInputStream mis = new ModelInputStream(is);
 

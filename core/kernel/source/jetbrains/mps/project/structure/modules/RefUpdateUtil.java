@@ -16,7 +16,7 @@
 package jetbrains.mps.project.structure.modules;
 
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -27,8 +27,9 @@ public class RefUpdateUtil {
     Set<SModelReference> add = new LinkedHashSet<SModelReference>();
 
     for (SModelReference ref : refs) {
-      SModelReference newRef = ref.update();
-      if (ref.differs(newRef)) {
+      jetbrains.mps.smodel.SModelReference sRef = (jetbrains.mps.smodel.SModelReference) ref;
+      jetbrains.mps.smodel.SModelReference newRef = sRef.update();
+      if (sRef.differs(newRef)) {
         remove.add(ref);
         add.add(newRef);
       }

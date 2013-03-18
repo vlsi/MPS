@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
 
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -67,11 +67,11 @@ public interface SModelInternal{
 
   List<ImportElement> importedModels();
 
-  void addModelImport(jetbrains.mps.smodel.SModelReference modelReference, boolean firstVersion);
+  void addModelImport(SModelReference modelReference, boolean firstVersion);
 
   void addModelImport(ImportElement importElement);
 
-  void deleteModelImport(jetbrains.mps.smodel.SModelReference modelReference);
+  void deleteModelImport(SModelReference modelReference);
 
   // create new implicit import list based on used models, explicit import and old implicit import list
   void calculateImplicitImports();
@@ -84,7 +84,7 @@ public interface SModelInternal{
 
   List<ImportElement> getAdditionalModelVersions();
 
-  void addAdditionalModelVersion(@NotNull jetbrains.mps.smodel.SModelReference modelReference, int usedVersion);
+  void addAdditionalModelVersion(@NotNull SModelReference modelReference, int usedVersion);
 
   void addAdditionalModelVersion(@NotNull ImportElement element);
 
@@ -98,7 +98,7 @@ public interface SModelInternal{
 
   boolean updateSModelReferences();
 
-  void changeModelReference(jetbrains.mps.smodel.SModelReference newModelReference);
+  void changeModelReference(SModelReference newModelReference);
 
   boolean updateModuleReferences();
 

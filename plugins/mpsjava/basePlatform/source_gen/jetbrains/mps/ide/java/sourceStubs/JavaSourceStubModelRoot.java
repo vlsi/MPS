@@ -16,7 +16,7 @@ import org.jetbrains.mps.openapi.model.SModelId;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.persistence.Memento;
@@ -115,7 +115,7 @@ public class JavaSourceStubModelRoot extends ModelRootBase implements FileSystem
       SModelFqName fqName = new SModelFqName(pkg, "java_stub");
       SModelId modelId = jetbrains.mps.smodel.SModelId.foreign(fqName.getStereotype(), getModule().getModuleId().toString(), fqName.getLongName());
 
-      SModelReference modelRef = new SModelReference(fqName, modelId);
+      SModelReference modelRef = new jetbrains.mps.smodel.SModelReference(fqName, modelId);
 
       JavaSourceStubModelDescriptor model = new JavaSourceStubModelDescriptor(modelRef, dataSource, pkg);
       SetSequence.fromSet(models).addElement(model);

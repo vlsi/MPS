@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.model.SModelData;
@@ -88,12 +88,16 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
 
   @Override
   public final DefaultSModel getSModelInternal() {
+    ModelLoadingState oldState = myModel.getState();
+    if (oldState.ordinal() >= ModelLoadingState.ROOTS_LOADED.ordinal()) {
+      return myModel.getModel(ModelLoadingState.ROOTS_LOADED);
+    }
     synchronized (myModel) {
-      ModelLoadingState oldState = myModel.getState();
+      oldState = myModel.getState();
       DefaultSModel res = myModel.getModel(ModelLoadingState.ROOTS_LOADED);
       if (res == null) return null; // this is when we are in recursion
-      res.setModelDescriptor(this);
       if (oldState != myModel.getState()) {
+        res.setModelDescriptor(this);
         fireModelStateChanged(oldState, myModel.getState());
       }
       return res;
@@ -267,7 +271,7 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
     myStructureModificationLog = null;  // we don't need to keep log in memory
     if (latestVersion != -1) {
       ( loadedSModel).setVersion(latestVersion);
-      LOG.error("Version for model " + getSModelReference().getSModelFqName() + " was not set.");
+      LOG.error("Version for model " + getSModelReference().getModelName() + " was not set.");
     }
   }
 

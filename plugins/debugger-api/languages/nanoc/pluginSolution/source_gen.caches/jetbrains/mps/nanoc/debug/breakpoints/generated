@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-33cw91qdmvlkr3fndwmn7nxdzsngy1y">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="38s949ymo9nq7jj7p2lrfowy0hurndx" />
-  <dep model="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" hash="e44egk14f06dgu6i3sn6tdwrxcaue6b" />
+  <dep model="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" hash="-di9k9we739aetnqenejyabgxvfwdci1" />
   <common hash="46us78q6mb5fdnfgexh3vm2pg6oa13g" />
   <source id="3990508698139426916" name="GDBBreakpoint" hash="-1ew715f96ek58tkwmgj2o3uzvxvv3eu">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />

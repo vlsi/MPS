@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.stubs.util.PathItem;
 import java.util.List;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -24,8 +25,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.stubs.util.StubModelDescriptors;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import java.io.InputStream;
 import org.jdom.input.SAXBuilder;
 import jetbrains.mps.util.JDOMUtil;
@@ -47,7 +47,7 @@ public class GWTStubsSource extends FolderSetDataSource implements FastFindSuppo
     ModuleReference lang = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("954c4d77-e24b-4e49-a5a5-5476c966c092")).getModuleReference();
     model.addLanguage(lang);
 
-    String pkg = model.getReference().getSModelFqName().getLongName();
+    String pkg = SModelStereotype.withoutStereotype(model.getReference().getModelName());
     PathItem pi = GWTModulePathItem.getPathItem(path);
     List<Tuples._3<String, String, SNode>> modlst = ListSequence.fromList(new ArrayList<Tuples._3<String, String, SNode>>());
     SNode sample = SConceptOperations.createNewNode("jetbrains.mps.gwt.client.structure.GWTModule", null);

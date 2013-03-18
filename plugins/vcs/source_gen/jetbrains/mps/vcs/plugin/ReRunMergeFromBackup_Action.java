@@ -122,7 +122,7 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
           continue;
         }
       }
-      Messages.showInfoMessage("No suitable backup files for " + ((SModel) MapSequence.fromMap(_params).get("model")).getReference().getSModelFqName() + "was not found.", "No Backup Files Found");
+      Messages.showInfoMessage("No suitable backup files for " + ((SModel) MapSequence.fromMap(_params).get("model")).getReference().getModelName() + "was not found.", "No Backup Files Found");
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ReRunMergeFromBackup", t);
     }

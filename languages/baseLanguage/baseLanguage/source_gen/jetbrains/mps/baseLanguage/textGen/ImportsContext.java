@@ -6,6 +6,7 @@ import jetbrains.mps.textGen.TextGenBuffer;
 import java.util.Set;
 import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -24,7 +25,7 @@ public class ImportsContext {
 
   private ImportsContext(TextGenBuffer buffer, SNode rootNode) {
     this.buffer = buffer;
-    this.packageName = SNodeOperations.getModel(rootNode).getReference().getLongName();
+    this.packageName = SModelStereotype.withoutStereotype(SNodeOperations.getModel(rootNode).getReference().getModelName());
 
     contextClassifiers = new ContextClassifiersInRoot(rootNode);
 

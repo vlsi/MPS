@@ -31,7 +31,7 @@ import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.library.contributor.LibraryContributor.LibDescriptor;
 import jetbrains.mps.library.contributor.PluginLibrariesContributor;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -168,7 +168,7 @@ public class MPSCompiler2 implements SourceGeneratingCompiler {
 
   private MyGenerationItem createGenerationItem(VirtualFile modelFile, Module module, SModelReference ref) {
     String path = JavaNameUtil.packageNameForModelUID(ref).replace('.', '/');
-    String cachesOutputRoot = MPSCompilerPaths.getCachesOutputPath(this, module, SModelStereotype.isTestModelStereotype(ref.getStereotype()));
+    String cachesOutputRoot = MPSCompilerPaths.getCachesOutputPath(this, module, SModelStereotype.isTestModelStereotype(SModelStereotype.getStereotype(ref.getModelName())));
     File modelCachesDir = new File(cachesOutputRoot, path);
     File generated = new File(modelCachesDir, "generated");
 

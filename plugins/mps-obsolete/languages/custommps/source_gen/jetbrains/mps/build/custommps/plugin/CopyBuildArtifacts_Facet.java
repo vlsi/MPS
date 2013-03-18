@@ -22,6 +22,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.util.MacrosFactory;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.internal.make.runtime.util.DeltaReconciler;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
@@ -90,7 +91,7 @@ public class CopyBuildArtifacts_Facet extends IFacet.Stub {
                 for (TResource tres : Sequence.fromIterable(input)) {
                   String dest = pa.forResource(tres).properties(Target_copyFiles.this.getName(), CopyBuildArtifacts_Facet.Target_copyFiles.Parameters.class).destination();
                   if (dest != null) {
-                    final IFile destDir = FileSystem.getInstance().getFileByPath(MacrosFactory.forModuleFile(tres.module().getDescriptorFile()).expandPath(dest));
+                    final IFile destDir = FileSystem.getInstance().getFileByPath(MacrosFactory.forModule((AbstractModule) tres.module()).expandPath(dest));
                     if (destDir.exists() && destDir.isDirectory()) {
                       new DeltaReconciler(tres.delta()).visitAll(new FilesDelta.Visitor() {
                         @Override

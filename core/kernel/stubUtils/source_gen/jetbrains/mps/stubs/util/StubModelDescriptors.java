@@ -10,7 +10,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
@@ -77,16 +77,16 @@ public abstract class StubModelDescriptors {
   public SModelReference smodelRefWithId(String pkg) {
     SModelFqName fqname = new SModelFqName(module.getModuleName(), pkg, stubStereotype);
     SModelId modelId = jetbrains.mps.smodel.SModelId.foreign(stubStereotype, module.getModuleReference().getModuleId().toString(), pkg);
-    return new SModelReference(fqname, modelId);
+    return new jetbrains.mps.smodel.SModelReference(fqname, modelId);
   }
 
   public SModelReference smodelRefWithFqName(String pkg) {
-    return SModelReference.fromString(pkg + "@" + stubStereotype);
+    return jetbrains.mps.smodel.SModelReference.fromString(pkg + "@" + stubStereotype);
   }
 
   public SModelReference javaStubRef(String pkg) {
     String stereo = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
-    Set<SModelReference> models = StubModelsResolver.getInstance().resolveModel(module, new SModelFqName(pkg, stereo), null);
+    Set<SModelReference> models = StubModelsResolver.getInstance().resolveModel(module, new SModelFqName(pkg, stereo).toString(), null);
     SModelReference mr = (models.isEmpty() ?
       null :
       models.iterator().next()
@@ -105,6 +105,6 @@ public abstract class StubModelDescriptors {
     }
     SModelFqName fqname = new SModelFqName(mfq, pkg, stereo);
     SModelId modelId = jetbrains.mps.smodel.SModelId.foreign(stereo, muid, pkg);
-    return new SModelReference(fqname, modelId);
+    return new jetbrains.mps.smodel.SModelReference(fqname, modelId);
   }
 }

@@ -35,6 +35,7 @@ import jetbrains.mps.internal.make.runtime.java.JavaStreamHandler;
 import java.util.Collections;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.textGen.TextGenerationResult;
 import jetbrains.mps.generator.cache.CacheGenerator;
@@ -196,7 +197,7 @@ public class TextGen_Facet extends IFacet.Stub {
                   });
 
                   // textgen 
-                  String nameOfStep = ListSequence.fromList(currentInput).first().status().getInputModel().getReference().getSModelFqName().getLongName();
+                  String nameOfStep = SModelStereotype.withoutStereotype(ListSequence.fromList(currentInput).first().status().getInputModel().getReference().getModelName());
                   monitor.currentProgress().advanceWork("Writing", ListSequence.fromList(currentInput).count() * 100, nameOfStep);
 
                   final List<IMessage> errors = ListSequence.fromList((ListSequence.fromList(new ArrayList<IMessage>()))).asSynchronized();

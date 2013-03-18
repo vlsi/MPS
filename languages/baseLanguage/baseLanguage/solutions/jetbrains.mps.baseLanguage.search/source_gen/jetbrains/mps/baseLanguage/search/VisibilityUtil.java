@@ -9,6 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -62,7 +63,7 @@ public final class VisibilityUtil {
   }
 
   public static String packageName(@NotNull SNode node) {
-    return SNodeOperations.getModel(node).getReference().getSModelFqName().getLongName();
+    return SModelStereotype.withoutStereotype(SNodeOperations.getModel(node).getReference().getModelName());
   }
 
   public static SNode topClassifier(@NotNull SNode node) {

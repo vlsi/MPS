@@ -20,7 +20,8 @@ import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.SModelStereotype;
 import java.util.HashSet;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.util.InternUtil;
@@ -216,7 +217,7 @@ public abstract class BaseLanguageTextGen {
         // todo: remove! 
         final SModelReference modelReference = reference.getTargetSModelReference();
         if (modelReference != null) {
-          packageName = modelReference.getLongName();
+          packageName = SModelStereotype.withoutStereotype(modelReference.getModelName());
           LOG.warning("generating classifier reference with target model reference " + modelReference + " @ " + classifierRef);
         } else {
           int lastDot = shortName.lastIndexOf('.');
@@ -226,7 +227,7 @@ public abstract class BaseLanguageTextGen {
           } else {
             SModelReference sModelReference = classifierRef.getSourceNode().getModel().getReference();
             packageName = (sModelReference != null ?
-              sModelReference.getLongName() :
+              SModelStereotype.withoutStereotype(sModelReference.getModelName()) :
               ""
             );
           }
@@ -239,7 +240,7 @@ public abstract class BaseLanguageTextGen {
         textGen.foundError("Target node is null for reference to classifier with role " + SLinkOperations.getRole(classifierRef) + "; resolve info " + SLinkOperations.getResolveInfo(classifierRef) + "; " + jetbrains.mps.util.SNodeOperations.getDebugText(classifierRef.getSourceNode()));
         return null;
       }
-      return MultiTuple.<String,String>from(targetNode.getModel().getReference().getLongName(), (SNodeOperations.isInstanceOf(targetNode, "jetbrains.mps.baseLanguage.structure.Classifier") ?
+      return MultiTuple.<String,String>from(SModelStereotype.withoutStereotype(targetNode.getModel().getReference().getModelName()), (SNodeOperations.isInstanceOf(targetNode, "jetbrains.mps.baseLanguage.structure.Classifier") ?
         SPropertyOperations.getString(SNodeOperations.cast(targetNode, "jetbrains.mps.baseLanguage.structure.Classifier"), "nestedName") :
         jetbrains.mps.util.SNodeOperations.getResolveInfo(targetNode)
       ));
@@ -256,7 +257,7 @@ public abstract class BaseLanguageTextGen {
   }
 
   protected static String getPackageName(SNode cls, final SNodeTextGen textGen) {
-    return cls.getModel().getReference().getLongName();
+    return SModelStereotype.withoutStereotype(cls.getModel().getReference().getModelName());
   }
 
   protected static String getClassName(String packageName, String fqName, SNode contextNode, final SNodeTextGen textGen) {

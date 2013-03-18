@@ -52,7 +52,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 public class EmbeddableEditor {
   private MPSFileNodeEditor myFileNodeEditor;
@@ -214,7 +214,7 @@ public class EmbeddableEditor {
   public void addLanguageStructureModel(final Language language) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        SModelReference ref = (SModelReference) language.getStructureModelDescriptor().getReference();
+        SModelReference ref = (jetbrains.mps.smodel.SModelReference) language.getStructureModelDescriptor().getReference();
         ((SModelInternal) smodel()).addModelImport(ref, false);
       }
     });

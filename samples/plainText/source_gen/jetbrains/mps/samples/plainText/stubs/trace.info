@@ -216,11 +216,11 @@
     <unitInfo nodeId="681855071694417235" fileName="TextModelDataSource.java" startLine="9" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.samples.plainText.stubs.TextModelDataSource" />
   </root>
   <root nodeRef="r:3da477d9-4726-426b-8f1b-53f7a44e08e9(jetbrains.mps.samples.plainText.stubs)/681855071694743498">
-    <nodeInfo nodeId="6528405377109531132" fileName="TextPersistenceUtil.java" startLine="14" startPosition="70" endLine="15" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6528405377109531132" fileName="TextPersistenceUtil.java" startLine="14" startPosition="70" endLine="15" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="681855071694743500" fileName="TextPersistenceUtil.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TextPersistenceUtil#()V" />
-    <nodeInfo nodeId="681855071694743514" fileName="TextPersistenceUtil.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="refByModule#(Lorg/jetbrains/mps/openapi/module/SModuleReference;)Ljetbrains/mps/smodel/SModelReference;" />
+    <nodeInfo nodeId="681855071694743514" fileName="TextPersistenceUtil.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="refByModule#(Lorg/jetbrains/mps/openapi/module/SModuleReference;)Lorg/jetbrains/mps/openapi/model/SModelReference;" />
     <scopeInfo nodeId="681855071694743503" fileName="TextPersistenceUtil.java" startLine="11" startPosition="32" endLine="11" endPosition="32" />
-    <scopeInfo nodeId="681855071694743517" fileName="TextPersistenceUtil.java" startLine="14" startPosition="70" endLine="15" endPosition="126" />
+    <scopeInfo nodeId="681855071694743517" fileName="TextPersistenceUtil.java" startLine="14" startPosition="70" endLine="15" endPosition="147" />
     <scopeInfo nodeId="681855071694743500" fileName="TextPersistenceUtil.java" startLine="11" startPosition="0" endLine="13" endPosition="0" />
     <scopeInfo nodeId="681855071694743514" fileName="TextPersistenceUtil.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="681855071694743519" varName="module" />

@@ -241,7 +241,7 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
 
     @Override
     protected String getItemPresentation(SModel sm) {
-      return sm.getReference().getSModelFqName().toString();
+      return sm.getReference().getModelName();
     }
 
     @Override
@@ -254,7 +254,7 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
       getNames().clear();
       getItemsMap().clear();
       for (SModel modelDescriptor : myModels) {
-        putItem(modelDescriptor.getReference().getSModelFqName().toString(), modelDescriptor);
+        putItem(modelDescriptor.getReference().getModelName(), modelDescriptor);
       }
       makeNamesConsistent();
     }

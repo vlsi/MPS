@@ -49,7 +49,7 @@ public class NodePresentation extends BasePresentation {
       myModelName = ModelAccess.instance().runReadAction(new Computable<String>() {
         @Override
         public String compute() {
-          return myNode.getModel().getReference().getSModelFqName().toString();
+          return myNode.getModel().getReference().getModelName();
         }
       });
     }

@@ -24,7 +24,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.vfs.IFile;
@@ -41,7 +41,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class TestModule extends AbstractModule {
 
   private IModule myPeer;
-  private Map<SModelFqName, SModel> myModels = new ConcurrentHashMap<SModelFqName, SModel>();
+  private Map<String, SModel> myModels = new ConcurrentHashMap<String, SModel>();
   private Map<SModel, SModel> myOriginalModels = new HashMap<SModel, SModel>();
 
   public TestModule(String namespace, String moduleId, IModule peer) {
@@ -77,8 +77,8 @@ public class TestModule extends AbstractModule {
   private boolean isValidName(String longName, String stereotype) {
     SModelFqName sModelFqName = new SModelFqName(longName, stereotype);
     return
-      SModelRepository.getInstance().getModelDescriptor(sModelFqName) == null
-        && !myModels.containsKey(sModelFqName);
+      SModelRepository.getInstance().getModelDescriptor(sModelFqName.toString()) == null
+        && !myModels.containsKey(sModelFqName.toString());
   }
 
   public SModel createModel(SModel originalModel) {
@@ -90,7 +90,7 @@ public class TestModule extends AbstractModule {
     SModelFqName fqName = new SModelFqName(SNodeOperations.getModelLongName(originalModel), stereotype);
     SModel result = new TestSModelDescriptor(fqName, jetbrains.mps.util.SNodeOperations.getModelLongName(originalModel), originalModel);
 
-    myModels.put(result.getReference().getSModelFqName(), result);
+    myModels.put(result.getReference().getModelName(), result);
     myOriginalModels.put(result, originalModel);
     invalidateCaches();
     return result;
@@ -145,7 +145,7 @@ public class TestModule extends AbstractModule {
     private final SModel myToCopy;
 
     private TestSModelDescriptor(SModelFqName fqName, String longName, SModel toCopy) {
-      super(new SModelReference(fqName, jetbrains.mps.smodel.SModelId.generate()));
+      super(new jetbrains.mps.smodel.SModelReference(fqName, jetbrains.mps.smodel.SModelId.generate()));
       myLongName = longName;
       myToCopy = toCopy;
     }
@@ -164,14 +164,14 @@ public class TestModule extends AbstractModule {
       try {
         return ModelPersistence.readModel(modelContent, false);
       } catch (ModelReadException e) {
-        return new StubModel(SModelReference.fromString(myLongName), e);
+        return new StubModel(jetbrains.mps.smodel.SModelReference.fromString(myLongName), e);
       }
     }
 
     @Override
     public SModel resolveModel(SModelReference reference) {
-      if (reference.getLongName().equals(myLongName)) {
-        SModel descriptor = myModels.get(reference.getSModelFqName());
+      if (SModelStereotype.withoutStereotype(reference.getModelName()).equals(myLongName)) {
+        SModel descriptor = myModels.get(reference.getModelName());
         if (descriptor != null) {
           return descriptor;
         }

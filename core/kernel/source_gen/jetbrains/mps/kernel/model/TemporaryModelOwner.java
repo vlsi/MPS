@@ -17,7 +17,7 @@ import jetbrains.mps.smodel.SModelInternal;
 import java.util.List;
 import jetbrains.mps.project.structure.modules.Dependency;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.IModule;
 import org.jetbrains.annotations.NotNull;

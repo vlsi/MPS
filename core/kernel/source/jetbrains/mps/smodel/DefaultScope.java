@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
@@ -107,7 +107,7 @@ public abstract class DefaultScope extends BaseScope {
       model = SModelRepository.getInstance().getModelDescriptor(reference.getModelId());
     } else {
       // todo: do something with this code
-      SModelFqName fqName = ((SModelReference) reference).getSModelFqName();
+      String fqName = reference.getModelName();
       if (fqName == null) return null;
       model = SModelRepository.getInstance().getModelDescriptor(fqName);
     }

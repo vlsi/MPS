@@ -714,7 +714,7 @@
     <nodeInfo nodeId="2907261777969429341" fileName="LanguageDescriptorPersistence.java" startLine="132" startPosition="106" endLine="133" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2907261777969415042" fileName="LanguageDescriptorPersistence.java" startLine="134" startPosition="5" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2184872129967227698" fileName="LanguageDescriptorPersistence.java" startLine="135" startPosition="0" endLine="136" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2184872129967227737" fileName="LanguageDescriptorPersistence.java" startLine="137" startPosition="88" endLine="138" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2184872129967227737" fileName="LanguageDescriptorPersistence.java" startLine="137" startPosition="120" endLine="138" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2184872129967227711" fileName="LanguageDescriptorPersistence.java" startLine="139" startPosition="5" endLine="140" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2184872129967227697" fileName="LanguageDescriptorPersistence.java" startLine="140" startPosition="48" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="842994667883031589" fileName="LanguageDescriptorPersistence.java" startLine="141" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -782,7 +782,7 @@
     <scopeInfo nodeId="842994667883031469" fileName="LanguageDescriptorPersistence.java" startLine="102" startPosition="27" endLine="103" endPosition="39" />
     <scopeInfo nodeId="2184872129967227561" fileName="LanguageDescriptorPersistence.java" startLine="119" startPosition="23" endLine="120" endPosition="49" />
     <scopeInfo nodeId="842994667883031538" fileName="LanguageDescriptorPersistence.java" startLine="122" startPosition="42" endLine="123" endPosition="107" />
-    <scopeInfo nodeId="2184872129967227726" fileName="LanguageDescriptorPersistence.java" startLine="137" startPosition="88" endLine="138" endPosition="87" />
+    <scopeInfo nodeId="2184872129967227726" fileName="LanguageDescriptorPersistence.java" startLine="137" startPosition="120" endLine="138" endPosition="87" />
     <scopeInfo nodeId="842994667883031597" fileName="LanguageDescriptorPersistence.java" startLine="144" startPosition="103" endLine="145" endPosition="107" />
     <scopeInfo nodeId="2184872129967228153" fileName="LanguageDescriptorPersistence.java" startLine="156" startPosition="85" endLine="157" endPosition="88" />
     <scopeInfo nodeId="2184872129967228198" fileName="LanguageDescriptorPersistence.java" startLine="164" startPosition="88" endLine="165" endPosition="81" />
@@ -1436,7 +1436,7 @@
     <nodeInfo nodeId="842994667883032676" fileName="ProjectDescriptorPersistence.java" startLine="116" startPosition="5" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="842994667883032687" fileName="ProjectDescriptorPersistence.java" startLine="118" startPosition="113" endLine="119" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="842994667883032692" fileName="ProjectDescriptorPersistence.java" startLine="119" startPosition="65" endLine="120" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="842994667883032709" fileName="ProjectDescriptorPersistence.java" startLine="121" startPosition="103" endLine="122" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="842994667883032709" fileName="ProjectDescriptorPersistence.java" startLine="121" startPosition="103" endLine="122" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="842994667883032717" fileName="ProjectDescriptorPersistence.java" startLine="123" startPosition="7" endLine="124" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2184872129967258602" fileName="ProjectDescriptorPersistence.java" startLine="125" startPosition="5" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="842994667883032734" fileName="ProjectDescriptorPersistence.java" startLine="127" startPosition="113" endLine="128" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1495,7 +1495,7 @@
     </scopeInfo>
     <scopeInfo nodeId="842994667883032498" fileName="ProjectDescriptorPersistence.java" startLine="88" startPosition="27" endLine="89" endPosition="23" />
     <scopeInfo nodeId="842994667883032524" fileName="ProjectDescriptorPersistence.java" startLine="99" startPosition="23" endLine="100" endPosition="13" />
-    <scopeInfo nodeId="842994667883032708" fileName="ProjectDescriptorPersistence.java" startLine="121" startPosition="103" endLine="122" endPosition="82" />
+    <scopeInfo nodeId="842994667883032708" fileName="ProjectDescriptorPersistence.java" startLine="121" startPosition="103" endLine="122" endPosition="103" />
     <scopeInfo nodeId="1537909269538584058" fileName="ProjectDescriptorPersistence.java" startLine="153" startPosition="43" endLine="154" endPosition="67" />
     <scopeInfo nodeId="842994667883032829" fileName="ProjectDescriptorPersistence.java" startLine="159" startPosition="0" endLine="160" endPosition="36">
       <varInfo nodeId="842994667883032830" varName="e" />

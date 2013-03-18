@@ -14,9 +14,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddAuthorBlockDocTag_Intention implements IntentionFactory {
@@ -86,22 +83,7 @@ public class AddAuthorBlockDocTag_Intention implements IntentionFactory {
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode authorTag = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag", null);
       ListSequence.fromList(SLinkOperations.getTargets(node, "author", true)).addElement(authorTag);
-      editorContext.flushEvents();
-      EditorCell authorEditorCell = editorContext.getEditorComponent().findNodeCell(authorTag);
-      EditorCell cellToSelect = null;
-      if (authorEditorCell instanceof EditorCell_Collection) {
-        for (EditorCell childCell : Sequence.fromIterable((EditorCell_Collection) authorEditorCell)) {
-          String cellId = childCell.getCellId();
-          if (cellId != null && cellId.contains("text")) {
-            cellToSelect = childCell;
-            break;
-          }
-        }
-      }
-      editorContext.getEditorComponent().changeSelection((cellToSelect != null ?
-        cellToSelect :
-        authorEditorCell
-      ));
+      BlockDocTagHelper.setFocus(editorContext, authorTag);
     }
 
     public IntentionDescriptor getDescriptor() {

@@ -38,7 +38,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
@@ -247,7 +247,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     SModelFqName fqName = getModelFqName(module);
     SModuleId moduleId = module.getModuleReference().getModuleId();
     SModelId id = moduleId != null ? jetbrains.mps.smodel.SModelId.foreign("project", moduleId.toString()) : null;
-    return new SModelReference(fqName, id);
+    return new jetbrains.mps.smodel.SModelReference(fqName, id);
   }
 
   public String toString() {

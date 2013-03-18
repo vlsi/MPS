@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
 
 import org.jetbrains.mps.openapi.model.SModel;
 
@@ -96,9 +96,9 @@ public class Generator extends AbstractModule {
   private boolean upgradeMappingConfigSimpleRef(MappingConfig_SimpleRef simpleRef) {
     boolean descriptorChanged = false;
     String s = simpleRef.getModelUID();
-    SModelReference modelReference = SModelReference.fromString(s);
-    if (modelReference.getStereotype().equals(SModelStereotype.TEMPLATES)) {
-      modelReference = new SModelReference(modelReference.getLongName(), SModelStereotype.GENERATOR);
+    SModelReference modelReference = jetbrains.mps.smodel.SModelReference.fromString(s);
+    if (SModelStereotype.getStereotype(modelReference.getModelName()).equals(SModelStereotype.TEMPLATES)) {
+      modelReference = new jetbrains.mps.smodel.SModelReference(SModelStereotype.withoutStereotype(modelReference.getModelName()), SModelStereotype.GENERATOR);
       s = modelReference.toString();
       simpleRef.setModelUID(s);
       descriptorChanged = true;
@@ -127,8 +127,8 @@ public class Generator extends AbstractModule {
   }
 
   @Override
-  public void reloadFromDisk(boolean reloadClasses) {
-    //do nothing. reloaded by containing language
+  public IFile getDescriptorFile() {
+    return null;
   }
 
   @Override

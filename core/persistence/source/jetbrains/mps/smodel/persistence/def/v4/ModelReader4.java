@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelHeader;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelVersionsInfo;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.IReferencePersister;
@@ -60,7 +60,7 @@ public class ModelReader4 implements IModelReader {
     SModelVersionsInfo versionsInfo = new SModelVersionsInfo();
     Element rootElement = document.getRootElement();
 
-    SModelReference modelReference = SModelReference.fromString(rootElement.getAttributeValue(ModelPersistence.MODEL_UID));
+    SModelReference modelReference = jetbrains.mps.smodel.SModelReference.fromString(rootElement.getAttributeValue(ModelPersistence.MODEL_UID));
     DefaultSModel model = new DefaultSModel(modelReference);
     model.setPersistenceVersion(getVersion());
     model.getSModelHeader().updateDefaults(header);
@@ -126,7 +126,7 @@ public class ModelReader4 implements IModelReader {
         continue;
       }
 
-      SModelReference importedModelReference = SModelReference.fromString(importedModelUIDString);
+      SModelReference importedModelReference = jetbrains.mps.smodel.SModelReference.fromString(importedModelUIDString);
       model.addModelImport(new ImportElement(importedModelReference, importIndex, usedModelVersion));
     }
 
@@ -175,7 +175,7 @@ public class ModelReader4 implements IModelReader {
         }
       }
       if (aspectModelUID != null) {
-        model.addAdditionalModelVersion(SModelReference.fromString(aspectModelUID), version);
+        model.addAdditionalModelVersion(jetbrains.mps.smodel.SModelReference.fromString(aspectModelUID), version);
       }
     }
   }

@@ -29,7 +29,7 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_R
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_SimpleRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.project.structure.modules.mappingpriorities.RuleType;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -205,7 +205,7 @@ public class GenerationPartitioner {
       String modelUID = ((MappingConfig_SimpleRef) mappingRef).getModelUID();
       String nodeID = ((MappingConfig_SimpleRef) mappingRef).getNodeID();
       if (modelUID != null && nodeID != null) {
-        SModelReference reference = SModelReference.fromString(modelUID);
+        SModelReference reference = jetbrains.mps.smodel.SModelReference.fromString(modelUID);
         TemplateModel refModel = myModelMap.get(reference);
 
         if (refModel != null) {

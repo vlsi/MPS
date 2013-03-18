@@ -20,8 +20,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SModel;
 
 public class Migrations {
@@ -43,7 +42,7 @@ public class Migrations {
     ListSequence.fromList(migrations).addElement(migrateSNodeType(config));
     ListSequence.fromList(migrations).addElement(migrateSNodeListType(config));
 
-    ListSequence.fromList(migrations).addElement(migrateNodeAttributes(config));
+    ListSequence.fromList(migrations).addElement(migrgetateNodeAttributes(config));
     ListSequence.fromList(migrations).addElement(migrateInstanceOf(config));
     ListSequence.fromList(migrations).addElement(migrateGetDescendant(config));
 
@@ -107,7 +106,7 @@ public class Migrations {
     };
   }
 
-  public static AbstractMigrationRefactoring migrateNodeAttributes(final MigrationConfig config) {
+  public static AbstractMigrationRefactoring migrgetateNodeAttributes(final MigrationConfig config) {
     return new SimpleMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
       @Override
       public String getName() {
@@ -714,21 +713,14 @@ public class Migrations {
     return quotedNode_2;
   }
 
-  private static String check_b5gojm_a0a0e0b0a0a0q(SModelFqName checkedDotOperand) {
+  private static String check_b5gojm_a0a0e0b0a0a0q(SModelReference checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getLongName();
+      return checkedDotOperand.getModelName();
     }
     return null;
   }
 
-  private static SModelFqName check_b5gojm_a0a0a4a1a0a0a61(SModelReference checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getSModelFqName();
-    }
-    return null;
-  }
-
-  private static SModelReference check_b5gojm_a0a0a0e0b0a0a0q(SModel checkedDotOperand) {
+  private static SModelReference check_b5gojm_a0a0a4a1a0a0a61(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
     }

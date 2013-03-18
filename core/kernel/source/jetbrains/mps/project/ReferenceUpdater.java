@@ -16,7 +16,7 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.extapi.model.EditableSModel;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 
 /**
  * evgeny, 3/7/11

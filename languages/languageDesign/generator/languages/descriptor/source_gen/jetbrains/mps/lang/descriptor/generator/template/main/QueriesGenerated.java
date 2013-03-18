@@ -29,7 +29,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.lang.project.behavior.ModelReference_Behavior;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -295,7 +295,7 @@ public class QueriesGenerated {
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        SModelReference ref = SModelReference.fromString(ModelReference_Behavior.call_getModelReference_6236774123822284799(it));
+        SModelReference ref = jetbrains.mps.smodel.SModelReference.fromString(ModelReference_Behavior.call_getModelReference_6236774123822284799(it));
         SModel descriptor = SModelRepository.getInstance().getModelDescriptor(ref);
         if (descriptor == null) {
           return false;
@@ -320,7 +320,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1250389701475431822(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "model", true)).translate(new ITranslator2<SNode, String>() {
       public Iterable<String> translate(SNode it) {
-        SModel m = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(ModelReference_Behavior.call_getModelReference_6236774123822284799(it)));
+        SModel m = SModelRepository.getInstance().getModelDescriptor(jetbrains.mps.smodel.SModelReference.fromString(ModelReference_Behavior.call_getModelReference_6236774123822284799(it)));
         return (m == null ?
           Collections.<String>emptyList() :
           ModelContentUtil.getUsedLanguageNamespaces(m, true)

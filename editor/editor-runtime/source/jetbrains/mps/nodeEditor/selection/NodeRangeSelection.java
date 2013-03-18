@@ -22,7 +22,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.IterableUtil;
@@ -64,7 +64,7 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     if (modelId == null) {
       throw new SelectionStoreException("Model ID property missed");
     }
-    SModel sModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(modelId));
+    SModel sModelDescriptor = SModelRepository.getInstance().getModelDescriptor(jetbrains.mps.smodel.SModelReference.fromString(modelId));
     if (sModelDescriptor == null) {
       throw new SelectionRestoreException();
     }
