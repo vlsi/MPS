@@ -277,10 +277,16 @@ public class ModuleMaker {
     ttrace.pop();
 
     ttrace.push("updating classpath", false);
-    for (SModule module : modules) {
+    for (SModule module : changedModules) {
       invalidateCompiledClasses(module);
     }
     ttrace.pop();
+
+    for (SModule module : modulesWithRemovals) {
+      if (!changedModules.contains(module)) {
+        LOG.warning("Module with removals not in changed modules: " + module);
+      }
+    }
 
     // todo: check possibility of this statements
     if (hasJavaToCompile && changedModules.isEmpty()) {
