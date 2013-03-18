@@ -30,7 +30,6 @@ import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.listener.ModelCreationListener;
-import jetbrains.mps.project.persistence.ModuleReadException;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.project.structure.modules.Dependency;
@@ -66,7 +65,6 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.FacetsFacade;
 import org.jetbrains.mps.openapi.module.SDependency;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -79,12 +77,10 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
@@ -323,18 +319,13 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return;
 
-    final IFile bundleHomeFile = getBundleHome();
+    final IFile bundleHomeFile = FileSystem.getInstance().getBundleHome(getDescriptorFile());
     if (bundleHomeFile == null) return;
 
     IFile bundleParent = bundleHomeFile.getParent();
     if (bundleParent == null || !bundleParent.exists()) return;
 
-    String packagedSourcesPath = bundleHomeFile.getPath();
-    if (packagedSourcesPath.endsWith(".jar")) {
-      packagedSourcesPath = (packagedSourcesPath.substring(0, packagedSourcesPath.length() - 4) + "-src.jar!/").toLowerCase();
-    } else {
-      packagedSourcesPath = null;
-    }
+    String packagedSourcesPath = getModuleSourceDir() != null ? getModuleSourceDir().getPath() : null;
 
     boolean addBundleAsModelRoot = false;
     final DeploymentDescriptor dd = descriptor.getDeploymentDescriptor();
@@ -665,7 +656,7 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
   @Override
   @Deprecated
   public IFile getBundleHome() {
-    return FileSystem.getInstance().getBundleHome(getModuleSourceDir());
+    return FileSystem.getInstance().getBundleHome(getDescriptorFile());
   }
 
   @Override

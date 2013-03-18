@@ -99,7 +99,7 @@ public class EditorUtil {
           ModelAccess.instance().requireWrite(new Runnable() {
             public void run() {
               SModel model = sourceNode.getModel();
-              String outputRoot = model.getModule().getBundleHome().getPath() + File.separator + "icons";
+              String outputRoot = ((AbstractModule) model.getModule()).getModuleSourceDir().getPath() + File.separator + "icons";
               IFile outputRootFile = FileSystem.getInstance().getFileByPath(outputRoot);
               // <node> 
 

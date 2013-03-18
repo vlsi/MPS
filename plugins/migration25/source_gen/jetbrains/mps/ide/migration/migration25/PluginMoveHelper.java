@@ -147,10 +147,12 @@ public class PluginMoveHelper {
   }
 
   private void movePluginOut(Language l) {
+    assert !(l.isPackaged());
+
     String solutionName = makePluginSolutionName(l, SOLUTION_NAME);
     Solution s = ModuleRepositoryFacade.getInstance().getModule(solutionName, Solution.class);
     if (s == null) {
-      s = NewModuleUtil.createSolution(solutionName, l.getBundleHome().getDescendant("solutions").getDescendant(SOLUTION_NAME).getPath(), myProject);
+      s = NewModuleUtil.createSolution(solutionName, l.getModuleSourceDir().getDescendant("solutions").getDescendant(SOLUTION_NAME).getPath(), myProject);
 
       StandaloneMPSProject project = (StandaloneMPSProject) myProject;
       project.setFolderFor(s, project.getFolderFor(l));

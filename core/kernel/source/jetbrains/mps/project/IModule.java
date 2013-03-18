@@ -155,6 +155,7 @@ public interface IModule extends SModule {
   /**
    * ??? bundle home == jar or folder with module sources. Meaningless stuff
    * @see jetbrains.mps.project.AbstractModule#getModuleSourceDir()
+   * @see jetbrains.mps.project.AbstractModule#getDescriptorFile()
    */
   @Deprecated
   IFile getBundleHome();
