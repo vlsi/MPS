@@ -16,44 +16,104 @@
 package jetbrains.mps.ide.project.facets.ui;
 
 import com.intellij.icons.AllIcons.Nodes;
+import com.intellij.ui.AnActionButton;
+import com.intellij.ui.AnActionButtonRunnable;
+import com.intellij.ui.IdeBorderFactory;
+import com.intellij.ui.TableUtil;
+import com.intellij.ui.ToolbarDecorator;
+import com.intellij.ui.table.JBTable;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
+import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.ide.project.facets.IdeaPluginModuleFacet;
+import jetbrains.mps.ide.project.facets.IdeaPluginModuleFacetImpl;
+import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
+import jetbrains.mps.ide.ui.dialogs.properties.creators.SolutionOrLangChooser;
+import jetbrains.mps.ide.ui.dialogs.properties.renders.ModuleTableCellRender;
 import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
+import jetbrains.mps.persistence.MementoImpl;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.persistence.Memento;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.ListSelectionModel;
+import java.awt.Dimension;
+import java.util.Iterator;
+import java.util.List;
 
 public class IdeaPluginModuleFacetTab extends BaseTab {
 
-  private IdeaPluginModuleFacet myIdeaPluginModuleFacet;
+  private final IdeaPluginModuleFacet myIdeaPluginModuleFacet;
+  private IdeaPluginModuleFacet myNewIdeaPluginModuleFacet;
+
+  private JTextField myTextField;
+  private IdeaPluginModulesTableModel myTableModel;
 
   public IdeaPluginModuleFacetTab(IdeaPluginModuleFacet moduleFacet) {
     super("Idea Plugin", Nodes.Plugin, "Idea Plugin Properties");
+
     myIdeaPluginModuleFacet = moduleFacet;
+    Memento memento = new MementoImpl();
+    ((SModuleFacet) myIdeaPluginModuleFacet).save(memento);
+
+    myNewIdeaPluginModuleFacet = new IdeaPluginModuleFacetImpl();
+    ((SModuleFacet)myNewIdeaPluginModuleFacet).load(memento);
+
     init();
   }
 
   @Override
   public void init() {
-    JPanel panel = new JPanel(new GridLayoutManager(2,2));
+    JPanel panel = new JPanel(new GridLayoutManager(2, 2, MPSPropertiesConfigurable.INSETS, -1, -1));
 
     panel.add(new JLabel("Plugin ID:"),
         new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
-    panel.add(new JTextField(myIdeaPluginModuleFacet.getPluginId()),
+    myTextField = new JTextField(myIdeaPluginModuleFacet.getPluginId());
+    panel.add(myTextField,
         new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
-    StringBuilder builder = new StringBuilder();
-    for (SModuleReference moduleReference : myIdeaPluginModuleFacet.getContainedModules()) {
-      builder.append(moduleReference.getModuleName());
-      builder.append("\n");
-    }
+    final JBTable modulesTable = new JBTable();
+    modulesTable.setShowHorizontalLines(false);
+    modulesTable.setShowVerticalLines(false);
+    modulesTable.setAutoCreateRowSorter(false);
+    modulesTable.setAutoscrolls(true);
 
-    panel.add(new JTextArea(builder.toString()),
+    myTableModel = new IdeaPluginModulesTableModel(myNewIdeaPluginModuleFacet);
+    modulesTable.setModel(myTableModel);
+
+    modulesTable.setDefaultRenderer(SModuleReference.class, new ModuleTableCellRender());
+
+    modulesTable.getSelectionModel().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+
+    ToolbarDecorator decorator = ToolbarDecorator.createDecorator(modulesTable);
+    decorator.setAddAction(new AnActionButtonRunnable() {
+      @Override
+      public void run(AnActionButton anActionButton) {
+        List<ModuleReference> list = (new SolutionOrLangChooser()).compute();
+        for(ModuleReference reference : list)
+          myTableModel.addItem(reference);
+      }
+    }).setRemoveAction(new AnActionButtonRunnable() {
+      @Override
+      public void run(AnActionButton anActionButton) {
+        TableUtil.removeSelectedItems(modulesTable);
+        myTableModel.fireTableDataChanged();
+      }
+    });
+    decorator.setPreferredSize(new Dimension(500, 150));
+
+    JPanel table = decorator.createPanel();
+    table.setBorder(IdeBorderFactory.createBorder());
+
+    panel.add(table,
         new GridConstraints(1, 0, 1, 2, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_BOTH,
             GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK,
             GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, null, null, null, 0, false));
@@ -63,11 +123,32 @@ public class IdeaPluginModuleFacetTab extends BaseTab {
 
   @Override
   public boolean isModified() {
-    return false;
+    return !myTextField.getText().equals(myIdeaPluginModuleFacet.getPluginId())
+        || myTableModel.isModified();
   }
 
   @Override
   public void apply() {
+    ((IdeaPluginModuleFacetImpl)myNewIdeaPluginModuleFacet).setPluginId(myTextField.getText());
+    myTableModel.apply();
 
+    Memento memento = new MementoImpl();
+    ((SModuleFacet) myNewIdeaPluginModuleFacet).save(memento);
+
+    ModuleFacetDescriptor facetDescriptor = new ModuleFacetDescriptor(
+        ((ModuleFacetBase)myNewIdeaPluginModuleFacet).getFacetType(), memento);
+
+    ModuleDescriptor descriptor = ((IModule)((SModuleFacet)myIdeaPluginModuleFacet).getModule()).getModuleDescriptor();
+    Iterator<ModuleFacetDescriptor> iterator = descriptor.getModuleFacetDescriptors().iterator();
+    while (iterator.hasNext()) {
+      ModuleFacetDescriptor mfd = iterator.next();
+      if(mfd.getType().equals(facetDescriptor.getType())) {
+        iterator.remove();
+        break;
+      }
+    }
+
+    if(!myNewIdeaPluginModuleFacet.getPluginId().isEmpty() || !myNewIdeaPluginModuleFacet.getContainedModules().isEmpty())
+      descriptor.getModuleFacetDescriptors().add(facetDescriptor);
   }
 }
