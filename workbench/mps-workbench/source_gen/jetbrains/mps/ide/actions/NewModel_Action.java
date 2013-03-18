@@ -7,12 +7,13 @@ import javax.swing.Icon;
 import jetbrains.mps.icons.MPSIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.project.IModule;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
@@ -47,6 +48,10 @@ public class NewModel_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(((IModule) MapSequence.fromMap(_params).get("module")) instanceof AbstractModule)) {
+      return false;
+    }
+
     String stereotype = NewModel_Action.this.getStereotype(_params);
     if (stereotype == null) {
       return true;
@@ -122,7 +127,7 @@ public class NewModel_Action extends BaseAction {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           String stereotype = NewModel_Action.this.getStereotype(_params);
-          dialog.value = new NewModelDialog(((Project) MapSequence.fromMap(_params).get("project")), localModule, NewModel_Action.this.getNamespace(_params), localContext, stereotype, NewModel_Action.this.isStrict(_params));
+          dialog.value = new NewModelDialog(((Project) MapSequence.fromMap(_params).get("project")), ((AbstractModule) localModule), NewModel_Action.this.getNamespace(_params), localContext, stereotype, NewModel_Action.this.isStrict(_params));
         }
       });
       dialog.value.show();

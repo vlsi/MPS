@@ -60,6 +60,7 @@ import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
 import jetbrains.mps.ide.ui.dialogs.properties.tabs.FacetTabsPersistence;
 import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
 import jetbrains.mps.ide.ui.finders.ModuleUsagesFinder;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
@@ -173,8 +174,9 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
   @Override
   protected void save() {
+    // todo: !!!
     myModule.setModuleDescriptor(myModuleDescriptor, true);
-    myModule.save();
+    ((AbstractModule) myModule).save();
   }
 
   @Nls

@@ -16,8 +16,6 @@
 package jetbrains.mps.ide.ui.dialogs.properties.tabs;
 
 
-import jetbrains.mps.ide.java.ui.JavaModuleFacetTabFactory;
-import jetbrains.mps.project.facets.JavaModuleFacet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.ui.persistence.Tab;
@@ -43,7 +41,6 @@ public class FacetTabsPersistence {
   }
 
   private void init() {
-    addFacetTab(JavaModuleFacet.FACET_TYPE, new JavaModuleFacetTabFactory());
   }
 
   public void addFacetTab(String facetType, @NotNull TabFactory tab) {

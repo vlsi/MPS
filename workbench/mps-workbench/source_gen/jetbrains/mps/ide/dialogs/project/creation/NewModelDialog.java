@@ -4,7 +4,7 @@ package jetbrains.mps.ide.dialogs.project.creation;
 
 import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import javax.swing.JTextField;
@@ -50,7 +50,7 @@ import javax.swing.JComponent;
 
 public class NewModelDialog extends DialogWrapper {
   private IOperationContext myContext;
-  private IModule myModule;
+  private AbstractModule myModule;
   private JPanel myContentPane = new JPanel(new BorderLayout());
   private JTextField myModelName = new JTextField();
   private JComboBox myModelStereotype = new JComboBox();
@@ -58,7 +58,7 @@ public class NewModelDialog extends DialogWrapper {
   private SModel myResult;
   private String myNamespace;
 
-  public NewModelDialog(Project project, IModule module, String namespace, IOperationContext context, String stereotype, boolean strict) throws HeadlessException {
+  public NewModelDialog(Project project, AbstractModule module, String namespace, IOperationContext context, String stereotype, boolean strict) throws HeadlessException {
     super(project);
     setTitle("New Model");
     myContext = context;
@@ -175,7 +175,7 @@ public class NewModelDialog extends DialogWrapper {
       ModelAccess.instance().runWriteAction(new Runnable() {
         @Override
         public void run() {
-          final LanguageDescriptor languageDescriptor = (LanguageDescriptor) myModule.getModuleDescriptor();
+          final LanguageDescriptor languageDescriptor = ((Language) myModule).getModuleDescriptor();
           Iterator<ModelRootDescriptor> iterator = languageDescriptor.getModelRootDescriptors().iterator();
           while (iterator.hasNext()) {
             ModelRootDescriptor descriptor = iterator.next();
@@ -187,7 +187,6 @@ public class NewModelDialog extends DialogWrapper {
           languageDescriptor.getModelRootDescriptors().add(newModelRootDescriptor);
           myModule.setModuleDescriptor(languageDescriptor, true);
           myModule.save();
-          myModule.reloadFromDisk(true);
         }
       });
 

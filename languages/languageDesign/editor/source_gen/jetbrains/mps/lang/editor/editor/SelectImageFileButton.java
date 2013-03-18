@@ -29,7 +29,7 @@ public class SelectImageFileButton extends JButton {
     this.setFont(EditorSettings.getInstance().getDefaultEditorFont());
     this.setBorder(new MetalBorders.ButtonBorder());
     final Language language = Language.getLanguageFor(SNodeOperations.getModel(this.myNode));
-    String filename = MacrosFactory.forModuleFile(language.getDescriptorFile()).expandPath(SPropertyOperations.getString(node, "imageFile"));
+    String filename = MacrosFactory.forModule(language).expandPath(SPropertyOperations.getString(node, "imageFile"));
     final File baseFile = (filename == null ?
       null :
       new File(filename)
@@ -49,7 +49,7 @@ public class SelectImageFileButton extends JButton {
             return;
           }
           String selectedPath = result.getPath();
-          final String pathToShow = MacrosFactory.forModuleFile(language.getDescriptorFile()).shrinkPath(selectedPath);
+          final String pathToShow = MacrosFactory.forModule(language).shrinkPath(selectedPath);
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
               SPropertyOperations.set(SelectImageFileButton.this.myNode, "imageFile", pathToShow);

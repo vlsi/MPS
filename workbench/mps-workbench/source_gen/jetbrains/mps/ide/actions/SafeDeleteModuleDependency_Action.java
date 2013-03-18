@@ -6,10 +6,11 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import javax.swing.tree.TreeNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.depanalyzer.DependencyTreeNode;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.ide.depanalyzer.DependencyUtil;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -27,6 +28,7 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.IModule;
 
 public class SafeDeleteModuleDependency_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -43,8 +45,11 @@ public class SafeDeleteModuleDependency_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    IModule from = check_bai5av_a0a0a_0(as_iuftgz_a0a0a0d(((TreeNode) MapSequence.fromMap(_params).get("node")).getParent(), DependencyTreeNode.class));
-    return from != null && !(from.isPackaged()) && check_bai5av_a0a0b0a(as_iuftgz_a0a0a0b0d(((TreeNode) MapSequence.fromMap(_params).get("node")), DependencyTreeNode.class)).linktype == DependencyUtil.LinkType.Depends;
+    SModule from = check_bai5av_a0a0a(as_iuftgz_a0a0a0d(((TreeNode) MapSequence.fromMap(_params).get("node")).getParent(), DependencyTreeNode.class));
+    if (!(from instanceof AbstractModule)) {
+      return false;
+    }
+    return !(from.isPackaged()) && check_bai5av_a0a0c0a(as_iuftgz_a0a0a0c0d(((TreeNode) MapSequence.fromMap(_params).get("node")), DependencyTreeNode.class)).linktype == DependencyUtil.LinkType.Depends;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -80,8 +85,8 @@ public class SafeDeleteModuleDependency_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      IModule from = check_bai5av_a0a0a(as_iuftgz_a0a0a0a0g(((TreeNode) MapSequence.fromMap(_params).get("node")).getParent(), DependencyTreeNode.class));
-      IModule to = check_bai5av_a0b0a(as_iuftgz_a0a0b0a0g(((TreeNode) MapSequence.fromMap(_params).get("node")), DependencyTreeNode.class));
+      AbstractModule from = (AbstractModule) check_bai5av_a0a0a0(as_iuftgz_a0a0a0a0a6(((TreeNode) MapSequence.fromMap(_params).get("node")).getParent(), DependencyTreeNode.class));
+      SModule to = check_bai5av_a0b0a(as_iuftgz_a0a0b0a0g(((TreeNode) MapSequence.fromMap(_params).get("node")), DependencyTreeNode.class));
       SearchResults results = DependenciesUtil.analyzeDependencies(from, to, ((Project) MapSequence.fromMap(_params).get("project")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), false, false);
       if (!(results.getSearchResults().isEmpty())) {
         int res = Messages.showDialog("Can't safe delete dependency", "Safe delete impossible", new String[]{"View dependencies", "Delete anyway", "Cancel"}, 0, null);
@@ -98,7 +103,7 @@ public class SafeDeleteModuleDependency_Action extends BaseAction {
     }
   }
 
-  private void removeDependency(final IModule from, final IModule to, final Map<String, Object> _params) {
+  private void removeDependency(final AbstractModule from, final SModule to, final Map<String, Object> _params) {
     final ModuleDescriptor descriptor = from.getModuleDescriptor();
     Collection<Dependency> dependencies = descriptor.getDependencies();
     List<Dependency> badDeps = CollectionSequence.fromCollection(((Collection<Dependency>) dependencies)).where(new IWhereFilter<Dependency>() {
@@ -118,21 +123,21 @@ public class SafeDeleteModuleDependency_Action extends BaseAction {
 
   private static Logger LOG = Logger.getLogger(SafeDeleteModuleDependency_Action.class);
 
-  private static IModule check_bai5av_a0a0a_0(DependencyTreeNode checkedDotOperand) {
+  private static IModule check_bai5av_a0a0a(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static DependencyUtil.Link check_bai5av_a0a0b0a(DependencyTreeNode checkedDotOperand) {
+  private static DependencyUtil.Link check_bai5av_a0a0c0a(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getLink();
     }
     return null;
   }
 
-  private static IModule check_bai5av_a0a0a(DependencyTreeNode checkedDotOperand) {
+  private static IModule check_bai5av_a0a0a0(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
@@ -153,14 +158,14 @@ public class SafeDeleteModuleDependency_Action extends BaseAction {
     );
   }
 
-  private static <T> T as_iuftgz_a0a0a0b0d(Object o, Class<T> type) {
+  private static <T> T as_iuftgz_a0a0a0c0d(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T> T as_iuftgz_a0a0a0a0g(Object o, Class<T> type) {
+  private static <T> T as_iuftgz_a0a0a0a0a6(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null

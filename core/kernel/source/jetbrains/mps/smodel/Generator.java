@@ -127,8 +127,8 @@ public class Generator extends AbstractModule {
   }
 
   @Override
-  public void reloadFromDisk(boolean reloadClasses) {
-    //do nothing. reloaded by containing language
+  public IFile getDescriptorFile() {
+    return null;
   }
 
   @Override

@@ -16,13 +16,13 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.classloading.MPSClassesReloadManager;
+import jetbrains.mps.extapi.module.EditableSModule;
 import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.extapi.persistence.ModelRootBase;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.dependency.modules.DependenciesManager;
 import jetbrains.mps.project.dependency.modules.ModuleDependenciesManager;
@@ -93,7 +93,7 @@ import java.util.Set;
 import static jetbrains.mps.project.SModuleOperations.getJavaFacet;
 import static org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
 
-public abstract class AbstractModule implements IModule, FileSystemListener {
+public abstract class AbstractModule implements IModule, EditableSModule, FileSystemListener {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
 
   public static final String MODULE_DIR = "module";
@@ -345,7 +345,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     for (String path : descriptor.getAdditionalJavaStubPaths()) {
       String canonicalPath = FileUtil.getCanonicalPath(path).toLowerCase();
       if (packagedSourcesPath == null || !canonicalPath.startsWith(packagedSourcesPath)) {
-        String shrinked = MacrosFactory.forModuleFile(getDescriptorFile()).shrinkPath(path);
+        String shrinked = MacrosFactory.forModule(this).shrinkPath(path);
         if (MacrosFactory.containsNonMPSMacros(shrinked)) continue;
       }
       if (dd == null && canonicalPath.startsWith(libPath)) {
@@ -375,7 +375,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
       }
 
       if (packagedSourcesPath == null || !canonicalPath.startsWith(packagedSourcesPath)) {
-        String shrinked = MacrosFactory.forModuleFile(getDescriptorFile()).shrinkPath(path);
+        String shrinked = MacrosFactory.forModule(this).shrinkPath(path);
         if (MacrosFactory.containsNonMPSMacros(shrinked)) continue;
       }
       if (dd == null && canonicalPath.startsWith(libPath)) {
@@ -559,7 +559,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     }
     for (IFile file : event.getChanged()) {
       if (file.equals(myDescriptorFile)) {
-        reloadFromDisk(false);
+        SModuleOperations.reloadFromDisk(this);
         MPSClassesReloadManager.getInstance().requestReload();
         return;
       }
@@ -662,43 +662,23 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   }
 
   @Override
-  public boolean needReloading() {
-    if ((myDescriptorFile == null) || !myDescriptorFile.exists()) {
-      return false;
-    }
-
-    final ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return false;
-
-    String timestampString;
-    if (ModelAccess.instance().canRead()) {
-      timestampString = descriptor.getTimestamp();
-    } else {
-      timestampString = ModelAccess.instance().runReadAction(new Computable<String>() {
-        @Override
-        public String compute() {
-          return descriptor.getTimestamp();
-        }
-      });
-    }
-    if (timestampString == null) return true;
-    long timestamp = Long.decode(timestampString);
-    return timestamp != myDescriptorFile.lastModified();
+  public final boolean needReloading() {
+    return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      @Override
+      public Boolean compute() {
+        return SModuleOperations.needReloading(AbstractModule.this);
+      }
+    });
   }
 
+  @Deprecated
   @Override
-  public void reloadFromDisk(boolean reloadClasses) {
-    ModelAccess.instance().checkWriteAccess();
-    try {
-      ModuleDescriptor descriptor = loadDescriptor();
-      setModuleDescriptor(descriptor, reloadClasses);
-    } catch (ModuleReadException e) {
-      handleReadProblem(e, false);
-    }
+  public final void reloadFromDisk(boolean reloadClasses) {
+    SModuleOperations.reloadFromDisk(this, reloadClasses);
   }
 
-  private void handleReadProblem(Exception e, boolean isInConflict) {
-    SuspiciousModelHandler.getHandler().handleSuspiciousModule(this, isInConflict);
+  public static void handleReadProblem(AbstractModule module, Exception e, boolean isInConflict) {
+    SuspiciousModelHandler.getHandler().handleSuspiciousModule(module, isInConflict);
     LOG.error(e.getMessage());
     e.printStackTrace();
   }

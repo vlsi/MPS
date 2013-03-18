@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.extapi.module.EditableSModule;
 import jetbrains.mps.project.dependency.modules.DependenciesManager;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -34,17 +33,10 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import java.util.Collection;
 import java.util.List;
 
-public interface IModule extends SModule, EditableSModule {
+public interface IModule extends SModule {
   // events
   // dependency change
   // used languages change
-
-  // SModule#getModuleReference
-  // ask Misha about return type
-  // oooor it doesn't matter here
-  @Override
-  @NotNull
-  ModuleReference getModuleReference();
 
   // ?, move to AbstractModule, remove usages as much as possible
   // up reasonable getters to SModule
@@ -133,24 +125,11 @@ public interface IModule extends SModule, EditableSModule {
   // ?
   // btw onModuleRegistered
   // setRepository I think
+  // change on custom addModuleAdded listener
   void attach();
 
   // ?
   void dispose();
-
-  // ?, classes oO? possibility to listen reload action in API and use it in facet!
-  // ModuleSource!
-  // reloadClasses -> outside
-  void reloadFromDisk(boolean reloadClasses);
-
-  // should be final in AbstractModule? expose to SModule?
-  // ModuleSource (@see DataSource, maybe abstract from files?)
-  boolean needReloading();
-
-  // ----- deprecated part
-  // model creation stuff
-
-
 
   // module source path stuff
 
@@ -169,6 +148,31 @@ public interface IModule extends SModule, EditableSModule {
   // IFile getModuleRoot() <- clash with model root // to SModuleOperations / maybe SModule
   // IFile getModuleFolder() ?
   // use as much as possible
+
+  // ----- deprecated part
+
+  // reload descriptor stuff, now all these methods need AbstractModule, for ConflictableModuleAdapter I think
+  /**
+   * @see SModuleOperations#needReloading(AbstractModule)
+   */
+  @Deprecated
+  boolean needReloading();
+
+  /**
+   * @see SModuleOperations#reloadFromDisk(AbstractModule)
+   */
+  @Deprecated
+  void reloadFromDisk(boolean reloadClasses);
+
+  // EditableSModule part. Cast to EditableSModule when needed
+  @Deprecated
+  boolean isChanged();
+
+  @Deprecated
+  void setChanged();
+
+  @Deprecated
+  void save();
 
   // JavaModuleFacet part. Use module.getFacet(JavaModuleFacet.class).{method}
   @Deprecated
@@ -226,6 +230,13 @@ public interface IModule extends SModule, EditableSModule {
    */
   @Deprecated
   String getModuleFqName();
+
+  /**
+   * Remove this method after ModuleReference -> SModuleReference migration
+   */
+  @Override
+  @NotNull
+  ModuleReference getModuleReference();
 
   /**
    * Simple way: use SModuleOperations#getOutputPathFor
