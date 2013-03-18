@@ -16,6 +16,7 @@
 package jetbrains.mps.project.facets;
 
 import jetbrains.mps.extapi.module.ModuleFacetBase;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ProjectPathUtil;
 import jetbrains.mps.project.Solution;
@@ -35,6 +36,7 @@ import java.util.Set;
  * todo: divide into two parts: JavaModuleFacetSrcImpl && JavaModuleFacetPackagedImpl
  */
 public class JavaModuleFacetImpl extends ModuleFacetBase implements JavaModuleFacet {
+  private static final Logger LOG = Logger.getLogger(JavaModuleFacetImpl.class);
 
   public JavaModuleFacetImpl() {
   }
@@ -108,7 +110,13 @@ public class JavaModuleFacetImpl extends ModuleFacetBase implements JavaModuleFa
   private String getClassPath(@NotNull IFile classes) {
     String path = classes.getPath();
     if (path.contains("!")) {
-      return path.split("!")[0];
+      String[] split = path.split("!");
+      if (split.length > 0) {
+        if (!split[1].isEmpty() && !split[1].equals("/")) {
+          LOG.warning("Can not transform directory " + path + " to proper classpath while calculating classpath for module " + getModule());
+        }
+      }
+      return split[0];
     }
     return path;
   }
