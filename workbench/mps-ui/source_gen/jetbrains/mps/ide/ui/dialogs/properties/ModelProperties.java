@@ -130,7 +130,7 @@ public class ModelProperties {
         ((EditableSModel) myModelDescriptor).save();
       }
     });
-    new MissingDependenciesFixer(myModelDescriptor).fix(true);
+    MissingDependenciesFixer.fixDependencies(myModelDescriptor);
   }
 
   private void addNewDevKits() {

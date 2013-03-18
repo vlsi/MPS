@@ -30,9 +30,6 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.logging.Logger;
 
 public class FixMissingImportsInProject_Action extends BaseAction {
@@ -91,25 +88,20 @@ public class FixMissingImportsInProject_Action extends BaseAction {
         }
 
         for (SModelReference modelReference : ListSequence.fromList(modelReferences)) {
-          SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
-          if (modelDescriptor == null) {
+          SModel model = SModelRepository.getInstance().getModelDescriptor(modelReference);
+          if (model == null) {
             continue;
           }
-          if (!(SModelStereotype.isUserModel(modelDescriptor))) {
+          if (!(SModelStereotype.isUserModel(model))) {
             continue;
           }
-          if (!(modelDescriptor instanceof EditableSModel)) {
+          if (!(model instanceof EditableSModel)) {
             continue;
           }
 
-          new MissingDependenciesFixer(modelDescriptor).fix(false);
+          MissingDependenciesFixer.fixDependencies(model);
         }
       }
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-        public void run() {
-          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
-        }
-      });
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "FixMissingImportsInProject", t);
     }

@@ -37,7 +37,7 @@ public class MissingDependenciesFixer {
 
   @Deprecated
   public void fix() {
-    fix(true);
+    fixDependencies(myModel);
   }
 
 
