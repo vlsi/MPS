@@ -108,7 +108,7 @@ public class IntelligentInputUtil {
       EditorCell cellForNewNode = (EditorCell) editorContext.getEditorComponent().findNodeCell(newNode);
       if (cellForNewNode != null) {
         EditorCell_Label target = null;
-        jetbrains.mps.openapi.editor.cells.EditorCell errorOrEditable = CellFinderUtil.findChildByManyFinders(cell, true, CellFinders.FIRST_ERROR, CellFinders.LAST_EDITABLE);
+        jetbrains.mps.openapi.editor.cells.EditorCell errorOrEditable = CellFinderUtil.findChildByManyFinders(cellForNewNode, true, CellFinders.FIRST_ERROR, CellFinders.LAST_EDITABLE);
         if (errorOrEditable instanceof EditorCell_Label) {
           target = (EditorCell_Label) errorOrEditable;
         }
