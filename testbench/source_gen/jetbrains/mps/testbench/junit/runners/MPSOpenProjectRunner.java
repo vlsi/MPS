@@ -27,11 +27,11 @@ import java.lang.annotation.ElementType;
 public class MPSOpenProjectRunner extends Runner {
   private static String PROPERTY_PROJECT_NAME = "mps.junit.project";
   private static String PROPERTY_PREFIX_PATH_MACRO = "mps.junit.pathmacro.";
-  private static Project ourMPSProject;
+  protected static Project ourMPSProject;
   private Description myDescription;
 
   public MPSOpenProjectRunner(Class<?> testClass) throws InitializationError {
-    doOpenProject(testClass);
+    init(testClass);
   }
 
   @Override
@@ -48,7 +48,7 @@ public class MPSOpenProjectRunner extends Runner {
     return myDescription;
   }
 
-  private String doOpenProject(Class<?> testClass) throws InitializationError {
+  protected void init(Class<?> testClass) throws InitializationError {
     String projectPath = getProjectPath(testClass);
     BasicConfigurator.configure();
     Logger.getRootLogger().setLevel(Level.INFO);
@@ -70,7 +70,6 @@ public class MPSOpenProjectRunner extends Runner {
     // 3. Cache location ? 
     // 4. creste separate suite generating (making) all modules in this project by using ProjectTestHelper? 
     ModelAccess.instance().flushEventQueue();
-    return projectPath;
   }
 
   private void initPathMacros() {

@@ -35,6 +35,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.util.MacrosFactory;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.resources.DResource;
@@ -119,7 +120,7 @@ public class Binaries_Facet extends IFacet.Stub {
                             }
                           }).select(new ISelector<SNode, String>() {
                             public String select(SNode bin) {
-                              return MacrosFactory.forModuleFile(module.getDescriptorFile()).expandPath(SPropertyOperations.getString(bin, "path"));
+                              return MacrosFactory.forModule((AbstractModule) module).expandPath(SPropertyOperations.getString(bin, "path"));
                             }
                           }).where(new IWhereFilter<String>() {
                             public boolean accept(String p) {

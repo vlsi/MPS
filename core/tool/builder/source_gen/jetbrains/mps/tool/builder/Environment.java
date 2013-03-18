@@ -19,7 +19,6 @@ import jetbrains.mps.generator.DefaultModifiableGenerationSettings;
 import jetbrains.mps.project.PathMacros;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.util.FileUtil;
 import java.util.HashMap;
 import jetbrains.mps.tool.common.util.PathUtil;
 import jetbrains.mps.tool.builder.util.MapPathMacrosProvider;
@@ -29,15 +28,16 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.tool.builder.util.PathManager;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.FileUtil;
 
 public class Environment {
   private Map<String, String> myMacro;
   private boolean myLoadBootstrapLibraries;
   protected Map<String, File> myLibraries;
-  private Level myLogLevel;
+  protected Level myLogLevel;
   protected SetLibraryContributor myLibraryContibutor;
   private PathMacrosProvider myMacroProvider;
-  private ILoggingHandler myMessageHandler;
+  protected ILoggingHandler myMessageHandler;
 
   public Environment() {
   }
@@ -80,11 +80,7 @@ public class Environment {
   }
 
   public Project createDummyProject() {
-    File projectFile = FileUtil.createTmpFile();
-    FileMPSProject project = new FileMPSProject(projectFile);
-    project.init(new FileMPSProject.ProjectDescriptor(null));
-    projectFile.deleteOnExit();
-    return project;
+    return Environment.createTmpDummyProject();
   }
 
   public Project loadProject(File projectFile) {
@@ -163,5 +159,13 @@ public class Environment {
       System.setProperty("idea.load.plugins", "false");
     }
     System.setProperty("idea.platform.prefix", "Idea");
+  }
+
+  public static Project createTmpDummyProject() {
+    File projectFile = FileUtil.createTmpFile();
+    FileMPSProject project = new FileMPSProject(projectFile);
+    project.init(new FileMPSProject.ProjectDescriptor(null));
+    projectFile.deleteOnExit();
+    return project;
   }
 }

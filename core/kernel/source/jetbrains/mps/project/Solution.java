@@ -123,7 +123,7 @@ public class Solution extends AbstractModule {
     if (bootstrapCP.keySet().contains(this.getModuleReference())) return;
     // in StubSolutions myDescriptorFile is null, so preventing NPE here (MPS-16793)
     if (myDescriptorFile == null || isPackaged()) return;
-    SolutionDescriptorPersistence.saveSolutionDescriptor(myDescriptorFile, getModuleDescriptor(), MacrosFactory.forModuleFile(myDescriptorFile));
+    SolutionDescriptorPersistence.saveSolutionDescriptor(myDescriptorFile, getModuleDescriptor(), MacrosFactory.forModule(this));
   }
 
   @Override

@@ -9,7 +9,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.MPSProject;
 import java.util.Collection;
@@ -53,7 +53,7 @@ public class AddExtendedLanguagesAsUsed_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      for (IModule module : ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("project")).getProjectModules(IModule.class))) {
+      for (AbstractModule module : ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("project")).getProjectModules(AbstractModule.class))) {
         Collection<Language> usedNow = new GlobalModuleDependenciesManager(module).getUsedLanguages();
         for (Language lang : CollectionSequence.fromCollection(usedNow)) {
           HashSet<Language> extLangs = new HashSet<Language>();

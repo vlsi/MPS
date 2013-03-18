@@ -25,6 +25,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.vfs.FileSystem;
@@ -254,8 +255,8 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
   private static boolean renderingCondition_fl5ndt_a2b1b0(SNode node, EditorContext editorContext, IScope scope) {
     String path = null;
     IModule module = SNodeOperations.getModel(node).getModule();
-    if (module != null) {
-      path = MacrosFactory.forModuleFile(module.getDescriptorFile()).expandPath(SPropertyOperations.getString(node, "icon"));
+    if (module instanceof AbstractModule) {
+      path = MacrosFactory.forModule((AbstractModule) module).expandPath(SPropertyOperations.getString(node, "icon"));
     }
     return path != null && FileSystem.getInstance().getFileByPath(path).exists();
   }

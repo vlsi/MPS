@@ -16,6 +16,7 @@
 package jetbrains.mps.project.facets;
 
 import jetbrains.mps.extapi.module.ModuleFacetBase;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ProjectPathUtil;
 import jetbrains.mps.project.Solution;
@@ -23,6 +24,7 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Collections;
@@ -34,6 +36,7 @@ import java.util.Set;
  * todo: divide into two parts: JavaModuleFacetSrcImpl && JavaModuleFacetPackagedImpl
  */
 public class JavaModuleFacetImpl extends ModuleFacetBase implements JavaModuleFacet {
+  private static final Logger LOG = Logger.getLogger(JavaModuleFacetImpl.class);
 
   public JavaModuleFacetImpl() {
   }
@@ -86,7 +89,7 @@ public class JavaModuleFacetImpl extends ModuleFacetBase implements JavaModuleFa
       // todo: remove this logic?
       IFile classes = ProjectPathUtil.getClassesFolder(getModule().getDescriptorFile());
       if (classes != null && classes.exists()) {
-        libraryClassPath.add(classes.getPath());
+        libraryClassPath.add(getClassPath(classes));
       }
     }
 
@@ -99,9 +102,23 @@ public class JavaModuleFacetImpl extends ModuleFacetBase implements JavaModuleFa
     result.addAll(getLibraryClassPath());
     IFile classesGen = getClassesGen();
     if (classesGen != null) {
-      result.add(classesGen.getPath());
+      result.add(getClassPath(classesGen));
     }
     return result;
+  }
+
+  private String getClassPath(@NotNull IFile classes) {
+    String path = classes.getPath();
+    if (path.contains("!")) {
+      String[] split = path.split("!");
+      if (split.length > 0) {
+        if (!split[1].isEmpty() && !split[1].equals("/")) {
+          LOG.warning("Can not transform directory " + path + " to proper classpath while calculating classpath for module " + getModule());
+        }
+      }
+      return split[0];
+    }
+    return path;
   }
 
   @Override
