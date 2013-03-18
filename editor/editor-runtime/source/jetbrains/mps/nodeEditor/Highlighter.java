@@ -268,7 +268,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   }
 
   protected void doUpdate() {
-    if (ApplicationManager.getApplication().isDisposed()) {
+    if (ApplicationManager.getApplication() == null || ApplicationManager.getApplication().isDisposed()) {
       return;
     }
     if (IMakeService.INSTANCE.isSessionActive()) {

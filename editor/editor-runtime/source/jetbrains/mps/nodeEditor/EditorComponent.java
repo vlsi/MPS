@@ -831,11 +831,15 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     String text = getMessagesTextFor(cell);
     Point point = new Point(cell.getX(), cell.getY() + cell.getHeight());
-    MPSToolTipManager.getInstance().showToolTip(text, this, point);
+    if (MPSToolTipManager.getInstance() != null ) {
+      MPSToolTipManager.getInstance().showToolTip(text, this, point);
+    }
   }
 
   public void hideMessageToolTip() {
-    MPSToolTipManager.getInstance().hideToolTip();
+    if (MPSToolTipManager.getInstance() != null ) {
+      MPSToolTipManager.getInstance().hideToolTip();
+    }
   }
 
   public void editNode(SNode node, IOperationContext operationContext) {
@@ -2662,7 +2666,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
 
     if (dataId.equals(SelectInContext.DATA_KEY.getName())) {
-      ProjectViewSelectInProvider selectInHelper = ApplicationManager.getApplication().getComponent(ProjectViewSelectInProvider.class);
+      ProjectViewSelectInProvider selectInHelper = ApplicationManager.getApplication() == null ? null : ApplicationManager.getApplication().getComponent(ProjectViewSelectInProvider.class);
       if (selectInHelper == null) return null;
       return selectInHelper.getContext(getCurrentProject(), myNodePointer);
     }

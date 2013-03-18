@@ -40,7 +40,7 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
   private static final Logger LOG = Logger.getLogger(EditorSettings.class);
 
   public static EditorSettings getInstance() {
-    return ApplicationManager.getApplication().getComponent(EditorSettings.class);
+    return ApplicationManager.getApplication() == null ? new EditorSettings() : ApplicationManager.getApplication().getComponent(EditorSettings.class);
   }
 
   private List<EditorSettingsListener> myListeners = new ArrayList<EditorSettingsListener>();
@@ -59,7 +59,10 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
 
   public EditorSettings(CaretBlinker caretBlinker) {
     myCaretBlinker = caretBlinker;
+    updateCachedValue();
+  }
 
+  private EditorSettings() {
     updateCachedValue();
   }
 

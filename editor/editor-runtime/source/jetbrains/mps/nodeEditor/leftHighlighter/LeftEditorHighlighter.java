@@ -137,7 +137,9 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
         }
       }
     });
-    MPSToolTipManager.getInstance().registerComponent(this);
+    if (MPSToolTipManager.getInstance() != null ) {
+      MPSToolTipManager.getInstance().registerComponent(this);
+    }
     editorComponent.addRebuildListener(new RebuildListener() {
       public void editorRebuilt(EditorComponent editor) {
         assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter$RebuildListener should be called in eventDispatchThread";
@@ -199,7 +201,9 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     for (AbstractLeftColumn column : myLeftColumns) {
       column.dispose();
     }
-    MPSToolTipManager.getInstance().unregisterComponent(this);
+    if (MPSToolTipManager.getInstance() != null ) {
+      MPSToolTipManager.getInstance().unregisterComponent(this);
+    }
   }
 
   public void setDefaultFoldingAreaPaintersEnabled(boolean enabled) {

@@ -40,7 +40,7 @@ public class CaretBlinker implements PersistentStateComponent<MyState>, Applicat
   private static final Logger LOG = Logger.getLogger(CaretBlinker.class);
 
   public static CaretBlinker getInstance() {
-    return ApplicationManager.getApplication().getComponent(CaretBlinker.class);
+    return ApplicationManager.getApplication() == null ? null : ApplicationManager.getApplication().getComponent(CaretBlinker.class);
   }
 
   public static final int MIN_BLINKING_PERIOD = 100; //millis
