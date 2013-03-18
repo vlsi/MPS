@@ -528,9 +528,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myIntentionsSupport = new IntentionsSupport(this);
     myAutoValidator = new AutoValidator(this);
 
-    MPSToolTipManager.getInstance().registerComponent(this);
+    if (MPSToolTipManager.getInstance() != null) {
+      MPSToolTipManager.getInstance().registerComponent(this);
+    }
 
-    CaretBlinker.getInstance().registerEditor(this);
+    if (CaretBlinker.getInstance() != null) {
+      CaretBlinker.getInstance().registerEditor(this);
+    }
 
     KeyboardFocusManager.getCurrentKeyboardFocusManager().addPropertyChangeListener("focusOwner", myFocusListener = new PropertyChangeListener() {
       public void propertyChange(PropertyChangeEvent evt) {
