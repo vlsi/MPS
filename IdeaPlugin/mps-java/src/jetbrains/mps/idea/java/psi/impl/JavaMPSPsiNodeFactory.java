@@ -17,12 +17,17 @@
 package jetbrains.mps.idea.java.psi.impl;
 
 import com.intellij.openapi.project.Project;
+import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiElement;
+import com.intellij.psi.PsiField;
+import com.intellij.psi.PsiMethod;
 import jetbrains.mps.idea.core.psi.MPS2PsiMapper;
 import jetbrains.mps.idea.core.psi.MPSPsiNodeFactory;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
+import jetbrains.mps.idea.java.psiStubs.JavaForeignIdBuilder;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.SModelRepository;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.language.ConceptRegistry;
@@ -151,7 +156,7 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory, MPS2PsiMapper {
     // old SModel, non-openapi
     SModel model = node.getModel();
     if (model == null) return null;
-    SModel mDesc = model.getModelDescriptor();
+    SModel mDesc = model;
     if (mDesc == null || !(mDesc instanceof PsiJavaStubModelDescriptor)) {
       return null;
     }
@@ -172,6 +177,23 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory, MPS2PsiMapper {
     }
 
     return null;
+  }
+
+  @Override
+  public boolean canComputeNodeId(PsiElement element) {
+    return element instanceof PsiClass || element instanceof PsiMethod || element instanceof PsiField;
+  }
+
+  @Nullable
+  @Override
+  public SNodeId computeNodeId(PsiElement element) {
+    return JavaForeignIdBuilder.computeNodeId(element);
+  }
+
+  @Nullable
+  @Override
+  public SNodeId computeNodeId(PsiElement element, String newName) {
+    return JavaForeignIdBuilder.computeNodeId(element, newName);
   }
 
 }

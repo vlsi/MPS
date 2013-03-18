@@ -41,14 +41,16 @@ import jetbrains.mps.ide.ui.dialogs.properties.tables.models.ModelImportedModels
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.ModelUsedLangTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.ModelsLangEngagedOnGenTM;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel;
+import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
 import jetbrains.mps.ide.ui.finders.LanguageUsagesFinder;
 import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.Nls;
-import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import org.jetbrains.mps.openapi.persistence.DataSource;
@@ -135,7 +137,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
     }
   }
 
-  protected class ModelDependenciesComponent extends Tab {
+  protected class ModelDependenciesComponent extends BaseTab {
     private ModelImportedModelsTableModel myImportedModels;
     private JPanel myImportedModelsComponent;
 
@@ -166,7 +168,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
         public void run() {
           if (value instanceof SModelReference) {
             query[0] = new SearchQuery(
-              SModelRepository.getInstance().getModelDescriptor(((jetbrains.mps.smodel.SModelReference) value).getSModelId()).getSModel(), scope);
+              SModelRepository.getInstance().getModelDescriptor(((SModelReference) value).getModelId()), scope);
             provider[0] = FindUtils.makeProvider(new ModelUsagesFinder());
           }
         }
@@ -212,7 +214,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       importedModelsTable.setDefaultRenderer(SModelReference.class,
         new ModelTableCellRender(getScope()) {
           @Override
-          protected DependencyCellState getDependencyCellState(SModelReference modelReference) {
+          protected DependencyCellState getDependencyCellState(org.jetbrains.mps.openapi.model.SModelReference modelReference) {
             if (!StateUtil.isAvailable((jetbrains.mps.smodel.SModelReference) modelReference)) {
               return DependencyCellState.NOT_AVALIABLE;
             }
@@ -234,8 +236,8 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       decorator.setAddAction(new AnActionButtonRunnable() {
         @Override
         public void run(AnActionButton anActionButton) {
-          List<jetbrains.mps.smodel.SModelReference> list = (new ModelChooser()).compute();
-          for (jetbrains.mps.smodel.SModelReference reference : list)
+          List<SModelReference> list = (new ModelChooser()).compute();
+          for (SModelReference reference : list)
             myImportedModels.addItem(reference);
         }
       }).setRemoveAction(new AnActionButtonRunnable() {
@@ -372,7 +374,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
     }
   }
 
-  public class InfoTab extends Tab {
+  public class InfoTab extends BaseTab {
     private final boolean myIsDefSModelDescr;
     private JBCheckBox myDoNotGenerateCheckBox;
     private JBCheckBox myGenerateIntoModelFolderCheckBox;
@@ -392,7 +394,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
           int references = 0;
           int properties = 0;
           messageText.append("<html>");
-          SModel model = myModelDescriptor.getSModel();
+          SModel model = myModelDescriptor;
           for (SNode node : new NodesIterable(model)) {
             references += IterableUtil.asCollection(node.getReferences()).size();
             properties += jetbrains.mps.util.SNodeOperations.getProperties(node).keySet().size();

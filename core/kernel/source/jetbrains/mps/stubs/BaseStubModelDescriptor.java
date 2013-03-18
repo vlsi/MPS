@@ -17,7 +17,7 @@ package jetbrains.mps.stubs;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
@@ -34,11 +34,6 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   @Override
-  public boolean isReadOnly() {
-    return true;
-  }
-
-  @Override
   @NotNull
   public StubModelDataSource getSource() {
     return (StubModelDataSource) super.getSource();
@@ -47,7 +42,7 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
   //------------common descriptor stuff-------------------
 
   @Override
-  public synchronized jetbrains.mps.smodel.SModel getSModel() {
+  public synchronized jetbrains.mps.smodel.SModel getSModelInternal() {
     if (mySModel == null) {
       mySModel = createModel();
       mySModel.setModelDescriptor(this);
@@ -57,7 +52,7 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   private jetbrains.mps.smodel.SModel createModel() {
-    jetbrains.mps.smodel.SModel model = ((jetbrains.mps.smodel.SModel) getSource().loadSModel((IModule) myModule, this));
+    jetbrains.mps.smodel.SModel model = getSource().loadSModel((IModule) myModule, this);
     updateDiskTimestamp();
     return model;
   }
@@ -68,7 +63,7 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   @Override
-  protected SModel getCurrentModelInternal() {
+  protected jetbrains.mps.smodel.SModel getCurrentModelInternal() {
     return mySModel;
   }
 //----------------------
@@ -94,7 +89,7 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
       updateDiskTimestamp();
       return;
     }
-    final jetbrains.mps.smodel.SModel result = ((jetbrains.mps.smodel.SModel) getSource().loadSModel((IModule) myModule, this));
+    final jetbrains.mps.smodel.SModel result = (getSource().loadSModel((IModule) myModule, this));
     updateDiskTimestamp();
     replaceModel(new Runnable() {
       @Override

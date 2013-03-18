@@ -19,7 +19,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
 import jetbrains.mps.smodel.event.SModelLanguageEvent;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
@@ -56,14 +56,14 @@ public class ModelDependenciesManager {
     if (myInvalidatedFlag.compareAndSet(true, false)) {
       // lazy initialization
       if (mySModelWatcher == null) {
-        mySModelWatcher = new MySModelWatcher(myModel.getModelDescriptor());
+        mySModelWatcher = new MySModelWatcher(myModel);
       }
 
       myModuleWatcher.clear();
 
       Set<ModuleReference> result = new LinkedHashSet<ModuleReference>();
 
-      for (ModuleReference lang : ((jetbrains.mps.smodel.SModel) myModel).importedLanguages()) {
+      for (ModuleReference lang : ((jetbrains.mps.smodel.SModelInternal) myModel).importedLanguages()) {
         result.add(lang);
         Language module = ModuleRepositoryFacade.getInstance().getModule(lang, Language.class);
         if (module != null) {
@@ -73,7 +73,7 @@ public class ModelDependenciesManager {
         }
       }
 
-      for (ModuleReference dk : ((jetbrains.mps.smodel.SModel) myModel).importedDevkits()) {
+      for (ModuleReference dk : ((jetbrains.mps.smodel.SModelInternal) myModel).importedDevkits()) {
         DevKit devkit = ModuleRepositoryFacade.getInstance().getModule(dk, DevKit.class);
         if (devkit == null) continue;
         myModuleWatcher.watchDevKit(devkit);

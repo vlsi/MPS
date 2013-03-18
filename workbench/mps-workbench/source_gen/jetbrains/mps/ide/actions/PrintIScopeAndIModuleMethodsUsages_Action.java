@@ -86,7 +86,7 @@ public class PrintIScopeAndIModuleMethodsUsages_Action extends BaseAction {
       List<SNode> projectResults = ListSequence.fromList(new ArrayList<SNode>());
       for (SearchResult<SNode> searchResult : ListSequence.fromList(result.getSearchResults())) {
         SNode node = searchResult.getObject();
-        SModule module = node.getModel().getModelDescriptor().getModule();
+        SModule module = node.getModel().getModule();
         if (SetSequence.fromSet(projectModules).contains(module)) {
           ListSequence.fromList(projectResults).addElement(node);
         }

@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.extapi.persistence.FileDataSource;
@@ -23,10 +22,11 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.persistence.binary.BinaryPersistence;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.logging.Logger;
 
@@ -77,7 +77,7 @@ public class ConvertToBinaryPersistence_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("models") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
@@ -111,7 +111,8 @@ public class ConvertToBinaryPersistence_Action extends BaseAction {
               LOG.error("cannot read " + oldFile, ex);
               continue;
             }
-            DefaultSModelDescriptor modelDescriptor = (DefaultSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(rmodel.getReference());
+
+            SModel modelDescriptor = rmodel.getReference().resolve(((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository());
             if (modelDescriptor == null) {
               continue;
             }

@@ -50,7 +50,7 @@ public class ModuleChooser extends BaseChooserComponent {
         Set<SNode> us = ((Set) usages);
         for (SNode node : us) {
           SModel model = SNodeOperations.getModel(node);
-          SModel md = model.getModelDescriptor();
+          SModel md = model;
           ModuleReference module = md.getModule().getModuleReference();
           if (ListSequence.fromList(ModuleChooser.this.myCheckedModules).contains(module)) {
             continue;

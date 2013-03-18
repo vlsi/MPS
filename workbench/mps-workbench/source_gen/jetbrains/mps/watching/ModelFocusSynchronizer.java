@@ -55,7 +55,7 @@ public class ModelFocusSynchronizer implements ApplicationComponent {
 
             RefreshSession session = RefreshQueue.getInstance().createSession(true, true, null);
             for (SModel model : SetSequence.fromSet(models)) {
-              SModel md = model.getModelDescriptor();
+              SModel md = model;
               for (IFile file : CollectionSequence.fromCollection(ModelUtil.getFilesByModelDescriptor(md))) {
                 IFile fileToRefresh = file;
                 while (!(fileToRefresh.exists())) {

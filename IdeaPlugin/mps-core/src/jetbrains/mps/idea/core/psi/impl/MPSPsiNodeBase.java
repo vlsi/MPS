@@ -16,7 +16,6 @@
 
 package jetbrains.mps.idea.core.psi.impl;
 
-import com.intellij.openapi.util.TextRange;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiInvalidElementAccessException;
@@ -29,7 +28,7 @@ import jetbrains.mps.fileTypes.MPSLanguage;
 import jetbrains.mps.idea.core.psi.impl.NodeList.Entry;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
+import java.lang.reflect.Array;
 import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -75,7 +74,7 @@ public abstract class MPSPsiNodeBase extends LightElement {
 
   @Override
   public PsiFile getContainingFile() {
-    return getContainingModel();
+    return null; // either that or a real file!
   }
 
   @Override
@@ -97,6 +96,13 @@ public abstract class MPSPsiNodeBase extends LightElement {
   @Override
   public PsiElement[] getChildren() {
     PsiElement[] result = new PsiElement[children.size()];
+    children.toArray(result);
+    return result;
+  }
+
+  @SuppressWarnings("unchecked")
+  public <T extends PsiElement> T[] getChildren(Class<T> aClass) {
+    T[] result = (T[]) Array.newInstance(aClass, children.size());
     children.toArray(result);
     return result;
   }
@@ -125,12 +131,12 @@ public abstract class MPSPsiNodeBase extends LightElement {
   }
 
   @Override
-  public PsiElement getNextSibling() {
+  public MPSPsiNodeBase getNextSibling() {
     return listEntry != null && !listEntry.isLast() ? listEntry.list().next(this) : null;
   }
 
   @Override
-  public PsiElement getPrevSibling() {
+  public MPSPsiNodeBase getPrevSibling() {
     return listEntry != null && !listEntry.isFirst()? listEntry.list().prev(this) : null;
   }
 
@@ -150,19 +156,8 @@ public abstract class MPSPsiNodeBase extends LightElement {
   }
 
   @Override
-  public String getText() {
-    return "MPSPsiNodeBase.getText()";
-  }
-
-  @Override
   public int getTextOffset() {
     return 0;
-  }
-
-  @Override
-  public TextRange getTextRange() {
-    // TODO should probably be a sub-class of TextRange, specific for MPS
-    return new TextRange(0, 1);
   }
 
   protected final Iterable<MPSPsiNodeBase> children () {
@@ -244,4 +239,16 @@ public abstract class MPSPsiNodeBase extends LightElement {
     return listEntry;
   }
 
+  public MPSPsiRootNode getContainingRoot () {
+    PsiElement parent = this;
+    while (parent != null && !(parent instanceof MPSPsiRootNode)) {
+      parent = parent.getParent();
+    }
+
+    if (parent == null) {
+      throw new PsiInvalidElementAccessException(this);
+    }
+
+    return (MPSPsiRootNode) parent;
+  }
 }

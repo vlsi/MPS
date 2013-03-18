@@ -30,11 +30,8 @@ import java.util.ListIterator;
 import java.util.Map;
 
 /**
- * Created with IntelliJ IDEA.
  * User: fyodor
  * Date: 2/18/13
- * Time: 4:34 PM
- * To change this template use File | Settings | File Templates.
  */
 public class SModelEventProcessor {
 
@@ -87,7 +84,7 @@ public class SModelEventProcessor {
     @Override
     protected void invalidateNode(SNode sNode) {
       NodePath affPath = NodePath.forSNode(sNode);
-      SModel containingModel = sNode.getContainingModel();
+      SModel containingModel = sNode.getModel();
       if (containingModel == null) return;
 
       SModelReference mref = containingModel.getReference();

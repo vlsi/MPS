@@ -24,7 +24,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NonNls;
@@ -67,10 +67,10 @@ public class MPSNodeVirtualFile extends VirtualFile {
         if (node == null) {
           LOG.error(new Throwable("Cannot find node for passed SNodeReference: " + myNode.toString()));
           myName = "";
-          myPath = myNode.getModelReference().getSModelFqName() + "/" + myName;
+          myPath = myNode.getModelReference().getModelName() + "/" + myName;
         } else {
           myName = "" + node.getPresentation();
-          myPath = node.getModel().getReference().getSModelFqName() + "/" + myName;
+          myPath = node.getModel().getReference().getModelName() + "/" + myName;
         }
       }
     });
@@ -132,21 +132,7 @@ public class MPSNodeVirtualFile extends VirtualFile {
   @Override
   @Nullable
   public VirtualFile getParent() {
-    return ModelAccess.instance().runReadAction(new Computable<VirtualFile>() {
-      @Override
-      public VirtualFile compute() {
-        if (myNode == null) return null;
-        SNode node = getNode();
-        if (node == null) return null;
-        SModel md = node.getModel().getModelDescriptor();
-        if (md == null) return null;
-
-        DataSource source = md.getSource();
-        if (!(source instanceof FileDataSource)) return null;
-
-        return VirtualFileUtils.getVirtualFile(((FileDataSource) source).getFile());
-      }
-    });
+    return null;
   }
 
   @Override

@@ -18,6 +18,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.smodel.ModelRootUtil;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -90,9 +91,9 @@ public class NewSubTestModel_Action extends BaseAction {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
           SModelFqName newModelFqName = new SModelFqName(NewSubTestModel_Action.this.getTestModelName(_params), SModelStereotype.TESTS);
-          result.value = ((SModel) MapSequence.fromMap(_params).get("model")).getModule().createModel(newModelFqName.toString(), ModelRootUtil.getModelRoot(((SModel) MapSequence.fromMap(_params).get("model"))), null);
-          SModel createdModel = result.value.getSModel();
-          SModel sourceModel = ((SModel) MapSequence.fromMap(_params).get("model")).getSModel();
+          result.value = SModuleOperations.createModelWithAdjustments(newModelFqName.toString(), ModelRootUtil.getModelRoot(((SModel) MapSequence.fromMap(_params).get("model"))));
+          SModel createdModel = result.value;
+          SModel sourceModel = ((SModel) MapSequence.fromMap(_params).get("model"));
           ((SModelInternal) createdModel).addModelImport(sourceModel.getReference(), false);
           for (jetbrains.mps.smodel.SModel.ImportElement importElement : ((SModelInternal) sourceModel).importedModels()) {
             ((SModelInternal) createdModel).addModelImport(sourceModel.getReference(), false);

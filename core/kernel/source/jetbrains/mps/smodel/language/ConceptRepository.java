@@ -59,7 +59,7 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
       Language lang = (Language) module;
       SModel smd = lang.getStructureModelDescriptor();
       if (smd != null) {
-        SModel sm = smd.getSModel();
+        SModel sm = smd;
         String modelFqName = SNodeOperations.getModelLongName(sm);
         // optimization - loading all concepts from this model into myConcepts cache
         for (SNode root : sm.getRootNodes()) {

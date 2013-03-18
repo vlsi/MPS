@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class StaticMethodCall_Behavior {
   public static void init(SNode thisNode) {
@@ -46,6 +47,10 @@ public class StaticMethodCall_Behavior {
     for (SNode actualArgument : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "actualArgument", true))) {
       ListSequence.fromList(SLinkOperations.getTargets(localStaticMethodCall, "actualArgument", true)).addElement(actualArgument);
     }
+  }
+
+  public static String virtual_getPresentation_1213877396640(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "classConcept", false), "virtual_getPresentation_1213877396640", new Object[]{}) + "." + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false), "virtual_getPresentation_1213877396640", new Object[]{});
   }
 
   private static boolean eq_8wxa2a_a0a0a0a0a0a0a2(Object a, Object b) {

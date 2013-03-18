@@ -76,18 +76,8 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
   }
 
   @Override
-  public Icon getIconFor(String pattern) {
-    return super.getIconFor(pattern, true);
-  }
-
-  @Override
-  public int getFontStyleFor(String pattern) {
-    return NodePresentationUtil.getFontStyle(getSourceNode(), (SNode) getParameterObject());
-  }
-
-  @Override
-  public int getSortPriority(String pattern) {
-    return NodePresentationUtil.getSortPriority(getSourceNode(), (SNode) getParameterObject());
+  public boolean isReferentPresentation() {
+    return true;
   }
 
   @Override

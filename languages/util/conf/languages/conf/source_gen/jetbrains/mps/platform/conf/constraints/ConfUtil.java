@@ -28,12 +28,12 @@ public class ConfUtil {
       public boolean accept(SModel smd) {
         return ((SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(smd))) ?
           "conf_stub".equals(SModelStereotype.getStereotype(smd)) :
-          Sequence.fromIterable(((Iterable<ModuleReference>) ((SModelInternal) smd.getSModel()).importedLanguages())).contains(ConfUtil.CONF_LANG)
+          Sequence.fromIterable(((Iterable<ModuleReference>) ((SModelInternal) smd).importedLanguages())).contains(ConfUtil.CONF_LANG)
         );
       }
     }).select(new ISelector<SModel, SModel>() {
       public SModel select(SModel smd) {
-        return (SModel) (smd.getSModel());
+        return (SModel) (smd);
       }
     });
   }

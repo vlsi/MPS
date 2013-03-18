@@ -15,7 +15,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelOperations;
 import javax.swing.tree.DefaultMutableTreeNode;
 import jetbrains.mps.ide.platform.modeltree.ModelTreeNode;
@@ -29,7 +29,6 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeSelectionModel;
 import jetbrains.mps.ide.platform.modeltree.ModelTreeCellRenderer;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import javax.swing.event.TreeSelectionListener;
@@ -63,7 +62,7 @@ public abstract class BaseChooseNodeDialog extends DialogWrapper {
     for (SModel nextOwnModelDescriptor : ListSequence.fromList(((AbstractModule) modelDescriptor.getModule()).getOwnModelDescriptors())) {
       SetSequence.fromSet(myVisibleModels).addElement(nextOwnModelDescriptor);
     }
-    SModel model = modelDescriptor.getSModel();
+    SModel model = modelDescriptor;
     for (SModelReference sm : SModelOperations.getImportedModelUIDs(model)) {
       SModel importedModelDescriptor = myContext.getScope().getModelDescriptor(sm);
       if (importedModelDescriptor != null) {
@@ -108,14 +107,14 @@ public abstract class BaseChooseNodeDialog extends DialogWrapper {
           ModelAccess.instance().runReadInEDT(new Runnable() {
             @Override
             public void run() {
-              initModelDescriptorNode(node, (SModelInternal) node.getUserObject());
+              initModelDescriptorNode(node, (SModel) node.getUserObject());
             }
           });
         }
       }
 
       private void initModelDescriptorNode(ModelTreeNode node, SModel descriptor) {
-        SModel sModel = descriptor.getSModel();
+        SModel sModel = descriptor;
         for (SNode nextRoot : Sequence.fromIterable(ModelTreeBuilder.sortChildNodes(ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getRoots(sModel, "jetbrains.mps.lang.core.structure.BaseConcept")).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return isAcceptable(it);

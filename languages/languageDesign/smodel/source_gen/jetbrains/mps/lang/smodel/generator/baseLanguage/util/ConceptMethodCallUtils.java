@@ -8,7 +8,6 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.project.SModuleOperations;
-import jetbrains.mps.smodel.SModelInternal;
 
 public class ConceptMethodCallUtils {
   private ConceptMethodCallUtils() {
@@ -17,7 +16,7 @@ public class ConceptMethodCallUtils {
   public static boolean callShouldBeByReflection(SModel originalModel) {
     // should be by reflection in "compile in IDEA modules" 
     // method calls impossible in modules without kind == PLUGIN_* 
-    IModule module = check_bta47p_a0c0b(originalModel.getModelDescriptor());
+    IModule module = check_bta47p_a0c0b(originalModel);
     ModuleDescriptor moduleDescriptor = check_bta47p_a0d0b(module);
     if (moduleDescriptor == null) {
       return false;
@@ -33,7 +32,7 @@ public class ConceptMethodCallUtils {
     return !(SModuleOperations.isCompileInMps(module));
   }
 
-  private static IModule check_bta47p_a0c0b(SModelInternal checkedDotOperand) {
+  private static IModule check_bta47p_a0c0b(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

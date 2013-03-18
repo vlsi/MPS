@@ -4,7 +4,7 @@ package jetbrains.mps.watching;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.library.LibraryManager;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import java.util.Map;
 import jetbrains.mps.library.Library;

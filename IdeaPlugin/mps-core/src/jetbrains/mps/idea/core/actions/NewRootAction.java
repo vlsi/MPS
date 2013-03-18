@@ -38,7 +38,7 @@ import jetbrains.mps.idea.core.ui.CreateFromTemplateDialog;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Solution;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -71,7 +71,7 @@ public class NewRootAction extends AnAction {
           @Override
           public void run() {
             SNode concept = conceptPointer.resolve(MPSModuleRepository.getInstance());
-            SModel model = myModelDescriptor.getSModel();
+            SModel model = myModelDescriptor;
             SNode newNode = NodeFactoryManager.createNode(concept, null, null, model, myOperationContext.getScope());
             ((jetbrains.mps.smodel.SNode) newNode).setName(getNameField().getText());
             model.addRootNode(newNode);
@@ -124,7 +124,7 @@ public class NewRootAction extends AnAction {
         vFiles == null ||
         vFiles.length != 1 ||
         vFiles[0].isDirectory() ||
-        FileTypeRegistry.getInstance().getFileTypeByFile(vFiles[0]) != MPSFileTypeFactory.MODEL_FILE_TYPE) {
+        FileTypeRegistry.getInstance().getFileTypeByFile(vFiles[0]) != MPSFileTypeFactory.MPS_FILE_TYPE) {
       return;
     }
 
@@ -150,7 +150,7 @@ public class NewRootAction extends AnAction {
             ModelAccess.instance().runReadAction(new Runnable() {
               @Override
               public void run() {
-                SModel model = myModelDescriptor.getSModel();
+                SModel model = myModelDescriptor;
                 List<Language> modelLanguages = SModelOperations.getLanguages(model, myOperationContext.getScope());
                 for (Language language : modelLanguages) {
                   for (SNode concept : language.getConceptDeclarations()) {

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.ui.dialogs.properties.roots.editors;
 
+import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import org.jetbrains.annotations.NotNull;
@@ -29,7 +30,7 @@ public class ModelRootEntryPersistence {
   private static ModelRootEntryPersistence ourPersistence;
 
   public static ModelRootEntryPersistence getInstance() {
-    if(ourPersistence == null)
+    if (ourPersistence == null)
       ourPersistence = new ModelRootEntryPersistence();
 
     return ourPersistence;
@@ -53,11 +54,19 @@ public class ModelRootEntryPersistence {
   public ModelRootEntry getModelRootEntry(ModelRoot modelRoot) {
     ModelRootEntry entry = null;
     try {
-      entry = myModelRootEntries.get(modelRoot.getType()).newInstance();
-    } catch (InstantiationException e) {}
-    catch (IllegalAccessException e) {}
+      Class<? extends ModelRootEntry> aClass = myModelRootEntries.get(modelRoot.getType());
+      if (aClass != null) {
+        entry = aClass.newInstance();
+      }
+    } catch (InstantiationException e) {
+    } catch (IllegalAccessException e) {
+    }
 
-    if(entry == null) return null;
+    if (entry == null && modelRoot instanceof FileBasedModelRoot) {
+      entry = new FileBasedModelRootEntry();
+    }
+
+    if (entry == null) return null;
     entry.setModelRoot(modelRoot);
     return entry;
   }

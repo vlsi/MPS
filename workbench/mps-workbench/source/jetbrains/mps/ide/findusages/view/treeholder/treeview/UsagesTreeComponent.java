@@ -45,7 +45,7 @@ import jetbrains.mps.ide.ui.TreeHighlighterExtension;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
 
@@ -416,7 +416,9 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
       }
 
       private void recreateActions() {
-        List<CategoryKind> categoryKinds = Arrays.asList(CategoryKind.DEFAULT_CATEGORY_KIND);
+        List<CategoryKind> categoryKinds = Arrays.asList(
+            new CategoryKind(CategoryKind.DEFAULT_CATEGORY_KIND.getName(), General.Filter, CategoryKind.DEFAULT_CATEGORY_KIND.getTooltip())
+        );
         if (myNodeRepresentator != null) {
           categoryKinds = ((INodeRepresentator<?>) myNodeRepresentator).getCategoryKinds();
         }

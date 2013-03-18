@@ -58,8 +58,8 @@ public abstract class BaseTransformationTest4 implements TransformationTest {
   public void init() {
     this.myModelOwner = new TemporaryModelOwner();
     this.myTransientModel = ProjectModels.createDescriptorFor(true);
-    CloneUtil.cloneModelWithImports(this.myModel.getSModel(), this.myTransientModel.getSModel(), false);
-    SModelOperations.validateLanguagesAndImports(this.myTransientModel.getSModel(), false, false);
+    CloneUtil.cloneModelWithImports(this.myModel, this.myTransientModel, false);
+    SModelOperations.validateLanguagesAndImports(this.myTransientModel, false, false);
     SModelRepository.getInstance().registerModelDescriptor(this.myTransientModel, this.myModelOwner);
   }
 

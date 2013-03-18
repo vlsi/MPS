@@ -15,14 +15,26 @@
  */
 package jetbrains.mps.reloading;
 
+import org.jetbrains.mps.openapi.module.SModule;
+
+import java.util.Set;
+
 public class ReloadAdapter implements ReloadListener {
   @Override
   public void unload() {
-
   }
 
   @Override
   public void onAfterReload() {
+  }
 
+  @Override
+  public void onClassesUnload(Set<SModule> unloadedModules) {
+    unload();
+  }
+
+  @Override
+  public void onClassesLoad(Set<SModule> loadedModules) {
+    onAfterReload();
   }
 }

@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import jetbrains.mps.runtime.IClassLoadingModule;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -27,8 +27,8 @@ import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.InvalidModelRootManager;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.Memento;
 
 import java.util.Collection;
@@ -110,7 +110,7 @@ public class SModelRoot extends FolderModelRootBase {
 
   @Override
   public boolean canCreateModels() {
-    return getModule().isPackaged() || !getManager().canCreateModel(this, null);
+    return !getModule().isPackaged() || getManager().canCreateModel(this, null);
   }
 
   @Override
@@ -149,15 +149,15 @@ public class SModelRoot extends FolderModelRootBase {
 
 
   private static IModelRootManager create(String moduleId, String className) {
-    IModule mod = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString(moduleId));
+    SModule mod = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString(moduleId));
     if (mod == null) {
       return new InvalidModelRootManager(moduleId, className, "module is absent");
     }
-    if (!(mod instanceof IClassLoadingModule)) {
-      return new InvalidModelRootManager(moduleId, className, "module is not IClassLoadingModule");
+    if (!ClassLoaderManager.getInstance().canLoad(mod)) {
+      return new InvalidModelRootManager(moduleId, className, "module is not classloading");
     }
 
-    Class managerClass = ((IClassLoadingModule) mod).getClass(className);
+    Class managerClass = ClassLoaderManager.getInstance().getClass(mod, className);
     if (managerClass == null) {
       return new InvalidModelRootManager(moduleId, className, "class is absent");
     }

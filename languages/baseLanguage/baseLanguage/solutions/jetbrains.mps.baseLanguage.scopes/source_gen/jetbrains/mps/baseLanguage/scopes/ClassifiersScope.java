@@ -19,8 +19,8 @@ public class ClassifiersScope extends FilteringScope {
   private SNode myClassifier;
 
   public ClassifiersScope(SModel model, SNode clas, String conceptFqName, boolean includeAncestors) {
-    super(new ModelPlusImportedScope(model, false, model.getModelDescriptor().getModule().getScope(), conceptFqName));
-    myModuleScope = model.getModelDescriptor().getModule().getScope();
+    super(new ModelPlusImportedScope(model, false, model.getModule().getScope(), conceptFqName));
+    myModuleScope = model.getModule().getScope();
     myInlcudeAncestors = includeAncestors;
     myClassifier = clas;
   }

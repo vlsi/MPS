@@ -19,6 +19,7 @@ import jetbrains.mps.util.containers.EmptyIterator;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -58,7 +59,7 @@ public class NodesIterator implements Iterator<SNode> {
   }
 
   private Iterator<SNode> getIterForNextRoot(Iterator<SNode> roots) {
-    if (!roots.hasNext()) return new EmptyIterator<SNode>();
+    if (!roots.hasNext()) return Collections.<SNode>emptyList().iterator();
 
     SNode next = roots.next();
     List<SNode> res = new ArrayList<SNode>();

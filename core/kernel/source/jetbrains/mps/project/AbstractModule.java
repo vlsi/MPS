@@ -15,9 +15,10 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.classloading.MPSClassesReloadManager;
+import jetbrains.mps.extapi.module.EditableSModule;
 import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.extapi.persistence.ModelRootBase;
-import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.MementoImpl;
@@ -31,14 +32,30 @@ import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.project.persistence.ModuleReadException;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import jetbrains.mps.project.structure.modules.*;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.project.structure.modules.Dependency;
+import jetbrains.mps.project.structure.modules.DeploymentDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.runtime.IClassLoadingModule;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.BootstrapLanguages;
+import jetbrains.mps.smodel.DefaultScope;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleOwner;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SuspiciousModelHandler;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.util.*;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.MacrosFactory;
+import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.iterable.TranslatingIterator;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
@@ -47,19 +64,36 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.*;
+import org.jetbrains.mps.openapi.module.FacetsFacade;
+import org.jetbrains.mps.openapi.module.SDependency;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleFacet;
+import org.jetbrains.mps.openapi.module.SModuleId;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.File;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import static jetbrains.mps.project.SModuleOperations.getJavaFacet;
 import static org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
 
-public abstract class AbstractModule implements IModule, FileSystemListener {
+public abstract class AbstractModule implements IModule, EditableSModule, FileSystemListener {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
 
   public static final String MODULE_DIR = "module";
@@ -78,6 +112,11 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
 
   //----model creation
 
+  @Override
+  public boolean isInRepository() {
+    return getRepository() != null;
+  }
+
   protected AbstractModule() {
     this(null);
   }
@@ -86,53 +125,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     this.myDescriptorFile = myDescriptorFile;
   }
 
-  private static Set<ModelCreationListener> ourModelCreationListeners = new HashSet<ModelCreationListener>();
-
-  public static void registerModelCreationListener(ModelCreationListener listener) {
-    ourModelCreationListeners.add(listener);
-  }
-
-  public static void unregisterModelCreationListener(ModelCreationListener creationListener) {
-    ourModelCreationListeners.remove(creationListener);
-  }
-
-  @Override
-  public final EditableSModelDescriptor createModel(String name, @NotNull ModelRoot root, ModelAdjuster adj) {
-    // why ModelRoot register model in module? WTF
-    // should be public AbstractModule#addModel method!
-    // ourModelsCreationListeners should be called in addModel method
-
-    // so this goes to SModuleOperation method with createModel from ModelRoot, apply adj and register in module
-    // deprecated
-    if (!root.canCreateModel(name)) {
-      LOG.error("Can't create a model " + name + " under model root " + root.getPresentation());
-      return null;
-    }
-
-    EditableSModelDescriptor model = (EditableSModelDescriptor) root.createModel(name);
-    if (adj != null) {
-      adj.adjust(model);
-    }
-    model.getSModel();
-    model.setChanged(true);
-    model.save();
-
-//    ((ModelRootBase) root).register(model);
-
-    for (ModelCreationListener listener : ourModelCreationListeners) {
-      if (listener.isApplicable(this, model)) {
-        listener.onCreate(this, model);
-      }
-    }
-
-    new MissingDependenciesFixer(model).fix(false);
-
-    return model;
-  }
-
   //----reference
-
-
   @Override
   public SModuleId getModuleId() {
     return getModuleReference().getModuleId();
@@ -189,8 +182,8 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     ModuleReference oldValue = myModuleReference;
     myModuleReference = reference;
     if (oldValue != null &&
-      oldValue.getModuleFqName() != null &&
-      !oldValue.getModuleFqName().equals(myModuleReference.getModuleFqName())) {
+        oldValue.getModuleFqName() != null &&
+        !oldValue.getModuleFqName().equals(myModuleReference.getModuleFqName())) {
 
       MPSModuleRepository.getInstance().moduleFqNameChanged(this, oldValue.getModuleFqName());
     }
@@ -352,7 +345,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     for (String path : descriptor.getAdditionalJavaStubPaths()) {
       String canonicalPath = FileUtil.getCanonicalPath(path).toLowerCase();
       if (packagedSourcesPath == null || !canonicalPath.startsWith(packagedSourcesPath)) {
-        String shrinked = MacrosFactory.forModuleFile(getDescriptorFile()).shrinkPath(path);
+        String shrinked = MacrosFactory.forModule(this).shrinkPath(path);
         if (MacrosFactory.containsNonMPSMacros(shrinked)) continue;
       }
       if (dd == null && canonicalPath.startsWith(libPath)) {
@@ -382,7 +375,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
       }
 
       if (packagedSourcesPath == null || !canonicalPath.startsWith(packagedSourcesPath)) {
-        String shrinked = MacrosFactory.forModuleFile(getDescriptorFile()).shrinkPath(path);
+        String shrinked = MacrosFactory.forModule(this).shrinkPath(path);
         if (MacrosFactory.containsNonMPSMacros(shrinked)) continue;
       }
       if (dd == null && canonicalPath.startsWith(libPath)) {
@@ -401,8 +394,8 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
 
     for (String jarFile : dd.getLibraries()) {
       IFile jar = jarFile.startsWith("/")
-        ? FileSystem.getInstance().getFileByPath(PathManager.getHomePath() + jarFile)
-        : bundleParent.getDescendant(jarFile);
+          ? FileSystem.getInstance().getFileByPath(PathManager.getHomePath() + jarFile)
+          : bundleParent.getDescendant(jarFile);
       if (jar.exists()) {
         String path = jar.getPath();
         descriptor.getAdditionalJavaStubPaths().add(path);
@@ -432,12 +425,12 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     }
 
     types.addAll(FacetsFacade.getInstance().getApplicableFacetTypes(
-      new TranslatingIterator<ModuleReference, String>(descriptor.getUsedLanguages().iterator()) {
-        @Override
-        protected String translate(ModuleReference node) {
-          return node.getModuleName();
-        }
-      }));
+        new TranslatingIterator<ModuleReference, String>(descriptor.getUsedLanguages().iterator()) {
+          @Override
+          protected String translate(ModuleReference node) {
+            return node.getModuleName();
+          }
+        }));
 
     // TODO: why java module facet by default?
     types.add(JavaModuleFacet.FACET_TYPE);
@@ -560,14 +553,14 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     for (IFile file : event.getRemoved()) {
       if (file.equals(myDescriptorFile)) {
         ModuleRepositoryFacade.getInstance().removeModuleForced(this);
-        ClassLoaderManager.getInstance().requestReload();
+        MPSClassesReloadManager.getInstance().requestReload();
         return;
       }
     }
     for (IFile file : event.getChanged()) {
       if (file.equals(myDescriptorFile)) {
-        reloadFromDisk(false);
-        ClassLoaderManager.getInstance().requestReload();
+        SModuleOperations.reloadFromDisk(this);
+        MPSClassesReloadManager.getInstance().requestReload();
         return;
       }
     }
@@ -669,43 +662,23 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   }
 
   @Override
-  public boolean needReloading() {
-    if ((myDescriptorFile == null) || !myDescriptorFile.exists()) {
-      return false;
-    }
-
-    final ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return false;
-
-    String timestampString;
-    if (ModelAccess.instance().canRead()) {
-      timestampString = descriptor.getTimestamp();
-    } else {
-      timestampString = ModelAccess.instance().runReadAction(new Computable<String>() {
-        @Override
-        public String compute() {
-          return descriptor.getTimestamp();
-        }
-      });
-    }
-    if (timestampString == null) return true;
-    long timestamp = Long.decode(timestampString);
-    return timestamp != myDescriptorFile.lastModified();
+  public final boolean needReloading() {
+    return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      @Override
+      public Boolean compute() {
+        return SModuleOperations.needReloading(AbstractModule.this);
+      }
+    });
   }
 
+  @Deprecated
   @Override
-  public void reloadFromDisk(boolean reloadClasses) {
-    ModelAccess.instance().checkWriteAccess();
-    try {
-      ModuleDescriptor descriptor = loadDescriptor();
-      setModuleDescriptor(descriptor, reloadClasses);
-    } catch (ModuleReadException e) {
-      handleReadProblem(e, false);
-    }
+  public final void reloadFromDisk(boolean reloadClasses) {
+    SModuleOperations.reloadFromDisk(this, reloadClasses);
   }
 
-  private void handleReadProblem(Exception e, boolean isInConflict) {
-    SuspiciousModelHandler.getHandler().handleSuspiciousModule(this, isInConflict);
+  public static void handleReadProblem(AbstractModule module, Exception e, boolean isInConflict) {
+    SuspiciousModelHandler.getHandler().handleSuspiciousModule(module, isInConflict);
     LOG.error(e.getMessage());
     e.printStackTrace();
   }
@@ -726,7 +699,13 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
 
   @Override
   public void invalidateDependencies() {
-    //do nothing by default
+    // todo: =(
+//    Set<SModule> unloadedModules = ClassLoaderManager.getInstance().unloadClasses(Arrays.asList(this), new EmptyProgressMonitor());
+//    ClassLoaderManager.getInstance().loadClasses(unloadedModules, new EmptyProgressMonitor());
+    // temporary disabled because: 1) we load many modules in LibraryInitializer 2) module calls setModuleDescriptor 3) it calls invalidateDependencies
+    // 4) it calls CLM with partly loaded classes (just part of modules)
+    // fix: fix CLM to not load partly loaded module, introduce normal disabled/enabled relation in CLM
+    // btw as for now: as change dependencies doesn't call "make module", this action basically meaningless
   }
 
   protected ModuleDescriptor loadDescriptor() {
@@ -812,6 +791,29 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     return SModuleOperations.getIndexablePaths(this);
   }
 
+  /**
+   * Do nothing. If you need it please vote and add comment to MPS-17524
+   */
+  @Deprecated
+  public static void registerModelCreationListener(ModelCreationListener listener) {
+  }
+
+  /**
+   * Do nothing. If you need it please vote and add comment to MPS-17524
+   */
+  @Deprecated
+  public static void unregisterModelCreationListener(ModelCreationListener creationListener) {
+  }
+
+  /**
+   * @see SModuleOperations#createModelWithAdjustments
+   */
+  @Override
+  @Deprecated
+  public final EditableSModelDescriptor createModel(String name, @NotNull ModelRoot root, ModelAdjuster adj) {
+    throw new UnsupportedOperationException();
+  }
+
   @Deprecated
   @Override
   public final String getOutputFor(SModel model) {
@@ -892,22 +894,16 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     return SModuleOperations.getModuleWithDependenciesClassPathItem(this);
   }
 
-  /**
-   * @see jetbrains.mps.runtime.IClassLoadingModule#canLoad()
-   */
   @Override
   @Deprecated
   public final boolean reloadClassesAfterGeneration() {
-    return (this instanceof IClassLoadingModule) && ((IClassLoadingModule) this).canLoad();
+    return ClassLoaderManager.getInstance().canLoad(this);
   }
 
-  /**
-   * @see jetbrains.mps.runtime.IClassLoadingModule#canLoad()
-   */
   @Deprecated
   @Override
-  public Class getClass(String className) {
-    throw new UnsupportedOperationException();
+  public final Class getClass(String className) {
+    return ClassLoaderManager.getInstance().getClass(this, className);
   }
 
   /**

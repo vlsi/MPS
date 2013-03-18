@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor;
 
 import com.intellij.openapi.wm.IdeFocusManager;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -50,14 +51,14 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
   private SModel myModelDescriptor;
   private IOperationContext myOperationContext;
   private EditorCell myContextCell;
-  private List<Pair<SNode,SNodeReference>> myModelModifications = null;
+  private List<Pair<SNode, SNodeReference>> myModelModifications = null;
   private IPerformanceTracer myPerformanceTracer = null;
 
   private ReferencedNodeContext myCurrentRefNodeContext;
 
   public EditorContext(EditorComponent editorComponent, SModel model, IOperationContext operationContext) {
     myNodeEditorComponent = editorComponent;
-    myModelDescriptor = model == null ? null : model.getModelDescriptor();
+    myModelDescriptor = model == null ? null : model;
     myOperationContext = operationContext;
   }
 
@@ -73,7 +74,12 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
   @Override
   public boolean isEditable() {
     SNode node = myNodeEditorComponent.getRootCell().getSNode();
-    return node != null && node.getModel() != null && !node.getModel().isReadOnly();
+    if (node == null) return false;
+
+    SModel model = node.getModel();
+    if (!(model instanceof EditableSModel)) return false;
+
+    return !((EditableSModel) model).isReadOnly();
   }
 
   @Override
@@ -106,7 +112,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
 
   @Override
   public SModel getModel() {
-    return myModelDescriptor.getSModel();
+    return myModelDescriptor;
   }
 
   @Override
@@ -128,7 +134,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     myModelModifications = EditorManager.convert(modelEvents);
   }
 
-  private EditorCell createNodeCell(List<Pair<SNode,SNodeReference>> modifications) {
+  private EditorCell createNodeCell(List<Pair<SNode, SNodeReference>> modifications) {
     return myOperationContext.getComponent(EditorManager.class).createEditorCell(this, modifications, myCurrentRefNodeContext);
   }
 
@@ -403,8 +409,9 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
         //Do not show attributes on reference cells.
         return cellWithRole;
     }
-    
-    return myOperationContext.getComponent(EditorManager.class).doCreateRoleAttributeCell(attributeKind, (cellWithRole), this, roleAttribute, myModelModifications);
+
+    return myOperationContext.getComponent(EditorManager.class).doCreateRoleAttributeCell(attributeKind, (cellWithRole), this, roleAttribute,
+      myModelModifications);
   }
 
   @Override

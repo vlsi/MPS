@@ -6,11 +6,9 @@ import jetbrains.mps.logging.Logger;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.extapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import java.util.Collections;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -28,12 +26,11 @@ public class NodeFactoryUtil {
   }
 
   public static List<SNode> getApplicableNodeFactories(final SNode concept, Language language) {
-    EditableSModel actionsModelDescriptor = LanguageAspect.ACTIONS.get(language);
+    SModel actionsModelDescriptor = LanguageAspect.ACTIONS.get(language);
     if (actionsModelDescriptor == null) {
       return Collections.emptyList();
     }
-    SModel model = ((SModelInternal) actionsModelDescriptor).getSModel();
-    return ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.actions.structure.NodeFactories")).translate(new ITranslator2<SNode, SNode>() {
+    return ListSequence.fromList(SModelOperations.getRoots(actionsModelDescriptor, "jetbrains.mps.lang.actions.structure.NodeFactories")).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SLinkOperations.getTargets(it, "nodeFactory", true);
       }

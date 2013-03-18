@@ -34,8 +34,8 @@ public class ConceptEditorOpenHelper {
     // We should be sure that node and base node are inside the same module.  
     // Otherwise, tabbed editor for base node will be opened, but there will be no tab for "node" 
     // So, the user will not be able to open node by a double-click 
-    SModel baseModelDesIcriptor = SNodeOperations.getModel(baseNode).getModelDescriptor();
-    SModel mainModelDescriptor = SNodeOperations.getModel(node).getModelDescriptor();
+    SModel baseModelDesIcriptor = SNodeOperations.getModel(baseNode);
+    SModel mainModelDescriptor = SNodeOperations.getModel(node);
     if (mainModelDescriptor == null) {
       return null;
     }
@@ -58,7 +58,7 @@ public class ConceptEditorOpenHelper {
       return null;
     }
     SNode baseNode = findBaseNodeMultiTab(node);
-    if ((baseNode == null) || SModelUtil.getDeclaringLanguage(baseNode) == null || (Language.getModelAspect(SNodeOperations.getModel(node).getModelDescriptor()) == null && !(SModelStereotype.isGeneratorModel(SNodeOperations.getModel(node))))) {
+    if ((baseNode == null) || SModelUtil.getDeclaringLanguage(baseNode) == null || (Language.getModelAspect(SNodeOperations.getModel(node)) == null && !(SModelStereotype.isGeneratorModel(SNodeOperations.getModel(node))))) {
       return null;
     }
     return baseNode;
@@ -71,7 +71,7 @@ public class ConceptEditorOpenHelper {
     if (SModelUtil.getDeclaringLanguage(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) == null) {
       return false;
     }
-    if (Language.getModelAspect(SNodeOperations.getModel(node).getModelDescriptor()) == null) {
+    if (Language.getModelAspect(SNodeOperations.getModel(node)) == null) {
       return false;
     }
     return true;
@@ -89,8 +89,8 @@ public class ConceptEditorOpenHelper {
     if ((baseNode == null)) {
       return null;
     }
-    IModule baseNodeModule = SNodeOperations.getModel(baseNode).getModelDescriptor().getModule();
-    IModule nodeModule = SNodeOperations.getModel(node).getModelDescriptor().getModule();
+    IModule baseNodeModule = SNodeOperations.getModel(baseNode).getModule();
+    IModule nodeModule = SNodeOperations.getModel(node).getModule();
     if (nodeModule instanceof Generator) {
       nodeModule = ((Generator) nodeModule).getSourceLanguage();
     }

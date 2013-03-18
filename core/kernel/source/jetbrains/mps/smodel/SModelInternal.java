@@ -13,13 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
 
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel.ImportElement;
-import org.jetbrains.mps.openapi.model.SModel;
-
 import jetbrains.mps.smodel.event.SModelListener;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -28,13 +26,12 @@ import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.List;
 
-public interface SModelInternal extends SModel {
-  SModel resolveModel(jetbrains.mps.smodel.SModelReference reference);
-  SModel getSModel();
+public interface SModelInternal{
   void setModule(SModule container);
-  void addModelListener(@NotNull SModelListener listener);
-  void removeModelListener(@NotNull SModelListener listener);
 
+  void addModelListener(@NotNull SModelListener listener);
+
+  void removeModelListener(@NotNull SModelListener listener);
 
   //todo get rid of, try to cast, show an error if not casted
   boolean isDisposed();
@@ -70,11 +67,11 @@ public interface SModelInternal extends SModel {
 
   List<ImportElement> importedModels();
 
-  void addModelImport(jetbrains.mps.smodel.SModelReference modelReference, boolean firstVersion);
+  void addModelImport(SModelReference modelReference, boolean firstVersion);
 
   void addModelImport(ImportElement importElement);
 
-  void deleteModelImport(jetbrains.mps.smodel.SModelReference modelReference);
+  void deleteModelImport(SModelReference modelReference);
 
   // create new implicit import list based on used models, explicit import and old implicit import list
   void calculateImplicitImports();
@@ -87,7 +84,7 @@ public interface SModelInternal extends SModel {
 
   List<ImportElement> getAdditionalModelVersions();
 
-  void addAdditionalModelVersion(@NotNull jetbrains.mps.smodel.SModelReference modelReference, int usedVersion);
+  void addAdditionalModelVersion(@NotNull SModelReference modelReference, int usedVersion);
 
   void addAdditionalModelVersion(@NotNull ImportElement element);
 
@@ -97,7 +94,13 @@ public interface SModelInternal extends SModel {
 
   void updateImportedModelUsedVersion(SModelReference sModelReference, int currentVersion);
 
+  boolean canFireReadEvent();
+
   boolean updateSModelReferences();
 
+  void changeModelReference(SModelReference newModelReference);
+
   boolean updateModuleReferences();
+
+  void copyPropertiesTo(SModelInternal to);
 }

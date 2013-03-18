@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.findUsages;
 
+import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.progress.SubProgressKind;
 import jetbrains.mps.util.CollectConsumer;
@@ -23,8 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import org.jetbrains.mps.openapi.persistence.indexing.FastFindUsagesRegistry;
-import org.jetbrains.mps.openapi.persistence.indexing.FindUsagesParticipant;
+import org.jetbrains.mps.openapi.persistence.FindUsagesParticipant;
 import org.jetbrains.mps.openapi.util.Consumer;
 
 import java.util.Collection;
@@ -41,7 +41,7 @@ class ModelUsagesSearchType extends SearchType<SModel, SModelReference> {
   @Override
   public Set<SModel> search(Set<SModelReference> models, SearchScope scope, @NotNull ProgressMonitor monitor) {
     CollectConsumer<SModel> consumer = new CollectConsumer(new HashSet<SModel>());
-    Collection<FindUsagesParticipant> participants = FastFindUsagesRegistry.getInstance().getParticipants();
+    Collection<FindUsagesParticipant> participants = PersistenceRegistry.getInstance().getFindUsagesParticipants();
 
     monitor.start("Finding model(s) usages...", participants.size() + 4);
     try {

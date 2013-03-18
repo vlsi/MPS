@@ -27,20 +27,10 @@ import com.intellij.platform.ProjectBaseDirectory;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import jetbrains.mps.library.LanguageDesign_DevKit;
-import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.MPSProjectVersion;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.StandaloneMPSProject;
-import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
+import jetbrains.mps.project.*;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -94,14 +84,12 @@ public class ProjectFactory {
           @Override
           public void run() {
             if (myOptions.getCreateNewLanguage()) {
-              myCreatedLanguage = createNewLanguage(mpsProject);
+              myCreatedLanguage = NewModuleUtil.createLanguage(myOptions.getLanguageNamespace(), myOptions.getLanguagePath(), mpsProject);
               mpsProject.addModule(myCreatedLanguage.getModuleReference());
-              myCreatedLanguage.save();
             }
 
             if (myOptions.getCreateNewSolution()) {
-              myCreatedSolution = createNewSolution(mpsProject);
-              myCreatedSolution.save();
+              myCreatedSolution = NewModuleUtil.createSolution(myOptions.getSolutionNamespace(), myOptions.getSolutionPath(), mpsProject);
               mpsProject.addModule(myCreatedSolution.getModuleReference());
             }
 
@@ -110,9 +98,10 @@ public class ProjectFactory {
               myCreatedSolution.save();
 
               if (myOptions.getCreateModel()) {
-                EditableSModel model = myCreatedSolution.createModel(myCreatedSolution.getModuleReference().getModuleFqName() + ".sandbox",
-                  myCreatedSolution.getModelRoots().iterator().next(), null);
-                ((BaseEditableSModelDescriptor) model).getSModel().addLanguage(myCreatedLanguage.getModuleReference());
+                EditableSModel model = SModuleOperations.createModelWithAdjustments(
+                    myCreatedSolution.getModuleReference().getModuleFqName() + ".sandbox",
+                    myCreatedSolution.getModelRoots().iterator().next());
+                ((SModelInternal) model).addLanguage(myCreatedLanguage.getModuleReference());
                 model.save();
               }
             }
@@ -175,34 +164,6 @@ public class ProjectFactory {
     }
 
     return null;
-  }
-
-  private Solution createNewSolution(MPSProject mpsProject) {
-    String descriptorFileName = myOptions.getSolutionNamespace() + MPSExtentions.DOT_SOLUTION;
-    String descriptorPath = myOptions.getSolutionPath() + File.separator + descriptorFileName;
-    IFile descriptorFile = FileSystem.getInstance().getFileByPath(descriptorPath);
-
-    return NewModuleUtil.createNewSolution(myOptions.getSolutionNamespace(), descriptorFile, mpsProject);
-  }
-
-  private Language createNewLanguage(MPSProject mpsProject) {
-    String descriptorFileName = NameUtil.shortNameFromLongName(myOptions.getLanguageNamespace()) + MPSExtentions.DOT_LANGUAGE;
-    String descriptorPath = myOptions.getLanguagePath() + File.separator + descriptorFileName;
-    IFile descriptorFile = FileSystem.getInstance().getFileByPath(descriptorPath);
-
-    Language language = NewModuleUtil.createNewLanguage(myOptions.getLanguageNamespace(), descriptorFile, mpsProject);
-    LanguageDescriptor languageDescriptor = language.getModuleDescriptor();
-    languageDescriptor.getUsedDevkits().add(LanguageDesign_DevKit.MODULE_REFERENCE);
-
-    LanguageAspect.STRUCTURE.createNew(language, false).save();
-    LanguageAspect.EDITOR.createNew(language, false).save();
-    LanguageAspect.CONSTRAINTS.createNew(language, false).save();
-    LanguageAspect.BEHAVIOR.createNew(language, false).save();
-    LanguageAspect.TYPESYSTEM.createNew(language, false).save();
-
-    language.setLanguageDescriptor(languageDescriptor, false);
-
-    return language;
   }
 
   public static class ProjectNotCreatedException extends Exception {

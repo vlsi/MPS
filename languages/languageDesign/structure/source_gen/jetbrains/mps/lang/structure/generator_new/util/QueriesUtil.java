@@ -122,7 +122,7 @@ public class QueriesUtil {
   }
 
   public static Language getInputLanguage(SModel inputModel) {
-    return Language.getLanguageFor(inputModel.getModelDescriptor());
+    return Language.getLanguageFor(inputModel);
   }
 
   public static int getPropertyIndex(SNode property) {

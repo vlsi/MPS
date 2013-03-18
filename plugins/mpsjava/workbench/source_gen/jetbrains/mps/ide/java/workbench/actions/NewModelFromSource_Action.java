@@ -6,24 +6,25 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.project.IModule;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.ModulePropertiesConfigurable;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
-import jetbrains.mps.ide.project.ProjectHelper;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import java.io.File;
@@ -32,7 +33,6 @@ import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.java.newparser.DirParser;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import javax.swing.tree.TreeNode;
@@ -54,6 +54,10 @@ public class NewModelFromSource_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(((IModule) MapSequence.fromMap(_params).get("module")) instanceof AbstractModule)) {
+      return false;
+    }
+
     String stereotype = NewModelFromSource_Action.this.getStereotype(_params);
     if (stereotype == null) {
       return true;
@@ -86,12 +90,12 @@ public class NewModelFromSource_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
-    if (MapSequence.fromMap(_params).get("context") == null) {
+    MapSequence.fromMap(_params).put("ideaProject", event.getData(PlatformDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("ideaProject") == null) {
       return false;
     }
     MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.CONTEXT_MODULE));
@@ -102,6 +106,10 @@ public class NewModelFromSource_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("treeNode") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
+      return false;
+    }
     return true;
   }
 
@@ -110,8 +118,8 @@ public class NewModelFromSource_Action extends BaseAction {
       if (!(((IModule) MapSequence.fromMap(_params).get("module")).getModelRoots().iterator().hasNext())) {
         int code = JOptionPane.showConfirmDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "There are no model roots. Do you want to create one?", "", JOptionPane.YES_NO_OPTION);
         if (code == JOptionPane.YES_OPTION) {
-          MPSPropertiesConfigurable configurable = new ModulePropertiesConfigurable(((IModule) MapSequence.fromMap(_params).get("module")), ((IOperationContext) MapSequence.fromMap(_params).get("context")).getProject());
-          final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(ProjectHelper.toIdeaProject(((IOperationContext) MapSequence.fromMap(_params).get("context")).getProject()), configurable, "#MPSPropertiesConfigurable");
+          MPSPropertiesConfigurable configurable = new ModulePropertiesConfigurable(((IModule) MapSequence.fromMap(_params).get("module")), ((MPSProject) MapSequence.fromMap(_params).get("project")));
+          final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(((Project) MapSequence.fromMap(_params).get("ideaProject")), configurable, "#MPSPropertiesConfigurable");
           configurableEditor.show();
         }
         return;
@@ -121,15 +129,10 @@ public class NewModelFromSource_Action extends BaseAction {
         return;
       }
       final Wrappers._T<NewModelDialog> dialog = new Wrappers._T<NewModelDialog>();
-      final IOperationContext localContext = ((IOperationContext) MapSequence.fromMap(_params).get("context"));
-      final IModule localModule = (localContext.getModule() != null ?
-        localContext.getModule() :
-        ((IModule) MapSequence.fromMap(_params).get("module"))
-      );
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           String stereotype = NewModelFromSource_Action.this.getStereotype(_params);
-          dialog.value = new NewModelDialog(((Project) MapSequence.fromMap(_params).get("project")), localModule, NewModelFromSource_Action.this.getNamespace(_params), localContext, stereotype, NewModelFromSource_Action.this.isStrict(_params));
+          dialog.value = new NewModelDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), ((AbstractModule) ((IModule) MapSequence.fromMap(_params).get("module"))), NewModelFromSource_Action.this.getNamespace(_params), ((IOperationContext) MapSequence.fromMap(_params).get("context")), stereotype, NewModelFromSource_Action.this.isStrict(_params));
         }
       });
       dialog.value.show();
@@ -138,7 +141,7 @@ public class NewModelFromSource_Action extends BaseAction {
         TreeFileChooser treeFileChooser = new TreeFileChooser();
         treeFileChooser.setDirectoriesAreAlwaysVisible(true);
         treeFileChooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
-        final SModel sModel = result.getSModel();
+        final SModel sModel = result;
         String generatorOutputPath = ((IModule) MapSequence.fromMap(_params).get("module")).getGeneratorOutputPath();
         File initial = null;
         File output = new File(generatorOutputPath);
@@ -161,7 +164,7 @@ public class NewModelFromSource_Action extends BaseAction {
         }
         IFile resultFile = treeFileChooser.showDialog(((Frame) MapSequence.fromMap(_params).get("frame")));
         if (resultFile != null) {
-          final DirParser dirParser = new DirParser(((IModule) MapSequence.fromMap(_params).get("module")), new MPSProject(((Project) MapSequence.fromMap(_params).get("project"))), new File(resultFile.getPath()));
+          final DirParser dirParser = new DirParser(((IModule) MapSequence.fromMap(_params).get("module")), ((MPSProject) MapSequence.fromMap(_params).get("project")), new File(resultFile.getPath()));
           // we cannot take write action inside try, because it's implemented through 
           // ... Runnable() { void run() } 
           // Also I don't want to show error dialog while in write action 
@@ -180,7 +183,7 @@ public class NewModelFromSource_Action extends BaseAction {
           }
         }
         SModel modelDescriptor = result;
-        ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).selectModel(modelDescriptor, false);
+        ProjectPane.getInstance(((MPSProject) MapSequence.fromMap(_params).get("project"))).selectModel(modelDescriptor, false);
       }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "NewModelFromSource", t);

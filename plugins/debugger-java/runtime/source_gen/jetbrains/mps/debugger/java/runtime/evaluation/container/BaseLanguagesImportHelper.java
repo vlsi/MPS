@@ -18,6 +18,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
@@ -56,7 +57,7 @@ public abstract class BaseLanguagesImportHelper {
       SModel targetModel = SNodeOperations.getModel(SLinkOperations.getTargetNode(reference));
       if (neq_5vd2f2_a0b0a0d(targetModel, containerModel)) {
         SModel scopeModel = GlobalScope.getInstance().getModelDescriptor(targetModel.getReference());
-        if (scopeModel != null && neq_5vd2f2_a0a1a1a0a3(scopeModel.getSModel(), targetModel)) {
+        if (scopeModel != null && neq_5vd2f2_a0a1a1a0a3(scopeModel, targetModel)) {
           String resolveInfo = SLinkOperations.getResolveInfo(reference);
           if ((resolveInfo == null || resolveInfo.length() == 0)) {
             resolveInfo = jetbrains.mps.util.SNodeOperations.getResolveInfo(SLinkOperations.getTargetNode(reference));
@@ -97,6 +98,7 @@ public abstract class BaseLanguagesImportHelper {
   }
 
   private static SNode _quotation_createNode_5vd2f2_a0a0b0b0c(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null, null, GlobalScope.getInstance(), false);

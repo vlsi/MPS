@@ -4,7 +4,7 @@ package jetbrains.mps.vcs;
 
 import java.io.File;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -34,6 +34,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.newvfs.RefreshSession;
 import com.intellij.openapi.vfs.newvfs.RefreshQueue;
+import jetbrains.mps.project.SModuleOperations;
 import java.io.IOException;
 import jetbrains.mps.ide.ThreadUtils;
 
@@ -45,7 +46,7 @@ public class DiskMemoryConflictsTest {
   private static final File DESTINATION_PROJECT_DIR = new File(FileUtil.getTempDir(), "testConflicts");
   private static final File PROJECT_ARCHIVE = new File("testbench/modules/simpleProject.zip");
   private static final String PROJECT_FILE = "simpleProject.mpr";
-  private static final SModelReference MODEL_REFERENCE = SModelReference.fromString("r:21cf9f47-5464-40f2-9509-d94ba20bfe82(simpleModel)");
+  private static final SModelReference MODEL_REFERENCE = jetbrains.mps.smodel.SModelReference.fromString("r:21cf9f47-5464-40f2-9509-d94ba20bfe82(simpleModel)");
   private static final File MODEL_FILE = getModelFile();
   private static final String FIELD_DEFAULT_NAME = "theField";
   private static final String FIELD_NAME_IN_FILE = "theFieldInFile";
@@ -74,7 +75,7 @@ public class DiskMemoryConflictsTest {
           ModelAccess.instance().runReadAction(new Runnable() {
             @Override
             public void run() {
-              myNodeBackup = CopyUtil.copyAndPreserveId(myModelDescriptor.getSModel().getRootNodes().iterator().next());
+              myNodeBackup = CopyUtil.copyAndPreserveId(myModelDescriptor.getRootNodes().iterator().next());
             }
           });
           checkInitialState();
@@ -111,7 +112,7 @@ public class DiskMemoryConflictsTest {
           try {
             final SModel modelDescriptor = myModelDescriptor;
             Assert.assertNotNull(modelDescriptor);
-            SNode node = modelDescriptor.getSModel().getNode(SNodeId.fromString("6010389230754495469"));
+            SNode node = modelDescriptor.getNode(SNodeId.fromString("6010389230754495469"));
             Assert.assertNotNull(node);
             if (nameToWrite == null) {
               result[0] = SNodeAccessUtil.getProperty(node, "name");
@@ -297,8 +298,8 @@ public class DiskMemoryConflictsTest {
       ModelAccess.instance().runCommandInEDT(new Runnable() {
         @Override
         public void run() {
-          myModelDescriptor = (BaseEditableSModelDescriptor) myModule.createModel(DiskMemoryConflictsTest.MODEL_REFERENCE.getSModelFqName().toString(), myModule.getModelRoots().iterator().next(), null);
-          myModelDescriptor.getSModel().addRootNode(CopyUtil.copyAndPreserveId(myNodeBackup));
+          myModelDescriptor = ((BaseEditableSModelDescriptor) SModuleOperations.createModelWithAdjustments(MODEL_REFERENCE.getModelName(), myModule.getModelRoots().iterator().next()));
+          myModelDescriptor.addRootNode(CopyUtil.copyAndPreserveId(myNodeBackup));
           myModelDescriptor.save();
         }
       }, myProject);

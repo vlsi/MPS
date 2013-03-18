@@ -66,7 +66,7 @@ public class GroupReference_Constraints extends BaseConstraintsDescriptor {
               }
             }).translate(new ITranslator2<SModel, SNode>() {
               public Iterable<SNode> translate(SModel smd) {
-                return SModelOperations.getNodes(((SModel) smd.getSModel()), "jetbrains.mps.platform.conf.structure.Group");
+                return SModelOperations.getNodes(((SModel) smd), "jetbrains.mps.platform.conf.structure.Group");
               }
             });
           }
@@ -110,7 +110,7 @@ public class GroupReference_Constraints extends BaseConstraintsDescriptor {
               }
             }).translate(new ITranslator2<SModel, SNode>() {
               public Iterable<SNode> translate(SModel smd) {
-                return SModelOperations.getNodes(((SModel) smd.getSModel()), "jetbrains.mps.platform.conf.structure.AbstractAction");
+                return SModelOperations.getNodes(((SModel) smd), "jetbrains.mps.platform.conf.structure.AbstractAction");
               }
             });
           }

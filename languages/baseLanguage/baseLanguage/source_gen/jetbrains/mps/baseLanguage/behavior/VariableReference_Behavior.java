@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.reloading.ReflectionUtil;
 import org.jetbrains.mps.openapi.language.SConcept;
-import jetbrains.mps.smodel.SModelInternal;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class VariableReference_Behavior {
   public static void init(SNode thisNode) {
@@ -30,7 +30,7 @@ public class VariableReference_Behavior {
       // todo 
       SNode declaration = SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
       SNode classifier = SNodeOperations.as(SNodeOperations.getParent(declaration), "jetbrains.mps.baseLanguage.structure.Classifier");
-      if ((classifier != null) && SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(classifier).getReference().getStereotype())) {
+      if ((classifier != null) && SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(SNodeOperations.getModel(classifier).getReference().getModelName()))) {
         return Expression_Behavior.call_eval_1213877519769(thisNode, module);
       } else {
         return (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(declaration, "initializer", true), "virtual_isCompileTimeConstant_1238860258777", new Object[]{}) ?
@@ -59,7 +59,7 @@ public class VariableReference_Behavior {
       SNode declaration = SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
       SNode classifier = SNodeOperations.as(SNodeOperations.getParent(declaration), "jetbrains.mps.baseLanguage.structure.Classifier");
 
-      IModule m = check_gidzrl_a0e0a0e(SNodeOperations.getModel(declaration).getModelDescriptor());
+      IModule m = check_gidzrl_a0e0a0e(SNodeOperations.getModel(declaration));
       if (m != null) {
         Object c = null;
         try {
@@ -120,7 +120,7 @@ public class VariableReference_Behavior {
     return true;
   }
 
-  private static IModule check_gidzrl_a0e0a0e(SModelInternal checkedDotOperand) {
+  private static IModule check_gidzrl_a0e0a0e(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

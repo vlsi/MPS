@@ -37,4 +37,5 @@ public class MPSIcons {
     public static final Icon LANGUAGE_ICON = Nodes.Language;
     public static final Icon SOLUTION_ICON = Nodes.Solution;
     public static final Icon JAVA_MODEL_ICON = AllIcons.General.Jdk;
+    public static final Icon MODEL_OVERLAY_ICON = Nodes.ModelOverlay;
 }

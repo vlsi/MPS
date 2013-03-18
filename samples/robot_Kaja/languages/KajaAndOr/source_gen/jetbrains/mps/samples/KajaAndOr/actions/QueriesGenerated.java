@@ -8,7 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -34,22 +34,21 @@ public class QueriesGenerated {
     }
   }
 
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_LogicalOperator_1904811872814312765(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+  public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_LogicalOperator_1904811872814312765(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        Computable computable = new Computable() {
-          public Object compute() {
+        Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
+          public Iterable<SNode> compute() {
             return ListSequence.fromList(SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator"), _context.getModel(), operationContext.getScope())).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return !(SPropertyOperations.getBoolean(it, "abstract"));
               }
             });
           }
-        };
-        Iterable<SNode> queryResult = (Iterable) computable.compute();
+        }.compute();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
@@ -65,7 +64,7 @@ public class QueriesGenerated {
               }
 
               public String getVisibleMatchingText(String pattern) {
-                return this.getMatchingText(pattern);
+                return getMatchingText(pattern);
               }
 
               public String getDescriptionText(String pattern) {
@@ -79,163 +78,159 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_LogicalExpression_1904811872814253599(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+  public static List<SubstituteAction> sideTransform_ActionsFactory_LogicalExpression_1904811872814253599(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
-      final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.Kaja.structure.LogicalExpression");
-      Computable computable = new Computable() {
-        public Object compute() {
+      Iterable<String> parameterObjects = new Computable<Iterable<String>>() {
+        public Iterable<String> compute() {
           return ListSequence.fromListAndArray(new ArrayList<String>(), "and", "or");
         }
-      };
-      Iterable<String> parameterObjects = (Iterable<String>) computable.compute();
-      assert parameterObjects != null;
-      for (final String item : parameterObjects) {
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
-          public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-            SNode conjuction;
-            if ((item).equals("and")) {
-              conjuction = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.samples.KajaAndOr.structure.And");
-            } else if ((item).equals("or")) {
-              conjuction = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.samples.KajaAndOr.structure.Or");
-            } else {
-              throw new IllegalArgumentException("Cannot find a match for " + (item));
+      }.compute();
+      if (parameterObjects != null) {
+        for (final String item : parameterObjects) {
+          ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.Kaja.structure.LogicalExpression"), item, _context.getSourceNode()) {
+            public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+              SNode conjuction;
+              if ((item).equals("and")) {
+                conjuction = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.samples.KajaAndOr.structure.And");
+              } else if ((item).equals("or")) {
+                conjuction = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.samples.KajaAndOr.structure.Or");
+              } else {
+                throw new IllegalArgumentException("Cannot find a match for " + (item));
+              }
+              SLinkOperations.setTarget(conjuction, "right", _context.getSourceNode(), true);
+              return SLinkOperations.getTarget(conjuction, "left", true);
             }
-            SLinkOperations.setTarget(conjuction, "right", _context.getSourceNode(), true);
-            return SLinkOperations.getTarget(conjuction, "left", true);
-          }
 
-          public String getMatchingText(String pattern) {
-            return (item);
-          }
+            public String getMatchingText(String pattern) {
+              return (item);
+            }
 
-          public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
-          }
-        });
+            public String getVisibleMatchingText(String pattern) {
+              return getMatchingText(pattern);
+            }
+          });
+        }
       }
     }
     return result;
   }
 
-  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_LogicalExpression_1904811872814296399(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+  public static List<SubstituteAction> sideTransform_ActionsFactory_LogicalExpression_1904811872814296399(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
-      final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.Kaja.structure.LogicalExpression");
-      Computable computable = new Computable() {
-        public Object compute() {
+      Iterable<String> parameterObjects = new Computable<Iterable<String>>() {
+        public Iterable<String> compute() {
           return ListSequence.fromListAndArray(new ArrayList<String>(), "and", "or");
         }
-      };
-      Iterable<String> parameterObjects = (Iterable<String>) computable.compute();
-      assert parameterObjects != null;
-      for (final String item : parameterObjects) {
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
-          public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-            SNode conjuction;
-            if ((item).equals("and")) {
-              SNode andNode = SConceptOperations.createNewNode("jetbrains.mps.samples.KajaAndOr.structure.And", null);
-              SNodeOperations.replaceWithAnother(_context.getSourceNode(), andNode);
-              conjuction = andNode;
-            } else {
-              SNode orNode = SConceptOperations.createNewNode("jetbrains.mps.samples.KajaAndOr.structure.Or", null);
-              SNodeOperations.replaceWithAnother(_context.getSourceNode(), orNode);
-              conjuction = orNode;
+      }.compute();
+      if (parameterObjects != null) {
+        for (final String item : parameterObjects) {
+          ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.Kaja.structure.LogicalExpression"), item, _context.getSourceNode()) {
+            public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+              SNode conjuction;
+              if ((item).equals("and")) {
+                SNode andNode = SConceptOperations.createNewNode("jetbrains.mps.samples.KajaAndOr.structure.And", null);
+                SNodeOperations.replaceWithAnother(_context.getSourceNode(), andNode);
+                conjuction = andNode;
+              } else {
+                SNode orNode = SConceptOperations.createNewNode("jetbrains.mps.samples.KajaAndOr.structure.Or", null);
+                SNodeOperations.replaceWithAnother(_context.getSourceNode(), orNode);
+                conjuction = orNode;
+              }
+              SLinkOperations.setTarget(conjuction, "left", _context.getSourceNode(), true);
+              return SLinkOperations.getTarget(conjuction, "right", true);
             }
-            SLinkOperations.setTarget(conjuction, "left", _context.getSourceNode(), true);
-            return SLinkOperations.getTarget(conjuction, "right", true);
-          }
 
-          public String getMatchingText(String pattern) {
-            return (item);
-          }
+            public String getMatchingText(String pattern) {
+              return (item);
+            }
 
-          public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
-          }
-        });
+            public String getVisibleMatchingText(String pattern) {
+              return getMatchingText(pattern);
+            }
+          });
+        }
       }
     }
     return result;
   }
 
-  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Heading_642541832611943584(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+  public static List<SubstituteAction> sideTransform_ActionsFactory_Heading_642541832611943584(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
-      final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.Kaja.structure.LogicalExpression");
-      Computable computable = new Computable() {
-        public Object compute() {
+      Iterable<SNode> parameterObjects = new Computable<Iterable<SNode>>() {
+        public Iterable<SNode> compute() {
           return ListSequence.fromList(SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator"), _context.getModel(), operationContext.getScope())).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
               return !(SPropertyOperations.getBoolean(it, "abstract"));
             }
           }).toListSequence();
         }
-      };
-      Iterable<SNode> parameterObjects = (Iterable<SNode>) computable.compute();
-      assert parameterObjects != null;
-      for (final SNode item : parameterObjects) {
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
-          public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-            SNode newInitializedInstance = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName((item)), null);
-            SLinkOperations.setTarget(newInitializedInstance, "left", SNodeOperations.copyNode(_context.getSourceNode()), true);
-            SNodeOperations.replaceWithAnother(_context.getSourceNode(), newInitializedInstance);
-            return SLinkOperations.getTarget(newInitializedInstance, "right", true);
-          }
+      }.compute();
+      if (parameterObjects != null) {
+        for (final SNode item : parameterObjects) {
+          ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.Kaja.structure.LogicalExpression"), item, _context.getSourceNode()) {
+            public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+              SNode newInitializedInstance = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName((item)), null);
+              SLinkOperations.setTarget(newInitializedInstance, "left", SNodeOperations.copyNode(_context.getSourceNode()), true);
+              SNodeOperations.replaceWithAnother(_context.getSourceNode(), newInitializedInstance);
+              return SLinkOperations.getTarget(newInitializedInstance, "right", true);
+            }
 
-          public String getMatchingText(String pattern) {
-            return SPropertyOperations.getString((item), "conceptAlias");
-          }
+            public String getMatchingText(String pattern) {
+              return SPropertyOperations.getString((item), "conceptAlias");
+            }
 
-          public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
-          }
+            public String getVisibleMatchingText(String pattern) {
+              return getMatchingText(pattern);
+            }
 
-          public String getDescriptionText(String pattern) {
-            return SPropertyOperations.getString((item), "name");
-          }
-        });
+            public String getDescriptionText(String pattern) {
+              return SPropertyOperations.getString((item), "name");
+            }
+          });
+        }
       }
     }
     return result;
   }
 
-  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Looking_7060824959894576633(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+  public static List<SubstituteAction> sideTransform_ActionsFactory_Looking_7060824959894576633(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
-      final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.Kaja.structure.LogicalExpression");
-      Computable computable = new Computable() {
-        public Object compute() {
+      Iterable<SNode> parameterObjects = new Computable<Iterable<SNode>>() {
+        public Iterable<SNode> compute() {
           return ListSequence.fromList(SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator"), _context.getModel(), operationContext.getScope())).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
               return !(SPropertyOperations.getBoolean(it, "abstract"));
             }
           }).toListSequence();
         }
-      };
-      Iterable<SNode> parameterObjects = (Iterable<SNode>) computable.compute();
-      assert parameterObjects != null;
-      for (final SNode item : parameterObjects) {
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, item, _context.getSourceNode()) {
-          public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-            SNode newInitializedInstance = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName((item)), null);
-            SLinkOperations.setTarget(newInitializedInstance, "left", SNodeOperations.copyNode(_context.getSourceNode()), true);
-            SNodeOperations.replaceWithAnother(_context.getSourceNode(), newInitializedInstance);
-            return SLinkOperations.getTarget(newInitializedInstance, "right", true);
-          }
+      }.compute();
+      if (parameterObjects != null) {
+        for (final SNode item : parameterObjects) {
+          ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.Kaja.structure.LogicalExpression"), item, _context.getSourceNode()) {
+            public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+              SNode newInitializedInstance = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName((item)), null);
+              SLinkOperations.setTarget(newInitializedInstance, "left", SNodeOperations.copyNode(_context.getSourceNode()), true);
+              SNodeOperations.replaceWithAnother(_context.getSourceNode(), newInitializedInstance);
+              return SLinkOperations.getTarget(newInitializedInstance, "right", true);
+            }
 
-          public String getMatchingText(String pattern) {
-            return SPropertyOperations.getString((item), "conceptAlias");
-          }
+            public String getMatchingText(String pattern) {
+              return SPropertyOperations.getString((item), "conceptAlias");
+            }
 
-          public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
-          }
+            public String getVisibleMatchingText(String pattern) {
+              return getMatchingText(pattern);
+            }
 
-          public String getDescriptionText(String pattern) {
-            return SPropertyOperations.getString((item), "name");
-          }
-        });
+            public String getDescriptionText(String pattern) {
+              return SPropertyOperations.getString((item), "name");
+            }
+          });
+        }
       }
     }
     return result;

@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import java.lang.reflect.Constructor;
 import java.util.Collection;
 import java.util.Arrays;
@@ -81,12 +82,12 @@ public class RefactoringUtil {
     {
       SModel scriptsModelDescriptor = LanguageAspect.SCRIPTS.get(language);
       if (scriptsModelDescriptor != null) {
-        SModel scriptsModel = scriptsModelDescriptor.getSModel();
+        SModel scriptsModel = scriptsModelDescriptor;
         String packageName = SNodeOperations.getModelLongName(scriptsModel);
         for (SNode refactoring : SModelOperations.getRoots(scriptsModel, "jetbrains.mps.lang.refactoring.structure.OldRefactoring")) {
           try {
             String fqName = packageName + "." + SPropertyOperations.getString(refactoring, "name");
-            Class<AbstractLoggableRefactoring> cls = language.getClass(fqName);
+            Class<AbstractLoggableRefactoring> cls = ClassLoaderManager.getInstance().getClass(language, fqName);
             if (cls == null) {
               LOG.error("Can't find " + fqName);
               continue;
@@ -103,12 +104,12 @@ public class RefactoringUtil {
     }
     SModel refModelDescriptor = LanguageAspect.REFACTORINGS.get(language);
     if (refModelDescriptor != null) {
-      SModel refactoringsModel = refModelDescriptor.getSModel();
+      SModel refactoringsModel = refModelDescriptor;
       String packageName = SNodeOperations.getModelLongName(refactoringsModel);
       for (SNode refactoring : SModelOperations.getRoots(refactoringsModel, "jetbrains.mps.lang.refactoring.structure.Refactoring")) {
         try {
           String fqName = packageName + "." + SPropertyOperations.getString(refactoring, "name");
-          Class<IRefactoring> cls = language.getClass(fqName);
+          Class<IRefactoring> cls = ClassLoaderManager.getInstance().getClass(language, fqName);
           if (cls == null) {
             LOG.error("Can't find " + fqName);
             continue;

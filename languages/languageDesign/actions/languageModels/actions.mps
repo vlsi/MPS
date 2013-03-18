@@ -12,9 +12,6 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpcw" modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" implicit="yes" />
   <roots>
-    <node type="tpdg.NodeSubstituteActions" typeId="tpdg.1112056943463" id="1180111910664">
-      <property name="name" nameId="tpck.1169194664001" value="menuBuilderParts" />
-    </node>
     <node type="tpdg.NodeSubstituteActions" typeId="tpdg.1112056943463" id="1196932695369">
       <property name="name" nameId="tpck.1169194664001" value="Substitute_String" />
     </node>
@@ -22,74 +19,6 @@
       <property name="name" nameId="tpck.1169194664001" value="fill_prototype_node" />
     </node>
   </roots>
-  <root id="1180111910664">
-    <node role="actionsBuilder" roleId="tpdg.1112058057696" type="tpdg.NodeSubstituteActionsBuilder" typeId="tpdg.1112058030570" id="1180112146087">
-      <property name="description" nameId="tpdg.1158952412335" value="builder parts available for node-substitute (apart from defaults)" />
-      <link role="applicableConcept" roleId="tpdg.1112058088712" targetNodeId="tpdg.1177323240852" resolveInfo="MenuBuilderPart" />
-      <node role="precondition" roleId="tpdg.1154465386371" type="tpdg.NodeSubstitutePreconditionFunction" typeId="tpdg.1154465102724" id="1180112146090">
-        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1180112146091">
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1180112146092">
-            <node role="expression" roleId="tpee.1068580123156" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="1180112146093">
-              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1180112146094" />
-              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227845148">
-                <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_parentNode" typeId="tpdg.1154465273778" id="1180112146096" />
-                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="1180112146097">
-                  <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="1180112146098">
-                    <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="1208997649617">
-                      <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpdg.1112058030570" resolveInfo="NodeSubstituteActionsBuilder" />
-                    </node>
-                  </node>
-                  <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Inclusion" typeId="tp25.1144100932627" id="1180112146099" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="part" roleId="tpdg.1177324142645" type="tpdg.ConceptSubstitutePart" typeId="tpdg.1180134965967" id="1180137769604">
-        <link role="concept" roleId="tpdg.1180135092669" targetNodeId="tpdg.1177614709184" resolveInfo="RemoveDefaultsPart" />
-      </node>
-      <node role="part" roleId="tpdg.1177324142645" type="tpdg.ConceptSubstitutePart" typeId="tpdg.1180134965967" id="1180137769605">
-        <link role="concept" roleId="tpdg.1180135092669" targetNodeId="tpdg.1180134965967" resolveInfo="ConceptSubstitutePart" />
-      </node>
-      <node role="part" roleId="tpdg.1177324142645" type="tpdg.ConceptSubstitutePart" typeId="tpdg.1180134965967" id="1197453803590">
-        <link role="concept" roleId="tpdg.1180135092669" targetNodeId="tpdg.1177413882405" resolveInfo="RemoveByConditionPart" />
-      </node>
-    </node>
-    <node role="actionsBuilder" roleId="tpdg.1112058057696" type="tpdg.NodeSubstituteActionsBuilder" typeId="tpdg.1112058030570" id="1180112212391">
-      <property name="description" nameId="tpdg.1158952412335" value="builder parts available for right-transform (apart from defaults)" />
-      <link role="applicableConcept" roleId="tpdg.1112058088712" targetNodeId="tpdg.1177323240852" resolveInfo="MenuBuilderPart" />
-      <node role="precondition" roleId="tpdg.1154465386371" type="tpdg.NodeSubstitutePreconditionFunction" typeId="tpdg.1154465102724" id="1180112503623">
-        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1180112503624">
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1180112512942">
-            <node role="expression" roleId="tpee.1068580123156" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="1180112512943">
-              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1180112512944" />
-              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227887758">
-                <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_parentNode" typeId="tpdg.1154465273778" id="1180112512946" />
-                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="1180112512947">
-                  <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="1180112512948">
-                    <node role="conceptArgument" roleId="tp25.1207343664468" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="1208997649625">
-                      <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpdg.1138079221458" resolveInfo="SideTransformHintSubstituteActionsBuilder" />
-                    </node>
-                  </node>
-                  <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Inclusion" typeId="tp25.1144100932627" id="1180112512949" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="part" roleId="tpdg.1177324142645" type="tpdg.ConceptSubstitutePart" typeId="tpdg.1180134965967" id="1180137769606">
-        <link role="concept" roleId="tpdg.1180135092669" targetNodeId="tpdg.1180111159572" resolveInfo="IncludeRightTransformForNodePart" />
-      </node>
-      <node role="part" roleId="tpdg.1177324142645" type="tpdg.ConceptSubstitutePart" typeId="tpdg.1180134965967" id="1182819558622">
-        <link role="concept" roleId="tpdg.1180135092669" targetNodeId="tpdg.1182819125053" resolveInfo="ConceptRightTransformPart" />
-      </node>
-      <node role="part" roleId="tpdg.1177324142645" type="tpdg.ConceptSubstitutePart" typeId="tpdg.1180134965967" id="1197454842467">
-        <link role="concept" roleId="tpdg.1180135092669" targetNodeId="tpdg.1197454626277" resolveInfo="RemoveSTByConditionPart" />
-      </node>
-    </node>
-  </root>
   <root id="1196932695369">
     <node role="actionsBuilder" roleId="tpdg.1112058057696" type="tpdg.NodeSubstituteActionsBuilder" typeId="tpdg.1112058030570" id="1196932700432">
       <link role="applicableConcept" roleId="tpdg.1112058088712" targetNodeId="tpdg.1196434661488" resolveInfo="ISubstitute_String" />

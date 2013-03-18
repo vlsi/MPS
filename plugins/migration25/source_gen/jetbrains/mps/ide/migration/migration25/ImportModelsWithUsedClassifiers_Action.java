@@ -19,7 +19,7 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import java.util.Set;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -78,7 +78,7 @@ public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
             continue;
           }
 
-          SModel model = modelDescriptor.getSModel();
+          SModel model = modelDescriptor;
           Set<SModelReference> dependencies = SetSequence.fromSet(new HashSet<SModelReference>());
           for (SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
             SNode nodeToImport = ImportModelsWithUsedClassifiers_Action.this.getNodeToImport(node, _params);

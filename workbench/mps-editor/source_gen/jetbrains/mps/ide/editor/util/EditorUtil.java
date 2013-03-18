@@ -5,7 +5,7 @@ package jetbrains.mps.ide.editor.util;
 import javax.swing.JComponent;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.util.MacrosFactory;
 import org.jetbrains.annotations.NotNull;
@@ -47,15 +47,15 @@ public class EditorUtil {
 
 
   public static JComponent createSelectIconButton(final SNode sourceNode, final String propertyName, final EditorContext context, boolean copy) {
-    final IModule module = sourceNode.getModel().getModelDescriptor().getModule();
+    final AbstractModule module = (AbstractModule) sourceNode.getModel().getModule();
 
     return createSelectButton(sourceNode, propertyName, context, true, new _FunctionTypes._return_P1_E0<String, String>() {
       public String invoke(String fullPath) {
-        return check_3m4h3r_a0a4a2a6(MacrosFactory.forModuleFile(module.getDescriptorFile()), fullPath);
+        return check_3m4h3r_a0a4a2a6(MacrosFactory.forModule(module), fullPath);
       }
     }, new _FunctionTypes._return_P1_E0<String, String>() {
       public String invoke(String shortPath) {
-        return check_3m4h3r_a0a5a2a6(MacrosFactory.forModuleFile(module.getDescriptorFile()), shortPath);
+        return check_3m4h3r_a0a5a2a6(MacrosFactory.forModule(module), shortPath);
       }
     }, copy);
   }
@@ -98,13 +98,13 @@ public class EditorUtil {
         if (copy) {
           ModelAccess.instance().requireWrite(new Runnable() {
             public void run() {
-              SModel model = sourceNode.getModel().getModelDescriptor();
+              SModel model = sourceNode.getModel();
               String outputRoot = model.getModule().getBundleHome().getPath() + File.separator + "icons";
               IFile outputRootFile = FileSystem.getInstance().getFileByPath(outputRoot);
               // <node> 
 
               // copy 
-              String source = MacrosFactory.forModuleFile(model.getModule().getDescriptorFile()).expandPath(result.value.getPath());
+              String source = MacrosFactory.forModule((AbstractModule) model.getModule()).expandPath(result.value.getPath());
               IFile sourceFile = FileSystem.getInstance().getFileByPath(source);
 
               IFileUtils.copyFileContent(sourceFile, outputRootFile.getDescendant(sourceFile.getName()));

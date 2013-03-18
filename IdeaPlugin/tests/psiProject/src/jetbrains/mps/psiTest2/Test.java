@@ -13,5 +13,4 @@ public class Test {
     // Using a class from another model/package requires ShortNameCache
     ConcreteNode cn = new ConcreteNode();
 
-
 }

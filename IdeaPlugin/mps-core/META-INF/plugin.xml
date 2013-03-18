@@ -61,6 +61,9 @@
     <component>
       <implementation-class>jetbrains.mps.idea.core.paths.PluginPathMacroInstaller</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.library.contributor.PluginLibrariesContributor</implementation-class>
+    </component>
   </application-components>
 
   <xi:include href="../../../workbench/mps-platform/source/META-INF/MPSCore.xml" xpointer="xpointer(/components/*)"/>
@@ -109,7 +112,7 @@
     <mps.LanguageLibrary dir="/languages"/>
     <mps.LanguageLibrary dir="/lib"/>
     <mps.psiSourceFinder implementation="jetbrains.mps.idea.core.psi.impl.ClassStubPsiMapper"/>
-    <!-- <customUsageSearcher implementation="jetbrains.mps.idea.core.usages.MPSUsageSearcher"/> -->
+    <customUsageSearcher implementation="jetbrains.mps.idea.core.usages.MPSUsageSearcher"/>
     <treeStructureProvider implementation="jetbrains.mps.idea.core.projectView.MPSTreeStructureProvider"/>
     <usageGroupingRuleProvider implementation="jetbrains.mps.idea.core.usages.rules.MPSUsageGroupingRuleProviderImpl" />
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
@@ -119,9 +122,10 @@
     <library.type implementation="jetbrains.mps.idea.core.library.ModuleLibraryType"/>
     <projectConfigurable instance="jetbrains.mps.idea.core.codeStyle.MpsCodeStyleSettingsConfigurable" order="after colors"/>
     <lang.fileViewProviderFactory language="MPS"
-                                  implementationClass="jetbrains.mps.idea.core.psi.MPSFileViewProviderFactory"/>
-    <navbar implementation="jetbrains.mps.idea.core.psi.MPSNavBarExtension" id="MPSNavbar"/>
+                                  implementationClass="jetbrains.mps.idea.core.psi.impl.file.MPSFileViewProviderFactory"/>
+    <navbar implementation="jetbrains.mps.idea.core.navbar.MPSNavBarExtension" id="MPSNavbar"/>
     <lang.parserDefinition language="MPS" implementationClass="jetbrains.mps.idea.core.fileType.MPSParserDefinition"/>
+    <iconLayerProvider implementation="jetbrains.mps.idea.core.psi.impl.ModelFileIconLayerProvider"/>
   </extensions>
 
   <actions>

@@ -20,6 +20,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiElement;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
 /**
  * danilla 2/25/13
@@ -49,7 +50,17 @@ public class MPS2PsiMapperUtil {
     return null;
   }
 
-
+  @Nullable
+  public static SNodeId getNodeId(PsiElement element, String newName) {
+    for (MPS2PsiMapper mapper : MPS2PsiMapper.EP_NAME.getExtensions()) {
+      if (!mapper.canComputeNodeId(element)) continue;
+      SNodeId nodeId = mapper.computeNodeId(element, newName);
+      if (nodeId != null) {
+        return nodeId;
+      }
+    }
+    return null;
+  }
 
 
 }

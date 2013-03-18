@@ -87,7 +87,7 @@ public class MoveNodes_Action extends BaseAction {
 
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          targetModelDescriptor.value = SNodeOperations.getModel(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("target"))).first()).getModelDescriptor();
+          targetModelDescriptor.value = SNodeOperations.getModel(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("target"))).first());
         }
       });
       final Object newLocation = MoveNodesDialog.getSelectedObject(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), targetModelDescriptor.value, new MoveNodesDialog.ModelFilter("Choose Node or Model") {

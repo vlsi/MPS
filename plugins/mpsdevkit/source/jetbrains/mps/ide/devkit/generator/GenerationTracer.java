@@ -22,7 +22,7 @@ import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -325,7 +325,7 @@ public class GenerationTracer implements IGenerationTracer {
     if (reference == null) return null;
     SModel descriptor = SModelRepository.getInstance().getModelDescriptor(reference);
     if (descriptor == null) return null;
-    SModel outputModel = descriptor.getSModel();
+    SModel outputModel = descriptor;
     SNode inputNode = node;
     SNode outputNode = null;
     while (inputNode != null) {
@@ -390,7 +390,7 @@ public class GenerationTracer implements IGenerationTracer {
     if (reference == null) return null;
     SModel descriptor = SModelRepository.getInstance().getModelDescriptor(reference);
     if (descriptor == null) return null;
-    SModel inputModel = descriptor.getSModel();
+    SModel inputModel = descriptor;
     SNode outputNode = node;
     SNode inputNode = null;
     while (outputNode != null) {
@@ -568,7 +568,7 @@ public class GenerationTracer implements IGenerationTracer {
     public SModelReference getOutputForInput(SModel model) {
       int i = myInputModels.indexOf(model.getReference().toString());
       if (i >= 0) {
-        return SModelReference.fromString(myOutputModels.get(i));
+        return jetbrains.mps.smodel.SModelReference.fromString(myOutputModels.get(i));
       }
       return null;
     }
@@ -576,7 +576,7 @@ public class GenerationTracer implements IGenerationTracer {
     public SModelReference getInputForOutput(SModel model) {
       int i = myOutputModels.indexOf(model.getReference().toString());
       if (i >= 0) {
-        return SModelReference.fromString(myInputModels.get(i));
+        return jetbrains.mps.smodel.SModelReference.fromString(myInputModels.get(i));
       }
       return null;
     }

@@ -19,7 +19,7 @@ import gnu.trove.THashSet;
 import jetbrains.mps.lang.typesystem.runtime.*;
 import jetbrains.mps.lang.typesystem.runtime.AbstractDependentComputation_Runtime.DependentComputationWrapper;
 import jetbrains.mps.logging.Logger;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.CollectionUtil;
@@ -134,6 +134,27 @@ public class RulesManager {
       success = false;
     }
     return success;
+  }
+
+  public boolean unloadLanguages(Iterable<LanguageRuntime> languages) {
+    ModelAccess.assertLegalWrite();
+
+    // for now: load languages except unloaded languages
+    Set<String> toLoad = new HashSet<String>();
+    toLoad.addAll(myLoadedLanguages);
+    for (LanguageRuntime runtime : languages) {
+      toLoad.remove(runtime.getNamespace());
+    }
+
+    // unload all languages
+    clear();
+
+    // load
+    Set<LanguageRuntime> toLoadRuntimes = new HashSet<LanguageRuntime>();
+    for (String language : toLoad) {
+      toLoadRuntimes.add(LanguageRegistry.getInstance().getLanguage(language));
+    }
+    return loadLanguages(toLoadRuntimes);
   }
 
   public IVariableConverter_Runtime getVariableConverter(SNode context, String role, SNode variable, boolean isAggregation) {

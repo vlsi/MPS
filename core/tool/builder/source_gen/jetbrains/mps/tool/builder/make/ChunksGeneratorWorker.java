@@ -16,7 +16,7 @@ import java.util.LinkedHashSet;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Collections;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.tool.builder.Environment;
 import jetbrains.mps.tool.common.util.UrlClassLoader;

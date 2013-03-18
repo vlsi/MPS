@@ -10,7 +10,7 @@ import java.util.HashMap;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.generator.TransientSModel;
+import jetbrains.mps.generator.TransientModelsModule;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
@@ -32,7 +32,7 @@ public class VisibleModules {
   public VisibleModules(SNode project, @Nullable TemplateQueryContext genContext) {
     this.project = project;
     this.genContext = genContext;
-    if (genContext == null && SNodeOperations.getModel(project) instanceof TransientSModel) {
+    if (genContext == null && SNodeOperations.getModel(project).getModule() instanceof TransientModelsModule) {
       throw new IllegalArgumentException("cannot instantiate VisibleModules for transient model without generation context");
     }
   }

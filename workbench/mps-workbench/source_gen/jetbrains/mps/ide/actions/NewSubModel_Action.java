@@ -7,18 +7,19 @@ import javax.swing.Icon;
 import jetbrains.mps.icons.MPSIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.logging.Logger;
 
@@ -37,6 +38,10 @@ public class NewSubModel_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(((IModule) MapSequence.fromMap(_params).get("module")) instanceof AbstractModule)) {
+      return false;
+    }
+
     boolean correctStereotype = false;
     String stereotype = SModelStereotype.getStereotype(((SModel) MapSequence.fromMap(_params).get("model")));
     for (String availableStereotype : SModelStereotype.values) {
@@ -76,21 +81,21 @@ public class NewSubModel_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.MODULE));
+    if (MapSequence.fromMap(_params).get("module") == null) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._T<NewModelDialog> dialog = new Wrappers._T<NewModelDialog>();
-      final IModule localModule = (((IOperationContext) MapSequence.fromMap(_params).get("context")).getModule() != null ?
-        ((IOperationContext) MapSequence.fromMap(_params).get("context")).getModule() :
-        ((SModel) MapSequence.fromMap(_params).get("model")).getModule()
-      );
       final String namespace = SNodeOperations.getModelLongName(((SModel) MapSequence.fromMap(_params).get("model")));
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           String stereotype = SModelStereotype.getStereotype(((SModel) MapSequence.fromMap(_params).get("model")));
-          dialog.value = new NewModelDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), localModule, namespace, ((IOperationContext) MapSequence.fromMap(_params).get("context")), stereotype, true);
+          dialog.value = new NewModelDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), ((AbstractModule) ((IModule) MapSequence.fromMap(_params).get("module"))), namespace, ((IOperationContext) MapSequence.fromMap(_params).get("context")), stereotype, true);
         }
       });
       dialog.value.show();

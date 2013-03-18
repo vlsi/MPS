@@ -8,11 +8,11 @@ import java.util.ArrayList;
 import jetbrains.mps.tool.common.Script;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import java.util.Set;
 import java.io.File;
 import jetbrains.mps.project.MPSExtentions;
@@ -38,7 +38,7 @@ import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import org.apache.log4j.Level;
@@ -123,7 +123,6 @@ public abstract class MpsWorker {
     ModelAccess.instance().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        ClassLoaderManager.getInstance().updateClassPath();
         ModuleMaker maker = new ModuleMaker();
         maker.make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), new EmptyProgressMonitor());
       }
@@ -287,9 +286,9 @@ public abstract class MpsWorker {
       SModelHeader dr = ModelPersistence.loadDescriptor(new FileDataSource(ifile));
       SModelReference modelReference;
       if (dr.getUID() != null) {
-        modelReference = SModelReference.fromString(dr.getUID());
+        modelReference = jetbrains.mps.smodel.SModelReference.fromString(dr.getUID());
       } else {
-        modelReference = SModelReference.fromPath(ifile.getPath());
+        modelReference = jetbrains.mps.smodel.SModelReference.fromPath(ifile.getPath());
       }
       info("Read model " + modelReference);
       SModelHeader d = ModelPersistence.loadDescriptor(new FileDataSource(ifile));

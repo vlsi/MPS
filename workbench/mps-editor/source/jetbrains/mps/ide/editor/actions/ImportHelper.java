@@ -24,8 +24,8 @@ import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import jetbrains.mps.classloading.ClassLoaderManager;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
@@ -41,7 +41,7 @@ import jetbrains.mps.workbench.choose.modules.BaseLanguageModel;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.persistence.indexing.NodeDescriptor;
+import org.jetbrains.mps.openapi.persistence.NavigationParticipant.NavigationTarget;
 
 import javax.swing.*;
 import java.awt.*;
@@ -168,7 +168,7 @@ public class ImportHelper {
           langs.remove(ModuleRepositoryFacade.getInstance().getModule(BootstrapLanguages.CORE, Language.class));
 
           for (Language l : langs) {
-            Collection<ModuleReference> impLangs = ((jetbrains.mps.smodel.SModel) myModel.getSModel()).getModelDepsManager().getAllImportedLanguages();
+            Collection<ModuleReference> impLangs = ((jetbrains.mps.smodel.SModelInternal) myModel).getModelDepsManager().getAllImportedLanguages();
             if (impLangs.contains(l.getModuleReference())) continue;
             importCandidates.add(l.getModuleReference());
           }
@@ -195,7 +195,7 @@ public class ImportHelper {
               myContextModule.addUsedLanguage((ModuleReference) ref);
               reload = true;
             }
-            ((jetbrains.mps.smodel.SModel) myModel.getSModel()).addLanguage((ModuleReference) ref);
+            ((jetbrains.mps.smodel.SModelInternal) myModel).addLanguage((ModuleReference) ref);
           }
           if (reload) {
             ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
@@ -216,7 +216,7 @@ public class ImportHelper {
                       String initialText, @Nullable BaseAction parentAction, final ModelImportByRootCallback callback) {
     BaseMPSChooseModel goToNodeModel = new RootChooseModel(project, new RootNodeNameIndex()) {
       @Override
-      public NavigationItem doGetNavigationItem(final NodeDescriptor object) {
+      public NavigationItem doGetNavigationItem(final NavigationTarget object) {
         return new RootNodeElement(object) {
           @Override
           public void navigate(boolean requestFocus) {
@@ -286,7 +286,7 @@ public class ImportHelper {
 
       if (moduleToImport != null) {
         int res = JOptionPane.showConfirmDialog(getFrame(),
-          "<html>Model <b>" + getModelReference().getSModelFqName() + "</b> is owned by module <b>" + moduleToImport.getModuleFqName() + "</b> which is not imported.</html>\n\n" +
+          "<html>Model <b>" + getModelReference().getModelName() + "</b> is owned by module <b>" + moduleToImport.getModuleFqName() + "</b> which is not imported.</html>\n\n" +
 
             "Importing the module will take some time.\n" +
             "Do you want to automatically import the module?",
@@ -305,7 +305,7 @@ public class ImportHelper {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         @Override
         public void run() {
-          ((jetbrains.mps.smodel.SModel) myModel.getSModel()).addModelImport(getModelReference(), false);
+          ((jetbrains.mps.smodel.SModelInternal) myModel).addModelImport(getModelReference(), false);
         }
       });
     }

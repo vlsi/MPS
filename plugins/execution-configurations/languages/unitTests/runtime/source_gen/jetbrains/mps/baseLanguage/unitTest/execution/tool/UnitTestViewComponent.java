@@ -213,7 +213,7 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     final Wrappers._T<Language> lang = new Wrappers._T<Language>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        lang.value = Language.getLanguageFor(SNodeOperations.getModel(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")).getModelDescriptor());
+        lang.value = Language.getLanguageFor(SNodeOperations.getModel(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")));
       }
     });
     return lang.value;

@@ -44,7 +44,7 @@ import java.util.List;
     for (SNode concept : getConcepts()) {
       //  http://youtrack.jetbrains.net/issue/MPS-8362 
       //  http://youtrack.jetbrains.net/issue/MPS-8556 
-      SModel descriptor = concept.getModel().getModelDescriptor();
+      SModel descriptor = concept.getModel();
       if (descriptor == null) {
         LOG.error(getAssertionMessage(element, concept));
       } else {

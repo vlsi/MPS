@@ -17,7 +17,7 @@ package jetbrains.mps.typesystem.inference;
 
 import jetbrains.mps.errors.QuickFixProvider;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNodeId;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -141,11 +141,11 @@ public class EquationInfo {
   }
 
   public SNode findRuleNode() {
-    SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(myRuleModel));
+    SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(jetbrains.mps.smodel.SModelReference.fromString(myRuleModel));
     if (modelDescriptor == null) return null;
     SNodeId nodeId = SNodeId.fromString(myRuleId);
     assert nodeId != null : "wrong node id string";
-    return modelDescriptor.getSModel().getNode(nodeId);
+    return modelDescriptor.getNode(nodeId);
   }
 
   boolean isStrong() {

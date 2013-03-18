@@ -31,7 +31,6 @@
     <orderEntry type="module" module-name="ant-mps-common" scope="PROVIDED" />
     <orderEntry type="module" module-name="baseLanguage-search" scope="PROVIDED" />
     <orderEntry type="module" module-name="baseLanguage-util" scope="PROVIDED" />
-    <orderEntry type="module" module-name="build-deprecated" scope="PROVIDED" />
     <orderEntry type="module" module-name="Closures-runtime" scope="PROVIDED" />
     <orderEntry type="module" module-name="collections-runtime" scope="PROVIDED" />
     <orderEntry type="module" module-name="debugger-api-api" scope="PROVIDED" />
@@ -77,7 +76,6 @@
     <orderEntry type="module" module-name="refactoring-runtime" scope="PROVIDED" />
     <orderEntry type="module" module-name="resources" scope="PROVIDED" />
     <orderEntry type="module" module-name="resources_en" scope="PROVIDED" />
-    <orderEntry type="module" module-name="runtime" scope="PROVIDED" />
     <orderEntry type="module" module-name="samples" scope="PROVIDED" />
     <orderEntry type="module" module-name="testbench" scope="PROVIDED" />
     <orderEntry type="module" module-name="Tuples-runtime" scope="PROVIDED" />
@@ -88,6 +86,7 @@
     <orderEntry type="module" module-name="uiTests" scope="PROVIDED" />
     <orderEntry type="module" module-name="vcs" scope="PROVIDED" />
     <orderEntry type="module" module-name="vcs-core" scope="PROVIDED" />
+    <orderEntry type="module" module-name="make-facets" scope="PROVIDED" />
   </component>
 </module>
 

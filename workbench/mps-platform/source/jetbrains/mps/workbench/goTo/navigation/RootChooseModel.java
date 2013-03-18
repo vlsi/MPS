@@ -21,6 +21,7 @@ import jetbrains.mps.FilteredGlobalScope;
 import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.FilteredScope;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
@@ -34,11 +35,12 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import org.jetbrains.mps.openapi.persistence.indexing.NodeDescriptor;
+import org.jetbrains.mps.openapi.persistence.NavigationParticipant.NavigationTarget;
+import org.jetbrains.mps.openapi.persistence.NavigationParticipant.TargetKind;
 
 import java.util.Collection;
 
-public class RootChooseModel extends BaseMPSChooseModel<NodeDescriptor> {
+public class RootChooseModel extends BaseMPSChooseModel<NavigationTarget> {
   public RootNodeNameIndex myIndex;
 
   public RootChooseModel(Project project, RootNodeNameIndex index) {
@@ -47,20 +49,20 @@ public class RootChooseModel extends BaseMPSChooseModel<NodeDescriptor> {
   }
 
   @Override
-  public NodeDescriptor[] find(boolean checkboxState) {
+  public NavigationTarget[] find(boolean checkboxState) {
     if (checkboxState) return find(new FilteredGlobalScope());
     MPSProject project = getProject().getComponent(MPSProject.class);
     return find(new FilterStubsScope(new ModulesScope(project.getModulesWithGenerators())));
   }
 
   @Override
-  public NodeDescriptor[] find(final IScope scope) {
-    Collection<NodeDescriptor> nodes = GotoNavigationUtil.getNodeElements(scope.getModelDescriptors(), ProjectHelper.toMPSProject(getProject()));
-    return nodes.toArray(new NodeDescriptor[nodes.size()]);
+  public NavigationTarget[] find(final IScope scope) {
+    Collection<NavigationTarget> nodes = GotoNavigationUtil.getNavigationTargets(TargetKind.ROOT, scope, new EmptyProgressMonitor());
+    return nodes.toArray(new NavigationTarget[nodes.size()]);
   }
 
   @Override
-  public NavigationItem doGetNavigationItem(final NodeDescriptor object) {
+  public NavigationItem doGetNavigationItem(final NavigationTarget object) {
     return new RootNodeElement(object) {
       private Project myProject = getProject();
 
@@ -84,8 +86,8 @@ public class RootChooseModel extends BaseMPSChooseModel<NodeDescriptor> {
   }
 
   @Override
-  public String doGetObjectName(NodeDescriptor object) {
-    return object.getName();
+  public String doGetObjectName(NavigationTarget object) {
+    return object.getPresentation();
   }
 
   @Override

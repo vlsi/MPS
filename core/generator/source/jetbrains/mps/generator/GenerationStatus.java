@@ -62,11 +62,11 @@ public class GenerationStatus extends Status {
 
   @Nullable
   public SModel getOutputModel() {
-    return myOutputModel != null ? myOutputModel.getSModel() : null;
+    return myOutputModel != null ? myOutputModel : null;
   }
 
   public SModel getInputModel() {
-    return myInputModel != null ? myInputModel.getSModel() : null;
+    return myInputModel != null ? myInputModel : null;
   }
 
   public SModel getOutputModelDescriptor () {

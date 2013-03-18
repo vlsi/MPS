@@ -58,6 +58,8 @@ public interface SModule {
    */
   SRepository getRepository();
 
+  boolean isInRepository();
+
   void setRepository(SRepository repo);
 
   /**

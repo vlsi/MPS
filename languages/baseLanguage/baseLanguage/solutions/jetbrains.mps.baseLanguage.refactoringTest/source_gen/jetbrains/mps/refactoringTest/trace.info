@@ -611,38 +611,40 @@
     <unitInfo nodeId="1230052684686" fileName="staticContainerClassTest_Test.java" startLine="21" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.refactoringTest.staticContainerClassTest_Test" />
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)/1230052902925">
-    <nodeInfo nodeId="1230052902925" fileName="AddThrowDeclaration_Test.java" startLine="27" startPosition="59" endLine="28" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052902925" fileName="AddThrowDeclaration_Test.java" startLine="28" startPosition="114" endLine="29" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052902944" fileName="AddThrowDeclaration_Test.java" startLine="34" startPosition="61" endLine="35" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052902944" fileName="AddThrowDeclaration_Test.java" startLine="35" startPosition="40" endLine="36" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052902947" fileName="AddThrowDeclaration_Test.java" startLine="36" startPosition="40" endLine="37" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1230052902953" fileName="AddThrowDeclaration_Test.java" startLine="37" startPosition="206" endLine="38" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052902963" fileName="AddThrowDeclaration_Test.java" startLine="38" startPosition="151" endLine="39" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1230052902970" fileName="AddThrowDeclaration_Test.java" startLine="39" startPosition="213" endLine="40" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052902974" fileName="AddThrowDeclaration_Test.java" startLine="40" startPosition="26" endLine="41" endPosition="387" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052902961" fileName="AddThrowDeclaration_Test.java" startLine="44" startPosition="64" endLine="45" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1230052902925" fileName="AddThrowDeclaration_Test.java" startLine="26" startPosition="59" endLine="27" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1230052902925" fileName="AddThrowDeclaration_Test.java" startLine="27" startPosition="114" endLine="28" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1230052902944" fileName="AddThrowDeclaration_Test.java" startLine="33" startPosition="61" endLine="34" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1230052902944" fileName="AddThrowDeclaration_Test.java" startLine="34" startPosition="40" endLine="35" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1230052902947" fileName="AddThrowDeclaration_Test.java" startLine="35" startPosition="40" endLine="36" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1230052902953" fileName="AddThrowDeclaration_Test.java" startLine="36" startPosition="206" endLine="37" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1230052902963" fileName="AddThrowDeclaration_Test.java" startLine="37" startPosition="151" endLine="38" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1230052902970" fileName="AddThrowDeclaration_Test.java" startLine="38" startPosition="213" endLine="39" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1230052902974" fileName="AddThrowDeclaration_Test.java" startLine="39" startPosition="26" endLine="40" endPosition="387" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1230052902961" fileName="AddThrowDeclaration_Test.java" startLine="43" startPosition="64" endLine="44" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1230052902961" fileName="AddThrowDeclaration_Test.java" startLine="44" startPosition="65" endLine="45" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1230052902961" fileName="AddThrowDeclaration_Test.java" startLine="45" startPosition="32" endLine="46" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052902961" fileName="AddThrowDeclaration_Test.java" startLine="46" startPosition="167" endLine="47" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052902961" fileName="AddThrowDeclaration_Test.java" startLine="47" startPosition="253" endLine="48" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1230052902961" fileName="AddThrowDeclaration_Test.java" startLine="45" startPosition="32" endLine="47" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1230052902961" fileName="AddThrowDeclaration_Test.java" startLine="45" startPosition="32" endLine="47" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1230052902925" fileName="AddThrowDeclaration_Test.java" startLine="26" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddThrowDeclaration#()V" />
-    <nodeInfo nodeId="1230052902961" fileName="AddThrowDeclaration_Test.java" startLine="44" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_imjg6i_a0a1a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1230052902944" fileName="AddThrowDeclaration_Test.java" startLine="34" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddThrowDeclaration#()V" />
-    <scopeInfo nodeId="1230052902925" fileName="AddThrowDeclaration_Test.java" startLine="27" startPosition="59" endLine="29" endPosition="118" />
-    <scopeInfo nodeId="1230052902961" fileName="AddThrowDeclaration_Test.java" startLine="45" startPosition="32" endLine="47" endPosition="253" />
-    <scopeInfo nodeId="1230052902961" fileName="AddThrowDeclaration_Test.java" startLine="44" startPosition="64" endLine="48" endPosition="26">
+    <nodeInfo nodeId="1230052902961" fileName="AddThrowDeclaration_Test.java" startLine="46" startPosition="167" endLine="47" endPosition="255" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1230052902961" fileName="AddThrowDeclaration_Test.java" startLine="47" startPosition="255" endLine="48" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1230052902961" fileName="AddThrowDeclaration_Test.java" startLine="45" startPosition="32" endLine="47" endPosition="255" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1230052902961" fileName="AddThrowDeclaration_Test.java" startLine="45" startPosition="32" endLine="47" endPosition="255" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1230052902925" fileName="AddThrowDeclaration_Test.java" startLine="25" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddThrowDeclaration#()V" />
+    <nodeInfo nodeId="1230052902961" fileName="AddThrowDeclaration_Test.java" startLine="43" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_imjg6i_a0a1a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1230052902944" fileName="AddThrowDeclaration_Test.java" startLine="33" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddThrowDeclaration#()V" />
+    <scopeInfo nodeId="1230052902925" fileName="AddThrowDeclaration_Test.java" startLine="26" startPosition="59" endLine="28" endPosition="118" />
+    <scopeInfo nodeId="1230052902961" fileName="AddThrowDeclaration_Test.java" startLine="45" startPosition="32" endLine="47" endPosition="255" />
+    <scopeInfo nodeId="1230052902925" fileName="AddThrowDeclaration_Test.java" startLine="25" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="1230052902961" fileName="AddThrowDeclaration_Test.java" startLine="43" startPosition="64" endLine="48" endPosition="26">
+      <varInfo nodeId="1230052902961" varName="facade" />
       <varInfo nodeId="1230052902961" varName="quotedNode_1" />
     </scopeInfo>
-    <scopeInfo nodeId="1230052902925" fileName="AddThrowDeclaration_Test.java" startLine="26" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="1230052902961" fileName="AddThrowDeclaration_Test.java" startLine="44" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="1230052902944" fileName="AddThrowDeclaration_Test.java" startLine="34" startPosition="61" endLine="41" endPosition="387">
+    <scopeInfo nodeId="1230052902944" fileName="AddThrowDeclaration_Test.java" startLine="33" startPosition="61" endLine="40" endPosition="387">
       <varInfo nodeId="1230052902948" varName="params" />
       <varInfo nodeId="1230052902964" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="1230052902944" fileName="AddThrowDeclaration_Test.java" startLine="34" startPosition="0" endLine="43" endPosition="0" />
-    <unitInfo nodeId="1230052902925" fileName="AddThrowDeclaration_Test.java" startLine="32" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.refactoringTest.AddThrowDeclaration_Test$TestBody" />
-    <unitInfo nodeId="1230052902925" fileName="AddThrowDeclaration_Test.java" startLine="24" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.refactoringTest.AddThrowDeclaration_Test" />
+    <scopeInfo nodeId="1230052902961" fileName="AddThrowDeclaration_Test.java" startLine="43" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="1230052902944" fileName="AddThrowDeclaration_Test.java" startLine="33" startPosition="0" endLine="42" endPosition="0" />
+    <unitInfo nodeId="1230052902925" fileName="AddThrowDeclaration_Test.java" startLine="31" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.refactoringTest.AddThrowDeclaration_Test$TestBody" />
+    <unitInfo nodeId="1230052902925" fileName="AddThrowDeclaration_Test.java" startLine="23" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.refactoringTest.AddThrowDeclaration_Test" />
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)/1230052902977">
     <nodeInfo nodeId="1230052902977" fileName="ChangeMethodName_Test.java" startLine="22" startPosition="56" endLine="23" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -722,45 +724,47 @@
     <unitInfo nodeId="1230052903078" fileName="ChangeSignatureOfStaticMethod_Test.java" startLine="20" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.refactoringTest.ChangeSignatureOfStaticMethod_Test" />
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)/1230052943763">
-    <nodeInfo nodeId="1230052943763" fileName="AddParameter_Test.java" startLine="25" startPosition="52" endLine="26" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052943763" fileName="AddParameter_Test.java" startLine="26" startPosition="114" endLine="27" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052943783" fileName="AddParameter_Test.java" startLine="32" startPosition="54" endLine="33" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052943783" fileName="AddParameter_Test.java" startLine="33" startPosition="40" endLine="34" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052943786" fileName="AddParameter_Test.java" startLine="34" startPosition="40" endLine="35" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1230052943792" fileName="AddParameter_Test.java" startLine="35" startPosition="206" endLine="36" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052943803" fileName="AddParameter_Test.java" startLine="36" startPosition="150" endLine="37" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1230052943810" fileName="AddParameter_Test.java" startLine="37" startPosition="213" endLine="38" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052943814" fileName="AddParameter_Test.java" startLine="38" startPosition="26" endLine="39" endPosition="387" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052943800" fileName="AddParameter_Test.java" startLine="42" startPosition="64" endLine="43" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1230052943800" fileName="AddParameter_Test.java" startLine="43" startPosition="32" endLine="44" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1230052943800" fileName="AddParameter_Test.java" startLine="44" startPosition="32" endLine="45" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052943800" fileName="AddParameter_Test.java" startLine="45" startPosition="173" endLine="46" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052943800" fileName="AddParameter_Test.java" startLine="46" startPosition="61" endLine="47" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052943800" fileName="AddParameter_Test.java" startLine="47" startPosition="161" endLine="48" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052943800" fileName="AddParameter_Test.java" startLine="48" startPosition="50" endLine="49" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1230052943800" fileName="AddParameter_Test.java" startLine="46" startPosition="61" endLine="48" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1230052943800" fileName="AddParameter_Test.java" startLine="46" startPosition="61" endLine="48" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1230052943800" fileName="AddParameter_Test.java" startLine="44" startPosition="32" endLine="48" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1230052943800" fileName="AddParameter_Test.java" startLine="44" startPosition="32" endLine="48" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1230052943763" fileName="AddParameter_Test.java" startLine="24" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddParameter#()V" />
-    <nodeInfo nodeId="1230052943783" fileName="AddParameter_Test.java" startLine="32" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddParameter#()V" />
-    <nodeInfo nodeId="1230052943800" fileName="AddParameter_Test.java" startLine="42" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_gdokd0_a0a1a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="1230052943763" fileName="AddParameter_Test.java" startLine="25" startPosition="52" endLine="27" endPosition="104" />
-    <scopeInfo nodeId="1230052943800" fileName="AddParameter_Test.java" startLine="46" startPosition="61" endLine="48" endPosition="50" />
-    <scopeInfo nodeId="1230052943800" fileName="AddParameter_Test.java" startLine="44" startPosition="32" endLine="48" endPosition="50" />
-    <scopeInfo nodeId="1230052943763" fileName="AddParameter_Test.java" startLine="24" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1230052943783" fileName="AddParameter_Test.java" startLine="32" startPosition="54" endLine="39" endPosition="387">
+    <nodeInfo nodeId="1230052943763" fileName="AddParameter_Test.java" startLine="26" startPosition="52" endLine="27" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1230052943763" fileName="AddParameter_Test.java" startLine="27" startPosition="114" endLine="28" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1230052943783" fileName="AddParameter_Test.java" startLine="33" startPosition="54" endLine="34" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1230052943783" fileName="AddParameter_Test.java" startLine="34" startPosition="40" endLine="35" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1230052943786" fileName="AddParameter_Test.java" startLine="35" startPosition="40" endLine="36" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1230052943792" fileName="AddParameter_Test.java" startLine="36" startPosition="206" endLine="37" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1230052943803" fileName="AddParameter_Test.java" startLine="37" startPosition="150" endLine="38" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1230052943810" fileName="AddParameter_Test.java" startLine="38" startPosition="213" endLine="39" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1230052943814" fileName="AddParameter_Test.java" startLine="39" startPosition="26" endLine="40" endPosition="387" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1230052943800" fileName="AddParameter_Test.java" startLine="43" startPosition="64" endLine="44" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1230052943800" fileName="AddParameter_Test.java" startLine="44" startPosition="65" endLine="45" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1230052943800" fileName="AddParameter_Test.java" startLine="45" startPosition="32" endLine="46" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1230052943800" fileName="AddParameter_Test.java" startLine="46" startPosition="32" endLine="47" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1230052943800" fileName="AddParameter_Test.java" startLine="47" startPosition="173" endLine="48" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1230052943800" fileName="AddParameter_Test.java" startLine="48" startPosition="61" endLine="49" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1230052943800" fileName="AddParameter_Test.java" startLine="49" startPosition="161" endLine="50" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1230052943800" fileName="AddParameter_Test.java" startLine="50" startPosition="50" endLine="51" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1230052943800" fileName="AddParameter_Test.java" startLine="48" startPosition="61" endLine="50" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1230052943800" fileName="AddParameter_Test.java" startLine="48" startPosition="61" endLine="50" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1230052943800" fileName="AddParameter_Test.java" startLine="46" startPosition="32" endLine="50" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1230052943800" fileName="AddParameter_Test.java" startLine="46" startPosition="32" endLine="50" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1230052943763" fileName="AddParameter_Test.java" startLine="25" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddParameter#()V" />
+    <nodeInfo nodeId="1230052943783" fileName="AddParameter_Test.java" startLine="33" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddParameter#()V" />
+    <nodeInfo nodeId="1230052943800" fileName="AddParameter_Test.java" startLine="43" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_gdokd0_a0a1a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="1230052943763" fileName="AddParameter_Test.java" startLine="26" startPosition="52" endLine="28" endPosition="104" />
+    <scopeInfo nodeId="1230052943800" fileName="AddParameter_Test.java" startLine="48" startPosition="61" endLine="50" endPosition="50" />
+    <scopeInfo nodeId="1230052943800" fileName="AddParameter_Test.java" startLine="46" startPosition="32" endLine="50" endPosition="50" />
+    <scopeInfo nodeId="1230052943763" fileName="AddParameter_Test.java" startLine="25" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="1230052943783" fileName="AddParameter_Test.java" startLine="33" startPosition="54" endLine="40" endPosition="387">
       <varInfo nodeId="1230052943787" varName="params" />
       <varInfo nodeId="1230052943804" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="1230052943800" fileName="AddParameter_Test.java" startLine="42" startPosition="64" endLine="49" endPosition="26">
+    <scopeInfo nodeId="1230052943800" fileName="AddParameter_Test.java" startLine="43" startPosition="64" endLine="51" endPosition="26">
+      <varInfo nodeId="1230052943800" varName="facade" />
       <varInfo nodeId="1230052943800" varName="quotedNode_1" />
       <varInfo nodeId="1230052943800" varName="quotedNode_2" />
     </scopeInfo>
-    <scopeInfo nodeId="1230052943783" fileName="AddParameter_Test.java" startLine="32" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="1230052943800" fileName="AddParameter_Test.java" startLine="42" startPosition="0" endLine="51" endPosition="0" />
-    <unitInfo nodeId="1230052943763" fileName="AddParameter_Test.java" startLine="30" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.refactoringTest.AddParameter_Test$TestBody" />
-    <unitInfo nodeId="1230052943763" fileName="AddParameter_Test.java" startLine="22" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.refactoringTest.AddParameter_Test" />
+    <scopeInfo nodeId="1230052943783" fileName="AddParameter_Test.java" startLine="33" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="1230052943800" fileName="AddParameter_Test.java" startLine="43" startPosition="0" endLine="53" endPosition="0" />
+    <unitInfo nodeId="1230052943763" fileName="AddParameter_Test.java" startLine="31" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.refactoringTest.AddParameter_Test$TestBody" />
+    <unitInfo nodeId="1230052943763" fileName="AddParameter_Test.java" startLine="23" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.refactoringTest.AddParameter_Test" />
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)/1230052943817">
     <nodeInfo nodeId="1230052943817" fileName="ChangeParameterName_Test.java" startLine="23" startPosition="59" endLine="24" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -785,37 +789,39 @@
     <unitInfo nodeId="1230052943817" fileName="ChangeParameterName_Test.java" startLine="20" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.refactoringTest.ChangeParameterName_Test" />
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)/1230052943883">
-    <nodeInfo nodeId="1230052943883" fileName="ChangeParameterType_Test.java" startLine="24" startPosition="59" endLine="25" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052943883" fileName="ChangeParameterType_Test.java" startLine="25" startPosition="114" endLine="26" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052943909" fileName="ChangeParameterType_Test.java" startLine="31" startPosition="61" endLine="32" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052943909" fileName="ChangeParameterType_Test.java" startLine="32" startPosition="40" endLine="33" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052943912" fileName="ChangeParameterType_Test.java" startLine="33" startPosition="40" endLine="34" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1230052943918" fileName="ChangeParameterType_Test.java" startLine="34" startPosition="206" endLine="35" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052943932" fileName="ChangeParameterType_Test.java" startLine="35" startPosition="187" endLine="36" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1230052943939" fileName="ChangeParameterType_Test.java" startLine="36" startPosition="213" endLine="37" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052943943" fileName="ChangeParameterType_Test.java" startLine="37" startPosition="26" endLine="38" endPosition="387" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052943920" fileName="ChangeParameterType_Test.java" startLine="41" startPosition="63" endLine="42" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1230052943920" fileName="ChangeParameterType_Test.java" startLine="42" startPosition="32" endLine="43" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1230052943920" fileName="ChangeParameterType_Test.java" startLine="42" startPosition="32" endLine="43" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1230052943920" fileName="ChangeParameterType_Test.java" startLine="42" startPosition="32" endLine="43" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230052943920" fileName="ChangeParameterType_Test.java" startLine="43" startPosition="163" endLine="44" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1230052943883" fileName="ChangeParameterType_Test.java" startLine="23" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ChangeParameterType#()V" />
-    <nodeInfo nodeId="1230052943920" fileName="ChangeParameterType_Test.java" startLine="41" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_iyo2tl_a0b0a#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1230052943909" fileName="ChangeParameterType_Test.java" startLine="31" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ChangeParameterType#()V" />
-    <scopeInfo nodeId="1230052943920" fileName="ChangeParameterType_Test.java" startLine="42" startPosition="32" endLine="43" endPosition="163" />
-    <scopeInfo nodeId="1230052943883" fileName="ChangeParameterType_Test.java" startLine="24" startPosition="59" endLine="26" endPosition="118" />
-    <scopeInfo nodeId="1230052943920" fileName="ChangeParameterType_Test.java" startLine="41" startPosition="63" endLine="44" endPosition="26">
+    <nodeInfo nodeId="1230052943883" fileName="ChangeParameterType_Test.java" startLine="25" startPosition="59" endLine="26" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1230052943883" fileName="ChangeParameterType_Test.java" startLine="26" startPosition="114" endLine="27" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1230052943909" fileName="ChangeParameterType_Test.java" startLine="32" startPosition="61" endLine="33" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1230052943909" fileName="ChangeParameterType_Test.java" startLine="33" startPosition="40" endLine="34" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1230052943912" fileName="ChangeParameterType_Test.java" startLine="34" startPosition="40" endLine="35" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1230052943918" fileName="ChangeParameterType_Test.java" startLine="35" startPosition="206" endLine="36" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1230052943932" fileName="ChangeParameterType_Test.java" startLine="36" startPosition="187" endLine="37" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1230052943939" fileName="ChangeParameterType_Test.java" startLine="37" startPosition="213" endLine="38" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1230052943943" fileName="ChangeParameterType_Test.java" startLine="38" startPosition="26" endLine="39" endPosition="387" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1230052943920" fileName="ChangeParameterType_Test.java" startLine="42" startPosition="63" endLine="43" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1230052943920" fileName="ChangeParameterType_Test.java" startLine="43" startPosition="65" endLine="44" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1230052943920" fileName="ChangeParameterType_Test.java" startLine="44" startPosition="32" endLine="45" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1230052943920" fileName="ChangeParameterType_Test.java" startLine="44" startPosition="32" endLine="45" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1230052943920" fileName="ChangeParameterType_Test.java" startLine="44" startPosition="32" endLine="45" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1230052943920" fileName="ChangeParameterType_Test.java" startLine="45" startPosition="163" endLine="46" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1230052943883" fileName="ChangeParameterType_Test.java" startLine="24" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ChangeParameterType#()V" />
+    <nodeInfo nodeId="1230052943920" fileName="ChangeParameterType_Test.java" startLine="42" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_iyo2tl_a0b0a#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1230052943909" fileName="ChangeParameterType_Test.java" startLine="32" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ChangeParameterType#()V" />
+    <scopeInfo nodeId="1230052943920" fileName="ChangeParameterType_Test.java" startLine="44" startPosition="32" endLine="45" endPosition="163" />
+    <scopeInfo nodeId="1230052943883" fileName="ChangeParameterType_Test.java" startLine="25" startPosition="59" endLine="27" endPosition="118" />
+    <scopeInfo nodeId="1230052943920" fileName="ChangeParameterType_Test.java" startLine="42" startPosition="63" endLine="46" endPosition="26">
+      <varInfo nodeId="1230052943920" varName="facade" />
       <varInfo nodeId="1230052943920" varName="quotedNode_1" />
     </scopeInfo>
-    <scopeInfo nodeId="1230052943883" fileName="ChangeParameterType_Test.java" startLine="23" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="1230052943920" fileName="ChangeParameterType_Test.java" startLine="41" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="1230052943909" fileName="ChangeParameterType_Test.java" startLine="31" startPosition="61" endLine="38" endPosition="387">
+    <scopeInfo nodeId="1230052943883" fileName="ChangeParameterType_Test.java" startLine="24" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="1230052943920" fileName="ChangeParameterType_Test.java" startLine="42" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="1230052943909" fileName="ChangeParameterType_Test.java" startLine="32" startPosition="61" endLine="39" endPosition="387">
       <varInfo nodeId="1230052943913" varName="params" />
       <varInfo nodeId="1230052943933" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="1230052943909" fileName="ChangeParameterType_Test.java" startLine="31" startPosition="0" endLine="40" endPosition="0" />
-    <unitInfo nodeId="1230052943883" fileName="ChangeParameterType_Test.java" startLine="29" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.refactoringTest.ChangeParameterType_Test$TestBody" />
-    <unitInfo nodeId="1230052943883" fileName="ChangeParameterType_Test.java" startLine="21" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.refactoringTest.ChangeParameterType_Test" />
+    <scopeInfo nodeId="1230052943909" fileName="ChangeParameterType_Test.java" startLine="32" startPosition="0" endLine="41" endPosition="0" />
+    <unitInfo nodeId="1230052943883" fileName="ChangeParameterType_Test.java" startLine="30" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.refactoringTest.ChangeParameterType_Test$TestBody" />
+    <unitInfo nodeId="1230052943883" fileName="ChangeParameterType_Test.java" startLine="22" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.refactoringTest.ChangeParameterType_Test" />
   </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)/1230052943946">
     <nodeInfo nodeId="1230052943946" fileName="ChangeParametersOrder_Test.java" startLine="23" startPosition="61" endLine="24" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

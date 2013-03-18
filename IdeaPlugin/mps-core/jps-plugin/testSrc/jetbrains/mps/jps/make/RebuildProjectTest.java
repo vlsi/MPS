@@ -36,11 +36,8 @@ import java.util.Map;
 import static com.intellij.openapi.util.io.FileUtil.toSystemDependentName;
 
 /**
- * Created with IntelliJ IDEA.
  * User: fyodor
  * Date: 1/11/13
- * Time: 2:06 PM
- * To change this template use File | Settings | File Templates.
  */
 public class RebuildProjectTest extends MpsJpsBuildTestCase {
 

@@ -17,15 +17,16 @@ package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.util.MacrosFactory;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.FileSystem;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.SwingUtilities;
 import java.awt.Graphics;
@@ -140,25 +141,17 @@ public class EditorCell_Image extends EditorCell_Basic {
   }
 
   private static String expandIconPath(String path, SNode sourceNode) {
-    IModule module = findAnchorModule(sourceNode.getModel());
-    return module == null ? null : MacrosFactory.forModuleFile(module.getDescriptorFile()).expandPath(path);
+    AbstractModule module = findAnchorModule(sourceNode.getModel());
+    return module != null ? MacrosFactory.forModule(module).expandPath(path) : null;
   }
 
-  private static IModule findAnchorModule(SModel sourceModel) {
-    IModule module = null;
-    SModel modelDescriptor = sourceModel.getModelDescriptor();
-    Language modelLang = Language.getLanguageFor(modelDescriptor);
-    if (modelLang != null) {
-      module = modelLang;
+  private static AbstractModule findAnchorModule(SModel model) {
+    SModule module = model.getModule();
+    if (module instanceof Language || module instanceof Solution) {
+      return (AbstractModule) module;
     } else {
-      if (modelDescriptor != null) {
-        module = modelDescriptor.getModule();
-        if (!(module instanceof Solution)) {
-          module = null;
-        }
-      }
+      return null;
     }
-    return module;
   }
 
   protected void setImage(Image image) {

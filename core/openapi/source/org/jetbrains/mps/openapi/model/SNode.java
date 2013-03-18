@@ -15,10 +15,11 @@
  */
 package org.jetbrains.mps.openapi.model;
 
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 /**
  * NODE STATES
@@ -47,8 +48,10 @@ public interface SNode {
 
   //common properties
 
-  //migration-time only
-  jetbrains.mps.smodel.SModel getModel();
+  /**
+   * Containing model or null if the node is not contained in any model
+   */
+  SModel getModel();
 
   /**
    * Uniquely identifies the node within its containing model. May also be null.
@@ -76,10 +79,9 @@ public interface SNode {
    */
   String getName();
 
-  /**
-   * Containing model or null if the node is not contained in any model
-   */
-  SModel getContainingModel();
+  SRepository getRepository();
+
+  boolean isInRepository();
 
   // tree operation
 

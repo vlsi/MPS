@@ -15,16 +15,14 @@
  */
 package jetbrains.mps.smodel.language;
 
+import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SRepositoryListenerAdapter;
 
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -34,7 +32,7 @@ import static jetbrains.mps.smodel.structure.DescriptorUtils.getObjectByClassNam
 /**
  * evgeny, 3/11/11
  */
-public class LanguageRegistry implements CoreComponent {
+public class LanguageRegistry implements CoreComponent, MPSClassesListener {
   private static final Logger LOG = Logger.getLogger(LanguageRegistry.class);
 
   private static LanguageRegistry INSTANCE;
@@ -43,18 +41,17 @@ public class LanguageRegistry implements CoreComponent {
     return INSTANCE;
   }
 
-  /*
-  *  Language namespace can be changed.
-  */
-  private Map<Language, String> myLanguageToNamespace;
-  private Map<String, LanguageRuntime> myLanguages;
+  private Map<String, LanguageRuntime> myLanguages = new HashMap<String, LanguageRuntime>();
 
   private final ConceptRegistry myConceptRegistry;
 
   private final List<LanguageRegistryListener> myLanguageListeners = new CopyOnWriteArrayList<LanguageRegistryListener>();
 
-  public LanguageRegistry(MPSModuleRepository repository, ClassLoaderManager loaderManager, ConceptRegistry registry) {
+  private final ClassLoaderManager myClassLoaderManager;
+
+  public LanguageRegistry(ClassLoaderManager loaderManager, ConceptRegistry registry) {
     myConceptRegistry = registry;
+    myClassLoaderManager = loaderManager;
   }
 
   @Override
@@ -63,6 +60,7 @@ public class LanguageRegistry implements CoreComponent {
       throw new IllegalStateException("double initialization");
     }
     INSTANCE = this;
+    myClassLoaderManager.addClassesHandler(this);
   }
 
   @Override
@@ -70,66 +68,25 @@ public class LanguageRegistry implements CoreComponent {
     ModelAccess.instance().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        notifyUnload(myLanguages.values(), true);
-        myLanguageToNamespace.clear();
+        notifyUnload(myLanguages.values());
         myLanguages.clear();
-        myLanguages = null;
       }
     });
+    myClassLoaderManager.removeClassesHandler(this);
     INSTANCE = null;
   }
 
-  public void loadLanguages() {
-    if (myLanguages != null) return;
-
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        myLanguageToNamespace = new HashMap<Language, String>();
-        myLanguages = new HashMap<String, LanguageRuntime>();
-
-        MPSModuleRepository.getInstance().addModuleRepositoryListener(new MyModuleRepositoryAdapter());
-
-        reloadLanguages();
-      }
-    });
-  }
-
-  public void reloadLanguages() {
-    ModelAccess.assertLegalWrite();
-
-    notifyUnload(myLanguages.values(), true);
-    myLanguages.clear();
-    Set<Language> existing = new HashSet<Language>(myLanguageToNamespace.keySet());
-    for (Language l : (List<Language>) ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
-      String namespace = l.getModuleName();
-      if (!myLanguages.containsKey(namespace)) {
-        existing.remove(l);
-        myLanguageToNamespace.put(l, namespace);
-        LanguageRuntime runtime = createRuntime(l, false);
-        myLanguages.put(namespace, runtime);
-      } else {
-        // duplicate language, ignore
-      }
-    }
-    for (Language l : existing) {
-      myLanguageToNamespace.remove(l);
-    }
-
-    notifyLoad(myLanguages.values());
-  }
-
-  private void notifyUnload(Collection<LanguageRuntime> languages, boolean unloadAll) {
+  private void notifyUnload(Collection<LanguageRuntime> languages) {
     if (languages.isEmpty()) return;
 
     for (LanguageRegistryListener l : myLanguageListeners) {
       try {
-        l.languagesUnloaded(languages, unloadAll);
+        l.languagesUnloaded(languages);
       } catch (Exception ex) {
         LOG.error(ex);
       }
     }
-    myConceptRegistry.languagesUnloaded(languages, unloadAll);
+    myConceptRegistry.languagesUnloaded(languages);
   }
 
   private void notifyLoad(Collection<LanguageRuntime> languages) {
@@ -176,55 +133,50 @@ public class LanguageRegistry implements CoreComponent {
    */
   public Collection<LanguageRuntime> getAvailableLanguages() {
     ModelAccess.assertLegalRead();
-
-    return myLanguages == null ? null : myLanguages.values();
+    return myLanguages.values();
   }
 
   @Nullable
   public LanguageRuntime getLanguage(String namespace) {
-    return myLanguages == null ? null : myLanguages.get(namespace);
+    return myLanguages.get(namespace);
   }
 
   public LanguageRuntime getLanguage(Language language) {
     return getLanguage(language.getModuleName());
   }
 
-  private class MyModuleRepositoryAdapter extends SRepositoryListenerAdapter {
-    @Override
-    public void moduleAdded(SModule module) {
-      if (!(module instanceof Language)) return;
-
-      Language l = (Language) module;
-      String namespace = l.getModuleName();
-      // avoid duplicates in registry
-      if (myLanguages.containsKey(namespace)) return;
-
-      LanguageRuntime runtime = createRuntime(l, true);
-      if (runtime == null) return;
-
-      myLanguages.put(namespace, runtime);
-      myLanguageToNamespace.put(l, namespace);
-      notifyLoad(Collections.singleton(runtime));
+  // MPSClassesListener part
+  @Override
+  public void onClassesUnload(Set<SModule> unloadedModules) {
+    Set<LanguageRuntime> unloadedRuntimes = new HashSet<LanguageRuntime>();
+    for (SModule module : unloadedModules) {
+      if (module instanceof Language) {
+        String namespace = module.getModuleName();
+        if (myLanguages.containsKey(namespace)) {
+          unloadedRuntimes.add(myLanguages.get(namespace));
+          myLanguages.remove(namespace);
+        }
+      }
     }
+    notifyUnload(unloadedRuntimes);
+  }
 
-    @Override
-    public void moduleRemoved(SModule module) {
-      if (!(module instanceof Language)) return;
-
-      Language l = (Language) module;
-      String namespace = myLanguageToNamespace.get(l);
-      if (namespace == null) return;
-
-      LanguageRuntime runtime = myLanguages.remove(namespace);
-      if (runtime == null) return;
-
-      myLanguageToNamespace.remove(l);
-      notifyUnload(Collections.singleton(runtime), false);
+  @Override
+  public void onClassesLoad(Set<SModule> loadedModules) {
+    Set<LanguageRuntime> loadedRuntimes = new HashSet<LanguageRuntime>();
+    for (SModule module : loadedModules) {
+      if (module instanceof Language) {
+        String namespace = module.getModuleName();
+        if (!myLanguages.containsKey(namespace)) {
+          LanguageRuntime runtime = createRuntime((Language) module, false);
+          myLanguages.put(namespace, runtime);
+          loadedRuntimes.add(runtime);
+        } else {
+          // todo: move this check to ClassLoaderManager
+          throw new IllegalStateException();
+        }
+      }
     }
-
-    @Override
-    public void repositoryChanged() {
-      // TODO FIXME cleanup
-    }
+    notifyLoad(loadedRuntimes);
   }
 }

@@ -15,18 +15,14 @@
  */
 package jetbrains.mps.typesystem.inference;
 
-import gnu.trove.THashMap;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.lang.typesystem.runtime.RuntimeSupport;
 import jetbrains.mps.lang.typesystem.runtime.performance.RuntimeSupport_Tracer;
 import jetbrains.mps.lang.typesystem.runtime.performance.SubtypingManager_Tracer;
 import jetbrains.mps.newTypesystem.RuntimeSupportNew;
 import jetbrains.mps.newTypesystem.context.HoleTypecheckingContext;
-import jetbrains.mps.newTypesystem.context.SimpleTypecheckingContext;
 import jetbrains.mps.newTypesystem.SubTypingManagerNew;
-import jetbrains.mps.newTypesystem.rules.LanguageScope;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelFqName;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistryListener;
@@ -35,15 +31,12 @@ import jetbrains.mps.typesystem.TypeSystemReporter;
 import jetbrains.mps.typesystem.inference.util.ConcurrentSubtypingCache;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 public class TypeChecker implements CoreComponent, LanguageRegistryListener {
   private static TypeChecker INSTANCE;
@@ -113,10 +106,9 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
   }
 
   @Override
-  public void languagesUnloaded(Iterable<LanguageRuntime> languages, boolean unloadAll) {
-    myRulesManager.clear();
+  public void languagesUnloaded(Iterable<LanguageRuntime> languages) {
+    myRulesManager.unloadLanguages(languages);
   }
-
 
   public static TypeChecker getInstance() {
     return INSTANCE;

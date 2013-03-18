@@ -11,6 +11,6 @@ public class OldRefactoring_Behavior {
   }
 
   public static String call_getGeneratedClassLongName_4598603396803851284(SNode thisNode) {
-    return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode).getModelDescriptor()) + "." + SPropertyOperations.getString(thisNode, "name");
+    return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode)) + "." + SPropertyOperations.getString(thisNode, "name");
   }
 }

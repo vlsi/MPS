@@ -26,7 +26,7 @@ public class ShowJavaUtilReferences_MigrationScript extends BaseMigrationScript 
 
       public boolean isApplicableInstanceNode(SNode node) {
         for (SReference ref : node.getReferences()) {
-          String targetModelFQName = ref.getTargetSModelReference().getSModelFqName().toString();
+          String targetModelFQName = ref.getTargetSModelReference().getModelName();
           if ("java.util@java_stub".equals(targetModelFQName)) {
             return true;
           }

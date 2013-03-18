@@ -135,7 +135,7 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
       }
     } catch (Throwable e) {
     }
-    Language testsLanguage = (Language) SNodeOperations.getModel(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodesTestCase")).getModelDescriptor().getModule();
+    Language testsLanguage = (Language) SNodeOperations.getModel(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodesTestCase")).getModule();
     for (ModuleReference dep : CollectionSequence.fromCollection(testsLanguage.getRuntimeModulesReferences())) {
       SModule module = dep.resolve(MPSModuleRepository.getInstance());
       JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);

@@ -19,7 +19,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import jetbrains.mps.traceInfo.PositionInfo;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 public class BreakpointLocation {
   private static final Logger LOG = Logger.getLogger(BreakpointLocation.class);
@@ -94,7 +94,7 @@ public class BreakpointLocation {
         SNode node = ((SNodePointer) myNodePointer).resolve(MPSModuleRepository.getInstance());
         if (node != null) {
           SNode root = node.getContainingRoot();
-          return node + " in " + root + " (" + SNodeOperations.getModelFromNodeReference(((SNodePointer) myNodePointer)).getReference().getSModelFqName() + ")";
+          return node + " in " + root + " (" + SNodeOperations.getModelFromNodeReference(((SNodePointer) myNodePointer)).getReference().getModelName() + ")";
         } else {
           return ((SNodePointer) myNodePointer).toString();
         }

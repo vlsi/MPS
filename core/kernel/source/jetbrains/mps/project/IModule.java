@@ -38,13 +38,6 @@ public interface IModule extends SModule {
   // dependency change
   // used languages change
 
-  // SModule#getModuleReference
-  // ask Misha about return type
-  // oooor it doesn't matter here
-  @Override
-  @NotNull
-  ModuleReference getModuleReference();
-
   // ?, move to AbstractModule, remove usages as much as possible
   // up reasonable getters to SModule
   ModuleDescriptor getModuleDescriptor();
@@ -120,16 +113,6 @@ public interface IModule extends SModule {
   // should be listening
   void invalidateCaches();
 
-  // just for file-backed modules
-  // for now cast!
-  boolean isChanged();
-
-  // ...
-  void setChanged();
-
-  // ...
-  void save();
-
   // AbstractModule#onModuleLoad
   // is it refactorings? move to it
   void onModuleLoad();
@@ -141,31 +124,12 @@ public interface IModule extends SModule {
 
   // ?
   // btw onModuleRegistered
+  // setRepository I think
+  // change on custom addModuleAdded listener
   void attach();
 
   // ?
   void dispose();
-
-  // ?, classes oO? possibility to listen reload action in API and use it in facet!
-  // ModuleSource!
-  // reloadClasses -> outside
-  void reloadFromDisk(boolean reloadClasses);
-
-  // should be final in AbstractModule? expose to SModule?
-  // ModuleSource (@see DataSource, maybe abstract from files?)
-  boolean needReloading();
-
-  // ----- deprecated part
-  // model creation stuff
-
-  // AbstractModule#createModel
-  // ModelAdjuster? WTF? something between creating and registration I think
-  // talk with Evgeny
-  SModel createModel(String fqName, ModelRoot root, @Nullable ModelAdjuster adj);
-
-  public static interface ModelAdjuster {
-    void adjust(SModel model);
-  }
 
   // module source path stuff
 
@@ -184,6 +148,31 @@ public interface IModule extends SModule {
   // IFile getModuleRoot() <- clash with model root // to SModuleOperations / maybe SModule
   // IFile getModuleFolder() ?
   // use as much as possible
+
+  // ----- deprecated part
+
+  // reload descriptor stuff, now all these methods need AbstractModule, for ConflictableModuleAdapter I think
+  /**
+   * @see SModuleOperations#needReloading(AbstractModule)
+   */
+  @Deprecated
+  boolean needReloading();
+
+  /**
+   * @see SModuleOperations#reloadFromDisk(AbstractModule)
+   */
+  @Deprecated
+  void reloadFromDisk(boolean reloadClasses);
+
+  // EditableSModule part. Cast to EditableSModule when needed
+  @Deprecated
+  boolean isChanged();
+
+  @Deprecated
+  void setChanged();
+
+  @Deprecated
+  void save();
 
   // JavaModuleFacet part. Use module.getFacet(JavaModuleFacet.class).{method}
   @Deprecated
@@ -204,16 +193,16 @@ public interface IModule extends SModule {
   @Deprecated
   IClassPathItem getModuleWithDependenciesClassPathItem();
 
-  // IClassLoadingModule part. Use module.getFacet(IClassLoadingModule).{method}
+  // IClassLoadingModule part. Use ClassLoaderManager instead
 
   /**
-   * @see jetbrains.mps.runtime.IClassLoadingModule#getClass(String)
+   * @see jetbrains.mps.classloading.ClassLoaderManager#getClass(org.jetbrains.mps.openapi.module.SModule, String)
    */
   @Deprecated
   Class getClass(String className);
 
   /**
-   * @see jetbrains.mps.runtime.IClassLoadingModule#canLoad()
+   * @see jetbrains.mps.classloading.ClassLoaderManager#canLoad(org.jetbrains.mps.openapi.module.SModule)
    */
   @Deprecated
   boolean reloadClassesAfterGeneration();
@@ -221,10 +210,33 @@ public interface IModule extends SModule {
   // other methods
 
   /**
+   * If you need just model: use root.createModel
+   * If you need model with adjustments (auto imports, optimized imports, etc): use SModuleOperations#createModelWithAdjustments
+   * @see SModuleOperations#createModelWithAdjustments(String, org.jetbrains.mps.openapi.persistence.ModelRoot)
+   */
+  @Deprecated
+  SModel createModel(String fqName, ModelRoot root, @Nullable ModelAdjuster adj);
+
+  /**
+   * Create model through modelRoot.createModel, apply adjuster, and register model in repository after this operations
+   */
+  @Deprecated
+  public static interface ModelAdjuster {
+    void adjust(SModel model);
+  }
+
+  /**
    * @see SModule#getModuleName
    */
   @Deprecated
   String getModuleFqName();
+
+  /**
+   * Remove this method after ModuleReference -> SModuleReference migration
+   */
+  @Override
+  @NotNull
+  ModuleReference getModuleReference();
 
   /**
    * Simple way: use SModuleOperations#getOutputPathFor

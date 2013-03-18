@@ -14,8 +14,9 @@ import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
@@ -80,8 +81,12 @@ public class NewAccessoryModel_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
+      if (!(((IModule) MapSequence.fromMap(_params).get("module")) instanceof AbstractModule)) {
+        return;
+      }
+
       final Language language = ((Language) ((IModule) MapSequence.fromMap(_params).get("module")));
-      NewModelDialog d = new NewModelDialog(((Project) MapSequence.fromMap(_params).get("project")), ((IModule) MapSequence.fromMap(_params).get("module")), language.getModuleFqName(), ((IOperationContext) MapSequence.fromMap(_params).get("context")), SModelStereotype.NONE, true);
+      NewModelDialog d = new NewModelDialog(((Project) MapSequence.fromMap(_params).get("project")), ((AbstractModule) ((IModule) MapSequence.fromMap(_params).get("module"))), language.getModuleFqName(), ((IOperationContext) MapSequence.fromMap(_params).get("context")), SModelStereotype.NONE, true);
       d.show();
       final SModel result = d.getResult();
 
@@ -92,7 +97,6 @@ public class NewAccessoryModel_Action extends BaseAction {
         public void run() {
           LanguageDescriptor descriptor = language.getModuleDescriptor();
           descriptor.getAccessoryModels().add(result.getReference());
-          language.setLanguageDescriptor(descriptor, true);
           language.save();
         }
       });

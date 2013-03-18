@@ -912,7 +912,7 @@
     <nodeInfo nodeId="920354110794005048" fileName="EvaluationPanel.java" startLine="37" startPosition="0" endLine="38" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="920354110794005069" fileName="EvaluationPanel.java" startLine="41" startPosition="42" endLine="42" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="920354110794005079" fileName="EvaluationPanel.java" startLine="45" startPosition="5" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="276193728322571070" fileName="EvaluationPanel.java" startLine="48" startPosition="25" endLine="49" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="276193728322571070" fileName="EvaluationPanel.java" startLine="48" startPosition="25" endLine="49" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="920354110794005155" fileName="EvaluationPanel.java" startLine="51" startPosition="7" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7406771907178600501" fileName="EvaluationPanel.java" startLine="52" startPosition="0" endLine="53" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7930787450152615900" fileName="EvaluationPanel.java" startLine="54" startPosition="36" endLine="55" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -937,7 +937,7 @@
     <nodeInfo nodeId="6405654937062418805" fileName="EvaluationPanel.java" startLine="91" startPosition="20" endLine="92" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6405654937062418812" fileName="EvaluationPanel.java" startLine="92" startPosition="63" endLine="93" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7406771907178599908" fileName="EvaluationPanel.java" startLine="97" startPosition="26" endLine="98" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="920354110794005555" fileName="EvaluationPanel.java" startLine="107" startPosition="31" endLine="108" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="920354110794005555" fileName="EvaluationPanel.java" startLine="107" startPosition="31" endLine="108" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="920354110794005578" fileName="EvaluationPanel.java" startLine="110" startPosition="13" endLine="111" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="920354110794005590" fileName="EvaluationPanel.java" startLine="111" startPosition="121" endLine="112" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="728525129182592787" fileName="EvaluationPanel.java" startLine="115" startPosition="31" endLine="116" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -968,14 +968,14 @@
     <nodeInfo nodeId="920354110794005532" fileName="EvaluationPanel.java" startLine="101" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateGenerationResultTab#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="920354110794004972" fileName="EvaluationPanel.java" startLine="34" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EvaluationPanel#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/debugger/java/runtime/state/DebugSession;Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;Z)V" />
     <scopeInfo nodeId="920354110794005068" fileName="EvaluationPanel.java" startLine="41" startPosition="42" endLine="42" endPosition="65" />
-    <scopeInfo nodeId="920354110794005082" fileName="EvaluationPanel.java" startLine="48" startPosition="25" endLine="49" endPosition="185" />
+    <scopeInfo nodeId="920354110794005082" fileName="EvaluationPanel.java" startLine="48" startPosition="25" endLine="49" endPosition="164" />
     <scopeInfo nodeId="7930787450152614849" fileName="EvaluationPanel.java" startLine="54" startPosition="36" endLine="55" endPosition="154" />
     <scopeInfo nodeId="7283833278907755826" fileName="EvaluationPanel.java" startLine="66" startPosition="12" endLine="67" endPosition="21" />
     <scopeInfo nodeId="1321036565876658988" fileName="EvaluationPanel.java" startLine="72" startPosition="51" endLine="73" endPosition="19" />
     <scopeInfo nodeId="7222423519129192557" fileName="EvaluationPanel.java" startLine="80" startPosition="56" endLine="81" endPosition="29" />
     <scopeInfo nodeId="6405654937062418793" fileName="EvaluationPanel.java" startLine="87" startPosition="23" endLine="88" endPosition="13" />
     <scopeInfo nodeId="920354110794005255" fileName="EvaluationPanel.java" startLine="97" startPosition="26" endLine="98" endPosition="32" />
-    <scopeInfo nodeId="920354110794005554" fileName="EvaluationPanel.java" startLine="107" startPosition="31" endLine="108" endPosition="207" />
+    <scopeInfo nodeId="920354110794005554" fileName="EvaluationPanel.java" startLine="107" startPosition="31" endLine="108" endPosition="186" />
     <scopeInfo nodeId="728525129182592785" fileName="EvaluationPanel.java" startLine="115" startPosition="31" endLine="116" endPosition="75" />
     <scopeInfo nodeId="3196684409401005384" fileName="EvaluationPanel.java" startLine="125" startPosition="27" endLine="126" endPosition="36" />
     <scopeInfo nodeId="7283833278907755812" fileName="EvaluationPanel.java" startLine="63" startPosition="39" endLine="65" endPosition="24" />

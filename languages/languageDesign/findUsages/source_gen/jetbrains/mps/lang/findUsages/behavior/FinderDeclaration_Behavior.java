@@ -24,7 +24,7 @@ public class FinderDeclaration_Behavior {
   }
 
   public static String call_getGeneratedClassLongName_1213877240120(SNode thisNode) {
-    return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode).getModelDescriptor()) + "." + FinderDeclaration_Behavior.call_getGeneratedClassName_1213877240101(thisNode);
+    return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode)) + "." + FinderDeclaration_Behavior.call_getGeneratedClassName_1213877240101(thisNode);
   }
 
   public static PropertyReference virtual_getPropertyToCheck_4844813484172611473(SNode thisNode) {

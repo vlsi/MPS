@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="1u8h3shfb5p6z4hbj66ty4c3wobq1fi">
+<dependencies version="2" modelHash="-aoryiq4j7dxzthsdqobv3i7vl65le3t">
   <common hash="-c1sboqui37ujjfipulaltljvr3850w5" />
-  <source id="263837413765000620" name="DefaultTestSuite" hash="pj2wpjmtvlybr6raz2uz9af6yeypm5">
+  <source id="263837413765000620" name="DefaultTestSuite" hash="4zt82mmvpymf0qlm4wbm1ss2xj6kkjd">
     <file name="DefaultTestSuite.java" />
   </source>
-  <source id="7906452883299946797" name="ExecuteProjectTests" hash="-vn6594rqjgyapwht1cy5oez88o55pf">
+  <source id="7906452883299946797" name="ExecuteProjectTests" hash="-76x15rftabjysyik2ojknoc8bn0l1vx">
     <file name="ExecuteProjectTests.java" />
+  </source>
+  <source id="912926329919603117" name="ExecuteModuleTests" hash="-ahl2lbryh24ec6gxr38brd2b65s32z1">
+    <file name="ExecuteModuleTests.java" />
+  </source>
+  <source id="5835181105767457626" name="ModuleTestSuite" hash="dbf7vg64syagi40hqfmfurdvy4uuah3">
+    <file name="ModuleTestSuite.java" />
   </source>
 </dependencies>
 

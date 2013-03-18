@@ -13,35 +13,38 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
 
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.classloading.MPSClassesReloadManager;
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.extapi.module.EditableSModule;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.module.*;
+import org.jetbrains.mps.openapi.module.RepositoryAccess;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleId;
+import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class MPSModuleRepository implements CoreComponent, SRepository {
   private static final Logger LOG = Logger.getLogger(MPSModuleRepository.class);
-  private ClassLoaderManager myClm;
-  private ReloadAdapter myHandler = new ReloadAdapter() {
-    @Override
-    public void unload() {
-      invalidateCaches();
-    }
-  };
   private List<SRepositoryListener> myModuleListeners = new CopyOnWriteArrayList<SRepositoryListener>();
 
   private Set<IModule> myModules = new LinkedHashSet<IModule>();
@@ -53,18 +56,15 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     return MPSCore.getInstance().getModuleRepository();
   }
 
-  public MPSModuleRepository(ClassLoaderManager clm) {
-    myClm = clm;
+  public MPSModuleRepository() {
   }
 
   @Override
   public void init() {
-    myClm.addReloadHandler(myHandler);
   }
 
   @Override
   public void dispose() {
-    myClm.removeReloadHandler(myHandler);
   }
 
   //-----------------register/unregister-merge-----------
@@ -86,7 +86,9 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     if (moduleFqName != null) {
       if (myFqNameToModulesMap.containsKey(moduleFqName)) {
         IModule m = myFqNameToModulesMap.get(moduleFqName);
-        LOG.warning("duplicate module name " + moduleFqName + " : module with the same UID exists at " + m.getDescriptorFile() + " and " + module.getDescriptorFile(), m);
+        LOG.warning(
+            "duplicate module name " + moduleFqName + " : module with the same UID exists at " + m.getDescriptorFile() + " and " + module.getDescriptorFile(),
+            m);
       }
 
       myFqNameToModulesMap.put(moduleFqName, module);
@@ -100,7 +102,7 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     myModuleToOwners.addLink(module, owner);
     invalidateCaches();
     fireModuleAdded(module);
-    ClassLoaderManager.getInstance().requestReload();
+    MPSClassesReloadManager.getInstance().requestReload();
     return module;
   }
 
@@ -121,7 +123,7 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     for (IModule module : modulesToDispose) {
       fireModuleRemoved(module);
       module.dispose();
-      ClassLoaderManager.getInstance().requestReload();
+      MPSClassesReloadManager.getInstance().requestReload();
     }
     if (repositoryChanged) {
       fireRepositoryChanged();
@@ -154,7 +156,8 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
    */
   private boolean doUnregisterModule(IModule module, MPSModuleOwner owner) {
     ModelAccess.assertLegalWrite();
-    assert myModules.contains(module) : "trying to unregister non-registered module: fqName=" + module.getModuleFqName() + "; file=" + module.getDescriptorFile();
+    assert myModules.contains(
+        module) : "trying to unregister non-registered module: fqName=" + module.getModuleFqName() + "; file=" + module.getDescriptorFile();
 
     myModuleToOwners.removeLink(module, owner);
     boolean remove = myModuleToOwners.getByFirst(module).isEmpty();
@@ -347,11 +350,20 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     }
   }
 
+  @Override
   public void saveAll() {
-    for (IModule module : getAllModules()) {
-      if (!module.isChanged()) continue;
-      module.save();
+    getModelAccess().checkWriteAccess();
+
+    for (SModule module : getModules()) {
+      if (module instanceof EditableSModule) {
+        EditableSModule editableModule = (EditableSModule) module;
+        if (editableModule.isChanged()) {
+          editableModule.save();
+        }
+      }
     }
+
+    SModelRepository.getInstance().saveAll();
   }
 
   public void moduleFqNameChanged(IModule module, String oldName) {

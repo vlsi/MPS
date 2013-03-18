@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -21,6 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.SModel.FakeModelDescriptor;
 import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.AbstractImmutableList;
@@ -116,15 +117,14 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   @Override
-  public org.jetbrains.mps.openapi.model.SModel getContainingModel() {
-    assertRead();
-    assertDisposed();
+  public SRepository getRepository() {
+    org.jetbrains.mps.openapi.model.SModel model = internal_getModel();
+    return model == null ? null : model.getRepository();
+  }
 
-    fireNodeReadAccess();
-
-    if (myModel == null) return null;
-
-    return myModel.getModelDescriptor();
+  @Override
+  public boolean isInRepository() {
+    return getRepository() != null;
   }
 
   @Override
@@ -147,7 +147,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     String propertyValue = null;
     if (myProperties != null) {
       if (ourMemberAccessModifier != null) {
-        propertyName = ourMemberAccessModifier.getNewPropertyName(myModel, myConceptFqName, propertyName);
+        propertyName = ourMemberAccessModifier.getNewPropertyName(getModel(), myConceptFqName, propertyName);
       }
       int index = getPropertyIndex(propertyName);
       if (index != -1) {
@@ -161,10 +161,10 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   @Override
   public void setProperty(String propertyName, String propertyValue) {
     propertyName = InternUtil.intern(propertyName);
-    ModelChange.assertLegalNodeChange(myModel, this);
+    ModelChange.assertLegalNodeChange(getModel(), this);
     propertyValue = InternUtil.intern(propertyValue);
     if (ourMemberAccessModifier != null) {
-      propertyName = ourMemberAccessModifier.getNewPropertyName(myModel, myConceptFqName, propertyName);
+      propertyName = ourMemberAccessModifier.getNewPropertyName(getModel(), myConceptFqName, propertyName);
     }
     int index = getPropertyIndex(propertyName);
     final String oldValue = index == -1 ? null : myProperties[index + 1];
@@ -190,20 +190,19 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
       myProperties[index + 1] = propertyValue;
     }
 
-    SModel model = getModel();
-    if (model == null) return;
+    if (myModel == null) return;
 
     final String finalPropertyValue = propertyValue;
     final String finalPropertyName = propertyName;
-    model.performUndoableAction(new Computable<SNodeUndoableAction>() {
+    myModel.performUndoableAction(new Computable<SNodeUndoableAction>() {
       @Override
       public SNodeUndoableAction compute() {
         return new PropertyChangeUndoableAction(SNode.this, finalPropertyName, oldValue, finalPropertyValue);
       }
     });
 
-    if (ModelChange.needFireEvents(model, this)) {
-      model.firePropertyChangedEvent(this, propertyName, oldValue, propertyValue);
+    if (ModelChange.needFireEvents(getModel(), this)) {
+      myModel.firePropertyChangedEvent(this, propertyName, oldValue, propertyValue);
     }
   }
 
@@ -229,7 +228,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     assertDisposed();
 
     if (ourMemberAccessModifier != null) {
-      role = ourMemberAccessModifier.getNewChildRole(myModel, myConceptFqName, role);
+      role = ourMemberAccessModifier.getNewChildRole(getModel(), myConceptFqName, role);
     }
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
@@ -264,32 +263,31 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   @Override
   public void removeChild(org.jetbrains.mps.openapi.model.SNode child) {
     if (child.getParent() != this) return;
-    ModelChange.assertLegalNodeChange(myModel, this);
+    ModelChange.assertLegalNodeChange(getModel(), this);
     final SNode wasChild = (SNode) child;
     final String wasRole = wasChild.getRoleInParent();
     final SNode anchor = firstChild() == wasChild ? null : wasChild.treePrevious();
 
     assert wasRole != null;
-    SModel model = getModel();
-    if (model != null && ModelChange.needFireEvents(model, this)) {
-      model.fireBeforeChildRemovedEvent(this, wasRole, wasChild, anchor);
+    if (myModel != null && ModelChange.needFireEvents(getModel(), this)) {
+      myModel.fireBeforeChildRemovedEvent(this, wasRole, wasChild, anchor);
     }
 
     children_remove(wasChild);
     wasChild.setRoleInParent(null);
     wasChild.unRegisterFromModel();
 
-    if (model == null) return;
+    if (myModel == null) return;
 
-    model.performUndoableAction(new Computable<SNodeUndoableAction>() {
+    myModel.performUndoableAction(new Computable<SNodeUndoableAction>() {
       @Override
       public SNodeUndoableAction compute() {
         return new RemoveChildUndoableAction(SNode.this, anchor, wasRole, wasChild);
       }
     });
 
-    if (ModelChange.needFireEvents(model, this)) {
-      model.fireChildRemovedEvent(this, wasRole, wasChild, anchor);
+    if (ModelChange.needFireEvents(getModel(), this)) {
+      myModel.fireChildRemovedEvent(this, wasRole, wasChild, anchor);
     }
   }
 
@@ -298,7 +296,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
    */
   @Override
   public void delete() {
-    ModelChange.assertLegalNodeChange(myModel, this);
+    ModelChange.assertLegalNodeChange(getModel(), this);
     assertDisposed();
 
     SNode p = getParent();
@@ -312,7 +310,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   @Override
   public void setReferenceTarget(String role, @Nullable org.jetbrains.mps.openapi.model.SNode target) {
     if (ourMemberAccessModifier != null) {
-      role = ourMemberAccessModifier.getNewReferentRole(myModel, myConceptFqName, role);
+      role = ourMemberAccessModifier.getNewReferentRole(getModel(), myConceptFqName, role);
     }
 
     if (target == null) {
@@ -337,7 +335,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
     if (toDelete.size() > 1) {
       LOG.errorWithTrace(
-        "ERROR! " + toDelete.size() + " references found for role '" + role + "' in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
+          "ERROR! " + toDelete.size() + " references found for role '" + role + "' in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
     }
 
     for (SReference reference : toDelete) {
@@ -363,7 +361,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     assertDisposed();
 
     if (ourMemberAccessModifier != null) {
-      role = ourMemberAccessModifier.getNewReferentRole(myModel, myConceptFqName, role);
+      role = ourMemberAccessModifier.getNewReferentRole(getModel(), myConceptFqName, role);
     }
     fireNodeReadAccess();
     SReference result = null;
@@ -435,44 +433,45 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   @Override
   public void insertChild(String role, org.jetbrains.mps.openapi.model.SNode child, @Nullable final org.jetbrains.mps.openapi.model.SNode anchor) {
     if (ourMemberAccessModifier != null) {
-      role = ourMemberAccessModifier.getNewChildRole(myModel, myConceptFqName, role);
+      role = ourMemberAccessModifier.getNewChildRole(getModel(), myConceptFqName, role);
     }
     final SNode schild = (SNode) child;
     SNode parentOfChild = schild.getParent();
     if (parentOfChild != null) {
-      throw new RuntimeException(org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(
-        schild) + " already has parent: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(parentOfChild) + "\n" +
-        "Couldn't add it to: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
+      throw new RuntimeException(
+          org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(schild) + " already has parent: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(
+              parentOfChild) + "\n" +
+              "Couldn't add it to: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
     }
 
     if (getTopmostAncestor() == child) {
       throw new RuntimeException("Trying to create a cyclic tree");
     }
 
-    ModelChange.assertLegalNodeChange(myModel, this);
+    ModelChange.assertLegalNodeChange(getModel(), this);
 
     children_insertAfter(((SNode) anchor), schild);
     schild.setRoleInParent(role);
 
-    SModel model = getModel();
-    if (model != null) {
-      schild.registerInModel(model);
-    } else if (schild.getModel() != null) {
-      schild.clearModel();
+    if (myModel == null) {
+      if (schild.myModel != null) {
+        schild.clearModel();
+      }
+      return;
     }
 
-    if (model == null) return;
+    schild.registerInModel(myModel);
 
     final String finalRole = role;
-    model.performUndoableAction(new Computable<SNodeUndoableAction>() {
+    myModel.performUndoableAction(new Computable<SNodeUndoableAction>() {
       @Override
       public SNodeUndoableAction compute() {
         return new InsertChildAtUndoableAction(SNode.this, anchor, finalRole, schild);
       }
     });
 
-    if (ModelChange.needFireEvents(model, this)) {
-      model.fireChildAddedEvent(this, role, schild, ((SNode) anchor));
+    if (ModelChange.needFireEvents(getModel(), this)) {
+      myModel.fireChildAddedEvent(this, role, schild, ((SNode) anchor));
     }
   }
 
@@ -696,6 +695,10 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return result;
   }
 
+  public SModel getPersistentModel(){
+    return myModel;
+  }
+
   //-------------------------------------------------------
   //-----------TO IMPLEMENT VIA OTHER METHODS--------------
   //-------------------------------------------------------
@@ -708,7 +711,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   in this case, isDisposed() can be replaced with false
    */
   public boolean isDisposed() {
-    return myModel != null && jetbrains.mps.util.SNodeOperations.isModelDisposed(myModel);
+    return myModel != null && jetbrains.mps.util.SNodeOperations.isModelDisposed(internal_getModel());
   }
 
   public void setId(@Nullable org.jetbrains.mps.openapi.model.SNodeId id) {
@@ -796,13 +799,17 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   //--------------
 
-  @Override
-  public SModel getModel() {
+  public org.jetbrains.mps.openapi.model.SModel getModel() {
     assertRead();
     assertDisposed();
 
     fireNodeReadAccess();
-    return myModel;
+
+    return internal_getModel();
+  }
+
+  private SModelDescriptor internal_getModel() {
+    return myModel == null ? null : myModel.getModelDescriptor();
   }
 
   //--------seems these methods are not needed-------
@@ -823,7 +830,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   private void addReferenceInternal(final SReference reference) {
-    ModelChange.assertLegalNodeChange(myModel, this);
+    ModelChange.assertLegalNodeChange(getModel(), this);
 
     int oldLen = myReferences.length;
     jetbrains.mps.smodel.SReference[] newArray = new jetbrains.mps.smodel.SReference[oldLen + 1];
@@ -831,23 +838,22 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     newArray[oldLen] = reference;
     myReferences = newArray;
 
-    SModel model = getModel();
-    if (model == null) return;
+    if (myModel == null) return;
 
-    model.performUndoableAction(new Computable<SNodeUndoableAction>() {
+    myModel.performUndoableAction(new Computable<SNodeUndoableAction>() {
       @Override
       public SNodeUndoableAction compute() {
         return new InsertReferenceAtUndoableAction(SNode.this, reference);
       }
     });
 
-    if (ModelChange.needFireEvents(model, this)) {
-      model.fireReferenceAddedEvent(reference);
+    if (ModelChange.needFireEvents(getModel(), this)) {
+      myModel.fireReferenceAddedEvent(reference);
     }
   }
 
   private void removeReferenceInternal(final SReference ref) {
-    ModelChange.assertLegalNodeChange(myModel, this);
+    ModelChange.assertLegalNodeChange(getModel(), this);
 
     int index = -1;
     for (int i = 0; i < myReferences.length; i++) {
@@ -867,18 +873,17 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     System.arraycopy(myReferences, index + 1, newArray, index, myReferences.length - index - 1);
     myReferences = newArray;
 
-    SModel model = getModel();
-    if (model == null) return;
+    if (myModel == null) return;
 
-    model.performUndoableAction(new Computable<SNodeUndoableAction>() {
+    myModel.performUndoableAction(new Computable<SNodeUndoableAction>() {
       @Override
       public SNodeUndoableAction compute() {
         return new RemoveReferenceAtUndoableAction(SNode.this, ref);
       }
     });
 
-    if (ModelChange.needFireEvents(model, this)) {
-      model.fireReferenceRemovedEvent(ref);
+    if (ModelChange.needFireEvents(getModel(), this)) {
+      myModel.fireReferenceRemovedEvent(ref);
     }
   }
 
@@ -887,28 +892,17 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   private static Set<String> ourErroredModels = new ConcurrentHashSet<String>();
 
   private void assertRead() {
-    SModel model = myModel;
-    if (model == null) return;
-
-    org.jetbrains.mps.openapi.model.SModel desc = model.getModelDescriptor();
-    if (desc == null) return;
-
-    SModule module = desc.getModule();
-    if (module == null) return;
-
-    SRepository repository = module.getRepository();
-    if (repository == null) return;
-
-    org.jetbrains.mps.openapi.module.ModelAccess ma = repository.getModelAccess();
+    if (!isInRepository()) return;
+    org.jetbrains.mps.openapi.module.ModelAccess ma = getRepository().getModelAccess();
     ma.checkReadAccess();
   }
 
   private void assertDisposed() {
     //this is only while exceptions are not fixed
     //actually, detached models should not be distinguishable by some "disposed" property
-    if (myModel == null || !jetbrains.mps.util.SNodeOperations.isModelDisposed(myModel)) return;
+    if (myModel == null || !jetbrains.mps.util.SNodeOperations.isModelDisposed(internal_getModel() )) return;
 
-    String modelName = jetbrains.mps.util.SNodeOperations.getModelLongName(myModel);
+    String modelName = jetbrains.mps.util.SNodeOperations.getModelLongName(internal_getModel());
     if (ourErroredModels.add(modelName)) {
       System.err.println("CRITICAL: INVALID OPERATION DETECTED");
       System.err.println("model: " + modelName);
@@ -1276,7 +1270,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     int size = children.size();
     if (size > 1) {
       String errorMessage = "ERROR: SNode.getChild() executed when there are " + size + " children for role " + role + " in " + NameUtil.shortNameFromLongName(
-        getClass().getName()) + "[" + getNodeId().toString() + "] " + getModel().getReference() + "\n";
+          getClass().getName()) + "[" + getNodeId().toString() + "] " + getModel().getReference() + "\n";
       errorMessage += "they are : " + getChildren(role);
       LOG.error(errorMessage, new Throwable(), this);
     }
@@ -1606,7 +1600,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * @Deprecated in 3.0
    */
   public StackTraceElement[] getModelDisposedTrace() {
-    return getModel() == null ? null : getModel().getDisposedStacktrace();
+    return myModel == null ? null : myModel.getDisposedStacktrace();
   }
 
   @Deprecated

@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.logging.Logger;
 
@@ -65,7 +65,7 @@ public class AddPluginDependencies_Action extends BaseAction {
         }
 
         lang.addDependency(standaloneRef, false);
-        SModel model = aspect.getSModel();
+        SModel model = aspect;
         ((SModelInternal) model).addLanguage(standaloneRef);
         SModelOperations.createNewRootNode(model, "jetbrains.mps.lang.plugin.standalone.structure.StandalonePluginDescriptor", null);
       }

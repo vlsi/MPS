@@ -38,7 +38,7 @@ public class ModelPlusImportedScope extends Scope {
         imported = Collections.emptyList();
       } else {
         imported = SModelOperations.allImportedModels(myModel, myModuleScope);
-        imported.add(0, myModel.getModelDescriptor());
+        imported.add(0, myModel);
       }
       myModels = imported;
     }
@@ -47,7 +47,7 @@ public class ModelPlusImportedScope extends Scope {
 
   @Override
   public boolean contains(SNode node) {
-    return SNodeUtil.isInstanceOf(node, SConceptRepository.getInstance().getConcept(myTargetConcept)) && (!(myRootsOnly) || SNodeOperations.isRoot(node)) && getModels().contains(node.getModel().getModelDescriptor());
+    return SNodeUtil.isInstanceOf(node, SConceptRepository.getInstance().getConcept(myTargetConcept)) && (!(myRootsOnly) || SNodeOperations.isRoot(node)) && getModels().contains(node.getModel());
   }
 
   @Override
@@ -62,13 +62,13 @@ public class ModelPlusImportedScope extends Scope {
       String conceptToCheck;
 
       if (myRootsOnly) {
-        nodes = model.getSModel().getRootNodes();
+        nodes = model.getRootNodes();
         conceptToCheck = myTargetConcept;
       } else if (myTargetConcept != null) {
-        nodes = SNodeOperations.getModelFastFinder(model.getSModel()).getNodes(myTargetConcept, true);
+        nodes = SNodeOperations.getModelFastFinder(model).getNodes(myTargetConcept, true);
         conceptToCheck = null;
       } else {
-        nodes = ((Iterable) new NodesIterable(model.getSModel()));
+        nodes = ((Iterable) new NodesIterable(model));
         conceptToCheck = null;
       }
 
@@ -104,13 +104,13 @@ public class ModelPlusImportedScope extends Scope {
       String conceptToCheck;
 
       if (myRootsOnly) {
-        nodes = model.getSModel().getRootNodes();
+        nodes = model.getRootNodes();
         conceptToCheck = myTargetConcept;
       } else if (myTargetConcept != null) {
-        nodes = SNodeOperations.getModelFastFinder(model.getSModel()).getNodes(myTargetConcept, true);
+        nodes = SNodeOperations.getModelFastFinder(model).getNodes(myTargetConcept, true);
         conceptToCheck = null;
       } else {
-        nodes = ((Iterable) new NodesIterable(model.getSModel()));
+        nodes = ((Iterable) new NodesIterable(model));
         conceptToCheck = null;
       }
 

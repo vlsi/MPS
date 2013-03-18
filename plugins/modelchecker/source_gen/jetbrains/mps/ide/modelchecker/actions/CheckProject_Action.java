@@ -23,6 +23,7 @@ public class CheckProject_Action extends BaseAction {
     super("Check Project", "Check project for unresolved references and typesystem rules", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
+    this.addPlace(null);
   }
 
   @Override

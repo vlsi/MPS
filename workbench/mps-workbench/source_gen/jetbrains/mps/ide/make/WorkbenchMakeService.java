@@ -277,7 +277,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
   }
 
   public static IScript defaultMakeScript() {
-    return new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.resources.Binaries"), new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.baseLanguage.JavaCompile"), new IFacet.Name("jetbrains.mps.baseLanguage.ReloadClasses"), new IFacet.Name("jetbrains.mps.lang.core.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.lang.core.Make.make")).toScript();
+    return new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.resources.Binaries"), new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.make.facets.JavaCompile"), new IFacet.Name("jetbrains.mps.make.facets.ReloadClasses"), new IFacet.Name("jetbrains.mps.make.facets.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.make.facets.Make.make")).toScript();
   }
 
   private class TaskRunner extends AbstractMakeService.AbstractInputProcessor {
@@ -402,6 +402,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
 
     @Override
     public void setup(IPropertiesPool ppool, Iterable<ITarget> targets, Iterable<? extends IResource> input) {
+      // todo: why should we specify project only for Generate facet? 
       ppool.setPredecessor(predParamPool);
       predParamPool = ppool;
       Tuples._3<Project, IOperationContext, Boolean> vars = (Tuples._3<Project, IOperationContext, Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Object.class);
@@ -410,6 +411,13 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
         vars._1(getSession().getContext());
         vars._2(getSession().isCleanMake());
       }
+
+      // hack: Generate facet not accessible from JavaCompile facet because it's compiled in IDEA 
+      Tuples._2<Project, Boolean> varsForJavaCompile = (Tuples._2<Project, Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.make.facets.JavaCompile.auxCompile"), Object.class);
+      if (varsForJavaCompile != null) {
+        varsForJavaCompile._0(getSession().getContext().getProject());
+      }
+      // end of hack 
 
       Tuples._2<Boolean, Boolean> tparams = (Tuples._2<Boolean, Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen"), Object.class);
       if (tparams != null) {

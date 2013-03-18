@@ -20,13 +20,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.resolve.ResolverComponent;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.SModelInternal;
 
 public class UnresolvedReferencesChecker extends SpecificChecker {
   public UnresolvedReferencesChecker() {
@@ -35,10 +34,10 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
   @Override
   public List<SearchResult<ModelCheckerIssue>> checkModel(final SModel model, ProgressMonitor monitor, final IOperationContext operationContext) {
     List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
-    if (model == null || model.getModelDescriptor() == null || model.getModelDescriptor().getModule() == null) {
+    if (model == null || model == null || model.getModule() == null) {
       return results;
     }
-    final IScope scope = model.getModelDescriptor().getModule().getScope();
+    final IScope scope = model.getModule().getScope();
     String title = "Checking " + SModelOperations.getModelName(model) + " for unresolved references...";
     monitor.start(title, 1);
 
@@ -72,7 +71,7 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
                 if (moduleReference == null) {
                   return false;
                 }
-                SModule module = check_xiru3y_a0d0a0f0a0f0c0g0b(model.getModelDescriptor());
+                SModule module = check_xiru3y_a0d0a0f0a0f0c0g0b(model);
                 if (module == null) {
                   return false;
                 }
@@ -103,7 +102,7 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
     return null;
   }
 
-  private static IModule check_xiru3y_a0d0a0f0a0f0c0g0b(SModelInternal checkedDotOperand) {
+  private static IModule check_xiru3y_a0d0a0f0a0f0c0g0b(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

@@ -33,9 +33,9 @@ import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import java.lang.reflect.Method;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelInternal;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.Solution;
@@ -119,7 +119,7 @@ public class IconManager {
         if (model == null || jetbrains.mps.util.SNodeOperations.isModelDisposed(model)) {
           return mainIcon;
         }
-        if (!(SModelStereotype.isUserModel(model)) || model.getModelDescriptor() instanceof EditableSModel && ((EditableSModel) model.getModelDescriptor()).isReadOnly()) {
+        if (!(SModelStereotype.isUserModel(model)) || model instanceof EditableSModel && ((EditableSModel) model).isReadOnly()) {
           mainIcon = new LayeredIcon(mainIcon, PlatformIcons.LOCKED_ICON);
         }
         RowIcon result = new RowIcon(2);
@@ -155,7 +155,7 @@ public class IconManager {
   private static Icon getIconForConcept(SNode conceptDeclaration, String path) {
     Language language = SModelUtil.getDeclaringLanguage(conceptDeclaration);
     if (language != null) {
-      String iconPath = MacrosFactory.forModuleFile(language.getDescriptorFile()).expandPath(path);
+      String iconPath = MacrosFactory.forModule(language).expandPath(path);
       if (iconPath != null) {
         Icon icon = loadIcon(iconPath, true);
         if (icon != null) {
@@ -191,7 +191,7 @@ public class IconManager {
       if (language == null) {
         LOG.error("Can't find a language " + namespace);
       } else {
-        Class icons = language.getClass(className);
+        Class icons = ClassLoaderManager.getInstance().getClass(language, className);
         if (icons != null) {
           Method method;
           try {
@@ -212,7 +212,7 @@ public class IconManager {
   }
 
   public static Icon getIconForModelReference(@NotNull SModelReference modelReference) {
-    String stereotype = modelReference.getStereotype();
+    String stereotype = SModelStereotype.getStereotype(modelReference.getModelName());
     if (stereotype != null) {
       if (SModelStereotype.isGeneratorModelStereotype(stereotype)) {
         return IdeIcons.TEMPLATES_MODEL_ICON;
@@ -224,21 +224,21 @@ public class IconManager {
   }
 
   public static Icon getIconFor(SModel model) {
-    if (model instanceof SModel) {
-      SModel modelDescriptor = (SModelInternal) model;
-      LanguageAspect aspect = Language.getModelAspect(modelDescriptor);
-      if (aspect != null) {
-        return getIconForAspect(aspect);
-      } else
-      if (SModelStereotype.isGeneratorModel(modelDescriptor)) {
-        return IdeIcons.TEMPLATES_MODEL_ICON;
-      } else
-      if (Language.isLanguageOwnedAccessoryModel(modelDescriptor)) {
-        return IdeIcons.ACCESSORY_MODEL_ICON;
-      } else
-      if (SModelStereotype.isTestModel(modelDescriptor)) {
-        return IdeIcons.TEST_MODEL_ICON;
-      }
+    if (model == null) {
+      return IdeIcons.UNKNOWN_ICON;
+    }
+    LanguageAspect aspect = Language.getModelAspect(model);
+    if (aspect != null) {
+      return getIconForAspect(aspect);
+    } else
+    if (SModelStereotype.isGeneratorModel(model)) {
+      return IdeIcons.TEMPLATES_MODEL_ICON;
+    } else
+    if (Language.isLanguageOwnedAccessoryModel(model)) {
+      return IdeIcons.ACCESSORY_MODEL_ICON;
+    } else
+    if (SModelStereotype.isTestModel(model)) {
+      return IdeIcons.TEST_MODEL_ICON;
     }
     return IdeIcons.MODEL_ICON;
   }

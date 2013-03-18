@@ -7,7 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.generator.TransientSModel;
+import jetbrains.mps.generator.TransientModelsModule;
 
 public class DependenciesHelper {
   private final Map<SNode, String> locationMap;
@@ -45,13 +45,13 @@ public class DependenciesHelper {
   }
 
   public static SNode getOriginalNode(SNode node, TemplateQueryContext genContext) {
-    if (SNodeOperations.getModel(node) instanceof TransientSModel) {
+    if (SNodeOperations.getModel(node).getModule() instanceof TransientModelsModule) {
       if (genContext == null) {
         throw new IllegalStateException("transient model is not expected");
       }
       SNode originalNode = genContext.getOriginalCopiedInputNode(node);
       if ((originalNode != null)) {
-        if (SNodeOperations.getModel(originalNode) instanceof TransientSModel) {
+        if (SNodeOperations.getModel(originalNode).getModule() instanceof TransientModelsModule) {
           genContext.showErrorMessage(node, "internal error: cannot get original node");
           return null;
         }

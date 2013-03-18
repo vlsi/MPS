@@ -34,7 +34,7 @@ public class PasteAsJavaClass_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    SModel m = ((SModel) MapSequence.fromMap(_params).get("model")).getSModel();
+    SModel m = ((SModel) MapSequence.fromMap(_params).get("model"));
     return m != null && SModelOperations.hasLanguage(m, ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.baseLanguage", Language.class).getModuleReference()) && JavaPaster.areDataAvailableInClipboard();
   }
 
@@ -74,7 +74,7 @@ public class PasteAsJavaClass_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new JavaPaster().pasteJavaAsClass(((SModel) MapSequence.fromMap(_params).get("model")).getSModel(), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
+      new JavaPaster().pasteJavaAsClass(((SModel) MapSequence.fromMap(_params).get("model")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "PasteAsJavaClass", t);
     }

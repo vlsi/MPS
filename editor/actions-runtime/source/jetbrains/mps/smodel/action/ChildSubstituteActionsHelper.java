@@ -16,15 +16,20 @@
 package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.actions.runtime.impl.ChildSubstituteActionsUtil;
-import jetbrains.mps.actions.runtime.impl.NodeIconUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.scope.Scope;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageHierarchyCache;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.constraints.IReferencePresentation;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
@@ -42,7 +47,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
-import javax.swing.Icon;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
@@ -110,8 +114,8 @@ public class ChildSubstituteActionsHelper {
             }
 
             @Override
-            public Icon getIconFor(String pattern) {
-              return getIconFor(pattern, true);
+            public boolean isReferentPresentation() {
+              return true;
             }
           });
         }
@@ -190,7 +194,7 @@ public class ChildSubstituteActionsHelper {
   }
 
   /**
-   * TODO: remove this method adter MPS 3.0
+   * TODO: remove this method after MPS 3.0
    *
    * @deprecated since MPS 3.0, createDefaultSubstituteActions() should be used instead
    */
@@ -324,18 +328,13 @@ public class ChildSubstituteActionsHelper {
     }
 
     @Override
-    public Icon getIconFor(String pattern) {
-      return NodeIconUtil.getIcon(myReferentNode, true);
+    public SNode getIconNode(String pattern) {
+      return myReferentNode;
     }
 
     @Override
-    public int getFontStyleFor(String pattern) {
-      return NodePresentationUtil.getFontStyle(myParentNode, myReferentNode);
-    }
-
-    @Override
-    public int getSortPriority(String pattern) {
-      return NodePresentationUtil.getSortPriority(myParentNode, myReferentNode);
+    public boolean isReferentPresentation() {
+      return true;
     }
 
     @Override

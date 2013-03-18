@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
 
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.annotation.ImmutableObject;
@@ -25,6 +25,8 @@ import jetbrains.mps.util.annotation.ImmutableObject;
 @ImmutableObject
 public abstract class SNodeId implements Comparable<SNodeId>, org.jetbrains.mps.openapi.model.SNodeId {
 
+  public static final String TYPE = "default";
+
   public static SNodeId fromString(String idString) {
     if (idString.startsWith(Foreign.ID_PREFIX)) {
       return new Foreign(idString);
@@ -32,10 +34,14 @@ public abstract class SNodeId implements Comparable<SNodeId>, org.jetbrains.mps.
     try {
       long id = Long.valueOf(idString);
       return new Regular(id);
-    }
-    catch (NumberFormatException e) {
+    } catch (NumberFormatException e) {
       return null;
     }
+  }
+
+  @Override
+  public String getType() {
+    return TYPE;
   }
 
   @Override

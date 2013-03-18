@@ -9,7 +9,7 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModelHolder;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.ModelsOnlyScope;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -46,7 +46,7 @@ public class ModelUsagesFinder implements IFinder {
         if (!(SModelStereotype.isUserModel(modelDescriptor))) {
           continue;
         }
-        for (SNode node : new NodesIterable(modelDescriptor.getSModel())) {
+        for (SNode node : new NodesIterable(modelDescriptor)) {
           for (SReference reference : node.getReferences()) {
             if (!(((jetbrains.mps.smodel.SReference) reference).isExternal())) {
               continue;
@@ -72,7 +72,7 @@ public class ModelUsagesFinder implements IFinder {
         if (!(SModelStereotype.isUserModel(scopeModel))) {
           continue;
         }
-        for (SNode node : new NodesIterable(descriptor.getSModel())) {
+        for (SNode node : new NodesIterable(descriptor)) {
           for (SReference reference : node.getReferences()) {
             if (!(((jetbrains.mps.smodel.SReference) reference).isExternal())) {
               continue;
@@ -88,7 +88,7 @@ public class ModelUsagesFinder implements IFinder {
         }
       }
     } else {
-      Set<SModel> usages = FindUsagesManager.getInstance().findUsages(Collections.singleton((org.jetbrains.mps.openapi.model.SModelReference) modelReference), SearchType.MODEL_USAGES, GlobalScope.getInstance(), new EmptyProgressMonitor());
+      Set<SModel> usages = FindUsagesManager.getInstance().findUsages(Collections.singleton((SModelReference) modelReference), SearchType.MODEL_USAGES, GlobalScope.getInstance(), new EmptyProgressMonitor());
 
       for (SModel modelDescriptor : usages) {
         if (monitor.isCanceled()) {
@@ -97,7 +97,7 @@ public class ModelUsagesFinder implements IFinder {
         if (!(SModelStereotype.isUserModel(modelDescriptor))) {
           continue;
         }
-        searchResults.getSearchResults().add(new SearchResult<SModel>(modelDescriptor.getSModel(), "usages in imports"));
+        searchResults.getSearchResults().add(new SearchResult<SModel>(modelDescriptor, "usages in imports"));
       }
     }
     return searchResults;

@@ -27,7 +27,7 @@ public class ConceptsScope extends SimpleScope {
   }
 
   public static Iterable<SNode> getAvailableConcepts(SNode contextNode, final SNode metaConcept) {
-    SModule contextModule = contextNode.getModel().getModelDescriptor().getModule();
+    SModule contextModule = contextNode.getModel().getModule();
 
     Set<Language> contextLanguages = SetSequence.fromSet(new HashSet<Language>());
     for (SModule module : Sequence.fromIterable(contextModule.getModuleScope().getModules())) {

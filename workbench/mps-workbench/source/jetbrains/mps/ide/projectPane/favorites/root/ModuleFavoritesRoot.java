@@ -21,7 +21,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 
 import java.util.ArrayList;
@@ -51,7 +51,7 @@ class ModuleFavoritesRoot extends FavoritesRoot<ModuleReference> {
       SModel model = ModelAccess.instance().runReadAction(new Computable<SModel>() {
         @Override
         public SModel compute() {
-          return md.getSModel();
+          return md;
         }
       });
       if (model == null) continue;

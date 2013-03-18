@@ -16,7 +16,7 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.extapi.model.EditableSModel;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 
 /**
  * evgeny, 3/7/11
@@ -38,8 +38,8 @@ public class ReferenceUpdater {
     for (SModel sm : SModelRepository.getInstance().getModelDescriptors()) {
       if (SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(sm))) continue;
 
-      SModel model = sm.getSModel();
-      if ((((jetbrains.mps.smodel.SModel) model).updateSModelReferences() | ((jetbrains.mps.smodel.SModel) model).updateModuleReferences()) && (sm instanceof EditableSModel)) {
+      SModel model = sm;
+      if ((((jetbrains.mps.smodel.SModelInternal) model).updateSModelReferences() | ((jetbrains.mps.smodel.SModelInternal) model).updateModuleReferences()) && (sm instanceof EditableSModel)) {
         ((EditableSModel) sm).setChanged(true);
       }
     }

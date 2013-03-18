@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -309,7 +309,7 @@ public class LanguageHierarchyCache implements CoreComponent {
           if (structureDescriptor == null) continue;
           Iterable<SNode> iterable =
             new ConditionalIterable<SNode>(
-              structureDescriptor.getSModel().getRootNodes(),
+              structureDescriptor.getRootNodes(),
               new IsInstanceCondition(SNodeUtil.concept_AbstractConceptDeclaration));
           for (SNode root : iterable) {
             addToCache(NameUtil.nodeFQName(root));

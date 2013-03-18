@@ -9,29 +9,22 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.junit.runners.model.RunnerBuilder;
 import java.util.Collections;
-import org.junit.runners.model.InitializationError;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.runtime.IClassLoadingModule;
+import org.junit.runners.model.TestClass;
+import org.junit.runners.model.InitializationError;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.project.Project;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
-import java.lang.annotation.ElementType;
 
-public class MPSProjectITestsSuite extends Suite {
-  private static String PROPERTY_MODULE_UUID = "mps.junit.projectSuite.moduleUUID";
-  private static String PROPERTY_MODEL_NAME = "mps.junit.projectSuite.modelLongName";
-  private static String PROPERTY_TESTCLASS_NAME = "mps.junit.projectSuite.testClassName";
-  private List<Runner> myRunners = ListSequence.fromList(new ArrayList<Runner>());
+public abstract class MPSProjectITestsSuite extends Suite {
+  protected List<Runner> myRunners = ListSequence.fromList(new ArrayList<Runner>());
 
   public MPSProjectITestsSuite(Class<?> klass, RunnerBuilder builder) throws Throwable {
     super(klass, Collections.<Runner>emptyList());
@@ -40,10 +33,16 @@ public class MPSProjectITestsSuite extends Suite {
     }
   }
 
-  private List<Class<?>> getUnitTestClasses(org.junit.runners.model.TestClass klass) throws InitializationError {
+
+
+  protected abstract List<Tuples._2<String, SModule>> getTestClassDescriptors(TestClass klass) throws InitializationError;
+
+
+
+  protected List<Class<?>> getUnitTestClasses(TestClass klass) throws InitializationError {
     List<Class<?>> result = ListSequence.fromList(new ArrayList<Class<?>>());
     for (Tuples._2<String, SModule> testClassDescriptor : ListSequence.fromList(getTestClassDescriptors(klass))) {
-      Class testClass = ((IClassLoadingModule) testClassDescriptor._1()).getClass(testClassDescriptor._0());
+      Class testClass = ClassLoaderManager.getInstance().getClass(testClassDescriptor._1(), testClassDescriptor._0());
       if (testClass != null) {
         ListSequence.fromList(result).addElement(testClass);
       } else {
@@ -53,22 +52,13 @@ public class MPSProjectITestsSuite extends Suite {
     return result;
   }
 
-  private List<Tuples._2<String, SModule>> getTestClassDescriptors(org.junit.runners.model.TestClass klass) throws InitializationError {
-    final Iterable<SModel> modelDescriptors = getModelDescriptors(klass);
-    String testClassName = getTestClassName(klass);
-    if (testClassName != null) {
-      if (Sequence.fromIterable(modelDescriptors).isEmpty()) {
-        throw new InitializationError("Unable to locate class: " + testClassName + " - no model descriptors found (model or module was not specified)");
-      }
-      return Collections.singletonList(MultiTuple.<String,SModule>from(testClassName, ((SModule) Sequence.fromIterable(modelDescriptors).first().getModule())));
-    }
-
+  protected List<Tuples._2<String, SModule>> getTestClassDescriptorsFromModels(final Iterable<SModel> modelDescriptors) {
     final List<Tuples._2<String, SModule>> testClassDescriptors = ListSequence.fromList(new ArrayList<Tuples._2<String, SModule>>());
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
         for (SModel model : Sequence.fromIterable(modelDescriptors)) {
-          for (SNode testCase : ListSequence.fromList(SModelOperations.getRoots(((SModel) ((SModelInternal) model).getSModel()), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))) {
+          for (SNode testCase : ListSequence.fromList(SModelOperations.getRoots(((SModel) ((SModelInternal) model)), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))) {
             ListSequence.fromList(testClassDescriptors).addElement(MultiTuple.<String,SModule>from(BehaviorReflection.invokeVirtual(String.class, testCase, "virtual_getClassName_1216136193905", new Object[]{}), ((SModule) model.getModule())));
           }
         }
@@ -77,91 +67,10 @@ public class MPSProjectITestsSuite extends Suite {
     return testClassDescriptors;
   }
 
-  private Iterable<SModel> getModelDescriptors(org.junit.runners.model.TestClass klass) throws InitializationError {
-    Project mpsProject = MPSOpenProjectRunner.getCurrentMPSProject();
 
-    String moduleUUID = getModuleUUID(klass);
-    if (moduleUUID != null) {
-      for (SModule module : Sequence.fromIterable(mpsProject.getModules())) {
-        if (moduleUUID.equals(module.getModuleId().toString())) {
-          return module.getModels();
-        }
-      }
-      throw new InitializationError("Module with specified UUID: " + moduleUUID + " was not found in MPS project: " + mpsProject.getProjectFile().getAbsolutePath());
-    }
-
-    String modelLongName = getModelLongName(klass);
-    if (modelLongName != null) {
-      for (SModel modelDescriptor : Sequence.fromIterable(mpsProject.getProjectModels())) {
-        if (modelLongName.equals(modelDescriptor.getModelName())) {
-          return Collections.singletonList(modelDescriptor);
-        }
-      }
-      throw new InitializationError("Model with specified longName: " + modelLongName + " was not found in MPS project: " + mpsProject.getProjectFile().getAbsolutePath());
-    }
-
-    return mpsProject.getProjectModels();
-  }
-
-  private String getModuleUUID(org.junit.runners.model.TestClass klass) {
-    MPSProjectITestsSuite.ModuleUUID moduleAnnotation = klass.getJavaClass().getAnnotation(MPSProjectITestsSuite.ModuleUUID.class);
-    if (moduleAnnotation != null) {
-      return moduleAnnotation.value();
-    }
-    return System.getProperty(MPSProjectITestsSuite.PROPERTY_MODULE_UUID);
-  }
-
-  private String getModelLongName(org.junit.runners.model.TestClass klass) {
-    MPSProjectITestsSuite.ModelLongName modelAnnotation = klass.getJavaClass().getAnnotation(MPSProjectITestsSuite.ModelLongName.class);
-    if (modelAnnotation != null) {
-      return modelAnnotation.value();
-    }
-    return System.getProperty(PROPERTY_MODEL_NAME);
-  }
-
-  private String getTestClassName(org.junit.runners.model.TestClass klass) {
-    MPSProjectITestsSuite.TestClass testClassAnnotation = klass.getJavaClass().getAnnotation(MPSProjectITestsSuite.TestClass.class);
-    if (testClassAnnotation != null) {
-      return testClassAnnotation.value();
-    }
-    return System.getProperty(PROPERTY_TESTCLASS_NAME);
-  }
 
   @Override
   protected List<Runner> getChildren() {
     return myRunners;
   }
-
-  @Retention(RetentionPolicy.RUNTIME)
-  @Target(value = {ElementType.TYPE})
-public static   @interface ModuleUUID {    /**
-     * 
-     * 
-     * @return path to MPS project
-     */
-
-    String value();
-}
-
-@Retention(RetentionPolicy.RUNTIME)
-@Target(value = {ElementType.TYPE})
-public static @interface ModelLongName {  /**
-   * 
-   * 
-   * @return path to MPS project
-   */
-
-  String value();
-}
-
-@Retention(RetentionPolicy.RUNTIME)
-@Target(value = {ElementType.TYPE})
-public static @interface TestClass {/**
- * 
- * 
- * @return path to MPS project
- */
-
-String value();
-}
 }

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.model.SModelData;
@@ -87,13 +87,17 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
   }
 
   @Override
-  public final DefaultSModel getSModel() {
+  public final DefaultSModel getSModelInternal() {
+    ModelLoadingState oldState = myModel.getState();
+    if (oldState.ordinal() >= ModelLoadingState.ROOTS_LOADED.ordinal()) {
+      return myModel.getModel(ModelLoadingState.ROOTS_LOADED);
+    }
     synchronized (myModel) {
-      ModelLoadingState oldState = myModel.getState();
+      oldState = myModel.getState();
       DefaultSModel res = myModel.getModel(ModelLoadingState.ROOTS_LOADED);
       if (res == null) return null; // this is when we are in recursion
-      res.setModelDescriptor(this);
       if (oldState != myModel.getState()) {
+        res.setModelDescriptor(this);
         fireModelStateChanged(oldState, myModel.getState());
       }
       return res;
@@ -141,9 +145,9 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
       return new ModelLoadResult(newModel, ModelLoadingState.NOT_LOADED);
     }
 
-    SModel model = result.getModel();
+    jetbrains.mps.smodel.SModel model = result.getModel();
     if (result.getState() == ModelLoadingState.FULLY_LOADED) {
-      boolean needToSave = ((jetbrains.mps.smodel.SModel) model).updateSModelReferences() || ((jetbrains.mps.smodel.SModel) model).updateModuleReferences();
+      boolean needToSave = model.updateSModelReferences() || model.updateModuleReferences();
 
       if (needToSave && !source.isReadOnly()) {
         setChanged(true);
@@ -192,7 +196,7 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
 
   @Override
   protected boolean saveModel() {
-    SModel smodel = getSModel();
+    DefaultSModel smodel = getSModelInternal();
     if (smodel instanceof InvalidSModel) {
       // we do not save stub model to not overwrite the real model
       return false;
@@ -260,14 +264,14 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
     return model.getSModelHeader();
   }
 
-  private void tryFixingVersion(SModel loadedSModel) {
+  private void tryFixingVersion(jetbrains.mps.smodel.SModel loadedSModel) {
     if (getVersion() != -1) return;
 
     int latestVersion = getStructureModificationLog().getLatestVersion(getSModelReference());
     myStructureModificationLog = null;  // we don't need to keep log in memory
     if (latestVersion != -1) {
-      ((jetbrains.mps.smodel.SModel) loadedSModel).setVersion(latestVersion);
-      LOG.error("Version for model " + getSModelReference().getSModelFqName() + " was not set.");
+      ( loadedSModel).setVersion(latestVersion);
+      LOG.error("Version for model " + getSModelReference().getModelName() + " was not set.");
     }
   }
 

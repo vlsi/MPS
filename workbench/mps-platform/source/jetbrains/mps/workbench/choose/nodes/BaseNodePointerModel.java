@@ -22,10 +22,10 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public abstract class BaseNodePointerModel extends BaseMPSChooseModel<SNodeReference> {
   public BaseNodePointerModel(Project project) {
@@ -69,13 +69,8 @@ public abstract class BaseNodePointerModel extends BaseMPSChooseModel<SNodeRefer
           @Override
           public void run() {
             SNode node = getNode();
-            if (
-              node == null ||
-                node.getModel() == null ||
-                jetbrains.mps.util.SNodeOperations.isModelDisposed(node.getModel()) ||
-                node.getModel().getModelDescriptor() == null) {
-              return;
-            }
+            if (node == null || !node.isInRepository()) return;
+
             ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
             NavigationSupport.getInstance().openNode(context, node, true, !(node.getModel() != null && node.getModel().isRoot(node)));
           }

@@ -6,7 +6,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import java.util.Map;
 import java.lang.reflect.Constructor;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -176,11 +176,11 @@ public class EditorsFinderManager implements ApplicationComponent {
     SModel editorModelDescriptor = LanguageAspect.EDITOR.get(language);
     String editorUID = null;
     if (editorModelDescriptor != null) {
-      editorUID = editorModelDescriptor.getReference().getSModelFqName().toString();
+      editorUID = editorModelDescriptor.getReference().getModelName();
     }
     try {
       String editorClassName = editorUID + "." + SPropertyOperations.getString(conceptDeclaration, "name") + "_Editor";
-      Class editorClass = language.getClass(editorClassName);
+      Class editorClass = myClassLoaderManager.getClass(language, editorClassName);
       if (editorClass == null) {
         return null;
       }

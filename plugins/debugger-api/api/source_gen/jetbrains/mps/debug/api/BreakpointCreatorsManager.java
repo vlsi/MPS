@@ -100,7 +100,7 @@ public class BreakpointCreatorsManager implements ApplicationComponent {
       return breakpoint;
     }
 
-    DebugInfo debugInfo = TraceInfoCache.getInstance().get(SNodeOperations.getModel(node).getModelDescriptor());
+    DebugInfo debugInfo = TraceInfoCache.getInstance().get(SNodeOperations.getModel(node));
     if (debugInfo != null) {
       TraceablePositionInfo position = debugInfo.getPositionForNode(node);
       if (position != null) {
@@ -110,7 +110,7 @@ public class BreakpointCreatorsManager implements ApplicationComponent {
         }
         SNode concept = (SNode) SModelUtil.findConceptDeclaration(conceptFqName, ProjectHelper.toMPSProject(project).getScope());
 
-        createBreakpoint(concept, node, project);
+        return createBreakpoint(concept, node, project);
       }
     }
 

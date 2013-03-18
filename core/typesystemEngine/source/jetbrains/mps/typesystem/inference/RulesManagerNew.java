@@ -49,7 +49,7 @@ public class RulesManagerNew {
   }
 
   private ModelRules getModelRules(SNode node) {
-    SModel model = node.getModel().getModelDescriptor();
+    SModel model = node.getModel();
     ModelRules result = myModelsToRules.get(model);
     if (result == null) {
       result = new ModelRules(model);

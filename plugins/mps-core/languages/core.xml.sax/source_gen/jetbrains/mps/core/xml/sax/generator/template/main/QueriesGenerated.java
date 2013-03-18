@@ -84,7 +84,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_7113564998979659512(final IOperationContext operationContext, final IfMacroContext _context) {
-    SModel model = _context.getOriginalInputModel().getModelDescriptor();
+    SModel model = _context.getOriginalInputModel();
     if (model == null) {
       return false;
     }
@@ -153,7 +153,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_7113564998979618879(final IOperationContext operationContext, final IfMacroContext _context) {
-    SModel model = _context.getOriginalInputModel().getModelDescriptor();
+    SModel model = _context.getOriginalInputModel();
     if (model == null) {
       return false;
     }

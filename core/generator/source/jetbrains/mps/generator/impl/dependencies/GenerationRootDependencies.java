@@ -16,7 +16,7 @@
 package jetbrains.mps.generator.impl.dependencies;
 
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jdom.Attribute;
 import org.jdom.Element;

@@ -5,7 +5,7 @@ package jetbrains.mps.ide.java.sourceStubs;
 import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSourceListener;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
 import java.util.Map;
@@ -140,7 +140,7 @@ public class JavaSourceStubModelDescriptor extends BaseSpecialModelDescriptor im
               }
             }).first();
             if (oldNode == null) {
-              SModelOperations.addRootNode(((org.jetbrains.mps.openapi.model.SModel) myModel), newNode);
+              SModelOperations.addRootNode(((org.jetbrains.mps.openapi.model.SModel) myModel.getModelDescriptor()), newNode);
               SetSequence.fromSet(oldNodes).removeElement(oldNode);
             } else {
               SNodeOperations.replaceWithAnother(oldNode, newNode);

@@ -13,7 +13,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -24,7 +24,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.logging.Logger;
 
 @Deprecated
@@ -83,7 +82,7 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
       int dotIndex = classname.lastIndexOf(".");
       if (dotIndex >= 0 && targetModelReference == null) {
         // try local nested classes 
-        List<SNode> localClassifiers = ClassifiersCache.getInstance(myModel.getModelDescriptor()).getClassifiersByRefName(classname);
+        List<SNode> localClassifiers = ClassifiersCache.getInstance(myModel).getClassifiersByRefName(classname);
         if (ListSequence.fromList(localClassifiers).count() >= 1) {
           return ListSequence.fromList(localClassifiers).first();
         }
@@ -100,7 +99,7 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
       if (targetModelReference == null) {
         targetModelReference = myModel.getReference();
       }
-      if (targetModelReference.getSModelId() != null) {
+      if (targetModelReference.getModelId() != null) {
         SModel targetModel = this.myScope.getModelDescriptor(targetModelReference);
         if (targetModel == null) {
           return null;
@@ -142,7 +141,7 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
           if (SNodeOperations.getModel(cls) == myModel) {
             return cls;
           }
-          if (check_x9ho2v_a0b0a0h0e7_0(check_x9ho2v_a0a1a0a7a4h_0(myModel)) == check_x9ho2v_a0b0a0h0e7(check_x9ho2v_a0a1a0a7a4h(SNodeOperations.getModel(cls)))) {
+          if (check_x9ho2v_a0b0a0h0e7_0(myModel) == check_x9ho2v_a0b0a0h0e7(SNodeOperations.getModel(cls))) {
             return cls;
           }
         }
@@ -173,30 +172,16 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
       return ListSequence.fromList(classifiers).getElement(0);
     }
 
-    private static IModule check_x9ho2v_a0b0a0h0e7(SModelInternal checkedDotOperand) {
+    private static IModule check_x9ho2v_a0b0a0h0e7(SModel checkedDotOperand) {
       if (null != checkedDotOperand) {
         return checkedDotOperand.getModule();
       }
       return null;
     }
 
-    private static SModelInternal check_x9ho2v_a0a1a0a7a4h(SModel checkedDotOperand) {
-      if (null != checkedDotOperand) {
-        return checkedDotOperand.getModelDescriptor();
-      }
-      return null;
-    }
-
-    private static IModule check_x9ho2v_a0b0a0h0e7_0(SModelInternal checkedDotOperand) {
+    private static IModule check_x9ho2v_a0b0a0h0e7_0(SModel checkedDotOperand) {
       if (null != checkedDotOperand) {
         return checkedDotOperand.getModule();
-      }
-      return null;
-    }
-
-    private static SModelInternal check_x9ho2v_a0a1a0a7a4h_0(SModel checkedDotOperand) {
-      if (null != checkedDotOperand) {
-        return checkedDotOperand.getModelDescriptor();
       }
       return null;
     }

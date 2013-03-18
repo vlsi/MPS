@@ -22,7 +22,7 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.workbench.choose.nodes.BaseNodePointerModel;
@@ -62,7 +62,7 @@ public class GoToClassMPSContributor implements GotoClassContributor {
         for (SModel modelDescriptor : modelDescriptors) {
           if (!SModelStereotype.isUserModel(modelDescriptor)) continue;
 
-          Iterable<SNode> iter = new ConditionalIterable<SNode>(modelDescriptor.getSModel().getRootNodes(), cond);
+          Iterable<SNode> iter = new ConditionalIterable<SNode>(modelDescriptor.getRootNodes(), cond);
           for (SNode node : iter){
             nodes.add(new jetbrains.mps.smodel.SNodePointer(node));
           }

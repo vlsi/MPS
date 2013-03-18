@@ -89,24 +89,6 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
     return null;
   }
 
-  @Override
-  public int getFontStyleFor(String pattern) {
-    if (getParameterObject() instanceof SNode) {
-      SNode parameterNode = (SNode) getParameterObject();
-      return NodePresentationUtil.getFontStyle(parameterNode, getSourceNode());
-    }
-    return Font.PLAIN;
-  }
-
-  @Override
-  public int getSortPriority(String pattern) {
-    if (getParameterObject() instanceof SNode) {
-      SNode parameterNode = (SNode) getParameterObject();
-      return NodePresentationUtil.getSortPriority(getSourceNode(), parameterNode);
-    }
-    return 0;
-  }
-
   public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
     SNode conceptDeclaration = getOutputConcept();
     if (conceptDeclaration == null) {

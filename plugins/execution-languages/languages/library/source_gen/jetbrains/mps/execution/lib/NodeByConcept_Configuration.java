@@ -19,6 +19,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class NodeByConcept_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
   @NotNull
@@ -89,7 +90,7 @@ public class NodeByConcept_Configuration implements IPersistentConfiguration, IT
       this.setModelId(null);
       this.setNodeId(null);
     } else {
-      this.setModelId(node.getModel().getModelDescriptor().getReference().toString());
+      this.setModelId(node.getModel().getReference().toString());
       this.setNodeId(node.getNodeId().toString());
     }
   }
@@ -151,7 +152,7 @@ public class NodeByConcept_Configuration implements IPersistentConfiguration, IT
 
   private static SNode check_h3hwcn_a0a0(SNodePointer checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getNode();
+      return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
     }
     return null;
   }

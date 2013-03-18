@@ -21,7 +21,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.DynamicReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.StaticReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -37,14 +37,14 @@ public class CloneUtil {
   public static void cloneModelWithImports(SModel inputModel, SModel outputModel, boolean originalInput) {
     //copy model with imports, used languages and devkits
     cloneModel(inputModel, outputModel, originalInput);
-    for (ImportElement model : ((jetbrains.mps.smodel.SModel) inputModel).importedModels()) {
-      ((jetbrains.mps.smodel.SModel) outputModel).addModelImport(model.getModelReference(), false);
+    for (ImportElement model : ((jetbrains.mps.smodel.SModelInternal) inputModel).importedModels()) {
+      ((jetbrains.mps.smodel.SModelInternal) outputModel).addModelImport(model.getModelReference(), false);
     }
-    for (ModuleReference lang : ((jetbrains.mps.smodel.SModel) inputModel).importedLanguages()) {
-      ((jetbrains.mps.smodel.SModel) outputModel).addLanguage(lang);
+    for (ModuleReference lang : ((jetbrains.mps.smodel.SModelInternal) inputModel).importedLanguages()) {
+      ((jetbrains.mps.smodel.SModelInternal) outputModel).addLanguage(lang);
     }
-    for (ModuleReference devKit : ((jetbrains.mps.smodel.SModel) inputModel).importedDevkits()) {
-      ((jetbrains.mps.smodel.SModel) outputModel).addDevKit(devKit);
+    for (ModuleReference devKit : ((jetbrains.mps.smodel.SModelInternal) inputModel).importedDevkits()) {
+      ((jetbrains.mps.smodel.SModelInternal) outputModel).addDevKit(devKit);
     }
   }
 

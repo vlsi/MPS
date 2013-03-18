@@ -16,7 +16,6 @@ import jetbrains.mps.project.ProjectOperationContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.smodel.SModelInternal;
 
 public class RenameConceptRefactoringTester implements IRefactoringTester {
   private static final String STRMD = "strmd";
@@ -40,7 +39,7 @@ public class RenameConceptRefactoringTester implements IRefactoringTester {
       public void run() {
         final SModel structureModelDescriptor = testRefactoringLanguage.getStructureModelDescriptor();
         refactoringContext.setParameter(RenameConceptRefactoringTester.STRMD, structureModelDescriptor);
-        SModel model = structureModelDescriptor.getSModel();
+        SModel model = structureModelDescriptor;
         SNode concept = SModelOperations.getRootByName(model, "MyVeryGoodConcept1");
         refactoringContext.setSelectedNode(concept);
         refactoringContext.setSelectedProject(project);
@@ -62,10 +61,10 @@ public class RenameConceptRefactoringTester implements IRefactoringTester {
                 result[0] = false;
                 return;
               }
-              SModel sModel = sandbox1.getSModel();
+              SModel sModel = sandbox1;
               String conceptFqName = sModel.getRootNodes().iterator().next().getConcept().getConceptId();
-              SModel structureModelDescriptor = (SModelInternal) refactoringContext.getParameter(RenameConceptRefactoringTester.STRMD);
-              result[0] = conceptFqName.equals(structureModelDescriptor.getReference().getSModelFqName() + "." + newConceptName);
+              SModel structureModelDescriptor = (SModel) refactoringContext.getParameter(RenameConceptRefactoringTester.STRMD);
+              result[0] = conceptFqName.equals(structureModelDescriptor.getReference().getModelName() + "." + newConceptName);
             } catch (Throwable t) {
               t.printStackTrace();
               result[0] = false;

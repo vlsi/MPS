@@ -8,7 +8,7 @@ import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -80,5 +80,5 @@ public class TemplateModelImpl implements TemplateModel {
     return templateModule;
   }
 
-  private static SModelReference modelRef_wo91o7_a0a5 = new SModelReference(new SModelFqName("jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main", "generator"), SModelId.regular(new UUID(6426117384470809586L, -7047529778099592719L)));
+  private static jetbrains.mps.smodel.SModelReference modelRef_wo91o7_a0a5 = new jetbrains.mps.smodel.SModelReference(new SModelFqName("jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main", "generator"), SModelId.regular(new UUID(6426117384470809586L, -7047529778099592719L)));
 }

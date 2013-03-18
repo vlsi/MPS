@@ -22,6 +22,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -42,7 +43,6 @@ import org.jdom.Document;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import org.jetbrains.mps.openapi.util.Consumer;
 import org.xml.sax.Attributes;
@@ -59,7 +59,6 @@ import java.io.StringReader;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 
 public class ModelPersistence {
   private static final Logger LOG = Logger.getLogger(ModelPersistence.class);
@@ -305,11 +304,11 @@ public class ModelPersistence {
       modelPersistence = getCurrentModelPersistence();
     }
 
-    ((jetbrains.mps.smodel.SModel) sourceModel).calculateImplicitImports();
+    (sourceModel).calculateImplicitImports();
     return modelPersistence.getModelWriter().saveModel(sourceModel);
   }
 
-  //-------- --------
+  //----------------
 
   @NotNull
   private static Document loadModelDocument(@NotNull InputSource source) throws ModelReadException {

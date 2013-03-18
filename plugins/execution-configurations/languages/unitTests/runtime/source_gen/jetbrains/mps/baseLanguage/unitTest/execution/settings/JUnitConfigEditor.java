@@ -564,7 +564,7 @@ public class JUnitConfigEditor extends JPanel {
       if (wrapperToTakeModelFrom.value != null) {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            myThis.resetEditorModelWith(wrapperToTakeModelFrom.value.getNodePointer().getModelReference().getSModelFqName().toString());
+            myThis.resetEditorModelWith(wrapperToTakeModelFrom.value.getNodePointer().getModelReference().getModelName());
           }
         });
       }

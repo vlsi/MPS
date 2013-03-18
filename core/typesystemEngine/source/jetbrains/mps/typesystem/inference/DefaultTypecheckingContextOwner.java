@@ -19,11 +19,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 
 /**
- * Created with IntelliJ IDEA.
  * User: fyodor
  * Date: 11/27/12
- * Time: 11:32 AM
- * To change this template use File | Settings | File Templates.
  */
 public class DefaultTypecheckingContextOwner implements ITypeContextOwner {
 

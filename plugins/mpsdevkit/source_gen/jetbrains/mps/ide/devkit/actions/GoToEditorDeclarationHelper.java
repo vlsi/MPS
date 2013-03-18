@@ -24,7 +24,7 @@ public class GoToEditorDeclarationHelper {
     SNode editorDeclaration = ModelAccess.instance().runReadAction(new Computable<SNode>() {
       @Override
       public SNode compute() {
-        return findEditorDeclaration(languageEditor.getSModel(), concept);
+        return findEditorDeclaration(languageEditor, concept);
       }
     });
     if (editorDeclaration != null) {
@@ -77,7 +77,7 @@ public class GoToEditorDeclarationHelper {
   }
 
   public static SNode createEditorDeclaration(SNode conceptDeclaration, SModel editorModelDescriptor, IScope scope) {
-    SModel editorModel = editorModelDescriptor.getSModel();
+    SModel editorModel = editorModelDescriptor;
     SNode result = SNodeFactoryOperations.createNewNode(editorModel, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", null);
     SLinkOperations.setTarget(result, "conceptDeclaration", conceptDeclaration, false);
     SModelOperations.addRootNode(editorModel, result);

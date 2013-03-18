@@ -31,7 +31,7 @@ import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
@@ -364,10 +364,9 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
      * We do not check for duplicated nodes
      */
     void track(SNode node) {
-      SModel sm = node.getModel().getModelDescriptor();
+      if (!node.isInRepository()) return;
 
-      if (sm == null) return;
-
+      SModel sm = node.getModel();
       if (!myNodesCount.containsKey(sm)) {
         ((SModelInternal) sm).addModelListener(myListener);
         myNodesCount.put(sm, 1);

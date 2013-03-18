@@ -46,6 +46,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import java.lang.reflect.Constructor;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -311,7 +312,7 @@ public class RefactoringContext {
 
   public void changeModelName(EditableSModel model, String newName) {
     if (LanguageAspect.STRUCTURE.is(model)) {
-      for (SNode concept : ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getNodes(((SModel) ((SModelInternal) model).getSModel()), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
+      for (SNode concept : ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getNodes(((SModel) ((SModelInternal) model)), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
         this.changeFeatureName(concept, NameUtil.longNameFromNamespaceAndShortName(newName, SPropertyOperations.getString(concept, "name")), SPropertyOperations.getString(concept, "name"));
       }
     }
@@ -593,12 +594,12 @@ public class RefactoringContext {
             case NODE:
               SNode node = ((SNode) target);
               setSelectedNode(node);
-              setSelectedModel(node.getModel().getModelDescriptor());
-              setSelectedModule(node.getModel().getModelDescriptor().getModule());
+              setSelectedModel(node.getModel());
+              setSelectedModule(node.getModel().getModule());
 
               break;
             case MODEL:
-              SModel descriptor = ((SModel) target).getModelDescriptor();
+              SModel descriptor = ((SModel) target);
               setSelectedModel(descriptor);
               setSelectedModule(descriptor.getModule());
               break;
@@ -646,7 +647,7 @@ public class RefactoringContext {
       if (l == null) {
         LOG.errorWithTrace("can't find a language " + namespace);
       } else {
-        Class refactoringClass = l.getClass(className);
+        Class refactoringClass = ClassLoaderManager.getInstance().getClass(l, className);
         if (refactoringClass == null) {
           LOG.errorWithTrace("can't find a class " + className + " in a language " + namespace);
         } else {

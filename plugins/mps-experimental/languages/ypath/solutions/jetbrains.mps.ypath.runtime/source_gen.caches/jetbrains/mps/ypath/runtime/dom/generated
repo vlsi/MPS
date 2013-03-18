@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="727af04dlfsvb8pm9114k5e1vsvc2a2">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="38s949ymo9nq7jj7p2lrfowy0hurndx" />
+  <common hash="czpackh31w9il8y3ejm2l49dc898les" />
+  <source id="2295870045929265758" name="NodeListIterableAdapter" hash="7p6t8f6xi56ik31xvhglfnhuhzhyfa6">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="NodeListIterableAdapter.java" />
+  </source>
+  <source id="2295870045929266190" name="ChainedIterable" hash="2yk23xzqe2qat0sz4aoncbydt79ucpf">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ChainedIterable.java" />
+  </source>
+  <source id="2295870045929267550" name="ChainedIterator" hash="46zitc5rf22yh4492m53lg6d3w0m1tz">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ChainedIterator.java" />
+  </source>
+  <source id="2295870045929268207" name="NamedNodeMapIterableAdapter" hash="a7kens195uafjl7o3e5z776qyq8vq7p">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="NamedNodeMapIterableAdapter.java" />
+  </source>
+</dependencies>
+

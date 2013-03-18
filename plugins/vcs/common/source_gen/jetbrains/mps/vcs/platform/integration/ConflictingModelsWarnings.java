@@ -18,7 +18,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.SModelInternal;
 
 public class ConflictingModelsWarnings implements EditorWarningsProvider {
   public ConflictingModelsWarnings() {
@@ -27,7 +26,7 @@ public class ConflictingModelsWarnings implements EditorWarningsProvider {
   @Nullable
   @Override
   public WarningPanel getWarningPanel(@NotNull SNode node, @NotNull final Project project) {
-    SModel md = check_bmsafs_a0a0b(node.getModel());
+    SModel md = node.getModel();
     final VirtualFile modelFile = ConflictsUtil.getModelFileIfConflicting(md, project);
     final VirtualFile moduleFile = ConflictsUtil.getModuleFileIfConflicting(check_bmsafs_a0a2a1(md), project);
     if (moduleFile != null) {
@@ -74,13 +73,6 @@ public class ConflictingModelsWarnings implements EditorWarningsProvider {
       return "solution";
     } else if (module instanceof Generator) {
       return "generator";
-    }
-    return null;
-  }
-
-  private static SModelInternal check_bmsafs_a0a0b(jetbrains.mps.smodel.SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }

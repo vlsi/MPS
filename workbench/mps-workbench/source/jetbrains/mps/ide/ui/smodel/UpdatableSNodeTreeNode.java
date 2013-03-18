@@ -20,7 +20,7 @@ import jetbrains.mps.ide.projectPane.logicalview.SNodeTreeUpdater;
 import jetbrains.mps.ide.projectPane.logicalview.SimpleModelListener;
 import jetbrains.mps.ide.ui.smodel.SModelEventsDispatcher.SModelEventsListener;
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
@@ -146,7 +146,7 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
 
     @Override
     public SModel getSModelDescriptor() {
-      return myTreeNode.getSNode().getModel().getModelDescriptor();
+      return myTreeNode.getSNode().getModel();
     }
 
     @Override

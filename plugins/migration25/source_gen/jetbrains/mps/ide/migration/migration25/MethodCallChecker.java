@@ -26,11 +26,10 @@ import jetbrains.mps.ide.modelchecker.actions.IModelCheckerFix;
 import jetbrains.mps.ide.java.platform.highlighters.MethodDeclarationsFixer;
 import java.util.Map;
 import java.util.HashMap;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.SModelInternal;
 
 public class MethodCallChecker extends SpecificChecker {
   public MethodCallChecker() {
@@ -39,10 +38,10 @@ public class MethodCallChecker extends SpecificChecker {
   @Override
   public List<SearchResult<ModelCheckerIssue>> checkModel(final SModel model, ProgressMonitor monitor, IOperationContext operationContext) {
     List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
-    if (model == null || model.getModelDescriptor() == null || model.getModelDescriptor().getModule() == null) {
+    if (model == null || model == null || model.getModule() == null) {
       return results;
     }
-    final IScope scope = model.getModelDescriptor().getModule().getScope();
+    final IScope scope = model.getModule().getScope();
     String title = "Checking " + SModelOperations.getModelName(model) + " for unresolved references to method declaration...";
     monitor.start(title, 1);
 
@@ -85,7 +84,7 @@ public class MethodCallChecker extends SpecificChecker {
             public boolean doFix() {
               if (scope.getModelDescriptor(uid) == null && SModelRepository.getInstance().getModelDescriptor(uid) != null) {
                 SModel sm = SModelRepository.getInstance().getModelDescriptor(uid);
-                check_lz161n_a1a0a5a0a7a1a6a1(check_lz161n_a0b0a0f0a0h0b0g0b(model.getModelDescriptor()), sm);
+                check_lz161n_a1a0a5a0a7a1a6a1(check_lz161n_a0b0a0f0a0h0b0g0b(model), sm);
                 return true;
               }
               return false;
@@ -119,7 +118,7 @@ public class MethodCallChecker extends SpecificChecker {
     return null;
   }
 
-  private static IModule check_lz161n_a0b0a0f0a0h0b0g0b(SModelInternal checkedDotOperand) {
+  private static IModule check_lz161n_a0b0a0f0a0h0b0g0b(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

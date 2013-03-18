@@ -20,7 +20,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
@@ -86,7 +86,7 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
     }
     for (SModelReference accessory : myModule.getModuleDescriptor().getAccessoryModels()) {
       if (myModule.getScope().getModelDescriptor(accessory) == null) {
-        errors.add("Can't find accessory model: " + accessory.getLongName());
+        errors.add("Can't find accessory model: " + SModelStereotype.withoutStereotype(accessory.getModelName()));
       }
     }
     for (ModuleReference ref : myModule.getModuleDescriptor().getRuntimeModules()) {

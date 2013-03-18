@@ -96,7 +96,7 @@ public class PasteNode_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       PasteNodeData pasteNodeData = PasteNode_Action.this.getPasteData(_params);
-      final Runnable addImportsRunnable = CopyPasteUtil.addImportsWithDialog(pasteNodeData, ((SModel) MapSequence.fromMap(_params).get("contextModel")).getSModel(), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+      final Runnable addImportsRunnable = CopyPasteUtil.addImportsWithDialog(pasteNodeData, ((SModel) MapSequence.fromMap(_params).get("contextModel")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
       final List<SNode> pasteNodes = pasteNodeData.getNodes();
       final Set<SReference> refsToResolve = pasteNodeData.getRequireResolveReferences();
       if (pasteNodes == null || pasteNodes.size() == 0) {
@@ -104,7 +104,7 @@ public class PasteNode_Action extends BaseAction {
       }
       ModelAccess.instance().runCommandInEDT(new Runnable() {
         public void run() {
-          if (SNodeOperations.isModelDisposed(((SModel) MapSequence.fromMap(_params).get("contextModel")).getSModel())) {
+          if (SNodeOperations.isModelDisposed(((SModel) MapSequence.fromMap(_params).get("contextModel")))) {
             return;
           }
           if (addImportsRunnable != null) {
@@ -115,7 +115,7 @@ public class PasteNode_Action extends BaseAction {
             if (!(paster.canPasteAsRoots())) {
               return;
             }
-            paster.pasteAsRoots(((SModel) MapSequence.fromMap(_params).get("contextModel")).getSModel(), ((String) MapSequence.fromMap(_params).get("pack")));
+            paster.pasteAsRoots(((SModel) MapSequence.fromMap(_params).get("contextModel")), ((String) MapSequence.fromMap(_params).get("pack")));
           } else {
             NodePaster paster = new NodePaster(pasteNodes);
             if (!(paster.canPaste(((SNode) MapSequence.fromMap(_params).get("node")), PasteEnv.PROJECT_TREE))) {
@@ -146,7 +146,7 @@ public class PasteNode_Action extends BaseAction {
     final Wrappers._T<PasteNodeData> result = new Wrappers._T<PasteNodeData>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        result.value = CopyPasteUtil.getPasteNodeDataFromClipboard(((SModel) MapSequence.fromMap(_params).get("contextModel")).getSModel());
+        result.value = CopyPasteUtil.getPasteNodeDataFromClipboard(((SModel) MapSequence.fromMap(_params).get("contextModel")));
       }
     });
     return result.value;

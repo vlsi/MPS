@@ -6,7 +6,7 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -103,7 +103,7 @@ public class CopyPasteManager extends AbstractManager implements CoreComponent {
       if (actionsModelDescriptor == null) {
         continue;
       }
-      Iterable<SNode> roots = new ConditionalIterable<SNode>(actionsModelDescriptor.getSModel().getRootNodes(), new Condition<SNode>() {
+      Iterable<SNode> roots = new ConditionalIterable<SNode>(actionsModelDescriptor.getRootNodes(), new Condition<SNode>() {
         public boolean met(SNode node) {
           return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.actions.structure.CopyPasteHandlers");
         }

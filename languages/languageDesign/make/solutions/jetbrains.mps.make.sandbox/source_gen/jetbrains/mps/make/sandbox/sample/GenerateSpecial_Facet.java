@@ -27,7 +27,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class GenerateSpecial_Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
-  private IFacet.Name name = new IFacet.Name("GenerateSpecial");
+  private IFacet.Name name = new IFacet.Name("jetbrains.mps.make.sandbox.GenerateSpecial");
 
   public GenerateSpecial_Facet() {
     ListSequence.fromList(targets).addElement(new GenerateSpecial_Facet.Target_GenerateSpecialTarget());
@@ -46,7 +46,7 @@ public class GenerateSpecial_Facet extends IFacet.Stub {
   }
 
   public Iterable<IFacet.Name> extended() {
-    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("Generate")});
+    return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.make.sandbox.Generate")});
   }
 
   public IFacet.Name getName() {
@@ -60,7 +60,7 @@ public class GenerateSpecial_Facet extends IFacet.Stub {
   public static class Target_GenerateSpecialTarget implements ITargetEx {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-    private ITarget.Name name = new ITarget.Name("GenerateSpecial.GenerateSpecialTarget");
+    private ITarget.Name name = new ITarget.Name("jetbrains.mps.make.sandbox.GenerateSpecial.GenerateSpecialTarget");
 
     public Target_GenerateSpecialTarget() {
     }
@@ -230,15 +230,15 @@ public class GenerateSpecial_Facet extends IFacet.Stub {
 
     public void storeValues(Map<String, String> store, IPropertiesPool properties) {
       {
-        ITarget.Name name = new ITarget.Name("GenerateSpecial.GenerateSpecialTarget");
+        ITarget.Name name = new ITarget.Name("jetbrains.mps.make.sandbox.GenerateSpecial.GenerateSpecialTarget");
         if (properties.hasProperties(name)) {
           GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables props = properties.properties(name, GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class);
-          MapSequence.fromMap(store).put("GenerateSpecial.GenerateSpecialTarget.foo", String.valueOf(props.foo()));
-          MapSequence.fromMap(store).put("GenerateSpecial.GenerateSpecialTarget.bar", String.valueOf((int) props.bar()));
-          MapSequence.fromMap(store).put("GenerateSpecial.GenerateSpecialTarget.baz", String.valueOf((boolean) props.baz()));
-          MapSequence.fromMap(store).put("GenerateSpecial.GenerateSpecialTarget.FooFoo", String.valueOf(props.FooFoo()));
-          MapSequence.fromMap(store).put("GenerateSpecial.GenerateSpecialTarget.BarBar", String.valueOf(props.BarBar()));
-          MapSequence.fromMap(store).put("GenerateSpecial.GenerateSpecialTarget.BazBaz", String.valueOf(props.BazBaz()));
+          MapSequence.fromMap(store).put("jetbrains.mps.make.sandbox.GenerateSpecial.GenerateSpecialTarget.foo", String.valueOf(props.foo()));
+          MapSequence.fromMap(store).put("jetbrains.mps.make.sandbox.GenerateSpecial.GenerateSpecialTarget.bar", String.valueOf((int) props.bar()));
+          MapSequence.fromMap(store).put("jetbrains.mps.make.sandbox.GenerateSpecial.GenerateSpecialTarget.baz", String.valueOf((boolean) props.baz()));
+          MapSequence.fromMap(store).put("jetbrains.mps.make.sandbox.GenerateSpecial.GenerateSpecialTarget.FooFoo", String.valueOf(props.FooFoo()));
+          MapSequence.fromMap(store).put("jetbrains.mps.make.sandbox.GenerateSpecial.GenerateSpecialTarget.BarBar", String.valueOf(props.BarBar()));
+          MapSequence.fromMap(store).put("jetbrains.mps.make.sandbox.GenerateSpecial.GenerateSpecialTarget.BazBaz", String.valueOf(props.BazBaz()));
         }
       }
     }
@@ -246,25 +246,25 @@ public class GenerateSpecial_Facet extends IFacet.Stub {
     public void loadValues(Map<String, String> store, IPropertiesPool properties) {
       try {
         {
-          ITarget.Name name = new ITarget.Name("GenerateSpecial.GenerateSpecialTarget");
+          ITarget.Name name = new ITarget.Name("jetbrains.mps.make.sandbox.GenerateSpecial.GenerateSpecialTarget");
           GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables props = properties.properties(name, GenerateSpecial_Facet.Target_GenerateSpecialTarget.Variables.class);
-          if (MapSequence.fromMap(store).containsKey("GenerateSpecial.GenerateSpecialTarget.foo")) {
-            props.foo(String.valueOf(MapSequence.fromMap(store).get("GenerateSpecial.GenerateSpecialTarget.foo")));
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.make.sandbox.GenerateSpecial.GenerateSpecialTarget.foo")) {
+            props.foo(String.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.make.sandbox.GenerateSpecial.GenerateSpecialTarget.foo")));
           }
-          if (MapSequence.fromMap(store).containsKey("GenerateSpecial.GenerateSpecialTarget.bar")) {
-            props.bar(Integer.valueOf(MapSequence.fromMap(store).get("GenerateSpecial.GenerateSpecialTarget.bar")));
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.make.sandbox.GenerateSpecial.GenerateSpecialTarget.bar")) {
+            props.bar(Integer.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.make.sandbox.GenerateSpecial.GenerateSpecialTarget.bar")));
           }
-          if (MapSequence.fromMap(store).containsKey("GenerateSpecial.GenerateSpecialTarget.baz")) {
-            props.baz(Boolean.valueOf(MapSequence.fromMap(store).get("GenerateSpecial.GenerateSpecialTarget.baz")));
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.make.sandbox.GenerateSpecial.GenerateSpecialTarget.baz")) {
+            props.baz(Boolean.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.make.sandbox.GenerateSpecial.GenerateSpecialTarget.baz")));
           }
-          if (MapSequence.fromMap(store).containsKey("GenerateSpecial.GenerateSpecialTarget.FooFoo")) {
-            props.FooFoo(String.valueOf(MapSequence.fromMap(store).get("GenerateSpecial.GenerateSpecialTarget.FooFoo")));
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.make.sandbox.GenerateSpecial.GenerateSpecialTarget.FooFoo")) {
+            props.FooFoo(String.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.make.sandbox.GenerateSpecial.GenerateSpecialTarget.FooFoo")));
           }
-          if (MapSequence.fromMap(store).containsKey("GenerateSpecial.GenerateSpecialTarget.BarBar")) {
-            props.BarBar(Integer.valueOf(MapSequence.fromMap(store).get("GenerateSpecial.GenerateSpecialTarget.BarBar")));
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.make.sandbox.GenerateSpecial.GenerateSpecialTarget.BarBar")) {
+            props.BarBar(Integer.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.make.sandbox.GenerateSpecial.GenerateSpecialTarget.BarBar")));
           }
-          if (MapSequence.fromMap(store).containsKey("GenerateSpecial.GenerateSpecialTarget.BazBaz")) {
-            props.BazBaz(Boolean.valueOf(MapSequence.fromMap(store).get("GenerateSpecial.GenerateSpecialTarget.BazBaz")));
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.make.sandbox.GenerateSpecial.GenerateSpecialTarget.BazBaz")) {
+            props.BazBaz(Boolean.valueOf(MapSequence.fromMap(store).get("jetbrains.mps.make.sandbox.GenerateSpecial.GenerateSpecialTarget.BazBaz")));
           }
         }
       } catch (RuntimeException re) {

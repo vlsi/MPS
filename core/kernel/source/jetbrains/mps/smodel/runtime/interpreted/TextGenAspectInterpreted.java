@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.runtime.interpreted;
 
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
@@ -55,7 +56,7 @@ public class TextGenAspectInterpreted implements TextGenAspectDescriptor {
       String packageName = NameUtil.namespaceFromConceptFQName(NameUtil.nodeFQName(concept));
       String className = concept.getName();
       String textgenClassname = packageName + ".textGen." + className + "_TextGen";
-      Class textgenClass = l.getClass(textgenClassname);
+      Class textgenClass = ClassLoaderManager.getInstance().getClass(l, textgenClassname);
       if (textgenClass != null) {
         return new SNodeTextGenAdapter(conceptFqName, textgenClass);
       }

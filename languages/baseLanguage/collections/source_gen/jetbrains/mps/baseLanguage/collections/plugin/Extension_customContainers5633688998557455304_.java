@@ -24,7 +24,7 @@ public class Extension_customContainers5633688998557455304_ extends Extension.De
         List<SNode> res = new ArrayList<SNode>();
         // Find the model(s) with custom container declarations 
         SModel desc = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString("jetbrains.mps.baseLanguage.collections.custom"));
-        SModel mdl = desc.getSModel();
+        SModel mdl = desc;
         if (mdl != null) {
           ListSequence.fromList(res).addSequence(ListSequence.fromList(SModelOperations.getNodes(mdl, "jetbrains.mps.baseLanguage.collections.structure.CustomContainers")));
         }

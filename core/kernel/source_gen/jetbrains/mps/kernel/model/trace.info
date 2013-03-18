@@ -10,7 +10,7 @@
     <nodeInfo nodeId="1238267575188" fileName="SModelUtil.java" startLine="55" startPosition="88" endLine="56" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238267599634" fileName="SModelUtil.java" startLine="56" startPosition="66" endLine="57" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238267664950" fileName="SModelUtil.java" startLine="59" startPosition="78" endLine="60" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="1238267671233" fileName="SModelUtil.java" startLine="61" startPosition="7" endLine="62" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1238267671233" fileName="SModelUtil.java" startLine="61" startPosition="7" endLine="62" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238267829823" fileName="SModelUtil.java" startLine="64" startPosition="160" endLine="65" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238267943026" fileName="SModelUtil.java" startLine="68" startPosition="5" endLine="69" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238267990784" fileName="SModelUtil.java" startLine="69" startPosition="63" endLine="70" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -110,7 +110,7 @@
     <nodeInfo nodeId="1237995590829" fileName="SModelUtil.java" startLine="106" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getBaseConcept#()Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="7651139485606995009" fileName="SModelUtil.java" startLine="227" startPosition="0" endLine="231" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isAcceptableTarget#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="7651139485607046835" fileName="SModelUtil.java" startLine="254" startPosition="62" endLine="258" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1238267693640" fileName="SModelUtil.java" startLine="62" startPosition="44" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1238267693640" fileName="SModelUtil.java" startLine="62" startPosition="32" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1238254781309" fileName="SModelUtil.java" startLine="152" startPosition="87" endLine="157" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1237996560821" fileName="SModelUtil.java" startLine="169" startPosition="7" endLine="174" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1237996726519" fileName="SModelUtil.java" startLine="176" startPosition="45" endLine="181" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -210,7 +210,7 @@
       <varInfo nodeId="7651139485607045944" varName="referentNode" />
     </scopeInfo>
     <scopeInfo nodeId="7651139485607046835" fileName="SModelUtil.java" startLine="254" startPosition="62" endLine="258" endPosition="6" />
-    <scopeInfo nodeId="1238267693640" fileName="SModelUtil.java" startLine="62" startPosition="44" endLine="67" endPosition="7">
+    <scopeInfo nodeId="1238267693640" fileName="SModelUtil.java" startLine="62" startPosition="32" endLine="67" endPosition="7">
       <varInfo nodeId="1238267693641" varName="root" />
     </scopeInfo>
     <scopeInfo nodeId="1238250357849" fileName="SModelUtil.java" startLine="142" startPosition="59" endLine="147" endPosition="62">
@@ -327,113 +327,119 @@
     <unitInfo nodeId="1237995590703" fileName="SModelUtil.java" startLine="35" startPosition="0" endLine="261" endPosition="0" unitName="jetbrains.mps.kernel.model.SModelUtil" />
   </root>
   <root nodeRef="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)/4193578441192064991">
-    <nodeInfo nodeId="7512946059813365946" fileName="MissingDependenciesFixer.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="4193578441192064993" fileName="MissingDependenciesFixer.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelDescriptor" />
-    <nodeInfo nodeId="4193578441192065002" fileName="MissingDependenciesFixer.java" startLine="28" startPosition="59" endLine="29" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4193578441192065010" fileName="MissingDependenciesFixer.java" startLine="33" startPosition="21" endLine="34" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4193578441192065023" fileName="MissingDependenciesFixer.java" startLine="39" startPosition="25" endLine="40" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4193578441192065027" fileName="MissingDependenciesFixer.java" startLine="40" startPosition="36" endLine="41" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7512946059813365966" fileName="MissingDependenciesFixer.java" startLine="42" startPosition="29" endLine="43" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7512946059813366011" fileName="MissingDependenciesFixer.java" startLine="43" startPosition="86" endLine="44" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4193578441192065042" fileName="MissingDependenciesFixer.java" startLine="45" startPosition="9" endLine="46" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4193578441192065048" fileName="MissingDependenciesFixer.java" startLine="46" startPosition="47" endLine="47" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4193578441192065070" fileName="MissingDependenciesFixer.java" startLine="49" startPosition="68" endLine="50" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="4193578441192065071" fileName="MissingDependenciesFixer.java" startLine="51" startPosition="11" endLine="52" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7002188680044543401" fileName="MissingDependenciesFixer.java" startLine="53" startPosition="27" endLine="54" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7002188680044543424" fileName="MissingDependenciesFixer.java" startLine="59" startPosition="29" endLine="60" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="4193578441192065084" fileName="MissingDependenciesFixer.java" startLine="62" startPosition="11" endLine="63" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4193578441192065099" fileName="MissingDependenciesFixer.java" startLine="64" startPosition="65" endLine="65" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="4193578441192065100" fileName="MissingDependenciesFixer.java" startLine="66" startPosition="11" endLine="67" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4193578441192065105" fileName="MissingDependenciesFixer.java" startLine="67" startPosition="44" endLine="68" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4193578441192065112" fileName="MissingDependenciesFixer.java" startLine="68" startPosition="63" endLine="69" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4193578441192065119" fileName="MissingDependenciesFixer.java" startLine="69" startPosition="40" endLine="70" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4193578441192065146" fileName="MissingDependenciesFixer.java" startLine="73" startPosition="94" endLine="74" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="4193578441192065147" fileName="MissingDependenciesFixer.java" startLine="75" startPosition="11" endLine="76" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4193578441192065159" fileName="MissingDependenciesFixer.java" startLine="77" startPosition="29" endLine="78" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="4193578441192065160" fileName="MissingDependenciesFixer.java" startLine="79" startPosition="11" endLine="80" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4193578441192065167" fileName="MissingDependenciesFixer.java" startLine="80" startPosition="81" endLine="81" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4193578441192065174" fileName="MissingDependenciesFixer.java" startLine="81" startPosition="41" endLine="82" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4732683982821618526" fileName="MissingDependenciesFixer.java" startLine="85" startPosition="98" endLine="86" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="4193578441192065196" fileName="MissingDependenciesFixer.java" startLine="87" startPosition="11" endLine="88" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4193578441192065208" fileName="MissingDependenciesFixer.java" startLine="89" startPosition="31" endLine="90" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="4193578441192065209" fileName="MissingDependenciesFixer.java" startLine="91" startPosition="11" endLine="92" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4193578441192065216" fileName="MissingDependenciesFixer.java" startLine="92" startPosition="87" endLine="93" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4193578441192065223" fileName="MissingDependenciesFixer.java" startLine="93" startPosition="39" endLine="94" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4193578441192065230" fileName="MissingDependenciesFixer.java" startLine="96" startPosition="26" endLine="97" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4193578441192065236" fileName="MissingDependenciesFixer.java" startLine="97" startPosition="49" endLine="98" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3378324197268254031" fileName="MissingDependenciesFixer.java" startLine="98" startPosition="36" endLine="99" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4193578441192064996" fileName="MissingDependenciesFixer.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MissingDependenciesFixer#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-    <nodeInfo nodeId="4193578441192065062" fileName="MissingDependenciesFixer.java" startLine="48" startPosition="114" endLine="51" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7002188680044543419" fileName="MissingDependenciesFixer.java" startLine="58" startPosition="14" endLine="61" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4193578441192065090" fileName="MissingDependenciesFixer.java" startLine="63" startPosition="49" endLine="66" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4193578441192065138" fileName="MissingDependenciesFixer.java" startLine="72" startPosition="215" endLine="75" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4193578441192065154" fileName="MissingDependenciesFixer.java" startLine="76" startPosition="96" endLine="79" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4732683982821612909" fileName="MissingDependenciesFixer.java" startLine="84" startPosition="116" endLine="87" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4193578441192065203" fileName="MissingDependenciesFixer.java" startLine="88" startPosition="114" endLine="91" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4193578441192065006" fileName="MissingDependenciesFixer.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fix#()V" />
-    <nodeInfo nodeId="7512946059813365926" fileName="MissingDependenciesFixer.java" startLine="41" startPosition="55" endLine="45" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7002188680044543407" fileName="MissingDependenciesFixer.java" startLine="54" startPosition="64" endLine="58" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4193578441192065227" fileName="MissingDependenciesFixer.java" startLine="95" startPosition="9" endLine="100" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4193578441192065078" fileName="MissingDependenciesFixer.java" startLine="52" startPosition="85" endLine="62" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4193578441192065123" fileName="MissingDependenciesFixer.java" startLine="71" startPosition="9" endLine="83" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4193578441192065178" fileName="MissingDependenciesFixer.java" startLine="83" startPosition="9" endLine="95" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4193578441192065054" fileName="MissingDependenciesFixer.java" startLine="47" startPosition="59" endLine="71" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4193578441192065021" fileName="MissingDependenciesFixer.java" startLine="39" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="4193578441192065020" fileName="MissingDependenciesFixer.java" startLine="37" startPosition="41" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4193578441192065014" fileName="MissingDependenciesFixer.java" startLine="37" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fix#(Z)V" />
-    <scopeInfo nodeId="4193578441192065001" fileName="MissingDependenciesFixer.java" startLine="28" startPosition="59" endLine="29" endPosition="57" />
-    <scopeInfo nodeId="4193578441192065009" fileName="MissingDependenciesFixer.java" startLine="33" startPosition="21" endLine="34" endPosition="14" />
-    <scopeInfo nodeId="4193578441192065069" fileName="MissingDependenciesFixer.java" startLine="49" startPosition="68" endLine="50" endPosition="21" />
-    <scopeInfo nodeId="7002188680044543423" fileName="MissingDependenciesFixer.java" startLine="59" startPosition="29" endLine="60" endPosition="23" />
-    <scopeInfo nodeId="4193578441192065098" fileName="MissingDependenciesFixer.java" startLine="64" startPosition="65" endLine="65" endPosition="21" />
-    <scopeInfo nodeId="4193578441192065145" fileName="MissingDependenciesFixer.java" startLine="73" startPosition="94" endLine="74" endPosition="21" />
-    <scopeInfo nodeId="4193578441192065158" fileName="MissingDependenciesFixer.java" startLine="77" startPosition="29" endLine="78" endPosition="21" />
-    <scopeInfo nodeId="4732683982821612911" fileName="MissingDependenciesFixer.java" startLine="85" startPosition="98" endLine="86" endPosition="21" />
-    <scopeInfo nodeId="4193578441192065207" fileName="MissingDependenciesFixer.java" startLine="89" startPosition="31" endLine="90" endPosition="21" />
-    <scopeInfo nodeId="7512946059813365927" fileName="MissingDependenciesFixer.java" startLine="42" startPosition="29" endLine="44" endPosition="17" />
-    <scopeInfo nodeId="4193578441192064996" fileName="MissingDependenciesFixer.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
+    <nodeInfo nodeId="7512946059813365946" fileName="MissingDependenciesFixer.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="4193578441192064993" fileName="MissingDependenciesFixer.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelDescriptor" />
+    <nodeInfo nodeId="4193578441192065002" fileName="MissingDependenciesFixer.java" startLine="29" startPosition="59" endLine="30" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4193578441192065010" fileName="MissingDependenciesFixer.java" startLine="34" startPosition="21" endLine="35" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4193578441192065023" fileName="MissingDependenciesFixer.java" startLine="40" startPosition="25" endLine="41" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4193578441192065027" fileName="MissingDependenciesFixer.java" startLine="41" startPosition="36" endLine="42" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7512946059813365966" fileName="MissingDependenciesFixer.java" startLine="43" startPosition="29" endLine="44" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7512946059813366011" fileName="MissingDependenciesFixer.java" startLine="44" startPosition="86" endLine="45" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="120896515005418331" fileName="MissingDependenciesFixer.java" startLine="46" startPosition="9" endLine="47" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="120896515005472531" fileName="MissingDependenciesFixer.java" startLine="48" startPosition="33" endLine="49" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="120896515005472545" fileName="MissingDependenciesFixer.java" startLine="49" startPosition="90" endLine="50" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4193578441192065042" fileName="MissingDependenciesFixer.java" startLine="51" startPosition="9" endLine="52" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4193578441192065048" fileName="MissingDependenciesFixer.java" startLine="52" startPosition="58" endLine="53" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4193578441192065070" fileName="MissingDependenciesFixer.java" startLine="55" startPosition="57" endLine="56" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="4193578441192065071" fileName="MissingDependenciesFixer.java" startLine="57" startPosition="11" endLine="58" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7002188680044543424" fileName="MissingDependenciesFixer.java" startLine="64" startPosition="29" endLine="65" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="4193578441192065084" fileName="MissingDependenciesFixer.java" startLine="67" startPosition="11" endLine="68" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4193578441192065099" fileName="MissingDependenciesFixer.java" startLine="69" startPosition="65" endLine="70" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="4193578441192065100" fileName="MissingDependenciesFixer.java" startLine="71" startPosition="11" endLine="72" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4193578441192065105" fileName="MissingDependenciesFixer.java" startLine="72" startPosition="44" endLine="73" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4193578441192065112" fileName="MissingDependenciesFixer.java" startLine="73" startPosition="81" endLine="74" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4193578441192065119" fileName="MissingDependenciesFixer.java" startLine="74" startPosition="40" endLine="75" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4193578441192065146" fileName="MissingDependenciesFixer.java" startLine="78" startPosition="67" endLine="79" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="4193578441192065147" fileName="MissingDependenciesFixer.java" startLine="80" startPosition="11" endLine="81" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4193578441192065159" fileName="MissingDependenciesFixer.java" startLine="82" startPosition="29" endLine="83" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="4193578441192065160" fileName="MissingDependenciesFixer.java" startLine="84" startPosition="11" endLine="85" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4193578441192065167" fileName="MissingDependenciesFixer.java" startLine="85" startPosition="81" endLine="86" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4193578441192065174" fileName="MissingDependenciesFixer.java" startLine="86" startPosition="41" endLine="87" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4732683982821618526" fileName="MissingDependenciesFixer.java" startLine="90" startPosition="71" endLine="91" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="4193578441192065196" fileName="MissingDependenciesFixer.java" startLine="92" startPosition="11" endLine="93" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4193578441192065208" fileName="MissingDependenciesFixer.java" startLine="94" startPosition="31" endLine="95" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="4193578441192065209" fileName="MissingDependenciesFixer.java" startLine="96" startPosition="11" endLine="97" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4193578441192065216" fileName="MissingDependenciesFixer.java" startLine="97" startPosition="87" endLine="98" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4193578441192065223" fileName="MissingDependenciesFixer.java" startLine="98" startPosition="39" endLine="99" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="120896515006089770" fileName="MissingDependenciesFixer.java" startLine="101" startPosition="26" endLine="102" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4193578441192065230" fileName="MissingDependenciesFixer.java" startLine="102" startPosition="55" endLine="103" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4193578441192065236" fileName="MissingDependenciesFixer.java" startLine="103" startPosition="46" endLine="104" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3378324197268254031" fileName="MissingDependenciesFixer.java" startLine="104" startPosition="33" endLine="105" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4193578441192064996" fileName="MissingDependenciesFixer.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MissingDependenciesFixer#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+    <nodeInfo nodeId="4193578441192065062" fileName="MissingDependenciesFixer.java" startLine="54" startPosition="102" endLine="57" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7002188680044543419" fileName="MissingDependenciesFixer.java" startLine="63" startPosition="14" endLine="66" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4193578441192065090" fileName="MissingDependenciesFixer.java" startLine="68" startPosition="49" endLine="71" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4193578441192065138" fileName="MissingDependenciesFixer.java" startLine="77" startPosition="191" endLine="80" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4193578441192065154" fileName="MissingDependenciesFixer.java" startLine="81" startPosition="110" endLine="84" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4732683982821612909" fileName="MissingDependenciesFixer.java" startLine="89" startPosition="104" endLine="92" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4193578441192065203" fileName="MissingDependenciesFixer.java" startLine="93" startPosition="114" endLine="96" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4193578441192065006" fileName="MissingDependenciesFixer.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fix#()V" />
+    <nodeInfo nodeId="7512946059813365926" fileName="MissingDependenciesFixer.java" startLine="42" startPosition="55" endLine="46" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="120896515005456020" fileName="MissingDependenciesFixer.java" startLine="47" startPosition="56" endLine="51" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7002188680044543407" fileName="MissingDependenciesFixer.java" startLine="59" startPosition="27" endLine="63" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4193578441192065227" fileName="MissingDependenciesFixer.java" startLine="100" startPosition="9" endLine="106" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4193578441192065078" fileName="MissingDependenciesFixer.java" startLine="58" startPosition="54" endLine="67" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4193578441192065123" fileName="MissingDependenciesFixer.java" startLine="76" startPosition="9" endLine="88" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4193578441192065178" fileName="MissingDependenciesFixer.java" startLine="88" startPosition="9" endLine="100" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4193578441192065054" fileName="MissingDependenciesFixer.java" startLine="53" startPosition="78" endLine="76" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4193578441192065021" fileName="MissingDependenciesFixer.java" startLine="40" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4193578441192065020" fileName="MissingDependenciesFixer.java" startLine="38" startPosition="41" endLine="108" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4193578441192065014" fileName="MissingDependenciesFixer.java" startLine="38" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fix#(Z)V" />
+    <scopeInfo nodeId="4193578441192065001" fileName="MissingDependenciesFixer.java" startLine="29" startPosition="59" endLine="30" endPosition="40" />
+    <scopeInfo nodeId="4193578441192065009" fileName="MissingDependenciesFixer.java" startLine="34" startPosition="21" endLine="35" endPosition="14" />
+    <scopeInfo nodeId="4193578441192065069" fileName="MissingDependenciesFixer.java" startLine="55" startPosition="57" endLine="56" endPosition="21" />
+    <scopeInfo nodeId="7002188680044543423" fileName="MissingDependenciesFixer.java" startLine="64" startPosition="29" endLine="65" endPosition="23" />
+    <scopeInfo nodeId="4193578441192065098" fileName="MissingDependenciesFixer.java" startLine="69" startPosition="65" endLine="70" endPosition="21" />
+    <scopeInfo nodeId="4193578441192065145" fileName="MissingDependenciesFixer.java" startLine="78" startPosition="67" endLine="79" endPosition="21" />
+    <scopeInfo nodeId="4193578441192065158" fileName="MissingDependenciesFixer.java" startLine="82" startPosition="29" endLine="83" endPosition="21" />
+    <scopeInfo nodeId="4732683982821612911" fileName="MissingDependenciesFixer.java" startLine="90" startPosition="71" endLine="91" endPosition="21" />
+    <scopeInfo nodeId="4193578441192065207" fileName="MissingDependenciesFixer.java" startLine="94" startPosition="31" endLine="95" endPosition="21" />
+    <scopeInfo nodeId="7512946059813365927" fileName="MissingDependenciesFixer.java" startLine="43" startPosition="29" endLine="45" endPosition="17" />
+    <scopeInfo nodeId="120896515005456022" fileName="MissingDependenciesFixer.java" startLine="48" startPosition="33" endLine="50" endPosition="17" />
+    <scopeInfo nodeId="4193578441192064996" fileName="MissingDependenciesFixer.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="4193578441192064999" varName="modelDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="4193578441192065229" fileName="MissingDependenciesFixer.java" startLine="96" startPosition="26" endLine="99" endPosition="42" />
-    <scopeInfo nodeId="4193578441192065006" fileName="MissingDependenciesFixer.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="4193578441192065082" fileName="MissingDependenciesFixer.java" startLine="53" startPosition="27" endLine="61" endPosition="13">
-      <varInfo nodeId="7002188680044543402" varName="fqName" />
+    <scopeInfo nodeId="4193578441192065006" fileName="MissingDependenciesFixer.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="4193578441192065229" fileName="MissingDependenciesFixer.java" startLine="101" startPosition="26" endLine="105" endPosition="39">
+      <varInfo nodeId="120896515006089771" varName="mod" />
     </scopeInfo>
-    <scopeInfo nodeId="4193578441192065137" fileName="MissingDependenciesFixer.java" startLine="72" startPosition="215" endLine="82" endPosition="29">
+    <scopeInfo nodeId="4193578441192065082" fileName="MissingDependenciesFixer.java" startLine="59" startPosition="27" endLine="66" endPosition="13" />
+    <scopeInfo nodeId="4193578441192065137" fileName="MissingDependenciesFixer.java" startLine="77" startPosition="191" endLine="87" endPosition="29">
       <varInfo nodeId="4193578441192065148" varName="lang" />
       <varInfo nodeId="4193578441192065161" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="4193578441192065186" fileName="MissingDependenciesFixer.java" startLine="84" startPosition="116" endLine="94" endPosition="29">
+    <scopeInfo nodeId="4193578441192065186" fileName="MissingDependenciesFixer.java" startLine="89" startPosition="104" endLine="99" endPosition="29">
       <varInfo nodeId="4193578441192065197" varName="devKit" />
       <varInfo nodeId="4193578441192065210" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="4193578441192065123" fileName="MissingDependenciesFixer.java" startLine="71" startPosition="9" endLine="83" endPosition="9">
+    <scopeInfo nodeId="4193578441192065123" fileName="MissingDependenciesFixer.java" startLine="76" startPosition="9" endLine="88" endPosition="9">
       <varInfo nodeId="4193578441192065135" varName="namespace" />
     </scopeInfo>
-    <scopeInfo nodeId="4193578441192065178" fileName="MissingDependenciesFixer.java" startLine="83" startPosition="9" endLine="95" endPosition="9">
+    <scopeInfo nodeId="4193578441192065178" fileName="MissingDependenciesFixer.java" startLine="88" startPosition="9" endLine="100" endPosition="9">
       <varInfo nodeId="4193578441192065184" varName="devKitNamespace" />
     </scopeInfo>
-    <scopeInfo nodeId="4193578441192065061" fileName="MissingDependenciesFixer.java" startLine="48" startPosition="114" endLine="70" endPosition="29">
+    <scopeInfo nodeId="4193578441192065061" fileName="MissingDependenciesFixer.java" startLine="54" startPosition="102" endLine="75" endPosition="29">
       <varInfo nodeId="4193578441192065085" varName="anotherModule" />
       <varInfo nodeId="4193578441192065101" varName="dep" />
       <varInfo nodeId="4193578441192065072" varName="sm" />
     </scopeInfo>
-    <scopeInfo nodeId="4193578441192065054" fileName="MissingDependenciesFixer.java" startLine="47" startPosition="59" endLine="71" endPosition="9">
+    <scopeInfo nodeId="4193578441192065054" fileName="MissingDependenciesFixer.java" startLine="53" startPosition="78" endLine="76" endPosition="9">
       <varInfo nodeId="4193578441192065059" varName="modelImport" />
     </scopeInfo>
-    <scopeInfo nodeId="4193578441192065022" fileName="MissingDependenciesFixer.java" startLine="39" startPosition="25" endLine="100" endPosition="9">
+    <scopeInfo nodeId="4193578441192065022" fileName="MissingDependenciesFixer.java" startLine="40" startPosition="25" endLine="106" endPosition="9">
       <varInfo nodeId="4193578441192065049" varName="md" />
       <varInfo nodeId="4193578441192065028" varName="module" />
       <varInfo nodeId="4193578441192065043" varName="moduleScope" />
+      <varInfo nodeId="120896515005418332" varName="repository" />
       <varInfo nodeId="4193578441192065024" varName="wereChanges" />
     </scopeInfo>
-    <scopeInfo nodeId="4193578441192065021" fileName="MissingDependenciesFixer.java" startLine="39" startPosition="0" endLine="102" endPosition="0" />
-    <scopeInfo nodeId="4193578441192065019" fileName="MissingDependenciesFixer.java" startLine="37" startPosition="41" endLine="102" endPosition="7" />
-    <scopeInfo nodeId="4193578441192065014" fileName="MissingDependenciesFixer.java" startLine="37" startPosition="0" endLine="104" endPosition="0">
+    <scopeInfo nodeId="4193578441192065021" fileName="MissingDependenciesFixer.java" startLine="40" startPosition="0" endLine="108" endPosition="0" />
+    <scopeInfo nodeId="4193578441192065019" fileName="MissingDependenciesFixer.java" startLine="38" startPosition="41" endLine="108" endPosition="7" />
+    <scopeInfo nodeId="4193578441192065014" fileName="MissingDependenciesFixer.java" startLine="38" startPosition="0" endLine="110" endPosition="0">
       <varInfo nodeId="4193578441192065017" varName="reload" />
     </scopeInfo>
-    <unitInfo nodeId="4193578441192065021" fileName="MissingDependenciesFixer.java" startLine="38" startPosition="55" endLine="102" endPosition="5" unitName="jetbrains.mps.kernel.model.MissingDependenciesFixer$1" />
-    <unitInfo nodeId="4193578441192064991" fileName="MissingDependenciesFixer.java" startLine="24" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.kernel.model.MissingDependenciesFixer" />
+    <unitInfo nodeId="4193578441192065021" fileName="MissingDependenciesFixer.java" startLine="39" startPosition="55" endLine="108" endPosition="5" unitName="jetbrains.mps.kernel.model.MissingDependenciesFixer$1" />
+    <unitInfo nodeId="4193578441192064991" fileName="MissingDependenciesFixer.java" startLine="25" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.kernel.model.MissingDependenciesFixer" />
   </root>
   <root nodeRef="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)/507022825981353176">
     <nodeInfo nodeId="581120860896098627" fileName="TemporaryModelOwner.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOwner" />
@@ -441,13 +447,13 @@
     <nodeInfo nodeId="507022825981353204" fileName="TemporaryModelOwner.java" startLine="33" startPosition="25" endLine="34" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="507022825981353184" fileName="TemporaryModelOwner.java" startLine="41" startPosition="25" endLine="42" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8296861627646399848" fileName="TemporaryModelOwner.java" startLine="48" startPosition="67" endLine="49" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8296861627646399860" fileName="TemporaryModelOwner.java" startLine="50" startPosition="48" endLine="51" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8296861627646399860" fileName="TemporaryModelOwner.java" startLine="50" startPosition="48" endLine="51" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8296861627646399869" fileName="TemporaryModelOwner.java" startLine="52" startPosition="5" endLine="53" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8296861627646404061" fileName="TemporaryModelOwner.java" startLine="57" startPosition="64" endLine="58" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8296861627646404073" fileName="TemporaryModelOwner.java" startLine="59" startPosition="48" endLine="60" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8296861627646404073" fileName="TemporaryModelOwner.java" startLine="59" startPosition="48" endLine="60" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8296861627646404082" fileName="TemporaryModelOwner.java" startLine="61" startPosition="5" endLine="62" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8296861627646404089" fileName="TemporaryModelOwner.java" startLine="66" startPosition="45" endLine="67" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8296861627646404110" fileName="TemporaryModelOwner.java" startLine="69" startPosition="111" endLine="70" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8296861627646404110" fileName="TemporaryModelOwner.java" startLine="69" startPosition="99" endLine="70" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8296861627646404116" fileName="TemporaryModelOwner.java" startLine="70" startPosition="54" endLine="71" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8296861627646404128" fileName="TemporaryModelOwner.java" startLine="72" startPosition="28" endLine="73" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="8296861627646404129" fileName="TemporaryModelOwner.java" startLine="74" startPosition="9" endLine="75" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -475,8 +481,8 @@
     <nodeInfo nodeId="8296861627646404084" fileName="TemporaryModelOwner.java" startLine="65" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDependencies#()Ljava/util/List;" />
     <scopeInfo nodeId="507022825981353203" fileName="TemporaryModelOwner.java" startLine="33" startPosition="25" endLine="34" endPosition="117" />
     <scopeInfo nodeId="507022825981353183" fileName="TemporaryModelOwner.java" startLine="41" startPosition="25" endLine="42" endPosition="94" />
-    <scopeInfo nodeId="8296861627646399859" fileName="TemporaryModelOwner.java" startLine="50" startPosition="48" endLine="51" endPosition="75" />
-    <scopeInfo nodeId="8296861627646404072" fileName="TemporaryModelOwner.java" startLine="59" startPosition="48" endLine="60" endPosition="73" />
+    <scopeInfo nodeId="8296861627646399859" fileName="TemporaryModelOwner.java" startLine="50" startPosition="48" endLine="51" endPosition="63" />
+    <scopeInfo nodeId="8296861627646404072" fileName="TemporaryModelOwner.java" startLine="59" startPosition="48" endLine="60" endPosition="61" />
     <scopeInfo nodeId="8296861627646404127" fileName="TemporaryModelOwner.java" startLine="72" startPosition="28" endLine="73" endPosition="19" />
     <scopeInfo nodeId="8296861627646404139" fileName="TemporaryModelOwner.java" startLine="76" startPosition="29" endLine="77" endPosition="19" />
     <scopeInfo nodeId="507022825981353252" fileName="TemporaryModelOwner.java" startLine="89" startPosition="28" endLine="90" endPosition="37" />
@@ -501,7 +507,7 @@
     <scopeInfo nodeId="507022825981353190" fileName="TemporaryModelOwner.java" startLine="30" startPosition="0" endLine="38" endPosition="0" />
     <scopeInfo nodeId="8296861627646399843" fileName="TemporaryModelOwner.java" startLine="47" startPosition="0" endLine="55" endPosition="0" />
     <scopeInfo nodeId="8296861627646404056" fileName="TemporaryModelOwner.java" startLine="56" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="8296861627646404109" fileName="TemporaryModelOwner.java" startLine="69" startPosition="111" endLine="81" endPosition="24">
+    <scopeInfo nodeId="8296861627646404109" fileName="TemporaryModelOwner.java" startLine="69" startPosition="99" endLine="81" endPosition="24">
       <varInfo nodeId="8296861627646404142" varName="dep" />
       <varInfo nodeId="8296861627646404111" varName="mRef" />
       <varInfo nodeId="8296861627646404117" varName="model" />

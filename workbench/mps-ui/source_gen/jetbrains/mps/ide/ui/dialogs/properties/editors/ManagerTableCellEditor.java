@@ -50,9 +50,9 @@ public class ManagerTableCellEditor extends DefaultCellEditor {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (SNode node : ListSequence.fromList(getManagerNodes())) {
-          Language language = Language.getLanguageFor(SNodeOperations.getModel(node).getModelDescriptor());
+          Language language = Language.getLanguageFor(SNodeOperations.getModel(node));
 
-          ModelRootManager manager = new ModelRootManager(SNodeOperations.getModel(node).getModelDescriptor().getModule().getModuleDescriptor().getId().toString(), jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(node)) + "." + NameUtil.toValidIdentifier(SPropertyOperations.getString(node, "name")));
+          ModelRootManager manager = new ModelRootManager(SNodeOperations.getModel(node).getModule().getModuleDescriptor().getId().toString(), jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(node)) + "." + NameUtil.toValidIdentifier(SPropertyOperations.getString(node, "name")));
 
           ListSequence.fromList(result).addElement(manager);
         }
@@ -74,7 +74,7 @@ public class ManagerTableCellEditor extends DefaultCellEditor {
           if (stubsAspect == null) {
             continue;
           }
-          SModel model = stubsAspect.getSModel();
+          SModel model = stubsAspect;
           result.addAll(SModelOperations.getRoots(model, "jetbrains.mps.lang.stubs.structure.ModelManagerDeclaration"));
         }
 
@@ -85,7 +85,7 @@ public class ManagerTableCellEditor extends DefaultCellEditor {
 
             for (SModel smd : SModelRepository.getInstance().getModelDescriptors(s)) {
               if (jetbrains.mps.util.SNodeOperations.getModelLongName(smd).endsWith(".stubManagers")) {
-                SModel m = smd.getSModel();
+                SModel m = smd;
                 ListSequence.fromList(result).addSequence(ListSequence.fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.stubs.structure.ModelManagerDeclaration")));
               }
             }

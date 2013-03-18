@@ -33,7 +33,7 @@ public class MigrateNewNode_MigrationScript extends BaseMigrationScript {
         if ((SLinkOperations.getTarget(node, "prototypeNode", true) != null)) {
           return true;
         }
-        LanguageAspect aspect = Language.getModelAspect(SNodeOperations.getModel(node).getModelDescriptor());
+        LanguageAspect aspect = Language.getModelAspect(SNodeOperations.getModel(node));
         return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.smodel.structure.SNodeCreator") && aspect != null && (aspect == LanguageAspect.ACTIONS || aspect == LanguageAspect.INTENTIONS || aspect == LanguageAspect.EDITOR);
       }
 
@@ -62,7 +62,7 @@ public class MigrateNewNode_MigrationScript extends BaseMigrationScript {
         if ((SLinkOperations.getTarget(node, "prototypeNode", true) != null)) {
           return true;
         }
-        LanguageAspect aspect = Language.getModelAspect(SNodeOperations.getModel(node).getModelDescriptor());
+        LanguageAspect aspect = Language.getModelAspect(SNodeOperations.getModel(node));
         return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.smodel.structure.Concept_NewInstance") && aspect != null && (aspect == LanguageAspect.ACTIONS || aspect == LanguageAspect.INTENTIONS || aspect == LanguageAspect.EDITOR);
       }
 
@@ -91,7 +91,7 @@ public class MigrateNewNode_MigrationScript extends BaseMigrationScript {
         if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation")) && (SLinkOperations.getTarget(node, "prototypeNode", true) != null)) {
           return true;
         }
-        LanguageAspect aspect = Language.getModelAspect(SNodeOperations.getModel(node).getModelDescriptor());
+        LanguageAspect aspect = Language.getModelAspect(SNodeOperations.getModel(node));
         return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation") && aspect != null && (aspect == LanguageAspect.ACTIONS || aspect == LanguageAspect.INTENTIONS || aspect == LanguageAspect.EDITOR);
       }
 
@@ -120,7 +120,7 @@ public class MigrateNewNode_MigrationScript extends BaseMigrationScript {
         if ((SLinkOperations.getTarget(node, "prototypeNode", true) != null)) {
           return true;
         }
-        LanguageAspect aspect = Language.getModelAspect(SNodeOperations.getModel(node).getModelDescriptor());
+        LanguageAspect aspect = Language.getModelAspect(SNodeOperations.getModel(node));
         return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation") && aspect != null && (aspect == LanguageAspect.ACTIONS || aspect == LanguageAspect.INTENTIONS || aspect == LanguageAspect.EDITOR);
       }
 
@@ -146,7 +146,7 @@ public class MigrateNewNode_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        LanguageAspect aspect = Language.getModelAspect(SNodeOperations.getModel(node).getModelDescriptor());
+        LanguageAspect aspect = Language.getModelAspect(SNodeOperations.getModel(node));
         return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.smodel.structure.Node_InsertNewNextSiblingOperation") && aspect != null && (aspect == LanguageAspect.ACTIONS || aspect == LanguageAspect.INTENTIONS || aspect == LanguageAspect.EDITOR);
       }
 
@@ -172,7 +172,7 @@ public class MigrateNewNode_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        LanguageAspect aspect = Language.getModelAspect(SNodeOperations.getModel(node).getModelDescriptor());
+        LanguageAspect aspect = Language.getModelAspect(SNodeOperations.getModel(node));
         return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.smodel.structure.Node_InsertNewPrevSiblingOperation") && aspect != null && (aspect == LanguageAspect.ACTIONS || aspect == LanguageAspect.INTENTIONS || aspect == LanguageAspect.EDITOR);
       }
 
@@ -198,7 +198,7 @@ public class MigrateNewNode_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        LanguageAspect aspect = Language.getModelAspect(SNodeOperations.getModel(node).getModelDescriptor());
+        LanguageAspect aspect = Language.getModelAspect(SNodeOperations.getModel(node));
         return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation") && aspect != null && (aspect == LanguageAspect.ACTIONS || aspect == LanguageAspect.INTENTIONS || aspect == LanguageAspect.EDITOR);
       }
 
@@ -224,7 +224,7 @@ public class MigrateNewNode_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        LanguageAspect aspect = Language.getModelAspect(SNodeOperations.getModel(node).getModelDescriptor());
+        LanguageAspect aspect = Language.getModelAspect(SNodeOperations.getModel(node));
         return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation") && aspect != null && (aspect == LanguageAspect.ACTIONS || aspect == LanguageAspect.INTENTIONS || aspect == LanguageAspect.EDITOR);
       }
 
@@ -250,7 +250,7 @@ public class MigrateNewNode_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        LanguageAspect aspect = Language.getModelAspect(SNodeOperations.getModel(node).getModelDescriptor());
+        LanguageAspect aspect = Language.getModelAspect(SNodeOperations.getModel(node));
         return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation") && aspect != null && (aspect == LanguageAspect.ACTIONS || aspect == LanguageAspect.INTENTIONS || aspect == LanguageAspect.EDITOR);
       }
 

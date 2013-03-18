@@ -126,7 +126,7 @@ public class Ant_Command {
     final Wrappers._T<IFile> file = new Wrappers._T<IFile>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        file.value = FileGenerationUtil.getDefaultOutputDir(SNodeOperations.getModel(project), FileSystem.getInstance().getFileByPath(SNodeOperations.getModel(project).getModelDescriptor().getModule().getGeneratorOutputPath()));
+        file.value = FileGenerationUtil.getDefaultOutputDir(SNodeOperations.getModel(project), FileSystem.getInstance().getFileByPath(SNodeOperations.getModel(project).getModule().getGeneratorOutputPath()));
         file.value = file.value.getDescendant(SPropertyOperations.getString(project, "name") + ".xml");
       }
     });

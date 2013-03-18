@@ -15,7 +15,7 @@ import jetbrains.mps.project.IModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.concurrent.ConcurrentMap;
 import jetbrains.mps.build.behavior.BuildProject_Behavior;
-import jetbrains.mps.generator.TransientSModel;
+import jetbrains.mps.generator.TransientModelsModule;
 
 public class Context {
   private Map<String, Object> myProperties = MapSequence.fromMap(new HashMap<String, Object>());
@@ -63,9 +63,9 @@ public class Context {
   @NotNull
   public IModule getModule(SModel model) {
     if (myGenerationContext != null) {
-      return myGenerationContext.getOriginalInputModel().getModelDescriptor().getModule();
+      return myGenerationContext.getOriginalInputModel().getModule();
     }
-    return model.getModelDescriptor().getModule();
+    return model.getModule();
   }
 
   public String getTempPath(SNode node, String name, String... categories) {
@@ -94,11 +94,11 @@ public class Context {
   }
 
   public RelativePathHelper getRelativePathHelper(@NotNull SModel model) {
-    if (model instanceof TransientSModel && myGenerationContext != null) {
+    if (model.getModule() instanceof TransientModelsModule && myGenerationContext != null) {
       model = myGenerationContext.getOriginalInputModel();
     }
-    SModel modelDescriptor = model.getModelDescriptor();
-    if (model instanceof TransientSModel || modelDescriptor == null) {
+    SModel modelDescriptor = model;
+    if (model.getModule() instanceof TransientModelsModule || modelDescriptor == null) {
       return null;
     }
     IModule module = modelDescriptor.getModule();

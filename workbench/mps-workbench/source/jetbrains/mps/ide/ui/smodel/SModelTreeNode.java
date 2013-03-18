@@ -23,8 +23,8 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.util.*;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.actions.model.CreateRootNodeGroup;
@@ -232,7 +232,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
    */
   @Deprecated
   public final SModel getSModel() {
-    return myModelDescriptor.getSModel();
+    return getModel();
   }
 
   /**
@@ -240,7 +240,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
    */
   @Deprecated
   public final SModel getSModelDescriptor() {
-    return myModelDescriptor;
+    return getModel();
   }
 
   @NotNull
@@ -317,7 +317,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       String shortName = candidateName.replace(modelName + ".", "");
       if (shortName.contains(".")) {
         String maxPackage = candidateName.substring(0, candidateName.lastIndexOf('.'));
-        SModel md = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(maxPackage));
+        SModel md = SModelRepository.getInstance().getModelDescriptor(jetbrains.mps.smodel.SModelReference.fromString(maxPackage));
         if (md != null) {
           if (md.getModule().getOwnModelDescriptors().contains(myModelDescriptor)) {
             return false;

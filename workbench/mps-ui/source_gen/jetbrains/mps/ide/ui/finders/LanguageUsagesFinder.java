@@ -118,18 +118,18 @@ public class LanguageUsagesFinder implements IFinder {
       if (!(SModelStereotype.isUserModel(modelDescriptor))) {
         continue;
       }
-      if (SModelOperations.hasLanguage(modelDescriptor.getSModel(), searchedLanguage.getModuleReference())) {
-        SModel model = modelDescriptor.getSModel();
+      if (SModelOperations.hasLanguage(modelDescriptor, searchedLanguage.getModuleReference())) {
+        SModel model = modelDescriptor;
         searchResults.getSearchResults().add(new SearchResult<SModel>(model, MODELS_WRITTEN_IN_LANGUAGE));
       }
     }
   }
 
   private void collectUsagesInModel(Language searchedLanguage, SModel modelDescriptor, SearchResults searchResults) {
-    if (!(SModelStereotype.isUserModel(modelDescriptor.getSModel()))) {
+    if (!(SModelStereotype.isUserModel(modelDescriptor))) {
       return;
     }
-    for (SNode node : new NodesIterable(modelDescriptor.getSModel())) {
+    for (SNode node : new NodesIterable(modelDescriptor)) {
       if (SNodeOperations.getLanguage(node) == searchedLanguage) {
         searchResults.getSearchResults().add(new SearchResult<SNode>(node, NODES_IN_LANGUAGE));
       }

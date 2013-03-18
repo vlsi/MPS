@@ -34,7 +34,7 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeGroupTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelEvent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -147,7 +147,7 @@ public class SModelNodeListeners implements NodeListeners {
     public boolean isValid() {
       if (!super.isValid()) return false;
       if (!(myModel.isLoaded())) return true;
-      return !jetbrains.mps.util.SNodeOperations.isModelDisposed(myModel.getSModel());
+      return !jetbrains.mps.util.SNodeOperations.isModelDisposed(myModel);
     }
   }
 

@@ -13,7 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
+
+import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
@@ -22,14 +24,11 @@ import jetbrains.mps.project.dependency.modules.GeneratorDependenciesManager;
 import jetbrains.mps.project.dependency.modules.ModuleDependenciesManager;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.project.structure.modules.mappingpriorities.*;
-import jetbrains.mps.runtime.IClassLoadingModule;
-import jetbrains.mps.runtime.ModuleClassLoader;
 import jetbrains.mps.vfs.IFile;
 
-import java.net.URL;
 import java.util.*;
 
-public class Generator extends AbstractModule implements IClassLoadingModule {
+public class Generator extends AbstractModule {
   public static final Logger LOG = Logger.getLogger(Generator.class);
 
   static {
@@ -58,16 +57,6 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
 
     upgradeGeneratorDescriptor();
     reloadAfterDescriptorChange();
-  }
-
-  @Override
-  public Iterable<IClassLoadingModule> getClassLoadingDependencies() {
-    throw new UnsupportedOperationException();
-  }
-
-  @Override
-  public String getPluginPath() {
-    return getSourceLanguage().getPluginPath();
   }
 
   private void upgradeGeneratorDescriptor() {
@@ -107,9 +96,9 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
   private boolean upgradeMappingConfigSimpleRef(MappingConfig_SimpleRef simpleRef) {
     boolean descriptorChanged = false;
     String s = simpleRef.getModelUID();
-    SModelReference modelReference = SModelReference.fromString(s);
-    if (modelReference.getStereotype().equals(SModelStereotype.TEMPLATES)) {
-      modelReference = new SModelReference(modelReference.getLongName(), SModelStereotype.GENERATOR);
+    SModelReference modelReference = jetbrains.mps.smodel.SModelReference.fromString(s);
+    if (SModelStereotype.getStereotype(modelReference.getModelName()).equals(SModelStereotype.TEMPLATES)) {
+      modelReference = new jetbrains.mps.smodel.SModelReference(SModelStereotype.withoutStereotype(modelReference.getModelName()), SModelStereotype.GENERATOR);
       s = modelReference.toString();
       simpleRef.setModelUID(s);
       descriptorChanged = true;
@@ -138,8 +127,8 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
   }
 
   @Override
-  public void reloadFromDisk(boolean reloadClasses) {
-    //do nothing. reloaded by containing language
+  public IFile getDescriptorFile() {
+    return null;
   }
 
   @Override
@@ -244,49 +233,6 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
       }
     }
     return result;
-  }
-
-  // classloading part
-  @Override
-  public Class getClass(String fqName) {
-    return mySourceLanguage.getClass(fqName);
-  }
-
-  @Override
-  public boolean canFindClass(String name) {
-//    return mySourceLanguage.canFindClass(name);
-    throw new UnsupportedOperationException();
-  }
-
-  @Override
-  public byte[] findClassBytes(String name) {
-//    return mySourceLanguage.findClassBytes(name);
-    throw new UnsupportedOperationException();
-  }
-
-  @Override
-  public ModuleClassLoader getClassLoader() {
-    return mySourceLanguage.getClassLoader();
-  }
-
-  @Override
-  public boolean canLoadFromSelf() {
-    return true;
-  }
-
-  @Override
-  public boolean canLoad() {
-    return true;
-  }
-
-  @Override
-  public URL findResource(String name) {
-    return mySourceLanguage.findResource(name);
-  }
-
-  @Override
-  public String findLibrary(String name) {
-    return mySourceLanguage.findLibrary(name);
   }
 
   @Override

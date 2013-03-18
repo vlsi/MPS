@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.findusages.view;
 
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder;
@@ -29,8 +30,6 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.runtime.IClassLoadingModule;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -39,6 +38,7 @@ import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -114,9 +114,9 @@ public class FindUtils {
 
       Class c = null;
       for (SModel model : models) {
-        IModule module = model.getModule();
-        if (module instanceof IClassLoadingModule) {
-          c = ((IClassLoadingModule) module).getClass(className);
+        SModule module = model.getModule();
+        if (ClassLoaderManager.getInstance().canLoad(module)) {
+          c = ClassLoaderManager.getInstance().getClass(module, className);
           if (c != null) break;
         }
       }

@@ -17,15 +17,13 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.TransientModelsProvider.TransientSwapSpace;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.ClassLoadingModule;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.runtime.IClassLoadingModule;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
-import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.mps.openapi.module.SModule;
 
@@ -33,7 +31,7 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class TransientModelsModule extends ClassLoadingModule {
+public class TransientModelsModule extends AbstractModule {
   private static final Logger LOG = Logger.getLogger(TransientModelsModule.class);
 
   private static final AtomicInteger ourModuleCounter = new AtomicInteger();
@@ -56,15 +54,6 @@ public class TransientModelsModule extends ClassLoadingModule {
     String fqName = original.getModuleName() + "@transient" + ourModuleCounter.getAndIncrement();
     ModuleReference reference = new ModuleReference(fqName, ModuleId.regular());
     setModuleReference(reference);
-  }
-
-  @Override
-  public Class getClass(String fqName) {
-    // todo: TransientModelsModule? seriously?
-    if (!(myOriginalModule instanceof IClassLoadingModule)) {
-      throw new IllegalStateException();
-    }
-    return ((IClassLoadingModule) myOriginalModule).getClass(fqName);
   }
 
   public boolean hasPublished() {
@@ -104,7 +93,7 @@ public class TransientModelsModule extends ClassLoadingModule {
   }
 
   public boolean addModelToKeep(SModel model, boolean force) {
-    assert model instanceof TransientSModel;
+    assert model .getModule() instanceof TransientModelsModule;
     String modelRef = model.getReference().toString();
     if (force) {
       myModelsToKeep.add(modelRef);
@@ -124,14 +113,14 @@ public class TransientModelsModule extends ClassLoadingModule {
   }
 
   public boolean isModelToKeep(SModel model) {
-    assert model instanceof TransientSModel;
+    assert model .getModule() instanceof TransientModelsModule;
     return myModelsToKeep.contains(model.getReference().toString());
   }
 
   private boolean isValidName(String longName, String stereotype) {
     String modelName = stereotype == null ? longName : longName + "@" + stereotype;
     return
-      SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(modelName)) == null
+      SModelRepository.getInstance().getModelDescriptor(modelName) == null
         && !myModels.containsKey(modelName);
   }
 
@@ -182,6 +171,7 @@ public class TransientModelsModule extends ClassLoadingModule {
 
     String modelName = stereotype == null ? longName : longName + "@" + stereotype;
     SModel result = new TransientSModelDescriptor(modelName);
+    result.load();
 
     myModels.put(result.getModelName(), result);
     invalidateCaches();
@@ -207,6 +197,10 @@ public class TransientModelsModule extends ClassLoadingModule {
     return new TransientModuleScope();
   }
 
+  public SModule getOriginalModule() {
+    return myOriginalModule;
+  }
+
   public class TransientModuleScope extends ModuleScope {
     @Override
     protected Set<IModule> getInitialModules() {
@@ -227,7 +221,7 @@ public class TransientModelsModule extends ClassLoadingModule {
     private boolean wasUnloaded = false;
 
     private TransientSModelDescriptor(String modelName) {
-      super(new SModelReference(SModelFqName.fromString(modelName), jetbrains.mps.smodel.SModelId.generate()));
+      super(new jetbrains.mps.smodel.SModelReference(SModelFqName.fromString(modelName), jetbrains.mps.smodel.SModelId.generate()));
       myLongName = SModelStereotype.withoutStereotype(modelName);
     }
 
@@ -278,13 +272,8 @@ public class TransientModelsModule extends ClassLoadingModule {
     }
 
     @Override
-    public boolean isReadOnly() {
-      return true;
-    }
-
-    @Override
     public SModel resolveModel(SModelReference reference) {
-      if (reference.getLongName().equals(myLongName)) {
+      if (SModelStereotype.withoutStereotype(reference.getModelName()).equals(myLongName)) {
         SModel descriptor = myModels.get(reference.getModelName());
         if (descriptor != null) return descriptor;
       }

@@ -66,7 +66,7 @@ public abstract class BaseNodeModel extends BaseMPSChooseModel<SNode> {
           @Override
           public void run() {
             SNode node = getNode();
-            if (node == null || jetbrains.mps.util.SNodeOperations.isDisposed(node) || node.getModel() == null || node.getModel().getModelDescriptor() == null) {
+            if (node == null || !node.isInRepository()) {
               return;
             }
             // TODO: use node pointers here

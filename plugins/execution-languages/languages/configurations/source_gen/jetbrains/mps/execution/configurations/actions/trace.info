@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="QueriesGenerated.java" startLine="33" startPosition="36" endLine="37" endPosition="9" unitName="jetbrains.mps.execution.configurations.actions.QueriesGenerated$1" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="41" startPosition="57" endLine="45" endPosition="13" unitName="jetbrains.mps.execution.configurations.actions.QueriesGenerated$2" />
-  <unitInfo fileName="QueriesGenerated.java" startLine="22" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.execution.configurations.actions.QueriesGenerated" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="29" startPosition="43" endLine="33" endPosition="9" unitName="jetbrains.mps.execution.configurations.actions.QueriesGenerated$1" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="36" startPosition="57" endLine="40" endPosition="13" unitName="jetbrains.mps.execution.configurations.actions.QueriesGenerated$2" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="22" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.execution.configurations.actions.QueriesGenerated" />
   <root nodeRef="r:f7b87f92-a08a-4895-8bca-f9a67fdad62e(jetbrains.mps.execution.configurations.actions)/7806358006983765718">
-    <nodeInfo nodeId="2186841766260430072" fileName="QueriesGenerated.java" startLine="23" startPosition="214" endLine="24" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7806358006983766889" fileName="QueriesGenerated.java" startLine="34" startPosition="35" endLine="35" endPosition="294" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7806358006983766902" fileName="QueriesGenerated.java" startLine="42" startPosition="98" endLine="43" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="2186841766260429986" fileName="QueriesGenerated.java" startLine="23" startPosition="214" endLine="24" endPosition="186" />
-    <scopeInfo nodeId="7806358006983766885" fileName="QueriesGenerated.java" startLine="34" startPosition="35" endLine="35" endPosition="294" />
-    <scopeInfo nodeId="7806358006983766887" fileName="QueriesGenerated.java" startLine="42" startPosition="98" endLine="43" endPosition="153" />
+    <nodeInfo nodeId="7806358006983766889" fileName="QueriesGenerated.java" startLine="30" startPosition="45" endLine="31" endPosition="294" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7806358006983766902" fileName="QueriesGenerated.java" startLine="37" startPosition="98" endLine="38" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2186841766260430072" fileName="QueriesGenerated.java" startLine="48" startPosition="214" endLine="49" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2186841766260429985" fileName="QueriesGenerated.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="nodeSubstituteActionsBuilder_Precondition_ConfigurationFromExecutorReference_2186841766260429985#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstitutePreconditionContext;)Z" />
+    <scopeInfo nodeId="7806358006983766887" fileName="QueriesGenerated.java" startLine="37" startPosition="98" endLine="38" endPosition="153" />
+    <scopeInfo nodeId="2186841766260429986" fileName="QueriesGenerated.java" startLine="48" startPosition="214" endLine="49" endPosition="186" />
+    <scopeInfo nodeId="2186841766260429985" fileName="QueriesGenerated.java" startLine="48" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="2186841766260429985" varName="_context" />
+      <varInfo nodeId="2186841766260429985" varName="operationContext" />
+    </scopeInfo>
   </root>
 </debugInfo>
 

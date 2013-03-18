@@ -23,7 +23,7 @@ import jetbrains.mps.checkers.CardinalitiesChecker;
 import jetbrains.mps.checkers.TargetConceptChecker;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.typesystem.checking.TypesEditorChecker;
 import java.util.List;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -185,7 +185,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
       return result;
     }
 
-    SModel descriptor = SNodeOperations.getModel(sNode).getModelDescriptor();
+    SModel descriptor = SNodeOperations.getModel(sNode);
     if (descriptor == null) {
       // descriptor is null for a replaced model 
       // after model is replaced but before it is disposed (this can happen asyncronously) 

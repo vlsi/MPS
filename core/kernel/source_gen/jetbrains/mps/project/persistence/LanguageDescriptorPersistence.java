@@ -134,7 +134,7 @@ public class LanguageDescriptorPersistence {
     }
 
     Element accessoryModels = new Element("accessoryModels");
-    for (SModelReference model : SetSequence.fromSet(descriptor.getAccessoryModels())) {
+    for (org.jetbrains.mps.openapi.model.SModelReference model : SetSequence.fromSet(descriptor.getAccessoryModels())) {
       XmlUtil.tagWithAttribute(accessoryModels, "model", "modelUID", model.toString());
     }
     languageElement.addContent(accessoryModels);

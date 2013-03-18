@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.findusages.view.optionseditor.options;
 
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
@@ -83,7 +84,7 @@ public class FindersOptions extends BaseOptions {
         continue;
       }
 
-      Class finderClass = ((Language) module).getClass(finderClassName);
+      Class finderClass = ClassLoaderManager.getInstance().getClass(module, finderClassName);
       if (finderClass != null) {
         try {
           IFinder finder = (IFinder) finderClass.newInstance();

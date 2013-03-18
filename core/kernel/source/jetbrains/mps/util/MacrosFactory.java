@@ -27,6 +27,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.File;
 import java.util.Set;
@@ -46,6 +47,11 @@ public class MacrosFactory {
     }
 
     return null;
+  }
+
+  public static MacroHelper forModule(AbstractModule module) {
+    // todo: if descriptor file == null?
+    return forModuleFile(module.getDescriptorFile());
   }
 
   public static MacroHelper forProjectFile(IFile projectFile) {

@@ -61,7 +61,7 @@ public class CustomContainersRegistry {
   }
 
   public IModule getOwningModule(SModel model) {
-    SModel fmdesc = model.getModelDescriptor();
+    SModel fmdesc = model;
     return (fmdesc != null ?
       fmdesc.getModule() :
       null

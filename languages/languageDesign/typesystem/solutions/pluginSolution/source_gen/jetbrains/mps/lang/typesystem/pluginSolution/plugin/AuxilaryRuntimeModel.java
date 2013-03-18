@@ -23,7 +23,7 @@ public class AuxilaryRuntimeModel {
   }
 
   public SModel getSModel() {
-    return myModel.getSModel();
+    return myModel;
   }
 
   private static class AuxModelDescriptor extends BaseSpecialModelDescriptor {

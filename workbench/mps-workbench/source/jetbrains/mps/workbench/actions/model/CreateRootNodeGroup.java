@@ -34,7 +34,7 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -84,7 +84,7 @@ public class CreateRootNodeGroup extends BaseGroup {
       return;
     }
 
-    if (!(modelDescriptor instanceof EditableSModel) || (modelDescriptor.isReadOnly())) {
+    if (!(modelDescriptor instanceof EditableSModel) || (((EditableSModel) modelDescriptor).isReadOnly())) {
       event.getPresentation().setEnabled(false);
       event.getPresentation().setVisible(false);
       return;
@@ -129,7 +129,7 @@ public class CreateRootNodeGroup extends BaseGroup {
 
     setEnabledState(event.getPresentation(), true);
 
-    List<Language> modelLanguages = SModelOperations.getLanguages(modelDescriptor.getSModel(), scope);
+    List<Language> modelLanguages = SModelOperations.getLanguages(modelDescriptor, scope);
     if (modelLanguages.size() == 0) {
       add(ActionManager.getInstance().getAction("jetbrains.mps.ide.editor.actions.AddLanguageImport_Action"/* FIXME AddLanguageImport_Action.class.getName()*/));
     }
@@ -142,7 +142,7 @@ public class CreateRootNodeGroup extends BaseGroup {
         modelLanguages.remove(lang);
 
         for (SNode conceptDeclaration : lang.getConceptDeclarations()) {
-          if (ModelConstraintsManager.canBeRoot(context, NameUtil.nodeFQName(conceptDeclaration), modelDescriptor.getSModel())) {
+          if (ModelConstraintsManager.canBeRoot(context, NameUtil.nodeFQName(conceptDeclaration), modelDescriptor)) {
             add(new NewRootNodeAction(new jetbrains.mps.smodel.SNodePointer(conceptDeclaration), modelDescriptor));
           }
         }
@@ -156,7 +156,7 @@ public class CreateRootNodeGroup extends BaseGroup {
     List<Language> languagesWithRoots = new ArrayList<Language>();
     for (final Language language : modelLanguages) {
       for (SNode conceptDeclaration : language.getConceptDeclarations()) {
-        if (ModelConstraintsManager.canBeRoot(context, NameUtil.nodeFQName(conceptDeclaration), modelDescriptor.getSModel())) {
+        if (ModelConstraintsManager.canBeRoot(context, NameUtil.nodeFQName(conceptDeclaration), modelDescriptor)) {
           languagesWithRoots.add(language);
           break;
         }
@@ -178,7 +178,7 @@ public class CreateRootNodeGroup extends BaseGroup {
       }
 
       for (SNode conceptDeclaration : language.getConceptDeclarations()) {
-        if (ModelConstraintsManager.getInstance().canBeRoot(context, NameUtil.nodeFQName(conceptDeclaration), modelDescriptor.getSModel())) {
+        if (ModelConstraintsManager.getInstance().canBeRoot(context, NameUtil.nodeFQName(conceptDeclaration), modelDescriptor)) {
           langRootsGroup.add(new NewRootNodeAction(new jetbrains.mps.smodel.SNodePointer(conceptDeclaration), modelDescriptor));
         }
       }
@@ -227,9 +227,9 @@ public class CreateRootNodeGroup extends BaseGroup {
       ModelAccess.instance().runCommandInEDT(new Runnable() {
         @Override
         public void run() {
-          final SNode node = NodeFactoryManager.createNode(myNodeConcept.resolve(MPSModuleRepository.getInstance()), null, null, myModelDescriptor.getSModel(), myScope);
+          final SNode node = NodeFactoryManager.createNode(myNodeConcept.resolve(MPSModuleRepository.getInstance()), null, null, myModelDescriptor, myScope);
           SNodeAccessUtil.setProperty(node, SModelTreeNode.PACK, myPackage);
-          myModelDescriptor.getSModel().addRootNode(node);
+          myModelDescriptor.addRootNode(node);
 
           ModelAccess.instance().runWriteInEDT(new Runnable() {
             @Override

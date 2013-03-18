@@ -157,7 +157,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
               usageViewData.createUsageView();
               myUsageViewsData.add(usageViewData);
 
-              usageViewData.myUsagesView.setRunOptions(provider, query, new ButtonConfiguration(isRerunnable), searchResults);
+              usageViewData.myUsagesView.setRunOptions(provider, query, new ButtonConfiguration(isRerunnable).showSettingsButton(true), searchResults);
 
               Icon icon = usageViewData.myUsagesView.getIcon();
               String caption = usageViewData.myUsagesView.getCaption();

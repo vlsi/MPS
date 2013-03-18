@@ -91,7 +91,7 @@ public class FavoritesSelectInTarget extends AbstractProjectViewSelectInTarget {
     SModel model = ModelAccess.instance().runReadAction(new Computable<SModel>() {
       @Override
       public SModel compute() {
-        return nodeToSelect.getModel().getModelDescriptor();
+        return nodeToSelect.getModel();
       }
     });
     IModule module = model.getModule();

@@ -17,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SModelOperations;
 import java.awt.Dimension;
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
@@ -48,7 +49,7 @@ public class DiffEditor implements EditorMessageOwner {
 
     SModel model = SNodeOperations.getModel(node);
     if (model != null) {
-      boolean editable = !(model.isReadOnly());
+      boolean editable = !(SModelOperations.isReadOnly(model));
       setReadOnly(!(editable));
     }
 
@@ -73,7 +74,7 @@ public class DiffEditor implements EditorMessageOwner {
     return getMainEditor().getEditedNode();
   }
 
-  public void editRoot(@NotNull Project project, @Nullable SNodeId rootId, @NotNull SModel model) {
+  public void editRoot(@NotNull Project project, @Nullable SNodeId rootId, @NotNull jetbrains.mps.smodel.SModel model) {
     SNode root = (rootId == null ?
       null :
       model.getNode(rootId)
@@ -115,7 +116,7 @@ public class DiffEditor implements EditorMessageOwner {
     );
   }
 
-  public void highlightChange(SModel model, ModelChange change, ChangeEditorMessage.ConflictChecker conflictChecker) {
+  public void highlightChange(jetbrains.mps.smodel.SModel model, ModelChange change, ChangeEditorMessage.ConflictChecker conflictChecker) {
     final List<ChangeEditorMessage> messages = ChangeEditorMessageFactory.createMessages(model, change, this, conflictChecker);
     if (ListSequence.fromList(messages).isEmpty()) {
       return;

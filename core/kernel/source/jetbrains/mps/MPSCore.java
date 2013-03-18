@@ -17,6 +17,7 @@ package jetbrains.mps;
 
 import jetbrains.mps.cache.CachesManager;
 import jetbrains.mps.checkers.CheckersComponent;
+import jetbrains.mps.classloading.MPSClassesReloadManager;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.ComponentPlugin;
 import jetbrains.mps.datatransfer.CopyPasteManager;
@@ -24,13 +25,14 @@ import jetbrains.mps.datatransfer.PasteWrappersManager;
 import jetbrains.mps.extapi.module.FacetsRegistry;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import jetbrains.mps.library.LibraryInitializer;
+import jetbrains.mps.make.facets.BootstrapMakeFacets;
 import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.PathMacros;
 import jetbrains.mps.project.structure.LanguageDescriptorModelProvider;
 import jetbrains.mps.project.structure.ProjectStructureModule;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.ImmatureReferences;
@@ -48,8 +50,6 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.validation.ValidationSettings;
-import org.jetbrains.mps.openapi.persistence.indexing.FastFindUsagesRegistry;
-import org.jetbrains.mps.openapi.persistence.indexing.FastGoToRegistry;
 
 /**
  * Evgeny Gryaznov, Sep 1, 2010
@@ -82,10 +82,11 @@ public class MPSCore extends ComponentPlugin {
     init(new ConceptRepository());
 
     // repositories
-    ClassLoaderManager classLoaderManager = init(new ClassLoaderManager());
-    myModelRepository = init(new SModelRepository(classLoaderManager));
-    myModuleRepository = init(new MPSModuleRepository(classLoaderManager));
+    myModelRepository = init(new SModelRepository());
+    myModuleRepository = init(new MPSModuleRepository());
     myGlobalSModelEventsManager = init(new GlobalSModelEventsManager(myModelRepository));
+    ClassLoaderManager classLoaderManager = init(new ClassLoaderManager());
+    init(new MPSClassesReloadManager());
 
     init(new SModelFileTracker(myModelRepository, myGlobalSModelEventsManager));
     init(new ModuleRepositoryFacade(myModuleRepository));
@@ -98,7 +99,7 @@ public class MPSCore extends ComponentPlugin {
 
     init(new QueryMethodGenerated(classLoaderManager));
     ConceptRegistry conceptRegistry = init(new ConceptRegistry());
-    init(new LanguageRegistry(myModuleRepository, classLoaderManager, conceptRegistry));
+    init(new LanguageRegistry(classLoaderManager, conceptRegistry));
     init(new ExtensionRegistry(classLoaderManager, myModuleRepository));
     init(new LanguageHierarchyCache(myModuleRepository));
     init(new StructureAspectInterpreted());
@@ -115,8 +116,7 @@ public class MPSCore extends ComponentPlugin {
     init(new CheckersComponent());
     init(new ValidationSettings());
 
-    init(new FastFindUsagesRegistry());
-    init(new FastGoToRegistry());
+    init(new BootstrapMakeFacets());
   }
 
   @Override

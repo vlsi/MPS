@@ -36,6 +36,7 @@ import jetbrains.mps.smodel.Generator;
 import java.util.ArrayList;
 import jetbrains.mps.ide.dialogs.project.creation.NewGeneratorDialog;
 import jetbrains.mps.extapi.model.EditableSModel;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.ide.actions.MappingDialog;
@@ -105,7 +106,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
           if (language == null) {
             continue;
           }
-          SModel structureModel = language.getStructureModelDescriptor().getSModel();
+          SModel structureModel = language.getStructureModelDescriptor();
           for (SNode nodeToAdd : SModelOperations.getRoots(structureModel, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
             SNode conceptToAdd = (SNode) nodeToAdd;
             if (SPropertyOperations.getBoolean(nodeToAdd, "rootable")) {
@@ -154,7 +155,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
           }
           // this means there are generators, but no template models 
           Generator firstGen = ListSequence.fromList(genList).first();
-          EditableSModel templateModelDescriptor = firstGen.createModel(language.value.getModuleName() + ".generator.template.main@" + SModelStereotype.GENERATOR, firstGen.getModelRoots().iterator().next(), null);
+          EditableSModel templateModelDescriptor = SModuleOperations.createModelWithAdjustments(language.value.getModuleName() + ".generator.template.main@" + SModelStereotype.GENERATOR, firstGen.getModelRoots().iterator().next());
           templateModelDescriptor.save();
           language.value.save();
         }
@@ -181,7 +182,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
             if (generator.getOwnTemplateModels().isEmpty()) {
               continue;
             }
-            model = generator.getOwnTemplateModels().get(0).getSModel();
+            model = generator.getOwnTemplateModels().get(0);
           }
           assert model != null : "model should have been already created";
 

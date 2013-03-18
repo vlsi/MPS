@@ -16,8 +16,8 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.project.structure.modules.*;
-import jetbrains.mps.smodel.SModelReference;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
@@ -116,20 +116,20 @@ public class OptimizeImportsHelper {
     Result result = collectModelDependencies(modelDescriptor);
 
     Set<SModelReference> unusedModels = new HashSet<SModelReference>();
-    for (SModelReference model : SModelOperations.getImportedModelUIDs(modelDescriptor.getSModel())) {
+    for (SModelReference model : SModelOperations.getImportedModelUIDs(modelDescriptor)) {
       if (!result.myUsedModels.contains(model)) {
         unusedModels.add(model);
       }
     }
 
     Set<ModuleReference> unusedLanguages = new HashSet<ModuleReference>();
-    for (ModuleReference languageRef : ((jetbrains.mps.smodel.SModel) modelDescriptor.getSModel()).importedLanguages()) {
+    for (ModuleReference languageRef : ((jetbrains.mps.smodel.SModelInternal) modelDescriptor).importedLanguages()) {
       ModuleReference ref = getUnusedLanguageRef(result, languageRef);
       if (ref != null) unusedLanguages.add(ref);
     }
 
     Set<ModuleReference> unusedDevkits = new HashSet<ModuleReference>();
-    for (ModuleReference devkitRef : ((jetbrains.mps.smodel.SModel) modelDescriptor.getSModel()).importedDevkits()) {
+    for (ModuleReference devkitRef : ((jetbrains.mps.smodel.SModelInternal) modelDescriptor).importedDevkits()) {
       DevKit dk = GlobalScope.getInstance().getDevKit(devkitRef);
       if (dk == null) return null;
       if (ModelsAutoImportsManager.getAutoImportedDevKits(modelDescriptor.getModule(), modelDescriptor).contains(dk)) {
@@ -146,10 +146,10 @@ public class OptimizeImportsHelper {
   private Result collectModelDependencies(SModel modelDescriptor) {
     Result result = new Result();
 
-    for (ModuleReference ref : ((jetbrains.mps.smodel.SModel) modelDescriptor.getSModel()).engagedOnGenerationLanguages()) {
+    for (ModuleReference ref : ((jetbrains.mps.smodel.SModelInternal) modelDescriptor).engagedOnGenerationLanguages()) {
       result.myUsedLanguages.add(ModuleRepositoryFacade.getInstance().getModule(ref, Language.class));
     }
-    for (SNode node : new NodesIterable(modelDescriptor.getSModel())) {
+    for (SNode node : new NodesIterable(modelDescriptor)) {
       result.myUsedLanguages.add(jetbrains.mps.util.SNodeOperations.getLanguage(node));
       for (SReference ref : node.getReferences()) {
         SModelReference mr = ref.getTargetSModelReference();
@@ -243,17 +243,17 @@ public class OptimizeImportsHelper {
     StringBuilder report = new StringBuilder("Import for model " + modelDescriptor.getReference() + " were optimized \n");
 
     for (ModuleReference langRef : unusedLanguages) {
-      ((jetbrains.mps.smodel.SModel) modelDescriptor.getSModel()).deleteLanguage(langRef);
+      ((jetbrains.mps.smodel.SModelInternal) modelDescriptor).deleteLanguage(langRef);
       report.append("Language ").append(langRef.getModuleFqName()).append(" was removed from imports\n");
     }
 
     for (ModuleReference dkRef : unusedDevkits) {
-      ((jetbrains.mps.smodel.SModel) modelDescriptor.getSModel()).deleteDevKit(dkRef);
+      ((jetbrains.mps.smodel.SModelInternal) modelDescriptor).deleteDevKit(dkRef);
       report.append("Devkit ").append(dkRef.getModuleFqName()).append(" was removed from imports\n");
     }
 
     for (SModelReference model : unusedModels) {
-      ((jetbrains.mps.smodel.SModel) modelDescriptor.getSModel()).deleteModelImport(model);
+      ((jetbrains.mps.smodel.SModelInternal) modelDescriptor).deleteModelImport(model);
       report.append("Model ").append(model.getModelName()).append(" was removed from imports\n");
     }
 

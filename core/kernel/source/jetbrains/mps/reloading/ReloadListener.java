@@ -15,7 +15,14 @@
  */
 package jetbrains.mps.reloading;
 
-public interface ReloadListener {
+import jetbrains.mps.classloading.MPSClassesListener;
+
+/**
+ * @see jetbrains.mps.classloading.MPSClassesListener
+ * @see jetbrains.mps.classloading.MPSClassesListenerAdapter
+ */
+@Deprecated
+public interface ReloadListener extends MPSClassesListener {
   /**
    * If you want to clean caches/unload reloadable parts, do it here
    * <p/>
@@ -25,6 +32,7 @@ public interface ReloadListener {
 
   /**
    * If you want to update UI after reload do it here.
+   * Main invariant: onAfterReload() will call after all unload() methods so it's should be impossible to access old classes here
    * <p/>
    * Precondition: all reloadable parts are reloaded under a new classloader
    */

@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelHeader;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.FileUtil;
@@ -68,7 +68,7 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
     SModelReference modelReference;
     assert header.getUID() != null : "wrong model: " + dataSource.getLocation();
 
-    modelReference = SModelReference.fromString(header.getUID());
+    modelReference = jetbrains.mps.smodel.SModelReference.fromString(header.getUID());
 
     LOG.debug("Getting model " + modelReference + " from " + dataSource.getLocation());
     return new DefaultSModelDescriptor(dataSource, modelReference, header);
@@ -76,7 +76,7 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
 
   @Override
   public SModel create(String modelName, StreamDataSource dataSource) {
-    SModelReference ref = new SModelReference(SModelFqName.fromString(modelName), jetbrains.mps.smodel.SModelId.generate());
+    SModelReference ref = new jetbrains.mps.smodel.SModelReference(SModelFqName.fromString(modelName), jetbrains.mps.smodel.SModelId.generate());
     return new DefaultSModelDescriptor(dataSource, ref, new SModelHeader());
   }
 

@@ -38,6 +38,11 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
   }
 
   @Override
+  public boolean isUsedByDefault(SNode node) {
+    return false;
+  }
+
+  @Override
   public String getLongDescription() {
     return "";
   }

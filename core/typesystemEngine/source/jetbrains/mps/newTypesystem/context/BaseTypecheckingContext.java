@@ -32,11 +32,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import java.util.List;
 
 /**
- * Created with IntelliJ IDEA.
  * User: fyodor
  * Date: 11/7/12
- * Time: 2:10 PM
- * To change this template use File | Settings | File Templates.
  */
 public abstract class BaseTypecheckingContext<STATE extends State> extends TypeCheckingContext {
 

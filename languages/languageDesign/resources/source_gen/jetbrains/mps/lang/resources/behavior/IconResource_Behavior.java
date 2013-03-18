@@ -10,6 +10,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.util.MacrosFactory;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.project.IModule;
@@ -24,13 +25,13 @@ public class IconResource_Behavior {
   public static void virtual_generate_8974276187400030152(final SNode thisNode) {
     ModelAccess.instance().writeFilesInEDT(new Runnable() {
       public void run() {
-        SModel model = SNodeOperations.getModel(thisNode).getModelDescriptor();
+        SModel model = SNodeOperations.getModel(thisNode);
         String outputRoot = model.getModule().getOutputFor(model);
         IFile outputRootFile = FileSystem.getInstance().getFileByPath(outputRoot);
         IFile output = FileGenerationUtil.getDefaultOutputDir(model, outputRootFile);
 
         // copy 
-        String source = MacrosFactory.forModuleFile(model.getModule().getDescriptorFile()).expandPath(SPropertyOperations.getString(thisNode, "path"));
+        String source = MacrosFactory.forModule((AbstractModule) model.getModule()).expandPath(SPropertyOperations.getString(thisNode, "path"));
         IFile sourceFile = FileSystem.getInstance().getFileByPath(source);
 
         IFileUtils.copyFileContent(sourceFile, output.getDescendant(sourceFile.getName()));
@@ -39,11 +40,11 @@ public class IconResource_Behavior {
   }
 
   public static boolean call_isValid_8974276187400030063(SNode thisNode) {
-    IModule module = SNodeOperations.getModel(thisNode).getModelDescriptor().getModule();
-    if (module == null) {
+    IModule module = SNodeOperations.getModel(thisNode).getModule();
+    if (!(module instanceof AbstractModule)) {
       return false;
     }
-    String path = MacrosFactory.forModuleFile(module.getDescriptorFile()).expandPath(SPropertyOperations.getString(thisNode, "path"));
+    String path = MacrosFactory.forModule((AbstractModule) module).expandPath(SPropertyOperations.getString(thisNode, "path"));
     if (path == null) {
       return false;
     }

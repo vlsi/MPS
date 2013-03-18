@@ -4,7 +4,7 @@ package jetbrains.mps.ide.dialogs.project.creation;
 
 import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import javax.swing.JTextField;
@@ -36,6 +36,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import java.util.Iterator;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.ModelPropertiesConfigurable;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
@@ -49,7 +50,7 @@ import javax.swing.JComponent;
 
 public class NewModelDialog extends DialogWrapper {
   private IOperationContext myContext;
-  private IModule myModule;
+  private AbstractModule myModule;
   private JPanel myContentPane = new JPanel(new BorderLayout());
   private JTextField myModelName = new JTextField();
   private JComboBox myModelStereotype = new JComboBox();
@@ -57,7 +58,7 @@ public class NewModelDialog extends DialogWrapper {
   private SModel myResult;
   private String myNamespace;
 
-  public NewModelDialog(Project project, IModule module, String namespace, IOperationContext context, String stereotype, boolean strict) throws HeadlessException {
+  public NewModelDialog(Project project, AbstractModule module, String namespace, IOperationContext context, String stereotype, boolean strict) throws HeadlessException {
     super(project);
     setTitle("New Model");
     myContext = context;
@@ -88,7 +89,7 @@ public class NewModelDialog extends DialogWrapper {
     mainPanel.add(myModelRoots);
     DefaultComboBoxModel model = new DefaultComboBoxModel();
     for (ModelRoot root : myModule.getModelRoots()) {
-      if (!(root.canCreateModels())) {
+      if (root.canCreateModels()) {
         model.addElement(root);
       } else if (myModule instanceof Language && root instanceof FileBasedModelRoot) {
         // Can fix only FileBased model root (default for language) 
@@ -155,7 +156,7 @@ public class NewModelDialog extends DialogWrapper {
       return;
     }
 
-    if (((ModelRoot) myModelRoots.getSelectedItem()).canCreateModels()) {
+    if (!(((ModelRoot) myModelRoots.getSelectedItem()).canCreateModel(getFqName())) && myModule instanceof Language && myModelRoots.getSelectedItem() instanceof FileBasedModelRoot) {
       final FileBasedModelRoot selectedModelRoot = (FileBasedModelRoot) myModelRoots.getSelectedItem();
 
       Memento memento = new MementoImpl();
@@ -174,7 +175,7 @@ public class NewModelDialog extends DialogWrapper {
       ModelAccess.instance().runWriteAction(new Runnable() {
         @Override
         public void run() {
-          final LanguageDescriptor languageDescriptor = (LanguageDescriptor) myModule.getModuleDescriptor();
+          final LanguageDescriptor languageDescriptor = ((Language) myModule).getModuleDescriptor();
           Iterator<ModelRootDescriptor> iterator = languageDescriptor.getModelRootDescriptors().iterator();
           while (iterator.hasNext()) {
             ModelRootDescriptor descriptor = iterator.next();
@@ -186,7 +187,6 @@ public class NewModelDialog extends DialogWrapper {
           languageDescriptor.getModelRootDescriptors().add(newModelRootDescriptor);
           myModule.setModuleDescriptor(languageDescriptor, true);
           myModule.save();
-          myModule.reloadFromDisk(true);
         }
       });
 
@@ -203,7 +203,7 @@ public class NewModelDialog extends DialogWrapper {
       public SModel compute() {
         String fqName = getFqName();
         ModelRoot mr = (ModelRoot) myModelRoots.getSelectedItem();
-        return myModule.createModel(fqName, mr, null);
+        return SModuleOperations.createModelWithAdjustments(fqName, mr);
       }
     }, myContext.getProject());
 
@@ -268,10 +268,22 @@ public class NewModelDialog extends DialogWrapper {
       return false;
     }
 
-    if (!(mr.canCreateModels()) && !(mr.canCreateModel(getFqName()))) {
+    if (!(mr.canCreateModels())) {
+      setErrorText("Can't create a model under this model root");
+      return false;
+    }
+
+    if (!(mr.canCreateModel(getFqName())) && !(myModule instanceof Language)) {
       setErrorText("Can't create a model with this name under this model root");
       return false;
     }
+
+    if (!(mr.canCreateModel(getFqName())) && myModule instanceof Language && !(mr instanceof FileBasedModelRoot)) {
+      setErrorText("Can't create a model with this name under this model root");
+      return false;
+    }
+
+
 
     setErrorText(null);
     return true;

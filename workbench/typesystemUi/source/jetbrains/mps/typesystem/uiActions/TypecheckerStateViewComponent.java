@@ -29,7 +29,8 @@ import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.highlighter.EditorsHelper;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystem.debug.EquationLogItem;
 import jetbrains.mps.util.Pair;
 
@@ -161,8 +162,8 @@ public class TypecheckerStateViewComponent extends JPanel {
 
   private void openRule(String ruleModel, final String ruleID) {
     if (ruleModel == null || ruleID == null) return;
-    SModelReference modelUID = SModelReference.fromString(ruleModel);
-    modelUID = SModelReference.fromString(modelUID.getLongName());
+    SModelReference modelUID = jetbrains.mps.smodel.SModelReference.fromString(ruleModel);
+    modelUID = jetbrains.mps.smodel.SModelReference.fromString(SModelStereotype.withoutStereotype(modelUID.getModelName()));
     final SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
     if (modelDescriptor == null) {
       LOG.error("can't find rule's model " + ruleModel);
@@ -174,7 +175,7 @@ public class TypecheckerStateViewComponent extends JPanel {
       public void run() {
         jetbrains.mps.smodel.SNodeId nodeId = jetbrains.mps.smodel.SNodeId.fromString(ruleID);
         assert nodeId != null : "wrong node id string";
-        SNode rule = modelDescriptor.getSModel().getNode(nodeId);
+        SNode rule = modelDescriptor.getNode(nodeId);
         if (rule == null) {
           LOG.error("can't find rule with id " + ruleID + " in the model " + modelDescriptor);
           return;

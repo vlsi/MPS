@@ -30,7 +30,7 @@ public class FixMPSClasspath_MigrationScript extends BaseMigrationScript {
       public boolean isApplicableInstanceNode(SNode node) {
         return Sequence.fromIterable(SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
           public boolean accept(SReference it) {
-            String modelName = it.getTargetSModelReference().getSModelFqName().toString();
+            String modelName = it.getTargetSModelReference().getModelName();
             return modelName.contains("MPS.Core") || modelName.contains("MPS.Platform") || modelName.contains("MPS.Workbench") || modelName.contains("MPS.Classpath");
           }
         }).isNotEmpty();

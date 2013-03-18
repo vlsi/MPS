@@ -5,13 +5,13 @@ package jetbrains.mps.lang.script.runtime;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -21,15 +21,23 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.StaticReference;
-import jetbrains.mps.smodel.SModelFqName;
 
 public class StubRefUtil {
   private static boolean isReferenceToJavaStub(@NotNull SReference reference) {
-    return reference.getTargetNodeId() instanceof SNodeId.Foreign && check_4tnolf_a0a0a(check_4tnolf_a0a0a0(reference.getTargetSModelReference()), SModelStereotype.STUB_SUFFIX);
+    if (!(reference.getTargetNodeId() instanceof SNodeId.Foreign)) {
+      return false;
+    }
+
+    SModelReference tRef = reference.getTargetSModelReference();
+    if (tRef == null) {
+      return false;
+    }
+
+    return SModelStereotype.getStereotype(tRef.getModelName()).endsWith(SModelStereotype.STUB_SUFFIX);
   }
 
   private static String getTargetStringFromReference(@NotNull SReference reference) {
-    String targetPackage = check_4tnolf_a0a0b(check_4tnolf_a0a0a1(check_4tnolf_a0a0a0b(reference)));
+    String targetPackage = SModelStereotype.withoutStereotype(check_4tnolf_a0a0a1(((jetbrains.mps.smodel.SModelReference) check_4tnolf_a0a0a0a0b(reference))));
     String targetName = reference.getTargetNodeId().toString();
     return targetPackage + "/" + targetName;
   }
@@ -107,7 +115,7 @@ public class StubRefUtil {
       SModelReference targetModelRef = ref.getTargetSModelReference();
       ((SModelInternal) model).addModelImport(targetModelRef, false);
 
-      IModule sourceModule = check_4tnolf_a0d0a0o(model.getModelDescriptor());
+      IModule sourceModule = check_4tnolf_a0d0a0o(model);
       IModule targetModule = check_4tnolf_a0e0a0o(SModelRepository.getInstance().getModelDescriptor(targetModelRef));
       if (sourceModule != null && targetModule != null) {
         if (!(new GlobalModuleDependenciesManager(sourceModule).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE).contains(targetModule))) {
@@ -136,42 +144,21 @@ public class StubRefUtil {
     StubRefUtil.addRequiredImports(oldNode.getModel(), reference.getSourceNode());
   }
 
-  private static boolean check_4tnolf_a0a0a(String checkedDotOperand, String STUB_SUFFIX) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.endsWith(SModelStereotype.STUB_SUFFIX);
-    }
-    return false;
-  }
-
-  private static String check_4tnolf_a0a0a0(SModelReference checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getStereotype();
-    }
-    return null;
-  }
-
-  private static String check_4tnolf_a0a0b(SModelFqName checkedDotOperand) {
+  private static String check_4tnolf_a0a0a1(jetbrains.mps.smodel.SModelReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getLongName();
     }
     return null;
   }
 
-  private static SModelFqName check_4tnolf_a0a0a1(SModelReference checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getSModelFqName();
-    }
-    return null;
-  }
-
-  private static SModelReference check_4tnolf_a0a0a0b(SReference checkedDotOperand) {
+  private static SModelReference check_4tnolf_a0a0a0a0b(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTargetSModelReference();
     }
     return null;
   }
 
-  private static IModule check_4tnolf_a0d0a0o(SModelInternal checkedDotOperand) {
+  private static IModule check_4tnolf_a0d0a0o(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

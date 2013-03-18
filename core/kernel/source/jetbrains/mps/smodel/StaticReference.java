@@ -13,10 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
-
-import jetbrains.mps.smodel.SModel.FakeModelDescriptor;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.logging.Logger;
@@ -24,6 +21,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 //final used by find usages
 public final class StaticReference extends SReferenceBase {
@@ -39,7 +38,8 @@ public final class StaticReference extends SReferenceBase {
   /**
    * create 'mature' reference
    */
-  public StaticReference(@NotNull String role, @NotNull SNode sourceNode, @Nullable SModelReference targetModelReference, @Nullable SNodeId nodeId, @Nullable String resolveInfo) {
+  public StaticReference(@NotNull String role, @NotNull SNode sourceNode, @Nullable SModelReference targetModelReference, @Nullable SNodeId nodeId,
+      @Nullable String resolveInfo) {
     // 'targetModelReference' can be null only if it is broken external reference
     super(role, sourceNode, targetModelReference, null);
     setResolveInfo(resolveInfo);
@@ -103,7 +103,7 @@ public final class StaticReference extends SReferenceBase {
       sb.append("\ncurrent thread ");
       sb.append(canRead);
       sb.append("\nstack trace of model disposing is: ");
-      for (StackTraceElement ste : ((jetbrains.mps.smodel.SModel) targetModel).getDisposedStacktrace()) {
+      for (StackTraceElement ste : ((jetbrains.mps.smodel.SModelInternal) targetModel).getDisposedStacktrace()) {
         sb.append(ste);
         sb.append("\n");
       }
@@ -133,15 +133,15 @@ public final class StaticReference extends SReferenceBase {
     if (targetModelReference == null) return null;
 
     SModel modelDescriptor = null;
-    if (current != null && current.getModelDescriptor() != null && !(current.getModelDescriptor() instanceof FakeModelDescriptor)) {
-      modelDescriptor = current.getModelDescriptor().resolveModel(targetModelReference);
+    if (current != null && current.isInRepository()) {
+      modelDescriptor = current.resolveModel((jetbrains.mps.smodel.SModelReference) targetModelReference);
     } else if (!MPSCore.getInstance().isMergeDriverMode()) {
       modelDescriptor = SModelRepository.getInstance().getModelDescriptor(targetModelReference);
     }
 
     if (modelDescriptor == null) return null;
 
-    SModel model = modelDescriptor.getSModel();
+    SModel model = modelDescriptor;
     if (model == null) {
       error("failed to get model '" + getTargetSModelReference() + "' from model desctiptor");
     }

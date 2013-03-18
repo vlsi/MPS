@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;
 
 import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
@@ -22,7 +22,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
@@ -50,7 +50,7 @@ public class SModelUtil_new implements CoreComponent {
   private SModelAdapter myModelListener = new SModelAdapter(SModelListenerPriority.PLATFORM) {
     @Override
     public void rootRemoved(SModelRootEvent p0) {
-      if (!LanguageAspect.STRUCTURE.is(p0.getModel().getModelDescriptor())) {
+      if (!LanguageAspect.STRUCTURE.is(p0.getModel())) {
         return;
       }
       if (!(SNodeUtil.isInstanceOfAbstractConceptDeclaration(p0.getRoot()))) {
@@ -63,7 +63,7 @@ public class SModelUtil_new implements CoreComponent {
 
     @Override
     public void propertyChanged(SModelPropertyEvent p0) {
-      if (!LanguageAspect.STRUCTURE.is(p0.getModel().getModelDescriptor())) {
+      if (!LanguageAspect.STRUCTURE.is(p0.getModel())) {
         return;
       }
       if (!(SNodeUtil.isInstanceOfAbstractConceptDeclaration(p0.getNode()))) {

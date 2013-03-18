@@ -22,7 +22,7 @@ import jetbrains.mps.build.util.RelativePathHelper;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.build.behavior.BuildString_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
-import jetbrains.mps.generator.TransientSModel;
+import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.build.mps.util.MPSModulesPartitioner;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -45,6 +45,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.build.util.LocalSourcePathArtifact;
 import jetbrains.mps.build.mps.util.RequiredPlugins;
 import jetbrains.mps.build.util.ProjectDependency;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
@@ -437,7 +438,7 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_7259033139236507287(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode targetModule = SLinkOperations.getTarget(_context.getNode(), "targetModule", false);
-    return (SNodeOperations.getModel(targetModule) instanceof TransientSModel ?
+    return (SNodeOperations.getModel(targetModule).getModule() instanceof TransientModelsModule ?
       _context.getCopiedOutputNodeForInputNode(targetModule) :
       targetModule
     );
@@ -1418,12 +1419,14 @@ public class QueriesGenerated {
   }
 
   private static SNode createGeneratorInternal_String_x583g4_a0a0a0a0cg(Object p0) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.GeneratorInternal_String", null, GlobalScope.getInstance(), false);
     n1.setProperty("path", (String) p0);
     return n1;
   }
 
   private static SNode createGeneratorInternal_ProjectDependency_x583g4_a0a0a0a1a571(Object p0, Object p1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.GeneratorInternal_ProjectDependency", null, GlobalScope.getInstance(), false);
     n1.setProperty("path", (String) p0);
     n1.setReferenceTarget("project", (SNode) p1);

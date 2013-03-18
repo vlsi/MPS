@@ -21,9 +21,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.event.SModelEvent;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.JComponent;
 import java.util.List;
@@ -71,7 +72,8 @@ public class InspectorEditorComponent extends EditorComponent {
         myNode = node;
         myNodePointer = myNode != null ? new jetbrains.mps.smodel.SNodePointer(myNode) : null;
         myRoot = myNode == null ? null : myNode.getContainingRoot();
-        setReadOnly(node == null || node.getModel() == null || jetbrains.mps.util.SNodeOperations.isModelDisposed(node.getModel()) || node.getModel().isReadOnly());
+        setReadOnly(node == null || node.getModel() == null || jetbrains.mps.util.SNodeOperations.isModelDisposed(
+          node.getModel()) || SModelOperations.isReadOnly(node.getModel()));
         if (node == null) {
           setOperationContext(null);
         } else {

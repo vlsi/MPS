@@ -4,11 +4,11 @@ package jetbrains.mps.build.mps.pluginSolution.plugin;
 
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.SModelFqName;
 import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
@@ -22,12 +22,11 @@ public class BuildGeneratorUtil {
   public BuildGeneratorUtil() {
   }
 
-  public static SModel createModel(String modelName, final Solution solution) {
-    final SModelFqName newModelFQName = SModelFqName.fromString(modelName);
+  public static SModel createModel(final String modelName, final Solution solution) {
     List<SModel> ownModelDescriptors = solution.getOwnModelDescriptors();
     final Wrappers._T<SModel> modelDescriptor = new Wrappers._T<SModel>(null);
     for (SModel descriptor : ListSequence.fromList(ownModelDescriptors)) {
-      if (descriptor.getReference().getSModelFqName().equals(newModelFQName)) {
+      if (descriptor.getReference().getModelName().equals(modelName)) {
         modelDescriptor.value = descriptor;
         break;
       }
@@ -35,7 +34,7 @@ public class BuildGeneratorUtil {
     if (modelDescriptor.value == null) {
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          modelDescriptor.value = solution.createModel(newModelFQName.toString(), solution.getModelRoots().iterator().next(), null);
+          modelDescriptor.value = SModuleOperations.createModelWithAdjustments(modelName, solution.getModelRoots().iterator().next());
         }
       });
     }

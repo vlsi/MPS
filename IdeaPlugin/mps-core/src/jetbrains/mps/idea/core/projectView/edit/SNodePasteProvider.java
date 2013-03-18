@@ -24,7 +24,7 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.util.*;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 
@@ -66,7 +66,7 @@ public class SNodePasteProvider implements com.intellij.ide.PasteProvider, Runna
   public void run() {
     // Should be executed inside read action
     PasteNodeData nodeData = CopyPasteUtil.getPasteNodeDataFromClipboard(myModel);
-    IOperationContext operationContext = new ModuleContext(myModel.getModelDescriptor().getModule(), myProject);
+    IOperationContext operationContext = new ModuleContext(myModel.getModule(), myProject);
     SwingUtilities.invokeLater(getAddImportsRunnable(nodeData, operationContext));
   }
 

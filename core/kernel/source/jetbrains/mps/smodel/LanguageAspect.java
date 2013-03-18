@@ -13,7 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
+
+import jetbrains.mps.project.SModuleOperations;
+import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -213,7 +216,7 @@ public enum LanguageAspect {
   }
 
   public boolean is(org.jetbrains.mps.openapi.model.SModel sm) {
-    assert sm instanceof SModel;//temporary
+    assert sm instanceof SModelDescriptor;//temporary
     return Language.getModelAspect(sm) == this;
   }
 
@@ -226,15 +229,13 @@ public enum LanguageAspect {
   }
 
   private EditableSModelDescriptor get_internal(Language l, boolean doCreate) {
-    SModelFqName fqName = new SModelFqName(l.getModuleName() + "." + myName, null);
-
-    EditableSModelDescriptor md = (EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(fqName);
+    EditableSModelDescriptor md = (EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(l.getModuleName() + "." + myName);
     if (md != null && SModelRepository.getInstance().getOwner(md) == l) return md;
     return doCreate ? createNew(l) : null;
   }
 
   public SModelReference get(ModuleReference l) {
-    return new SModelReference(l.getModuleName() + "." + myName, null);
+    return new jetbrains.mps.smodel.SModelReference(l.getModuleName() + "." + myName, null);
   }
 
   public String getName() {
@@ -255,7 +256,7 @@ public enum LanguageAspect {
     } else {
       modelRoot = ModelRootUtil.getModelRoot(structureModel);
     }
-    return l.createModel(l.getModuleName() + "." + getName(), modelRoot, null);
+    return (EditableSModelDescriptor) SModuleOperations.createModelWithAdjustments(l.getModuleName() + "." + getName(), modelRoot);
   }
 
   @Nullable

@@ -46,7 +46,7 @@ public class EvaluationPanel extends EvaluationUi {
 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        myEditor = new EmbeddableEditor(myEvaluationModel.getContext(), (EditableSModel) myEvaluationModel.getNode().getModel().getModelDescriptor(), myEvaluationModel.getNode(), true);
+        myEditor = new EmbeddableEditor(myEvaluationModel.getContext(), (EditableSModel) myEvaluationModel.getNode().getModel(), myEvaluationModel.getNode(), true);
       }
     });
 
@@ -105,7 +105,7 @@ public class EvaluationPanel extends EvaluationUi {
         if (EvaluationPanel.this.myResultEditor == null) {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
-              EvaluationPanel.this.myResultEditor = new EmbeddableEditor(myEvaluationModel.getContext(), (EditableSModel) myEvaluationModel.getNode().getModel().getModelDescriptor(), generatedResult, false);
+              EvaluationPanel.this.myResultEditor = new EmbeddableEditor(myEvaluationModel.getContext(), (EditableSModel) myEvaluationModel.getNode().getModel(), generatedResult, false);
             }
           });
           EvaluationPanel.this.myTabbedPane.add("Generated Result", EvaluationPanel.this.myResultEditor.getComponenet());

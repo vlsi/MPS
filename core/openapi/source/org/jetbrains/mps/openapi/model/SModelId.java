@@ -23,4 +23,17 @@ import org.jetbrains.mps.annotations.Immutable;
  */
 @Immutable
 public interface SModelId {
+
+  String getType();
+
+  /**
+   *  Globally unique model identifiers can be resolved in a context of the whole repository.
+   *  For example, implementations based on {@link java.util.UUID} or {@link java.net.URI} do not need a module to be resolved.
+   */
+  boolean isGloballyUnique();
+
+  /**
+   *  Returns model name if it is a part of the identifier, or null otherwise.
+   */
+  String getModelName();
 }

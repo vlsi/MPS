@@ -21,6 +21,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelInternal;
@@ -97,7 +98,7 @@ public class ModelLinkMap {
     });
     res |= move(myNodeTypeMap, oldPtr, newPtr, new _FunctionTypes._void_P1_E0<SNode>() {
       public void invoke(SNode node) {
-        String modelName = newPtr.getModelReference().getLongName();
+        String modelName = SModelStereotype.withoutStereotype(newPtr.getModelReference().getModelName());
         String name = NameUtil.shortNameFromLongName(node.getConcept().getConceptId());
         ((jetbrains.mps.smodel.SNode) node).setConceptFqName(NameUtil.longNameFromNamespaceAndShortName(modelName, name));
       }

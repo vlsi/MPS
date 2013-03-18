@@ -37,7 +37,7 @@ import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -134,7 +134,7 @@ public class NewModelAction extends AnAction {
           public SModel compute() {
             // TODO create model in mySourceRoot
             EditableSModelDescriptor descriptor = mySolution.createModel(modelFqName.toString(), myModelRoot, null);
-            template.preConfigure(descriptor.getSModel(), mySolution);
+            template.preConfigure(descriptor, mySolution);
             descriptor.save();
             return descriptor;
           }
@@ -219,7 +219,7 @@ public class NewModelAction extends AnAction {
         if (module.getScope().getLanguage(languageReference) == null) {
           module.addUsedLanguage(languageReference);
         }
-        ((jetbrains.mps.smodel.SModel) smodel).addLanguage(languageReference);
+        ((jetbrains.mps.smodel.SModelInternal) smodel).addLanguage(languageReference);
       }
     }
   }

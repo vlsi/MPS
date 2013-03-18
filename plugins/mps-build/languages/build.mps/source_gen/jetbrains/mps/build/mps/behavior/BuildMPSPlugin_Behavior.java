@@ -20,11 +20,10 @@ import jetbrains.mps.build.util.ScopeUtil;
 import jetbrains.mps.scope.CompositeScope;
 import jetbrains.mps.build.behavior.BuildProject_Behavior;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNodeId;
 
 public class BuildMPSPlugin_Behavior {
   public static void init(SNode thisNode) {
@@ -107,8 +106,9 @@ public class BuildMPSPlugin_Behavior {
   }
 
   private static SNode createBwfTaskLibraryDependency_6x52oe_a0a0a() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency", null, GlobalScope.getInstance(), false);
-    n1.setReference("target", SReference.create("target", n1, SModelReference.fromString("r:4c16a3e9-db56-4447-9b0d-14adce23db0d(jetbrains.mps.build.mps.accessories)"), SNodeId.fromString("398731435597190701")));
+    n1.setReference("target", SReference.create("target", n1, facade.createModelReference("r:4c16a3e9-db56-4447-9b0d-14adce23db0d(jetbrains.mps.build.mps.accessories)"), facade.createNodeId("398731435597190701")));
     return n1;
   }
 }

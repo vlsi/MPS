@@ -24,12 +24,13 @@ import org.jetbrains.mps.openapi.model.SNode;
  * Date: 2/15/13
  */
 public interface SubstituteAction {
+  SNode getIconNode(String pattern);
 
-//  SNode getIconNode();
-
-//  boolean isReferentPresentation();
+  boolean isReferentPresentation();
 
   SNode getSourceNode();
+
+  Object getParameterObject();
 
   SNode getOutputConcept();
 
@@ -43,15 +44,9 @@ public interface SubstituteAction {
 
   String getDescriptionText(String pattern);
 
-//  int getFontStyleFor(String pattern);
-
-  int getSortPriority(String pattern);
-
   boolean canSubstituteStrictly(String pattern);
 
   boolean canSubstitute(String pattern);
-
-  public Object getParameterObject();
 
   SNode substitute(@Nullable EditorContext context, String pattern);
 }

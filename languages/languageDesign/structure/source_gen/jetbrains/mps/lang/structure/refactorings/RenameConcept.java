@@ -39,13 +39,13 @@ public class RenameConcept extends BaseLoggableRefactoring {
   }
 
   public void refactor(final RefactoringContext refactoringContext) {
-    String newConceptName = SNodeOperations.getModel(refactoringContext.getSelectedNode()).getReference().getSModelFqName() + "." + ((String) refactoringContext.getParameter("newName"));
+    String newConceptName = SNodeOperations.getModel(refactoringContext.getSelectedNode()).getReference().getModelName() + "." + ((String) refactoringContext.getParameter("newName"));
     refactoringContext.changeFeatureName(refactoringContext.getSelectedNode(), newConceptName, ((String) refactoringContext.getParameter("newName")));
   }
 
   public List<SModel> getModelsToGenerate(final RefactoringContext refactoringContext) {
-    Set<SModel> result = SetSequence.fromSetWithValues(new HashSet<SModel>(), (List<SModel>) refactoringContext.getModelsFromUsages(refactoringContext.getSelectedModel().getSModel()));
-    Language sourceLanguage = Language.getLanguageFor(SNodeOperations.getModel(refactoringContext.getSelectedNode()).getModelDescriptor());
+    Set<SModel> result = SetSequence.fromSetWithValues(new HashSet<SModel>(), (List<SModel>) refactoringContext.getModelsFromUsages(refactoringContext.getSelectedModel()));
+    Language sourceLanguage = Language.getLanguageFor(SNodeOperations.getModel(refactoringContext.getSelectedNode()));
     if (sourceLanguage != null) {
       for (List<SModel> value : CollectionSequence.fromCollection(RefactoringUtil.getLanguageAndItsExtendingLanguageModels(refactoringContext.getSelectedProject(), sourceLanguage).values())) {
         SetSequence.fromSet(result).addSequence(ListSequence.fromList(value));

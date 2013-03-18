@@ -16,7 +16,7 @@ import jetbrains.mps.ide.navigation.NodeNavigatable;
 import java.util.ArrayList;
 import java.util.Collections;
 import javax.swing.ListCellRenderer;
-import jetbrains.mps.runtime.ModuleClassLoader;
+import jetbrains.mps.classloading.ModuleClassLoader;
 import javax.swing.JList;
 import com.intellij.ui.components.JBList;
 import com.intellij.openapi.ui.popup.PopupChooserBuilder;

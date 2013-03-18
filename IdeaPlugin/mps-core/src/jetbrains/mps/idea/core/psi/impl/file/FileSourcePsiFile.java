@@ -39,7 +39,7 @@ import jetbrains.mps.fileTypes.MPSLanguage;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -48,17 +48,13 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
- * Created with IntelliJ IDEA.
  * User: fyodor
  * Date: 2/5/13
- * Time: 11:47 AM
- * To change this template use File | Settings | File Templates.
  */
 public class FileSourcePsiFile extends PsiPlainTextFileImpl {
 
   private SModelReference myModelReference;
   private String myModelName;
-  private AtomicReference<CachedValue<List<RootNodePsiElement>>> myCachedChildren = new AtomicReference<CachedValue<List<RootNodePsiElement>>>();
 
   public FileSourcePsiFile(FileViewProvider viewProvider, SModelReference reference, String modelName) {
     super(viewProvider);
@@ -70,21 +66,6 @@ public class FileSourcePsiFile extends PsiPlainTextFileImpl {
   @Override
   public String getName() {
     return myModelName;
-  }
-
-  @Override
-  public boolean processChildren(PsiElementProcessor<PsiFileSystemItem> processor) {
-    checkValid();
-    ProgressIndicatorProvider.checkCanceled();
-
-    List<RootNodePsiElement> children = getCachedChildren().getValue();
-    for (RootNodePsiElement child : children) {
-      if (!processor.execute(child)) {
-        return false;
-      }
-    }
-
-    return super.processChildren(processor);
   }
 
   @Override
@@ -106,48 +87,11 @@ public class FileSourcePsiFile extends PsiPlainTextFileImpl {
   @NotNull
   @Override
   public PsiElement[] getChildren() {
-    List<RootNodePsiElement> children = getCachedChildren().getValue();
-    return children.toArray(new PsiElement[children.size()]);
+    return PsiElement.EMPTY_ARRAY;
   }
 
   public SModelReference getModelReference () {
     return myModelReference;
-  }
-
-  private CachedValue<List<RootNodePsiElement>> getCachedChildren () {
-    if (myCachedChildren.get() == null) {
-      CachedValuesManager valuesManager = CachedValuesManager.getManager(getProject());
-      CachedValue<List<RootNodePsiElement>> cachedValue = valuesManager.createCachedValue(new CachedValueProvider<List<RootNodePsiElement>>() {
-        @Nullable
-        @Override
-        public Result<List<RootNodePsiElement>> compute() {
-          MPSPsiProvider mpsPsiProvider = MPSPsiProvider.getInstance(getManager().getProject());
-          MPSPsiModel psiModel = mpsPsiProvider.getPsi(myModelReference);
-
-          List<RootNodePsiElement> children = new ArrayList<RootNodePsiElement>();
-          collectChildren(psiModel.getChildren(), children);
-
-          return Result.create(children, PsiModificationTracker.MODIFICATION_COUNT);
-        }
-      }, false);
-      myCachedChildren.compareAndSet(null, cachedValue);
-    }
-    return myCachedChildren.get();
-  }
-
-  private void collectChildren(PsiElement[] roots, List<RootNodePsiElement> children) {
-    for (PsiElement root : roots) {
-      if (!(root instanceof MPSPsiNode)) continue;
-      MPSPsiNode mpsPsiNode = (MPSPsiNode) root;
-      RootNodePsiElement e = new RootNodePsiElement(this, mpsPsiNode.getSNodeReference(), mpsPsiNode.getName());
-      children.add(e);
-    }
-  }
-
-  private void checkValid() {
-    if (!isValid()) {
-      throw new PsiInvalidElementAccessException(this);
-    }
   }
 
   @NotNull
@@ -176,12 +120,4 @@ public class FileSourcePsiFile extends PsiPlainTextFileImpl {
     return "PsiFile(MPS model):" + getName();
   }
 
-  private static class FileSourceElement extends FileElement {
-
-    public FileSourceElement(IElementType type, CharSequence text) {
-      super(type, text);
-
-    }
-
-  }
 }

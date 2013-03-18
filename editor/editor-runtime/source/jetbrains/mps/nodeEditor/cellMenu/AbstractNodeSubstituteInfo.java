@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor.cellMenu;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.typesystem.inference.InequalitySystem;
@@ -34,7 +35,7 @@ import java.util.Map;
  * Author: Sergey Dmitriev.
  * Time: Oct 29, 2003 2:17:38 PM
  */
-public abstract class AbstractNodeSubstituteInfo implements NodeSubstituteInfo {
+public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
   private List<SubstituteAction> myCachedActionList;
   private Map<String, List<SubstituteAction>> myPatternsToActionListsCache = new HashMap<String, List<SubstituteAction>>();
   private Map<String, List<SubstituteAction>> myStrictPatternsToActionListsCache = new HashMap<String, List<SubstituteAction>>();

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.findusages.view;
 
+import com.intellij.icons.AllIcons;
 import com.intellij.icons.AllIcons.Actions;
 import com.intellij.ide.OccurenceNavigator;
 import com.intellij.openapi.actionSystem.*;
@@ -22,8 +23,13 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
+import com.intellij.ui.content.tabs.PinToolwindowTabAction;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.actions.FastFindNodeUsages_Action;
+import jetbrains.mps.ide.actions.FindSpecificNodeUsages_Action;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.IExternalizeable;
@@ -33,7 +39,10 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.VoidHolder;
 import jetbrains.mps.ide.findusages.view.icons.IconManager;
-import jetbrains.mps.ide.findusages.view.icons.Icons;
+import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesDialog;
+import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesOptions;
+import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
+import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTreeComponent;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
@@ -42,12 +51,15 @@ import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModel;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -256,40 +268,80 @@ public abstract class UsagesView implements IExternalizeable {
   }
 
   public static class ButtonConfiguration implements IExternalizeable {
+    private static final String SETTINGS = "settings";
     private static final String RERUN = "rerun";
-    private static final String REGENERATE = "rebuild";
     private static final String CLOSE = "close";
+    private static final String PIN = "pin";
+    private static final String REGENERATE = "rebuild";
 
+    private boolean myShowSettingsButton;
     private boolean myShowRerunButton;
-    private boolean myShowRegenerateButton;
     private boolean myShowCloseButton;
+    private boolean myShowPinButton;
+    private boolean myShowRegenerateButton;
 
     public ButtonConfiguration(boolean showRerun, boolean showRegenerate, boolean showClose) {
       myShowRerunButton = showRerun;
       myShowRegenerateButton = showRegenerate;
       myShowCloseButton = showClose;
+      myShowPinButton = true;
+      myShowSettingsButton = false;
     }
 
     public ButtonConfiguration(boolean showRerun) {
       myShowRerunButton = showRerun;
       myShowRegenerateButton = true;
       myShowCloseButton = true;
+      myShowPinButton = true;
     }
 
     public ButtonConfiguration(Element optionsXML, jetbrains.mps.project.Project project) {
       read(optionsXML, project);
     }
 
-    public boolean isShowRegenerateButton() {
-      return myShowRegenerateButton;
+    public ButtonConfiguration showSettingsButton(boolean flag) {
+      myShowSettingsButton= flag;
+      return this;
+    }
+
+    public boolean isShowSettingsButton() {
+      return myShowSettingsButton;
+    }
+
+    public ButtonConfiguration showRerunButton(boolean flag) {
+      myShowRerunButton = flag;
+      return this;
     }
 
     public boolean isShowRerunButton() {
       return myShowRerunButton;
     }
 
+    public ButtonConfiguration showCloseButton(boolean flag) {
+      myShowCloseButton = flag;
+      return this;
+    }
+
     public boolean isShowCloseButton() {
       return myShowCloseButton;
+    }
+
+    public ButtonConfiguration showPinButton(boolean flag) {
+      myShowPinButton = flag;
+      return this;
+    }
+
+    public boolean isShowPinButton() {
+      return myShowPinButton;
+    }
+
+    public ButtonConfiguration showRegenerateButton(boolean flag) {
+      myShowRegenerateButton = flag;
+      return this;
+    }
+
+    public boolean isShowRegenerateButton() {
+      return myShowRegenerateButton;
     }
 
     @Override
@@ -351,6 +403,62 @@ public abstract class UsagesView implements IExternalizeable {
 
     private void createButtons(ButtonConfiguration buttonConfiguration) {
       DefaultActionGroup actionGroup = new DefaultActionGroup();
+
+      if (buttonConfiguration.isShowSettingsButton()) {
+        actionGroup.addAction(new AnAction("Settings...", "Show find usages settings dialog", AllIcons.General.ProjectSettings) {
+          @Override
+          public void actionPerformed(AnActionEvent e) {
+            assert mySearchQuery != null;
+            if (mySearchQuery.getScope() == null) return;
+            final IHolder holder = mySearchQuery.getObjectHolder();
+            if (!(holder instanceof VoidHolder)) {
+              if (holder.getObject() == null) return; //object was deleted
+            }
+
+            AnActionEvent event =
+                new AnActionEvent(e.getInputEvent(), e.getDataContext(), e.getPlace(), e.getPresentation(), e.getActionManager(), e.getModifiers()){
+                  @Nullable
+                  @Override
+                  public <T> T getData(@NotNull DataKey<T> key) {
+                    if(key == MPSCommonDataKeys.CONTEXT_MODEL) {
+                      return (T)((SNode)holder.getObject()).getModel();
+                    }
+                    if(key == MPSCommonDataKeys.NODE) {
+                      return (T)holder.getObject();
+                    }
+                    return super.getData(key);
+                  }
+                };
+
+            FindSpecificNodeUsages_Action action = new FindSpecificNodeUsages_Action();
+            action.actionPerformed(event);
+
+//            FindUsagesOptions options = new FindUsagesOptions(
+//                new FindersOptions(),
+//                new ScopeOptions(),
+//                new jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions()
+//            );
+//            FindUsagesDialog findUsagesDialog = new FindUsagesDialog(options, (SNode)holder.getObject(), myProject);
+//            findUsagesDialog.show();
+
+//            options = findUsagesDialog.getResult();
+//            getOptionsComponent().getDefaultOptions().setDefaultSearchOptions(concept.value, options.value);
+//            // start
+//            final Wrappers._T<IResultProvider> provider = new Wrappers._T<IResultProvider>();
+//            final Wrappers._T<SearchQuery> query = new Wrappers._T<SearchQuery>();
+//            final Wrappers._T<jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions> viewOptions = new Wrappers._T<jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions>();
+//            ModelAccess.instance().runReadAction(new Runnable() {
+//              public void run() {
+//                provider.value = options.value.getOption(FindersOptions.class).getResult();
+//                query.value = options.value.getOption(ScopeOptions.class).getResult(operationNode.value, context, model);
+//                viewOptions.value = options.value.getOption(jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions.class);
+//              }
+//            });
+//            myProject.getComponent(UsagesViewTool.class).findUsages(provider.value, query.value, true, viewOptions.value.myShowOneResult, viewOptions.value.myNewTab, "No usages for that node");
+          }
+        });
+      }
+
       if (buttonConfiguration.isShowRerunButton()) {
         actionGroup.addAction(new AnAction(getRerunSearchTooltip(), "", Actions.RefreshUsages) {
           @Override
@@ -371,6 +479,32 @@ public abstract class UsagesView implements IExternalizeable {
           }
         });
       }
+
+      if (buttonConfiguration.isShowCloseButton()) {
+        AnAction action = new AnAction("Close", "", Actions.Cancel) {
+          @Override
+          public void actionPerformed(AnActionEvent e) {
+            close();
+          }
+        };
+        actionGroup.addAction(action);
+      }
+
+      if (buttonConfiguration.isShowPinButton()) {
+        actionGroup.addAction(new PinToolwindowTabAction() {
+
+          @Override
+          public void update(AnActionEvent event) {
+            super.update(event);
+
+            event.getPresentation().setIcon(AllIcons.General.Pin_tab);
+            event.getPresentation().setEnabledAndVisible(true);
+          }
+        });
+      }
+
+      actionGroup.addAll(myTreeComponent.getActionsToolbar());
+
       if (buttonConfiguration.isShowRegenerateButton()) {
         actionGroup.addAction(new AnAction("Rebuild models", "", Actions.Compile) {
           @Override
@@ -385,17 +519,6 @@ public abstract class UsagesView implements IExternalizeable {
         });
       }
 
-      actionGroup.addAll(myTreeComponent.getActionsToolbar());
-
-      if (buttonConfiguration.isShowCloseButton()) {
-        AnAction action = new AnAction("Close", "", Actions.Cancel) {
-          @Override
-          public void actionPerformed(AnActionEvent e) {
-            close();
-          }
-        };
-        actionGroup.addAction(action);
-      }
 
       ActionToolbar actionToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, false);
       actionToolbar.setOrientation(SwingConstants.VERTICAL);

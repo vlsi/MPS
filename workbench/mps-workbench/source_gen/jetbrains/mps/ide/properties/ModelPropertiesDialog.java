@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Set;
 import jetbrains.mps.smodel.SModelOperations;
@@ -49,7 +49,7 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
   public SModel myModel;
 
   /*package*/ ModelPropertiesDialog(final SModel sm, final IOperationContext context) {
-    super("Model Properties for " + sm.getReference().getSModelFqName(), context);
+    super("Model Properties for " + sm.getReference().getModelName(), context);
     myModel = sm;
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
@@ -63,7 +63,7 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
     final Wrappers._T<Set<SModelReference>> models = new Wrappers._T<Set<SModelReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        SModel m = myPresenter.getModelDescriptor().getSModel();
+        SModel m = myPresenter.getModelDescriptor();
         models.value = SModelOperations.getUsedImportedModels(m);
       }
     });
@@ -74,7 +74,7 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
     final Wrappers._T<Set<ModuleReference>> usedLanguages = new Wrappers._T<Set<ModuleReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        SModel m = myPresenter.getModelDescriptor().getSModel();
+        SModel m = myPresenter.getModelDescriptor();
         usedLanguages.value = SModelOperations.getUsedLanguages(m);
       }
     });
@@ -120,7 +120,7 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
         int references = 0;
         int properties = 0;
         messageText.append("<html>");
-        SModel model = myModel.getSModel();
+        SModel model = myModel;
         for (SNode node : new NodesIterable(model)) {
           references += IterableUtil.asCollection(node.getReferences()).size();
           properties += SNodeOperations.getProperties(node).keySet().size();

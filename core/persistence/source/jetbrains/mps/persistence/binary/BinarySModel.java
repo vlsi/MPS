@@ -18,10 +18,11 @@ package jetbrains.mps.persistence.binary;
 import jetbrains.mps.extapi.model.PersistenceProblem;
 import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel.Problem;
 
 import java.util.Collections;
 
@@ -51,7 +52,7 @@ public class BinarySModel extends SModel {
   }
 
   @Override
-  protected SModel createEmptyCopy() {
+  public SModel createEmptyCopy() {
     return new BinarySModel(new BinaryModelHeader(getReference()));
   }
 
@@ -59,6 +60,11 @@ public class BinarySModel extends SModel {
 
     @Nullable
     private final ModelReadException myCause;
+
+    @Override
+    public SModel createEmptyCopy() {
+      throw new UnsupportedOperationException("not supported");
+    }
 
     public InvalidBinarySModel(@NotNull SModelReference modelReference, @Nullable ModelReadException cause) {
       super(new BinaryModelHeader(modelReference));

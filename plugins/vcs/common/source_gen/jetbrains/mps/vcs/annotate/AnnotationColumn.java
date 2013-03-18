@@ -197,7 +197,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
     myRevisionRange = new VcsRevisionRange(this, myFileAnnotation);
     ListSequence.fromList(myAspectSubcolumns).addElement(new HighlightRevisionSubcolumn(this, myRevisionRange));
     myModelVirtualFile = modelVirtualFile;
-    myModelDescriptor = (BaseEditableSModelDescriptor) model.getModelDescriptor();
+    myModelDescriptor = (BaseEditableSModelDescriptor) model;
     myVcs = vcs;
     final CurrentDifferenceRegistry registry = CurrentDifferenceRegistry.getInstance(getProject());
     registry.getCommandQueue().runTask(new Runnable() {
@@ -228,7 +228,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
       MapSequence.fromMap(myChangesToLineContents).put(ch, new LineContent[]{new ReferenceLineContent(src.getAffectedNodeId(), src.getRole())});
     } else if (ch instanceof NodeGroupChange) {
       NodeGroupChange ngc = (NodeGroupChange) ch;
-      List<? extends SNode> newChildren = IterableUtil.asList(myModelDescriptor.getSModel().getNode(ngc.getParentNodeId()).getChildren(ngc.getRole()));
+      List<? extends SNode> newChildren = IterableUtil.asList(myModelDescriptor.getNode(ngc.getParentNodeId()).getChildren(ngc.getRole()));
       MapSequence.fromMap(myChangesToLineContents).put(ch, ListSequence.fromList(newChildren).page(ngc.getResultBegin(), ngc.getResultEnd()).select(new ISelector<SNode, NodeLineContent>() {
         public NodeLineContent select(SNode n) {
           return new NodeLineContent(n.getNodeId());
@@ -706,7 +706,7 @@ __switch__:
                 }
                 pi.setText("Loading model before change");
 
-                final Wrappers._T<SModel> beforeModel = new Wrappers._T<SModel>();
+                final Wrappers._T<jetbrains.mps.smodel.SModel> beforeModel = new Wrappers._T<jetbrains.mps.smodel.SModel>();
                 if (before == null) {
                   beforeModel.value = new jetbrains.mps.smodel.SModel(myModelDescriptor.getSModelReference());
                 } else {
@@ -719,7 +719,7 @@ __switch__:
 
                 pi.setText("Loading model after change");
                 assert after != null;
-                final SModel afterModel = ModelPersistence.readModel(after.getContent(), false);
+                final jetbrains.mps.smodel.SModel afterModel = ModelPersistence.readModel(after.getContent(), false);
 
                 final Wrappers._T<SNodeId> rootId = new Wrappers._T<SNodeId>();
                 ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SNodeId>() {

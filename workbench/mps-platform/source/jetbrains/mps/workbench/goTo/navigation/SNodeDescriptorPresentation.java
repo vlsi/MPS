@@ -17,33 +17,31 @@ package jetbrains.mps.workbench.goTo.navigation;
 
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.workbench.choose.base.BasePresentation;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.persistence.indexing.NodeDescriptor;
+import org.jetbrains.mps.openapi.persistence.NavigationParticipant.NavigationTarget;
 
 import javax.swing.Icon;
 
 public class SNodeDescriptorPresentation extends BasePresentation {
-  private NodeDescriptor myNodeResult;
+  private NavigationTarget myNodeResult;
 
-  public SNodeDescriptorPresentation(NodeDescriptor nodeResult) {
+  public SNodeDescriptorPresentation(NavigationTarget nodeResult) {
     myNodeResult = nodeResult;
   }
 
   public String getModelName() {
-    SModelReference mr = myNodeResult.getNodeReference().getModelReference();
-    SModelFqName modelFqName = mr.getSModelFqName();
-    if (modelFqName!=null) return modelFqName.toString();
-    return SNodeOperations.getModelLongName(SModelRepository.getInstance().getModelDescriptor(mr));
+    return myNodeResult.getNodeReference().getModelReference().getModelName();
   }
 
   @Override
   @NotNull
   public String doGetPresentableText() {
-    return myNodeResult.getName();
+    return myNodeResult.getPresentation();
   }
 
   @Override

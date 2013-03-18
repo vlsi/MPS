@@ -13,8 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
 
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.logging.Logger;
@@ -25,14 +26,13 @@ import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 
 /**
  * evgeny, 11/21/12
  */
-public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorWithSource implements EditableSModelDescriptor {
+public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorWithSource implements EditableSModel, EditableSModelDescriptor {
 
   private static final Logger LOG = Logger.getLogger(BaseEditableSModelDescriptor.class);
 
@@ -89,14 +89,14 @@ public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorW
   protected abstract void reload();
 
   public void resolveDiskConflict() {
-    LOG.warning("Model=" + getSModel().getReference().getSModelFqName() + ", file ts=" + getSource().getTimestamp() + ", model ts=" + getSourceTimestamp(),
+    LOG.warning("Model=" + getReference().getModelName() + ", file ts=" + getSource().getTimestamp() + ", model ts=" + getSourceTimestamp(),
       new Throwable());  // more information
-    DiskMemoryConflictResolver.getResolver().resolveDiskMemoryConflict(getSource(), getSModel(), this);
+    DiskMemoryConflictResolver.getResolver().resolveDiskMemoryConflict(getSource(), this, this);
   }
 
   public boolean checkAndResolveConflictOnSave() {
     if (needsReloading()) {
-      LOG.warning("Model file " + getSModel().getReference().getSModelFqName() + " was modified externally!\n" +
+      LOG.warning("Model file " + getReference().getModelName() + " was modified externally!\n" +
         "You might want to turn \"Synchronize files on frame activation/deactivation\" option on to avoid conflicts.");
       resolveDiskConflict();
       return false;
@@ -117,11 +117,11 @@ public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorW
     if (source.getFile().getPath().equals(newModelFile.getPath())) return;
 
     IFile oldFile = source.getFile();
-    SModel model = getSModel();
-    fireBeforeModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
+    jetbrains.mps.smodel.SModel model = getSModelInternal();
+    fireBeforeModelFileChanged(new SModelFileChangedEvent(model.getModelDescriptor(), oldFile, newModelFile));
     source.setFile(newModelFile);
     updateDiskTimestamp();
-    fireModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
+    fireModelFileChanged(new SModelFileChangedEvent(model.getModelDescriptor(), oldFile, newModelFile));
   }
 
   @Override
@@ -158,11 +158,10 @@ public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorW
     }
 
     String oldFqName = getReference().getModelName();
-    SModel model = getSModel();
-    fireBeforeModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelName));
+    fireBeforeModelRenamed(new SModelRenamedEvent(this, oldFqName, newModelName));
 
-    SModelReference newModelReference = new SModelReference(SModelFqName.fromString(newModelName), myModelReference.getSModelId());
-    ((jetbrains.mps.smodel.SModel) model).changeModelReference(newModelReference);
+    SModelReference newModelReference = new jetbrains.mps.smodel.SModelReference(SModelFqName.fromString(newModelName), getReference().getModelId());
+    changeModelReference(newModelReference);
 
     if (!changeFile) {
       save();
@@ -188,19 +187,15 @@ public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorW
       }
     }
 
-    myModelReference = newModelReference;
+    updateReferenceAfterRename(newModelReference);
 
-    fireModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelName));
+    fireModelRenamed(new SModelRenamedEvent(this, oldFqName, newModelName));
   }
 
   @Override
-  public void detach() {
-    UnregisteredNodes.instance().clear(getReference());
-    super.detach();
-  }
-
   public void dispose() {
-    detach();
+    UnregisteredNodes.instance().clear(getReference());
+    super.dispose();
   }
 
   public String toString() {
