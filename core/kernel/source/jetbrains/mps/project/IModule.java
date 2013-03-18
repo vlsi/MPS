@@ -84,15 +84,6 @@ public interface IModule extends SModule {
    */
   Collection<ModuleReference> getUsedDevkitReferences();
 
-  // cast to AbstractModule I think
-  void addDependency(SModuleReference moduleRef, boolean reexport);
-
-  // cast to AbstractModule I think
-  void addUsedLanguage(ModuleReference langRef);
-
-  // cast to AbstractModule I think
-  void addUsedDevkit(ModuleReference devkitRef);
-
   // remove? invalidate on add?
   // ouch. basically it's callback on dependencies change
   // so two purposes: initiate invaliding and invalidate action
@@ -100,14 +91,6 @@ public interface IModule extends SModule {
   void invalidateDependencies();
 
   //----
-
-  // SModule#getModels. But how to migrate? ModuleOperations.getOwnModelDescriptors with unchecked cast?
-  // When is it safe to migrate method call? calc expected type?
-  List<SModel> getOwnModelDescriptors();
-
-  // SModule#getModuleScope
-  @NotNull
-  IScope getScope();
 
   // should be do nothing, remove
   // should be listening
@@ -148,9 +131,35 @@ public interface IModule extends SModule {
   // IFile getModuleFolder() ?
   // use as much as possible
 
-  // ----- deprecated part
 
-  //
+
+  // cast to AbstractModule to use this methods
+  void addDependency(SModuleReference moduleRef, boolean reexport);
+
+  void addUsedLanguage(ModuleReference langRef);
+
+  void addUsedDevkit(ModuleReference devkitRef);
+
+  // migrate by renaming
+  /**
+   * @see SModule#getModuleName
+   */
+  @Deprecated
+  String getModuleFqName();
+
+  /**
+   * @see org.jetbrains.mps.openapi.module.SModule#getModels()
+   */
+  List<SModel> getOwnModelDescriptors();
+
+  /**
+   * Two step migration: 1) IScope -> SearchScope 2) by rename
+   * @see org.jetbrains.mps.openapi.module.SModule#getModuleScope()
+   */
+  @NotNull
+  IScope getScope();
+
+  // ----- deprecated part
 
   /**
    * ??? bundle home == jar or folder with module sources. Meaningless stuff
@@ -159,7 +168,6 @@ public interface IModule extends SModule {
    */
   @Deprecated
   IFile getBundleHome();
-
 
   // reload descriptor stuff, now all these methods need AbstractModule, for ConflictableModuleAdapter I think
   /**
@@ -234,12 +242,6 @@ public interface IModule extends SModule {
   public static interface ModelAdjuster {
     void adjust(SModel model);
   }
-
-  /**
-   * @see SModule#getModuleName
-   */
-  @Deprecated
-  String getModuleFqName();
 
   /**
    * Remove this method after ModuleReference -> SModuleReference migration
