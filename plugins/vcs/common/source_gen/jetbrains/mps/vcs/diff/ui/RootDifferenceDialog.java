@@ -26,10 +26,10 @@ import java.awt.Component;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.vcs.diff.ui.common.Bounds;
-import javax.swing.JSplitPane;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.ui.JBSplitter;
 import javax.swing.SwingUtilities;
 import java.awt.DisplayMode;
 import java.awt.GraphicsEnvironment;
@@ -95,9 +95,6 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
     linkEditors(true);
     linkEditors(false);
 
-    JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, myTopPanel, myBottomPanel);
-    splitPane.setResizeWeight(0.7);
-
     myActionGroup = new DefaultActionGroup();
     if (actions != null) {
       myActionGroup.addAll(actions);
@@ -123,8 +120,12 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
     myActionToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, myActionGroup, true);
     myTraverser.setActionToolbar(myActionToolbar);
 
+    JBSplitter splitter = new JBSplitter(true, 0.7f);
+    splitter.setFirstComponent(myTopPanel);
+    splitter.setSecondComponent(myBottomPanel);
+
     myContainer.add(myActionToolbar.getComponent(), BorderLayout.NORTH);
-    myContainer.add(splitPane, BorderLayout.CENTER);
+    myContainer.add(splitter, BorderLayout.CENTER);
     myContainer.add(myStatusBar, BorderLayout.SOUTH);
 
     highlightAllChanges();
@@ -139,7 +140,7 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
       myTraverser.goToFirstChangeLater();
     }
 
-    DisplayMode displayMode = check_vu2gar_a0jb0q(check_vu2gar_a0a53a61(GraphicsEnvironment.getLocalGraphicsEnvironment()));
+    DisplayMode displayMode = check_vu2gar_a0kb0q(check_vu2gar_a0a63a61(GraphicsEnvironment.getLocalGraphicsEnvironment()));
     int width = (displayMode == null ?
       800 :
       displayMode.getWidth() - 100
@@ -343,14 +344,14 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
     dialog.value.show();
   }
 
-  private static DisplayMode check_vu2gar_a0jb0q(GraphicsDevice checkedDotOperand) {
+  private static DisplayMode check_vu2gar_a0kb0q(GraphicsDevice checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getDisplayMode();
     }
     return null;
   }
 
-  private static GraphicsDevice check_vu2gar_a0a53a61(GraphicsEnvironment checkedDotOperand) throws HeadlessException {
+  private static GraphicsDevice check_vu2gar_a0a63a61(GraphicsEnvironment checkedDotOperand) throws HeadlessException {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getDefaultScreenDevice();
     }
