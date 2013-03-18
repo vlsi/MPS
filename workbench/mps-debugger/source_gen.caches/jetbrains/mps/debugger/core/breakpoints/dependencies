@@ -16,8 +16,10 @@
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.debugger.core.CurrentLinePositionComponentEx" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.AdditionalPainter" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.style.StyleRegistry" />
     <classNode extendsClassName="jetbrains.mps.debugger.core.DebuggerCellPainter" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.core.breakpoints.BreakpointsUiComponentEx" file="BreakpointsUiComponentEx.java">

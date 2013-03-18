@@ -264,6 +264,9 @@ public class StyleRegistryIdeaImpl extends StyleRegistry implements EditorColors
       addIdeaMappingsExt("SEMICOLON","JAVA_SEMICOLON");
       addIdeaMappingsExt("DOT","JAVA_DOT");
 
+      addIdeaMappingsExt("BREAKPOINT","BREAKPOINT_ATTRIBUTES");
+      addIdeaMappingsExt("EXECUTIONPOINT","EXECUTIONPOINT_ATTRIBUTES");
+
       //addIdeaMappingsExt("","");
     }
     catch (StyleRegistryMappingKeyException e){

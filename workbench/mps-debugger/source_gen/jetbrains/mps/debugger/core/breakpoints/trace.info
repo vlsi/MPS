@@ -324,43 +324,43 @@
     <unitInfo nodeId="8589065642488591082" fileName="BreakpointIconRenderrerEx.java" startLine="14" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.debugger.core.breakpoints.BreakpointIconRenderrerEx" />
   </root>
   <root nodeRef="r:e85e5755-b656-44cc-a19b-af0b99b30b13(jetbrains.mps.debugger.core.breakpoints)/8589065642488591173">
-    <nodeInfo nodeId="8589065642488591225" fileName="BreakpointPainterEx.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CELL_BACKGROUND_COLOR" />
-    <nodeInfo nodeId="8589065642488591234" fileName="BreakpointPainterEx.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STRIPE_BACKGROUND_COLOR" />
-    <nodeInfo nodeId="8589065642488591242" fileName="BreakpointPainterEx.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FRAME_COLOR" />
-    <nodeInfo nodeId="8589065642488591222" fileName="BreakpointPainterEx.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBreakpoint" />
-    <nodeInfo nodeId="8589065642488591257" fileName="BreakpointPainterEx.java" startLine="17" startPosition="44" endLine="18" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8589065642488591178" fileName="BreakpointPainterEx.java" startLine="22" startPosition="44" endLine="23" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8589065642488591185" fileName="BreakpointPainterEx.java" startLine="27" startPosition="46" endLine="28" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8589065642488591192" fileName="BreakpointPainterEx.java" startLine="32" startPosition="35" endLine="33" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8589065642488591205" fileName="BreakpointPainterEx.java" startLine="38" startPosition="60" endLine="39" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8589065642488591210" fileName="BreakpointPainterEx.java" startLine="40" startPosition="5" endLine="41" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8589065642488591219" fileName="BreakpointPainterEx.java" startLine="45" startPosition="22" endLine="46" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8589065642488591251" fileName="BreakpointPainterEx.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BreakpointPainterEx#(null)V" />
-    <nodeInfo nodeId="8589065642488591203" fileName="BreakpointPainterEx.java" startLine="37" startPosition="80" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8589065642488591174" fileName="BreakpointPainterEx.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCellBackgroundColor#()Ljava/awt/Color;" />
-    <nodeInfo nodeId="8589065642488591181" fileName="BreakpointPainterEx.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStripeBackgroundColor#()Ljava/awt/Color;" />
-    <nodeInfo nodeId="8589065642488591188" fileName="BreakpointPainterEx.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFrameColor#()Ljava/awt/Color;" />
-    <nodeInfo nodeId="8589065642488591215" fileName="BreakpointPainterEx.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getItem#()null" />
-    <nodeInfo nodeId="8589065642488591195" fileName="BreakpointPainterEx.java" startLine="36" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAbove#(Ljetbrains/mps/nodeEditor/AdditionalPainter;Ljetbrains/mps/nodeEditor/EditorComponent;)Z" />
-    <scopeInfo nodeId="8589065642488591256" fileName="BreakpointPainterEx.java" startLine="17" startPosition="44" endLine="18" endPosition="30" />
-    <scopeInfo nodeId="8589065642488591177" fileName="BreakpointPainterEx.java" startLine="22" startPosition="44" endLine="23" endPosition="33" />
-    <scopeInfo nodeId="8589065642488591184" fileName="BreakpointPainterEx.java" startLine="27" startPosition="46" endLine="28" endPosition="35" />
-    <scopeInfo nodeId="8589065642488591191" fileName="BreakpointPainterEx.java" startLine="32" startPosition="35" endLine="33" endPosition="23" />
-    <scopeInfo nodeId="8589065642488591204" fileName="BreakpointPainterEx.java" startLine="38" startPosition="60" endLine="39" endPosition="19" />
-    <scopeInfo nodeId="8589065642488591218" fileName="BreakpointPainterEx.java" startLine="45" startPosition="22" endLine="46" endPosition="24" />
-    <scopeInfo nodeId="8589065642488591251" fileName="BreakpointPainterEx.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
+    <nodeInfo nodeId="8589065642488591225" fileName="BreakpointPainterEx.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CELL_BACKGROUND_COLOR" />
+    <nodeInfo nodeId="8589065642488591234" fileName="BreakpointPainterEx.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STRIPE_BACKGROUND_COLOR" />
+    <nodeInfo nodeId="8589065642488591242" fileName="BreakpointPainterEx.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FRAME_COLOR" />
+    <nodeInfo nodeId="8589065642488591222" fileName="BreakpointPainterEx.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBreakpoint" />
+    <nodeInfo nodeId="8589065642488591257" fileName="BreakpointPainterEx.java" startLine="19" startPosition="44" endLine="20" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8589065642488591178" fileName="BreakpointPainterEx.java" startLine="24" startPosition="44" endLine="25" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8589065642488591185" fileName="BreakpointPainterEx.java" startLine="29" startPosition="46" endLine="30" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8589065642488591192" fileName="BreakpointPainterEx.java" startLine="34" startPosition="35" endLine="35" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8589065642488591205" fileName="BreakpointPainterEx.java" startLine="40" startPosition="60" endLine="41" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8589065642488591210" fileName="BreakpointPainterEx.java" startLine="42" startPosition="5" endLine="43" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8589065642488591219" fileName="BreakpointPainterEx.java" startLine="47" startPosition="22" endLine="48" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8589065642488591251" fileName="BreakpointPainterEx.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BreakpointPainterEx#(null)V" />
+    <nodeInfo nodeId="8589065642488591203" fileName="BreakpointPainterEx.java" startLine="39" startPosition="80" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8589065642488591174" fileName="BreakpointPainterEx.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCellBackgroundColor#()Ljava/awt/Color;" />
+    <nodeInfo nodeId="8589065642488591181" fileName="BreakpointPainterEx.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStripeBackgroundColor#()Ljava/awt/Color;" />
+    <nodeInfo nodeId="8589065642488591188" fileName="BreakpointPainterEx.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFrameColor#()Ljava/awt/Color;" />
+    <nodeInfo nodeId="8589065642488591215" fileName="BreakpointPainterEx.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getItem#()null" />
+    <nodeInfo nodeId="8589065642488591195" fileName="BreakpointPainterEx.java" startLine="38" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAbove#(Ljetbrains/mps/nodeEditor/AdditionalPainter;Ljetbrains/mps/nodeEditor/EditorComponent;)Z" />
+    <scopeInfo nodeId="8589065642488591256" fileName="BreakpointPainterEx.java" startLine="19" startPosition="44" endLine="20" endPosition="30" />
+    <scopeInfo nodeId="8589065642488591177" fileName="BreakpointPainterEx.java" startLine="24" startPosition="44" endLine="25" endPosition="33" />
+    <scopeInfo nodeId="8589065642488591184" fileName="BreakpointPainterEx.java" startLine="29" startPosition="46" endLine="30" endPosition="35" />
+    <scopeInfo nodeId="8589065642488591191" fileName="BreakpointPainterEx.java" startLine="34" startPosition="35" endLine="35" endPosition="23" />
+    <scopeInfo nodeId="8589065642488591204" fileName="BreakpointPainterEx.java" startLine="40" startPosition="60" endLine="41" endPosition="19" />
+    <scopeInfo nodeId="8589065642488591218" fileName="BreakpointPainterEx.java" startLine="47" startPosition="22" endLine="48" endPosition="24" />
+    <scopeInfo nodeId="8589065642488591251" fileName="BreakpointPainterEx.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="8589065642488591252" varName="breakpoint" />
     </scopeInfo>
-    <scopeInfo nodeId="8589065642488591174" fileName="BreakpointPainterEx.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="8589065642488591181" fileName="BreakpointPainterEx.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="8589065642488591188" fileName="BreakpointPainterEx.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="8589065642488591202" fileName="BreakpointPainterEx.java" startLine="37" startPosition="80" endLine="41" endPosition="45" />
-    <scopeInfo nodeId="8589065642488591215" fileName="BreakpointPainterEx.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="8589065642488591195" fileName="BreakpointPainterEx.java" startLine="36" startPosition="0" endLine="43" endPosition="0">
+    <scopeInfo nodeId="8589065642488591174" fileName="BreakpointPainterEx.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="8589065642488591181" fileName="BreakpointPainterEx.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="8589065642488591188" fileName="BreakpointPainterEx.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="8589065642488591202" fileName="BreakpointPainterEx.java" startLine="39" startPosition="80" endLine="43" endPosition="45" />
+    <scopeInfo nodeId="8589065642488591215" fileName="BreakpointPainterEx.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="8589065642488591195" fileName="BreakpointPainterEx.java" startLine="38" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="8589065642488591200" varName="component" />
       <varInfo nodeId="8589065642488591198" varName="painter" />
     </scopeInfo>
-    <unitInfo nodeId="8589065642488591173" fileName="BreakpointPainterEx.java" startLine="11" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.debugger.core.breakpoints.BreakpointPainterEx" />
+    <unitInfo nodeId="8589065642488591173" fileName="BreakpointPainterEx.java" startLine="13" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.debugger.core.breakpoints.BreakpointPainterEx" />
   </root>
 </debugInfo>
 
