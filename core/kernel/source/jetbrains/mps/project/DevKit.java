@@ -85,7 +85,7 @@ public class DevKit extends AbstractModule {
   public List<Language> getExportedLanguages() {
     List<Language> langs = new ArrayList<Language>();
     for (ModuleReference l : myDescriptor.getExportedLanguages()) {
-      ModuleReference ref = ModuleReference.fromString(l.getModuleFqName());
+      ModuleReference ref = ModuleReference.fromString(l.getModuleName());
       Language lang = ModuleRepositoryFacade.getInstance().getModule(ref, Language.class);
       if (lang != null) {
         langs.add(lang);
@@ -122,7 +122,7 @@ public class DevKit extends AbstractModule {
   public List<DevKit> getExtendedDevKits() {
     List<DevKit> result = new ArrayList<DevKit>();
     for (ModuleReference ref : myDescriptor.getExtendedDevkits()) {
-      String uid = ref.getModuleFqName();
+      String uid = ref.getModuleName();
       DevKit devKit = ModuleRepositoryFacade.getInstance().getModule(uid, DevKit.class);
       if (devKit != null) {
         result.add(devKit);
@@ -148,7 +148,7 @@ public class DevKit extends AbstractModule {
   public List<Solution> getExportedSolutions() {
     List<Solution> result = new ArrayList<Solution>();
     for (ModuleReference ref : myDescriptor.getExportedSolutions()) {
-      String uid = ref.getModuleFqName();
+      String uid = ref.getModuleName();
       Solution solution = ModuleRepositoryFacade.getInstance().getModule(uid, Solution.class);
       if (solution == null) continue;
       result.add(solution);

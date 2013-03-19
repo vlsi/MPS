@@ -59,7 +59,7 @@ public class SolutionRef_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_ns5ajd_b0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return BehaviorReflection.invokeVirtual(ModuleReference.class, node, "virtual_moduleReference_1280144168199513544", new Object[]{}).getModuleFqName();
+        return BehaviorReflection.invokeVirtual(ModuleReference.class, node, "virtual_moduleReference_1280144168199513544", new Object[]{}).getModuleName();
       }
 
       public void setText(String s) {

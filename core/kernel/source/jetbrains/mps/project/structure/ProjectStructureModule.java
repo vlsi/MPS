@@ -239,7 +239,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   }
 
   private static SModelFqName getModelFqName(SModule module) {
-    return new SModelFqName(MODULE_REFERENCE.getModuleFqName(), "module." + module.getModuleName(), SModelStereotype.getStubStereotypeForId("project"));
+    return new SModelFqName(MODULE_REFERENCE.getModuleName(), "module." + module.getModuleName(), SModelStereotype.getStubStereotypeForId("project"));
   }
 
   private static SModelReference getSModelReference(SModule module) {

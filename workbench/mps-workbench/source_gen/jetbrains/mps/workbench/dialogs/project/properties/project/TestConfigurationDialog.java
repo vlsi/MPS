@@ -266,7 +266,7 @@ public class TestConfigurationDialog extends DialogWrapper {
           if (module == null) {
             return;
           }
-          String moduleName = module.getModuleFqName();
+          String moduleName = module.getModuleName();
           myModuleUID.setText(moduleName);
           if (!(myNamePanel.isConfigNameSet())) {
             myNamePanel.setConfigName(NameUtil.shortNameFromLongName(moduleName));
@@ -280,7 +280,7 @@ public class TestConfigurationDialog extends DialogWrapper {
     }
 
     public void init(ModuleTestConfiguration mtc) {
-      myModuleUID.setText(mtc.getModuleRef().getModuleFqName());
+      myModuleUID.setText(mtc.getModuleRef().getModuleName());
     }
 
     @Override

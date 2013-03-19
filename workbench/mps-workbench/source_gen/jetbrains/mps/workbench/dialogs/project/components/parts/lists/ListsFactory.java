@@ -44,7 +44,7 @@ public final class ListsFactory {
   public static final ListsFactory.ListComparator<ModuleReference> MODULE_REF_COMPARATOR = new ListsFactory.ListComparator<ModuleReference>() {
     @Override
     public int compare(ModuleReference o1, ModuleReference o2) {
-      return o1.getModuleFqName().compareTo(o2.getModuleFqName());
+      return o1.getModuleName().compareTo(o2.getModuleName());
     }
 
     @Override
@@ -81,7 +81,7 @@ public final class ListsFactory {
   public static final ListsFactory.ListComparator<Dependency> DEPENDENCY_COMPARATOR = new ListsFactory.ListComparator<Dependency>() {
     @Override
     public int compare(Dependency o1, Dependency o2) {
-      return o1.getModuleRef().getModuleFqName().compareTo(o2.getModuleRef().getModuleFqName());
+      return o1.getModuleRef().getModuleName().compareTo(o2.getModuleRef().getModuleName());
     }
 
     @Override

@@ -65,13 +65,13 @@ public class ModelValidator {
     langsToCheck.addAll(((jetbrains.mps.smodel.SModelInternal) myModel).engagedOnGenerationLanguages());
     for (ModuleReference lang : langsToCheck) {
       if (scope.getLanguage(lang) == null) {
-        errors.add("Can't find language: " + lang.getModuleFqName());
+        errors.add("Can't find language: " + lang.getModuleName());
       }
     }
 
     for (ModuleReference devKit : ((jetbrains.mps.smodel.SModelInternal) myModel).importedDevkits()) {
       if (scope.getDevKit(devKit) == null) {
-        errors.add("Can't find devkit: " + devKit.getModuleFqName());
+        errors.add("Can't find devkit: " + devKit.getModuleName());
       }
     }
 

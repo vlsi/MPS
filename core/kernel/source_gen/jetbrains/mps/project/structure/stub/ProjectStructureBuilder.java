@@ -223,7 +223,7 @@ public abstract class ProjectStructureBuilder {
       ref.getModuleId().toString() :
       null
     ));
-    SPropertyOperations.set(result, "qualifiedName", ref.getModuleFqName());
+    SPropertyOperations.set(result, "qualifiedName", ref.getModuleName());
     return result;
   }
 

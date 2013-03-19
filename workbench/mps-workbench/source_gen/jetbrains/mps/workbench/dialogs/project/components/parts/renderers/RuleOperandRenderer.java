@@ -147,7 +147,7 @@ public class RuleOperandRenderer implements TableCellRenderer {
       ModuleReference moduleRef = generatorReference;
       Generator generator = (Generator) MPSModuleRepository.getInstance().getModule(moduleRef);
       if (generator == null) {
-        String genString = generatorReference.getModuleFqName();
+        String genString = generatorReference.getModuleName();
         root.add(new TextMPSTreeNode("NOT FOUND: " + genString, null));
         return false;
       }

@@ -129,7 +129,7 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
 
   @Override
   public String getModuleName() {
-    return myModuleReference.getModuleFqName();
+    return myModuleReference.getModuleName();
   }
 
   @Override
@@ -178,10 +178,10 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
     ModuleReference oldValue = myModuleReference;
     myModuleReference = reference;
     if (oldValue != null &&
-        oldValue.getModuleFqName() != null &&
-        !oldValue.getModuleFqName().equals(myModuleReference.getModuleFqName())) {
+        oldValue.getModuleName() != null &&
+        !oldValue.getModuleName().equals(myModuleReference.getModuleName())) {
 
-      MPSModuleRepository.getInstance().moduleFqNameChanged(this, oldValue.getModuleFqName());
+      MPSModuleRepository.getInstance().moduleFqNameChanged(this, oldValue.getModuleName());
     }
   }
 

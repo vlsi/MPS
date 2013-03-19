@@ -15,10 +15,8 @@
  */
 package jetbrains.mps.ide.editor.actions;
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
-import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBList;
 import jetbrains.mps.fileTypes.FileIcons;
@@ -28,10 +26,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 public class SelectLanguagesDialog extends DialogWrapper {
@@ -104,13 +99,13 @@ public class SelectLanguagesDialog extends DialogWrapper {
       ModuleReference moduleReference = (ModuleReference) value;
       final IModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
       if (module == null) {
-        String moduleName = moduleReference.getModuleFqName();
+        String moduleName = moduleReference.getModuleName();
         return (moduleName.equals("") ?
           "<no name>" :
           moduleName
         );
       }
-      return moduleReference.getModuleFqName();
+      return moduleReference.getModuleName();
     }
 
     @Override

@@ -24,7 +24,7 @@ public class ModuleEditor extends DefaultCellEditor {
 
   @Override
   public Component getTableCellEditorComponent(final JTable table, Object value, boolean isSelected, final int row, final int column) {
-    myTextField.setText(((ModuleReference) value).getModuleFqName());
+    myTextField.setText(((ModuleReference) value).getModuleName());
     return super.getTableCellEditorComponent(table, value, isSelected, row, column);
   }
 }

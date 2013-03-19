@@ -17,7 +17,6 @@ package jetbrains.mps.ide.ui.dialogs.properties.tables.models;
 
 import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItem;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItem.ModuleType;
-import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
@@ -49,9 +48,9 @@ public class ModuleDependTableModel extends DependTableModel<ModuleDescriptor> {
           for(Dependency dependency : myItem.getDependencies()) {
             ModuleReference moduleReference = dependency.getModuleRef();
             DependenciesTableItem<ModuleReference> item = null;
-            if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleFqName()) instanceof Language)
+            if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleName()) instanceof Language)
               item = new DependenciesTableItem<ModuleReference>(dependency.getModuleRef(), SDependencyScope.DEFAULT, dependency.isReexport()).setModuleType(ModuleType.LANGUAGE);
-            else if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleFqName()) instanceof Generator)
+            else if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleName()) instanceof Generator)
               item = new DependenciesTableItem<ModuleReference>(dependency.getModuleRef(), SDependencyScope.DEFAULT, dependency.isReexport()).setModuleType(ModuleType.GENERATOR);
             else
               item = new DependenciesTableItem<ModuleReference>(dependency.getModuleRef(), SDependencyScope.DEFAULT, dependency.isReexport());

@@ -41,17 +41,17 @@ public class DevkitValidator implements ModuleValidator {
 
     for (ModuleReference extDevkit : myModule.getModuleDescriptor().getExtendedDevkits()) {
       if (MPSModuleRepository.getInstance().getModule(extDevkit) == null) {
-        errors.add("Can't find extended devkit: " + extDevkit.getModuleFqName());
+        errors.add("Can't find extended devkit: " + extDevkit.getModuleName());
       }
     }
     for (ModuleReference expLang : myModule.getModuleDescriptor().getExportedLanguages()) {
       if (MPSModuleRepository.getInstance().getModule(expLang) == null) {
-        errors.add("Can't find exported language: " + expLang.getModuleFqName());
+        errors.add("Can't find exported language: " + expLang.getModuleName());
       }
     }
     for (ModuleReference expSol : myModule.getModuleDescriptor().getExportedSolutions()) {
       if (MPSModuleRepository.getInstance().getModule(expSol) == null) {
-        errors.add("Can't find exported language: " + expSol.getModuleFqName());
+        errors.add("Can't find exported language: " + expSol.getModuleName());
       }
     }
     return errors;

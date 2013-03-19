@@ -34,7 +34,7 @@ public class ModuleChooser extends BaseChooserComponent {
         StringBuilder result = new StringBuilder();
         ModuleReference ref = CommonChoosers.showDialogModuleChooser(null, "", ModuleChooser.this.myCheckedModules, Collections.EMPTY_LIST);
         if (ref != null) {
-          result.append(ref.getModuleFqName());
+          result.append(ref.getModuleName());
           ModuleChooser.this.setText(result.toString());
         }
       }

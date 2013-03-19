@@ -65,7 +65,7 @@ public class MetadataUtil {
 
   public static SNode createModuleRefNode(ModuleReference module) {
     SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.ModuleReference", null);
-    SPropertyOperations.set(node, "qualifiedName", module.getModuleFqName());
+    SPropertyOperations.set(node, "qualifiedName", module.getModuleName());
     SPropertyOperations.set(node, "uuid", module.getModuleId().toString());
     ((jetbrains.mps.smodel.SNode) node).setId(SNodeId.fromString("~" + SPropertyOperations.getString(node, "uuid")));
     return node;

@@ -58,10 +58,6 @@ public final class ModuleReference implements SModuleReference {
     myModuleId = moduleId;
   }
 
-  public String getModuleFqName() {
-    return myModuleName;
-  }
-
   @Override
   public ModuleId getModuleId() {
     return myModuleId;
@@ -104,6 +100,12 @@ public final class ModuleReference implements SModuleReference {
   @Override
   public SModule resolve(SRepository repo) {
     return repo.getModule(getModuleId());
+  }
+
+  // deprecated
+  @Deprecated
+  public String getModuleFqName() {
+    return myModuleName;
   }
 }
 

@@ -61,13 +61,13 @@ public class QueriesGenerated {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode solutionRef = SConceptOperations.createNewNode("jetbrains.mps.testbench.suite.structure.SolutionRef", null);
-                SPropertyOperations.set(solutionRef, "moduleFQName", (item).getModuleFqName());
+                SPropertyOperations.set(solutionRef, "moduleFQName", (item).getModuleName());
                 SPropertyOperations.set(solutionRef, "moduleID", (item).getModuleId().toString());
                 return solutionRef;
               }
 
               public String getMatchingText(String pattern) {
-                return (item).getModuleFqName();
+                return (item).getModuleName();
               }
 
               public String getVisibleMatchingText(String pattern) {

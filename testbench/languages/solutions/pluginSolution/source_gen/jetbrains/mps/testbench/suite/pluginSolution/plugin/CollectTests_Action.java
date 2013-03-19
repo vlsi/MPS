@@ -129,7 +129,7 @@ public class CollectTests_Action extends BaseAction {
       if (proInd.isCanceled()) {
         return false;
       }
-      proInd.setText("Processing " + mref.getModuleFqName());
+      proInd.setText("Processing " + mref.getModuleName());
       final IModule module = MPSModuleRepository.getInstance().getModule(mref);
       if (module != null) {
         final Wrappers._T<SNode> suite = new Wrappers._T<SNode>(null);
@@ -162,7 +162,7 @@ public class CollectTests_Action extends BaseAction {
                         suite.value = SModelOperations.createNewRootNode(model, "jetbrains.mps.testbench.suite.structure.ModuleSuite", null);
                         SNode sref = SLinkOperations.setNewChild(suite.value, "moduleRef", "jetbrains.mps.testbench.suite.structure.SolutionRef");
                         ModuleReference mref = module.getModuleReference();
-                        SPropertyOperations.set(sref, "moduleFQName", mref.getModuleFqName());
+                        SPropertyOperations.set(sref, "moduleFQName", mref.getModuleName());
                         SPropertyOperations.set(sref, "moduleID", mref.getModuleId().toString());
                       }
                       ListSequence.fromList(SLinkOperations.getTargets(suite.value, "testRef", true)).addElement(tref.invoke());

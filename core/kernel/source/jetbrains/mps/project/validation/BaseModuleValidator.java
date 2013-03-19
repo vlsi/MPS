@@ -50,17 +50,17 @@ public class BaseModuleValidator<T extends AbstractModule> implements ModuleVali
     for (Dependency dep : myModule.getDependencies()) {
       ModuleReference moduleRef = dep.getModuleRef();
       if (MPSModuleRepository.getInstance().getModule(moduleRef) == null) {
-        errors.add("Can't find dependency: " + moduleRef.getModuleFqName());
+        errors.add("Can't find dependency: " + moduleRef.getModuleName());
       }
     }
     for (ModuleReference reference : myModule.getUsedLanguagesReferences()) {
       if (ModuleRepositoryFacade.getInstance().getModule(reference, Language.class) == null) {
-        errors.add("Can't find used language: " + reference.getModuleFqName());
+        errors.add("Can't find used language: " + reference.getModuleName());
       }
     }
     for (ModuleReference reference : myModule.getUsedDevkitReferences()) {
       if (MPSModuleRepository.getInstance().getModule(reference) == null) {
-        errors.add("Can't find used devkit: " + reference.getModuleFqName());
+        errors.add("Can't find used devkit: " + reference.getModuleName());
       }
     }
 

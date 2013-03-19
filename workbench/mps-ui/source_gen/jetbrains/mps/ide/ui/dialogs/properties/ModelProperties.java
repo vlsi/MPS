@@ -267,7 +267,7 @@ public class ModelProperties {
 
     @Override
     public boolean met(final ModuleReference object) {
-      IModule module = MPSModuleRepository.getInstance().getModuleByFqName(object.getModuleFqName());
+      IModule module = MPSModuleRepository.getInstance().getModuleByFqName(object.getModuleName());
       if (!(module instanceof DevKit)) {
         return !(myUsedLanguages.contains(object));
       }

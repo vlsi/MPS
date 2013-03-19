@@ -238,12 +238,12 @@ public class OptimizeImportsHelper {
 
     for (ModuleReference langRef : unusedLanguages) {
       ((jetbrains.mps.smodel.SModelInternal) modelDescriptor).deleteLanguage(langRef);
-      report.append("Language ").append(langRef.getModuleFqName()).append(" was removed from imports\n");
+      report.append("Language ").append(langRef.getModuleName()).append(" was removed from imports\n");
     }
 
     for (ModuleReference dkRef : unusedDevkits) {
       ((jetbrains.mps.smodel.SModelInternal) modelDescriptor).deleteDevKit(dkRef);
-      report.append("Devkit ").append(dkRef.getModuleFqName()).append(" was removed from imports\n");
+      report.append("Devkit ").append(dkRef.getModuleName()).append(" was removed from imports\n");
     }
 
     for (SModelReference model : unusedModels) {
@@ -260,17 +260,17 @@ public class OptimizeImportsHelper {
 
     for (ModuleReference langRef : unusedLanguages) {
       module.removeUsedLanguage(langRef);
-      report.append("Language ").append(langRef.getModuleFqName()).append(" was removed from imports\n");
+      report.append("Language ").append(langRef.getModuleName()).append(" was removed from imports\n");
     }
 
     for (ModuleReference dkRef : unusedDevkits) {
       module.removeUsedDevkit(dkRef);
-      report.append("Devkit ").append(dkRef.getModuleFqName()).append(" was removed from imports\n");
+      report.append("Devkit ").append(dkRef.getModuleName()).append(" was removed from imports\n");
     }
 
     for (Dependency dep : unusedDeps) {
       module.removeDependency(dep);
-      report.append("Dependency on ").append(dep.getModuleRef().getModuleFqName()).append(" was removed\n");
+      report.append("Dependency on ").append(dep.getModuleRef().getModuleName()).append(" was removed\n");
     }
 
     return report.toString();

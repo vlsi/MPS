@@ -74,7 +74,7 @@ public class GenModuleXmlWorker extends MpsWorker {
 
     try {
       PrintWriter wr = new PrintWriter(new PrintStream(file.openOutputStream()));
-      wr.println("<module namespace=\"" + moduleRef.getModuleFqName() + "\" uuid=\"" + moduleRef.getModuleId() + "\" type=\"" + ((module instanceof Solution ?
+      wr.println("<module namespace=\"" + moduleRef.getModuleName() + "\" uuid=\"" + moduleRef.getModuleId() + "\" type=\"" + ((module instanceof Solution ?
         "solution" :
         (module instanceof Language ?
           "language" :

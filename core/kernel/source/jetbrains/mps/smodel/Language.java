@@ -146,7 +146,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   public void validateExtends() {
     List<ModuleReference> remove = new ArrayList<ModuleReference>();
     for (ModuleReference ref : myLanguageDescriptor.getExtendedLanguages()) {
-      if (getModuleName().equals(ref.getModuleFqName())) {
+      if (getModuleName().equals(ref.getModuleName())) {
         remove.add(ref);
       }
     }

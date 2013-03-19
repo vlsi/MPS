@@ -84,7 +84,7 @@ public class RuleOperandRenderer implements TableCellRenderer {
       ModuleReference moduleRef = generatorReference;
       Generator generator = (Generator) MPSModuleRepository.getInstance().getModule(moduleRef);
       if (generator == null) {
-        String genString = generatorReference.getModuleFqName();
+        String genString = generatorReference.getModuleName();
         return new JLabel("NOT FOUND: " + genString);
       }
       JLabel label = new JLabel(generator.getAlias());

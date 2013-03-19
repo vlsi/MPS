@@ -306,9 +306,9 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
               public void run() {
                 for(Dependency dependency : list) {
                   ModuleReference moduleReference = dependency.getModuleRef();
-                  if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleFqName()) instanceof Language)
+                  if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleName()) instanceof Language)
                     myDependTableModel.addItem(new DependenciesTableItem<ModuleReference>(dependency.getModuleRef(), SDependencyScope.DEFAULT, dependency.isReexport()).setModuleType(ModuleType.LANGUAGE));
-                  else if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleFqName()) instanceof Generator)
+                  else if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleName()) instanceof Generator)
                     myDependTableModel.addItem(new DependenciesTableItem<ModuleReference>(dependency.getModuleRef(), SDependencyScope.DEFAULT, dependency.isReexport()).setModuleType(ModuleType.GENERATOR));
                   else
                     myDependTableModel.addItem(new DependenciesTableItem<ModuleReference>(dependency.getModuleRef(), SDependencyScope.DEFAULT, dependency.isReexport()));
@@ -327,11 +327,11 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
               @Override
               public void run() {
                 for(ModuleReference moduleReference : list) {
-                  if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleFqName()) instanceof Language)
+                  if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleName()) instanceof Language)
                     myDependTableModel.addItem(new DependenciesTableItem<ModuleReference>(moduleReference, SDependencyScope.EXTENDS).setModuleType(ModuleType.LANGUAGE));
-                  else if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleFqName()) instanceof DevKit)
+                  else if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleName()) instanceof DevKit)
                     myDependTableModel.addItem(new DependenciesTableItem<ModuleReference>(moduleReference, SDependencyScope.EXTENDS).setModuleType(ModuleType.DEVKIT));
-                  else if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleFqName()) instanceof Solution)
+                  else if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleName()) instanceof Solution)
                     myDependTableModel.addItem(new DependenciesTableItem<ModuleReference>(moduleReference, SDependencyScope.EXTENDS).setModuleType(ModuleType.SOLUTION));
                 }
               }
@@ -355,7 +355,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       return new ModuleTableCellRender() {
         @Override
         protected DependencyCellState getDependencyCellState(ModuleReference moduleReference) {
-          if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleFqName()) == null)
+          if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleName()) == null)
             return DependencyCellState.NOT_AVALIABLE;
           return super.getDependencyCellState(moduleReference);
         }
@@ -373,7 +373,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
           if(value instanceof ModuleReference) {
             query[0] = new SearchQuery(
               MPSModuleRepository.getInstance().getModuleByFqName(
-                ((ModuleReference)value).getModuleFqName()), scope);
+                ((ModuleReference)value).getModuleName()), scope);
             provider[0] = FindUtils.makeProvider(new ModuleUsagesFinder());
           }
         }
@@ -632,7 +632,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
           else if(value instanceof ModuleReference) {
             query[0] = new SearchQuery(
               MPSModuleRepository.getInstance().getModuleByFqName(
-                ((ModuleReference)value).getModuleFqName()),
+                ((ModuleReference)value).getModuleName()),
                 GlobalScope.getInstance()
             );
             provider[0] = FindUtils.makeProvider(new ModuleUsagesFinder());

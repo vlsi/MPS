@@ -100,7 +100,7 @@ public abstract class StubModelDescriptors {
     String muid = "86441d7a-e194-42da-81a5-2161ec62a379";
 
     if (moduleRef != null) {
-      mfq = moduleRef.getModuleFqName();
+      mfq = moduleRef.getModuleName();
       muid = moduleRef.getModuleId().toString();
     }
     SModelFqName fqname = new SModelFqName(mfq, pkg, stereo);

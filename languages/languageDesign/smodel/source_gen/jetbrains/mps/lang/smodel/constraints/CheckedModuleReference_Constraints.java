@@ -40,7 +40,7 @@ public class CheckedModuleReference_Constraints extends BaseConstraintsDescripto
           IModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
           return (module != null ?
             module.getModuleFqName() :
-            moduleReference.getModuleFqName()
+            moduleReference.getModuleName()
           );
         }
       }

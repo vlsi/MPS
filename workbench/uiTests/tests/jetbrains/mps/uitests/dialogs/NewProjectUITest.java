@@ -79,7 +79,7 @@ public class NewProjectUITest extends NoProjectUITestsBase {
     Collection<ModuleReference> languages = solution.getModuleDescriptor().getUsedLanguages();
     boolean imported = false;
     for (ModuleReference langRef : languages) {
-      if (EqualUtil.equals(langRef.getModuleFqName(), language.getModuleFqName())) {
+      if (EqualUtil.equals(langRef.getModuleName(), language.getModuleFqName())) {
         imported = true;
       }
     }

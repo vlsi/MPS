@@ -206,7 +206,7 @@ public class AddRequiredImportsDialog extends DialogWrapper {
       } else if (value instanceof ModuleReference) {
         ModuleReference ref = (ModuleReference) value;
         setIcon(IdeIcons.PROJECT_LANGUAGE_ICON);
-        String longName = ref.getModuleFqName();
+        String longName = ref.getModuleName();
         append(longName, SimpleTextAttributes.REGULAR_ATTRIBUTES);
 
       } else {

@@ -21,7 +21,7 @@ public class ModuleRenderer extends ProjectLevelRenderer {
     ModuleReference moduleReference = (ModuleReference) value;
     final IModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
     if (module == null) {
-      String moduleName = moduleReference.getModuleFqName();
+      String moduleName = moduleReference.getModuleName();
       return (moduleName.equals("") ?
         "<no name>" :
         moduleName
@@ -30,7 +30,7 @@ public class ModuleRenderer extends ProjectLevelRenderer {
     if (module instanceof Generator) {
       return ((Generator) module).getAlias();
     } else {
-      return moduleReference.getModuleFqName();
+      return moduleReference.getModuleName();
     }
   }
 

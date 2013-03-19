@@ -272,8 +272,8 @@ public class ModuleDescriptor {
   private static class ModuleReferenceComparator implements Comparator<ModuleReference> {
     @Override
     public int compare(ModuleReference ref1, ModuleReference ref2) {
-      String moduleFqName1 = ref1.getModuleFqName();
-      String moduleFqName2 = ref2.getModuleFqName();
+      String moduleFqName1 = ref1.getModuleName();
+      String moduleFqName2 = ref2.getModuleName();
       if (moduleFqName1 == null) {
         return moduleFqName2 == null ? 0 : 1;
       }
