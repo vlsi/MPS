@@ -324,7 +324,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   @Override
   public void save() {
     super.save();
-    if (isPackaged()) return;
+    if (isReadOnly()) return;
     LanguageDescriptorPersistence.saveLanguageDescriptor(myDescriptorFile, getModuleDescriptor(), MacrosFactory.forModuleFile(myDescriptorFile));
   }
 

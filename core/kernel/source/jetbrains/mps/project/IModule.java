@@ -88,11 +88,6 @@ public interface IModule extends SModule {
   // is it refactorings? move to it
   void onModuleLoad();
 
-  // why we need it?
-  // reasonable use: in build scripts, but in this case we have only files, and it's just check for jar file
-  @Override
-  boolean isPackaged();
-
   // ?
   // btw onModuleRegistered
   // setRepository I think
@@ -118,6 +113,14 @@ public interface IModule extends SModule {
   // IFile getModuleRoot() <- clash with model root // to SModuleOperations / maybe SModule
   // IFile getModuleFolder() ?
   // use as much as possible
+
+  // methods from SModule: ok
+
+  // why we need it?
+  // reasonable use: in build scripts, but in this case we have only files, and it's just check for jar file
+  @Override
+  boolean isPackaged();
+
 
   // cast to AbstractModule to use this methods
   void addDependency(SModuleReference moduleRef, boolean reexport);
