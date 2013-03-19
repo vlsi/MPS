@@ -521,7 +521,7 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
 
   @Override
   public boolean isPackaged() {
-    return getModuleSourceDir() != null && FileSystem.getInstance().isPackaged(getModuleSourceDir());
+    return getModuleSourceDir() == null || FileSystem.getInstance().isPackaged(getModuleSourceDir());
   }
 
   @Override
