@@ -1649,7 +1649,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void rebuildEditorContent() {
-    LOG.assertLog(ModelAccess.instance().isInEDT(), "You should do this in EDT");
+    LOG.assertLog(ModelAccess.instance().isInEDT() || SwingUtilities.isEventDispatchThread(), "You should do this in EDT");
 
     clearCaches();
     clearUserData();
