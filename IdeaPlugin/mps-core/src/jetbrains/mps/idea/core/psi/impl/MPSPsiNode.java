@@ -174,8 +174,10 @@ public class MPSPsiNode extends MPSPsiNodeBase {
     return isValid();
   }
 
-
-
+  @Override
+  public String getText() {
+    return myConcept + ":" + myName + " as " + myContainingRole;
+  }
 /*
   @Nullable
   @Override

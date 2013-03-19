@@ -20,6 +20,7 @@ import com.intellij.openapi.extensions.ExtensionPointName;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiElement;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 
@@ -39,5 +40,6 @@ public interface MPS2PsiMapper {
   @Nullable
   SNodeId computeNodeId(PsiElement element);
   @Nullable
-  SNodeId computeNodeId(PsiElement element, String newName);
+  SModelReference computeModelReference(PsiElement element);
+
 }

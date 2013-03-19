@@ -32,6 +32,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 
@@ -186,14 +187,15 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory, MPS2PsiMapper {
 
   @Nullable
   @Override
-  public SNodeId computeNodeId(PsiElement element) {
-    return JavaForeignIdBuilder.computeNodeId(element);
+  public SModelReference computeModelReference(PsiElement element) {
+    return JavaForeignIdBuilder.computeModelReference(element);
   }
 
   @Nullable
   @Override
-  public SNodeId computeNodeId(PsiElement element, String newName) {
-    return JavaForeignIdBuilder.computeNodeId(element, newName);
+  public SNodeId computeNodeId(PsiElement element) {
+    return JavaForeignIdBuilder.computeNodeId(element);
   }
+
 
 }

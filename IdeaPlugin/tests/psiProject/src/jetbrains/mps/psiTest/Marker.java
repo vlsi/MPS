@@ -11,5 +11,5 @@ public interface Marker {
 
     int x = 1;
 
-    interface InnerMarker {}
+    interface InnerMarkerFfff {}
 }

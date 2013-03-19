@@ -156,6 +156,11 @@ public abstract class MPSPsiNodeBase extends LightElement {
   }
 
   @Override
+  public String getText() {
+    return "DEBUG !!!";
+  }
+
+  @Override
   public int getTextOffset() {
     return 0;
   }

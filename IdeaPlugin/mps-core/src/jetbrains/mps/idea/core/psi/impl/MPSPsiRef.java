@@ -22,6 +22,8 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiReference;
 import com.intellij.util.IncorrectOperationException;
+import jetbrains.mps.idea.core.NodePtr;
+import jetbrains.mps.idea.core.usages.MoveRenameBatch;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Computable;
@@ -29,6 +31,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
  * evgeny, 1/25/13
@@ -95,6 +98,11 @@ public class MPSPsiRef extends MPSPsiNodeBase {
   }
 
   @Override
+  public TextRange getTextRange() {
+    return TextRange.EMPTY_RANGE;
+  }
+
+  @Override
   public PsiReference getReference() {
     return new PsiReference() {
       @Override
@@ -104,7 +112,7 @@ public class MPSPsiRef extends MPSPsiNodeBase {
 
       @Override
       public TextRange getRangeInElement() {
-        return null;
+        return TextRange.EMPTY_RANGE;
       }
 
       @Nullable
@@ -122,14 +130,22 @@ public class MPSPsiRef extends MPSPsiNodeBase {
 
       @Override
       public PsiElement handleElementRename(final String newElementName) throws IncorrectOperationException {
-        // Nothing here. Refactoring is handled by ext.point RefactoringElementListenerProvider
+        recordUsage();
         return MPSPsiRef.this;
+
       }
 
       @Override
-      public PsiElement bindToElement(final @NotNull PsiElement element) throws IncorrectOperationException {
-        // Nothing here. Refactoring is handled by ext.point RefactoringElementListenerProvider
+      public PsiElement bindToElement(@NotNull PsiElement element) throws IncorrectOperationException {
+        recordUsage();
         return MPSPsiRef.this;
+      }
+
+      private void recordUsage() {
+        PsiElement parent = MPSPsiRef.this.getParent();
+        assert parent instanceof MPSPsiNode;
+        SNodeReference source = ((MPSPsiNode) parent).getSNodeReference();
+        getProject().getComponent(MoveRenameBatch.class).recordUsage(source, role, new NodePtr(model, nodeId));
       }
 
       @Override
@@ -162,7 +178,21 @@ public class MPSPsiRef extends MPSPsiNodeBase {
     return true;
   }
 
-//  @Override
+  @Override
+  public String getText() {
+    if (referenceText != null) {
+      return referenceText;
+    }
+
+    PsiElement parent = getParent();
+    if (parent != null) {
+      return parent.getText();
+    }
+
+    return "";
+  }
+
+  //  @Override
 //  public PsiFile getContainingFile() {
 //    return super.getContainingFile();
 //  }

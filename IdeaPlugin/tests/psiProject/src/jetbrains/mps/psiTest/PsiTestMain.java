@@ -41,6 +41,7 @@ public class PsiTestMain {
         }
 
 //        Marker m = null;
+//        node1.abstractNodeMethodRen();
 
         Container<String> container = new Container<String>("first");
         String var = container.head;
