@@ -816,7 +816,7 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
 
   @Deprecated
   @Override
-  public void invalidateDependencies() {
+  public final void invalidateDependencies() {
     dependenciesChanged();
   }
 
