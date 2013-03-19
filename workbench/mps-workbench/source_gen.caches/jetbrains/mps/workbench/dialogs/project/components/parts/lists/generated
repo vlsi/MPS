@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-badgf6bnzzec78wgkaus77av4vj0pis">
+<dependencies version="2" modelHash="-3bq57v1lw7d4bmj35ai23jdppe956r6">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
-  <common hash="3sh403arychxx07nz49wetxicqwbqni" />
+  <common hash="-9dw2zdu1b1xme66gr5e55eb58rhl8j0" />
   <source id="1560298786499489584" name="SortedList" hash="2q3bmyz5ruodqmsaxudzlbqebn3sb26">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="SortedList.java" />

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="cbrmsgin87lxc6nkrey6rx7hjt6z3ap">
+<dependencies version="2" modelHash="hphon73al9chnv7tkpdd6bzqh4ee0s">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.model(MPS.Core/jetbrains.mps.project.structure.model@java_stub)" />
@@ -16,7 +16,7 @@
   <dep model="r:c56dc30e-0a5f-4dee-a0d4-1316cfe1aba1(jetbrains.mps.project.foreign)" hash="-4wydjdtslrwiik4kc4kq0oeerefnev6" />
   <dep model="r:c7bbaee3-030a-4940-995f-2174babaf670(jetbrains.mps.project.io)" hash="1znb7l077e7l3bzy838it648w0br8s8" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="8lb0ssmvoceitlofqs9sah312lyoau7" />
-  <common hash="8492nojd9vojgcl9rbtz6mar5zvfqf3" />
+  <common hash="-enrs8lbg3lirohg10fdjwqrkwysi9kd" />
   <source id="5164231775618799303" name="DescriptorsIO_Test" hash="73junq562ihfny3s02oz290gffxj4g2">
     <dep root="5164231775618800060" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
