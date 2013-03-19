@@ -912,12 +912,12 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
 
   private void fireNodeUnclassifiedReadAccess() {
-    if (myModel == null || !myModel.canFireEvent()) return;
+    if (myModel == null || !myModel.canFireReadEvent()) return;
     NodeReadEventsCaster.fireNodeUnclassifiedReadAccess(this);
   }
 
   private void fireNodeReadAccess() {
-    if (myModel == null || !myModel.canFireEvent()) return;
+    if (myModel == null || !myModel.canFireReadEvent()) return;
     NodeReadAccessCasterInEditor.fireNodeReadAccessed(this);
   }
 
