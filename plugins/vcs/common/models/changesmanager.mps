@@ -6832,7 +6832,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3285276019551683574" resolveInfo="event" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3285276019551793364">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="87kw.~SModelLanguageEvent%dgetLanguageNamespace()%cjetbrains%dmps%dproject%dstructure%dmodules%dModuleReference" resolveInfo="getLanguageNamespace" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="87kw.~SModelLanguageEvent%dgetLanguageNamespace()%corg%djetbrains%dmps%dopenapi%dmodule%dSModuleReference" resolveInfo="getLanguageNamespace" />
                 </node>
               </node>
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="3285276019551793365">
@@ -6873,7 +6873,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3285276019551683580" resolveInfo="event" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8459818816228365448">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="87kw.~SModelDevKitEvent%dgetDevkitNamespace()%cjetbrains%dmps%dproject%dstructure%dmodules%dModuleReference" resolveInfo="getDevkitNamespace" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="87kw.~SModelDevKitEvent%dgetDevkitNamespace()%corg%djetbrains%dmps%dopenapi%dmodule%dSModuleReference" resolveInfo="getDevkitNamespace" />
                 </node>
               </node>
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8459818816228365449">
