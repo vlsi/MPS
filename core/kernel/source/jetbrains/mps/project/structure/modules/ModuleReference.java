@@ -52,19 +52,29 @@ public final class ModuleReference implements SModuleReference {
     this(moduleName, (SModuleId) null);
   }
 
-  @Deprecated
-  public ModuleReference(String moduleName, String moduleId) {
-    this(moduleName, ModuleId.fromString(moduleId));
-  }
-
   public ModuleReference(String moduleName, SModuleId moduleId) {
     myModuleName = InternUtil.intern(moduleName);
     myModuleId = moduleId;
   }
 
+  @Deprecated
+  public ModuleReference(String moduleName, String moduleId) {
+    this(moduleName, ModuleId.fromString(moduleId));
+  }
+
   @Override
   public ModuleId getModuleId() {
     return (ModuleId) myModuleId;
+  }
+
+  @Override
+  public String getModuleName() {
+    return myModuleName;
+  }
+
+  @Override
+  public SModule resolve(SRepository repo) {
+    return repo.getModule(getModuleId());
   }
 
   public int hashCode() {
@@ -85,16 +95,7 @@ public final class ModuleReference implements SModuleReference {
     return myModuleId.toString() + "(" + myModuleName + ")";
   }
 
-  @Override
-  public String getModuleName() {
-    return myModuleName;
-  }
-
-  @Override
-  public SModule resolve(SRepository repo) {
-    return repo.getModule(getModuleId());
-  }
-
+  // strange stuff
   public static SModuleReference update(SModuleReference reference) {
     // move to ModuleRepositoryFacade ?
     // I think this method for ref actualization
