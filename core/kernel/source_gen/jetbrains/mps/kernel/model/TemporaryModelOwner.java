@@ -10,6 +10,7 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import java.util.Collection;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.util.Set;
 import java.util.LinkedHashSet;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -45,8 +46,8 @@ public class TemporaryModelOwner extends AbstractModule {
   }
 
   @Override
-  public Collection<ModuleReference> getUsedLanguagesReferences() {
-    Set<ModuleReference> result = new LinkedHashSet<ModuleReference>();
+  public Collection<SModuleReference> getUsedLanguagesReferences() {
+    Set<SModuleReference> result = new LinkedHashSet<SModuleReference>();
     for (SModel md : getOwnModelDescriptors()) {
       result.addAll(((SModelInternal) md).importedLanguages());
     }
@@ -54,8 +55,8 @@ public class TemporaryModelOwner extends AbstractModule {
   }
 
   @Override
-  public Collection<ModuleReference> getUsedDevkitReferences() {
-    Set<ModuleReference> result = new LinkedHashSet<ModuleReference>();
+  public Collection<SModuleReference> getUsedDevkitReferences() {
+    Set<SModuleReference> result = new LinkedHashSet<SModuleReference>();
     for (SModel md : getOwnModelDescriptors()) {
       result.addAll(((SModelInternal) md).importedDevkits());
     }

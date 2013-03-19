@@ -11,6 +11,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.io.OutputStream;
 import jetbrains.mps.logging.Logger;
@@ -68,7 +69,7 @@ public class DevkitDescriptorPersistence {
           result_raojav_a0a0a0c.setAttribute("uuid", descriptor.getUUID());
         }
 
-        for (final ModuleReference lang : SetSequence.fromSet(descriptor.getExportedLanguages())) {
+        for (final SModuleReference lang : SetSequence.fromSet(descriptor.getExportedLanguages())) {
           result_raojav_a0a0a0c.addContent(new _FunctionTypes._return_P0_E0<Element>() {
             public Element invoke() {
               final Element result_raojav_a0a0a0a3a0a0a0c = new Element("exported-language");
@@ -82,7 +83,7 @@ public class DevkitDescriptorPersistence {
           result_raojav_a0a0a0c.addContent(new _FunctionTypes._return_P0_E0<Element>() {
             public Element invoke() {
               final Element result_raojav_a0a0a0a5a0a0a0c = new Element("extendedDevKits");
-              for (final ModuleReference ref : SetSequence.fromSet(descriptor.getExtendedDevkits())) {
+              for (final SModuleReference ref : SetSequence.fromSet(descriptor.getExtendedDevkits())) {
                 result_raojav_a0a0a0a5a0a0a0c.addContent(new _FunctionTypes._return_P0_E0<Element>() {
                   public Element invoke() {
                     final Element result_raojav_a0a0a0a0a0a0a0a5a0a0a0c = new Element("extendedDevKit");
@@ -100,7 +101,7 @@ public class DevkitDescriptorPersistence {
           result_raojav_a0a0a0c.addContent(new _FunctionTypes._return_P0_E0<Element>() {
             public Element invoke() {
               final Element result_raojav_a0a0a0a7a0a0a0c = new Element("exported-solutions");
-              for (final ModuleReference ref : SetSequence.fromSet(descriptor.getExportedSolutions())) {
+              for (final SModuleReference ref : SetSequence.fromSet(descriptor.getExportedSolutions())) {
                 result_raojav_a0a0a0a7a0a0a0c.addContent(new _FunctionTypes._return_P0_E0<Element>() {
                   public Element invoke() {
                     final Element result_raojav_a0a0a0a0a0a0a0a7a0a0a0c = new Element("exported-solution");

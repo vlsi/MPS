@@ -18,7 +18,7 @@ package jetbrains.mps.project;
 import jetbrains.mps.project.dependency.modules.DependenciesManager;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
@@ -73,7 +73,7 @@ public interface IModule extends SModule {
    *
    * @return
    */
-  Collection<ModuleReference> getUsedLanguagesReferences();
+  Collection<SModuleReference> getUsedLanguagesReferences();
 
   // ?
 
@@ -82,7 +82,7 @@ public interface IModule extends SModule {
    *
    * @return
    */
-  Collection<ModuleReference> getUsedDevkitReferences();
+  Collection<SModuleReference> getUsedDevkitReferences();
 
   // module source path stuff
 
@@ -104,9 +104,9 @@ public interface IModule extends SModule {
   // cast to AbstractModule to use this methods
   void addDependency(SModuleReference moduleRef, boolean reexport);
 
-  void addUsedLanguage(ModuleReference langRef);
+  void addUsedLanguage(SModuleReference langRef);
 
-  void addUsedDevkit(ModuleReference devkitRef);
+  void addUsedDevkit(SModuleReference devkitRef);
 
   void onModuleLoad();
 
@@ -232,11 +232,11 @@ public interface IModule extends SModule {
   }
 
   /**
-   * Remove this method after ModuleReference -> SModuleReference migration
+   * Remove this method after SModuleReference -> SModuleReference migration
    */
   @Override
   @NotNull
-  ModuleReference getModuleReference();
+  SModuleReference getModuleReference();
 
   /**
    * Simple way: use SModuleOperations#getOutputPathFor

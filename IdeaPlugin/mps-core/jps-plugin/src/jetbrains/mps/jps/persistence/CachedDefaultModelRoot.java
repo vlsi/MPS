@@ -23,7 +23,7 @@ import jetbrains.mps.idea.core.module.CachedRepositoryData;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.persistence.binary.BinaryModelHeader;
 import jetbrains.mps.persistence.binary.BinarySModelDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelHeader;
@@ -55,11 +55,11 @@ public class CachedDefaultModelRoot extends DefaultModelRoot {
     if (module instanceof Generator) {
       module = ((Generator) module).getSourceLanguage();
     }
-    if (module == null || !(module.getModuleReference() instanceof ModuleReference)) {
+    if (module == null || !(module.getModuleReference() instanceof SModuleReference)) {
       return super.loadModels();
     }
 
-    CachedModuleData moduleData = myCachedRepository.getModuleData((ModuleReference) module.getModuleReference());
+    CachedModuleData moduleData = myCachedRepository.getModuleData((SModuleReference) module.getModuleReference());
     if (moduleData == null) {
       return super.loadModels();
     }

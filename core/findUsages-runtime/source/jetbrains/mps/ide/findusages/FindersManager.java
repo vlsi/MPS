@@ -19,7 +19,7 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -116,7 +116,7 @@ public class FindersManager implements CoreComponent, LanguageRegistryListener {
     return myNodesByFinder.get(finder).resolve(MPSModuleRepository.getInstance());
   }
 
-  private ModuleReference getFinderModule(GeneratedFinder finder) {
+  private SModuleReference getFinderModule(GeneratedFinder finder) {
     SModel finderModel = myNodesByFinder.get(finder).getModelReference() == null ? null : SModelRepository.getInstance().getModelDescriptor(myNodesByFinder.get(finder).getModelReference());
     Language finderLanguage = Language.getLanguageForLanguageAspect(finderModel);
     return finderLanguage.getModuleReference();
@@ -130,7 +130,7 @@ public class FindersManager implements CoreComponent, LanguageRegistryListener {
     load();
   }
 
-  public void addFinder(GeneratedFinder finder, ModuleReference moduleRef, SNodeReference np) {
+  public void addFinder(GeneratedFinder finder, SModuleReference moduleRef, SNodeReference np) {
     String conceptName = finder.getConcept();
     Set<GeneratedFinder> finders = myFinders.get(conceptName);
     if (finders == null) {

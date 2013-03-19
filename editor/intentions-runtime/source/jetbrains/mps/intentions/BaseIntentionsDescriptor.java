@@ -15,17 +15,17 @@
  */
 package jetbrains.mps.intentions;
 
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public abstract class BaseIntentionsDescriptor {
-  private ModuleReference myModuleRef;
+  private SModuleReference myModuleRef;
   private SModelReference myModelRef;
 
-  protected BaseIntentionsDescriptor(ModuleReference moduleRef, SModelReference modelRef) {
+  protected BaseIntentionsDescriptor(SModuleReference moduleRef, SModelReference modelRef) {
     myModuleRef = moduleRef;
     myModelRef = modelRef;
   }

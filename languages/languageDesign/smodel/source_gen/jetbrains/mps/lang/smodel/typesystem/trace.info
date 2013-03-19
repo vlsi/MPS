@@ -7814,11 +7814,11 @@
     <nodeInfo nodeId="4357968816427489635" fileName="typeof_CheckedModuleReference_InferenceRule.java" startLine="43" startPosition="61" endLine="44" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4357968816427489635" fileName="typeof_CheckedModuleReference_InferenceRule.java" startLine="44" startPosition="63" endLine="45" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4357968816427489635" fileName="typeof_CheckedModuleReference_InferenceRule.java" startLine="45" startPosition="30" endLine="46" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4357968816427489635" fileName="typeof_CheckedModuleReference_InferenceRule.java" startLine="46" startPosition="165" endLine="47" endPosition="313" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4357968816427489635" fileName="typeof_CheckedModuleReference_InferenceRule.java" startLine="47" startPosition="313" endLine="48" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4357968816427489635" fileName="typeof_CheckedModuleReference_InferenceRule.java" startLine="46" startPosition="165" endLine="47" endPosition="303" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4357968816427489635" fileName="typeof_CheckedModuleReference_InferenceRule.java" startLine="47" startPosition="303" endLine="48" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4357968816427488502" fileName="typeof_CheckedModuleReference_InferenceRule.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_CheckedModuleReference_InferenceRule#()V" />
-    <nodeInfo nodeId="4357968816427489635" fileName="typeof_CheckedModuleReference_InferenceRule.java" startLine="45" startPosition="30" endLine="47" endPosition="313" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4357968816427489635" fileName="typeof_CheckedModuleReference_InferenceRule.java" startLine="45" startPosition="30" endLine="47" endPosition="313" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4357968816427489635" fileName="typeof_CheckedModuleReference_InferenceRule.java" startLine="45" startPosition="30" endLine="47" endPosition="303" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4357968816427489635" fileName="typeof_CheckedModuleReference_InferenceRule.java" startLine="45" startPosition="30" endLine="47" endPosition="303" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4357968816427488502" fileName="typeof_CheckedModuleReference_InferenceRule.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
     <nodeInfo nodeId="4357968816427488502" fileName="typeof_CheckedModuleReference_InferenceRule.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
     <nodeInfo nodeId="4357968816427488502" fileName="typeof_CheckedModuleReference_InferenceRule.java" startLine="32" startPosition="68" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -7833,7 +7833,7 @@
     <scopeInfo nodeId="4357968816427488502" fileName="typeof_CheckedModuleReference_InferenceRule.java" startLine="33" startPosition="5" endLine="35" endPosition="45">
       <varInfo nodeId="4357968816427488502" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="4357968816427489635" fileName="typeof_CheckedModuleReference_InferenceRule.java" startLine="45" startPosition="30" endLine="47" endPosition="313" />
+    <scopeInfo nodeId="4357968816427489635" fileName="typeof_CheckedModuleReference_InferenceRule.java" startLine="45" startPosition="30" endLine="47" endPosition="303" />
     <scopeInfo nodeId="4357968816427489630" fileName="typeof_CheckedModuleReference_InferenceRule.java" startLine="21" startPosition="5" endLine="24" endPosition="279">
       <varInfo nodeId="4357968816427489630" varName="_info_12389875345" />
       <varInfo nodeId="4357968816427489630" varName="_nodeToCheck_1029348928467" />

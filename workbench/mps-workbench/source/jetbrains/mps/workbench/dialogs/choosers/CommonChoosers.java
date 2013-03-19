@@ -21,7 +21,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
@@ -62,11 +62,11 @@ public class CommonChoosers {
   }
 
   @Deprecated
-  public static ModuleReference showDialogModuleChooser(Project project, String entityString, List<? extends SModuleReference> modules, @Nullable List<? extends SModuleReference> nonProjectModules) {
+  public static SModuleReference showDialogModuleChooser(Project project, String entityString, List<? extends SModuleReference> modules, @Nullable List<? extends SModuleReference> nonProjectModules) {
     return jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers.showDialogModuleChooser(project,entityString, modules, nonProjectModules);
   }
 
-  public static List<ModuleReference> showDialogModuleCollectionChooser(Project project, String entityString, List<ModuleReference> modules, @Nullable List<ModuleReference> nonProjectModules) {
+  public static List<SModuleReference> showDialogModuleCollectionChooser(Project project, String entityString, List<SModuleReference> modules, @Nullable List<SModuleReference> nonProjectModules) {
     return jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers.showDialogModuleCollectionChooser(project,entityString, modules, nonProjectModules);
   }
 

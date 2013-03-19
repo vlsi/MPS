@@ -4,7 +4,7 @@ package jetbrains.mps.ide.properties;
 
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
@@ -14,8 +14,8 @@ public class LanguageProperties extends ModuleProperties {
   public static final String GENERATE_ADAPTERS = "generateAdapters";
   private String myGenPath;
   private List<SModelReference> myAccessoryModels;
-  private List<ModuleReference> myExtendedLanguages;
-  private List<ModuleReference> myRuntimeModules;
+  private List<SModuleReference> myExtendedLanguages;
+  private List<SModuleReference> myRuntimeModules;
 
   public LanguageProperties() {
     myAccessoryModels = ListsFactory.create(ListsFactory.MODEL_REF_COMPARATOR);
@@ -35,11 +35,11 @@ public class LanguageProperties extends ModuleProperties {
     return myAccessoryModels;
   }
 
-  public List<ModuleReference> getExtendedLanguages() {
+  public List<SModuleReference> getExtendedLanguages() {
     return myExtendedLanguages;
   }
 
-  public List<ModuleReference> getRuntimeModules() {
+  public List<SModuleReference> getRuntimeModules() {
     return myRuntimeModules;
   }
 

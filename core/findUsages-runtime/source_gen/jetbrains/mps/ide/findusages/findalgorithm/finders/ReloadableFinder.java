@@ -4,7 +4,7 @@ package jetbrains.mps.ide.findusages.findalgorithm.finders;
 
 import jetbrains.mps.logging.Logger;
 import java.lang.ref.WeakReference;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
@@ -15,11 +15,11 @@ public class ReloadableFinder implements IInterfacedFinder {
   private ModuleClassReference<GeneratedFinder> myModuleClassRef;
   private WeakReference<GeneratedFinder> myFinder = new WeakReference<GeneratedFinder>(null);
 
-  public ReloadableFinder(ModuleReference moduleRef, String finderClass) {
+  public ReloadableFinder(SModuleReference moduleRef, String finderClass) {
     myModuleClassRef = new ModuleClassReference(moduleRef, finderClass);
   }
 
-  public ReloadableFinder(ModuleReference moduleReference, GeneratedFinder finder) {
+  public ReloadableFinder(SModuleReference moduleReference, GeneratedFinder finder) {
     this(moduleReference, finder.getClass().getName());
     myFinder = new WeakReference<GeneratedFinder>(finder);
   }

@@ -21,7 +21,7 @@ import org.jetbrains.mps.openapi.model.SModelId;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.project.StubModelsResolver;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 @Deprecated
 public abstract class StubModelDescriptors {
@@ -91,7 +91,7 @@ public abstract class StubModelDescriptors {
       null :
       models.iterator().next()
     );
-    ModuleReference moduleRef = (mr == null ?
+    SModuleReference moduleRef = (mr == null ?
       null :
       SModelRepository.getInstance().getModelDescriptor(mr).getModule().getModuleReference()
     );
@@ -100,7 +100,7 @@ public abstract class StubModelDescriptors {
     String muid = "86441d7a-e194-42da-81a5-2161ec62a379";
 
     if (moduleRef != null) {
-      mfq = moduleRef.getModuleFqName();
+      mfq = moduleRef.getModuleName();
       muid = moduleRef.getModuleId().toString();
     }
     SModelFqName fqname = new SModelFqName(mfq, pkg, stereo);

@@ -36,7 +36,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.vcs.diff.changes.ImportedModelChange;
 import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.vcs.diff.changes.DoNotGenerateOptionChange;
 import jetbrains.mps.vcs.diff.changes.ModelVersionChange;
@@ -219,9 +219,9 @@ public class ChangeSetBuilder {
     buildAddedAndDeletedDependencies(importedModelsExtractor, changeCreator);
   }
 
-  private void buildForDependencies(final ModuleDependencyChange.DependencyType dependencyType, _FunctionTypes._return_P1_E0<? extends Iterable<ModuleReference>, ? super SModel> referencesExtractor) {
-    _FunctionTypes._return_P2_E0<? extends ModuleDependencyChange, ? super ModuleReference, ? super Boolean> changeCreator = new _FunctionTypes._return_P2_E0<ModuleDependencyChange, ModuleReference, Boolean>() {
-      public ModuleDependencyChange invoke(ModuleReference mr, Boolean deleted) {
+  private void buildForDependencies(final ModuleDependencyChange.DependencyType dependencyType, _FunctionTypes._return_P1_E0<? extends Iterable<SModuleReference>, ? super SModel> referencesExtractor) {
+    _FunctionTypes._return_P2_E0<? extends ModuleDependencyChange, ? super SModuleReference, ? super Boolean> changeCreator = new _FunctionTypes._return_P2_E0<ModuleDependencyChange, SModuleReference, Boolean>() {
+      public ModuleDependencyChange invoke(SModuleReference mr, Boolean deleted) {
         return new ModuleDependencyChange(myChangeSet, mr, dependencyType, deleted);
       }
     };
@@ -231,18 +231,18 @@ public class ChangeSetBuilder {
   private void buildForMetadata() {
     buildForImports();
 
-    buildForDependencies(ModuleDependencyChange.DependencyType.USED_LANG, new _FunctionTypes._return_P1_E0<List<ModuleReference>, SModel>() {
-      public List<ModuleReference> invoke(SModel model) {
+    buildForDependencies(ModuleDependencyChange.DependencyType.USED_LANG, new _FunctionTypes._return_P1_E0<List<SModuleReference>, SModel>() {
+      public List<SModuleReference> invoke(SModel model) {
         return model.importedLanguages();
       }
     });
-    buildForDependencies(ModuleDependencyChange.DependencyType.USED_DEVKIT, new _FunctionTypes._return_P1_E0<List<ModuleReference>, SModel>() {
-      public List<ModuleReference> invoke(SModel model) {
+    buildForDependencies(ModuleDependencyChange.DependencyType.USED_DEVKIT, new _FunctionTypes._return_P1_E0<List<SModuleReference>, SModel>() {
+      public List<SModuleReference> invoke(SModel model) {
         return model.importedDevkits();
       }
     });
-    buildForDependencies(ModuleDependencyChange.DependencyType.LANG_ENGAGED_ON_GENERATION, new _FunctionTypes._return_P1_E0<List<ModuleReference>, SModel>() {
-      public List<ModuleReference> invoke(SModel model) {
+    buildForDependencies(ModuleDependencyChange.DependencyType.LANG_ENGAGED_ON_GENERATION, new _FunctionTypes._return_P1_E0<List<SModuleReference>, SModel>() {
+      public List<SModuleReference> invoke(SModel model) {
         return model.engagedOnGenerationLanguages();
       }
     });

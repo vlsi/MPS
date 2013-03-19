@@ -17,7 +17,7 @@ package jetbrains.mps.ide.ui.dialogs.properties.renders;
 
 import com.intellij.ui.ColoredTableCellRenderer;
 import com.intellij.ui.SimpleColoredRenderer;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.IScope;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
@@ -38,7 +38,7 @@ public class DependencyTableCellRender extends SimpleColoredRenderer implements 
   public Component getTableCellRendererComponent(JTable table, Object value,
                                                  boolean isSelected, boolean hasFocus, int row, int col) {
     ColoredTableCellRenderer render = null;
-    if(value instanceof ModuleReference) {
+    if(value instanceof SModuleReference) {
       render = myModuleTableCellRender;
     }
     else if(value instanceof SModelReference) {
@@ -48,7 +48,7 @@ public class DependencyTableCellRender extends SimpleColoredRenderer implements 
   }
 
   protected void customizeCellRenderer(JTable table, Object value, boolean selected, boolean hasFocus, int row, int column) {
-    if(value instanceof ModuleReference) {
+    if(value instanceof SModuleReference) {
       myModuleTableCellRender.customizeCellRenderer(table, value, selected, hasFocus, row, column);
     }
     else if(value instanceof SModelReference) {

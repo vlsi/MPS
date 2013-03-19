@@ -6,7 +6,7 @@ import com.intellij.util.ui.AbstractTableCellEditor;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
 import jetbrains.mps.smodel.Generator;
 import java.util.List;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.util.EventObject;
 import java.awt.event.MouseEvent;
 import java.awt.Component;
@@ -20,10 +20,10 @@ import jetbrains.mps.ide.ui.dialogs.properties.renderers.RuleOperandRenderer;
 public class RuleOperandEditor extends AbstractTableCellEditor {
   private MappingConfig_AbstractRef myOperand;
   private Generator myGenerator;
-  private List<ModuleReference> myDepGens;
+  private List<SModuleReference> myDepGens;
   private boolean myLeft;
 
-  public RuleOperandEditor(Generator generator, List<ModuleReference> depGens, boolean isLeft) {
+  public RuleOperandEditor(Generator generator, List<SModuleReference> depGens, boolean isLeft) {
     myGenerator = generator;
     myDepGens = depGens;
     myLeft = isLeft;

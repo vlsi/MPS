@@ -5,7 +5,7 @@ import com.intellij.psi.impl.FakePsiElement;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
@@ -139,7 +139,7 @@ public class MPSPsiElement<T> extends FakePsiElement {
     if (o instanceof SModelReference) {
       return new MPSPsiElement(o);
     }
-    if (o instanceof ModuleReference) {
+    if (o instanceof SModuleReference) {
       return new MPSPsiElement(o);
     }
     if (MPSPsiElement.isListOf(o, SNodeReference.class)) {

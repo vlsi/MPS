@@ -20,7 +20,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.dependency.modules.DependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -46,7 +46,7 @@ public class TestModule extends AbstractModule {
 
   public TestModule(String namespace, String moduleId, IModule peer) {
     myPeer = peer;
-    ModuleReference reference = new ModuleReference(namespace, moduleId);
+    SModuleReference reference = new jetbrains.mps.project.structure.modules.ModuleReference(namespace, moduleId);
     setModuleReference(reference);
   }
 

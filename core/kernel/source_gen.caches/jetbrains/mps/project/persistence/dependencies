@@ -15,6 +15,7 @@
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.jdom.Document" />
     <classNode dependClassName="org.jdom.Element" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
   </dependency>
   <dependency className="jetbrains.mps.project.persistence.DevkitDescriptorPersistence" file="DevkitDescriptorPersistence.java">
     <classNode dependClassName="java.io.OutputStream" />
@@ -33,6 +34,7 @@
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.jdom.Document" />
     <classNode dependClassName="org.jdom.Element" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
   </dependency>
   <dependency className="jetbrains.mps.project.persistence.GeneratorDescriptorPersistence" file="GeneratorDescriptorPersistence.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -58,6 +60,7 @@
     <classNode dependClassName="jetbrains.mps.util.xml.XmlUtil" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.jdom.Element" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
   </dependency>
   <dependency className="jetbrains.mps.project.persistence.LanguageDescriptorPersistence" file="LanguageDescriptorPersistence.java">
     <classNode dependClassName="java.io.OutputStream" />
@@ -84,6 +87,7 @@
     <classNode dependClassName="org.jdom.Document" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
   </dependency>
   <dependency className="jetbrains.mps.project.persistence.ModuleDescriptorPersistence" file="ModuleDescriptorPersistence.java">
     <classNode dependClassName="java.io.IOException" />
@@ -126,6 +130,7 @@
     <classNode dependClassName="org.jdom.Attribute" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.Memento" />
   </dependency>
   <dependency className="jetbrains.mps.project.persistence.ModuleReadException" file="ModuleReadException.java">

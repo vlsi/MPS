@@ -34,7 +34,7 @@ import java.util.HashMap;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -76,7 +76,7 @@ public class ModuleLoader {
     loadFile();
     if (myModuleDescriptor != null) {
       SPropertyOperations.set(myModule, "uuid", myModuleDescriptor.getModuleReference().getModuleId().toString());
-      SPropertyOperations.set(myModule, "name", myModuleDescriptor.getModuleReference().getModuleFqName());
+      SPropertyOperations.set(myModule, "name", myModuleDescriptor.getModuleReference().getModuleName());
 
       if (SNodeOperations.isInstanceOf(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module")) {
         List<SNode> previous = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module"), "dependencies", true)).where(new IWhereFilter<SNode>() {
@@ -260,9 +260,9 @@ public class ModuleLoader {
 
   private boolean checkModuleReference(ModuleDescriptor md) {
     boolean success = true;
-    ModuleReference moduleReference = md.getModuleReference();
-    if (neq_a6ewnz_a0c0r(SPropertyOperations.getString(myModule, "name"), moduleReference.getModuleFqName())) {
-      report("name in import doesn't match file content " + SPropertyOperations.getString(myModule, "name") + ", should be: " + moduleReference.getModuleFqName(), myOriginalModule);
+    SModuleReference moduleReference = md.getModuleReference();
+    if (neq_a6ewnz_a0c0r(SPropertyOperations.getString(myModule, "name"), moduleReference.getModuleName())) {
+      report("name in import doesn't match file content " + SPropertyOperations.getString(myModule, "name") + ", should be: " + moduleReference.getModuleName(), myOriginalModule);
       success = false;
     }
     if (neq_a6ewnz_a0d0r(SPropertyOperations.getString(myModule, "uuid"), moduleReference.getModuleId().toString())) {
@@ -276,10 +276,10 @@ public class ModuleLoader {
     DevkitDescriptor descriptor = ((DevkitDescriptor) myModuleDescriptor);
     SNode devkit = SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_DevKit");
 
-    for (ModuleReference module : descriptor.getExtendedDevkits()) {
-      final SNode resolved = SNodeOperations.as(visible.resolve(module.getModuleFqName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_DevKit");
+    for (SModuleReference module : descriptor.getExtendedDevkits()) {
+      final SNode resolved = SNodeOperations.as(visible.resolve(module.getModuleName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_DevKit");
       if (resolved == null) {
-        report("cannot find devkit in dependencies: " + module.getModuleFqName(), myModule);
+        report("cannot find devkit in dependencies: " + module.getModuleName(), myModule);
         continue;
       }
       if (!(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_DevKit"), "extends", true)).any(new IWhereFilter<SNode>() {
@@ -292,10 +292,10 @@ public class ModuleLoader {
       }
 
     }
-    for (ModuleReference module : descriptor.getExportedLanguages()) {
-      final SNode resolved = SNodeOperations.as(visible.resolve(module.getModuleFqName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Language");
+    for (SModuleReference module : descriptor.getExportedLanguages()) {
+      final SNode resolved = SNodeOperations.as(visible.resolve(module.getModuleName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Language");
       if (resolved == null) {
-        report("cannot find exported languages in dependencies: " + module.getModuleFqName(), myModule);
+        report("cannot find exported languages in dependencies: " + module.getModuleName(), myModule);
         continue;
       }
       if (!(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_DevKit"), "exports", true)).any(new IWhereFilter<SNode>() {
@@ -308,10 +308,10 @@ public class ModuleLoader {
       }
 
     }
-    for (ModuleReference module : descriptor.getExportedSolutions()) {
-      final SNode resolved = SNodeOperations.as(visible.resolve(module.getModuleFqName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Solution");
+    for (SModuleReference module : descriptor.getExportedSolutions()) {
+      final SNode resolved = SNodeOperations.as(visible.resolve(module.getModuleName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Solution");
       if (resolved == null) {
-        report("cannot find exported solution in dependencies: " + module.getModuleFqName(), myModule);
+        report("cannot find exported solution in dependencies: " + module.getModuleName(), myModule);
         continue;
       }
       if (!(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_DevKit"), "exports", true)).any(new IWhereFilter<SNode>() {
@@ -332,10 +332,10 @@ public class ModuleLoader {
     List<SNode> prevExt = ListSequence.fromListWithValues(new ArrayList<SNode>(), SLinkOperations.getTargets(devkit, "extends", true));
     List<SNode> prevExp = ListSequence.fromListWithValues(new ArrayList<SNode>(), SLinkOperations.getTargets(devkit, "exports", true));
 
-    for (ModuleReference module : descriptor.getExtendedDevkits()) {
-      final SNode resolved = SNodeOperations.as(visible.resolve(module.getModuleFqName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_DevKit");
+    for (SModuleReference module : descriptor.getExtendedDevkits()) {
+      final SNode resolved = SNodeOperations.as(visible.resolve(module.getModuleName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_DevKit");
       if (resolved == null) {
-        report("cannot find devkit in dependencies: " + module.getModuleFqName(), myModule);
+        report("cannot find devkit in dependencies: " + module.getModuleName(), myModule);
         continue;
       }
 
@@ -352,10 +352,10 @@ public class ModuleLoader {
         ListSequence.fromList(prevExt).removeElement(ul);
       }
     }
-    for (ModuleReference module : descriptor.getExportedLanguages()) {
-      final SNode resolved = SNodeOperations.as(visible.resolve(module.getModuleFqName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Language");
+    for (SModuleReference module : descriptor.getExportedLanguages()) {
+      final SNode resolved = SNodeOperations.as(visible.resolve(module.getModuleName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Language");
       if (resolved == null) {
-        report("cannot find exported languages in dependencies: " + module.getModuleFqName(), myModule);
+        report("cannot find exported languages in dependencies: " + module.getModuleName(), myModule);
         continue;
       }
       SNode ul = SNodeOperations.as(ListSequence.fromList(prevExp).findFirst(new IWhereFilter<SNode>() {
@@ -371,10 +371,10 @@ public class ModuleLoader {
         ListSequence.fromList(prevExp).removeElement(ul);
       }
     }
-    for (ModuleReference module : descriptor.getExportedSolutions()) {
-      final SNode resolved = SNodeOperations.as(visible.resolve(module.getModuleFqName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Solution");
+    for (SModuleReference module : descriptor.getExportedSolutions()) {
+      final SNode resolved = SNodeOperations.as(visible.resolve(module.getModuleName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Solution");
       if (resolved == null) {
-        report("cannot find exported solution in dependencies: " + module.getModuleFqName(), myModule);
+        report("cannot find exported solution in dependencies: " + module.getModuleName(), myModule);
         continue;
       }
       SNode ul = SNodeOperations.as(ListSequence.fromList(prevExp).findFirst(new IWhereFilter<SNode>() {
@@ -396,10 +396,10 @@ public class ModuleLoader {
 
   private void importLanguageDeps(List<SNode> previous) {
     LanguageDescriptor descriptor = ((LanguageDescriptor) myModuleDescriptor);
-    for (ModuleReference lang : descriptor.getExtendedLanguages()) {
-      final SNode resolved = SNodeOperations.as(visible.resolve(lang.getModuleFqName(), lang.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Language");
+    for (SModuleReference lang : descriptor.getExtendedLanguages()) {
+      final SNode resolved = SNodeOperations.as(visible.resolve(lang.getModuleName(), lang.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Language");
       if (resolved == null) {
-        report("cannot find extended language in dependencies: " + lang.getModuleFqName(), myModule);
+        report("cannot find extended language in dependencies: " + lang.getModuleName(), myModule);
         continue;
       }
       SNode res = ListSequence.fromList(previous).findFirst(new IWhereFilter<SNode>() {
@@ -423,16 +423,16 @@ public class ModuleLoader {
     LanguageDescriptor descriptor = ((LanguageDescriptor) myModuleDescriptor);
     boolean importsCore = false;
     boolean importsDescriptor = false;
-    for (ModuleReference lang : descriptor.getExtendedLanguages()) {
+    for (SModuleReference lang : descriptor.getExtendedLanguages()) {
       if (!(importsCore) && CORE_LANGUAGE_UID.equals(lang.getModuleId().toString())) {
         importsCore = true;
       }
       if (!(importsDescriptor) && DESCRIPTOR_LANGUAGE_UID.equals(lang.getModuleId().toString())) {
         importsDescriptor = true;
       }
-      final SNode resolved = SNodeOperations.as(visible.resolve(lang.getModuleFqName(), lang.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Language");
+      final SNode resolved = SNodeOperations.as(visible.resolve(lang.getModuleName(), lang.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Language");
       if (resolved == null) {
-        report("cannot find extended language in dependencies: " + lang.getModuleFqName(), myModule);
+        report("cannot find extended language in dependencies: " + lang.getModuleName(), myModule);
         continue;
       }
       if (!(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Language"), "dependencies", true)).any(new IWhereFilter<SNode>() {
@@ -465,7 +465,7 @@ public class ModuleLoader {
         ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module"), "dependencies", true)).addElement(ul);
       }
     }
-    String langName = myModuleDescriptor.getModuleReference().getModuleFqName();
+    String langName = myModuleDescriptor.getModuleReference().getModuleName();
     for (GeneratorDescriptor generator : descriptor.getGenerators()) {
       String generatorName = generator.getGeneratorUID();
       if (generatorName != null && !(generatorName.startsWith(langName + "#"))) {
@@ -488,10 +488,10 @@ public class ModuleLoader {
     LanguageDescriptor descriptor = ((LanguageDescriptor) myModuleDescriptor);
     List<SNode> previous = ListSequence.fromListWithValues(new ArrayList<SNode>(), SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Language"), "runtime", true));
 
-    for (ModuleReference module : descriptor.getRuntimeModules()) {
-      final SNode resolved = SNodeOperations.as(visible.resolve(module.getModuleFqName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Solution");
+    for (SModuleReference module : descriptor.getRuntimeModules()) {
+      final SNode resolved = SNodeOperations.as(visible.resolve(module.getModuleName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Solution");
       if (resolved == null) {
-        report("cannot find runtime solution in dependencies: " + module.getModuleFqName(), myModule);
+        report("cannot find runtime solution in dependencies: " + module.getModuleName(), myModule);
         continue;
       }
 
@@ -512,10 +512,10 @@ public class ModuleLoader {
 
   private void checkRuntime() {
     LanguageDescriptor descriptor = ((LanguageDescriptor) myModuleDescriptor);
-    for (ModuleReference module : descriptor.getRuntimeModules()) {
-      final SNode resolved = SNodeOperations.as(visible.resolve(module.getModuleFqName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Solution");
+    for (SModuleReference module : descriptor.getRuntimeModules()) {
+      final SNode resolved = SNodeOperations.as(visible.resolve(module.getModuleName(), module.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Solution");
       if (resolved == null) {
-        report("cannot find runtime solution in dependencies: " + module.getModuleFqName(), myModule);
+        report("cannot find runtime solution in dependencies: " + module.getModuleName(), myModule);
         continue;
       }
       if (!(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Language"), "runtime", true)).any(new IWhereFilter<SNode>() {
@@ -531,37 +531,37 @@ public class ModuleLoader {
 
   private void collectLocalDependencies() {
     SNode module = SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module");
-    Iterable<ModuleReference> usedLanguages = myModuleDescriptor.getUsedLanguages();
-    Iterable<ModuleReference> usedDevkits = myModuleDescriptor.getUsedDevkits();
+    Iterable<SModuleReference> usedLanguages = myModuleDescriptor.getUsedLanguages();
+    Iterable<SModuleReference> usedDevkits = myModuleDescriptor.getUsedDevkits();
     if (myModuleDescriptor instanceof LanguageDescriptor) {
       // see j.m.p.dependency.ModuleDependenciesManager#collectAllCompileTimeDependencies 
       Iterable<GeneratorDescriptor> generators = ((LanguageDescriptor) myModuleDescriptor).getGenerators();
-      usedLanguages = Sequence.fromIterable(usedLanguages).union(Sequence.fromIterable(generators).translate(new ITranslator2<GeneratorDescriptor, ModuleReference>() {
-        public Iterable<ModuleReference> translate(GeneratorDescriptor it) {
+      usedLanguages = Sequence.fromIterable(usedLanguages).union(Sequence.fromIterable(generators).translate(new ITranslator2<GeneratorDescriptor, SModuleReference>() {
+        public Iterable<SModuleReference> translate(GeneratorDescriptor it) {
           return it.getUsedLanguages();
         }
       }));
-      usedDevkits = Sequence.fromIterable(usedDevkits).union(Sequence.fromIterable(generators).translate(new ITranslator2<GeneratorDescriptor, ModuleReference>() {
-        public Iterable<ModuleReference> translate(GeneratorDescriptor it) {
+      usedDevkits = Sequence.fromIterable(usedDevkits).union(Sequence.fromIterable(generators).translate(new ITranslator2<GeneratorDescriptor, SModuleReference>() {
+        public Iterable<SModuleReference> translate(GeneratorDescriptor it) {
           return it.getUsedDevkits();
         }
       }));
     }
 
-    for (ModuleReference lang : usedLanguages) {
-      SNode resolved = SNodeOperations.as(visible.resolve(lang.getModuleFqName(), lang.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Language");
+    for (SModuleReference lang : usedLanguages) {
+      SNode resolved = SNodeOperations.as(visible.resolve(lang.getModuleName(), lang.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Language");
       if (resolved == null) {
-        report("cannot find used language in dependencies: " + lang.getModuleFqName(), myModule);
+        report("cannot find used language in dependencies: " + lang.getModuleName(), myModule);
         continue;
       }
       SNode ul = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyUseLanguage", null);
       SLinkOperations.setTarget(ul, "language", resolved, false);
       ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).addElement(ul);
     }
-    for (ModuleReference devkit : usedDevkits) {
-      SNode resolved = SNodeOperations.as(visible.resolve(devkit.getModuleFqName(), devkit.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_DevKit");
+    for (SModuleReference devkit : usedDevkits) {
+      SNode resolved = SNodeOperations.as(visible.resolve(devkit.getModuleName(), devkit.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_DevKit");
       if (resolved == null) {
-        report("cannot find used devkit in dependencies: " + devkit.getModuleFqName(), myModule);
+        report("cannot find used devkit in dependencies: " + devkit.getModuleName(), myModule);
         continue;
       }
       SNode ud = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnDevKit", null);
@@ -595,9 +595,9 @@ public class ModuleLoader {
 
     Iterable<Dependency> dependencies = myModuleDescriptor.getDependencies();
     for (Dependency dependency : dependencies) {
-      ModuleReference moduleRef = dependency.getModuleRef();
-      if (moduleRef.getModuleFqName().contains("#")) {
-        report("module cannot depend on generator: `" + moduleRef.getModuleFqName() + "'", myOriginalModule);
+      SModuleReference moduleRef = dependency.getModuleRef();
+      if (moduleRef.getModuleName().contains("#")) {
+        report("module cannot depend on generator: `" + moduleRef.getModuleName() + "'", myOriginalModule);
       }
     }
     if (myModuleDescriptor instanceof LanguageDescriptor) {
@@ -614,9 +614,9 @@ public class ModuleLoader {
     Map<SNode, Boolean> depsToReexport = new LinkedHashMap<SNode, Boolean>();
     for (Dependency dep : dependencies) {
       boolean reexport = dep.isReexport();
-      ModuleReference moduleRef = dep.getModuleRef();
+      SModuleReference moduleRef = dep.getModuleRef();
       SNode resolved;
-      String targetName = moduleRef.getModuleFqName();
+      String targetName = moduleRef.getModuleName();
       int sharpIndex = targetName.indexOf("#");
       if (sharpIndex >= 0) {
         resolved = SNodeOperations.as(visible.resolve(targetName.substring(0, sharpIndex), null), "jetbrains.mps.build.mps.structure.BuildMps_Module");
@@ -713,9 +713,9 @@ public class ModuleLoader {
     for (Dependency dep : dependencies) {
       boolean reexport = dep.isReexport();
 
-      ModuleReference moduleRef = dep.getModuleRef();
+      SModuleReference moduleRef = dep.getModuleRef();
       final Wrappers._T<SNode> resolved = new Wrappers._T<SNode>();
-      String targetName = moduleRef.getModuleFqName();
+      String targetName = moduleRef.getModuleName();
       int sharpIndex = targetName.indexOf("#");
       if (sharpIndex >= 0) {
         resolved.value = SNodeOperations.as(visible.resolve(targetName.substring(0, sharpIndex), null), "jetbrains.mps.build.mps.structure.BuildMps_Module");

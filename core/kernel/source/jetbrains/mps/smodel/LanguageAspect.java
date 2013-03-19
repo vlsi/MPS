@@ -18,7 +18,7 @@ package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelRefere
 import jetbrains.mps.project.SModuleOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -28,7 +28,7 @@ import java.util.*;
 public enum LanguageAspect {
   STRUCTURE("structure") {
     @Override
-    public ModuleReference getMainLanguage() {
+    public SModuleReference getMainLanguage() {
       return BootstrapLanguages.STRUCTURE;
     }
 
@@ -40,7 +40,7 @@ public enum LanguageAspect {
 
   EDITOR("editor") {
     @Override
-    public ModuleReference getMainLanguage() {
+    public SModuleReference getMainLanguage() {
       return BootstrapLanguages.EDITOR;
     }
 
@@ -52,7 +52,7 @@ public enum LanguageAspect {
 
   ACTIONS("actions") {
     @Override
-    public ModuleReference getMainLanguage() {
+    public SModuleReference getMainLanguage() {
       return BootstrapLanguages.ACTIONS;
     }
 
@@ -64,7 +64,7 @@ public enum LanguageAspect {
 
   CONSTRAINTS("constraints") {
     @Override
-    public ModuleReference getMainLanguage() {
+    public SModuleReference getMainLanguage() {
       return BootstrapLanguages.CONSTRAINTS;
     }
 
@@ -76,7 +76,7 @@ public enum LanguageAspect {
 
   BEHAVIOR("behavior") {
     @Override
-    public ModuleReference getMainLanguage() {
+    public SModuleReference getMainLanguage() {
       return BootstrapLanguages.BEHAVIOR;
     }
 
@@ -88,7 +88,7 @@ public enum LanguageAspect {
 
   TYPESYSTEM("typesystem") {
     @Override
-    public ModuleReference getMainLanguage() {
+    public SModuleReference getMainLanguage() {
       return BootstrapLanguages.TYPESYSTEM;
     }
 
@@ -100,7 +100,7 @@ public enum LanguageAspect {
 
   REFACTORINGS("refactorings") {
     @Override
-    public ModuleReference getMainLanguage() {
+    public SModuleReference getMainLanguage() {
       return BootstrapLanguages.REFACTORING;
     }
 
@@ -112,7 +112,7 @@ public enum LanguageAspect {
 
   SCRIPTS("scripts") {
     @Override
-    public ModuleReference getMainLanguage() {
+    public SModuleReference getMainLanguage() {
       return BootstrapLanguages.SCRIPT;
     }
 
@@ -124,7 +124,7 @@ public enum LanguageAspect {
 
   INTENTIONS("intentions") {
     @Override
-    public ModuleReference getMainLanguage() {
+    public SModuleReference getMainLanguage() {
       return BootstrapLanguages.INTENTIONS;
     }
 
@@ -136,7 +136,7 @@ public enum LanguageAspect {
 
   FIND_USAGES("findUsages") {
     @Override
-    public ModuleReference getMainLanguage() {
+    public SModuleReference getMainLanguage() {
       return BootstrapLanguages.FIND_USAGES;
     }
 
@@ -149,7 +149,7 @@ public enum LanguageAspect {
   @Deprecated
   PLUGIN("plugin") {
     @Override
-    public ModuleReference getMainLanguage() {
+    public SModuleReference getMainLanguage() {
       return BootstrapLanguages.MAKE_FACET;
     }
 
@@ -161,7 +161,7 @@ public enum LanguageAspect {
 
   DATA_FLOW("dataFlow") {
     @Override
-    public ModuleReference getMainLanguage() {
+    public SModuleReference getMainLanguage() {
       return BootstrapLanguages.DATA_FLOW;
     }
 
@@ -173,7 +173,7 @@ public enum LanguageAspect {
 
   TEST("test") {
     @Override
-    public ModuleReference getMainLanguage() {
+    public SModuleReference getMainLanguage() {
       return BootstrapLanguages.TEST;
     }
 
@@ -185,7 +185,7 @@ public enum LanguageAspect {
 
   TEXT_GEN("textGen") {
     @Override
-    public ModuleReference getMainLanguage() {
+    public SModuleReference getMainLanguage() {
       return BootstrapLanguages.TEXT_GEN;
     }
 
@@ -197,7 +197,7 @@ public enum LanguageAspect {
 
   STUBS("stubs") {
     @Override
-    public ModuleReference getMainLanguage() {
+    public SModuleReference getMainLanguage() {
       return BootstrapLanguages.STUBS;
     }
 
@@ -234,7 +234,7 @@ public enum LanguageAspect {
     return doCreate ? createNew(l) : null;
   }
 
-  public SModelReference get(ModuleReference l) {
+  public SModelReference get(SModuleReference l) {
     return new jetbrains.mps.smodel.SModelReference(l.getModuleName() + "." + myName, null);
   }
 
@@ -262,7 +262,7 @@ public enum LanguageAspect {
   @Nullable
   public abstract String getHelpURL();
 
-  public abstract ModuleReference getMainLanguage();
+  public abstract SModuleReference getMainLanguage();
 
   public static Collection<EditableSModelDescriptor> getAspectModels(Language l) {
     Set<EditableSModelDescriptor> result = new HashSet<EditableSModelDescriptor>();

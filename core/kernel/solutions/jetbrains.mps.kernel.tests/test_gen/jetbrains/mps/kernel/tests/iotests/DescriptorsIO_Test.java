@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.io.DescriptorIOException;
 import org.custommonkey.xmlunit.XMLAssert;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 
 public class DescriptorsIO_Test extends TestCase {
@@ -72,7 +72,7 @@ public class DescriptorsIO_Test extends TestCase {
     Assert.assertSame(1, ld.getDependencies().size());
     Assert.assertEquals(ModuleId.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c"), Sequence.fromIterable(((Iterable<Dependency>) ld.getDependencies())).first().getModuleRef().getModuleId());
     Assert.assertSame(1, ld.getExtendedLanguages().size());
-    Assert.assertEquals(ModuleId.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"), Sequence.fromIterable(((Iterable<ModuleReference>) ld.getExtendedLanguages())).first().getModuleId());
+    Assert.assertEquals(ModuleId.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"), Sequence.fromIterable(((Iterable<SModuleReference>) ld.getExtendedLanguages())).first().getModuleId());
   }
 
   @MPSLaunch
@@ -109,7 +109,7 @@ public class DescriptorsIO_Test extends TestCase {
     DevkitDescriptor dkd = dkdio.readFromFile(dkFile);
     Assert.assertEquals("68036bba-4c17-11e1-9e4a-6cf049e62fe5", dkd.getUUID());
     Assert.assertSame(1, dkd.getExtendedDevkits().size());
-    Assert.assertEquals(ModuleId.fromString("fbc25dd2-5da4-483a-8b19-70928e1b62d7"), Sequence.fromIterable(((Iterable<ModuleReference>) dkd.getExtendedDevkits())).first().getModuleId());
+    Assert.assertEquals(ModuleId.fromString("fbc25dd2-5da4-483a-8b19-70928e1b62d7"), Sequence.fromIterable(((Iterable<SModuleReference>) dkd.getExtendedDevkits())).first().getModuleId());
   }
 
   @MPSLaunch

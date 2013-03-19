@@ -16,7 +16,7 @@
 package jetbrains.mps.datatransfer;
 
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -31,13 +31,13 @@ import java.util.Set;
 public class PasteNodeData {
   private List<SNode> myNodes;
   private Set<SReference> myRequireResolveReferences;
-  private Set<ModuleReference> myNecessaryLanguages;
+  private Set<SModuleReference> myNecessaryLanguages;
   private Set<SModelReference> myNecessaryModels;
   private IModule mySourceModule;
 
   public PasteNodeData(List<SNode> nodes, Set<SReference> references,
                        IModule sourceModule,
-                       Set<ModuleReference> necessaryLanguages,
+                       Set<SModuleReference> necessaryLanguages,
                        Set<SModelReference> necessaryModels) {
     myNodes = nodes;
     myRequireResolveReferences = references;
@@ -59,7 +59,7 @@ public class PasteNodeData {
     return mySourceModule;
   }
 
-  public Set<ModuleReference> getNecessaryLanguages() {
+  public Set<SModuleReference> getNecessaryLanguages() {
     return myNecessaryLanguages;
   }
 
@@ -71,7 +71,7 @@ public class PasteNodeData {
     return new PasteNodeData(new ArrayList<SNode>(),
       new HashSet<SReference>(),
       sourceModule,
-      new HashSet<ModuleReference>(),
+      new HashSet<SModuleReference>(),
       new HashSet<SModelReference>());
   }
 }

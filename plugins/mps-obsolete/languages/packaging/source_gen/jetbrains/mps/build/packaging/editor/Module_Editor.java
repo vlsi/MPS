@@ -94,7 +94,7 @@ public class Module_Editor extends DefaultNodeEditor {
 
     public void handleAction_impl(IModule parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "id", parameterObject.getModuleReference().getModuleId().toString());
-      SPropertyOperations.set(node, "name", parameterObject.getModuleReference().getModuleFqName());
+      SPropertyOperations.set(node, "name", parameterObject.getModuleReference().getModuleName());
     }
 
     public boolean isReferentPresentation() {
@@ -106,7 +106,7 @@ public class Module_Editor extends DefaultNodeEditor {
     }
 
     public String getMatchingText_internal(IModule parameterObject) {
-      return parameterObject.getModuleReference().getModuleFqName();
+      return parameterObject.getModuleReference().getModuleName();
     }
   }
 

@@ -22,7 +22,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -31,16 +31,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ModuleTestConfiguration extends BaseTestConfiguration {
-  private ModuleReference myModuleRef;
+  private SModuleReference myModuleRef;
 
   public ModuleTestConfiguration() {
   }
 
-  public ModuleReference getModuleRef() {
+  public SModuleReference getModuleRef() {
     return myModuleRef;
   }
 
-  public void setModuleRef(ModuleReference moduleRef) {
+  public void setModuleRef(SModuleReference moduleRef) {
     myModuleRef = moduleRef;
   }
 
@@ -49,7 +49,7 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
     IModule module = MPSModuleRepository.getInstance().getModule(myModuleRef);
 
     if (module == null) {
-      throw new IllegalGeneratorConfigurationException("Can't find module " + myModuleRef.getModuleFqName());
+      throw new IllegalGeneratorConfigurationException("Can't find module " + myModuleRef.getModuleName());
     }
 
     if (module instanceof Solution) {
@@ -83,6 +83,6 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
       return new GenParameters(inputModels, lang);
     }
 
-    throw new IllegalGeneratorConfigurationException("Not applicable to non-language/solution module " + myModuleRef.getModuleFqName());
+    throw new IllegalGeneratorConfigurationException("Not applicable to non-language/solution module " + myModuleRef.getModuleName());
   }
 }

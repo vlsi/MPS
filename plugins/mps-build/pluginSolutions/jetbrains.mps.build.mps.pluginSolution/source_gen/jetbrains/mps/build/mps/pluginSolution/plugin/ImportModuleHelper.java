@@ -56,7 +56,7 @@ public class ImportModuleHelper {
 
   private void initModule(SNode module) throws PathConverter.PathConvertException {
     SPropertyOperations.set(module, "compact", "" + (true));
-    SPropertyOperations.set(module, "name", moduleDescriptor.getModuleReference().getModuleFqName());
+    SPropertyOperations.set(module, "name", moduleDescriptor.getModuleReference().getModuleName());
     SPropertyOperations.set(module, "uuid", moduleDescriptor.getModuleReference().getModuleId().toString());
     SLinkOperations.setTarget(module, "path", ListSequence.fromList(converter.convertPath(moduleFile.getPath(), SNodeOperations.getModel(project))).first(), true);
   }

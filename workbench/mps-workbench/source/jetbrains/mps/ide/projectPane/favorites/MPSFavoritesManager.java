@@ -22,7 +22,7 @@ import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.util.JDOMExternalizable;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.ArrayUtil;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jdom.Element;
@@ -62,7 +62,7 @@ public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable
       final Element favoriteRoot = new Element(FAVORITES_ROOT);
       if (root instanceof SModelReference) {
         favoriteRoot.setAttribute("model_ref", root.toString());
-      } else if (root instanceof ModuleReference) {
+      } else if (root instanceof SModuleReference) {
         favoriteRoot.setAttribute(MODULE_REFERENCE, root.toString());
       } else if (root instanceof SNodeReference) {
         SNodeReference nodePointer = (SNodeReference) root;
@@ -78,7 +78,7 @@ public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable
       Element favoriteElement = (Element) favorite;
       final String moduleRef = favoriteElement.getAttributeValue(MODULE_REFERENCE);
       if (moduleRef != null) {
-        result.add(ModuleReference.fromString(moduleRef));
+        result.add(jetbrains.mps.project.structure.modules.ModuleReference.fromString(moduleRef));
         continue;
       }
       String snodeRef = favoriteElement.getAttributeValue(SNODE_REFERENCE);

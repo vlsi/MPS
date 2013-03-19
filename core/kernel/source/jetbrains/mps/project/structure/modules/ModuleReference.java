@@ -22,6 +22,7 @@ import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.annotation.ImmutableObject;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
@@ -32,7 +33,7 @@ import java.util.regex.Pattern;
 public final class ModuleReference implements SModuleReference {
   private static final Pattern MODULE_REFERENCE = Pattern.compile("(.*?)\\((.*?)\\)");
 
-  public static ModuleReference fromString(String text) {
+  public static SModuleReference fromString(String text) {
     text = text.trim();
     Matcher m = MODULE_REFERENCE.matcher(text);
     if (m.matches()) {
@@ -42,10 +43,18 @@ public final class ModuleReference implements SModuleReference {
   }
 
   private final String myModuleName;
-  private final ModuleId myModuleId;
+  private final SModuleId myModuleId;
 
+  /**
+   * @see ModuleReference#create(String, SRepository)
+   */
   public ModuleReference(String moduleName) {
-    this(moduleName, (ModuleId) null);
+    this(moduleName, (SModuleId) null);
+  }
+
+  public ModuleReference(String moduleName, SModuleId moduleId) {
+    myModuleName = InternUtil.intern(moduleName);
+    myModuleId = moduleId;
   }
 
   @Deprecated
@@ -53,47 +62,9 @@ public final class ModuleReference implements SModuleReference {
     this(moduleName, ModuleId.fromString(moduleId));
   }
 
-  public ModuleReference(String moduleName, ModuleId moduleId) {
-    myModuleName = InternUtil.intern(moduleName);
-    myModuleId = moduleId;
-  }
-
-  public String getModuleFqName() {
-    return myModuleName;
-  }
-
   @Override
-  public ModuleId getModuleId() {
+  public SModuleId getModuleId() {
     return myModuleId;
-  }
-
-  @NotNull
-  public ModuleReference update() {
-    SModule module = ModuleRepositoryFacade.getInstance().getModule(this);
-    if (module == null) return this;
-    return (ModuleReference) module.getModuleReference();
-  }
-
-  public boolean differs(ModuleReference ref) {
-    return !(EqualUtil.equals(myModuleName, ref.myModuleName) && EqualUtil.equals(myModuleId, ref.myModuleId));
-  }
-
-  public int hashCode() {
-    if (myModuleId != null) return myModuleId.hashCode();
-    return myModuleName.hashCode();
-  }
-
-  public boolean equals(Object obj) {
-    if (!(obj instanceof ModuleReference)) return false;
-    ModuleReference p = (ModuleReference) obj;
-
-    if (myModuleId == null && p.myModuleId == null) return myModuleName.equals(p.myModuleName);
-    return EqualUtil.equals(myModuleId, p.myModuleId);
-  }
-
-  public String toString() {
-    if (myModuleId == null) return myModuleName;
-    return myModuleId.toString() + "(" + myModuleName + ")";
   }
 
   @Override
@@ -104,6 +75,71 @@ public final class ModuleReference implements SModuleReference {
   @Override
   public SModule resolve(SRepository repo) {
     return repo.getModule(getModuleId());
+  }
+
+  public int hashCode() {
+    if (myModuleId != null) return myModuleId.hashCode();
+    return myModuleName.hashCode();
+  }
+
+  public boolean equals(Object obj) {
+    if (!(obj instanceof SModuleReference)) return false;
+    SModuleReference p = (SModuleReference) obj;
+
+    if (myModuleId == null && p.getModuleId() == null) return myModuleName.equals(p.getModuleName());
+    return EqualUtil.equals(myModuleId, p.getModuleId());
+  }
+
+  public String toString() {
+    if (myModuleId == null) return myModuleName;
+    return myModuleId.toString() + "(" + myModuleName + ")";
+  }
+
+  // strange stuff
+  public static SModuleReference update(SModuleReference reference) {
+    // move to ModuleRepositoryFacade ?
+    // I think this method for ref actualization
+    SModule module = ModuleRepositoryFacade.getInstance().getModule(reference);
+    if (module == null) return reference;
+    return module.getModuleReference();
+  }
+
+  public static boolean differs(SModuleReference ref1, SModuleReference ref2) {
+    // todo: move method somewhere?
+    // ref1 == null
+    if (ref1 == null) {
+      return ref2 != null;
+    }
+    // ref2 == null
+    if (ref2 == null) {
+      return true;
+    }
+    // both not null
+    return !(EqualUtil.equals(ref1.getModuleId(), ref2.getModuleId()) && EqualUtil.equals(ref1.getModuleName(), ref2.getModuleName()));
+  }
+
+  public static SModuleReference create(String moduleName, SRepository repository) {
+    // todo: ? use SRepository?
+    SModuleReference ref = new ModuleReference(moduleName);
+    SModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
+    return module != null ? module.getModuleReference() : ref;
+  }
+
+  // deprecated
+  @Deprecated
+  public String getModuleFqName() {
+    return myModuleName;
+  }
+
+  @Deprecated
+  @NotNull
+  public SModuleReference update() {
+    return update(this);
+  }
+
+  @Deprecated
+  public boolean differs(SModuleReference ref) {
+    return differs(this, ref);
   }
 }
 

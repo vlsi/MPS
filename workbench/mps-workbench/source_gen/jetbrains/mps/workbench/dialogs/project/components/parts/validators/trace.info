@@ -8,22 +8,22 @@
     <unitInfo nodeId="1560298786499493318" fileName="Validator.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.validators.Validator" />
   </root>
   <root nodeRef="r:6132de52-2cd3-4096-82d5-65abfdbf1b20(jetbrains.mps.workbench.dialogs.project.components.parts.validators)/1560298786499495258">
-    <nodeInfo nodeId="1560298786499495277" fileName="ModuleValidator.java" startLine="14" startPosition="48" endLine="15" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499495279" fileName="ModuleValidator.java" startLine="16" startPosition="5" endLine="17" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499495285" fileName="ModuleValidator.java" startLine="17" startPosition="62" endLine="18" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499495261" fileName="ModuleValidator.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModuleValidator#()V" />
-    <nodeInfo nodeId="1560298786499495270" fileName="ModuleValidator.java" startLine="13" startPosition="46" endLine="16" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1560298786499495264" fileName="ModuleValidator.java" startLine="12" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isBrokenValue#(Ljava/lang/Object;)Z" />
-    <scopeInfo nodeId="1560298786499495263" fileName="ModuleValidator.java" startLine="9" startPosition="28" endLine="9" endPosition="28" />
-    <scopeInfo nodeId="1560298786499495276" fileName="ModuleValidator.java" startLine="14" startPosition="48" endLine="15" endPosition="18" />
-    <scopeInfo nodeId="1560298786499495261" fileName="ModuleValidator.java" startLine="9" startPosition="0" endLine="11" endPosition="0" />
-    <scopeInfo nodeId="1560298786499495269" fileName="ModuleValidator.java" startLine="13" startPosition="46" endLine="18" endPosition="80">
+    <nodeInfo nodeId="1560298786499495277" fileName="ModuleValidator.java" startLine="15" startPosition="49" endLine="16" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1560298786499495279" fileName="ModuleValidator.java" startLine="17" startPosition="5" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560298786499495285" fileName="ModuleValidator.java" startLine="18" startPosition="63" endLine="19" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1560298786499495261" fileName="ModuleValidator.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModuleValidator#()V" />
+    <nodeInfo nodeId="1560298786499495270" fileName="ModuleValidator.java" startLine="14" startPosition="46" endLine="17" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1560298786499495264" fileName="ModuleValidator.java" startLine="13" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isBrokenValue#(Ljava/lang/Object;)Z" />
+    <scopeInfo nodeId="1560298786499495263" fileName="ModuleValidator.java" startLine="10" startPosition="28" endLine="10" endPosition="28" />
+    <scopeInfo nodeId="1560298786499495276" fileName="ModuleValidator.java" startLine="15" startPosition="49" endLine="16" endPosition="18" />
+    <scopeInfo nodeId="1560298786499495261" fileName="ModuleValidator.java" startLine="10" startPosition="0" endLine="12" endPosition="0" />
+    <scopeInfo nodeId="1560298786499495269" fileName="ModuleValidator.java" startLine="14" startPosition="46" endLine="19" endPosition="80">
       <varInfo nodeId="1560298786499495280" varName="moduleReference" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499495264" fileName="ModuleValidator.java" startLine="12" startPosition="0" endLine="20" endPosition="0">
+    <scopeInfo nodeId="1560298786499495264" fileName="ModuleValidator.java" startLine="13" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="1560298786499495267" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1560298786499495258" fileName="ModuleValidator.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.validators.ModuleValidator" />
+    <unitInfo nodeId="1560298786499495258" fileName="ModuleValidator.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.validators.ModuleValidator" />
   </root>
   <root nodeRef="r:6132de52-2cd3-4096-82d5-65abfdbf1b20(jetbrains.mps.workbench.dialogs.project.components.parts.validators)/1560298786499498197">
     <nodeInfo nodeId="1560298786499498200" fileName="ModelValidator.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModuleScope" />

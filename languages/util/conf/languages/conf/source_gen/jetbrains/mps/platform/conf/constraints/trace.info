@@ -591,38 +591,38 @@
     <unitInfo nodeId="6183559520328404669" fileName="BeanExtensionPoint_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.platform.conf.constraints.BeanExtensionPoint_Constraints" />
   </root>
   <root nodeRef="r:2fe958f4-f755-4faa-af2a-c5125dc0cfc1(jetbrains.mps.platform.conf.constraints)/653751362850696789">
-    <nodeInfo nodeId="653751362850767961" fileName="ConfUtil.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CONF_LANG" />
-    <nodeInfo nodeId="653751362850771576" fileName="ConfUtil.java" startLine="24" startPosition="52" endLine="25" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="653751362850771653" fileName="ConfUtil.java" startLine="35" startPosition="40" endLine="36" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="653751362850696791" fileName="ConfUtil.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConfUtil#()V" />
-    <nodeInfo nodeId="653751362850771574" fileName="ConfUtil.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/project/IModule;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="653751362850771649" fileName="ConfUtil.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SModel;" />
-    <nodeInfo nodeId="653751362850771585" fileName="ConfUtil.java" startLine="28" startPosition="41" endLine="32" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="653751362850771583" fileName="ConfUtil.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
-    <nodeInfo nodeId="653751362850771562" fileName="ConfUtil.java" startLine="22" startPosition="66" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="653751362850696885" fileName="ConfUtil.java" startLine="22" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="visibleConfModels#(Ljetbrains/mps/smodel/IScope;)Ljava/lang/Iterable;" />
-    <scopeInfo nodeId="653751362850696794" fileName="ConfUtil.java" startLine="19" startPosition="21" endLine="19" endPosition="21" />
-    <scopeInfo nodeId="653751362850771575" fileName="ConfUtil.java" startLine="24" startPosition="52" endLine="25" endPosition="42" />
-    <scopeInfo nodeId="653751362850771650" fileName="ConfUtil.java" startLine="35" startPosition="40" endLine="36" endPosition="30" />
-    <scopeInfo nodeId="653751362850696791" fileName="ConfUtil.java" startLine="19" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="653751362850771574" fileName="ConfUtil.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
+    <nodeInfo nodeId="653751362850767961" fileName="ConfUtil.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CONF_LANG" />
+    <nodeInfo nodeId="653751362850771576" fileName="ConfUtil.java" startLine="25" startPosition="52" endLine="26" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="653751362850771653" fileName="ConfUtil.java" startLine="36" startPosition="40" endLine="37" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="653751362850696791" fileName="ConfUtil.java" startLine="20" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConfUtil#()V" />
+    <nodeInfo nodeId="653751362850771574" fileName="ConfUtil.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/project/IModule;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="653751362850771649" fileName="ConfUtil.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SModel;" />
+    <nodeInfo nodeId="653751362850771585" fileName="ConfUtil.java" startLine="29" startPosition="41" endLine="33" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="653751362850771583" fileName="ConfUtil.java" startLine="29" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
+    <nodeInfo nodeId="653751362850771562" fileName="ConfUtil.java" startLine="23" startPosition="66" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="653751362850696885" fileName="ConfUtil.java" startLine="23" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="visibleConfModels#(Ljetbrains/mps/smodel/IScope;)Ljava/lang/Iterable;" />
+    <scopeInfo nodeId="653751362850696794" fileName="ConfUtil.java" startLine="20" startPosition="21" endLine="20" endPosition="21" />
+    <scopeInfo nodeId="653751362850771575" fileName="ConfUtil.java" startLine="25" startPosition="52" endLine="26" endPosition="42" />
+    <scopeInfo nodeId="653751362850771650" fileName="ConfUtil.java" startLine="36" startPosition="40" endLine="37" endPosition="30" />
+    <scopeInfo nodeId="653751362850696791" fileName="ConfUtil.java" startLine="20" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="653751362850771574" fileName="ConfUtil.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="653751362850771574" varName="m" />
     </scopeInfo>
-    <scopeInfo nodeId="653751362850771649" fileName="ConfUtil.java" startLine="35" startPosition="0" endLine="38" endPosition="0">
+    <scopeInfo nodeId="653751362850771649" fileName="ConfUtil.java" startLine="36" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="653751362850771649" varName="smd" />
     </scopeInfo>
-    <scopeInfo nodeId="653751362850771584" fileName="ConfUtil.java" startLine="28" startPosition="41" endLine="32" endPosition="10" />
-    <scopeInfo nodeId="653751362850771583" fileName="ConfUtil.java" startLine="28" startPosition="0" endLine="34" endPosition="0">
+    <scopeInfo nodeId="653751362850771584" fileName="ConfUtil.java" startLine="29" startPosition="41" endLine="33" endPosition="10" />
+    <scopeInfo nodeId="653751362850771583" fileName="ConfUtil.java" startLine="29" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="653751362850771583" varName="smd" />
     </scopeInfo>
-    <scopeInfo nodeId="653751362850767947" fileName="ConfUtil.java" startLine="22" startPosition="66" endLine="38" endPosition="7" />
-    <scopeInfo nodeId="653751362850696885" fileName="ConfUtil.java" startLine="22" startPosition="0" endLine="40" endPosition="0">
+    <scopeInfo nodeId="653751362850767947" fileName="ConfUtil.java" startLine="23" startPosition="66" endLine="39" endPosition="7" />
+    <scopeInfo nodeId="653751362850696885" fileName="ConfUtil.java" startLine="23" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="653751362850767955" varName="scope" />
     </scopeInfo>
-    <unitInfo nodeId="653751362850771574" fileName="ConfUtil.java" startLine="23" startPosition="96" endLine="27" endPosition="5" unitName="jetbrains.mps.platform.conf.constraints.ConfUtil$1" />
-    <unitInfo nodeId="653751362850771649" fileName="ConfUtil.java" startLine="34" startPosition="18" endLine="38" endPosition="5" unitName="jetbrains.mps.platform.conf.constraints.ConfUtil$3" />
-    <unitInfo nodeId="653751362850771583" fileName="ConfUtil.java" startLine="27" startPosition="17" endLine="34" endPosition="5" unitName="jetbrains.mps.platform.conf.constraints.ConfUtil$2" />
-    <unitInfo nodeId="653751362850696789" fileName="ConfUtil.java" startLine="16" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.platform.conf.constraints.ConfUtil" />
+    <unitInfo nodeId="653751362850771574" fileName="ConfUtil.java" startLine="24" startPosition="96" endLine="28" endPosition="5" unitName="jetbrains.mps.platform.conf.constraints.ConfUtil$1" />
+    <unitInfo nodeId="653751362850771649" fileName="ConfUtil.java" startLine="35" startPosition="18" endLine="39" endPosition="5" unitName="jetbrains.mps.platform.conf.constraints.ConfUtil$3" />
+    <unitInfo nodeId="653751362850771583" fileName="ConfUtil.java" startLine="28" startPosition="17" endLine="35" endPosition="5" unitName="jetbrains.mps.platform.conf.constraints.ConfUtil$2" />
+    <unitInfo nodeId="653751362850696789" fileName="ConfUtil.java" startLine="17" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.platform.conf.constraints.ConfUtil" />
   </root>
   <root nodeRef="r:2fe958f4-f755-4faa-af2a-c5125dc0cfc1(jetbrains.mps.platform.conf.constraints)/6618365175184971335">
     <nodeInfo nodeId="6618365175184971335" fileName="BeanExtension_Constraints.java" startLine="26" startPosition="38" endLine="27" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

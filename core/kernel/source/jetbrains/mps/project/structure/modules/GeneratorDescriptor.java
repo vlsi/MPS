@@ -18,6 +18,7 @@ package jetbrains.mps.project.structure.modules;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -28,14 +29,14 @@ import java.util.Set;
 public class GeneratorDescriptor extends ModuleDescriptor {
   private String myGeneratorUID;
 
-  private Set<ModuleReference> myDepGenerators;
+  private Set<SModuleReference> myDepGenerators;
   private List<MappingPriorityRule> myPriorityRules;
 
   private boolean myGenerateTemplates = false;
 
   public GeneratorDescriptor() {
     super();
-    myDepGenerators = new LinkedHashSet<ModuleReference>();
+    myDepGenerators = new LinkedHashSet<SModuleReference>();
     myPriorityRules = new ArrayList<MappingPriorityRule>();
   }
 
@@ -47,7 +48,7 @@ public class GeneratorDescriptor extends ModuleDescriptor {
     myGeneratorUID = generatorUID;
   }
 
-  public Set<ModuleReference> getDepGenerators() {
+  public Set<SModuleReference> getDepGenerators() {
     return myDepGenerators;
   }
 
@@ -82,7 +83,7 @@ public class GeneratorDescriptor extends ModuleDescriptor {
     stream.writeString(myGeneratorUID);
 
     stream.writeInt(myDepGenerators.size());
-    for (ModuleReference ref : myDepGenerators) {
+    for (SModuleReference ref : myDepGenerators) {
       stream.writeModuleReference(ref);
     }
 

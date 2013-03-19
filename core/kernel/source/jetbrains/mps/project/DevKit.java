@@ -21,7 +21,7 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
@@ -63,7 +63,7 @@ public class DevKit extends AbstractModule {
     myDescriptor = descriptor;
 
     if (myDescriptor.getNamespace() != null) {
-      ModuleReference mp = new ModuleReference(myDescriptor.getNamespace(), myDescriptor.getId());
+      SModuleReference mp = new jetbrains.mps.project.structure.modules.ModuleReference(myDescriptor.getNamespace(), myDescriptor.getId());
       setModuleReference(mp);
     }
 
@@ -84,8 +84,8 @@ public class DevKit extends AbstractModule {
 
   public List<Language> getExportedLanguages() {
     List<Language> langs = new ArrayList<Language>();
-    for (ModuleReference l : myDescriptor.getExportedLanguages()) {
-      ModuleReference ref = ModuleReference.fromString(l.getModuleFqName());
+    for (SModuleReference l : myDescriptor.getExportedLanguages()) {
+      SModuleReference ref = jetbrains.mps.project.structure.modules.ModuleReference.fromString(l.getModuleName());
       Language lang = ModuleRepositoryFacade.getInstance().getModule(ref, Language.class);
       if (lang != null) {
         langs.add(lang);
@@ -107,22 +107,22 @@ public class DevKit extends AbstractModule {
     return result;
   }
 
-  Iterable<ModuleReference> getExtendedDevKits_internal() {
+  Iterable<SModuleReference> getExtendedDevKits_internal() {
     return myDescriptor.getExtendedDevkits();
   }
 
-  Iterable<ModuleReference> getExportedSolutions_internal() {
+  Iterable<SModuleReference> getExportedSolutions_internal() {
     return myDescriptor.getExportedSolutions();
   }
 
-  Iterable<ModuleReference> getExportedLanguages_internal() {
+  Iterable<SModuleReference> getExportedLanguages_internal() {
     return myDescriptor.getExportedLanguages();
   }
 
   public List<DevKit> getExtendedDevKits() {
     List<DevKit> result = new ArrayList<DevKit>();
-    for (ModuleReference ref : myDescriptor.getExtendedDevkits()) {
-      String uid = ref.getModuleFqName();
+    for (SModuleReference ref : myDescriptor.getExtendedDevkits()) {
+      String uid = ref.getModuleName();
       DevKit devKit = ModuleRepositoryFacade.getInstance().getModule(uid, DevKit.class);
       if (devKit != null) {
         result.add(devKit);
@@ -147,8 +147,8 @@ public class DevKit extends AbstractModule {
 
   public List<Solution> getExportedSolutions() {
     List<Solution> result = new ArrayList<Solution>();
-    for (ModuleReference ref : myDescriptor.getExportedSolutions()) {
-      String uid = ref.getModuleFqName();
+    for (SModuleReference ref : myDescriptor.getExportedSolutions()) {
+      String uid = ref.getModuleName();
       Solution solution = ModuleRepositoryFacade.getInstance().getModule(uid, Solution.class);
       if (solution == null) continue;
       result.add(solution);

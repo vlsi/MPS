@@ -28,7 +28,7 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -170,7 +170,7 @@ public class Module_Behavior {
     IModule module = Module_Behavior.call_getModule_1213877515148(thisNode);
     if (module instanceof Language && includeRuntimeSolutions) {
       List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-      for (ModuleReference runtimeDependency : CollectionSequence.fromCollection(((Language) module).getRuntimeModulesReferences())) {
+      for (SModuleReference runtimeDependency : CollectionSequence.fromCollection(((Language) module).getRuntimeModulesReferences())) {
         IModule runtimeDependencyModule = MPSModuleRepository.getInstance().getModule(runtimeDependency);
         if (runtimeDependencyModule instanceof Solution) {
           // TODO proper module in holder? 

@@ -38,7 +38,7 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 
@@ -197,8 +197,8 @@ public class PluginMoveHelper {
   }
 
   private boolean isFromFacetLang(SNode node) {
-    ModuleReference ref = SNodeOperations.getModel(SNodeOperations.getConceptDeclaration(node)).getModule().getModuleReference();
-    ModuleReference plugin = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("696c1165-4a59-463b-bc5d-902caab85dd0")).getModuleReference();
+    SModuleReference ref = SNodeOperations.getModel(SNodeOperations.getConceptDeclaration(node)).getModule().getModuleReference();
+    SModuleReference plugin = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("696c1165-4a59-463b-bc5d-902caab85dd0")).getModuleReference();
     return ref.equals(plugin);
   }
 

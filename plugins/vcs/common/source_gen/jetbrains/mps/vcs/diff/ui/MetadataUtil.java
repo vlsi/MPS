@@ -13,6 +13,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.DefaultSModel;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNodeId;
@@ -45,13 +46,13 @@ public class MetadataUtil {
     if (model instanceof DefaultSModel) {
       SPropertyOperations.set(root, "donotgenerate", "" + (check_ca1g54_a0a0e0c(((DefaultSModel) model).getSModelHeader())));
     }
-    for (ModuleReference language : ListSequence.fromList(model.importedLanguages())) {
+    for (SModuleReference language : ListSequence.fromList(model.importedLanguages())) {
       ListSequence.fromList(SLinkOperations.getTargets(root, "language", true)).addElement(createModuleRefNode(language));
     }
-    for (ModuleReference genlanguage : ListSequence.fromList(model.engagedOnGenerationLanguages())) {
+    for (SModuleReference genlanguage : ListSequence.fromList(model.engagedOnGenerationLanguages())) {
       ListSequence.fromList(SLinkOperations.getTargets(root, "languageEngagedOnGeneration", true)).addElement(createModuleRefNode(genlanguage));
     }
-    for (ModuleReference devkit : ListSequence.fromList(model.importedDevkits())) {
+    for (SModuleReference devkit : ListSequence.fromList(model.importedDevkits())) {
       ListSequence.fromList(SLinkOperations.getTargets(root, "devkit", true)).addElement(createModuleRefNode(devkit));
     }
     for (SModel.ImportElement impmodel : ListSequence.fromList(model.importedModels())) {
@@ -63,9 +64,9 @@ public class MetadataUtil {
     return root;
   }
 
-  public static SNode createModuleRefNode(ModuleReference module) {
+  public static SNode createModuleRefNode(SModuleReference module) {
     SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.ModuleReference", null);
-    SPropertyOperations.set(node, "qualifiedName", module.getModuleFqName());
+    SPropertyOperations.set(node, "qualifiedName", module.getModuleName());
     SPropertyOperations.set(node, "uuid", module.getModuleId().toString());
     ((jetbrains.mps.smodel.SNode) node).setId(SNodeId.fromString("~" + SPropertyOperations.getString(node, "uuid")));
     return node;
@@ -87,53 +88,53 @@ public class MetadataUtil {
       check_ca1g54_a0a2a5(((DefaultSModel) model).getSModelHeader(), root);
     }
 
-    Set<ModuleReference> oldImpLang = SetSequence.fromSetWithValues(new LinkedHashSet<ModuleReference>(), model.importedLanguages());
-    Set<ModuleReference> impLang = SetSequence.fromSetWithValues(new LinkedHashSet<ModuleReference>(), ListSequence.fromList(SLinkOperations.getTargets(root, "language", true)).select(new ISelector<SNode, ModuleReference>() {
+    Set<SModuleReference> oldImpLang = SetSequence.fromSetWithValues(new LinkedHashSet<SModuleReference>(), model.importedLanguages());
+    Set<SModuleReference> impLang = SetSequence.fromSetWithValues(new LinkedHashSet<SModuleReference>(), ListSequence.fromList(SLinkOperations.getTargets(root, "language", true)).select(new ISelector<SNode, ModuleReference>() {
       public ModuleReference select(SNode it) {
         return new ModuleReference(SPropertyOperations.getString(it, "qualifiedName"), SPropertyOperations.getString(it, "uuid"));
       }
     }));
-    SetSequence.fromSet(oldImpLang).subtract(SetSequence.fromSet(impLang)).visitAll(new IVisitor<ModuleReference>() {
-      public void visit(ModuleReference it) {
+    SetSequence.fromSet(oldImpLang).subtract(SetSequence.fromSet(impLang)).visitAll(new IVisitor<SModuleReference>() {
+      public void visit(SModuleReference it) {
         model.deleteLanguage(it);
       }
     });
-    SetSequence.fromSet(impLang).subtract(SetSequence.fromSet(oldImpLang)).visitAll(new IVisitor<ModuleReference>() {
-      public void visit(ModuleReference it) {
+    SetSequence.fromSet(impLang).subtract(SetSequence.fromSet(oldImpLang)).visitAll(new IVisitor<SModuleReference>() {
+      public void visit(SModuleReference it) {
         model.addLanguage(it);
       }
     });
 
-    Set<ModuleReference> oldGenLang = SetSequence.fromSetWithValues(new LinkedHashSet<ModuleReference>(), model.engagedOnGenerationLanguages());
-    Set<ModuleReference> genLang = SetSequence.fromSetWithValues(new LinkedHashSet<ModuleReference>(), ListSequence.fromList(SLinkOperations.getTargets(root, "languageEngagedOnGeneration", true)).select(new ISelector<SNode, ModuleReference>() {
+    Set<SModuleReference> oldGenLang = SetSequence.fromSetWithValues(new LinkedHashSet<SModuleReference>(), model.engagedOnGenerationLanguages());
+    Set<SModuleReference> genLang = SetSequence.fromSetWithValues(new LinkedHashSet<SModuleReference>(), ListSequence.fromList(SLinkOperations.getTargets(root, "languageEngagedOnGeneration", true)).select(new ISelector<SNode, ModuleReference>() {
       public ModuleReference select(SNode it) {
         return new ModuleReference(SPropertyOperations.getString(it, "qualifiedName"), SPropertyOperations.getString(it, "uuid"));
       }
     }));
-    SetSequence.fromSet(oldGenLang).subtract(SetSequence.fromSet(genLang)).visitAll(new IVisitor<ModuleReference>() {
-      public void visit(ModuleReference it) {
+    SetSequence.fromSet(oldGenLang).subtract(SetSequence.fromSet(genLang)).visitAll(new IVisitor<SModuleReference>() {
+      public void visit(SModuleReference it) {
         model.removeEngagedOnGenerationLanguage(it);
       }
     });
-    SetSequence.fromSet(genLang).subtract(SetSequence.fromSet(oldGenLang)).visitAll(new IVisitor<ModuleReference>() {
-      public void visit(ModuleReference it) {
+    SetSequence.fromSet(genLang).subtract(SetSequence.fromSet(oldGenLang)).visitAll(new IVisitor<SModuleReference>() {
+      public void visit(SModuleReference it) {
         model.addEngagedOnGenerationLanguage(it);
       }
     });
 
-    Set<ModuleReference> oldDevkit = SetSequence.fromSetWithValues(new LinkedHashSet<ModuleReference>(), model.importedDevkits());
-    Set<ModuleReference> devkit = SetSequence.fromSetWithValues(new LinkedHashSet<ModuleReference>(), ListSequence.fromList(SLinkOperations.getTargets(root, "devkit", true)).select(new ISelector<SNode, ModuleReference>() {
+    Set<SModuleReference> oldDevkit = SetSequence.fromSetWithValues(new LinkedHashSet<SModuleReference>(), model.importedDevkits());
+    Set<SModuleReference> devkit = SetSequence.fromSetWithValues(new LinkedHashSet<SModuleReference>(), ListSequence.fromList(SLinkOperations.getTargets(root, "devkit", true)).select(new ISelector<SNode, ModuleReference>() {
       public ModuleReference select(SNode it) {
         return new ModuleReference(SPropertyOperations.getString(it, "qualifiedName"), SPropertyOperations.getString(it, "uuid"));
       }
     }));
-    SetSequence.fromSet(oldDevkit).subtract(SetSequence.fromSet(devkit)).visitAll(new IVisitor<ModuleReference>() {
-      public void visit(ModuleReference it) {
+    SetSequence.fromSet(oldDevkit).subtract(SetSequence.fromSet(devkit)).visitAll(new IVisitor<SModuleReference>() {
+      public void visit(SModuleReference it) {
         model.deleteDevKit(it);
       }
     });
-    SetSequence.fromSet(devkit).subtract(SetSequence.fromSet(oldDevkit)).visitAll(new IVisitor<ModuleReference>() {
-      public void visit(ModuleReference it) {
+    SetSequence.fromSet(devkit).subtract(SetSequence.fromSet(oldDevkit)).visitAll(new IVisitor<SModuleReference>() {
+      public void visit(SModuleReference it) {
         model.addDevKit(it);
       }
     });

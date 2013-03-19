@@ -6,6 +6,7 @@ import jetbrains.mps.tool.builder.MpsWorker;
 import jetbrains.mps.tool.common.Script;
 import jetbrains.mps.project.Project;
 import java.util.List;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
@@ -59,7 +60,7 @@ public class GenModuleXmlWorker extends MpsWorker {
   public void processParameter(Project project, String parameter) {
     ModuleXml params = GenModuleXmlTask.decode(parameter);
 
-    final ModuleReference moduleRef = ModuleReference.fromString(params.getRef());
+    final SModuleReference moduleRef = ModuleReference.fromString(params.getRef());
     IModule module = ModelAccess.instance().runReadAction(new Computable<IModule>() {
       public IModule compute() {
         return MPSModuleRepository.getInstance().getModule(moduleRef);
@@ -70,11 +71,11 @@ public class GenModuleXmlWorker extends MpsWorker {
     writeFile(xmlfile, moduleRef, module, params.getInnerText(INDENT_INNER_XML, INDENT_WITH));
   }
 
-  public void writeFile(IFile file, ModuleReference moduleRef, IModule module, String extraText) {
+  public void writeFile(IFile file, SModuleReference moduleRef, IModule module, String extraText) {
 
     try {
       PrintWriter wr = new PrintWriter(new PrintStream(file.openOutputStream()));
-      wr.println("<module namespace=\"" + moduleRef.getModuleFqName() + "\" uuid=\"" + moduleRef.getModuleId() + "\" type=\"" + ((module instanceof Solution ?
+      wr.println("<module namespace=\"" + moduleRef.getModuleName() + "\" uuid=\"" + moduleRef.getModuleId() + "\" type=\"" + ((module instanceof Solution ?
         "solution" :
         (module instanceof Language ?
           "language" :

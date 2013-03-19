@@ -31,7 +31,7 @@ import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.logging.LoggingHandlerAdapter;
 import jetbrains.mps.messages.NodeWithContext;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.util.*;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -570,7 +570,7 @@ class GenerationSession {
 
   private boolean checkGenerationPlan(GenerationPlan generationPlan) {
     if (myOriginalInputModel.getModule() instanceof Generator && SModelStereotype.isGeneratorModel(myOriginalInputModel)) {
-      ModuleReference me = myOriginalInputModel.getModule().getModuleReference();
+      SModuleReference me = myOriginalInputModel.getModule().getModuleReference();
       for (TemplateModule t : generationPlan.getGenerators()) {
         if (t.getReference().equals(me)) {
           myLogger.warning("the generator is used to generate itself: try to avoid using language constructions in its generator queries");

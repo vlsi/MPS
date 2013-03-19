@@ -13,8 +13,8 @@
     <classNode dependClassName="javax.swing.table.TableCellRenderer" />
     <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.properties.editors.RuleOperandEditor" />
     <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.properties.renderers.RuleOperandRenderer" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
     <classNode dependClassName="jetbrains.mps.smodel.Generator" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.dialogs.properties.descriptors.VoidColumnDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.ide.ui.dialogs.properties.descriptors.RuleTypeDescriptor" file="RuleTypeDescriptor.java">

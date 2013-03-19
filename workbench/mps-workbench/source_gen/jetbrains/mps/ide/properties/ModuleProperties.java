@@ -5,7 +5,7 @@ package jetbrains.mps.ide.properties;
 import java.util.List;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 
@@ -16,8 +16,8 @@ public class ModuleProperties {
   private String myNamespace;
   private List<ModelRootDescriptor> myModelRoots;
   private List<Dependency> myDependencies;
-  private List<ModuleReference> myUsedLanguages;
-  private List<ModuleReference> myUsedDevkits;
+  private List<SModuleReference> myUsedLanguages;
+  private List<SModuleReference> myUsedDevkits;
   private List<String> mySourcePaths;
   private List<String> myAdditionalJavaStubModels;
 
@@ -54,19 +54,19 @@ public class ModuleProperties {
     myDependencies = dependencies;
   }
 
-  public List<ModuleReference> getUsedLanguages() {
+  public List<SModuleReference> getUsedLanguages() {
     return myUsedLanguages;
   }
 
-  public void setUsedLanguages(List<ModuleReference> usedLanguages) {
+  public void setUsedLanguages(List<SModuleReference> usedLanguages) {
     myUsedLanguages = usedLanguages;
   }
 
-  public List<ModuleReference> getUsedDevkits() {
+  public List<SModuleReference> getUsedDevkits() {
     return myUsedDevkits;
   }
 
-  public void setUsedDevkits(List<ModuleReference> usedDevkits) {
+  public void setUsedDevkits(List<SModuleReference> usedDevkits) {
     myUsedDevkits = usedDevkits;
   }
 

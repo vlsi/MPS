@@ -7,7 +7,7 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -33,7 +33,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4089647634160960602(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtual(ModuleReference.class, SLinkOperations.getTarget(_context.getNode(), "moduleRef", true), "virtual_moduleReference_1280144168199513544", new Object[]{}).toString();
+    return BehaviorReflection.invokeVirtual(SModuleReference.class, SLinkOperations.getTarget(_context.getNode(), "moduleRef", true), "virtual_moduleReference_1280144168199513544", new Object[]{}).toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_2956932267233340150(final IOperationContext operationContext, final PropertyMacroContext _context) {

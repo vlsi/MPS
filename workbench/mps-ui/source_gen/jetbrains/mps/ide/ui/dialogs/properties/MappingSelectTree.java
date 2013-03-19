@@ -16,6 +16,7 @@ import javax.swing.AbstractCellEditor;
 import javax.swing.tree.TreeCellEditor;
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -150,12 +151,12 @@ public class MappingSelectTree extends Tree {
   }
 
   public static class GenRefNodeData extends MappingSelectTree.NodeData {
-    public GenRefNodeData(ModuleReference ref) {
+    public GenRefNodeData(SModuleReference ref) {
       super(ref);
     }
 
     @Override
-    public ModuleReference getObject() {
+    public SModuleReference getObject() {
       return (ModuleReference) super.getObject();
     }
 

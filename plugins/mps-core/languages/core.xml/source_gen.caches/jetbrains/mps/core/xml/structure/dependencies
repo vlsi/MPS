@@ -12,6 +12,7 @@
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.structure.xmlEncoding_PropertySupport" file="xmlEncoding_PropertySupport.java">
     <classNode dependClassName="java.lang.String" />

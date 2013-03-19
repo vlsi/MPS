@@ -18,6 +18,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.io.OutputStream;
 import jetbrains.mps.logging.Logger;
 
@@ -161,7 +162,7 @@ public class LanguageDescriptorPersistence {
     ModuleDescriptorPersistence.saveDependencies(languageElement, descriptor);
 
     Element extendedLanguages = new Element("extendedLanguages");
-    for (ModuleReference ref : SetSequence.fromSet(descriptor.getExtendedLanguages())) {
+    for (SModuleReference ref : SetSequence.fromSet(descriptor.getExtendedLanguages())) {
       XmlUtil.tagWithText(extendedLanguages, "extendedLanguage", ref.toString());
     }
     languageElement.addContent(extendedLanguages);

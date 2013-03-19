@@ -19,7 +19,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNode
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelChildEvent;
@@ -42,7 +42,7 @@ public class DataTreeChangesNotifier {
 
   private Set<SNodeReference> myNodes = new HashSet<SNodeReference>();
   private Set<SModelReference> myModels = new HashSet<SModelReference>();
-  private Set<ModuleReference> myModules = new HashSet<ModuleReference>();
+  private Set<SModuleReference> myModules = new HashSet<SModuleReference>();
 
   public DataTreeChangesNotifier(IChangeListener tree) {
     myTree = tree;

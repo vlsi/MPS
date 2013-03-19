@@ -12,7 +12,7 @@ import jetbrains.mps.project.IModule;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddMissingLanguageImport_Intention implements IntentionFactory {
@@ -80,7 +80,7 @@ public class AddMissingLanguageImport_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      ModuleReference moduleRef = ((IModule) node.getConcept().getLanguage().getModule()).getModuleReference();
+      SModuleReference moduleRef = ((IModule) node.getConcept().getLanguage().getModule()).getModuleReference();
       if (moduleRef == null) {
         return;
       }

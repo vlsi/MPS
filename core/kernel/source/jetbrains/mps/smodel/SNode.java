@@ -20,7 +20,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.SModel.FakeModelDescriptor;
 import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
@@ -1859,8 +1859,8 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * Inline content in java code, use migration in MPS
    * @Deprecated in 3.0
    */
-  public ModuleReference getConceptLanguage() {
-    return new ModuleReference(getConcept().getLanguage().getPresentation());
+  public SModuleReference getConceptLanguage() {
+    return new jetbrains.mps.project.structure.modules.ModuleReference(getConcept().getLanguage().getPresentation());
   }
 
   @Deprecated

@@ -24,7 +24,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jdom.Element;
@@ -34,7 +34,7 @@ import javax.swing.Icon;
 public class ModuleNodeData extends BaseNodeData {
   private static final String MODULE_REF = "module_ref";
 
-  private ModuleReference myModuleReference = new ModuleReference("");
+  private SModuleReference myModuleReference = new jetbrains.mps.project.structure.modules.ModuleReference("");
 
   public ModuleNodeData(PathItemRole role, SearchResult result, boolean isResult, INodeRepresentator nodeRepresentator, boolean resultsSection) {
     super(role,
@@ -79,7 +79,7 @@ public class ModuleNodeData extends BaseNodeData {
     return MPSModuleRepository.getInstance().getModule(myModuleReference);
   }
 
-  public ModuleReference getModuleReference() {
+  public SModuleReference getModuleReference() {
     return myModuleReference;
   }
 
@@ -97,7 +97,7 @@ public class ModuleNodeData extends BaseNodeData {
   @Override
   public void read(Element element, Project project) throws CantLoadSomethingException {
     super.read(element, project);
-    myModuleReference = ModuleReference.fromString(element.getAttributeValue(MODULE_REF));
+    myModuleReference = jetbrains.mps.project.structure.modules.ModuleReference.fromString(element.getAttributeValue(MODULE_REF));
   }
 
   @Override

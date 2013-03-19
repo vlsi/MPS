@@ -22,7 +22,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.FileWithPosition;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.NodeWithContext;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -45,7 +45,7 @@ public class NavigationManager {
     myHandlers.put(FileWithPosition.class, new FileWithPositionNavigationHandler());
     myHandlers.put(FileWithLogicalPosition.class, new FileWithLogicalPositionNavigationHandler());
     myHandlers.put(SNodeReference.class, new NodePointerNavigationHandler());
-    myHandlers.put(ModuleReference.class, new ModuleReferenceNavigationHandler());
+    myHandlers.put(SModuleReference.class, new ModuleReferenceNavigationHandler());
   }
 
   public boolean canNavigateTo(Object o) {

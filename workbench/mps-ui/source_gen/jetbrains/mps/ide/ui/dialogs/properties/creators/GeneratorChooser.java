@@ -4,7 +4,7 @@ package jetbrains.mps.ide.ui.dialogs.properties.creators;
 
 import jetbrains.mps.util.Computable;
 import java.util.List;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.Generator;
@@ -13,18 +13,18 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
 
-public class GeneratorChooser implements Computable<List<ModuleReference>> {
+public class GeneratorChooser implements Computable<List<SModuleReference>> {
   public GeneratorChooser() {
   }
 
   @Override
-  public List<ModuleReference> compute() {
-    final Wrappers._T<List<ModuleReference>> genRefs = new Wrappers._T<List<ModuleReference>>();
+  public List<SModuleReference> compute() {
+    final Wrappers._T<List<SModuleReference>> genRefs = new Wrappers._T<List<SModuleReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         Iterable<Generator> generators = ModuleRepositoryFacade.getInstance().getAllModules(Generator.class);
-        genRefs.value = Sequence.fromIterable(generators).select(new ISelector<Generator, ModuleReference>() {
-          public ModuleReference select(Generator it) {
+        genRefs.value = Sequence.fromIterable(generators).select(new ISelector<Generator, SModuleReference>() {
+          public SModuleReference select(Generator it) {
             return it.getModuleReference();
           }
         }).toListSequence();

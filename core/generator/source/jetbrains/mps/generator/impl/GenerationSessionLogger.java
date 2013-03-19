@@ -23,7 +23,7 @@ import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.messages.NodeWithContext;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
@@ -107,7 +107,7 @@ public class GenerationSessionLogger implements IGeneratorLogger {
     report(MessageKind.ERROR, message, node, descriptions);
   }
 
-  /* package */ void error(@NotNull ModuleReference moduleReference, String message) {
+  /* package */ void error(@NotNull SModuleReference moduleReference, String message) {
     myErrorsCount++;
     report(MessageKind.ERROR, message, moduleReference);
   }
@@ -150,7 +150,7 @@ public class GenerationSessionLogger implements IGeneratorLogger {
     }
   }
 
-  private void report(MessageKind kind, String text, ModuleReference module) {
+  private void report(MessageKind kind, String text, SModuleReference module) {
     Message message = prepare(kind, text, module);
     synchronized (myMessageHandler) {
       myMessageHandler.handle(message);
@@ -174,7 +174,7 @@ public class GenerationSessionLogger implements IGeneratorLogger {
     }
   }
 
-  private Message prepare(MessageKind kind, String text, @NotNull ModuleReference module) {
+  private Message prepare(MessageKind kind, String text, @NotNull SModuleReference module) {
     Message message = new Message(kind, text);
     message.setHintObject(module);
     return message;

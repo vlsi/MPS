@@ -24,7 +24,7 @@ import jetbrains.mps.project.*;
 import jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor;
 import jetbrains.mps.project.dependency.modules.GeneratorDependenciesManager;
 import jetbrains.mps.project.dependency.modules.ModuleDependenciesManager;
-import jetbrains.mps.project.structure.modules.*;
+import org.jetbrains.mps.openapi.module.SModuleReference;import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.project.structure.modules.mappingpriorities.*;
 import jetbrains.mps.vfs.IFile;
 
@@ -54,7 +54,7 @@ public class Generator extends AbstractModule {
       uuid = ModuleId.regular();
       myGeneratorDescriptor.setId(uuid);
     }
-    ModuleReference mp = new ModuleReference(myGeneratorDescriptor.getGeneratorUID(), uuid);
+    SModuleReference mp = new jetbrains.mps.project.structure.modules.ModuleReference(myGeneratorDescriptor.getGeneratorUID(), uuid);
     setModuleReference(mp);
 
     upgradeGeneratorDescriptor();
@@ -183,7 +183,7 @@ public class Generator extends AbstractModule {
   @Override
   public List<Dependency> getDependencies() {
     List<Dependency> result = super.getDependencies();
-    for (ModuleReference ref : getSourceLanguage().getRuntimeModulesReferences()) {
+    for (SModuleReference ref : getSourceLanguage().getRuntimeModulesReferences()) {
       result.add(new Dependency(ref, false));
     }
     return result;
@@ -194,13 +194,13 @@ public class Generator extends AbstractModule {
     return new GeneratorDependenciesManager(this);
   }
 
-  public List<ModuleReference> getReferencedGeneratorUIDs() {
-    return new ArrayList<ModuleReference>(myGeneratorDescriptor.getDepGenerators());
+  public List<SModuleReference> getReferencedGeneratorUIDs() {
+    return new ArrayList<SModuleReference>(myGeneratorDescriptor.getDepGenerators());
   }
 
   public List<Generator> getReferencedGenerators() {
     List<Generator> result = new ArrayList<Generator>();
-    for (ModuleReference guid : getReferencedGeneratorUIDs()) {
+    for (SModuleReference guid : getReferencedGeneratorUIDs()) {
       IModule module = MPSModuleRepository.getInstance().getModule(guid);
       if (module instanceof Generator) {
         result.add((Generator) module);

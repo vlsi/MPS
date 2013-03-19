@@ -19,7 +19,7 @@ import jetbrains.mps.generator.impl.plan.ModelContentUtil;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Generator;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -55,7 +55,7 @@ public class TemplateModuleInterpreted implements TemplateModule {
   }
 
   @Override
-  public ModuleReference getReference() {
+  public SModuleReference getReference() {
     return generator.getModuleReference();
   }
 

@@ -41,7 +41,7 @@ public class MResource extends MultiTuple._2<IModule, Iterable<SModel>> implemen
   }
 
   public String describe() {
-    return NameUtil.compactNamespace(this.module().getModuleReference().getModuleFqName());
+    return NameUtil.compactNamespace(this.module().getModuleReference().getModuleName());
   }
 
   public IPropertiesIO getProperties() {

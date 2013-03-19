@@ -5,7 +5,7 @@ package jetbrains.mps.ide.ui.dialogs.properties;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import java.util.ArrayList;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelInternal;
@@ -31,9 +31,9 @@ import java.util.Collections;
 public class ModelProperties {
   private static String USE_MODEL_FOLDER_FOR_GENERATION = "useModelFolderForGeneration";
   private List<SModelReference> myImportedModels = new ArrayList<SModelReference>();
-  private List<ModuleReference> myUsedLanguages = new ArrayList<ModuleReference>();
-  private List<ModuleReference> myUsedDevKits = new ArrayList<ModuleReference>();
-  private List<ModuleReference> myLanguagesEngagedOnGeneration = new ArrayList<ModuleReference>();
+  private List<SModuleReference> myUsedLanguages = new ArrayList<SModuleReference>();
+  private List<SModuleReference> myUsedDevKits = new ArrayList<SModuleReference>();
+  private List<SModuleReference> myLanguagesEngagedOnGeneration = new ArrayList<SModuleReference>();
   private SModel myModelDescriptor;
   private boolean myDoNotGenerate;
   private boolean myGenerateIntoModelFolder;
@@ -69,15 +69,15 @@ public class ModelProperties {
     return myImportedModels;
   }
 
-  public List<ModuleReference> getUsedLanguages() {
+  public List<SModuleReference> getUsedLanguages() {
     return myUsedLanguages;
   }
 
-  public List<ModuleReference> getUsedDevKits() {
+  public List<SModuleReference> getUsedDevKits() {
     return myUsedDevKits;
   }
 
-  public List<ModuleReference> getLanguagesEngagedOnGeneration() {
+  public List<SModuleReference> getLanguagesEngagedOnGeneration() {
     return myLanguagesEngagedOnGeneration;
   }
 
@@ -134,10 +134,10 @@ public class ModelProperties {
   }
 
   private void addNewDevKits() {
-    Set<ModuleReference> devKitsInModel = new HashSet<ModuleReference>(((SModelInternal) myModelDescriptor).importedDevkits());
-    Set<ModuleReference> devKitsInProperties = new HashSet<ModuleReference>(getUsedDevKits());
+    Set<SModuleReference> devKitsInModel = new HashSet<SModuleReference>(((SModelInternal) myModelDescriptor).importedDevkits());
+    Set<SModuleReference> devKitsInProperties = new HashSet<SModuleReference>(getUsedDevKits());
     devKitsInProperties.removeAll(devKitsInModel);
-    for (ModuleReference dk : devKitsInProperties) {
+    for (SModuleReference dk : devKitsInProperties) {
       DevKit devKit = ModuleRepositoryFacade.getInstance().getModule(dk, DevKit.class);
       assert devKit != null;
       SModel model = myModelDescriptor;
@@ -146,9 +146,9 @@ public class ModelProperties {
   }
 
   private void removeUnusedDevKits() {
-    Set<ModuleReference> propsDevKits = new HashSet<ModuleReference>(getUsedDevKits());
-    List<ModuleReference> imported = new ArrayList<ModuleReference>(((SModelInternal) myModelDescriptor).importedDevkits());
-    for (ModuleReference dk : imported) {
+    Set<SModuleReference> propsDevKits = new HashSet<SModuleReference>(getUsedDevKits());
+    List<SModuleReference> imported = new ArrayList<SModuleReference>(((SModelInternal) myModelDescriptor).importedDevkits());
+    for (SModuleReference dk : imported) {
       if (!(propsDevKits.contains(dk))) {
         ((SModelInternal) myModelDescriptor).deleteDevKit(dk);
       }
@@ -160,10 +160,10 @@ public class ModelProperties {
   }
 
   private void addNewLanguages() {
-    Set<ModuleReference> languagesInModel = new HashSet<ModuleReference>(((SModelInternal) myModelDescriptor).importedLanguages());
-    Set<ModuleReference> languagesInProps = new HashSet<ModuleReference>(getUsedLanguages());
+    Set<SModuleReference> languagesInModel = new HashSet<SModuleReference>(((SModelInternal) myModelDescriptor).importedLanguages());
+    Set<SModuleReference> languagesInProps = new HashSet<SModuleReference>(getUsedLanguages());
     languagesInProps.removeAll(languagesInModel);
-    for (ModuleReference ref : languagesInProps) {
+    for (SModuleReference ref : languagesInProps) {
       Language language = ModuleRepositoryFacade.getInstance().getModule(ref, Language.class);
       if (language == null) {
         continue;
@@ -176,28 +176,28 @@ public class ModelProperties {
   }
 
   private void removeUnusedLanguages() {
-    Set<ModuleReference> languagesInModel = new HashSet<ModuleReference>(((SModelInternal) myModelDescriptor).importedLanguages());
-    Set<ModuleReference> languagesInProps = new HashSet<ModuleReference>(getUsedLanguages());
+    Set<SModuleReference> languagesInModel = new HashSet<SModuleReference>(((SModelInternal) myModelDescriptor).importedLanguages());
+    Set<SModuleReference> languagesInProps = new HashSet<SModuleReference>(getUsedLanguages());
     languagesInModel.removeAll(languagesInProps);
-    for (ModuleReference namespace : languagesInModel) {
+    for (SModuleReference namespace : languagesInModel) {
       ((SModelInternal) myModelDescriptor).deleteLanguage(namespace);
     }
   }
 
   private void addNewEngagedOnGenerationLanguages() {
-    Set<ModuleReference> languagesInModel = new HashSet<ModuleReference>(((SModelInternal) myModelDescriptor).engagedOnGenerationLanguages());
-    Set<ModuleReference> languagesInProps = new HashSet<ModuleReference>(getLanguagesEngagedOnGeneration());
+    Set<SModuleReference> languagesInModel = new HashSet<SModuleReference>(((SModelInternal) myModelDescriptor).engagedOnGenerationLanguages());
+    Set<SModuleReference> languagesInProps = new HashSet<SModuleReference>(getLanguagesEngagedOnGeneration());
     languagesInProps.removeAll(languagesInModel);
-    for (ModuleReference namespace : languagesInProps) {
+    for (SModuleReference namespace : languagesInProps) {
       ((SModelInternal) myModelDescriptor).addEngagedOnGenerationLanguage(namespace);
     }
   }
 
   private void removeUnusedEngagedOnGenerationLanguages() {
-    Set<ModuleReference> languagesInModel = new HashSet<ModuleReference>(((SModelInternal) myModelDescriptor).engagedOnGenerationLanguages());
-    Set<ModuleReference> languagesInProps = new HashSet<ModuleReference>(getLanguagesEngagedOnGeneration());
+    Set<SModuleReference> languagesInModel = new HashSet<SModuleReference>(((SModelInternal) myModelDescriptor).engagedOnGenerationLanguages());
+    Set<SModuleReference> languagesInProps = new HashSet<SModuleReference>(getLanguagesEngagedOnGeneration());
     languagesInModel.removeAll(languagesInProps);
-    for (ModuleReference ref : languagesInModel) {
+    for (SModuleReference ref : languagesInModel) {
       ((SModelInternal) myModelDescriptor).removeEngagedOnGenerationLanguage(ref);
     }
   }
@@ -220,8 +220,8 @@ public class ModelProperties {
     }
   }
 
-  public Condition<ModuleReference> getUsedLanguageRemoveCondition() {
-    final Wrappers._T<Set<ModuleReference>> usedLanguages = new Wrappers._T<Set<ModuleReference>>();
+  public Condition<SModuleReference> getUsedLanguageRemoveCondition() {
+    final Wrappers._T<Set<SModuleReference>> usedLanguages = new Wrappers._T<Set<SModuleReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SModel m = myModelDescriptor;
@@ -258,21 +258,21 @@ public class ModelProperties {
     }
   }
 
-  private class LanguagesCondition implements Condition<ModuleReference> {
-    private final Set<ModuleReference> myUsedLanguages;
+  private class LanguagesCondition implements Condition<SModuleReference> {
+    private final Set<SModuleReference> myUsedLanguages;
 
-    public LanguagesCondition(Set<ModuleReference> usedLanguages) {
+    public LanguagesCondition(Set<SModuleReference> usedLanguages) {
       myUsedLanguages = usedLanguages;
     }
 
     @Override
-    public boolean met(final ModuleReference object) {
-      IModule module = MPSModuleRepository.getInstance().getModuleByFqName(object.getModuleFqName());
+    public boolean met(final SModuleReference object) {
+      IModule module = MPSModuleRepository.getInstance().getModuleByFqName(object.getModuleName());
       if (!(module instanceof DevKit)) {
         return !(myUsedLanguages.contains(object));
       }
 
-      Set<ModuleReference> set = new HashSet<ModuleReference>();
+      Set<SModuleReference> set = new HashSet<SModuleReference>();
       for (Language language : ((DevKit) module).getAllExportedLanguages()) {
         set.add(language.getModuleReference());
       }
