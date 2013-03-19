@@ -75,7 +75,7 @@ public class UsedLanguagesTable extends MpsElementsTable<SModuleReference> imple
 
   @Override
   protected String getText(SModuleReference moduleReference) {
-    return moduleReference.getModuleFqName();
+    return moduleReference.getModuleName();
   }
 
   @Override
@@ -110,7 +110,7 @@ public class UsedLanguagesTable extends MpsElementsTable<SModuleReference> imple
   private static final class SModuleReferenceComparator implements Comparator<SModuleReference> {
     @Override
     public int compare(SModuleReference o1, SModuleReference o2) {
-      return o1.getModuleFqName().compareTo(o2.getModuleFqName());
+      return o1.getModuleName().compareTo(o2.getModuleName());
     }
 
     @Override

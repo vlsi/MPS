@@ -128,7 +128,7 @@ public class ModuleLibrariesUtil {
 
   @Nullable
   private static Library getAutoLibrary(SModuleReference reference, Project project) {
-    String libraryName = LIBRARY_PREFIX + reference.getModuleFqName() + AUTO_SUFFIX;
+    String libraryName = LIBRARY_PREFIX + reference.getModuleName() + AUTO_SUFFIX;
     for (Library lib : ModuleLibrariesUtil.getLibraries(reference, project)) {
       if (lib.getName().equals(libraryName)) {
         return lib;

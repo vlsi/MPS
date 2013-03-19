@@ -110,7 +110,7 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
       return null;
     }
 
-    String name = ModuleLibrariesUtil.LIBRARY_PREFIX + chosenElements.get(0).getModuleFqName();
+    String name = ModuleLibrariesUtil.LIBRARY_PREFIX + chosenElements.get(0).getModuleName();
     if (chosenElements.size() > 1) {
       name += "...";
     }
@@ -185,7 +185,7 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
 
     @Override
     protected String getItemText(SModuleReference item) {
-      return item.getModuleFqName();
+      return item.getModuleName();
     }
 
     @Override
