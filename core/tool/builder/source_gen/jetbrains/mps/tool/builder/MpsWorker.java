@@ -248,7 +248,7 @@ public abstract class MpsWorker {
     }
     for (SModule module : tmpmodules) {
       info("Loaded module " + module);
-      if (module.isPackaged()) {
+      if (module.isReadOnly()) {
         continue;
       }
       if (module instanceof DevKit) {

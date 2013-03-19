@@ -60,9 +60,10 @@ public class FixModelLanguages_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       for (IModule module : ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("project")).getModulesWithGenerators())) {
-        if (module.isPackaged()) {
+        if (module.isReadOnly()) {
           continue;
         }
+
         for (SModel md : Sequence.fromIterable(module.getModels())) {
           if (!(md instanceof EditableSModel)) {
             continue;

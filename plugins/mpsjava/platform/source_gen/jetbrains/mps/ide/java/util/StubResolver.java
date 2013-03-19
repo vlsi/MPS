@@ -117,10 +117,10 @@ public class StubResolver {
 
   public void resolveInProject(MPSProject project, IOperationContext context) {
     for (IModule module : ListSequence.fromList(project.getModulesWithGenerators())) {
-      if (module.isPackaged()) {
+      if (module.isReadOnly()) {
         continue;
       }
-      for (SModel model : ListSequence.fromList(module.getOwnModelDescriptors())) {
+      for (SModel model : Sequence.fromIterable(module.getModels())) {
         if (SModelStereotype.isUserModel(model) && model instanceof EditableSModel) {
           resolveInModel(model, context);
         }

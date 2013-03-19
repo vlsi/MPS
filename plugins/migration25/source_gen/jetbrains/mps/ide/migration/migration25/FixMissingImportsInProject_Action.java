@@ -69,9 +69,10 @@ public class FixMissingImportsInProject_Action extends BaseAction {
       Queue<SModuleReference> modules = QueueSequence.fromQueueWithValues(new LinkedList<SModuleReference>(), ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSProject.class).getModuleReferences());
       while (QueueSequence.fromQueue(modules).isNotEmpty()) {
         SModule module = ModuleRepositoryFacade.getInstance().getModule(QueueSequence.fromQueue(modules).removeFirstElement());
-        if (module.isPackaged()) {
+        if (module.isReadOnly()) {
           continue;
         }
+
         if (module instanceof Language) {
           Iterable<Generator> generators = ((Language) module).getGenerators();
           QueueSequence.fromQueue(modules).addSequence(Sequence.fromIterable(generators).select(new ISelector<Generator, ModuleReference>() {

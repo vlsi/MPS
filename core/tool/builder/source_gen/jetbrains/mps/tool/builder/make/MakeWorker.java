@@ -48,7 +48,7 @@ public class MakeWorker extends MpsWorker {
     }
     final Set<SModule> finalToCompile = CollectionUtil.filter(toCompile, new Condition<SModule>() {
       public boolean met(SModule module) {
-        return SModuleOperations.isCompileInMps(module) && !(module.isPackaged());
+        return SModuleOperations.isCompileInMps(module) && !(module.isReadOnly());
       }
     });
     if (finalToCompile.isEmpty()) {
