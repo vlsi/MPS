@@ -511,7 +511,7 @@
     </scopeInfo>
     <scopeInfo nodeId="3310779261129403176" fileName="LanguageTestWrapper.java" startLine="95" startPosition="0" endLine="126" endPosition="0" />
     <unitInfo nodeId="2024340988248532370" fileName="LanguageTestWrapper.java" startLine="71" startPosition="272" endLine="75" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.LanguageTestWrapper$1" />
-    <unitInfo nodeId="6572468330877292516" fileName="LanguageTestWrapper.java" startLine="86" startPosition="348" endLine="90" endPosition="7" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.LanguageTestWrapper$2" />
+    <unitInfo nodeId="6572468330877292516" fileName="LanguageTestWrapper.java" startLine="86" startPosition="354" endLine="90" endPosition="7" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.LanguageTestWrapper$2" />
     <unitInfo nodeId="2024340988248532283" fileName="LanguageTestWrapper.java" startLine="35" startPosition="0" endLine="210" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.LanguageTestWrapper" />
   </root>
   <root nodeRef="r:63a75970-913d-4a7b-99e2-8ca72ff6f509(jetbrains.mps.baseLanguage.unitTest.execution.client)/2024340988248532422">
