@@ -45,6 +45,9 @@ public final class ModuleReference implements SModuleReference {
   private final String myModuleName;
   private final SModuleId myModuleId;
 
+  /**
+   * @see ModuleReference#create(String, SRepository)
+   */
   public ModuleReference(String moduleName) {
     this(moduleName, (SModuleId) null);
   }
@@ -64,15 +67,8 @@ public final class ModuleReference implements SModuleReference {
     return (ModuleId) myModuleId;
   }
 
-  @NotNull
-  public ModuleReference update() {
-    SModule module = ModuleRepositoryFacade.getInstance().getModule(this);
-    if (module == null) return this;
-    return (ModuleReference) module.getModuleReference();
-  }
-
-  public boolean differs(ModuleReference ref) {
-    return !(EqualUtil.equals(myModuleName, ref.myModuleName) && EqualUtil.equals(myModuleId, ref.myModuleId));
+  public boolean differs(SModuleReference ref) {
+    return !(EqualUtil.equals(myModuleName, ref.getModuleName()) && EqualUtil.equals(myModuleId, ref.getModuleId()));
   }
 
   public int hashCode() {
@@ -103,10 +99,31 @@ public final class ModuleReference implements SModuleReference {
     return repo.getModule(getModuleId());
   }
 
+  public static SModuleReference update(SModuleReference reference) {
+    // move to ModuleRepositoryFacade ?
+    // I think this method for ref actualization
+    SModule module = ModuleRepositoryFacade.getInstance().getModule(reference);
+    if (module == null) return reference;
+    return module.getModuleReference();
+  }
+
+  public static SModuleReference create(String moduleName, SRepository repository) {
+    // todo: ? use SRepository?
+    SModuleReference ref = new ModuleReference(moduleName);
+    SModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
+    return module != null ? module.getModuleReference() : ref;
+  }
+
   // deprecated
   @Deprecated
   public String getModuleFqName() {
     return myModuleName;
+  }
+
+  @Deprecated
+  @NotNull
+  public ModuleReference update() {
+    return (ModuleReference) update(this);
   }
 }
 

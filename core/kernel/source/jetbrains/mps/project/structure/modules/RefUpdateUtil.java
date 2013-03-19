@@ -18,6 +18,7 @@ package jetbrains.mps.project.structure.modules;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.*;
 
@@ -46,10 +47,10 @@ public class RefUpdateUtil {
     Set<ModuleReference> add = new LinkedHashSet<ModuleReference>();
 
     for (ModuleReference ref : refs) {
-      ModuleReference newRef = ref.update();
+      SModuleReference newRef = ModuleReference.update(ref);
       if (ref.differs(newRef)) {
         remove.add(ref);
-        add.add(newRef);
+        add.add((ModuleReference) newRef);
       }
     }
 
@@ -63,10 +64,10 @@ public class RefUpdateUtil {
     boolean changed = false;
     for (Dependency dep : deps) {
       ModuleReference ref = dep.getModuleRef();
-      @NotNull ModuleReference newRef = ref.update();
+      @NotNull SModuleReference newRef = ModuleReference.update(ref);
       if (ref.differs(newRef)) {
         changed = true;
-        dep.setModuleRef(newRef);
+        dep.setModuleRef((ModuleReference) newRef);
       }
     }
     return changed;

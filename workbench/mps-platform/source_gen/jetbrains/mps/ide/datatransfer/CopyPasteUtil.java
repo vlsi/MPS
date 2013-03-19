@@ -8,6 +8,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.datatransfer.PasteNodeData;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -54,7 +55,7 @@ public class CopyPasteUtil {
     necessaryLanguages.clear();
     Set<SNode> sourceNodes = sourceNodesToNewNodes.keySet();
     for (SNode node : sourceNodes) {
-      necessaryLanguages.add(new ModuleReference(node.getConcept().getLanguage().getPresentation()).update());
+      necessaryLanguages.add((ModuleReference) ModuleReference.create(node.getConcept().getLanguage().getPresentation(), MPSModuleRepository.getInstance()));
     }
     for (SReference ref : allReferences) {
       if (sourceNodesToNewNodes.get(ref.getTargetNode()) == null) {
