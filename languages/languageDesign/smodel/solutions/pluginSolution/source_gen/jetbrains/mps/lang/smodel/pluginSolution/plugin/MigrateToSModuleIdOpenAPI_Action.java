@@ -14,11 +14,11 @@ import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.logging.Logger;
 
-public class MigrateToSModuleReferenceOpenAPI_Action extends BaseAction {
+public class MigrateToSModuleIdOpenAPI_Action extends BaseAction {
   private static final Icon ICON = null;
 
-  public MigrateToSModuleReferenceOpenAPI_Action() {
-    super("Migrate to module reference OpenAPI", "", ICON);
+  public MigrateToSModuleIdOpenAPI_Action() {
+    super("Migrate to module id OpenAPI", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -32,7 +32,7 @@ public class MigrateToSModuleReferenceOpenAPI_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "MigrateToSModuleReferenceOpenAPI", t);
+      LOG.error("User's action doUpdate method failed. Action:" + "MigrateToSModuleIdOpenAPI", t);
       this.disable(event.getPresentation());
     }
   }
@@ -54,11 +54,11 @@ public class MigrateToSModuleReferenceOpenAPI_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new ApiMigrationHelper(((MPSProject) MapSequence.fromMap(_params).get("project")), ((Project) MapSequence.fromMap(_params).get("iproject")), ((MPSProject) MapSequence.fromMap(_params).get("project")).getScope()).migrateSModuleReference();
+      new ApiMigrationHelper(((MPSProject) MapSequence.fromMap(_params).get("project")), ((Project) MapSequence.fromMap(_params).get("iproject")), ((MPSProject) MapSequence.fromMap(_params).get("project")).getScope()).migrateSModuleId();
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "MigrateToSModuleReferenceOpenAPI", t);
+      LOG.error("User's action execute method failed. Action:" + "MigrateToSModuleIdOpenAPI", t);
     }
   }
 
-  private static Logger LOG = Logger.getLogger(MigrateToSModuleReferenceOpenAPI_Action.class);
+  private static Logger LOG = Logger.getLogger(MigrateToSModuleIdOpenAPI_Action.class);
 }

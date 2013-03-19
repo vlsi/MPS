@@ -227,6 +227,24 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.smodel.pluginSolution.plugin.MigrateToSModuleIdOpenAPI_Action" file="MigrateToSModuleIdOpenAPI_Action.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.smodel.pluginSolution.plugin.MigrateToSModuleReferenceOpenAPI_Action" file="MigrateToSModuleReferenceOpenAPI_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
@@ -358,6 +376,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.pluginSolution.plugin.MigrateToSModelIdOpenAPI_Action" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.pluginSolution.plugin.MigrateToSModelOpenAPI_Action" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.pluginSolution.plugin.MigrateToSModelReferenceOpenAPI_Action" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.pluginSolution.plugin.MigrateToSModuleIdOpenAPI_Action" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.pluginSolution.plugin.MigrateToSModuleReferenceOpenAPI_Action" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.pluginSolution.plugin.MigrateToSNodeIdOpenAPI_Action" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.pluginSolution.plugin.MigrateToSNodeOpenAPI_Action" />
