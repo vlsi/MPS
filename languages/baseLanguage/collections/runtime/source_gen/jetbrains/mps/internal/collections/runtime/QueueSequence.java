@@ -4,110 +4,17 @@ package jetbrains.mps.internal.collections.runtime;
 
 import java.util.Queue;
 import java.io.Serializable;
-import jetbrains.mps.baseLanguage.closures.runtime.AdapterClass;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.impl.NullQueueSequence;
 import java.util.LinkedList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Arrays;
 
-public class QueueSequence<T> extends CollectionSequence<T> implements Queue<T>, IQueueSequence<T>, Serializable {
+public class QueueSequence<T> extends AbstractQueueSequence<T> implements Queue<T>, IQueueSequence<T>, Serializable {
   private static final long serialVersionUID = -7304432472048720900L;
-  private Queue<T> queue;
 
   protected QueueSequence(Queue<T> queue) {
-    setQueue(queue);
-  }
-
-  @Override
-  public T element() {
-    return getQueue().element();
-  }
-
-  @Override
-  public boolean offer(T o) {
-    return getQueue().offer(o);
-  }
-
-  @Override
-  public T peek() {
-    return getQueue().peek();
-  }
-
-  @Override
-  public T poll() {
-    return getQueue().poll();
-  }
-
-  @Override
-  public T remove() {
-    return getQueue().remove();
-  }
-
-  @Override
-  public T addLastElement(T t) {
-    getQueue().add(t);
-    return t;
-  }
-
-  @Override
-  public T first() {
-    if (Sequence.NULL_WHEN_EMPTY) {
-      return getQueue().peek();
-    }
-    return getQueue().element();
-  }
-
-  @Override
-  public T removeFirstElement() {
-    if (Sequence.NULL_WHEN_EMPTY) {
-      return getQueue().poll();
-    }
-    return getQueue().remove();
-  }
-
-  @Override
-  public IQueueSequence<T> addSequence(ISequence<? extends T> seq) {
-    return (IQueueSequence<T>) super.addSequence(seq);
-  }
-
-  @Override
-  public IQueueSequence<T> removeSequence(ISequence<? extends T> seq) {
-    return (IQueueSequence<T>) super.removeSequence(seq);
-  }
-
-  @Override
-  public IQueueSequence<T> removeWhere(@AdapterClass(value = "IWhereFilter") _FunctionTypes._return_P1_E0<? extends Boolean, ? super T> filter) {
-    return (IQueueSequence<T>) super.removeWhere(filter);
-  }
-
-  @Override
-  public IQueueSequence<T> asUnmodifiable() {
-    throw new UnsupportedOperationException();
-  }
-
-  @Override
-  public IQueueSequence<T> asSynchronized() {
-    throw new UnsupportedOperationException();
-  }
-
-  @Override
-  public Queue<T> toQueue() {
-    return this;
-  }
-
-  @Override
-  protected Collection<T> getCollection() {
-    return queue;
-  }
-
-  protected Queue<T> getQueue() {
-    return queue;
-  }
-
-  private void setQueue(Queue<T> queue) {
-    this.queue = queue;
+    super(queue);
   }
 
   public static <U> IQueueSequence<U> fromQueue(Queue<U> queue) {

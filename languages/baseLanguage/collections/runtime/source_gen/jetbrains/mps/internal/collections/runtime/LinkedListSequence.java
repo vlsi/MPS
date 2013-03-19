@@ -13,9 +13,13 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Arrays;
 
-public class LinkedListSequence<T> extends ListSequence<T> implements ILinkedListSequence<T>, ILinkedList<T> {
+public class LinkedListSequence<T> extends AbstractListSequence<T> implements ILinkedListSequence<T>, ILinkedList<T> {
   protected LinkedListSequence(LinkedList<T> list) {
     super(list);
+  }
+
+  protected LinkedListSequence(LinkedListSequence<T> other) {
+    super(other);
   }
 
   @Override
@@ -192,12 +196,12 @@ public class LinkedListSequence<T> extends ListSequence<T> implements ILinkedLis
   }
 
   @Override
-  public ILinkedListSequence<T> asSynchronized() {
-    return (ILinkedListSequence<T>) super.asSynchronized();
+  public LinkedListSequence<T> asUnmodifiable() {
+    throw new UnsupportedOperationException();
   }
 
   @Override
-  public ILinkedListSequence<T> asUnmodifiable() {
+  public LinkedListSequence<T> asSynchronized() {
     throw new UnsupportedOperationException();
   }
 
@@ -214,6 +218,28 @@ public class LinkedListSequence<T> extends ListSequence<T> implements ILinkedLis
   @Override
   public ILinkedListSequence<T> removeWhere(@AdapterClass(value = "IWhereFilter") _FunctionTypes._return_P1_E0<? extends Boolean, ? super T> filter) {
     return (ILinkedListSequence<T>) super.removeWhere(filter);
+  }
+
+  @Override
+  public IListSequence<T> reversedList() {
+    LinkedListSequence<T> reversed = new LinkedListSequence<T>(this);
+    reversed._reverse();
+    return reversed;
+  }
+
+  @Override
+  public IListSequence<T> subListSequence(int fromIdx, int upToIdx) {
+    return new ListSequence<T>(getList().subList(fromIdx, upToIdx));
+  }
+
+  @Override
+  public IListSequence<T> headListSequence(int upToIdx) {
+    return new ListSequence<T>(getList().subList(0, upToIdx));
+  }
+
+  @Override
+  public IListSequence<T> tailListSequence(int fromIdx) {
+    return new ListSequence<T>(getList().subList(fromIdx, getList().size()));
   }
 
   @Override

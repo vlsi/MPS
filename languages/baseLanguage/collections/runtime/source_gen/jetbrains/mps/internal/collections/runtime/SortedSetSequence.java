@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Arrays;
 import java.util.Collection;
 
-public class SortedSetSequence<T> extends SetSequence<T> implements ISortedSetSequence<T>, SortedSet<T>, Serializable {
+public class SortedSetSequence<T> extends AbstractSetSequence<T> implements ISortedSetSequence<T>, SortedSet<T>, Serializable {
   private static final long serialVersionUID = -1048576263715753714L;
 
   protected SortedSetSequence(SortedSet<T> set) {
