@@ -146,8 +146,8 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
         readModules();
 
         // TODO FIXME get rid of onModuleLoad
-        for (IModule m : getModules()) {
-          m.onModuleLoad();
+        for (SModule m : getModules()) {
+          ((AbstractModule) m).onModuleLoad();
         }
       }
     });

@@ -508,7 +508,6 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
     }
   }
 
-  @Override
   public void onModuleLoad() {
     updateSModelReferences();
     updateModuleReferences();

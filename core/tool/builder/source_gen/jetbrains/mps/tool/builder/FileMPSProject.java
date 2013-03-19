@@ -18,7 +18,7 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.library.ModulesMiner;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import java.util.List;
 import java.util.Collections;
 import java.util.ArrayList;
@@ -132,7 +132,7 @@ public class FileMPSProject extends Project {
         readModules(myDescriptor);
         //  TODO FIXME get rid of onModuleLoad 
         for (SModule m : getModules()) {
-          ((IModule) m).onModuleLoad();
+          ((AbstractModule) m).onModuleLoad();
         }
       }
     });

@@ -84,10 +84,6 @@ public interface IModule extends SModule {
    */
   Collection<ModuleReference> getUsedDevkitReferences();
 
-  // AbstractModule#onModuleLoad
-  // is it refactorings? move to it
-  void onModuleLoad();
-
   // ?
   // btw onModuleRegistered
   // setRepository I think
@@ -121,6 +117,8 @@ public interface IModule extends SModule {
 
   void addUsedDevkit(ModuleReference devkitRef);
 
+  void onModuleLoad();
+
   // migrate by renaming
   /**
    * @see SModule#getModuleName
@@ -141,6 +139,7 @@ public interface IModule extends SModule {
   IScope getScope();
 
   // ----- deprecated part
+
   /**
    * Do nothing for now. If method change dependencies it invalidates cache by calling dependenciesChanged()
    */
