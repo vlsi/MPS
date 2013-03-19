@@ -42,6 +42,7 @@ import org.junit.runner.RunWith;
   "jetbrains.mps.tests.TestModule_jetbrains_mps_graphLayout_test",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_ide_java_tests",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_kernel_tests",
+  "jetbrains.mps.tests.TestModule_jetbrains_mps_lang_actions_test",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_lang_editor_table_tests",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_lang_editor_tests",
   "jetbrains.mps.tests.TestModule_jetbrains_mps_lang_extension_tests",
