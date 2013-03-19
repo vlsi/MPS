@@ -23,7 +23,6 @@ import java.util.ArrayList;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.DevKit;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import jetbrains.mps.workbench.goTo.NavigateCallback;

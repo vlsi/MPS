@@ -43,9 +43,9 @@
     <classNode dependClassName="javax.swing.event.ChangeEvent" />
     <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.properties.EditOperandDialog" />
     <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.properties.renderers.RuleOperandRenderer" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef" />
     <classNode dependClassName="jetbrains.mps.smodel.Generator" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode extendsClassName="com.intellij.util.ui.AbstractTableCellEditor" />
   </dependency>
   <dependency className="jetbrains.mps.ide.ui.dialogs.properties.editors.RuleTypeEditor" file="RuleTypeEditor.java">

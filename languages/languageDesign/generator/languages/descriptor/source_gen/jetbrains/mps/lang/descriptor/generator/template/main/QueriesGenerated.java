@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.IModule;
@@ -20,6 +20,7 @@ import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.generator.template.IfMacroContext;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -88,7 +89,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1820665478710840122(final IOperationContext operationContext, final PropertyMacroContext _context) {
     // TODO 
-    return new jetbrains.mps.project.structure.modules.ModuleReference(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "generator", true), "qualifiedName"), SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "generator", true), "uuid")).toString();
+    return new ModuleReference(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "generator", true), "qualifiedName"), SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "generator", true), "uuid")).toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_1820665478710840070(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -116,7 +117,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1250389701475344482(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    IModule m = MPSModuleRepository.getInstance().getModule(jetbrains.mps.project.structure.modules.ModuleReference.fromString(BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getModuleReference_1250389701475344624", new Object[]{})));
+    IModule m = MPSModuleRepository.getInstance().getModule(ModuleReference.fromString(BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getModuleReference_1250389701475344624", new Object[]{})));
     if (m instanceof Generator) {
       Generator g = (Generator) m;
       return g.getSourceLanguage().getModuleFqName() + "/" + g.getModuleFqName();
@@ -143,7 +144,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_5828571963818937566(final IOperationContext operationContext, final IfMacroContext _context) {
-    SModuleReference ref = jetbrains.mps.project.structure.modules.ModuleReference.fromString(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "language", true), "virtual_getModuleReference_9020561928507315628", new Object[]{}));
+    SModuleReference ref = ModuleReference.fromString(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "language", true), "virtual_getModuleReference_9020561928507315628", new Object[]{}));
     Language l = ModuleRepositoryFacade.getInstance().getModule(ref, Language.class);
     if (l == null) {
       _context.showErrorMessage(SLinkOperations.getTarget(_context.getNode(), "language", true), "No language in repository: " + SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "language", true), "namespace"));
@@ -162,7 +163,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_2838795720286867781(final IOperationContext operationContext, final IfMacroContext _context) {
-    SModuleReference ref = jetbrains.mps.project.structure.modules.ModuleReference.fromString(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "language", true), "virtual_getModuleReference_9020561928507315628", new Object[]{}));
+    SModuleReference ref = ModuleReference.fromString(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "language", true), "virtual_getModuleReference_9020561928507315628", new Object[]{}));
     Language l = ModuleRepositoryFacade.getInstance().getModule(ref, Language.class);
     if (l == null) {
       _context.showErrorMessage(SLinkOperations.getTarget(_context.getNode(), "language", true), "No language in repository: " + SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "language", true), "namespace"));

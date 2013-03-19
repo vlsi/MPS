@@ -4,6 +4,7 @@ package jetbrains.mps.testbench.suite.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class SolutionRef_Behavior {
@@ -11,7 +12,7 @@ public class SolutionRef_Behavior {
   }
 
   public static SModuleReference virtual_moduleReference_1280144168199513544(SNode thisNode) {
-    return new jetbrains.mps.project.structure.modules.ModuleReference(SPropertyOperations.getString(thisNode, "moduleFQName"), SPropertyOperations.getString(thisNode, "moduleID"));
+    return new ModuleReference(SPropertyOperations.getString(thisNode, "moduleFQName"), SPropertyOperations.getString(thisNode, "moduleID"));
   }
 
   public static String virtual_presentation_1280144168199745474(SNode thisNode) {

@@ -8,6 +8,7 @@ import jetbrains.mps.util.xml.XmlUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -50,13 +51,13 @@ public class ModuleDescriptorPersistence {
 
     descriptor.getUsedLanguages().addAll(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "usedLanguages"), "usedLanguage")).select(new ISelector<Element, SModuleReference>() {
       public SModuleReference select(Element ul) {
-        return jetbrains.mps.project.structure.modules.ModuleReference.fromString(ul.getText());
+        return ModuleReference.fromString(ul.getText());
       }
     }).toListSequence());
 
     descriptor.getUsedDevkits().addAll(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "usedDevKits"), "usedDevKit")).select(new ISelector<Element, SModuleReference>() {
       public SModuleReference select(Element udk) {
-        return jetbrains.mps.project.structure.modules.ModuleReference.fromString(udk.getText());
+        return ModuleReference.fromString(udk.getText());
       }
     }).toListSequence());
 
@@ -114,7 +115,7 @@ public class ModuleDescriptorPersistence {
         return new _FunctionTypes._return_P0_E0<Dependency>() {
           public Dependency invoke() {
             final Dependency result_dxyzb6_a0a0a0a0a0a4 = new Dependency();
-            final SModuleReference result_dxyzb6_a0a0a0a0a0a0a4 = jetbrains.mps.project.structure.modules.ModuleReference.fromString(d.getText());
+            final SModuleReference result_dxyzb6_a0a0a0a0a0a0a4 = ModuleReference.fromString(d.getText());
             result_dxyzb6_a0a0a0a0a0a4.setModuleRef(result_dxyzb6_a0a0a0a0a0a0a4);
             final boolean result_dxyzb6_a1a0a0a0a0a0a4 = XmlUtil.booleanWithDefault(d, "reexport", true);
             result_dxyzb6_a0a0a0a0a0a4.setReexport(result_dxyzb6_a1a0a0a0a0a0a4);

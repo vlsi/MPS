@@ -129,8 +129,8 @@
     <nodeInfo nodeId="2617896750899030026" fileName="ImportAllModulesFromFolder_Action.java" startLine="119" startPosition="0" endLine="120" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2617896750899029970" fileName="ImportAllModulesFromFolder_Action.java" startLine="120" startPosition="106" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8503529127541542295" fileName="ImportAllModulesFromFolder_Action.java" startLine="121" startPosition="0" endLine="122" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8503529127541537320" fileName="ImportAllModulesFromFolder_Action.java" startLine="123" startPosition="60" endLine="124" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8503529127541537448" fileName="ImportAllModulesFromFolder_Action.java" startLine="125" startPosition="101" endLine="126" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="8503529127541537320" fileName="ImportAllModulesFromFolder_Action.java" startLine="123" startPosition="60" endLine="124" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8503529127541537448" fileName="ImportAllModulesFromFolder_Action.java" startLine="125" startPosition="99" endLine="126" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="8503529127541537449" fileName="ImportAllModulesFromFolder_Action.java" startLine="127" startPosition="13" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8503529127541542145" fileName="ImportAllModulesFromFolder_Action.java" startLine="128" startPosition="0" endLine="129" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8503529127541542234" fileName="ImportAllModulesFromFolder_Action.java" startLine="129" startPosition="168" endLine="130" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -152,7 +152,7 @@
     <nodeInfo nodeId="8503529127541540924" fileName="ImportAllModulesFromFolder_Action.java" startLine="96" startPosition="164" endLine="99" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8503529127541528509" fileName="ImportAllModulesFromFolder_Action.java" startLine="105" startPosition="7" endLine="108" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1572311180462136208" fileName="ImportAllModulesFromFolder_Action.java" startLine="109" startPosition="96" endLine="112" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8503529127541537231" fileName="ImportAllModulesFromFolder_Action.java" startLine="124" startPosition="81" endLine="127" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8503529127541537231" fileName="ImportAllModulesFromFolder_Action.java" startLine="124" startPosition="82" endLine="127" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8503529127541542341" fileName="ImportAllModulesFromFolder_Action.java" startLine="135" startPosition="0" endLine="138" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8503529127541541686" fileName="ImportAllModulesFromFolder_Action.java" startLine="149" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_mmt9i1_a0a1a0a0a0a5a0a5#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
@@ -185,7 +185,7 @@
     <scopeInfo nodeId="8503529127541540925" fileName="ImportAllModulesFromFolder_Action.java" startLine="97" startPosition="93" endLine="98" endPosition="89" />
     <scopeInfo nodeId="8503529127541528510" fileName="ImportAllModulesFromFolder_Action.java" startLine="106" startPosition="40" endLine="107" endPosition="52" />
     <scopeInfo nodeId="1572311180462136212" fileName="ImportAllModulesFromFolder_Action.java" startLine="110" startPosition="48" endLine="111" endPosition="15" />
-    <scopeInfo nodeId="8503529127541537233" fileName="ImportAllModulesFromFolder_Action.java" startLine="125" startPosition="101" endLine="126" endPosition="23" />
+    <scopeInfo nodeId="8503529127541537233" fileName="ImportAllModulesFromFolder_Action.java" startLine="125" startPosition="99" endLine="126" endPosition="23" />
     <scopeInfo nodeId="8503529127541542342" fileName="ImportAllModulesFromFolder_Action.java" startLine="136" startPosition="53" endLine="137" endPosition="35" />
     <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="142" startPosition="0" endLine="143" endPosition="98">
       <varInfo nodeId="6937807405124198153" varName="t" />
@@ -322,8 +322,8 @@
     <nodeInfo nodeId="2617896750899029581" fileName="ImportModuleHelper.java" startLine="51" startPosition="53" endLine="52" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2617896750899029586" fileName="ImportModuleHelper.java" startLine="52" startPosition="16" endLine="53" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8369506495128729697" fileName="ImportModuleHelper.java" startLine="57" startPosition="83" endLine="58" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2617896750899002641" fileName="ImportModuleHelper.java" startLine="58" startPosition="60" endLine="59" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2617896750899002750" fileName="ImportModuleHelper.java" startLine="59" startPosition="101" endLine="60" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2617896750899002641" fileName="ImportModuleHelper.java" startLine="58" startPosition="60" endLine="59" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2617896750899002750" fileName="ImportModuleHelper.java" startLine="59" startPosition="99" endLine="60" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2617896750899003369" fileName="ImportModuleHelper.java" startLine="60" startPosition="108" endLine="61" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2617896750899029798" fileName="ImportModuleHelper.java" startLine="65" startPosition="28" endLine="66" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2617896750899029799" fileName="ImportModuleHelper.java" startLine="67" startPosition="5" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />

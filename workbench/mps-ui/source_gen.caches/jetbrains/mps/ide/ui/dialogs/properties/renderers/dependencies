@@ -12,7 +12,6 @@
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="javax.swing.JTable" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefAllGlobal" />
@@ -32,6 +31,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode extendsClassName="javax.swing.table.TableCellRenderer" />
   </dependency>
   <dependency className="jetbrains.mps.ide.ui.dialogs.properties.renderers.RuleTypeRenderer" file="RuleTypeRenderer.java">

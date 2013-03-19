@@ -12,6 +12,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.ModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.GlobalScope;
@@ -48,7 +49,7 @@ public class TempModelCreator {
     private final ModuleId myId = ModuleId.regular();
 
     public TempModule() {
-      SModuleReference reference = new jetbrains.mps.project.structure.modules.ModuleReference("TempModule" + myId, myId);
+      SModuleReference reference = new ModuleReference("TempModule" + myId, myId);
       setModuleReference(reference);
       myDescriptor = new ModuleDescriptor();
     }

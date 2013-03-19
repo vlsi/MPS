@@ -6,6 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.Language;
@@ -21,7 +22,7 @@ public class LanguageDescriptor_Behavior {
   }
 
   public static boolean call_isLanguageAspectEmpty_3064888218669923940(SNode thisNode, LanguageAspect languageAspect, TemplateQueryContext genContext) {
-    SModuleReference ref = jetbrains.mps.project.structure.modules.ModuleReference.fromString(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "language", true), "virtual_getModuleReference_9020561928507315628", new Object[]{}));
+    SModuleReference ref = ModuleReference.fromString(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "language", true), "virtual_getModuleReference_9020561928507315628", new Object[]{}));
     Language l = ModuleRepositoryFacade.getInstance().getModule(ref, Language.class);
     if (l == null) {
       genContext.showErrorMessage(SLinkOperations.getTarget(thisNode, "language", true), "No language in repository: " + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "language", true), "namespace"));

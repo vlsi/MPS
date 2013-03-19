@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.refactoring.StructureModificationProcessor;
 import jetbrains.mps.util.xml.BreakParseSAXException;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.LazySNode;
@@ -317,7 +318,7 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
 
     @Override
     protected SModuleReference createObject(Attributes attrs) {
-      return jetbrains.mps.project.structure.modules.ModuleReference.fromString(attrs.getValue("namespace"));
+      return ModuleReference.fromString(attrs.getValue("namespace"));
     }
 
     @Override

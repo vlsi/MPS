@@ -10,7 +10,7 @@ import jetbrains.mps.InternalFlag;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.SModelInternal;
-import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -21,6 +21,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.logging.Logger;
 import java.util.List;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.IModule;
@@ -58,7 +59,7 @@ public class CollectTests_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return InternalFlag.isInternalMode() && CollectTests_Action.this.isUserEditableModel(((SModel) MapSequence.fromMap(_params).get("modelDesc")), _params) && ((SModelInternal) ((SModel) MapSequence.fromMap(_params).get("modelDesc"))).importedLanguages().contains(jetbrains.mps.project.structure.modules.ModuleReference.fromString("d3c5a46f-b8c2-47db-ad0a-30b8f19c2055(jetbrains.mps.testbench.suite)"));
+    return InternalFlag.isInternalMode() && CollectTests_Action.this.isUserEditableModel(((SModel) MapSequence.fromMap(_params).get("modelDesc")), _params) && ((SModelInternal) ((SModel) MapSequence.fromMap(_params).get("modelDesc"))).importedLanguages().contains(ModuleReference.fromString("d3c5a46f-b8c2-47db-ad0a-30b8f19c2055(jetbrains.mps.testbench.suite)"));
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {

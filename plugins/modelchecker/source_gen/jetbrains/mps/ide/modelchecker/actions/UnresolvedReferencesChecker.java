@@ -25,7 +25,6 @@ import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.IModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public class UnresolvedReferencesChecker extends SpecificChecker {
   public UnresolvedReferencesChecker() {

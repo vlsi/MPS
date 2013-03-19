@@ -326,7 +326,7 @@ public class SNodeOperations {
     Iterable<SLanguage> languages = model.getModelScope().getLanguages();
     return Sequence.fromIterable(languages).select(new ISelector<SLanguage, SModuleReference>() {
       public SModuleReference select(SLanguage it) {
-        return ((SModuleReference) it.getModule().getModuleReference());
+        return it.getModule().getModuleReference();
       }
     }).toListSequence();
   }

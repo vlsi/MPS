@@ -4,6 +4,7 @@ package jetbrains.mps.workbench.dialogs.project.components.parts.renderers;
 
 import jetbrains.mps.smodel.IScope;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.Generator;
@@ -18,7 +19,7 @@ public class ModuleRenderer extends ProjectLevelRenderer {
 
   @Override
   public String getItemLabel(Object value) {
-    SModuleReference moduleReference = (SModuleReference) value;
+    SModuleReference moduleReference = (ModuleReference) value;
     final IModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
     if (module == null) {
       String moduleName = moduleReference.getModuleName();
@@ -37,7 +38,7 @@ public class ModuleRenderer extends ProjectLevelRenderer {
   @Override
   public Component getListCellRendererComponent(JList list, final Object value, int index, boolean isSelected, boolean cellHasFocus) {
     final Component result = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
-    SModuleReference moduleReference = (SModuleReference) value;
+    SModuleReference moduleReference = (ModuleReference) value;
     if (moduleReference == null) {
       return result;
     }

@@ -5,11 +5,12 @@ package jetbrains.mps.kernel.model;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.BaseMPSModuleOwner;
-import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import java.util.Collection;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.util.Set;
 import java.util.LinkedHashSet;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -28,7 +29,7 @@ public class TemporaryModelOwner extends AbstractModule {
   private MPSModuleOwner myOwner = new BaseMPSModuleOwner() {};
 
   public TemporaryModelOwner() {
-    setModuleReference(new jetbrains.mps.project.structure.modules.ModuleReference("TemporaryModelOwner #" + System.identityHashCode(this), ModuleId.regular()));
+    setModuleReference(new ModuleReference("TemporaryModelOwner #" + System.identityHashCode(this), ModuleId.regular()));
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         MPSModuleRepository.getInstance().registerModule(TemporaryModelOwner.this, TemporaryModelOwner.this.myOwner);

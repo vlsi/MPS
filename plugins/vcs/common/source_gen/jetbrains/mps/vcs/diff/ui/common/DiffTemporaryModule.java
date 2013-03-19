@@ -5,7 +5,7 @@ package jetbrains.mps.vcs.diff.ui.common;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.project.ModuleId;
 import java.util.List;
@@ -40,7 +40,7 @@ public class DiffTemporaryModule extends AbstractModule {
   private Project myProject;
 
   private DiffTemporaryModule(SModel model, String version, Project project) {
-    setModuleReference(new jetbrains.mps.project.structure.modules.ModuleReference(SModelOperations.getModelName(((org.jetbrains.mps.openapi.model.SModel) model.getModelDescriptor())) + "@" + version, ModuleId.regular()));
+    setModuleReference(new ModuleReference(SModelOperations.getModelName(((org.jetbrains.mps.openapi.model.SModel) model.getModelDescriptor())) + "@" + version, ModuleId.regular()));
     myModel = model;
     myProject = project;
   }

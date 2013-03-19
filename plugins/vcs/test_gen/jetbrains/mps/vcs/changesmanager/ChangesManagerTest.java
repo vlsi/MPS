@@ -85,7 +85,7 @@ import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.smodel.SModelInternal;
-import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
 import org.junit.BeforeClass;
 import jetbrains.mps.smodel.SReference;
@@ -892,7 +892,7 @@ public class ChangesManagerTest {
 
     runCommandAndWait(new Runnable() {
       public void run() {
-        ((SModelInternal) md).addLanguage(jetbrains.mps.project.structure.modules.ModuleReference.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"));
+        ((SModelInternal) md).addLanguage(ModuleReference.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"));
         createNewRoot(md);
       }
     });
