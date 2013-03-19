@@ -183,6 +183,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   public void dispose() {
     myLanguageDependenciesManager.dispose();
     super.dispose();
+    ModuleRepositoryFacade.getInstance().unregisterModules(this);
   }
 
   @Override
