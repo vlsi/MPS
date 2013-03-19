@@ -8,11 +8,5 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.traceable.structure.Traceable_Language" file="Traceable_Language.java">
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
-    <classNode dependClassName="jetbrains.mps.smodel.Language" />
-    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
-  </dependency>
 </dependenciesRoot>
 

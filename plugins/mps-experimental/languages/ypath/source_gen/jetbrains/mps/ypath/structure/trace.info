@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="159" endPosition="0" unitName="jetbrains.mps.ypath.structure.StructureAspectDescriptor" />
-  <unitInfo fileName="Ypath_Language.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.ypath.structure.Ypath_Language" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)/1168457888645">
     <nodeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
     <nodeInfo nodeId="1168457888645" fileName="TraversalAxis.java" startLine="22" startPosition="27" endLine="23" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

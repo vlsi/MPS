@@ -34,11 +34,5 @@
     <classNode dependClassName="jetbrains.mps.ypath.structure.TraversalAxis" />
     <classNode extendsClassName="jetbrains.mps.smodel.PropertySupport" />
   </dependency>
-  <dependency className="jetbrains.mps.ypath.structure.Ypath_Language" file="Ypath_Language.java">
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
-    <classNode dependClassName="jetbrains.mps.smodel.Language" />
-    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
-  </dependency>
 </dependenciesRoot>
 
