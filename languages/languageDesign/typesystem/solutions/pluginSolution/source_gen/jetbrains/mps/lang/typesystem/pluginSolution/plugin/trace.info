@@ -2,88 +2,88 @@
 <debugInfo>
   <root nodeRef="r:c4d60913-c4ac-4da1-b5c2-2281d3022e80(jetbrains.mps.lang.typesystem.pluginSolution.plugin)/1381359735925524321" />
   <root nodeRef="r:c4d60913-c4ac-4da1-b5c2-2281d3022e80(jetbrains.mps.lang.typesystem.pluginSolution.plugin)/3340103645315009208">
-    <nodeInfo nodeId="3340103645315130097" fileName="TempModelCreator.java" startLine="26" startPosition="42" endLine="27" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3340103645315191378" fileName="TempModelCreator.java" startLine="27" startPosition="75" endLine="28" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3340103645315193374" fileName="TempModelCreator.java" startLine="28" startPosition="109" endLine="29" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="3340103645315224489" fileName="TempModelCreator.java" startLine="29" startPosition="84" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3340103645315245997" fileName="TempModelCreator.java" startLine="30" startPosition="0" endLine="31" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3340103645315246923" fileName="TempModelCreator.java" startLine="31" startPosition="94" endLine="32" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3340103645315250142" fileName="TempModelCreator.java" startLine="32" startPosition="86" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3340103645315285261" fileName="TempModelCreator.java" startLine="33" startPosition="0" endLine="34" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3340103645315290032" fileName="TempModelCreator.java" startLine="39" startPosition="53" endLine="40" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3340103645315290751" fileName="TempModelCreator.java" startLine="40" startPosition="39" endLine="41" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3340103645315293831" fileName="TempModelCreator.java" startLine="41" startPosition="64" endLine="42" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3340103645315068094" fileName="TempModelCreator.java" startLine="48" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDescriptor" />
-    <nodeInfo nodeId="3340103645315093937" fileName="TempModelCreator.java" startLine="49" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
-    <nodeInfo nodeId="3340103645315068101" fileName="TempModelCreator.java" startLine="51" startPosition="25" endLine="52" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3340103645315068108" fileName="TempModelCreator.java" startLine="52" startPosition="82" endLine="53" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3340103645315068111" fileName="TempModelCreator.java" startLine="53" startPosition="36" endLine="54" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3340103645315148101" fileName="TempModelCreator.java" startLine="57" startPosition="31" endLine="58" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3340103645315068130" fileName="TempModelCreator.java" startLine="62" startPosition="51" endLine="63" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3340103645315068137" fileName="TempModelCreator.java" startLine="68" startPosition="30" endLine="69" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3340103645315080828" fileName="TempModelCreator.java" startLine="76" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
-    <nodeInfo nodeId="3340103645315080834" fileName="TempModelCreator.java" startLine="78" startPosition="35" endLine="79" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3340103645315080844" fileName="TempModelCreator.java" startLine="82" startPosition="31" endLine="83" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3340103645315080852" fileName="TempModelCreator.java" startLine="87" startPosition="35" endLine="88" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3340103645315080879" fileName="TempModelCreator.java" startLine="100" startPosition="41" endLine="101" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6307702073399442392" fileName="TempModelCreator.java" startLine="105" startPosition="45" endLine="106" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3340103645315080870" fileName="TempModelCreator.java" startLine="94" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="performUndoableAction#(Ljetbrains/mps/smodel/SNodeUndoableAction;)V" />
-    <nodeInfo nodeId="3340103645315145236" fileName="TempModelCreator.java" startLine="57" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isHidden#()Z" />
-    <nodeInfo nodeId="3340103645315080831" fileName="TempModelCreator.java" startLine="78" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AuxilaryRuntimeModel#()V" />
-    <nodeInfo nodeId="3340103645315080840" fileName="TempModelCreator.java" startLine="82" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSModel#()Lorg/jetbrains/mps/openapi/model/SModel;" />
-    <nodeInfo nodeId="3340103645315080849" fileName="TempModelCreator.java" startLine="87" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AuxModelDescriptor#()V" />
-    <nodeInfo nodeId="3340103645315068126" fileName="TempModelCreator.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModuleDescriptor#()Ljetbrains/mps/project/structure/modules/ModuleDescriptor;" />
-    <nodeInfo nodeId="3340103645315080876" fileName="TempModelCreator.java" startLine="99" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canFireEvent#()Z" />
-    <nodeInfo nodeId="6307702073399423996" fileName="TempModelCreator.java" startLine="104" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canFireReadEvent#()Z" />
-    <nodeInfo nodeId="3340103645315010776" fileName="TempModelCreator.java" startLine="39" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="disposeTempModel#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-    <nodeInfo nodeId="3340103645315068097" fileName="TempModelCreator.java" startLine="51" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TempModule#()V" />
-    <nodeInfo nodeId="3340103645315068133" fileName="TempModelCreator.java" startLine="66" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScope#()Ljetbrains/mps/smodel/IScope;" />
-    <nodeInfo nodeId="3340103645315010530" fileName="TempModelCreator.java" startLine="26" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createTempModel#()Lorg/jetbrains/mps/openapi/model/SModel;" />
-    <nodeInfo nodeId="3340103645315080864" fileName="TempModelCreator.java" startLine="92" startPosition="59" endLine="108" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3340103645315080861" fileName="TempModelCreator.java" startLine="91" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createModel#()Ljetbrains/mps/smodel/SModel;" />
-    <scopeInfo nodeId="3340103645315080873" fileName="TempModelCreator.java" startLine="94" startPosition="76" endLine="94" endPosition="76" />
-    <scopeInfo nodeId="3340103645315145244" fileName="TempModelCreator.java" startLine="57" startPosition="31" endLine="58" endPosition="18" />
-    <scopeInfo nodeId="3340103645315068129" fileName="TempModelCreator.java" startLine="62" startPosition="51" endLine="63" endPosition="26" />
-    <scopeInfo nodeId="3340103645315068136" fileName="TempModelCreator.java" startLine="68" startPosition="30" endLine="69" endPosition="39" />
-    <scopeInfo nodeId="3340103645315080833" fileName="TempModelCreator.java" startLine="78" startPosition="35" endLine="79" endPosition="79" />
-    <scopeInfo nodeId="3340103645315080843" fileName="TempModelCreator.java" startLine="82" startPosition="31" endLine="83" endPosition="21" />
-    <scopeInfo nodeId="3340103645315080851" fileName="TempModelCreator.java" startLine="87" startPosition="35" endLine="88" endPosition="92" />
-    <scopeInfo nodeId="3340103645315080878" fileName="TempModelCreator.java" startLine="100" startPosition="41" endLine="101" endPosition="25" />
-    <scopeInfo nodeId="6307702073399424001" fileName="TempModelCreator.java" startLine="105" startPosition="45" endLine="106" endPosition="24" />
-    <scopeInfo nodeId="3340103645315080870" fileName="TempModelCreator.java" startLine="94" startPosition="0" endLine="96" endPosition="0">
+    <nodeInfo nodeId="3340103645315130097" fileName="TempModelCreator.java" startLine="27" startPosition="42" endLine="28" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3340103645315191378" fileName="TempModelCreator.java" startLine="28" startPosition="75" endLine="29" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3340103645315193374" fileName="TempModelCreator.java" startLine="29" startPosition="109" endLine="30" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="3340103645315224489" fileName="TempModelCreator.java" startLine="30" startPosition="84" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3340103645315245997" fileName="TempModelCreator.java" startLine="31" startPosition="0" endLine="32" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3340103645315246923" fileName="TempModelCreator.java" startLine="32" startPosition="94" endLine="33" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3340103645315250142" fileName="TempModelCreator.java" startLine="33" startPosition="86" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3340103645315285261" fileName="TempModelCreator.java" startLine="34" startPosition="0" endLine="35" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3340103645315290032" fileName="TempModelCreator.java" startLine="40" startPosition="53" endLine="41" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3340103645315290751" fileName="TempModelCreator.java" startLine="41" startPosition="39" endLine="42" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3340103645315293831" fileName="TempModelCreator.java" startLine="42" startPosition="64" endLine="43" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3340103645315068094" fileName="TempModelCreator.java" startLine="49" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDescriptor" />
+    <nodeInfo nodeId="3340103645315093937" fileName="TempModelCreator.java" startLine="50" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
+    <nodeInfo nodeId="3340103645315068101" fileName="TempModelCreator.java" startLine="52" startPosition="25" endLine="53" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3340103645315068108" fileName="TempModelCreator.java" startLine="53" startPosition="82" endLine="54" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3340103645315068111" fileName="TempModelCreator.java" startLine="54" startPosition="36" endLine="55" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3340103645315148101" fileName="TempModelCreator.java" startLine="58" startPosition="31" endLine="59" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3340103645315068130" fileName="TempModelCreator.java" startLine="63" startPosition="51" endLine="64" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3340103645315068137" fileName="TempModelCreator.java" startLine="69" startPosition="30" endLine="70" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3340103645315080828" fileName="TempModelCreator.java" startLine="77" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
+    <nodeInfo nodeId="3340103645315080834" fileName="TempModelCreator.java" startLine="79" startPosition="35" endLine="80" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3340103645315080844" fileName="TempModelCreator.java" startLine="83" startPosition="31" endLine="84" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3340103645315080852" fileName="TempModelCreator.java" startLine="88" startPosition="35" endLine="89" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3340103645315080879" fileName="TempModelCreator.java" startLine="101" startPosition="41" endLine="102" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6307702073399442392" fileName="TempModelCreator.java" startLine="106" startPosition="45" endLine="107" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3340103645315080870" fileName="TempModelCreator.java" startLine="95" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="performUndoableAction#(Ljetbrains/mps/smodel/SNodeUndoableAction;)V" />
+    <nodeInfo nodeId="3340103645315145236" fileName="TempModelCreator.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isHidden#()Z" />
+    <nodeInfo nodeId="3340103645315080831" fileName="TempModelCreator.java" startLine="79" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AuxilaryRuntimeModel#()V" />
+    <nodeInfo nodeId="3340103645315080840" fileName="TempModelCreator.java" startLine="83" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSModel#()Lorg/jetbrains/mps/openapi/model/SModel;" />
+    <nodeInfo nodeId="3340103645315080849" fileName="TempModelCreator.java" startLine="88" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AuxModelDescriptor#()V" />
+    <nodeInfo nodeId="3340103645315068126" fileName="TempModelCreator.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModuleDescriptor#()Ljetbrains/mps/project/structure/modules/ModuleDescriptor;" />
+    <nodeInfo nodeId="3340103645315080876" fileName="TempModelCreator.java" startLine="100" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canFireEvent#()Z" />
+    <nodeInfo nodeId="6307702073399423996" fileName="TempModelCreator.java" startLine="105" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canFireReadEvent#()Z" />
+    <nodeInfo nodeId="3340103645315010776" fileName="TempModelCreator.java" startLine="40" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="disposeTempModel#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+    <nodeInfo nodeId="3340103645315068097" fileName="TempModelCreator.java" startLine="52" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TempModule#()V" />
+    <nodeInfo nodeId="3340103645315068133" fileName="TempModelCreator.java" startLine="67" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScope#()Ljetbrains/mps/smodel/IScope;" />
+    <nodeInfo nodeId="3340103645315010530" fileName="TempModelCreator.java" startLine="27" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createTempModel#()Lorg/jetbrains/mps/openapi/model/SModel;" />
+    <nodeInfo nodeId="3340103645315080864" fileName="TempModelCreator.java" startLine="93" startPosition="59" endLine="109" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3340103645315080861" fileName="TempModelCreator.java" startLine="92" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createModel#()Ljetbrains/mps/smodel/SModel;" />
+    <scopeInfo nodeId="3340103645315080873" fileName="TempModelCreator.java" startLine="95" startPosition="76" endLine="95" endPosition="76" />
+    <scopeInfo nodeId="3340103645315145244" fileName="TempModelCreator.java" startLine="58" startPosition="31" endLine="59" endPosition="18" />
+    <scopeInfo nodeId="3340103645315068129" fileName="TempModelCreator.java" startLine="63" startPosition="51" endLine="64" endPosition="26" />
+    <scopeInfo nodeId="3340103645315068136" fileName="TempModelCreator.java" startLine="69" startPosition="30" endLine="70" endPosition="39" />
+    <scopeInfo nodeId="3340103645315080833" fileName="TempModelCreator.java" startLine="79" startPosition="35" endLine="80" endPosition="79" />
+    <scopeInfo nodeId="3340103645315080843" fileName="TempModelCreator.java" startLine="83" startPosition="31" endLine="84" endPosition="21" />
+    <scopeInfo nodeId="3340103645315080851" fileName="TempModelCreator.java" startLine="88" startPosition="35" endLine="89" endPosition="92" />
+    <scopeInfo nodeId="3340103645315080878" fileName="TempModelCreator.java" startLine="101" startPosition="41" endLine="102" endPosition="25" />
+    <scopeInfo nodeId="6307702073399424001" fileName="TempModelCreator.java" startLine="106" startPosition="45" endLine="107" endPosition="24" />
+    <scopeInfo nodeId="3340103645315080870" fileName="TempModelCreator.java" startLine="95" startPosition="0" endLine="97" endPosition="0">
       <varInfo nodeId="3340103645315080871" varName="action" />
     </scopeInfo>
-    <scopeInfo nodeId="3340103645315010777" fileName="TempModelCreator.java" startLine="39" startPosition="53" endLine="42" endPosition="90">
+    <scopeInfo nodeId="3340103645315010777" fileName="TempModelCreator.java" startLine="40" startPosition="53" endLine="43" endPosition="90">
       <varInfo nodeId="3340103645315290033" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="3340103645315068100" fileName="TempModelCreator.java" startLine="51" startPosition="25" endLine="54" endPosition="44">
+    <scopeInfo nodeId="3340103645315068100" fileName="TempModelCreator.java" startLine="52" startPosition="25" endLine="55" endPosition="44">
       <varInfo nodeId="3340103645315068102" varName="reference" />
     </scopeInfo>
-    <scopeInfo nodeId="3340103645315145236" fileName="TempModelCreator.java" startLine="57" startPosition="0" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="3340103645315080831" fileName="TempModelCreator.java" startLine="78" startPosition="0" endLine="81" endPosition="0" />
-    <scopeInfo nodeId="3340103645315080840" fileName="TempModelCreator.java" startLine="82" startPosition="0" endLine="85" endPosition="0" />
-    <scopeInfo nodeId="3340103645315080849" fileName="TempModelCreator.java" startLine="87" startPosition="0" endLine="90" endPosition="0" />
-    <scopeInfo nodeId="3340103645315068126" fileName="TempModelCreator.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="3340103645315080876" fileName="TempModelCreator.java" startLine="99" startPosition="0" endLine="103" endPosition="0" />
-    <scopeInfo nodeId="6307702073399423996" fileName="TempModelCreator.java" startLine="104" startPosition="0" endLine="108" endPosition="0" />
-    <scopeInfo nodeId="3340103645315010776" fileName="TempModelCreator.java" startLine="39" startPosition="0" endLine="44" endPosition="0">
+    <scopeInfo nodeId="3340103645315145236" fileName="TempModelCreator.java" startLine="58" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="3340103645315080831" fileName="TempModelCreator.java" startLine="79" startPosition="0" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="3340103645315080840" fileName="TempModelCreator.java" startLine="83" startPosition="0" endLine="86" endPosition="0" />
+    <scopeInfo nodeId="3340103645315080849" fileName="TempModelCreator.java" startLine="88" startPosition="0" endLine="91" endPosition="0" />
+    <scopeInfo nodeId="3340103645315068126" fileName="TempModelCreator.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="3340103645315080876" fileName="TempModelCreator.java" startLine="100" startPosition="0" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="6307702073399423996" fileName="TempModelCreator.java" startLine="105" startPosition="0" endLine="109" endPosition="0" />
+    <scopeInfo nodeId="3340103645315010776" fileName="TempModelCreator.java" startLine="40" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="3340103645315063597" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="3340103645315068097" fileName="TempModelCreator.java" startLine="51" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="3340103645315068133" fileName="TempModelCreator.java" startLine="66" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="3340103645315010533" fileName="TempModelCreator.java" startLine="26" startPosition="42" endLine="34" endPosition="29">
+    <scopeInfo nodeId="3340103645315068097" fileName="TempModelCreator.java" startLine="52" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="3340103645315068133" fileName="TempModelCreator.java" startLine="67" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="3340103645315010533" fileName="TempModelCreator.java" startLine="27" startPosition="42" endLine="35" endPosition="29">
       <varInfo nodeId="3340103645315245998" varName="model" />
       <varInfo nodeId="3340103645315130098" varName="module" />
       <varInfo nodeId="3340103645315191379" varName="regModule" />
     </scopeInfo>
-    <scopeInfo nodeId="3340103645315010530" fileName="TempModelCreator.java" startLine="26" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="3340103645315080863" fileName="TempModelCreator.java" startLine="92" startPosition="59" endLine="108" endPosition="10" />
-    <scopeInfo nodeId="3340103645315080861" fileName="TempModelCreator.java" startLine="91" startPosition="0" endLine="110" endPosition="0" />
-    <unitInfo nodeId="3340103645315080867" fileName="TempModelCreator.java" startLine="93" startPosition="19" endLine="108" endPosition="9" unitName="jetbrains.mps.lang.typesystem.pluginSolution.plugin.TempModelCreator$1" />
-    <unitInfo nodeId="3340103645315068093" fileName="TempModelCreator.java" startLine="47" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.typesystem.pluginSolution.plugin.TempModelCreator$TempModule" />
-    <unitInfo nodeId="3340103645315080846" fileName="TempModelCreator.java" startLine="86" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.lang.typesystem.pluginSolution.plugin.TempModelCreator$AuxilaryRuntimeModel$AuxModelDescriptor" />
-    <unitInfo nodeId="3340103645315080827" fileName="TempModelCreator.java" startLine="75" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.lang.typesystem.pluginSolution.plugin.TempModelCreator$AuxilaryRuntimeModel" />
-    <unitInfo nodeId="3340103645315009208" fileName="TempModelCreator.java" startLine="25" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.lang.typesystem.pluginSolution.plugin.TempModelCreator" />
+    <scopeInfo nodeId="3340103645315010530" fileName="TempModelCreator.java" startLine="27" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="3340103645315080863" fileName="TempModelCreator.java" startLine="93" startPosition="59" endLine="109" endPosition="10" />
+    <scopeInfo nodeId="3340103645315080861" fileName="TempModelCreator.java" startLine="92" startPosition="0" endLine="111" endPosition="0" />
+    <unitInfo nodeId="3340103645315080867" fileName="TempModelCreator.java" startLine="94" startPosition="19" endLine="109" endPosition="9" unitName="jetbrains.mps.lang.typesystem.pluginSolution.plugin.TempModelCreator$1" />
+    <unitInfo nodeId="3340103645315068093" fileName="TempModelCreator.java" startLine="48" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.typesystem.pluginSolution.plugin.TempModelCreator$TempModule" />
+    <unitInfo nodeId="3340103645315080846" fileName="TempModelCreator.java" startLine="87" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.lang.typesystem.pluginSolution.plugin.TempModelCreator$AuxilaryRuntimeModel$AuxModelDescriptor" />
+    <unitInfo nodeId="3340103645315080827" fileName="TempModelCreator.java" startLine="76" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.lang.typesystem.pluginSolution.plugin.TempModelCreator$AuxilaryRuntimeModel" />
+    <unitInfo nodeId="3340103645315009208" fileName="TempModelCreator.java" startLine="26" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.lang.typesystem.pluginSolution.plugin.TempModelCreator" />
   </root>
   <root nodeRef="r:c4d60913-c4ac-4da1-b5c2-2281d3022e80(jetbrains.mps.lang.typesystem.pluginSolution.plugin)/5487985028841908585">
     <nodeInfo nodeId="5487985028841908585" fileName="TypesystemActions_ActionGroup.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />

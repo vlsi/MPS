@@ -65,6 +65,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodeUndoableAction" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleId" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode extendsClassName="jetbrains.mps.project.AbstractModule" />
     <classNode extendsClassName="jetbrains.mps.smodel.BaseSpecialModelDescriptor" />

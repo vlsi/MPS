@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="a4l5rl0yn7vvgq79k7mv584r3srtw1w">
+<dependencies version="2" modelHash="-86m4xhtvlstioashmhhc8qs9xul5lcn">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
@@ -33,7 +33,7 @@
     <file name="LibraryFolder_BehaviorDescriptor.java" />
     <file name="MPSBuild_BehaviorDescriptor.java" />
   </common>
-  <source id="1233155892819" name="MPSBuild_Behavior" hash="-dhgf59wln9mg9kcc04rm91xxwrky3m6">
+  <source id="1233155892819" name="MPSBuild_Behavior" hash="13ftlnww6ijc5455s5z9xj3auu8c4qz">
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
