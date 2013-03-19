@@ -4,6 +4,8 @@ package jetbrains.mps.debugger.core;
 
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.awt.Color;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import org.jetbrains.annotations.NotNull;
 import java.awt.Rectangle;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -15,7 +17,7 @@ import jetbrains.mps.nodeEditor.AdditionalPainter;
 import java.awt.Graphics;
 
 public class CurrentLinePainter extends DebuggerCellPainter<SNodeReference> {
-  private static final Color STRIPE_COLOR = new Color(0, 0, 255);
+  private static final Color STRIPE_COLOR = StyleRegistry.getInstance().getStyle("EXECUTIONPOINT").get(StyleAttributes.TEXT_BACKGROUND_COLOR);
   @NotNull
   private final SNodeReference myNodePointer;
   private boolean myInvisible = false;

@@ -145,6 +145,7 @@
     <classNode dependClassName="com.intellij.openapi.util.DimensionService" />
     <classNode dependClassName="com.intellij.openapi.util.Ref" />
     <classNode dependClassName="com.intellij.openapi.wm.WindowManager" />
+    <classNode dependClassName="com.intellij.ui.JBSplitter" />
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.Dimension" />
@@ -165,7 +166,6 @@
     <classNode dependClassName="javax.swing.Action" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JPanel" />
-    <classNode dependClassName="javax.swing.JSplitPane" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.extapi.model.EditableSModel" />
