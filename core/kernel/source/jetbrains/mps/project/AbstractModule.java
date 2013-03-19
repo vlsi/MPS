@@ -243,6 +243,17 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
     setChanged();
   }
 
+  public void removeDependency(@NotNull Dependency dependency) {
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor == null) return;
+    if (!descriptor.getDependencies().contains(dependency)) return;
+
+    descriptor.getDependencies().remove(dependency);
+
+    dependenciesChanged();
+    setChanged();
+  }
+
   @Override
   public void addUsedLanguage(ModuleReference langRef) {
     ModuleDescriptor descriptor = getModuleDescriptor();
@@ -255,6 +266,17 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
     setChanged();
   }
 
+  public void removeUsedLanguage(ModuleReference langRef) {
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor == null) return;
+    if (!descriptor.getUsedLanguages().contains(langRef)) return;
+
+    descriptor.getUsedLanguages().remove(langRef);
+
+    dependenciesChanged();
+    setChanged();
+  }
+
   @Override
   public void addUsedDevkit(ModuleReference devkitRef) {
     ModuleDescriptor descriptor = getModuleDescriptor();
@@ -262,6 +284,17 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
     if (descriptor.getUsedDevkits().contains(devkitRef)) return;
 
     descriptor.getUsedDevkits().add(devkitRef);
+
+    dependenciesChanged();
+    setChanged();
+  }
+
+  public void removeUsedDevkit(ModuleReference devkitRef) {
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor == null) return;
+    if (!descriptor.getUsedDevkits().contains(devkitRef)) return;
+
+    descriptor.getUsedDevkits().remove(devkitRef);
 
     dependenciesChanged();
     setChanged();
