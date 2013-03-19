@@ -723,7 +723,7 @@
     <nodeInfo nodeId="4362914091961465724" fileName="WriteHelper.java" startLine="36" startPosition="79" endLine="37" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4362914091961470109" fileName="WriteHelper.java" startLine="37" startPosition="64" endLine="38" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6145405523187768699" fileName="WriteHelper.java" startLine="42" startPosition="63" endLine="43" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4362914091961469997" fileName="WriteHelper.java" startLine="44" startPosition="5" endLine="45" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4362914091961469997" fileName="WriteHelper.java" startLine="44" startPosition="5" endLine="45" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4362914091961470033" fileName="WriteHelper.java" startLine="46" startPosition="63" endLine="47" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4362914091961470050" fileName="WriteHelper.java" startLine="48" startPosition="5" endLine="49" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4362914091961470060" fileName="WriteHelper.java" startLine="49" startPosition="56" endLine="50" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -765,7 +765,7 @@
     <nodeInfo nodeId="4362914091961470175" fileName="WriteHelper.java" startLine="192" startPosition="41" endLine="193" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4362914091961459500" fileName="WriteHelper.java" startLine="196" startPosition="0" endLine="197" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="6145405523187768680" fileName="WriteHelper.java" startLine="41" startPosition="65" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4362914091961470022" fileName="WriteHelper.java" startLine="45" startPosition="70" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="4362914091961470022" fileName="WriteHelper.java" startLine="45" startPosition="83" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="4362914091961470118" fileName="WriteHelper.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getImportIndex#(Lorg/jetbrains/mps/openapi/model/SModelReference;)Ljava/lang/String;" />
     <nodeInfo nodeId="7677978454736941185" fileName="WriteHelper.java" startLine="58" startPosition="89" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4362914091961470334" fileName="WriteHelper.java" startLine="73" startPosition="65" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
