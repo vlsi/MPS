@@ -97,7 +97,7 @@ public class QueriesGenerated {
             boolean tmpVar = true;
             tmpVar = tmpVar && _context.getChildConcept() != null;
 
-            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), SConceptOperations.createNewNode("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1", null), operationContext.getScope(), null);
+            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), SConceptOperations.createNewNode("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1", null), operationContext.getScope(), context);
             return (tmpVar ?
               _context.getParentNode() :
               _context.getParentNode()
