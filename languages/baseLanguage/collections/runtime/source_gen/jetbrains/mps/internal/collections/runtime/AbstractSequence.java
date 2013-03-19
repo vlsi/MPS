@@ -269,4 +269,20 @@ public abstract class AbstractSequence<T> implements ISequence<T>, Iterable<T> {
   public IEnumerator<T> enumerator() {
     return EnumeratorIterator.fromIterator(toIterable().iterator());
   }
+
+  @Override
+  public String toString() {
+    Iterable<T> iterable = toIterable();
+    if (iterable == null) {
+      return "null";
+    }
+    StringBuilder sb = new StringBuilder("[");
+    String sep = "";
+    for (T t : iterable) {
+      sb.append(sep).append(String.valueOf(t));
+      sep = ", ";
+    }
+    sb.append("]");
+    return sb.toString();
+  }
 }
