@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel.persistence.def.v7;
 
 import jetbrains.mps.smodel.SModelHeader;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.IHashProvider;
@@ -26,6 +25,7 @@ import jetbrains.mps.smodel.persistence.def.v6.ModelPersistence6;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.xml.XMLSAXHandler;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.util.Consumer;
 
 import java.util.List;
@@ -113,7 +113,7 @@ public class ModelPersistence7 extends ModelPersistence6 {
       int end = indexOfClosingQuote(chars, charsLength, offset);
       if (end > offset) {
         String modelRef = JDOMUtil.unescapeText(new String(chars, offset, end - offset));
-        consumer.consume(jetbrains.mps.smodel.SModelReference.fromString(modelRef).getModelName());
+        consumer.consume(PersistenceFacade.getInstance().createModelReference(modelRef).getModelName());
       }
     }
   }

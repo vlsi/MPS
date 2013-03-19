@@ -17,7 +17,6 @@ package jetbrains.mps.ide.components;
 
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.IScope;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jdom.Element;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -52,7 +51,7 @@ public class ComponentsUtil {
   public static SNode nodeFromElement(Element nodeElement, IScope scope) {
     String modelUID = nodeElement.getAttributeValue(MODEL);
     String id = nodeElement.getAttributeValue(ID);
-    SModel modelDescriptor = scope.getModelDescriptor(jetbrains.mps.smodel.SModelReference.fromString(modelUID));
+    SModel modelDescriptor = scope.resolve(PersistenceFacade.getInstance().createModelReference(modelUID));
     if (modelDescriptor == null) return null;
     SNodeId nodeId = PersistenceFacade.getInstance().createNodeId(id);
     assert nodeId != null : "wrong node id string";

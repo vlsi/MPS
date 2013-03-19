@@ -27,6 +27,7 @@ import jetbrains.mps.project.dependency.modules.ModuleDependenciesManager;
 import org.jetbrains.mps.openapi.module.SModuleReference;import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.project.structure.modules.mappingpriorities.*;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.*;
 
@@ -74,11 +75,6 @@ public class Generator extends AbstractModule {
 
   private boolean upgradeMappingConfigRef(MappingConfig_AbstractRef ref) {
     boolean descriptorChanged = false;
-    if (ref instanceof MappingConfig_SimpleRef) {
-      if (upgradeMappingConfigSimpleRef((MappingConfig_SimpleRef) ref)) {
-        descriptorChanged = true;
-      }
-    }
     if (ref instanceof MappingConfig_RefSet) {
       for (MappingConfig_AbstractRef simpleRef : ((MappingConfig_RefSet) ref).getMappingConfigs()) {
         if (upgradeMappingConfigRef(simpleRef)) {
@@ -91,19 +87,6 @@ public class Generator extends AbstractModule {
       if (upgradeMappingConfigRef(extRef.getMappingConfig())) {
         descriptorChanged = true;
       }
-    }
-    return descriptorChanged;
-  }
-
-  private boolean upgradeMappingConfigSimpleRef(MappingConfig_SimpleRef simpleRef) {
-    boolean descriptorChanged = false;
-    String s = simpleRef.getModelUID();
-    SModelReference modelReference = jetbrains.mps.smodel.SModelReference.fromString(s);
-    if (SModelStereotype.getStereotype(modelReference.getModelName()).equals(SModelStereotype.TEMPLATES)) {
-      modelReference = new jetbrains.mps.smodel.SModelReference(SModelStereotype.withoutStereotype(modelReference.getModelName()), SModelStereotype.GENERATOR);
-      s = modelReference.toString();
-      simpleRef.setModelUID(s);
-      descriptorChanged = true;
     }
     return descriptorChanged;
   }

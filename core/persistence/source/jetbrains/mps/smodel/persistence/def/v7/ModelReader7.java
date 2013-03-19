@@ -22,7 +22,6 @@ import jetbrains.mps.refactoring.StructureModificationProcessor;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelHeader;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.StaticReference;
@@ -36,9 +35,11 @@ import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.List;
 
@@ -57,7 +58,7 @@ public class ModelReader7 implements IModelReader {
   public DefaultSModel readModel(Document document, SModelHeader header) {
     Element rootElement = document.getRootElement();
 
-    SModelReference modelReference = jetbrains.mps.smodel.SModelReference.fromString(rootElement.getAttributeValue(ModelPersistence.MODEL_UID));
+    SModelReference modelReference = PersistenceFacade.getInstance().createModelReference(rootElement.getAttributeValue(ModelPersistence.MODEL_UID));
     DefaultSModel model = new DefaultSModel(modelReference);
     model.setPersistenceVersion(getVersion());
     model.getSModelHeader().updateDefaults(header);
@@ -106,7 +107,8 @@ public class ModelReader7 implements IModelReader {
       String indexValue = element.getAttributeValue(ModelPersistence.MODEL_IMPORT_INDEX);
       int usedModelVersion = Integer.parseInt(element.getAttributeValue(ModelPersistence.VERSION, "-1"));
       String importedModelUIDString = element.getAttributeValue(ModelPersistence.MODEL_UID);
-      myHelper.addImportToModel(model, indexValue, importedModelUIDString, usedModelVersion, element.getAttributeValue(ModelPersistence.IMPLICIT) != null);
+      myHelper.addImportToModel(model, indexValue, importedModelUIDString, usedModelVersion,
+          element.getAttributeValue(ModelPersistence.IMPLICIT) != null);
     }
 
     // roots

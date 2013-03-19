@@ -48,6 +48,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -104,7 +105,7 @@ public class GenerationFacade {
       Map<String, String> externalHashes = oldDependencies.getExternalHashes();
       for (Entry<String, String> entry : externalHashes.entrySet()) {
         String modelReference = entry.getKey();
-        SModel rmd = SModelRepository.getInstance().getModelDescriptor(jetbrains.mps.smodel.SModelReference.fromString(modelReference));
+        SModel rmd = SModelRepository.getInstance().getModelDescriptor(PersistenceFacade.getInstance().createModelReference(modelReference));
         if (rmd == null) {
           result.add(sm);
           break;

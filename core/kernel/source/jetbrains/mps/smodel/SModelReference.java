@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.ModuleId;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.SModelId.ModelNameSModelId;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.StringUtil;
@@ -198,7 +197,8 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
       }
     }
 
-    SModuleReference moduleRef = moduleId != null || moduleName != null ? new jetbrains.mps.project.structure.modules.ModuleReference(moduleName, moduleId) : null;
+    SModuleReference moduleRef =
+        moduleId != null || moduleName != null ? new jetbrains.mps.project.structure.modules.ModuleReference(moduleName, moduleId) : null;
     return new SModelReference(moduleRef, modelId, modelName);
   }
 

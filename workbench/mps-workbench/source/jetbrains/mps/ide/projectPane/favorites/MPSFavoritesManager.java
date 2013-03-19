@@ -27,6 +27,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -90,7 +91,7 @@ public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable
         if (modelRef != null) {
           final String nodeId = favoriteElement.getAttributeValue("node_pointer");
           if (nodeId == null) {
-            SModelReference modelReference = jetbrains.mps.smodel.SModelReference.fromString(modelRef);
+            SModelReference modelReference = PersistenceFacade.getInstance().createModelReference(modelRef);
             result.add(modelReference);
           } else {
             SNodeReference nodePointer = new jetbrains.mps.smodel.SNodePointer(modelRef, nodeId);

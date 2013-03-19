@@ -181,6 +181,10 @@ public class SModelRepository implements CoreComponent {
     }
   }
 
+  public SModel getModelDescriptor(SModelReference modelReference) {
+    return getModelDescriptor(modelReference.getModelId());
+  }
+
   public SModel getModelDescriptor(SModelId id) {
     SModel value = myIdToModelDescriptorMap.get(id);
     if (value == null && id instanceof ModelNameSModelId) {
@@ -199,11 +203,6 @@ public class SModelRepository implements CoreComponent {
       }
     }
     return result;
-  }
-
-  @Deprecated
-  public SModel getModelDescriptor(org.jetbrains.mps.openapi.model.SModelReference modelReference) {
-    return getModelDescriptor(modelReference.getModelId());
   }
 
   public List<SModel> getModelDescriptors(SModule module) {

@@ -29,6 +29,7 @@ import org.jdom.Element;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public class ReferencePersister4 implements IReferencePersister {
 
@@ -123,7 +124,7 @@ public class ReferencePersister4 implements IReferencePersister {
     SModelReference importedModelReference = model.getReference();
     if (myUseUIDs) {
       if (!myImportedModelInfo.equals("-1")) {
-        importedModelReference = jetbrains.mps.smodel.SModelReference.fromString(myImportedModelInfo);
+        importedModelReference = PersistenceFacade.getInstance().createModelReference(myImportedModelInfo);
       }
     } else if (getImportIndex() > -1) {
       if (myNotImported) {

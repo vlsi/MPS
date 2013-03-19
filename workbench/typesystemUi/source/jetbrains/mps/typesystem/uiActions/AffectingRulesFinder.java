@@ -22,17 +22,17 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.newTypesystem.context.typechecking.IncrementalTypechecking;
 import jetbrains.mps.progress.ProgressMonitor;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNodeId;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.DefaultTypecheckingContextOwner;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,7 +47,7 @@ public class AffectingRulesFinder implements IFinder {
     TypeContextManager manager = TypeContextManager.getInstance();
 
     TypeCheckingContext context = manager.acquireTypecheckingContext(root, owner);
-    try{
+    try {
       IncrementalTypechecking component = context.getBaseNodeTypesComponent();
       List<SearchResult<SNode>> rules = new ArrayList<SearchResult<SNode>>();
       if (component == null) return createResult(term, rules);
@@ -56,7 +56,7 @@ public class AffectingRulesFinder implements IFinder {
       if (rulesIds == null) return createResult(term, rules);
 
       for (Pair<String, String> ruleId : rulesIds) {
-        SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(jetbrains.mps.smodel.SModelReference.fromString(ruleId.o1));
+        SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(PersistenceFacade.getInstance().createModelReference(ruleId.o1));
         if (modelDescriptor == null) continue;
 
         SNodeId nodeId = SNodeId.fromString(ruleId.o2);
@@ -68,7 +68,7 @@ public class AffectingRulesFinder implements IFinder {
       }
       return createResult(term, rules);
     } finally {
-      manager.releaseTypecheckingContext(root,owner);
+      manager.releaseTypecheckingContext(root, owner);
     }
   }
 
