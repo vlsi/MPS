@@ -63,8 +63,8 @@ public final class ModuleReference implements SModuleReference {
   }
 
   @Override
-  public ModuleId getModuleId() {
-    return (ModuleId) myModuleId;
+  public SModuleId getModuleId() {
+    return myModuleId;
   }
 
   @Override
