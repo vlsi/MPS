@@ -61,5 +61,15 @@ do
      -e 's/SModelReference\.fromString(/jetbrains\.mps\.smodel\.SModelReference\.fromString(/g' \
      -e 's/SModelReference\.fromPath(/jetbrains\.mps\.smodel\.SModelReference\.fromPath(/g' \
      -e 's/new SModelReference(/new jetbrains\.mps\.smodel\.SModelReference(/g' \
+\
+     -e 's/import jetbrains\.mps\.project\.structure\.modules\.ModuleReference;/import org\.jetbrains\.mps\.openapi\.module\.SModuleReference;/g' \
+     -e 's/import jetbrains\.mps\.project\.structure\.modules\.\*;/import org\.jetbrains\.mps\.openapi\.module\.SModuleReference;import jetbrains\.mps\.project\.structure\.modules\.\*;/g' \
+     -e 's/package jetbrains\.mps\.project\.structure\.modules\.ModuleReference;/package jetbrains\.mps\.project\.structure\.modules\.ModuleReference;import org\.jetbrains\.mps\.openapi\.module\.SModuleReference;/g' \
+     -e 's/ModuleReference\.fromString(/jetbrains\.mps\.project\.structure\.modules\.ModuleReference\.fromString(/g' \
+     -e 's/ModuleReference\.create(/jetbrains\.mps\.project\.structure\.modules\.ModuleReference\.create(/g' \
+     -e 's/ModuleReference\.differs(/jetbrains\.mps\.project\.structure\.modules\.ModuleReference\.differs(/g' \
+     -e 's/ModuleReference\.update(/jetbrains\.mps\.project\.structure\.modules\.ModuleReference\.update(/g' \
+     -e 's/new ModuleReference(/new jetbrains\.mps\.project\.structure\.modules\.ModuleReference(/g' \
+     -e 's/\([^\.a-zA-Z]\)ModuleReference/\1SModuleReference/g' \
 $fl
 done
