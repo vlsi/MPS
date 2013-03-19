@@ -84,9 +84,6 @@ public interface IModule extends SModule {
    */
   Collection<ModuleReference> getUsedDevkitReferences();
 
-  // ?
-  void dispose();
-
   // module source path stuff
 
   // wtf? If it home for module descriptor just use module descriptor dir!
@@ -99,10 +96,10 @@ public interface IModule extends SModule {
   // !!! to be notice: 2 jars: src and compiled classes
 
   // ?, move to AbstractModule, remove usages as much as possible
-  IFile getDescriptorFile();
   // IFile getModuleRoot() <- clash with model root // to SModuleOperations / maybe SModule
   // IFile getModuleFolder() ?
   // use as much as possible
+  IFile getDescriptorFile();
 
   // cast to AbstractModule to use this methods
   void addDependency(SModuleReference moduleRef, boolean reexport);
@@ -115,7 +112,10 @@ public interface IModule extends SModule {
 
   void attach();
 
+  void dispose();
+
   // migrate by renaming
+
   /**
    * @see SModule#getModuleName
    */
@@ -129,6 +129,7 @@ public interface IModule extends SModule {
 
   /**
    * Two step migration: 1) IScope -> SearchScope 2) by rename
+   *
    * @see org.jetbrains.mps.openapi.module.SModule#getModuleScope()
    */
   @NotNull
@@ -147,6 +148,7 @@ public interface IModule extends SModule {
 
   /**
    * ??? bundle home == jar or folder with module sources. Meaningless stuff
+   *
    * @see jetbrains.mps.project.AbstractModule#getModuleSourceDir()
    * @see jetbrains.mps.project.AbstractModule#getDescriptorFile()
    */
@@ -154,6 +156,7 @@ public interface IModule extends SModule {
   IFile getBundleHome();
 
   // reload descriptor stuff, now all these methods need AbstractModule, for ConflictableModuleAdapter I think
+
   /**
    * @see SModuleOperations#needReloading(AbstractModule)
    */
@@ -214,6 +217,7 @@ public interface IModule extends SModule {
   /**
    * If you need just model: use root.createModel
    * If you need model with adjustments (auto imports, optimized imports, etc): use SModuleOperations#createModelWithAdjustments
+   *
    * @see SModuleOperations#createModelWithAdjustments(String, org.jetbrains.mps.openapi.persistence.ModelRoot)
    */
   @Deprecated

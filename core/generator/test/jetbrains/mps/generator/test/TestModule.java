@@ -68,10 +68,10 @@ public class TestModule extends AbstractModule {
   }
 
   private void clearAll() {
-    dependenciesChanged();
     myPeer = null;
     myModels.clear();
     myOriginalModels.clear();
+    dependenciesChanged();
   }
 
   private boolean isValidName(String longName, String stereotype) {

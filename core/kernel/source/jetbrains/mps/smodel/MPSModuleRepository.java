@@ -125,7 +125,7 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     invalidateCaches();
     for (IModule module : modulesToDispose) {
       fireModuleRemoved(module);
-      module.dispose();
+      ((AbstractModule) module).dispose();
       MPSClassesReloadManager.getInstance().requestReload();
     }
     if (repositoryChanged) {
@@ -140,7 +140,7 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     invalidateCaches();
     if (moduleRemoved) {
       fireModuleRemoved(module);
-      module.dispose();
+      ((AbstractModule) module).dispose();
     } else {
       fireRepositoryChanged();
     }
