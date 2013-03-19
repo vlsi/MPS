@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.core.xml.structure.StructureAspectDescriptor" />
-  <unitInfo fileName="Xml_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.core.xml.structure.Xml_Language" />
+  <unitInfo fileName="Xml_Language.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.core.xml.structure.Xml_Language" />
   <root nodeRef="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)/3374336260035925079">
     <nodeInfo nodeId="3374336260035925079" fileName="xmlEncoding_PropertySupport.java" startLine="8" startPosition="44" endLine="9" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3374336260035925079" fileName="xmlEncoding_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

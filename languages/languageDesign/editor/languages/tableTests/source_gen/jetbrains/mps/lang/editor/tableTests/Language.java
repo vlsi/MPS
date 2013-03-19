@@ -4,13 +4,14 @@ package jetbrains.mps.lang.editor.tableTests;
 
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModule;
 
 public class Language extends LanguageRuntime {
-  public static SModuleReference MODULE_REFERENCE = jetbrains.mps.project.structure.modules.ModuleReference.fromString("df8799e7-254a-406f-bd67-f4cc27337152(jetbrains.mps.lang.editor.tableTests)");
+  public static SModuleReference MODULE_REFERENCE = ModuleReference.fromString("df8799e7-254a-406f-bd67-f4cc27337152(jetbrains.mps.lang.editor.tableTests)");
 
   public Language() {
 

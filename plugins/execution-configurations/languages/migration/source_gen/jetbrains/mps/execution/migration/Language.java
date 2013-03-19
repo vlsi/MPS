@@ -4,13 +4,14 @@ package jetbrains.mps.execution.migration;
 
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModule;
 
 public class Language extends LanguageRuntime {
-  public static SModuleReference MODULE_REFERENCE = jetbrains.mps.project.structure.modules.ModuleReference.fromString("92f5dc44-466d-4972-9f92-b03994f153c4(jetbrains.mps.execution.migration)");
+  public static SModuleReference MODULE_REFERENCE = ModuleReference.fromString("92f5dc44-466d-4972-9f92-b03994f153c4(jetbrains.mps.execution.migration)");
 
   public Language() {
 

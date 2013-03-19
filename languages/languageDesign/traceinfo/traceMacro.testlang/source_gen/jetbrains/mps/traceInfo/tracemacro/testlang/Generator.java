@@ -4,6 +4,7 @@ package jetbrains.mps.traceInfo.tracemacro.testlang;
 
 import jetbrains.mps.generator.runtime.TemplateModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
@@ -12,7 +13,7 @@ import jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main.Templ
 import jetbrains.mps.smodel.language.LanguageRuntime;
 
 public class Generator implements TemplateModule {
-  public static SModuleReference MODULE_REFERENCE = jetbrains.mps.project.structure.modules.ModuleReference.fromString("791a790e-6d6d-4aa8-8917-3b269a164450(jetbrains.mps.traceInfo.tracemacro.testlang#7980748436587788163)");
+  public static SModuleReference MODULE_REFERENCE = ModuleReference.fromString("791a790e-6d6d-4aa8-8917-3b269a164450(jetbrains.mps.traceInfo.tracemacro.testlang#7980748436587788163)");
   private Language sourceLanguage;
   private final Collection<TemplateMappingPriorityRule> priorities;
   private final Collection<TemplateModel> models;

@@ -4,6 +4,7 @@ package jetbrains.mps.calculator;
 
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.calculator.typesystem.TypesystemDescriptor;
 import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
@@ -12,7 +13,7 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class Language extends LanguageRuntime {
-  public static SModuleReference MODULE_REFERENCE = jetbrains.mps.project.structure.modules.ModuleReference.fromString("26b3d6d5-b99a-4ed6-83be-d2ea6f3627a1(jetbrains.mps.calculator)");
+  public static SModuleReference MODULE_REFERENCE = ModuleReference.fromString("26b3d6d5-b99a-4ed6-83be-d2ea6f3627a1(jetbrains.mps.calculator)");
 
   public Language() {
 

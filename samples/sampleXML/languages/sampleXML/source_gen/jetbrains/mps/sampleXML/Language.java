@@ -4,6 +4,7 @@ package jetbrains.mps.sampleXML;
 
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
 import java.util.Collection;
@@ -11,7 +12,7 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class Language extends LanguageRuntime {
-  public static SModuleReference MODULE_REFERENCE = jetbrains.mps.project.structure.modules.ModuleReference.fromString("772f6dcd-8c0d-48f7-869c-908e036f7c8e(jetbrains.mps.sampleXML)");
+  public static SModuleReference MODULE_REFERENCE = ModuleReference.fromString("772f6dcd-8c0d-48f7-869c-908e036f7c8e(jetbrains.mps.sampleXML)");
 
   public Language() {
 

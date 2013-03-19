@@ -4,6 +4,7 @@ package jetbrains.mps.core.xml;
 
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
 import java.util.Collection;
@@ -11,7 +12,7 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class Language extends LanguageRuntime {
-  public static SModuleReference MODULE_REFERENCE = jetbrains.mps.project.structure.modules.ModuleReference.fromString("479c7a8c-02f9-43b5-9139-d910cb22f298(jetbrains.mps.core.xml)");
+  public static SModuleReference MODULE_REFERENCE = ModuleReference.fromString("479c7a8c-02f9-43b5-9139-d910cb22f298(jetbrains.mps.core.xml)");
 
   public Language() {
 

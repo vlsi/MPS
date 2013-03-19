@@ -4,6 +4,7 @@ package jetbrains.mps.make.outlook;
 
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
 import java.util.Collection;
@@ -11,7 +12,7 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class Language extends LanguageRuntime {
-  public static SModuleReference MODULE_REFERENCE = jetbrains.mps.project.structure.modules.ModuleReference.fromString("dc54e1b2-86b3-49d2-9014-a76af17af22a(jetbrains.mps.make.outlook)");
+  public static SModuleReference MODULE_REFERENCE = ModuleReference.fromString("dc54e1b2-86b3-49d2-9014-a76af17af22a(jetbrains.mps.make.outlook)");
 
   public Language() {
 

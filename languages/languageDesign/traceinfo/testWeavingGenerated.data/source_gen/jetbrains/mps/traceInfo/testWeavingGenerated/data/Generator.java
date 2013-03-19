@@ -4,6 +4,7 @@ package jetbrains.mps.traceInfo.testWeavingGenerated.data;
 
 import jetbrains.mps.generator.runtime.TemplateModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateUtil;
@@ -12,7 +13,7 @@ import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 
 public class Generator implements TemplateModule {
-  public static SModuleReference MODULE_REFERENCE = jetbrains.mps.project.structure.modules.ModuleReference.fromString("5cb70574-4ffb-4146-9211-dc924a83cfac(jetbrains.mps.traceInfo.testWeavingGenerated.data#6186432342008486849)");
+  public static SModuleReference MODULE_REFERENCE = ModuleReference.fromString("5cb70574-4ffb-4146-9211-dc924a83cfac(jetbrains.mps.traceInfo.testWeavingGenerated.data#6186432342008486849)");
   private Language sourceLanguage;
   private final Collection<TemplateModel> models;
   private Collection<String> usedLanguages;

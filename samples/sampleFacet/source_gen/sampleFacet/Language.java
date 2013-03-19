@@ -4,13 +4,14 @@ package sampleFacet;
 
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModule;
 
 public class Language extends LanguageRuntime {
-  public static SModuleReference MODULE_REFERENCE = jetbrains.mps.project.structure.modules.ModuleReference.fromString("411cfb96-468d-4c3f-accc-a13ad135b216(sampleFacet)");
+  public static SModuleReference MODULE_REFERENCE = ModuleReference.fromString("411cfb96-468d-4c3f-accc-a13ad135b216(sampleFacet)");
 
   public Language() {
 

@@ -4,6 +4,7 @@ package jetbrains.mps.lang.findUsages;
 
 import jetbrains.mps.generator.runtime.TemplateModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
@@ -12,7 +13,7 @@ import jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main.Templa
 import jetbrains.mps.smodel.language.LanguageRuntime;
 
 public class Generator implements TemplateModule {
-  public static SModuleReference MODULE_REFERENCE = jetbrains.mps.project.structure.modules.ModuleReference.fromString("1759b4cc-455d-49b4-a360-8baf1f5f8bab(jetbrains.mps.lang.findUsages#1197044805809)");
+  public static SModuleReference MODULE_REFERENCE = ModuleReference.fromString("1759b4cc-455d-49b4-a360-8baf1f5f8bab(jetbrains.mps.lang.findUsages#1197044805809)");
   private Language sourceLanguage;
   private final Collection<TemplateMappingPriorityRule> priorities;
   private final Collection<TemplateModel> models;
