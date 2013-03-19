@@ -92,10 +92,7 @@ public class NodesReader {
       SNodeId targetNodeId = kind == 1 ? readTargetNodeId(is) : null;
       DynamicReferenceOrigin origin = kind == 3 ? new DynamicReferenceOrigin(is.readNodePointer(), is.readNodePointer()) : null;
       String role = is.readString();
-      SModelReference modelRef = is.readByte() == 18 ? is.readModelReference() : null;
-      if (modelRef == null) {
-        modelRef = myModelReference;
-      }
+      SModelReference modelRef = is.readByte() == 18 ? is.readModelReference() : myModelReference;
       String resolveInfo = is.readString();
       if (kind == 1) {
         SReference reference = new StaticReference(
