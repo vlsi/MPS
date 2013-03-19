@@ -8,7 +8,7 @@ import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.impl.NullMapSequence;
 
 public class MapSequence<U, V> extends AbstractMapSequence<U, V> implements IMapSequence<U, V>, Map<U, V>, Serializable {
-  private static final long serialVersionUID = 4362668497945620393L;
+  private static final long serialVersionUID = -3900727585622019317L;
 
   protected MapSequence(Map<U, V> map) {
     super(map);

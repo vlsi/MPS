@@ -9,7 +9,7 @@ import java.util.TreeMap;
 import jetbrains.mps.internal.collections.runtime.impl.NullSortedMapSequence;
 
 public class SortedMapSequence<U, V> extends AbstractMapSequence<U, V> implements ISortedMapSequence<U, V>, SortedMap<U, V>, Serializable {
-  private static final long serialVersionUID = -829873362463757916L;
+  private static final long serialVersionUID = 4148607188257567855L;
 
   protected SortedMapSequence(SortedMap<U, V> map) {
     super(map);

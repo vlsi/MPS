@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Arrays;
 
 public abstract class CollectionSequence<T> extends AbstractCollectionSequence<T> implements ICollectionSequence<T>, Collection<T>, Serializable {
-  private static final long serialVersionUID = -195412084368027561L;
+  private static final long serialVersionUID = -5323571231659062625L;
 
   protected CollectionSequence() {
   }

@@ -12,7 +12,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 public class SetSequence<T> extends AbstractSetSequence<T> implements ISetSequence<T>, Set<T>, Serializable {
-  private static final long serialVersionUID = -5489490742621116508L;
+  private static final long serialVersionUID = 541380543157727748L;
 
   protected SetSequence(Set<T> set) {
     super(set);

@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Arrays;
 
 public class QueueSequence<T> extends AbstractQueueSequence<T> implements Queue<T>, IQueueSequence<T>, Serializable {
-  private static final long serialVersionUID = -7304432472048720900L;
+  private static final long serialVersionUID = 4639602987002419231L;
 
   protected QueueSequence(Queue<T> queue) {
     super(queue);

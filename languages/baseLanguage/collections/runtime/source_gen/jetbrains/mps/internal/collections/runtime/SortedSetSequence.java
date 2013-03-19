@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 public class SortedSetSequence<T> extends AbstractSetSequence<T> implements ISortedSetSequence<T>, SortedSet<T>, Serializable {
-  private static final long serialVersionUID = -1048576263715753714L;
+  private static final long serialVersionUID = 5639537706255994099L;
 
   protected SortedSetSequence(SortedSet<T> set) {
     super(set);
