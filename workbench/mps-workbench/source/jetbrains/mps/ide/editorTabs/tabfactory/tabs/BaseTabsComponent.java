@@ -23,9 +23,11 @@ import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.impl.ActionButton;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.extensions.Extensions;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.FileStatusListener;
 import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.wm.IdeFocusManager;
 import gnu.trove.THashMap;
 import jetbrains.mps.ide.editorTabs.TabColorProvider;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
@@ -56,6 +58,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.MouseAdapter;
@@ -163,7 +166,16 @@ public abstract class BaseTabsComponent implements TabsComponent {
   protected void enterCreateMode(RelationDescriptor tab) {
     setLastNode(null);
     if (myCreateModeCallback != null) {
-      myCreateModeCallback.enterCreateMode(new CreatePanel(tab));
+      final CreatePanel cp = new CreatePanel(tab);
+      myCreateModeCallback.enterCreateMode(cp);
+      final Project ipr = ProjectHelper.toIdeaProject(myOperationContext.getProject());
+      final IdeFocusManager fm = IdeFocusManager.getInstance(ipr);
+      fm.doWhenFocusSettlesDown(new Runnable() {
+        @Override
+        public void run() {
+          fm.requestFocus(cp, false);
+        }
+      });
     }
   }
 
