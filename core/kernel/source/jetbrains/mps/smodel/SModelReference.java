@@ -163,8 +163,16 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
     }
 
     String modelIDString = StringUtil.unescapeRefChars(s);
-    SModelId modelId =
-        modelIDString.indexOf(':') >= 0 ? PersistenceFacade.getInstance().createModelId(modelIDString) : new ModelNameSModelId(modelIDString);
+    SModelId modelId;
+    if (modelIDString.indexOf(':') >= 0) {
+      PersistenceFacade facade = PersistenceFacade.getInstance();
+      // temporary: SModelReference can be created without active PersistenceFacade
+      modelId = facade != null
+          ? facade.createModelId(modelIDString)
+          : jetbrains.mps.smodel.SModelId.fromString(modelIDString);
+    } else {
+      modelId = new ModelNameSModelId(modelIDString);
+    }
 
     // miration, do we need it anymore?
     SModelId nid = StubMigrationHelper.convertModelId(modelId, false);
@@ -245,7 +253,8 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
   public boolean differs(SModelReference that) {
     if (!myModelId.equals(that.myModelId)) return true;
     if (!myModelName.equals(that.myModelName)) return true;
-    if (myModuleReference != null ? !myModuleReference.equals(that.myModuleReference) : that.myModuleReference != null) return true;
+    // TODO add
+    //if (myModuleReference != null ? !myModuleReference.equals(that.myModuleReference) : that.myModuleReference != null) return true;
     return false;
   }
 
