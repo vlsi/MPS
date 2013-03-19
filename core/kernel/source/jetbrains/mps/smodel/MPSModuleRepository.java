@@ -13,7 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
+package jetbrains.mps.smodel;
+
+import jetbrains.mps.project.AbstractModule;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.classloading.MPSClassesReloadManager;
@@ -98,7 +101,7 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     myModules.add(module);
 
     module.setRepository(this);
-    module.attach();
+    ((AbstractModule) module).attach();
     myModuleToOwners.addLink(module, owner);
     invalidateCaches();
     fireModuleAdded(module);

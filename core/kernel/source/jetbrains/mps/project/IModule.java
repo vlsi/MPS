@@ -85,12 +85,6 @@ public interface IModule extends SModule {
   Collection<ModuleReference> getUsedDevkitReferences();
 
   // ?
-  // btw onModuleRegistered
-  // setRepository I think
-  // change on custom addModuleAdded listener
-  void attach();
-
-  // ?
   void dispose();
 
   // module source path stuff
@@ -118,6 +112,8 @@ public interface IModule extends SModule {
   void addUsedDevkit(ModuleReference devkitRef);
 
   void onModuleLoad();
+
+  void attach();
 
   // migrate by renaming
   /**
