@@ -96,7 +96,11 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     if (myLanguageDescriptor.getExtendedLanguages().contains(langRef)) return;
     LanguageDescriptor moduleDescriptor = getModuleDescriptor();
     moduleDescriptor.getExtendedLanguages().add(langRef);
-    setModuleDescriptor(moduleDescriptor, true);
+
+    dependenciesChanged();
+    setChanged();
+
+    MPSModuleRepository.getInstance().fireModuleChanged(this);
   }
 
   public Set<ModuleReference> getExtendedLanguageRefs() {
