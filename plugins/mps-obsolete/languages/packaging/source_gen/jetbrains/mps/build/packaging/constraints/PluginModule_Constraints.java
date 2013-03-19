@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.build.packaging.behavior.PluginModule_Behavior;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.build.packaging.behavior.Module_Behavior;
-import jetbrains.mps.project.ModuleId;
+import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public class PluginModule_Constraints extends BaseConstraintsDescriptor {
@@ -68,14 +68,14 @@ public class PluginModule_Constraints extends BaseConstraintsDescriptor {
     return properties;
   }
 
-  private static String check_icnu7v_a0a0b(ModuleId checkedDotOperand) {
+  private static String check_icnu7v_a0a0b(SModuleId checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.toString();
     }
     return null;
   }
 
-  private static ModuleId check_icnu7v_a0a0a1(SModuleReference checkedDotOperand) {
+  private static SModuleId check_icnu7v_a0a0a1(SModuleReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModuleId();
     }
