@@ -22,6 +22,7 @@ import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.annotation.ImmutableObject;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
@@ -42,10 +43,10 @@ public final class ModuleReference implements SModuleReference {
   }
 
   private final String myModuleName;
-  private final ModuleId myModuleId;
+  private final SModuleId myModuleId;
 
   public ModuleReference(String moduleName) {
-    this(moduleName, (ModuleId) null);
+    this(moduleName, (SModuleId) null);
   }
 
   @Deprecated
@@ -53,14 +54,14 @@ public final class ModuleReference implements SModuleReference {
     this(moduleName, ModuleId.fromString(moduleId));
   }
 
-  public ModuleReference(String moduleName, ModuleId moduleId) {
+  public ModuleReference(String moduleName, SModuleId moduleId) {
     myModuleName = InternUtil.intern(moduleName);
     myModuleId = moduleId;
   }
 
   @Override
   public ModuleId getModuleId() {
-    return myModuleId;
+    return (ModuleId) myModuleId;
   }
 
   @NotNull
@@ -80,11 +81,11 @@ public final class ModuleReference implements SModuleReference {
   }
 
   public boolean equals(Object obj) {
-    if (!(obj instanceof ModuleReference)) return false;
-    ModuleReference p = (ModuleReference) obj;
+    if (!(obj instanceof SModuleReference)) return false;
+    SModuleReference p = (SModuleReference) obj;
 
-    if (myModuleId == null && p.myModuleId == null) return myModuleName.equals(p.myModuleName);
-    return EqualUtil.equals(myModuleId, p.myModuleId);
+    if (myModuleId == null && p.getModuleId() == null) return myModuleName.equals(p.getModuleName());
+    return EqualUtil.equals(myModuleId, p.getModuleId());
   }
 
   public String toString() {
