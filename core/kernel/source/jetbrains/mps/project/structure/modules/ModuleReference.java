@@ -67,10 +67,6 @@ public final class ModuleReference implements SModuleReference {
     return (ModuleId) myModuleId;
   }
 
-  public boolean differs(SModuleReference ref) {
-    return !(EqualUtil.equals(myModuleName, ref.getModuleName()) && EqualUtil.equals(myModuleId, ref.getModuleId()));
-  }
-
   public int hashCode() {
     if (myModuleId != null) return myModuleId.hashCode();
     return myModuleName.hashCode();
@@ -107,6 +103,20 @@ public final class ModuleReference implements SModuleReference {
     return module.getModuleReference();
   }
 
+  public static boolean differs(SModuleReference ref1, SModuleReference ref2) {
+    // todo: move method somewhere?
+    // ref1 == null
+    if (ref1 == null) {
+      return ref2 != null;
+    }
+    // ref2 == null
+    if (ref2 == null) {
+      return true;
+    }
+    // both not null
+    return !(EqualUtil.equals(ref1.getModuleId(), ref2.getModuleId()) && EqualUtil.equals(ref1.getModuleName(), ref2.getModuleName()));
+  }
+
   public static SModuleReference create(String moduleName, SRepository repository) {
     // todo: ? use SRepository?
     SModuleReference ref = new ModuleReference(moduleName);
@@ -124,6 +134,11 @@ public final class ModuleReference implements SModuleReference {
   @NotNull
   public ModuleReference update() {
     return (ModuleReference) update(this);
+  }
+
+  @Deprecated
+  public boolean differs(SModuleReference ref) {
+    return differs(this, ref);
   }
 }
 

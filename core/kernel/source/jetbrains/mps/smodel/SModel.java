@@ -981,7 +981,7 @@ public class SModel implements SModelData {
       if (module != null) {
         ModuleReference newRef = module.getModuleReference();
         refs.set(i, newRef);
-        changed = changed || ref.differs(newRef);
+        changed = changed || ModuleReference.differs(ref, newRef);
       }
     }
     return changed;

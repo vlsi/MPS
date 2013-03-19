@@ -48,7 +48,7 @@ public class RefUpdateUtil {
 
     for (ModuleReference ref : refs) {
       SModuleReference newRef = ModuleReference.update(ref);
-      if (ref.differs(newRef)) {
+      if (ModuleReference.differs(ref, newRef)) {
         remove.add(ref);
         add.add((ModuleReference) newRef);
       }
@@ -65,7 +65,7 @@ public class RefUpdateUtil {
     for (Dependency dep : deps) {
       ModuleReference ref = dep.getModuleRef();
       @NotNull SModuleReference newRef = ModuleReference.update(ref);
-      if (ref.differs(newRef)) {
+      if (ModuleReference.differs(ref, newRef)) {
         changed = true;
         dep.setModuleRef((ModuleReference) newRef);
       }
