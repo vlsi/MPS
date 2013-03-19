@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelOperations;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.persistence.def.DocUtil;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
@@ -30,11 +29,11 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.VisibleModelElements;
 import org.jdom.Document;
 import org.jdom.Element;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 public class ModelWriter4 implements IModelWriter {
@@ -173,9 +172,7 @@ public class ModelWriter4 implements IModelWriter {
     element.setAttribute(ModelPersistence.ID, node.getNodeId().toString());
 
     // properties ...
-    Map<String, String> properties = jetbrains.mps.util.SNodeOperations.getProperties(node);
-    Set<String> keys = properties.keySet();
-    for (String propertyName : keys) {
+    for (String propertyName : node.getPropertyNames()) {
       Element propertyElement = new Element(ModelPersistence.PROPERTY);
       element.addContent(propertyElement);
       propertyElement.setAttribute(ModelPersistence.NAME, VersionUtil.formVersionedString(propertyName, modelVersion));

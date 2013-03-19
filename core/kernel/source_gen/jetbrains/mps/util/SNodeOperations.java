@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import java.util.Map;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -77,7 +77,7 @@ public class SNodeOperations {
   }
 
   public static Map<String, String> getProperties(SNode node) {
-    Map<String, String> result = new HashMap<String, String>();
+    Map<String, String> result = new LinkedHashMap<String, String>();
     for (String name : Sequence.fromIterable(node.getPropertyNames())) {
       result.put(name, node.getProperty(name));
     }

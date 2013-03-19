@@ -109,7 +109,7 @@ public class ModelWriter6 implements IModelWriter {
     //DocUtil.setNotNullAttribute(element, ModelPersistence.TYPE_ID, myHelper.genTypeId(node));
     element.setAttribute(ModelPersistence.ID, node.getNodeId().toString());
 
-    for (String propertyName : jetbrains.mps.util.SNodeOperations.getProperties(node).keySet()) {
+    for (String propertyName : node.getPropertyNames()) {
       Element propertyElement = new Element(ModelPersistence.PROPERTY);
       propertyElement.setAttribute(ModelPersistence.NAME, myHelper.genName(node, propertyName));
       //DocUtil.setNotNullAttribute(propertyElement, ModelPersistence.NAME_ID, myHelper.genNameId(node, propertyName));
