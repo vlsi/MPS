@@ -32,7 +32,7 @@ import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.StubSolution;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleFileTracker;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -51,7 +51,7 @@ public class ModuleLibrariesUtil {
   public static final String LIBRARY_PREFIX = "mps.";
 
   @NotNull
-  public static Collection<Library> getLibraries(ModuleReference reference, Project project) {
+  public static Collection<Library> getLibraries(SModuleReference reference, Project project) {
     Set<Library> libraries = new HashSet<Library>();
     for (Library library : ProjectLibraryTable.getInstance(project).getLibraries()) {
       if (hasModule(library, reference)) {
@@ -61,7 +61,7 @@ public class ModuleLibrariesUtil {
     return libraries;
   }
 
-  private static boolean hasModule(Library library, ModuleReference reference) {
+  private static boolean hasModule(Library library, SModuleReference reference) {
     IModule module = ModuleRepositoryFacade.getInstance().getModule(reference);
     return hasModule(library, module);
   }
@@ -79,11 +79,11 @@ public class ModuleLibrariesUtil {
   }
 
   @NotNull
-  public static Set<ModuleReference> getModules(final Library library) {
+  public static Set<SModuleReference> getModules(final Library library) {
     if (!ModuleLibraryType.isModuleLibrary(library)) {
       return Collections.emptySet();
     }
-    final Set<ModuleReference> modules = new HashSet<ModuleReference>();
+    final Set<SModuleReference> modules = new HashSet<SModuleReference>();
     final Set<IFile> moduleXmls = new HashSet<IFile>();
     for (VirtualFile file : library.getFiles(ModuleXmlRootDetector.MPS_MODULE_XML)) {
       moduleXmls.add(VirtualFileUtils.toIFile(file));
@@ -102,8 +102,8 @@ public class ModuleLibrariesUtil {
     return modules;
   }
 
-  public static Set<ModuleReference> getModules(OrderEntry... roots) {
-    Set<ModuleReference> modules = new HashSet<ModuleReference>();
+  public static Set<SModuleReference> getModules(OrderEntry... roots) {
+    Set<SModuleReference> modules = new HashSet<SModuleReference>();
     for (OrderEntry entry : roots) {
       if (entry instanceof LibraryOrderEntry) {
         modules.addAll(ModuleLibrariesUtil.getModules(((LibraryOrderEntry) entry).getLibrary()));
@@ -127,7 +127,7 @@ public class ModuleLibrariesUtil {
   }
 
   @Nullable
-  private static Library getAutoLibrary(ModuleReference reference, Project project) {
+  private static Library getAutoLibrary(SModuleReference reference, Project project) {
     String libraryName = LIBRARY_PREFIX + reference.getModuleFqName() + AUTO_SUFFIX;
     for (Library lib : ModuleLibrariesUtil.getLibraries(reference, project)) {
       if (lib.getName().equals(libraryName)) {

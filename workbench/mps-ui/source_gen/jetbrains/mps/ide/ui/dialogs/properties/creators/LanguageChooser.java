@@ -4,7 +4,7 @@ package jetbrains.mps.ide.ui.dialogs.properties.creators;
 
 import jetbrains.mps.util.Computable;
 import java.util.List;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.Language;
@@ -13,18 +13,18 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
 
-public class LanguageChooser implements Computable<List<ModuleReference>> {
+public class LanguageChooser implements Computable<List<SModuleReference>> {
   public LanguageChooser() {
   }
 
   @Override
-  public List<ModuleReference> compute() {
-    final Wrappers._T<List<ModuleReference>> langRefs = new Wrappers._T<List<ModuleReference>>();
+  public List<SModuleReference> compute() {
+    final Wrappers._T<List<SModuleReference>> langRefs = new Wrappers._T<List<SModuleReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         Iterable<Language> langs = new FilteredGlobalScope().getVisibleLanguages();
-        langRefs.value = Sequence.fromIterable(langs).select(new ISelector<Language, ModuleReference>() {
-          public ModuleReference select(Language lang) {
+        langRefs.value = Sequence.fromIterable(langs).select(new ISelector<Language, SModuleReference>() {
+          public SModuleReference select(Language lang) {
             return lang.getModuleReference();
           }
         }).toListSequence();

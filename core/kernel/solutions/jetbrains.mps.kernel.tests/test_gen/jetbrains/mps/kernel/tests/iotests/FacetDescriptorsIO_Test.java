@@ -19,7 +19,7 @@ import java.io.IOException;
 import org.jdom.JDOMException;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 
 public class FacetDescriptorsIO_Test extends TestCase {
@@ -84,7 +84,7 @@ public class FacetDescriptorsIO_Test extends TestCase {
     Assert.assertSame(1, mpsCfg.rootDescriptors.length);
     Assert.assertEquals("$MODULE_DIR$/models", mpsCfg.rootDescriptors[0].getMemento().get("contentPath"));
     Assert.assertSame(1, mpsCfg.usedLanguages.length);
-    Assert.assertEquals(ModuleId.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"), ModuleReference.fromString(mpsCfg.usedLanguages[0]).getModuleId());
+    Assert.assertEquals(ModuleId.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"), jetbrains.mps.project.structure.modules.ModuleReference.fromString(mpsCfg.usedLanguages[0]).getModuleId());
   }
 
   private void assertSolutionDescriptor(IFile moduleFile, SolutionDescriptor sd) {
@@ -93,6 +93,6 @@ public class FacetDescriptorsIO_Test extends TestCase {
     Assert.assertSame(1, sd.getModelRootDescriptors().size());
     Assert.assertEquals(moduleFile.getParent().getDescendant("models").getPath(), Sequence.fromIterable(((Iterable<ModelRootDescriptor>) sd.getModelRootDescriptors())).first().getMemento().get("contentPath"));
     Assert.assertSame(1, sd.getUsedLanguages().size());
-    Assert.assertEquals(ModuleId.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"), Sequence.fromIterable(((Iterable<ModuleReference>) sd.getUsedLanguages())).first().getModuleId());
+    Assert.assertEquals(ModuleId.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"), Sequence.fromIterable(((Iterable<SModuleReference>) sd.getUsedLanguages())).first().getModuleId());
   }
 }

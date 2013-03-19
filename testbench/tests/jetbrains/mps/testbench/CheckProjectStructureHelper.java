@@ -33,7 +33,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.StandaloneMPSProject;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.project.validation.ModelValidator;
 import jetbrains.mps.project.validation.ModuleValidatorFactory;
@@ -102,7 +102,7 @@ public class CheckProjectStructureHelper {
   }
 
   public List<String> check(ModulesMiner.ModuleHandle moduleHandle) {
-    ModuleReference moduleReference = moduleHandle.getDescriptor().getModuleReference();
+    SModuleReference moduleReference = moduleHandle.getDescriptor().getModuleReference();
     IModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
     assertNotNull("module " + moduleHandle.getFile().getPath() + " was not loaded", module);
 
@@ -112,7 +112,7 @@ public class CheckProjectStructureHelper {
   }
 
   public List<String> checkStructure(ModulesMiner.ModuleHandle moduleHandle) {
-    ModuleReference moduleReference = moduleHandle.getDescriptor().getModuleReference();
+    SModuleReference moduleReference = moduleHandle.getDescriptor().getModuleReference();
     IModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
     assertNotNull("module " + moduleHandle.getFile().getPath() + " was not loaded", module);
 
@@ -122,7 +122,7 @@ public class CheckProjectStructureHelper {
   }
 
   public List<String> checkGenerationStatus(ModulesMiner.ModuleHandle moduleHandle) {
-    ModuleReference moduleReference = moduleHandle.getDescriptor().getModuleReference();
+    SModuleReference moduleReference = moduleHandle.getDescriptor().getModuleReference();
     SModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
     assertNotNull("module " + moduleHandle.getFile().getPath() + " was not loaded", module);
 
@@ -132,7 +132,7 @@ public class CheckProjectStructureHelper {
   }
 
   public List<String> checkModule(ModulesMiner.ModuleHandle moduleHandle) {
-    ModuleReference moduleReference = moduleHandle.getDescriptor().getModuleReference();
+    SModuleReference moduleReference = moduleHandle.getDescriptor().getModuleReference();
     IModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
     assertNotNull("module " + moduleHandle.getFile().getPath() + " was not loaded", module);
 
@@ -146,7 +146,7 @@ public class CheckProjectStructureHelper {
   }
 
   public List<String> checkTypeSystem(ModulesMiner.ModuleHandle moduleHandle) {
-    ModuleReference moduleReference = moduleHandle.getDescriptor().getModuleReference();
+    SModuleReference moduleReference = moduleHandle.getDescriptor().getModuleReference();
     IModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
     assertNotNull("module " + moduleHandle.getFile().getPath() + " was not loaded", module);
 
@@ -155,7 +155,7 @@ public class CheckProjectStructureHelper {
   }
 
   public List<String> checkConstraints(ModulesMiner.ModuleHandle moduleHandle) {
-    ModuleReference moduleReference = moduleHandle.getDescriptor().getModuleReference();
+    SModuleReference moduleReference = moduleHandle.getDescriptor().getModuleReference();
     IModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
     assertNotNull("module " + moduleHandle.getFile().getPath() + " was not loaded", module);
 

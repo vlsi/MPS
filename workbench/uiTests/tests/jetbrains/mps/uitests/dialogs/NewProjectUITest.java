@@ -17,7 +17,7 @@ package jetbrains.mps.uitests.dialogs;
 
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.uitests.dialogs.UITestsBase.NoProjectUITestsBase;
 import jetbrains.mps.util.EqualUtil;
@@ -76,9 +76,9 @@ public class NewProjectUITest extends NoProjectUITestsBase {
 
     Solution solution = ps.get(0);
     Language language = pl.get(0);
-    Collection<ModuleReference> languages = solution.getModuleDescriptor().getUsedLanguages();
+    Collection<SModuleReference> languages = solution.getModuleDescriptor().getUsedLanguages();
     boolean imported = false;
-    for (ModuleReference langRef : languages) {
+    for (SModuleReference langRef : languages) {
       if (EqualUtil.equals(langRef.getModuleName(), language.getModuleFqName())) {
         imported = true;
       }

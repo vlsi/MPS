@@ -26,7 +26,7 @@ import jetbrains.mps.persistence.MementoUtil;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.persistence.ModuleDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import org.jdom.Element;
 import org.jetbrains.mps.openapi.persistence.Memento;
@@ -115,7 +115,7 @@ public class MPSConfigurationBean {
   public String[] getUsedLanguages() {
     String[] usedLanguages = new String[myDescriptor.getUsedLanguages().size()];
     int i = 0;
-    for (ModuleReference ref : myDescriptor.getUsedLanguages()) {
+    for (SModuleReference ref : myDescriptor.getUsedLanguages()) {
       usedLanguages[i] = ref.toString();
       i++;
     }
@@ -123,10 +123,10 @@ public class MPSConfigurationBean {
   }
 
   public void setUsedLanguages(String[] usedLanguages) {
-    Collection<ModuleReference> usedLanguageReferences = myDescriptor.getUsedLanguages();
+    Collection<SModuleReference> usedLanguageReferences = myDescriptor.getUsedLanguages();
     usedLanguageReferences.clear();
     for (String usedLanguage : usedLanguages) {
-      usedLanguageReferences.add(ModuleReference.fromString(usedLanguage));
+      usedLanguageReferences.add(jetbrains.mps.project.structure.modules.ModuleReference.fromString(usedLanguage));
     }
   }
 

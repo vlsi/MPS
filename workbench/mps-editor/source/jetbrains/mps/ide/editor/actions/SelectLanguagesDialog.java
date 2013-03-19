@@ -21,7 +21,7 @@ import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBList;
 import jetbrains.mps.fileTypes.FileIcons;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
 import javax.swing.*;
@@ -32,9 +32,9 @@ import java.util.Set;
 public class SelectLanguagesDialog extends DialogWrapper {
   private JList myList;
   private Project myProject;
-  private Set<ModuleReference> myCandidates;
+  private Set<SModuleReference> myCandidates;
 
-  public SelectLanguagesDialog(Project project, Set<ModuleReference> candidates) {
+  public SelectLanguagesDialog(Project project, Set<SModuleReference> candidates) {
     super(project);
     myProject = project;
     myCandidates = candidates;
@@ -86,17 +86,17 @@ public class SelectLanguagesDialog extends DialogWrapper {
     return myList;
   }
 
-  public Set<ModuleReference> getSelectedModules() {
-    HashSet<ModuleReference> res = new HashSet<ModuleReference>();
+  public Set<SModuleReference> getSelectedModules() {
+    HashSet<SModuleReference> res = new HashSet<SModuleReference>();
     for (Object o : myList.getSelectedValues()) {
-      res.add((ModuleReference) o);
+      res.add((SModuleReference) o);
     }
     return res;
   }
 
   private static class MyDefaultListCellRenderer extends DefaultListCellRenderer {
     public String getItemLabel(Object value) {
-      ModuleReference moduleReference = (ModuleReference) value;
+      SModuleReference moduleReference = (SModuleReference) value;
       final IModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
       if (module == null) {
         String moduleName = moduleReference.getModuleName();
@@ -111,7 +111,7 @@ public class SelectLanguagesDialog extends DialogWrapper {
     @Override
     public Component getListCellRendererComponent(JList list, final Object value, int index, boolean isSelected, boolean cellHasFocus) {
       final Component result = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
-      ModuleReference moduleReference = (ModuleReference) value;
+      SModuleReference moduleReference = (SModuleReference) value;
       if (moduleReference == null) return result;
       setText(getItemLabel(value));
       setIcon(FileIcons.PROJECT_LANGUAGE_ICON);

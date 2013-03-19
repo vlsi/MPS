@@ -21,7 +21,7 @@ import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.adapter.SLanguageLanguageAdapter;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelChildEvent;
@@ -74,9 +74,9 @@ public class SModel implements SModelData {
 
   private FastNodeFinder myFastNodeFinder;
 
-  private List<ModuleReference> myLanguages = new ArrayList<ModuleReference>();
-  private List<ModuleReference> myLanguagesEngagedOnGeneration = new ArrayList<ModuleReference>();
-  private List<ModuleReference> myDevKits = new ArrayList<ModuleReference>();
+  private List<SModuleReference> myLanguages = new ArrayList<SModuleReference>();
+  private List<SModuleReference> myLanguagesEngagedOnGeneration = new ArrayList<SModuleReference>();
+  private List<SModuleReference> myDevKits = new ArrayList<SModuleReference>();
   private List<ImportElement> myImports = new ArrayList<ImportElement>();
   private List<ImportElement> myImplicitImports = new ArrayList<ImportElement>();
 
@@ -190,9 +190,9 @@ public class SModel implements SModelData {
 
       @Override
       public Iterable<SLanguage> getLanguages() {
-        return new TranslatingIterator<ModuleReference, SLanguage>(myLanguages.iterator()) {
+        return new TranslatingIterator<SModuleReference, SLanguage>(myLanguages.iterator()) {
           @Override
-          protected SLanguage translate(ModuleReference ref) {
+          protected SLanguage translate(SModuleReference ref) {
             return new SLanguageLanguageAdapter(((Language) ref.resolve(MPSModuleRepository.getInstance())));
           }
         };
@@ -297,7 +297,7 @@ public class SModel implements SModelData {
 
   //todo code in the following methods should be written w/o duplication
 
-  private void fireDevKitAddedEvent(@NotNull ModuleReference ref) {
+  private void fireDevKitAddedEvent(@NotNull SModuleReference ref) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
@@ -308,7 +308,7 @@ public class SModel implements SModelData {
     }
   }
 
-  private void fireDevKitRemovedEvent(@NotNull ModuleReference ref) {
+  private void fireDevKitRemovedEvent(@NotNull SModuleReference ref) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
@@ -319,7 +319,7 @@ public class SModel implements SModelData {
     }
   }
 
-  private void fireLanguageAddedEvent(@NotNull ModuleReference ref) {
+  private void fireLanguageAddedEvent(@NotNull SModuleReference ref) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
@@ -330,7 +330,7 @@ public class SModel implements SModelData {
     }
   }
 
-  private void fireLanguageRemovedEvent(@NotNull ModuleReference ref) {
+  private void fireLanguageRemovedEvent(@NotNull SModuleReference ref) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
@@ -556,11 +556,11 @@ public class SModel implements SModelData {
 
   //language
 
-  public List<ModuleReference> importedLanguages() {
+  public List<SModuleReference> importedLanguages() {
     return Collections.unmodifiableList(myLanguages);
   }
 
-  public void deleteLanguage(@NotNull ModuleReference ref) {
+  public void deleteLanguage(@NotNull SModuleReference ref) {
     ModelChange.assertLegalChange(getModelDescriptor());
 
     myLanguages.remove(ref);
@@ -568,7 +568,7 @@ public class SModel implements SModelData {
     fireLanguageRemovedEvent(ref);
   }
 
-  public void addLanguage(ModuleReference ref) {
+  public void addLanguage(SModuleReference ref) {
     ModelChange.assertLegalChange(getModelDescriptor());
     if (SModelOperations.hasLanguage(getModelDescriptor(), ref)) return;
 
@@ -584,11 +584,11 @@ public class SModel implements SModelData {
 
   //devkit
 
-  public List<ModuleReference> importedDevkits() {
+  public List<SModuleReference> importedDevkits() {
     return Collections.unmodifiableList(myDevKits);
   }
 
-  public void addDevKit(ModuleReference ref) {
+  public void addDevKit(SModuleReference ref) {
     ModelChange.assertLegalChange(getModelDescriptor());
 
     if (!myDevKits.contains(ref)) {
@@ -597,7 +597,7 @@ public class SModel implements SModelData {
     }
   }
 
-  public void deleteDevKit(@NotNull ModuleReference ref) {
+  public void deleteDevKit(@NotNull SModuleReference ref) {
     ModelChange.assertLegalChange(getModelDescriptor());
 
     myDevKits.remove(ref);
@@ -752,11 +752,11 @@ public class SModel implements SModelData {
     myImplicitImports = implicitImports;
   }
 
-  public List<ModuleReference> engagedOnGenerationLanguages() {
+  public List<SModuleReference> engagedOnGenerationLanguages() {
     return myLanguagesEngagedOnGeneration;
   }
 
-  public void addEngagedOnGenerationLanguage(ModuleReference ref) {
+  public void addEngagedOnGenerationLanguage(SModuleReference ref) {
     ModelChange.assertLegalChange(getModelDescriptor());
 
     if (!myLanguagesEngagedOnGeneration.contains(ref)) {
@@ -768,7 +768,7 @@ public class SModel implements SModelData {
     }
   }
 
-  public void removeEngagedOnGenerationLanguage(ModuleReference ref) {
+  public void removeEngagedOnGenerationLanguage(SModuleReference ref) {
     ModelChange.assertLegalChange(getModelDescriptor());
 
     if (myLanguagesEngagedOnGeneration.contains(ref)) {
@@ -973,15 +973,15 @@ public class SModel implements SModelData {
     }
   }
 
-  public boolean updateRefs(List<ModuleReference> refs) {
+  public boolean updateRefs(List<SModuleReference> refs) {
     boolean changed = false;
     for (int i = 0; i < refs.size(); i++) {
-      ModuleReference ref = refs.get(i);
+      SModuleReference ref = refs.get(i);
       IModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
       if (module != null) {
-        ModuleReference newRef = module.getModuleReference();
+        SModuleReference newRef = module.getModuleReference();
         refs.set(i, newRef);
-        changed = changed || ModuleReference.differs(ref, newRef);
+        changed = changed || jetbrains.mps.project.structure.modules.ModuleReference.differs(ref, newRef);
       }
     }
     return changed;
@@ -1008,13 +1008,13 @@ public class SModel implements SModelData {
     for (ImportElement ie : importedModels()) {
       to.addModelImport(ie.copy());
     }
-    for (ModuleReference mr : importedDevkits()) {
+    for (SModuleReference mr : importedDevkits()) {
       to.addDevKit(mr);
     }
-    for (ModuleReference mr : importedLanguages()) {
+    for (SModuleReference mr : importedLanguages()) {
       to.addLanguage(mr);
     }
-    for (ModuleReference mr : engagedOnGenerationLanguages()) {
+    for (SModuleReference mr : engagedOnGenerationLanguages()) {
       to.addEngagedOnGenerationLanguage(mr);
     }
     to.setVersion(getVersion());
@@ -1352,32 +1352,32 @@ public class SModel implements SModelData {
     }
 
     @Override
-    public List<ModuleReference> importedLanguages() {
+    public List<SModuleReference> importedLanguages() {
       return myModel.importedLanguages();
     }
 
     @Override
-    public void deleteLanguage(@NotNull ModuleReference ref) {
+    public void deleteLanguage(@NotNull SModuleReference ref) {
       myModel.deleteLanguage(ref);
     }
 
     @Override
-    public void addLanguage(ModuleReference ref) {
+    public void addLanguage(SModuleReference ref) {
       myModel.addLanguage(ref);
     }
 
     @Override
-    public List<ModuleReference> importedDevkits() {
+    public List<SModuleReference> importedDevkits() {
       return myModel.importedDevkits();
     }
 
     @Override
-    public void addDevKit(ModuleReference ref) {
+    public void addDevKit(SModuleReference ref) {
       myModel.addDevKit(ref);
     }
 
     @Override
-    public void deleteDevKit(@NotNull ModuleReference ref) {
+    public void deleteDevKit(@NotNull SModuleReference ref) {
       myModel.deleteDevKit(ref);
     }
 
@@ -1412,17 +1412,17 @@ public class SModel implements SModelData {
     }
 
     @Override
-    public List<ModuleReference> engagedOnGenerationLanguages() {
+    public List<SModuleReference> engagedOnGenerationLanguages() {
       return myModel.engagedOnGenerationLanguages();
     }
 
     @Override
-    public void addEngagedOnGenerationLanguage(ModuleReference ref) {
+    public void addEngagedOnGenerationLanguage(SModuleReference ref) {
       myModel.addEngagedOnGenerationLanguage(ref);
     }
 
     @Override
-    public void removeEngagedOnGenerationLanguage(ModuleReference ref) {
+    public void removeEngagedOnGenerationLanguage(SModuleReference ref) {
       myModel.removeEngagedOnGenerationLanguage(ref);
     }
 

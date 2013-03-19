@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.project.structure.modules.mappingpriorities;
 
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.RefUpdateUtil;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
@@ -26,18 +26,18 @@ public class MappingConfig_ExternalRef extends MappingConfig_AbstractRef {
 
   public static final int PERSISTENCE_ID = 0x55550004;
 
-  private ModuleReference myGenerator;
+  private SModuleReference myGenerator;
   private MappingConfig_AbstractRef myMappingConfig;
 
   public MappingConfig_ExternalRef() {
     myMappingConfig = new MappingConfig_AbstractRef();
   }
 
-  public ModuleReference getGenerator() {
+  public SModuleReference getGenerator() {
     return myGenerator;
   }
 
-  public void setGenerator(ModuleReference generator) {
+  public void setGenerator(SModuleReference generator) {
     myGenerator = generator;
   }
 
@@ -65,7 +65,7 @@ public class MappingConfig_ExternalRef extends MappingConfig_AbstractRef {
 
   @Override
   public boolean updateReferences() {
-    Set<ModuleReference> set = new HashSet<ModuleReference>();
+    Set<SModuleReference> set = new HashSet<SModuleReference>();
     set.add(myGenerator);
     boolean result = RefUpdateUtil.updateModuleRefs(set);
     myGenerator = set.iterator().next();

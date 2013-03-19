@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.ide.ui.dialogs.properties.StateUtil;
@@ -41,14 +41,14 @@ public final class ListsFactory {
       return EqualUtil.equals(m1, m2);
     }
   };
-  public static final ListsFactory.ListComparator<ModuleReference> MODULE_REF_COMPARATOR = new ListsFactory.ListComparator<ModuleReference>() {
+  public static final ListsFactory.ListComparator<SModuleReference> MODULE_REF_COMPARATOR = new ListsFactory.ListComparator<SModuleReference>() {
     @Override
-    public int compare(ModuleReference o1, ModuleReference o2) {
+    public int compare(SModuleReference o1, SModuleReference o2) {
       return o1.getModuleName().compareTo(o2.getModuleName());
     }
 
     @Override
-    public boolean isEqual(ModuleReference o1, ModuleReference o2) {
+    public boolean isEqual(SModuleReference o1, SModuleReference o2) {
       if (super.isEqual(o1, o2)) {
         return true;
       }
@@ -57,9 +57,9 @@ public final class ListsFactory {
       return EqualUtil.equals(m1, m2);
     }
   };
-  public static final ListsFactory.ListComparator<ModuleReference> MODULE_VALID_REF_COMPARATOR = new ListsFactory.ListComparator<ModuleReference>() {
+  public static final ListsFactory.ListComparator<SModuleReference> MODULE_VALID_REF_COMPARATOR = new ListsFactory.ListComparator<SModuleReference>() {
     @Override
-    public int compare(ModuleReference o1, ModuleReference o2) {
+    public int compare(SModuleReference o1, SModuleReference o2) {
       int result = StateUtil.compare(o1, o2);
       if (result != 0) {
         return result;
@@ -68,7 +68,7 @@ public final class ListsFactory {
     }
 
     @Override
-    public boolean isEqual(ModuleReference o1, ModuleReference o2) {
+    public boolean isEqual(SModuleReference o1, SModuleReference o2) {
       return ListsFactory.MODULE_REF_COMPARATOR.isEqual(o1, o2);
     }
   };

@@ -16,7 +16,7 @@
 package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
 
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.event.SModelListener;
 import org.jetbrains.annotations.NotNull;
@@ -53,17 +53,17 @@ public interface SModelInternal{
 
   ModelDependenciesManager getModelDepsManager();
 
-  List<ModuleReference> importedLanguages();
+  List<SModuleReference> importedLanguages();
 
-  void deleteLanguage(@NotNull ModuleReference ref);
+  void deleteLanguage(@NotNull SModuleReference ref);
 
-  void addLanguage(ModuleReference ref);
+  void addLanguage(SModuleReference ref);
 
-  List<ModuleReference> importedDevkits();
+  List<SModuleReference> importedDevkits();
 
-  void addDevKit(ModuleReference ref);
+  void addDevKit(SModuleReference ref);
 
-  void deleteDevKit(@NotNull ModuleReference ref);
+  void deleteDevKit(@NotNull SModuleReference ref);
 
   List<ImportElement> importedModels();
 
@@ -76,11 +76,11 @@ public interface SModelInternal{
   // create new implicit import list based on used models, explicit import and old implicit import list
   void calculateImplicitImports();
 
-  List<ModuleReference> engagedOnGenerationLanguages();
+  List<SModuleReference> engagedOnGenerationLanguages();
 
-  void addEngagedOnGenerationLanguage(ModuleReference ref);
+  void addEngagedOnGenerationLanguage(SModuleReference ref);
 
-  void removeEngagedOnGenerationLanguage(ModuleReference ref);
+  void removeEngagedOnGenerationLanguage(SModuleReference ref);
 
   List<ImportElement> getAdditionalModelVersions();
 

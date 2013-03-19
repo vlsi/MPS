@@ -19,7 +19,7 @@ import gnu.trove.THashSet;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleUtil;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryAdapter;
@@ -38,7 +38,7 @@ public class LanguageDependenciesManager extends ModuleDependenciesManager<Langu
   private MyModuleWatcher myModuleWatcher;
 
   private AtomicBoolean myInvalidatedFlag = new AtomicBoolean(true);
-  private volatile Set<ModuleReference> myCachedDeps;
+  private volatile Set<SModuleReference> myCachedDeps;
   // a one-time synchronization helper for the cache
   private CountDownLatch myCacheInitGuard = new CountDownLatch(1);
 
@@ -68,12 +68,12 @@ public class LanguageDependenciesManager extends ModuleDependenciesManager<Langu
     return result;
   }
 
-  public Iterable<ModuleReference> getAllExtendedLanguages () {
+  public Iterable<SModuleReference> getAllExtendedLanguages () {
     if (myInvalidatedFlag.compareAndSet(true, false)) {
       // lazy initialization
       myModuleWatcher.clear();
 
-      Set<ModuleReference> result = new LinkedHashSet<ModuleReference>();
+      Set<SModuleReference> result = new LinkedHashSet<SModuleReference>();
       THashSet<Language> langs = new THashSet<Language>();
       collectAllExtendedLanguages(langs);
 

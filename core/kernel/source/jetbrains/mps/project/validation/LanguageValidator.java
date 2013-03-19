@@ -19,7 +19,7 @@ import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 
 import java.util.ArrayList;
@@ -71,13 +71,13 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
   @Override
   public List<String> getErrors() {
     List<String> errors = new ArrayList<String>(super.getErrors());
-    for (ModuleReference lang : myModule.getExtendedLanguageRefs()) {
+    for (SModuleReference lang : myModule.getExtendedLanguageRefs()) {
       if (MPSModuleRepository.getInstance().getModule(lang) == null) {
         errors.add("Can't find extended language: " + lang.getModuleName());
       }
     }
     checkBehaviorAspectPresence(myModule, errors);
-    for (ModuleReference mr : myModule.getRuntimeModulesReferences()) {
+    for (SModuleReference mr : myModule.getRuntimeModulesReferences()) {
       IModule runtimeModule = MPSModuleRepository.getInstance().getModule(mr);
       if (runtimeModule == null) continue;
       if (!(runtimeModule instanceof Solution)) {
@@ -89,7 +89,7 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
         errors.add("Can't find accessory model: " + SModelStereotype.withoutStereotype(accessory.getModelName()));
       }
     }
-    for (ModuleReference ref : myModule.getModuleDescriptor().getRuntimeModules()) {
+    for (SModuleReference ref : myModule.getModuleDescriptor().getRuntimeModules()) {
       if (MPSModuleRepository.getInstance().getModule(ref) == null) {
         errors.add("Can't find runtime module: " + ref.getModuleName());
       }

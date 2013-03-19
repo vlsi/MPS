@@ -10,7 +10,7 @@ import jetbrains.mps.InternalFlag;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -58,7 +58,7 @@ public class CollectTests_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return InternalFlag.isInternalMode() && CollectTests_Action.this.isUserEditableModel(((SModel) MapSequence.fromMap(_params).get("modelDesc")), _params) && ((SModelInternal) ((SModel) MapSequence.fromMap(_params).get("modelDesc"))).importedLanguages().contains(ModuleReference.fromString("d3c5a46f-b8c2-47db-ad0a-30b8f19c2055(jetbrains.mps.testbench.suite)"));
+    return InternalFlag.isInternalMode() && CollectTests_Action.this.isUserEditableModel(((SModel) MapSequence.fromMap(_params).get("modelDesc")), _params) && ((SModelInternal) ((SModel) MapSequence.fromMap(_params).get("modelDesc"))).importedLanguages().contains(jetbrains.mps.project.structure.modules.ModuleReference.fromString("d3c5a46f-b8c2-47db-ad0a-30b8f19c2055(jetbrains.mps.testbench.suite)"));
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -114,8 +114,8 @@ public class CollectTests_Action extends BaseAction {
   private boolean doExecute(ProgressIndicator proInd, final Map<String, Object> _params) {
     final Logger LOG = Logger.getLogger("jetbrains.mps.testbench.suite");
     final SModel model = ((SModel) MapSequence.fromMap(_params).get("modelDesc"));
-    final Wrappers._T<List<ModuleReference>> solutions = new Wrappers._T<List<ModuleReference>>();
-    final Wrappers._T<List<ModuleReference>> existing = new Wrappers._T<List<ModuleReference>>();
+    final Wrappers._T<List<SModuleReference>> solutions = new Wrappers._T<List<SModuleReference>>();
+    final Wrappers._T<List<SModuleReference>> existing = new Wrappers._T<List<SModuleReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         solutions.value = CollectTests_Action.this.allSolutions(_params);
@@ -125,7 +125,7 @@ public class CollectTests_Action extends BaseAction {
     ListSequence.fromList(solutions.value).removeSequence(ListSequence.fromList(existing.value));
 
     int done = 0;
-    for (ModuleReference mref : solutions.value) {
+    for (SModuleReference mref : solutions.value) {
       if (proInd.isCanceled()) {
         return false;
       }
@@ -161,7 +161,7 @@ public class CollectTests_Action extends BaseAction {
                       if (suite.value == null) {
                         suite.value = SModelOperations.createNewRootNode(model, "jetbrains.mps.testbench.suite.structure.ModuleSuite", null);
                         SNode sref = SLinkOperations.setNewChild(suite.value, "moduleRef", "jetbrains.mps.testbench.suite.structure.SolutionRef");
-                        ModuleReference mref = module.getModuleReference();
+                        SModuleReference mref = module.getModuleReference();
                         SPropertyOperations.set(sref, "moduleFQName", mref.getModuleName());
                         SPropertyOperations.set(sref, "moduleID", mref.getModuleId().toString());
                       }
@@ -194,10 +194,10 @@ public class CollectTests_Action extends BaseAction {
     return CollectTests_Action.this.isUserEditableModel(md, _params) && SNodeOperations.isGeneratable(md);
   }
 
-  private List<ModuleReference> allSolutions(final Map<String, Object> _params) {
+  private List<SModuleReference> allSolutions(final Map<String, Object> _params) {
     Iterable<Solution> allSolutions = ModuleRepositoryFacade.getInstance().getAllModules(Solution.class);
-    return Sequence.fromIterable(allSolutions).select(new ISelector<Solution, ModuleReference>() {
-      public ModuleReference select(Solution s) {
+    return Sequence.fromIterable(allSolutions).select(new ISelector<Solution, SModuleReference>() {
+      public SModuleReference select(Solution s) {
         return s.getModuleReference();
       }
     }).toListSequence();
@@ -210,10 +210,10 @@ public class CollectTests_Action extends BaseAction {
     }
   }
 
-  private List<ModuleReference> existingSolutions(SModel model, final Map<String, Object> _params) {
-    return ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.testbench.suite.structure.ModuleSuite")).select(new ISelector<SNode, ModuleReference>() {
-      public ModuleReference select(SNode ms) {
-        return BehaviorReflection.invokeVirtual(ModuleReference.class, SLinkOperations.getTarget(ms, "moduleRef", true), "virtual_moduleReference_1280144168199513544", new Object[]{});
+  private List<SModuleReference> existingSolutions(SModel model, final Map<String, Object> _params) {
+    return ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.testbench.suite.structure.ModuleSuite")).select(new ISelector<SNode, SModuleReference>() {
+      public SModuleReference select(SNode ms) {
+        return BehaviorReflection.invokeVirtual(SModuleReference.class, SLinkOperations.getTarget(ms, "moduleRef", true), "virtual_moduleReference_1280144168199513544", new Object[]{});
       }
     }).toListSequence();
   }

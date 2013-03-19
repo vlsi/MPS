@@ -16,7 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
@@ -66,10 +66,10 @@ public abstract class ProjectStructureBuilder {
     for (GeneratorDescriptor descriptor : source.getGenerators()) {
       SLinkOperations.getTargets(result, "generator", true).add(convert(descriptor));
     }
-    for (ModuleReference ref : source.getExtendedLanguages()) {
+    for (SModuleReference ref : source.getExtendedLanguages()) {
       SLinkOperations.getTargets(result, "extendedLanguages", true).add(convert(ref));
     }
-    for (ModuleReference dep : source.getRuntimeModules()) {
+    for (SModuleReference dep : source.getRuntimeModules()) {
       SLinkOperations.getTargets(result, "runtimeModules", true).add(convert(dep));
     }
     collectModels(result, source);
@@ -95,13 +95,13 @@ public abstract class ProjectStructureBuilder {
     fill(result, source);
     SPropertyOperations.set(result, "compileInMPS", "" + (false));
     SPropertyOperations.set(result, "devkitPath", myFile.getPath());
-    for (ModuleReference ref : source.getExtendedDevkits()) {
+    for (SModuleReference ref : source.getExtendedDevkits()) {
       SLinkOperations.getTargets(result, "extendedDevkits", true).add(convert(ref));
     }
-    for (ModuleReference ref : source.getExportedLanguages()) {
+    for (SModuleReference ref : source.getExportedLanguages()) {
       SLinkOperations.getTargets(result, "exportedLanguages", true).add(convert(ref));
     }
-    for (ModuleReference ref : source.getExportedSolutions()) {
+    for (SModuleReference ref : source.getExportedSolutions()) {
       SLinkOperations.getTargets(result, "exportedSolutions", true).add(convert(ref));
     }
     return result;
@@ -133,10 +133,10 @@ public abstract class ProjectStructureBuilder {
     for (Dependency mdep : source.getDependencies()) {
       SLinkOperations.getTargets(module, "dependencies", true).add(convert(mdep));
     }
-    for (ModuleReference ref : source.getUsedDevkits()) {
+    for (SModuleReference ref : source.getUsedDevkits()) {
       SLinkOperations.getTargets(module, "usedDevkits", true).add(convert(ref));
     }
-    for (ModuleReference ref : source.getUsedLanguages()) {
+    for (SModuleReference ref : source.getUsedLanguages()) {
       SLinkOperations.getTargets(module, "usedLanguages", true).add(convert(ref));
     }
     for (String path : source.getAdditionalJavaStubPaths()) {
@@ -184,7 +184,7 @@ public abstract class ProjectStructureBuilder {
     for (MappingPriorityRule rule : source.getPriorityRules()) {
       SLinkOperations.getTargets(generator, "priorityRules", true).add(convert(rule));
     }
-    for (ModuleReference ref : source.getDepGenerators()) {
+    for (SModuleReference ref : source.getDepGenerators()) {
       SLinkOperations.getTargets(generator, "depGenerators", true).add(convert(ref));
     }
     collectModels(generator, source);
@@ -214,7 +214,7 @@ public abstract class ProjectStructureBuilder {
     return rule;
   }
 
-  private SNode convert(ModuleReference ref) {
+  private SNode convert(SModuleReference ref) {
     if (ref == null) {
       return null;
     }

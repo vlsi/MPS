@@ -43,7 +43,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -262,7 +262,7 @@ public class TestConfigurationDialog extends DialogWrapper {
             }
           }).toListSequence();
 
-          ModuleReference module = CommonChoosers.showDialogModuleChooser(ProjectHelper.toIdeaProject(myProject), TestConfigurationDialog.MODULE, projectModuleRefs, moduleRefs);
+          SModuleReference module = CommonChoosers.showDialogModuleChooser(ProjectHelper.toIdeaProject(myProject), TestConfigurationDialog.MODULE, projectModuleRefs, moduleRefs);
           if (module == null) {
             return;
           }
@@ -286,7 +286,7 @@ public class TestConfigurationDialog extends DialogWrapper {
     @Override
     public BaseTestConfiguration create() {
       ModuleTestConfiguration result = new ModuleTestConfiguration();
-      result.setModuleRef(new ModuleReference(myModuleUID.getText()));
+      result.setModuleRef(new jetbrains.mps.project.structure.modules.ModuleReference(myModuleUID.getText()));
       return result;
     }
   }

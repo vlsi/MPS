@@ -15,12 +15,15 @@
  */
 package org.jetbrains.mps.openapi.module;
 
+import jetbrains.mps.project.ModuleId;
+
 /**
  * A globally unique reference to a module
  */
 public interface SModuleReference {
 
-  SModuleId getModuleId();
+  // todo: just for now
+  ModuleId getModuleId();
 
   String getModuleName();
 

@@ -25,7 +25,7 @@ import com.intellij.ui.SimpleTextAttributes;
 import com.intellij.ui.components.JBList;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
@@ -42,7 +42,7 @@ import java.util.Map;
 public class AddRequiredImportsDialog extends DialogWrapper {
 
   private final SModelReference[] myRequiredImports;
-  private final ModuleReference[] myRequiredLanguages;
+  private final SModuleReference[] myRequiredLanguages;
   private Map<SModelReference, String> myImport2Module = new HashMap<SModelReference, String>();
   private Map<SModelReference, LanguageAspect> myImport2Aspect = new HashMap<SModelReference, LanguageAspect>();
 
@@ -50,9 +50,9 @@ public class AddRequiredImportsDialog extends DialogWrapper {
   private JList myLanguagesList;
 
   private SModelReference[] mySelectedImports;
-  private ModuleReference[] mySelectedLanguages;
+  private SModuleReference[] mySelectedLanguages;
 
-  public AddRequiredImportsDialog(Project project, @NotNull SModelReference[] requiredImports, @NotNull ModuleReference[] requiredLanguages) {
+  public AddRequiredImportsDialog(Project project, @NotNull SModelReference[] requiredImports, @NotNull SModuleReference[] requiredLanguages) {
     super(project, true);
     myRequiredImports = requiredImports;
     myRequiredLanguages = requiredLanguages;
@@ -101,7 +101,7 @@ public class AddRequiredImportsDialog extends DialogWrapper {
     }
     if (myLanguagesList != null) {
       values = myLanguagesList.getSelectedValues();
-      mySelectedLanguages = new ModuleReference[values.length];
+      mySelectedLanguages = new SModuleReference[values.length];
       System.arraycopy(values, 0, mySelectedLanguages, 0, values.length);
     }
     super.doOKAction();
@@ -161,8 +161,8 @@ public class AddRequiredImportsDialog extends DialogWrapper {
   }
 
   @NotNull
-  public ModuleReference[] getSelectedLanguages() {
-    return mySelectedLanguages != null ? mySelectedLanguages : new ModuleReference[0];
+  public SModuleReference[] getSelectedLanguages() {
+    return mySelectedLanguages != null ? mySelectedLanguages : new SModuleReference[0];
   }
 
   public class MyCellRenderer extends SimpleColoredComponent implements ListCellRenderer {
@@ -203,8 +203,8 @@ public class AddRequiredImportsDialog extends DialogWrapper {
         }
 
 
-      } else if (value instanceof ModuleReference) {
-        ModuleReference ref = (ModuleReference) value;
+      } else if (value instanceof SModuleReference) {
+        SModuleReference ref = (SModuleReference) value;
         setIcon(IdeIcons.PROJECT_LANGUAGE_ICON);
         String longName = ref.getModuleName();
         append(longName, SimpleTextAttributes.REGULAR_ATTRIBUTES);

@@ -6,7 +6,7 @@ import javax.swing.DefaultCellEditor;
 import javax.swing.JTextField;
 import java.awt.Component;
 import javax.swing.JTable;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public class ModuleEditor extends DefaultCellEditor {
   private JTextField myTextField;
@@ -24,7 +24,7 @@ public class ModuleEditor extends DefaultCellEditor {
 
   @Override
   public Component getTableCellEditorComponent(final JTable table, Object value, boolean isSelected, final int row, final int column) {
-    myTextField.setText(((ModuleReference) value).getModuleName());
+    myTextField.setText(((SModuleReference) value).getModuleName());
     return super.getTableCellEditorComponent(table, value, isSelected, row, column);
   }
 }

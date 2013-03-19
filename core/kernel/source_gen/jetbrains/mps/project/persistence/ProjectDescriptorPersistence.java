@@ -21,7 +21,7 @@ import org.jdom.Document;
 import jetbrains.mps.util.JDOMUtil;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.logging.Logger;
 
@@ -129,7 +129,7 @@ public class ProjectDescriptorPersistence {
       tc.setName(e.getAttributeValue("name"));
       String moduleRef = e.getAttributeValue("moduleRef");
       if (moduleRef != null) {
-        tc.setModuleRef(ModuleReference.fromString(moduleRef));
+        tc.setModuleRef(jetbrains.mps.project.structure.modules.ModuleReference.fromString(moduleRef));
         result_jnk9az_a1a3.getTestConfigurations().add(tc);
       }
     }

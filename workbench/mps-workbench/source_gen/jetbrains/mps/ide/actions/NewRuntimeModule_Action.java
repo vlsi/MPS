@@ -23,7 +23,7 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import com.intellij.navigation.NavigationItem;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import jetbrains.mps.ide.ui.MPSTree;
@@ -99,11 +99,11 @@ public class NewRuntimeModule_Action extends BaseAction {
       BaseModuleModel baseSolutionModel = new BaseModuleModel(((Project) MapSequence.fromMap(_params).get("project")), "runtime module") {
         @Override
         public SModuleReference[] find(IScope p0) {
-          return ListSequence.fromList(modules).select(new ISelector<IModule, ModuleReference>() {
-            public ModuleReference select(IModule it) {
+          return ListSequence.fromList(modules).select(new ISelector<IModule, SModuleReference>() {
+            public SModuleReference select(IModule it) {
               return it.getModuleReference();
             }
-          }).toGenericArray(ModuleReference.class);
+          }).toGenericArray(SModuleReference.class);
         }
 
         @Override
@@ -115,7 +115,7 @@ public class NewRuntimeModule_Action extends BaseAction {
                 return;
               }
               final Language language = (Language) ((IModule) MapSequence.fromMap(_params).get("contextModule"));
-              language.getModuleDescriptor().getRuntimeModules().add((ModuleReference) module);
+              language.getModuleDescriptor().getRuntimeModules().add((SModuleReference) module);
               final MPSTree mpsTree = ((MPSTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("treeNode"))).getTree();
               ModelAccess.instance().runWriteInEDT(new Runnable() {
                 public void run() {

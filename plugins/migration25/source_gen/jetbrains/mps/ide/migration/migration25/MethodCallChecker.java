@@ -29,7 +29,7 @@ import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public class MethodCallChecker extends SpecificChecker {
   public MethodCallChecker() {
@@ -104,7 +104,7 @@ public class MethodCallChecker extends SpecificChecker {
 
   }
 
-  private static ModuleReference check_lz161n_a0a1a0a5a0a7a1a6a1(IModule checkedDotOperand) {
+  private static SModuleReference check_lz161n_a0a1a0a5a0a7a1a6a1(IModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModuleReference();
     }

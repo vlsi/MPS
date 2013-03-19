@@ -13,7 +13,7 @@ import jetbrains.mps.build.packaging.behavior.PluginModule_Behavior;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.build.packaging.behavior.Module_Behavior;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public class PluginModule_Constraints extends BaseConstraintsDescriptor {
   public PluginModule_Constraints() {
@@ -75,14 +75,14 @@ public class PluginModule_Constraints extends BaseConstraintsDescriptor {
     return null;
   }
 
-  private static ModuleId check_icnu7v_a0a0a1(ModuleReference checkedDotOperand) {
+  private static ModuleId check_icnu7v_a0a0a1(SModuleReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModuleId();
     }
     return null;
   }
 
-  private static ModuleReference check_icnu7v_a0a0a0b(IModule checkedDotOperand) {
+  private static SModuleReference check_icnu7v_a0a0a0b(IModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModuleReference();
     }

@@ -23,7 +23,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
@@ -154,7 +154,7 @@ public class ImportHelper {
     public void navigate(boolean requestFocus) {
       assert !ModelAccess.instance().canRead();
 
-      final Set<ModuleReference> importCandidates = new HashSet<ModuleReference>();
+      final Set<SModuleReference> importCandidates = new HashSet<SModuleReference>();
       ModelAccess.instance().runWriteAction(new Runnable() {
         @Override
         public void run() {
@@ -168,7 +168,7 @@ public class ImportHelper {
           langs.remove(ModuleRepositoryFacade.getInstance().getModule(BootstrapLanguages.CORE, Language.class));
 
           for (Language l : langs) {
-            Collection<ModuleReference> impLangs = ((jetbrains.mps.smodel.SModelInternal) myModel).getModelDepsManager().getAllImportedLanguages();
+            Collection<SModuleReference> impLangs = ((jetbrains.mps.smodel.SModelInternal) myModel).getModelDepsManager().getAllImportedLanguages();
             if (impLangs.contains(l.getModuleReference())) continue;
             importCandidates.add(l.getModuleReference());
           }
@@ -178,7 +178,7 @@ public class ImportHelper {
       final Set<SModuleReference> toImport = new HashSet<SModuleReference>();
 
       if (!importCandidates.isEmpty()) {
-        Set<ModuleReference> modules = chooseModulesToImport(myProject, importCandidates);
+        Set<SModuleReference> modules = chooseModulesToImport(myProject, importCandidates);
         if (modules != null) {
           toImport.addAll(modules);
         }
@@ -192,10 +192,10 @@ public class ImportHelper {
           boolean reload = false;
           for (SModuleReference ref : toImport) {
             if (myContextModule.getScope().getLanguage(ref) == null) {
-              myContextModule.addUsedLanguage((ModuleReference) ref);
+              myContextModule.addUsedLanguage((SModuleReference) ref);
               reload = true;
             }
-            ((jetbrains.mps.smodel.SModelInternal) myModel).addLanguage((ModuleReference) ref);
+            ((jetbrains.mps.smodel.SModelInternal) myModel).addLanguage((SModuleReference) ref);
           }
           if (reload) {
             ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
@@ -205,7 +205,7 @@ public class ImportHelper {
     }
   }
 
-  private static Set<ModuleReference> chooseModulesToImport(Project project, Set<ModuleReference> candidates) {
+  private static Set<SModuleReference> chooseModulesToImport(Project project, Set<SModuleReference> candidates) {
     SelectLanguagesDialog dialog = new SelectLanguagesDialog(project, candidates);
     dialog.show();
     if (!dialog.isOK()) return null;
@@ -272,11 +272,11 @@ public class ImportHelper {
 
     @Override
     public void navigate(boolean requestFocus) {
-      final ModuleReference moduleToImport = ModelAccess.instance().runReadAction(new Computable<ModuleReference>() {
+      final SModuleReference moduleToImport = ModelAccess.instance().runReadAction(new Computable<SModuleReference>() {
         @Override
-        public ModuleReference compute() {
+        public SModuleReference compute() {
           SModel md = SModelRepository.getInstance().getModelDescriptor(getModelReference());
-          final ModuleReference moduleReference = md.getModule().getModuleReference();
+          final SModuleReference moduleReference = md.getModule().getModuleReference();
           if (myModule.getScope().getModelDescriptor(getModelReference()) == null) {
             return moduleReference;
           }

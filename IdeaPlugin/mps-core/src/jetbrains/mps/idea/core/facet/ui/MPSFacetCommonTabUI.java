@@ -28,7 +28,7 @@ import jetbrains.mps.idea.core.icons.MPSIcons;
 import jetbrains.mps.idea.core.project.ModuleRuntimeLibrariesImporter;
 import jetbrains.mps.idea.core.ui.IModuleConfigurationTab;
 import jetbrains.mps.idea.core.ui.UsedLanguagesTable;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import javax.swing.JComponent;
@@ -101,7 +101,7 @@ public class MPSFacetCommonTabUI implements IModuleConfigurationTab {
     MPSFacetPathsTab mpsFacetPathsTab = new MPSFacetPathsTab(myContext);
     UsedLanguagesTable usedLanguagesTable = new UsedLanguagesTable() {
       @Override
-      protected void doAddElements(final Set<ModuleReference> elementsToAdd) {
+      protected void doAddElements(final Set<SModuleReference> elementsToAdd) {
         super.doAddElements(elementsToAdd);
         ApplicationManager.getApplication().runWriteAction(new Runnable() {
           @Override

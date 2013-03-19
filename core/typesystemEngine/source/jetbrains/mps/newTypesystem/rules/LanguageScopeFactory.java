@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.newTypesystem.rules;
 
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.SimpleLRUCache;
@@ -66,7 +66,7 @@ public class LanguageScopeFactory {
    * @param langs2
    * @return
    */
-  public LanguageScope getLanguageScope (Iterable<ModuleReference> langs1, Iterable<ModuleReference> langs2) {
+  public LanguageScope getLanguageScope (Iterable<SModuleReference> langs1, Iterable<SModuleReference> langs2) {
     LanguageScope langScope1 = getLanguageScope(langs1);
     LanguageScope langScope2 = getLanguageScope(langs2);
     return langScope1.disjunction(langScope2);
@@ -78,17 +78,17 @@ public class LanguageScopeFactory {
    * @param langs the dependencies collection; all languages included in this scope
    * @return
    */
-  public LanguageScope getLanguageScope (Iterable<ModuleReference> langs) {
+  public LanguageScope getLanguageScope (Iterable<SModuleReference> langs) {
     LanguagesHolder cached = getHolder(langs);
     if (cached.hasScope()) {
       return cached.getScope();
     }
 
     BitSet nsBitSet = new BitSet(myBits.intValue());
-    for (ModuleReference langRef: langs) {
+    for (SModuleReference langRef: langs) {
       Language lng = ModuleRepositoryFacade.getInstance().getModule(langRef, Language.class);
       updateNamespaceBit(nsBitSet, lng.getModuleDescriptor().getNamespace());
-      for (ModuleReference mref : lng.getDependenciesManager().getAllExtendedLanguages()) {
+      for (SModuleReference mref : lng.getDependenciesManager().getAllExtendedLanguages()) {
         Language ext = ModuleRepositoryFacade.getInstance().getModule(mref, Language.class);
         updateNamespaceBit(nsBitSet, ext.getModuleDescriptor().getNamespace());
       }
@@ -108,7 +108,7 @@ public class LanguageScopeFactory {
     }
   }
 
-  private LanguagesHolder getHolder(Iterable<ModuleReference> langs) {
+  private LanguagesHolder getHolder(Iterable<SModuleReference> langs) {
     return myCachedLanguages.cacheObject(new LanguagesHolder(langs));
   }
 
@@ -141,11 +141,11 @@ public class LanguageScopeFactory {
     }
   }
 
-  private static class LanguagesHolder extends IdentityWrapper<Iterable<ModuleReference>> {
+  private static class LanguagesHolder extends IdentityWrapper<Iterable<SModuleReference>> {
 
     private LanguageScope myLangScope = null;
 
-    public LanguagesHolder(Iterable<ModuleReference> langs)  {
+    public LanguagesHolder(Iterable<SModuleReference> langs)  {
       super(langs);
     }
 

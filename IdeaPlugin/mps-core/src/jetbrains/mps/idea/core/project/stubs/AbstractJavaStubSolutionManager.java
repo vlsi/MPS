@@ -23,7 +23,7 @@ import jetbrains.mps.idea.core.project.StubSolutionIdea;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -79,7 +79,7 @@ public abstract class AbstractJavaStubSolutionManager implements MPSModuleOwner,
   }
 
   protected void removeSolution(String name) {
-    ModuleReference ref = new ModuleReference(null, ModuleId.foreign(name));
+    SModuleReference ref = new jetbrains.mps.project.structure.modules.ModuleReference(null, ModuleId.foreign(name));
     MPSModuleRepository repository = MPSModuleRepository.getInstance();
     IModule m = ModuleRepositoryFacade.getInstance().getModule(ref);
     if (m == null) {

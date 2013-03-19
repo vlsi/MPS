@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.io.File;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.vfs.IFile;
@@ -60,7 +60,7 @@ public class NewModuleUtil {
     SModelInternal sandboxModel = (SModelInternal) createModel(sandbox, namespace);
     sandbox.addUsedLanguage(language.getModuleReference());
     sandboxModel.addLanguage(language.getModuleReference());
-    for (ModuleReference extendedLanguage : language.getExtendedLanguageRefs()) {
+    for (SModuleReference extendedLanguage : language.getExtendedLanguageRefs()) {
       sandbox.addUsedLanguage(extendedLanguage);
       sandboxModel.addLanguage(extendedLanguage);
     }
@@ -143,7 +143,7 @@ public class NewModuleUtil {
     LanguageDescriptor descriptor = createNewLanguageDescriptor(namespace, descriptorFile);
 
     if (importLangDevDevkit) {
-      ModuleReference devkitRef = LanguageDesign_DevKit.MODULE_REFERENCE;
+      SModuleReference devkitRef = LanguageDesign_DevKit.MODULE_REFERENCE;
       descriptor.getUsedDevkits().add(devkitRef);
     }
 

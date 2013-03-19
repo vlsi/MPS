@@ -33,7 +33,7 @@ import java.util.regex.Pattern;
 public final class ModuleReference implements SModuleReference {
   private static final Pattern MODULE_REFERENCE = Pattern.compile("(.*?)\\((.*?)\\)");
 
-  public static ModuleReference fromString(String text) {
+  public static SModuleReference fromString(String text) {
     text = text.trim();
     Matcher m = MODULE_REFERENCE.matcher(text);
     if (m.matches()) {
@@ -133,8 +133,8 @@ public final class ModuleReference implements SModuleReference {
 
   @Deprecated
   @NotNull
-  public ModuleReference update() {
-    return (ModuleReference) update(this);
+  public SModuleReference update() {
+    return update(this);
   }
 
   @Deprecated

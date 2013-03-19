@@ -28,7 +28,7 @@ import jetbrains.mps.idea.core.library.ModuleLibrariesUtil;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -75,7 +75,7 @@ public abstract class ModuleRuntimeLibrariesImporter {
   }
 
   public void addMissingLibraries() {
-    Set<ModuleReference> alreadyImported = ModuleLibrariesUtil.getModules(myModifiableRootModel.getOrderEntries());
+    Set<SModuleReference> alreadyImported = ModuleLibrariesUtil.getModules(myModifiableRootModel.getOrderEntries());
 
     Collection<Library> projectLibs2Add = new HashSet<Library>();
     for (IModule usedModule : collectRuntimeModules(myAddedModules)) {

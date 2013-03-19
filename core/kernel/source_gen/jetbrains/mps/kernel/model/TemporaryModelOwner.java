@@ -5,7 +5,7 @@ package jetbrains.mps.kernel.model;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.BaseMPSModuleOwner;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -28,7 +28,7 @@ public class TemporaryModelOwner extends AbstractModule {
   private MPSModuleOwner myOwner = new BaseMPSModuleOwner() {};
 
   public TemporaryModelOwner() {
-    setModuleReference(new ModuleReference("TemporaryModelOwner #" + System.identityHashCode(this), ModuleId.regular()));
+    setModuleReference(new jetbrains.mps.project.structure.modules.ModuleReference("TemporaryModelOwner #" + System.identityHashCode(this), ModuleId.regular()));
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         MPSModuleRepository.getInstance().registerModule(TemporaryModelOwner.this, TemporaryModelOwner.this.myOwner);
@@ -45,8 +45,8 @@ public class TemporaryModelOwner extends AbstractModule {
   }
 
   @Override
-  public Collection<ModuleReference> getUsedLanguagesReferences() {
-    Set<ModuleReference> result = new LinkedHashSet<ModuleReference>();
+  public Collection<SModuleReference> getUsedLanguagesReferences() {
+    Set<SModuleReference> result = new LinkedHashSet<SModuleReference>();
     for (SModel md : getOwnModelDescriptors()) {
       result.addAll(((SModelInternal) md).importedLanguages());
     }
@@ -54,8 +54,8 @@ public class TemporaryModelOwner extends AbstractModule {
   }
 
   @Override
-  public Collection<ModuleReference> getUsedDevkitReferences() {
-    Set<ModuleReference> result = new LinkedHashSet<ModuleReference>();
+  public Collection<SModuleReference> getUsedDevkitReferences() {
+    Set<SModuleReference> result = new LinkedHashSet<SModuleReference>();
     for (SModel md : getOwnModelDescriptors()) {
       result.addAll(((SModelInternal) md).importedDevkits());
     }

@@ -19,7 +19,7 @@ import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
@@ -27,8 +27,8 @@ import jetbrains.mps.util.Computable;
 import java.util.ArrayList;
 import java.util.List;
 
-class ModuleFavoritesRoot extends FavoritesRoot<ModuleReference> {
-  public ModuleFavoritesRoot(ModuleReference value) {
+class ModuleFavoritesRoot extends FavoritesRoot<SModuleReference> {
+  public ModuleFavoritesRoot(SModuleReference value) {
     super(value);
   }
 

@@ -10,7 +10,7 @@ import org.jdom.Element;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.io.OutputStream;
 import jetbrains.mps.logging.Logger;
@@ -32,20 +32,20 @@ public class DevkitDescriptorPersistence {
           result_raojav_a0a0c0a0b.setUUID(result_raojav_a1a0a0c0a0b);
 
           for (Element exportedLang : ListSequence.fromList((List<Element>) root.getChildren("exported-language"))) {
-            result_raojav_a0a0c0a0b.getExportedLanguages().add(ModuleReference.fromString(exportedLang.getAttributeValue("name")));
+            result_raojav_a0a0c0a0b.getExportedLanguages().add(jetbrains.mps.project.structure.modules.ModuleReference.fromString(exportedLang.getAttributeValue("name")));
           }
 
           Element extendedDevKits = ListSequence.fromList(((List<Element>) root.getChildren("extendedDevKits"))).first();
           if (extendedDevKits != null) {
             for (Element xde : ListSequence.fromList((List<Element>) extendedDevKits.getChildren("extendedDevKit"))) {
-              result_raojav_a0a0c0a0b.getExtendedDevkits().add(ModuleReference.fromString(xde.getText()));
+              result_raojav_a0a0c0a0b.getExtendedDevkits().add(jetbrains.mps.project.structure.modules.ModuleReference.fromString(xde.getText()));
             }
           }
 
           Element exportedSolutions = ListSequence.fromList(((List<Element>) root.getChildren("exported-solutions"))).first();
           if (exportedSolutions != null) {
             for (Element xse : ListSequence.fromList((List<Element>) exportedSolutions.getChildren("exported-solution"))) {
-              result_raojav_a0a0c0a0b.getExportedSolutions().add(ModuleReference.fromString(xse.getText()));
+              result_raojav_a0a0c0a0b.getExportedSolutions().add(jetbrains.mps.project.structure.modules.ModuleReference.fromString(xse.getText()));
             }
           }
           return result_raojav_a0a0c0a0b;
@@ -68,7 +68,7 @@ public class DevkitDescriptorPersistence {
           result_raojav_a0a0a0c.setAttribute("uuid", descriptor.getUUID());
         }
 
-        for (final ModuleReference lang : SetSequence.fromSet(descriptor.getExportedLanguages())) {
+        for (final SModuleReference lang : SetSequence.fromSet(descriptor.getExportedLanguages())) {
           result_raojav_a0a0a0c.addContent(new _FunctionTypes._return_P0_E0<Element>() {
             public Element invoke() {
               final Element result_raojav_a0a0a0a3a0a0a0c = new Element("exported-language");
@@ -82,7 +82,7 @@ public class DevkitDescriptorPersistence {
           result_raojav_a0a0a0c.addContent(new _FunctionTypes._return_P0_E0<Element>() {
             public Element invoke() {
               final Element result_raojav_a0a0a0a5a0a0a0c = new Element("extendedDevKits");
-              for (final ModuleReference ref : SetSequence.fromSet(descriptor.getExtendedDevkits())) {
+              for (final SModuleReference ref : SetSequence.fromSet(descriptor.getExtendedDevkits())) {
                 result_raojav_a0a0a0a5a0a0a0c.addContent(new _FunctionTypes._return_P0_E0<Element>() {
                   public Element invoke() {
                     final Element result_raojav_a0a0a0a0a0a0a0a5a0a0a0c = new Element("extendedDevKit");
@@ -100,7 +100,7 @@ public class DevkitDescriptorPersistence {
           result_raojav_a0a0a0c.addContent(new _FunctionTypes._return_P0_E0<Element>() {
             public Element invoke() {
               final Element result_raojav_a0a0a0a7a0a0a0c = new Element("exported-solutions");
-              for (final ModuleReference ref : SetSequence.fromSet(descriptor.getExportedSolutions())) {
+              for (final SModuleReference ref : SetSequence.fromSet(descriptor.getExportedSolutions())) {
                 result_raojav_a0a0a0a7a0a0a0c.addContent(new _FunctionTypes._return_P0_E0<Element>() {
                   public Element invoke() {
                     final Element result_raojav_a0a0a0a0a0a0a0a7a0a0a0c = new Element("exported-solution");

@@ -19,6 +19,7 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -27,7 +28,7 @@ import java.util.LinkedHashSet;
 import java.util.TreeSet;
 
 public class ModuleDescriptor {
-  private static final ModuleReferenceComparator MODULE_REFERENCE_COMPARATOR = new ModuleReferenceComparator();
+  private static final SModuleReferenceComparator MODULE_REFERENCE_COMPARATOR = new SModuleReferenceComparator();
   private static final DependencyComparator DEPENDENCY_COMPARATOR = new DependencyComparator(MODULE_REFERENCE_COMPARATOR);
 
   private ModuleId myId;
@@ -37,8 +38,8 @@ public class ModuleDescriptor {
   private Collection<ModelRootDescriptor> myModelRoots;
   private Collection<ModuleFacetDescriptor> myFacets;
   private Collection<Dependency> myDependencies;
-  private Collection<ModuleReference> myUsedLanguages;
-  private Collection<ModuleReference> myUsedDevkits;
+  private Collection<SModuleReference> myUsedLanguages;
+  private Collection<SModuleReference> myUsedDevkits;
   private Collection<String> myAdditionalJavaStubPaths;
   private Collection<String> mySourcePaths;
   private DeploymentDescriptor myDeploymentDescriptor;
@@ -50,8 +51,8 @@ public class ModuleDescriptor {
     myModelRoots = new LinkedHashSet<ModelRootDescriptor>();
     myFacets = new LinkedHashSet<ModuleFacetDescriptor>();
     myDependencies = new TreeSet<Dependency>(DEPENDENCY_COMPARATOR);
-    myUsedLanguages = new TreeSet<ModuleReference>(MODULE_REFERENCE_COMPARATOR);
-    myUsedDevkits = new TreeSet<ModuleReference>(MODULE_REFERENCE_COMPARATOR);
+    myUsedLanguages = new TreeSet<SModuleReference>(MODULE_REFERENCE_COMPARATOR);
+    myUsedDevkits = new TreeSet<SModuleReference>(MODULE_REFERENCE_COMPARATOR);
     myAdditionalJavaStubPaths = new LinkedHashSet<String>();
     mySourcePaths = new LinkedHashSet<String>();
   }
@@ -83,8 +84,8 @@ public class ModuleDescriptor {
     myNamespace = namespace;
   }
 
-  public ModuleReference getModuleReference() {
-    return new ModuleReference(getNamespace(), myId);
+  public SModuleReference getModuleReference() {
+    return new jetbrains.mps.project.structure.modules.ModuleReference(getNamespace(), myId);
   }
 
   public String getTimestamp() {
@@ -115,11 +116,11 @@ public class ModuleDescriptor {
     return myDependencies;
   }
 
-  public Collection<ModuleReference> getUsedLanguages() {
+  public Collection<SModuleReference> getUsedLanguages() {
     return myUsedLanguages;
   }
 
-  public Collection<ModuleReference> getUsedDevkits() {
+  public Collection<SModuleReference> getUsedDevkits() {
     return myUsedDevkits;
   }
 
@@ -193,12 +194,12 @@ public class ModuleDescriptor {
     }
 
     stream.writeInt(myUsedLanguages.size());
-    for (ModuleReference ref : myUsedLanguages) {
+    for (SModuleReference ref : myUsedLanguages) {
       stream.writeModuleReference(ref);
     }
 
     stream.writeInt(myUsedDevkits.size());
-    for (ModuleReference ref : myUsedDevkits) {
+    for (SModuleReference ref : myUsedDevkits) {
       stream.writeModuleReference(ref);
     }
 
@@ -269,9 +270,9 @@ public class ModuleDescriptor {
     if (stream.readByte() != 0x3a) throw new IOException("bad stream: no module descriptor end marker");
   }
 
-  private static class ModuleReferenceComparator implements Comparator<ModuleReference> {
+  private static class SModuleReferenceComparator implements Comparator<SModuleReference> {
     @Override
-    public int compare(ModuleReference ref1, ModuleReference ref2) {
+    public int compare(SModuleReference ref1, SModuleReference ref2) {
       String moduleFqName1 = ref1.getModuleName();
       String moduleFqName2 = ref2.getModuleName();
       if (moduleFqName1 == null) {
@@ -285,9 +286,9 @@ public class ModuleDescriptor {
   }
 
   private static class DependencyComparator implements Comparator<Dependency> {
-    private Comparator<ModuleReference> myModuleRefComparator;
+    private Comparator<SModuleReference> myModuleRefComparator;
 
-    DependencyComparator(Comparator<ModuleReference> moduleReferComparator) {
+    DependencyComparator(Comparator<SModuleReference> moduleReferComparator) {
       myModuleRefComparator = moduleReferComparator;
     }
 

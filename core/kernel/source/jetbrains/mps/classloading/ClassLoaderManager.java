@@ -24,7 +24,7 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.SModelRootClassesListener;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.Generator;
@@ -301,7 +301,7 @@ public class ClassLoaderManager implements CoreComponent {
     loadClasses(modulesToLoad, monitor);
   }
 
-  /* package */ void classLoaded(String name, ModuleReference id) {
+  /* package */ void classLoaded(String name, SModuleReference id) {
     synchronized (myLoadedClasses) {
       if (myLoadedClasses.containsKey(name)) {
         SModuleReference oldLoaderId = myLoadedClasses.get(name);

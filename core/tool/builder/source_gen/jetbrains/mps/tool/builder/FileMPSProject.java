@@ -35,7 +35,7 @@ import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.project.structure.project.testconfigurations.ModelsTestConfiguration;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public class FileMPSProject extends Project {
   private static Logger LOG = Logger.getLogger(FileMPSProject.class);
@@ -221,7 +221,7 @@ public class FileMPSProject extends Project {
         tc.setName(e.getAttributeValue("name"));
         String moduleRef = e.getAttributeValue("moduleRef");
         if (moduleRef != null) {
-          tc.setModuleRef(ModuleReference.fromString(moduleRef));
+          tc.setModuleRef(jetbrains.mps.project.structure.modules.ModuleReference.fromString(moduleRef));
           result_dkknya_a0a5o.getTestConfigurations().add(tc);
         }
       }

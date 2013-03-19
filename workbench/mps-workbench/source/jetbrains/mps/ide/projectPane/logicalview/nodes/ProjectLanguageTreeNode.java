@@ -27,7 +27,7 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -127,7 +127,7 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     }
 
     TextTreeNode languageRuntime = new RuntimeModulesTreeNode();
-    for (ModuleReference mr : myLanguage.getRuntimeModulesReferences()) {
+    for (SModuleReference mr : myLanguage.getRuntimeModulesReferences()) {
       IModule m = MPSModuleRepository.getInstance().getModule(mr);
       if (m == null || m == myLanguage) continue;
       languageRuntime.add(createFor(myProject, m));

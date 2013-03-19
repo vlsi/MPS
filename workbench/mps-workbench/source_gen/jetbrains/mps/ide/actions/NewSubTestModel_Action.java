@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.smodel.ModelRootUtil;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.util.SNodeOperations;
@@ -98,10 +98,10 @@ public class NewSubTestModel_Action extends BaseAction {
           for (jetbrains.mps.smodel.SModel.ImportElement importElement : ((SModelInternal) sourceModel).importedModels()) {
             ((SModelInternal) createdModel).addModelImport(sourceModel.getReference(), false);
           }
-          for (ModuleReference importedLanguage : ((SModelInternal) sourceModel).importedLanguages()) {
+          for (SModuleReference importedLanguage : ((SModelInternal) sourceModel).importedLanguages()) {
             ((SModelInternal) createdModel).addLanguage(importedLanguage);
           }
-          for (ModuleReference devKit : ((SModelInternal) sourceModel).importedDevkits()) {
+          for (SModuleReference devKit : ((SModelInternal) sourceModel).importedDevkits()) {
             ((SModelInternal) createdModel).addDevKit(devKit);
           }
         }

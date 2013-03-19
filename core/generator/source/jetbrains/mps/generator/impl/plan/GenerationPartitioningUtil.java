@@ -20,7 +20,7 @@ import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.*;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -233,7 +233,7 @@ public class GenerationPartitioningUtil {
     }
 
     if (mappingRef instanceof MappingConfig_ExternalRef) {
-      ModuleReference generatorRef = ((MappingConfig_ExternalRef) mappingRef).getGenerator();
+      SModuleReference generatorRef = ((MappingConfig_ExternalRef) mappingRef).getGenerator();
       MappingConfig_AbstractRef extMappingRef = ((MappingConfig_ExternalRef) mappingRef).getMappingConfig();
       return "[" + asString(generatorRef) + ":" + asString(extMappingRef, moreDetails) + "]";
     }
@@ -241,7 +241,7 @@ public class GenerationPartitioningUtil {
     return "???";
   }
 
-  private static String asString(ModuleReference generatorRef) {
+  private static String asString(SModuleReference generatorRef) {
     Generator generator = (Generator) ModuleRepositoryFacade.getInstance().getModule(generatorRef);
     if (generator == null) {
       return "unknown(" + generatorRef.toString() + ")";

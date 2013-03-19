@@ -18,7 +18,7 @@ package jetbrains.mps.project.validation;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -48,17 +48,17 @@ public class BaseModuleValidator<T extends AbstractModule> implements ModuleVali
     }
 
     for (Dependency dep : myModule.getDependencies()) {
-      ModuleReference moduleRef = dep.getModuleRef();
+      SModuleReference moduleRef = dep.getModuleRef();
       if (MPSModuleRepository.getInstance().getModule(moduleRef) == null) {
         errors.add("Can't find dependency: " + moduleRef.getModuleName());
       }
     }
-    for (ModuleReference reference : myModule.getUsedLanguagesReferences()) {
+    for (SModuleReference reference : myModule.getUsedLanguagesReferences()) {
       if (ModuleRepositoryFacade.getInstance().getModule(reference, Language.class) == null) {
         errors.add("Can't find used language: " + reference.getModuleName());
       }
     }
-    for (ModuleReference reference : myModule.getUsedDevkitReferences()) {
+    for (SModuleReference reference : myModule.getUsedDevkitReferences()) {
       if (MPSModuleRepository.getInstance().getModule(reference) == null) {
         errors.add("Can't find used devkit: " + reference.getModuleName());
       }

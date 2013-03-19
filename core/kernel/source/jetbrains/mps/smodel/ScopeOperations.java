@@ -17,7 +17,7 @@ package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelRefere
 
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SearchScope;
@@ -64,7 +64,7 @@ public class ScopeOperations {
 
   @Deprecated
   public static Language getLanguage(SearchScope scope, String fqName) {
-    return resolveModule(scope, new ModuleReference(fqName), Language.class);
+    return resolveModule(scope, new jetbrains.mps.project.structure.modules.ModuleReference(fqName), Language.class);
   }
 
   @Deprecated

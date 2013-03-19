@@ -13,7 +13,7 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -46,13 +46,13 @@ public class DependencyUtil {
           ListSequence.fromList(result).addElement(new DependencyUtil.Link(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c")), DependencyUtil.Role.DTDependency_, DependencyUtil.LinkType.LangCore));
 
           // generators and generators dependencies are now also added to language dependencies (MPS-15883) 
-          addDeps(result, Sequence.fromIterable(((Iterable<GeneratorDescriptor>) lang.getGenerators())).select(new ISelector<GeneratorDescriptor, ModuleReference>() {
-            public ModuleReference select(GeneratorDescriptor it) {
+          addDeps(result, Sequence.fromIterable(((Iterable<GeneratorDescriptor>) lang.getGenerators())).select(new ISelector<GeneratorDescriptor, SModuleReference>() {
+            public SModuleReference select(GeneratorDescriptor it) {
               return it.getModuleReference();
             }
           }), DependencyUtil.Role.None, DependencyUtil.LinkType.Generator);
-          addDeps(result, Sequence.fromIterable(((Iterable<GeneratorDescriptor>) lang.getGenerators())).select(new ISelector<GeneratorDescriptor, ModuleReference>() {
-            public ModuleReference select(GeneratorDescriptor it) {
+          addDeps(result, Sequence.fromIterable(((Iterable<GeneratorDescriptor>) lang.getGenerators())).select(new ISelector<GeneratorDescriptor, SModuleReference>() {
+            public SModuleReference select(GeneratorDescriptor it) {
               return it.getModuleReference();
             }
           }), DependencyUtil.Role.DTDependency, DependencyUtil.LinkType.Generator);
@@ -148,12 +148,12 @@ public class DependencyUtil {
     return result;
   }
 
-  private static void addDeps(List<DependencyUtil.Link> result, Iterable<ModuleReference> modules, final DependencyUtil.Role role, final DependencyUtil.LinkType linktype) {
+  private static void addDeps(List<DependencyUtil.Link> result, Iterable<SModuleReference> modules, final DependencyUtil.Role role, final DependencyUtil.LinkType linktype) {
     if (modules == null) {
       return;
     }
-    ListSequence.fromList(result).addSequence(Sequence.fromIterable(modules).select(new ISelector<ModuleReference, IModule>() {
-      public IModule select(ModuleReference ref) {
+    ListSequence.fromList(result).addSequence(Sequence.fromIterable(modules).select(new ISelector<SModuleReference, IModule>() {
+      public IModule select(SModuleReference ref) {
         return MPSModuleRepository.getInstance().getModule(ref);
       }
     }).where(new IWhereFilter<IModule>() {
@@ -167,25 +167,25 @@ public class DependencyUtil {
     }));
   }
 
-  private static Iterable<ModuleReference> getReexportDeps(ModuleDescriptor descr) {
+  private static Iterable<SModuleReference> getReexportDeps(ModuleDescriptor descr) {
     return SetSequence.fromSet(((Set<jetbrains.mps.project.structure.modules.Dependency>) descr.getDependencies())).where(new IWhereFilter<jetbrains.mps.project.structure.modules.Dependency>() {
       public boolean accept(jetbrains.mps.project.structure.modules.Dependency dep) {
         return dep.isReexport();
       }
-    }).select(new ISelector<jetbrains.mps.project.structure.modules.Dependency, ModuleReference>() {
-      public ModuleReference select(jetbrains.mps.project.structure.modules.Dependency dep) {
+    }).select(new ISelector<jetbrains.mps.project.structure.modules.Dependency, SModuleReference>() {
+      public SModuleReference select(jetbrains.mps.project.structure.modules.Dependency dep) {
         return dep.getModuleRef();
       }
     });
   }
 
-  private static Iterable<ModuleReference> getNonreexportDeps(ModuleDescriptor descr) {
+  private static Iterable<SModuleReference> getNonreexportDeps(ModuleDescriptor descr) {
     return SetSequence.fromSet(((Set<jetbrains.mps.project.structure.modules.Dependency>) descr.getDependencies())).where(new IWhereFilter<jetbrains.mps.project.structure.modules.Dependency>() {
       public boolean accept(jetbrains.mps.project.structure.modules.Dependency dep) {
         return !(dep.isReexport());
       }
-    }).select(new ISelector<jetbrains.mps.project.structure.modules.Dependency, ModuleReference>() {
-      public ModuleReference select(jetbrains.mps.project.structure.modules.Dependency dep) {
+    }).select(new ISelector<jetbrains.mps.project.structure.modules.Dependency, SModuleReference>() {
+      public SModuleReference select(jetbrains.mps.project.structure.modules.Dependency dep) {
         return dep.getModuleRef();
       }
     });
@@ -348,28 +348,28 @@ public class DependencyUtil {
     }
   }
 
-  private static Set<ModuleReference> check_he47wm_b0a0j3a1(LanguageDescriptor checkedDotOperand) {
+  private static Set<SModuleReference> check_he47wm_b0a0j3a1(LanguageDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getExtendedLanguages();
     }
     return null;
   }
 
-  private static Set<ModuleReference> check_he47wm_b0b0j3a1(LanguageDescriptor checkedDotOperand) {
+  private static Set<SModuleReference> check_he47wm_b0b0j3a1(LanguageDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getRuntimeModules();
     }
     return null;
   }
 
-  private static Set<ModuleReference> check_he47wm_b0a0k3a1(LanguageDescriptor checkedDotOperand) {
+  private static Set<SModuleReference> check_he47wm_b0a0k3a1(LanguageDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getExtendedLanguages();
     }
     return null;
   }
 
-  private static Set<ModuleReference> check_he47wm_b0b0k3a1(LanguageDescriptor checkedDotOperand) {
+  private static Set<SModuleReference> check_he47wm_b0b0k3a1(LanguageDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getRuntimeModules();
     }

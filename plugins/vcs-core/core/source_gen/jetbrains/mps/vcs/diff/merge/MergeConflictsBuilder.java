@@ -30,7 +30,7 @@ import jetbrains.mps.util.SNodeCompare;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.vcs.diff.changes.ImportedModelChange;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;
 import jetbrains.mps.vcs.diff.changes.ModelVersionChange;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -224,9 +224,9 @@ public class MergeConflictsBuilder {
   }
 
   private void collectSymmetricModuleDependencyChanges() {
-    collectSymmetricChanges(new _FunctionTypes._return_P1_E0<Tuples._2<ModuleReference, ModuleDependencyChange.DependencyType>, ModuleDependencyChange>() {
-      public Tuples._2<ModuleReference, ModuleDependencyChange.DependencyType> invoke(ModuleDependencyChange mdc) {
-        return MultiTuple.<ModuleReference,ModuleDependencyChange.DependencyType>from(mdc.getModuleReference(), mdc.getDependencyType());
+    collectSymmetricChanges(new _FunctionTypes._return_P1_E0<Tuples._2<SModuleReference, ModuleDependencyChange.DependencyType>, ModuleDependencyChange>() {
+      public Tuples._2<SModuleReference, ModuleDependencyChange.DependencyType> invoke(ModuleDependencyChange mdc) {
+        return MultiTuple.<SModuleReference,ModuleDependencyChange.DependencyType>from(mdc.getModuleReference(), mdc.getDependencyType());
       }
     }, ModuleDependencyChange.class);
   }

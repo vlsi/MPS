@@ -16,7 +16,7 @@
 package jetbrains.mps.generator.impl.plan;
 
 import jetbrains.mps.generator.impl.TemplateModelScanner;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
@@ -48,13 +48,13 @@ public class ModelContentUtil {
       TemplateModelScanner templateModelScanner = new TemplateModelScanner(model);
       templateModelScanner.scan();
       Set<String> namespaces = new HashSet<String>(templateModelScanner.getQueryLanguages());
-      for (ModuleReference ref : ((jetbrains.mps.smodel.SModelInternal) model).engagedOnGenerationLanguages()) {
+      for (SModuleReference ref : ((jetbrains.mps.smodel.SModelInternal) model).engagedOnGenerationLanguages()) {
         namespaces.add(ref.getModuleName());
       }
       return namespaces;
     }
     Set<String> namespaces = new HashSet<String>();
-    for (ModuleReference ref : ((jetbrains.mps.smodel.SModelInternal) model).engagedOnGenerationLanguages()) {
+    for (SModuleReference ref : ((jetbrains.mps.smodel.SModelInternal) model).engagedOnGenerationLanguages()) {
       namespaces.add(ref.getModuleName());
     }
     for (SNode root : model.getRootNodes()) {

@@ -1965,7 +1965,7 @@ public class ApiTransformations {
     quotedNode_4.addChild("operation", quotedNode_7);
     quotedNode_3.addChild("expression", quotedNode_4);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5.setReference("classifier", SReference.create("classifier", quotedNode_5, facade.createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.modules(MPS.Core/jetbrains.mps.project.structure.modules@java_stub)"), facade.createNodeId("~ModuleReference")));
+    quotedNode_5.setReference("classifier", SReference.create("classifier", quotedNode_5, facade.createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.modules(MPS.Core/jetbrains.mps.project.structure.modules@java_stub)"), facade.createNodeId("~SModuleReference")));
     quotedNode_3.addChild("type", quotedNode_5);
     quotedNode_2.addChild("expression", quotedNode_3);
     return quotedNode_2;

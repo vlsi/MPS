@@ -8,7 +8,7 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.ModuleId;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.extapi.persistence.FolderModelRootBase;
@@ -23,7 +23,7 @@ public class EvaluationModule extends AbstractModule implements SModule {
   private final Set<String> myClassPaths = SetSequence.fromSet(new HashSet<String>());
 
   public EvaluationModule() {
-    ModuleReference reference = new ModuleReference("Evaluation Container Module", ModuleId.regular());
+    SModuleReference reference = new jetbrains.mps.project.structure.modules.ModuleReference("Evaluation Container Module", ModuleId.regular());
     setModuleReference(reference);
     myDescriptor = new ModuleDescriptor();
   }

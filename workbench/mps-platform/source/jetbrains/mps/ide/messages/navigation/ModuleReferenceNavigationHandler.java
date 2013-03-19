@@ -19,19 +19,19 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.module.SModule;
 
-class ModuleReferenceNavigationHandler implements INavigationHandler<ModuleReference> {
+class ModuleReferenceNavigationHandler implements INavigationHandler<SModuleReference> {
   @Override
-  public boolean canNavigate(ModuleReference object) {
+  public boolean canNavigate(SModuleReference object) {
     SModule module = ModuleRepositoryFacade.getInstance().getModule(object);
     return module != null;
   }
 
   @Override
-  public void navigate(ModuleReference object, Project project, boolean focus, boolean select) {
+  public void navigate(SModuleReference object, Project project, boolean focus, boolean select) {
     SModule module = ModuleRepositoryFacade.getInstance().getModule(object);
     if (module == null) return;
 

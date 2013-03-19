@@ -16,7 +16,7 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.Language;
@@ -86,7 +86,7 @@ public class MissingDependenciesFixer {
           }
           module.addDependency(anotherModule.getModuleReference(), false);
         }
-        for (ModuleReference namespace : CollectionUtil.union(((SModelInternal) model).importedLanguages(), ((SModelInternal) model).engagedOnGenerationLanguages())) {
+        for (SModuleReference namespace : CollectionUtil.union(((SModelInternal) model).importedLanguages(), ((SModelInternal) model).engagedOnGenerationLanguages())) {
           if (moduleScope.resolve(namespace) instanceof Language) {
             continue;
           }
@@ -94,10 +94,10 @@ public class MissingDependenciesFixer {
           if (lang == null) {
             continue;
           }
-          ModuleReference ref = ModuleReference.fromString(namespace.toString());
+          SModuleReference ref = jetbrains.mps.project.structure.modules.ModuleReference.fromString(namespace.toString());
           module.addUsedLanguage(ref);
         }
-        for (ModuleReference devKitNamespace : ((SModelInternal) model).importedDevkits()) {
+        for (SModuleReference devKitNamespace : ((SModelInternal) model).importedDevkits()) {
           if (moduleScope.resolve(devKitNamespace) instanceof DevKit) {
             continue;
           }
@@ -105,7 +105,7 @@ public class MissingDependenciesFixer {
           if (devKit == null) {
             continue;
           }
-          ModuleReference ref = ModuleReference.fromString(devKitNamespace.toString());
+          SModuleReference ref = jetbrains.mps.project.structure.modules.ModuleReference.fromString(devKitNamespace.toString());
           module.addUsedDevkit(ref);
         }
 

@@ -17,32 +17,33 @@ package jetbrains.mps.project.structure.modules;
 
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.io.IOException;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class DevkitDescriptor extends ModuleDescriptor {
-  private Set<ModuleReference> myExportedLanguages;
-  private Set<ModuleReference> myExportedSolutions;
-  private Set<ModuleReference> myExtendedDevkits;
+  private Set<SModuleReference> myExportedLanguages;
+  private Set<SModuleReference> myExportedSolutions;
+  private Set<SModuleReference> myExtendedDevkits;
 
   public DevkitDescriptor() {
     super();
-    myExportedLanguages = new LinkedHashSet<ModuleReference>();
-    myExportedSolutions = new LinkedHashSet<ModuleReference>();
-    myExtendedDevkits = new LinkedHashSet<ModuleReference>();
+    myExportedLanguages = new LinkedHashSet<SModuleReference>();
+    myExportedSolutions = new LinkedHashSet<SModuleReference>();
+    myExtendedDevkits = new LinkedHashSet<SModuleReference>();
   }
 
-  public Set<ModuleReference> getExportedLanguages() {
+  public Set<SModuleReference> getExportedLanguages() {
     return myExportedLanguages;
   }
 
-  public Set<ModuleReference> getExportedSolutions() {
+  public Set<SModuleReference> getExportedSolutions() {
     return myExportedSolutions;
   }
 
-  public Set<ModuleReference> getExtendedDevkits() {
+  public Set<SModuleReference> getExtendedDevkits() {
     return myExtendedDevkits;
   }
 
@@ -68,17 +69,17 @@ public class DevkitDescriptor extends ModuleDescriptor {
     stream.writeString(getNamespace());
 
     stream.writeInt(myExportedLanguages.size());
-    for (ModuleReference ref : myExportedLanguages) {
+    for (SModuleReference ref : myExportedLanguages) {
       stream.writeModuleReference(ref);
     }
 
     stream.writeInt(myExportedSolutions.size());
-    for (ModuleReference ref : myExportedSolutions) {
+    for (SModuleReference ref : myExportedSolutions) {
       stream.writeModuleReference(ref);
     }
 
     stream.writeInt(myExtendedDevkits.size());
-    for (ModuleReference ref : myExtendedDevkits) {
+    for (SModuleReference ref : myExtendedDevkits) {
       stream.writeModuleReference(ref);
     }
 

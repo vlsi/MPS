@@ -19,7 +19,7 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelListener;
@@ -269,32 +269,32 @@ public abstract class BaseSModelDescriptor extends SModelBase implements jetbrai
   }
 
   @Override
-  public List<ModuleReference> importedLanguages() {
+  public List<SModuleReference> importedLanguages() {
     return getSModelInternal().importedLanguages();
   }
 
   @Override
-  public void deleteLanguage(@NotNull ModuleReference ref) {
+  public void deleteLanguage(@NotNull SModuleReference ref) {
     getSModelInternal().deleteLanguage(ref);
   }
 
   @Override
-  public void addLanguage(ModuleReference ref) {
+  public void addLanguage(SModuleReference ref) {
     getSModelInternal().addLanguage(ref);
   }
 
   @Override
-  public List<ModuleReference> importedDevkits() {
+  public List<SModuleReference> importedDevkits() {
     return getSModelInternal().importedDevkits();
   }
 
   @Override
-  public void addDevKit(ModuleReference ref) {
+  public void addDevKit(SModuleReference ref) {
     getSModelInternal().addDevKit(ref);
   }
 
   @Override
-  public void deleteDevKit(@NotNull ModuleReference ref) {
+  public void deleteDevKit(@NotNull SModuleReference ref) {
     getSModelInternal().deleteDevKit(ref);
   }
 
@@ -329,17 +329,17 @@ public abstract class BaseSModelDescriptor extends SModelBase implements jetbrai
   }
 
   @Override
-  public List<ModuleReference> engagedOnGenerationLanguages() {
+  public List<SModuleReference> engagedOnGenerationLanguages() {
     return getSModelInternal().engagedOnGenerationLanguages();
   }
 
   @Override
-  public void addEngagedOnGenerationLanguage(ModuleReference ref) {
+  public void addEngagedOnGenerationLanguage(SModuleReference ref) {
     getSModelInternal().addEngagedOnGenerationLanguage(ref);
   }
 
   @Override
-  public void removeEngagedOnGenerationLanguage(ModuleReference ref) {
+  public void removeEngagedOnGenerationLanguage(SModuleReference ref) {
     getSModelInternal().removeEngagedOnGenerationLanguage(ref);
   }
 

@@ -16,9 +16,9 @@
 package jetbrains.mps.ide.ui.dialogs.properties.tables.models;
 
 import jetbrains.mps.ide.ui.dialogs.properties.ModelProperties;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
-public class ModelsLangEngagedOnGenTM extends SimpleTableModel<ModuleReference> {
+public class ModelsLangEngagedOnGenTM extends SimpleTableModel<SModuleReference> {
 
   private final ModelProperties myModelProperties;
 
@@ -47,7 +47,7 @@ public class ModelsLangEngagedOnGenTM extends SimpleTableModel<ModuleReference> 
 
   @Override
   public Class<?> getColumnClass(int columnIndex) {
-    return ModuleReference.class;
+    return SModuleReference.class;
   }
 
   @Override

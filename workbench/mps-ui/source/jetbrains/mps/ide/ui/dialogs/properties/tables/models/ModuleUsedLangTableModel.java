@@ -16,7 +16,7 @@
 package jetbrains.mps.ide.ui.dialogs.properties.tables.models;
 
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public class ModuleUsedLangTableModel extends UsedLangsTableModel<ModuleDescriptor> {
   public ModuleUsedLangTableModel(ModuleDescriptor value) {
@@ -25,10 +25,10 @@ public class ModuleUsedLangTableModel extends UsedLangsTableModel<ModuleDescript
 
   @Override
   public void init() {
-    for(ModuleReference moduleReference : myItem.getUsedLanguages())
+    for(SModuleReference moduleReference : myItem.getUsedLanguages())
       myTableItems.add(moduleReference);
 
-    for(ModuleReference moduleReference : myItem.getUsedDevkits())
+    for(SModuleReference moduleReference : myItem.getUsedDevkits())
       myTableItems.add(moduleReference);
   }
 

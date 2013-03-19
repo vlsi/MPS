@@ -9,7 +9,7 @@ import jetbrains.mps.project.io.DescriptorIOException;
 import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import java.io.IOException;
 import org.jdom.JDOMException;
@@ -62,7 +62,7 @@ public class IdeaModuleSolutionDescriptorIO implements DescriptorIO<SolutionDesc
         // TODO: dependencies 
         if (mpsConf.usedLanguages != null) {
           for (String usedLang : mpsConf.usedLanguages) {
-            result_56japk_a0a0e0b.getUsedLanguages().add(ModuleReference.fromString(usedLang));
+            result_56japk_a0a0e0b.getUsedLanguages().add(jetbrains.mps.project.structure.modules.ModuleReference.fromString(usedLang));
           }
         }
 

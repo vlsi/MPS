@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -75,8 +75,8 @@ public class FixMissingImportsInProject_Action extends BaseAction {
 
         if (module instanceof Language) {
           Iterable<Generator> generators = ((Language) module).getGenerators();
-          QueueSequence.fromQueue(modules).addSequence(Sequence.fromIterable(generators).select(new ISelector<Generator, ModuleReference>() {
-            public ModuleReference select(Generator it) {
+          QueueSequence.fromQueue(modules).addSequence(Sequence.fromIterable(generators).select(new ISelector<Generator, SModuleReference>() {
+            public SModuleReference select(Generator it) {
               return it.getModuleReference();
             }
           }));

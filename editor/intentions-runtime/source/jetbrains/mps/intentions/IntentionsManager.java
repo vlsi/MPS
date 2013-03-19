@@ -33,7 +33,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.Language;
@@ -77,7 +77,7 @@ import java.util.Set;
 public class IntentionsManager implements ApplicationComponent, PersistentStateComponent<IntentionsManager.MyState> {
   private static final Logger LOG = Logger.getLogger(IntentionsManager.class);
 
-  public static String getDescriptorClassName(ModuleReference langRef) {
+  public static String getDescriptorClassName(SModuleReference langRef) {
     return "IntentionsDescriptor";
   }
 
@@ -95,7 +95,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   private Map<Intention, SNodeReference> myNodesByIntentions = new HashMap<Intention, SNodeReference>();
   private Map<String, Set<Intention>> myIntentions = new HashMap<String, Set<Intention>>();
   private Set<String> myDisabledIntentionsCache = new HashSet<String>();
-  private HashMap<Class, ModuleReference> myIntentionsLanguages = new HashMap<Class, ModuleReference>();
+  private HashMap<Class, SModuleReference> myIntentionsLanguages = new HashMap<Class, SModuleReference>();
 
   private Set<IntentionFactory> myIntentionFactories = new HashSet<IntentionFactory>();
   private Map<String, Set<IntentionFactory>> myConcept2IntentionFactories = new HashMap<String, Set<IntentionFactory>>();
@@ -294,7 +294,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   @Nullable
   public synchronized Language getIntentionLanguage(Intention intention) {
     checkLoaded();
-    ModuleReference ref = myIntentionsLanguages.get(intention.getClass());
+    SModuleReference ref = myIntentionsLanguages.get(intention.getClass());
     if (ref == null) return null;
     return ModuleRepositoryFacade.getInstance().getModule(ref, Language.class);
   }
@@ -325,7 +325,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
   //-------------reloading-----------------
 
-  public synchronized void addIntention(Intention intention, @Nullable ModuleReference lang, @Nullable SNodeReference node) {
+  public synchronized void addIntention(Intention intention, @Nullable SModuleReference lang, @Nullable SNodeReference node) {
     Set<Intention> intentions = myIntentions.get(intention.getConcept());
     if (intentions == null) {
       intentions = new HashSet<Intention>();
@@ -398,7 +398,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       for (AbstractMigrationRefactoring refactoring : script.getRefactorings()) {
         if (refactoring.isShowAsIntention()) {
           Intention intention = new MigrationRefactoringAdapter(refactoring, migrationScript);
-          ModuleReference moduleRef = language.getModuleReference();
+          SModuleReference moduleRef = language.getModuleReference();
           SNodeReference node = new jetbrains.mps.smodel.SNodePointer(migrationScript);
           IntentionsManager.getInstance().addIntention(intention, moduleRef, node);
         }

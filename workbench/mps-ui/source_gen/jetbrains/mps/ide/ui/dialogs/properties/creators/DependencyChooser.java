@@ -6,7 +6,7 @@ import jetbrains.mps.util.Computable;
 import java.util.List;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.FilteredGlobalScope;
@@ -21,23 +21,23 @@ public class DependencyChooser implements Computable<List<Dependency>> {
 
   @Override
   public List<Dependency> compute() {
-    final Wrappers._T<Iterable<ModuleReference>> allModuleRefs = new Wrappers._T<Iterable<ModuleReference>>();
+    final Wrappers._T<Iterable<SModuleReference>> allModuleRefs = new Wrappers._T<Iterable<SModuleReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         Iterable<IModule> modules = new FilteredGlobalScope().getVisibleModules();
-        allModuleRefs.value = Sequence.fromIterable(modules).select(new ISelector<IModule, ModuleReference>() {
-          public ModuleReference select(IModule it) {
+        allModuleRefs.value = Sequence.fromIterable(modules).select(new ISelector<IModule, SModuleReference>() {
+          public SModuleReference select(IModule it) {
             return it.getModuleReference();
           }
         });
       }
     });
-    List<ModuleReference> moduleRefs = CommonChoosers.showDialogModuleCollectionChooser(null, "module", Sequence.fromIterable(allModuleRefs.value).toListSequence(), null);
+    List<SModuleReference> moduleRefs = CommonChoosers.showDialogModuleCollectionChooser(null, "module", Sequence.fromIterable(allModuleRefs.value).toListSequence(), null);
     if (moduleRefs == null) {
       return null;
     }
     List<Dependency> result = new ArrayList<Dependency>();
-    for (ModuleReference m : moduleRefs) {
+    for (SModuleReference m : moduleRefs) {
       Dependency dependency = new Dependency();
       dependency.setModuleRef(m);
       result.add(dependency);

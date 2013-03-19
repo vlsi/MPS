@@ -17,7 +17,7 @@ package jetbrains.mps.workbench.dialogs.project.utildialogs.clonemodel;
 
 import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.project.structure.model.RootReference;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.ModelRootUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelOperations;
@@ -38,16 +38,16 @@ public class CloneModelProperties {
 
   private RootReference myRoot;
 
-  private List<ModuleReference> myImportedLanguages;
+  private List<SModuleReference> myImportedLanguages;
   private List<SModelReference> myImportedModels;
-  private List<ModuleReference> myImportedDevkits;
-  private List<ModuleReference> myLanguagesInGeneration;
+  private List<SModuleReference> myImportedDevkits;
+  private List<SModuleReference> myLanguagesInGeneration;
 
   public CloneModelProperties() {
-    myImportedLanguages = new ArrayList<ModuleReference>();
+    myImportedLanguages = new ArrayList<SModuleReference>();
     myImportedModels = new ArrayList<SModelReference>();
-    myImportedDevkits = new ArrayList<ModuleReference>();
-    myLanguagesInGeneration = new ArrayList<ModuleReference>();
+    myImportedDevkits = new ArrayList<SModuleReference>();
+    myLanguagesInGeneration = new ArrayList<SModuleReference>();
   }
 
   /**
@@ -90,7 +90,7 @@ public class CloneModelProperties {
     myRoot = root;
   }
 
-  public List<ModuleReference> getImportedLanguages() {
+  public List<SModuleReference> getImportedLanguages() {
     return myImportedLanguages;
   }
 
@@ -98,11 +98,11 @@ public class CloneModelProperties {
     return myImportedModels;
   }
 
-  public List<ModuleReference> getImportedDevkits() {
+  public List<SModuleReference> getImportedDevkits() {
     return myImportedDevkits;
   }
 
-  public List<ModuleReference> getLanguagesInGeneration() {
+  public List<SModuleReference> getLanguagesInGeneration() {
     return myLanguagesInGeneration;
   }
 

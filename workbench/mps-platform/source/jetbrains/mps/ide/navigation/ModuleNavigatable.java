@@ -19,16 +19,16 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
 /**
 * evgeny, 11/6/11
 */
 public class ModuleNavigatable extends BaseNavigatable {
-  private ModuleReference moduleReference;
+  private SModuleReference moduleReference;
 
-  public ModuleNavigatable(Project project, ModuleReference moduleReference) {
+  public ModuleNavigatable(Project project, SModuleReference moduleReference) {
     super(project);
     this.moduleReference = moduleReference;
   }

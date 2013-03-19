@@ -16,7 +16,7 @@
 package jetbrains.mps.project.validation;
 
 import jetbrains.mps.generator.impl.plan.ModelContentUtil;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.*;
 
@@ -30,7 +30,7 @@ public class GeneratorValidator extends BaseModuleValidator<Generator> {
   @Override
   public List<String> getErrors() {
     List<String> errors = new ArrayList<String>(super.getErrors());
-    for (ModuleReference gen : myModule.getModuleDescriptor().getDepGenerators()) {
+    for (SModuleReference gen : myModule.getModuleDescriptor().getDepGenerators()) {
       if (ModuleRepositoryFacade.getInstance().getModule(gen) == null) {
         errors.add("Can't find generator dependency: " + gen.getModuleName());
       }

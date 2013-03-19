@@ -26,7 +26,7 @@ import jetbrains.mps.icons.MPSIcons.Nodes;
 import jetbrains.mps.icons.MPSIcons.Nodes.Models;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefAllGlobal;
@@ -65,7 +65,7 @@ public class GeneratorPrioritiesTree {
       public void run() {
         initTree(descriptor);
         if(isRight) {
-          for (ModuleReference ref : descriptor.getDepGenerators()) {
+          for (SModuleReference ref : descriptor.getDepGenerators()) {
             Generator gen = (Generator) MPSModuleRepository.getInstance().getModule(ref.getModuleId());
             if (gen != null)
               initTree(gen.getModuleDescriptor());
@@ -85,7 +85,7 @@ public class GeneratorPrioritiesTree {
 
   private void initTree(GeneratorDescriptor descriptor) {
     ExtendedCheckedTreeNode generatorNode = new GeneratorCheckedTreeNode(
-      (ModuleReference)MPSModuleRepository.getInstance().getModule(descriptor.getId()).getModuleReference()
+      (SModuleReference)MPSModuleRepository.getInstance().getModule(descriptor.getId()).getModuleReference()
     );
     myRootNode.add(generatorNode);
 
@@ -116,7 +116,7 @@ public class GeneratorPrioritiesTree {
   }
   
   private void setCheckedStateForRef(ExtendedCheckedTreeNode node, MappingConfig_ExternalRef mapping) {
-    ModuleReference modRef = mapping.getGenerator();
+    SModuleReference modRef = mapping.getGenerator();
 
     Enumeration children = node.children();
     while (children.hasMoreElements()) {
@@ -366,10 +366,10 @@ public class GeneratorPrioritiesTree {
     }
   }
 
-  private class GeneratorCheckedTreeNode extends ExtendedCheckedTreeNode<ModuleReference> {
+  private class GeneratorCheckedTreeNode extends ExtendedCheckedTreeNode<SModuleReference> {
 
     private final String myPresentation;
-    public GeneratorCheckedTreeNode(ModuleReference value) {
+    public GeneratorCheckedTreeNode(SModuleReference value) {
       super(value);
       Generator generator = (Generator) MPSModuleRepository.getInstance().getModule(getUserObject().getModuleId());
       myPresentation = generator == null ? "unknown generator" : generator.getAlias();

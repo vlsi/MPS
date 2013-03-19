@@ -22,7 +22,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -31,16 +31,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ModuleTestConfiguration extends BaseTestConfiguration {
-  private ModuleReference myModuleRef;
+  private SModuleReference myModuleRef;
 
   public ModuleTestConfiguration() {
   }
 
-  public ModuleReference getModuleRef() {
+  public SModuleReference getModuleRef() {
     return myModuleRef;
   }
 
-  public void setModuleRef(ModuleReference moduleRef) {
+  public void setModuleRef(SModuleReference moduleRef) {
     myModuleRef = moduleRef;
   }
 

@@ -87,7 +87,7 @@ public class ModuleSymbolicSuite extends ParentRunner<Runner> {
   private static String getAnnotatedModule(Class<?> klass) throws InitializationError {
     ModuleSymbolicSuite.ModuleReference mrefAnn = klass.getAnnotation(ModuleSymbolicSuite.ModuleReference.class);
     if (mrefAnn == null) {
-      throw new InitializationError(String.format("class '%s' must have a ModuleReference annotation", klass.getName()));
+      throw new InitializationError(String.format("class '%s' must have a SModuleReference annotation", klass.getName()));
     }
     return mrefAnn.value();
   }

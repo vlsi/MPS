@@ -8,7 +8,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import java.util.HashSet;
@@ -28,9 +28,9 @@ public class SNodeTransferable implements Transferable {
   private static final DataFlavor[] flavors = {SModelDataFlavor.sNode, DataFlavor.stringFlavor, DataFlavor.plainTextFlavor};
   private List<SNode> mySNodes = new ArrayList<SNode>();
   @Nullable
-  private ModuleReference mySourceModule;
+  private SModuleReference mySourceModule;
   private Set<SModelReference> myNecessaryModels = new HashSet<SModelReference>();
-  private Set<ModuleReference> myNecessaryLanguages = new HashSet<ModuleReference>();
+  private Set<SModuleReference> myNecessaryLanguages = new HashSet<SModuleReference>();
   private String myText = "";
 
   public SNodeTransferable(List<SNode> nodes, String text) {
@@ -104,19 +104,19 @@ public class SNodeTransferable implements Transferable {
   }
 
   public PasteNodeData createNodeData() {
-    Set<ModuleReference> necessaryLanguages = myNecessaryLanguages;
+    Set<SModuleReference> necessaryLanguages = myNecessaryLanguages;
     Set<SModelReference> necessaryImports = myNecessaryModels;
     if (necessaryImports == null) {
       necessaryImports = new HashSet<SModelReference>();
     }
     if (necessaryLanguages == null) {
-      necessaryLanguages = new HashSet<ModuleReference>();
+      necessaryLanguages = new HashSet<SModuleReference>();
     }
     IModule module = (mySourceModule == null ?
       null :
       MPSModuleRepository.getInstance().getModule(mySourceModule)
     );
-    return CopyPasteUtil.createNodeDataOut(mySNodes, module, new HashSet<ModuleReference>(necessaryLanguages), new HashSet<SModelReference>(necessaryImports));
+    return CopyPasteUtil.createNodeDataOut(mySNodes, module, new HashSet<SModuleReference>(necessaryLanguages), new HashSet<SModelReference>(necessaryImports));
   }
 
   public boolean containsNodes() {

@@ -129,7 +129,7 @@ public class TemplateFindUsagesDescriptor implements TemplateDeclaration {
                         try {
                           environment.getTracer().pushTemplateNode(templateNode_a7jb2i_a0a0a1a3a1a4a1a3a1a5a1a6a1a2);
                           environment.nodeCopied(context, tnode10, "tpl/r:00000000-0000-4000-0000-011c8959035c/7991477654791670144");
-                          tnode10.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode10, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.modules(MPS.Core/jetbrains.mps.project.structure.modules@java_stub)"), PersistenceFacade.getInstance().createNodeId("~ModuleReference.<init>(java.lang.String,java.lang.String)")));
+                          tnode10.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode10, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.modules(MPS.Core/jetbrains.mps.project.structure.modules@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SModuleReference.<init>(java.lang.String,java.lang.String)")));
 
                           {
                             final SNode tnode11 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");

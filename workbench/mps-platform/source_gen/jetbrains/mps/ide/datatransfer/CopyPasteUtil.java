@@ -4,7 +4,7 @@ package jetbrains.mps.ide.datatransfer;
 
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -50,12 +50,12 @@ public class CopyPasteUtil {
   public CopyPasteUtil() {
   }
 
-  private static void processImportsAndLanguages(Set<SModelReference> necessaryImports, Set<ModuleReference> necessaryLanguages, Map<SNode, SNode> sourceNodesToNewNodes, Set<SReference> allReferences) {
+  private static void processImportsAndLanguages(Set<SModelReference> necessaryImports, Set<SModuleReference> necessaryLanguages, Map<SNode, SNode> sourceNodesToNewNodes, Set<SReference> allReferences) {
     necessaryImports.clear();
     necessaryLanguages.clear();
     Set<SNode> sourceNodes = sourceNodesToNewNodes.keySet();
     for (SNode node : sourceNodes) {
-      necessaryLanguages.add((ModuleReference) ModuleReference.create(node.getConcept().getLanguage().getPresentation(), MPSModuleRepository.getInstance()));
+      necessaryLanguages.add((SModuleReference) jetbrains.mps.project.structure.modules.ModuleReference.create(node.getConcept().getLanguage().getPresentation(), MPSModuleRepository.getInstance()));
     }
     for (SReference ref : allReferences) {
       if (sourceNodesToNewNodes.get(ref.getTargetNode()) == null) {
@@ -82,7 +82,7 @@ public class CopyPasteUtil {
       result.add(targetNode);
     }
     HashSet<SModelReference> necessaryModels = new HashSet<SModelReference>();
-    HashSet<ModuleReference> necessaryLanguages = new HashSet<ModuleReference>();
+    HashSet<SModuleReference> necessaryLanguages = new HashSet<SModuleReference>();
     CopyPasteUtil.processImportsAndLanguages(necessaryModels, necessaryLanguages, sourceNodesToNewNodes, allReferences);
     CopyPasteUtil.processReferencesIn(sourceNodesToNewNodes, allReferences);
     Map<SNode, SNode> newNodesToSourceNodes = new HashMap<SNode, SNode>();
@@ -95,7 +95,7 @@ public class CopyPasteUtil {
     return new PasteNodeData(result, null, module, necessaryLanguages, necessaryModels);
   }
 
-  public static PasteNodeData createNodeDataOut(List<SNode> sourceNodes, IModule sourceModule, Set<ModuleReference> necessaryLanguages, Set<SModelReference> necessaryModels) {
+  public static PasteNodeData createNodeDataOut(List<SNode> sourceNodes, IModule sourceModule, Set<SModuleReference> necessaryLanguages, Set<SModelReference> necessaryModels) {
     if (sourceNodes.isEmpty()) {
       return PasteNodeData.emptyPasteNodeData(null);
     }
@@ -204,13 +204,13 @@ public class CopyPasteUtil {
     SModelReference modelReference = model.getReference();
     SModelFqName fqName = new SModelFqName(SModelStereotype.withoutStereotype(modelReference.getModelName()), SModelStereotype.INTERNAL_COPY);
     jetbrains.mps.smodel.SModel newModel = new jetbrains.mps.smodel.SModel(new jetbrains.mps.smodel.SModelReference(fqName, SModelId.generate()));
-    for (ModuleReference language : ((SModelInternal) model).importedLanguages()) {
+    for (SModuleReference language : ((SModelInternal) model).importedLanguages()) {
       newModel.addLanguage(language);
     }
     for (SModelReference importedModel : SModelOperations.getImportedModelUIDs(model)) {
       newModel.addModelImport(importedModel, false);
     }
-    for (ModuleReference devKit : ((SModelInternal) model).importedDevkits()) {
+    for (SModuleReference devKit : ((SModelInternal) model).importedDevkits()) {
       newModel.addDevKit(devKit);
     }
     return newModel;
@@ -315,11 +315,11 @@ public class CopyPasteUtil {
   }
 
   @Nullable
-  public static Runnable addImportsWithDialog(final IModule sourceModule, final SModel targetModel, final Set<ModuleReference> necessaryLanguages, final Set<SModelReference> necessaryImports, final IOperationContext context) {
+  public static Runnable addImportsWithDialog(final IModule sourceModule, final SModel targetModel, final Set<SModuleReference> necessaryLanguages, final Set<SModelReference> necessaryImports, final IOperationContext context) {
     if (targetModel.getModule() == null) {
       return null;
     }
-    final List<ModuleReference> additionalLanguages = new ArrayList<ModuleReference>();
+    final List<SModuleReference> additionalLanguages = new ArrayList<SModuleReference>();
     final List<SModelReference> additionalModels = new ArrayList<SModelReference>();
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
@@ -334,7 +334,7 @@ public class CopyPasteUtil {
           }
         }
         necessaryImports.retainAll(additionalModels);
-        for (ModuleReference moduleReference : necessaryLanguages) {
+        for (SModuleReference moduleReference : necessaryLanguages) {
           if (!(SModelOperations.hasLanguage(targetModel, moduleReference))) {
             additionalLanguages.add(moduleReference);
           }
@@ -346,7 +346,7 @@ public class CopyPasteUtil {
       return null;
     }
 
-    AddRequiredImportsDialog dialog = new AddRequiredImportsDialog(ProjectHelper.toIdeaProject(context.getProject()), necessaryImports.toArray(new SModelReference[necessaryImports.size()]), necessaryLanguages.toArray(new ModuleReference[necessaryLanguages.size()]));
+    AddRequiredImportsDialog dialog = new AddRequiredImportsDialog(ProjectHelper.toIdeaProject(context.getProject()), necessaryImports.toArray(new SModelReference[necessaryImports.size()]), necessaryLanguages.toArray(new SModuleReference[necessaryLanguages.size()]));
     dialog.show();
     if (dialog.isOK()) {
       return addImports(context.getProject(), targetModel, dialog.getSelectedLanguages(), dialog.getSelectedImports());
@@ -360,7 +360,7 @@ public class CopyPasteUtil {
     return CopyPasteUtil.addImportsWithDialog(pasteNodeData.getSourceModule(), targetModel, pasteNodeData.getNecessaryLanguages(), pasteNodeData.getNecessaryModels(), context);
   }
 
-  private static Runnable addImports(Project p, final SModel targetModel, @NotNull final ModuleReference[] requiredLanguages, @NotNull final SModelReference[] requiredImports) {
+  private static Runnable addImports(Project p, final SModel targetModel, @NotNull final SModuleReference[] requiredLanguages, @NotNull final SModelReference[] requiredImports) {
     if (requiredLanguages.length == 0 && requiredImports.length == 0) {
       return null;
     }
@@ -372,7 +372,7 @@ public class CopyPasteUtil {
         for (SModelReference imported : requiredImports) {
           ((SModelInternal) targetModel).addModelImport(imported, false);
         }
-        for (ModuleReference language : requiredLanguages) {
+        for (SModuleReference language : requiredLanguages) {
           ((SModelInternal) targetModel).addLanguage(language);
         }
         //  model's module properties 
@@ -381,7 +381,7 @@ public class CopyPasteUtil {
           return;
         }
 
-        for (ModuleReference language : requiredLanguages) {
+        for (SModuleReference language : requiredLanguages) {
           targetModule.addUsedLanguage(language);
         }
 

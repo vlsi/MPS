@@ -19,7 +19,7 @@ package jetbrains.mps.idea.core.ui;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.idea.core.icons.MPSIcons;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 
@@ -29,14 +29,14 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class UsedLanguagesTable extends MpsElementsTable<ModuleReference> implements IModuleConfigurationTab {
-  public static Comparator<ModuleReference> MODULE_REFERENCE_COMPARATOR = new ModuleReferenceComparator();
+public class UsedLanguagesTable extends MpsElementsTable<SModuleReference> implements IModuleConfigurationTab {
+  public static Comparator<SModuleReference> MODULE_REFERENCE_COMPARATOR = new SModuleReferenceComparator();
 
   // TODO: create additional MPSConfigurationBean.get/setUsedLanguageReferences() methods and use it here
-  private static List<ModuleReference> getUsedLanguages(MPSConfigurationBean data) {
-    List<ModuleReference> usedLanguages = new ArrayList<ModuleReference>();
+  private static List<SModuleReference> getUsedLanguages(MPSConfigurationBean data) {
+    List<SModuleReference> usedLanguages = new ArrayList<SModuleReference>();
     for (String moduleReference : data.getUsedLanguages()) {
-      usedLanguages.add(ModuleReference.fromString(moduleReference));
+      usedLanguages.add(jetbrains.mps.project.structure.modules.ModuleReference.fromString(moduleReference));
     }
     return usedLanguages;
   }
@@ -63,10 +63,10 @@ public class UsedLanguagesTable extends MpsElementsTable<ModuleReference> implem
   }
 
   private String[] getUsedLanguagesStringArray() {
-    List<ModuleReference> moduleReferences = getElements();
+    List<SModuleReference> moduleReferences = getElements();
     String[] usedLanguages = new String[moduleReferences.size()];
     int i = 0;
-    for (ModuleReference moduleReference : moduleReferences) {
+    for (SModuleReference moduleReference : moduleReferences) {
       usedLanguages[i] = moduleReference.toString();
       i++;
     }
@@ -74,18 +74,18 @@ public class UsedLanguagesTable extends MpsElementsTable<ModuleReference> implem
   }
 
   @Override
-  protected String getText(ModuleReference moduleReference) {
+  protected String getText(SModuleReference moduleReference) {
     return moduleReference.getModuleFqName();
   }
 
   @Override
-  protected Icon getIcon(ModuleReference moduleReference) {
+  protected Icon getIcon(SModuleReference moduleReference) {
     return MPSIcons.LANGUAGE_ICON;
   }
 
   @Override
-  protected List<ModuleReference> getAllVisibleElements() {
-    final List<ModuleReference> allLanguages = new ArrayList<ModuleReference>();
+  protected List<SModuleReference> getAllVisibleElements() {
+    final List<SModuleReference> allLanguages = new ArrayList<SModuleReference>();
     for (Language language : ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
       allLanguages.add(language.getModuleReference());
     }
@@ -93,13 +93,13 @@ public class UsedLanguagesTable extends MpsElementsTable<ModuleReference> implem
   }
 
   @Override
-  protected Comparator<ModuleReference> getComparator() {
+  protected Comparator<SModuleReference> getComparator() {
     return MODULE_REFERENCE_COMPARATOR;
   }
 
   @Override
-  protected Class<ModuleReference> getRendererClass() {
-    return ModuleReference.class;
+  protected Class<SModuleReference> getRendererClass() {
+    return SModuleReference.class;
   }
 
   @Override
@@ -107,15 +107,15 @@ public class UsedLanguagesTable extends MpsElementsTable<ModuleReference> implem
     return MPSBundle.message("used.languages.chooser.title");
   }
 
-  private static final class ModuleReferenceComparator implements Comparator<ModuleReference> {
+  private static final class SModuleReferenceComparator implements Comparator<SModuleReference> {
     @Override
-    public int compare(ModuleReference o1, ModuleReference o2) {
+    public int compare(SModuleReference o1, SModuleReference o2) {
       return o1.getModuleFqName().compareTo(o2.getModuleFqName());
     }
 
     @Override
     public boolean equals(Object obj) {
-      return obj instanceof ModuleReferenceComparator;
+      return obj instanceof SModuleReferenceComparator;
     }
 
     @Override

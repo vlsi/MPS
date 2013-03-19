@@ -7,7 +7,7 @@ import org.jdom.Element;
 import jetbrains.mps.util.xml.XmlUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -48,15 +48,15 @@ public class ModuleDescriptorPersistence {
   public static void loadDependencies(ModuleDescriptor descriptor, Element root) {
     descriptor.getDependencies().addAll(loadDependenciesList(XmlUtil.first(root, "dependencies")));
 
-    descriptor.getUsedLanguages().addAll(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "usedLanguages"), "usedLanguage")).select(new ISelector<Element, ModuleReference>() {
-      public ModuleReference select(Element ul) {
-        return ModuleReference.fromString(ul.getText());
+    descriptor.getUsedLanguages().addAll(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "usedLanguages"), "usedLanguage")).select(new ISelector<Element, SModuleReference>() {
+      public SModuleReference select(Element ul) {
+        return jetbrains.mps.project.structure.modules.ModuleReference.fromString(ul.getText());
       }
     }).toListSequence());
 
-    descriptor.getUsedDevkits().addAll(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "usedDevKits"), "usedDevKit")).select(new ISelector<Element, ModuleReference>() {
-      public ModuleReference select(Element udk) {
-        return ModuleReference.fromString(udk.getText());
+    descriptor.getUsedDevkits().addAll(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "usedDevKits"), "usedDevKit")).select(new ISelector<Element, SModuleReference>() {
+      public SModuleReference select(Element udk) {
+        return jetbrains.mps.project.structure.modules.ModuleReference.fromString(udk.getText());
       }
     }).toListSequence());
 
@@ -80,14 +80,14 @@ public class ModuleDescriptorPersistence {
 
     if (!(descriptor.getUsedLanguages().isEmpty())) {
       Element usedLanguages = new Element("usedLanguages");
-      for (ModuleReference langRef : CollectionSequence.fromCollection(descriptor.getUsedLanguages())) {
+      for (SModuleReference langRef : CollectionSequence.fromCollection(descriptor.getUsedLanguages())) {
         XmlUtil.tagWithText(usedLanguages, "usedLanguage", langRef.toString());
       }
       result.addContent(usedLanguages);
     }
     if (!(descriptor.getUsedDevkits().isEmpty())) {
       Element usedDevKits = new Element("usedDevKits");
-      for (ModuleReference dkRef : CollectionSequence.fromCollection(descriptor.getUsedDevkits())) {
+      for (SModuleReference dkRef : CollectionSequence.fromCollection(descriptor.getUsedDevkits())) {
         XmlUtil.tagWithText(usedDevKits, "usedDevKit", dkRef.toString());
       }
       result.addContent(usedDevKits);
@@ -97,9 +97,9 @@ public class ModuleDescriptorPersistence {
       LanguageDescriptor ld = ((LanguageDescriptor) descriptor);
       if (!(ld.getRuntimeModules().isEmpty())) {
         Element runtime = new Element("runtime");
-        Set<ModuleReference> runtimeModules = ld.getRuntimeModules();
-        saveDependencyList(runtime, SetSequence.fromSet(runtimeModules).select(new ISelector<ModuleReference, Dependency>() {
-          public Dependency select(ModuleReference it) {
+        Set<SModuleReference> runtimeModules = ld.getRuntimeModules();
+        saveDependencyList(runtime, SetSequence.fromSet(runtimeModules).select(new ISelector<SModuleReference, Dependency>() {
+          public Dependency select(SModuleReference it) {
             return new Dependency(it, false);
           }
         }).toListSequence());
@@ -114,7 +114,7 @@ public class ModuleDescriptorPersistence {
         return new _FunctionTypes._return_P0_E0<Dependency>() {
           public Dependency invoke() {
             final Dependency result_dxyzb6_a0a0a0a0a0a4 = new Dependency();
-            final ModuleReference result_dxyzb6_a0a0a0a0a0a0a4 = ModuleReference.fromString(d.getText());
+            final SModuleReference result_dxyzb6_a0a0a0a0a0a0a4 = jetbrains.mps.project.structure.modules.ModuleReference.fromString(d.getText());
             result_dxyzb6_a0a0a0a0a0a4.setModuleRef(result_dxyzb6_a0a0a0a0a0a0a4);
             final boolean result_dxyzb6_a1a0a0a0a0a0a4 = XmlUtil.booleanWithDefault(d, "reexport", true);
             result_dxyzb6_a0a0a0a0a0a4.setReexport(result_dxyzb6_a1a0a0a0a0a0a4);

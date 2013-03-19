@@ -36,7 +36,7 @@ import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.DeploymentDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.DefaultScope;
@@ -97,7 +97,7 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
   public static final String CLASSES = "classes";
 
   protected final IFile myDescriptorFile;
-  private ModuleReference myModuleReference;
+  private SModuleReference myModuleReference;
   private Set<ModelRoot> mySModelRoots = new LinkedHashSet<ModelRoot>();
   private Set<ModuleFacetBase> myFacets = new LinkedHashSet<ModuleFacetBase>();
   private ModuleScope myScope = createScope();
@@ -171,11 +171,11 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
     return null;
   }
 
-  protected void setModuleReference(@NotNull ModuleReference reference) {
+  protected void setModuleReference(@NotNull SModuleReference reference) {
     assert reference.getModuleId() != null : "module must have an id";
     assert myModuleReference == null || reference.getModuleId().equals(myModuleReference.getModuleId()) : "module id can't be changed";
 
-    ModuleReference oldValue = myModuleReference;
+    SModuleReference oldValue = myModuleReference;
     myModuleReference = reference;
     if (oldValue != null &&
         oldValue.getModuleName() != null &&
@@ -188,7 +188,7 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
   @Override
   @NotNull
   //module reference is immutable, so we cn return original
-  public ModuleReference getModuleReference() {
+  public SModuleReference getModuleReference() {
     return myModuleReference;
   }
 
@@ -235,7 +235,7 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
     }
 
     Dependency dep = new Dependency();
-    dep.setModuleRef((ModuleReference) moduleRef);
+    dep.setModuleRef((SModuleReference) moduleRef);
     dep.setReexport(reexport);
     descriptor.getDependencies().add(dep);
 
@@ -255,7 +255,7 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
   }
 
   @Override
-  public void addUsedLanguage(ModuleReference langRef) {
+  public void addUsedLanguage(SModuleReference langRef) {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return;
     if (descriptor.getUsedLanguages().contains(langRef)) return;
@@ -266,7 +266,7 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
     setChanged();
   }
 
-  public void removeUsedLanguage(ModuleReference langRef) {
+  public void removeUsedLanguage(SModuleReference langRef) {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return;
     if (!descriptor.getUsedLanguages().contains(langRef)) return;
@@ -278,7 +278,7 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
   }
 
   @Override
-  public void addUsedDevkit(ModuleReference devkitRef) {
+  public void addUsedDevkit(SModuleReference devkitRef) {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return;
     if (descriptor.getUsedDevkits().contains(devkitRef)) return;
@@ -289,7 +289,7 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
     setChanged();
   }
 
-  public void removeUsedDevkit(ModuleReference devkitRef) {
+  public void removeUsedDevkit(SModuleReference devkitRef) {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return;
     if (!descriptor.getUsedDevkits().contains(devkitRef)) return;
@@ -317,14 +317,14 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
   //----languages & devkits
 
   @Override
-  public Collection<ModuleReference> getUsedLanguagesReferences() {
+  public Collection<SModuleReference> getUsedLanguagesReferences() {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return Collections.emptySet();
     return Collections.unmodifiableCollection(descriptor.getUsedLanguages());
   }
 
   @Override
-  public Collection<ModuleReference> getUsedDevkitReferences() {
+  public Collection<SModuleReference> getUsedDevkitReferences() {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return Collections.emptySet();
     return Collections.unmodifiableCollection(descriptor.getUsedDevkits());
@@ -446,9 +446,9 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
     }
 
     types.addAll(FacetsFacade.getInstance().getApplicableFacetTypes(
-        new TranslatingIterator<ModuleReference, String>(descriptor.getUsedLanguages().iterator()) {
+        new TranslatingIterator<SModuleReference, String>(descriptor.getUsedLanguages().iterator()) {
           @Override
-          protected String translate(ModuleReference node) {
+          protected String translate(SModuleReference node) {
             return node.getModuleName();
           }
         }));

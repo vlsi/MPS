@@ -27,7 +27,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectManager;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.RepositoryAccess;
@@ -379,7 +379,7 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
   //-------------------DEPRECATED
 
   @Deprecated //use ModuleRepositoryFacade instead
-  public IModule getModule(@NotNull ModuleReference ref) {
+  public IModule getModule(@NotNull SModuleReference ref) {
     return ModuleRepositoryFacade.getInstance().getModule(ref);
   }
 }

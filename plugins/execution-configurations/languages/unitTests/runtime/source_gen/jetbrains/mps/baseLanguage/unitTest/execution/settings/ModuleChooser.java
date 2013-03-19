@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.unitTest.execution.settings;
 
 import jetbrains.mps.execution.lib.ui.BaseChooserComponent;
 import java.util.List;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.awt.event.ActionListener;
@@ -23,7 +23,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ModuleChooser extends BaseChooserComponent {
-  private final List<ModuleReference> myCheckedModules = ListSequence.fromList(new ArrayList<ModuleReference>());
+  private final List<SModuleReference> myCheckedModules = ListSequence.fromList(new ArrayList<SModuleReference>());
 
   public ModuleChooser() {
     super();
@@ -32,7 +32,7 @@ public class ModuleChooser extends BaseChooserComponent {
       public void actionPerformed(ActionEvent p0) {
         ModuleChooser.this.collectModules();
         StringBuilder result = new StringBuilder();
-        ModuleReference ref = CommonChoosers.showDialogModuleChooser(null, "", ModuleChooser.this.myCheckedModules, Collections.EMPTY_LIST);
+        SModuleReference ref = CommonChoosers.showDialogModuleChooser(null, "", ModuleChooser.this.myCheckedModules, Collections.EMPTY_LIST);
         if (ref != null) {
           result.append(ref.getModuleName());
           ModuleChooser.this.setText(result.toString());
@@ -51,7 +51,7 @@ public class ModuleChooser extends BaseChooserComponent {
         for (SNode node : us) {
           SModel model = SNodeOperations.getModel(node);
           SModel md = model;
-          ModuleReference module = md.getModule().getModuleReference();
+          SModuleReference module = md.getModule().getModuleReference();
           if (ListSequence.fromList(ModuleChooser.this.myCheckedModules).contains(module)) {
             continue;
           }

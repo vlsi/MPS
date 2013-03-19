@@ -13,7 +13,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.DynamicReference;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.smodel.SModelFqName;
@@ -50,7 +50,7 @@ public class SReferenceCreator implements SReferenceHandler {
       return new DynamicReference(role, source, new jetbrains.mps.smodel.SModelReference(pack, SNodeOperations.getModelStereotype(model)), resolveInfo);
     }
 
-    ModuleReference moduleRef = SModelRepository.getInstance().getModelDescriptor(SetSequence.fromSet(models).first()).getModule().getModuleReference();
+    SModuleReference moduleRef = SModelRepository.getInstance().getModelDescriptor(SetSequence.fromSet(models).first()).getModule().getModuleReference();
     SModelReference ref = StubHelper.uidForPackageInStubs(new SModelFqName(pack, SNodeOperations.getModelStereotype(model)), moduleRef, false);
     ((SModelInternal) model).addModelImport(SetSequence.fromSet(models).first(), false);
     return jetbrains.mps.smodel.SReference.create(role, source, ref, targetNodeId, resolveInfo);

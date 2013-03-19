@@ -20,7 +20,7 @@ import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefAllGlobal;
@@ -55,7 +55,7 @@ public class GenerationPartitioner {
   private final Collection<TemplateModule> myGenerators;
 
   // maps
-  private final Map<ModuleReference, TemplateModule> myModulesMap;
+  private final Map<SModuleReference, TemplateModule> myModulesMap;
   private final Map<SModelReference, TemplateModel> myModelMap;
 
   // result
@@ -69,7 +69,7 @@ public class GenerationPartitioner {
     myCoherentMappings = new ArrayList<CoherentSetData>();
     myConflictingRules = new HashSet<TemplateMappingPriorityRule>();
 
-    myModulesMap = new HashMap<ModuleReference, TemplateModule>(myGenerators.size());
+    myModulesMap = new HashMap<SModuleReference, TemplateModule>(myGenerators.size());
     myModelMap = new HashMap<SModelReference, TemplateModel>();
     for (TemplateModule module : myGenerators) {
       myModulesMap.put(module.getReference(), module);
@@ -187,9 +187,9 @@ public class GenerationPartitioner {
     }
 
     if (mappingRef instanceof MappingConfig_ExternalRef) {
-      ModuleReference generatorRef = ((MappingConfig_ExternalRef) mappingRef).getGenerator();
+      SModuleReference generatorRef = ((MappingConfig_ExternalRef) mappingRef).getGenerator();
       if (generatorRef != null) {
-        ModuleReference genRef = generatorRef;
+        SModuleReference genRef = generatorRef;
         TemplateModule newRefGenerator = myModulesMap.get(genRef);
         if (newRefGenerator != null) {
           return getMappingsFromRef(((MappingConfig_ExternalRef) mappingRef).getMappingConfig(), newRefGenerator, sourceGeneratorID);

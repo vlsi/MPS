@@ -42,15 +42,15 @@ public class RefUpdateUtil {
     return !remove.isEmpty();
   }
 
-  public static boolean updateModuleRefs(Collection<ModuleReference> refs) {
-    Set<ModuleReference> remove = new HashSet<ModuleReference>();
-    Set<ModuleReference> add = new LinkedHashSet<ModuleReference>();
+  public static boolean updateModuleRefs(Collection<SModuleReference> refs) {
+    Set<SModuleReference> remove = new HashSet<SModuleReference>();
+    Set<SModuleReference> add = new LinkedHashSet<SModuleReference>();
 
-    for (ModuleReference ref : refs) {
-      SModuleReference newRef = ModuleReference.update(ref);
-      if (ModuleReference.differs(ref, newRef)) {
+    for (SModuleReference ref : refs) {
+      SModuleReference newRef = jetbrains.mps.project.structure.modules.ModuleReference.update(ref);
+      if (jetbrains.mps.project.structure.modules.ModuleReference.differs(ref, newRef)) {
         remove.add(ref);
-        add.add((ModuleReference) newRef);
+        add.add((SModuleReference) newRef);
       }
     }
 
@@ -63,11 +63,11 @@ public class RefUpdateUtil {
   public static boolean updateDependencies(Collection<Dependency> deps) {
     boolean changed = false;
     for (Dependency dep : deps) {
-      ModuleReference ref = dep.getModuleRef();
-      @NotNull SModuleReference newRef = ModuleReference.update(ref);
-      if (ModuleReference.differs(ref, newRef)) {
+      SModuleReference ref = dep.getModuleRef();
+      @NotNull SModuleReference newRef = jetbrains.mps.project.structure.modules.ModuleReference.update(ref);
+      if (jetbrains.mps.project.structure.modules.ModuleReference.differs(ref, newRef)) {
         changed = true;
-        dep.setModuleRef((ModuleReference) newRef);
+        dep.setModuleRef((SModuleReference) newRef);
       }
     }
     return changed;

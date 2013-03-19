@@ -23,7 +23,7 @@ import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.CommonPaths;
@@ -45,25 +45,25 @@ public class Solution extends AbstractModule {
   // idea plugin wants to turn it off sometimes, when it knows better what jdk is and what platform is
   private boolean myUpdateBootstrapSolutions = true;
 
-  private static Map<ModuleReference, ClasspathReader.ClassType> bootstrapCP = initBootstrapSolutions();
+  private static Map<SModuleReference, ClasspathReader.ClassType> bootstrapCP = initBootstrapSolutions();
 
-  private static Map<ModuleReference, ClasspathReader.ClassType> initBootstrapSolutions() {
-    Map<ModuleReference, ClasspathReader.ClassType> result = new HashMap<ModuleReference, ClasspathReader.ClassType>();
-    result.put(new ModuleReference("JDK",
+  private static Map<SModuleReference, ClasspathReader.ClassType> initBootstrapSolutions() {
+    Map<SModuleReference, ClasspathReader.ClassType> result = new HashMap<SModuleReference, ClasspathReader.ClassType>();
+    result.put(new jetbrains.mps.project.structure.modules.ModuleReference("JDK",
       ModuleId.fromString("6354ebe7-c22a-4a0f-ac54-50b52ab9b065")), ClasspathReader.ClassType.JDK);
-    result.put(new ModuleReference("MPS.OpenAPI",
+    result.put(new jetbrains.mps.project.structure.modules.ModuleReference("MPS.OpenAPI",
       ModuleId.fromString("8865b7a8-5271-43d3-884c-6fd1d9cfdd34")), ClasspathReader.ClassType.OPENAPI);
-    result.put(new ModuleReference("MPS.Core",
+    result.put(new jetbrains.mps.project.structure.modules.ModuleReference("MPS.Core",
       ModuleId.fromString("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea")), ClasspathReader.ClassType.CORE);
-    result.put(new ModuleReference("MPS.Editor",
+    result.put(new jetbrains.mps.project.structure.modules.ModuleReference("MPS.Editor",
       ModuleId.fromString("1ed103c3-3aa6-49b7-9c21-6765ee11f224")), ClasspathReader.ClassType.EDITOR);
-    result.put(new ModuleReference("MPS.Platform",
+    result.put(new jetbrains.mps.project.structure.modules.ModuleReference("MPS.Platform",
       ModuleId.fromString("742f6602-5a2f-4313-aa6e-ae1cd4ffdc61")), ClasspathReader.ClassType.PLATFORM);
-    result.put(new ModuleReference("MPS.UI",
+    result.put(new jetbrains.mps.project.structure.modules.ModuleReference("MPS.UI",
       ModuleId.fromString("267ff2fa-bd8d-467e-8bfe-73a9c242da8b")), ClasspathReader.ClassType.UI);
-    result.put(new ModuleReference("MPS.Workbench",
+    result.put(new jetbrains.mps.project.structure.modules.ModuleReference("MPS.Workbench",
       ModuleId.fromString("86441d7a-e194-42da-81a5-2161ec62a379")), ClasspathReader.ClassType.WORKBENCH);
-    result.put(new ModuleReference("Testbench",
+    result.put(new jetbrains.mps.project.structure.modules.ModuleReference("Testbench",
       ModuleId.fromString("920eaa0e-ecca-46bc-bee7-4e5c59213dd6")), ClasspathReader.ClassType.TEST);
     return result;
   }
@@ -90,12 +90,12 @@ public class Solution extends AbstractModule {
 
     mySolutionDescriptor = newDescriptor;
 
-    ModuleReference mp;
+    SModuleReference mp;
     if (mySolutionDescriptor.getNamespace() != null) {
-      mp = new ModuleReference(mySolutionDescriptor.getNamespace(), mySolutionDescriptor.getId());
+      mp = new jetbrains.mps.project.structure.modules.ModuleReference(mySolutionDescriptor.getNamespace(), mySolutionDescriptor.getId());
     } else {
       assert myDescriptorFile != null;
-      mp = new ModuleReference(myDescriptorFile.getPath(), mySolutionDescriptor.getId());
+      mp = new jetbrains.mps.project.structure.modules.ModuleReference(myDescriptorFile.getPath(), mySolutionDescriptor.getId());
     }
 
     setModuleReference(mp);
