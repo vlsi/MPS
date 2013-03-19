@@ -40,7 +40,7 @@ public class StandardDialogs {
         result_960thj_a1a1a0a0a1.setConstraints(result_960thj_a1a1a1a0a0a1);
         result_960thj_a1a0a0a1.addComponent(result_960thj_a1a1a0a0a1);
         final BaseTabbedBindedDialog.ComponentDescriptor result_960thj_a2a1a0a0a1 = new BaseTabbedBindedDialog.ComponentDescriptor();
-        final JComponent result_960thj_a0a2a1a0a0a1 = StandardComponents.createModelRootsPanel(dialog, "Model Roots", dialog.myProperties.getModelRoots(), l.getBundleHome());
+        final JComponent result_960thj_a0a2a1a0a0a1 = StandardComponents.createModelRootsPanel(dialog, "Model Roots", dialog.myProperties.getModelRoots(), l.getModuleSourceDir());
         result_960thj_a2a1a0a0a1.setComponent(result_960thj_a0a2a1a0a0a1);
         final BaseBindedDialog.ConstraintsType result_960thj_a1a2a1a0a0a1 = BaseBindedDialog.ConstraintsType.LIST;
         result_960thj_a2a1a0a0a1.setConstraints(result_960thj_a1a2a1a0a0a1);
@@ -124,7 +124,7 @@ public class StandardDialogs {
         result_960thj_a0a1a0a0a2.setConstraints(result_960thj_a1a0a1a0a0a2);
         result_960thj_a1a0a0a2.addComponent(result_960thj_a0a1a0a0a2);
         final BaseTabbedBindedDialog.ComponentDescriptor result_960thj_a1a1a0a0a2 = new BaseTabbedBindedDialog.ComponentDescriptor();
-        final JComponent result_960thj_a0a1a1a0a0a2 = StandardComponents.createModelRootsPanel(dialog, "Model Roots", dialog.myProperties.getModelRoots(), g.getBundleHome());
+        final JComponent result_960thj_a0a1a1a0a0a2 = StandardComponents.createModelRootsPanel(dialog, "Model Roots", dialog.myProperties.getModelRoots(), g.getModuleSourceDir());
         result_960thj_a1a1a0a0a2.setComponent(result_960thj_a0a1a1a0a0a2);
         final BaseBindedDialog.ConstraintsType result_960thj_a1a1a1a0a0a2 = BaseBindedDialog.ConstraintsType.LIST;
         result_960thj_a1a1a0a0a2.setConstraints(result_960thj_a1a1a1a0a0a2);
@@ -244,7 +244,7 @@ public class StandardDialogs {
         result_960thj_a1a1a0a0a4.setConstraints(result_960thj_a1a1a1a0a0a4);
         result_960thj_a1a0a0a4.addComponent(result_960thj_a1a1a0a0a4);
         final BaseTabbedBindedDialog.ComponentDescriptor result_960thj_a2a1a0a0a4 = new BaseTabbedBindedDialog.ComponentDescriptor();
-        final JComponent result_960thj_a0a2a1a0a0a4 = StandardComponents.createModelRootsPanel(dialog, "Model Roots", dialog.myProperties.getModelRoots(), s.getBundleHome());
+        final JComponent result_960thj_a0a2a1a0a0a4 = StandardComponents.createModelRootsPanel(dialog, "Model Roots", dialog.myProperties.getModelRoots(), s.getModuleSourceDir());
         result_960thj_a2a1a0a0a4.setComponent(result_960thj_a0a2a1a0a0a4);
         final BaseBindedDialog.ConstraintsType result_960thj_a1a2a1a0a0a4 = BaseBindedDialog.ConstraintsType.LIST;
         result_960thj_a2a1a0a0a4.setConstraints(result_960thj_a1a2a1a0a0a4);

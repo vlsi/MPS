@@ -48,6 +48,13 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+// Good point: before any actions with module that can lead to classes invalidation do two things:
+// 1) unload classes of this module with save unloaded modules
+// 2) change module
+// 3) load all unloaded classes
+// Make some doModuleChangeAction({ => }) method in ClassLoaderManager?
+// Main paint: modules && modules repository knows nothing about classloading
+// Maybe add invalidation listener or module dependencies change AND show warning if we change module dependencies while module loaded here?
 public class ClassLoaderManager implements CoreComponent {
   private static final Logger LOG = Logger.getLogger(ClassLoaderManager.class);
 

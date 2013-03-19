@@ -74,7 +74,7 @@ public class DevKit extends AbstractModule {
       ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
     }
 
-    invalidateDependencies();
+    dependenciesChanged();
   }
 
   @Override

@@ -30,6 +30,7 @@ import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.util.EventDispatcher;
 import jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.Nullable;
@@ -102,47 +103,52 @@ public class JavaClassStubsModelRootEntry implements ModelRootEntry {
       updateTree();
       final JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(myTreePanel);
       panel.add(scrollPane,
-        new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, null, null, null));
+          new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH,
+              GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK,
+              GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, null, null, null));
 
       return panel;
     }
 
     private void updateTree() {
       FileSystemTreeImpl fileSystemTree = new FileSystemTreeImpl(
-        null,
-        FileChooserDescriptorFactory.createSingleFileDescriptor(FileTypeRegistry.getInstance().getFileTypeByFileName("*.jar"))
+          null,
+          FileChooserDescriptorFactory.createSingleFileDescriptor(FileTypeRegistry.getInstance().getFileTypeByFileName("*.jar"))
       );
       AbstractTreeUi ui = fileSystemTree.getTreeBuilder().getUi();
 
       String path = myModelRoot.getPath() == null ? "" : myModelRoot.getPath();
       VirtualFile virtualFile = VirtualFileManager.getInstance().findFileByUrl(
-        VirtualFileManager.constructUrl("file", path)
+          VirtualFileManager.constructUrl("file", path)
       );
-      if (myModelRoot.getModule() != null && (virtualFile == null || path.isEmpty()))
-        virtualFile = VirtualFileManager.getInstance().findFileByUrl(
-          VirtualFileManager.constructUrl(
-            "file",
-            MPSModuleRepository.getInstance().getModuleById(myModelRoot.getModule().getModuleId()).getBundleHome().getPath()
-          )
-        );
+      if (myModelRoot.getModule() != null && (virtualFile == null || path.isEmpty())) {
+        if (myModelRoot.getModule() instanceof AbstractModule) {
+          virtualFile = VirtualFileManager.getInstance().findFileByUrl(
+              VirtualFileManager.constructUrl(
+                  "file",
+                  ((AbstractModule) myModelRoot.getModule()).getModuleSourceDir().getPath()
+              )
+          );
+        }
+      }
 
       if (virtualFile != null)
         fileSystemTree.select(virtualFile, null);
 
       fileSystemTree.addListener(
-        new Listener() {
-          @Override
-          public void selectionChanged(List<VirtualFile> selection) {
-            if (selection.size() > 0) {
-              myModelRoot.setPath(FileUtil.getCanonicalPath(selection.get(0).getPath()));
-              myEventDispatcher.getMulticaster().fireDataChanged();
+          new Listener() {
+            @Override
+            public void selectionChanged(List<VirtualFile> selection) {
+              if (selection.size() > 0) {
+                myModelRoot.setPath(FileUtil.getCanonicalPath(selection.get(0).getPath()));
+                myEventDispatcher.getMulticaster().fireDataChanged();
+              }
+            }
+          }, new Disposable() {
+            @Override
+            public void dispose() {
             }
           }
-        }, new Disposable() {
-          @Override
-          public void dispose() {
-          }
-        }
       );
 
       myTreePanel.removeAll();

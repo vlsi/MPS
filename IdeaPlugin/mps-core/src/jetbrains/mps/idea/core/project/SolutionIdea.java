@@ -263,8 +263,8 @@ public class SolutionIdea extends Solution {
   }
 
   @Override
-  public void invalidateDependencies() {
-    super.invalidateDependencies();
+  protected void dependenciesChanged() {
+    super.dependenciesChanged();
     myDependencies = null;
   }
 

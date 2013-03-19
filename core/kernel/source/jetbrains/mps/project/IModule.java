@@ -84,53 +84,6 @@ public interface IModule extends SModule {
    */
   Collection<ModuleReference> getUsedDevkitReferences();
 
-  // cast to AbstractModule I think
-  void addDependency(SModuleReference moduleRef, boolean reexport);
-
-  // cast to AbstractModule I think
-  void addUsedLanguage(ModuleReference langRef);
-
-  // cast to AbstractModule I think
-  void addUsedDevkit(ModuleReference devkitRef);
-
-  // remove? invalidate on add?
-  // ouch. basically it's callback on dependencies change
-  // so two purposes: initiate invaliding and invalidate action
-  // maybe we need one big DependenciesManager with invalidating actions
-  void invalidateDependencies();
-
-  //----
-
-  // SModule#getModels. But how to migrate? ModuleOperations.getOwnModelDescriptors with unchecked cast?
-  // When is it safe to migrate method call? calc expected type?
-  List<SModel> getOwnModelDescriptors();
-
-  // SModule#getModuleScope
-  @NotNull
-  IScope getScope();
-
-  // should be do nothing, remove
-  // should be listening
-  void invalidateCaches();
-
-  // AbstractModule#onModuleLoad
-  // is it refactorings? move to it
-  void onModuleLoad();
-
-  // why we need it?
-  // reasonable use: in build scripts, but in this case we have only files, and it's just check for jar file
-  @Override
-  boolean isPackaged();
-
-  // ?
-  // btw onModuleRegistered
-  // setRepository I think
-  // change on custom addModuleAdded listener
-  void attach();
-
-  // ?
-  void dispose();
-
   // module source path stuff
 
   // wtf? If it home for module descriptor just use module descriptor dir!
@@ -141,17 +94,69 @@ public interface IModule extends SModule {
   // getModuleFile() is ok, but with cast
   // other things is forbidden
   // !!! to be notice: 2 jars: src and compiled classes
-  IFile getBundleHome();
 
   // ?, move to AbstractModule, remove usages as much as possible
-  IFile getDescriptorFile();
   // IFile getModuleRoot() <- clash with model root // to SModuleOperations / maybe SModule
   // IFile getModuleFolder() ?
   // use as much as possible
+  IFile getDescriptorFile();
+
+  // cast to AbstractModule to use this methods
+  void addDependency(SModuleReference moduleRef, boolean reexport);
+
+  void addUsedLanguage(ModuleReference langRef);
+
+  void addUsedDevkit(ModuleReference devkitRef);
+
+  void onModuleLoad();
+
+  void attach();
+
+  void dispose();
+
+  // migrate by renaming
+
+  /**
+   * @see SModule#getModuleName
+   */
+  @Deprecated
+  String getModuleFqName();
+
+  /**
+   * @see org.jetbrains.mps.openapi.module.SModule#getModels()
+   */
+  List<SModel> getOwnModelDescriptors();
+
+  /**
+   * Two step migration: 1) IScope -> SearchScope 2) by rename
+   *
+   * @see org.jetbrains.mps.openapi.module.SModule#getModuleScope()
+   */
+  @NotNull
+  IScope getScope();
 
   // ----- deprecated part
 
+  /**
+   * Do nothing for now. If method change dependencies it invalidates cache by calling dependenciesChanged()
+   */
+  @Deprecated
+  void invalidateDependencies();
+
+  @Deprecated
+  void invalidateCaches();
+
+  /**
+   * ??? bundle home == jar or folder with module sources. Meaningless stuff
+   *
+   * @see jetbrains.mps.project.AbstractModule#getModuleSourceDir()
+   * @see jetbrains.mps.project.AbstractModule#getDescriptorFile()
+   */
+  @Deprecated
+  IFile getBundleHome();
+
   // reload descriptor stuff, now all these methods need AbstractModule, for ConflictableModuleAdapter I think
+
   /**
    * @see SModuleOperations#needReloading(AbstractModule)
    */
@@ -212,6 +217,7 @@ public interface IModule extends SModule {
   /**
    * If you need just model: use root.createModel
    * If you need model with adjustments (auto imports, optimized imports, etc): use SModuleOperations#createModelWithAdjustments
+   *
    * @see SModuleOperations#createModelWithAdjustments(String, org.jetbrains.mps.openapi.persistence.ModelRoot)
    */
   @Deprecated
@@ -224,12 +230,6 @@ public interface IModule extends SModule {
   public static interface ModelAdjuster {
     void adjust(SModel model);
   }
-
-  /**
-   * @see SModule#getModuleName
-   */
-  @Deprecated
-  String getModuleFqName();
 
   /**
    * Remove this method after ModuleReference -> SModuleReference migration

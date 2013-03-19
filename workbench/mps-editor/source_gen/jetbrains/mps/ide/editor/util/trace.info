@@ -536,8 +536,8 @@
     <nodeInfo nodeId="1572311180462136213" fileName="EditorUtil.java" startLine="94" startPosition="35" endLine="95" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5002944669283206140" fileName="EditorUtil.java" startLine="96" startPosition="9" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8974276187400029999" fileName="EditorUtil.java" startLine="100" startPosition="31" endLine="101" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8974276187400030008" fileName="EditorUtil.java" startLine="101" startPosition="51" endLine="102" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8974276187400030017" fileName="EditorUtil.java" startLine="102" startPosition="105" endLine="103" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8974276187400030008" fileName="EditorUtil.java" startLine="101" startPosition="51" endLine="102" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8974276187400030017" fileName="EditorUtil.java" startLine="102" startPosition="129" endLine="103" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8644827343618787868" fileName="EditorUtil.java" startLine="103" startPosition="88" endLine="104" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="8974276187400030030" fileName="EditorUtil.java" startLine="104" startPosition="24" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8974276187400030031" fileName="EditorUtil.java" startLine="105" startPosition="0" endLine="106" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />

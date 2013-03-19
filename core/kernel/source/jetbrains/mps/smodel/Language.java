@@ -96,7 +96,11 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     if (myLanguageDescriptor.getExtendedLanguages().contains(langRef)) return;
     LanguageDescriptor moduleDescriptor = getModuleDescriptor();
     moduleDescriptor.getExtendedLanguages().add(langRef);
-    setModuleDescriptor(moduleDescriptor, true);
+
+    dependenciesChanged();
+    setChanged();
+
+    MPSModuleRepository.getInstance().fireModuleChanged(this);
   }
 
   public Set<ModuleReference> getExtendedLanguageRefs() {
@@ -177,9 +181,8 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   @Override
   public void dispose() {
-    super.dispose();
     myLanguageDependenciesManager.dispose();
-    ModuleRepositoryFacade.getInstance().unregisterModules(this);
+    super.dispose();
   }
 
   @Override
@@ -215,7 +218,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       ((SModelInternal) getStructureModelDescriptor()).addModelListener(listener);
     }
 
-    invalidateDependencies();
+    dependenciesChanged();
     setChanged();
   }
 
@@ -259,13 +262,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return LanguageAspect.STRUCTURE.get(this);
   }
 
-  @Override
-  public void invalidateCaches() {
-    super.invalidateCaches();
-    myNameToConceptCache.clear();
-    myNamesWithNoConcepts.clear();
-  }
-
   public ClassLoader getStubsLoader() {
     return myStubsLoader;
   }
@@ -273,6 +269,11 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   @Deprecated
   public IClassPathItem getLanguageRuntimeClasspath() {
     return new CompositeClassPathItem();
+  }
+
+  private void invalidateConceptDeclarationsCache() {
+    myNameToConceptCache.clear();
+    myNamesWithNoConcepts.clear();
   }
 
   public SNode findConceptDeclaration(@NotNull final String conceptName) {
@@ -322,7 +323,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   @Override
   public void save() {
     super.save();
-    if (isPackaged()) return;
+    if (isReadOnly()) return;
     LanguageDescriptorPersistence.saveLanguageDescriptor(myDescriptorFile, getModuleDescriptor(), MacrosFactory.forModuleFile(myDescriptorFile));
   }
 
@@ -420,12 +421,12 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
     @Override
     public void modelChanged(SModel model) {
-      invalidateCaches();
+      invalidateConceptDeclarationsCache();
     }
 
     @Override
     public void modelChangedDramatically(SModel model) {
-      invalidateCaches();
+      invalidateConceptDeclarationsCache();
     }
   }
 

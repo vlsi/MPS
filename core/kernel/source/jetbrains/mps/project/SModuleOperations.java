@@ -158,7 +158,7 @@ public class SModuleOperations {
     // ((ModelRootBase) root).register(model);
 
     ModelsAutoImportsManager.doAutoImport(root.getModule(), model);
-    new MissingDependenciesFixer(model).fix(false);
+    MissingDependenciesFixer.fixDependencies(model);
 
     return model;
   }

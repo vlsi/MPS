@@ -5,15 +5,17 @@ package jetbrains.mps.kernel.model;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.module.SearchScope;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.AbstractModule;
+import org.jetbrains.mps.openapi.module.SRepository;
+import java.util.Set;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.classloading.ClassLoaderManager;
+import java.util.Arrays;
+import jetbrains.mps.progress.EmptyProgressMonitor;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.smodel.SModelInternal;
@@ -24,34 +26,47 @@ import jetbrains.mps.project.DevKit;
 
 public class MissingDependenciesFixer {
   private static Logger LOG = Logger.getLogger(MissingDependenciesFixer.class);
-  private SModel myModelDescriptor;
+
+  private SModel myModel;
 
   public MissingDependenciesFixer(SModel modelDescriptor) {
-    myModelDescriptor = modelDescriptor;
+    myModel = modelDescriptor;
   }
+
+
 
   @Deprecated
   public void fix() {
-    fix(true);
+    fixDependencies(myModel);
   }
 
+
+
+  @Deprecated
   public void fix(final boolean reload) {
+    fixDependencies(myModel);
+  }
+
+
+
+  public static void fixDependencies(final SModel model) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        boolean wereChanges = false;
-        SModule module = myModelDescriptor.getModule();
+        AbstractModule module = (AbstractModule) model.getModule();
         if (module == null) {
-          LOG.error("Module is null: " + myModelDescriptor.getReference().toString());
+          LOG.error("Module is null: " + model.getReference().toString());
           return;
         }
         SRepository repository = module.getRepository();
         if (repository == null) {
-          LOG.error("Repository is null: " + myModelDescriptor.getReference().toString());
+          LOG.error("Repository is null: " + model.getReference().toString());
           return;
         }
+
+        Set<SModule> unloadedModules = ClassLoaderManager.getInstance().unloadClasses(Arrays.asList(module), new EmptyProgressMonitor());
+
         SearchScope moduleScope = module.getModuleScope();
-        ModuleDescriptor md = ((AbstractModule) module).getModuleDescriptor();
-        for (SModelReference modelImport : SModelOperations.getImportedModelUIDs(myModelDescriptor)) {
+        for (SModelReference modelImport : SModelOperations.getImportedModelUIDs(model)) {
           if (moduleScope.resolve(modelImport) != null) {
             continue;
           }
@@ -69,12 +84,9 @@ public class MissingDependenciesFixer {
           if (anotherModule == null || anotherModule == module) {
             continue;
           }
-          Dependency dep = new Dependency();
-          dep.setModuleRef((ModuleReference) anotherModule.getModuleReference());
-          md.getDependencies().add(dep);
-          wereChanges = true;
+          module.addDependency(anotherModule.getModuleReference(), false);
         }
-        for (ModuleReference namespace : CollectionUtil.union(((SModelInternal) myModelDescriptor).importedLanguages(), ((SModelInternal) myModelDescriptor).engagedOnGenerationLanguages())) {
+        for (ModuleReference namespace : CollectionUtil.union(((SModelInternal) model).importedLanguages(), ((SModelInternal) model).engagedOnGenerationLanguages())) {
           if (moduleScope.resolve(namespace) instanceof Language) {
             continue;
           }
@@ -83,10 +95,9 @@ public class MissingDependenciesFixer {
             continue;
           }
           ModuleReference ref = ModuleReference.fromString(namespace.toString());
-          md.getUsedLanguages().add(ref);
-          wereChanges = true;
+          module.addUsedLanguage(ref);
         }
-        for (ModuleReference devKitNamespace : ((SModelInternal) myModelDescriptor).importedDevkits()) {
+        for (ModuleReference devKitNamespace : ((SModelInternal) model).importedDevkits()) {
           if (moduleScope.resolve(devKitNamespace) instanceof DevKit) {
             continue;
           }
@@ -95,15 +106,10 @@ public class MissingDependenciesFixer {
             continue;
           }
           ModuleReference ref = ModuleReference.fromString(devKitNamespace.toString());
-          md.getUsedDevkits().add(ref);
-          wereChanges = true;
+          module.addUsedDevkit(ref);
         }
-        if (wereChanges) {
-          AbstractModule mod = (AbstractModule) module;
-          mod.setModuleDescriptor(md, reload);
-          mod.invalidateCaches();
-          mod.invalidateDependencies();
-        }
+
+        ClassLoaderManager.getInstance().loadClasses(unloadedModules, new EmptyProgressMonitor());
       }
     });
   }

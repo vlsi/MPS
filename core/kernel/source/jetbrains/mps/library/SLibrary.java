@@ -17,6 +17,7 @@ package jetbrains.mps.library;
 
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.ModelAccess;
@@ -108,7 +109,7 @@ class SLibrary implements FileSystemListener, MPSModuleOwner {
       }
     }
     for (SModule module : loaded) {
-      ((IModule) module).onModuleLoad();
+      ((AbstractModule) module).onModuleLoad();
     }
   }
 

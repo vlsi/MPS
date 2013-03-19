@@ -218,7 +218,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
 
     @Override
     public boolean isGeneratable() {
-      return !myModule.isPackaged();
+      return !myModule.isReadOnly();
     }
 
     @Override

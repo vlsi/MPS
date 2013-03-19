@@ -28,6 +28,7 @@ import com.intellij.ui.components.JBLabel;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.util.EventDispatcher;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -62,9 +63,9 @@ public class SModelRootEntry implements ModelRootEntry {
 
   @Override
   public void setModelRoot(ModelRoot modelRoot) {
-    if(!(modelRoot instanceof SModelRoot))
+    if (!(modelRoot instanceof SModelRoot))
       throw new ClassCastException("Can't convert " + modelRoot.getClass().getCanonicalName() + " to " + SModelRoot.class.getCanonicalName());
-    myModelRoot = (SModelRoot)modelRoot;
+    myModelRoot = (SModelRoot) modelRoot;
   }
 
   @Override
@@ -72,7 +73,8 @@ public class SModelRootEntry implements ModelRootEntry {
     final StringBuilder messageText = new StringBuilder();
     messageText.append("<html>");
     messageText.append("Type : ").append(myModelRoot.getType()).append("<br>");
-    messageText.append("Manager : ").append(myModelRoot.getModelRoot().getManager() != null ? myModelRoot.getModelRoot().getManager().getClassName() : "Default").append("<br>");
+    messageText.append("Manager : ").append(
+        myModelRoot.getModelRoot().getManager() != null ? myModelRoot.getModelRoot().getManager().getClassName() : "Default").append("<br>");
     messageText.append("Path : ").append(myModelRoot.getPath()).append("<br>");
     return messageText.toString();
   }
@@ -104,11 +106,11 @@ public class SModelRootEntry implements ModelRootEntry {
 
     @Override
     public JComponent createComponent() {
-      JPanel panel = new JPanel(new GridLayoutManager(2,1));
+      JPanel panel = new JPanel(new GridLayoutManager(2, 1));
 
       List<ModelRootManager> managers = ManagerTableCellEditor.getManagers();
       managers.remove(null);
-      final ModelRootManager empty = new ModelRootManager("","Default");
+      final ModelRootManager empty = new ModelRootManager("", "Default");
       managers.add(empty);
       myComboBox = new ComboBox(managers.toArray(), 10);
       myComboBox.setRenderer(new DefaultListCellRenderer() {
@@ -120,15 +122,16 @@ public class SModelRootEntry implements ModelRootEntry {
         }
       });
       panel.add(myComboBox,
-        new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_FIXED, null, null, null));
+          new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL,
+              GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_FIXED, null, null, null));
       myComboBox.setSelectedItem(myModelRoot.getModelRoot().getManager() == null ? empty : myModelRoot.getModelRoot().getManager());
       myComboBox.addItemListener(new ItemListener() {
         @Override
         public void itemStateChanged(ItemEvent e) {
-          if(e.getStateChange() == ItemEvent.SELECTED) {
-            ModelRootManager manager = (ModelRootManager)e.getItem();
+          if (e.getStateChange() == ItemEvent.SELECTED) {
+            ModelRootManager manager = (ModelRootManager) e.getItem();
             myModelRoot.getModelRoot().setManager(
-              manager.equals(empty) ? null: manager
+                manager.equals(empty) ? null : manager
             );
             myEventDispatcher.getMulticaster().fireDataChanged();
           }
@@ -139,7 +142,9 @@ public class SModelRootEntry implements ModelRootEntry {
       updateTree();
       final JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(myTreePanel);
       panel.add(scrollPane,
-        new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, null, null, null));
+          new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH,
+              GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK,
+              GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, null, null, null));
 
       return panel;
     }
@@ -150,33 +155,36 @@ public class SModelRootEntry implements ModelRootEntry {
 
       String path = myModelRoot.getPath() == null ? "" : myModelRoot.getPath();
       VirtualFile virtualFile = VirtualFileManager.getInstance().findFileByUrl(
-        VirtualFileManager.constructUrl("file", path)
+          VirtualFileManager.constructUrl("file", path)
       );
-      if(myModelRoot.getModule() != null && (virtualFile == null || path.isEmpty()))
-        virtualFile = VirtualFileManager.getInstance().findFileByUrl(
-          VirtualFileManager.constructUrl(
-            "file",
-            MPSModuleRepository.getInstance().getModuleById(myModelRoot.getModule().getModuleId()).getBundleHome().getPath()
-          )
-        );
+      if (myModelRoot.getModule() != null && (virtualFile == null || path.isEmpty())) {
+        if (myModelRoot.getModule() instanceof AbstractModule) {
+          virtualFile = VirtualFileManager.getInstance().findFileByUrl(
+              VirtualFileManager.constructUrl(
+                  "file",
+                  ((AbstractModule) myModelRoot.getModule()).getModuleSourceDir().getPath()
+              )
+          );
+        }
+      }
 
       if (virtualFile != null)
         fileSystemTree.select(virtualFile, null);
 
       fileSystemTree.addListener(
-        new Listener() {
-          @Override
-          public void selectionChanged(List<VirtualFile> selection) {
-            if (selection.size() > 0) {
-              myModelRoot.setPath(FileUtil.getCanonicalPath(selection.get(0).getPath()));
-              myEventDispatcher.getMulticaster().fireDataChanged();
+          new Listener() {
+            @Override
+            public void selectionChanged(List<VirtualFile> selection) {
+              if (selection.size() > 0) {
+                myModelRoot.setPath(FileUtil.getCanonicalPath(selection.get(0).getPath()));
+                myEventDispatcher.getMulticaster().fireDataChanged();
+              }
+            }
+          }, new Disposable() {
+            @Override
+            public void dispose() {
             }
           }
-        }, new Disposable() {
-          @Override
-          public void dispose() {
-          }
-        }
       );
 
       myTreePanel.removeAll();

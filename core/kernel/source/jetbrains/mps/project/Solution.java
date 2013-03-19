@@ -108,8 +108,7 @@ public class Solution extends AbstractModule {
       ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
     }
 
-    invalidateCaches();
-    invalidateDependencies();
+    dependenciesChanged();
   }
 
   public void setUpdateBootstrapSolutions(boolean b) {
@@ -122,7 +121,7 @@ public class Solution extends AbstractModule {
     //do not save stub solutions (otherwise build model generation fails)
     if (bootstrapCP.keySet().contains(this.getModuleReference())) return;
     // in StubSolutions myDescriptorFile is null, so preventing NPE here (MPS-16793)
-    if (myDescriptorFile == null || isPackaged()) return;
+    if (myDescriptorFile == null || isReadOnly()) return;
     SolutionDescriptorPersistence.saveSolutionDescriptor(myDescriptorFile, getModuleDescriptor(), MacrosFactory.forModule(this));
   }
 

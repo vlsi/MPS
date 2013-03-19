@@ -30,10 +30,6 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.logging.Logger;
 
 public class FixMissingImportsInProject_Action extends BaseAction {
@@ -73,9 +69,10 @@ public class FixMissingImportsInProject_Action extends BaseAction {
       Queue<SModuleReference> modules = QueueSequence.fromQueueWithValues(new LinkedList<SModuleReference>(), ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSProject.class).getModuleReferences());
       while (QueueSequence.fromQueue(modules).isNotEmpty()) {
         SModule module = ModuleRepositoryFacade.getInstance().getModule(QueueSequence.fromQueue(modules).removeFirstElement());
-        if (module.isPackaged()) {
+        if (module.isReadOnly()) {
           continue;
         }
+
         if (module instanceof Language) {
           Iterable<Generator> generators = ((Language) module).getGenerators();
           QueueSequence.fromQueue(modules).addSequence(Sequence.fromIterable(generators).select(new ISelector<Generator, ModuleReference>() {
@@ -92,26 +89,20 @@ public class FixMissingImportsInProject_Action extends BaseAction {
         }
 
         for (SModelReference modelReference : ListSequence.fromList(modelReferences)) {
-          SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
-          if (modelDescriptor == null) {
+          SModel model = SModelRepository.getInstance().getModelDescriptor(modelReference);
+          if (model == null) {
             continue;
           }
-          if (!(SModelStereotype.isUserModel(modelDescriptor))) {
+          if (!(SModelStereotype.isUserModel(model))) {
             continue;
           }
-          if (!(modelDescriptor instanceof EditableSModel)) {
+          if (!(model instanceof EditableSModel)) {
             continue;
           }
 
-          new MissingDependenciesFixer(modelDescriptor).fix(false);
+          MissingDependenciesFixer.fixDependencies(model);
         }
-        ((IModule) module).invalidateCaches();
       }
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-        public void run() {
-          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
-        }
-      });
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "FixMissingImportsInProject", t);
     }

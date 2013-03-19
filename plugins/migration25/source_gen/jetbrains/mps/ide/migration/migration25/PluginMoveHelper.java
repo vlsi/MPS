@@ -54,7 +54,7 @@ public class PluginMoveHelper {
     List<Language> langs = myProject.getProjectModules(Language.class);
     Iterable<Language> refLangs = ListSequence.fromList(langs).where(new IWhereFilter<Language>() {
       public boolean accept(Language it) {
-        return !(it.isPackaged()) && LanguageAspect.PLUGIN.get(it) != null;
+        return !(it.isReadOnly()) && LanguageAspect.PLUGIN.get(it) != null;
       }
     });
     Iterable<Language> problems = Sequence.fromIterable(refLangs).where(new IWhereFilter<Language>() {
@@ -147,10 +147,12 @@ public class PluginMoveHelper {
   }
 
   private void movePluginOut(Language l) {
+    assert !(l.isReadOnly());
+
     String solutionName = makePluginSolutionName(l, SOLUTION_NAME);
     Solution s = ModuleRepositoryFacade.getInstance().getModule(solutionName, Solution.class);
     if (s == null) {
-      s = NewModuleUtil.createSolution(solutionName, l.getBundleHome().getDescendant("solutions").getDescendant(SOLUTION_NAME).getPath(), myProject);
+      s = NewModuleUtil.createSolution(solutionName, l.getModuleSourceDir().getDescendant("solutions").getDescendant(SOLUTION_NAME).getPath(), myProject);
 
       StandaloneMPSProject project = (StandaloneMPSProject) myProject;
       project.setFolderFor(s, project.getFolderFor(l));

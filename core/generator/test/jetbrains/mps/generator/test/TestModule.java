@@ -68,10 +68,10 @@ public class TestModule extends AbstractModule {
   }
 
   private void clearAll() {
-    invalidateCaches();
     myPeer = null;
     myModels.clear();
     myOriginalModels.clear();
+    dependenciesChanged();
   }
 
   private boolean isValidName(String longName, String stereotype) {
@@ -92,7 +92,6 @@ public class TestModule extends AbstractModule {
 
     myModels.put(result.getReference().getModelName(), result);
     myOriginalModels.put(result, originalModel);
-    invalidateCaches();
     return result;
   }
 

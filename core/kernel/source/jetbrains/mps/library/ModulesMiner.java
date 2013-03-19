@@ -211,7 +211,7 @@ public class ModulesMiner {
       excludes.add(FileSystem.getInstance().getFileByPath(p));
     }
 
-    IFile genPath = ProjectPathUtil.getGeneratorOutputPath(descriptorFile, descriptor);
+    IFile genPath = ProjectPathUtil.getGeneratorOutputPath(descriptorFile.getParent(), descriptor);
     if (genPath != null) {
       excludes.add(genPath);
       if (!descriptorFile.isReadOnly()) {

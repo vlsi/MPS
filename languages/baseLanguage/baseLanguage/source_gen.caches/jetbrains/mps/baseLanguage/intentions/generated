@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="crse9tff3waa7xeolrqlswzj4227qkn">
+<dependencies version="2" modelHash="-2cg6is5qdda5ogmthki5i0vf2b7s05w">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.intentions(MPS.Editor/jetbrains.mps.intentions@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
@@ -47,7 +47,7 @@
   <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="6pme6f8cr98yhjna02lpbqkg2n36ah5" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="8lb0ssmvoceitlofqs9sah312lyoau7" />
-  <common hash="-9n7j9o1l42ihlpjdpa7ppc2b4ihtq2i" dependsOnNodes="true">
+  <common hash="-a6amn2bgr2ufi0j2ru2zq99fw8ptzip" dependsOnNodes="true">
     <dep root="1193744597902" />
     <dep root="1195647284978" />
     <dep root="1195647309293" />
@@ -984,7 +984,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="CreateMethodDeclaration_Intention.java" />
   </source>
-  <source id="6670547060642540858" name="CreateMethodDeclarationUtil" hash="-3xvtwsy1mrxva67szewurys9bcnhenf">
+  <source id="6670547060642540858" name="CreateMethodDeclarationUtil" hash="-33kev2se8op36r4aon6ptzedbz3mo55">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <file name="CreateMethodDeclarationUtil.java" />
