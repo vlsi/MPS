@@ -13,7 +13,6 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.DevKit;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
@@ -78,9 +77,6 @@ public class NewModuleUtil {
       public Solution invoke(String s, IFile f, MPSProject p) {
         return createNewSolution(s, f, p);
       }
-    }, new _FunctionTypes._void_P1_E0<ModuleDescriptor>() {
-      public void invoke(ModuleDescriptor d) {
-      }
     });
   }
 
@@ -89,9 +85,6 @@ public class NewModuleUtil {
       public Language invoke(String s, IFile f, MPSProject p) {
         return createNewLanguage(s, f, true, true, p);
       }
-    }, new _FunctionTypes._void_P1_E0<ModuleDescriptor>() {
-      public void invoke(ModuleDescriptor d) {
-      }
     });
   }
 
@@ -99,9 +92,6 @@ public class NewModuleUtil {
     return NewModuleUtil.createModule(MPSExtentions.DOT_DEVKIT, namespace, rootPath, project, new _FunctionTypes._return_P3_E0<DevKit, String, IFile, MPSProject>() {
       public DevKit invoke(String s, IFile f, MPSProject p) {
         return createNewDevkit(s, f, p);
-      }
-    }, new _FunctionTypes._void_P1_E0<ModuleDescriptor>() {
-      public void invoke(ModuleDescriptor d) {
       }
     });
   }
@@ -208,12 +198,9 @@ public class NewModuleUtil {
 
 
 
-  private static <T extends AbstractModule> T createModule(String extension, String namespace, String rootPath, MPSProject project, _FunctionTypes._return_P3_E0<? extends T, ? super String, ? super IFile, ? super MPSProject> creator, _FunctionTypes._void_P1_E0<? super ModuleDescriptor> descAdjuster) {
+  private static <T extends AbstractModule> T createModule(String extension, String namespace, String rootPath, MPSProject project, _FunctionTypes._return_P3_E0<? extends T, ? super String, ? super IFile, ? super MPSProject> creator) {
     IFile descriptorFile = NewModuleUtil.getModuleFile(namespace, rootPath, extension);
     T module = creator.invoke(namespace, descriptorFile, project);
-    ModuleDescriptor d = module.getModuleDescriptor();
-    descAdjuster.invoke(d);
-    module.setModuleDescriptor(d, false);
     project.addModule(module.getModuleReference());
     module.save();
     return module;
