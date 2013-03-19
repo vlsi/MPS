@@ -79,6 +79,8 @@
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/test/outputLang/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/test/sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/intentions/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/jetbrains.mps.lang.actions.test/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/jetbrains.mps.lang.actions.testLanguage/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/make/languages/facet/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/make/languages/outlook/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/make/languages/script/source_gen" isTestSource="false" />
@@ -221,6 +223,8 @@
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/test/outputLang/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/generator/test/sandbox/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/intentions/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/jetbrains.mps.lang.actions.test/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/jetbrains.mps.lang.actions.testLanguage/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/make/languages/facet/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/make/languages/outlook/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/make/languages/script/classes_gen" />
