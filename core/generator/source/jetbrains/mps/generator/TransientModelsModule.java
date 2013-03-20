@@ -22,12 +22,24 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -93,7 +105,7 @@ public class TransientModelsModule extends AbstractModule {
   }
 
   public boolean addModelToKeep(SModel model, boolean force) {
-    assert model .getModule() instanceof TransientModelsModule;
+    assert model.getModule() instanceof TransientModelsModule;
     String modelRef = model.getReference().toString();
     if (force) {
       myModelsToKeep.add(modelRef);
@@ -113,15 +125,14 @@ public class TransientModelsModule extends AbstractModule {
   }
 
   public boolean isModelToKeep(SModel model) {
-    assert model .getModule() instanceof TransientModelsModule;
+    assert model.getModule() instanceof TransientModelsModule;
     return myModelsToKeep.contains(model.getReference().toString());
   }
 
-  private boolean isValidName(String longName, String stereotype) {
-    String modelName = stereotype == null ? longName : longName + "@" + stereotype;
+  private boolean isValidName(String modelName) {
     return
-      SModelRepository.getInstance().getModelDescriptor(modelName) == null
-        && !myModels.containsKey(modelName);
+        SModelRepository.getInstance().getModelDescriptor(modelName) == null
+            && !myModels.containsKey(modelName);
   }
 
   public boolean publishTransientModel(SModel model) {
@@ -164,12 +175,12 @@ public class TransientModelsModule extends AbstractModule {
     }
   }
 
-  public SModel createTransientModel(final String longName, String stereotype) {
-    while (!isValidName(longName, stereotype)) {
-      stereotype += "_";
+  public SModel createTransientModel(@NotNull String longName, @NotNull String stereotype) {
+    String modelName = longName + "@" + stereotype;
+    while (!isValidName(modelName)) {
+      modelName += "_";
     }
 
-    String modelName = stereotype == null ? longName : longName + "@" + stereotype;
     SModel result = new TransientSModelDescriptor(modelName);
     result.load();
 
@@ -221,7 +232,7 @@ public class TransientModelsModule extends AbstractModule {
     private boolean wasUnloaded = false;
 
     private TransientSModelDescriptor(String modelName) {
-      super(new jetbrains.mps.smodel.SModelReference(SModelFqName.fromString(modelName), jetbrains.mps.smodel.SModelId.generate()));
+      super(PersistenceFacade.getInstance().createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), modelName));
       myLongName = SModelStereotype.withoutStereotype(modelName);
     }
 

@@ -23,7 +23,6 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.BaseSModelDescriptor;
 import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.StubModel;
@@ -88,21 +87,19 @@ public class TestModule extends AbstractModule {
     dependenciesChanged();
   }
 
-  private boolean isValidName(String longName, String stereotype) {
-    SModelFqName sModelFqName = new SModelFqName(longName, stereotype);
-    return
-        SModelRepository.getInstance().getModelDescriptor(sModelFqName.toString()) == null
-            && !myModels.containsKey(sModelFqName.toString());
+  private boolean isValidName(String modelName) {
+    return SModelRepository.getInstance().getModelDescriptor(modelName) == null
+        && !myModels.containsKey(modelName);
   }
 
   public SModel createModel(SModel originalModel) {
-    String stereotype = "999";
-    while (!isValidName(SNodeOperations.getModelLongName(originalModel), stereotype)) {
-      stereotype += "_";
+    String originalLong = SNodeOperations.getModelLongName(originalModel);
+    String newModelName = originalLong + "@999";
+    while (!isValidName(newModelName)) {
+      newModelName += "_";
     }
 
-    SModelFqName fqName = new SModelFqName(SNodeOperations.getModelLongName(originalModel), stereotype);
-    SModel result = new TestSModelDescriptor(fqName, jetbrains.mps.util.SNodeOperations.getModelLongName(originalModel), originalModel);
+    SModel result = new TestSModelDescriptor(newModelName, originalModel);
 
     myModels.put(result.getReference().getModelName(), result);
     myOriginalModels.put(result, originalModel);
@@ -157,9 +154,9 @@ public class TestModule extends AbstractModule {
     private final String myLongName;
     private final SModel myToCopy;
 
-    private TestSModelDescriptor(SModelFqName fqName, String longName, SModel toCopy) {
-      super(new jetbrains.mps.smodel.SModelReference(fqName, jetbrains.mps.smodel.SModelId.generate()));
-      myLongName = longName;
+    private TestSModelDescriptor(String modelName, SModel toCopy) {
+      super(PersistenceFacade.getInstance().createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), modelName));
+      myLongName = SModelStereotype.withoutStereotype(modelName);
       myToCopy = toCopy;
     }
 
