@@ -2980,7 +2980,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         EditorCell cell = findNodeCell(addedChild);
         if (cell != null) {
           // similar to: IntellijentInputUtil.applyRigthTransform() logic
-          EditorCell errorCell = cell.findChild(CellFinders.FIRST_ERROR, true);
+          EditorCell errorCell = CellFinderUtil.findChild(cell, CellFinders.FIRST_ERROR, true);
           if (errorCell != null) {
             changeSelectionWRTFocusPolicy(errorCell);
           } else {
