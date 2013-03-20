@@ -107,7 +107,6 @@
       <modulePath path="${project}/languages/baseLanguage/tuples/solutions/jetbrains.mps.baseLanguage.tuples.test/jetbrains.mps.baseLanguage.tuples.test.msd" folder="baseLanguage.tuples" />
       <modulePath path="${project}/languages/baseLanguage/unitTest/jetbrains.mps.baseLanguage.unitTest.libs.msd" folder="baseLanguage.unitTest" />
       <modulePath path="${project}/languages/baseLanguage/varVariable/jetbrains.mps.baseLanguage.varVariable.mpl" folder="baseLanguage" />
-      <modulePath path="${project}/languages/console/jetbrains.mps.plugin.console.mpl" folder="plugins.console" />
       <modulePath path="${project}/languages/core/core/jetbrains.mps.lang.core.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/core/core/solutions/pluginSolution/jetbrains.mps.lang.core.pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/core/stub/Annotations/Annotations.msd" folder="core.stub" />
