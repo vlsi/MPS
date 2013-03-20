@@ -25,7 +25,7 @@
   <unitInfo fileName="ProcessBuilderCommandPart_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.ProcessBuilderCommandPart_BehaviorDescriptor" />
   <unitInfo fileName="ProcessType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.ProcessType_BehaviorDescriptor" />
   <unitInfo fileName="PropertyCommandPart_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.PropertyCommandPart_BehaviorDescriptor" />
-  <unitInfo fileName="RedirectOutputExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.RedirectOutputExpression_BehaviorDescriptor" />
+  <unitInfo fileName="RedirectOutputExpression_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.RedirectOutputExpression_BehaviorDescriptor" />
   <unitInfo fileName="ReportErrorStatement_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.ReportErrorStatement_BehaviorDescriptor" />
   <unitInfo fileName="ReportExecutionError_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.ReportExecutionError_BehaviorDescriptor" />
   <unitInfo fileName="StartAndWaitOperation_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.StartAndWaitOperation_BehaviorDescriptor" />
@@ -96,6 +96,20 @@
       <varInfo nodeId="1616228152992024986" varName="thisConcept" />
     </scopeInfo>
     <unitInfo nodeId="1616228152992024986" fileName="CommandPartLengthOperation_Behavior.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.CommandPartLengthOperation_Behavior" />
+  </root>
+  <root nodeRef="r:7757a4ec-c551-4194-a1b0-7ea4e576ea60(jetbrains.mps.execution.commands.behavior)/3474133302907912062">
+    <nodeInfo nodeId="3474133302907962778" fileName="RedirectOutputExpression_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3474133302907912062" fileName="RedirectOutputExpression_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="3474133302907912062" fileName="RedirectOutputExpression_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isLegalAsStatement_1239211900844#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <scopeInfo nodeId="3474133302907912289" fileName="RedirectOutputExpression_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="3474133302907956554" fileName="RedirectOutputExpression_Behavior.java" startLine="11" startPosition="82" endLine="12" endPosition="16" />
+    <scopeInfo nodeId="3474133302907912062" fileName="RedirectOutputExpression_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
+      <varInfo nodeId="3474133302907912062" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="3474133302907912062" fileName="RedirectOutputExpression_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
+      <varInfo nodeId="3474133302907912062" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="3474133302907912062" fileName="RedirectOutputExpression_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.RedirectOutputExpression_Behavior" />
   </root>
   <root nodeRef="r:7757a4ec-c551-4194-a1b0-7ea4e576ea60(jetbrains.mps.execution.commands.behavior)/6129022259108621140">
     <nodeInfo nodeId="1388651548839371027" fileName="ExecuteCommandPart_Behavior.java" startLine="29" startPosition="39" endLine="30" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
