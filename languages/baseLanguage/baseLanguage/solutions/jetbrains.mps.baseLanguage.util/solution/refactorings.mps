@@ -4589,11 +4589,8 @@
               <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="8492459591399173328" resolveInfo="FIELD" />
               <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="8492459591399173316" resolveInfo="FieldInitializationPlace" />
             </node>
-            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8492459591399164768">
-              <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="8492459591399164769">
-                <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="8492459591399164723" resolveInfo="myFieldInitialization" />
-              </node>
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="8492459591399164770" />
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1187329276713042988">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8492459591399164723" resolveInfo="myFieldInitialization" />
             </node>
           </node>
           <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="8492459591399164771">

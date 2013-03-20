@@ -4,14 +4,18 @@ package jetbrains.mps.console.tool;
 
 import jetbrains.mps.ide.tools.BaseProjectTool;
 import javax.swing.JPanel;
+import org.jetbrains.mps.openapi.model.SModel;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import javax.swing.JComponent;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.awt.BorderLayout;
 import javax.swing.JButton;
+import jetbrains.mps.kernel.model.TempModelCreator;
 
 public class ConsoleTool extends BaseProjectTool {
   private JPanel myMainComponent;
+  private SModel myModel;
 
 
   public ConsoleTool(Project project) {
@@ -29,6 +33,8 @@ public class ConsoleTool extends BaseProjectTool {
 
   @Override
   protected void createTool() {
+    SModelOperations.createNewRootNode(myModel, "", null);
+
     myMainComponent = new JPanel();
     myMainComponent.setLayout(new BorderLayout());
     myMainComponent.add(new JPanel(), BorderLayout.NORTH);
@@ -40,5 +46,21 @@ public class ConsoleTool extends BaseProjectTool {
   @Override
   protected boolean isInitiallyAvailable() {
     return true;
+  }
+
+
+
+  @Override
+  protected void doRegister() {
+    super.doRegister();
+    this.myModel = TempModelCreator.createTempModel();
+  }
+
+
+
+  @Override
+  protected void doUnregister() {
+    TempModelCreator.disposeTempModel(myModel);
+    super.doUnregister();
   }
 }
