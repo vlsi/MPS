@@ -133,7 +133,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
   }
 
   @Override
-  public boolean acceptCell(jetbrains.mps.nodeEditor.cells.EditorCell cell, EditorComponent component) {
+  public boolean acceptCell(EditorCell cell, EditorComponent component) {
     return isNameCell(cell) && !(isDirectCell(cell)) && check_myu41h_a0a0a31(super.getCell(component)) || super.acceptCell(cell, component);
   }
 

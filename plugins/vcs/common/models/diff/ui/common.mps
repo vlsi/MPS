@@ -2652,8 +2652,8 @@
       <property name="isFinal" nameId="tpee.1181808852946" value="false" />
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="6255120839142955598">
         <property name="name" nameId="tpck.1169194664001" value="cell" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2312049224537997770">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jsgz.~EditorCell" resolveInfo="EditorCell" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5016004838124558910">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="nu8v.~EditorCell" resolveInfo="EditorCell" />
         </node>
       </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="6255120839142955597" />
@@ -2691,7 +2691,7 @@
               </node>
             </node>
             <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.SuperMethodCall" typeId="tpee.1073063089578" id="6255120839142980116">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="557t.~EditorMessageWithTarget%dacceptCell(jetbrains%dmps%dnodeEditor%dcells%dEditorCell,jetbrains%dmps%dnodeEditor%dEditorComponent)%cboolean" resolveInfo="acceptCell" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="557t.~EditorMessageWithTarget%dacceptCell(jetbrains%dmps%dopenapi%deditor%dcells%dEditorCell,jetbrains%dmps%dnodeEditor%dEditorComponent)%cboolean" resolveInfo="acceptCell" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6255120839142980117">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6255120839142955598" resolveInfo="cell" />
               </node>

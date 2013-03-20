@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
@@ -160,9 +161,9 @@ public class DefaultEditorMessage implements EditorMessage {
   }
 
   @Override
-  public boolean acceptCell(EditorCell cell, EditorComponent editor) {
+  public boolean acceptCell(jetbrains.mps.openapi.editor.cells.EditorCell cell, EditorComponent editor) {
     if (cell == null) return false;
-    return cell.isBigCell() && editor.isValid(cell) && cell.getSNode() == getNode();
+    return APICellAdapter.isBigCell(cell) && editor.isValid(cell) && cell.getSNode() == getNode();
   }
 
   @Override

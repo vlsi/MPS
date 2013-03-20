@@ -328,7 +328,7 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
     }
 
     @Override
-    public boolean acceptCell(EditorCell cell, EditorComponent component) {
+    public boolean acceptCell(jetbrains.mps.openapi.editor.cells.EditorCell cell, EditorComponent component) {
       return myCell == cell;
     }
 

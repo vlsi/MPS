@@ -34,7 +34,7 @@ public interface EditorMessage extends SimpleEditorMessage {
 
   EditorCell getCellForParentNodeInMainEditor(EditorComponent editor);
 
-  boolean acceptCell(EditorCell cell, EditorComponent editor);
+  boolean acceptCell(jetbrains.mps.openapi.editor.cells.EditorCell cell, EditorComponent editor);
 
   void paint(Graphics g, EditorComponent editorComponent, EditorCell cell);
 

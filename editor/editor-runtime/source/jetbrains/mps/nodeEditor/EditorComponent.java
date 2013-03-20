@@ -2722,9 +2722,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return null;
   }
 
-  public boolean isValid(EditorCell cell) {
+  public boolean isValid(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
     if (cell == null) return false;
-    return ((EditorCell_Basic) cell).isInTree() && cell.getEditor() == this;
+    return ((EditorCell_Basic) cell).isInTree() && cell.getEditorComponent() == this;
   }
 
   public jetbrains.mps.openapi.editor.cells.EditorCell changeSelectionWRTFocusPolicy(@NotNull EditorCell cell) {
