@@ -528,7 +528,7 @@ public abstract class EditorCell_Basic implements EditorCell {
         SNode oldNode = getSNode();
         SNode newNode = replaceWithDefault();
         if (newNode == null) {
-          EditorCell_Label editable = findChild(CellFinders.FIRST_EDITABLE);
+          EditorCell_Label editable = CellFinderUtil.findFirstEditable(EditorCell_Basic.this);
           if (editable != null) {
             editor.changeSelection(editable);
             editor.processKeyTyped(e);
@@ -539,7 +539,7 @@ public abstract class EditorCell_Basic implements EditorCell {
         newNode.putUserObject(EditorManager.OLD_NODE_FOR_SUBSTITUTION, oldNode);
         EditorCell nodeCell = editor.findNodeCell(newNode);
         if (nodeCell == null) return;
-        EditorCell_Label editable = nodeCell.findChild(CellFinders.FIRST_EDITABLE);
+        EditorCell_Label editable = CellFinderUtil.findFirstEditable(EditorCell_Basic.this);
         if (editable != null) {
           editor.changeSelection(editable);
           editor.processKeyTyped(e);
@@ -1028,16 +1028,6 @@ public abstract class EditorCell_Basic implements EditorCell {
       }
     }
     return null;
-  }
-
-  @Override
-  public <C extends EditorCell> C findChild(CellFinder<C> finder, boolean includeThis) {
-    return CellFinderUtil.findChild(this, finder, includeThis);
-  }
-
-  @Override
-  public <C extends EditorCell> C findChild(CellFinder<C> finder) {
-    return findChild(finder, false);
   }
 
   @Override
