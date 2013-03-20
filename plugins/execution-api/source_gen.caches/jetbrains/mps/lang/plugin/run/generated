@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-7xuwtg19unxmdvgw98m2yb3dtea0aj">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="38s949ymo9nq7jj7p2lrfowy0hurndx" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
   <common hash="5g93ufg4v5gcm88bijjeqjt714jdpc" />
   <source id="242278890011773407" name="DefaultOsProcessHandler" hash="-caef3xwcycm7rb4n8vr5h3pcb311cnh">
     <file name="DefaultOsProcessHandler.java" />

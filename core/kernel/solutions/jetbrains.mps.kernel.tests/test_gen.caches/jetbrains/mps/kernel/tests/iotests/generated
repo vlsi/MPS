@@ -15,7 +15,7 @@
   <dep model="r:10bf3684-5fb2-4fa0-9dd9-1d05589df2e9(jetbrains.mps.util.xml)" hash="-c7dq8p5njx3qrypscs2fawtzx2cav8g" />
   <dep model="r:c56dc30e-0a5f-4dee-a0d4-1316cfe1aba1(jetbrains.mps.project.foreign)" hash="-4wydjdtslrwiik4kc4kq0oeerefnev6" />
   <dep model="r:c7bbaee3-030a-4940-995f-2174babaf670(jetbrains.mps.project.io)" hash="1znb7l077e7l3bzy838it648w0br8s8" />
-  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="8lb0ssmvoceitlofqs9sah312lyoau7" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="7q8xdnha8al10c7e3cb1njh3bglwdb4" />
   <common hash="-enrs8lbg3lirohg10fdjwqrkwysi9kd" />
   <source id="5164231775618799303" name="DescriptorsIO_Test" hash="73junq562ihfny3s02oz290gffxj4g2">
     <dep root="5164231775618800060" />

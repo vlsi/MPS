@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-7kubdcvez700645jtqij4ck5elp96pf">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="38s949ymo9nq7jj7p2lrfowy0hurndx" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
   <common hash="cfsw15izap0wr1z5nx3t1oobobbgl9q" />
   <source id="4474271214082913232" name="IDebuggerConfiguration" hash="a2jlpurd17dl5b02o2tdelgp2w487bd">
     <file name="IDebuggerConfiguration.java" />
