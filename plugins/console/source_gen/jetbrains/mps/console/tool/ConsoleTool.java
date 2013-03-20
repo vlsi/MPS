@@ -14,22 +14,24 @@ public class ConsoleTool extends BaseProjectTool {
   private JPanel myMainComponent;
 
 
-
   public ConsoleTool(Project project) {
     super(project, "Console", -1, null, ToolWindowAnchor.BOTTOM, false);
   }
 
 
 
-
   @Override
   public JComponent getComponent() {
-    if (myMainComponent == null) {
-      myMainComponent = new JPanel();
-      myMainComponent.setLayout(new BorderLayout());
-      myMainComponent.add(new JPanel(), BorderLayout.NORTH);
-      myMainComponent.add(new JButton("Execute"), BorderLayout.SOUTH);
-    }
-    return this.myMainComponent;
+    return myMainComponent;
+  }
+
+
+
+  @Override
+  protected void createTool() {
+    myMainComponent = new JPanel();
+    myMainComponent.setLayout(new BorderLayout());
+    myMainComponent.add(new JPanel(), BorderLayout.NORTH);
+    myMainComponent.add(new JButton("Execute"), BorderLayout.SOUTH);
   }
 }
