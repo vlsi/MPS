@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="BaseLanguageCommand_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.console.lang.commands.behavior.BaseLanguageCommand_BehaviorDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.console.lang.commands.behavior.BehaviorAspectDescriptor" />
+  <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.lang.commands.behavior)/5464054275389853151">
+    <nodeInfo nodeId="5464054275389853151" fileName="BaseLanguageCommand_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="5464054275389853151" fileName="BaseLanguageCommand_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_execute_757553790980855637#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="5464054275389853316" fileName="BaseLanguageCommand_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="5464054275389859618" fileName="BaseLanguageCommand_Behavior.java" startLine="11" startPosition="73" endLine="11" endPosition="73" />
+    <scopeInfo nodeId="5464054275389853151" fileName="BaseLanguageCommand_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
+      <varInfo nodeId="5464054275389853151" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="5464054275389853151" fileName="BaseLanguageCommand_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
+      <varInfo nodeId="5464054275389853151" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="5464054275389853151" fileName="BaseLanguageCommand_Behavior.java" startLine="7" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.console.lang.commands.behavior.BaseLanguageCommand_Behavior" />
+  </root>
+</debugInfo>
+
