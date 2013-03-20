@@ -16,6 +16,7 @@
 
 package jetbrains.mps.excluded;
 
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.containers.MultiMap;
@@ -23,6 +24,9 @@ import junit.framework.Assert;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.io.File;
@@ -32,7 +36,24 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+
 public class GenSourcesAndCompilerXmlGenerationTest {
+
+  @BeforeClass
+  public static void init() {
+    assertNull(PersistenceFacade.getInstance());
+    MPSCore.getInstance().init();
+  }
+
+  @AfterClass
+  public static void dispose() {
+    assertNotNull(PersistenceFacade.getInstance());
+    MPSCore.getInstance().dispose();
+    assertNull(PersistenceFacade.getInstance());
+  }
+
   @Test
   public void testGenSourcesIml() throws JDOMException, IOException {
     String previousGenSources = FileUtil.read(GeneratorsRunner.GEN_SOURCES_IML);
