@@ -11,6 +11,9 @@ public class ConsoleCommand_Behavior {
   public static void init(SNode thisNode) {
   }
 
+  public static void virtual_execute_757553790980855637(SNode thisNode) {
+  }
+
   @Deprecated
   public static void call_execute_757553790980855637(SNode thisNode) {
     BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_execute_757553790980855637", new Object[]{});

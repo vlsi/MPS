@@ -116,7 +116,7 @@ public class ConsoleTool extends BaseProjectTool {
   private void nextCommand() {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        ConsoleTool.this.myLastCommand = ListSequence.fromList(SLinkOperations.getTargets(myRoot, "command", true)).addElement(SConceptOperations.createNewNode("jetbrains.mps.console.lang.structure.ConsoleCommand", null));
+        ConsoleTool.this.myLastCommand = ListSequence.fromList(SLinkOperations.getTargets(myRoot, "command", true)).addElement(SConceptOperations.createNewNode("jetbrains.mps.console.lang.commands.structure.BaseLanguageCommand", null));
         myEditor.editNode(myLastCommand);
       }
     });
