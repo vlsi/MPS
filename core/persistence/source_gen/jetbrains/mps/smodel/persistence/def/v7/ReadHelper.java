@@ -7,6 +7,7 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -34,7 +35,7 @@ public class ReadHelper {
       LOG.error("Error loading import element for index " + index + " in " + myModelRef);
       return;
     }
-    SModelReference modelRef = jetbrains.mps.smodel.SModelReference.fromString(modelUID);
+    SModelReference modelRef = PersistenceFacade.getInstance().createModelReference(modelUID);
     SModel.ImportElement elem = new SModel.ImportElement(modelRef, ++myMaxImportIndex, version);
     if (implicit) {
       model.addAdditionalModelVersion(elem);

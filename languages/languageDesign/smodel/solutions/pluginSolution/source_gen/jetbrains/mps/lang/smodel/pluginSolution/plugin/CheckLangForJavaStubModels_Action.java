@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 import jetbrains.mps.logging.Logger;
@@ -81,7 +82,7 @@ public class CheckLangForJavaStubModels_Action extends BaseAction {
       for (EditableSModelDescriptor md : CollectionSequence.fromCollection(LanguageAspect.getAspectModels(language))) {
         for (SModelReference model : ListSequence.fromList(SModelOperations.getImportedModelUIDs(md))) {
           if (SModelStereotype.getStereotype(model.getModelName()).equals(SModelStereotype.getStubStereotypeForId(LanguageID.JAVA))) {
-            SModel langModelForStub = SModelRepository.getInstance().getModelDescriptor(jetbrains.mps.smodel.SModelReference.fromString(SModelStereotype.withoutStereotype(model.getModelName())));
+            SModel langModelForStub = SModelRepository.getInstance().getModelDescriptor(PersistenceFacade.getInstance().createModelReference(SModelStereotype.withoutStereotype(model.getModelName())));
             String modelName = model.getModelName();
             if (langModelForStub != null && language.getAspectForModel(langModelForStub) != null) {
               SetSequence.fromSet(langStubModels).addElement(modelName);

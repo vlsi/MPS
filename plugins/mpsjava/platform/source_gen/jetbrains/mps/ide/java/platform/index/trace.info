@@ -419,72 +419,72 @@
     <unitInfo nodeId="4183391441819864496" fileName="ClassifierSuccessorsIndexer.java" startLine="29" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsIndexer" />
   </root>
   <root nodeRef="r:2ba45a7a-594f-4a4d-be5c-07edf2b58826(jetbrains.mps.ide.java.platform.index)/4183391441819864880">
-    <nodeInfo nodeId="4183391441819864882" fileName="GlobalSNodeId.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelReference" />
-    <nodeInfo nodeId="4183391441819864885" fileName="GlobalSNodeId.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodeId" />
-    <nodeInfo nodeId="4183391441819864942" fileName="GlobalSNodeId.java" startLine="17" startPosition="36" endLine="18" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
-    <nodeInfo nodeId="4183391441819864965" fileName="GlobalSNodeId.java" startLine="21" startPosition="62" endLine="22" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="4183391441819864969" fileName="GlobalSNodeId.java" startLine="22" startPosition="34" endLine="23" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="4183391441819864973" fileName="GlobalSNodeId.java" startLine="23" startPosition="26" endLine="24" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864977" fileName="GlobalSNodeId.java" startLine="24" startPosition="38" endLine="25" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864985" fileName="GlobalSNodeId.java" startLine="28" startPosition="26" endLine="29" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819864990" fileName="GlobalSNodeId.java" startLine="29" startPosition="107" endLine="30" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819865013" fileName="GlobalSNodeId.java" startLine="38" startPosition="25" endLine="39" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819865029" fileName="GlobalSNodeId.java" startLine="44" startPosition="41" endLine="45" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819865035" fileName="GlobalSNodeId.java" startLine="45" startPosition="56" endLine="46" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819865049" fileName="GlobalSNodeId.java" startLine="47" startPosition="5" endLine="48" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819865056" fileName="GlobalSNodeId.java" startLine="51" startPosition="43" endLine="52" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819865062" fileName="GlobalSNodeId.java" startLine="55" startPosition="35" endLine="56" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819864894" fileName="GlobalSNodeId.java" startLine="59" startPosition="67" endLine="60" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819864898" fileName="GlobalSNodeId.java" startLine="60" startPosition="42" endLine="61" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819864925" fileName="GlobalSNodeId.java" startLine="62" startPosition="145" endLine="63" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819864927" fileName="GlobalSNodeId.java" startLine="64" startPosition="5" endLine="65" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819864936" fileName="GlobalSNodeId.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GlobalSNodeId#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4183391441819865052" fileName="GlobalSNodeId.java" startLine="51" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelReference#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4183391441819865058" fileName="GlobalSNodeId.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodeId#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4183391441819864902" fileName="GlobalSNodeId.java" startLine="61" startPosition="58" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4183391441819864997" fileName="GlobalSNodeId.java" startLine="30" startPosition="97" endLine="34" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819865009" fileName="GlobalSNodeId.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hashCode#()I" />
-    <nodeInfo nodeId="4183391441819865024" fileName="GlobalSNodeId.java" startLine="43" startPosition="39" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4183391441819864957" fileName="GlobalSNodeId.java" startLine="21" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GlobalSNodeId#(Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="4183391441819864981" fileName="GlobalSNodeId.java" startLine="28" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="4183391441819865018" fileName="GlobalSNodeId.java" startLine="42" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="equals#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="4183391441819864888" fileName="GlobalSNodeId.java" startLine="59" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createSNodeId#(Lorg/jetbrains/mps/openapi/model/SReference;)Ljetbrains/mps/ide/java/platform/index/GlobalSNodeId;" />
-    <scopeInfo nodeId="4183391441819864941" fileName="GlobalSNodeId.java" startLine="17" startPosition="36" endLine="18" endPosition="96" />
-    <scopeInfo nodeId="4183391441819865012" fileName="GlobalSNodeId.java" startLine="38" startPosition="25" endLine="39" endPosition="34" />
-    <scopeInfo nodeId="4183391441819865055" fileName="GlobalSNodeId.java" startLine="51" startPosition="43" endLine="52" endPosition="28" />
-    <scopeInfo nodeId="4183391441819865061" fileName="GlobalSNodeId.java" startLine="55" startPosition="35" endLine="56" endPosition="20" />
-    <scopeInfo nodeId="4183391441819864924" fileName="GlobalSNodeId.java" startLine="62" startPosition="145" endLine="63" endPosition="18" />
-    <scopeInfo nodeId="4183391441819865028" fileName="GlobalSNodeId.java" startLine="44" startPosition="41" endLine="46" endPosition="120">
+    <nodeInfo nodeId="4183391441819864882" fileName="GlobalSNodeId.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelReference" />
+    <nodeInfo nodeId="4183391441819864885" fileName="GlobalSNodeId.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodeId" />
+    <nodeInfo nodeId="4183391441819864942" fileName="GlobalSNodeId.java" startLine="18" startPosition="36" endLine="19" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
+    <nodeInfo nodeId="4183391441819864965" fileName="GlobalSNodeId.java" startLine="22" startPosition="62" endLine="23" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="4183391441819864969" fileName="GlobalSNodeId.java" startLine="23" startPosition="34" endLine="24" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="4183391441819864973" fileName="GlobalSNodeId.java" startLine="24" startPosition="26" endLine="25" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4183391441819864977" fileName="GlobalSNodeId.java" startLine="25" startPosition="38" endLine="26" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4183391441819864985" fileName="GlobalSNodeId.java" startLine="29" startPosition="26" endLine="30" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4183391441819864990" fileName="GlobalSNodeId.java" startLine="30" startPosition="112" endLine="31" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4183391441819865013" fileName="GlobalSNodeId.java" startLine="39" startPosition="25" endLine="40" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4183391441819865029" fileName="GlobalSNodeId.java" startLine="45" startPosition="41" endLine="46" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4183391441819865035" fileName="GlobalSNodeId.java" startLine="46" startPosition="56" endLine="47" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4183391441819865049" fileName="GlobalSNodeId.java" startLine="48" startPosition="5" endLine="49" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4183391441819865056" fileName="GlobalSNodeId.java" startLine="52" startPosition="43" endLine="53" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4183391441819865062" fileName="GlobalSNodeId.java" startLine="56" startPosition="35" endLine="57" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4183391441819864894" fileName="GlobalSNodeId.java" startLine="60" startPosition="67" endLine="61" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4183391441819864898" fileName="GlobalSNodeId.java" startLine="61" startPosition="42" endLine="62" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4183391441819864925" fileName="GlobalSNodeId.java" startLine="63" startPosition="145" endLine="64" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4183391441819864927" fileName="GlobalSNodeId.java" startLine="65" startPosition="5" endLine="66" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4183391441819864936" fileName="GlobalSNodeId.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GlobalSNodeId#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4183391441819865052" fileName="GlobalSNodeId.java" startLine="52" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelReference#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4183391441819865058" fileName="GlobalSNodeId.java" startLine="56" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodeId#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4183391441819864902" fileName="GlobalSNodeId.java" startLine="62" startPosition="58" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4183391441819864997" fileName="GlobalSNodeId.java" startLine="31" startPosition="97" endLine="35" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4183391441819865009" fileName="GlobalSNodeId.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hashCode#()I" />
+    <nodeInfo nodeId="4183391441819865024" fileName="GlobalSNodeId.java" startLine="44" startPosition="39" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4183391441819864957" fileName="GlobalSNodeId.java" startLine="22" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GlobalSNodeId#(Ljava/lang/String;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4183391441819864981" fileName="GlobalSNodeId.java" startLine="29" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="4183391441819865018" fileName="GlobalSNodeId.java" startLine="43" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="equals#(Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="4183391441819864888" fileName="GlobalSNodeId.java" startLine="60" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createSNodeId#(Lorg/jetbrains/mps/openapi/model/SReference;)Ljetbrains/mps/ide/java/platform/index/GlobalSNodeId;" />
+    <scopeInfo nodeId="4183391441819864941" fileName="GlobalSNodeId.java" startLine="18" startPosition="36" endLine="19" endPosition="96" />
+    <scopeInfo nodeId="4183391441819865012" fileName="GlobalSNodeId.java" startLine="39" startPosition="25" endLine="40" endPosition="34" />
+    <scopeInfo nodeId="4183391441819865055" fileName="GlobalSNodeId.java" startLine="52" startPosition="43" endLine="53" endPosition="28" />
+    <scopeInfo nodeId="4183391441819865061" fileName="GlobalSNodeId.java" startLine="56" startPosition="35" endLine="57" endPosition="20" />
+    <scopeInfo nodeId="4183391441819864924" fileName="GlobalSNodeId.java" startLine="63" startPosition="145" endLine="64" endPosition="18" />
+    <scopeInfo nodeId="4183391441819865028" fileName="GlobalSNodeId.java" startLine="45" startPosition="41" endLine="47" endPosition="120">
       <varInfo nodeId="4183391441819865030" varName="otherNodeId" />
     </scopeInfo>
-    <scopeInfo nodeId="4183391441819864936" fileName="GlobalSNodeId.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
+    <scopeInfo nodeId="4183391441819864936" fileName="GlobalSNodeId.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="4183391441819864939" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4183391441819865052" fileName="GlobalSNodeId.java" startLine="51" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="4183391441819865058" fileName="GlobalSNodeId.java" startLine="55" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="4183391441819864964" fileName="GlobalSNodeId.java" startLine="21" startPosition="62" endLine="25" endPosition="22" />
-    <scopeInfo nodeId="4183391441819865009" fileName="GlobalSNodeId.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="4183391441819865023" fileName="GlobalSNodeId.java" startLine="43" startPosition="39" endLine="48" endPosition="17" />
-    <scopeInfo nodeId="4183391441819864957" fileName="GlobalSNodeId.java" startLine="21" startPosition="0" endLine="27" endPosition="0">
+    <scopeInfo nodeId="4183391441819865052" fileName="GlobalSNodeId.java" startLine="52" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="4183391441819865058" fileName="GlobalSNodeId.java" startLine="56" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="4183391441819864964" fileName="GlobalSNodeId.java" startLine="22" startPosition="62" endLine="26" endPosition="22" />
+    <scopeInfo nodeId="4183391441819865009" fileName="GlobalSNodeId.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="4183391441819865023" fileName="GlobalSNodeId.java" startLine="44" startPosition="39" endLine="49" endPosition="17" />
+    <scopeInfo nodeId="4183391441819864957" fileName="GlobalSNodeId.java" startLine="22" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="4183391441819864960" varName="modelReference" />
       <varInfo nodeId="4183391441819864962" varName="nodeId" />
     </scopeInfo>
-    <scopeInfo nodeId="4183391441819864984" fileName="GlobalSNodeId.java" startLine="28" startPosition="26" endLine="34" endPosition="6">
+    <scopeInfo nodeId="4183391441819864984" fileName="GlobalSNodeId.java" startLine="29" startPosition="26" endLine="35" endPosition="6">
       <varInfo nodeId="4183391441819864991" varName="sModelDescriptor" />
       <varInfo nodeId="4183391441819864986" varName="sModelReference" />
     </scopeInfo>
-    <scopeInfo nodeId="4183391441819864893" fileName="GlobalSNodeId.java" startLine="59" startPosition="67" endLine="65" endPosition="75">
+    <scopeInfo nodeId="4183391441819864893" fileName="GlobalSNodeId.java" startLine="60" startPosition="67" endLine="66" endPosition="75">
       <varInfo nodeId="4183391441819864895" varName="modelReference" />
       <varInfo nodeId="4183391441819864899" varName="nodeId" />
     </scopeInfo>
-    <scopeInfo nodeId="4183391441819864981" fileName="GlobalSNodeId.java" startLine="28" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="4183391441819865018" fileName="GlobalSNodeId.java" startLine="42" startPosition="0" endLine="50" endPosition="0">
+    <scopeInfo nodeId="4183391441819864981" fileName="GlobalSNodeId.java" startLine="29" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="4183391441819865018" fileName="GlobalSNodeId.java" startLine="43" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="4183391441819865021" varName="other" />
     </scopeInfo>
-    <scopeInfo nodeId="4183391441819864888" fileName="GlobalSNodeId.java" startLine="59" startPosition="0" endLine="67" endPosition="0">
+    <scopeInfo nodeId="4183391441819864888" fileName="GlobalSNodeId.java" startLine="60" startPosition="0" endLine="68" endPosition="0">
       <varInfo nodeId="4183391441819864891" varName="reference" />
     </scopeInfo>
-    <unitInfo nodeId="4183391441819864880" fileName="GlobalSNodeId.java" startLine="13" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.ide.java.platform.index.GlobalSNodeId" />
+    <unitInfo nodeId="4183391441819864880" fileName="GlobalSNodeId.java" startLine="14" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ide.java.platform.index.GlobalSNodeId" />
   </root>
   <root nodeRef="r:2ba45a7a-594f-4a4d-be5c-07edf2b58826(jetbrains.mps.ide.java.platform.index)/4183391441819865064">
     <nodeInfo nodeId="4183391441819865080" fileName="GlobalSNodeIdDescriptor.java" startLine="15" startPosition="77" endLine="16" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

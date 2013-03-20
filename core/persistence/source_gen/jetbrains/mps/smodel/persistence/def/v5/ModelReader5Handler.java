@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.persistence.def.v4.VersionUtil;
 import jetbrains.mps.util.InternUtil;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -392,7 +393,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     protected SModel.ImportElement createObject(Attributes attrs) {
       int indexValue = Integer.parseInt(attrs.getValue("index"));
       int versionValue = Integer.parseInt(attrs.getValue("version"));
-      return new SModel.ImportElement(SModelReference.fromString(attrs.getValue("modelUID")), indexValue, versionValue);
+      return new SModel.ImportElement(PersistenceFacade.getInstance().createModelReference(attrs.getValue("modelUID")), indexValue, versionValue);
     }
 
     @Override

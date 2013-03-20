@@ -18,6 +18,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import jetbrains.mps.smodel.SModelFqName;
 import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.project.StubModelsResolver;
@@ -81,7 +82,7 @@ public abstract class StubModelDescriptors {
   }
 
   public SModelReference smodelRefWithFqName(String pkg) {
-    return jetbrains.mps.smodel.SModelReference.fromString(pkg + "@" + stubStereotype);
+    return PersistenceFacade.getInstance().createModelReference(pkg + "@" + stubStereotype);
   }
 
   public SModelReference javaStubRef(String pkg) {

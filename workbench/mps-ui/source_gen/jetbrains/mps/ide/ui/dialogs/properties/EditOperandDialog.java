@@ -28,6 +28,7 @@ import java.util.Enumeration;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefAllLocal;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_SimpleRef;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import java.util.ArrayList;
 import jetbrains.mps.util.Computable;
 
@@ -169,7 +170,7 @@ public class EditOperandDialog extends DialogWrapper {
   }
 
   private void setModelMappingRef(DefaultMutableTreeNode root, MappingConfig_SimpleRef operand) {
-    SModelReference modRef = jetbrains.mps.smodel.SModelReference.fromString(operand.getModelUID());
+    SModelReference modRef = PersistenceFacade.getInstance().createModelReference(operand.getModelUID());
     ((jetbrains.mps.smodel.SModelReference) modRef).update();
     Enumeration children = root.children();
     while (children.hasMoreElements()) {
