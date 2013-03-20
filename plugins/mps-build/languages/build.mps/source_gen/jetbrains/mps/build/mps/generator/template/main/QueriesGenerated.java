@@ -35,6 +35,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.Collections;
+import jetbrains.mps.build.mps.util.ModuleFinder;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.generator.template.MappingScriptContext;
@@ -425,7 +426,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5970181360960745173(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getProperty("path");
+    return SPropertyOperations.getString(_context.getNode(), "path");
   }
 
   public static Object propertyMacro_GetPropertyValue_8845345751178380248(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -1097,50 +1098,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_5970181360960745073(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    final SNode project = _context.getNode();
-    if (project == null) {
-      _context.showErrorMessage(_context.getNode(), "no context project defined");
-      return ListSequence.fromList(new ArrayList<SNode>());
-    }
-    final DependenciesHelper helper = new DependenciesHelper(_context, project);
-
-    return Sequence.fromIterable(((MPSModulesPartitioner) _context.getVariable("var:closure")).getExternal()).sort(new ISelector<SNode, String>() {
-      public String select(SNode it) {
-        return SPropertyOperations.getString(it, "name");
-      }
-    }, true).select(new ISelector<SNode, String>() {
-      public String select(SNode module) {
-        SNode mpsModule = SNodeOperations.as(DependenciesHelper.getOriginalNode(module, _context), "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule");
-        SNode layoutNode = helper.artifacts().get(mpsModule);
-        if (layoutNode == null && SNodeOperations.isInstanceOf(mpsModule, "jetbrains.mps.build.mps.structure.BuildMps_DevKit")) {
-          layoutNode = helper.artifacts().get(SLinkOperations.getTarget(SNodeOperations.cast(mpsModule, "jetbrains.mps.build.mps.structure.BuildMps_DevKit"), "path", true));
-        }
-        if (layoutNode == null) {
-          _context.showErrorMessage(_context.getNode(), "mps module " + SPropertyOperations.getString(module, "name") + " was not found in the layout of `" + SPropertyOperations.getString(project, "name") + "'");
-          return null;
-        }
-        String val = BehaviorReflection.invokeVirtual(String.class, layoutNode, "virtual_location_7117056644539862594", new Object[]{helper, mpsModule});
-        if (val == null) {
-          _context.showErrorMessage(_context.getNode(), "no location for module" + SPropertyOperations.getString(_context.getNode(), "name"));
-          return null;
-        }
-        return val;
-      }
-    }).where(new IWhereFilter<String>() {
-      public boolean accept(String it) {
-        return it != null;
-      }
-    }).distinct().sort(new ISelector<String, String>() {
-      public String select(String it) {
-        return it;
-      }
-    }, true).select(new ISelector<String, SNode>() {
-      public SNode select(String it) {
-        SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
-        loopnode.setProperty("path", it);
-        return loopnode;
-      }
-    });
+    return ModuleFinder.findModules(((MPSModulesPartitioner) _context.getVariable("var:closure")).getExternal(), _context, _context.getNode());
   }
 
   public static Iterable sourceNodesQuery_8845345751178284778(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
