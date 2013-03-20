@@ -21,8 +21,8 @@ import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.nodeEditor.selection.SingularSelection;
 import jetbrains.mps.nodeEditor.selection.SingularSelectionListenerAdapter;
 import jetbrains.mps.smodel.IOperationContext;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.event.SModelEvent;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.KeyStroke;
 import java.util.List;
@@ -35,6 +35,8 @@ public class UIEditorComponent extends EditorComponent {
     unregisterKeyboardAction(KeyStroke.getKeyStroke("ESCAPE"));
     setNoVirtualFile(true);
     myInspector = inspector;
+
+    if (myInspector == null) return;
 
     getSelectionManager().addSelectionListener(new SingularSelectionListenerAdapter() {
       @Override
@@ -60,6 +62,8 @@ public class UIEditorComponent extends EditorComponent {
   @Override
   public void dispose() {
     super.dispose();
+
+    if (myInspector == null) return;
     myInspector.dispose();
   }
 }
