@@ -66,7 +66,7 @@ public class ConsoleTool extends BaseProjectTool {
 
     myMainComponent = new JPanel();
     myMainComponent.setLayout(new BorderLayout());
-    myMainComponent.add(myEditor, BorderLayout.NORTH);
+    myMainComponent.add(myEditor, BorderLayout.CENTER);
 
     JPanel btnPanel = new JPanel();
     myMainComponent.add(btnPanel, BorderLayout.SOUTH);

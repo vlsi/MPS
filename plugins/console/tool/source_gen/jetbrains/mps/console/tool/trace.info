@@ -16,8 +16,8 @@
     <nodeInfo nodeId="3799388175938427090" fileName="ConsoleTool.java" startLine="65" startPosition="18" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="1488452273263179667" fileName="ConsoleTool.java" startLine="66" startPosition="0" endLine="67" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1488452273263188201" fileName="ConsoleTool.java" startLine="67" startPosition="35" endLine="68" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1488452273263242999" fileName="ConsoleTool.java" startLine="68" startPosition="50" endLine="69" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3799388175938620224" fileName="ConsoleTool.java" startLine="69" startPosition="54" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1488452273263242999" fileName="ConsoleTool.java" startLine="68" startPosition="50" endLine="69" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3799388175938620224" fileName="ConsoleTool.java" startLine="69" startPosition="55" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3799388175938653113" fileName="ConsoleTool.java" startLine="70" startPosition="0" endLine="71" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1488452273263214019" fileName="ConsoleTool.java" startLine="71" startPosition="35" endLine="72" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3799388175938680941" fileName="ConsoleTool.java" startLine="72" startPosition="54" endLine="73" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
