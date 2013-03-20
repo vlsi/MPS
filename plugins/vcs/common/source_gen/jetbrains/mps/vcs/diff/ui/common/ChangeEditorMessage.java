@@ -18,6 +18,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Rectangle;
 import jetbrains.mps.nodeEditor.cells.GeometryUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.messageTargets.CellFinder;
@@ -117,9 +118,9 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
   }
 
   @Override
-  public jetbrains.mps.nodeEditor.cells.EditorCell getCell(final EditorComponent editor) {
-    final Wrappers._T<jetbrains.mps.nodeEditor.cells.EditorCell> cell = new Wrappers._T<jetbrains.mps.nodeEditor.cells.EditorCell>(super.getCell(editor));
-    if (check_myu41h_a0b0m(cell.value) && !(isDirectCell(cell.value))) {
+  public EditorCell getCell(final EditorComponent editor) {
+    final Wrappers._T<EditorCell> cell = new Wrappers._T<EditorCell>(super.getCell(editor));
+    if (cell.value != null && APICellAdapter.isBigCell(cell.value) && !(isDirectCell(cell.value))) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           SNode node = getNode();
@@ -134,7 +135,8 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
 
   @Override
   public boolean acceptCell(EditorCell cell, EditorComponent component) {
-    return isNameCell(cell) && !(isDirectCell(cell)) && check_myu41h_a0a0a31(super.getCell(component)) || super.acceptCell(cell, component);
+    EditorCell superCell = super.getCell(component);
+    return isNameCell(cell) && !(isDirectCell(cell)) && superCell != null && APICellAdapter.isBigCell(cell) || super.acceptCell(cell, component);
   }
 
   private boolean isNameCell(EditorCell cell) {
@@ -420,20 +422,6 @@ __switch__:
   }
 
   private static Logger LOG = Logger.getLogger(ChangeEditorMessage.class);
-
-  private static boolean check_myu41h_a0b0m(jetbrains.mps.nodeEditor.cells.EditorCell checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.isBigCell();
-    }
-    return false;
-  }
-
-  private static boolean check_myu41h_a0a0a31(jetbrains.mps.nodeEditor.cells.EditorCell checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.isBigCell();
-    }
-    return false;
-  }
 
   private static ModelAccessor check_myu41h_a0a0a41(EditorCell_Property checkedDotOperand) {
     if (null != checkedDotOperand) {

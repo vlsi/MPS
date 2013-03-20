@@ -17,8 +17,10 @@ package jetbrains.mps.nodeEditor.messageTargets;
 
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.*;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
+import jetbrains.mps.openapi.editor.cells.*;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.Nullable;
@@ -75,18 +77,18 @@ public class CellFinder {
   }
 
   @Nullable
-  public static EditorCell getCellForChild(@Nullable EditorComponent editorComponent, @Nullable final SNode node, final String role) {
+  public static jetbrains.mps.openapi.editor.cells.EditorCell getCellForChild(@Nullable EditorComponent editorComponent, @Nullable final SNode node, final String role) {
     EditorCell rawCell = getRawCell(editorComponent, node);
     if (rawCell == null) {
       return null;
     }
-    EditorCell child = CellFinderUtil.findChild(rawCell, CellFinders.byCondition(new Condition<EditorCell>() {
+    jetbrains.mps.openapi.editor.cells.EditorCell child = CellFinderUtil.findChildByCondition(rawCell, new Condition<jetbrains.mps.openapi.editor.cells.EditorCell>() {
       @Override
-      public boolean met(EditorCell cell) {
+      public boolean met(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
         return role.equals(cell.getRole()) &&
-            (node == cell.getSNode() || node == cell.getSNode().getParent() && cell.isBigCell());
+            (node == cell.getSNode() || node == cell.getSNode().getParent() && APICellAdapter.isBigCell(cell));
       }
-    }, true), true);
+    }, true, true);
     if (child != null) {
       return child;
     }

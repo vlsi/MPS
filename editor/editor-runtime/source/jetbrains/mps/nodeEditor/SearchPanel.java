@@ -379,7 +379,7 @@ public class SearchPanel extends AbstractSearchPanel {
     }
 
     @Override
-    public EditorCell getCell(EditorComponent editor) {
+    public jetbrains.mps.openapi.editor.cells.EditorCell getCell(EditorComponent editor) {
       return myCell;
     }
 

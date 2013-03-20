@@ -323,7 +323,7 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
     }
 
     @Override
-    public EditorCell getCell(EditorComponent component) {
+    public jetbrains.mps.openapi.editor.cells.EditorCell getCell(EditorComponent component) {
       return myCell;
     }
 

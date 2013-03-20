@@ -102,7 +102,7 @@ public class DefaultEditorMessage implements EditorMessage {
 
   @Override
   public int getStart(jetbrains.mps.openapi.editor.EditorComponent editorComponent) {
-    EditorCell editorCell = getCellInBothWays((EditorComponent) editorComponent);
+    jetbrains.mps.openapi.editor.cells.EditorCell editorCell = getCellInBothWays((EditorComponent) editorComponent);
     if (editorCell == null) {
       return -1;
     }
@@ -111,7 +111,7 @@ public class DefaultEditorMessage implements EditorMessage {
 
   @Override
   public int getHeight(jetbrains.mps.openapi.editor.EditorComponent editorComponent) {
-    EditorCell editorCell = getCellInBothWays((EditorComponent) editorComponent);
+    jetbrains.mps.openapi.editor.cells.EditorCell editorCell = getCellInBothWays((EditorComponent) editorComponent);
     if (editorCell == null) {
       return -1;
     }
@@ -123,8 +123,8 @@ public class DefaultEditorMessage implements EditorMessage {
     editorComponent.changeSelection(getCellInBothWays(editorComponent));
   }
 
-  protected EditorCell getCellInBothWays(EditorComponent editor) {
-    EditorCell editorCell = getCell(editor);
+  protected jetbrains.mps.openapi.editor.cells.EditorCell getCellInBothWays(EditorComponent editor) {
+    jetbrains.mps.openapi.editor.cells.EditorCell editorCell = getCell(editor);
     if (editorCell != null) {
       return editorCell;
     }
@@ -137,7 +137,7 @@ public class DefaultEditorMessage implements EditorMessage {
   }
 
   @Override
-  public EditorCell getCell(EditorComponent editor) {
+  public jetbrains.mps.openapi.editor.cells.EditorCell getCell(EditorComponent editor) {
     if (editor == null) return null;
     return editor.getBigValidCellForNode(getNode());
   }

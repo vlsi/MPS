@@ -76,7 +76,7 @@ public class EditorMessageWithTarget extends DefaultEditorMessage {
   }
 
   @Override
-  public EditorCell getCell(EditorComponent editor) {
+  public jetbrains.mps.openapi.editor.cells.EditorCell getCell(EditorComponent editor) {
     switch (myMessageTarget.getTarget()) {
       case NODE:
         return super.getCell(editor);
