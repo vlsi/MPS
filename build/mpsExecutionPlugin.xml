@@ -551,6 +551,7 @@
   <target name="generate" depends="declare-mps-tasks, fetchDependencies">
     <echo message="generating" />
     <generate parallelMode="true" fork="true">
+      <plugin path="${artifacts.mpsCore}/mps-core/META-INF/plugin.xml/../.." />
       <plugin path="${artifacts.mpsDebuggerPlugin}/mps-debugger-api" />
       <plugin path="${artifacts.mpsDebuggerPlugin}/mps-debugger-java" />
       <plugin path="${artifacts.mpsDebuggerPlugin}/mps-execution-api" />

@@ -2827,7 +2827,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-collections" depends="java.compile.mps-closures">
+  <target name="java.compile.mps-collections" depends="java.compile.mps-closures, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/mps-collections" />
     <javac2 destdir="${build.tmp}/java/out/mps-collections" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />

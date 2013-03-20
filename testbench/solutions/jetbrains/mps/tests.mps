@@ -96,13 +96,11 @@
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="8962644517494457561" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="3034322180552461514" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="8565053360342421683" />
-    <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="1538369951873468539" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="5934496548013521234" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="2622946712629076727" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="3323419009398480325" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="3186742424690919238" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="2684968190509519315" />
-    <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="4246614868164057750" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="4246614868164057746" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="3611349286777542940" />
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="4246614868164057759" />
@@ -999,21 +997,6 @@
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="mql5.6186432342008539165" resolveInfo="TestWeaving" />
     </node>
   </root>
-  <root id="1538369951873468539">
-    <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="7120092006645318625">
-      <property name="moduleID" nameId="pop3.1280144168199506910" value="7b15492d-a198-43e2-91e3-4a7e9116ce2b" />
-      <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.execution.impl.tests" />
-    </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="8989032736195149097">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="7fn4.8128243960970298959" resolveInfo="SplitCommandInParts_Test" />
-    </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7120092006645362350">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="7fn4.8128243960970298224" resolveInfo="JUnitCommand" />
-    </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7120092006645362352">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="7fn4.8128243960970298272" resolveInfo="JavaCommand" />
-    </node>
-  </root>
   <root id="5934496548013521234">
     <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="5934496548013521236">
       <property name="moduleID" nameId="pop3.1280144168199506910" value="cdd4e8a8-17c1-4f16-b054-27e94948bd47" />
@@ -1063,18 +1046,6 @@
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2684968190509543952">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="msle.4045247515868358877" resolveInfo="TestTemporalPaths" />
-    </node>
-  </root>
-  <root id="4246614868164057750">
-    <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="4246614868164057751">
-      <property name="moduleID" nameId="pop3.1280144168199506910" value="6cbb1052-4510-427f-926c-3476bfd7e801" />
-      <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.execution.impl.tests.sandbox" />
-    </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="4246614868164057752">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="u9u1.8128243960970299078" resolveInfo="SimpleBTestCase_Test" />
-    </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="4246614868164057753">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="u9u1.7120092006645143730" resolveInfo="FailedBTestCase_Test" />
     </node>
   </root>
   <root id="4246614868164057746">
