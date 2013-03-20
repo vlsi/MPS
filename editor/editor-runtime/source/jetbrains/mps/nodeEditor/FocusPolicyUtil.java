@@ -17,10 +17,10 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
+import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.CellFinders;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.openapi.editor.cells.CellFinderUtil;
 
 public class FocusPolicyUtil {
   public static boolean hasFocusPolicy(jetbrains.mps.openapi.editor.cells.EditorCell cell) {

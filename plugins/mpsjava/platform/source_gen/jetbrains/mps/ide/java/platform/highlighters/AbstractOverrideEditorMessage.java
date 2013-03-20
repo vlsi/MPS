@@ -10,7 +10,7 @@ import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.CellFinders;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.openapi.editor.cells.CellFinderUtil;
+import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import javax.swing.JPopupMenu;
 
 public abstract class AbstractOverrideEditorMessage extends AbstractLeftEditorHighlighterMessage {

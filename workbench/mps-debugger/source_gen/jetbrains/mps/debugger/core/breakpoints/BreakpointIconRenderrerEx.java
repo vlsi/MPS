@@ -4,11 +4,12 @@ package jetbrains.mps.debugger.core.breakpoints;
 
 import jetbrains.mps.nodeEditor.EditorMessageIconRenderer;
 import java.awt.Component;
+
+import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import com.intellij.openapi.actionSystem.AnAction;
 import java.awt.Cursor;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
-import jetbrains.mps.openapi.editor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.CellFinders;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 

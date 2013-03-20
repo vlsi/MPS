@@ -4,6 +4,7 @@ package jetbrains.mps.ide.java.platform.highlighters;
 
 import jetbrains.mps.editor.runtime.AbstractLeftEditorHighlighterMessage;
 import jetbrains.mps.nodeEditor.EditorMessageIconRenderer;
+import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.openapi.editor.cells.CellFinder;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -12,7 +13,7 @@ import jetbrains.mps.nodeEditor.cells.CellFinders;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import javax.swing.Icon;
-import jetbrains.mps.openapi.editor.cells.CellFinderUtil;
+
 import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.ActionManager;
