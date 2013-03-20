@@ -59,12 +59,14 @@ public class CellFinderUtil {
     return null;
   }
 
-  public static <C extends EditorCell> EditorCell findChildByCondition(@NotNull EditorCell cell, @NotNull final Condition<EditorCell> condition, final Class<C> clazz, boolean forward, boolean includeThis) {
-    return findChildByCondition(cell, new AndCondition<EditorCell>(condition, new ByClassCondition(clazz)), forward, includeThis);
+  public static <C extends EditorCell> C findChildByConditionAndClass(@NotNull EditorCell cell, @NotNull final Condition<EditorCell> condition,
+      final Class<C> clazz, boolean forward, boolean includeThis) {
+    return ((C) findChildByCondition(cell, new AndCondition<EditorCell>(new ByClassCondition(clazz), condition), forward, includeThis));
   }
 
-  public static <C extends EditorCell> EditorCell findChildByCondition(@NotNull EditorCell cell, @NotNull final Condition<EditorCell> condition, final Class<C> clazz, boolean forward) {
-    return findChildByCondition(cell, condition, clazz, forward);
+  public static <C extends EditorCell> C findChildByConditionAndClass(@NotNull EditorCell cell, @NotNull final Condition<EditorCell> condition,
+      final Class<C> clazz, boolean forward) {
+    return findChildByConditionAndClass(cell, condition, clazz, forward, false);
   }
 
   public static EditorCell findChildByCondition(
@@ -97,7 +99,7 @@ public class CellFinderUtil {
   }
 
   private static EditorCell_Label findEditable(EditorCell cell, boolean forward, boolean includeThis){
-    return ((EditorCell_Label) findChildByCondition(cell, CellConditions.EDITABLE, EditorCell_Label.class, forward, includeThis));
+    return ((EditorCell_Label) findChildByConditionAndClass(cell, CellConditions.EDITABLE, EditorCell_Label.class, forward, includeThis));
   }
 
   public static EditorCell_Label findFirstEditable(EditorCell cell, boolean includeThis){
@@ -117,7 +119,7 @@ public class CellFinderUtil {
   }
 
   private static EditorCell_Label findError(EditorCell cell, boolean forward, boolean includeThis){
-    return ((EditorCell_Label) findChildByCondition(cell, CellConditions.ERROR_CONDITION, EditorCell_Label.class, forward, includeThis));
+    return ((EditorCell_Label) findChildByConditionAndClass(cell, CellConditions.ERROR_CONDITION, EditorCell_Label.class, forward, includeThis));
   }
 
   public static EditorCell_Label findFirstError(EditorCell cell, boolean includeThis){
@@ -140,20 +142,20 @@ public class CellFinderUtil {
     return findChildByCondition(cell, jetbrains.mps.openapi.editor.cells.CellConditions.SELECTABLE_lEAF, forward, includeThis);
   }
 
-  public static EditorCell findFirstSelectedLeaf(EditorCell cell, boolean includeThis){
+  public static EditorCell findFirstSelectableLeaf(EditorCell cell, boolean includeThis){
     return findSelectedLeaf(cell, true, includeThis);
   }
 
-  public static EditorCell findFirstSelectedLeaf(EditorCell cell){
-    return findFirstSelectedLeaf(cell, false);
+  public static EditorCell findFirstSelectableLeaf(EditorCell cell){
+    return findFirstSelectableLeaf(cell, false);
   }
 
-  public static EditorCell findLastSelectedLeaf(EditorCell cell, boolean includeThis){
+  public static EditorCell findLastSelectableLeaf(EditorCell cell, boolean includeThis){
     return findSelectedLeaf(cell, false, includeThis);
   }
 
-  public static EditorCell findLastSelectedLeaf(EditorCell cell){
-    return findLastSelectedLeaf(cell, false);
+  public static EditorCell findLastSelectableLeaf(EditorCell cell){
+    return findLastSelectableLeaf(cell, false);
   }
 
 

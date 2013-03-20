@@ -26,6 +26,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -39,49 +40,50 @@ public class CellAction_SideTransform extends AbstractCellAction {
 
   @Override
   public boolean canExecute(EditorContext context) {
-    return context.getSelectedCell() != null && canCreateRightTransformHint((EditorCell) context.getSelectedCell());
+    return context.getSelectedCell() != null && canCreateRightTransformHint(context.getSelectedCell());
   }
 
-  private boolean canCreateRightTransformHint(EditorCell selectedCell) {
+  private boolean canCreateRightTransformHint(jetbrains.mps.openapi.editor.cells.EditorCell selectedCell) {
     EditorContext editorContext = selectedCell.getContext();
     SNode node = selectedCell.getSNode();
     if (node == null) return false;
     if (getSideTransformHintAnchorCell(selectedCell, mySide) == null) return false;
     if (selectedCell instanceof EditorCell_Error) return false;
 
-    String anchorTag = selectedCell.getRightTransformAnchorTag();
+    String anchorTag = ((EditorCell) selectedCell).getRightTransformAnchorTag();
     return ModelActions.canCreateSideTransformHintSubstituteActions(node, mySide, anchorTag, editorContext.getOperationContext());
   }
 
-  private EditorCell getSideTransformHintAnchorCell(EditorCell selectedCell, CellSide side) {
+  private jetbrains.mps.openapi.editor.cells.EditorCell getSideTransformHintAnchorCell(jetbrains.mps.openapi.editor.cells.EditorCell selectedCell, CellSide side) {
     final SNode node = selectedCell.getSNode();
-    EditorCell anchorCell = null;
-    String anchorTag = selectedCell.getRightTransformAnchorTag();
+    jetbrains.mps.openapi.editor.cells.EditorCell anchorCell = null;
+    String anchorTag = ((EditorCell) selectedCell).getRightTransformAnchorTag();
     if (anchorTag != null) {
       anchorCell = selectedCell;
     } else {
-      EditorCell nodeMainCell = selectedCell.getContainingBigCell();
-      EditorCell defAnchorCell = CellFinderUtil.findChild(nodeMainCell, CellFinders.byCondition(new Condition<EditorCell>() {
-        @Override
-        public boolean met(EditorCell object) {
-          return object.hasRightTransformAnchorTag(SideTransformTagUtils.getDefaultSideTransformTag()) && object.getSNode() == node;
-        }
-      }, true), true);
+      jetbrains.mps.openapi.editor.cells.EditorCell nodeMainCell = ((EditorCell) selectedCell).getContainingBigCell();
+      jetbrains.mps.openapi.editor.cells.EditorCell defAnchorCell = CellFinderUtil.findChildByCondition(nodeMainCell,
+          new Condition<jetbrains.mps.openapi.editor.cells.EditorCell>() {
+            @Override
+            public boolean met(jetbrains.mps.openapi.editor.cells.EditorCell object) {
+              return ((EditorCell) object).hasRightTransformAnchorTag(SideTransformTagUtils.getDefaultSideTransformTag()) && object.getSNode() == node;
+            }
+          }, true, true);
 
       if (defAnchorCell == null) {
         defAnchorCell = nodeMainCell;
       }
 
-      if (defAnchorCell == selectedCell || defAnchorCell.isAncestorOf(selectedCell)) {
+      if (defAnchorCell == selectedCell || CellTraversalUtil.isAncestor(defAnchorCell, selectedCell)) {
         anchorCell = defAnchorCell;
       }
     }
 
-    if (side == CellSide.RIGHT && anchorCell != null && CellFinderUtil.findChild(anchorCell, CellFinders.LAST_SELECTABLE_LEAF, true) != selectedCell) {
+    if (side == CellSide.RIGHT && anchorCell != null && CellFinderUtil.findLastSelectableLeaf(anchorCell, true) != selectedCell) {
       return null;
     }
 
-    if (side == CellSide.LEFT && anchorCell != null && CellFinderUtil.findChild(anchorCell, CellFinders.FIRST_SELECTABLE_LEAF, true) != selectedCell) {
+    if (side == CellSide.LEFT && anchorCell != null && CellFinderUtil.findFirstSelectableLeaf(anchorCell, true) != selectedCell) {
       return null;
     }
 
@@ -90,7 +92,7 @@ public class CellAction_SideTransform extends AbstractCellAction {
 
   @Override
   public void execute(EditorContext context) {
-    EditorCell selectedCell = (EditorCell) context.getSelectedCell();
+    jetbrains.mps.openapi.editor.cells.EditorCell selectedCell = context.getSelectedCell();
     SNode node = selectedCell.getSNode();
 
     if (SNodeEditorUtil.hasRightTransformHint(node)) {
@@ -100,9 +102,9 @@ public class CellAction_SideTransform extends AbstractCellAction {
       SNodeEditorUtil.removeLeftTransformHint(node);
     }
 
-    EditorCell anchorCell = getSideTransformHintAnchorCell(selectedCell, mySide);
+    jetbrains.mps.openapi.editor.cells.EditorCell anchorCell = getSideTransformHintAnchorCell(selectedCell, mySide);
 
-    String anchorTag = selectedCell.getRightTransformAnchorTag();
+    String anchorTag = ((EditorCell) selectedCell).getRightTransformAnchorTag();
     if (mySide == CellSide.LEFT) {
       SNodeEditorUtil.addLeftTransformHint(node);
     } else {

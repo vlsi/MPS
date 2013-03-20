@@ -119,4 +119,13 @@ public class CellTraversalUtil {
       return cell;
     }
   }
+
+  public static boolean isAncestor(@NotNull EditorCell ancestor, @NotNull EditorCell child) {
+    jetbrains.mps.openapi.editor.cells.EditorCell_Collection parent = child.getParent();
+    while (parent != null) {
+      if (parent == ancestor) return true;
+      parent = parent.getParent();
+    }
+    return false;
+  }
 }
