@@ -123,7 +123,6 @@ public class ApiMigrationHelper {
   }
 
   private void migrate(final SNode oldNode, final SNode newNode) {
-
     Set<SNode> unknownUsages = SetSequence.fromSet(new HashSet<SNode>());
 
     // replace old SNode with a new interface 
@@ -258,7 +257,7 @@ public class ApiMigrationHelper {
               if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operand), newNode)) {
                 continue;
               }
-              SNodeOperations.replaceWithAnother(operand, _quotation_createNode_yke5lt_a0a2a4a0c0a0a1a0eb0o(oldNode, operand));
+              SNodeOperations.replaceWithAnother(operand, _quotation_createNode_yke5lt_a0a2a4a0c0a0a1a0db0o(oldNode, operand));
             }
           }
         });
@@ -531,7 +530,7 @@ public class ApiMigrationHelper {
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_yke5lt_a0a2a4a0c0a0a1a0eb0o(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_yke5lt_a0a2a4a0c0a0a1a0db0o(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
