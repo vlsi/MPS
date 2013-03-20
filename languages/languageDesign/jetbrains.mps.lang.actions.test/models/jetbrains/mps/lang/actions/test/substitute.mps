@@ -27,10 +27,16 @@
       <property name="name" nameId="tpck.1169194664001" value="ConceptSubstitutePart" />
     </node>
     <node type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="3213804652589013780">
+      <property name="description" nameId="tp5g.1883175908513350760" value="Substituting ActionTestChild1 concept instance with ActionTestChild1SubConcept concept specified in corresponsing &quot;concepts menu&quot; item of custom add menu part" />
       <property name="name" nameId="tpck.1169194664001" value="AddMenuPart_ConceptSubstitute" />
     </node>
     <node type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="3213804652590377019">
+      <property name="description" nameId="tp5g.1883175908513350760" value="Substituting ActionTestAbstractChild concept instance with ActionTestChild1 concept specified in corresponsing &quot;generic query&quot; item of custom add menu part" />
       <property name="name" nameId="tpck.1169194664001" value="AddMenuPart_GenericQuery" />
+    </node>
+    <node type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="3286607483605154581">
+      <property name="description" nameId="tp5g.1883175908513350760" value="Substituting ActionTestAbstractChild concept instance with ActionTestChild2 concept specified in corresponsing &quot;parameterized item&quot; item of custom add menu part" />
+      <property name="name" nameId="tpck.1169194664001" value="AddMenuPart_ParameterizedSubstitute" />
     </node>
   </roots>
   <root id="2550657305103524282">
@@ -201,6 +207,35 @@
           <property name="keycode" nameId="tp4k.1207318242774" value="VK_SPACE" />
           <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl" />
         </node>
+      </node>
+    </node>
+  </root>
+  <root id="3286607483605154581">
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="kxd5.ActionTestContainer" typeId="kxd5.2550657305103395183" id="3286607483605166060">
+      <node role="addMenu_parameterizedSubstitute" roleId="kxd5.3286607483605022921" type="kxd5.ActionTestAbstractChild" typeId="kxd5.2550657305103411658" id="3286607483605353988">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="3286607483605909794">
+          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="0" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="Constant_uvdaa2_a" />
+          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
+          <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+          <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+        </node>
+      </node>
+    </node>
+    <node role="result" roleId="tp5g.1229187707859" type="kxd5.ActionTestContainer" typeId="kxd5.2550657305103395183" id="3286607483605909808">
+      <node role="addMenu_parameterizedSubstitute" roleId="kxd5.3286607483605022921" type="kxd5.ActionTestChild2" typeId="kxd5.2550657305103442509" id="3286607483605961196">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="3286607483605961198">
+          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="0" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="property_name" />
+          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
+          <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+          <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+        </node>
+      </node>
+    </node>
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="3286607483605917229">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="3286607483605960932">
+        <property name="keys" nameId="tp5g.1227184461946" value="ActionTestChild2" />
       </node>
     </node>
   </root>

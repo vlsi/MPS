@@ -74,6 +74,10 @@ public class ActionTestContainer_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_vsyis9_m2a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_vsyis9_n2a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_vsyis9_o2a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_vsyis9_p2a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_vsyis9_q2a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_vsyis9_r2a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_vsyis9_s2a(editorContext, node));
     return editorCell;
   }
 
@@ -341,6 +345,83 @@ public class ActionTestContainer_Editor extends DefaultNodeEditor {
 
   private static class addMenu_genericQueryListHandler_vsyis9_o2a extends RefNodeListHandler {
     public addMenu_genericQueryListHandler_vsyis9_o2a(SNode ownerNode, String childRole, EditorContext context) {
+      super(ownerNode, childRole, context, false);
+    }
+
+    public SNode createNodeToInsert(EditorContext editorContext) {
+      SNode listOwner = super.getOwner();
+      return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
+    }
+
+    public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
+      EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
+      this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
+      return elementCell;
+    }
+
+    public EditorCell createEmptyCell(EditorContext editorContext) {
+      EditorCell emptyCell = null;
+      emptyCell = super.createEmptyCell(editorContext);
+      this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
+      return emptyCell;
+    }
+
+    public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+        elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
+        if (elementNode != null) {
+          elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+        }
+        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+          elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
+        }
+      }
+    }
+  }
+
+  private EditorCell createConstant_vsyis9_p2a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_vsyis9_p2a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_vsyis9_q2a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "add menu_parameterized substitute");
+    editorCell.setCellId("Constant_vsyis9_q2a");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_vsyis9_r2a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    editorCell.setCellId("Constant_vsyis9_r2a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefNodeList_vsyis9_s2a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new ActionTestContainer_Editor.addMenu_parameterizedSubstituteListHandler_vsyis9_s2a(node, "addMenu_parameterizedSubstitute", editorContext);
+    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
+    editorCell.setCellId("refNodeList_addMenu_parameterizedSubstitute");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setRole(handler.getElementRole());
+    return editorCell;
+  }
+
+  private static class addMenu_parameterizedSubstituteListHandler_vsyis9_s2a extends RefNodeListHandler {
+    public addMenu_parameterizedSubstituteListHandler_vsyis9_s2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
