@@ -41,13 +41,15 @@ public class ConsoleTool extends BaseProjectTool {
 
   @Override
   public JComponent getComponent() {
+    if (myMainComponent == null) {
+      initMainComponent();
+    }
     return myMainComponent;
   }
 
 
 
-  @Override
-  protected void createTool() {
+  protected void initMainComponent() {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         jetbrains.mps.project.Project project = ProjectHelper.toMPSProject(getProject());
@@ -104,6 +106,8 @@ public class ConsoleTool extends BaseProjectTool {
     }));
   }
 
+
+
   private void nextCommand() {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
@@ -134,5 +138,11 @@ public class ConsoleTool extends BaseProjectTool {
   protected void doUnregister() {
     TempModelCreator.disposeTempModel(myModel);
     super.doUnregister();
+  }
+
+
+
+  @Override
+  protected void createTool(boolean b) {
   }
 }
