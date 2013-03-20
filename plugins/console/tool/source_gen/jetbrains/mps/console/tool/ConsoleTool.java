@@ -5,17 +5,31 @@ package jetbrains.mps.console.tool;
 import jetbrains.mps.ide.tools.BaseProjectTool;
 import javax.swing.JPanel;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.nodeEditor.UIEditorComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import javax.swing.JComponent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.ide.project.ProjectHelper;
 import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 import javax.swing.JButton;
+import javax.swing.AbstractAction;
+import java.awt.event.ActionEvent;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.kernel.model.TempModelCreator;
 
 public class ConsoleTool extends BaseProjectTool {
   private JPanel myMainComponent;
   private SModel myModel;
+  private SNode myRoot;
+  private UIEditorComponent myEditor;
+  private SNode myLastCommand;
 
 
   public ConsoleTool(Project project) {
@@ -33,12 +47,49 @@ public class ConsoleTool extends BaseProjectTool {
 
   @Override
   protected void createTool() {
-    SModelOperations.createNewRootNode(myModel, "", null);
+    this.myRoot = SModelOperations.createNewRootNode(myModel, "jetbrains.mps.console.lang.structure.Console", null);
+    this.myEditor = new UIEditorComponent(new ProjectOperationContext(ProjectHelper.toMPSProject(getProject())), null);
+
+    nextCommand();
 
     myMainComponent = new JPanel();
     myMainComponent.setLayout(new BorderLayout());
-    myMainComponent.add(new JPanel(), BorderLayout.NORTH);
-    myMainComponent.add(new JButton("Execute"), BorderLayout.SOUTH);
+    myMainComponent.add(myEditor, BorderLayout.NORTH);
+
+    JPanel btnPanel = new JPanel();
+    myMainComponent.add(btnPanel, BorderLayout.SOUTH);
+    btnPanel.setLayout(new FlowLayout());
+    btnPanel.add(new JButton(new AbstractAction("Execute") {
+      public void actionPerformed(ActionEvent p0) {
+        if ((myLastCommand != null)) {
+          BehaviorReflection.invokeVirtual(Void.class, myLastCommand, "virtual_execute_757553790980855637", new Object[]{});
+        }
+        nextCommand();
+      }
+    }));
+    btnPanel.add(new JButton(new AbstractAction("Prev") {
+      public void actionPerformed(ActionEvent p0) {
+        if ((SNodeOperations.getPrevSibling(myLastCommand) == null)) {
+          return;
+        }
+        myLastCommand = SNodeOperations.getPrevSibling(myLastCommand);
+        myEditor.editNode(myLastCommand);
+      }
+    }));
+    btnPanel.add(new JButton(new AbstractAction("Next") {
+      public void actionPerformed(ActionEvent p0) {
+        if ((SNodeOperations.getNextSibling(myLastCommand) == null)) {
+          return;
+        }
+        myLastCommand = SNodeOperations.getNextSibling(myLastCommand);
+        myEditor.editNode(myLastCommand);
+      }
+    }));
+  }
+
+  private void nextCommand() {
+    this.myLastCommand = ListSequence.fromList(SNodeOperations.getChildren(myRoot)).addElement(SConceptOperations.createNewNode("jetbrains.mps.console.lang.structure.ConsoleCommand", null));
+    myEditor.editNode(myLastCommand);
   }
 
 
