@@ -109,7 +109,7 @@
     <nodeInfo nodeId="3995997045458442887" fileName="RuleOperandEditor.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGenerator" />
     <nodeInfo nodeId="3995997045458442890" fileName="RuleOperandEditor.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDepGens" />
     <nodeInfo nodeId="3995997045458442894" fileName="RuleOperandEditor.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLeft" />
-    <nodeInfo nodeId="3995997045458442907" fileName="RuleOperandEditor.java" startLine="26" startPosition="96" endLine="27" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3995997045458442907" fileName="RuleOperandEditor.java" startLine="26" startPosition="97" endLine="27" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3995997045458442911" fileName="RuleOperandEditor.java" startLine="27" startPosition="28" endLine="28" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3995997045458442915" fileName="RuleOperandEditor.java" startLine="28" startPosition="24" endLine="29" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3995997045458442923" fileName="RuleOperandEditor.java" startLine="33" startPosition="38" endLine="34" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -145,7 +145,7 @@
     <scopeInfo nodeId="3995997045458442960" fileName="RuleOperandEditor.java" startLine="49" startPosition="50" endLine="50" endPosition="17" />
     <scopeInfo nodeId="3995997045458443035" fileName="RuleOperandEditor.java" startLine="66" startPosition="16" endLine="67" endPosition="54" />
     <scopeInfo nodeId="3995997045458443060" fileName="RuleOperandEditor.java" startLine="74" startPosition="86" endLine="75" endPosition="119" />
-    <scopeInfo nodeId="3995997045458442906" fileName="RuleOperandEditor.java" startLine="26" startPosition="96" endLine="29" endPosition="20" />
+    <scopeInfo nodeId="3995997045458442906" fileName="RuleOperandEditor.java" startLine="26" startPosition="97" endLine="29" endPosition="20" />
     <scopeInfo nodeId="3995997045458443049" fileName="RuleOperandEditor.java" startLine="74" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="3995997045458443058" varName="column" />
       <varInfo nodeId="3995997045458443056" varName="row" />

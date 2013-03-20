@@ -29,7 +29,6 @@ import com.intellij.ui.table.JBTable;
 import java.awt.GridLayout;
 import com.intellij.ui.components.JBScrollPane;
 import javax.swing.Icon;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.ide.icons.IconManager;
 import com.intellij.execution.process.ProcessListener;
 import java.awt.GridBagLayout;
@@ -37,6 +36,7 @@ import java.awt.GridBagConstraints;
 import com.intellij.ide.util.PropertiesComponent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeEvent;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -123,8 +123,7 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
   }
 
   public Icon getIcon(String iconName) {
-    Language language = getLanguage();
-    String pathToIcon = language.getDescriptorFile().getParent().getPath() + "\\icons\\" + iconName;
+    String pathToIcon = getLanguage().getModuleSourceDir().getDescendant("icons").getDescendant(iconName).getPath();
     return IconManager.loadIcon(pathToIcon, true);
   }
 

@@ -16,7 +16,7 @@
 
 package jetbrains.mps.idea.core.module;
 
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
@@ -34,7 +34,7 @@ import java.util.Map;
 public class CachedRepositoryData {
 
   private final Collection<CachedModuleData> modules;
-  private Map<ModuleReference, CachedModuleData> map;
+  private Map<SModuleReference, CachedModuleData> map;
 
   public CachedRepositoryData(@NotNull Collection<CachedModuleData> modules) {
     this.modules = modules;
@@ -44,9 +44,9 @@ public class CachedRepositoryData {
     return modules;
   }
 
-  public CachedModuleData getModuleData(ModuleReference ref) {
+  public CachedModuleData getModuleData(SModuleReference ref) {
     if (map == null) {
-      map = new HashMap<ModuleReference, CachedModuleData>();
+      map = new HashMap<SModuleReference, CachedModuleData>();
       for (CachedModuleData d : modules) {
         map.put(d.getHandle().getDescriptor().getModuleReference(), d);
       }

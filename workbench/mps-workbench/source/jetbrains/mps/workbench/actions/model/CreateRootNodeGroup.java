@@ -33,7 +33,7 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -136,7 +136,7 @@ public class CreateRootNodeGroup extends BaseGroup {
 
     LanguageAspect aspect = Language.getModelAspect(modelDescriptor);
     if (aspect != null) {
-      ModuleReference ref = aspect.getMainLanguage();
+      SModuleReference ref = aspect.getMainLanguage();
       Language lang = scope.getLanguage(ref);
       if (lang != null) {
         modelLanguages.remove(lang);

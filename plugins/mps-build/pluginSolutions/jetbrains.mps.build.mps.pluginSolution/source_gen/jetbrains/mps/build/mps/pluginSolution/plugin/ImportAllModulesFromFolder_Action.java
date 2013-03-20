@@ -27,7 +27,7 @@ import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.build.mps.util.PathConverter;
 import java.util.ArrayList;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.logging.Logger;
 
 public class ImportAllModulesFromFolder_Action extends BaseAction {
@@ -121,8 +121,8 @@ public class ImportAllModulesFromFolder_Action extends BaseAction {
 
           List<ImportModuleHelper> helpers = new ArrayList<ImportModuleHelper>();
           for (ModulesMiner.ModuleHandle handle : modules) {
-            ModuleReference modRef = handle.getDescriptor().getModuleReference();
-            if (visible.resolve(modRef.getModuleFqName(), modRef.getModuleId().toString()) != null) {
+            SModuleReference modRef = handle.getDescriptor().getModuleReference();
+            if (visible.resolve(modRef.getModuleName(), modRef.getModuleId().toString()) != null) {
               continue;
             }
 

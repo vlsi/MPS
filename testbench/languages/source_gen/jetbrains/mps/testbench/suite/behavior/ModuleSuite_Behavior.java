@@ -4,7 +4,7 @@ package jetbrains.mps.testbench.suite.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.project.IModule;
@@ -19,7 +19,7 @@ public class ModuleSuite_Behavior {
   }
 
   public static IScope call_scope_1280144168199518341(SNode thisNode) {
-    ModuleReference moduleReference = BehaviorReflection.invokeVirtual(ModuleReference.class, SLinkOperations.getTarget(thisNode, "moduleRef", true), "virtual_moduleReference_1280144168199513544", new Object[]{});
+    SModuleReference moduleReference = BehaviorReflection.invokeVirtual(SModuleReference.class, SLinkOperations.getTarget(thisNode, "moduleRef", true), "virtual_moduleReference_1280144168199513544", new Object[]{});
     if (moduleReference == null) {
       return null;
     }
@@ -33,7 +33,7 @@ public class ModuleSuite_Behavior {
   }
 
   public static Iterable<SModel> call_models_1280144168199531863(SNode thisNode) {
-    ModuleReference moduleReference = BehaviorReflection.invokeVirtual(ModuleReference.class, SLinkOperations.getTarget(thisNode, "moduleRef", true), "virtual_moduleReference_1280144168199513544", new Object[]{});
+    SModuleReference moduleReference = BehaviorReflection.invokeVirtual(SModuleReference.class, SLinkOperations.getTarget(thisNode, "moduleRef", true), "virtual_moduleReference_1280144168199513544", new Object[]{});
     if (moduleReference == null) {
       return null;
     }

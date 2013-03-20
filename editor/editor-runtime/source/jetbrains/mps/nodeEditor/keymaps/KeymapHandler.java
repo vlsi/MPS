@@ -24,7 +24,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
 import jetbrains.mps.openapi.editor.cells.KeyMap.ActionKey;
 import jetbrains.mps.openapi.editor.cells.KeyMapAction;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -114,8 +114,8 @@ public abstract class KeymapHandler<E> {
     if (node != null) {
       SModel model = node.getModel();
 
-      Set<ModuleReference> importedAndExtendedLanguages = new HashSet<ModuleReference>();
-      for (ModuleReference langRef : SModelOperations.getAllImportedLanguages(model)) {
+      Set<SModuleReference> importedAndExtendedLanguages = new HashSet<SModuleReference>();
+      for (SModuleReference langRef : SModelOperations.getAllImportedLanguages(model)) {
         importedAndExtendedLanguages.add(langRef);
         Language l = ModuleRepositoryFacade.getInstance().getModule(langRef, Language.class);
         if (l == null) continue;
@@ -128,7 +128,7 @@ public abstract class KeymapHandler<E> {
         }
       }
 
-      for (ModuleReference ref : importedAndExtendedLanguages) {
+      for (SModuleReference ref : importedAndExtendedLanguages) {
         Language language = editorContext.getScope().getLanguage(ref);
         if (language == null) {
           continue;

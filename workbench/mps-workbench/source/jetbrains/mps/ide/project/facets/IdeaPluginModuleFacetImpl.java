@@ -17,7 +17,7 @@ package jetbrains.mps.ide.project.facets;
 
 import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.Memento;
@@ -90,7 +90,7 @@ public class IdeaPluginModuleFacetImpl extends ModuleFacetBase implements IdeaPl
       if (ref == null) {
         continue;
       }
-      myModules.add(ModuleReference.fromString(ref));
+      myModules.add(jetbrains.mps.project.structure.modules.ModuleReference.fromString(ref));
     }
   }
 }

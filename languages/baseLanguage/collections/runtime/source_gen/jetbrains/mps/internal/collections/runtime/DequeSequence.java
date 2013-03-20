@@ -13,8 +13,8 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Arrays;
 
-public class DequeSequence<T> extends QueueSequence<T> implements Deque<T>, IDequeSequence<T>, Serializable {
-  private static final long serialVersionUID = 4041418285223704058L;
+public class DequeSequence<T> extends AbstractQueueSequence<T> implements Deque<T>, IDequeSequence<T>, Serializable {
+  private static final long serialVersionUID = 6994676498844479086L;
 
   protected DequeSequence(Deque<T> deque) {
     super(deque);

@@ -4,7 +4,7 @@ package jetbrains.mps.ide.ui.dialogs.properties.creators;
 
 import jetbrains.mps.util.Computable;
 import java.util.List;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.Language;
@@ -15,22 +15,22 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
 
-public class LanguageOrDevKitChooser implements Computable<List<ModuleReference>> {
+public class LanguageOrDevKitChooser implements Computable<List<SModuleReference>> {
   @Override
-  public List<ModuleReference> compute() {
-    final Wrappers._T<List<ModuleReference>> langOrDevKitRefs = new Wrappers._T<List<ModuleReference>>();
+  public List<SModuleReference> compute() {
+    final Wrappers._T<List<SModuleReference>> langOrDevKitRefs = new Wrappers._T<List<SModuleReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         Iterable<Language> langs = new FilteredGlobalScope().getVisibleLanguages();
-        langOrDevKitRefs.value = Sequence.fromIterable(langs).select(new ISelector<Language, ModuleReference>() {
-          public ModuleReference select(Language lang) {
+        langOrDevKitRefs.value = Sequence.fromIterable(langs).select(new ISelector<Language, SModuleReference>() {
+          public SModuleReference select(Language lang) {
             return lang.getModuleReference();
           }
         }).toListSequence();
 
         Iterable<DevKit> devkits = new FilteredGlobalScope().getVisibleDevkits();
-        ListSequence.fromList(langOrDevKitRefs.value).addSequence(Sequence.fromIterable(devkits).select(new ISelector<DevKit, ModuleReference>() {
-          public ModuleReference select(DevKit it) {
+        ListSequence.fromList(langOrDevKitRefs.value).addSequence(Sequence.fromIterable(devkits).select(new ISelector<DevKit, SModuleReference>() {
+          public SModuleReference select(DevKit it) {
             return it.getModuleReference();
           }
         }).toListSequence());

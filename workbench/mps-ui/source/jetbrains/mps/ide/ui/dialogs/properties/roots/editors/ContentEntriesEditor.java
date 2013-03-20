@@ -41,6 +41,7 @@ import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -49,6 +50,7 @@ import jetbrains.mps.ide.ui.dialogs.properties.roots.editors.ModelRootEntryConta
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry;
@@ -85,7 +87,7 @@ public class ContentEntriesEditor {
 
   public ContentEntriesEditor(ModuleDescriptor moduleDescriptor) {
     myModuleDescriptor = moduleDescriptor;
-    for(ModelRootDescriptor descriptor : myModuleDescriptor.getModelRootDescriptors()) {
+    for (ModelRootDescriptor descriptor : myModuleDescriptor.getModelRootDescriptors()) {
       ModelRootEntry entry = ModelRootEntryPersistence.getInstance().getModelRootEntry(descriptor);
       ModelRootEntryContainer container = new ModelRootEntryContainer(entry);
       container.addContentEntryEditorListener(myEditorListener);
@@ -96,50 +98,50 @@ public class ContentEntriesEditor {
 
   private AnAction getContentEntryActions() {
     final List<AddContentEntryAction> list = new ArrayList<AddContentEntryAction>();
-    for(String type : ModelRootEntryPersistence.getInstance().getModelRootTypes()) {
+    for (String type : ModelRootEntryPersistence.getInstance().getModelRootTypes()) {
       list.add(new AddContentEntryAction(type));
     }
 
     AnAction action = new IconWithTextAction(
-      PropertiesBundle.message("mps.properties.configurable.roots.editor.contentenrieseditor.action.title"),
-      PropertiesBundle.message("mps.properties.configurable.roots.editor.contentenrieseditor.action.tip"),
-      Modules.AddContentEntry) {
+        PropertiesBundle.message("mps.properties.configurable.roots.editor.contentenrieseditor.action.title"),
+        PropertiesBundle.message("mps.properties.configurable.roots.editor.contentenrieseditor.action.tip"),
+        Modules.AddContentEntry) {
       @Override
       public void actionPerformed(AnActionEvent e) {
         final JBPopup popup = JBPopupFactory.getInstance().createListPopup(
-          new BaseListPopupStep<AddContentEntryAction>(null, list) {
-            @Override
-            public Icon getIconFor(AddContentEntryAction aValue) {
-              return aValue.getTemplatePresentation().getIcon();
-            }
+            new BaseListPopupStep<AddContentEntryAction>(null, list) {
+              @Override
+              public Icon getIconFor(AddContentEntryAction aValue) {
+                return aValue.getTemplatePresentation().getIcon();
+              }
 
-            @Override
-            public boolean hasSubstep(AddContentEntryAction selectedValue) {
-              return false;
-            }
+              @Override
+              public boolean hasSubstep(AddContentEntryAction selectedValue) {
+                return false;
+              }
 
-            @Override
-            public boolean isMnemonicsNavigationEnabled() {
-              return true;
-            }
+              @Override
+              public boolean isMnemonicsNavigationEnabled() {
+                return true;
+              }
 
-            @Override
-            public PopupStep onChosen(final AddContentEntryAction selectedValue, final boolean finalChoice) {
-              return doFinalStep(new Runnable() {
-                @Override
-                public void run() {
-                  selectedValue.actionPerformed(null);
-                }
-              });
-            }
+              @Override
+              public PopupStep onChosen(final AddContentEntryAction selectedValue, final boolean finalChoice) {
+                return doFinalStep(new Runnable() {
+                  @Override
+                  public void run() {
+                    selectedValue.actionPerformed(null);
+                  }
+                });
+              }
 
-            @Override
-            @NotNull
-            public String getTextFor(AddContentEntryAction value) {
-              return value.getTemplatePresentation().getText();
-            }
-          });
-        popup.show(new RelativePoint(myEditorsListPanel, new Point(0,0)));
+              @Override
+              @NotNull
+              public String getTextFor(AddContentEntryAction value) {
+                return value.getTemplatePresentation().getText();
+              }
+            });
+        popup.show(new RelativePoint(myEditorsListPanel, new Point(0, 0)));
       }
     };
     return action;
@@ -147,7 +149,7 @@ public class ContentEntriesEditor {
 
   public void initUI() {
     myMainPanel = new JBPanel(new BorderLayout());
-    myMainPanel.setPreferredSize(new Dimension(300,300));
+    myMainPanel.setPreferredSize(new Dimension(300, 300));
 
     final JBPanel entriesPanel = new JBPanel(new BorderLayout());
 
@@ -157,7 +159,7 @@ public class ContentEntriesEditor {
     myEditorsListPanel = new ScrollablePanel(new VerticalStackLayout());
     myEditorsListPanel.setBackground(BACKGROUND_COLOR);
     JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(myEditorsListPanel);
-    scrollPane.setPreferredSize(new Dimension(250,300));
+    scrollPane.setPreferredSize(new Dimension(250, 300));
     entriesPanel.add(new ToolbarPanel(scrollPane, group), BorderLayout.CENTER);
 
     Splitter splitter = new Splitter(false);
@@ -167,7 +169,7 @@ public class ContentEntriesEditor {
     final JBPanel editorsPanel = new JBPanel(new GridBagLayout());
     splitter.setFirstComponent(editorsPanel);
     editorsPanel.add(entriesPanel,
-      new GridBagConstraints(0, 0, 1, 1, 1.0, 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, JBInsets.NONE, 0, 0));
+        new GridBagConstraints(0, 0, 1, 1, 1.0, 1.0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, JBInsets.NONE, 0, 0));
 
     final JBPanel editorPanel = new JBPanel(new BorderLayout());
     editorPanel.setBorder(BorderFactory.createEtchedBorder());
@@ -175,26 +177,25 @@ public class ContentEntriesEditor {
     editorPanel.add(myEditorPanel, BorderLayout.CENTER);
     splitter.setSecondComponent(editorPanel);
 
-    for(ModelRootEntryContainer entry : myModelRootEntries) {
+    for (ModelRootEntryContainer entry : myModelRootEntries) {
       myEditorsListPanel.add(entry.getComponent());
     }
 
-    if(myModelRootEntries.size() > 0)
+    if (myModelRootEntries.size() > 0)
       selectEntry(myModelRootEntries.get(0));
     else
       selectEntry(null);
   }
 
   private void selectEntry(ModelRootEntryContainer entry) {
-    try
-    {
-      if(entry != null && entry.equals(myFocucedModelRootEntryContainer))
+    try {
+      if (entry != null && entry.equals(myFocucedModelRootEntryContainer))
         return;
 
-      if(myFocucedModelRootEntryContainer != null)
+      if (myFocucedModelRootEntryContainer != null)
         myFocucedModelRootEntryContainer.setFocuced(false);
 
-      if(entry == null) {
+      if (entry == null) {
         myFocucedModelRootEntryContainer = null;
         myEditorPanel.removeAll();
         return;
@@ -204,23 +205,22 @@ public class ContentEntriesEditor {
       myEditorPanel.removeAll();
       myEditorPanel.add(entry.getEditor().createComponent(), BorderLayout.CENTER);
       myFocucedModelRootEntryContainer = entry;
-    }
-    finally {
+    } finally {
       myMainPanel.updateUI();
     }
   }
 
   private void deleteEntry(ModelRootEntryContainer entry) {
-    if(!myModelRootEntries.contains(entry))
+    if (!myModelRootEntries.contains(entry))
       return;
 
     myEditorsListPanel.remove(entry.getComponent());
     int idx = myModelRootEntries.indexOf(entry);
     myModelRootEntries.remove(entry);
-    if(myFocucedModelRootEntryContainer.equals(entry))
+    if (myFocucedModelRootEntryContainer.equals(entry))
       selectEntry(myModelRootEntries.size() > 0 ?
-        myModelRootEntries.get(Math.max(idx - 1, 0))
-        : null);
+          myModelRootEntries.get(Math.max(idx - 1, 0))
+          : null);
     else
       myMainPanel.updateUI();
   }
@@ -237,7 +237,7 @@ public class ContentEntriesEditor {
 
   private ArrayList<ModelRootDescriptor> getDescriptors() {
     ArrayList<ModelRootDescriptor> descriptors = new ArrayList<ModelRootDescriptor>();
-    for(ModelRootEntryContainer container : myModelRootEntries) {
+    for (ModelRootEntryContainer container : myModelRootEntries) {
       Memento memento = new MementoImpl();
       container.getModelRoot().save(memento);
       descriptors.add(new ModelRootDescriptor(container.getModelRoot().getType(), memento));
@@ -261,8 +261,8 @@ public class ContentEntriesEditor {
     public void actionPerformed(AnActionEvent e) {
       ModelRoot modelRoot = PersistenceRegistry.getInstance().getModelRootFactory(myType).create();
       ModelRootEntry entry = ModelRootEntryPersistence.getInstance().getModelRootEntry(modelRoot);
-      if(entry instanceof FileBasedModelRootEntry) {
-        if(!checkAndAddFBModelRoot(entry)) {
+      if (entry instanceof FileBasedModelRootEntry) {
+        if (!checkAndAddFBModelRoot(entry)) {
           return;
         }
       }
@@ -277,34 +277,35 @@ public class ContentEntriesEditor {
 
     private boolean checkAndAddFBModelRoot(ModelRootEntry entry) {
       String contentRoot = "";
-      if(myModuleDescriptor instanceof GeneratorDescriptor) {
-        contentRoot = ((Generator)MPSModuleRepository.getInstance().getModuleById(myModuleDescriptor.getId())).getSourceLanguage().getBundleHome().getPath();
-      }
-      else {
-        contentRoot = MPSModuleRepository.getInstance().getModuleByFqName(myModuleDescriptor.getModuleReference().getModuleFqName()).getBundleHome().getPath();
+      SModule module = MPSModuleRepository.getInstance().getModuleById(myModuleDescriptor.getId());
+      if (module instanceof AbstractModule) {
+        contentRoot = ((AbstractModule) module).getModuleSourceDir().getPath();
+      } else {
+        // todo: ?
+        contentRoot = "";
       }
 
       Set<String> strings = new HashSet<String>();
-      for(ModelRootEntryContainer entryContainer : myModelRootEntries) {
-        if(entry.getClass().equals(entryContainer.getModelRootEntry().getClass())) {
-          strings.add(((FileBasedModelRoot)entryContainer.getModelRootEntry().getModelRoot()).getContentRoot());
+      for (ModelRootEntryContainer entryContainer : myModelRootEntries) {
+        if (entry.getClass().equals(entryContainer.getModelRootEntry().getClass())) {
+          strings.add(((FileBasedModelRoot) entryContainer.getModelRootEntry().getModelRoot()).getContentRoot());
         }
       }
 
-      if(!strings.isEmpty()) {
+      if (!strings.isEmpty()) {
         FileChooserDescriptor fileChooserDescriptor = new FileChooserDescriptor(false, true, true, false, true, false);
         fileChooserDescriptor.setTitle("Choose root folder for new model root");
 
         VirtualFile[] files = null;
         while (files == null) {
           files = FileChooser.chooseFiles(fileChooserDescriptor, null, null,
-            VirtualFileManager.getInstance().findFileByUrl(
-              VirtualFileManager.constructUrl("file", contentRoot)
-            )
+              VirtualFileManager.getInstance().findFileByUrl(
+                  VirtualFileManager.constructUrl("file", contentRoot)
+              )
           );
-          if(files.length != 0) {
+          if (files.length != 0) {
             for (String s : strings) {
-              if(files[0].getPath().contains(s) || s.contains(files[0].getPath())) {
+              if (files[0].getPath().contains(s) || s.contains(files[0].getPath())) {
                 StringBuilder builder = new StringBuilder("Can't create new model root ");
                 builder.append(files[0].getPath().contains(s) ? "under" : "over");
                 builder.append(" existing model root!\nChoose another folder");
@@ -316,13 +317,13 @@ public class ContentEntriesEditor {
           }
         }
 
-        if(files.length != 1)
+        if (files.length != 1)
           return false;
 
         contentRoot = files[0].getPath();
       }
 
-      ((FileBasedModelRoot)entry.getModelRoot()).setContentRoot(contentRoot);
+      ((FileBasedModelRoot) entry.getModelRoot()).setContentRoot(contentRoot);
       return true;
     }
   }

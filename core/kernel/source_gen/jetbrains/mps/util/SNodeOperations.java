@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import java.util.Map;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -27,7 +27,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import java.util.Iterator;
 import java.util.Queue;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SModelInternal;
@@ -77,7 +77,7 @@ public class SNodeOperations {
   }
 
   public static Map<String, String> getProperties(SNode node) {
-    Map<String, String> result = new HashMap<String, String>();
+    Map<String, String> result = new LinkedHashMap<String, String>();
     for (String name : Sequence.fromIterable(node.getPropertyNames())) {
       result.put(name, node.getProperty(name));
     }
@@ -322,11 +322,11 @@ public class SNodeOperations {
     );
   }
 
-  public static List<ModuleReference> getUsedLanguages(SModel model) {
+  public static List<SModuleReference> getUsedLanguages(SModel model) {
     Iterable<SLanguage> languages = model.getModelScope().getLanguages();
-    return Sequence.fromIterable(languages).select(new ISelector<SLanguage, ModuleReference>() {
-      public ModuleReference select(SLanguage it) {
-        return ((ModuleReference) it.getModule().getModuleReference());
+    return Sequence.fromIterable(languages).select(new ISelector<SLanguage, SModuleReference>() {
+      public SModuleReference select(SLanguage it) {
+        return it.getModule().getModuleReference();
       }
     }).toListSequence();
   }

@@ -17,7 +17,7 @@ package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelRefere
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -50,13 +50,13 @@ public final class CopyUtil {
     for (ImportElement ie : new ArrayList<ImportElement>(((jetbrains.mps.smodel.SModelInternal) model).importedModels())) {
       ((jetbrains.mps.smodel.SModelInternal) model).deleteModelImport(ie.getModelReference());
     }
-    for (ModuleReference mr : new ArrayList<ModuleReference>(((jetbrains.mps.smodel.SModelInternal) model).importedDevkits())) {
+    for (SModuleReference mr : new ArrayList<SModuleReference>(((jetbrains.mps.smodel.SModelInternal) model).importedDevkits())) {
       ((jetbrains.mps.smodel.SModelInternal) model).deleteDevKit(mr);
     }
-    for (ModuleReference mr : new ArrayList<ModuleReference>(((jetbrains.mps.smodel.SModelInternal) model).importedLanguages())) {
+    for (SModuleReference mr : new ArrayList<SModuleReference>(((jetbrains.mps.smodel.SModelInternal) model).importedLanguages())) {
       ((jetbrains.mps.smodel.SModelInternal) model).deleteLanguage(mr);
     }
-    for (ModuleReference mr : new ArrayList<ModuleReference>(((jetbrains.mps.smodel.SModelInternal) model).engagedOnGenerationLanguages())) {
+    for (SModuleReference mr : new ArrayList<SModuleReference>(((jetbrains.mps.smodel.SModelInternal) model).engagedOnGenerationLanguages())) {
       ((jetbrains.mps.smodel.SModelInternal) model).removeEngagedOnGenerationLanguage(mr);
     }
     ((jetbrains.mps.smodel.SModelInternal) model).calculateImplicitImports();

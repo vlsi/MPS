@@ -29,6 +29,7 @@ import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import org.xml.sax.InputSource;
 
@@ -68,7 +69,7 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
     SModelReference modelReference;
     assert header.getUID() != null : "wrong model: " + dataSource.getLocation();
 
-    modelReference = jetbrains.mps.smodel.SModelReference.fromString(header.getUID());
+    modelReference = PersistenceFacade.getInstance().createModelReference(header.getUID());
 
     LOG.debug("Getting model " + modelReference + " from " + dataSource.getLocation());
     return new DefaultSModelDescriptor(dataSource, modelReference, header);

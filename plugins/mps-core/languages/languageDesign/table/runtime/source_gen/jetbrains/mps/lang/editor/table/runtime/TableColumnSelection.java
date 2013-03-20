@@ -104,7 +104,7 @@ public class TableColumnSelection extends AbstractMultipleSelection {
 
   @Override
   public SelectionInfo getSelectionInfo() throws SelectionStoreException {
-    SelectionInfo selectionInto = new SelectionInfo(this.getClass().getName(), ModuleReference.fromString("258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)").getModuleFqName());
+    SelectionInfo selectionInto = new SelectionInfo(this.getClass().getName(), ModuleReference.fromString("258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)").getModuleName());
     selectionInto.setCellInfo(myTableCell.getCellInfo());
     selectionInto.getPropertiesMap().put(COLUMN_NUMBER_PROPERTY, Integer.toString(myColumnNumber));
     return selectionInto;

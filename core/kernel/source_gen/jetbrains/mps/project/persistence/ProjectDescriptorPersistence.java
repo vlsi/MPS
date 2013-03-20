@@ -21,6 +21,7 @@ import org.jdom.Document;
 import jetbrains.mps.util.JDOMUtil;
 import java.util.List;
 import java.util.ArrayList;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.logging.Logger;
@@ -119,7 +120,7 @@ public class ProjectDescriptorPersistence {
       ModelsTestConfiguration tc = new ModelsTestConfiguration();
       tc.setName(e.getAttributeValue("name"));
       for (Element me : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(e, "models"), "model"))) {
-        tc.addModel(jetbrains.mps.smodel.SModelReference.fromString(me.getAttributeValue("modelRef")));
+        tc.addModel(PersistenceFacade.getInstance().createModelReference(me.getAttributeValue("modelRef")));
       }
       result_jnk9az_a1a3.getTestConfigurations().add(tc);
     }

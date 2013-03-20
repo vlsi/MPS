@@ -13,7 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
+package jetbrains.mps.smodel;
+
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 import org.jetbrains.mps.openapi.model.SModel;
 
@@ -22,9 +24,10 @@ import jetbrains.mps.project.*;
 import jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor;
 import jetbrains.mps.project.dependency.modules.GeneratorDependenciesManager;
 import jetbrains.mps.project.dependency.modules.ModuleDependenciesManager;
-import jetbrains.mps.project.structure.modules.*;
+import org.jetbrains.mps.openapi.module.SModuleReference;import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.project.structure.modules.mappingpriorities.*;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.*;
 
@@ -52,7 +55,7 @@ public class Generator extends AbstractModule {
       uuid = ModuleId.regular();
       myGeneratorDescriptor.setId(uuid);
     }
-    ModuleReference mp = new ModuleReference(myGeneratorDescriptor.getGeneratorUID(), uuid);
+    SModuleReference mp = new jetbrains.mps.project.structure.modules.ModuleReference(myGeneratorDescriptor.getGeneratorUID(), uuid);
     setModuleReference(mp);
 
     upgradeGeneratorDescriptor();
@@ -72,11 +75,6 @@ public class Generator extends AbstractModule {
 
   private boolean upgradeMappingConfigRef(MappingConfig_AbstractRef ref) {
     boolean descriptorChanged = false;
-    if (ref instanceof MappingConfig_SimpleRef) {
-      if (upgradeMappingConfigSimpleRef((MappingConfig_SimpleRef) ref)) {
-        descriptorChanged = true;
-      }
-    }
     if (ref instanceof MappingConfig_RefSet) {
       for (MappingConfig_AbstractRef simpleRef : ((MappingConfig_RefSet) ref).getMappingConfigs()) {
         if (upgradeMappingConfigRef(simpleRef)) {
@@ -89,19 +87,6 @@ public class Generator extends AbstractModule {
       if (upgradeMappingConfigRef(extRef.getMappingConfig())) {
         descriptorChanged = true;
       }
-    }
-    return descriptorChanged;
-  }
-
-  private boolean upgradeMappingConfigSimpleRef(MappingConfig_SimpleRef simpleRef) {
-    boolean descriptorChanged = false;
-    String s = simpleRef.getModelUID();
-    SModelReference modelReference = jetbrains.mps.smodel.SModelReference.fromString(s);
-    if (SModelStereotype.getStereotype(modelReference.getModelName()).equals(SModelStereotype.TEMPLATES)) {
-      modelReference = new jetbrains.mps.smodel.SModelReference(SModelStereotype.withoutStereotype(modelReference.getModelName()), SModelStereotype.GENERATOR);
-      s = modelReference.toString();
-      simpleRef.setModelUID(s);
-      descriptorChanged = true;
     }
     return descriptorChanged;
   }
@@ -127,6 +112,11 @@ public class Generator extends AbstractModule {
   }
 
   @Override
+  public IFile getModuleSourceDir() {
+    return mySourceLanguage.getModuleSourceDir();
+  }
+
+  @Override
   public IFile getDescriptorFile() {
     return null;
   }
@@ -143,7 +133,7 @@ public class Generator extends AbstractModule {
     languageDescriptor.getGenerators().add(index, (GeneratorDescriptor) moduleDescriptor);
     getSourceLanguage().setLanguageDescriptor(languageDescriptor, reloadClasses);
 
-    invalidateDependencies();
+    dependenciesChanged();
   }
 
   public String getName() {
@@ -176,7 +166,7 @@ public class Generator extends AbstractModule {
   @Override
   public List<Dependency> getDependencies() {
     List<Dependency> result = super.getDependencies();
-    for (ModuleReference ref : getSourceLanguage().getRuntimeModulesReferences()) {
+    for (SModuleReference ref : getSourceLanguage().getRuntimeModulesReferences()) {
       result.add(new Dependency(ref, false));
     }
     return result;
@@ -187,13 +177,13 @@ public class Generator extends AbstractModule {
     return new GeneratorDependenciesManager(this);
   }
 
-  public List<ModuleReference> getReferencedGeneratorUIDs() {
-    return new ArrayList<ModuleReference>(myGeneratorDescriptor.getDepGenerators());
+  public List<SModuleReference> getReferencedGeneratorUIDs() {
+    return new ArrayList<SModuleReference>(myGeneratorDescriptor.getDepGenerators());
   }
 
   public List<Generator> getReferencedGenerators() {
     List<Generator> result = new ArrayList<Generator>();
-    for (ModuleReference guid : getReferencedGeneratorUIDs()) {
+    for (SModuleReference guid : getReferencedGeneratorUIDs()) {
       IModule module = MPSModuleRepository.getInstance().getModule(guid);
       if (module instanceof Generator) {
         result.add((Generator) module);

@@ -73,7 +73,7 @@ public class AuditHelper {
         // temporary ignore .iml files
         continue;
       }
-      if (DISABLED_MODULES.contains(moduleHandle.getDescriptor().getModuleReference().getModuleFqName())) {
+      if (DISABLED_MODULES.contains(moduleHandle.getDescriptor().getModuleReference().getModuleName())) {
         continue;
       }
 

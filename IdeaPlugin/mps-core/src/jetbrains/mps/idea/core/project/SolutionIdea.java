@@ -47,7 +47,7 @@ import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleFacetImpl;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -206,7 +206,7 @@ public class SolutionIdea extends Solution {
   }
 
   public static List<Dependency> calculateLibraryDependencies(OrderEnumerator orderEnumerator, final Project project, final boolean includeStubs) {
-    final Map<ModuleReference, Boolean> modules = new HashMap<ModuleReference, Boolean>();
+    final Map<SModuleReference, Boolean> modules = new HashMap<SModuleReference, Boolean>();
     orderEnumerator.forEach(new Processor<OrderEntry>() {
       public boolean process(OrderEntry oe) {
         if (!(oe instanceof LibraryOrderEntry)) {
@@ -219,8 +219,8 @@ public class SolutionIdea extends Solution {
         }
 
         if (ModuleLibraryType.isModuleLibrary(library)) {
-          Set<ModuleReference> moduleReferences = ModuleLibrariesUtil.getModules(library);
-          for (ModuleReference moduleReference : moduleReferences) {
+          Set<SModuleReference> moduleReferences = ModuleLibrariesUtil.getModules(library);
+          for (SModuleReference moduleReference : moduleReferences) {
             if (modules.containsKey(moduleReference)) {
               if (loe.isExported()) {
                 modules.put(moduleReference, true);
@@ -240,7 +240,7 @@ public class SolutionIdea extends Solution {
       }
     });
     List<Dependency> result = new ArrayList<Dependency>();
-    for (Entry<ModuleReference, Boolean> entry : modules.entrySet()) {
+    for (Entry<SModuleReference, Boolean> entry : modules.entrySet()) {
       result.add(new Dependency(entry.getKey(), entry.getValue()));
     }
     return result;
@@ -255,7 +255,7 @@ public class SolutionIdea extends Solution {
   }
 
   @Override
-  public void addUsedLanguage(ModuleReference langRef) {
+  public void addUsedLanguage(SModuleReference langRef) {
     super.addUsedLanguage(langRef);
     ModifiableRootModel modifiableModel = ModuleRootManager.getInstance(myModule).getModifiableModel();
     ModuleRuntimeLibrariesImporter.importForUsedLanguages(myModule, Collections.<SModuleReference>singleton(langRef), modifiableModel);
@@ -263,8 +263,8 @@ public class SolutionIdea extends Solution {
   }
 
   @Override
-  public void invalidateDependencies() {
-    super.invalidateDependencies();
+  protected void dependenciesChanged() {
+    super.dependenciesChanged();
     myDependencies = null;
   }
 

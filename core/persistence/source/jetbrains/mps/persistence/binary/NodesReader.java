@@ -34,7 +34,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NodesReader {
-  protected static final SModelReference LOCAL = jetbrains.mps.smodel.SModelReference.fromString("$LOCAL$");
   protected final SModelReference myModelReference;
 
   public NodesReader(@NotNull SModelReference modelReference) {
@@ -93,10 +92,7 @@ public class NodesReader {
       SNodeId targetNodeId = kind == 1 ? readTargetNodeId(is) : null;
       DynamicReferenceOrigin origin = kind == 3 ? new DynamicReferenceOrigin(is.readNodePointer(), is.readNodePointer()) : null;
       String role = is.readString();
-      SModelReference modelRef = is.readModelReference();
-      if (modelRef != null && LOCAL.equals(modelRef)) {
-        modelRef = myModelReference;
-      }
+      SModelReference modelRef = is.readByte() == 18 ? is.readModelReference() : myModelReference;
       String resolveInfo = is.readString();
       if (kind == 1) {
         SReference reference = new StaticReference(

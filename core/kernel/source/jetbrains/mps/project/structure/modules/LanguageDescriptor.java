@@ -18,6 +18,7 @@ package jetbrains.mps.project.structure.modules;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -30,15 +31,15 @@ public class LanguageDescriptor extends ModuleDescriptor {
 
   private Set<SModelReference> myAccessoryModels;
   private List<GeneratorDescriptor> myGenerators;
-  private Set<ModuleReference> myExtendedLanguages;
-  private Set<ModuleReference> myRuntimeModules;
+  private Set<SModuleReference> myExtendedLanguages;
+  private Set<SModuleReference> myRuntimeModules;
 
   public LanguageDescriptor() {
     super();
     myAccessoryModels = new LinkedHashSet<SModelReference>();
     myGenerators = new ArrayList<GeneratorDescriptor>();
-    myExtendedLanguages = new LinkedHashSet<ModuleReference>();
-    myRuntimeModules = new LinkedHashSet<ModuleReference>();
+    myExtendedLanguages = new LinkedHashSet<SModuleReference>();
+    myRuntimeModules = new LinkedHashSet<SModuleReference>();
   }
 
   public String getGenPath() {
@@ -57,11 +58,11 @@ public class LanguageDescriptor extends ModuleDescriptor {
     return myGenerators;
   }
 
-  public Set<ModuleReference> getExtendedLanguages() {
+  public Set<SModuleReference> getExtendedLanguages() {
     return myExtendedLanguages;
   }
 
-  public Set<ModuleReference> getRuntimeModules() {
+  public Set<SModuleReference> getRuntimeModules() {
     return myRuntimeModules;
   }
 
@@ -108,12 +109,12 @@ public class LanguageDescriptor extends ModuleDescriptor {
     }
 
     stream.writeInt(myExtendedLanguages.size());
-    for (ModuleReference ref : myExtendedLanguages) {
+    for (SModuleReference ref : myExtendedLanguages) {
       stream.writeModuleReference(ref);
     }
 
     stream.writeInt(myRuntimeModules.size());
-    for (ModuleReference ref : myRuntimeModules) {
+    for (SModuleReference ref : myRuntimeModules) {
       stream.writeModuleReference(ref);
     }
 

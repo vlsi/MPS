@@ -10,6 +10,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRuntime" />
     <classNode dependClassName="jetbrains.mps.transformation.test.outputLang.Language" />
     <classNode dependClassName="jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main.TemplateModelImpl" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateModule" />
   </dependency>
   <dependency className="jetbrains.mps.transformation.test.outputLang.Language" file="Language.java">
@@ -23,6 +24,7 @@
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
     <classNode dependClassName="jetbrains.mps.transformation.test.outputLang.Generator" />
     <classNode dependClassName="jetbrains.mps.transformation.test.outputLang.typesystem.TypesystemDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.language.LanguageRuntime" />
   </dependency>
 </dependenciesRoot>

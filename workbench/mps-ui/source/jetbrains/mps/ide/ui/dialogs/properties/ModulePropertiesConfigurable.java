@@ -71,7 +71,7 @@ import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
@@ -305,13 +305,13 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
               @Override
               public void run() {
                 for(Dependency dependency : list) {
-                  ModuleReference moduleReference = dependency.getModuleRef();
-                  if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleFqName()) instanceof Language)
-                    myDependTableModel.addItem(new DependenciesTableItem<ModuleReference>(dependency.getModuleRef(), SDependencyScope.DEFAULT, dependency.isReexport()).setModuleType(ModuleType.LANGUAGE));
-                  else if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleFqName()) instanceof Generator)
-                    myDependTableModel.addItem(new DependenciesTableItem<ModuleReference>(dependency.getModuleRef(), SDependencyScope.DEFAULT, dependency.isReexport()).setModuleType(ModuleType.GENERATOR));
+                  SModuleReference moduleReference = dependency.getModuleRef();
+                  if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleName()) instanceof Language)
+                    myDependTableModel.addItem(new DependenciesTableItem<SModuleReference>(dependency.getModuleRef(), SDependencyScope.DEFAULT, dependency.isReexport()).setModuleType(ModuleType.LANGUAGE));
+                  else if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleName()) instanceof Generator)
+                    myDependTableModel.addItem(new DependenciesTableItem<SModuleReference>(dependency.getModuleRef(), SDependencyScope.DEFAULT, dependency.isReexport()).setModuleType(ModuleType.GENERATOR));
                   else
-                    myDependTableModel.addItem(new DependenciesTableItem<ModuleReference>(dependency.getModuleRef(), SDependencyScope.DEFAULT, dependency.isReexport()));
+                    myDependTableModel.addItem(new DependenciesTableItem<SModuleReference>(dependency.getModuleRef(), SDependencyScope.DEFAULT, dependency.isReexport()));
                 }
               }
             });
@@ -322,17 +322,17 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         return new AnActionButtonRunnable() {
           @Override
           public void run(AnActionButton anActionButton) {
-            final List<ModuleReference> list = (new LDSChooser()).compute();
+            final List<SModuleReference> list = (new LDSChooser()).compute();
             ModelAccess.instance().runReadAction(new Runnable() {
               @Override
               public void run() {
-                for(ModuleReference moduleReference : list) {
-                  if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleFqName()) instanceof Language)
-                    myDependTableModel.addItem(new DependenciesTableItem<ModuleReference>(moduleReference, SDependencyScope.EXTENDS).setModuleType(ModuleType.LANGUAGE));
-                  else if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleFqName()) instanceof DevKit)
-                    myDependTableModel.addItem(new DependenciesTableItem<ModuleReference>(moduleReference, SDependencyScope.EXTENDS).setModuleType(ModuleType.DEVKIT));
-                  else if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleFqName()) instanceof Solution)
-                    myDependTableModel.addItem(new DependenciesTableItem<ModuleReference>(moduleReference, SDependencyScope.EXTENDS).setModuleType(ModuleType.SOLUTION));
+                for(SModuleReference moduleReference : list) {
+                  if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleName()) instanceof Language)
+                    myDependTableModel.addItem(new DependenciesTableItem<SModuleReference>(moduleReference, SDependencyScope.EXTENDS).setModuleType(ModuleType.LANGUAGE));
+                  else if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleName()) instanceof DevKit)
+                    myDependTableModel.addItem(new DependenciesTableItem<SModuleReference>(moduleReference, SDependencyScope.EXTENDS).setModuleType(ModuleType.DEVKIT));
+                  else if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleName()) instanceof Solution)
+                    myDependTableModel.addItem(new DependenciesTableItem<SModuleReference>(moduleReference, SDependencyScope.EXTENDS).setModuleType(ModuleType.SOLUTION));
                 }
               }
             });
@@ -354,8 +354,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     protected TableCellRenderer getTableCellRender() {
       return new ModuleTableCellRender() {
         @Override
-        protected DependencyCellState getDependencyCellState(ModuleReference moduleReference) {
-          if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleFqName()) == null)
+        protected DependencyCellState getDependencyCellState(SModuleReference moduleReference) {
+          if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleName()) == null)
             return DependencyCellState.NOT_AVALIABLE;
           return super.getDependencyCellState(moduleReference);
         }
@@ -370,10 +370,10 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       ModelAccess.instance().runReadAction(new Runnable() {
         @Override
         public void run() {
-          if(value instanceof ModuleReference) {
+          if(value instanceof SModuleReference) {
             query[0] = new SearchQuery(
               MPSModuleRepository.getInstance().getModuleByFqName(
-                ((ModuleReference)value).getModuleFqName()), scope);
+                ((SModuleReference)value).getModuleName()), scope);
             provider[0] = FindUtils.makeProvider(new ModuleUsagesFinder());
           }
         }
@@ -451,7 +451,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       myRuntimeTableModel = new RuntimeTableModel();
       runtimeTable.setModel(myRuntimeTableModel);
 
-      runtimeTable.setDefaultRenderer(ModuleReference.class, new ModuleTableCellRender());
+      runtimeTable.setDefaultRenderer(SModuleReference.class, new ModuleTableCellRender());
 
       runtimeTable.getSelectionModel().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
@@ -459,8 +459,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       decorator.setAddAction(new AnActionButtonRunnable() {
         @Override
         public void run(AnActionButton anActionButton) {
-          List<ModuleReference> list = (new SolutionChooser()).compute();
-          for(ModuleReference reference : list)
+          List<SModuleReference> list = (new SolutionChooser()).compute();
+          for(SModuleReference reference : list)
             myRuntimeTableModel.addItem(reference);
         }
       }).setRemoveAction(new AnActionButtonRunnable() {
@@ -504,9 +504,9 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
         @Override
         public String getElementText(Object element) {
-          if(!(element instanceof ModuleReference))
+          if(!(element instanceof SModuleReference))
             return "";
-          return ((ModuleReference)element).getModuleName();
+          return ((SModuleReference)element).getModuleName();
         }
 
         @Override
@@ -629,10 +629,10 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
             );
             provider[0] = FindUtils.makeProvider(new ModelUsagesFinder());
           }
-          else if(value instanceof ModuleReference) {
+          else if(value instanceof SModuleReference) {
             query[0] = new SearchQuery(
               MPSModuleRepository.getInstance().getModuleByFqName(
-                ((ModuleReference)value).getModuleFqName()),
+                ((SModuleReference)value).getModuleName()),
                 GlobalScope.getInstance()
             );
             provider[0] = FindUtils.makeProvider(new ModuleUsagesFinder());
@@ -646,7 +646,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     private class RuntimeTableModel extends AbstractTableModel implements ItemRemovable, Modifiable {
 
-      private List<ModuleReference> myTableItems = new LinkedList<ModuleReference>();
+      private List<SModuleReference> myTableItems = new LinkedList<SModuleReference>();
 
       public RuntimeTableModel() {
         super();
@@ -668,7 +668,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         return myTableItems.size();
       }
 
-      public void addItem(ModuleReference moduleReference) {
+      public void addItem(SModuleReference moduleReference) {
         if(moduleReference == null || myTableItems.contains(moduleReference))
           return;
         myTableItems.add(moduleReference);
@@ -691,7 +691,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
       @Override
       public Class<?> getColumnClass(int columnIndex) {
-        return ModuleReference.class;
+        return SModuleReference.class;
       }
 
       @Override
@@ -826,7 +826,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       IModule bl = MPSModuleRepository.getInstance().getModuleByFqName("jetbrains.mps.baseLanguage");
       if(tableModel.getUsedLanguages().contains(bl.getModuleReference()))
         return true;
-      for (ModuleReference reference : tableModel.getUsedDevkits()) {
+      for (SModuleReference reference : tableModel.getUsedDevkits()) {
         IModule module = MPSModuleRepository.getInstance().getModuleById(reference.getModuleId());
         if(module instanceof DevKit && ((DevKit)module).getAllExportedLanguages().contains(bl))
           return true;
@@ -854,7 +854,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Override
     public void init() {
-      List<ModuleReference> list = new ArrayList<ModuleReference>(((GeneratorDescriptor) myModule.getModuleDescriptor()).getDepGenerators());
+      List<SModuleReference> list = new ArrayList<SModuleReference>(((GeneratorDescriptor) myModule.getModuleDescriptor()).getDepGenerators());
 
       JPanel panel = new JPanel();
       panel.setLayout(new GridLayoutManager(2, 1, INSETS, -1, -1));

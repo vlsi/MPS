@@ -24,6 +24,8 @@ import org.jetbrains.annotations.Nullable;
  */
 public class StringUtil {
 
+  private final static char[] HEX_DIGITS = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+
   private StringUtil() {
   }
 
@@ -96,4 +98,72 @@ public class StringUtil {
     }
     return result.toString();
   }
+
+  /**
+   * Escapes all characters which can be used as separators in all kinds of MPS references (like node/model/module/etc).
+   */
+  public static String escapeRefChars(String text) {
+    if (text == null || text.isEmpty()) {
+      return text;
+    }
+    StringBuilder sb = new StringBuilder();
+    int len = text.length();
+    for (int i = 0; i < len; i++) {
+      char c = text.charAt(i);
+      switch (c) {
+        case '%':
+        case '(':
+        case ')':
+        case '/':
+          sb.append('%');
+          sb.append(HEX_DIGITS[(c >> 4) & 0x0f]);
+          sb.append(HEX_DIGITS[(c) & 0x0f]);
+          break;
+        default:
+          sb.append(c);
+          break;
+      }
+    }
+    return sb.toString();
+  }
+
+  /**
+   * Restores the string back from escaped version.
+   *
+   * @throws IllegalArgumentException on invalid escape sequences
+   */
+  public static String unescapeRefChars(String text) {
+    if (text == null || text.indexOf('%') < 0) {
+      return text;
+    }
+    StringBuilder sb = new StringBuilder();
+    int len = text.length();
+    for (int i = 0; i < len; i++) {
+      char c = text.charAt(i);
+      if (c == '%') {
+        if (i + 2 >= len) {
+          throw new IllegalArgumentException("incomplete escape sequence: `" + text.substring(i) + "'");
+        }
+        int hi = decode(text.charAt(++i));
+        int lo = decode(text.charAt(++i));
+        if (hi == -1 || lo == -1) {
+          throw new IllegalArgumentException("invalid escape sequence: `" + text.substring(i - 2) + "'");
+        }
+        c = (char) (((hi & 0xf) << 4) | (lo & 0xf));
+      }
+      sb.append(c);
+    }
+    return sb.toString();
+  }
+
+  private static int decode(char c) {
+    if ((c >= '0') && (c <= '9'))
+      return c - '0';
+    if ((c >= 'a') && (c <= 'f'))
+      return c - 'a' + 10;
+    if ((c >= 'A') && (c <= 'F'))
+      return c - 'A' + 10;
+    return -1;
+  }
+
 }

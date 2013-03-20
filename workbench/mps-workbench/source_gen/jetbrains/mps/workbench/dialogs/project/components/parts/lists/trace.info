@@ -131,17 +131,17 @@
     <nodeInfo nodeId="1560298786499493804" fileName="ListsFactory.java" startLine="38" startPosition="7" endLine="39" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1560298786499493811" fileName="ListsFactory.java" startLine="39" startPosition="72" endLine="40" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1560298786499493818" fileName="ListsFactory.java" startLine="40" startPosition="72" endLine="41" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499493823" fileName="ListsFactory.java" startLine="46" startPosition="64" endLine="47" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1560298786499493823" fileName="ListsFactory.java" startLine="46" startPosition="66" endLine="47" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1560298786499493838" fileName="ListsFactory.java" startLine="52" startPosition="34" endLine="53" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1560298786499493840" fileName="ListsFactory.java" startLine="54" startPosition="7" endLine="55" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1560298786499493847" fileName="ListsFactory.java" startLine="55" startPosition="67" endLine="56" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1560298786499493854" fileName="ListsFactory.java" startLine="56" startPosition="67" endLine="57" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7567158975345113501" fileName="ListsFactory.java" startLine="62" startPosition="64" endLine="63" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7567158975345113501" fileName="ListsFactory.java" startLine="62" startPosition="66" endLine="63" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7567158975345113519" fileName="ListsFactory.java" startLine="64" startPosition="24" endLine="65" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7567158975345112871" fileName="ListsFactory.java" startLine="66" startPosition="7" endLine="67" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7567158975345113427" fileName="ListsFactory.java" startLine="71" startPosition="68" endLine="72" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7567158975345113427" fileName="ListsFactory.java" startLine="71" startPosition="70" endLine="72" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1560298786499493859" fileName="ListsFactory.java" startLine="77" startPosition="72" endLine="78" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499493885" fileName="ListsFactory.java" startLine="83" startPosition="54" endLine="84" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1560298786499493885" fileName="ListsFactory.java" startLine="83" startPosition="54" endLine="84" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1560298786499493904" fileName="ListsFactory.java" startLine="89" startPosition="34" endLine="90" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1560298786499493906" fileName="ListsFactory.java" startLine="91" startPosition="7" endLine="92" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1560298786499493915" fileName="ListsFactory.java" startLine="92" startPosition="82" endLine="93" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -168,7 +168,7 @@
     <nodeInfo nodeId="1560298786499493504" fileName="ListsFactory.java" startLine="178" startPosition="0" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ListComparator#()V" />
     <nodeInfo nodeId="1560298786499493780" fileName="ListsFactory.java" startLine="27" startPosition="142" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1560298786499493797" fileName="ListsFactory.java" startLine="35" startPosition="68" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1560298786499493833" fileName="ListsFactory.java" startLine="51" startPosition="68" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1560298786499493833" fileName="ListsFactory.java" startLine="51" startPosition="70" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7567158975345113517" fileName="ListsFactory.java" startLine="63" startPosition="45" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1560298786499493899" fileName="ListsFactory.java" startLine="88" startPosition="58" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1560298786499494033" fileName="ListsFactory.java" startLine="106" startPosition="42" endLine="109" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -178,8 +178,8 @@
     <nodeInfo nodeId="7567158975344817790" fileName="ListsFactory.java" startLine="160" startPosition="23" endLine="163" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7567158975344817802" fileName="ListsFactory.java" startLine="163" startPosition="9" endLine="166" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1560298786499493506" fileName="ListsFactory.java" startLine="181" startPosition="0" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isEqual#(nullnull)Z" />
-    <nodeInfo nodeId="1560298786499493543" fileName="ListsFactory.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Ljetbrains/mps/project/structure/modules/ModuleReference;Ljetbrains/mps/project/structure/modules/ModuleReference;)I" />
-    <nodeInfo nodeId="7567158975345112880" fileName="ListsFactory.java" startLine="70" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isEqual#(Ljetbrains/mps/project/structure/modules/ModuleReference;Ljetbrains/mps/project/structure/modules/ModuleReference;)Z" />
+    <nodeInfo nodeId="1560298786499493543" fileName="ListsFactory.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Lorg/jetbrains/mps/openapi/module/SModuleReference;Lorg/jetbrains/mps/openapi/module/SModuleReference;)I" />
+    <nodeInfo nodeId="7567158975345112880" fileName="ListsFactory.java" startLine="70" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isEqual#(Lorg/jetbrains/mps/openapi/module/SModuleReference;Lorg/jetbrains/mps/openapi/module/SModuleReference;)Z" />
     <nodeInfo nodeId="1560298786499493565" fileName="ListsFactory.java" startLine="76" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Ljetbrains/mps/project/structure/model/ModelRootDescriptor;Ljetbrains/mps/project/structure/model/ModelRootDescriptor;)I" />
     <nodeInfo nodeId="1560298786499493587" fileName="ListsFactory.java" startLine="82" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Ljetbrains/mps/project/structure/modules/Dependency;Ljetbrains/mps/project/structure/modules/Dependency;)I" />
     <nodeInfo nodeId="1560298786499494016" fileName="ListsFactory.java" startLine="98" startPosition="45" endLine="102" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -193,10 +193,10 @@
     <nodeInfo nodeId="1560298786499493702" fileName="ListsFactory.java" startLine="131" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="COMPARABLE_COMPARATOR" />
     <nodeInfo nodeId="1560298786499493717" fileName="ListsFactory.java" startLine="137" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="IGNORING_COMPARATOR" />
     <nodeInfo nodeId="1560298786499493521" fileName="ListsFactory.java" startLine="25" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Lorg/jetbrains/mps/openapi/model/SModelReference;Lorg/jetbrains/mps/openapi/model/SModelReference;)I" />
-    <nodeInfo nodeId="7567158975345112863" fileName="ListsFactory.java" startLine="61" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Ljetbrains/mps/project/structure/modules/ModuleReference;Ljetbrains/mps/project/structure/modules/ModuleReference;)I" />
+    <nodeInfo nodeId="7567158975345112863" fileName="ListsFactory.java" startLine="61" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Lorg/jetbrains/mps/openapi/module/SModuleReference;Lorg/jetbrains/mps/openapi/module/SModuleReference;)I" />
     <nodeInfo nodeId="59624520828736561" fileName="ListsFactory.java" startLine="116" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Ljetbrains/mps/project/structure/project/Path;Ljetbrains/mps/project/structure/project/Path;)I" />
     <nodeInfo nodeId="1560298786499493528" fileName="ListsFactory.java" startLine="34" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isEqual#(Lorg/jetbrains/mps/openapi/model/SModelReference;Lorg/jetbrains/mps/openapi/model/SModelReference;)Z" />
-    <nodeInfo nodeId="1560298786499493550" fileName="ListsFactory.java" startLine="50" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isEqual#(Ljetbrains/mps/project/structure/modules/ModuleReference;Ljetbrains/mps/project/structure/modules/ModuleReference;)Z" />
+    <nodeInfo nodeId="1560298786499493550" fileName="ListsFactory.java" startLine="50" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isEqual#(Lorg/jetbrains/mps/openapi/module/SModuleReference;Lorg/jetbrains/mps/openapi/module/SModuleReference;)Z" />
     <nodeInfo nodeId="1560298786499493594" fileName="ListsFactory.java" startLine="87" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isEqual#(Ljetbrains/mps/project/structure/modules/Dependency;Ljetbrains/mps/project/structure/modules/Dependency;)Z" />
     <nodeInfo nodeId="1560298786499493680" fileName="ListsFactory.java" startLine="105" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Ljetbrains/mps/project/structure/project/Path;Ljetbrains/mps/project/structure/project/Path;)I" />
     <nodeInfo nodeId="59624520828736531" fileName="ListsFactory.java" startLine="115" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PATH_VALID_COMPARATOR" />
@@ -212,12 +212,12 @@
     <scopeInfo nodeId="1560298786499493762" fileName="ListsFactory.java" startLine="178" startPosition="29" endLine="178" endPosition="29" />
     <scopeInfo nodeId="1560298786499493784" fileName="ListsFactory.java" startLine="28" startPosition="36" endLine="29" endPosition="34" />
     <scopeInfo nodeId="1560298786499493801" fileName="ListsFactory.java" startLine="36" startPosition="34" endLine="37" endPosition="20" />
-    <scopeInfo nodeId="1560298786499493822" fileName="ListsFactory.java" startLine="46" startPosition="64" endLine="47" endPosition="66" />
+    <scopeInfo nodeId="1560298786499493822" fileName="ListsFactory.java" startLine="46" startPosition="66" endLine="47" endPosition="62" />
     <scopeInfo nodeId="1560298786499493837" fileName="ListsFactory.java" startLine="52" startPosition="34" endLine="53" endPosition="20" />
     <scopeInfo nodeId="7567158975345113518" fileName="ListsFactory.java" startLine="64" startPosition="24" endLine="65" endPosition="22" />
-    <scopeInfo nodeId="7567158975345112887" fileName="ListsFactory.java" startLine="71" startPosition="68" endLine="72" endPosition="64" />
+    <scopeInfo nodeId="7567158975345112887" fileName="ListsFactory.java" startLine="71" startPosition="70" endLine="72" endPosition="64" />
     <scopeInfo nodeId="1560298786499493858" fileName="ListsFactory.java" startLine="77" startPosition="72" endLine="78" endPosition="15" />
-    <scopeInfo nodeId="1560298786499493884" fileName="ListsFactory.java" startLine="83" startPosition="54" endLine="84" endPosition="96" />
+    <scopeInfo nodeId="1560298786499493884" fileName="ListsFactory.java" startLine="83" startPosition="54" endLine="84" endPosition="92" />
     <scopeInfo nodeId="1560298786499493903" fileName="ListsFactory.java" startLine="89" startPosition="34" endLine="90" endPosition="20" />
     <scopeInfo nodeId="1560298786499494037" fileName="ListsFactory.java" startLine="107" startPosition="21" endLine="108" endPosition="17" />
     <scopeInfo nodeId="59624520828741918" fileName="ListsFactory.java" startLine="119" startPosition="24" endLine="120" endPosition="22" />
@@ -274,7 +274,7 @@
     <scopeInfo nodeId="1560298786499493768" fileName="ListsFactory.java" startLine="26" startPosition="64" endLine="31" endPosition="132">
       <varInfo nodeId="1560298786499493770" varName="compareStereotypes" />
     </scopeInfo>
-    <scopeInfo nodeId="7567158975345112870" fileName="ListsFactory.java" startLine="62" startPosition="64" endLine="67" endPosition="64">
+    <scopeInfo nodeId="7567158975345112870" fileName="ListsFactory.java" startLine="62" startPosition="66" endLine="67" endPosition="64">
       <varInfo nodeId="7567158975345113502" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="59624520828736568" fileName="ListsFactory.java" startLine="117" startPosition="42" endLine="122" endPosition="58">
@@ -288,7 +288,7 @@
       <varInfo nodeId="1560298786499493805" varName="m1" />
       <varInfo nodeId="1560298786499493812" varName="m2" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499493832" fileName="ListsFactory.java" startLine="51" startPosition="68" endLine="57" endPosition="38">
+    <scopeInfo nodeId="1560298786499493832" fileName="ListsFactory.java" startLine="51" startPosition="70" endLine="57" endPosition="38">
       <varInfo nodeId="1560298786499493841" varName="m1" />
       <varInfo nodeId="1560298786499493848" varName="m2" />
     </scopeInfo>
@@ -348,8 +348,8 @@
     <unitInfo nodeId="1560298786499493723" fileName="ListsFactory.java" startLine="137" startPosition="84" endLine="143" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$10" />
     <unitInfo nodeId="1560298786499486566" fileName="ListsFactory.java" startLine="177" startPosition="0" endLine="185" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$ListComparator" />
     <unitInfo nodeId="59624520828736537" fileName="ListsFactory.java" startLine="115" startPosition="84" endLine="124" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$7" />
-    <unitInfo nodeId="7567158975345112861" fileName="ListsFactory.java" startLine="60" startPosition="101" endLine="74" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$3" />
-    <unitInfo nodeId="1560298786499493541" fileName="ListsFactory.java" startLine="44" startPosition="95" endLine="59" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$2" />
+    <unitInfo nodeId="7567158975345112861" fileName="ListsFactory.java" startLine="60" startPosition="102" endLine="74" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$3" />
+    <unitInfo nodeId="1560298786499493541" fileName="ListsFactory.java" startLine="44" startPosition="96" endLine="59" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$2" />
     <unitInfo nodeId="1560298786499493585" fileName="ListsFactory.java" startLine="81" startPosition="90" endLine="96" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$5" />
     <unitInfo nodeId="1560298786499493673" fileName="ListsFactory.java" startLine="97" startPosition="78" endLine="114" endPosition="3" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$6" />
     <unitInfo nodeId="7567158975344817776" fileName="ListsFactory.java" startLine="157" startPosition="15" endLine="174" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$11" />

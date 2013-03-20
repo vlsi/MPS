@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.module.SModuleId;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -36,7 +37,7 @@ public class LanguageRef_Constraints extends BaseConstraintsDescriptor {
             return null;
           }
 
-          ModuleId moduleId = ModuleId.fromString(SPropertyOperations.getString(node, "languageId"));
+          SModuleId moduleId = ModuleId.fromString(SPropertyOperations.getString(node, "languageId"));
           if (moduleId == null) {
             return null;
           }

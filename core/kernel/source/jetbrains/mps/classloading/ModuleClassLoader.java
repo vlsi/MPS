@@ -18,7 +18,7 @@ package jetbrains.mps.classloading;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ProtectionDomainUtil;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
@@ -108,7 +108,7 @@ public class ModuleClassLoader extends ClassLoader {
       if (getPackage(pack) == null) {
         definePackage(pack, null, null, null, null, null, null, null);
       }
-      myManager.classLoaded(name, (ModuleReference) mySupport.getModule().getModuleReference());
+      myManager.classLoaded(name, (SModuleReference) mySupport.getModule().getModuleReference());
       return defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain());
     }
 
@@ -210,9 +210,10 @@ public class ModuleClassLoader extends ClassLoader {
   }
 
   private static ClassLoader getParentPluginClassLoader(SModule module) {
-    IFile bundleHome = ((AbstractModule) module).getBundleHome();
-    if (bundleHome == null) return null;
-    String path = bundleHome.getPath();
+    IFile moduleHome = ((AbstractModule) module).getDescriptorFile();
+
+    if (moduleHome == null) return null;
+    String path = moduleHome.getPath();
     return LibraryInitializer.getInstance().getPluginClassLoaderForPath(path);
   }
 }

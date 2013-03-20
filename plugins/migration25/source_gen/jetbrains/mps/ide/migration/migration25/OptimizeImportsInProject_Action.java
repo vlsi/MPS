@@ -79,9 +79,10 @@ public class OptimizeImportsInProject_Action extends BaseAction {
           try {
             while (QueueSequence.fromQueue(modules).isNotEmpty()) {
               IModule module = QueueSequence.fromQueue(modules).removeFirstElement();
-              if (module.isPackaged()) {
+              if (module.isReadOnly()) {
                 continue;
               }
+
               if (module instanceof Language) {
                 QueueSequence.fromQueue(modules).addSequence(CollectionSequence.fromCollection(((Language) module).getGenerators()));
               }

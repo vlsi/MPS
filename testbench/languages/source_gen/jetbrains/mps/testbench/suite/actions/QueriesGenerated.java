@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -46,28 +46,28 @@ public class QueriesGenerated {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.testbench.suite.structure.SolutionRef");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        Iterable<ModuleReference> queryResult = new Computable<Iterable<ModuleReference>>() {
-          public Iterable<ModuleReference> compute() {
+        Iterable<SModuleReference> queryResult = new Computable<Iterable<SModuleReference>>() {
+          public Iterable<SModuleReference> compute() {
             Iterable<Solution> allSolutions = ModuleRepositoryFacade.getInstance().getAllModules(Solution.class);
-            return Sequence.fromIterable(allSolutions).select(new ISelector<Solution, ModuleReference>() {
-              public ModuleReference select(Solution s) {
+            return Sequence.fromIterable(allSolutions).select(new ISelector<Solution, SModuleReference>() {
+              public SModuleReference select(Solution s) {
                 return s.getModuleReference();
               }
             }).toListSequence();
           }
         }.compute();
         if (queryResult != null) {
-          for (final ModuleReference item : queryResult) {
+          for (final SModuleReference item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode solutionRef = SConceptOperations.createNewNode("jetbrains.mps.testbench.suite.structure.SolutionRef", null);
-                SPropertyOperations.set(solutionRef, "moduleFQName", (item).getModuleFqName());
+                SPropertyOperations.set(solutionRef, "moduleFQName", (item).getModuleName());
                 SPropertyOperations.set(solutionRef, "moduleID", (item).getModuleId().toString());
                 return solutionRef;
               }
 
               public String getMatchingText(String pattern) {
-                return (item).getModuleFqName();
+                return (item).getModuleName();
               }
 
               public String getVisibleMatchingText(String pattern) {

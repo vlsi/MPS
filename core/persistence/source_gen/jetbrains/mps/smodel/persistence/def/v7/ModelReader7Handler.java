@@ -13,10 +13,11 @@ import jetbrains.mps.refactoring.ModelLinkMap;
 import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.refactoring.StructureModificationProcessor;
 import jetbrains.mps.util.xml.BreakParseSAXException;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.LazySNode;
@@ -163,7 +164,7 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
 
     @Override
     protected ModelLoadResult createObject(Attributes attrs) {
-      fieldmodel = new DefaultSModel(SModelReference.fromString(attrs.getValue("modelUID")));
+      fieldmodel = new DefaultSModel(PersistenceFacade.getInstance().createModelReference(attrs.getValue("modelUID")));
       fieldmodel.setPersistenceVersion(7);
       fieldmodel.getSModelHeader().updateDefaults(fieldheader);
       fieldhelper = new ReadHelper(fieldmodel.getReference());
@@ -235,17 +236,17 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
         return;
       }
       if ("language".equals(tagName)) {
-        ModuleReference child = (ModuleReference) value;
+        SModuleReference child = (SModuleReference) value;
         fieldmodel.addLanguage(child);
         return;
       }
       if ("language-engaged-on-generation".equals(tagName)) {
-        ModuleReference child = (ModuleReference) value;
+        SModuleReference child = (SModuleReference) value;
         fieldmodel.addEngagedOnGenerationLanguage(child);
         return;
       }
       if ("devkit".equals(tagName)) {
-        ModuleReference child = (ModuleReference) value;
+        SModuleReference child = (SModuleReference) value;
         fieldmodel.addDevKit(child);
         return;
       }
@@ -316,7 +317,7 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     @Override
-    protected ModuleReference createObject(Attributes attrs) {
+    protected SModuleReference createObject(Attributes attrs) {
       return ModuleReference.fromString(attrs.getValue("namespace"));
     }
 
@@ -327,7 +328,7 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
 
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
-      ModuleReference result = (ModuleReference) resultObject;
+      SModuleReference result = (SModuleReference) resultObject;
       if ("namespace".equals(name)) {
         return;
       }

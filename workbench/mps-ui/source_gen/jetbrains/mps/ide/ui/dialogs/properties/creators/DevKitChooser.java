@@ -4,7 +4,7 @@ package jetbrains.mps.ide.ui.dialogs.properties.creators;
 
 import jetbrains.mps.util.Computable;
 import java.util.List;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.DevKit;
@@ -13,18 +13,18 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
 
-public class DevKitChooser implements Computable<List<ModuleReference>> {
+public class DevKitChooser implements Computable<List<SModuleReference>> {
   public DevKitChooser() {
   }
 
   @Override
-  public List<ModuleReference> compute() {
-    final Wrappers._T<List<ModuleReference>> dkRefs = new Wrappers._T<List<ModuleReference>>();
+  public List<SModuleReference> compute() {
+    final Wrappers._T<List<SModuleReference>> dkRefs = new Wrappers._T<List<SModuleReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         Iterable<DevKit> devkits = new FilteredGlobalScope().getVisibleDevkits();
-        dkRefs.value = Sequence.fromIterable(devkits).select(new ISelector<DevKit, ModuleReference>() {
-          public ModuleReference select(DevKit it) {
+        dkRefs.value = Sequence.fromIterable(devkits).select(new ISelector<DevKit, SModuleReference>() {
+          public SModuleReference select(DevKit it) {
             return it.getModuleReference();
           }
         }).toListSequence();

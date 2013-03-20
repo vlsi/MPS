@@ -44,9 +44,9 @@ import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel
 import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
 import jetbrains.mps.ide.ui.finders.LanguageUsagesFinder;
 import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.Nls;
@@ -345,7 +345,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
         @Override
         public void run() {
           query[0] = new SearchQuery(
-            MPSModuleRepository.getInstance().getModuleByFqName(((ModuleReference) value).getModuleFqName()), scope);
+            MPSModuleRepository.getInstance().getModuleByFqName(((SModuleReference) value).getModuleName()), scope);
           provider[0] = FindUtils.makeProvider(new LanguageUsagesFinder());
         }
       });
@@ -356,7 +356,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Override
     protected boolean confirmRemove(final Object value) {
-      final ModuleReference moduleReference = (ModuleReference) value;
+      final SModuleReference moduleReference = (SModuleReference) value;
       if (!myModelProperties.getUsedLanguageRemoveCondition().met(moduleReference)) {
         ViewUsagesDeleteDialog viewUsagesDeleteDialog = new ViewUsagesDeleteDialog(
           ProjectHelper.toIdeaProject(myProject), "Delete used language",
@@ -437,7 +437,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       myLangEngagedOnGenTM = new ModelsLangEngagedOnGenTM(myModelProperties);
       languagesTable.setModel(myLangEngagedOnGenTM);
 
-      languagesTable.setDefaultRenderer(ModuleReference.class, new InModelModuleTableCellRender());
+      languagesTable.setDefaultRenderer(SModuleReference.class, new InModelModuleTableCellRender());
 
       languagesTable.getSelectionModel().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
@@ -445,8 +445,8 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       decorator.setAddAction(new AnActionButtonRunnable() {
         @Override
         public void run(AnActionButton anActionButton) {
-          List<ModuleReference> list = (new LanguageChooser()).compute();
-          for (ModuleReference reference : list)
+          List<SModuleReference> list = (new LanguageChooser()).compute();
+          for (SModuleReference reference : list)
             myLangEngagedOnGenTM.addItem(reference);
         }
       }).setRemoveAction(new AnActionButtonRunnable() {
@@ -485,9 +485,9 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
 
         @Override
         public String getElementText(Object element) {
-          if (!(element instanceof ModuleReference))
+          if (!(element instanceof SModuleReference))
             return "";
-          return ((ModuleReference) element).getModuleName();
+          return ((SModuleReference) element).getModuleName();
         }
 
         @Override
@@ -526,7 +526,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
 
   private class InModelModuleTableCellRender extends ModuleTableCellRender {
     @Override
-    protected DependencyCellState getDependencyCellState(ModuleReference moduleReference) {
+    protected DependencyCellState getDependencyCellState(SModuleReference moduleReference) {
       if (myModelProperties.getUsedLanguageRemoveCondition().met(moduleReference)) {
         return DependencyCellState.UNUSED;
       }

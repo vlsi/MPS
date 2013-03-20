@@ -38,7 +38,7 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 
@@ -54,7 +54,7 @@ public class PluginMoveHelper {
     List<Language> langs = myProject.getProjectModules(Language.class);
     Iterable<Language> refLangs = ListSequence.fromList(langs).where(new IWhereFilter<Language>() {
       public boolean accept(Language it) {
-        return !(it.isPackaged()) && LanguageAspect.PLUGIN.get(it) != null;
+        return !(it.isReadOnly()) && LanguageAspect.PLUGIN.get(it) != null;
       }
     });
     Iterable<Language> problems = Sequence.fromIterable(refLangs).where(new IWhereFilter<Language>() {
@@ -147,10 +147,12 @@ public class PluginMoveHelper {
   }
 
   private void movePluginOut(Language l) {
+    assert !(l.isReadOnly());
+
     String solutionName = makePluginSolutionName(l, SOLUTION_NAME);
     Solution s = ModuleRepositoryFacade.getInstance().getModule(solutionName, Solution.class);
     if (s == null) {
-      s = NewModuleUtil.createSolution(solutionName, l.getBundleHome().getDescendant("solutions").getDescendant(SOLUTION_NAME).getPath(), myProject);
+      s = NewModuleUtil.createSolution(solutionName, l.getModuleSourceDir().getDescendant("solutions").getDescendant(SOLUTION_NAME).getPath(), myProject);
 
       StandaloneMPSProject project = (StandaloneMPSProject) myProject;
       project.setFolderFor(s, project.getFolderFor(l));
@@ -195,8 +197,8 @@ public class PluginMoveHelper {
   }
 
   private boolean isFromFacetLang(SNode node) {
-    ModuleReference ref = SNodeOperations.getModel(SNodeOperations.getConceptDeclaration(node)).getModule().getModuleReference();
-    ModuleReference plugin = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("696c1165-4a59-463b-bc5d-902caab85dd0")).getModuleReference();
+    SModuleReference ref = SNodeOperations.getModel(SNodeOperations.getConceptDeclaration(node)).getModule().getModuleReference();
+    SModuleReference plugin = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("696c1165-4a59-463b-bc5d-902caab85dd0")).getModuleReference();
     return ref.equals(plugin);
   }
 

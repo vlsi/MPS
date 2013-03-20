@@ -18,7 +18,7 @@ import jetbrains.mps.extapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.logging.Logger;
@@ -60,9 +60,10 @@ public class FixModelLanguages_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       for (IModule module : ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("project")).getModulesWithGenerators())) {
-        if (module.isPackaged()) {
+        if (module.isReadOnly()) {
           continue;
         }
+
         for (SModel md : Sequence.fromIterable(module.getModels())) {
           if (!(md instanceof EditableSModel)) {
             continue;
@@ -74,7 +75,7 @@ public class FixModelLanguages_Action extends BaseAction {
           SModel m = md;
           for (SNode node : SModelOperations.getNodes(m, null)) {
             Language l = ((Language) node.getConcept().getLanguage().getModule());
-            ModuleReference lr = l.getModuleReference();
+            SModuleReference lr = l.getModuleReference();
             if (!(((SModelInternal) m).importedLanguages().contains(lr))) {
               ((SModelInternal) m).addLanguage(lr);
             }

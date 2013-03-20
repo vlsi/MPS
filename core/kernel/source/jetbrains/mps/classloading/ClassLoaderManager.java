@@ -24,7 +24,7 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.SModelRootClassesListener;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.Generator;
@@ -48,6 +48,13 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
+// Good point: before any actions with module that can lead to classes invalidation do two things:
+// 1) unload classes of this module with save unloaded modules
+// 2) change module
+// 3) load all unloaded classes
+// Make some doModuleChangeAction({ => }) method in ClassLoaderManager?
+// Main paint: modules && modules repository knows nothing about classloading
+// Maybe add invalidation listener or module dependencies change AND show warning if we change module dependencies while module loaded here?
 public class ClassLoaderManager implements CoreComponent {
   private static final Logger LOG = Logger.getLogger(ClassLoaderManager.class);
 
@@ -294,7 +301,7 @@ public class ClassLoaderManager implements CoreComponent {
     loadClasses(modulesToLoad, monitor);
   }
 
-  /* package */ void classLoaded(String name, ModuleReference id) {
+  /* package */ void classLoaded(String name, SModuleReference id) {
     synchronized (myLoadedClasses) {
       if (myLoadedClasses.containsKey(name)) {
         SModuleReference oldLoaderId = myLoadedClasses.get(name);

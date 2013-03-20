@@ -53,7 +53,7 @@ public abstract class AbstractMigrationScriptHelper {
     }));
     SetSequence.fromSet(result).addSequence(Sequence.fromIterable(withGenerators(modules)).where(new IWhereFilter<SModule>() {
       public boolean accept(SModule it) {
-        return !(it.isPackaged());
+        return !(it.isReadOnly());
       }
     }).translate(new ITranslator2<SModule, SModel>() {
       public Iterable<SModel> translate(SModule it) {

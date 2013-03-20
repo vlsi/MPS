@@ -43,9 +43,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jdesktop.observablecollections.ObservableCollections;
 import javax.swing.JList;
@@ -262,11 +262,11 @@ public class TestConfigurationDialog extends DialogWrapper {
             }
           }).toListSequence();
 
-          ModuleReference module = CommonChoosers.showDialogModuleChooser(ProjectHelper.toIdeaProject(myProject), TestConfigurationDialog.MODULE, projectModuleRefs, moduleRefs);
+          SModuleReference module = CommonChoosers.showDialogModuleChooser(ProjectHelper.toIdeaProject(myProject), TestConfigurationDialog.MODULE, projectModuleRefs, moduleRefs);
           if (module == null) {
             return;
           }
-          String moduleName = module.getModuleFqName();
+          String moduleName = module.getModuleName();
           myModuleUID.setText(moduleName);
           if (!(myNamePanel.isConfigNameSet())) {
             myNamePanel.setConfigName(NameUtil.shortNameFromLongName(moduleName));
@@ -280,7 +280,7 @@ public class TestConfigurationDialog extends DialogWrapper {
     }
 
     public void init(ModuleTestConfiguration mtc) {
-      myModuleUID.setText(mtc.getModuleRef().getModuleFqName());
+      myModuleUID.setText(mtc.getModuleRef().getModuleName());
     }
 
     @Override

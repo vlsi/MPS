@@ -115,13 +115,13 @@ public class Utils {
         SolutionDescriptor sd = SolutionDescriptorPersistence.loadSolutionDescriptor(moduleIFile, expander);
         if (!sd.getCompileInMPS()) continue;
 
-        String srcPath = ProjectPathUtil.getGeneratorOutputPath(moduleIFile, sd).getPath();
+        String srcPath = ProjectPathUtil.getGeneratorOutputPath(moduleDir, sd).getPath();
         result.putValue(moduleDir.getPath(), srcPath);
         String testPath = ProjectPathUtil.getGeneratorTestsOutputPath(moduleIFile, sd).getPath();
         result.putValue(moduleDir.getPath(), testPath);
       } else {
         LanguageDescriptor ld = LanguageDescriptorPersistence.loadLanguageDescriptor(moduleIFile, expander);
-        String srcPath = ProjectPathUtil.getGeneratorOutputPath(moduleIFile, ld).getPath();
+        String srcPath = ProjectPathUtil.getGeneratorOutputPath(moduleDir, ld).getPath();
         result.putValue(moduleDir.getPath(), srcPath);
       }
     }

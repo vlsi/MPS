@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -183,7 +184,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
       mySpaceDir = null;
     }
 
-    private static final int VERSION = 43;
+    private static final int VERSION = 47;
 
     public TransientSModel loadModel(SModelReference modelReference, ModelInputStream is, TransientSModel model) throws IOException {
       int version = is.readInt();
@@ -237,7 +238,7 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     new NodesWriter(model.getReference()).writeNodes(roots, mos);
     mos.close();
 
-    jetbrains.mps.smodel.SModel resultModel = new jetbrains.mps.smodel.SModel(new jetbrains.mps.smodel.SModelReference("smodel.long.name.for.testing", ""));
+    jetbrains.mps.smodel.SModel resultModel = new jetbrains.mps.smodel.SModel(PersistenceFacade.getInstance().createModelReference("smodel.long.name.for.testing"));
     ByteArrayInputStream is = new ByteArrayInputStream(os.toByteArray());
     ModelInputStream mis = new ModelInputStream(is);
 

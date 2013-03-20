@@ -17,7 +17,7 @@ package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelRefere
 
 import org.jetbrains.mps.openapi.model.SModelId;
 
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.SModelId.ForeignSModelId;
 
 public class StubMigrationHelper {
@@ -42,7 +42,7 @@ public class StubMigrationHelper {
     int li = fid.lastIndexOf('#');
     int fi = fid.indexOf('#');
     if (fi != li) return null;
-    ModuleReference module = null;
+    SModuleReference module = null;
     String mid = fid.substring(fi + 1);
     String stereo = fid.substring(0, fi);
 

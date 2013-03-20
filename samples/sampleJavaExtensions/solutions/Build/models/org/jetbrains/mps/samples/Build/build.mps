@@ -315,7 +315,7 @@
       </node>
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="8776747031748936994">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="ffeo.5148601452480491524" resolveInfo="buildPlugin" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="ffeo.5148601452480491524" resolveInfo="mpsPlugin" />
       <node role="artifacts" roleId="3ior.4129895186893471026" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="8776747031748937009">
         <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="8776747031748936995" resolveInfo="mps_core_plugin_home" />
       </node>

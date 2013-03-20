@@ -18,7 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -101,7 +101,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
         }
       }
       if (isNeedRootTemplate) {
-        for (ModuleReference moduleRef : ((SModelInternal) SNodeOperations.getModel(node)).importedLanguages()) {
+        for (SModuleReference moduleRef : ((SModelInternal) SNodeOperations.getModel(node)).importedLanguages()) {
           Language language = ModuleRepositoryFacade.getInstance().getModule(moduleRef, Language.class);
           if (language == null) {
             continue;

@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.generator.runtime;
 
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 
 import java.util.Collection;
@@ -27,7 +27,7 @@ public interface TemplateModule {
 
   LanguageRuntime getSourceLanguage();
 
-  ModuleReference getReference();
+  SModuleReference getReference();
 
   Collection<TemplateMappingPriorityRule> getPriorities();
 

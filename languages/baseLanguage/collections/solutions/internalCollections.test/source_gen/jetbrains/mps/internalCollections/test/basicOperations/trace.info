@@ -1096,7 +1096,7 @@
     <nodeInfo nodeId="6312172641078801210" fileName="List_Test.java" startLine="311" startPosition="28" endLine="312" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="6312172641078801210" fileName="List_Test.java" startLine="312" startPosition="54" endLine="313" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6312172641078801212" fileName="List_Test.java" startLine="314" startPosition="27" endLine="315" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6312172641078801212" fileName="List_Test.java" startLine="317" startPosition="44" endLine="318" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6312172641078801212" fileName="List_Test.java" startLine="317" startPosition="45" endLine="318" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6312172641078801212" fileName="List_Test.java" startLine="318" startPosition="40" endLine="319" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="6312172641078801212" fileName="List_Test.java" startLine="320" startPosition="23" endLine="321" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6312172641078801212" fileName="List_Test.java" startLine="321" startPosition="38" endLine="322" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
@@ -1257,7 +1257,7 @@
       <varInfo nodeId="1227013911332" varName="llist" />
     </scopeInfo>
     <scopeInfo nodeId="6312172641078801210" fileName="List_Test.java" startLine="311" startPosition="28" endLine="313" endPosition="35" />
-    <scopeInfo nodeId="6312172641078801212" fileName="List_Test.java" startLine="317" startPosition="44" endLine="319" endPosition="30" />
+    <scopeInfo nodeId="6312172641078801212" fileName="List_Test.java" startLine="317" startPosition="45" endLine="319" endPosition="30" />
     <scopeInfo nodeId="6312172641078801211" fileName="List_Test.java" startLine="331" startPosition="27" endLine="333" endPosition="28" />
     <scopeInfo nodeId="6312172641078801216" fileName="List_Test.java" startLine="334" startPosition="27" endLine="336" endPosition="28" />
     <scopeInfo nodeId="1652739669898781269" fileName="List_Test.java" startLine="381" startPosition="47" endLine="383" endPosition="90" />

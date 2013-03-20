@@ -116,7 +116,7 @@ public class TemplateFindUsagesDescriptor implements TemplateDeclaration {
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_a7jb2i_a0a0a1a3a1a5a1a6a1a2);
                   environment.nodeCopied(context, tnode8, "tpl/r:00000000-0000-4000-0000-011c8959035c/7991477654791670142");
-                  tnode8.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode8, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages(MPS.Core/jetbrains.mps.ide.findusages@java_stub)"), PersistenceFacade.getInstance().createNodeId("~BaseFindUsagesDescriptor.<init>(jetbrains.mps.project.structure.modules.ModuleReference,org.jetbrains.mps.openapi.model.SModelReference)")));
+                  tnode8.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode8, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages(MPS.Core/jetbrains.mps.ide.findusages@java_stub)"), PersistenceFacade.getInstance().createNodeId("~BaseFindUsagesDescriptor.<init>(org.jetbrains.mps.openapi.module.SModuleReference,org.jetbrains.mps.openapi.model.SModelReference)")));
 
                   {
                     final SNode tnode9 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.GenericNewExpression");

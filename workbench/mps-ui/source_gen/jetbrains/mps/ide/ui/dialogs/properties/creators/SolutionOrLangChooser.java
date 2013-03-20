@@ -4,7 +4,7 @@ package jetbrains.mps.ide.ui.dialogs.properties.creators;
 
 import jetbrains.mps.util.Computable;
 import java.util.List;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.Language;
@@ -16,22 +16,22 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
 
-public class SolutionOrLangChooser implements Computable<List<ModuleReference>> {
+public class SolutionOrLangChooser implements Computable<List<SModuleReference>> {
   @Override
-  public List<ModuleReference> compute() {
-    final Wrappers._T<List<ModuleReference>> ldsRefs = new Wrappers._T<List<ModuleReference>>();
+  public List<SModuleReference> compute() {
+    final Wrappers._T<List<SModuleReference>> ldsRefs = new Wrappers._T<List<SModuleReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         Iterable<Language> langs = new FilteredGlobalScope().getVisibleLanguages();
-        ldsRefs.value = Sequence.fromIterable(langs).select(new ISelector<Language, ModuleReference>() {
-          public ModuleReference select(Language lang) {
+        ldsRefs.value = Sequence.fromIterable(langs).select(new ISelector<Language, SModuleReference>() {
+          public SModuleReference select(Language lang) {
             return lang.getModuleReference();
           }
         }).toListSequence();
 
         Iterable<SModule> solutions = new FilteredGlobalScope().getModules();
-        ListSequence.fromList(ldsRefs.value).addSequence(Sequence.fromIterable(solutions).ofType(Solution.class).select(new ISelector<Solution, ModuleReference>() {
-          public ModuleReference select(Solution it) {
+        ListSequence.fromList(ldsRefs.value).addSequence(Sequence.fromIterable(solutions).ofType(Solution.class).select(new ISelector<Solution, SModuleReference>() {
+          public SModuleReference select(Solution it) {
             return it.getModuleReference();
           }
         }).toListSequence());

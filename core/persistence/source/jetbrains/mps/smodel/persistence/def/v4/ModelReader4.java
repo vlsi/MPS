@@ -16,12 +16,11 @@
 package jetbrains.mps.smodel.persistence.def.v4;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelHeader;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelVersionsInfo;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.IReferencePersister;
@@ -31,10 +30,12 @@ import jetbrains.mps.util.InternUtil;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,7 +61,7 @@ public class ModelReader4 implements IModelReader {
     SModelVersionsInfo versionsInfo = new SModelVersionsInfo();
     Element rootElement = document.getRootElement();
 
-    SModelReference modelReference = jetbrains.mps.smodel.SModelReference.fromString(rootElement.getAttributeValue(ModelPersistence.MODEL_UID));
+    SModelReference modelReference = PersistenceFacade.getInstance().createModelReference(rootElement.getAttributeValue(ModelPersistence.MODEL_UID));
     DefaultSModel model = new DefaultSModel(modelReference);
     model.setPersistenceVersion(getVersion());
     model.getSModelHeader().updateDefaults(header);
@@ -70,7 +71,7 @@ public class ModelReader4 implements IModelReader {
     for (Object language : languages) {
       Element element = (Element) language;
       String languageNamespace = element.getAttributeValue(ModelPersistence.NAMESPACE);
-      model.addLanguage(ModuleReference.fromString(languageNamespace));
+      model.addLanguage(jetbrains.mps.project.structure.modules.ModuleReference.fromString(languageNamespace));
       List<Element> aspectElements = element.getChildren(ModelPersistence.LANGUAGE_ASPECT);
 
       //aspect models versions
@@ -85,7 +86,7 @@ public class ModelReader4 implements IModelReader {
     for (Object languageEOG : languagesEOG) {
       Element element = (Element) languageEOG;
       String languageNamespace = element.getAttributeValue(ModelPersistence.NAMESPACE);
-      model.addEngagedOnGenerationLanguage(ModuleReference.fromString(languageNamespace));
+      model.addEngagedOnGenerationLanguage(jetbrains.mps.project.structure.modules.ModuleReference.fromString(languageNamespace));
     }
 
     //devkits
@@ -93,7 +94,7 @@ public class ModelReader4 implements IModelReader {
     for (Object devkit : devkits) {
       Element element = (Element) devkit;
       String devkitNamespace = element.getAttributeValue(ModelPersistence.NAMESPACE);
-      model.addDevKit(ModuleReference.fromString(devkitNamespace));
+      model.addDevKit(jetbrains.mps.project.structure.modules.ModuleReference.fromString(devkitNamespace));
     }
 
     // imports
@@ -126,7 +127,7 @@ public class ModelReader4 implements IModelReader {
         continue;
       }
 
-      SModelReference importedModelReference = jetbrains.mps.smodel.SModelReference.fromString(importedModelUIDString);
+      SModelReference importedModelReference = PersistenceFacade.getInstance().createModelReference(importedModelUIDString);
       model.addModelImport(new ImportElement(importedModelReference, importIndex, usedModelVersion));
     }
 
@@ -175,7 +176,7 @@ public class ModelReader4 implements IModelReader {
         }
       }
       if (aspectModelUID != null) {
-        model.addAdditionalModelVersion(jetbrains.mps.smodel.SModelReference.fromString(aspectModelUID), version);
+        model.addAdditionalModelVersion(PersistenceFacade.getInstance().createModelReference(aspectModelUID), version);
       }
     }
   }

@@ -4,14 +4,16 @@ package jetbrains.mps.debugger.core.breakpoints;
 
 import jetbrains.mps.debugger.core.DebuggerCellPainter;
 import java.awt.Color;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.AdditionalPainter;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.debugger.core.CurrentLinePositionComponentEx;
 
 public abstract class BreakpointPainterEx<B> extends DebuggerCellPainter<B> {
   private static final Color CELL_BACKGROUND_COLOR = new Color(255, 200, 200, 50);
-  private static final Color STRIPE_BACKGROUND_COLOR = new Color(255, 200, 200);
-  private static final Color FRAME_COLOR = new Color(255, 100, 100);
+  private static final Color STRIPE_BACKGROUND_COLOR = StyleRegistry.getInstance().getStyle("BREAKPOINT").get(StyleAttributes.TEXT_BACKGROUND_COLOR);
+  private static final Color FRAME_COLOR = StyleRegistry.getInstance().getStyle("BREAKPOINT").get(StyleAttributes.TEXT_BACKGROUND_COLOR).darker();
   protected final B myBreakpoint;
 
   public BreakpointPainterEx(B breakpoint) {

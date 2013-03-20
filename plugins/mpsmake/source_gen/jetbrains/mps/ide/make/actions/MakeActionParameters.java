@@ -53,7 +53,7 @@ public class MakeActionParameters {
     SModule module = this.moduleToMake();
     SModel model = this.modelToMake();
     if (model != null) {
-      if (model instanceof SModel && !(SNodeOperations.isGeneratable(model))) {
+      if (!(SNodeOperations.isGeneratable(model))) {
         return null;
       }
 
@@ -72,7 +72,7 @@ public class MakeActionParameters {
       sb.append("Selected Models");
 
     } else if (module != null) {
-      if (module.isPackaged()) {
+      if (module.isReadOnly()) {
         return null;
       }
 
@@ -86,7 +86,7 @@ public class MakeActionParameters {
         }
       }) || Sequence.fromIterable(mods).all(new IWhereFilter<SModule>() {
         public boolean accept(SModule m) {
-          return m.isPackaged();
+          return m.isReadOnly();
         }
       })) {
         return null;
@@ -121,7 +121,7 @@ __switch__:
                     case 8:
                       this._8__yield_nk3wxj_b0a0a0a0a0c0h_it = Sequence.fromIterable(Sequence.fromIterable(_7_models).where(new IWhereFilter<SModel>() {
                         public boolean accept(SModel md) {
-                          return md instanceof SModel && SNodeOperations.isGeneratable(md);
+                          return SNodeOperations.isGeneratable(md);
                         }
                       })).iterator();
                     case 9:
@@ -153,7 +153,7 @@ __switch__:
                       this.__CP__ = 24;
                       break;
                     case 2:
-                      if (model instanceof SModel && SNodeOperations.isGeneratable(model)) {
+                      if (model != null && SNodeOperations.isGeneratable(model)) {
                         this.__CP__ = 3;
                         break;
                       } else if (models != null && ListSequence.fromList(models).count() > 1) {
@@ -253,7 +253,7 @@ __switch__:
   public Iterable<SModel> modelsToMake(SModule module) {
     Iterable<SModel> models = Sequence.fromIterable(((Iterable<SModel>) module.getModels())).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
-        return it instanceof SModel && SNodeOperations.isGeneratable(it);
+        return SNodeOperations.isGeneratable(it);
       }
     });
     if (module instanceof Language) {

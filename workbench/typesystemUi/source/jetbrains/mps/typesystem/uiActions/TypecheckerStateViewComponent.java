@@ -18,9 +18,6 @@ package jetbrains.mps.typesystem.uiActions;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.ui.ScrollPaneFactory;
-import jetbrains.mps.openapi.editor.EditorComponent;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -28,13 +25,25 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.highlighter.EditorsHelper;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.openapi.editor.Editor;
+import jetbrains.mps.openapi.editor.EditorComponent;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.typesystem.debug.EquationLogItem;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
-import javax.swing.*;
+import javax.swing.AbstractAction;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -162,9 +171,8 @@ public class TypecheckerStateViewComponent extends JPanel {
 
   private void openRule(String ruleModel, final String ruleID) {
     if (ruleModel == null || ruleID == null) return;
-    SModelReference modelUID = jetbrains.mps.smodel.SModelReference.fromString(ruleModel);
-    modelUID = jetbrains.mps.smodel.SModelReference.fromString(SModelStereotype.withoutStereotype(modelUID.getModelName()));
-    final SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
+    final SModelReference modelUID = PersistenceFacade.getInstance().createModelReference(ruleModel);
+    final SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelStereotype.withoutStereotype(modelUID.getModelName()));
     if (modelDescriptor == null) {
       LOG.error("can't find rule's model " + ruleModel);
       return;

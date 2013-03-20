@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.NameUtil;
 
@@ -30,8 +30,8 @@ public class SConceptReference {
     myConceptFqName = InternUtil.intern(conceptFqName);
   }
 
-  public ModuleReference getLanguage() {
-    return new ModuleReference(NameUtil.namespaceFromConceptFQName(myConceptFqName));
+  public SModuleReference getLanguage() {
+    return new jetbrains.mps.project.structure.modules.ModuleReference(NameUtil.namespaceFromConceptFQName(myConceptFqName));
   }
 
   public int hashCode() {

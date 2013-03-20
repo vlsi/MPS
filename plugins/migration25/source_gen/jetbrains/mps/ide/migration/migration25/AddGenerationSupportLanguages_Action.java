@@ -9,7 +9,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import java.util.List;
@@ -63,9 +63,9 @@ public class AddGenerationSupportLanguages_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final ModuleReference genPurpose = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("fbc25dd2-5da4-483a-8b19-70928e1b62d7")).getModuleReference();
-      final ModuleReference generator = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("b401a680-8325-4110-8fd3-84331ff25bef")).getModuleReference();
-      final ModuleReference genContext = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("d7706f63-9be2-479c-a3da-ae92af1e64d5")).getModuleReference();
+      final SModuleReference genPurpose = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("fbc25dd2-5da4-483a-8b19-70928e1b62d7")).getModuleReference();
+      final SModuleReference generator = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("b401a680-8325-4110-8fd3-84331ff25bef")).getModuleReference();
+      final SModuleReference genContext = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("d7706f63-9be2-479c-a3da-ae92af1e64d5")).getModuleReference();
 
       List<IModule> modules = ((MPSProject) MapSequence.fromMap(_params).get("project")).getModulesWithGenerators();
       Iterable<Generator> generators = ListSequence.fromList(modules).where(new IWhereFilter<IModule>() {
@@ -83,8 +83,6 @@ public class AddGenerationSupportLanguages_Action extends BaseAction {
           it.addUsedDevkit(genPurpose);
           it.addUsedLanguage(generator);
           it.addUsedLanguage(genContext);
-          it.invalidateCaches();
-          it.invalidateDependencies();
           it.save();
         }
       });

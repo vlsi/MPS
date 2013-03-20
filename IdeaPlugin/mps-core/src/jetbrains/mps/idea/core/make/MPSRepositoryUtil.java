@@ -24,7 +24,7 @@ import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.persistence.binary.BinarySModelDescriptor;
 import jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor;
 import jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
@@ -44,14 +44,14 @@ public class MPSRepositoryUtil {
     List<CachedModuleData> modules = new ArrayList<CachedModuleData>();
     for (ModuleHandle handle : handles) {
       Map<String, List<CachedModelData>> modelsByKindAndPath = new HashMap<String, List<CachedModelData>>();
-      ModuleReference moduleReference = handle.getDescriptor().getModuleReference();
+      SModuleReference moduleReference = handle.getDescriptor().getModuleReference();
       buildModule(modelsByKindAndPath, moduleReference);
       modules.add(new CachedModuleData(handle, modelsByKindAndPath));
     }
     return new CachedRepositoryData(modules);
   }
 
-  private static void buildModule(Map<String, List<CachedModelData>> modelsByKindAndPath, ModuleReference moduleReference) {
+  private static void buildModule(Map<String, List<CachedModelData>> modelsByKindAndPath, SModuleReference moduleReference) {
     SModule module = ModuleRepositoryFacade.getInstance().getModule(moduleReference);
     if (module != null) {
       for (ModelRoot root : module.getModelRoots()) {

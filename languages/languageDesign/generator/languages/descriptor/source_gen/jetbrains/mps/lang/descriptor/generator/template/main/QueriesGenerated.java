@@ -20,6 +20,7 @@ import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.generator.template.IfMacroContext;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -30,6 +31,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.lang.project.behavior.ModelReference_Behavior;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -143,7 +145,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_5828571963818937566(final IOperationContext operationContext, final IfMacroContext _context) {
-    ModuleReference ref = ModuleReference.fromString(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "language", true), "virtual_getModuleReference_9020561928507315628", new Object[]{}));
+    SModuleReference ref = ModuleReference.fromString(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "language", true), "virtual_getModuleReference_9020561928507315628", new Object[]{}));
     Language l = ModuleRepositoryFacade.getInstance().getModule(ref, Language.class);
     if (l == null) {
       _context.showErrorMessage(SLinkOperations.getTarget(_context.getNode(), "language", true), "No language in repository: " + SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "language", true), "namespace"));
@@ -162,7 +164,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_2838795720286867781(final IOperationContext operationContext, final IfMacroContext _context) {
-    ModuleReference ref = ModuleReference.fromString(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "language", true), "virtual_getModuleReference_9020561928507315628", new Object[]{}));
+    SModuleReference ref = ModuleReference.fromString(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "language", true), "virtual_getModuleReference_9020561928507315628", new Object[]{}));
     Language l = ModuleRepositoryFacade.getInstance().getModule(ref, Language.class);
     if (l == null) {
       _context.showErrorMessage(SLinkOperations.getTarget(_context.getNode(), "language", true), "No language in repository: " + SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "language", true), "namespace"));
@@ -295,7 +297,7 @@ public class QueriesGenerated {
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        SModelReference ref = jetbrains.mps.smodel.SModelReference.fromString(ModelReference_Behavior.call_getModelReference_6236774123822284799(it));
+        SModelReference ref = PersistenceFacade.getInstance().createModelReference(ModelReference_Behavior.call_getModelReference_6236774123822284799(it));
         SModel descriptor = SModelRepository.getInstance().getModelDescriptor(ref);
         if (descriptor == null) {
           return false;
@@ -320,7 +322,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1250389701475431822(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "model", true)).translate(new ITranslator2<SNode, String>() {
       public Iterable<String> translate(SNode it) {
-        SModel m = SModelRepository.getInstance().getModelDescriptor(jetbrains.mps.smodel.SModelReference.fromString(ModelReference_Behavior.call_getModelReference_6236774123822284799(it)));
+        SModel m = SModelRepository.getInstance().getModelDescriptor(PersistenceFacade.getInstance().createModelReference(ModelReference_Behavior.call_getModelReference_6236774123822284799(it)));
         return (m == null ?
           Collections.<String>emptyList() :
           ModelContentUtil.getUsedLanguageNamespaces(m, true)

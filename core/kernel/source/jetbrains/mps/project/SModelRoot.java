@@ -110,7 +110,7 @@ public class SModelRoot extends FolderModelRootBase {
 
   @Override
   public boolean canCreateModels() {
-    return !getModule().isPackaged() || getManager().canCreateModel(this, null);
+    return super.canCreateModels() && getManager().canCreateModel(this, null);
   }
 
   @Override

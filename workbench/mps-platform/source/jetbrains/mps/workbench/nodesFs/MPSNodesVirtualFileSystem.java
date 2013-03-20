@@ -18,20 +18,13 @@ package jetbrains.mps.workbench.nodesFs;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.vfs.DeprecatedVirtualFileSystem;
-import com.intellij.openapi.vfs.JarFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.VirtualFileManager;
-import com.intellij.openapi.vfs.newvfs.BulkFileListener;
-import com.intellij.openapi.vfs.newvfs.events.VFileCreateEvent;
 import com.intellij.util.LocalTimeCounter;
-import com.intellij.util.messages.MessageBus;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelAdapter;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.smodel.SModelRepositoryListener;
@@ -48,8 +41,11 @@ import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import javax.swing.SwingUtilities;
 import java.io.IOException;
@@ -155,7 +151,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
         if (!nodePath.matches() && !modelRef.matches()) return null;
 
         if (nodePath.matches()) {
-          SModelReference reference = jetbrains.mps.smodel.SModelReference.fromString(nodePath.group(1));
+          SModelReference reference = PersistenceFacade.getInstance().createModelReference(nodePath.group(1));
           final String name = nodePath.group(2);
           SModel sm = SModelRepository.getInstance().getModelDescriptor(reference);
           if (sm == null) return null;
@@ -169,9 +165,8 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
           Iterator<SNode> iter = new ConditionalIterator<SNode>(sm.getRootNodes().iterator(), cond);
           if (!iter.hasNext()) return null;
           return getFileFor(iter.next());
-        }
-        else {
-          final SModelReference modelReference = jetbrains.mps.smodel.SModelReference.fromString(modelRef.group());
+        } else {
+          final SModelReference modelReference = PersistenceFacade.getInstance().createModelReference(modelRef.group());
           return getFileFor(modelReference);
         }
       }
@@ -220,7 +215,8 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
   }
 
   @Override
-  protected VirtualFile copyFile(Object requestor, @NotNull VirtualFile virtualFile, @NotNull VirtualFile newParent, @NotNull String copyName) throws IOException {
+  protected VirtualFile copyFile(Object requestor, @NotNull VirtualFile virtualFile, @NotNull VirtualFile newParent, @NotNull String copyName) throws
+      IOException {
     throw new UnsupportedOperationException();
   }
 

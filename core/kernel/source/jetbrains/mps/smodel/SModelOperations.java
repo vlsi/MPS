@@ -23,7 +23,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
@@ -67,7 +67,7 @@ public class SModelOperations {
     final IModule module = modelDescriptor == null ? null : modelDescriptor.getModule();
     final Collection<IModule> declaredDependencies = module != null ? new GlobalModuleDependenciesManager(module).getModules(Deptype.VISIBLE) : null;
     final Collection<Language> declaredUsedLanguages = module != null ? new GlobalModuleDependenciesManager(module).getUsedLanguages() : null;
-    Set<ModuleReference> usedLanguages = getAllImportedLanguages(model);
+    Set<SModuleReference> usedLanguages = getAllImportedLanguages(model);
 
     Set<SModelReference> importedModels = new HashSet<SModelReference>();
     for (SModel sm : allImportedModels(model, scope)) {
@@ -80,7 +80,7 @@ public class SModelOperations {
         LOG.error("Can't find language " + NameUtil.namespaceFromConceptFQName(node.getConcept().getId()));
         continue;
       }
-      ModuleReference ref = lang.getModuleReference();
+      SModuleReference ref = lang.getModuleReference();
       if (!usedLanguages.contains(ref)) {
         if (module != null) {
           if (respectModulesScopes && !declaredUsedLanguages.contains(lang)) {
@@ -114,7 +114,7 @@ public class SModelOperations {
   }
 
   //todo rewrite using iterators
-  public static boolean hasLanguage(SModel model, @NotNull ModuleReference ref) {
+  public static boolean hasLanguage(SModel model, @NotNull SModuleReference ref) {
     return getAllImportedLanguages(model).contains(ref);
   }
 
@@ -123,7 +123,7 @@ public class SModelOperations {
   public static List<Language> getLanguages(SModel model, @NotNull IScope scope) {
     Set<Language> languages = new LinkedHashSet<Language>();
 
-    for (ModuleReference lang : ((jetbrains.mps.smodel.SModelInternal) model).importedLanguages()) {
+    for (SModuleReference lang : ((jetbrains.mps.smodel.SModelInternal) model).importedLanguages()) {
       Language language = scope.getLanguage(lang);
 
       if (language != null) {
@@ -132,7 +132,7 @@ public class SModelOperations {
       }
     }
 
-    for (ModuleReference dk : ((jetbrains.mps.smodel.SModelInternal) model).importedDevkits()) {
+    for (SModuleReference dk : ((jetbrains.mps.smodel.SModelInternal) model).importedDevkits()) {
       DevKit devKit = scope.getDevKit(dk);
       if (devKit != null) {
         for (Language l : devKit.getAllExportedLanguages()) {
@@ -148,13 +148,13 @@ public class SModelOperations {
 
   //todo rewrite using iterators
   @NotNull
-  public static Set<ModuleReference> getAllImportedLanguages(SModel model) {
-    List<ModuleReference> langs = ((jetbrains.mps.smodel.SModelInternal) model).importedLanguages();
-    List<ModuleReference> devkits = ((jetbrains.mps.smodel.SModelInternal) model).importedDevkits();
-    Set<ModuleReference> result = new HashSet<ModuleReference>(langs.size() + devkits.size() * 8);
+  public static Set<SModuleReference> getAllImportedLanguages(SModel model) {
+    List<SModuleReference> langs = ((jetbrains.mps.smodel.SModelInternal) model).importedLanguages();
+    List<SModuleReference> devkits = ((jetbrains.mps.smodel.SModelInternal) model).importedDevkits();
+    Set<SModuleReference> result = new HashSet<SModuleReference>(langs.size() + devkits.size() * 8);
     result.addAll(langs);
     if (!MPSCore.getInstance().isMergeDriverMode()) {
-      for (ModuleReference dk : devkits) {
+      for (SModuleReference dk : devkits) {
         DevKit devKit = GlobalScope.getInstance().getDevKit(dk);
         if (devKit == null) continue;
         for (Language l : devKit.getExportedLanguages()) {
@@ -166,8 +166,8 @@ public class SModelOperations {
   }
 
   //todo rewrite using iterators
-  public static Set<ModuleReference> getUsedLanguages(@NotNull SModel model) {
-    Set<ModuleReference> result = new HashSet<ModuleReference>();
+  public static Set<SModuleReference> getUsedLanguages(@NotNull SModel model) {
+    Set<SModuleReference> result = new HashSet<SModuleReference>();
     for (SNode node : new NodesIterable(model)) {
       Language lang = jetbrains.mps.util.SNodeOperations.getLanguage(node);
       if (lang == null) continue;

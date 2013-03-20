@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
+package jetbrains.mps.smodel;
 
 import gnu.trove.THashMap;
 import jetbrains.mps.MPSCore;
@@ -24,16 +24,17 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.persistence.DataSourceBase;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.SModelId.ModelNameSModelId;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.util.containers.MultiMap;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.DataSource;
-
-import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -88,7 +89,7 @@ public class SModelRepository implements CoreComponent {
       if (prevModule != null) {
         if (prevModule != container) {
           LOG.error(
-            "Model \"" + modelDescriptor.getModelName() + "\" is already registered by another module: existing=" + prevModule + ", new=" + container);
+              "Model \"" + modelDescriptor.getModelName() + "\" is already registered by another module: existing=" + prevModule + ", new=" + container);
         }
         return;
       }
@@ -97,7 +98,7 @@ public class SModelRepository implements CoreComponent {
       SModel registeredModel = getModelDescriptor(modelReference);
 
       LOG.assertLog(registeredModel == null || registeredModel == modelDescriptor,
-        "Another model \"" + modelReference + "\" is already registered");
+          "Another model \"" + modelReference + "\" is already registered");
 
       Set<SModel> ownerModels = myModelsByOwner.get(container);
       if (ownerModels == null) {
@@ -180,8 +181,17 @@ public class SModelRepository implements CoreComponent {
     }
   }
 
+  public SModel getModelDescriptor(SModelReference modelReference) {
+    return getModelDescriptor(modelReference.getModelId());
+  }
+
   public SModel getModelDescriptor(SModelId id) {
-    return myIdToModelDescriptorMap.get(id);
+    SModel value = myIdToModelDescriptorMap.get(id);
+    if (value == null && id instanceof ModelNameSModelId) {
+      // inexact search...
+      value = SModelRepository.getInstance().getModelDescriptor(id.getModelName());
+    }
+    return value;
   }
 
   @Deprecated
@@ -193,21 +203,6 @@ public class SModelRepository implements CoreComponent {
       }
     }
     return result;
-  }
-
-  @Deprecated
-  public SModel getModelDescriptor(org.jetbrains.mps.openapi.model.SModelReference modelReference) {
-    if (modelReference == null) return null;
-    org.jetbrains.mps.openapi.model.SModelId id = modelReference.getModelId();
-
-    //todo remove this code
-    if (id == null) {
-      String fqName =  modelReference.getModelName();
-      if (fqName == null) return null;
-      return getModelDescriptor(fqName);
-    }
-
-    return myIdToModelDescriptorMap.get(id);
   }
 
   public List<SModel> getModelDescriptors(SModule module) {
@@ -417,9 +412,9 @@ public class SModelRepository implements CoreComponent {
     return getModelDescriptor(fqName.toString());
   }
 
-  public SModel getModelDescriptor(String fqName) {
-    if (fqName == null) return null;
-    return myFqNameToModelDescriptorMap.get(fqName);
+  public SModel getModelDescriptor(String modelName) {
+    if (modelName == null) return null;
+    return myFqNameToModelDescriptorMap.get(modelName);
   }
 
   private class ModelChangeListener extends SModelAdapter {

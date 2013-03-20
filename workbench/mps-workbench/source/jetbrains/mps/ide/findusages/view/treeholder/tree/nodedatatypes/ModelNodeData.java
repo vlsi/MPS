@@ -23,11 +23,12 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.SNodeOperations;
+import org.jdom.Element;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.smodel.SModelRepository;
-import org.jdom.Element;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import javax.swing.Icon;
 
@@ -35,23 +36,24 @@ public class ModelNodeData extends BaseNodeData {
   private static final String MODEL = "model";
   private static final String UID = "uid";
 
-  public SModelReference myModelReference = jetbrains.mps.smodel.SModelReference.fromString("");
+  public SModelReference myModelReference;
 
   public ModelNodeData(PathItemRole role, SearchResult result, boolean isResult,
-                       INodeRepresentator nodeRepresentator, boolean resultsSection) {
+      INodeRepresentator nodeRepresentator, boolean resultsSection) {
     super(role,
-      (isResult && nodeRepresentator != null) ?
-        nodeRepresentator.getPresentation(result.getObject()) :
-        SNodeOperations.getModelLongName(((SModel) result.getPathObject())),
-      "",
-      false,
-      isResult,
-      resultsSection);
+        (isResult && nodeRepresentator != null) ?
+            nodeRepresentator.getPresentation(result.getObject()) :
+            SNodeOperations.getModelLongName(((SModel) result.getPathObject())),
+        "",
+        false,
+        isResult,
+        resultsSection);
     myModelReference = ((SModel) result.getPathObject()).getReference();
   }
 
   public ModelNodeData(PathItemRole role, SModel model, boolean isResult, boolean resultsSection) {
-    super(role, SNodeOperations.getModelLongName(model) + (!jetbrains.mps.util.SNodeOperations.getModelStereotype(model).isEmpty() ? "@"+ jetbrains.mps.util.SNodeOperations.getModelStereotype(model) : ""), "", false, isResult, resultsSection);
+    super(role, SNodeOperations.getModelLongName(model) + (!jetbrains.mps.util.SNodeOperations.getModelStereotype(model).isEmpty() ?
+        "@" + jetbrains.mps.util.SNodeOperations.getModelStereotype(model) : ""), "", false, isResult, resultsSection);
     myModelReference = model.getReference();
   }
 
@@ -99,7 +101,11 @@ public class ModelNodeData extends BaseNodeData {
   public void read(Element element, Project project) throws CantLoadSomethingException {
     super.read(element, project);
     Element modelXML = element.getChild(MODEL);
-    myModelReference = jetbrains.mps.smodel.SModelReference.fromString(modelXML.getAttributeValue(UID));
+    try {
+      myModelReference = PersistenceFacade.getInstance().createModelReference(modelXML.getAttributeValue(UID));
+    } catch (IllegalArgumentException ex) {
+      throw new CantLoadSomethingException("cannot parse model reference", ex);
+    }
   }
 
   @Override

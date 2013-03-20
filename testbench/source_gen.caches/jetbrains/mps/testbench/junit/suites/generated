@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-aoryiq4j7dxzthsdqobv3i7vl65le3t">
+<dependencies version="2" modelHash="-6i89nx8y5acyr5lkh6vyfo4jvm4600x">
   <common hash="-c1sboqui37ujjfipulaltljvr3850w5" />
-  <source id="263837413765000620" name="DefaultTestSuite" hash="4zt82mmvpymf0qlm4wbm1ss2xj6kkjd">
+  <source id="263837413765000620" name="DefaultTestSuite" hash="pj2wpjmtvlybr6raz2uz9af6yeypm5">
     <file name="DefaultTestSuite.java" />
   </source>
   <source id="7906452883299946797" name="ExecuteProjectTests" hash="-76x15rftabjysyik2ojknoc8bn0l1vx">

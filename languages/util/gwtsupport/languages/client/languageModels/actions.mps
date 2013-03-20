@@ -25,7 +25,7 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1572321421813623432">
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1572321421813735144">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1572321421813643436">
-                    <node role="operand" roleId="tpee.1197027771414" type="tpdg.NodeSetupFunction_NewNode" typeId="tpdg.1158701289411" id="1572321421813623433" />
+                    <node role="operand" roleId="tpee.1197027771414" type="tpdg.NodeSetupFunction_NewNode" typeId="tpdg.5584396657084912703" id="1572321421813623433" />
                     <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="1572321421813664800">
                       <link role="link" roleId="tp25.1138056546658" targetNodeId="k1iy.1572321421811416508" />
                     </node>
@@ -38,7 +38,7 @@
             </node>
             <node role="condition" roleId="tpee.1068580123160" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="1572321421813643432">
               <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1572321421813643435" />
-              <node role="leftExpression" roleId="tpee.1081773367580" type="tpdg.NodeSetupFunction_SampleNode" typeId="tpdg.1158701352529" id="1572321421813643431" />
+              <node role="leftExpression" roleId="tpee.1081773367580" type="tpdg.NodeSetupFunction_SampleNode" typeId="tpdg.5584396657084920413" id="1572321421813643431" />
             </node>
           </node>
         </node>

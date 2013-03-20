@@ -47,7 +47,7 @@ import jetbrains.mps.ide.ui.dialogs.properties.renders.DependencyTableCellRender
 import jetbrains.mps.ide.ui.dialogs.properties.renders.ModuleTableCellRender;
 import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.DependTableModel;
@@ -421,7 +421,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
       myUsedLangsTableModel = getUsedLangsTableModel();
       usedLangsTable.setModel(myUsedLangsTableModel);
 
-      usedLangsTable.setDefaultRenderer(ModuleReference.class, getTableCellRender());
+      usedLangsTable.setDefaultRenderer(SModuleReference.class, getTableCellRender());
 
       JComboBox roleEditor = new JComboBox(new EnumComboBoxModel<DependenciesTableItemRole>(DependenciesTableItemRole.class));
       usedLangsTable.setDefaultEditor(DependenciesTableItemRole.class, new DefaultCellEditor(roleEditor));
@@ -444,8 +444,8 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
       decorator.setAddAction(new AnActionButtonRunnable() {
         @Override
         public void run(AnActionButton anActionButton) {
-          List<ModuleReference> list = (new LanguageOrDevKitChooser()).compute();
-          for(ModuleReference reference : list)
+          List<SModuleReference> list = (new LanguageOrDevKitChooser()).compute();
+          for(SModuleReference reference : list)
             myUsedLangsTableModel.addItem(reference);
         }
       }).setRemoveAction(new AnActionButtonRunnable() {
@@ -494,9 +494,9 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
 
         @Override
         public String getElementText(Object element) {
-          if(!(element instanceof ModuleReference))
+          if(!(element instanceof SModuleReference))
             return "";
-          return ((ModuleReference)element).getModuleName();
+          return ((SModuleReference)element).getModuleName();
         }
 
         @Override

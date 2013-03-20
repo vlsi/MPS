@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel.persistence.def.v7;
 
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
@@ -68,21 +68,21 @@ public class ModelWriter7 implements IModelWriter {
     rootElement.addContent(persistenceElement);
 
     // languages
-    for (ModuleReference languageNamespace : (sourceModel).importedLanguages()) {
+    for (SModuleReference languageNamespace : (sourceModel).importedLanguages()) {
       Element languageElem = new Element(ModelPersistence.LANGUAGE);
       languageElem.setAttribute(ModelPersistence.NAMESPACE, languageNamespace.toString());
       rootElement.addContent(languageElem);
     }
 
     // languages engaged on generation
-    for (ModuleReference languageNamespace : (sourceModel).engagedOnGenerationLanguages()) {
+    for (SModuleReference languageNamespace : (sourceModel).engagedOnGenerationLanguages()) {
       Element languageElem = new Element(ModelPersistence.LANGUAGE_ENGAGED_ON_GENERATION);
       languageElem.setAttribute(ModelPersistence.NAMESPACE, languageNamespace.toString());
       rootElement.addContent(languageElem);
     }
 
     //devkits
-    for (ModuleReference devkitNamespace : (sourceModel).importedDevkits()) {
+    for (SModuleReference devkitNamespace : (sourceModel).importedDevkits()) {
       Element devkitElem = new Element(ModelPersistence.DEVKIT);
       devkitElem.setAttribute(ModelPersistence.NAMESPACE, devkitNamespace.toString());
       rootElement.addContent(devkitElem);
@@ -140,7 +140,7 @@ public class ModelWriter7 implements IModelWriter {
     DocUtil.setNotNullAttribute(element, ModelPersistence.TYPE_ID, myHelper.genTypeId(node));
     element.setAttribute(ModelPersistence.ID, node.getNodeId().toString());
 
-    for (String propertyName : jetbrains.mps.util.SNodeOperations.getProperties(node).keySet()) {
+    for (String propertyName : node.getPropertyNames()) {
       Element propertyElement = new Element(ModelPersistence.PROPERTY);
       propertyElement.setAttribute(ModelPersistence.NAME, myHelper.genName(node, propertyName));
       DocUtil.setNotNullAttribute(propertyElement, ModelPersistence.NAME_ID, myHelper.genNameId(node, propertyName));

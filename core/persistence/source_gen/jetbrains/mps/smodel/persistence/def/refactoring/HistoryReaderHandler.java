@@ -16,6 +16,7 @@ import java.util.Map;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog> {
   private static String[] EMPTY_ARRAY = new String[0];
@@ -249,7 +250,7 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog
       Map<SModelReference, Integer> result = (Map<SModelReference, Integer>) resultObject;
       if ("model".equals(tagName)) {
         String[] child = (String[]) value;
-        SModelReference modelRef = jetbrains.mps.smodel.SModelReference.fromString(child[1]);
+        SModelReference modelRef = PersistenceFacade.getInstance().createModelReference(child[1]);
         MapSequence.fromMap(result).put(modelRef, Integer.parseInt(child[2]));
         fieldhelper.addModelRef(child[0], modelRef);
         return;
@@ -363,7 +364,7 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog
 
     @Override
     protected StructureModification.RenameModel createObject(Attributes attrs) {
-      return new StructureModification.RenameModel(jetbrains.mps.smodel.SModelReference.fromString(attrs.getValue("oldModel")), jetbrains.mps.smodel.SModelReference.fromString(attrs.getValue("newModel")));
+      return new StructureModification.RenameModel(PersistenceFacade.getInstance().createModelReference(attrs.getValue("oldModel")), PersistenceFacade.getInstance().createModelReference(attrs.getValue("newModel")));
     }
 
     @Override

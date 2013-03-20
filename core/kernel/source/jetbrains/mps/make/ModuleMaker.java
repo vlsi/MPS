@@ -403,7 +403,7 @@ public class ModuleMaker {
   }
 
   private boolean isExcluded(SModule m) {
-    return m instanceof Generator || m.isPackaged() || !SModuleOperations.isCompileInMps(m);
+    return m instanceof Generator || m.isReadOnly() || !SModuleOperations.isCompileInMps(m);
   }
 
   private class MyCompilationResultAdapter extends CompilationResultAdapter {

@@ -7,25 +7,25 @@ import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.runtime.TemplateModule;
-import jetbrains.mps.generator.runtime.TemplateUtil;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.generator.runtime.TemplateUtil;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelId;
-import java.util.UUID;
 
 public class TemplateModelImpl implements TemplateModel {
   private final Collection<TemplateMappingConfiguration> mappings;
   private final Collection<TemplateSwitchMapping> switches;
   private final TemplateModule templateModule;
+  private final SModelReference model;
 
   public TemplateModelImpl(TemplateModule module) {
     mappings = TemplateUtil.<TemplateMappingConfiguration>asCollection(new Mappingmain(this));
     switches = TemplateUtil.<TemplateSwitchMapping>asCollection();
     templateModule = module;
+    model = PersistenceFacade.getInstance().createModelReference("r:23911370-3645-4974-be70-79d5cfba7db1(jetbrains.mps.baseLanguage.jdk7.generator.template.main@generator)");
   }
 
   public String getLongName() {
@@ -33,7 +33,7 @@ public class TemplateModelImpl implements TemplateModel {
   }
 
   public SModelReference getSModelReference() {
-    return modelRef_wo91o7_a0a5;
+    return model;
   }
 
   public Collection<TemplateMappingConfiguration> getConfigurations() {
@@ -45,7 +45,7 @@ public class TemplateModelImpl implements TemplateModel {
   }
 
   public TemplateDeclaration loadTemplate(SNodeReference template, Object... arguments) {
-    if (!(modelRef_wo91o7_a0a5.equals(template.getModelReference()))) {
+    if (!(model.equals(template.getModelReference()))) {
       return null;
     }
     SNodeId id = ((SNodePointer) template).getNodeId();
@@ -65,6 +65,4 @@ public class TemplateModelImpl implements TemplateModel {
   public TemplateModule getModule() {
     return templateModule;
   }
-
-  private static jetbrains.mps.smodel.SModelReference modelRef_wo91o7_a0a5 = new jetbrains.mps.smodel.SModelReference(new SModelFqName("jetbrains.mps.baseLanguage.jdk7.generator.template.main", "generator"), SModelId.regular(new UUID(2562851035618298228L, -4724142049891549775L)));
 }

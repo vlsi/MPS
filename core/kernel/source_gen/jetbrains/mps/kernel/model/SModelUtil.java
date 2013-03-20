@@ -184,6 +184,8 @@ public class SModelUtil {
   }
 
   public static boolean isAssignableConcept(SNode from, SNode to) {
+    assert jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(from) != null : "working with disposed concept: " + NameUtil.nodeFQName(from);
+    assert jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(to) != null : "working with disposed concept: " + NameUtil.nodeFQName(to);
     if (from == to) {
       return true;
     }

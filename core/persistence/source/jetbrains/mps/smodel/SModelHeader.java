@@ -13,11 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
 
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.IOException;
 import java.util.Collections;
@@ -71,7 +72,7 @@ public class SModelHeader {
   }
 
   public SModelReference getModelReference() {
-    return myUID != null ? jetbrains.mps.smodel.SModelReference.fromString(myUID) : null;
+    return myUID != null ? PersistenceFacade.getInstance().createModelReference(myUID) : null;
   }
 
   public Map<String, String> getOptionalProperties() {

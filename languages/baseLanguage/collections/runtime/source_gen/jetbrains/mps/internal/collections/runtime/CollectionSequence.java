@@ -4,159 +4,16 @@ package jetbrains.mps.internal.collections.runtime;
 
 import java.util.Collection;
 import java.io.Serializable;
-import jetbrains.mps.baseLanguage.closures.runtime.AdapterClass;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import java.util.Iterator;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.impl.NullCollectionSequence;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays;
 
-public abstract class CollectionSequence<T> extends Sequence<T> implements ICollectionSequence<T>, Collection<T>, Serializable {
-  private static final long serialVersionUID = -195412084368027561L;
+public abstract class CollectionSequence<T> extends AbstractCollectionSequence<T> implements ICollectionSequence<T>, Collection<T>, Serializable {
+  private static final long serialVersionUID = -5323571231659062625L;
 
   protected CollectionSequence() {
-  }
-
-  @Override
-  public T addElement(T t) {
-    if (Sequence.IGNORE_NULL_VALUES) {
-      if (t == null) {
-        return null;
-      }
-    }
-    if (getCollection().add(t)) {
-      return t;
-    }
-    return null;
-  }
-
-  @Override
-  public T removeElement(T t) {
-    if (remove((Object) t)) {
-      return t;
-    }
-    return null;
-  }
-
-  @Override
-  public ICollectionSequence<T> addSequence(ISequence<? extends T> seq) {
-    if (Sequence.USE_NULL_SEQUENCE) {
-      if (seq == null) {
-        return this;
-      }
-    }
-    if (seq.toIterable() instanceof Collection) {
-      getCollection().addAll((Collection<? extends T>) seq.toIterable());
-    } else {
-      for (T t : seq.toIterable()) {
-        getCollection().add(t);
-      }
-    }
-    return this;
-  }
-
-  @Override
-  public ICollectionSequence<T> removeSequence(ISequence<? extends T> seq) {
-    if (Sequence.USE_NULL_SEQUENCE) {
-      if (seq == null) {
-        return this;
-      }
-    }
-    if (seq.toIterable() instanceof Collection) {
-      getCollection().removeAll((Collection<? extends T>) seq.toIterable());
-    } else {
-      for (T t : seq.toIterable()) {
-        getCollection().remove(t);
-      }
-    }
-    return this;
-  }
-
-  @Override
-  public ICollectionSequence<T> removeWhere(@AdapterClass(value = "IWhereFilter") _FunctionTypes._return_P1_E0<? extends Boolean, ? super T> filter) {
-    for (Iterator<T> it = getCollection().iterator(); it.hasNext();) {
-      if (filter.invoke(it.next())) {
-        it.remove();
-      }
-    }
-    return this;
-  }
-
-  @Override
-  public boolean add(T e) {
-    if (IGNORE_NULL_VALUES) {
-      if (e == null) {
-        return false;
-      }
-    }
-    return getCollection().add(e);
-  }
-
-  @Override
-  public boolean addAll(Collection<? extends T> c) {
-    return getCollection().addAll(c);
-  }
-
-  @Override
-  public void clear() {
-    getCollection().clear();
-  }
-
-  @Override
-  public boolean contains(Object o) {
-    return getCollection().contains(o);
-  }
-
-  @Override
-  public boolean containsAll(Collection<?> c) {
-    return getCollection().containsAll(c);
-  }
-
-  @Override
-  public boolean isEmpty() {
-    return getCollection().isEmpty();
-  }
-
-  @Override
-  public boolean remove(Object o) {
-    if (IGNORE_NULL_VALUES) {
-      if (o == null) {
-        return false;
-      }
-    }
-    return getCollection().remove(o);
-  }
-
-  @Override
-  public boolean removeAll(Collection<?> c) {
-    return getCollection().removeAll(c);
-  }
-
-  @Override
-  public boolean retainAll(Collection<?> c) {
-    return getCollection().retainAll(c);
-  }
-
-  @Override
-  public int size() {
-    return getCollection().size();
-  }
-
-  @Override
-  public Object[] toArray() {
-    return getCollection().toArray();
-  }
-
-  @Override
-  public <U> U[] toArray(U[] a) {
-    return getCollection().toArray(a);
-  }
-
-  @Override
-  public Iterator<T> iterator() {
-    return getCollection().iterator();
   }
 
   @Override
@@ -180,43 +37,6 @@ public abstract class CollectionSequence<T> extends Sequence<T> implements IColl
       }
     };
   }
-
-  @Override
-  public int count() {
-    return getCollection().size();
-  }
-
-  @Override
-  public boolean containsSequence(ISequence<? extends T> that) {
-    if (that instanceof CollectionSequence<?>) {
-      return getCollection().containsAll(((CollectionSequence<?>) that).getCollection());
-    }
-    return super.containsSequence(that);
-  }
-
-  @SuppressWarnings(value = "unchecked")
-  @Override
-  public boolean equals(Object o) {
-    if (o instanceof CollectionSequence) {
-      Collection<T> thatColl = ((CollectionSequence<T>) o).getCollection();
-      Collection<T> thisColl = getCollection();
-      if (thisColl == thatColl) {
-        return true;
-      }
-      return (thisColl != null ?
-        thisColl.equals(thatColl) :
-        false
-      );
-    }
-    return super.equals(o);
-  }
-
-  @Override
-  public int hashCode() {
-    return getCollection().hashCode();
-  }
-
-  protected abstract Collection<T> getCollection();
 
   public static <U> ICollectionSequence<U> fromCollection(final Collection<U> coll) {
     if (USE_NULL_SEQUENCE) {

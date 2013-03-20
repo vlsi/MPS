@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.bootstrap.helgins.test.structure.StructureAspectDescriptor" />
-  <unitInfo fileName="Test_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.bootstrap.helgins.test.structure.Test_Language" />
 </debugInfo>
 

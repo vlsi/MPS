@@ -8,10 +8,5 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.tuples.structure.Tuples_Language" file="Tuples_Language.java">
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
-    <classNode dependClassName="jetbrains.mps.smodel.Language" />
-    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
-  </dependency>
 </dependenciesRoot>
 
