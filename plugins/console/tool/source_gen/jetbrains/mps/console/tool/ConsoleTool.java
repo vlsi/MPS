@@ -10,9 +10,10 @@ import jetbrains.mps.nodeEditor.UIEditorComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import javax.swing.JComponent;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import javax.swing.JButton;
@@ -47,9 +48,13 @@ public class ConsoleTool extends BaseProjectTool {
 
   @Override
   protected void createTool() {
-    this.myRoot = SModelOperations.createNewRootNode(myModel, "jetbrains.mps.console.lang.structure.Console", null);
-    this.myEditor = new UIEditorComponent(new ProjectOperationContext(ProjectHelper.toMPSProject(getProject())), null);
-
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        jetbrains.mps.project.Project project = ProjectHelper.toMPSProject(getProject());
+        ConsoleTool.this.myEditor = new UIEditorComponent(new ModuleContext(myModel.getModule(), project), null);
+        ConsoleTool.this.myRoot = SModelOperations.createNewRootNode(myModel, "jetbrains.mps.console.lang.structure.Console", null);
+      }
+    });
     nextCommand();
 
     myMainComponent = new JPanel();
@@ -61,35 +66,51 @@ public class ConsoleTool extends BaseProjectTool {
     btnPanel.setLayout(new FlowLayout());
     btnPanel.add(new JButton(new AbstractAction("Execute") {
       public void actionPerformed(ActionEvent p0) {
-        if ((myLastCommand != null)) {
-          BehaviorReflection.invokeVirtual(Void.class, myLastCommand, "virtual_execute_757553790980855637", new Object[]{});
-        }
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            if ((myLastCommand != null)) {
+              BehaviorReflection.invokeVirtual(Void.class, myLastCommand, "virtual_execute_757553790980855637", new Object[]{});
+            }
+          }
+        });
         nextCommand();
       }
     }));
     btnPanel.add(new JButton(new AbstractAction("Prev") {
       public void actionPerformed(ActionEvent p0) {
-        if ((SNodeOperations.getPrevSibling(myLastCommand) == null)) {
-          return;
-        }
-        myLastCommand = SNodeOperations.getPrevSibling(myLastCommand);
-        myEditor.editNode(myLastCommand);
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            if ((SNodeOperations.getPrevSibling(myLastCommand) == null)) {
+              return;
+            }
+            myLastCommand = SNodeOperations.cast(SNodeOperations.getPrevSibling(myLastCommand), "jetbrains.mps.console.lang.structure.ConsoleCommand");
+            myEditor.editNode(myLastCommand);
+          }
+        });
       }
     }));
     btnPanel.add(new JButton(new AbstractAction("Next") {
       public void actionPerformed(ActionEvent p0) {
-        if ((SNodeOperations.getNextSibling(myLastCommand) == null)) {
-          return;
-        }
-        myLastCommand = SNodeOperations.getNextSibling(myLastCommand);
-        myEditor.editNode(myLastCommand);
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            if ((SNodeOperations.getNextSibling(myLastCommand) == null)) {
+              return;
+            }
+            myLastCommand = SNodeOperations.cast(SNodeOperations.getNextSibling(myLastCommand), "jetbrains.mps.console.lang.structure.ConsoleCommand");
+            myEditor.editNode(myLastCommand);
+          }
+        });
       }
     }));
   }
 
   private void nextCommand() {
-    this.myLastCommand = ListSequence.fromList(SNodeOperations.getChildren(myRoot)).addElement(SConceptOperations.createNewNode("jetbrains.mps.console.lang.structure.ConsoleCommand", null));
-    myEditor.editNode(myLastCommand);
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        ConsoleTool.this.myLastCommand = ListSequence.fromList(SNodeOperations.getChildren(myRoot)).addElement(SConceptOperations.createNewNode("jetbrains.mps.console.lang.structure.ConsoleCommand", null));
+        myEditor.editNode(myLastCommand);
+      }
+    });
   }
 
 
