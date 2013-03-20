@@ -7,6 +7,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="mps-workbench" />
+    <orderEntry type="module" module-name="kernel" />
+    <orderEntry type="library" name="Idea-plaform" level="project" />
   </component>
 </module>
 
