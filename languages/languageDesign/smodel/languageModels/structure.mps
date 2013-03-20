@@ -772,7 +772,7 @@
       <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="reference" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="node /&lt;name&gt;/" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="3575813534625140284" resolveInfo="AbstractNodeRefExpression" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1221161909218">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
@@ -1249,6 +1249,14 @@
       <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="reference" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="enum member value/&lt;name&gt;/" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3575813534625140284">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="reference" />
+      <property name="name" nameId="tpck.1169194664001" value="AbstractNodeRefExpression" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
+      <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="abstract node reference expression" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
   </roots>
@@ -2366,5 +2374,6 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpce.1083171877298" resolveInfo="EnumerationMemberDeclaration" />
     </node>
   </root>
+  <root id="3575813534625140284" />
 </model>
 
