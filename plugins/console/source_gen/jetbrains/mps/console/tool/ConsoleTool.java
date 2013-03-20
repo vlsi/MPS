@@ -34,4 +34,11 @@ public class ConsoleTool extends BaseProjectTool {
     myMainComponent.add(new JPanel(), BorderLayout.NORTH);
     myMainComponent.add(new JButton("Execute"), BorderLayout.SOUTH);
   }
+
+
+
+  @Override
+  protected boolean isInitiallyAvailable() {
+    return true;
+  }
 }
