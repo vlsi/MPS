@@ -36,6 +36,7 @@ import jetbrains.mps.idea.core.psi.MPSPsiNodeFactory;
 import jetbrains.mps.idea.core.psi.impl.events.SModelEventProcessor;
 import jetbrains.mps.idea.core.psi.impl.events.SModelEventProcessor.ModelProvider;
 import jetbrains.mps.idea.core.psi.impl.events.SModelEventProcessor.ReloadableModel;
+import jetbrains.mps.idea.core.psi.stubs.PsiStubModel;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.event.SModelCommandListener;
@@ -153,6 +154,8 @@ public class MPSPsiProvider extends AbstractProjectComponent  {
   }
 
   private MPSPsiModel getMPSPsiModel(SModel model, SModelReference modelRef) {
+    if (model instanceof PsiStubModel) return null;
+
     MPSPsiModel result;
     result = new MPSPsiModel(modelRef, PsiManager.getInstance(myProject));
     final MPSPsiModel existing = models.putIfAbsent(modelRef, result);

@@ -65,14 +65,14 @@ public class MoveRenameBatch implements ProjectComponent {
       // Refactoring is over (if this command was a refactoring at all)
       @Override
       public void beforeCommandFinished(CommandEvent event) {
-        myCommand = null;
-        myUsages.clear();
-        myRenames.clear();
-
         if (event.getCommand() == myCommand) {
           // our refactoring command is over
           commit();
         }
+
+        myCommand = null;
+        myUsages.clear();
+        myRenames.clear();
       }
     };
 

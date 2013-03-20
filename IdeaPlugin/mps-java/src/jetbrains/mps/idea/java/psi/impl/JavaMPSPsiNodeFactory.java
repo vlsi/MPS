@@ -154,15 +154,13 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory, MPS2PsiMapper {
 
   @Override
   public PsiElement getPsiSource(SNode node, Project project) {
-    // old SModel, non-openapi
     SModel model = node.getModel();
     if (model == null) return null;
-    SModel mDesc = model;
-    if (mDesc == null || !(mDesc instanceof PsiJavaStubModelDescriptor)) {
+    if (model == null || !(model instanceof PsiJavaStubModelDescriptor)) {
       return null;
     }
 
-    PsiJavaStubModelDescriptor psiStubs = (PsiJavaStubModelDescriptor) mDesc;
+    PsiJavaStubModelDescriptor psiStubs = (PsiJavaStubModelDescriptor) model;
     return psiStubs.getPsiSource(node);
   }
 
