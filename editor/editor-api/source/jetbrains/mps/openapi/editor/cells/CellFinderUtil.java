@@ -17,6 +17,7 @@ package jetbrains.mps.openapi.editor.cells;
 
 import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 
 /**
  * Semen Alperovich
@@ -40,7 +41,7 @@ public class CellFinderUtil {
     return null;
   }
 
-  public static EditorCell findChild(@NotNull EditorCell cell, @NotNull Condition<EditorCell> condition, boolean includeThis, boolean forward) {
+  public static EditorCell findChildByCondition(@NotNull EditorCell cell, @NotNull Condition<EditorCell> condition, boolean forward, boolean includeThis) {
     if (includeThis && condition.met(cell)) {
       return cell;
     }
@@ -53,8 +54,8 @@ public class CellFinderUtil {
     return null;
   }
 
-  public static EditorCell findChild(EditorCell cell, Condition<EditorCell> condition, boolean forward) {
-    return findChild(cell, condition, false, forward);
+  public static EditorCell findChildByCondition(EditorCell cell, Condition<EditorCell> condition, boolean forward) {
+    return findChildByCondition(cell, condition, forward, false);
   }
 
   public static <C extends EditorCell> C findChildByClass(EditorCell cell, final Class<C> clazz, boolean forward,  boolean includeThis) {
@@ -65,7 +66,7 @@ public class CellFinderUtil {
       }
     };
 
-    return ((C) findChild(cell, condition, includeThis, forward));
+    return ((C) findChildByCondition(cell, condition, forward, includeThis));
   }
 
   public static <C extends EditorCell> C findChildByClass(EditorCell cell, final Class<C> clazz, boolean forward) {
@@ -73,7 +74,22 @@ public class CellFinderUtil {
   }
 
 
-  public static <C extends EditorCell> C findChild(EditorCell cell, CellFinder<C> finder, boolean includeThis) {
+  public static EditorCell findChildById(EditorCell cell, final SNode node, final String cellId, boolean includeThis) {
+    Condition<EditorCell> condition = new Condition<EditorCell>() {
+      @Override
+      public boolean met(EditorCell object) {
+        return object.getSNode() == node && cellId.equals(object.getCellId());
+      }
+    };
+
+    return findChildByCondition(cell, condition, true, includeThis);
+  }
+
+  public static EditorCell findChildById(EditorCell cell, final SNode node, final String cellId) {
+    return findChildById(cell, node, cellId, false);
+  }
+
+    public static <C extends EditorCell> C findChild(EditorCell cell, CellFinder<C> finder, boolean includeThis) {
     if (includeThis && met(cell, finder)) {
       return (C) cell;
     }
