@@ -129,14 +129,22 @@ public class ConsoleTool extends BaseProjectTool {
   @Override
   protected void doRegister() {
     super.doRegister();
-    this.myModel = TempModelCreator.createTempModel();
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        ConsoleTool.this.myModel = TempModelCreator.createTempModel();
+      }
+    });
   }
 
 
 
   @Override
   protected void doUnregister() {
-    TempModelCreator.disposeTempModel(myModel);
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        TempModelCreator.disposeTempModel(myModel);
+      }
+    });
     super.doUnregister();
   }
 
