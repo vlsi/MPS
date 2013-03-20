@@ -12,8 +12,9 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.util.xml.XmlUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import java.util.List;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -76,7 +77,7 @@ public class LanguageDescriptorPersistence {
             autoImports = XmlUtil.first(languageElement, "library");
           }
           for (Element modelElement : Sequence.fromIterable(XmlUtil.children(autoImports, "model"))) {
-            result_v3r4p8_a0a0e0c0b.getAccessoryModels().add(SModelReference.fromString(modelElement.getAttributeValue("modelUID")));
+            result_v3r4p8_a0a0e0c0b.getAccessoryModels().add(PersistenceFacade.getInstance().createModelReference(modelElement.getAttributeValue("modelUID")));
           }
 
           for (Element generatorElement : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(languageElement, "generators"), "generator"))) {
@@ -135,7 +136,7 @@ public class LanguageDescriptorPersistence {
     }
 
     Element accessoryModels = new Element("accessoryModels");
-    for (org.jetbrains.mps.openapi.model.SModelReference model : SetSequence.fromSet(descriptor.getAccessoryModels())) {
+    for (SModelReference model : SetSequence.fromSet(descriptor.getAccessoryModels())) {
       XmlUtil.tagWithAttribute(accessoryModels, "model", "modelUID", model.toString());
     }
     languageElement.addContent(accessoryModels);

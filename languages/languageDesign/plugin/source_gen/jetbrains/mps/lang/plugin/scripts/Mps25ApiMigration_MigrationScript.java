@@ -436,7 +436,7 @@ public class Mps25ApiMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isStaticMethodCall(node, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)"), "155142699038773182", "155142699038773979");
+        return StubRefUtil.isStaticMethodCall(node, "r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)", "155142699038773182", "155142699038773979");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -461,7 +461,7 @@ public class Mps25ApiMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isStaticMethodCall(node, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)"), "155142699038773182", "155142699038774033");
+        return StubRefUtil.isStaticMethodCall(node, "r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)", "155142699038773182", "155142699038774033");
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -1194,7 +1194,7 @@ public class Mps25ApiMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StubRefUtil.isStaticMethodCall(node, SModelReference.fromString("r:3443ab09-ba5b-43e2-8ded-bbcc098418a4(jetbrains.mps.ide)"), "5431388913640420462", "5431388913640422688");
+        return StubRefUtil.isStaticMethodCall(node, "r:3443ab09-ba5b-43e2-8ded-bbcc098418a4(jetbrains.mps.ide)", "5431388913640420462", "5431388913640422688");
       }
 
       public void doUpdateInstanceNode(SNode node) {

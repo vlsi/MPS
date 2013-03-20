@@ -83,7 +83,8 @@ public class StubRefUtil {
     return ref != null && targetId.equals(ref.getTargetNodeId()) && targetModel.equals(ref.getTargetSModelReference());
   }
 
-  public static boolean isStaticMethodCall(SNode staticMethodCall, @NotNull SModelReference targetModel, @NotNull String classId, @NotNull String methodId) {
+  public static boolean isStaticMethodCall(SNode staticMethodCall, @NotNull String targetModelID, @NotNull String classId, @NotNull String methodId) {
+    SModelReference targetModel = PersistenceFacade.getInstance().createModelReference(targetModelID);
     return isReferenceTo(SNodeOperations.getReference(staticMethodCall, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", "classConcept")), targetModel, SNodeId.fromString(classId)) && isReferenceTo(SNodeOperations.getReference(staticMethodCall, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", "staticMethodDeclaration")), targetModel, SNodeId.fromString(methodId));
   }
 

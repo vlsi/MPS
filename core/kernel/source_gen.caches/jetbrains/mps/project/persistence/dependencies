@@ -79,7 +79,6 @@
     <classNode dependClassName="jetbrains.mps.project.structure.modules.GeneratorDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.LanguageDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
     <classNode dependClassName="jetbrains.mps.util.MacroHelper" />
     <classNode dependClassName="jetbrains.mps.util.xml.XmlUtil" />
@@ -88,6 +87,7 @@
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.project.persistence.ModuleDescriptorPersistence" file="ModuleDescriptorPersistence.java">
     <classNode dependClassName="java.io.IOException" />
@@ -156,7 +156,6 @@
     <classNode dependClassName="jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration" />
     <classNode dependClassName="jetbrains.mps.project.structure.project.testconfigurations.ModelsTestConfiguration" />
     <classNode dependClassName="jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
     <classNode dependClassName="jetbrains.mps.util.MacroHelper" />
     <classNode dependClassName="jetbrains.mps.util.MacrosFactory" />
@@ -165,6 +164,7 @@
     <classNode dependClassName="org.jdom.Document" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
   <dependency className="jetbrains.mps.project.persistence.SolutionDescriptorPersistence" file="SolutionDescriptorPersistence.java">
     <classNode dependClassName="java.io.OutputStream" />

@@ -23,6 +23,7 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_R
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefAllGlobal;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_SimpleRef;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -110,7 +111,7 @@ public class RuleOperandRenderer implements TableCellRenderer {
     } else
     if (ref instanceof MappingConfig_SimpleRef) {
       MappingConfig_SimpleRef refC = (MappingConfig_SimpleRef) ref;
-      SModelReference modelRef = jetbrains.mps.smodel.SModelReference.fromString(refC.getModelUID());
+      SModelReference modelRef = PersistenceFacade.getInstance().createModelReference(refC.getModelUID());
       String nodeName;
       if (refC.getNodeID().equals("*")) {
         nodeName = NameUtil.shortNameFromLongName(SModelStereotype.withoutStereotype(modelRef.getModelName())) + ".*";

@@ -15,12 +15,11 @@ import jetbrains.mps.smodel.DefaultSModel;
 import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.persistence.def.v4.VersionUtil;
 import jetbrains.mps.util.InternUtil;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -167,7 +166,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
       fieldversionsInfo = new SModelVersionsInfo();
       fieldreferenceDescriptors = new ArrayList<IReferencePersister>();
       fieldvisibleModelElements = new SAXVisibleModelElements();
-      fieldmodel = new DefaultSModel(SModelReference.fromString(attrs.getValue("modelUID")));
+      fieldmodel = new DefaultSModel(PersistenceFacade.getInstance().createModelReference(attrs.getValue("modelUID")));
       fieldmodel.setPersistenceVersion(5);
       fieldmodel.getSModelHeader().updateDefaults(fieldheader);
       return new ModelLoadResult(fieldmodel, ModelLoadingState.FULLY_LOADED);
@@ -225,7 +224,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
       if ("languageAspect".equals(tagName)) {
         String[] child = (String[]) value;
         int version = Integer.parseInt(child[1]);
-        (fieldmodel).addAdditionalModelVersion(SModelReference.fromString(child[0]), version);
+        (fieldmodel).addAdditionalModelVersion(PersistenceFacade.getInstance().createModelReference(child[0]), version);
         return;
       }
       if ("language".equals(tagName)) {
