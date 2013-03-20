@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="qqzk65s9turfo0eifoijpvxu9sj42l">
-  <dep model="r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)" hash="-3umarh2kwsqhlhco508yyttnjshhx3a" />
+  <dep model="r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)" hash="a1cqmaefqqxbixdpshn6y36mmmv2mz4" />
   <common>
     <dep model="r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)" />
     <file name="Language.java" />

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-b5n45squa5g1bvgomh8vpjoxp4hdqn">
+<dependencies version="2" modelHash="-6f7z9yhk4iiqp6nuqhuchwx5rzmko07">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-b2l5iyygy2vjqkbekn4rvaubf6n8cmr" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="3v74ubfhw87m42z14436qwtkyptdd6v" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
@@ -126,6 +126,7 @@
     <dep root="2788452359612124333" />
     <dep root="3542758363529077353" />
     <dep root="3562215692195599741" />
+    <dep root="3575813534625140284" />
     <dep root="3609773094169249792" />
     <dep root="4024382256428848843" />
     <dep root="4040588429969021681" />
@@ -423,7 +424,7 @@
   <source id="1215467301810" name="Property_RemoveOperation" hash="-bqgfmgvekq6m47ciqopzxmztbqin1st">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1219352745532" name="NodeRefExpression" hash="2dzrzrdnwplc4leoqd148p4qkb0kd57">
+  <source id="1219352745532" name="NodeRefExpression" hash="ah5scidggklsiuryug78o489r08kse2">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1221161909218" name="SearchScopeType" hash="-5d8q255p7781ddzpamoqwuavykrqlfu">
@@ -607,6 +608,9 @@
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="6973815483243445083" name="EnumMemberValueRefExpression" hash="cofbijrrcuz7r97qotlk98cn14epb21">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="3575813534625140284" name="AbstractNodeRefExpression" hash="-ecokcs1r3ccsnaywi1ya5sex9cwq9i6">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

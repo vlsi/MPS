@@ -360,7 +360,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1219355399537(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SModelReference targetModelRef = SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "referentNode", false)).getReference();
+    SModelReference targetModelRef = SNodeOperations.getModel(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getTargetNode_3575813534625153815", new Object[]{})).getReference();
     SModelReference sourceModelRef = SNodeOperations.getModel(_context.getNode()).getReference();
     if (sourceModelRef.equals(targetModelRef)) {
       return _context.getOriginalInputModel().getReference().toString();
@@ -369,7 +369,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1219355463409(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "referentNode", false).getNodeId().toString();
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getTargetNode_3575813534625153815", new Object[]{}).getNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_1828409047608049663(final IOperationContext operationContext, final PropertyMacroContext _context) {
