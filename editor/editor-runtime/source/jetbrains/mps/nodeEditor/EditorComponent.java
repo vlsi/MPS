@@ -633,7 +633,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         if (getSelectionManager().getSelection() == null) {
           EditorCell rootCell = getRootCell();
           if (rootCell instanceof EditorCell_Collection) {
-            EditorCell focusPolicyCell = FocusPolicyUtil.findCellToSelectDueToFocusPolicy(rootCell);
+            jetbrains.mps.openapi.editor.cells.EditorCell focusPolicyCell = FocusPolicyUtil.findCellToSelectDueToFocusPolicy(rootCell);
             jetbrains.mps.openapi.editor.cells.EditorCell toSelect;
             if (focusPolicyCell == null || (focusPolicyCell == rootCell && !FocusPolicyUtil.hasFocusPolicy(focusPolicyCell))) {
               toSelect = CellFinderUtil.findChildByManyFinders(rootCell, CellFinders.FIRST_EDITABLE, CellFinders.FIRST_SELECTABLE_LEAF);
@@ -2728,12 +2728,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public jetbrains.mps.openapi.editor.cells.EditorCell changeSelectionWRTFocusPolicy(@NotNull EditorCell cell) {
-    EditorCell focusPolicyCell = FocusPolicyUtil.findCellToSelectDueToFocusPolicy(cell);
+    jetbrains.mps.openapi.editor.cells.EditorCell focusPolicyCell = FocusPolicyUtil.findCellToSelectDueToFocusPolicy(cell);
     jetbrains.mps.openapi.editor.cells.EditorCell toSelect;
     if (focusPolicyCell == null || (focusPolicyCell == cell && !FocusPolicyUtil.hasFocusPolicy(focusPolicyCell))) {
       toSelect = CellFinderUtil.findChildByManyFinders(cell, CellFinders.FIRST_ERROR, CellFinders.FIRST_EDITABLE);
       if (toSelect == null) {
-        toSelect = CellFinderUtil.findChild(cell, CellFinders.FIRST_SELECTABLE_LEAF);
+        toSelect = CellFinderUtil.findFirstSelectableLeaf(cell);
       }
     } else {
       toSelect = focusPolicyCell;
@@ -3083,7 +3083,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (getSelectedNode() == null) {
       EditorCell lastSelectedNodeCell = findNodeCell(lastSelectedNode);
       if (lastSelectedNodeCell != null) {
-        EditorCell child = CellFinderUtil.findChild(lastSelectedNodeCell, CellFinders.FIRST_SELECTABLE_LEAF);
+        jetbrains.mps.openapi.editor.cells.EditorCell child = CellFinderUtil.findFirstSelectableLeaf(lastSelectedNodeCell);
         if (child != null) {
           changeSelection(child);
         }
