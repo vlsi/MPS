@@ -15,7 +15,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.Language;
-import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import java.util.List;
 
 /**
@@ -60,7 +60,7 @@ import java.util.List;
     SNode conceptFromModelUtil = SModelUtil.findConceptDeclaration(conceptFQName, scope);
     String languageFqName = NameUtil.namespaceFromConceptFQName(conceptFQName);
     String conceptName = NameUtil.shortNameFromLongName(conceptFQName);
-    Language language = scope.getLanguage(new jetbrains.mps.project.structure.modules.ModuleReference(languageFqName));
+    Language language = scope.getLanguage(new ModuleReference(languageFqName));
     SNode conceptFromScope = null;
     if (language != null) {
       conceptFromScope = language.findConceptDeclaration(conceptName);
