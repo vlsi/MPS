@@ -1259,6 +1259,13 @@
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="abstract node reference expression" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="597763930871270009">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="reference" />
+      <property name="name" nameId="tpck.1169194664001" value="ChildNodeRefExpression" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="childNode" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="3575813534625140284" resolveInfo="AbstractNodeRefExpression" />
+    </node>
   </roots>
   <root id="1138055754698">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1138405853777">
@@ -2375,5 +2382,19 @@
     </node>
   </root>
   <root id="3575813534625140284" />
+  <root id="597763930871270009">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="597763930871272016">
+      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
+      <property name="role" nameId="tpce.1071599776563" value="targetNode" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="597763930871272014">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="parent" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="3575813534625140284" resolveInfo="AbstractNodeRefExpression" />
+    </node>
+  </root>
 </model>
 
