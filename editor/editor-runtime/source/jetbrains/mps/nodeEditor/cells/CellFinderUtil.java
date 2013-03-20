@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.openapi.editor.cells.*;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.util.AndCondition;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -30,7 +31,8 @@ public class CellFinderUtil {
   private CellFinderUtil() {
   }
 
-  public static jetbrains.mps.openapi.editor.cells.EditorCell_Collection findParent(@NotNull jetbrains.mps.openapi.editor.cells.EditorCell cell, @NotNull Condition<jetbrains.mps.openapi.editor.cells.EditorCell_Collection> condition) {
+  public static jetbrains.mps.openapi.editor.cells.EditorCell_Collection findParent(@NotNull EditorCell cell, @NotNull Condition<jetbrains.mps.openapi.editor.cells.EditorCell_Collection> condition) {
+
 
     if (cell instanceof jetbrains.mps.openapi.editor.cells.EditorCell_Collection && condition.met(((jetbrains.mps.openapi.editor.cells.EditorCell_Collection) cell))) {
       return ((jetbrains.mps.openapi.editor.cells.EditorCell_Collection) cell);
@@ -44,12 +46,12 @@ public class CellFinderUtil {
     return null;
   }
 
-  public static jetbrains.mps.openapi.editor.cells.EditorCell findChildByCondition(@NotNull jetbrains.mps.openapi.editor.cells.EditorCell cell, @NotNull Condition<jetbrains.mps.openapi.editor.cells.EditorCell> condition, boolean forward, boolean includeThis) {
+  public static EditorCell findChildByCondition(@NotNull EditorCell cell, @NotNull Condition<EditorCell> condition, boolean forward, boolean includeThis) {
     if (includeThis && condition.met(cell)) {
       return cell;
     }
 
-    for (jetbrains.mps.openapi.editor.cells.EditorCell current : new DfsTraverser(cell, forward, true)) {
+    for (EditorCell current : new DfsTraverser(cell, forward, true)) {
       if (condition.met(current)) {
         return current;
       }
@@ -57,31 +59,32 @@ public class CellFinderUtil {
     return null;
   }
 
-  public static jetbrains.mps.openapi.editor.cells.EditorCell findChildByCondition(
-      jetbrains.mps.openapi.editor.cells.EditorCell cell, Condition<jetbrains.mps.openapi.editor.cells.EditorCell> condition, boolean forward) {
+  public static <C extends EditorCell> EditorCell findChildByCondition(@NotNull EditorCell cell, @NotNull final Condition<EditorCell> condition, final Class<C> clazz, boolean forward, boolean includeThis) {
+    return findChildByCondition(cell, new AndCondition<EditorCell>(condition, new ByClassCondition(clazz)), forward, includeThis);
+  }
+
+  public static <C extends EditorCell> EditorCell findChildByCondition(@NotNull EditorCell cell, @NotNull final Condition<EditorCell> condition, final Class<C> clazz, boolean forward) {
+    return findChildByCondition(cell, condition, clazz, forward);
+  }
+
+  public static EditorCell findChildByCondition(
+      EditorCell cell, Condition<EditorCell> condition, boolean forward) {
     return findChildByCondition(cell, condition, forward, false);
   }
 
-  public static <C extends jetbrains.mps.openapi.editor.cells.EditorCell> C findChildByClass(jetbrains.mps.openapi.editor.cells.EditorCell cell, final Class<C> clazz, boolean forward, boolean includeThis) {
-    Condition<jetbrains.mps.openapi.editor.cells.EditorCell> condition = new Condition<jetbrains.mps.openapi.editor.cells.EditorCell>() {
-      @Override
-      public boolean met(jetbrains.mps.openapi.editor.cells.EditorCell object) {
-        return clazz.isInstance(object);
-      }
-    };
-
-    return ((C) findChildByCondition(cell, condition, forward, includeThis));
+  public static <C extends EditorCell> C findChildByClass(EditorCell cell, final Class<C> clazz, boolean forward, boolean includeThis) {
+        return ((C) findChildByCondition(cell, new ByClassCondition(clazz), forward, includeThis));
   }
 
-  public static <C extends jetbrains.mps.openapi.editor.cells.EditorCell> C findChildByClass(jetbrains.mps.openapi.editor.cells.EditorCell cell, final Class<C> clazz, boolean forward) {
+  public static <C extends EditorCell> C findChildByClass(EditorCell cell, final Class<C> clazz, boolean forward) {
     return findChildByClass(cell, clazz, forward, false);
   }
 
 
-  public static jetbrains.mps.openapi.editor.cells.EditorCell findChildById(jetbrains.mps.openapi.editor.cells.EditorCell cell, final SNode node, final String cellId, boolean includeThis) {
-    Condition<jetbrains.mps.openapi.editor.cells.EditorCell> condition = new Condition<jetbrains.mps.openapi.editor.cells.EditorCell>() {
+  public static EditorCell findChildById(EditorCell cell, final SNode node, final String cellId, boolean includeThis) {
+    Condition<EditorCell> condition = new Condition<EditorCell>() {
       @Override
-      public boolean met(jetbrains.mps.openapi.editor.cells.EditorCell object) {
+      public boolean met(EditorCell object) {
         return object.getSNode() == node && cellId.equals(object.getCellId());
       }
     };
@@ -89,16 +92,77 @@ public class CellFinderUtil {
     return findChildByCondition(cell, condition, true, includeThis);
   }
 
-  public static jetbrains.mps.openapi.editor.cells.EditorCell findChildById(jetbrains.mps.openapi.editor.cells.EditorCell cell, final SNode node, final String cellId) {
+  public static EditorCell findChildById(EditorCell cell, final SNode node, final String cellId) {
     return findChildById(cell, node, cellId, false);
   }
 
-  public static <C extends jetbrains.mps.openapi.editor.cells.EditorCell> C findChild(jetbrains.mps.openapi.editor.cells.EditorCell cell, CellFinder<C> finder, boolean includeThis) {
+  private static EditorCell_Label findEditable(EditorCell cell, boolean forward, boolean includeThis){
+    return ((EditorCell_Label) findChildByCondition(cell, CellConditions.EDITABLE, EditorCell_Label.class, forward, includeThis));
+  }
+
+  public static EditorCell_Label findFirstEditable(EditorCell cell, boolean includeThis){
+    return findEditable(cell, true, includeThis);
+  }
+
+  public static EditorCell_Label findFirstEditable(EditorCell cell){
+    return findFirstEditable(cell, false);
+  }
+
+  public static EditorCell_Label findLastEditable(EditorCell cell, boolean includeThis){
+    return findEditable(cell, false, includeThis);
+  }
+
+  public static EditorCell_Label findLastEditable(EditorCell cell){
+    return findLastEditable(cell, false);
+  }
+
+  private static EditorCell_Label findError(EditorCell cell, boolean forward, boolean includeThis){
+    return ((EditorCell_Label) findChildByCondition(cell, CellConditions.ERROR_CONDITION, EditorCell_Label.class, forward, includeThis));
+  }
+
+  public static EditorCell_Label findFirstError(EditorCell cell, boolean includeThis){
+    return findError(cell, true, includeThis);
+  }
+
+  public static EditorCell_Label findFirstError(EditorCell cell){
+    return findFirstError(cell, false);
+  }
+
+  public static EditorCell_Label findLastError(EditorCell cell, boolean includeThis){
+    return findError(cell, false, includeThis);
+  }
+
+  public static EditorCell_Label findLastError(EditorCell cell){
+    return findLastError(cell, false);
+  }
+
+  private static EditorCell findSelectedLeaf(EditorCell cell, boolean forward, boolean includeThis){
+    return findChildByCondition(cell, jetbrains.mps.openapi.editor.cells.CellConditions.SELECTABLE_lEAF, forward, includeThis);
+  }
+
+  public static EditorCell findFirstSelectedLeaf(EditorCell cell, boolean includeThis){
+    return findSelectedLeaf(cell, true, includeThis);
+  }
+
+  public static EditorCell findFirstSelectedLeaf(EditorCell cell){
+    return findFirstSelectedLeaf(cell, false);
+  }
+
+  public static EditorCell findLastSelectedLeaf(EditorCell cell, boolean includeThis){
+    return findSelectedLeaf(cell, false, includeThis);
+  }
+
+  public static EditorCell findLastSelectedLeaf(EditorCell cell){
+    return findLastSelectedLeaf(cell, false);
+  }
+
+
+  public static <C extends EditorCell> C findChild(EditorCell cell, CellFinder<C> finder, boolean includeThis) {
     if (includeThis && met(cell, finder)) {
       return (C) cell;
     }
 
-    for (jetbrains.mps.openapi.editor.cells.EditorCell current : new DfsTraverser(cell, finder.isFirstChild(), true)) {
+    for (EditorCell current : new DfsTraverser(cell, finder.isFirstChild(), true)) {
       if (met(current, finder)) {
         return ((C) current);
       }
@@ -106,17 +170,17 @@ public class CellFinderUtil {
     return null;
   }
 
-  private static <C extends jetbrains.mps.openapi.editor.cells.EditorCell> boolean met(jetbrains.mps.openapi.editor.cells.EditorCell cell, CellFinder<C> finder) {
+  private static <C extends EditorCell> boolean met(EditorCell cell, CellFinder<C> finder) {
     return finder.getCellClass().isInstance(cell) && finder.isSuitable(((C) cell));
   }
 
-  public static <C extends jetbrains.mps.openapi.editor.cells.EditorCell> C findChild(jetbrains.mps.openapi.editor.cells.EditorCell cell, CellFinder<C> finder) {
+  public static <C extends EditorCell> C findChild(EditorCell cell, CellFinder<C> finder) {
     return findChild(cell, finder, false);
   }
 
-  public static jetbrains.mps.openapi.editor.cells.EditorCell findChildByManyFinders(jetbrains.mps.openapi.editor.cells.EditorCell cell, boolean includeThis, CellFinder<? extends jetbrains.mps.openapi.editor.cells.EditorCell>... finders) {
-    for (CellFinder<? extends jetbrains.mps.openapi.editor.cells.EditorCell> finder : finders) {
-      jetbrains.mps.openapi.editor.cells.EditorCell result = findChild(cell, finder, includeThis);
+  public static EditorCell findChildByManyFinders(EditorCell cell, boolean includeThis, CellFinder<? extends EditorCell>... finders) {
+    for (CellFinder<? extends EditorCell> finder : finders) {
+      EditorCell result = findChild(cell, finder, includeThis);
       if (result != null) {
         return result;
       }
@@ -125,8 +189,22 @@ public class CellFinderUtil {
   }
 
 
-  public static jetbrains.mps.openapi.editor.cells.EditorCell findChildByManyFinders(
-      jetbrains.mps.openapi.editor.cells.EditorCell cell, CellFinder<? extends EditorCell>... finders) {
+  public static EditorCell findChildByManyFinders(
+      EditorCell cell, CellFinder<? extends EditorCell>... finders) {
     return findChildByManyFinders(cell, false, finders);
+  }
+
+
+  private static class ByClassCondition implements Condition<EditorCell>{
+    private Class myClass;
+
+    public ByClassCondition(Class clazz) {
+      myClass = clazz;
+    }
+
+    @Override
+    public boolean met(EditorCell cell) {
+      return myClass.isInstance(cell);
+    }
   }
 }
