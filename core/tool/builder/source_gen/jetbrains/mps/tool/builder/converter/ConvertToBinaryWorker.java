@@ -4,6 +4,7 @@ package jetbrains.mps.tool.builder.converter;
 
 import java.util.Map;
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.persistence.MPSPersistence;
 import java.io.IOException;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
@@ -18,6 +19,8 @@ public class ConvertToBinaryWorker {
   }
 
   public void convert(Map<String, String> map) {
+    MPSCore.getInstance().init();
+    MPSPersistence.getInstance().init();
     MPSCore.getInstance().setMergeDriverMode(true);
     System.setProperty("mps.playRefactorings", "false");
     try {
@@ -26,6 +29,9 @@ public class ConvertToBinaryWorker {
       }
     } catch (IOException ex) {
       throw new RuntimeException(ex);
+    } finally {
+      MPSPersistence.getInstance().dispose();
+      MPSCore.getInstance().dispose();
     }
   }
 
