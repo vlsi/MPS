@@ -34,6 +34,7 @@ import jetbrains.mps.nodeEditor.EditorComponent.RebuildListener;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.EditorMessageIconRenderer;
 import jetbrains.mps.nodeEditor.EditorMessageIconRenderer.IconRendererType;
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -542,8 +543,8 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
   }
 
   public int getIconCoordinate(EditorMessageIconRenderer renderer) {
-    EditorCell anchorCell = getAnchorCell(renderer);
-    if (anchorCell == null || anchorCell.isUnderFolded()) {
+    jetbrains.mps.openapi.editor.cells.EditorCell anchorCell = getAnchorCell(renderer);
+    if (anchorCell == null || APICellAdapter.isUnderFolded(anchorCell)) {
       // no anchorCell 
       return -1;
     }
@@ -554,7 +555,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     return anchorCell.getY() + anchorCell.getHeight() / 2 - renderer.getIcon().getIconHeight() / 2;
   }
 
-  private EditorCell getAnchorCell(EditorMessageIconRenderer renderer) {
+  private jetbrains.mps.openapi.editor.cells.EditorCell getAnchorCell(EditorMessageIconRenderer renderer) {
     SNode rendererNode = renderer.getNode();
     EditorCell nodeCell = myEditorComponent.findNodeCell(rendererNode);
     if (nodeCell == null) {
@@ -756,8 +757,8 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
       if (renderer1.getType() != renderer2.getType()) {
         return renderer1.getType().getWeight() - renderer2.getType().getWeight();
       }
-      EditorCell anchorCell1 = getAnchorCell(renderer1);
-      EditorCell anchorCell2 = getAnchorCell(renderer2);
+      jetbrains.mps.openapi.editor.cells.EditorCell anchorCell1 = getAnchorCell(renderer1);
+      jetbrains.mps.openapi.editor.cells.EditorCell anchorCell2 = getAnchorCell(renderer2);
       // [++] Debugging assertion
       if (anchorCell1 == anchorCell2 && renderer1 instanceof EditorMessage && renderer2 instanceof EditorMessage) {
         EditorMessage editorMessage1 = (EditorMessage) renderer1;

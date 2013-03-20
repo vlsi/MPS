@@ -29,7 +29,7 @@ public abstract class BreakpointIconRenderrerEx<B> implements EditorMessageIconR
   }
 
   @Override
-  public EditorCell getAnchorCell(EditorCell cell) {
+  public jetbrains.mps.openapi.editor.cells.EditorCell getAnchorCell(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
     return BreakpointIconRenderrerEx.getBreakpointIconAnchorCell(cell);
   }
 
@@ -48,10 +48,10 @@ public abstract class BreakpointIconRenderrerEx<B> implements EditorMessageIconR
     return null;
   }
 
-  public static EditorCell getBreakpointIconAnchorCell(EditorCell bigCell) {
+  public static jetbrains.mps.openapi.editor.cells.EditorCell getBreakpointIconAnchorCell(jetbrains.mps.openapi.editor.cells.EditorCell bigCell) {
     if (bigCell instanceof EditorCell_Collection) {
       EditorCell_Collection collection = (EditorCell_Collection) bigCell;
-      return CellFinderUtil.findChild(collection, CellFinders.byClass(EditorCell_Label.class, true));
+      return CellFinderUtil.findChildByClass(collection, EditorCell_Label.class, true);
     }
     return bigCell;
   }

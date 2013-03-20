@@ -117,4 +117,11 @@ public class APICellAdapter {
   public static boolean isLastPositionInBigCell(EditorCell cell) {
     return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).isLastPositionInBigCell();
   }
+
+  public static boolean isUnderFolded(EditorCell cell) {
+    for (EditorCell_Collection parent = cell.getParent(); parent != null; parent = parent.getParent()) {
+      if (parent.isFolded()) return true;
+    }
+    return false;
+  }
 }

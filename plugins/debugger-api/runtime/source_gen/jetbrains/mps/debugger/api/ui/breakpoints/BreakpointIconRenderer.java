@@ -11,7 +11,7 @@ import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
 import com.intellij.ide.DataManager;
 import jetbrains.mps.util.StringUtil;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import javax.swing.JPopupMenu;
 import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
