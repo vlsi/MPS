@@ -25,6 +25,10 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.kernel.model.TempModelCreator;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SModelInternal;
 
 public class ConsoleTool extends BaseProjectTool {
   private JPanel myMainComponent;
@@ -133,6 +137,9 @@ public class ConsoleTool extends BaseProjectTool {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         ConsoleTool.this.myModel = TempModelCreator.createTempModel();
+        for (Language lang : CollectionSequence.fromCollection(ModuleRepositoryFacade.getInstance().getAllModules(Language.class))) {
+          ((SModelInternal) myModel).addLanguage(lang.getModuleReference());
+        }
       }
     });
   }
