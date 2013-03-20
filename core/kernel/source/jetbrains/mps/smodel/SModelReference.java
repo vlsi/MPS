@@ -173,11 +173,6 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
       modelId = new ModelNameSModelId(modelIDString);
     }
 
-    // miration, do we need it anymore?
-    SModelId nid = StubMigrationHelper.convertModelId(modelId, false);
-    if (nid != null) modelId = nid;
-    // end of migration
-
     String moduleName = null;
     String modelName = null;
     if (presentationPart != null) {
@@ -256,21 +251,5 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
     // TODO add
     //if (myModuleReference != null ? !myModuleReference.equals(that.myModuleReference) : that.myModuleReference != null) return true;
     return false;
-  }
-
-  public static SModelReference fromPath(String path) {
-    int index = Math.max(path.lastIndexOf("/"), path.lastIndexOf("\\"));
-    String shortName = index == -1 ? path : path.substring(index + 1);
-    index = shortName.lastIndexOf('.');
-    String modelName = index >= 0 ? shortName.substring(0, index) : shortName;
-    String stereotype;
-    index = modelName.indexOf('@');
-    if (index >= 0) {
-      stereotype = modelName.substring(index + 1);
-      modelName = modelName.substring(0, index);
-    } else {
-      stereotype = "";
-    }
-    return new SModelReference(modelName, stereotype);
   }
 }

@@ -106,7 +106,7 @@ public abstract class BaseSModelDescriptor extends SModelBase implements jetbrai
   }
 
   /**
-   * use getModelReference()
+   * use getReference()
    */
   @Override
   @Deprecated

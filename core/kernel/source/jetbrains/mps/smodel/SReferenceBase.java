@@ -13,13 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -32,30 +31,12 @@ import java.io.StringWriter;
  */
 abstract class SReferenceBase extends SReference {
 
-  public static boolean ourStubMode = true;
-
   protected volatile SNode myImmatureTargetNode;            // young
   private volatile SModelReference myTargetModelReference;  // mature
 
   protected SReferenceBase(String role, SNode sourceNode, @Nullable SModelReference targetModelReference,
       @Nullable SNode immatureTargetNode) {
     super(InternUtil.intern(role), sourceNode);
-
-    if (ourStubMode) {
-      if (targetModelReference != null) {
-        try {
-          SModelId id = targetModelReference.getModelId();
-          SModelId nid = StubMigrationHelper.convertModelId(id, false);
-          if (nid != null) {
-            String tms = SModelStereotype.getStereotype(targetModelReference.getModelName());
-            String tml = SModelStereotype.withoutStereotype(targetModelReference.getModelName());
-            targetModelReference = new jetbrains.mps.smodel.SModelReference(new SModelFqName(tml, tms), nid);
-          }
-        } catch (Throwable t) {
-        }
-      }
-    }
-
 
     // if ref is 'mature' then 'targetModelRefernce' is either NOT NULL, or it is broken external reference, or it is dynamic reference
     myTargetModelReference = targetModelReference;
@@ -79,7 +60,7 @@ abstract class SReferenceBase extends SReference {
   @Override
   public SModelReference getTargetSModelReference() {
     SNode immatureNode = myImmatureTargetNode;
-    if (immatureNode == null || makeIndirect()) return  myTargetModelReference;
+    if (immatureNode == null || makeIndirect()) return myTargetModelReference;
     SModel model = immatureNode.getModel();
     return model == null ? null : model.getReference();
   }

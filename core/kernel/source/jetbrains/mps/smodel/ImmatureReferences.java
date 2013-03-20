@@ -13,9 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.components.CoreComponent;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.Map.Entry;
 import java.util.NoSuchElementException;
@@ -31,7 +34,7 @@ public class ImmatureReferences implements CoreComponent {
   private static final Object PRESENT = new Object();
 
   private static ImmatureReferences INSTANCE;
-  private static final SModelReference VIRTUAL_REF = new jetbrains.mps.smodel.SModelReference(new SModelFqName("$ImmatureRefsModelRef$", ""), jetbrains.mps.smodel.SModelId.generate());
+  private final SModelReference myVirtualRef;
 
   static ImmatureReferences getInstance() {
     return INSTANCE;
@@ -54,6 +57,7 @@ public class ImmatureReferences implements CoreComponent {
     for (int i = 0; i < POOL_SIZE; i++) {
       myReferencesSetPool.add(new ConcurrentHashMap<SReferenceBase, Object>());
     }
+    myVirtualRef = PersistenceFacade.getInstance().createModelReference(null, SModelId.generate(), "$ImmatureRefsModelRef$");
   }
 
   void enable() {
@@ -96,7 +100,7 @@ public class ImmatureReferences implements CoreComponent {
   void add(SReferenceBase ref) {
     if (myDisabled) return;
     SModel model = ref.getSourceNode().getModel();
-    SModelReference modelRef = model == null ? VIRTUAL_REF : model.getReference();
+    SModelReference modelRef = model == null ? myVirtualRef : model.getReference();
     ConcurrentMap<SReferenceBase, Object> refSet = getOrCreateRefSet(modelRef);
     refSet.put(ref, PRESENT);
   }

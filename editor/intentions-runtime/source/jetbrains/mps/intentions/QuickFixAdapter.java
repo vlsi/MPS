@@ -19,19 +19,20 @@ import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelOperations;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
-public class QuickFixAdapter extends BaseIntention  {
+public class QuickFixAdapter extends BaseIntention {
   private QuickFix_Runtime myQuickFix;
   private boolean myIsError;
+
   public QuickFixAdapter(QuickFix_Runtime quickFix, boolean isError) {
     myQuickFix = quickFix;
     myIsError = isError;
@@ -74,7 +75,7 @@ public class QuickFixAdapter extends BaseIntention  {
     if (selectedCell != null && jetbrains.mps.util.SNodeOperations.isAncestor(node, selectedCell.getSNode())) {
       caretX = selectedCell.getCaretX();
       caretY = selectedCell.getBaseline();
-      restoreCaretPosition= true;
+      restoreCaretPosition = true;
     }
     myQuickFix.execute(node);
     if (restoreCaretPosition) {
@@ -103,14 +104,14 @@ public class QuickFixAdapter extends BaseIntention  {
   @Override
   public SNode getNodeByIntention() {
     String classFQName = myQuickFix.getClass().getName();
-    SModelReference reference = jetbrains.mps.smodel.SModelReference.fromString(NameUtil.namespaceFromLongName(classFQName));
+    SModelReference reference = PersistenceFacade.getInstance().createModelReference(NameUtil.namespaceFromLongName(classFQName));
     SModel sModelDescriptor = SModelRepository.getInstance().getModelDescriptor(reference);
     if (sModelDescriptor != null) {
       SModel model = sModelDescriptor;
       if (model != null) {
         String shortName = NameUtil.shortNameFromLongName(classFQName);
         String rootName = shortName.substring(0, shortName.length() - "_QuickFix".length());
-        return SModelOperations.getRootByName(model,rootName);
+        return SModelOperations.getRootByName(model, rootName);
       }
     }
     return null;

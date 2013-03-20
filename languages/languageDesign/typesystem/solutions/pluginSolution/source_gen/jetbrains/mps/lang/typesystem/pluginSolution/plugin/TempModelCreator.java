@@ -18,8 +18,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelFqName;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SNodeUndoableAction;
 
@@ -86,12 +85,12 @@ public class TempModelCreator {
 
     private static class AuxModelDescriptor extends BaseSpecialModelDescriptor {
       public AuxModelDescriptor() {
-        super(new SModelReference(new SModelFqName("$AuxModel$", ""), SModelId.generate()));
+        super(PersistenceFacade.getInstance().createModelReference(null, SModelId.generate(), "$AuxModel$"));
       }
 
       @Override
       protected jetbrains.mps.smodel.SModel createModel() {
-        return new jetbrains.mps.smodel.SModel(getSModelReference()) {
+        return new jetbrains.mps.smodel.SModel(getReference()) {
           protected void performUndoableAction(SNodeUndoableAction action) {
           }
 

@@ -13,20 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public class ProjectModels {
   private static long ourProjectModelDescriptorCount = 0;
 
   @NotNull
   public static BaseSModelDescriptor createDescriptorFor(boolean canFireEvents) {
-    SModelFqName fqName = new SModelFqName("projectModel" + ourProjectModelDescriptorCount++, SModelStereotype.INTERNAL);
-
-    SModelReference ref = new jetbrains.mps.smodel.SModelReference(fqName, jetbrains.mps.smodel.SModelId.generate());
+    String modelName = ("projectModel" + ourProjectModelDescriptorCount++) + "@" + SModelStereotype.INTERNAL;
+    SModelReference ref = PersistenceFacade.getInstance().createModelReference(null, SModelId.generate(), modelName);
     return new MyBaseSModelDescriptor(ref, canFireEvents);
   }
 

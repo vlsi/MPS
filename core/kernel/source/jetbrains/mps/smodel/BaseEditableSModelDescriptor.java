@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
@@ -26,7 +26,9 @@ import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 
 /**
@@ -90,14 +92,14 @@ public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorW
 
   public void resolveDiskConflict() {
     LOG.warning("Model=" + getReference().getModelName() + ", file ts=" + getSource().getTimestamp() + ", model ts=" + getSourceTimestamp(),
-      new Throwable());  // more information
+        new Throwable());  // more information
     DiskMemoryConflictResolver.getResolver().resolveDiskMemoryConflict(getSource(), this, this);
   }
 
   public boolean checkAndResolveConflictOnSave() {
     if (needsReloading()) {
       LOG.warning("Model file " + getReference().getModelName() + " was modified externally!\n" +
-        "You might want to turn \"Synchronize files on frame activation/deactivation\" option on to avoid conflicts.");
+          "You might want to turn \"Synchronize files on frame activation/deactivation\" option on to avoid conflicts.");
       resolveDiskConflict();
       return false;
     }
@@ -160,7 +162,10 @@ public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorW
     String oldFqName = getReference().getModelName();
     fireBeforeModelRenamed(new SModelRenamedEvent(this, oldFqName, newModelName));
 
-    SModelReference newModelReference = new jetbrains.mps.smodel.SModelReference(SModelFqName.fromString(newModelName), getReference().getModelId());
+    // TODO update SModelId (if it contains modelName)
+    //if(getReference().getModelId().getModelName() != null) { }
+    SModelReference newModelReference = PersistenceFacade.getInstance().createModelReference(getReference().getModuleReference(),
+        getReference().getModelId(), newModelName);
     changeModelReference(newModelReference);
 
     if (!changeFile) {
