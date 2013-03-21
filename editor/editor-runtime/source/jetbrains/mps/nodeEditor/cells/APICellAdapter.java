@@ -124,4 +124,13 @@ public class APICellAdapter {
     }
     return false;
   }
+
+  public static boolean isAncestor(@NotNull EditorCell ancestor, @NotNull EditorCell child) {
+    EditorCell_Collection parent = child.getParent();
+    while (parent != null) {
+      if (parent == ancestor) return true;
+      parent = parent.getParent();
+    }
+    return false;
+  }
 }

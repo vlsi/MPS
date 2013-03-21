@@ -21,12 +21,11 @@ import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.SNodeEditorUtil;
-import jetbrains.mps.nodeEditor.cells.CellFinders;
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
-import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -74,7 +73,7 @@ public class CellAction_SideTransform extends AbstractCellAction {
         defAnchorCell = nodeMainCell;
       }
 
-      if (defAnchorCell == selectedCell || CellTraversalUtil.isAncestor(defAnchorCell, selectedCell)) {
+      if (defAnchorCell == selectedCell || APICellAdapter.isAncestor(defAnchorCell, selectedCell)) {
         anchorCell = defAnchorCell;
       }
     }
