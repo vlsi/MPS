@@ -28,7 +28,7 @@ import java.io.FileNotFoundException;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.ui.TestDialog;
-import jetbrains.mps.extapi.model.SReloadableModelBase;
+import jetbrains.mps.extapi.model.ReloadableSModelBase;
 import javax.swing.SwingUtilities;
 import java.lang.reflect.InvocationTargetException;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -245,7 +245,7 @@ public class DiskMemoryConflictsTest {
       ModelAccess.instance().runWriteInEDT(new Runnable() {
         @Override
         public void run() {
-          ((SReloadableModelBase) myModel).reloadFromDiskSafe();
+          ((ReloadableSModelBase) myModel).reloadFromDiskSafe();
         }
       });
     }

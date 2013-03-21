@@ -13,7 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;
+
+import jetbrains.mps.extapi.model.EditableSModelBase;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.model.SModelData;
@@ -37,14 +40,13 @@ import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.RefactoringsPersistence;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 
 import java.util.Map;
 
 import static jetbrains.mps.smodel.DefaultSModel.InvalidDefaultSModel;
 
-public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implements GeneratableSModel, RefactorableSModelDescriptor, FastFindSupportProvider {
+public class DefaultSModelDescriptor extends EditableSModelBase implements GeneratableSModel, RefactorableSModelDescriptor, FastFindSupportProvider {
   private static final Logger LOG = Logger.getLogger(DefaultSModelDescriptor.class);
   public static String FAST_FIND_ID = "regular";
 

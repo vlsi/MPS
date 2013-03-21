@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
-
-import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.PairMap;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
 public class UnregisteredNodes {
   private static final Logger LOG = Logger.getLogger(UnregisteredNodes.class);
@@ -89,16 +89,6 @@ public class UnregisteredNodes {
     }
     if (showError) {
       LOG.error(new IllegalStateException("attempt to put another node with same key: " + reference + "#" + id));
-    }
-  }
-
-  /**
-   * We need this method to make generation economical with memory during generation
-   * Do not remove it
-   */
-  void clear(SModelReference reference) {
-    synchronized (myLock) {
-      myMap.clear(reference);
     }
   }
 }

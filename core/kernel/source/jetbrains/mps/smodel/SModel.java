@@ -16,9 +16,9 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.extapi.model.ReloadableSModelBase;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
-import jetbrains.mps.extapi.model.SReloadableModelBase;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
@@ -1178,7 +1178,7 @@ public class SModel implements SModelData {
   /**
    * This is for migration purposes, until we get rid of SModel class
    */
-  public static class FakeModelDescriptor extends SReloadableModelBase implements org.jetbrains.mps.openapi.model.SModel {
+  public static class FakeModelDescriptor extends ReloadableSModelBase implements org.jetbrains.mps.openapi.model.SModel {
     private SModel myModel;
 
     public FakeModelDescriptor(@NotNull SModel md) {

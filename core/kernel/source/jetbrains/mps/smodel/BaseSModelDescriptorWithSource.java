@@ -15,14 +15,14 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.extapi.model.SReloadableModelBase;
+import jetbrains.mps.extapi.model.ReloadableSModelBase;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
 
-public abstract class BaseSModelDescriptorWithSource extends SReloadableModelBase {
+public abstract class BaseSModelDescriptorWithSource extends ReloadableSModelBase {
   private DataSourceListener mySourceListener = new DataSourceListener() {
     @Override
     public void changed(DataSource source) {

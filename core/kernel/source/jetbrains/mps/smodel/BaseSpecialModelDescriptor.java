@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.extapi.model.SReloadableModelBase;
+import jetbrains.mps.extapi.model.ReloadableSModelBase;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -25,7 +25,7 @@ import org.jetbrains.mps.openapi.persistence.NullDataSource;
  * @deprecated use {@link jetbrains.mps.extapi.model.SModelBase}
  */
 @Deprecated
-public abstract class BaseSpecialModelDescriptor extends SReloadableModelBase {
+public abstract class BaseSpecialModelDescriptor extends ReloadableSModelBase {
   protected volatile jetbrains.mps.smodel.SModel mySModel;
 
   protected BaseSpecialModelDescriptor(@NotNull SModelReference modelReference) {

@@ -28,7 +28,7 @@
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.TestMain" />
     <classNode dependClassName="jetbrains.mps.extapi.model.EditableSModel" />
-    <classNode dependClassName="jetbrains.mps.extapi.model.SReloadableModelBase" />
+    <classNode dependClassName="jetbrains.mps.extapi.model.ReloadableSModelBase" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.project.SModuleOperations" />

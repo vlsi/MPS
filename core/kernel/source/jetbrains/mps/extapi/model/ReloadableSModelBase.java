@@ -23,11 +23,11 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 /**
  * evgeny, 3/21/13
  */
-public abstract class SReloadableModelBase extends SModelBase {
+public abstract class ReloadableSModelBase extends SModelBase {
 
   private long mySourceTimestamp = -1;
 
-  protected SReloadableModelBase(@NotNull SModelReference modelReference, @NotNull DataSource source) {
+  protected ReloadableSModelBase(@NotNull SModelReference modelReference, @NotNull DataSource source) {
     super(modelReference, source);
   }
 
