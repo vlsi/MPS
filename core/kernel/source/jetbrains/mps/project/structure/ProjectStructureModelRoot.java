@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project.structure;
 
+import jetbrains.mps.extapi.model.ReloadableSModelBase;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.extapi.persistence.ModelRootBase;
@@ -23,12 +24,10 @@ import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.stub.ProjectStructureBuilder;
-import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelFqName;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -37,6 +36,7 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
@@ -107,7 +107,7 @@ public class ProjectStructureModelRoot extends FileBasedModelRoot {
   }
 
 
-  public class ModuleFileSModel extends BaseSModelDescriptorWithSource {
+  public class ModuleFileSModel extends ReloadableSModelBase {
 
     private jetbrains.mps.smodel.SModel myModel;
 

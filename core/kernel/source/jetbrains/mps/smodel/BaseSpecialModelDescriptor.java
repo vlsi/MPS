@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.extapi.model.ReloadableSModelBase;
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -25,7 +25,7 @@ import org.jetbrains.mps.openapi.persistence.NullDataSource;
  * @deprecated use {@link jetbrains.mps.extapi.model.SModelBase}
  */
 @Deprecated
-public abstract class BaseSpecialModelDescriptor extends ReloadableSModelBase {
+public abstract class BaseSpecialModelDescriptor extends SModelBase {
   protected volatile jetbrains.mps.smodel.SModel mySModel;
 
   protected BaseSpecialModelDescriptor(@NotNull SModelReference modelReference) {
@@ -53,11 +53,6 @@ public abstract class BaseSpecialModelDescriptor extends ReloadableSModelBase {
   }
 
   protected abstract jetbrains.mps.smodel.SModel createModel();
-
-  @Override
-  public void reloadFromDiskSafe() {
-    throw new UnsupportedOperationException();
-  }
 
   @Override
   public void dispose() {

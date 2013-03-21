@@ -15,15 +15,26 @@
  */
 package jetbrains.mps.extapi.model;
 
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
+import org.jetbrains.mps.openapi.persistence.DataSourceListener;
 
 /**
  * evgeny, 3/21/13
  */
 public abstract class ReloadableSModelBase extends SModelBase {
+
+  private DataSourceListener mySourceListener = new DataSourceListener() {
+    @Override
+    public void changed(DataSource source) {
+      processChanged(new EmptyProgressMonitor());
+    }
+  };
 
   private long mySourceTimestamp = -1;
 
@@ -54,5 +65,46 @@ public abstract class ReloadableSModelBase extends SModelBase {
 
   public boolean needsReloading() {
     return isLoaded() && getSource().getTimestamp() != mySourceTimestamp;
+  }
+
+  @Override
+  public void attach() {
+    getSource().addListener(mySourceListener);
+    super.attach();
+  }
+
+  @Override
+  public void dispose() {
+    getSource().removeListener(mySourceListener);
+    super.dispose();
+    fireBeforeModelDisposed(this);
+    jetbrains.mps.smodel.SModel model = getCurrentModelInternal();
+    if (model != null) {
+      model.dispose();
+    }
+    clearListeners();
+  }
+
+  protected abstract jetbrains.mps.smodel.SModel getCurrentModelInternal();
+
+  protected synchronized void replaceModel(Runnable replacer) {
+    ModelAccess.assertLegalWrite();
+
+    final jetbrains.mps.smodel.SModel oldSModel = getCurrentModelInternal();
+
+    if (oldSModel != null) {
+      (oldSModel).setModelDescriptor(null);
+    }
+
+    replacer.run();
+
+    jetbrains.mps.smodel.SModel newModel = getCurrentModelInternal();
+    if (newModel != null) {
+      (newModel).setModelDescriptor(this);
+    }
+
+    notifyModelReplaced(oldSModel.getModelDescriptor());
+
+    MPSModuleRepository.getInstance().invalidateCaches();
   }
 }

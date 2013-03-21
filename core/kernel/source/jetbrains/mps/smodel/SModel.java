@@ -1178,7 +1178,7 @@ public class SModel implements SModelData {
   /**
    * This is for migration purposes, until we get rid of SModel class
    */
-  public static class FakeModelDescriptor extends ReloadableSModelBase implements org.jetbrains.mps.openapi.model.SModel {
+  public static class FakeModelDescriptor extends SModelBase implements org.jetbrains.mps.openapi.model.SModel {
     private SModel myModel;
 
     public FakeModelDescriptor(@NotNull SModel md) {
@@ -1258,11 +1258,6 @@ public class SModel implements SModelData {
     @Override
     public void dispose() {
       myModel.dispose();
-    }
-
-    @Override
-    public void reloadFromDiskSafe() {
-      throw new UnsupportedOperationException();
     }
   }
 }

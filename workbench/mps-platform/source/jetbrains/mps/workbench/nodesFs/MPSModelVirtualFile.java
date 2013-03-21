@@ -15,24 +15,20 @@
  */
 package jetbrains.mps.workbench.nodesFs;
 
-import com.intellij.openapi.vfs.JarFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
-import com.intellij.openapi.vfs.VirtualFileWithId;
 import com.intellij.testFramework.DummyFileIdGenerator;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.workbench.ModelUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -52,7 +48,8 @@ public class MPSModelVirtualFile extends VirtualFile {
 
   private String myName;
   private String myPath;
-  MPSModelVirtualFile (SModelReference modelReference) {
+
+  MPSModelVirtualFile(SModelReference modelReference) {
     myModelReference = modelReference;
     updateFields();
   }
@@ -61,7 +58,7 @@ public class MPSModelVirtualFile extends VirtualFile {
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        SModel model =  myModelReference.resolve(MPSModuleRepository.getInstance());
+        SModel model = myModelReference.resolve(MPSModuleRepository.getInstance());
         if (model == null) {
           LOG.error(new Throwable("Model resolve failed for SModelReference: " + myModelReference.toString()));
         }

@@ -19,7 +19,6 @@ import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
 import jetbrains.mps.smodel.DiskMemoryConflictResolver;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelRootUtil;
@@ -38,7 +37,7 @@ import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 /**
  * evgeny, 11/21/12
  */
-public abstract class EditableSModelBase extends BaseSModelDescriptorWithSource implements EditableSModel, EditableSModelDescriptor {
+public abstract class EditableSModelBase extends ReloadableSModelBase implements EditableSModel, EditableSModelDescriptor {
 
   private static final Logger LOG = Logger.getLogger(EditableSModelBase.class);
 
