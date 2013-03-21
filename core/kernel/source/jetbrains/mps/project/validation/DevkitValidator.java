@@ -16,7 +16,7 @@
 package jetbrains.mps.project.validation;
 
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
 import java.util.ArrayList;
@@ -39,19 +39,19 @@ public class DevkitValidator implements ModuleValidator {
       return errors;
     }
 
-    for (ModuleReference extDevkit : myModule.getModuleDescriptor().getExtendedDevkits()) {
+    for (SModuleReference extDevkit : myModule.getModuleDescriptor().getExtendedDevkits()) {
       if (MPSModuleRepository.getInstance().getModule(extDevkit) == null) {
-        errors.add("Can't find extended devkit: " + extDevkit.getModuleFqName());
+        errors.add("Can't find extended devkit: " + extDevkit.getModuleName());
       }
     }
-    for (ModuleReference expLang : myModule.getModuleDescriptor().getExportedLanguages()) {
+    for (SModuleReference expLang : myModule.getModuleDescriptor().getExportedLanguages()) {
       if (MPSModuleRepository.getInstance().getModule(expLang) == null) {
-        errors.add("Can't find exported language: " + expLang.getModuleFqName());
+        errors.add("Can't find exported language: " + expLang.getModuleName());
       }
     }
-    for (ModuleReference expSol : myModule.getModuleDescriptor().getExportedSolutions()) {
+    for (SModuleReference expSol : myModule.getModuleDescriptor().getExportedSolutions()) {
       if (MPSModuleRepository.getInstance().getModule(expSol) == null) {
-        errors.add("Can't find exported language: " + expSol.getModuleFqName());
+        errors.add("Can't find exported language: " + expSol.getModuleName());
       }
     }
     return errors;

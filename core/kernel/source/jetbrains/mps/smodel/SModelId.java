@@ -148,4 +148,28 @@ public abstract class SModelId implements org.jetbrains.mps.openapi.model.SModel
       return FOREIGN_PREFIX + myId;
     }
   }
+
+  public final static class ModelNameSModelId extends SModelId {
+    public static final String TYPE = "m";
+    private String myModelName;
+
+    public ModelNameSModelId(String modelName) {
+      super();
+      myModelName = modelName;
+    }
+
+    @Override
+    public String getModelName() {
+      return myModelName;
+    }
+
+    @Override
+    public String getType() {
+      return TYPE;
+    }
+
+    public String toString() {
+      return TYPE + ":" + myModelName;
+    }
+  }
 }

@@ -25,6 +25,7 @@ import jetbrains.mps.nodeEditor.cells.CellFinders;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.CellFinderUtil;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -60,7 +61,7 @@ public class CellAction_SideTransform extends AbstractCellAction {
       anchorCell = selectedCell;
     } else {
       EditorCell nodeMainCell = selectedCell.getContainingBigCell();
-      EditorCell defAnchorCell = nodeMainCell.findChild(CellFinders.byCondition(new Condition<EditorCell>() {
+      EditorCell defAnchorCell = CellFinderUtil.findChild(nodeMainCell, CellFinders.byCondition(new Condition<EditorCell>() {
         @Override
         public boolean met(EditorCell object) {
           return object.hasRightTransformAnchorTag(SideTransformTagUtils.getDefaultSideTransformTag()) && object.getSNode() == node;
@@ -76,11 +77,11 @@ public class CellAction_SideTransform extends AbstractCellAction {
       }
     }
 
-    if (side == CellSide.RIGHT && anchorCell != null && anchorCell.findChild(CellFinders.LAST_SELECTABLE_LEAF, true) != selectedCell) {
+    if (side == CellSide.RIGHT && anchorCell != null && CellFinderUtil.findChild(anchorCell, CellFinders.LAST_SELECTABLE_LEAF, true) != selectedCell) {
       return null;
     }
 
-    if (side == CellSide.LEFT && anchorCell != null && anchorCell.findChild(CellFinders.FIRST_SELECTABLE_LEAF, true) != selectedCell) {
+    if (side == CellSide.LEFT && anchorCell != null && CellFinderUtil.findChild(anchorCell, CellFinders.FIRST_SELECTABLE_LEAF, true) != selectedCell) {
       return null;
     }
 

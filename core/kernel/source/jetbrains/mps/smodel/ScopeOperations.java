@@ -13,14 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SearchScope;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,12 +61,12 @@ public class ScopeOperations {
   // remove after MPS 3.0
   @Deprecated
   public static SModel getModelDescriptor(SearchScope scope, SModelFqName fqName) {
-    return getModelDescriptor(scope, new jetbrains.mps.smodel.SModelReference(fqName, null));
+    return scope.resolve(PersistenceFacade.getInstance().createModelReference(fqName.getModelName()));
   }
 
   @Deprecated
   public static Language getLanguage(SearchScope scope, String fqName) {
-    return resolveModule(scope, new ModuleReference(fqName), Language.class);
+    return resolveModule(scope, new jetbrains.mps.project.structure.modules.ModuleReference(fqName), Language.class);
   }
 
   @Deprecated

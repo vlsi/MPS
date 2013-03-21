@@ -27,6 +27,7 @@ import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.nodeEditor.selection.SingularSelection;
 import jetbrains.mps.nodeEditor.selection.SingularSelection.SideSelectDirection;
+import jetbrains.mps.openapi.editor.cells.CellFinderUtil;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.smodel.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -148,7 +149,7 @@ public class NodeEditorActions {
         cell = (EditorCell) cell.getParent();
       }
       if (cell instanceof  EditorCell_Collection) {
-        return cell.findChild(myHome ? CellFinders.FIRST_SELECTABLE_LEAF : CellFinders.LAST_SELECTABLE_LEAF);
+        return CellFinderUtil.findChild(cell, myHome ? CellFinders.FIRST_SELECTABLE_LEAF : CellFinders.LAST_SELECTABLE_LEAF);
       }
       return cell;
     }
@@ -366,7 +367,7 @@ public class NodeEditorActions {
     int newY = y + height;
     jetbrains.mps.openapi.editor.cells.EditorCell target = editor.findCellWeak(caretX, newY);
     if (target == null) {
-      target = isDown ? editor.myRootCell.findChild(CellFinders.LAST_SELECTABLE_LEAF) : editor.myRootCell.findChild(CellFinders.FIRST_SELECTABLE_LEAF);
+      target = CellFinderUtil.findChild(editor.myRootCell, isDown ? CellFinders.LAST_SELECTABLE_LEAF : CellFinders.FIRST_SELECTABLE_LEAF);
       editor.changeSelection(target);
     } else {
       target.setCaretX(caretX);
@@ -467,9 +468,9 @@ public class NodeEditorActions {
 
     private jetbrains.mps.openapi.editor.cells.EditorCell getNextLeaf(EditorCell current) {
       if (mySide == CellSide.LEFT) {
-        return CellTraversalUtil.getPrevLeaf(current, CellConditions.SELECTABLE);
+        return CellTraversalUtil.getPrevLeaf(current, jetbrains.mps.openapi.editor.cells.CellConditions.SELECTABLE);
       } else {
-        return CellTraversalUtil.getNextLeaf(current, CellConditions.SELECTABLE);
+        return CellTraversalUtil.getNextLeaf(current, jetbrains.mps.openapi.editor.cells.CellConditions.SELECTABLE);
       }
     }
 

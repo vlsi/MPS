@@ -4,7 +4,7 @@ package jetbrains.mps.ide.ui.dialogs.properties.creators;
 
 import jetbrains.mps.util.Computable;
 import java.util.List;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -14,18 +14,18 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
 
-public class SolutionChooser implements Computable<List<ModuleReference>> {
+public class SolutionChooser implements Computable<List<SModuleReference>> {
   public SolutionChooser() {
   }
 
   @Override
-  public List<ModuleReference> compute() {
-    final Wrappers._T<List<ModuleReference>> solRefs = new Wrappers._T<List<ModuleReference>>();
+  public List<SModuleReference> compute() {
+    final Wrappers._T<List<SModuleReference>> solRefs = new Wrappers._T<List<SModuleReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         Iterable<SModule> modules = new FilteredGlobalScope().getModules();
-        solRefs.value = Sequence.fromIterable(modules).ofType(Solution.class).select(new ISelector<Solution, ModuleReference>() {
-          public ModuleReference select(Solution it) {
+        solRefs.value = Sequence.fromIterable(modules).ofType(Solution.class).select(new ISelector<Solution, SModuleReference>() {
+          public SModuleReference select(Solution it) {
             return it.getModuleReference();
           }
         }).toListSequence();

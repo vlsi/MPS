@@ -26,7 +26,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
-import jetbrains.mps.nodeEditor.cells.CellConditions;
+import jetbrains.mps.openapi.editor.cells.CellConditions;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.logging.Logger;
 

@@ -18,7 +18,7 @@ package jetbrains.mps.ide.ui.dialogs.properties.tables.models;
 import com.intellij.util.ui.ItemRemovable;
 import org.jetbrains.mps.openapi.ui.Modifiable;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.ide.ui.dialogs.properties.PropertiesBundle;
@@ -28,7 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class UsedLangsTableModel<T> extends AbstractTableModel implements ItemRemovable, Modifiable {
-  protected List<ModuleReference> myTableItems = new ArrayList<ModuleReference>();
+  protected List<SModuleReference> myTableItems = new ArrayList<SModuleReference>();
   protected T myItem;
 
   public static final int ITEM_COLUMN = 0;
@@ -40,7 +40,7 @@ public abstract class UsedLangsTableModel<T> extends AbstractTableModel implemen
     init();
   }
 
-  public void addItem(ModuleReference item) {
+  public void addItem(SModuleReference item) {
     if(myTableItems.contains(item))
       return;
     myTableItems.add(item);
@@ -72,32 +72,32 @@ public abstract class UsedLangsTableModel<T> extends AbstractTableModel implemen
   @Override
   public Class<?> getColumnClass(int columnIndex) {
     if(columnIndex == ITEM_COLUMN)
-      return ModuleReference.class;
+      return SModuleReference.class;
     return super.getColumnClass(columnIndex);
   }
 
   @Override
   public Object getValueAt(int rowIndex, int columnIndex) {
-    ModuleReference item = myTableItems.get(rowIndex);
+    SModuleReference item = myTableItems.get(rowIndex);
     if(columnIndex == ITEM_COLUMN)
       return item;
     return null;
   }
 
-  public List<ModuleReference> getUsedLanguages() {
-    List<ModuleReference> list = new ArrayList<ModuleReference>();
+  public List<SModuleReference> getUsedLanguages() {
+    List<SModuleReference> list = new ArrayList<SModuleReference>();
     MPSModuleRepository moduleRepository = MPSModuleRepository.getInstance();
-    for(ModuleReference tableItem : myTableItems)
+    for(SModuleReference tableItem : myTableItems)
       if(moduleRepository.getModuleById(tableItem.getModuleId()) instanceof Language)
         list.add(tableItem);
 
     return list;
   }
 
-  public List<ModuleReference> getUsedDevkits() {
-    List<ModuleReference> list = new ArrayList<ModuleReference>();
+  public List<SModuleReference> getUsedDevkits() {
+    List<SModuleReference> list = new ArrayList<SModuleReference>();
     MPSModuleRepository moduleRepository = MPSModuleRepository.getInstance();
-    for(ModuleReference tableItem : myTableItems)
+    for(SModuleReference tableItem : myTableItems)
       if(moduleRepository.getModuleById(tableItem.getModuleId()) instanceof DevKit)
         list.add(tableItem);
 

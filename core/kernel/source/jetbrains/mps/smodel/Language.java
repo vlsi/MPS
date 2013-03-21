@@ -31,7 +31,7 @@ import jetbrains.mps.project.*;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
-import jetbrains.mps.project.structure.modules.*;
+import org.jetbrains.mps.openapi.module.SModuleReference;import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
@@ -92,15 +92,19 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return myLanguageDependenciesManager;
   }
 
-  public void addExtendedLanguage(ModuleReference langRef) {
+  public void addExtendedLanguage(SModuleReference langRef) {
     if (myLanguageDescriptor.getExtendedLanguages().contains(langRef)) return;
     LanguageDescriptor moduleDescriptor = getModuleDescriptor();
     moduleDescriptor.getExtendedLanguages().add(langRef);
-    setModuleDescriptor(moduleDescriptor, true);
+
+    dependenciesChanged();
+    setChanged();
+
+    MPSModuleRepository.getInstance().fireModuleChanged(this);
   }
 
-  public Set<ModuleReference> getExtendedLanguageRefs() {
-    HashSet<ModuleReference> res = new HashSet<ModuleReference>(myLanguageDescriptor.getExtendedLanguages());
+  public Set<SModuleReference> getExtendedLanguageRefs() {
+    HashSet<SModuleReference> res = new HashSet<SModuleReference>(myLanguageDescriptor.getExtendedLanguages());
     //this is needed now as we don't force the user to have an explicit dependency on core
     res.add(BootstrapLanguages.CORE);
     return res;
@@ -114,7 +118,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   @Override
   public List<Dependency> getDependencies() {
     List<Dependency> result = super.getDependencies();
-    for (ModuleReference ref : getExtendedLanguageRefs()) {
+    for (SModuleReference ref : getExtendedLanguageRefs()) {
       Dependency dep = new Dependency();
       dep.setModuleRef(ref);
       dep.setReexport(true);
@@ -128,7 +132,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return result;
   }
 
-  public Collection<ModuleReference> getRuntimeModulesReferences() {
+  public Collection<SModuleReference> getRuntimeModulesReferences() {
     LanguageDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return Collections.emptySet();
     return Collections.unmodifiableSet(descriptor.getRuntimeModules());
@@ -140,9 +144,9 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   public void validateExtends() {
-    List<ModuleReference> remove = new ArrayList<ModuleReference>();
-    for (ModuleReference ref : myLanguageDescriptor.getExtendedLanguages()) {
-      if (getModuleName().equals(ref.getModuleFqName())) {
+    List<SModuleReference> remove = new ArrayList<SModuleReference>();
+    for (SModuleReference ref : myLanguageDescriptor.getExtendedLanguages()) {
+      if (getModuleName().equals(ref.getModuleName())) {
         remove.add(ref);
       }
     }
@@ -177,8 +181,8 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   @Override
   public void dispose() {
-    super.dispose();
     myLanguageDependenciesManager.dispose();
+    super.dispose();
     ModuleRepositoryFacade.getInstance().unregisterModules(this);
   }
 
@@ -197,7 +201,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
     myLanguageDescriptor = newDescriptor;
 
-    ModuleReference reference = new ModuleReference(myLanguageDescriptor.getNamespace(), myLanguageDescriptor.getId());
+    SModuleReference reference = new jetbrains.mps.project.structure.modules.ModuleReference(myLanguageDescriptor.getNamespace(), myLanguageDescriptor.getId());
     setModuleReference(reference);
 
     reloadAfterDescriptorChange();
@@ -215,7 +219,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       ((SModelInternal) getStructureModelDescriptor()).addModelListener(listener);
     }
 
-    invalidateDependencies();
+    dependenciesChanged();
     setChanged();
   }
 
@@ -259,13 +263,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return LanguageAspect.STRUCTURE.get(this);
   }
 
-  @Override
-  public void invalidateCaches() {
-    super.invalidateCaches();
-    myNameToConceptCache.clear();
-    myNamesWithNoConcepts.clear();
-  }
-
   public ClassLoader getStubsLoader() {
     return myStubsLoader;
   }
@@ -273,6 +270,11 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   @Deprecated
   public IClassPathItem getLanguageRuntimeClasspath() {
     return new CompositeClassPathItem();
+  }
+
+  private void invalidateConceptDeclarationsCache() {
+    myNameToConceptCache.clear();
+    myNamesWithNoConcepts.clear();
   }
 
   public SNode findConceptDeclaration(@NotNull final String conceptName) {
@@ -322,7 +324,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   @Override
   public void save() {
     super.save();
-    if (isPackaged()) return;
+    if (isReadOnly()) return;
     LanguageDescriptorPersistence.saveLanguageDescriptor(myDescriptorFile, getModuleDescriptor(), MacrosFactory.forModuleFile(myDescriptorFile));
   }
 
@@ -420,12 +422,12 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
     @Override
     public void modelChanged(SModel model) {
-      invalidateCaches();
+      invalidateConceptDeclarationsCache();
     }
 
     @Override
     public void modelChangedDramatically(SModel model) {
-      invalidateCaches();
+      invalidateConceptDeclarationsCache();
     }
   }
 

@@ -45,6 +45,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import java.lang.reflect.Constructor;
@@ -641,7 +642,7 @@ public class RefactoringContext {
       String namespace = NameUtil.namespaceFromLongName(NameUtil.namespaceFromLongName(className));
       Language l = ModuleRepositoryFacade.getInstance().getModule(namespace, Language.class);
       if (l == null) {
-        ModuleReference ref = ModuleReference.fromString("3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)");
+        SModuleReference ref = ModuleReference.fromString("3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)");
         l = ModuleRepositoryFacade.getInstance().getModule(ref, Language.class);
       }
       if (l == null) {

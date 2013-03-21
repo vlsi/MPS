@@ -10,7 +10,7 @@ import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.newTypesystem.state.NodeMaps;
 import java.util.List;
 import java.util.LinkedList;
-import jetbrains.mps.nodeEditor.text.TextBuilder;
+import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 public class PresentationUtil {

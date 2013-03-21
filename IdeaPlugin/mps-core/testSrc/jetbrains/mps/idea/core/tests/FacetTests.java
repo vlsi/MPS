@@ -33,7 +33,7 @@ import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.Dependency;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -77,7 +77,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
   }
 
   public void testSolutionRemovedOnFacetDeletion() {
-    ModuleReference solutionReference = myFacet.getSolution().getModuleReference();
+    SModuleReference solutionReference = myFacet.getSolution().getModuleReference();
 
     ApplicationManager.getApplication().runWriteAction(new Runnable() {
       public void run() {
@@ -94,7 +94,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
 
   public void testSolutionRemovedOnModuleDeletion() {
 
-    ModuleReference solutionReference = myFacet.getSolution().getModuleReference();
+    SModuleReference solutionReference = myFacet.getSolution().getModuleReference();
 
     ApplicationManager.getApplication().runWriteAction(new Runnable() {
       public void run() {
@@ -113,7 +113,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     @NonNls final File modelRootDir = new File(getModuleHome(), "modelRoot");
     assertTrue(modelRootDir.mkdir());
 
-    ModuleReference solutionReference = myFacet.getSolution().getModuleReference();
+    SModuleReference solutionReference = myFacet.getSolution().getModuleReference();
 
     String modelRootPath = modelRootDir.getPath();
     MPSConfigurationBean configurationBean = myFacet.getConfiguration().getBean();
@@ -156,9 +156,9 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     myFacet.setConfiguration(configurationBean);
     flushEDT();
 
-    Collection<ModuleReference> solutionUsedLanguageRefs = myFacet.getSolution().getUsedLanguagesReferences();
+    Collection<SModuleReference> solutionUsedLanguageRefs = myFacet.getSolution().getUsedLanguagesReferences();
     Set<Language> solutionUsedLanguages = new HashSet<Language>();
-    for (ModuleReference solutionUsedLanguageRef : solutionUsedLanguageRefs) {
+    for (SModuleReference solutionUsedLanguageRef : solutionUsedLanguageRefs) {
       solutionUsedLanguages.add(ModuleRepositoryFacade.getInstance().getModule(solutionUsedLanguageRef, Language.class));
     }
     assertEquals(usedLanguages.length, solutionUsedLanguages.size());

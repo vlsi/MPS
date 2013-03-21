@@ -18,7 +18,7 @@ package jetbrains.mps.project.dependency;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
 import jetbrains.mps.smodel.event.SModelLanguageEvent;
@@ -41,7 +41,7 @@ public class ModelDependenciesManager {
   private MyModuleWatcher myModuleWatcher;
 
   private AtomicBoolean myInvalidatedFlag = new AtomicBoolean(true);
-  private volatile Set<ModuleReference> myCachedDeps;
+  private volatile Set<SModuleReference> myCachedDeps;
   // a one-time synchronization helper for the cache
   private CountDownLatch myCacheInitGuard = new CountDownLatch(1);
 
@@ -50,7 +50,7 @@ public class ModelDependenciesManager {
     myModuleWatcher = new MyModuleWatcher();
   }
 
-  public Collection<ModuleReference> getAllImportedLanguages() {
+  public Collection<SModuleReference> getAllImportedLanguages() {
     if (myModel == null) throw new IllegalStateException("access after disposal");
 
     if (myInvalidatedFlag.compareAndSet(true, false)) {
@@ -61,9 +61,9 @@ public class ModelDependenciesManager {
 
       myModuleWatcher.clear();
 
-      Set<ModuleReference> result = new LinkedHashSet<ModuleReference>();
+      Set<SModuleReference> result = new LinkedHashSet<SModuleReference>();
 
-      for (ModuleReference lang : ((jetbrains.mps.smodel.SModelInternal) myModel).importedLanguages()) {
+      for (SModuleReference lang : ((jetbrains.mps.smodel.SModelInternal) myModel).importedLanguages()) {
         result.add(lang);
         Language module = ModuleRepositoryFacade.getInstance().getModule(lang, Language.class);
         if (module != null) {
@@ -73,7 +73,7 @@ public class ModelDependenciesManager {
         }
       }
 
-      for (ModuleReference dk : ((jetbrains.mps.smodel.SModelInternal) myModel).importedDevkits()) {
+      for (SModuleReference dk : ((jetbrains.mps.smodel.SModelInternal) myModel).importedDevkits()) {
         DevKit devkit = ModuleRepositoryFacade.getInstance().getModule(dk, DevKit.class);
         if (devkit == null) continue;
         myModuleWatcher.watchDevKit(devkit);

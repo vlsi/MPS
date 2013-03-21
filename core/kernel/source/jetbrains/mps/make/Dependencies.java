@@ -89,7 +89,7 @@ class Dependencies {
   }
 
   private void collectDependencies(SModule m) {
-    if (m.getFacet(JavaModuleFacet.class) == null || m.isPackaged()) {
+    if (m.getFacet(JavaModuleFacet.class) == null || m.isReadOnly()) {
       return;
     }
 

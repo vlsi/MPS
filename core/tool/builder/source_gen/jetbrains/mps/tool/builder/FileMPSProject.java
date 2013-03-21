@@ -18,7 +18,7 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.library.ModulesMiner;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import java.util.List;
 import java.util.Collections;
 import java.util.ArrayList;
@@ -33,7 +33,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.xml.XmlUtil;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.project.structure.project.testconfigurations.ModelsTestConfiguration;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 
@@ -132,7 +132,7 @@ public class FileMPSProject extends Project {
         readModules(myDescriptor);
         //  TODO FIXME get rid of onModuleLoad 
         for (SModule m : getModules()) {
-          ((IModule) m).onModuleLoad();
+          ((AbstractModule) m).onModuleLoad();
         }
       }
     });
@@ -211,7 +211,7 @@ public class FileMPSProject extends Project {
         ModelsTestConfiguration tc = new ModelsTestConfiguration();
         tc.setName(e.getAttributeValue("name"));
         for (Element me : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(e, "models"), "model"))) {
-          tc.addModel(SModelReference.fromString(me.getAttributeValue("modelRef")));
+          tc.addModel(PersistenceFacade.getInstance().createModelReference(me.getAttributeValue("modelRef")));
         }
         result_dkknya_a0a5o.getTestConfigurations().add(tc);
       }

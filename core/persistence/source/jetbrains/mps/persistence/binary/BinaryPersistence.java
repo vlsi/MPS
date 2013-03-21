@@ -17,7 +17,7 @@ package jetbrains.mps.persistence.binary;
 
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -132,9 +132,9 @@ public class BinaryPersistence {
   }
 
   private static void loadModelProperties(BinarySModel model, ModelInputStream is) throws IOException {
-    for (ModuleReference ref : loadModuleRefList(is)) model.addLanguage(ref);
-    for (ModuleReference ref : loadModuleRefList(is)) model.addEngagedOnGenerationLanguage(ref);
-    for (ModuleReference ref : loadModuleRefList(is)) model.addDevKit(ref);
+    for (SModuleReference ref : loadModuleRefList(is)) model.addLanguage(ref);
+    for (SModuleReference ref : loadModuleRefList(is)) model.addEngagedOnGenerationLanguage(ref);
+    for (SModuleReference ref : loadModuleRefList(is)) model.addDevKit(ref);
 
     for (ImportElement imp : loadImports(is)) model.addModelImport(imp);
     for (ImportElement imp : loadImports(is)) model.addAdditionalModelVersion(imp);
@@ -199,16 +199,16 @@ public class BinaryPersistence {
     os.writeInt(0xbaba);
   }
 
-  private static void saveModuleRefList(Collection<ModuleReference> refs, ModelOutputStream os) throws IOException {
+  private static void saveModuleRefList(Collection<SModuleReference> refs, ModelOutputStream os) throws IOException {
     os.writeInt(refs.size());
-    for (ModuleReference ref : refs) {
+    for (SModuleReference ref : refs) {
       os.writeModuleReference(ref);
     }
   }
 
-  private static Collection<ModuleReference> loadModuleRefList(ModelInputStream is) throws IOException {
+  private static Collection<SModuleReference> loadModuleRefList(ModelInputStream is) throws IOException {
     int size = is.readInt();
-    List<ModuleReference> result = new ArrayList<ModuleReference>();
+    List<SModuleReference> result = new ArrayList<SModuleReference>();
     for (int i = 0; i < size; i++) {
       result.add(is.readModuleReference());
     }

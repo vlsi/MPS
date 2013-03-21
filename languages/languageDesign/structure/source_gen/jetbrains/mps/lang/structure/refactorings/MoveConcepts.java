@@ -19,7 +19,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -79,16 +79,16 @@ public class MoveConcepts extends BaseLoggableRefactoring {
         return SConceptOperations.getDirectSuperConcepts(it, false);
       }
     }).subtract(ListSequence.fromList(refactoringContext.getSelectedNodes()));
-    List<ModuleReference> targetExtends = Sequence.fromIterable(targExtends).select(new ISelector<SNode, SModel>() {
+    List<SModuleReference> targetExtends = Sequence.fromIterable(targExtends).select(new ISelector<SNode, SModel>() {
       public SModel select(SNode it) {
         return SNodeOperations.getModel(it);
       }
-    }).distinct().select(new ISelector<SModel, ModuleReference>() {
-      public ModuleReference select(SModel it) {
+    }).distinct().select(new ISelector<SModel, SModuleReference>() {
+      public SModuleReference select(SModel it) {
         return check_u6ijv2_a0a0a0a0a7a0(Language.getLanguageFor(it));
       }
-    }).where(new IWhereFilter<ModuleReference>() {
-      public boolean accept(ModuleReference it) {
+    }).where(new IWhereFilter<SModuleReference>() {
+      public boolean accept(SModuleReference it) {
         return it != null;
       }
     }).toListSequence();
@@ -116,7 +116,7 @@ public class MoveConcepts extends BaseLoggableRefactoring {
     if (isSourceExtends) {
       ((Language) refactoringContext.getParameter("sourceLanguage")).addExtendedLanguage(targetLanguage.getModuleReference());
     }
-    for (ModuleReference ext : ListSequence.fromList(targetExtends)) {
+    for (SModuleReference ext : ListSequence.fromList(targetExtends)) {
       targetLanguage.addExtendedLanguage(ext);
     }
   }
@@ -161,7 +161,7 @@ public class MoveConcepts extends BaseLoggableRefactoring {
     refactoringContext.updateByDefault(model);
   }
 
-  private static ModuleReference check_u6ijv2_a0a0a0a0a7a0(Language checkedDotOperand) {
+  private static SModuleReference check_u6ijv2_a0a0a0a0a7a0(Language checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModuleReference();
     }

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
+import jetbrains.mps.openapi.editor.cells.CellFinder;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -47,47 +48,8 @@ public class CellFinders {
     }, true);
   }
 
-  public static CellFinder<EditorCell> or(CellFinder<? extends EditorCell>... finders) {
-    return new OrConditionFinder(finders);
-  }
 
-  private static abstract class BaseCellFinder<C extends jetbrains.mps.openapi.editor.cells.EditorCell> implements CellFinder<C> {
-    abstract boolean isSuitable(C cell);
-
-    abstract Class<C> getCellClass();
-
-    abstract boolean isFirstChild();
-
-    @Override
-    public C find(jetbrains.mps.openapi.editor.cells.EditorCell cell, boolean includeThis) {
-      if (includeThis && getCellClass().isInstance(cell) && isSuitable((C) cell)) {
-        return (C) cell;
-      }
-
-      if (cell instanceof jetbrains.mps.openapi.editor.cells.EditorCell_Collection) {
-        jetbrains.mps.openapi.editor.cells.EditorCell_Collection collection = (jetbrains.mps.openapi.editor.cells.EditorCell_Collection) cell;
-        if (!collection.isFolded()) {
-          Iterator<jetbrains.mps.openapi.editor.cells.EditorCell> iterator = isFirstChild() ? collection.iterator() : collection.reverseIterator();
-
-          while (iterator.hasNext()) {
-            EditorCell child = (EditorCell) iterator.next();
-            if (getCellClass().isInstance(child) && isSuitable((C) child)) {
-              return (C) child;
-            }
-
-            C result = find(child, false);
-            if (result != null) {
-              return result;
-            }
-          }
-        }
-      }
-
-      return null;
-    }
-  }
-
-  private static class EditableCellCellFinder extends BaseCellFinder<EditorCell_Label> {
+  private static class EditableCellCellFinder implements CellFinder<EditorCell_Label> {
     private boolean myFirst;
 
     EditableCellCellFinder(boolean first) {
@@ -110,7 +72,7 @@ public class CellFinders {
     }
   }
 
-  private static class SelectableLeafCellFinder extends BaseCellFinder<EditorCell> {
+  private static class SelectableLeafCellFinder implements CellFinder<EditorCell> {
     private boolean myFirst;
 
     SelectableLeafCellFinder(boolean first) {
@@ -133,7 +95,7 @@ public class CellFinders {
     }
   }
 
-  private static class ErrorCellFinder extends BaseCellFinder<EditorCell_Label> {
+  private static class ErrorCellFinder implements CellFinder<EditorCell_Label> {
     private boolean myFirst;
 
     private ErrorCellFinder(boolean first) {
@@ -141,22 +103,22 @@ public class CellFinders {
     }
 
     @Override
-    boolean isSuitable(EditorCell_Label cell) {
+    public boolean isSuitable(EditorCell_Label cell) {
       return cell instanceof EditorCell_Error || cell.isErrorState();
     }
 
     @Override
-    Class<EditorCell_Label> getCellClass() {
+    public Class<EditorCell_Label> getCellClass() {
       return EditorCell_Label.class;
     }
 
     @Override
-    boolean isFirstChild() {
+    public boolean isFirstChild() {
       return myFirst;
     }
   }
 
-  private static class ByClassCellCellFinder<C extends jetbrains.mps.openapi.editor.cells.EditorCell> extends BaseCellFinder<C> {
+  private static class ByClassCellCellFinder<C extends jetbrains.mps.openapi.editor.cells.EditorCell> implements CellFinder<C> {
     private final Class<C> myCls;
     private final boolean myFirst;
 
@@ -181,7 +143,7 @@ public class CellFinders {
     }
   }
 
-  private static class ByConditionCellCellFinder extends BaseCellFinder<EditorCell> {
+  private static class ByConditionCellCellFinder implements CellFinder<EditorCell> {
     private final Condition<EditorCell> myCondition;
     private final boolean myFirst;
 
@@ -203,23 +165,6 @@ public class CellFinders {
     @Override
     public boolean isFirstChild() {
       return myFirst;
-    }
-  }
-
-  private static class OrConditionFinder implements CellFinder<EditorCell> {
-    private CellFinder<? extends EditorCell>[] myFinders;
-
-    private OrConditionFinder(CellFinder<? extends EditorCell>[] finders) {
-      myFinders = finders;
-    }
-
-    @Override
-    public EditorCell find(jetbrains.mps.openapi.editor.cells.EditorCell cell, boolean includeThis) {
-      for (CellFinder<? extends EditorCell> finder : myFinders) {
-        EditorCell result = finder.find(cell, includeThis);
-        if (result != null) return result;
-      }
-      return null;
     }
   }
 }

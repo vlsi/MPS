@@ -98,6 +98,7 @@ import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.nodeEditor.selection.SingularSelection;
 import jetbrains.mps.openapi.editor.ActionHandler;
 import jetbrains.mps.openapi.editor.cells.CellAction;
+import jetbrains.mps.openapi.editor.cells.CellFinderUtil;
 import jetbrains.mps.openapi.editor.cells.KeyMapAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
@@ -140,6 +141,7 @@ import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -633,9 +635,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           EditorCell rootCell = getRootCell();
           if (rootCell instanceof EditorCell_Collection) {
             EditorCell focusPolicyCell = FocusPolicyUtil.findCellToSelectDueToFocusPolicy(rootCell);
-            EditorCell toSelect;
+            jetbrains.mps.openapi.editor.cells.EditorCell toSelect;
             if (focusPolicyCell == null || (focusPolicyCell == rootCell && !FocusPolicyUtil.hasFocusPolicy(focusPolicyCell))) {
-              toSelect = rootCell.findChild(CellFinders.or(CellFinders.FIRST_EDITABLE, CellFinders.FIRST_SELECTABLE_LEAF));
+              toSelect = CellFinderUtil.findChildByManyFinders(rootCell, CellFinders.FIRST_EDITABLE, CellFinders.FIRST_SELECTABLE_LEAF);
             } else {
               toSelect = focusPolicyCell;
             }
@@ -665,9 +667,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myIntentionsSupport = new IntentionsSupport(this);
     myAutoValidator = new AutoValidator(this);
 
-    MPSToolTipManager.getInstance().registerComponent(this);
+    if (MPSToolTipManager.getInstance() != null) {
+      MPSToolTipManager.getInstance().registerComponent(this);
+    }
 
-    CaretBlinker.getInstance().registerEditor(this);
+    if (CaretBlinker.getInstance() != null) {
+      CaretBlinker.getInstance().registerEditor(this);
+    }
 
     KeyboardFocusManager.getCurrentKeyboardFocusManager().addPropertyChangeListener("focusOwner", myFocusListener = new PropertyChangeListener() {
       @Override
@@ -978,11 +984,15 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     String text = getMessagesTextFor(cell);
     Point point = new Point(cell.getX(), cell.getY() + cell.getHeight());
-    MPSToolTipManager.getInstance().showToolTip(text, this, point);
+    if (MPSToolTipManager.getInstance() != null ) {
+      MPSToolTipManager.getInstance().showToolTip(text, this, point);
+    }
   }
 
   public void hideMessageToolTip() {
-    MPSToolTipManager.getInstance().hideToolTip();
+    if (MPSToolTipManager.getInstance() != null ) {
+      MPSToolTipManager.getInstance().hideToolTip();
+    }
   }
 
   public void editNode(SNode node, IOperationContext operationContext) {
@@ -1796,7 +1806,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   @Override
   public void rebuildEditorContent() {
-    LOG.assertLog(ModelAccess.instance().isInEDT(), "You should do this in EDT");
+    LOG.assertLog(ModelAccess.instance().isInEDT() || SwingUtilities.isEventDispatchThread(), "You should do this in EDT");
 
     clearCaches();
     clearUserData();
@@ -2526,11 +2536,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myInsideOfCommand;
   }
 
-  public boolean activateNodeSubstituteChooser(EditorCell editorCell, boolean resetPattern) {
+  public boolean activateNodeSubstituteChooser(jetbrains.mps.openapi.editor.cells.EditorCell editorCell, boolean resetPattern) {
     return activateNodeSubstituteChooser(editorCell, resetPattern, false);
   }
 
-  public boolean activateNodeSubstituteChooser(EditorCell editorCell, boolean resetPattern, boolean isSmart) {
+  public boolean activateNodeSubstituteChooser(jetbrains.mps.openapi.editor.cells.EditorCell editorCell, boolean resetPattern, boolean isSmart) {
     if (myNodeSubstituteChooser.isVisible()) {
       return true;
       //todo: rebuild menu if smartness changed
@@ -2545,18 +2555,18 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return activateNodeSubstituteChooser(editorCell, substituteInfo, resetPattern, isSmart);
   }
 
-  public boolean activateNodeSubstituteChooser(EditorCell editorCell, SubstituteInfo substituteInfo, boolean resetPattern) {
+  public boolean activateNodeSubstituteChooser(jetbrains.mps.openapi.editor.cells.EditorCell editorCell, SubstituteInfo substituteInfo, boolean resetPattern) {
     return activateNodeSubstituteChooser(editorCell, substituteInfo, resetPattern, false);
   }
 
-  public boolean activateNodeSubstituteChooser(EditorCell editorCell, SubstituteInfo substituteInfo, boolean resetPattern, boolean isSmart) {
+  public boolean activateNodeSubstituteChooser(jetbrains.mps.openapi.editor.cells.EditorCell editorCell, SubstituteInfo substituteInfo, boolean resetPattern, boolean isSmart) {
     if (substituteInfo == null) {
       return false;
     }
 
     // do substitute...
     LOG.debug("substitute info : " + substituteInfo);
-    NodeSubstitutePatternEditor patternEditor = editorCell.createSubstitutePatternEditor();
+    NodeSubstitutePatternEditor patternEditor = ((EditorCell) editorCell).createSubstitutePatternEditor();
     if (resetPattern) {
       patternEditor.toggleReplaceMode();
     }
@@ -2584,8 +2594,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return true;
   }
 
-  private List<SubstituteAction> getMatchingActions(final EditorCell editorCell, final SubstituteInfo substituteInfo, final boolean isSmart,
-      final String pattern) {
+  private List<SubstituteAction> getMatchingActions(final jetbrains.mps.openapi.editor.cells.EditorCell editorCell, final SubstituteInfo substituteInfo, final boolean isSmart, final String pattern) {
     return ModelAccess.instance().runReadAction(new Computable<List<SubstituteAction>>() {
       @Override
       public List<SubstituteAction> compute() {
@@ -2727,13 +2736,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return ((EditorCell_Basic) cell).isInTree() && cell.getEditor() == this;
   }
 
-  public EditorCell changeSelectionWRTFocusPolicy(@NotNull EditorCell cell) {
+  public jetbrains.mps.openapi.editor.cells.EditorCell changeSelectionWRTFocusPolicy(@NotNull EditorCell cell) {
     EditorCell focusPolicyCell = FocusPolicyUtil.findCellToSelectDueToFocusPolicy(cell);
-    EditorCell toSelect;
+    jetbrains.mps.openapi.editor.cells.EditorCell toSelect;
     if (focusPolicyCell == null || (focusPolicyCell == cell && !FocusPolicyUtil.hasFocusPolicy(focusPolicyCell))) {
-      toSelect = cell.findChild(CellFinders.or(CellFinders.FIRST_ERROR, CellFinders.FIRST_EDITABLE));
+      toSelect = CellFinderUtil.findChildByManyFinders(cell, CellFinders.FIRST_ERROR, CellFinders.FIRST_EDITABLE);
       if (toSelect == null) {
-        toSelect = cell.findChild(CellFinders.FIRST_SELECTABLE_LEAF);
+        toSelect = CellFinderUtil.findChild(cell, CellFinders.FIRST_SELECTABLE_LEAF);
       }
     } else {
       toSelect = focusPolicyCell;
@@ -2857,7 +2866,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
 
     if (dataId.equals(SelectInContext.DATA_KEY.getName())) {
-      ProjectViewSelectInProvider selectInHelper = ApplicationManager.getApplication().getComponent(ProjectViewSelectInProvider.class);
+      ProjectViewSelectInProvider selectInHelper = ApplicationManager.getApplication() == null ? null : ApplicationManager.getApplication().getComponent(ProjectViewSelectInProvider.class);
       if (selectInHelper == null) return null;
       return selectInHelper.getContext(getCurrentProject(), myNodePointer);
     }
@@ -2979,7 +2988,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         EditorCell cell = findNodeCell(addedChild);
         if (cell != null) {
           // similar to: IntellijentInputUtil.applyRigthTransform() logic
-          EditorCell errorCell = cell.findChild(CellFinders.FIRST_ERROR, true);
+          EditorCell errorCell = CellFinderUtil.findChild(cell, CellFinders.FIRST_ERROR, true);
           if (errorCell != null) {
             changeSelectionWRTFocusPolicy(errorCell);
           } else {
@@ -3083,7 +3092,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (getSelectedNode() == null) {
       EditorCell lastSelectedNodeCell = findNodeCell(lastSelectedNode);
       if (lastSelectedNodeCell != null) {
-        EditorCell child = lastSelectedNodeCell.findChild(CellFinders.FIRST_SELECTABLE_LEAF);
+        EditorCell child = CellFinderUtil.findChild(lastSelectedNodeCell, CellFinders.FIRST_SELECTABLE_LEAF);
         if (child != null) {
           changeSelection(child);
         }

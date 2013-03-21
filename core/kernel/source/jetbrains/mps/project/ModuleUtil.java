@@ -17,7 +17,7 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.project.structure.modules.Dependency;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -43,16 +43,16 @@ public class ModuleUtil {
         return MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
       }
     };
-    Iterable<IModule> solutionsFromDevkits = new TranslatingIterator<ModuleReference, IModule>(
-      new CollectingManyIterator<DevKit, ModuleReference>(includingExtended(usedDevkits(module)).iterator()) {
+    Iterable<IModule> solutionsFromDevkits = new TranslatingIterator<SModuleReference, IModule>(
+      new CollectingManyIterator<DevKit, SModuleReference>(includingExtended(usedDevkits(module)).iterator()) {
         @Override
-        protected Iterator<ModuleReference> translate(DevKit devkit) {
+        protected Iterator<SModuleReference> translate(DevKit devkit) {
           return devkit.getExportedSolutions_internal().iterator();
         }
       }) {
 
       @Override
-      protected IModule translate(ModuleReference node) {
+      protected IModule translate(SModuleReference node) {
         return ModuleRepositoryFacade.getInstance().getModule(node, Solution.class);
       }
     };
@@ -64,22 +64,22 @@ public class ModuleUtil {
   }
 
   public static Iterable<Language> getUsedLanguages(IModule module) {
-    Iterable<Language> dependencies = new TranslatingIterator<ModuleReference, Language>(module.getUsedLanguagesReferences().iterator()) {
+    Iterable<Language> dependencies = new TranslatingIterator<SModuleReference, Language>(module.getUsedLanguagesReferences().iterator()) {
       @Override
-      protected Language translate(ModuleReference ref) {
+      protected Language translate(SModuleReference ref) {
         return ModuleRepositoryFacade.getInstance().getModule(ref, Language.class);
       }
     };
-    Iterable<Language> languagesFromDevkits = new TranslatingIterator<ModuleReference, Language>(
-      new CollectingManyIterator<DevKit, ModuleReference>(includingExtended(usedDevkits(module)).iterator()) {
+    Iterable<Language> languagesFromDevkits = new TranslatingIterator<SModuleReference, Language>(
+      new CollectingManyIterator<DevKit, SModuleReference>(includingExtended(usedDevkits(module)).iterator()) {
         @Override
-        protected Iterator<ModuleReference> translate(DevKit devkit) {
+        protected Iterator<SModuleReference> translate(DevKit devkit) {
           return devkit.getExportedLanguages_internal().iterator();
         }
       }) {
 
       @Override
-      protected Language translate(ModuleReference node) {
+      protected Language translate(SModuleReference node) {
         return ModuleRepositoryFacade.getInstance().getModule(node, Language.class);
       }
     };
@@ -88,9 +88,9 @@ public class ModuleUtil {
   }
 
   private static Iterable<DevKit> usedDevkits(IModule module) {
-    return new TranslatingIterator<ModuleReference, DevKit>(module.getUsedDevkitReferences().iterator()) {
+    return new TranslatingIterator<SModuleReference, DevKit>(module.getUsedDevkitReferences().iterator()) {
       @Override
-      protected DevKit translate(ModuleReference node) {
+      protected DevKit translate(SModuleReference node) {
         return ModuleRepositoryFacade.getInstance().getModule(node, DevKit.class);
       }
     };
@@ -100,9 +100,9 @@ public class ModuleUtil {
     return IterableUtil.distinct(new RecursiveIterator<DevKit>(devkits.iterator(), false) {
       @Override
       protected Iterator<DevKit> children(DevKit node) {
-        return new TranslatingIterator<ModuleReference, DevKit>(node.getExtendedDevKits_internal().iterator()) {
+        return new TranslatingIterator<SModuleReference, DevKit>(node.getExtendedDevKits_internal().iterator()) {
           @Override
-          protected DevKit translate(ModuleReference node) {
+          protected DevKit translate(SModuleReference node) {
             return ModuleRepositoryFacade.getInstance().getModule(node, DevKit.class);
           }
         };
@@ -114,9 +114,9 @@ public class ModuleUtil {
     return new RecursiveIterator<Language>(devkits.iterator(), false) {
       @Override
       protected Iterator<Language> children(Language node) {
-        return new TranslatingIterator<ModuleReference, Language>(node.getExtendedLanguageRefs().iterator()) {
+        return new TranslatingIterator<SModuleReference, Language>(node.getExtendedLanguageRefs().iterator()) {
           @Override
-          protected Language translate(ModuleReference node) {
+          protected Language translate(SModuleReference node) {
             return ModuleRepositoryFacade.getInstance().getModule(node, Language.class);
           }
         };
@@ -128,9 +128,9 @@ public class ModuleUtil {
 
 
   @Deprecated
-  public static List<Language> refsToLanguages(Iterable<ModuleReference> refs) {
+  public static List<Language> refsToLanguages(Iterable<SModuleReference> refs) {
     List<Language> result = new ArrayList<Language>();
-    for (ModuleReference ref : refs) {
+    for (SModuleReference ref : refs) {
       Language l = ModuleRepositoryFacade.getInstance().getModule(ref, Language.class);
       if (l == null) continue;
       result.add(l);
@@ -140,10 +140,10 @@ public class ModuleUtil {
   }
 
   @Deprecated
-  public static List<DevKit> refsToDevkits(Iterable<ModuleReference> refs) {
+  public static List<DevKit> refsToDevkits(Iterable<SModuleReference> refs) {
     List<DevKit> result = new ArrayList<DevKit>();
 
-    for (ModuleReference ref : refs) {
+    for (SModuleReference ref : refs) {
       DevKit dk = ModuleRepositoryFacade.getInstance().getModule(ref, DevKit.class);
       if (dk == null) continue;
       result.add(dk);
@@ -171,10 +171,10 @@ public class ModuleUtil {
   }
 
   @Deprecated
-  public static List<IModule> refsToModules(Iterable<ModuleReference> refs) {
+  public static List<IModule> refsToModules(Iterable<SModuleReference> refs) {
     List<IModule> result = new ArrayList<IModule>();
 
-    for (ModuleReference ref : refs) {
+    for (SModuleReference ref : refs) {
       IModule dk = ModuleRepositoryFacade.getInstance().getModule(ref, IModule.class);
       if (dk == null) continue;
       result.add(dk);

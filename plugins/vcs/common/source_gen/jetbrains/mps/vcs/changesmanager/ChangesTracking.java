@@ -64,7 +64,7 @@ import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.vcs.diff.changes.ImportedModelChange;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
@@ -546,7 +546,7 @@ public class ChangesTracking {
       moduleDependencyEvent(event, event.getDevkitNamespace(), ModuleDependencyChange.DependencyType.USED_DEVKIT, event.isAdded());
     }
 
-    private void moduleDependencyEvent(SModelEvent event, final ModuleReference moduleRef, final ModuleDependencyChange.DependencyType type, final boolean added) {
+    private void moduleDependencyEvent(SModelEvent event, final SModuleReference moduleRef, final ModuleDependencyChange.DependencyType type, final boolean added) {
       runUpdateTask(new _FunctionTypes._void_P0_E0() {
         public void invoke() {
           if (removeChanges(null, ModuleDependencyChange.class, new _FunctionTypes._return_P1_E0<Boolean, ModuleDependencyChange>() {

@@ -30,14 +30,13 @@ import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.listener.ModelCreationListener;
-import jetbrains.mps.project.persistence.ModuleReadException;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.DeploymentDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.DefaultScope;
@@ -66,7 +65,6 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.FacetsFacade;
 import org.jetbrains.mps.openapi.module.SDependency;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -79,12 +77,10 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
@@ -101,7 +97,7 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
   public static final String CLASSES = "classes";
 
   protected final IFile myDescriptorFile;
-  private ModuleReference myModuleReference;
+  private SModuleReference myModuleReference;
   private Set<ModelRoot> mySModelRoots = new LinkedHashSet<ModelRoot>();
   private Set<ModuleFacetBase> myFacets = new LinkedHashSet<ModuleFacetBase>();
   private ModuleScope myScope = createScope();
@@ -133,7 +129,7 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
 
   @Override
   public String getModuleName() {
-    return myModuleReference.getModuleFqName();
+    return myModuleReference.getModuleName();
   }
 
   @Override
@@ -175,24 +171,24 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
     return null;
   }
 
-  protected void setModuleReference(@NotNull ModuleReference reference) {
+  protected void setModuleReference(@NotNull SModuleReference reference) {
     assert reference.getModuleId() != null : "module must have an id";
     assert myModuleReference == null || reference.getModuleId().equals(myModuleReference.getModuleId()) : "module id can't be changed";
 
-    ModuleReference oldValue = myModuleReference;
+    SModuleReference oldValue = myModuleReference;
     myModuleReference = reference;
     if (oldValue != null &&
-        oldValue.getModuleFqName() != null &&
-        !oldValue.getModuleFqName().equals(myModuleReference.getModuleFqName())) {
+        oldValue.getModuleName() != null &&
+        !oldValue.getModuleName().equals(myModuleReference.getModuleName())) {
 
-      MPSModuleRepository.getInstance().moduleFqNameChanged(this, oldValue.getModuleFqName());
+      MPSModuleRepository.getInstance().moduleFqNameChanged(this, oldValue.getModuleName());
     }
   }
 
   @Override
   @NotNull
   //module reference is immutable, so we cn return original
-  public ModuleReference getModuleReference() {
+  public SModuleReference getModuleReference() {
     return myModuleReference;
   }
 
@@ -208,6 +204,7 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
   @Override
   public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
     setChanged();
+    dependenciesChanged();
   }
 
   @Override
@@ -231,46 +228,75 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
 
       if (reexport && !dep.isReexport()) {
         dep.setReexport(true);
-        invalidateCaches();
-        invalidateDependencies();
+        dependenciesChanged();
         setChanged();
       }
       return;
     }
 
     Dependency dep = new Dependency();
-    dep.setModuleRef((ModuleReference) moduleRef);
+    dep.setModuleRef((SModuleReference) moduleRef);
     dep.setReexport(reexport);
     descriptor.getDependencies().add(dep);
 
-    invalidateCaches();
-    invalidateDependencies();
+    dependenciesChanged();
+    setChanged();
+  }
+
+  public void removeDependency(@NotNull Dependency dependency) {
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor == null) return;
+    if (!descriptor.getDependencies().contains(dependency)) return;
+
+    descriptor.getDependencies().remove(dependency);
+
+    dependenciesChanged();
     setChanged();
   }
 
   @Override
-  public void addUsedLanguage(ModuleReference langRef) {
+  public void addUsedLanguage(SModuleReference langRef) {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return;
     if (descriptor.getUsedLanguages().contains(langRef)) return;
 
     descriptor.getUsedLanguages().add(langRef);
 
-    invalidateCaches();
-    invalidateDependencies();
+    dependenciesChanged();
+    setChanged();
+  }
+
+  public void removeUsedLanguage(SModuleReference langRef) {
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor == null) return;
+    if (!descriptor.getUsedLanguages().contains(langRef)) return;
+
+    descriptor.getUsedLanguages().remove(langRef);
+
+    dependenciesChanged();
     setChanged();
   }
 
   @Override
-  public void addUsedDevkit(ModuleReference devkitRef) {
+  public void addUsedDevkit(SModuleReference devkitRef) {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return;
     if (descriptor.getUsedDevkits().contains(devkitRef)) return;
 
     descriptor.getUsedDevkits().add(devkitRef);
 
-    invalidateCaches();
-    invalidateDependencies();
+    dependenciesChanged();
+    setChanged();
+  }
+
+  public void removeUsedDevkit(SModuleReference devkitRef) {
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor == null) return;
+    if (!descriptor.getUsedDevkits().contains(devkitRef)) return;
+
+    descriptor.getUsedDevkits().remove(devkitRef);
+
+    dependenciesChanged();
     setChanged();
   }
 
@@ -291,14 +317,14 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
   //----languages & devkits
 
   @Override
-  public Collection<ModuleReference> getUsedLanguagesReferences() {
+  public Collection<SModuleReference> getUsedLanguagesReferences() {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return Collections.emptySet();
     return Collections.unmodifiableCollection(descriptor.getUsedLanguages());
   }
 
   @Override
-  public Collection<ModuleReference> getUsedDevkitReferences() {
+  public Collection<SModuleReference> getUsedDevkitReferences() {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return Collections.emptySet();
     return Collections.unmodifiableCollection(descriptor.getUsedDevkits());
@@ -323,18 +349,13 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return;
 
-    final IFile bundleHomeFile = getBundleHome();
+    final IFile bundleHomeFile = FileSystem.getInstance().getBundleHome(getDescriptorFile());
     if (bundleHomeFile == null) return;
 
     IFile bundleParent = bundleHomeFile.getParent();
     if (bundleParent == null || !bundleParent.exists()) return;
 
-    String packagedSourcesPath = bundleHomeFile.getPath();
-    if (packagedSourcesPath.endsWith(".jar")) {
-      packagedSourcesPath = (packagedSourcesPath.substring(0, packagedSourcesPath.length() - 4) + "-src.jar!/").toLowerCase();
-    } else {
-      packagedSourcesPath = null;
-    }
+    String packagedSourcesPath = getModuleSourceDir() != null ? getModuleSourceDir().getPath() : null;
 
     boolean addBundleAsModelRoot = false;
     final DeploymentDescriptor dd = descriptor.getDeploymentDescriptor();
@@ -425,9 +446,9 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
     }
 
     types.addAll(FacetsFacade.getInstance().getApplicableFacetTypes(
-        new TranslatingIterator<ModuleReference, String>(descriptor.getUsedLanguages().iterator()) {
+        new TranslatingIterator<SModuleReference, String>(descriptor.getUsedLanguages().iterator()) {
           @Override
-          protected String translate(ModuleReference node) {
+          protected String translate(SModuleReference node) {
             return node.getModuleName();
           }
         }));
@@ -487,7 +508,6 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
     }
   }
 
-  @Override
   public void onModuleLoad() {
     updateSModelReferences();
     updateModuleReferences();
@@ -500,7 +520,7 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
 
   @Override
   public boolean isPackaged() {
-    return getDescriptorFile() != null && FileSystem.getInstance().isPackaged(getDescriptorFile());
+    return getModuleSourceDir() == null || FileSystem.getInstance().isPackaged(getModuleSourceDir());
   }
 
   @Override
@@ -511,6 +531,17 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
   @Override
   public Collection<SModel> getModels() {
     return new ArrayList<SModel>(SModelRepository.getInstance().getModelDescriptors(this));
+  }
+
+  /**
+   * Module sources folder
+   * In case of working on sources == dir with module descriptor
+   * In case of working on distribution = {module-name}-src.jar/module/
+   * In case of Generator = sourceLanguage.getModuleSourceDir()
+   * ${module} expands to this method
+   */
+  public IFile getModuleSourceDir() {
+    return myDescriptorFile != null ? myDescriptorFile.getParent() : null;
   }
 
   @Override
@@ -652,13 +683,9 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
   }
 
   @Override
+  @Deprecated
   public IFile getBundleHome() {
     return FileSystem.getInstance().getBundleHome(getDescriptorFile());
-  }
-
-  @Override
-  public void invalidateCaches() {
-    myScope.invalidateCaches();
   }
 
   @Override
@@ -697,15 +724,17 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
     }
   }
 
-  @Override
-  public void invalidateDependencies() {
-    // todo: =(
-//    Set<SModule> unloadedModules = ClassLoaderManager.getInstance().unloadClasses(Arrays.asList(this), new EmptyProgressMonitor());
-//    ClassLoaderManager.getInstance().loadClasses(unloadedModules, new EmptyProgressMonitor());
-    // temporary disabled because: 1) we load many modules in LibraryInitializer 2) module calls setModuleDescriptor 3) it calls invalidateDependencies
-    // 4) it calls CLM with partly loaded classes (just part of modules)
-    // fix: fix CLM to not load partly loaded module, introduce normal disabled/enabled relation in CLM
-    // btw as for now: as change dependencies doesn't call "make module", this action basically meaningless
+  protected void dependenciesChanged() {
+    // todo: review all usages after migration!
+
+    // callback on dependencies (any of them) changed event
+    // you can override this method with some invalidation action
+    // call super.dependenciesChanged() at the end
+
+    // todo: as we haven't dependencies listeners...
+    // todo: maybe add ClassLoaderManager.getInstance().unloadClasses(this module) here
+
+    myScope.invalidateCaches();
   }
 
   protected ModuleDescriptor loadDescriptor() {
@@ -739,7 +768,6 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
 
   public class ModuleScope extends DefaultScope {
     protected ModuleScope() {
-
     }
 
     public AbstractModule getModule() {
@@ -775,10 +803,22 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
   }
 
   public IFile getOutputPath() {
-    return ProjectPathUtil.getGeneratorOutputPath(getDescriptorFile(), getModuleDescriptor());
+    return ProjectPathUtil.getGeneratorOutputPath(getModuleSourceDir(), getModuleDescriptor());
   }
 
   // deprecated part
+  @Deprecated
+  @Override
+  public final void invalidateCaches() {
+    dependenciesChanged();
+  }
+
+  @Deprecated
+  @Override
+  public final void invalidateDependencies() {
+    dependenciesChanged();
+  }
+
   @Override
   @Deprecated
   public final String getModuleFqName() {

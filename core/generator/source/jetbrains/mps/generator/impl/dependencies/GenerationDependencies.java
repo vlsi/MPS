@@ -18,14 +18,19 @@ package jetbrains.mps.generator.impl.dependencies;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.IncrementalGenerationStrategy;
 import jetbrains.mps.smodel.IOperationContext;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.textGen.TextGenManager;
 import org.jdom.Element;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Evgeny Gryaznov, May 14, 2010
@@ -72,7 +77,8 @@ public class GenerationDependencies {
     this.myFromCacheCount = 0;
   }
 
-  private GenerationDependencies(List<GenerationRootDependencies> data, String modelHash, String parametersHash, Map<String, String> externalHashes, List<GenerationRootDependencies> unchanged, int skippedCount, int fromCacheCount, Map<String, String> dependenciesTraces) {
+  private GenerationDependencies(List<GenerationRootDependencies> data, String modelHash, String parametersHash, Map<String, String> externalHashes,
+      List<GenerationRootDependencies> unchanged, int skippedCount, int fromCacheCount, Map<String, String> dependenciesTraces) {
     this.containsIncrementalInfo = true;
     this.myRootDependencies = data;
     this.mySkippedCount = skippedCount;
@@ -208,7 +214,9 @@ public class GenerationDependencies {
     return (extension == null) ? outputRootNode.getName() : outputRootNode.getName() + "." + extension;
   }
 
-  public static GenerationDependencies fromIncremental(Map<SNode, SNode> currentToOriginalMap, RootDependenciesBuilder[] roots, String modelHash, String parametersHash, IOperationContext operationContext, IncrementalGenerationStrategy incrementalStrategy, int skippedCount, int fromCacheCount, Map<String, String> dependenciesTraces) {
+  public static GenerationDependencies fromIncremental(Map<SNode, SNode> currentToOriginalMap, RootDependenciesBuilder[] roots, String modelHash,
+      String parametersHash, IOperationContext operationContext, IncrementalGenerationStrategy incrementalStrategy, int skippedCount, int fromCacheCount,
+      Map<String, String> dependenciesTraces) {
     Map<String, List<String>> generatedFiles = getGeneratedFiles(currentToOriginalMap);
 
     List<GenerationRootDependencies> unchanged = null;
@@ -233,14 +241,15 @@ public class GenerationDependencies {
       rootDependencies.add(dep);
       for (String modelReference : dep.getExternal()) {
         if (!externalHashes.containsKey(modelReference)) {
-          SModel sm = SModelRepository.getInstance().getModelDescriptor(jetbrains.mps.smodel.SModelReference.fromString(modelReference));
+          SModel sm = SModelRepository.getInstance().getModelDescriptor(PersistenceFacade.getInstance().createModelReference(modelReference));
           Map<String, String> hashes = incrementalStrategy.getModelHashes(sm, operationContext);
           String value = hashes != null ? hashes.get(GeneratableSModel.FILE) : null;
           externalHashes.put(modelReference, value);
         }
       }
     }
-    return new GenerationDependencies(rootDependencies, modelHash, parametersHash, externalHashes, unchanged == null ? Collections.<GenerationRootDependencies>emptyList() : unchanged, skippedCount, fromCacheCount, dependenciesTraces);
+    return new GenerationDependencies(rootDependencies, modelHash, parametersHash, externalHashes,
+        unchanged == null ? Collections.<GenerationRootDependencies>emptyList() : unchanged, skippedCount, fromCacheCount, dependenciesTraces);
   }
 
   public static GenerationDependencies fromNonIncremental(String modelHash, String parametersHash) {

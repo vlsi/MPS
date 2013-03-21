@@ -16,10 +16,13 @@
 package jetbrains.mps.util.io;
 
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.SNodeId.Foreign;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId.Regular;
+import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.BufferedInputStream;
 import java.io.DataInputStream;
@@ -37,7 +40,7 @@ public class ModelInputStream extends DataInputStream {
 
   private List<String> myStrings = new ArrayList<String>(2048);
   private List<SModelReference> myModelRefs = new ArrayList<SModelReference>(1024);
-  private List<ModuleReference> myModuleRefs = new ArrayList<ModuleReference>(128);
+  private List<SModuleReference> myModuleRefs = new ArrayList<SModuleReference>(128);
 
   public ModelInputStream(InputStream in) {
     super(new BufferedInputStream(in, 65536));
@@ -83,7 +86,7 @@ public class ModelInputStream extends DataInputStream {
     return res;
   }
 
-  public ModuleReference readModuleReference() throws IOException {
+  public SModuleReference readModuleReference() throws IOException {
     int c = readByte();
     if (c == 0x70) {
       return null;
@@ -96,7 +99,7 @@ public class ModelInputStream extends DataInputStream {
     if (c == 0x17) {
       id = readModuleID();
     }
-    ModuleReference ref = new ModuleReference(readString(), id);
+    SModuleReference ref = new jetbrains.mps.project.structure.modules.ModuleReference(readString(), id);
     myModuleRefs.add(ref);
     return ref;
   }
@@ -124,11 +127,10 @@ public class ModelInputStream extends DataInputStream {
       return myModelRefs.get(index);
     }
 
-    SModelId id = null;
-    if (c == 7) {
-      id = readModelID();
-    }
-    SModelReference ref = new jetbrains.mps.smodel.SModelReference(SModelFqName.fromString(readString()), id);
+    SModelId id = readModelID();
+    String modelName = readString();
+    SModuleReference moduleRef = readModuleReference();
+    SModelReference ref = new SModelReference(moduleRef, id, modelName);
     myModelRefs.add(ref);
     return ref;
   }
@@ -142,6 +144,8 @@ public class ModelInputStream extends DataInputStream {
       return jetbrains.mps.smodel.SModelId.regular(uuid);
     } else if (c == 0x27) {
       return jetbrains.mps.smodel.SModelId.foreign(readString());
+    } else if (c == 0x26) {
+      return PersistenceFacade.getInstance().createModelId(readString());
     } else {
       throw new IOException("unknown id");
     }
@@ -154,7 +158,7 @@ public class ModelInputStream extends DataInputStream {
     } else if (c == 0x18) {
       return new Regular(readLong());
     } else if (c == 0x17) {
-      return new Foreign(readString());
+      return PersistenceFacade.getInstance().createNodeId(readString());
     }
     throw new IOException("no id");
   }

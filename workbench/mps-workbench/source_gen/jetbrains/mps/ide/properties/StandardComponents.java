@@ -17,7 +17,7 @@ import javax.swing.TransferHandler;
 import jetbrains.mps.workbench.dialogs.project.components.parts.CopySupport;
 import jetbrains.mps.workbench.dialogs.project.components.parts.validators.Validator;
 import jetbrains.mps.workbench.dialogs.project.components.parts.validators.ModelValidator;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.ide.ui.dialogs.properties.creators.LanguageChooser;
 import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ModuleRenderer;
 import jetbrains.mps.workbench.dialogs.project.components.parts.validators.ModuleValidator;
@@ -118,7 +118,7 @@ public class StandardComponents {
     }.invoke();
   }
 
-  public static JPanel createLanguagesPanel(final IBindedDialog owner, final String caption, final List<ModuleReference> list, final Condition<ModuleReference> condition) {
+  public static JPanel createLanguagesPanel(final IBindedDialog owner, final String caption, final List<SModuleReference> list, final Condition<SModuleReference> condition) {
     return new _FunctionTypes._return_P0_E0<BoundListPanel>() {
       public BoundListPanel invoke() {
         final BoundListPanel result_wf5hwp_a0a0a2 = new BoundListPanel(owner, caption, list);
@@ -136,11 +136,11 @@ public class StandardComponents {
     }.invoke();
   }
 
-  public static JPanel createLanguagesPanel(final IBindedDialog owner, String caption, final List<ModuleReference> list) {
+  public static JPanel createLanguagesPanel(final IBindedDialog owner, String caption, final List<SModuleReference> list) {
     return createLanguagesPanel(owner, caption, list, null);
   }
 
-  public static JPanel createSolutionsPanel(final IBindedDialog owner, final String caption, final List<ModuleReference> list) {
+  public static JPanel createSolutionsPanel(final IBindedDialog owner, final String caption, final List<SModuleReference> list) {
     return new _FunctionTypes._return_P0_E0<BoundListPanel>() {
       public BoundListPanel invoke() {
         final BoundListPanel result_wf5hwp_a0a0a4 = new BoundListPanel(owner, caption, list);
@@ -156,7 +156,7 @@ public class StandardComponents {
     }.invoke();
   }
 
-  public static JPanel createDevKitsPanel(final IBindedDialog owner, final String caption, final List<ModuleReference> list) {
+  public static JPanel createDevKitsPanel(final IBindedDialog owner, final String caption, final List<SModuleReference> list) {
     return new _FunctionTypes._return_P0_E0<BoundListPanel>() {
       public BoundListPanel invoke() {
         final BoundListPanel result_wf5hwp_a0a0a5 = new BoundListPanel(owner, caption, list);
@@ -172,7 +172,7 @@ public class StandardComponents {
     }.invoke();
   }
 
-  public static JPanel createGeneratorsPanel(final IBindedDialog owner, final String caption, final List<ModuleReference> list) {
+  public static JPanel createGeneratorsPanel(final IBindedDialog owner, final String caption, final List<SModuleReference> list) {
     return new _FunctionTypes._return_P0_E0<BoundListPanel>() {
       public BoundListPanel invoke() {
         final BoundListPanel result_wf5hwp_a0a0a6 = new BoundListPanel(owner, caption, list);
@@ -299,7 +299,7 @@ public class StandardComponents {
     }.invoke();
   }
 
-  public static JPanel createMappingConfigsPanel(final IBindedDialog owner, final String caption, final List<MappingPriorityRule> list, final Generator generator, final List<ModuleReference> depGenerators) {
+  public static JPanel createMappingConfigsPanel(final IBindedDialog owner, final String caption, final List<MappingPriorityRule> list, final Generator generator, final List<SModuleReference> depGenerators) {
     Component tablePanel = new _FunctionTypes._return_P0_E0<BoundTablePanel>() {
       public BoundTablePanel invoke() {
         final BoundTablePanel result_wf5hwp_a0a0a0l = new BoundTablePanel(owner, caption, list);

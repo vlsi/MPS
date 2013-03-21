@@ -96,6 +96,14 @@ public class SModelFqName implements Comparable<Object> {
     }
   }
 
+  public String getModelName() {
+    return hasStereotype() ? myLongName + "@" + myStereotype : myLongName;
+  }
+
+  public String getModuleFqName() {
+    return myModuleFqName;
+  }
+
   public String getStereotype() {
     return myStereotype;
   }

@@ -52,7 +52,7 @@
     <nodeInfo nodeId="5294483648489408097" fileName="TestMain.java" startLine="158" startPosition="25" endLine="159" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5294483648489408110" fileName="TestMain.java" startLine="161" startPosition="7" endLine="162" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5294483648489408116" fileName="TestMain.java" startLine="162" startPosition="43" endLine="163" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5294483648489408132" fileName="TestMain.java" startLine="166" startPosition="68" endLine="167" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5294483648489408132" fileName="TestMain.java" startLine="166" startPosition="68" endLine="167" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5294483648489408148" fileName="TestMain.java" startLine="170" startPosition="76" endLine="171" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5294483648489408163" fileName="TestMain.java" startLine="174" startPosition="76" endLine="175" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5294483648489408167" fileName="TestMain.java" startLine="175" startPosition="68" endLine="176" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -233,7 +233,7 @@
     </scopeInfo>
     <scopeInfo nodeId="5294483648489408058" fileName="TestMain.java" startLine="148" startPosition="31" endLine="149" endPosition="21" />
     <scopeInfo nodeId="5294483648489408096" fileName="TestMain.java" startLine="158" startPosition="25" endLine="159" endPosition="138" />
-    <scopeInfo nodeId="5294483648489408131" fileName="TestMain.java" startLine="166" startPosition="68" endLine="167" endPosition="88" />
+    <scopeInfo nodeId="5294483648489408131" fileName="TestMain.java" startLine="166" startPosition="68" endLine="167" endPosition="103" />
     <scopeInfo nodeId="5294483648489408147" fileName="TestMain.java" startLine="170" startPosition="76" endLine="171" endPosition="73" />
     <scopeInfo nodeId="5294483648489408218" fileName="TestMain.java" startLine="190" startPosition="25" endLine="191" endPosition="232" />
     <scopeInfo nodeId="5294483648489408265" fileName="TestMain.java" startLine="195" startPosition="25" endLine="196" endPosition="26" />

@@ -17,16 +17,14 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.logging.Logger;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -46,12 +44,14 @@ public class GoToTypeErrorRuleUtil {
 
     String ruleModel = ruleModelAndId.o1;
     final String ruleID = ruleModelAndId.o2;
-    SModelReference modelUID = jetbrains.mps.smodel.SModelReference.fromString(ruleModel);
-    if (modelUID == null) {
+    SModelReference modelUID;
+    try {
+      modelUID = PersistenceFacade.getInstance().createModelReference(ruleModel);
+    } catch (IllegalArgumentException ex) {
       LOG.error("can't find rule's model " + ruleModel);
       return;
     }
-    modelUID = jetbrains.mps.smodel.SModelReference.fromString(SModelStereotype.withoutStereotype(modelUID.getModelName()));
+    modelUID = PersistenceFacade.getInstance().createModelReference(SModelStereotype.withoutStereotype(modelUID.getModelName()));
     final SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
     if (modelDescriptor == null) {
       LOG.error("can't find rule's model " + ruleModel);

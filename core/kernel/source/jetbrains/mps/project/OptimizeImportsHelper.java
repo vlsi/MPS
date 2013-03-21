@@ -15,9 +15,10 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.project.structure.modules.*;
+import org.jetbrains.mps.openapi.module.SModuleReference;import jetbrains.mps.project.structure.modules.*;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.*;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
@@ -72,11 +73,7 @@ public class OptimizeImportsHelper {
   private Result optimizeSolutionImports_internal(Solution solution) {
     List<SModel> modelsToOptimize = solution.getOwnModelDescriptors();
     Result result = optimizeModelsImports_internal(modelsToOptimize);
-
-    SolutionDescriptor descriptor = solution.getModuleDescriptor();
-    result.myReport = optimizeModuleImports(descriptor, result) + "\n\n" + result.myReport;
-    solution.setSolutionDescriptor(descriptor, false);
-
+    result.myReport = optimizeModuleImports(solution, result) + "\n\n" + result.myReport;
     return result;
   }
 
@@ -88,14 +85,10 @@ public class OptimizeImportsHelper {
     }
     Result result = optimizeModelsImports_internal(modelsToOptimize);
     SModelRepository.getInstance().saveAll();
-    LanguageDescriptor descriptor = language.getModuleDescriptor();
     for (Generator g : language.getGenerators()) {
-      GeneratorDescriptor gd = g.getModuleDescriptor();
-      result.myReport = optimizeModuleImports(gd, result) + "\n\n" + result.myReport;
-      g.setModuleDescriptor(gd, false);
+      result.myReport = optimizeModuleImports(g, result) + "\n\n" + result.myReport;
     }
-    result.myReport = optimizeModuleImports(descriptor, result) + "\n\n" + result.myReport;
-    language.setLanguageDescriptor(descriptor, false);
+    result.myReport = optimizeModuleImports(language, result) + "\n\n" + result.myReport;
 
     return result;
   }
@@ -122,20 +115,20 @@ public class OptimizeImportsHelper {
       }
     }
 
-    Set<ModuleReference> unusedLanguages = new HashSet<ModuleReference>();
-    for (ModuleReference languageRef : ((jetbrains.mps.smodel.SModelInternal) modelDescriptor).importedLanguages()) {
-      ModuleReference ref = getUnusedLanguageRef(result, languageRef);
+    Set<SModuleReference> unusedLanguages = new HashSet<SModuleReference>();
+    for (SModuleReference languageRef : ((jetbrains.mps.smodel.SModelInternal) modelDescriptor).importedLanguages()) {
+      SModuleReference ref = getUnusedLanguageRef(result, languageRef);
       if (ref != null) unusedLanguages.add(ref);
     }
 
-    Set<ModuleReference> unusedDevkits = new HashSet<ModuleReference>();
-    for (ModuleReference devkitRef : ((jetbrains.mps.smodel.SModelInternal) modelDescriptor).importedDevkits()) {
+    Set<SModuleReference> unusedDevkits = new HashSet<SModuleReference>();
+    for (SModuleReference devkitRef : ((jetbrains.mps.smodel.SModelInternal) modelDescriptor).importedDevkits()) {
       DevKit dk = GlobalScope.getInstance().getDevKit(devkitRef);
       if (dk == null) return null;
       if (ModelsAutoImportsManager.getAutoImportedDevKits(modelDescriptor.getModule(), modelDescriptor).contains(dk)) {
         continue;
       }
-      ModuleReference ref = getUnusedDevkitRef(result, devkitRef);
+      SModuleReference ref = getUnusedDevkitRef(result, devkitRef);
       if (ref != null) unusedDevkits.add(devkitRef);
     }
 
@@ -146,7 +139,7 @@ public class OptimizeImportsHelper {
   private Result collectModelDependencies(SModel modelDescriptor) {
     Result result = new Result();
 
-    for (ModuleReference ref : ((jetbrains.mps.smodel.SModelInternal) modelDescriptor).engagedOnGenerationLanguages()) {
+    for (SModuleReference ref : ((jetbrains.mps.smodel.SModelInternal) modelDescriptor).engagedOnGenerationLanguages()) {
       result.myUsedLanguages.add(ModuleRepositoryFacade.getInstance().getModule(ref, Language.class));
     }
     for (SNode node : new NodesIterable(modelDescriptor)) {
@@ -169,29 +162,29 @@ public class OptimizeImportsHelper {
 
   //----additional methods--------
 
-  private String optimizeModuleImports(ModuleDescriptor descriptor, Result result) {
+  private String optimizeModuleImports(AbstractModule module, Result result) {
     List<Dependency> unusedDeps = new ArrayList<Dependency>();
-    for (Dependency d : descriptor.getDependencies()) {
-      Dependency dep = getUnusedDependency(result, d, descriptor.getModuleReference());
+    for (Dependency d : module.getDependencies()) {
+      Dependency dep = getUnusedDependency(result, d, module.getModuleReference());
       if (dep != null) unusedDeps.add(dep);
     }
 
-    List<ModuleReference> unusedLanguages = new ArrayList<ModuleReference>();
-    for (ModuleReference langRef : descriptor.getUsedLanguages()) {
-      ModuleReference ref = getUnusedLanguageRef(result, langRef);
+    List<SModuleReference> unusedLanguages = new ArrayList<SModuleReference>();
+    for (SModuleReference langRef : module.getUsedLanguagesReferences()) {
+      SModuleReference ref = getUnusedLanguageRef(result, langRef);
       if (ref != null) unusedLanguages.add(langRef);
     }
 
-    List<ModuleReference> unusedDevkits = new ArrayList<ModuleReference>();
-    for (ModuleReference devkitRef : descriptor.getUsedDevkits()) {
-      ModuleReference ref = getUnusedDevkitRef(result, devkitRef);
+    List<SModuleReference> unusedDevkits = new ArrayList<SModuleReference>();
+    for (SModuleReference devkitRef : module.getUsedDevkitReferences()) {
+      SModuleReference ref = getUnusedDevkitRef(result, devkitRef);
       if (ref != null) unusedDevkits.add(devkitRef);
     }
 
-    return removeFromImports(descriptor, unusedLanguages, unusedDevkits, unusedDeps);
+    return removeFromImports(module, unusedLanguages, unusedDevkits, unusedDeps);
   }
 
-  private Dependency getUnusedDependency(Result result, Dependency dep, ModuleReference current) {
+  private Dependency getUnusedDependency(Result result, Dependency dep, SModuleReference current) {
     if (dep.isReexport()) return null;
     if (dep.getModuleRef().equals(current)) return dep;
 
@@ -211,7 +204,7 @@ public class OptimizeImportsHelper {
     return used ? null : dep;
   }
 
-  private ModuleReference getUnusedDevkitRef(Result result, ModuleReference devkitRef) {
+  private SModuleReference getUnusedDevkitRef(Result result, SModuleReference devkitRef) {
     DevKit dk = GlobalScope.getInstance().getDevKit(devkitRef);
     if (dk == null) return null;
 
@@ -227,7 +220,7 @@ public class OptimizeImportsHelper {
     return dk.getModuleReference();
   }
 
-  private ModuleReference getUnusedLanguageRef(Result result, ModuleReference languageRef) {
+  private SModuleReference getUnusedLanguageRef(Result result, SModuleReference languageRef) {
     Language language = GlobalScope.getInstance().getLanguage(languageRef);
     if (language == null) return null;
     if (result.myUsedLanguages.contains(language)) return null;
@@ -239,17 +232,18 @@ public class OptimizeImportsHelper {
     return language.getModuleReference();
   }
 
-  private String removeFromImports(SModel modelDescriptor, Set<SModelReference> unusedModels, Set<ModuleReference> unusedLanguages, Set<ModuleReference> unusedDevkits) {
+  private String removeFromImports(SModel modelDescriptor, Set<SModelReference> unusedModels, Set<SModuleReference> unusedLanguages,
+      Set<SModuleReference> unusedDevkits) {
     StringBuilder report = new StringBuilder("Import for model " + modelDescriptor.getReference() + " were optimized \n");
 
-    for (ModuleReference langRef : unusedLanguages) {
+    for (SModuleReference langRef : unusedLanguages) {
       ((jetbrains.mps.smodel.SModelInternal) modelDescriptor).deleteLanguage(langRef);
-      report.append("Language ").append(langRef.getModuleFqName()).append(" was removed from imports\n");
+      report.append("Language ").append(langRef.getModuleName()).append(" was removed from imports\n");
     }
 
-    for (ModuleReference dkRef : unusedDevkits) {
+    for (SModuleReference dkRef : unusedDevkits) {
       ((jetbrains.mps.smodel.SModelInternal) modelDescriptor).deleteDevKit(dkRef);
-      report.append("Devkit ").append(dkRef.getModuleFqName()).append(" was removed from imports\n");
+      report.append("Devkit ").append(dkRef.getModuleName()).append(" was removed from imports\n");
     }
 
     for (SModelReference model : unusedModels) {
@@ -260,22 +254,23 @@ public class OptimizeImportsHelper {
     return report.toString();
   }
 
-  private String removeFromImports(ModuleDescriptor descriptor, List<ModuleReference> unusedLanguages, List<ModuleReference> unusedDevkits, List<Dependency> unusedDeps) {
-    StringBuilder report = new StringBuilder("Import for module " + descriptor.getNamespace() + " were optimized \n");
+  private String removeFromImports(AbstractModule module, List<SModuleReference> unusedLanguages, List<SModuleReference> unusedDevkits,
+      List<Dependency> unusedDeps) {
+    StringBuilder report = new StringBuilder("Import for module " + module.getModuleName() + " were optimized \n");
 
-    for (ModuleReference langRef : unusedLanguages) {
-      descriptor.getUsedLanguages().remove(langRef);
-      report.append("Language ").append(langRef.getModuleFqName()).append(" was removed from imports\n");
+    for (SModuleReference langRef : unusedLanguages) {
+      module.removeUsedLanguage(langRef);
+      report.append("Language ").append(langRef.getModuleName()).append(" was removed from imports\n");
     }
 
-    for (ModuleReference dkRef : unusedDevkits) {
-      descriptor.getUsedDevkits().remove(dkRef);
-      report.append("Devkit ").append(dkRef.getModuleFqName()).append(" was removed from imports\n");
+    for (SModuleReference dkRef : unusedDevkits) {
+      module.removeUsedDevkit(dkRef);
+      report.append("Devkit ").append(dkRef.getModuleName()).append(" was removed from imports\n");
     }
 
     for (Dependency dep : unusedDeps) {
-      descriptor.getDependencies().remove(dep);
-      report.append("Dependency on ").append(dep.getModuleRef().getModuleFqName()).append(" was removed\n");
+      module.removeDependency(dep);
+      report.append("Dependency on ").append(dep.getModuleRef().getModuleName()).append(" was removed\n");
     }
 
     return report.toString();

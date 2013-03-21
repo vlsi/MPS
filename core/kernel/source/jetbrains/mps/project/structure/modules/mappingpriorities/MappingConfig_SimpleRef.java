@@ -16,6 +16,7 @@
 package jetbrains.mps.project.structure.modules.mappingpriorities;
 
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public class MappingConfig_SimpleRef extends MappingConfig_AbstractRef {
 
@@ -70,7 +71,7 @@ public class MappingConfig_SimpleRef extends MappingConfig_AbstractRef {
     if (myModelUID.equals("*")) {
       return false;
     }
-    jetbrains.mps.smodel.SModelReference ref = jetbrains.mps.smodel.SModelReference.fromString(myModelUID);
+    jetbrains.mps.smodel.SModelReference ref = (jetbrains.mps.smodel.SModelReference) PersistenceFacade.getInstance().createModelReference(myModelUID);
     jetbrains.mps.smodel.SModelReference newRef = ref.update();
     if (ref.differs(newRef)) {
       myModelUID = newRef.toString();

@@ -29,6 +29,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import org.jetbrains.annotations.NotNull;
 
+import javax.swing.SwingUtilities;
 import java.awt.Color;
 import java.util.*;
 import java.util.Map.Entry;
@@ -378,7 +379,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
   }
 
   public void dispose() {
-    assert ModelAccess.instance().isInEDT() : "dispose() should be called from EDT only";
+    assert ModelAccess.instance().isInEDT() || SwingUtilities.isEventDispatchThread() : "dispose() should be called from EDT only";
     ClassLoaderManager.getInstance().removeReloadHandler(myHandler);
     myEditor.removeRebuildListener(myRebuildListener);
   }

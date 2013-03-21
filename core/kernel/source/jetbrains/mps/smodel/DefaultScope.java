@@ -102,15 +102,7 @@ public abstract class DefaultScope extends BaseScope {
       return null;
     }
 
-    SModel model;
-    if (reference.getModelId() != null) {
-      model = SModelRepository.getInstance().getModelDescriptor(reference.getModelId());
-    } else {
-      // todo: do something with this code
-      String fqName = reference.getModelName();
-      if (fqName == null) return null;
-      model = SModelRepository.getInstance().getModelDescriptor(fqName);
-    }
+    SModel model = SModelRepository.getInstance().getModelDescriptor(reference.getModelId());
 
     if (model == null) {
       return null;

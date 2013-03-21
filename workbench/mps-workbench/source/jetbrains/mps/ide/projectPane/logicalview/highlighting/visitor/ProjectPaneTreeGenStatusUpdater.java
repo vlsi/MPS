@@ -63,14 +63,13 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
     if (!(md instanceof GeneratableSModel) || !(((GeneratableSModel) md).isGeneratable())) return;
     if (md.getModule() == null) return;
 
-    TreeNode node = modelNode;
-    final ProjectModuleTreeNode moduleNode = getContainingModuleNode(node);
+    final ProjectModuleTreeNode moduleNode = getContainingModuleNode(modelNode);
 
-    boolean wasChanged = md instanceof EditableSModel && ((EditableSModel) md).isChanged();
+    boolean wasChanged = ((EditableSModel) md).isChanged();
 
-    if (moduleNode.getModule().isPackaged()) {
-      ourUpdater.addUpdate(modelNode, new GenStatusNodeUpdate(GenerationStatus.PACKAGED.getMessage()));
-      ourUpdater.addUpdate(moduleNode, new GenStatusNodeUpdate(GenerationStatus.PACKAGED.getMessage()));
+    if (moduleNode.getModule().isReadOnly()) {
+      ourUpdater.addUpdate(modelNode, new GenStatusNodeUpdate(GenerationStatus.READONLY.getMessage()));
+      ourUpdater.addUpdate(moduleNode, new GenStatusNodeUpdate(GenerationStatus.READONLY.getMessage()));
       return;
     }
 
@@ -134,7 +133,7 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
 
   private GenerationStatus getGenerationStatus(SModelTreeNode node) {
     if (node.getModel() == null) return GenerationStatus.NOT_REQUIRED;
-    if (isPackaged(node)) return GenerationStatus.PACKAGED;
+    if (isPackaged(node)) return GenerationStatus.READONLY;
     if (isDoNotGenerate(node)) return GenerationStatus.DO_NOT_GENERATE;
 
     jetbrains.mps.project.Project project = node.getOperationContext().getProject();
@@ -157,7 +156,7 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
   }
 
   public static enum GenerationStatus {
-    PACKAGED("packaged"),
+    READONLY("read only"),
     DO_NOT_GENERATE("do not generate"),
     UPDATING("updating..."),
     REQUIRED("generation required"),

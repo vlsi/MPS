@@ -31,6 +31,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.openapi.editor.cells.CellFinderUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
@@ -503,7 +504,7 @@ public class EditorManager {
     // decide position of the hint cell
     EditorCell resultCell;
     Object anchorId = node.getUserObject(SIDE_TRANSFORM_HINT_ANCHOR_CELL_ID);
-    EditorCell anchorCell = anchorId == null ? null : CellFinders.byId(node, anchorId.toString()).find(nodeCell, true);
+    EditorCell anchorCell = anchorId == null ? null : CellFinderUtil.findChild(nodeCell, CellFinders.byId(node, anchorId.toString()), true);
     if (anchorCell != null && anchorCell != nodeCell) {
       jetbrains.mps.openapi.editor.cells.EditorCell_Collection cellCollection = anchorCell.getParent();
       int index;

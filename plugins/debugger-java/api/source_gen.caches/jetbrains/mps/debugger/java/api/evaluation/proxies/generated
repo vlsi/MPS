@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="4vubq6tv6otbiuyl5vdix9384h08d7n">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="38s949ymo9nq7jj7p2lrfowy0hurndx" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
   <common hash="73ipv6ebj2f21v2jcid9jvld0ch7lcc" />
   <source id="4727801710070560812" name="IValueProxy" hash="ab5qg6ipkv1mb6v65obfjb0k252hv2o">
     <file name="IValueProxy.java" />
@@ -34,6 +34,7 @@
     <file name="VoidValueProxy.java" />
   </source>
   <source id="4727801710070563929" name="PrimitiveValueProxy" hash="-b29uh43uczrvuloodimd086t34v4kk8">
+    <dep root="4727801710070563612" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="PrimitiveValueProxy.java" />
   </source>

@@ -16,13 +16,12 @@
 package jetbrains.mps.smodel.persistence.def.v7;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.refactoring.ModelLinkMap;
 import jetbrains.mps.refactoring.StructureModificationProcessor;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelHeader;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.StaticReference;
@@ -36,9 +35,11 @@ import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.List;
 
@@ -57,7 +58,7 @@ public class ModelReader7 implements IModelReader {
   public DefaultSModel readModel(Document document, SModelHeader header) {
     Element rootElement = document.getRootElement();
 
-    SModelReference modelReference = jetbrains.mps.smodel.SModelReference.fromString(rootElement.getAttributeValue(ModelPersistence.MODEL_UID));
+    SModelReference modelReference = PersistenceFacade.getInstance().createModelReference(rootElement.getAttributeValue(ModelPersistence.MODEL_UID));
     DefaultSModel model = new DefaultSModel(modelReference);
     model.setPersistenceVersion(getVersion());
     model.getSModelHeader().updateDefaults(header);
@@ -86,19 +87,19 @@ public class ModelReader7 implements IModelReader {
     // languages
     for (Element element : (List<Element>) rootElement.getChildren(ModelPersistence.LANGUAGE)) {
       String languageNamespace = element.getAttributeValue(ModelPersistence.NAMESPACE);
-      model.addLanguage(ModuleReference.fromString(languageNamespace));
+      model.addLanguage(jetbrains.mps.project.structure.modules.ModuleReference.fromString(languageNamespace));
     }
 
     // languages engaged on generation
     for (Element element : (List<Element>) rootElement.getChildren(ModelPersistence.LANGUAGE_ENGAGED_ON_GENERATION)) {
       String languageNamespace = element.getAttributeValue(ModelPersistence.NAMESPACE);
-      model.addEngagedOnGenerationLanguage(ModuleReference.fromString(languageNamespace));
+      model.addEngagedOnGenerationLanguage(jetbrains.mps.project.structure.modules.ModuleReference.fromString(languageNamespace));
     }
 
     //devkits
     for (Element element : (List<Element>) rootElement.getChildren(ModelPersistence.DEVKIT)) {
       String devkitNamespace = element.getAttributeValue(ModelPersistence.NAMESPACE);
-      model.addDevKit(ModuleReference.fromString(devkitNamespace));
+      model.addDevKit(jetbrains.mps.project.structure.modules.ModuleReference.fromString(devkitNamespace));
     }
 
     // imports
@@ -106,7 +107,8 @@ public class ModelReader7 implements IModelReader {
       String indexValue = element.getAttributeValue(ModelPersistence.MODEL_IMPORT_INDEX);
       int usedModelVersion = Integer.parseInt(element.getAttributeValue(ModelPersistence.VERSION, "-1"));
       String importedModelUIDString = element.getAttributeValue(ModelPersistence.MODEL_UID);
-      myHelper.addImportToModel(model, indexValue, importedModelUIDString, usedModelVersion, element.getAttributeValue(ModelPersistence.IMPLICIT) != null);
+      myHelper.addImportToModel(model, indexValue, importedModelUIDString, usedModelVersion,
+          element.getAttributeValue(ModelPersistence.IMPLICIT) != null);
     }
 
     // roots

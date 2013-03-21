@@ -29,7 +29,7 @@ import jetbrains.mps.idea.core.icons.MPSIcons;
 import jetbrains.mps.idea.core.ui.ImportedModelsTable;
 import jetbrains.mps.idea.core.ui.UsedLanguagesTable;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.SNodeOperations;
@@ -52,7 +52,7 @@ import java.util.Set;
 public class ModelPropertiesConfigurable implements Configurable, Disposable {
   private EditableSModelDescriptor myDescriptor;
   private UsedLanguagesTable myUsedLanguagesTable;
-  private List<ModuleReference> myUsedLanguages;
+  private List<SModuleReference> myUsedLanguages;
   private Project myProject;
   private ImportedModelsTable myImportedModelsTable;
   private List<SModelReference> myImportedModels;
@@ -60,7 +60,7 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
   private JComponent myTabbedPaneComponent;
   private JTextField myPackageName;
   private String myModelLongName;
-  private Set<ModuleReference> myVisibleLanguages;
+  private Set<SModuleReference> myVisibleLanguages;
   private ModelPathsTab myModelPathsTab;
 
   public ModelPropertiesConfigurable(EditableSModelDescriptor descriptor, Project project) {
@@ -76,7 +76,7 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
     myImportedModels = SModelOperations.getImportedModelUIDs(sModel);
     myModelLongName = SNodeOperations.getModelLongName(myDescriptor);
     IModule module = myDescriptor.getModule();
-    myVisibleLanguages = new HashSet<ModuleReference>();
+    myVisibleLanguages = new HashSet<SModuleReference>();
     for (Language visibleLanguage : module.getScope().getVisibleLanguages()) {
       myVisibleLanguages.add(visibleLanguage.getModuleReference());
     }
@@ -111,7 +111,7 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
   private JComponent createUsedLanguagesTable() {
     myUsedLanguagesTable = new UsedLanguagesTable() {
       @Override
-      protected SimpleTextAttributes getTextAttributes(ModuleReference element) {
+      protected SimpleTextAttributes getTextAttributes(SModuleReference element) {
         if (myVisibleLanguages.contains(element)) {
           return super.getTextAttributes(element);
         }
@@ -119,12 +119,12 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
       }
 
       @Override
-      public boolean isModified(List<ModuleReference> elements) {
+      public boolean isModified(List<SModuleReference> elements) {
         return super.isModified(elements) || !myVisibleLanguages.containsAll(getElements());
       }
 
       @Override
-      protected String getToolTipText(ModuleReference element) {
+      protected String getToolTipText(SModuleReference element) {
         if (myVisibleLanguages.contains(element)) {
           return super.getToolTipText(element);
         }
@@ -188,23 +188,23 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
   }
 
   private void saveUsedLanguages(SModel sModel, IModule module) {
-    List<ModuleReference> currentlyUsedLanguages = SNodeOperations.getUsedLanguages(sModel);
-    List<ModuleReference> usedLanguages = myUsedLanguagesTable.getElements();
+    List<SModuleReference> currentlyUsedLanguages = SNodeOperations.getUsedLanguages(sModel);
+    List<SModuleReference> usedLanguages = myUsedLanguagesTable.getElements();
 
-    Set<ModuleReference> languagesToRemove = new HashSet<ModuleReference>(currentlyUsedLanguages);
+    Set<SModuleReference> languagesToRemove = new HashSet<SModuleReference>(currentlyUsedLanguages);
     languagesToRemove.removeAll(usedLanguages);
-    for (ModuleReference language : languagesToRemove) {
+    for (SModuleReference language : languagesToRemove) {
       ((jetbrains.mps.smodel.SModelInternal) sModel).deleteLanguage(language);
     }
 
-    Set<ModuleReference> languagesToAdd = new HashSet<ModuleReference>(usedLanguages);
+    Set<SModuleReference> languagesToAdd = new HashSet<SModuleReference>(usedLanguages);
     languagesToAdd.removeAll(currentlyUsedLanguages);
-    for (ModuleReference language : languagesToAdd) {
+    for (SModuleReference language : languagesToAdd) {
       ((jetbrains.mps.smodel.SModelInternal) sModel).addLanguage(language);
     }
 
-    Collection<ModuleReference> addedLanguages = new ArrayList<ModuleReference>();
-    for (ModuleReference language : usedLanguages) {
+    Collection<SModuleReference> addedLanguages = new ArrayList<SModuleReference>();
+    for (SModuleReference language : usedLanguages) {
       if (module.getScope().getLanguage(language) == null) {
         module.addUsedLanguage(language);
         addedLanguages.add(language);

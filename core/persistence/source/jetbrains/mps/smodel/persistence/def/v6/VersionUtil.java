@@ -20,12 +20,13 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.StaticReference;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -99,7 +100,8 @@ public class VersionUtil {
 
   public String genRole(@NotNull SNode node) {
     return node.getRoleInParent() == null ? null :
-        genReferenceString(AttributeOperations.isAttribute(node) ? null : ((jetbrains.mps.smodel.SNode) node).getRoleLink(), node.getRoleInParent(), true);
+        genReferenceString(AttributeOperations.isAttribute(node) ? null : ((jetbrains.mps.smodel.SNode) node).getRoleLink(), node.getRoleInParent(),
+            true);
   }
 
   public String genRole(@NotNull SReference ref) {
@@ -131,7 +133,7 @@ public class VersionUtil {
       return;
     }
     int ix = Integer.parseInt(index);
-    SModelReference modelRef = jetbrains.mps.smodel.SModelReference.fromString(modelUID);
+    SModelReference modelRef = PersistenceFacade.getInstance().createModelReference(modelUID);
     ImportElement elem = new ImportElement(modelRef, ix, version);
     myImports.put(modelRef, elem);
     myImportByIx.put(ix, elem);

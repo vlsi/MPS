@@ -21,6 +21,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.logging.Logger;
 import java.util.List;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.IModule;
@@ -114,8 +115,8 @@ public class CollectTests_Action extends BaseAction {
   private boolean doExecute(ProgressIndicator proInd, final Map<String, Object> _params) {
     final Logger LOG = Logger.getLogger("jetbrains.mps.testbench.suite");
     final SModel model = ((SModel) MapSequence.fromMap(_params).get("modelDesc"));
-    final Wrappers._T<List<ModuleReference>> solutions = new Wrappers._T<List<ModuleReference>>();
-    final Wrappers._T<List<ModuleReference>> existing = new Wrappers._T<List<ModuleReference>>();
+    final Wrappers._T<List<SModuleReference>> solutions = new Wrappers._T<List<SModuleReference>>();
+    final Wrappers._T<List<SModuleReference>> existing = new Wrappers._T<List<SModuleReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         solutions.value = CollectTests_Action.this.allSolutions(_params);
@@ -125,11 +126,11 @@ public class CollectTests_Action extends BaseAction {
     ListSequence.fromList(solutions.value).removeSequence(ListSequence.fromList(existing.value));
 
     int done = 0;
-    for (ModuleReference mref : solutions.value) {
+    for (SModuleReference mref : solutions.value) {
       if (proInd.isCanceled()) {
         return false;
       }
-      proInd.setText("Processing " + mref.getModuleFqName());
+      proInd.setText("Processing " + mref.getModuleName());
       final IModule module = MPSModuleRepository.getInstance().getModule(mref);
       if (module != null) {
         final Wrappers._T<SNode> suite = new Wrappers._T<SNode>(null);
@@ -161,8 +162,8 @@ public class CollectTests_Action extends BaseAction {
                       if (suite.value == null) {
                         suite.value = SModelOperations.createNewRootNode(model, "jetbrains.mps.testbench.suite.structure.ModuleSuite", null);
                         SNode sref = SLinkOperations.setNewChild(suite.value, "moduleRef", "jetbrains.mps.testbench.suite.structure.SolutionRef");
-                        ModuleReference mref = module.getModuleReference();
-                        SPropertyOperations.set(sref, "moduleFQName", mref.getModuleFqName());
+                        SModuleReference mref = module.getModuleReference();
+                        SPropertyOperations.set(sref, "moduleFQName", mref.getModuleName());
                         SPropertyOperations.set(sref, "moduleID", mref.getModuleId().toString());
                       }
                       ListSequence.fromList(SLinkOperations.getTargets(suite.value, "testRef", true)).addElement(tref.invoke());
@@ -194,10 +195,10 @@ public class CollectTests_Action extends BaseAction {
     return CollectTests_Action.this.isUserEditableModel(md, _params) && SNodeOperations.isGeneratable(md);
   }
 
-  private List<ModuleReference> allSolutions(final Map<String, Object> _params) {
+  private List<SModuleReference> allSolutions(final Map<String, Object> _params) {
     Iterable<Solution> allSolutions = ModuleRepositoryFacade.getInstance().getAllModules(Solution.class);
-    return Sequence.fromIterable(allSolutions).select(new ISelector<Solution, ModuleReference>() {
-      public ModuleReference select(Solution s) {
+    return Sequence.fromIterable(allSolutions).select(new ISelector<Solution, SModuleReference>() {
+      public SModuleReference select(Solution s) {
         return s.getModuleReference();
       }
     }).toListSequence();
@@ -210,10 +211,10 @@ public class CollectTests_Action extends BaseAction {
     }
   }
 
-  private List<ModuleReference> existingSolutions(SModel model, final Map<String, Object> _params) {
-    return ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.testbench.suite.structure.ModuleSuite")).select(new ISelector<SNode, ModuleReference>() {
-      public ModuleReference select(SNode ms) {
-        return BehaviorReflection.invokeVirtual(ModuleReference.class, SLinkOperations.getTarget(ms, "moduleRef", true), "virtual_moduleReference_1280144168199513544", new Object[]{});
+  private List<SModuleReference> existingSolutions(SModel model, final Map<String, Object> _params) {
+    return ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.testbench.suite.structure.ModuleSuite")).select(new ISelector<SNode, SModuleReference>() {
+      public SModuleReference select(SNode ms) {
+        return BehaviorReflection.invokeVirtual(SModuleReference.class, SLinkOperations.getTarget(ms, "moduleRef", true), "virtual_moduleReference_1280144168199513544", new Object[]{});
       }
     }).toListSequence();
   }

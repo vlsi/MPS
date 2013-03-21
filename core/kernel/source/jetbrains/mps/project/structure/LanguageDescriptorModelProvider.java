@@ -20,7 +20,6 @@ import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
@@ -35,6 +34,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.module.SModuleId;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -185,7 +185,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
 
   private static SModelReference getSModelReference(Language module) {
     SModelFqName fqName = getModelFqName(module);
-    ModuleId moduleId = module.getModuleReference().getModuleId();
+    SModuleId moduleId = module.getModuleReference().getModuleId();
     SModelId id = moduleId != null ? jetbrains.mps.smodel.SModelId.foreign("descriptor", moduleId.toString()) : null;
     return new jetbrains.mps.smodel.SModelReference(fqName, id);
   }
@@ -218,7 +218,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
 
     @Override
     public boolean isGeneratable() {
-      return !myModule.isPackaged();
+      return !myModule.isReadOnly();
     }
 
     @Override

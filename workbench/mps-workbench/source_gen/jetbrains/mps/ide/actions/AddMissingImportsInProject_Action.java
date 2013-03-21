@@ -8,17 +8,14 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.project.Project;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.logging.Logger;
 
 public class AddMissingImportsInProject_Action extends BaseAction {
@@ -57,8 +54,8 @@ public class AddMissingImportsInProject_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      for (SModule module : Sequence.fromIterable(((Project) ((MPSProject) MapSequence.fromMap(_params).get("project"))).getModulesWithGenerators())) {
-        if (module.isPackaged()) {
+      for (IModule module : ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("project")).getModulesWithGenerators())) {
+        if (module.isReadOnly()) {
           continue;
         }
         for (SModel model : Sequence.fromIterable(module.getModels())) {
@@ -69,11 +66,9 @@ public class AddMissingImportsInProject_Action extends BaseAction {
             continue;
           }
 
-          new MissingDependenciesFixer(model).fix(false);
-          ((AbstractModule) module).invalidateCaches();
+          MissingDependenciesFixer.fixDependencies(model);
         }
       }
-      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "AddMissingImportsInProject", t);
     }

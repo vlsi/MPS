@@ -47,6 +47,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class EditorsFinderManager implements ApplicationComponent {
   private static Logger LOG = Logger.getLogger(EditorsFinderManager.class);
+  private static EditorsFinderManager ourInstance = null;
   private ReloadListener myReloadListener = new ReloadAdapter() {
     @Override
     public void unload() {
@@ -60,7 +61,10 @@ public class EditorsFinderManager implements ApplicationComponent {
     myClassLoaderManager = coreComponents.getClassLoaderManager();
   }
 
-  @Override
+  private EditorsFinderManager() {
+    myClassLoaderManager = ClassLoaderManager.getInstance();
+  }
+
   public void initComponent() {
     myClassLoaderManager.addReloadHandler(myReloadListener);
   }
@@ -202,7 +206,13 @@ public class EditorsFinderManager implements ApplicationComponent {
   }
 
   public static EditorsFinderManager getInstance() {
-    return ApplicationManager.getApplication().getComponent(EditorsFinderManager.class);
+    if (ourInstance == null) {
+      ourInstance = (ApplicationManager.getApplication() == null ?
+        new EditorsFinderManager() :
+        ApplicationManager.getApplication().getComponent(EditorsFinderManager.class)
+      );
+    }
+    return ourInstance;
   }
 
   public static class DefaultInterfaceEditor implements INodeEditor {

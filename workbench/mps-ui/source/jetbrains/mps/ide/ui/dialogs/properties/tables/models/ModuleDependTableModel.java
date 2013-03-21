@@ -17,13 +17,12 @@ package jetbrains.mps.ide.ui.dialogs.properties.tables.models;
 
 import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItem;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItem.ModuleType;
-import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
@@ -47,14 +46,14 @@ public class ModuleDependTableModel extends DependTableModel<ModuleDescriptor> {
         @Override
         public void run() {
           for(Dependency dependency : myItem.getDependencies()) {
-            ModuleReference moduleReference = dependency.getModuleRef();
-            DependenciesTableItem<ModuleReference> item = null;
-            if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleFqName()) instanceof Language)
-              item = new DependenciesTableItem<ModuleReference>(dependency.getModuleRef(), SDependencyScope.DEFAULT, dependency.isReexport()).setModuleType(ModuleType.LANGUAGE);
-            else if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleFqName()) instanceof Generator)
-              item = new DependenciesTableItem<ModuleReference>(dependency.getModuleRef(), SDependencyScope.DEFAULT, dependency.isReexport()).setModuleType(ModuleType.GENERATOR);
+            SModuleReference moduleReference = dependency.getModuleRef();
+            DependenciesTableItem<SModuleReference> item = null;
+            if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleName()) instanceof Language)
+              item = new DependenciesTableItem<SModuleReference>(dependency.getModuleRef(), SDependencyScope.DEFAULT, dependency.isReexport()).setModuleType(ModuleType.LANGUAGE);
+            else if(MPSModuleRepository.getInstance().getModuleByFqName(moduleReference.getModuleName()) instanceof Generator)
+              item = new DependenciesTableItem<SModuleReference>(dependency.getModuleRef(), SDependencyScope.DEFAULT, dependency.isReexport()).setModuleType(ModuleType.GENERATOR);
             else
-              item = new DependenciesTableItem<ModuleReference>(dependency.getModuleRef(), SDependencyScope.DEFAULT, dependency.isReexport());
+              item = new DependenciesTableItem<SModuleReference>(dependency.getModuleRef(), SDependencyScope.DEFAULT, dependency.isReexport());
             myTableItems.add(item);
           }
         }
@@ -64,8 +63,8 @@ public class ModuleDependTableModel extends DependTableModel<ModuleDescriptor> {
     if(myItem instanceof LanguageDescriptor) {
       LanguageDescriptor languageDescriptor = (LanguageDescriptor) myItem;
 
-      for(ModuleReference moduleReference : languageDescriptor.getExtendedLanguages()) {
-        myTableItems.add(new DependenciesTableItem<ModuleReference>(moduleReference, SDependencyScope.EXTENDS).setModuleType(ModuleType.LANGUAGE));
+      for(SModuleReference moduleReference : languageDescriptor.getExtendedLanguages()) {
+        myTableItems.add(new DependenciesTableItem<SModuleReference>(moduleReference, SDependencyScope.EXTENDS).setModuleType(ModuleType.LANGUAGE));
       }
     }
     else if(myItem instanceof SolutionDescriptor) {
@@ -73,23 +72,23 @@ public class ModuleDependTableModel extends DependTableModel<ModuleDescriptor> {
     else if(myItem instanceof GeneratorDescriptor) {
       GeneratorDescriptor generatorDescriptor = (GeneratorDescriptor) myItem;
 
-      for(ModuleReference moduleReference : generatorDescriptor.getDepGenerators()) {
-        myTableItems.add(new DependenciesTableItem<ModuleReference>(moduleReference, SDependencyScope.EXTENDS).setModuleType(ModuleType.GENERATOR));
+      for(SModuleReference moduleReference : generatorDescriptor.getDepGenerators()) {
+        myTableItems.add(new DependenciesTableItem<SModuleReference>(moduleReference, SDependencyScope.EXTENDS).setModuleType(ModuleType.GENERATOR));
       }
     }
     else if(myItem instanceof DevkitDescriptor) {
       DevkitDescriptor devkitDescriptor = (DevkitDescriptor) myItem;
 
-      for(ModuleReference moduleReference : devkitDescriptor.getExtendedDevkits()) {
-        myTableItems.add(new DependenciesTableItem<ModuleReference>(moduleReference, SDependencyScope.EXTENDS).setModuleType(ModuleType.DEVKIT));
+      for(SModuleReference moduleReference : devkitDescriptor.getExtendedDevkits()) {
+        myTableItems.add(new DependenciesTableItem<SModuleReference>(moduleReference, SDependencyScope.EXTENDS).setModuleType(ModuleType.DEVKIT));
       }
 
-      for(ModuleReference moduleReference : devkitDescriptor.getExportedLanguages()) {
-        myTableItems.add(new DependenciesTableItem<ModuleReference>(moduleReference, SDependencyScope.EXTENDS).setModuleType(ModuleType.LANGUAGE));
+      for(SModuleReference moduleReference : devkitDescriptor.getExportedLanguages()) {
+        myTableItems.add(new DependenciesTableItem<SModuleReference>(moduleReference, SDependencyScope.EXTENDS).setModuleType(ModuleType.LANGUAGE));
       }
 
-      for(ModuleReference moduleReference : devkitDescriptor.getExportedSolutions()) {
-        myTableItems.add(new DependenciesTableItem<ModuleReference>(moduleReference, SDependencyScope.EXTENDS).setModuleType(ModuleType.SOLUTION));
+      for(SModuleReference moduleReference : devkitDescriptor.getExportedSolutions()) {
+        myTableItems.add(new DependenciesTableItem<SModuleReference>(moduleReference, SDependencyScope.EXTENDS).setModuleType(ModuleType.SOLUTION));
       }
     }
   }
@@ -161,26 +160,26 @@ public class ModuleDependTableModel extends DependTableModel<ModuleDescriptor> {
   private Set<Dependency> getDependencies() {
     Set<Dependency> dependencies = new HashSet<Dependency>();
     for(DependenciesTableItem<?> tableItem : myTableItems)
-      if(tableItem.getItem() instanceof ModuleReference && tableItem.getRole() == SDependencyScope.DEFAULT)
-        dependencies.add(new Dependency((ModuleReference)tableItem.getItem(), tableItem.isReExport()) );
+      if(tableItem.getItem() instanceof SModuleReference && tableItem.getRole() == SDependencyScope.DEFAULT)
+        dependencies.add(new Dependency((SModuleReference)tableItem.getItem(), tableItem.isReExport()) );
 
     return dependencies;
   }
 
-  private Set<ModuleReference> getExtendedModules() {
-    Set<ModuleReference> set = new HashSet<ModuleReference>();
+  private Set<SModuleReference> getExtendedModules() {
+    Set<SModuleReference> set = new HashSet<SModuleReference>();
     for(DependenciesTableItem<?> tableItem : myTableItems)
-      if(tableItem.getItem() instanceof ModuleReference && tableItem.getRole() == SDependencyScope.EXTENDS)
-        set.add((ModuleReference) tableItem.getItem());
+      if(tableItem.getItem() instanceof SModuleReference && tableItem.getRole() == SDependencyScope.EXTENDS)
+        set.add((SModuleReference) tableItem.getItem());
 
     return set;
   }
 
-  private Set<ModuleReference> getModulesByType(ModuleType type) {
-    Set<ModuleReference> set = new HashSet<ModuleReference>();
+  private Set<SModuleReference> getModulesByType(ModuleType type) {
+    Set<SModuleReference> set = new HashSet<SModuleReference>();
     for(DependenciesTableItem<?> tableItem : myTableItems)
-      if(tableItem.getItem() instanceof ModuleReference && tableItem.getModuleType().equals(type))
-        set.add((ModuleReference)tableItem.getItem());
+      if(tableItem.getItem() instanceof SModuleReference && tableItem.getModuleType().equals(type))
+        set.add((SModuleReference)tableItem.getItem());
 
     return set;
   }

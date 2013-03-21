@@ -20,11 +20,6 @@ import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.structure.modules.mappingpriorities.*;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefAllGlobal;
@@ -34,16 +29,18 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_S
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
@@ -211,15 +208,16 @@ public class GenerationPartitioningUtil {
     }
 
     if (mappingRef instanceof MappingConfig_SimpleRef) {
-      String modelUID = ((MappingConfig_SimpleRef) mappingRef).getModelUID();
-      String nodeID = ((MappingConfig_SimpleRef) mappingRef).getNodeID();
-      String modelName = moreDetails ? SModelStereotype.withoutStereotype(jetbrains.mps.smodel.SModelReference.fromString(modelUID).getModelName()) : NameUtil.shortNameFromLongName(
-          SModelStereotype.withoutStereotype(jetbrains.mps.smodel.SModelReference.fromString(modelUID).getModelName()));
+      final String modelUID = ((MappingConfig_SimpleRef) mappingRef).getModelUID();
+      final String nodeID = ((MappingConfig_SimpleRef) mappingRef).getNodeID();
+      final SModelReference modelReference = PersistenceFacade.getInstance().createModelReference(modelUID);
+      String modelName = moreDetails ? SModelStereotype.withoutStereotype(modelReference.getModelName()) : NameUtil.shortNameFromLongName(
+          SModelStereotype.withoutStereotype(modelReference.getModelName()));
       String s = modelName + ".";
       if (nodeID.equals("*")) {
         return s + "*";
       } else {
-        SModel refModel = SModelRepository.getInstance().getModelDescriptor(jetbrains.mps.smodel.SModelReference.fromString(modelUID));
+        SModel refModel = SModelRepository.getInstance().getModelDescriptor(modelReference);
         if (refModel != null) {
           SNodeId nodeId = PersistenceFacade.getInstance().createNodeId(nodeID);
           assert nodeId != null : "wrong node id string";
@@ -233,7 +231,7 @@ public class GenerationPartitioningUtil {
     }
 
     if (mappingRef instanceof MappingConfig_ExternalRef) {
-      ModuleReference generatorRef = ((MappingConfig_ExternalRef) mappingRef).getGenerator();
+      SModuleReference generatorRef = ((MappingConfig_ExternalRef) mappingRef).getGenerator();
       MappingConfig_AbstractRef extMappingRef = ((MappingConfig_ExternalRef) mappingRef).getMappingConfig();
       return "[" + asString(generatorRef) + ":" + asString(extMappingRef, moreDetails) + "]";
     }
@@ -241,7 +239,7 @@ public class GenerationPartitioningUtil {
     return "???";
   }
 
-  private static String asString(ModuleReference generatorRef) {
+  private static String asString(SModuleReference generatorRef) {
     Generator generator = (Generator) ModuleRepositoryFacade.getInstance().getModule(generatorRef);
     if (generator == null) {
       return "unknown(" + generatorRef.toString() + ")";

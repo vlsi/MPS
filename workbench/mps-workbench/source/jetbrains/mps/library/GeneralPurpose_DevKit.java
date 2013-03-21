@@ -16,13 +16,13 @@
 package jetbrains.mps.library;
 
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 
 public class GeneralPurpose_DevKit {
   @Deprecated
-  public static final ModuleReference MODULE_REFERENCE = BootstrapLanguages.DEVKIT_GENERAL;
+  public static final SModuleReference MODULE_REFERENCE = BootstrapLanguages.DEVKIT_GENERAL;
 
   @Deprecated
   public static DevKit get() {

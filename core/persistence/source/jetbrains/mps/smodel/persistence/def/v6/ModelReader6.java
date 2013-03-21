@@ -16,7 +16,7 @@
 package jetbrains.mps.smodel.persistence.def.v6;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelHeader;
@@ -32,6 +32,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.List;
 
@@ -52,7 +53,7 @@ public class ModelReader6 implements IModelReader {
   public DefaultSModel readModel(Document document, SModelHeader header) {
     Element rootElement = document.getRootElement();
 
-    SModelReference modelReference = jetbrains.mps.smodel.SModelReference.fromString(rootElement.getAttributeValue(ModelPersistence.MODEL_UID));
+    SModelReference modelReference = PersistenceFacade.getInstance().createModelReference(rootElement.getAttributeValue(ModelPersistence.MODEL_UID));
     DefaultSModel model = new DefaultSModel(modelReference);
     model.setPersistenceVersion(getVersion());
     model.getSModelHeader().updateDefaults(header);
@@ -62,19 +63,19 @@ public class ModelReader6 implements IModelReader {
     // languages
     for (Element element : (List<Element>) rootElement.getChildren(ModelPersistence.LANGUAGE)) {
       String languageNamespace = element.getAttributeValue(ModelPersistence.NAMESPACE);
-      model.addLanguage(ModuleReference.fromString(languageNamespace));
+      model.addLanguage(jetbrains.mps.project.structure.modules.ModuleReference.fromString(languageNamespace));
     }
 
     // languages engaged on generation
     for (Element element : (List<Element>) rootElement.getChildren(ModelPersistence.LANGUAGE_ENGAGED_ON_GENERATION)) {
       String languageNamespace = element.getAttributeValue(ModelPersistence.NAMESPACE);
-      model.addEngagedOnGenerationLanguage(ModuleReference.fromString(languageNamespace));
+      model.addEngagedOnGenerationLanguage(jetbrains.mps.project.structure.modules.ModuleReference.fromString(languageNamespace));
     }
 
     //devkits
     for (Element element : (List<Element>) rootElement.getChildren(ModelPersistence.DEVKIT)) {
       String devkitNamespace = element.getAttributeValue(ModelPersistence.NAMESPACE);
-      model.addDevKit(ModuleReference.fromString(devkitNamespace));
+      model.addDevKit(jetbrains.mps.project.structure.modules.ModuleReference.fromString(devkitNamespace));
     }
 
     // imports

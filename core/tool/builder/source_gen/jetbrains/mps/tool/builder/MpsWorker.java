@@ -39,6 +39,8 @@ import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import org.apache.log4j.Level;
@@ -248,7 +250,7 @@ public abstract class MpsWorker {
     }
     for (SModule module : tmpmodules) {
       info("Loaded module " + module);
-      if (module.isPackaged()) {
+      if (module.isReadOnly()) {
         continue;
       }
       if (module instanceof DevKit) {
@@ -286,9 +288,10 @@ public abstract class MpsWorker {
       SModelHeader dr = ModelPersistence.loadDescriptor(new FileDataSource(ifile));
       SModelReference modelReference;
       if (dr.getUID() != null) {
-        modelReference = jetbrains.mps.smodel.SModelReference.fromString(dr.getUID());
+        modelReference = PersistenceFacade.getInstance().createModelReference(dr.getUID());
       } else {
-        modelReference = jetbrains.mps.smodel.SModelReference.fromPath(ifile.getPath());
+        String modelName = FileUtil.getNameWithoutExtension(ifile.getName());
+        modelReference = PersistenceFacade.getInstance().createModelReference(modelName);
       }
       info("Read model " + modelReference);
       SModelHeader d = ModelPersistence.loadDescriptor(new FileDataSource(ifile));

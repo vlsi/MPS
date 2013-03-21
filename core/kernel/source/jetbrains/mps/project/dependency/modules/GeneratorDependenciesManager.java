@@ -16,7 +16,7 @@
 package jetbrains.mps.project.dependency.modules;
 
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -38,7 +38,7 @@ public class GeneratorDependenciesManager extends ModuleDependenciesManager<Gene
     if (includeNonReexport) {
       result.addAll(lang);
       //generator sees all dependent generators as non-reexport
-      for (ModuleReference refGenerator : myModule.getReferencedGeneratorUIDs()) {
+      for (SModuleReference refGenerator : myModule.getReferencedGeneratorUIDs()) {
         IModule gm = ModuleRepositoryFacade.getInstance().getModule(refGenerator);
         if (gm == null) continue;
         result.add(gm);

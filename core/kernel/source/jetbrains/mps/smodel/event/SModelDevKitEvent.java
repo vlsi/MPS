@@ -15,15 +15,15 @@
  */
 package jetbrains.mps.smodel.event;
 
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class SModelDevKitEvent extends SModelEvent {
-  private ModuleReference myDevKit;
+  private SModuleReference myDevKit;
   private boolean myAdded;
 
-  public SModelDevKitEvent(SModel model, ModuleReference devKit, boolean added) {
+  public SModelDevKitEvent(SModel model, SModuleReference devKit, boolean added) {
     super(model);
     myDevKit = devKit;
     myAdded = added;
@@ -34,7 +34,7 @@ public class SModelDevKitEvent extends SModelEvent {
     return null;
   }
 
-  public ModuleReference getDevkitNamespace() {
+  public SModuleReference getDevkitNamespace() {
     return myDevKit;
   }
 

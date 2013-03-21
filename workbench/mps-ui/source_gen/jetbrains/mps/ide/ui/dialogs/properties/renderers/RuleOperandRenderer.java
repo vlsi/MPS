@@ -13,6 +13,7 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_R
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefAllGlobal;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_SimpleRef;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -24,7 +25,7 @@ import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefSet;
 import javax.swing.JPanel;
@@ -50,7 +51,7 @@ public class RuleOperandRenderer implements TableCellRenderer {
     } else
     if (value instanceof MappingConfig_SimpleRef) {
       MappingConfig_SimpleRef refC = (MappingConfig_SimpleRef) value;
-      SModelReference modelRef = jetbrains.mps.smodel.SModelReference.fromString(refC.getModelUID());
+      SModelReference modelRef = PersistenceFacade.getInstance().createModelReference(refC.getModelUID());
       String nodeName;
       if (refC.getNodeID().equals("*")) {
         nodeName = NameUtil.shortNameFromLongName(SModelStereotype.withoutStereotype(modelRef.getModelName())) + ".*";
@@ -77,14 +78,14 @@ public class RuleOperandRenderer implements TableCellRenderer {
     } else
     if (value instanceof MappingConfig_ExternalRef) {
       MappingConfig_ExternalRef refC = (MappingConfig_ExternalRef) value;
-      ModuleReference generatorReference = refC.getGenerator();
+      SModuleReference generatorReference = refC.getGenerator();
       if (generatorReference == null) {
         return new JLabel("NOT FOUND: <bad generator reference>");
       }
-      ModuleReference moduleRef = generatorReference;
+      SModuleReference moduleRef = generatorReference;
       Generator generator = (Generator) MPSModuleRepository.getInstance().getModule(moduleRef);
       if (generator == null) {
-        String genString = generatorReference.getModuleFqName();
+        String genString = generatorReference.getModuleName();
         return new JLabel("NOT FOUND: " + genString);
       }
       JLabel label = new JLabel(generator.getAlias());

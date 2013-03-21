@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.SModelReference;
 import java.io.File;
 import java.io.IOException;
 import jetbrains.mps.util.SNodeOperations;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.smodel.LanguageID;
@@ -67,7 +67,7 @@ public class JavaStubNavigationContributor implements NavigationParticipant, App
 
 
 
-  public static void iterateClassPath(final ModuleReference module, final IClassPathItem item, Consumer<NavigationParticipant.NavigationTarget> consumer, final String pName) {
+  public static void iterateClassPath(final SModuleReference module, final IClassPathItem item, Consumer<NavigationParticipant.NavigationTarget> consumer, final String pName) {
     final org.jetbrains.mps.openapi.model.SModelReference model = StubHelper.uidForPackageInStubs(pName, LanguageID.JAVA, module, false);
     for (final String cls : item.getRootClasses(pName)) {
       consumer.consume(new JavaStubNodeDescriptor(item, pName, cls, model));

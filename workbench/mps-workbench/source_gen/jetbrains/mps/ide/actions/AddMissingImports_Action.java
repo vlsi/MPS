@@ -39,8 +39,8 @@ public class AddMissingImports_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("modelDescriptor", event.getData(MPSCommonDataKeys.MODEL));
-    if (MapSequence.fromMap(_params).get("modelDescriptor") == null) {
+    MapSequence.fromMap(_params).put("model", event.getData(MPSCommonDataKeys.MODEL));
+    if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
     }
     return true;
@@ -48,7 +48,7 @@ public class AddMissingImports_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new MissingDependenciesFixer(((SModel) MapSequence.fromMap(_params).get("modelDescriptor"))).fix(true);
+      MissingDependenciesFixer.fixDependencies(((SModel) MapSequence.fromMap(_params).get("model")));
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "AddMissingImports", t);
     }

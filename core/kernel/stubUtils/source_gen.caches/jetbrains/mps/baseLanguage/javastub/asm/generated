@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="eubaz1muc2jo6f8h70xv7ltoudpifx8">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.asm4(MPS.Core/org.jetbrains.asm4@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="38s949ymo9nq7jj7p2lrfowy0hurndx" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
   <common hash="-b2zxpb21lvz8q1jvuwbj16t5kowt9dr" />
   <source id="7241381882860002146" name="ASMArrayType" hash="-abgfionnd0t5aj6akesd9dukb8k9lam">
     <file name="ASMArrayType.java" />
@@ -23,6 +23,7 @@
     <file name="ASMField.java" />
   </source>
   <source id="7241381882860001929" name="SignatureVisitorAdapter" hash="d5pucc2k3nfzwyc4jkhjp9cyzygosfq">
+    <dep root="7241381882860007196" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.asm4(MPS.Core/org.jetbrains.asm4@java_stub)" />
     <file name="SignatureVisitorAdapter.java" />
   </source>
@@ -37,6 +38,7 @@
     <file name="ASMUnboundedType.java" />
   </source>
   <source id="7241381882860007306" name="TypeUtil" hash="-erqu8769nmmhft8cxmkt0xgwd068hk1">
+    <dep root="7241381882860006706" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.asm4(MPS.Core/org.jetbrains.asm4@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="TypeUtil.java" />

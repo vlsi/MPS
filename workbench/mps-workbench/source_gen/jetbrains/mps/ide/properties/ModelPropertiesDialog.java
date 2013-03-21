@@ -12,7 +12,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Set;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import javax.swing.JPanel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.SNodeOperations;
@@ -70,8 +70,8 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
     return new ModelPropertiesDialog.ModelsCondition(models.value);
   }
 
-  public Condition<ModuleReference> getUsedLanguageRemoveCondition() {
-    final Wrappers._T<Set<ModuleReference>> usedLanguages = new Wrappers._T<Set<ModuleReference>>();
+  public Condition<SModuleReference> getUsedLanguageRemoveCondition() {
+    final Wrappers._T<Set<SModuleReference>> usedLanguages = new Wrappers._T<Set<SModuleReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SModel m = myPresenter.getModelDescriptor();
@@ -197,15 +197,15 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
     }
   }
 
-  private class LanguagesCondition implements Condition<ModuleReference> {
-    private final Set<ModuleReference> myUsedLanguages;
+  private class LanguagesCondition implements Condition<SModuleReference> {
+    private final Set<SModuleReference> myUsedLanguages;
 
-    public LanguagesCondition(Set<ModuleReference> usedLanguages) {
+    public LanguagesCondition(Set<SModuleReference> usedLanguages) {
       myUsedLanguages = usedLanguages;
     }
 
     @Override
-    public boolean met(final ModuleReference object) {
+    public boolean met(final SModuleReference object) {
       return !(myUsedLanguages.contains(object));
     }
   }

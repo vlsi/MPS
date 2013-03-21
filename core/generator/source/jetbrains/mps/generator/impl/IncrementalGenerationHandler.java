@@ -17,21 +17,40 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.GeneratableSModel;
-import jetbrains.mps.generator.*;
+import jetbrains.mps.generator.GenerationCacheContainer;
 import jetbrains.mps.generator.GenerationCacheContainer.ModelCacheContainer;
+import jetbrains.mps.generator.GenerationOptions;
+import jetbrains.mps.generator.GenerationParametersProvider;
+import jetbrains.mps.generator.IncrementalGenerationStrategy;
+import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.generator.impl.cache.IntermediateModelsCache;
-import jetbrains.mps.generator.impl.dependencies.*;
+import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
+import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
+import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
+import jetbrains.mps.generator.impl.dependencies.IncrementalDependenciesBuilder;
+import jetbrains.mps.generator.impl.dependencies.NonIncrementalDependenciesBuilder;
 import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner;
 import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner.Component;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.util.IterableUtil;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.DifflibFacade;
+import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 
 /**
  * Evgeny Gryaznov, Jun 3, 2010
@@ -57,7 +76,8 @@ public class IncrementalGenerationHandler {
   private GenerationDependencies mySavedDependencies;
   private IntermediateModelsCache myCache;
 
-  public IncrementalGenerationHandler(org.jetbrains.mps.openapi.model.SModel model, IOperationContext operationContext, GenerationOptions options, String planSignature, Map<String, Object> genParameters, IncrementalReporter tracer) {
+  public IncrementalGenerationHandler(org.jetbrains.mps.openapi.model.SModel model, IOperationContext operationContext, GenerationOptions options,
+      String planSignature, Map<String, Object> genParameters, IncrementalReporter tracer) {
     myModel = model;
     myGenerationOptions = options;
     myOperationContext = operationContext;
@@ -162,7 +182,7 @@ public class IncrementalGenerationHandler {
 
   public boolean canOptimize() {
     return !myUnchangedRoots.isEmpty() || myConditionalsUnchanged ||
-      !myRequiredRoots.isEmpty() || myConditionalsRequired;
+        !myRequiredRoots.isEmpty() || myConditionalsRequired;
   }
 
   public Set<SNode> getIgnoredRoots() {
@@ -208,8 +228,8 @@ public class IncrementalGenerationHandler {
       String oldHash = oldDependencies.getParametersHash();
       String newHash = myParametersHash;
       if (oldHash == null
-        ? (newHash != null)
-        : !oldHash.equals(newHash)) {
+          ? (newHash != null)
+          : !oldHash.equals(newHash)) {
         if (myTracer != null) myTracer.report("Changes in generation parameters, regenerating.");
         return;
       }
@@ -220,7 +240,7 @@ public class IncrementalGenerationHandler {
     Map<String, String> externalHashes = oldDependencies.getExternalHashes();
     for (Entry<String, String> entry : externalHashes.entrySet()) {
       String modelReference = entry.getKey();
-      SModel sm = SModelRepository.getInstance().getModelDescriptor(jetbrains.mps.smodel.SModelReference.fromString(modelReference));
+      SModel sm = SModelRepository.getInstance().getModelDescriptor(PersistenceFacade.getInstance().createModelReference(modelReference));
       if (sm == null) {
         changedModels.add(modelReference);
         continue;
@@ -228,7 +248,7 @@ public class IncrementalGenerationHandler {
       String oldHash = entry.getValue();
       if (oldHash == null) {
         // TODO hash for packaged models
-        if ((sm instanceof EditableSModel) && !((EditableSModel)sm).isReadOnly()) {
+        if ((sm instanceof EditableSModel) && !((EditableSModel) sm).isReadOnly()) {
           changedModels.add(modelReference);
         }
         continue;

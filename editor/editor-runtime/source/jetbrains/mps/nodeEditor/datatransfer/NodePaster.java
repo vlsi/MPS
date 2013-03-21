@@ -79,7 +79,7 @@ public class NodePaster {
       pasteToParent(pasteTarget, role_, PastePlaceHint.DEFAULT);
     } else if (status == PASTE_TO_ROOT) {
       for (SNode pasteNode : myPasteNodes) {
-        pasteNode.getModel().addRootNode(pasteNode);
+        pasteTarget.getModel().addRootNode(pasteNode);
       }
     }
   }

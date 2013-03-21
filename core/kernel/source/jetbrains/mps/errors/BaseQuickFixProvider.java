@@ -19,9 +19,9 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -39,8 +39,9 @@ public class BaseQuickFixProvider implements QuickFixProvider {
   private boolean myIsError = false;
 
   public BaseQuickFixProvider(String classFQName) {
-    myClassFQName = SModelStereotype.withoutStereotype(jetbrains.mps.smodel.SModelReference.fromString(NameUtil.namespaceFromLongName(classFQName)).getModelName()) +
-      "." + NameUtil.shortNameFromLongName(classFQName);   //without stereotypes, that is.
+    myClassFQName = SModelStereotype.withoutStereotype(
+        PersistenceFacade.getInstance().createModelReference(NameUtil.namespaceFromLongName(classFQName)).getModelName()) +
+        "." + NameUtil.shortNameFromLongName(classFQName);   //without stereotypes, that is.
     myQuickFix = null;
     myQuickFixTaken = false;
   }

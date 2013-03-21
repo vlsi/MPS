@@ -8,7 +8,7 @@ import javax.swing.JComponent;
 import javax.swing.JTree;
 import jetbrains.mps.smodel.Generator;
 import java.util.List;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import javax.swing.tree.DefaultMutableTreeNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -28,6 +28,7 @@ import java.util.Enumeration;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefAllLocal;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_SimpleRef;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import java.util.ArrayList;
 import jetbrains.mps.util.Computable;
 
@@ -36,7 +37,7 @@ public class EditOperandDialog extends DialogWrapper {
   private JComponent myMainComponent;
   private JTree myTree;
 
-  public EditOperandDialog(final Generator currentGen, final List<ModuleReference> depGenerators, MappingConfig_AbstractRef operand, final boolean isLeft) {
+  public EditOperandDialog(final Generator currentGen, final List<SModuleReference> depGenerators, MappingConfig_AbstractRef operand, final boolean isLeft) {
     super(true);
     setTitle("Choose Mappings");
     final DefaultMutableTreeNode root = new DefaultMutableTreeNode(new MappingSelectTree.RootNodeData("All generators"));
@@ -47,7 +48,7 @@ public class EditOperandDialog extends DialogWrapper {
           addGeneratorModels(currentGen, root);
         } else {
           addGeneratorModels(currentGen, root);
-          for (ModuleReference ref : depGenerators) {
+          for (SModuleReference ref : depGenerators) {
             Generator gen = (Generator) MPSModuleRepository.getInstance().getModule(ref);
             if (gen != null) {
               addGeneratorModels(gen, root);
@@ -130,7 +131,7 @@ public class EditOperandDialog extends DialogWrapper {
   }
 
   private void setGenMappingRef(DefaultMutableTreeNode root, MappingConfig_ExternalRef operand) {
-    ModuleReference modRef = operand.getGenerator();
+    SModuleReference modRef = operand.getGenerator();
     Enumeration children = root.children();
     while (children.hasMoreElements()) {
       DefaultMutableTreeNode child = (DefaultMutableTreeNode) children.nextElement();
@@ -169,7 +170,7 @@ public class EditOperandDialog extends DialogWrapper {
   }
 
   private void setModelMappingRef(DefaultMutableTreeNode root, MappingConfig_SimpleRef operand) {
-    SModelReference modRef = jetbrains.mps.smodel.SModelReference.fromString(operand.getModelUID());
+    SModelReference modRef = PersistenceFacade.getInstance().createModelReference(operand.getModelUID());
     ((jetbrains.mps.smodel.SModelReference) modRef).update();
     Enumeration children = root.children();
     while (children.hasMoreElements()) {

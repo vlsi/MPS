@@ -18,9 +18,9 @@ package jetbrains.mps.persistence;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.ProjectStructureModelRoot;
-import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelId.ForeignSModelId;
 import jetbrains.mps.smodel.SModelId.RegularSModelId;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -104,18 +104,12 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
     if (text == null) {
       throw new IllegalArgumentException();
     }
-    return jetbrains.mps.smodel.SModelReference.fromString(text);
+    return jetbrains.mps.smodel.SModelReference.parseReference(text);
   }
 
   @Override
-  public SModelReference createModelReference(SModuleReference module, SModelId modelId, String modelName) {
-    SModelFqName name;
-    if (modelId.isGloballyUnique() || module == null) {
-      name = SModelFqName.fromString(modelName);
-    } else {
-      name = SModelFqName.fromString(module.getModuleName() + "/" + modelName);
-    }
-    return new jetbrains.mps.smodel.SModelReference(name, modelId);
+  public SModelReference createModelReference(SModuleReference module, @NotNull SModelId modelId, @NotNull String modelName) {
+    return new jetbrains.mps.smodel.SModelReference(module, modelId, modelName);
   }
 
   @Override

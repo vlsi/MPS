@@ -20,16 +20,25 @@ import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
 import jetbrains.mps.logging.Logger;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import javax.swing.SwingUtilities;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
 public class GenerationTracer implements IGenerationTracer {
@@ -493,7 +502,8 @@ public class GenerationTracer implements IGenerationTracer {
       while (inputNode != null && inputNode.getKind() != Kind.INPUT) {
         inputNode = inputNode.getParent();
       }
-      result.add(new Pair<SNode, SNode>(ruleNode.getNodePointer().resolve(MPSModuleRepository.getInstance()), inputNode != null ? inputNode.getNodePointer().resolve(MPSModuleRepository.getInstance()) : null));
+      result.add(new Pair<SNode, SNode>(ruleNode.getNodePointer().resolve(MPSModuleRepository.getInstance()),
+          inputNode != null ? inputNode.getNodePointer().resolve(MPSModuleRepository.getInstance()) : null));
     }
 
     return result;
@@ -568,7 +578,7 @@ public class GenerationTracer implements IGenerationTracer {
     public SModelReference getOutputForInput(SModel model) {
       int i = myInputModels.indexOf(model.getReference().toString());
       if (i >= 0) {
-        return jetbrains.mps.smodel.SModelReference.fromString(myOutputModels.get(i));
+        return PersistenceFacade.getInstance().createModelReference(myOutputModels.get(i));
       }
       return null;
     }
@@ -576,7 +586,7 @@ public class GenerationTracer implements IGenerationTracer {
     public SModelReference getInputForOutput(SModel model) {
       int i = myOutputModels.indexOf(model.getReference().toString());
       if (i >= 0) {
-        return jetbrains.mps.smodel.SModelReference.fromString(myInputModels.get(i));
+        return PersistenceFacade.getInstance().createModelReference(myInputModels.get(i));
       }
       return null;
     }

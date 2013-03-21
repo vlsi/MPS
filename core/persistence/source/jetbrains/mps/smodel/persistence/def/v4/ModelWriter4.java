@@ -15,13 +15,12 @@
  */
 package jetbrains.mps.smodel.persistence.def.v4;
 
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelOperations;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.persistence.def.DocUtil;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
@@ -30,11 +29,11 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.VisibleModelElements;
 import org.jdom.Document;
 import org.jdom.Element;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 public class ModelWriter4 implements IModelWriter {
@@ -61,7 +60,7 @@ public class ModelWriter4 implements IModelWriter {
 
     // languages
     Set<String> writtenAspects = new HashSet<String>();
-    for (ModuleReference languageNamespace : sourceModel.importedLanguages()) {
+    for (SModuleReference languageNamespace : sourceModel.importedLanguages()) {
       Element languageElem = new Element(ModelPersistence.LANGUAGE);
       languageElem.setAttribute(ModelPersistence.NAMESPACE, languageNamespace.toString());
       rootElement.addContent(languageElem);
@@ -76,14 +75,14 @@ public class ModelWriter4 implements IModelWriter {
     }
 
     // languages engaged on generation
-    for (ModuleReference languageNamespace : sourceModel.engagedOnGenerationLanguages()) {
+    for (SModuleReference languageNamespace : sourceModel.engagedOnGenerationLanguages()) {
       Element languageElem = new Element(ModelPersistence.LANGUAGE_ENGAGED_ON_GENERATION);
       languageElem.setAttribute(ModelPersistence.NAMESPACE, languageNamespace.toString());
       rootElement.addContent(languageElem);
     }
 
     //devkits
-    for (ModuleReference devkitNamespace : sourceModel.importedDevkits()) {
+    for (SModuleReference devkitNamespace : sourceModel.importedDevkits()) {
       Element devkitElem = new Element(ModelPersistence.DEVKIT);
       devkitElem.setAttribute(ModelPersistence.NAMESPACE, devkitNamespace.toString());
       rootElement.addContent(devkitElem);
@@ -173,9 +172,7 @@ public class ModelWriter4 implements IModelWriter {
     element.setAttribute(ModelPersistence.ID, node.getNodeId().toString());
 
     // properties ...
-    Map<String, String> properties = jetbrains.mps.util.SNodeOperations.getProperties(node);
-    Set<String> keys = properties.keySet();
-    for (String propertyName : keys) {
+    for (String propertyName : node.getPropertyNames()) {
       Element propertyElement = new Element(ModelPersistence.PROPERTY);
       element.addContent(propertyElement);
       propertyElement.setAttribute(ModelPersistence.NAME, VersionUtil.formVersionedString(propertyName, modelVersion));

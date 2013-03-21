@@ -214,7 +214,7 @@ public class EditorCellLabelSelection extends EditorCellSelection {
         if (nextSibling != null) {
           target = nextSibling;
         } else {
-          target = CellTraversalUtil.getNextLeaf(selectedCell, CellConditions.SELECTABLE);
+          target = CellTraversalUtil.getNextLeaf(selectedCell, jetbrains.mps.openapi.editor.cells.CellConditions.SELECTABLE);
         }
       }
 
@@ -238,7 +238,7 @@ public class EditorCellLabelSelection extends EditorCellSelection {
         if (prevSibling != null) {
           target = prevSibling;
         } else {
-          target = CellTraversalUtil.getPrevLeaf(selectedCell, CellConditions.SELECTABLE);
+          target = CellTraversalUtil.getPrevLeaf(selectedCell, jetbrains.mps.openapi.editor.cells.CellConditions.SELECTABLE);
         }
       }
 

@@ -15,10 +15,11 @@
  */
 package jetbrains.mps.smodel.persistence.def.v4;
 
-import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.VisibleModelElements;
 import org.jdom.Element;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.HashMap;
 import java.util.List;
@@ -45,7 +46,7 @@ class DOMVisibleModelElements implements VisibleModelElements {
       String indexValue = element.getAttributeValue(ModelPersistence.MODEL_IMPORT_INDEX);
       int index = Integer.parseInt(indexValue);
       String visibleModelUIDString = element.getAttributeValue(ModelPersistence.MODEL_UID);
-      myVisibleModelElements.put(index, jetbrains.mps.smodel.SModelReference.fromString(visibleModelUIDString));
+      myVisibleModelElements.put(index, PersistenceFacade.getInstance().createModelReference(visibleModelUIDString));
       myMaxVisibleModelIndex = Math.max(index, myMaxVisibleModelIndex);
     }
   }

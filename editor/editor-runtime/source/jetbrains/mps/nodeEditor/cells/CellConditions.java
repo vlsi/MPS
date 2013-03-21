@@ -18,9 +18,9 @@ package jetbrains.mps.nodeEditor.cells;
 import jetbrains.mps.util.Condition;
 
 public class CellConditions {
-  public static final Condition<jetbrains.mps.openapi.editor.cells.EditorCell> SELECTABLE = new Condition<jetbrains.mps.openapi.editor.cells.EditorCell>() {
+  public static final Condition<EditorCell> SELECTABLE = new Condition<EditorCell>() {
     @Override
-    public boolean met(jetbrains.mps.openapi.editor.cells.EditorCell object) {
+    public boolean met(EditorCell object) {
       return object.isSelectable();
     }
   };

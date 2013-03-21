@@ -314,7 +314,7 @@ __switch__:
                     case 2:
                       this._2_i = 0;
                     case 3:
-                      if (!(_2_i < 10000)) {
+                      if (!(_2_i < 100000)) {
                         this.__CP__ = 1;
                         break;
                       }

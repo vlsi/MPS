@@ -74,7 +74,7 @@
     <nodeInfo nodeId="3995997045458428957" fileName="PriorityRuleDescriptor.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGenerator" />
     <nodeInfo nodeId="3995997045458428960" fileName="PriorityRuleDescriptor.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDepGenerators" />
     <nodeInfo nodeId="3995997045458428964" fileName="PriorityRuleDescriptor.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLeft" />
-    <nodeInfo nodeId="3995997045458428983" fileName="PriorityRuleDescriptor.java" startLine="18" startPosition="144" endLine="19" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3995997045458428983" fileName="PriorityRuleDescriptor.java" startLine="18" startPosition="145" endLine="19" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3995997045458428987" fileName="PriorityRuleDescriptor.java" startLine="19" startPosition="31" endLine="20" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3995997045458428991" fileName="PriorityRuleDescriptor.java" startLine="20" startPosition="28" endLine="21" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3995997045458428995" fileName="PriorityRuleDescriptor.java" startLine="21" startPosition="36" endLine="22" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -85,7 +85,7 @@
     <nodeInfo nodeId="3995997045458428967" fileName="PriorityRuleDescriptor.java" startLine="18" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PriorityRuleDescriptor#(Ljetbrains/mps/smodel/Generator;Ljava/util/List;ZLjava/lang/String;Ljava/lang/String;I)V" />
     <scopeInfo nodeId="3995997045458429002" fileName="PriorityRuleDescriptor.java" startLine="26" startPosition="45" endLine="27" endPosition="37" />
     <scopeInfo nodeId="3995997045458429009" fileName="PriorityRuleDescriptor.java" startLine="31" startPosition="41" endLine="32" endPosition="71" />
-    <scopeInfo nodeId="3995997045458428982" fileName="PriorityRuleDescriptor.java" startLine="18" startPosition="144" endLine="22" endPosition="18" />
+    <scopeInfo nodeId="3995997045458428982" fileName="PriorityRuleDescriptor.java" startLine="18" startPosition="145" endLine="22" endPosition="18" />
     <scopeInfo nodeId="3995997045458428999" fileName="PriorityRuleDescriptor.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="3995997045458429006" fileName="PriorityRuleDescriptor.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="3995997045458428967" fileName="PriorityRuleDescriptor.java" startLine="18" startPosition="0" endLine="24" endPosition="0">

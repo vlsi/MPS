@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -44,7 +44,7 @@ public class GWTStubsSource extends FolderSetDataSource implements FastFindSuppo
   @Override
   public SModel loadSModel(IModule module, org.jetbrains.mps.openapi.model.SModel descriptor) {
     SModel model = new SModel(descriptor.getReference(), new ForeignNodeIdMap());
-    ModuleReference lang = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("954c4d77-e24b-4e49-a5a5-5476c966c092")).getModuleReference();
+    SModuleReference lang = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("954c4d77-e24b-4e49-a5a5-5476c966c092")).getModuleReference();
     model.addLanguage(lang);
 
     String pkg = SModelStereotype.withoutStereotype(model.getReference().getModelName());

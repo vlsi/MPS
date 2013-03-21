@@ -57,7 +57,7 @@ public abstract class ModelRootBase implements ModelRoot {
 
   @Override
   public boolean canCreateModels() {
-    return !getModule().isPackaged();
+    return !getModule().isReadOnly();
   }
 
   public void attach() {

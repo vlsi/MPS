@@ -29,7 +29,7 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.project.Path;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.classloading.ClassLoaderManager;
@@ -146,8 +146,8 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
         readModules();
 
         // TODO FIXME get rid of onModuleLoad
-        for (IModule m : getModules()) {
-          m.onModuleLoad();
+        for (SModule m : getModules()) {
+          ((AbstractModule) m).onModuleLoad();
         }
       }
     });
@@ -195,7 +195,7 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
         if (descriptor != null) {
           ModuleHandle handle = new ModuleHandle(descriptorFile, descriptor);
           IModule module = ModuleRepositoryFacade.createModule(handle, this);
-          ModuleReference moduleReference = module.getModuleReference();
+          SModuleReference moduleReference = module.getModuleReference();
           if (!existingModules.remove(moduleReference)) {
             super.addModule(moduleReference);
           }

@@ -4,7 +4,7 @@ package jetbrains.mps.ide.ui.dialogs.properties;
 
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
@@ -23,7 +23,7 @@ public class StateUtil {
     return SModelRepository.getInstance().getModelDescriptor(modelReference) != null;
   }
 
-  public static boolean isAvailable(ModuleReference moduleReference) {
+  public static boolean isAvailable(SModuleReference moduleReference) {
     return MPSModuleRepository.getInstance().getModule(moduleReference) != null;
   }
 
@@ -67,7 +67,7 @@ public class StateUtil {
     return compare(isInScope(scope, ref1), isInScope(scope, ref2));
   }
 
-  public static int compare(ModuleReference moduleRef1, ModuleReference moduleRef2) {
+  public static int compare(SModuleReference moduleRef1, SModuleReference moduleRef2) {
     return compare(isAvailable(moduleRef1), isAvailable(moduleRef2));
   }
 

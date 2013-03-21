@@ -4,7 +4,7 @@ package jetbrains.mps.ide.ui.dialogs.properties.descriptors;
 
 import jetbrains.mps.smodel.Generator;
 import java.util.List;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import javax.swing.table.TableCellRenderer;
 import jetbrains.mps.ide.ui.dialogs.properties.renderers.RuleOperandRenderer;
 import javax.swing.table.TableCellEditor;
@@ -12,10 +12,10 @@ import jetbrains.mps.ide.ui.dialogs.properties.editors.RuleOperandEditor;
 
 public class PriorityRuleDescriptor extends VoidColumnDescriptor {
   private final Generator myGenerator;
-  private final List<ModuleReference> myDepGenerators;
+  private final List<SModuleReference> myDepGenerators;
   private final boolean myLeft;
 
-  public PriorityRuleDescriptor(Generator generator, List<ModuleReference> depGenerators, boolean left, String name, String header, int width) {
+  public PriorityRuleDescriptor(Generator generator, List<SModuleReference> depGenerators, boolean left, String name, String header, int width) {
     super(name, header, width);
     myGenerator = generator;
     myDepGenerators = depGenerators;

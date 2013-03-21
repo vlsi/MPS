@@ -31,7 +31,7 @@ public interface ISequence<T> extends Iterable<T>, IEnumerable<T> {
   public ISequence<T> union(ISequence<? extends T> that);
   public ISequence<T> disjunction(ISequence<? extends T> that);
   public ISequence<T> reverse();
-  public boolean contains(T t);
+  public boolean contains(Object o);
   public boolean containsSequence(ISequence<? extends T> that);
   public int indexOf(T t);
   public int lastIndexOf(T t);

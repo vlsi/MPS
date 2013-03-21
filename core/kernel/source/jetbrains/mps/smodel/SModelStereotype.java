@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -22,8 +22,6 @@ import org.jetbrains.annotations.NotNull;
  * Jul 20, 2005
  */
 public class SModelStereotype {
-  @Deprecated
-  public static final String TEMPLATES = "templates";
   @Deprecated
   public static final String JAVA_STUB = "java_stub";
 
@@ -50,8 +48,7 @@ public class SModelStereotype {
   }
 
   private static boolean isUserModelStereotype(String stereotype) {
-    return NONE.equals(stereotype) || GENERATOR.equals(stereotype) || TEMPLATES.equals(stereotype)
-      || TESTS.equals(stereotype) || DESCRIPTOR.equals(stereotype);
+    return NONE.equals(stereotype) || GENERATOR.equals(stereotype) || TESTS.equals(stereotype) || DESCRIPTOR.equals(stereotype);
   }
 
   public static boolean isGeneratorModel(@NotNull org.jetbrains.mps.openapi.model.SModel model) {
@@ -75,7 +72,7 @@ public class SModelStereotype {
   }
 
   public static boolean isGeneratorModelStereotype(String stereotype) {
-    return GENERATOR.equals(stereotype) || TEMPLATES.equals(stereotype);
+    return GENERATOR.equals(stereotype);
   }
 
   public static String getStereotype(org.jetbrains.mps.openapi.model.SModel model) {

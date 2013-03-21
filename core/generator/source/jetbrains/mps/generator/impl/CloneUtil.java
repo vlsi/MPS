@@ -17,7 +17,7 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.DynamicReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
@@ -40,10 +40,10 @@ public class CloneUtil {
     for (ImportElement model : ((jetbrains.mps.smodel.SModelInternal) inputModel).importedModels()) {
       ((jetbrains.mps.smodel.SModelInternal) outputModel).addModelImport(model.getModelReference(), false);
     }
-    for (ModuleReference lang : ((jetbrains.mps.smodel.SModelInternal) inputModel).importedLanguages()) {
+    for (SModuleReference lang : ((jetbrains.mps.smodel.SModelInternal) inputModel).importedLanguages()) {
       ((jetbrains.mps.smodel.SModelInternal) outputModel).addLanguage(lang);
     }
-    for (ModuleReference devKit : ((jetbrains.mps.smodel.SModelInternal) inputModel).importedDevkits()) {
+    for (SModuleReference devKit : ((jetbrains.mps.smodel.SModelInternal) inputModel).importedDevkits()) {
       ((jetbrains.mps.smodel.SModelInternal) outputModel).addDevKit(devKit);
     }
   }

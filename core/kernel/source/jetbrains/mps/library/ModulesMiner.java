@@ -23,7 +23,7 @@ import jetbrains.mps.project.io.DescriptorIOFacade;
 import jetbrains.mps.project.persistence.DeploymentDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import jetbrains.mps.project.structure.modules.*;
+import org.jetbrains.mps.openapi.module.SModuleReference;import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
@@ -211,7 +211,7 @@ public class ModulesMiner {
       excludes.add(FileSystem.getInstance().getFileByPath(p));
     }
 
-    IFile genPath = ProjectPathUtil.getGeneratorOutputPath(descriptorFile, descriptor);
+    IFile genPath = ProjectPathUtil.getGeneratorOutputPath(descriptorFile.getParent(), descriptor);
     if (genPath != null) {
       excludes.add(genPath);
       if (!descriptorFile.isReadOnly()) {

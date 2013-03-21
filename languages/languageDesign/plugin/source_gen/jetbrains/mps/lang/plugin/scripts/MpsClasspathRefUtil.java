@@ -64,7 +64,7 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
           Collection<Dependency> dependencies = module.getModuleDescriptor().getDependencies();
           Dependency dep = CollectionSequence.fromCollection(((Collection<Dependency>) dependencies)).findFirst(new IWhereFilter<Dependency>() {
             public boolean accept(Dependency it) {
-              return it.getModuleRef().getModuleFqName().contains("MPS.Classpath");
+              return it.getModuleRef().getModuleName().contains("MPS.Classpath");
             }
           });
           // get re-export from MPS.Classpath, then should be checked manually 

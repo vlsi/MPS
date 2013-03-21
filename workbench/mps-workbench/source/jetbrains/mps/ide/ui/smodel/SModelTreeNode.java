@@ -317,7 +317,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       String shortName = candidateName.replace(modelName + ".", "");
       if (shortName.contains(".")) {
         String maxPackage = candidateName.substring(0, candidateName.lastIndexOf('.'));
-        SModel md = SModelRepository.getInstance().getModelDescriptor(jetbrains.mps.smodel.SModelReference.fromString(maxPackage));
+        SModel md = SModelRepository.getInstance().getModelDescriptor(maxPackage);
         if (md != null) {
           if (md.getModule().getOwnModelDescriptors().contains(myModelDescriptor)) {
             return false;

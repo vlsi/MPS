@@ -2084,10 +2084,10 @@
     <nodeInfo nodeId="1222444952574" fileName="Module_Editor.java" startLine="87" startPosition="134" endLine="88" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1222444932157" fileName="Module_Editor.java" startLine="91" startPosition="162" endLine="92" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1222447273027" fileName="Module_Editor.java" startLine="95" startPosition="165" endLine="96" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1222445443653" fileName="Module_Editor.java" startLine="96" startPosition="105" endLine="97" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1222445443653" fileName="Module_Editor.java" startLine="96" startPosition="105" endLine="97" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1222444932157" fileName="Module_Editor.java" startLine="100" startPosition="45" endLine="101" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1222444932157" fileName="Module_Editor.java" startLine="104" startPosition="59" endLine="105" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1222444967165" fileName="Module_Editor.java" startLine="108" startPosition="69" endLine="109" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1222444967165" fileName="Module_Editor.java" startLine="108" startPosition="69" endLine="109" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1203599720833" fileName="Module_Editor.java" startLine="113" startPosition="90" endLine="114" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1203599720833" fileName="Module_Editor.java" startLine="114" startPosition="99" endLine="115" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1203599720833" fileName="Module_Editor.java" startLine="115" startPosition="49" endLine="116" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2391,7 +2391,7 @@
     <scopeInfo nodeId="1222444932157" fileName="Module_Editor.java" startLine="91" startPosition="162" endLine="92" endPosition="109" />
     <scopeInfo nodeId="1222444932157" fileName="Module_Editor.java" startLine="100" startPosition="45" endLine="101" endPosition="19" />
     <scopeInfo nodeId="1222444932157" fileName="Module_Editor.java" startLine="104" startPosition="59" endLine="105" endPosition="70" />
-    <scopeInfo nodeId="1222444963971" fileName="Module_Editor.java" startLine="108" startPosition="69" endLine="109" endPosition="68" />
+    <scopeInfo nodeId="1222444963971" fileName="Module_Editor.java" startLine="108" startPosition="69" endLine="109" endPosition="66" />
     <scopeInfo nodeId="1203599720833" fileName="Module_Editor.java" startLine="115" startPosition="49" endLine="116" endPosition="82" />
     <scopeInfo nodeId="1203599720833" fileName="Module_Editor.java" startLine="116" startPosition="82" endLine="117" endPosition="81" />
     <scopeInfo nodeId="1203599720833" fileName="Module_Editor.java" startLine="117" startPosition="81" endLine="118" endPosition="82" />
@@ -2419,7 +2419,7 @@
     <scopeInfo nodeId="1203599720833" fileName="Module_Editor.java" startLine="401" startPosition="40" endLine="402" endPosition="84" />
     <scopeInfo nodeId="1203599720833" fileName="Module_Editor.java" startLine="402" startPosition="84" endLine="403" endPosition="81" />
     <scopeInfo nodeId="1222444932157" fileName="Module_Editor.java" startLine="84" startPosition="0" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="1222444932161" fileName="Module_Editor.java" startLine="95" startPosition="165" endLine="97" endPosition="100" />
+    <scopeInfo nodeId="1222444932161" fileName="Module_Editor.java" startLine="95" startPosition="165" endLine="97" endPosition="98" />
     <scopeInfo nodeId="7695636422696534031" fileName="Module_Editor.java" startLine="296" startPosition="91" endLine="298" endPosition="18">
       <varInfo nodeId="7695636422696534031" varName="result" />
     </scopeInfo>

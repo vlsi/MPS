@@ -4,6 +4,7 @@ package jetbrains.mps.lang.smodel.generator.smodelAdapter;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -13,7 +14,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class SEnumOperations {
   public static SNode getEnum(String modelUID, final String nodeName) {
-    SModelReference ref = jetbrains.mps.smodel.SModelReference.fromString(modelUID);
+    SModelReference ref = PersistenceFacade.getInstance().createModelReference(modelUID);
     SModel m = SModelRepository.getInstance().getModelDescriptor(ref);
     return (ListSequence.fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

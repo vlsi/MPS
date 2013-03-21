@@ -17,7 +17,7 @@ package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelRefere
 
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -85,7 +85,7 @@ public abstract class BaseScope implements IScope {
 
   @Deprecated
   @Override
-  public DevKit getDevKit(ModuleReference ref) {
+  public DevKit getDevKit(SModuleReference ref) {
     return ScopeOperations.resolveModule(this, ref, DevKit.class);
   }
 

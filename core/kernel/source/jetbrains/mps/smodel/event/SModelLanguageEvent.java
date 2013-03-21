@@ -15,15 +15,15 @@
  */
 package jetbrains.mps.smodel.event;
 
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class SModelLanguageEvent extends SModelEvent {
-  private ModuleReference myLanguage;
+  private SModuleReference myLanguage;
   private boolean myAdded;
 
-  public SModelLanguageEvent(SModel model, ModuleReference ref, boolean added) {
+  public SModelLanguageEvent(SModel model, SModuleReference ref, boolean added) {
     super(model);
     myLanguage = ref;
     myAdded = added;
@@ -34,7 +34,7 @@ public class SModelLanguageEvent extends SModelEvent {
     return null;
   }
 
-  public ModuleReference getLanguageNamespace() {
+  public SModuleReference getLanguageNamespace() {
     return myLanguage;
   }
 

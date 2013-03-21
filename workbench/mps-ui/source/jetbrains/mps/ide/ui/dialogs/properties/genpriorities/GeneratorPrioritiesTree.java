@@ -26,7 +26,6 @@ import jetbrains.mps.icons.MPSIcons.Nodes;
 import jetbrains.mps.icons.MPSIcons.Nodes.Models;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefAllGlobal;
@@ -36,13 +35,15 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_S
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import javax.swing.Icon;
 import javax.swing.JCheckBox;
@@ -64,8 +65,8 @@ public class GeneratorPrioritiesTree {
       @Override
       public void run() {
         initTree(descriptor);
-        if(isRight) {
-          for (ModuleReference ref : descriptor.getDepGenerators()) {
+        if (isRight) {
+          for (SModuleReference ref : descriptor.getDepGenerators()) {
             Generator gen = (Generator) MPSModuleRepository.getInstance().getModule(ref.getModuleId());
             if (gen != null)
               initTree(gen.getModuleDescriptor());
@@ -74,10 +75,10 @@ public class GeneratorPrioritiesTree {
       }
     });
 
-    if(mapping != null)
+    if (mapping != null)
       setCheckedStateForRoot(myRootNode, mapping);
 
-    myCheckboxTree = new CheckboxTree(getCheckboxTreeCellRenderer(), myRootNode, new CheckPolicy(true,true,false,true));
+    myCheckboxTree = new CheckboxTree(getCheckboxTreeCellRenderer(), myRootNode, new CheckPolicy(true, true, false, true));
     myCheckboxTree.setRootVisible(isRight);
     expandAllRows(myCheckboxTree);
     setCheckedUnder(myRootNode);
@@ -85,7 +86,7 @@ public class GeneratorPrioritiesTree {
 
   private void initTree(GeneratorDescriptor descriptor) {
     ExtendedCheckedTreeNode generatorNode = new GeneratorCheckedTreeNode(
-      (ModuleReference)MPSModuleRepository.getInstance().getModule(descriptor.getId()).getModuleReference()
+        (SModuleReference) MPSModuleRepository.getInstance().getModule(descriptor.getId()).getModuleReference()
     );
     myRootNode.add(generatorNode);
 
@@ -94,7 +95,7 @@ public class GeneratorPrioritiesTree {
     for (SModel templateModel : generator.getOwnTemplateModels()) {
       ExtendedCheckedTreeNode templateNode = new ModelCheckedTreeNode(templateModel.getReference());
       generatorNode.add(templateNode);
-      for (SNode mapping : SModelOperations.getRoots(templateModel, "jetbrains.mps.lang.generator.structure.MappingConfiguration")){
+      for (SNode mapping : SModelOperations.getRoots(templateModel, "jetbrains.mps.lang.generator.structure.MappingConfiguration")) {
         ExtendedCheckedTreeNode mappingNode = new MappingCheckedTreeNode(new SNodePointer(mapping));
         templateNode.add(mappingNode);
       }
@@ -102,21 +103,19 @@ public class GeneratorPrioritiesTree {
   }
 
   private void setCheckedStateForRoot(ExtendedCheckedTreeNode node, MappingConfig_AbstractRef mapping) {
-    if(mapping instanceof MappingConfig_RefAllGlobal) {
+    if (mapping instanceof MappingConfig_RefAllGlobal) {
       node.setChecked(true);
-    }
-    else if(mapping instanceof MappingConfig_ExternalRef) {
+    } else if (mapping instanceof MappingConfig_ExternalRef) {
       setCheckedStateForRef(node, (MappingConfig_ExternalRef) mapping);
-    }
-    else if(mapping instanceof MappingConfig_RefSet) {
+    } else if (mapping instanceof MappingConfig_RefSet) {
       for (MappingConfig_AbstractRef ref : ((MappingConfig_RefSet) mapping).getMappingConfigs()) {
         setCheckedStateForRef(node, (MappingConfig_ExternalRef) ref);
       }
     }
   }
-  
+
   private void setCheckedStateForRef(ExtendedCheckedTreeNode node, MappingConfig_ExternalRef mapping) {
-    ModuleReference modRef = mapping.getGenerator();
+    SModuleReference modRef = mapping.getGenerator();
 
     Enumeration children = node.children();
     while (children.hasMoreElements()) {
@@ -127,20 +126,16 @@ public class GeneratorPrioritiesTree {
 
         if (innerOperand instanceof MappingConfig_RefAllLocal) {
           child.setChecked(true);
-        }
-        else if (innerOperand instanceof MappingConfig_SimpleRef) {
+        } else if (innerOperand instanceof MappingConfig_SimpleRef) {
           setCheckedStateForModel(child, (MappingConfig_SimpleRef) innerOperand);
-        }
-        else if (innerOperand instanceof MappingConfig_RefSet) {
+        } else if (innerOperand instanceof MappingConfig_RefSet) {
           for (MappingConfig_AbstractRef ref : ((MappingConfig_RefSet) innerOperand).getMappingConfigs()) {
             if (ref instanceof MappingConfig_SimpleRef) {
               setCheckedStateForModel(child, (MappingConfig_SimpleRef) ref);
-            }
-            else if (ref instanceof MappingConfig_RefSet) {
+            } else if (ref instanceof MappingConfig_RefSet) {
               setCheckedStateForSet(child, (MappingConfig_RefSet) ref);
-            }
-            else if (ref instanceof MappingConfig_ExternalRef) {
-              setCheckedStateForRef((ExtendedCheckedTreeNode)child.getParent(), (MappingConfig_ExternalRef) ref);
+            } else if (ref instanceof MappingConfig_ExternalRef) {
+              setCheckedStateForRef((ExtendedCheckedTreeNode) child.getParent(), (MappingConfig_ExternalRef) ref);
             }
           }
         }
@@ -152,16 +147,16 @@ public class GeneratorPrioritiesTree {
     for (MappingConfig_AbstractRef ref : mapping.getMappingConfigs()) {
       if (ref instanceof MappingConfig_SimpleRef) {
         setCheckedStateForModel(node, (MappingConfig_SimpleRef) ref);
-      } else
-      if (ref instanceof MappingConfig_RefSet) {
+      } else if (ref instanceof MappingConfig_RefSet) {
         setCheckedStateForSet(node, (MappingConfig_RefSet) ref);
       }
     }
   }
 
   private void setCheckedStateForModel(ExtendedCheckedTreeNode node, MappingConfig_SimpleRef mapping) {
-    SModelReference modRef = jetbrains.mps.smodel.SModelReference.fromString(mapping.getModelUID());
-    ((jetbrains.mps.smodel.SModelReference)modRef).update();
+    SModelReference modRef = PersistenceFacade.getInstance().createModelReference(mapping.getModelUID());
+    // WTF?
+    ((jetbrains.mps.smodel.SModelReference) modRef).update();
 
     Enumeration children = node.children();
     while (children.hasMoreElements()) {
@@ -170,8 +165,7 @@ public class GeneratorPrioritiesTree {
       if (child.getUserObject().equals(modRef)) {
         if (mapping.getNodeID().equals("*")) {
           child.setChecked(true);
-        }
-        else {
+        } else {
           setCheckedStateForNode(child, mapping);
         }
       }
@@ -220,7 +214,7 @@ public class GeneratorPrioritiesTree {
 
   private MappingConfig_AbstractRef getGeneratorMappingRef(ExtendedCheckedTreeNode node) {
     MappingConfig_ExternalRef result = new MappingConfig_ExternalRef();
-    result.setGenerator(((GeneratorCheckedTreeNode)node).getUserObject());
+    result.setGenerator(((GeneratorCheckedTreeNode) node).getUserObject());
     if (node.isChecked()) {
       result.setMappingConfig(new MappingConfig_RefAllLocal());
     } else {
@@ -296,17 +290,18 @@ public class GeneratorPrioritiesTree {
   }
 
   public static CheckboxTreeCellRenderer getCheckboxTreeCellRenderer() {
-    return new CheckboxTreeCellRenderer(){
+    return new CheckboxTreeCellRenderer() {
       @Override
       public void customizeRenderer(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row, boolean hasFocus) {
         super.customizeRenderer(tree, value, selected, expanded, leaf, row, hasFocus);
         ColoredTreeCellRenderer renderer = getTextRenderer();
         JCheckBox checkBox = getCheckbox();
 
-        if(value instanceof ExtendedCheckedTreeNode) {
+        if (value instanceof ExtendedCheckedTreeNode) {
           ExtendedCheckedTreeNode checkedTreeNode = (ExtendedCheckedTreeNode) value;
 
-          renderer.append(checkedTreeNode.getPresentation(), checkedTreeNode.isChecked() ? SimpleTextAttributes.REGULAR_ATTRIBUTES : SimpleTextAttributes.GRAYED_ATTRIBUTES );
+          renderer.append(checkedTreeNode.getPresentation(),
+              checkedTreeNode.isChecked() ? SimpleTextAttributes.REGULAR_ATTRIBUTES : SimpleTextAttributes.GRAYED_ATTRIBUTES);
           renderer.setIcon(checkedTreeNode.getIcon());
 
           checkBox.setSelected(checkedTreeNode.isChecked());
@@ -316,7 +311,7 @@ public class GeneratorPrioritiesTree {
   }
 
   public static final void expandAllRows(JTree tree) {
-    for (int i = 0;  i < tree.getRowCount(); i++) {
+    for (int i = 0; i < tree.getRowCount(); i++) {
       tree.expandRow(i);
     }
   }
@@ -326,7 +321,7 @@ public class GeneratorPrioritiesTree {
 
     @Override
     public T getUserObject() {
-      return (T)super.getUserObject();
+      return (T) super.getUserObject();
     }
 
     public ExtendedCheckedTreeNode(T value) {
@@ -338,11 +333,13 @@ public class GeneratorPrioritiesTree {
     public boolean isChecksUnder() {
       return myChecksUnder;
     }
+
     public void setChecksUnder(boolean checksUnder) {
       myChecksUnder = checksUnder;
     }
 
     public abstract String getPresentation();
+
     public abstract Icon getIcon();
   }
 
@@ -366,10 +363,11 @@ public class GeneratorPrioritiesTree {
     }
   }
 
-  private class GeneratorCheckedTreeNode extends ExtendedCheckedTreeNode<ModuleReference> {
+  private class GeneratorCheckedTreeNode extends ExtendedCheckedTreeNode<SModuleReference> {
 
     private final String myPresentation;
-    public GeneratorCheckedTreeNode(ModuleReference value) {
+
+    public GeneratorCheckedTreeNode(SModuleReference value) {
       super(value);
       Generator generator = (Generator) MPSModuleRepository.getInstance().getModule(getUserObject().getModuleId());
       myPresentation = generator == null ? "unknown generator" : generator.getAlias();
@@ -394,7 +392,7 @@ public class GeneratorPrioritiesTree {
 
     @Override
     public String getPresentation() {
-      return NameUtil.shortNameFromLongName(getUserObject().getModelName()).replace("@generator","");
+      return NameUtil.shortNameFromLongName(getUserObject().getModelName()).replace("@generator", "");
     }
 
     @Override
@@ -406,6 +404,7 @@ public class GeneratorPrioritiesTree {
   private class MappingCheckedTreeNode extends ExtendedCheckedTreeNode<SNodeReference> {
 
     private final String myPresentation;
+
     public MappingCheckedTreeNode(SNodeReference nodeReference) {
       super(nodeReference);
       myPresentation = nodeReference.resolve(MPSModuleRepository.getInstance()).getName();

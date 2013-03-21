@@ -32,7 +32,7 @@ import jetbrains.mps.project.*;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
-import jetbrains.mps.project.structure.modules.*;
+import org.jetbrains.mps.openapi.module.SModuleReference;import jetbrains.mps.project.structure.modules.*;
 import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.FileSystem;
@@ -280,7 +280,7 @@ public class TestMakeOnRealProject {
     modelRoot.addFile(DefaultModelRoot.SOURCE_ROOTS, runtimeSolutionDescriptorFile.getParent().getPath());
 
     solutionDescriptor.getModelRootDescriptors().add(modelRoot.toDescriptor());
-    solutionDescriptor.getDependencies().add(new Dependency(new ModuleReference("JDK"), true));
+    solutionDescriptor.getDependencies().add(new Dependency(new jetbrains.mps.project.structure.modules.ModuleReference("JDK"), true));
     runtimeSolutionDescriptorFile.createNewFile();
     SolutionDescriptorPersistence.saveSolutionDescriptor(runtimeSolutionDescriptorFile, solutionDescriptor, MacrosFactory.forModuleFile(runtimeSolutionDescriptorFile));
     ModuleHandle handle = ModulesMiner.getInstance().loadModuleHandle(runtimeSolutionDescriptorFile);

@@ -35,7 +35,7 @@ import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.Memento;
@@ -97,8 +97,8 @@ public class IdeaPluginModuleFacetTab extends BaseTab {
     decorator.setAddAction(new AnActionButtonRunnable() {
       @Override
       public void run(AnActionButton anActionButton) {
-        List<ModuleReference> list = (new SolutionOrLangChooser()).compute();
-        for(ModuleReference reference : list)
+        List<SModuleReference> list = (new SolutionOrLangChooser()).compute();
+        for(SModuleReference reference : list)
           myTableModel.addItem(reference);
       }
     }).setRemoveAction(new AnActionButtonRunnable() {

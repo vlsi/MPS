@@ -6605,7 +6605,7 @@
                         </node>
                         <node role="condition" roleId="tpee.1144231399730" type="tpee.LessThanExpression" typeId="tpee.1081506773034" id="6312172641078801219">
                           <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6312172641078801220">
-                            <property name="value" nameId="tpee.1068580320021" value="10000" />
+                            <property name="value" nameId="tpee.1068580320021" value="100000" />
                           </node>
                           <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6312172641078801221">
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6312172641078801213" resolveInfo="i" />

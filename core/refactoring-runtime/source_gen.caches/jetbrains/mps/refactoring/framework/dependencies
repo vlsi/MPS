@@ -170,6 +170,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.util.NodesIterable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
   </dependency>
   <dependency className="jetbrains.mps.refactoring.framework.RefactoringLoggingFailedException" file="RefactoringLoggingFailedException.java">
     <classNode dependClassName="java.lang.String" />
