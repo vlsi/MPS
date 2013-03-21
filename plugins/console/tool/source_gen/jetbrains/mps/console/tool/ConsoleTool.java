@@ -55,7 +55,7 @@ public class ConsoleTool extends BaseProjectTool {
 
 
   protected void initMainComponent() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         jetbrains.mps.project.Project project = ProjectHelper.toMPSProject(getProject());
         ConsoleTool.this.myEditor = new UIEditorComponent(new ModuleContext(myModel.getModule(), project), null);
@@ -114,7 +114,7 @@ public class ConsoleTool extends BaseProjectTool {
 
 
   private void nextCommand() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         ConsoleTool.this.myLastCommand = ListSequence.fromList(SLinkOperations.getTargets(myRoot, "command", true)).addElement(SConceptOperations.createNewNode("jetbrains.mps.console.lang.commands.structure.BaseLanguageCommand", null));
         myEditor.editNode(myLastCommand);
@@ -134,7 +134,7 @@ public class ConsoleTool extends BaseProjectTool {
   @Override
   protected void doRegister() {
     super.doRegister();
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         ConsoleTool.this.myModel = TempModelCreator.createTempModel();
         for (Language lang : CollectionSequence.fromCollection(ModuleRepositoryFacade.getInstance().getAllModules(Language.class))) {
@@ -148,7 +148,7 @@ public class ConsoleTool extends BaseProjectTool {
 
   @Override
   protected void doUnregister() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         TempModelCreator.disposeTempModel(myModel);
       }
