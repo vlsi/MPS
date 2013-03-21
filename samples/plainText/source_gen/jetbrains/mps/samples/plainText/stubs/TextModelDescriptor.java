@@ -29,7 +29,7 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
   }
 
   @Override
-  protected void reloadFromDiskSafe() {
+  public void reloadFromDiskSafe() {
     reloadFromDisk();
   }
 
