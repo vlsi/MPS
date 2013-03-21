@@ -13,12 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.NullDataSource;
 
+/**
+ * @deprecated use {@link jetbrains.mps.extapi.model.SModelBase}
+ */
+@Deprecated
 public abstract class BaseSpecialModelDescriptor extends BaseSModelDescriptor {
   protected volatile jetbrains.mps.smodel.SModel mySModel;
 
@@ -52,4 +57,9 @@ public abstract class BaseSpecialModelDescriptor extends BaseSModelDescriptor {
   }
 
   protected abstract jetbrains.mps.smodel.SModel createModel();
+
+  @Override
+  protected void reloadFromDiskSafe() {
+    throw new UnsupportedOperationException();
+  }
 }

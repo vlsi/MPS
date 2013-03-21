@@ -15,12 +15,11 @@
  */
 package jetbrains.mps.stubs.javastub.classpath;
 
-import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.SModelFqName;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.StubMigrationHelper;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public class StubHelper {
@@ -28,31 +27,19 @@ public class StubHelper {
   }
 
   @Deprecated
-  public static SModelReference uidForPackageInStubs(String pack) {
-    return uidForPackageInStubs(pack, LanguageID.JAVA, null);
-  }
-
-  @Deprecated
-  public static SModelReference uidForPackageInStubs(String pack, String languageId, SModuleReference moduleRef) {
+  public static SModelReference uidForPackageInStubs(String pack, String languageId, @NotNull SModuleReference moduleRef) {
     return uidForPackageInStubs(pack, languageId, moduleRef, false);
   }
 
   @Deprecated
-  public static SModelReference uidForPackageInStubs(String pack, String languageId, SModuleReference moduleRef, boolean forceResolve) {
+  public static SModelReference uidForPackageInStubs(String pack, String languageId, @NotNull SModuleReference moduleRef, boolean forceResolve) {
     String stereo = SModelStereotype.getStubStereotypeForId(languageId);
     return uidForPackageInStubs(new SModelFqName(pack, stereo), moduleRef, forceResolve);
   }
 
-  public static SModelReference uidForPackageInStubs(SModelFqName name, SModuleReference moduleRef, boolean forceResolve) {
-    String moduleName = null;
-    SModelId id;
-
-    if (moduleRef != null) {
-      moduleName = moduleRef.getModuleName();
-      id = jetbrains.mps.smodel.SModelId.foreign(name.getStereotype(), moduleRef.getModuleId().toString(), name.getLongName());
-    } else {
-      id = StubMigrationHelper.convertModelUIDAny(name.getStereotype() + "#" + name.getLongName(), forceResolve);
-    }
+  public static SModelReference uidForPackageInStubs(SModelFqName name, @NotNull SModuleReference moduleRef, boolean forceResolve) {
+    String moduleName = moduleRef.getModuleName();
+    SModelId id = jetbrains.mps.smodel.SModelId.foreign(name.getStereotype(), moduleRef.getModuleId().toString(), name.getLongName());
 
     SModelFqName fqName = new SModelFqName(moduleName, name.getLongName(), name.getStereotype());
     return new jetbrains.mps.smodel.SModelReference(fqName, id);

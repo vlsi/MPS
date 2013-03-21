@@ -26,20 +26,18 @@ import com.intellij.psi.PsiAnnotationMethod;
 import com.intellij.psi.PsiParameter;
 import com.intellij.psi.PsiType;
 import com.intellij.psi.PsiPrimitiveType;
-import com.intellij.psi.PsiTypeParameter;
 import jetbrains.mps.smodel.DynamicReference;
 import com.intellij.psi.PsiArrayType;
 import com.intellij.psi.PsiWildcardType;
+import com.intellij.psi.PsiTypeParameter;
 import com.intellij.psi.PsiExpression;
 import com.intellij.psi.PsiLiteralExpression;
-import com.intellij.psi.PsiFile;
-import com.intellij.psi.PsiJavaFile;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import com.intellij.psi.PsiAnnotation;
 import com.intellij.psi.PsiModifierListOwner;
 import com.intellij.psi.PsiTypeParameterListOwner;
 import com.intellij.psi.PsiNameValuePair;
 import com.intellij.psi.PsiTypeElement;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -238,7 +236,7 @@ public class ASTConverter {
     SPropertyOperations.set(method, "isFinal", "" + (isFinal(x)));
     SPropertyOperations.set(method, "isSynchronized", "" + (x.hasModifierProperty(PsiModifier.SYNCHRONIZED)));
 
-    SLinkOperations.setTarget(method, "returnType", convertType(x.getReturnType()), true);
+    SLinkOperations.setTarget(method, "returnType", convertType(x.getReturnTypeNoResolve()), true);
     ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).addSequence(Sequence.fromIterable(Sequence.fromArray(x.getParameterList().getParameters())).select(new ISelector<PsiParameter, SNode>() {
       public SNode select(PsiParameter it) {
         SNode param = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
@@ -330,12 +328,10 @@ public class ASTConverter {
 
       // FIXME refactor 
 
-      PsiClass c = t.resolve();
-      if (c == null) {
-        return null;
-      } else if (c instanceof PsiTypeParameter) {
+      // TODO ask state if it's a type variable 
+      if (1 < 0) {
         SNode typVarRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null);
-        typVarRef.setReference("typeVariableDeclaration", new DynamicReference("typeVariableDeclaration", typVarRef, null, c.getName()));
+        typVarRef.setReference("typeVariableDeclaration", new DynamicReference("typeVariableDeclaration", typVarRef, null, "TODO"));
         return typVarRef;
       }
 
@@ -400,38 +396,8 @@ public class ASTConverter {
   }
 
   public SNode resolveClass(PsiClassType t) {
-    PsiClass cls = t.resolve();
-
-    // TODO q: handle this case? create dynamic reference? 
-    if (cls == null) {
-      return null;
-    }
-
-    PsiElement e = cls;
-    StringBuilder sb = new StringBuilder();
-
-    do {
-      sb.insert(0, '.' + ((PsiClass) e).getName());
-
-      e = e.getParent();
-      if (!(e instanceof PsiClass) && !(e instanceof PsiFile)) {
-        return null;
-      }
-    } while (!(e instanceof PsiFile));
-    sb.deleteCharAt(0);
-
-    //  just in case. in the while loop we had to use generic PsiFile to be sure that we stop 
-    if (!(e instanceof PsiJavaFile)) {
-      return null;
-    }
-
-    PsiJavaFile file = (PsiJavaFile) e;
-    String qualClassName = sb.toString();
-    String packageName = file.getPackageName();
-    SModelReference modelRef = jetbrains.mps.smodel.SModelReference.fromString(packageName);
-
     SNode clsType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
-    clsType.setReference("classifier", new DynamicReference("classifier", clsType, modelRef, qualClassName));
+    clsType.setReference("classifier", new DynamicReference("classifier", clsType, null, t.getClassName()));
 
     ListSequence.fromList(SLinkOperations.getTargets(clsType, "parameter", true)).addSequence(Sequence.fromIterable(Sequence.fromArray(t.getParameters())).select(new ISelector<PsiType, SNode>() {
       public SNode select(PsiType it) {
@@ -513,6 +479,8 @@ public class ASTConverter {
 
   public static class WithState extends ASTConverter {
     private String myIdPrefix;
+    private Map<String, SNode> myTypeVars;
+
 
     public WithState(ASTConverter base, String prefix) {
       super(base.psiSourceMap);
@@ -523,6 +491,8 @@ public class ASTConverter {
     public String getIdPrefix() {
       return myIdPrefix;
     }
+
+
   }
 
 
@@ -546,6 +516,7 @@ public class ASTConverter {
   }
 
   private static SNode _quotation_createNode_rbndtb_a0a6a2c0i(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UpperBoundType", null, null, GlobalScope.getInstance(), false);
@@ -557,6 +528,7 @@ public class ASTConverter {
   }
 
   private static SNode _quotation_createNode_rbndtb_a0a0g0c2a8(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LowerBoundType", null, null, GlobalScope.getInstance(), false);
@@ -568,6 +540,7 @@ public class ASTConverter {
   }
 
   private static SNode _quotation_createNode_rbndtb_a0a1a0a01(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);

@@ -14,10 +14,11 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.java.psi.impl;
+package jetbrains.mps.idea.core.usages;
 
 import com.intellij.facet.FacetManager;
 import com.intellij.openapi.application.QueryExecutorBase;
+import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.project.Project;
@@ -38,6 +39,7 @@ import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRef;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNodeId.Foreign;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.NotNull;
@@ -63,11 +65,17 @@ public class MPSReferenceSearch extends QueryExecutorBase<PsiReference, Referenc
       return;
     }
 
-    GlobalSearchScope scope = (GlobalSearchScope) queryParameters.getScope();
+    GlobalSearchScope scope = (GlobalSearchScope) queryParameters.getEffectiveSearchScope();
 
     final Project project = scope.getProject();
     final MPSPsiProvider psiProvider = MPSPsiProvider.getInstance(project);
     final PsiElement psiTarget = queryParameters.getElementToSearch();
+
+    final SNodeId targetNodeId = MPS2PsiMapperUtil.getNodeId(psiTarget);
+    if (targetNodeId == null) {
+      // it can't be references from MPS
+      return;
+    }
 
     for (Module module : ModuleManager.getInstance(project).getModules()) {
       if (!scope.isSearchInModuleContent(module)) continue;
@@ -90,29 +98,56 @@ public class MPSReferenceSearch extends QueryExecutorBase<PsiReference, Referenc
                 stack.push(child);
               }
               for (SReference ref : node.getReferences()) {
-                SNode targetNode = ref.getTargetNode();
-                if (targetNode == null) continue;
-                PsiElement targetPsiElement = MPS2PsiMapperUtil.getPsiSource(targetNode, project);
 
-                if (targetPsiElement == psiTarget) {
-                  // finding PsiReference corresponding to this SReference
+                // this usage will be gone together with all this traverse code
+                // it will be replaced by index
+                SNodeId refTargetNodeId = ref.getTargetNodeId();
+                if (!(refTargetNodeId instanceof Foreign)) continue;
+
+                String s = refTargetNodeId.toString();
+                if (s.equals(targetNodeId.toString())) {
+                  // SReference -> PsiReference
                   // We don't have a way to just get MPSPsiRef from SReference in the same way
                   // as we can do with nodes (via nodeId)
-                  PsiElement mpsPsiElem = psiProvider.getPsi(node);
-                  if (!(mpsPsiElem instanceof MPSPsiNode)) continue;
-                  MPSPsiNode mpsPsiNode = (MPSPsiNode) mpsPsiElem;
 
+                  MPSPsiNode psiNode = (MPSPsiNode) psiProvider.getPsi(node);
                   String refRole = ref.getRole();
-                  SNodeId targetNodeId = targetNode.getNodeId();
-                  MPSPsiRef[] refs = mpsPsiNode.getReferences(refRole);
+                  MPSPsiRef[] refs = psiNode.getReferences(refRole);
 
-                  for (MPSPsiRef r: refs) {
+                  for (MPSPsiRef r : refs) {
                     if (targetNodeId.equals(r.getNodeId())) {
-                      // it's our reference
+                      // it's our reference: giving it out to find usages
                       consumer.process(r.getReference());
                     }
                   }
+
+                } else if (s.startsWith(targetNodeId.toString())) {
+                  // TODO handle specially
                 }
+
+//                SNode targetNode = ref.getTargetNode();
+//                if (targetNode == null) continue;
+//                PsiElement targetPsiElement = MPS2PsiMapperUtil.getPsiSource(targetNode, project);
+//
+//                if (targetPsiElement == psiTarget) {
+//                  // finding PsiReference corresponding to this SReference
+//                  // We don't have a way to just get MPSPsiRef from SReference in the same way
+//                  // as we can do with nodes (via nodeId)
+//                  PsiElement mpsPsiElem = psiProvider.getPsi(node);
+//                  if (!(mpsPsiElem instanceof MPSPsiNode)) continue;
+//                  MPSPsiNode mpsPsiNode = (MPSPsiNode) mpsPsiElem;
+//
+//                  String refRole = ref.getRole();
+//                  SNodeId targetNodeId = targetNode.getNodeId();
+//                  MPSPsiRef[] refs = mpsPsiNode.getReferences(refRole);
+//
+//                  for (MPSPsiRef r : refs) {
+//                    if (targetNodeId.equals(r.getNodeId())) {
+//                      // it's our reference
+//                      consumer.process(r.getReference());
+//                    }
+//                  }
+//                }
               }
 
             }
@@ -123,8 +158,6 @@ public class MPSReferenceSearch extends QueryExecutorBase<PsiReference, Referenc
 
 
     }
-
-
 
 
   }

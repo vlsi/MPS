@@ -15,5 +15,13 @@
  */
 package jetbrains.mps.extapi.model;
 
+import org.jetbrains.mps.openapi.model.SNode;
+
 public interface SModelData {
+
+  Iterable<SNode> getRootNodes();
+
+  void addRootNode(SNode node);
+
+  void removeRootNode(SNode node);
 }

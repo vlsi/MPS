@@ -22,7 +22,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.openapi.vcs.checkin.CheckinHandlerFactory;
@@ -77,12 +76,12 @@ public class ModelCheckerCheckinHandler extends CheckinHandler {
 
   private static List<SModel> getModelsByFiles(Iterable<File> files) {
     final SModelFileTracker ft = SModelFileTracker.getInstance();
-    return ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(files).select(new ISelector<File, BaseSModelDescriptorWithSource>() {
-      public BaseSModelDescriptorWithSource select(File file) {
+    return ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(files).select(new ISelector<File, SModel>() {
+      public SModel select(File file) {
         return ft.findModel(FileSystem.getInstance().getFileByPath(file.getAbsolutePath()));
       }
-    }).where(new IWhereFilter<BaseSModelDescriptorWithSource>() {
-      public boolean accept(BaseSModelDescriptorWithSource modelDescriptor) {
+    }).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel modelDescriptor) {
         return modelDescriptor != null;
       }
     }));

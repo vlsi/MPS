@@ -88,7 +88,7 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
   }
 
   public SModel loadSModel() {
-    SModel m = new SModel(getSModelReference());
+    SModel m = new SModel(getReference());
     MultiStreamDataSource source = (MultiStreamDataSource) getSource();
     for (String child : Sequence.fromIterable(source.getAvailableStreams())) {
       SNode root = SModelOperations.createNewRootNode(((org.jetbrains.mps.openapi.model.SModel) m.getModelDescriptor()), "jetbrains.mps.samples.plainText.structure.TextFile", null);

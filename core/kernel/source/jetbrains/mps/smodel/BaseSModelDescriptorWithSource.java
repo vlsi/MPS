@@ -13,12 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.progress.ProgressMonitor;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
 
@@ -48,51 +47,25 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
 
   //----------reloading stuff--------
 
-  private long mySourceTimestamp = -1;
-
-  /*
-   *  Should resolve disk/memory conflicts if any.
-   */
-  protected abstract void reloadFromDiskSafe();
-
-  public long getSourceTimestamp() {
-    return mySourceTimestamp;
-  }
-
-  public void updateDiskTimestamp() {
-    mySourceTimestamp = getSource().getTimestamp();
-  }
-
-  protected void processChanged(ProgressMonitor monitor) {
-    if (!needsReloading()) return;
-
-    monitor.start("Reloading " + getLongName(), 1);
-    reloadFromDiskSafe();
-    monitor.done();
-  }
-
-  public boolean needsReloading() {
-    return isLoaded() && getSource().getTimestamp() != mySourceTimestamp;
-  }
-
   protected synchronized void replaceModel(Runnable replacer) {
     ModelAccess.assertLegalWrite();
 
     final jetbrains.mps.smodel.SModel oldSModel = getCurrentModelInternal();
 
     if (oldSModel != null) {
-      ( oldSModel).setModelDescriptor(null);
+      (oldSModel).setModelDescriptor(null);
     }
 
     replacer.run();
 
     jetbrains.mps.smodel.SModel newModel = getCurrentModelInternal();
     if (newModel != null) {
-      ( newModel).setModelDescriptor(this);
+      (newModel).setModelDescriptor(this);
     }
 
     notifyModelReplaced(oldSModel.getModelDescriptor());
 
     MPSModuleRepository.getInstance().invalidateCaches();
   }
+
 }

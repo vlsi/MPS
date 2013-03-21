@@ -61,6 +61,11 @@ public interface ModelFactory {
   void upgrade(StreamDataSource dataSource) throws IOException;
 
   /**
+   *  Saves the model in the factory-specific format (including conversion when needed).
+   */
+  void save(SModel model, StreamDataSource dataSource) throws ModelSaveException;
+
+  /**
    *  returns true if plain text is not enough to represent stored data.
    */
   boolean isBinary();

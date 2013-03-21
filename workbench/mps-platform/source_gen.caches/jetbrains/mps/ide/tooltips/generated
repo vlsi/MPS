@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-brgv0lt69ap8egrtxljvv2igt4q3i4u">
+<dependencies version="2" modelHash="54lv8ani88xnej3pdfpwz61223udgs4">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-c1prn3teyxjh37lzg3o3idls8kjv8gf" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
-  <common hash="-8n1oty35ktmmurodqisp73uyccmcs2" />
-  <source id="5522183980949036968" name="ToolTip" hash="1ys2yq9nopnw0rkjm8yavkdwdnyloz0">
+  <common hash="-eam33xgkj7h627xt5vlx6tlkzs4rzx0" />
+  <source id="5522183980949036968" name="ToolTip" hash="5jmp1x6zjri4dmhfpd0zdb5369xvi8k">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ToolTip.java" />
   </source>
-  <source id="1657638272963062314" name="ToolTipData" hash="-8kp97pjwj1xga7kdyvq08obp7cutuk1">
+  <source id="1657638272963062314" name="ToolTipData" hash="cwbxxkqxp3so2bax0rvu9u0glnhk8sn">
     <dep root="5522183980949036968" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ToolTipData.java" />
   </source>
-  <source id="1657638272963439183" name="MPSToolTipManager" hash="-3gwhinhgckmjkfky8gsl4q5wtph9jr8">
+  <source id="1657638272963439183" name="MPSToolTipManager" hash="bi1ndps1b33ipqvnfyiklltndbd8lid">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="MPSToolTipManager.java" />
   </source>
-  <source id="3564103493663133593" name="TooltipComponent" hash="-1eo1pkvfvmnweikviuu0bnt1vdboqaq">
+  <source id="3564103493663133593" name="TooltipComponent" hash="-ac9prxzd40vgkkeuze4cccd0vvi72dr">
     <file name="TooltipComponent.java" />
   </source>
 </dependencies>
