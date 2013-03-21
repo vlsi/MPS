@@ -102,7 +102,6 @@
     <classNode dependClassName="com.intellij.ide.BrowserUtil" />
     <classNode dependClassName="com.intellij.ide.util.PropertiesComponent" />
     <classNode dependClassName="com.intellij.notification.Notification" />
-    <classNode dependClassName="com.intellij.notification.NotificationDisplayType" />
     <classNode dependClassName="com.intellij.notification.NotificationListener" />
     <classNode dependClassName="com.intellij.notification.NotificationType" />
     <classNode dependClassName="com.intellij.notification.Notifications" />

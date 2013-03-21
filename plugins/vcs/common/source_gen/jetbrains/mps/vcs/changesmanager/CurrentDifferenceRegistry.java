@@ -65,7 +65,7 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
 
   private void updateModel(@NotNull BaseEditableSModelDescriptor modelDescriptor) {
     synchronized (myCurrentDifferences) {
-      SModelReference modelRef = modelDescriptor.getSModelReference();
+      SModelReference modelRef = modelDescriptor.getReference();
       if (MapSequence.fromMap(myCurrentDifferences).containsKey(modelRef)) {
         MapSequence.fromMap(myCurrentDifferences).get(modelRef).getChangesTracker().scheduleFullUpdate();
         return;
@@ -110,7 +110,7 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
   @NotNull
   public CurrentDifference getCurrentDifference(@NotNull BaseEditableSModelDescriptor modelDescriptor) {
     synchronized (myCurrentDifferences) {
-      SModelReference modelRef = modelDescriptor.getSModelReference();
+      SModelReference modelRef = modelDescriptor.getReference();
       if (!(MapSequence.fromMap(myCurrentDifferences).containsKey(modelRef))) {
         MapSequence.fromMap(myCurrentDifferences).put(modelRef, new CurrentDifference(this, modelDescriptor));
       }

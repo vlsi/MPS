@@ -16,6 +16,7 @@
 package jetbrains.mps.extapi.model;
 
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 
 /**
  * evgeny, 2/26/13
@@ -27,17 +28,19 @@ public class PersistenceProblem implements SModel.Problem {
   private final boolean isError;
   private final int line;
   private final int column;
+  private final SNode anchor;
 
-  public PersistenceProblem(String text, String location, boolean error, int line, int column) {
+  public PersistenceProblem(String text, String location, boolean error, int line, int column, SNode anchor) {
     this.text = text;
     this.location = location;
     isError = error;
     this.line = line;
     this.column = column;
+    this.anchor = anchor;
   }
 
   public PersistenceProblem(String text, String location, boolean error) {
-    this(text, location, error, -1, -1);
+    this(text, location, error, -1, -1, null);
   }
 
   @Override
@@ -63,5 +66,10 @@ public class PersistenceProblem implements SModel.Problem {
   @Override
   public boolean isError() {
     return isError;
+  }
+
+  @Override
+  public SNode getNode() {
+    return anchor;
   }
 }

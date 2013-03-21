@@ -24,7 +24,6 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.event.HyperlinkEvent;
 import com.intellij.ide.BrowserUtil;
 import com.intellij.notification.Notifications;
-import com.intellij.notification.NotificationDisplayType;
 
 public class MergeDriverNotification {
   private static final String SUPPRESSED_PROPERTY_NAME = "merge.driver.suppressed.notification";
@@ -107,7 +106,7 @@ public class MergeDriverNotification {
             notification.expire();
           }
         });
-        Notifications.Bus.notify(myLastNotification, NotificationDisplayType.STICKY_BALLOON, myProject);
+        Notifications.Bus.notify(myLastNotification, myProject);
       }
     });
   }

@@ -17,6 +17,7 @@ package jetbrains.mps.persistence;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.persistence.binary.BinaryPersistence;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
@@ -29,6 +30,7 @@ import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import org.xml.sax.InputSource;
@@ -110,6 +112,12 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
     } catch (ModelReadException ex) {
       throw new IOException(ex.getMessage(), ex);
     }
+  }
+
+  @Override
+  public void save(SModel model, StreamDataSource dataSource) throws ModelSaveException {
+    // TODO implement
+    //BinaryPersistence.writeModel(model, dataSource);
   }
 
   @Override

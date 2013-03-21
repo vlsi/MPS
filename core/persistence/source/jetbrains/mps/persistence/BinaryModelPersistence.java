@@ -19,6 +19,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 
 import java.io.ByteArrayInputStream;
@@ -75,6 +76,11 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
   @Override
   public void upgrade(StreamDataSource dataSource) throws IOException {
     // no-op
+  }
+
+  @Override
+  public void save(SModel model, StreamDataSource dataSource) throws ModelSaveException {
+    // TODO implement
   }
 
   @Override
