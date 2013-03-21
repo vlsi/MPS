@@ -35,7 +35,9 @@ public abstract class LightBulbMenu extends JLabel implements TooltipComponent {
     setBackground(Color.WHITE);
 
     ToolTipManager.sharedInstance().unregisterComponent(this);
-    MPSToolTipManager.getInstance().registerComponent(this);        
+    if (MPSToolTipManager.getInstance() != null) {
+      MPSToolTipManager.getInstance().registerComponent(this);
+    }
 
     setPreferredSize(new Dimension(getWidth(), getHeight()));
     setSize(getWidth(), getHeight());

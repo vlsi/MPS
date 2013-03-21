@@ -667,9 +667,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myIntentionsSupport = new IntentionsSupport(this);
     myAutoValidator = new AutoValidator(this);
 
-    MPSToolTipManager.getInstance().registerComponent(this);
+    if (MPSToolTipManager.getInstance() != null) {
+      MPSToolTipManager.getInstance().registerComponent(this);
+    }
 
-    CaretBlinker.getInstance().registerEditor(this);
+    if (CaretBlinker.getInstance() != null) {
+      CaretBlinker.getInstance().registerEditor(this);
+    }
 
     KeyboardFocusManager.getCurrentKeyboardFocusManager().addPropertyChangeListener("focusOwner", myFocusListener = new PropertyChangeListener() {
       @Override
@@ -980,11 +984,15 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     String text = getMessagesTextFor(cell);
     Point point = new Point(cell.getX(), cell.getY() + cell.getHeight());
-    MPSToolTipManager.getInstance().showToolTip(text, this, point);
+    if (MPSToolTipManager.getInstance() != null ) {
+      MPSToolTipManager.getInstance().showToolTip(text, this, point);
+    }
   }
 
   public void hideMessageToolTip() {
-    MPSToolTipManager.getInstance().hideToolTip();
+    if (MPSToolTipManager.getInstance() != null ) {
+      MPSToolTipManager.getInstance().hideToolTip();
+    }
   }
 
   public void editNode(SNode node, IOperationContext operationContext) {
@@ -1798,7 +1806,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   @Override
   public void rebuildEditorContent() {
-    LOG.assertLog(ModelAccess.instance().isInEDT(), "You should do this in EDT");
+    LOG.assertLog(ModelAccess.instance().isInEDT() || SwingUtilities.isEventDispatchThread(), "You should do this in EDT");
 
     clearCaches();
     clearUserData();
@@ -2858,7 +2866,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
 
     if (dataId.equals(SelectInContext.DATA_KEY.getName())) {
-      ProjectViewSelectInProvider selectInHelper = ApplicationManager.getApplication().getComponent(ProjectViewSelectInProvider.class);
+      ProjectViewSelectInProvider selectInHelper = ApplicationManager.getApplication() == null ? null : ApplicationManager.getApplication().getComponent(ProjectViewSelectInProvider.class);
       if (selectInHelper == null) return null;
       return selectInHelper.getContext(getCurrentProject(), myNodePointer);
     }

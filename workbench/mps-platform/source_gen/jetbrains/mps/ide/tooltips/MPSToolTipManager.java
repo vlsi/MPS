@@ -167,7 +167,10 @@ public class MPSToolTipManager implements ApplicationComponent {
   }
 
   public static MPSToolTipManager getInstance() {
-    return ApplicationManager.getApplication().getComponent(MPSToolTipManager.class);
+    return (ApplicationManager.getApplication() == null ?
+      null :
+      ApplicationManager.getApplication().getComponent(MPSToolTipManager.class)
+    );
   }
 
   private static boolean eq_k25xh9_a0a0a0r(Object a, Object b) {
