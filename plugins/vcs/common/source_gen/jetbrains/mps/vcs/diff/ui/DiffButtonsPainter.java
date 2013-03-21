@@ -18,11 +18,11 @@ import javax.swing.Icon;
 import jetbrains.mps.smodel.ModelAccess;
 
 public class DiffButtonsPainter extends ButtonsPainter {
-  private RootDifferenceDialog myDialog;
+  private RootDifferencePane myDiffPane;
 
-  private DiffButtonsPainter(RootDifferenceDialog dialog, EditorComponent editorComponent, ChangeGroupLayout changeGroupLayout) {
+  private DiffButtonsPainter(RootDifferencePane pane, EditorComponent editorComponent, ChangeGroupLayout changeGroupLayout) {
     super(1, editorComponent, changeGroupLayout);
-    myDialog = dialog;
+    myDiffPane = pane;
   }
 
   @Override
@@ -49,9 +49,9 @@ public class DiffButtonsPainter extends ButtonsPainter {
     }
   }
 
-  public static DiffButtonsPainter addTo(RootDifferenceDialog dialog, DiffEditor diffEditor, ChangeGroupLayout changeGroupLayout, boolean inspector) {
+  public static DiffButtonsPainter addTo(RootDifferencePane pane, DiffEditor diffEditor, ChangeGroupLayout changeGroupLayout, boolean inspector) {
     EditorComponent editorComponent = diffEditor.getEditorComponent(inspector);
-    DiffButtonsPainter painter = new DiffButtonsPainter(dialog, editorComponent, changeGroupLayout);
+    DiffButtonsPainter painter = new DiffButtonsPainter(pane, editorComponent, changeGroupLayout);
     editorComponent.getLeftEditorHighlighter().addFoldingAreaPainter(painter);
     return painter;
   }
@@ -65,7 +65,7 @@ public class DiffButtonsPainter extends ButtonsPainter {
     public void performAction() {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          myDialog.rollbackChanges(getChangeGroup().getChanges());
+          myDiffPane.rollbackChanges(getChangeGroup().getChanges());
         }
       });
     }

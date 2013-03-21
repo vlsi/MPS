@@ -20,6 +20,8 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.vcs.diff.ui.RootDifferenceDialog;
+import jetbrains.mps.smodel.BaseSModelDescriptor;
+import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
 import com.intellij.openapi.vcs.VcsException;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
@@ -67,7 +69,7 @@ public class VcsActionsUtil {
           id.value = node.getNodeId();
         }
       });
-      RootDifferenceDialog.invokeDialog(oldModel, newModel.value, id.value, project, contentTitles, bounds);
+      ModelDifferenceDialog.showRootDifference(oldModel, newModel.value, id.value, project, contentTitles[0], contentTitles[1], bounds);
     } catch (VcsException e) {
       LOG.warning("", e);
       Messages.showErrorDialog(project, "Can't show difference due to the following error: " + e.getMessage(), "Error");

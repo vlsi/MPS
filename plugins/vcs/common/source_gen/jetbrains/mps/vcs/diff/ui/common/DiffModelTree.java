@@ -17,6 +17,8 @@ import com.intellij.ui.ColoredTreeCellRenderer;
 import javax.swing.JTree;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionPlaces;
+import javax.swing.event.TreeSelectionListener;
+import javax.swing.event.TreeSelectionEvent;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -68,6 +70,17 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
     });
     setPopupGroup(ActionUtils.groupFromActions(Sequence.fromIterable(myActions).toGenericArray(BaseAction.class)), ActionPlaces.CHANGES_VIEW_POPUP);
     addMouseListener(new DiffModelTree.MyMouseListener());
+    // listen for selection changes 
+    getSelectionModel().addTreeSelectionListener(new TreeSelectionListener() {
+      public void valueChanged(TreeSelectionEvent e) {
+        DiffModelTree.RootTreeNode[] node = getSelectedNodes(DiffModelTree.RootTreeNode.class, null);
+        if (node == null || node.length != 1) {
+          onUnselect();
+        } else {
+          onSelectRoot(node[0].getRootId());
+        }
+      }
+    });
   }
 
   protected DiffModelTree.TreeNode rebuild() {
@@ -150,6 +163,12 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
 
   protected boolean isMultipleRootNames() {
     return false;
+  }
+
+  protected void onUnselect() {
+  }
+
+  protected void onSelectRoot(@Nullable SNodeId rootId) {
   }
 
   private DiffModelTree.RootTreeNode findRootNode(@Nullable final SNodeId nodeId) {

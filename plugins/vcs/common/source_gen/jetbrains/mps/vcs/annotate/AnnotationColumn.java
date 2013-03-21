@@ -100,7 +100,6 @@ import java.io.File;
 import com.intellij.openapi.vcs.changes.ContentRevision;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
-import jetbrains.mps.vcs.diff.ui.RootDifferenceDialog;
 import com.intellij.openapi.vcs.VcsException;
 import jetbrains.mps.vcs.diff.ChangeSet;
 
@@ -743,7 +742,7 @@ __switch__:
                     if (rootId.value == null) {
                       new ModelDifferenceDialog(beforeModel.value, afterModel, project, titles[0], titles[1]).show();
                     } else {
-                      RootDifferenceDialog.invokeDialog(beforeModel.value, afterModel, rootId.value, project, titles, null);
+                      ModelDifferenceDialog.showRootDifference(beforeModel.value, afterModel, rootId.value, project, titles[0], titles[1], null);
                     }
                   }
                 });
