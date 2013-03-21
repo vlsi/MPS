@@ -20,6 +20,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.kernel.model.TempModelCreator;
 import jetbrains.mps.typesystem.uiActions.MyBaseNodeDialog;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.logging.Logger;
