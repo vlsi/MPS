@@ -5,7 +5,7 @@ package jetbrains.mps.tests;
 import jetbrains.mps.testbench.junit.runners.ModuleSymbolicSuite;
 import org.junit.runner.RunWith;
 
-@ModuleSymbolicSuite.ModuleClassSymbols(classes = {"jetbrains.mps.lang.actions.test.substitute.AddMenuPart_ConceptSubstitute_Test", "jetbrains.mps.lang.actions.test.substitute.AddMenuPart_GenericQuery_Test", "jetbrains.mps.lang.actions.test.substitute.ConceptSubstitutePart_Test", "jetbrains.mps.lang.actions.test.substitute.DontSubstiuteByDefault_Test"}, tests = {"test_AddMenuPart_ConceptSubstitute", "test_AddMenuPart_GenericQuery", "test_ConceptSubstitutePart", "test_DontSubstiuteByDefault"})
+@ModuleSymbolicSuite.ModuleClassSymbols(classes = {"jetbrains.mps.lang.actions.test.substitute.AddMenuPart_ConceptSubstitute_Test", "jetbrains.mps.lang.actions.test.substitute.AddMenuPart_GenericQuery_Test", "jetbrains.mps.lang.actions.test.substitute.AddMenuPart_ParameterizedSubstitute_Test", "jetbrains.mps.lang.actions.test.substitute.AddMenuPart_ParameterizedSubstitute_smartComplete_Test", "jetbrains.mps.lang.actions.test.substitute.ConceptSubstitutePart_Test", "jetbrains.mps.lang.actions.test.substitute.DontSubstiuteByDefault_Test"}, tests = {"test_AddMenuPart_ConceptSubstitute", "test_AddMenuPart_GenericQuery", "test_AddMenuPart_ParameterizedSubstitute", "test_AddMenuPart_ParameterizedSubstitute_smartComplete", "test_ConceptSubstitutePart", "test_DontSubstiuteByDefault"})
 @ModuleSymbolicSuite.ModuleReference("6ed0339f-b777-4ada-9cf7-73354b12f191(jetbrains.mps.lang.actions.test)")
 @RunWith(ModuleSymbolicSuite.class)
 public class TestModule_jetbrains_mps_lang_actions_test {

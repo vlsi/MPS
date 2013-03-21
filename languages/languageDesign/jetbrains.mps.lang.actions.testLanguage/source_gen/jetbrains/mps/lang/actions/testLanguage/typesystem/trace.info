@@ -1,3 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo />
+<debugInfo>
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.actions.testLanguage.typesystem.TypesystemDescriptor" />
+  <root nodeRef="r:13c5fcf5-111d-4ae9-b9c9-6a7deeb8dce9(jetbrains.mps.lang.actions.testLanguage.typesystem)/5750432610478621621">
+    <nodeInfo nodeId="5750432610478685704" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="24" startPosition="7" endLine="25" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5750432610478685704" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="25" startPosition="66" endLine="26" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5750432610478685704" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="26" startPosition="218" endLine="27" endPosition="321" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5750432610478621621" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="32" startPosition="46" endLine="33" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5750432610478621621" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="37" startPosition="5" endLine="38" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5750432610478621621" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="38" startPosition="126" endLine="39" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5750432610478621621" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="43" startPosition="30" endLine="44" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5750432610478693957" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="47" startPosition="63" endLine="48" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5750432610478693957" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="48" startPosition="63" endLine="49" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5750432610478693957" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="49" startPosition="30" endLine="50" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5750432610478693957" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="50" startPosition="159" endLine="51" endPosition="251" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5750432610478693957" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="51" startPosition="251" endLine="52" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5750432610478621621" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_ActionTestContainer_InferenceRule#()V" />
+    <nodeInfo nodeId="5750432610478693957" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="49" startPosition="30" endLine="51" endPosition="251" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5750432610478693957" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="49" startPosition="30" endLine="51" endPosition="251" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5750432610478621621" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5750432610478621621" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="5750432610478621621" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="36" startPosition="68" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5750432610478685704" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="23" startPosition="139" endLine="28" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5750432610478621621" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="36" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="5750432610478655947" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="22" startPosition="117" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5750432610478693957" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="47" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_ca4xs0_a0a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="5750432610478621621" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="22" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="5750432610478621621" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="19" startPosition="53" endLine="19" endPosition="53" />
+    <scopeInfo nodeId="5750432610478621621" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="32" startPosition="46" endLine="33" endPosition="83" />
+    <scopeInfo nodeId="5750432610478621621" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="43" startPosition="30" endLine="44" endPosition="17" />
+    <scopeInfo nodeId="5750432610478621621" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="19" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="5750432610478621621" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="37" startPosition="5" endLine="39" endPosition="45">
+      <varInfo nodeId="5750432610478621621" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="5750432610478693957" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="49" startPosition="30" endLine="51" endPosition="251" />
+    <scopeInfo nodeId="5750432610478685704" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="24" startPosition="7" endLine="27" endPosition="321">
+      <varInfo nodeId="5750432610478685704" varName="_info_12389875345" />
+      <varInfo nodeId="5750432610478685704" varName="_nodeToCheck_1029348928467" />
+    </scopeInfo>
+    <scopeInfo nodeId="5750432610478621621" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="32" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="5750432610478621621" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="43" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="5750432610478621621" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="36" startPosition="68" endLine="40" endPosition="5" />
+    <scopeInfo nodeId="5750432610478655965" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="23" startPosition="139" endLine="28" endPosition="7" />
+    <scopeInfo nodeId="5750432610478693957" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="47" startPosition="63" endLine="52" endPosition="24">
+      <varInfo nodeId="5750432610478693957" varName="facade" />
+      <varInfo nodeId="5750432610478693957" varName="quotedNode_1" />
+    </scopeInfo>
+    <scopeInfo nodeId="5750432610478621621" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="36" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="5750432610478621621" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="5750432610478621622" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="22" startPosition="117" endLine="29" endPosition="5" />
+    <scopeInfo nodeId="5750432610478655947" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="22" startPosition="117" endLine="29" endPosition="5">
+      <varInfo nodeId="5750432610478655953" varName="parameterizedSubstNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="5750432610478693957" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="47" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="5750432610478621621" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="22" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="5750432610478621621" varName="node" />
+      <varInfo nodeId="5750432610478621621" varName="status" />
+      <varInfo nodeId="5750432610478621621" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="5750432610478621621" fileName="typeof_ActionTestContainer_InferenceRule.java" startLine="18" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.actions.testLanguage.typesystem.typeof_ActionTestContainer_InferenceRule" />
+  </root>
+</debugInfo>
 

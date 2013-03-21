@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <root nodeRef="r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute)/2534942168317963684">
+    <nodeInfo nodeId="2534942168317963684" fileName="AddMenuPart_ParameterizedSubstitute_smartComplete_Test.java" startLine="21" startPosition="89" endLine="22" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168317963684" fileName="AddMenuPart_ParameterizedSubstitute_smartComplete_Test.java" startLine="22" startPosition="127" endLine="23" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168317963684" fileName="AddMenuPart_ParameterizedSubstitute_smartComplete_Test.java" startLine="32" startPosition="51" endLine="33" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2534942168317963684" fileName="AddMenuPart_ParameterizedSubstitute_smartComplete_Test.java" startLine="33" startPosition="99" endLine="34" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2534942168317967778" fileName="AddMenuPart_ParameterizedSubstitute_smartComplete_Test.java" startLine="34" startPosition="93" endLine="35" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168317967846" fileName="AddMenuPart_ParameterizedSubstitute_smartComplete_Test.java" startLine="35" startPosition="73" endLine="36" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168318029728" fileName="AddMenuPart_ParameterizedSubstitute_smartComplete_Test.java" startLine="36" startPosition="122" endLine="37" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168318030531" fileName="AddMenuPart_ParameterizedSubstitute_smartComplete_Test.java" startLine="37" startPosition="80" endLine="38" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168318030798" fileName="AddMenuPart_ParameterizedSubstitute_smartComplete_Test.java" startLine="38" startPosition="67" endLine="39" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168317963684" fileName="AddMenuPart_ParameterizedSubstitute_smartComplete_Test.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddMenuPart_ParameterizedSubstitute_smartComplete_Test#()V" />
+    <nodeInfo nodeId="2534942168317963684" fileName="AddMenuPart_ParameterizedSubstitute_smartComplete_Test.java" startLine="28" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="2534942168317963684" fileName="AddMenuPart_ParameterizedSubstitute_smartComplete_Test.java" startLine="20" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddMenuPart_ParameterizedSubstitute_smartComplete#()V" />
+    <nodeInfo nodeId="2534942168317963684" fileName="AddMenuPart_ParameterizedSubstitute_smartComplete_Test.java" startLine="31" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="2534942168317963684" fileName="AddMenuPart_ParameterizedSubstitute_smartComplete_Test.java" startLine="17" startPosition="67" endLine="17" endPosition="67" />
+    <scopeInfo nodeId="2534942168317963684" fileName="AddMenuPart_ParameterizedSubstitute_smartComplete_Test.java" startLine="28" startPosition="23" endLine="28" endPosition="23" />
+    <scopeInfo nodeId="2534942168317963684" fileName="AddMenuPart_ParameterizedSubstitute_smartComplete_Test.java" startLine="17" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="2534942168317963684" fileName="AddMenuPart_ParameterizedSubstitute_smartComplete_Test.java" startLine="21" startPosition="89" endLine="23" endPosition="148" />
+    <scopeInfo nodeId="2534942168317963684" fileName="AddMenuPart_ParameterizedSubstitute_smartComplete_Test.java" startLine="28" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="2534942168317963684" fileName="AddMenuPart_ParameterizedSubstitute_smartComplete_Test.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="2534942168317963684" fileName="AddMenuPart_ParameterizedSubstitute_smartComplete_Test.java" startLine="32" startPosition="51" endLine="39" endPosition="128">
+      <varInfo nodeId="2534942168317963684" varName="editor" />
+      <varInfo nodeId="2534942168317963684" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="2534942168317963684" fileName="AddMenuPart_ParameterizedSubstitute_smartComplete_Test.java" startLine="31" startPosition="0" endLine="41" endPosition="0" />
+    <unitInfo nodeId="2534942168317963684" fileName="AddMenuPart_ParameterizedSubstitute_smartComplete_Test.java" startLine="26" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.actions.test.substitute.AddMenuPart_ParameterizedSubstitute_smartComplete_Test$TestBody" />
+    <unitInfo nodeId="2534942168317963684" fileName="AddMenuPart_ParameterizedSubstitute_smartComplete_Test.java" startLine="15" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.actions.test.substitute.AddMenuPart_ParameterizedSubstitute_smartComplete_Test" />
+  </root>
   <root nodeRef="r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute)/2550657305103524282">
     <nodeInfo nodeId="2550657305103524282" fileName="DontSubstiuteByDefault_Test.java" startLine="21" startPosition="62" endLine="22" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2550657305103524282" fileName="DontSubstiuteByDefault_Test.java" startLine="22" startPosition="127" endLine="23" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

@@ -2060,6 +2060,12 @@
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7917427600705347808">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="t7u.3213804652590377019" resolveInfo="AddMenuPart_GenericQuery" />
     </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="5750432610460111536">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="t7u.3286607483605154581" resolveInfo="AddMenuPart_ParameterizedSubstitute" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2534942168318176942">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="t7u.2534942168317963684" resolveInfo="AddMenuPart_ParameterizedSubstitute_smartComplete" />
+    </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7917427600705347819">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="t7u.6866660893594595018" resolveInfo="ConceptSubstitutePart" />
     </node>

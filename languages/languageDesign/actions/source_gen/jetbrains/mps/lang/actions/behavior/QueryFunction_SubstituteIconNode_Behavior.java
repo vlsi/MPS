@@ -35,6 +35,10 @@ public class QueryFunction_SubstituteIconNode_Behavior {
     return _quotation_createNode_6pos6m_a0a1();
   }
 
+  public static boolean virtual_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
+    return true;
+  }
+
   private static SNode _quotation_createNode_6pos6m_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

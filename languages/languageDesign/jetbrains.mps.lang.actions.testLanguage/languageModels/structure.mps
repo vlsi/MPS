@@ -20,16 +20,19 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2550657305103442169">
       <property name="name" nameId="tpck.1169194664001" value="ActionTestChild1" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="child1" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/child1.png" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="2550657305103411658" resolveInfo="ActionTestAbstractChild" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2550657305103442509">
       <property name="name" nameId="tpck.1169194664001" value="ActionTestChild2" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="child2" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/child2.png" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="2550657305103411658" resolveInfo="ActionTestAbstractChild" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3213804652571075891">
       <property name="name" nameId="tpck.1169194664001" value="ActionTestChild1SubConcept" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="child1Sub" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/child1subConcept.png" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="2550657305103442169" resolveInfo="ActionTestChild1" />
     </node>
   </roots>
