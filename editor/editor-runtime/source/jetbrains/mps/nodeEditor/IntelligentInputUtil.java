@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NullSubstituteInfo;
+import jetbrains.mps.nodeEditor.cells.CellFinderUtil.Finder;
 import jetbrains.mps.nodeEditor.cells.CellFinders;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -107,7 +108,7 @@ public class IntelligentInputUtil {
       EditorCell cellForNewNode = (EditorCell) editorContext.getEditorComponent().findNodeCell(newNode);
       if (cellForNewNode != null) {
         EditorCell_Label target = null;
-        jetbrains.mps.openapi.editor.cells.EditorCell errorOrEditable = CellFinderUtil.findChildByManyFinders(cellForNewNode, true, CellFinders.FIRST_ERROR, CellFinders.LAST_EDITABLE);
+        jetbrains.mps.openapi.editor.cells.EditorCell errorOrEditable = CellFinderUtil.findChildByManyFinders(cellForNewNode, true, Finder.FIRST_ERROR, Finder.LAST_EDITABLE);
         if (errorOrEditable instanceof EditorCell_Label) {
           target = (EditorCell_Label) errorOrEditable;
         }
@@ -176,7 +177,7 @@ public class IntelligentInputUtil {
       if (newNode == null) return true;
 
       cellForNewNode = (EditorCell) editorContext.getEditorComponent().findNodeCell(newNode);
-      EditorCell errorCell = CellFinderUtil.findFirstError(cellForNewNode,  true);
+      EditorCell errorCell = CellFinderUtil.findFirstError(cellForNewNode, true);
 
       if (errorCell != null && errorCell instanceof EditorCell_Label) {
         editorContext.flushEvents();
@@ -437,7 +438,7 @@ public class IntelligentInputUtil {
     EditorComponent component = (EditorComponent) editorContext.getEditorComponent();
     EditorCell cellToSelect = cellInfo.findCell(component);
     if (cellToSelect != null) {
-      EditorCell errorCell = CellFinderUtil.findFirstError(cellToSelect,  true);
+      EditorCell errorCell = CellFinderUtil.findFirstError(cellToSelect, true);
       if (errorCell instanceof EditorCell_Label) {
         EditorCell_Label label = (EditorCell_Label) errorCell;
         if (label.isEditable() && !(label instanceof EditorCell_Constant)) {

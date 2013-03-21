@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
+import jetbrains.mps.nodeEditor.cells.CellFinderUtil.Finder;
 import jetbrains.mps.nodeEditor.cells.CellFinders;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -45,8 +46,7 @@ public class FocusPolicyUtil {
 
     if (focusedCell.getStyle().get(StyleAttributes.FOCUS_POLICY) == jetbrains.mps.editor.runtime.style.FocusPolicy.FIRST_EDITABLE_CELL ||
       focusedCell.getStyle().get(StyleAttributes.FOCUS_POLICY) == jetbrains.mps.editor.runtime.style.FocusPolicy.ATTRACTS_RECURSIVELY) {
-      EditorCell result = CellFinderUtil.findChildByManyFinders(focusedCell,
-          CellFinders.FIRST_ERROR, CellFinders.FIRST_EDITABLE);
+      EditorCell result = CellFinderUtil.findChildByManyFinders(focusedCell, Finder.FIRST_ERROR, Finder.FIRST_EDITABLE);
       if (result != null) {
         return result;
       }

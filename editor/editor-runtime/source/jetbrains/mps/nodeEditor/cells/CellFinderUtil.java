@@ -31,10 +31,56 @@ public class CellFinderUtil {
   private CellFinderUtil() {
   }
 
+  public enum Finder {
+    FIRST_ERROR,
+    LAST_ERROR,
+    FIRST_SELECTABLE_LEAF,
+    LAST_SELECTABLE_LEAF,
+    FIRST_EDITABLE,
+    LAST_EDITABLE
+  }
+
+  // You can find child by this common method or by specialized methods below
+  public static EditorCell findChild(@NotNull EditorCell cell, @NotNull Finder finder, boolean includeThis) {
+    switch (finder) {
+      case FIRST_ERROR:
+        return findFirstError(cell, includeThis);
+      case LAST_ERROR:
+        return findLastError(cell, includeThis);
+      case FIRST_EDITABLE:
+        return findFirstEditable(cell, includeThis);
+      case LAST_EDITABLE:
+        return findLastEditable(cell, includeThis);
+      case FIRST_SELECTABLE_LEAF:
+        return findFirstSelectableLeaf(cell, includeThis);
+      case LAST_SELECTABLE_LEAF:
+        return findLastSelectableLeaf(cell, includeThis);
+      default:
+        return null;
+    }
+  }
+
+  public static EditorCell findChild(@NotNull EditorCell cell, @NotNull Finder finder) {
+    return findChild(cell, finder, false);
+  }
+
+  public static EditorCell findChildByManyFinders(@NotNull EditorCell cell, boolean includeThis, @NotNull Finder... finders) {
+    for (Finder finder : finders) {
+      EditorCell result = findChild(cell, finder, includeThis);
+      if (result != null) {
+        return result;
+      }
+    }
+    return null;
+  }
+
+  public static EditorCell findChildByManyFinders(@NotNull EditorCell cell, @NotNull Finder... finders) {
+    return findChildByManyFinders(cell, false, finders);
+  }
+
   public static jetbrains.mps.openapi.editor.cells.EditorCell_Collection findParent(@NotNull EditorCell cell, @NotNull Condition<jetbrains.mps.openapi.editor.cells.EditorCell_Collection> condition) {
-
-
-    if (cell instanceof jetbrains.mps.openapi.editor.cells.EditorCell_Collection && condition.met(((jetbrains.mps.openapi.editor.cells.EditorCell_Collection) cell))) {
+    if (cell instanceof jetbrains.mps.openapi.editor.cells.EditorCell_Collection && condition.met(
+        ((jetbrains.mps.openapi.editor.cells.EditorCell_Collection) cell))) {
       return ((jetbrains.mps.openapi.editor.cells.EditorCell_Collection) cell);
     }
 
@@ -69,135 +115,89 @@ public class CellFinderUtil {
     return findChildByConditionAndClass(cell, condition, clazz, forward, false);
   }
 
-  public static EditorCell findChildByCondition(
-      EditorCell cell, Condition<EditorCell> condition, boolean forward) {
+  public static EditorCell findChildByCondition(@NotNull EditorCell cell, @NotNull Condition<EditorCell> condition, boolean forward) {
     return findChildByCondition(cell, condition, forward, false);
   }
 
-  public static <C extends EditorCell> C findChildByClass(EditorCell cell, final Class<C> clazz, boolean forward, boolean includeThis) {
-        return ((C) findChildByCondition(cell, new ByClassCondition(clazz), forward, includeThis));
+  public static <C extends EditorCell> C findChildByClass(@NotNull EditorCell cell, @NotNull final Class<C> clazz, boolean forward, boolean includeThis) {
+    return ((C) findChildByCondition(cell, new ByClassCondition(clazz), forward, includeThis));
   }
 
-  public static <C extends EditorCell> C findChildByClass(EditorCell cell, final Class<C> clazz, boolean forward) {
+  public static <C extends EditorCell> C findChildByClass(@NotNull EditorCell cell, @NotNull final Class<C> clazz, boolean forward) {
     return findChildByClass(cell, clazz, forward, false);
   }
 
 
-  public static EditorCell findChildById(EditorCell cell, final SNode node, final String cellId, boolean includeThis) {
-    Condition<EditorCell> condition = new Condition<EditorCell>() {
-      @Override
-      public boolean met(EditorCell object) {
-        return object.getSNode() == node && cellId.equals(object.getCellId());
-      }
-    };
-
-    return findChildByCondition(cell, condition, true, includeThis);
+  public static EditorCell findChildById(@NotNull EditorCell cell, @NotNull final SNode node, @NotNull final String cellId, boolean includeThis) {
+    return findChildByCondition(cell, new ByIdCondition(node, cellId), true, includeThis);
   }
 
-  public static EditorCell findChildById(EditorCell cell, final SNode node, final String cellId) {
+  public static EditorCell findChildById(@NotNull EditorCell cell, @NotNull final SNode node, final String cellId) {
     return findChildById(cell, node, cellId, false);
   }
 
-  private static EditorCell_Label findEditable(EditorCell cell, boolean forward, boolean includeThis){
-    return ((EditorCell_Label) findChildByConditionAndClass(cell, CellConditions.EDITABLE, EditorCell_Label.class, forward, includeThis));
+  private static EditorCell_Label findEditable(@NotNull EditorCell cell, boolean forward, boolean includeThis) {
+    return findChildByConditionAndClass(cell, CellConditions.EDITABLE, EditorCell_Label.class, forward, includeThis);
   }
 
-  public static EditorCell_Label findFirstEditable(EditorCell cell, boolean includeThis){
+  public static EditorCell_Label findFirstEditable(@NotNull EditorCell cell, boolean includeThis) {
     return findEditable(cell, true, includeThis);
   }
 
-  public static EditorCell_Label findFirstEditable(EditorCell cell){
+  public static EditorCell_Label findFirstEditable(@NotNull EditorCell cell) {
     return findFirstEditable(cell, false);
   }
 
-  public static EditorCell_Label findLastEditable(EditorCell cell, boolean includeThis){
+  public static EditorCell_Label findLastEditable(@NotNull EditorCell cell, boolean includeThis) {
     return findEditable(cell, false, includeThis);
   }
 
-  public static EditorCell_Label findLastEditable(EditorCell cell){
+  public static EditorCell_Label findLastEditable(@NotNull EditorCell cell) {
     return findLastEditable(cell, false);
   }
 
-  private static EditorCell_Label findError(EditorCell cell, boolean forward, boolean includeThis){
-    return ((EditorCell_Label) findChildByConditionAndClass(cell, CellConditions.ERROR_CONDITION, EditorCell_Label.class, forward, includeThis));
+  private static EditorCell_Label findError(@NotNull EditorCell cell, boolean forward, boolean includeThis) {
+    return findChildByConditionAndClass(cell, CellConditions.ERROR_CONDITION, EditorCell_Label.class, forward, includeThis);
   }
 
-  public static EditorCell_Label findFirstError(EditorCell cell, boolean includeThis){
+  public static EditorCell_Label findFirstError(@NotNull EditorCell cell, boolean includeThis) {
     return findError(cell, true, includeThis);
   }
 
-  public static EditorCell_Label findFirstError(EditorCell cell){
+  public static EditorCell_Label findFirstError(@NotNull EditorCell cell) {
     return findFirstError(cell, false);
   }
 
-  public static EditorCell_Label findLastError(EditorCell cell, boolean includeThis){
+  public static EditorCell_Label findLastError(@NotNull EditorCell cell, boolean includeThis) {
     return findError(cell, false, includeThis);
   }
 
-  public static EditorCell_Label findLastError(EditorCell cell){
+  public static EditorCell_Label findLastError(@NotNull EditorCell cell) {
     return findLastError(cell, false);
   }
 
-  private static EditorCell findSelectedLeaf(EditorCell cell, boolean forward, boolean includeThis){
+  private static EditorCell findSelectedLeaf(@NotNull EditorCell cell, boolean forward, boolean includeThis) {
     return findChildByCondition(cell, jetbrains.mps.openapi.editor.cells.CellConditions.SELECTABLE_lEAF, forward, includeThis);
   }
 
-  public static EditorCell findFirstSelectableLeaf(EditorCell cell, boolean includeThis){
+  public static EditorCell findFirstSelectableLeaf(@NotNull EditorCell cell, boolean includeThis) {
     return findSelectedLeaf(cell, true, includeThis);
   }
 
-  public static EditorCell findFirstSelectableLeaf(EditorCell cell){
+  public static EditorCell findFirstSelectableLeaf(@NotNull EditorCell cell) {
     return findFirstSelectableLeaf(cell, false);
   }
 
-  public static EditorCell findLastSelectableLeaf(EditorCell cell, boolean includeThis){
+  public static EditorCell findLastSelectableLeaf(@NotNull EditorCell cell, boolean includeThis) {
     return findSelectedLeaf(cell, false, includeThis);
   }
 
-  public static EditorCell findLastSelectableLeaf(EditorCell cell){
+  public static EditorCell findLastSelectableLeaf(@NotNull EditorCell cell) {
     return findLastSelectableLeaf(cell, false);
   }
 
 
-  public static <C extends EditorCell> C findChild(EditorCell cell, CellFinder<C> finder, boolean includeThis) {
-    if (includeThis && met(cell, finder)) {
-      return (C) cell;
-    }
-
-    for (EditorCell current : new DfsTraverser(cell, finder.isFirstChild(), true)) {
-      if (met(current, finder)) {
-        return ((C) current);
-      }
-    }
-    return null;
-  }
-
-  private static <C extends EditorCell> boolean met(EditorCell cell, CellFinder<C> finder) {
-    return finder.getCellClass().isInstance(cell) && finder.isSuitable(((C) cell));
-  }
-
-  public static <C extends EditorCell> C findChild(EditorCell cell, CellFinder<C> finder) {
-    return findChild(cell, finder, false);
-  }
-
-  public static EditorCell findChildByManyFinders(EditorCell cell, boolean includeThis, CellFinder<? extends EditorCell>... finders) {
-    for (CellFinder<? extends EditorCell> finder : finders) {
-      EditorCell result = findChild(cell, finder, includeThis);
-      if (result != null) {
-        return result;
-      }
-    }
-    return null;
-  }
-
-
-  public static EditorCell findChildByManyFinders(
-      EditorCell cell, CellFinder<? extends EditorCell>... finders) {
-    return findChildByManyFinders(cell, false, finders);
-  }
-
-
-  private static class ByClassCondition implements Condition<EditorCell>{
+  private static class ByClassCondition implements Condition<EditorCell> {
     private Class myClass;
 
     public ByClassCondition(Class clazz) {
@@ -208,5 +208,22 @@ public class CellFinderUtil {
     public boolean met(EditorCell cell) {
       return myClass.isInstance(cell);
     }
+  }
+
+  private static class ByIdCondition implements Condition<EditorCell> {
+    private SNode myNode;
+    private String myCellId;
+
+    public ByIdCondition(SNode node, String id) {
+      myNode = node;
+      myCellId = id;
+    }
+
+
+    @Override
+    public boolean met(EditorCell object) {
+      return object.getSNode() == myNode && myCellId.equals(object.getCellId());
+    }
+
   }
 }

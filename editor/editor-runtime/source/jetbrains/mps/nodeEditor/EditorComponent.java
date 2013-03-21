@@ -74,6 +74,7 @@ import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.CellConditions;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
+import jetbrains.mps.nodeEditor.cells.CellFinderUtil.Finder;
 import jetbrains.mps.nodeEditor.cells.CellFinders;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -636,7 +637,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
             jetbrains.mps.openapi.editor.cells.EditorCell focusPolicyCell = FocusPolicyUtil.findCellToSelectDueToFocusPolicy(rootCell);
             jetbrains.mps.openapi.editor.cells.EditorCell toSelect;
             if (focusPolicyCell == null || (focusPolicyCell == rootCell && !FocusPolicyUtil.hasFocusPolicy(focusPolicyCell))) {
-              toSelect = CellFinderUtil.findChildByManyFinders(rootCell, CellFinders.FIRST_EDITABLE, CellFinders.FIRST_SELECTABLE_LEAF);
+              toSelect = CellFinderUtil.findChildByManyFinders(rootCell, Finder.FIRST_EDITABLE, Finder.FIRST_SELECTABLE_LEAF);
             } else {
               toSelect = focusPolicyCell;
             }
@@ -2731,10 +2732,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     jetbrains.mps.openapi.editor.cells.EditorCell focusPolicyCell = FocusPolicyUtil.findCellToSelectDueToFocusPolicy(cell);
     jetbrains.mps.openapi.editor.cells.EditorCell toSelect;
     if (focusPolicyCell == null || (focusPolicyCell == cell && !FocusPolicyUtil.hasFocusPolicy(focusPolicyCell))) {
-      toSelect = CellFinderUtil.findChildByManyFinders(cell, CellFinders.FIRST_ERROR, CellFinders.FIRST_EDITABLE);
-      if (toSelect == null) {
-        toSelect = CellFinderUtil.findFirstSelectableLeaf(cell);
-      }
+      toSelect = CellFinderUtil.findChildByManyFinders(cell, Finder.FIRST_ERROR, Finder.FIRST_EDITABLE, Finder.FIRST_SELECTABLE_LEAF);
     } else {
       toSelect = focusPolicyCell;
     }
