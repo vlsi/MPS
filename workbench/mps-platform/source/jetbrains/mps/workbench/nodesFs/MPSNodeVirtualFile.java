@@ -27,6 +27,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
