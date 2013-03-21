@@ -158,7 +158,7 @@
     <nodeInfo nodeId="562112407432160182" fileName="LanguageRef_Editor.java" startLine="67" startPosition="164" endLine="68" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="562112407432160029" fileName="LanguageRef_Editor.java" startLine="71" startPosition="45" endLine="72" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="562112407432160029" fileName="LanguageRef_Editor.java" startLine="75" startPosition="59" endLine="76" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="562112407432160082" fileName="LanguageRef_Editor.java" startLine="79" startPosition="68" endLine="80" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="562112407432160082" fileName="LanguageRef_Editor.java" startLine="79" startPosition="68" endLine="80" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="562112407432160029" fileName="LanguageRef_Editor.java" startLine="51" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LanguageRef_generic_cellMenu_occ0mg_a0a#()V" />
     <nodeInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="562112407432160048" fileName="LanguageRef_Editor.java" startLine="57" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/Language;)Ljava/lang/String;" />
@@ -178,7 +178,7 @@
     <scopeInfo nodeId="562112407432160033" fileName="LanguageRef_Editor.java" startLine="67" startPosition="164" endLine="68" endPosition="67" />
     <scopeInfo nodeId="562112407432160029" fileName="LanguageRef_Editor.java" startLine="71" startPosition="45" endLine="72" endPosition="19" />
     <scopeInfo nodeId="562112407432160029" fileName="LanguageRef_Editor.java" startLine="75" startPosition="59" endLine="76" endPosition="69" />
-    <scopeInfo nodeId="562112407432160072" fileName="LanguageRef_Editor.java" startLine="79" startPosition="68" endLine="80" endPosition="117" />
+    <scopeInfo nodeId="562112407432160072" fileName="LanguageRef_Editor.java" startLine="79" startPosition="68" endLine="80" endPosition="115" />
     <scopeInfo nodeId="562112407432160029" fileName="LanguageRef_Editor.java" startLine="51" startPosition="0" endLine="53" endPosition="0" />
     <scopeInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="368569065472988631" varName="editorContext" />

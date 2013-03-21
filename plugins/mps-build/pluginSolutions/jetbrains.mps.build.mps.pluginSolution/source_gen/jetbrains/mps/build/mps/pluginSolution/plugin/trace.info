@@ -381,7 +381,7 @@
     <nodeInfo nodeId="8722937377469654774" fileName="ModuleData.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModule" />
     <nodeInfo nodeId="8722937377469654777" fileName="ModuleData.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParent" />
     <nodeInfo nodeId="8722937377469654785" fileName="ModuleData.java" startLine="20" startPosition="37" endLine="21" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8722937377469654798" fileName="ModuleData.java" startLine="25" startPosition="27" endLine="26" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8722937377469654798" fileName="ModuleData.java" startLine="25" startPosition="27" endLine="26" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8722937377469654809" fileName="ModuleData.java" startLine="30" startPosition="39" endLine="31" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8722937377469654819" fileName="ModuleData.java" startLine="36" startPosition="50" endLine="37" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8722937377469654829" fileName="ModuleData.java" startLine="38" startPosition="25" endLine="39" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -405,7 +405,7 @@
     <nodeInfo nodeId="8722937377469654813" fileName="ModuleData.java" startLine="34" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#(Z)Ljavax/swing/Icon;" />
     <scopeInfo nodeId="8722937377469654876" fileName="ModuleData.java" startLine="58" startPosition="46" endLine="58" endPosition="46" />
     <scopeInfo nodeId="8722937377469654784" fileName="ModuleData.java" startLine="20" startPosition="37" endLine="21" endPosition="27" />
-    <scopeInfo nodeId="8722937377469654797" fileName="ModuleData.java" startLine="25" startPosition="27" endLine="26" endPosition="43" />
+    <scopeInfo nodeId="8722937377469654797" fileName="ModuleData.java" startLine="25" startPosition="27" endLine="26" endPosition="41" />
     <scopeInfo nodeId="8722937377469654808" fileName="ModuleData.java" startLine="30" startPosition="39" endLine="31" endPosition="60" />
     <scopeInfo nodeId="8722937377469654835" fileName="ModuleData.java" startLine="40" startPosition="34" endLine="41" endPosition="53" />
     <scopeInfo nodeId="8722937377469654859" fileName="ModuleData.java" startLine="48" startPosition="30" endLine="49" endPosition="25" />

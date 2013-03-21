@@ -1568,15 +1568,15 @@
   </root>
   <root nodeRef="r:e2c8c94a-404b-4b97-a3a4-c76946bd1913(jetbrains.mps.ide.modelchecker.actions)/1453248744423275727">
     <nodeInfo nodeId="1453248744423275853" fileName="ModuleChecker.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResults" />
-    <nodeInfo nodeId="377166553787496931" fileName="ModuleChecker.java" startLine="20" startPosition="68" endLine="21" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="377166553787496931" fileName="ModuleChecker.java" startLine="20" startPosition="68" endLine="21" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1453248744423275753" fileName="ModuleChecker.java" startLine="22" startPosition="9" endLine="23" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1453248744423275755" fileName="ModuleChecker.java" startLine="23" startPosition="93" endLine="24" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1453248744423275757" fileName="ModuleChecker.java" startLine="24" startPosition="46" endLine="25" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1453248744423275767" fileName="ModuleChecker.java" startLine="26" startPosition="55" endLine="27" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1453248744423275775" fileName="ModuleChecker.java" startLine="28" startPosition="63" endLine="29" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1453248744423275795" fileName="ModuleChecker.java" startLine="30" startPosition="63" endLine="31" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1453248744423275799" fileName="ModuleChecker.java" startLine="32" startPosition="9" endLine="33" endPosition="330" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1748402200010120246" fileName="ModuleChecker.java" startLine="35" startPosition="27" endLine="36" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1453248744423275799" fileName="ModuleChecker.java" startLine="32" startPosition="9" endLine="33" endPosition="328" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1748402200010120246" fileName="ModuleChecker.java" startLine="35" startPosition="27" endLine="36" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="377166553787496954" fileName="ModuleChecker.java" startLine="37" startPosition="15" endLine="38" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1453248744423275838" fileName="ModuleChecker.java" startLine="42" startPosition="62" endLine="43" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1453248744423275727" fileName="ModuleChecker.java" startLine="46" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -1584,20 +1584,20 @@
     <nodeInfo nodeId="1453248744423275833" fileName="ModuleChecker.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchResults#()Ljetbrains/mps/ide/findusages/model/SearchResults;" />
     <nodeInfo nodeId="1453248744423275773" fileName="ModuleChecker.java" startLine="27" startPosition="74" endLine="32" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1453248744423275765" fileName="ModuleChecker.java" startLine="25" startPosition="87" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="377166553787496950" fileName="ModuleChecker.java" startLine="21" startPosition="87" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="377166553787496950" fileName="ModuleChecker.java" startLine="21" startPosition="85" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="1453248744423275728" fileName="ModuleChecker.java" startLine="20" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkModule#(Ljetbrains/mps/project/IModule;Ljetbrains/mps/progress/ProgressMonitor;)V" />
     <scopeInfo nodeId="1453248744423275864" fileName="ModuleChecker.java" startLine="17" startPosition="26" endLine="17" endPosition="26" />
     <scopeInfo nodeId="1453248744423275774" fileName="ModuleChecker.java" startLine="28" startPosition="63" endLine="29" endPosition="77" />
     <scopeInfo nodeId="1453248744423275794" fileName="ModuleChecker.java" startLine="30" startPosition="63" endLine="31" endPosition="34" />
-    <scopeInfo nodeId="1748402200010120113" fileName="ModuleChecker.java" startLine="35" startPosition="0" endLine="36" endPosition="83">
+    <scopeInfo nodeId="1748402200010120113" fileName="ModuleChecker.java" startLine="35" startPosition="0" endLine="36" endPosition="81">
       <varInfo nodeId="1748402200010120114" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="1748402200010120116" fileName="ModuleChecker.java" startLine="35" startPosition="27" endLine="36" endPosition="83" />
+    <scopeInfo nodeId="1748402200010120116" fileName="ModuleChecker.java" startLine="35" startPosition="27" endLine="36" endPosition="81" />
     <scopeInfo nodeId="377166553787496953" fileName="ModuleChecker.java" startLine="37" startPosition="15" endLine="38" endPosition="21" />
     <scopeInfo nodeId="1453248744423275837" fileName="ModuleChecker.java" startLine="42" startPosition="62" endLine="43" endPosition="21" />
     <scopeInfo nodeId="1453248744423275861" fileName="ModuleChecker.java" startLine="17" startPosition="0" endLine="19" endPosition="0" />
     <scopeInfo nodeId="1453248744423275833" fileName="ModuleChecker.java" startLine="42" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="1453248744423275766" fileName="ModuleChecker.java" startLine="26" startPosition="55" endLine="33" endPosition="330">
+    <scopeInfo nodeId="1453248744423275766" fileName="ModuleChecker.java" startLine="26" startPosition="55" endLine="33" endPosition="328">
       <varInfo nodeId="1453248744423275768" varName="extraMessage" />
     </scopeInfo>
     <scopeInfo nodeId="377166553787496951" fileName="ModuleChecker.java" startLine="22" startPosition="9" endLine="34" endPosition="7">

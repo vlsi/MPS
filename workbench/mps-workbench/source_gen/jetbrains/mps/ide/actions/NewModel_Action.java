@@ -187,7 +187,7 @@ public class NewModel_Action extends BaseAction {
       }
       return genNamespace + "." + name;
     }
-    return ((IModule) MapSequence.fromMap(_params).get("module")).getModuleFqName();
+    return ((IModule) MapSequence.fromMap(_params).get("module")).getModuleName();
   }
 
   private static Logger LOG = Logger.getLogger(NewModel_Action.class);

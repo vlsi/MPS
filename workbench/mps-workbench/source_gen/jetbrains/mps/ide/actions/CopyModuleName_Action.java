@@ -48,7 +48,7 @@ public class CopyModuleName_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      CopyPasteUtil.copyTextToClipboard(((IModule) MapSequence.fromMap(_params).get("module")).getModuleFqName());
+      CopyPasteUtil.copyTextToClipboard(((IModule) MapSequence.fromMap(_params).get("module")).getModuleName());
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "CopyModuleName", t);
     }
