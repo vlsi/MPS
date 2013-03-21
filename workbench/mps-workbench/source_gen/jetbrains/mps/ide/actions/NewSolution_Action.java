@@ -11,8 +11,7 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.ide.newSolutionDialog.NewSolutionDialog;
-import java.awt.Frame;
+import jetbrains.mps.ide.newModuleDialogs.NewSolutionDialog;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.ModelAccess;
@@ -56,20 +55,15 @@ public class NewSolution_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("ideaProject") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSCommonDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
-      return false;
-    }
     MapSequence.fromMap(_params).put("namespace", event.getData(MPSDataKeys.NAMESPACE));
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      NewSolutionDialog dialog = new NewSolutionDialog(((Frame) MapSequence.fromMap(_params).get("frame")));
-      dialog.setProject(((MPSProject) MapSequence.fromMap(_params).get("project")));
+      NewSolutionDialog dialog = new NewSolutionDialog(((MPSProject) MapSequence.fromMap(_params).get("project")));
       dialog.show();
-      final Solution s = dialog.getResult();
+      final Solution s = dialog.getSolution();
       if (s == null) {
         return;
       }

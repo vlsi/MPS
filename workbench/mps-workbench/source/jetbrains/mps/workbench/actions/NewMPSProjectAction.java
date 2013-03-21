@@ -22,6 +22,7 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.workbench.dialogs.project.newproject.CreateProjectWizard;
 import jetbrains.mps.workbench.dialogs.project.newproject.NewProjectWizard;
 
 import javax.swing.Icon;
@@ -50,7 +51,8 @@ public class NewMPSProjectAction extends BaseAction implements DumbAware {
   @Override
   public void doExecute(AnActionEvent e, Map<String, Object> _params) {
     Project project = e.getData(PlatformDataKeys.PROJECT);
-    NewProjectWizard wizard = new NewProjectWizard("New Project", project);
-    wizard.show();
+
+    CreateProjectWizard createProjectWizard = new CreateProjectWizard(project);
+    createProjectWizard.show();
   }
 }
