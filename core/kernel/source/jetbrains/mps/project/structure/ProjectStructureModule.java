@@ -254,7 +254,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   }
 
   @Override
-  public List<SModel> getOwnModelDescriptors() {
+  public List<SModel> getModels() {
     return new ArrayList<SModel>(myModels.values());
   }
 

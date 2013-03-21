@@ -114,7 +114,8 @@ public class TestModule extends AbstractModule {
     return "Test Transient models";
   }
 
-  public List<SModel> getOwnModelDescriptors() {
+  @Override
+  public List<SModel> getModels() {
     return new ArrayList<SModel>(myModels.values());
   }
 

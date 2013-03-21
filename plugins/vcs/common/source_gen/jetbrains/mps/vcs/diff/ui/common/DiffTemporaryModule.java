@@ -9,7 +9,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.project.ModuleId;
 import java.util.List;
-import java.util.Arrays;
+import java.util.Collections;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -51,8 +51,8 @@ public class DiffTemporaryModule extends AbstractModule {
   }
 
   @Override
-  public List<org.jetbrains.mps.openapi.model.SModel> getOwnModelDescriptors() {
-    return Arrays.asList(((org.jetbrains.mps.openapi.model.SModel) myModel));
+  public List<org.jetbrains.mps.openapi.model.SModel> getModels() {
+    return Collections.<org.jetbrains.mps.openapi.model.SModel>singletonList(myModel.getModelDescriptor());
   }
 
   @Override

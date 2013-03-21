@@ -194,12 +194,7 @@ public class TransientModelsModule extends AbstractModule {
   }
 
   @Override
-  public List<SModel> getOwnModelDescriptors() {
-    return new ArrayList<SModel>((Collection) myModels.values());
-  }
-
-  @Override
-  public Collection<SModel> getModels() {
+  public List<SModel> getModels() {
     return new ArrayList<SModel>(myModels.values());
   }
 
