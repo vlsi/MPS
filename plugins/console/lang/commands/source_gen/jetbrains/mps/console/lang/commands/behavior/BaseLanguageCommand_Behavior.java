@@ -87,7 +87,7 @@ public class BaseLanguageCommand_Behavior {
                 }
               });
               try {
-                Method[] methods = Class.forName("jetbrains.mps.execution.Main", true, loader.value).getMethods();
+                Method[] methods = Class.forName(SNodeOperations.getModel(thisNode).getModelName() + ".Main", true, loader.value).getMethods();
                 for (Method method : methods) {
                   if (method.getName().equals("main")) {
                     method.invoke(new String[0]);
