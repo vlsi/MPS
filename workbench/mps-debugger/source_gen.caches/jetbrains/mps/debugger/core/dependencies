@@ -53,9 +53,9 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.CellFinderUtil" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Label" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.GeometryUtil" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.CellFinderUtil" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell_Collection" />
     <classNode dependClassName="jetbrains.mps.util.Condition" />

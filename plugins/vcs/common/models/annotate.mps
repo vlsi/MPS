@@ -2484,7 +2484,7 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8595271971828762175">
                 <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8595271971828762176">
                   <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="557t.~CellFinder" resolveInfo="CellFinder" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="557t.~CellFinder%dgetCellForProperty(jetbrains%dmps%dnodeEditor%dEditorComponent,org%djetbrains%dmps%dopenapi%dmodel%dSNode,java%dlang%dString)%cjetbrains%dmps%dnodeEditor%dcells%dEditorCell" resolveInfo="getCellForProperty" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="557t.~CellFinder%dgetCellForProperty(jetbrains%dmps%dnodeEditor%dEditorComponent,org%djetbrains%dmps%dopenapi%dmodel%dSNode,java%dlang%dString)%cjetbrains%dmps%dopenapi%deditor%dcells%dEditorCell" resolveInfo="getCellForProperty" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7784514961473589173">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7784514961473589167" resolveInfo="editor" />
                   </node>
@@ -2553,7 +2553,7 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8595271971828762187">
                 <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8595271971828762188">
                   <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="557t.~CellFinder" resolveInfo="CellFinder" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="557t.~CellFinder%dgetCellForReference(jetbrains%dmps%dnodeEditor%dEditorComponent,org%djetbrains%dmps%dopenapi%dmodel%dSNode,java%dlang%dString)%cjetbrains%dmps%dnodeEditor%dcells%dEditorCell" resolveInfo="getCellForReference" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="557t.~CellFinder%dgetCellForReference(jetbrains%dmps%dnodeEditor%dEditorComponent,org%djetbrains%dmps%dopenapi%dmodel%dSNode,java%dlang%dString)%cjetbrains%dmps%dopenapi%deditor%dcells%dEditorCell" resolveInfo="getCellForReference" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7784514961473589170">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7784514961473589167" resolveInfo="editor" />
                   </node>

@@ -4,13 +4,11 @@ package jetbrains.mps.debugger.core.breakpoints;
 
 import jetbrains.mps.nodeEditor.EditorMessageIconRenderer;
 import java.awt.Component;
-
-import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import com.intellij.openapi.actionSystem.AnAction;
 import java.awt.Cursor;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.CellFinders;
+import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public abstract class BreakpointIconRenderrerEx<B> implements EditorMessageIconRenderer {
@@ -29,7 +27,7 @@ public abstract class BreakpointIconRenderrerEx<B> implements EditorMessageIconR
   }
 
   @Override
-  public jetbrains.mps.openapi.editor.cells.EditorCell getAnchorCell(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+  public EditorCell getAnchorCell(EditorCell cell) {
     return BreakpointIconRenderrerEx.getBreakpointIconAnchorCell(cell);
   }
 
@@ -48,7 +46,7 @@ public abstract class BreakpointIconRenderrerEx<B> implements EditorMessageIconR
     return null;
   }
 
-  public static jetbrains.mps.openapi.editor.cells.EditorCell getBreakpointIconAnchorCell(jetbrains.mps.openapi.editor.cells.EditorCell bigCell) {
+  public static EditorCell getBreakpointIconAnchorCell(EditorCell bigCell) {
     if (bigCell instanceof EditorCell_Collection) {
       EditorCell_Collection collection = (EditorCell_Collection) bigCell;
       return CellFinderUtil.findChildByClass(collection, EditorCell_Label.class, true);

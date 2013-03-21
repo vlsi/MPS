@@ -150,7 +150,7 @@ public class NodeEditorActions {
       }
       if (cell instanceof  EditorCell_Collection) {
         //TODO remove this cast
-        return ((EditorCell) (myHome ? CellFinderUtil.findFirstSelectableLeaf(cell) : CellFinderUtil.findFirstSelectableLeaf(cell)));
+        return ((EditorCell) (myHome ? CellFinderUtil.findFirstSelectableLeaf(cell) : CellFinderUtil.findLastSelectableLeaf(cell)));
       }
       return cell;
     }
@@ -368,7 +368,7 @@ public class NodeEditorActions {
     int newY = y + height;
     jetbrains.mps.openapi.editor.cells.EditorCell target = editor.findCellWeak(caretX, newY);
     if (target == null) {
-      target = isDown ? CellFinderUtil.findLastSelectableLeaf(editor.myRootCell) : CellFinderUtil.findLastSelectableLeaf(editor.myRootCell);
+      target = isDown ? CellFinderUtil.findLastSelectableLeaf(editor.myRootCell) : CellFinderUtil.findFirstSelectableLeaf(editor.myRootCell);
       editor.changeSelection(target);
     } else {
       target.setCaretX(caretX);

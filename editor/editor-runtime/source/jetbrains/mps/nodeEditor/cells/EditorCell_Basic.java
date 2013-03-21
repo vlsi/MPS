@@ -539,7 +539,7 @@ public abstract class EditorCell_Basic implements EditorCell {
         newNode.putUserObject(EditorManager.OLD_NODE_FOR_SUBSTITUTION, oldNode);
         EditorCell nodeCell = editor.findNodeCell(newNode);
         if (nodeCell == null) return;
-        EditorCell_Label editable = CellFinderUtil.findFirstEditable(EditorCell_Basic.this);
+        EditorCell_Label editable = CellFinderUtil.findFirstEditable(nodeCell);
         if (editable != null) {
           editor.changeSelection(editable);
           editor.processKeyTyped(e);

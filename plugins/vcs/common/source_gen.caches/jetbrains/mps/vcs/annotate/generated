@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-5qpg5ozwdxmjki3nayadvvhy8olsnfz">
+<dependencies version="2" modelHash="-3szv29cdppkulgfnawlfkyri2efv1zs">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.highlighter(MPS.Editor/jetbrains.mps.nodeEditor.highlighter@java_stub)" />
@@ -78,7 +78,7 @@
     <dep model="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)" />
     <file name="_Adapters.java" />
   </common>
-  <source id="309173295241373953" name="AnnotationColumn" hash="14xsk5zpbwrqtrwg7jr8wavdbmgyuox" dependsOnCreated="true">
+  <source id="309173295241373953" name="AnnotationColumn" hash="-18vrm81wk3twcp7j0pe3hqisfcpz99o" dependsOnCreated="true">
     <dep root="391337651435524407" />
     <dep root="736151805632466469" />
     <dep root="8955628568092674522" />

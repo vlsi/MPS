@@ -2581,7 +2581,7 @@
                         <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="7313603104359496185">
                           <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7313603104359496179">
                             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="557t.~CellFinder" resolveInfo="CellFinder" />
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="557t.~CellFinder%dgetCellForProperty(jetbrains%dmps%dnodeEditor%dEditorComponent,org%djetbrains%dmps%dopenapi%dmodel%dSNode,java%dlang%dString)%cjetbrains%dmps%dnodeEditor%dcells%dEditorCell" resolveInfo="getCellForProperty" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="557t.~CellFinder%dgetCellForProperty(jetbrains%dmps%dnodeEditor%dEditorComponent,org%djetbrains%dmps%dopenapi%dmodel%dSNode,java%dlang%dString)%cjetbrains%dmps%dopenapi%deditor%dcells%dEditorCell" resolveInfo="getCellForProperty" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7313603104359496180">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1317516399976554653" resolveInfo="editor" />
                             </node>

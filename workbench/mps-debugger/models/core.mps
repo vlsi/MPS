@@ -2797,8 +2797,8 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="6736820508244894403">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6736820508244935486">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="nu8v.~CellFinderUtil%dfindChildByClass(jetbrains%dmps%dopenapi%deditor%dcells%dEditorCell,java%dlang%dClass,boolean)%cjetbrains%dmps%dopenapi%deditor%dcells%dEditorCell" resolveInfo="findChildByClass" />
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="nu8v.~CellFinderUtil" resolveInfo="CellFinderUtil" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="jsgz.~CellFinderUtil" resolveInfo="CellFinderUtil" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jsgz.~CellFinderUtil%dfindChildByClass(jetbrains%dmps%dopenapi%deditor%dcells%dEditorCell,java%dlang%dClass,boolean)%cjetbrains%dmps%dopenapi%deditor%dcells%dEditorCell" resolveInfo="findChildByClass" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="6736820508244935487">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8424806882555201500" resolveInfo="nodeCell" />
             </node>
@@ -3127,8 +3127,8 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="6736820508245026922">
             <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="6736820508245032176" />
             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6736820508244995311">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="nu8v.~CellFinderUtil%dfindParent(jetbrains%dmps%dopenapi%deditor%dcells%dEditorCell,jetbrains%dmps%dutil%dCondition)%cjetbrains%dmps%dopenapi%deditor%dcells%dEditorCell_Collection" resolveInfo="findParent" />
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="nu8v.~CellFinderUtil" resolveInfo="CellFinderUtil" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="jsgz.~CellFinderUtil" resolveInfo="CellFinderUtil" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jsgz.~CellFinderUtil%dfindParent(jetbrains%dmps%dopenapi%deditor%dcells%dEditorCell,jetbrains%dmps%dutil%dCondition)%cjetbrains%dmps%dopenapi%deditor%dcells%dEditorCell_Collection" resolveInfo="findParent" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="6736820508244999718">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8424806882555207826" resolveInfo="nodeCell" />
               </node>
