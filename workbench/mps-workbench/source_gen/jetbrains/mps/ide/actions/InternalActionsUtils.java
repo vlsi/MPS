@@ -66,7 +66,7 @@ public class InternalActionsUtils {
         LOG.warning("Modules: " + Sequence.fromIterable(modules).count());
         modelReferences.value = Sequence.fromIterable(modules).translate(new ITranslator2<IModule, SModel>() {
           public Iterable<SModel> translate(IModule it) {
-            return it.getOwnModelDescriptors();
+            return it.getModels();
           }
         }).select(new ISelector<SModel, SModelReference>() {
           public SModelReference select(SModel it) {

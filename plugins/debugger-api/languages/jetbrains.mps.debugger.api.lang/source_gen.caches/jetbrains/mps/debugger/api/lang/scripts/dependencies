@@ -34,6 +34,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
+    <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />

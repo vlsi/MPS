@@ -11,6 +11,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import java.util.List;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -49,7 +50,7 @@ public class StubUtil {
     }
 
     IModule debuggerApi = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("cc7da2f6-419f-4133-a811-31fcd3295a85"));
-    List<SModel> debuggerModels = debuggerApi.getOwnModelDescriptors();
+    List<SModel> debuggerModels = IterableUtil.asList(debuggerApi.getModels());
     for (SModel debuggerModel : ListSequence.fromList(debuggerModels)) {
       if (eq_g10q2g_a0a0f0c(SNodeOperations.getModelLongName(debuggerModel), SModelStereotype.withoutStereotype(targetSModelReference.getModelName()))) {
         return debuggerModel;

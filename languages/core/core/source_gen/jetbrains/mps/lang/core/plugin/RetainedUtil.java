@@ -35,7 +35,7 @@ public class RetainedUtil {
       MResource mres = ((MResource) it);
       IModule module = mres.module();
       MapSequence.fromMap(retainedModels).put(module, empty);
-      Iterable<SModel> modelsToRetain = Sequence.fromIterable(((Iterable<SModel>) module.getOwnModelDescriptors())).where(new IWhereFilter<SModel>() {
+      Iterable<SModel> modelsToRetain = Sequence.fromIterable(((Iterable<SModel>) module.getModels())).where(new IWhereFilter<SModel>() {
         public boolean accept(SModel it2) {
           return SNodeOperations.isGeneratable(it2);
         }
@@ -58,7 +58,7 @@ public class RetainedUtil {
       } else if (module instanceof Generator) {
         final Language slang = ((Generator) module).getSourceLanguage();
         if (!(MapSequence.fromMap(retainedModels).containsKey(slang))) {
-          MapSequence.fromMap(retainedModels).put(slang, Sequence.fromIterable(((Iterable<SModel>) slang.getOwnModelDescriptors())).subtract(ListSequence.fromList(module.getOwnModelDescriptors())).where(new IWhereFilter<SModel>() {
+          MapSequence.fromMap(retainedModels).put(slang, Sequence.fromIterable(((Iterable<SModel>) slang.getOwnModelDescriptors())).subtract(Sequence.fromIterable(module.getModels())).where(new IWhereFilter<SModel>() {
             public boolean accept(SModel it3) {
               return SNodeOperations.isGeneratable(it3);
             }

@@ -48,7 +48,7 @@ public class Inherits_Constraints extends BaseConstraintsDescriptor {
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return Sequence.fromIterable(((Iterable<IModule>) operationContext.getScope().getVisibleModules())).translate(new ITranslator2<IModule, SModel>() {
               public Iterable<SModel> translate(IModule m) {
-                return m.getOwnModelDescriptors();
+                return m.getModels();
               }
             }).where(new IWhereFilter<SModel>() {
               public boolean accept(SModel smd) {
