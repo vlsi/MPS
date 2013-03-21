@@ -36,8 +36,6 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import java.awt.Dimension;
 import com.intellij.openapi.util.DimensionService;
-import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.actionSystem.Separator;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.Action;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -144,21 +142,6 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
     return myComponent;
   }
 
-  private void rebuildToolbar(ActionGroup actions) {
-    if (myToolbar != null) {
-      myComponent.remove(myToolbar.getComponent());
-    }
-
-    DefaultActionGroup actionGroup = new DefaultActionGroup();
-    actionGroup.addAll(myActionGroup);
-    if (actions != null) {
-      actionGroup.add(Separator.getInstance());
-      actionGroup.addAll(actions);
-    }
-    myToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);
-    myComponent.add(myToolbar.getComponent(), BorderLayout.NORTH);
-  }
-
 
 
   @NotNull
@@ -201,7 +184,6 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
       return;
     }
 
-    rebuildToolbar(null);
     myPanel.setSecondComponent(null);
     myRootDifferencePane.dispose();
     myRootDifferencePane = null;
@@ -229,9 +211,12 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
       public void run() {
         if (myRootDifferencePane == null) {
           myRootDifferencePane = new RootDifferencePane(myProject, changeSet, nodeId, myTree.getNameForRoot(rootId), myContentTitles, myEditable, myStatusBar);
-          myPanel.setSecondComponent(myRootDifferencePane.getPanel());
+          ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, myRootDifferencePane.getActions(), true);
+          JPanel panel = new JPanel(new BorderLayout());
+          panel.add(toolbar.getComponent(), BorderLayout.NORTH);
+          panel.add(myRootDifferencePane.getPanel(), BorderLayout.CENTER);
+          myPanel.setSecondComponent(panel);
           myRootDifferencePane.navigateInitial(null);
-          rebuildToolbar(myRootDifferencePane.getActions());
         } else {
           myRootDifferencePane.setRootId(nodeId, changeSet);
         }
@@ -361,9 +346,18 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
         ModelChange firstChange = Sequence.fromIterable(myChangeSet.getChangesForRoot(rootTreeNode.getRootId())).first();
         if (firstChange instanceof AddRootChange || firstChange instanceof DeleteRootChange) {
           compositeChangeType = firstChange.getType();
+        } else if (firstChange == null) {
+          compositeChangeType = null;
+        }
+      } else {
+        if (myMetadataChangeSet == null || ListSequence.fromList(myMetadataChangeSet.getModelChanges()).isEmpty()) {
+          compositeChangeType = null;
         }
       }
-      rootTreeNode.setColor(ChangeColors.getForTree(compositeChangeType));
+      rootTreeNode.setColor((compositeChangeType == null ?
+        null :
+        ChangeColors.getForTree(compositeChangeType)
+      ));
     }
 
     @Override
@@ -384,12 +378,6 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
     @Override
     protected void onSelectRoot(@Nullable SNodeId rootId) {
       changeCurrentRoot(rootId);
-    }
-
-    @Override
-    public void processDoubleClick() {
-      DiffModelTree.RootTreeNode[] node = getSelectedNodes(DiffModelTree.RootTreeNode.class, null);
-      setCurrentRoot(node[0].getRootId());
     }
   }
 }

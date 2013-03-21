@@ -19,8 +19,6 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.extapi.model.SModelBase;
-import jetbrains.mps.vcs.diff.ui.RootDifferenceDialog;
-import jetbrains.mps.smodel.BaseSModelDescriptor;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
 import com.intellij.openapi.vcs.VcsException;
 import com.intellij.openapi.ui.Messages;

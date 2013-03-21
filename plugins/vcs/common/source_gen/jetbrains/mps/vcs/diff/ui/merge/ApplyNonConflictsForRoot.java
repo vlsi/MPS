@@ -10,18 +10,20 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 
 public class ApplyNonConflictsForRoot extends BaseAction implements DumbAware {
-  private MergeRootsDialog myDialog;
+  private MergeRootsPane myPane;
 
-  public ApplyNonConflictsForRoot(MergeRootsDialog dialog) {
+  public ApplyNonConflictsForRoot(MergeRootsPane pane) {
     super("Apply Non-Conflicting Changes", null, MergeModelsDialog.APPLY_NON_CONFLICTS);
-    myDialog = dialog;
+    myPane = pane;
     setDisableOnNoProject(false);
   }
 
+
+
   @Override
   protected void doExecute(AnActionEvent event, Map<String, Object> map) {
-    myDialog.getMergeSession().applyChanges(getChanges());
-    myDialog.rehighlight();
+    myPane.getMergeSession().applyChanges(getChanges());
+    myPane.rehighlight();
   }
 
   @Override
@@ -30,6 +32,6 @@ public class ApplyNonConflictsForRoot extends BaseAction implements DumbAware {
   }
 
   private Iterable<ModelChange> getChanges() {
-    return myDialog.getMergeSession().getApplicableChangesForRoot(myDialog.getRootId());
+    return myPane.getMergeSession().getApplicableChangesForRoot(myPane.getRootId());
   }
 }

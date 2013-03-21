@@ -30,10 +30,6 @@ import javax.swing.tree.DefaultTreeModel;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.ide.DataManager;
-import com.intellij.openapi.actionSystem.Presentation;
-import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.ide.icons.IdeIcons;
 import javax.swing.Icon;
@@ -43,8 +39,6 @@ import jetbrains.mps.ide.icons.IconManager;
 import javax.swing.tree.DefaultMutableTreeNode;
 import com.intellij.ui.SimpleTextAttributes;
 import java.awt.Color;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
 public abstract class DiffModelTree extends SimpleTree implements DataProvider {
   public static DataKey<Ref<SNodeId>> NODE_ID_DATAKEY = DataKey.create("MPS_SNodeId");
@@ -69,7 +63,6 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
       }
     });
     setPopupGroup(ActionUtils.groupFromActions(Sequence.fromIterable(myActions).toGenericArray(BaseAction.class)), ActionPlaces.CHANGES_VIEW_POPUP);
-    addMouseListener(new DiffModelTree.MyMouseListener());
     // listen for selection changes 
     getSelectionModel().addTreeSelectionListener(new TreeSelectionListener() {
       public void valueChanged(TreeSelectionEvent e) {
@@ -215,13 +208,6 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
       }
     }
     return null;
-  }
-
-  public void processDoubleClick() {
-    if (Sequence.fromIterable(myActions).isEmpty()) {
-      return;
-    }
-    ActionUtils.updateAndPerformAction(Sequence.fromIterable(myActions).first(), new AnActionEvent(null, DataManager.getInstance().getDataContext(DiffModelTree.this), ActionPlaces.UNKNOWN, new Presentation(), ActionManager.getInstance(), 0));
   }
 
   public class ModelTreeNode extends DiffModelTree.TreeNode {
@@ -382,18 +368,6 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
 
     public void setTextStyle(int textStyle) {
       myTextStyle = textStyle;
-    }
-  }
-
-  private class MyMouseListener extends MouseAdapter {
-    public MyMouseListener() {
-    }
-
-    @Override
-    public void mousePressed(MouseEvent event) {
-      if (event.getClickCount() == 2 && !(event.isPopupTrigger())) {
-        processDoubleClick();
-      }
     }
   }
 

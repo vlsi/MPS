@@ -36,6 +36,7 @@ import java.util.Comparator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.UnregisteredNodes;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
@@ -303,6 +304,8 @@ public class MergeSession {
       }
     });
     CopyUtil.clearModelProperties(myResultModel.getModelDescriptor());
+    // clear UnregisteredNodes pool to avoid a lot of ERRORs in log: 
+    UnregisteredNodes.instance().clear();
     CopyUtil.copyModelProperties(stateCopy.myResultModel.getModelDescriptor(), myResultModel.getModelDescriptor());
     ListSequence.fromList(SModelOperations.getRoots(((org.jetbrains.mps.openapi.model.SModel) stateCopy.myResultModel.getModelDescriptor()), null)).visitAll(new IVisitor<SNode>() {
       public void visit(SNode r) {
