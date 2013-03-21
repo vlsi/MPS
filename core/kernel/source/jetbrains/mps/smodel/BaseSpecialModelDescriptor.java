@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.extapi.model.SReloadableModelBase;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -24,7 +25,7 @@ import org.jetbrains.mps.openapi.persistence.NullDataSource;
  * @deprecated use {@link jetbrains.mps.extapi.model.SModelBase}
  */
 @Deprecated
-public abstract class BaseSpecialModelDescriptor extends BaseSModelDescriptor {
+public abstract class BaseSpecialModelDescriptor extends SReloadableModelBase {
   protected volatile jetbrains.mps.smodel.SModel mySModel;
 
   protected BaseSpecialModelDescriptor(@NotNull SModelReference modelReference) {
@@ -51,15 +52,21 @@ public abstract class BaseSpecialModelDescriptor extends BaseSModelDescriptor {
     return mySModel != null;
   }
 
-  @Override
-  protected jetbrains.mps.smodel.SModel getCurrentModelInternal() {
-    return mySModel;
-  }
-
   protected abstract jetbrains.mps.smodel.SModel createModel();
 
   @Override
-  protected void reloadFromDiskSafe() {
+  public void reloadFromDiskSafe() {
     throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public void dispose() {
+    super.dispose();
+    fireBeforeModelDisposed(this);
+    jetbrains.mps.smodel.SModel model = mySModel;
+    if (model != null) {
+      model.dispose();
+    }
+    clearListeners();
   }
 }

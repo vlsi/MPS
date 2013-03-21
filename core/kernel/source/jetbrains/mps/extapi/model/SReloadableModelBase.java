@@ -34,7 +34,7 @@ public abstract class SReloadableModelBase extends SModelBase {
   /*
    *  Should resolve storage/memory conflicts if any.
    */
-  protected abstract void reloadFromDiskSafe();
+  public abstract void reloadFromDiskSafe();
 
   public long getSourceTimestamp() {
     return mySourceTimestamp;

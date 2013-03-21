@@ -20,7 +20,7 @@ import com.intellij.openapi.diff.DocumentContent;
 import com.intellij.openapi.diff.FileContent;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.smodel.BaseSModelDescriptor;
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
@@ -73,7 +73,7 @@ public class ModelDiffTool implements DiffTool {
       final org.jetbrains.mps.openapi.model.SModel modelDescriptor = SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(content.getFile()));
 
       if (modelDescriptor != null) {
-        return ((BaseSModelDescriptor) modelDescriptor).getSModelInternal();
+        return ((SModelBase) modelDescriptor).getSModelInternal();
       }
     }
     try {

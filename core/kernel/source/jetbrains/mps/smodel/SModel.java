@@ -16,7 +16,9 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
+import jetbrains.mps.extapi.model.SReloadableModelBase;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
@@ -294,8 +296,7 @@ public class SModel implements SModelData {
 
   private List<SModelListener> getModelListeners() {
     SModelInternal modelDescriptor = getModelDescriptor();
-    return modelDescriptor instanceof BaseSModelDescriptor ? ((BaseSModelDescriptor) modelDescriptor).getModelListeners() :
-        Collections.<SModelListener>emptyList();
+    return ((SModelBase) modelDescriptor).getModelListeners();
   }
 
   //todo code in the following methods should be written w/o duplication
@@ -1177,7 +1178,7 @@ public class SModel implements SModelData {
   /**
    * This is for migration purposes, until we get rid of SModel class
    */
-  public static class FakeModelDescriptor extends BaseSModelDescriptor implements org.jetbrains.mps.openapi.model.SModel, SModelDescriptor, SModelInternal {
+  public static class FakeModelDescriptor extends SReloadableModelBase implements org.jetbrains.mps.openapi.model.SModel {
     private SModel myModel;
 
     public FakeModelDescriptor(@NotNull SModel md) {
@@ -1188,11 +1189,6 @@ public class SModel implements SModelData {
     @Override
     public void setModule(SModule container) {
       throw new UnsupportedOperationException();
-    }
-
-    @Override
-    protected SModel getCurrentModelInternal() {
-      return myModel;
     }
 
     @Override
@@ -1265,7 +1261,7 @@ public class SModel implements SModelData {
     }
 
     @Override
-    protected void reloadFromDiskSafe() {
+    public void reloadFromDiskSafe() {
       throw new UnsupportedOperationException();
     }
   }

@@ -33,7 +33,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.vcs.FileStatusListener;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
-import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
@@ -57,7 +57,7 @@ import com.intellij.openapi.vcs.VcsException;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.extapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import java.util.Set;
 import java.io.IOException;
@@ -78,7 +78,7 @@ import com.intellij.openapi.command.undo.UndoManager;
 import org.junit.Test;
 import java.util.Random;
 import jetbrains.mps.vcs.diff.changes.NodeCopier;
-import jetbrains.mps.smodel.BaseSModelDescriptor;
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;
@@ -259,7 +259,7 @@ public class ChangesManagerTest {
   }
 
   private CurrentDifference getCurrentDifference(String shortName) {
-    return myRegistry.getCurrentDifference((BaseEditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(MODEL_PREFIX + shortName));
+    return myRegistry.getCurrentDifference((EditableSModel) SModelRepository.getInstance().getModelDescriptor(MODEL_PREFIX + shortName));
   }
 
   private void checkAndEnable() {
@@ -279,12 +279,12 @@ public class ChangesManagerTest {
 
   private void checkRootStatuses() {
     final NodeFileStatusMapping fsm = myIdeaProject.getComponent(NodeFileStatusMapping.class);
-    final List<BaseEditableSModelDescriptor> interestingModels = Arrays.asList(myHtmlDiff.getModelDescriptor(), myUiDiff.getModelDescriptor(), myUtilDiff.getModelDescriptor());
+    final List<EditableSModel> interestingModels = Arrays.asList(myHtmlDiff.getModelDescriptor(), myUiDiff.getModelDescriptor(), myUtilDiff.getModelDescriptor());
     // query for first time 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        ListSequence.fromList(interestingModels).translate(new ITranslator2<BaseEditableSModelDescriptor, SNode>() {
-          public Iterable<SNode> translate(BaseEditableSModelDescriptor md) {
+        ListSequence.fromList(interestingModels).translate(new ITranslator2<EditableSModel, SNode>() {
+          public Iterable<SNode> translate(EditableSModel md) {
             return md.getRootNodes();
           }
         }).visitAll(new IVisitor<SNode>() {
@@ -298,8 +298,8 @@ public class ChangesManagerTest {
     waitForChangesManager();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (SNode r : ListSequence.fromList(interestingModels).translate(new ITranslator2<BaseEditableSModelDescriptor, SNode>() {
-          public Iterable<SNode> translate(BaseEditableSModelDescriptor md) {
+        for (SNode r : ListSequence.fromList(interestingModels).translate(new ITranslator2<EditableSModel, SNode>() {
+          public Iterable<SNode> translate(EditableSModel md) {
             return md.getRootNodes();
           }
         })) {
@@ -395,7 +395,7 @@ public class ChangesManagerTest {
 
   private void modifyExternally() throws ModelReadException {
     int changesBefore = ListSequence.fromList(check_4gxggu_a0a0a53(myUtilDiff.getChangeSet())).count();
-    final jetbrains.mps.smodel.SModel modelContent = ModelPersistence.readModel(myUtilDiff.getModelDescriptor().getSource(), false);
+    final jetbrains.mps.smodel.SModel modelContent = ModelPersistence.readModel((StreamDataSource) myUtilDiff.getModelDescriptor().getSource(), false);
     createNewRoot(modelContent.getModelDescriptor());
     final EditableSModel modelDescriptor = myUtilDiff.getModelDescriptor();
     waitForSomething(new Runnable() {
@@ -768,7 +768,7 @@ public class ChangesManagerTest {
       final ModelChange changeToPick = ListSequence.fromList(changesBefore).getElement(random.nextInt(ListSequence.fromList(changesBefore).count()));
       runCommandAndWait(new Runnable() {
         public void run() {
-          changeToPick.getOppositeChange().apply(model, new NodeCopier(((BaseSModelDescriptor) model).getSModelInternal()));
+          changeToPick.getOppositeChange().apply(model, new NodeCopier(((SModelBase) model).getSModelInternal()));
         }
       });
       waitAndCheck(myUiDiff);
@@ -799,7 +799,7 @@ public class ChangesManagerTest {
 
     List<SNodeReference> affectedRootPointers = ListSequence.fromList(check_4gxggu_a0a0a5a65(myUiDiff.getChangeSet())).select(new ISelector<ModelChange, SNodeReference>() {
       public SNodeReference select(ModelChange ch) {
-        return ((SNodeReference) new SNodePointer(myUiDiff.getModelDescriptor().getSModelReference(), ch.getRootId()));
+        return ((SNodeReference) new SNodePointer(myUiDiff.getModelDescriptor().getReference(), ch.getRootId()));
       }
     }).distinct().toListSequence();
     final List<ModelChange> oppositeChanges = ListSequence.fromList(check_4gxggu_a0a0g0ec(myUiDiff.getChangeSet())).select(new ISelector<ModelChange, ModelChange>() {
@@ -809,7 +809,7 @@ public class ChangesManagerTest {
     }).toListSequence();
     runCommandAndWait(new Runnable() {
       public void run() {
-        final NodeCopier nc = new NodeCopier(((BaseSModelDescriptor) model).getSModelInternal());
+        final NodeCopier nc = new NodeCopier(((SModelBase) model).getSModelInternal());
         ListSequence.fromList(oppositeChanges).where(new IWhereFilter<ModelChange>() {
           public boolean accept(ModelChange ch) {
             return ch instanceof NodeGroupChange;

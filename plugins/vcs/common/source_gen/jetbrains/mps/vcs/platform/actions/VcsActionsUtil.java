@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.BaseSModelDescriptor;
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.vcs.diff.ui.RootDifferenceDialog;
 import com.intellij.openapi.vcs.VcsException;
 import com.intellij.openapi.ui.Messages;
@@ -63,7 +63,7 @@ public class VcsActionsUtil {
       final Wrappers._T<SNodeId> id = new Wrappers._T<SNodeId>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          newModel.value = ((BaseSModelDescriptor) node.getModel()).getSModelInternal();
+          newModel.value = ((SModelBase) node.getModel()).getSModelInternal();
           id.value = node.getNodeId();
         }
       });

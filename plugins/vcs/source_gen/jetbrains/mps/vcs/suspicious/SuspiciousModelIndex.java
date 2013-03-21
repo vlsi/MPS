@@ -7,7 +7,7 @@ import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.ide.platform.watching.FSChangesWatcher;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -48,8 +48,8 @@ public class SuspiciousModelIndex implements ApplicationComponent {
   }
 
   public void addModel(SModel model, boolean isInConflict) {
-    if (model instanceof BaseEditableSModelDescriptor) {
-      myTaskQueue.addTask(new ConflictableModelAdapter((BaseEditableSModelDescriptor) model, isInConflict));
+    if (model instanceof EditableSModel && !(((EditableSModel) model).isReadOnly())) {
+      myTaskQueue.addTask(new ConflictableModelAdapter((EditableSModel) model, isInConflict));
     }
   }
 

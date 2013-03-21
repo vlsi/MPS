@@ -5,7 +5,7 @@ package jetbrains.mps.makeTest.test;
 import jetbrains.mps.smodel.DefaultSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.smodel.BaseSModelDescriptor;
+import jetbrains.mps.extapi.model.SModelBase;
 
 public abstract class ChangeModel {
   private DefaultSModel myModel;
@@ -20,7 +20,7 @@ public abstract class ChangeModel {
   }
 
   public void rollback(SModel model) {
-    BaseSModelDescriptor md = (BaseSModelDescriptor) model;
+    SModelBase md = (SModelBase) model;
     md.replace(this.myModel);
   }
 }

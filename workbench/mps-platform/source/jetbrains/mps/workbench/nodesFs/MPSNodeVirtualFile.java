@@ -15,16 +15,11 @@
  */
 package jetbrains.mps.workbench.nodesFs;
 
-import com.intellij.openapi.fileTypes.FileType;
-import com.intellij.openapi.fileTypes.LanguageFileType;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.util.LocalTimeCounter;
-import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.fileTypes.MPSFileType;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.extapi.model.SReloadableModelBase;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelReference;
@@ -54,8 +49,8 @@ public class MPSNodeVirtualFile extends VirtualFile {
     myNode = nodePointer;
     SModel modelDescriptor =
         nodePointer.getModelReference() == null ? null : SModelRepository.getInstance().getModelDescriptor(nodePointer.getModelReference());
-    if (modelDescriptor instanceof BaseSModelDescriptorWithSource) {
-      myTimeStamp = ((BaseSModelDescriptorWithSource) modelDescriptor).getSourceTimestamp();
+    if (modelDescriptor instanceof SReloadableModelBase) {
+      myTimeStamp = ((SReloadableModelBase) modelDescriptor).getSourceTimestamp();
     }
     updateFields();
   }
@@ -142,7 +137,7 @@ public class MPSNodeVirtualFile extends VirtualFile {
       return null;
     }
     MPSModelVirtualFile modelVFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(modelRef);
-    if (modelVFile !=null) {
+    if (modelVFile != null) {
       return modelVFile.getParent();
     }
     return null;

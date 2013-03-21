@@ -1459,8 +1459,8 @@
                   <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6619269785060746586">
                     <property name="name" nameId="tpck.1169194664001" value="smd" />
                     <property name="isFinal" nameId="tpee.1176718929932" value="false" />
-                    <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6619269785060746587">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~BaseSModelDescriptor" resolveInfo="BaseSModelDescriptor" />
+                    <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5721201500399324976">
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6619269785060746048" resolveInfo="JavaClassStubModelDescriptor" />
                     </node>
                   </node>
                 </node>
@@ -1601,7 +1601,7 @@
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6619269785060746586" resolveInfo="smd" />
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6619269785060746641">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="51te.~SModelBase%dgetSource()%corg%djetbrains%dmps%dopenapi%dpersistence%dDataSource" resolveInfo="getSource" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6619269785060746086" resolveInfo="getSource" />
                           </node>
                         </node>
                       </node>

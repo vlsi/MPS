@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -28,7 +28,7 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessageFactory;
-import jetbrains.mps.smodel.BaseSModelDescriptor;
+import jetbrains.mps.extapi.model.SModelBase;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.annotations.Nullable;
@@ -61,12 +61,8 @@ public class EditorHighlighter implements EditorMessageOwner {
                 return;
               }
               final SModel model = editedNode.getModel();
-              SModel descriptor = (model != null ?
-                model :
-                null
-              );
-              if (descriptor instanceof BaseEditableSModelDescriptor) {
-                myCurrentDifference = CurrentDifferenceRegistry.getInstance(project).getCurrentDifference((BaseEditableSModelDescriptor) descriptor);
+              if (model instanceof EditableSModel && !(((EditableSModel) model).isReadOnly())) {
+                myCurrentDifference = CurrentDifferenceRegistry.getInstance(project).getCurrentDifference((EditableSModel) model);
                 myListener = new EditorHighlighter.MyCurrentDifferenceListener();
               }
               if (myListener != null) {
@@ -126,7 +122,7 @@ public class EditorHighlighter implements EditorMessageOwner {
           if (model == null || SNodeOperations.isModelDisposed(model)) {
             return;
           }
-          messages.value = ChangeEditorMessageFactory.createMessages(((BaseSModelDescriptor) model).getSModelInternal(), change, EditorHighlighter.this, null, false);
+          messages.value = ChangeEditorMessageFactory.createMessages(((SModelBase) model).getSModelInternal(), change, EditorHighlighter.this, null, false);
         }
       });
     }

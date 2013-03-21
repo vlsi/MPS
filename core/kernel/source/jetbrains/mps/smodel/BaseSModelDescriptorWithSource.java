@@ -15,13 +15,14 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.extapi.model.SReloadableModelBase;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
 
-public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescriptor {
+public abstract class BaseSModelDescriptorWithSource extends SReloadableModelBase {
   private DataSourceListener mySourceListener = new DataSourceListener() {
     @Override
     public void changed(DataSource source) {
@@ -43,9 +44,17 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
   public void dispose() {
     getSource().removeListener(mySourceListener);
     super.dispose();
+    fireBeforeModelDisposed(this);
+    jetbrains.mps.smodel.SModel model = getCurrentModelInternal();
+    if (model != null) {
+      model.dispose();
+    }
+    clearListeners();
   }
 
   //----------reloading stuff--------
+
+  protected abstract jetbrains.mps.smodel.SModel getCurrentModelInternal();
 
   protected synchronized void replaceModel(Runnable replacer) {
     ModelAccess.assertLegalWrite();
@@ -67,5 +76,4 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
 
     MPSModuleRepository.getInstance().invalidateCaches();
   }
-
 }

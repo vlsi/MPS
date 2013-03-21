@@ -80,7 +80,7 @@
     <nodeInfo nodeId="5364815602089923595" fileName="ChangesManagerTest.java" startLine="242" startPosition="72" endLine="243" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5364815602089924297" fileName="ChangesManagerTest.java" startLine="243" startPosition="45" endLine="244" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3907542737155282413" fileName="ChangesManagerTest.java" startLine="253" startPosition="29" endLine="254" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4346819404427296500" fileName="ChangesManagerTest.java" startLine="261" startPosition="68" endLine="262" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4346819404427296500" fileName="ChangesManagerTest.java" startLine="261" startPosition="68" endLine="262" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3907542737155075133" fileName="ChangesManagerTest.java" startLine="265" startPosition="33" endLine="266" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3907542737155075138" fileName="ChangesManagerTest.java" startLine="266" startPosition="49" endLine="267" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3907542737155075143" fileName="ChangesManagerTest.java" startLine="267" startPosition="47" endLine="268" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -94,13 +94,13 @@
     <nodeInfo nodeId="3907542737155075176" fileName="ChangesManagerTest.java" startLine="275" startPosition="107" endLine="276" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3907542737155075185" fileName="ChangesManagerTest.java" startLine="276" startPosition="106" endLine="277" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3619977242337324756" fileName="ChangesManagerTest.java" startLine="280" startPosition="36" endLine="281" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3619977242337324776" fileName="ChangesManagerTest.java" startLine="281" startPosition="94" endLine="282" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3619977242337326292" fileName="ChangesManagerTest.java" startLine="282" startPosition="176" endLine="283" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3619977242337326323" fileName="ChangesManagerTest.java" startLine="287" startPosition="77" endLine="288" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3619977242337324776" fileName="ChangesManagerTest.java" startLine="281" startPosition="94" endLine="282" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3619977242337326292" fileName="ChangesManagerTest.java" startLine="282" startPosition="162" endLine="283" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3619977242337326323" fileName="ChangesManagerTest.java" startLine="287" startPosition="63" endLine="288" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3619977242337326334" fileName="ChangesManagerTest.java" startLine="291" startPosition="38" endLine="292" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3619977242337326295" fileName="ChangesManagerTest.java" startLine="296" startPosition="7" endLine="297" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="3619977242337326264" fileName="ChangesManagerTest.java" startLine="297" startPosition="34" endLine="298" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3619977242337326277" fileName="ChangesManagerTest.java" startLine="302" startPosition="77" endLine="303" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3619977242337326277" fileName="ChangesManagerTest.java" startLine="302" startPosition="63" endLine="303" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3619977242337326343" fileName="ChangesManagerTest.java" startLine="305" startPosition="13" endLine="306" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3619977242337326388" fileName="ChangesManagerTest.java" startLine="306" startPosition="129" endLine="307" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3619977242337327330" fileName="ChangesManagerTest.java" startLine="307" startPosition="98" endLine="308" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -140,8 +140,8 @@
     <nodeInfo nodeId="3080098661456733802" fileName="ChangesManagerTest.java" startLine="391" startPosition="53" endLine="392" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3080098661456787576" fileName="ChangesManagerTest.java" startLine="392" startPosition="53" endLine="393" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3907542737155280808" fileName="ChangesManagerTest.java" startLine="396" startPosition="61" endLine="397" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3907542737155280763" fileName="ChangesManagerTest.java" startLine="397" startPosition="103" endLine="398" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3907542737155280820" fileName="ChangesManagerTest.java" startLine="398" startPosition="132" endLine="399" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3907542737155280763" fileName="ChangesManagerTest.java" startLine="397" startPosition="103" endLine="398" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3907542737155280820" fileName="ChangesManagerTest.java" startLine="398" startPosition="151" endLine="399" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7429153088278713023" fileName="ChangesManagerTest.java" startLine="399" startPosition="53" endLine="400" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1204007291430168002" fileName="ChangesManagerTest.java" startLine="406" startPosition="61" endLine="407" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7429153088278713049" fileName="ChangesManagerTest.java" startLine="408" startPosition="13" endLine="409" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -283,7 +283,7 @@
     <nodeInfo nodeId="599300103647481221" fileName="ChangesManagerTest.java" startLine="763" startPosition="18" endLine="764" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1813489455856693556" fileName="ChangesManagerTest.java" startLine="765" startPosition="59" endLine="766" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="599300103647481263" fileName="ChangesManagerTest.java" startLine="767" startPosition="7" endLine="768" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="599300103647481306" fileName="ChangesManagerTest.java" startLine="770" startPosition="27" endLine="771" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="599300103647481306" fileName="ChangesManagerTest.java" startLine="770" startPosition="27" endLine="771" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1813489455856685457" fileName="ChangesManagerTest.java" startLine="773" startPosition="9" endLine="774" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1813489455856692638" fileName="ChangesManagerTest.java" startLine="774" startPosition="29" endLine="775" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="1813489455856692642" fileName="ChangesManagerTest.java" startLine="775" startPosition="0" endLine="776" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -305,9 +305,9 @@
     <nodeInfo nodeId="4366166682335278595" fileName="ChangesManagerTest.java" startLine="796" startPosition="0" endLine="797" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4366166682335278602" fileName="ChangesManagerTest.java" startLine="797" startPosition="73" endLine="798" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4366166682335278610" fileName="ChangesManagerTest.java" startLine="798" startPosition="55" endLine="799" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4366166682335377549" fileName="ChangesManagerTest.java" startLine="801" startPosition="52" endLine="802" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4366166682335377549" fileName="ChangesManagerTest.java" startLine="801" startPosition="52" endLine="802" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4366166682335377410" fileName="ChangesManagerTest.java" startLine="806" startPosition="49" endLine="807" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4366166682335377447" fileName="ChangesManagerTest.java" startLine="811" startPosition="25" endLine="812" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4366166682335377447" fileName="ChangesManagerTest.java" startLine="811" startPosition="25" endLine="812" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4366166682335348717" fileName="ChangesManagerTest.java" startLine="814" startPosition="49" endLine="815" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4366166682335348723" fileName="ChangesManagerTest.java" startLine="818" startPosition="45" endLine="819" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4366166682335377435" fileName="ChangesManagerTest.java" startLine="823" startPosition="45" endLine="824" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -432,9 +432,9 @@
     <nodeInfo nodeId="7232970427865381390" fileName="ChangesManagerTest.java" startLine="177" startPosition="0" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="3907542737155282400" fileName="ChangesManagerTest.java" startLine="253" startPosition="0" endLine="256" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="7666889591690494787" fileName="ChangesManagerTest.java" startLine="261" startPosition="0" endLine="264" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCurrentDifference#(Ljava/lang/String;)Ljetbrains/mps/vcs/changesmanager/CurrentDifference;" />
-    <nodeInfo nodeId="3619977242337326321" fileName="ChangesManagerTest.java" startLine="287" startPosition="0" endLine="290" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/BaseEditableSModelDescriptor;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="3619977242337326321" fileName="ChangesManagerTest.java" startLine="287" startPosition="0" endLine="290" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/extapi/model/EditableSModel;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="3619977242337326332" fileName="ChangesManagerTest.java" startLine="291" startPosition="0" endLine="294" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="3619977242337326275" fileName="ChangesManagerTest.java" startLine="302" startPosition="0" endLine="305" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/BaseEditableSModelDescriptor;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="3619977242337326275" fileName="ChangesManagerTest.java" startLine="302" startPosition="0" endLine="305" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/extapi/model/EditableSModel;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="3907542737155075213" fileName="ChangesManagerTest.java" startLine="324" startPosition="0" endLine="327" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="3951871491765130797" fileName="ChangesManagerTest.java" startLine="329" startPosition="0" endLine="332" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="7303989191346729279" fileName="ChangesManagerTest.java" startLine="334" startPosition="0" endLine="337" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -597,7 +597,7 @@
     <nodeInfo nodeId="7429153088278713004" fileName="ChangesManagerTest.java" startLine="411" startPosition="11" endLine="420" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3619977242337331828" fileName="ChangesManagerTest.java" startLine="444" startPosition="0" endLine="453" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8835266565600982424" fileName="ChangesManagerTest.java" startLine="461" startPosition="69" endLine="470" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4366166682335348683" fileName="ChangesManagerTest.java" startLine="812" startPosition="97" endLine="821" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4366166682335348683" fileName="ChangesManagerTest.java" startLine="812" startPosition="87" endLine="821" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="599300103647465975" fileName="ChangesManagerTest.java" startLine="506" startPosition="96" endLine="516" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="599300103647469226" fileName="ChangesManagerTest.java" startLine="530" startPosition="11" endLine="540" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3080098661456733628" fileName="ChangesManagerTest.java" startLine="577" startPosition="0" endLine="587" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeModifiedRoot#()V" />
@@ -691,10 +691,10 @@
     <scopeInfo nodeId="5364815602089924310" fileName="ChangesManagerTest.java" startLine="231" startPosition="45" endLine="232" endPosition="34" />
     <scopeInfo nodeId="5364815602089924320" fileName="ChangesManagerTest.java" startLine="236" startPosition="65" endLine="237" endPosition="34" />
     <scopeInfo nodeId="3907542737155282401" fileName="ChangesManagerTest.java" startLine="253" startPosition="29" endLine="254" endPosition="28" />
-    <scopeInfo nodeId="7666889591690494790" fileName="ChangesManagerTest.java" startLine="261" startPosition="68" endLine="262" endPosition="151" />
-    <scopeInfo nodeId="3619977242337326322" fileName="ChangesManagerTest.java" startLine="287" startPosition="77" endLine="288" endPosition="37" />
+    <scopeInfo nodeId="7666889591690494790" fileName="ChangesManagerTest.java" startLine="261" startPosition="68" endLine="262" endPosition="137" />
+    <scopeInfo nodeId="3619977242337326322" fileName="ChangesManagerTest.java" startLine="287" startPosition="63" endLine="288" endPosition="37" />
     <scopeInfo nodeId="3619977242337326333" fileName="ChangesManagerTest.java" startLine="291" startPosition="38" endLine="292" endPosition="29" />
-    <scopeInfo nodeId="3619977242337326276" fileName="ChangesManagerTest.java" startLine="302" startPosition="77" endLine="303" endPosition="37" />
+    <scopeInfo nodeId="3619977242337326276" fileName="ChangesManagerTest.java" startLine="302" startPosition="63" endLine="303" endPosition="37" />
     <scopeInfo nodeId="3907542737155075214" fileName="ChangesManagerTest.java" startLine="324" startPosition="42" endLine="325" endPosition="82" />
     <scopeInfo nodeId="3951871491765130798" fileName="ChangesManagerTest.java" startLine="329" startPosition="42" endLine="330" endPosition="87" />
     <scopeInfo nodeId="7303989191346729280" fileName="ChangesManagerTest.java" startLine="334" startPosition="43" endLine="335" endPosition="159" />
@@ -739,8 +739,8 @@
     <scopeInfo nodeId="6335143297570263165" fileName="ChangesManagerTest.java" startLine="733" startPosition="43" endLine="734" endPosition="94" />
     <scopeInfo nodeId="6335143297570263198" fileName="ChangesManagerTest.java" startLine="737" startPosition="39" endLine="738" endPosition="190" />
     <scopeInfo nodeId="1813489455856693545" fileName="ChangesManagerTest.java" startLine="765" startPosition="59" endLine="766" endPosition="14" />
-    <scopeInfo nodeId="599300103647481283" fileName="ChangesManagerTest.java" startLine="770" startPosition="27" endLine="771" endPosition="124" />
-    <scopeInfo nodeId="4366166682335377509" fileName="ChangesManagerTest.java" startLine="801" startPosition="52" endLine="802" endPosition="119" />
+    <scopeInfo nodeId="599300103647481283" fileName="ChangesManagerTest.java" startLine="770" startPosition="27" endLine="771" endPosition="114" />
+    <scopeInfo nodeId="4366166682335377509" fileName="ChangesManagerTest.java" startLine="801" startPosition="52" endLine="802" endPosition="113" />
     <scopeInfo nodeId="4366166682335377407" fileName="ChangesManagerTest.java" startLine="806" startPosition="49" endLine="807" endPosition="38" />
     <scopeInfo nodeId="4366166682335348714" fileName="ChangesManagerTest.java" startLine="814" startPosition="49" endLine="815" endPosition="49" />
     <scopeInfo nodeId="4366166682335348691" fileName="ChangesManagerTest.java" startLine="818" startPosition="45" endLine="819" endPosition="45" />
