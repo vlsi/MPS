@@ -2066,6 +2066,15 @@
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2534942168318176942">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="t7u.2534942168317963684" resolveInfo="AddMenuPart_ParameterizedSubstitute_smartComplete" />
     </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="5164819300892082784">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="t7u.2534942168331319973" resolveInfo="AddMenuPart_SimpleItemSubstitute" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="5164819300892082805">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="t7u.5164819300891972344" resolveInfo="AddMenuPart_SimpleItemSubstitute_smartComplete" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2747974755163993205">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="t7u.5164819300892646889" resolveInfo="AddMenuPart_WrapperSubstitute" />
+    </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7917427600705347819">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="t7u.6866660893594595018" resolveInfo="ConceptSubstitutePart" />
     </node>

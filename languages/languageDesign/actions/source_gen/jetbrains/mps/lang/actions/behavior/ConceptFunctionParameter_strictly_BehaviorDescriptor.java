@@ -4,14 +4,14 @@ package jetbrains.mps.lang.actions.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class ConceptFunctionParameter_strictly_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public ConceptFunctionParameter_strictly_BehaviorDescriptor() {
   }
 
-  public boolean virtual_dontUseParameterObject_1262430001741498340(SConcept thisConcept) {
-    return ConceptFunctionParameter_strictly_Behavior.virtual_dontUseParameterObject_1262430001741498340(thisConcept);
+  public boolean virtual_isParameterObjectUsed_1213877522926(SNode thisNode) {
+    return ConceptFunctionParameter_strictly_Behavior.virtual_isParameterObjectUsed_1213877522926(thisNode);
   }
 
   @Override

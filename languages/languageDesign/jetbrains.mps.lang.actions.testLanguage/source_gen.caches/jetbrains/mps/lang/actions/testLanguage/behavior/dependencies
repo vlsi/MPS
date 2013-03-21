@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestAbstractChildWrapper_BehaviorDescriptor" file="ActionTestAbstractChildWrapper_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestAbstractChild_BehaviorDescriptor" file="ActionTestAbstractChild_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -29,6 +40,28 @@
     <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestAbstractChild_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestChildToWrap1_BehaviorDescriptor" file="ActionTestChildToWrap1_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestChildToWrap2_BehaviorDescriptor" file="ActionTestChildToWrap2_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestChildToWrap1_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestChildWrapper_BehaviorDescriptor" file="ActionTestChildWrapper_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestAbstractChildWrapper_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestContainer_BehaviorDescriptor" file="ActionTestContainer_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -41,6 +74,9 @@
     <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestChild1SubConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestChild1_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestChild2_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestChildToWrap1_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestChildToWrap2_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestChildWrapper_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestContainer_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />

@@ -63,7 +63,7 @@
   <unitInfo fileName="PasteWrapper_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.PasteWrapper_BehaviorDescriptor" />
   <unitInfo fileName="PasteWrappers_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.PasteWrappers_BehaviorDescriptor" />
   <unitInfo fileName="QueryFunction_ActionType_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_ActionType_BehaviorDescriptor" />
-  <unitInfo fileName="QueryFunction_CanSubstitute_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_CanSubstitute_BehaviorDescriptor" />
+  <unitInfo fileName="QueryFunction_CanSubstitute_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_CanSubstitute_BehaviorDescriptor" />
   <unitInfo fileName="QueryFunction_GenericSubstituteMenuPart_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_GenericSubstituteMenuPart_BehaviorDescriptor" />
   <unitInfo fileName="QueryFunction_ParameterizedSideTransform_Handler_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_ParameterizedSideTransform_Handler_BehaviorDescriptor" />
   <unitInfo fileName="QueryFunction_ParameterizedSideTransform_Query_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_ParameterizedSideTransform_Query_BehaviorDescriptor" />
@@ -85,11 +85,11 @@
   <unitInfo fileName="QueryFunction_SideTransform_String_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_SideTransform_String_BehaviorDescriptor" />
   <unitInfo fileName="QueryFunction_SubstituteIconNode_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_SubstituteIconNode_BehaviorDescriptor" />
   <unitInfo fileName="QueryFunction_SubstituteIcon_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_SubstituteIcon_BehaviorDescriptor" />
-  <unitInfo fileName="QueryFunction_SubstituteString_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_SubstituteString_BehaviorDescriptor" />
-  <unitInfo fileName="QueryFunction_SubstituteVariableInitializer_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_SubstituteVariableInitializer_BehaviorDescriptor" />
+  <unitInfo fileName="QueryFunction_SubstituteString_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_SubstituteString_BehaviorDescriptor" />
+  <unitInfo fileName="QueryFunction_SubstituteVariableInitializer_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_SubstituteVariableInitializer_BehaviorDescriptor" />
   <unitInfo fileName="QueryFunction_SubstituteWrapper_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_SubstituteWrapper_BehaviorDescriptor" />
-  <unitInfo fileName="QueryFunction_Substitute_CommonInitializer_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_Substitute_CommonInitializer_BehaviorDescriptor" />
-  <unitInfo fileName="QueryFunction_Substitute_Handler_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_Substitute_Handler_BehaviorDescriptor" />
+  <unitInfo fileName="QueryFunction_Substitute_CommonInitializer_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_Substitute_CommonInitializer_BehaviorDescriptor" />
+  <unitInfo fileName="QueryFunction_Substitute_Handler_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_Substitute_Handler_BehaviorDescriptor" />
   <unitInfo fileName="RemoveByConditionPart_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.RemoveByConditionPart_BehaviorDescriptor" />
   <unitInfo fileName="RemoveDefaultsPart_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.RemoveDefaultsPart_BehaviorDescriptor" />
   <unitInfo fileName="RemovePart_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.RemovePart_BehaviorDescriptor" />
@@ -115,71 +115,62 @@
   <unitInfo fileName="SurroundWithAction_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.SurroundWithAction_BehaviorDescriptor" />
   <unitInfo fileName="WrapperSubstituteMenuPart_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.WrapperSubstituteMenuPart_BehaviorDescriptor" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1213877228937">
-    <nodeInfo nodeId="1213877228946" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="22" startPosition="128" endLine="23" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877228948" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="24" startPosition="5" endLine="25" endPosition="195" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877228958" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="28" startPosition="83" endLine="29" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877228966" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="29" startPosition="125" endLine="30" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877228972" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="30" startPosition="74" endLine="31" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741720074" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="34" startPosition="95" endLine="35" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914720094" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="38" startPosition="117" endLine="39" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914720109" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="39" startPosition="261" endLine="40" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914720114" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="40" startPosition="174" endLine="41" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914720119" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="41" startPosition="174" endLine="42" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914720124" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="42" startPosition="174" endLine="43" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914720129" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="43" startPosition="167" endLine="44" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914720134" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="44" startPosition="167" endLine="45" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914720139" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="45" startPosition="167" endLine="46" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914720143" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="46" startPosition="167" endLine="47" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877228973" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="50" startPosition="78" endLine="51" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877228973" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="51" startPosition="63" endLine="52" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877228973" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="52" startPosition="30" endLine="53" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877228973" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="53" startPosition="159" endLine="54" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877228973" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="54" startPosition="85" endLine="55" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2534942168338481839" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="21" startPosition="103" endLine="22" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877228958" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="25" startPosition="83" endLine="26" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877228966" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="26" startPosition="125" endLine="27" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877228972" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="27" startPosition="74" endLine="28" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2534942168338513453" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="31" startPosition="81" endLine="32" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2534942168338513703" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="32" startPosition="71" endLine="33" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168338552462" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="33" startPosition="177" endLine="34" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168338552502" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="34" startPosition="166" endLine="35" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168338552547" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="35" startPosition="166" endLine="36" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168338552597" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="36" startPosition="171" endLine="37" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168338552652" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="37" startPosition="166" endLine="38" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168338562399" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="38" startPosition="164" endLine="39" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168338513519" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="39" startPosition="161" endLine="40" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877228973" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="43" startPosition="78" endLine="44" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877228973" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="44" startPosition="63" endLine="45" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877228973" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="45" startPosition="30" endLine="46" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213877228973" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="46" startPosition="159" endLine="47" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213877228973" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="47" startPosition="85" endLine="48" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877228937" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1213877228973" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="52" startPosition="30" endLine="54" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1213877228973" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="52" startPosition="30" endLine="54" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1213877228940" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="21" startPosition="103" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213877228937" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_usesParameterObject_1262430001741497984#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
-    <nodeInfo nodeId="1213877228937" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="28" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1213877228937" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="21" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_usesParameterObjectFor_1213877374432#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="1213877228973" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="50" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_srv9hy_a2a1#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1213877228937" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="38" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
+    <nodeInfo nodeId="1213877228973" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="45" startPosition="30" endLine="47" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1213877228973" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="45" startPosition="30" endLine="47" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1213877228937" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_usesParameterObjectFor_1213877374432#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1213877228937" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="25" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1213877228973" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="43" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_srv9hy_a2a1#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1213877228937" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="31" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getParameters_1213877374450#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
     <scopeInfo nodeId="1213877228979" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="18" startPosition="43" endLine="18" endPosition="43" />
-    <scopeInfo nodeId="1213877228945" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="22" startPosition="128" endLine="23" endPosition="19" />
-    <scopeInfo nodeId="1262430001741720073" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="34" startPosition="95" endLine="35" endPosition="16" />
+    <scopeInfo nodeId="1213877228939" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="21" startPosition="103" endLine="22" endPosition="132" />
     <scopeInfo nodeId="1213877228937" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="18" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="1213877228937" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877228973" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="52" startPosition="30" endLine="54" endPosition="85" />
-    <scopeInfo nodeId="1213877228957" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="28" startPosition="83" endLine="31" endPosition="54">
-      <varInfo nodeId="1213877228959" varName="ancestor" />
-      <varInfo nodeId="1213877228967" varName="concept" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213877228937" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="34" startPosition="0" endLine="37" endPosition="0">
-      <varInfo nodeId="1213877228937" varName="thisConcept" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213877228939" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="21" startPosition="103" endLine="25" endPosition="195" />
-    <scopeInfo nodeId="1213877228937" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="28" startPosition="0" endLine="33" endPosition="0">
-      <varInfo nodeId="1213877228937" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213877228973" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="50" startPosition="78" endLine="55" endPosition="24">
-      <varInfo nodeId="1213877228973" varName="facade" />
-      <varInfo nodeId="1213877228973" varName="quotedNode_2" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213877228937" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="21" startPosition="0" endLine="27" endPosition="0">
+    <scopeInfo nodeId="1213877228973" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="45" startPosition="30" endLine="47" endPosition="85" />
+    <scopeInfo nodeId="1213877228937" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="1213877228953" varName="parameter" />
       <varInfo nodeId="1213877228937" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877228973" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="50" startPosition="0" endLine="57" endPosition="0">
+    <scopeInfo nodeId="1213877228957" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="25" startPosition="83" endLine="28" endPosition="54">
+      <varInfo nodeId="1213877228959" varName="ancestor" />
+      <varInfo nodeId="1213877228967" varName="concept" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877228937" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="25" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="1213877228937" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877228973" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="43" startPosition="78" endLine="48" endPosition="24">
+      <varInfo nodeId="1213877228973" varName="facade" />
+      <varInfo nodeId="1213877228973" varName="quotedNode_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877228973" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="43" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="1213877228973" varName="parameter_1" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914720093" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="38" startPosition="117" endLine="47" endPosition="18">
-      <varInfo nodeId="3044950653914720095" varName="result" />
+    <scopeInfo nodeId="2534942168338500356" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="31" startPosition="81" endLine="40" endPosition="18">
+      <varInfo nodeId="2534942168338513454" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877228937" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="38" startPosition="0" endLine="49" endPosition="0">
-      <varInfo nodeId="1213877228937" varName="thisConcept" />
+    <scopeInfo nodeId="1213877228937" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="31" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="1213877228937" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1213877228937" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="17" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_Substitute_Handler_Behavior" />
+    <unitInfo nodeId="1213877228937" fileName="QueryFunction_Substitute_Handler_Behavior.java" startLine="17" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_Substitute_Handler_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1213877247276">
     <nodeInfo nodeId="1213877247281" fileName="QueryFunction_SideTransform_Handler_Behavior.java" startLine="20" startPosition="123" endLine="21" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -649,18 +640,18 @@
     <nodeInfo nodeId="1213877437426" fileName="QueryFunction_SubstituteVariableInitializer_Behavior.java" startLine="17" startPosition="103" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877437433" fileName="QueryFunction_SubstituteVariableInitializer_Behavior.java" startLine="21" startPosition="83" endLine="22" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1213877437440" fileName="QueryFunction_SubstituteVariableInitializer_Behavior.java" startLine="22" startPosition="159" endLine="23" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914717781" fileName="QueryFunction_SubstituteVariableInitializer_Behavior.java" startLine="26" startPosition="117" endLine="27" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914717796" fileName="QueryFunction_SubstituteVariableInitializer_Behavior.java" startLine="27" startPosition="261" endLine="28" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914717801" fileName="QueryFunction_SubstituteVariableInitializer_Behavior.java" startLine="28" startPosition="167" endLine="29" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914717806" fileName="QueryFunction_SubstituteVariableInitializer_Behavior.java" startLine="29" startPosition="167" endLine="30" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914717811" fileName="QueryFunction_SubstituteVariableInitializer_Behavior.java" startLine="30" startPosition="174" endLine="31" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914717816" fileName="QueryFunction_SubstituteVariableInitializer_Behavior.java" startLine="31" startPosition="174" endLine="32" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914717821" fileName="QueryFunction_SubstituteVariableInitializer_Behavior.java" startLine="32" startPosition="167" endLine="33" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914717825" fileName="QueryFunction_SubstituteVariableInitializer_Behavior.java" startLine="33" startPosition="174" endLine="34" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2534942168332036361" fileName="QueryFunction_SubstituteVariableInitializer_Behavior.java" startLine="26" startPosition="81" endLine="27" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2534942168332036736" fileName="QueryFunction_SubstituteVariableInitializer_Behavior.java" startLine="27" startPosition="71" endLine="28" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168332081555" fileName="QueryFunction_SubstituteVariableInitializer_Behavior.java" startLine="28" startPosition="164" endLine="29" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168332120186" fileName="QueryFunction_SubstituteVariableInitializer_Behavior.java" startLine="29" startPosition="171" endLine="30" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168332120753" fileName="QueryFunction_SubstituteVariableInitializer_Behavior.java" startLine="30" startPosition="177" endLine="31" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168332121435" fileName="QueryFunction_SubstituteVariableInitializer_Behavior.java" startLine="31" startPosition="166" endLine="32" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168332121490" fileName="QueryFunction_SubstituteVariableInitializer_Behavior.java" startLine="32" startPosition="166" endLine="33" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168332036534" fileName="QueryFunction_SubstituteVariableInitializer_Behavior.java" startLine="33" startPosition="166" endLine="34" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877437423" fileName="QueryFunction_SubstituteVariableInitializer_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1213877437423" fileName="QueryFunction_SubstituteVariableInitializer_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_usesParameterObjectFor_1213877374432#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="1213877437423" fileName="QueryFunction_SubstituteVariableInitializer_Behavior.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1213877437423" fileName="QueryFunction_SubstituteVariableInitializer_Behavior.java" startLine="26" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
+    <nodeInfo nodeId="1213877437423" fileName="QueryFunction_SubstituteVariableInitializer_Behavior.java" startLine="26" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getParameters_1213877374450#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
     <scopeInfo nodeId="1213877437446" fileName="QueryFunction_SubstituteVariableInitializer_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
     <scopeInfo nodeId="1213877437425" fileName="QueryFunction_SubstituteVariableInitializer_Behavior.java" startLine="17" startPosition="103" endLine="18" endPosition="16" />
     <scopeInfo nodeId="1213877437423" fileName="QueryFunction_SubstituteVariableInitializer_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
@@ -676,11 +667,11 @@
     <scopeInfo nodeId="1213877437423" fileName="QueryFunction_SubstituteVariableInitializer_Behavior.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="1213877437423" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914717780" fileName="QueryFunction_SubstituteVariableInitializer_Behavior.java" startLine="26" startPosition="117" endLine="34" endPosition="18">
-      <varInfo nodeId="3044950653914717782" varName="result" />
+    <scopeInfo nodeId="2534942168332015693" fileName="QueryFunction_SubstituteVariableInitializer_Behavior.java" startLine="26" startPosition="81" endLine="34" endPosition="18">
+      <varInfo nodeId="2534942168332036362" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1213877437423" fileName="QueryFunction_SubstituteVariableInitializer_Behavior.java" startLine="26" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="1213877437423" varName="thisConcept" />
+      <varInfo nodeId="1213877437423" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="1213877437423" fileName="QueryFunction_SubstituteVariableInitializer_Behavior.java" startLine="13" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_SubstituteVariableInitializer_Behavior" />
   </root>
@@ -1041,18 +1032,18 @@
     <unitInfo nodeId="1262430001741523338" fileName="NF_Node_ReplaceWithNewOperation_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.NF_Node_ReplaceWithNewOperation_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1262430001741641695">
-    <nodeInfo nodeId="1262430001741641693" fileName="ConceptFunctionParameter_strictly_Behavior.java" startLine="12" startPosition="98" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741641695" fileName="ConceptFunctionParameter_strictly_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1262430001741641695" fileName="ConceptFunctionParameter_strictly_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_dontUseParameterObject_1262430001741498340#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
-    <scopeInfo nodeId="1262430001741641697" fileName="ConceptFunctionParameter_strictly_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1262430001741641692" fileName="ConceptFunctionParameter_strictly_Behavior.java" startLine="12" startPosition="98" endLine="13" endPosition="16" />
-    <scopeInfo nodeId="1262430001741641695" fileName="ConceptFunctionParameter_strictly_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+    <nodeInfo nodeId="2534942168334609680" fileName="ConceptFunctionParameter_strictly_Behavior.java" startLine="11" startPosition="85" endLine="12" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741641695" fileName="ConceptFunctionParameter_strictly_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1262430001741641695" fileName="ConceptFunctionParameter_strictly_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isParameterObjectUsed_1213877522926#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <scopeInfo nodeId="1262430001741641697" fileName="ConceptFunctionParameter_strictly_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="2534942168334608845" fileName="ConceptFunctionParameter_strictly_Behavior.java" startLine="11" startPosition="85" endLine="12" endPosition="17" />
+    <scopeInfo nodeId="1262430001741641695" fileName="ConceptFunctionParameter_strictly_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
       <varInfo nodeId="1262430001741641695" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741641695" fileName="ConceptFunctionParameter_strictly_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="1262430001741641695" varName="thisConcept" />
+    <scopeInfo nodeId="1262430001741641695" fileName="ConceptFunctionParameter_strictly_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
+      <varInfo nodeId="1262430001741641695" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1262430001741641695" fileName="ConceptFunctionParameter_strictly_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_strictly_Behavior" />
+    <unitInfo nodeId="1262430001741641695" fileName="ConceptFunctionParameter_strictly_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_strictly_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1262430001741642119">
     <nodeInfo nodeId="3213804652585498024" fileName="NodeSubstitutePreconditionFunction_Behavior.java" startLine="18" startPosition="103" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1147,34 +1138,54 @@
     <unitInfo nodeId="1262430001741642276" fileName="QueryFunction_ST_CommonInitializer_Behavior.java" startLine="12" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_ST_CommonInitializer_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1262430001741642996">
-    <nodeInfo nodeId="1262430001741642994" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="16" startPosition="95" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914717976" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="20" startPosition="117" endLine="21" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914717991" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="21" startPosition="261" endLine="22" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914717996" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="22" startPosition="167" endLine="23" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914718001" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="23" startPosition="167" endLine="24" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914718006" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="24" startPosition="167" endLine="25" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914718011" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="25" startPosition="174" endLine="26" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914718016" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="26" startPosition="174" endLine="27" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914718021" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="27" startPosition="167" endLine="28" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914718025" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="28" startPosition="174" endLine="29" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741642996" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1262430001741642996" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_usesParameterObject_1262430001741497984#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
-    <nodeInfo nodeId="1262430001741642996" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="20" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
-    <scopeInfo nodeId="1262430001741642998" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="1262430001741642993" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="16" startPosition="95" endLine="17" endPosition="16" />
-    <scopeInfo nodeId="1262430001741642996" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
+    <nodeInfo nodeId="2534942168337124253" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="18" startPosition="103" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2534942168337134014" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="22" startPosition="83" endLine="23" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2534942168337141836" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="26" startPosition="81" endLine="27" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2534942168337141868" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="27" startPosition="71" endLine="28" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168337141858" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="28" startPosition="161" endLine="29" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168337141848" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="29" startPosition="166" endLine="30" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168337141878" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="30" startPosition="171" endLine="31" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168337141873" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="31" startPosition="166" endLine="32" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168337141853" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="32" startPosition="177" endLine="33" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168337141863" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="33" startPosition="164" endLine="34" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168337141883" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="34" startPosition="166" endLine="35" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2534942168337134015" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="38" startPosition="60" endLine="39" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2534942168337134015" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="39" startPosition="63" endLine="40" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2534942168337134015" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="40" startPosition="30" endLine="41" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2534942168337134015" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="40" startPosition="30" endLine="41" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2534942168337134015" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="40" startPosition="30" endLine="41" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168337134015" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="41" startPosition="161" endLine="42" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741642996" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1262430001741642996" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_usesParameterObjectFor_1213877374432#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1262430001741642996" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2534942168337134015" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="38" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_o2mzn7_a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1262430001741642996" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="26" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getParameters_1213877374450#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+    <scopeInfo nodeId="1262430001741642998" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="2534942168337123778" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="18" startPosition="103" endLine="19" endPosition="16" />
+    <scopeInfo nodeId="2534942168337134013" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="22" startPosition="83" endLine="23" endPosition="47" />
+    <scopeInfo nodeId="2534942168337134015" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="40" startPosition="30" endLine="41" endPosition="161" />
+    <scopeInfo nodeId="1262430001741642996" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="1262430001741642996" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741642996" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
-      <varInfo nodeId="1262430001741642996" varName="thisConcept" />
+    <scopeInfo nodeId="1262430001741642996" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="2534942168337123775" varName="parameter" />
+      <varInfo nodeId="1262430001741642996" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914717975" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="20" startPosition="117" endLine="29" endPosition="18">
-      <varInfo nodeId="3044950653914717977" varName="result" />
+    <scopeInfo nodeId="1262430001741642996" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1262430001741642996" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741642996" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="20" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="1262430001741642996" varName="thisConcept" />
+    <scopeInfo nodeId="2534942168337134015" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="38" startPosition="60" endLine="42" endPosition="24">
+      <varInfo nodeId="2534942168337134015" varName="facade" />
+      <varInfo nodeId="2534942168337134015" varName="quotedNode_1" />
     </scopeInfo>
-    <unitInfo nodeId="1262430001741642996" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_SubstituteString_Behavior" />
+    <scopeInfo nodeId="2534942168337134015" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="38" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="2534942168337141835" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="26" startPosition="81" endLine="35" endPosition="18">
+      <varInfo nodeId="2534942168337141837" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741642996" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="26" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="1262430001741642996" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741642996" fileName="QueryFunction_SubstituteString_Behavior.java" startLine="14" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_SubstituteString_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1262430001741643050">
     <nodeInfo nodeId="1262430001741643048" fileName="QueryFunction_ST_RemoveBy_Condition_Behavior.java" startLine="16" startPosition="95" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1217,33 +1228,53 @@
     <unitInfo nodeId="1262430001741646955" fileName="NF_LinkList_AddNewChildOperation_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.NF_LinkList_AddNewChildOperation_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1262430001741647168">
-    <nodeInfo nodeId="1262430001741647166" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="16" startPosition="95" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914720150" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="20" startPosition="117" endLine="21" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914720165" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="21" startPosition="261" endLine="22" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914720170" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="22" startPosition="167" endLine="23" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914720175" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="23" startPosition="167" endLine="24" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914720180" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="24" startPosition="167" endLine="25" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914720185" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="25" startPosition="174" endLine="26" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914720190" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="26" startPosition="174" endLine="27" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914720194" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="27" startPosition="174" endLine="28" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741647168" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1262430001741647168" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_usesParameterObject_1262430001741497984#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
-    <nodeInfo nodeId="1262430001741647168" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="20" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
-    <scopeInfo nodeId="1262430001741647170" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="1262430001741647165" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="16" startPosition="95" endLine="17" endPosition="16" />
-    <scopeInfo nodeId="1262430001741647168" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
+    <nodeInfo nodeId="2534942168332743478" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="18" startPosition="103" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2534942168332761246" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="22" startPosition="81" endLine="23" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2534942168332761592" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="23" startPosition="71" endLine="24" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168332800063" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="24" startPosition="166" endLine="25" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168332800103" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="25" startPosition="171" endLine="26" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168332800148" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="26" startPosition="164" endLine="27" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168332800198" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="27" startPosition="177" endLine="28" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168332800253" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="28" startPosition="166" endLine="29" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168332761394" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="29" startPosition="166" endLine="30" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2534942168332470054" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="33" startPosition="83" endLine="34" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2534942168332470092" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="37" startPosition="60" endLine="38" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2534942168332470092" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="38" startPosition="63" endLine="39" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2534942168332470092" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="39" startPosition="30" endLine="40" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2534942168332470092" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="39" startPosition="30" endLine="40" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2534942168332470092" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="39" startPosition="30" endLine="40" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168332470092" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="40" startPosition="159" endLine="41" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741647168" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1262430001741647168" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_usesParameterObjectFor_1213877374432#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1262430001741647168" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2534942168332470092" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="37" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_9hekgg_a0a2#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1262430001741647168" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="22" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getParameters_1213877374450#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+    <scopeInfo nodeId="1262430001741647170" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="2534942168332742998" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="18" startPosition="103" endLine="19" endPosition="16" />
+    <scopeInfo nodeId="2534942168332469102" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="33" startPosition="83" endLine="34" endPosition="47" />
+    <scopeInfo nodeId="2534942168332470092" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="39" startPosition="30" endLine="40" endPosition="159" />
+    <scopeInfo nodeId="1262430001741647168" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="1262430001741647168" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741647168" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
-      <varInfo nodeId="1262430001741647168" varName="thisConcept" />
+    <scopeInfo nodeId="1262430001741647168" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="2534942168332742995" varName="parameter" />
+      <varInfo nodeId="1262430001741647168" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914720149" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="20" startPosition="117" endLine="28" endPosition="18">
-      <varInfo nodeId="3044950653914720151" varName="result" />
+    <scopeInfo nodeId="1262430001741647168" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="33" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="1262430001741647168" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741647168" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="20" startPosition="0" endLine="30" endPosition="0">
-      <varInfo nodeId="1262430001741647168" varName="thisConcept" />
+    <scopeInfo nodeId="2534942168332470092" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="37" startPosition="60" endLine="41" endPosition="24">
+      <varInfo nodeId="2534942168332470092" varName="facade" />
+      <varInfo nodeId="2534942168332470092" varName="quotedNode_1" />
     </scopeInfo>
-    <unitInfo nodeId="1262430001741647168" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_Substitute_CommonInitializer_Behavior" />
+    <scopeInfo nodeId="2534942168332470092" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="37" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="2534942168332754554" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="22" startPosition="81" endLine="30" endPosition="18">
+      <varInfo nodeId="2534942168332761247" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741647168" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="22" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="1262430001741647168" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741647168" fileName="QueryFunction_Substitute_CommonInitializer_Behavior.java" startLine="14" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_Substitute_CommonInitializer_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1262430001741647474">
     <nodeInfo nodeId="1262430001741647472" fileName="NodeSetupFunction_Behavior.java" startLine="16" startPosition="95" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1329,35 +1360,55 @@
     <unitInfo nodeId="1262430001741703427" fileName="NF_Link_SetNewChildOperation_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.NF_Link_SetNewChildOperation_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1262430001741703527">
-    <nodeInfo nodeId="1262430001741703525" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="16" startPosition="95" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914718564" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="20" startPosition="117" endLine="21" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914718579" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="21" startPosition="261" endLine="22" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914718584" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="22" startPosition="167" endLine="23" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914718589" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="23" startPosition="174" endLine="24" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914718594" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="24" startPosition="167" endLine="25" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914718599" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="25" startPosition="174" endLine="26" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914718604" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="26" startPosition="167" endLine="27" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914718609" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="27" startPosition="174" endLine="28" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914718614" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="28" startPosition="167" endLine="29" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914718618" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="29" startPosition="167" endLine="30" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741703527" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1262430001741703527" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_usesParameterObject_1262430001741497984#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
-    <nodeInfo nodeId="1262430001741703527" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="20" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
-    <scopeInfo nodeId="1262430001741703529" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="1262430001741703524" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="16" startPosition="95" endLine="17" endPosition="16" />
-    <scopeInfo nodeId="1262430001741703527" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
+    <nodeInfo nodeId="2534942168334185510" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="18" startPosition="103" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2534942168334202129" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="22" startPosition="81" endLine="23" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2534942168334202440" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="23" startPosition="71" endLine="24" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168334241813" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="24" startPosition="166" endLine="25" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168334241853" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="25" startPosition="166" endLine="26" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168334241898" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="26" startPosition="162" endLine="27" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168334241948" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="27" startPosition="166" endLine="28" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168334242003" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="28" startPosition="171" endLine="29" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168334242063" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="29" startPosition="177" endLine="30" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168334242128" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="30" startPosition="161" endLine="31" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168334202252" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="31" startPosition="164" endLine="32" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2534942168333862149" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="35" startPosition="83" endLine="36" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2534942168333862164" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="39" startPosition="60" endLine="40" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2534942168333862164" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="40" startPosition="63" endLine="41" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2534942168333862164" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="41" startPosition="30" endLine="42" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2534942168333862164" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="41" startPosition="30" endLine="42" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2534942168333862164" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="41" startPosition="30" endLine="42" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2534942168333862164" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="42" startPosition="162" endLine="43" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741703527" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1262430001741703527" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_usesParameterObjectFor_1213877374432#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1262430001741703527" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2534942168333862164" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="39" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_hqur2r_a0a2#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1262430001741703527" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="22" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getParameters_1213877374450#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+    <scopeInfo nodeId="1262430001741703529" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="2534942168334185000" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="18" startPosition="103" endLine="19" endPosition="16" />
+    <scopeInfo nodeId="2534942168333860963" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="35" startPosition="83" endLine="36" endPosition="47" />
+    <scopeInfo nodeId="2534942168333862164" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="41" startPosition="30" endLine="42" endPosition="162" />
+    <scopeInfo nodeId="1262430001741703527" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="1262430001741703527" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741703527" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
-      <varInfo nodeId="1262430001741703527" varName="thisConcept" />
+    <scopeInfo nodeId="1262430001741703527" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="2534942168334184997" varName="parameter" />
+      <varInfo nodeId="1262430001741703527" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914718563" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="20" startPosition="117" endLine="30" endPosition="18">
-      <varInfo nodeId="3044950653914718565" varName="result" />
+    <scopeInfo nodeId="1262430001741703527" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="35" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="1262430001741703527" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741703527" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="20" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="1262430001741703527" varName="thisConcept" />
+    <scopeInfo nodeId="2534942168333862164" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="39" startPosition="60" endLine="43" endPosition="24">
+      <varInfo nodeId="2534942168333862164" varName="facade" />
+      <varInfo nodeId="2534942168333862164" varName="quotedNode_1" />
     </scopeInfo>
-    <unitInfo nodeId="1262430001741703527" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_CanSubstitute_Behavior" />
+    <scopeInfo nodeId="2534942168333862164" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="39" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="2534942168334198584" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="22" startPosition="81" endLine="32" endPosition="18">
+      <varInfo nodeId="2534942168334202130" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741703527" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="22" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="1262430001741703527" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741703527" fileName="QueryFunction_CanSubstitute_Behavior.java" startLine="14" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_CanSubstitute_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1262430001741704857">
     <nodeInfo nodeId="1262430001741704855" fileName="SideTransformHintSubstitutePreconditionFunction_Behavior.java" startLine="16" startPosition="95" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

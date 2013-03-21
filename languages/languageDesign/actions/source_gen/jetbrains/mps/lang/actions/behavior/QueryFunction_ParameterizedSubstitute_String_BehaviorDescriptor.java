@@ -6,7 +6,7 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 
-public class QueryFunction_ParameterizedSubstitute_String_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor implements ISubstitute_String_BehaviorDescriptor {
+public class QueryFunction_ParameterizedSubstitute_String_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public QueryFunction_ParameterizedSubstitute_String_BehaviorDescriptor() {
   }
 

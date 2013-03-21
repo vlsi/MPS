@@ -27,6 +27,14 @@ public class typeof_ActionTestContainer_InferenceRule extends AbstractInferenceR
         typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:13c5fcf5-111d-4ae9-b9c9-6a7deeb8dce9(jetbrains.mps.lang.actions.testLanguage.typesystem)", "5750432610478685707", true), (SNode) _quotation_createNode_ca4xs0_a0a0a0b(), false, false, _info_12389875345);
       }
     }
+    for (SNode simpleSubstNode : ListSequence.fromList(SLinkOperations.getTargets(node, "addMenu_simpleItemSubstitute", true))) {
+      {
+        SNode _nodeToCheck_1029348928467 = simpleSubstNode;
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:13c5fcf5-111d-4ae9-b9c9-6a7deeb8dce9(jetbrains.mps.lang.actions.testLanguage.typesystem)", "5164819300891447935", 0, null);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:13c5fcf5-111d-4ae9-b9c9-6a7deeb8dce9(jetbrains.mps.lang.actions.testLanguage.typesystem)", "5164819300891447940", true), (SNode) _quotation_createNode_ca4xs0_a0a0b0b(), false, false, _info_12389875345);
+      }
+    }
+
   }
 
   public String getApplicableConceptFQName() {
@@ -49,6 +57,14 @@ public class typeof_ActionTestContainer_InferenceRule extends AbstractInferenceR
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("concept", SReference.create("concept", quotedNode_1, facade.createModelReference("r:4d38763d-a252-449a-a228-c5edf22068a3(jetbrains.mps.lang.actions.testLanguage.structure)"), facade.createNodeId("2550657305103411658")));
+    return quotedNode_1;
+  }
+
+  private static SNode _quotation_createNode_ca4xs0_a0a0b0b() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("concept", SReference.create("concept", quotedNode_1, facade.createModelReference("r:4d38763d-a252-449a-a228-c5edf22068a3(jetbrains.mps.lang.actions.testLanguage.structure)"), facade.createNodeId("2550657305103442169")));
     return quotedNode_1;
   }
 }
