@@ -159,6 +159,8 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
       assert file instanceof PsiJavaFile;
       PsiJavaFile javaFile = (PsiJavaFile) file;
 
+      SNode javaImports = getImports(javaFile.getImportList().getAllImportStatements());
+
       BiMap<SNodeId, PsiElement> mapping = HashBiMap.create();
       ASTConverter converter = new ASTConverter(mapping);
 
@@ -166,6 +168,9 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
 
       for (PsiClass cls : javaFile.getClasses()) {
         SNode node = converter.convertClass(cls);
+        if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier")) {
+          AttributeOperations.setAttribute(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports")), javaImports);
+        }
         SModelOperations.addRootNode(ourModel, node);
         SetSequence.fromSet(roots).addElement(node);
       }

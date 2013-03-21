@@ -178,7 +178,13 @@ public class MPSPsiNode extends MPSPsiNodeBase {
   public String getText() {
     return myConcept + ":" + myName + " as " + myContainingRole;
   }
-/*
+
+  @Override
+  public boolean isWritable() {
+    return true;
+  }
+
+  /*
   @Nullable
   @Override
   public Icon getIcon(int flags) {

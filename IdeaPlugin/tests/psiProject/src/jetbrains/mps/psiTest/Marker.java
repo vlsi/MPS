@@ -10,6 +10,5 @@ package jetbrains.mps.psiTest;
 public interface Marker {
 
     int x = 1;
-
-    interface InnerMarkerFfff {}
+    public interface InnerMarker {}
 }

@@ -107,7 +107,16 @@ public class MPSPsiRef extends MPSPsiNodeBase {
     return new PsiReference() {
       @Override
       public PsiElement getElement() {
-        return MPSPsiRef.this;
+        // sort of hack: return the top-most element, but not PsiFile
+
+        PsiElement e = MPSPsiRef.this;
+        PsiElement p = null;
+        do {
+          if (p != null) e = p;
+          p = e.getParent();
+        } while (!(p instanceof PsiFile) && p != null);
+
+        return e;
       }
 
       @Override
