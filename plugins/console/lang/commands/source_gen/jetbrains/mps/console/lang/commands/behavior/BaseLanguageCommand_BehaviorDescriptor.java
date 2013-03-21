@@ -5,13 +5,14 @@ package jetbrains.mps.console.lang.commands.behavior;
 import jetbrains.mps.baseLanguage.behavior.StatementList_BehaviorDescriptor;
 import jetbrains.mps.console.lang.behavior.ConsoleCommand_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.project.Project;
 
 public class BaseLanguageCommand_BehaviorDescriptor extends StatementList_BehaviorDescriptor implements ConsoleCommand_BehaviorDescriptor {
   public BaseLanguageCommand_BehaviorDescriptor() {
   }
 
-  public void virtual_execute_757553790980855637(SNode thisNode) {
-    BaseLanguageCommand_Behavior.virtual_execute_757553790980855637(thisNode);
+  public void virtual_execute_757553790980855637(SNode thisNode, Project p) {
+    BaseLanguageCommand_Behavior.virtual_execute_757553790980855637(thisNode, p);
   }
 
   @Override
