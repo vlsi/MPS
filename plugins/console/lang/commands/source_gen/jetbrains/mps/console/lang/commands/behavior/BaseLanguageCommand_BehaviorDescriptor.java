@@ -11,7 +11,7 @@ public class BaseLanguageCommand_BehaviorDescriptor extends StatementList_Behavi
   public BaseLanguageCommand_BehaviorDescriptor() {
   }
 
-  public void virtual_execute_757553790980855637(SNode thisNode, Project p) {
+  public void virtual_execute_757553790980855637(SNode thisNode, final Project p) {
     BaseLanguageCommand_Behavior.virtual_execute_757553790980855637(thisNode, p);
   }
 

@@ -8,10 +8,16 @@ import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.facet.ITarget;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.project.facets.JavaModuleOperations;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.project.facets.JavaModuleFacet;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.console.lang.behavior.Console_Behavior;
+import jetbrains.mps.project.facets.JavaModuleOperations;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IOption;
@@ -20,19 +26,15 @@ import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import java.util.Collections;
-import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.IMakeService;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.resources.CResource;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.compiler.IClassesData;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
@@ -43,70 +45,86 @@ public class BaseLanguageCommand_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static void virtual_execute_757553790980855637(final SNode thisNode, Project p) {
+  public static void virtual_execute_757553790980855637(final SNode thisNode, final Project p) {
     final IScript scr = new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.make.facets.JavaCompile"), new IFacet.Name("jetbrains.mps.make.facets.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.make.facets.JavaCompile.compileToMemory")).toScript();
 
-    final IClassPathItem classPath = JavaModuleOperations.createClassPathItem(SNodeOperations.getModel(thisNode).getModule().getFacet(JavaModuleFacet.class).getClassPath(), "console");
+    final Wrappers._T<IClassPathItem> classPath = new Wrappers._T<IClassPathItem>();
+    final Wrappers._T<SModel> model = new Wrappers._T<SModel>();
+    final Wrappers._T<ModuleContext> context = new Wrappers._T<ModuleContext>();
+    final Wrappers._T<String> className = new Wrappers._T<String>();
 
-    IScriptController ctl = new IScriptController.Stub(new IConfigMonitor.Stub() {
-      @Override
-      public <T extends IOption> T relayQuery(IQuery<T> query) {
-        return query.defaultOption();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        model.value = SNodeOperations.getModel(thisNode);
+        IModule module = model.value.getModule();
+        context.value = new ModuleContext(module, p);
+        className.value = Console_Behavior.call_getGeneratedName_5211727872447036782(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.console.lang.structure.Console"));
+        classPath.value = JavaModuleOperations.createClassPathItem(JavaModuleOperations.collectExecuteClasspath(module), module.getModuleName());
       }
-    }, new IJobMonitor.Stub()) {
-      @Override
-      public void setup(IPropertiesPool ppool) {
-        super.setup(ppool);
-        Tuples._1<Iterable<IClassPathItem>> params = (Tuples._1<Iterable<IClassPathItem>>) ppool.properties(new ITarget.Name("jetbrains.mps.make.facets.JavaCompile.compileToMemory"), Object.class);
-        if (params != null) {
-          params._0(Collections.<IClassPathItem>singletonList(classPath));
-        }
-      }
-    };
+    });
 
-    ModuleContext context = new ModuleContext(SNodeOperations.getModel(thisNode).getModule(), p);
-    MakeSession session = new MakeSession(context, null, true);
-    if (IMakeService.INSTANCE.get().openNewSession(session)) {
-      Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(context, Sequence.<SModel>singleton(SNodeOperations.getModel(thisNode))).resources(false), scr, ctl);
-      try {
-        IResult result = future.get();
-        if (result.isSucessful()) {
-          final CResource out = (CResource) Sequence.fromIterable(result.output()).first();
-          SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-              final IClassesData cd = out.classes();
-              if (cd == null) {
-                return;
-              }
+    ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+      public void run() {
+        IScriptController ctl = new IScriptController.Stub(new IConfigMonitor.Stub() {
+          @Override
+          public <T extends IOption> T relayQuery(IQuery<T> query) {
+            return query.defaultOption();
+          }
+        }, new IJobMonitor.Stub()) {
+          @Override
+          public void setup(IPropertiesPool ppool) {
+            super.setup(ppool);
+            Tuples._1<Iterable<IClassPathItem>> params = (Tuples._1<Iterable<IClassPathItem>>) ppool.properties(new ITarget.Name("jetbrains.mps.make.facets.JavaCompile.compileToMemory"), Object.class);
+            if (params != null) {
+              params._0(Collections.<IClassPathItem>singletonList(classPath.value));
+            }
+          }
+        };
 
-              final Wrappers._T<ClassLoader> loader = new Wrappers._T<ClassLoader>();
-              ModelAccess.instance().runReadAction(new Runnable() {
+
+        MakeSession session = new MakeSession(context.value, null, true);
+        if (IMakeService.INSTANCE.get().openNewSession(session)) {
+          Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(context.value, Sequence.<SModel>singleton(model.value)).resources(false), scr, ctl);
+          try {
+            IResult result = future.get();
+            if (result.isSucessful()) {
+              final CResource out = (CResource) Sequence.fromIterable(result.output()).first();
+              SwingUtilities.invokeLater(new Runnable() {
                 public void run() {
-                  SModel m = SNodeOperations.getModel(thisNode);
-                  loader.value = cd.getClassLoader(ClassLoaderManager.getInstance().getClassLoader(m.getModule()));
-                }
-              });
-              try {
-                Method[] methods = Class.forName(SNodeOperations.getModel(thisNode).getModelName() + ".Main", true, loader.value).getMethods();
-                for (Method method : methods) {
-                  if (method.getName().equals("main")) {
-                    method.invoke(new String[0]);
+                  final IClassesData cd = out.classes();
+                  if (cd == null) {
+                    return;
+                  }
+
+                  final Wrappers._T<ClassLoader> loader = new Wrappers._T<ClassLoader>();
+                  ModelAccess.instance().runReadAction(new Runnable() {
+                    public void run() {
+                      loader.value = cd.getClassLoader(ClassLoaderManager.getInstance().getClassLoader(model.value.getModule()));
+                    }
+                  });
+                  try {
+                    Method[] methods = Class.forName(className.value, true, loader.value).getMethods();
+                    for (Method method : methods) {
+                      if (method.getName().equals("main")) {
+                        method.invoke(new String[0]);
+                      }
+                    }
+                  } catch (ClassNotFoundException ignore) {
+                    LOG.warning("Exception on query loading", ignore);
+                  } catch (IllegalAccessException ignore) {
+                    LOG.warning("Exception on query loading", ignore);
+                  } catch (InvocationTargetException ignore) {
+                    LOG.warning("Exception on query loading", ignore);
                   }
                 }
-              } catch (ClassNotFoundException ignore) {
-                LOG.warning("Exception on query loading", ignore);
-              } catch (IllegalAccessException ignore) {
-                LOG.warning("Exception on query loading", ignore);
-              } catch (InvocationTargetException ignore) {
-                LOG.warning("Exception on query loading", ignore);
-              }
+              });
             }
-          });
+          } catch (InterruptedException ignore) {
+          } catch (ExecutionException ignore) {
+          }
         }
-      } catch (InterruptedException ignore) {
-      } catch (ExecutionException ignore) {
       }
-    }
+    });
   }
 
   private static Logger LOG = Logger.getLogger(BaseLanguageCommand_Behavior.class);
