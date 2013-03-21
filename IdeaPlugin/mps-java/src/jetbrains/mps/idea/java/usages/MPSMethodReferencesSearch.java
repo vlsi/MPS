@@ -6,7 +6,7 @@ import com.intellij.psi.search.searches.MethodReferencesSearch;
 import com.intellij.psi.search.searches.MethodReferencesSearch.SearchParameters;
 import com.intellij.psi.search.searches.ReferencesSearch;
 import com.intellij.util.Processor;
-import jetbrains.mps.idea.java.psi.impl.MPSReferenceSearch;
+import jetbrains.mps.idea.core.usages.MPSReferenceSearch;
 import org.jetbrains.annotations.NotNull;
 
 /**

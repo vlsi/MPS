@@ -15,9 +15,14 @@
  */
 package jetbrains.mps.workbench.nodesFs;
 
+import com.intellij.openapi.fileTypes.FileType;
+import com.intellij.openapi.fileTypes.LanguageFileType;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.util.LocalTimeCounter;
+import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.fileTypes.MPSFileType;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -127,6 +132,18 @@ public class MPSNodeVirtualFile extends VirtualFile {
   @Override
   @Nullable
   public VirtualFile getParent() {
+    // Returning the parent of this node's model virtial file
+    // i.e. a real directory wherein the model file lives
+    // Needed for idea scope to work (see PsiSearchScopeUtil.isInScope)
+    if (myNode == null || myNode.getModelReference() == null) return null;
+    SModelReference modelRef = myNode.getModelReference();
+    if (modelRef.resolve(MPSModuleRepository.getInstance()) == null) {
+      return null;
+    }
+    MPSModelVirtualFile modelVFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(modelRef);
+    if (modelVFile !=null) {
+      return modelVFile.getParent();
+    }
     return null;
   }
 
