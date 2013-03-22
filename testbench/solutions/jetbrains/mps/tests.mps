@@ -2075,11 +2075,23 @@
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2747974755163993205">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="t7u.5164819300892646889" resolveInfo="AddMenuPart_WrapperSubstitute" />
     </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="8349639607718107092">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="t7u.8349639607716109534" resolveInfo="AddMenuPart_WrapperSubstitute_returnSmallPart" />
+    </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7917427600705347819">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="t7u.6866660893594595018" resolveInfo="ConceptSubstitutePart" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7917427600705347832">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="t7u.2550657305103524282" resolveInfo="DontSubstiuteByDefault" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="8349639607733909607">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="t7u.8349639607730863318" resolveInfo="RemoveByConditionPart" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="8349639607733909636">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="t7u.8349639607733719183" resolveInfo="RemoveDefaultsPart" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="8349639607733909667">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="t7u.8349639607733366556" resolveInfo="RemovePart" />
     </node>
   </root>
 </model>

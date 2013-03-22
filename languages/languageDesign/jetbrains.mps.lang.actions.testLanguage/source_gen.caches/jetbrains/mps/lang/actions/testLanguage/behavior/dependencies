@@ -68,6 +68,28 @@
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestDefaultAbstractChild_BehaviorDescriptor" file="ActionTestDefaultAbstractChild_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestDefaultChild1_BehaviorDescriptor" file="ActionTestDefaultChild1_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestDefaultAbstractChild_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestDefaultChild2_BehaviorDescriptor" file="ActionTestDefaultChild2_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestDefaultAbstractChild_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.actions.testLanguage.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -78,6 +100,8 @@
     <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestChildToWrap2_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestChildWrapper_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestContainer_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestDefaultChild1_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.testLanguage.behavior.ActionTestDefaultChild2_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />

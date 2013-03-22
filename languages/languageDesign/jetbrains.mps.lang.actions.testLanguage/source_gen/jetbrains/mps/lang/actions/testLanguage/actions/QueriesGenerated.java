@@ -28,6 +28,9 @@ import jetbrains.mps.smodel.action.IChildNodeSetter;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.ModelActions;
+import jetbrains.mps.smodel.action.RemoveSubstituteActionByConditionContext;
+import java.util.Iterator;
+import jetbrains.mps.util.Condition;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -425,13 +428,32 @@ public class QueriesGenerated {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap1");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
           private SNode wrapNode(SNode nodeToWrap, SModel model, @Nullable EditorContext editorContext) {
+            // compilation test for all passed parameters 
+            boolean tmpVar = nodeToWrap != null;
+            tmpVar = tmpVar && _context.getChildConcept() != null;
+            tmpVar = tmpVar && model != null;
+            tmpVar = tmpVar && operationContext != null;
+            tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
+            tmpVar = tmpVar && operationContext.getScope() != null;
+            tmpVar = tmpVar && _context.getParentNode() != null;
+            tmpVar = tmpVar && editorContext != null;
+
             SNode wrapperNode = SConceptOperations.createNewNode("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildWrapper", null);
             SLinkOperations.setTarget(wrapperNode, "childToWrap", nodeToWrap, true);
             return wrapperNode;
           }
 
           public boolean returnSmallPart(SNode nodeToWrap) {
-            return false;
+            // compilation test for all passed parameters 
+            boolean tmpVar = _context.getParentNode() != null;
+            tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
+            tmpVar = tmpVar && _context.getModel() != null;
+            tmpVar = tmpVar && operationContext.getScope() != null;
+            tmpVar = tmpVar && _context.getChildConcept() != null;
+            tmpVar = tmpVar && operationContext != null;
+            tmpVar = tmpVar && nodeToWrap != null;
+
+            return SNodeOperations.isInstanceOf(nodeToWrap, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap2");
           }
 
           @Override
@@ -448,6 +470,59 @@ public class QueriesGenerated {
       }
     }
     return result;
+  }
+
+  public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ActionTestDefaultAbstractChild_8349639607718546820(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    return result;
+  }
+
+  public static boolean nodeSubstituteActionsBuilder_Precondition_ActionTestDefaultAbstractChild_8349639607731233278(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
+    return _context.getLink() == SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestContainer", "removeByConditionPart");
+  }
+
+  public static void removeActionsByCondition_8349639607718546826(final IOperationContext operationContext, final RemoveSubstituteActionByConditionContext _context) {
+    Iterator<SubstituteAction> actions = _context.getSubstituteActions();
+    while (actions.hasNext()) {
+      SubstituteAction current = actions.next();
+      SNode outputConcept = (SNode) current.getOutputConcept();
+      SNode applicableConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestDefaultAbstractChild");
+      Condition<SNode> cond = new Condition<SNode>() {
+        public boolean met(SNode concept) {
+          // compilation test for all passed parameters 
+          boolean tmpVar = _context.getChildConcept() != null;
+          tmpVar = tmpVar && operationContext.getScope() != null;
+          tmpVar = tmpVar && operationContext != null;
+          tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
+          tmpVar = tmpVar && _context.getModel() != null;
+          tmpVar = tmpVar && concept != null;
+          tmpVar = tmpVar && _context.getParentNode() != null;
+
+          return concept == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestDefaultChild1");
+        }
+      };
+      if (SConceptOperations.isSuperConceptOf(applicableConcept, NameUtil.nodeFQName(outputConcept)) && cond.met(outputConcept)) {
+        actions.remove();
+      }
+    }
+  }
+
+  public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ActionTestDefaultAbstractChild_8349639607733006841(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    return result;
+  }
+
+  public static boolean nodeSubstituteActionsBuilder_Precondition_ActionTestDefaultAbstractChild_8349639607733067495(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
+    return _context.getLink() == SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestContainer", "removePart");
+  }
+
+  public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ActionTestDefaultAbstractChild_8349639607733412514(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    return result;
+  }
+
+  public static boolean nodeSubstituteActionsBuilder_Precondition_ActionTestDefaultAbstractChild_8349639607733417630(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
+    return _context.getLink() == SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestContainer", "removeDefaultsPart");
   }
 
   private static SNode _quotation_createNode_qp9nsj_a0l0a0a0(Object parameter_1) {

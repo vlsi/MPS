@@ -26,10 +26,14 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new ActionTestChildToWrap1_BehaviorDescriptor();
       case 4:
         return new ActionTestChildToWrap2_BehaviorDescriptor();
+      case 7:
+        return new ActionTestDefaultChild1_BehaviorDescriptor();
+      case 8:
+        return new ActionTestDefaultChild2_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1SubConcept", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild2", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap1", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap2", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildWrapper", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestContainer"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1SubConcept", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild2", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap1", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap2", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildWrapper", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestContainer", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestDefaultChild1", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestDefaultChild2"};
 }

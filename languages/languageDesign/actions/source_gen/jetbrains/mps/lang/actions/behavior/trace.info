@@ -72,8 +72,8 @@
   <unitInfo fileName="QueryFunction_ParameterizedSubstitute_Query_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_ParameterizedSubstitute_Query_BehaviorDescriptor" />
   <unitInfo fileName="QueryFunction_ParameterizedSubstitute_String_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_ParameterizedSubstitute_String_BehaviorDescriptor" />
   <unitInfo fileName="QueryFunction_PasteWrapper_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_PasteWrapper_BehaviorDescriptor" />
-  <unitInfo fileName="QueryFunction_RemoveBy_Condition_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_RemoveBy_Condition_BehaviorDescriptor" />
-  <unitInfo fileName="QueryFunction_ReturnSmallPart_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_ReturnSmallPart_BehaviorDescriptor" />
+  <unitInfo fileName="QueryFunction_RemoveBy_Condition_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_RemoveBy_Condition_BehaviorDescriptor" />
+  <unitInfo fileName="QueryFunction_ReturnSmallPart_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_ReturnSmallPart_BehaviorDescriptor" />
   <unitInfo fileName="QueryFunction_STVariableInitializer_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_STVariableInitializer_BehaviorDescriptor" />
   <unitInfo fileName="QueryFunction_ST_CommonInitializer_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_ST_CommonInitializer_BehaviorDescriptor" />
   <unitInfo fileName="QueryFunction_ST_RemoveBy_Condition_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_ST_RemoveBy_Condition_BehaviorDescriptor" />
@@ -426,35 +426,54 @@
     <unitInfo nodeId="1213877380314" fileName="QueryFunction_SideTransform_Icon_Behavior.java" startLine="16" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_SideTransform_Icon_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1213877395198">
-    <nodeInfo nodeId="1213877395201" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="16" startPosition="103" endLine="17" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914719800" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="20" startPosition="117" endLine="21" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914719815" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="21" startPosition="261" endLine="22" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914719820" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="22" startPosition="167" endLine="23" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914719825" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="23" startPosition="174" endLine="24" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914719830" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="24" startPosition="174" endLine="25" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914719835" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="25" startPosition="167" endLine="26" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914719840" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="26" startPosition="174" endLine="27" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914719845" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="27" startPosition="167" endLine="28" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914719849" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="28" startPosition="167" endLine="29" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877395198" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1213877395198" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_usesParameterObjectFor_1213877374432#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="1213877395198" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="20" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
-    <scopeInfo nodeId="1213877395211" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="1213877395200" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="16" startPosition="103" endLine="17" endPosition="127" />
-    <scopeInfo nodeId="1213877395198" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
+    <nodeInfo nodeId="1213877395201" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="19" startPosition="103" endLine="20" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8349639607731650281" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="23" startPosition="81" endLine="24" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8349639607731651207" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="24" startPosition="71" endLine="25" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8349639607731693750" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="25" startPosition="166" endLine="26" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8349639607731693789" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="26" startPosition="166" endLine="27" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8349639607731693833" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="27" startPosition="177" endLine="28" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8349639607731693882" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="28" startPosition="171" endLine="29" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8349639607731693936" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="29" startPosition="166" endLine="30" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8349639607731693995" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="30" startPosition="161" endLine="31" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8349639607731650429" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="31" startPosition="164" endLine="32" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8349639607731624510" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="35" startPosition="83" endLine="36" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8349639607731624525" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="39" startPosition="60" endLine="40" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8349639607731624525" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="40" startPosition="63" endLine="41" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8349639607731624525" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="41" startPosition="30" endLine="42" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8349639607731624525" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="41" startPosition="30" endLine="42" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8349639607731624525" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="41" startPosition="30" endLine="42" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8349639607731624525" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="42" startPosition="162" endLine="43" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877395198" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1213877395198" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_usesParameterObjectFor_1213877374432#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1213877395198" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="8349639607731624525" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="39" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_ubklel_a0a2#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1213877395198" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="23" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getParameters_1213877374450#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+    <scopeInfo nodeId="1213877395211" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
+    <scopeInfo nodeId="1213877395200" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="19" startPosition="103" endLine="20" endPosition="127" />
+    <scopeInfo nodeId="8349639607731623297" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="35" startPosition="83" endLine="36" endPosition="47" />
+    <scopeInfo nodeId="8349639607731624525" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="41" startPosition="30" endLine="42" endPosition="162" />
+    <scopeInfo nodeId="1213877395198" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="16" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="1213877395198" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877395198" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
+    <scopeInfo nodeId="1213877395198" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="1213877395207" varName="parameter" />
       <varInfo nodeId="1213877395198" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914719799" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="20" startPosition="117" endLine="29" endPosition="18">
-      <varInfo nodeId="3044950653914719801" varName="result" />
+    <scopeInfo nodeId="1213877395198" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="35" startPosition="0" endLine="38" endPosition="0">
+      <varInfo nodeId="1213877395198" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877395198" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="20" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="1213877395198" varName="thisConcept" />
+    <scopeInfo nodeId="8349639607731624525" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="39" startPosition="60" endLine="43" endPosition="24">
+      <varInfo nodeId="8349639607731624525" varName="facade" />
+      <varInfo nodeId="8349639607731624525" varName="quotedNode_1" />
     </scopeInfo>
-    <unitInfo nodeId="1213877395198" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_RemoveBy_Condition_Behavior" />
+    <scopeInfo nodeId="8349639607731624525" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="39" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="8349639607731638750" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="23" startPosition="81" endLine="32" endPosition="18">
+      <varInfo nodeId="8349639607731650282" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213877395198" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="23" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="1213877395198" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="1213877395198" fileName="QueryFunction_RemoveBy_Condition_Behavior.java" startLine="15" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_RemoveBy_Condition_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/1213877415648">
     <nodeInfo nodeId="1213877415651" fileName="QueryFunction_ParameterizedSubstitute_Query_Behavior.java" startLine="22" startPosition="83" endLine="23" endPosition="229" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1686,10 +1705,20 @@
     <nodeInfo nodeId="3044950653914718485" fileName="QueryFunction_ReturnSmallPart_Behavior.java" startLine="22" startPosition="167" endLine="23" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3044950653914718490" fileName="QueryFunction_ReturnSmallPart_Behavior.java" startLine="23" startPosition="174" endLine="24" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3044950653914718494" fileName="QueryFunction_ReturnSmallPart_Behavior.java" startLine="24" startPosition="167" endLine="25" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8349639607716352895" fileName="QueryFunction_ReturnSmallPart_Behavior.java" startLine="29" startPosition="126" endLine="30" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8349639607716327175" fileName="QueryFunction_ReturnSmallPart_Behavior.java" startLine="31" startPosition="5" endLine="32" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3044950653914718496" fileName="QueryFunction_ReturnSmallPart_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="8349639607716352889" fileName="QueryFunction_ReturnSmallPart_Behavior.java" startLine="28" startPosition="103" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3044950653914718496" fileName="QueryFunction_ReturnSmallPart_Behavior.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_usesParameterObjectFor_1213877374432#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="3044950653914718496" fileName="QueryFunction_ReturnSmallPart_Behavior.java" startLine="16" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
     <scopeInfo nodeId="3044950653914718498" fileName="QueryFunction_ReturnSmallPart_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
+    <scopeInfo nodeId="8349639607716352894" fileName="QueryFunction_ReturnSmallPart_Behavior.java" startLine="29" startPosition="126" endLine="30" endPosition="19" />
     <scopeInfo nodeId="3044950653914718496" fileName="QueryFunction_ReturnSmallPart_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="3044950653914718496" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8349639607716321445" fileName="QueryFunction_ReturnSmallPart_Behavior.java" startLine="28" startPosition="103" endLine="32" endPosition="16" />
+    <scopeInfo nodeId="3044950653914718496" fileName="QueryFunction_ReturnSmallPart_Behavior.java" startLine="28" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="8349639607716321442" varName="parameter" />
       <varInfo nodeId="3044950653914718496" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="3044950653914718444" fileName="QueryFunction_ReturnSmallPart_Behavior.java" startLine="16" startPosition="117" endLine="25" endPosition="18">
@@ -1698,7 +1727,7 @@
     <scopeInfo nodeId="3044950653914718496" fileName="QueryFunction_ReturnSmallPart_Behavior.java" startLine="16" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="3044950653914718496" varName="thisConcept" />
     </scopeInfo>
-    <unitInfo nodeId="3044950653914718496" fileName="QueryFunction_ReturnSmallPart_Behavior.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_ReturnSmallPart_Behavior" />
+    <unitInfo nodeId="3044950653914718496" fileName="QueryFunction_ReturnSmallPart_Behavior.java" startLine="12" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.actions.behavior.QueryFunction_ReturnSmallPart_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a3(jetbrains.mps.lang.actions.behavior)/3044950653914719003">
     <nodeInfo nodeId="2028694650681103162" fileName="ExecuteSmartActionFunction_Behavior.java" startLine="18" startPosition="81" endLine="19" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

@@ -24,4 +24,11 @@ public class QueryFunction_ReturnSmallPart_Behavior {
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "1177402641904"));
     return result;
   }
+
+  public static boolean virtual_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
+    if (SNodeOperations.isInstanceOf(parameter, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToWrap")) {
+      return false;
+    }
+    return true;
+  }
 }

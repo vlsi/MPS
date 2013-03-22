@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-rn4sq37hev7g3ellfy5gyarceum4ry">
+<dependencies version="2" modelHash="-80k4lgxox2ptiamhgmp6e1qe98ygdry">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-b2l5iyygy2vjqkbekn4rvaubf6n8cmr" />
@@ -233,10 +233,10 @@
   <source id="1177413882405" name="RemoveByConditionPart" hash="2zc8kj04ufdbbswmmmd3637c0xpd4vm">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177413954598" name="QueryFunction_RemoveBy_Condition" hash="6c8fv9ksfpz0qq9a1rx40ypkrx5g6ow">
+  <source id="1177413954598" name="QueryFunction_RemoveBy_Condition" hash="109dehu1xbrsibrt2z9bbygvnu3ll8w">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177414026667" name="ConceptFunctionParameter_concept" hash="3k9d2jsyxebnoqiyy6oqu7gwkxwlwf8">
+  <source id="1177414026667" name="ConceptFunctionParameter_concept" hash="416a0hzapja57dgan5o6uq99rcbsroi">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1177495774157" name="MenuPart" hash="6w284l7qkpc7pn2836f4ia91cbkjaig">
@@ -353,7 +353,7 @@
   <source id="1203349485621" name="QueryFunction_ST_CommonInitializer" hash="-bygtrqx0r1aza76u4jr6fjj73fqm74r">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1206027602242" name="QueryFunction_ReturnSmallPart" hash="-d2d40w68zls4suqd8u4uw9vgt82x8rk">
+  <source id="1206027602242" name="QueryFunction_ReturnSmallPart" hash="6j9snbtrh24xdlinnx1tsqtd1ytnrdu">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1208867830282" name="ConceptFunctionParameter_strictly" hash="eisu2narfkdegdd42xv90noejvh3882">

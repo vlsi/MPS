@@ -231,5 +231,106 @@
     <unitInfo nodeId="6866660893594595018" fileName="ConceptSubstitutePart_Test.java" startLine="25" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.actions.test.substitute.ConceptSubstitutePart_Test$TestBody" />
     <unitInfo nodeId="6866660893594595018" fileName="ConceptSubstitutePart_Test.java" startLine="14" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.actions.test.substitute.ConceptSubstitutePart_Test" />
   </root>
+  <root nodeRef="r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute)/8349639607716109534">
+    <nodeInfo nodeId="8349639607716109534" fileName="AddMenuPart_WrapperSubstitute_returnSmallPart_Test.java" startLine="18" startPosition="85" endLine="19" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8349639607716109534" fileName="AddMenuPart_WrapperSubstitute_returnSmallPart_Test.java" startLine="19" startPosition="127" endLine="20" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8349639607716109534" fileName="AddMenuPart_WrapperSubstitute_returnSmallPart_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8349639607716109534" fileName="AddMenuPart_WrapperSubstitute_returnSmallPart_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8349639607716109543" fileName="AddMenuPart_WrapperSubstitute_returnSmallPart_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8349639607716109534" fileName="AddMenuPart_WrapperSubstitute_returnSmallPart_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddMenuPart_WrapperSubstitute_returnSmallPart_Test#()V" />
+    <nodeInfo nodeId="8349639607716109534" fileName="AddMenuPart_WrapperSubstitute_returnSmallPart_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="8349639607716109534" fileName="AddMenuPart_WrapperSubstitute_returnSmallPart_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddMenuPart_WrapperSubstitute_returnSmallPart#()V" />
+    <nodeInfo nodeId="8349639607716109534" fileName="AddMenuPart_WrapperSubstitute_returnSmallPart_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="8349639607716109534" fileName="AddMenuPart_WrapperSubstitute_returnSmallPart_Test.java" startLine="14" startPosition="63" endLine="14" endPosition="63" />
+    <scopeInfo nodeId="8349639607716109534" fileName="AddMenuPart_WrapperSubstitute_returnSmallPart_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="8349639607716109534" fileName="AddMenuPart_WrapperSubstitute_returnSmallPart_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="8349639607716109534" fileName="AddMenuPart_WrapperSubstitute_returnSmallPart_Test.java" startLine="18" startPosition="85" endLine="20" endPosition="144" />
+    <scopeInfo nodeId="8349639607716109534" fileName="AddMenuPart_WrapperSubstitute_returnSmallPart_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="8349639607716109534" fileName="AddMenuPart_WrapperSubstitute_returnSmallPart_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="70">
+      <varInfo nodeId="8349639607716109534" varName="editor" />
+      <varInfo nodeId="8349639607716109534" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="8349639607716109534" fileName="AddMenuPart_WrapperSubstitute_returnSmallPart_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="8349639607716109534" fileName="AddMenuPart_WrapperSubstitute_returnSmallPart_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="8349639607716109534" fileName="AddMenuPart_WrapperSubstitute_returnSmallPart_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.actions.test.substitute.AddMenuPart_WrapperSubstitute_returnSmallPart_Test$TestBody" />
+    <unitInfo nodeId="8349639607716109534" fileName="AddMenuPart_WrapperSubstitute_returnSmallPart_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.actions.test.substitute.AddMenuPart_WrapperSubstitute_returnSmallPart_Test" />
+  </root>
+  <root nodeRef="r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute)/8349639607730863318">
+    <nodeInfo nodeId="8349639607730863318" fileName="RemoveByConditionPart_Test.java" startLine="20" startPosition="61" endLine="21" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8349639607730863318" fileName="RemoveByConditionPart_Test.java" startLine="21" startPosition="127" endLine="22" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8349639607730863318" fileName="RemoveByConditionPart_Test.java" startLine="31" startPosition="51" endLine="32" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8349639607730863318" fileName="RemoveByConditionPart_Test.java" startLine="32" startPosition="99" endLine="33" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8349639607731509561" fileName="RemoveByConditionPart_Test.java" startLine="33" startPosition="93" endLine="34" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8349639607731509568" fileName="RemoveByConditionPart_Test.java" startLine="34" startPosition="61" endLine="35" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8349639607730863318" fileName="RemoveByConditionPart_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RemoveByConditionPart_Test#()V" />
+    <nodeInfo nodeId="8349639607730863318" fileName="RemoveByConditionPart_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="8349639607730863318" fileName="RemoveByConditionPart_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_RemoveByConditionPart#()V" />
+    <nodeInfo nodeId="8349639607730863318" fileName="RemoveByConditionPart_Test.java" startLine="30" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="8349639607730863318" fileName="RemoveByConditionPart_Test.java" startLine="16" startPosition="39" endLine="16" endPosition="39" />
+    <scopeInfo nodeId="8349639607730863318" fileName="RemoveByConditionPart_Test.java" startLine="27" startPosition="23" endLine="27" endPosition="23" />
+    <scopeInfo nodeId="8349639607730863318" fileName="RemoveByConditionPart_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="8349639607730863318" fileName="RemoveByConditionPart_Test.java" startLine="20" startPosition="61" endLine="22" endPosition="120" />
+    <scopeInfo nodeId="8349639607730863318" fileName="RemoveByConditionPart_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="8349639607730863318" fileName="RemoveByConditionPart_Test.java" startLine="31" startPosition="51" endLine="35" endPosition="122">
+      <varInfo nodeId="8349639607730863318" varName="editor" />
+      <varInfo nodeId="8349639607730863318" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="8349639607730863318" fileName="RemoveByConditionPart_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="8349639607730863318" fileName="RemoveByConditionPart_Test.java" startLine="30" startPosition="0" endLine="37" endPosition="0" />
+    <unitInfo nodeId="8349639607730863318" fileName="RemoveByConditionPart_Test.java" startLine="25" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.actions.test.substitute.RemoveByConditionPart_Test$TestBody" />
+    <unitInfo nodeId="8349639607730863318" fileName="RemoveByConditionPart_Test.java" startLine="14" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.actions.test.substitute.RemoveByConditionPart_Test" />
+  </root>
+  <root nodeRef="r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute)/8349639607733366556">
+    <nodeInfo nodeId="8349639607733366556" fileName="RemovePart_Test.java" startLine="20" startPosition="50" endLine="21" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8349639607733366556" fileName="RemovePart_Test.java" startLine="21" startPosition="127" endLine="22" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8349639607733366556" fileName="RemovePart_Test.java" startLine="31" startPosition="51" endLine="32" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8349639607733366556" fileName="RemovePart_Test.java" startLine="32" startPosition="99" endLine="33" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8349639607733366972" fileName="RemovePart_Test.java" startLine="33" startPosition="93" endLine="34" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8349639607733366979" fileName="RemovePart_Test.java" startLine="34" startPosition="61" endLine="35" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8349639607733366556" fileName="RemovePart_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RemovePart_Test#()V" />
+    <nodeInfo nodeId="8349639607733366556" fileName="RemovePart_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="8349639607733366556" fileName="RemovePart_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_RemovePart#()V" />
+    <nodeInfo nodeId="8349639607733366556" fileName="RemovePart_Test.java" startLine="30" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="8349639607733366556" fileName="RemovePart_Test.java" startLine="16" startPosition="28" endLine="16" endPosition="28" />
+    <scopeInfo nodeId="8349639607733366556" fileName="RemovePart_Test.java" startLine="27" startPosition="23" endLine="27" endPosition="23" />
+    <scopeInfo nodeId="8349639607733366556" fileName="RemovePart_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="8349639607733366556" fileName="RemovePart_Test.java" startLine="20" startPosition="50" endLine="22" endPosition="109" />
+    <scopeInfo nodeId="8349639607733366556" fileName="RemovePart_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="8349639607733366556" fileName="RemovePart_Test.java" startLine="31" startPosition="51" endLine="35" endPosition="122">
+      <varInfo nodeId="8349639607733366556" varName="editor" />
+      <varInfo nodeId="8349639607733366556" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="8349639607733366556" fileName="RemovePart_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="8349639607733366556" fileName="RemovePart_Test.java" startLine="30" startPosition="0" endLine="37" endPosition="0" />
+    <unitInfo nodeId="8349639607733366556" fileName="RemovePart_Test.java" startLine="25" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.actions.test.substitute.RemovePart_Test$TestBody" />
+    <unitInfo nodeId="8349639607733366556" fileName="RemovePart_Test.java" startLine="14" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.actions.test.substitute.RemovePart_Test" />
+  </root>
+  <root nodeRef="r:0d47ccef-2a97-4a7c-8ede-5adeaac0a5a7(jetbrains.mps.lang.actions.test.substitute)/8349639607733719183">
+    <nodeInfo nodeId="8349639607733719183" fileName="RemoveDefaultsPart_Test.java" startLine="21" startPosition="58" endLine="22" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8349639607733719183" fileName="RemoveDefaultsPart_Test.java" startLine="22" startPosition="127" endLine="23" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8349639607733719183" fileName="RemoveDefaultsPart_Test.java" startLine="32" startPosition="51" endLine="33" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8349639607733719183" fileName="RemoveDefaultsPart_Test.java" startLine="33" startPosition="99" endLine="34" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8349639607733720783" fileName="RemoveDefaultsPart_Test.java" startLine="34" startPosition="93" endLine="35" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8349639607733720785" fileName="RemoveDefaultsPart_Test.java" startLine="35" startPosition="122" endLine="36" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8349639607733720791" fileName="RemoveDefaultsPart_Test.java" startLine="36" startPosition="80" endLine="37" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8349639607733720797" fileName="RemoveDefaultsPart_Test.java" startLine="37" startPosition="82" endLine="38" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8349639607733719183" fileName="RemoveDefaultsPart_Test.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RemoveDefaultsPart_Test#()V" />
+    <nodeInfo nodeId="8349639607733719183" fileName="RemoveDefaultsPart_Test.java" startLine="28" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="8349639607733719183" fileName="RemoveDefaultsPart_Test.java" startLine="20" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_RemoveDefaultsPart#()V" />
+    <nodeInfo nodeId="8349639607733719183" fileName="RemoveDefaultsPart_Test.java" startLine="31" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="8349639607733719183" fileName="RemoveDefaultsPart_Test.java" startLine="17" startPosition="36" endLine="17" endPosition="36" />
+    <scopeInfo nodeId="8349639607733719183" fileName="RemoveDefaultsPart_Test.java" startLine="28" startPosition="23" endLine="28" endPosition="23" />
+    <scopeInfo nodeId="8349639607733719183" fileName="RemoveDefaultsPart_Test.java" startLine="17" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="8349639607733719183" fileName="RemoveDefaultsPart_Test.java" startLine="21" startPosition="58" endLine="23" endPosition="117" />
+    <scopeInfo nodeId="8349639607733719183" fileName="RemoveDefaultsPart_Test.java" startLine="28" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="8349639607733719183" fileName="RemoveDefaultsPart_Test.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="8349639607733719183" fileName="RemoveDefaultsPart_Test.java" startLine="32" startPosition="51" endLine="38" endPosition="67">
+      <varInfo nodeId="8349639607733719183" varName="editor" />
+      <varInfo nodeId="8349639607733719183" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="8349639607733719183" fileName="RemoveDefaultsPart_Test.java" startLine="31" startPosition="0" endLine="40" endPosition="0" />
+    <unitInfo nodeId="8349639607733719183" fileName="RemoveDefaultsPart_Test.java" startLine="26" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.actions.test.substitute.RemoveDefaultsPart_Test$TestBody" />
+    <unitInfo nodeId="8349639607733719183" fileName="RemoveDefaultsPart_Test.java" startLine="15" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.actions.test.substitute.RemoveDefaultsPart_Test" />
+  </root>
 </debugInfo>
 

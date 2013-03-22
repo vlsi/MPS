@@ -6,6 +6,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -30,7 +31,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.ModelActions" />
     <classNode dependClassName="jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext" />
     <classNode dependClassName="jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.action.RemoveSubstituteActionByConditionContext" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
+    <classNode dependClassName="jetbrains.mps.util.Condition" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />

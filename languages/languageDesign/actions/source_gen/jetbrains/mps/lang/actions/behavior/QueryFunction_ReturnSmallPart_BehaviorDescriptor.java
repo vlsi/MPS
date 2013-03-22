@@ -15,6 +15,10 @@ public class QueryFunction_ReturnSmallPart_BehaviorDescriptor extends ConceptFun
     return QueryFunction_ReturnSmallPart_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
   }
 
+  public boolean virtual_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
+    return QueryFunction_ReturnSmallPart_Behavior.virtual_usesParameterObjectFor_1213877374432(thisNode, parameter);
+  }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.QueryFunction_ReturnSmallPart";
