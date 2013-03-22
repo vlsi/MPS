@@ -20,7 +20,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Stack;
 
-public class DfsTraverser implements Iterable<EditorCell>{
+public class DfsTraverser implements Iterator<EditorCell>{
   private EditorCell myCurrent;
   private boolean myVisitChildrenOnly;
   private EditorCell myCurrentDfsRoot;
@@ -33,11 +33,11 @@ public class DfsTraverser implements Iterable<EditorCell>{
     myForward = forward;
     myCellIteratorStack = new Stack<Iterator<EditorCell>>();
     pushIteratorByCell(start);
-    next();
+    cacheNext();
   }
 
 
-  private void next() {
+  private void cacheNext() {
 
     removeFinishedIteratorsFromStack();
 
@@ -74,7 +74,7 @@ public class DfsTraverser implements Iterable<EditorCell>{
     iterateToRoot();
 
     myCurrentDfsRoot = parent;
-    next();
+    cacheNext();
   }
 
   private void iterateToRoot() {
@@ -121,27 +121,23 @@ public class DfsTraverser implements Iterable<EditorCell>{
   }
 
   @Override
-  public Iterator<EditorCell> iterator() {
-    return new Iterator<EditorCell>() {
-      @Override
-      public boolean hasNext() {
-        return myCurrent != null;
-      }
-
-      @Override
-      public EditorCell next() {
-        if (!hasNext()) {
-          throw new NoSuchElementException();
-        }
-        EditorCell result =  myCurrent;
-        DfsTraverser.this.next();
-        return result;
-      }
-
-      @Override
-      public void remove() {
-        throw new UnsupportedOperationException();
-      }
-    };
+  public boolean hasNext() {
+    return myCurrent != null;
   }
+
+  @Override
+  public EditorCell next() {
+    if (!hasNext()) {
+      throw new NoSuchElementException();
+    }
+    EditorCell result =  myCurrent;
+    DfsTraverser.this.cacheNext();
+    return result;
+  }
+
+  @Override
+  public void remove() {
+    throw new UnsupportedOperationException();
+  }
+
 }

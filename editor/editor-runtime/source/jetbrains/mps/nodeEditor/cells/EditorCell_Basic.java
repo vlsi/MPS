@@ -31,6 +31,7 @@ import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.openapi.editor.cells.CellFinder;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
+import jetbrains.mps.openapi.editor.cells.DfsTraverserIterable;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
@@ -1381,7 +1382,7 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   @Override
   public EditorCell getFirstDescendant(Condition<EditorCell> condition) {
-    for (jetbrains.mps.openapi.editor.cells.EditorCell current : new DfsTraverser(this, true, true)) {
+    for (jetbrains.mps.openapi.editor.cells.EditorCell current : new DfsTraverserIterable(this, true, true)) {
       if (condition.met((EditorCell) current)) {
         return (EditorCell) current;
       }
@@ -1391,7 +1392,7 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   @Override
   public EditorCell getLastDescendant(Condition<EditorCell> condition) {
-    for (jetbrains.mps.openapi.editor.cells.EditorCell current : new DfsTraverser(this, false, true)) {
+    for (jetbrains.mps.openapi.editor.cells.EditorCell current : new DfsTraverserIterable(this, false, true)) {
       if (condition.met((EditorCell) current)) {
         return (EditorCell) current;
       }
