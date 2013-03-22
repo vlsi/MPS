@@ -64,6 +64,7 @@
       <property name="name" nameId="tpck.1169194664001" value="ConceptFunctionParameter_editorContext" />
       <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="editorContext" />
+      <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="current EditorContext instance" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1206467714548">

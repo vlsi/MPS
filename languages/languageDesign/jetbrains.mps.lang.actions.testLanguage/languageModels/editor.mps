@@ -11,21 +11,27 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="kxd5.2550657305103395183" resolveInfo="ActionTestContainer" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="2550657305103442231">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="substitute" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="kxd5.2550657305103442169" resolveInfo="ActionTestChild1" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="2550657305103442522">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="substitute" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="kxd5.2550657305103442509" resolveInfo="ActionTestChild2" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3213804652571075983">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="substitute" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="kxd5.3213804652571075891" resolveInfo="ActionTestChild1SubConcept" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="5164819300892650872">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="substitute.wrappers" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="kxd5.5164819300892650829" resolveInfo="ActionTestChildWrapper" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="5164819300894588410">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="substitute.wrappers" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="kxd5.5164819300894579629" resolveInfo="ActionTestChildToWrap1" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="2747974755163525146">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="substitute.wrappers" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="kxd5.2747974755163525074" resolveInfo="ActionTestChildToWrap2" />
     </node>
   </roots>

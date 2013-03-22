@@ -15,44 +15,52 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="ActionTestAbstractChild" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="substitute" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2550657305103442169">
       <property name="name" nameId="tpck.1169194664001" value="ActionTestChild1" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="child1" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/child1.png" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="substitute" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="2550657305103411658" resolveInfo="ActionTestAbstractChild" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2550657305103442509">
       <property name="name" nameId="tpck.1169194664001" value="ActionTestChild2" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="child2" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/child2.png" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="substitute" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="2550657305103411658" resolveInfo="ActionTestAbstractChild" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3213804652571075891">
       <property name="name" nameId="tpck.1169194664001" value="ActionTestChild1SubConcept" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="child1Sub" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/child1subConcept.png" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="substitute" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="2550657305103442169" resolveInfo="ActionTestChild1" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5164819300892360561">
       <property name="name" nameId="tpck.1169194664001" value="ActionTestAbstractChildWrapper" />
       <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="substitute.wrappers" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5164819300892650829">
       <property name="name" nameId="tpck.1169194664001" value="ActionTestChildWrapper" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="substitute.wrappers" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5164819300892360561" resolveInfo="ActionTestAbstractChildWrapper" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5164819300894579629">
       <property name="name" nameId="tpck.1169194664001" value="ActionTestChildToWrap1" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="wrappedChild1" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="substitute.wrappers" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2747974755163525074">
       <property name="name" nameId="tpck.1169194664001" value="ActionTestChildToWrap2" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="wrappedChild2" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="substitute.wrappers" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5164819300894579629" resolveInfo="ActionTestChildToWrap1" />
     </node>
   </roots>

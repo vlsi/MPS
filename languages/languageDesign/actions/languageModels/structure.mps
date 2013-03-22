@@ -216,6 +216,7 @@
       <property name="name" nameId="tpck.1169194664001" value="QueryFunction_SubstituteWrapper" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="queryFunctions" />
       <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
+      <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="create new instance of output concept wrapping (containing) passed nodeToWrap" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1177402641904">
@@ -225,6 +226,7 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="conceptFunctionParameters" />
       <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="nodeToWrap" />
+      <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="instance of wrapped concept created by another substitute action" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1177409831820">
@@ -1177,12 +1179,7 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1206027602242" resolveInfo="QueryFunction_ReturnSmallPart" />
     </node>
   </root>
-  <root id="1177402571666">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1177402590248">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137545148427" resolveInfo="conceptFunctionReturnType" />
-      <node role="target" roleId="tpce.1105736901241" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1177402593326" />
-    </node>
-  </root>
+  <root id="1177402571666" />
   <root id="1177402641904">
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1262430001741717494">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />

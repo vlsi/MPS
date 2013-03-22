@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-6v3h0rfsu88bkcftoyzuromwfevtwwr">
+<dependencies version="2" modelHash="89ldset1ist2lpw1rsppihgsmtoem3m">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-b2l5iyygy2vjqkbekn4rvaubf6n8cmr" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="3v74ubfhw87m42z14436qwtkyptdd6v" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
@@ -25,28 +25,28 @@
   <source id="2550657305103395183" name="ActionTestContainer" hash="-51bj908g4g88v5xb9h4jo7kbc0safee">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2550657305103411658" name="ActionTestAbstractChild" hash="-4sbva5o56b89tok996mw9hbhzow92e">
+  <source id="2550657305103411658" name="ActionTestAbstractChild" hash="66k42oc12v4usft88cck3ua5xlex7uu">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2550657305103442169" name="ActionTestChild1" hash="-3isjj9118qqq1okqetiq2sjglo3akj8">
+  <source id="2550657305103442169" name="ActionTestChild1" hash="-c2umhd8whcjh6rx87iz5gdy8rxmgqx">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2550657305103442509" name="ActionTestChild2" hash="-d5otby72uv1uxzy1813k0epye0uauin">
+  <source id="2550657305103442509" name="ActionTestChild2" hash="-a7lpliicer317uv0i1gaw0dbmh8lnzw">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3213804652571075891" name="ActionTestChild1SubConcept" hash="-ebki7ilvhrvg80zvwuperea7nzwfbj5">
+  <source id="3213804652571075891" name="ActionTestChild1SubConcept" hash="-p5zqk3g73dguar7i9j679auwj5y4l4">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5164819300892360561" name="ActionTestAbstractChildWrapper" hash="-2qvu9wzwxyjofr3gnwhy2pbomelujq2">
+  <source id="5164819300892360561" name="ActionTestAbstractChildWrapper" hash="4weml0r3jvhpgbbylispvo1bkdru5qv">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5164819300892650829" name="ActionTestChildWrapper" hash="87mws3xbpeaxxzj1greg8kcags2zksy">
+  <source id="5164819300892650829" name="ActionTestChildWrapper" hash="3weyl8106w69c3v47pl1x8ptae4yapc">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5164819300894579629" name="ActionTestChildToWrap1" hash="aulpnsh6lmtfed5f28y0735tmukhabl">
+  <source id="5164819300894579629" name="ActionTestChildToWrap1" hash="d42l4piv4ah9hwwyczsk2ou6n54j08j">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2747974755163525074" name="ActionTestChildToWrap2" hash="-5b1bngf6jlrbfoefxoatk5fb99q52a2">
+  <source id="2747974755163525074" name="ActionTestChildToWrap2" hash="eea31oi8olmpbki06qwevmegwhh118e">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>
