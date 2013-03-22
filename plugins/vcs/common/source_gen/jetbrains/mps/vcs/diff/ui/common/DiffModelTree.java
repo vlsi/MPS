@@ -142,6 +142,7 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
         setModel(new DefaultTreeModel(rebuild()));
         setRootVisible(true);
         TreeUtil.expandAll(DiffModelTree.this);
+        setSelectionRow(0);
       }
     });
   }
