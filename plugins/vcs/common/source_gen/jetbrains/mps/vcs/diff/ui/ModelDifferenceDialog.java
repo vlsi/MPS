@@ -155,6 +155,12 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
     return getClass().getName();
   }
 
+  @Nullable
+  @Override
+  public JComponent getPreferredFocusedComponent() {
+    return myTree;
+  }
+
 
 
   /*package*/ void rebuildChangeSets() {
