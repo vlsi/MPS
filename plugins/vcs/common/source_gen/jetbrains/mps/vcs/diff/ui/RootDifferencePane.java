@@ -56,15 +56,6 @@ public class RootDifferencePane {
   private NextPreviousTraverser myTraverser;
 
 
-  public RootDifferencePane(DiffStatusBar statusbar) {
-    myStatusBar = statusbar;
-
-    myPanel.setFirstComponent(myTopPanel);
-    myPanel.setSecondComponent(myBottomPanel);
-  }
-
-
-
   public RootDifferencePane(Project project, ModelChangeSet changeSet, SNodeId rootId, String rootName, String[] titles, boolean isEditable, DiffStatusBar statusBar) {
     myChangeSet = changeSet;
     myRootId = rootId;
@@ -77,6 +68,7 @@ public class RootDifferencePane {
     linkEditors(true);
     linkEditors(false);
 
+    myPanel.setSplitterProportionKey(getClass().getName() + "InspectorSplitter");
     myPanel.setFirstComponent(myTopPanel);
     myPanel.setSecondComponent(myBottomPanel);
 

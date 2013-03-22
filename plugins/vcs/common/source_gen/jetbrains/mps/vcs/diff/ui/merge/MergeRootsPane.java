@@ -99,6 +99,7 @@ public class MergeRootsPane {
       }
     });
 
+    myPanel.setSplitterProportionKey(getClass().getName() + "InspectorSplitter");
     myPanel.setFirstComponent(myTopPanel);
     myPanel.setSecondComponent(myBottomPanel);
 
