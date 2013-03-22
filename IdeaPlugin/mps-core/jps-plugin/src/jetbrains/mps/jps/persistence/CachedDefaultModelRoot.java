@@ -23,7 +23,7 @@ import jetbrains.mps.idea.core.module.CachedRepositoryData;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.persistence.binary.BinaryModelHeader;
 import jetbrains.mps.persistence.binary.BinarySModelDescriptor;
-import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelHeader;
@@ -35,8 +35,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * evgeny, 12/11/12
@@ -55,11 +54,11 @@ public class CachedDefaultModelRoot extends DefaultModelRoot {
     if (module instanceof Generator) {
       module = ((Generator) module).getSourceLanguage();
     }
-    if (module == null || !(module.getModuleReference() instanceof SModuleReference)) {
+    if (module == null) {
       return super.loadModels();
     }
 
-    CachedModuleData moduleData = myCachedRepository.getModuleData((SModuleReference) module.getModuleReference());
+    CachedModuleData moduleData = myCachedRepository.getModuleData(module.getModuleReference());
     if (moduleData == null) {
       return super.loadModels();
     }
@@ -70,6 +69,11 @@ public class CachedDefaultModelRoot extends DefaultModelRoot {
     }
 
     List<SModel> result = new ArrayList<SModel>();
+    Map<String, String> options = new HashMap<String, String>();
+    options.put(ModelFactory.OPTION_MODULEREF, module.getModuleReference().toString());
+    IFile moduleSourceDir = ((AbstractModule) module).getModuleSourceDir();
+    final String moduleHome = moduleSourceDir != null ? moduleSourceDir.getPath().replace("\\", "/") : null;
+
     for (CachedModelData mdata : models) {
       IFile file = FileSystem.getInstance().getFileByPath(mdata.getFile());
       FileDataSource source = new FileDataSource(file, this);
@@ -87,7 +91,9 @@ public class CachedDefaultModelRoot extends DefaultModelRoot {
         ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(extension);
         if (modelFactory == null) continue;
 
-        SModel model = modelFactory.load(source);
+        // TODO package & modelName
+        options.put(ModelFactory.OPTION_RELPATH, moduleHome != null ? makeRelative(moduleHome, file.getPath()) : null);
+        SModel model = modelFactory.load(source, Collections.unmodifiableMap(options));
         // TODO handle errors
         if (model != null) {
           result.add(model);

@@ -83,7 +83,7 @@ public class DefaultModelRoot extends FileBasedModelRoot {
     return result;
   }
 
-  private static String makeRelative(String moduleHome, String fullPath) {
+  protected static String makeRelative(String moduleHome, String fullPath) {
     if ((fullPath == null || fullPath.length() == 0)) {
       return "";
     }
