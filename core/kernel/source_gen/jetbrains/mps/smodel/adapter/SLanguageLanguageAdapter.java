@@ -30,7 +30,7 @@ public class SLanguageLanguageAdapter implements SLanguage {
 
   @Override
   public String getPresentation() {
-    return myLanguage.getModuleFqName();
+    return myLanguage.getModuleName();
   }
 
   @Override

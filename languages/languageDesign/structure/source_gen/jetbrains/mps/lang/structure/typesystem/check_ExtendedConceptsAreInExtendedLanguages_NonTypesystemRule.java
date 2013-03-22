@@ -43,7 +43,7 @@ public class check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule exte
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           errorTarget = new PropertyMessageTarget("name");
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(cd, "language " + conceptLanguage.getModuleFqName() + " of concept " + SPropertyOperations.getString(superConcept, "name") + " is not extended by " + language.getModuleFqName(), "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "1235136520823", null, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(cd, "language " + conceptLanguage.getModuleName() + " of concept " + SPropertyOperations.getString(superConcept, "name") + " is not extended by " + language.getModuleName(), "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "1235136520823", null, errorTarget);
           {
             BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.lang.structure.typesystem.AddExtendedLanguage_QuickFix", false);
             intentionProvider.putArgument("extLang", conceptLanguage);

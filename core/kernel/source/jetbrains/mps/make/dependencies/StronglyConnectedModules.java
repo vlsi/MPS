@@ -104,7 +104,7 @@ public class StronglyConnectedModules {
       Collections.sort(dependencyCopy, new Comparator<IModule>() {
         @Override
         public int compare(IModule o1, IModule o2) {
-          return o1.getModuleFqName().compareTo(o2.getModuleFqName());
+          return o1.getModuleName().compareTo(o2.getModuleName());
         }
       });
       for (IModule module : dependencyCopy) {
@@ -128,7 +128,7 @@ public class StronglyConnectedModules {
 
     @Override
     public int compareTo(IModuleDecorator<M> o) {
-      return myModule.getModuleFqName().compareTo(o.getModule().getModuleFqName());
+      return myModule.getModuleName().compareTo(o.getModule().getModuleName());
     }
 
     public String toString() {

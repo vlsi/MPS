@@ -89,7 +89,7 @@ public class PluginMoveHelper {
 
   public void moveIconsInAction() {
     for (final Solution solution : ListSequence.fromList(myProject.getProjectModules(Solution.class))) {
-      if (solution.getModuleFqName().endsWith(SOLUTION_NAME)) {
+      if (solution.getModuleName().endsWith(SOLUTION_NAME)) {
         List<SModel> models = solution.getOwnModelDescriptors();
         SModel m = ListSequence.fromList(models).first();
         ListSequence.fromList(SModelOperations.getNodes(m, "jetbrains.mps.lang.resources.structure.IconResource")).where(new IWhereFilter<SNode>() {
@@ -98,7 +98,7 @@ public class PluginMoveHelper {
           }
         }).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
-            String langName = NameUtil.namespaceFromLongName(solution.getModuleFqName());
+            String langName = NameUtil.namespaceFromLongName(solution.getModuleName());
             Language lang = ModuleRepositoryFacade.getInstance().getModule(langName, Language.class);
             if (lang == null) {
               return;
@@ -159,7 +159,7 @@ public class PluginMoveHelper {
     }
     s.getModuleDescriptor().setKind(SolutionKind.PLUGIN_OTHER);
 
-    final String modelName = s.getModuleFqName() + ".plugin";
+    final String modelName = s.getModuleName() + ".plugin";
     List<SModel> solModels = s.getOwnModelDescriptors();
     final Wrappers._T<SModel> pluginModel = new Wrappers._T<SModel>(ListSequence.fromList(solModels).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
@@ -203,7 +203,7 @@ public class PluginMoveHelper {
   }
 
   private String makePluginSolutionName(Language l, String name) {
-    return l.getModuleFqName() + "." + name;
+    return l.getModuleName() + "." + name;
   }
 
   public static boolean isNotEmpty_qerz9l_a0a0a0a0a0a0a2a0a0a4(String str) {

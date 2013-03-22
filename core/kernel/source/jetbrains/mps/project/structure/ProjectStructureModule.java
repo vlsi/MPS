@@ -250,7 +250,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   }
 
   public String toString() {
-    return getModuleFqName();
+    return getModuleName();
   }
 
   @Override

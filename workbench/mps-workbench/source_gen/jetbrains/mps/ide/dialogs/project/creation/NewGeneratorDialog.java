@@ -179,7 +179,7 @@ public class NewGeneratorDialog extends DialogWrapper {
   }
 
   private String getTemplateModelPrefix(Language sourceLanguage) {
-    return sourceLanguage.getModuleFqName() + ".generator.template";
+    return sourceLanguage.getModuleName() + ".generator.template";
   }
 
   private void adjustTemplateModel(Language sourceLanguage, Generator newGenerator) {

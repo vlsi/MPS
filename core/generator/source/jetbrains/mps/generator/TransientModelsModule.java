@@ -190,7 +190,7 @@ public class TransientModelsModule extends AbstractModule {
   }
 
   public String toString() {
-    return getModuleFqName();
+    return getModuleName();
   }
 
   @Override

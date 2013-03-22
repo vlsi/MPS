@@ -180,7 +180,7 @@ public class NewModel_Action extends BaseAction {
     if (((IModule) MapSequence.fromMap(_params).get("module")) instanceof Generator) {
       Generator gen = (Generator) ((IModule) MapSequence.fromMap(_params).get("module"));
       String name = gen.getName();
-      String genNamespace = gen.getSourceLanguage().getModuleFqName() + ".generator";
+      String genNamespace = gen.getSourceLanguage().getModuleName() + ".generator";
 
       if ((name == null || name.length() == 0)) {
         return genNamespace;

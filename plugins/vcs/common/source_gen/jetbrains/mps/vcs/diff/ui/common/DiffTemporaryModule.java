@@ -47,7 +47,7 @@ public class DiffTemporaryModule extends AbstractModule {
 
   @Override
   public String toString() {
-    return getModuleFqName();
+    return getModuleName();
   }
 
   @Override

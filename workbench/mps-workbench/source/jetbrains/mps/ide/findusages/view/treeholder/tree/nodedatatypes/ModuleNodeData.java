@@ -59,9 +59,9 @@ public class ModuleNodeData extends BaseNodeData {
       Generator generator = (Generator) module;
       String name = generator.getName();
       if (name == null || name.equals("")) name = "no name";
-      return generator.getSourceLanguage().getModuleFqName() + " (generator/" + name + ")";
+      return generator.getSourceLanguage().getModuleName() + " (generator/" + name + ")";
     } else {
-      String namespace = module.getModuleFqName();
+      String namespace = module.getModuleName();
       if (namespace == null) return "null";
       return namespace;
     }
