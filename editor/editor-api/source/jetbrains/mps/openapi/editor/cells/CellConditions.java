@@ -29,10 +29,10 @@ public class CellConditions {
     }
   };
 
-  public static final Condition<jetbrains.mps.openapi.editor.cells.EditorCell> SELECTABLE_lEAF = new Condition<jetbrains.mps.openapi.editor.cells.EditorCell>() {
+  public static final Condition<EditorCell> SELECTABLE_lEAF = new Condition<jetbrains.mps.openapi.editor.cells.EditorCell>() {
     @Override
-    public boolean met(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
-      return !(cell instanceof jetbrains.mps.openapi.editor.cells.EditorCell_Collection) && cell.isSelectable();
+    public boolean met(EditorCell cell) {
+      return !(cell instanceof EditorCell_Collection) && cell.isSelectable();
     }
   };
 }
