@@ -18,11 +18,9 @@ package jetbrains.mps.idea.java.usages;
 
 import com.intellij.facet.FacetManager;
 import com.intellij.openapi.application.QueryExecutorBase;
-import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiField;
@@ -31,13 +29,12 @@ import com.intellij.psi.PsiJavaFile;
 import com.intellij.psi.PsiMethod;
 import com.intellij.psi.PsiReference;
 import com.intellij.psi.search.GlobalSearchScope;
-import com.intellij.psi.search.searches.MethodReferencesSearch;
 import com.intellij.psi.search.searches.ReferencesSearch;
 import com.intellij.psi.search.searches.ReferencesSearch.SearchParameters;
 import com.intellij.util.Processor;
+import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
-import jetbrains.mps.idea.core.psi.MPS2PsiMapperUtil;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRef;
@@ -46,21 +43,18 @@ import jetbrains.mps.idea.java.psiStubs.JavaForeignIdBuilder;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNodeId.Foreign;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelRepository;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.util.Consumer;
 
-import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Deque;
 import java.util.List;
 
 /**
@@ -88,11 +82,14 @@ public class MPSReferenceSearch extends QueryExecutorBase<PsiReference, Referenc
       public void run() {
 
         // if MPSReferenceSearch is moved to mps-core, it will be MPS2PsiMapperUtil.getNodeId
-        final SNodeId targetNodeId = getNodeId(psiTarget);
-        if (targetNodeId == null) {
+        final SNode targetNode = getNodeForElement(psiTarget);
+        if (targetNode == null) {
           // it can't be referenced from MPS
           return;
         }
+
+        List<SNode> targetNodes = new ArrayList<SNode>(1);
+        targetNodes.add(targetNode);
 
         for (Module module : ModuleManager.getInstance(project).getModules()) {
           if (!scope.isSearchInModuleContent(module)) continue;
@@ -102,42 +99,26 @@ public class MPSReferenceSearch extends QueryExecutorBase<PsiReference, Referenc
           final Solution facetSolution = facet.getSolution();
 
           for (SModel model : SModelRepository.getInstance().getModelDescriptors(facetSolution)) {
-            Deque<SNode> stack = new ArrayDeque<SNode>();
-            for (SNode node : model.getRootNodes()) {
-              stack.addLast(node);
-            }
-            while (!stack.isEmpty()) {
-              SNode node = stack.pop();
-              for (SNode child : node.getChildren()) {
-                stack.push(child);
-              }
-              for (SReference ref : node.getReferences()) {
 
-                // this usage will be gone together with all this traverse code
-                // it will be replaced by index
-                SNodeId refTargetNodeId = ref.getTargetNodeId();
-                if (!(refTargetNodeId instanceof Foreign)) continue;
+            FindUsagesManager.collectUsages(model, targetNodes, new Consumer<SReference>() {
+              @Override
+              public void consume(SReference sReference) {
 
-                String s = refTargetNodeId.toString();
-                if (s.equals(targetNodeId.toString())) {
-                  // SReference -> PsiReference
-                  // We don't have a way to just get MPSPsiRef from SReference in the same way
-                  // as we can do with nodes (via nodeId)
+                SNode source = sReference.getSourceNode();
+                String role = sReference.getRole();
 
-                  MPSPsiNode psiNode = (MPSPsiNode) psiProvider.getPsi(node);
-                  String refRole = ref.getRole();
-                  MPSPsiRef[] refs = psiNode.getReferences(refRole);
+                MPSPsiNode psiNode = (MPSPsiNode) psiProvider.getPsi(source);
+                String refRole = sReference.getRole();
+                MPSPsiRef[] refs = psiNode.getReferences(refRole);
 
-                  for (MPSPsiRef r : refs) {
-                    if (targetNodeId.equals(r.getNodeId())) {
-                      // it's our reference: giving it out to find usages
-                      consumer.process(r.getReference());
-                    }
+                for (MPSPsiRef r : refs) {
+                  if (targetNode.getNodeId().equals(r.getNodeId())) {
+                    // it's our reference: giving it out to find usages
+                    consumer.process(r.getReference());
                   }
-
                 }
               }
-            }
+            });
           }
         }
       }
