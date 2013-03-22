@@ -87,7 +87,7 @@ public class OptimizeImportsInProject_Action extends BaseAction {
                 QueueSequence.fromQueue(modules).addSequence(CollectionSequence.fromCollection(((Language) module).getGenerators()));
               }
               IScope moduleScope = module.getScope();
-              for (SModel model : ListSequence.fromList(module.getOwnModelDescriptors())) {
+              for (SModel model : ListSequence.fromIterable(module.getModels())) {
                 if (!(SModelStereotype.isUserModel(model))) {
                   continue;
                 }

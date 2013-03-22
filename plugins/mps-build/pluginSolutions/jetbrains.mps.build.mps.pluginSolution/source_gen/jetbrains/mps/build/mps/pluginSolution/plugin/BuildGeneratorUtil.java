@@ -23,7 +23,7 @@ public class BuildGeneratorUtil {
   }
 
   public static SModel createModel(final String modelName, final Solution solution) {
-    List<SModel> ownModelDescriptors = solution.getOwnModelDescriptors();
+    List<SModel> ownModelDescriptors = solution.getModels();
     final Wrappers._T<SModel> modelDescriptor = new Wrappers._T<SModel>(null);
     for (SModel descriptor : ListSequence.fromList(ownModelDescriptors)) {
       if (descriptor.getReference().getModelName().equals(modelName)) {

@@ -43,7 +43,7 @@ public class RetainedUtil {
       if (module instanceof Language) {
         for (final Generator gen : ((Language) module).getGenerators()) {
           if (!(MapSequence.fromMap(retainedModels).containsKey(gen))) {
-            MapSequence.fromMap(retainedModels).put(gen, Sequence.fromIterable(((Iterable<SModel>) gen.getOwnModelDescriptors())).where(new IWhereFilter<SModel>() {
+            MapSequence.fromMap(retainedModels).put(gen, Sequence.fromIterable(((Iterable<SModel>) gen.getModels())).where(new IWhereFilter<SModel>() {
               public boolean accept(SModel it2) {
                 return SNodeOperations.isGeneratable(it2);
               }
@@ -58,7 +58,7 @@ public class RetainedUtil {
       } else if (module instanceof Generator) {
         final Language slang = ((Generator) module).getSourceLanguage();
         if (!(MapSequence.fromMap(retainedModels).containsKey(slang))) {
-          MapSequence.fromMap(retainedModels).put(slang, Sequence.fromIterable(((Iterable<SModel>) slang.getOwnModelDescriptors())).subtract(Sequence.fromIterable(module.getModels())).where(new IWhereFilter<SModel>() {
+          MapSequence.fromMap(retainedModels).put(slang, Sequence.fromIterable(((Iterable<SModel>) slang.getModels())).subtract(Sequence.fromIterable(module.getModels())).where(new IWhereFilter<SModel>() {
             public boolean accept(SModel it3) {
               return SNodeOperations.isGeneratable(it3);
             }
@@ -69,7 +69,7 @@ public class RetainedUtil {
             continue;
           }
           if (!(MapSequence.fromMap(retainedModels).containsKey(gen))) {
-            MapSequence.fromMap(retainedModels).put(gen, Sequence.fromIterable(((Iterable<SModel>) gen.getOwnModelDescriptors())).where(new IWhereFilter<SModel>() {
+            MapSequence.fromMap(retainedModels).put(gen, Sequence.fromIterable(((Iterable<SModel>) gen.getModels())).where(new IWhereFilter<SModel>() {
               public boolean accept(SModel it2) {
                 return SNodeOperations.isGeneratable(it2);
               }

@@ -90,7 +90,7 @@ public class PluginMoveHelper {
   public void moveIconsInAction() {
     for (final Solution solution : ListSequence.fromList(myProject.getProjectModules(Solution.class))) {
       if (solution.getModuleName().endsWith(SOLUTION_NAME)) {
-        List<SModel> models = solution.getOwnModelDescriptors();
+        List<SModel> models = solution.getModels();
         SModel m = ListSequence.fromList(models).first();
         ListSequence.fromList(SModelOperations.getNodes(m, "jetbrains.mps.lang.resources.structure.IconResource")).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -160,7 +160,7 @@ public class PluginMoveHelper {
     s.getModuleDescriptor().setKind(SolutionKind.PLUGIN_OTHER);
 
     final String modelName = s.getModuleName() + ".plugin";
-    List<SModel> solModels = s.getOwnModelDescriptors();
+    List<SModel> solModels = s.getModels();
     final Wrappers._T<SModel> pluginModel = new Wrappers._T<SModel>(ListSequence.fromList(solModels).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
         return jetbrains.mps.util.SNodeOperations.getModelLongName(it).equals(modelName);

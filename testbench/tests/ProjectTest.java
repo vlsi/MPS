@@ -127,7 +127,7 @@ public class ProjectTest {
   }
 
   private static boolean needsGeneration(IModule module) {
-    for (SModel descriptor : module.getOwnModelDescriptors()) {
+    for (SModel descriptor : module.getModels()) {
       if (jetbrains.mps.util.SNodeOperations.isGeneratable(descriptor)) return true;
     }
     return false;

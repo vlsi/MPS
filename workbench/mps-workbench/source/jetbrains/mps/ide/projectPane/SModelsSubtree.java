@@ -37,7 +37,7 @@ public class SModelsSubtree {
   public static void create(MPSTreeNode rootTreeNode, IOperationContext operationContext) {
     IModule module = operationContext.getModule();
     assert module != null;
-    create(rootTreeNode, operationContext, module.getOwnModelDescriptors(), false);
+    create(rootTreeNode, operationContext, IterableUtil.asList(module.getModels()), false);
   }
 
   public static void create(MPSTreeNode rootTreeNode, IOperationContext operationContext, List<SModel> models, boolean dropMiddleNodes) {

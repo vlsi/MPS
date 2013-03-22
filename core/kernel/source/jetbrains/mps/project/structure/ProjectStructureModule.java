@@ -211,7 +211,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   }
 
   private void removeAll() {
-    List<SModel> models = this.getOwnModelDescriptors();
+    List<SModel> models = this.getModels();
     for (SModel model : models) {
       removeModel(model);
     }

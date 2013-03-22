@@ -23,8 +23,8 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
-import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.*;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.actions.model.CreateRootNodeGroup;
@@ -319,7 +319,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
         String maxPackage = candidateName.substring(0, candidateName.lastIndexOf('.'));
         SModel md = SModelRepository.getInstance().getModelDescriptor(maxPackage);
         if (md != null) {
-          if (md.getModule().getOwnModelDescriptors().contains(myModelDescriptor)) {
+          if (IterableUtil.asCollection(md.getModule().getModels()).contains(myModelDescriptor)) {
             return false;
           }
         }

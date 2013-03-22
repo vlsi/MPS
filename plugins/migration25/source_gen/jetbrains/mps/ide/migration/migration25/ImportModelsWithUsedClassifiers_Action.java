@@ -73,7 +73,7 @@ public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
           continue;
         }
 
-        for (SModel modelDescriptor : ListSequence.fromList(module.getOwnModelDescriptors())) {
+        for (SModel modelDescriptor : ListSequence.fromIterable(module.getModels())) {
           if (SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(modelDescriptor))) {
             continue;
           }

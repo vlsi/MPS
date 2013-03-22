@@ -184,7 +184,7 @@ public class NewGeneratorDialog extends DialogWrapper {
 
   private void adjustTemplateModel(Language sourceLanguage, Generator newGenerator) {
     boolean alreadyOwnsTemplateModel = false;
-    for (SModel modelDescriptor : newGenerator.getOwnModelDescriptors()) {
+    for (SModel modelDescriptor : newGenerator.getModels()) {
       if (SModelStereotype.isGeneratorModel(modelDescriptor)) {
         alreadyOwnsTemplateModel = true;
         break;

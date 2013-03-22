@@ -59,7 +59,7 @@ public abstract class BaseChooseNodeDialog extends DialogWrapper {
   private void initVisibleModels(SModel modelDescriptor) {
     myVisibleModels = SetSequence.fromSet(new HashSet<SModel>());
     SetSequence.fromSet(myVisibleModels).addElement(modelDescriptor);
-    for (SModel nextOwnModelDescriptor : ListSequence.fromList(((AbstractModule) modelDescriptor.getModule()).getOwnModelDescriptors())) {
+    for (SModel nextOwnModelDescriptor : ListSequence.fromList(((AbstractModule) modelDescriptor.getModule()).getModels())) {
       SetSequence.fromSet(myVisibleModels).addElement(nextOwnModelDescriptor);
     }
     SModel model = modelDescriptor;
