@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-axwip3nvvqflpllrmmslzbb2hy5dmhb">
+<dependencies version="2" modelHash="qkbk9hkq2hagiecfr606zaaiarduh1">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -80,7 +80,7 @@
   <source id="2534942168332701668" name="StringHolder" hash="a93jbus0d8rcsaymp6j62s3uvtfh2bq">
     <file name="StringHolder.java" />
   </source>
-  <source id="5164819300892135679" name="AddMenuPart_WrapperSubstitute" hash="-9ata341lsugx2zf34qo175ob1ir26uc">
+  <source id="5164819300892135679" name="AddMenuPart_WrapperSubstitute" hash="-csigyewlsl84ppxjqgfaqfvq949llzy">
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
   </source>
 </dependencies>
