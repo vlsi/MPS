@@ -20,6 +20,7 @@ import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.ProjectStructureModelRoot;
 import jetbrains.mps.smodel.SModelId.ForeignSModelId;
 import jetbrains.mps.smodel.SModelId.RegularSModelId;
+import jetbrains.mps.smodel.SModelId.RelativePathSModelId;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -228,6 +229,12 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
       @Override
       public SModelId create(String text) {
         return jetbrains.mps.smodel.SModelId.foreign(text);
+      }
+    });
+    setModelIdFactory(RelativePathSModelId.TYPE, new SModelIdFactory() {
+      @Override
+      public SModelId create(String text) {
+        return new RelativePathSModelId(text);
       }
     });
   }

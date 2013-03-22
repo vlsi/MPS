@@ -17,11 +17,13 @@ package jetbrains.mps.persistence;
 
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -29,11 +31,19 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.File;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * evgeny, 11/9/12
@@ -58,10 +68,31 @@ public class DefaultModelRoot extends FileBasedModelRoot {
   @Override
   public Iterable<SModel> loadModels() {
     List<SModel> result = new ArrayList<SModel>();
+    Map<String, String> options = new HashMap<String, String>();
+    String moduleHome = null;
+    SModule module = getModule();
+    if (module != null) {
+      options.put(ModelFactory.OPTION_MODULEREF, module.getModuleReference().toString());
+      IFile moduleSourceDir = ((AbstractModule) module).getModuleSourceDir();
+      moduleHome = moduleSourceDir != null ? moduleSourceDir.getPath().replace("\\", "/") : null;
+    }
     for (String path : getFiles(SOURCE_ROOTS)) {
-      collectModels(FileSystem.getInstance().getFileByPath(path), result);
+      String relativePath = moduleHome != null ? makeRelative(moduleHome, path) : null;
+      collectModels(FileSystem.getInstance().getFileByPath(path), "", relativePath, options, result);
     }
     return result;
+  }
+
+  private static String makeRelative(String moduleHome, String fullPath) {
+    if ((fullPath == null || fullPath.length() == 0)) {
+      return "";
+    }
+    String normalized = FileUtil.getAbsolutePath(fullPath).replace("\\", "/");
+    try {
+      return FileUtil.getRelativePath(normalized, moduleHome, "/");
+    } catch (Exception ex) {
+      return null;
+    }
   }
 
   @Override
@@ -95,7 +126,7 @@ public class DefaultModelRoot extends FileBasedModelRoot {
     return model;
   }
 
-  protected void collectModels(IFile dir, Collection<SModel> models) {
+  protected final void collectModels(IFile dir, String package_, String relativePath, Map<String, String> options, Collection<SModel> models) {
     if (FileSystem.getInstance().isFileIgnored(dir.getName())) return;
     if (!dir.isDirectory()) return;
 
@@ -109,7 +140,10 @@ public class DefaultModelRoot extends FileBasedModelRoot {
       if (modelFactory == null) continue;
 
       FileDataSource source = new FileDataSource(file, this);
-      SModel model = modelFactory.load(source);
+      options.put(ModelFactory.OPTION_PACKAGE, package_);
+      options.put(ModelFactory.OPTION_RELPATH, relativePath != null ? relativePath + "/" + fileName : null);
+      options.put(ModelFactory.OPTION_MODELNAME, package_ != null ? package_ + "." + FileUtil.getNameWithoutExtension(fileName) : null);
+      SModel model = modelFactory.load(source, Collections.unmodifiableMap(options));
       // TODO handle errors
       if (model != null) {
         model.setModelRoot(this);
@@ -118,7 +152,10 @@ public class DefaultModelRoot extends FileBasedModelRoot {
     }
     for (IFile childDir : files) {
       if (childDir.isDirectory()) {
-        collectModels(childDir, models);
+        String name = childDir.getName();
+        String innerPackage = package_ != null && JavaNameUtil.isJavaIdentifier(name) ? (package_.isEmpty() ? name : package_ + "." + name) : null;
+        String innerPath = relativePath != null ? relativePath + "/" + name : null;
+        collectModels(childDir, innerPackage, innerPath, options, models);
       }
     }
   }

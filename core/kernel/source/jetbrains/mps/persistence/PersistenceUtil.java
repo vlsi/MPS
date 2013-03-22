@@ -46,7 +46,7 @@ public class PersistenceUtil {
         byte[] bytes = content.getBytes(FileUtil.DEFAULT_CHARSET);
         return new ByteArrayInputStream(bytes);
       }
-    });
+    }, null);
     model.load();
     return model;
   }
@@ -61,7 +61,7 @@ public class PersistenceUtil {
       public InputStream openInputStream() throws IOException {
         return new ByteArrayInputStream(content);
       }
-    });
+    }, null);
     model.load();
     return model;
   }

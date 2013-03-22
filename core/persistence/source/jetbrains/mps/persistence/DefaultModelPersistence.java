@@ -59,7 +59,7 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
   }
 
   @Override
-  public SModel load(StreamDataSource dataSource) {
+  public SModel load(StreamDataSource dataSource, Map<String, String> options) {
     SModelHeader header;
     try {
       header = ModelPersistence.loadDescriptor(dataSource);
