@@ -161,6 +161,12 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
     return myTree;
   }
 
+  @Nullable
+  @Override
+  protected JComponent createSouthPanel() {
+    return null;
+  }
+
 
 
   /*package*/ void rebuildChangeSets() {

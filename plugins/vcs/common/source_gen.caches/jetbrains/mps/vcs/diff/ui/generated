@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="84ce6rdo23isn51ixl1hwpxm192jm7n">
+<dependencies version="2" modelHash="-a1b7khc59ud79r3phnajg97v3eok92u">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.leftHighlighter(MPS.Editor/jetbrains.mps.nodeEditor.leftHighlighter@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.message(MPS.Editor/jetbrains.mps.openapi.editor.message@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
@@ -107,7 +107,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MetadataUtil.java" />
   </source>
-  <source id="4481873561818190815" name="ModelDifferenceDialog" hash="-261b20pqyx1b4ojgwljjvw8uq0jzozf">
+  <source id="4481873561818190815" name="ModelDifferenceDialog" hash="-9cexcb7gxpftyq8n7hdh9z8ntgi4zhi">
     <dep root="4685150495576934666" />
     <dep root="8733553229778918876" />
     <dep root="8817948936268058313" />
