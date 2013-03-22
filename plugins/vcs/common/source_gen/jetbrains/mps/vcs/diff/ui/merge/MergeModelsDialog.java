@@ -154,6 +154,7 @@ public class MergeModelsDialog extends DialogWrapper {
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
+    myPanel.setSplitterProportionKey(getClass().getName() + "ModelTreeSplitter");
     myMergeTree = new MergeModelsDialog.MergeModelsTree();
     myPanel.setFirstComponent(ScrollPaneFactory.createScrollPane(myMergeTree));
 

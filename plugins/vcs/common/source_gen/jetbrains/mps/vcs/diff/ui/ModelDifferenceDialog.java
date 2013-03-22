@@ -124,6 +124,7 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
+    myPanel.setSplitterProportionKey(getClass().getName() + "ModelTreeSplitter");
     myTree = new ModelDifferenceDialog.ModelDifferenceTree();
     myPanel.setFirstComponent(ScrollPaneFactory.createScrollPane(myTree));
 
