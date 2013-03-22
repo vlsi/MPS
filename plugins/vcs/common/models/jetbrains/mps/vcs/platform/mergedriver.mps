@@ -5541,14 +5541,10 @@
                 </node>
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6989360587248025509">
                   <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6989360587248025513">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="uv73.~Notifications$Bus%dnotify(com%dintellij%dnotification%dNotification,com%dintellij%dnotification%dNotificationDisplayType,com%dintellij%dopenapi%dproject%dProject)%cvoid" resolveInfo="notify" />
                     <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="uv73.~Notifications$Bus" resolveInfo="Notifications.Bus" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="uv73.~Notifications$Bus%dnotify(com%dintellij%dnotification%dNotification,com%dintellij%dopenapi%dproject%dProject)%cvoid" resolveInfo="notify" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="7307809004211494614">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7307809004211494603" resolveInfo="myLastNotification" />
-                    </node>
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1190974551626689490">
-                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="uv73.~NotificationDisplayType" resolveInfo="NotificationDisplayType" />
-                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="uv73.~NotificationDisplayType%dSTICKY_BALLOON" resolveInfo="STICKY_BALLOON" />
                     </node>
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="6989360587248025518">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6989360587247930296" resolveInfo="myProject" />

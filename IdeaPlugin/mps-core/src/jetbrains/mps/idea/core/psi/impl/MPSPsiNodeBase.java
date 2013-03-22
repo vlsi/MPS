@@ -16,6 +16,7 @@
 
 package jetbrains.mps.idea.core.psi.impl;
 
+import com.intellij.openapi.util.TextRange;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiInvalidElementAccessException;
@@ -153,6 +154,11 @@ public abstract class MPSPsiNodeBase extends LightElement {
   @Override
   public PsiReference[] getReferences() {
     return PsiReference.EMPTY_ARRAY;
+  }
+
+  @Override
+  public TextRange getTextRange() {
+    return TextRange.EMPTY_RANGE;
   }
 
   @Override

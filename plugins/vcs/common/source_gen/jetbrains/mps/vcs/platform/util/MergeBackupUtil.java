@@ -23,10 +23,10 @@ import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.SModelFileTracker;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
 
 public class MergeBackupUtil {
   public MergeBackupUtil() {
@@ -118,7 +118,11 @@ public class MergeBackupUtil {
 
   public static File chooseZipFileForModelFile(IFile file) {
     MergeDriverBackupUtil.setMergeBackupDirPath(getMergeBackupDirPath());
-    return MergeDriverBackupUtil.chooseZipFileForModelLongName(file.getName(), check_fhutfy_b0b0h(SModelFileTracker.getInstance().findModel(file)));
+    org.jetbrains.mps.openapi.model.SModel model = SModelFileTracker.getInstance().findModel(file);
+    return MergeDriverBackupUtil.chooseZipFileForModelLongName(file.getName(), (model != null ?
+      SModelStereotype.withoutStereotype(model.getModelName()) :
+      null
+    ));
   }
 
   public static Iterable<File> findZipFilesForModelFile(final String modelFileName) {
@@ -135,11 +139,4 @@ public class MergeBackupUtil {
   }
 
   private static Logger LOG = Logger.getLogger(MergeBackupUtil.class);
-
-  private static String check_fhutfy_b0b0h(BaseSModelDescriptorWithSource checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getLongName();
-    }
-    return null;
-  }
 }

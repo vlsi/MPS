@@ -5,7 +5,8 @@ package jetbrains.mps.idea.java.psiStubs;
 import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
 import jetbrains.mps.idea.core.psi.PsiListener;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
-import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.idea.core.psi.stubs.PsiStubModel;
+import jetbrains.mps.smodel.SModelReference;
 import java.util.Map;
 import com.intellij.psi.PsiJavaFile;
 import java.util.Set;
@@ -23,13 +24,22 @@ import com.google.common.collect.HashBiMap;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import com.intellij.psi.PsiClass;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import com.intellij.psi.PsiFileSystemItem;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import com.intellij.psi.PsiImportStatementBase;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import com.intellij.psi.PsiImportStaticStatement;
+import java.util.StringTokenizer;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
-public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor implements PsiListener, DataSourceListener {
+public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor implements PsiListener, DataSourceListener, PsiStubModel {
   private SModelReference myModelRef;
   private PsiJavaStubDataSource myDataSource;
   private Map<PsiJavaFile, Set<SNode>> myRootsPerFile = MapSequence.fromMap(new HashMap<PsiJavaFile, Set<SNode>>());
@@ -68,11 +78,16 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
       BiMap<SNodeId, PsiElement> mapping = HashBiMap.create();
       MapSequence.fromMap(myMps2PsiMappings).put(jf, mapping);
 
+      SNode javaImports = getImports(jf.getImportList().getAllImportStatements());
+
       ASTConverter converter = new ASTConverter(mapping);
       Set<SNode> roots = SetSequence.fromSet(new HashSet<SNode>());
 
       for (PsiClass cls : jf.getClasses()) {
         SNode node = converter.convertClass(cls);
+        if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier")) {
+          AttributeOperations.setAttribute(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports")), javaImports);
+        }
         // TODO check for duplicate ids (in java sources there may be 2 classes with the same name 
         //  which is an error but none the less) 
         ourModel.addRootNode(node);
@@ -94,10 +109,7 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
   }
 
   public void psiChanged(final PsiListener.PsiEvent event) {
-    SModel model = getCurrentModelInternal();
-    if (model == null) return;
-
-    org.jetbrains.mps.openapi.model.SModel ourModel = model.getModelDescriptor();
+    org.jetbrains.mps.openapi.model.SModel ourModel = this;
 
     // already attached, but not createModel'd yet? 
     if (ourModel == null) {
@@ -147,6 +159,8 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
       assert file instanceof PsiJavaFile;
       PsiJavaFile javaFile = (PsiJavaFile) file;
 
+      SNode javaImports = getImports(javaFile.getImportList().getAllImportStatements());
+
       BiMap<SNodeId, PsiElement> mapping = HashBiMap.create();
       ASTConverter converter = new ASTConverter(mapping);
 
@@ -154,6 +168,9 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
 
       for (PsiClass cls : javaFile.getClasses()) {
         SNode node = converter.convertClass(cls);
+        if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier")) {
+          AttributeOperations.setAttribute(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports")), javaImports);
+        }
         SModelOperations.addRootNode(ourModel, node);
         SetSequence.fromSet(roots).addElement(node);
       }
@@ -194,6 +211,30 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
     }
   }
 
+
+
+  private SNode getImports(PsiImportStatementBase[] imports) {
+    SNode javaImports = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.JavaImports", null);
+
+    for (PsiImportStatementBase imp : imports) {
+      SNode javaImport = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.JavaImport", null);
+      SPropertyOperations.set(javaImport, "onDemand", "" + (imp.isOnDemand()));
+      SPropertyOperations.set(javaImport, "static", "" + (imp instanceof PsiImportStaticStatement));
+      String qName = imp.getImportReference().getQualifiedName();
+      StringTokenizer toks = new StringTokenizer(qName, ".");
+      while (toks.hasMoreTokens()) {
+        String tok = toks.nextToken();
+        SNode blToken = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StringToken", null);
+        SPropertyOperations.set(blToken, "value", tok);
+        ListSequence.fromList(SLinkOperations.getTargets(javaImport, "token", true)).addElement(blToken);
+      }
+      ListSequence.fromList(SLinkOperations.getTargets(javaImports, "entries", true)).addElement(javaImport);
+    }
+    return javaImports;
+  }
+
+
+
   public PsiElement getPsiSource(SNode node) {
     // bad: iterating through files 
     for (BiMap<SNodeId, PsiElement> mapping : Sequence.fromIterable(MapSequence.fromMap(myMps2PsiMappings).values())) {
@@ -217,4 +258,6 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
     SNodeId nodeId = mapping.inverse().get(element);
     return mySModel.getNode(nodeId);
   }
+
+
 }

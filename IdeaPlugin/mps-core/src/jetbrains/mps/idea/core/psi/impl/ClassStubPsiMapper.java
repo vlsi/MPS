@@ -30,6 +30,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -88,13 +89,15 @@ public class ClassStubPsiMapper implements MPS2PsiMapper {
 
   @Nullable
   @Override
-  public SNodeId computeNodeId(PsiElement element) {
+  public SModelReference computeModelReference(PsiElement element) {
+    // TODO
     return null;
   }
 
   @Nullable
   @Override
-  public SNodeId computeNodeId(PsiElement element, String newName) {
+  public SNodeId computeNodeId(PsiElement element) {
     return null;
   }
+
 }

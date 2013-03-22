@@ -16,6 +16,7 @@
 package jetbrains.mps.extapi.model;
 
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -26,7 +27,9 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
-public abstract class SModelBase implements SModel {
+import java.util.Collections;
+
+public abstract class SModelBase extends SModelDescriptorStub implements SModel {
 
   @NotNull
   private final DataSource mySource;
@@ -108,9 +111,25 @@ public abstract class SModelBase implements SModel {
     myModelReference = ref;
   }
 
+  @NotNull
+  @Override
+  public Iterable<Problem> getProblems() {
+    return Collections.emptySet();
+  }
+
+  @Override
+  public void load() {
+    getSModelInternal();
+  }
+
+  @Override
+  public void unload() {
+  }
+
   public void attach() {
   }
 
   public void dispose() {
+    ModelAccess.assertLegalWrite();
   }
 }

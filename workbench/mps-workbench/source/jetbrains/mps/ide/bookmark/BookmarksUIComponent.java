@@ -243,7 +243,7 @@ public class BookmarksUIComponent implements ProjectComponent {
     }
 
     @Override
-    public EditorCell getAnchorCell(EditorCell bigCell) {
+    public jetbrains.mps.openapi.editor.cells.EditorCell getAnchorCell(jetbrains.mps.openapi.editor.cells.EditorCell bigCell) {
       return bigCell;
     }
 

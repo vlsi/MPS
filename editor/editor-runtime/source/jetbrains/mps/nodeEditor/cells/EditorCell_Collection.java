@@ -913,28 +913,28 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   private class SelectFirstChild extends AbstractCellAction {
     @Override
     public boolean canExecute(EditorContext context) {
-      return EditorCell_Collection.this.isSelected() && findChild(CellFinders.FIRST_SELECTABLE_LEAF) != null;
+      return EditorCell_Collection.this.isSelected() && CellFinderUtil.findFirstSelectableLeaf(EditorCell_Collection.this) != null;
     }
 
     @Override
     public void execute(EditorContext context) {
       EditorComponent editorComponent = (EditorComponent) context.getEditorComponent();
       editorComponent.clearSelectionStack();
-      editorComponent.changeSelection(findChild(CellFinders.FIRST_SELECTABLE_LEAF));
+      editorComponent.changeSelection(CellFinderUtil.findFirstSelectableLeaf(EditorCell_Collection.this));
     }
   }
 
   private class SelectLastChild extends AbstractCellAction {
     @Override
     public boolean canExecute(EditorContext context) {
-      return EditorCell_Collection.this.isSelected() && findChild(CellFinders.LAST_SELECTABLE_LEAF) != null;
+      return EditorCell_Collection.this.isSelected() &&  CellFinderUtil.findLastSelectableLeaf(EditorCell_Collection.this) != null;
     }
 
     @Override
     public void execute(EditorContext context) {
       EditorComponent editorComponent = (EditorComponent) context.getEditorComponent();
       editorComponent.clearSelectionStack();
-      editorComponent.changeSelection(findChild(CellFinders.LAST_SELECTABLE_LEAF));
+      editorComponent.changeSelection( CellFinderUtil.findLastSelectableLeaf(EditorCell_Collection.this));
     }
   }
 
@@ -1082,18 +1082,18 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
 
 
   private class MyLastCellSelectionListener implements SelectionListener {
-    public final CellFinder<EditorCell> FIRST_SELECTABLE_LEAF_EXCLUDING_BRACE = CellFinders.byCondition(new Condition<EditorCell>() {
+    public final Condition<jetbrains.mps.openapi.editor.cells.EditorCell> FIRST_SELECTABLE_LEAF_EXCLUDING_BRACE = new Condition<jetbrains.mps.openapi.editor.cells.EditorCell>() {
       @Override
-      public boolean met(EditorCell cell) {
+      public boolean met(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
         return myOpeningBrace != cell && cell.isSelectable() && !(cell instanceof EditorCell_Collection);
       }
-    }, true);
-    public final CellFinder<EditorCell> LAST_SELECTABLE_LEAF_EXCLUDING_BRACE = CellFinders.byCondition(new Condition<EditorCell>() {
+    };
+    public final Condition<jetbrains.mps.openapi.editor.cells.EditorCell> LAST_SELECTABLE_LEAF_EXCLUDING_BRACE = new Condition<jetbrains.mps.openapi.editor.cells.EditorCell>() {
       @Override
-      public boolean met(EditorCell cell) {
+      public boolean met(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
         return myClosingBrace != cell && cell.isSelectable() && !(cell instanceof EditorCell_Collection);
       }
-    }, false);
+    };
     @Override
     public void selectionChanged(EditorComponent editorComponent, Selection oldSelection, Selection newSelection) {
       if (myClosingBrace.isSelected() || myOpeningBrace.isSelected()) {
@@ -1101,15 +1101,15 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
         return;
       }
       jetbrains.mps.openapi.editor.cells.EditorCell deepestSelection = editorComponent.getDeepestSelectedCell();
-      jetbrains.mps.openapi.editor.cells.EditorCell lastSelectableLeaf = findChild(LAST_SELECTABLE_LEAF_EXCLUDING_BRACE);
-      jetbrains.mps.openapi.editor.cells.EditorCell firstSelectableLeaf = findChild(FIRST_SELECTABLE_LEAF_EXCLUDING_BRACE);
+      jetbrains.mps.openapi.editor.cells.EditorCell lastSelectableLeaf = CellFinderUtil.findChildByCondition(EditorCell_Collection.this, LAST_SELECTABLE_LEAF_EXCLUDING_BRACE, false);
+      jetbrains.mps.openapi.editor.cells.EditorCell firstSelectableLeaf = CellFinderUtil.findChildByCondition(EditorCell_Collection.this, FIRST_SELECTABLE_LEAF_EXCLUDING_BRACE, true);
       if (deepestSelection instanceof EditorCell_Brace) {
         EditorCell_Collection braceOwner = (EditorCell_Collection) deepestSelection.getParent();
-        if (braceOwner.myClosingBrace == deepestSelection && braceOwner.findChild(LAST_SELECTABLE_LEAF_EXCLUDING_BRACE) == lastSelectableLeaf) {
+        if (braceOwner.myClosingBrace == deepestSelection && CellFinderUtil.findChildByCondition(braceOwner, LAST_SELECTABLE_LEAF_EXCLUDING_BRACE, false) == lastSelectableLeaf) {
           enableBraces();
           return;
         }
-        if (braceOwner.myOpeningBrace == deepestSelection && braceOwner.findChild(FIRST_SELECTABLE_LEAF_EXCLUDING_BRACE) == firstSelectableLeaf) {
+        if (braceOwner.myOpeningBrace == deepestSelection && CellFinderUtil.findChildByCondition(braceOwner, FIRST_SELECTABLE_LEAF_EXCLUDING_BRACE, true) == firstSelectableLeaf) {
           enableBraces();
           return;
         }

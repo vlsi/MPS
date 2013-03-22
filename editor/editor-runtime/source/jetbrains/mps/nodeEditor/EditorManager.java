@@ -24,14 +24,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cells.CellFinders;
+import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.DefaultCellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.openapi.editor.cells.CellFinderUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
@@ -504,7 +503,7 @@ public class EditorManager {
     // decide position of the hint cell
     EditorCell resultCell;
     Object anchorId = node.getUserObject(SIDE_TRANSFORM_HINT_ANCHOR_CELL_ID);
-    EditorCell anchorCell = anchorId == null ? null : CellFinderUtil.findChild(nodeCell, CellFinders.byId(node, anchorId.toString()), true);
+    EditorCell anchorCell = anchorId == null ? null : CellFinderUtil.findChildById(nodeCell, node, anchorId.toString(), true);
     if (anchorCell != null && anchorCell != nodeCell) {
       jetbrains.mps.openapi.editor.cells.EditorCell_Collection cellCollection = anchorCell.getParent();
       int index;

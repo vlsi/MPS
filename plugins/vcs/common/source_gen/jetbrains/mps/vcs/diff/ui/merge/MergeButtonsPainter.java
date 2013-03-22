@@ -17,11 +17,11 @@ import javax.swing.Icon;
 import jetbrains.mps.smodel.ModelAccess;
 
 public class MergeButtonsPainter extends ButtonsPainter {
-  private MergeRootsDialog myDialog;
+  private MergeRootsPane myPane;
 
-  private MergeButtonsPainter(MergeRootsDialog dialog, EditorComponent editorComponent, ChangeGroupLayout changeGroupLayout) {
+  private MergeButtonsPainter(MergeRootsPane pane, EditorComponent editorComponent, ChangeGroupLayout changeGroupLayout) {
     super(2, editorComponent, changeGroupLayout);
-    myDialog = dialog;
+    myPane = pane;
   }
 
   @Override
@@ -50,9 +50,9 @@ public class MergeButtonsPainter extends ButtonsPainter {
     return Arrays.asList(apply, exclude);
   }
 
-  public static MergeButtonsPainter addTo(MergeRootsDialog dialog, DiffEditor diffEditor, ChangeGroupLayout changeGroupLayout, boolean inspector) {
+  public static MergeButtonsPainter addTo(MergeRootsPane pane, DiffEditor diffEditor, ChangeGroupLayout changeGroupLayout, boolean inspector) {
     EditorComponent editorComponent = diffEditor.getEditorComponent(inspector);
-    MergeButtonsPainter painter = new MergeButtonsPainter(dialog, editorComponent, changeGroupLayout);
+    MergeButtonsPainter painter = new MergeButtonsPainter(pane, editorComponent, changeGroupLayout);
     editorComponent.getLeftEditorHighlighter().addFoldingAreaPainter(painter);
     return painter;
   }
@@ -69,8 +69,8 @@ public class MergeButtonsPainter extends ButtonsPainter {
     public void performAction() {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          myAction.invoke(myDialog.getMergeSession(), getChangeGroup().getChanges());
-          myDialog.rehighlight();
+          myAction.invoke(myPane.getMergeSession(), getChangeGroup().getChanges());
+          myPane.rehighlight();
         }
       });
     }

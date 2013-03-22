@@ -17,36 +17,35 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
-import jetbrains.mps.nodeEditor.cells.CellFinders;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
+import jetbrains.mps.nodeEditor.cells.CellFinderUtil.Finder;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.openapi.editor.cells.CellFinderUtil;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 
 public class FocusPolicyUtil {
-  public static boolean hasFocusPolicy(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+  public static boolean hasFocusPolicy(EditorCell cell) {
     return cell.getStyle().get(StyleAttributes.FOCUS_POLICY) != jetbrains.mps.editor.runtime.style.FocusPolicy.NONE;
   }
 
   public static EditorCell findCellToSelectDueToFocusPolicy(EditorCell cell) {
-    EditorCell selectedCell = (EditorCell) findFocusedCell(cell);
+    EditorCell selectedCell = findFocusedCell(cell);
     if (selectedCell == null || selectedCell == cell) return cell;
     if (!FocusPolicyUtil.hasFocusPolicy(selectedCell)) {
-      EditorCell firstEditableCell = CellFinderUtil.findChild(selectedCell, CellFinders.FIRST_SELECTABLE_LEAF);
+      EditorCell firstEditableCell = CellFinderUtil.findFirstSelectableLeaf(selectedCell);
       if (firstEditableCell != null) selectedCell = firstEditableCell;
     }
     return selectedCell;
   }
 
-  private static jetbrains.mps.openapi.editor.cells.EditorCell findFocusedCell(jetbrains.mps.openapi.editor.cells.EditorCell selectedCell) {
-    jetbrains.mps.openapi.editor.cells.EditorCell focusedCell = findCellWhichAttractsFocus(selectedCell, true, true);
+  private static EditorCell findFocusedCell(EditorCell selectedCell) {
+    EditorCell focusedCell = findCellWhichAttractsFocus(selectedCell, true, true);
     if (focusedCell == null) {
       focusedCell = selectedCell;
     }
 
     if (focusedCell.getStyle().get(StyleAttributes.FOCUS_POLICY) == jetbrains.mps.editor.runtime.style.FocusPolicy.FIRST_EDITABLE_CELL ||
       focusedCell.getStyle().get(StyleAttributes.FOCUS_POLICY) == jetbrains.mps.editor.runtime.style.FocusPolicy.ATTRACTS_RECURSIVELY) {
-      jetbrains.mps.openapi.editor.cells.EditorCell result = CellFinderUtil.findChildByManyFinders(focusedCell,
-          CellFinders.FIRST_ERROR, CellFinders.FIRST_EDITABLE);
+      EditorCell result = CellFinderUtil.findChildByManyFinders(focusedCell, Finder.FIRST_ERROR, Finder.FIRST_EDITABLE);
       if (result != null) {
         return result;
       }
@@ -58,7 +57,7 @@ public class FocusPolicyUtil {
   }
 
 
-  private static jetbrains.mps.openapi.editor.cells.EditorCell findCellWhichAttractsFocus(jetbrains.mps.openapi.editor.cells.EditorCell cell, boolean includingMe, boolean descend) {
+  private static EditorCell findCellWhichAttractsFocus(EditorCell cell, boolean includingMe, boolean descend) {
     if (cell == null) return null;
 
     if (includingMe &&
@@ -68,8 +67,8 @@ public class FocusPolicyUtil {
 
     if (descend && cell instanceof jetbrains.mps.openapi.editor.cells.EditorCell_Collection) {
       jetbrains.mps.openapi.editor.cells.EditorCell_Collection collection = (jetbrains.mps.openapi.editor.cells.EditorCell_Collection) cell;
-      for (jetbrains.mps.openapi.editor.cells.EditorCell childCell : collection) {
-        jetbrains.mps.openapi.editor.cells.EditorCell focusedCell = findCellWhichAttractsFocus(childCell, true, !APICellAdapter.isBigCell(childCell) || childCell.getStyle().get(StyleAttributes.FOCUS_POLICY) == jetbrains.mps.editor.runtime.style.FocusPolicy.ATTRACTS_RECURSIVELY);
+      for (EditorCell childCell : collection) {
+        EditorCell focusedCell = findCellWhichAttractsFocus(childCell, true, !APICellAdapter.isBigCell(childCell) || childCell.getStyle().get(StyleAttributes.FOCUS_POLICY) == jetbrains.mps.editor.runtime.style.FocusPolicy.ATTRACTS_RECURSIVELY);
         if (focusedCell != null) return focusedCell;
       }
     }

@@ -15,7 +15,6 @@ import java.io.IOException;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
-import jetbrains.mps.smodel.BaseSModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.extapi.persistence.FolderSetDataSource;
 import jetbrains.mps.vfs.IFile;
@@ -81,7 +80,7 @@ public class JavaClassStubsModelRoot extends FolderModelRootBase {
     for (String subpackage : cp.getSubpackages(prefix)) {
       if (cp.getRootClasses(subpackage).iterator().hasNext()) {
         SModelReference modelReference = StubHelper.uidForPackageInStubs(subpackage, languageId, module.getModuleReference());
-        BaseSModelDescriptor smd;
+        JavaClassStubModelDescriptor smd;
         if (SModelRepository.getInstance().getModelDescriptor(modelReference) != null) {
           SModel descriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
           assert descriptor instanceof JavaClassStubModelDescriptor;

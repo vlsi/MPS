@@ -13,15 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.extapi.model.ReloadableSModelBase;
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.adapter.SLanguageLanguageAdapter;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelChildEvent;
@@ -42,14 +43,15 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SModelScope;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import org.jetbrains.mps.openapi.model.util.NodesIterator;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.NullDataSource;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -106,6 +108,7 @@ public class SModel implements SModelData {
     return myReference;
   }
 
+  @Override
   public Iterable<org.jetbrains.mps.openapi.model.SNode> getRootNodes() {
     fireModelNodesReadAccess();
     return new Iterable<org.jetbrains.mps.openapi.model.SNode>() {
@@ -120,6 +123,7 @@ public class SModel implements SModelData {
     return myRoots.contains(node);
   }
 
+  @Override
   public void addRootNode(final org.jetbrains.mps.openapi.model.SNode node) {
     assert node instanceof SNode;
     ModelChange.assertLegalNodeRegistration(getModelDescriptor(), node);
@@ -147,6 +151,7 @@ public class SModel implements SModelData {
     fireRootAddedEvent(sn);
   }
 
+  @Override
   public void removeRootNode(final org.jetbrains.mps.openapi.model.SNode node) {
     assert node instanceof SNode;
     ModelChange.assertLegalNodeUnRegistration(getModelDescriptor(), node);
@@ -291,8 +296,7 @@ public class SModel implements SModelData {
 
   private List<SModelListener> getModelListeners() {
     SModelInternal modelDescriptor = getModelDescriptor();
-    return modelDescriptor instanceof BaseSModelDescriptor ? ((BaseSModelDescriptor) modelDescriptor).getModelListeners() :
-        Collections.<SModelListener>emptyList();
+    return ((SModelBase) modelDescriptor).getModelListeners();
   }
 
   //todo code in the following methods should be written w/o duplication
@@ -680,7 +684,9 @@ public class SModel implements SModelData {
         for (SNode child : node.getChildren()) {
           SNodeReference ptrDecl = RoleIdsComponent.getNodeRolePointer(child);
           if (ptrDecl == null) {
-            LOG.warning("undeclared child role: '" + child.getRoleInParent() + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
+            LOG.warning(
+                "undeclared child role: '" + child.getRoleInParent() + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(
+                    node));
           } else {
             result.add(ptrDecl.getModelReference());
           }
@@ -715,7 +721,8 @@ public class SModel implements SModelData {
         for (SNode child : node.getChildren()) {
           SNode decl = child.getRoleLink();
           if (decl == null) {
-            LOG.error("undeclared child role: '" + child.getRoleInParent() + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
+            LOG.error("undeclared child role: '" + child.getRoleInParent() + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(
+                node));
           } else {
             result.add(decl.getModel().getReference());
           }
@@ -1171,7 +1178,7 @@ public class SModel implements SModelData {
   /**
    * This is for migration purposes, until we get rid of SModel class
    */
-  public static class FakeModelDescriptor extends BaseSModelDescriptor implements org.jetbrains.mps.openapi.model.SModel, SModelDescriptor, SModelInternal {
+  public static class FakeModelDescriptor extends SModelBase implements org.jetbrains.mps.openapi.model.SModel {
     private SModel myModel;
 
     public FakeModelDescriptor(@NotNull SModel md) {
@@ -1180,43 +1187,8 @@ public class SModel implements SModelData {
     }
 
     @Override
-    public org.jetbrains.mps.openapi.model.SModel resolveModel(SModelReference reference) {
-      return reference.resolve(MPSModuleRepository.getInstance());
-    }
-
-    @Override
-    public org.jetbrains.mps.openapi.model.SModel getSModel() {
-      return this;
-    }
-
-    @Override
     public void setModule(SModule container) {
-      throw new UnsupportedOperationException("remove exception if excess");
-    }
-
-    @Override
-    public boolean isGeneratable() {
-      return false;
-    }
-
-    @Override
-    public SModelReference getSModelReference() {
-      return getReference();
-    }
-
-    @Override
-    public String getLongName() {
-      return SModelStereotype.withoutStereotype(getReference().getModelName());
-    }
-
-    @Override
-    public String getStereotype() {
-      return SModelStereotype.getStereotype(getReference().getModelName());
-    }
-
-    @Override
-    protected SModel getCurrentModelInternal() {
-      return myModel;
+      throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1245,70 +1217,8 @@ public class SModel implements SModelData {
     }
 
     @Override
-    public SModelId getModelId() {
-      return myModel.getModelId();
-    }
-
-    @Override
-    public String getModelName() {
-      return getReference().getModelName();
-    }
-
-    @NotNull
-    @Override
-    public SModelReference getReference() {
-      return myModel.getReference();
-    }
-
-    @Override
-    public ModelRoot getModelRoot() {
-      return null;
-    }
-
-    @Override
     public void setModelRoot(ModelRoot mr) {
-      throw new UnsupportedOperationException("remove exception if excess");
-    }
-
-    @Override
-    public IModule getModule() {
-      return null;
-    }
-
-    @Override
-    public Iterable<org.jetbrains.mps.openapi.model.SNode> getRootNodes() {
-      return myModel.getRootNodes();
-    }
-
-    @Override
-    public boolean isRoot(org.jetbrains.mps.openapi.model.SNode node) {
-      return myModel.isRoot(node);
-    }
-
-    @Override
-    public void addRootNode(org.jetbrains.mps.openapi.model.SNode node) {
-      myModel.addRootNode(node);
-    }
-
-    @Override
-    public void removeRootNode(org.jetbrains.mps.openapi.model.SNode node) {
-      myModel.removeRootNode(node);
-    }
-
-    @Override
-    public org.jetbrains.mps.openapi.model.SNode getNode(org.jetbrains.mps.openapi.model.SNodeId id) {
-      return myModel.getNode(id);
-    }
-
-    @Override
-    public SModelScope getModelScope() {
-      return myModel.getModelScope();
-    }
-
-    @NotNull
-    @Override
-    public DataSource getSource() {
-      return new NullDataSource();
+      throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1318,7 +1228,6 @@ public class SModel implements SModelData {
 
     @Override
     public void load() {
-
     }
 
     @NotNull
@@ -1329,7 +1238,7 @@ public class SModel implements SModelData {
 
     @Override
     public void unload() {
-      throw new UnsupportedOperationException("remove exception if excess");
+      throw new UnsupportedOperationException();
     }
 
     @Override
@@ -1339,186 +1248,16 @@ public class SModel implements SModelData {
 
     @Override
     public void attach() {
-      throw new UnsupportedOperationException("remove exception if excess");
+      throw new UnsupportedOperationException();
     }
 
     public void detach() {
-      throw new UnsupportedOperationException("remove exception if excess");
-    }
-
-    @Override
-    public ModelDependenciesManager getModelDepsManager() {
-      return myModel.getModelDepsManager();
-    }
-
-    @Override
-    public List<SModuleReference> importedLanguages() {
-      return myModel.importedLanguages();
-    }
-
-    @Override
-    public void deleteLanguage(@NotNull SModuleReference ref) {
-      myModel.deleteLanguage(ref);
-    }
-
-    @Override
-    public void addLanguage(SModuleReference ref) {
-      myModel.addLanguage(ref);
-    }
-
-    @Override
-    public List<SModuleReference> importedDevkits() {
-      return myModel.importedDevkits();
-    }
-
-    @Override
-    public void addDevKit(SModuleReference ref) {
-      myModel.addDevKit(ref);
-    }
-
-    @Override
-    public void deleteDevKit(@NotNull SModuleReference ref) {
-      myModel.deleteDevKit(ref);
-    }
-
-    @Override
-    public List<ImportElement> importedModels() {
-      return myModel.importedModels();
-    }
-
-    @Override
-    public void addModelImport(SModelReference modelReference, boolean firstVersion) {
-      myModel.addModelImport(modelReference, firstVersion);
-    }
-
-    @Override
-    public void addModelImport(ImportElement importElement) {
-      myModel.addModelImport(importElement);
-    }
-
-    @Override
-    public void deleteModelImport(SModelReference modelReference) {
-      myModel.deleteModelImport(modelReference);
-    }
-
-    @NotNull
-    public static Set<SModelReference> collectUsedModels(@NotNull jetbrains.mps.smodel.SModel model, @NotNull Set<SModelReference> result) {
-      return jetbrains.mps.smodel.SModel.collectUsedModels(model, result);
-    }
-
-    @Override
-    public void calculateImplicitImports() {
-      myModel.calculateImplicitImports();
-    }
-
-    @Override
-    public List<SModuleReference> engagedOnGenerationLanguages() {
-      return myModel.engagedOnGenerationLanguages();
-    }
-
-    @Override
-    public void addEngagedOnGenerationLanguage(SModuleReference ref) {
-      myModel.addEngagedOnGenerationLanguage(ref);
-    }
-
-    @Override
-    public void removeEngagedOnGenerationLanguage(SModuleReference ref) {
-      myModel.removeEngagedOnGenerationLanguage(ref);
-    }
-
-    @Override
-    public List<ImportElement> getAdditionalModelVersions() {
-      return myModel.getAdditionalModelVersions();
-    }
-
-    @Override
-    public void addAdditionalModelVersion(@NotNull SModelReference modelReference, int usedVersion) {
-      myModel.addAdditionalModelVersion(modelReference, usedVersion);
-    }
-
-    @Override
-    public void addAdditionalModelVersion(@NotNull ImportElement element) {
-      myModel.addAdditionalModelVersion(element);
-    }
-
-    @Override
-    public int getVersion() {
-      return myModel.getVersion();
-    }
-
-    @Override
-    public void setVersion(int version) {
-      myModel.setVersion(version);
-    }
-
-    @Override
-    public StackTraceElement[] getDisposedStacktrace() {
-      return myModel.getDisposedStacktrace();
-    }
-
-    @Override
-    public boolean isDisposed() {
-      return myModel.isDisposed();
-    }
-
-    @Override
-    public void setModelDescriptor(org.jetbrains.mps.openapi.model.SModel modelDescriptor) {
-      myModel.setModelDescriptor(modelDescriptor);
+      throw new UnsupportedOperationException();
     }
 
     @Override
     public void dispose() {
       myModel.dispose();
-    }
-
-    @Override
-    public boolean isTransient() {
-      return false;
-    }
-
-    @Override
-    public boolean canFireEvent() {
-      return myModel.canFireEvent();
-    }
-
-    @Override
-    public FastNodeFinder getFastNodeFinder() {
-      return myModel.getFastNodeFinder();
-    }
-
-    @Override
-    public void disposeFastNodeFinder() {
-      myModel.disposeFastNodeFinder();
-    }
-
-    @Override
-    public void updateImportedModelUsedVersion(org.jetbrains.mps.openapi.model.SModelReference sModelReference, int currentVersion) {
-      myModel.updateImportedModelUsedVersion(sModelReference, currentVersion);
-    }
-
-    @Override
-    public boolean canFireReadEvent() {
-      return myModel.canFireReadEvent();
-    }
-
-    @Override
-    public boolean updateSModelReferences() {
-      return myModel.updateSModelReferences();
-    }
-
-    @Override
-    public void changeModelReference(SModelReference newModelReference) {
-      myModel.changeModelReference(newModelReference);
-    }
-
-    @Override
-    public boolean updateModuleReferences() {
-      return myModel.updateModuleReferences();
-    }
-
-    @Override
-    public void copyPropertiesTo(SModelInternal to) {
-      myModel.copyPropertiesTo(to);
     }
   }
 }

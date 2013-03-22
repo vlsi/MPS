@@ -35324,7 +35324,7 @@
                                 </node>
                               </node>
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6981599660810445249">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~BaseEditableSModelDescriptor%disReadOnly()%cboolean" resolveInfo="isReadOnly" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="51te.~EditableSModelBase%disReadOnly()%cboolean" resolveInfo="isReadOnly" />
                               </node>
                             </node>
                           </node>
@@ -35659,7 +35659,7 @@
                             </node>
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6981599660810342966">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~BaseEditableSModelDescriptor%disReadOnly()%cboolean" resolveInfo="isReadOnly" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="51te.~EditableSModelBase%disReadOnly()%cboolean" resolveInfo="isReadOnly" />
                           </node>
                         </node>
                       </node>

@@ -18,22 +18,18 @@ package jetbrains.mps.workbench.nodesFs;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.util.LocalTimeCounter;
-import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.extapi.model.ReloadableSModelBase;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -52,9 +48,9 @@ public class MPSNodeVirtualFile extends VirtualFile {
   MPSNodeVirtualFile(@NotNull SNodeReference nodePointer) {
     myNode = nodePointer;
     SModel modelDescriptor =
-      nodePointer.getModelReference() == null ? null : SModelRepository.getInstance().getModelDescriptor(nodePointer.getModelReference());
-    if (modelDescriptor instanceof BaseSModelDescriptorWithSource) {
-      myTimeStamp = ((BaseSModelDescriptorWithSource) modelDescriptor).getSourceTimestamp();
+        nodePointer.getModelReference() == null ? null : SModelRepository.getInstance().getModelDescriptor(nodePointer.getModelReference());
+    if (modelDescriptor instanceof ReloadableSModelBase) {
+      myTimeStamp = ((ReloadableSModelBase) modelDescriptor).getSourceTimestamp();
     }
     updateFields();
   }
@@ -132,6 +128,18 @@ public class MPSNodeVirtualFile extends VirtualFile {
   @Override
   @Nullable
   public VirtualFile getParent() {
+    // Returning the parent of this node's model virtial file
+    // i.e. a real directory wherein the model file lives
+    // Needed for idea scope to work (see PsiSearchScopeUtil.isInScope)
+    if (myNode == null || myNode.getModelReference() == null) return null;
+    SModelReference modelRef = myNode.getModelReference();
+    if (modelRef.resolve(MPSModuleRepository.getInstance()) == null) {
+      return null;
+    }
+    MPSModelVirtualFile modelVFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(modelRef);
+    if (modelVFile != null) {
+      return modelVFile.getParent();
+    }
     return null;
   }
 

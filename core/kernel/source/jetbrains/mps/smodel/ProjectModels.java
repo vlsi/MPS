@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -25,7 +26,7 @@ public class ProjectModels {
   private static long ourProjectModelDescriptorCount = 0;
 
   @NotNull
-  public static BaseSModelDescriptor createDescriptorFor(boolean canFireEvents) {
+  public static EditableSModel createDescriptorFor(boolean canFireEvents) {
     String modelName = ("projectModel" + ourProjectModelDescriptorCount++) + "@" + SModelStereotype.INTERNAL;
     SModelReference ref = PersistenceFacade.getInstance().createModelReference(null, SModelId.generate(), modelName);
     return new MyBaseSModelDescriptor(ref, canFireEvents);

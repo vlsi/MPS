@@ -30,7 +30,7 @@
     <nodeInfo nodeId="7314351270975557890" fileName="TestMergeDialog.java" startLine="98" startPosition="12" endLine="99" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7314351270975557895" fileName="TestMergeDialog.java" startLine="99" startPosition="57" endLine="100" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7314351270975558022" fileName="TestMergeDialog.java" startLine="101" startPosition="5" endLine="102" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7314351270975609503" fileName="TestMergeDialog.java" startLine="106" startPosition="46" endLine="107" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7314351270975609503" fileName="TestMergeDialog.java" startLine="106" startPosition="46" endLine="107" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7314351270975558079" fileName="TestMergeDialog.java" startLine="110" startPosition="13" endLine="111" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7314351270975558088" fileName="TestMergeDialog.java" startLine="111" startPosition="74" endLine="112" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7314351270975558093" fileName="TestMergeDialog.java" startLine="112" startPosition="36" endLine="113" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -81,7 +81,7 @@
     <scopeInfo nodeId="7314351270975558006" fileName="TestMergeDialog.java" startLine="85" startPosition="14" endLine="86" endPosition="29" />
     <scopeInfo nodeId="7314351270975557950" fileName="TestMergeDialog.java" startLine="93" startPosition="29" endLine="94" endPosition="67" />
     <scopeInfo nodeId="7314351270975557943" fileName="TestMergeDialog.java" startLine="95" startPosition="14" endLine="96" endPosition="29" />
-    <scopeInfo nodeId="7314351270975609495" fileName="TestMergeDialog.java" startLine="106" startPosition="46" endLine="107" endPosition="209" />
+    <scopeInfo nodeId="7314351270975609495" fileName="TestMergeDialog.java" startLine="106" startPosition="46" endLine="107" endPosition="207" />
     <scopeInfo nodeId="7314351270975558070" fileName="TestMergeDialog.java" startLine="114" startPosition="0" endLine="115" endPosition="30">
       <varInfo nodeId="7314351270975558076" varName="e" />
     </scopeInfo>

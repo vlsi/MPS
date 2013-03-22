@@ -16,7 +16,6 @@
 package org.jetbrains.mps.openapi.model;
 
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
@@ -128,5 +127,7 @@ public interface SModel {
      * Errors usually cause model to be partially loaded, so it cannot be saved back to the storage later.
      */
     boolean isError();
+
+    SNode getNode();
   }
 }

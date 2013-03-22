@@ -21,7 +21,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiJavaFile;
-import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.mps.openapi.persistence.Memento;

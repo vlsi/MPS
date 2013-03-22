@@ -4,15 +4,13 @@ package jetbrains.mps.ide.java.platform.highlighters;
 
 import jetbrains.mps.editor.runtime.AbstractLeftEditorHighlighterMessage;
 import jetbrains.mps.nodeEditor.EditorMessageIconRenderer;
-import jetbrains.mps.openapi.editor.cells.CellFinder;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.util.Condition;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
-import jetbrains.mps.nodeEditor.cells.CellFinders;
-import jetbrains.mps.util.Condition;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import javax.swing.Icon;
-import jetbrains.mps.openapi.editor.cells.CellFinderUtil;
+import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.ActionManager;
@@ -21,17 +19,17 @@ import javax.swing.JPopupMenu;
 public class SubclassedClassifierEditorMessage extends AbstractLeftEditorHighlighterMessage {
   private static final EditorMessageIconRenderer.IconRendererType TYPE = new EditorMessageIconRenderer.IconRendererType(1);
   private boolean myIsInterface;
-  private CellFinder<EditorCell> myClassifierNameCellFinder;
+  private Condition<EditorCell> myClassifierNameCellCondition;
 
   public SubclassedClassifierEditorMessage(final SNode node, EditorMessageOwner owner, String tooltip, boolean isInterface) {
     super(node, owner, tooltip);
     myIsInterface = isInterface;
-    myClassifierNameCellFinder = CellFinders.byCondition(new Condition<EditorCell>() {
+    myClassifierNameCellCondition = new Condition<EditorCell>() {
       @Override
       public boolean met(EditorCell cell) {
         return cell.getSNode() == node && cell instanceof EditorCell_Label && ((EditorCell_Label) cell).isEditable();
       }
-    }, true);
+    };
   }
 
   @Override
@@ -49,7 +47,7 @@ public class SubclassedClassifierEditorMessage extends AbstractLeftEditorHighlig
 
   @Override
   public EditorCell getAnchorCell(EditorCell bigCell) {
-    EditorCell returnTypeCell = CellFinderUtil.findChild(bigCell, myClassifierNameCellFinder);
+    EditorCell returnTypeCell = CellFinderUtil.findChildByCondition(bigCell, myClassifierNameCellCondition, true);
     return (returnTypeCell != null ?
       returnTypeCell :
       bigCell

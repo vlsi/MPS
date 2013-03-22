@@ -110,9 +110,6 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
   EditorCell_Collection getFoldedAbove();
   EditorCell_Collection findParent(Condition<EditorCell_Collection> condition);
 
-  <C extends EditorCell> C findChild(CellFinder<C> finder, boolean includeThis);
-  <C extends EditorCell> C findChild(CellFinder<C> finder);
-
   // TODO: move to EditorCell_Collection & open API
   boolean isFolded();
   boolean isUnfoldedCollection();

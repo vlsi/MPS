@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.generator.test;
 
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.dependency.modules.DependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.smodel.BaseSModelDescriptor;
 import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelRepository;
@@ -167,7 +167,7 @@ public class TestModule extends AbstractModule {
 
     @Override
     public jetbrains.mps.smodel.SModel createModel() {
-      Document document = ModelPersistence.saveModel(((BaseSModelDescriptor) myToCopy).getSModelInternal());
+      Document document = ModelPersistence.saveModel(((SModelBase) myToCopy).getSModelInternal());
       Element rootElement = document.getRootElement();
       rootElement.setAttribute(ModelPersistence.MODEL_UID, getSModelReference().toString());
       String modelContent = JDOMUtil.asString(document);

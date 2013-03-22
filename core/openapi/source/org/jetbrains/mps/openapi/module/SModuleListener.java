@@ -19,4 +19,5 @@ package org.jetbrains.mps.openapi.module;
  * evgeny, 3/6/13
  */
 public interface SModuleListener {
+
 }

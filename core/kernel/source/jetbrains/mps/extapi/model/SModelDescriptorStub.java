@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,14 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
+package jetbrains.mps.extapi.model;
 
-import jetbrains.mps.extapi.model.SModelBase;
-import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
-import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.smodel.FastNodeFinder;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModel.ImportElement;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
@@ -28,29 +31,173 @@ import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SModelScope;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.persistence.DataSource;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
-import java.util.Collections;
 import java.util.List;
-import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public abstract class BaseSModelDescriptor extends SModelBase implements jetbrains.mps.smodel.SModelDescriptor {
-  private static final Logger LOG = Logger.getLogger(BaseSModelDescriptor.class);
+/**
+ * TODO move listeners to openapi
+ */
+public abstract class SModelDescriptorStub implements SModelDescriptor {
+
+  private static final Logger LOG = Logger.getLogger(SModelDescriptorStub.class);
 
   private List<SModelListener> myModelListeners = new CopyOnWriteArrayList<SModelListener>();
 
-  protected BaseSModelDescriptor(@NotNull SModelReference modelReference, @NotNull DataSource source) {
-    super(modelReference, source);
+  /**
+   * Migration to 3.0. Loads and returns model data.
+   */
+  @Deprecated
+  public abstract jetbrains.mps.smodel.SModel getSModelInternal();
+
+  /**
+   * Dangerous, allows to replace model data.
+   */
+  public void replace(SModelData modelData) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public SModel resolveModel(SModelReference reference) {
+    return reference.resolve(MPSModuleRepository.getInstance());
+  }
+
+  @Override
+  public boolean isTransient() {
+    return false;
   }
 
   @Override
   public SModel getSModel() {
     return this;
+  }
+
+  @Override
+  public void addModelListener(@NotNull SModelListener listener) {
+    if (listener.getPriority() == SModelListenerPriority.PLATFORM) {
+      myModelListeners.add(0, listener);
+    } else {
+      myModelListeners.add(listener);
+    }
+  }
+
+  @Override
+  public void removeModelListener(@NotNull SModelListener listener) {
+    myModelListeners.remove(listener);
+  }
+
+  @NotNull
+  public List<SModelListener> getModelListeners() {
+    return myModelListeners;
+  }
+
+  protected void clearListeners() {
+    myModelListeners.clear();
+  }
+
+  @Override
+  public boolean isGeneratable() {
+    return false;
+  }
+
+  protected void notifyModelReplaced(SModel oldSModel) {
+    SModelRepository.getInstance().notifyModelReplaced(this, oldSModel);
+  }
+
+  // Not SModel-specific listener notifications
+
+  protected void fireBeforeModelFileChanged(SModelFileChangedEvent event) {
+    for (SModelListener sModelListener : getModelListeners()) {
+      try {
+        sModelListener.beforeModelFileChanged(event);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
+  protected void fireModelFileChanged(SModelFileChangedEvent event) {
+    for (SModelListener sModelListener : getModelListeners()) {
+      try {
+        sModelListener.modelFileChanged(event);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
+  protected void fireBeforeModelRenamed(SModelRenamedEvent event) {
+    for (SModelListener sModelListener : getModelListeners()) {
+      try {
+        sModelListener.beforeModelRenamed(event);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
+  protected void fireModelRenamed(SModelRenamedEvent event) {
+    for (SModelListener sModelListener : getModelListeners()) {
+      try {
+        sModelListener.modelRenamed(event);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
+  protected void fireModelStateChanged(ModelLoadingState oldState, ModelLoadingState newState) {
+    for (SModelListener sModelListener : getModelListeners()) {
+      try {
+        sModelListener.modelLoadingStateChanged(this, oldState, newState);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
+  protected void fireBeforeModelDisposed(SModel model) {
+    for (SModelListener sModelListener : getModelListeners()) {
+      try {
+        sModelListener.beforeModelDisposed(model);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
+  protected void fireModelSaved() {
+    for (SModelListener sModelListener : getModelListeners()) {
+      try {
+        sModelListener.modelSaved(this);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
+  /**
+   * use getReference()
+   */
+  @Override
+  @Deprecated
+  public SModelReference getSModelReference() {
+    return getReference();
+  }
+
+  @Override
+  public String getLongName() {
+    return SModelStereotype.withoutStereotype(getReference().getModelName());
+  }
+
+  @Override
+  public String getStereotype() {
+    return SModelStereotype.getStereotype(getReference().getModelName());
   }
 
   @Override
@@ -83,278 +230,95 @@ public abstract class BaseSModelDescriptor extends SModelBase implements jetbrai
     return getSModelInternal().getNode(id);
   }
 
-  @Override
-  public void dispose() {
-    ModelAccess.assertLegalWrite();
-    fireBeforeModelDisposed(this);
-    jetbrains.mps.smodel.SModel model = getCurrentModelInternal();
-    if (model != null) {
-      model.dispose();
-    }
-    clearListeners();
-  }
+  //
 
   @Override
-  public boolean isGeneratable() {
-    return false;
-  }
-
-  @Override
-  public boolean isRegistered() {
-    SModule copy = getModule();
-    return copy != null && copy.getRepository() != null;
-  }
-
-  /**
-   * use getReference()
-   */
-  @Override
-  @Deprecated
-  public SModelReference getSModelReference() {
-    return getReference();
-  }
-
-  @Override
-  public String getLongName() {
-    return SModelStereotype.withoutStereotype(getReference().getModelName());
-  }
-
-  @Override
-  @NotNull
-  public String getStereotype() {
-    return SModelStereotype.getStereotype(getReference().getModelName());
-  }
-
-  protected abstract jetbrains.mps.smodel.SModel getCurrentModelInternal();
-
-  @Override
-  public void addModelListener(@NotNull SModelListener listener) {
-    if (listener.getPriority() == SModelListenerPriority.PLATFORM) {
-      myModelListeners.add(0, listener);
-    } else {
-      myModelListeners.add(listener);
-    }
-  }
-
-  @Override
-  public void removeModelListener(@NotNull SModelListener listener) {
-    myModelListeners.remove(listener);
-  }
-
-  @NotNull
-  List<SModelListener> getModelListeners() {
-    return myModelListeners;
-  }
-
-  private void clearListeners() {
-    myModelListeners.clear();
-  }
-
-  protected void notifyModelReplaced(SModel oldSModel) {
-    SModelRepository.getInstance().notifyModelReplaced(this, oldSModel);
-  }
-
-  // Not SModel-specific listener notifications
-
-  void fireBeforeModelFileChanged(SModelFileChangedEvent event) {
-    for (SModelListener sModelListener : getModelListeners()) {
-      try {
-        sModelListener.beforeModelFileChanged(event);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  void fireModelFileChanged(SModelFileChangedEvent event) {
-    for (SModelListener sModelListener : getModelListeners()) {
-      try {
-        sModelListener.modelFileChanged(event);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  void fireBeforeModelRenamed(SModelRenamedEvent event) {
-    for (SModelListener sModelListener : getModelListeners()) {
-      try {
-        sModelListener.beforeModelRenamed(event);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  void fireModelRenamed(SModelRenamedEvent event) {
-    for (SModelListener sModelListener : getModelListeners()) {
-      try {
-        sModelListener.modelRenamed(event);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  protected void fireModelStateChanged(ModelLoadingState oldState, ModelLoadingState newState) {
-    for (SModelListener sModelListener : getModelListeners()) {
-      try {
-        sModelListener.modelLoadingStateChanged(this, oldState, newState);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  void fireBeforeModelDisposed(SModel model) {
-    for (SModelListener sModelListener : getModelListeners()) {
-      try {
-        sModelListener.beforeModelDisposed(model);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  void fireModelSaved() {
-    for (SModelListener sModelListener : getModelListeners()) {
-      try {
-        sModelListener.modelSaved(this);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  @Override
-  public SModel resolveModel(SModelReference reference) {
-    return SModelRepository.getInstance().getModelDescriptor(reference);
-  }
-
-  @Override
-  public boolean isTransient() {
-    return false;
-  }
-
-  @Override
-  public void load() {
-    getSModelInternal();
-  }
-
-  @NotNull
-  @Override
-  public Iterable<Problem> getProblems() {
-    return Collections.emptySet();
-  }
-
-  @Override
-  public void unload() {
-    // TODO implement
-  }
-
-  //-------------------------temporary
-
-  public abstract jetbrains.mps.smodel.SModel getSModelInternal();
-
-  /**
-   * Dangerous, allows to replace model data.
-   */
-  public void replace(SModelData modelData) {
-    throw new UnsupportedOperationException();
-  }
-
-  @Override
-  public ModelDependenciesManager getModelDepsManager() {
+  public final ModelDependenciesManager getModelDepsManager() {
     return getSModelInternal().getModelDepsManager();
   }
 
   @Override
-  public List<SModuleReference> importedLanguages() {
+  public final List<SModuleReference> importedLanguages() {
     return getSModelInternal().importedLanguages();
   }
 
   @Override
-  public void deleteLanguage(@NotNull SModuleReference ref) {
+  public final void deleteLanguage(@NotNull SModuleReference ref) {
     getSModelInternal().deleteLanguage(ref);
   }
 
   @Override
-  public void addLanguage(SModuleReference ref) {
+  public final void addLanguage(SModuleReference ref) {
     getSModelInternal().addLanguage(ref);
   }
 
   @Override
-  public List<SModuleReference> importedDevkits() {
+  public final List<SModuleReference> importedDevkits() {
     return getSModelInternal().importedDevkits();
   }
 
   @Override
-  public void addDevKit(SModuleReference ref) {
+  public final void addDevKit(SModuleReference ref) {
     getSModelInternal().addDevKit(ref);
   }
 
   @Override
-  public void deleteDevKit(@NotNull SModuleReference ref) {
+  public final void deleteDevKit(@NotNull SModuleReference ref) {
     getSModelInternal().deleteDevKit(ref);
   }
 
   @Override
-  public List<ImportElement> importedModels() {
+  public final List<ImportElement> importedModels() {
     return getSModelInternal().importedModels();
   }
 
   @Override
-  public void addModelImport(SModelReference modelReference, boolean firstVersion) {
+  public final void addModelImport(SModelReference modelReference, boolean firstVersion) {
     getSModelInternal().addModelImport(modelReference, firstVersion);
   }
 
   @Override
-  public void addModelImport(ImportElement importElement) {
+  public final void addModelImport(ImportElement importElement) {
     getSModelInternal().addModelImport(importElement);
   }
 
   @Override
-  public void deleteModelImport(SModelReference modelReference) {
+  public final void deleteModelImport(SModelReference modelReference) {
     getSModelInternal().deleteModelImport(modelReference);
   }
 
-  @NotNull
-  public static Set<SModelReference> collectUsedModels(@NotNull jetbrains.mps.smodel.SModel model, @NotNull Set<SModelReference> result) {
-    return jetbrains.mps.smodel.SModel.collectUsedModels(model, result);
-  }
-
   @Override
-  public void calculateImplicitImports() {
+  public final void calculateImplicitImports() {
     getSModelInternal().calculateImplicitImports();
   }
 
   @Override
-  public List<SModuleReference> engagedOnGenerationLanguages() {
+  public final List<SModuleReference> engagedOnGenerationLanguages() {
     return getSModelInternal().engagedOnGenerationLanguages();
   }
 
   @Override
-  public void addEngagedOnGenerationLanguage(SModuleReference ref) {
+  public final void addEngagedOnGenerationLanguage(SModuleReference ref) {
     getSModelInternal().addEngagedOnGenerationLanguage(ref);
   }
 
   @Override
-  public void removeEngagedOnGenerationLanguage(SModuleReference ref) {
+  public final void removeEngagedOnGenerationLanguage(SModuleReference ref) {
     getSModelInternal().removeEngagedOnGenerationLanguage(ref);
   }
 
   @Override
-  public List<ImportElement> getAdditionalModelVersions() {
+  public final List<ImportElement> getAdditionalModelVersions() {
     return getSModelInternal().getAdditionalModelVersions();
   }
 
   @Override
-  public void addAdditionalModelVersion(@NotNull SModelReference modelReference, int usedVersion) {
+  public final void addAdditionalModelVersion(@NotNull SModelReference modelReference, int usedVersion) {
     getSModelInternal().addAdditionalModelVersion(modelReference, usedVersion);
   }
 
   @Override
-  public void addAdditionalModelVersion(@NotNull ImportElement element) {
+  public final void addAdditionalModelVersion(@NotNull ImportElement element) {
     getSModelInternal().addAdditionalModelVersion(element);
   }
 
@@ -369,62 +333,62 @@ public abstract class BaseSModelDescriptor extends SModelBase implements jetbrai
   }
 
   @Override
-  public StackTraceElement[] getDisposedStacktrace() {
+  public final StackTraceElement[] getDisposedStacktrace() {
     return getSModelInternal().getDisposedStacktrace();
   }
 
   @Override
-  public boolean isDisposed() {
+  public final boolean isDisposed() {
     return getSModelInternal().isDisposed();
   }
 
   @Override
-  public void setModelDescriptor(org.jetbrains.mps.openapi.model.SModel modelDescriptor) {
+  public final void setModelDescriptor(org.jetbrains.mps.openapi.model.SModel modelDescriptor) {
     getSModelInternal().setModelDescriptor(modelDescriptor);
   }
 
   @Override
-  public boolean canFireEvent() {
+  public final boolean canFireEvent() {
     return getSModelInternal().canFireEvent();
   }
 
   @Override
-  public FastNodeFinder getFastNodeFinder() {
+  public final FastNodeFinder getFastNodeFinder() {
     return getSModelInternal().getFastNodeFinder();
   }
 
   @Override
-  public void disposeFastNodeFinder() {
+  public final void disposeFastNodeFinder() {
     getSModelInternal().disposeFastNodeFinder();
   }
 
   @Override
-  public void updateImportedModelUsedVersion(org.jetbrains.mps.openapi.model.SModelReference sModelReference, int currentVersion) {
+  public final void updateImportedModelUsedVersion(org.jetbrains.mps.openapi.model.SModelReference sModelReference, int currentVersion) {
     getSModelInternal().updateImportedModelUsedVersion(sModelReference, currentVersion);
   }
 
   @Override
-  public boolean updateSModelReferences() {
+  public final boolean updateSModelReferences() {
     return getSModelInternal().updateSModelReferences();
   }
 
   @Override
-  public boolean updateModuleReferences() {
+  public final boolean updateModuleReferences() {
     return getSModelInternal().updateModuleReferences();
   }
 
   @Override
-  public boolean canFireReadEvent() {
+  public final boolean canFireReadEvent() {
     return getSModelInternal().canFireReadEvent();
   }
 
   @Override
-  public void changeModelReference(SModelReference newModelReference) {
+  public final void changeModelReference(SModelReference newModelReference) {
     getSModelInternal().changeModelReference(newModelReference);
   }
 
   @Override
-  public void copyPropertiesTo(SModelInternal to) {
+  public final void copyPropertiesTo(SModelInternal to) {
     getSModelInternal().copyPropertiesTo(to);
   }
 }

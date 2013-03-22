@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.persistence.FileDataSource;
@@ -65,8 +65,8 @@ public class SModelFileTracker implements CoreComponent {
     myRepo.removeModelRepositoryListener(myRepoListener);
   }
 
-  public BaseSModelDescriptorWithSource findModel(IFile modelFile) {
-    return (BaseSModelDescriptorWithSource) myPathsToModelDescriptorMap.get(modelFile.getPath());
+  public SModel findModel(IFile modelFile) {
+    return myPathsToModelDescriptorMap.get(modelFile.getPath());
   }
 
   private void addModelToFileCache(SModel md) {

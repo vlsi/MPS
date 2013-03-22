@@ -15,15 +15,18 @@
  */
 package jetbrains.mps.stubs;
 
+import jetbrains.mps.extapi.model.ReloadableSModelBase;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 
-public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource implements Cloneable {
+public class BaseStubModelDescriptor extends ReloadableSModelBase implements Cloneable {
   private static final Logger LOG = Logger.getLogger(BaseStubModelDescriptor.class);
   private SModule myModule;
   private jetbrains.mps.smodel.SModel mySModel;
@@ -59,7 +62,7 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
 
   @Override
   public boolean isLoaded() {
-    return mySModel !=null;
+    return mySModel != null;
   }
 
   @Override

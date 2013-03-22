@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.makeTest.test.ChangeModel" file="ChangeModel.java">
-    <classNode dependClassName="jetbrains.mps.smodel.BaseSModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.extapi.model.SModelBase" />
     <classNode dependClassName="jetbrains.mps.smodel.CopyUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.DefaultSModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />

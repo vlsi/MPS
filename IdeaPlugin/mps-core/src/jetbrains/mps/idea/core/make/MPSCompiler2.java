@@ -23,6 +23,7 @@ import com.intellij.openapi.compiler.*;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.generator.GenerationFacade;
@@ -246,7 +247,7 @@ public class MPSCompiler2 implements SourceGeneratingCompiler {
               public void run() {
                 String path = null;
                 SModel model = navigatable.lookupModel();
-                if (model != null && model instanceof BaseEditableSModelDescriptor
+                if (model != null && model instanceof EditableSModel
                     && model.getSource() instanceof FileDataSource) {
                   path = "file://" + ((FileDataSource) model.getSource()).getFile().getPath();
                 }

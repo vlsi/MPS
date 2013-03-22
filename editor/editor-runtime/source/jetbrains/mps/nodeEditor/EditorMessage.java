@@ -30,11 +30,11 @@ public interface EditorMessage extends SimpleEditorMessage {
 
   boolean isValid(EditorComponent editorComponent);
 
-  EditorCell getCell(EditorComponent editorComponent);
+  jetbrains.mps.openapi.editor.cells.EditorCell getCell(EditorComponent editorComponent);
 
   EditorCell getCellForParentNodeInMainEditor(EditorComponent editor);
 
-  boolean acceptCell(EditorCell cell, EditorComponent editor);
+  boolean acceptCell(jetbrains.mps.openapi.editor.cells.EditorCell cell, EditorComponent editor);
 
   void paint(Graphics g, EditorComponent editorComponent, EditorCell cell);
 
