@@ -13,11 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.module;
+package org.jetbrains.mps.openapi.model;
 
-/**
- * evgeny, 3/6/13
- */
-public interface SModuleListener {
+public interface SModelListener {
+  //node is already in model
+  void nodeAdded(SNode node);
 
+  //node is not in model
+  void nodeRemoved(SNodeReference node);
+
+  //new value is already set
+  void propertyChanged(SNode node, String oldValue, String newValue);
+
+  //old ref is already detached,
+  void referenceChanged(SNode node, SReference oldRef, SReference newRef);
 }

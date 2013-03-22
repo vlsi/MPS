@@ -13,11 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.module;
+package org.jetbrains.mps.openapi.model;
 
-/**
- * evgeny, 3/6/13
- */
-public interface SModuleListener {
-
+public interface SModelAccessListener {
+  //before write access occured
+  void nodeWritten(SNode node);
+  //before read access occured
+  void nodeRead(SNode node);
+  //before read access occured
+  void propertyRead(SNode node, String name);
+  //before read access occured
+  void referenceRead(SNode node, String role);
 }
