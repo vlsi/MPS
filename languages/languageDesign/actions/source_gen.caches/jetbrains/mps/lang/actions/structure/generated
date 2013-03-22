@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-80k4lgxox2ptiamhgmp6e1qe98ygdry">
+<dependencies version="2" modelHash="-cnrcucb0v0uwuxu1i500ilyn53899fy">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-b2l5iyygy2vjqkbekn4rvaubf6n8cmr" />
@@ -101,7 +101,6 @@
     <dep root="1235056040733" />
     <dep root="1235060070612" />
     <dep root="1235060179343" />
-    <dep root="5179659504400987925" />
     <dep root="5425882385312046132" />
     <dep root="5480835971642155304" />
     <dep root="5480835971642160908" />
@@ -191,7 +190,7 @@
   <source id="1177327570013" name="QueryFunction_Substitute_Handler" hash="-62ibtgcx8yo94d2jpx79o997gwlovb">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177327666243" name="SimpleItemSubstitutePart" hash="-bljs6xhvjgkk6avp4cub8jx4xsja720">
+  <source id="1177327666243" name="SimpleItemSubstitutePart" hash="-24bjrbyxoiytmxgv67sh2zyl36u2wru">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1177333529597" name="ConceptPart" hash="-67ef8wereywsxcly7bea3jlcj2bqp4j">
@@ -200,7 +199,7 @@
   <source id="1177335944525" name="QueryFunction_SubstituteString" hash="-5gphz1mh00pezbb2k5vdpt9y38y6f4e">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177337641126" name="ParameterizedSubstituteMenuPart" hash="3wm5des92pddpdx0z71lgod86mdc98y">
+  <source id="1177337641126" name="ParameterizedSubstituteMenuPart" hash="-dcryxiy3wef3gpuh5uxqd8ed41g7r49">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1177337833147" name="ConceptFunctionParameter_parameterObject" hash="-bmz4874cqz3xboxfnjtqaemvsu1t2j6">
@@ -248,7 +247,7 @@
   <source id="1177497140107" name="ConceptFunctionParameter_sourceNode" hash="6i5e20mjurielo5eckki2suqk3yx1vl">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177498013932" name="SimpleSideTransformMenuPart" hash="bokjdn52giy7oa22tgnckajk8g4iqa7">
+  <source id="1177498013932" name="SimpleSideTransformMenuPart" hash="-9qlq44muaq4vllqgtm07mnpsipekhsb">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1177498071304" name="QueryFunction_SideTransform_String" hash="-98wpjgtnh9pw2utjn62mhgyezv9pcyl">
@@ -257,7 +256,7 @@
   <source id="1177498227294" name="QueryFunction_SideTransform_Handler" hash="eud4uco4zvdcbh870un3rfi1izmp835">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177508764419" name="ParameterizedSideTransformMenuPart" hash="-2oar53odds2msulreynsddijirr3rug">
+  <source id="1177508764419" name="ParameterizedSideTransformMenuPart" hash="-7fk2c3iy28a6lfb2zywzahxr5dbzg0z">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1177508842676" name="QueryFunction_ParameterizedSideTransform_Query" hash="73qq2smvuepmtpp7tg2i3ku1bcwxqsn">
@@ -490,10 +489,7 @@
   <source id="8372849190626008398" name="NodeSubstituteMenuBuilderPart" hash="-2ep7qve7vkjnl7repb64gbd12d99vs7">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6400740936061763657" name="QueryFunction_SubstituteIconNode" hash="-5usz0apyv8bnatfi5o2mp0nf0bqorlh">
-    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
-  </source>
-  <source id="5179659504400987925" name="QueryFunction_SideTransform_IconNode" hash="-8z76qjrwew0qxpoaf4ozvvb9t1xmbvw">
+  <source id="6400740936061763657" name="QueryFunction_IconNode" hash="e5froskaru0w3fsh07ipdx2s64o7du1">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

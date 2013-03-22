@@ -6796,7 +6796,7 @@
           <node role="descriptionText" roleId="tpdg.1177336018902" type="tpdg.Substitute_SimpleString" typeId="tpdg.1196434649611" id="1210680322396">
             <property name="text" nameId="tpdg.1196434851095" value="Prints a string to System.out" />
           </node>
-          <node role="iconNode" roleId="tpdg.6400740936063391052" type="tpdg.QueryFunction_SubstituteIconNode" typeId="tpdg.6400740936061763657" id="4824500480023709035">
+          <node role="iconNode" roleId="tpdg.6400740936063391052" type="tpdg.QueryFunction_IconNode" typeId="tpdg.6400740936061763657" id="4824500480023709035">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4824500480023709036">
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7927316827900283001">
                 <node role="expression" roleId="tpee.1068580123156" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="1219331211447">
@@ -6833,7 +6833,7 @@
           <node role="matchingText" roleId="tpdg.1177336013307" type="tpdg.Substitute_SimpleString" typeId="tpdg.1196434649611" id="1210681211694">
             <property name="text" nameId="tpdg.1196434851095" value="serr" />
           </node>
-          <node role="iconNode" roleId="tpdg.6400740936063391052" type="tpdg.QueryFunction_SubstituteIconNode" typeId="tpdg.6400740936061763657" id="4824500480023774112">
+          <node role="iconNode" roleId="tpdg.6400740936063391052" type="tpdg.QueryFunction_IconNode" typeId="tpdg.6400740936061763657" id="4824500480023774112">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4824500480023774113">
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7927316827902199403">
                 <node role="expression" roleId="tpee.1068580123156" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="7927316827902199404">
