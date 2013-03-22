@@ -65,7 +65,7 @@ public class MPSReferenceSearch extends QueryExecutorBase<PsiReference, Referenc
   @Override
   public void processQuery(@NotNull SearchParameters queryParameters, final @NotNull Processor<PsiReference> consumer) {
 
-    if (!(queryParameters.getScope() instanceof GlobalSearchScope)) {
+    if (!(queryParameters.getEffectiveSearchScope() instanceof GlobalSearchScope)) {
       // ??
       return;
     }
@@ -136,7 +136,7 @@ public class MPSReferenceSearch extends QueryExecutorBase<PsiReference, Referenc
 
   // Maybe will go to MPS2PsiMapper
   @Nullable
-  private SNode getNodeForElement(PsiElement element) {
+  public static SNode getNodeForElement(PsiElement element) {
     // baseLanguage specific check
     if (!(element instanceof PsiClass || element instanceof PsiMethod || element instanceof PsiField)) {
       return null;
