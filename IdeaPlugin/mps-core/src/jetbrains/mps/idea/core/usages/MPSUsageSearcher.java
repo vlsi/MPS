@@ -85,7 +85,7 @@ public class MPSUsageSearcher extends CustomUsageSearcher {
                 PsiElement targetPsiElement = null;
 
                 for (MPS2PsiMapper finder : MPS2PsiMapper.EP_NAME.getExtensions()) {
-                  PsiElement psiElement = finder.getPsiSource(targetNode, project);
+                  PsiElement psiElement = finder.getPsiElement(targetNode, project);
                   if (psiElement != null) {
                     targetPsiElement = psiElement;
                   }

@@ -1,4 +1,4 @@
-package jetbrains.mps.idea.core.usages;
+package jetbrains.mps.idea.core.refactoring;
 
 import com.intellij.openapi.command.CommandAdapter;
 import com.intellij.openapi.command.CommandEvent;
@@ -6,8 +6,6 @@ import com.intellij.openapi.command.CommandListener;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.idea.core.NodePtr;
-import jetbrains.mps.idea.core.SReferencePtr;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -31,6 +29,14 @@ import java.util.Set;
 /**
  * Here are recorded MPS usages of idea (e.g. java) code for which PsiReference.handleRename
  * or PsiReference.bindToElement has been called during refactoring.
+ *
+ * This is intended for "normal" references, i.e. MPSPsiRefs as they
+ * correspond to direct MPS SReferences. Thus, it implements normal behaviour --
+ * change underlying SReference and optionally add model import.
+ *
+ * Any other PsiReferences (derived, etc), for which no SReferences are present in a model,
+ * should be handled separately by somebody who knows what to do.
+ *
  * They are batched to happen in one MPS action (TODO in command or reload session?)
  * <p/>
  * danilla 3/19/13

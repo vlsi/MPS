@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.core.psi.impl;
+package jetbrains.mps.idea.java.psi;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.JavaPsiFacade;
@@ -22,27 +22,30 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.search.GlobalSearchScope;
 import jetbrains.mps.idea.core.psi.MPS2PsiMapper;
 import jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.module.SModule;
 
 /**
  * danilla 2/15/13
  */
 
 public class ClassStubPsiMapper implements MPS2PsiMapper {
+
+  @Override
+  public boolean canBeMine(SNode node) {
+    return node.getModel() instanceof JavaClassStubModelDescriptor;
+  }
+
+  /**
+   * Expects to be called for node such that canBeMine(node) == true
+   */
   @Nullable
   @Override
-  public PsiElement getPsiSource(SNode node, Project project) {
+  public PsiElement getPsiElement(SNode node, Project project) {
     // for now only classifiers
     // maybe should be done specifically for a few concepts which correspond to java entities
 
@@ -64,40 +67,10 @@ public class ClassStubPsiMapper implements MPS2PsiMapper {
     }
 
     SModel model = node.getModel();
-    if (model == null) return null;
-
-    SModel modelDesc = model;
-
-    // class file stubs
-    if (!(modelDesc instanceof JavaClassStubModelDescriptor)) return null;
-
     String classFQName = SNodeOperations.getModelLongName(model) + "." + node.getName();
     return JavaPsiFacade.getInstance(project).findClass(classFQName, GlobalSearchScope.allScope(project));
   }
 
-  @Nullable
-  @Override
-  public SNode getMPSNodeForPsi(PsiElement element, Project project) {
-    // TODO
-    return null;
-  }
 
-  @Override
-  public boolean canComputeNodeId(PsiElement element) {
-    return false;
-  }
-
-  @Nullable
-  @Override
-  public SModelReference computeModelReference(PsiElement element) {
-    // TODO
-    return null;
-  }
-
-  @Nullable
-  @Override
-  public SNodeId computeNodeId(PsiElement element) {
-    return null;
-  }
 
 }

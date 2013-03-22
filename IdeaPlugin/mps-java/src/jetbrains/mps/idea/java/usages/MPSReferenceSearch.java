@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.core.usages;
+package jetbrains.mps.idea.java.usages;
 
 import com.intellij.facet.FacetManager;
 import com.intellij.openapi.application.QueryExecutorBase;
@@ -22,8 +22,12 @@ import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiElement;
+import com.intellij.psi.PsiField;
+import com.intellij.psi.PsiFile;
+import com.intellij.psi.PsiJavaFile;
 import com.intellij.psi.PsiMethod;
 import com.intellij.psi.PsiReference;
 import com.intellij.psi.search.GlobalSearchScope;
@@ -37,14 +41,21 @@ import jetbrains.mps.idea.core.psi.MPS2PsiMapperUtil;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRef;
+import jetbrains.mps.idea.core.refactoring.NodePtr;
+import jetbrains.mps.idea.java.psiStubs.JavaForeignIdBuilder;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodeId.Foreign;
+import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.ArrayDeque;
@@ -65,27 +76,30 @@ public class MPSReferenceSearch extends QueryExecutorBase<PsiReference, Referenc
       return;
     }
 
-    GlobalSearchScope scope = (GlobalSearchScope) queryParameters.getEffectiveSearchScope();
+    final GlobalSearchScope scope = (GlobalSearchScope) queryParameters.getEffectiveSearchScope();
 
     final Project project = scope.getProject();
     final MPSPsiProvider psiProvider = MPSPsiProvider.getInstance(project);
     final PsiElement psiTarget = queryParameters.getElementToSearch();
 
-    final SNodeId targetNodeId = MPS2PsiMapperUtil.getNodeId(psiTarget);
-    if (targetNodeId == null) {
-      // it can't be references from MPS
-      return;
-    }
+    ModelAccess.instance().runReadAction(new Runnable() {
 
-    for (Module module : ModuleManager.getInstance(project).getModules()) {
-      if (!scope.isSearchInModuleContent(module)) continue;
-      MPSFacet facet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
-      if (facet == null) continue;
+      @Override
+      public void run() {
 
-      final Solution facetSolution = facet.getSolution();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        @Override
-        public void run() {
+        // if MPSReferenceSearch is moved to mps-core, it will be MPS2PsiMapperUtil.getNodeId
+        final SNodeId targetNodeId = getNodeId(psiTarget);
+        if (targetNodeId == null) {
+          // it can't be referenced from MPS
+          return;
+        }
+
+        for (Module module : ModuleManager.getInstance(project).getModules()) {
+          if (!scope.isSearchInModuleContent(module)) continue;
+          MPSFacet facet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
+          if (facet == null) continue;
+
+          final Solution facetSolution = facet.getSolution();
 
           for (SModel model : SModelRepository.getInstance().getModelDescriptors(facetSolution)) {
             Deque<SNode> stack = new ArrayDeque<SNode>();
@@ -121,44 +135,49 @@ public class MPSReferenceSearch extends QueryExecutorBase<PsiReference, Referenc
                     }
                   }
 
-                } else if (s.startsWith(targetNodeId.toString())) {
-                  // TODO handle specially
                 }
-
-//                SNode targetNode = ref.getTargetNode();
-//                if (targetNode == null) continue;
-//                PsiElement targetPsiElement = MPS2PsiMapperUtil.getPsiSource(targetNode, project);
-//
-//                if (targetPsiElement == psiTarget) {
-//                  // finding PsiReference corresponding to this SReference
-//                  // We don't have a way to just get MPSPsiRef from SReference in the same way
-//                  // as we can do with nodes (via nodeId)
-//                  PsiElement mpsPsiElem = psiProvider.getPsi(node);
-//                  if (!(mpsPsiElem instanceof MPSPsiNode)) continue;
-//                  MPSPsiNode mpsPsiNode = (MPSPsiNode) mpsPsiElem;
-//
-//                  String refRole = ref.getRole();
-//                  SNodeId targetNodeId = targetNode.getNodeId();
-//                  MPSPsiRef[] refs = mpsPsiNode.getReferences(refRole);
-//
-//                  for (MPSPsiRef r : refs) {
-//                    if (targetNodeId.equals(r.getNodeId())) {
-//                      // it's our reference
-//                      consumer.process(r.getReference());
-//                    }
-//                  }
-//                }
               }
-
             }
           }
-
         }
-      });
+      }
+    });
+  }
 
+  @Nullable
+  private SNodeId getNodeId(PsiElement element) {
+    SNode node = getNodeForElement(element);
+    if (node != null) {
+      return node.getNodeId();
+    }
+    return null;
+  }
 
+  // Maybe will go to MPS2PsiMapper
+  @Nullable
+  private SNode getNodeForElement(PsiElement element) {
+    // baseLanguage specific check
+    if (!(element instanceof PsiClass || element instanceof PsiMethod || element instanceof PsiField)) {
+      return null;
     }
 
+    PsiFile psiFile = element.getContainingFile();
+    if (psiFile instanceof PsiJavaFile) {
+      // there might be psi stubs for this element, but there also might not (e.g. if it's inside a module
+      // with no MPS facet)
 
+      NodePtr nodePtr = JavaForeignIdBuilder.computeNodePtr(element);
+      if (nodePtr == null) {
+        return null;
+      }
+      SNodeReference nodeRef = new SNodePointer(nodePtr.getSModelReference(), nodePtr.getNodeId());
+      SNode node = nodeRef.resolve(MPSModuleRepository.getInstance());
+
+      return node;
+    }
+
+    // TODO handle class file stubs
+
+    return null;
   }
 }
