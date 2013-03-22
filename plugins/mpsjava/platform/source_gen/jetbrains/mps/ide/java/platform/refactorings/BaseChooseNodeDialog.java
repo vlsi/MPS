@@ -13,8 +13,7 @@ import java.awt.HeadlessException;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelOperations;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -29,7 +28,7 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeSelectionModel;
 import jetbrains.mps.ide.platform.modeltree.ModelTreeCellRenderer;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
@@ -59,8 +58,8 @@ public abstract class BaseChooseNodeDialog extends DialogWrapper {
   private void initVisibleModels(SModel modelDescriptor) {
     myVisibleModels = SetSequence.fromSet(new HashSet<SModel>());
     SetSequence.fromSet(myVisibleModels).addElement(modelDescriptor);
-    for (SModel nextOwnModelDescriptor : ListSequence.fromList(((AbstractModule) modelDescriptor.getModule()).getModels())) {
-      SetSequence.fromSet(myVisibleModels).addElement(nextOwnModelDescriptor);
+    for (SModel nextOwnModel : Sequence.fromIterable(modelDescriptor.getModule().getModels())) {
+      SetSequence.fromSet(myVisibleModels).addElement(nextOwnModel);
     }
     SModel model = modelDescriptor;
     for (SModelReference sm : SModelOperations.getImportedModelUIDs(model)) {

@@ -4,7 +4,6 @@ package jetbrains.mps.build.mps.pluginSolution.plugin;
 
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.Solution;
-import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccess;
@@ -23,22 +22,21 @@ public class BuildGeneratorUtil {
   }
 
   public static SModel createModel(final String modelName, final Solution solution) {
-    List<SModel> ownModelDescriptors = solution.getModels();
-    final Wrappers._T<SModel> modelDescriptor = new Wrappers._T<SModel>(null);
-    for (SModel descriptor : ListSequence.fromList(ownModelDescriptors)) {
+    final Wrappers._T<SModel> model = new Wrappers._T<SModel>(null);
+    for (SModel descriptor : ListSequence.fromList(solution.getModels())) {
       if (descriptor.getReference().getModelName().equals(modelName)) {
-        modelDescriptor.value = descriptor;
+        model.value = descriptor;
         break;
       }
     }
-    if (modelDescriptor.value == null) {
+    if (model.value == null) {
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          modelDescriptor.value = SModuleOperations.createModelWithAdjustments(modelName, solution.getModelRoots().iterator().next());
+          model.value = SModuleOperations.createModelWithAdjustments(modelName, solution.getModelRoots().iterator().next());
         }
       });
     }
-    return modelDescriptor.value;
+    return model.value;
   }
 
   public static Solution createSolution(MPSProject mpsProject, String solutionName, IFile solutionBaseDirFile) {

@@ -24,11 +24,9 @@ import java.util.concurrent.CountDownLatch;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.extapi.model.EditableSModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.project.OptimizeImportsHelper;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelRepository;
@@ -86,17 +84,10 @@ public class OptimizeImportsInProject_Action extends BaseAction {
               if (module instanceof Language) {
                 QueueSequence.fromQueue(modules).addSequence(CollectionSequence.fromCollection(((Language) module).getGenerators()));
               }
-              IScope moduleScope = module.getScope();
-              for (SModel model : ListSequence.fromIterable(module.getModels())) {
-                if (!(SModelStereotype.isUserModel(model))) {
-                  continue;
+              for (SModel model : Sequence.fromIterable(module.getModels())) {
+                if (SModelStereotype.isUserModel(model) && model instanceof EditableSModel) {
+                  ListSequence.fromList(modelsToFix).addElement(model);
                 }
-                if (!(model instanceof EditableSModel)) {
-                  continue;
-                }
-
-                List<SModelReference> imports = SModelOperations.getImportedModelUIDs(model);
-                ListSequence.fromList(modelsToFix).addElement(model);
               }
             }
           } finally {

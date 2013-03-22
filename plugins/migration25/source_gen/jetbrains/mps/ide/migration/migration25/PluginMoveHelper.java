@@ -160,8 +160,7 @@ public class PluginMoveHelper {
     s.getModuleDescriptor().setKind(SolutionKind.PLUGIN_OTHER);
 
     final String modelName = s.getModuleName() + ".plugin";
-    List<SModel> solModels = s.getModels();
-    final Wrappers._T<SModel> pluginModel = new Wrappers._T<SModel>(ListSequence.fromList(solModels).where(new IWhereFilter<SModel>() {
+    final Wrappers._T<SModel> pluginModel = new Wrappers._T<SModel>(Sequence.fromIterable(((Iterable<SModel>) s.getModels())).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
         return jetbrains.mps.util.SNodeOperations.getModelLongName(it).equals(modelName);
       }

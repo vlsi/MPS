@@ -17,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModelStereotype;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -73,23 +74,24 @@ public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
           continue;
         }
 
-        for (SModel modelDescriptor : ListSequence.fromIterable(module.getModels())) {
-          if (SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(modelDescriptor))) {
+        for (SModel _model : Sequence.fromIterable(module.getModels())) {
+          if (SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(_model))) {
             continue;
           }
 
-          SModel model = modelDescriptor;
+          SModel model = _model;
+
           Set<SModelReference> dependencies = SetSequence.fromSet(new HashSet<SModelReference>());
           for (SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
             SNode nodeToImport = ImportModelsWithUsedClassifiers_Action.this.getNodeToImport(node, _params);
-            SModelReference mref = check_rft9c_a0b0e0d0e0a(SNodeOperations.getModel(nodeToImport));
+            SModelReference mref = check_rft9c_a0b0f0d0e0a(SNodeOperations.getModel(nodeToImport));
             if (mref == null) {
               continue;
             }
             SetSequence.fromSet(dependencies).addElement(mref);
           }
           // remove all imported already models 
-          SetSequence.fromSet(dependencies).removeElement(modelDescriptor.getReference());
+          SetSequence.fromSet(dependencies).removeElement(_model.getReference());
           for (SModel importedModel : ListSequence.fromList(jetbrains.mps.smodel.SModelOperations.allImportedModels(model, GlobalScope.getInstance()))) {
             SetSequence.fromSet(dependencies).removeElement(importedModel.getReference());
           }
@@ -129,7 +131,7 @@ public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
 
   private static Logger LOG = Logger.getLogger(ImportModelsWithUsedClassifiers_Action.class);
 
-  private static SModelReference check_rft9c_a0b0e0d0e0a(SModel checkedDotOperand) {
+  private static SModelReference check_rft9c_a0b0f0d0e0a(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
     }
