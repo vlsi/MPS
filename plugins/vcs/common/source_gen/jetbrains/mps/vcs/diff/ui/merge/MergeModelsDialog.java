@@ -154,6 +154,7 @@ public class MergeModelsDialog extends DialogWrapper {
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
+    myPanel.setSplitterProportionKey(getClass().getName() + "ModelTreeSplitter");
     myMergeTree = new MergeModelsDialog.MergeModelsTree();
     myPanel.setFirstComponent(ScrollPaneFactory.createScrollPane(myMergeTree));
 
@@ -175,6 +176,12 @@ public class MergeModelsDialog extends DialogWrapper {
   @Override
   public String getDimensionServiceKey() {
     return getClass().getName();
+  }
+
+  @Nullable
+  @Override
+  public JComponent getPreferredFocusedComponent() {
+    return myMergeTree;
   }
 
   @Override
@@ -232,7 +239,7 @@ public class MergeModelsDialog extends DialogWrapper {
 
   public void unregisterResultModel() {
     final SModel resultModel = myMergeSession.getResultModel();
-    assert check_3qqb0l_a0b0gb(check_3qqb0l_a0a1a23(resultModel)) instanceof DiffTemporaryModule;
+    assert check_3qqb0l_a0b0hb(check_3qqb0l_a0a1a33(resultModel)) instanceof DiffTemporaryModule;
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         DiffTemporaryModule.unregisterModel(resultModel.getModelDescriptor(), ProjectHelper.toMPSProject(myProject));
@@ -601,14 +608,14 @@ public class MergeModelsDialog extends DialogWrapper {
     }
   }
 
-  private static IModule check_3qqb0l_a0b0gb(SModelDescriptor checkedDotOperand) {
+  private static IModule check_3qqb0l_a0b0hb(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModelDescriptor check_3qqb0l_a0a1a23(SModel checkedDotOperand) {
+  private static SModelDescriptor check_3qqb0l_a0a1a33(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
