@@ -15,9 +15,13 @@ import jetbrains.mps.vcs.diff.ui.common.DiffEditorsGroup;
 import com.intellij.ui.JBSplitter;
 import javax.swing.JPanel;
 import java.awt.GridBagLayout;
+import com.intellij.ide.util.PropertiesComponent;
 import com.intellij.openapi.diff.ex.DiffStatusBar;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser;
+import com.intellij.openapi.actionSystem.ToggleAction;
+import jetbrains.mps.ide.icons.IdeIcons;
+import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import org.jetbrains.annotations.Nullable;
@@ -36,6 +40,8 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
 
 public class RootDifferencePane {
+  private static final String PARAM_SHOW_INSPECTOR = RootDifferencePane.class.getName() + "ShowInspector";
+  private static final String PARAM_INSPECTOR_SPLITTER_POSITION = RootDifferencePane.class.getName() + "InspectorSplitterPosition";
   private Project myProject;
   private ModelChangeSet myChangeSet;
   private SNodeId myRootId;
@@ -50,6 +56,7 @@ public class RootDifferencePane {
   private JBSplitter myPanel = new JBSplitter(true, 0.7f);
   private JPanel myTopPanel = new JPanel(new GridBagLayout());
   private JPanel myBottomPanel = new JPanel(new GridBagLayout());
+  private boolean isInspectorShown = PropertiesComponent.getInstance().getBoolean(PARAM_SHOW_INSPECTOR, true);
 
   private DiffStatusBar myStatusBar;
   private DefaultActionGroup myActionGroup;
@@ -68,9 +75,11 @@ public class RootDifferencePane {
     linkEditors(true);
     linkEditors(false);
 
-    myPanel.setSplitterProportionKey(getClass().getName() + "InspectorSplitter");
+    myPanel.setSplitterProportionKey(PARAM_INSPECTOR_SPLITTER_POSITION);
     myPanel.setFirstComponent(myTopPanel);
-    myPanel.setSecondComponent(myBottomPanel);
+    if (isInspectorShown) {
+      myPanel.setSecondComponent(myBottomPanel);
+    }
 
     myTraverser = new NextPreviousTraverser(myChangeGroupLayouts, myNewEditor.getMainEditor());
 
@@ -80,6 +89,16 @@ public class RootDifferencePane {
   private void createActionGroup(boolean isEditable, String rootName) {
     myActionGroup = new DefaultActionGroup();
     myActionGroup.addAll(myTraverser.previousAction(), myTraverser.nextAction());
+    myActionGroup.addSeparator();
+    myActionGroup.add(new ToggleAction("Show Inspector", "Show Inspector Windows", IdeIcons.DEFAULT_ICON) {
+      public boolean isSelected(AnActionEvent e) {
+        return isInspectorShown;
+      }
+
+      public void setSelected(AnActionEvent e, boolean b) {
+        showInspector(b);
+      }
+    });
     myActionGroup.addSeparator();
     if (isEditable) {
       myActionGroup.add(new RevertRootsAction(rootName) {
@@ -141,6 +160,18 @@ public class RootDifferencePane {
       }
     });
     setRootId(rootId);
+  }
+
+  private void showInspector(boolean show) {
+    if (isInspectorShown == show) {
+      return;
+    }
+    isInspectorShown = show;
+    PropertiesComponent.getInstance().setValue(PARAM_SHOW_INSPECTOR, show + "");
+    myPanel.setSecondComponent((isInspectorShown ?
+      myBottomPanel :
+      null
+    ));
   }
 
 
