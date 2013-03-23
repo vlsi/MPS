@@ -196,7 +196,7 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
   }
 
   public String getNameForRoot(@Nullable SNodeId nodeId) {
-    return findRootNode(nodeId).getPresentation();
+    return check_5x0uld_a0a91(findRootNode(nodeId), this);
   }
 
   @Nullable
@@ -370,6 +370,13 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
     public void setTextStyle(int textStyle) {
       myTextStyle = textStyle;
     }
+  }
+
+  private static String check_5x0uld_a0a91(DiffModelTree.RootTreeNode checkedDotOperand, DiffModelTree checkedDotThisExpression) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getPresentation();
+    }
+    return null;
   }
 
   public static boolean isNotEmpty_5x0uld_a0b0c0e(String str) {
