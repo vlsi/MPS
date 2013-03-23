@@ -11,6 +11,7 @@ import jetbrains.mps.vcs.diff.ui.common.DiffEditor;
 import com.intellij.ui.JBSplitter;
 import javax.swing.JPanel;
 import java.awt.GridBagLayout;
+import com.intellij.ide.util.PropertiesComponent;
 import java.util.List;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -27,6 +28,9 @@ import jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.openapi.actionSystem.ToggleAction;
+import jetbrains.mps.ide.icons.IdeIcons;
+import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IMapping;
@@ -39,6 +43,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
 
 public class MergeRootsPane {
+  private static final String PARAM_SHOW_INSPECTOR = MergeRootsPane.class.getName() + "ShowInspector";
+  private static final String PARAM_INSPECTOR_SPLITTER_POSITION = MergeRootsPane.class.getName() + "InspectorSplitterPosition";
   private Project myProject;
   private MergeSession myMergeSession;
   private SNodeId myRootId;
@@ -54,6 +60,7 @@ public class MergeRootsPane {
   private JBSplitter myPanel = new JBSplitter(true, 0.7f);
   private JPanel myTopPanel = new JPanel(new GridBagLayout());
   private JPanel myBottomPanel = new JPanel(new GridBagLayout());
+  private boolean isInspectorShown = PropertiesComponent.getInstance().getBoolean(PARAM_SHOW_INSPECTOR, true);
 
   private List<ChangeGroupLayout> myChangeGroupLayouts = ListSequence.fromList(new ArrayList<ChangeGroupLayout>());
   private Map<DiffChangeGroupLayout, Boolean> myDiffLayoutPart = MapSequence.fromMap(new HashMap<DiffChangeGroupLayout, Boolean>());
@@ -99,8 +106,11 @@ public class MergeRootsPane {
       }
     });
 
+    myPanel.setSplitterProportionKey(PARAM_INSPECTOR_SPLITTER_POSITION);
     myPanel.setFirstComponent(myTopPanel);
-    myPanel.setSecondComponent(myBottomPanel);
+    if (isInspectorShown) {
+      myPanel.setSecondComponent(myBottomPanel);
+    }
 
     myTraverser = new NextPreviousTraverser(myChangeGroupLayouts, myResultEditor.getMainEditor());
 
@@ -115,6 +125,16 @@ public class MergeRootsPane {
     myActionGroup.add(new ApplyNonConflictsForRoot(this));
     myActionGroup.addSeparator();
     myActionGroup.addAll(myTraverser.previousAction(), myTraverser.nextAction());
+    myActionGroup.addSeparator();
+    myActionGroup.add(new ToggleAction("Show Inspector", "Show Inspector Windows", IdeIcons.DEFAULT_ICON) {
+      public boolean isSelected(AnActionEvent e) {
+        return isInspectorShown;
+      }
+
+      public void setSelected(AnActionEvent e, boolean b) {
+        showInspector(b);
+      }
+    });
   }
 
   public ActionGroup getActions() {
@@ -152,6 +172,18 @@ public class MergeRootsPane {
       }
     });
     setRootId(rootId);
+  }
+
+  private void showInspector(boolean show) {
+    if (isInspectorShown == show) {
+      return;
+    }
+    isInspectorShown = show;
+    PropertiesComponent.getInstance().setValue(PARAM_SHOW_INSPECTOR, show + "");
+    myPanel.setSecondComponent((isInspectorShown ?
+      myBottomPanel :
+      null
+    ));
   }
 
 
