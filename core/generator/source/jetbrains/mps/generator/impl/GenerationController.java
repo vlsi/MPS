@@ -22,6 +22,7 @@ import jetbrains.mps.generator.TransientModelsProvider;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.ITaskPoolProvider;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.SimpleGenerationTaskPool;
+import jetbrains.mps.logging.Handlers;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.progress.SubProgressKind;
@@ -186,7 +187,7 @@ public class GenerationController implements ITaskPoolProvider {
 
     monitor.start(inputModel.getModelName(), 10);
     try {
-      Logger.addLoggingHandler(generationSession.getLoggingHandler());
+      Handlers.addLoggingHandler(generationSession.getLoggingHandler());
       if (!myGenerationHandler.canHandle(inputModel)) {
         LOG.error("Can't generate " + inputModel.getModelName());
         return true;
@@ -225,7 +226,7 @@ public class GenerationController implements ITaskPoolProvider {
         // never happens
       }
     } finally {
-      Logger.removeLoggingHandler(generationSession.getLoggingHandler());
+      Handlers.removeLoggingHandler(generationSession.getLoggingHandler());
       generationSession.discardTransients();
 
       monitor.done();

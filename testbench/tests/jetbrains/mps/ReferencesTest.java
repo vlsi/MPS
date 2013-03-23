@@ -18,6 +18,7 @@ package jetbrains.mps;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.logging.Handlers;
 import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.logging.Logger;
@@ -80,7 +81,7 @@ public class ReferencesTest extends BaseMPSTest {
       }
     };
 
-    Logger.addLoggingHandler(handler);
+    Handlers.addLoggingHandler(handler);
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -95,7 +96,7 @@ public class ReferencesTest extends BaseMPSTest {
       }
     });
 
-    Logger.removeLoggingHandler(handler);
+    Handlers.removeLoggingHandler(handler);
 
     assertTrue(errors.isEmpty());
     assertTrue(fatals.isEmpty());

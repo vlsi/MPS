@@ -57,6 +57,7 @@
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.CompositeResult" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.Script" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.TimeStatisticResource" />
+    <classNode dependClassName="jetbrains.mps.logging.Handlers" />
     <classNode dependClassName="jetbrains.mps.logging.LogEntry" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />

@@ -21,13 +21,13 @@ import java.util.Map;
 public class Handlers {
   private static final Map<ILoggingHandler, HandlerAppender> ourHandlers = new HashMap<ILoggingHandler, HandlerAppender>();
 
-  public static synchronized void addHandler(ILoggingHandler handler) {
+  public static synchronized void addLoggingHandler(ILoggingHandler handler) {
     HandlerAppender appender = new HandlerAppender(handler);
     ourHandlers.put(handler, appender);
     CompositeAppender.getInstance().addLoggingHandler(appender);
   }
 
-  public static synchronized void removeHandler(ILoggingHandler handler) {
+  public static synchronized void removeLoggingHandler(ILoggingHandler handler) {
     HandlerAppender appender = ourHandlers.remove(handler);
     CompositeAppender.getInstance().removeLoggingHandler(appender);
   }

@@ -15,6 +15,10 @@
  */
 package jetbrains.mps.logging;
 
+import jetbrains.mps.util.annotation.ToRemove;
+
+@ToRemove(version = 3.0)
+@Deprecated
 class Log4jLoggingHandler implements ILoggingHandler {
   private org.apache.log4j.Logger getLogger(String fqName) {
     return org.apache.log4j.Logger.getLogger(fqName);

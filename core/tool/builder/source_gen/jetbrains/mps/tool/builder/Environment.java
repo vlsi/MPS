@@ -12,6 +12,7 @@ import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.ConsoleAppender;
 import org.apache.log4j.SimpleLayout;
 import org.apache.log4j.Logger;
+import jetbrains.mps.logging.Handlers;
 import jetbrains.mps.tool.builder.util.MpsPlatform;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.generator.GenerationSettingsProvider;
@@ -53,7 +54,7 @@ public class Environment {
   public void setup() {
     BasicConfigurator.configure(new ConsoleAppender(new SimpleLayout()));
     Logger.getRootLogger().setLevel(myLogLevel);
-    jetbrains.mps.logging.Logger.addLoggingHandler(myMessageHandler);
+    Handlers.addLoggingHandler(myMessageHandler);
     MpsPlatform.init();
     MPSCore.getInstance().setTestMode();
     GenerationSettingsProvider.getInstance().setGenerationSettings(new DefaultModifiableGenerationSettings());
@@ -76,7 +77,7 @@ public class Environment {
       this.myLibraryContibutor = null;
     }
     MpsPlatform.dispose();
-    jetbrains.mps.logging.Logger.removeLoggingHandler(myMessageHandler);
+    Handlers.removeLoggingHandler(myMessageHandler);
   }
 
   public Project createDummyProject() {

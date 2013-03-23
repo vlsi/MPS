@@ -53,10 +53,12 @@ public class Logger {
     return ourLoggers.get(name);
   }
 
+  @Deprecated
   public static synchronized void addLoggingHandler(ILoggingHandler lh) {
     ourLoggingHandlers.add(lh);
   }
 
+  @Deprecated
   public static synchronized void removeLoggingHandler(ILoggingHandler lh) {
     ourLoggingHandlers.remove(lh);
   }
