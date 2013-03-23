@@ -12,6 +12,9 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import com.intellij.ui.JBSplitter;
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.diff.ex.DiffStatusBar;
 import com.intellij.openapi.diff.impl.util.TextDiffType;
@@ -32,7 +35,6 @@ import jetbrains.mps.vcs.diff.ui.common.InvokeTextDiffAction;
 import com.intellij.openapi.diff.impl.mergeTool.MergeTool;
 import com.intellij.openapi.actionSystem.Separator;
 import org.jetbrains.annotations.Nullable;
-import javax.swing.JComponent;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
@@ -78,6 +80,7 @@ public class MergeModelsDialog extends DialogWrapper {
   private JPanel myComponent = new JPanel(new BorderLayout());
   private JBSplitter myPanel = new JBSplitter(true, 0.25f);
   private MergeRootsPane myMergeRootsPane = null;
+  private final JComponent myNoRootPanel = new JLabel("Select root to merge", SwingConstants.CENTER);
   private ActionToolbar myToolbar;
   private DiffStatusBar myStatusBar = new DiffStatusBar(TextDiffType.DIFF_TYPES);
 
@@ -157,6 +160,7 @@ public class MergeModelsDialog extends DialogWrapper {
     myPanel.setSplitterProportionKey(getClass().getName() + "ModelTreeSplitter");
     myMergeTree = new MergeModelsDialog.MergeModelsTree();
     myPanel.setFirstComponent(ScrollPaneFactory.createScrollPane(myMergeTree));
+    myPanel.setSecondComponent(myNoRootPanel);
 
     myToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, myActionGroup, true);
     myToolbar.updateActionsImmediately();
@@ -216,6 +220,14 @@ public class MergeModelsDialog extends DialogWrapper {
     return ListSequence.fromList(actions).toGenericArray(Action.class);
   }
 
+  @Override
+  protected void dispose() {
+    if (myMergeRootsPane != null) {
+      myMergeRootsPane.dispose();
+    }
+    super.dispose();
+  }
+
 
 
   public SModel getResultModel() {
@@ -239,7 +251,7 @@ public class MergeModelsDialog extends DialogWrapper {
 
   public void unregisterResultModel() {
     final SModel resultModel = myMergeSession.getResultModel();
-    assert check_3qqb0l_a0b0hb(check_3qqb0l_a0a1a33(resultModel)) instanceof DiffTemporaryModule;
+    assert check_3qqb0l_a0b0jb(check_3qqb0l_a0a1a53(resultModel)) instanceof DiffTemporaryModule;
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         DiffTemporaryModule.unregisterModel(resultModel.getModelDescriptor(), ProjectHelper.toMPSProject(myProject));
@@ -275,7 +287,7 @@ public class MergeModelsDialog extends DialogWrapper {
       return;
     }
 
-    myPanel.setSecondComponent(null);
+    myPanel.setSecondComponent(myNoRootPanel);
     myMergeRootsPane.dispose();
     myMergeRootsPane = null;
     myRootId = null;
@@ -608,14 +620,14 @@ public class MergeModelsDialog extends DialogWrapper {
     }
   }
 
-  private static IModule check_3qqb0l_a0b0hb(SModelDescriptor checkedDotOperand) {
+  private static IModule check_3qqb0l_a0b0jb(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModelDescriptor check_3qqb0l_a0a1a33(SModel checkedDotOperand) {
+  private static SModelDescriptor check_3qqb0l_a0a1a53(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
