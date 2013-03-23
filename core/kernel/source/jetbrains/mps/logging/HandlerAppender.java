@@ -1,0 +1,63 @@
+/*
+ * Copyright 2003-2013 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package jetbrains.mps.logging;
+
+import org.apache.log4j.AppenderSkeleton;
+import org.apache.log4j.Level;
+import org.apache.log4j.spi.LoggingEvent;
+import org.apache.log4j.spi.ThrowableInformation;
+
+public class HandlerAppender extends AppenderSkeleton {
+  private final ILoggingHandler myHandler;
+
+  public HandlerAppender(ILoggingHandler handler) {
+    myHandler = handler;
+  }
+
+  @Override
+  protected void append(LoggingEvent event) {
+    LogEntry logEntry = createLogEntry(event);
+    if (event.level.equals(Level.FATAL)) {
+      myHandler.fatal(logEntry);
+    } else if (event.level.equals(Level.ERROR)) {
+      myHandler.error(logEntry);
+    } else if (event.level.equals(Level.WARN)) {
+      myHandler.warning(logEntry);
+    } else if (event.level.equals(Level.INFO)) {
+      myHandler.info(logEntry);
+    } else if (event.level.equals(Level.DEBUG)) {
+      myHandler.debug(logEntry);
+    }
+  }
+
+  @Override
+  public boolean requiresLayout() {
+    return false;
+  }
+
+  @Override
+  public void close() {
+  }
+
+  public LogEntry createLogEntry(LoggingEvent event) {
+    ThrowableInformation throwableInformation = event.getThrowableInformation();
+    if (throwableInformation != null) {
+      return new LogEntry(event.categoryName, event.getRenderedMessage(), throwableInformation.getThrowable(), null);
+    } else {
+      return new LogEntry(event.categoryName, event.getRenderedMessage(), null, null);
+    }
+  }
+}
