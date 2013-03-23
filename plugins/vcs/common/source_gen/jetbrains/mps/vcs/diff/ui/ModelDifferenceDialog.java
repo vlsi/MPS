@@ -253,6 +253,7 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
     final ModelDifferenceDialog dialog = new ModelDifferenceDialog(oldModel, newModel, project, oldTitle, newTitle);
     dialog.setCurrentRoot(rootId);
     dialog.myPanel.setFirstComponent(null);
+    dialog.myComponent.remove(dialog.myToolbar.getComponent());
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SNode node = newModel.getNode(rootId);
