@@ -60,6 +60,12 @@
       <modulePath path="${project}/editor/editor-runtime/jetbrains.mps.editor.runtime.msd" folder="core.editor" />
       <modulePath path="${project}/editor/editorlang-runtime/jetbrains.mps.editorlang.runtime.msd" folder="core.editor" />
       <modulePath path="${project}/editor/typesystemIntegration/typesystemIntegration.msd" folder="core.editor" />
+      <modulePath path="${project}/languages/NewLanguage/NewLanguage.mpl" folder="" />
+      <modulePath path="${project}/languages/NewLanguage2/NewLanguage2.mpl" folder="" />
+      <modulePath path="${project}/languages/NewLanguage3/NewLanguage3.mpl" folder="" />
+      <modulePath path="${project}/languages/NewLanguage4/NewLanguage4.mpl" folder="" />
+      <modulePath path="${project}/languages/NewLanguage5/NewLanguage5.mpl" folder="" />
+      <modulePath path="${project}/languages/NewLanguage6/NewLanguage6.mpl" folder="" />
       <modulePath path="${project}/languages/baseLanguage/baseLanguage/jetbrains.mps.baseLanguage.mpl" folder="baseLanguage" />
       <modulePath path="${project}/languages/baseLanguage/baseLanguage/sandbox/jetbrains.mps.baseLanguage.sandbox.msd" folder="baseLanguage" />
       <modulePath path="${project}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/jetbrains.mps.baseLanguage.test.msd" folder="baseLanguage" />
