@@ -7,8 +7,6 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.baseLanguage.logging.util.LoggingGenerationUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -21,12 +19,10 @@ public class typeof_LogStatement_InferenceRule extends AbstractInferenceRule_Run
   }
 
   public void applyRule(final SNode logStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (LoggingGenerationUtil.isDesignTimeModel(SNodeOperations.getModel(logStatement))) {
-      {
-        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(logStatement, "logExpression", true);
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:442e757f-3943-44c0-b891-38385748fec8(jetbrains.mps.baseLanguage.logging.typesystem)", "6813690308469672910", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:442e757f-3943-44c0-b891-38385748fec8(jetbrains.mps.baseLanguage.logging.typesystem)", "6813690308469669795", true), (SNode) _quotation_createNode_hwerzr_a0a0a0b(), false, false, _info_12389875345);
-      }
+    {
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(logStatement, "logExpression", true);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:442e757f-3943-44c0-b891-38385748fec8(jetbrains.mps.baseLanguage.logging.typesystem)", "6813690308469672910", 0, null);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:442e757f-3943-44c0-b891-38385748fec8(jetbrains.mps.baseLanguage.logging.typesystem)", "6813690308469669795", true), (SNode) _quotation_createNode_hwerzr_a0a0b(), false, false, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(logStatement, "exception", true);
@@ -50,7 +46,7 @@ public class typeof_LogStatement_InferenceRule extends AbstractInferenceRule_Run
     return true;
   }
 
-  private static SNode _quotation_createNode_hwerzr_a0a0a0b() {
+  private static SNode _quotation_createNode_hwerzr_a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, GlobalScope.getInstance(), false);
