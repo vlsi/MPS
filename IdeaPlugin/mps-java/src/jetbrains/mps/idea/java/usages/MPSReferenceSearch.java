@@ -72,9 +72,10 @@ public class MPSReferenceSearch extends QueryExecutorBase<PsiReference, Referenc
 
     final GlobalSearchScope scope = (GlobalSearchScope) queryParameters.getEffectiveSearchScope();
 
-    final Project project = scope.getProject();
-    final MPSPsiProvider psiProvider = MPSPsiProvider.getInstance(project);
     final PsiElement psiTarget = queryParameters.getElementToSearch();
+    final Project project = psiTarget.getProject();
+    final MPSPsiProvider psiProvider = MPSPsiProvider.getInstance(project);
+
 
     ModelAccess.instance().runReadAction(new Runnable() {
 
