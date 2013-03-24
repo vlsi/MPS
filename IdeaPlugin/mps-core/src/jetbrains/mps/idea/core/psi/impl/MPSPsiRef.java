@@ -98,25 +98,22 @@ public class MPSPsiRef extends MPSPsiNodeBase {
   }
 
   @Override
-  public TextRange getTextRange() {
-    return TextRange.EMPTY_RANGE;
-  }
-
-  @Override
   public PsiReference getReference() {
     return new PsiReference() {
       @Override
       public PsiElement getElement() {
         // sort of hack: return the top-most element, but not PsiFile
 
-        PsiElement e = MPSPsiRef.this;
-        PsiElement p = null;
-        do {
-          if (p != null) e = p;
-          p = e.getParent();
-        } while (!(p instanceof PsiFile) && p != null);
+//        PsiElement e = MPSPsiRef.this;
+//        PsiElement p = null;
+//        do {
+//          if (p != null) e = p;
+//          p = e.getParent();
+//        } while (!(p instanceof PsiFile) && p != null);
+//
+//        return e;
 
-        return e;
+        return MPSPsiRef.this;
       }
 
       @Override
