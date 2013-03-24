@@ -44,7 +44,7 @@ import java.util.Map;
 /**
  * evgeny, 1/28/13
  */
-public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory, MPS2PsiMapper {
+public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory {
 
   private static final Map<String, MPSPsiNodeFactory> factories = new HashMap<String, MPSPsiNodeFactory>();
 
@@ -151,23 +151,5 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory, MPS2PsiMapper {
 
     return null;
   }
-
-  @Override
-  public boolean canBeMine(SNode node) {
-    return false;  //To change body of implemented methods use File | Settings | File Templates.
-  }
-
-  @Override
-  public PsiElement getPsiElement(SNode node, Project project) {
-    SModel model = node.getModel();
-    if (model == null) return null;
-    if (model == null || !(model instanceof PsiJavaStubModelDescriptor)) {
-      return null;
-    }
-
-    PsiJavaStubModelDescriptor psiStubs = (PsiJavaStubModelDescriptor) model;
-    return psiStubs.getPsiSource(node);
-  }
-
 
 }
