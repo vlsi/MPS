@@ -22,6 +22,8 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.search.GlobalSearchScope;
 import jetbrains.mps.idea.core.psi.MPS2PsiMapper;
 import jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.language.ConceptRegistry;
@@ -36,8 +38,13 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ClassStubPsiMapper implements MPS2PsiMapper {
 
   @Override
-  public boolean canBeMine(SNode node) {
-    return node.getModel() instanceof JavaClassStubModelDescriptor;
+  public boolean canBeMine(final SNode node) {
+    return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      @Override
+      public Boolean compute() {
+        return node.getModel() instanceof JavaClassStubModelDescriptor;
+      }
+    });
   }
 
   /**

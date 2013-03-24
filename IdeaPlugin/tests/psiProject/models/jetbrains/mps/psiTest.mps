@@ -28,6 +28,9 @@
       <property name="name" nameId="tpck.1169194664001" value="Container" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
     </node>
+    <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3524581941248538726">
+      <property name="name" nameId="tpck.1169194664001" value="JustAnotherClass" />
+    </node>
   </roots>
   <root id="720127759386550219">
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5049240397465244171">
@@ -131,7 +134,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="8790121543439936783">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="8790121543439936784">
             <property name="name" nameId="tpck.1169194664001" value="m" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7257116681676345863">
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8382876501944949694">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="wmq2.~Marker%dInnerMarker" resolveInfo="Marker.InnerMarker" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="3220247487985568306" />
@@ -147,16 +150,6 @@
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="4599102864351440757" />
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5334167378876659952">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5334167378876659955">
-            <property name="name" nameId="tpck.1169194664001" value="var" />
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5334167378876660306">
-              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="wmq2.~Marker" resolveInfo="Marker" />
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="wmq2.~Marker%dx" resolveInfo="x" />
-            </node>
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="5334167378876659950" />
-          </node>
-        </node>
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="8812544384558636067">
         <property name="name" nameId="tpck.1169194664001" value="arg" />
@@ -520,6 +513,52 @@
         </node>
       </node>
     </node>
+  </root>
+  <root id="3524581941248538726">
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="3524581941248560257">
+      <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="method" />
+      <property name="isSynchronized" nameId="tpee.4276006055363816570" value="false" />
+      <property name="isFinal" nameId="tpee.1181808852946" value="false" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3524581941248560258">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="3524581941248560259">
+          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="3524581941248560260">
+            <property name="name" nameId="tpck.1169194664001" value="cn" />
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="3524581941248560261">
+              <node role="creator" roleId="tpee.1145553007750" type="tpee.DefaultClassCreator" typeId="tpee.2820489544401957797" id="3524581941248560262">
+                <link role="classifier" roleId="tpee.2820489544401957798" targetNodeId="720127759386550219" resolveInfo="ConcreteNode" />
+              </node>
+            </node>
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3524581941248560263">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="720127759386550219" resolveInfo="ConcreteNode" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3524581941248560264">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3524581941248560265">
+            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3524581941248560266">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wmq2.~AbstractNode%dabstractNodeMethod()" resolveInfo="abstractNodeMethod" />
+            </node>
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3524581941248560267">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3524581941248560260" resolveInfo="cn" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="4994852372557977328" />
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="3101393306881412572">
+          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="3101393306881412573">
+            <property name="name" nameId="tpck.1169194664001" value="obj" />
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="3101393306881413005" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3101393306881412574">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="wmq2.~Marker%dInnerMarker" resolveInfo="Marker.InnerMarker" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3524581941248560284" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="3524581941248560285" />
+    </node>
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3524581941248538727" />
   </root>
 </model>
 

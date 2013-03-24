@@ -154,7 +154,7 @@ public class MPSPsiRef extends MPSPsiNodeBase {
         PsiElement parent = MPSPsiRef.this.getParent();
         assert parent instanceof MPSPsiNode;
         SNodeReference source = ((MPSPsiNode) parent).getSNodeReference();
-        getProject().getComponent(MoveRenameBatch.class).recordUsage(source, role, new NodePtr(model, nodeId));
+        getProject().getComponent(MoveRenameBatch.class).recordDefaultMPSUsage(new NodePtr(model, nodeId), source, role);
       }
 
       @Override
