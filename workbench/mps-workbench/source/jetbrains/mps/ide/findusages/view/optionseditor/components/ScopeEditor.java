@@ -110,7 +110,7 @@ public class ScopeEditor extends BaseEditor<ScopeOptions> {
     List<String> moduleNameList = new ArrayList<String>();
 
     for (IModule iModule : moduleList) {
-      String namespace = iModule.getModuleFqName();
+      String namespace = iModule.getModuleName();
       if (namespace != null) {
         moduleNameList.add(namespace);
       }

@@ -18,7 +18,7 @@ public class ModuleChecker {
   }
 
   public void checkModule(IModule module, ProgressMonitor monitor) {
-    monitor.start("Checking " + module.getModuleFqName() + " module properties...", 1);
+    monitor.start("Checking " + module.getModuleName() + " module properties...", 1);
     try {
       // TODO:  Provide the full list of errors when usages view framework supports multiple 
       // TODO:  search results for one module 
@@ -30,10 +30,10 @@ public class ModuleChecker {
         } else if (ListSequence.fromList(errors).count() > 2) {
           extraMessage += "; ...";
         }
-        myResults.getSearchResults().add(ModelCheckerIssue.getSearchResultForModule(module, module.getModuleFqName() + ": " + NameUtil.formatNumericalString(ListSequence.fromList(errors).count(), "unresolved dependency") + " (" + extraMessage + "; see module properties)", null, ModelChecker.SEVERITY_ERROR, "Module properties"));
+        myResults.getSearchResults().add(ModelCheckerIssue.getSearchResultForModule(module, module.getModuleName() + ": " + NameUtil.formatNumericalString(ListSequence.fromList(errors).count(), "unresolved dependency") + " (" + extraMessage + "; see module properties)", null, ModelChecker.SEVERITY_ERROR, "Module properties"));
       }
     } catch (Throwable t) {
-      LOG.error("Error while " + module.getModuleFqName() + " module checking", t);
+      LOG.error("Error while " + module.getModuleName() + " module checking", t);
     } finally {
       monitor.done();
     }

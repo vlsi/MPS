@@ -21,9 +21,9 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.*;
 
@@ -59,7 +59,7 @@ public class ModelsTestConfiguration extends BaseTestConfiguration {
 
     IModule module = null;
     for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
-      if (m.getOwnModelDescriptors().containsAll(modelDescriptors)) {
+      if (IterableUtil.asCollection(m.getModels()).containsAll(modelDescriptors)) {
         module = m;
         break;
       }

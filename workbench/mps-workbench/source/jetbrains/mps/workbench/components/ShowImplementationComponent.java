@@ -64,7 +64,7 @@ public class ShowImplementationComponent extends JPanel {
       myNodeIcons.add(IconManager.getIconFor(node, true));
       myNodeLabels.add(node.getPresentation());
       myModuleIcons.add(IconManager.getIconFor(node.getModel().getModule()));
-      myModuleLabels.add(node.getModel().getModule().getModuleFqName());
+      myModuleLabels.add(node.getModel().getModule().getModuleName());
       myOriginalNodePointers.add(node.getReference());
     }
 

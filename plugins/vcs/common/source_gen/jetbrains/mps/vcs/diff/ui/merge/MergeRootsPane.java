@@ -32,6 +32,7 @@ import com.intellij.openapi.actionSystem.ToggleAction;
 import jetbrains.mps.ide.icons.IdeIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.ActionGroup;
+import javax.swing.JComponent;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.smodel.SModel;
@@ -125,6 +126,8 @@ public class MergeRootsPane {
     myActionGroup.add(new ApplyNonConflictsForRoot(this));
     myActionGroup.addSeparator();
     myActionGroup.addAll(myTraverser.previousAction(), myTraverser.nextAction());
+    myTraverser.previousAction().registerCustomShortcutSet(NextPreviousTraverser.PREV_CHANGE_SHORTCUT, myPanel);
+    myTraverser.nextAction().registerCustomShortcutSet(NextPreviousTraverser.NEXT_CHANGE_SHORTCUT, myPanel);
     myActionGroup.addSeparator();
     myActionGroup.add(new ToggleAction("Show Inspector", "Show Inspector Windows", IdeIcons.DEFAULT_ICON) {
       public boolean isSelected(AnActionEvent e) {
@@ -139,6 +142,16 @@ public class MergeRootsPane {
 
   public ActionGroup getActions() {
     return myActionGroup;
+  }
+
+  public void registerShortcuts(JComponent component) {
+    myTraverser.previousAction().registerCustomShortcutSet(NextPreviousTraverser.PREV_CHANGE_SHORTCUT, component);
+    myTraverser.nextAction().registerCustomShortcutSet(NextPreviousTraverser.NEXT_CHANGE_SHORTCUT, component);
+  }
+
+  public void unregisterShortcuts(JComponent component) {
+    myTraverser.previousAction().unregisterCustomShortcutSet(component);
+    myTraverser.nextAction().unregisterCustomShortcutSet(component);
   }
 
   public JPanel getPanel() {

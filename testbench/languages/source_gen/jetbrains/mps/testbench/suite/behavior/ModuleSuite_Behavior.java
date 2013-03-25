@@ -43,7 +43,7 @@ public class ModuleSuite_Behavior {
       return null;
     }
 
-    return module.getOwnModelDescriptors();
+    return module.getModels();
   }
 
   public static Iterable<SNode> call_getNotMutedTests_8605005254686521789(SNode thisNode) {

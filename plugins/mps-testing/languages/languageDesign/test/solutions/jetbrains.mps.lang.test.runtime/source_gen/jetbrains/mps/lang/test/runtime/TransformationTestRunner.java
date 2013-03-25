@@ -97,7 +97,7 @@ public class TransformationTestRunner {
       public void run() {
         clazz.value = ClassLoaderManager.getInstance().getClass(projectTest.getModelDescriptor().getModule(), className);
         String classloader = clazz.value.getClassLoader().toString();
-        String module = projectTest.getModelDescriptor().getModule().getModuleFqName();
+        String module = projectTest.getModelDescriptor().getModule().getModuleName();
         assert classloader.contains(module) : "class: " + clazz.value + "; classloader: " + classloader + "; module: " + module;
       }
     });

@@ -13,7 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;
+
+import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
@@ -21,7 +24,6 @@ import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.util.CollectionUtil;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
@@ -59,10 +61,10 @@ public abstract class DefaultScope extends BaseScope {
     synchronized (LOCK) {
       initialize();
       for (IModule module : myVisibleModules) {
-        result.addAll(module.getOwnModelDescriptors());
+        result.addAll(IterableUtil.asCollection(module.getModels()));
       }
       for (Language language : myUsedLanguages) {
-        result.addAll(language.getOwnModelDescriptors()); // todo: ?
+        result.addAll(language.getModels()); // todo: ?
         result.addAll(language.getAccessoryModels());
       }
     }

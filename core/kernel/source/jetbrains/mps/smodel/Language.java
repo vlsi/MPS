@@ -249,7 +249,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   public List<EditableSModelDescriptor> getUtilModels() {
     List<EditableSModelDescriptor> result = new ArrayList<EditableSModelDescriptor>();
-    for (SModel md : getOwnModelDescriptors()) {
+    for (SModel md : getModels()) {
       if (SModelStereotype.getStereotype(md).equals(SModelStereotype.NONE)
         && getAspectForModel(md) == null
         && !isAccessoryModel(md.getReference())) {

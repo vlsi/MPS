@@ -147,7 +147,7 @@ public class GenerationTestBase {
   }
 
   protected void doTestIncrementalGeneration(final Project p, final SModel originalModel, final ModelChangeRunnable... changeModel) throws IOException {
-    String randomName = "testxw" + Math.abs(UUID.randomUUID().getLeastSignificantBits()) + "." + originalModel.getModule().getModuleFqName();
+    String randomName = "testxw" + Math.abs(UUID.randomUUID().getLeastSignificantBits()) + "." + originalModel.getModule().getModuleName();
     String randomId = UUID.randomUUID().toString();
     final TestModule tm = new TestModule(randomName, randomId, originalModel.getModule());
     ModelAccess.instance().runWriteAction(new Runnable() {
@@ -197,7 +197,7 @@ public class GenerationTestBase {
           p.getComponent(TransientModelsComponent.class));
 
       Map<String, String> generated = replaceInContent(generationHandler.getGeneratedContent(),
-          new String[]{randomName, originalModel.getModule().getModuleFqName()},
+          new String[]{randomName, originalModel.getModule().getModuleName()},
           new String[]{randomId, originalModel.getModule().getModuleReference().getModuleId().toString()});
       assertNoDiff(generationHandler.getExistingContent(), generated);
 

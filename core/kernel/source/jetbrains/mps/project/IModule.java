@@ -125,6 +125,7 @@ public interface IModule extends SModule {
   /**
    * @see org.jetbrains.mps.openapi.module.SModule#getModels()
    */
+  @Deprecated
   List<SModel> getOwnModelDescriptors();
 
   /**
@@ -132,6 +133,7 @@ public interface IModule extends SModule {
    *
    * @see org.jetbrains.mps.openapi.module.SModule#getModuleScope()
    */
+  @Deprecated
   @NotNull
   IScope getScope();
 

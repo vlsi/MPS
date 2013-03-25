@@ -73,7 +73,7 @@
     <nodeInfo nodeId="5487985028841967992" fileName="CollectTests_Action.java" startLine="85" startPosition="90" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5487985028841968384" fileName="CollectTests_Action.java" startLine="106" startPosition="92" endLine="109" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5487985028841968047" fileName="CollectTests_Action.java" startLine="129" startPosition="51" endLine="132" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5487985028841968078" fileName="CollectTests_Action.java" startLine="137" startPosition="66" endLine="140" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5487985028841968078" fileName="CollectTests_Action.java" startLine="137" startPosition="53" endLine="140" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5487985028841968110" fileName="CollectTests_Action.java" startLine="151" startPosition="13" endLine="154" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5487985028841968249" fileName="CollectTests_Action.java" startLine="187" startPosition="85" endLine="190" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5487985028841968271" fileName="CollectTests_Action.java" startLine="194" startPosition="0" endLine="197" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isUserEditableGeneratableModel#(Lorg/jetbrains/mps/openapi/model/SModel;Ljava/util/Map;)Z" />
@@ -229,7 +229,7 @@
       <varInfo nodeId="5487985028841967992" varName="_params" />
       <varInfo nodeId="5487985028841967992" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841968077" fileName="CollectTests_Action.java" startLine="137" startPosition="66" endLine="179" endPosition="11">
+    <scopeInfo nodeId="5487985028841968077" fileName="CollectTests_Action.java" startLine="137" startPosition="53" endLine="179" endPosition="11">
       <varInfo nodeId="5487985028841968088" varName="smodel" />
     </scopeInfo>
     <scopeInfo nodeId="5487985028841968076" fileName="CollectTests_Action.java" startLine="136" startPosition="70" endLine="180" endPosition="9">

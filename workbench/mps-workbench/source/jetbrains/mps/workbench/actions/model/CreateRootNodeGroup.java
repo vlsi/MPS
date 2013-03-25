@@ -34,7 +34,8 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.*;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -166,8 +167,8 @@ public class CreateRootNodeGroup extends BaseGroup {
     boolean plain = myPlain || (languagesWithRoots.size() == 1 && aspect == null);
 
     for (final Language language : languagesWithRoots) {
-      String name = language.getModuleFqName();
-      Icon icon = IconManager.getIconForNamespace(language.getModuleFqName());
+      String name = language.getModuleName();
+      Icon icon = IconManager.getIconForNamespace(language.getModuleName());
       BaseGroup langRootsGroup;
 
       if (!plain) {

@@ -10,11 +10,11 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -49,9 +49,8 @@ public class StubUtil {
     }
 
     IModule debuggerApi = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("cc7da2f6-419f-4133-a811-31fcd3295a85"));
-    List<SModel> debuggerModels = debuggerApi.getOwnModelDescriptors();
-    for (SModel debuggerModel : ListSequence.fromList(debuggerModels)) {
-      if (eq_g10q2g_a0a0f0c(SNodeOperations.getModelLongName(debuggerModel), SModelStereotype.withoutStereotype(targetSModelReference.getModelName()))) {
+    for (SModel debuggerModel : Sequence.fromIterable(debuggerApi.getModels())) {
+      if (eq_g10q2g_a0a0e0c(SNodeOperations.getModelLongName(debuggerModel), SModelStereotype.withoutStereotype(targetSModelReference.getModelName()))) {
         return debuggerModel;
       }
     }
@@ -100,7 +99,7 @@ public class StubUtil {
     }
   }
 
-  private static boolean eq_g10q2g_a0a0f0c(Object a, Object b) {
+  private static boolean eq_g10q2g_a0a0e0c(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

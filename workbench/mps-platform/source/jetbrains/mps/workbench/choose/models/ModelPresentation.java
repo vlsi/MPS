@@ -52,7 +52,7 @@ public class ModelPresentation extends BasePresentation {
     SModel descriptor = getModelDescriptor();
     IModule module;
     if (descriptor == null || (module = descriptor.getModule()) == null) return "no module";
-    return module.getModuleFqName();
+    return module.getModuleName();
   }
 
   private SModel getModelDescriptor() {

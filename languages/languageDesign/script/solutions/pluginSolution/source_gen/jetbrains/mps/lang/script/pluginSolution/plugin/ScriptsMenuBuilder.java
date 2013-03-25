@@ -22,7 +22,7 @@ public class ScriptsMenuBuilder {
     this.allLanguages = ListSequence.fromListWithValues(new ArrayList<Language>(), GlobalScope.getInstance().getVisibleLanguages());
     ListSequence.fromList(this.allLanguages).sort(new Comparator<Language>() {
       public int compare(Language l1, Language l2) {
-        return l1.getModuleFqName().compareTo(l2.getModuleFqName());
+        return l1.getModuleName().compareTo(l2.getModuleName());
       }
     }, true);
     this.allScripts = ScriptsActionGroupHelper.getMigrationScripts(this.allLanguages);

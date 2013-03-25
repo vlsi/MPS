@@ -195,7 +195,7 @@ public class ScriptsActionGroupHelper {
     if (ListSequence.fromList(migrationScripts).isEmpty()) {
       return;
     }
-    BaseGroup languageScriptsGroup = new BaseGroup(language.getModuleFqName(), "");
+    BaseGroup languageScriptsGroup = new BaseGroup(language.getModuleName(), "");
     for (SNode script : migrationScripts) {
       languageScriptsGroup.add(new RunMigrationScriptAction(script, ScriptsActionGroupHelper.makeScriptActionName(SPropertyOperations.getString_def(script, "type", "enhancement"), SPropertyOperations.getString(script, "title"), SPropertyOperations.getString(script, "toBuild")), applyToSelection));
     }
