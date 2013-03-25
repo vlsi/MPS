@@ -13,4 +13,5 @@ public class ConcreteNodeExAncestor extends ConcreteNodeEx{
     public String getText() {
         return super.getText();
     }
+
 }

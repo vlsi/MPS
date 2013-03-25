@@ -1,4 +1,4 @@
-package jetbrains.mps.psiTest;
+package jetbrains.mps.psiTest2;
 
 /**
  * Created with IntelliJ IDEA.
@@ -10,5 +10,7 @@ package jetbrains.mps.psiTest;
 public interface Marker {
 
     int x = 1;
+    int y = 2;
+    int f = 3;
     public interface InnerMarker {}
 }

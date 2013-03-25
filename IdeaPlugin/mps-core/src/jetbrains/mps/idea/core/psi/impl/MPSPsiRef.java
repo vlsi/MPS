@@ -98,6 +98,11 @@ public class MPSPsiRef extends MPSPsiNodeBase {
   }
 
   @Override
+  public PsiReference[] getReferences() {
+    return new PsiReference[]{getReference()};
+  }
+
+  @Override
   public PsiReference getReference() {
     return new PsiReference() {
       @Override
@@ -124,7 +129,6 @@ public class MPSPsiRef extends MPSPsiNodeBase {
       @Nullable
       @Override
       public PsiElement resolve() {
-        // TODO
         return MPSPsiRef.this.resolve();
       }
 
@@ -156,8 +160,9 @@ public class MPSPsiRef extends MPSPsiNodeBase {
 
       @Override
       public boolean isReferenceTo(PsiElement element) {
-        // TODO
-        return false;  //To change body of implemented methods use File | Settings | File Templates.
+        PsiElement target = resolve();
+        // Just == ?
+        return target != null && target == element;
       }
 
       @NotNull
