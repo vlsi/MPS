@@ -193,7 +193,7 @@ public class MPSPsiNode extends MPSPsiNodeBase {
 
   private int getTreePosition() {
     MPSPsiModel model = getContainingModel();
-    return model.getNodePosition(myId);
+    return model.getNodePosition(this);
   }
 
   @Override
