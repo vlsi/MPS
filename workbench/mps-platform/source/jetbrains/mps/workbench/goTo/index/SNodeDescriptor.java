@@ -15,18 +15,20 @@
  */
 package jetbrains.mps.workbench.goTo.index;
 
-import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelId.RegularSModelId;
 import jetbrains.mps.smodel.SNodeId.Regular;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.persistence.NavigationParticipant.NavigationTarget;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.DataInput;
 import java.io.DataOutput;
@@ -38,8 +40,7 @@ import java.util.UUID;
  */
 public final class SNodeDescriptor implements NavigationTarget {
   private String myNodeName;
-  private long myMostSignificantBits;
-  private long myLeastSignificantBits;
+  private SModelReference myModelReference;
   private SNodeId myId;
   protected String myConceptFqName;
 
@@ -48,14 +49,12 @@ public final class SNodeDescriptor implements NavigationTarget {
   }
 
   public static SNodeDescriptor fromModelReference(String nodeName, String fqName, SModelReference ref, SNodeId id) {
-    UUID uuid = UUID.fromString(ref.getModelId().toString().substring(2));
-    return new SNodeDescriptor(nodeName, fqName, uuid.getMostSignificantBits(), uuid.getLeastSignificantBits(), id);
+    return new SNodeDescriptor(nodeName, fqName, ref, id);
   }
 
-  public SNodeDescriptor(String nodeName, String fqName, long mostSignificantBits, long leastSignificantBits, SNodeId id) {
+  public SNodeDescriptor(String nodeName, String fqName, SModelReference modelReference, SNodeId id) {
     myNodeName = InternUtil.intern(nodeName);
-    myMostSignificantBits = mostSignificantBits;
-    myLeastSignificantBits = leastSignificantBits;
+    myModelReference = modelReference;
     myId = id;
     myConceptFqName = InternUtil.intern(fqName);
   }
@@ -72,69 +71,106 @@ public final class SNodeDescriptor implements NavigationTarget {
 
   @Override
   public SNodeReference getNodeReference() {
-    SModelId modelId = jetbrains.mps.smodel.SModelId.regular(new UUID(myMostSignificantBits, myLeastSignificantBits));
-    SModel md = SModelRepository.getInstance().getModelDescriptor(modelId);
-    if (md == null) return null;
-    SModelReference ref = md.getReference();
-    return new jetbrains.mps.smodel.SNodePointer(ref, myId);
+    return new SNodePointer(myModelReference, myId);
   }
 
   public void save(DataOutput out) throws IOException {
-    out.writeLong(myMostSignificantBits);
-    out.writeLong(myLeastSignificantBits);
-    SNodeId id = myId;
-    if (id != null && id instanceof Regular) {
-      long longId = ((Regular) id).getId();
-      out.writeLong(longId);
+    SModelId modelId = myModelReference.getModelId();
+    if (modelId instanceof RegularSModelId) {
+      out.writeByte(7);
+      UUID id = ((RegularSModelId) modelId).getId();
+      out.writeLong(id.getMostSignificantBits());
+      out.writeLong(id.getLeastSignificantBits());
+      writeString(out, myModelReference.getModelName());
     } else {
-      out.writeLong(-1);
+      out.writeByte(8);
+      writeString(out, modelId.toString());
     }
 
-    short conceptNameLength = (short) myConceptFqName.length();
+    SNodeId id = myId;
+    if (id == null) {
+      out.writeByte(0x70);
+    } else if (id instanceof Regular) {
+      long longId = ((Regular) id).getId();
+      out.writeByte(11);
+      out.writeLong(longId);
+    } else {
+      out.writeByte(12);
+      writeString(out, id.toString());
+    }
 
-    out.writeShort(conceptNameLength);
-    out.write(myConceptFqName.getBytes(), 0, conceptNameLength);
-
-    short nodeNameLength = (short) myNodeName.length();
-    out.writeShort(nodeNameLength);
-    out.write(myNodeName.getBytes(), 0, nodeNameLength);
+    writeString(out, myConceptFqName);
+    writeString(out, myNodeName);
   }
 
   public void read(DataInput in) throws IOException {
-    byte[] bytes = new byte[1024];
-    myMostSignificantBits = in.readLong();
-    myLeastSignificantBits = in.readLong();
-    long id = in.readLong();
+    byte c = in.readByte();
+    if (c == 7) {
+      SModelId id = jetbrains.mps.smodel.SModelId.regular(new UUID(in.readLong(), in.readLong()));
+      myModelReference = PersistenceFacade.getInstance().createModelReference(null, id, readString(in));
+    } else {
+      myModelReference = PersistenceFacade.getInstance().createModelReference(readString(in));
+    }
 
-    short conceptNameLength = in.readShort();
-    in.readFully(bytes, 0, conceptNameLength);
-    myConceptFqName = getString(bytes, 0, conceptNameLength);
+    c = in.readByte();
+    if (c == 0x70) {
+      myId = null;
+    } else if (c == 11) {
+      myId = new jetbrains.mps.smodel.SNodeId.Regular(in.readLong());
+    } else {
+      myId = jetbrains.mps.smodel.SNodeId.fromString(readString(in));
+    }
 
-    short nodeNameLength = in.readShort();
-    in.readFully(bytes, 0, nodeNameLength);
-    myNodeName = getString(bytes, 0, nodeNameLength);
-
-    myId = id == -1 ? null : new Regular(id);
-  }
-
-  private String getString(byte[] b, int off, int len) {
-    byte[] bytes = new byte[len];
-    System.arraycopy(b, off, bytes, 0, len);
-    return new String(bytes);
+    myConceptFqName = readString(in);
+    myNodeName = readString(in);
   }
 
   public boolean equals(Object obj) {
     if (!(obj instanceof SNodeDescriptor)) return false;
     SNodeDescriptor sd = (SNodeDescriptor) obj;
     return
-      sd.myMostSignificantBits == myMostSignificantBits
-        && sd.myLeastSignificantBits == myLeastSignificantBits
-        && EqualUtil.equals(sd.myId, myId)
-        && sd.myConceptFqName.equals(myConceptFqName)
-        && sd.myNodeName.equals(myNodeName);
+        sd.myModelReference.equals(myModelReference)
+            && EqualUtil.equals(sd.myId, myId)
+            && sd.myConceptFqName.equals(myConceptFqName)
+            && sd.myNodeName.equals(myNodeName);
   }
 
   public int hashCode() {
     return myNodeName.hashCode();
   }
+
+
+  private static void writeString(DataOutput out, @Nullable String s) throws IOException {
+    if (s == null) {
+      out.writeByte(0x70);
+    } else {
+      while (s.length() > 16384) {
+        String prefix = s.substring(0, 16384);
+        out.writeByte(42);
+        out.writeUTF(prefix);
+        s = s.substring(16384);
+      }
+      out.writeByte(0);
+      out.writeUTF(s);
+    }
+  }
+
+  private static String readString(DataInput in) throws IOException {
+    int c = in.readByte();
+    if (c == 0x70) {
+      return null;
+    }
+    StringBuilder sb = null;
+    while (c == 42) {
+      String prefix = in.readUTF();
+      if (sb == null) {
+        sb = new StringBuilder(prefix);
+      } else {
+        sb.append(prefix);
+      }
+      c = in.readByte();
+    }
+    return sb == null ? in.readUTF() : sb.append(in.readUTF()).toString();
+  }
+
 }

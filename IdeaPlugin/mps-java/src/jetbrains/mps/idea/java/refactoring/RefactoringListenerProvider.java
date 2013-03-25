@@ -1,9 +1,11 @@
-package jetbrains.mps.idea.core.usages;
+package jetbrains.mps.idea.java.refactoring;
 
 import com.intellij.psi.PsiElement;
 import com.intellij.refactoring.listeners.RefactoringElementListener;
 import com.intellij.refactoring.listeners.RefactoringElementListenerProvider;
-import jetbrains.mps.idea.core.NodePtr;
+import jetbrains.mps.idea.core.refactoring.MoveRenameBatch;
+import jetbrains.mps.idea.core.refactoring.NodePtr;
+import jetbrains.mps.idea.java.psiStubs.JavaForeignIdBuilder;
 import jetbrains.mps.idea.core.psi.MPS2PsiMapperUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -21,7 +23,11 @@ public class RefactoringListenerProvider implements RefactoringElementListenerPr
 //      return null;
 //    }
 
-    final NodePtr oldNode = MPS2PsiMapperUtil.getNodePtr(element);
+    final NodePtr oldNode = JavaForeignIdBuilder.computeNodePtr(element);
+    if (oldNode == null) {
+      // we can't compute nodePtr for this node. it's not interesting
+      return null;
+    }
 
     return new RefactoringElementListener() {
       @Override
@@ -35,7 +41,7 @@ public class RefactoringListenerProvider implements RefactoringElementListenerPr
       }
 
       private void handleMoveOrRename(@NotNull final PsiElement newElement) {
-        NodePtr newNode = MPS2PsiMapperUtil.getNodePtr(newElement);
+        NodePtr newNode = JavaForeignIdBuilder.computeNodePtr(newElement);
         newElement.getProject().getComponent(MoveRenameBatch.class).recordMoveRename(oldNode, newNode);
       }
     };

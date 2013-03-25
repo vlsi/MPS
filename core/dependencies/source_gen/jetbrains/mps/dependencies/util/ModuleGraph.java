@@ -113,7 +113,7 @@ public class ModuleGraph extends Graph<ModuleGraph.ModuleVertex> {
 
     @Override
     public String toString() {
-      return myModule.getModuleFqName();
+      return myModule.getModuleName();
     }
 
     @Override

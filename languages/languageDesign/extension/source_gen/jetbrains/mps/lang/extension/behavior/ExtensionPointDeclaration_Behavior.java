@@ -16,7 +16,7 @@ public class ExtensionPointDeclaration_Behavior {
 
   public static String call_getId_63012922130945363(SNode thisNode) {
     IModule module = SNodeOperations.getModel(thisNode).getModule();
-    String moduleFqName = module.getModuleFqName();
+    String moduleFqName = module.getModuleName();
     int atIdx = moduleFqName.indexOf("@");
     if (atIdx >= 0) {
       moduleFqName = moduleFqName.substring(0, atIdx);

@@ -35,8 +35,8 @@ public class MPSLanguageVirtualFile extends VirtualFile {
 
   public MPSLanguageVirtualFile(@NotNull Language language) {
     myLanguage = language;
-    myPath = myLanguage.getModuleFqName();
-    myName = myLanguage.getModuleFqName();
+    myPath = myLanguage.getModuleName();
+    myName = myLanguage.getModuleName();
   }
 
   @Override

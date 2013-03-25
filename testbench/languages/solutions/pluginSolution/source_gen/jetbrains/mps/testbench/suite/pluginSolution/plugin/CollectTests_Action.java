@@ -134,7 +134,7 @@ public class CollectTests_Action extends BaseAction {
       final IModule module = MPSModuleRepository.getInstance().getModule(mref);
       if (module != null) {
         final Wrappers._T<SNode> suite = new Wrappers._T<SNode>(null);
-        for (final SModel smd : module.getOwnModelDescriptors()) {
+        for (final SModel smd : module.getModels()) {
           if (!(CollectTests_Action.this.isUserEditableGeneratableModel(smd, _params))) {
             continue;
           }

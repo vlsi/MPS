@@ -22,7 +22,6 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Generator;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.jetbrains.annotations.NotNull;
 
@@ -74,7 +73,7 @@ public class TemplateModuleInterpreted implements TemplateModule {
     List<Generator> referencedGenerators = generator.getReferencedGenerators();
     List<String> result = new ArrayList<String>(referencedGenerators.size());
     for (Generator referencedGenerator : referencedGenerators) {
-      String moduleId = referencedGenerator.getSourceLanguage().getModuleFqName() + "/" + referencedGenerator.getModuleFqName();
+      String moduleId = referencedGenerator.getSourceLanguage().getModuleName() + "/" + referencedGenerator.getModuleName();
       result.add(moduleId);
     }
     return result;

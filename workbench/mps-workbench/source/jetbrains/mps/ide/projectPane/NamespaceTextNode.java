@@ -126,7 +126,7 @@ public class NamespaceTextNode extends TextTreeNode {
       } else if (child instanceof ProjectModuleTreeNode) {
         SModule module = ((ProjectModuleTreeNode) child).getModule();
         if (module instanceof AbstractModule) {
-          models.addAll(((AbstractModule) module).getOwnModelDescriptors());
+          models.addAll(((AbstractModule) module).getModels());
         }
       }
     }

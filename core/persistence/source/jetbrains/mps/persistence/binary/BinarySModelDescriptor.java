@@ -37,8 +37,6 @@ import static jetbrains.mps.persistence.binary.BinarySModel.InvalidBinarySModel;
 
 /**
  * evgeny, 11/21/12
- * <p/>
- * TODO FastFindSupportProvider
  */
 public class BinarySModelDescriptor extends EditableSModelBase implements GeneratableSModel, RefactorableSModelDescriptor {
 

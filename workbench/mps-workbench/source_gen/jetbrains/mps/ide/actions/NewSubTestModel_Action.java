@@ -26,6 +26,7 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.util.SNodeOperations;
 import java.util.List;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.ide.projectPane.SortUtil;
 import jetbrains.mps.logging.Logger;
 
@@ -116,7 +117,7 @@ public class NewSubTestModel_Action extends BaseAction {
     StringBuilder builder = new StringBuilder();
     builder.append(SNodeOperations.getModelLongName(((SModel) MapSequence.fromMap(_params).get("model"))));
     int testModelCount = 0;
-    List<SModel> models = ((SModel) MapSequence.fromMap(_params).get("model")).getModule().getOwnModelDescriptors();
+    List<SModel> models = IterableUtil.asList(((SModel) MapSequence.fromMap(_params).get("model")).getModule().getModels());
     List<SModel> sortedModels = SortUtil.sortModels(models);
     for (SModel md : sortedModels) {
       if (!(SModelStereotype.TESTS.equals(SModelStereotype.getStereotype(md)))) {

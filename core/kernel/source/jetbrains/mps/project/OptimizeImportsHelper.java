@@ -71,7 +71,7 @@ public class OptimizeImportsHelper {
   }
 
   private Result optimizeSolutionImports_internal(Solution solution) {
-    List<SModel> modelsToOptimize = solution.getOwnModelDescriptors();
+    List<SModel> modelsToOptimize = solution.getModels();
     Result result = optimizeModelsImports_internal(modelsToOptimize);
     result.myReport = optimizeModuleImports(solution, result) + "\n\n" + result.myReport;
     return result;
@@ -79,9 +79,9 @@ public class OptimizeImportsHelper {
 
   private Result optimizeLanguageImports_internal(Language language) {
     List<SModel> modelsToOptimize = new ArrayList<SModel>();
-    modelsToOptimize.addAll(language.getOwnModelDescriptors());
+    modelsToOptimize.addAll(language.getModels());
     for (Generator g : language.getGenerators()) {
-      modelsToOptimize.addAll(g.getOwnModelDescriptors());
+      modelsToOptimize.addAll(g.getModels());
     }
     Result result = optimizeModelsImports_internal(modelsToOptimize);
     SModelRepository.getInstance().saveAll();
@@ -213,7 +213,7 @@ public class OptimizeImportsHelper {
     }
 
     for (Solution solution : dk.getAllExportedSolutions()) {
-      for (SModel model : solution.getOwnModelDescriptors()) {
+      for (SModel model : solution.getModels()) {
         if (result.myUsedModels.contains(model.getReference())) return null;
       }
     }

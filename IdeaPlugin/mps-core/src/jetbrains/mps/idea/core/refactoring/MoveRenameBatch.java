@@ -1,4 +1,4 @@
-package jetbrains.mps.idea.core.usages;
+package jetbrains.mps.idea.core.refactoring;
 
 import com.intellij.openapi.command.CommandAdapter;
 import com.intellij.openapi.command.CommandEvent;
@@ -6,19 +6,15 @@ import com.intellij.openapi.command.CommandListener;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.idea.core.NodePtr;
-import jetbrains.mps.idea.core.SReferencePtr;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.StaticReference;
-import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
 
@@ -31,6 +27,14 @@ import java.util.Set;
 /**
  * Here are recorded MPS usages of idea (e.g. java) code for which PsiReference.handleRename
  * or PsiReference.bindToElement has been called during refactoring.
+ * <p/>
+ * This is intended for "normal" references, i.e. MPSPsiRefs as they
+ * correspond to direct MPS SReferences. Thus, it implements normal behaviour --
+ * change underlying SReference and optionally add model import.
+ * <p/>
+ * Any other PsiReferences (derived, etc), for which no SReferences are present in a model,
+ * should be handled separately by somebody who knows what to do.
+ * <p/>
  * They are batched to happen in one MPS action (TODO in command or reload session?)
  * <p/>
  * danilla 3/19/13
@@ -40,8 +44,8 @@ public class MoveRenameBatch implements ProjectComponent {
   private Project myProject;
   private Object myCommand;
   private CommandListener myCommandListener;
-  // target --> set of usages
-  private Map<NodePtr, Set<SReferencePtr>> myUsages = new HashMap<NodePtr, Set<SReferencePtr>>();
+  // target -> rename handlers
+  private Map<NodePtr, Set<RenameHandler>> myUsages = new HashMap<NodePtr, Set<RenameHandler>>();
   // old node --> new node
   private Map<NodePtr, NodePtr> myRenames = new HashMap<NodePtr, NodePtr>();
 
@@ -106,18 +110,21 @@ public class MoveRenameBatch implements ProjectComponent {
     assert currCommand == myCommand;
   }
 
-  public void recordUsage(SNodeReference source, String role, NodePtr target) {
+  public void recordDefaultMPSUsage(NodePtr target, final SNodeReference source, final String role) {
+    recordUsage(target, new DefaultRenameHandler(source, role));
+  }
+
+  public void recordUsage(NodePtr target, RenameHandler handler) {
 
     rememberCommand();
 
-    Set<SReferencePtr> usages = myUsages.get(target);
+    Set<RenameHandler> usages = myUsages.get(target);
     if (usages == null) {
-      usages = new HashSet<SReferencePtr>();
+      usages = new HashSet<RenameHandler>();
       myUsages.put(target, usages);
     }
 
-    SReferencePtr u = new SReferencePtr(source, role);
-    usages.add(u);
+    usages.add(handler);
   }
 
   public void recordMoveRename(NodePtr oldNode, NodePtr newNode) {
@@ -136,30 +143,53 @@ public class MoveRenameBatch implements ProjectComponent {
           NodePtr oldNode = rename.getKey();
           NodePtr newNode = rename.getValue();
 
-          Set<SReferencePtr> usages = myUsages.get(oldNode);
+          Set<RenameHandler> usages = myUsages.get(oldNode);
           if (usages == null) continue;
 
-          for (SReferencePtr usage : usages) {
-            SNode source = usage.getSource().resolve(MPSModuleRepository.getInstance());
-            SReference newRef = StaticReference.create(usage.getRole(), source, newNode.getSModelReference(), newNode.getNodeId());
-            source.setReference(usage.getRole(), newRef);
-
-            // add model import if needed
-            if (!oldNode.getSModelReference().equals(newNode.getSModelReference())) {
-              SModel model = source.getModel();
-              SModelReference newTargetModel = newNode.getSModelReference();
-
-              assert model instanceof SModelInternal;
-              assert newTargetModel instanceof jetbrains.mps.smodel.SModelReference;
-
-              ((SModelInternal) model).addModelImport((jetbrains.mps.smodel.SModelReference) newTargetModel, true);
-            }
+          for (RenameHandler handler : usages) {
+            handler.handleRename(oldNode, newNode);
           }
         }
 
       }
     }, new MPSProject(myProject));
 
+  }
+
+  public interface RenameHandler {
+    /**
+     * @return true if MoveRenameBatch should handle possibly needed model import,
+     *         false if handleRename will take care of everything itself
+     */
+    void handleRename(NodePtr oldNode, NodePtr newNode);
+  }
+
+  private static class DefaultRenameHandler implements RenameHandler {
+    private SNodeReference source;
+    private String role;
+
+    DefaultRenameHandler(SNodeReference s, String r) {
+      source = s;
+      role = r;
+    }
+
+    @Override
+    public void handleRename(NodePtr oldNode, NodePtr newNode) {
+      SNode sourceNode = source.resolve(MPSModuleRepository.getInstance());
+      SReference newRef = StaticReference.create(role, sourceNode, newNode.getSModelReference(), newNode.getNodeId());
+      sourceNode.setReference(role, newRef);
+
+      // add model import if needed
+      if (!oldNode.getSModelReference().equals(newNode.getSModelReference())) {
+        SModel model = sourceNode.getModel();
+        SModelReference newTargetModel = newNode.getSModelReference();
+
+        assert model instanceof SModelInternal;
+        assert newTargetModel instanceof jetbrains.mps.smodel.SModelReference;
+
+        ((SModelInternal) model).addModelImport((jetbrains.mps.smodel.SModelReference) newTargetModel, true);
+      }
+    }
   }
 
   // ----

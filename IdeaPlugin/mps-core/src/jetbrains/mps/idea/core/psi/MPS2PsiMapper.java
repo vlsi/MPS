@@ -32,14 +32,18 @@ public interface MPS2PsiMapper {
 
   public static final ExtensionPointName<MPS2PsiMapper> EP_NAME = ExtensionPointName.create("com.intellij.mps.psiSourceFinder");
 
-  @Nullable
-  PsiElement getPsiSource(SNode node, Project project);
-  SNode getMPSNodeForPsi(PsiElement element, Project project);
+  boolean canBeMine(SNode node);
 
-  boolean canComputeNodeId(PsiElement element);
   @Nullable
-  SNodeId computeNodeId(PsiElement element);
-  @Nullable
-  SModelReference computeModelReference(PsiElement element);
+  PsiElement getPsiElement(SNode node, Project project);
+
+
+//  SNode getMPSNodeForPsi(PsiElement element, Project project);
+//
+//  boolean canComputeNodeId(PsiElement element);
+//  @Nullable
+//  SNodeId computeNodeId(PsiElement element);
+//  @Nullable
+//  SModelReference computeModelReference(PsiElement element);
 
 }

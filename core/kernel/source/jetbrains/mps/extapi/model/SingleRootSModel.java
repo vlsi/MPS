@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,18 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.findUsages.fastfind;
+package jetbrains.mps.extapi.model;
 
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.util.containers.MultiMap;
 
-import java.util.Set;
+/**
+ * evgeny, 3/22/13
+ */
+public interface SingleRootSModel extends SModel {
 
-@Deprecated //use openapi. this does not work
-public interface FastFindSupport {
-  //note that Set<String> is passed because we won't have concept nodes at runtime in future
-  MultiMap<SModel,String> findModelsWithPossibleInstances(Set<SModel> models, Set<String> concepts);
-
-  MultiMap<SModel,SNode> findModelsWithPossibleUsages(Set<SModel> models, Set<SNode> nodes);
+  SNode getRoot();
 }

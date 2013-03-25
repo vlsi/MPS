@@ -190,16 +190,11 @@ public class TransientModelsModule extends AbstractModule {
   }
 
   public String toString() {
-    return getModuleFqName();
+    return getModuleName();
   }
 
   @Override
-  public List<SModel> getOwnModelDescriptors() {
-    return new ArrayList<SModel>((Collection) myModels.values());
-  }
-
-  @Override
-  public Collection<SModel> getModels() {
+  public List<SModel> getModels() {
     return new ArrayList<SModel>(myModels.values());
   }
 

@@ -39,7 +39,7 @@ import jetbrains.mps.project.validation.ModelValidator;
 import jetbrains.mps.project.validation.ModuleValidatorFactory;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.FileUtil;
@@ -288,7 +288,7 @@ public class CheckProjectStructureHelper {
         for (IModule sm : modules) {
           StringBuilder errorMessages = checkModule(sm);
           if (errorMessages.length() > 0) {
-            errors.add("Error in module " + sm.getModuleFqName() + ": " + errorMessages.toString());
+            errors.add("Error in module " + sm.getModuleName() + ": " + errorMessages.toString());
           }
         }
       }

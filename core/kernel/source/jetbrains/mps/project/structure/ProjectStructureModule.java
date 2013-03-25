@@ -211,7 +211,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   }
 
   private void removeAll() {
-    List<SModel> models = this.getOwnModelDescriptors();
+    List<SModel> models = this.getModels();
     for (SModel model : models) {
       removeModel(model);
     }
@@ -250,11 +250,11 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   }
 
   public String toString() {
-    return getModuleFqName();
+    return getModuleName();
   }
 
   @Override
-  public List<SModel> getOwnModelDescriptors() {
+  public List<SModel> getModels() {
     return new ArrayList<SModel>(myModels.values());
   }
 

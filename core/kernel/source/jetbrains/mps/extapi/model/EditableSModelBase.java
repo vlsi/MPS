@@ -152,6 +152,9 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
     fireModelSaved();
   }
 
+  /**
+   *  returns true if the content should be reloaded from storage after save
+   */
   protected abstract boolean saveModel();
 
   @Override

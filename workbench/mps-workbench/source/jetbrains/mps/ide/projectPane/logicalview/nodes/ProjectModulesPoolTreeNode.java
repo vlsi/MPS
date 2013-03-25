@@ -104,7 +104,7 @@ public class ProjectModulesPoolTreeNode extends TextTreeNode {
     protected String getNamespace(ProjectModuleTreeNode node) {
       if (node.getModule() instanceof Generator) {
         Generator generator = (Generator) node.getModule();
-        return NameUtil.namespaceFromLongName(generator.getSourceLanguage().getModuleFqName());
+        return NameUtil.namespaceFromLongName(generator.getSourceLanguage().getModuleName());
       }
 
       return NameUtil.namespaceFromLongName(node.getModule().getModuleName());

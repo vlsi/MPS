@@ -79,6 +79,32 @@ public abstract class MPSPsiNodeBase extends LightElement {
   }
 
   @Override
+  public int getTextOffset() {
+    PsiElement e = this;
+    while (e != null && !(e instanceof MPSPsiNode)) {
+      e = e.getParent();
+    }
+    if (e instanceof MPSPsiNode) {
+      return ((MPSPsiNode) e).getTextOffset();
+    } else {
+      return 0;
+    }
+  }
+
+  @Override
+  public TextRange getTextRange() {
+    PsiElement e = this;
+    while (e != null && !(e instanceof MPSPsiNode)) {
+      e = e.getParent();
+    }
+    if (e instanceof MPSPsiNode) {
+      return ((MPSPsiNode) e).getTextRange();
+    } else {
+      return TextRange.EMPTY_RANGE;
+    }
+  }
+
+  @Override
   public boolean isValid() {
     return listEntry != null;
   }
@@ -154,16 +180,6 @@ public abstract class MPSPsiNodeBase extends LightElement {
   @Override
   public PsiReference[] getReferences() {
     return PsiReference.EMPTY_ARRAY;
-  }
-
-  @Override
-  public TextRange getTextRange() {
-    return TextRange.EMPTY_RANGE;
-  }
-
-  @Override
-  public int getTextOffset() {
-    return 0;
   }
 
   protected final Iterable<MPSPsiNodeBase> children () {

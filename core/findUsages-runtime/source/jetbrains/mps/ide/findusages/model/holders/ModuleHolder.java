@@ -33,7 +33,7 @@ public class ModuleHolder implements IHolder<IModule> {
   }
 
   public ModuleHolder(IModule module) {
-    myModuleUID = module.getModuleFqName();
+    myModuleUID = module.getModuleName();
   }
 
   @Override

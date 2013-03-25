@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import org.jetbrains.mps.openapi.model.SModelReference;
-
 import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.logging.Logger;
@@ -27,7 +25,6 @@ import jetbrains.mps.project.dependency.modules.ModuleDependenciesManager;
 import org.jetbrains.mps.openapi.module.SModuleReference;import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.project.structure.modules.mappingpriorities.*;
 import jetbrains.mps.vfs.IFile;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.*;
 
@@ -98,7 +95,7 @@ public class Generator extends AbstractModule {
 
   public List<SModel> getOwnTemplateModels() {
     List<SModel> templateModels = new ArrayList<SModel>();
-    for (SModel modelDescriptor : getOwnModelDescriptors()) {
+    for (SModel modelDescriptor : getModels()) {
       if (SModelStereotype.isGeneratorModel(modelDescriptor)) {
         templateModels.add(modelDescriptor);
       }
@@ -213,7 +210,7 @@ public class Generator extends AbstractModule {
 
   public List<SModel> getGeneratorModels() {
     List<SModel> result = new ArrayList<SModel>();
-    List<SModel> ownModels = this.getOwnModelDescriptors();
+    List<SModel> ownModels = this.getModels();
     for (SModel ownModel : ownModels) {
       if (SModelStereotype.isGeneratorModel(ownModel)) {
         result.add((ownModel));

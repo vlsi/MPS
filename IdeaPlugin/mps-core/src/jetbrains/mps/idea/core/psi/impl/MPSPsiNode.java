@@ -16,6 +16,7 @@
 
 package jetbrains.mps.idea.core.psi.impl;
 
+import com.intellij.openapi.util.TextRange;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiInvalidElementAccessException;
@@ -177,6 +178,22 @@ public class MPSPsiNode extends MPSPsiNodeBase {
   @Override
   public String getText() {
     return myConcept + ":" + myName + " as " + myContainingRole;
+  }
+
+  @Override
+  public TextRange getTextRange() {
+    int p = getTreePosition();
+    return new TextRange(p,p);
+  }
+
+  @Override
+  public int getTextOffset() {
+    return getTreePosition();
+  }
+
+  private int getTreePosition() {
+    MPSPsiModel model = getContainingModel();
+    return model.getNodePosition(myId);
   }
 
   @Override

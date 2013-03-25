@@ -62,7 +62,7 @@ public class Variable_Constraints extends BaseConstraintsDescriptor {
   }
 
   public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
-    return SModelOperations.getModelName(model).startsWith(Variable_Behavior.getPackagingLanguage_5558646027962551669().getModuleFqName());
+    return SModelOperations.getModelName(model).startsWith(Variable_Behavior.getPackagingLanguage_5558646027962551669().getModuleName());
   }
 
   private static SNodePointer breakingNode_hakpkp_a0a1a0a0a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895904d4(jetbrains.mps.build.packaging.constraints)", "1233927017126");

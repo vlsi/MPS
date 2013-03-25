@@ -30,7 +30,7 @@ public class PluginUtils {
     }
 
     SModel model = genContext.getOriginalInputModel();
-    String correctName = model.getModule().getModuleFqName() + ".plugin";
+    String correctName = model.getModule().getModuleName() + ".plugin";
     if (eq_l4wyvj_a0f0d(SNodeOperations.getModelLongName(model), correctName)) {
       return;
     }

@@ -401,7 +401,7 @@ outer:
       myOperationContext = myComponent.myOperationContext;
       myRootable = SPropertyOperations.getBoolean(conceptDeclaration, "rootable");
       myIsAbstract = SPropertyOperations.getBoolean(conceptDeclaration, "abstract");
-      myNamespace = SModelUtil.getDeclaringLanguage(conceptDeclaration).getModuleFqName();
+      myNamespace = SModelUtil.getDeclaringLanguage(conceptDeclaration).getModuleName();
       myNodePointer = new SNodePointer(conceptDeclaration);
       addMouseListener(new MouseAdapter() {
         @Override

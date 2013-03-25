@@ -34,7 +34,7 @@ public class ModuleReferenceExpression_Constraints extends BaseConstraintsDescri
           if (module == null) {
             return null;
           }
-          return module.getModuleFqName();
+          return module.getModuleName();
         }
       }
     });

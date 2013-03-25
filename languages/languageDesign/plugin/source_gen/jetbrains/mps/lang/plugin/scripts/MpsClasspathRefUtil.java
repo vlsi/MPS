@@ -12,6 +12,7 @@ import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import java.util.List;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -38,7 +39,7 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
         if (newModule == null) {
           continue;
         }
-        List<SModel> models = newModule.getOwnModelDescriptors();
+        List<SModel> models = IterableUtil.asList(newModule.getModels());
         SModelReference modelRef = check_xpwqv8_a0c0c0f0b(ListSequence.fromList(models).findFirst(new IWhereFilter<SModel>() {
           public boolean accept(SModel it) {
             return eq_xpwqv8_a0a0a0a0a0a0c0c0f0b(jetbrains.mps.util.SNodeOperations.getModelLongName(it), fqname);

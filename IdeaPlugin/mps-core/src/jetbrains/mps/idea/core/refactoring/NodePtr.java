@@ -1,4 +1,4 @@
-package jetbrains.mps.idea.core;
+package jetbrains.mps.idea.core.refactoring;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;

@@ -4,6 +4,8 @@ package jetbrains.mps.vcs.diff.ui.common;
 
 import javax.swing.Icon;
 import com.intellij.icons.AllIcons;
+import com.intellij.openapi.actionSystem.ShortcutSet;
+import com.intellij.openapi.actionSystem.CustomShortcutSet;
 import java.util.List;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import com.intellij.openapi.actionSystem.ActionToolbar;
@@ -36,6 +38,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class NextPreviousTraverser {
   private static final Icon PREVIOUS_ICON = AllIcons.Actions.PreviousOccurence;
   private static final Icon NEXT_ICON = AllIcons.Actions.NextOccurence;
+  public static final ShortcutSet PREV_CHANGE_SHORTCUT = CustomShortcutSet.fromString("shift F7");
+  public static final ShortcutSet NEXT_CHANGE_SHORTCUT = CustomShortcutSet.fromString("F7");
   private List<ChangeGroupLayout> myChangeGroupLayouts;
   private EditorComponent myLastEditor;
   private NextPreviousTraverser.TheAction myPreviousAction = new NextPreviousTraverser.TheAction(true);
@@ -138,7 +142,7 @@ public class NextPreviousTraverser {
         }
       });
     }
-    return check_mf966z_a5a31(changeGroup, left);
+    return check_mf966z_a5a51(changeGroup, left);
   }
 
   private synchronized Bounds getNeighbourGroupBounds(boolean previous) {
@@ -155,28 +159,28 @@ public class NextPreviousTraverser {
     Bounds min;
     if (asLeft == null) {
       {
-        Tuples._2<Bounds, Bounds> _tmp_mf966z_a0j0o = MultiTuple.<Bounds,Bounds>from(null, asRight);
-        min = _tmp_mf966z_a0j0o._0();
-        max = _tmp_mf966z_a0j0o._1();
+        Tuples._2<Bounds, Bounds> _tmp_mf966z_a0j0q = MultiTuple.<Bounds,Bounds>from(null, asRight);
+        min = _tmp_mf966z_a0j0q._0();
+        max = _tmp_mf966z_a0j0q._1();
       }
     } else if (asRight == null) {
       {
-        Tuples._2<Bounds, Bounds> _tmp_mf966z_a0a9a41 = MultiTuple.<Bounds,Bounds>from(null, asLeft);
-        min = _tmp_mf966z_a0a9a41._0();
-        max = _tmp_mf966z_a0a9a41._1();
+        Tuples._2<Bounds, Bounds> _tmp_mf966z_a0a9a61 = MultiTuple.<Bounds,Bounds>from(null, asLeft);
+        min = _tmp_mf966z_a0a9a61._0();
+        max = _tmp_mf966z_a0a9a61._1();
       }
     } else {
       if ((int) asLeft.start() < (int) asRight.start()) {
         {
-          Tuples._2<Bounds, Bounds> _tmp_mf966z_a0a0a9a41 = MultiTuple.<Bounds,Bounds>from(asLeft, asRight);
-          min = _tmp_mf966z_a0a0a9a41._0();
-          max = _tmp_mf966z_a0a0a9a41._1();
+          Tuples._2<Bounds, Bounds> _tmp_mf966z_a0a0a9a61 = MultiTuple.<Bounds,Bounds>from(asLeft, asRight);
+          min = _tmp_mf966z_a0a0a9a61._0();
+          max = _tmp_mf966z_a0a0a9a61._1();
         }
       } else {
         {
-          Tuples._2<Bounds, Bounds> _tmp_mf966z_a0a0a0j0o = MultiTuple.<Bounds,Bounds>from(asRight, asLeft);
-          min = _tmp_mf966z_a0a0a0j0o._0();
-          max = _tmp_mf966z_a0a0a0j0o._1();
+          Tuples._2<Bounds, Bounds> _tmp_mf966z_a0a0a0j0q = MultiTuple.<Bounds,Bounds>from(asRight, asLeft);
+          min = _tmp_mf966z_a0a0a0j0q._0();
+          max = _tmp_mf966z_a0a0a0j0q._1();
         }
       }
     }
@@ -225,7 +229,7 @@ public class NextPreviousTraverser {
     } else {
       LOG.warning(String.format("Could not find cell for coordinates (1, %d), editor for concept %s", y, ModelAccess.instance().<String>runReadAction(new Computable<String>() {
         public String compute() {
-          return check_mf966z_a0a0a2a0a0b0t(check_mf966z_a0a0a0c0a0a1a91(myLastEditor.getEditedNode()));
+          return check_mf966z_a0a0a2a0a0b0v(check_mf966z_a0a0a0c0a0a1a12(myLastEditor.getEditedNode()));
         }
       })));
     }
@@ -261,21 +265,21 @@ public class NextPreviousTraverser {
 
   private static Logger LOG = Logger.getLogger(NextPreviousTraverser.class);
 
-  private static Bounds check_mf966z_a5a31(ChangeGroup checkedDotOperand, boolean left) {
+  private static Bounds check_mf966z_a5a51(ChangeGroup checkedDotOperand, boolean left) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getBounds(left);
     }
     return null;
   }
 
-  private static String check_mf966z_a0a0a2a0a0b0t(SConcept checkedDotOperand) {
+  private static String check_mf966z_a0a0a2a0a0b0v(SConcept checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getConceptId();
     }
     return null;
   }
 
-  private static SConcept check_mf966z_a0a0a0c0a0a1a91(SNode checkedDotOperand) {
+  private static SConcept check_mf966z_a0a0a0c0a0a1a12(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getConcept();
     }

@@ -135,8 +135,8 @@ public class PluginUtil {
 
     @Override
     public String getPlugin(Solution s) {
-      if (s.getModuleFqName().equals(IDE_MODULE_ID)) return IDE_MODULE_PROJECTPLUGIN;
-      return s.getModuleFqName() + ".plugin." + NameUtil.capitalize(NameUtil.shortNameFromLongName(s.getModuleFqName())) + "_ProjectPlugin";
+      if (s.getModuleName().equals(IDE_MODULE_ID)) return IDE_MODULE_PROJECTPLUGIN;
+      return s.getModuleName() + ".plugin." + NameUtil.capitalize(NameUtil.shortNameFromLongName(s.getModuleName())) + "_ProjectPlugin";
     }
   }
 
@@ -148,8 +148,8 @@ public class PluginUtil {
 
     @Override
     public String getPlugin(Solution s) {
-      if (s.getModuleFqName().equals(IDE_MODULE_ID)) return IDE_MODULE_APPPLUGIN;
-      return s.getModuleFqName() + ".plugin." + NameUtil.capitalize(NameUtil.shortNameFromLongName(s.getModuleFqName())) + "_ApplicationPlugin";
+      if (s.getModuleName().equals(IDE_MODULE_ID)) return IDE_MODULE_APPPLUGIN;
+      return s.getModuleName() + ".plugin." + NameUtil.capitalize(NameUtil.shortNameFromLongName(s.getModuleName())) + "_ApplicationPlugin";
     }
   }
 }

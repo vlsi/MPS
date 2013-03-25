@@ -16,14 +16,9 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.extapi.model.EditableSModelBase;
-import org.jetbrains.mps.openapi.model.SModelReference;
-
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.findUsages.fastfind.FastFindSupport;
-import jetbrains.mps.findUsages.fastfind.FastFindSupportProvider;
-import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.DefaultModelPersistence;
@@ -40,15 +35,15 @@ import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.RefactoringsPersistence;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 
 import java.util.Map;
 
 import static jetbrains.mps.smodel.DefaultSModel.InvalidDefaultSModel;
 
-public class DefaultSModelDescriptor extends EditableSModelBase implements GeneratableSModel, RefactorableSModelDescriptor, FastFindSupportProvider {
+public class DefaultSModelDescriptor extends EditableSModelBase implements GeneratableSModel, RefactorableSModelDescriptor {
   private static final Logger LOG = Logger.getLogger(DefaultSModelDescriptor.class);
-  public static String FAST_FIND_ID = "regular";
 
   private final UpdateableModel myModel = new UpdateableModel(this) {
     @Override
@@ -157,11 +152,11 @@ public class DefaultSModelDescriptor extends EditableSModelBase implements Gener
     }
 
     LOG.assertLog(model.getReference().equals(dsmRef),
-      "\nError loading model from: \"" + source.getLocation() + "\"\n" +
-        "expected model UID     : \"" + dsmRef + "\"\n" +
-        "but was UID            : \"" + model.getReference() + "\"\n" +
-        "the model will not be available.\n" +
-        "Make sure that all project's roots and/or the model namespace is correct");
+        "\nError loading model from: \"" + source.getLocation() + "\"\n" +
+            "expected model UID     : \"" + dsmRef + "\"\n" +
+            "but was UID            : \"" + model.getReference() + "\"\n" +
+            "the model will not be available.\n" +
+            "Make sure that all project's roots and/or the model namespace is correct");
     return result;
   }
 
@@ -272,7 +267,7 @@ public class DefaultSModelDescriptor extends EditableSModelBase implements Gener
     int latestVersion = getStructureModificationLog().getLatestVersion(getSModelReference());
     myStructureModificationLog = null;  // we don't need to keep log in memory
     if (latestVersion != -1) {
-      ( loadedSModel).setVersion(latestVersion);
+      (loadedSModel).setVersion(latestVersion);
       LOG.error("Version for model " + getSModelReference().getModelName() + " was not set.");
     }
   }
@@ -307,11 +302,5 @@ public class DefaultSModelDescriptor extends EditableSModelBase implements Gener
 
     ModelLoadResult result = loadSModel(myModel.getState());
     replaceModel(result.getModel(), result.getState());
-  }
-
-  @Nullable
-  @Override
-  public FastFindSupport getFastFindSupport() {
-    return FastFindSupportRegistry.getInstance().getFastFindSupport(FAST_FIND_ID);
   }
 }

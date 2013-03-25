@@ -46,7 +46,7 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
   }
 
   @Override
-  public SModel load(StreamDataSource source) {
+  public SModel load(StreamDataSource source, Map<String, String> options) {
     BinaryModelHeader binaryModelHeader;
     try {
       binaryModelHeader = BinaryPersistence.readHeader(source);

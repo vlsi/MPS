@@ -117,7 +117,7 @@ public class ModuleUsagesFinder implements IFinder {
   }
 
   private void collectUsagesInModels(IModule searchedModule, IModule owner, SearchResults searchResults) {
-    for (SModel modelDescriptor : owner.getOwnModelDescriptors()) {
+    for (SModel modelDescriptor : owner.getModels()) {
       if (!(SModelStereotype.isUserModel(modelDescriptor))) {
         continue;
       }

@@ -10,10 +10,14 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import com.intellij.ui.JBSplitter;
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.diff.ex.DiffStatusBar;
 import com.intellij.openapi.diff.impl.util.TextDiffType;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions;
 import jetbrains.mps.smodel.SModel;
 import com.intellij.openapi.diff.DiffRequest;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -30,7 +34,6 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest;
 import org.jetbrains.annotations.Nullable;
-import javax.swing.JComponent;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
@@ -45,7 +48,6 @@ import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
 import com.intellij.openapi.util.Ref;
-import jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions;
 import jetbrains.mps.workbench.action.BaseAction;
 import java.util.List;
 import java.util.ArrayList;
@@ -69,10 +71,12 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
   private JPanel myComponent = new JPanel(new BorderLayout());
   private JBSplitter myPanel = new JBSplitter(true, 0.25f);
   private RootDifferencePane myRootDifferencePane = null;
+  private final JComponent myNoRootPanel = new JLabel("Select root to show", SwingConstants.CENTER);
   private ActionToolbar myToolbar;
   private DiffStatusBar myStatusBar = new DiffStatusBar(TextDiffType.DIFF_TYPES);
 
   private DefaultActionGroup myActionGroup;
+  private GoToNeighbourRootActions myGoToNeighbourRootActions;
 
   private String[] myContentTitles;
   private boolean myEditable;
@@ -127,6 +131,11 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
     myPanel.setSplitterProportionKey(getClass().getName() + "ModelTreeSplitter");
     myTree = new ModelDifferenceDialog.ModelDifferenceTree();
     myPanel.setFirstComponent(ScrollPaneFactory.createScrollPane(myTree));
+    myPanel.setSecondComponent(myNoRootPanel);
+
+    myGoToNeighbourRootActions = new ModelDifferenceDialog.MyGoToNeighbourRootActions();
+    myGoToNeighbourRootActions.previous().registerCustomShortcutSet(GoToNeighbourRootActions.PREV_ROOT_SHORTCUT, myComponent);
+    myGoToNeighbourRootActions.next().registerCustomShortcutSet(GoToNeighbourRootActions.NEXT_ROOT_SHORTCUT, myComponent);
 
     myToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, myActionGroup, true);
     myToolbar.updateActionsImmediately();
@@ -159,13 +168,24 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
   @Nullable
   @Override
   public JComponent getPreferredFocusedComponent() {
-    return myTree;
+    return (myTree.isShowing() ?
+      myTree :
+      super.getPreferredFocusedComponent()
+    );
   }
 
   @Nullable
   @Override
   protected JComponent createSouthPanel() {
     return null;
+  }
+
+  @Override
+  protected void dispose() {
+    if (myRootDifferencePane != null) {
+      myRootDifferencePane.dispose();
+    }
+    super.dispose();
   }
 
 
@@ -197,7 +217,8 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
       return;
     }
 
-    myPanel.setSecondComponent(null);
+    myRootDifferencePane.unregisterShortcuts(myComponent);
+    myPanel.setSecondComponent(myNoRootPanel);
     myRootDifferencePane.dispose();
     myRootDifferencePane = null;
     myRootId = null;
@@ -224,7 +245,10 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
       public void run() {
         if (myRootDifferencePane == null) {
           myRootDifferencePane = new RootDifferencePane(myProject, changeSet, nodeId, myTree.getNameForRoot(rootId), myContentTitles, myEditable, myStatusBar);
-          ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, myRootDifferencePane.getActions(), true);
+          DefaultActionGroup actionGroup = new DefaultActionGroup();
+          actionGroup.addAll(myRootDifferencePane.getActions());
+          ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);
+          myRootDifferencePane.registerShortcuts(myComponent);
           JPanel panel = new JPanel(new BorderLayout());
           panel.add(toolbar.getComponent(), BorderLayout.NORTH);
           panel.add(myRootDifferencePane.getPanel(), BorderLayout.CENTER);
@@ -249,10 +273,18 @@ public class ModelDifferenceDialog extends DialogWrapper implements DataProvider
 
 
 
+  private void closeTreeComponent() {
+    myActionGroup.unregisterCustomShortcutSet(myComponent);
+    myGoToNeighbourRootActions.previous().unregisterCustomShortcutSet(myComponent);
+    myGoToNeighbourRootActions.next().unregisterCustomShortcutSet(myComponent);
+    myPanel.setFirstComponent(null);
+    myComponent.remove(myToolbar.getComponent());
+  }
+
   public static void showRootDifference(final SModel oldModel, final SModel newModel, final SNodeId rootId, Project project, String oldTitle, String newTitle, @Nullable final Bounds scrollTo) {
     final ModelDifferenceDialog dialog = new ModelDifferenceDialog(oldModel, newModel, project, oldTitle, newTitle);
     dialog.setCurrentRoot(rootId);
-    dialog.myPanel.setFirstComponent(null);
+    dialog.closeTreeComponent();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SNode node = newModel.getNode(rootId);
