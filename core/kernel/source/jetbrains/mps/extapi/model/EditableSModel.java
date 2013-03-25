@@ -40,5 +40,6 @@ public interface EditableSModel extends SModel {
 
   boolean needsReloading();
 
-  void reloadFromDisk();
+  //note this can unregister the model
+  void reloadFromSource();
 }

@@ -27,7 +27,7 @@ public class ConflictableModelAdapter extends Conflictable {
 
   @Override
   public void reloadFromDisk() {
-    myModel.reloadFromDisk();
+    myModel.reloadFromSource();
   }
 
   @Override

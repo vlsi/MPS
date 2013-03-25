@@ -86,7 +86,7 @@ public class UpgradePersistence_Action extends BaseAction {
             }
 
             factory.upgrade(fileSource);
-            ((EditableSModel) model).reloadFromDisk();
+            ((EditableSModel) model).reloadFromSource();
 
           } catch (IOException ex) {
             LOG.error(ex);

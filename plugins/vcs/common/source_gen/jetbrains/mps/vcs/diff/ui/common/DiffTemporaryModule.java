@@ -207,7 +207,7 @@ public class DiffTemporaryModule extends AbstractModule {
     }
 
     @Override
-    public void reloadFromDisk() {
+    public void reloadFromSource() {
     }
 
     @Override

@@ -89,7 +89,7 @@ public class ProjectModels {
     }
 
     @Override
-    public void reloadFromDisk() {
+    public void reloadFromSource() {
     }
 
     public IFile getModelFile() {

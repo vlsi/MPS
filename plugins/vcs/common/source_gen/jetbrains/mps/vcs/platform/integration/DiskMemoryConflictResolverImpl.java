@@ -65,7 +65,7 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
         } else {
           ModelAccess.instance().runWriteAction(new Runnable() {
             public void run() {
-              modelDescriptor.reloadFromDisk();
+              modelDescriptor.reloadFromSource();
             }
           });
         }

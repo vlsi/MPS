@@ -31,7 +31,7 @@ public class TextModelDescriptor extends ReloadableSModelBase implements Editabl
 
   @Override
   public void reloadFromDiskSafe() {
-    reloadFromDisk();
+    reloadFromSource();
   }
 
   @Override
@@ -114,7 +114,7 @@ public class TextModelDescriptor extends ReloadableSModelBase implements Editabl
   }
 
   @Override
-  public void reloadFromDisk() {
+  public void reloadFromSource() {
     ModelAccess.assertLegalWrite();
 
     notifyModelReplaced(myModel.getModelDescriptor());
