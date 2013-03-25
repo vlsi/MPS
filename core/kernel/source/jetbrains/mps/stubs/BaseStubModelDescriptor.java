@@ -56,7 +56,7 @@ public class BaseStubModelDescriptor extends ReloadableSModelBase implements Clo
 
   private jetbrains.mps.smodel.SModel createModel() {
     jetbrains.mps.smodel.SModel model = getSource().loadSModel((IModule) myModule, this);
-    updateDiskTimestamp();
+    updateTimestamp();
     return model;
   }
 
@@ -89,11 +89,11 @@ public class BaseStubModelDescriptor extends ReloadableSModelBase implements Clo
 
   private void reload() {
     if (mySModel == null) {
-      updateDiskTimestamp();
+      updateTimestamp();
       return;
     }
     final jetbrains.mps.smodel.SModel result = (getSource().loadSModel((IModule) myModule, this));
-    updateDiskTimestamp();
+    updateTimestamp();
     replaceModel(new Runnable() {
       @Override
       public void run() {

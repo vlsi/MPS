@@ -211,7 +211,7 @@ public class DiffTemporaryModule extends AbstractModule {
     }
 
     @Override
-    public void updateDiskTimestamp() {
+    public void updateTimestamp() {
     }
 
     @Override

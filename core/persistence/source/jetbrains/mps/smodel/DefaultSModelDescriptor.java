@@ -52,12 +52,12 @@ public class DefaultSModelDescriptor extends EditableSModelBase implements Gener
       if (state == ModelLoadingState.ROOTS_LOADED) {
         ModelLoadResult result = loadSModel(ModelLoadingState.ROOTS_LOADED);
         tryFixingVersion(result.getModel());
-        updateDiskTimestamp();
+        updateTimestamp();
         return result;
       }
       if (state == ModelLoadingState.FULLY_LOADED) {
         DefaultSModel fullModel = loadSModel(ModelLoadingState.FULLY_LOADED).getModel();
-        updateDiskTimestamp();
+        updateTimestamp();
         if (current == null) return new ModelLoadResult(fullModel, ModelLoadingState.FULLY_LOADED);
         current.setUpdateMode(true);   //not to send events on changes
         fullModel.setUpdateMode(true);
@@ -291,12 +291,12 @@ public class DefaultSModelDescriptor extends EditableSModelBase implements Gener
     try {
       myHeader = ModelPersistence.loadDescriptor(getSource());
     } catch (ModelReadException e) {
-      updateDiskTimestamp();
+      updateTimestamp();
       SuspiciousModelHandler.getHandler().handleSuspiciousModel(this, false);
       return;
     }
 
-    updateDiskTimestamp();
+    updateTimestamp();
 
     if (myModel.getState() == ModelLoadingState.NOT_LOADED) return;
 

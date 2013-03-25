@@ -80,7 +80,7 @@ public class ProjectModels {
     }
 
     @Override
-    public void updateDiskTimestamp() {
+    public void updateTimestamp() {
     }
 
     @Override

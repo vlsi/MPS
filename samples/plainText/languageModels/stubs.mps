@@ -377,7 +377,7 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2702745595031511014">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="2702745595031511015">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="51te.~ReloadableSModelBase%dupdateDiskTimestamp()%cvoid" resolveInfo="updateDiskTimestamp" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="51te.~ReloadableSModelBase%dupdateTimestamp()%cvoid" resolveInfo="updateTimestamp" />
           </node>
         </node>
       </node>
@@ -454,7 +454,7 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2702745595031511020">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="1845529696460327405">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="51te.~ReloadableSModelBase%dupdateDiskTimestamp()%cvoid" resolveInfo="updateDiskTimestamp" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="51te.~ReloadableSModelBase%dupdateTimestamp()%cvoid" resolveInfo="updateTimestamp" />
           </node>
         </node>
       </node>
@@ -607,7 +607,7 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2702745595031511023">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="2702745595031511024">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="51te.~ReloadableSModelBase%dupdateDiskTimestamp()%cvoid" resolveInfo="updateDiskTimestamp" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="51te.~ReloadableSModelBase%dupdateTimestamp()%cvoid" resolveInfo="updateTimestamp" />
           </node>
         </node>
       </node>
@@ -1041,7 +1041,7 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2702745595031511017">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="2702745595031511018">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="51te.~ReloadableSModelBase%dupdateDiskTimestamp()%cvoid" resolveInfo="updateDiskTimestamp" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="51te.~ReloadableSModelBase%dupdateTimestamp()%cvoid" resolveInfo="updateTimestamp" />
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="5479752302163736414" />

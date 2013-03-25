@@ -2340,7 +2340,7 @@
     <nodeInfo nodeId="4652592318748339782" fileName="DiffTemporaryModule.java" startLine="110" startPosition="0" endLine="113" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1493963027547713889" fileName="DiffTemporaryModule.java" startLine="152" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="genMergeSModelId#(Lorg/jetbrains/mps/openapi/model/SModelId;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SModelId;" />
     <nodeInfo nodeId="4933738972388389168" fileName="DiffTemporaryModule.java" startLine="209" startPosition="0" endLine="212" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reloadFromDisk#()V" />
-    <nodeInfo nodeId="4933738972388389162" fileName="DiffTemporaryModule.java" startLine="213" startPosition="0" endLine="216" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateDiskTimestamp#()V" />
+    <nodeInfo nodeId="4933738972388389162" fileName="DiffTemporaryModule.java" startLine="213" startPosition="0" endLine="216" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateTimestamp#()V" />
     <nodeInfo nodeId="4652592318748340020" fileName="DiffTemporaryModule.java" startLine="227" startPosition="0" endLine="230" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setChanged#(Z)V" />
     <nodeInfo nodeId="4652592318748340043" fileName="DiffTemporaryModule.java" startLine="236" startPosition="0" endLine="239" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="save#()V" />
     <nodeInfo nodeId="4652592318748340053" fileName="DiffTemporaryModule.java" startLine="252" startPosition="0" endLine="255" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DiffModuleContext#()V" />
@@ -2375,7 +2375,7 @@
     <nodeInfo nodeId="4652592318748340164" fileName="DiffTemporaryModule.java" startLine="67" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findModel#(Lorg/jetbrains/mps/openapi/model/SModelReference;)Lorg/jetbrains/mps/openapi/model/SModel;" />
     <scopeInfo nodeId="4652592318748339866" fileName="DiffTemporaryModule.java" startLine="162" startPosition="31" endLine="162" endPosition="31" />
     <scopeInfo nodeId="4933738972388389173" fileName="DiffTemporaryModule.java" startLine="210" startPosition="34" endLine="210" endPosition="34" />
-    <scopeInfo nodeId="4933738972388389167" fileName="DiffTemporaryModule.java" startLine="214" startPosition="39" endLine="214" endPosition="39" />
+    <scopeInfo nodeId="4933738972388389167" fileName="DiffTemporaryModule.java" startLine="214" startPosition="35" endLine="214" endPosition="35" />
     <scopeInfo nodeId="4652592318748340025" fileName="DiffTemporaryModule.java" startLine="228" startPosition="39" endLine="228" endPosition="39" />
     <scopeInfo nodeId="4652592318748340046" fileName="DiffTemporaryModule.java" startLine="237" startPosition="24" endLine="237" endPosition="24" />
     <scopeInfo nodeId="4652592318748340136" fileName="DiffTemporaryModule.java" startLine="49" startPosition="28" endLine="50" endPosition="27" />

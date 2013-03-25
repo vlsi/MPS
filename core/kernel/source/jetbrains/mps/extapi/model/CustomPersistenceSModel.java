@@ -51,7 +51,7 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
     if (myModel == null) {
       myModel = loadSModel();
       myModel.setModelDescriptor(this);
-      updateDiskTimestamp();
+      updateTimestamp();
       fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
     }
     return myModel;
@@ -72,7 +72,7 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
 
   @Override
   protected void reload() {
-    updateDiskTimestamp();
+    updateTimestamp();
 
     if (!isLoaded()) return;
 

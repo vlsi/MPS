@@ -26,7 +26,7 @@ public class TextModelDescriptor extends ReloadableSModelBase implements Editabl
 
   public TextModelDescriptor(SModule module, TextModelDataSource source) {
     super(TextPersistenceUtil.refByModule(module.getModuleReference()), source);
-    updateDiskTimestamp();
+    updateTimestamp();
   }
 
   @Override
@@ -42,7 +42,7 @@ public class TextModelDescriptor extends ReloadableSModelBase implements Editabl
   @Override
   public void setChanged(boolean value) {
     isChanged = value;
-    updateDiskTimestamp();
+    updateTimestamp();
   }
 
   @Override
@@ -59,7 +59,7 @@ public class TextModelDescriptor extends ReloadableSModelBase implements Editabl
     }
 
     isChanged = false;
-    updateDiskTimestamp();
+    updateTimestamp();
   }
 
   @Override
@@ -122,7 +122,7 @@ public class TextModelDescriptor extends ReloadableSModelBase implements Editabl
 
     myModel = null;
     isChanged = false;
-    updateDiskTimestamp();
+    updateTimestamp();
 
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {

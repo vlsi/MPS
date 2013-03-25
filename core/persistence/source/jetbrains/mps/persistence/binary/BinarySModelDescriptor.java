@@ -61,7 +61,7 @@ public class BinarySModelDescriptor extends EditableSModelBase implements Genera
     if (myModel == null) {
       myModel = loadSModel();
       myModel.setModelDescriptor(this);
-      updateDiskTimestamp();
+      updateTimestamp();
       fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
     }
     return myModel;
@@ -83,7 +83,7 @@ public class BinarySModelDescriptor extends EditableSModelBase implements Genera
 
   @Override
   protected void reload() {
-    updateDiskTimestamp();
+    updateTimestamp();
 
     if (!isLoaded()) return;
 

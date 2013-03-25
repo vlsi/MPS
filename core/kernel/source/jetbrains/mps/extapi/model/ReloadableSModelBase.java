@@ -51,7 +51,7 @@ public abstract class ReloadableSModelBase extends SModelBase {
     return mySourceTimestamp;
   }
 
-  public void updateDiskTimestamp() {
+  public void updateTimestamp() {
     mySourceTimestamp = getSource().getTimestamp();
   }
 

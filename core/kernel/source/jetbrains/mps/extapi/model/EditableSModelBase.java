@@ -125,7 +125,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
     jetbrains.mps.smodel.SModel model = getSModelInternal();
     fireBeforeModelFileChanged(new SModelFileChangedEvent(model.getModelDescriptor(), oldFile, newModelFile));
     source.setFile(newModelFile);
-    updateDiskTimestamp();
+    updateTimestamp();
     fireModelFileChanged(new SModelFileChangedEvent(model.getModelDescriptor(), oldFile, newModelFile));
   }
 
@@ -148,7 +148,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
       reload();
     }
 
-    updateDiskTimestamp();
+    updateTimestamp();
     fireModelSaved();
   }
 

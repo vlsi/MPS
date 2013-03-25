@@ -72,7 +72,7 @@ public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
     }
     CompositeClassPathItem cp = createClassPath();
     new ASMModelLoader(((IModule) myModelRoot.getModule()), cp, model.getModelDescriptor(), false).updateModel();
-    updateDiskTimestamp();
+    updateTimestamp();
     return model;
   }
 
@@ -125,7 +125,7 @@ public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
 
   private void reload() {
     if (myModel == null) {
-      updateDiskTimestamp();
+      updateTimestamp();
       return;
     }
     final SModel result = createModel();
