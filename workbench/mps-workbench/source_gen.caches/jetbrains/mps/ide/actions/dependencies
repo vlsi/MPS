@@ -2475,6 +2475,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelFqName" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelInternal" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
+    <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

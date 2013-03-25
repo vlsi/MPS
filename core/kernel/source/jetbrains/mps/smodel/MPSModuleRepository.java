@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.AbstractModule;
-import org.jetbrains.mps.openapi.model.SModelReference;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.classloading.MPSClassesReloadManager;
@@ -76,7 +75,7 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     ModelAccess.assertLegalWrite();
 
     SModuleId moduleId = module.getModuleReference().getModuleId();
-    String moduleFqName = module.getModuleFqName();
+    String moduleFqName = module.getModuleName();
 
     assert moduleId != null : "module with null id is added to repository: fqName=" + moduleFqName + "; file=" + module.getDescriptorFile();
 
@@ -160,7 +159,7 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
   private boolean doUnregisterModule(IModule module, MPSModuleOwner owner) {
     ModelAccess.assertLegalWrite();
     assert myModules.contains(
-        module) : "trying to unregister non-registered module: fqName=" + module.getModuleFqName() + "; file=" + module.getDescriptorFile();
+        module) : "trying to unregister non-registered module: fqName=" + module.getModuleName() + "; file=" + module.getDescriptorFile();
 
     myModuleToOwners.removeLink(module, owner);
     boolean remove = myModuleToOwners.getByFirst(module).isEmpty();
@@ -169,7 +168,7 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
       myModules.remove(module);
       module.setRepository(null);
       myIdToModuleMap.remove(module.getModuleReference().getModuleId());
-      myFqNameToModulesMap.remove(module.getModuleFqName());
+      myFqNameToModulesMap.remove(module.getModuleName());
       return true;
     }
     return false;
@@ -369,11 +368,11 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
   public void moduleFqNameChanged(IModule module, String oldName) {
     ModelAccess.assertLegalWrite();
 
-    if (myFqNameToModulesMap.get(oldName) != module || myFqNameToModulesMap.containsKey(module.getModuleFqName())) {
+    if (myFqNameToModulesMap.get(oldName) != module || myFqNameToModulesMap.containsKey(module.getModuleName())) {
       throw new IllegalStateException();
     }
     myFqNameToModulesMap.remove(oldName);
-    myFqNameToModulesMap.put(module.getModuleFqName(), module);
+    myFqNameToModulesMap.put(module.getModuleName(), module);
   }
 
   //-------------------DEPRECATED

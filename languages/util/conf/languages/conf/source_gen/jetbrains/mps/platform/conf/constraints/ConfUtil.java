@@ -23,7 +23,7 @@ public class ConfUtil {
   public static Iterable<SModel> visibleConfModels(IScope scope) {
     return Sequence.fromIterable(((Iterable<IModule>) scope.getVisibleModules())).translate(new ITranslator2<IModule, SModel>() {
       public Iterable<SModel> translate(IModule m) {
-        return m.getOwnModelDescriptors();
+        return m.getModels();
       }
     }).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel smd) {

@@ -115,7 +115,7 @@ public class QueriesGenerated {
     List<Language> langs = SModelOperations.getLanguages(SNodeOperations.getModel(_context.getNode()), GlobalScope.getInstance());
     for (Language lang : langs) {
       for (SModuleReference mr : lang.getRuntimeModulesReferences()) {
-        for (SModel smd : MPSModuleRepository.getInstance().getModule(mr).getOwnModelDescriptors()) {
+        for (SModel smd : MPSModuleRepository.getInstance().getModule(mr).getModels()) {
           SModel rtModel = smd;
           for (SNode gwtmod : jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getRoots(rtModel, "jetbrains.mps.gwt.client.structure.GWTModule")) {
             ListSequence.fromList(result).addElement(gwtmod);

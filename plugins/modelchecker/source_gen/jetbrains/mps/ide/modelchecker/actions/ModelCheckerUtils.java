@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
@@ -23,7 +24,7 @@ public class ModelCheckerUtils {
 
   public static List<SModel> getModelDescriptors(IModule module) {
     List<SModel> modelDescrpitors = ListSequence.fromList(new ArrayList<SModel>());
-    for (SModel modelDescriptor : ListSequence.fromList(module.getOwnModelDescriptors())) {
+    for (SModel modelDescriptor : Sequence.fromIterable(module.getModels())) {
       if (SModelStereotype.isUserModel(modelDescriptor)) {
         ListSequence.fromList(modelDescrpitors).addElement(modelDescriptor);
       }

@@ -89,7 +89,7 @@ public class CheckedModuleReference_Editor extends DefaultNodeEditor {
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       List<String> res = ListSequence.fromList(new ArrayList<String>());
       for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
-        ListSequence.fromList(res).addElement(m.getModuleFqName());
+        ListSequence.fromList(res).addElement(m.getModuleName());
       }
       return res;
     }

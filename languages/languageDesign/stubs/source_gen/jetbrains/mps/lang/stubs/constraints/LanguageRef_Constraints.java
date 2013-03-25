@@ -47,7 +47,7 @@ public class LanguageRef_Constraints extends BaseConstraintsDescriptor {
             return moduleId.toString();
           }
 
-          return module.getModuleFqName();
+          return module.getModuleName();
         }
       }
     });

@@ -150,7 +150,7 @@ public class ProjectTestHelper {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (IModule mod : withGenerators(Collections.singletonList(module))) {
-          models.value = Sequence.fromIterable(models.value).concat(Sequence.fromIterable(((Iterable<SModel>) mod.getOwnModelDescriptors())).where(new IWhereFilter<SModel>() {
+          models.value = Sequence.fromIterable(models.value).concat(Sequence.fromIterable(((Iterable<SModel>) mod.getModels())).where(new IWhereFilter<SModel>() {
             public boolean accept(SModel it) {
               return SNodeOperations.isGeneratable(it);
             }

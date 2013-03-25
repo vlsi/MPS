@@ -177,7 +177,7 @@
     <nodeInfo nodeId="1213104859513" fileName="Variable_Constraints.java" startLine="57" startPosition="51" endLine="58" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1213104859513" fileName="Variable_Constraints.java" startLine="59" startPosition="5" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="1213104859513" fileName="Variable_Constraints.java" startLine="60" startPosition="0" endLine="61" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5558646027962350390" fileName="Variable_Constraints.java" startLine="64" startPosition="99" endLine="65" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5558646027962350390" fileName="Variable_Constraints.java" startLine="64" startPosition="99" endLine="65" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213104859513" fileName="Variable_Constraints.java" startLine="68" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_hakpkp_a0a1a0a0a2" />
     <nodeInfo nodeId="1213104859513" fileName="Variable_Constraints.java" startLine="69" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeRootBreakingPoint" />
     <nodeInfo nodeId="1213104859513" fileName="Variable_Constraints.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Variable_Constraints#()V" />
@@ -196,7 +196,7 @@
     <scopeInfo nodeId="1213104859513" fileName="Variable_Constraints.java" startLine="42" startPosition="59" endLine="43" endPosition="46" />
     <scopeInfo nodeId="1213104859513" fileName="Variable_Constraints.java" startLine="49" startPosition="42" endLine="50" endPosition="16" />
     <scopeInfo nodeId="1213104859513" fileName="Variable_Constraints.java" startLine="57" startPosition="51" endLine="58" endPosition="66" />
-    <scopeInfo nodeId="5558646027962350389" fileName="Variable_Constraints.java" startLine="64" startPosition="99" endLine="65" endPosition="139" />
+    <scopeInfo nodeId="5558646027962350389" fileName="Variable_Constraints.java" startLine="64" startPosition="99" endLine="65" endPosition="137" />
     <scopeInfo nodeId="1213104859513" fileName="Variable_Constraints.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="1213104859513" fileName="Variable_Constraints.java" startLine="64" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="1213104859513" varName="model" />

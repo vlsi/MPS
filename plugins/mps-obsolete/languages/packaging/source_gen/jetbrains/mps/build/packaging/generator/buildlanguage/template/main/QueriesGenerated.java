@@ -203,7 +203,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_3749843785778431470(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Module_Behavior.call_getModule_1213877515148(_context.getNode()).getModuleFqName();
+    return Module_Behavior.call_getModule_1213877515148(_context.getNode()).getModuleName();
   }
 
   public static Object propertyMacro_GetPropertyValue_5640794902512565315(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -603,7 +603,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_2454311172623297886(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return IdeaInitializerReference_Behavior.call_getContainigModule_989489456094443590(SLinkOperations.getTarget(_context.getNode(), "pluginXmlReference", true)).getModuleFqName();
+    return IdeaInitializerReference_Behavior.call_getContainigModule_989489456094443590(SLinkOperations.getTarget(_context.getNode(), "pluginXmlReference", true)).getModuleName();
   }
 
   public static Object propertyMacro_GetPropertyValue_2454311172623298070(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -980,10 +980,10 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_2850282874221194302(final IOperationContext operationContext, final IfMacroContext _context) {
     if (SPropertyOperations.getBoolean(_context.getNode(), "doNotJar")) {
       if (ListSequence.fromList(Module_Behavior.call_getRuntimeClassPath_1213877515098(_context.getNode(), false, false)).isNotEmpty()) {
-        _context.showWarningMessage(_context.getNode(), "non-empty runtime classpath for " + Module_Behavior.call_getModule_1213877515148(_context.getNode()).getModuleFqName());
+        _context.showWarningMessage(_context.getNode(), "non-empty runtime classpath for " + Module_Behavior.call_getModule_1213877515148(_context.getNode()).getModuleName());
       }
       if (ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(_context.getNode(), false)).isNotEmpty()) {
-        _context.showWarningMessage(_context.getNode(), "non-empty stub classpath for " + Module_Behavior.call_getModule_1213877515148(_context.getNode()).getModuleFqName());
+        _context.showWarningMessage(_context.getNode(), "non-empty stub classpath for " + Module_Behavior.call_getModule_1213877515148(_context.getNode()).getModuleName());
       }
     }
     return !(SPropertyOperations.getBoolean(_context.getNode(), "doNotJar"));
@@ -1738,9 +1738,9 @@ __switch__:
       Map<IModule, Iterable<IModule>> missing = CheckFullDependencyUtil.checkFullDependency(modules);
 
       for (IModule module : SetSequence.fromSet(MapSequence.fromMap(missing).keySet())) {
-        String moduleFqName = module.getModuleFqName();
+        String moduleFqName = module.getModuleName();
         for (IModule dependent : Sequence.fromIterable(MapSequence.fromMap(missing).get(module))) {
-          String errorText = "Required module " + dependent.getModuleFqName() + " is absent in packaging script model " + _context.getOriginalInputModel() + ". Used by module " + moduleFqName + ".";
+          String errorText = "Required module " + dependent.getModuleName() + " is absent in packaging script model " + _context.getOriginalInputModel() + ". Used by module " + moduleFqName + ".";
           System.err.println(errorText);
           if (moduleFqName.startsWith("jetbrains.mps")) {
             _context.showErrorMessage(null, errorText);

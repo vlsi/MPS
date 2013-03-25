@@ -37,7 +37,7 @@ public class RenameLanguageDialog extends RenameDialog {
   private Project myProject;
 
   public RenameLanguageDialog(Project project, Language language) throws HeadlessException {
-    super(project, language.getModuleFqName(), "language");
+    super(project, language.getModuleName(), "language");
     myLanguage = language;
     myProject = project;
     setTitle("Rename Language");
