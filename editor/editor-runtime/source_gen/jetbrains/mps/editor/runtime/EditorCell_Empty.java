@@ -92,11 +92,6 @@ public class EditorCell_Empty extends EditorCell_Basic {
     });
   }
 
-  @Override
-  public boolean isBigCell() {
-    return true;
-  }
-
   private boolean isFirstPositionAllowed() {
     if (this.getStyle().isSpecified(StyleAttributes.FIRST_POSITION_ALLOWED)) {
       return this.getStyle().get(StyleAttributes.FIRST_POSITION_ALLOWED);
