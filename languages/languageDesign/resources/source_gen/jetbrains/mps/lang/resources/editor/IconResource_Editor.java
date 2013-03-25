@@ -23,6 +23,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.editor.util.EditorUtil;
 import jetbrains.mps.editor.runtime.EditorCell_Empty;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -159,6 +161,7 @@ public class IconResource_Editor extends DefaultNodeEditor {
 
   private EditorCell createEmpty_79r3b6_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
+    editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(editorCell.getSNode()));
     editorCell.setCellId("Empty_79r3b6_a0a");
     return editorCell;
   }
@@ -202,6 +205,7 @@ public class IconResource_Editor extends DefaultNodeEditor {
 
   private EditorCell createEmpty_79r3b6_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
+    editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(editorCell.getSNode()));
     editorCell.setCellId("Empty_79r3b6_a1a");
     return editorCell;
   }
