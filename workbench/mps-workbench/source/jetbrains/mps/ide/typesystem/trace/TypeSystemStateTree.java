@@ -315,9 +315,9 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
   }
 
   private class TypeEditorMessage extends DefaultEditorMessage {
-    private EditorCell myCell;
+    private jetbrains.mps.openapi.editor.cells.EditorCell myCell;
 
-    public TypeEditorMessage(EditorCell cell, String message) {
+    public TypeEditorMessage(jetbrains.mps.openapi.editor.cells.EditorCell cell, String message) {
       super(cell.getSNode(), Color.blue, message, myMessageOwner);
       this.myCell = cell;
     }
