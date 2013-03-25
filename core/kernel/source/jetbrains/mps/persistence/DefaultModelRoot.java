@@ -142,7 +142,8 @@ public class DefaultModelRoot extends FileBasedModelRoot {
       FileDataSource source = new FileDataSource(file, this);
       options.put(ModelFactory.OPTION_PACKAGE, package_);
       options.put(ModelFactory.OPTION_RELPATH, relativePath != null ? relativePath + "/" + fileName : null);
-      options.put(ModelFactory.OPTION_MODELNAME, package_ != null ? package_ + "." + FileUtil.getNameWithoutExtension(fileName) : null);
+      String fileNameWE = FileUtil.getNameWithoutExtension(fileName);
+      options.put(ModelFactory.OPTION_MODELNAME, package_ != null ? (package_.isEmpty() ? fileNameWE : package_ + "." + fileNameWE) : null);
       SModel model = modelFactory.load(source, Collections.unmodifiableMap(options));
       // TODO handle errors
       if (model != null) {

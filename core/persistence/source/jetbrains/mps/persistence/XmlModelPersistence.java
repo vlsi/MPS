@@ -17,6 +17,7 @@ package jetbrains.mps.persistence;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.model.CustomPersistenceSModel;
+import jetbrains.mps.extapi.model.PersistenceProblem;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.extapi.model.SModelPersistence;
@@ -25,11 +26,14 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.xml.XmlConverter;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelId.RelativePathSModelId;
+import jetbrains.mps.textGen.TextGen;
+import jetbrains.mps.textGen.TextGenerationResult;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Document;
 import org.jdom.JDOMException;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModel.Problem;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -40,9 +44,13 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import org.xml.sax.InputSource;
 
+import java.io.BufferedOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.util.Collections;
 import java.util.Map;
 
 /**
@@ -140,6 +148,28 @@ public class XmlModelPersistence implements CoreComponent, ModelFactory, SModelP
 
   @Override
   public void writeModel(SModelData model, StreamDataSource source) throws IOException, ModelSaveException {
+    SNode root = model.getRootNodes().iterator().next();
+    if (root == null) {
+      throw new ModelSaveException("cannot save empty model",
+          Collections.<Problem>singletonList(new PersistenceProblem("cannot save empty model", null, true)));
+    }
 
+    // TODO check concepts
+
+    TextGenerationResult result = TextGen.generateText(root);
+    if (result.hasErrors()) {
+      throw new ModelSaveException("cannot save xml root", PersistenceProblem.fromIMessages(result.problems()));
+    }
+
+    String content = (String) result.getResult();
+
+    OutputStream stream = new BufferedOutputStream(source.openOutputStream());
+    try {
+      OutputStreamWriter writer = new OutputStreamWriter(stream, FileUtil.DEFAULT_CHARSET);
+      writer.write(content);
+      writer.flush();
+    } finally {
+      FileUtil.closeFileSafe(stream);
+    }
   }
 }
