@@ -125,6 +125,14 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
   public void setSelected(@Nullable SNodeId rootId) {
     // todo: find path by rootId 
     TreePath path = null;
+    for (int i = 0; i < getRowCount(); ++i) {
+      DiffModelTree.RootTreeNode node = as_5x0uld_a0a0a2a5(getPathForRow(i).getLastPathComponent(), DiffModelTree.RootTreeNode.class);
+      if (node != null && node.getRootId() == rootId) {
+        path = getPathForRow(i);
+        break;
+      }
+    }
+
     if (path != null) {
       expandPath(path);
       setSelectionPath(path);
@@ -381,5 +389,12 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
 
   public static boolean isNotEmpty_5x0uld_a0b0c0e(String str) {
     return str != null && str.length() > 0;
+  }
+
+  private static <T> T as_5x0uld_a0a0a2a5(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
   }
 }
