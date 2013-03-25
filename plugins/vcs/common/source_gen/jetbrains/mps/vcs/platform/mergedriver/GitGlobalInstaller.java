@@ -51,7 +51,7 @@ import org.apache.log4j.LogManager;
 
     if (!(dryRun)) {
       // copy driver files to the proper place 
-      MergeDriverPacker.getInstance().pack();
+      MergeDriverPacker.getInstance().pack(myProject);
     }
 
     AbstractInstaller.State createScriptResult = ScriptGenerator.generateScript(myProject, ScriptGenerator.GIT, myScriptFile, dryRun);
