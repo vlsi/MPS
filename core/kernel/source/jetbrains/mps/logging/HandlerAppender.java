@@ -54,10 +54,15 @@ public class HandlerAppender extends AppenderSkeleton {
 
   public LogEntry createLogEntry(LoggingEvent event) {
     ThrowableInformation throwableInformation = event.getThrowableInformation();
+    String renderedMessage = event.getRenderedMessage();
+    Object message = event.getMessage();
+    if (renderedMessage != null && renderedMessage.equals(message)) {
+      message = null;
+    }
     if (throwableInformation != null) {
-      return new LogEntry(event.categoryName, event.getRenderedMessage(), throwableInformation.getThrowable(), null);
+      return new LogEntry(event.categoryName, renderedMessage, throwableInformation.getThrowable(), message);
     } else {
-      return new LogEntry(event.categoryName, event.getRenderedMessage(), null, null);
+      return new LogEntry(event.categoryName, renderedMessage, null, message);
     }
   }
 }
