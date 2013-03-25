@@ -82,7 +82,7 @@ public class BinarySModelDescriptor extends EditableSModelBase implements Genera
   }
 
   @Override
-  protected void reload() {
+  protected void reloadContents() {
     updateTimestamp();
 
     if (!isLoaded()) return;

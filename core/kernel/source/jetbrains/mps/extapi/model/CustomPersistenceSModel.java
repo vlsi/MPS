@@ -71,7 +71,7 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
   }
 
   @Override
-  protected void reload() {
+  protected void reloadContents() {
     updateTimestamp();
 
     if (!isLoaded()) return;

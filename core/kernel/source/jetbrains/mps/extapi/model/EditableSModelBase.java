@@ -77,7 +77,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
       return;
     }
 
-    reload();
+    reloadContents();
     LOG.assertLog(!needsReloading());
   }
 
@@ -91,7 +91,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
     }
   }
 
-  protected abstract void reload();
+  protected abstract void reloadContents();
 
   public void resolveDiskConflict() {
     LOG.warning("Model=" + getReference().getModelName() + ", file ts=" + getSource().getTimestamp() + ", model ts=" + getSourceTimestamp(),
@@ -145,7 +145,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
     setChanged(false);
     boolean reload = saveModel();
     if (reload) {
-      reload();
+      reloadContents();
     }
 
     updateTimestamp();

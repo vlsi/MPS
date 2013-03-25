@@ -287,7 +287,7 @@ public class DefaultSModelDescriptor extends EditableSModelBase implements Gener
   }
 
   @Override
-  protected void reload() {
+  protected void reloadContents() {
     try {
       myHeader = ModelPersistence.loadDescriptor(getSource());
     } catch (ModelReadException e) {
