@@ -2060,6 +2060,30 @@
     <unitInfo nodeId="3956753173913394401" fileName="LT_SNodeTypeCast_with_PlusExpression_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.LT_SNodeTypeCast_with_PlusExpression_Test$TestBody" />
     <unitInfo nodeId="3956753173913394401" fileName="LT_SNodeTypeCast_with_PlusExpression_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.LT_SNodeTypeCast_with_PlusExpression_Test" />
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)/4172912343885056959">
+    <nodeInfo nodeId="4172912343885056959" fileName="DeleteEmptyCell_Test.java" startLine="18" startPosition="55" endLine="19" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4172912343885056959" fileName="DeleteEmptyCell_Test.java" startLine="19" startPosition="109" endLine="20" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4172912343885056959" fileName="DeleteEmptyCell_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4172912343885056959" fileName="DeleteEmptyCell_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4172912343885299659" fileName="DeleteEmptyCell_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4172912343885056959" fileName="DeleteEmptyCell_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeleteEmptyCell_Test#()V" />
+    <nodeInfo nodeId="4172912343885056959" fileName="DeleteEmptyCell_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="4172912343885056959" fileName="DeleteEmptyCell_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_DeleteEmptyCell#()V" />
+    <nodeInfo nodeId="4172912343885056959" fileName="DeleteEmptyCell_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="4172912343885056959" fileName="DeleteEmptyCell_Test.java" startLine="14" startPosition="33" endLine="14" endPosition="33" />
+    <scopeInfo nodeId="4172912343885056959" fileName="DeleteEmptyCell_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="4172912343885056959" fileName="DeleteEmptyCell_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="4172912343885056959" fileName="DeleteEmptyCell_Test.java" startLine="18" startPosition="55" endLine="20" endPosition="96" />
+    <scopeInfo nodeId="4172912343885056959" fileName="DeleteEmptyCell_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="4172912343885056959" fileName="DeleteEmptyCell_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="105">
+      <varInfo nodeId="4172912343885056959" varName="editor" />
+      <varInfo nodeId="4172912343885056959" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="4172912343885056959" fileName="DeleteEmptyCell_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="4172912343885056959" fileName="DeleteEmptyCell_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="4172912343885056959" fileName="DeleteEmptyCell_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.DeleteEmptyCell_Test$TestBody" />
+    <unitInfo nodeId="4172912343885056959" fileName="DeleteEmptyCell_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.DeleteEmptyCell_Test" />
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)/4246727699196031257">
     <nodeInfo nodeId="4246727699196031257" fileName="RT_toStaticFieldReference_Test.java" startLine="18" startPosition="65" endLine="19" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4246727699196031257" fileName="RT_toStaticFieldReference_Test.java" startLine="19" startPosition="109" endLine="20" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
