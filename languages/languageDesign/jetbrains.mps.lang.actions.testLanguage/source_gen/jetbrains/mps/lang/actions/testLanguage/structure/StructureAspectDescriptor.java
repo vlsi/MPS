@@ -30,7 +30,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 7:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildWrapper", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestAbstractChildWrapper", false, new String[]{"jetbrains.mps.lang.actions.testLanguage.structure.ActionTestAbstractChildWrapper"}, new String[]{}, new String[]{});
       case 8:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestContainer", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestContainer", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{});
       case 9:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestDefaultAbstractChild", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{});
       case 10:
