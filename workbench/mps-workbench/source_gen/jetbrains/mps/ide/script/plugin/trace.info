@@ -252,7 +252,7 @@
     <nodeInfo nodeId="7316415153790565780" fileName="ScriptsActionGroupHelper.java" startLine="188" startPosition="35" endLine="189" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7316415153790565808" fileName="ScriptsActionGroupHelper.java" startLine="193" startPosition="113" endLine="194" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7316415153790565823" fileName="ScriptsActionGroupHelper.java" startLine="195" startPosition="60" endLine="196" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7316415153790565824" fileName="ScriptsActionGroupHelper.java" startLine="197" startPosition="5" endLine="198" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7316415153790565824" fileName="ScriptsActionGroupHelper.java" startLine="197" startPosition="5" endLine="198" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7316415153790565838" fileName="ScriptsActionGroupHelper.java" startLine="199" startPosition="43" endLine="200" endPosition="298" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7316415153790565863" fileName="ScriptsActionGroupHelper.java" startLine="202" startPosition="42" endLine="203" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7316415153790565867" fileName="ScriptsActionGroupHelper.java" startLine="204" startPosition="5" endLine="205" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -277,7 +277,7 @@
     <nodeInfo nodeId="7316415153790565704" fileName="ScriptsActionGroupHelper.java" startLine="176" startPosition="7" endLine="179" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7316415153790565751" fileName="ScriptsActionGroupHelper.java" startLine="184" startPosition="73" endLine="187" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="7316415153790565818" fileName="ScriptsActionGroupHelper.java" startLine="194" startPosition="85" endLine="197" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7316415153790565833" fileName="ScriptsActionGroupHelper.java" startLine="198" startPosition="83" endLine="201" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7316415153790565833" fileName="ScriptsActionGroupHelper.java" startLine="198" startPosition="81" endLine="201" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="7316415153790565856" fileName="ScriptsActionGroupHelper.java" startLine="201" startPosition="5" endLine="204" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7316415153790565892" fileName="ScriptsActionGroupHelper.java" startLine="210" startPosition="43" endLine="213" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7316415153790565910" fileName="ScriptsActionGroupHelper.java" startLine="214" startPosition="21" endLine="217" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -349,7 +349,7 @@
     <scopeInfo nodeId="7316415153790565751" fileName="ScriptsActionGroupHelper.java" startLine="184" startPosition="73" endLine="187" endPosition="7">
       <varInfo nodeId="7316415153790565756" varName="script" />
     </scopeInfo>
-    <scopeInfo nodeId="7316415153790565833" fileName="ScriptsActionGroupHelper.java" startLine="198" startPosition="83" endLine="201" endPosition="5">
+    <scopeInfo nodeId="7316415153790565833" fileName="ScriptsActionGroupHelper.java" startLine="198" startPosition="81" endLine="201" endPosition="5">
       <varInfo nodeId="7316415153790565835" varName="script" />
     </scopeInfo>
     <scopeInfo nodeId="113254018726529914" fileName="ScriptsActionGroupHelper.java" startLine="101" startPosition="44" endLine="105" endPosition="12" />
