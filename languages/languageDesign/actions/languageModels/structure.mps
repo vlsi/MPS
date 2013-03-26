@@ -857,6 +857,21 @@
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="return concept&lt;&gt; or node&lt;&gt;. Icon associated with this concept&lt;&gt; or a concept of this node&lt;&gt; will be used for this menu item." />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="441141899447644451">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="queryFunctions" />
+      <property name="name" nameId="tpck.1169194664001" value="QueryFunction_Substitute_SelectionHandler" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
+      <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="return node to select or null if selection API was directly called from the query" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="441141899510871798">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="conceptFunctionParameters" />
+      <property name="name" nameId="tpck.1169194664001" value="ConceptFunctionParameter_createdNode" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="createdNode" />
+      <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="node&lt;&gt; returned from create child node block" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    </node>
   </roots>
   <root id="1112056943463">
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1173470386323">
@@ -1081,6 +1096,11 @@
       <property name="role" nameId="tpce.1071599776563" value="handler" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1177327570013" resolveInfo="QueryFunction_Substitute_Handler" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="441141899449127390">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="selectionHandler" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="441141899447644451" resolveInfo="QueryFunction_Substitute_SelectionHandler" />
     </node>
   </root>
   <root id="1177333529597">
@@ -1773,5 +1793,7 @@
   <root id="8372849190626007445" />
   <root id="8372849190626008398" />
   <root id="6400740936061763657" />
+  <root id="441141899447644451" />
+  <root id="441141899510871798" />
 </model>
 

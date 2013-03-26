@@ -329,6 +329,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "commonInitializer", true) != null;
   }
 
+  public static boolean ifMacro_Condition_3492215561679060609(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "selectionHandler", true) != null;
+  }
+
   public static boolean ifMacro_Condition_1238774270395(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "canSubstitute", true) != null;
   }
@@ -825,6 +829,10 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_4692357616869457626(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "part", true);
+  }
+
+  public static Iterable sourceNodesQuery_3492215561679099055(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "selectionHandler", true), "body", true), "statement", true);
   }
 
   public static Iterable sourceNodesQuery_6400740936064627198(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
