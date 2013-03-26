@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,23 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel.tempmodel;
 
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.NullDataSource;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
-/**
- * @deprecated use {@link jetbrains.mps.extapi.model.SModelBase} or TempModuleBuilder if you need a temporary model
- */
-@Deprecated
-public abstract class BaseSpecialModelDescriptor extends SModelBase {
+class TempModel extends SModelBase implements EditableSModel {
   protected volatile jetbrains.mps.smodel.SModel mySModel;
+  private boolean myReadOnly;
 
-  protected BaseSpecialModelDescriptor(@NotNull SModelReference modelReference) {
-    super(modelReference, new NullDataSource());
+  protected TempModel(boolean readOnly) {
+    super(createModelRef(), new NullDataSource());
+    myReadOnly = readOnly;
   }
 
   @Override
@@ -39,7 +40,7 @@ public abstract class BaseSpecialModelDescriptor extends SModelBase {
     }
     synchronized (this) {
       if (mySModel == null) {
-        mySModel = createModel();
+        mySModel = new jetbrains.mps.smodel.SModel(getReference());
         mySModel.setModelDescriptor(this);
         fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
       }
@@ -52,8 +53,6 @@ public abstract class BaseSpecialModelDescriptor extends SModelBase {
     return mySModel != null;
   }
 
-  protected abstract jetbrains.mps.smodel.SModel createModel();
-
   @Override
   public void dispose() {
     super.dispose();
@@ -63,5 +62,54 @@ public abstract class BaseSpecialModelDescriptor extends SModelBase {
       model.dispose();
     }
     clearListeners();
+  }
+
+  @Override
+  public boolean isChanged() {
+    return false;
+  }
+
+  @Override
+  public void setChanged(boolean changed) {
+
+  }
+
+  @Override
+  public void save() {
+
+  }
+
+  @Override
+  public void rename(String newModelName, boolean changeFile) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public boolean isReadOnly() {
+    return myReadOnly;
+  }
+
+  @Override
+  public void updateTimestamp() {
+
+  }
+
+  @Override
+  public boolean needsReloading() {
+    return false;
+  }
+
+  @Override
+  public void reloadFromSource() {
+
+  }
+
+  public IFile getModelFile() {
+    return null;
+  }
+
+  private static SModelReference createModelRef() {
+    SModelId id = SModelId.generate();
+    return PersistenceFacade.getInstance().createModelReference(null, id, "TempModel" + id);
   }
 }
