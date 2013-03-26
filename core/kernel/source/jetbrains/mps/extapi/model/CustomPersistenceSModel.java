@@ -15,18 +15,24 @@
  */
 package jetbrains.mps.extapi.model;
 
+import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.extapi.persistence.FileWithBackupDataSource;
 import jetbrains.mps.smodel.InvalidSModel;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 
 import java.io.IOException;
 import java.util.Collections;
+import java.util.Iterator;
 
 /**
  *
@@ -37,7 +43,7 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
   private volatile SModel myModel = null;
 
   public CustomPersistenceSModel(@NotNull SModelReference modelReference, @NotNull StreamDataSource source, @NotNull SModelPersistence persistence) {
-    super(modelReference, source);
+    super(modelReference, source instanceof FileDataSource ? FileWithBackupDataSource.create((FileDataSource) source) : source);
     myPersistence = persistence;
   }
 
@@ -57,8 +63,29 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
     return myModel;
   }
 
+  private IFile getBackupFile(boolean ifExists) {
+    StreamDataSource source = getSource();
+    if (source instanceof FileWithBackupDataSource) {
+      IFile brokenFile = ((FileWithBackupDataSource) source).getBackupFile();
+      if (!ifExists || brokenFile.exists()) {
+        return brokenFile;
+      }
+    }
+    return null;
+  }
+
   private SModel loadSModel() {
     try {
+      IFile brokenFile = getBackupFile(true);
+      if (brokenFile != null) {
+        long l = ((FileDataSource) getSource()).getFile().lastModified();
+        if (l > 0 && brokenFile.lastModified() > l) {
+          SModelBase brokenModel = (SModelBase) PersistenceFacade.getInstance().getDefaultModelFactory().load(
+              new FileDataSource(brokenFile, null), Collections.<String, String>emptyMap());
+          brokenModel.load();
+          return brokenModel.getSModelInternal();
+        }
+      }
       return (SModel) myPersistence.readModel(getReference(), getSource());
     } catch (IOException e) {
       return new StubModel(getReference(), e);
@@ -72,6 +99,8 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
 
   @Override
   protected void reloadContents() {
+    ModelAccess.assertLegalWrite();
+
     updateTimestamp();
 
     if (!isLoaded()) return;
@@ -95,17 +124,28 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
     }
     try {
       myPersistence.writeModel(smodel, getSource());
+      IFile brokenFile = getBackupFile(true);
+      if (brokenFile != null) {
+        brokenFile.delete();
+      }
     } catch (IOException e) {
       // TODO report ...
     } catch (ModelSaveException e) {
-      // TODO report, save in default persistence, etc.
+      IFile brokenFile = getBackupFile(false);
+      try {
+        PersistenceFacade.getInstance().getDefaultModelFactory().save(this, new FileDataSource(brokenFile, null));
+      } catch (ModelSaveException ignore) {
+      } catch (IOException ignore) {
+      }
+      // TODO report
     }
     return false;
   }
 
   @Override
   public SNode getRoot() {
-    return getRootNodes().iterator().next();
+    Iterator<SNode> iterator = getRootNodes().iterator();
+    return iterator.hasNext() ? iterator.next() : null;
   }
 
   public static class StubModel extends jetbrains.mps.smodel.SModel implements InvalidSModel {

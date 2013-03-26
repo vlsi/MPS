@@ -26,6 +26,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.Collections;
 
 /**
  * evgeny, 3/6/13
@@ -46,7 +47,7 @@ public class PersistenceUtil {
         byte[] bytes = content.getBytes(FileUtil.DEFAULT_CHARSET);
         return new ByteArrayInputStream(bytes);
       }
-    }, null);
+    }, Collections.<String, String>emptyMap());
     model.load();
     return model;
   }
@@ -61,7 +62,7 @@ public class PersistenceUtil {
       public InputStream openInputStream() throws IOException {
         return new ByteArrayInputStream(content);
       }
-    }, null);
+    }, Collections.<String, String>emptyMap());
     model.load();
     return model;
   }
