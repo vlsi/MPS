@@ -2041,10 +2041,12 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1075140096043">
         <property name="text" nameId="tpc2.1073389577007" value=")" />
-        <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="1164890912564" resolveInfo="_BaseMethodDeclaration_Actions" />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1215088010675" resolveInfo="RightParen" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="1214310997159">
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
+        </node>
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SideTransformAnchorTagStyleClassItem" typeId="tpc2.1214320119173" id="3948918016020893334">
+          <property name="tag" nameId="tpc2.1214320119174" value="ext_4_RTransform" />
         </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="6827006320070980193">
@@ -2274,10 +2276,12 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1075233459445">
         <property name="text" nameId="tpc2.1073389577007" value=")" />
-        <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="1164890912564" resolveInfo="_BaseMethodDeclaration_Actions" />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1215088010675" resolveInfo="RightParen" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="1214310994618">
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
+        </node>
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SideTransformAnchorTagStyleClassItem" typeId="tpc2.1214320119173" id="3948918016020904763">
+          <property name="tag" nameId="tpc2.1214320119174" value="ext_4_RTransform" />
         </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1178609159855">
@@ -2505,10 +2509,12 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1075287750856">
         <property name="text" nameId="tpc2.1073389577007" value=")" />
-        <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="1164890912564" resolveInfo="_BaseMethodDeclaration_Actions" />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1215088010675" resolveInfo="RightParen" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="1214310997843">
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
+        </node>
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SideTransformAnchorTagStyleClassItem" typeId="tpc2.1214320119173" id="2843835887910697293">
+          <property name="tag" nameId="tpc2.1214320119174" value="ext_4_RTransform" />
         </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="4139785272311776392">
@@ -17293,6 +17299,9 @@
               </node>
             </node>
           </node>
+        </node>
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SideTransformAnchorTagStyleClassItem" typeId="tpc2.1214320119173" id="3948918016018364103">
+          <property name="tag" nameId="tpc2.1214320119174" value="ext_5_RTransform" />
         </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="6827006320070687184">

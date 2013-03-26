@@ -1478,7 +1478,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseMethodDeclaration_BodyComponent" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.DeleteThrowsInMethods" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.HasAnnotation_AnnotationComponent" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.editor._BaseMethodDeclaration_Actions" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor._Component_Visibility" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor._DeprecatedPart" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor._GenericDeclaration_TypeVariables_Component" />
@@ -2538,7 +2537,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.DeleteSynchronizedInBaseMethod" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.DeleteThrowsInMethods" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.HasAnnotation_AnnotationComponent" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.editor._BaseMethodDeclaration_Actions" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor._Component_Visibility" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor._DeprecatedPart" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor._GenericDeclaration_TypeVariables_Component" />
@@ -3508,7 +3506,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.DeleteSynchronizedInBaseMethod" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.DeleteThrowsInMethods" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.HasAnnotation_AnnotationComponent" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.editor._BaseMethodDeclaration_Actions" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor._Component_Visibility" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor._DeprecatedPart" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor._GenericDeclaration_TypeVariables_Component" />

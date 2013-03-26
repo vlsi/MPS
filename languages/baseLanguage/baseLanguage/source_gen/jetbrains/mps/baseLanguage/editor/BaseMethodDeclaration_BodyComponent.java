@@ -63,6 +63,7 @@ public class BaseMethodDeclaration_BodyComponent extends AbstractCellProvider {
       null :
       editorCell.getSNode()
     )));
+    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_5_RTransform");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

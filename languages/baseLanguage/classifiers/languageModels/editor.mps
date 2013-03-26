@@ -249,9 +249,11 @@
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1221310280155">
         <property name="text" nameId="tpc2.1073389577007" value=")" />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1215088010675" resolveInfo="RightParen" />
-        <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="tpen.1164890912564" resolveInfo="_BaseMethodDeclaration_Actions" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="1221310280156">
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
+        </node>
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SideTransformAnchorTagStyleClassItem" typeId="tpc2.1214320119173" id="3948918016026692965">
+          <property name="tag" nameId="tpc2.1214320119174" value="ext_4_RTransform" />
         </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1221310280157">
