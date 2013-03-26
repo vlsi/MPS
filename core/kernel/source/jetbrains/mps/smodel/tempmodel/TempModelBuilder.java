@@ -15,11 +15,13 @@
  */
 package jetbrains.mps.smodel.tempmodel;
 
+import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -61,7 +63,12 @@ public class TempModelBuilder {
     myModel = new TempModel(myReadOnly);
     SModelRepository.getInstance().registerModelDescriptor(myModel.getSModel(), module);
 
-    return myModel.getSModel();
+    return myModel;
+  }
+
+  public void fixImports() {
+    SModelOperations.validateLanguagesAndImports(myModel, false, true);
+    MissingDependenciesFixer.fixDependencies(myModel);
   }
 
   public void dispose() {
