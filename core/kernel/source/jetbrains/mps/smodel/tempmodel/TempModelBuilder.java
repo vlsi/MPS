@@ -15,17 +15,16 @@
  */
 package jetbrains.mps.smodel.tempmodel;
 
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelRepository;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 
-import java.util.Collections;
 import java.util.Set;
 
 public class TempModelBuilder {
@@ -37,18 +36,25 @@ public class TempModelBuilder {
   //runtime fields
   private TempModel myModel;
 
+  public TempModelBuilder(boolean readOnly, @NotNull SModule module) {
+    myReadOnly = readOnly;
+    myModule = module;
+  }
+
+  public TempModelBuilder(boolean readOnly, @NotNull IScope scope, @NotNull Set<ModelRootDescriptor> modelRoots) {
+    myReadOnly = readOnly;
+    myScope = scope;
+    myModelRoots = modelRoots;
+  }
+
   public SModel create() {
     SModule module;
     if (myModule == null) {
-      IScope scope = myScope == null ? GlobalScope.getInstance() : myScope;
-      Set<ModelRootDescriptor> modelRoots = myModelRoots == null ? Collections.<ModelRootDescriptor>emptySet() : myModelRoots;
-      TempModule m = new TempModule(scope, modelRoots);
+      TempModule m = new TempModule(myScope, myModelRoots);
       TempModule regModule = MPSModuleRepository.getInstance().registerModule(m, m);
       assert m == regModule : "Temporary module with same id already registered";
       module = m;
     } else {
-      assert myScope == null : "Scope can't be specified if module is specified";
-      assert myModelRoots == null : "Model roots can't be specified if module is specified";
       module = myModule;
     }
 
@@ -65,21 +71,5 @@ public class TempModelBuilder {
     if (myModule == null) {
       MPSModuleRepository.getInstance().unregisterModule(module, ((MPSModuleOwner) module));
     }
-  }
-
-  public void setReadOnly(boolean readOnly) {
-    myReadOnly = readOnly;
-  }
-
-  public void setScope(IScope scope) {
-    myScope = scope;
-  }
-
-  public void setModelRoots(Set<ModelRootDescriptor> modelRoots) {
-    myModelRoots = modelRoots;
-  }
-
-  public void setModule(SModule module) {
-    myModule = module;
   }
 }
