@@ -45,6 +45,7 @@
   <import index="m373" modelUID="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" version="5" implicit="yes" />
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
   <import index="choz" modelUID="f:java_stub#06dc0794-59ef-49f2-81a9-204231aab3a9#jetbrains.mps.idea.core.psi(jetbrains.mps.idea.core.psi@java_stub)" version="-1" implicit="yes" />
+  <import index="qfgi" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.psi(MPS.Platform/com.intellij.psi@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3118313698925873538">
       <property name="name" nameId="tpck.1169194664001" value="PsiJavaStubModelDescriptor" />
@@ -8545,7 +8546,7 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5735787482189418619">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5735787482189418620">
                 <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="5735787482189418621">
-                  <node role="argument" roleId="tp2q.1160612519549" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="5735787482189418622">
+                  <node role="argument" roleId="tp2q.1160612519549" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="4229461899188546893">
                     <link role="variable" roleId="tp2q.1153944258490" targetNodeId="5735787482188374361" resolveInfo="item" />
                   </node>
                 </node>
@@ -8605,7 +8606,7 @@
                     <link role="variable" roleId="tp2q.1153944258490" targetNodeId="5735787482188412643" resolveInfo="file" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5735787482188434014">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cic7.~PsiFile%dgetParent()%ccom%dintellij%dpsi%dPsiDirectory" resolveInfo="getParent" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qfgi.~PsiFile%dgetParent()%ccom%dintellij%dpsi%dPsiDirectory" resolveInfo="getParent" />
                   </node>
                 </node>
                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5735787482188434015">
@@ -9444,7 +9445,7 @@
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="9079491090485614804">
       <property name="name" nameId="tpck.1169194664001" value="myIdeaModule" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1778218818515914544">
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4229461899183462170">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="asbd.~Module" resolveInfo="Module" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="9079491090485614805" />

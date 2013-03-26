@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="MPS.IdeaSdk" uuid="034a463b-a655-463c-a5a3-cab829299065" compileInMPS="true" generatorOutputPath="${module}/source_gen">
   <models>
-    <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="models" />
-    </modelRoot>
     <modelRoot path="${IDEA_SDK}/lib/openapi.jar" type="java_classes" />
+    <modelRoot path="${IDEA_SDK}/lib/extensions.jar" type="java_classes" />
+    <modelRoot path="${IDEA_SDK}/lib/util.jar" type="java_classes" />
   </models>
   <sourcePath />
   <dependencies>
