@@ -76,6 +76,10 @@ public class FindUsagesManager {
     for (SReference ref : current.getReferences()) {
       if (ref instanceof StaticReference) {
         SModelReference mr = ref.getTargetSModelReference();
+        if (mr == null) {
+          // todo: review with MihMuh?
+          continue;
+        }
         if (srefs.contains(new StaticReferenceInfo(SModelRepository.getInstance().getModelDescriptor(mr), ref.getTargetNodeId()))) {
           consumer.consume(ref);
         }
