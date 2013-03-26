@@ -9,12 +9,6 @@
       <directory url="file://$PROJECT_DIR$/core/dependencies/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/core/kernel/solutions/jetbrains.mps.kernel.tests/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/core/kernel/solutions/jetbrains.mps.kernel.tests/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/NewLanguage/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/NewLanguage2/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/NewLanguage3/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/NewLanguage4/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/NewLanguage5/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/NewLanguage6/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/baseLanguage/baseLanguage/sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/baseLanguage/baseLanguage/sandbox/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.refactoringTest/source_gen" includeSubdirectories="true" />
