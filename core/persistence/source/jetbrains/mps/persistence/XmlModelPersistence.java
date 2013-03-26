@@ -32,6 +32,7 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Document;
 import org.jdom.JDOMException;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModel.Problem;
 import org.jetbrains.mps.openapi.model.SModelId;
@@ -51,6 +52,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.Map;
 
 /**
@@ -73,7 +75,7 @@ public class XmlModelPersistence implements CoreComponent, ModelFactory, SModelP
   }
 
   @Override
-  public SModel load(StreamDataSource dataSource, Map<String, String> options) {
+  public SModel load(@NotNull StreamDataSource dataSource, @NotNull Map<String, String> options) {
     String moduleRef = options.get(OPTION_MODULEREF);
     String relPath = options.get(OPTION_RELPATH);
     String modelName = options.get(OPTION_MODELNAME);
@@ -148,7 +150,8 @@ public class XmlModelPersistence implements CoreComponent, ModelFactory, SModelP
 
   @Override
   public void writeModel(SModelData model, StreamDataSource source) throws IOException, ModelSaveException {
-    SNode root = model.getRootNodes().iterator().next();
+    Iterator<SNode> iterator = model.getRootNodes().iterator();
+    SNode root = iterator.hasNext() ? iterator.next() : null;
     if (root == null) {
       throw new ModelSaveException("cannot save empty model",
           Collections.<Problem>singletonList(new PersistenceProblem("cannot save empty model", null, true)));

@@ -643,6 +643,15 @@ public class WorkbenchModelAccess extends ModelAccess {
   }
 
   @Override
+  public void runUndoTransparentCommand(Runnable r) {
+    if (myCommandLevel > 0) {
+      throw new IllegalStateException("undo transparent action cannot be invoked in a command");
+    }
+
+    CommandProcessor.getInstance().runUndoTransparentAction(new CommandRunnable(r, CurrentProjectAccessUtil.getMPSProjectFromUI()));
+  }
+
+  @Override
   public void runUndoTransparentCommand(Runnable r, Project project) {
     if (myCommandLevel > 0) {
       throw new IllegalStateException("undo transparent action cannot be invoked in a command");

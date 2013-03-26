@@ -61,6 +61,12 @@ public abstract class PersistenceFacade {
    */
   public abstract ModelFactory getModelFactory(String extension);
 
+
+  /**
+   * Retrieves the factory for default MPS storage format (xml-based).
+   */
+  public abstract ModelFactory getDefaultModelFactory();
+
   /**
    * Registers the factory with the file extension, overwriting potential earlier registration.
    *

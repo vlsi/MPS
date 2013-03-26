@@ -35,4 +35,8 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1225441503968(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "commandClosureLiteral", true);
   }
+
+  public static SNode sourceNodeQuery_5332677359380594932(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "commandClosureLiteral", true);
+  }
 }

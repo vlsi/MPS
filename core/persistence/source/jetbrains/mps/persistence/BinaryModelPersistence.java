@@ -2,6 +2,7 @@ package jetbrains.mps.persistence;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.model.GeneratableSModel;
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.binary.BinaryModelHeader;
@@ -11,6 +12,7 @@ import jetbrains.mps.persistence.binary.BinarySModelDescriptor;
 import jetbrains.mps.persistence.binary.NodesWriter;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.io.ModelOutputStream;
@@ -46,7 +48,7 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
   }
 
   @Override
-  public SModel load(StreamDataSource source, Map<String, String> options) {
+  public SModel load(@NotNull StreamDataSource source, @NotNull Map<String, String> options) {
     BinaryModelHeader binaryModelHeader;
     try {
       binaryModelHeader = BinaryPersistence.readHeader(source);
@@ -80,7 +82,7 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
 
   @Override
   public void save(SModel model, StreamDataSource dataSource) throws ModelSaveException {
-    // TODO implement
+    BinaryPersistence.writeModel(((SModelBase) model).getSModelInternal(), dataSource);
   }
 
   @Override

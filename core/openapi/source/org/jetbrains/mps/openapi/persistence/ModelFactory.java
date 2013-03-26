@@ -15,6 +15,7 @@
  */
 package org.jetbrains.mps.openapi.persistence;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 
 import java.io.IOException;
@@ -38,7 +39,7 @@ public interface ModelFactory {
    *
    * @return The loaded model or null, if the data source is not supported
    */
-  SModel load(StreamDataSource dataSource, Map<String, String> options);
+  SModel load(@NotNull StreamDataSource dataSource, @NotNull Map<String, String> options);
 
   /**
    * Creates a new empty model.
