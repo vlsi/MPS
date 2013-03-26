@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.editor.runtime.EditorCell_Empty;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Table;
 
@@ -225,6 +226,7 @@ public class EditorCell_Table extends EditorCell_Collection {
 
   private EditorCell createRowOutermostCell(final int rowNumber, String cellId, boolean beggining) {
     EditorCell emptyCell = new EditorCell_Empty(getContext(), getSNode());
+    emptyCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(getSNode()));
     if (beggining) {
       emptyCell.getStyle().set(StyleAttributes.LAST_POSITION_ALLOWED, false);
     } else {
