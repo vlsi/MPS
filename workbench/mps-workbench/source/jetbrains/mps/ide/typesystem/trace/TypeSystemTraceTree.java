@@ -405,7 +405,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   }
 
   private class SelectedNodeEditorMessage extends DefaultEditorMessage {
-    private EditorCell myCell;
+    private jetbrains.mps.openapi.editor.cells.EditorCell myCell;
 
     public SelectedNodeEditorMessage(EditorCell cell, String message) {
       super(cell.getSNode(), new Color(192, 255, 255), message, myMessageOwner);
