@@ -5197,7 +5197,7 @@
     </node>
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="3891087596588955402">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="3891087596588955403">
-        <property name="keys" nameId="tp5g.1227184461946" value="int" />
+        <property name="keys" nameId="tp5g.1227184461946" value="int " />
       </node>
     </node>
   </root>

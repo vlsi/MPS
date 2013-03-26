@@ -29,7 +29,7 @@ public class AddingParameterWithEnter_Test extends BaseTransformationTest4 {
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("3891087596588955390", "3891087596588955395");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.typeString(editorComponent, "int");
+      BaseEditorTestBody.typeString(editorComponent, "int ");
     }
   }
 }
