@@ -42,6 +42,5 @@ public class MPSWorkbenchFileTypeFactory extends MPSPlatformFileTypeFactory {
     for (String xmlExt : XML_EXTENSIONS) {
       consumer.consume(XML_FILE_TYPE, xmlExt);
     }
-
   }
 }
