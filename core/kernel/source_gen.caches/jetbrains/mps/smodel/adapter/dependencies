@@ -74,6 +74,7 @@
   </dependency>
   <dependency className="jetbrains.mps.smodel.adapter.SLanguageLanguageAdapter" file="SLanguageLanguageAdapter.java">
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />

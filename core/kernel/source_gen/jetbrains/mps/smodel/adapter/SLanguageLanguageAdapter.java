@@ -67,4 +67,14 @@ public class SLanguageLanguageAdapter implements SLanguage {
   public SModule getModule() {
     return myLanguage;
   }
+
+  @Override
+  public int hashCode() {
+    return myLanguage.hashCode();
+  }
+
+  @Override
+  public boolean equals(Object object) {
+    return object instanceof SLanguage && myLanguage.equals(((SLanguage) object).getModule());
+  }
 }

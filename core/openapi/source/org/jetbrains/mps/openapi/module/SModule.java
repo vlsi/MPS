@@ -22,6 +22,8 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
+import java.util.Set;
+
 /**
  * A module represents a language or a solution.
  */
@@ -74,10 +76,9 @@ public interface SModule {
   Iterable<SDependency> getDeclaredDependencies();
 
   /**
-   * Languages declared as dependencies of the DEFAULT kind.
-   * Includes only dependencies declared in this model. See also GlobalModuleDependenciesManager [not yet in API]
+   * Returns all used languages by this module
    */
-  Iterable<SLanguage> getUsedLanguages();
+  Set<SLanguage> getUsedLanguages();
 
   /**
    * Find the specified model among the dependencies.

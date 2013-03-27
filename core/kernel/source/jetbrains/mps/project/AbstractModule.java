@@ -36,6 +36,7 @@ import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.DeploymentDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
+import jetbrains.mps.smodel.adapter.SLanguageLanguageAdapter;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.BootstrapLanguages;
@@ -67,7 +68,6 @@ import org.jetbrains.mps.openapi.module.FacetsFacade;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleId;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.persistence.Memento;
@@ -154,9 +154,24 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
   }
 
   @Override
-  public Iterable<SLanguage> getUsedLanguages() {
-    // TODO API (implement)
-    return null;
+  public Set<SLanguage> getUsedLanguages() {
+    Set<SLanguage> languages = new HashSet<SLanguage>();
+    for (SModuleReference usedLanguage : getModuleDescriptor().getUsedLanguages()) {
+      languages.add(new SLanguageLanguageAdapter(ModuleRepositoryFacade.getInstance().getModule(usedLanguage, Language.class)));
+    }
+
+    for (SModuleReference usedDevkit : getModuleDescriptor().getUsedDevkits()) {
+      DevKit devKit = ModuleRepositoryFacade.getInstance().getModule(usedDevkit, DevKit.class);
+      if (devKit != null) {
+        for (Language language : devKit.getAllExportedLanguages()) {
+          languages.add(new SLanguageLanguageAdapter(language));
+        }
+      }
+    }
+
+    languages.add(new SLanguageLanguageAdapter(BootstrapLanguages.coreLanguage()));
+
+    return languages; // todo: maybe collect extended languages here
   }
 
   @Override
