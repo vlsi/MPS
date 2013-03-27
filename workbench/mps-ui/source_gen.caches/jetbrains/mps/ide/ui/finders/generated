@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="95gmprrdrey01n9h65rmenm8atcp5u2">
+<dependencies version="2" modelHash="3zovmt2nem4o04ppzsrdnusflci4li2">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.findUsages(MPS.Core/jetbrains.mps.findUsages@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
@@ -9,7 +9,7 @@
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-c1prn3teyxjh37lzg3o3idls8kjv8gf" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <common hash="-bsi17yua7k49k28077pirpl8c38ortm" />
-  <source id="4132059805486520986" name="ModuleUsagesFinder" hash="1fgku0f4mrw4c4zbbdnl648yw91rcgk">
+  <source id="4132059805486520986" name="ModuleUsagesFinder" hash="-5c7n12y1uggvwkrfik6z9lnbo56gsnm">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ModuleUsagesFinder.java" />
   </source>
@@ -23,7 +23,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ModelUsagesFinder.java" />
   </source>
-  <source id="4132059805486521762" name="LanguageUsagesFinder" hash="6wetnuelhsq8477obkj1jlsio97hknt">
+  <source id="4132059805486521762" name="LanguageUsagesFinder" hash="2ktn7nf4fasoo12v7tp6prr0vmubhew">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />

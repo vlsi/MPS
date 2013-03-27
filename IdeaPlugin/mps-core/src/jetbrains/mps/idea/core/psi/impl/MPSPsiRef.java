@@ -22,8 +22,8 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiReference;
 import com.intellij.util.IncorrectOperationException;
-import jetbrains.mps.idea.core.NodePtr;
-import jetbrains.mps.idea.core.usages.MoveRenameBatch;
+import jetbrains.mps.idea.core.refactoring.MoveRenameBatch;
+import jetbrains.mps.idea.core.refactoring.NodePtr;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Computable;
@@ -98,8 +98,8 @@ public class MPSPsiRef extends MPSPsiNodeBase {
   }
 
   @Override
-  public TextRange getTextRange() {
-    return TextRange.EMPTY_RANGE;
+  public PsiReference[] getReferences() {
+    return new PsiReference[]{getReference()};
   }
 
   @Override
@@ -109,14 +109,16 @@ public class MPSPsiRef extends MPSPsiNodeBase {
       public PsiElement getElement() {
         // sort of hack: return the top-most element, but not PsiFile
 
-        PsiElement e = MPSPsiRef.this;
-        PsiElement p = null;
-        do {
-          if (p != null) e = p;
-          p = e.getParent();
-        } while (!(p instanceof PsiFile) && p != null);
+//        PsiElement e = MPSPsiRef.this;
+//        PsiElement p = null;
+//        do {
+//          if (p != null) e = p;
+//          p = e.getParent();
+//        } while (!(p instanceof PsiFile) && p != null);
+//
+//        return e;
 
-        return e;
+        return MPSPsiRef.this;
       }
 
       @Override
@@ -127,7 +129,6 @@ public class MPSPsiRef extends MPSPsiNodeBase {
       @Nullable
       @Override
       public PsiElement resolve() {
-        // TODO
         return MPSPsiRef.this.resolve();
       }
 
@@ -154,13 +155,14 @@ public class MPSPsiRef extends MPSPsiNodeBase {
         PsiElement parent = MPSPsiRef.this.getParent();
         assert parent instanceof MPSPsiNode;
         SNodeReference source = ((MPSPsiNode) parent).getSNodeReference();
-        getProject().getComponent(MoveRenameBatch.class).recordUsage(source, role, new NodePtr(model, nodeId));
+        getProject().getComponent(MoveRenameBatch.class).recordDefaultMPSUsage(new NodePtr(model, nodeId), source, role);
       }
 
       @Override
       public boolean isReferenceTo(PsiElement element) {
-        // TODO
-        return false;  //To change body of implemented methods use File | Settings | File Templates.
+        PsiElement target = resolve();
+        // Just == ?
+        return target != null && target == element;
       }
 
       @NotNull

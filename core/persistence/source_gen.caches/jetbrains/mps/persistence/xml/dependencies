@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.persistence.xml.XmlConverter" file="XmlConverter.java">
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="org.jdom.Attribute" />
+    <classNode dependClassName="org.jdom.CDATA" />
+    <classNode dependClassName="org.jdom.Comment" />
+    <classNode dependClassName="org.jdom.Content" />
+    <classNode dependClassName="org.jdom.Document" />
+    <classNode dependClassName="org.jdom.Element" />
+    <classNode dependClassName="org.jdom.EntityRef" />
+    <classNode dependClassName="org.jdom.Namespace" />
+    <classNode dependClassName="org.jdom.ProcessingInstruction" />
+    <classNode dependClassName="org.jdom.Text" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+  </dependency>
+</dependenciesRoot>
+

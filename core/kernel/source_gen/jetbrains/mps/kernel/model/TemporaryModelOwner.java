@@ -48,7 +48,7 @@ public class TemporaryModelOwner extends AbstractModule {
   @Override
   public Collection<SModuleReference> getUsedLanguagesReferences() {
     Set<SModuleReference> result = new LinkedHashSet<SModuleReference>();
-    for (SModel md : getOwnModelDescriptors()) {
+    for (SModel md : getModels()) {
       result.addAll(((SModelInternal) md).importedLanguages());
     }
     return result;
@@ -57,7 +57,7 @@ public class TemporaryModelOwner extends AbstractModule {
   @Override
   public Collection<SModuleReference> getUsedDevkitReferences() {
     Set<SModuleReference> result = new LinkedHashSet<SModuleReference>();
-    for (SModel md : getOwnModelDescriptors()) {
+    for (SModel md : getModels()) {
       result.addAll(((SModelInternal) md).importedDevkits());
     }
     return result;
@@ -66,7 +66,7 @@ public class TemporaryModelOwner extends AbstractModule {
   @Override
   public List<Dependency> getDependencies() {
     List<Dependency> result = new ArrayList<Dependency>();
-    for (SModel md : getOwnModelDescriptors()) {
+    for (SModel md : getModels()) {
       for (jetbrains.mps.smodel.SModel.ImportElement ie : ((SModelInternal) md).importedModels()) {
         SModelReference mRef = ie.getModelReference();
         SModel model = SModelRepository.getInstance().getModelDescriptor(mRef);

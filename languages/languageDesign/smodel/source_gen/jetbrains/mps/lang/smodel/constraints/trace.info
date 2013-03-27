@@ -1150,7 +1150,7 @@
     <nodeInfo nodeId="4040588429969031617" fileName="ModuleReferenceExpression_Constraints.java" startLine="30" startPosition="56" endLine="31" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4040588429969035171" fileName="ModuleReferenceExpression_Constraints.java" startLine="32" startPosition="9" endLine="33" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4040588429969039552" fileName="ModuleReferenceExpression_Constraints.java" startLine="34" startPosition="31" endLine="35" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4040588429969039556" fileName="ModuleReferenceExpression_Constraints.java" startLine="36" startPosition="11" endLine="37" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4040588429969039556" fileName="ModuleReferenceExpression_Constraints.java" startLine="36" startPosition="11" endLine="37" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4040588429969031617" fileName="ModuleReferenceExpression_Constraints.java" startLine="40" startPosition="7" endLine="41" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4040588429969031617" fileName="ModuleReferenceExpression_Constraints.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModuleReferenceExpression_Constraints#()V" />
     <nodeInfo nodeId="4040588429969039543" fileName="ModuleReferenceExpression_Constraints.java" startLine="33" startPosition="103" endLine="36" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -1164,7 +1164,7 @@
     <scopeInfo nodeId="4040588429969039544" fileName="ModuleReferenceExpression_Constraints.java" startLine="34" startPosition="31" endLine="35" endPosition="24" />
     <scopeInfo nodeId="4040588429969031617" fileName="ModuleReferenceExpression_Constraints.java" startLine="16" startPosition="0" endLine="19" endPosition="0" />
     <scopeInfo nodeId="4040588429969031617" fileName="ModuleReferenceExpression_Constraints.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="4040588429969031620" fileName="ModuleReferenceExpression_Constraints.java" startLine="32" startPosition="9" endLine="37" endPosition="42">
+    <scopeInfo nodeId="4040588429969031620" fileName="ModuleReferenceExpression_Constraints.java" startLine="32" startPosition="9" endLine="37" endPosition="40">
       <varInfo nodeId="4040588429969035172" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="4040588429969031617" fileName="ModuleReferenceExpression_Constraints.java" startLine="30" startPosition="56" endLine="38" endPosition="9">

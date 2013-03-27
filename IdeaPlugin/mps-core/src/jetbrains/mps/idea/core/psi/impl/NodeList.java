@@ -137,6 +137,7 @@ import org.jetbrains.annotations.NotNull;
       head = null;
     }
 
+    toRemove.node.setCachedModel(owner.getContainingModel());
     toRemove.clear();
     size--;
   }
@@ -149,6 +150,8 @@ import org.jetbrains.annotations.NotNull;
     old.setEntry(null);
     replacement.setEntry(entry);
     entry.node = replacement;
+
+    old.setCachedModel(owner.getContainingModel());
   }
 
   private void insertBetween(Entry toInsert, Entry after, Entry before) {

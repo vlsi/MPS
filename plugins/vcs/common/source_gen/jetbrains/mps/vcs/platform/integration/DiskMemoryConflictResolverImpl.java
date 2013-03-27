@@ -18,7 +18,7 @@ import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vcs.util.MergeDriverBackupUtil;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.smodel.BaseSModelDescriptor;
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import java.io.IOException;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
@@ -58,14 +58,14 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
         if (needSave) {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
-              modelDescriptor.updateDiskTimestamp();
+              modelDescriptor.updateTimestamp();
               modelDescriptor.save();
             }
           });
         } else {
           ModelAccess.instance().runWriteAction(new Runnable() {
             public void run() {
-              modelDescriptor.reloadFromDisk();
+              modelDescriptor.reloadFromSource();
             }
           });
         }
@@ -102,7 +102,7 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
   private static File doBackup(IFile modelFile, SModel inMemory) {
     try {
       File tmp = FileUtil.createTmpDir();
-      MergeDriverBackupUtil.writeContentsToFile(ModelPersistence.modelToString(((BaseSModelDescriptor) inMemory).getSModelInternal()).getBytes(FileUtil.DEFAULT_CHARSET), modelFile.getName(), tmp, DiskMemoryConflictResolverImpl.DiskMemoryConflictVersion.MEMORY.getSuffix());
+      MergeDriverBackupUtil.writeContentsToFile(ModelPersistence.modelToString(((SModelBase) inMemory).getSModelInternal()).getBytes(FileUtil.DEFAULT_CHARSET), modelFile.getName(), tmp, DiskMemoryConflictResolverImpl.DiskMemoryConflictVersion.MEMORY.getSuffix());
       if (modelFile.exists()) {
         com.intellij.openapi.util.io.FileUtil.copy(new File(modelFile.getPath()), new File(tmp.getAbsolutePath(), modelFile.getName() + "." + DiskMemoryConflictResolverImpl.DiskMemoryConflictVersion.FILE_SYSTEM.getSuffix()));
       }
@@ -125,7 +125,7 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
       LOG.error("Could not read model", e);
     }
     Project project = ProjectManager.getInstance().getOpenProjects()[0];
-    final ModelDifferenceDialog dialog = new ModelDifferenceDialog(onDisk, ((BaseSModelDescriptor) inMemory).getSModelInternal(), project, "Filesystem version (Read-Only)", "Memory Version");
+    final ModelDifferenceDialog dialog = new ModelDifferenceDialog(onDisk, ((SModelBase) inMemory).getSModelInternal(), project, "Filesystem version (Read-Only)", "Memory Version");
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         dialog.toFront();

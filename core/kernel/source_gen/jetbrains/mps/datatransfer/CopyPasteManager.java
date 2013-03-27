@@ -110,10 +110,10 @@ public class CopyPasteManager extends AbstractManager implements CoreComponent {
       });
       for (SNode root : roots) {
         for (SNode preProcessor : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(root, "jetbrains.mps.lang.actions.structure.CopyPasteHandlers"), "preProcessor", true))) {
-          MapSequence.fromMap(myPreProcessors).put(SLinkOperations.getTarget(preProcessor, "concept", false), new AbstractManager.Descriptor<CopyPreProcessor>(language.getModuleFqName() + "." + LanguageAspect.ACTIONS.getName() + "." + BehaviorReflection.invokeNonVirtual(String.class, preProcessor, "jetbrains.mps.lang.actions.structure.CopyPreProcessor", "call_getClassName_5948027493682347861", new Object[]{}), language, LOG));
+          MapSequence.fromMap(myPreProcessors).put(SLinkOperations.getTarget(preProcessor, "concept", false), new AbstractManager.Descriptor<CopyPreProcessor>(language.getModuleName() + "." + LanguageAspect.ACTIONS.getName() + "." + BehaviorReflection.invokeNonVirtual(String.class, preProcessor, "jetbrains.mps.lang.actions.structure.CopyPreProcessor", "call_getClassName_5948027493682347861", new Object[]{}), language, LOG));
         }
         for (SNode postProcessor : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(root, "jetbrains.mps.lang.actions.structure.CopyPasteHandlers"), "postProcessor", true))) {
-          MapSequence.fromMap(myPostProcessors).put(SLinkOperations.getTarget(postProcessor, "concept", false), new AbstractManager.Descriptor<PastePostProcessor>(language.getModuleFqName() + "." + LanguageAspect.ACTIONS.getName() + "." + BehaviorReflection.invokeNonVirtual(String.class, postProcessor, "jetbrains.mps.lang.actions.structure.PastePostProcessor", "call_getClassName_5457641811177522085", new Object[]{}), language, LOG));
+          MapSequence.fromMap(myPostProcessors).put(SLinkOperations.getTarget(postProcessor, "concept", false), new AbstractManager.Descriptor<PastePostProcessor>(language.getModuleName() + "." + LanguageAspect.ACTIONS.getName() + "." + BehaviorReflection.invokeNonVirtual(String.class, postProcessor, "jetbrains.mps.lang.actions.structure.PastePostProcessor", "call_getClassName_5457641811177522085", new Object[]{}), language, LOG));
         }
 
       }

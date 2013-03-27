@@ -2,12 +2,13 @@
 <debugInfo>
   <unitInfo fileName="BaseExecuteCommandStatementSync_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.access.behavior.BaseExecuteCommandStatementSync_BehaviorDescriptor" />
   <unitInfo fileName="BaseExecuteCommandStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.access.behavior.BaseExecuteCommandStatement_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.access.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.access.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="CommandClosureLiteral_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.access.behavior.CommandClosureLiteral_BehaviorDescriptor" />
   <unitInfo fileName="ExecuteCommandInEDTStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.access.behavior.ExecuteCommandInEDTStatement_BehaviorDescriptor" />
   <unitInfo fileName="ExecuteCommandStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.access.behavior.ExecuteCommandStatement_BehaviorDescriptor" />
   <unitInfo fileName="ExecuteEDTCommandStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.access.behavior.ExecuteEDTCommandStatement_BehaviorDescriptor" />
   <unitInfo fileName="ExecuteLightweightCommandStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.access.behavior.ExecuteLightweightCommandStatement_BehaviorDescriptor" />
+  <unitInfo fileName="ExecuteTransparentCommandStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.access.behavior.ExecuteTransparentCommandStatement_BehaviorDescriptor" />
   <unitInfo fileName="ExecuteWriteActionStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.access.behavior.ExecuteWriteActionStatement_BehaviorDescriptor" />
   <unitInfo fileName="IExecuteCommandStatementSync_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.access.behavior.IExecuteCommandStatementSync_BehaviorDescriptor" />
   <root nodeRef="r:f9d5a2b1-004e-4138-bf2b-916114888196(jetbrains.mps.lang.access.behavior)/8974276187400348215">

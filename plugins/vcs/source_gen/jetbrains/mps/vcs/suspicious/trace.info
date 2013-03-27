@@ -8,7 +8,7 @@
     <nodeInfo nodeId="4093906047203395667" fileName="SuspiciousModelIndex.java" startLine="44" startPosition="111" endLine="45" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4093906047203395671" fileName="SuspiciousModelIndex.java" startLine="45" startPosition="31" endLine="46" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4093906047203395675" fileName="SuspiciousModelIndex.java" startLine="46" startPosition="24" endLine="47" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4093906047203395687" fileName="SuspiciousModelIndex.java" startLine="51" startPosition="56" endLine="52" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4093906047203395687" fileName="SuspiciousModelIndex.java" startLine="51" startPosition="86" endLine="52" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4093906047203395703" fileName="SuspiciousModelIndex.java" startLine="56" startPosition="76" endLine="57" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4093906047203395715" fileName="SuspiciousModelIndex.java" startLine="63" startPosition="36" endLine="64" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4093906047203395728" fileName="SuspiciousModelIndex.java" startLine="69" startPosition="45" endLine="70" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -92,7 +92,7 @@
     <nodeInfo nodeId="4213817562888239050" fileName="SuspiciousModelIndex.java" startLine="126" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="4093906047203395978" fileName="SuspiciousModelIndex.java" startLine="124" startPosition="0" endLine="150" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4093906047203395781" fileName="SuspiciousModelIndex.java" startLine="94" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mergeModelsLater#(Ljava/util/List;)V" />
-    <scopeInfo nodeId="4933738972388317545" fileName="SuspiciousModelIndex.java" startLine="51" startPosition="56" endLine="52" endPosition="108" />
+    <scopeInfo nodeId="4933738972388317545" fileName="SuspiciousModelIndex.java" startLine="51" startPosition="86" endLine="52" endPosition="94" />
     <scopeInfo nodeId="4093906047203395702" fileName="SuspiciousModelIndex.java" startLine="56" startPosition="76" endLine="57" endPosition="83" />
     <scopeInfo nodeId="4093906047203395714" fileName="SuspiciousModelIndex.java" startLine="63" startPosition="36" endLine="64" endPosition="36" />
     <scopeInfo nodeId="4093906047203395727" fileName="SuspiciousModelIndex.java" startLine="69" startPosition="45" endLine="70" endPosition="13" />
@@ -244,33 +244,33 @@
     <unitInfo nodeId="4093906047203396099" fileName="Conflictable.java" startLine="7" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.vcs.suspicious.Conflictable" />
   </root>
   <root nodeRef="r:e74490a1-7013-47e5-9f40-14c310c80a86(jetbrains.mps.vcs.suspicious)/4093906047203396155">
-    <nodeInfo nodeId="4093906047203396158" fileName="ConflictableModelAdapter.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
-    <nodeInfo nodeId="4093906047203396161" fileName="ConflictableModelAdapter.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIsConflictDetected" />
-    <nodeInfo nodeId="4093906047203396172" fileName="ConflictableModelAdapter.java" startLine="14" startPosition="99" endLine="15" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4093906047203396176" fileName="ConflictableModelAdapter.java" startLine="15" startPosition="20" endLine="16" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4093906047203396184" fileName="ConflictableModelAdapter.java" startLine="20" startPosition="39" endLine="21" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4093906047203396190" fileName="ConflictableModelAdapter.java" startLine="25" startPosition="26" endLine="26" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4093906047203396198" fileName="ConflictableModelAdapter.java" startLine="30" startPosition="32" endLine="31" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4093906047203396206" fileName="ConflictableModelAdapter.java" startLine="35" startPosition="34" endLine="36" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4093906047203396164" fileName="ConflictableModelAdapter.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConflictableModelAdapter#(Ljetbrains/mps/smodel/BaseEditableSModelDescriptor;Z)V" />
-    <nodeInfo nodeId="4093906047203396180" fileName="ConflictableModelAdapter.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isConflictDetected#()Z" />
-    <nodeInfo nodeId="4093906047203396186" fileName="ConflictableModelAdapter.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFile#()Ljetbrains/mps/vfs/IFile;" />
-    <nodeInfo nodeId="4093906047203396194" fileName="ConflictableModelAdapter.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reloadFromDisk#()V" />
-    <nodeInfo nodeId="4093906047203396202" fileName="ConflictableModelAdapter.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="needReloading#()Z" />
-    <scopeInfo nodeId="4093906047203396183" fileName="ConflictableModelAdapter.java" startLine="20" startPosition="39" endLine="21" endPosition="32" />
-    <scopeInfo nodeId="4093906047203396189" fileName="ConflictableModelAdapter.java" startLine="25" startPosition="26" endLine="26" endPosition="60" />
-    <scopeInfo nodeId="4093906047203396197" fileName="ConflictableModelAdapter.java" startLine="30" startPosition="32" endLine="31" endPosition="29" />
-    <scopeInfo nodeId="4093906047203396205" fileName="ConflictableModelAdapter.java" startLine="35" startPosition="34" endLine="36" endPosition="36" />
-    <scopeInfo nodeId="4093906047203396171" fileName="ConflictableModelAdapter.java" startLine="14" startPosition="99" endLine="16" endPosition="46" />
-    <scopeInfo nodeId="4093906047203396164" fileName="ConflictableModelAdapter.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+    <nodeInfo nodeId="4093906047203396158" fileName="ConflictableModelAdapter.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
+    <nodeInfo nodeId="4093906047203396161" fileName="ConflictableModelAdapter.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIsConflictDetected" />
+    <nodeInfo nodeId="4093906047203396172" fileName="ConflictableModelAdapter.java" startLine="13" startPosition="85" endLine="14" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4093906047203396176" fileName="ConflictableModelAdapter.java" startLine="14" startPosition="20" endLine="15" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4093906047203396184" fileName="ConflictableModelAdapter.java" startLine="19" startPosition="39" endLine="20" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4093906047203396190" fileName="ConflictableModelAdapter.java" startLine="24" startPosition="26" endLine="25" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4093906047203396198" fileName="ConflictableModelAdapter.java" startLine="29" startPosition="32" endLine="30" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4093906047203396206" fileName="ConflictableModelAdapter.java" startLine="34" startPosition="34" endLine="35" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4093906047203396164" fileName="ConflictableModelAdapter.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConflictableModelAdapter#(Ljetbrains/mps/extapi/model/EditableSModel;Z)V" />
+    <nodeInfo nodeId="4093906047203396180" fileName="ConflictableModelAdapter.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isConflictDetected#()Z" />
+    <nodeInfo nodeId="4093906047203396186" fileName="ConflictableModelAdapter.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFile#()Ljetbrains/mps/vfs/IFile;" />
+    <nodeInfo nodeId="4093906047203396194" fileName="ConflictableModelAdapter.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reloadFromDisk#()V" />
+    <nodeInfo nodeId="4093906047203396202" fileName="ConflictableModelAdapter.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="needReloading#()Z" />
+    <scopeInfo nodeId="4093906047203396183" fileName="ConflictableModelAdapter.java" startLine="19" startPosition="39" endLine="20" endPosition="32" />
+    <scopeInfo nodeId="4093906047203396189" fileName="ConflictableModelAdapter.java" startLine="24" startPosition="26" endLine="25" endPosition="60" />
+    <scopeInfo nodeId="4093906047203396197" fileName="ConflictableModelAdapter.java" startLine="29" startPosition="32" endLine="30" endPosition="31" />
+    <scopeInfo nodeId="4093906047203396205" fileName="ConflictableModelAdapter.java" startLine="34" startPosition="34" endLine="35" endPosition="36" />
+    <scopeInfo nodeId="4093906047203396171" fileName="ConflictableModelAdapter.java" startLine="13" startPosition="85" endLine="15" endPosition="46" />
+    <scopeInfo nodeId="4093906047203396164" fileName="ConflictableModelAdapter.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="4093906047203396169" varName="isConflictDetected" />
       <varInfo nodeId="4093906047203396167" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="4093906047203396180" fileName="ConflictableModelAdapter.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="4093906047203396186" fileName="ConflictableModelAdapter.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="4093906047203396194" fileName="ConflictableModelAdapter.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="4093906047203396202" fileName="ConflictableModelAdapter.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
-    <unitInfo nodeId="4093906047203396155" fileName="ConflictableModelAdapter.java" startLine="10" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.vcs.suspicious.ConflictableModelAdapter" />
+    <scopeInfo nodeId="4093906047203396180" fileName="ConflictableModelAdapter.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="4093906047203396186" fileName="ConflictableModelAdapter.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="4093906047203396194" fileName="ConflictableModelAdapter.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="4093906047203396202" fileName="ConflictableModelAdapter.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <unitInfo nodeId="4093906047203396155" fileName="ConflictableModelAdapter.java" startLine="9" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.vcs.suspicious.ConflictableModelAdapter" />
   </root>
   <root nodeRef="r:e74490a1-7013-47e5-9f40-14c310c80a86(jetbrains.mps.vcs.suspicious)/4093906047203396210">
     <nodeInfo nodeId="4093906047203396213" fileName="ConflictableModuleAdapter.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModule" />

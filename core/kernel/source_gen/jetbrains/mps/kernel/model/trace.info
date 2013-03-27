@@ -328,6 +328,7 @@
     <unitInfo nodeId="2116786884968876798" fileName="SModelUtil.java" startLine="81" startPosition="69" endLine="96" endPosition="5" unitName="jetbrains.mps.kernel.model.SModelUtil$1" />
     <unitInfo nodeId="1237995590703" fileName="SModelUtil.java" startLine="35" startPosition="0" endLine="263" endPosition="0" unitName="jetbrains.mps.kernel.model.SModelUtil" />
   </root>
+  <root nodeRef="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)/3340103645315009208" />
   <root nodeRef="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)/4193578441192064991">
     <nodeInfo nodeId="7512946059813365946" fileName="MissingDependenciesFixer.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="4193578441192064993" fileName="MissingDependenciesFixer.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
@@ -443,10 +444,10 @@
     <nodeInfo nodeId="507022825981353204" fileName="TemporaryModelOwner.java" startLine="34" startPosition="25" endLine="35" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="507022825981353184" fileName="TemporaryModelOwner.java" startLine="42" startPosition="25" endLine="43" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8296861627646399848" fileName="TemporaryModelOwner.java" startLine="49" startPosition="68" endLine="50" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8296861627646399860" fileName="TemporaryModelOwner.java" startLine="51" startPosition="48" endLine="52" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8296861627646399860" fileName="TemporaryModelOwner.java" startLine="51" startPosition="35" endLine="52" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8296861627646399869" fileName="TemporaryModelOwner.java" startLine="53" startPosition="5" endLine="54" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8296861627646404061" fileName="TemporaryModelOwner.java" startLine="58" startPosition="65" endLine="59" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8296861627646404073" fileName="TemporaryModelOwner.java" startLine="60" startPosition="48" endLine="61" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8296861627646404073" fileName="TemporaryModelOwner.java" startLine="60" startPosition="35" endLine="61" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8296861627646404082" fileName="TemporaryModelOwner.java" startLine="62" startPosition="5" endLine="63" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8296861627646404089" fileName="TemporaryModelOwner.java" startLine="67" startPosition="45" endLine="68" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8296861627646404110" fileName="TemporaryModelOwner.java" startLine="70" startPosition="99" endLine="71" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -472,13 +473,13 @@
     <nodeInfo nodeId="507022825981353190" fileName="TemporaryModelOwner.java" startLine="31" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TemporaryModelOwner#()V" />
     <nodeInfo nodeId="8296861627646399843" fileName="TemporaryModelOwner.java" startLine="48" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUsedLanguagesReferences#()Ljava/util/Collection;" />
     <nodeInfo nodeId="8296861627646404056" fileName="TemporaryModelOwner.java" startLine="57" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUsedDevkitReferences#()Ljava/util/Collection;" />
-    <nodeInfo nodeId="8296861627646404101" fileName="TemporaryModelOwner.java" startLine="69" startPosition="48" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8296861627646404101" fileName="TemporaryModelOwner.java" startLine="69" startPosition="35" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8296861627646404096" fileName="TemporaryModelOwner.java" startLine="68" startPosition="58" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8296861627646404084" fileName="TemporaryModelOwner.java" startLine="66" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDependencies#()Ljava/util/List;" />
     <scopeInfo nodeId="507022825981353203" fileName="TemporaryModelOwner.java" startLine="34" startPosition="25" endLine="35" endPosition="117" />
     <scopeInfo nodeId="507022825981353183" fileName="TemporaryModelOwner.java" startLine="42" startPosition="25" endLine="43" endPosition="94" />
-    <scopeInfo nodeId="8296861627646399859" fileName="TemporaryModelOwner.java" startLine="51" startPosition="48" endLine="52" endPosition="63" />
-    <scopeInfo nodeId="8296861627646404072" fileName="TemporaryModelOwner.java" startLine="60" startPosition="48" endLine="61" endPosition="61" />
+    <scopeInfo nodeId="8296861627646399859" fileName="TemporaryModelOwner.java" startLine="51" startPosition="35" endLine="52" endPosition="63" />
+    <scopeInfo nodeId="8296861627646404072" fileName="TemporaryModelOwner.java" startLine="60" startPosition="35" endLine="61" endPosition="61" />
     <scopeInfo nodeId="8296861627646404127" fileName="TemporaryModelOwner.java" startLine="73" startPosition="28" endLine="74" endPosition="19" />
     <scopeInfo nodeId="8296861627646404139" fileName="TemporaryModelOwner.java" startLine="77" startPosition="29" endLine="78" endPosition="19" />
     <scopeInfo nodeId="507022825981353252" fileName="TemporaryModelOwner.java" startLine="90" startPosition="28" endLine="91" endPosition="37" />
@@ -509,8 +510,8 @@
       <varInfo nodeId="8296861627646404117" varName="model" />
       <varInfo nodeId="8296861627646404130" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="8296861627646404100" fileName="TemporaryModelOwner.java" startLine="69" startPosition="48" endLine="83" endPosition="7" />
-    <scopeInfo nodeId="8296861627646404101" fileName="TemporaryModelOwner.java" startLine="69" startPosition="48" endLine="83" endPosition="7">
+    <scopeInfo nodeId="8296861627646404100" fileName="TemporaryModelOwner.java" startLine="69" startPosition="35" endLine="83" endPosition="7" />
+    <scopeInfo nodeId="8296861627646404101" fileName="TemporaryModelOwner.java" startLine="69" startPosition="35" endLine="83" endPosition="7">
       <varInfo nodeId="8296861627646404107" varName="ie" />
     </scopeInfo>
     <scopeInfo nodeId="8296861627646404096" fileName="TemporaryModelOwner.java" startLine="68" startPosition="58" endLine="84" endPosition="5">

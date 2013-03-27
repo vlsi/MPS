@@ -755,7 +755,7 @@
     </scopeInfo>
     <unitInfo nodeId="3767231643656643804" fileName="ProjectTestHelper.java" startLine="137" startPosition="90" endLine="141" endPosition="5" unitName="jetbrains.mps.testbench.ProjectTestHelper$1" />
     <unitInfo nodeId="3767231643656643813" fileName="ProjectTestHelper.java" startLine="141" startPosition="21" endLine="145" endPosition="5" unitName="jetbrains.mps.testbench.ProjectTestHelper$2" />
-    <unitInfo nodeId="3730996872184513713" fileName="ProjectTestHelper.java" startLine="153" startPosition="151" endLine="157" endPosition="11" unitName="jetbrains.mps.testbench.ProjectTestHelper$4" />
+    <unitInfo nodeId="3730996872184513713" fileName="ProjectTestHelper.java" startLine="153" startPosition="138" endLine="157" endPosition="11" unitName="jetbrains.mps.testbench.ProjectTestHelper$4" />
     <unitInfo nodeId="3037398679707992881" fileName="ProjectTestHelper.java" startLine="161" startPosition="88" endLine="165" endPosition="5" unitName="jetbrains.mps.testbench.ProjectTestHelper$4" />
     <unitInfo nodeId="8597743085639790149" fileName="ProjectTestHelper.java" startLine="168" startPosition="0" endLine="172" endPosition="0" unitName="jetbrains.mps.testbench.ProjectTestHelper$Token" />
     <unitInfo nodeId="5294074698114021992" fileName="ProjectTestHelper.java" startLine="210" startPosition="28" endLine="214" endPosition="11" unitName="jetbrains.mps.testbench.ProjectTestHelper$2" />

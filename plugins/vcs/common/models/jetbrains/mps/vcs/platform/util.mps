@@ -251,8 +251,8 @@
               </node>
             </node>
             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.InstanceOfExpression" typeId="tpee.1081256982272" id="6933307669479741842">
-              <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1979649482472182144">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~BaseEditableSModelDescriptor" resolveInfo="BaseEditableSModelDescriptor" />
+              <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5721201500397084515">
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="51te.~EditableSModel" resolveInfo="EditableSModel" />
               </node>
               <node role="leftExpression" roleId="tpee.1081256993304" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6933307669479741844">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6933307669479741797" resolveInfo="md" />

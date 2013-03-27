@@ -51,7 +51,6 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
-    <classNode dependClassName="jetbrains.mps.findUsages.fastfind.FastFindSupport" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
@@ -77,7 +76,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode extendsClassName="jetbrains.mps.extapi.persistence.FolderSetDataSource" />
-    <classNode extendsClassName="jetbrains.mps.findUsages.fastfind.FastFindSupportProvider" />
     <classNode extendsClassName="jetbrains.mps.smodel.descriptor.source.StubModelDataSource" />
     <classNode extendsClassName="jetbrains.mps.stubs.util.MultiRootModelDataSource" />
   </dependency>

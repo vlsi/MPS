@@ -27,11 +27,12 @@
     <classNode dependClassName="java.util.regex.Pattern" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.TestMain" />
+    <classNode dependClassName="jetbrains.mps.extapi.model.EditableSModel" />
+    <classNode dependClassName="jetbrains.mps.extapi.model.ReloadableSModelBase" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.project.SModuleOperations" />
     <classNode dependClassName="jetbrains.mps.project.Solution" />
-    <classNode dependClassName="jetbrains.mps.smodel.BaseEditableSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.CopyUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />

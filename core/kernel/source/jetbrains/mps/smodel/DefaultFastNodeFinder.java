@@ -13,16 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;
-
-import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
 
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 
 public class DefaultFastNodeFinder implements FastNodeFinder {
@@ -67,7 +72,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
 
     // pre-loading model to avoid deadlock (model loading process requires a lock)
     // model cannot be unloaded afterwards, because we have model read access
-    ((BaseSModelDescriptor) myModel).getSModelInternal().enforceFullLoad();
+    myModel.load();
 
     synchronized (myLock) {
       if (!myInitialized) {

@@ -1179,14 +1179,6 @@
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4132059805486521432">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ForeachStatement" typeId="tpee.1144226303539" id="4132059805486521433">
-          <node role="iterable" roleId="tpee.1144226360166" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4132059805486521434">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4132059805486521435">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4132059805486521428" resolveInfo="owner" />
-            </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4132059805486521436">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~IModule%dgetOwnModelDescriptors()%cjava%dutil%dList" resolveInfo="getOwnModelDescriptors" />
-            </node>
-          </node>
           <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="4132059805486521437">
             <property name="name" nameId="tpck.1169194664001" value="modelDescriptor" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4132059805486521438">
@@ -1267,6 +1259,14 @@
                   </node>
                 </node>
               </node>
+            </node>
+          </node>
+          <node role="iterable" roleId="tpee.1144226360166" type="tpee.DotExpression" typeId="tpee.1197027756228" id="964220167941858277">
+            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="964220167941858278">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="88zw.~SModule%dgetModels()%cjava%dlang%dIterable" resolveInfo="getModels" />
+            </node>
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="964220167941858279">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4132059805486521428" resolveInfo="owner" />
             </node>
           </node>
         </node>
@@ -3049,14 +3049,6 @@
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4132059805486522168">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ForeachStatement" typeId="tpee.1144226303539" id="4132059805486522169">
-          <node role="iterable" roleId="tpee.1144226360166" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4132059805486522170">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4132059805486522171">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4132059805486522164" resolveInfo="owner" />
-            </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4132059805486522172">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~IModule%dgetOwnModelDescriptors()%cjava%dutil%dList" resolveInfo="getOwnModelDescriptors" />
-            </node>
-          </node>
           <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="4132059805486522173">
             <property name="name" nameId="tpck.1169194664001" value="modelDescriptor" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4132059805486522174">
@@ -3136,6 +3128,14 @@
                   </node>
                 </node>
               </node>
+            </node>
+          </node>
+          <node role="iterable" roleId="tpee.1144226360166" type="tpee.DotExpression" typeId="tpee.1197027756228" id="964220167941858343">
+            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="964220167941858344">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="88zw.~SModule%dgetModels()%cjava%dlang%dIterable" resolveInfo="getModels" />
+            </node>
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="964220167941858345">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4132059805486522164" resolveInfo="owner" />
             </node>
           </node>
         </node>

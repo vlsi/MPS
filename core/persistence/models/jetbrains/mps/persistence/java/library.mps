@@ -25,13 +25,13 @@
   <import index="fhgm" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.stubs.javastub.classpath(MPS.Core/jetbrains.mps.stubs.javastub.classpath@java_stub)" version="-1" />
   <import index="59et" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.vfs(MPS.Core/jetbrains.mps.vfs@java_stub)" version="-1" />
   <import index="d2v5" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.persistence(MPS.Core/jetbrains.mps.persistence@java_stub)" version="-1" />
+  <import index="51te" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.model(MPS.Core/jetbrains.mps.extapi.model@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="m373" modelUID="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" version="5" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
-  <import index="51te" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.model(MPS.Core/jetbrains.mps.extapi.model@java_stub)" version="-1" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6619269785060746035">
       <property name="name" nameId="tpck.1169194664001" value="JavaClassStubConstants" />
@@ -72,8 +72,8 @@
     </node>
   </root>
   <root id="6619269785060746048">
-    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6619269785060746049">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~BaseSModelDescriptorWithSource" resolveInfo="BaseSModelDescriptorWithSource" />
+    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7130872061631367419">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="51te.~ReloadableSModelBase" resolveInfo="ReloadableSModelBase" />
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="6619269785060746050">
       <property name="name" nameId="tpck.1169194664001" value="LOG" />
@@ -111,7 +111,7 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6619269785060746065" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6619269785060746066">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="6619269785060746067">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~BaseSModelDescriptorWithSource%d&lt;init&gt;(org%djetbrains%dmps%dopenapi%dmodel%dSModelReference,org%djetbrains%dmps%dopenapi%dpersistence%dDataSource)" resolveInfo="BaseSModelDescriptorWithSource" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="51te.~ReloadableSModelBase%d&lt;init&gt;(org%djetbrains%dmps%dopenapi%dmodel%dSModelReference,org%djetbrains%dmps%dopenapi%dpersistence%dDataSource)" resolveInfo="ReloadableSModelBase" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="6619269785060746068">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6619269785060746074" resolveInfo="modelReference" />
           </node>
@@ -399,7 +399,7 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6619269785060746171">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="6619269785060746172">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="51te.~SReloadableModelBase%dupdateDiskTimestamp()%cvoid" resolveInfo="updateDiskTimestamp" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="51te.~ReloadableSModelBase%dupdateTimestamp()%cvoid" resolveInfo="updateTimestamp" />
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="6619269785060746173">
@@ -922,7 +922,7 @@
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="to5d.~Logger%dassertLog(boolean)%cvoid" resolveInfo="assertLog" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NotExpression" typeId="tpee.1081516740877" id="6619269785060746379">
                 <node role="expression" roleId="tpee.1081516765348" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="6619269785060746380">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="51te.~SReloadableModelBase%dneedsReloading()%cboolean" resolveInfo="needsReloading" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="51te.~ReloadableSModelBase%dneedsReloading()%cboolean" resolveInfo="needsReloading" />
                 </node>
               </node>
             </node>
@@ -947,7 +947,7 @@
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="6619269785060746389">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6619269785060746390">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="6619269785060746391">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="51te.~SReloadableModelBase%dupdateDiskTimestamp()%cvoid" resolveInfo="updateDiskTimestamp" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="51te.~ReloadableSModelBase%dupdateTimestamp()%cvoid" resolveInfo="updateTimestamp" />
               </node>
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="6619269785060746392" />
@@ -967,7 +967,7 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6619269785060746397">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.SuperMethodCall" typeId="tpee.1073063089578" id="6619269785060746398">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~BaseSModelDescriptorWithSource%dreplaceModel(java%dlang%dRunnable)%cvoid" resolveInfo="replaceModel" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="51te.~ReloadableSModelBase%dreplaceModel(java%dlang%dRunnable)%cvoid" resolveInfo="replaceModel" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6619269785060746399">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="6619269785060746400">
                 <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="6619269785060746401">
@@ -1459,8 +1459,8 @@
                   <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6619269785060746586">
                     <property name="name" nameId="tpck.1169194664001" value="smd" />
                     <property name="isFinal" nameId="tpee.1176718929932" value="false" />
-                    <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6619269785060746587">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~BaseSModelDescriptor" resolveInfo="BaseSModelDescriptor" />
+                    <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5721201500399324976">
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6619269785060746048" resolveInfo="JavaClassStubModelDescriptor" />
                     </node>
                   </node>
                 </node>
@@ -1601,7 +1601,7 @@
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6619269785060746586" resolveInfo="smd" />
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6619269785060746641">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="51te.~SModelBase%dgetSource()%corg%djetbrains%dmps%dopenapi%dpersistence%dDataSource" resolveInfo="getSource" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6619269785060746086" resolveInfo="getSource" />
                           </node>
                         </node>
                       </node>

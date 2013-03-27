@@ -82,6 +82,7 @@ public class AddThrows_Intention implements IntentionFactory {
 
     public void execute(final SNode node, final EditorContext editorContext) {
       SNodeFactoryOperations.addNewChild(node, "throwsItem", "jetbrains.mps.baseLanguage.structure.Type");
+      editorContext.select(ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true)).last());
     }
 
     public IntentionDescriptor getDescriptor() {

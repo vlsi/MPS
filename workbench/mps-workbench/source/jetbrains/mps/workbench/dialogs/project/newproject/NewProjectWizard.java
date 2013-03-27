@@ -74,15 +74,17 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
   @Override
   protected void doNextAction() {
     final BaseStep currentStep = getCurrentStepObject();
+    setErrorText(null);
     try {
       currentStep._check();
     }
     catch (final CommitStepException exc) {
-      Frame frame = JOptionPane.getFrameForComponent(currentStep.getComponent());
+      setErrorText(exc.getMessage());
+      /*Frame frame = JOptionPane.getFrameForComponent(currentStep.getComponent());
       Messages.showErrorDialog(
         frame,
         exc.getMessage()
-      );
+      );*/
       return;
     }
 

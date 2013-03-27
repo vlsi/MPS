@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.util.InternUtil;
 
@@ -65,6 +65,9 @@ public abstract class SModelId implements org.jetbrains.mps.openapi.model.SModel
     if (id.startsWith(FOREIGN_PREFIX)) {
       String suffix = id.substring(FOREIGN_PREFIX.length());
       return foreign(suffix);
+    }
+    if (id.startsWith(RelativePathSModelId.TYPE + ":")) {
+      return new RelativePathSModelId(id.substring(1 + RelativePathSModelId.TYPE.length()));
     }
     throw new IllegalArgumentException();
   }
@@ -170,6 +173,38 @@ public abstract class SModelId implements org.jetbrains.mps.openapi.model.SModel
 
     public String toString() {
       return TYPE + ":" + myModelName;
+    }
+  }
+
+  public final static class RelativePathSModelId extends SModelId {
+    public static final String TYPE = "path";
+    private String myPath;
+
+    public RelativePathSModelId(String path) {
+      super();
+      myPath = path;
+    }
+
+    @Override
+    public String getModelName() {
+      return myPath;
+    }
+
+    public String getFileName() {
+      int i = myPath.lastIndexOf('/');
+      if (i >= 0 && i + 1 < myPath.length()) {
+        return myPath.substring(i + 1);
+      }
+      return myPath;
+    }
+
+    @Override
+    public String getType() {
+      return TYPE;
+    }
+
+    public String toString() {
+      return TYPE + ":" + myPath;
     }
   }
 }

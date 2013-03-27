@@ -91,18 +91,17 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
         addRequiredImports(descriptor, descriptor.getModule().getModuleDescriptor());
 
         final EditableSModel targetModelDescriptor = ((EditableSModel) descriptor);
-        Iterable<SNode> result = createBuildScripts(targetModelDescriptor, BuildGeneratorImpl.this.getProjectName(), BuildGeneratorImpl.this.myProject.getBaseDir().getPath(), BuildGeneratorImpl.this.getModules());
 
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
+            Iterable<SNode> result = createBuildScripts(targetModelDescriptor, BuildGeneratorImpl.this.getProjectName(), BuildGeneratorImpl.this.myProject.getBaseDir().getPath(), BuildGeneratorImpl.this.getModules());
             ((AbstractModule) targetModelDescriptor.getModule()).save();
             targetModelDescriptor.save();
+            for (SNode node : Sequence.fromIterable(result)) {
+              NavigationSupport.getInstance().openNode(myOperationContext, node, true, true);
+            }
           }
         });
-
-        for (SNode node : Sequence.fromIterable(result)) {
-          NavigationSupport.getInstance().openNode(myOperationContext, node, true, true);
-        }
 
         ProjectHelper.toMPSProject(myProject).addModule(descriptor.getModule().getModuleReference());
 

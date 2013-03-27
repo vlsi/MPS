@@ -21,8 +21,8 @@ public class DependencyTreeNode extends MPSTreeNode {
       "" :
       "<i>" + link.linktype.toString() + "</i> "
     );
-    setNodeIdentifier(link.linktype + link.module.getModuleFqName());
-    setText("<html>" + linktype + link.module.getModuleFqName() + "</html>");
+    setNodeIdentifier(link.linktype + link.module.getModuleName());
+    setText("<html>" + linktype + link.module.getModuleName() + "</html>");
   }
 
   public DependencyUtil.Link getLink() {
@@ -38,7 +38,7 @@ public class DependencyTreeNode extends MPSTreeNode {
       "" :
       "<i>" + myLink.linktype.toString() + "</i> "
     );
-    setText("<html>" + linktype + "<b>" + myLink.module.getModuleFqName() + "</b></html>");
+    setText("<html>" + linktype + "<b>" + myLink.module.getModuleName() + "</b></html>");
   }
 
   public void setLinkLeaf(DependencyTreeNode linkedNode) {
@@ -47,7 +47,7 @@ public class DependencyTreeNode extends MPSTreeNode {
       "" :
       "<i>" + myLink.linktype.toString() + "</i> "
     );
-    setText("<html>" + linktype + myLink.module.getModuleFqName() + "... <b>--></b></html>");
+    setText("<html>" + linktype + myLink.module.getModuleName() + "... <b>--></b></html>");
   }
 
   @Override

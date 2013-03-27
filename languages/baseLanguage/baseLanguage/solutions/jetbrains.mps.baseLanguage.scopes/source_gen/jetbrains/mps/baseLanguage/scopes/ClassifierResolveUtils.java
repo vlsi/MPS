@@ -78,7 +78,7 @@ public class ClassifierResolveUtils {
     Iterable<IModule> visibleModules = check_8z6r2b_a0a9a2(check_8z6r2b_a0a0j0c(SNodeOperations.getModel(contextNode))).getVisibleModules();
     result = resolveClassifierByFqNameWithNonStubPriority(Sequence.fromIterable(visibleModules).translate(new ITranslator2<IModule, SModel>() {
       public Iterable<SModel> translate(IModule it) {
-        return it.getOwnModelDescriptors();
+        return it.getModels();
       }
     }), classifierName);
     return ((int) Sequence.fromIterable(result).count() == 1 ?
@@ -123,7 +123,7 @@ public class ClassifierResolveUtils {
     // todo: go through all stereotypes and resolve by long name and stereotype 
     List<SModel> result = ListSequence.fromList(new ArrayList<SModel>());
     for (IModule module : Sequence.fromIterable(scope.getVisibleModules())) {
-      for (SModel modelDescriptor : ListSequence.fromList(module.getOwnModelDescriptors())) {
+      for (SModel modelDescriptor : Sequence.fromIterable(module.getModels())) {
         if (eq_8z6r2b_a0a0a0c0f(jetbrains.mps.util.SNodeOperations.getModelLongName(modelDescriptor), modelLongName)) {
           ListSequence.fromList(result).addElement(modelDescriptor);
         }
@@ -385,7 +385,7 @@ public class ClassifierResolveUtils {
     Iterable<IModule> visibleModules = check_8z6r2b_a0a65a21(check_8z6r2b_a0a0ec0m(SNodeOperations.getModel(contextNode))).getVisibleModules();
     result = resolveClassifierByFqNameWithNonStubPriority(Sequence.fromIterable(visibleModules).translate(new ITranslator2<IModule, SModel>() {
       public Iterable<SModel> translate(IModule it) {
-        return it.getOwnModelDescriptors();
+        return it.getModels();
       }
     }), refText);
     return ((int) Sequence.fromIterable(result).count() == 1 ?

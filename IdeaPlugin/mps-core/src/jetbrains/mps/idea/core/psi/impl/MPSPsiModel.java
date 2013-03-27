@@ -21,15 +21,12 @@ import com.intellij.ide.projectView.impl.ProjectViewPane;
 import com.intellij.lang.FileASTNode;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.psi.FileViewProvider;
 import com.intellij.psi.PsiDirectory;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiFileSystemItem;
 import com.intellij.psi.PsiManager;
-import com.intellij.psi.SingleRootFileViewProvider;
 import com.intellij.psi.search.PsiElementProcessor;
-import com.intellij.testFramework.LightVirtualFile;
 import com.intellij.util.IncorrectOperationException;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.smodel.DynamicReference;
@@ -37,7 +34,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.util.JavaNameUtil;
-import jetbrains.mps.workbench.nodesFs.MPSModelVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -50,6 +46,8 @@ import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import java.io.File;
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -61,6 +59,7 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
   public static final PsiDirectory[] EMPTY_PSI_DIRECTORIES = new PsiDirectory[0];
   private final SModelReference myModelReference;
   private final Map<SNodeId, MPSPsiNode> myNodes = new HashMap<SNodeId, MPSPsiNode>();
+  private final Map<MPSPsiNodeBase, Integer> myNodesOrder = new HashMap<MPSPsiNodeBase, Integer>();
   private VirtualFile mySourceVirtualFile;
 
   public MPSPsiModel(SModelReference reference, PsiManager manager) {
@@ -239,10 +238,12 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
       MPSPsiRootNode replacementRoot = new MPSPsiRootNode(sNode.getNodeId(), extractName(sNode), getManager());
       replaceChild(rootNode, replacementRoot);
       replacementRoot.addChildLast(replacement);
+    } else {
+      ((MPSPsiNodeBase) mpsPsiNode.getParent()).replaceChild(mpsPsiNode, replacement);
     }
-    else {
-      ((MPSPsiNodeBase)mpsPsiNode.getParent()).replaceChild(mpsPsiNode, replacement);
-    }
+
+    enumerateNodes();
+
     return replacement;
   }
 
@@ -270,6 +271,8 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
       addChildLast(rootNode);
       rootNode.addChildLast(convert(root));
     }
+
+    enumerateNodes();
 
     // TODO use ModelUtil
     DataSource source = model.getSource();
@@ -308,7 +311,7 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
     return psiNode;
   }
 
-  void drop (MPSPsiNode psiNode) {
+  void drop(MPSPsiNode psiNode) {
     myNodes.remove(psiNode.getId());
 
     for (MPSPsiNodeBase node : psiNode.children()) {
@@ -316,6 +319,10 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
         drop((MPSPsiNode) node);
       }
     }
+  }
+
+  Integer getNodePosition(MPSPsiNodeBase node) {
+    return myNodesOrder.get(node);
   }
 
   private String extractName(SNode sNode) {
@@ -326,6 +333,30 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
       }
     }
     return name;
+  }
+
+  private void enumerateNodes() {
+    myNodesOrder.clear();
+    Deque<MPSPsiNodeBase> stack = new ArrayDeque<MPSPsiNodeBase>();
+    stack.add(this);
+
+    int k = 0;
+
+    while (!stack.isEmpty()) {
+      MPSPsiNodeBase curr = stack.pop();
+
+      // remembering position
+      myNodesOrder.put(curr, k++);
+
+      PsiElement[] children = curr.getChildren();
+      for (int i = children.length - 1; i >= 0; i--) {
+        PsiElement c = children[i];
+        if (c instanceof MPSPsiNodeBase) {
+          stack.push((MPSPsiNodeBase) c);
+        }
+      }
+
+    }
   }
 
 }

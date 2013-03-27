@@ -4,11 +4,11 @@ package jetbrains.mps.lang.actions.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -22,7 +22,7 @@ public class QueryFunction_ParameterizedSubstitute_Handler_Behavior {
     if (SNodeOperations.isInstanceOf(parameter, "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model")) {
       return false;
     }
-    return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction", "virtual_usesParameterObjectFor_1213877374432", new Object[]{parameter});
+    return true;
   }
 
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
@@ -31,20 +31,16 @@ public class QueryFunction_ParameterizedSubstitute_Handler_Behavior {
     return _quotation_createNode_494qzt_a2a1(conceptOfNodeReturnedByHandler);
   }
 
-  public static boolean virtual_usesParameterObject_1262430001741497984(SConcept thisConcept) {
-    return true;
-  }
-
-  public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
-    List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.baseLanguage.structure.ConceptFunction", "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{});
-    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "1177768753302"));
-    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)", "1161622665029"));
-    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "1154465273778"));
-    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)", "1161622753914"));
-    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)", "1161622878565"));
-    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "1177337833147"));
-    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "1177327274449"));
-    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "1177568407352"));
+  public static List<SNode> virtual_getParameters_1213877374450(SNode thisNode) {
+    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
+    ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_childConcept"));
+    ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model"));
+    ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode"));
+    ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_operationContext"));
+    ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_scope"));
+    ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parameterObject"));
+    ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_pattern"));
+    ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_currentTargetNode"));
     return result;
   }
 

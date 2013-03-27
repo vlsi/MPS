@@ -4,7 +4,6 @@ package jetbrains.mps.platform.conf.stubs;
 
 import jetbrains.mps.extapi.persistence.FolderSetDataSource;
 import jetbrains.mps.stubs.util.MultiRootModelDataSource;
-import jetbrains.mps.findUsages.fastfind.FastFindSupportProvider;
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -32,9 +31,8 @@ import org.jdom.input.SAXBuilder;
 import java.io.IOException;
 import org.jdom.JDOMException;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.findUsages.fastfind.FastFindSupport;
 
-public class ConfStubSource extends FolderSetDataSource implements MultiRootModelDataSource, FastFindSupportProvider, StubModelDataSource {
+public class ConfStubSource extends FolderSetDataSource implements MultiRootModelDataSource, StubModelDataSource {
   private List<String> roots;
 
   public ConfStubSource(String path) {
@@ -109,11 +107,6 @@ public class ConfStubSource extends FolderSetDataSource implements MultiRootMode
   @Override
   public long getTimestamp() {
     return 0;
-  }
-
-  @Override
-  public FastFindSupport getFastFindSupport() {
-    return null;
   }
 
   @Override

@@ -89,8 +89,8 @@ public class PluginMoveHelper {
 
   public void moveIconsInAction() {
     for (final Solution solution : ListSequence.fromList(myProject.getProjectModules(Solution.class))) {
-      if (solution.getModuleFqName().endsWith(SOLUTION_NAME)) {
-        List<SModel> models = solution.getOwnModelDescriptors();
+      if (solution.getModuleName().endsWith(SOLUTION_NAME)) {
+        List<SModel> models = solution.getModels();
         SModel m = ListSequence.fromList(models).first();
         ListSequence.fromList(SModelOperations.getNodes(m, "jetbrains.mps.lang.resources.structure.IconResource")).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -98,7 +98,7 @@ public class PluginMoveHelper {
           }
         }).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
-            String langName = NameUtil.namespaceFromLongName(solution.getModuleFqName());
+            String langName = NameUtil.namespaceFromLongName(solution.getModuleName());
             Language lang = ModuleRepositoryFacade.getInstance().getModule(langName, Language.class);
             if (lang == null) {
               return;
@@ -159,9 +159,8 @@ public class PluginMoveHelper {
     }
     s.getModuleDescriptor().setKind(SolutionKind.PLUGIN_OTHER);
 
-    final String modelName = s.getModuleFqName() + ".plugin";
-    List<SModel> solModels = s.getOwnModelDescriptors();
-    final Wrappers._T<SModel> pluginModel = new Wrappers._T<SModel>(ListSequence.fromList(solModels).where(new IWhereFilter<SModel>() {
+    final String modelName = s.getModuleName() + ".plugin";
+    final Wrappers._T<SModel> pluginModel = new Wrappers._T<SModel>(Sequence.fromIterable(((Iterable<SModel>) s.getModels())).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
         return jetbrains.mps.util.SNodeOperations.getModelLongName(it).equals(modelName);
       }
@@ -203,7 +202,7 @@ public class PluginMoveHelper {
   }
 
   private String makePluginSolutionName(Language l, String name) {
-    return l.getModuleFqName() + "." + name;
+    return l.getModuleName() + "." + name;
   }
 
   public static boolean isNotEmpty_qerz9l_a0a0a0a0a0a0a2a0a0a4(String str) {

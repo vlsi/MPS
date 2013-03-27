@@ -15,13 +15,13 @@
  */
 package jetbrains.mps.persistence.binary;
 
+import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.persistence.BinaryModelPersistence;
 import jetbrains.mps.persistence.ModelDigestHelper;
 import jetbrains.mps.refactoring.StructureModificationLog;
-import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
 import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
@@ -29,19 +29,17 @@ import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.RefactoringsPersistence;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 
+import java.io.IOException;
 import java.util.Map;
 
 import static jetbrains.mps.persistence.binary.BinarySModel.InvalidBinarySModel;
 
 /**
  * evgeny, 11/21/12
- * <p/>
- * TODO FastFindSupportProvider
  */
-public class BinarySModelDescriptor extends BaseEditableSModelDescriptor implements GeneratableSModel, RefactorableSModelDescriptor {
+public class BinarySModelDescriptor extends EditableSModelBase implements GeneratableSModel, RefactorableSModelDescriptor {
 
   private volatile BinarySModel myModel = null;
   private final BinaryModelHeader myHeader;
@@ -64,7 +62,7 @@ public class BinarySModelDescriptor extends BaseEditableSModelDescriptor impleme
     if (myModel == null) {
       myModel = loadSModel();
       myModel.setModelDescriptor(this);
-      updateDiskTimestamp();
+      updateTimestamp();
       fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
     }
     return myModel;
@@ -85,8 +83,8 @@ public class BinarySModelDescriptor extends BaseEditableSModelDescriptor impleme
   }
 
   @Override
-  protected void reload() {
-    updateDiskTimestamp();
+  protected void reloadContents() {
+    updateTimestamp();
 
     if (!isLoaded()) return;
 
@@ -102,7 +100,7 @@ public class BinarySModelDescriptor extends BaseEditableSModelDescriptor impleme
   }
 
   @Override
-  protected boolean saveModel() {
+  protected boolean saveModel() throws IOException {
     BinarySModel smodel = getSModelInternal();
     if (smodel instanceof InvalidSModel) {
       // we do not save stub model to not overwrite the real model

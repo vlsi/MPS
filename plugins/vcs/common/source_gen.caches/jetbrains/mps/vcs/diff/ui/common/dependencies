@@ -308,18 +308,14 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.selection.SingularSelectionListenerAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.common.DiffModelTree" file="DiffModelTree.java">
-    <classNode dependClassName="com.intellij.ide.DataManager" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DataKey" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.Presentation" />
     <classNode dependClassName="com.intellij.openapi.util.Ref" />
     <classNode dependClassName="com.intellij.ui.ColoredTreeCellRenderer" />
     <classNode dependClassName="com.intellij.ui.SimpleTextAttributes" />
     <classNode dependClassName="com.intellij.util.ui.tree.TreeUtil" />
     <classNode dependClassName="java.awt.Color" />
-    <classNode dependClassName="java.awt.event.MouseEvent" />
+    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -329,6 +325,8 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.JTree" />
+    <classNode dependClassName="javax.swing.event.TreeSelectionEvent" />
+    <classNode dependClassName="javax.swing.event.TreeSelectionListener" />
     <classNode dependClassName="javax.swing.tree.DefaultTreeModel" />
     <classNode dependClassName="javax.swing.tree.TreePath" />
     <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
@@ -353,7 +351,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode extendsClassName="com.intellij.openapi.actionSystem.DataProvider" />
     <classNode extendsClassName="com.intellij.ui.treeStructure.SimpleTree" />
-    <classNode extendsClassName="java.awt.event.MouseAdapter" />
     <classNode extendsClassName="javax.swing.tree.DefaultMutableTreeNode" />
     <classNode extendsClassName="jetbrains.mps.vcs.diff.ui.common.RootTreeNode" />
     <classNode extendsClassName="jetbrains.mps.vcs.diff.ui.common.TreeNode" />
@@ -365,7 +362,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
@@ -409,6 +406,8 @@
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions" file="GoToNeighbourRootActions.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CustomShortcutSet" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ShortcutSet" />
     <classNode dependClassName="com.intellij.openapi.util.IconLoader" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -440,6 +439,8 @@
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionToolbar" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CustomShortcutSet" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ShortcutSet" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="java.lang.AssertionError" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -484,10 +485,10 @@
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.extapi.model.SModelBase" />
     <classNode dependClassName="jetbrains.mps.fileTypes.MPSFileTypeFactory" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.smodel.BaseSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

@@ -86,7 +86,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4514696390934965644(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Module_Behavior.call_getModule_1213877515148(_context.getNode()).getModuleFqName();
+    return Module_Behavior.call_getModule_1213877515148(_context.getNode()).getModuleName();
   }
 
   public static Object propertyMacro_GetPropertyValue_2227863968342215686(final IOperationContext operationContext, final PropertyMacroContext _context) {

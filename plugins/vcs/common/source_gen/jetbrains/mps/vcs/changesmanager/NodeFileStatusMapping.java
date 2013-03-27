@@ -19,7 +19,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.vcs.platform.util.ConflictsUtil;
 import java.util.List;
@@ -87,13 +87,13 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
   private boolean calcStatus(@NotNull final SNodeReference root) {
     FileStatus status = ModelAccess.instance().runReadAction(new Computable<FileStatus>() {
       public FileStatus compute() {
-        SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(root.getModelReference());
-        if (modelDescriptor instanceof BaseEditableSModelDescriptor && modelDescriptor.getSource() instanceof FileDataSource) {
-          BaseEditableSModelDescriptor md = (BaseEditableSModelDescriptor) modelDescriptor;
-          if (ConflictsUtil.isModelOrModuleConflicting(md, myProject)) {
+        SModel m = SModelRepository.getInstance().getModelDescriptor(root.getModelReference());
+        if (m instanceof EditableSModel && m.getSource() instanceof FileDataSource && !(((EditableSModel) m).isReadOnly())) {
+          EditableSModel model = (EditableSModel) m;
+          if (ConflictsUtil.isModelOrModuleConflicting(model, myProject)) {
             return FileStatus.MERGED_WITH_CONFLICTS;
           }
-          CurrentDifference diff = myRegistry.getCurrentDifference(md);
+          CurrentDifference diff = myRegistry.getCurrentDifference(model);
           List<ModelChange> modelChanges = check_onkh7z_a0d0b0a0a0a0j(diff.getChangeSet());
           List<ModelChange> rootChanges = ListSequence.fromList(modelChanges).where(new IWhereFilter<ModelChange>() {
             public boolean accept(ModelChange ch) {
@@ -102,7 +102,7 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
           }).toListSequence();
           if (ListSequence.fromList(rootChanges).count() != 0) {
             if (ListSequence.fromList(rootChanges).first() instanceof AddRootChange) {
-              VirtualFile vf = VirtualFileUtils.getVirtualFile(((FileDataSource) modelDescriptor.getSource()).getFile());
+              VirtualFile vf = VirtualFileUtils.getVirtualFile(((FileDataSource) m.getSource()).getFile());
               if (vf != null) {
                 FileStatus modelStatus = FileStatusManager.getInstance(myProject).getStatus(vf);
                 if (BaseVersionUtil.isAddedFileStatus(modelStatus)) {
@@ -137,12 +137,12 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
           public void run() {
             ModelAccess.instance().runReadAction(new Runnable() {
               public void run() {
-                SModel modelDescriptor = null;
+                SModel md = null;
                 if (!(SNodeOperations.isDisposed(root) || SNodeOperations.isModelDisposed(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(root)))) {
-                  modelDescriptor = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(root);
+                  md = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(root);
                 }
-                if (modelDescriptor instanceof BaseEditableSModelDescriptor) {
-                  myRegistry.getCurrentDifference((BaseEditableSModelDescriptor) modelDescriptor).setEnabled(true);
+                if (md instanceof EditableSModel && !(((EditableSModel) md).isReadOnly())) {
+                  myRegistry.getCurrentDifference((EditableSModel) md).setEnabled(true);
                 }
               }
             });

@@ -44,7 +44,7 @@ import java.util.Map;
 /**
  * evgeny, 1/28/13
  */
-public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory, MPS2PsiMapper {
+public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory {
 
   private static final Map<String, MPSPsiNodeFactory> factories = new HashMap<String, MPSPsiNodeFactory>();
 
@@ -151,49 +151,5 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory, MPS2PsiMapper {
 
     return null;
   }
-
-  @Override
-  public PsiElement getPsiSource(SNode node, Project project) {
-    SModel model = node.getModel();
-    if (model == null) return null;
-    if (model == null || !(model instanceof PsiJavaStubModelDescriptor)) {
-      return null;
-    }
-
-    PsiJavaStubModelDescriptor psiStubs = (PsiJavaStubModelDescriptor) model;
-    return psiStubs.getPsiSource(node);
-  }
-
-  @Override
-  public SNode getMPSNodeForPsi(PsiElement element, Project project) {
-    // TODO make it efficient
-    for (SModel mDesc : SModelRepository.getInstance().getModelDescriptors()) {
-      if (!(mDesc instanceof PsiJavaStubModelDescriptor)) continue;
-      SNode node = ((PsiJavaStubModelDescriptor) mDesc).getMPSNode(element);
-      if (node != null) {
-        return node;
-      }
-    }
-
-    return null;
-  }
-
-  @Override
-  public boolean canComputeNodeId(PsiElement element) {
-    return element instanceof PsiClass || element instanceof PsiMethod || element instanceof PsiField;
-  }
-
-  @Nullable
-  @Override
-  public SModelReference computeModelReference(PsiElement element) {
-    return JavaForeignIdBuilder.computeModelReference(element);
-  }
-
-  @Nullable
-  @Override
-  public SNodeId computeNodeId(PsiElement element) {
-    return JavaForeignIdBuilder.computeNodeId(element);
-  }
-
 
 }

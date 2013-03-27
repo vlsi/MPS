@@ -15,7 +15,7 @@ public class RenameSolutionDialog extends RenameDialog {
   private Solution mySolution;
 
   public RenameSolutionDialog(Project project, Solution solution) throws HeadlessException {
-    super(project, solution.getModuleFqName(), "solution");
+    super(project, solution.getModuleName(), "solution");
     mySolution = solution;
     setTitle("Rename Solution");
   }

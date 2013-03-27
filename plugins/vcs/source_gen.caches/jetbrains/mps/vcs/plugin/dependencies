@@ -38,12 +38,12 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.extapi.model.SModelBase" />
     <classNode dependClassName="jetbrains.mps.generator.TransientModelsModule" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.SortUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="jetbrains.mps.smodel.BaseSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
@@ -137,6 +137,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.extapi.model.EditableSModel" />
+    <classNode dependClassName="jetbrains.mps.extapi.model.SModelBase" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FileDataSource" />
     <classNode dependClassName="jetbrains.mps.generator.ModelDigestUtil" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
@@ -144,7 +145,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="jetbrains.mps.smodel.BaseSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
     <classNode dependClassName="jetbrains.mps.vcs.platform.util.MergeBackupUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.util.MergeVersion" />
@@ -174,12 +174,11 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.extapi.model.EditableSModel" />
+    <classNode dependClassName="jetbrains.mps.extapi.model.SModelBase" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FileDataSource" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="jetbrains.mps.smodel.BaseEditableSModelDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.BaseSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog" />
@@ -223,6 +222,7 @@
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />

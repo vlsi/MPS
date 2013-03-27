@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.ide.ui.dialogs.properties;
 
+import com.intellij.icons.AllIcons;
 import com.intellij.icons.AllIcons.Actions;
 import com.intellij.openapi.Disposable;
-import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.CommonShortcuts;
 import com.intellij.openapi.actionSystem.ShortcutSet;
 import com.intellij.openapi.options.Configurable;
@@ -47,6 +47,7 @@ import jetbrains.mps.ide.ui.dialogs.properties.renders.DependencyTableCellRender
 import jetbrains.mps.ide.ui.dialogs.properties.renders.ModuleTableCellRender;
 import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
 import jetbrains.mps.project.Project;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
@@ -56,11 +57,9 @@ import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableIte
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
-import org.jetbrains.mps.openapi.ui.Modifiable;
 import org.jetbrains.mps.openapi.ui.persistence.Tab;
 
 import javax.swing.DefaultCellEditor;
-import javax.swing.Icon;
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
@@ -193,7 +192,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
     protected JTextField myTextFieldName;
 
     public CommonTab() {
-      super(PropertiesBundle.message("mps.properties.configurable.common.commontab.title"), null, PropertiesBundle.message("mps.properties.configurable.common.commontab.tip"));
+      super(PropertiesBundle.message("mps.properties.configurable.common.commontab.title"), AllIcons.General.ProjectSettings, PropertiesBundle.message("mps.properties.configurable.common.commontab.tip"));
       init();
     }
 
@@ -263,7 +262,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
       tableDepend.setShowVerticalLines(false);
       tableDepend.setAutoCreateRowSorter(false);
       tableDepend.setAutoscrolls(true);
-      tableDepend.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+      tableDepend.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
       myDependTableModel = getDependTableModel();
       tableDepend.setModel(myDependTableModel);
@@ -274,8 +273,6 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
       tableDepend.setDefaultRenderer(SDependencyScope.class, new ComboBoxTableRenderer<SDependencyScope>(SDependencyScope.values()));
       tableDepend.setDefaultEditor(SDependencyScope.class, getTableCellEditor());
 
-
-      tableDepend.getSelectionModel().setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
       TableColumn column = null;
       if(myDependTableModel.getExportColumnIndex() >= 0) {
@@ -307,19 +304,22 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
         @Override
         public void run(AnActionButton anActionButton) {
           int first = tableDepend.getSelectionModel().getMinSelectionIndex();
-          if (!confirmRemove(myDependTableModel.getValueAt(first, myDependTableModel.getItemColumnIndex()))) {
-            return;
-          }
           int last = tableDepend.getSelectionModel().getMaxSelectionIndex();
+          for (int i : tableDepend.getSelectedRows()) {
+            if (!confirmRemove(myDependTableModel.getValueAt(i, myDependTableModel.getItemColumnIndex()))) {
+              return;
+            }
+          }
           TableUtil.removeSelectedItems(tableDepend);
           myDependTableModel.fireTableRowsDeleted(first, last);
-        }
-      }).addExtraAction(new FindAnActionButton(tableDepend) {
-        @Override
-        public void actionPerformed(AnActionEvent e) {
-          findUsages(myDependTableModel.getValueAt(tableDepend.getSelectionModel().getMinSelectionIndex(), myDependTableModel.getItemColumnIndex()));
+          first = Math.max(0, first - 1);
+          tableDepend.getSelectionModel().setSelectionInterval(first, first);
         }
       });
+      FindAnActionButton findAnActionButton = getFindAnAction(tableDepend);
+      if(findAnActionButton != null)
+        decorator.addExtraAction(findAnActionButton);
+
       decorator.setPreferredSize(new Dimension(500, 300));
 
       JPanel table = decorator.createPanel();
@@ -379,7 +379,9 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
       return true;
     }
 
-    protected void findUsages(final Object value) {
+    @Nullable
+    protected FindAnActionButton getFindAnAction(JBTable table) {
+      return null;
     }
 
     @Override
@@ -416,7 +418,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
       usedLangsTable.setShowVerticalLines(false);
       usedLangsTable.setAutoCreateRowSorter(false);
       usedLangsTable.setAutoscrolls(true);
-      usedLangsTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+      usedLangsTable.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
       myUsedLangsTableModel = getUsedLangsTableModel();
       usedLangsTable.setModel(myUsedLangsTableModel);
@@ -425,14 +427,13 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
 
       JComboBox roleEditor = new JComboBox(new EnumComboBoxModel<DependenciesTableItemRole>(DependenciesTableItemRole.class));
       usedLangsTable.setDefaultEditor(DependenciesTableItemRole.class, new DefaultCellEditor(roleEditor));
-      usedLangsTable.setDefaultRenderer(DependenciesTableItemRole.class, new ComboBoxTableRenderer<DependenciesTableItemRole>(DependenciesTableItemRole.values()) {
-        @Override
-        protected String getTextFor(@NotNull final DependenciesTableItemRole value) {
-          return value.toString();
-        }
-      });
-
-      usedLangsTable.getSelectionModel().setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+      usedLangsTable.setDefaultRenderer(DependenciesTableItemRole.class,
+          new ComboBoxTableRenderer<DependenciesTableItemRole>(DependenciesTableItemRole.values()) {
+            @Override
+            protected String getTextFor(@NotNull final DependenciesTableItemRole value) {
+              return value.toString();
+            }
+          });
 
       usedLangsTable.addMouseListener(new MouseAdapter() {
         @Override
@@ -445,24 +446,28 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
         @Override
         public void run(AnActionButton anActionButton) {
           List<SModuleReference> list = (new LanguageOrDevKitChooser()).compute();
-          for(SModuleReference reference : list)
+          for (SModuleReference reference : list)
             myUsedLangsTableModel.addItem(reference);
         }
       }).setRemoveAction(new AnActionButtonRunnable() {
         @Override
         public void run(AnActionButton anActionButton) {
           int first = usedLangsTable.getSelectionModel().getMinSelectionIndex();
-          if (!confirmRemove(myUsedLangsTableModel.getValueAt(first, UsedLangsTableModel.ITEM_COLUMN))) return;
           int last = usedLangsTable.getSelectionModel().getMaxSelectionIndex();
+          for (int i : usedLangsTable.getSelectedRows()) {
+            if (!confirmRemove(myUsedLangsTableModel.getValueAt(i, UsedLangsTableModel.ITEM_COLUMN))) return;
+          }
           TableUtil.removeSelectedItems(usedLangsTable);
           myUsedLangsTableModel.fireTableRowsDeleted(first, last);
-        }
-      }).addExtraAction(new FindAnActionButton(usedLangsTable) {
-        @Override
-        public void actionPerformed(AnActionEvent e) {
-          findUsages(myUsedLangsTableModel.getValueAt(usedLangsTable.getSelectionModel().getMinSelectionIndex(), UsedLangsTableModel.ITEM_COLUMN));
+          first = Math.max(0, first - 1);
+          usedLangsTable.getSelectionModel().setSelectionInterval(first, first);
         }
       });
+
+      FindAnActionButton findAnActionButton = getFindAnAction(usedLangsTable);
+      if(findAnActionButton != null)
+        decorator.addExtraAction(findAnActionButton);
+
       decorator.setPreferredSize(new Dimension(500, 300));
 
       JPanel table = decorator.createPanel();
@@ -520,6 +525,11 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
 
     protected void findUsages(Object value) {}
 
+    @Nullable
+    protected FindAnActionButton getFindAnAction(JBTable table) {
+      return null;
+    }
+
     protected boolean confirmRemove(Object value) {
       return true;
     }
@@ -536,7 +546,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
   }
 
   public abstract class FindAnActionButton extends AnActionButton {
-    private final JBTable myTable;
+    protected final JBTable myTable;
 
     public FindAnActionButton(JBTable table) {
       myTable = table;

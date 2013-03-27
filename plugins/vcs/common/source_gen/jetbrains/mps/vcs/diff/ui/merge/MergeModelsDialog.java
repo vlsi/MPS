@@ -8,30 +8,37 @@ import com.intellij.icons.AllIcons;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.vcs.diff.merge.MergeSession;
 import jetbrains.mps.vcs.diff.merge.MergeSessionState;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
-import org.jetbrains.mps.openapi.model.SNodeId;
+import com.intellij.ui.JBSplitter;
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import com.intellij.openapi.actionSystem.ActionToolbar;
+import com.intellij.openapi.diff.ex.DiffStatusBar;
+import com.intellij.openapi.diff.impl.util.TextDiffType;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions;
 import java.util.Set;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import com.intellij.openapi.actionSystem.ActionToolbar;
 import jetbrains.mps.smodel.SModel;
 import com.intellij.openapi.diff.DiffRequest;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.vcs.diff.ui.MetadataUtil;
 import jetbrains.mps.ide.project.ProjectHelper;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
-import com.intellij.openapi.actionSystem.Separator;
 import jetbrains.mps.vcs.diff.ui.common.InvokeTextDiffAction;
 import com.intellij.openapi.diff.impl.mergeTool.MergeTool;
+import com.intellij.openapi.actionSystem.Separator;
+import org.jetbrains.annotations.Nullable;
+import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
-import com.intellij.ui.ScrollPaneFactory;
 import java.awt.Dimension;
 import com.intellij.openapi.util.DimensionService;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -42,15 +49,10 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.Action;
 import java.util.List;
 import java.util.ArrayList;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import javax.swing.SwingUtilities;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import javax.swing.JComponent;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -61,30 +63,38 @@ import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import jetbrains.mps.vcs.diff.ui.common.ChangeColors;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.SModelDescriptor;
 
 public class MergeModelsDialog extends DialogWrapper {
   public static final Icon APPLY_NON_CONFLICTS = AllIcons.Diff.ApplyNotConflicts;
   public static final Icon RESET = AllIcons.Actions.Rollback;
+
   private Project myProject;
   private MergeSession myMergeSession;
   private MergeSession myMetadataMergeSession;
   private MergeSessionState myInitialState;
   private MergeSessionState myMetadataInitialState;
-  private MergeModelsDialog.MergeModelsTree myMergeTree;
-  private JPanel myPanel = new JPanel(new BorderLayout());
-  private boolean myApplyChanges = false;
-  private MergeRootsDialog myMergeRootsDialog = null;
   private SNodeId myRootId;
-  private String[] myContentTitles;
-  private Set<ModelChange> myAppliedMetadataChanges = SetSequence.fromSet(new HashSet<ModelChange>());
+
+  private MergeModelsDialog.MergeModelsTree myMergeTree;
+  private JPanel myComponent = new JPanel(new BorderLayout());
+  private JBSplitter myPanel = new JBSplitter(true, 0.25f);
+  private MergeRootsPane myMergeRootsPane = null;
+  private final JComponent myNoRootPanel = new JLabel("Select root to merge", SwingConstants.CENTER);
   private ActionToolbar myToolbar;
+  private DiffStatusBar myStatusBar = new DiffStatusBar(TextDiffType.DIFF_TYPES);
+
+  private DefaultActionGroup myActionGroup;
+  private GoToNeighbourRootActions myGoToNeighbourRootActions;
+
+  private String[] myContentTitles;
+  private boolean myApplyChanges = false;
+  private Set<ModelChange> myAppliedMetadataChanges = SetSequence.fromSet(new HashSet<ModelChange>());
+
 
   public MergeModelsDialog(final SModel baseModel, final SModel mineModel, final SModel repositoryModel, DiffRequest request) {
     super(request.getProject(), true);
     setTitle("Merging " + baseModel.getModelDescriptor().getModelName());
-    SModelDescriptor baseMD = baseModel.getModelDescriptor();
-    SModelDescriptor mineMD = mineModel.getModelDescriptor();
-    SModelDescriptor repMD = repositoryModel.getModelDescriptor();
     myProject = request.getProject();
     myContentTitles = request.getContentTitles();
     assert myContentTitles.length == 3;
@@ -122,6 +132,7 @@ public class MergeModelsDialog extends DialogWrapper {
         DiffTemporaryModule.registerModel(myMergeSession.getResultModel().getModelDescriptor(), p);
       }
     });
+
     myMergeSession.installResultModelListener();
     DiffTemporaryModule.createModuleForModel(mineModel, "mine", p);
     DiffTemporaryModule.createModuleForModel(repositoryModel, "repository", p);
@@ -137,18 +148,38 @@ public class MergeModelsDialog extends DialogWrapper {
       DiffTemporaryModule.createModuleForModel(myMetadataMergeSession.getRepositoryModel(), "repository", p);
     }
 
-    myMergeTree = new MergeModelsDialog.MergeModelsTree();
+    myActionGroup = ActionUtils.groupFromActions(new InvokeTextDiffAction("Merge as Text (Use Carefully!)", "Merge models using text merge for XML contents", this, request, new MergeTool()), Separator.getInstance(), new ResetState(this), new MergeNonConflictingRoots(this), Separator.getInstance(), AcceptYoursTheirs.yoursInstance(this), AcceptYoursTheirs.theirsInstance(this));
 
-    DefaultActionGroup actionGroup = ActionUtils.groupFromActions(new ResetState(this), new MergeNonConflictingRoots(this), Separator.getInstance(), AcceptYoursTheirs.yoursInstance(this), AcceptYoursTheirs.theirsInstance(this), Separator.getInstance(), new InvokeTextDiffAction("Merge as Text (Use Carefully!)", "Merge models using text merge for XML contents", this, request, new MergeTool()));
-    myToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);
+    init();
+  }
+
+
+
+  @Nullable
+  @Override
+  protected JComponent createCenterPanel() {
+    myPanel.setSplitterProportionKey(getClass().getName() + "ModelTreeSplitter");
+    myMergeTree = new MergeModelsDialog.MergeModelsTree();
+    myPanel.setFirstComponent(ScrollPaneFactory.createScrollPane(myMergeTree));
+    myPanel.setSecondComponent(myNoRootPanel);
+
+    myGoToNeighbourRootActions = new MergeModelsDialog.MyGoToNeighbourRootActions();
+    myGoToNeighbourRootActions.previous().registerCustomShortcutSet(GoToNeighbourRootActions.PREV_ROOT_SHORTCUT, myComponent);
+    myGoToNeighbourRootActions.next().registerCustomShortcutSet(GoToNeighbourRootActions.NEXT_ROOT_SHORTCUT, myComponent);
+
+    myToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, myActionGroup, true);
     myToolbar.updateActionsImmediately();
-    myPanel.add(myToolbar.getComponent(), BorderLayout.NORTH);
-    myPanel.add(ScrollPaneFactory.createScrollPane(myMergeTree), BorderLayout.CENTER);
+
+    myComponent.add(myToolbar.getComponent(), BorderLayout.NORTH);
+    myComponent.add(myPanel, BorderLayout.CENTER);
+    myComponent.add(myStatusBar, BorderLayout.SOUTH);
+
     final Dimension size = DimensionService.getInstance().getSize(getDimensionServiceKey());
     if (size == null) {
-      myPanel.setPreferredSize(new Dimension(500, 450));
+      myComponent.setPreferredSize(new Dimension(500, 450));
     }
-    init();
+
+    return myComponent;
   }
 
   @Override
@@ -156,8 +187,16 @@ public class MergeModelsDialog extends DialogWrapper {
     return getClass().getName();
   }
 
+  @Nullable
+  @Override
+  public JComponent getPreferredFocusedComponent() {
+    return myMergeTree;
+  }
+
   @Override
   protected void doOKAction() {
+    applyMetadataChanges();
+
     MergeConfirmation.showMergeConfirmationAndTakeAction(this, myMergeSession, Sequence.fromIterable(myMergeSession.getAllChanges()).where(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange ch) {
         return !(ch instanceof MetadataChange);
@@ -186,6 +225,16 @@ public class MergeModelsDialog extends DialogWrapper {
     return ListSequence.fromList(actions).toGenericArray(Action.class);
   }
 
+  @Override
+  protected void dispose() {
+    if (myMergeRootsPane != null) {
+      myMergeRootsPane.dispose();
+    }
+    super.dispose();
+  }
+
+
+
   public SModel getResultModel() {
     return (myApplyChanges ?
       myMergeSession.getResultModel() :
@@ -207,7 +256,7 @@ public class MergeModelsDialog extends DialogWrapper {
 
   public void unregisterResultModel() {
     final SModel resultModel = myMergeSession.getResultModel();
-    assert check_3qqb0l_a0b0v(check_3qqb0l_a0a1a12(resultModel)) instanceof DiffTemporaryModule;
+    assert check_3qqb0l_a0b0kb(check_3qqb0l_a0a1a63(resultModel)) instanceof DiffTemporaryModule;
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         DiffTemporaryModule.unregisterModel(resultModel.getModelDescriptor(), ProjectHelper.toMPSProject(myProject));
@@ -236,62 +285,67 @@ public class MergeModelsDialog extends DialogWrapper {
     return myMergeTree.getNeighbourRoot(rootId, next);
   }
 
-  public void invokeMergeRoots(@Nullable final SNodeId rootId) {
-    if (myMergeRootsDialog != null) {
+
+
+  public void resetCurrentRoot() {
+    if (myMergeRootsPane == null) {
       return;
     }
 
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        MergeSession mergeSession = (rootId == null ?
-          myMetadataMergeSession :
-          myMergeSession
-        );
-        SNodeId nodeId = (rootId == null ?
-          ListSequence.fromList(SModelOperations.getRoots(((org.jetbrains.mps.openapi.model.SModel) myMetadataMergeSession.getBaseModel().getModelDescriptor()), null)).first().getNodeId() :
-          rootId
-        );
-
-        myRootId = rootId;
-        myMergeRootsDialog = new MergeRootsDialog(myProject, mergeSession, nodeId, myMergeTree.getNameForRoot(rootId), getContentTitles(), getWindow(), new MergeModelsDialog.MyGoToNeighbourRootActions().getActions());
-      }
-    });
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        myMergeRootsDialog.toFront();
-      }
-    });
-    boolean isOk = myMergeRootsDialog.showAndGet();
-    if (!(isOk)) {
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-        public void run() {
-          myMergeRootsDialog.restoreState();
-        }
-      });
-    }
+    myMergeRootsPane.unregisterShortcuts(myComponent);
+    myPanel.setSecondComponent(myNoRootPanel);
+    myMergeRootsPane.dispose();
+    myMergeRootsPane = null;
+    myRootId = null;
+    myStatusBar.setText("");
     applyMetadataChanges();
-    myMergeRootsDialog = null;
-    rebuildLater();
   }
 
-  public void setCurrentRoot(@Nullable final SNodeId rootId) {
-    assert myMergeRootsDialog != null;
+  private void changeCurrentRoot(@Nullable final SNodeId rootId) {
+    if (myMergeRootsPane != null && myRootId == rootId) {
+      return;
+    }
+    applyMetadataChanges();
+
+    myRootId = rootId;
+    final MergeSession session = (rootId == null ?
+      myMetadataMergeSession :
+      myMergeSession
+    );
+    final SNodeId nodeId = (rootId == null ?
+      Sequence.fromIterable(myMetadataMergeSession.getAffectedRoots()).first() :
+      rootId
+    );
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        myRootId = rootId;
-        if (rootId == null) {
-          myMergeRootsDialog.setRoodId(Sequence.fromIterable(myMetadataMergeSession.getAffectedRoots()).first(), myMergeTree.getNameForRoot(rootId), myMetadataMergeSession);
+        if (myMergeRootsPane == null) {
+          myMergeRootsPane = new MergeRootsPane(myProject, session, nodeId, myMergeTree.getNameForRoot(rootId), myContentTitles, myStatusBar);
+          DefaultActionGroup actionGroup = new DefaultActionGroup();
+          actionGroup.addAll(myMergeRootsPane.getActions());
+          ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);
+          myMergeRootsPane.registerShortcuts(myComponent);
+          JPanel panel = new JPanel(new BorderLayout());
+          panel.add(toolbar.getComponent(), BorderLayout.NORTH);
+          panel.add(myMergeRootsPane.getPanel(), BorderLayout.CENTER);
+          myPanel.setSecondComponent(panel);
         } else {
-          myMergeRootsDialog.setRoodId(rootId, myMergeTree.getNameForRoot(rootId), myMergeSession);
+          myMergeRootsPane.setRoodId(nodeId, session);
         }
       }
     });
+  }
+
+  public void setCurrentRoot(@Nullable SNodeId rootId) {
+    myMergeTree.setSelected(rootId);
+    changeCurrentRoot(rootId);
   }
 
   @Nullable
   public SNodeId getCurrentRoot() {
     return myRootId;
   }
+
+
 
   public Iterable<ModelChange> getApplicableChangesInNonConflictingRoots() {
     return Sequence.fromIterable(myMergeSession.getApplicableChangesInNonConflictingRoots()).where(new IWhereFilter<ModelChange>() {
@@ -304,6 +358,8 @@ public class MergeModelsDialog extends DialogWrapper {
   public Iterable<ModelChange> getApplicableChangesInMetadata() {
     return myMetadataMergeSession.getApplicableChangesInNonConflictingRoots();
   }
+
+
 
   public void mergeNonConflictingRoots() {
     myMergeSession.applyChanges(getApplicableChangesInNonConflictingRoots());
@@ -406,9 +462,7 @@ public class MergeModelsDialog extends DialogWrapper {
     SetSequence.fromSet(myAppliedMetadataChanges).addSequence(Sequence.fromIterable(changes));
   }
 
-  /*package*/ void rootsDialogClosed() {
-    myMergeRootsDialog = null;
-  }
+
 
   /*package*/ String[] getContentTitles() {
     return myContentTitles;
@@ -426,11 +480,7 @@ public class MergeModelsDialog extends DialogWrapper {
     rebuildLater();
   }
 
-  @Nullable
-  @Override
-  protected JComponent createCenterPanel() {
-    return myPanel;
-  }
+
 
   /*package*/ static String generateUnresolvedChangesText(int totalChanges, int conflictingChanges) {
     if (conflictingChanges != 0) {
@@ -449,6 +499,8 @@ public class MergeModelsDialog extends DialogWrapper {
     }
   }
 
+
+
   private class MyGoToNeighbourRootActions extends GoToNeighbourRootActions.GoToByTree {
     public MyGoToNeighbourRootActions() {
       super(myMergeTree);
@@ -466,6 +518,8 @@ public class MergeModelsDialog extends DialogWrapper {
     }
   }
 
+
+
   private class MergeModelsTree extends DiffModelTree {
     private MergeModelsTree() {
       super(DiffTemporaryModule.getOperationContext(myProject, myMergeSession.getResultModel()));
@@ -480,7 +534,7 @@ public class MergeModelsDialog extends DialogWrapper {
     @Override
     protected Iterable<BaseAction> getRootActions() {
       MergeModelsDialog md = MergeModelsDialog.this;
-      return Arrays.<BaseAction>asList(new InvokeMergeRootsAction(md), AcceptYoursTheirs.yoursInstance(md), AcceptYoursTheirs.theirsInstance(md));
+      return Arrays.<BaseAction>asList(AcceptYoursTheirs.yoursInstance(md), AcceptYoursTheirs.theirsInstance(md));
     }
 
     @Override
@@ -513,6 +567,8 @@ public class MergeModelsDialog extends DialogWrapper {
         if (nonConflictedCount == 0) {
           if (rootTreeNode.getRootId() != null && myMergeSession.getResultModel().getNode(rootTreeNode.getRootId()) == null) {
             rootTreeNode.setTextStyle(SimpleTextAttributes.STYLE_STRIKEOUT);
+          } else {
+            rootTreeNode.setAdditionalText(null);
           }
         } else {
           compositeChangeType = ChangeType.CHANGE;
@@ -539,9 +595,10 @@ public class MergeModelsDialog extends DialogWrapper {
         }
       }
 
-      if (compositeChangeType != null) {
-        rootTreeNode.setColor(ChangeColors.getForTree(compositeChangeType));
-      }
+      rootTreeNode.setColor((compositeChangeType == null ?
+        null :
+        ChangeColors.getForTree(compositeChangeType)
+      ));
     }
 
     @Override
@@ -558,16 +615,28 @@ public class MergeModelsDialog extends DialogWrapper {
     protected boolean isMultipleRootNames() {
       return true;
     }
+
+
+
+    @Override
+    protected void onUnselect() {
+      resetCurrentRoot();
+    }
+
+    @Override
+    protected void onSelectRoot(@Nullable SNodeId rootId) {
+      changeCurrentRoot(rootId);
+    }
   }
 
-  private static IModule check_3qqb0l_a0b0v(SModelDescriptor checkedDotOperand) {
+  private static IModule check_3qqb0l_a0b0kb(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModelDescriptor check_3qqb0l_a0a1a12(SModel checkedDotOperand) {
+  private static SModelDescriptor check_3qqb0l_a0a1a63(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }

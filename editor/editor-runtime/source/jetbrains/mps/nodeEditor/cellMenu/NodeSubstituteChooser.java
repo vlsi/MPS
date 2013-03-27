@@ -166,6 +166,10 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     return myChooserActivated;
   }
 
+  public boolean isMenuEmpty() {
+    return myMenuEmpty;
+  }
+
   public void setVisible(boolean b) {
     if (myChooserActivated != b) {
       if (b) {

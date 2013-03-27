@@ -56,7 +56,6 @@
   <import index="qff7" modelUID="r:2ba2e307-a81d-4a21-9e0b-de3624e2fb83(jetbrains.mps.lang.access.structure)" version="0" implicit="yes" />
   <import index="m373" modelUID="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" version="5" implicit="yes" />
   <import index="pxpg" modelUID="r:5a550369-d6d9-4c89-a89b-1bb748dc20b3(jetbrains.mps.baseLanguage.checkedDots.structure)" version="-1" implicit="yes" />
-  <import index="tpib" modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" implicit="yes" />
   <roots>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1240470842553498753">
       <property name="name" nameId="tpck.1169194664001" value="AbstractMainNodeChooser" />
@@ -506,31 +505,6 @@
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1240470842553499121" resolveInfo="models" />
                               </node>
                               <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="1240470842553499140">
-                                <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="215870359525282799">
-                                  <node role="condition" roleId="tpee.1068580123160" type="tpee.NotExpression" typeId="tpee.1081516740877" id="215870359525282949">
-                                    <node role="expression" roleId="tpee.1081516765348" type="tpee.InstanceOfExpression" typeId="tpee.1081256982272" id="215870359525286691">
-                                      <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3879106533707404451">
-                                        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~BaseSModelDescriptor" resolveInfo="BaseSModelDescriptor" />
-                                      </node>
-                                      <node role="leftExpression" roleId="tpee.1081256993304" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="215870359525283078">
-                                        <link role="variable" roleId="tp2q.1153944258490" targetNodeId="1240470842553499138" resolveInfo="model" />
-                                      </node>
-                                    </node>
-                                  </node>
-                                  <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="215870359525282801">
-                                    <node role="statement" roleId="tpee.1068581517665" type="tpib.LogStatement" typeId="tpib.1167227138527" id="215870359525307525">
-                                      <property name="severity" nameId="tpib.1167245565795" value="error" />
-                                      <node role="logExpression" roleId="tpib.1167227463056" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="215870359525308725">
-                                        <node role="rightExpression" roleId="tpee.1081773367579" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="215870359525308867">
-                                          <link role="variable" roleId="tp2q.1153944258490" targetNodeId="1240470842553499138" resolveInfo="model" />
-                                        </node>
-                                        <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="215870359525307527">
-                                          <property name="value" nameId="tpee.1070475926801" value="Unknown kind of model " />
-                                        </node>
-                                      </node>
-                                    </node>
-                                  </node>
-                                </node>
                                 <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1240470842553499147">
                                   <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1240470842553499148">
                                     <property name="name" nameId="tpck.1169194664001" value="nodes" />

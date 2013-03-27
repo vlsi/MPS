@@ -4906,6 +4906,50 @@ __switch__:
     return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, _context.getSourceNode(), "virtual_isStatic_8986964027630462944", new Object[]{})) && Interface_Behavior.call_canBeStatic_3190746170685014638(_context.getSourceNode());
   }
 
+  public static List<SubstituteAction> sideTransform_ActionsFactory_BaseMethodDeclaration_2843835887910033774(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        return SNodeFactoryOperations.addNewChild(_context.getSourceNode(), "throwsItem", "jetbrains.mps.baseLanguage.structure.Type");
+      }
+
+      public String getMatchingText(String pattern) {
+        return "throws";
+      }
+
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+    });
+    return result;
+  }
+
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BaseMethodDeclaration_2843835887910103865(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "throwsItem", true)).isEmpty();
+  }
+
+  public static List<SubstituteAction> sideTransform_ActionsFactory_BaseMethodDeclaration_2843835887910465715(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        return SNodeFactoryOperations.addNewChild(_context.getSourceNode(), "throwsItem", "jetbrains.mps.baseLanguage.structure.Type");
+      }
+
+      public String getMatchingText(String pattern) {
+        return "throws";
+      }
+
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+    });
+    return result;
+  }
+
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BaseMethodDeclaration_2843835887910484552(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "throwsItem", true)).isEmpty();
+  }
+
   private static SNode _quotation_createNode_ns07og_a0a0a0x() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

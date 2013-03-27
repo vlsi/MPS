@@ -16,19 +16,14 @@
 
 package jetbrains.mps.idea.java.psi.impl;
 
-import com.intellij.openapi.util.Pair;
-import com.intellij.psi.*;
-import com.intellij.psi.impl.PsiClassImplUtil;
-import com.intellij.psi.impl.light.JavaIdentifier;
-import com.intellij.psi.javadoc.PsiDocComment;
+import com.intellij.psi.PsiClass;
+import com.intellij.psi.PsiClassType;
+import com.intellij.psi.PsiMethod;
+import com.intellij.psi.PsiReferenceList;
 import com.intellij.util.ArrayUtil;
-import com.intellij.util.IncorrectOperationException;
-import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeId;
-
-import java.util.*;
 
 /**
  * evgeny, 1/25/13

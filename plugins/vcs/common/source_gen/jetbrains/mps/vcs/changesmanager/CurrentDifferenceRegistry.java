@@ -15,7 +15,7 @@ import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.vfs.IFile;
@@ -24,7 +24,6 @@ import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.vcs.FileStatusListener;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
-import jetbrains.mps.extapi.model.EditableSModel;
 
 public class CurrentDifferenceRegistry extends AbstractProjectComponent {
   private final Map<SModelReference, CurrentDifference> myCurrentDifferences = MapSequence.fromMap(new HashMap<SModelReference, CurrentDifference>());
@@ -70,7 +69,7 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
         MapSequence.fromMap(myCurrentDifferences).get(modelRef).getChangesTracker().scheduleFullUpdate();
         return;
       }
-      CurrentDifference cd = new CurrentDifference(this, (BaseEditableSModelDescriptor) model);
+      CurrentDifference cd = new CurrentDifference(this, (EditableSModel) model);
       MapSequence.fromMap(myCurrentDifferences).put(modelRef, cd);
     }
   }
@@ -92,8 +91,8 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
 
   public void updateLoadedModels() {
     for (SModel md : ListSequence.fromList(SModelRepository.getInstance().getModelDescriptors())) {
-      if (md instanceof BaseEditableSModelDescriptor) {
-        updateModel((BaseEditableSModelDescriptor) md);
+      if (md instanceof EditableSModel && !(((EditableSModel) md).isReadOnly())) {
+        updateModel(md);
       }
     }
   }
@@ -108,7 +107,7 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
   }
 
   @NotNull
-  public CurrentDifference getCurrentDifference(@NotNull BaseEditableSModelDescriptor modelDescriptor) {
+  public CurrentDifference getCurrentDifference(@NotNull EditableSModel modelDescriptor) {
     synchronized (myCurrentDifferences) {
       SModelReference modelRef = modelDescriptor.getReference();
       if (!(MapSequence.fromMap(myCurrentDifferences).containsKey(modelRef))) {

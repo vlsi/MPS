@@ -51,7 +51,8 @@ public class MacrosFactory {
 
   public static MacroHelper forModule(AbstractModule module) {
     // todo: if descriptor file == null?
-    return forModuleFile(module.getDescriptorFile());
+    IFile file = module.getDescriptorFile();
+    return file == null ? null : forModuleFile(file);
   }
 
   public static MacroHelper forProjectFile(IFile projectFile) {

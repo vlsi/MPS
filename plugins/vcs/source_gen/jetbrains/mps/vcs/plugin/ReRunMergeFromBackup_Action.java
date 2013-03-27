@@ -25,7 +25,7 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import org.xml.sax.InputSource;
 import java.io.StringReader;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.smodel.BaseSModelDescriptor;
+import jetbrains.mps.extapi.model.SModelBase;
 import com.intellij.openapi.diff.MergeRequest;
 import com.intellij.openapi.diff.DiffRequestFactory;
 import com.intellij.openapi.diff.DiffManager;
@@ -108,7 +108,7 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
             continue;
           }
 
-          mine = ReRunMergeFromBackup_Action.this.selectMineModel(ModelPersistence.modelToString(((BaseSModelDescriptor) ((SModel) MapSequence.fromMap(_params).get("model"))).getSModelInternal()), mine, _params);
+          mine = ReRunMergeFromBackup_Action.this.selectMineModel(ModelPersistence.modelToString(((SModelBase) ((SModel) MapSequence.fromMap(_params).get("model"))).getSModelInternal()), mine, _params);
           if (mine == null) {
             return;
           }

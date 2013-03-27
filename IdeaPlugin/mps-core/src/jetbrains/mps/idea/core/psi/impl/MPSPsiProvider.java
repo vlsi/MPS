@@ -110,7 +110,7 @@ public class MPSPsiProvider extends AbstractProjectComponent  {
     if (node == null) return null;
 
     // give chance to other to tell us what the PSI element is
-    PsiElement source = MPS2PsiMapperUtil.getPsiSource(node, myProject);
+    PsiElement source = MPS2PsiMapperUtil.getPsiElement(node, myProject);
     if (source != null) {
       return source;
     }

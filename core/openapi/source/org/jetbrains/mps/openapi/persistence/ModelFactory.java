@@ -15,23 +15,31 @@
  */
 package org.jetbrains.mps.openapi.persistence;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 
 import java.io.IOException;
+import java.util.Map;
 
 /**
  * Creates models (instances of SModel) from data sources
  */
 public interface ModelFactory {
 
+  static final String OPTION_MODULEREF = "moduleReference";
+  static final String OPTION_PACKAGE = "package";
+  static final String OPTION_RELPATH = "relativePath";
+  static final String OPTION_MODELNAME = "modelName";
+
   /**
-   * Loads the model. Returns a partially loaded SModel with a populated problems list in case of problems with the content.
+   * Instantiates a model on a given data source. Options can be used to pass additional parameters
+   * like stream encoding (usually, the default is utf-8), package name, containing module reference
+   * or module relative path of the source.
    * Returns null in case of problems with the data source.
-   * todo Implement and document error behavior
    *
    * @return The loaded model or null, if the data source is not supported
    */
-  SModel load(StreamDataSource dataSource);
+  SModel load(@NotNull StreamDataSource dataSource, @NotNull Map<String, String> options);
 
   /**
    * Creates a new empty model.
@@ -63,7 +71,7 @@ public interface ModelFactory {
   /**
    *  Saves the model in the factory-specific format (including conversion when needed).
    */
-  void save(SModel model, StreamDataSource dataSource) throws ModelSaveException;
+  void save(SModel model, StreamDataSource dataSource) throws ModelSaveException, IOException;
 
   /**
    *  returns true if plain text is not enough to represent stored data.

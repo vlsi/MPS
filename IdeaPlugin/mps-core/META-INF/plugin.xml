@@ -98,7 +98,7 @@
       <implementation-class>jetbrains.mps.idea.core.psi.impl.MPSPsiProvider</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.idea.core.usages.MoveRenameBatch</implementation-class>
+      <implementation-class>jetbrains.mps.idea.core.refactoring.MoveRenameBatch</implementation-class>
     </component>
   </project-components>
 
@@ -114,10 +114,8 @@
     <frameworkSupport implementation="jetbrains.mps.idea.core.facet.MPSFrameworkSupportProvider"/>
     <mps.LanguageLibrary dir="/languages"/>
     <mps.LanguageLibrary dir="/lib"/>
-    <mps.psiSourceFinder implementation="jetbrains.mps.idea.core.psi.impl.ClassStubPsiMapper"/>
+
     <!--<customUsageSearcher implementation="jetbrains.mps.idea.core.usages.MPSUsageSearcher"/>-->
-    <referencesSearch implementation="jetbrains.mps.idea.core.usages.MPSReferenceSearch"/>
-    <refactoring.elementListenerProvider implementation="jetbrains.mps.idea.core.usages.RefactoringListenerProvider"/>
     <treeStructureProvider implementation="jetbrains.mps.idea.core.projectView.MPSTreeStructureProvider"/>
     <usageGroupingRuleProvider implementation="jetbrains.mps.idea.core.usages.rules.MPSUsageGroupingRuleProviderImpl" />
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>

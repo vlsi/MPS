@@ -28,6 +28,17 @@ import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.library.ModulesMiner;
+import com.intellij.openapi.vfs.VfsUtil;
+import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.persistence.DefaultModelRoot;
+import jetbrains.mps.project.ModuleId;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.project.SModuleOperations;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
@@ -35,8 +46,6 @@ import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.persistence.DefaultModelRoot;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
@@ -157,6 +166,44 @@ public class NewModuleUtil {
         // todo: ??? 
         throw new RuntimeException(e);
       }
+    }
+
+    String templateModelsDir = descriptorFile.getParent().getPath() + File.separator + "generator" + File.separator + "template";
+    try {
+      VfsUtil.createDirectories(templateModelsDir);
+    } catch (IOException ioException) {
+    }
+
+
+    final GeneratorDescriptor generatorDescriptor = new GeneratorDescriptor();
+    generatorDescriptor.setGeneratorUID(Generator.generateGeneratorUID(language));
+    generatorDescriptor.setNamespace(null);
+    DefaultModelRoot templateModelsRoot = new DefaultModelRoot();
+    templateModelsRoot.setContentRoot(descriptorFile.getParent().getPath());
+    templateModelsRoot.addFile(DefaultModelRoot.SOURCE_ROOTS, templateModelsDir);
+    generatorDescriptor.getModelRootDescriptors().add(templateModelsRoot.toDescriptor());
+    generatorDescriptor.getUsedDevkits().add(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("fbc25dd2-5da4-483a-8b19-70928e1b62d7")).getModuleReference());
+    generatorDescriptor.getUsedLanguages().add(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("b401a680-8325-4110-8fd3-84331ff25bef")).getModuleReference());
+    generatorDescriptor.getUsedLanguages().add(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("d7706f63-9be2-479c-a3da-ae92af1e64d5")).getModuleReference());
+    descriptor.getGenerators().add(generatorDescriptor);
+    language.setLanguageDescriptor(descriptor, false);
+    language.save();
+
+    final Generator newGenerator = (Generator) MPSModuleRepository.getInstance().getModuleById(generatorDescriptor.getId());
+
+    boolean alreadyOwnsTemplateModel = false;
+    for (SModel modelDescriptor : newGenerator.getOwnModelDescriptors()) {
+      if (SModelStereotype.isGeneratorModel(modelDescriptor)) {
+        alreadyOwnsTemplateModel = true;
+        break;
+      }
+    }
+    if (!(alreadyOwnsTemplateModel)) {
+      EditableSModel templateModel = SModuleOperations.createModelWithAdjustments(language.getModuleName() + ".generator.template" + "." + "main@" + SModelStereotype.GENERATOR, newGenerator.getModelRoots().iterator().next());
+      SNode mappingConfiguration = SModelOperations.createNewNode(templateModel, null, "jetbrains.mps.lang.generator.structure.MappingConfiguration");
+      SPropertyOperations.set(mappingConfiguration, "name", "main");
+      SModelOperations.addRootNode(templateModel, mappingConfiguration);
+      templateModel.save();
     }
 
     return language;

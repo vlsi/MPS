@@ -55,10 +55,10 @@ public class DeleteGeneratorHelper {
     }
     if (!dependant.isEmpty()) {
       final StringBuilder report = new StringBuilder();
-      report.append("Can't delete generator ").append(generator.getModuleFqName()).append(".\n");
+      report.append("Can't delete generator ").append(generator.getModuleName()).append(".\n");
       report.append("The following generators depend on it:\n\n");
       for (Generator gen : dependant) {
-        report.append(gen.getModuleFqName()).append("\n");
+        report.append(gen.getModuleName()).append("\n");
       }
 
       SwingUtilities.invokeLater(new Runnable() {

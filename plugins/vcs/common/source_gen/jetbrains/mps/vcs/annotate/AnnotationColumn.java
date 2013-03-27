@@ -18,7 +18,7 @@ import com.intellij.openapi.vcs.history.VcsFileRevision;
 import com.intellij.openapi.vcs.annotate.LineAnnotationAspect;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import java.util.Set;
@@ -100,7 +100,6 @@ import java.io.File;
 import com.intellij.openapi.vcs.changes.ContentRevision;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
-import jetbrains.mps.vcs.diff.ui.RootDifferenceDialog;
 import com.intellij.openapi.vcs.VcsException;
 import jetbrains.mps.vcs.diff.ChangeSet;
 
@@ -117,7 +116,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
   private LineAnnotationAspect myAuthorAnnotationAspect;
   private AbstractVcs myVcs;
   private VirtualFile myModelVirtualFile;
-  private BaseEditableSModelDescriptor myModelDescriptor;
+  private EditableSModel myModel;
   private List<LineContent> myFileLineToContent;
   private Map<ModelChange, LineContent[]> myChangesToLineContents = MapSequence.fromMap(new HashMap<ModelChange, LineContent[]>());
   private Set<Integer> myCurrentPseudoLines = null;
@@ -197,12 +196,12 @@ public class AnnotationColumn extends AbstractLeftColumn {
     myRevisionRange = new VcsRevisionRange(this, myFileAnnotation);
     ListSequence.fromList(myAspectSubcolumns).addElement(new HighlightRevisionSubcolumn(this, myRevisionRange));
     myModelVirtualFile = modelVirtualFile;
-    myModelDescriptor = (BaseEditableSModelDescriptor) model;
+    myModel = (EditableSModel) model;
     myVcs = vcs;
     final CurrentDifferenceRegistry registry = CurrentDifferenceRegistry.getInstance(getProject());
     registry.getCommandQueue().runTask(new Runnable() {
       public void run() {
-        final CurrentDifference currentDifference = registry.getCurrentDifference(myModelDescriptor);
+        final CurrentDifference currentDifference = registry.getCurrentDifference(myModel);
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             ListSequence.fromList(check_5mnya_a0a0a1a0a0w0w(currentDifference.getChangeSet())).visitAll(new IVisitor<ModelChange>() {
@@ -228,7 +227,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
       MapSequence.fromMap(myChangesToLineContents).put(ch, new LineContent[]{new ReferenceLineContent(src.getAffectedNodeId(), src.getRole())});
     } else if (ch instanceof NodeGroupChange) {
       NodeGroupChange ngc = (NodeGroupChange) ch;
-      List<? extends SNode> newChildren = IterableUtil.asList(myModelDescriptor.getNode(ngc.getParentNodeId()).getChildren(ngc.getRole()));
+      List<? extends SNode> newChildren = IterableUtil.asList(myModel.getNode(ngc.getParentNodeId()).getChildren(ngc.getRole()));
       MapSequence.fromMap(myChangesToLineContents).put(ch, ListSequence.fromList(newChildren).page(ngc.getResultBegin(), ngc.getResultEnd()).select(new ISelector<SNode, NodeLineContent>() {
         public NodeLineContent select(SNode n) {
           return new NodeLineContent(n.getNodeId());
@@ -498,7 +497,7 @@ __switch__:
     final CurrentDifferenceRegistry registry = CurrentDifferenceRegistry.getInstance(getProject());
     registry.getCommandQueue().runTask(new Runnable() {
       public void run() {
-        registry.getCurrentDifference(myModelDescriptor).removeDifferenceListener(myDifferenceListener);
+        registry.getCurrentDifference(myModel).removeDifferenceListener(myDifferenceListener);
       }
     });
   }
@@ -708,7 +707,7 @@ __switch__:
 
                 final Wrappers._T<jetbrains.mps.smodel.SModel> beforeModel = new Wrappers._T<jetbrains.mps.smodel.SModel>();
                 if (before == null) {
-                  beforeModel.value = new jetbrains.mps.smodel.SModel(myModelDescriptor.getSModelReference());
+                  beforeModel.value = new jetbrains.mps.smodel.SModel(myModel.getReference());
                 } else {
                   beforeModel.value = ModelPersistence.readModel(before.getContent(), false);
                 }
@@ -743,7 +742,7 @@ __switch__:
                     if (rootId.value == null) {
                       new ModelDifferenceDialog(beforeModel.value, afterModel, project, titles[0], titles[1]).show();
                     } else {
-                      RootDifferenceDialog.invokeDialog(beforeModel.value, afterModel, rootId.value, project, titles, null);
+                      ModelDifferenceDialog.showRootDifference(beforeModel.value, afterModel, rootId.value, project, titles[0], titles[1], null);
                     }
                   }
                 });

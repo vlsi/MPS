@@ -429,7 +429,7 @@ public class TestGenerationWorker extends MpsWorker {
           }
         }).translate(new ITranslator2<Generator, SModel>() {
           public Iterable<SModel> translate(Generator gen) {
-            return gen.getOwnModelDescriptors();
+            return gen.getModels();
           }
         }));
         result.value = Sequence.fromIterable(result.value).concat(Sequence.fromIterable(models));

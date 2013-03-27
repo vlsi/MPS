@@ -9,12 +9,11 @@ import java.util.Map;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.extapi.model.EditableSModel;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import jetbrains.mps.smodel.BaseSModelDescriptor;
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
@@ -36,7 +35,7 @@ public class ShowDifferencesWithModelOnDisk_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((SModel) MapSequence.fromMap(_params).get("model")).getSource() instanceof FileDataSource && ((SModel) MapSequence.fromMap(_params).get("model")) instanceof BaseEditableSModelDescriptor;
+    return ((SModel) MapSequence.fromMap(_params).get("model")).getSource() instanceof FileDataSource && ((SModel) MapSequence.fromMap(_params).get("model")) instanceof EditableSModel;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -71,7 +70,7 @@ public class ShowDifferencesWithModelOnDisk_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final jetbrains.mps.smodel.SModel memory = ((BaseSModelDescriptor) ((SModel) MapSequence.fromMap(_params).get("model"))).getSModelInternal();
+      final jetbrains.mps.smodel.SModel memory = ((SModelBase) ((SModel) MapSequence.fromMap(_params).get("model"))).getSModelInternal();
       final jetbrains.mps.smodel.SModel disk = ModelPersistence.readModel((FileDataSource) ((SModel) MapSequence.fromMap(_params).get("model")).getSource(), false);
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {

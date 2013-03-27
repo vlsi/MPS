@@ -104,7 +104,7 @@ public class VariantsUtil {
 
   public static String languageSuffix(final SModel _this) {
     IModule module = _this.getModule();
-    return NameUtil.shortNameFromLongName(module.getModuleFqName());
+    return NameUtil.shortNameFromLongName(module.getModuleName());
   }
 
   private static SNode _quotation_createNode_hb8iy0_a0a0a0a0a0a0() {

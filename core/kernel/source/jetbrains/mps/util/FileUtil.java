@@ -19,7 +19,17 @@ package jetbrains.mps.util;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.Closeable;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.io.Reader;
 import java.nio.charset.Charset;
 import java.util.Iterator;
 import java.util.List;
@@ -428,14 +438,14 @@ public class FileUtil {
 
     int commonIndex = 0;
     while (commonIndex < target.length && commonIndex < base.length
-      && target[commonIndex].equals(base[commonIndex])) {
+        && target[commonIndex].equals(base[commonIndex])) {
       common.append(target[commonIndex]).append(pathSeparator);
       commonIndex++;
     }
 
     if (commonIndex == 0) {
       throw new PathResolutionException("No common path element found for '" + targetPath + "' and '" + basePath
-        + "'");
+          + "'");
     }
 
     if (target.length == commonIndex && base.length == target.length) {
@@ -453,7 +463,7 @@ public class FileUtil {
       baseIsFile = false;
     }
 
-    StringBuffer relative = new StringBuffer();
+    StringBuilder relative = new StringBuilder();
 
     if (base.length != commonIndex) {
       int numDirsUp = baseIsFile ? base.length - commonIndex - 1 : base.length - commonIndex;

@@ -240,6 +240,12 @@
     <scopeInfo nodeId="7327404875649061237" fileName="TestModule_jetbrains_mps_lang_traceable_operations_test.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
     <unitInfo nodeId="7327404875649061237" fileName="TestModule_jetbrains_mps_lang_traceable_operations_test.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_lang_traceable_operations_test" />
   </root>
+  <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/7917427600705105663">
+    <nodeInfo nodeId="7917427600705105663" fileName="TestModule_jetbrains_mps_lang_actions_test.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestModule_jetbrains_mps_lang_actions_test#()V" />
+    <scopeInfo nodeId="7917427600705105663" fileName="TestModule_jetbrains_mps_lang_actions_test.java" startLine="12" startPosition="55" endLine="12" endPosition="55" />
+    <scopeInfo nodeId="7917427600705105663" fileName="TestModule_jetbrains_mps_lang_actions_test.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
+    <unitInfo nodeId="7917427600705105663" fileName="TestModule_jetbrains_mps_lang_actions_test.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.tests.TestModule_jetbrains_mps_lang_actions_test" />
+  </root>
   <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/8565053360342421683">
     <nodeInfo nodeId="8565053360342421683" fileName="TestModule_jetbrains_mps_traceInfo_testWeaving.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestModule_jetbrains_mps_traceInfo_testWeaving#()V" />
     <scopeInfo nodeId="8565053360342421683" fileName="TestModule_jetbrains_mps_traceInfo_testWeaving.java" startLine="12" startPosition="59" endLine="12" endPosition="59" />

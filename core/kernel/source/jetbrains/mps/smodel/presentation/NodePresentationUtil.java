@@ -17,11 +17,14 @@ package jetbrains.mps.smodel.presentation;
 
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.IModule;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.awt.Font;
 
@@ -42,7 +45,9 @@ public class NodePresentationUtil {
   }
 
   public static int getFontStyle(SNode referenceNode, SNode referentNode) {
-    if (!SModelStereotype.isUserModel(referentNode.getModel())) return Font.PLAIN;
+    SModel model = referentNode.getModel();
+    if (model == null) return Font.PLAIN;
+    if (!SModelStereotype.isUserModel(model)) return Font.PLAIN;
     return isLocalTo(referenceNode, referentNode) ? Font.BOLD : Font.PLAIN;
   }
 

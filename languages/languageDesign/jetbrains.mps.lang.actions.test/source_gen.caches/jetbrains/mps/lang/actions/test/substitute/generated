@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-13kjxqhn3ys6uc4she33a0pkapzzamj">
+  <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
+  <dep model="r:00000000-0000-4000-0000-011c895902d8(jetbrains.mps.baseLanguage.unitTest.generator.baseLanguage.template.main@generator)" hash="-ctxvs1rpiiexlq8dltxstwmrdnqkuz7" />
+  <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
+  <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="aih6mod30hbbl8r1xz9vfu4gypkll6l" />
+  <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" hash="-1jzrljs156h3tlg8sxju3s4nqtj23fo" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="7q8xdnha8al10c7e3cb1njh3bglwdb4" />
+  <common hash="-6brngjl83w4c5bm7guyqrn42tzfsea2" />
+  <source id="2550657305103524282" name="DontSubstiuteByDefault" hash="aurw1ptvuzs4rvwwuho4kj9yz3ff8gy" dependsOnNodes="true">
+    <dep root="2534942168317963684" />
+    <dep root="2534942168331319973" />
+    <dep root="2550657305103528938" />
+    <dep root="3213804652589013780" />
+    <dep root="3213804652590377019" />
+    <dep root="3286607483605154581" />
+    <dep root="5164819300891972344" />
+    <dep root="5164819300892646889" />
+    <dep root="6866660893594595018" />
+    <dep root="8349639607716109534" />
+    <dep root="8349639607730863318" />
+    <dep root="8349639607733366556" />
+    <dep root="8349639607733719183" />
+    <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902d8(jetbrains.mps.baseLanguage.unitTest.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
+    <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
+    <file name="DontSubstiuteByDefault_Test.java" />
+  </source>
+  <source id="2550657305103528938" hash="-dnlmgu1xurn4i0xbmjz0srwr63a4i27">
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="6866660893594595018" name="ConceptSubstitutePart" hash="6r2t97f8yl9j5nbonz12wc1rpfcp0at" dependsOnNodes="true">
+    <dep root="2534942168317963684" />
+    <dep root="2534942168331319973" />
+    <dep root="2550657305103524282" />
+    <dep root="2550657305103528938" />
+    <dep root="3213804652589013780" />
+    <dep root="3213804652590377019" />
+    <dep root="3286607483605154581" />
+    <dep root="5164819300891972344" />
+    <dep root="5164819300892646889" />
+    <dep root="8349639607716109534" />
+    <dep root="8349639607730863318" />
+    <dep root="8349639607733366556" />
+    <dep root="8349639607733719183" />
+    <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
+    <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
+    <file name="ConceptSubstitutePart_Test.java" />
+  </source>
+  <source id="3213804652589013780" name="AddMenuPart_ConceptSubstitute" hash="-22lpzlbsx9l2kh4e8tpp56xfnau9n3f" dependsOnNodes="true">
+    <dep root="2534942168317963684" />
+    <dep root="2534942168331319973" />
+    <dep root="2550657305103524282" />
+    <dep root="2550657305103528938" />
+    <dep root="3213804652590377019" />
+    <dep root="3286607483605154581" />
+    <dep root="5164819300891972344" />
+    <dep root="5164819300892646889" />
+    <dep root="6866660893594595018" />
+    <dep root="8349639607716109534" />
+    <dep root="8349639607730863318" />
+    <dep root="8349639607733366556" />
+    <dep root="8349639607733719183" />
+    <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
+    <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
+    <file name="AddMenuPart_ConceptSubstitute_Test.java" />
+  </source>
+  <source id="3213804652590377019" name="AddMenuPart_GenericQuery" hash="-4kg9a0cfmjgmbnftdrv7efi9mxeamgl" dependsOnNodes="true">
+    <dep root="2534942168317963684" />
+    <dep root="2534942168331319973" />
+    <dep root="2550657305103524282" />
+    <dep root="2550657305103528938" />
+    <dep root="3213804652589013780" />
+    <dep root="3286607483605154581" />
+    <dep root="5164819300891972344" />
+    <dep root="5164819300892646889" />
+    <dep root="6866660893594595018" />
+    <dep root="8349639607716109534" />
+    <dep root="8349639607730863318" />
+    <dep root="8349639607733366556" />
+    <dep root="8349639607733719183" />
+    <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
+    <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
+    <file name="AddMenuPart_GenericQuery_Test.java" />
+  </source>
+  <source id="3286607483605154581" name="AddMenuPart_ParameterizedSubstitute" hash="-eig012u2qb1c0gx2ek6wvrqlcmwnc2c" dependsOnNodes="true">
+    <dep root="2534942168317963684" />
+    <dep root="2534942168331319973" />
+    <dep root="2550657305103524282" />
+    <dep root="2550657305103528938" />
+    <dep root="3213804652589013780" />
+    <dep root="3213804652590377019" />
+    <dep root="5164819300891972344" />
+    <dep root="5164819300892646889" />
+    <dep root="6866660893594595018" />
+    <dep root="8349639607716109534" />
+    <dep root="8349639607730863318" />
+    <dep root="8349639607733366556" />
+    <dep root="8349639607733719183" />
+    <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+    <file name="AddMenuPart_ParameterizedSubstitute_Test.java" />
+  </source>
+  <source id="2534942168317963684" name="AddMenuPart_ParameterizedSubstitute_smartComplete" hash="-6b3rycb9o7uumi34nft5ae2zgyekt0g" dependsOnNodes="true">
+    <dep root="2534942168331319973" />
+    <dep root="2550657305103524282" />
+    <dep root="2550657305103528938" />
+    <dep root="3213804652589013780" />
+    <dep root="3213804652590377019" />
+    <dep root="3286607483605154581" />
+    <dep root="5164819300891972344" />
+    <dep root="5164819300892646889" />
+    <dep root="6866660893594595018" />
+    <dep root="8349639607716109534" />
+    <dep root="8349639607730863318" />
+    <dep root="8349639607733366556" />
+    <dep root="8349639607733719183" />
+    <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902d8(jetbrains.mps.baseLanguage.unitTest.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
+    <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
+    <file name="AddMenuPart_ParameterizedSubstitute_smartComplete_Test.java" />
+  </source>
+  <source id="2534942168331319973" name="AddMenuPart_SimpleItemSubstitute" hash="e1catotwyxxsqhsbc82vznezjcdf6rb" dependsOnNodes="true">
+    <dep root="2534942168317963684" />
+    <dep root="2550657305103524282" />
+    <dep root="2550657305103528938" />
+    <dep root="3213804652589013780" />
+    <dep root="3213804652590377019" />
+    <dep root="3286607483605154581" />
+    <dep root="5164819300891972344" />
+    <dep root="5164819300892646889" />
+    <dep root="6866660893594595018" />
+    <dep root="8349639607716109534" />
+    <dep root="8349639607730863318" />
+    <dep root="8349639607733366556" />
+    <dep root="8349639607733719183" />
+    <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+    <file name="AddMenuPart_SimpleItemSubstitute_Test.java" />
+  </source>
+  <source id="5164819300891972344" name="AddMenuPart_SimpleItemSubstitute_smartComplete" hash="b3as9jairh8xiulo46a0sywh2zhzpmt" dependsOnNodes="true">
+    <dep root="2534942168317963684" />
+    <dep root="2534942168331319973" />
+    <dep root="2550657305103524282" />
+    <dep root="2550657305103528938" />
+    <dep root="3213804652589013780" />
+    <dep root="3213804652590377019" />
+    <dep root="3286607483605154581" />
+    <dep root="5164819300892646889" />
+    <dep root="6866660893594595018" />
+    <dep root="8349639607716109534" />
+    <dep root="8349639607730863318" />
+    <dep root="8349639607733366556" />
+    <dep root="8349639607733719183" />
+    <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902d8(jetbrains.mps.baseLanguage.unitTest.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
+    <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
+    <file name="AddMenuPart_SimpleItemSubstitute_smartComplete_Test.java" />
+  </source>
+  <source id="5164819300892646889" name="AddMenuPart_WrapperSubstitute" hash="cwr1nxbhbpfckhizqnnju2wzcdlrrqg" dependsOnNodes="true">
+    <dep root="2534942168317963684" />
+    <dep root="2534942168331319973" />
+    <dep root="2550657305103524282" />
+    <dep root="2550657305103528938" />
+    <dep root="3213804652589013780" />
+    <dep root="3213804652590377019" />
+    <dep root="3286607483605154581" />
+    <dep root="5164819300891972344" />
+    <dep root="6866660893594595018" />
+    <dep root="8349639607716109534" />
+    <dep root="8349639607730863318" />
+    <dep root="8349639607733366556" />
+    <dep root="8349639607733719183" />
+    <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+    <file name="AddMenuPart_WrapperSubstitute_Test.java" />
+  </source>
+  <source id="8349639607716109534" name="AddMenuPart_WrapperSubstitute_returnSmallPart" hash="-be2lixsym23oc6iwjylkc8cm54g540q" dependsOnNodes="true">
+    <dep root="2534942168317963684" />
+    <dep root="2534942168331319973" />
+    <dep root="2550657305103524282" />
+    <dep root="2550657305103528938" />
+    <dep root="3213804652589013780" />
+    <dep root="3213804652590377019" />
+    <dep root="3286607483605154581" />
+    <dep root="5164819300891972344" />
+    <dep root="5164819300892646889" />
+    <dep root="6866660893594595018" />
+    <dep root="8349639607730863318" />
+    <dep root="8349639607733366556" />
+    <dep root="8349639607733719183" />
+    <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+    <file name="AddMenuPart_WrapperSubstitute_returnSmallPart_Test.java" />
+  </source>
+  <source id="8349639607730863318" name="RemoveByConditionPart" hash="-10a0aq0it4qgl0vyo1sav0gn8utpe9l" dependsOnNodes="true">
+    <dep root="2534942168317963684" />
+    <dep root="2534942168331319973" />
+    <dep root="2550657305103524282" />
+    <dep root="2550657305103528938" />
+    <dep root="3213804652589013780" />
+    <dep root="3213804652590377019" />
+    <dep root="3286607483605154581" />
+    <dep root="5164819300891972344" />
+    <dep root="5164819300892646889" />
+    <dep root="6866660893594595018" />
+    <dep root="8349639607716109534" />
+    <dep root="8349639607733366556" />
+    <dep root="8349639607733719183" />
+    <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
+    <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
+    <file name="RemoveByConditionPart_Test.java" />
+  </source>
+  <source id="8349639607733366556" name="RemovePart" hash="-4m9luxlsq3zwra5r63lqv7wfhp9ab7l" dependsOnNodes="true">
+    <dep root="2534942168317963684" />
+    <dep root="2534942168331319973" />
+    <dep root="2550657305103524282" />
+    <dep root="2550657305103528938" />
+    <dep root="3213804652589013780" />
+    <dep root="3213804652590377019" />
+    <dep root="3286607483605154581" />
+    <dep root="5164819300891972344" />
+    <dep root="5164819300892646889" />
+    <dep root="6866660893594595018" />
+    <dep root="8349639607716109534" />
+    <dep root="8349639607730863318" />
+    <dep root="8349639607733719183" />
+    <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
+    <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
+    <file name="RemovePart_Test.java" />
+  </source>
+  <source id="8349639607733719183" name="RemoveDefaultsPart" hash="-c9e31dqanvzdqn85a4xwi89kkbg81qq" dependsOnNodes="true">
+    <dep root="2534942168317963684" />
+    <dep root="2534942168331319973" />
+    <dep root="2550657305103524282" />
+    <dep root="2550657305103528938" />
+    <dep root="3213804652589013780" />
+    <dep root="3213804652590377019" />
+    <dep root="3286607483605154581" />
+    <dep root="5164819300891972344" />
+    <dep root="5164819300892646889" />
+    <dep root="6866660893594595018" />
+    <dep root="8349639607716109534" />
+    <dep root="8349639607730863318" />
+    <dep root="8349639607733366556" />
+    <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902d8(jetbrains.mps.baseLanguage.unitTest.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
+    <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
+    <file name="RemoveDefaultsPart_Test.java" />
+  </source>
+</dependencies>
+

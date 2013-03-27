@@ -118,6 +118,11 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   }
 
   @Override
+  public void load() {
+    getSModelInternal();
+  }
+
+  @Override
   public void unload() {
   }
 

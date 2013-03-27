@@ -36,10 +36,10 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.extapi.model.EditableSModel" />
+    <classNode dependClassName="jetbrains.mps.extapi.model.SModelBase" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FileDataSource" />
     <classNode dependClassName="jetbrains.mps.ide.platform.watching.FSChangesWatcher" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="jetbrains.mps.smodel.BaseSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
@@ -69,10 +69,10 @@
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.extapi.model.SModelBase" />
     <classNode dependClassName="jetbrains.mps.fileTypes.MPSFileTypeFactory" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="jetbrains.mps.smodel.BaseSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.DefaultSModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelFileTracker" />

@@ -152,7 +152,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 68:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Query", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
       case 69:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_String", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction", "jetbrains.mps.lang.actions.structure.ISubstitute_String"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_String", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
       case 70:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.actions.structure.QueryFunction_PasteWrapper", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
       case 71:

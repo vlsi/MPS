@@ -16,10 +16,15 @@
 
 package jetbrains.mps.excluded;
 
+import jetbrains.mps.MPSCore;
+import jetbrains.mps.persistence.PersistenceRegistry;
 import org.jdom.JDOMException;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.File;
 import java.io.IOException;
+
+import static org.junit.Assert.assertNull;
 
 public class GeneratorsRunner {
   public static final File GEN_SOURCES_IML = new File("tools" + File.separatorChar + "gensources" + File.separatorChar + "gensources.iml");
@@ -35,6 +40,9 @@ public class GeneratorsRunner {
   }
 
   public static void main(String[] args) throws JDOMException, IOException {
+    assertNull(PersistenceFacade.getInstance());
+    MPSCore.getInstance().init();
+
     generateGenSourcesIml();
     generateCompilerXmlFile();
   }

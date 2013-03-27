@@ -114,7 +114,7 @@ public class LanguageUsagesFinder implements IFinder {
   }
 
   private void collectUsagesInModels(Language searchedLanguage, IModule owner, SearchResults searchResults) {
-    for (SModel modelDescriptor : owner.getOwnModelDescriptors()) {
+    for (SModel modelDescriptor : owner.getModels()) {
       if (!(SModelStereotype.isUserModel(modelDescriptor))) {
         continue;
       }

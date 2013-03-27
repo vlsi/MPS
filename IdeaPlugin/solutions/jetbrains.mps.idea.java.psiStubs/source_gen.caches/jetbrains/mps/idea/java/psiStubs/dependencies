@@ -106,6 +106,7 @@
     <classNode dependClassName="com.intellij.psi.PsiTypeElement" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />
+    <classNode dependClassName="jetbrains.mps.idea.core.refactoring.NodePtr" />
     <classNode dependClassName="jetbrains.mps.idea.java.psiStubs.ASTConverter" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelFqName" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelId" />
@@ -114,6 +115,14 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
+  </dependency>
+  <dependency className="jetbrains.mps.idea.java.psiStubs.Mapper" file="Mapper.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.psi.PsiElement" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.idea.java.psiStubs.PsiJavaStubModelDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.idea.core.psi.MPS2PsiMapper" />
   </dependency>
   <dependency className="jetbrains.mps.idea.java.psiStubs.PsiJavaStubDataSource" file="PsiJavaStubDataSource.java">
     <classNode dependClassName="com.intellij.openapi.module.Module" />

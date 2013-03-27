@@ -13,7 +13,19 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_ConceptFunctionParameter_childConcept_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_ConceptFunctionParameter_concept_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       InferenceRule_Runtime inferenceRule = new typeof_ConceptFunctionParameter_currentTargetNode_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_ConceptFunctionParameter_link_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -41,7 +53,23 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_ConceptFunctionParameter_parentNode_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_ConceptFunctionParameter_pattern_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       InferenceRule_Runtime inferenceRule = new typeof_ConceptFunctionParameter_result_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_ConceptFunctionParameter_strictly_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_ConceptFunctionParameter_wrapped_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {

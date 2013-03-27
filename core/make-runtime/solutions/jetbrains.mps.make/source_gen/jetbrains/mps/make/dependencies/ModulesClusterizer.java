@@ -101,7 +101,7 @@ public class ModulesClusterizer {
     Queue<String> nsq = QueueSequence.fromQueue(new LinkedList<String>());
     for (IModule mod : modules) {
       if (mod instanceof Generator) {
-        Iterable<SModel> genModels = mod.getOwnModelDescriptors();
+        Iterable<SModel> genModels = mod.getModels();
         QueueSequence.fromQueue(nsq).addSequence(Sequence.fromIterable(genModels).translate(new ITranslator2<SModel, String>() {
           public Iterable<String> translate(SModel smd) {
             return ModelContentUtil.getUsedLanguageNamespaces(smd, false);

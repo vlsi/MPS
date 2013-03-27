@@ -55,6 +55,13 @@ public abstract class SModelDescriptorStub implements SModelDescriptor {
   @Deprecated
   public abstract jetbrains.mps.smodel.SModel getSModelInternal();
 
+  /**
+   * Dangerous, allows to replace model data.
+   */
+  public void replace(SModelData modelData) {
+    throw new UnsupportedOperationException();
+  }
+
   @Override
   public SModel resolveModel(SModelReference reference) {
     return reference.resolve(MPSModuleRepository.getInstance());

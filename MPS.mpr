@@ -145,6 +145,8 @@
       <modulePath path="${project}/languages/languageDesign/generator/test/outputLang/jetbrains.mps.transformation.test.outputLang.mpl" folder="core.generator" />
       <modulePath path="${project}/languages/languageDesign/generator/test/sandbox/jetbrains.mps.generator.sandbox.msd" folder="core" />
       <modulePath path="${project}/languages/languageDesign/intentions/jetbrains.mps.lang.intentions.mpl" folder="core.language-design" />
+      <modulePath path="${project}/languages/languageDesign/jetbrains.mps.lang.actions.test/jetbrains.mps.lang.actions.test.msd" folder="core.language-design" />
+      <modulePath path="${project}/languages/languageDesign/jetbrains.mps.lang.actions.testLanguage/jetbrains.mps.lang.actions.testLanguage.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/make/languages/facet/jetbrains.mps.make.facet.mpl" folder="core.make" />
       <modulePath path="${project}/languages/languageDesign/make/languages/outlook/jetbrains.mps.make.outlook.mpl" folder="core.make" />
       <modulePath path="${project}/languages/languageDesign/make/languages/script/jetbrains.mps.make.script.mpl" folder="core.make" />

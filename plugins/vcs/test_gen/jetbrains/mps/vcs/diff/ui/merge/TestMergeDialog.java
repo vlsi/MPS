@@ -32,6 +32,7 @@ import java.lang.reflect.Field;
 import com.intellij.idea.IdeaTestApplication;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.logging.Logger;
 
 public class TestMergeDialog {
   private static EditorManager ourEditorManager = new EditorManager();
@@ -104,7 +105,7 @@ public class TestMergeDialog {
       public void run() {
         MergeModelsDialog dialog = ModelAccess.instance().runReadAction(new Computable<MergeModelsDialog>() {
           public MergeModelsDialog compute() {
-            return new MergeModelsDialog(models[0], models[1], models[2], new SimpleDiffRequest(TestMergeDialog.ourProject, ((SModel[]) null), new String[]{"Local Version", "Merge Result", "Remote Version"}));
+            return new MergeModelsDialog(models[0], models[1], models[2], new SimpleDiffRequest(TestMergeDialog.ourProject, (SModel[]) null, new String[]{"Local Version", "Merge Result", "Remote Version"}));
           }
         });
         try {
@@ -127,7 +128,11 @@ public class TestMergeDialog {
             if (!(iFile.exists())) {
               iFile.createNewFile();
             }
-            ModelPersistence.saveModel(result, new FileDataSource(iFile));
+            try {
+              ModelPersistence.saveModel(result, new FileDataSource(iFile));
+            } catch (IOException ex) {
+              LOG.error("Cannot save model.", ex);
+            }
           }
         });
         dialog.unregisterResultModel();
@@ -137,4 +142,6 @@ public class TestMergeDialog {
       }
     });
   }
+
+  private static Logger LOG = Logger.getLogger(TestMergeDialog.class);
 }

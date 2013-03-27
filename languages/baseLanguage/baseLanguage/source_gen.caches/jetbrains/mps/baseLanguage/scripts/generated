@@ -12,7 +12,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-b2l5iyygy2vjqkbekn4rvaubf6n8cmr" />
   <dep model="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" hash="-9ycm6u6sfopw2db5cjnetu8hedy3t4f" />
   <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="8iq1c63z020s2os52d6vke4fdjpb056" />
-  <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" hash="-9o5gqjpuo8tnhm92eiiqw0cybbnm076" />
+  <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" hash="-80k4lgxox2ptiamhgmp6e1qe98ygdry" />
   <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" hash="-2pfgs5l9xgdeg3nuvw9wsk21zkjyohc" />
   <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="bkam8wpbo39xvy5e0s0a40i4uimgdfm" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />

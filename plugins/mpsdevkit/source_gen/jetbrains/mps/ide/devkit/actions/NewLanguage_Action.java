@@ -12,11 +12,9 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.ide.devkit.newLanguageDialog.NewLanguageDialog;
-import java.awt.Frame;
+import jetbrains.mps.ide.newModuleDialogs.NewLanguageDialog;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.logging.Logger;
@@ -56,28 +54,19 @@ public class NewLanguage_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("ideaProject") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSCommonDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
-      return false;
-    }
     MapSequence.fromMap(_params).put("namespace", event.getData(MPSDataKeys.NAMESPACE));
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      NewLanguageDialog dialog = new NewLanguageDialog(((Frame) MapSequence.fromMap(_params).get("frame")));
-      dialog.setProject(((MPSProject) MapSequence.fromMap(_params).get("project")));
+      NewLanguageDialog dialog = new NewLanguageDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), ((String) MapSequence.fromMap(_params).get("namespace")));
       dialog.show();
 
-      Language l = dialog.getResult();
+      Language l = dialog.getLangauge();
       if (l == null) {
         return;
       }
-      ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("project"))).setFolderFor(l, (((String) MapSequence.fromMap(_params).get("namespace")) == null ?
-        "" :
-        ((String) MapSequence.fromMap(_params).get("namespace"))
-      ));
       ProjectPane projectPane = ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject")));
       projectPane.rebuildTree();
       projectPane.selectModule(l, false);

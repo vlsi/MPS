@@ -17,7 +17,6 @@ package jetbrains.mps.persistence.java.library;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.project.MPSExtentions;
 
 /**
  * evgeny, 12/13/12

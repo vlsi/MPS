@@ -15,7 +15,9 @@
  */
 package jetbrains.mps.persistence;
 
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
@@ -26,6 +28,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.Collections;
 
 /**
  * evgeny, 3/6/13
@@ -46,8 +49,10 @@ public class PersistenceUtil {
         byte[] bytes = content.getBytes(FileUtil.DEFAULT_CHARSET);
         return new ByteArrayInputStream(bytes);
       }
-    });
-    model.load();
+    }, Collections.<String, String>emptyMap());
+    if (model != null) {
+      model.load();
+    }
     return model;
   }
 
@@ -61,8 +66,22 @@ public class PersistenceUtil {
       public InputStream openInputStream() throws IOException {
         return new ByteArrayInputStream(content);
       }
-    });
-    model.load();
+    }, Collections.<String, String>emptyMap());
+    if (model != null) {
+      model.load();
+    }
+    return model;
+  }
+
+  public static SModel loadModel(IFile file) {
+    ModelFactory factory = PersistenceFacade.getInstance().getModelFactory(FileUtil.getExtension(file.getName()));
+    if (factory == null) {
+      return null;
+    }
+    SModel model = factory.load(new FileDataSource(file), Collections.<String, String>emptyMap());
+    if (model != null) {
+      model.load();
+    }
     return model;
   }
 

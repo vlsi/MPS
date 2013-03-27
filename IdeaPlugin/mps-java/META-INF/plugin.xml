@@ -77,15 +77,19 @@
     <mps.LanguageLibrary dir=""/>
     <mps.modelRootContributor className="jetbrains.mps.idea.sourceStubs.JavaSourceModelRootContributor"/>
     <mps.psiFactory implementation="jetbrains.mps.idea.java.psi.impl.JavaMPSPsiNodeFactory"/>
-    <mps.psiSourceFinder implementation="jetbrains.mps.idea.java.psi.impl.JavaMPSPsiNodeFactory"/>
+    <mps.psiSourceFinder implementation="jetbrains.mps.idea.java.psi.ClassStubPsiMapper"/>
+    <mps.psiSourceFinder implementation="jetbrains.mps.idea.java.psiStubs.Mapper"/>
     <debugger.positionManagerFactory implementation="jetbrains.mps.idea.java.debugger.MpsPositionManagerFactory"/>
     <fileBasedIndex implementation="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsIndexer"/>
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
     <compileServer.plugin classpath="jps/mps-java-jps-plugin.jar;mps-java-common.jar"/>
+    <referencesSearch implementation="jetbrains.mps.idea.java.usages.MPSReferenceSearch"/>
+    <referencesSearch implementation="jetbrains.mps.idea.java.usages.IdPrefixSearch"/>
     <java.elementFinder implementation="jetbrains.mps.idea.java.psi.impl.MPSJavaClassFinder"/>
     <java.shortNamesCache implementation="jetbrains.mps.idea.java.psi.impl.MPSJavaShortNamesCache"/>
     <directClassInheritorsSearch implementation="jetbrains.mps.idea.java.usages.MPSJavaDirectInheritorsSearcher"/>
     <methodReferencesSearch implementation="jetbrains.mps.idea.java.usages.MPSMethodReferencesSearch"/>
+    <refactoring.elementListenerProvider implementation="jetbrains.mps.idea.java.refactoring.RefactoringListenerProvider"/>
   </extensions>
 
   <extensions defaultExtensionNs="jetbrains.mps">

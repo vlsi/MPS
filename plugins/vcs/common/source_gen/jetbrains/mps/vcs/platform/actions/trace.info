@@ -682,9 +682,9 @@
     <nodeInfo nodeId="8230098746512809143" fileName="VcsActionsUtil.java" startLine="60" startPosition="94" endLine="61" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="226179684898988032" fileName="VcsActionsUtil.java" startLine="61" startPosition="80" endLine="62" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8230098746512809154" fileName="VcsActionsUtil.java" startLine="62" startPosition="69" endLine="63" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="226179684898997012" fileName="VcsActionsUtil.java" startLine="65" startPosition="27" endLine="66" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8230098746512809176" fileName="VcsActionsUtil.java" startLine="66" startPosition="88" endLine="67" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="226179684898927489" fileName="VcsActionsUtil.java" startLine="69" startPosition="9" endLine="70" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="226179684898997012" fileName="VcsActionsUtil.java" startLine="65" startPosition="27" endLine="66" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8230098746512809176" fileName="VcsActionsUtil.java" startLine="66" startPosition="78" endLine="67" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8940019524365938246" fileName="VcsActionsUtil.java" startLine="69" startPosition="9" endLine="70" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8230098746512809192" fileName="VcsActionsUtil.java" startLine="71" startPosition="30" endLine="72" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8230098746512809195" fileName="VcsActionsUtil.java" startLine="72" startPosition="25" endLine="73" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8230098746512809208" fileName="VcsActionsUtil.java" startLine="74" startPosition="36" endLine="75" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -839,7 +839,7 @@
       <varInfo nodeId="8230098746512809300" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="8230098746512809340" fileName="VcsActionsUtil.java" startLine="179" startPosition="31" endLine="192" endPosition="26" />
-    <scopeInfo nodeId="8230098746512809107" fileName="VcsActionsUtil.java" startLine="55" startPosition="9" endLine="70" endPosition="108">
+    <scopeInfo nodeId="8230098746512809107" fileName="VcsActionsUtil.java" startLine="55" startPosition="9" endLine="70" endPosition="136">
       <varInfo nodeId="8230098746512809134" varName="content" />
       <varInfo nodeId="226179684899072584" varName="contentTitles" />
       <varInfo nodeId="8230098746512809109" varName="file" />

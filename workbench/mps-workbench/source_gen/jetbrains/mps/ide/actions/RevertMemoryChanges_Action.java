@@ -58,7 +58,7 @@ public class RevertMemoryChanges_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ((EditableSModel) ((SModel) MapSequence.fromMap(_params).get("model"))).reloadFromDisk();
+      ((EditableSModel) ((SModel) MapSequence.fromMap(_params).get("model"))).reloadFromSource();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "RevertMemoryChanges", t);
     }

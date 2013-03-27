@@ -82,7 +82,7 @@
     <nodeInfo nodeId="5487985028841902346" fileName="ScriptsMenuBuilder.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="allScripts" />
     <nodeInfo nodeId="5487985028841902354" fileName="ScriptsMenuBuilder.java" startLine="20" startPosition="55" endLine="21" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841902360" fileName="ScriptsMenuBuilder.java" startLine="21" startPosition="45" endLine="22" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841902379" fileName="ScriptsMenuBuilder.java" startLine="24" startPosition="52" endLine="25" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5487985028841902379" fileName="ScriptsMenuBuilder.java" startLine="24" startPosition="52" endLine="25" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841902393" fileName="ScriptsMenuBuilder.java" startLine="27" startPosition="13" endLine="28" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841902408" fileName="ScriptsMenuBuilder.java" startLine="31" startPosition="45" endLine="32" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5487985028841902414" fileName="ScriptsMenuBuilder.java" startLine="32" startPosition="61" endLine="33" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -105,7 +105,7 @@
     <nodeInfo nodeId="5487985028841902430" fileName="ScriptsMenuBuilder.java" startLine="38" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="create_ByBuildPopup#()Ljetbrains/mps/workbench/action/BaseGroup;" />
     <nodeInfo nodeId="5487985028841902456" fileName="ScriptsMenuBuilder.java" startLine="45" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="create_ByLanguagePopup#()Ljetbrains/mps/workbench/action/BaseGroup;" />
     <nodeInfo nodeId="5487985028841902350" fileName="ScriptsMenuBuilder.java" startLine="20" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ScriptsMenuBuilder#(Z)V" />
-    <scopeInfo nodeId="5487985028841902378" fileName="ScriptsMenuBuilder.java" startLine="24" startPosition="52" endLine="25" endPosition="68" />
+    <scopeInfo nodeId="5487985028841902378" fileName="ScriptsMenuBuilder.java" startLine="24" startPosition="52" endLine="25" endPosition="64" />
     <scopeInfo nodeId="5487985028841902476" fileName="ScriptsMenuBuilder.java" startLine="48" startPosition="72" endLine="49" endPosition="105" />
     <scopeInfo nodeId="5487985028841902489" fileName="ScriptsMenuBuilder.java" startLine="54" startPosition="38" endLine="55" endPosition="27" />
     <scopeInfo nodeId="5487985028841902377" fileName="ScriptsMenuBuilder.java" startLine="24" startPosition="0" endLine="27" endPosition="0">

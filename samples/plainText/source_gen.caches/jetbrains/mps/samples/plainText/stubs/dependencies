@@ -49,7 +49,8 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.MultiStreamDataSource" />
-    <classNode extendsClassName="jetbrains.mps.smodel.BaseSModelDescriptorWithSource" />
+    <classNode extendsClassName="jetbrains.mps.extapi.model.EditableSModel" />
+    <classNode extendsClassName="jetbrains.mps.extapi.model.ReloadableSModelBase" />
     <classNode extendsClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.samples.plainText.stubs.TextPersistenceUtil" file="TextPersistenceUtil.java">

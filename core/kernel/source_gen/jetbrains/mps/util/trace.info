@@ -654,8 +654,8 @@
     <unitInfo nodeId="5504093910384079631" fileName="StringsIO.java" startLine="19" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.util.StringsIO" />
   </root>
   <root nodeRef="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)/5755638771828906585">
-    <nodeInfo nodeId="5755638771828834267" fileName="ModuleNameUtil.java" startLine="11" startPosition="59" endLine="12" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5755638771828834273" fileName="ModuleNameUtil.java" startLine="12" startPosition="48" endLine="13" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5755638771828834267" fileName="ModuleNameUtil.java" startLine="11" startPosition="59" endLine="12" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5755638771828834273" fileName="ModuleNameUtil.java" startLine="12" startPosition="46" endLine="13" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5755638771828834278" fileName="ModuleNameUtil.java" startLine="13" startPosition="65" endLine="14" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5755638771828834283" fileName="ModuleNameUtil.java" startLine="14" startPosition="67" endLine="15" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5755638771828906587" fileName="ModuleNameUtil.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModuleNameUtil#()V" />

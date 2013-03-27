@@ -13,14 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;
 
+import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.findUsages.fastfind.FastFindSupport;
-import jetbrains.mps.findUsages.fastfind.FastFindSupportProvider;
-import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.DefaultModelPersistence;
@@ -37,16 +35,16 @@ import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.RefactoringsPersistence;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 
+import java.io.IOException;
 import java.util.Map;
 
 import static jetbrains.mps.smodel.DefaultSModel.InvalidDefaultSModel;
 
-public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implements GeneratableSModel, RefactorableSModelDescriptor, FastFindSupportProvider {
+public class DefaultSModelDescriptor extends EditableSModelBase implements GeneratableSModel, RefactorableSModelDescriptor {
   private static final Logger LOG = Logger.getLogger(DefaultSModelDescriptor.class);
-  public static String FAST_FIND_ID = "regular";
 
   private final UpdateableModel myModel = new UpdateableModel(this) {
     @Override
@@ -55,12 +53,12 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
       if (state == ModelLoadingState.ROOTS_LOADED) {
         ModelLoadResult result = loadSModel(ModelLoadingState.ROOTS_LOADED);
         tryFixingVersion(result.getModel());
-        updateDiskTimestamp();
+        updateTimestamp();
         return result;
       }
       if (state == ModelLoadingState.FULLY_LOADED) {
         DefaultSModel fullModel = loadSModel(ModelLoadingState.FULLY_LOADED).getModel();
-        updateDiskTimestamp();
+        updateTimestamp();
         if (current == null) return new ModelLoadResult(fullModel, ModelLoadingState.FULLY_LOADED);
         current.setUpdateMode(true);   //not to send events on changes
         fullModel.setUpdateMode(true);
@@ -155,11 +153,11 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
     }
 
     LOG.assertLog(model.getReference().equals(dsmRef),
-      "\nError loading model from: \"" + source.getLocation() + "\"\n" +
-        "expected model UID     : \"" + dsmRef + "\"\n" +
-        "but was UID            : \"" + model.getReference() + "\"\n" +
-        "the model will not be available.\n" +
-        "Make sure that all project's roots and/or the model namespace is correct");
+        "\nError loading model from: \"" + source.getLocation() + "\"\n" +
+            "expected model UID     : \"" + dsmRef + "\"\n" +
+            "but was UID            : \"" + model.getReference() + "\"\n" +
+            "the model will not be available.\n" +
+            "Make sure that all project's roots and/or the model namespace is correct");
     return result;
   }
 
@@ -195,7 +193,7 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
   }
 
   @Override
-  protected boolean saveModel() {
+  protected boolean saveModel() throws IOException {
     DefaultSModel smodel = getSModelInternal();
     if (smodel instanceof InvalidSModel) {
       // we do not save stub model to not overwrite the real model
@@ -270,7 +268,7 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
     int latestVersion = getStructureModificationLog().getLatestVersion(getSModelReference());
     myStructureModificationLog = null;  // we don't need to keep log in memory
     if (latestVersion != -1) {
-      ( loadedSModel).setVersion(latestVersion);
+      (loadedSModel).setVersion(latestVersion);
       LOG.error("Version for model " + getSModelReference().getModelName() + " was not set.");
     }
   }
@@ -290,26 +288,20 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
   }
 
   @Override
-  protected void reload() {
+  protected void reloadContents() {
     try {
       myHeader = ModelPersistence.loadDescriptor(getSource());
     } catch (ModelReadException e) {
-      updateDiskTimestamp();
+      updateTimestamp();
       SuspiciousModelHandler.getHandler().handleSuspiciousModel(this, false);
       return;
     }
 
-    updateDiskTimestamp();
+    updateTimestamp();
 
     if (myModel.getState() == ModelLoadingState.NOT_LOADED) return;
 
     ModelLoadResult result = loadSModel(myModel.getState());
     replaceModel(result.getModel(), result.getState());
-  }
-
-  @Nullable
-  @Override
-  public FastFindSupport getFastFindSupport() {
-    return FastFindSupportRegistry.getInstance().getFastFindSupport(FAST_FIND_ID);
   }
 }

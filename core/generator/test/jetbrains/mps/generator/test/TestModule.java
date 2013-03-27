@@ -15,17 +15,18 @@
  */
 package jetbrains.mps.generator.test;
 
+import jetbrains.mps.extapi.model.PersistenceProblem;
+import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.dependency.modules.DependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.smodel.BaseSModelDescriptor;
 import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
+import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.StubModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.CollectionUtil;
@@ -34,13 +35,17 @@ import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModel.Problem;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -114,7 +119,8 @@ public class TestModule extends AbstractModule {
     return "Test Transient models";
   }
 
-  public List<SModel> getOwnModelDescriptors() {
+  @Override
+  public List<SModel> getModels() {
     return new ArrayList<SModel>(myModels.values());
   }
 
@@ -167,7 +173,7 @@ public class TestModule extends AbstractModule {
 
     @Override
     public jetbrains.mps.smodel.SModel createModel() {
-      Document document = ModelPersistence.saveModel(((BaseSModelDescriptor) myToCopy).getSModelInternal());
+      Document document = ModelPersistence.saveModel(((SModelBase) myToCopy).getSModelInternal());
       Element rootElement = document.getRootElement();
       rootElement.setAttribute(ModelPersistence.MODEL_UID, getSModelReference().toString());
       String modelContent = JDOMUtil.asString(document);
@@ -187,6 +193,22 @@ public class TestModule extends AbstractModule {
         }
       }
       return super.resolveModel(reference);
+    }
+  }
+
+  private static class StubModel extends jetbrains.mps.smodel.SModel implements InvalidSModel {
+    private ModelReadException myCause;
+
+    public StubModel(@NotNull SModelReference modelReference, @Nullable ModelReadException cause) {
+      super(modelReference);
+      myCause = cause;
+    }
+
+    @NotNull
+    @Override
+    public Iterable<Problem> getProblems() {
+      return Collections.<Problem>singleton(
+          new PersistenceProblem(myCause == null ? "Couldn't read model." : myCause.getMessageEx(), null, true));
     }
   }
 }
