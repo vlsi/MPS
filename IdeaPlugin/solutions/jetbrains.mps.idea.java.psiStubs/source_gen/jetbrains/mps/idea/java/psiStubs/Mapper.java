@@ -4,20 +4,31 @@ package jetbrains.mps.idea.java.psiStubs;
 
 import jetbrains.mps.idea.core.psi.MPS2PsiMapper;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 import com.intellij.psi.PsiElement;
 import com.intellij.openapi.project.Project;
 
 public class Mapper implements MPS2PsiMapper {
   @Override
-  public boolean canBeMine(SNode node) {
-    return node.getModel() instanceof PsiJavaStubModelDescriptor;
+  public boolean canBeMine(final SNode node) {
+    return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      public Boolean compute() {
+        return node.getModel() instanceof PsiJavaStubModelDescriptor;
+      }
+    });
   }
 
 
 
   @Override
-  public PsiElement getPsiElement(SNode node, Project project) {
-    PsiJavaStubModelDescriptor psiModel = (PsiJavaStubModelDescriptor) node.getModel();
-    return psiModel.getPsiSource(node);
+  public PsiElement getPsiElement(final SNode node, Project project) {
+    return ModelAccess.instance().runReadAction(new Computable<PsiElement>() {
+      public PsiElement compute() {
+        PsiJavaStubModelDescriptor psiModel = (PsiJavaStubModelDescriptor) node.getModel();
+        return psiModel.getPsiSource(node);
+      }
+    });
+
   }
 }
