@@ -90,6 +90,7 @@
     <directClassInheritorsSearch implementation="jetbrains.mps.idea.java.usages.MPSJavaDirectInheritorsSearcher"/>
     <methodReferencesSearch implementation="jetbrains.mps.idea.java.usages.MPSMethodReferencesSearch"/>
     <refactoring.elementListenerProvider implementation="jetbrains.mps.idea.java.refactoring.RefactoringListenerProvider"/>
+    <fileBasedIndex implementation="jetbrains.mps.idea.java.index.FQNameJavaClassIndex"/>
   </extensions>
 
   <extensions defaultExtensionNs="jetbrains.mps">
