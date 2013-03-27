@@ -20,7 +20,8 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.tempmodel.TempModelBuilder;
+import jetbrains.mps.smodel.tempmodel.TemporaryModels;
+import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.project.GlobalScope;
 import java.util.Collections;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
@@ -94,12 +95,11 @@ public class ShowNodeType_Action extends BaseAction {
       }
 
       final Wrappers._T<SModel> tmpModel = new Wrappers._T<SModel>();
-      final TempModelBuilder builder = new TempModelBuilder(false, GlobalScope.getInstance(), Collections.<ModelRootDescriptor>emptySet());
 
       try {
         ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
           public void run() {
-            tmpModel.value = builder.create();
+            tmpModel.value = TemporaryModels.getInstance().create(false, new TempModuleOptions.NewModuleOptions(GlobalScope.getInstance(), Collections.<ModelRootDescriptor>emptySet()));
             tmpModel.value.addRootNode(type.value);
           }
         });
@@ -108,7 +108,7 @@ public class ShowNodeType_Action extends BaseAction {
         ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
           public void run() {
             tmpModel.value.removeRootNode(type.value);
-            builder.dispose();
+            TemporaryModels.getInstance().dispose(tmpModel.value);
           }
         });
       }
