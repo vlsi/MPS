@@ -1200,6 +1200,11 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1206027602242" resolveInfo="QueryFunction_ReturnSmallPart" />
     </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8749184937172692767">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="selectionHandler" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="441141899447644451" resolveInfo="QueryFunction_Substitute_SelectionHandler" />
+    </node>
   </root>
   <root id="1177402571666" />
   <root id="1177402641904">

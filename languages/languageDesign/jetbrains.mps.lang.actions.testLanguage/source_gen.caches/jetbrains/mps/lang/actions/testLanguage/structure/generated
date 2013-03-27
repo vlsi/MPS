@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-ew172m6be8z9s5sbax72dc8p3nizvy4">
+<dependencies version="2" modelHash="eqt9s3najh3kxtphk68mylbb45dkun3">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-b2l5iyygy2vjqkbekn4rvaubf6n8cmr" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="3v74ubfhw87m42z14436qwtkyptdd6v" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
@@ -26,7 +26,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="2550657305103395183" name="ActionTestContainer" hash="1pidoyvkmt6axeek5f3diigqjg4ctra">
+  <source id="2550657305103395183" name="ActionTestContainer" hash="6ztawttfqrb7q2e6xvcyqj365xj6ti">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="2550657305103411658" name="ActionTestAbstractChild" hash="66k42oc12v4usft88cck3ua5xlex7uu">
@@ -47,7 +47,7 @@
   <source id="5164819300892650829" name="ActionTestChildWrapper" hash="3weyl8106w69c3v47pl1x8ptae4yapc">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5164819300894579629" name="ActionTestChildToWrap1" hash="d42l4piv4ah9hwwyczsk2ou6n54j08j">
+  <source id="5164819300894579629" name="ActionTestChildToWrap1" hash="-803jxme50ptrv0mdrkjac27lgh7z4xa">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="2747974755163525074" name="ActionTestChildToWrap2" hash="eea31oi8olmpbki06qwevmegwhh118e">

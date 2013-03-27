@@ -31,6 +31,7 @@ import jetbrains.mps.smodel.action.IChildNodeSetter;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.ModelActions;
+import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
 import jetbrains.mps.smodel.action.RemoveSubstituteActionByConditionContext;
 import java.util.Iterator;
 import jetbrains.mps.util.Condition;
@@ -504,6 +505,7 @@ public class QueriesGenerated {
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap1");
+        final boolean[] returnSmallPartResult = new boolean[]{false};
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
           private SNode wrapNode(SNode nodeToWrap, SModel model, @Nullable EditorContext editorContext) {
             // compilation test for all passed parameters 
@@ -538,13 +540,95 @@ public class QueriesGenerated {
           public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
             _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
-            return (returnSmallPart(nc) ?
+            return ((returnSmallPartResult[0] = returnSmallPart(nc)) ?
               nc :
               wrappedNode
             );
           }
         };
-        ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext)));
+        for (SubstituteAction substituteAction : ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext))) {
+          ListSequence.fromList(result).addElement(new NodeSubstituteActionWrapper(substituteAction) {
+            @Override
+            public SNode substitute(@Nullable EditorContext editorContext, String pattern) {
+              SNode substitutionResult = super.substitute(editorContext, pattern);
+              if (returnSmallPartResult[0]) {
+                return substitutionResult;
+              }
+              return setupSelection(substitutionResult, substitutionResult.getModel(), pattern, editorContext);
+            }
+
+            private SNode setupSelection(SNode createdNode, SModel model, String pattern, EditorContext editorContext) {
+              // compilation test for all passed parameters 
+              boolean tmpVar = _context.getParentNode() != null;
+              tmpVar = tmpVar && _context.getParentNode() != null;
+              tmpVar = tmpVar && createdNode != null;
+              tmpVar = tmpVar && _context.getChildConcept() != null;
+              tmpVar = tmpVar && model != null;
+              tmpVar = tmpVar && operationContext != null;
+              tmpVar = tmpVar && operationContext.getScope() != null;
+              tmpVar = tmpVar && editorContext != null;
+
+              // selecting a custom cell 
+              editorContext.flushEvents();
+              EditorCell createdNodeCell = editorContext.getEditorComponent().findNodeCell(createdNode);
+              if (createdNodeCell != null) {
+                EditorCell firstLeaf = CellTraversalUtil.getFirstLeaf(createdNodeCell);
+                editorContext.getEditorComponent().changeSelection(firstLeaf);
+                if (firstLeaf instanceof EditorCell_Label) {
+                  ((EditorCell_Label) firstLeaf).setCaretPosition(2);
+                }
+                return null;
+              }
+              return createdNode;
+
+            }
+          });
+        }
+      }
+    }
+    return result;
+  }
+
+  public static boolean nodeSubstituteActionsBuilder_Precondition_ActionTestAbstractChildWrapper_2870536390415191470(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
+    return _context.getLink() == SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestContainer", "addMenu_wrapperSubstitute");
+  }
+
+  public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ActionTestChildToWrap1_8749184937171477954(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap1");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
+          public Iterable<SNode> compute() {
+            return SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap1"), _context.getModel(), operationContext.getScope());
+          }
+        }.compute();
+        if (queryResult != null) {
+          for (final SNode item : queryResult) {
+            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+              public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+                return SConceptOperations.createNewNode(NameUtil.nodeFQName((item)), null);
+              }
+
+              @Override
+              protected SNode selectChildNode(SNode createdNode, SModel model, String pattern, EditorContext editorContext) {
+                // selecting a custom cell 
+                editorContext.flushEvents();
+                EditorCell createdNodeCell = editorContext.getEditorComponent().findNodeCell(createdNode);
+                if (createdNodeCell != null) {
+                  EditorCell firstLeaf = CellTraversalUtil.getFirstLeaf(createdNodeCell);
+                  editorContext.getEditorComponent().changeSelection(firstLeaf);
+                  if (firstLeaf instanceof EditorCell_Label) {
+                    ((EditorCell_Label) firstLeaf).setCaretPosition(5);
+                  }
+                  return null;
+                }
+                return createdNode;
+              }
+            });
+          }
+        }
       }
     }
     return result;
@@ -601,6 +685,54 @@ public class QueriesGenerated {
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_ActionTestDefaultAbstractChild_8349639607733417630(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return _context.getLink() == SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestContainer", "removeDefaultsPart");
+  }
+
+  public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ActionTestAbstractChildWrapper_2870536390415252135(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildWrapper");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap1");
+        IChildNodeSetter setter = new AbstractChildNodeSetter() {
+          private SNode wrapNode(SNode nodeToWrap, SModel model, @Nullable EditorContext editorContext) {
+            // compilation test for all passed parameters 
+            boolean tmpVar = nodeToWrap != null;
+            tmpVar = tmpVar && _context.getParentNode() != null;
+            tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
+            tmpVar = tmpVar && _context.getChildConcept() != null;
+            tmpVar = tmpVar && model != null;
+            tmpVar = tmpVar && operationContext != null;
+            tmpVar = tmpVar && operationContext.getScope() != null;
+            tmpVar = tmpVar && editorContext != null;
+
+            SNode wrapperNode = SConceptOperations.createNewNode("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildWrapper", null);
+            SLinkOperations.setTarget(wrapperNode, "childToWrap", nodeToWrap, true);
+            return wrapperNode;
+          }
+
+          public boolean returnSmallPart(SNode nodeToWrap) {
+            return false;
+          }
+
+          @Override
+          public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc, @Nullable EditorContext editorContext) {
+            SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
+            _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope(), editorContext);
+            return (returnSmallPart(nc) ?
+              nc :
+              wrappedNode
+            );
+          }
+        };
+        ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext)));
+      }
+    }
+    return result;
+  }
+
+  public static boolean nodeSubstituteActionsBuilder_Precondition_ActionTestAbstractChildWrapper_2870536390415252400(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
+    return _context.getLink() == SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.actions.testLanguage.structure.ActionTestContainer", "addMenu_wrapperSubstituteDefaultSelection");
   }
 
   private static SNode _quotation_createNode_qp9nsj_a0l0a0a0(Object parameter_1) {

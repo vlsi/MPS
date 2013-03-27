@@ -385,12 +385,32 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "actionType", true) != null;
   }
 
+  public static boolean ifMacro_Condition_6499296841879711782(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "returnSmallPart", true) != null;
+  }
+
   public static boolean ifMacro_Condition_6012793257439148954(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "returnSmallPart", true) != null);
   }
 
   public static boolean ifMacro_Condition_6012793257439155258(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "returnSmallPart", true) == null);
+  }
+
+  public static boolean ifMacro_Condition_2870536390420690535(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "returnSmallPart", true) != null;
+  }
+
+  public static boolean ifMacro_Condition_6499296841840697557(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "selectionHandler", true) == null;
+  }
+
+  public static boolean ifMacro_Condition_6499296841840908919(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "selectionHandler", true) != null;
+  }
+
+  public static boolean ifMacro_Condition_6499296841881101221(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "returnSmallPart", true) != null;
   }
 
   public static boolean ifMacro_Condition_1181738756958(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -861,6 +881,10 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_4116292117916183055(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "returnSmallPart", true), "body", true), "statement", true);
+  }
+
+  public static Iterable sourceNodesQuery_6499296841882321994(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "selectionHandler", true), "body", true), "statement", true);
   }
 
   public static Iterable sourceNodesQuery_1181738947315(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
