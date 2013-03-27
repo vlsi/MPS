@@ -15,20 +15,33 @@
  */
 package jetbrains.mps.smodel.tempmodel;
 
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.module.SModule;
 
+import java.util.Collections;
 import java.util.Set;
 
-public interface TempModuleOptions {
-  public SModule createModule();
+public abstract class TempModuleOptions {
+  public abstract SModule createModule();
 
-  public void disposeModule();
+  public abstract void disposeModule();
 
+  public static TempModuleOptions forExistingModule(SModule m) {
+    return new ExistingModuleOptions(m);
+  }
 
-  public static class NewModuleOptions implements TempModuleOptions {
+  public static TempModuleOptions forNewModule(IScope scope, Set<ModelRootDescriptor> modelRoots) {
+    return new NewModuleOptions(scope, modelRoots);
+  }
+
+  public static TempModuleOptions forDefaultModule() {
+    return new NewModuleOptions(GlobalScope.getInstance(), Collections.<ModelRootDescriptor>emptySet());
+  }
+
+  private static class NewModuleOptions extends TempModuleOptions {
     private IScope myScope;
     private Set<ModelRootDescriptor> myModelRoots;
     private TempModule myCreatedModule;
@@ -52,7 +65,7 @@ public interface TempModuleOptions {
     }
   }
 
-  public static class ExistingModuleOptions implements TempModuleOptions {
+  private static class ExistingModuleOptions extends TempModuleOptions {
     private SModule myModule;
 
     public ExistingModuleOptions(SModule module) {
