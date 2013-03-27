@@ -11,10 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.structure.modules.SolutionKind;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -88,8 +85,7 @@ public class QueriesGenerated {
     if (model == null) {
       return false;
     }
-    SModule module = model.getModule();
-    return module instanceof Language || module instanceof Solution && ((Solution) module).getModuleDescriptor().getKind() != SolutionKind.NONE;
+    return ClassLoaderManager.getInstance().canLoad(model.getModule());
   }
 
   public static boolean ifMacro_Condition_2264311582634172379(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -157,8 +153,7 @@ public class QueriesGenerated {
     if (model == null) {
       return false;
     }
-    SModule module = model.getModule();
-    return module instanceof Language || module instanceof Solution && ((Solution) module).getModuleDescriptor().getKind() != SolutionKind.NONE;
+    return ClassLoaderManager.getInstance().canLoad(model.getModule());
   }
 
   public static SNode sourceNodeQuery_2264311582634171618(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

@@ -27,25 +27,15 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.Collection;
 import java.util.List;
 
 public interface IModule extends SModule {
-  // events
-  // dependency change
-  // used languages change
-
   // ?, move to AbstractModule, remove usages as much as possible
   // up reasonable getters to SModule
   ModuleDescriptor getModuleDescriptor();
-
-  // ?, move to AbstractModule, remove usages as much as possible
-  // add setters to IModule and use it as much as possible
-  // invalidate something if only current != prev
-  void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses);
 
   //----deps
 
@@ -84,23 +74,6 @@ public interface IModule extends SModule {
    */
   Collection<SModuleReference> getUsedDevkitReferences();
 
-  // module source path stuff
-
-  // wtf? If it home for module descriptor just use module descriptor dir!
-  // ooups. for packaged modules it's jar file
-  // so check usages of method! why we need it?
-  // -> getModuleFolder()
-  // so getModuleFolder() is ${module} getter and should be open
-  // getModuleFile() is ok, but with cast
-  // other things is forbidden
-  // !!! to be notice: 2 jars: src and compiled classes
-
-  // ?, move to AbstractModule, remove usages as much as possible
-  // IFile getModuleRoot() <- clash with model root // to SModuleOperations / maybe SModule
-  // IFile getModuleFolder() ?
-  // use as much as possible
-  IFile getDescriptorFile();
-
   // cast to AbstractModule to use this methods
   void addDependency(SModuleReference moduleRef, boolean reexport);
 
@@ -113,6 +86,10 @@ public interface IModule extends SModule {
   void attach();
 
   void dispose();
+
+  IFile getDescriptorFile();
+
+  void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses);
 
   // migrate by renaming
 

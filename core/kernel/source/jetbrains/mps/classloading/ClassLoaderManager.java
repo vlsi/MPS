@@ -117,7 +117,7 @@ public class ClassLoaderManager implements CoreComponent {
     }
 
     // todo: mps facet here
-    return module instanceof Solution && (MPSCore.getInstance().isTestMode() || ((Solution) module).getModuleDescriptor().getKind() != SolutionKind.NONE);
+    return module instanceof Solution && ((Solution) module).getKind() != SolutionKind.NONE;
   }
 
   public Class getClass(SModule module, String classFqName) {

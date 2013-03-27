@@ -39,7 +39,11 @@ public class DesignPartLoader {
         if (module instanceof TransientModelsModule) {
           module = ((TransientModelsModule) module).getOriginalModule();
         }
-        klass = ClassLoaderManager.getInstance().getClass(module, fqClassName);
+        if (ClassLoaderManager.getInstance().canLoad(module)) {
+          klass = ClassLoaderManager.getInstance().getClass(module, fqClassName);
+        } else {
+          klass = null;
+        }
         classes.put(fqClassName, klass);
       }
       if (klass == null) {

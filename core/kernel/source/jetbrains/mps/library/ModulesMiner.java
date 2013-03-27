@@ -17,13 +17,14 @@ package jetbrains.mps.library;
 
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ProjectPathUtil;
 import jetbrains.mps.project.io.DescriptorIOFacade;
 import jetbrains.mps.project.persistence.DeploymentDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import org.jetbrains.mps.openapi.module.SModuleReference;import jetbrains.mps.project.structure.modules.*;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
@@ -267,9 +268,13 @@ public class ModulesMiner {
   }
 
   @Nullable
-  public static IFile getRealDescriptorFile(IModule module) {
-    if (module.getDescriptorFile() != null && module.getModuleDescriptor() != null && module.getModuleDescriptor().getDeploymentDescriptor() != null) {
-      return getRealDescriptorFile(module.getDescriptorFile().getPath(), module.getModuleDescriptor().getDeploymentDescriptor());
+  public static IFile getRealDescriptorFile(SModule m) {
+    if (!(m instanceof AbstractModule)) {
+      return null;
+    }
+    AbstractModule module = (AbstractModule) m;
+    if (module.getModuleSourceDir() != null && module.getModuleDescriptor() != null && module.getModuleDescriptor().getDeploymentDescriptor() != null) {
+      return module.getModuleSourceDir().getDescendant(module.getModuleDescriptor().getDeploymentDescriptor().getDescriptorFile());
     }
     return null;
   }
