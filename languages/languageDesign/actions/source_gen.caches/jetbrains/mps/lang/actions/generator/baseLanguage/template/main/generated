@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-3barvpd4mkklvcdepeacqri28yq9zkd">
+<dependencies version="2" modelHash="11m944sy2al6dy3x96pkdv706bq7351">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.datatransfer(MPS.Core/jetbrains.mps.datatransfer@java_stub)" />
@@ -115,7 +115,7 @@
   <source id="1177399350680" name="RegisterMenuPart_Parameterized_subst" hash="-bfd730nrps2lpo4wimsbjfzomkboyjh">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1177404507206" name="RegisterMenuPart_Wrapper_subst" hash="8emm9f8mue5tzyu0mrfx4eb00hdmf9j">
+  <source id="1177404507206" name="RegisterMenuPart_Wrapper_subst" hash="bmwg3gkwwm6ibd1ajvocnf3mmqrbgl1">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1177414724801" name="MenuBuilderPartMethodRemoveByCondition_subst" hash="-8vdnjubzx6w4ot9cw1vwwj4ft75tp2g">

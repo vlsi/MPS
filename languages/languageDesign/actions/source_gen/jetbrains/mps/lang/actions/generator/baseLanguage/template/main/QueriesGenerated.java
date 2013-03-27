@@ -386,7 +386,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_6499296841879711782(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "returnSmallPart", true) != null;
+    return SLinkOperations.getTarget(_context.getNode(), "returnSmallPart", true) != null && SLinkOperations.getTarget(_context.getNode(), "selectionHandler", true) != null;
   }
 
   public static boolean ifMacro_Condition_6012793257439148954(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -398,7 +398,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_2870536390420690535(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "returnSmallPart", true) != null;
+    return SLinkOperations.getTarget(_context.getNode(), "returnSmallPart", true) != null && SLinkOperations.getTarget(_context.getNode(), "selectionHandler", true) != null;
   }
 
   public static boolean ifMacro_Condition_6499296841840697557(final IOperationContext operationContext, final IfMacroContext _context) {

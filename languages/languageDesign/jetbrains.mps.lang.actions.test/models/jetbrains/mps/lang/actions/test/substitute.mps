@@ -646,13 +646,20 @@
   </root>
   <root id="2870536390420394081">
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="kxd5.ActionTestContainer" typeId="kxd5.2550657305103395183" id="2870536390420394082">
-      <node role="addMenu_wrapperSubstitute" roleId="kxd5.5164819300892346417" type="kxd5.ActionTestAbstractChildWrapper" typeId="kxd5.5164819300892360561" id="2870536390421596917" />
-      <node role="addMenu_wrapperSubstituteDefaultSelection" roleId="kxd5.2870536390414919847" type="kxd5.ActionTestAbstractChildWrapper" typeId="kxd5.5164819300892360561" id="2870536390421569787" />
+      <node role="addMenu_wrapperSubstituteDefaultSelection" roleId="kxd5.2870536390414919847" type="kxd5.ActionTestAbstractChildWrapper" typeId="kxd5.5164819300892360561" id="2870536390421569787">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="3887084466904921517">
+          <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+          <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
+          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="0" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="Constant_uvdaa2_a" />
+        </node>
+      </node>
     </node>
     <node role="result" roleId="tp5g.1229187707859" type="kxd5.ActionTestContainer" typeId="kxd5.2550657305103395183" id="2870536390420394085">
-      <node role="addMenu_wrapperSubstituteDefaultSelection" roleId="kxd5.2870536390414919847" type="kxd5.ActionTestChildWrapper" typeId="kxd5.5164819300892650829" id="2870536390421992300">
-        <node role="childToWrap" roleId="kxd5.5164819300892650847" type="kxd5.ActionTestChildToWrap1" typeId="kxd5.5164819300894579629" id="2870536390421992299" />
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="2870536390421992303">
+      <node role="addMenu_wrapperSubstituteDefaultSelection" roleId="kxd5.2870536390414919847" type="kxd5.ActionTestChildWrapper" typeId="kxd5.5164819300892650829" id="3887084466904921547">
+        <node role="childToWrap" roleId="kxd5.5164819300892650847" type="kxd5.ActionTestChildToWrap1" typeId="kxd5.5164819300894579629" id="3887084466904921546" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="3887084466904921550">
           <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
           <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
           <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
