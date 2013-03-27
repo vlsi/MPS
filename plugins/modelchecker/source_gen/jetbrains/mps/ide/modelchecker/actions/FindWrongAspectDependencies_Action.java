@@ -86,8 +86,7 @@ public class FindWrongAspectDependencies_Action extends BaseAction {
     if (module instanceof Language) {
       return true;
     } else if (module instanceof Solution) {
-      SolutionKind kind = ((Solution) module).getModuleDescriptor().getKind();
-      return kind != SolutionKind.NONE;
+      return ((Solution) module).getKind() != SolutionKind.NONE;
     }
     return false;
   }
