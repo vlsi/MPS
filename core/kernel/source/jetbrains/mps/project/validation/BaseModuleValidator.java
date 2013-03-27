@@ -53,7 +53,7 @@ public class BaseModuleValidator<T extends AbstractModule> implements ModuleVali
         errors.add("Can't find dependency: " + moduleRef.getModuleName());
       }
     }
-    for (SModuleReference reference : myModule.getUsedLanguagesReferences()) {
+    for (SModuleReference reference : myModule.getModuleDescriptor().getUsedLanguages()) {
       if (ModuleRepositoryFacade.getInstance().getModule(reference, Language.class) == null) {
         errors.add("Can't find used language: " + reference.getModuleName());
       }

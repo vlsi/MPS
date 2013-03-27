@@ -15,8 +15,11 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes._return_P1_E0;
 import jetbrains.mps.extapi.persistence.FolderModelRootBase;
+import jetbrains.mps.internal.collections.runtime.impl.TranslatingSequence;
 import jetbrains.mps.project.structure.modules.Dependency;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
@@ -64,27 +67,12 @@ public class ModuleUtil {
   }
 
   public static Iterable<Language> getUsedLanguages(IModule module) {
-    Iterable<Language> dependencies = new TranslatingIterator<SModuleReference, Language>(module.getUsedLanguagesReferences().iterator()) {
+    return new TranslatingSequence<SLanguage, Language>(module.getUsedLanguages(), new _return_P1_E0<Iterable<Language>, SLanguage>() {
       @Override
-      protected Language translate(SModuleReference ref) {
-        return ModuleRepositoryFacade.getInstance().getModule(ref, Language.class);
+      public Iterable<Language> invoke(SLanguage language) {
+        return Collections.singleton((Language) language.getModule());
       }
-    };
-    Iterable<Language> languagesFromDevkits = new TranslatingIterator<SModuleReference, Language>(
-      new CollectingManyIterator<DevKit, SModuleReference>(includingExtended(usedDevkits(module)).iterator()) {
-        @Override
-        protected Iterator<SModuleReference> translate(DevKit devkit) {
-          return devkit.getExportedLanguages_internal().iterator();
-        }
-      }) {
-
-      @Override
-      protected Language translate(SModuleReference node) {
-        return ModuleRepositoryFacade.getInstance().getModule(node, Language.class);
-      }
-    };
-    Language core = BootstrapLanguages.coreLanguage();
-    return includingExtendedLanguages(IterableUtil.merge(dependencies, languagesFromDevkits, Collections.singleton(core)));
+    });
   }
 
   private static Iterable<DevKit> usedDevkits(IModule module) {

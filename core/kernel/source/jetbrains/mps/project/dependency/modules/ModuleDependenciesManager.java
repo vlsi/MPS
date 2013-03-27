@@ -21,6 +21,7 @@ import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import org.jetbrains.mps.openapi.language.SLanguage;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -36,9 +37,8 @@ public class ModuleDependenciesManager<T extends IModule> implements Dependencie
   @Override
   public Collection<Language> directlyUsedLanguages() {
     Set<Language> result = new HashSet<Language>();
-    result.addAll(ModuleUtil.refsToLanguages(myModule.getUsedLanguagesReferences()));
-    for (DevKit dk : ModuleUtil.refsToDevkits(myModule.getUsedDevkitReferences())) {
-      result.addAll(dk.getAllExportedLanguages());
+    for (SLanguage language : myModule.getUsedLanguages()) {
+      result.add((Language) language.getModule());
     }
     return result;
   }

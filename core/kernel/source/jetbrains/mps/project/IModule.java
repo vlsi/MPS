@@ -58,16 +58,6 @@ public interface IModule extends SModule {
   // ?
 
   /**
-   * Explicitly used langs +
-   * <p>all bootstrap langs (for a generator)
-   *
-   * @return
-   */
-  Collection<SModuleReference> getUsedLanguagesReferences();
-
-  // ?
-
-  /**
    * Explicitly used devkits
    *
    * @return
@@ -115,6 +105,12 @@ public interface IModule extends SModule {
   IScope getScope();
 
   // ----- deprecated part
+
+  /**
+   * @see org.jetbrains.mps.openapi.module.SModule#getUsedLanguages()
+   */
+  @Deprecated
+  Collection<SModuleReference> getUsedLanguagesReferences();
 
   /**
    * Do nothing for now. If method change dependencies it invalidates cache by calling dependenciesChanged()

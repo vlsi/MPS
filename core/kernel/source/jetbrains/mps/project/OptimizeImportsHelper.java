@@ -170,7 +170,7 @@ public class OptimizeImportsHelper {
     }
 
     List<SModuleReference> unusedLanguages = new ArrayList<SModuleReference>();
-    for (SModuleReference langRef : module.getUsedLanguagesReferences()) {
+    for (SModuleReference langRef : module.getModuleDescriptor().getUsedLanguages()) {
       SModuleReference ref = getUnusedLanguageRef(result, langRef);
       if (ref != null) unusedLanguages.add(langRef);
     }
