@@ -15,7 +15,9 @@
  */
 package jetbrains.mps.persistence;
 
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
@@ -48,7 +50,9 @@ public class PersistenceUtil {
         return new ByteArrayInputStream(bytes);
       }
     }, Collections.<String, String>emptyMap());
-    model.load();
+    if (model != null) {
+      model.load();
+    }
     return model;
   }
 
@@ -63,7 +67,21 @@ public class PersistenceUtil {
         return new ByteArrayInputStream(content);
       }
     }, Collections.<String, String>emptyMap());
-    model.load();
+    if (model != null) {
+      model.load();
+    }
+    return model;
+  }
+
+  public static SModel loadModel(IFile file) {
+    ModelFactory factory = PersistenceFacade.getInstance().getModelFactory(FileUtil.getExtension(file.getName()));
+    if (factory == null) {
+      return null;
+    }
+    SModel model = factory.load(new FileDataSource(file), Collections.<String, String>emptyMap());
+    if (model != null) {
+      model.load();
+    }
     return model;
   }
 

@@ -116,7 +116,7 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
   }
 
   @Override
-  protected boolean saveModel() {
+  protected boolean saveModel() throws ModelSaveException, IOException {
     SModel smodel = getSModelInternal();
     if (smodel instanceof InvalidSModel) {
       // we do not save stub model to not overwrite the real model
@@ -128,8 +128,6 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
       if (brokenFile != null) {
         brokenFile.delete();
       }
-    } catch (IOException e) {
-      // TODO report ...
     } catch (ModelSaveException e) {
       IFile brokenFile = getBackupFile(false);
       try {
@@ -137,7 +135,7 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
       } catch (ModelSaveException ignore) {
       } catch (IOException ignore) {
       }
-      // TODO report
+      throw e;
     }
     return false;
   }

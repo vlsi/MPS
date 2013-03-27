@@ -31,6 +31,7 @@ import jetbrains.mps.smodel.persistence.def.RefactoringsPersistence;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 
+import java.io.IOException;
 import java.util.Map;
 
 import static jetbrains.mps.persistence.binary.BinarySModel.InvalidBinarySModel;
@@ -99,7 +100,7 @@ public class BinarySModelDescriptor extends EditableSModelBase implements Genera
   }
 
   @Override
-  protected boolean saveModel() {
+  protected boolean saveModel() throws IOException {
     BinarySModel smodel = getSModelInternal();
     if (smodel instanceof InvalidSModel) {
       // we do not save stub model to not overwrite the real model

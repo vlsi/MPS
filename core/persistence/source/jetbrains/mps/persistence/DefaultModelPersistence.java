@@ -116,7 +116,7 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
   }
 
   @Override
-  public void save(SModel model, StreamDataSource dataSource) {
+  public void save(SModel model, StreamDataSource dataSource) throws IOException {
     ModelPersistence.saveModel(((SModelBase)model).getSModelInternal(), dataSource);
   }
 
