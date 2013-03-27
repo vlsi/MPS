@@ -129,7 +129,7 @@ public class MergeRootsPane {
     myTraverser.previousAction().registerCustomShortcutSet(NextPreviousTraverser.PREV_CHANGE_SHORTCUT, myPanel);
     myTraverser.nextAction().registerCustomShortcutSet(NextPreviousTraverser.NEXT_CHANGE_SHORTCUT, myPanel);
     myActionGroup.addSeparator();
-    myActionGroup.add(new ToggleAction("Show Inspector", "Show Inspector Windows", IdeIcons.DEFAULT_ICON) {
+    myActionGroup.add(new ToggleAction("Show Inspector", "Show Inspector Windows", IdeIcons.INSPECTOR_ICON) {
       public boolean isSelected(AnActionEvent e) {
         return isInspectorShown;
       }
