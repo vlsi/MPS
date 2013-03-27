@@ -81,7 +81,13 @@ public class APICellAdapter {
   }
 
   public static SNode getSNodeWRTReference(EditorCell cell) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getSNodeWRTReference();
+    SNode target = cell.getStyle().get(StyleAttributes.NAVIGATABLE_NODE);
+    if (target != null) {
+      return target;
+    }
+    SNode node = cell.getSNode();
+    SNode referentNode = node.getReferenceTarget(cell.getRole());
+    return referentNode != null ? referentNode : node;
   }
 
   public static boolean validate(EditorCell cell, boolean strict, boolean canActivatePopup) {
