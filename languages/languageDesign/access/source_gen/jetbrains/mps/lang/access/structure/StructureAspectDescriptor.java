@@ -28,13 +28,15 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 6:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement", "jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync", false, new String[]{"jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync"}, new String[]{}, new String[]{});
       case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.access.structure.ExecuteWriteActionStatement", "jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync", false, new String[]{"jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.access.structure.ExecuteTransparentCommandStatement", "jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync", false, new String[]{"jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync"}, new String[]{}, new String[]{});
       case 8:
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.access.structure.ExecuteWriteActionStatement", "jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync", false, new String[]{"jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync"}, new String[]{}, new String[]{});
+      case 9:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.access.structure.IExecuteCommandStatementSync", null, true, new String[]{}, new String[]{}, new String[]{});
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
 
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement", "jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync", "jetbrains.mps.lang.access.structure.CommandClosureLiteral", "jetbrains.mps.lang.access.structure.ExecuteCommandInEDTStatement", "jetbrains.mps.lang.access.structure.ExecuteCommandStatement", "jetbrains.mps.lang.access.structure.ExecuteEDTCommandStatement", "jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement", "jetbrains.mps.lang.access.structure.ExecuteWriteActionStatement", "jetbrains.mps.lang.access.structure.IExecuteCommandStatementSync"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement", "jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync", "jetbrains.mps.lang.access.structure.CommandClosureLiteral", "jetbrains.mps.lang.access.structure.ExecuteCommandInEDTStatement", "jetbrains.mps.lang.access.structure.ExecuteCommandStatement", "jetbrains.mps.lang.access.structure.ExecuteEDTCommandStatement", "jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement", "jetbrains.mps.lang.access.structure.ExecuteTransparentCommandStatement", "jetbrains.mps.lang.access.structure.ExecuteWriteActionStatement", "jetbrains.mps.lang.access.structure.IExecuteCommandStatementSync"};
 }

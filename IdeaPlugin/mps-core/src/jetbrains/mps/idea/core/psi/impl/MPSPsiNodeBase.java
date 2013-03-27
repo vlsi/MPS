@@ -42,6 +42,9 @@ public abstract class MPSPsiNodeBase extends LightElement {
   private NodeList children;
   private NodeList.Entry listEntry;
 
+  private MPSPsiModel cachedModel;
+  private int cachedTreePosition;
+
   public MPSPsiNodeBase() {
     this(null);
   }
@@ -62,11 +65,17 @@ public abstract class MPSPsiNodeBase extends LightElement {
 
   public MPSPsiModel getContainingModel() {
     PsiElement parent = this;
+    PsiElement grandPa = null;
     while (parent != null && !(parent instanceof MPSPsiModel)) {
+      grandPa = parent;
       parent = parent.getParent();
     }
 
     if (parent == null) {
+      // at this point the tree is detached, let's try to return the model where it used to be
+      if (grandPa instanceof MPSPsiNodeBase && ((MPSPsiNodeBase) grandPa).cachedModel != null) {
+        return ((MPSPsiNodeBase) grandPa).cachedModel;
+      }
       throw new PsiInvalidElementAccessException(this);
     }
 
@@ -79,29 +88,24 @@ public abstract class MPSPsiNodeBase extends LightElement {
   }
 
   @Override
-  public int getTextOffset() {
-    PsiElement e = this;
-    while (e != null && !(e instanceof MPSPsiNode)) {
-      e = e.getParent();
-    }
-    if (e instanceof MPSPsiNode) {
-      return ((MPSPsiNode) e).getTextOffset();
-    } else {
-      return 0;
-    }
+  public TextRange getTextRange() {
+    int p = getTreePosition();
+    return new TextRange(p,p);
   }
 
   @Override
-  public TextRange getTextRange() {
-    PsiElement e = this;
-    while (e != null && !(e instanceof MPSPsiNode)) {
-      e = e.getParent();
+  public int getTextOffset() {
+    return getTreePosition();
+  }
+
+  private int getTreePosition() {
+    MPSPsiModel model = getContainingModel();
+    Integer pos = model.getNodePosition(this);
+    if (pos == null) {
+      return cachedTreePosition;
     }
-    if (e instanceof MPSPsiNode) {
-      return ((MPSPsiNode) e).getTextRange();
-    } else {
-      return TextRange.EMPTY_RANGE;
-    }
+    cachedTreePosition = pos;
+    return pos;
   }
 
   @Override
@@ -180,6 +184,24 @@ public abstract class MPSPsiNodeBase extends LightElement {
   @Override
   public PsiReference[] getReferences() {
     return PsiReference.EMPTY_ARRAY;
+  }
+
+  public MPSPsiRootNode getContainingRoot () {
+    PsiElement parent = this;
+    while (parent != null && !(parent instanceof MPSPsiRootNode)) {
+      parent = parent.getParent();
+    }
+
+    if (parent == null) {
+      throw new PsiInvalidElementAccessException(this);
+    }
+
+    return (MPSPsiRootNode) parent;
+  }
+
+  @Override
+  public boolean isPhysical() {
+    return true;
   }
 
   protected final Iterable<MPSPsiNodeBase> children () {
@@ -261,16 +283,11 @@ public abstract class MPSPsiNodeBase extends LightElement {
     return listEntry;
   }
 
-  public MPSPsiRootNode getContainingRoot () {
-    PsiElement parent = this;
-    while (parent != null && !(parent instanceof MPSPsiRootNode)) {
-      parent = parent.getParent();
-    }
-
-    if (parent == null) {
-      throw new PsiInvalidElementAccessException(this);
-    }
-
-    return (MPSPsiRootNode) parent;
+  /*package*/ void setCachedModel(MPSPsiModel model) {
+    cachedModel = model;
   }
+
+
+
+
 }

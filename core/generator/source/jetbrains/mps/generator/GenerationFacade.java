@@ -39,7 +39,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.UndoHelper;
@@ -166,7 +165,7 @@ public class GenerationFacade {
       public void run() {
         for (SModel d : inputModels) {
           if (d instanceof EditableSModel && ((EditableSModel) d).needsReloading()) {
-            ((EditableSModel) d).reloadFromDisk();
+            ((EditableSModel) d).reloadFromSource();
             LOG.info("Model " + d + " reloaded from disk.");
           }
           transientModelsComponent.createModule(d.getModule());

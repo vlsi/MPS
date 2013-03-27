@@ -69,7 +69,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
   }
 
   @Override
-  public void reloadFromDisk() {
+  public void reloadFromSource() {
     ModelAccess.assertLegalWrite();
 
     if (getSource().getTimestamp() == -1) {
@@ -77,7 +77,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
       return;
     }
 
-    reload();
+    reloadContents();
     LOG.assertLog(!needsReloading());
   }
 
@@ -87,11 +87,11 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
     if (isChanged()) {
       resolveDiskConflict();
     } else {
-      reloadFromDisk();
+      reloadFromSource();
     }
   }
 
-  protected abstract void reload();
+  protected abstract void reloadContents();
 
   public void resolveDiskConflict() {
     LOG.warning("Model=" + getReference().getModelName() + ", file ts=" + getSource().getTimestamp() + ", model ts=" + getSourceTimestamp(),
@@ -125,7 +125,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
     jetbrains.mps.smodel.SModel model = getSModelInternal();
     fireBeforeModelFileChanged(new SModelFileChangedEvent(model.getModelDescriptor(), oldFile, newModelFile));
     source.setFile(newModelFile);
-    updateDiskTimestamp();
+    updateTimestamp();
     fireModelFileChanged(new SModelFileChangedEvent(model.getModelDescriptor(), oldFile, newModelFile));
   }
 
@@ -145,10 +145,10 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
     setChanged(false);
     boolean reload = saveModel();
     if (reload) {
-      reload();
+      reloadContents();
     }
 
-    updateDiskTimestamp();
+    updateTimestamp();
     fireModelSaved();
   }
 

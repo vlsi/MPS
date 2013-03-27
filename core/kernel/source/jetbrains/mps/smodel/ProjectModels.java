@@ -80,7 +80,7 @@ public class ProjectModels {
     }
 
     @Override
-    public void updateDiskTimestamp() {
+    public void updateTimestamp() {
     }
 
     @Override
@@ -89,7 +89,7 @@ public class ProjectModels {
     }
 
     @Override
-    public void reloadFromDisk() {
+    public void reloadFromSource() {
     }
 
     public IFile getModelFile() {

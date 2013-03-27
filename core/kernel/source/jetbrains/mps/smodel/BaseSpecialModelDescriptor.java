@@ -22,7 +22,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.NullDataSource;
 
 /**
- * @deprecated use {@link jetbrains.mps.extapi.model.SModelBase}
+ * @deprecated use {@link jetbrains.mps.extapi.model.SModelBase} or TempModuleBuilder if you need a temporary model
  */
 @Deprecated
 public abstract class BaseSpecialModelDescriptor extends SModelBase {

@@ -150,7 +150,7 @@ public abstract class ButtonsPainter extends AbstractFoldingAreaPainter {
 
   static {
     Icon icon = IdeIcons.APPLY;
-    BufferedImage image = new BufferedImage(icon.getIconWidth(), icon.getIconHeight(), BufferedImage.TYPE_INT_RGB);
+    BufferedImage image = new BufferedImage(icon.getIconWidth(), icon.getIconHeight(), BufferedImage.TYPE_INT_ARGB);
     Graphics2D g2d = ((Graphics2D) image.getGraphics());
     g2d.setTransform(AffineTransform.getScaleInstance(-1, 1));
     icon.paintIcon(null, g2d, -icon.getIconWidth(), 0);

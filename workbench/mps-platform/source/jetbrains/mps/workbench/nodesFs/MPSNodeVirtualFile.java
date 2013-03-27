@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -56,6 +57,7 @@ public class MPSNodeVirtualFile extends VirtualFile {
   }
 
   void updateFields() {
+    myPath = SNodePointer.serialize(myNode);
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
@@ -63,10 +65,8 @@ public class MPSNodeVirtualFile extends VirtualFile {
         if (node == null) {
           LOG.error(new Throwable("Cannot find node for passed SNodeReference: " + myNode.toString()));
           myName = "";
-          myPath = myNode.getModelReference().getModelName() + "/" + myName;
         } else {
           myName = "" + node.getPresentation();
-          myPath = node.getModel().getReference().getModelName() + "/" + myName;
         }
       }
     });

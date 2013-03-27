@@ -18,6 +18,7 @@ import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRef;
+import jetbrains.mps.idea.core.usages.IdeaSearchScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.BaseScope;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -65,29 +66,7 @@ public class MPSMethodReferencesSearch extends QueryExecutorBase<PsiReference, S
           return;
         }
 
-        SearchQuery query = new SearchQuery(methodNode, new BaseScope() {
-          @Override
-          public Iterable<SModule> getModules() {
-
-            List<SModule> result = new ArrayList<SModule>();
-
-            for (SModule mod : MPSModuleRepository.getInstance().getModules()) {
-
-              if (mod instanceof SolutionIdea) {
-                Module ideaModule = ((SolutionIdea) mod).getIdeaModule();
-                if (scope.isSearchInModuleContent(ideaModule)) {
-                  result.add(mod);
-                }
-              } else {
-                // any other module is considered to be "libraries" in idea terminology
-                if (scope.isSearchInLibraries()) {
-                  result.add(mod);
-                }
-              }
-            }
-            return result;
-          }
-        });
+        SearchQuery query = new SearchQuery(methodNode, new IdeaSearchScope(scope));
 
         SearchResults<SNode> results = FindUtils.makeProvider(finder).getResults(query, null);
         for (SearchResult<SNode> result : results.getSearchResults()) {

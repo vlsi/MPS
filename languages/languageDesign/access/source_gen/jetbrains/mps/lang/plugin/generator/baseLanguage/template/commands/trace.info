@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="QueriesGenerated.java" startLine="11" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.plugin.generator.baseLanguage.template.commands.QueriesGenerated" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="11" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.plugin.generator.baseLanguage.template.commands.QueriesGenerated" />
   <root nodeRef="r:7119da0f-4b4d-46d9-adcc-2ac001a0ec2b(jetbrains.mps.lang.plugin.generator.baseLanguage.template.commands@generator)/1225441503876">
     <nodeInfo nodeId="1225441503890" fileName="QueriesGenerated.java" startLine="12" startPosition="144" endLine="13" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1225441503889" fileName="QueriesGenerated.java" startLine="12" startPosition="144" endLine="13" endPosition="88" />
@@ -22,6 +22,10 @@
   <root nodeRef="r:7119da0f-4b4d-46d9-adcc-2ac001a0ec2b(jetbrains.mps.lang.plugin.generator.baseLanguage.template.commands@generator)/1225441503956">
     <nodeInfo nodeId="1225441503970" fileName="QueriesGenerated.java" startLine="35" startPosition="144" endLine="36" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="1225441503969" fileName="QueriesGenerated.java" startLine="35" startPosition="144" endLine="36" endPosition="88" />
+  </root>
+  <root nodeRef="r:7119da0f-4b4d-46d9-adcc-2ac001a0ec2b(jetbrains.mps.lang.plugin.generator.baseLanguage.template.commands@generator)/5332677359380594915">
+    <nodeInfo nodeId="5332677359380594934" fileName="QueriesGenerated.java" startLine="39" startPosition="150" endLine="40" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <scopeInfo nodeId="5332677359380594933" fileName="QueriesGenerated.java" startLine="39" startPosition="150" endLine="40" endPosition="88" />
   </root>
 </debugInfo>
 

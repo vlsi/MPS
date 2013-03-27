@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.smodel.SModelRepositoryListener;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelEventVisitorAdapter;
@@ -35,8 +36,6 @@ import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.ConditionalIterator;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -144,6 +143,8 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     return ModelAccess.instance().runReadAction(new Computable<VirtualFile>() {
       @Override
       public VirtualFile compute() {
+        // todo: shouldn't parse anything here. just call serialize/deserialize methods
+        // todo: maybe use two different protocols for nodes and models?
         String modelOrNodePath = path;
 
         Matcher modelRef = MODEL_UID_PATTERN.matcher(modelOrNodePath);
@@ -151,20 +152,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
         if (!nodePath.matches() && !modelRef.matches()) return null;
 
         if (nodePath.matches()) {
-          SModelReference reference = PersistenceFacade.getInstance().createModelReference(nodePath.group(1));
-          final String name = nodePath.group(2);
-          SModel sm = SModelRepository.getInstance().getModelDescriptor(reference);
-          if (sm == null) return null;
-
-          Condition<SNode> cond = new Condition<SNode>() {
-            @Override
-            public boolean met(SNode node) {
-              return node.getPresentation().equals(name);
-            }
-          };
-          Iterator<SNode> iter = new ConditionalIterator<SNode>(sm.getRootNodes().iterator(), cond);
-          if (!iter.hasNext()) return null;
-          return getFileFor(iter.next());
+          return getFileFor(SNodePointer.deserialize(path).resolve(MPSModuleRepository.getInstance()));
         } else {
           final SModelReference modelReference = PersistenceFacade.getInstance().createModelReference(modelRef.group());
           return getFileFor(modelReference);

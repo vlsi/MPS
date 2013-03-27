@@ -16,18 +16,20 @@
 
 package jetbrains.mps.idea.core.psi.impl;
 
-import com.intellij.openapi.util.TextRange;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
-import com.intellij.psi.PsiInvalidElementAccessException;
 import com.intellij.util.ArrayUtil;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -178,22 +180,6 @@ public class MPSPsiNode extends MPSPsiNodeBase {
   @Override
   public String getText() {
     return myConcept + ":" + myName + " as " + myContainingRole;
-  }
-
-  @Override
-  public TextRange getTextRange() {
-    int p = getTreePosition();
-    return new TextRange(p,p);
-  }
-
-  @Override
-  public int getTextOffset() {
-    return getTreePosition();
-  }
-
-  private int getTreePosition() {
-    MPSPsiModel model = getContainingModel();
-    return model.getNodePosition(myId);
   }
 
   @Override

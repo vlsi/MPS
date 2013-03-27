@@ -59,7 +59,7 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
   public static final PsiDirectory[] EMPTY_PSI_DIRECTORIES = new PsiDirectory[0];
   private final SModelReference myModelReference;
   private final Map<SNodeId, MPSPsiNode> myNodes = new HashMap<SNodeId, MPSPsiNode>();
-  private final Map<SNodeId, Integer> myNodesOrder = new HashMap<SNodeId, Integer>();
+  private final Map<MPSPsiNodeBase, Integer> myNodesOrder = new HashMap<MPSPsiNodeBase, Integer>();
   private VirtualFile mySourceVirtualFile;
 
   public MPSPsiModel(SModelReference reference, PsiManager manager) {
@@ -321,8 +321,8 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
     }
   }
 
-  Integer getNodePosition(SNodeId nodeId) {
-    return myNodesOrder.get(nodeId);
+  Integer getNodePosition(MPSPsiNodeBase node) {
+    return myNodesOrder.get(node);
   }
 
   private String extractName(SNode sNode) {
@@ -346,9 +346,7 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
       MPSPsiNodeBase curr = stack.pop();
 
       // remembering position
-      if (curr instanceof MPSPsiNode) {
-        myNodesOrder.put(((MPSPsiNode) curr).getId(), k++);
-      }
+      myNodesOrder.put(curr, k++);
 
       PsiElement[] children = curr.getChildren();
       for (int i = children.length - 1; i >= 0; i--) {

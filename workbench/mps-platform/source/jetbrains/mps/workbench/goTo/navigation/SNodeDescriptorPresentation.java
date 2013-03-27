@@ -16,11 +16,7 @@
 package jetbrains.mps.workbench.goTo.navigation;
 
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.smodel.SModelFqName;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.workbench.choose.base.BasePresentation;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.NavigationParticipant.NavigationTarget;
@@ -35,7 +31,10 @@ public class SNodeDescriptorPresentation extends BasePresentation {
   }
 
   public String getModelName() {
-    return myNodeResult.getNodeReference().getModelReference().getModelName();
+    SModelReference modelReference = myNodeResult.getNodeReference().getModelReference();
+    return modelReference.getModuleReference() == null
+        ? modelReference.getModelName()
+        : modelReference.getModuleReference().getModuleName() + "/" + myNodeResult.getNodeReference().getModelReference().getModelName();
   }
 
   @Override

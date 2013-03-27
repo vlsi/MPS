@@ -16,6 +16,7 @@
 package jetbrains.mps.persistence;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.ProjectStructureModelRoot;
 import jetbrains.mps.smodel.SModelId.ForeignSModelId;
@@ -76,6 +77,11 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
   @Override
   public ModelFactory getModelFactory(String extension) {
     return myExtensionToModelFactoryMap.get(extension);
+  }
+
+  @Override
+  public ModelFactory getDefaultModelFactory() {
+    return myExtensionToModelFactoryMap.get(MPSExtentions.MODEL);
   }
 
   @Override

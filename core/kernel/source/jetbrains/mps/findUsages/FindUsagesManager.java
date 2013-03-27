@@ -16,6 +16,7 @@
 package jetbrains.mps.findUsages;
 
 import gnu.trove.THashSet;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.GlobalScope;
@@ -36,6 +37,8 @@ import java.util.Collection;
 import java.util.Set;
 
 public class FindUsagesManager {
+  private static final Logger LOG = Logger.getLogger(FindUsagesManager.class);
+
   public static FindUsagesManager getInstance() {
     return new FindUsagesManager();
   }
@@ -76,6 +79,12 @@ public class FindUsagesManager {
     for (SReference ref : current.getReferences()) {
       if (ref instanceof StaticReference) {
         SModelReference mr = ref.getTargetSModelReference();
+        if (mr == null) {
+          // todo: review with MihMuh?
+          LOG.warning(
+              "StaticReference with null target smodel reference; model: " + current.getModel().getModelName() + "; root node: " + current.getContainingRoot() + "; node: " + current);
+          continue;
+        }
         if (srefs.contains(new StaticReferenceInfo(SModelRepository.getInstance().getModelDescriptor(mr), ref.getTargetNodeId()))) {
           consumer.consume(ref);
         }

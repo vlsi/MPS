@@ -187,7 +187,7 @@ public class ProjectStructureModelRoot extends FileBasedModelRoot {
 
     private void reload() {
       if (myModel == null) {
-        updateDiskTimestamp();
+        updateTimestamp();
         return;
       }
       final jetbrains.mps.smodel.SModel result = createModel();

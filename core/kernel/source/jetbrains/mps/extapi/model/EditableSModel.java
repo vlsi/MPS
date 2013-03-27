@@ -36,9 +36,10 @@ public interface EditableSModel extends SModel {
 
   boolean isReadOnly();
 
-  void updateDiskTimestamp();
+  void updateTimestamp();
 
   boolean needsReloading();
 
-  void reloadFromDisk();
+  //note this can unregister the model
+  void reloadFromSource();
 }

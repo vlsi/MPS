@@ -19,10 +19,12 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.projectPane.DefaultNamespaceTreeBuilder;
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.StandaloneMPSProject;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.Collections;
 import java.util.LinkedList;
@@ -38,10 +40,12 @@ public class ProjectTreeNode extends AbstractFileTreeNode {
     List<ModuleTreeNode> moduleNodes = new LinkedList<ModuleTreeNode>();
     MPSProject mpsProject = project.getComponent(MPSProject.class);
     if (mpsProject != null) {
-      List<IModule> modules = mpsProject.getModules();
-      for (IModule m : modules) {
-        if (m.getDescriptorFile().exists()) {
-          moduleNodes.add(new ModuleTreeNode(project, m));
+      List<? extends SModule> modules = mpsProject.getModules();
+      for (SModule m : modules) {
+        if (m instanceof AbstractModule) {
+          if (((AbstractModule) m).getDescriptorFile().exists()) {
+            moduleNodes.add(new ModuleTreeNode(project, (AbstractModule) m));
+          }
         }
       }
     }

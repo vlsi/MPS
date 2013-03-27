@@ -43,7 +43,7 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
 
   @NotNull
   private IFile myFile;
-  private final ModelRoot myModelRoot;
+  protected final ModelRoot myModelRoot;
 
   public FileDataSource(@NotNull IFile file) {
     this(file, null);
@@ -68,8 +68,8 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
     myFile = file;
     synchronized (LOCK) {
       if (!(myListeners.isEmpty())) {
-        FileSystem.getInstance().removeListener(this);
-        FileSystem.getInstance().addListener(this);
+        stopListening();
+        startListening();
       }
     }
   }
@@ -111,23 +111,31 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
   }
 
   @Override
-  public void addListener(DataSourceListener listener) {
+  public final void addListener(DataSourceListener listener) {
     synchronized (LOCK) {
       if (myListeners.isEmpty()) {
-        FileSystem.getInstance().addListener(this);
+        startListening();
       }
       myListeners.add(listener);
     }
   }
 
+  protected void startListening() {
+    FileSystem.getInstance().addListener(this);
+  }
+
   @Override
-  public void removeListener(DataSourceListener listener) {
+  public final void removeListener(DataSourceListener listener) {
     synchronized (LOCK) {
       myListeners.remove(listener);
       if (myListeners.isEmpty()) {
-        FileSystem.getInstance().removeListener(this);
+        stopListening();
       }
     }
+  }
+
+  protected void stopListening() {
+    FileSystem.getInstance().removeListener(this);
   }
 
   @Override
@@ -137,11 +145,19 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
 
   @Override
   public Iterable<FileSystemListener> getListenerDependencies() {
+    FileSystemListener parentListener = getParentListener();
+    if (parentListener != null) {
+      return Collections.singleton(parentListener);
+    }
+    return null;
+  }
+
+  protected FileSystemListener getParentListener() {
     if (myModelRoot instanceof FileSystemListener) {
-      return Collections.singleton((FileSystemListener) myModelRoot);
+      return (FileSystemListener) myModelRoot;
     }
     if (myModelRoot != null && myModelRoot.getModule() instanceof FileSystemListener) {
-      return Collections.singleton((FileSystemListener) myModelRoot.getModule());
+      return (FileSystemListener) myModelRoot.getModule();
     }
     return null;
   }
@@ -157,7 +173,7 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
     // ignore, deletion is handled by model roots
   }
 
-  private void fireChanged(ProgressMonitor monitor) {
+  protected void fireChanged(ProgressMonitor monitor) {
     List<DataSourceListener> listeners;
     synchronized (LOCK) {
       listeners = new ArrayList<DataSourceListener>(myListeners);

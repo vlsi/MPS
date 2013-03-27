@@ -308,8 +308,8 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
+    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_4_RTransform");
     editorCell.getStyle().putAll(style);
-    _BaseMethodDeclaration_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -336,6 +336,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     editorCell.getStyle().putAll(style);
+    DeleteThrowsInMethods.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }

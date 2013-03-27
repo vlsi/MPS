@@ -15,8 +15,14 @@
  */
 package jetbrains.mps.extapi.model;
 
+import jetbrains.mps.messages.IMessage;
+import jetbrains.mps.messages.MessageKind;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModel.Problem;
 import org.jetbrains.mps.openapi.model.SNode;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * evgeny, 2/26/13
@@ -72,4 +78,21 @@ public class PersistenceProblem implements SModel.Problem {
   public SNode getNode() {
     return anchor;
   }
+
+  public static Problem fromIMessage(IMessage message) {
+    if (message == null) {
+      return null;
+    }
+    SNode anchor = message.getHintObject() instanceof SNode ? (SNode) message.getHintObject() : null;
+    return new PersistenceProblem(message.getText(), null, message.getKind() == MessageKind.ERROR, -1, -1, anchor);
+  }
+
+  public static Iterable<Problem> fromIMessages(Iterable<IMessage> seq) {
+    List<Problem> result = new ArrayList<Problem>();
+    for (IMessage m : seq) {
+      result.add(fromIMessage(m));
+    }
+    return result;
+  }
+
 }

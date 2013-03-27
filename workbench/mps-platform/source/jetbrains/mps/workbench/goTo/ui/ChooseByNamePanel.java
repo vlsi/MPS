@@ -24,6 +24,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -91,6 +92,20 @@ public class ChooseByNamePanel extends ChooseByNamePopup {
   }
 
   public JPanel getPanel() {
-    return myPanel;
+    try {
+      //TODO: Get rid of dirty hack.Find out some better way to "ShowListForEmptyPattern" or use other dialog
+      SwingUtilities.invokeLater(new Runnable() {
+        @Override
+        public void run() {
+          if(canShowListForEmptyPattern()) {
+            myTextField.setText(" ");
+            myTextField.setText("");
+          }
+        }
+      });
+    }
+    finally {
+      return myPanel;
+    }
   }
 }

@@ -11,12 +11,17 @@ import org.jdom.Element;
 import org.jdom.Attribute;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
+import org.jdom.Namespace;
 import org.jdom.Content;
-import org.jdom.Text;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jdom.Comment;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jdom.ProcessingInstruction;
 import org.jdom.CDATA;
+import org.jdom.Text;
 import org.jdom.EntityRef;
+import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -25,6 +30,7 @@ public class XmlConverter {
 
 
   public static SNode convertDocument(String name, Document document) {
+    // TODO replace dom-based implementation with a good XML parser 
     SNode file = SConceptOperations.createNewNode("jetbrains.mps.core.xml.structure.XmlFile", null);
     SPropertyOperations.set(file, "name", name);
     SLinkOperations.setNewChild(file, "document", "jetbrains.mps.core.xml.structure.XmlDocument");
@@ -36,53 +42,300 @@ public class XmlConverter {
 
   private static SNode convertElement(Element elem) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.core.xml.structure.XmlElement", null);
-    SPropertyOperations.set(result, "tagName", elem.getName());
+    String namespacePrefix = elem.getNamespacePrefix();
+    SPropertyOperations.set(result, "tagName", ((namespacePrefix == null || namespacePrefix.length() == 0) ?
+      elem.getName() :
+      namespacePrefix + ":" + elem.getName()
+    ));
     for (Attribute a : ListSequence.fromList((List<Attribute>) elem.getAttributes())) {
       ListSequence.fromList(SLinkOperations.getTargets(result, "attributes", true)).addElement(convertAttribute(a));
     }
-    for (Content c : ListSequence.fromList((List<Content>) elem.getContent())) {
-      SNode content = convertContent(c);
+    List<Namespace> additionalNamespaces = (List<Namespace>) elem.getAdditionalNamespaces();
+    for (Namespace ns : ListSequence.fromList(additionalNamespaces)) {
+      ListSequence.fromList(SLinkOperations.getTargets(result, "attributes", true)).addElement(createXmlAttribute_h7fa2c_a0a0a5a3("xmlns:" + ns.getPrefix(), convertAttributeText(ns.getURI())));
+    }
+
+    List<Content> list = (List<Content>) elem.getContent();
+    Content[] contents = ListSequence.fromList(list).toGenericArray(Content.class);
+    for (int i = 0; i < contents.length; i++) {
+      Iterable<SNode> content = convertContent((i > 0 ?
+        contents[i - 1] :
+        null
+      ), contents[i], (i + 1 < contents.length ?
+        contents[i + 1] :
+        null
+      ));
       if (content != null) {
-        ListSequence.fromList(SLinkOperations.getTargets(result, "content", true)).addElement(content);
+        ListSequence.fromList(SLinkOperations.getTargets(result, "content", true)).addSequence(Sequence.fromIterable(content));
       }
+
     }
     SPropertyOperations.set(result, "shortEmptyNotation", "" + (elem.getContentSize() == 0));
     return result;
   }
 
-  private static SNode convertContent(Content c) {
+  private static Iterable<SNode> convertContent(Content prev, Content c, Content next) {
     if (c instanceof Element) {
-      return convertElement((Element) c);
-    } else if (c instanceof Text) {
-      return createXmlText_h7fa2c_a0a0a0e(((Text) c).getText());
+      return Sequence.<SNode>singleton(convertElement((Element) c));
     } else if (c instanceof Comment) {
-      // TODO 
+      String commentText = ((Comment) c).getText();
+      SNode res = SConceptOperations.createNewNode("jetbrains.mps.core.xml.structure.XmlComment", null);
+      ListSequence.fromList(SLinkOperations.getTargets(res, "lines", true)).addSequence(Sequence.fromIterable(Sequence.fromArray(commentText.split("\r?\n"))).select(new ISelector<String, SNode>() {
+        public SNode select(String it) {
+          return createXmlCommentLine_h7fa2c_a0a0a0a0c0a0a4(it);
+        }
+      }));
+      return Sequence.<SNode>singleton(res);
+
     } else if (c instanceof ProcessingInstruction) {
-      // TODO 
+      ProcessingInstruction pi = (ProcessingInstruction) c;
+      return Sequence.<SNode>singleton(createXmlProcessingInstruction_h7fa2c_a0a1a1a0e(pi.getTarget(), pi.getData()));
     } else if (c instanceof CDATA) {
-      // TODO 
+      String cdata = ((Text) c).getText();
+      return Sequence.<SNode>singleton(createXmlCDATA_h7fa2c_a0a1a2a0e(cdata));
+
+    } else if (c instanceof Text) {
+      String text = ((Text) c).getText();
+      int index = 0;
+      boolean nlSeen = !(prev == null || prev instanceof Element);
+      for (; index < text.length(); index++) {
+        char ch = text.charAt(index);
+        if (ch == '\n') {
+          if (!(nlSeen)) {
+            nlSeen = true;
+            continue;
+          }
+        }
+        if (ch != ' ' && ch != '\t' && ch != '\r') {
+          break;
+        }
+      }
+      text = text.substring(index);
+      index = text.length();
+      for (; index > 0; index--) {
+        char ch = text.charAt(index - 1);
+        if (ch != ' ' && ch != '\t') {
+          break;
+        }
+      }
+      text = text.substring(0, index);
+      if (text.isEmpty()) {
+        return null;
+      }
+      if (text.endsWith("\n") && (next == null || next instanceof Element)) {
+        text = text.substring(0, text.length() - 1);
+      }
+      return convertText(Sequence.fromIterable(Sequence.fromArray((" " + text + " ").split("\n"))).select(new ISelector<String, String>() {
+        public String select(String it) {
+          return ((it == null ?
+            null :
+            it.trim()
+          ));
+        }
+      }).toGenericArray(String.class));
     } else if (c instanceof EntityRef) {
-      // TODO 
+      String name = ((EntityRef) c).getName();
+      return Sequence.<SNode>singleton(createXmlEntityRef_h7fa2c_a0a1a4a0e(name));
     }
     return null;
   }
 
-  private static SNode convertAttribute(Attribute elem) {
-    SNode result = SConceptOperations.createNewNode("jetbrains.mps.core.xml.structure.XmlAttribute", null);
-    SPropertyOperations.set(result, "attrName", elem.getName());
-    // TODO parse/split etc. 
-    ListSequence.fromList(SLinkOperations.getTargets(result, "value", true)).addElement(createXmlTextValue_h7fa2c_a0a3a5(elem.getValue()));
+  private static Iterable<SNode> convertText(String[] lines) {
+    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
+    for (int i = 0; i < lines.length; i++) {
+      String s = lines[i];
+      int len = s.length();
+      int start = 0;
+      for (int e = 0; e < len; e++) {
+        char c = s.charAt(e);
+        if (c < 0x20 || c == '\'' || c == '"' || c == '<' || c == '>' || c == '&') {
+          if (e > start) {
+            ListSequence.fromList(result).addElement(createXmlText_h7fa2c_a0a0a0a1a3a1a5(s.substring(start, e)));
+          }
+          start = e + 1;
+          if (c < 0x20) {
+            ListSequence.fromList(result).addElement(createXmlCharRef_h7fa2c_a0a0a2a1a3a1a5(toHex4(c)));
+          } else {
+            String name = "quot";
+            switch (c) {
+              case '\'':
+                name = "apos";
+                break;
+              case '<':
+                name = "lt";
+                break;
+              case '>':
+                name = "gt";
+                break;
+              case '&':
+                name = "amp";
+                break;
+              default:
+            }
+            ListSequence.fromList(result).addElement(createXmlEntityRef_h7fa2c_a0a2a0c0b0d0b0f(name));
+          }
+        }
+      }
+      if (len > start) {
+        ListSequence.fromList(result).addElement(createXmlText_h7fa2c_a0a0a4a1a5(s.substring(start, len)));
+      }
+      if (!(SNodeOperations.isInstanceOf(ListSequence.fromList(result).last(), "jetbrains.mps.core.xml.structure.XmlText")) && i + 1 < lines.length || len == 0) {
+        ListSequence.fromList(result).addElement(createXmlText_h7fa2c_a0a0a5a1a5());
+      }
+    }
     return result;
   }
 
-  private static SNode createXmlText_h7fa2c_a0a0a0e(Object p0) {
+  private static Iterable<SNode> convertAttributeText(String s) {
+    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
+    int len = s.length();
+    int start = 0;
+    for (int e = 0; e < len; e++) {
+      char c = s.charAt(e);
+      if (c < 0x20 || c == '\'' || c == '"' || c == '<' || c == '>' || c == '&') {
+        if (e > start) {
+          ListSequence.fromList(result).addElement(createXmlTextValue_h7fa2c_a0a0a0a1a3a6(s.substring(start, e)));
+        }
+        start = e + 1;
+        if (c < 0x20) {
+          ListSequence.fromList(result).addElement(createXmlCharRefValue_h7fa2c_a0a0a2a1a3a6(toHex4(c)));
+        } else {
+          String name = "quot";
+          switch (c) {
+            case '\'':
+              name = "apos";
+              break;
+            case '<':
+              name = "lt";
+              break;
+            case '>':
+              name = "gt";
+              break;
+            case '&':
+              name = "amp";
+              break;
+            default:
+          }
+          ListSequence.fromList(result).addElement(createXmlEntityRefValue_h7fa2c_a0a2a0c0b0d0g(name));
+        }
+      }
+    }
+    if (len > start) {
+      ListSequence.fromList(result).addElement(createXmlTextValue_h7fa2c_a0a0a4a6(s.substring(start, len)));
+    }
+    return result;
+  }
+
+  private static String toHex4(char c) {
+    String r = Integer.toHexString(c);
+    return "0000".substring(r.length()) + r;
+  }
+
+
+
+  private static SNode convertAttribute(Attribute elem) {
+    SNode result = SConceptOperations.createNewNode("jetbrains.mps.core.xml.structure.XmlAttribute", null);
+    SPropertyOperations.set(result, "attrName", elem.getName());
+    ListSequence.fromList(SLinkOperations.getTargets(result, "value", true)).addSequence(Sequence.fromIterable(convertAttributeText(elem.getValue())));
+    return result;
+  }
+
+  private static SNode createXmlAttribute_h7fa2c_a0a0a5a3(Object p0, Object p1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, GlobalScope.getInstance(), false);
+    n1.setProperty("attrName", (String) p0);
+    for (SNode n : (Iterable<SNode>) p1) {
+      n1.addChild("value", n);
+    }
+    return n1;
+  }
+
+  private static SNode createXmlCommentLine_h7fa2c_a0a0a0a0c0a0a4(Object p0) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlCommentLine", null, GlobalScope.getInstance(), false);
+    n1.setProperty("text", (String) p0);
+    return n1;
+  }
+
+  private static SNode createXmlProcessingInstruction_h7fa2c_a0a1a1a0e(Object p0, Object p1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlProcessingInstruction", null, GlobalScope.getInstance(), false);
+    n1.setProperty("target", (String) p0);
+    n1.setProperty("rawData", (String) p1);
+    return n1;
+  }
+
+  private static SNode createXmlCDATA_h7fa2c_a0a1a2a0e(Object p0) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlCDATA", null, GlobalScope.getInstance(), false);
+    n1.setProperty("content", (String) p0);
+    return n1;
+  }
+
+  private static SNode createXmlEntityRef_h7fa2c_a0a1a4a0e(Object p0) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlEntityRef", null, GlobalScope.getInstance(), false);
+    n1.setProperty("entityName", (String) p0);
+    return n1;
+  }
+
+  private static SNode createXmlText_h7fa2c_a0a0a0a1a3a1a5(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlText", null, GlobalScope.getInstance(), false);
     n1.setProperty("value", (String) p0);
     return n1;
   }
 
-  private static SNode createXmlTextValue_h7fa2c_a0a3a5(Object p0) {
+  private static SNode createXmlCharRef_h7fa2c_a0a0a2a1a3a1a5(Object p0) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlCharRef", null, GlobalScope.getInstance(), false);
+    n1.setProperty("charCode", (String) p0);
+    return n1;
+  }
+
+  private static SNode createXmlEntityRef_h7fa2c_a0a2a0c0b0d0b0f(Object p0) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlEntityRef", null, GlobalScope.getInstance(), false);
+    n1.setProperty("entityName", (String) p0);
+    return n1;
+  }
+
+  private static SNode createXmlText_h7fa2c_a0a0a4a1a5(Object p0) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlText", null, GlobalScope.getInstance(), false);
+    n1.setProperty("value", (String) p0);
+    return n1;
+  }
+
+  private static SNode createXmlText_h7fa2c_a0a0a5a1a5() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlText", null, GlobalScope.getInstance(), false);
+    n1.setProperty("value", "");
+    return n1;
+  }
+
+  private static SNode createXmlTextValue_h7fa2c_a0a0a0a1a3a6(Object p0) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, GlobalScope.getInstance(), false);
+    n1.setProperty("text", (String) p0);
+    return n1;
+  }
+
+  private static SNode createXmlCharRefValue_h7fa2c_a0a0a2a1a3a6(Object p0) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlCharRefValue", null, GlobalScope.getInstance(), false);
+    n1.setProperty("charCode", (String) p0);
+    return n1;
+  }
+
+  private static SNode createXmlEntityRefValue_h7fa2c_a0a2a0c0b0d0g(Object p0) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlEntityRefValue", null, GlobalScope.getInstance(), false);
+    n1.setProperty("entityName", (String) p0);
+    return n1;
+  }
+
+  private static SNode createXmlTextValue_h7fa2c_a0a0a4a6(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, GlobalScope.getInstance(), false);
     n1.setProperty("text", (String) p0);

@@ -15,7 +15,6 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.newModuleDialogs.NewLanguageDialog;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.logging.Logger;
@@ -61,17 +60,13 @@ public class NewLanguage_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      NewLanguageDialog dialog = new NewLanguageDialog(((MPSProject) MapSequence.fromMap(_params).get("project")));
+      NewLanguageDialog dialog = new NewLanguageDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), ((String) MapSequence.fromMap(_params).get("namespace")));
       dialog.show();
 
       Language l = dialog.getLangauge();
       if (l == null) {
         return;
       }
-      ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("project"))).setFolderFor(l, (((String) MapSequence.fromMap(_params).get("namespace")) == null ?
-        "" :
-        ((String) MapSequence.fromMap(_params).get("namespace"))
-      ));
       ProjectPane projectPane = ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject")));
       projectPane.rebuildTree();
       projectPane.selectModule(l, false);

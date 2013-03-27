@@ -20,8 +20,10 @@ import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.util.NameUtil;
@@ -142,7 +144,8 @@ public class DefaultModelRoot extends FileBasedModelRoot {
       FileDataSource source = new FileDataSource(file, this);
       options.put(ModelFactory.OPTION_PACKAGE, package_);
       options.put(ModelFactory.OPTION_RELPATH, relativePath != null ? relativePath + "/" + fileName : null);
-      options.put(ModelFactory.OPTION_MODELNAME, package_ != null ? package_ + "." + FileUtil.getNameWithoutExtension(fileName) : null);
+      String fileNameWE = FileUtil.getNameWithoutExtension(fileName);
+      options.put(ModelFactory.OPTION_MODELNAME, package_ != null ? (package_.isEmpty() ? fileNameWE : package_ + "." + fileNameWE) : null);
       SModel model = modelFactory.load(source, Collections.unmodifiableMap(options));
       // TODO handle errors
       if (model != null) {
@@ -190,7 +193,7 @@ public class DefaultModelRoot extends FileBasedModelRoot {
     }
 
     String filenameSuffix = modelName;
-    if (isLanguageAspect(modelName, sourceRoot)) {
+    if (isLanguageAspect(modelName, sourceRoot) || isGeneratorTemplateModel(modelName)) {
       filenameSuffix = NameUtil.shortNameFromLongName(filenameSuffix);
     }
 
@@ -231,6 +234,10 @@ public class DefaultModelRoot extends FileBasedModelRoot {
     if (!(getModule() instanceof Language)) return false;
     Collection<String> modelRoots = getFiles(SOURCE_ROOTS);
     return modelRoots.size() == 1 && isLanguageAspectsSourceRoot(modelRoots.iterator().next());
+  }
+
+  private boolean isGeneratorTemplateModel(String modelName) {
+    return getModule() instanceof Generator && modelName.endsWith("@" + SModelStereotype.GENERATOR);
   }
 
   @Deprecated

@@ -2206,7 +2206,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4093906047203396158" resolveInfo="myModel" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4093906047203396201">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="51te.~EditableSModel%dreloadFromDisk()%cvoid" resolveInfo="reloadFromDisk" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="51te.~EditableSModel%dreloadFromSource()%cvoid" resolveInfo="reloadFromSource" />
             </node>
           </node>
         </node>

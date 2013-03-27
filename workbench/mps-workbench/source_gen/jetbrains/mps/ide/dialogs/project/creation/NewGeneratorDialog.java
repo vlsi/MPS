@@ -95,9 +95,9 @@ public class NewGeneratorDialog extends DialogWrapper {
   }
 
   private void updateTemplateModelsDir() {
-    IFile descriptorFile = mySourceLanguage.getDescriptorFile();
-    assert descriptorFile != null;
-    String path = descriptorFile.getParent().getPath();
+    IFile moduleDir = mySourceLanguage.getModuleSourceDir();
+    assert moduleDir != null;
+    String path = moduleDir.getPath();
     String modelsDir = path + File.separatorChar + "generator" + File.separatorChar + "template";
     myTemplateModelsDir.setText(modelsDir);
   }
