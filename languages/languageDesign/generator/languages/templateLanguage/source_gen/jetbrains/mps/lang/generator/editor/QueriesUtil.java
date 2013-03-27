@@ -16,7 +16,6 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
-import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 
 public class QueriesUtil {
   public QueriesUtil() {
@@ -177,16 +176,13 @@ public class QueriesUtil {
   }
 
   public static String getEditedLinkRole(EditorCell cell) {
-    EditorCell editorCellImpl = cell;
-    SNode link = SNodeOperations.cast(((jetbrains.mps.nodeEditor.cells.EditorCell) editorCellImpl).getLinkDeclaration(), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
-    SNode referentNode = editorCellImpl.getRefNode();
-    if (referentNode == null || link == null) {
+    if (!(((jetbrains.mps.nodeEditor.cells.EditorCell) cell).isReferenceCell())) {
       return null;
     }
-    return LinkDeclaration_Behavior.call_getGenuineRole_1213877254542(link);
+    return cell.getRole();
   }
 
   public static SNode getEditedLinkReferentNode(EditorCell cell) {
-    return cell.getRefNode();
+    return cell.getSNode();
   }
 }

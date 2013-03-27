@@ -91,10 +91,6 @@ public interface EditorCell {
 
   String getRole();
 
-  SNode getRefNode();
-
-  void setRefNode(SNode refNode);
-
   boolean isErrorState();
 
   void setErrorState(boolean isError);

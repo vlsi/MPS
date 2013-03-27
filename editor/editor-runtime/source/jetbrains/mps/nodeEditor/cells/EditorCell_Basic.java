@@ -107,7 +107,6 @@ public abstract class EditorCell_Basic implements EditorCell {
   private String myCellId;
   private String myRole;
   private SNodeReference myLinkDeclarationPointer;
-  private SNodeReference myRefNodePointer;
   private boolean myInTree;
   private boolean myIsReferenceCell = false;
   protected int myGapLeft;
@@ -433,16 +432,6 @@ public abstract class EditorCell_Basic implements EditorCell {
   @Override
   public boolean isReferenceCell() {
     return myIsReferenceCell;
-  }
-
-  @Override
-  public SNode getRefNode() {
-    return myRefNodePointer != null ? myRefNodePointer.resolve(MPSModuleRepository.getInstance()) : null;
-  }
-
-  @Override
-  public void setRefNode(SNode refNode) {
-    myRefNodePointer = (refNode != null) ? new jetbrains.mps.smodel.SNodePointer(refNode) : null;
   }
 
   @Override
