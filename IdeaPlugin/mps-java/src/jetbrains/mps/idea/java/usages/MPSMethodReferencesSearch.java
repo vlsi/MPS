@@ -2,6 +2,7 @@ package jetbrains.mps.idea.java.usages;
 
 import com.intellij.openapi.application.QueryExecutorBase;
 import com.intellij.openapi.module.Module;
+import com.intellij.openapi.progress.ProcessCanceledException;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiMethod;
 import com.intellij.psi.PsiReference;
@@ -89,7 +90,13 @@ public class MPSMethodReferencesSearch extends QueryExecutorBase<PsiReference, S
           }
         });
 
-        SearchResults<SNode> results = FindUtils.makeProvider(finder).getResults(query, null);
+        SearchResults<SNode> results;
+        try {
+          results = FindUtils.makeProvider(finder).getResults(query, null);
+        }
+        catch (ProcessCanceledException e) {
+          return;
+        }
         for (SearchResult<SNode> result : results.getSearchResults()) {
           SNode usageNode = result.getObject();
           // it's a shame we get nodes and not SReferences
