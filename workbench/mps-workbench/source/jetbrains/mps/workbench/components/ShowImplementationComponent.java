@@ -17,22 +17,42 @@ package jetbrains.mps.workbench.components;
 
 
 import com.intellij.icons.AllIcons.Actions;
-import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.ActionToolbar;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.CommonShortcuts;
+import com.intellij.openapi.actionSystem.CompositeShortcutSet;
+import com.intellij.openapi.actionSystem.CustomShortcutSet;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.ui.popup.JBPopup;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes._void_P1_E0;
 import jetbrains.mps.ide.embeddableEditor.EmbeddableEditor;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.kernel.model.TemporaryModelOwner;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.DefaultListCellRenderer;
+import javax.swing.Icon;
+import javax.swing.JComboBox;
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.KeyStroke;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
@@ -54,8 +74,6 @@ public class ShowImplementationComponent extends JPanel {
   private List<String> myModuleLabels = new ArrayList<String>();
   private List<SNodeReference> myOriginalNodePointers = new ArrayList<SNodeReference>();
 
-  private TemporaryModelOwner myModelOwner = new TemporaryModelOwner();
-
   public ShowImplementationComponent(List<SNode> nodes, IOperationContext context) {
     ModelAccess.assertLegalRead();
 
@@ -68,7 +86,12 @@ public class ShowImplementationComponent extends JPanel {
       myOriginalNodePointers.add(node.getReference());
     }
 
-    myEditor = new EmbeddableEditor(context, myModelOwner, myNodes.get(0), false);
+    myEditor = new EmbeddableEditor(context.getProject(), new _void_P1_E0<SModel>() {
+      @Override
+      public void invoke(SModel sModel) {
+        sModel.addRootNode(myNodes.get(0));
+      }
+    }, false);
     myProject = context.getProject();
 
     init();
@@ -88,7 +111,6 @@ public class ShowImplementationComponent extends JPanel {
       node.delete();
     }
     myEditor.disposeEditor();
-    myModelOwner.unregisterModelOwner();
     myNodes = null;
     myNodeIcons = null;
     myNodeLabels = null;
@@ -131,7 +153,7 @@ public class ShowImplementationComponent extends JPanel {
         myLocationLabel.setText(myModuleLabels.get(index));
         myLocationLabel.setIcon(myModuleIcons.get(index));
         myCountLabel.setText((index + 1) + " of " + myNodes.size());
-        myEditor.setNode(myNodes.get(index));
+        myEditor.editNode(myNodes.get(index));
         myEditor.setBackground(new Color(255, 255, 215));
         mySelectedIndex = index;
         myEditorPanel.repaint();
@@ -183,7 +205,7 @@ public class ShowImplementationComponent extends JPanel {
     @Override
     public void update(AnActionEvent e) {
       e.getPresentation().setEnabled(myNodeChooser != null
-        && myNodeChooser.getSelectedIndex() > 0);
+          && myNodeChooser.getSelectedIndex() > 0);
     }
   }
 
@@ -202,7 +224,7 @@ public class ShowImplementationComponent extends JPanel {
     @Override
     public void update(AnActionEvent e) {
       e.getPresentation().setEnabled(myNodeChooser != null
-        && myNodeChooser.getSelectedIndex() < myNodeChooser.getItemCount() - 1);
+          && myNodeChooser.getSelectedIndex() < myNodeChooser.getItemCount() - 1);
     }
   }
 
