@@ -54,8 +54,8 @@ public class PluginUtil {
     modules.addAll(ModuleRepositoryFacade.getInstance().getAllModules(Language.class));
 
     for (Solution s : (List<Solution>) ModuleRepositoryFacade.getInstance().getAllModules(Solution.class)) {
-      if (s.getModuleDescriptor().getKind() == SolutionKind.NONE) continue;
-      if (s.getModuleDescriptor().getKind() == SolutionKind.PLUGIN_OTHER && MPSCore.getInstance().isTestMode()
+      if (s.getKind() == SolutionKind.NONE) continue;
+      if (s.getKind() == SolutionKind.PLUGIN_OTHER && MPSCore.getInstance().isTestMode()
           && IdeMain.getTestMode() != TestMode.UI_TEST) continue;
       modules.add(s);
     }

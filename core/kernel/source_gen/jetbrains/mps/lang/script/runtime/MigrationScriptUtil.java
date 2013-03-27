@@ -64,7 +64,7 @@ public class MigrationScriptUtil {
     IModule mod = ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class);
     if (mod == null) {
       Solution sol = ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Solution.class);
-      if (sol != null && sol.getModuleDescriptor().getKind() != SolutionKind.NONE) {
+      if (sol != null && sol.getKind() != SolutionKind.NONE) {
         mod = sol;
       }
     }
