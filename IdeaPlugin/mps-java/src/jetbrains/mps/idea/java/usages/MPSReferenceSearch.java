@@ -109,6 +109,9 @@ public class MPSReferenceSearch extends QueryExecutorBase<PsiReference, Referenc
                 String role = sReference.getRole();
 
                 MPSPsiNode psiNode = (MPSPsiNode) psiProvider.getPsi(source);
+                // the source could have come from the psi stub itself
+                if (psiNode == null) return;
+
                 String refRole = sReference.getRole();
                 MPSPsiRef[] refs = psiNode.getReferences(refRole);
 
