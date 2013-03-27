@@ -51,16 +51,20 @@ public class MPSMethodReferencesSearch extends QueryExecutorBase<PsiReference, S
     }
     final GlobalSearchScope scope = (GlobalSearchScope) queryParameters.getScope();
 
-    final GeneratedFinder finder = FindUtils.getFinderByClass(new ModuleClassReference<GeneratedFinder>(new ModuleReference("jetbrains.mps.baseLanguage"), "jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder"));
+    final PsiMethod method = queryParameters.getMethod();
+    final GeneratedFinder finder = method.isConstructor() ?
+      FindUtils.getFinderByClass(new ModuleClassReference<GeneratedFinder>(new ModuleReference("jetbrains.mps.baseLanguage"), "jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder")) :
+      FindUtils.getFinderByClass(new ModuleClassReference<GeneratedFinder>(new ModuleReference("jetbrains.mps.baseLanguage"), "jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder"));
+
     if (finder == null) {
-      LOG.warning("MPS finder for base method usages not found; MethodReferenceSearch will not work");
+      LOG.warning("MPS finder not found; MethodReferenceSearch will not work");
       return;
     }
 
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        PsiMethod method = queryParameters.getMethod();
+
         final SNode methodNode = MPSReferenceSearch.getNodeForElement(method);
         if (methodNode == null) {
           return;
