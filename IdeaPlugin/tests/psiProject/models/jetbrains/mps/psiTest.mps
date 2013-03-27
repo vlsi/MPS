@@ -141,7 +141,22 @@
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="3275905089288960932" />
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="4599102864351440757" />
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="4272720500182246807">
+          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="4272720500182246808">
+            <property name="name" nameId="tpck.1169194664001" value="c" />
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4272720500182272872">
+              <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="4272720500182273702">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="se3s.~ClassInPsiTest2%dClassInPsiTest2(int)" resolveInfo="ClassInPsiTest2" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="4272720500182273839">
+                  <property name="value" nameId="tpee.1068580320021" value="4" />
+                </node>
+              </node>
+            </node>
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4272720500182246809">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="se3s.~ClassInPsiTest2" resolveInfo="ClassInPsiTest2" />
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="8812544384558636067">
         <property name="name" nameId="tpck.1169194664001" value="arg" />
