@@ -23,6 +23,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.*;
@@ -46,7 +47,7 @@ public class SModelsSubtree {
     List<SModel> stubs = new ArrayList<SModel>();
 
     for (SModel modelDescriptor : models) {
-      if (ProjectModels.isProjectModel(modelDescriptor.getReference())) continue;
+      if (TemporaryModels.isTemporary(modelDescriptor)) continue;
 
       String stereotype = SModelStereotype.getStereotype(modelDescriptor);
 

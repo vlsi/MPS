@@ -11,7 +11,7 @@ import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.ProjectModels;
+import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.smodel.SModelStereotype;
 
 public class MakeGenerationHandler extends GenerationHandlerBase {
@@ -33,6 +33,6 @@ public class MakeGenerationHandler extends GenerationHandlerBase {
 
   @Override
   public boolean canHandle(SModel descriptor) {
-    return descriptor != null && (ProjectModels.isProjectModel(descriptor.getReference()) || SModelStereotype.isUserModel(descriptor));
+    return descriptor != null && (TemporaryModels.isTemporary(descriptor) || SModelStereotype.isUserModel(descriptor));
   }
 }
