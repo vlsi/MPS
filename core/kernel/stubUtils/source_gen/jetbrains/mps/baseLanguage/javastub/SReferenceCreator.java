@@ -12,14 +12,14 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.util.SNodeOperations;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.project.StubModelsResolver;
+import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.DynamicReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
-import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.project.StubModelsResolver;
 
 public class SReferenceCreator implements SReferenceHandler {
   private static final String JAVA_STUB_STEREOTYPE = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
@@ -40,26 +40,26 @@ public class SReferenceCreator implements SReferenceHandler {
       }
     }
 
-    Set<SModelReference> models = getModelReferencesFor(pack);
+    Set<SModelReference> possibleModels = StubModelsResolver.getInstance().resolveModel(module, new SModelFqName(pack, JAVA_STUB_STEREOTYPE).toString(), null);
 
-    if (SetSequence.fromSet(models).isEmpty()) {
-      return jetbrains.mps.smodel.SReference.create(role, source, null, targetNodeId, resolveInfo);
+    if (SetSequence.fromSet(possibleModels).isEmpty()) {
+      return jetbrains.mps.smodel.SReference.create(role, source, new jetbrains.mps.smodel.SModelReference(pack, JAVA_STUB_STEREOTYPE), targetNodeId, resolveInfo);
     }
 
-    if (SetSequence.fromSet(models).count() > 1) {
-      for (SModelReference m : models) {
-        ((SModelInternal) model).addModelImport(m, false);
-      }
+    for (SModelReference m : possibleModels) {
+      ((SModelInternal) model).addModelImport(m, false);
+    }
+
+    if (SetSequence.fromSet(possibleModels).count() > 1) {
       return new DynamicReference(role, source, new jetbrains.mps.smodel.SModelReference(pack, JAVA_STUB_STEREOTYPE), resolveInfo);
     }
 
-    SModuleReference moduleRef = SModelRepository.getInstance().getModelDescriptor(SetSequence.fromSet(models).first()).getModule().getModuleReference();
-    SModelReference ref = StubHelper.uidForPackageInStubs(new SModelFqName(pack, JAVA_STUB_STEREOTYPE), moduleRef, false);
-    ((SModelInternal) model).addModelImport(SetSequence.fromSet(models).first(), false);
-    return jetbrains.mps.smodel.SReference.create(role, source, ref, targetNodeId, resolveInfo);
-  }
+    // only one possible model 
+    SModelReference targetModel = SetSequence.fromSet(possibleModels).first();
+    SModuleReference targetModule = SModelRepository.getInstance().getModelDescriptor(targetModel).getModule().getModuleReference();
 
-  private Set<SModelReference> getModelReferencesFor(String pack) {
-    return StubModelsResolver.getInstance().resolveModel(module, new SModelFqName(pack, JAVA_STUB_STEREOTYPE).toString(), null);
+    SModelReference targetModelStubReference = StubHelper.uidForPackageInStubs(new SModelFqName(pack, JAVA_STUB_STEREOTYPE), targetModule, false);
+
+    return jetbrains.mps.smodel.SReference.create(role, source, targetModelStubReference, targetNodeId, resolveInfo);
   }
 }

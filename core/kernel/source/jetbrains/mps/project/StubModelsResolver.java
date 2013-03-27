@@ -71,7 +71,7 @@ public class StubModelsResolver {
     if (myStubModulesCache.containsKey(key)) return;
 
     IModule module = ModuleRepositoryFacade.getInstance().getModule(key.o1);
-    Set<SModel> visibleModels = new HashSet<SModel>(IterableUtil.asCollection(module.getScope().getModelDescriptors()));
+    Set<SModel> visibleModels = new HashSet<SModel>(IterableUtil.asCollection(module.getModuleScope().getModels()));
 
     fillCacheWithModels(key, visibleModels);
   }
