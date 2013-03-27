@@ -81,7 +81,7 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
   }
 
   @Override
-  public void save(SModel model, StreamDataSource dataSource) throws ModelSaveException {
+  public void save(SModel model, StreamDataSource dataSource) throws IOException {
     BinaryPersistence.writeModel(((SModelBase) model).getSModelInternal(), dataSource);
   }
 

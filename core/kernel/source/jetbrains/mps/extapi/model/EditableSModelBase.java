@@ -31,8 +31,11 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
+
+import java.io.IOException;
 
 /**
  * evgeny, 11/21/12
@@ -130,7 +133,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
   }
 
   @Override
-  public void save() {
+  public final void save() {
     ModelAccess.assertLegalWrite();
 
     if (!isLoaded()) return;
@@ -143,7 +146,14 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
     if (!checkAndResolveConflictOnSave()) return;
 
     setChanged(false);
-    boolean reload = saveModel();
+    boolean reload = false;
+    try {
+      reload = saveModel();
+    } catch (IOException e) {
+      LOG.error("Can't save " + getModelName() + ": " + e.getMessage(), e);
+    } catch (ModelSaveException e) {
+      // TODO notify
+    }
     if (reload) {
       reloadContents();
     }
@@ -153,9 +163,9 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
   }
 
   /**
-   *  returns true if the content should be reloaded from storage after save
+   * returns true if the content should be reloaded from storage after save
    */
-  protected abstract boolean saveModel();
+  protected abstract boolean saveModel() throws IOException, ModelSaveException;
 
   @Override
   public void rename(String newModelName, boolean changeFile) {

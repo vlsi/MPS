@@ -42,10 +42,7 @@ public class ConvertToBinaryWorker {
       if (model.getSModelHeader().getPersistenceVersion() < ModelPersistence.LAST_VERSION) {
         throw new IOException("cannot convert " + sourceFile + ": model persistence is too old, please upgrade");
       }
-      boolean success = BinaryPersistence.writeModel(model, new FileDataSource(FileSystem.getInstance().getFileByPath(destFile)));
-      if (!(success)) {
-        throw new IOException("cannot save " + destFile);
-      }
+      BinaryPersistence.writeModel(model, new FileDataSource(FileSystem.getInstance().getFileByPath(destFile)));
     } catch (ModelReadException e) {
       throw new IOException(e.getMessageEx(), e);
     }

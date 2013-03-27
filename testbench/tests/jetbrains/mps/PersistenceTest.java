@@ -39,6 +39,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,6 +76,9 @@ public class PersistenceTest extends BaseMPSTest {
                     try { // errors about not found attributes are expected for old models
                       filter.start();
                       ModelPersistence.saveModel(((SModelBase) model).getSModelInternal(), new FileDataSource(file), i);
+                    } catch (IOException e) {
+                      e.printStackTrace();
+                      fail();
                     } finally {
                       filter.stop();
                     }
@@ -216,6 +220,10 @@ public class PersistenceTest extends BaseMPSTest {
       } catch (ModelReadException e) {
         // This hardly can happend, unreadable model should be already filtered out
         LOG.error(e);
+        fail();
+      } catch (IOException e) {
+        LOG.error(e);
+        fail();
       }
     }
   }
