@@ -211,10 +211,12 @@
     <classNode extendsClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.common.DiffEditor" file="DiffEditor.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
@@ -239,7 +241,9 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessage" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessageFactory" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffFileEditor" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule" />
+    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
@@ -306,6 +310,29 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode extendsClassName="javax.swing.event.ChangeListener" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.selection.SingularSelectionListenerAdapter" />
+  </dependency>
+  <dependency className="jetbrains.mps.vcs.diff.ui.common.DiffFileEditor" file="DiffFileEditor.java">
+    <classNode dependClassName="com.intellij.codeHighlighting.BackgroundEditorHighlighter" />
+    <classNode dependClassName="com.intellij.ide.structureView.StructureViewBuilder" />
+    <classNode dependClassName="com.intellij.openapi.editor.Document" />
+    <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditorLocation" />
+    <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditorState" />
+    <classNode dependClassName="com.intellij.openapi.fileEditor.FileEditorStateLevel" />
+    <classNode dependClassName="com.intellij.openapi.util.Key" />
+    <classNode dependClassName="java.beans.PropertyChangeListener" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="javax.swing.JComponent" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.ide.undo.MPSUndoUtil" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile" />
+    <classNode dependClassName="jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem" />
+    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="com.intellij.openapi.fileEditor.DocumentsEditor" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.common.DiffModelTree" file="DiffModelTree.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />

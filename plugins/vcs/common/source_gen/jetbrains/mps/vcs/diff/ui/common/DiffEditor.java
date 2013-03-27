@@ -31,6 +31,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import org.jetbrains.annotations.NonNls;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 
 public class DiffEditor implements EditorMessageOwner {
   private DiffEditor.MainEditorComponent myMainEditorComponent;
@@ -166,8 +168,11 @@ public class DiffEditor implements EditorMessageOwner {
   }
 
   public class MainEditorComponent extends EditorComponent {
+    private DiffFileEditor myDiffFileEditor;
+
     public MainEditorComponent(IOperationContext operationContext, boolean rightToLeft) {
       super(operationContext, false, rightToLeft);
+      myDiffFileEditor = new DiffFileEditor(this);
     }
 
     @Override
@@ -177,6 +182,14 @@ public class DiffEditor implements EditorMessageOwner {
         return new EditorCell_Constant(editorContext, getEditedNode(), "");
       }
       return getEditorContext().createRootCell(getEditedNode(), events);
+    }
+
+    @Override
+    public Object getData(@NonNls String dataId) {
+      if (dataId.equals(PlatformDataKeys.FILE_EDITOR.getName())) {
+        return myDiffFileEditor;
+      }
+      return super.getData(dataId);
     }
   }
 }
