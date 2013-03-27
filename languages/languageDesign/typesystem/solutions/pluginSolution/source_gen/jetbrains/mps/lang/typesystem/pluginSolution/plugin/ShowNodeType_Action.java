@@ -22,9 +22,6 @@ import java.awt.Frame;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
-import jetbrains.mps.project.GlobalScope;
-import java.util.Collections;
-import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.typesystem.uiActions.MyBaseNodeDialog;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.logging.Logger;
@@ -99,7 +96,7 @@ public class ShowNodeType_Action extends BaseAction {
       try {
         ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
           public void run() {
-            tmpModel.value = TemporaryModels.getInstance().create(false, new TempModuleOptions.NewModuleOptions(GlobalScope.getInstance(), Collections.<ModelRootDescriptor>emptySet()));
+            tmpModel.value = TemporaryModels.getInstance().create(false, TempModuleOptions.forDefaultModule());
             tmpModel.value.addRootNode(type.value);
           }
         });
