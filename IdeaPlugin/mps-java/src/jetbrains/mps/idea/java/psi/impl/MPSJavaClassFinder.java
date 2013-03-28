@@ -23,14 +23,21 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiElementFinder;
 import com.intellij.psi.PsiPackage;
 import com.intellij.psi.search.GlobalSearchScope;
+import com.intellij.psi.stubs.StubUpdatingIndex;
 import com.intellij.util.CollectConsumer;
 import com.intellij.util.Consumer;
+import com.intellij.util.indexing.FileBasedIndex;
+import com.intellij.util.indexing.FileBasedIndexImpl;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
+import jetbrains.mps.idea.java.index.FQNameJavaClassIndex;
+import jetbrains.mps.idea.java.index.MPSJavaPackageIndex;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.BootstrapLanguages;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.workbench.goTo.index.SNodeDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -39,6 +46,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -63,60 +71,16 @@ public class MPSJavaClassFinder extends PsiElementFinder {
     return null;
   }
 
-  private void findMPSPackage(String qname, Consumer<SModel> consumer) {
-    for (SModule module : mpsProject.getModules()) {
-      for (SModel model : module.getModels()) {
-        if (model.getModelName().equals(qname)) {
-          consumer.consume(model);
-        }
-      }
-    }
-  }
-
-  private void findMPSClasses(String qname, Consumer<SNode> consumer) {
-    int clStart = qname.lastIndexOf('.');
-    int innerStart = -1;
-    while (clStart >= 0) {
-      String pName = qname.substring(0, clStart);
-      String clName = innerStart == -1 ? qname.substring(clStart + 1) : qname.substring(clStart + 1, innerStart);
-      String innerName = innerStart >= 0 ? qname.substring(innerStart + 1) : null;
-      for (SModule module : mpsProject.getModules()) {
-        for (SModel model : module.getModels()) {
-          if (model.getModelName().equals(pName)) {
-            findMPSClasses(model, clName, innerName, consumer);
-          }
-        }
-      }
-      innerStart = clStart;
-      clStart = qname.lastIndexOf('.', clStart - 1);
-    }
-  }
-
-  private void findMPSClasses(@NotNull SModel model, @NotNull String className, @Nullable String innerClassName, Consumer<SNode> consumer) {
-    SConcept classifierConcept = SNodeOperations.getConcept("jetbrains.mps.baseLanguage.structure.Classifier");
-    for (SNode root : model.getRootNodes()) {
-      if (root.getConcept().isSubConceptOf(classifierConcept)
-          && className.equals(root.getName())) {
-        if (innerClassName == null) {
-          consumer.consume(root);
-        } else {
-          // TODO
-        }
-      }
-    }
-
-  }
-
   @NotNull
   @Override
-  public PsiClass[] findClasses(@NotNull final String qualifiedName, @NotNull GlobalSearchScope scope) {
+  public PsiClass[] findClasses(@NotNull final String qualifiedName, @NotNull final GlobalSearchScope scope) {
     ApplicationManager.getApplication().assertReadAccessAllowed();
 
     return ModelAccess.instance().runReadAction(new Computable<PsiClass[]>() {
       @Override
       public PsiClass[] compute() {
         CollectConsumer<SNode> consumer = new CollectConsumer<SNode>(new ArrayList<SNode>());
-        findMPSClasses(qualifiedName, consumer);
+        findMPSClasses(qualifiedName, consumer, scope);
         return toPsiClasses(consumer.getResult());
       }
     });
@@ -124,26 +88,46 @@ public class MPSJavaClassFinder extends PsiElementFinder {
 
   @NotNull
   @Override
-  public PsiClass[] getClasses(@NotNull PsiPackage psiPackage, @NotNull GlobalSearchScope scope) {
+  public PsiClass[] getClasses(@NotNull final PsiPackage psiPackage, @NotNull final GlobalSearchScope scope) {
     final String packageName = psiPackage.getQualifiedName();
 
     return ModelAccess.instance().runReadAction(new Computable<PsiClass[]>() {
       @Override
       public PsiClass[] compute() {
-        SConcept classifierConcept = SNodeOperations.getConcept("jetbrains.mps.baseLanguage.structure.Classifier");
-        CollectConsumer<SModel> consumer = new CollectConsumer<SModel>(new ArrayList<SModel>());
-        findMPSPackage(packageName, consumer);
-        List<SNode> result = new ArrayList<SNode>();
-        for (SModel model : consumer.getResult()) {
-          for (SNode root : model.getRootNodes()) {
-            if (root.getConcept().isSubConceptOf(classifierConcept)) {
-              result.add(root);
-            }
-          }
-        }
-        return toPsiClasses(result);
+        CollectConsumer<SNode> consumer = new CollectConsumer<SNode>(new ArrayList<SNode>());
+        findMPSClasses(psiPackage, consumer, scope);
+        return toPsiClasses(consumer.getResult());
       }
     });
+  }
+
+  /** read access required */
+  private void findMPSClasses(PsiPackage psiPackage, Consumer<SNode> consumer, GlobalSearchScope scope) {
+    final FileBasedIndexImpl fileBasedIndex = (FileBasedIndexImpl) FileBasedIndex.getInstance();
+    fileBasedIndex.ensureUpToDate(FQNameJavaClassIndex.ID, myProject, scope);
+
+    String key = psiPackage.getQualifiedName();
+    List<Collection<SNodeDescriptor>> values = fileBasedIndex.getValues(MPSJavaPackageIndex.ID, key, scope);
+    collectNodes(consumer, values);
+  }
+
+  /** read access required */
+  private void findMPSClasses(String qname, Consumer<SNode> consumer, GlobalSearchScope scope) {
+    final FileBasedIndexImpl fileBasedIndex = (FileBasedIndexImpl) FileBasedIndex.getInstance();
+    fileBasedIndex.ensureUpToDate(FQNameJavaClassIndex.ID, myProject, scope);
+
+    List<Collection<SNodeDescriptor>> values = fileBasedIndex.getValues(FQNameJavaClassIndex.ID, qname, scope);
+    collectNodes(consumer, values);
+  }
+
+  private void collectNodes(Consumer<SNode> consumer, List<Collection<SNodeDescriptor>> values) {
+    for (Collection<SNodeDescriptor> value : values) {
+      for (SNodeDescriptor descriptor : value) {
+        SNode node = descriptor.getNodeReference().resolve(MPSModuleRepository.getInstance());
+        if (node == null) continue;
+        consumer.consume(node);
+      }
+    }
   }
 
   private PsiClass[] toPsiClasses(Iterable<SNode> classes) {
