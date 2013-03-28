@@ -18,6 +18,7 @@
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_childConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_childSetter_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_concept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_createdNode_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_currentTargetNode_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_link_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_nodeToCopyPreProcessOriginal_BehaviorDescriptor" />
@@ -71,6 +72,7 @@
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.QueryFunction_ActionType_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.QueryFunction_CanSubstitute_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.QueryFunction_GenericSubstituteMenuPart_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.behavior.QueryFunction_IconNode_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.QueryFunction_ParameterizedSideTransform_Handler_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.QueryFunction_ParameterizedSideTransform_Query_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.QueryFunction_ParameterizedSubstitute_Handler_BehaviorDescriptor" />
@@ -85,17 +87,16 @@
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.QueryFunction_ST_RemoveBy_Condition_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.QueryFunction_SideTransform_ConceptHandler_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.QueryFunction_SideTransform_Handler_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.actions.behavior.QueryFunction_SideTransform_IconNode_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.QueryFunction_SideTransform_Icon_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.QueryFunction_SideTransform_NodeQuery_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.QueryFunction_SideTransform_String_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.actions.behavior.QueryFunction_SubstituteIconNode_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.QueryFunction_SubstituteIcon_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.QueryFunction_SubstituteString_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.QueryFunction_SubstituteVariableInitializer_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.QueryFunction_SubstituteWrapper_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.QueryFunction_Substitute_CommonInitializer_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.QueryFunction_Substitute_Handler_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.behavior.QueryFunction_Substitute_SelectionHandler_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.RemoveByConditionPart_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.RemoveDefaultsPart_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.RemovePart_BehaviorDescriptor" />
@@ -154,6 +155,17 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor" />
     <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_createdNode_Behavior" file="ConceptFunctionParameter_createdNode_Behavior.java">
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_createdNode_BehaviorDescriptor" file="ConceptFunctionParameter_createdNode_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_createdNode_Behavior" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_currentTargetNode_BehaviorDescriptor" file="ConceptFunctionParameter_currentTargetNode_BehaviorDescriptor.java">
@@ -855,6 +867,26 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.actions.behavior.QueryFunction_IconNode_Behavior" file="QueryFunction_IconNode_Behavior.java">
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.actions.behavior.QueryFunction_IconNode_BehaviorDescriptor" file="QueryFunction_IconNode_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.behavior.QueryFunction_IconNode_Behavior" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.actions.behavior.QueryFunction_ParameterizedSideTransform_Handler_Behavior" file="QueryFunction_ParameterizedSideTransform_Handler_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -1167,27 +1199,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.actions.behavior.QueryFunction_SideTransform_IconNode_Behavior" file="QueryFunction_SideTransform_IconNode_Behavior.java">
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.actions.behavior.QueryFunction_SideTransform_IconNode_BehaviorDescriptor" file="QueryFunction_SideTransform_IconNode_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.actions.behavior.QueryFunction_SideTransform_IconNode_Behavior" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.actions.behavior.QueryFunction_SideTransform_Icon_Behavior" file="QueryFunction_SideTransform_Icon_Behavior.java">
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -1250,26 +1261,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.actions.behavior.QueryFunction_SubstituteIconNode_Behavior" file="QueryFunction_SubstituteIconNode_Behavior.java">
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.actions.behavior.QueryFunction_SubstituteIconNode_BehaviorDescriptor" file="QueryFunction_SubstituteIconNode_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.actions.behavior.QueryFunction_SubstituteIconNode_Behavior" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.actions.behavior.QueryFunction_SubstituteIcon_Behavior" file="QueryFunction_SubstituteIcon_Behavior.java">
@@ -1393,6 +1384,26 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.QueryFunction_Substitute_Handler_Behavior" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.actions.behavior.QueryFunction_Substitute_SelectionHandler_Behavior" file="QueryFunction_Substitute_SelectionHandler_Behavior.java">
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.actions.behavior.QueryFunction_Substitute_SelectionHandler_BehaviorDescriptor" file="QueryFunction_Substitute_SelectionHandler_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.behavior.QueryFunction_Substitute_SelectionHandler_Behavior" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>

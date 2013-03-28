@@ -38,6 +38,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 
+import java.io.IOException;
 import java.util.Map;
 
 import static jetbrains.mps.smodel.DefaultSModel.InvalidDefaultSModel;
@@ -192,7 +193,7 @@ public class DefaultSModelDescriptor extends EditableSModelBase implements Gener
   }
 
   @Override
-  protected boolean saveModel() {
+  protected boolean saveModel() throws IOException {
     DefaultSModel smodel = getSModelInternal();
     if (smodel instanceof InvalidSModel) {
       // we do not save stub model to not overwrite the real model

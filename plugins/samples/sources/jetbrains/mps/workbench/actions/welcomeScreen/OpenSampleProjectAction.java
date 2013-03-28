@@ -58,8 +58,9 @@ public class OpenSampleProjectAction extends AnAction {
 
     descriptor.putUserData(FileChooserDialogImpl.PREFER_LAST_OVER_TO_SELECT, Boolean.TRUE);
 
-    VirtualFile result = FileChooser.chooseFile(descriptor, currentProject, userHomeDir);
-    if(result == null || result.isDirectory()) return;
+    VirtualFile result = OpenMPSProjectFileChooserDescriptor.getMPSProjectFile(
+        FileChooser.chooseFile(descriptor, currentProject, userHomeDir));
+    if(result == null) return;
 
     String filePath = result.getPath();
     Project project = ProjectUtil.openProject(filePath, currentProject, false);
@@ -67,5 +68,4 @@ public class OpenSampleProjectAction extends AnAction {
       ProjectBaseDirectory.getInstance(project).setBaseDir(project.getBaseDir());
     }
   }
-
 }

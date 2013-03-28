@@ -54,7 +54,7 @@ public class IdeIcons {
   public static final Icon TEXT_GEN_MODEL_ICON = Nodes.Models.TextGenModel;
   public static final Icon ACCESSORY_MODEL_ICON = Nodes.Models.AccessoryModel;
 
-  public static final Icon PROJECT_ICON = FileIcons.PROJECT_ICON;
+  public static final Icon PROJECT_ICON = AllIcons.Nodes.Project;
   public static final Icon SOLUTION_ICON = FileIcons.SOLUTION_ICON;
   public static final Icon LANGUAGE_ICON = Nodes.Language;
   public static final Icon DEVKIT_ICON = FileIcons.DEVKIT_ICON;

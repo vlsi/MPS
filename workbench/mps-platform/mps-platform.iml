@@ -29,6 +29,7 @@
     <orderEntry type="module" module-name="persistence" />
     <orderEntry type="module" module-name="mps-icons" />
     <orderEntry type="library" name="ASM" level="project" />
+    <orderEntry type="library" name="Commons-httpclient" level="project" />
   </component>
 </module>
 

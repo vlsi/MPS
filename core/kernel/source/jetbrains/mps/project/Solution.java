@@ -23,6 +23,7 @@ import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.project.structure.modules.SolutionKind;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.classloading.ClassLoaderManager;
@@ -156,6 +157,10 @@ public class Solution extends AbstractModule {
     assert myDescriptorFile != null;
     namespace = myDescriptorFile.getName();
     return namespace;
+  }
+
+  public SolutionKind getKind() {
+    return getModuleDescriptor().getKind();
   }
 
   @Override

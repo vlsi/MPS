@@ -175,8 +175,8 @@ public class AspectDependenciesChecker extends SpecificChecker {
         return OTHER;
       }
 
-      Solution sol = ((Solution) module);
-      switch (sol.getModuleDescriptor().getKind()) {
+      Solution sol = (Solution) module;
+      switch (sol.getKind()) {
         case NONE:
           return OTHER;
         case PLUGIN_CORE:

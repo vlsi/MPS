@@ -12,17 +12,8 @@ import org.junit.runner.Description;
 import org.junit.runner.notification.RunNotifier;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.classloading.ModuleClassLoader;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.project.facets.JavaModuleOperations;
-import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.facets.JavaModuleFacet;
-import java.net.URL;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import java.io.File;
-import java.net.MalformedURLException;
-import java.net.URLClassLoader;
 import org.junit.runner.notification.Failure;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -154,33 +145,17 @@ public class ModuleSymbolicSuite extends ParentRunner<Runner> {
     }
 
     private static Class getTestClass(SModule module, String className) {
-      if (ClassLoaderManager.getInstance().canLoad(module)) {
-        return ClassLoaderManager.getInstance().getClass(module, className);
-      } else {
-        try {
-          return getTestClassLoaderForModule(module).loadClass(className);
-        } catch (ClassNotFoundException e) {
+      // todo: warning on null class loader and ClassNotFoundException? 
+      // todo: execute only MPS tests here. move all unit tests to ant task 
+      try {
+        ModuleClassLoader classLoader = ClassLoaderManager.getInstance().getClassLoader(module);
+        if (classLoader == null) {
           return null;
         }
+        return classLoader.loadClass(className);
+      } catch (ClassNotFoundException e) {
+        return null;
       }
-    }
-
-    private static ClassLoader getTestClassLoaderForModule(SModule module) {
-      List<String> paths = ListSequence.fromList(new ArrayList<String>());
-      ListSequence.fromList(paths).addSequence(SetSequence.fromSet(JavaModuleOperations.collectExecuteClasspath(module)));
-      ListSequence.fromList(paths).removeSequence(SetSequence.fromSet(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("6354ebe7-c22a-4a0f-ac54-50b52ab9b065")).getFacet(JavaModuleFacet.class).getClassPath()));
-      URL[] urls = ListSequence.fromList(paths).select(new ISelector<String, URL>() {
-        public URL select(String it) {
-          try {
-            return new File(it).toURL();
-          } catch (MalformedURLException e) {
-            // todo: ? 
-            return null;
-          }
-        }
-      }).toGenericArray(URL.class);
-
-      return new URLClassLoader(urls);
     }
 
     private void runFailure(Description failDesc, Throwable cause, RunNotifier notifier) {

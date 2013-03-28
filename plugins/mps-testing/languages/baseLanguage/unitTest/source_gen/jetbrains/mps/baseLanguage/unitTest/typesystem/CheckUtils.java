@@ -21,7 +21,7 @@ public class CheckUtils {
   public static boolean checkPluginKindForMPSTestCase(SNode testCase) {
     IModule module = check_c4dr2s_a0a0c(SNodeOperations.getModel(testCase));
     if (BehaviorReflection.invokeVirtual(Boolean.TYPE, testCase, "virtual_isMpsStartRequired_3310779261129403089", new Object[]{})) {
-      return module instanceof Solution && ((Solution) module).getModuleDescriptor().getKind() != SolutionKind.NONE;
+      return module instanceof Solution && ((Solution) module).getKind() != SolutionKind.NONE;
     } else {
       return true;
     }
