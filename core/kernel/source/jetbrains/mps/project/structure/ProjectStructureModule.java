@@ -25,6 +25,8 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.smodel.adapter.SLanguageLanguageAdapter;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.stub.ProjectStructureBuilder;
 import jetbrains.mps.smodel.BaseMPSModuleOwner;
@@ -218,8 +220,8 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   }
 
   @Override
-  public Collection<SModuleReference> getUsedLanguagesReferences() {
-    return Collections.singleton(BootstrapLanguages.PROJECT);
+  public Set<SLanguage> getUsedLanguages() {
+    return Collections.<SLanguage>singleton(new SLanguageLanguageAdapter(ModuleRepositoryFacade.getInstance().getModule(BootstrapLanguages.PROJECT, Language.class)));
   }
 
   private void removeModel(SModel md) {

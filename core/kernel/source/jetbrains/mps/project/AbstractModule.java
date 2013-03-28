@@ -155,21 +155,34 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
 
   @Override
   public Set<SLanguage> getUsedLanguages() {
+    // todo: collect languages for now? and convert to SLanguages in the end?
+    if (getModuleDescriptor() == null) {
+      return Collections.emptySet();
+    }
+
     Set<SLanguage> languages = new HashSet<SLanguage>();
     for (SModuleReference usedLanguage : getModuleDescriptor().getUsedLanguages()) {
-      languages.add(new SLanguageLanguageAdapter(ModuleRepositoryFacade.getInstance().getModule(usedLanguage, Language.class)));
+      Language language = ModuleRepositoryFacade.getInstance().getModule(usedLanguage, Language.class);
+      if (language != null) {
+        languages.add(new SLanguageLanguageAdapter(language));
+      }
     }
 
     for (SModuleReference usedDevkit : getModuleDescriptor().getUsedDevkits()) {
       DevKit devKit = ModuleRepositoryFacade.getInstance().getModule(usedDevkit, DevKit.class);
       if (devKit != null) {
         for (Language language : devKit.getAllExportedLanguages()) {
-          languages.add(new SLanguageLanguageAdapter(language));
+          if (language != null) {
+            languages.add(new SLanguageLanguageAdapter(language));
+          }
         }
       }
     }
 
-    languages.add(new SLanguageLanguageAdapter(BootstrapLanguages.coreLanguage()));
+    if (BootstrapLanguages.coreLanguage() != null) {
+      // todo: ???
+      languages.add(new SLanguageLanguageAdapter(BootstrapLanguages.coreLanguage()));
+    }
 
     return languages; // todo: maybe collect extended languages here
   }
@@ -331,8 +344,9 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
 
   //----languages & devkits
 
+  @Deprecated
   @Override
-  public Collection<SModuleReference> getUsedLanguagesReferences() {
+  public final Collection<SModuleReference> getUsedLanguagesReferences() {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return Collections.emptySet();
     return Collections.unmodifiableCollection(descriptor.getUsedLanguages());

@@ -9,12 +9,17 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import java.util.Collection;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.util.Set;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import java.util.LinkedHashSet;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.adapter.SLanguageLanguageAdapter;
+import java.util.Collection;
 import java.util.List;
 import jetbrains.mps.project.structure.modules.Dependency;
 import java.util.ArrayList;
@@ -46,10 +51,15 @@ public class TemporaryModelOwner extends AbstractModule {
   }
 
   @Override
-  public Collection<SModuleReference> getUsedLanguagesReferences() {
-    Set<SModuleReference> result = new LinkedHashSet<SModuleReference>();
-    for (SModel md : getModels()) {
-      result.addAll(((SModelInternal) md).importedLanguages());
+  public Set<SLanguage> getUsedLanguages() {
+    Set<SLanguage> result = new LinkedHashSet<SLanguage>();
+    for (SModel model : getModels()) {
+      for (SModuleReference langRef : ListSequence.fromList(((SModelInternal) model).importedLanguages())) {
+        Language language = ModuleRepositoryFacade.getInstance().getModule(langRef, Language.class);
+        if (language != null) {
+          result.add(new SLanguageLanguageAdapter(language));
+        }
+      }
     }
     return result;
   }
