@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -41,6 +42,7 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
   @NotNull
   private final SModelPersistence myPersistence;
   private volatile SModel myModel = null;
+  private Iterable<Problem> myProblems = Collections.emptySet();
 
   public CustomPersistenceSModel(@NotNull SModelReference modelReference, @NotNull StreamDataSource source, @NotNull SModelPersistence persistence) {
     super(modelReference, source instanceof FileDataSource ? FileWithBackupDataSource.create((FileDataSource) source) : source);
@@ -58,7 +60,9 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
       myModel = loadSModel();
       myModel.setModelDescriptor(this);
       updateTimestamp();
+      // TODO FIXME listeners are invoked while holding the lock
       fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
+      fireModelProblemsUpdated();
     }
     return myModel;
   }
@@ -83,6 +87,8 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
           SModelBase brokenModel = (SModelBase) PersistenceFacade.getInstance().getDefaultModelFactory().load(
               new FileDataSource(brokenFile, null), Collections.<String, String>emptyMap());
           brokenModel.load();
+          // force save
+          setChanged(true);
           return brokenModel.getSModelInternal();
         }
       }
@@ -128,6 +134,7 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
       if (brokenFile != null) {
         brokenFile.delete();
       }
+      myProblems = Collections.emptySet();
     } catch (ModelSaveException e) {
       IFile brokenFile = getBackupFile(false);
       try {
@@ -135,6 +142,7 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
       } catch (ModelSaveException ignore) {
       } catch (IOException ignore) {
       }
+      myProblems = e.getProblems();
       throw e;
     }
     return false;
@@ -144,6 +152,12 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
   public SNode getRoot() {
     Iterator<SNode> iterator = getRootNodes().iterator();
     return iterator.hasNext() ? iterator.next() : null;
+  }
+
+  @NotNull
+  @Override
+  public Iterable<Problem> getProblems() {
+    return IterableUtil.merge(myProblems, super.getProblems());
   }
 
   public static class StubModel extends jetbrains.mps.smodel.SModel implements InvalidSModel {

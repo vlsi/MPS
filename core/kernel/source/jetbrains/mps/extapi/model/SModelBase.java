@@ -16,12 +16,13 @@
 package jetbrains.mps.extapi.model;
 
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
@@ -114,6 +115,10 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   @NotNull
   @Override
   public Iterable<Problem> getProblems() {
+    jetbrains.mps.smodel.SModel sModelInternal = getSModelInternal();
+    if (sModelInternal instanceof InvalidSModel) {
+      return ((InvalidSModel) sModelInternal).getProblems();
+    }
     return Collections.emptySet();
   }
 

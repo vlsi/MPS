@@ -29,6 +29,7 @@ import jetbrains.mps.smodel.SModelId.RelativePathSModelId;
 import jetbrains.mps.textGen.TextGen;
 import jetbrains.mps.textGen.TextGenerationResult;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Document;
 import org.jdom.JDOMException;
@@ -158,6 +159,10 @@ public class XmlModelPersistence implements CoreComponent, ModelFactory, SModelP
     }
 
     // TODO check concepts
+    if (IterableUtil.copyToList(model.getRootNodes()).size() > 1) {
+      throw new ModelSaveException("cannot save more than one root into .xml file",
+          Collections.<Problem>singletonList(new PersistenceProblem("cannot save more than one root into .xml file", null, true, -1, -1, root)));
+    }
 
     TextGenerationResult result = TextGen.generateText(root);
     if (result.hasErrors()) {
