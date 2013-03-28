@@ -1049,12 +1049,6 @@
       <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342109306">
         <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="nu8v.~EditorCell%dgetRole()%cjava%dlang%dString" resolveInfo="getRole" />
       </node>
-      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342109335">
-        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="nu8v.~EditorCell%dgetRefNode()%corg%djetbrains%dmps%dopenapi%dmodel%dSNode" resolveInfo="getRefNode" />
-      </node>
-      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342109947">
-        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="nu8v.~EditorCell%dsetRefNode(org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cvoid" resolveInfo="setRefNode" />
-      </node>
       <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342110561">
         <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="nu8v.~EditorCell%disErrorState()%cboolean" resolveInfo="isErrorState" />
       </node>
