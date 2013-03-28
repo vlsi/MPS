@@ -30,6 +30,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -42,6 +43,37 @@ import java.util.Map;
 
   private static final Logger LOG = Logger.getLogger(SNodeDescriptorsIndexer.class);
 
+  public static final String[] JAVA_CLASS_FQNAMES = {
+    "jetbrains.mps.baseLanguage.structure.Annotation",
+    "jetbrains.mps.baseLanguage.structure.ClassConcept",
+    "jetbrains.mps.baseLanguage.structure.EnumClass",
+    "jetbrains.mps.baseLanguage.structure.Interface",
+    "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration",
+    "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase"};
+
+  private Collection<SNode> getJavaClasses(SModel sModel) {
+    ArrayList<SNode> yield = new ArrayList<SNode>();
+    for (SNode root : sModel.getRootNodes()) {
+      collectJavaClasses(root, yield);
+    }
+    return yield;
+  }
+
+  private void collectJavaClasses(SNode cand, Collection<SNode> yield) {
+    if (isClassOrInterface(cand)) {
+      yield.add(cand);
+      for (SNode chd : cand.getChildren()) {
+        collectJavaClasses(chd, yield);
+      }
+    }
+  }
+
+  private boolean isClassOrInterface(SNode sNode) {
+    String qualifiedName = sNode.getConcept().getQualifiedName();
+    int idx = Arrays.binarySearch(JAVA_CLASS_FQNAMES, qualifiedName);
+    return idx >= 0;
+  }
+
   @NotNull
   @Override
   public Map<String, Collection<SNodeDescriptor>> map(final FileContent inputData) {
@@ -52,7 +84,7 @@ import java.util.Map;
         try {
           SModel model = RootNodeNameIndex.doModelParsing(inputData);
           SModelReference modelRef = model.getReference();
-          for (SNode node : JavaClassUtil.getJavaClasses(model)) {
+          for (SNode node : getJavaClasses(model)) {
             String persistentName = node.getProperty(SNodeUtil.property_INamedConcept_name);
             String nodeName = (persistentName == null) ? "null" : persistentName;
             String classFqName = getKey(model, nodeName);
