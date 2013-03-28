@@ -13,7 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
+package jetbrains.mps.smodel;
+
+import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.extapi.model.EditableSModel;
@@ -128,7 +131,7 @@ public class SModelOperations {
 
       if (language != null) {
         languages.add(language);
-        language.getDependenciesManager().collectAllExtendedLanguages(languages);
+        new LanguageDependenciesManager(language).collectAllExtendedLanguages(languages);
       }
     }
 
@@ -137,7 +140,7 @@ public class SModelOperations {
       if (devKit != null) {
         for (Language l : devKit.getAllExportedLanguages()) {
           if (languages.add(l)) {
-            l.getDependenciesManager().collectAllExtendedLanguages(languages);
+            new LanguageDependenciesManager(l).collectAllExtendedLanguages(languages);
           }
         }
       }

@@ -24,6 +24,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
 import jetbrains.mps.openapi.editor.cells.KeyMap.ActionKey;
 import jetbrains.mps.openapi.editor.cells.KeyMapAction;
+import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
@@ -121,7 +122,7 @@ public abstract class KeymapHandler<E> {
         if (l == null) continue;
 
         Set<Language> ext = new LinkedHashSet<Language>();
-        l.getDependenciesManager().collectAllExtendedLanguages(ext);
+        new LanguageDependenciesManager(l).collectAllExtendedLanguages(ext);
 
         for (Language le : ext) {
           importedAndExtendedLanguages.add(le.getModuleReference());

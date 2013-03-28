@@ -79,7 +79,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   //todo [MihMuh] this should be replaced in 3.0 (don't know exactly with what now)
   private ClassLoader myStubsLoader = new MyClassLoader();
-  private final LanguageDependenciesManager myLanguageDependenciesManager = new LanguageDependenciesManager(this);
 
   protected Language(LanguageDescriptor descriptor, IFile file) {
     super(file);
@@ -91,11 +90,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   protected void reloadAfterDescriptorChange() {
     super.reloadAfterDescriptorChange();
     revalidateGenerators();
-  }
-
-  @Override
-  public LanguageDependenciesManager getDependenciesManager() {
-    return myLanguageDependenciesManager;
   }
 
   public void addExtendedLanguage(SModuleReference langRef) {
@@ -209,7 +203,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   @Override
   public void dispose() {
-    myLanguageDependenciesManager.dispose();
     super.dispose();
     ModuleRepositoryFacade.getInstance().unregisterModules(this);
   }

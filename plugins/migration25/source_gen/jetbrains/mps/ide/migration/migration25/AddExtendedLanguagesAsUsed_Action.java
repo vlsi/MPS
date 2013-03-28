@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.util.HashSet;
+import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.logging.Logger;
 
@@ -57,7 +58,7 @@ public class AddExtendedLanguagesAsUsed_Action extends BaseAction {
         Collection<Language> usedNow = new GlobalModuleDependenciesManager(module).getUsedLanguages();
         for (Language lang : CollectionSequence.fromCollection(usedNow)) {
           HashSet<Language> extLangs = new HashSet<Language>();
-          lang.getDependenciesManager().collectAllExtendedLanguages(extLangs);
+          new LanguageDependenciesManager(lang).collectAllExtendedLanguages(extLangs);
           for (Language extLang : SetSequence.fromSet(extLangs)) {
             if (usedNow.contains(extLang)) {
               continue;

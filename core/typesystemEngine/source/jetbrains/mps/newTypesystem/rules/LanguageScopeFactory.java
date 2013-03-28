@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.newTypesystem.rules;
 
+import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -88,7 +89,7 @@ public class LanguageScopeFactory {
     for (SModuleReference langRef: langs) {
       Language lng = ModuleRepositoryFacade.getInstance().getModule(langRef, Language.class);
       updateNamespaceBit(nsBitSet, lng.getModuleDescriptor().getNamespace());
-      for (SModuleReference mref : lng.getDependenciesManager().getAllExtendedLanguages()) {
+      for (SModuleReference mref : new LanguageDependenciesManager(lng).getAllExtendedLanguages()) {
         Language ext = ModuleRepositoryFacade.getInstance().getModule(mref, Language.class);
         updateNamespaceBit(nsBitSet, ext.getModuleDescriptor().getNamespace());
       }

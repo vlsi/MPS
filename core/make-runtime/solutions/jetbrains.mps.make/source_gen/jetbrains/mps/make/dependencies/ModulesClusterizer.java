@@ -27,6 +27,7 @@ import jetbrains.mps.generator.impl.plan.ModelContentUtil;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import java.util.Collection;
@@ -114,7 +115,7 @@ public class ModulesClusterizer {
       } else {
         Set<Language> langs = SetSequence.fromSet(new HashSet<Language>());
         for (Language l : CollectionSequence.fromCollection(new GlobalModuleDependenciesManager(mod).getUsedLanguages())) {
-          l.getDependenciesManager().collectAllExtendedLanguages(langs);
+          new LanguageDependenciesManager(l).collectAllExtendedLanguages(langs);
         }
         QueueSequence.fromQueue(nsq).addSequence(SetSequence.fromSet(langs).select(new ISelector<Language, String>() {
           public String select(Language lang) {

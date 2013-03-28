@@ -16,6 +16,7 @@
 package jetbrains.mps.project.validation;
 
 import jetbrains.mps.generator.impl.plan.ModelContentUtil;
+import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.*;
@@ -52,7 +53,7 @@ public class GeneratorValidator extends BaseModuleValidator<Generator> {
     usedLanguages.remove(sourceLanguage.getModuleName());
 
     Set<Language> ext = new LinkedHashSet<Language>();
-    sourceLanguage.getDependenciesManager().collectAllExtendedLanguages(ext);
+    new LanguageDependenciesManager(sourceLanguage).collectAllExtendedLanguages(ext);
 
     for(Language language : ext){
       extendedLanguages.add(language.getModuleName());

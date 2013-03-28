@@ -19,6 +19,7 @@ import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 
@@ -55,7 +56,7 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
 
   public static void checkBehaviorAspectPresence(Language lang, List<String> errors) {
     Set<Language> ext = new LinkedHashSet<Language>();
-    lang.getDependenciesManager().collectAllExtendedLanguages(ext);
+    new LanguageDependenciesManager(lang).collectAllExtendedLanguages(ext);
 
     for (Language language : ext) {
       EditableSModel descriptor = LanguageAspect.BEHAVIOR.get(language);

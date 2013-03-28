@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 
@@ -164,7 +165,7 @@ public abstract class DefaultScope extends BaseScope {
       myUsedLanguages.addAll(dk.getAllExportedLanguages());
     }
     for (Language l : new ArrayList<Language>(myUsedLanguages)) {
-      l.getDependenciesManager().collectAllExtendedLanguages(myUsedLanguages);
+      new LanguageDependenciesManager(l).collectAllExtendedLanguages(myUsedLanguages);
     }
   }
 

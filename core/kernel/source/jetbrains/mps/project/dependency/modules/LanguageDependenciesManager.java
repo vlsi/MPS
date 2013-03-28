@@ -32,127 +32,135 @@ import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class LanguageDependenciesManager extends ModuleDependenciesManager<Language> {
+public class LanguageDependenciesManager {
+//  private MyModuleWatcher myModuleWatcher;
 
-  private MyModuleWatcher myModuleWatcher;
+//  private AtomicBoolean myInvalidatedFlag = new AtomicBoolean(true);
+//  private volatile Set<SModuleReference> myCachedDeps;
+//  a one-time synchronization helper for the cache
+//  private CountDownLatch myCacheInitGuard = new CountDownLatch(1);
 
-  private AtomicBoolean myInvalidatedFlag = new AtomicBoolean(true);
-  private volatile Set<SModuleReference> myCachedDeps;
-  // a one-time synchronization helper for the cache
-  private CountDownLatch myCacheInitGuard = new CountDownLatch(1);
+  private final Language myLanguage;
 
   public LanguageDependenciesManager(Language language) {
-    super(language);
-    myModuleWatcher = new MyModuleWatcher();
+    myLanguage = language;
+//    myModuleWatcher = new MyModuleWatcher();
   }
 
   public void collectAllExtendedLanguages(Set<Language> result) {
-    if (result.contains(myModule)) return;
+    if (result.contains(myLanguage)) return;
 
-    result.add(myModule);
+    result.add(myLanguage);
 
-    for (Language l : ModuleUtil.refsToLanguages(myModule.getExtendedLanguageRefs())) {
-      l.getDependenciesManager().collectAllExtendedLanguages(result);
+    for (Language l : ModuleUtil.refsToLanguages(myLanguage.getExtendedLanguageRefs())) {
+      new LanguageDependenciesManager(l).collectAllExtendedLanguages(result);
     }
   }
 
-  public Iterable<SModuleReference> getAllExtendedLanguages () {
-    if (myInvalidatedFlag.compareAndSet(true, false)) {
-      // lazy initialization
-      myModuleWatcher.clear();
-
-      Set<SModuleReference> result = new LinkedHashSet<SModuleReference>();
-      THashSet<Language> langs = new THashSet<Language>();
-      collectAllExtendedLanguages(langs);
-
-      for (Language lang: langs) {
-        myModuleWatcher.watchLanguage(lang);
-        result.add(lang.getModuleReference());
-      }
-      this.myCachedDeps = Collections.unmodifiableSet(result);
-      myCacheInitGuard.countDown();
+  public Iterable<SModuleReference> getAllExtendedLanguages() {
+    Set<SModuleReference> result = new LinkedHashSet<SModuleReference>();
+    THashSet<Language> langs = new THashSet<Language>();
+    collectAllExtendedLanguages(langs);
+    for (Language lang : langs) {
+      result.add(lang.getModuleReference());
     }
+    return result;
 
-    while(true) {
-      try {
-        myCacheInitGuard.await();
-        break;
-      } catch (InterruptedException e) {}
-    }
-    return myCachedDeps;
+//    if (myInvalidatedFlag.compareAndSet(true, false)) {
+//      // lazy initialization
+//      myModuleWatcher.clear();
+//
+//      Set<SModuleReference> result = new LinkedHashSet<SModuleReference>();
+//      THashSet<Language> langs = new THashSet<Language>();
+//      collectAllExtendedLanguages(langs);
+//
+//      for (Language lang: langs) {
+//        myModuleWatcher.watchLanguage(lang);
+//        result.add(lang.getModuleReference());
+//      }
+//      this.myCachedDeps = Collections.unmodifiableSet(result);
+//      myCacheInitGuard.countDown();
+//    }
+//
+//    while(true) {
+//      try {
+//        myCacheInitGuard.await();
+//        break;
+//      } catch (InterruptedException e) {}
+//    }
+//    return myCachedDeps;
   }
 
-  public void dispose() {
-    if (myModuleWatcher != null) {
-      myModuleWatcher.dispose();
-      this.myModuleWatcher = null;
-    }
-  }
+//  public void dispose() {
+//    if (myModuleWatcher != null) {
+//      myModuleWatcher.dispose();
+//      this.myModuleWatcher = null;
+//    }
+//  }
 
-  private void invalidate() {
-    myInvalidatedFlag.set(true);
-  }
+//  private void invalidate() {
+//    myInvalidatedFlag.set(true);
+//  }
 
-  private class MyModuleWatcher extends ModuleRepositoryAdapter {
-
-    private ConcurrentHashSet<SModule> myWatchedModules = new ConcurrentHashSet<SModule>(4);
-
-    private MyModuleWatcher() {
-      registerSelf();
-    }
-
-    @Override
-    public void moduleRemoved(SModule module) {
-      invalidateIfWatching(module);
-    }
-
-    @Override
-    public void moduleInitialized(SModule module) {
-      invalidateIfWatching(module);
-    }
-
-    @Override
-    public void moduleChanged(SModule module) {
-      invalidateIfWatching(module);
-    }
-
-    @Override
-    public void repositoryChanged() {
-      invalidate();
-      unregisterSelf();
-    }
-
-    private void watchDevKit (DevKit devKit) {
-      myWatchedModules.add(devKit);
-    }
-
-    private void watchLanguage (Language language) {
-      myWatchedModules.add(language);
-    }
-
-    private void invalidateIfWatching (SModule module) {
-      if (myWatchedModules.contains(module)) {
-        invalidate();
-        unregisterSelf();
-      }
-    }
-
-    private void clear () {
-      myWatchedModules.clear();
-    }
-
-    private void dispose() {
-      clear();
-      unregisterSelf();
-    }
-
-    private void registerSelf() {
-      MPSModuleRepository.getInstance().addModuleRepositoryListener(this);
-    }
-
-    private void unregisterSelf() {
-      MPSModuleRepository.getInstance().removeModuleRepositoryListener(this);
-    }
-  }
-
+//  private class MyModuleWatcher extends ModuleRepositoryAdapter {
+//
+//    private ConcurrentHashSet<SModule> myWatchedModules = new ConcurrentHashSet<SModule>(4);
+//
+//    private MyModuleWatcher() {
+//      registerSelf();
+//    }
+//
+//    @Override
+//    public void moduleRemoved(SModule module) {
+//      invalidateIfWatching(module);
+//    }
+//
+//    @Override
+//    public void moduleInitialized(SModule module) {
+//      invalidateIfWatching(module);
+//    }
+//
+//    @Override
+//    public void moduleChanged(SModule module) {
+//      invalidateIfWatching(module);
+//    }
+//
+//    @Override
+//    public void repositoryChanged() {
+//      invalidate();
+//      unregisterSelf();
+//    }
+//
+//    private void watchDevKit (DevKit devKit) {
+//      myWatchedModules.add(devKit);
+//    }
+//
+//    private void watchLanguage (Language language) {
+//      myWatchedModules.add(language);
+//    }
+//
+//    private void invalidateIfWatching (SModule module) {
+//      if (myWatchedModules.contains(module)) {
+//        invalidate();
+//        unregisterSelf();
+//      }
+//    }
+//
+//    private void clear () {
+//      myWatchedModules.clear();
+//    }
+//
+//    private void dispose() {
+//      clear();
+//      unregisterSelf();
+//    }
+//
+//    private void registerSelf() {
+//      MPSModuleRepository.getInstance().addModuleRepositoryListener(this);
+//    }
+//
+//    private void unregisterSelf() {
+//      MPSModuleRepository.getInstance().removeModuleRepositoryListener(this);
+//    }
+//  }
 }
