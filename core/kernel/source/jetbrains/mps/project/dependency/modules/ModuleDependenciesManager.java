@@ -19,9 +19,11 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -60,19 +62,15 @@ public class ModuleDependenciesManager<T extends SModule> implements Dependencie
         result.addAll(dk.getAllExportedSolutions());
       }
 
-      //runtimes from languages
       if (runtimes) {
-        HashSet<Language> lang = new HashSet<Language>();
-        for (Language l : directlyUsedLanguages()) {
-          if (lang.contains(l)) continue;
-          l.getDependenciesManager().collectAllExtendedLanguages(lang);
-        }
-
-        for (Language l : lang) {
-          result.addAll(ModuleUtil.refsToModules(l.getRuntimeModulesReferences()));
+        for (SLanguage l : myModule.getUsedLanguages()) {
+          for (SModuleReference runtime : l.getLanguageRuntimes()) {
+            result.add(ModuleRepositoryFacade.getInstance().getModule(runtime));
+          }
         }
       }
     }
+
     return result;
   }
 }

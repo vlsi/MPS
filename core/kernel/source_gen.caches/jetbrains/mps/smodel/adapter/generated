@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="2gi79apg4moqi67yrvzhpwk3cagvdaw">
+<dependencies version="2" modelHash="5z7uj13yi5xp1gglzt4sp0diik5i0v3">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -78,7 +78,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="SPropertyNodeAdapter.java" />
   </source>
-  <source id="2601097456319851251" name="SLanguageLanguageAdapter" hash="-7cchwdnk0m25ezab95a09zom4kalenn">
+  <source id="2601097456319851251" name="SLanguageLanguageAdapter" hash="d0qiskahoe7nstftq1o0u4lc139crl">
     <dep root="2601097456319836723" />
     <dep root="5691494193750495380" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
