@@ -1146,7 +1146,9 @@ public class JavaConverterTreeBuilder {
       }
     })) {
       // we don't support for ( a=5, b=6; ...) {} in baseLanguage, workaround here 
-      result = new JavaConverterTreeBuilder.QuotationClass_m30mvz_a0a1a3a17().createNode(init, forStatement);
+      SNode block = new JavaConverterTreeBuilder.QuotationClass_m30mvz_a0a1a3a17().createNode(init, forStatement);
+      result = block;
+      addBlock(SLinkOperations.getTarget(block, "statements", true), x.sourceStart(), x.sourceEnd());
     } else if (!(init.isEmpty())) {
       boolean first = true;
       for (SNode statement : init) {
