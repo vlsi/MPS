@@ -1758,7 +1758,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private jetbrains.mps.openapi.editor.cells.EditorCell findNodeCellWithRole(jetbrains.mps.openapi.editor.cells.EditorCell rootCell, String role,
       SNode node) {
     if (role == null) return null;
-    if (role.equals(APICellAdapter.getCellRole(rootCell)) && node == rootCell.getSNode()) {
+    if (role.equals(rootCell.getRole()) && node == rootCell.getSNode()) {
       return rootCell;
     }
     if (rootCell instanceof EditorCell_Collection) {

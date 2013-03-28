@@ -57,10 +57,6 @@ public class APICellAdapter {
     return false;
   }
 
-  public static String getCellRole(EditorCell cell) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getCellRole();
-  }
-
   public static <T extends EditorMessage> List<T> getMessages(EditorCell cell, Class<T> clazz) {
     List<T> result = new ArrayList<T>();
     for (SimpleEditorMessage message : cell.getMessages()) {
@@ -76,7 +72,6 @@ public class APICellAdapter {
   }
 
   public static boolean isBigCell(EditorCell cell) {
-    //??? EditorCell_Empty ???
     return cell.getParent() == null || cell.getParent().getSNode() != cell.getSNode();
   }
 
