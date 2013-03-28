@@ -71,7 +71,6 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.dependency.modules.ModuleDependenciesManager;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
@@ -166,17 +165,6 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       if(facetTab != null)
         addTab(facetTab);
     }
-  }
-
-  private boolean dependOnBL() {
-    ModuleDependenciesManager dependenciesManager = new ModuleDependenciesManager(
-      MPSModuleRepository.getInstance().getModuleById(myModuleDescriptor.getId())
-    );
-
-    IModule bl = MPSModuleRepository.getInstance().getModuleByFqName("jetbrains.mps.baseLanguage");
-
-    return dependenciesManager.directlyUsedLanguages().contains(bl)
-      || dependenciesManager.directlyUsedModules(true,true).contains(bl);
   }
 
   @Override

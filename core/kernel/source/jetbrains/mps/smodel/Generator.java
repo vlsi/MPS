@@ -21,7 +21,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor;
-import jetbrains.mps.project.dependency.modules.ModuleDependenciesManager;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -184,11 +183,6 @@ public class Generator extends AbstractModule {
     }
 
     return dependencies;
-  }
-
-  @Override
-  public ModuleDependenciesManager getDependenciesManager() {
-    return new ModuleDependenciesManager(this);
   }
 
   public List<SModuleReference> getReferencedGeneratorUIDs() {

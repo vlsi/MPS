@@ -79,12 +79,6 @@ public class TestModule extends AbstractModule {
     return ((AbstractModule) myPeer).getOutputPath();
   }
 
-  @Override
-  public DependenciesManager getDependenciesManager() {
-    if (myPeer == null) throw new IllegalStateException();
-    return myPeer.getDependenciesManager();
-  }
-
   private void clearAll() {
     myPeer = null;
     myModels.clear();

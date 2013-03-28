@@ -41,9 +41,6 @@ public interface IModule extends SModule {
 
   // review SDependency part in SModule
 
-  // extract methods from DependenciesManager to SModule ?
-  DependenciesManager getDependenciesManager();
-
   /**
    * Explicitly used devkits
    *
@@ -92,6 +89,13 @@ public interface IModule extends SModule {
   IScope getScope();
 
   // ----- deprecated part
+
+  /**
+   * @see org.jetbrains.mps.openapi.module.SModule#getUsedLanguages()
+   * @see org.jetbrains.mps.openapi.module.SModule#getDeclaredDependencies()
+   */
+  @Deprecated
+  DependenciesManager getDependenciesManager();
 
   /**
    * @see org.jetbrains.mps.openapi.module.SModule#getUsedLanguages()

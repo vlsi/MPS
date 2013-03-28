@@ -25,7 +25,6 @@ import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.dependency.modules.DependenciesManager;
-import jetbrains.mps.project.dependency.modules.ModuleDependenciesManager;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.project.facets.TestsFacet;
@@ -350,9 +349,10 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
 
   //----get deps
 
+  @Deprecated
   @Override
-  public DependenciesManager getDependenciesManager() {
-    return new ModuleDependenciesManager(this);
+  public final DependenciesManager getDependenciesManager() {
+    throw new UnsupportedOperationException();
   }
 
   @Override

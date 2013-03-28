@@ -21,8 +21,11 @@ import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Collection;
 
 /**
+ * @see org.jetbrains.mps.openapi.module.SModule#getUsedLanguages()
+ * @see org.jetbrains.mps.openapi.module.SModule#getDeclaredDependencies()
  * This class says, which modules are immediately visible from its module
  */
+@Deprecated
 public interface DependenciesManager {
   /**
    * Returns languages, immediately used by this module
