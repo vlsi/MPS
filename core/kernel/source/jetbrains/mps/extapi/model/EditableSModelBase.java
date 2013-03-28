@@ -152,7 +152,6 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
     } catch (IOException e) {
       LOG.error("Can't save " + getModelName() + ": " + e.getMessage(), e);
     } catch (ModelSaveException e) {
-      fireModelProblemsUpdated();
       // TODO notify
     }
     if (reload) {
@@ -161,6 +160,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
 
     updateTimestamp();
     fireModelSaved();
+    fireModelProblemsUpdated();
   }
 
   /**

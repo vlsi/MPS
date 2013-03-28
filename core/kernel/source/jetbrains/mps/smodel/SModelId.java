@@ -167,6 +167,18 @@ public abstract class SModelId implements org.jetbrains.mps.openapi.model.SModel
     }
 
     @Override
+    public boolean equals(Object o) {
+      if (this == o) return true;
+      if (o == null || getClass() != o.getClass()) return false;
+      return myModelName.equals(((ModelNameSModelId) o).myModelName);
+    }
+
+    @Override
+    public int hashCode() {
+      return myModelName.hashCode();
+    }
+
+    @Override
     public String getType() {
       return TYPE;
     }
@@ -196,6 +208,18 @@ public abstract class SModelId implements org.jetbrains.mps.openapi.model.SModel
         return myPath.substring(i + 1);
       }
       return myPath;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) return true;
+      if (o == null || getClass() != o.getClass()) return false;
+      return myPath.equals(((RelativePathSModelId) o).myPath);
+    }
+
+    @Override
+    public int hashCode() {
+      return myPath.hashCode();
     }
 
     @Override

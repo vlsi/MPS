@@ -28,6 +28,7 @@ import com.intellij.openapi.vcs.FileStatusListener;
 import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.containers.MultiMap;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.MPSCoreComponents;
@@ -35,16 +36,18 @@ import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.openapi.editor.EditorComponent;
-import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
+import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -58,6 +61,18 @@ public class MPSEditorWarningsManager implements ProjectComponent {
   private ClassLoaderManager myClassLoaderManager;
   private ReloadListener myReloadListener = new MyReloadListener();
   private MyFileStatusListener myFileStatusListener = new MyFileStatusListener();
+  private final SModelAdapter myListener = new SModelAdapter() {
+    @Override
+    public void problemsUpdated(SModel event) {
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
+        @Override
+        public void run() {
+          if (myProject.isDisposed()) return;
+          updateAllWarnings();
+        }
+      });
+    }
+  };
   private Project myProject;
 
   private MyFileEditorManagerListener myFileEditorManagerListener = new MyFileEditorManagerListener();
@@ -90,10 +105,12 @@ public class MPSEditorWarningsManager implements ProjectComponent {
   public void initComponent() {
     myClassLoaderManager.addReloadHandler(myReloadListener);
     FileStatusManager.getInstance(myProject).addFileStatusListener(myFileStatusListener);
+    GlobalSModelEventsManager.getInstance().addGlobalModelListener(myListener);
   }
 
   @Override
   public void disposeComponent() {
+    GlobalSModelEventsManager.getInstance().removeGlobalModelListener(myListener);
     FileStatusManager.getInstance(myProject).removeFileStatusListener(myFileStatusListener);
     myClassLoaderManager.removeReloadHandler(myReloadListener);
   }
