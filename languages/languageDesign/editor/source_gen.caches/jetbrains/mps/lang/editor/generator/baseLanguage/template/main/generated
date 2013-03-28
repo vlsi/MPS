@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="4v8x2g75pqcmbyhle5homv3ain7dkxw">
+<dependencies version="2" modelHash="-b1w8k4csbidyfkhrk912j4ee1vkalc1">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cellLayout(MPS.Editor/jetbrains.mps.nodeEditor.cellLayout@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)" />
@@ -215,7 +215,7 @@
   <source id="1165277100275" name="template_CellMenuPart_AbstractGroup" hash="60vspa52qsceq3cyxvl1fcjq1swvu4k">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1165793019302" name="template_CreateCellExpression" hash="-1ejlhdj5ixz3n90mfcjzhpu5zuxw3ft">
+  <source id="1165793019302" name="template_CreateCellExpression" hash="1wvyu7b6oby2uo1evj5vrk1tumtm83s">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1166063029142" name="class_CellMenuComponent" hash="5htdaxc49os4s7aj8xdn8nz0h0ie0hj">
@@ -344,7 +344,7 @@
   <source id="4514257407427004628" name="reduce_AbstractOperation" hash="dq0cvqwv26xybtbdf5wvydoqnjitfj0">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="8313721352726742367" name="reduce_CellModel_Empty" hash="9ul832qdn03bcjp9qtz0yx7s0gc61e6">
+  <source id="8313721352726742367" name="reduce_CellModel_Empty" hash="-dv9x98wj57io9kgs4dqnzfyco331etk">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1096629760203" name="MAPPING_main" hash="-637gn2fkpwar3km8qk8armqpvktpynl">
