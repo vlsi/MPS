@@ -92,6 +92,7 @@ public class ShowImplementationComponent extends JPanel {
         sModel.addRootNode(myNodes.get(0));
       }
     }, false);
+    myEditor.editNode(myNodes.get(0));
     myProject = context.getProject();
 
     init();
