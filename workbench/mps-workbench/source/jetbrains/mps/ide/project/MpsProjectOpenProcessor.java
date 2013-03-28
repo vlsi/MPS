@@ -21,7 +21,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.platform.ProjectBaseDirectory;
 import com.intellij.projectImport.ProjectOpenProcessor;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
-import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.icons.MPSIcons;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
@@ -34,7 +34,7 @@ public class MpsProjectOpenProcessor extends ProjectOpenProcessor {
 
   @Override
   public Icon getIcon() {
-    return Icons.PROJECT_ICON;
+    return MPSIcons.MPS16x16;
   }
 
   @Override

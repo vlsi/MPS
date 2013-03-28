@@ -261,7 +261,7 @@
     <dependency org="lib.src" name="picocontainer-src.zip" rev="${idea.platform.version}">
       <artifact name="picocontainer-src.zip" ext="zip"/>
     </dependency>
-    <dependency org="lib.src" name="platform.src.zip" rev="${idea.platform.version}">
+    <dependency org="lib.src" name="platform.src.zip" rev="123.123.2">
       <artifact name="platform.src.zip" ext="zip"/>
     </dependency>
     <dependency org="lib.src" name="sanselan-0.98-snapshot-src.jar" rev="${idea.platform.version}">
@@ -411,7 +411,7 @@
     <dependency org="lib" name="picocontainer.jar" rev="${idea.platform.version}">
       <artifact name="picocontainer.jar" ext="jar"/>
     </dependency>
-    <dependency org="lib" name="platform-api.jar" rev="${idea.platform.version}">
+    <dependency org="lib" name="platform-api.jar" rev="123.123.2">
       <artifact name="platform-api.jar" ext="jar"/>
     </dependency>
     <dependency org="lib" name="platform.jar" rev="${idea.platform.version}">

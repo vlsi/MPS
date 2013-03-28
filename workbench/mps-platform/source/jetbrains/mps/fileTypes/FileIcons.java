@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.fileTypes;
 
-import com.intellij.icons.AllIcons;
+import jetbrains.mps.icons.MPSIcons;
 import jetbrains.mps.icons.MPSIcons.Nodes;
 
 import javax.swing.Icon;
@@ -25,7 +25,7 @@ import javax.swing.Icon;
  */
 public class FileIcons {
   public static final Icon MODEL_ICON = Nodes.Model;
-  public static final Icon PROJECT_ICON = AllIcons.Nodes.Project;
+  public static final Icon PROJECT_ICON = MPSIcons.MPS16x16;
   public static final Icon SOLUTION_ICON = Nodes.Solution;
   public static final Icon PROJECT_LANGUAGE_ICON = Nodes.Language;
   public static final Icon DEVKIT_ICON = Nodes.DevKit;

@@ -2851,10 +2851,9 @@
     <nodeInfo nodeId="2843918448603437956" fileName="FindWrongAspectDependencies_Action.java" startLine="82" startPosition="49" endLine="83" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2843918448603437967" fileName="FindWrongAspectDependencies_Action.java" startLine="84" startPosition="5" endLine="85" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2843918448603437986" fileName="FindWrongAspectDependencies_Action.java" startLine="86" startPosition="37" endLine="87" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2843918448603437999" fileName="FindWrongAspectDependencies_Action.java" startLine="88" startPosition="44" endLine="89" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2843918448603438018" fileName="FindWrongAspectDependencies_Action.java" startLine="89" startPosition="78" endLine="90" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2843918448603437962" fileName="FindWrongAspectDependencies_Action.java" startLine="91" startPosition="5" endLine="92" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2843918448603437232" fileName="FindWrongAspectDependencies_Action.java" startLine="95" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="2843918448603438018" fileName="FindWrongAspectDependencies_Action.java" startLine="88" startPosition="44" endLine="89" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2843918448603437962" fileName="FindWrongAspectDependencies_Action.java" startLine="90" startPosition="5" endLine="91" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2843918448603437232" fileName="FindWrongAspectDependencies_Action.java" startLine="94" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="2843918448603437232" fileName="FindWrongAspectDependencies_Action.java" startLine="53" startPosition="95" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2843918448603437232" fileName="FindWrongAspectDependencies_Action.java" startLine="57" startPosition="89" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2843918448603437232" fileName="FindWrongAspectDependencies_Action.java" startLine="61" startPosition="109" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -2865,12 +2864,12 @@
     <nodeInfo nodeId="2843918448603437232" fileName="FindWrongAspectDependencies_Action.java" startLine="60" startPosition="5" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2843918448603437232" fileName="FindWrongAspectDependencies_Action.java" startLine="33" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FindWrongAspectDependencies_Action#()V" />
     <nodeInfo nodeId="2843918448603437239" fileName="FindWrongAspectDependencies_Action.java" startLine="69" startPosition="9" endLine="74" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2843918448603437977" fileName="FindWrongAspectDependencies_Action.java" startLine="85" startPosition="39" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2843918448603437232" fileName="FindWrongAspectDependencies_Action.java" startLine="44" startPosition="89" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="2843918448603437977" fileName="FindWrongAspectDependencies_Action.java" startLine="85" startPosition="39" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2843918448603437232" fileName="FindWrongAspectDependencies_Action.java" startLine="44" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <nodeInfo nodeId="2843918448603437232" fileName="FindWrongAspectDependencies_Action.java" startLine="68" startPosition="96" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="2843918448603437232" fileName="FindWrongAspectDependencies_Action.java" startLine="68" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="2843918448603437938" fileName="FindWrongAspectDependencies_Action.java" startLine="81" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="needsProcessing#(Lorg/jetbrains/mps/openapi/model/SModel;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="2843918448603437938" fileName="FindWrongAspectDependencies_Action.java" startLine="81" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="needsProcessing#(Lorg/jetbrains/mps/openapi/model/SModel;Ljava/util/Map;)Z" />
     <nodeInfo nodeId="2843918448603437232" fileName="FindWrongAspectDependencies_Action.java" startLine="53" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
     <scopeInfo nodeId="2843918448603437232" fileName="FindWrongAspectDependencies_Action.java" startLine="40" startPosition="32" endLine="41" endPosition="16" />
     <scopeInfo nodeId="2843918448603437232" fileName="FindWrongAspectDependencies_Action.java" startLine="45" startPosition="9" endLine="46" endPosition="43" />
@@ -2884,13 +2883,11 @@
     <scopeInfo nodeId="2843918448603437232" fileName="FindWrongAspectDependencies_Action.java" startLine="76" startPosition="27" endLine="77" endPosition="99" />
     <scopeInfo nodeId="2843918448603437950" fileName="FindWrongAspectDependencies_Action.java" startLine="82" startPosition="49" endLine="83" endPosition="19" />
     <scopeInfo nodeId="2843918448603437978" fileName="FindWrongAspectDependencies_Action.java" startLine="86" startPosition="37" endLine="87" endPosition="18" />
+    <scopeInfo nodeId="2843918448603437991" fileName="FindWrongAspectDependencies_Action.java" startLine="88" startPosition="44" endLine="89" endPosition="64" />
     <scopeInfo nodeId="2843918448603437232" fileName="FindWrongAspectDependencies_Action.java" startLine="47" startPosition="0" endLine="49" endPosition="44">
       <varInfo nodeId="2843918448603437232" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="2843918448603437232" fileName="FindWrongAspectDependencies_Action.java" startLine="47" startPosition="27" endLine="49" endPosition="44" />
-    <scopeInfo nodeId="2843918448603437991" fileName="FindWrongAspectDependencies_Action.java" startLine="88" startPosition="44" endLine="90" endPosition="39">
-      <varInfo nodeId="2843918448603438000" varName="kind" />
-    </scopeInfo>
     <scopeInfo nodeId="2843918448603437232" fileName="FindWrongAspectDependencies_Action.java" startLine="33" startPosition="47" endLine="36" endPosition="40" />
     <scopeInfo nodeId="2843918448603437253" fileName="FindWrongAspectDependencies_Action.java" startLine="71" startPosition="0" endLine="74" endPosition="0">
       <varInfo nodeId="2843918448603437253" varName="md" />
@@ -2908,7 +2905,7 @@
       <varInfo nodeId="2843918448603437232" varName="event" />
     </scopeInfo>
     <scopeInfo nodeId="2843918448603437232" fileName="FindWrongAspectDependencies_Action.java" startLine="68" startPosition="96" endLine="78" endPosition="5" />
-    <scopeInfo nodeId="2843918448603437940" fileName="FindWrongAspectDependencies_Action.java" startLine="81" startPosition="88" endLine="92" endPosition="17">
+    <scopeInfo nodeId="2843918448603437940" fileName="FindWrongAspectDependencies_Action.java" startLine="81" startPosition="88" endLine="91" endPosition="17">
       <varInfo nodeId="2843918448603437968" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="2843918448603437232" fileName="FindWrongAspectDependencies_Action.java" startLine="53" startPosition="95" endLine="65" endPosition="16" />
@@ -2916,7 +2913,7 @@
       <varInfo nodeId="2843918448603437232" varName="_params" />
       <varInfo nodeId="2843918448603437232" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="2843918448603437938" fileName="FindWrongAspectDependencies_Action.java" startLine="81" startPosition="0" endLine="94" endPosition="0">
+    <scopeInfo nodeId="2843918448603437938" fileName="FindWrongAspectDependencies_Action.java" startLine="81" startPosition="0" endLine="93" endPosition="0">
       <varInfo nodeId="2843918448603437938" varName="_params" />
       <varInfo nodeId="2843918448603437942" varName="model" />
     </scopeInfo>
@@ -2925,7 +2922,7 @@
       <varInfo nodeId="2843918448603437232" varName="event" />
     </scopeInfo>
     <unitInfo nodeId="2843918448603437253" fileName="FindWrongAspectDependencies_Action.java" startLine="70" startPosition="192" endLine="74" endPosition="7" unitName="jetbrains.mps.ide.modelchecker.actions.FindWrongAspectDependencies_Action$1" />
-    <unitInfo nodeId="2843918448603437232" fileName="FindWrongAspectDependencies_Action.java" startLine="30" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.FindWrongAspectDependencies_Action" />
+    <unitInfo nodeId="2843918448603437232" fileName="FindWrongAspectDependencies_Action.java" startLine="30" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.FindWrongAspectDependencies_Action" />
   </root>
   <root nodeRef="r:e2c8c94a-404b-4b97-a3a4-c76946bd1913(jetbrains.mps.ide.modelchecker.actions)/2843918448603437373">
     <nodeInfo nodeId="2843918448603455135" fileName="AspectDependenciesChecker.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CORE" />
@@ -2994,7 +2991,7 @@
     <nodeInfo nodeId="2065676860593242932" fileName="AspectDependenciesChecker.java" startLine="172" startPosition="11" endLine="173" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2065676860593240495" fileName="AspectDependenciesChecker.java" startLine="174" startPosition="9" endLine="175" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2065676860593240456" fileName="AspectDependenciesChecker.java" startLine="176" startPosition="7" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2843918448603459196" fileName="AspectDependenciesChecker.java" startLine="177" startPosition="0" endLine="178" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2843918448603459196" fileName="AspectDependenciesChecker.java" startLine="177" startPosition="0" endLine="178" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2843918448603459255" fileName="AspectDependenciesChecker.java" startLine="180" startPosition="18" endLine="181" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2843918448603459252" fileName="AspectDependenciesChecker.java" startLine="182" startPosition="25" endLine="183" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2843918448603459249" fileName="AspectDependenciesChecker.java" startLine="184" startPosition="27" endLine="185" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -3031,7 +3028,7 @@
     <nodeInfo nodeId="2843918448603455228" fileName="AspectDependenciesChecker.java" startLine="208" startPosition="47" endLine="217" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
     <nodeInfo nodeId="2065676860593242935" fileName="AspectDependenciesChecker.java" startLine="194" startPosition="89" endLine="204" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="2065676860593241808" fileName="AspectDependenciesChecker.java" startLine="163" startPosition="76" endLine="174" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2843918448603459212" fileName="AspectDependenciesChecker.java" startLine="178" startPosition="41" endLine="189" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="2843918448603459212" fileName="AspectDependenciesChecker.java" startLine="178" startPosition="39" endLine="189" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
     <nodeInfo nodeId="2843918448603455221" fileName="AspectDependenciesChecker.java" startLine="208" startPosition="0" endLine="220" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="kindToString#(I)Ljava/lang/String;" />
     <nodeInfo nodeId="2065676860593242718" fileName="AspectDependenciesChecker.java" startLine="194" startPosition="0" endLine="207" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findInModule#(Lorg/jetbrains/mps/openapi/module/SModule;Ljava/lang/String;Ljava/lang/String;)Z" />
     <nodeInfo nodeId="2065676860593240493" fileName="AspectDependenciesChecker.java" startLine="161" startPosition="7" endLine="176" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />

@@ -82,6 +82,8 @@ public class ParameterizedSubstituteMenuPart_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_60liib_l1b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_60liib_m1b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_60liib_n1b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_60liib_o1b0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_60liib_p1b0(editorContext, node));
     return editorCell;
   }
 
@@ -454,6 +456,49 @@ public class ParameterizedSubstituteMenuPart_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_60liib_b31b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("handler");
+    provider.setNoTargetText("<default>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createConstant_60liib_o1b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "selection handler");
+    editorCell.setCellId("Constant_60liib_o1b0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createCollection_60liib_p1b0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_60liib_p1b0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createIndentCell_60liib_a51b1a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_60liib_b51b1a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createIndentCell_60liib_a51b1a(EditorContext editorContext, SNode node) {
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
+    return result;
+  }
+
+  private EditorCell createRefNode_60liib_b51b1a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("selectionHandler");
     provider.setNoTargetText("<default>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);

@@ -18,6 +18,9 @@ package jetbrains.mps.workbench.actions;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileChooser.FileElement;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.ui.LayeredIcon;
+import jetbrains.mps.icons.MPSIcons;
+import jetbrains.mps.icons.MPSIcons.ProjectPane;
 import jetbrains.mps.project.MPSExtentions;
 
 import javax.swing.Icon;
@@ -29,7 +32,25 @@ public class OpenMPSProjectFileChooserDescriptor extends FileChooserDescriptor{
 
   @Override
   public boolean isFileSelectable(VirtualFile file) {
-    return isMpsProjectFile(file);
+    return isMpsProjectFile(file) || isMpsProjectDirectory(file);
+  }
+
+  // TODO: create better icon
+  private final static Icon MPSProjectDirIcon = craeteMPSProjectDirIcon();
+  private final static Icon craeteMPSProjectDirIcon() {
+    LayeredIcon layeredIcon = new LayeredIcon(2);
+    layeredIcon.setIcon(MPSIcons.MPS16x16, 0);
+    layeredIcon.setIcon(ProjectPane.LogicalView, 1, 5, 5);
+    return layeredIcon;
+  }
+
+  @Override
+  public Icon getIcon(VirtualFile file) {
+    if(isMpsProjectFile(file))
+      return MPSIcons.MPS16x16;
+    else if(isMpsProjectDirectory(file))
+      return MPSProjectDirIcon;
+    return super.getIcon(file);
   }
 
   @Override
@@ -38,7 +59,32 @@ public class OpenMPSProjectFileChooserDescriptor extends FileChooserDescriptor{
      return isMpsProjectFile(file) || super.isFileVisible(file, showHiddenFiles) && file.isDirectory();
   }
 
-  private boolean isMpsProjectFile(VirtualFile file) {
-    return !file.isDirectory() && file.getName().toLowerCase().endsWith(MPSExtentions.DOT_MPS_PROJECT);
+  private static boolean isMpsProjectFile(VirtualFile file) {
+    return file.isValid() && !file.isDirectory() && file.getName().toLowerCase().endsWith(MPSExtentions.DOT_MPS_PROJECT);
+  }
+
+  private static boolean isMpsProjectDirectory(final VirtualFile file) {
+    /**
+     * <code>file.getParent() == null<code/> checks that root directory of any drive is never an MPS project
+     * */
+    if (!file.isValid() || file.getParent() == null || !file.isDirectory()) return false;
+
+    return getMPSProjectFile(file) != null;
+  }
+
+  public static VirtualFile getMPSProjectFile(VirtualFile file) {
+    if(file == null) return null;
+
+    if(isMpsProjectFile(file)) return file;
+
+    if(!file.isDirectory()) return null;
+
+    for (VirtualFile child : file.getChildren()) {
+      if(child.isDirectory()) continue;
+      if (child.getExtension() != null && child.getExtension().equals(MPSExtentions.MPS_PROJECT))
+        return child;
+    }
+
+    return null;
   }
 }

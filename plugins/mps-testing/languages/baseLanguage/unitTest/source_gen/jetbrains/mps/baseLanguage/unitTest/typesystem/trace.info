@@ -129,7 +129,7 @@
   </root>
   <root nodeRef="r:2b2539c5-00c8-487d-9567-ecc2b9274c7b(jetbrains.mps.baseLanguage.unitTest.typesystem)/8797237962361650880">
     <nodeInfo nodeId="8797237962361651658" fileName="CheckUtils.java" startLine="21" startPosition="71" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8797237962361653930" fileName="CheckUtils.java" startLine="23" startPosition="133" endLine="24" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8797237962361653930" fileName="CheckUtils.java" startLine="23" startPosition="133" endLine="24" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8797237962361654516" fileName="CheckUtils.java" startLine="25" startPosition="12" endLine="26" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="825821767789062653" fileName="CheckUtils.java" startLine="33" startPosition="50" endLine="34" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="825821767789062619" fileName="CheckUtils.java" startLine="34" startPosition="27" endLine="35" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -159,7 +159,7 @@
     <nodeInfo nodeId="8797237962361707494" fileName="CheckUtils.java" startLine="38" startPosition="76" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="825821767789047256" fileName="CheckUtils.java" startLine="32" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="fixPluginKindForMPSTestCase#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <scopeInfo nodeId="8797237962361650885" fileName="CheckUtils.java" startLine="16" startPosition="24" endLine="16" endPosition="24" />
-    <scopeInfo nodeId="8797237962361651673" fileName="CheckUtils.java" startLine="23" startPosition="133" endLine="24" endPosition="116" />
+    <scopeInfo nodeId="8797237962361651673" fileName="CheckUtils.java" startLine="23" startPosition="133" endLine="24" endPosition="94" />
     <scopeInfo nodeId="8797237962361654495" fileName="CheckUtils.java" startLine="25" startPosition="12" endLine="26" endPosition="18" />
     <scopeInfo nodeId="8797237962361651660" fileName="CheckUtils.java" startLine="52" startPosition="36" endLine="53" endPosition="43" />
     <scopeInfo nodeId="825821767789064099" fileName="CheckUtils.java" startLine="59" startPosition="36" endLine="60" endPosition="43" />

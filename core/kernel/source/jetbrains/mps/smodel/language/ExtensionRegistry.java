@@ -136,8 +136,7 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
     if (mod instanceof Language) {
       return findLanguageExtensionDescriptor((Language) mod);
     } else if (mod instanceof Solution) {
-      SolutionDescriptor sdesc = ((Solution) mod).getModuleDescriptor();
-      switch (sdesc.getKind()) {
+      switch (((Solution) mod).getKind()) {
         case PLUGIN_CORE:
         case PLUGIN_EDITOR:
         case PLUGIN_OTHER:
