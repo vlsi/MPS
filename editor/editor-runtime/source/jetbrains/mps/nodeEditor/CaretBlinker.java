@@ -16,28 +16,17 @@
 package jetbrains.mps.nodeEditor;
 
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.editor.ex.EditorSettingsExternalizable;
 import com.intellij.openapi.fileTypes.ex.FileTypeManagerEx;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.util.WeakSet;
-import jetbrains.mps.nodeEditor.CaretBlinker.MyState;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.components.PersistentStateComponent;
-import com.intellij.openapi.components.State;
-import com.intellij.openapi.components.Storage;
 import org.jetbrains.annotations.NotNull;
 
 
-@State(
-  name = "CaretBlinker",
-  storages = {
-    @Storage(
-      id ="other",
-      file = "$APP_CONFIG$/mpsEditor.xml"
-    )}
-)
-public class CaretBlinker implements PersistentStateComponent<MyState>, ApplicationComponent {
+public class CaretBlinker implements ApplicationComponent {
   private static final Logger LOG = LogManager.getLogger(CaretBlinker.class);
 
   public static CaretBlinker getInstance() {
@@ -46,9 +35,7 @@ public class CaretBlinker implements PersistentStateComponent<MyState>, Applicat
 
   public static final int MIN_BLINKING_PERIOD = 100; //millis
   public static final int MAX_BLINKING_PERIOD = 1000;
-  public static final int DEFAULT_BLINKING_PERIOD = 500;
 
-  private MyState myState = new MyState();
   private boolean myStarted = false;
 
   private final Object myRegistrationLock = new Object();
@@ -69,13 +56,13 @@ public class CaretBlinker implements PersistentStateComponent<MyState>, Applicat
   }
 
   public int getCaretBlinkingRateTimeMillis() {
-    return myState.myCaretBlinkingRateMillis == -1 ? DEFAULT_BLINKING_PERIOD : myState.myCaretBlinkingRateMillis;
+    return EditorSettingsExternalizable.getInstance().getBlinkPeriod();
   }
 
   public void setCaretBlinkingRateTimeMillis(int timeMillis) {
-    myState.myCaretBlinkingRateMillis = timeMillis;
+    EditorSettingsExternalizable.getInstance().setBlinkPeriod(timeMillis);
   }
-                                                                  
+
   public void registerEditor(EditorComponent editorComponent) {
     synchronized(myRegistrationLock) {
       myEditors.add(editorComponent);
@@ -86,16 +73,6 @@ public class CaretBlinker implements PersistentStateComponent<MyState>, Applicat
     synchronized(myRegistrationLock) {
       myEditors.remove(editorComponent);
     }
-  }
-
-  @Override
-  public MyState getState() {
-    return myState;
-  }
-
-  @Override
-  public void loadState(MyState state) {
-    myState = state;
   }
 
   @Override
@@ -137,18 +114,6 @@ public class CaretBlinker implements PersistentStateComponent<MyState>, Applicat
           LOG.error(t);
         }
       }
-    }
-  }
-
-  public static class MyState {
-    private int myCaretBlinkingRateMillis = -1;
-
-    public int getCaretBlinkingRateMillis() {
-      return myCaretBlinkingRateMillis;
-    }
-
-    public void setCaretBlinkingRateMillis(int caretBlinkingRateMillis) {
-      myCaretBlinkingRateMillis = caretBlinkingRateMillis;
     }
   }
 }
