@@ -91,6 +91,7 @@
     <methodReferencesSearch implementation="jetbrains.mps.idea.java.usages.MPSMethodReferencesSearch"/>
     <refactoring.elementListenerProvider implementation="jetbrains.mps.idea.java.refactoring.RefactoringListenerProvider"/>
     <fileBasedIndex implementation="jetbrains.mps.idea.java.index.FQNameJavaClassIndex"/>
+    <fileBasedIndex implementation="jetbrains.mps.idea.java.index.MPSJavaPackageIndex"/>
   </extensions>
 
   <extensions defaultExtensionNs="jetbrains.mps">

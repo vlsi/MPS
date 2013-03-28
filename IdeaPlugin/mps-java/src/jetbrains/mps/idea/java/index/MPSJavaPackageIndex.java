@@ -37,25 +37,25 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * For each MPS model file creates an index of FQ names of Java classes or equivalent constructs in this model.
+ * Index mps files by package.
  * <code>String -> Collection<SNodeDescriptor></code>
  * User: fyodor
- * Date: 3/26/13
+ * Date: 3/28/13
  */
-public class FQNameJavaClassIndex
-  extends AbstractMPSModelFileIndex {
-  private static final Logger LOG = Logger.getLogger(FQNameJavaClassIndex.class);
+public class MPSJavaPackageIndex extends AbstractMPSModelFileIndex {
 
-  public static final ID<String,Collection<SNodeDescriptor>> ID = com.intellij.util.indexing.ID.create("MPSFQNameJavaClassIndex");
+  private static final Logger LOG = Logger.getLogger(MPSJavaPackageIndex.class);
 
-  private static final MyIndexer INDEXER = new MyIndexer();
+  private static final EnumeratorStringDescriptor KEY_DESCRIPTOR = new EnumeratorStringDescriptor();
 
-  public FQNameJavaClassIndex() {
-  }
+  public static final ID<String,Collection<SNodeDescriptor>> ID = com.intellij.util.indexing.ID.create("MPSJavaPackageIndex");
+
+  public static final MyIndexer INDEXER = new MyIndexer();
 
   @NotNull
   @Override
@@ -75,7 +75,6 @@ public class FQNameJavaClassIndex
   }
 
   private static class MyIndexer implements DataIndexer<String, Collection<SNodeDescriptor>, FileContent> {
-
     @NotNull
     @Override
     public Map<String, Collection<SNodeDescriptor>> map(final FileContent inputData) {
@@ -86,15 +85,15 @@ public class FQNameJavaClassIndex
           try {
             SModel model = RootNodeNameIndex.doModelParsing(inputData);
             SModelReference modelRef = model.getReference();
+            String packName = JavaNameUtil.packageName(model);
             for (SNode node : JavaClassUtil.getJavaClasses(model)) {
               String persistentName = node.getProperty(SNodeUtil.property_INamedConcept_name);
               String nodeName = (persistentName == null) ? "null" : persistentName;
-              String classFqName = JavaNameUtil.fqClassName(model, nodeName);
 
-              Collection<SNodeDescriptor> descriptors = map.get(classFqName);
+              Collection<SNodeDescriptor> descriptors = map.get(packName);
               if (descriptors == null) {
                 descriptors = new ArrayList<SNodeDescriptor>();
-                map.put(classFqName, descriptors);
+                map.put(packName, descriptors);
               }
               descriptors.add(SNodeDescriptor.fromModelReference(nodeName, node.getConcept().getId(), modelRef, node.getNodeId()));
             }
