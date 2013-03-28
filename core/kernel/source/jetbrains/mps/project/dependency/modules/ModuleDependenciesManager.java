@@ -15,9 +15,6 @@
  */
 package jetbrains.mps.project.dependency.modules;
 
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -58,10 +55,6 @@ public class ModuleDependenciesManager<T extends SModule> implements Dependencie
     }
 
     if (includeNonReexport) {
-      for (DevKit dk : ModuleUtil.refsToDevkits(((AbstractModule) myModule).getUsedDevkitReferences())) {
-        result.addAll(dk.getAllExportedSolutions());
-      }
-
       if (runtimes) {
         for (SLanguage l : myModule.getUsedLanguages()) {
           for (SModuleReference runtime : l.getLanguageRuntimes()) {

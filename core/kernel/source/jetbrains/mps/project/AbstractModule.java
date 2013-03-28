@@ -152,10 +152,24 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return new ArrayList<SDependency>();
 
+    // add declared dependencies
     List<SDependency> dependencies = new ArrayList<SDependency>();
     for (Dependency dependency : descriptor.getDependencies()) {
       dependencies.add(new SDependencyAdapter(dependency));
     }
+
+    // add dependencies provided by devkits as nonreexport dependencies
+    for (SModuleReference usedDevkit : getModuleDescriptor().getUsedDevkits()) {
+      DevKit devKit = ModuleRepositoryFacade.getInstance().getModule(usedDevkit, DevKit.class);
+      if (devKit != null) {
+        for (Solution solution : devKit.getAllExportedSolutions()) {
+          if (solution != null) {
+            dependencies.add(new SDependencyAdapter(new Dependency(solution.getModuleReference(), false)));
+          }
+        }
+      }
+    }
+
     return dependencies;
   }
 
