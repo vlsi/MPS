@@ -19,21 +19,11 @@ package jetbrains.mps.idea.java.index;
 import com.intellij.util.indexing.DataIndexer;
 import com.intellij.util.indexing.FileContent;
 import com.intellij.util.indexing.ID;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.util.JavaNameUtil;
-import jetbrains.mps.workbench.goTo.index.RootNodeNameIndex;
 import jetbrains.mps.workbench.goTo.index.SNodeDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * For each MPS model file creates an index of short names of Java classes or equivalent constructs in this model.
@@ -42,8 +32,6 @@ import java.util.Map;
  * Date: 3/28/13
  */
 public class MPSShortNameJavaClassIndex extends AbstractMPSModelFileIndex {
-
-  private static final Logger LOG = Logger.getLogger(MPSShortNameJavaClassIndex.class);
 
   public static final ID<String,Collection<SNodeDescriptor>> ID = com.intellij.util.indexing.ID.create("MPSShortNameJavaClassIndex");
 
@@ -66,35 +54,10 @@ public class MPSShortNameJavaClassIndex extends AbstractMPSModelFileIndex {
     return 1;
   }
 
-  private static class MyIndexer implements DataIndexer<String, Collection<SNodeDescriptor>, FileContent> {
-
-    @NotNull
+  private static class MyIndexer extends  SNodeDescriptorsIndexer {
     @Override
-    public Map<String, Collection<SNodeDescriptor>> map(final FileContent inputData) {
-      final HashMap<String, Collection<SNodeDescriptor>> map = new HashMap<String, Collection<SNodeDescriptor>>();
-      ModelAccess.instance().runIndexing(new Runnable() {
-        @Override
-        public void run() {
-          try {
-            SModel model = RootNodeNameIndex.doModelParsing(inputData);
-            SModelReference modelRef = model.getReference();
-            for (SNode node : JavaClassUtil.getJavaClasses(model)) {
-              String persistentName = node.getProperty(SNodeUtil.property_INamedConcept_name);
-              String nodeName = (persistentName == null) ? "null" : persistentName;
-
-              Collection<SNodeDescriptor> descriptors = map.get(nodeName);
-              if (descriptors == null) {
-                descriptors = new ArrayList<SNodeDescriptor>();
-                map.put(nodeName, descriptors);
-              }
-              descriptors.add(SNodeDescriptor.fromModelReference(nodeName, node.getConcept().getId(), modelRef, node.getNodeId()));
-            }
-          } catch (Exception e) {
-            LOG.error("Error indexing model file " + inputData.getFileName() + "; " + e.getMessage());
-          }
-        }
-      });
-      return map;
+    protected String getKey(SModel model, String nodeName) {
+      return nodeName;
     }
   }
 }

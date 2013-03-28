@@ -17,29 +17,14 @@
 package jetbrains.mps.idea.java.index;
 
 import com.intellij.util.indexing.DataIndexer;
-import com.intellij.util.indexing.FileBasedIndex.InputFilter;
-import com.intellij.util.indexing.FileBasedIndexExtension;
 import com.intellij.util.indexing.FileContent;
 import com.intellij.util.indexing.ID;
-import com.intellij.util.io.DataExternalizer;
-import com.intellij.util.io.EnumeratorStringDescriptor;
-import com.intellij.util.io.KeyDescriptor;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.JavaNameUtil;
-import jetbrains.mps.workbench.goTo.index.RootNodeNameIndex;
 import jetbrains.mps.workbench.goTo.index.SNodeDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Index mps files by package.
@@ -48,10 +33,6 @@ import java.util.Map;
  * Date: 3/28/13
  */
 public class MPSJavaPackageIndex extends AbstractMPSModelFileIndex {
-
-  private static final Logger LOG = Logger.getLogger(MPSJavaPackageIndex.class);
-
-  private static final EnumeratorStringDescriptor KEY_DESCRIPTOR = new EnumeratorStringDescriptor();
 
   public static final ID<String,Collection<SNodeDescriptor>> ID = com.intellij.util.indexing.ID.create("MPSJavaPackageIndex");
 
@@ -74,35 +55,10 @@ public class MPSJavaPackageIndex extends AbstractMPSModelFileIndex {
     return 1;
   }
 
-  private static class MyIndexer implements DataIndexer<String, Collection<SNodeDescriptor>, FileContent> {
-    @NotNull
+  private static class MyIndexer extends SNodeDescriptorsIndexer {
     @Override
-    public Map<String, Collection<SNodeDescriptor>> map(final FileContent inputData) {
-      final HashMap<String, Collection<SNodeDescriptor>> map = new HashMap<String, Collection<SNodeDescriptor>>();
-      ModelAccess.instance().runIndexing(new Runnable() {
-        @Override
-        public void run() {
-          try {
-            SModel model = RootNodeNameIndex.doModelParsing(inputData);
-            SModelReference modelRef = model.getReference();
-            String packName = JavaNameUtil.packageName(model);
-            for (SNode node : JavaClassUtil.getJavaClasses(model)) {
-              String persistentName = node.getProperty(SNodeUtil.property_INamedConcept_name);
-              String nodeName = (persistentName == null) ? "null" : persistentName;
-
-              Collection<SNodeDescriptor> descriptors = map.get(packName);
-              if (descriptors == null) {
-                descriptors = new ArrayList<SNodeDescriptor>();
-                map.put(packName, descriptors);
-              }
-              descriptors.add(SNodeDescriptor.fromModelReference(nodeName, node.getConcept().getId(), modelRef, node.getNodeId()));
-            }
-          } catch (Exception e) {
-            LOG.error("Error indexing model file " + inputData.getFileName() + "; " + e.getMessage());
-          }
-        }
-      });
-      return map;
+    protected String getKey(SModel model, String nodeName) {
+      return  JavaNameUtil.packageName(model);
     }
   }
 }
