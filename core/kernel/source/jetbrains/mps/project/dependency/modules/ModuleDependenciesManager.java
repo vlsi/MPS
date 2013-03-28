@@ -15,19 +15,19 @@
  */
 package jetbrains.mps.project.dependency.modules;
 
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleUtil;
-import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.module.SDependency;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
-public class ModuleDependenciesManager<T extends IModule> implements DependenciesManager {
+public class ModuleDependenciesManager<T extends SModule> implements DependenciesManager {
   protected T myModule;
 
   public ModuleDependenciesManager(T module) {
@@ -44,10 +44,10 @@ public class ModuleDependenciesManager<T extends IModule> implements Dependencie
   }
 
   @Override
-  public Collection<IModule> directlyUsedModules(boolean includeNonReexport, boolean runtimes) {
-    HashSet<IModule> result = new HashSet<IModule>();
-    for (Dependency dependency : myModule.getDependencies()) {
-      IModule m = ModuleRepositoryFacade.getInstance().getModule(dependency.getModuleRef());
+  public Collection<SModule> directlyUsedModules(boolean includeNonReexport, boolean runtimes) {
+    Set<SModule> result = new HashSet<SModule>();
+    for (SDependency dependency : myModule.getDeclaredDependencies()) {
+      SModule m = dependency.getTarget();
       if (m == null) continue;
 
       if (includeNonReexport || dependency.isReexport()) {
@@ -56,7 +56,7 @@ public class ModuleDependenciesManager<T extends IModule> implements Dependencie
     }
 
     if (includeNonReexport) {
-      for (DevKit dk : ModuleUtil.refsToDevkits(myModule.getUsedDevkitReferences())) {
+      for (DevKit dk : ModuleUtil.refsToDevkits(((AbstractModule) myModule).getUsedDevkitReferences())) {
         result.addAll(dk.getAllExportedSolutions());
       }
 
@@ -68,8 +68,8 @@ public class ModuleDependenciesManager<T extends IModule> implements Dependencie
           l.getDependenciesManager().collectAllExtendedLanguages(lang);
         }
 
-        for (IModule l : lang) {
-          result.addAll(ModuleUtil.refsToModules(((Language) l).getRuntimeModulesReferences()));
+        for (Language l : lang) {
+          result.addAll(ModuleUtil.refsToModules(l.getRuntimeModulesReferences()));
         }
       }
     }

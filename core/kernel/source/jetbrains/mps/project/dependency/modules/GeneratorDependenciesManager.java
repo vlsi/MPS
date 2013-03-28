@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.project.dependency.modules;
 
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
@@ -30,8 +30,8 @@ public class GeneratorDependenciesManager extends ModuleDependenciesManager<Gene
   }
 
   @Override
-  public Collection<IModule> directlyUsedModules(boolean includeNonReexport, boolean runtimes) {
-    Collection<IModule> result = super.directlyUsedModules(includeNonReexport, runtimes);
+  public Collection<SModule> directlyUsedModules(boolean includeNonReexport, boolean runtimes) {
+    Collection<SModule> result = super.directlyUsedModules(includeNonReexport, runtimes);
     //generator sees all modules from source language as non-reexported
     HashSet<Language> lang = new HashSet<Language>();
     myModule.getSourceLanguage().getDependenciesManager().collectAllExtendedLanguages(lang);
@@ -39,7 +39,7 @@ public class GeneratorDependenciesManager extends ModuleDependenciesManager<Gene
       result.addAll(lang);
       //generator sees all dependent generators as non-reexport
       for (SModuleReference refGenerator : myModule.getReferencedGeneratorUIDs()) {
-        IModule gm = ModuleRepositoryFacade.getInstance().getModule(refGenerator);
+        SModule gm = ModuleRepositoryFacade.getInstance().getModule(refGenerator);
         if (gm == null) continue;
         result.add(gm);
       }

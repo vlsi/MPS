@@ -17,13 +17,12 @@ package jetbrains.mps.project.dependency.modules;
 
 import gnu.trove.THashSet;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleUtil;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryAdapter;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 
 import java.util.Collection;
@@ -58,12 +57,14 @@ public class LanguageDependenciesManager extends ModuleDependenciesManager<Langu
   }
 
   @Override
-  public Collection<IModule> directlyUsedModules(boolean includeNonReexport, boolean runtimes) {
-    Collection<IModule> result = super.directlyUsedModules(includeNonReexport, runtimes);
+  public Collection<SModule> directlyUsedModules(boolean includeNonReexport, boolean runtimes) {
+    Collection<SModule> result = super.directlyUsedModules(includeNonReexport, runtimes);
     //todo this needs to be reviewed when we understand what is the extended language (after moving generator out and getting rid of extended language dependency in generator case)
     Set<Language> langs = new THashSet<Language>();
     collectAllExtendedLanguages(langs);
     result.addAll(langs);
+
+    // add extended languages to getDependencies with reexport = true
 
     return result;
   }
@@ -107,24 +108,24 @@ public class LanguageDependenciesManager extends ModuleDependenciesManager<Langu
 
   private class MyModuleWatcher extends ModuleRepositoryAdapter {
 
-    private ConcurrentHashSet<IModule> myWatchedModules = new ConcurrentHashSet<IModule>(4);
+    private ConcurrentHashSet<SModule> myWatchedModules = new ConcurrentHashSet<SModule>(4);
 
     private MyModuleWatcher() {
       registerSelf();
     }
 
     @Override
-    public void moduleRemoved(IModule module) {
+    public void moduleRemoved(SModule module) {
       invalidateIfWatching(module);
     }
 
     @Override
-    public void moduleInitialized(IModule module) {
+    public void moduleInitialized(SModule module) {
       invalidateIfWatching(module);
     }
 
     @Override
-    public void moduleChanged(IModule module) {
+    public void moduleChanged(SModule module) {
       invalidateIfWatching(module);
     }
 
@@ -142,7 +143,7 @@ public class LanguageDependenciesManager extends ModuleDependenciesManager<Langu
       myWatchedModules.add(language);
     }
 
-    private void invalidateIfWatching (IModule module) {
+    private void invalidateIfWatching (SModule module) {
       if (myWatchedModules.contains(module)) {
         invalidate();
         unregisterSelf();
