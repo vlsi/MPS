@@ -34,6 +34,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+// todo: review usages and remove
 public abstract class DefaultScope extends BaseScope {
   private final Object LOCK = new Object();
 
@@ -178,7 +179,7 @@ public abstract class DefaultScope extends BaseScope {
         myUsedDevkits.addAll(dk.getAllExtendedDevkits());
       }
 
-      for (DevKit dk : ModuleUtil.refsToDevkits(m.getUsedDevkitReferences())) {
+      for (DevKit dk : ModuleUtil.refsToDevkits(m.getModuleDescriptor().getUsedDevkits())) {
         myUsedDevkits.add(dk);
         myUsedDevkits.addAll(dk.getAllExtendedDevkits());
       }

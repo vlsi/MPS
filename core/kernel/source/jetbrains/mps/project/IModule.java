@@ -37,16 +37,15 @@ public interface IModule extends SModule {
   // up reasonable getters to SModule
   ModuleDescriptor getModuleDescriptor();
 
-  //----deps
-
-  // review SDependency part in SModule
-
   /**
-   * Explicitly used devkits
-   *
-   * @return
+   * Remove all usages of this method?
+   * @see org.jetbrains.mps.openapi.module.SModule#getUsedLanguages()
+   * @see jetbrains.mps.project.dependency.GlobalModuleDependenciesManager
+   * @see SModule#resolveInDependencies(org.jetbrains.mps.openapi.model.SModelId)
    */
-  Collection<SModuleReference> getUsedDevkitReferences();
+  @Deprecated
+  @NotNull
+  IScope getScope();
 
   // cast to AbstractModule to use this methods
   void addDependency(SModuleReference moduleRef, boolean reexport);
@@ -79,16 +78,12 @@ public interface IModule extends SModule {
   @Deprecated
   List<SModel> getOwnModelDescriptors();
 
-  /**
-   * Two step migration: 1) IScope -> SearchScope 2) by rename
-   *
-   * @see org.jetbrains.mps.openapi.module.SModule#getModuleScope()
-   */
-  @Deprecated
-  @NotNull
-  IScope getScope();
-
   // ----- deprecated part
+
+  /**
+   * @see jetbrains.mps.project.structure.modules.ModuleDescriptor#getUsedDevkits()
+   */
+  Collection<SModuleReference> getUsedDevkitReferences();
 
   /**
    * @see org.jetbrains.mps.openapi.module.SModule#getUsedLanguages()

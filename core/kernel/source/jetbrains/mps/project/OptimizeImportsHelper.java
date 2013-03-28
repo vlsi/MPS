@@ -176,7 +176,7 @@ public class OptimizeImportsHelper {
     }
 
     List<SModuleReference> unusedDevkits = new ArrayList<SModuleReference>();
-    for (SModuleReference devkitRef : module.getUsedDevkitReferences()) {
+    for (SModuleReference devkitRef : module.getModuleDescriptor().getUsedDevkits()) {
       SModuleReference ref = getUnusedDevkitRef(result, devkitRef);
       if (ref != null) unusedDevkits.add(devkitRef);
     }

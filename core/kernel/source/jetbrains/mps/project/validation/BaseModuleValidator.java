@@ -47,25 +47,25 @@ public class BaseModuleValidator<T extends AbstractModule> implements ModuleVali
       return errors;
     }
 
-    for (Dependency dep : myModule.getDependencies()) {
+    ModuleDescriptor descriptor = myModule.getModuleDescriptor();
+    // null?
+
+    for (Dependency dep : descriptor.getDependencies()) {
       SModuleReference moduleRef = dep.getModuleRef();
       if (MPSModuleRepository.getInstance().getModule(moduleRef) == null) {
         errors.add("Can't find dependency: " + moduleRef.getModuleName());
       }
     }
-    for (SModuleReference reference : myModule.getModuleDescriptor().getUsedLanguages()) {
+    for (SModuleReference reference : descriptor.getUsedLanguages()) {
       if (ModuleRepositoryFacade.getInstance().getModule(reference, Language.class) == null) {
         errors.add("Can't find used language: " + reference.getModuleName());
       }
     }
-    for (SModuleReference reference : myModule.getUsedDevkitReferences()) {
+    for (SModuleReference reference : descriptor.getUsedDevkits()) {
       if (MPSModuleRepository.getInstance().getModule(reference) == null) {
         errors.add("Can't find used devkit: " + reference.getModuleName());
       }
     }
-
-    ModuleDescriptor descriptor = myModule.getModuleDescriptor();
-    if (descriptor == null) return errors;
 
     if (descriptor.getSourcePaths() != null && !myModule.isPackaged()) {
       for (String sourcePath : descriptor.getSourcePaths()) {

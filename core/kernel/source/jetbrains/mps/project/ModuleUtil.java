@@ -37,6 +37,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
+// todo: review this class and remove
 public class ModuleUtil {
 
   public static Iterable<IModule> getDependencies(IModule module) {
@@ -76,7 +77,7 @@ public class ModuleUtil {
   }
 
   private static Iterable<DevKit> usedDevkits(IModule module) {
-    return new TranslatingIterator<SModuleReference, DevKit>(module.getUsedDevkitReferences().iterator()) {
+    return new TranslatingIterator<SModuleReference, DevKit>(module.getModuleDescriptor().getUsedDevkits().iterator()) {
       @Override
       protected DevKit translate(SModuleReference node) {
         return ModuleRepositoryFacade.getInstance().getModule(node, DevKit.class);
