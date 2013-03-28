@@ -121,7 +121,6 @@ public class TransformationTestRunner {
     }
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        SModelRepository.getInstance().removeModelDescriptor(projectTest.getTransientModelDescriptor());
         projectTest.dispose();
       }
     });
