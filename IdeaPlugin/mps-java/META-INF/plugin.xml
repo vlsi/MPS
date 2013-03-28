@@ -92,6 +92,7 @@
     <refactoring.elementListenerProvider implementation="jetbrains.mps.idea.java.refactoring.RefactoringListenerProvider"/>
     <fileBasedIndex implementation="jetbrains.mps.idea.java.index.MPSFQNameJavaClassIndex"/>
     <fileBasedIndex implementation="jetbrains.mps.idea.java.index.MPSJavaPackageIndex"/>
+    <fileBasedIndex implementation="jetbrains.mps.idea.java.index.MPSShortNameJavaClassIndex"/>
   </extensions>
 
   <extensions defaultExtensionNs="jetbrains.mps">
