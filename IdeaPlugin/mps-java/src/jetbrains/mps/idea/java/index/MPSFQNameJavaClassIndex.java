@@ -17,13 +17,8 @@
 package jetbrains.mps.idea.java.index;
 
 import com.intellij.util.indexing.DataIndexer;
-import com.intellij.util.indexing.FileBasedIndex.InputFilter;
-import com.intellij.util.indexing.FileBasedIndexExtension;
 import com.intellij.util.indexing.FileContent;
 import com.intellij.util.indexing.ID;
-import com.intellij.util.io.DataExternalizer;
-import com.intellij.util.io.EnumeratorStringDescriptor;
-import com.intellij.util.io.KeyDescriptor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodeUtil;
@@ -46,15 +41,15 @@ import java.util.Map;
  * User: fyodor
  * Date: 3/26/13
  */
-public class FQNameJavaClassIndex
+public class MPSFQNameJavaClassIndex
   extends AbstractMPSModelFileIndex {
-  private static final Logger LOG = Logger.getLogger(FQNameJavaClassIndex.class);
+  private static final Logger LOG = Logger.getLogger(MPSFQNameJavaClassIndex.class);
 
   public static final ID<String,Collection<SNodeDescriptor>> ID = com.intellij.util.indexing.ID.create("MPSFQNameJavaClassIndex");
 
   private static final MyIndexer INDEXER = new MyIndexer();
 
-  public FQNameJavaClassIndex() {
+  public MPSFQNameJavaClassIndex() {
   }
 
   @NotNull
