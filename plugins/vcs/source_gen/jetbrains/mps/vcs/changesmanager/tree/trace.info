@@ -555,7 +555,7 @@
     <nodeInfo nodeId="4653713283496926007" fileName="TreeHighlighter.java" startLine="163" startPosition="85" endLine="164" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4653713283496952784" fileName="TreeHighlighter.java" startLine="164" startPosition="26" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4653713283496952786" fileName="TreeHighlighter.java" startLine="165" startPosition="0" endLine="166" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1162831315436755133" fileName="TreeHighlighter.java" startLine="167" startPosition="86" endLine="168" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1162831315436755133" fileName="TreeHighlighter.java" startLine="167" startPosition="67" endLine="168" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4653713283496952768" fileName="TreeHighlighter.java" startLine="168" startPosition="50" endLine="169" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4653713283496952785" fileName="TreeHighlighter.java" startLine="169" startPosition="60" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4653713283496948116" fileName="TreeHighlighter.java" startLine="170" startPosition="0" endLine="171" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -926,7 +926,7 @@
     </scopeInfo>
     <scopeInfo nodeId="9200516641177032533" fileName="TreeHighlighter.java" startLine="81" startPosition="35" endLine="98" endPosition="7" />
     <scopeInfo nodeId="4653713283496882526" fileName="TreeHighlighter.java" startLine="124" startPosition="26" endLine="141" endPosition="9" />
-    <scopeInfo nodeId="4653713283496952800" fileName="TreeHighlighter.java" startLine="167" startPosition="86" endLine="184" endPosition="7">
+    <scopeInfo nodeId="4653713283496952800" fileName="TreeHighlighter.java" startLine="167" startPosition="67" endLine="184" endPosition="7">
       <varInfo nodeId="4653713283496948117" varName="change" />
       <varInfo nodeId="1162831315436755134" varName="emd" />
     </scopeInfo>

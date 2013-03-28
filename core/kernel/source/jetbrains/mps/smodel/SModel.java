@@ -1222,6 +1222,11 @@ public class SModel implements SModelData {
     }
 
     @Override
+    public boolean isReadOnly() {
+      return false;
+    }
+
+    @Override
     public boolean isLoaded() {
       return true;
     }

@@ -92,7 +92,7 @@ public class TextPreviewModel_Action extends BaseAction {
     if (!(SModelStereotype.isUserModel(md))) {
       return false;
     }
-    return md instanceof EditableSModel && !(((EditableSModel) md).isReadOnly());
+    return md instanceof EditableSModel && !(md.isReadOnly());
   }
 
   private static Logger LOG = Logger.getLogger(TextPreviewModel_Action.class);

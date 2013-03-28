@@ -103,6 +103,11 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     return myModelRoot;
   }
 
+  @Override
+  public boolean isReadOnly() {
+    return true;
+  }
+
   public boolean isRegistered() {
     SModule copy = myModule;
     return copy != null && copy.getRepository() != null;

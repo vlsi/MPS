@@ -164,7 +164,7 @@ public class TreeHighlighter implements TreeMessageOwner {
     unhighlightNode(node);
 
     SModel model = SModelRepository.getInstance().getModelDescriptor(feature.getModelReference());
-    if (model instanceof EditableSModel && !(((EditableSModel) model).isReadOnly())) {
+    if (model instanceof EditableSModel && !(model.isReadOnly())) {
       EditableSModel emd = (EditableSModel) model;
       myRegistry.getCurrentDifference(emd).setEnabled(true);
 
