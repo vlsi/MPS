@@ -56,19 +56,6 @@ public class LanguageDependenciesManager extends ModuleDependenciesManager<Langu
     }
   }
 
-  @Override
-  public Collection<SModule> directlyUsedModules(boolean includeNonReexport, boolean runtimes) {
-    Collection<SModule> result = super.directlyUsedModules(includeNonReexport, runtimes);
-    //todo this needs to be reviewed when we understand what is the extended language (after moving generator out and getting rid of extended language dependency in generator case)
-    Set<Language> langs = new THashSet<Language>();
-    collectAllExtendedLanguages(langs);
-    result.addAll(langs);
-
-    // add extended languages to getDependencies with reexport = true
-
-    return result;
-  }
-
   public Iterable<SModuleReference> getAllExtendedLanguages () {
     if (myInvalidatedFlag.compareAndSet(true, false)) {
       // lazy initialization

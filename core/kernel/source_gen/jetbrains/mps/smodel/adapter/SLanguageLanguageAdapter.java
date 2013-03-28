@@ -21,6 +21,7 @@ import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.util.Set;
 import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.mps.openapi.module.SModule;
 
 public class SLanguageLanguageAdapter implements SLanguage {
@@ -62,21 +63,10 @@ public class SLanguageLanguageAdapter implements SLanguage {
 
   @Override
   public Iterable<SModuleReference> getLanguageRuntimes() {
-    Set<Language> toProcess = new HashSet<Language>();
-    toProcess.add(myLanguage);
-    Set<Language> processed = new HashSet<Language>();
-
     Set<SModuleReference> runtimes = new HashSet<SModuleReference>();
-    while (!(toProcess.isEmpty())) {
-      Language language = toProcess.iterator().next();
-      toProcess.remove(language);
-      if (!(processed.contains(language))) {
-        processed.add(language);
-        runtimes.addAll(language.getRuntimeModulesReferences());
-        toProcess.addAll(language.getExtendedLanguages());
-      }
+    for (Language language : SetSequence.fromSet(myLanguage.getAllExtendedLanguages())) {
+      runtimes.addAll(language.getRuntimeModulesReferences());
     }
-
     return runtimes;
   }
 

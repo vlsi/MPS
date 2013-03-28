@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import gnu.trove.THashSet;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
@@ -125,9 +126,10 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     Set<SDependency> dependencies = new HashSet<SDependency>();
     dependencies.addAll(IterableUtil.asCollection(super.getDeclaredDependencies()));
 
-    for (SModuleReference ref : getExtendedLanguageRefs()) {
+    //todo this needs to be reviewed when we understand what is the extended language (after moving generator out and getting rid of extended language dependency in generator case)
+    for (Language language : getAllExtendedLanguages()) {
       Dependency dep = new Dependency();
-      dep.setModuleRef(ref);
+      dep.setModuleRef(language.getModuleReference());
       dep.setReexport(true);
       dependencies.add(new SDependencyAdapter(dep));
     }
@@ -138,6 +140,24 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     dependencies.add(new SDependencyAdapter(dep));
 
     return dependencies;
+  }
+
+  public Set<Language> getAllExtendedLanguages() {
+    // todo: ?
+    Set<Language> toProcess = new HashSet<Language>();
+    toProcess.add(this);
+    Set<Language> processed = new HashSet<Language>();
+
+    while (!(toProcess.isEmpty())) {
+      Language language = toProcess.iterator().next();
+      toProcess.remove(language);
+      if (!(processed.contains(language))) {
+        processed.add(language);
+        toProcess.addAll(language.getExtendedLanguages());
+      }
+    }
+
+    return processed;
   }
 
   public Collection<SModuleReference> getRuntimeModulesReferences() {

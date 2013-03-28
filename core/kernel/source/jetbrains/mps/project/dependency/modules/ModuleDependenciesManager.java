@@ -34,7 +34,7 @@ public class ModuleDependenciesManager<T extends SModule> implements Dependencie
   }
 
   @Override
-  public Collection<Language> directlyUsedLanguages() {
+  public final Collection<Language> directlyUsedLanguages() {
     Set<Language> result = new HashSet<Language>();
     for (SLanguage language : myModule.getUsedLanguages()) {
       result.add((Language) language.getModule());
