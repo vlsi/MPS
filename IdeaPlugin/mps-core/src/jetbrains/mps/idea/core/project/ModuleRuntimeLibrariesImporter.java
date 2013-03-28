@@ -142,13 +142,15 @@ public abstract class ModuleRuntimeLibrariesImporter {
     }
 
     private void collectRuntimeDependencies(IModule module, Set<IModule> result) {
-      if (result.contains(module)) {
-        return;
-      }
-      result.add(module);
-      for (IModule usedModule : module.getDependenciesManager().directlyUsedModules(Deptype.EXECUTE.reexportAll, Deptype.EXECUTE.runtimes)) {
-        collectRuntimeDependencies(usedModule, result);
-      }
+      result.addAll(new GlobalModuleDependenciesManager(module).getModules(Deptype.EXECUTE));
+
+      // todo: ! ???
+//      if (result.contains(module)) {
+//        return;
+//      }
+//      for (IModule usedModule : module.getDependenciesManager().directlyUsedModules(Deptype.EXECUTE.reexportAll, Deptype.EXECUTE.runtimes)) {
+//        collectRuntimeDependencies(usedModule, result);
+//      }
     }
   }
 

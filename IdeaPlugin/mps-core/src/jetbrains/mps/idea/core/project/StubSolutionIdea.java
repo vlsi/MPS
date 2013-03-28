@@ -30,6 +30,7 @@ import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.SDependencyAdapter;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.StubSolution;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
@@ -42,9 +43,11 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -225,17 +228,15 @@ public abstract class StubSolutionIdea extends StubSolution {
     }
 
     @Override
-    public List<Dependency> getDependencies() {
-      if (myBaseJdk == null) return new ArrayList<Dependency>();
+    public Iterable<SDependency> getDeclaredDependencies() {
+      if (myBaseJdk == null) return Collections.emptySet();
 
       Solution baseJdkSolution = ApplicationManager.getApplication().getComponent(JdkStubSolutionManager.class).getSdkSolution(myBaseJdk);
       Dependency dep = new Dependency();
       dep.setModuleRef(baseJdkSolution.getModuleReference());
       dep.setReexport(true);
 
-      List<Dependency> deps = new ArrayList<Dependency>(1);
-      deps.add(dep);
-      return deps;
+      return Collections.<SDependency>singleton(new SDependencyAdapter(dep));
     }
   }
 }
