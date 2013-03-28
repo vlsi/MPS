@@ -13,7 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
+package jetbrains.mps.smodel;
+
+import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 import jetbrains.mps.classloading.ModuleClassLoaderSupport;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -31,7 +34,9 @@ import jetbrains.mps.project.*;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
-import org.jetbrains.mps.openapi.module.SModuleReference;import jetbrains.mps.project.structure.modules.*;
+import org.jetbrains.mps.openapi.module.SDependency;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
@@ -116,20 +121,23 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   @Override
-  public List<Dependency> getDependencies() {
-    List<Dependency> result = super.getDependencies();
+  public Iterable<SDependency> getDeclaredDependencies() {
+    Set<SDependency> dependencies = new HashSet<SDependency>();
+    dependencies.addAll(IterableUtil.asCollection(super.getDeclaredDependencies()));
+
     for (SModuleReference ref : getExtendedLanguageRefs()) {
       Dependency dep = new Dependency();
       dep.setModuleRef(ref);
       dep.setReexport(true);
-      result.add(dep);
+      dependencies.add(new SDependencyAdapter(dep));
     }
+
     Dependency dep = new Dependency();
     dep.setModuleRef(BootstrapLanguages.CORE);
     dep.setReexport(true);
-    result.add(dep);
+    dependencies.add(new SDependencyAdapter(dep));
 
-    return result;
+    return dependencies;
   }
 
   public Collection<SModuleReference> getRuntimeModulesReferences() {
@@ -251,8 +259,8 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     List<EditableSModelDescriptor> result = new ArrayList<EditableSModelDescriptor>();
     for (SModel md : getModels()) {
       if (SModelStereotype.getStereotype(md).equals(SModelStereotype.NONE)
-        && getAspectForModel(md) == null
-        && !isAccessoryModel(md.getReference())) {
+          && getAspectForModel(md) == null
+          && !isAccessoryModel(md.getReference())) {
         result.add(((EditableSModelDescriptor) md));
       }
     }

@@ -17,6 +17,7 @@ package jetbrains.mps.project.dependency.modules;
 
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.Collection;
 import java.util.Set;

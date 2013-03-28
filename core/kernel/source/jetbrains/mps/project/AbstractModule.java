@@ -149,8 +149,14 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
 
   @Override
   public Iterable<SDependency> getDeclaredDependencies() {
-    // TODO API (implement)
-    return null;
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor == null) return new ArrayList<SDependency>();
+
+    List<SDependency> dependencies = new ArrayList<SDependency>();
+    for (Dependency dependency : descriptor.getDependencies()) {
+      dependencies.add(new SDependencyAdapter(dependency));
+    }
+    return dependencies;
   }
 
   @Override
@@ -336,10 +342,14 @@ public abstract class AbstractModule implements IModule, EditableSModule, FileSy
   }
 
   @Override
-  public List<Dependency> getDependencies() {
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return new ArrayList<Dependency>();
-    return new ArrayList<Dependency>(descriptor.getDependencies());
+  public final List<Dependency> getDependencies() {
+    List<Dependency> dependencies = new ArrayList<Dependency>();
+    for (SDependency dependency : getDeclaredDependencies()) {
+      if (dependency instanceof SDependencyAdapter) {
+        dependencies.add(((SDependencyAdapter) dependency).getOriginalDependency());
+      }
+    }
+    return dependencies;
   }
 
   //----languages & devkits

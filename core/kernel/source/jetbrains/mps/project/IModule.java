@@ -44,19 +44,6 @@ public interface IModule extends SModule {
   // extract methods from DependenciesManager to SModule ?
   DependenciesManager getDependenciesManager();
 
-  // ?
-
-  /**
-   * Explicitly declared deps +
-   * <p>explicitly extended languages + all the generators (for a lang)
-   * <p>explicitly ref'd generators + source lang + runtime modules of the source lang (for a generator)
-   *
-   * @return
-   */
-  List<Dependency> getDependencies();
-
-  // ?
-
   /**
    * Explicitly used devkits
    *
@@ -111,6 +98,12 @@ public interface IModule extends SModule {
    */
   @Deprecated
   Collection<SModuleReference> getUsedLanguagesReferences();
+
+  /**
+   * @see org.jetbrains.mps.openapi.module.SModule#getDeclaredDependencies()
+   */
+  @Deprecated
+  List<Dependency> getDependencies();
 
   /**
    * Do nothing for now. If method change dependencies it invalidates cache by calling dependenciesChanged()

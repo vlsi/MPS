@@ -20,12 +20,14 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.adapter.SLanguageLanguageAdapter;
 import java.util.Collection;
+import org.jetbrains.mps.openapi.module.SDependency;
 import java.util.List;
-import jetbrains.mps.project.structure.modules.Dependency;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.project.structure.modules.Dependency;
+import jetbrains.mps.project.SDependencyAdapter;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.GlobalScope;
@@ -74,8 +76,8 @@ public class TemporaryModelOwner extends AbstractModule {
   }
 
   @Override
-  public List<Dependency> getDependencies() {
-    List<Dependency> result = new ArrayList<Dependency>();
+  public Iterable<SDependency> getDeclaredDependencies() {
+    List<SDependency> result = new ArrayList<SDependency>();
     for (SModel md : getModels()) {
       for (jetbrains.mps.smodel.SModel.ImportElement ie : ((SModelInternal) md).importedModels()) {
         SModelReference mRef = ie.getModelReference();
@@ -83,13 +85,14 @@ public class TemporaryModelOwner extends AbstractModule {
         if (model == null) {
           continue;
         }
-        IModule module = model.getModule();
+        SModule module = model.getModule();
         if (module == null) {
           continue;
         }
+
         Dependency dep = new Dependency();
         dep.setModuleRef(module.getModuleReference());
-        result.add(dep);
+        result.add(new SDependencyAdapter(dep));
       }
     }
     return result;
