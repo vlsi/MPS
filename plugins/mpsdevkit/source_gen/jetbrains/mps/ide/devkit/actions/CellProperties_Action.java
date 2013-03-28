@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.ide.devkit.cellExplorer.CellPropertiesWindow;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import java.awt.Frame;
 import jetbrains.mps.logging.Logger;
 

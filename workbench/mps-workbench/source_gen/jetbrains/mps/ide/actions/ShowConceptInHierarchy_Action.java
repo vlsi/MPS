@@ -14,7 +14,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.hierarchy.HierarchyViewTool;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.ide.editorTabs.TabbedEditor;

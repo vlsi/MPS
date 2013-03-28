@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import java.awt.Point;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.editor.runtime.style.ParametersInformation;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import java.awt.Component;
@@ -87,7 +87,7 @@ public class ShowParameters_Action extends BaseAction {
     try {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("editing.showParameters");
       Point p = new Point(((EditorCell) MapSequence.fromMap(_params).get("cell")).getX() + ((EditorCell) MapSequence.fromMap(_params).get("cell")).getWidth(), ((EditorCell) MapSequence.fromMap(_params).get("cell")).getY() + ((EditorCell) MapSequence.fromMap(_params).get("cell")).getHeight());
-      jetbrains.mps.openapi.editor.cells.EditorCell currentCell = ((EditorCell) MapSequence.fromMap(_params).get("cell"));
+      EditorCell currentCell = ((EditorCell) MapSequence.fromMap(_params).get("cell"));
       while (currentCell != null) {
         ParametersInformation parametersInformation = currentCell.getStyle().get(StyleAttributes.PARAMETERS_INFORMATION);
         if (parametersInformation != null) {

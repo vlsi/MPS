@@ -8,7 +8,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.SModelStereotype;

@@ -19,7 +19,7 @@ import jetbrains.mps.ide.findusages.view.optionseditor.DefaultSearchOptionsCompo
 import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import java.awt.Frame;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;

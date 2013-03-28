@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
@@ -87,16 +87,16 @@ public class DeleteLine_Action extends BaseAction {
           if (nextCollection.getCellLayout() instanceof CellLayout_Vertical) {
             return;
           }
-          for (jetbrains.mps.openapi.editor.cells.EditorCell childCell : Sequence.fromIterable(nextCollection)) {
+          for (EditorCell childCell : Sequence.fromIterable(nextCollection)) {
             if (childCell instanceof EditorCell_Collection) {
               QueueSequence.fromQueue(collections).addLastElement((EditorCell_Collection) childCell);
             }
           }
         }
       }
-      jetbrains.mps.openapi.editor.cells.EditorCell current = ((EditorCell) MapSequence.fromMap(_params).get("currentCell"));
+      EditorCell current = ((EditorCell) MapSequence.fromMap(_params).get("currentCell"));
       List<SNode> nodesToDelete = new ArrayList<SNode>();
-      jetbrains.mps.openapi.editor.cells.EditorCell cellToSelect = null;
+      EditorCell cellToSelect = null;
       while (true) {
         if (current.getParent() == null) {
           break;
@@ -105,7 +105,7 @@ public class DeleteLine_Action extends BaseAction {
         if (layout instanceof CellLayout_Indent) {
           SNode currentNode = current.getSNode();
           if (SNodeOperations.isInstanceOf(currentNode, "jetbrains.mps.baseLanguage.structure.Statement") || (SNodeOperations.getAncestor(currentNode, "jetbrains.mps.baseLanguage.structure.Statement", false, false) == null)) {
-            jetbrains.mps.openapi.editor.cells.EditorCell root = current.getRootParent();
+            EditorCell root = current.getRootParent();
             ListSequence.fromList(nodesToDelete).addElement(current.getSNode());
             if (CellLayout_Indent.isNewLineAfter(root, current)) {
               cellToSelect = CellTraversalUtil.getNextLeaf(current, CellConditions.SELECTABLE);

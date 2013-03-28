@@ -14,7 +14,7 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.featureStatistics.FeatureUsageTracker;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import java.awt.Frame;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;

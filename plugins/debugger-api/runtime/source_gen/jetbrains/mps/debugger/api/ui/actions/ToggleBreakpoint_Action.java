@@ -10,7 +10,7 @@ import java.util.Map;
 import jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsUiComponent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.logging.Logger;

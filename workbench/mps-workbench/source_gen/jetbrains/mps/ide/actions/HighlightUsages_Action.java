@@ -16,7 +16,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.findUsages.FindUsagesManager;
