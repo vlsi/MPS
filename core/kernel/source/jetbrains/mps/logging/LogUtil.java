@@ -16,8 +16,13 @@
 package jetbrains.mps.logging;
 
 import jetbrains.mps.smodel.ModelAccess;
+import org.apache.log4j.Level;
 
 public class LogUtil {
+  public static void initLogging() {
+    Logger.setFactory(Log4jLogger.getFactory());
+  }
+
   public static void errorWithTrace(org.apache.log4j.Logger logger, String message) {
     logger.error(message, new Throwable(message));
   }
@@ -90,5 +95,16 @@ public class LogUtil {
 
   public static void assertInCommand(org.apache.log4j.Logger logger) {
     logger.assertLog(ModelAccess.instance().isInsideCommand(), "This action must be performed in command");
+  }
+
+  /**
+   * @param "OFF", "FATAL", "ERROR", "WARN" ...
+   */
+  public static String setThreshold(String threshhold) {
+    Level wasThresholdLevel = org.apache.log4j.Logger.getRootLogger().getLoggerRepository().getThreshold();
+    String wasThreshhold = wasThresholdLevel.toString();
+    Level newThreshholdLevel = Level.toLevel(threshhold);
+    org.apache.log4j.Logger.getRootLogger().getLoggerRepository().setThreshold(newThreshholdLevel);
+    return wasThreshhold;
   }
 }

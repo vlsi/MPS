@@ -15,10 +15,6 @@
  */
 package jetbrains.mps.logging;
 
-/**
- * Igor Alshannikov
- * Oct 17, 2007
- */
 public abstract class LoggingHandlerAdapter implements ILoggingHandler {
   public abstract void addLogEntry(LogEntry e);
 

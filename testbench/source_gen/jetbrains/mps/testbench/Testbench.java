@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.library.LibraryInitializer;
+import jetbrains.mps.logging.Handlers;
 import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 
@@ -70,7 +71,7 @@ public class Testbench {
   }
 
   public static void initLogging() {
-    jetbrains.mps.logging.Logger.addLoggingHandler(new Testbench.LoggingHandlerAdapter());
+    Handlers.addLoggingHandler(new Testbench.LoggingHandlerAdapter());
   }
 
   public static class LoggingHandlerAdapter implements ILoggingHandler {
