@@ -19,19 +19,12 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.event.SModelEvent;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import javax.swing.JComponent;
 import java.util.List;
 
 public class InspectorEditorComponent extends EditorComponent {
-  private SNode myRoot;
-
   public InspectorEditorComponent() {
     this(false);
   }
@@ -40,48 +33,14 @@ public class InspectorEditorComponent extends EditorComponent {
     super(null, false, rightToLeft);
     myNode = null;
     myNodePointer = null;
+    setNoVirtualFile(true);
     setEditorContext(new EditorContext(this, null, null));
     rebuildEditorContent();
   }
 
   @Override
-  public void editNode(final SNode node, final IOperationContext context) {
-    if (getOperationContext() != null) {
-      notifyDisposal();
-    }
-
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        clearModelDisposedTrace();
-        myNode = node;
-        myNodePointer = myNode != null ? new jetbrains.mps.smodel.SNodePointer(myNode) : null;
-        myRoot = myNode == null ? null : myNode.getContainingRoot();
-        setReadOnly(node == null || node.getModel() == null || jetbrains.mps.util.SNodeOperations.isModelDisposed(
-            node.getModel()) || SModelOperations.isReadOnly(node.getModel()));
-        if (node == null) {
-          setOperationContext(null);
-          setEditorContext(new EditorContext(InspectorEditorComponent.this, null, null));
-        } else {
-          setOperationContext(context);
-          setEditorContext(new EditorContext(InspectorEditorComponent.this, node.getModel(), getOperationContext()));
-        }
-
-        rebuildEditorContent();
-
-        repaint();
-      }
-    });
-
-    if (getOperationContext() != null) {
-      notifyCreation();
-    }
-  }
-
-  @Override
-  @NotNull
-  public JComponent getExternalComponent() {
-    return super.getExternalComponent();
+  protected boolean notifiesCreation() {
+    return true;
   }
 
   @Override
@@ -93,15 +52,7 @@ public class InspectorEditorComponent extends EditorComponent {
   }
 
   @Override
-  public void dispose() {
-    if (getOperationContext() != null) {
-      notifyDisposal();
-    }
-    super.dispose();
-  }
-
-  @Override
   protected SNode getNodeForTypechecking() {
-    return myRoot;
+    return myNode == null ? null : myNode.getContainingRoot();
   }
 }

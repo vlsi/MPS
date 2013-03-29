@@ -998,11 +998,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   public void editNode(final SNode node, final IOperationContext operationContext) {
     if (isDisposed()) return;
-
-    if (operationContext == null) {
-      LOG.errorWithTrace("Opening editor with null context");
-    }
-    setOperationContext(operationContext);
+    clearModelDisposedTrace();
 
     if (myNode != null && notifiesCreation()) {
       notifyDisposal();
@@ -1011,21 +1007,24 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
+        setReadOnly(node == null || node.getModel() == null || SModelOperations.isReadOnly(node.getModel()));
+
         disposeTypeCheckingContext();
-        clearModelDisposedTrace();
         myNode = node;
         if (myNode != null) {
           myNodePointer = new jetbrains.mps.smodel.SNodePointer(myNode);
           myVirtualFile = !myNoVirtualFile ? MPSNodesVirtualFileSystem.getInstance().getFileFor(node) : null;
+          setOperationContext(operationContext);
+          setEditorContext(new EditorContext(EditorComponent.this, node.getModel(), operationContext));
         } else {
           myNodePointer = null;
           myVirtualFile = null;
+          setOperationContext(null);
+          setEditorContext(new EditorContext(EditorComponent.this, null, null));
         }
-        SModel model = node == null ? null : node.getModel();
-        setEditorContext(new EditorContext(EditorComponent.this, model, operationContext));
-        rebuildEditorContent();
         getTypeCheckingContext();
-        setReadOnly(node == null || node.getModel() == null || SModelOperations.isReadOnly(node.getModel()));
+
+        rebuildEditorContent();
       }
     });
 
