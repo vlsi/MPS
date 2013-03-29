@@ -19,7 +19,6 @@ package jetbrains.mps.idea.java.index;
 import com.intellij.util.indexing.DataIndexer;
 import com.intellij.util.indexing.FileContent;
 import com.intellij.util.indexing.ID;
-import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.workbench.goTo.index.SNodeDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -28,16 +27,15 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Collection;
 
 /**
- * Index mps files by package.
  * <code>String -> Collection<SNodeDescriptor></code>
  * User: fyodor
- * Date: 3/28/13
+ * Date: 3/29/13
  */
-public class MPSJavaPackageIndex extends AbstractMPSModelFileIndex {
+public class MPSJavaMethodIndex extends AbstractMPSModelFileIndex {
 
-  public static final ID<String,Collection<SNodeDescriptor>> ID = com.intellij.util.indexing.ID.create("MPSJavaPackageIndex");
+  public static final com.intellij.util.indexing.ID<String,Collection<SNodeDescriptor>> ID = com.intellij.util.indexing.ID.create("MPSJavaMethodIndex");
 
-  public static final MyIndexer INDEXER = new MyIndexer();
+  private static final MyIndexer INDEXER = new MyIndexer();
 
   @NotNull
   @Override
@@ -56,16 +54,15 @@ public class MPSJavaPackageIndex extends AbstractMPSModelFileIndex {
     return 1;
   }
 
-  private static class MyIndexer extends SNodeDescriptorsIndexer {
-
+  private static class MyIndexer extends  SNodeDescriptorsIndexer {
     @Override
     protected Iterable<SNode> getNodesToIndex(SModel sModel) {
-      return getJavaClasses(sModel);
+      return getJavaMethods(sModel);
     }
 
     @Override
     protected String getKey(SModel model, String nodeName) {
-      return  JavaNameUtil.packageName(model);
+      return nodeName;
     }
   }
 }

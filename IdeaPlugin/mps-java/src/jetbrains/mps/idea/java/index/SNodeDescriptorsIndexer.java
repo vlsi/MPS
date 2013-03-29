@@ -21,7 +21,6 @@ import com.intellij.util.indexing.FileContent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.workbench.goTo.index.RootNodeNameIndex;
 import jetbrains.mps.workbench.goTo.index.SNodeDescriptor;
 import org.jetbrains.annotations.NotNull;
@@ -43,20 +42,58 @@ import java.util.Map;
 
   private static final Logger LOG = Logger.getLogger(SNodeDescriptorsIndexer.class);
 
-  public static final String[] JAVA_CLASS_FQNAMES = {
+  public static final String[] JAVA_CLASS_CONCEPTS = {
     "jetbrains.mps.baseLanguage.structure.Annotation",
     "jetbrains.mps.baseLanguage.structure.ClassConcept",
     "jetbrains.mps.baseLanguage.structure.EnumClass",
     "jetbrains.mps.baseLanguage.structure.Interface",
     "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration",
-    "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase"};
+    "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase",
+  };
 
-  private Collection<SNode> getJavaClasses(SModel sModel) {
-    ArrayList<SNode> yield = new ArrayList<SNode>();
+  public static final String[] JAVA_METHOD_CONCEPTS = {
+    "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration",
+    "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration",
+    "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration",
+    "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration",
+    "jetbrains.mps.baseLanguage.unitTest.structure.TestMethod",
+  };
+
+  public static final String[] JAVA_FIELD_CONCEPTS = {
+    "jetbrains.mps.baseLanguage.structure.FieldDeclaration",
+    "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration",
+  };
+
+  protected Collection<SNode> getJavaClasses(SModel sModel) {
+    ArrayList<SNode> classes = new ArrayList<SNode>();
     for (SNode root : sModel.getRootNodes()) {
-      collectJavaClasses(root, yield);
+      collectJavaClasses(root, classes);
     }
-    return yield;
+    return classes;
+  }
+
+  protected Collection<SNode> getJavaMethods(SModel sModel) {
+    ArrayList<SNode> classes = new ArrayList<SNode>();
+    for (SNode root : sModel.getRootNodes()) {
+      collectJavaClasses(root, classes);
+    }
+    ArrayList<SNode> methods = new ArrayList<SNode>();
+    for (SNode cls : classes) {
+      collectJavaMethods(cls, methods);
+    }
+    return methods;
+  }
+
+  protected Collection<SNode> getJavaFields(SModel sModel) {
+    ArrayList<SNode> classes = new ArrayList<SNode>();
+    for (SNode root : sModel.getRootNodes()) {
+      collectJavaClasses(root, classes);
+    }
+    ArrayList<SNode> fields = new ArrayList<SNode>();
+    for (SNode cls : classes) {
+      collectJavaFields(cls, fields);
+    }
+    return fields;
   }
 
   private void collectJavaClasses(SNode cand, Collection<SNode> yield) {
@@ -68,9 +105,34 @@ import java.util.Map;
     }
   }
 
+  private void collectJavaMethods(SNode cand, Collection<SNode> yield) {
+    if (isMethod(cand)) {
+      yield.add(cand);
+      // TODO: walk the body and collect methods from the anonymous classes?
+    }
+  }
+
+  private void collectJavaFields(SNode cand, Collection<SNode> yield) {
+    if (isField(cand)) {
+      yield.add(cand);
+    }
+  }
+
   private boolean isClassOrInterface(SNode sNode) {
+    return isExactConcept(sNode, JAVA_CLASS_CONCEPTS);
+  }
+
+  private boolean isMethod(SNode sNode) {
+    return isExactConcept(sNode, JAVA_METHOD_CONCEPTS);
+  }
+
+  private boolean isField(SNode sNode) {
+    return isExactConcept(sNode, JAVA_FIELD_CONCEPTS);
+  }
+
+  private boolean isExactConcept(SNode sNode, String[] concept) {
     String qualifiedName = sNode.getConcept().getQualifiedName();
-    int idx = Arrays.binarySearch(JAVA_CLASS_FQNAMES, qualifiedName);
+    int idx = Arrays.binarySearch(concept, qualifiedName);
     return idx >= 0;
   }
 
@@ -84,15 +146,16 @@ import java.util.Map;
         try {
           SModel model = RootNodeNameIndex.doModelParsing(inputData);
           SModelReference modelRef = model.getReference();
-          for (SNode node : getJavaClasses(model)) {
+          for (SNode node : getNodesToIndex(model)) {
+
             String persistentName = node.getProperty(SNodeUtil.property_INamedConcept_name);
             String nodeName = (persistentName == null) ? "null" : persistentName;
-            String classFqName = getKey(model, nodeName);
+            String key = getKey(model, nodeName);
 
-            Collection<SNodeDescriptor> descriptors = map.get(classFqName);
+            Collection<SNodeDescriptor> descriptors = map.get(key);
             if (descriptors == null) {
               descriptors = new ArrayList<SNodeDescriptor>();
-              map.put(classFqName, descriptors);
+              map.put(key, descriptors);
             }
 
             descriptors.add(SNodeDescriptor.fromModelReference(nodeName, node.getConcept().getId(), modelRef, node.getNodeId()));
@@ -104,6 +167,8 @@ import java.util.Map;
     });
     return map;
   }
+
+  protected abstract Iterable<SNode> getNodesToIndex(SModel sModel);
 
   protected abstract String getKey(SModel model, String nodeName);
 }

@@ -23,6 +23,7 @@ import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.workbench.goTo.index.SNodeDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collection;
 
@@ -59,6 +60,11 @@ public class MPSFQNameJavaClassIndex extends AbstractMPSModelFileIndex {
   }
 
   private static class MyIndexer extends SNodeDescriptorsIndexer {
+    @Override
+    protected Iterable<SNode> getNodesToIndex(SModel sModel) {
+      return getJavaClasses(sModel);
+    }
+
     @Override
     protected String getKey(SModel model, String nodeName) {
       return JavaNameUtil.fqClassName(model, nodeName);

@@ -93,6 +93,8 @@
     <fileBasedIndex implementation="jetbrains.mps.idea.java.index.MPSFQNameJavaClassIndex"/>
     <fileBasedIndex implementation="jetbrains.mps.idea.java.index.MPSJavaPackageIndex"/>
     <fileBasedIndex implementation="jetbrains.mps.idea.java.index.MPSShortNameJavaClassIndex"/>
+    <fileBasedIndex implementation="jetbrains.mps.idea.java.index.MPSJavaMethodIndex"/>
+    <fileBasedIndex implementation="jetbrains.mps.idea.java.index.MPSJavaFieldIndex"/>
   </extensions>
 
   <extensions defaultExtensionNs="jetbrains.mps">
