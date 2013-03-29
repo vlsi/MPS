@@ -1001,7 +1001,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     setOperationContext(operationContext);
     editNode(node);
-    setReadOnly(node == null || node.getModel() == null || SModelOperations.isReadOnly(node.getModel()));
   }
 
   protected void editNode(final SNode node) {
@@ -1023,6 +1022,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         setEditorContext(new EditorContext(EditorComponent.this, model, operationContext));
         rebuildEditorContent();
         getTypeCheckingContext();
+        setReadOnly(node == null || node.getModel() == null || SModelOperations.isReadOnly(node.getModel()));
       }
     });
   }
