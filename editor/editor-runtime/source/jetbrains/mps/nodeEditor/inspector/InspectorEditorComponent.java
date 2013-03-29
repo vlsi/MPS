@@ -45,12 +45,7 @@ public class InspectorEditorComponent extends EditorComponent {
   }
 
   @Override
-  public void editNode(SNode semanticNode, IOperationContext operationContext) {
-    //never used
-    inspectNode(semanticNode, operationContext);
-  }
-
-  public void inspectNode(final SNode node, final IOperationContext context) {
+  public void editNode(final SNode node, final IOperationContext context) {
     if (getOperationContext() != null) {
       notifyDisposal();
     }

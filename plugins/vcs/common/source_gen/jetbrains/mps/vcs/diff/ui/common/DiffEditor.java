@@ -80,7 +80,7 @@ public class DiffEditor implements EditorMessageOwner {
   }
 
   public void inspect(SNode node) {
-    myInspector.inspectNode(node, myMainEditorComponent.getOperationContext());
+    myInspector.editNode(node, myMainEditorComponent.getOperationContext());
     myInspector.getHighlightManager().repaintAndRebuildEditorMessages();
   }
 
