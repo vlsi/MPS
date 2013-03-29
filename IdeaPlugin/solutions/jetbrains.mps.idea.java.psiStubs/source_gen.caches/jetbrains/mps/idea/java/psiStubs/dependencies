@@ -119,8 +119,11 @@
   <dependency className="jetbrains.mps.idea.java.psiStubs.Mapper" file="Mapper.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.psi.PsiElement" />
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.idea.java.psiStubs.PsiJavaStubModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.idea.core.psi.MPS2PsiMapper" />
   </dependency>
