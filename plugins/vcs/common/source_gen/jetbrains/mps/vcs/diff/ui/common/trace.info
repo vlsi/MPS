@@ -1520,8 +1520,8 @@
     <nodeInfo nodeId="4652592318748338509" fileName="DiffEditor.java" startLine="64" startPosition="90" endLine="65" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5277200897193755573" fileName="DiffEditor.java" startLine="68" startPosition="32" endLine="69" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4124845871897267947" fileName="DiffEditor.java" startLine="77" startPosition="50" endLine="78" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748338521" fileName="DiffEditor.java" startLine="82" startPosition="35" endLine="83" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748338529" fileName="DiffEditor.java" startLine="83" startPosition="79" endLine="84" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652592318748338521" fileName="DiffEditor.java" startLine="82" startPosition="35" endLine="83" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652592318748338529" fileName="DiffEditor.java" startLine="83" startPosition="76" endLine="84" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4652592318748338545" fileName="DiffEditor.java" startLine="89" startPosition="45" endLine="90" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4652592318748338558" fileName="DiffEditor.java" startLine="95" startPosition="39" endLine="96" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4652592318748338564" fileName="DiffEditor.java" startLine="99" startPosition="57" endLine="100" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
