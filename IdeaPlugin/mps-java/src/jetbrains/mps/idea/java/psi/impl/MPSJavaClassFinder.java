@@ -26,7 +26,6 @@ import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.CollectConsumer;
 import com.intellij.util.Consumer;
 import com.intellij.util.indexing.FileBasedIndex;
-import com.intellij.util.indexing.FileBasedIndexImpl;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.java.index.MPSFQNameJavaClassIndex;
 import jetbrains.mps.idea.java.index.MPSJavaPackageIndex;
@@ -97,7 +96,7 @@ public class MPSJavaClassFinder extends PsiElementFinder {
 
   /** read access required */
   private void findMPSClasses(PsiPackage psiPackage, Consumer<SNode> consumer, GlobalSearchScope scope) {
-    final FileBasedIndexImpl fileBasedIndex = (FileBasedIndexImpl) FileBasedIndex.getInstance();
+    final FileBasedIndex fileBasedIndex = FileBasedIndex.getInstance();
     String key = psiPackage.getQualifiedName();
     List<Collection<SNodeDescriptor>> values = fileBasedIndex.getValues(MPSJavaPackageIndex.ID, key, scope);
     collectNodes(consumer, values);
@@ -105,7 +104,7 @@ public class MPSJavaClassFinder extends PsiElementFinder {
 
   /** read access required */
   private void findMPSClasses(String qname, Consumer<SNode> consumer, GlobalSearchScope scope) {
-    final FileBasedIndexImpl fileBasedIndex = (FileBasedIndexImpl) FileBasedIndex.getInstance();
+    final FileBasedIndex fileBasedIndex = FileBasedIndex.getInstance();
     List<Collection<SNodeDescriptor>> values = fileBasedIndex.getValues(MPSFQNameJavaClassIndex.ID, qname, scope);
     collectNodes(consumer, values);
   }
