@@ -17,7 +17,8 @@ package jetbrains.mps.project.facets;
 
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.reloading.ClassPathFactory;

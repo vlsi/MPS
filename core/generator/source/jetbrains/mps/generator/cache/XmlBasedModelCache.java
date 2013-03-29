@@ -17,7 +17,8 @@ package jetbrains.mps.generator.cache;
 
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.JDOMUtil;

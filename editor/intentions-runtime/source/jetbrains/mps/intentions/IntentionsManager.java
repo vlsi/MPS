@@ -28,7 +28,8 @@ import jetbrains.mps.intentions.IntentionsVisitor.GetHighestAvailableIntentionTy
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.lang.script.runtime.MigrationScriptUtil;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.openapi.editor.EditorContext;

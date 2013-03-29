@@ -22,7 +22,8 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Language;
@@ -96,7 +97,7 @@ public class FindersOptions extends BaseOptions {
           LOG.error(t);
         }
       } else {
-        LOG.warning("Can't find a class " + finderClassName + " in " + languageNamespace + ". The finder is disabled.");
+        LOG.warn("Can't find a class " + finderClassName + " in " + languageNamespace + ". The finder is disabled.");
       }
     }
     return FindUtils.makeProvider(finders);

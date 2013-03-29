@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
 
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.Nullable;
 
@@ -181,7 +182,7 @@ public abstract class ModelAccess implements ModelCommandExecutor {
   }
 
   public void clearRepositoryStateCaches() {
-//    LOG.warning("Clearing model state caches");
+//    LOG.warn("Clearing model state caches");
     myRepositoryStateCaches.clear();
   }
 

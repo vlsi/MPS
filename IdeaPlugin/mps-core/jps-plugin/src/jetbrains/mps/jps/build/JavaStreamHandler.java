@@ -18,7 +18,8 @@ package jetbrains.mps.jps.build;
 
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.IFile;

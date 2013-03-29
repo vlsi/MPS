@@ -17,7 +17,8 @@ package jetbrains.mps.nodeEditor.cellLayout;
 
 import jetbrains.mps.editor.runtime.impl.LayoutConstraints;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.GeometryUtil;
@@ -302,7 +303,7 @@ public class CellLayout_Flow extends AbstractCellLayout {
 
   @Override
   public List<? extends EditorCell> getSelectionCells(EditorCell_Collection editorCells) {
-    LOG.assertLog(getFlowLayout(editorCells) == this);
+    LOG.assertLog(getFlowLayout(editorCells) == this, "Assertion failed.");
     List<EditorCell> result = new ArrayList<EditorCell>();
     for (EditorCell cell : editorCells) {
       result.add(cell);
@@ -312,7 +313,7 @@ public class CellLayout_Flow extends AbstractCellLayout {
 
   @Override
   public List<Rectangle> getSelectionBounds(EditorCell_Collection editorCells) {
-    LOG.assertLog(getFlowLayout(editorCells) == this);
+    LOG.assertLog(getFlowLayout(editorCells) == this, "Assertion failed.");
     List<Rectangle> result = new ArrayList<Rectangle>();
     for (EditorCell cell : editorCells) {
       result.add(GeometryUtil.getBounds(editorCells));

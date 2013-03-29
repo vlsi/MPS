@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.ide.blame.perform;
 
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jdom.Attribute;
 import org.jdom.Document;
 import org.jdom.Element;

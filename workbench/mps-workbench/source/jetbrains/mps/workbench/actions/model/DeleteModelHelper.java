@@ -26,7 +26,8 @@ import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -93,7 +94,7 @@ public class DeleteModelHelper {
     } else if (contextModule instanceof Generator) {
       deleteModelFromGenerator((Generator) contextModule, modelDescriptor);
     } else {
-      LOG.warning(
+      LOG.warn(
         "Module type " + contextModule.getClass().getSimpleName() + " is not supported by delete refactoring. Changes will not be saved automatically for modules of this type.");
     }
 
@@ -182,7 +183,7 @@ public class DeleteModelHelper {
       } else if (modelOwner instanceof Generator) {
         deleteModelFromGenerator((Generator) modelOwner, modelDescriptor);
       } else if (modelOwner != null) {
-        LOG.warning(
+        LOG.warn(
           "Module type " + modelOwner.getClass().getSimpleName() + " is not supported by delete refactoring. Changes will not be saved automatically for modules of this type.");
       }
 

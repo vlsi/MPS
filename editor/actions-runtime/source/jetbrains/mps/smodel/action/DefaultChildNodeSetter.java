@@ -16,7 +16,8 @@
 package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.IScope;

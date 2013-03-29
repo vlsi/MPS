@@ -17,7 +17,8 @@ package jetbrains.mps.smodel;
 
 import org.jetbrains.mps.openapi.model.SModel;
 
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor;
 import jetbrains.mps.project.dependency.modules.GeneratorDependenciesManager;

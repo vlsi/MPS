@@ -24,7 +24,8 @@ import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.util.FileUtil;
@@ -132,7 +133,7 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsage
 
       VirtualFile vf = VirtualFileUtils.getVirtualFile(modelFile);
       if (vf == null) {
-        LOG.warning("Model " + sm.getModelName() + ": virtual file not found for model file. Model file: " + modelFile.getPath());
+        LOG.warn("Model " + sm.getModelName() + ": virtual file not found for model file. Model file: " + modelFile.getPath());
         continue;
       }
       processedModels.consume(sm);

@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.smodel.constraints;
 
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
@@ -36,7 +37,7 @@ public class ConstraintsOperationContext extends StandaloneMPSContext {
 
   @Override
   public Project getProject() {
-    LOG.warning("Using getProject() from IOperationContext in constraints not working now");
+    LOG.warn("Using getProject() from IOperationContext in constraints not working now");
     return null;
   }
 

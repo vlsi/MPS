@@ -16,7 +16,8 @@
 package jetbrains.mps.smodel.persistence.def.v6;
 
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;

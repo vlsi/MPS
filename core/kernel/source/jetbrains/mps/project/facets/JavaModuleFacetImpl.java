@@ -16,7 +16,8 @@
 package jetbrains.mps.project.facets;
 
 import jetbrains.mps.extapi.module.ModuleFacetBase;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ProjectPathUtil;
 import jetbrains.mps.project.Solution;
@@ -113,7 +114,7 @@ public class JavaModuleFacetImpl extends ModuleFacetBase implements JavaModuleFa
       String[] split = path.split("!");
       if (split.length > 0) {
         if (!split[1].isEmpty() && !split[1].equals("/")) {
-          LOG.warning("Can not transform directory " + path + " to proper classpath while calculating classpath for module " + getModule());
+          LOG.warn("Can not transform directory " + path + " to proper classpath while calculating classpath for module " + getModule());
         }
       }
       return split[0];

@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.extapi.model;
 
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.smodel.MPSModuleRepository;

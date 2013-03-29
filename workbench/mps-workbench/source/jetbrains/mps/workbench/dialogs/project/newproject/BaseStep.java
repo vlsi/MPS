@@ -18,7 +18,8 @@ package jetbrains.mps.workbench.dialogs.project.newproject;
 import com.intellij.ide.BrowserUtil;
 import com.intellij.ide.wizard.CommitStepException;
 import com.intellij.ide.wizard.StepAdapter;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

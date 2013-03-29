@@ -16,7 +16,8 @@
 package jetbrains.mps.lang.editor.generator.internal;
 
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellContext;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;

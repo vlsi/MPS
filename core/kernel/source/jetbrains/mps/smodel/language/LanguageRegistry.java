@@ -17,7 +17,8 @@ package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;

@@ -21,7 +21,8 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.LanguageLibrary;
 import jetbrains.mps.library.LibraryInitializer;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
 

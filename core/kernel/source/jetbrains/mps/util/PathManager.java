@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.util;
 
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jdom.Document;
 
 import java.io.File;

@@ -16,7 +16,8 @@
 package jetbrains.mps.ide.smodel;
 
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.Project;
 
 import javax.swing.SwingUtilities;

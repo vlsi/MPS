@@ -24,7 +24,8 @@ import jetbrains.mps.generator.impl.cache.BrokenCacheException;
 import jetbrains.mps.generator.impl.cache.IntermediateModelsCache;
 import jetbrains.mps.generator.impl.cache.MappingsMemento;
 import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
@@ -164,7 +165,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
     }
     SNode originalRoot = currentToOriginalMap.get(inputNode.getContainingRoot());
 //    if(originalRoot == null && !currentToOriginalMap.containsKey(inputNode.getTopmostAncestor())) {
-//      LOG.warning("consistency problem in dependencies map");
+//      LOG.warn("consistency problem in dependencies map");
 //    }
     nextStepToOriginalMap.put(outputRoot, originalRoot);
   }
@@ -184,7 +185,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
 
 //      for(SNode newroot : newInputModel.roots()) {
 //        if(!currentToOriginalMap.containsKey(newroot)) {
-//          LOG.warning("unknown root in model " + newInputModel);
+//          LOG.warn("unknown root in model " + newInputModel);
 //        }
 //      }
 

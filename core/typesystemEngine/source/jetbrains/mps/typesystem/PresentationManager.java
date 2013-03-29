@@ -16,7 +16,8 @@
 package jetbrains.mps.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeOperations;
 import jetbrains.mps.smodel.SNodeUtil;

@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.editor.runtime.style;
 
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.style.AttributeCalculator;
 import jetbrains.mps.openapi.editor.style.Style;

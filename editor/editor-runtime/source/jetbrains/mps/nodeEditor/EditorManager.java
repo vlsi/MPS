@@ -21,7 +21,8 @@ import jetbrains.mps.editor.runtime.cells.KeyMapActionImpl;
 import jetbrains.mps.editor.runtime.cells.KeyMapImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
@@ -256,7 +257,7 @@ public class EditorManager {
     EditorCell result = createEditorCell(context, modifications, ReferencedNodeContext.createNodeAttributeContext(roleAttribute));
     myLastAttributedCell = null;
     EditorCell cellWithRolePopped = stack.pop();
-    LOG.assertLog(cellWithRolePopped == cellWithRole);
+    LOG.assertLog(cellWithRolePopped == cellWithRole, "Assertion failed.");
     return result;
   }
 
@@ -293,7 +294,7 @@ public class EditorManager {
             EditorCell nodeCell = createEditorCell(context, modifications, refContext);
 
             SNode poppedAttribute = myAttributesStack.pop();
-            LOG.assertLog(poppedAttribute == attribute);
+            LOG.assertLog(poppedAttribute == attribute, "Assertion failed.");
             return createNodeAttributeCell(context, attribute, nodeCell);
           }
         }

@@ -19,7 +19,8 @@ import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef;
@@ -218,11 +219,11 @@ public class GenerationPartitioner {
                 return Collections.singletonList(m);
               }
             }
-            LOG.warning(
+            LOG.warn(
                 "couldn't get node by id: '" + nodeID + "' in model " + modelUID + " while loading priority rules for generator: " + sourceGeneratorID);
           }
         } else {
-          LOG.warning(
+          LOG.warn(
               "couldn't get model by uid: '" + modelUID + "' in generator " + refGenerator.getAlias() + " while loading priority rules for generator: " + sourceGeneratorID);
         }
       }

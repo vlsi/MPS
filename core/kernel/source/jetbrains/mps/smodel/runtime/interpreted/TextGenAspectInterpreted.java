@@ -17,7 +17,8 @@ package jetbrains.mps.smodel.runtime.interpreted;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SNode;

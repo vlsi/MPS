@@ -17,7 +17,8 @@ package jetbrains.mps.ide.findusages.view.treeholder.treeview.path;
 
 import jetbrains.mps.ide.findusages.model.CategoryKind;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.IModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;

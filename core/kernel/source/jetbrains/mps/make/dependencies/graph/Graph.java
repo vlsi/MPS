@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.make.dependencies.graph;
 
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;

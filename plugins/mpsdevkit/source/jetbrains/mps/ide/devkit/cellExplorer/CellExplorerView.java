@@ -26,7 +26,8 @@ import jetbrains.mps.ide.tools.BaseProjectTool;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
@@ -144,7 +145,7 @@ public class CellExplorerView extends BaseProjectTool {
 
     MPSTreeNode current = findCellTreeNode(cell);
     if (current == null) {
-      LOG.warning("Can't find cell in tree");
+      LOG.warn("Can't find cell in tree");
       return;
     }
     myTree.selectNode(current);

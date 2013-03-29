@@ -16,7 +16,8 @@
 package jetbrains.mps.datatransfer;
 
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import org.jetbrains.mps.openapi.model.SNode;

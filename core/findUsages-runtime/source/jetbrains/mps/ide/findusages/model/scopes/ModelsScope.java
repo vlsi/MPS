@@ -17,7 +17,8 @@ package jetbrains.mps.ide.findusages.model.scopes;
 
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jdom.Element;
@@ -79,7 +80,7 @@ public class ModelsScope extends FindUsagesScope {
     // todo: !
     SModel model = SModelRepository.getInstance().getModelDescriptorsByModelName(modelName).iterator().next();
     if (model == null) {
-      LOG.warning("model scope not found for model " + modelName);
+      LOG.warn("model scope not found for model " + modelName);
       throw new IllegalArgumentException("model scope not found for model " + modelName);
     } else {
       return model;

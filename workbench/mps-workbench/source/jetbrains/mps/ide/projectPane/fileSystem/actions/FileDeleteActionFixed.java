@@ -22,7 +22,8 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.Nullable;
 
@@ -106,7 +107,7 @@ public class FileDeleteActionFixed extends DeleteAction {
           hasFiles |= !isDirectory;
           hasFolders |= isDirectory;
         }
-        LOG.assertLog(hasFiles || hasFolders);
+        LOG.assertLog(hasFiles || hasFolders, "Assertion failed.");
         if (hasFiles && hasFolders) return "Are you sure you want to delete selected files and directories?";
         else if (hasFolders)
           return "Are you sure you want to delete selected directories?";

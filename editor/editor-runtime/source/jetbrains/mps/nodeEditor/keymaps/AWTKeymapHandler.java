@@ -17,7 +17,8 @@ package jetbrains.mps.nodeEditor.keymaps;
 
 import gnu.trove.TIntObjectHashMap;
 import gnu.trove.TObjectProcedure;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;

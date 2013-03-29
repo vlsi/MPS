@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.vfs.impl;
 
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 import java.io.File;
 import java.io.IOException;

@@ -17,7 +17,8 @@ package jetbrains.mps.ide.devkit.util;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.smodel.Generator;

@@ -17,7 +17,8 @@ package jetbrains.mps.smodel.persistence.def.v4;
 
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.ModelDigestUtil;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.persistence.def.IHashProvider;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.XmlFastScanner;

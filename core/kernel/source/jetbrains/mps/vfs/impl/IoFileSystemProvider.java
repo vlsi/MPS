@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.vfs.impl;
 
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.FileSystemProvider;
 import jetbrains.mps.vfs.IFile;

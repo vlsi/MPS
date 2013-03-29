@@ -16,7 +16,8 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.TransientModelsProvider.TransientSwapSpace;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;

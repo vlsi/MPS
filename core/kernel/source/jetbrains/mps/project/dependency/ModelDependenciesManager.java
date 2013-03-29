@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.project.dependency;
 
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;

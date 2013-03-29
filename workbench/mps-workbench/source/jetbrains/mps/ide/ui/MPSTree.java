@@ -32,7 +32,8 @@ import com.intellij.util.ui.update.Update;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.Nullable;
@@ -562,7 +563,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
       TreePath path = expanded.nextElement();
       String pathString = pathToString(path);
       if (result.contains(pathString))
-        LOG.warning("two expanded paths have the same string representation");
+        LOG.warn("two expanded paths have the same string representation");
       result.add(pathString);
     }
     return result;
@@ -574,7 +575,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     for (TreePath selectionPart : getSelectionPaths()) {
       String pathString = pathToString(selectionPart);
       if (result.contains(pathString))
-        LOG.warning("two selected paths have the same string representation");
+        LOG.warn("two selected paths have the same string representation");
       result.add(pathString);
     }
     return result;

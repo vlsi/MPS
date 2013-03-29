@@ -16,7 +16,8 @@
 package jetbrains.mps.plugins.applicationplugins;
 
 import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.plugins.PluginUtil;
 import jetbrains.mps.plugins.PluginUtil.ApplicationPluginCreator;
 import jetbrains.mps.project.IModule;

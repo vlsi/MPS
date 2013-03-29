@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelRepository;

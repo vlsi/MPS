@@ -27,7 +27,8 @@ import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.util.io.ZipUtil;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.build.SamplesExtractor.MyState;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.samples.SamplesInfo;
 import jetbrains.mps.samples.SamplesManager;
 import jetbrains.mps.util.PathManager;
@@ -47,7 +48,7 @@ import java.io.IOException;
     )}
 )
 public class SamplesExtractor implements ApplicationComponent, PersistentStateComponent<MyState>, SamplesInfo {
-  private static final Logger LOG = Logger.getLogger(SamplesExtractor.class);
+  private static final Logger LOG = LogManager.getLogger(SamplesExtractor.class);
 
   private static final String SAMPLES_IN_MPS_HOME_DIR = "samples";
   private static final String MPS = "MPS";

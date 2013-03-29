@@ -20,7 +20,8 @@ import com.intellij.openapi.keymap.Keymap;
 import com.intellij.openapi.keymap.KeymapManager;
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 import java.util.*;
 import java.util.Map.Entry;

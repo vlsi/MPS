@@ -21,7 +21,8 @@ import jetbrains.mps.ide.findusages.IExternalizeable;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.BaseNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -197,7 +198,7 @@ public class DataNode implements IExternalizeable {
   }
 
   private void throwLoadException(Throwable t) throws CantLoadSomethingException {
-    LOG.warning("can't instantiate node", t);
+    LOG.warn("can't instantiate node", t);
     throw new CantLoadSomethingException("can't instantiate node", t);
   }
 }

@@ -16,7 +16,8 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.IterableUtil;

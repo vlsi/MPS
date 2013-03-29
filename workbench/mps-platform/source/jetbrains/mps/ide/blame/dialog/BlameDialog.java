@@ -28,7 +28,8 @@ import jetbrains.mps.ide.blame.command.Command;
 import jetbrains.mps.ide.blame.command.Poster;
 import jetbrains.mps.ide.blame.perform.Query;
 import jetbrains.mps.ide.blame.perform.Response;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
@@ -151,7 +152,7 @@ public class BlameDialog extends DialogWrapper {
           Messages.showMessageDialog(myProject, response.getMessage(), "Test Login", Messages.getInformationIcon());
         } else {
           Messages.showErrorDialog(myProject, response.getMessage(), "Test Login Failed");
-          LOG.warning("Submit failed: " + response.getMessage() + ":" + response.getResponseString(), response.getThrowable());
+          LOG.warn("Submit failed: " + response.getMessage() + ":" + response.getResponseString(), response.getThrowable());
         }
       }
     });

@@ -17,7 +17,8 @@ package jetbrains.mps.reloading;
 
 import jetbrains.mps.ClasspathReader;
 import jetbrains.mps.ClasspathReader.ClassType;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.util.Callback;
 import jetbrains.mps.util.PathManager;
 import sun.misc.Launcher;

@@ -17,7 +17,8 @@ package jetbrains.mps.reloading;
 
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.util.Condition;

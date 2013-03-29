@@ -17,7 +17,8 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.actions.runtime.impl.SideTransformUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.IOperationContext;

@@ -18,7 +18,8 @@ package jetbrains.mps.workbench.action;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
 import com.intellij.openapi.extensions.PluginId;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 import java.util.ArrayList;
 import java.util.List;

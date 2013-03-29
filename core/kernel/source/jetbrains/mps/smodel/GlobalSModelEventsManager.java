@@ -17,7 +17,8 @@ package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelRefere
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelListener;

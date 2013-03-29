@@ -5,7 +5,8 @@ package jetbrains.mps.tool.builder.util;
 import org.jetbrains.annotations.NonNls;
 import java.lang.reflect.Field;
 import java.util.HashMap;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.tool.common.util.UrlClassLoader;
 import java.util.List;
 import java.net.URL;
@@ -118,18 +119,18 @@ public class ClassloaderUtil {
             aClasspathElements.add(new File(token).toURI().toURL());
           }
         } else {
-          ClassloaderUtil.getLogger().warning("Unknown classloader: " + loader.getClass().getName());
+          ClassloaderUtil.getLogger().warn("Unknown classloader: " + loader.getClass().getName());
         }
       } catch (ClassCastException e) {
-        ClassloaderUtil.getLogger().warning("Unknown classloader [CCE]: " + e.getMessage());
+        ClassloaderUtil.getLogger().warn("Unknown classloader [CCE]: " + e.getMessage());
       } catch (ClassNotFoundException e) {
-        ClassloaderUtil.getLogger().warning("Unknown classloader [CNFE]: " + loader.getClass().getName());
+        ClassloaderUtil.getLogger().warn("Unknown classloader [CNFE]: " + loader.getClass().getName());
       } catch (NoSuchMethodException e) {
-        ClassloaderUtil.getLogger().warning("Unknown classloader [NSME]: " + e.getMessage());
+        ClassloaderUtil.getLogger().warn("Unknown classloader [NSME]: " + e.getMessage());
       } catch (IllegalAccessException e) {
-        ClassloaderUtil.getLogger().warning("Unknown classloader [IAE]: " + e.getMessage());
+        ClassloaderUtil.getLogger().warn("Unknown classloader [IAE]: " + e.getMessage());
       } catch (InvocationTargetException e) {
-        ClassloaderUtil.getLogger().warning("Unknown classloader [ITE]: " + e.getMessage());
+        ClassloaderUtil.getLogger().warn("Unknown classloader [ITE]: " + e.getMessage());
       }
     }
   }

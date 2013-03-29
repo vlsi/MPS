@@ -18,7 +18,8 @@ package jetbrains.mps.workbench.action;
 import com.intellij.ide.DataManager;
 import com.intellij.ide.actions.RecentProjectsGroup;
 import com.intellij.openapi.actionSystem.*;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 import java.awt.event.InputEvent;
 

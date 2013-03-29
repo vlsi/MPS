@@ -17,7 +17,8 @@ package jetbrains.mps.ide.findusages.model.scopes;
 
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jdom.Element;
@@ -67,7 +68,7 @@ public class ModulesScope extends FindUsagesScope {
   private static SModule resolveModule(String moduleName) {
     SModule module = MPSModuleRepository.getInstance().getModuleByFqName(moduleName);
     if (module == null) {
-      LOG.warning("module scope not found for module  " + moduleName);
+      LOG.warn("module scope not found for module  " + moduleName);
       throw new IllegalArgumentException("module scope not found for module " + moduleName);
     } else {
       return module;

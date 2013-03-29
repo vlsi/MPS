@@ -49,7 +49,8 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.TreeHighlighterExtension;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
@@ -295,7 +296,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
             MPSTreeNode moduleTreeNode = myFindHelper.findMostSuitableModuleTreeNode(module);
 
             if (moduleTreeNode == null) {
-              LOG.warning("Couldn't select module \"" + module.getModuleName() + "\" : tree node not found.");
+              LOG.warn("Couldn't select module \"" + module.getModuleName() + "\" : tree node not found.");
               return;
             }
 
@@ -315,7 +316,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
       public void doOnPaneActivation() {
         SModelTreeNode modelTreeNode = myFindHelper.findMostSuitableModelTreeNode(model);
         if (modelTreeNode == null) {
-          LOG.warning("Couldn't select model \"" + SNodeOperations.getModelLongName(model) + "\" : tree node not found.");
+          LOG.warn("Couldn't select model \"" + SNodeOperations.getModelLongName(model) + "\" : tree node not found.");
           return;
         }
         getTree().selectNode(modelTreeNode);
@@ -347,7 +348,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
       public void run() {
         MPSTreeNodeEx sNodeNode = myFindHelper.findMostSuitableSNodeTreeNode(node);
         if (sNodeNode == null) {
-          LOG.warning("Couldn't select node \"" + node.getName() + "\" : tree node not found.");
+          LOG.warn("Couldn't select node \"" + node.getName() + "\" : tree node not found.");
           return;
         }
         getTree().selectNode(sNodeNode);

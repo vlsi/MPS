@@ -17,7 +17,8 @@ package jetbrains.mps.generator.generationTypes;
 
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.IGeneratorLogger;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.Pair;

@@ -16,7 +16,8 @@
 package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
 import gnu.trove.TObjectIntHashMap;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 
 public class SModelVersionsInfo {
@@ -30,7 +31,7 @@ public class SModelVersionsInfo {
   private final TObjectIntHashMap<NodeStringPair> myNodeLinkTargetsVersions = new TObjectIntHashMap<NodeStringPair>();
 
   public void dispose() {
-    LOG.assertLog(!myIsDisposed);
+    LOG.assertLog(!myIsDisposed, "Already disposed.");
 
     myNodeConceptVersions.clear();
     myNodeRolesVersions.clear();
@@ -40,14 +41,14 @@ public class SModelVersionsInfo {
   }
 
   public void addPropertyVersion(SNode node, String propertyName, int version) {
-    LOG.assertLog(!myIsDisposed);
+    LOG.assertLog(!myIsDisposed, "Node is disposed.");
 
     NodeStringPair property = new NodeStringPair(node, propertyName);
     myNodePropertiesVersions.put(property, version);
   }
 
   public int getPropertyVersion(SNode node, String propertyName) {
-    LOG.assertLog(!myIsDisposed);
+    LOG.assertLog(!myIsDisposed, "Node is disposed.");
 
     NodeStringPair key = new NodeStringPair(node, propertyName);
     if (myNodePropertiesVersions.containsKey(key)) {
@@ -57,12 +58,12 @@ public class SModelVersionsInfo {
   }
 
   public void addRoleVersion(SNode node, int version) {
-    LOG.assertLog(!myIsDisposed);
+    LOG.assertLog(!myIsDisposed, "Node is disposed.");
     myNodeRolesVersions.put(node, version);
   }
 
   public int getRoleVersion(SNode node) {
-    LOG.assertLog(!myIsDisposed);
+    LOG.assertLog(!myIsDisposed, "Node is disposed.");
 
     if (myNodeRolesVersions.containsKey(node)) {
       return myNodeRolesVersions.get(node);
@@ -71,12 +72,12 @@ public class SModelVersionsInfo {
   }
 
   public void addConceptNameVersion(SNode node, int version) {
-    LOG.assertLog(!myIsDisposed);
+    LOG.assertLog(!myIsDisposed, "Node is disposed.");
     myNodeConceptVersions.put(node, version);
   }
 
   public int getConceptNameVersion(SNode node) {
-    LOG.assertLog(!myIsDisposed);
+    LOG.assertLog(!myIsDisposed, "Node is disposed.");
 
     if (myNodeConceptVersions.containsKey(node)) {
       return myNodeConceptVersions.get(node);
@@ -85,7 +86,7 @@ public class SModelVersionsInfo {
   }
 
   public void addLinkRoleVersion(SNode node, String linkRole, int version) {
-    LOG.assertLog(!myIsDisposed);
+    LOG.assertLog(!myIsDisposed, "Node is disposed.");
 
     NodeStringPair link = new NodeStringPair(node, linkRole);
     if (myNodeLinkRolesVersions.contains(link)) {
@@ -96,7 +97,7 @@ public class SModelVersionsInfo {
   }
 
   public int getLinkRoleVersion(SNode node, String linkRole) {
-    LOG.assertLog(!myIsDisposed);
+    LOG.assertLog(!myIsDisposed, "Node is disposed.");
 
     NodeStringPair key = new NodeStringPair(node, linkRole);
     if (myNodeLinkRolesVersions.containsKey(key)) {
@@ -106,14 +107,14 @@ public class SModelVersionsInfo {
   }
 
   public void addLinkTargetIdVersion(SNode node, String linkRole, int version) {
-    LOG.assertLog(!myIsDisposed);
+    LOG.assertLog(!myIsDisposed, "Node is disposed.");
 
     NodeStringPair link = new NodeStringPair(node, linkRole);
     myNodeLinkTargetsVersions.put(link, version);
   }
 
   public int getLinkTargetIdVersion(SNode node, String linkRole) {
-    LOG.assertLog(!myIsDisposed);
+    LOG.assertLog(!myIsDisposed, "Node is disposed.");
 
     NodeStringPair key = new NodeStringPair(node, linkRole);
     if (myNodeLinkTargetsVersions.containsKey(key)) {

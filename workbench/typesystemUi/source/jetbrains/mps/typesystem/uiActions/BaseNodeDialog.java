@@ -17,7 +17,8 @@ package jetbrains.mps.typesystem.uiActions;
 
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.ui.Splitter;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.UIEditorComponent;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.smodel.IOperationContext;
@@ -28,7 +29,7 @@ import javax.swing.JComponent;
 
 public abstract class BaseNodeDialog extends DialogWrapper {
 
-  private static final Logger LOG = Logger.getLogger(BaseNodeDialog.class);
+  private static final Logger LOG = LogManager.getLogger(BaseNodeDialog.class);
 
   private IOperationContext myOperationContext;
   private UIEditorComponent myEditorComponent;

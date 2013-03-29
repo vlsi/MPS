@@ -18,7 +18,8 @@ package jetbrains.mps.ide.messages.navigation;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.messages.FileWithLogicalPosition;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.make.FileWithPosition;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.NodeWithContext;
@@ -76,7 +77,7 @@ public class NavigationManager {
     }
 
     if (!hasHandler) {
-      LOG.warning("Can't navigate to " + o + ". There is no navigation handler for it.");
+      LOG.warn("Can't navigate to " + o + ". There is no navigation handler for it.");
     }
 
     return result;

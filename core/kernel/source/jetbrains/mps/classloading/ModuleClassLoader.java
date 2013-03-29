@@ -16,7 +16,8 @@
 package jetbrains.mps.classloading;
 
 import jetbrains.mps.library.LibraryInitializer;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.util.NameUtil;
@@ -202,7 +203,7 @@ public class ModuleClassLoader extends ClassLoader {
       if (classLoader != null) {
         classLoaders.add(classLoader);
       } else {
-        LOG.warning("Null classloader for module from compile dependencies; module name: " + dep.getModuleName() + "; module class " + dep.getClass());
+        LOG.warn("Null classloader for module from compile dependencies; module name: " + dep.getModuleName() + "; module class " + dep.getClass());
       }
     }
     myDependenciesClassLoaders = classLoaders;

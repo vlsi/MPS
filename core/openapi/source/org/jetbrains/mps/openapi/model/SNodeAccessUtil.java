@@ -16,7 +16,8 @@
 package org.jetbrains.mps.openapi.model;
 
 import jetbrains.mps.MPSCore;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.language.ConceptRegistry;

@@ -16,7 +16,8 @@
 package jetbrains.mps.lang.dataFlow.framework;
 
 import jetbrains.mps.lang.dataFlow.framework.instructions.*;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 import java.util.*;
 import java.util.Map.Entry;
@@ -154,7 +155,7 @@ public abstract class StructuralProgramBuilder<N> {
         try{
           instruction.setJumpTo(position);
         } catch (DataflowBuilderException e) {
-          Logger.getLogger(StructuralProgramBuilder.class).warning("JumpTo instruction reference to outer node");
+          LogManager.getLogger(StructuralProgramBuilder.class).warn("JumpTo instruction reference to outer node");
           instruction.getProgram().setHasOuterJumps(true);
         }
       }
@@ -170,7 +171,7 @@ public abstract class StructuralProgramBuilder<N> {
         try{
           instruction.setJumpTo(position);
         } catch (DataflowBuilderException e) {
-          Logger.getLogger(StructuralProgramBuilder.class).warning("IfJumpTo instruction reference to outer node");
+          LogManager.getLogger(StructuralProgramBuilder.class).warn("IfJumpTo instruction reference to outer node");
           instruction.getProgram().setHasOuterJumps(true);
         }
       }

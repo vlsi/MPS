@@ -16,7 +16,8 @@
 package jetbrains.mps.generator.generationTypes.java;
 
 import jetbrains.mps.generator.ModelGenerationStatusManager;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.IFile;

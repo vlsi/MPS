@@ -17,7 +17,8 @@ package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelRefere
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.extapi.model.EditableSModel;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;

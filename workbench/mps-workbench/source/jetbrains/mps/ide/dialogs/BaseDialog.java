@@ -18,7 +18,8 @@ package jetbrains.mps.ide.dialogs;
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.ModelAccess;
 
 import javax.swing.*;

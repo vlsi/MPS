@@ -189,7 +189,7 @@ class IdeaFile implements IFileEx {
         myVirtualFile = null;
         return true;
       } catch (IOException e) {
-        IdeaFileSystemProvider.LOG.warning("Could not delete file: ", e);
+        IdeaFileSystemProvider.LOG.warn("Could not delete file: ", e);
         return false;
       }
     } else {
@@ -203,7 +203,7 @@ class IdeaFile implements IFileEx {
       myVirtualFile.rename(IdeaFileSystemProvider.class, newName);
       return true;
     } catch (IOException e) {
-      IdeaFileSystemProvider.LOG.warning("Could not rename file: ", e);
+      IdeaFileSystemProvider.LOG.warn("Could not rename file: ", e);
       return false;
     }
   }
@@ -215,7 +215,7 @@ class IdeaFile implements IFileEx {
         myVirtualFile.move(IdeaFileSystemProvider.class, ((IdeaFile) newParent).myVirtualFile);
         return true;
       } catch (IOException e) {
-        IdeaFileSystemProvider.LOG.warning("Could not rename file: ", e);
+        IdeaFileSystemProvider.LOG.warn("Could not rename file: ", e);
         return false;
       }
     } else {
@@ -258,7 +258,7 @@ class IdeaFile implements IFileEx {
         ((NewVirtualFile) myVirtualFile).setTimeStamp(time);
         return true;
       } catch (IOException e) {
-        IdeaFileSystemProvider.LOG.warning("", e);
+        IdeaFileSystemProvider.LOG.warn("", e);
       }
     }
     return false;

@@ -17,7 +17,8 @@ package jetbrains.mps.typesystem.newTypesystem.structure;
 
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 import java.util.ArrayList;
 import java.util.List;

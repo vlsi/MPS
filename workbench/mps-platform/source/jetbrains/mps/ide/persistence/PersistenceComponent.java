@@ -18,7 +18,8 @@ package jetbrains.mps.ide.persistence;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.KeyedExtensionCollector;
 import jetbrains.mps.ide.MPSCoreComponents;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
@@ -44,7 +45,7 @@ public class PersistenceComponent implements ApplicationComponent {
   public static ModelRootSettingsEditor getModelRootSettingsEditor(String type) {
     List<ModelRootSettingsEditorProvider> providers = oursCollector.forKey(type);
     if (providers.isEmpty()) return null;
-    LOG.assertLog(providers.size() == 1);
+    LOG.assertLog(providers.size() == 1, "Assertion failed.");
     return providers.get(0).createEditor();
   }
 

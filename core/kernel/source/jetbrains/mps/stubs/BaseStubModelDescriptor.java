@@ -16,7 +16,8 @@
 package jetbrains.mps.stubs;
 
 import jetbrains.mps.extapi.model.ReloadableSModelBase;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
@@ -84,7 +85,7 @@ public class BaseStubModelDescriptor extends ReloadableSModelBase implements Clo
     }
 
     reload();
-    LOG.assertLog(!needsReloading());
+    LOG.assertLog(!needsReloading(), "Model needs reloading just after reload.");
   }
 
   private void reload() {
