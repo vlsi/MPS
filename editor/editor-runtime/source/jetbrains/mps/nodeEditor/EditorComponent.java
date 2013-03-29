@@ -992,8 +992,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
+  protected boolean notifiesCreation(){
+    return false;
+  }
+
   public void editNode(SNode node, IOperationContext operationContext) {
     if (isDisposed()) return;
+
     if (operationContext == null) {
       LOG.errorWithTrace("Opening editor with null context");
     }
@@ -1002,6 +1007,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   protected void editNode(final SNode node) {
+    if (myNode != null && notifiesCreation()) {
+      notifyDisposal();
+    }
+
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
@@ -1023,6 +1032,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         setReadOnly(node == null || node.getModel() == null || SModelOperations.isReadOnly(node.getModel()));
       }
     });
+
+    if (myNode != null && notifiesCreation()) {
+      notifyCreation();
+    }
   }
 
   public void addAdditionalPainter(AdditionalPainter additionalPainter) {
