@@ -248,8 +248,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private CellTracker myCellTracker = new CellTracker();
 
-  private boolean myIsEditable = true;
-
   private boolean myDisposed = false;
   // additional debugging field
   private StackTraceElement[] myModelDisposedStackTrace = null;
@@ -3203,17 +3201,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private boolean isNodeDisposed() {
     return getEditedNode() != null && jetbrains.mps.util.SNodeOperations.isDisposed(getEditedNode());
-  }
-
-  public boolean isEditable() {
-    return myIsEditable;
-  }
-
-  public void setEditable(boolean isEditable) {
-    myIsEditable = isEditable;
-    if (!isEditable) {
-      setFocusable(false);
-    }
   }
 
   public CellTracker getCellTracker() {

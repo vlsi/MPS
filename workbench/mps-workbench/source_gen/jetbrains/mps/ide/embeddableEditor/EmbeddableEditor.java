@@ -85,7 +85,7 @@ public class EmbeddableEditor {
     Editor editor = myNodeEditor.getNodeEditor();
     if (editor instanceof NodeEditor) {
       NodeEditor nodeEditor = (NodeEditor) editor;
-      nodeEditor.getCurrentEditorComponent().setEditable(myIsEditable);
+      nodeEditor.getCurrentEditorComponent().setReadOnly(!(myIsEditable));
     }
     if (myPanel == null) {
       myPanel = new EmbeddableEditorPanel(myNodeEditor);
