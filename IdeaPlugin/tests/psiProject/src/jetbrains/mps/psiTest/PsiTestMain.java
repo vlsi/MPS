@@ -51,7 +51,7 @@ public class PsiTestMain {
         container.add("item");
 
 
-        ClassInPsiTest2 c = new ClassInPsiTest2(3);
+        ClassInPsiTest2 c = new ClassInPsiTest2(1);
     }
 
 }
