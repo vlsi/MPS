@@ -25,14 +25,14 @@ import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.roots.ui.configuration.projectRoot.LibrariesContainer;
 import com.intellij.openapi.roots.ui.configuration.projectRoot.LibrariesContainerFactory;
 import jetbrains.mps.idea.core.library.ModuleLibrariesUtil;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -78,7 +78,7 @@ public abstract class ModuleRuntimeLibrariesImporter {
     Set<SModuleReference> alreadyImported = ModuleLibrariesUtil.getModules(myModifiableRootModel.getOrderEntries());
 
     Collection<Library> projectLibs2Add = new HashSet<Library>();
-    for (IModule usedModule : collectRuntimeModules(myAddedModules)) {
+    for (SModule usedModule : collectRuntimeModules(myAddedModules)) {
       if (BootstrapLanguages.JDK.equals(usedModule.getModuleReference())) {
         continue;
       }
@@ -93,7 +93,7 @@ public abstract class ModuleRuntimeLibrariesImporter {
       if (usedModule instanceof StubSolutionIdea) {
         library = StubSolutionIdea.findLibrary((StubSolutionIdea) usedModule);
       } else {
-        library = ModuleLibrariesUtil.getOrCreateAutoLibrary(usedModule, getProject(), myLibrariesContainer);
+        library = ModuleLibrariesUtil.getOrCreateAutoLibrary((AbstractModule) usedModule, getProject(), myLibrariesContainer);
       }
 
       if (library != null) {
@@ -110,7 +110,7 @@ public abstract class ModuleRuntimeLibrariesImporter {
     return myLibrariesContainer.getProject();
   }
 
-  protected abstract Set<IModule> collectRuntimeModules(Collection<? extends SModuleReference> moduleReferences);
+  protected abstract Set<SModule> collectRuntimeModules(Collection<? extends SModuleReference> moduleReferences);
 
   private static class UsedLanguagesImporter extends ModuleRuntimeLibrariesImporter {
 
@@ -122,35 +122,36 @@ public abstract class ModuleRuntimeLibrariesImporter {
       super(ideaModule, addedModules, modifiableModel);
     }
 
-    protected Set<IModule> collectRuntimeModules(Collection<? extends SModuleReference> moduleReferences) {
-      Set<IModule> runtimeDependencies = new HashSet<IModule>();
+    @Override
+    protected Set<SModule> collectRuntimeModules(Collection<? extends SModuleReference> moduleReferences) {
+      Set<SModule> runtimeDependencies = new HashSet<SModule>();
       for (SModuleReference moduleReference : moduleReferences) {
-        IModule module = ModuleRepositoryFacade.getInstance().getModule(moduleReference);
+        SModule module = ModuleRepositoryFacade.getInstance().getModule(moduleReference);
         assert module instanceof Language;
         collectRuntimeModules(runtimeDependencies, (Language) module);
       }
       return runtimeDependencies;
     }
 
-    private void collectRuntimeModules(Set<IModule> runtimeDependencies, Language language) {
+    private void collectRuntimeModules(Set<SModule> runtimeDependencies, Language language) {
       for (SModuleReference runtimeModuleReference : language.getRuntimeModulesReferences()) {
-        IModule runtimeModule = ModuleRepositoryFacade.getInstance().getModule(runtimeModuleReference);
+        SModule runtimeModule = ModuleRepositoryFacade.getInstance().getModule(runtimeModuleReference);
         if (runtimeModule != null) {
           collectRuntimeDependencies(runtimeModule, runtimeDependencies);
         }
       }
     }
 
-    private void collectRuntimeDependencies(IModule module, Set<IModule> result) {
-      result.addAll(new GlobalModuleDependenciesManager(module).getModules(Deptype.EXECUTE));
+    private void collectRuntimeDependencies(SModule module, Set<SModule> result) {
+      // todo: extract some other methods in GlobalModuleDependenciesManager. Like getDependencies(Iterable<> addedModules, Iterable<> addedUsedModules, Deptype)
 
-      // todo: ! ???
-//      if (result.contains(module)) {
-//        return;
-//      }
-//      for (IModule usedModule : module.getDependenciesManager().directlyUsedModules(Deptype.EXECUTE.reexportAll, Deptype.EXECUTE.runtimes)) {
-//        collectRuntimeDependencies(usedModule, result);
-//      }
+      if (result.contains(module)) {
+        return;
+      }
+
+      for (SModule usedModule : GlobalModuleDependenciesManager.directlyUsedModules(module, Deptype.EXECUTE.reexportAll, Deptype.EXECUTE.runtimes)) {
+        collectRuntimeDependencies(usedModule, result);
+      }
     }
   }
 
@@ -159,16 +160,17 @@ public abstract class ModuleRuntimeLibrariesImporter {
       super(ideaModule, addedModules, modifiableModel);
     }
 
-    protected Set<IModule> collectRuntimeModules(Collection<? extends SModuleReference> moduleReferences) {
-      Set<IModule> runtimeDependencies = new HashSet<IModule>();
+    @Override
+    protected Set<SModule> collectRuntimeModules(Collection<? extends SModuleReference> moduleReferences) {
+      Set<SModule> runtimeDependencies = new HashSet<SModule>();
       for (SModuleReference moduleReference : moduleReferences) {
-        IModule module = ModuleRepositoryFacade.getInstance().getModule(moduleReference);
+        SModule module = ModuleRepositoryFacade.getInstance().getModule(moduleReference);
         collectRuntimeModules(runtimeDependencies, module);
       }
       return runtimeDependencies;
     }
 
-    private void collectRuntimeModules(Set<IModule> runtimeDependencies, IModule module) {
+    private void collectRuntimeModules(Set<SModule> runtimeDependencies, SModule module) {
       runtimeDependencies.add(module);
       runtimeDependencies.addAll(new GlobalModuleDependenciesManager(Collections.singleton(module)).getModules(Deptype.COMPILE));
     }

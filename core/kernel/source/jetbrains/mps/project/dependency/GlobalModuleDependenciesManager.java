@@ -115,7 +115,7 @@ public class GlobalModuleDependenciesManager {
     }
   }
 
-  private static Collection<Language> directlyUsedLanguages(@NotNull SModule module) {
+  public static Collection<Language> directlyUsedLanguages(@NotNull SModule module) {
     Set<Language> result = new HashSet<Language>();
     for (SLanguage language : module.getUsedLanguages()) {
       result.add((Language) language.getModule());
@@ -123,7 +123,7 @@ public class GlobalModuleDependenciesManager {
     return result;
   }
 
-  private static Collection<SModule> directlyUsedModules(@NotNull SModule module, boolean includeNonReexport, boolean runtimes) {
+  public static Collection<SModule> directlyUsedModules(@NotNull SModule module, boolean includeNonReexport, boolean runtimes) {
     Set<SModule> result = new HashSet<SModule>();
     for (SDependency dependency : module.getDeclaredDependencies()) {
       SModule m = dependency.getTarget();

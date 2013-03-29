@@ -29,9 +29,11 @@ import com.intellij.openapi.roots.ui.configuration.projectRoot.LibrariesContaine
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.idea.core.project.SolutionIdea;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.StubSolution;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleFileTracker;
@@ -112,7 +114,7 @@ public class ModuleLibrariesUtil {
     return modules;
   }
 
-  public static Library getOrCreateAutoLibrary(IModule usedModule, Project project, LibrariesContainer container) {
+  public static Library getOrCreateAutoLibrary(AbstractModule usedModule, Project project, LibrariesContainer container) {
     Library library = getAutoLibrary(usedModule.getModuleReference(), project);
     if (library != null) {
       return library;
@@ -123,7 +125,7 @@ public class ModuleLibrariesUtil {
     if (descriptorFile != null) {
       descriptorVirtualFile = VirtualFileUtils.getVirtualFile(descriptorFile);
     }
-    return createAutoLibrary(usedModule.getModuleFqName(), stubFiles, descriptorVirtualFile, container);
+    return createAutoLibrary(usedModule.getModuleName(), stubFiles, descriptorVirtualFile, container);
   }
 
   @Nullable
