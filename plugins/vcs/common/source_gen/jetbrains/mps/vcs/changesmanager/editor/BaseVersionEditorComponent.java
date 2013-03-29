@@ -35,7 +35,7 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
     super(operationContext);
     final SModel baseModel = ListSequence.fromList(changeGroup.getChanges()).first().getChangeSet().getOldModel();
     SNode baseRoot = baseModel.getNode(ListSequence.fromList(changeGroup.getChanges()).first().getRootId());
-    editNode(baseRoot);
+    editNode(baseRoot, operationContext);
 
     setBackground(CARET_ROW_COLOR);
 

@@ -1034,10 +1034,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  protected void editNode(final SNode node) {
-    editNode(node, getOperationContext());
-  }
-
   public void addAdditionalPainter(AdditionalPainter additionalPainter) {
     synchronized (myAdditionalPaintersLock) {
       if (!myAdditionalPainters.contains(additionalPainter)) {
