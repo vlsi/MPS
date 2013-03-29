@@ -49,6 +49,7 @@ public class InspectorEditorComponent extends EditorComponent {
     if (getOperationContext() != null) {
       notifyDisposal();
     }
+
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
@@ -60,23 +61,21 @@ public class InspectorEditorComponent extends EditorComponent {
             node.getModel()) || SModelOperations.isReadOnly(node.getModel()));
         if (node == null) {
           setOperationContext(null);
-        } else {
-          setOperationContext(context);
-        }
-
-        if (getEditedNode() == null) {
           setEditorContext(new EditorContext(InspectorEditorComponent.this, null, null));
         } else {
-          setEditorContext(new EditorContext(InspectorEditorComponent.this, getEditedNode().getModel(), getOperationContext()));
+          setOperationContext(context);
+          setEditorContext(new EditorContext(InspectorEditorComponent.this, node.getModel(), getOperationContext()));
         }
+
         rebuildEditorContent();
-        if (getOperationContext() != null) {
-          notifyCreation();
-        }
 
         repaint();
       }
     });
+
+    if (getOperationContext() != null) {
+      notifyCreation();
+    }
   }
 
   @Override
