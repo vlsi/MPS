@@ -25,6 +25,7 @@ import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel.Problem.Kind;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
@@ -172,7 +173,7 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
     @Override
     public Iterable<Problem> getProblems() {
       return Collections.<Problem>singleton(
-          new PersistenceProblem(myCause == null ? "Couldn't read model." : "Cannot load. I/O problem: " + myCause.getMessage(), null, true));
+          new PersistenceProblem(Kind.Load, myCause == null ? "Couldn't read model." : "Cannot load. I/O problem: " + myCause.getMessage(), null, true));
     }
   }
 }
