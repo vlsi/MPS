@@ -98,8 +98,6 @@ public class MPSJavaClassFinder extends PsiElementFinder {
   /** read access required */
   private void findMPSClasses(PsiPackage psiPackage, Consumer<SNode> consumer, GlobalSearchScope scope) {
     final FileBasedIndexImpl fileBasedIndex = (FileBasedIndexImpl) FileBasedIndex.getInstance();
-    fileBasedIndex.ensureUpToDate(MPSFQNameJavaClassIndex.ID, myProject, scope);
-
     String key = psiPackage.getQualifiedName();
     List<Collection<SNodeDescriptor>> values = fileBasedIndex.getValues(MPSJavaPackageIndex.ID, key, scope);
     collectNodes(consumer, values);
@@ -108,8 +106,6 @@ public class MPSJavaClassFinder extends PsiElementFinder {
   /** read access required */
   private void findMPSClasses(String qname, Consumer<SNode> consumer, GlobalSearchScope scope) {
     final FileBasedIndexImpl fileBasedIndex = (FileBasedIndexImpl) FileBasedIndex.getInstance();
-    fileBasedIndex.ensureUpToDate(MPSFQNameJavaClassIndex.ID, myProject, scope);
-
     List<Collection<SNodeDescriptor>> values = fileBasedIndex.getValues(MPSFQNameJavaClassIndex.ID, qname, scope);
     collectNodes(consumer, values);
   }
