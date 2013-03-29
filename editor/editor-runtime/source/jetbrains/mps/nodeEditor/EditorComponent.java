@@ -993,9 +993,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void editNode(SNode node, IOperationContext operationContext) {
-    if (isDisposed()) {
-      return;
-    }
+    if (isDisposed()) return;
     if (operationContext == null) {
       LOG.errorWithTrace("Opening editor with null context");
     }
