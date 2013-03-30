@@ -52,16 +52,16 @@ public class EditorMessageWithTarget extends DefaultEditorMessage {
 
     switch (myMessageTarget.getTarget()) {
       case NODE:
-        return APICellAdapter.isBigCell(cell);
+        return cell.isBig();
       case REFERENCE:
         if (((EditorCell) cell).isReferenceCell()) {
           return myMessageTarget.getRole().equals(cell.getRole()) && getNode() == cell.getSNode();
         } else {
-          return APICellAdapter.isBigCell(cell) && getCell(editor) == cell;
+          return cell.isBig() && getCell(editor) == cell;
         }
       case PROPERTY:
         if (!(cell instanceof EditorCell_Property)) {
-          return APICellAdapter.isBigCell(cell) && getCell(editor) == cell;
+          return cell.isBig() && getCell(editor) == cell;
         }
         EditorCell_Property propertyCell = (EditorCell_Property) cell;
         ModelAccessor modelAccessor = propertyCell.getModelAccessor();

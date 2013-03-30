@@ -501,7 +501,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   protected boolean doProcessKeyTyped(final KeyEvent e, final boolean allowErrors) {
-    if (getSNode() == null || !isBigCell()) return false;
+    if (getSNode() == null || !isBig()) return false;
 
     if (ModelAccess.instance().runReadAction(new Computable<Boolean>() {
       @Override
@@ -1109,7 +1109,7 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   @Override
   public EditorCell getContainingBigCell() {
-    if (isBigCell()) {
+    if (isBig()) {
       return this;
     }
     if (getParent() == null) {

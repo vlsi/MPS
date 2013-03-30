@@ -172,7 +172,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
       // the condition above is because an inspector for the node
       // does not have cells for some node's children (they are edited in main editor)
       // but the cell should not be highlighted only because of this
-      if (cell.isBigCell()) {
+      if (cell.isBig()) {
         for (SNode child : node.getChildren()) {
           EditorCell cellForChild = myEditor.findNodeCell(child);
           if (cellForChild == null) {

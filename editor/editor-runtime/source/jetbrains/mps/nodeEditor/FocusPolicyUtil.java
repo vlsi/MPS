@@ -68,7 +68,7 @@ public class FocusPolicyUtil {
     if (descend && cell instanceof jetbrains.mps.openapi.editor.cells.EditorCell_Collection) {
       jetbrains.mps.openapi.editor.cells.EditorCell_Collection collection = (jetbrains.mps.openapi.editor.cells.EditorCell_Collection) cell;
       for (EditorCell childCell : collection) {
-        EditorCell focusedCell = findCellWhichAttractsFocus(childCell, true, !APICellAdapter.isBigCell(childCell) || childCell.getStyle().get(StyleAttributes.FOCUS_POLICY) == jetbrains.mps.editor.runtime.style.FocusPolicy.ATTRACTS_RECURSIVELY);
+        EditorCell focusedCell = findCellWhichAttractsFocus(childCell, true, !childCell.isBig() || childCell.getStyle().get(StyleAttributes.FOCUS_POLICY) == jetbrains.mps.editor.runtime.style.FocusPolicy.ATTRACTS_RECURSIVELY);
         if (focusedCell != null) return focusedCell;
       }
     }

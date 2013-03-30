@@ -176,7 +176,6 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.APICellAdapter" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellConditions" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellLayout" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellTraversalUtil" />

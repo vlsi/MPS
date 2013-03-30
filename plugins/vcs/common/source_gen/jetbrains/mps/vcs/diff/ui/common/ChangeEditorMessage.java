@@ -18,7 +18,6 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Rectangle;
 import jetbrains.mps.nodeEditor.cells.GeometryUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.messageTargets.CellFinder;
@@ -120,7 +119,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
   @Override
   public EditorCell getCell(final EditorComponent editor) {
     final Wrappers._T<EditorCell> cell = new Wrappers._T<EditorCell>(super.getCell(editor));
-    if (cell.value != null && APICellAdapter.isBigCell(cell.value) && !(isDirectCell(cell.value))) {
+    if (cell.value != null && cell.value.isBig() && !(isDirectCell(cell.value))) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           SNode node = getNode();
@@ -136,7 +135,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
   @Override
   public boolean acceptCell(EditorCell cell, EditorComponent component) {
     EditorCell superCell = super.getCell(component);
-    return isNameCell(cell) && !(isDirectCell(cell)) && superCell != null && APICellAdapter.isBigCell(cell) || super.acceptCell(cell, component);
+    return isNameCell(cell) && !(isDirectCell(cell)) && superCell != null && cell.isBig() || super.acceptCell(cell, component);
   }
 
   private boolean isNameCell(EditorCell cell) {

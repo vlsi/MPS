@@ -89,7 +89,7 @@ public class CellFinder {
       @Override
       public boolean met(EditorCell cell) {
         return role.equals(cell.getRole()) &&
-            (node == cell.getSNode() || node == cell.getSNode().getParent() && APICellAdapter.isBigCell(cell));
+            (node == cell.getSNode() || node == cell.getSNode().getParent() && cell.isBig());
       }
     }, true, true);
     if (child != null) {

@@ -85,7 +85,7 @@ public class EditorActionUtils {
       CellTraversalUtil.getPrevLeaf(cell)
     );
 
-    if ((APICellAdapter.isBigCell(cell) || APICellAdapter.isLastPositionInBigCell(cell)) && ((forward ?
+    if ((cell.isBig() || APICellAdapter.isLastPositionInBigCell(cell)) && ((forward ?
       hasSingleRolesAtRightBoundary(cell) :
       hasSingleRolesAtLeftBoundary(cell)
     )) && nextLeaf != null) {

@@ -27,7 +27,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.CellConditions;
-import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.logging.Logger;
 
 public class DeleteLine_Action extends BaseAction {
@@ -115,7 +114,7 @@ public class DeleteLine_Action extends BaseAction {
             break;
           }
         } else if (layout instanceof CellLayout_Vertical) {
-          if (APICellAdapter.isBigCell(current)) {
+          if (current.isBig()) {
             ListSequence.fromList(nodesToDelete).addElement(current.getSNode());
             cellToSelect = CellTraversalUtil.getNextLeaf(current, CellConditions.SELECTABLE);
             break;

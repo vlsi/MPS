@@ -3129,7 +3129,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
             jetbrains.mps.openapi.editor.cells.EditorCell_Collection collection = (jetbrains.mps.openapi.editor.cells.EditorCell_Collection) cell;
 
             for (jetbrains.mps.openapi.editor.cells.EditorCell child : collection) {
-              if (APICellAdapter.isBigCell(child)) continue;
+              if (child.isBig()) continue;
               if (isErrorWithinBigCell(child)) return true;
             }
           }

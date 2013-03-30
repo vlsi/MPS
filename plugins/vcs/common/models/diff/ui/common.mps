@@ -2680,10 +2680,11 @@
           </node>
           <node role="condition" roleId="tpee.1068580123160" type="tpee.AndExpression" typeId="tpee.1080120340718" id="2504148810038630677">
             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.AndExpression" typeId="tpee.1080120340718" id="3951302935769192209">
-              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3951302935769288321">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jsh0.~APICellAdapter%disBigCell(jetbrains%dmps%dopenapi%deditor%dcells%dEditorCell)%cboolean" resolveInfo="isBigCell" />
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="jsh0.~APICellAdapter" resolveInfo="APICellAdapter" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3951302935769320360">
+              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5332193879236225685">
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5332193879236257583">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="nu8w.~EditorCell%disBig()%cboolean" resolveInfo="isBig" />
+                </node>
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="5332193879236217557">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1317516399976554678" resolveInfo="cell" />
                 </node>
               </node>
@@ -2748,10 +2749,11 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6255120839142980092">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.OrExpression" typeId="tpee.1080223426719" id="6255120839142980113">
             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.AndExpression" typeId="tpee.1080120340718" id="3951302935769483001">
-              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3951302935769677127">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jsh0.~APICellAdapter%disBigCell(jetbrains%dmps%dopenapi%deditor%dcells%dEditorCell)%cboolean" resolveInfo="isBigCell" />
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="jsh0.~APICellAdapter" resolveInfo="APICellAdapter" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3951302935769709165">
+              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5332193879236288550">
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5332193879236320694">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="nu8w.~EditorCell%disBig()%cboolean" resolveInfo="isBig" />
+                </node>
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="5332193879236288259">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6255120839142955598" resolveInfo="cell" />
                 </node>
               </node>

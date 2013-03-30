@@ -185,7 +185,7 @@ public class EditorCellSelection extends AbstractSelection implements SingularSe
   }
 
   protected boolean suppressDelete() {
-    return !myEditorCell.isBigCell() && myEditorCell.getAction(CellActionType.DELETE) == null;
+    return !myEditorCell.isBig() && myEditorCell.getAction(CellActionType.DELETE) == null;
   }
 
   @NotNull
