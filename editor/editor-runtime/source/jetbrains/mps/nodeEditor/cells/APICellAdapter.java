@@ -71,10 +71,6 @@ public class APICellAdapter {
     ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).synchronizeViewWithModel();
   }
 
-  public static boolean isBigCell(EditorCell cell) {
-    return cell.getParent() == null || cell.getParent().getSNode() != cell.getSNode();
-  }
-
   public static SNode getSNodeWRTReference(EditorCell cell) {
     SNode target = cell.getStyle().get(StyleAttributes.NAVIGATABLE_NODE);
     if (target != null) {
