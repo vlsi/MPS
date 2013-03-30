@@ -142,4 +142,8 @@ public interface EditorCell {
   SubstituteInfo getSubstituteInfo();
 
   TextBuilder renderText();
+
+  void setBig(boolean big);
+
+  boolean isBig();
 }

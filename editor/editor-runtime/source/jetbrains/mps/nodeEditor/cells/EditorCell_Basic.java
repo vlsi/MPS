@@ -113,6 +113,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   protected int myGapRight;
 
   private boolean myIsNeedRelayout = true;
+  private boolean myBig;
 
   protected EditorCell_Basic(EditorContext editorContext, SNode node) {
     myEditorContext = editorContext;
@@ -692,6 +693,16 @@ public abstract class EditorCell_Basic implements EditorCell {
   @Override
   public SubstituteInfo getSubstituteInfo() {
     return mySubstituteInfo;
+  }
+
+  @Override
+  public void setBig(boolean big) {
+    myBig = big;
+  }
+
+  @Override
+  public boolean isBig() {
+    return myBig;
   }
 
   @Override
