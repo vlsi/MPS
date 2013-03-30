@@ -43,6 +43,7 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_yq81ip_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_yq81ip_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_yq81ip_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_yq81ip_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_yq81ip_c0(editorContext, node));
@@ -206,6 +207,7 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_yq81ip_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_yq81ip_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_yq81ip_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_yq81ip_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_yq81ip_c0_0(editorContext, node));

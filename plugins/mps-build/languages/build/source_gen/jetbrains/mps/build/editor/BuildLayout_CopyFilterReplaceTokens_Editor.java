@@ -25,6 +25,7 @@ public class BuildLayout_CopyFilterReplaceTokens_Editor extends DefaultNodeEdito
   private EditorCell createCollection_yk866h_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_yk866h_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_yk866h_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_yk866h_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_yk866h_c0(editorContext, node));

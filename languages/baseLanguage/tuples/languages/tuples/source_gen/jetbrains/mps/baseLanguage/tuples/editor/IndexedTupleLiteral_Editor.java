@@ -39,6 +39,7 @@ public class IndexedTupleLiteral_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_rvpzqy_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_rvpzqy_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_rvpzqy_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_rvpzqy_b0(editorContext, node));
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_rvpzqy_c0(editorContext, node));

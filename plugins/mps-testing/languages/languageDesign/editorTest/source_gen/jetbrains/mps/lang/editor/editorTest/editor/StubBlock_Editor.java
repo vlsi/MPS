@@ -20,6 +20,7 @@ public class StubBlock_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_yipinq_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "stub");
     editorCell.setCellId("Constant_yipinq_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);

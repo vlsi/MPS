@@ -25,6 +25,7 @@ public class Heading_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_i9varp_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_i9varp_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_i9varp_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_i9varp_b0(editorContext, node));
     return editorCell;

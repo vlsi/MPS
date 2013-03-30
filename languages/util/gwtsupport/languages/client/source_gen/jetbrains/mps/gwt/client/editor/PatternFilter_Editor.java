@@ -39,6 +39,7 @@ public class PatternFilter_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_qer7ma_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_qer7ma_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_qer7ma_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_qer7ma_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_qer7ma_c0(editorContext, node));
@@ -184,7 +185,6 @@ public class PatternFilter_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_qer7ma_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_qer7ma_a1a");
     return editorCell;
   }
 

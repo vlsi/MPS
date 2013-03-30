@@ -28,6 +28,7 @@ public class BeanExtensionPoint_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_g4nm2t_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_g4nm2t_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_g4nm2t_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_g4nm2t_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_g4nm2t_c0(editorContext, node));
@@ -113,6 +114,7 @@ public class BeanExtensionPoint_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_g4nm2t_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new BaseConcept_brokenRefs(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     return editorCell;
   }
 }

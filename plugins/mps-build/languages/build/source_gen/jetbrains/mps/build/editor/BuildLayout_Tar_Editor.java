@@ -36,6 +36,7 @@ public class BuildLayout_Tar_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_9nqz5z_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9nqz5z_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_9nqz5z_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_9nqz5z_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_9nqz5z_c0(editorContext, node));
@@ -148,6 +149,7 @@ public class BuildLayout_Tar_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_9nqz5z_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9nqz5z_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_9nqz5z_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_9nqz5z_b0(editorContext, node));
     return editorCell;

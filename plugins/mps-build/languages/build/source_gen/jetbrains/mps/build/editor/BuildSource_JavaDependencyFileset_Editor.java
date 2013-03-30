@@ -24,6 +24,7 @@ public class BuildSource_JavaDependencyFileset_Editor extends DefaultNodeEditor 
   private EditorCell createCollection_pemq4k_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_pemq4k_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_pemq4k_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_pemq4k_b0(editorContext, node));
     return editorCell;

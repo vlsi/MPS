@@ -30,6 +30,7 @@ public class GenerationContextOp_UserObjectAccessBase_Editor extends DefaultNode
   private EditorCell createCollection_4ccleb_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_4ccleb_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_4ccleb_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4ccleb_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_4ccleb_c0(editorContext, node));

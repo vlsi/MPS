@@ -49,6 +49,7 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
   private EditorCell createCollection_2l0gvl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_2l0gvl_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_2l0gvl_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_2l0gvl_b0(editorContext, node));
     if (renderingCondition_2l0gvl_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {

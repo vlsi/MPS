@@ -22,6 +22,7 @@ public class DotRegexp_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_4hi0d_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_4hi0d_a");
+    editorCell.setBig(true);
     editorCell.addKeyMap(new RegexpSequenceByEnter());
     editorCell.addEditorCell(this.createConstant_4hi0d_a0(editorContext, node));
     return editorCell;

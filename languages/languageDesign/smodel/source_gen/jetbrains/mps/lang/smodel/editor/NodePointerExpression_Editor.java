@@ -30,6 +30,7 @@ public class NodePointerExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_abtqvg_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_abtqvg_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_abtqvg_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_abtqvg_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_abtqvg_c0(editorContext, node));

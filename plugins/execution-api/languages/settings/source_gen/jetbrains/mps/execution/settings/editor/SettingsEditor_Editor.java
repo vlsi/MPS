@@ -32,6 +32,7 @@ public class SettingsEditor_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_2l0ivi_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_2l0ivi_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNodeList_2l0ivi_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_2l0ivi_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_2l0ivi_c0(editorContext, node));

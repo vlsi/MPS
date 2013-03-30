@@ -20,6 +20,7 @@ public class BwfJavaDescriptor_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_qa8ftx_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_qa8ftx_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_qa8ftx_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_qa8ftx_b0(editorContext, node));
     return editorCell;

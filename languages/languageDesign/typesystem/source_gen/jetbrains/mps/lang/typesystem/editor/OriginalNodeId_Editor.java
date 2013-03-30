@@ -26,6 +26,7 @@ public class OriginalNodeId_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_c52lpr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_c52lpr_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_c52lpr_a0(editorContext, node));
     editorCell.addEditorCell(this.createAttributedNodeCell_c52lpr_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_c52lpr_c0(editorContext, node));
@@ -56,6 +57,7 @@ public class OriginalNodeId_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_c52lpr_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_c52lpr_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_c52lpr_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_c52lpr_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_c52lpr_c0_0(editorContext, node));

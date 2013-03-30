@@ -28,12 +28,14 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_4l84js_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new ReplaceableAliasAndParms_Comp(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     return editorCell;
   }
 
   private EditorCell createCollection_4l84js_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_4l84js_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_4l84js_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4l84js_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4l84js_c0(editorContext, node));

@@ -16,6 +16,7 @@ public class ImaginaryUnit_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_ich987_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "i");
     editorCell.setCellId("Constant_ich987_a");
+    editorCell.setBig(true);
     editorCell.setDefaultText("");
     return editorCell;
   }

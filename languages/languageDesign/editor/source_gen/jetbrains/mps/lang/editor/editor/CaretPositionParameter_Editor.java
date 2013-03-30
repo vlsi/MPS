@@ -21,6 +21,7 @@ public class CaretPositionParameter_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7n8lz_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_7n8lz_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_7n8lz_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7n8lz_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7n8lz_c0(editorContext, node));

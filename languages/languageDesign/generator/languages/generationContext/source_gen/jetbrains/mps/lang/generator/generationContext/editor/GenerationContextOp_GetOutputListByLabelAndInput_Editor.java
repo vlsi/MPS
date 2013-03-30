@@ -28,6 +28,7 @@ public class GenerationContextOp_GetOutputListByLabelAndInput_Editor extends Def
   private EditorCell createCollection_5qqvz9_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_5qqvz9_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_5qqvz9_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_5qqvz9_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5qqvz9_c0(editorContext, node));

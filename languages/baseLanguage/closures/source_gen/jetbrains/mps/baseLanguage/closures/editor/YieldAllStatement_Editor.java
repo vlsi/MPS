@@ -26,6 +26,7 @@ public class YieldAllStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_an96m0_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_an96m0_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_an96m0_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_an96m0_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_an96m0_c0(editorContext, node));

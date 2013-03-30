@@ -30,6 +30,7 @@ public class ContextCompartmentWrapper_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_rz7z3i_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_rz7z3i_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_rz7z3i_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_rz7z3i_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_rz7z3i_c0(editorContext, node));
@@ -151,7 +152,6 @@ public class ContextCompartmentWrapper_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_rz7z3i_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_rz7z3i_a1a");
     return editorCell;
   }
 

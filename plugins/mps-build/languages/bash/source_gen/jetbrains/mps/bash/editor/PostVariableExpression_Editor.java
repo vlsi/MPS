@@ -32,6 +32,7 @@ public class PostVariableExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_tfnbt8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_tfnbt8_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_tfnbt8_a0(editorContext, node));
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_tfnbt8_b0(editorContext, node));
     return editorCell;

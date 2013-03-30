@@ -28,6 +28,7 @@ public class SimpleBuilderChild_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_tobbik_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_tobbik_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_tobbik_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_tobbik_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_tobbik_c0(editorContext, node));

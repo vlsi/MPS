@@ -26,6 +26,7 @@ public class TailMapOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_op48x4_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_op48x4_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_op48x4_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_op48x4_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_op48x4_c0(editorContext, node));

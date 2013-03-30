@@ -22,6 +22,7 @@ public class Precondition_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_vxkli2_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_vxkli2_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_vxkli2_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_vxkli2_b0(editorContext, node));
     return editorCell;

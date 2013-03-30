@@ -41,6 +41,7 @@ public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_4fi5xp_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_4fi5xp_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_4fi5xp_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4fi5xp_b0(editorContext, node));
     if (renderingCondition_4fi5xp_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {

@@ -29,6 +29,7 @@ public class Auxillary_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_w1zhs4_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_w1zhs4_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
@@ -67,7 +68,6 @@ public class Auxillary_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_w1zhs4_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_w1zhs4_a1a");
     return editorCell;
   }
 

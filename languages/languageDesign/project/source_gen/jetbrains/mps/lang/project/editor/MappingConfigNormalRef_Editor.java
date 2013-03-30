@@ -26,6 +26,7 @@ public class MappingConfigNormalRef_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_x6ljyw_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_x6ljyw_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_x6ljyw_a0(editorContext, node));
     if (renderingCondition_x6ljyw_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_x6ljyw_b0(editorContext, node));

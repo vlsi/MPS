@@ -30,6 +30,7 @@ public class SubSetOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_og2bir_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_og2bir_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_og2bir_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_og2bir_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_og2bir_c0(editorContext, node));

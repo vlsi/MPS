@@ -30,6 +30,7 @@ public class MethodConditions_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_p1nx89_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_p1nx89_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNodeList_p1nx89_a0(editorContext, node));
     editorCell.addEditorCell(this.createAttributedNodeCell_p1nx89_b0(editorContext, node));
     return editorCell;

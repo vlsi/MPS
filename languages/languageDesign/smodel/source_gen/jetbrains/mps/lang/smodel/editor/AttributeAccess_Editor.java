@@ -25,6 +25,7 @@ public class AttributeAccess_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_p4doly_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_p4doly_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_p4doly_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_p4doly_b0(editorContext, node));
     return editorCell;

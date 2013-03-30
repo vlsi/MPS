@@ -33,6 +33,7 @@ public class UIPropertyGetter_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7m3g64_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_7m3g64_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_7m3g64_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_7m3g64_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_7m3g64_c0(editorContext, node));
@@ -112,7 +113,6 @@ public class UIPropertyGetter_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_7m3g64_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_7m3g64_a1a");
     return editorCell;
   }
 

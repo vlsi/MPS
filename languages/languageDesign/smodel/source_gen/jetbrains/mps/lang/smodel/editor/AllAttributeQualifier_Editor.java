@@ -22,6 +22,7 @@ public class AllAttributeQualifier_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_amreda_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AliasEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.EDITABLE, false);
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));

@@ -35,6 +35,7 @@ public class SimpleBuilderExtensionDeclaration_Editor extends DefaultNodeEditor 
   private EditorCell createCollection_lhunxw_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_lhunxw_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_lhunxw_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_lhunxw_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_lhunxw_c0(editorContext, node));

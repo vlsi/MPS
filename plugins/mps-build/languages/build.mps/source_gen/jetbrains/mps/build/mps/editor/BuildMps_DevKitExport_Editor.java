@@ -33,6 +33,7 @@ public class BuildMps_DevKitExport_Editor extends DefaultNodeEditor {
     }.invoke();
     EditorCell editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("Custom_u13xsd_a");
+    editorCell.setBig(true);
     return editorCell;
   }
 }

@@ -35,6 +35,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_m61dlm_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_m61dlm_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.POSITION, "next-line");
     editorCell.getStyle().putAll(style);

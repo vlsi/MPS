@@ -37,6 +37,7 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_o0q9qg_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_o0q9qg_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_o0q9qg_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_o0q9qg_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_o0q9qg_c0(editorContext, node));
@@ -109,6 +110,7 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_o0q9qg_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_o0q9qg_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_o0q9qg_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_o0q9qg_b0_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_o0q9qg_c0_0(editorContext, node));

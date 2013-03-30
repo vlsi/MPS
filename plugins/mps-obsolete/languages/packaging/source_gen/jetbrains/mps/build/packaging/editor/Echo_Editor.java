@@ -35,6 +35,7 @@ public class Echo_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_z5cwv7_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_z5cwv7_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_z5cwv7_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_z5cwv7_b0(editorContext, node));
     if (renderingCondition_z5cwv7_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
@@ -130,6 +131,7 @@ public class Echo_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_z5cwv7_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_z5cwv7_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_z5cwv7_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_z5cwv7_b0(editorContext, node));
     return editorCell;

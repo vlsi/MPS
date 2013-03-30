@@ -29,6 +29,7 @@ public class ReferenceAppendPart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_amcwze_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_amcwze_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_amcwze_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_amcwze_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_amcwze_c0(editorContext, node));
@@ -78,6 +79,7 @@ public class ReferenceAppendPart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_amcwze_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_amcwze_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_amcwze_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_amcwze_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_amcwze_c0(editorContext, node));

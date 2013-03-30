@@ -25,6 +25,7 @@ public class PropertyCommandPart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_47e41d_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_47e41d_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_47e41d_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_47e41d_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_47e41d_c0(editorContext, node));

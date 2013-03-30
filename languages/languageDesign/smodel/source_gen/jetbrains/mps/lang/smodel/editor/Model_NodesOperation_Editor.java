@@ -32,6 +32,7 @@ public class Model_NodesOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_kohub4_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kohub4_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_kohub4_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_kohub4_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_kohub4_c0(editorContext, node));

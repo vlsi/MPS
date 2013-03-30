@@ -32,6 +32,7 @@ public class XmlEntityRef_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_40aq2x_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_40aq2x_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_40aq2x_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_40aq2x_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_40aq2x_c0(editorContext, node));

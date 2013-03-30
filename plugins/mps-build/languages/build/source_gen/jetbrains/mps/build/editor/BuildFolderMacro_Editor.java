@@ -29,6 +29,7 @@ public class BuildFolderMacro_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_io6s4u_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_io6s4u_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_io6s4u_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_io6s4u_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_io6s4u_c0(editorContext, node));

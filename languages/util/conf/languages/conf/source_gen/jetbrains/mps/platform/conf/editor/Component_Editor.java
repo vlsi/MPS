@@ -37,6 +37,7 @@ public class Component_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_3k4y3b_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_3k4y3b_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
@@ -185,6 +186,7 @@ public class Component_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_3k4y3b_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new BaseConcept_brokenRefs(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     return editorCell;
   }
 }

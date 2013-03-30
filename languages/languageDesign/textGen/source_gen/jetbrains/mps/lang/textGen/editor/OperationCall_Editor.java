@@ -39,6 +39,7 @@ public class OperationCall_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_hquq1v_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_hquq1v_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_hquq1v_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_hquq1v_b0(editorContext, node));
     return editorCell;

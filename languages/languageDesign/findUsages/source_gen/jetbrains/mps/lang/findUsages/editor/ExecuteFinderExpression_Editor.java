@@ -28,6 +28,7 @@ public class ExecuteFinderExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ydcqpo_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ydcqpo_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_ydcqpo_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_ydcqpo_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ydcqpo_c0(editorContext, node));

@@ -29,6 +29,7 @@ public class EditorPropertyDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ey0oay_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ey0oay_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_ey0oay_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_ey0oay_b0(editorContext, node));
     if (renderingCondition_ey0oay_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {

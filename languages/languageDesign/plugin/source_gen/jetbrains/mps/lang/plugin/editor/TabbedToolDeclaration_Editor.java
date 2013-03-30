@@ -47,6 +47,7 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_txf5qz_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_txf5qz_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
@@ -140,7 +141,6 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_txf5qz_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_txf5qz_a1a");
     return editorCell;
   }
 

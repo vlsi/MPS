@@ -29,6 +29,7 @@ public class IconResourceReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_yu3d6c_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_yu3d6c_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_yu3d6c_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_yu3d6c_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_yu3d6c_c0(editorContext, node));

@@ -29,6 +29,7 @@ public class CellMenuPart_ReplaceChild_Group_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_2287jw_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_2287jw_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_2287jw_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_2287jw_b0(editorContext, node));
     return editorCell;

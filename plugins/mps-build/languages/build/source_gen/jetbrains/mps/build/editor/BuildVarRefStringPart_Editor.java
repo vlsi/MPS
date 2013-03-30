@@ -29,6 +29,7 @@ public class BuildVarRefStringPart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ayjduv_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ayjduv_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.HORIZONTAL_GAP, new Padding(0, Measure.SPACES));
     editorCell.getStyle().putAll(style);

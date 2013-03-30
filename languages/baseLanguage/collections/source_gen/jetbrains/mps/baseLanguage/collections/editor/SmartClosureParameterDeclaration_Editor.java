@@ -25,6 +25,7 @@ public class SmartClosureParameterDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_k18eec_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_k18eec_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_k18eec_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_k18eec_b0(editorContext, node));
     return editorCell;

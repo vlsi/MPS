@@ -24,6 +24,7 @@ public class Line_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_78ent8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_78ent8_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNodeList_78ent8_a0(editorContext, node));
     return editorCell;
   }

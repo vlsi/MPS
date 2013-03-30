@@ -33,6 +33,7 @@ public class XmlPrologElement_Editor extends DefaultNodeEditor {
     }.invoke();
     EditorCell editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("Custom_hddz4f_a");
+    editorCell.setBig(true);
     return editorCell;
   }
 }

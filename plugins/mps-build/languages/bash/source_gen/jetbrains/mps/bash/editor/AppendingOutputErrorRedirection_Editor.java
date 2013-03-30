@@ -24,6 +24,7 @@ public class AppendingOutputErrorRedirection_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_48p65r_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_48p65r_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_48p65r_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_48p65r_b0(editorContext, node));
     return editorCell;

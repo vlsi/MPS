@@ -36,6 +36,7 @@ public class BuildLayout_NamedContainer_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_yrra5q_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_yrra5q_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_yrra5q_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_yrra5q_b0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_yrra5q_c0(editorContext, node));
@@ -96,6 +97,7 @@ public class BuildLayout_NamedContainer_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_yrra5q_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_yrra5q_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_yrra5q_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_yrra5q_b0(editorContext, node));
     return editorCell;

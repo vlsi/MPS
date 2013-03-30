@@ -28,6 +28,7 @@ public class AsBuilderStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_a75gvn_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_a75gvn_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_a75gvn_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_a75gvn_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_a75gvn_c0(editorContext, node));

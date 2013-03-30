@@ -23,6 +23,7 @@ public class CellMenuPart_ReplaceChildPrimary_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ywfh4u_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_ywfh4u_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_ywfh4u_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_ywfh4u_b0(editorContext, node));
     return editorCell;

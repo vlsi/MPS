@@ -23,6 +23,7 @@ public class WannabeMethodCall_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6urdah_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_6urdah_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_6urdah_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6urdah_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6urdah_c0(editorContext, node));

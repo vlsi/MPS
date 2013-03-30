@@ -35,6 +35,7 @@ public class FieldDocComment_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_c4imx1_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_c4imx1_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_c4imx1_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_c4imx1_b0(editorContext, node));
     if (renderingCondition_c4imx1_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {

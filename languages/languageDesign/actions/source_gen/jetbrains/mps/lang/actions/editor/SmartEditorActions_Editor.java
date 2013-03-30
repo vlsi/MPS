@@ -33,6 +33,7 @@ public class SmartEditorActions_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_703hqq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_703hqq_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_703hqq_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_703hqq_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_703hqq_c0(editorContext, node));
@@ -111,7 +112,6 @@ public class SmartEditorActions_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_703hqq_a3a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_703hqq_a3a");
     return editorCell;
   }
 
@@ -190,7 +190,6 @@ public class SmartEditorActions_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_703hqq_a6a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_703hqq_a6a");
     return editorCell;
   }
 

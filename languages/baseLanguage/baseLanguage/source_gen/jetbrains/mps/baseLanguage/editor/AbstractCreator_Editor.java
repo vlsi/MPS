@@ -16,6 +16,7 @@ public class AbstractCreator_Editor extends DefaultNodeEditor {
   private EditorCell createError_e9h7u9_a(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "?");
     editorCell.setCellId("Error_e9h7u9_a");
+    editorCell.setBig(true);
     return editorCell;
   }
 }

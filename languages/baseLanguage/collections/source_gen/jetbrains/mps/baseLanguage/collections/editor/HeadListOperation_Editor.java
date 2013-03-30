@@ -30,6 +30,7 @@ public class HeadListOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_v360wx_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_v360wx_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_v360wx_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_v360wx_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_v360wx_c0(editorContext, node));

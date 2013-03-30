@@ -40,6 +40,7 @@ public class StateMachine_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_qpt50r_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_qpt50r_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_qpt50r_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_qpt50r_b0(editorContext, node));
     editorCell.addEditorCell(this.createTable_qpt50r_c0(editorContext, node));

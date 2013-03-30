@@ -21,6 +21,7 @@ public class Node_InferTypeOperation_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_ljpfyw_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "inferType");
     editorCell.setCellId("Constant_ljpfyw_a");
+    editorCell.setBig(true);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -28,6 +29,7 @@ public class Node_InferTypeOperation_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_ljpfyw_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new _NotInRules_Component(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     return editorCell;
   }
 }

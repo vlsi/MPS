@@ -25,6 +25,7 @@ public class TraceMessage_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_y0rgyt_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_y0rgyt_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_y0rgyt_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_y0rgyt_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_y0rgyt_c0(editorContext, node));

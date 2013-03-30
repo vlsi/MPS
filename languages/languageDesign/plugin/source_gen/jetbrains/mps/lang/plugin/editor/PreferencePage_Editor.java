@@ -45,6 +45,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_fl5ndt_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_fl5ndt_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
@@ -134,7 +135,6 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_fl5ndt_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_fl5ndt_a1a");
     return editorCell;
   }
 

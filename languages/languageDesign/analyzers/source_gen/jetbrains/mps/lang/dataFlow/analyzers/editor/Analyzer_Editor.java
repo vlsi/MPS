@@ -37,6 +37,7 @@ public class Analyzer_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_590xoz_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_590xoz_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_590xoz_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_590xoz_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_590xoz_c0(editorContext, node));

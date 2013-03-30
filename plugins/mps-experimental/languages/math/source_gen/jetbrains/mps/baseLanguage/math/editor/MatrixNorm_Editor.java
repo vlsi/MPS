@@ -26,6 +26,7 @@ public class MatrixNorm_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_47eu07_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createSuperscript(editorContext, node);
     editorCell.setCellId("Collection_47eu07_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_47eu07_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_47eu07_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_47eu07_c0(editorContext, node));

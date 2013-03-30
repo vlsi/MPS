@@ -23,6 +23,7 @@ public class EmitLabelStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_cauuu7_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_cauuu7_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_cauuu7_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_cauuu7_b0(editorContext, node));
     return editorCell;

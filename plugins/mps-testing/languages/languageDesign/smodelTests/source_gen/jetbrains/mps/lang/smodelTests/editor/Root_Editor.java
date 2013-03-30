@@ -38,6 +38,7 @@ public class Root_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_30aiet_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_30aiet_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
@@ -124,7 +125,6 @@ public class Root_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_30aiet_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_30aiet_a1a");
     return editorCell;
   }
 
@@ -163,7 +163,6 @@ public class Root_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_30aiet_a1b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_30aiet_a1b1a");
     return editorCell;
   }
 
@@ -248,7 +247,6 @@ public class Root_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_30aiet_a3b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_30aiet_a3b1a");
     return editorCell;
   }
 
@@ -333,7 +331,6 @@ public class Root_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_30aiet_a5b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_30aiet_a5b1a");
     return editorCell;
   }
 

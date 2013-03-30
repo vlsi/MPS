@@ -24,6 +24,7 @@ public class QuantityTemporalProperty_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_pitxl1_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_pitxl1_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_pitxl1_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_pitxl1_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_pitxl1_c0(editorContext, node));

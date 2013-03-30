@@ -32,6 +32,7 @@ public class VectorType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_b50r53_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_b50r53_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_b50r53_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_b50r53_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_b50r53_c0(editorContext, node));
@@ -137,6 +138,7 @@ public class VectorType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_b50r53_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_b50r53_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_b50r53_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_b50r53_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_b50r53_c0(editorContext, node));

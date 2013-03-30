@@ -27,6 +27,7 @@ public class SearchScope_ContainsOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_epvjx7_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_epvjx7_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_epvjx7_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_epvjx7_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_epvjx7_c0(editorContext, node));

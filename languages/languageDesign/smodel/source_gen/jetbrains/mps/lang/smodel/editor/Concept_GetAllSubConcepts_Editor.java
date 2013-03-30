@@ -26,6 +26,7 @@ public class Concept_GetAllSubConcepts_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6ze8vl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6ze8vl_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_6ze8vl_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6ze8vl_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6ze8vl_c0(editorContext, node));

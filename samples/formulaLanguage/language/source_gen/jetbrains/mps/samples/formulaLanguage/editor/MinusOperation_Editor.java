@@ -28,6 +28,7 @@ public class MinusOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_3kvffu_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_3kvffu_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_3kvffu_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_3kvffu_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_3kvffu_c0(editorContext, node));

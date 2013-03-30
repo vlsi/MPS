@@ -39,6 +39,7 @@ public class PersistentConfigurationTemplate_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_85j21_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_85j21_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_85j21_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_85j21_b0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_85j21_c0(editorContext, node));

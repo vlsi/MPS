@@ -31,12 +31,14 @@ public class CustomContainerCreator_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_j9f7go_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AbstractContainerCreator_Component(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     return editorCell;
   }
 
   private EditorCell createCollection_j9f7go_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_j9f7go_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_j9f7go_a0(editorContext, node));
     return editorCell;
   }

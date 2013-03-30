@@ -35,6 +35,7 @@ public class Plugin_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_o3c6bg_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_o3c6bg_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_o3c6bg_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_o3c6bg_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_o3c6bg_c0(editorContext, node));
@@ -72,7 +73,6 @@ public class Plugin_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_o3c6bg_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_o3c6bg_a1a");
     return editorCell;
   }
 
@@ -208,7 +208,6 @@ public class Plugin_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_o3c6bg_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_o3c6bg_a2a");
     return editorCell;
   }
 

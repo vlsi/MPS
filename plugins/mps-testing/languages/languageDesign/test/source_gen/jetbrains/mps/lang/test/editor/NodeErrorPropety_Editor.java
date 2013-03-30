@@ -18,6 +18,7 @@ public class NodeErrorPropety_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_zemi9x_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "has error");
     editorCell.setCellId("Constant_zemi9x_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     transformationTest_StyleSheet.applyNodeProperty(style, editorCell);
     editorCell.getStyle().putAll(style);

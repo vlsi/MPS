@@ -32,6 +32,7 @@ public class ConceptContainer_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_d6y0ft_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_d6y0ft_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_d6y0ft_a0(editorContext, node));
     return editorCell;
   }

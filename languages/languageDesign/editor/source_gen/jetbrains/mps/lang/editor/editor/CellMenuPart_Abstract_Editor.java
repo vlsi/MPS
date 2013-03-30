@@ -20,6 +20,7 @@ public class CellMenuPart_Abstract_Editor extends DefaultNodeEditor {
   private EditorCell createError_7tiwfz_a(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<choose menu part>");
     editorCell.setCellId("Error_7tiwfz_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
     editorCell.getStyle().putAll(style);

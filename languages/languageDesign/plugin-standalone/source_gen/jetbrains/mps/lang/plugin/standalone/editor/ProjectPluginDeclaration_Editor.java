@@ -37,6 +37,7 @@ public class ProjectPluginDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_904nkf_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_904nkf_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
@@ -125,8 +126,8 @@ public class ProjectPluginDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_904nkf_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createCollection_904nkf_b1a(EditorContext editorContext, SNode node) {

@@ -27,6 +27,7 @@ public class RequiredAdditionalArgument_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_v6vmvo_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_v6vmvo_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_v6vmvo_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_v6vmvo_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_v6vmvo_c0(editorContext, node));

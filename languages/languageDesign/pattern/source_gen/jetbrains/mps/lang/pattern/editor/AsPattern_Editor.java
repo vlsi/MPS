@@ -28,6 +28,7 @@ public class AsPattern_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_oxt7nr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_oxt7nr_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_oxt7nr_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_oxt7nr_b0(editorContext, node));
     editorCell.addEditorCell(this.createAttributedNodeCell_oxt7nr_c0(editorContext, node));

@@ -28,12 +28,14 @@ public class Reference_GetRoleOperation_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_e4wrz2_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AliasComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     return editorCell;
   }
 
   private EditorCell createCollection_e4wrz2_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_e4wrz2_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_e4wrz2_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_e4wrz2_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_e4wrz2_c0(editorContext, node));

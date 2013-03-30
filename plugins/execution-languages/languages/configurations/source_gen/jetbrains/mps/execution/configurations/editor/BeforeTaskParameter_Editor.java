@@ -29,6 +29,7 @@ public class BeforeTaskParameter_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_3pil43_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_3pil43_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_3pil43_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_3pil43_b0(editorContext, node));
     if (renderingCondition_3pil43_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {

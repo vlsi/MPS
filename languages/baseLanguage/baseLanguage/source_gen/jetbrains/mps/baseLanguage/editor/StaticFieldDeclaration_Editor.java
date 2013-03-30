@@ -41,6 +41,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_t6d1qn_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_t6d1qn_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_t6d1qn_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_t6d1qn_b0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_t6d1qn_c0(editorContext, node));
@@ -188,6 +189,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_t6d1qn_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_t6d1qn_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_t6d1qn_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_t6d1qn_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_t6d1qn_c0(editorContext, node));

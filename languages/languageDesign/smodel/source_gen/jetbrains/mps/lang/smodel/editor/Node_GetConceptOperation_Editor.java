@@ -22,6 +22,7 @@ public class Node_GetConceptOperation_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_7x7o5m_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept");
     editorCell.setCellId("Constant_7x7o5m_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.EDITABLE, true);
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));

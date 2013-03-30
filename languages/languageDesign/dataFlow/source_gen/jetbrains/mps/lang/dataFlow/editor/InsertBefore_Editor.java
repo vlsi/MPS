@@ -25,6 +25,7 @@ public class InsertBefore_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_l4xam2_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_l4xam2_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_l4xam2_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_l4xam2_b0(editorContext, node));
     return editorCell;

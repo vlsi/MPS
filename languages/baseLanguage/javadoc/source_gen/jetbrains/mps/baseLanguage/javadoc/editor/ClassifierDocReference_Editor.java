@@ -22,6 +22,7 @@ public class ClassifierDocReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_yqqfxo_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_yqqfxo_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_yqqfxo_a0(editorContext, node));
     return editorCell;
   }

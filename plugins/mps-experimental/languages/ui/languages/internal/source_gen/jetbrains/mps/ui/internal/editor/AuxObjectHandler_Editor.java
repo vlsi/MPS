@@ -30,6 +30,7 @@ public class AuxObjectHandler_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_vq04xu_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_vq04xu_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_vq04xu_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_vq04xu_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_vq04xu_c0(editorContext, node));
@@ -122,7 +123,6 @@ public class AuxObjectHandler_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_vq04xu_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_vq04xu_a1a");
     return editorCell;
   }
 

@@ -22,6 +22,7 @@ public class AccessUIPropertyOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_48ztqh_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_48ztqh_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_48ztqh_a0(editorContext, node));
     return editorCell;
   }

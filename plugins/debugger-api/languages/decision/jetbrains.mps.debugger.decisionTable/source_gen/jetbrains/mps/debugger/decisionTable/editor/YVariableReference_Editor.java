@@ -16,6 +16,7 @@ public class YVariableReference_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_eu21zf_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "y");
     editorCell.setCellId("Constant_eu21zf_a");
+    editorCell.setBig(true);
     editorCell.setDefaultText("");
     return editorCell;
   }

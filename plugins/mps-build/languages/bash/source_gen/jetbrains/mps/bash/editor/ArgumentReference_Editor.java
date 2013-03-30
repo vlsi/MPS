@@ -27,6 +27,7 @@ public class ArgumentReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1zy0ov_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1zy0ov_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_1zy0ov_a0(editorContext, node));
     return editorCell;
   }
@@ -51,6 +52,7 @@ public class ArgumentReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1zy0ov_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1zy0ov_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_1zy0ov_a0(editorContext, node));
     return editorCell;
   }

@@ -24,6 +24,7 @@ public class RelativePosition_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_wv5dgr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_wv5dgr_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_wv5dgr_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_wv5dgr_b0(editorContext, node));
     return editorCell;

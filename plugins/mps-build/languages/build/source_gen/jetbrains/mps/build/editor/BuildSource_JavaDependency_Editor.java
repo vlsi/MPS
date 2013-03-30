@@ -33,6 +33,7 @@ public class BuildSource_JavaDependency_Editor extends DefaultNodeEditor {
     }.invoke();
     EditorCell editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("Custom_937vro_a");
+    editorCell.setBig(true);
     return editorCell;
   }
 }

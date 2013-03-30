@@ -24,6 +24,7 @@ public class MappingConfigExternalRef_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_njrz2i_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_njrz2i_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_njrz2i_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_njrz2i_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_njrz2i_c0(editorContext, node));

@@ -33,6 +33,7 @@ public class MatrixZero_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_d13tpt_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createSuperscript(editorContext, node);
     editorCell.setCellId("Collection_d13tpt_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_d13tpt_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_d13tpt_b0(editorContext, node));
     if (renderingCondition_d13tpt_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
@@ -116,6 +117,7 @@ public class MatrixZero_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_d13tpt_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_d13tpt_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_d13tpt_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_d13tpt_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_d13tpt_c0_0(editorContext, node));

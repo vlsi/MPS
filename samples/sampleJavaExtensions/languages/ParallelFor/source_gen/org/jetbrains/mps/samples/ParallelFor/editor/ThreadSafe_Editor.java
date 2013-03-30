@@ -23,6 +23,7 @@ public class ThreadSafe_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ly4xkq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ly4xkq_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_ly4xkq_a0(editorContext, node));
     editorCell.addEditorCell(this.createAttributedNodeCell_ly4xkq_b0(editorContext, node));
     return editorCell;

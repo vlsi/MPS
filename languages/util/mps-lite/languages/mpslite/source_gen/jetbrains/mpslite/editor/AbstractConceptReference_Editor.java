@@ -22,6 +22,7 @@ public class AbstractConceptReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_kfynw3_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kfynw3_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_kfynw3_a0(editorContext, node));
     return editorCell;
   }

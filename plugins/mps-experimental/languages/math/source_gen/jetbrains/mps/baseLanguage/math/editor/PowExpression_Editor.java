@@ -27,6 +27,7 @@ public class PowExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ysso2m_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ysso2m_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_ysso2m_a0(editorContext, node));
     editorCell.addEditorCell(this.createEmpty_ysso2m_b0(editorContext, node));
     return editorCell;

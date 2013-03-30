@@ -27,6 +27,7 @@ public class SimpleVmOptions_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6n3yp7_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_6n3yp7_a");
+    editorCell.setBig(true);
     if (renderingCondition_6n3yp7_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_6n3yp7_a0(editorContext, node));
     }
@@ -66,6 +67,7 @@ public class SimpleVmOptions_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6n3yp7_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_6n3yp7_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_6n3yp7_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_6n3yp7_b0_0(editorContext, node));
     return editorCell;

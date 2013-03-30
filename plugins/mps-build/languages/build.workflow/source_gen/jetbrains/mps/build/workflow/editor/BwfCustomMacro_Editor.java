@@ -28,6 +28,7 @@ public class BwfCustomMacro_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_3al981_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_3al981_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_3al981_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_3al981_b0(editorContext, node));
     return editorCell;

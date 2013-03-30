@@ -26,6 +26,7 @@ public class XmlCommentLine_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_text");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     XmlSS_StyleSheet.applyXmlComment(style, editorCell);
     editorCell.getStyle().putAll(style);

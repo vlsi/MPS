@@ -32,6 +32,7 @@ public class ExecuteFindersExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_xmss8u_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_xmss8u_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_xmss8u_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_xmss8u_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_xmss8u_c0(editorContext, node));

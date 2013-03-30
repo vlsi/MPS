@@ -38,6 +38,7 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_lbdr4h_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_lbdr4h_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_lbdr4h_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_lbdr4h_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_lbdr4h_c0(editorContext, node));
@@ -139,6 +140,7 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_lbdr4h_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_lbdr4h_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_lbdr4h_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_lbdr4h_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_lbdr4h_c0(editorContext, node));

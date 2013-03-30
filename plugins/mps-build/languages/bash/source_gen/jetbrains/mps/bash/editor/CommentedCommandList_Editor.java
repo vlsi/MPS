@@ -23,6 +23,7 @@ public class CommentedCommandList_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_v3nrvk_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_v3nrvk_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_v3nrvk_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_v3nrvk_b0(editorContext, node));
     return editorCell;

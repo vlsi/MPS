@@ -26,6 +26,7 @@ public class RefTestParamRef_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_9h21cw_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9h21cw_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_9h21cw_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_9h21cw_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_9h21cw_c0(editorContext, node));

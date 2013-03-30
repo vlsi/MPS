@@ -31,6 +31,7 @@ public class PropertyAttributeQualifier_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_wc9pc4_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_wc9pc4_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_wc9pc4_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_wc9pc4_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_wc9pc4_c0(editorContext, node));

@@ -31,12 +31,14 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase_Editor extends 
   private EditorCell createComponent_5v10so_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new ConceptFunction_Component(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     return editorCell;
   }
 
   private EditorCell createCollection_5v10so_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_5v10so_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);

@@ -41,6 +41,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_5rturt_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_5rturt_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_5rturt_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_5rturt_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5rturt_c0(editorContext, node));
@@ -146,6 +147,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_5rturt_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_5rturt_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_5rturt_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5rturt_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_5rturt_c0(editorContext, node));

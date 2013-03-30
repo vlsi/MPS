@@ -28,12 +28,14 @@ public class Node_GetReferencesOperation_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_c0lg03_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new ReplaceableAlias_Comp(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     return editorCell;
   }
 
   private EditorCell createCollection_c0lg03_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_c0lg03_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_c0lg03_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_c0lg03_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_c0lg03_c0(editorContext, node));

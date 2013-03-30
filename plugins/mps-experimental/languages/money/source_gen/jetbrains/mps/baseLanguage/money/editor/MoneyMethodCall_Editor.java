@@ -25,6 +25,7 @@ public class MoneyMethodCall_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_o0ayvq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_o0ayvq_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_o0ayvq_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_o0ayvq_b0(editorContext, node));
     return editorCell;

@@ -40,6 +40,7 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_nmr9ig_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_nmr9ig_a");
+    editorCell.setBig(true);
     if (renderingCondition_nmr9ig_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_nmr9ig_a0(editorContext, node));
     }
@@ -320,6 +321,7 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_nmr9ig_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_nmr9ig_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_nmr9ig_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_nmr9ig_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_nmr9ig_c0(editorContext, node));

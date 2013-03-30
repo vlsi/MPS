@@ -38,6 +38,7 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_nhjrih_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_nhjrih_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_nhjrih_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_nhjrih_b0(editorContext, node));
     return editorCell;
@@ -163,7 +164,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_nhjrih_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_nhjrih_a1a");
     return editorCell;
   }
 
@@ -216,7 +216,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_nhjrih_a1b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_nhjrih_a1b1a");
     return editorCell;
   }
 
@@ -277,7 +276,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_nhjrih_a4b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_nhjrih_a4b1a");
     return editorCell;
   }
 
@@ -352,7 +350,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_nhjrih_a5b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_nhjrih_a5b1a");
     return editorCell;
   }
 
@@ -445,7 +442,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_nhjrih_a9b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_nhjrih_a9b1a");
     return editorCell;
   }
 

@@ -33,6 +33,7 @@ public class StyleSheet_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_9d9hlb_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9d9hlb_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_9d9hlb_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_9d9hlb_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_9d9hlb_c0(editorContext, node));

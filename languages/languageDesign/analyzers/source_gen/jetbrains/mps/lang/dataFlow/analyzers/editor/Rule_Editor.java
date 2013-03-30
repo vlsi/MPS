@@ -30,6 +30,7 @@ public class Rule_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_z0m96w_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_z0m96w_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_z0m96w_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_z0m96w_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_z0m96w_c0(editorContext, node));

@@ -19,6 +19,7 @@ public class LeftTurn_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_kog390_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AliasEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     KajakStyles_StyleSheet.applyCommand(style, editorCell);
     editorCell.getStyle().putAll(style);

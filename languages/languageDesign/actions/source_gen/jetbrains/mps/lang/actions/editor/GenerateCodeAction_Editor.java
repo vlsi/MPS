@@ -33,6 +33,7 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_imc6ai_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_imc6ai_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_imc6ai_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_imc6ai_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_imc6ai_c0(editorContext, node));

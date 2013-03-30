@@ -26,6 +26,7 @@ public class ValueInlineDocTag_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_jy8kcg_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_jy8kcg_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_jy8kcg_a0(editorContext, node));
     if (renderingCondition_jy8kcg_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRefNode_jy8kcg_b0(editorContext, node));

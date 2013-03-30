@@ -43,6 +43,7 @@ public class ControlAbstractionContainer_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_82dbmy_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_82dbmy_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_82dbmy_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_82dbmy_b0(editorContext, node));
     if (renderingCondition_82dbmy_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {

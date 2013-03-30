@@ -46,6 +46,7 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_n7yf1e_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_n7yf1e_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_n7yf1e_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_n7yf1e_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_n7yf1e_c0(editorContext, node));
@@ -165,6 +166,7 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_n7yf1e_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new ActionParameter_Hint(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     return editorCell;
   }
 }

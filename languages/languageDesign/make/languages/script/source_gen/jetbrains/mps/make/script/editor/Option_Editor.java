@@ -29,6 +29,7 @@ public class Option_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_nr3cqj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_nr3cqj_a");
+    editorCell.setBig(true);
     if (renderingCondition_nr3cqj_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_nr3cqj_a0(editorContext, node));
     }

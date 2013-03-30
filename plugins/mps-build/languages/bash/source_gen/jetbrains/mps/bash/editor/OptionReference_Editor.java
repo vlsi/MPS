@@ -25,6 +25,7 @@ public class OptionReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_l8ia57_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_l8ia57_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_l8ia57_a0(editorContext, node));
     return editorCell;
   }

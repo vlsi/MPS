@@ -33,6 +33,7 @@ public class BuildLayout_CopyHandler_Editor extends DefaultNodeEditor {
     }.invoke();
     EditorCell editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("Custom_r67zyn_a");
+    editorCell.setBig(true);
     return editorCell;
   }
 }

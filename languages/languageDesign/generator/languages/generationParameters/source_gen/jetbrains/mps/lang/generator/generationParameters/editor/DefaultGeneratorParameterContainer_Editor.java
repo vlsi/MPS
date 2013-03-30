@@ -32,6 +32,7 @@ public class DefaultGeneratorParameterContainer_Editor extends DefaultNodeEditor
   private EditorCell createCollection_lay3s1_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_lay3s1_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_lay3s1_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_lay3s1_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_lay3s1_c0(editorContext, node));

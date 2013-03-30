@@ -29,6 +29,7 @@ public class NodeFactory_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_5y8bki_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_5y8bki_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_5y8bki_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_5y8bki_b0(editorContext, node));
     return editorCell;

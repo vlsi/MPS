@@ -27,6 +27,7 @@ public class BuildMps_BrandingUpdateSite_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1r2vma_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1r2vma_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_1r2vma_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_1r2vma_b0(editorContext, node));
     return editorCell;

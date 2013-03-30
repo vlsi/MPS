@@ -42,6 +42,7 @@ public class BuildSourceArchiveRelativePath_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_4z471d_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_4z471d_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_4z471d_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4z471d_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_4z471d_c0(editorContext, node));

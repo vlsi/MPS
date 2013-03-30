@@ -42,6 +42,7 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_689p1d_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_689p1d_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_689p1d_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_689p1d_b0(editorContext, node));
     if (renderingCondition_689p1d_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {

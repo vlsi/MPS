@@ -36,6 +36,7 @@ public class GeometryHandler_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_l8zkiy_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_l8zkiy_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_l8zkiy_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_l8zkiy_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_l8zkiy_c0(editorContext, node));
@@ -146,7 +147,6 @@ public class GeometryHandler_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_l8zkiy_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_l8zkiy_a1a");
     return editorCell;
   }
 

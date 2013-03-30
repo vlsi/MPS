@@ -27,6 +27,7 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_jiwbly_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_jiwbly_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_jiwbly_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_jiwbly_b0(editorContext, node));
     return editorCell;

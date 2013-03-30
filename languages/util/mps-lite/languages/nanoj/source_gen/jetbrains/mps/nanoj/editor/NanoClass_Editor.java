@@ -22,6 +22,7 @@ public class NanoClass_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_lblp0_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_lblp0_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_lblp0_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_lblp0_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_lblp0_c0(editorContext, node));
@@ -60,7 +61,6 @@ public class NanoClass_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_lblp0_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_lblp0_a1a");
     return editorCell;
   }
 

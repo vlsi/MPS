@@ -23,6 +23,7 @@ public class RenameTo_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_v1b1ft_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_v1b1ft_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_v1b1ft_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_v1b1ft_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_v1b1ft_c0(editorContext, node));

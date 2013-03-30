@@ -19,6 +19,7 @@ public class DisposeDialogExpression_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_nus1qu_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "disposeDialog");
     editorCell.setCellId("Constant_nus1qu_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);

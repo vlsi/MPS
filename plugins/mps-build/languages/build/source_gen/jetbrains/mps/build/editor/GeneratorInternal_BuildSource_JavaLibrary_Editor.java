@@ -23,6 +23,7 @@ public class GeneratorInternal_BuildSource_JavaLibrary_Editor extends DefaultNod
   private EditorCell createCollection_b31w58_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_b31w58_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_b31w58_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_b31w58_b0(editorContext, node));
     return editorCell;

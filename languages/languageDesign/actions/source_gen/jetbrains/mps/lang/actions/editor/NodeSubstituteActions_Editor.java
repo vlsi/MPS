@@ -34,6 +34,7 @@ public class NodeSubstituteActions_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_bsqfyd_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_bsqfyd_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_bsqfyd_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_bsqfyd_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_bsqfyd_c0(editorContext, node));

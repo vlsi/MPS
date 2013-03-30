@@ -28,6 +28,7 @@ public class VariableConvertersContainer_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_hoc63h_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_hoc63h_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_hoc63h_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_hoc63h_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_hoc63h_c0(editorContext, node));

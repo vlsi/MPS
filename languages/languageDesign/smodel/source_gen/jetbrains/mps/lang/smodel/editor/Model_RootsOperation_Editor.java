@@ -33,6 +33,7 @@ public class Model_RootsOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_4rfqrk_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_4rfqrk_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_4rfqrk_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4rfqrk_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_4rfqrk_c0(editorContext, node));

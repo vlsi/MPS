@@ -32,6 +32,7 @@ public class LinkInlineDocTag_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_bju3wr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_bju3wr_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_bju3wr_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_bju3wr_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_bju3wr_c0(editorContext, node));

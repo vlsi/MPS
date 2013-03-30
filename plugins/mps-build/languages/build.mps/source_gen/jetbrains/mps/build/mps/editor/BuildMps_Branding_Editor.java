@@ -28,6 +28,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1x254q_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1x254q_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_1x254q_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1x254q_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_1x254q_c0(editorContext, node));

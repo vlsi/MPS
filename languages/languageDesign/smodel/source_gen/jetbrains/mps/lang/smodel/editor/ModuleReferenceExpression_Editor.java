@@ -42,6 +42,7 @@ public class ModuleReferenceExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_c6z1wa_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_c6z1wa_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_c6z1wa_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_c6z1wa_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_c6z1wa_c0(editorContext, node));
@@ -130,6 +131,7 @@ public class ModuleReferenceExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_c6z1wa_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_c6z1wa_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_c6z1wa_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_c6z1wa_b0(editorContext, node));
     return editorCell;

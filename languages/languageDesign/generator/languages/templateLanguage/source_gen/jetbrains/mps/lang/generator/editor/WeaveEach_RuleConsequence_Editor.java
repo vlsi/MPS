@@ -27,6 +27,7 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_hfot0g_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_hfot0g_a");
+    editorCell.setBig(true);
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createCollection_hfot0g_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_hfot0g_b0(editorContext, node));

@@ -24,6 +24,7 @@ public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_c45jqi_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_c45jqi_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_c45jqi_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_c45jqi_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_c45jqi_c0(editorContext, node));

@@ -29,6 +29,7 @@ public class ConceptsSubstituteMenuPart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_a32wui_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_a32wui_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_a32wui_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_a32wui_b0(editorContext, node));
     return editorCell;
@@ -67,7 +68,6 @@ public class ConceptsSubstituteMenuPart_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_a32wui_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_a32wui_a1a");
     return editorCell;
   }
 
@@ -105,7 +105,6 @@ public class ConceptsSubstituteMenuPart_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_a32wui_a1b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_a32wui_a1b1a");
     return editorCell;
   }
 

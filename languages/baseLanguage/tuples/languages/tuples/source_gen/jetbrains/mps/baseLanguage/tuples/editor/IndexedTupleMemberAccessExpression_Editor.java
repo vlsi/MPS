@@ -24,6 +24,7 @@ public class IndexedTupleMemberAccessExpression_Editor extends DefaultNodeEditor
   private EditorCell createCollection_pessfj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_pessfj_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_pessfj_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_pessfj_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_pessfj_c0(editorContext, node));

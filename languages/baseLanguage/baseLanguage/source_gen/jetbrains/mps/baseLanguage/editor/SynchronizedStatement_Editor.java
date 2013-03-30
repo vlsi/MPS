@@ -24,6 +24,7 @@ public class SynchronizedStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_iuxg48_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_iuxg48_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_iuxg48_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_iuxg48_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_iuxg48_c0(editorContext, node));

@@ -22,6 +22,7 @@ public class CreateTabBlock_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_kdmyd8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_kdmyd8_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_kdmyd8_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_kdmyd8_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_kdmyd8_c0(editorContext, node));

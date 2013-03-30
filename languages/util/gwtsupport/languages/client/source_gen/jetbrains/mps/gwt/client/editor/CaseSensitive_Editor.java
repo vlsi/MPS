@@ -23,6 +23,7 @@ public class CaseSensitive_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_pfrcyr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_pfrcyr_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_pfrcyr_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_pfrcyr_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_pfrcyr_c0(editorContext, node));

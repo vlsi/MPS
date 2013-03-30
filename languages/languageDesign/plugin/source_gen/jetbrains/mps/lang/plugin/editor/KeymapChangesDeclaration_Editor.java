@@ -38,6 +38,7 @@ public class KeymapChangesDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_anqw30_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_anqw30_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_anqw30_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_anqw30_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_anqw30_c0(editorContext, node));
@@ -176,6 +177,7 @@ public class KeymapChangesDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_anqw30_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_anqw30_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_anqw30_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_anqw30_b0(editorContext, node));
     return editorCell;

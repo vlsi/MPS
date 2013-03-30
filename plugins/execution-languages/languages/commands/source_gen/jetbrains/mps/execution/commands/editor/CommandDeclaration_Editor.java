@@ -40,6 +40,7 @@ public class CommandDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_y485ry_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_y485ry_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_y485ry_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_y485ry_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_y485ry_c0(editorContext, node));
@@ -99,7 +100,6 @@ public class CommandDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_y485ry_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_y485ry_a1a");
     return editorCell;
   }
 
@@ -160,7 +160,6 @@ public class CommandDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_y485ry_a3a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_y485ry_a3a");
     return editorCell;
   }
 
@@ -238,7 +237,6 @@ public class CommandDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_y485ry_a5a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_y485ry_a5a");
     return editorCell;
   }
 
@@ -289,6 +287,7 @@ public class CommandDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_y485ry_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_y485ry_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_y485ry_a0(editorContext, node));
     return editorCell;
   }

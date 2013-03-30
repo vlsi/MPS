@@ -33,6 +33,7 @@ public class EqualsStructurallyExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_5qomut_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_5qomut_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_5qomut_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_5qomut_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_5qomut_c0(editorContext, node));

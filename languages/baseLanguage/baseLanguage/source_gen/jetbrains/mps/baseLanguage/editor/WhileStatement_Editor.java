@@ -32,6 +32,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ou8udj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ou8udj_a");
+    editorCell.setBig(true);
     if (renderingCondition_ou8udj_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_ou8udj_a0(editorContext, node));
     }
@@ -232,6 +233,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ou8udj_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ou8udj_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_ou8udj_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ou8udj_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_ou8udj_c0(editorContext, node));

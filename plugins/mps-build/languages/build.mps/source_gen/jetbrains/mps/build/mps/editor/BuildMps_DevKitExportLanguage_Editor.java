@@ -26,6 +26,7 @@ public class BuildMps_DevKitExportLanguage_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ga85n5_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ga85n5_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_ga85n5_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_ga85n5_b0(editorContext, node));
     return editorCell;

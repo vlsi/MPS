@@ -22,6 +22,7 @@ public class XMLSAXLocatorExpression_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_4uaul4_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "locator");
     editorCell.setCellId("Constant_4uaul4_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));

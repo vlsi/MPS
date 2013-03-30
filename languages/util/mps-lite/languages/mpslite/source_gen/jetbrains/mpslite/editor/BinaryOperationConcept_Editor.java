@@ -27,6 +27,7 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_xh5h91_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_xh5h91_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_xh5h91_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_xh5h91_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_xh5h91_c0(editorContext, node));
@@ -116,7 +117,6 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_xh5h91_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_xh5h91_a1a");
     return editorCell;
   }
 

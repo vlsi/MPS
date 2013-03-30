@@ -20,6 +20,7 @@ public class MoneyLiteral_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_84i1v2_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_84i1v2_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_84i1v2_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_84i1v2_b0(editorContext, node));
     return editorCell;

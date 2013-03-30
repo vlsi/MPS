@@ -25,6 +25,7 @@ public class Property_HasValue_Enum_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_apixeu_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_apixeu_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_apixeu_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_apixeu_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_apixeu_c0(editorContext, node));

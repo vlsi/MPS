@@ -33,6 +33,7 @@ public class ContainerItemIterator_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_97htgl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_97htgl_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_97htgl_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_97htgl_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_97htgl_c0(editorContext, node));
@@ -128,7 +129,6 @@ public class ContainerItemIterator_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_97htgl_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_97htgl_a1a");
     return editorCell;
   }
 

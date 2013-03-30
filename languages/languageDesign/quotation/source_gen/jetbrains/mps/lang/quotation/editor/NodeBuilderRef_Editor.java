@@ -38,6 +38,7 @@ public class NodeBuilderRef_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_xqbs61_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_xqbs61_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_xqbs61_a0(editorContext, node));
     return editorCell;
   }
@@ -96,6 +97,7 @@ public class NodeBuilderRef_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_xqbs61_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_xqbs61_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_xqbs61_a0(editorContext, node));
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_xqbs61_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_xqbs61_c0(editorContext, node));

@@ -40,6 +40,7 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_cuxtnd_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_cuxtnd_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_cuxtnd_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_cuxtnd_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_cuxtnd_c0(editorContext, node));
@@ -136,7 +137,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_cuxtnd_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_cuxtnd_a1a");
     return editorCell;
   }
 

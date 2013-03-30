@@ -21,6 +21,7 @@ public class GroupAnchor_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_gu53j0_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_gu53j0_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_gu53j0_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_gu53j0_b0(editorContext, node));
     return editorCell;

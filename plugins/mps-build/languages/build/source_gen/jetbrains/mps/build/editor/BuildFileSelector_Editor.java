@@ -33,6 +33,7 @@ public class BuildFileSelector_Editor extends DefaultNodeEditor {
     }.invoke();
     EditorCell editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("Custom_k8fm4x_a");
+    editorCell.setBig(true);
     return editorCell;
   }
 }

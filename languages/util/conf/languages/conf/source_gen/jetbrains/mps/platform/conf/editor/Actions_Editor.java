@@ -29,6 +29,7 @@ public class Actions_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ji0n87_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_ji0n87_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_ji0n87_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_ji0n87_b0(editorContext, node));
     return editorCell;
@@ -53,7 +54,6 @@ public class Actions_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_ji0n87_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_ji0n87_a1a");
     return editorCell;
   }
 

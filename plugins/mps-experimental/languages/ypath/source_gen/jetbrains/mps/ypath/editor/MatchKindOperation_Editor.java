@@ -32,6 +32,7 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1xyskv_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_1xyskv_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_1xyskv_a0(editorContext, node));
     editorCell.addEditorCell(this.createAlternation_1xyskv_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_1xyskv_c0(editorContext, node));

@@ -62,7 +62,6 @@ public class PersistentPropertiesComponent extends AbstractCellProvider {
 
   private EditorCell createIndentCell_42zii1_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_42zii1_a0a");
     return editorCell;
   }
 
@@ -102,7 +101,6 @@ public class PersistentPropertiesComponent extends AbstractCellProvider {
 
   private EditorCell createIndentCell_42zii1_a1b0a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_42zii1_a1b0a");
     return editorCell;
   }
 
@@ -173,7 +171,6 @@ public class PersistentPropertiesComponent extends AbstractCellProvider {
 
   private EditorCell createIndentCell_42zii1_a3b0a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_42zii1_a3b0a");
     return editorCell;
   }
 

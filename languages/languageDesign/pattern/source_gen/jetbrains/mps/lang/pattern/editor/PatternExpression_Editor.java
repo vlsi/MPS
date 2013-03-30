@@ -28,6 +28,7 @@ public class PatternExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_aufgi_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_aufgi_a");
+    editorCell.setBig(true);
     editorCell.addKeyMap(new _PatternExpression_KeyMap());
     editorCell.addEditorCell(this.createConstant_aufgi_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_aufgi_b0(editorContext, node));

@@ -34,6 +34,7 @@ public class CustomContainers_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_xp0b50_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_xp0b50_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_xp0b50_a0(editorContext, node));
     editorCell.addEditorCell(this.createIndentCell_xp0b50_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_xp0b50_c0(editorContext, node));
@@ -88,7 +89,6 @@ public class CustomContainers_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_xp0b50_b0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_xp0b50_b0");
     return editorCell;
   }
 
@@ -105,7 +105,6 @@ public class CustomContainers_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_xp0b50_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_xp0b50_a2a");
     return editorCell;
   }
 
@@ -188,7 +187,6 @@ public class CustomContainers_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_xp0b50_d0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_xp0b50_d0");
     return editorCell;
   }
 

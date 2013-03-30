@@ -25,6 +25,7 @@ public class AppendingOutputRedirection_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_k7i96c_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_k7i96c_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_k7i96c_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_k7i96c_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_k7i96c_c0(editorContext, node));

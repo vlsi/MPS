@@ -24,6 +24,7 @@ public class TestNode_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ipdlws_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ipdlws_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_ipdlws_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_ipdlws_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ipdlws_c0(editorContext, node));

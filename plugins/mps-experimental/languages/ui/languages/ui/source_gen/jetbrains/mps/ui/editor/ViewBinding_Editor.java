@@ -24,6 +24,7 @@ public class ViewBinding_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7vr6mu_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_7vr6mu_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_7vr6mu_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7vr6mu_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7vr6mu_c0(editorContext, node));

@@ -25,6 +25,7 @@ public class VectorInitializer_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_8o7ns6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_8o7ns6_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_8o7ns6_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_8o7ns6_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_8o7ns6_c0(editorContext, node));

@@ -24,6 +24,7 @@ public class SplitExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_b94n19_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_b94n19_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_b94n19_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_b94n19_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_b94n19_c0(editorContext, node));

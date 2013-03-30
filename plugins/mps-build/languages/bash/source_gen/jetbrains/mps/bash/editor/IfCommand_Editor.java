@@ -32,6 +32,7 @@ public class IfCommand_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_a9dubz_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_a9dubz_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_a9dubz_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_a9dubz_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_a9dubz_c0(editorContext, node));

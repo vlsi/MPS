@@ -22,6 +22,7 @@ public class TreePathCreator_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_43a2k1_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_43a2k1_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_43a2k1_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_43a2k1_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_43a2k1_c0(editorContext, node));

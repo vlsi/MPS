@@ -28,6 +28,7 @@ public class IsStrongSubtypeExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_42v771_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_42v771_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_42v771_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_42v771_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_42v771_c0(editorContext, node));

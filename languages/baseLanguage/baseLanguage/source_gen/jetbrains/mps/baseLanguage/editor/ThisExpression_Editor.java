@@ -40,6 +40,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
     } else {
       editorCell = this.createConstant_xaaxob_a0(editorContext, node);
     }
+    editorCell.setBig(true);
     return editorCell;
   }
 
@@ -155,6 +156,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_xaaxob_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_xaaxob_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_xaaxob_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_xaaxob_b0(editorContext, node));
     return editorCell;

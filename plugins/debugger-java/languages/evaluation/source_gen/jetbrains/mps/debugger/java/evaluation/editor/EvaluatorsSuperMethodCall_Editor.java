@@ -42,6 +42,7 @@ public class EvaluatorsSuperMethodCall_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_2iixvv_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_2iixvv_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_2iixvv_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_2iixvv_b0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_2iixvv_c0(editorContext, node));

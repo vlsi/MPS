@@ -44,6 +44,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_dnk0aj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_dnk0aj_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_dnk0aj_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_dnk0aj_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_dnk0aj_c0(editorContext, node));

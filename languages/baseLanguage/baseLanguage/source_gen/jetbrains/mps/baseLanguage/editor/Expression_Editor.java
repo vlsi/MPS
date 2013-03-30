@@ -30,6 +30,7 @@ public class Expression_Editor extends DefaultNodeEditor {
     } else {
       editorCell = this.createComponent_1ltshm_a0(editorContext, node);
     }
+    editorCell.setBig(true);
     return editorCell;
   }
 

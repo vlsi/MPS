@@ -36,6 +36,7 @@ public class EventType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_koyvu4_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_koyvu4_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_koyvu4_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_koyvu4_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_koyvu4_c0(editorContext, node));

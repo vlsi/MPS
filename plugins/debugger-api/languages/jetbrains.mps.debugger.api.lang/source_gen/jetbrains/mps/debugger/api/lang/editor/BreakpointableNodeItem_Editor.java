@@ -35,6 +35,7 @@ public class BreakpointableNodeItem_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_4n0rw6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_4n0rw6_a");
+    editorCell.setBig(true);
     if (renderingCondition_4n0rw6_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_4n0rw6_a0(editorContext, node));
     }
@@ -78,7 +79,6 @@ public class BreakpointableNodeItem_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_4n0rw6_a1a0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_4n0rw6_a1a0");
     return editorCell;
   }
 
@@ -158,7 +158,6 @@ public class BreakpointableNodeItem_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_4n0rw6_a1b0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_4n0rw6_a1b0");
     return editorCell;
   }
 
@@ -199,7 +198,6 @@ public class BreakpointableNodeItem_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_4n0rw6_a3a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_4n0rw6_a3a");
     return editorCell;
   }
 

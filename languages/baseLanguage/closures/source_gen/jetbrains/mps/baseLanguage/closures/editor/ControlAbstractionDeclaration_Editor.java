@@ -46,6 +46,7 @@ public class ControlAbstractionDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_4f8got_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_4f8got_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_4f8got_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_4f8got_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4f8got_c0(editorContext, node));
@@ -363,6 +364,7 @@ public class ControlAbstractionDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_4f8got_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_4f8got_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_4f8got_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_4f8got_b0(editorContext, node));
     return editorCell;

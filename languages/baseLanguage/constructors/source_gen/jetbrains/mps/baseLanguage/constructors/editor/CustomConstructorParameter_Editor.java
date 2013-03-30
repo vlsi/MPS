@@ -21,6 +21,7 @@ public class CustomConstructorParameter_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_eezyae_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_eezyae_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_eezyae_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_eezyae_b0(editorContext, node));
     return editorCell;

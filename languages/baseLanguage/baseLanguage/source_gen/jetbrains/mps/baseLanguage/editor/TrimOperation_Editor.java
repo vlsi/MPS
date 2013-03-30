@@ -23,6 +23,7 @@ public class TrimOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ew7mjn_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ew7mjn_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_ew7mjn_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ew7mjn_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_ew7mjn_c0(editorContext, node));

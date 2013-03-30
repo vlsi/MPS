@@ -39,6 +39,7 @@ public class XMLSAXParser_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_pkrqbh_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_pkrqbh_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_pkrqbh_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_pkrqbh_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_pkrqbh_c0(editorContext, node));

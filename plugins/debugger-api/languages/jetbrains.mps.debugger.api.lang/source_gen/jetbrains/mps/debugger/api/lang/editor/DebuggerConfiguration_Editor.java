@@ -25,6 +25,7 @@ public class DebuggerConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_qx06sr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_qx06sr_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BRACKETS, true);
     style.set(StyleAttributes.SELECTABLE, false);

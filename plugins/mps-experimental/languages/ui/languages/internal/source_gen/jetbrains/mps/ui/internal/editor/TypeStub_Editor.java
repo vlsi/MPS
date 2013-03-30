@@ -20,6 +20,7 @@ public class TypeStub_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_8bqx4y_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_8bqx4y_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_8bqx4y_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_8bqx4y_b0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_8bqx4y_c0(editorContext, node));

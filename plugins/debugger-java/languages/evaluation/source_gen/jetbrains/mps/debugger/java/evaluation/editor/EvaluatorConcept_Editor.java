@@ -41,6 +41,7 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6rl195_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6rl195_a");
+    editorCell.setBig(true);
     if (renderingCondition_6rl195_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_6rl195_a0(editorContext, node));
     }
@@ -100,7 +101,6 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_6rl195_a0b0a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_6rl195_a0b0a");
     return editorCell;
   }
 
@@ -142,7 +142,6 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_6rl195_a1b0a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_6rl195_a1b0a");
     return editorCell;
   }
 
@@ -184,7 +183,6 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_6rl195_a2b0a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_6rl195_a2b0a");
     return editorCell;
   }
 
@@ -303,6 +301,7 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6rl195_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_6rl195_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_6rl195_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_6rl195_b0(editorContext, node));
     return editorCell;

@@ -28,6 +28,7 @@ public class TestBlockList_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_mkv9rd_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_mkv9rd_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_mkv9rd_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_mkv9rd_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_mkv9rd_c0(editorContext, node));

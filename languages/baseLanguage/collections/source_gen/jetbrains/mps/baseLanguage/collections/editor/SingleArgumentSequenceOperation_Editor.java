@@ -32,6 +32,7 @@ public class SingleArgumentSequenceOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_tqq191_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_tqq191_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_tqq191_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_tqq191_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_tqq191_c0(editorContext, node));

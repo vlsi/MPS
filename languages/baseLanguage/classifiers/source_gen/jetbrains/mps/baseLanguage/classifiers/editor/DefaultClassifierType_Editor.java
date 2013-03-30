@@ -29,6 +29,7 @@ public class DefaultClassifierType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_35pyag_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_35pyag_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_35pyag_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_35pyag_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_35pyag_c0(editorContext, node));

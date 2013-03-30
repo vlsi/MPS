@@ -32,6 +32,7 @@ public class CopySrcNodeMacro_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_jiideg_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_jiideg_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_jiideg_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_jiideg_b0(editorContext, node));
     return editorCell;
@@ -74,6 +75,7 @@ public class CopySrcNodeMacro_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_jiideg_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new CopyScrNodeMacro_inspector(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     return editorCell;
   }
 }

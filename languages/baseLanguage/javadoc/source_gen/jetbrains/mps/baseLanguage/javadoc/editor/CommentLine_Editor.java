@@ -30,6 +30,7 @@ public class CommentLine_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_dzsxo_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_dzsxo_a");
+    editorCell.setBig(true);
     if (renderingCondition_dzsxo_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_dzsxo_a0(editorContext, node));
     }

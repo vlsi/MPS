@@ -40,6 +40,7 @@ public class SimpleBuilder_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_jpvk41_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_jpvk41_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_jpvk41_a0(editorContext, node));
     if (renderingCondition_jpvk41_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_jpvk41_b0(editorContext, node));

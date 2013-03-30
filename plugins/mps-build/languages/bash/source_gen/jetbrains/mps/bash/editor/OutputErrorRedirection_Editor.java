@@ -24,6 +24,7 @@ public class OutputErrorRedirection_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_tsrew3_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_tsrew3_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_tsrew3_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_tsrew3_b0(editorContext, node));
     return editorCell;

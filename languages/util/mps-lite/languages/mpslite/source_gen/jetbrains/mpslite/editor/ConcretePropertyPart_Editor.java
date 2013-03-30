@@ -28,6 +28,7 @@ public class ConcretePropertyPart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_rl2d2n_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_rl2d2n_a");
+    editorCell.setBig(true);
     editorCell.addKeyMap(new LinePart_Actions());
     editorCell.addEditorCell(this.createConstant_rl2d2n_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_rl2d2n_b0(editorContext, node));
@@ -70,6 +71,7 @@ public class ConcretePropertyPart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_rl2d2n_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_rl2d2n_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_rl2d2n_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_rl2d2n_b0_0(editorContext, node));
     return editorCell;

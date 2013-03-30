@@ -28,6 +28,7 @@ public class VerticalAlignment_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_cjpy1b_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_cjpy1b_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_cjpy1b_a0(editorContext, node));
     return editorCell;
   }

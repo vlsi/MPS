@@ -24,6 +24,7 @@ public class MPSLayoutConfigurationReferencePropertyValueExpression_Editor exten
   private EditorCell createCollection_71sslv_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_71sslv_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_71sslv_a0(editorContext, node));
     return editorCell;
   }

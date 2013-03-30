@@ -24,6 +24,7 @@ public class Field_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_s65pvt_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_s65pvt_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_s65pvt_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_s65pvt_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_s65pvt_c0(editorContext, node));

@@ -45,6 +45,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     } else {
       editorCell = this.createCollection_7zoim2_a0_0(editorContext, node);
     }
+    editorCell.setBig(true);
     return editorCell;
   }
 

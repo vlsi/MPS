@@ -25,6 +25,7 @@ public class LinkList_AddChildOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ptf15f_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ptf15f_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_ptf15f_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ptf15f_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_ptf15f_c0(editorContext, node));

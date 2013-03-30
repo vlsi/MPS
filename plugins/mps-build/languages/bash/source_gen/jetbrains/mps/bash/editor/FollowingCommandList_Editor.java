@@ -32,6 +32,7 @@ public class FollowingCommandList_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_odh1d6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_odh1d6_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_odh1d6_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_odh1d6_b0(editorContext, node));
     return editorCell;

@@ -24,6 +24,7 @@ public class UpdateModelProcedure_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_fo3n70_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_fo3n70_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_fo3n70_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_fo3n70_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_fo3n70_c0(editorContext, node));

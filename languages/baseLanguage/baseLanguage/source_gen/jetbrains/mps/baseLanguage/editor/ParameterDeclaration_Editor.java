@@ -42,6 +42,7 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_vsmugd_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_vsmugd_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_vsmugd_a0(editorContext, node));
     return editorCell;
   }
@@ -162,6 +163,7 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_vsmugd_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_vsmugd_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_vsmugd_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_vsmugd_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_vsmugd_c0(editorContext, node));

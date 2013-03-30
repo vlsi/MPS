@@ -27,6 +27,7 @@ public class Dependency_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_l58ghc_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_l58ghc_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_l58ghc_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_l58ghc_b0(editorContext, node));
     return editorCell;

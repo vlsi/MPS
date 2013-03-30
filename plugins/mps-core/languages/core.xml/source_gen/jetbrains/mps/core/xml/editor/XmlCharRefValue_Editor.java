@@ -25,6 +25,7 @@ public class XmlCharRefValue_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_urzn0w_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_urzn0w_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_urzn0w_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_urzn0w_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_urzn0w_c0(editorContext, node));

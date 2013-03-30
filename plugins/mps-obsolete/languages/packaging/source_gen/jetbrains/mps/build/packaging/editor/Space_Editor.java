@@ -21,6 +21,7 @@ public class Space_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_mfe9ab_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\\s");
     editorCell.setCellId("Constant_mfe9ab_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     editorCell.getStyle().putAll(style);

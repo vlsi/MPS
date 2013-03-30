@@ -26,6 +26,7 @@ public class ListElementAccessExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_hagvd_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_hagvd_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_hagvd_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_hagvd_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_hagvd_c0(editorContext, node));

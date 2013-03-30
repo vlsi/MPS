@@ -44,6 +44,7 @@ public class IconResource_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_79r3b6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_79r3b6_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createAlternation_79r3b6_a0(editorContext, node));
     if (renderingCondition_79r3b6_a1a_0(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createAlternation_79r3b6_b0(editorContext, node));
@@ -217,6 +218,7 @@ public class IconResource_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_path");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(IconResource_Editor._StyleParameter_QueryFunction_79r3b6_a0a((editorCell == null ?
       null :

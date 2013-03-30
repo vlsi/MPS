@@ -19,6 +19,7 @@ public class BuildLayout_CopyFlattenMapper_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_58i5u9_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AliasEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     buildStyles_StyleSheet.applyKeyword(style, editorCell);
     editorCell.getStyle().putAll(style);

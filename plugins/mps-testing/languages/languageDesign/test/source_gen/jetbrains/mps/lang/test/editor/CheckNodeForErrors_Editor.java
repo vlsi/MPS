@@ -24,6 +24,7 @@ public class CheckNodeForErrors_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ue6gv5_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ue6gv5_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_ue6gv5_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_ue6gv5_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ue6gv5_c0(editorContext, node));

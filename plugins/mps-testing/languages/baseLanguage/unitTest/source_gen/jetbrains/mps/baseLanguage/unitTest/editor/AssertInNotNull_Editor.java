@@ -27,6 +27,7 @@ public class AssertInNotNull_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_8x03lq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_8x03lq_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_8x03lq_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_8x03lq_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_8x03lq_c0(editorContext, node));

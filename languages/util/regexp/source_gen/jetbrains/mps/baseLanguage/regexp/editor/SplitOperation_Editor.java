@@ -24,6 +24,7 @@ public class SplitOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7y7tj3_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7y7tj3_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_7y7tj3_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7y7tj3_b0(editorContext, node));
     return editorCell;

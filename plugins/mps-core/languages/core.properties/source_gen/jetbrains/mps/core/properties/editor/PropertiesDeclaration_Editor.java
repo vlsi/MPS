@@ -38,6 +38,7 @@ public class PropertiesDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_cuzp02_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_cuzp02_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_cuzp02_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_cuzp02_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_cuzp02_c0(editorContext, node));
@@ -102,6 +103,7 @@ public class PropertiesDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_cuzp02_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_cuzp02_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_cuzp02_a0(editorContext, node));
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_cuzp02_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_cuzp02_c0(editorContext, node));

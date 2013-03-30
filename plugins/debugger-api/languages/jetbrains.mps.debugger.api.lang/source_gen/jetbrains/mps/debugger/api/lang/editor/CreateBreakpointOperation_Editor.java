@@ -42,6 +42,7 @@ public class CreateBreakpointOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_vi48ux_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_vi48ux_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_vi48ux_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_vi48ux_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_vi48ux_c0(editorContext, node));

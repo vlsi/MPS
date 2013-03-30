@@ -25,6 +25,7 @@ public class DuplicateOutputFileDiscriptor_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_gxzhd4_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_gxzhd4_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_gxzhd4_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_gxzhd4_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_gxzhd4_c0(editorContext, node));

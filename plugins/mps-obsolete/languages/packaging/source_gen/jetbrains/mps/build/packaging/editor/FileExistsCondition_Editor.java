@@ -24,6 +24,7 @@ public class FileExistsCondition_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_8rvrqs_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_8rvrqs_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_8rvrqs_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_8rvrqs_b0(editorContext, node));
     return editorCell;

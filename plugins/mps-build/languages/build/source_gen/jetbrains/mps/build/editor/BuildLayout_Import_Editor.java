@@ -31,6 +31,7 @@ public class BuildLayout_Import_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_4dmy40_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_4dmy40_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_4dmy40_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_4dmy40_b0(editorContext, node));
     return editorCell;

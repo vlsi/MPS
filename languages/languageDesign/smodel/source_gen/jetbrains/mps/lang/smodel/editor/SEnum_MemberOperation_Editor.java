@@ -28,6 +28,7 @@ public class SEnum_MemberOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ogdk6t_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ogdk6t_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_ogdk6t_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_ogdk6t_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ogdk6t_c0(editorContext, node));

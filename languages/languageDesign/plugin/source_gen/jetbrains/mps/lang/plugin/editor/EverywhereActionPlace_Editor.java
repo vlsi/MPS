@@ -19,6 +19,7 @@ public class EverywhereActionPlace_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_8gonsz_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "everywhere");
     editorCell.setCellId("Constant_8gonsz_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);

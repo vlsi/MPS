@@ -23,6 +23,7 @@ public class InternalConceptDeclarationReference_Editor extends DefaultNodeEdito
   private EditorCell createCollection_wcbhig_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_wcbhig_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_wcbhig_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_wcbhig_b0(editorContext, node));
     return editorCell;

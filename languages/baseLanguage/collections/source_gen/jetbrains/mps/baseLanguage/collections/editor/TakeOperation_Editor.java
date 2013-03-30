@@ -28,6 +28,7 @@ public class TakeOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_rla3h2_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_rla3h2_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_rla3h2_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_rla3h2_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_rla3h2_c0(editorContext, node));

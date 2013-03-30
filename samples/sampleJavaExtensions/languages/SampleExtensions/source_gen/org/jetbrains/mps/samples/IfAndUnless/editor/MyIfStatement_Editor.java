@@ -28,6 +28,7 @@ public class MyIfStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_a1fgw3_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_a1fgw3_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_a1fgw3_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_a1fgw3_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_a1fgw3_c0(editorContext, node));
@@ -93,13 +94,11 @@ public class MyIfStatement_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_a1fgw3_d0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_a1fgw3_d0");
     return editorCell;
   }
 
   private EditorCell createIndentCell_a1fgw3_e0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_a1fgw3_e0");
     return editorCell;
   }
 
@@ -112,13 +111,11 @@ public class MyIfStatement_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_a1fgw3_g0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_a1fgw3_g0");
     return editorCell;
   }
 
   private EditorCell createIndentCell_a1fgw3_h0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_a1fgw3_h0");
     return editorCell;
   }
 

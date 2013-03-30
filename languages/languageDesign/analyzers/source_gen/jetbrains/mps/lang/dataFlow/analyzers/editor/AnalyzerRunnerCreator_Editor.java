@@ -27,6 +27,7 @@ public class AnalyzerRunnerCreator_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_u2jyfv_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_u2jyfv_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_u2jyfv_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_u2jyfv_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_u2jyfv_c0(editorContext, node));

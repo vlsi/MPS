@@ -27,6 +27,7 @@ public class CheckedDotExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6ihim1_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6ihim1_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_6ihim1_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6ihim1_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6ihim1_c0(editorContext, node));

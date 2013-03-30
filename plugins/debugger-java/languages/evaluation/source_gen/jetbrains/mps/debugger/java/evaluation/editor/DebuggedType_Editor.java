@@ -28,6 +28,7 @@ public class DebuggedType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_kbrshr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_kbrshr_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_kbrshr_a0(editorContext, node));
     if (renderingCondition_kbrshr_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_kbrshr_b0(editorContext, node));

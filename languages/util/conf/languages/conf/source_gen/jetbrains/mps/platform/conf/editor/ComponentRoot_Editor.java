@@ -17,6 +17,7 @@ public class ComponentRoot_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_d2bpdi_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_d2bpdi_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_d2bpdi_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_d2bpdi_b0(editorContext, node));
     return editorCell;

@@ -29,6 +29,7 @@ public class AbstractPaddingStyleClassItem_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_q2tbc1_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_q2tbc1_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_q2tbc1_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_q2tbc1_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_q2tbc1_c0(editorContext, node));

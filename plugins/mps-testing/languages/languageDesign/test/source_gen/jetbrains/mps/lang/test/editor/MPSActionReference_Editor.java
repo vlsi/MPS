@@ -26,6 +26,7 @@ public class MPSActionReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_5z7arn_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_5z7arn_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_5z7arn_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_5z7arn_b0(editorContext, node));
     return editorCell;

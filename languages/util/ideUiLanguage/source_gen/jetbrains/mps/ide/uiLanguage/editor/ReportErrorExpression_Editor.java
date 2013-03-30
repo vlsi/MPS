@@ -24,6 +24,7 @@ public class ReportErrorExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_hb5xrk_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_hb5xrk_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_hb5xrk_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_hb5xrk_b0(editorContext, node));
     return editorCell;

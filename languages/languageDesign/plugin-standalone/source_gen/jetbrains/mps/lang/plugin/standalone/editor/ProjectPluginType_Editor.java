@@ -27,6 +27,7 @@ public class ProjectPluginType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1zp5kz_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_1zp5kz_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_1zp5kz_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_1zp5kz_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_1zp5kz_c0(editorContext, node));

@@ -36,6 +36,7 @@ public class ListType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_8617pm_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_8617pm_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_8617pm_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_8617pm_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_8617pm_c0(editorContext, node));

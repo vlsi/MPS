@@ -39,6 +39,7 @@ public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_8l0in6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_8l0in6_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_8l0in6_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_8l0in6_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_8l0in6_c0(editorContext, node));

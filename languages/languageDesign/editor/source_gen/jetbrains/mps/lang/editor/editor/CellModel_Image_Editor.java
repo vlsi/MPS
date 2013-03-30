@@ -32,6 +32,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_yczb8_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$image$");
     editorCell.setCellId("Constant_yczb8_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     Styles_StyleSheet.applyRootCellModelStyle(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -42,6 +43,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_yczb8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_yczb8_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);

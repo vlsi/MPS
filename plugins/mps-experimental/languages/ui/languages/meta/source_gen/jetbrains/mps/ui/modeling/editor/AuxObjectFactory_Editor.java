@@ -33,6 +33,7 @@ public class AuxObjectFactory_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_bxwso2_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_bxwso2_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_bxwso2_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_bxwso2_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_bxwso2_c0(editorContext, node));
@@ -131,7 +132,6 @@ public class AuxObjectFactory_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_bxwso2_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_bxwso2_a1a");
     return editorCell;
   }
 

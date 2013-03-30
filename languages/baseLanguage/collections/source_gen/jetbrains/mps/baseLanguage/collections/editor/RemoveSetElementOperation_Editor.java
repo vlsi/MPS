@@ -31,6 +31,7 @@ public class RemoveSetElementOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_z4c3b5_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_z4c3b5_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_z4c3b5_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_z4c3b5_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_z4c3b5_c0(editorContext, node));

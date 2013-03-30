@@ -25,6 +25,7 @@ public class ResultStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_sbkml9_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_sbkml9_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_sbkml9_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_sbkml9_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_sbkml9_c0(editorContext, node));

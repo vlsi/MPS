@@ -21,6 +21,7 @@ public class GeneratorInternal_ProjectDependency_Editor extends DefaultNodeEdito
   private EditorCell createCollection_15vmy3_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_15vmy3_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_15vmy3_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_15vmy3_b0(editorContext, node));
     return editorCell;

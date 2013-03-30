@@ -24,6 +24,7 @@ public class InlineEditorComponent_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_h2teu2_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_h2teu2_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     Styles_StyleSheet.applyRootCellModelStyle(style, editorCell);
     editorCell.getStyle().putAll(style);

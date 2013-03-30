@@ -31,6 +31,7 @@ public class IfInstanceOfStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ret20j_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ret20j_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_ret20j_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ret20j_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_ret20j_c0(editorContext, node));

@@ -42,6 +42,7 @@ public class UtilityMethodCall_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_26flog_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_26flog_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_26flog_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_26flog_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_26flog_c0(editorContext, node));

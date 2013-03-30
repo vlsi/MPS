@@ -48,6 +48,7 @@ public class MatrixConstructor_Editor extends DefaultNodeEditor {
     } else {
       editorCell = this.createCollection_lhhqxl_a0_0(editorContext, node);
     }
+    editorCell.setBig(true);
     return editorCell;
   }
 
@@ -226,6 +227,7 @@ public class MatrixConstructor_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_lhhqxl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_lhhqxl_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_lhhqxl_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_lhhqxl_b0(editorContext, node));
     return editorCell;

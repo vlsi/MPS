@@ -25,6 +25,7 @@ public class MatchRegexpStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_gumax1_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_gumax1_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_gumax1_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_gumax1_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_gumax1_c0(editorContext, node));

@@ -32,6 +32,7 @@ public class Constants_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_v2fri_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_v2fri_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_v2fri_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_v2fri_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_v2fri_c0(editorContext, node));

@@ -22,6 +22,7 @@ public class Node_GetModelOperation_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_aoz7m2_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "model");
     editorCell.setCellId("Constant_aoz7m2_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.EDITABLE, true);
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));

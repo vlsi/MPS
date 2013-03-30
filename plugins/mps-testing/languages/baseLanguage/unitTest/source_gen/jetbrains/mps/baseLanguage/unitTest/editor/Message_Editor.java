@@ -21,6 +21,7 @@ public class Message_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ok3mgi_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ok3mgi_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_ok3mgi_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_ok3mgi_b0(editorContext, node));
     return editorCell;

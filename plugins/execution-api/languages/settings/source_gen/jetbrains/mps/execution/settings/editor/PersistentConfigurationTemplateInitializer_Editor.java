@@ -43,6 +43,7 @@ public class PersistentConfigurationTemplateInitializer_Editor extends DefaultNo
   private EditorCell createCollection_e5b6m9_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_e5b6m9_a");
+    editorCell.setBig(true);
     if (renderingCondition_e5b6m9_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRefCell_e5b6m9_a0(editorContext, node));
     }

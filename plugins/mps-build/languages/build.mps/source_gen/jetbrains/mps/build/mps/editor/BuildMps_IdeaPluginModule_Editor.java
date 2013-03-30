@@ -34,6 +34,7 @@ public class BuildMps_IdeaPluginModule_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_37ht8c_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_37ht8c_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_37ht8c_a0(editorContext, node));
     if (renderingCondition_37ht8c_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_37ht8c_b0(editorContext, node));
@@ -96,6 +97,7 @@ public class BuildMps_IdeaPluginModule_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_37ht8c_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_37ht8c_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_37ht8c_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_37ht8c_b0(editorContext, node));
     return editorCell;

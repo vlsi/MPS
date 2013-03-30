@@ -25,6 +25,7 @@ public class VerticalLayoutBlockList_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_s783cw_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_s783cw_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_s783cw_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_s783cw_b0(editorContext, node));
     return editorCell;

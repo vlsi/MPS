@@ -22,6 +22,7 @@ public class CustomConstructorParameterReference_Editor extends DefaultNodeEdito
   private EditorCell createCollection_hi58r4_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_hi58r4_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_hi58r4_a0(editorContext, node));
     return editorCell;
   }

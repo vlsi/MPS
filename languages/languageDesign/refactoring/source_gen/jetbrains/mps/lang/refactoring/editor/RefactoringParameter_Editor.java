@@ -27,6 +27,7 @@ public class RefactoringParameter_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_u416ht_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_u416ht_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_u416ht_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_u416ht_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_u416ht_c0(editorContext, node));

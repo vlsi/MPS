@@ -44,6 +44,7 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_b0ego6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_b0ego6_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createEmpty_b0ego6_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_b0ego6_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_b0ego6_c0(editorContext, node));
@@ -227,6 +228,7 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_b0ego6_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_b0ego6_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_b0ego6_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_b0ego6_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_b0ego6_c0_0(editorContext, node));

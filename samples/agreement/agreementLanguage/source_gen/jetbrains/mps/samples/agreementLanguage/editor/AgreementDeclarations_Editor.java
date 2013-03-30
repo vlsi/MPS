@@ -33,6 +33,7 @@ public class AgreementDeclarations_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_5606pw_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_5606pw_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_5606pw_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5606pw_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_5606pw_c0(editorContext, node));

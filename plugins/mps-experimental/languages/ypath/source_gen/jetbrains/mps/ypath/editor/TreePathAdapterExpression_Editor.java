@@ -35,6 +35,7 @@ public class TreePathAdapterExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7bcc0k_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7bcc0k_a");
+    editorCell.setBig(true);
     if (renderingCondition_7bcc0k_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_7bcc0k_a0(editorContext, node));
     }
@@ -77,6 +78,7 @@ public class TreePathAdapterExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7bcc0k_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7bcc0k_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_7bcc0k_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_7bcc0k_b0(editorContext, node));
     return editorCell;

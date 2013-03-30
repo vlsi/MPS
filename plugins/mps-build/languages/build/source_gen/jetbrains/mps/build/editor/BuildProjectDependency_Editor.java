@@ -33,6 +33,7 @@ public class BuildProjectDependency_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_jumb3f_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_jumb3f_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_jumb3f_a0(editorContext, node));
     if (renderingCondition_jumb3f_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_jumb3f_b0(editorContext, node));

@@ -31,6 +31,7 @@ public class BuildExternalLayoutDependency_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_rscqin_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_rscqin_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_rscqin_a0(editorContext, node));
     if (renderingCondition_rscqin_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_rscqin_b0(editorContext, node));

@@ -44,6 +44,7 @@ public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_kr3er8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kr3er8_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_kr3er8_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_kr3er8_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_kr3er8_c0(editorContext, node));

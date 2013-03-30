@@ -23,6 +23,7 @@ public class CommentedText_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_svaf00_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_svaf00_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_svaf00_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_svaf00_b0(editorContext, node));
     return editorCell;

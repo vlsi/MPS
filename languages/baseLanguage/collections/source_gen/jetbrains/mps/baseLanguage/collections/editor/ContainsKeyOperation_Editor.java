@@ -29,6 +29,7 @@ public class ContainsKeyOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_c2bjwy_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_c2bjwy_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_c2bjwy_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_c2bjwy_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_c2bjwy_c0(editorContext, node));

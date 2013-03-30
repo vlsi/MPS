@@ -37,6 +37,7 @@ public class ExplicitCommandParameterDeclaration_Editor extends DefaultNodeEdito
   private EditorCell createCollection_1nfcr6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_1nfcr6_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_1nfcr6_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_1nfcr6_b0(editorContext, node));
     if (renderingCondition_1nfcr6_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
@@ -130,6 +131,7 @@ public class ExplicitCommandParameterDeclaration_Editor extends DefaultNodeEdito
   private EditorCell createCollection_1nfcr6_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_1nfcr6_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_1nfcr6_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_1nfcr6_b0(editorContext, node));
     return editorCell;

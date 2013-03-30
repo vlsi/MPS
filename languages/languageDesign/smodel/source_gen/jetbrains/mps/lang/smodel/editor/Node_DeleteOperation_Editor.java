@@ -21,6 +21,7 @@ public class Node_DeleteOperation_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_6be9za_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "delete");
     editorCell.setCellId("Constant_6be9za_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.EDITABLE, true);
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));

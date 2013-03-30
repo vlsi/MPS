@@ -33,6 +33,7 @@ public class ConceptRightTransformPart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_e4d6s0_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_e4d6s0_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_e4d6s0_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_e4d6s0_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_e4d6s0_c0(editorContext, node));
@@ -128,7 +129,6 @@ public class ConceptRightTransformPart_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_e4d6s0_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_e4d6s0_a1a");
     return editorCell;
   }
 
@@ -166,7 +166,6 @@ public class ConceptRightTransformPart_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_e4d6s0_b2a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_e4d6s0_b2a");
     return editorCell;
   }
 
@@ -200,7 +199,6 @@ public class ConceptRightTransformPart_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_e4d6s0_a3a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_e4d6s0_a3a");
     return editorCell;
   }
 
@@ -238,7 +236,6 @@ public class ConceptRightTransformPart_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_e4d6s0_b4a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_e4d6s0_b4a");
     return editorCell;
   }
 

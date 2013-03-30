@@ -29,6 +29,7 @@ public class IteratorType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_i4eule_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_i4eule_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_i4eule_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_i4eule_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_i4eule_c0(editorContext, node));

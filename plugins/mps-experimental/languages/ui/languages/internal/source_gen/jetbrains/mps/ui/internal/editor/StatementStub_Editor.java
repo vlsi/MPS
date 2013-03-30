@@ -20,6 +20,7 @@ public class StatementStub_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_9kh9yv_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9kh9yv_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_9kh9yv_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_9kh9yv_b0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_9kh9yv_c0(editorContext, node));

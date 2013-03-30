@@ -18,6 +18,7 @@ public class EmitRetStatement_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_kzxe6t_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ret");
     editorCell.setCellId("Constant_kzxe6t_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     DataFlow_StyleSheet.applyInstruction(style, editorCell);
     editorCell.getStyle().putAll(style);

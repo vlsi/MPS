@@ -32,6 +32,7 @@ public class InternalSequenceOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_bs2ye9_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_bs2ye9_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_bs2ye9_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_bs2ye9_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_bs2ye9_c0(editorContext, node));

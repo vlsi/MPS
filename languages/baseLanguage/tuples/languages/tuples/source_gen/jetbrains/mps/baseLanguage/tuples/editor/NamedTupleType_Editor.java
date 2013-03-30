@@ -62,6 +62,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_2ojjgh_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_2ojjgh_a");
+    editorCell.setBig(true);
     if (renderingCondition_2ojjgh_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_2ojjgh_a0(editorContext, node));
     }
@@ -337,6 +338,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_2ojjgh_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_2ojjgh_a_0");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);

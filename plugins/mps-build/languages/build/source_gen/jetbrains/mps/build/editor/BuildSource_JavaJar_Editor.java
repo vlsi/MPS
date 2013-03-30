@@ -32,6 +32,7 @@ public class BuildSource_JavaJar_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_gw6hs4_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_gw6hs4_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_gw6hs4_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_gw6hs4_b0(editorContext, node));
     if (renderingCondition_gw6hs4_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {

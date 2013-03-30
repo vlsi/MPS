@@ -18,6 +18,7 @@ public class NodeReachable_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_kwpl6o_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "reachable");
     editorCell.setCellId("Constant_kwpl6o_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     transformationTest_StyleSheet.applyNodeProperty(style, editorCell);
     editorCell.getStyle().putAll(style);

@@ -25,6 +25,7 @@ public class Argument_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_jagqzb_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_jagqzb_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_jagqzb_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_jagqzb_b0(editorContext, node));
     return editorCell;

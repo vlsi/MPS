@@ -39,6 +39,7 @@ public class ContextBindingWrapper_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_2kuzvr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_2kuzvr_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_2kuzvr_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_2kuzvr_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_2kuzvr_c0(editorContext, node));
@@ -280,7 +281,6 @@ public class ContextBindingWrapper_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_2kuzvr_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_2kuzvr_a1a");
     return editorCell;
   }
 

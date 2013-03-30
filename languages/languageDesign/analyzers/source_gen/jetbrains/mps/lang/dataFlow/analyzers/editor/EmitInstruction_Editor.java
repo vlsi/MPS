@@ -26,6 +26,7 @@ public class EmitInstruction_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_tx9kns_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_tx9kns_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_tx9kns_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_tx9kns_b0(editorContext, node));
     if (renderingCondition_tx9kns_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {

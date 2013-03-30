@@ -24,6 +24,7 @@ public class MatchRegexpExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_8534cz_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_8534cz_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_8534cz_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_8534cz_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_8534cz_c0(editorContext, node));

@@ -41,6 +41,7 @@ public class BuildLayout_Files_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_qm6fq6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_qm6fq6_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_qm6fq6_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_qm6fq6_b0(editorContext, node));
     editorCell.addEditorCell(this.createAlternation_qm6fq6_c0(editorContext, node));

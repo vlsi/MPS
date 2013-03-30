@@ -24,6 +24,7 @@ public class BuildVariableMacroInitWithValueFromFile_Editor extends DefaultNodeE
   private EditorCell createCollection_xxatue_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_xxatue_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_xxatue_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_xxatue_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_xxatue_c0(editorContext, node));

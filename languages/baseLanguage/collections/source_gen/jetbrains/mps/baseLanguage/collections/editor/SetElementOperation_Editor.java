@@ -30,6 +30,7 @@ public class SetElementOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_aqe0hb_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_aqe0hb_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_aqe0hb_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_aqe0hb_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_aqe0hb_c0(editorContext, node));

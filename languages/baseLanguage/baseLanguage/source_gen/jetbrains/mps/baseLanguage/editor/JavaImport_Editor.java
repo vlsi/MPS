@@ -27,6 +27,7 @@ public class JavaImport_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_cbnorm_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_cbnorm_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_cbnorm_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_cbnorm_b0(editorContext, node));
     editorCell.addEditorCell(this.createAlternation_cbnorm_c0(editorContext, node));

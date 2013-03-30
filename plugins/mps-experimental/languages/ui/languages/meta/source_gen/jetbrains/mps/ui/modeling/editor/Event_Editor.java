@@ -36,6 +36,7 @@ public class Event_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ymj9mh_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_ymj9mh_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_ymj9mh_a0(editorContext, node));
     editorCell.addEditorCell(this.createIndentCell_ymj9mh_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_ymj9mh_c0(editorContext, node));
@@ -147,7 +148,6 @@ public class Event_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_ymj9mh_b0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_ymj9mh_b0");
     return editorCell;
   }
 
@@ -166,7 +166,6 @@ public class Event_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_ymj9mh_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_ymj9mh_a2a");
     return editorCell;
   }
 
@@ -207,7 +206,6 @@ public class Event_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_ymj9mh_d0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_ymj9mh_d0");
     return editorCell;
   }
 
@@ -225,7 +223,6 @@ public class Event_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_ymj9mh_a4a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_ymj9mh_a4a");
     return editorCell;
   }
 
@@ -296,7 +293,6 @@ public class Event_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_ymj9mh_f0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_ymj9mh_f0");
     return editorCell;
   }
 

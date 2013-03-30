@@ -16,6 +16,7 @@ public class AbstractContainerCreator_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_8tcnfj_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AbstractContainerCreator_Component(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     return editorCell;
   }
 }

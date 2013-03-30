@@ -27,6 +27,7 @@ public class ReportFeedbackStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_5qrlbv_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5qrlbv_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_5qrlbv_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_5qrlbv_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_5qrlbv_c0(editorContext, node));

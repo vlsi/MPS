@@ -29,6 +29,7 @@ public class AdvanceWorkStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_wnrqtk_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_wnrqtk_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_wnrqtk_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_wnrqtk_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_wnrqtk_c0(editorContext, node));

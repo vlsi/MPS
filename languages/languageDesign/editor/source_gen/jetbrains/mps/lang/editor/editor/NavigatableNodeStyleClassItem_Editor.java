@@ -25,6 +25,7 @@ public class NavigatableNodeStyleClassItem_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_nu7w75_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_nu7w75_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_nu7w75_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_nu7w75_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_nu7w75_c0(editorContext, node));

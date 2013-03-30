@@ -21,6 +21,7 @@ public class Pair_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_9s6ou1_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_9s6ou1_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_9s6ou1_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_9s6ou1_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_9s6ou1_c0(editorContext, node));

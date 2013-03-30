@@ -40,6 +40,7 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
     } else {
       editorCell = this.createCollection_1uorir_a0_0(editorContext, node);
     }
+    editorCell.setBig(true);
     return editorCell;
   }
 

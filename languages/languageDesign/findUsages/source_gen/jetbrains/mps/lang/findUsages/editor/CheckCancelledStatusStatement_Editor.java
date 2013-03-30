@@ -16,6 +16,7 @@ public class CheckCancelledStatusStatement_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_n2ooek_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "check cancelled status;");
     editorCell.setCellId("Constant_n2ooek_a");
+    editorCell.setBig(true);
     editorCell.setDefaultText("");
     return editorCell;
   }

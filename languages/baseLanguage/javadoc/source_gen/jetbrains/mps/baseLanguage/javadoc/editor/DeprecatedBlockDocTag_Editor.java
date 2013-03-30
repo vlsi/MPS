@@ -17,6 +17,7 @@ public class DeprecatedBlockDocTag_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_y08oko_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_y08oko_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_y08oko_a0(editorContext, node));
     return editorCell;
   }

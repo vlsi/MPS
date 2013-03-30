@@ -33,6 +33,7 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_f5bzsg_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_f5bzsg_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_f5bzsg_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_f5bzsg_b0(editorContext, node));
     if (renderingCondition_f5bzsg_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {

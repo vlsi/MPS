@@ -27,6 +27,7 @@ public class JUnit3TestCaseRef_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_oadaxc_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_oadaxc_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_oadaxc_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_oadaxc_b0(editorContext, node));
     return editorCell;

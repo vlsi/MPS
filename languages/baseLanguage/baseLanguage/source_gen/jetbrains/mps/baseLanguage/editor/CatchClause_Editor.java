@@ -24,6 +24,7 @@ public class CatchClause_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_5rb7wh_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_5rb7wh_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_5rb7wh_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5rb7wh_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_5rb7wh_c0(editorContext, node));

@@ -31,6 +31,7 @@ public class Branding_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_e8odqw_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_e8odqw_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_e8odqw_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_e8odqw_b0(editorContext, node));
     return editorCell;
@@ -68,7 +69,6 @@ public class Branding_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_e8odqw_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_e8odqw_a1a");
     return editorCell;
   }
 

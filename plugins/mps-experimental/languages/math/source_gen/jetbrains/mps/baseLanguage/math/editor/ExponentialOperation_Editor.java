@@ -16,6 +16,7 @@ public class ExponentialOperation_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_glunh1_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new ExponentOperation_Component(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     return editorCell;
   }
 }

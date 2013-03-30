@@ -16,6 +16,7 @@ public class Node_IsAttributeOperation_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_iubru5_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "isAttribute");
     editorCell.setCellId("Constant_iubru5_a");
+    editorCell.setBig(true);
     editorCell.setDefaultText("");
     return editorCell;
   }

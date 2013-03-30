@@ -29,6 +29,7 @@ public class CommandType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_2uesqr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_2uesqr_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_2uesqr_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_2uesqr_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_2uesqr_c0(editorContext, node));

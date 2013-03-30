@@ -33,6 +33,7 @@ public class NodePropertiesContainer_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ow7a4w_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ow7a4w_a");
+    editorCell.setBig(true);
     Annotation_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.addEditorCell(this.createConstant_ow7a4w_a0(editorContext, node));
     editorCell.addEditorCell(this.createAttributedNodeCell_ow7a4w_b0(editorContext, node));

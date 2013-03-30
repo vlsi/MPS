@@ -33,6 +33,7 @@ public class CopyPasteHandlers_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ffwobm_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_ffwobm_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_ffwobm_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ffwobm_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_ffwobm_c0(editorContext, node));

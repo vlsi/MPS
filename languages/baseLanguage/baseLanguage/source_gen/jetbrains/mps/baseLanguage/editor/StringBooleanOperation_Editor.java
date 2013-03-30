@@ -19,6 +19,7 @@ public class StringBooleanOperation_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_rdh6hq_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AliasEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyCompactKeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);

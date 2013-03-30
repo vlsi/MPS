@@ -18,6 +18,7 @@ public class BracesStubBlock_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_cjxhcm_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_cjxhcm_a");
+    editorCell.setBig(true);
     editorCell.setUsesBraces(true);
     editorCell.addEditorCell(this.createComponent_cjxhcm_a0(editorContext, node));
     return editorCell;

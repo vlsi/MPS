@@ -29,6 +29,7 @@ public class MapType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_y21z1n_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_y21z1n_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_y21z1n_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_y21z1n_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_y21z1n_c0(editorContext, node));

@@ -20,6 +20,7 @@ public class ExpressionStub_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_yrkldf_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_yrkldf_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_yrkldf_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_yrkldf_b0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_yrkldf_c0(editorContext, node));

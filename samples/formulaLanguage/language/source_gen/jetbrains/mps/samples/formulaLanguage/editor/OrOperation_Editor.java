@@ -28,6 +28,7 @@ public class OrOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_fnt2o4_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_fnt2o4_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_fnt2o4_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_fnt2o4_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_fnt2o4_c0(editorContext, node));

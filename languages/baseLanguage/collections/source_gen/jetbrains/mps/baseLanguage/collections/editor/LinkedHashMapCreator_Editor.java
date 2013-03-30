@@ -30,12 +30,14 @@ public class LinkedHashMapCreator_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_g44azu_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new HashMapCreator_editorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     return editorCell;
   }
 
   private EditorCell createCollection_g44azu_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_g44azu_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_g44azu_a0(editorContext, node));
     return editorCell;
   }

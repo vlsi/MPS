@@ -37,6 +37,7 @@ public class OverloadedOperatorContainer_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_2ntrw4_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_2ntrw4_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_2ntrw4_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_2ntrw4_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_2ntrw4_c0(editorContext, node));
@@ -139,8 +140,8 @@ public class OverloadedOperatorContainer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_2ntrw4_a1d0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
+    return editorCell;
   }
 
   private EditorCell createCollection_2ntrw4_b1d0(EditorContext editorContext, SNode node) {

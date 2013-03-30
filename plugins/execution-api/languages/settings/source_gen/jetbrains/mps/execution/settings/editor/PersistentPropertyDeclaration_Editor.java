@@ -29,6 +29,7 @@ public class PersistentPropertyDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_k4cjtr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_k4cjtr_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_k4cjtr_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_k4cjtr_b0(editorContext, node));
     if (renderingCondition_k4cjtr_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {

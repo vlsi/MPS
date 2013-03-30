@@ -29,6 +29,7 @@ public class ContainerType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_zgvqtk_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_zgvqtk_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_zgvqtk_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_zgvqtk_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_zgvqtk_c0(editorContext, node));

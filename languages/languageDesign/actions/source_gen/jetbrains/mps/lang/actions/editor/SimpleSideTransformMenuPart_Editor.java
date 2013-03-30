@@ -30,6 +30,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_cqa5bf_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_cqa5bf_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_cqa5bf_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_cqa5bf_b0(editorContext, node));
     return editorCell;
@@ -68,7 +69,6 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_cqa5bf_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_cqa5bf_a1a");
     return editorCell;
   }
 
@@ -117,7 +117,6 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_cqa5bf_a1b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_cqa5bf_a1b1a");
     return editorCell;
   }
 
@@ -161,7 +160,6 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_cqa5bf_a3b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_cqa5bf_a3b1a");
     return editorCell;
   }
 
@@ -241,7 +239,6 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_cqa5bf_a1e1b0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_cqa5bf_a1e1b0");
     return editorCell;
   }
 
@@ -285,7 +282,6 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_cqa5bf_a6b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_cqa5bf_a6b1a");
     return editorCell;
   }
 
@@ -329,7 +325,6 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_cqa5bf_a8b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_cqa5bf_a8b1a");
     return editorCell;
   }
 
@@ -373,7 +368,6 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_cqa5bf_a01b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_cqa5bf_a01b1a");
     return editorCell;
   }
 

@@ -29,6 +29,7 @@ public class Type_Editor extends DefaultNodeEditor {
     } else {
       editorCell = this.createComponent_a1nfgp_a0(editorContext, node);
     }
+    editorCell.setBig(true);
     return editorCell;
   }
 

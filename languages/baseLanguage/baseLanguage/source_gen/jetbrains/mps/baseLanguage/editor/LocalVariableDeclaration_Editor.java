@@ -42,6 +42,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_i0gfbw_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_i0gfbw_a");
+    editorCell.setBig(true);
     if (renderingCondition_i0gfbw_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_i0gfbw_a0(editorContext, node));
     }
@@ -206,6 +207,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_i0gfbw_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_i0gfbw_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_i0gfbw_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_i0gfbw_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_i0gfbw_c0(editorContext, node));

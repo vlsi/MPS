@@ -30,6 +30,7 @@ public class PullUpMethod_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_errt5h_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_errt5h_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_errt5h_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_errt5h_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_errt5h_c0(editorContext, node));

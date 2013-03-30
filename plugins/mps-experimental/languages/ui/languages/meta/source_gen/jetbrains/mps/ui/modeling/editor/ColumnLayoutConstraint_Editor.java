@@ -26,6 +26,7 @@ public class ColumnLayoutConstraint_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_9m8wrr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9m8wrr_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_9m8wrr_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_9m8wrr_b0(editorContext, node));
     if (renderingCondition_9m8wrr_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {

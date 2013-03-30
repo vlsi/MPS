@@ -50,7 +50,6 @@ public class EditorComponent extends AbstractCellProvider {
 
   private EditorCell createIndentCell_8q27zs_a0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_8q27zs_a0");
     return editorCell;
   }
 
@@ -88,7 +87,6 @@ public class EditorComponent extends AbstractCellProvider {
 
   private EditorCell createIndentCell_8q27zs_a1b0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_8q27zs_a1b0");
     return editorCell;
   }
 

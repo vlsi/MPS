@@ -24,6 +24,7 @@ public class TestInfo_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_v9r28m_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_v9r28m_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_v9r28m_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_v9r28m_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_v9r28m_c0(editorContext, node));

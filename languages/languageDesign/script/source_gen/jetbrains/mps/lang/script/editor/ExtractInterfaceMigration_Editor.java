@@ -44,6 +44,7 @@ public class ExtractInterfaceMigration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7cysuj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7cysuj_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_7cysuj_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7cysuj_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7cysuj_c0(editorContext, node));
@@ -201,6 +202,7 @@ public class ExtractInterfaceMigration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7cysuj_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7cysuj_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_7cysuj_a0(editorContext, node));
     return editorCell;
   }

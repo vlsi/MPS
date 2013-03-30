@@ -30,6 +30,7 @@ public class TemplateParameter_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_cy34jy_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_cy34jy_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_cy34jy_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_cy34jy_b0(editorContext, node));
     if (renderingCondition_cy34jy_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {

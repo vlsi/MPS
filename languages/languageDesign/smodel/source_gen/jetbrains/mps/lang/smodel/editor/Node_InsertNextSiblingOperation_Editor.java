@@ -25,6 +25,7 @@ public class Node_InsertNextSiblingOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_nzbzn3_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_nzbzn3_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_nzbzn3_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_nzbzn3_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_nzbzn3_c0(editorContext, node));

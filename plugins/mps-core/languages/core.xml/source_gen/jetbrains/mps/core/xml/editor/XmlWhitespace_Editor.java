@@ -25,6 +25,7 @@ public class XmlWhitespace_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_2bpkx8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_2bpkx8_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createAlternation_2bpkx8_a0(editorContext, node));
     return editorCell;
   }

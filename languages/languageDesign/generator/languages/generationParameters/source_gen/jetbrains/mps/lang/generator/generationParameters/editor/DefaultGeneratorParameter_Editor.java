@@ -38,6 +38,7 @@ public class DefaultGeneratorParameter_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_95jom2_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_95jom2_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_95jom2_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_95jom2_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_95jom2_c0(editorContext, node));
@@ -92,6 +93,7 @@ public class DefaultGeneratorParameter_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_95jom2_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_95jom2_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_95jom2_a0(editorContext, node));
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_95jom2_b0(editorContext, node));
     return editorCell;

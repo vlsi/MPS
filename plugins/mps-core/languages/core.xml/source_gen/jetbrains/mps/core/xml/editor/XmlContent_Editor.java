@@ -26,6 +26,7 @@ public class XmlContent_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_91idit_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_91idit_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCustom_91idit_a0(editorContext, node));
     if (renderingCondition_91idit_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_91idit_b0(editorContext, node));

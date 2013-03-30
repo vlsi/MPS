@@ -35,6 +35,7 @@ public class Library_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_x0ve1k_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_x0ve1k_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_x0ve1k_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_x0ve1k_b0(editorContext, node));
     return editorCell;
@@ -91,7 +92,6 @@ public class Library_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_x0ve1k_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_x0ve1k_a1a");
     return editorCell;
   }
 

@@ -26,6 +26,7 @@ public class ParametersDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_hy8r7y_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_hy8r7y_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createIndentCell_hy8r7y_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_hy8r7y_b0(editorContext, node));
     return editorCell;
@@ -33,7 +34,6 @@ public class ParametersDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_hy8r7y_a0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_hy8r7y_a0");
     return editorCell;
   }
 

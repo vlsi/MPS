@@ -16,6 +16,7 @@ public class Regexp_Editor extends DefaultNodeEditor {
   private EditorCell createError_rogptd_a(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "regexp");
     editorCell.setCellId("Error_rogptd_a");
+    editorCell.setBig(true);
     return editorCell;
   }
 }

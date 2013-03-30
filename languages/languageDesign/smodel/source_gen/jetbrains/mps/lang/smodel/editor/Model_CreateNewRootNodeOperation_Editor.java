@@ -35,6 +35,7 @@ public class Model_CreateNewRootNodeOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_uze3jf_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_uze3jf_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_uze3jf_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_uze3jf_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_uze3jf_c0(editorContext, node));

@@ -35,6 +35,7 @@ public class InstructionReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_o0r2rr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_o0r2rr_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_o0r2rr_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_o0r2rr_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_o0r2rr_c0(editorContext, node));

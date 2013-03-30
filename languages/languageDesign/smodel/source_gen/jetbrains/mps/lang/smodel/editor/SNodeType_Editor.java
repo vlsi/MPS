@@ -42,6 +42,7 @@ public class SNodeType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_x5m1a6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_x5m1a6_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_x5m1a6_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_x5m1a6_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_x5m1a6_c0(editorContext, node));
@@ -144,6 +145,7 @@ public class SNodeType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_x5m1a6_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_x5m1a6_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_x5m1a6_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_x5m1a6_b0_0(editorContext, node));
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_x5m1a6_c0(editorContext, node));

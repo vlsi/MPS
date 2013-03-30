@@ -27,6 +27,7 @@ public class ForeignParametersComponentExpression_Editor extends DefaultNodeEdit
   private EditorCell createCollection_4od8my_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_4od8my_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_4od8my_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4od8my_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_4od8my_c0(editorContext, node));

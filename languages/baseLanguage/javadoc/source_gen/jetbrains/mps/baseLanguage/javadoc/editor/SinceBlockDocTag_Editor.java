@@ -23,6 +23,7 @@ public class SinceBlockDocTag_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_jbrn6z_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_jbrn6z_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_jbrn6z_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_jbrn6z_b0(editorContext, node));
     return editorCell;

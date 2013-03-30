@@ -19,6 +19,7 @@ public class SimpleBuilderPropertyExpression_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_8jn2uj_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AliasEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     StyleSheet_StyleSheet.applyParameter(style, editorCell);
     editorCell.getStyle().putAll(style);

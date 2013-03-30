@@ -20,6 +20,7 @@ public class ConstantLinePart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_vsd1yo_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_vsd1yo_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_vsd1yo_a0(editorContext, node));
     return editorCell;
   }

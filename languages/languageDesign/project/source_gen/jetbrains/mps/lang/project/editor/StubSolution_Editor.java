@@ -24,6 +24,7 @@ public class StubSolution_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_v0z12q_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_v0z12q_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_v0z12q_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_v0z12q_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_v0z12q_c0(editorContext, node));

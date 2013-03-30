@@ -41,6 +41,7 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_879g1p_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_879g1p_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_879g1p_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_879g1p_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_879g1p_c0(editorContext, node));
@@ -180,6 +181,7 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_879g1p_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_879g1p_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_879g1p_a0(editorContext, node));
     return editorCell;
   }

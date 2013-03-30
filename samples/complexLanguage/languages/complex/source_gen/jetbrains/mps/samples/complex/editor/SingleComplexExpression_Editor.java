@@ -28,6 +28,7 @@ public class SingleComplexExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_l3wwva_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_l3wwva_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_l3wwva_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_l3wwva_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_l3wwva_c0(editorContext, node));

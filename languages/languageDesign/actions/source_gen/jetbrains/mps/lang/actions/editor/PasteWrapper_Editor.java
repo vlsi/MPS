@@ -28,6 +28,7 @@ public class PasteWrapper_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_eyosg6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_eyosg6_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_eyosg6_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_eyosg6_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_eyosg6_c0(editorContext, node));
@@ -178,7 +179,6 @@ public class PasteWrapper_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_eyosg6_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_eyosg6_a1a");
     return editorCell;
   }
 

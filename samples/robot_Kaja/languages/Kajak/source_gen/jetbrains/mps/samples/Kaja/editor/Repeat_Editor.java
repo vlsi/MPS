@@ -30,6 +30,7 @@ public class Repeat_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_b86mo8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_b86mo8_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_b86mo8_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_b86mo8_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_b86mo8_c0(editorContext, node));

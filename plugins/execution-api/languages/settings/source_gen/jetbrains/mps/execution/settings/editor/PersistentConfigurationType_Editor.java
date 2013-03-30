@@ -30,6 +30,7 @@ public class PersistentConfigurationType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_c5arh5_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_c5arh5_a");
+    editorCell.setBig(true);
     if (renderingCondition_c5arh5_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRefCell_c5arh5_a0(editorContext, node));
     }

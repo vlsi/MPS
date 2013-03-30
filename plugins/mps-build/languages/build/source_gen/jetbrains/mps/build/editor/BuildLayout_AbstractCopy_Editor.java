@@ -20,6 +20,7 @@ public class BuildLayout_AbstractCopy_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_vu0yef_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_vu0yef_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_vu0yef_a0(editorContext, node));
     return editorCell;
   }

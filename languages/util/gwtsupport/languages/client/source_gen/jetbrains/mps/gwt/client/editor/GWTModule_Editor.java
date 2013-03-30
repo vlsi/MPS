@@ -37,6 +37,7 @@ public class GWTModule_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_qbj93y_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_qbj93y_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_qbj93y_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_qbj93y_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_qbj93y_c0(editorContext, node));
@@ -119,7 +120,6 @@ public class GWTModule_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_qbj93y_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_qbj93y_a1a");
     return editorCell;
   }
 
@@ -136,7 +136,6 @@ public class GWTModule_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_qbj93y_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_qbj93y_a2a");
     return editorCell;
   }
 
@@ -208,7 +207,6 @@ public class GWTModule_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_qbj93y_a3a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_qbj93y_a3a");
     return editorCell;
   }
 

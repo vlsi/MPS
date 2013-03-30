@@ -28,6 +28,7 @@ public class BuildStringNotEmpty_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_vy9fh5_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_vy9fh5_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);

@@ -24,6 +24,7 @@ public class WordList_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_v3gbj6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_v3gbj6_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNodeList_v3gbj6_a0(editorContext, node));
     return editorCell;
   }

@@ -34,6 +34,7 @@ public class PropertiesFile_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_3d3qm_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_3d3qm_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_3d3qm_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_3d3qm_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_3d3qm_c0(editorContext, node));

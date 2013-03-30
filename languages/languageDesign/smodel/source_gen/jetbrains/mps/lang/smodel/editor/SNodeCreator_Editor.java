@@ -26,6 +26,7 @@ public class SNodeCreator_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_8ma8bu_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_8ma8bu_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_8ma8bu_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_8ma8bu_b0(editorContext, node));
     if (renderingCondition_8ma8bu_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {

@@ -36,6 +36,7 @@ public class TypesystemIntention_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_il97sk_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_il97sk_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_il97sk_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_il97sk_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_il97sk_c0(editorContext, node));

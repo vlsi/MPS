@@ -16,6 +16,7 @@ public class RefTestExpression_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_lv5tyv_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_lv5tyv_a");
+    editorCell.setBig(true);
     editorCell.setDefaultText("");
     return editorCell;
   }

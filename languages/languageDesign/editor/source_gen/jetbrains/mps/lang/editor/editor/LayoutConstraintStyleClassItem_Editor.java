@@ -29,6 +29,7 @@ public class LayoutConstraintStyleClassItem_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_43k0hh_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_43k0hh_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_43k0hh_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_43k0hh_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_43k0hh_c0(editorContext, node));

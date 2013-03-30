@@ -38,6 +38,7 @@ public class EditorOperationCall_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_jn1wx6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_jn1wx6_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_jn1wx6_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_jn1wx6_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_jn1wx6_c0(editorContext, node));

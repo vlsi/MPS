@@ -35,6 +35,7 @@ public class LogStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_xuwwk0_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_xuwwk0_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_xuwwk0_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_xuwwk0_b0(editorContext, node));
     if (renderingCondition_xuwwk0_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
@@ -139,6 +140,7 @@ public class LogStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_xuwwk0_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_xuwwk0_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_xuwwk0_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_xuwwk0_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_xuwwk0_c0(editorContext, node));

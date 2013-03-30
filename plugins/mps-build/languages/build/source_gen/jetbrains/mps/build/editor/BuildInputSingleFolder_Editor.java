@@ -29,6 +29,7 @@ public class BuildInputSingleFolder_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_cend0t_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_cend0t_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_cend0t_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_cend0t_b0(editorContext, node));
     return editorCell;

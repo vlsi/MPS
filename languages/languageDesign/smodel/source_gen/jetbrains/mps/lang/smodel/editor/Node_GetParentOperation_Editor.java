@@ -21,6 +21,7 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_5yfyqc_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parent");
     editorCell.setCellId("Constant_5yfyqc_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     style.set(StyleAttributes.EDITABLE, true);

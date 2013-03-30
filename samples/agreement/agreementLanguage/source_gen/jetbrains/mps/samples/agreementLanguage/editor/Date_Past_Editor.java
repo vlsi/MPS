@@ -22,6 +22,7 @@ public class Date_Past_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_54iyzo_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "PAST");
     editorCell.setCellId("Constant_54iyzo_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
     style.set(StyleAttributes.EDITABLE, true);

@@ -22,6 +22,7 @@ public class AuxObjectTemplate_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_sf19kn_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_sf19kn_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_sf19kn_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_sf19kn_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_sf19kn_c0(editorContext, node));

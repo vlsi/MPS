@@ -37,6 +37,7 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ie6eqd_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ie6eqd_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_ie6eqd_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_ie6eqd_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_ie6eqd_c0(editorContext, node));
@@ -121,6 +122,7 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_ie6eqd_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AbstractEquationInspector(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     return editorCell;
   }
 }

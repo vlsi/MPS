@@ -28,6 +28,7 @@ public class NonEmptyProperty_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_vbxoaj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_vbxoaj_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_vbxoaj_a0(editorContext, node));
     if (SNodeAccessUtil.hasProperty(node, "value")) {
       editorCell.addEditorCell(this.createNonEmptyProperty_vbxoaj_b0(editorContext, node));
@@ -63,6 +64,7 @@ public class NonEmptyProperty_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_vbxoaj_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_vbxoaj_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_vbxoaj_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_vbxoaj_b0(editorContext, node));
     return editorCell;

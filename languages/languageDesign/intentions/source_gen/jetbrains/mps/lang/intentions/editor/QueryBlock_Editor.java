@@ -39,6 +39,7 @@ public class QueryBlock_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_yfw6cj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_yfw6cj_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_yfw6cj_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_yfw6cj_b0(editorContext, node));
     return editorCell;
@@ -138,6 +139,7 @@ public class QueryBlock_Editor extends DefaultNodeEditor {
     }.invoke();
     EditorCell editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("Custom_yfw6cj_a");
+    editorCell.setBig(true);
     return editorCell;
   }
 }

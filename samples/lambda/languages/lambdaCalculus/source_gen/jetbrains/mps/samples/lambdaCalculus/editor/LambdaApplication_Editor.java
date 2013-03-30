@@ -32,6 +32,7 @@ public class LambdaApplication_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ppbi6p_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ppbi6p_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_ppbi6p_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ppbi6p_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_ppbi6p_c0(editorContext, node));

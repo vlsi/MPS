@@ -25,6 +25,7 @@ public class BuildLayout_Filemode_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_sf63zn_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_sf63zn_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_sf63zn_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_sf63zn_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_sf63zn_c0(editorContext, node));

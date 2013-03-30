@@ -28,12 +28,14 @@ public class Reference_GetTargetOperation_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_5uwcto_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AliasComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     return editorCell;
   }
 
   private EditorCell createCollection_5uwcto_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_5uwcto_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_5uwcto_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5uwcto_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5uwcto_c0(editorContext, node));

@@ -21,6 +21,7 @@ public class BracketConditionalExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_5x2ep7_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5x2ep7_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_5x2ep7_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_5x2ep7_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5x2ep7_c0(editorContext, node));

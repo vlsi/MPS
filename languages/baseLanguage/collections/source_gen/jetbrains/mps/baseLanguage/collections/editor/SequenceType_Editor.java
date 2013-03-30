@@ -37,6 +37,7 @@ public class SequenceType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_z5ycp4_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_z5ycp4_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_z5ycp4_a0(editorContext, node));
     if (renderingCondition_z5ycp4_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_z5ycp4_b0(editorContext, node));

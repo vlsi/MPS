@@ -33,6 +33,7 @@ public class Components_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_dr39ej_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_dr39ej_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_dr39ej_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_dr39ej_b0(editorContext, node));
     return editorCell;
@@ -69,7 +70,6 @@ public class Components_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_dr39ej_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_dr39ej_a1a");
     return editorCell;
   }
 

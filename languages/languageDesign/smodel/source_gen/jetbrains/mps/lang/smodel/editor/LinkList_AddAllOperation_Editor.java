@@ -25,6 +25,7 @@ public class LinkList_AddAllOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_cxqw7q_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_cxqw7q_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_cxqw7q_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_cxqw7q_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_cxqw7q_c0(editorContext, node));

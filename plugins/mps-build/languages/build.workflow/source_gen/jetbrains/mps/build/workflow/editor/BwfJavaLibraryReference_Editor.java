@@ -25,6 +25,7 @@ public class BwfJavaLibraryReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_54tsec_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_54tsec_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_54tsec_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_54tsec_b0(editorContext, node));
     return editorCell;

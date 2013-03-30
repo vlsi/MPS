@@ -35,6 +35,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_mr1gse_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_mr1gse_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_mr1gse_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_mr1gse_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_mr1gse_c0(editorContext, node));

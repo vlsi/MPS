@@ -21,6 +21,7 @@ public class PluginHelpset_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_2rktb_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_2rktb_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_2rktb_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_2rktb_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_2rktb_c0(editorContext, node));

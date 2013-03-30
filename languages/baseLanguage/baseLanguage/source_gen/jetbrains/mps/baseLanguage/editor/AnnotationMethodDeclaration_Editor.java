@@ -40,6 +40,7 @@ public class AnnotationMethodDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ux6pap_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ux6pap_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_ux6pap_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_ux6pap_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_ux6pap_c0(editorContext, node));
@@ -178,6 +179,7 @@ public class AnnotationMethodDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ux6pap_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ux6pap_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_ux6pap_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_ux6pap_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ux6pap_c0(editorContext, node));

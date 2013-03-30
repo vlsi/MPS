@@ -28,6 +28,7 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ghsvq8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ghsvq8_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyBlockComment(style, editorCell);
     editorCell.getStyle().putAll(style);

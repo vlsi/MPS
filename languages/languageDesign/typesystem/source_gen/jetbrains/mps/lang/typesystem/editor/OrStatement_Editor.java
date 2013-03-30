@@ -25,6 +25,7 @@ public class OrStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_s3jzuo_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_s3jzuo_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNodeList_s3jzuo_a0(editorContext, node));
     return editorCell;
   }

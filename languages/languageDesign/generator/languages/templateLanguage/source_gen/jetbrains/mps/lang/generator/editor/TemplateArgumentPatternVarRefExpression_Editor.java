@@ -28,6 +28,7 @@ public class TemplateArgumentPatternVarRefExpression_Editor extends DefaultNodeE
   private EditorCell createCollection_a5awwn_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_a5awwn_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_a5awwn_a0(editorContext, node));
     return editorCell;
   }

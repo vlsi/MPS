@@ -34,6 +34,7 @@ public class ModuleDescription_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_pt6dm6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_pt6dm6_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_pt6dm6_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_pt6dm6_b0(editorContext, node));
     return editorCell;
@@ -86,7 +87,6 @@ public class ModuleDescription_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_pt6dm6_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_pt6dm6_a1a");
     return editorCell;
   }
 
@@ -131,7 +131,6 @@ public class ModuleDescription_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_pt6dm6_a1b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_pt6dm6_a1b1a");
     return editorCell;
   }
 
@@ -203,7 +202,6 @@ public class ModuleDescription_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_pt6dm6_a3b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_pt6dm6_a3b1a");
     return editorCell;
   }
 
@@ -245,7 +243,6 @@ public class ModuleDescription_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_pt6dm6_a5b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_pt6dm6_a5b1a");
     return editorCell;
   }
 
@@ -316,7 +313,6 @@ public class ModuleDescription_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_pt6dm6_a7b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_pt6dm6_a7b1a");
     return editorCell;
   }
 
@@ -356,7 +352,6 @@ public class ModuleDescription_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_pt6dm6_a9b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_pt6dm6_a9b1a");
     return editorCell;
   }
 

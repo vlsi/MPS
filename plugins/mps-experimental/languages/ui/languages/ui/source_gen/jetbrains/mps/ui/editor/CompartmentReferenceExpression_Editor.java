@@ -27,6 +27,7 @@ public class CompartmentReferenceExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_v8f2p9_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_v8f2p9_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_v8f2p9_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_v8f2p9_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_v8f2p9_c0(editorContext, node));

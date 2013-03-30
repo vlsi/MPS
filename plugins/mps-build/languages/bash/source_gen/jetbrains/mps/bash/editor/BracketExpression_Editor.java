@@ -21,6 +21,7 @@ public class BracketExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_wuy8c6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_wuy8c6_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_wuy8c6_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_wuy8c6_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_wuy8c6_c0(editorContext, node));

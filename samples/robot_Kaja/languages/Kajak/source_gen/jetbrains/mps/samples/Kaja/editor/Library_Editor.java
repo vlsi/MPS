@@ -33,6 +33,7 @@ public class Library_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_x0ve1k_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_x0ve1k_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_x0ve1k_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_x0ve1k_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_x0ve1k_c0(editorContext, node));

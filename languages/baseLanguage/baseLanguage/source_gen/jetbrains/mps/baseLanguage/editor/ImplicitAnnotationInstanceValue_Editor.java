@@ -20,6 +20,7 @@ public class ImplicitAnnotationInstanceValue_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_oshw76_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_oshw76_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_oshw76_a0(editorContext, node));
     return editorCell;
   }

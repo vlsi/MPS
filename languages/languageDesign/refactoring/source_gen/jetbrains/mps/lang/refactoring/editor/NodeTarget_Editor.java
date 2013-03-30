@@ -29,6 +29,7 @@ public class NodeTarget_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1i1fuk_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_1i1fuk_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_1i1fuk_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_1i1fuk_b0(editorContext, node));
     return editorCell;

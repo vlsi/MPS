@@ -30,6 +30,7 @@ public class SLinkListAccess_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_xjomum_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_xjomum_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_xjomum_a0(editorContext, node));
     return editorCell;
   }

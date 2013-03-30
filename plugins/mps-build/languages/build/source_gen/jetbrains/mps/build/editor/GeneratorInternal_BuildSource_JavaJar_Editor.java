@@ -23,6 +23,7 @@ public class GeneratorInternal_BuildSource_JavaJar_Editor extends DefaultNodeEdi
   private EditorCell createCollection_g0zw24_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_g0zw24_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_g0zw24_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_g0zw24_b0(editorContext, node));
     return editorCell;

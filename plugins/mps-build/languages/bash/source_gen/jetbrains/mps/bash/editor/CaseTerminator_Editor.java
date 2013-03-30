@@ -36,6 +36,7 @@ public class CaseTerminator_Editor extends DefaultNodeEditor {
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_jnqi9m_a");
+    editorCell.setBig(true);
     return editorCell;
   }
 }

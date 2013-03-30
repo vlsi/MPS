@@ -36,6 +36,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_c84kqv_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_c84kqv_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_c84kqv_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_c84kqv_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_c84kqv_c0(editorContext, node));
@@ -189,6 +190,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_c84kqv_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_c84kqv_a_0");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);

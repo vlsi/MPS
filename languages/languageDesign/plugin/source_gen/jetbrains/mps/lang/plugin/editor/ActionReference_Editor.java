@@ -22,6 +22,7 @@ public class ActionReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ld3k57_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ld3k57_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_ld3k57_a0(editorContext, node));
     return editorCell;
   }

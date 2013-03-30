@@ -26,6 +26,7 @@ public class ConfigurationXmlDocument_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_oqsb7s_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_oqsb7s_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_oqsb7s_a0(editorContext, node));
     editorCell.addEditorCell(this.createIndentCell_oqsb7s_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_oqsb7s_c0(editorContext, node));
@@ -86,7 +87,6 @@ public class ConfigurationXmlDocument_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_oqsb7s_b0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_oqsb7s_b0");
     return editorCell;
   }
 

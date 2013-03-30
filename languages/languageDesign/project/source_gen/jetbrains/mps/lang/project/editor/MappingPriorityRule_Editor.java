@@ -25,6 +25,7 @@ public class MappingPriorityRule_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6p5nan_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6p5nan_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_6p5nan_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6p5nan_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6p5nan_c0(editorContext, node));

@@ -37,6 +37,7 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_uvxm5p_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_uvxm5p_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_uvxm5p_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_uvxm5p_b0(editorContext, node));
     if (renderingCondition_uvxm5p_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {

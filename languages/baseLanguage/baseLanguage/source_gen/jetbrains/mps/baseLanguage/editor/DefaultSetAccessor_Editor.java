@@ -23,6 +23,7 @@ public class DefaultSetAccessor_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7yzysi_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7yzysi_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_7yzysi_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7yzysi_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7yzysi_c0(editorContext, node));

@@ -24,6 +24,7 @@ public class InlineTemplateWithContext_RuleConsequence_Editor extends DefaultNod
   private EditorCell createCollection_j89piv_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_j89piv_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_j89piv_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_j89piv_b0(editorContext, node));
     return editorCell;

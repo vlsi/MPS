@@ -28,6 +28,7 @@ public class XMLSAXFieldDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_iezln0_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_iezln0_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);

@@ -31,12 +31,14 @@ public class CustomMapCreator_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_jxu7lh_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new CustomMapCreator_component(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     return editorCell;
   }
 
   private EditorCell createCollection_jxu7lh_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_jxu7lh_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_jxu7lh_a0(editorContext, node));
     return editorCell;
   }

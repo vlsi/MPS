@@ -22,6 +22,7 @@ public class InputFieldReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_tvw6ko_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_tvw6ko_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_tvw6ko_a0(editorContext, node));
     return editorCell;
   }

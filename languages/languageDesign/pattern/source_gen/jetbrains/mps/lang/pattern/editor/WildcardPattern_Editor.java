@@ -23,6 +23,7 @@ public class WildcardPattern_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_4sx1p7_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_4sx1p7_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_4sx1p7_a0(editorContext, node));
     return editorCell;
   }

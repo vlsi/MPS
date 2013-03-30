@@ -57,6 +57,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6h6dhy_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_6h6dhy_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
     editorCell.getStyle().putAll(style);
@@ -353,6 +354,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6h6dhy_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_6h6dhy_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_6h6dhy_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_6h6dhy_b0(editorContext, node));
     return editorCell;

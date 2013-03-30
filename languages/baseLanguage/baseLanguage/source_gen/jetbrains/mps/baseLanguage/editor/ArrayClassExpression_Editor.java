@@ -25,6 +25,7 @@ public class ArrayClassExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_t6tyx6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_t6tyx6_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_t6tyx6_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_t6tyx6_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_t6tyx6_c0(editorContext, node));

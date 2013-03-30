@@ -28,6 +28,7 @@ public class OverloadedBinaryOperator_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_42nz3b_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_42nz3b_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_42nz3b_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_42nz3b_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_42nz3b_c0(editorContext, node));

@@ -28,6 +28,7 @@ public class GenerationContextOp_PropertyPatternRef_Editor extends DefaultNodeEd
   private EditorCell createCollection_56eyyu_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_56eyyu_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_56eyyu_a0(editorContext, node));
     return editorCell;
   }

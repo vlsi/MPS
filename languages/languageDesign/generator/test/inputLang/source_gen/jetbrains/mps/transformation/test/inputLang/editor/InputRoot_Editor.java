@@ -32,6 +32,7 @@ public class InputRoot_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_bnd800_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_bnd800_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_bnd800_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_bnd800_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_bnd800_c0(editorContext, node));

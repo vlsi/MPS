@@ -27,6 +27,7 @@ public class RequiredAdditionalArgumentReference_Editor extends DefaultNodeEdito
   private EditorCell createCollection_58laxu_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_58laxu_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_58laxu_a0(editorContext, node));
     return editorCell;
   }

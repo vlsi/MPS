@@ -37,6 +37,7 @@ public class SuperNodeExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_n52m2z_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_n52m2z_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_n52m2z_a0(editorContext, node));
     if (renderingCondition_n52m2z_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_n52m2z_b0(editorContext, node));
@@ -145,6 +146,7 @@ public class SuperNodeExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_n52m2z_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_n52m2z_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_n52m2z_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_n52m2z_b0(editorContext, node));
     return editorCell;

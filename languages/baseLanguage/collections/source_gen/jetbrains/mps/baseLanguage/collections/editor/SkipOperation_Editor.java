@@ -28,6 +28,7 @@ public class SkipOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_tp3vyq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_tp3vyq_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_tp3vyq_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_tp3vyq_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_tp3vyq_c0(editorContext, node));

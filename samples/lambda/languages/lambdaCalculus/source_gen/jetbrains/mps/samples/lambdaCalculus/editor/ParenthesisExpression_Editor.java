@@ -24,6 +24,7 @@ public class ParenthesisExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_83li2n_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_83li2n_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_83li2n_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_83li2n_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_83li2n_c0(editorContext, node));

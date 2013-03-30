@@ -25,6 +25,7 @@ public class IntersectionSymbolClassPart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_b4by2p_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_b4by2p_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_b4by2p_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_b4by2p_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_b4by2p_c0(editorContext, node));

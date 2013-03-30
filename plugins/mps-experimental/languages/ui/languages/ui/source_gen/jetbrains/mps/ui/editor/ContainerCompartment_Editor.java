@@ -29,6 +29,7 @@ public class ContainerCompartment_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6q4kdp_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_6q4kdp_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     UI_StyleSheet.applyContainerBox(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -124,7 +125,6 @@ public class ContainerCompartment_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_6q4kdp_a1a0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_6q4kdp_a1a0");
     return editorCell;
   }
 

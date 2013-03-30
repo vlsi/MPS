@@ -21,6 +21,7 @@ public class CAssignmentExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1lmv2a_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1lmv2a_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_1lmv2a_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_1lmv2a_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1lmv2a_c0(editorContext, node));

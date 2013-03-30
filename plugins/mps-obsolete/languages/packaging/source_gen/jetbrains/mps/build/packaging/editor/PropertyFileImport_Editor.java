@@ -24,6 +24,7 @@ public class PropertyFileImport_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_x0o5pn_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_x0o5pn_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_x0o5pn_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_x0o5pn_b0(editorContext, node));
     return editorCell;

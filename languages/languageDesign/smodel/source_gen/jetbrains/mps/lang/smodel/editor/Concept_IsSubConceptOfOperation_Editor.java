@@ -25,6 +25,7 @@ public class Concept_IsSubConceptOfOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_lieea_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_lieea_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_lieea_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_lieea_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_lieea_c0(editorContext, node));

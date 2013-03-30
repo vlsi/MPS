@@ -20,6 +20,7 @@ public class ExtractStatementListInnerExpression_Editor extends DefaultNodeEdito
   private EditorCell createCollection_djbbxh_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_djbbxh_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_djbbxh_a0(editorContext, node));
     return editorCell;
   }

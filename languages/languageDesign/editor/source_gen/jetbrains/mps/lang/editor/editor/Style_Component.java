@@ -159,7 +159,6 @@ public class Style_Component extends AbstractCellProvider {
 
   private EditorCell createIndentCell_zdjsuv_a1b0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_zdjsuv_a1b0");
     return editorCell;
   }
 

@@ -24,6 +24,7 @@ public class LocalPropertyReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_h4irw0_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_h4irw0_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_h4irw0_a0(editorContext, node));
     return editorCell;
   }

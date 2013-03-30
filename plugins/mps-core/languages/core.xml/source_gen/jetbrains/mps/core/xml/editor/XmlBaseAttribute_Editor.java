@@ -33,6 +33,7 @@ public class XmlBaseAttribute_Editor extends DefaultNodeEditor {
     }.invoke();
     EditorCell editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("Custom_ho2ryk_a");
+    editorCell.setBig(true);
     return editorCell;
   }
 }

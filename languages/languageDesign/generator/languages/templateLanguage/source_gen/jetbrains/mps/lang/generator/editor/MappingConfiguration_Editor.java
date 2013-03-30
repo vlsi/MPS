@@ -37,6 +37,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_g6pxeq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_g6pxeq_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_g6pxeq_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_g6pxeq_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_g6pxeq_c0(editorContext, node));
@@ -199,7 +200,6 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_g6pxeq_a1c0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_g6pxeq_a1c0");
     return editorCell;
   }
 
@@ -294,7 +294,6 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_g6pxeq_a1e0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_g6pxeq_a1e0");
     return editorCell;
   }
 
@@ -386,7 +385,6 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_g6pxeq_a1g0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_g6pxeq_a1g0");
     return editorCell;
   }
 
@@ -451,7 +449,6 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_g6pxeq_a1i0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_g6pxeq_a1i0");
     return editorCell;
   }
 
@@ -550,7 +547,6 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_g6pxeq_a1k0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_g6pxeq_a1k0");
     return editorCell;
   }
 
@@ -648,7 +644,6 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_g6pxeq_a1m0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_g6pxeq_a1m0");
     return editorCell;
   }
 
@@ -746,7 +741,6 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_g6pxeq_a1o0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_g6pxeq_a1o0");
     return editorCell;
   }
 
@@ -844,7 +838,6 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_g6pxeq_a1q0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_g6pxeq_a1q0");
     return editorCell;
   }
 
@@ -942,7 +935,6 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_g6pxeq_a1s0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_g6pxeq_a1s0");
     return editorCell;
   }
 
@@ -1041,7 +1033,6 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_g6pxeq_a1u0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_g6pxeq_a1u0");
     return editorCell;
   }
 
@@ -1140,7 +1131,6 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_g6pxeq_a1w0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_g6pxeq_a1w0");
     return editorCell;
   }
 

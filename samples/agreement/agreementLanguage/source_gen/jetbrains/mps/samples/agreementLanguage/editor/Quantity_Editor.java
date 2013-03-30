@@ -29,6 +29,7 @@ public class Quantity_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_e4lyhc_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_e4lyhc_a");
+    editorCell.setBig(true);
     if (renderingCondition_e4lyhc_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createProperty_e4lyhc_a0(editorContext, node));
     }

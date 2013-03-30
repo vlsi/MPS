@@ -36,6 +36,7 @@ public class RunConfigurationProducer_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_col7k7_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_col7k7_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_col7k7_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_col7k7_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_col7k7_c0(editorContext, node));
@@ -110,7 +111,6 @@ public class RunConfigurationProducer_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_col7k7_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_col7k7_a2a");
     return editorCell;
   }
 

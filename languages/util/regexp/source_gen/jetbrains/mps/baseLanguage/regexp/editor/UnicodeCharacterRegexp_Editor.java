@@ -24,6 +24,7 @@ public class UnicodeCharacterRegexp_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_t4tngb_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_t4tngb_a");
+    editorCell.setBig(true);
     editorCell.addKeyMap(new RegexpSequenceByEnter());
     editorCell.addEditorCell(this.createConstant_t4tngb_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_t4tngb_b0(editorContext, node));

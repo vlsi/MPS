@@ -36,6 +36,7 @@ public class AbstractFunctionType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_55bd8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_55bd8_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_55bd8_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_55bd8_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_55bd8_c0(editorContext, node));

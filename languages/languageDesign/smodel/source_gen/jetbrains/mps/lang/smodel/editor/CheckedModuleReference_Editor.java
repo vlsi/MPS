@@ -36,6 +36,7 @@ public class CheckedModuleReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_5d1rsq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_5d1rsq_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_5d1rsq_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5d1rsq_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_5d1rsq_c0(editorContext, node));

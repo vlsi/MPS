@@ -25,6 +25,7 @@ public class BuildLayout_FileStub_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_2rryst_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_2rryst_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_2rryst_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_2rryst_b0(editorContext, node));
     return editorCell;

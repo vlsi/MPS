@@ -33,6 +33,7 @@ public class IconResourceBundle_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_e2moj5_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_e2moj5_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_e2moj5_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_e2moj5_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_e2moj5_c0(editorContext, node));

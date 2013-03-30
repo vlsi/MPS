@@ -30,6 +30,7 @@ public class BuildSource_JavaDependencyExternalJarInFolder_Editor extends Defaul
   private EditorCell createCollection_a8ta5y_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_a8ta5y_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_a8ta5y_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_a8ta5y_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_a8ta5y_c0(editorContext, node));
@@ -113,6 +114,7 @@ public class BuildSource_JavaDependencyExternalJarInFolder_Editor extends Defaul
   private EditorCell createCollection_a8ta5y_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_a8ta5y_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_a8ta5y_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_a8ta5y_b0_0(editorContext, node));
     return editorCell;

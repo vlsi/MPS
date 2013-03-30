@@ -35,6 +35,7 @@ public class ReaderConfiguration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_vfprw_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_vfprw_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_vfprw_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_vfprw_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_vfprw_c0(editorContext, node));

@@ -25,6 +25,7 @@ public class NotExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_us38sw_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_us38sw_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_us38sw_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_us38sw_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_us38sw_c0(editorContext, node));

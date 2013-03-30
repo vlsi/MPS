@@ -30,6 +30,7 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_kawrig_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kawrig_a");
+    editorCell.setBig(true);
     if (renderingCondition_kawrig_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_kawrig_a0(editorContext, node));
     }
@@ -156,6 +157,7 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_kawrig_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kawrig_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_kawrig_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_kawrig_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_kawrig_c0_0(editorContext, node));

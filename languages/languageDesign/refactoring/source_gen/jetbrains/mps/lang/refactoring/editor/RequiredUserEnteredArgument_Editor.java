@@ -28,6 +28,7 @@ public class RequiredUserEnteredArgument_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7oop8x_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_7oop8x_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_7oop8x_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_7oop8x_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_7oop8x_c0(editorContext, node));

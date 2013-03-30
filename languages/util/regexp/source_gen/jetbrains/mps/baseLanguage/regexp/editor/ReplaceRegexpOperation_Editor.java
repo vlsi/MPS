@@ -49,6 +49,7 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ldr481_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ldr481_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_ldr481_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_ldr481_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ldr481_c0(editorContext, node));
@@ -242,6 +243,7 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ldr481_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ldr481_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_ldr481_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ldr481_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_ldr481_c0(editorContext, node));

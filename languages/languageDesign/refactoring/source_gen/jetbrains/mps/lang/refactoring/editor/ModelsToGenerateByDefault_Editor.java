@@ -17,6 +17,7 @@ public class ModelsToGenerateByDefault_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_cf4y26_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_cf4y26_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_cf4y26_a0(editorContext, node));
     return editorCell;
   }

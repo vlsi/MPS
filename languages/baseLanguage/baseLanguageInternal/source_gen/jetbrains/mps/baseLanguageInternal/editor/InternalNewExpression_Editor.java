@@ -41,6 +41,7 @@ public class InternalNewExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_svbh7s_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_svbh7s_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_svbh7s_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_svbh7s_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_svbh7s_c0(editorContext, node));
@@ -299,6 +300,7 @@ public class InternalNewExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_svbh7s_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createFlow(editorContext, node);
     editorCell.setCellId("Collection_svbh7s_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_svbh7s_a0_0(editorContext, node));
     return editorCell;
   }

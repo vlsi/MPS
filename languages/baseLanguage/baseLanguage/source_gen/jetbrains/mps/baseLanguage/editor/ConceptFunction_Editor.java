@@ -27,6 +27,7 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_qilpva_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new ConceptFunction_Component(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     return editorCell;
   }
 
@@ -59,6 +60,7 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
     }.invoke();
     EditorCell editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("Custom_qilpva_a");
+    editorCell.setBig(true);
     return editorCell;
   }
 }

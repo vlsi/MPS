@@ -40,6 +40,7 @@ public class ParameterWrapper_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
@@ -57,6 +58,7 @@ public class ParameterWrapper_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_z03n0x_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_z03n0x_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_z03n0x_a0(editorContext, node));
     return editorCell;
   }

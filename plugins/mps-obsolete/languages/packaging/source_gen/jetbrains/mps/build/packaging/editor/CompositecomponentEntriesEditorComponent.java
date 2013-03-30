@@ -53,7 +53,6 @@ public class CompositecomponentEntriesEditorComponent extends AbstractCellProvid
 
   private EditorCell createIndentCell_odw917_a0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_odw917_a0");
     return editorCell;
   }
 

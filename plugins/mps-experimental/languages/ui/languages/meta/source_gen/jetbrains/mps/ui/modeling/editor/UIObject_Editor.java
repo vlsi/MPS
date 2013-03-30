@@ -50,6 +50,7 @@ public class UIObject_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_c5f0a4_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_c5f0a4_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_c5f0a4_a0(editorContext, node));
     editorCell.addEditorCell(this.createIndentCell_c5f0a4_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_c5f0a4_c0(editorContext, node));
@@ -178,7 +179,6 @@ public class UIObject_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_c5f0a4_b0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_c5f0a4_b0");
     return editorCell;
   }
 
@@ -197,7 +197,6 @@ public class UIObject_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_c5f0a4_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_c5f0a4_a2a");
     return editorCell;
   }
 
@@ -238,7 +237,6 @@ public class UIObject_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_c5f0a4_d0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_c5f0a4_d0");
     return editorCell;
   }
 
@@ -259,7 +257,6 @@ public class UIObject_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_c5f0a4_a4a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_c5f0a4_a4a");
     return editorCell;
   }
 
@@ -396,7 +393,6 @@ public class UIObject_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_c5f0a4_f0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_c5f0a4_f0");
     return editorCell;
   }
 
@@ -414,7 +410,6 @@ public class UIObject_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_c5f0a4_a6a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_c5f0a4_a6a");
     return editorCell;
   }
 
@@ -495,7 +490,6 @@ public class UIObject_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_c5f0a4_h0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_c5f0a4_h0");
     return editorCell;
   }
 
@@ -513,7 +507,6 @@ public class UIObject_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_c5f0a4_a8a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_c5f0a4_a8a");
     return editorCell;
   }
 
@@ -594,7 +587,6 @@ public class UIObject_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_c5f0a4_j0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_c5f0a4_j0");
     return editorCell;
   }
 
@@ -612,7 +604,6 @@ public class UIObject_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_c5f0a4_a01a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_c5f0a4_a01a");
     return editorCell;
   }
 
@@ -693,7 +684,6 @@ public class UIObject_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_c5f0a4_l0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_c5f0a4_l0");
     return editorCell;
   }
 
@@ -711,7 +701,6 @@ public class UIObject_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_c5f0a4_a21a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_c5f0a4_a21a");
     return editorCell;
   }
 
@@ -792,7 +781,6 @@ public class UIObject_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_c5f0a4_n0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_c5f0a4_n0");
     return editorCell;
   }
 

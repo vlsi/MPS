@@ -34,6 +34,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_q3zjs1_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_q3zjs1_a");
+    editorCell.setBig(true);
     if (renderingCondition_q3zjs1_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_q3zjs1_a0(editorContext, node));
     }
@@ -258,6 +259,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_q3zjs1_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_q3zjs1_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_q3zjs1_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_q3zjs1_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_q3zjs1_c0(editorContext, node));

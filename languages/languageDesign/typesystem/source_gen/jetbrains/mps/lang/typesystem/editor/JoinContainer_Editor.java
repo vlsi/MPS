@@ -22,6 +22,7 @@ public class JoinContainer_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_csx0sa_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_csx0sa_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_csx0sa_a0(editorContext, node));
     editorCell.addEditorCell(this.createAttributedNodeCell_csx0sa_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_csx0sa_c0(editorContext, node));

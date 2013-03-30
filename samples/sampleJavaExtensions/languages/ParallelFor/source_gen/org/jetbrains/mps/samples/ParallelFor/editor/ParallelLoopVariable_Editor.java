@@ -30,6 +30,7 @@ public class ParallelLoopVariable_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_d89sde_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_d89sde_a");
+    editorCell.setBig(true);
     if (renderingCondition_d89sde_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_d89sde_a0(editorContext, node));
     }

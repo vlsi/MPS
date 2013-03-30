@@ -18,6 +18,7 @@ public class AllConstant_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_esxjkz_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_esxjkz_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_esxjkz_a0(editorContext, node));
     return editorCell;
   }

@@ -34,6 +34,7 @@ public class RefTestClass_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_cblid8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_cblid8_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_cblid8_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_cblid8_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_cblid8_c0(editorContext, node));

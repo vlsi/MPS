@@ -26,6 +26,7 @@ public class RefTestMethodCall_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_qc2qxw_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_qc2qxw_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_qc2qxw_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_qc2qxw_b0(editorContext, node));
     return editorCell;

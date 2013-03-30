@@ -34,6 +34,7 @@ public class BuildTextStringPart_Editor extends DefaultNodeEditor {
     } else {
       editorCell = this.createAlternation_zen9g6_a0_0(editorContext, node);
     }
+    editorCell.setBig(true);
     return editorCell;
   }
 

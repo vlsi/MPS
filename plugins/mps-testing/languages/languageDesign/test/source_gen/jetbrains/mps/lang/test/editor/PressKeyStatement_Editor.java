@@ -30,6 +30,7 @@ public class PressKeyStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_pkvqak_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_pkvqak_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_pkvqak_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_pkvqak_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_pkvqak_c0(editorContext, node));

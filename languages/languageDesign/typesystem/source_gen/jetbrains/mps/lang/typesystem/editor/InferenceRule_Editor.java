@@ -52,6 +52,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_robprv_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_robprv_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_robprv_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_robprv_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_robprv_c0(editorContext, node));
@@ -139,7 +140,6 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_robprv_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_robprv_a1a");
     return editorCell;
   }
 
@@ -295,7 +295,6 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_robprv_a4b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_robprv_a4b1a");
     return editorCell;
   }
 
@@ -342,6 +341,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_robprv_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_robprv_a_0");
+    editorCell.setBig(true);
     if (renderingCondition_robprv_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_robprv_a0_0(editorContext, node));
     }

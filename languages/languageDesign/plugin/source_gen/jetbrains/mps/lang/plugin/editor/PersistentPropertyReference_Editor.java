@@ -28,6 +28,7 @@ public class PersistentPropertyReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7qnrl2_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7qnrl2_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_7qnrl2_a0(editorContext, node));
     return editorCell;
   }

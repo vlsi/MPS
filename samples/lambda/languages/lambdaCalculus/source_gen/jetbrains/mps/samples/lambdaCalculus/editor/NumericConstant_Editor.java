@@ -20,6 +20,7 @@ public class NumericConstant_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_o1hcdp_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_o1hcdp_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_o1hcdp_a0(editorContext, node));
     return editorCell;
   }

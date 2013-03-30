@@ -28,6 +28,7 @@ public class ArrayCreator_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_qich58_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_qich58_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_qich58_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_qich58_b0(editorContext, node));
     return editorCell;

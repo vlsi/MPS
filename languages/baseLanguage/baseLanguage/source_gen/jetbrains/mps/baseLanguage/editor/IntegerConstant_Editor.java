@@ -25,6 +25,7 @@ public class IntegerConstant_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_value");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyNumericLiteral(style, editorCell);
     editorCell.getStyle().putAll(style);

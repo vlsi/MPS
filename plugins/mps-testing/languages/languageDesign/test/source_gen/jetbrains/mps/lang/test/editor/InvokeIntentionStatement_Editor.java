@@ -23,6 +23,7 @@ public class InvokeIntentionStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_vtollk_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_vtollk_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_vtollk_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_vtollk_b0(editorContext, node));
     return editorCell;

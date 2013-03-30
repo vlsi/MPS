@@ -21,6 +21,7 @@ public class HorizontalConstraint_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_23nmlh_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_23nmlh_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_23nmlh_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_23nmlh_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_23nmlh_c0(editorContext, node));

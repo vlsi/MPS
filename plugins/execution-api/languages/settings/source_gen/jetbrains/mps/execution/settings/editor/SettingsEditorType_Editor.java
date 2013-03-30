@@ -29,6 +29,7 @@ public class SettingsEditorType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_rxc56p_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_rxc56p_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_rxc56p_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_rxc56p_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_rxc56p_c0(editorContext, node));

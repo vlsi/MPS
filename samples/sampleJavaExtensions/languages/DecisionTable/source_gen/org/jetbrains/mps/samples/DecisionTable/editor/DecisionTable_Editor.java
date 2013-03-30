@@ -26,6 +26,7 @@ public class DecisionTable_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_h1ymql_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_h1ymql_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_h1ymql_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_h1ymql_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_h1ymql_c0(editorContext, node));

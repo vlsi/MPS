@@ -42,6 +42,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_y68cfu_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_y68cfu_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_y68cfu_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_y68cfu_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_y68cfu_c0(editorContext, node));

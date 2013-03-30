@@ -32,6 +32,7 @@ public class Jar_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_5vbi94_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_5vbi94_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_5vbi94_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_5vbi94_b0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_5vbi94_c0(editorContext, node));
@@ -106,7 +107,6 @@ public class Jar_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_5vbi94_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_5vbi94_a1a");
     return editorCell;
   }
 
@@ -136,6 +136,7 @@ public class Jar_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_5vbi94_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_5vbi94_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_5vbi94_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_5vbi94_b0(editorContext, node));
     return editorCell;

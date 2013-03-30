@@ -36,6 +36,7 @@ public class ParensRegexp_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_igyl5p_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_igyl5p_a");
+    editorCell.setBig(true);
     editorCell.addKeyMap(new RegexpSequenceByEnter());
     editorCell.addEditorCell(this.createConstant_igyl5p_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_igyl5p_b0(editorContext, node));

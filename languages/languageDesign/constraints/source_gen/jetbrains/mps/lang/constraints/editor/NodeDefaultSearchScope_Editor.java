@@ -25,6 +25,7 @@ public class NodeDefaultSearchScope_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_3o8vz3_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_3o8vz3_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_3o8vz3_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_3o8vz3_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_3o8vz3_c0(editorContext, node));

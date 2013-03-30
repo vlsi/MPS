@@ -24,6 +24,7 @@ public class BwfProjectPartStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_bye224_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_bye224_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_bye224_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_bye224_b0(editorContext, node));
     return editorCell;

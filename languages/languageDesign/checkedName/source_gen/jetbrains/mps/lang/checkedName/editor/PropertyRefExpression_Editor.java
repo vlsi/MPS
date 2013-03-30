@@ -33,6 +33,7 @@ public class PropertyRefExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_hd00ff_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_hd00ff_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_hd00ff_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_hd00ff_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_hd00ff_c0(editorContext, node));

@@ -16,6 +16,7 @@ public class BaseParameterReference_Editor extends DefaultNodeEditor {
   private EditorCell createError_yan2i4_a(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<no param>");
     editorCell.setCellId("Error_yan2i4_a");
+    editorCell.setBig(true);
     return editorCell;
   }
 }

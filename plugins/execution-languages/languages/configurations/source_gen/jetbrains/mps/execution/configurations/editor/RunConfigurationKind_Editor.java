@@ -26,6 +26,7 @@ public class RunConfigurationKind_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_85l3fq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_85l3fq_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_85l3fq_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_85l3fq_b0(editorContext, node));
     return editorCell;

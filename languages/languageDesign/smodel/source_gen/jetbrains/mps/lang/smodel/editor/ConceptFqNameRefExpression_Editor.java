@@ -30,6 +30,7 @@ public class ConceptFqNameRefExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_jtxdzz_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_jtxdzz_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_jtxdzz_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_jtxdzz_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_jtxdzz_c0(editorContext, node));

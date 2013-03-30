@@ -26,6 +26,7 @@ public class EventVariable_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_d70nsb_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_d70nsb_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_d70nsb_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_d70nsb_b0(editorContext, node));
     return editorCell;

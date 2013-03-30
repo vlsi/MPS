@@ -16,6 +16,7 @@ public class PropertyRefType_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_hq6ii_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "propRef");
     editorCell.setCellId("Constant_hq6ii_a");
+    editorCell.setBig(true);
     editorCell.setDefaultText("");
     return editorCell;
   }

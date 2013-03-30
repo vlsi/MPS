@@ -24,6 +24,7 @@ public class ErrorReportingRoot_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_lob802_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_lob802_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_lob802_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_lob802_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_lob802_c0(editorContext, node));

@@ -28,6 +28,7 @@ public class ActionReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ld3k57_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ld3k57_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_ld3k57_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_ld3k57_b0(editorContext, node));
     return editorCell;
@@ -125,6 +126,7 @@ public class ActionReference_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_ld3k57_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new BaseConcept_brokenRefs(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     return editorCell;
   }
 }

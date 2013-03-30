@@ -30,6 +30,7 @@ public class InspectorBlock_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_mb7jv_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_mb7jv_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_mb7jv_a0(editorContext, node));
     return editorCell;
   }
@@ -46,6 +47,7 @@ public class InspectorBlock_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_mb7jv_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_mb7jv_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_mb7jv_a0(editorContext, node));
     return editorCell;
   }

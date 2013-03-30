@@ -24,6 +24,7 @@ public class MoveNodesToNodeExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_tdn18r_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_tdn18r_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_tdn18r_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_tdn18r_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_tdn18r_c0(editorContext, node));

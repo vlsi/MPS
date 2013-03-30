@@ -26,6 +26,7 @@ public class BuildMps_ModuleDependencyExtendLanguage_Editor extends DefaultNodeE
   private EditorCell createCollection_r99sur_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_r99sur_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_r99sur_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_r99sur_b0(editorContext, node));
     return editorCell;

@@ -24,6 +24,7 @@ public class WhileLoopCommand_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_hz2vvf_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_hz2vvf_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_hz2vvf_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_hz2vvf_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_hz2vvf_c0(editorContext, node));

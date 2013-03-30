@@ -31,6 +31,7 @@ public class HereDocumentRedirection_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_l3f4id_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_l3f4id_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_l3f4id_a0(editorContext, node));
     if (renderingCondition_l3f4id_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_l3f4id_b0(editorContext, node));
@@ -120,6 +121,7 @@ public class HereDocumentRedirection_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_l3f4id_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_l3f4id_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_l3f4id_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_l3f4id_b0(editorContext, node));
     return editorCell;

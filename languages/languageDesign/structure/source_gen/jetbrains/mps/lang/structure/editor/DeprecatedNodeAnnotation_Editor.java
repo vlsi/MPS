@@ -35,6 +35,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_cv1jro_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_cv1jro_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_cv1jro_a0(editorContext, node));
     editorCell.addEditorCell(this.createAttributedNodeCell_cv1jro_b0(editorContext, node));
     return editorCell;
@@ -192,6 +193,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_cv1jro_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_cv1jro_a_0");
+    editorCell.setBig(true);
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createCollection_cv1jro_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_cv1jro_b0(editorContext, node));

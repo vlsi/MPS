@@ -25,6 +25,7 @@ public class NanoStatementList_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_9k6qx_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_9k6qx_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_9k6qx_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_9k6qx_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_9k6qx_c0(editorContext, node));

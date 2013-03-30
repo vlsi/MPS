@@ -27,6 +27,7 @@ public class StartAndWaitOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1q86sn_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_1q86sn_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_1q86sn_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_1q86sn_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1q86sn_c0(editorContext, node));

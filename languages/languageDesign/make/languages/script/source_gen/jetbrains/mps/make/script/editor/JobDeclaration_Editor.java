@@ -38,6 +38,7 @@ public class JobDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_e0yr07_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_e0yr07_a");
+    editorCell.setBig(true);
     if (renderingCondition_e0yr07_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_e0yr07_a0(editorContext, node));
     }
@@ -101,7 +102,6 @@ public class JobDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_e0yr07_a0b0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_e0yr07_a0b0");
     return editorCell;
   }
 
@@ -223,7 +223,6 @@ public class JobDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_e0yr07_a0e0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_e0yr07_a0e0");
     return editorCell;
   }
 

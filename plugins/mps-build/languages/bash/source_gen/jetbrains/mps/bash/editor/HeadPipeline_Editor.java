@@ -27,6 +27,7 @@ public class HeadPipeline_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_zb0qmt_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_zb0qmt_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_zb0qmt_a0(editorContext, node));
     if (renderingCondition_zb0qmt_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_zb0qmt_b0(editorContext, node));

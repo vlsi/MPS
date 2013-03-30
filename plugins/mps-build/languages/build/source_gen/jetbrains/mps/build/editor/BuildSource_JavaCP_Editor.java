@@ -33,6 +33,7 @@ public class BuildSource_JavaCP_Editor extends DefaultNodeEditor {
     }.invoke();
     EditorCell editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("Custom_bjjsvn_a");
+    editorCell.setBig(true);
     return editorCell;
   }
 }

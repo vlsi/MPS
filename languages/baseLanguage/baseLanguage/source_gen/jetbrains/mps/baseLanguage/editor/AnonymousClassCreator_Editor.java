@@ -22,6 +22,7 @@ public class AnonymousClassCreator_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_csbhj9_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_csbhj9_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_csbhj9_a0(editorContext, node));
     return editorCell;
   }

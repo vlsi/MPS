@@ -44,6 +44,7 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_u66lwb_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_u66lwb_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_u66lwb_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_u66lwb_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_u66lwb_c0(editorContext, node));
@@ -264,6 +265,7 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_u66lwb_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_u66lwb_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_u66lwb_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_u66lwb_b0(editorContext, node));
     return editorCell;

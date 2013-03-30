@@ -23,6 +23,7 @@ public class CellMenuPart_ReferentPrimary_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_rsvjao_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_rsvjao_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_rsvjao_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_rsvjao_b0(editorContext, node));
     return editorCell;

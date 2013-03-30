@@ -23,6 +23,7 @@ public class BuildSource_JavaResources_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_3riti7_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_3riti7_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_3riti7_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_3riti7_b0(editorContext, node));
     return editorCell;

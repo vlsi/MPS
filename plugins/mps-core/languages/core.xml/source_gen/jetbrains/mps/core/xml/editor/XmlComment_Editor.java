@@ -32,6 +32,7 @@ public class XmlComment_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_5fx40y_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_5fx40y_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_5fx40y_a0(editorContext, node));
     editorCell.addEditorCell(this.createAlternation_5fx40y_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5fx40y_c0(editorContext, node));

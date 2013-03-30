@@ -42,6 +42,7 @@ public class BuildInputFolders_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_tclrnl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_tclrnl_a");
+    editorCell.setBig(true);
     if (renderingCondition_tclrnl_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createComponent_tclrnl_a0(editorContext, node));
     }

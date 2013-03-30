@@ -29,6 +29,7 @@ public class ConstantStringAppendPart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_tc2pit_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_tc2pit_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_tc2pit_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_tc2pit_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_tc2pit_c0(editorContext, node));
@@ -81,6 +82,7 @@ public class ConstantStringAppendPart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_tc2pit_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_tc2pit_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_tc2pit_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_tc2pit_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_tc2pit_c0(editorContext, node));

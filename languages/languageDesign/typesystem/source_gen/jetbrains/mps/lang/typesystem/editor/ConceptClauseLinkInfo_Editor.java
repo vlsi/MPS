@@ -31,6 +31,7 @@ public class ConceptClauseLinkInfo_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_bap4zq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_bap4zq_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_bap4zq_a0(editorContext, node));
     if (renderingCondition_bap4zq_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_bap4zq_b0(editorContext, node));

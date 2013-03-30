@@ -32,6 +32,7 @@ public class PreVariableExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_f3l2sa_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_f3l2sa_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_f3l2sa_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_f3l2sa_b0(editorContext, node));
     return editorCell;

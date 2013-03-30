@@ -25,6 +25,7 @@ public class TemplateDeclarationReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_krqspc_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_krqspc_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_krqspc_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_krqspc_b0(editorContext, node));
     return editorCell;

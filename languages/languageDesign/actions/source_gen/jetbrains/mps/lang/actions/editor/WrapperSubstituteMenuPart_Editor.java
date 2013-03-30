@@ -30,6 +30,7 @@ public class WrapperSubstituteMenuPart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_b2q5d2_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_b2q5d2_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_b2q5d2_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_b2q5d2_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_b2q5d2_c0(editorContext, node));
@@ -125,7 +126,6 @@ public class WrapperSubstituteMenuPart_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_b2q5d2_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_b2q5d2_a1a");
     return editorCell;
   }
 
@@ -163,7 +163,6 @@ public class WrapperSubstituteMenuPart_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_b2q5d2_a1b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_b2q5d2_a1b1a");
     return editorCell;
   }
 
@@ -197,7 +196,6 @@ public class WrapperSubstituteMenuPart_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_b2q5d2_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_b2q5d2_a2a");
     return editorCell;
   }
 
@@ -267,7 +265,6 @@ public class WrapperSubstituteMenuPart_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_b2q5d2_a1b2a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_b2q5d2_a1b2a");
     return editorCell;
   }
 
@@ -301,7 +298,6 @@ public class WrapperSubstituteMenuPart_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_b2q5d2_a3a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_b2q5d2_a3a");
     return editorCell;
   }
 
@@ -349,7 +345,6 @@ public class WrapperSubstituteMenuPart_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_b2q5d2_a1b3a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_b2q5d2_a1b3a");
     return editorCell;
   }
 

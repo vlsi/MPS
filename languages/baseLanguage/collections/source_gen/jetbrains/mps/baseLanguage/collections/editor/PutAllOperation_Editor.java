@@ -26,6 +26,7 @@ public class PutAllOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_s4h87v_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_s4h87v_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_s4h87v_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_s4h87v_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_s4h87v_c0(editorContext, node));

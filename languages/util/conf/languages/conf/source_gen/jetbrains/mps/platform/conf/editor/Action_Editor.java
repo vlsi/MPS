@@ -41,6 +41,7 @@ public class Action_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_8bscln_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_8bscln_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_8bscln_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_8bscln_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_8bscln_c0(editorContext, node));
@@ -95,7 +96,6 @@ public class Action_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_8bscln_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_8bscln_a1a");
     return editorCell;
   }
 
@@ -171,7 +171,6 @@ public class Action_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_8bscln_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_8bscln_a2a");
     return editorCell;
   }
 
@@ -250,7 +249,6 @@ public class Action_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_8bscln_a3a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_8bscln_a3a");
     return editorCell;
   }
 
@@ -315,6 +313,7 @@ public class Action_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_8bscln_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new BaseConcept_brokenRefs(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     return editorCell;
   }
 }

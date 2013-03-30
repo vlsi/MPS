@@ -33,6 +33,7 @@ public class TypesystemQuickFix_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_la7hkt_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_la7hkt_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_la7hkt_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_la7hkt_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_la7hkt_c0(editorContext, node));

@@ -24,6 +24,7 @@ public class AspectParameterDecl_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_3541ko_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_3541ko_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_3541ko_a0(editorContext, node));
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_3541ko_b0(editorContext, node));
     return editorCell;

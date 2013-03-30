@@ -24,6 +24,7 @@ public class EntryPoint_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_qle4av_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_qle4av_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_qle4av_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_qle4av_b0(editorContext, node));
     return editorCell;

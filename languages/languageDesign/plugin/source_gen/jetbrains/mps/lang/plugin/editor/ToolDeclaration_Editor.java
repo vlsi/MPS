@@ -47,6 +47,7 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_du6pr9_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_du6pr9_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
@@ -140,7 +141,6 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_du6pr9_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_du6pr9_a1a");
     return editorCell;
   }
 

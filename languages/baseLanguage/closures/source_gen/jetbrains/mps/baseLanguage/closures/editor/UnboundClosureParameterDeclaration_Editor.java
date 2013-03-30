@@ -21,6 +21,7 @@ public class UnboundClosureParameterDeclaration_Editor extends DefaultNodeEditor
   private EditorCell createCollection_iex8ea_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_iex8ea_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_iex8ea_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_iex8ea_b0(editorContext, node));
     return editorCell;

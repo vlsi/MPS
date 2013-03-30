@@ -36,6 +36,7 @@ public class BuildSource_JavaLibrary_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_kr3uwk_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kr3uwk_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_kr3uwk_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_kr3uwk_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_kr3uwk_c0(editorContext, node));

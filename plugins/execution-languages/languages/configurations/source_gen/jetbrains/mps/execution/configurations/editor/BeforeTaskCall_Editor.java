@@ -36,6 +36,7 @@ public class BeforeTaskCall_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_5zozkl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_5zozkl_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_5zozkl_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5zozkl_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_5zozkl_c0(editorContext, node));

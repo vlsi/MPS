@@ -26,6 +26,7 @@ public class RemoveSTByConditionPart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_9b05zh_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_9b05zh_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_9b05zh_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_9b05zh_b0(editorContext, node));
     return editorCell;
@@ -64,7 +65,6 @@ public class RemoveSTByConditionPart_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_9b05zh_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_9b05zh_a1a");
     return editorCell;
   }
 

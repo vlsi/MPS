@@ -45,6 +45,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_j4vm40_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_j4vm40_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, true);
     editorCell.getStyle().putAll(style);
@@ -406,6 +407,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_j4vm40_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_j4vm40_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_j4vm40_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_j4vm40_b0(editorContext, node));
     return editorCell;

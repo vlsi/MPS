@@ -25,6 +25,7 @@ public class PrimitiveClassExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_bw5rf5_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_bw5rf5_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_bw5rf5_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_bw5rf5_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_bw5rf5_c0(editorContext, node));

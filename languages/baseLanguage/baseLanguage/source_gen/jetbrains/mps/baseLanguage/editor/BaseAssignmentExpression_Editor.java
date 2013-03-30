@@ -40,6 +40,7 @@ public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_89tgy3_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_89tgy3_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, true);
     editorCell.getStyle().putAll(style);

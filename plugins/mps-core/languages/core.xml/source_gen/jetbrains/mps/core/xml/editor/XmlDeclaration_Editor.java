@@ -26,6 +26,7 @@ public class XmlDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_axvdb8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_axvdb8_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createAlternation_axvdb8_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_axvdb8_b0(editorContext, node));
     editorCell.addEditorCell(this.createAlternation_axvdb8_c0(editorContext, node));

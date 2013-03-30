@@ -26,6 +26,7 @@ public class BuildMps_IdeaPluginVendor_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_rraq6m_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_rraq6m_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_rraq6m_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_rraq6m_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_rraq6m_c0(editorContext, node));

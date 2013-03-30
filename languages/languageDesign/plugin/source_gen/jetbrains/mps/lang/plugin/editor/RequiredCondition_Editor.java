@@ -19,6 +19,7 @@ public class RequiredCondition_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_ud5w94_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "required");
     editorCell.setCellId("Constant_ud5w94_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);

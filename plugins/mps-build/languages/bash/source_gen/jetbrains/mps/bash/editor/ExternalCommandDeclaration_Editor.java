@@ -32,6 +32,7 @@ public class ExternalCommandDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_tf8515_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_tf8515_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_tf8515_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_tf8515_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_tf8515_c0(editorContext, node));

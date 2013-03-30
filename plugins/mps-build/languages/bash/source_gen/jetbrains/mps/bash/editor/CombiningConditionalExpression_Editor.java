@@ -31,6 +31,7 @@ public class CombiningConditionalExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_pg3t11_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_pg3t11_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_pg3t11_a0(editorContext, node));
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_pg3t11_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_pg3t11_c0(editorContext, node));

@@ -23,6 +23,7 @@ public class BuildVariableMacroInitWithDate_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_idjuyr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_idjuyr_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_idjuyr_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_idjuyr_b0(editorContext, node));
     return editorCell;

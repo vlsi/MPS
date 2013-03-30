@@ -16,6 +16,7 @@ public class BaseVariableDocReference_Editor extends DefaultNodeEditor {
   private EditorCell createError_4nerly_a(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<no variable reference>");
     editorCell.setCellId("Error_4nerly_a");
+    editorCell.setBig(true);
     return editorCell;
   }
 }

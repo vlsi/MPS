@@ -27,6 +27,7 @@ public class XmlFile_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_zencf0_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_zencf0_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_zencf0_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_zencf0_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_zencf0_c0(editorContext, node));

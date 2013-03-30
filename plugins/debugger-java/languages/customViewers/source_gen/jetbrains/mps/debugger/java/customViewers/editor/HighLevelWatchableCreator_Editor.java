@@ -26,6 +26,7 @@ public class HighLevelWatchableCreator_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_h88a5f_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_h88a5f_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_h88a5f_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_h88a5f_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_h88a5f_c0(editorContext, node));

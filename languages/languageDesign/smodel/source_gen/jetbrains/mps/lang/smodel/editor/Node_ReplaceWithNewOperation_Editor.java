@@ -32,6 +32,7 @@ public class Node_ReplaceWithNewOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_jpekck_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_jpekck_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_jpekck_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_jpekck_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_jpekck_c0(editorContext, node));

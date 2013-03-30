@@ -39,6 +39,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
   private EditorCell createCollection_185r4c_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_185r4c_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, true);
     editorCell.getStyle().putAll(style);
@@ -221,7 +222,6 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
 
   private EditorCell createIndentCell_185r4c_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_185r4c_a1a");
     return editorCell;
   }
 
@@ -274,7 +274,6 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
 
   private EditorCell createIndentCell_185r4c_a1b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_185r4c_a1b1a");
     return editorCell;
   }
 
@@ -335,7 +334,6 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
 
   private EditorCell createIndentCell_185r4c_a4b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_185r4c_a4b1a");
     return editorCell;
   }
 
@@ -410,7 +408,6 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
 
   private EditorCell createIndentCell_185r4c_a5b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_185r4c_a5b1a");
     return editorCell;
   }
 
@@ -438,7 +435,6 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
 
   private EditorCell createIndentCell_185r4c_a6b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_185r4c_a6b1a");
     return editorCell;
   }
 
@@ -499,7 +495,6 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
 
   private EditorCell createIndentCell_185r4c_a9b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_185r4c_a9b1a");
     return editorCell;
   }
 

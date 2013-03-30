@@ -21,6 +21,7 @@ public class ConditionalOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_rh1v5h_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_rh1v5h_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_rh1v5h_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_rh1v5h_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_rh1v5h_c0(editorContext, node));

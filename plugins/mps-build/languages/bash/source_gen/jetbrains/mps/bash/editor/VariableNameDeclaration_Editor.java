@@ -27,6 +27,7 @@ public class VariableNameDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     BashLanguageStyle_StyleSheet.applyVariable(style, editorCell);
     style.set(StyleAttributes.DEFAULT_CARET_POSITION, CaretPosition.LAST);

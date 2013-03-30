@@ -26,6 +26,7 @@ public class AbstractMoveExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_vcboy8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_vcboy8_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_vcboy8_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_vcboy8_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_vcboy8_c0(editorContext, node));

@@ -21,6 +21,7 @@ public class FromOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_cr5487_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_cr5487_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_cr5487_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_cr5487_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_cr5487_c0(editorContext, node));

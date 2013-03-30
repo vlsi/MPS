@@ -54,7 +54,6 @@ public class BeforeTasksComponent extends AbstractCellProvider {
 
   private EditorCell createIndentCell_3w3ux3_a0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_3w3ux3_a0");
     return editorCell;
   }
 
@@ -89,7 +88,6 @@ public class BeforeTasksComponent extends AbstractCellProvider {
 
   private EditorCell createIndentCell_3w3ux3_a1b0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_3w3ux3_a1b0");
     return editorCell;
   }
 

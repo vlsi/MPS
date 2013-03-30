@@ -41,6 +41,7 @@ public class Antcall_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_xq8xtf_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_xq8xtf_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_xq8xtf_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_xq8xtf_b0(editorContext, node));
     return editorCell;
@@ -201,7 +202,6 @@ public class Antcall_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_xq8xtf_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_xq8xtf_a1a");
     return editorCell;
   }
 
@@ -270,6 +270,7 @@ public class Antcall_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_xq8xtf_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_xq8xtf_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_xq8xtf_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_xq8xtf_b0_0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_xq8xtf_c0(editorContext, node));

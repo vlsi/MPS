@@ -19,6 +19,7 @@ public class EditableModel_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_x3yznn_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "editable");
     editorCell.setCellId("Constant_x3yznn_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);

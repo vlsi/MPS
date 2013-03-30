@@ -33,6 +33,7 @@ public class MPSLiteConceptDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_b0d5i6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_b0d5i6_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_b0d5i6_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_b0d5i6_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_b0d5i6_c0(editorContext, node));
@@ -152,7 +153,6 @@ public class MPSLiteConceptDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_b0d5i6_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_b0d5i6_a1a");
     return editorCell;
   }
 
@@ -186,6 +186,7 @@ public class MPSLiteConceptDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_b0d5i6_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_b0d5i6_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_b0d5i6_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_b0d5i6_b0_0(editorContext, node));
     return editorCell;

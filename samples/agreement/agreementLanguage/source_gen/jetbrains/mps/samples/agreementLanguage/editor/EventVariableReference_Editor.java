@@ -28,6 +28,7 @@ public class EventVariableReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_w32ae3_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_w32ae3_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_w32ae3_a0(editorContext, node));
     return editorCell;
   }

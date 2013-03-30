@@ -30,6 +30,7 @@ public class VisitParameterDeclarationList_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_4m7tk9_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_4m7tk9_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_4m7tk9_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_4m7tk9_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4m7tk9_c0(editorContext, node));

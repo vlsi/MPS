@@ -22,6 +22,7 @@ public class BinaryExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_uefsp_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_uefsp_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_uefsp_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_uefsp_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_uefsp_c0(editorContext, node));

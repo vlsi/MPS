@@ -35,6 +35,7 @@ public class Generator_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_cqvux8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_cqvux8_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_cqvux8_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_cqvux8_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_cqvux8_c0(editorContext, node));

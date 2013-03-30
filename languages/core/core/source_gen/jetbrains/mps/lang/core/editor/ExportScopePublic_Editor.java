@@ -23,6 +23,7 @@ public class ExportScopePublic_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_pjxymp_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_pjxymp_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_pjxymp_a0(editorContext, node));
     editorCell.addEditorCell(this.createAttributedNodeCell_pjxymp_b0(editorContext, node));
     return editorCell;

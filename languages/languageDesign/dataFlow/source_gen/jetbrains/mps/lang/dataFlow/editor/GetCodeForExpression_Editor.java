@@ -25,6 +25,7 @@ public class GetCodeForExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_970zkn_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_970zkn_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_970zkn_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_970zkn_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_970zkn_c0(editorContext, node));

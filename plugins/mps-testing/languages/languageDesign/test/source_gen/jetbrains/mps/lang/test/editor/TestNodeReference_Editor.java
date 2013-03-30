@@ -24,6 +24,7 @@ public class TestNodeReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_tf79mi_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_tf79mi_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_tf79mi_a0(editorContext, node));
     return editorCell;
   }

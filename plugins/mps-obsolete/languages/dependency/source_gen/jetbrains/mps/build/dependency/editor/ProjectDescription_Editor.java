@@ -33,6 +33,7 @@ public class ProjectDescription_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_pz3u9w_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_pz3u9w_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_pz3u9w_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_pz3u9w_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_pz3u9w_c0(editorContext, node));
@@ -165,7 +166,6 @@ public class ProjectDescription_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_pz3u9w_a3a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_pz3u9w_a3a");
     return editorCell;
   }
 
@@ -249,7 +249,6 @@ public class ProjectDescription_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_pz3u9w_a4a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_pz3u9w_a4a");
     return editorCell;
   }
 
@@ -333,7 +332,6 @@ public class ProjectDescription_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_pz3u9w_a5a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_pz3u9w_a5a");
     return editorCell;
   }
 

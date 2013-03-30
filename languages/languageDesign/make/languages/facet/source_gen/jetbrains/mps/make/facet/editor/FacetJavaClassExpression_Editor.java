@@ -28,6 +28,7 @@ public class FacetJavaClassExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_u5bg2i_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_u5bg2i_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_u5bg2i_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_u5bg2i_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_u5bg2i_c0(editorContext, node));

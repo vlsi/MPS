@@ -25,6 +25,7 @@ public class LinkList_InsertChildFirstOperation_Editor extends DefaultNodeEditor
   private EditorCell createCollection_eq3w7w_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_eq3w7w_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_eq3w7w_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_eq3w7w_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_eq3w7w_c0(editorContext, node));

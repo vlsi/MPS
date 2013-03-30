@@ -22,6 +22,7 @@ public class EventProperty_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_tj1da_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_tj1da_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_tj1da_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_tj1da_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_tj1da_c0(editorContext, node));

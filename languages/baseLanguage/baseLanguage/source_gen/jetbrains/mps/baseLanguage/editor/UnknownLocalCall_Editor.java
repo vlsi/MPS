@@ -25,6 +25,7 @@ public class UnknownLocalCall_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_cj1ely_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_cj1ely_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createProperty_cj1ely_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_cj1ely_b0(editorContext, node));
     return editorCell;

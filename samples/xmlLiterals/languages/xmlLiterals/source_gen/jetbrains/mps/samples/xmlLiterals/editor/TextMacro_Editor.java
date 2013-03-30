@@ -21,6 +21,7 @@ public class TextMacro_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_sc1nl2_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_sc1nl2_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_sc1nl2_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_sc1nl2_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_sc1nl2_c0(editorContext, node));

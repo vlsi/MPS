@@ -32,6 +32,7 @@ public class FoldRightOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_bapds0_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_bapds0_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_bapds0_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_bapds0_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_bapds0_c0(editorContext, node));

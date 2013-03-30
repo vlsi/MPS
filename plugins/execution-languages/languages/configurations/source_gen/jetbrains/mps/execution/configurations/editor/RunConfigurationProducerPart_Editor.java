@@ -28,6 +28,7 @@ public class RunConfigurationProducerPart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_cuaozy_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_cuaozy_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_cuaozy_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_cuaozy_b0(editorContext, node));
     return editorCell;
@@ -91,7 +92,6 @@ public class RunConfigurationProducerPart_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_cuaozy_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_cuaozy_a1a");
     return editorCell;
   }
 

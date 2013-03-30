@@ -24,6 +24,7 @@ public class Constant_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_b5vi9g_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_b5vi9g_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_b5vi9g_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_b5vi9g_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_b5vi9g_c0(editorContext, node));

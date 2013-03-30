@@ -29,6 +29,7 @@ public class FloatStyleClassItem_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_pvt1sb_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_pvt1sb_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_pvt1sb_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_pvt1sb_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_pvt1sb_c0(editorContext, node));

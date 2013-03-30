@@ -31,6 +31,7 @@ public class BuildMps_ModuleJavaSource_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_uf20rn_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_uf20rn_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_uf20rn_a0(editorContext, node));
     if (renderingCondition_uf20rn_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_uf20rn_b0(editorContext, node));
@@ -72,6 +73,7 @@ public class BuildMps_ModuleJavaSource_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_uf20rn_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_uf20rn_a_0");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_uf20rn_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_uf20rn_b0(editorContext, node));
     return editorCell;

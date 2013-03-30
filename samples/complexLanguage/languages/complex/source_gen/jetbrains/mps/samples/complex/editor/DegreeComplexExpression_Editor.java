@@ -21,6 +21,7 @@ public class DegreeComplexExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_q607mw_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_q607mw_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_q607mw_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_q607mw_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_q607mw_c0(editorContext, node));

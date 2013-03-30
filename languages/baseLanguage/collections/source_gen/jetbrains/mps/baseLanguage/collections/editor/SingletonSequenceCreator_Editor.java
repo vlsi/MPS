@@ -27,6 +27,7 @@ public class SingletonSequenceCreator_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_hxtcae_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_hxtcae_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_hxtcae_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_hxtcae_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_hxtcae_c0(editorContext, node));

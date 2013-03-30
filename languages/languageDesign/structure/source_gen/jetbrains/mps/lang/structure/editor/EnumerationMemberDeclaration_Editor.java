@@ -31,6 +31,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_n0n6wp_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_n0n6wp_a");
+    editorCell.setBig(true);
     if (renderingCondition_n0n6wp_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_n0n6wp_a0(editorContext, node));
     }

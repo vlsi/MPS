@@ -28,6 +28,7 @@ public class ClosureParameterReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7sr5h3_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7sr5h3_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_7sr5h3_a0(editorContext, node));
     return editorCell;
   }

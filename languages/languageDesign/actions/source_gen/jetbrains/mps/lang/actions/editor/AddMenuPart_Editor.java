@@ -38,6 +38,7 @@ public class AddMenuPart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_yjtbks_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_yjtbks_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_yjtbks_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_yjtbks_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_yjtbks_c0(editorContext, node));
@@ -165,7 +166,6 @@ public class AddMenuPart_Editor extends DefaultNodeEditor {
 
   private EditorCell createIndentCell_yjtbks_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    editorCell.setCellId("Indent_yjtbks_a1a");
     return editorCell;
   }
 

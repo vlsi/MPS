@@ -26,6 +26,7 @@ public class VisitBlock_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_a6hulh_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_a6hulh_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createCollection_a6hulh_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_a6hulh_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_a6hulh_c0(editorContext, node));

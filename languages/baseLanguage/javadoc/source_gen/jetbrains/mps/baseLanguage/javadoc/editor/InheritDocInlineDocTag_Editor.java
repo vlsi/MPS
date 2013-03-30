@@ -19,6 +19,7 @@ public class InheritDocInlineDocTag_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_ru37wa_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AliasEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     DocumentationCommentStyleSheet_StyleSheet.applyCommentTag(style, editorCell);
     editorCell.getStyle().putAll(style);

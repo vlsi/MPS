@@ -36,6 +36,7 @@ public class InvokeFunctionExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_m4pbm_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_m4pbm_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_m4pbm_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_m4pbm_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_m4pbm_c0(editorContext, node));

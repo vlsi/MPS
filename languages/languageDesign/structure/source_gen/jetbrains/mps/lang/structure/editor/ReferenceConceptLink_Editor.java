@@ -28,6 +28,7 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_3r32uy_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_3r32uy_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefCell_3r32uy_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_3r32uy_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_3r32uy_c0(editorContext, node));

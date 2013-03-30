@@ -16,6 +16,7 @@ public class Node_GetDescendantsOperation_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_6ji6ch_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new ReplaceableAliasAndParms_Comp(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    editorCell.setBig(true);
     return editorCell;
   }
 }

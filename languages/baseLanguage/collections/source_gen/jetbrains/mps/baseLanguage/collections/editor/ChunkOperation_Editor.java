@@ -30,6 +30,7 @@ public class ChunkOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_fc60h5_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_fc60h5_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_fc60h5_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_fc60h5_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_fc60h5_c0(editorContext, node));

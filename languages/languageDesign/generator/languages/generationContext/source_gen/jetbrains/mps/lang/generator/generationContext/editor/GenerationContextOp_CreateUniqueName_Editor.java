@@ -24,6 +24,7 @@ public class GenerationContextOp_CreateUniqueName_Editor extends DefaultNodeEdit
   private EditorCell createCollection_q7sw6e_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_q7sw6e_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_q7sw6e_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_q7sw6e_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_q7sw6e_c0(editorContext, node));

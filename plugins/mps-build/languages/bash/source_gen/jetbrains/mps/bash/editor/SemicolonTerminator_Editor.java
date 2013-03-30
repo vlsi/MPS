@@ -19,6 +19,7 @@ public class SemicolonTerminator_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_v10qqy_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_v10qqy_a");
+    editorCell.setBig(true);
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, true);
     style.set(StyleAttributes.EDITABLE, true);

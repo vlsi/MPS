@@ -30,6 +30,7 @@ public class JoinType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_biwp50_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_biwp50_a");
+    editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_biwp50_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_biwp50_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_biwp50_c0(editorContext, node));
