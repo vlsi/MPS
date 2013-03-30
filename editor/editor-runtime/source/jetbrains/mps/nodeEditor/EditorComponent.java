@@ -111,7 +111,6 @@ import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.EventsCollector;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.smodel.event.EventUtil;
@@ -1007,20 +1006,21 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        setReadOnly(node == null || node.getModel() == null || SModelOperations.isReadOnly(node.getModel()));
-
         disposeTypeCheckingContext();
         myNode = node;
         if (myNode != null) {
           myNodePointer = new jetbrains.mps.smodel.SNodePointer(myNode);
           myVirtualFile = !myNoVirtualFile ? MPSNodesVirtualFileSystem.getInstance().getFileFor(node) : null;
           setOperationContext(operationContext);
-          setEditorContext(new EditorContext(EditorComponent.this, node.getModel(), operationContext));
+          SModel model = node.getModel();
+          setEditorContext(new EditorContext(EditorComponent.this, model, operationContext));
+          setReadOnly(model == null || model.isReadOnly());
         } else {
           myNodePointer = null;
           myVirtualFile = null;
           setOperationContext(null);
           setEditorContext(new EditorContext(EditorComponent.this, null, null));
+          setReadOnly(true);
         }
         getTypeCheckingContext();
 

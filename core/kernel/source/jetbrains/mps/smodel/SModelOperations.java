@@ -53,7 +53,7 @@ public class SModelOperations {
   }
 
   public static boolean isReadOnly(SModel model) {
-    return !(model instanceof EditableSModel) || ((EditableSModel) model).isReadOnly();
+    return model.isReadOnly();
   }
 
   public static void validateLanguagesAndImports(SModel model, boolean respectModulesScopes, boolean firstVersion) {
