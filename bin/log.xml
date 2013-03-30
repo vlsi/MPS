@@ -52,7 +52,7 @@
         </layout>
     </appender>
 
-    <appender name="MPS" class="jetbrains.mps.logging.CompositeAppender"/>
+    <appender name="MPS" class="jetbrains.mps.logging.log4j.CompositeAppender"/>
 
     <category name="jetbrains.mps.vcs" additivity="false">
         <priority value="DEBUG"/>

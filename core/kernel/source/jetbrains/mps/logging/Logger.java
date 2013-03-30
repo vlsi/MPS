@@ -15,17 +15,32 @@
  */
 package jetbrains.mps.logging;
 
+import jetbrains.mps.logging.log4j.Log4jEngine;
 import jetbrains.mps.smodel.ModelAccess;
 
 public abstract class Logger {
-  public interface Factory {
+  public interface Engine {
     Logger getLogger(String name);
+
+    void addHandler(ILoggingHandler handler);
+
+    void removeHandler(ILoggingHandler handler);
+
+    String setThreshold(String threshold);
   }
 
-  private static Factory ourFactory;
+  private static volatile Engine ourEngine;
 
-  public static void setFactory(Factory factory) {
-    ourFactory = factory;
+  static {
+    ourEngine = new Log4jEngine();
+  }
+
+  public static void setEngine(Engine engine) {
+    ourEngine = engine;
+  }
+
+  public static Engine getEngine() {
+    return ourEngine;
   }
 
   public static synchronized Logger getLogger(Class cls) {
@@ -33,14 +48,22 @@ public abstract class Logger {
   }
 
   public static synchronized Logger getLogger(String name) {
-    return ourFactory.getLogger(name);
+    return ourEngine.getLogger(name);
+  }
+
+  public static void addLoggingHandler(ILoggingHandler lh) {
+    getEngine().addHandler(lh);
+  }
+
+  public static void removeLoggingHandler(ILoggingHandler lh) {
+    getEngine().removeHandler(lh);
   }
 
   /**
    * @param "OFF", "FATAL", "ERROR", "WARN" ...
    */
-  public static String setThreshold(String threshhold) {
-    return LogUtil.setThreshold(threshhold);
+  public static String setThreshold(String threshold) {
+    return getEngine().setThreshold(threshold);
   }
 
   //--------------------------

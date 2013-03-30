@@ -16,7 +16,6 @@
 package jetbrains.mps.ide.messages;
 
 import com.intellij.openapi.components.ProjectComponent;
-import jetbrains.mps.logging.Handlers;
 import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.logging.Logger;
@@ -64,12 +63,12 @@ public class MessageViewLoggingHandler implements ILoggingHandler, ProjectCompon
 
   @Override
   public void projectOpened() {
-    Handlers.addLoggingHandler(this);
+    Logger.getEngine().addHandler(this);
   }
 
   @Override
   public void projectClosed() {
-    Handlers.removeLoggingHandler(this);
+    Logger.getEngine().removeHandler(this);
   }
 
   @Override

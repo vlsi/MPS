@@ -32,8 +32,8 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
     <classNode dependClassName="jetbrains.mps.library.LibraryInitializer" />
     <classNode dependClassName="jetbrains.mps.library.contributor.LibraryContributor" />
-    <classNode dependClassName="jetbrains.mps.logging.Handlers" />
     <classNode dependClassName="jetbrains.mps.logging.ILoggingHandler" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.project.PathMacros" />
     <classNode dependClassName="jetbrains.mps.project.PathMacrosProvider" />
     <classNode dependClassName="jetbrains.mps.project.Project" />

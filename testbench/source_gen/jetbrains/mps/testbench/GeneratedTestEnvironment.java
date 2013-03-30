@@ -9,7 +9,6 @@ import java.util.Collections;
 import org.apache.log4j.Level;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
-import jetbrains.mps.logging.Handlers;
 import jetbrains.mps.ide.IdeMain;
 import com.intellij.openapi.vfs.newvfs.persistent.FSRecords;
 import com.intellij.idea.IdeaTestApplication;
@@ -25,7 +24,7 @@ public class GeneratedTestEnvironment extends Environment {
   public void setup() {
     BasicConfigurator.configure();
     Logger.getRootLogger().setLevel(myLogLevel);
-    Handlers.addLoggingHandler(myMessageHandler);
+    jetbrains.mps.logging.Logger.addLoggingHandler(myMessageHandler);
     IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
 
     setProperties(true);

@@ -13,12 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.logging;
+package jetbrains.mps.logging.log4j;
+
+import jetbrains.mps.logging.ILoggingHandler;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.logging.Logger.Engine;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class Handlers {
+public class Log4jEngine implements Engine {
   private static final Map<ILoggingHandler, HandlerAppender> ourHandlers = new HashMap<ILoggingHandler, HandlerAppender>();
 
   public static synchronized void addLoggingHandler(ILoggingHandler handler) {
@@ -30,5 +34,25 @@ public class Handlers {
   public static synchronized void removeLoggingHandler(ILoggingHandler handler) {
     HandlerAppender appender = ourHandlers.remove(handler);
     CompositeAppender.getInstance().removeLoggingHandler(appender);
+  }
+
+  @Override
+  public Logger getLogger(String name) {
+    return new Log4jLogger(name);
+  }
+
+  @Override
+  public void addHandler(ILoggingHandler handler) {
+    addLoggingHandler(handler);
+  }
+
+  @Override
+  public void removeHandler(ILoggingHandler handler) {
+    removeLoggingHandler(handler);
+  }
+
+  @Override
+  public String setThreshold(String threshold) {
+    return Log4jUtil.setThreshold(threshold);
   }
 }

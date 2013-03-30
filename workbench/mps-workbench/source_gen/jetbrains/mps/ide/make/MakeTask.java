@@ -27,7 +27,7 @@ import java.util.concurrent.TimeoutException;
 import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.logging.Handlers;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.messages.Message;
@@ -188,11 +188,11 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
       }
 
       public void startRelaying() {
-        Handlers.addLoggingHandler(this);
+        Logger.addLoggingHandler(this);
       }
 
       public void stopRelaying() {
-        Handlers.removeLoggingHandler(this);
+        Logger.removeLoggingHandler(this);
       }
 
       @Override

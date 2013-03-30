@@ -34,7 +34,6 @@ import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.logging.Handlers;
 import jetbrains.mps.logging.LogEntry;
 
 public class CoreMakeTask {
@@ -201,11 +200,11 @@ public class CoreMakeTask {
     }
 
     public void startRelaying() {
-      Handlers.addLoggingHandler(this);
+      Logger.addLoggingHandler(this);
     }
 
     public void stopRelaying() {
-      Handlers.removeLoggingHandler(this);
+      Logger.removeLoggingHandler(this);
     }
 
     @Override

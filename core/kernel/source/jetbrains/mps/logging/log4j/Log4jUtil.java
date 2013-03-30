@@ -13,15 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.logging;
+package jetbrains.mps.logging.log4j;
 
 import jetbrains.mps.smodel.ModelAccess;
 import org.apache.log4j.Level;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-public class LogUtil {
-  public static void initLogging() {
-    Logger.setFactory(Log4jLogger.getFactory());
-  }
+
+/*
+If one has log4j logger he can still use extended functionality of our Logger using this class.
+ */
+public class Log4jUtil {
 
   public static void errorWithTrace(org.apache.log4j.Logger logger, String message) {
     logger.error(message, new Throwable(message));
@@ -29,12 +33,6 @@ public class LogUtil {
 
   public static void error(org.apache.log4j.Logger logger, String message, Object hintObject) {
     error(logger, message, null, hintObject);
-  }
-
-  public static void error(org.apache.log4j.Logger logger, String message, Throwable t, Object hintObject) {
-    if (logger.isEnabledFor(org.apache.log4j.Level.ERROR)) {
-      logger.error(new LogEntry(logger.getName(), message, t, hintObject));
-    }
   }
 
   public static void error(org.apache.log4j.Logger logger, Throwable t, Object hintObject) {
@@ -49,40 +47,16 @@ public class LogUtil {
     info(logger, message, null, hintObject);
   }
 
-  public static void info(org.apache.log4j.Logger logger, String message, Throwable t, Object hintObject) {
-    if (logger.isEnabledFor(org.apache.log4j.Level.INFO)) {
-      logger.info(new LogEntry(logger.getName(), message, t, hintObject));
-    }
-  }
-
   public static void warning(org.apache.log4j.Logger logger, String message, Object hintObject) {
     warning(logger, message, null, hintObject);
-  }
-
-  public static void warning(org.apache.log4j.Logger logger, String message, Throwable t, Object hintObject) {
-    if (logger.isEnabledFor(org.apache.log4j.Level.WARN)) {
-      logger.warn(new LogEntry(logger.getName(), message, t, hintObject));
-    }
   }
 
   public static void debug(org.apache.log4j.Logger logger, String message, Object hintObject) {
     debug(logger, message, null, hintObject);
   }
 
-  public static void debug(org.apache.log4j.Logger logger, String message, Throwable t, Object hintObject) {
-    if (logger.isEnabledFor(org.apache.log4j.Level.DEBUG)) {
-      logger.debug(new LogEntry(logger.getName(), message, t, hintObject));
-    }
-  }
-
   public static void fatal(org.apache.log4j.Logger logger, String message, Object hintObject) {
     fatal(logger, message, null, hintObject);
-  }
-
-  public static void fatal(org.apache.log4j.Logger logger, String message, Throwable t, Object hintObject) {
-    if (logger.isEnabledFor(org.apache.log4j.Level.FATAL)) {
-      logger.fatal(new LogEntry(logger.getName(), message, t, hintObject));
-    }
   }
 
   public static void assertCanRead(org.apache.log4j.Logger logger) {
@@ -107,4 +81,49 @@ public class LogUtil {
     org.apache.log4j.Logger.getRootLogger().getLoggerRepository().setThreshold(newThreshholdLevel);
     return wasThreshhold;
   }
+
+  public static void error(org.apache.log4j.Logger logger, String message, Throwable t, Object hintObject) {
+    if (t == null) {
+      logger.error(createMessageObject(message, hintObject));
+    } else {
+      logger.error(createMessageObject(message, hintObject), t);
+    }
+  }
+
+  public static void info(@NotNull org.apache.log4j.Logger logger, @NonNls String message, @Nullable Throwable t, @Nullable Object hintObject) {
+    if (t == null) {
+      logger.info(createMessageObject(message, hintObject));
+    } else {
+      logger.info(createMessageObject(message, hintObject), t);
+    }
+  }
+
+  public static void warning(@NotNull org.apache.log4j.Logger logger,@NonNls String message, @Nullable Throwable t, @Nullable Object hintObject) {
+    if (t == null) {
+      logger.warn(createMessageObject(message, hintObject));
+    } else {
+      logger.warn(createMessageObject(message, hintObject), t);
+    }
+  }
+
+  public static void debug(@NotNull org.apache.log4j.Logger logger,@NonNls String message, @Nullable Throwable t, @Nullable Object hintObject) {
+    if (t == null) {
+      logger.debug(createMessageObject(message, hintObject));
+    } else {
+      logger.debug(createMessageObject(message, hintObject), t);
+    }
+  }
+
+  public static void fatal(@NotNull org.apache.log4j.Logger logger, @NonNls String message, @Nullable Throwable t, @Nullable Object hintObject) {
+    if (t == null) {
+      logger.fatal(createMessageObject(message, hintObject));
+    } else {
+      logger.fatal(createMessageObject(message, hintObject), t);
+    }
+  }
+
+  private static Object createMessageObject(String message, Object hintObject) {
+    return hintObject != null ? new MessageObject(message, hintObject) : message;
+  }
+
 }

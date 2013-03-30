@@ -13,14 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.logging;
+package jetbrains.mps.logging.log4j;
 
+import jetbrains.mps.logging.ILoggingHandler;
+import jetbrains.mps.logging.LogEntry;
 import org.apache.log4j.AppenderSkeleton;
 import org.apache.log4j.Level;
 import org.apache.log4j.spi.LoggingEvent;
 import org.apache.log4j.spi.ThrowableInformation;
 
-public class HandlerAppender extends AppenderSkeleton {
+class HandlerAppender extends AppenderSkeleton {
   private final ILoggingHandler myHandler;
 
   public HandlerAppender(ILoggingHandler handler) {
@@ -58,6 +60,9 @@ public class HandlerAppender extends AppenderSkeleton {
     Object message = event.getMessage();
     if (renderedMessage != null && renderedMessage.equals(message)) {
       message = null;
+    } else if (message instanceof MessageObject) {
+      renderedMessage = ((MessageObject) message).getMessage();
+      message = ((MessageObject) message).getHintObject();
     }
     if (throwableInformation != null) {
       return new LogEntry(event.categoryName, renderedMessage, throwableInformation.getThrowable(), message);
