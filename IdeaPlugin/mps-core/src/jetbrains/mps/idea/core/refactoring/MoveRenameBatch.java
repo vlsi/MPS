@@ -156,11 +156,16 @@ public class MoveRenameBatch implements ProjectComponent {
 
   }
 
+  public boolean isHandledAsSReference(NodePtr node) {
+    Set<RenameHandler> usages = myUsages.get(node);
+    if (usages == null) return false;
+    for (RenameHandler h : usages) {
+      if (h instanceof DefaultRenameHandler) return true;
+    }
+    return false;
+  }
+
   public interface RenameHandler {
-    /**
-     * @return true if MoveRenameBatch should handle possibly needed model import,
-     *         false if handleRename will take care of everything itself
-     */
     void handleRename(NodePtr oldNode, NodePtr newNode);
   }
 
