@@ -13846,7 +13846,7 @@
         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1198257250036">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1198257250037">
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1198257250038">
-              <property name="name" nameId="tpck.1169194664001" value="result" />
+              <property name="name" nameId="tpck.1169194664001" value="editorCell" />
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1213036598963">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1213036598965">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="jsgz.~EditorCell_Indent%d&lt;init&gt;(jetbrains%dmps%dopenapi%deditor%dEditorContext,org%djetbrains%dmps%dopenapi%dmodel%dSNode)" resolveInfo="EditorCell_Indent" />
@@ -13863,9 +13863,18 @@
               </node>
             </node>
           </node>
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="3043260929867269268">
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IncludeMacro" typeId="tpf8.1194565793557" id="3043260929867269269">
+              <link role="includeTemplate" roleId="tpf8.1194566366375" targetNodeId="5170495790389304146" resolveInfo="template_cellSetupBlock" />
+            </node>
+            <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="3043260929867269270">
+              <property name="name" nameId="tpck.1169194664001" value="i" />
+              <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="3043260929867269271" />
+            </node>
+          </node>
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1198257250160">
             <node role="expression" roleId="tpee.1068581517676" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1198257250161">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1198257250038" resolveInfo="result" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1198257250038" resolveInfo="editorCell" />
             </node>
           </node>
         </node>
